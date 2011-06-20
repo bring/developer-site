@@ -15,38 +15,11 @@
         <org.slf4j.version>1.5.11</org.slf4j.version>
     </properties>
 
-    <repositories>
-        <repository>
-            <id>bring.releases</id>
-            <url>http://bring.ewok.no/nexus/content/repositories/releases</url>
-        </repository>
-        <repository>
-            <id>org.jboss.repository.maven</id>
-            <url>http://repository.jboss.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>constretto.org</id>
-            <name>Constretto public maven repository</name>
-            <url>http://repo.constretto.org/content/repositories/releases</url>
-        </repository>
-        <repository>
-            <id>java.net-m2</id>
-            <name>java.net M2</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-        <repository>
-            <id>codehaus-release-repo</id>
-            <name>Codehaus Release Repo</name>
-            <url>http://repository.codehaus.org</url>
-        </repository>
-    </repositories>
 
     <modules>
         <module>developer-site-web</module>
     </modules>
+
     <dependencyManagement>
         <dependencies>
 
@@ -161,6 +134,20 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>bring.releases</id>
+            <url>http://bring.ewok.no/nexus/content/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>constretto.org</id>
+            <name>Constretto public maven repository</name>
+            <url>http://repo.constretto.org/content/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>java.net-m2</id>
+            <name>java.net M2</name>
+            <url>http://download.java.net/maven/2</url>
         </repository>
     </repositories>
 
