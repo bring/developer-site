@@ -140,6 +140,10 @@
             <url>http://bring.ewok.no/nexus/content/repositories/releases</url>
         </repository>
         <repository>
+            <id>bring.thirdparty</id>
+            <url>http://bring.ewok.no/nexus/content/repositories/thirdparty</url>
+        </repository>
+        <repository>
             <id>constretto.org</id>
             <name>Constretto public maven repository</name>
             <url>http://repo.constretto.org/content/repositories/releases</url>
