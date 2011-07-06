@@ -39,5 +39,4 @@ public class HelloWorldController {
 
         return "helloWorld";
     }
-
 }

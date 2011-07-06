@@ -1,0 +1,49 @@
+body {
+    background-color: #d7d8d9;
+}
+ 
+.wrapper {
+    margin: 0 auto;
+    width: 986px;
+}
+
+.header {
+    background-color: #fff;
+    height: 59px;
+    border-bottom: 15px solid #7FC14B;
+    padding-top: 15px;
+    margin-bottom: 16px;
+}
+
+.main {
+	min-height: 600px;
+}
+
+.showcase {
+	height: 200px;
+	border: 1px solid black;
+	margin-bottom: 16px;
+}
+
+.learn, .download, .talk {
+	float: left;
+	overflow: hidden;
+	width: 321px;
+	margin-bottom: 16px;
+}
+
+.learn {
+	width: 323px;
+	margin-right: 10px;
+}
+
+.download {
+	margin-right: 10px;
+}
+
+.footer {
+	text-align: center;
+	padding-top: 100px;
+	background-color: #a0a0a1;
+	border-top: 1px solid black;
+}

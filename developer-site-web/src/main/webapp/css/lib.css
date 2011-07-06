@@ -1,0 +1,95 @@
+/* Clearfix */
+
+html[xmlns] .clearfix {
+    display: block;
+}
+ 
+* html .clearfix {
+    height: 1%;
+}
+
+.group:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+/* Box */
+
+.box-header {
+	height: 50px;
+	overflow: hidden;
+    color: #b7b7b7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #3b3b3b;
+    margin-bottom: 10px;
+}
+
+.box-title {
+    color: #79b54b;
+    display: block;
+    font-weight: bold;
+}
+
+.box-content {
+    border: 1px solid black;
+    background-color: #f2f2f2;
+}
+
+.box-text {
+	padding: 10px;
+}
+
+.box-text {
+    background-color: #e5e5e5;  
+}
+
+/* Question list */
+
+ul.question-list {
+    list-style: none;
+}
+
+img.question-list {
+    float: left;
+}
+
+.question {
+    min-height: 50px;
+    margin-bottom: 2px;
+    width: 265px;
+    float: right;
+    display: inline-block;
+    background-color: #e5e5e5;
+    overflow: hidden;
+}
+
+/* Misc */
+
+.dropdown {
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+/* Widget preview */
+
+.widget-preview {
+	overflow: hidden;
+	width: 140px;
+	padding: 10px;
+	float: left;
+	background-color: #d9d9d9;
+}
+
+.widget-preview:first-child {
+	margin-right: 2px;
+	float: right;
+}
+
+.widget-preview-collection {
+	
+}
