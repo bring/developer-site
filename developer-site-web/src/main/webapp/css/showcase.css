@@ -1,0 +1,14 @@
+ul {
+	list-style-type: none;
+}
+
+
+/* Toolbox developer.bring.com */
+
+ul.toolBox { float: right; padding: 10px; list-style-type: none;}
+ul.toolBox h3 { font-size: 1.0em; font-weight: bold; margin-bottom: 5px; color: #717074;}
+ul.toolBox li { margin-bottom: 1px; width: 283px; background: #e5e6e7; padding: 7px 10px 7px; margin-bottom: 1px; cursor: pointer; }
+ul.toolBox li.hover, ul.toolBox li.selected { background: transparent; -moz-box-shadow: none; }
+ul.toolBox li.first { }
+ul.toolBox li.last { margin-bottom: 0; }                
+ul.toolBox li.selected h2, ul.toolBox li.hover h2 { color: #e32d22; }

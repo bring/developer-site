@@ -21,9 +21,9 @@ public class HomeController {
         return "home";
     }
     
-    @RequestMapping(value = "/nicolaj.html")
+    @RequestMapping(value = "/showcase.html")
     public String nicolaj() {
-        return "nicolaj";
+        return "showcase";
     }
     
     @RequestMapping(value = "/compare.html", method=RequestMethod.GET)
