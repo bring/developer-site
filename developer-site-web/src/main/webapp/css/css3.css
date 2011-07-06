@@ -1,0 +1,17 @@
+.box-header {
+  -moz-box-shadow: 0 0 5px #666;
+  -webkit-box-shadow: 0 0 5px #666;
+  box-shadow: 0 0 5px #666;
+}
+
+.box-content {
+  -moz-box-shadow: 0 0 5px #666;
+  -webkit-box-shadow: 0 0 5px #666;
+  box-shadow: 0 0 8px #999;
+}
+
+ul.toolbox {
+  -moz-box-shadow: 0 0 5px #666;
+  -webkit-box-shadow: 0 0 5px #666;
+  box-shadow: 0 0 4px #999;
+}
