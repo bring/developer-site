@@ -4,7 +4,7 @@
   box-shadow: 0 0 5px #666;
 }
 
-.box-content {
+.box {
   -moz-box-shadow: 0 0 5px #666;
   -webkit-box-shadow: 0 0 5px #666;
   box-shadow: 0 0 8px #999;

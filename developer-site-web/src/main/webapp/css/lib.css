@@ -19,6 +19,10 @@ html[xmlns] .group {
 
 /* Box */
 
+.box {
+	margin: 5px;
+}
+
 .box-header {
 	padding: 10px;
 	height: 50px;
@@ -30,15 +34,15 @@ html[xmlns] .group {
     margin: 10px 5px;
 }
 
+.box-content {
+    background-color: #f2f2f2;
+    margin: 10px 5px;
+}
+
 .box-title {
     color: #79b54b;
     display: block;
     font-weight: bold;
-}
-
-.box-content {
-    background-color: #f2f2f2;
-    margin: 10px 5px;
 }
 
 .box-text {
