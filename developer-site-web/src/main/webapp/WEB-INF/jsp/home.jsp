@@ -26,7 +26,7 @@
 	    
 	    <div class="learn box">
             <div class="box-header">
-               <span class="box-title">LEARN</span>
+               <h2 class="box-title">LEARN</h2>
                <span class="box-subtitle">
                    TUTORIALS, EXAMPLES, API REFERENCE
                </span>
@@ -47,21 +47,23 @@
 	    
 		<div class="download box">
             <div class="box-header">
-	            <span class="box-title">DOWNLOAD</span>
+	            <h2 class="box-title">DOWNLOAD</h2>
 	            <span class="box-subtitle">
 	                PLUGINS, WIDGETS, SDK
 	            </span>
             </div>
             <div class="box-content">
-	            <div class="dropdown">
+	            <h3 class="dropdown">
 	                Popular widgets
-	            </div>
-	            <div class="widget-preview-collection group">
+	            </h3>
+	            <div class="group">
 		            <div class="widget-preview">
-		                IN-MAP TRACKING
+		                <h4 class="widget-title">IN-MAP TRACKING</h4>
+		                <p class="widget-preview-content">Blabla bal bal baba.</p>
 		            </div>
 		            <div class="widget-preview">
-		                PRICE ESTIMATE
+		                <h4 class="widget-title">PRICE ESTIMATE</h4>
+		                <p class="widget-preview-content">Blabla bal bal baba.</p>
 		            </div>
 	            </div>
 	       </div>
@@ -69,7 +71,7 @@
 		
         <div class="talk box">
 		 <div class="box-header">
-               <span class="box-title">TALK</span>
+               <h2 class="box-title">TALK</h2>
                <span class="box-subtitle">
                    ASK, WRITE, CODE, SHARE
                </span>

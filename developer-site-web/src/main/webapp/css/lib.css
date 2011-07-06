@@ -20,6 +20,7 @@ html[xmlns] .clearfix {
 /* Box */
 
 .box-header {
+	padding: 10px;
 	height: 50px;
 	overflow: hidden;
     color: #b7b7b7;
@@ -42,9 +43,6 @@ html[xmlns] .clearfix {
 
 .box-text {
 	padding: 10px;
-}
-
-.box-text {
     background-color: #e5e5e5;  
 }
 
@@ -79,17 +77,21 @@ img.question-list {
 
 .widget-preview {
 	overflow: hidden;
-	width: 140px;
-	padding: 10px;
-	float: left;
+	width: 158px;
+	min-height: 40px;
+	float: right;
 	background-color: #d9d9d9;
 }
 
 .widget-preview:first-child {
+	float: left;
 	margin-right: 2px;
-	float: right;
 }
 
-.widget-preview-collection {
-	
+.widget-title, .widget-preview-content {
+	padding: 10px;
+}
+
+.widget-preview-content {
+	background-color: #e3dcd3;
 }
