@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/lib.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/showcase.css" />
     <link rel="stylesheet" type="text/css" href="css/css3.css" />
 </head>
 
@@ -25,7 +26,7 @@
 <!-- Flytt til header fil slutt  -->
     
     <div class="wrapper group main">
-	    <div class="showcase box"></div>
+	    <misc:showcase />
 	    
 	    <div class="learn">
             <div class="box-header">
