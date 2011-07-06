@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<!-- Flytt til header fil start -->
     <div class="header">
         <div class="wrapper">
 		    <a href="http://www.bring.no/hele-bring/forside">
@@ -20,6 +21,7 @@
 		    </a>
 	    </div>
     </div>
+<!-- Flytt til header fil slutt  -->
     
     <div class="wrapper group main">
 	    <div class="showcase box"></div>

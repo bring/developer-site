@@ -1,10 +1,10 @@
-/* Clearfix */
+/* Group (clearfix) */
 
-html[xmlns] .clearfix {
+html[xmlns] .group {
     display: block;
 }
  
-* html .clearfix {
+* html .group {
     height: 1%;
 }
 
@@ -66,13 +66,6 @@ img.question-list {
     overflow: hidden;
 }
 
-/* Misc */
-
-.dropdown {
-    padding: 10px;
-    background-color: #f2f2f2;
-}
-
 /* Widget preview */
 
 .widget-preview {
@@ -94,4 +87,10 @@ img.question-list {
 
 .widget-preview-content {
 	background-color: #e3dcd3;
+}
+/* Misc */
+
+.dropdown {
+    padding: 10px;
+    background-color: #f2f2f2;
 }

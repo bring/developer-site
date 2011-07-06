@@ -20,7 +20,7 @@ body {
 }
 
 .showcase {
-	height: 200px;
+	min-height: 200px;
 	border: 1px solid black;
 	margin-bottom: 16px;
 }
