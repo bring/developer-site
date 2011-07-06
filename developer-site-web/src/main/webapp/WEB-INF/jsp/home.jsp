@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/lib.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/css3.css" />
 </head>
 
 <body>
@@ -26,7 +27,7 @@
     <div class="wrapper group main">
 	    <div class="showcase box"></div>
 	    
-	    <div class="learn box">
+	    <div class="learn">
             <div class="box-header">
                <h2 class="box-title">LEARN</h2>
                <span class="box-subtitle">
@@ -47,7 +48,7 @@
            </div>
         </div>
 	    
-		<div class="download box">
+		<div class="download">
             <div class="box-header">
 	            <h2 class="box-title">DOWNLOAD</h2>
 	            <span class="box-subtitle">
@@ -71,7 +72,7 @@
 	       </div>
 		</div>
 		
-        <div class="talk box">
+        <div class="talk">
 		 <div class="box-header">
                <h2 class="box-title">TALK</h2>
                <span class="box-subtitle">
