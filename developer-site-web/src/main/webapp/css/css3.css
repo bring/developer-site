@@ -3,3 +3,9 @@
   -webkit-box-shadow: 0 0 5px #666;
   box-shadow: 0 0 8px #999;
 }
+
+.toolbox-button {
+-moz-box-shadow: inset 0 0 5px 5px #888;
+-webkit-box-shadow: inset 0 0 5px 5px#888;
+box-shadow: inset 0 0 5px 5px #888;
+}
