@@ -23,7 +23,7 @@ html[xmlns] .group {
 	margin: 5px;
 }
 
-.box-header {
+.section-header {
 	padding: 10px;
 	height: 50px;
 	overflow: hidden;
@@ -34,12 +34,12 @@ html[xmlns] .group {
     margin: 10px 5px;
 }
 
-.box-content {
+.section-content {
     background-color: #f2f2f2;
     margin: 10px 5px;
 }
 
-.box-title {
+.section-title {
     color: #79b54b;
     display: block;
     font-weight: bold;

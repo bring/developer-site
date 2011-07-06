@@ -29,13 +29,13 @@
 	    <misc:showcase />
 	    
 	    <div class="learn">
-            <div class="box-header">
-               <h2 class="box-title">LEARN</h2>
+            <div class="section-header box">
+               <h2 class="section-title">LEARN</h2>
                <span class="box-subtitle">
                    TUTORIALS, EXAMPLES, API REFERENCE
                </span>
            </div>
-           <div class="box-content">
+           <div class="section-content box">
 	           <div class="box-text">
 	            <q>
 	                By using Bring APIs we can let our customers choose their preferred
@@ -50,13 +50,13 @@
         </div>
 	    
 		<div class="download">
-            <div class="box-header">
-	            <h2 class="box-title">DOWNLOAD</h2>
+            <div class="section-header box">
+	            <h2 class="section-title">DOWNLOAD</h2>
 	            <span class="box-subtitle">
 	                PLUGINS, WIDGETS, SDK
 	            </span>
             </div>
-            <div class="box-content">
+            <div class="section-content box">
 	            <h3 class="dropdown">
 	                Popular widgets
 	            </h3>
@@ -74,13 +74,13 @@
 		</div>
 		
         <div class="talk">
-		 <div class="box-header">
-               <h2 class="box-title">TALK</h2>
+		 <div class="section-header box">
+               <h2 class="section-title">TALK</h2>
                <span class="box-subtitle">
                    ASK, WRITE, CODE, SHARE
                </span>
            </div>
-           <div class="box-content">
+           <div class="section-content box">
                 <ul class="question-list">
                     <li class="question-list group">
 	                    <img class="question-list" width="50" height="50" src="img/logo.png" />
