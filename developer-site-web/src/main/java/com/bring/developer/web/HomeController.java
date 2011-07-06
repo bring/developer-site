@@ -21,6 +21,11 @@ public class HomeController {
         return "home";
     }
     
+    @RequestMapping(value = "/nicolaj.html")
+    public String nicolaj() {
+        return "nicolaj";
+    }
+    
     @RequestMapping(value = "/compare.html", method=RequestMethod.GET)
     public String compare(@RequestParam("input1") String input1,
         @RequestParam("input2") String input2, Model model) {
