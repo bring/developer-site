@@ -16,11 +16,13 @@
 
 <body>
     <misc:header />
-    <div class="wrapper group main">
-	    <misc:showcase />
-	    <misc:learn />
-        <misc:download />
-        <misc:talk />
+    <div class="main">
+	    <div class="wrapper group">
+		    <misc:showcase />
+		    <misc:learn />
+	        <misc:download />
+	        <misc:talk />
+		</div>
 	</div>
 	<misc:footer />
 </body>
