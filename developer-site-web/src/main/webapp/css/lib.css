@@ -63,7 +63,7 @@ img.question-list {
 .question {
     min-height: 50px;
     margin-bottom: 2px;
-    width: 265px;
+    width: 259px;
     float: right;
     display: inline-block;
     background-color: #e5e5e5;
@@ -92,6 +92,7 @@ img.question-list {
 .widget-preview-content {
 	background-color: #e3dcd3;
 }
+
 /* Misc */
 
 .dropdown {

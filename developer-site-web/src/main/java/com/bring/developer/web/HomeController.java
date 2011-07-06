@@ -17,7 +17,6 @@ public class HomeController {
 
     @RequestMapping(value = "/home.html")
     public String home() {
-        System.out.println("HomeController: Passing through...");
         return "home";
     }
     
