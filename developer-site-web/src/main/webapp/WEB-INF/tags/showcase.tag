@@ -14,16 +14,16 @@
      </div>-->
   </div>
   <ul class="toolbox">
-     <li class="box tool_1 selected">
+     <li class="toolbox-button tool_1 selected">
         <h3>WHAT ARE BRING APIS?</h3>
      </li>
-     <li class="box tool_2">
+     <li class="toolbox-button tool_2">
         <h3>INTEGRATE SHIPPING GUIDE WIDGET</h3>
      </li>
-     <li class="box tool_3">
+     <li class="toolbox-button tool_3">
         <h3>ADD SHIPMENT TRACKING WIDGET</h3>
      </li>
-     <li class="box tool_4">
+     <li class="toolbox-button tool_4">
         <h3>VALIDATE POSTAL CODE FIELD</h3>
      </li>
   </ul>
