@@ -128,6 +128,7 @@
             <id>codehaus</id>
             <url>http://repository.codehaus.org</url>
         </repository>
+<!--
         <repository>
             <id>org.jboss.repository.maven</id>
             <url>http://repository.jboss.org/maven2</url>
@@ -135,6 +136,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+-->
         <repository>
             <id>bring.releases</id>
             <url>http://bring.ewok.no/nexus/content/repositories/releases</url>
@@ -142,11 +144,6 @@
         <repository>
             <id>bring.thirdparty</id>
             <url>http://bring.ewok.no/nexus/content/repositories/thirdparty</url>
-        </repository>
-        <repository>
-            <id>constretto.org</id>
-            <name>Constretto public maven repository</name>
-            <url>http://repo.constretto.org/content/repositories/releases</url>
         </repository>
         <repository>
             <id>java.net-m2</id>
