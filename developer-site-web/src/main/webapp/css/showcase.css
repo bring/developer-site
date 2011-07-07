@@ -12,9 +12,9 @@ div.showcase .panels {
 	width: 100%;
 	height: 200px;
     background-color: #f1f1f1;
-    -moz-box-shadow: inset 1px 1px 2px #ddd, inset 1px -1px 2px #ddd;
-    -webkit-box-shadow: inset 1px 1px 2px #ddd, inset 1px -1px 2px #ddd;
-    box-shadow: inset 1px 1px 2px #ddd, inset 1px -1px 2px #ddd;
+    -moz-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
+    -webkit-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
+    box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
 }
 
 div.showcase .panel {
@@ -39,16 +39,16 @@ ul.toolbox li {
 
 ul.toolbox li.hover,ul.toolbox li {
 	background-color: #f1f1f1;  
-    -moz-box-shadow: -1px 0px 2px #ddd;
-    -webkit-box-shadow: -1px 0px 2px #ddd;
-    box-shadow: -1px 0px 2px #ddd;
+    -moz-box-shadow: -1px 0px 1px #ddd;
+    -webkit-box-shadow: -1px 0px 1px #ddd;
+    box-shadow: -1px 0px 1px #ddd;
 }
 
 ul.toolbox li.hover,ul.toolbox li.selected {
 	background-color: #f1f1f1;	
-    -moz-box-shadow: inset -1px 1px 2px #ddd, inset -1px -1px 2px #ddd;
-    -webkit-box-shadow: inset -1px 1px 2px #ddd, inset -1px -1px 2px #ddd;
-    box-shadow: inset -1px 1px 2px #ddd, inset -1px -1px 2px #ddd;
+    -moz-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd;
+    -webkit-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd;
+    box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd;
 }
 
 ul.toolbox li.last {
