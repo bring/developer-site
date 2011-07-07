@@ -1,10 +1,36 @@
+html {
+	height: 100%;
+}
+
 body {
+	height: 100%;
     background-color: #afb0b2;
 }
- 
+
+/*Opera Fix - sticky footer*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
 .wrapper {
-    margin: 0 auto;
-    width: 986px;
+	min-height: 100%;
+}
+
+.content {
+	width: 986px;	
+	margin: 0 auto;
+}
+ 
+.main {
+	width: 986px;	
+	margin: 0 auto;
+	padding-top: 16px;
+	padding-bottom: 150px;
+	overflow: auto;
 }
 
 .header {
@@ -12,11 +38,6 @@ body {
     height: 59px;
     border-bottom: 15px solid #7fc14b;
     padding-top: 15px;
-}
-
-.main {
-	padding-top: 16px;
-	min-height: 600px;
 }
 
 .showcase {
@@ -42,6 +63,10 @@ body {
 
 .footer {
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 120px;
     background-color: #afb0b2;
-}
+    position: relative;
+	margin-top: -150px; 
+	height: 30px;
+	clear:both;
+} 
