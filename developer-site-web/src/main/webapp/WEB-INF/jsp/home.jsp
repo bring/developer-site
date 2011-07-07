@@ -15,9 +15,10 @@
 </head>
 
 <body>
-    <misc:header />
-    <div class="main">
-	    <div class="wrapper group">
+	<div class="wrapper" style="height: 100%;" >
+	    <misc:header />
+	    
+	    <div class="content main group">
 		    <misc:showcase />
 		    <misc:learn />
 	        <misc:download />
