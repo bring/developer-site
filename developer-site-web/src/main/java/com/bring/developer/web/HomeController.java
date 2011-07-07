@@ -20,6 +20,11 @@ public class HomeController {
         return "home";
     }
     
+    @RequestMapping(value = "/learn.html")
+    public String learn() {
+        return "learn";
+    }
+    
     @RequestMapping(value = "/showcase.html")
     public String nicolaj() {
         return "showcase";

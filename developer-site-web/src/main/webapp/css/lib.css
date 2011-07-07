@@ -45,6 +45,10 @@ html[xmlns] .group {
     font-weight: bold;
 }
 
+a.section-title {
+	text-decoration: none;
+}
+
 .box-text {
 	padding: 10px;
     background-color: #e5e5e5;  

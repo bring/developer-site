@@ -2,7 +2,7 @@
 
 <div class="learn">
     <div class="section-header box">
-       <h2 class="section-title">LEARN</h2>
+       <h2 class="section-title"><a class="section-title" href="learn.html">LEARN</a></h2>
        <span class="box-subtitle">
            TUTORIALS, EXAMPLES, API REFERENCE
        </span>
