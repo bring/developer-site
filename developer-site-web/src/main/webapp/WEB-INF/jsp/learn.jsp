@@ -11,7 +11,31 @@
 	    <misc:header />
 	    
 	    <div class="main content group">
-	    	<div class="box">Learn.....</div>
+				<div class="learn">
+				    <div class="section-header box">
+				       <h2 class="section-title"><a class="section-title" href="learn.html">LEARN</a></h2>
+				       <span class="box-subtitle">
+				           TUTORIALS, EXAMPLES, API REFERENCE
+				       </span>
+				   </div>
+				</div>
+				<div class="download">
+				    <div class="section-header box">
+				       <h2 class="section-title"><a class="section-title" href="learn.html">DOWNLOAD</a></h2>
+				       <span class="box-subtitle">
+				           PLUGINS, WIDGETS, SDK
+				       </span>
+				   </div>
+				</div>
+				<div class="talk">
+				    <div class="section-header box">
+				       <h2 class="section-title"><a class="section-title" href="learn.html">TALK</a></h2>
+				       <span class="box-subtitle">
+				           ASK, WRITE, CODE, SHARE
+				       </span>
+				   </div>
+				</div>
+				<div class="menubox"></div>
 		</div>
 	</div>
 	<misc:footer />
