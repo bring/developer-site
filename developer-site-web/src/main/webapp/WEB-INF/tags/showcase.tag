@@ -12,7 +12,6 @@
      </div>
      <div class="panel tool_4">
      </div>-->
-  </div>
   <ul class="toolbox">
      <li class="toolbox-button tool_1 selected">
         <h3>WHAT ARE BRING APIS?</h3>
@@ -27,5 +26,6 @@
         <h3>VALIDATE POSTAL CODE FIELD</h3>
      </li>
   </ul>
+    </div>
 </div>
 
