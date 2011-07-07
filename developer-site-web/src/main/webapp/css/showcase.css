@@ -52,13 +52,10 @@ ul.toolbox li.hover,ul.toolbox li {
 }
 
 ul.toolbox li.hover,ul.toolbox li.selected {
-	background-color: #e5e5e5;
-	-webkit-box-shadow: inset 0px 2px 2px #bbb;
-	-webkit-box-shadow: inset 0px 2px 2px rbga(230, 230, 230, .9);
-	-moz-box-shadow:    inset 0px 2px 2px #bbb;
-	-moz-box-shadow:    inset 0px 2px 2px rbga(230, 230, 230, .9);
-	box-shadow:         inset 0px 2px 2px #bbb;
-	box-shadow:         inset 0px 2px 2px rbga(230, 230, 230, .9);
+	background-color: #e5e5e5;	
+    -moz-box-shadow: inset -2px 2px 2px #bbb, inset -2px -2px 2px #bbb;
+    -webkit-box-shadow: inset -2px 2px 2px #bbb, inset -2px -2px 2px #bbb;
+    box-shadow: inset -2px 2px 2px #bbb, inset -2px -2px 2px #bbb;
 }
 
 ul.toolbox li.last {

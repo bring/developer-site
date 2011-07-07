@@ -12,8 +12,11 @@
 
 
 .footer {
-  box-shadow: 0 0 5px #999;
+  -moz-box-shadow: inset 0px 10px 8px #888;
+  -webkit-box-shadow: inset 0px 10px 8px #888;
+  box-shadow: inset 0px 10px 8px #888;
+  /*
   background: -moz-linear-gradient(top,  #7f8082,  #afb0b2);
   background: -webkit-linear-gradient(#7f8082, #afb0b2);
-  background: -o-linear-gradient(#7f8082, #afb0b2);
+  background: -o-linear-gradient(#7f8082, #afb0b2);*/
 }
