@@ -25,3 +25,10 @@
   -webkit-box-shadow: inset 0px 10px 8px #888;
   box-shadow: inset 0px 10px 8px #888;
 }
+
+.tabs li a:hover {
+/*   -moz-box-shadow: 0 0 5px #999; */
+/*   -webkit-box-shadow: 0 0 5px #999; */
+  box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
+  z-index: 1;
+}
