@@ -35,7 +35,7 @@ body:before {
 
 .header {
     background-color: #fff;
-    height: 59px;
+    min-height: 59px;
     border-bottom: 15px solid #7fc14b;
     padding-top: 15px;
 }
