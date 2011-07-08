@@ -81,6 +81,10 @@ div.widget-preview p {
     font-size: 0.75em;
 }
 
+.tabs li:first-child a:before {
+    content: "‹ ";
+}
+
 .tabs li a {
     cursor: pointer;
     color: #676767;
