@@ -27,30 +27,51 @@
 
 .menuitems {
     width: 322px;
-    height: 150px;
-    margin: 10px 10px 10px 0px;
+    margin: 20px 10px 20px 0px;
     float: left;
 }
 
 div:last-child.menuitems{
-    margin: 10px 0px 10px 0px;
+    margin: 20px 0px 20px 0px;
 }
 
-.menuitems ul li {
-    width: 300px;
-    height: 30px;
+.menuitems ul li{
     margin: 2px 11px 2px 11px;
-    background-color: #ccc;
 }
 
-.menuitems ul li selected{
+.menuitems ul li a{
+	display: block;
     width: 300px;
     height: 30px;
+    background-color: #666;
+    text-decoration: none;
+    color: #ccc;
 }
 
-.learncontent {
+.menuitems ul li a.selected{
+    background-color: #ccc;
+    color: #fff;
+}
+
+.menuitems ul li a img{
+    float:right;
+    margin: 5px;
+}
+
+.main-content {
     width: 986px;
     min-height: 300px;
     margin: 0 5px 0 5px;
     background-color: #fff;
+}
+
+.main-content .talk-content{
+    float: left;
+    margin-top: 10px;
+}
+
+.article {
+	width: 654px;
+	margin: 10px 10px 0 0;
+    float: left;
 }
