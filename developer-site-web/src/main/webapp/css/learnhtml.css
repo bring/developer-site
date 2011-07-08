@@ -75,3 +75,18 @@ div:last-child.menuitems{
 	margin: 10px 10px 0 0;
     float: left;
 }
+
+.article h1{
+    width: 634px;
+    padding: 20px 10px 20px 10px;
+    background-color: #ddd;
+    color: #3b3b3b;
+    font-weight:bold;
+}
+
+div.talk-content div.title {
+    width: 100%;
+    border-bottom: 5px solid #ddd;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
