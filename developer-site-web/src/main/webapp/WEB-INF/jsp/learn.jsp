@@ -13,15 +13,15 @@
 
             <div class="menutabs group">
 			   <div class="learn-header box menutab-selected">
-			       <h2><a href="learn.html"><span>LEARN</span></a></h2>
+			       <div class="title"><a href="learn.html"><span>LEARN</span></a></div>
 			       <span class="subtitle">TUTORIALS, EXAMPLES, API REFERENCE</span>
 			   </div>
-			   <div class="learn-header box">
-			       <h2><a href="learn.html"><span>DOWNLOAD</span></a></h2>
+			   <div class="download-header box">
+			       <div class="title"><a href="download.html"><span>DOWNLOAD</span></a></div>
 			       <span class="subtitle">PLUGINS, WIDGETS, SDK</span>
 			   </div>
-			   <div class="learn-header box">
-			       <h2><a href="learn.html"><span>LEARN</span></a></h2>
+			   <div class="talk-header box">
+			       <div class="title"><a href="talk.html"><span>TALK</span></a></div>
 			       <span class="subtitle">ASK, WRITE, CODE, SHARE</span>
 			   </div>
             </div>
@@ -57,9 +57,11 @@
 
             <div class="main-content group">
 				<div class="article">
+					<h1>STEP-BY-STEP GUIDE TO MANUAL INTEGRATION</h1>
 					<p>bla bla</p>
 				</div>
 				<div class="talk-content">
+					<div class="title">RELATED COMMENTS</div>
                 	<ul class="question-list">
 				            <li class="group">
 				                <img width="50" height="50" src="img/logo.png" />
