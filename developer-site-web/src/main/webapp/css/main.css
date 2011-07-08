@@ -53,21 +53,21 @@ body:before {
 	margin-bottom: 10px;
 }
 
-div.learn, 
-div.download, 
-div.talk {
+.learn, 
+.download, 
+.talk {
 	float: left;
 }
 
-div.learn-header div.title, 
-div.download-header div.title, 
-div.talk-header div.title {
+.learn-header .title, 
+.download-header .title, 
+.talk-header .title {
     font-size: 1.25em;
 }
 
-div.learn-header, 
-div.download-header, 
-div.talk-header {
+.learn-header, 
+.download-header, 
+.talk-header {
     width: 302px;
     height: 50px;
     padding: 10px;
@@ -77,9 +77,9 @@ div.talk-header {
     position: relative;
 }
 
-div.learn-header div.title a,
-div.download-header div.title a,
-div.talk-header div.title a {
+.learn-header .title a,
+.download-header .title a,
+.talk-header .title a {
     color: #79b54b;
     text-decoration: none;
     position: absolute; 
@@ -91,47 +91,47 @@ div.talk-header div.title a {
     z-index: 1;
 }
 
-div.learn-header div.title a span,
-div.download-header div.title a span,
-div.talk-header div.title a span {
+.learn-header .title a span,
+.download-header .title a span,
+.talk-header .title a span {
     position: absolute; 
     display: block; 
     left: 10px; 
     top: 10px; 
 }
 
-div.learn-header .subtitle,
-div.download-header .subtitle,
-div.talk-header .subtitle {
+.learn-header .subtitle,
+.download-header .subtitle,
+.talk-header .subtitle {
     font-size: 0.75em;
     position: absolute;
     top: 40px;
     left: 10px;
 }
 
-div.learn-content, 
-div.download-content, 
-div.talk-content {
+.learn-content, 
+.download-content, 
+.talk-content {
     width: 322px;
     background-color: #fff;
 }
 
-div.download-content div.title {
+.download-content .title {
     padding: 10px;
     background-color: #fff;
     font-size: 0.75em;
 }
 
-div.download-content div.title:before {
+.download-content .title:before {
     content: "ν ";
     margin-right: 5px;
 }
 
-div.learn-footer {
+.learn-footer {
     padding: 10px;
 }
 
-div.talk-footer {
+.talk-footer {
     padding: 10px;
     background-color: #f0f0f1;
 }

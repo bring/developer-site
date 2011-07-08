@@ -32,18 +32,28 @@ ul.question-list li:last-child {
     margin-bottom: 10px;
 }
 
-ul.question-list li div {
-    min-height: 50px;
-    width: 270px;
+.question-content {
+    width: 260px;
     float: right;
     display: inline-block;
     background-color: #f0f0f1;
     overflow: hidden;
+    padding: 5px 5px 5px;
+    font-size: 0.75em;
+}
+
+.question-datetime {
+    color: #9A9999;
 }
 
 ul.question-list li img {
     float: left;
     width: 50px;
+}
+
+.question-author {
+    display: block;
+    font-weight: bold;
 }
 
 /* Widget preview */
@@ -120,7 +130,6 @@ div.widget-preview p {
     position:relative;
 }
 
-/* creates the larger triangle */
 .quote:before {
     content:"";
     position:absolute;
