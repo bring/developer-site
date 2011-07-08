@@ -118,7 +118,7 @@ div.talk-content {
 
 div.download-content div.title {
     padding: 10px;
-    background-color: #f2f2f2;    
+    background-color: #fff;    
 }
 
 div.learn-footer {
@@ -127,7 +127,7 @@ div.learn-footer {
 
 div.talk-footer {
     padding: 10px;
-    background-color: #e5e5e5;
+    background-color: #f0f0f1;
 }
 
 .footer {

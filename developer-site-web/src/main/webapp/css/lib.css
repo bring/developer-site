@@ -37,7 +37,7 @@ ul.question-list li div {
     width: 270px;
     float: right;
     display: inline-block;
-    background-color: #e5e5e5;
+    background-color: #f0f0f1;
     overflow: hidden;
 }
 
@@ -53,7 +53,7 @@ div.widget-preview {
     width: 161px;
     min-height: 40px;
     float: left;
-    background-color: #d9d9d9;
+    background-color: #f0f0f1;
 }
 
 div:first-child.widget-preview {
@@ -103,13 +103,30 @@ div.widget-preview p {
     background: #7fc14b;
 }
 
+/* Quote */
+
+.quote {
+    padding: 10px;
+    background-color: #f0f0f1;
+    position:relative;
+}
+
+/* creates the larger triangle */
+.quote:before {
+    content:"";
+    position:absolute;
+    bottom:-12px;
+    left:50px;
+    border-width:0 0 12px 12px;
+    border-style:solid;
+    border-color:transparent #f0f0f1;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+
 /* Misc */
 
 .box {
     margin: 5px;
-}
-
-.quote {
-    padding: 10px;
-    background-color: #e5e5e5;
 }
