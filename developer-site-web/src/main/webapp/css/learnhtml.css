@@ -1,5 +1,5 @@
 /* Menutab */
-.menutabs div {
+div.menutab {
     width: 302px;
     margin: 5px 5px 0 5px;
     float: left;
@@ -14,7 +14,7 @@
     box-shadow: -1px -1px 1px #ddd, 1px -1px 1px #ddd;
 }
 
-.menutabs .menutab-selected {
+div.menutab-selected {
     background-color: #3b3b3b;
 }
 

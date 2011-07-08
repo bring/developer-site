@@ -11,16 +11,16 @@
         <misc:header />
         <div class="main content">
 
-            <div class="menutabs group">
-			   <div class="learn-header box menutab-selected">
+            <div class="group">
+			   <div class="menutab learn-header box menutab-selected">
 			       <div class="title"><a href="learn.html"><span>LEARN</span></a></div>
 			       <span class="subtitle">TUTORIALS, EXAMPLES, API REFERENCE</span>
 			   </div>
-			   <div class="download-header box">
+			   <div class="menutab download-header box">
 			       <div class="title"><a href="download.html"><span>DOWNLOAD</span></a></div>
 			       <span class="subtitle">PLUGINS, WIDGETS, SDK</span>
 			   </div>
-			   <div class="talk-header box">
+			   <div class="menutab talk-header box">
 			       <div class="title"><a href="talk.html"><span>TALK</span></a></div>
 			       <span class="subtitle">ASK, WRITE, CODE, SHARE</span>
 			   </div>
