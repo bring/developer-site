@@ -23,9 +23,17 @@ ul.question-list {
     list-style: none;
 }
 
+ul.question-list li {
+    margin-bottom: 10px;
+}
+
+ul.question-list li:last-child {
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
 ul.question-list li div {
     min-height: 50px;
-    margin-bottom: 2px;
     width: 270px;
     float: right;
     display: inline-block;
