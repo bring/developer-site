@@ -73,21 +73,21 @@
 					<div class="title">RELATED COMMENTS</div>
                 	<ul class="question-list">
 				            <li class="group">
-				                <img width="50" height="50" src="img/logo.png" />
+				                <img width="50" height="50" src="img/face.png" />
 								<div>
 				                    How do I integrate the shipping guide in
 									my Neverland giftshop?
 				                </div>
 				            </li>
 				            <li class="group">
-				                <img width="50" height="50" src="img/logo.png" />
+				                <img width="50" height="50" src="img/face.png" />
 								<div>
 				                    How do I integrate the shipping guide in
 									my Neverland giftshop?
 				                </div>
 				            </li>
 				            <li class="group">
-				                <img width="50" height="50" src="img/logo.png" />
+				                <img width="50" height="50" src="img/face.png" />
 								<div>
 				                    How do I integrate the shipping guide in
 									my Neverland giftshop?
