@@ -9,31 +9,25 @@
 <body>
     <div class="wrapper">
         <misc:header />
-        <div class="main content group">
+        <div class="main content">
 
-            <div class="menutabs">
+            <div class="menutabs group">
                 <div class="learn-header menutab-selected">
-                    <h2>
-                        <a href="learn.html">LEARN</a>
-                    </h2>
+                    <h2><a href="learn.html">LEARN</a></h2>
                     <span> TUTORIALS, EXAMPLES, API REFERENCE </span>
                 </div>
 
                 <div class="download-header">
-                    <h2>
-                        <a href="download.html">DOWNLOAD</a>
-                    </h2>
+                    <h2><a href="download.html">DOWNLOAD</a></h2>
                     <span> PLUGINS, WIDGETS, SDK </span>
                 </div>
 
                 <div class="talk-header">
-                    <h2>
-                        <a href="talk.html">TALK</a>
-                    </h2>
+                    <h2><a href="talk.html">TALK</a></h2>
                     <span> ASK, WRITE, CODE, SHARE </span>
                 </div>
             </div>
-
+ 
             <div class="menubox group">
                 <div class="menuitems">
                     <ul>
@@ -61,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="learncontent">
+            <div class="main-content">
                 <p>bla bla</p>
             </div>
         </div>

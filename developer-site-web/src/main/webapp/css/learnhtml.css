@@ -14,7 +14,7 @@
     box-shadow: -1px -1px 1px #ddd, 1px -1px 1px #ddd;
 }
 
-.menutab-selected {
+.menutabs .menutab-selected {
     background-color: #3b3b3b;
 }
 
