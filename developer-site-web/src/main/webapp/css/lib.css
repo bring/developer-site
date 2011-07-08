@@ -16,7 +16,6 @@ html[xmlns] .group {
     height: 0;
 }
 
-/* Box */
 .box {
     margin: 5px;
 }
@@ -29,18 +28,18 @@ html[xmlns] .group {
     background-color: #3b3b3b;
 }
 
+.section-header h2, .section-header h2 a {
+    color: #79b54b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .section-content {
     background-color: #f2f2f2;
 }
 
-.section-title {
-    color: #79b54b;
-    display: block;
-    font-weight: bold;
-}
-
-a.section-title {
-    text-decoration: none;
+.section-content div {
+    
 }
 
 .box-text {

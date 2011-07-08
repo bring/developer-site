@@ -45,9 +45,8 @@ body:before {
 	float: left;
 }
 
-.learn .section-header, .download .section-header, .talk .section-header {
+.learn .box:first-child, .download .section-header, .talk .section-header {
     width: 302px;
-    margin: 5px;
 }
 
 .learn .section-content, .download .section-content, .talk .section-content {
@@ -62,4 +61,4 @@ body:before {
 	margin-top: -150px; 
 	height: 30px;
 	clear:both;
-} 
+}
