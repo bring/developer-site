@@ -91,7 +91,6 @@ div.talk-header div.title a span {
 div.learn-header .subtitle,
 div.download-header .subtitle,
 div.talk-header .subtitle {
-    font-weight: bold;
     font-size: 0.75em;
     position: absolute;
     top: 40px;
