@@ -41,16 +41,50 @@ body:before {
 	margin-bottom: 10px;
 }
 
-.learn, .download, .talk {
+div.learn, 
+div.download, 
+div.talk {
 	float: left;
 }
 
-.learn .box:first-child, .download .section-header, .talk .section-header {
+div.learn-header, 
+div.download-header, 
+div.talk-header {
     width: 302px;
+    height: 50px;
+    padding: 10px;
+    overflow: hidden;
+    color: #b7b7b7;
+    background-color: #3b3b3b;
 }
 
-.learn .section-content, .download .section-content, .talk .section-content {
+div.learn-content, 
+div.download-content, 
+div.talk-content {
     width: 322px;
+    background-color: #f2f2f2;
+}
+
+div.learn-header h2 a,
+div.download-header h2 a,
+div.talk-header h2 a {
+    color: #79b54b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div.learn-footer {
+    padding: 10px;
+}
+
+div.talk-footer {
+    padding: 10px;
+    background-color: #e5e5e5;
+}
+
+div.download-content h3 {
+    padding: 10px;
+    background-color: #f2f2f2;    
 }
 
 .footer {

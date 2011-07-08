@@ -7,7 +7,7 @@
 <misc:head />
 
 <body>
-	<div class="wrapper" style="height: 100%;" >
+	<div class="wrapper">
 	    <misc:header />
 	    
 	    <div class="main content group">

@@ -1,4 +1,5 @@
 /* Group (clearfix) */
+
 html[xmlns] .group {
     display: block;
 }
@@ -16,50 +17,17 @@ html[xmlns] .group {
     height: 0;
 }
 
-.box {
-    margin: 5px;
-}
-
-.section-header {
-    height: 50px;
-    padding: 10px;
-    overflow: hidden;
-    color: #b7b7b7;
-    background-color: #3b3b3b;
-}
-
-.section-header h2, .section-header h2 a {
-    color: #79b54b;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.section-content {
-    background-color: #f2f2f2;
-}
-
-.section-content div {
-    
-}
-
-.box-text {
-    padding: 10px;
-    background-color: #e5e5e5;
-}
-
 /* Question list */
+
 ul.question-list {
     list-style: none;
 }
 
-img.question-list {
-    float: left;
-}
-
-.question {
+ul.question-list li div {
     min-height: 50px;
     margin-bottom: 2px;
-    width: 259px;
+    width: 270px;
+    margin-left: 2px;
     float: right;
     display: inline-block;
     background-color: #e5e5e5;
@@ -67,36 +35,31 @@ img.question-list {
 }
 
 /* Widget preview */
-.widget-preview {
+
+div.widget-preview {
     overflow: hidden;
-    width: 154px;
+    width: 161px;
     min-height: 40px;
-    float: right;
+    float: left;
     background-color: #d9d9d9;
 }
 
-.widget-preview:first-child {
-    float: left;
+div:first-child.widget-preview {
+    width: 159px;
     margin-right: 2px;
 }
 
-.widget-title,.widget-preview-content {
+div.widget-preview h4, 
+div.widget-preview p {
     padding: 10px;
 }
 
-.widget-preview-content {
+div.widget-preview p {
     background-color: #e3dcd3;
 }
 
-.menubox {
-    width: 100%;
-    height: 300px;
-    background-color: #3b3b3b;
-    clear: both;
-    margin: 0 5px 0 5px;
-}
-
 /* Tabs */
+
 .tabs {
     list-style: none;
 }
@@ -123,7 +86,12 @@ img.question-list {
 }
 
 /* Misc */
-.dropdown {
+
+.box {
+    margin: 5px;
+}
+
+.quote {
     padding: 10px;
-    background-color: #f2f2f2;
+    background-color: #e5e5e5;
 }
