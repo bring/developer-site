@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <div class="learn">
-    <div class="section-header box">
+   <div class="section-header box">
        <h2 class="section-title"><a class="section-title" href="learn.html">LEARN</a></h2>
        <span class="box-subtitle">
            TUTORIALS, EXAMPLES, API REFERENCE

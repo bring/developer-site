@@ -10,7 +10,7 @@
 	<div class="wrapper" style="height: 100%;" >
 	    <misc:header />
 	    
-	    <div class="content main group">
+	    <div class="main content group">
 		    <misc:showcase />
 		    <misc:learn />
 	        <misc:download />

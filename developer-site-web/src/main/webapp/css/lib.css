@@ -22,19 +22,15 @@ html[xmlns] .group {
 }
 
 .section-header {
-    padding: 10px;
     height: 50px;
+    padding: 10px;
     overflow: hidden;
     color: #b7b7b7;
-    padding-top: 10px;
-    padding-bottom: 10px;
     background-color: #3b3b3b;
-    margin: 10px 5px;
 }
 
 .section-content {
     background-color: #f2f2f2;
-    margin: 10px 5px;
 }
 
 .section-title {
@@ -115,7 +111,7 @@ img.question-list {
     text-decoration: none;
 }
 
-.tabs li a:hover {
+.tabs li a:hover, .tabs li a.tabs-chosen {
     background: #7fc14b;
 }
 

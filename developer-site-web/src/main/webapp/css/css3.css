@@ -26,9 +26,7 @@
   box-shadow: inset 0px 10px 8px #888;
 }
 
-.tabs li a:hover {
-/*   -moz-box-shadow: 0 0 5px #999; */
-/*   -webkit-box-shadow: 0 0 5px #999; */
+.tabs li a:hover, .tabs li a.tabs-chosen {
   box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
   z-index: 1;
 }

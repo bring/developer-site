@@ -7,7 +7,7 @@
         
         <ul class="tabs group">
         	<li><a>BACK TO BRING.COM</a></li>
-        	<li><a>DEVELOPER.BRING.COM</a></li>
+        	<li><a class="tabs-chosen">DEVELOPER.BRING.COM</a></li>
         </ul>
     </div>
 </div>
