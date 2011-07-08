@@ -7,6 +7,14 @@ body {
     background-color: #afb0b2;
 }
 
+blockquote:before {
+    content: "\"";
+}
+
+blockquote:after {
+    content: "\"";
+}
+
 /*Opera Fix - sticky footer*/
 body:before {
 	content:"";
