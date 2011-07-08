@@ -76,7 +76,6 @@ div.widget-preview p {
 .tabs li a {
     cursor: pointer;
     color: #676767;
-    font-weight: bold;
     background: #e1e1e1;
     float: left;
     display: block;
