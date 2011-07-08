@@ -58,6 +58,19 @@ div.talk-header {
     background-color: #3b3b3b;
 }
 
+div.learn-header h2 a,
+div.download-header h2 a,
+div.talk-header h2 a {
+    color: #79b54b;
+    text-decoration: none;
+}
+
+div.learn-header span,
+div.download-header span,
+div.talk-header span {
+    font-weight: bold;
+}
+
 div.learn-content, 
 div.download-content, 
 div.talk-content {
@@ -65,12 +78,9 @@ div.talk-content {
     background-color: #f2f2f2;
 }
 
-div.learn-header h2 a,
-div.download-header h2 a,
-div.talk-header h2 a {
-    color: #79b54b;
-    font-weight: bold;
-    text-decoration: none;
+div.download-content h3 {
+    padding: 10px;
+    background-color: #f2f2f2;    
 }
 
 div.learn-footer {
@@ -80,11 +90,6 @@ div.learn-footer {
 div.talk-footer {
     padding: 10px;
     background-color: #e5e5e5;
-}
-
-div.download-content h3 {
-    padding: 10px;
-    background-color: #f2f2f2;    
 }
 
 .footer {
