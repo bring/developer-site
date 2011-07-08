@@ -70,6 +70,7 @@ div.widget-preview p {
 
 .tabs li {
     display: inline;
+    font-size: 0.75em;
 }
 
 .tabs li a {

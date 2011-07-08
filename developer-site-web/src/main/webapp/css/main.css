@@ -47,6 +47,12 @@ div.talk {
 	float: left;
 }
 
+div.learn-header div.title, 
+div.download-header div.title, 
+div.talk-header div.title {
+    font-size: 1.25em;
+}
+
 div.learn-header, 
 div.download-header, 
 div.talk-header {
@@ -59,9 +65,9 @@ div.talk-header {
     position: relative;
 }
 
-div.learn-header h2 a,
-div.download-header h2 a,
-div.talk-header h2 a {
+div.learn-header div.title a,
+div.download-header div.title a,
+div.talk-header div.title a {
     color: #79b54b;
     text-decoration: none;
     position: absolute; 
@@ -73,9 +79,9 @@ div.talk-header h2 a {
     z-index: 1;
 }
 
-div.learn-header h2 a span,
-div.download-header h2 a span,
-div.talk-header h2 a span {
+div.learn-header div.title a span,
+div.download-header div.title a span,
+div.talk-header div.title a span {
     position: absolute; 
     display: block; 
     left: 10px; 
@@ -99,7 +105,7 @@ div.talk-content {
     background-color: #f2f2f2;
 }
 
-div.download-content h3 {
+div.download-content div.title {
     padding: 10px;
     background-color: #f2f2f2;    
 }

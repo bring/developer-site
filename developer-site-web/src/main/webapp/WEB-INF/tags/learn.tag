@@ -2,7 +2,7 @@
 
 <div class="learn">
    <div class="learn-header box">
-       <h2><a href="learn.html"><span>LEARN</span></a></h2>
+       <div class="title"><a href="learn.html"><span>LEARN</span></a></div>
        <span class="subtitle">TUTORIALS, EXAMPLES, API REFERENCE</span>
    </div>
    <div class="learn-content box">

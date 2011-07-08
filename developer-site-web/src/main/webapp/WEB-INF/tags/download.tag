@@ -2,11 +2,11 @@
 
 <div class="download">
     <div class="download-header box">
-        <h2><a href="#"><span>DOWNLOAD</span></a></h2>
+        <div class="title"><a href="#"><span>DOWNLOAD</span></a></div>
         <span class="subtitle">PLUGINS, WIDGETS, SDK</span>
     </div>
     <div class="download-content box">
-        <h3 >Popular widgets</h3>
+        <div class="title">Popular widgets</div>
         <div class="group">
             <div class="widget-preview">
                 <h4>IN-MAP TRACKING</h4>
