@@ -61,12 +61,19 @@ div:first-child.widget-preview {
     margin-right: 2px;
 }
 
-div.widget-preview h4, 
-div.widget-preview p {
-    padding: 10px;
+div.widget-preview div.subtitle {
+    padding: 10px;    
+    font-size: 0.75em;
+    font-weight: bold;
+}
+
+div.widget-preview div.subtitle:after {
+    content: "⬇";
+    float: right;
 }
 
 div.widget-preview p {
+    padding: 10px;
     background-color: #e3dcd3;
 }
 

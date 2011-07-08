@@ -9,11 +9,11 @@
         <div class="title">Popular widgets</div>
         <div class="group">
             <div class="widget-preview">
-                <h4>IN-MAP TRACKING</h4>
+                <div class="subtitle">IN-MAP TRACKING</div>
                 <p>Blabla bal bal baba.</p>
             </div>
             <div class="widget-preview">
-                <h4>PRICE ESTIMATE</h4>
+                <div class="subtitle">PRICE ESTIMATE</div>
                 <p>Blabla bal bal baba.</p>
             </div>
         </div>

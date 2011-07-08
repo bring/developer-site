@@ -118,7 +118,13 @@ div.talk-content {
 
 div.download-content div.title {
     padding: 10px;
-    background-color: #fff;    
+    background-color: #fff;
+    font-size: 0.75em;
+}
+
+div.download-content div.title:before {
+    content: "ν ";
+    margin-right: 5px;
 }
 
 div.learn-footer {
