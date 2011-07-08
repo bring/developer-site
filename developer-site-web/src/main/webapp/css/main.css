@@ -7,6 +7,10 @@ body {
     background-color: #afb0b2;
 }
 
+blockquote {
+    margin-bottom: 5px;
+}
+
 blockquote:before {
     content: "\"";
 }
@@ -109,7 +113,7 @@ div.learn-content,
 div.download-content, 
 div.talk-content {
     width: 322px;
-    background-color: #f2f2f2;
+    background-color: #fff;
 }
 
 div.download-content div.title {
