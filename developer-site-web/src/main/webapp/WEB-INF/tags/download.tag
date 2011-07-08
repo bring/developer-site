@@ -2,10 +2,8 @@
 
 <div class="download">
     <div class="download-header box">
-        <h2><a>DOWNLOAD</a></h2>
-        <span>
-            PLUGINS, WIDGETS, SDK
-        </span>
+        <h2><a href="#"><span>DOWNLOAD</span></a></h2>
+        <span class="subtitle">PLUGINS, WIDGETS, SDK</span>
     </div>
     <div class="download-content box">
         <h3 >Popular widgets</h3>

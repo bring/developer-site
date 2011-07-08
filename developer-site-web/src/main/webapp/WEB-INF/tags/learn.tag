@@ -2,10 +2,8 @@
 
 <div class="learn">
    <div class="learn-header box">
-       <h2><a href="learn.html">LEARN</a></h2>
-       <span>
-           TUTORIALS, EXAMPLES, API REFERENCE
-       </span>
+       <h2><a href="learn.html"><span>LEARN</span></a></h2>
+       <span class="subtitle">TUTORIALS, EXAMPLES, API REFERENCE</span>
    </div>
    <div class="learn-content box">
         <div class="quote">

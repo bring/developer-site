@@ -10,7 +10,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acron
 	font-weight: inherit;
 	font-style: inherit;
 	font-size: 100%;
-	font-family: Arial;
+    font-family: Arial, sans-serif; 
 	vertical-align: baseline;
 }
 
@@ -49,11 +49,10 @@ a img {
 
 /* developer.bring.com typesetting */
 
-span {
-    font-size: 0.75em;
+p, blockquote {
+   font-size: 0.75em; 
 }
 
 h2 {
-	font-family: Arial, sans-serif; 
 	font-size: 1.25em;
 }

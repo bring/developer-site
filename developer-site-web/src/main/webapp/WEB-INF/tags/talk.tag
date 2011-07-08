@@ -2,8 +2,8 @@
 
 <div class="talk">
 	<div class="talk-header box">
-		<h2><a>TALK</a></h2>
-		<span> ASK, WRITE, CODE, SHARE </span>
+		<h2><a href="#"><span>TALK</span></a></h2>
+		<span class="subtitle"> ASK, WRITE, CODE, SHARE </span>
 	</div>
 	<div class="talk-content box">
 		<ul class="question-list">

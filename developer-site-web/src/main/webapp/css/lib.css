@@ -27,11 +27,15 @@ ul.question-list li div {
     min-height: 50px;
     margin-bottom: 2px;
     width: 270px;
-    margin-left: 2px;
     float: right;
     display: inline-block;
     background-color: #e5e5e5;
     overflow: hidden;
+}
+
+ul.question-list li img {
+    float: left;
+    width: 50px;
 }
 
 /* Widget preview */
