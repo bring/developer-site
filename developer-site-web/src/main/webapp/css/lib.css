@@ -75,7 +75,8 @@ div.widget-preview p {
 
 .tabs li a {
     cursor: pointer;
-    color: black;
+    color: #676767;
+    font-weight: bold;
     background: #e1e1e1;
     float: left;
     display: block;
@@ -87,6 +88,7 @@ div.widget-preview p {
 }
 
 .tabs li a:hover, .tabs li a.tabs-chosen {
+    color: #fff;
     background: #7fc14b;
 }
 
