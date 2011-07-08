@@ -7,23 +7,23 @@
 <misc:head />
 
 <body>
-	<div class="wrapper" style="height: 100%;" >
+	<div class="wrapper">
 	    <misc:header />
 	    
 	    <div class="main content group">
-				    <div class="menutab selected">
+				    <div class="menutab learn-header selected">
 				       <h2 class="learn"><a href="learn.html">LEARN</a></h2>
 				       <span class="box-subtitle">
 				           TUTORIALS, EXAMPLES, API REFERENCE
 				       </span>
 				   </div>
-				    <div class="menutab">
+				    <div class="menutab download-header">
 				       <h2 class="download"><a href="download.html">DOWNLOAD</a></h2>
 				       <span class="box-subtitle">
 				           PLUGINS, WIDGETS, SDK
 				       </span>
 				   </div>
-				    <div class="menutab">
+				    <div class="menutab talk-header">
 				       <h2 class="talk"><a href="talk.html">TALK</a></h2>
 				       <span class="box-subtitle">
 				           ASK, WRITE, CODE, SHARE
