@@ -12,20 +12,18 @@
         <div class="main content">
 
             <div class="menutabs group">
-                <div class="learn-header menutab-selected">
-                    <h2><a href="learn.html">LEARN</a></h2>
-                    <span> TUTORIALS, EXAMPLES, API REFERENCE </span>
-                </div>
-
-                <div class="download-header">
-                    <h2><a href="download.html">DOWNLOAD</a></h2>
-                    <span> PLUGINS, WIDGETS, SDK </span>
-                </div>
-
-                <div class="talk-header">
-                    <h2><a href="talk.html">TALK</a></h2>
-                    <span> ASK, WRITE, CODE, SHARE </span>
-                </div>
+			   <div class="learn-header box menutab-selected">
+			       <h2><a href="learn.html"><span>LEARN</span></a></h2>
+			       <span class="subtitle">TUTORIALS, EXAMPLES, API REFERENCE</span>
+			   </div>
+			   <div class="learn-header box">
+			       <h2><a href="learn.html"><span>DOWNLOAD</span></a></h2>
+			       <span class="subtitle">PLUGINS, WIDGETS, SDK</span>
+			   </div>
+			   <div class="learn-header box">
+			       <h2><a href="learn.html"><span>LEARN</span></a></h2>
+			       <span class="subtitle">ASK, WRITE, CODE, SHARE</span>
+			   </div>
             </div>
  
             <div class="menubox group">
