@@ -83,6 +83,8 @@ div.widget-preview p {
 
 .tabs li:first-child a:before {
     content: "‹ ";
+    margin-right: 5px;
+    font-weight: bold;
 }
 
 .tabs li a {

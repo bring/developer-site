@@ -9,9 +9,9 @@ div.menutab {
     padding: 10px;
     overflow: hidden;
     color: #b7b7b7;
-    -moz-box-shadow: -1px -1px 1px #ddd, 1px -1px 1px #ddd;
-    -webkit-box-shadow: -1px -1px 1px #ddd, 1px -1px 1px #ddd;
-    box-shadow: -1px -1px 1px #ddd, 1px -1px 1px #ddd;
+    -moz-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
+    -webkit-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
+    box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
 }
 
 div.menutab-selected {
@@ -23,6 +23,9 @@ div.menutab-selected {
     min-height: 20px;
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
+    -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+    -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+    box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd;
 }
 
 .menuitems {
@@ -61,8 +64,11 @@ div:last-child.menuitems{
 .main-content {
     width: 986px;
     min-height: 300px;
-    margin: 0 5px 0 5px;
+    margin: 0 5px 50px 5px;
     background-color: #fff;
+    -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+    -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+    box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
 }
 
 .main-content .talk-content{
@@ -71,8 +77,8 @@ div:last-child.menuitems{
 }
 
 .article {
-	width: 654px;
-	margin: 10px 10px 0 0;
+	width: 644px;
+	margin: 10px 10px 20px 10px;
     float: left;
 }
 
@@ -82,6 +88,7 @@ div:last-child.menuitems{
     background-color: #ddd;
     color: #3b3b3b;
     font-weight:bold;
+    margin-left: -10px;
 }
 
 div.talk-content div.title {
