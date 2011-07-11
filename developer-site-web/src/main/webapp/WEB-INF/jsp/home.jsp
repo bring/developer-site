@@ -14,9 +14,9 @@
             <misc:showcase />
         
             <div class="group">
-    		    <misc:learnlauncher cssClass="span-2 box" />
-                <misc:downloadlauncher cssClass="span-2 box" />
-                <misc:talklauncher cssClass="span-2 box" />
+    		    <misc:learnlauncher cssClass="box span-2" />
+                <misc:downloadlauncher cssClass="box span-2" />
+                <misc:talklauncher cssClass="box span-2 last" />
             </div>
             
             <div class="group">

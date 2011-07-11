@@ -46,6 +46,71 @@ html[xmlns] .group {
     margin-right: 0;
 }
 
+/* Tabs */
+
+.tabs {
+    list-style: none;
+}
+
+.tabs li {
+    display: inline;
+    font-size: 0.75em;
+}
+
+.tabs li:first-child a:before {
+    content: "‹ ";
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.tabs li a {
+    cursor: pointer;
+    color: #676767;
+    background: #e1e1e1;
+    float: left;
+    display: block;
+    padding: 4px 10px;
+    margin-left: -1px;
+    position: relative;
+    left: 1px;
+    text-decoration: none;
+}
+
+.tabs li a:hover, .tabs li a.tabs-chosen {
+    color: #fff;
+    background: #7fc14b;
+    
+    /* css3 */
+    box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
+    z-index: 1;
+}
+
+/* Box with shadow */
+
+.box {
+    margin: 5px;
+    background-color: #fff;
+    
+    /* css3 */
+    -moz-box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+    box-shadow: 0 0 5px #999;
+}
+
+.box-footer {
+    padding: 10px;
+}
+
+.box-text {
+    font-size: 0.75em;
+    padding: 10px;
+    background-color: f0f0f1;
+}
+
+.box-title {
+    background-color: #fff;
+}
+
 /* Avatar list */
 
 ul.avatar-list {
@@ -108,45 +173,6 @@ ul.avatar-list li:last-child {
     float: right;
 }
 
-/* Tabs */
-
-.tabs {
-    list-style: none;
-}
-
-.tabs li {
-    display: inline;
-    font-size: 0.75em;
-}
-
-.tabs li:first-child a:before {
-    content: "‹ ";
-    margin-right: 5px;
-    font-weight: bold;
-}
-
-.tabs li a {
-    cursor: pointer;
-    color: #676767;
-    background: #e1e1e1;
-    float: left;
-    display: block;
-    padding: 4px 10px;
-    margin-left: -1px;
-    position: relative;
-    left: 1px;
-    text-decoration: none;
-}
-
-.tabs li a:hover, .tabs li a.tabs-chosen {
-    color: #fff;
-    background: #7fc14b;
-    
-    /* css3 */
-    box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
-    z-index: 1;
-}
-
 /* Quote */
 
 .quote {
@@ -166,32 +192,6 @@ ul.avatar-list li:last-child {
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;
-}
-
-/* Box with shadow */
-
-.box {
-    margin: 5px;
-    background-color: #fff;
-    
-    /* css3 */
-    -moz-box-shadow: 0 0 5px #999;
-    -webkit-box-shadow: 0 0 5px #999;
-    box-shadow: 0 0 5px #999;
-}
-
-.box-footer {
-    padding: 10px;
-}
-
-.box-text {
-    font-size: 0.75em;
-    padding: 10px;
-    background-color: f0f0f1;
-}
-
-.box-title {
-    background-color: #fff;
 }
 
 /* Showcase */
