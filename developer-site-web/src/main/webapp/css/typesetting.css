@@ -8,11 +8,20 @@
 
 .article h1 {
     width: 634px;
-    padding: 20px 10px 20px 10px;
-    background-color: #ddd;
+    padding: 10px 10px 10px 10px;
+    background-color: #eee;
     color: #3b3b3b;
     font-weight:bold;
     margin-left: -10px;
+    margin-bottom: 10px;
+}
+
+
+.article h2 {
+    width: 624px;
+    color: #3b3b3b;
+    margin: 20px 5px 20px 5px;
+    border-bottom: 5px solid #ddd; 
 }
 
 div.talk-content div.title {
@@ -20,4 +29,15 @@ div.talk-content div.title {
     border-bottom: 5px solid #bbb;
     margin-bottom: 10px;
     background-color: #fff;
+}
+
+.article ul {
+    list-style: none;
+    margin: 10px 5px 10px 5px;
+}
+
+.article li:before {
+    list-style: none; 
+    content: "\203A";
+    margin-right: 5px;
 }

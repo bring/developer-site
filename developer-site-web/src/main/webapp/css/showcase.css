@@ -26,6 +26,7 @@
 .toolbox{
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    overflow: hidden;
 }
 
 .toolbox ul {

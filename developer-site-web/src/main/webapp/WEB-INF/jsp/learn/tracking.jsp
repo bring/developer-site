@@ -29,34 +29,40 @@
             <div class="main-content group">
 				<div class="article">
 					<h1>Tracking - Information for developers</h1>
+					<h2>Tracking Link</h2>
                     <p>
-                        You can link to the tracking so you can see it in the URL to a common tracking. 
-                        For example: http://sporing.bring.no/sporing.html?q =...
+                        Links to tracking can be the same as the URL of a normal tracking request. 
+                        E.g.: http://sporing.bring.no/sporing.html?q=...
                     </p>
 
-                    <p>The parameter "q" is the search criterion (baseline, transmit or piece number).</p>
-
+                    <p>The parameter "q" is the query string (reference, shipment or package number).</p>
+                    <br/>
                     <p>
-                        If you are looking at the shipper's reference, it is advantageous to filter on 
-                        the sender's player number (if available), get more unique hits. This is on the 
-                        parameter prosecutor number, eg & prosecutor number = 123
+                        If the query string is a sender's reference, then it's recommended to filter on the sender's id ("aktørnummer"), if available. 
+                        Then the results will be unique for that sender. This is done with the parameter aktornummer, e.g. &aktornummer=123.
+                    </p>
+                    <br/>
+                    <p>
+                        For results without the top menu, add the following request prameter: &layout=standalone
+                        E.g.: http://sporing.bring.no/sporing.html?q=...&layout=standalone
+                    </p>
+                    <br/>
+                    <p>
+                        The latter is suited for e.g. popup windows. Please note that the width of the popup window should be equal to or greater than 1024 pixels.
                     </p>
                     
-                    <p>
-                        If you want over the top menu, you can add the parameter & layout = stand alone in the URL.
-                        For example: http://sporing.bring.no/sporing.html?q=...&layout=standalone
-                    </p>
-                    
-                    <p>
-                        The latter is suitable for example for use in popup windows. Note that the page width 
-                        of the popup window must be greater than or equal to 1024 pixels.
-                    </p>
-                    
-                    <h2>Tracking Link</h2>
-                    <h2>Tracking API </h2>
                     <h2>XML</h2>
+
                     <h2>JSON</h2>
                     <h2>Information</h2>
+
+					<ul>
+						<li>test</li>
+						<li>test</li>
+						<li>test</li>
+						<li>test</li>
+						<li>test</li>
+					</ul>
 				</div>
 				<div class="talk-content">
 					<div class="title">RELATED COMMENTS</div>
