@@ -36,7 +36,7 @@
 	cursor: pointer;
 }
 
-.toolbox li:last-child {
+.quickstart-list li:last-child {
     height: 40px;
     margin-bottom: 0;
 }
@@ -60,12 +60,7 @@
 }
 
 .toolbox li.selected {
-/* 	background-color: #f1f1f1; */
-	
-	/* css3 */
-/*     -moz-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd; */
-/*     -webkit-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd; */
-/*     box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd; */
+    border: 1px solid #000;
 }
 
 .toolbox .selected h3,

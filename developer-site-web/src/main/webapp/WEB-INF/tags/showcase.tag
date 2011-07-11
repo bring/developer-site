@@ -15,7 +15,7 @@
     <div class="toolbox span-2 last">
         <div class="intro">
             <span class="toolbox-category">INTRO</span>
-            <ul class="toolbox-list">
+            <ul class="intro-list">
                 <li class="selected"><a>WHAT ARE BRING APIS?</a></li>
                 <li><a>INTEGRATE SHIPPING GUIDE WIDGET</a></li>
             </ul>
@@ -23,7 +23,7 @@
         
         <div class="quickstart">
             <span class="toolbox-category">QUICKSTART</span>
-            <ul class="toolbox-list">
+            <ul class="quickstart-list">
                 <li><a>ADD SHIPMENT TRACKING WIDGET</a></li>
                 <li><a>VALIDATE POSTAL CODE FIELD</a></li>
                 <li><a>VALIDATE POSTAL CODE FIELD</a></li>

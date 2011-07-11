@@ -12,38 +12,12 @@
         <div class="main content">
 
             <div class="group">
-               <misc:learnlauncher cssClass="menutab menutab-selected"/>
-               <misc:downloadlauncher cssClass="menutab" />
+               <misc:learnlauncher cssClass="menutab"/>
+               <misc:downloadlauncher cssClass="menutab menutab-selected" />
                <misc:talklauncher cssClass="menutab" />
             </div>
  
             <div class="menubox group">
-                <div class="menulist">
-                    <ul>
-                        <li><a class="selected" href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                    </ul>
-                </div>
-                <div class="menulist">
-                    <ul>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a class="selected" href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                    </ul>
-                </div>
-                <div class="menulist">
-	                <ul>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-						<li><a class="selected" href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>
-                        <li><a href="#">SHIPPING GUIDE API <img src="img/arrowright.png"/></a></li>                        
-                    </ul>
-                </div>
             </div>
 
             <div class="main-content group">

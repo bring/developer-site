@@ -28,21 +28,21 @@ div.menutab-selected {
     box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd;
 }
 
-.menuitems {
+.menulist {
     width: 322px;
     margin: 20px 10px 20px 0px;
     float: left;
 }
 
-div:last-child.menuitems{
+div:last-child.menulist{
     margin: 20px 0px 20px 0px;
 }
 
-.menuitems ul li{
+.menulist ul li{
     margin: 2px 11px 2px 11px;
 }
 
-.menuitems ul li a{
+.menulist ul li a{
 	display: block;
     width: 300px;
     height: 30px;
@@ -51,12 +51,12 @@ div:last-child.menuitems{
     color: #ccc;
 }
 
-.menuitems ul li a.selected{
+.menulist ul li a.selected{
     background-color: #ccc;
     color: #fff;
 }
 
-.menuitems ul li a img{
+.menulist ul li a img{
     float:right;
     margin: 5px;
 }
