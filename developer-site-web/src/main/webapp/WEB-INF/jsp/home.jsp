@@ -14,9 +14,9 @@
             <misc:showcase />
         
             <div class="group">
-    		    <misc:learnlauncher />
-                <misc:downloadlauncher />
-                <misc:learnlauncher />
+    		    <misc:learnlauncher cssClass="col-3 box" />
+                <misc:downloadlauncher cssClass="col-3 box" />
+                <misc:talklauncher cssClass="col-3 box" />
             </div>
             
             <div class="group">
