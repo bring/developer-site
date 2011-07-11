@@ -246,3 +246,36 @@ ul.avatar-list li:last-child {
     top: 40px;
     left: 10px;
 }
+
+/* talkbox */
+
+.talkbox {
+    margin: 10px;
+    background-color: #f0f0f1;
+}
+
+.talkbox-header {
+    padding: 5px;
+    border-bottom: 1px solid black;
+    color: #ccc;
+    background-color: #555;
+}
+
+.talkbox-footer {
+    border-top: 1px solid black;
+    color: #fff;
+    background-color: #999;
+}
+
+.talkbox-title {
+    padding-left: 10px;
+}
+
+.talkbox-image {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.talkbox blockquote {
+}

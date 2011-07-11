@@ -10,7 +10,7 @@
     <div class="wrapper">
         <misc:header />
         <div class="main content">
-
+        
             <div class="group">
                <misc:learnlauncher cssClass="menutab menutab-selected"/>
                <misc:downloadlauncher cssClass="menutab" />
