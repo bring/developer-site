@@ -23,40 +23,41 @@ div.menutab-selected {
     min-height: 20px;
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
+    
     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
     -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
     box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd;
 }
 
 .menulist {
-    width: 322px;
-    margin: 20px 10px 20px 0px;
-    float: left;
+    list-style: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-div:last-child.menulist{
-    margin: 20px 0px 20px 0px;
-}
-
-.menulist ul li{
-    margin: 2px 11px 2px 11px;
-}
-
-.menulist ul li a{
+.menulist li a {
+    padding: 5px;
+    width: 292px;
+    margin: 2px 10px;
 	display: block;
-    width: 300px;
-    height: 30px;
     background-color: #666;
     text-decoration: none;
     color: #ccc;
 }
 
-.menulist ul li a.selected{
+.menubutton:after {
+    content: "\203A";
+    float: right;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.menulist  li a.selected, .menulist li a:hover {
     background-color: #ccc;
     color: #fff;
 }
 
-.menulist ul li a img{
+.menulist  li a img {
     float:right;
     margin: 5px;
 }

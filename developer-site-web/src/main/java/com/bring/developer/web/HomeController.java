@@ -25,4 +25,9 @@ public class HomeController {
     public String talk() {
         return "talk";
     }
+    
+    @RequestMapping(value = "tracking.html")
+    public String tracking() {
+        return "learn/tracking";
+    }
 }
