@@ -11,10 +11,19 @@
 	    <misc:header />
 	    
 	    <div class="main content group">
-		    <misc:showcase />
-		    <misc:learn />
-	        <misc:download />
-	        <misc:talk />
+            <misc:showcase />
+        
+            <div class="group">
+    		    <misc:learnlauncher />
+                <misc:downloadlauncher />
+                <misc:learnlauncher />
+            </div>
+            
+            <div class="group">
+                <misc:quote />
+                <misc:popularwidgets />
+                <misc:questions />
+            </div>
 		</div>
 	</div>
 	<misc:footer />

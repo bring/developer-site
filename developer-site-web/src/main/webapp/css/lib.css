@@ -17,74 +17,74 @@ html[xmlns] .group {
     height: 0;
 }
 
-/* Question list */
+/* Avatar list */
 
-ul.question-list {
+ul.avatar-list {
+    width: 322px;
     list-style: none;
 }
 
-ul.question-list li {
+ul.avatar-list li {
+    font-size: 0.75em;
     margin-bottom: 10px;
 }
 
-ul.question-list li:last-child {
+ul.avatar-list li:last-child {
     margin-top: -8px;
-    margin-bottom: 10px;
 }
 
-.question-content {
+.avatar-list-text {
+    min-height: 40px;
     width: 260px;
     float: right;
-    display: inline-block;
     background-color: #f0f0f1;
-    overflow: hidden;
-    padding: 5px 5px 5px;
-    font-size: 0.75em;
+    padding: 5px;
 }
+
+.avatar-list-footer {
+    min-height: 0;
+    margin: 10px solid red;
+}
+
+.avatar {
+    float: left;
+    width: 50px;
+}
+
+/* Question */
 
 .question-datetime {
     color: #9A9999;
 }
 
-ul.question-list li img {
-    float: left;
-    width: 50px;
+.question-title {
+    font-weight: bold;
 }
 
-.question-author {
-    display: block;
-    font-weight: bold;
+/* Columns */
+
+.leftcol {
+    float: left;   
+}
+
+.rightcol {
+    float: right;
 }
 
 /* Widget preview */
 
-div.widget-preview {
-    overflow: hidden;
-    width: 161px;
-    min-height: 40px;
-    float: left;
+.widget-preview {
+    width: 160px; /* (322px - 2px margin) / 2 */
     background-color: #f0f0f1;
 }
 
-div:first-child.widget-preview {
-    width: 159px;
-    margin-right: 2px;
-}
-
-div.widget-preview div.subtitle {
-    padding: 10px;    
-    font-size: 0.75em;
+.widget-preview .title {
     font-weight: bold;
 }
 
-div.widget-preview div.subtitle:after {
+.widget-title:after {
     content: "⬇";
     float: right;
-}
-
-div.widget-preview p {
-    padding: 10px;
-    background-color: #e3dcd3;
 }
 
 /* Tabs */
@@ -120,6 +120,10 @@ div.widget-preview p {
 .tabs li a:hover, .tabs li a.tabs-chosen {
     color: #fff;
     background: #7fc14b;
+    
+    /* css3 */
+    box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
+    z-index: 1;
 }
 
 /* Quote */
@@ -143,8 +147,28 @@ div.widget-preview p {
     width:0;
 }
 
-/* Misc */
+/* Box with shadow */
 
 .box {
     margin: 5px;
+    background-color: #fff;
+    
+    /* css3 */
+    -moz-box-shadow: 0 0 5px #999;
+    -webkit-box-shadow: 0 0 5px #999;
+    box-shadow: 0 0 5px #999;
+}
+
+.box-footer {
+    padding: 10px;
+}
+
+.box-text {
+    font-size: 0.75em;
+    padding: 10px;
+    background-color: f0f0f1;
+}
+
+.box-title {
+    background-color: #fff;
 }

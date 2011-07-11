@@ -30,6 +30,19 @@ body:before {
 
 .wrapper { /* Contains everything besides the footer */
 	min-height: 100%;
+	
+	/* css3 */
+    -moz-box-shadow: inset 0px 2px 4px #999;
+    -webkit-box-shadow: inset 0px 2px 4px #999;
+    box-shadow: inset 0px 2px 4px #999;
+    background: rgb(226,227,228); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(226,227,228,1) 0%, rgba(226,227,228,1) 85%, rgba(197,199,200,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,227,228,1)), color-stop(85%,rgba(226,227,228,1)), color-stop(100%,rgba(197,199,200,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(226,227,228,1) 0%,rgba(226,227,228,1) 85%,rgba(197,199,200,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(226,227,228,1) 0%,rgba(226,227,228,1) 85%,rgba(197,199,200,1) 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, rgba(226,227,228,1) 0%,rgba(226,227,228,1) 85%,rgba(197,199,200,1) 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e3e4', endColorstr='#c5c7c8',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, rgba(226,227,228,1) 0%,rgba(226,227,228,1) 85%,rgba(197,199,200,1) 100%); /* W3C */
 }
 
 .content {
@@ -53,21 +66,16 @@ body:before {
 	margin-bottom: 10px;
 }
 
-.learn, 
-.download, 
-.talk {
-	float: left;
+.col-3 {
+    float: left;
+    width: 322px;
 }
 
-.learn-header .title, 
-.download-header .title, 
-.talk-header .title {
+.section-title { 
     font-size: 1.25em;
 }
 
-.learn-header, 
-.download-header, 
-.talk-header {
+.section-launcher {
     width: 302px;
     height: 50px;
     padding: 10px;
@@ -77,9 +85,7 @@ body:before {
     position: relative;
 }
 
-.learn-header .title a,
-.download-header .title a,
-.talk-header .title a {
+.section-title a {
     color: #79b54b;
     text-decoration: none;
     position: absolute; 
@@ -91,49 +97,23 @@ body:before {
     z-index: 1;
 }
 
-.learn-header .title a span,
-.download-header .title a span,
-.talk-header .title a span {
+.section-title a span {
     position: absolute; 
     display: block; 
     left: 10px; 
     top: 10px; 
 }
 
-.learn-header .subtitle,
-.download-header .subtitle,
-.talk-header .subtitle {
+.section-description {
     font-size: 0.75em;
     position: absolute;
     top: 40px;
     left: 10px;
 }
 
-.learn-content, 
-.download-content, 
-.talk-content {
+.question-container {
     width: 322px;
     background-color: #fff;
-}
-
-.download-content .title {
-    padding: 10px;
-    background-color: #fff;
-    font-size: 0.75em;
-}
-
-.download-content .title:before {
-    content: "ν ";
-    margin-right: 5px;
-}
-
-.learn-footer {
-    padding: 10px;
-}
-
-.talk-footer {
-    padding: 10px;
-    background-color: #f0f0f1;
 }
 
 .footer {
@@ -144,4 +124,9 @@ body:before {
 	margin-top: -150px; 
 	height: 30px;
 	clear:both;
+	
+	/* css3 */
+    -moz-box-shadow: inset 0px 10px 8px #888;
+    -webkit-box-shadow: inset 0px 10px 8px #888;
+    box-shadow: inset 0px 10px 8px #888;
 }

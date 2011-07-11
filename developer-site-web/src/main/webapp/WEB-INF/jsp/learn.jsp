@@ -12,17 +12,17 @@
         <div class="main content">
 
             <div class="group">
-			   <div class="menutab learn-header box menutab-selected">
-			       <div class="title"><a href="learn.html"><span>LEARN</span></a></div>
-			       <span class="subtitle">TUTORIALS, EXAMPLES, API REFERENCE</span>
+			   <div class="menutab section-launcher box menutab-selected">
+			       <div class="section-title"><a href="learn.html"><span>LEARN</span></a></div>
+			       <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
 			   </div>
-			   <div class="menutab download-header box">
-			       <div class="title"><a href="download.html"><span>DOWNLOAD</span></a></div>
-			       <span class="subtitle">PLUGINS, WIDGETS, SDK</span>
+			   <div class="menutab section-launcher box">
+			       <div class="section-title"><a href="download.html"><span>DOWNLOAD</span></a></div>
+			       <span class="section-description">PLUGINS, WIDGETS, SDK</span>
 			   </div>
-			   <div class="menutab talk-header box">
-			       <div class="title"><a href="talk.html"><span>TALK</span></a></div>
-			       <span class="subtitle">ASK, WRITE, CODE, SHARE</span>
+			   <div class="menutab section-launcher box">
+			       <div class="section-title"><a href="talk.html"><span>TALK</span></a></div>
+			       <span class="section-description">ASK, WRITE, CODE, SHARE</span>
 			   </div>
             </div>
  
@@ -71,30 +71,30 @@
 				</div>
 				<div class="talk-content">
 					<div class="title">RELATED COMMENTS</div>
-                	<ul class="question-list">
+                	<ul class="avatar-list group">
 				            <li class="group">
-				                <img width="50" height="50" src="img/face.png" />
-								<div>
+				                <img class="avatar" src="img/face.png" />
+								<div class="avatar-list-text">
 				                    How do I integrate the shipping guide in
 									my Neverland giftshop?
 				                </div>
 				            </li>
 				            <li class="group">
-				                <img width="50" height="50" src="img/face.png" />
-								<div>
-				                    How do I integrate the shipping guide in
-									my Neverland giftshop?
-				                </div>
-				            </li>
-				            <li class="group">
-				                <img width="50" height="50" src="img/face.png" />
-								<div>
-				                    How do I integrate the shipping guide in
-									my Neverland giftshop?
-				                </div>
-				            </li>
+                                <img class="avatar" src="img/face.png" />
+                                <div class="avatar-list-text">
+                                    How do I integrate the shipping guide in
+                                    my Neverland giftshop?
+                                </div>
+                            </li>
+                            <li class="group">
+                                <img class="avatar" src="img/face.png" />
+                                <div class="avatar-list-text">
+                                    How do I integrate the shipping guide in
+                                    my Neverland giftshop?
+                                </div>
+                            </li>
 							<li class="group">
-								<div>+View all 6 answers</div>
+								<div class="avatar-list-text avatar-list-footer">+View all 6 answers</div>
 				            </li>
 						</ul>
 				</div>
