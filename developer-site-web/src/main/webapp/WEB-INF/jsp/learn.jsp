@@ -12,9 +12,9 @@
         <div class="main content">
         
             <div class="group">
-               <misc:learnlauncher cssClass="menutab menutab-selected"/>
-               <misc:downloadlauncher cssClass="menutab" />
-               <misc:talklauncher cssClass="menutab" />
+               <misc:learnlauncher cssClass="menutab menutab-selected span-2"/>
+               <misc:downloadlauncher cssClass="menutab span-2" />
+               <misc:talklauncher cssClass="menutab span-2" />
             </div>
  
             <div class="menubox group">
@@ -22,13 +22,10 @@
                     <li><a class="menubutton selected" href="tracking.html">TRACKING API</a></li>
                 </ul>
                 <ul class="menulist span-2">
-                    <li><a class="selected menubutton" href="#">API REFERENCE</a></li>
+                <li><a class="menubutton selected" href="tracking.html">TRACKING API</a></li>
                 </ul>
                 <ul class="menulist span-2 last">
-					<li><a class="menubutton" href="#">TRACKING LINK</a></li>
-                    <li><a class="menubutton" href="#">XML</a></li>
-                    <li><a class="menubutton" href="#">JSON</a></li>
-                    <li><a class="menubutton" href="#">INFORMATION</a></li>
+                <li><a class="menubutton selected" href="tracking.html">TRACKING API</a></li>
                 </ul>
             </div>
 

@@ -1,14 +1,12 @@
 /* Menutab */
+
 div.menutab {
-    width: 302px;
     margin: 5px 5px 0 5px;
-    float: left;
-    overflow: hidden;
-    background-color: #f2f2f2;
     height: 50px;
-    padding: 10px;
-    overflow: hidden;
     color: #b7b7b7;
+    background-color: #f2f2f2;
+
+    /* css3 */
     -moz-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
     -webkit-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
     box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;

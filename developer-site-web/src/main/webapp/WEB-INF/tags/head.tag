@@ -11,4 +11,6 @@
     <link rel="stylesheet" type="text/css" href="css/css3.css" />
     <link rel="stylesheet" type="text/css" href="css/learnhtml.css" />
     <link rel="stylesheet" type="text/css" href="css/typesetting.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="js/menutab.js"></script>
 </head>
