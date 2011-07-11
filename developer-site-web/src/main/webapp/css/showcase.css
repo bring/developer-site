@@ -1,74 +1,78 @@
-ul {
-	list-style-type: none;
-}
+/* Introbanner */
 
-/* Showcase developer.bring.com */
-div.showcase {
+.introbanner {
 	background-color: #fff;
-	padding: 10px 8px 10px 8px;
 }
 
-div.showcase .panels {
-	width: 100%;
-	height: 200px;
+.panels {
+	height: 240px;
+    margin-right: 0;
+    padding-right: 10px;
     background-color: #f1f1f1;
+    
+    /* css3 */
     -moz-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
     -webkit-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
     box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
 }
 
-div.showcase .panel {
-    width: 600px;
-    float: left;
-	
+/* Toolbox */
+
+.toolbox-category {
+    visibility: hidden;
+    position: absolute;
 }
 
-ul.toolbox {
-	float: right;
+.toolbox ul {
+	list-style: none;
 	background-color: #fff;
-	height: 100%;
 }
 
-ul.toolbox li {
-	width: 283px;
-	background: #f1f1f1;
-	padding: 7px 10px 7px;
-	margin-bottom: 10px;
+.toolbox li {
+    border-left: 1px solid #ddd;
+/* 	margin-bottom: 10px; */
+	height: 50px;
+    position: relative;
 	cursor: pointer;
 }
 
-ul.toolbox li.hover,ul.toolbox li {
-	background-color: #f1f1f1;  
-    -moz-box-shadow: -1px 0px 1px #ddd;
-    -webkit-box-shadow: -1px 0px 1px #ddd;
-    box-shadow: -1px 0px 1px #ddd;
+.toolbox li:last-child {
+    height: 40px;
+    margin-bottom: 0;
 }
 
-ul.toolbox li.hover,ul.toolbox li.selected {
-	background-color: #f1f1f1;	
-    -moz-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd;
-    -webkit-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd;
-    box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd;
+.toolbox a {
+    width: 321px;
+/*     border-left: 1px solid #ddd; */
+    position: absolute;
+    height: 40px;
+    background: #f1f1f1;
 }
 
-ul.toolbox li.last {
-	margin-bottom: 0;
+.toolbox li>*:before {
+    margin-right: 5px;
+    content: "‹ ";
+    font-weight: bold;
 }
 
-ul.toolbox li.selected h3,ul.toolbox li.hover h3 {
+.toolbox li:hover {
+	background-color: #fff;
+}
+
+.toolbox li.selected {
+/* 	background-color: #f1f1f1; */
+	
+	/* css3 */
+/*     -moz-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd; */
+/*     -webkit-box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd; */
+/*     box-shadow: inset -1px 1px 1px #ddd, inset -1px -1px 1px #ddd; */
+}
+
+.toolbox .selected h3,
+.toolbox .hover h3 {
 	color: #7FC14B;
 }
 
-ul.toolbox li img {
+.toolbox li img {
 	width: 5%;
-    float: left;
-}
-
-ul.toolbox li h3 {
-	font-size: 0.6em;
-	font-weight: bold;
-	margin-bottom: 5px;
-	color: #717074;
-	width: 90%;
-	float: right;
 }

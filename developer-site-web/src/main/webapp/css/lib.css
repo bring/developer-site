@@ -29,7 +29,7 @@ html[xmlns] .group {
 
 /* Grid */
 
-.span-1, .span-2 {
+.span-1, .span-2, .span-4 {
     float: left;
     margin-right: 10px;
 }
@@ -40,6 +40,10 @@ html[xmlns] .group {
 
 .span-2 {
     width: 322px;
+}
+
+.span-4 {
+    width: 654px;
 }
 
 .last {
