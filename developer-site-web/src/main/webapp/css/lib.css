@@ -83,7 +83,9 @@ ul.avatar-list li:last-child {
 /* Question */
 
 .question-datetime {
-    color: #9A9999;
+    color: #9A9999;.last {
+    margin-right: 0;
+}
 }
 
 .question-title {
