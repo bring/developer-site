@@ -4,7 +4,7 @@
 <div class="introbanner group box">
     <div class="panels span-4">
         <div class="panel selected">
-            <p>Skyggen på toolboxen fungerer ikke helt :-(</p>
+            <p>Bring</p>
         </div>
         <!--     
         <div class="panel tool_2"></div>
@@ -14,17 +14,21 @@
     </div>
     <div class="toolbox span-2 last">
         <div class="intro">
-            <span class="toolbox-category">INTRO</span>
+            <div class="intro-category">
+               <span class="rotate-text">INTRO</span>
+            </div>
             <ul class="intro-list">
-                <li class="selected"><a>WHAT ARE BRING APIS?</a></li>
+                <li><a>WHAT ARE BRING APIS?</a></li>
                 <li><a>INTEGRATE SHIPPING GUIDE WIDGET</a></li>
             </ul>
         </div>
         
         <div class="quickstart">
-            <span class="toolbox-category">QUICKSTART</span>
+            <div class="quickstart-category">
+                <span class="rotate-text">QUICKSTART</span>
+            </div>
             <ul class="quickstart-list">
-                <li><a>ADD SHIPMENT TRACKING WIDGET</a></li>
+                <li class="selected"><a>ADD SHIPMENT TRACKING WIDGET</a></li>
                 <li><a>VALIDATE POSTAL CODE FIELD</a></li>
                 <li><a>VALIDATE POSTAL CODE FIELD</a></li>
             </ul>
