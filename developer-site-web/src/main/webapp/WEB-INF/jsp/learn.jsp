@@ -12,18 +12,9 @@
         <div class="main content">
 
             <div class="group">
-			   <div class="menutab section-launcher box menutab-selected">
-			       <div class="section-title"><a href="learn.html"><span>LEARN</span></a></div>
-			       <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
-			   </div>
-			   <div class="menutab section-launcher box">
-			       <div class="section-title"><a href="download.html"><span>DOWNLOAD</span></a></div>
-			       <span class="section-description">PLUGINS, WIDGETS, SDK</span>
-			   </div>
-			   <div class="menutab section-launcher box">
-			       <div class="section-title"><a href="talk.html"><span>TALK</span></a></div>
-			       <span class="section-description">ASK, WRITE, CODE, SHARE</span>
-			   </div>
+               <misc:learnlauncher cssClass="menutab menutab-selected"/>
+               <misc:downloadlauncher cssClass="menutab" />
+               <misc:talklauncher cssClass="menutab" />
             </div>
  
             <div class="menubox group">
