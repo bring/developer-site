@@ -42,11 +42,12 @@
 }
 
 .toolbox a {
-    width: 321px;
-/*     border-left: 1px solid #ddd; */
+	font-size: 0.7em;
+    width: 311px;
     position: absolute;
-    height: 40px;
+    height: 30px;
     background: #f1f1f1;
+    padding: 10px 0 0 10px;
 }
 
 .toolbox li>*:before {
@@ -60,11 +61,11 @@
 }
 
 .toolbox li.selected {
-    border: 1px solid #000;
+    border: none;
 }
 
-.toolbox .selected h3,
-.toolbox .hover h3 {
+.toolbox .selected a,
+.toolbox .hover a {
 	color: #7FC14B;
 }
 
