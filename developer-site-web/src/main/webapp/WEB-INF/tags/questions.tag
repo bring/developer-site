@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
-<div class="col-3 box">
+<div class="span-2 box">
     <ul class="avatar-list">
         <li class="group">
             <img class="avatar" src="img/face.png" />

@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
-<div class="col-3 box">
+<div class="span-2 box">
    <div class="quote">
         <blockquote>
             By using Bring APIs we can let our customers choose their preferred

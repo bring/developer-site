@@ -61,71 +61,16 @@ body:before {
     padding-top: 15px;
 }
 
-.showcase {
-	min-height: 200px;
-	margin-bottom: 10px;
-}
-
-.col-3 {
-    float: left;
-    width: 322px;
-}
-
-.section-title { 
-    font-size: 1.25em;
-}
-
-.section-launcher {
-    width: 302px;
-    height: 50px;
-    padding: 10px;
-    overflow: hidden;
-    color: #b7b7b7;
-    background-color: #3b3b3b;
-    position: relative;
-}
-
-.section-title a {
-    color: #79b54b;
-    text-decoration: none;
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%; 
-    display: block; 
-    z-index: 1;
-}
-
-.section-title a span {
-    position: absolute; 
-    display: block; 
-    left: 10px; 
-    top: 10px; 
-}
-
-.section-description {
-    font-size: 0.75em;
-    position: absolute;
-    top: 40px;
-    left: 10px;
-}
-
-.question-container {
-    width: 322px;
-    background-color: #fff;
-}
-
 .footer {
-	text-align: center;
-	padding-top: 120px;
+    text-align: center;
+    padding-top: 120px;
     background-color: #afb0b2;
     position: relative;
-	margin-top: -150px; 
-	height: 30px;
-	clear:both;
-	
-	/* css3 */
+    margin-top: -150px; 
+    height: 30px;
+    clear:both;
+    
+    /* css3 */
     -moz-box-shadow: inset 0px 10px 8px #888;
     -webkit-box-shadow: inset 0px 10px 8px #888;
     box-shadow: inset 0px 10px 8px #888;

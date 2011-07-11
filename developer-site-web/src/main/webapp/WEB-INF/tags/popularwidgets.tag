@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
-<div class="col-3 box">
+<div class="span-2 box">
     <div class="box-text box-title">Popular widgets</div>
     <div class="group">
         <div class="widget-preview leftcol">
