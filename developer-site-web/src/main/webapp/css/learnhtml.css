@@ -76,25 +76,3 @@ div.menutab-selected {
     float: left;
     margin-top: 10px;
 }
-
-.article {
-	width: 644px;
-	margin: 10px 10px 20px 10px;
-    float: left;
-}
-
-.article h1{
-    width: 634px;
-    padding: 20px 10px 20px 10px;
-    background-color: #ddd;
-    color: #3b3b3b;
-    font-weight:bold;
-    margin-left: -10px;
-}
-
-div.talk-content div.title {
-    width: 100%;
-    border-bottom: 5px solid #bbb;
-    margin-bottom: 10px;
-    background-color: #fff;
-}

@@ -10,4 +10,5 @@
     <link rel="stylesheet" type="text/css" href="css/showcase.css" />
     <link rel="stylesheet" type="text/css" href="css/css3.css" />
     <link rel="stylesheet" type="text/css" href="css/learnhtml.css" />
+    <link rel="stylesheet" type="text/css" href="css/typesetting.css" />
 </head>
