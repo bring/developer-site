@@ -7,8 +7,7 @@
             <div class="avatar-list-text">
                 <div class="question-title">Bill Gates</div>
                 <div class="question-text">
-                    How do I integrate the shipping guide in
-                    my Neverland giftshop?
+                    <div class="tweets"></div>
                 </div>
                 <div class="datetime">2 hours ago vi Getsatisfaction</div>
             </div>

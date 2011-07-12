@@ -14,4 +14,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
     <script src="js/menutab.js"></script>
+    <script type="text/javascript" src="twitter.js"></script> 
+    <script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=bringapi&count=1&callback=twitterCallback2"></script>
 </head>
