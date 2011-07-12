@@ -1,5 +1,29 @@
 /**
- * Menutab 
+ * Menutabs
+ * 
+ * Example:
+ * 
+ * <div id="launchers">
+ * 		<div id="menutabs-1-launcher">
+ * 			<a href="#menutabs-1">Launch tab 1</a>
+ * 			<span>Description of tab 1</a>
+ * 		</div>
+ * 		<div id="menutabs-2-launcher">
+ * 			<a href="#menutabs-2">Launch tab 2</a>
+ * 			<span>Description of tab 2</a>
+ * 		</div>
+ * </div>
+ * 
+ * <div id="menutabs-1">Tab 1</div>
+ * <div id="menutabs-2">Tab 2</div>
+ * 
+ * <script>
+ * 		$.fn.menutab(
+ *			"init",
+ *			"#launchers",
+ *			[ "a[href=#menutabs-1]", "a[href=#menutabs-2]", "a[href=#menutabs-3]"]
+ *		 );
+ * </script>
  */
 
 (function($) {
@@ -7,53 +31,64 @@
 	var container = null;
 	
 	var methods = {
-			init: function(containerId, launcherIds) {
-				container = $(containerId);
-				$(launcherIds).each(
-					function(i,element) {
-						var launchLink = $(element);
+			init: function(containerSelector, launcherSelectors) {
+				container = $(containerSelector);
+				$(launcherSelectors).each(
+					function(i,tab) {
+						var launchLink = $(tab);
 						var hash = launchLink.attr("href").slice(launchLink.attr("href").indexOf("#"));
 						$(launchLink.attr("href")).hide();
-						$(element).click(function(event) {
+						$(tab).click(function(event) {
 //							window.location.hash = hash;
 							$.fn.menutab("tabSelected", hash);
 							event.preventDefault();
 						})
+						if ($(launchLink.attr("href")+"-launcher").hasClass("menutab-selected")) {
+							methods.tabSelected(launchLink.attr("href"));
+						}
 					}
 				);
 			},
 			
 			deactivateTab: function(callback) {
 				if (active == null) {
-					return (callback != null) ? callback() : this;
+					if (callback != null) {
+						callback();
+					}
+					return this;
 				}
-				active.element.slideUp("fast",callback);
+				active.tab.hide(5,callback);
 				active.launcher.removeClass("menutab-selected");
 				active = null;
+				return this;
 			},
 			
 			activateTab: function(tab, callback) {
 				active = tab;
 				active.launcher.addClass("menutab-selected");
-				active.element.slideDown("fast",callback);
+				active.tab.show(5,callback);
+				return this;
 			},
 			
 			tabSelected: function(tabId) {
-				var element = $(tabId);
+				var tab = $(tabId);
 				var launcher = $(tabId+"-launcher");
 				
-				if (active != null && element.attr("id") == active.element.attr("id")) {
-					container.trigger("beforeHide");
-					methods.deactivateTab(function() {container.trigger("afterHide");});
+				if (active != null && tab.attr("id") == active.tab.attr("id")) {
+					methods.deactivateTab(function() {container.trigger("tabsDeactivated");});
 				}
 				else {
 					methods.deactivateTab(function() {
-						container.trigger("beforeShow");
-						methods.activateTab({
+						activeElement = {
 							launcher: launcher,
-							element: element
-						});
-						container.trigger("afterShow");
+							tab: tab
+						}
+						if (active == null) {
+							methods.activateTab(activeElement, function() {container.trigger("tabsActivated")});
+						}
+						else {
+							methods.activateTab(activeElement);
+						}
 					});
 				}
 				
@@ -77,20 +112,19 @@
  */
 
 $(document).ready(function() {
-	$("#launchers").bind("beforeShow", function(event) {
+	$("#navigation").bind("tabsActivated", function(event) {
 		$(this).children().removeClass("box");
 		$(this).children().addClass("menutab");
 	});
 	
-	$("#launchers").bind("afterHide", function(event) {
+	$("#navigation").bind("tabsDeactivated", function(event) {
 		$(this).children().removeClass("menutab");
 		$(this).children().addClass("box");
 	});
 	
 	$.fn.menutab(
-			"init",
-			"#launchers",
-			[ "a[href=#menutabs-1]", "a[href=#menutabs-2]", "a[href=#menutabs-3]"]
+		"init",
+		"#navigation",
+		[ "a[href=#learn]", "a[href=#download]", "a[href=#talk]"]
 	);
-	
  });
