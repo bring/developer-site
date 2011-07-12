@@ -3,35 +3,26 @@
  */
 
 (function($) {
-	var shown = false;
-	
 	var methods = {
-			init: function(options) {
-			},
+			
 			show: function(selected, element) {
 				 selected.parent().children().removeClass("box");
 				 selected.parent().children().addClass("menutab");
 				 selected.addClass("menutab-selected");
 				 element.show();
+				 selected.data("activeTab",true);
 				 return this;
 			},
-			hide:  function(selected, element) {
-				element.hide();
-				selected.parent().children().removeClass("menutab");
-				selected.parent().children().addClass("box");
-				selected.removeClass("menutab-selected");
+			hide: function(selected, element) {
+				if (selected.data("activeTab")) {
+					element.hide();
+					selected.parent().children().removeClass("menutab");
+					selected.parent().children().addClass("box");
+					selected.removeClass("menutab-selected");
+					selected.data("activeTab", false);
+				}
 				return this;
 			},
-			toggle: function(selected, element) {
-				if (shown) {
-					methods.hide(selected, element);
-				}
-				else {
-					methods.show(selected, element);
-				}
-				shown = !shown;
-				return this;
-			}
 	};
 	
 	$.fn.menutab = function(method) {
@@ -50,24 +41,27 @@
  */
 
 $(document).ready(function() {
-//	var showMenutab = true;
-//	$("#menubox-learn").hide();
-//	$("#menubox-download").hide();
-//	$("#menubox-talk").hide();
-//	
-//	$("#learnlauncher").click(function(event) {
-//		$.fn.menutab('toggle',$(this),$("#menubox-learn"));
-//	});
-//	
-//	$("#downloadlauncher").click(function(event) {
-//		$.fn.menutab('toggle',$(this),$("#menubox-download"));
-//	});
-//	
-//	$("#talklauncher").click(function(event) {
-//		$.fn.menutab('toggle',$(this),$("#menubox-talk"));
-//	});
+	var showMenutab = true;
+	$("#menutabs-1").hide();
+	$("#menutabs-2").hide();
+	$("#menutabs-3").hide();
 	
-	$(function() {
-		$("#menutabs").tabs();
+	$("a[href=#menutabs-1]").click(function(event) {
+		if ($(this).parent().parent().data("activeTab")) {
+			$.fn.menutab('hide',$(this).parent().parent(),$("#menutabs-1"));
+		}
+		else {
+			$.fn.menutab('hide',$("a[href=#menutabs-2]").parent().parent(),$("#menutabs-2"));
+			$.fn.menutab('hide',$("a[href=#menutabs-3]").parent().parent(),$("#menutabs-3"));
+			$.fn.menutab('show',$(this).parent().parent(),$("#menutabs-1"));
+		}
+	});
+	
+	$("a[href=#menutabs-2]").click(function(event) {
+		$.fn.menutab('toggle',$(this).parent().parent(),$("#menutabs-2"));
+	});
+	
+	$("a[href=#menutabs-3]").click(function(event) {
+		$.fn.menutab('toggle',$(this).parent().parent(),$("#menutabs-3"));
 	});
  });
