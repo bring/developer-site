@@ -28,9 +28,9 @@
                 <span class="rotate-text">QUICKSTART</span>
             </div>
             <ul class="quickstart-list">
-                <li class="selected"><a>ADD SHIPMENT TRACKING WIDGET</a></li>
+                <li><a>ADD SHIPMENT TRACKING WIDGET</a></li>
                 <li><a>VALIDATE POSTAL CODE FIELD</a></li>
-                <li><a>VALIDATE POSTAL CODE FIELD</a></li>
+                <li class="selected"><a>VALIDATE POSTAL CODE FIELD</a></li>
             </ul>
         </div>
     </div>

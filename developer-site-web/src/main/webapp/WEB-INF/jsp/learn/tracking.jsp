@@ -43,7 +43,7 @@
                     </p>
                     <br/>
                     <p>
-                        For results without the top menu, add the following request prameter: &layout=standalone
+                        For results without the top menu, add the following request parameter: &layout=standalone
                         E.g.: http://sporing.bring.no/sporing.html?q=...&layout=standalone
                     </p>
                     <br/>
@@ -51,18 +51,58 @@
                         The latter is suited for e.g. popup windows. Please note that the width of the popup window should be equal to or greater than 1024 pixels.
                     </p>
                     
-                    <h2>XML</h2>
-
-                    <h2>JSON</h2>
-                    <h2>Information</h2>
-
-					<ul>
-						<li>test</li>
-						<li>test</li>
-						<li>test</li>
-						<li>test</li>
-						<li>test</li>
-					</ul>
+                    <h2>Tracking API</h2>
+                    <p>This information is only relevant for system developers.</p>
+                    <h3>XML</h3>
+					<form action="http://sporing.bring.no/sporing.xml" method="GET">
+                   		<p>Reference/Shipment/Package Number: 
+						<input type="text" name="q"/> 
+						<input type="submit" value="Show XML"/></p>						
+					</form>
+					<p><a href="http://sporing.bring.no/sporing.xsd">XML Schema definisjon</a></p>
+                    <h3>JSON</h3>
+					<p>The JSON data format is well suited for showing data directly in the web browser. 
+						For more JSON examples, check out 
+						<a href="http://fraktguide.bring.no/fraktguide/forDevelopersEnglish.do">
+							JSON in Bring Fraktguide</a>.
+					</p>
+                    <h3>JSON</h3>
+					<form action="http://sporing.bring.no/sporing.json" method="GET">
+						<p>Reference/Shipment/Package Number: 
+						<input type="text" name="q"/> 
+						<input type="submit" value="Show JSON"/></p>
+					</form>
+					<form action="http://sporing.bring.no/sporing.json" method="GET">
+						<input type="hidden" name="callback" value="myCallback"/>
+						<p>Reference/Shipment/Package Number: 
+						<input type="text" name="q"/>
+						<input type="submit" value="Show JSONP"/></p>
+					</form>
+					<h3>Information</h3>
+					<p>The Track &amp; Trace API is in <strong>BETA</strong> status. 
+						It may be changed without notice. Please note the 
+						<a href="http://fraktguide.bring.no/fraktguide/vilkaar.do">
+							user agreement at Bring Fraktguide
+						</a> (in Norwegian).
+					</p>
+					<p>For an example you may look at the solution for 
+						<a href="http://sporing.bring.no/multikolli.html">
+							tracing several packages simultaneously
+						</a>. 
+						This page makes use of the JSON interface (with jQuery).
+					</p>
+					<p>Refer to <a href="http://fraktguide.bring.no">Bring Fraktguide</a> 
+						for an API from Bring that allows you to calculate prices, time estimations, 
+						product information and environmental information (and more). 
+						You can get finished rendered HTML, XML API (RESTful), 
+						JSON or use our Web Service.
+					</p>
+					<p><a href="http://twitter.com/bringapi">Follow the development team at twitter</a>.
+						 Developers may use <a href="http://getsatisfaction.com/bring">our community at Get
+						Satisfaction for <b>technical</b> feedback regarding the API</a>. 
+						Please give us a hint if you making use of the API.
+					</p>
+					
 				</div>
 				<div class="talk-content">
 					<div class="title">RELATED COMMENTS</div>

@@ -20,8 +20,19 @@
 .article h2 {
     width: 624px;
     color: #3b3b3b;
-    margin: 20px 5px 20px 5px;
+    margin: 20px 5px 20px 0px;
     border-bottom: 5px solid #ddd; 
+}
+
+.article h3 {
+    color: #3b3b3b;
+    margin: 20px 5px 2px 0px;
+    font-weight: bold;
+}
+
+.article h4 {
+    color: #3b3b3b;
+    font-size: 0.9em;
 }
 
 div.talk-content div.title {
