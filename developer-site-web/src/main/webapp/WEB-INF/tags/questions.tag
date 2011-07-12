@@ -3,13 +3,12 @@
 <div class="span-2 box">
     <ul class="avatar-list">
         <li class="group">
-            <img class="avatar" src="img/face.png" />
+            <img class="avatar" src="" />
             <div class="avatar-list-text">
-                <div class="question-title">Bill Gates</div>
+                <div class="question-title"></div>
                 <div class="question-text">
-                    <div class="tweets"></div>
                 </div>
-                <div class="datetime">2 hours ago vi Getsatisfaction</div>
+                <div class="datetime"></div>
             </div>
         </li>
         <li class="group">
