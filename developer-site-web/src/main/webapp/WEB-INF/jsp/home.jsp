@@ -13,46 +13,48 @@
 	    <div class="main content group">
             <misc:showcase />
         
-            <div class="group" id="launchers">
-                <div id="launchers-1" class="section-launcher span-2 box">
-                   <div class="section-title"><a href="#"><span>LEARN</span></a></div>
-                   <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
+            <div id="menutabs">
+                <div class="group" id="launchers">
+                    <div class="section-launcher span-2 box">
+                       <div class="section-title"><a href="#menutabs-1"><span>LEARN</span></a></div>
+                       <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
+                    </div>
+                    <div class="section-launcher span-2 box">
+                       <div class="section-title"><a href="#menutabs-2"><span>DOWNLOAD</span></a></div>
+                       <span class="section-description">PLUGINS, WIDGETS, SDK</span>
+                    </div>
+                    <div class="section-launcher span-2 last box">
+                       <div class="section-title"><a href="#menutabs-3"><span>TALK</span></a></div>
+                       <span class="section-description">ASK, WRITE, CODE, LEARN</span>
+                    </div>
                 </div>
-                <div id="launchers-2" class="section-launcher span-2 box">
-                   <div class="section-title"><a href="#"><span>DOWNLOAD</span></a></div>
-                   <span class="section-description">PLUGINS, WIDGETS, SDK</span>
+                
+                <div id="menutabs-1" class="menubox group">
+                    <ul class="menulist span-2">
+                        <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
+                    </ul>
+                    <ul class="menulist span-2">
+                    <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
+                    </ul>
+                    <ul class="menulist span-2 last">
+                    <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
+                    </ul>
                 </div>
-                <div id="launchers-3" class="section-launcher span-2 last box">
-                   <div class="section-title"><a href="#"><span>TALK</span></a></div>
-                   <span class="section-description">ASK, WRITE, CODE, LEARN</span>
-                </div>                
-            </div>
-            
-            <div id="menubox-learn" class="menubox group">
-                <ul class="menulist span-2">
+                
+                <div id="menutabs-2" class="menubox group">
+                   <ul class="menulist span-2">
+                        <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
+                    </ul>
+                    <ul class="menulist span-2">
                     <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
-                </ul>
-                <ul class="menulist span-2">
-                <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
-                </ul>
-                <ul class="menulist span-2 last">
-                <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
-                </ul>
-            </div>
-            
-            <div id="menubox-download" class="menubox group">
-               <ul class="menulist span-2">
+                    </ul>
+                    <ul class="menulist span-2 last">
                     <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
-                </ul>
-                <ul class="menulist span-2">
-                <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
-                </ul>
-                <ul class="menulist span-2 last">
-                <li><a class="menubutton" href="tracking.html">TRACKING API</a></li>
-                </ul>
+                    </ul>
+                </div>
+                
+                <div id="menutabs-3"></div>
             </div>
-            
-            <div id="menubox-talk"></div>
             
             <div class="group">
                 <misc:quote />
