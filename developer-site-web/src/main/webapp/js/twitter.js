@@ -30,7 +30,7 @@ $(document).ready(function() {
     }
   );/*
   
-  // Send JSON request to get user_timeline
+  // Send JSON request to get mentions
   $.getJSON(
 	twitter_mention_url + '?callback=?&q=%40' + twitter_user,
     function(data) {
