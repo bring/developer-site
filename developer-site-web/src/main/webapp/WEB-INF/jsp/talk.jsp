@@ -12,9 +12,9 @@
         <div class="main content">
         
             <div class="group">
-               <misc:learnlauncher cssClass="menutab"/>
-               <misc:downloadlauncher cssClass="menutab" />
-               <misc:talklauncher cssClass="menutab menutab-selected" />
+               <misc:learnlauncher cssClass="menutab span-2"/>
+               <misc:downloadlauncher cssClass="menutab span-2" />
+               <misc:talklauncher cssClass="menutab menutab-selected span-2" />
             </div>
  
             <div class="menubox group">
