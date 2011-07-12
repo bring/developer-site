@@ -68,6 +68,6 @@ $(document).ready(function() {
 //	});
 	
 	$(function() {
-		$( "#launchers" ).tabs();
+		$("#menutabs").tabs();
 	});
  });
