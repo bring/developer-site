@@ -30,7 +30,8 @@ public class TwitterDaoTest {
     @Before
     public void setup() {
         initMocks(this);
-        dao = new TwitterDao(httpClientMock);
+        dao = new TwitterDao();
+        dao.setHttpClient(httpClientMock);
     }
 
     @Test(expected = IllegalArgumentException.class)
