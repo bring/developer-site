@@ -170,38 +170,17 @@
 				</div>
                 <misc:questions />
             </div>
-        </div>ul"
+        </div>
 
     </div>
     <misc:footer />
     <script>
-    
         $(document).ready(function() {
-        	
-            // Fix menubox height
-
-//             var activeMenu = $("#breadcrumbs");
-//             var menuElemehtHeight = $("li a",activeMenu).outerHeight()+2;
-//             var numberOfMenuElements = 0;
-//             console.log(activeMenu);
-//             $("ul, .marked ul",activeMenu).each(function(i,element) {
-//             	numberOfMenuElements = Math.max(numberOfMenuElements, $(element).children("li").length);
-//             });
-//         	activeMenu.height(numberOfMenuElements*menuElemehtHeight);
-        	
-            $.fn.menutab(
-                "init",
-                "#navigation",
-                [ "#breadcrumbs", "#learn", "#download", "#talk" ],
-                "#learn",
-                {
-//                 	deactivateTab: function(active, callback) {
-//             		active.tab.hide(5,callback);
-//                     active.launcher.removeClass("menutab-selected");
-//                     active = null;
-//                 	}
-                }
-            );
+            $.fn.menutab("init", {
+            	section: "#learn",
+                navigation: "#navigation",
+                tabs: [ "#learn", "#download", "#talk" ],
+            });
      });
     </script>
 </body>
