@@ -31,69 +31,66 @@
 	var container = null;
 	
 	var methods = {
-			init: function(containerSelector, launcherSelectors) {
-				container = $(containerSelector);
-				$(launcherSelectors).each(
-					function(i,tab) {
-						var launchLink = $(tab);
-						var hash = launchLink.attr("href").slice(launchLink.attr("href").indexOf("#"));
-						$(launchLink.attr("href")).hide();
-						$(tab).click(function(event) {
+		init: function(containerSelector, tabSelectors, selectedTab, selectedLauncher) {
+			container = $(containerSelector);
+			$(tabSelectors).each(
+				function(i,tabSelector) {
+					$(tabSelector).hide();
+					
+					// Bind event
+					$("[href="+tabSelector+"]").click(function(event) {
 //							window.location.hash = hash;
-							$.fn.menutab("tabSelected", hash);
-							event.preventDefault();
-						})
-						if ($(launchLink.attr("href")+"-launcher").hasClass("menutab-selected")) {
-							methods.tabSelected(launchLink.attr("href"));
-						}
-					}
-				);
-			},
-			
-			deactivateTab: function(callback) {
-				if (active == null) {
-					if (callback != null) {
-						callback();
-					}
-					return this;
+						$.fn.menutab("tabSelected", tabSelector);
+						event.preventDefault();
+					})
 				}
-				active.tab.hide(5,callback);
-				active.launcher.removeClass("menutab-selected");
-				active = null;
-				return this;
-			},
+			);
 			
-			activateTab: function(tab, callback) {
-				active = tab;
-				active.launcher.addClass("menutab-selected");
-				active.tab.show(5,callback);
-				return this;
-			},
-			
-			tabSelected: function(tabId) {
-				var tab = $(tabId);
-				var launcher = $(tabId+"-launcher");
-				
-				if (active != null && tab.attr("id") == active.tab.attr("id")) {
-					methods.deactivateTab(function() {container.trigger("tabsDeactivated");});
+			if (selectedTab != null) {
+				methods.tabSelected(selectedTab);
+			}
+		},
+		
+		handleCallback: function(callback) {
+			if (callback != null) {
+				callback();
+			}
+		},
+		
+		deactivateTab: function(callback) {
+			active.tab.hide(5,callback);
+			active.launcher.removeClass("menutab-selected");
+			active = null;
+		},
+		
+		activateTab: function(tab, callback) {
+			active = tab;
+			active.launcher.addClass("menutab-selected");
+			active.tab.show(5,callback);
+			return this;
+		},
+		
+		tabSelected: function(tabId) {
+			var tab = $(tabId);
+			var launcher = $(tabId+"-launcher");
+			if (active != null && tab.attr("id") == active.tab.attr("id")) {
+				methods.deactivateTab(function() {container.trigger("tabsDeactivated");});
+			}
+			else {
+				var activeElement = {
+					launcher: launcher,
+					tab: tab
+				}
+				if (active == null) {
+					methods.activateTab(activeElement, function() {container.trigger("tabsActivated")});
 				}
 				else {
-					methods.deactivateTab(function() {
-						activeElement = {
-							launcher: launcher,
-							tab: tab
-						}
-						if (active == null) {
-							methods.activateTab(activeElement, function() {container.trigger("tabsActivated")});
-						}
-						else {
-							methods.activateTab(activeElement);
-						}
-					});
+					methods.deactivateTab(function() {methods.activateTab(activeElement);});
 				}
-				
-				return this;
 			}
+			
+			return this;
+		}
 	};
 	
 	$.fn.menutab = function(method) {
@@ -125,6 +122,7 @@ $(document).ready(function() {
 	$.fn.menutab(
 		"init",
 		"#navigation",
-		[ "a[href=#learn]", "a[href=#download]", "a[href=#talk]"]
+		[ "#learn", "#download", "#talk", "#breadcrumbs" ]
+//		"#learn"
 	);
  });
