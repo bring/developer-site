@@ -30,6 +30,10 @@
         <servlet-name>developer</servlet-name>
         <url-pattern>*.html</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>*.json</url-pattern>
+    </servlet-mapping>
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
