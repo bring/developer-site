@@ -63,6 +63,11 @@
 		</div>
 	</div>
 	<misc:footer />
+	<script>
+		$(document).ready(function() {
+			$.fn.performTwitterSearch('ul.avatar-list', 1);
+		});
+	</script>
 </body>
 
 </html>
