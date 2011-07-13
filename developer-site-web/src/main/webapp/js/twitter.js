@@ -15,8 +15,6 @@ $.fn.performTwitterSearch = function (appendToElement, numberOfTweets){
 }
 
 function appendTweets(data, appendToElement, numberOfTweets) {
-	console.log(data);
-	console.log(appendToElement);
 	var iterations = 0;
 	if(numberOfTweets > data.results.length){
 		iterations = data.results.length;
