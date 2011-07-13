@@ -1,6 +1,6 @@
 /* Menutab */
 
-div.menutab {
+.menutab {
     margin: 5px 5px 0 5px;
     height: 50px;
     color: #b7b7b7;
@@ -12,35 +12,48 @@ div.menutab {
     box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
 }
 
-div.menutab-selected {
+.menutab-selected {
     background-color: #3b3b3b;
 }
 
 .menubox {
-    width: 986px;
-    min-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
     
-    -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
-    -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
-    box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd;
+/*     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd; */
+/*     -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd; */
+/*     box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd; */
 }
 
-.menulist {
+.menubox {
+    position: relative;
+}
+
+.marked ul {
+    position: absolute;
+    top: 0;
+    right: -332px;
+}
+
+.menulist, .menulist ul {
+    position: absolute;
+    width: 322px;
     list-style: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .menulist li a {
     padding: 5px;
     width: 292px;
-    margin: 2px 10px;
 	display: block;
     background-color: #666;
     text-decoration: none;
     color: #ccc;
+}
+
+.menubutton {
+    margin: 2px 10px;
 }
 
 .menubutton:after {

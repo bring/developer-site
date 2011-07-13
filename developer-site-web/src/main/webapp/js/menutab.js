@@ -29,26 +29,63 @@
 (function($) {
 	var active = null;
 	var container = null;
+	var methodsOverride = {};
+	
+	var options = {
+		section: "#learn",
+		tabs: [ "#learn", "#download", "#talk" ],
+		
+		resetTabs: function() {
+			methods.hideTabs();
+			methods.unmarkLaunchers();
+			methods.activateTab({
+				tab: $("#breadcrumbs"), 
+				launcher: $(options.section+"-launcher")
+			});
+		},
+	}
 	
 	var methods = {
-		init: function(containerSelector, tabSelectors, selectedTab, selectedLauncher) {
+		init: function(containerSelector, tabSelectors, selectedTab,overrideMethods) {
+			methodsOverride = overrideMethods; // TODO remove?
 			container = $(containerSelector);
-			$(tabSelectors).each(
+			methods.bindEvents();
+			options.resetTabs();
+		},
+		
+		hideTabs: function() {
+			$(options.tabs).each(function(i,element) {
+				$(element).hide();
+			});
+		},
+		
+		unmarkLaunchers: function() {
+			$(options.tabs).each(function(i,element) {
+				methods.unmarkLauncher($(element+"-launcher"));
+			});
+		},
+		
+		bindEvents: function() {
+			$(options.tabs).each(
 				function(i,tabSelector) {
-					$(tabSelector).hide();
-					
 					// Bind event
 					$("[href="+tabSelector+"]").click(function(event) {
-//							window.location.hash = hash;
 						$.fn.menutab("tabSelected", tabSelector);
 						event.preventDefault();
 					})
 				}
 			);
-			
-			if (selectedTab != null) {
-				methods.tabSelected(selectedTab);
-			}
+		},
+		
+		fixHeight: function(activeMenu) {
+//            var menuElementHeight = $("li a",activeMenu).outerHeight()+2; // Bug #7693 in jQuery ... 
+			var menuElementHeight = 36;
+            var numberOfMenuElements = 0;
+            $("ul, .marked ul",activeMenu).each(function(i,element) {
+            	numberOfMenuElements = Math.max(numberOfMenuElements, $(element).children("li").length);
+            });
+        	activeMenu.height(numberOfMenuElements*menuElementHeight);
+        	console.log(activeMenu);
 		},
 		
 		handleCallback: function(callback) {
@@ -58,23 +95,43 @@
 		},
 		
 		deactivateTab: function(callback) {
-			active.tab.hide(5,callback);
+			if (methodsOverride.deactivateTab) {
+				methodsOverride.deactivateTab(active,callback);
+				return
+			}
+			active.tab.slideUp(500,callback);
 			active.launcher.removeClass("menutab-selected");
 			active = null;
 		},
 		
-		activateTab: function(tab, callback) {
-			active = tab;
-			active.launcher.addClass("menutab-selected");
-			active.tab.show(5,callback);
+		markLauncher: function(launcher) {
+			launcher.addClass("menutab-selected");
 			return this;
+		},
+		
+		unmarkLauncher: function(launcher) {
+			launcher.removeClass("menutab-selected");
+			return this;
+		},
+		
+		activateTab: function(activeElement, callback) {
+			active = activeElement;
+			methods.fixHeight(active.tab);
+			active.tab.slideDown(500,callback);
+			methods.markLauncher(active.launcher);
+			return this;
+		},
+		
+		setLauncherHref: function(launcher, href) {
+			$("a",launcher).attr("href",href);
 		},
 		
 		tabSelected: function(tabId) {
 			var tab = $(tabId);
 			var launcher = $(tabId+"-launcher");
 			if (active != null && tab.attr("id") == active.tab.attr("id")) {
-				methods.deactivateTab(function() {container.trigger("tabsDeactivated");});
+				//methods.deactivateTab(function() {container.trigger("tabsDeactivated");});
+				options.resetTabs();
 			}
 			else {
 				var activeElement = {
@@ -108,21 +165,21 @@
  * Main
  */
 
-$(document).ready(function() {
-	$("#navigation").bind("tabsActivated", function(event) {
-		$(this).children().removeClass("box");
-		$(this).children().addClass("menutab");
-	});
-	
-	$("#navigation").bind("tabsDeactivated", function(event) {
-		$(this).children().removeClass("menutab");
-		$(this).children().addClass("box");
-	});
-	
-	$.fn.menutab(
-		"init",
-		"#navigation",
-		[ "#learn", "#download", "#talk", "#breadcrumbs" ]
-//		"#learn"
-	);
- });
+//$(document).ready(function() {
+//	$("#navigation").bind("tabsActivated", function(event) {
+//		$(this).children().removeClass("box");
+//		$(this).children().addClass("menutab");
+//	});
+//	
+//	$("#navigation").bind("tabsDeactivated", function(event) {
+//		$(this).children().removeClass("menutab");
+//		$(this).children().addClass("box");
+//	});
+//	
+//	$.fn.menutab(
+//		"init",
+//		"#navigation",
+//		[ "#learn", "#download", "#talk", "#breadcrumbs" ]
+////		"#learn"
+//	);
+// });

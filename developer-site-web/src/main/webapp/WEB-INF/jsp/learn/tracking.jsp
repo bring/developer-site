@@ -11,19 +11,83 @@
         <misc:header />
         <div class="main content">
         
-            <div class="group">
-               <misc:learnlauncher cssClass="menutab menutab-selected"/>
-               <misc:downloadlauncher cssClass="menutab" />
-               <misc:talklauncher cssClass="menutab" />
-            </div>
- 
-            <div class="menubox group">
-                <ul class="menulist span-2">
-                    <li><a class="menubutton selected" href="tracking.html">TRACKING API</a></li>
-                </ul>
-                <ul class="menulist span-2">
-                    <li><a class="selected menubutton" href="#">API REFERENCE</a></li>
-                </ul>
+            <div>
+                <div class="group" id="navigation">
+                    <div id="learn-launcher" class="section-launcher span-2 menutab">
+                       <div class="section-title"><a href="#learn"><span>LEARN</span></a></div>
+                       <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
+                    </div>
+                    <div id="download-launcher" class="section-launcher span-2 menutab">
+                       <div class="section-title"><a href="#download"><span>DOWNLOAD</span></a></div>
+                       <span class="section-description">PLUGINS, WIDGETS, SDK</span>
+                    </div>
+                    <div id="talk-launcher" class="section-launcher span-2 last menutab">
+                       <div class="section-title"><a href="#talk"><span>TALK</span></a></div>
+                       <span class="section-description">ASK, WRITE, CODE, LEARN</span>
+                    </div>
+                </div>
+     
+                <div id="breadcrumbs" class="menubox">
+                    <ul class="menulist">
+                        <li class="marked">
+                            <a class="menubutton" href="tracking.html">Goto 2</a>
+                            <ul>
+                                <li class="marked">
+                                    <a class="menubutton" href="tracking.html">Goto 3</a>
+                                    <ul>
+                                        <li class="marked">
+                                            <a class="menubutton" href="tracking.html">Level3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="learn" class="menubox">
+                    <ul class="menulist">
+                        <li><a class="menubutton" href="tracking.html">level 1</a></li>
+                        <li><a class="menubutton" href="tracking.html">level 1</a></li>
+                        
+                        <li class="marked">
+                            <a class="menubutton" href="tracking.html">Goto 2</a>
+                            <ul>
+                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
+                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
+                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
+                                <li class="marked">
+                                    <a class="menubutton" href="tracking.html">Goto 3</a>
+                                    <ul>
+                                        <li class="marked"><a class="menubutton" href="tracking.html">level 3</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="download" class="menubox">
+                    <ul class="menulist">
+                        <li><a class="menubutton" href="tracking.html">level 1</a></li>
+                        
+                        <li class="marked">
+                            <a class="menubutton" href="tracking.html">Goto 2</a>
+                            <ul class="menulist">
+                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
+                                <li class="marked">
+                                    <a class="menubutton" href="tracking.html">Goto 3</a>
+                                    <ul class="menulist">
+                                        <li class="marked"><a class="menubutton" href="tracking.html">level 3</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div id="talk" class="menubox group">
+                </div>
             </div>
 
             <div class="main-content group">
@@ -54,7 +118,7 @@
                     <h2>Tracking API</h2>
                     <p>This information is only relevant for system developers.</p>
                     <h3>XML</h3>
-					<form action="http://sporing.bring.no/sporing.xml" method="GET">
+					<form action="http://sporing.bring.no/sporing.xml" method="get">
                    		<p>Reference/Shipment/Package Number: 
 						<input type="text" name="q"/> 
 						<input type="submit" value="Show XML"/></p>						
@@ -67,14 +131,14 @@
 							JSON in Bring Fraktguide</a>.
 					</p>
                     <h3>JSON</h3>
-					<form action="http://sporing.bring.no/sporing.json" method="GET">
+					<form action="http://sporing.bring.no/sporing.json" method="get">
 						<p>Reference/Shipment/Package Number: 
 						<input type="text" name="q"/> 
 						<input type="submit" value="Show JSON"/></p>
 					</form>
-					<form action="http://sporing.bring.no/sporing.json" method="GET">
-						<input type="hidden" name="callback" value="myCallback"/>
-						<p>Reference/Shipment/Package Number: 
+					<form action="http://sporing.bring.no/sporing.json" method="get">
+						<p>Reference/Shipment/Package Number:
+                        <input type="hidden" name="callback" value="myCallback" /> 
 						<input type="text" name="q"/>
 						<input type="submit" value="Show JSONP"/></p>
 					</form>
@@ -104,40 +168,42 @@
 					</p>
 					
 				</div>
-				<div class="talk-content">
-					<div class="title">RELATED COMMENTS</div>
-                	<ul class="avatar-list group">
-				            <li class="group">
-				                <img class="avatar" src="img/face.png" />
-								<div class="avatar-list-text">
-				                    How do I integrate the shipping guide in
-									my Neverland giftshop?
-				                </div>
-				            </li>
-				            <li class="group">
-                                <img class="avatar" src="img/face.png" />
-                                <div class="avatar-list-text">
-                                    How do I integrate the shipping guide in
-                                    my Neverland giftshop?
-                                </div>
-                            </li>
-                            <li class="group">
-                                <img class="avatar" src="img/face.png" />
-                                <div class="avatar-list-text">
-                                    How do I integrate the shipping guide in
-                                    my Neverland giftshop?
-                                </div>
-                            </li>
-							<li class="group">
-								<div class="avatar-list-text avatar-list-footer">+View all 6 answers</div>
-				            </li>
-						</ul>
-				</div>
+                <misc:questions />
             </div>
-        </div>
+        </div>ul"
 
     </div>
     <misc:footer />
+    <script>
+    
+        $(document).ready(function() {
+        	
+            // Fix menubox height
+
+//             var activeMenu = $("#breadcrumbs");
+//             var menuElemehtHeight = $("li a",activeMenu).outerHeight()+2;
+//             var numberOfMenuElements = 0;
+//             console.log(activeMenu);
+//             $("ul, .marked ul",activeMenu).each(function(i,element) {
+//             	numberOfMenuElements = Math.max(numberOfMenuElements, $(element).children("li").length);
+//             });
+//         	activeMenu.height(numberOfMenuElements*menuElemehtHeight);
+        	
+            $.fn.menutab(
+                "init",
+                "#navigation",
+                [ "#breadcrumbs", "#learn", "#download", "#talk" ],
+                "#learn",
+                {
+//                 	deactivateTab: function(active, callback) {
+//             		active.tab.hide(5,callback);
+//                     active.launcher.removeClass("menutab-selected");
+//                     active = null;
+//                 	}
+                }
+            );
+     });
+    </script>
 </body>
 
 </html>
