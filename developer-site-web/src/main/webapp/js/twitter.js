@@ -25,6 +25,7 @@ $(document).ready(function() {
       
           // Append strings to divs
           $('ul.avatar-list').append(tweet_html);
+
         }
       });
     }
