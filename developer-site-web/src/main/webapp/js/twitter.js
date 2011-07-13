@@ -13,14 +13,10 @@ function performSearch(){
 				
 				// Check that we got data:
 				if(tweet !== undefined) {
-					
-					console.log(data);
-					
+									
 					// Calculate how many hours ago was the tweet posted
 					var tweet_time = relative_time(tweet.created_at);
-					
-					console.log(tweet.created_at);
-					
+									
 					tweet_html = '<li class="group"><img class="avatar" src="' + 
 					tweet.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
 					tweet.from_user + '</div><div class="question-text"><pre>' + 
@@ -42,7 +38,6 @@ function relative_time(time_value) {
 	  var values = time_value.split(" ");
 	  time_value = values[2] + " " + values[1] + ", " + values[3] + " " + values[4];
 	  var parsed_date = Date.parse(time_value);
-	  console.log(time_value);
 	  var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
 	  var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
 	  delta = delta + (relative_to.getTimezoneOffset() * 60);
