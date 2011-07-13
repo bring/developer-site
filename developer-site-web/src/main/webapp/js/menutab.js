@@ -1,28 +1,99 @@
 /**
- * Menutab 
+ * Menutabs
+ * 
+ * Example:
+ * 
+ * <div id="launchers">
+ * 		<div id="menutabs-1-launcher">
+ * 			<a href="#menutabs-1">Launch tab 1</a>
+ * 			<span>Description of tab 1</a>
+ * 		</div>
+ * 		<div id="menutabs-2-launcher">
+ * 			<a href="#menutabs-2">Launch tab 2</a>
+ * 			<span>Description of tab 2</a>
+ * 		</div>
+ * </div>
+ * 
+ * <div id="menutabs-1">Tab 1</div>
+ * <div id="menutabs-2">Tab 2</div>
+ * 
+ * <script>
+ * 		$.fn.menutab(
+ *			"init",
+ *			"#launchers",
+ *			[ "a[href=#menutabs-1]", "a[href=#menutabs-2]", "a[href=#menutabs-3]"]
+ *		 );
+ * </script>
  */
 
 (function($) {
+	var active = null;
+	var container = null;
+	
 	var methods = {
-			
-			show: function(selected, element) {
-				 selected.parent().children().removeClass("box");
-				 selected.parent().children().addClass("menutab");
-				 selected.addClass("menutab-selected");
-				 element.show();
-				 selected.data("activeTab",true);
-				 return this;
+			init: function(containerSelector, launcherSelectors) {
+				container = $(containerSelector);
+				$(launcherSelectors).each(
+					function(i,tab) {
+						var launchLink = $(tab);
+						var hash = launchLink.attr("href").slice(launchLink.attr("href").indexOf("#"));
+						$(launchLink.attr("href")).hide();
+						$(tab).click(function(event) {
+//							window.location.hash = hash;
+							$.fn.menutab("tabSelected", hash);
+							event.preventDefault();
+						})
+						if ($(launchLink.attr("href")+"-launcher").hasClass("menutab-selected")) {
+							methods.tabSelected(launchLink.attr("href"));
+						}
+					}
+				);
 			},
-			hide: function(selected, element) {
-				if (selected.data("activeTab")) {
-					element.hide();
-					selected.parent().children().removeClass("menutab");
-					selected.parent().children().addClass("box");
-					selected.removeClass("menutab-selected");
-					selected.data("activeTab", false);
+			
+			deactivateTab: function(callback) {
+				if (active == null) {
+					if (callback != null) {
+						callback();
+					}
+					return this;
 				}
+				active.tab.hide(5,callback);
+				active.launcher.removeClass("menutab-selected");
+				active = null;
 				return this;
 			},
+			
+			activateTab: function(tab, callback) {
+				active = tab;
+				active.launcher.addClass("menutab-selected");
+				active.tab.show(5,callback);
+				return this;
+			},
+			
+			tabSelected: function(tabId) {
+				var tab = $(tabId);
+				var launcher = $(tabId+"-launcher");
+				
+				if (active != null && tab.attr("id") == active.tab.attr("id")) {
+					methods.deactivateTab(function() {container.trigger("tabsDeactivated");});
+				}
+				else {
+					methods.deactivateTab(function() {
+						activeElement = {
+							launcher: launcher,
+							tab: tab
+						}
+						if (active == null) {
+							methods.activateTab(activeElement, function() {container.trigger("tabsActivated")});
+						}
+						else {
+							methods.activateTab(activeElement);
+						}
+					});
+				}
+				
+				return this;
+			}
 	};
 	
 	$.fn.menutab = function(method) {
@@ -41,27 +112,19 @@
  */
 
 $(document).ready(function() {
-	var showMenutab = true;
-	$("#menutabs-1").hide();
-	$("#menutabs-2").hide();
-	$("#menutabs-3").hide();
-	
-	$("a[href=#menutabs-1]").click(function(event) {
-		if ($(this).parent().parent().data("activeTab")) {
-			$.fn.menutab('hide',$(this).parent().parent(),$("#menutabs-1"));
-		}
-		else {
-			$.fn.menutab('hide',$("a[href=#menutabs-2]").parent().parent(),$("#menutabs-2"));
-			$.fn.menutab('hide',$("a[href=#menutabs-3]").parent().parent(),$("#menutabs-3"));
-			$.fn.menutab('show',$(this).parent().parent(),$("#menutabs-1"));
-		}
+	$("#navigation").bind("tabsActivated", function(event) {
+		$(this).children().removeClass("box");
+		$(this).children().addClass("menutab");
 	});
 	
-	$("a[href=#menutabs-2]").click(function(event) {
-		$.fn.menutab('toggle',$(this).parent().parent(),$("#menutabs-2"));
+	$("#navigation").bind("tabsDeactivated", function(event) {
+		$(this).children().removeClass("menutab");
+		$(this).children().addClass("box");
 	});
 	
-	$("a[href=#menutabs-3]").click(function(event) {
-		$.fn.menutab('toggle',$(this).parent().parent(),$("#menutabs-3"));
-	});
+	$.fn.menutab(
+		"init",
+		"#navigation",
+		[ "a[href=#learn]", "a[href=#download]", "a[href=#talk]"]
+	);
  });
