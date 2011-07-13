@@ -1,37 +1,46 @@
 var twitter_url = '/twitter/search.json';
 
-$(document).ready(function() {
-	performSearch();
-});
-
-function performSearch(){
-	// Send JSON request to get mentions
+$.fn.performTwitterSearch = function (appendToElement, numberOfTweets){
+	// Send JSON request to get tweets
 	$.getJSON(twitter_url, 
 		function(data) {	
 			if(data.results !== undefined) {
-				var tweet = data.results[0];
-				
-				// Check that we got data:
-				if(tweet !== undefined) {
-									
-					// Calculate how many hours ago was the tweet posted
-					var tweet_time = relative_time(tweet.created_at);
-									
-					tweet_html = '<li class="group"><img class="avatar" src="' + 
-					tweet.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
-					tweet.from_user + '</div><div class="question-text"><pre>' + 
-					tweet.text + '</pre></div>' + '<div class="datetime">' + 
-					tweet_time + '</div></div></li>';
-					
-					// Append strings to divs
-					$('ul.avatar-list').append(tweet_html);
-				}
+				appendTweets(data, appendToElement, numberOfTweets);
 			}
 			else {
-				setTimeout('performSearch()', 2000); 
+				setTimeout("$.fn.performTwitterSearch('"+appendToElement+"', '" + numberOfTweets + "')", 2000); 
 			}
 		}
 	);
+}
+
+function appendTweets(data, appendToElement, numberOfTweets) {
+	console.log(data);
+	console.log(appendToElement);
+	var iterations = 0;
+	if(numberOfTweets > data.results.length){
+		iterations = data.results.length;
+	}
+	else{
+		iterations = numberOfTweets;
+	}
+	for(var i = 0; i < iterations; i++) {
+		var tweet = data.results[i];
+
+		// Check that we got data:
+		if(tweet !== undefined) {					
+			// Append html to div
+			$(appendToElement).append(generateHtml(tweet));
+		}
+	}
+}
+
+function generateHtml(tweet) {
+	return '<li class="group"><img class="avatar" src="' + 
+	tweet.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
+	tweet.from_user + '</div><div class="question-text"><pre>' + 
+	tweet.text + '</pre></div>' + '<div class="datetime">' + 
+	relative_time(tweet.created_at) + '</div></div></li>';
 }
 
 function relative_time(time_value) {
