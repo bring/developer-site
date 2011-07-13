@@ -24,6 +24,7 @@
     <mvc:annotation-driven/>
 
     <!-- Scans the classpath of this application for @Components to deploy as beans -->
+    <context:annotation-config/>
     <context:component-scan base-package="com.bring" />
 
     <!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
