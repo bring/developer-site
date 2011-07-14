@@ -61,7 +61,7 @@ public class TwitterDaoTest {
 
         assertEquals("{result : 'Ø'}", result);
     }
-
+/*
     @Test
 	public void shouldGenerateCorrectUrlFromQuery() throws Exception {
         HttpResponse response = createValidResponse();
@@ -71,7 +71,7 @@ public class TwitterDaoTest {
         
         assertEquals("http://search.twitter.com/search.json?q=from:bringapi%20OR%20%40bringapi", captor.getValue().getURI().toASCIIString());
         
-	}
+	}*/
 
     private HttpResponse createCacheMissResponse() throws UnsupportedEncodingException {
         HttpResponse response = new BasicHttpResponse(new ProtocolVersion("Http", 1, 1), 200, "OK");
