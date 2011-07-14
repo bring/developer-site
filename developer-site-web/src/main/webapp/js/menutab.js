@@ -1,10 +1,8 @@
 (function($) {
 	var active = null;
-	var container = null;
 	
 	var options = {
 		section: "#learn",
-		navigation: "#navigation",
 		tabs: [ "#learn", "#download", "#talk" ],
 		
 		reset: function(methods, options) {
@@ -22,11 +20,13 @@
 			$.extend(options,optionsArg)
 			options.reset(methods, options);
 			methods.bindEvents();
+			return this;
 		},
 		
 		clean: function() {
 			methods.hideTabs();
 			methods.unmarkLaunchers();
+			return this;
 		},
 		
 		tabSelected: function(tabId) {
@@ -36,11 +36,12 @@
 				options.reset(methods, options);
 			}
 			else if (methods.tabsActivated()) {
+				methods.unmarkLauncher(active.launcher);
 				methods.markLauncher(chosen.launcher);
 				methods.deactivateTab(function() {methods.activateTab(chosen);});
 			}
 			else {
-				methods.activateTab(chosen, function() {$(options.navigation).trigger("tabsActivated")});
+				methods.activateTab(chosen, function() {this.trigger("tabsActivated")});
 			}
 			
 			return this;
@@ -55,8 +56,8 @@
 		
 		deactivateTab: function(callback) {
 			methods.hideTab(active.tab, callback)
-			active.launcher.removeClass("menutab-selected");
 			active = null;
+			return this;
 		},
 		
 		bindEvents: function() {
@@ -69,6 +70,7 @@
 					})
 				}
 			);
+			return this;
 		},
 		
 		fixHeight: function(activeMenu) {
@@ -79,27 +81,31 @@
             	numberOfMenuElements = Math.max(numberOfMenuElements, $(element).children("li").length);
             });
         	activeMenu.height(numberOfMenuElements*menuElementHeight);
+        	return this;
 		},
 		
 		handleCallback: function(callback) {
 			if (callback != null) {
 				callback();
 			}
+			return this;
 		},
-		
 		
 		showTab: function(tab, callback) {
 			tab.slideDown(500,callback);
+			return this;
 		},
 		
 		hideTab: function(tab, callback) {
 			tab.slideUp(500, callback);
+			return this;
 		},
 		
 		hideTabs: function() {
 			$(options.tabs).each(function(i,element) {
 				methods.hideTab($(element));
 			});
+			return this;
 		},
 		
 		markLauncher: function(launcher) {
@@ -116,10 +122,7 @@
 			$(options.tabs).each(function(i,element) {
 				methods.unmarkLauncher($(element+"-launcher"));
 			});
-		},
-		
-		setLauncherHref: function(launcher, href) {
-			$("a",launcher).attr("href",href);
+			return this;
 		},
 		
 		getChosen: function(tabId) {

@@ -176,7 +176,7 @@
     <misc:footer />
     <script>
         $(document).ready(function() {
-            $.fn.menutab("init", {
+            $("#navigation").menutab("init", {
             	section: "#learn",
                 navigation: "#navigation",
                 tabs: [ "#learn", "#download", "#talk" ],
