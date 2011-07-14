@@ -94,13 +94,6 @@ p, .quote {
     font-size: 0.9em;
 }
 
-div.talk-content div.title {
-    width: 100%;
-    border-bottom: 5px solid #bbb;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-
 .article ul {
     list-style: none;
     margin: 10px 5px 10px 5px;

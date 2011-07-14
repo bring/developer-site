@@ -6,9 +6,9 @@
 <head>
     <misc:contenttype />
     <misc:title value="Tracking" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/lib.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/lib.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 
 <body>
@@ -20,15 +20,15 @@
         
             <div>
                 <div class="group" id="navigation">
-                    <div id="learn-launcher" class="section-launcher span-2 menutab">
+                    <div id="learn-launcher" class="section-launcher menutab span-2">
                        <div class="section-title"><a href="#learn"><span>LEARN</span></a></div>
                        <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
                     </div>
-                    <div id="download-launcher" class="section-launcher span-2 menutab">
+                    <div id="download-launcher" class="section-launcher menutab span-2">
                        <div class="section-title"><a href="#download"><span>DOWNLOAD</span></a></div>
                        <span class="section-description">PLUGINS, WIDGETS, SDK</span>
                     </div>
-                    <div id="talk-launcher" class="section-launcher span-2 last menutab">
+                    <div id="talk-launcher" class="section-launcher menutab span-2 last">
                        <div class="section-title"><a href="#talk"><span>TALK</span></a></div>
                        <span class="section-description">ASK, WRITE, CODE, LEARN</span>
                     </div>
@@ -37,15 +37,10 @@
                 <div id="breadcrumbs" class="menubox">
                     <ul class="menulist">
                         <li class="marked">
-                            <a class="menubutton" href="tracking.html">Goto 2</a>
+                            <a class="menubutton" href="tracking.html">Tracking beta</a>
                             <ul>
-                                <li class="marked">
-                                    <a class="menubutton" href="tracking.html">Goto 3</a>
-                                    <ul>
-                                        <li class="marked">
-                                            <a class="menubutton" href="tracking.html">Level3</a>
-                                        </li>
-                                    </ul>
+                                <li class="marked current-page">
+                                    <a class="menubutton" href="tracking.html">Introduction</a>
                                 </li>
                             </ul>
                         </li>
@@ -54,47 +49,27 @@
                 
                 <div id="learn" class="menubox">
                     <ul class="menulist">
-                        <li><a class="menubutton" href="tracking.html">level 1</a></li>
-                        <li><a class="menubutton" href="tracking.html">level 1</a></li>
-                        
+                        <li><a class="menubutton" href="tracking.html">Shipping guide API</a></li>
                         <li class="marked">
-                            <a class="menubutton" href="tracking.html">Goto 2</a>
+                            <a class="menubutton" href="tracking.html">Tracking API beta</a>
                             <ul>
-                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
-                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
-                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
                                 <li class="marked">
-                                    <a class="menubutton" href="tracking.html">Goto 3</a>
-                                    <ul>
-                                        <li class="marked"><a class="menubutton" href="tracking.html">level 3</a></li>
-                                    </ul>
+                                    <a class="menubutton" href="tracking.html">Introduction</a>
                                 </li>
                             </ul>
                         </li>
+                        <li><a class="menubutton" href="tracking.html">Postal code validate API</a></li>
+                        <li><a class="menubutton" href="tracking.html">Post office chooser API</a></li>
                     </ul>
                 </div>
                 
                 <div id="download" class="menubox">
                     <ul class="menulist">
-                        <li><a class="menubutton" href="tracking.html">level 1</a></li>
-                        
-                        <li class="marked">
-                            <a class="menubutton" href="tracking.html">Goto 2</a>
-                            <ul class="menulist">
-                                <li><a class="menubutton" href="tracking.html">level 2</a></li>
-                                <li class="marked">
-                                    <a class="menubutton" href="tracking.html">Goto 3</a>
-                                    <ul class="menulist">
-                                        <li class="marked"><a class="menubutton" href="tracking.html">level 3</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                        <li><a class="menubutton" href="https://github.com/bring/open-java-api">Java client library</a></li>
                     </ul>
                 </div>
                 
-                <div id="talk" class="menubox group">
-                </div>
+                <misc:talk />
             </div>
 
             <div class="content group">
@@ -173,7 +148,6 @@
 						Satisfaction for <b>technical</b> feedback regarding the API</a>. 
 						Please give us a hint if you making use of the API.
 					</p>
-					
 				</div>
                 <misc:socialfeed />
             </div>
@@ -183,10 +157,9 @@
     <misc:footer />
     
     <misc:jquery />
-    <script src="js/menutab.js"></script>
-    <script src="js/twitter.js"></script>
+    <script src="/js/menutab.js"></script>
+    <script src="/js/twitter.js"></script>
     <script>
-    
         $(document).ready(function() {
             $("#navigation").menutab("init", {
             	section: "#learn",

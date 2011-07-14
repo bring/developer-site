@@ -126,11 +126,9 @@ ul.avatar-list li {
     font-size: 0.75em;
     margin-bottom: 10px;
 }
-/*
 ul.avatar-list li:last-child {
-    margin-top: -8px;
+    margin-bottom: 0;
 }
-*/
 
 .avatar-list-text {
     min-height: 40px;
@@ -369,3 +367,14 @@ ul.avatar-list li:last-child {
     float:right;
     margin: 5px;
 }
+
+/* Socialfeed */
+
+.socialfeed-title {
+    width: 100%;
+    border-bottom: 5px solid #bbb;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: #fff;
+}
+

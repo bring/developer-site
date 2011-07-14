@@ -2,7 +2,7 @@
 <div class="header">
     <div>
         <a href="home.html">
-            <img title="bring.no" src="img/logo.png" id="logo-screen" alt="bring.no" />
+            <img title="bring.no" src="/img/logo.png" id="logo-screen" alt="bring.no" />
         </a>
         
         <ul class="tabs group">

@@ -66,11 +66,6 @@ body:before {
     box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
 }
 
-.content .talk-content {
-    float: left;
-    margin-top: 10px;
-}
-
 .header {
     background-color: #fff;
     border-bottom: 15px solid #7fc14b;

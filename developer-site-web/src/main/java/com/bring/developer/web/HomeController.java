@@ -10,24 +10,13 @@ public class HomeController {
     public String home() {
         return "home";
     }
-    
-    @RequestMapping(value = "/learn.html")
-    public String learn() {
-        return "learn";
-    }
-    
-    @RequestMapping(value = "/download.html")
-    public String download() {
-        return "download";
-    }
-    
     @RequestMapping(value = "/talk.html")
     public String talk() {
         return "talk";
     }
     
-    @RequestMapping(value = "tracking.html")
+    @RequestMapping(value = "/learn/tracking/index.html")
     public String tracking() {
-        return "learn/tracking";
+        return "learn/tracking/index";
     }
 }

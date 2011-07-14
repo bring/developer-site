@@ -9,8 +9,7 @@ $.fn.performTwitterSearch = function (numberOfTweets){
 				appendTweets(data, numberOfTweets);
 			}
 			else {
-				console.log(this);
-				setTimeout("$('"+selected.attr("id")+"').performTwitterSearch("+ numberOfTweets + ")", 2000); 
+				setTimeout("$('#"+selected.attr("id")+"').performTwitterSearch("+ numberOfTweets + ")", 2000);
 			}
 		}
 	);
