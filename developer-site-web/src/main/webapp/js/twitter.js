@@ -53,23 +53,35 @@ $.fn.performTwitterSearch = function (numberOfTweets){
 	}
 	
 	function generateHtml(tweet, type) {
+		var text = tweet.text.replace(/(https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/, 
+				function (u) {
+					var shortUrl = (u.length > 30) ? u.substr(0, 30) + '...': u;
+					return '<a href="' + u + '">' + shortUrl + '</a>';
+				})
+				.replace(/@(bringapi)/g, '<a href="http://twitter.com/$1">@$1</a>');
+		
+		console.log(text);
 		if(type==1){
 			return '<li class="group"><img class="avatar" src="' + 
 			tweet.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
-			tweet.from_user + '</div><div class="question-text"><pre>' + 
-			tweet.text + '</pre></div>' + '<div class="datetime">' + 
+			formatUser(tweet.from_user) + '</div><div class="question-text"><pre>' + 
+			text + '</pre></div>' + '<div class="datetime">' + 
 			relative_time(tweet.created_at) + '</div></div></li>';			
 		}
 		else if(type==2){
 			return '<li class="group"><img class="avatar" src="' + 
 			tweet.user.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
-			tweet.user.from_user + '</div><div class="question-text"><pre>' + 
-			tweet.text + '</pre></div>' + '<div class="datetime">' + 
+			formatUser(tweet.user.from_user) + '</div><div class="question-text"><pre>' + 
+			text + '</pre></div>' + '<div class="datetime">' + 
 			relative_time(tweet.created_at) + '</div></div></li>';			
 		}
 		else{
 			return '';
 		}
+	}
+	
+	function formatUser(user){
+		return user.replace(/(bringapi)/g, '<a href="http://twitter.com/$1">$1</a>');
 	}
 	
 	function relative_time(time_value) {

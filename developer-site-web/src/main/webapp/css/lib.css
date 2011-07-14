@@ -136,6 +136,15 @@ ul.avatar-list li:last-child {
     float: right;
     background-color: #f0f0f1;
     padding: 5px;
+    position: relative;
+}
+
+.blocklink{
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%; 
+    position: absolute;
 }
 
 .avatar-list-text pre{
