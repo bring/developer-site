@@ -45,7 +45,7 @@ body:before {
     background: linear-gradient(top, rgba(226,227,228,1) 0%,rgba(226,227,228,1) 85%,rgba(197,199,200,1) 100%); /* W3C */
 }
 
-.content {
+.main, .header > *, .footer > * {
 	width: 996px; /* width = 986px + 5px margin on each side */
 	margin: 0 auto;
 }
@@ -53,6 +53,22 @@ body:before {
 .main {
 	padding-top: 10px;
 	padding-bottom: 150px; /* Space for sticky-footer */
+}
+
+.content {
+    min-height: 300px;
+    margin: 0 5px 50px 5px;
+    background-color: #fff;
+    
+    /* css3 */
+    -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+    -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+    box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+}
+
+.content .talk-content {
+    float: left;
+    margin-top: 10px;
 }
 
 .header {

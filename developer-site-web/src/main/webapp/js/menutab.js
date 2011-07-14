@@ -41,7 +41,8 @@
 				methods.deactivateTab(function() {methods.activateTab(chosen);});
 			}
 			else {
-				methods.activateTab(chosen, function() {this.trigger("tabsActivated")});
+				methods.markLauncher(chosen.launcher);
+				methods.activateTab(chosen);
 			}
 			
 			return this;

@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div class="header">
-    <div class="content">
+    <div>
         <a href="home.html">
             <img title="bring.no" src="img/logo.png" id="logo-screen" alt="bring.no" />
         </a>

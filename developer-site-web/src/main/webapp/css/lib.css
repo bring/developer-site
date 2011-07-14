@@ -291,3 +291,81 @@ ul.avatar-list li:last-child {
 
 .talkbox blockquote {
 }
+
+/* Learn */
+
+
+/* Menutab */
+
+.menutab {
+    margin: 5px 5px 0 5px;
+    height: 50px;
+    color: #b7b7b7;
+    background-color: #f2f2f2;
+
+    /* css3 */
+    -moz-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
+    -webkit-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
+    box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
+}
+
+.menutab-selected {
+    background-color: #3b3b3b;
+}
+
+.menubox {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 5px 0 5px;
+    background-color: #3b3b3b;
+    
+/*     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd; */
+/*     -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd; */
+/*     box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd; */
+}
+
+.menubox {
+    position: relative;
+}
+
+.marked ul {
+    position: absolute;
+    top: 0;
+    right: -332px;
+}
+
+.menulist, .menulist ul {
+    position: absolute;
+    width: 322px;
+    list-style: none;
+}
+
+.menulist li a {
+    padding: 5px;
+    width: 292px;
+    display: block;
+    background-color: #666;
+    text-decoration: none;
+    color: #ccc;
+}
+
+.menubutton {
+    margin: 2px 10px;
+}
+
+.menubutton:after {
+    content: "\203A";
+    float: right;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.menulist  li a.selected, .menulist li a:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
+.menulist  li a img {
+    float:right;
+    margin: 5px;
+}

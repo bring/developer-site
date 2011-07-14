@@ -1,15 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
-<misc:head />
+<head>
+    <misc:contenttype />
+    <misc:title value="Tracking" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/lib.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
 
 <body>
     <div class="wrapper">
+    
         <misc:header />
-        <div class="main content">
+        
+        <div class="main">
         
             <div>
                 <div class="group" id="navigation">
@@ -90,7 +97,7 @@
                 </div>
             </div>
 
-            <div class="main-content group">
+            <div class="content group">
 				<div class="article">
 					<h1>Tracking - Information for developers</h1>
 					<h2>Tracking Link</h2>
@@ -168,19 +175,24 @@
 					</p>
 					
 				</div>
-                <misc:questions />
+                <misc:socialfeed />
             </div>
         </div>
-
     </div>
+    
     <misc:footer />
+    
+    <misc:jquery />
+    <script src="js/menutab.js"></script>
+    <script src="js/twitter.js"></script>
     <script>
+    
         $(document).ready(function() {
             $("#navigation").menutab("init", {
             	section: "#learn",
-                navigation: "#navigation",
                 tabs: [ "#learn", "#download", "#talk" ],
             });
+            $("#twittercontent").performTwitterSearch(3);
      });
     </script>
 </body>
