@@ -29,13 +29,22 @@ public class TwitterDao {
 		this.httpClient = httpClient;
 	}
 	
-	@Cacheable(cacheName = "twitterCache")
-	public String performSearch(String query) {
-		Validate.notEmpty(query);
-		HttpGet httpGet = new HttpGet("http://search.twitter.com/search.json?q=" + query);
+	@Cacheable(cacheName = "twitterCacheSearch")
+	public String performSearch(String request) {
+		return performRequest(request);
+	}
+	
+	@Cacheable(cacheName = "twitterCacheStatus")
+	public String performGetStatus(String request) {
+	    return performRequest(request);
+    }
+
+    private String performRequest(String request) {
+        Validate.notEmpty(request);
+		HttpGet httpGet = new HttpGet(request);
 		HttpResponse result = null;
 		try {
-		    LOG.info("Performing Twitter search: " + query);
+		    LOG.info("Performing Twitter request: " + request);
 			result = httpClient.execute(httpGet);
 			validateTwitterResult(result);
 			return IOUtils.toString(result.getEntity().getContent(), "UTF-8");
@@ -49,7 +58,7 @@ public class TwitterDao {
 		finally {
 			consumeEntity(result);
 		}
-	}
+    }
 
 	private void consumeEntity(HttpResponse result) {
 		try {

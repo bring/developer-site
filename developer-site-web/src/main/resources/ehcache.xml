@@ -6,7 +6,12 @@
         overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0"
         timeToLiveSeconds="600" memoryStoreEvictionPolicy="LRU"/>
 
-    <cache name="twitterCache" eternal="false"
+    <cache name="twitterCacheSearch" eternal="false"
+        maxElementsInMemory="5" overflowToDisk="false" diskPersistent="false"
+        timeToIdleSeconds="0" timeToLiveSeconds="600"
+        memoryStoreEvictionPolicy="LRU" />
+        
+    <cache name="twitterCacheStatus" eternal="false"
         maxElementsInMemory="5" overflowToDisk="false" diskPersistent="false"
         timeToIdleSeconds="0" timeToLiveSeconds="600"
         memoryStoreEvictionPolicy="LRU" />
