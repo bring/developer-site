@@ -59,41 +59,40 @@ p, .quote {
  * Typesetting
  */
  
- .article {
-    width: 644px;
-    margin: 10px 10px 20px 10px;
-    float: left;
-}
-
-.article h1 {
-    width: 634px;
-    padding: 10px 10px 10px 10px;
-    background-color: #eee;
-    color: #3b3b3b;
-    font-weight:bold;
-    margin-left: -10px;
+h1, h2, h3, h4 {
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
-
-.article h2 {
-    width: 624px;
+h2, h3, h4 {
     color: #3b3b3b;
-    margin: 20px 5px 20px 0px;
-    border-bottom: 5px solid #ddd; 
 }
 
-.article h3 {
-    color: #3b3b3b;
-    margin: 20px 5px 2px 0px;
+h1 {
+    font-weight:bold;
+}
+
+h2 {
+    border-bottom: 5px solid #ddd;
+}
+
+h3 {
     font-weight: bold;
 }
 
-.article h4 {
-    color: #3b3b3b;
+h4 {
     font-size: 0.9em;
 }
 
+p {
+    padding-bottom: 5px;
+}
+
+ .article {
+    width: 644px;
+    float: left;
+    padding: 0 10px 20px 10px;
+}
 .article ul {
     list-style: none;
     margin: 10px 5px 10px 5px;

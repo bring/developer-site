@@ -1,5 +1,6 @@
 (function($) {
 	var active = null;
+	var ignoreEvents = false;
 	
 	var options = {
 		section: "#learn",
@@ -26,29 +27,38 @@
 		clean: function() {
 			methods.hideTabs();
 			methods.unmarkLaunchers();
+			active = null;
 			return this;
 		},
 		
 		tabSelected: function(tabId) {
+			if (ignoreEvents)
+				return this;
+			ignoreEvents = true;
+			
 			var chosen = methods.getChosen(tabId);
 			
 			if (methods.isActive(chosen)) {
+				console.log("isActive")
 				options.reset(methods, options);
+				ignoreEvents = false;
 			}
 			else if (methods.tabsActivated()) {
+				console.log("tabsActivated");
 				methods.unmarkLauncher(active.launcher);
 				methods.markLauncher(chosen.launcher);
-				methods.deactivateTab(function() {methods.activateTab(chosen);});
+				methods.deactivateTab(function() {methods.activateTab(chosen); ignoreEvents = false;});
 			}
 			else {
+				console.log("!tabsActivated");
 				methods.markLauncher(chosen.launcher);
-				methods.activateTab(chosen);
+				methods.activateTab(chosen, function() {ignoreEvents = false});
 			}
-			
 			return this;
 		},
 		
 		activateTab: function(activeElement, callback) {
+			console.log("activating: "+activeElement.tab.attr("id"));
 			active = activeElement;
 			methods.fixHeight(active.tab);
 			methods.showTab(active.tab, callback);
@@ -56,7 +66,8 @@
 		},
 		
 		deactivateTab: function(callback) {
-			methods.hideTab(active.tab, callback)
+			console.log("deactivating:"+active.tab.attr("id"));
+			methods.hideTab(active.tab, callback);
 			active = null;
 			return this;
 		},
