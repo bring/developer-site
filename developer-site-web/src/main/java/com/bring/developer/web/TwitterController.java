@@ -28,7 +28,7 @@ public class TwitterController {
     
     @RequestMapping(value = "/twitter/search.json")
     public ResponseEntity<String> search() {
-        String result = twitterDao.performSearch("http://search.twitter.com/search.json?q=from:bringapi%20OR%20%40bringapi");
+        String result = twitterDao.performSearch("http://search.twitter.com/search.json?q=from:bringapi%20OR%20%40bringapi&rpp=5");
         MultiValueMap<String, String> headers = new HttpHeaders();
         headers.add("Content-Type", "application/json;charset=utf-8");
         return new ResponseEntity<String>(result, headers, HttpStatus.OK);
