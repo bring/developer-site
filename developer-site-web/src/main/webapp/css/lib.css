@@ -307,6 +307,7 @@ ul.avatar-list li:last-child {
     box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
 }
 
+
 .menutab-selected {
     background-color: #3b3b3b;
 }
@@ -347,6 +348,11 @@ ul.avatar-list li:last-child {
     color: #ccc;
 }
 
+li.marked a {
+    color: #fff;
+    background-color: #999;
+}
+
 .menubutton {
     margin: 2px 10px;
 }
@@ -359,7 +365,7 @@ ul.avatar-list li:last-child {
 }
 
 .menulist  li a.selected, .menulist li a:hover {
-    background-color: #ccc;
+    background-color: #999;
     color: #fff;
 }
 
@@ -371,10 +377,10 @@ ul.avatar-list li:last-child {
 /* Socialfeed */
 
 .socialfeed-title {
-    width: 100%;
     border-bottom: 5px solid #bbb;
     margin-bottom: 10px;
     margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color: #fff;
 }
-
