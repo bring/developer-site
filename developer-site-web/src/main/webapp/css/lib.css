@@ -348,7 +348,15 @@ ul.avatar-list li:last-child {
     color: #ccc;
 }
 
-li.marked a {
+.menulist ul {
+    visibility: hidden;
+}
+
+.menulist .marked > ul {
+    visibility: visible;
+}
+
+li.marked > a {
     color: #fff;
     background-color: #999;
 }

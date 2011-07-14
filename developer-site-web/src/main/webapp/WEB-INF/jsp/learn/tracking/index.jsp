@@ -18,8 +18,8 @@
         
         <div class="main">
         
-            <div>
-                <div class="group" id="navigation">
+            <div id="navigation">
+                <div class="navigation-launchers group">
                     <div id="learn-launcher" class="section-launcher menutab span-2">
                        <div class="section-title"><a href="#learn"><span>LEARN</span></a></div>
                        <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
@@ -34,39 +34,51 @@
                     </div>
                 </div>
      
-                <div id="breadcrumbs" class="menubox">
-                    <ul class="menulist">
-                        <li class="marked">
-                            <a class="menubutton" href="index.html">Tracking beta</a>
-                            <ul>
-                                <li class="marked current-page">
-                                    <a class="menubutton" href="index.html">Introduction</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div id="learn" class="menubox">
-                    <ul class="menulist">
-                        <li><a class="menubutton" href="/learn/shippingguide/index.html">Shipping guide API</a></li>
-                        <li class="marked">
-                            <a class="menubutton" href="index.html">Tracking API beta</a>
-                            <ul>
-                                <li class="marked">
-                                    <a class="menubutton" href="index.html">Introduction</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a class="menubutton" href="/learn/postalcodevalidation/index.html">Postal code validate API</a></li>
-                        <li><a class="menubutton" href="/learn/postofficechooser/index.html">Post office chooser API</a></li>
-                    </ul>
-                </div>
-                
-                <div id="download" class="menubox">
-                    <ul class="menulist">
-                        <li><a class="menubutton" href="https://github.com/bring/open-java-api">Java client library</a></li>
-                    </ul>
+                <div class="navigation-tabs">
+                    <div id="breadcrumbs" class="menubox">
+                        <ul class="menulist">
+                            <li class="marked">
+                                <a class="menubutton" href="index.html">Tracking beta</a>
+                                <ul>
+                                    <li class="marked current-page">
+                                        <a class="menubutton" href="index.html">Introduction</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="learn" class="menubox">
+                        <ul class="menulist">
+                            <li><a class="menubutton" href="/learn/shippingguide/index.html">Shipping guide API</a>
+                                <ul>
+                                    <li><a class="menubutton" href="index.html">Shipping Introduction</a>
+                                        <ul class="menulist"><li><a class="menubutton" href="index.html">Shipping test</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="marked">
+                                <a class="menubutton" href="index.html">Tracking API beta</a>
+                                <ul>
+                                    <li class="marked">
+                                        <a class="menubutton" href="index.html">Introduction</a>
+                                        <ul class="menulist">
+                                            <li><a class="menubutton" href="index.html">Test</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="menubutton" href="/learn/postalcodevalidation/index.html">Postal code validate API</a></li>
+                            <li><a class="menubutton" href="/learn/postofficechooser/index.html">Post office chooser API</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div id="download" class="menubox">
+                        <ul class="menulist">
+                            <li><a class="menubutton" href="https://github.com/bring/open-java-api">Java client library</a></li>
+                        </ul>
+                    </div>
                 </div>
                 
                 <misc:talk />
@@ -181,6 +193,39 @@
             	section: "#learn",
                 tabs: [ "#learn", "#download", "#talk" ],
             });
+            
+            $("#learn > ul > li > a").mouseover(function (event) {
+                console.log("eating bread 1");
+                
+                $("#learn li.marked").each(function(i,element) {
+                	$(element).removeClass("marked");
+                });
+                $(this).parent().addClass("marked");
+                console.log($(this).parent());
+                event.preventDefault();
+            });
+            
+            $("#breadcrumbs > ul > li > a").click(function (event) {
+                console.log("eating bread 1");
+                $("#navigation").menutab("tabSelected", "#learn");
+                event.preventDefault();
+            });
+            
+            $("#breadcrumbs > ul > li > a").mouseover(function (event) {
+            	console.log("bread 1");
+            	event.preventDefault();
+            });
+            
+            $("#breadcrumbs > ul > li > ul > li > a").mouseover(function (event) {
+                console.log("bread 2");
+                event.preventDefault();
+            });
+            
+            $("#breadcrumbs > ul > li > ul > li > a > ul > li > a").mouseover(function (event) {
+                console.log("bread 3");
+                event.preventDefault();
+            });
+            
             $("#twittercontent").performTwitterSearch(3);
      });
     </script>
