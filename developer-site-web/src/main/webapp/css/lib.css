@@ -269,20 +269,24 @@ ul.avatar-list li:last-child {
 /* talkbox */
 
 .talkbox {
+    font-size: 0.75em;
     margin: 10px;
-    background-color: #f0f0f1;
+/*     background-color: #f0f0f1; */
     width: 302px;
+    padding-bottom: 20px;
 }
 
 .talkbox-header {
-    padding: 5px;
-    border-bottom: 1px solid black;
+    line-height: 30px;
+    padding: 10px;
+    border-bottom: 1px solid #3b3b3b;
     color: #ccc;
     background-color: #555;
 }
 
 .talkbox-footer {
-    border-top: 1px solid black;
+    padding: 10px;
+    border-top: 1px solid #3b3b3b;
     color: #fff;
     background-color: #999;
 }
@@ -298,6 +302,9 @@ ul.avatar-list li:last-child {
 }
 
 .talkbox blockquote {
+    padding: 10px;
+    margin-bottom: 0;
+    font-size: 1em;
 }
 
 /* Learn */
@@ -312,14 +319,25 @@ ul.avatar-list li:last-child {
     background-color: #f2f2f2;
 
     /* css3 */
-    -moz-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
-    -webkit-box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
-    box-shadow: -2px -2px 2px #ddd, 2px -2px 2px #ddd;
+    box-shadow: 0 0 3px #aaa;
+
 }
 
+.menutab-selected:after {
+    background-color: #3b3b3b;
+    width: 332px;
+    height: 14px;
+    bottom: -5px;
+    left: -10px;
+    z-index: 2;
+    position: absolute;
+    display: block;
+    content: " ";
+}
 
 .menutab-selected {
     background-color: #3b3b3b;
+    box-shadow: 0 0 10px #999;
 }
 
 .menubox {
@@ -327,10 +345,7 @@ ul.avatar-list li:last-child {
     padding-bottom: 10px;
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
-    
-/*     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd; */
-/*     -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd; */
-/*     box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd; */
+    box-shadow: 0 0 10px #999;
 }
 
 .navigation-tabs {
@@ -357,8 +372,8 @@ ul.avatar-list li:last-child {
 }
 
 .menulist li a {
-    padding: 5px;
-    width: 292px;
+    padding: 10px;
+    width: 282px;
     display: block;
     background-color: #666;
     text-decoration: none;
@@ -366,6 +381,7 @@ ul.avatar-list li:last-child {
 }
 
 .menulist ul {
+    font-size: 1em;
     visibility: hidden;
 }
 
@@ -383,6 +399,8 @@ li.marked > a {
 }
 
 .menubutton:after {
+    margin-top: -5px;
+    font-size: 1.5em;
     content: "\203A";
     float: right;
     margin-right: 5px;
