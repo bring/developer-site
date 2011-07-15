@@ -86,12 +86,14 @@
 		},
 		
 		fixHeight: function(activeMenu) {
-			if ($(activeMenu).height() != 0) {
-				return this;
-			}
+	//			if ($(activeMenu).height() != 0) {
+	//				return this;
+	//			}
             var maxHeight = 0;
-            $(".menulist, .marked > ul",activeMenu).each(function(i,element) {
-//            	maxHeight = Math.max(maxHeight, parseFloat($(element).css("max-height")));
+            //add(".dropdown-menu").
+            methods.calculateHeight(activeMenu);
+            $(".menulist, .marked > ul, .dropdown-menu",activeMenu).each(function(i,element) {
+//            	console.log($(element).data("height"));
             	maxHeight = Math.max(maxHeight, $(element).data("height"));
             });
             activeMenu.height(maxHeight);
@@ -105,28 +107,33 @@
 		},
 		
 		calculateHeight: function(tab) {
-			$(".menulist, .marked > ul", $(tab)).add($("#breadcrumbs ul")).each(function(i2, ul) {
+			$(".menulist, .marked > ul, .dropdown-menu", $(tab)).add($("#breadcrumbs ul")).each(function(i2, ul) {
 				$(ul).data("height", methods.getHeight(ul));
-//				$(ul).css("max-height", methods.getHeight(ul));
 			});
 		},
 		
 		getHeight: function(element) {
-			var originalProperties = {};
+//			var originalProperties = {};
+//			
+//			// Make height calculable
+//			$(options.)
+//			$([ "visibility", "position", "display" ]).each(function(i, property) {
+//				originalProperties[property] = $(element).css(property);
+//			});
+//			$(element).css({
+//				visibility: "hidden",
+//				position: "fixed",
+//				display: "block"
+//			});
+//			
+//			var height = $(element).height();
+//			console.log($(element));
+//			
+//			$(element).css(originalProperties);
 			
-			// Make height calculable
-			$([ "visibility", "position", "display" ]).each(function(i, property) {
-				originalProperties[property] = $(element).css(property);
-			});
-			$(element).css({
-				visibility: "hidden",
-				position: "fixed",
-				display: "block"
-			});
+//			return height;
 			
-			var height = $(element).height();
-			$(element).css(originalProperties);
-			return height;
+			return $(element).actual("outerHeight");
 		},
 		
 		handleCallback: function(callback) {

@@ -14,6 +14,11 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acron
 	vertical-align: baseline;
 }
 
+p,blockquote,pre,address,dl,ol,ul,table {
+    font-size: 0.75em;
+}
+
+
 body {
     color: #656565;
 	line-height: 1.5;
@@ -108,12 +113,12 @@ p {
 
 
 /* Default link style. */
-.article a {
+a {
     color: #00B2E4;
     text-decoration: none;
 }
 
-.article a:hover {
+a:hover, a:focus {
     color: #444;
     text-decoration: none;
 }
