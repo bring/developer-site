@@ -57,7 +57,7 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 		var image = '';
 		var user = '';
 		var time = relative_time(tweet.created_at);
-		
+				
 		var text = tweet.text.replace(/(https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/, 
 				function (u) {
 			var shortUrl = (u.length > 30) ? u.substr(0, 30) + '...': u;
@@ -71,7 +71,7 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 		}
 		else if (type==2){
 			image = tweet.user.profile_image_url;
-			user = formatUser(tweet.user.from_user);
+			user = formatUser(tweet.user.screen_name);
 		}
 		
 		return generateHtml(image, user, text, time);

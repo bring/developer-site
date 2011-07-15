@@ -193,7 +193,7 @@ ul.avatar-list li:last-child {
 }
 
 .widget-title:after {
-    content: "⬇";
+    content: "\02B07";
     float: right;
 }
 
@@ -282,16 +282,29 @@ ul.avatar-list li:last-child {
 }
 
 .talkbox-header {
-    line-height: 30px;
-    padding: 10px;
-    border-bottom: 1px solid #3b3b3b;
-    background-color: #565656;
+    position: relative;
 }
 
 .talkbox-header a{
+    line-height: 33px;
+    border-bottom: 1px solid #3b3b3b;
+    background-color: #565656;
+    background-image: url(/img/twitter.png);
+    background-repeat: no-repeat;
+    background-position: 7px center;
+    padding-left: 40px;
+	font-weight: bold;
     color: #ccc;
     font-color: #ccc;
     text-transform: uppercase;
+    display: block;
+}
+
+.talkbox-header a:after {
+    content: "\02B08";
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .talkbox-footer {
@@ -305,9 +318,6 @@ ul.avatar-list li:last-child {
     color: #f0f0f1;
 }
 
-.talkbox-title {
-    padding-left: 10px;
-}
 
 .talkbox-image {
     float: left;
