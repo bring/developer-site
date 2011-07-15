@@ -89,15 +89,15 @@
 					<h1>Tracking - Information for developers</h1>
 					<h2>Tracking Link</h2>
                     <p>
-                        Links to tracking can be the same as the URL of a normal tracking request.<br />
-                        E.g.: <code>http://sporing.bring.no/sporing.html?q=...</code>
+                        Links to tracking can be the same as the URL of a normal tracking request. 
+                        E.g.: <br/> <code>http://sporing.bring.no/sporing.html?q=...</code>
                     </p>
 
                     <p>The parameter "q" is the query string (reference, shipment or package number).</p>
                     
                     <p>
                         If the query string is a sender's reference, then it's recommended to filter on the sender's 
-                        id ("aktørnummer"), if available. Then the results will be unique for that sender. 
+                        id ("aktørnummer"), <br/> if available. Then the results will be unique for that sender. 
                         This is done with the parameter aktornummer, e.g. <code>&aktornummer=123.</code>
                     </p>
                     
@@ -132,9 +132,7 @@
 						<a href="http://fraktguide.bring.no/fraktguide/forDevelopersEnglish.do">
 							JSON in Bring Fraktguide</a>.
 					</p>
-                    
-                    <h3>JSON</h3>
-                    
+                                        
 					<form action="http://sporing.bring.no/sporing.json" method="get">
 						<p>Reference/Shipment/Package Number: 
 						<input type="text" name="q"/> 

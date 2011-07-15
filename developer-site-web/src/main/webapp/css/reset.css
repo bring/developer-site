@@ -43,6 +43,7 @@ blockquote,q {
 	quotes: "" "";
 }
 
+
 /* Remove annoying border on linked images. */
 a img {
 	border: none;
@@ -103,4 +104,21 @@ p {
     list-style: none; 
     content: "\203A";
     margin-right: 5px;
+}
+
+
+/* Default link style. */
+.article a {
+    color: #00B2E4;
+    text-decoration: none;
+}
+
+.article a:hover {
+    color: #444;
+    text-decoration: none;
+}
+
+/* default code style. */
+code {
+    font-weight: bold;
 }
