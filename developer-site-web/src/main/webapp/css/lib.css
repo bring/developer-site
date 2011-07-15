@@ -120,10 +120,10 @@ html[xmlns] .group {
 ul.avatar-list {
     width: 322px;
     list-style: none;
+    font-size: 1em;
 }
 
 ul.avatar-list li {
-    font-size: 0.75em;
     margin-bottom: 10px;
 }
 ul.avatar-list li:last-child {
@@ -139,7 +139,7 @@ ul.avatar-list li:last-child {
     position: relative;
 }
 
-.blocklink{
+.blocklink {
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -159,6 +159,7 @@ ul.avatar-list li:last-child {
 }
 
 .avatar-list-footer {
+    font-size: 0.75em;
     min-height: 0;
     margin: 10px solid red;
 }
@@ -170,13 +171,14 @@ ul.avatar-list li:last-child {
 
 /* Question */
 
-.question-datetime {
-    color: #9A9999;.last {
+.datetime {
+    font-size: 0.75em;
+    color: #9A9999;
     margin-right: 0;
-}
 }
 
 .question-title {
+    font-size: 0.75em;
     font-weight: bold;
 }
 
