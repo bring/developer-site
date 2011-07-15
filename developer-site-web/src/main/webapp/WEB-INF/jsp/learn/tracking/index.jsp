@@ -104,36 +104,28 @@
                 tabs: [ "#learn", "#download", "#talk" ],
             });
             
-            /*
-            $("#learn > ul > li > a").mouseover(function (event) {
-                $("#learn li.marked").each(function(i,element) {
-                	$(element).removeClass("marked");
+            function($) {
+            	var State = {
+            		BREADCRUMBS: 0,
+            		MENU: 1
+            	};
+            	
+                $("#learn > ul > li > a").mouseover(function (event) {
+                    $("#learn li.marked").each(function(i,element) {
+                        $(element).removeClass("marked");
+                    });
+                    $(this).parent().addClass("marked");
+                    console.log($(this).parent());
+                    event.preventDefault();
                 });
-                $(this).parent().addClass("marked");
-                console.log($(this).parent());
-                event.preventDefault();
-            });
+                
+                $("#breadcrumbs > ul > li > a").click(function (event) {
+                    console.log("eating bread 1");
+                    $("#navigation").menutab("tabSelected", "#learn");
+                    event.preventDefault();
+                });
+            }(jQuery);
             
-            $("#breadcrumbs > ul > li > a").click(function (event) {
-                console.log("eating bread 1");
-                $("#navigation").menutab("tabSelected", "#learn");
-                event.preventDefault();
-            });
-            */
-            $("#talk").performTwitterSearch(1, function(image, user, text, time){
-               return '<div class="talkbox dropdown-menu">' + 
-							'<div class="talkbox-header group">' +
-								'<img class="talkbox-image" src="' + image + '"/>' + 
-								'<span class="talkbox-title">' + 
-									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
-								'</span>' +
-							'</div>' +
-							'<blockquote class="quote">' + text + '</blockquote>' +
-							'<div class="talkbox-footer">' +
-								'<span>' +  user + ' ' + time + '</span>' +
-							'</div>' +
-						'</div>';
-            });
             /*
             $("#breadcrumbs > ul > li > a").mouseover(function (event) {
             	console.log("bread 1");
@@ -150,6 +142,21 @@
                 event.preventDefault();
             });
             */
+            
+            $("#talk").performTwitterSearch(1, function(image, user, text, time){
+               return '<div class="talkbox dropdown-menu">' + 
+							'<div class="talkbox-header group">' +
+								'<img class="talkbox-image" src="' + image + '"/>' + 
+								'<span class="talkbox-title">' + 
+									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
+								'</span>' +
+							'</div>' +
+							'<blockquote class="quote">' + text + '</blockquote>' +
+							'<div class="talkbox-footer">' +
+								'<span>' +  user + ' ' + time + '</span>' +
+							'</div>' +
+						'</div>';
+            });
             
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
 				return '<li class="group"><img class="avatar" src="' + 
