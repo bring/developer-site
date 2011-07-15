@@ -30,7 +30,7 @@ $.fn.performTwitterSearch = function (numberOfTweets){
 				}
 			}
 		);
-	}
+	} 
 	
 	//Type: 1=search 2=getStatus
 	function appendTweets(array, numberOfTweets, type) {
