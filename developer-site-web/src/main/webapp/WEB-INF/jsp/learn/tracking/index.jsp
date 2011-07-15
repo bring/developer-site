@@ -145,15 +145,16 @@
             
             $("#talk").performTwitterSearch(1, function(image, user, text, time){
                return '<div class="talkbox dropdown-menu">' + 
-							'<div class="talkbox-header group">' +
-								'<img class="talkbox-image" src="' + image + '"/>' + 
+							'<div class="talkbox-header group">' + 
+							'<img class="talkbox-image" src="../../img/twitter.png"/>' +
 								'<span class="talkbox-title">' + 
 									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
 								'</span>' +
 							'</div>' +
 							'<blockquote class="quote">' + text + '</blockquote>' +
 							'<div class="talkbox-footer">' +
-								'<span>' +  user + ' ' + time + '</span>' +
+								'<img class="talkbox-image" src="' + image + '"/>' +
+								'<span>' +  user + '</span><div class="time">' + time + '</div>' +
 							'</div>' +
 						'</div>';
             });

@@ -58,7 +58,6 @@ html[xmlns] .group {
 
 .tabs li {
     display: inline;
-    font-size: 0.75em;
 }
 
 .tabs li:first-child a:before {
@@ -278,19 +277,32 @@ ul.avatar-list li:last-child {
     padding-bottom: 20px;
 }
 
+.talkbox a:hover{
+    text-decoration: underline;
+}
+
 .talkbox-header {
     line-height: 30px;
     padding: 10px;
     border-bottom: 1px solid #3b3b3b;
+    background-color: #565656;
+}
+
+.talkbox-header a{
     color: #ccc;
-    background-color: #555;
+    font-color: #ccc;
+    text-transform: uppercase;
 }
 
 .talkbox-footer {
-    padding: 10px;
+	height: 30px;
     border-top: 1px solid #3b3b3b;
-    color: #fff;
+    color: #f0f0f1;
     background-color: #999;
+}
+
+.talkbox-footer a{
+    color: #f0f0f1;
 }
 
 .talkbox-title {
@@ -304,9 +316,14 @@ ul.avatar-list li:last-child {
 }
 
 .talkbox blockquote {
+	font-size: 1em;
     padding: 10px;
     margin-bottom: 0;
-    font-size: 1em;
+}
+
+.talkbox-footer .time {
+    color: #cbcbcb;
+    font-size: 0.813em;
 }
 
 /* Learn */
