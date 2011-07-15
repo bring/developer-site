@@ -2,14 +2,14 @@ var twitter_search_url = '/twitter/search.json';
 var twitter_status_url = '/twitter/status.json';
 
 
-$.fn.performTwitterSearch = function (numberOfTweets){
+$.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 	// Send JSON request to get tweets
 	var selected = this;
 	$.getJSON(twitter_search_url, 
 		function(data) {	
 			if(data.completed_in !== undefined){
 				if(data.results.length>0) {
-					appendTweets(data.results, numberOfTweets, 1);					
+					appendTweets(data.results, 1);					
 				}
 				else{
 					getJsonFromStatusUrl();
@@ -26,14 +26,14 @@ $.fn.performTwitterSearch = function (numberOfTweets){
 		$.getJSON(twitter_status_url, 
 			function(data) {
 				if(data.length>0) {
-					appendTweets(data, numberOfTweets, 2);
+					appendTweets(data, 2);
 				}
 			}
 		);
 	} 
 	
 	//Type: 1=search 2=getStatus
-	function appendTweets(array, numberOfTweets, type) {
+	function appendTweets(array, type) {
 		var iterations = 0;
 		if(numberOfTweets > array.length){
 			iterations = array.length;
@@ -47,37 +47,34 @@ $.fn.performTwitterSearch = function (numberOfTweets){
 			// Check that we got data:
 			if(tweet !== undefined) {
 				// Append html to div
-				selected.append(generateHtml(tweet, type));
+				selected.append(extractElements(tweet, type));
 			}
 		}
 	}
 	
-	function generateHtml(tweet, type) {
+	
+	function extractElements(tweet, type) {
+		var image = '';
+		var user = '';
+		var time = relative_time(tweet.created_at);
+		
 		var text = tweet.text.replace(/(https?:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)/, 
 				function (u) {
-					var shortUrl = (u.length > 30) ? u.substr(0, 30) + '...': u;
-					return '<a href="' + u + '">' + shortUrl + '</a>';
-				})
-				.replace(/@(bringapi)/g, '<a href="http://twitter.com/$1">@$1</a>');
+			var shortUrl = (u.length > 30) ? u.substr(0, 30) + '...': u;
+			return '<a href="' + u + '">' + shortUrl + '</a>';
+		})
+		.replace(/@(bringapi)/g, '<a href="http://twitter.com/$1">@$1</a>');
 		
-//		console.log(text);
-		if(type==1){
-			return '<li class="group"><img class="avatar" src="' + 
-			tweet.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
-			formatUser(tweet.from_user) + '</div><div class="question-text"><pre>' + 
-			text + '</pre></div>' + '<div class="datetime">' + 
-			relative_time(tweet.created_at) + '</div></div></li>';			
+		if (type==1) {
+			image = tweet.profile_image_url;
+			user = formatUser(tweet.from_user);
 		}
-		else if(type==2){
-			return '<li class="group"><img class="avatar" src="' + 
-			tweet.user.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +
-			formatUser(tweet.user.from_user) + '</div><div class="question-text"><pre>' + 
-			text + '</pre></div>' + '<div class="datetime">' + 
-			relative_time(tweet.created_at) + '</div></div></li>';			
+		else if (type==2){
+			image = tweet.user.profile_image_url;
+			user = formatUser(tweet.user.from_user);
 		}
-		else{
-			return '';
-		}
+		
+		return generateHtml(image, user, text, time);
 	}
 	
 	function formatUser(user){
