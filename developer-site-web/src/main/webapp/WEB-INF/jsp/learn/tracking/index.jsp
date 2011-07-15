@@ -104,27 +104,54 @@
                 tabs: [ "#learn", "#download", "#talk" ],
             });
             
-//             function($) {
-//             	var State = {
-//             		BREADCRUMBS: 0,
-//             		MENU: 1
-//             	};
+            (function($) {
+            	var State = {
+            		BREADCRUMBS: 0,
+            		MENU: 1
+            	};
+            	var state = State.BREADCRUMBS;
+            	$(".menulist > li > a, .marked > a").mouseover(function(event) {
+                	switch (state) {
+                    	case State.BREADCRUMBS:
+                    		console.log("Viewing bread");
+                    		break;
+                    	case State.MENU:
+                    		// Unmark everything in, and below current level
+                    		var context = $(this).parent().parent().parent();
+                    		
+                    		// Mark chosen
+                    		// Expand chosen list
+                    		break;
+                	}
+                	event.preventDefault();
+            	}).click(function(event) {
+                    switch (state) {
+                        case State.BREADCRUMBS:
+                            console.log("Eating bread");
+                            $("#navigation").menutab("tabSelected", "#learn");
+                            state = State.MENU;
+                            break;
+                        case State.MENU:
+                        	console.log("Menu launch");
+                            break;
+                    }
+                    event.preventDefault();
+            	});
+            	
             	
 //                 $("#learn > ul > li > a").mouseover(function (event) {
 //                     $("#learn li.marked").each(function(i,element) {
 //                         $(element).removeClass("marked");
 //                     });
 //                     $(this).parent().addClass("marked");
-//                     console.log($(this).parent());
 //                     event.preventDefault();
 //                 });
                 
 //                 $("#breadcrumbs > ul > li > a").click(function (event) {
-//                     console.log("eating bread 1");
 //                     $("#navigation").menutab("tabSelected", "#learn");
 //                     event.preventDefault();
 //                 });
-//             }(jQuery);
+            })(jQuery);
             
             /*
             $("#breadcrumbs > ul > li > a").mouseover(function (event) {
@@ -143,29 +170,29 @@
             });
             */
             
-            $("#talk").performTwitterSearch(1, function(image, user, text, time){
-               return '<div class="talkbox dropdown-menu">' + 
-							'<div class="talkbox-header group">' + 
-							'<img class="talkbox-image" src="../../img/twitter.png"/>' +
-								'<span class="talkbox-title">' + 
-									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
-								'</span>' +
-							'</div>' +
-							'<blockquote class="quote">' + text + '</blockquote>' +
-							'<div class="talkbox-footer">' +
-								'<img class="talkbox-image" src="' + image + '"/>' +
-								'<span>' +  user + '</span><div class="time">' + time + '</div>' +
-							'</div>' +
-						'</div>';
-            });
+//             $("#talk").performTwitterSearch(1, function(image, user, text, time){
+//                return '<div class="talkbox dropdown-menu">' + 
+// 							'<div class="talkbox-header group">' + 
+// 							'<img class="talkbox-image" src="../../img/twitter.png"/>' +
+// 								'<span class="talkbox-title">' + 
+// 									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
+// 								'</span>' +
+// 							'</div>' +
+// 							'<blockquote class="quote">' + text + '</blockquote>' +
+// 							'<div class="talkbox-footer">' +
+// 								'<img class="talkbox-image" src="' + image + '"/>' +
+// 								'<span>' +  user + '</span><div class="time">' + time + '</div>' +
+// 							'</div>' +
+// 						'</div>';
+//             });
             
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-				return '<li class="group"><img class="avatar" src="' + 
-				image + '"/><div class="avatar-list-text"><div class="question-title">' +
-				user + '</div><div class="question-text"><pre>' + 
-				text + '</pre></div>' + '<div class="datetime">' + 
-				time + '</div></div></li>';
-			});
+//             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
+// 				return '<li class="group"><img class="avatar" src="' + 
+// 				image + '"/><div class="avatar-list-text"><div class="question-title">' +
+// 				user + '</div><div class="question-text"><pre>' + 
+// 				text + '</pre></div>' + '<div class="datetime">' + 
+// 				time + '</div></div></li>';
+// 			});
      });
     </script>
 </body>
