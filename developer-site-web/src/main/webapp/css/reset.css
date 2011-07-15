@@ -43,16 +43,6 @@ blockquote,q {
 	quotes: "" "";
 }
 
-/* Default link style. */
-a {
-    color: #00B2E4;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #444;
-    text-decoration: none;
-}
 
 /* Remove annoying border on linked images. */
 a img {
@@ -114,6 +104,18 @@ p {
     list-style: none; 
     content: "\203A";
     margin-right: 5px;
+}
+
+
+/* Default link style. */
+.article a {
+    color: #00B2E4;
+    text-decoration: none;
+}
+
+.article a:hover {
+    color: #444;
+    text-decoration: none;
 }
 
 /* default code style. */
