@@ -385,6 +385,8 @@ ul.avatar-list li:last-child {
 }
 
 .menulist, .menulist ul {
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
     position: absolute;
     width: 322px;
     list-style: none;
