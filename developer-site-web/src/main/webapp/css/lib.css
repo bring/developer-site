@@ -271,6 +271,7 @@ ul.avatar-list li:last-child {
 .talkbox {
     margin: 10px;
     background-color: #f0f0f1;
+    width: 302px;
 }
 
 .talkbox-header {
@@ -400,4 +401,6 @@ li.marked > a {
     padding-left: 10px;
     padding-right: 10px;
     background-color: #fff;
+    font-size: 0.75em;
+    color: #999;
 }
