@@ -104,27 +104,27 @@
                 tabs: [ "#learn", "#download", "#talk" ],
             });
             
-            function($) {
-            	var State = {
-            		BREADCRUMBS: 0,
-            		MENU: 1
-            	};
+//             function($) {
+//             	var State = {
+//             		BREADCRUMBS: 0,
+//             		MENU: 1
+//             	};
             	
-                $("#learn > ul > li > a").mouseover(function (event) {
-                    $("#learn li.marked").each(function(i,element) {
-                        $(element).removeClass("marked");
-                    });
-                    $(this).parent().addClass("marked");
-                    console.log($(this).parent());
-                    event.preventDefault();
-                });
+//                 $("#learn > ul > li > a").mouseover(function (event) {
+//                     $("#learn li.marked").each(function(i,element) {
+//                         $(element).removeClass("marked");
+//                     });
+//                     $(this).parent().addClass("marked");
+//                     console.log($(this).parent());
+//                     event.preventDefault();
+//                 });
                 
-                $("#breadcrumbs > ul > li > a").click(function (event) {
-                    console.log("eating bread 1");
-                    $("#navigation").menutab("tabSelected", "#learn");
-                    event.preventDefault();
-                });
-            }(jQuery);
+//                 $("#breadcrumbs > ul > li > a").click(function (event) {
+//                     console.log("eating bread 1");
+//                     $("#navigation").menutab("tabSelected", "#learn");
+//                     event.preventDefault();
+//                 });
+//             }(jQuery);
             
             /*
             $("#breadcrumbs > ul > li > a").mouseover(function (event) {
