@@ -85,7 +85,7 @@
             </div>
 
             <div class="content group">
-                <misc:shippingguide />
+                <misc:tracking />
                 <misc:socialfeed />
             </div>
         </div>
