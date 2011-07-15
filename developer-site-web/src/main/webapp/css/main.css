@@ -57,6 +57,7 @@ body:before {
 
 .content {
     min-height: 300px;
+    padding-top: 60px;
     margin: 0 5px 50px 5px;
     background-color: #fff;
     
