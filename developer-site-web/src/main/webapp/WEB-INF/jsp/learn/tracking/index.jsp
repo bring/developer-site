@@ -210,7 +210,20 @@
                 event.preventDefault();
             });
             */
-            
+            $("#talk").performTwitterSearch(1, function(image, user, text, time){
+               return '<div class="talkbox">' + 
+							'<div class="talkbox-header group">' +
+								'<img class="talkbox-image" src="' + image + '"/>' + 
+								'<span class="talkbox-title">' + 
+									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
+								'</span>' +
+							'</div>' +
+							'<blockquote class="quote">' + text + '</blockquote>' +
+							'<div class="talkbox-footer">' +
+								'<span>' +  user + ' ' + time + '</span>' +
+							'</div>' +
+						'</div>';
+            });
             /*
             $("#breadcrumbs > ul > li > a").mouseover(function (event) {
             	console.log("bread 1");
@@ -228,7 +241,13 @@
             });
             */
             
-            $("#twittercontent").performTwitterSearch(3);
+            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
+				return '<li class="group"><img class="avatar" src="' + 
+				image + '"/><div class="avatar-list-text"><div class="question-title">' +
+				user + '</div><div class="question-text"><pre>' + 
+				text + '</pre></div>' + '<div class="datetime">' + 
+				time + '</div></div></li>';
+			});
      });
     </script>
 </body>
