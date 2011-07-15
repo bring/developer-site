@@ -2,6 +2,7 @@ package com.bring.developer.config;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.params.HttpParams;
@@ -25,6 +26,7 @@ public class ApplicationConfig {
         HttpParams params = new BasicHttpParams();
         params.setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, config.evaluateToInt("http.client.connection.timeout"));
         params.setParameter(CoreConnectionPNames.SO_TIMEOUT, config.evaluateToInt("http.client.socket.timeout"));
-        return new DefaultHttpClient(params); 
+        ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
+        return new DefaultHttpClient(connectionManager, params); 
     }
 }
