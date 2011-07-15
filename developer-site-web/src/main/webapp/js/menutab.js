@@ -89,21 +89,21 @@
             var maxHeight = 0;
             $(".menulist, .marked > ul",activeMenu).each(function(i,element) {
             	maxHeight = Math.max(maxHeight, parseFloat($(element).css("max-height")));
-            }.bind(this));
+            });
             activeMenu.height(maxHeight);
         	return this;
 		},
 		
 		calculateHeights: function() {
 			$(options.tabs).each(function(i,tab) {
-				this.calculateHeight(tab);
-			}.bind(methods));
+				methods.calculateHeight(tab);
+			});
 		},
 		
 		calculateHeight: function(tab) {
 			$(".menulist, .marked > ul", $(tab)).add($("#breadcrumbs ul")).each(function(i2, ul) {
-				$(ul).css("max-height", this.getHeight(ul));
-			}.bind(this));
+				$(ul).css("max-height", methods.getHeight(ul));
+			});
 		},
 		
 		getHeight: function(element) {
