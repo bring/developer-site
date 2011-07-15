@@ -38,7 +38,7 @@
                     <div id="breadcrumbs" class="menubox">
                         <ul class="menulist">
                             <li class="marked">
-                                <a class="menubutton" href="index.html">Tracking beta</a>
+                                <a class="menubutton" href="#">Tracking beta</a>
                                 <ul>
                                     <li class="marked current-page">
                                         <a class="menubutton" href="index.html">Introduction</a>
@@ -52,20 +52,17 @@
                         <ul class="menulist">
                             <li><a class="menubutton" href="/learn/shippingguide/index.html">Shipping guide API</a>
                                 <ul>
-                                    <li><a class="menubutton" href="index.html">Shipping Introduction</a>
+                                    <li><a class="menubutton" href="#">Shipping Introduction</a>
                                         <ul><li><a class="menubutton" href="index.html">Shipping test</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li class="marked">
-                                <a class="menubutton" href="index.html">Tracking API beta</a>
+                                <a class="menubutton" href="#">Tracking API beta</a>
                                 <ul>
                                     <li class="marked">
                                         <a class="menubutton" href="index.html">Introduction</a>
-                                        <ul>
-                                            <li class="marked"><a class="menubutton" href="index.html">Test</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
                             </li>
@@ -99,92 +96,80 @@
     <script src="/js/twitter.js"></script>
     <script>
         $(document).ready(function() {
+//             $(".marked").each(function() {
+//                 $(this).addClass("breadcrumb");
+//             });
+            (function($) {
+            	$.fn.menutabext = function() {
+                	var State = {
+                		BREADCRUMBS: 0,
+                		MENU: 1
+                	};
+                	var state = State.BREADCRUMBS;
+                	
+
+                	
+                	// Control state
+            		this.bind("menutabActivated", function() {
+            			state = State.MENU;
+            			$(".breadcrumb").each(function() {
+            				$(this).addClass("marked");
+            			})
+            		}).bind("menutabReset", function() {
+            			state = State.BREADCRUMBS;
+            		});
+            		
+                	// Mark / unmark elements on mouse over
+                	$(".menulist > li > a, .marked > a").mouseover(function(event) {
+                    	switch (state) {
+                        	case State.BREADCRUMBS:
+                        		break;
+                        	case State.MENU:
+                        		console.log("sel");
+                        		var context = $(this).parent().parent().parent();
+                        		$(".marked", context).removeClass("marked");
+                        		$(this).parent().addClass("marked");
+                        		break;
+                    	}
+                    	event.preventDefault();
+                	});
+                	
+                	// Open page on click
+                	$(".menulist a").click(function(event) {
+                        switch (state) {
+                            case State.BREADCRUMBS:
+                                $("#navigation").menutab("tabSelected", "#learn");
+                                event.preventDefault();
+                                break;
+                            case State.MENU:
+                            	if ($(this).attr("href") == "#") {
+                            		event.preventDefault();
+                            	}
+                                break;
+                        }
+                	});
+            	};
+            })(jQuery);
+            
             $("#navigation").menutab("init", {
             	section: "#learn",
                 tabs: [ "#learn", "#download", "#talk" ],
             });
+            $("#navigation").menutabext();
             
-            (function($) {
-            	var State = {
-            		BREADCRUMBS: 0,
-            		MENU: 1
-            	};
-            	var state = State.BREADCRUMBS;
-            	$(".menulist > li > a, .marked > a").mouseover(function(event) {
-                	switch (state) {
-                    	case State.BREADCRUMBS:
-                    		console.log("Viewing bread");
-                    		break;
-                    	case State.MENU:
-                    		// Unmark everything in, and below current level
-                    		var context = $(this).parent().parent().parent();
-                    		
-                    		// Mark chosen
-                    		// Expand chosen list
-                    		break;
-                	}
-                	event.preventDefault();
-            	}).click(function(event) {
-                    switch (state) {
-                        case State.BREADCRUMBS:
-                            console.log("Eating bread");
-                            $("#navigation").menutab("tabSelected", "#learn");
-                            state = State.MENU;
-                            break;
-                        case State.MENU:
-                        	console.log("Menu launch");
-                            break;
-                    }
-                    event.preventDefault();
-            	});
-            	
-            	
-//                 $("#learn > ul > li > a").mouseover(function (event) {
-//                     $("#learn li.marked").each(function(i,element) {
-//                         $(element).removeClass("marked");
-//                     });
-//                     $(this).parent().addClass("marked");
-//                     event.preventDefault();
-//                 });
-                
-//                 $("#breadcrumbs > ul > li > a").click(function (event) {
-//                     $("#navigation").menutab("tabSelected", "#learn");
-//                     event.preventDefault();
-//                 });
-            })(jQuery);
             
-            /*
-            $("#breadcrumbs > ul > li > a").mouseover(function (event) {
-            	console.log("bread 1");
-            	event.preventDefault();
+            $("#talk").performTwitterSearch(1, function(image, user, text, time){
+               return '<div class="talkbox dropdown-menu">' + 
+							'<div class="talkbox-header group">' + 
+									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
+							'</div>' +
+							'<blockquote class="quote">' + text + '</blockquote>' +
+							'<div class="talkbox-footer">' +
+								'<img class="talkbox-image" src="' + image + '"/>' +
+								'<span>' +  user + '</span><div class="time">' + time + '</div>' +
+							'</div>' +
+						'</div>';
             });
-            
-            $("#breadcrumbs > ul > li > ul > li > a").mouseover(function (event) {
-                console.log("bread 2");
-                event.preventDefault();
-            });
-            
-            $("#breadcrumbs > ul > li > ul > li > a > ul > li > a").mouseover(function (event) {
-                console.log("bread 3");
-                event.preventDefault();
-            });
-            */
-            
-//             $("#talk").performTwitterSearch(1, function(image, user, text, time){
-//                return '<div class="talkbox dropdown-menu">' + 
-// 							'<div class="talkbox-header group">' + 
-// 							'<img class="talkbox-image" src="../../img/twitter.png"/>' +
-// 								'<span class="talkbox-title">' + 
-// 									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
-// 								'</span>' +
-// 							'</div>' +
-// 							'<blockquote class="quote">' + text + '</blockquote>' +
-// 							'<div class="talkbox-footer">' +
-// 								'<img class="talkbox-image" src="' + image + '"/>' +
-// 								'<span>' +  user + '</span><div class="time">' + time + '</div>' +
-// 							'</div>' +
-// 						'</div>';
-//             });
             
 //             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
 // 				return '<li class="group"><img class="avatar" src="' + 

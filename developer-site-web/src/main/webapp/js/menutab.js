@@ -1,23 +1,38 @@
 (function($) {
 	var active = null;
 	var ignoreEvents = false;
+	var navigationElement;
+	var initialized = false;
 	
 	var options = {
 		section: "#learn",
 		tabs: [ "#learn", "#download", "#talk" ],
 		
 		reset: function(methods, options) {
-			methods.clean();
-			methods.markLauncher($(options.section+"-launcher"));
-			methods.activateTab({
+			var chosen = {
 				tab: $("#breadcrumbs"), 
 				launcher: $(options.section+"-launcher")
-			});
+			};
+			
+			if (!initialized) {
+				methods.clean();
+				methods.markLauncher($(options.section+"-launcher"));
+				methods.activateTab(chosen);
+				initialized = true;
+			}
+			else {
+				ignoreEvents = true;
+				methods.unmarkLauncher(active.launcher);
+				methods.markLauncher(chosen.launcher);
+				methods.deactivateTab(function() {methods.activateTab(chosen); ignoreEvents = false;});
+				navigationElement.trigger("menutabActivated");
+			}
 		}
 	};
 	
 	var methods = {
 		init: function(optionsArg) {
+			navigationElement = this;
 			$.extend(options,optionsArg)
 			methods.bindEvents();
 			methods.calculateHeights();
@@ -42,15 +57,16 @@
 			ignoreEvents = true;
 			
 			var chosen = methods.getChosen(tabId);
-			
 			if (methods.isActive(chosen)) {
 				options.reset(methods, options);
 				ignoreEvents = false;
+				navigationElement.trigger("menutabReset");
 			}
 			else if (methods.tabsActivated()) {
 				methods.unmarkLauncher(active.launcher);
 				methods.markLauncher(chosen.launcher);
 				methods.deactivateTab(function() {methods.activateTab(chosen); ignoreEvents = false;});
+				navigationElement.trigger("menutabActivated");
 			}
 			else {
 				methods.markLauncher(chosen.launcher);
@@ -86,14 +102,10 @@
 		},
 		
 		fixHeight: function(activeMenu) {
-	//			if ($(activeMenu).height() != 0) {
-	//				return this;
-	//			}
             var maxHeight = 0;
             //add(".dropdown-menu").
             methods.calculateHeight(activeMenu);
             $(".menulist, .marked > ul, .dropdown-menu",activeMenu).each(function(i,element) {
-//            	console.log($(element).data("height"));
             	maxHeight = Math.max(maxHeight, $(element).data("height"));
             });
             activeMenu.height(maxHeight);
@@ -113,26 +125,6 @@
 		},
 		
 		getHeight: function(element) {
-//			var originalProperties = {};
-//			
-//			// Make height calculable
-//			$(options.)
-//			$([ "visibility", "position", "display" ]).each(function(i, property) {
-//				originalProperties[property] = $(element).css(property);
-//			});
-//			$(element).css({
-//				visibility: "hidden",
-//				position: "fixed",
-//				display: "block"
-//			});
-//			
-//			var height = $(element).height();
-//			console.log($(element));
-//			
-//			$(element).css(originalProperties);
-			
-//			return height;
-			
 			return $(element).actual("outerHeight");
 		},
 		
