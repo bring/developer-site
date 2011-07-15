@@ -30,7 +30,7 @@
 		},
 		
 		clean: function() {
-			methods.hideTabs();
+			methods.hideTabs(0);
 			methods.unmarkLaunchers();
 			active = null;
 			return this;
@@ -86,9 +86,13 @@
 		},
 		
 		fixHeight: function(activeMenu) {
+			if ($(activeMenu).height() != 0) {
+				return this;
+			}
             var maxHeight = 0;
             $(".menulist, .marked > ul",activeMenu).each(function(i,element) {
-            	maxHeight = Math.max(maxHeight, parseFloat($(element).css("max-height")));
+//            	maxHeight = Math.max(maxHeight, parseFloat($(element).css("max-height")));
+            	maxHeight = Math.max(maxHeight, $(element).data("height"));
             });
             activeMenu.height(maxHeight);
         	return this;
@@ -102,7 +106,8 @@
 		
 		calculateHeight: function(tab) {
 			$(".menulist, .marked > ul", $(tab)).add($("#breadcrumbs ul")).each(function(i2, ul) {
-				$(ul).css("max-height", methods.getHeight(ul));
+				$(ul).data("height", methods.getHeight(ul));
+//				$(ul).css("max-height", methods.getHeight(ul));
 			});
 		},
 		
@@ -136,14 +141,14 @@
 			return this;
 		},
 		
-		hideTab: function(tab, callback) {
-			tab.slideUp(500, callback);
+		hideTab: function(tab, callback, duration) {
+			tab.slideUp(isNaN(duration) ? 500 : duration, callback);
 			return this;
 		},
 		
-		hideTabs: function() {
+		hideTabs: function(duration) {
 			$(options.tabs).each(function(i,element) {
-				methods.hideTab($(element));
+				methods.hideTab($(element), undefined, duration);
 			});
 			return this;
 		},

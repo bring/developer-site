@@ -333,8 +333,15 @@ ul.avatar-list li:last-child {
 /*     box-shadow: -3px 0px 3px #ddd, 3px 0px 3px #ddd; */
 }
 
-.menubox {
+.navigation-tabs {
     position: relative;
+    margin: 0 10px 0 0;
+}
+
+.menubox {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
 }
 
 .marked ul {

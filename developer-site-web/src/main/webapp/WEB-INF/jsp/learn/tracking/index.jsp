@@ -79,9 +79,9 @@
                             <li><a class="menubutton" href="https://github.com/bring/open-java-api">Java client library</a></li>
                         </ul>
                     </div>
+                    
+                    <misc:talk />
                 </div>
-                
-                <misc:talk />
             </div>
 
             <div class="content group">
