@@ -19,8 +19,9 @@
 	var methods = {
 		init: function(optionsArg) {
 			$.extend(options,optionsArg)
-			options.reset(methods, options);
 			methods.bindEvents();
+			methods.calculateHeights();
+			options.reset(methods, options);
 			return this;
 		},
 		
@@ -85,14 +86,42 @@
 		},
 		
 		fixHeight: function(activeMenu) {
-//            var menuElementHeight = $("li a",activeMenu).outerHeight()+2; // Bug #7693 in jQuery ... 
-			var menuElementHeight = 36;
-            var numberOfMenuElements = 0;
-            $("ul, .marked ul",activeMenu).each(function(i,element) {
-            	numberOfMenuElements = Math.max(numberOfMenuElements, $(element).children("li").length);
-            });
-        	activeMenu.height(numberOfMenuElements*menuElementHeight);
+            var maxHeight = 0;
+            $(".menulist, .marked > ul",activeMenu).each(function(i,element) {
+            	maxHeight = Math.max(maxHeight, parseFloat($(element).css("max-height")));
+            }.bind(this));
+            activeMenu.height(maxHeight);
         	return this;
+		},
+		
+		calculateHeights: function() {
+			$(options.tabs).each(function(i,tab) {
+				this.calculateHeight(tab);
+			}.bind(methods));
+		},
+		
+		calculateHeight: function(tab) {
+			$(".menulist, .marked > ul", $(tab)).add($("#breadcrumbs ul")).each(function(i2, ul) {
+				$(ul).css("max-height", this.getHeight(ul));
+			}.bind(this));
+		},
+		
+		getHeight: function(element) {
+			var originalProperties = {};
+			
+			// Make height calculable
+			$([ "visibility", "position", "display" ]).each(function(i, property) {
+				originalProperties[property] = $(element).css(property);
+			});
+			$(element).css({
+				visibility: "hidden",
+				position: "fixed",
+				display: "block"
+			});
+			
+			var height = $(element).height();
+			$(element).css(originalProperties);
+			return height;
 		},
 		
 		handleCallback: function(callback) {
@@ -102,8 +131,8 @@
 			return this;
 		},
 		
-		showTab: function(tab, callback) {
-			tab.slideDown(500,callback);
+		showTab: function(tab, callback, duration) {
+			tab.slideDown(isNaN(duration) ? 500 : duration,callback);
 			return this;
 		},
 		

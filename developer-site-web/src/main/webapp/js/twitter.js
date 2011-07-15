@@ -60,7 +60,7 @@ $.fn.performTwitterSearch = function (numberOfTweets){
 				})
 				.replace(/@(bringapi)/g, '<a href="http://twitter.com/$1">@$1</a>');
 		
-		console.log(text);
+//		console.log(text);
 		if(type==1){
 			return '<li class="group"><img class="avatar" src="' + 
 			tweet.profile_image_url + '"/><div class="avatar-list-text"><div class="question-title">' +

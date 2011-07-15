@@ -53,7 +53,7 @@
                             <li><a class="menubutton" href="/learn/shippingguide/index.html">Shipping guide API</a>
                                 <ul>
                                     <li><a class="menubutton" href="index.html">Shipping Introduction</a>
-                                        <ul class="menulist"><li><a class="menubutton" href="index.html">Shipping test</a></li>
+                                        <ul><li><a class="menubutton" href="index.html">Shipping test</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -63,8 +63,8 @@
                                 <ul>
                                     <li class="marked">
                                         <a class="menubutton" href="index.html">Introduction</a>
-                                        <ul class="menulist">
-                                            <li><a class="menubutton" href="index.html">Test</a></li>
+                                        <ul>
+                                            <li class="marked"><a class="menubutton" href="index.html">Test</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -194,6 +194,7 @@
                 tabs: [ "#learn", "#download", "#talk" ],
             });
             
+            /*
             $("#learn > ul > li > a").mouseover(function (event) {
                 $("#learn li.marked").each(function(i,element) {
                 	$(element).removeClass("marked");
@@ -208,6 +209,7 @@
                 $("#navigation").menutab("tabSelected", "#learn");
                 event.preventDefault();
             });
+            */
             
             /*
             $("#breadcrumbs > ul > li > a").mouseover(function (event) {
