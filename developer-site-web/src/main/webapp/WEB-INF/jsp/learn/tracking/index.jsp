@@ -195,8 +195,6 @@
             });
             
             $("#learn > ul > li > a").mouseover(function (event) {
-                console.log("eating bread 1");
-                
                 $("#learn li.marked").each(function(i,element) {
                 	$(element).removeClass("marked");
                 });
@@ -211,6 +209,7 @@
                 event.preventDefault();
             });
             
+            /*
             $("#breadcrumbs > ul > li > a").mouseover(function (event) {
             	console.log("bread 1");
             	event.preventDefault();
@@ -225,6 +224,7 @@
                 console.log("bread 3");
                 event.preventDefault();
             });
+            */
             
             $("#twittercontent").performTwitterSearch(3);
      });
