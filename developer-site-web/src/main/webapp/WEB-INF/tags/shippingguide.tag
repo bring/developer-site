@@ -3,63 +3,60 @@
                 <div class="article">
               
                       
-<h1>Hvordan bruke data?</h1>
+<h1>How to use the data?</h1>
 
-<p>
-Lag dine egne tjenester med data fra Bring! Velg selv hvordan du ønsker å hente data fra Fraktguiden.
-</p>
+<p>Create your own services with data from Bring! Choose how you want to retrieve data from the Shipping Guide.</p>
 
 <h2>XML API</h2>
 <p>
-    XML API er den letteste metoden for å integrere mot Fraktguiden for en nettbutikk. Metoden gir tilgang til data fra Bring via et enkelt grensesnitt.
+	XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides access to data from Bring via a single interface.</p>
+<p>
+	Example of how to retrieve XML from the Shipping Guide:
 </p>
 <p>
-    Eksempel på hvordan man henter XML fra Fraktguiden:
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/all.xml?from=1407&amp;to=1476&amp;weightInGrams=4000">Servicepakke of 4 kg from Levanger to Rasta</a>
 </p>
 <p>
-    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/all.xml?from=1407&amp;to=1476&amp;weightInGrams=4000">Servicepakke på 4 kg fra Levanger til Rasta</a>
-</p>
-<p>
-    <a href="http://fraktguide.bring.no/fraktguide/xmlOverHttp.do">Flere eksempler!</a>
+    <a href="http://fraktguide.bring.no/fraktguide/xmlOverHttp.do">More examples!</a>
 </p>
 
 <h2>JSON</h2>
 <p>
-    Nettlesere kan hente informasjon fra eksterne sider dersom data tilgjengeliggjøres i JSONP format. 
-    Hensikten med dette er at du kan lime inn HTML/Javascript på din side og enkelt bruke data fra Fraktguiden uten serverkomponenter på din side.
+   	Web browsers can retrieve information from external sites if the data are made available in JSONP format.
+	The purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping guide without server components on your web page.
 </p>
 <p> 
-    JSON har samme funksjonalitet som XML API og kan levere data i JSON eller JSONP format.
+	JSON has the same functionality as the XML API and can deliver data in JSON or JSONP format.
 </p>
 <p>
-    <a href="http://fraktguide.bring.no/fraktguide/jsonp.do">Prøv tjenesten!</a>
+    <a href="http://fraktguide.bring.no/fraktguide/jsonp.do">Try the JSON service!</a>
 </p>
 
 <h2>Online data (Web Services)</h2>
 <p>
-    Med Online Web Services kan du slå opp pris, transporttid, dekningsområde og produkttekster for det enkelte produkt etter behov. 
-    For avanserte brukere anbefaler vi Web Services da man har flere muligheter i spørringen.
+	With Online Web Services, you can look up price, transportation, area coverage and product information for each product as required.
+	For advanced users we recommend the Web Services with several options in the query.
 </p>
 <p>
-    <a href="http://fraktguide.bring.no/fraktguide/fraktguideGui.do">Prøv tjenesten!</a>
+    <a href="http://fraktguide.bring.no/fraktguide/fraktguideGui.do">Try the service!</a>
 </p>
 
-<h2>Offline data (nedlastbart og Web Services)</h2>
+<h2> Offline data (download and Web Services) </h2>
 <p>
-    Dette er et ferdig tilrettelagt datagrunnlag for offline bruk. 
-    Du oppgir postnummer du sender fra og hvilke produkter du ønsker data for og får (for hvert produkt):
+     This is pre-prepared data for offline use.
+     Enter the zip code you are sending from and which products you want data for. For each product you get:
 </p>
 <ul>
     <li>Prissone og transporttid i virkedager for hvert postnummer</li>
     <li>Priser for hver prissone</li>
 </ul>
 <p>
-    <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Prøv tjenesten!</a>
+    <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Try the service!</a>
 </p>
 <p>
-    <strong>NB!</strong> Med offline datagrunnlag må du selv håndtere alle regler som spesialgods, 
-    <a target="_blank" href="http://www.bring.no/324.cms">fraktberegnet vekt (volumvekt)</a>, mm.
-    Husk å oppdater datagrunnlaget ved prisendringer!
+    <strong>NB!</strong> With offline data, you have to deal with all the rules as special goods
+	     <a target="_blank" href="http://www.bring.no/324.cms"> estimated shipping weight (volume weight) </a>, and more.
+	     Remember to update the data at pricechanges!
 </p>
 
 

@@ -85,7 +85,7 @@
             </div>
 
             <div class="content group">
-                <misc:javaclientlibrary />
+                <misc:shippingguide />
                 <misc:socialfeed />
             </div>
         </div>
