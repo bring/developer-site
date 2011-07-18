@@ -16,7 +16,7 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 				}
 			}
 			else {
-				setTimeout("$('#"+selected.attr("id")+"').performTwitterSearch("+ numberOfTweets + ")", 2000);
+				setTimeout("$('#"+selected.attr("id")+"').performTwitterSearch("+ numberOfTweets + ", " + generateHtml + ")", 2000);
 			}
 		}
 	);
@@ -74,6 +74,7 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 			user = formatUser(tweet.user.screen_name);
 		}
 		
+		console.log(text);
 		return generateHtml(image, user, text, time);
 	}
 	

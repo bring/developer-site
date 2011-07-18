@@ -146,7 +146,7 @@ ul.avatar-list li:last-child {
     position: absolute;
 }
 
-.avatar-list-text pre{
+pre{
     white-space: pre;           /* CSS 2.0 */
     white-space: pre-wrap;      /* CSS 2.1 */
     white-space: pre-line;      /* CSS 3.0 */
@@ -208,9 +208,9 @@ ul.avatar-list li:last-child {
 .quote:before {
     content:"";
     position:absolute;
-    bottom:-12px;
+    bottom:-8px;
     left:50px;
-    border-width:0 0 12px 12px;
+    border-width:0 0 8px 8px;
     border-style:solid;
     border-color:transparent #f0f0f1;
     /* reduce the damage in FF3.0 */
@@ -285,7 +285,7 @@ ul.avatar-list li:last-child {
 }
 
 .talkbox-header a{
-    line-height: 33px;
+    line-height: 36px;
     border-bottom: 1px solid #3b3b3b;
     background-color: #565656;
     background-image: url(/img/twitter.png);
@@ -299,35 +299,51 @@ ul.avatar-list li:last-child {
     display: block;
 }
 
+.talkbox-header a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+
+
 .talkbox-header a:after {
     content: "\02B08";
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 6px;
+    top: -4px;
+    font-size: 1.75em;
 }
 
 .talkbox-footer {
-	height: 30px;
+	height: 26px;
     border-top: 1px solid #3b3b3b;
     color: #f0f0f1;
     background-color: #999;
+    padding: 10px 0 0 40px;
+    position: relative;
+    font-weight: bold;
+    z-index: -1;
 }
 
 .talkbox-footer a{
     color: #f0f0f1;
+    margin-right: 10px;
 }
 
 
 .talkbox-image {
+	position: absolute;
+	top: 0px;
+	left: 0px;
     float: left;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
 }
 
 .talkbox blockquote {
-	font-size: 1em;
+	font-size: 1.3em;
     padding: 10px;
     margin-bottom: 0;
+    height: 90px;
 }
 
 .talkbox-footer .time {
