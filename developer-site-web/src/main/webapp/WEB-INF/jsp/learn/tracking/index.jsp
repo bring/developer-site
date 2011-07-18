@@ -168,19 +168,7 @@
 				$("#twittertalkquote").html(text);
 				$("#twittertalkuser").html(user);
 				$("#twittertalktime").html(time);
-				$("#twittertalkimage").attr("src",image);				
-				/*
-	
-               return '<div class="talkbox dropdown-menu">' + 
-							'<div class="talkbox-header group">' + 
-									'<a href="http://twitter.com/bringapi">@bringapi</a>' +
-							'</div>' +
-							'<blockquote class="quote">' + text + '</blockquote>' +
-							'<div class="talkbox-footer">' +
-								'<img class="talkbox-image" src="' + image + '"/>' +
-								'<span>' +  user + '</span><div class="time">' + time + '</div>' +
-							'</div>' +
-						'</div>';*/
+				$("#twittertalkimage").attr("src", image);				
             });
             
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){

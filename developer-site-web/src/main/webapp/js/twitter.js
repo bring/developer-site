@@ -74,7 +74,6 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 			user = formatUser(tweet.user.screen_name);
 		}
 		
-		console.log(text);
 		return generateHtml(image, user, text, time);
 	}
 	
