@@ -231,7 +231,6 @@ ul.avatar-list li:last-child {
     width: 302px;
     height: 50px;
     padding: 10px;
-    overflow: hidden;
     color: #b7b7b7;
     background-color: #3b3b3b;
     position: relative;
@@ -342,22 +341,21 @@ ul.avatar-list li:last-child {
 /* Menutab */
 
 .menutab {
-    margin: 5px 5px 0 5px;
+    margin: 5px 5px 10px 5px;
     height: 50px;
     color: #b7b7b7;
     background-color: #f2f2f2;
 
     /* css3 */
     box-shadow: 0 0 3px #aaa;
-
 }
 
 .menutab-selected:after {
     background-color: #3b3b3b;
-    width: 332px;
-    height: 14px;
-    bottom: -5px;
-    left: -10px;
+    width: 322px;
+    height: 11px;
+    left: 0;
+    bottom: -10px;
     z-index: 2;
     position: absolute;
     display: block;

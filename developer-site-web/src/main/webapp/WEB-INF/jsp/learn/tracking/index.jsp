@@ -73,7 +73,7 @@
                     
                     <div id="download" class="menubox">
                         <ul class="menulist">
-                            <li><a class="menubutton" href="https://github.com/bring/open-java-api">Java client library</a></li>
+                            <li><a class="menubutton" href="https://github.com/bring/open-java-api">Java client library (github)</a></li>
                         </ul>
                     </div>
                     
@@ -92,14 +92,16 @@
     
     <misc:jquery />
     <script src="/js/jquery.actual.js"></script>
+    <script src="/js/jquery.ba-outside-events.js"></script>
     <script src="/js/menutab.js"></script>
     <script src="/js/twitter.js"></script>
     <script>
         $(document).ready(function() {
-//             $(".marked").each(function() {
-//                 $(this).addClass("breadcrumb");
-//             });
             (function($) {
+                $(".marked").each(function() {
+                    $(this).addClass("breadcrumb");
+                });
+                
             	$.fn.menutabext = function() {
                 	var State = {
                 		BREADCRUMBS: 0,
@@ -107,15 +109,18 @@
                 	};
                 	var state = State.BREADCRUMBS;
                 	
-
-                	
                 	// Control state
-            		this.bind("menutabActivated", function() {
+            		this.bind("menutabChanged", function() {
             			state = State.MENU;
             			$(".breadcrumb").each(function() {
             				$(this).addClass("marked");
-            			})
-            		}).bind("menutabReset", function() {
+            			});
+            		}).bind("menuDeactivated", function() {
+            			$(".marked").each(function() {
+            				if (!$(this).hasClass("breadcrumb")) {
+            				    $(this).removeClass("marked");
+            				}
+            			});
             			state = State.BREADCRUMBS;
             		});
             		
@@ -129,6 +134,7 @@
                         		var context = $(this).parent().parent().parent();
                         		$(".marked", context).removeClass("marked");
                         		$(this).parent().addClass("marked");
+                        		$(".breadcrumb", $(this).parent()).addClass("marked");
                         		break;
                     	}
                     	event.preventDefault();
@@ -171,13 +177,13 @@
 						'</div>';
             });
             
-//             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-// 				return '<li class="group"><img class="avatar" src="' + 
-// 				image + '"/><div class="avatar-list-text"><div class="question-title">' +
-// 				user + '</div><div class="question-text"><pre>' + 
-// 				text + '</pre></div>' + '<div class="datetime">' + 
-// 				time + '</div></div></li>';
-// 			});
+            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
+				return '<li class="group"><img class="avatar" src="' + 
+				image + '"/><div class="avatar-list-text"><div class="question-title">' +
+				user + '</div><div class="question-text"><pre>' + 
+				text + '</pre></div>' + '<div class="datetime">' + 
+				time + '</div></div></li>';
+			});
      });
     </script>
 </body>
