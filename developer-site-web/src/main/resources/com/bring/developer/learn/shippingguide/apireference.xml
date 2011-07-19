@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+	<Parameter>
+		<Title>
+			Postal code
+        </Title>
+		<Description><![CDATA[
+            <p>Is specified by adding <code>?from=7600&amp;to=1407</code>.</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				expectedDelivery.xml?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
+            </Title>
+			<Content><![CDATA[
+<pre class="java">
+	// Initialize library
+	String clientId = "www.mywebshop.com";
+	BringService bringService = new BringService(clientId);
+	
+	// Prepare query
+	Package packet = new Package();
+	packet.withWeightInGrams("4233");
+	Shipment shipment = new Shipment();
+	shipment.withFromPostalCode("1409");
+	shipment.withToPostalCode("7050");
+	shipment.addPackage(packet);
+	shipment.addProduct(ProductType.SERVICEPAKKE);
+	
+	// Fetch price information from Bring
+	ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
+	String expectedDeliveryDate = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
+	
+	// Print out
+	System.out.println("Expected delivery date: " + expectedDeliveryDate);
+</pre>
+Example output
+<pre>
+    Expected delivery date: 2
+</pre>
+            ]]></Content>
+		</Example>
+	</Parameter>
+</Document>
