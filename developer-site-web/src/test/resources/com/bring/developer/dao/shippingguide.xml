@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+	<Parameter>
+		<Title>
+			Postal code
+        </Title>
+		<Description><![CDATA[
+            <p>Is specified by adding <code>?from=7600&amp;to=1407</code>.</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				expectedDelivery.xml?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				expectedDelivery.json?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
+            </Title>
+			<Content>
+				Example coming.
+            </Content>
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
+            </Title>
+			<Content><![CDATA[
+<pre class="java">
+	// Initialize library
+	String clientId = "www.mywebshop.com";
+	BringService bringService = new BringService(clientId);
+	
+	// Prepare query
+	Package packet = new Package();
+	packet.withWeightInGrams("4233");
+	Shipment shipment = new Shipment();
+	shipment.withFromPostalCode("1407");
+	shipment.withToPostalCode("7600");
+	shipment.addPackage(packet);
+	shipment.addProduct(ProductType.SERVICEPAKKE);
+	
+	// Fetch price information from Bring
+	ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
+    String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
+    
+    // Print out
+    System.out.println("Expected delivery days: " + expectedDeliveryDays);
+</pre>
+Example output
+<pre>
+    Expected delivery days: 2
+</pre>
+            ]]></Content>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Country Code
+        </Title>
+		<Description><![CDATA[
+            <p>Is specified by adding <code>?fromCountry=NO&amp;toCountry=DK</code>.</p>
+            <p><a href="http://www.iso.org/iso/english_country_names_and_code_elements">Country Codes are ISO-3166-1-alpha-2</a></p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
+            </Title>
+			<Content>
+				Example coming.
+            </Content>
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
+            </Title>
+			<Content><![CDATA[
+<pre class="java">
+    // Initialize library
+    String clientId = "www.mywebshop.com";
+    BringService bringService = new BringService(clientId);
+    
+    // Prepare query
+    Package packet = new Package();
+    packet.withWeightInGrams("4233");
+    Shipment shipment = new Shipment();
+    shipment.withFromPostalCode("2100");
+    shipment.withFromCountry("NO");
+    shipment.withToPostalCode("2100");
+    shipment.withToCountry("DK");
+    shipment.addPackage(packet);
+    shipment.addProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY);
+    
+    // Fetch price information from Bring
+    ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
+    String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY).getExpectedDelivery().getWorkingDays();
+    
+    // Print out
+    System.out.println("Expected delivery days: " + expectedDeliveryDays);
+</pre>
+Example output
+<pre>
+    Expected delivery days: 3-5
+</pre>
+            ]]></Content>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Weight in grams
+        </Title>
+		<Description><![CDATA[
+            <p>Is specified by adding <code>?weightInGrams=1500</code>.</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				price.xml?from=7600&to=1407&weightInGrams=1500
+            </Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				price.json?from=7600&to=1407&weightInGrams=1500
+            </Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
+            </Title>
+			<Content>
+				Example coming.
+            </Content>
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
+            </Title>
+			<Content><![CDATA[
+<pre class="java">
+    // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("4233");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
+</pre>
+Example output
+<pre>
+    Price: 94.00 NOK
+
+</pre>
+            ]]></Content>
+		</Example>
+	</Parameter>
+	   <Parameter>
+        <Title>
+            Package dimensions
+        </Title>
+        <Description><![CDATA[
+            <p>Is specified by adding <code>&length=30&width=40&height=40</code>.</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                price.xml?from=7600&to=1407&length=30&width=40&height=40
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                price.json?from=7600&to=1407&length=30&width=40&height=40
+            </Request>
+        </Example>
+        <Example type="webservice">
+            <Title>
+                Web Service
+            </Title>
+            <Content>
+                Example coming.
+            </Content>
+        </Example>
+        <Example type="java">
+            <Title>
+                Java
+            </Title>
+            <Content><![CDATA[
+<pre class="java">
+    // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("4233");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
+</pre>
+Example output
+<pre>
+    Price: 94.00 NOK
+
+</pre>
+            ]]></Content>
+        </Example>
+    </Parameter>
+</Document>
