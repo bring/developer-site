@@ -6,25 +6,32 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 	// Send JSON request to get tweets
 	var selected = this;
 	
-	getJsonFromSearchUrl();
+	var appendStatus = true;
 	
-	function getJsonFromSearchUrl(){
+	var getJsonFromSearchUrl = function(){
 		$.getJSON(twitter_search_url, function(data) {	
 			if(data.completed_in !== undefined){
 					if(data.results.length>0) {
 						appendTweets(data.results, 1);					
 					}
 					else{
-						getJsonFromStatusUrl();
+						if(appendStatus){
+							getJsonFromStatusUrl();
+							appendStatus = false;
+						}
 					}		
 			}
 			else {
-				getJsonFromStatusUrl();
-				setTimeout(getJsonFromSearchUrl(), 2000);
+				if(appendStatus){
+					getJsonFromStatusUrl();
+					appendStatus = false;
+				}
+				setTimeout(getJsonFromSearchUrl, 2000);
 			}
 		});		
 	}
 	
+	getJsonFromSearchUrl();
 	
 	//Call this method if the previous search returns an empty list.
 	function getJsonFromStatusUrl(){
@@ -40,19 +47,20 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 	//Type: 1=search 2=getStatus
 	function appendTweets(array, type) {
 		var iterations = 0;
+		console.log(array.length);
 		if(numberOfTweets > array.length){
 			iterations = array.length;
 		}
 		else{
 			iterations = numberOfTweets;
 		}
+		selected.empty();					
 		for(var i = 0; i < iterations; i++) {
 			var tweet = array[i];
 			
 			// Check that we got data:
 			if(tweet !== undefined) {
 				// Append html to div
-				selected.empty();					
 				selected.append(extractElements(tweet, type));
 			}
 		}
