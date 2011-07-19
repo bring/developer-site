@@ -92,6 +92,7 @@ html[xmlns] .group {
 
 .box {
     margin: 5px;
+    
     background-color: #fff;
     
     /* css3 */
@@ -356,7 +357,7 @@ pre{
 /* Menutab */
 
 .menutab {
-    margin: 5px 5px 10px 5px;
+    margin: 5px 5px 5px 5px;
     height: 50px;
     color: #b7b7b7;
     background-color: #f2f2f2;
@@ -368,9 +369,9 @@ pre{
 .menutab-selected:after {
     background-color: #3b3b3b;
     width: 322px;
-    height: 11px;
+    height: 15px;
     left: 0;
-    bottom: -10px;
+    bottom: -6px;
     z-index: 2;
     position: absolute;
     display: block;
