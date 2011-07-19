@@ -5,21 +5,26 @@ var twitter_status_url = '/twitter/status.json';
 $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 	// Send JSON request to get tweets
 	var selected = this;
-	$.getJSON(twitter_search_url, 
-		function(data) {	
+	
+	getJsonFromSearchUrl();
+	
+	function getJsonFromSearchUrl(){
+		$.getJSON(twitter_search_url, function(data) {	
 			if(data.completed_in !== undefined){
-				if(data.results.length>0) {
-					appendTweets(data.results, 1);					
-				}
-				else{
-					getJsonFromStatusUrl();
-				}
+					if(data.results.length>0) {
+						appendTweets(data.results, 1);					
+					}
+					else{
+						getJsonFromStatusUrl();
+					}		
 			}
 			else {
-				setTimeout("$('#"+selected.attr("id")+"').performTwitterSearch("+ numberOfTweets + ")", 2000);
+				getJsonFromStatusUrl();
+				setTimeout(getJsonFromSearchUrl(), 2000);
 			}
-		}
-	);
+		});		
+	}
+	
 	
 	//Call this method if the previous search returns an empty list.
 	function getJsonFromStatusUrl(){
@@ -47,6 +52,7 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 			// Check that we got data:
 			if(tweet !== undefined) {
 				// Append html to div
+				selected.empty();					
 				selected.append(extractElements(tweet, type));
 			}
 		}
