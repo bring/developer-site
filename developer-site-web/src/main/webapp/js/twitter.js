@@ -47,7 +47,6 @@ $.fn.performTwitterSearch = function (numberOfTweets, generateHtml){
 	//Type: 1=search 2=getStatus
 	function appendTweets(array, type) {
 		var iterations = 0;
-		console.log(array.length);
 		if(numberOfTweets > array.length){
 			iterations = array.length;
 		}
