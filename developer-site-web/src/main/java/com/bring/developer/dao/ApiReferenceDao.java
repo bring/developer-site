@@ -1,7 +1,9 @@
 package com.bring.developer.dao;
 
 import java.io.InputStream;
+
 import javax.xml.bind.JAXBException;
+
 import com.bring.developer.response.Document;
 
 public class ApiReferenceDao {
@@ -17,7 +19,6 @@ public class ApiReferenceDao {
     }
     
     public Document query(InputStream inputStream) throws JAXBException{
-        System.out.println(inputStream);
         return xmlParser.unmarshal(inputStream);
     }
 }

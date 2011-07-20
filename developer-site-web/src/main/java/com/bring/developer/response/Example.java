@@ -11,11 +11,11 @@ public class Example {
     
     @XmlAttribute(name = "type", required = true)
     public String getType() {
-        return type.trim();
+        return type;
     }
     
     public void setType(String type) {
-        this.type = type;
+        this.type = type.trim();
     }
     
     @XmlElement(name = "Title")

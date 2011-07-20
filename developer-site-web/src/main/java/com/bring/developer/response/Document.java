@@ -10,16 +10,24 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Document")
 public class Document {
     
-    @XmlElement(name = "Parameter")
     private List<Parameter> parameters = new ArrayList<Parameter>();
     private String requestBase;
 
+    @XmlElement(name = "Parameter")
     public List<Parameter> getParameters() {
         return parameters;
     }
+    
+    public void setParameters(List<Parameter> parameters) {
+        this.parameters = parameters;
+    }
 
     public Parameter getParameter(int i) {
-        return parameters.get(i);
+        return getParameters().get(i);
+    }
+    
+    public Parameter getFirstParameter() {
+        return parameters.get(0);
     }
 
     @XmlElement(name ="RequestBase")

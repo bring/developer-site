@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bring.developer.dao.ApiReferenceDao;
+import com.bring.developer.response.Document;
 
 @Controller
 public class HomeController {
@@ -28,7 +29,21 @@ public class HomeController {
     
     @RequestMapping(value = "/learn/shippingguide/apireference.html")
     public String apiReference(ModelMap model) throws JAXBException {
-        model.put("document", dao.query("shippingguide"));
+        Document document = dao.query("shippingguide");
+        model.put("document", document);
+        
+//        Parameter parameter = new Parameter();
+//        parameter.setTitle("The foo");
+//        System.out.println(parameter.getTitle());
+//        
+//        List<Parameter> paramList = new ArrayList<Parameter>();
+//        paramList.add(parameter);
+//        
+//        Document document = new Document();
+//        document.setParameters(paramList);
+        
+        model.put("document", document);
+        
         return "learn/shippingguide/apireference";
     }
 }

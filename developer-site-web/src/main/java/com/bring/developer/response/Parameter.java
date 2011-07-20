@@ -7,32 +7,50 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class Parameter {
     
-    @XmlElement(name = "Title")
     private String title;
-    @XmlElement(name = "Description")
     private String description;
-    @XmlElement(name = "Example")
-    private List<Example> example1 = new ArrayList<Example>();
-    @XmlElement(name = "Default")
+    private List<Example> examples = new ArrayList<Example>();
     private String defaultValue;
-
+    
+    @XmlElement(name = "Title")
     public String getTitle() {
-        return title.trim();
+        return title;
     }
     
+    public void setTitle(String title) {
+        this.title = title.trim();
+    }
+    
+    @XmlElement(name = "Description")
     public String getDescription() {
-        return description.trim();
+        return description;
     }
     
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @XmlElement(name = "Example")
     public List<Example> getExamples() {
-        return example1;
+        return examples;
     }
-
+    
     public Example getExample(int i) {
-        return example1.get(i);
+        return examples.get(i);
     }
-
-    public String getDefaultValue() {
+    
+    public void setExamples(List<Example> examples) {
+        this.examples = examples;
+    }
+    
+    @XmlElement(name = "Default")
+    public String getDefault() {
         return defaultValue;
     }
+    
+    public void setDefault(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+    
+    
 }

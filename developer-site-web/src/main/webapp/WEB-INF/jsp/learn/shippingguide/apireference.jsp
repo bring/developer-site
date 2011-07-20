@@ -2,6 +2,7 @@
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -22,10 +23,36 @@
             <div class="content group">
                 <div class="article">
                     <h1>API Reference</h1>
-                    <c:forEach items="${document.parameters}" var="param">
-                        ${param}
+                    
+                    <c:forEach items="${document.parameters}" var="myElement" >
+                        <h2>${myElement.title}</h2>
+                        
+                        ${myElement.description}
+                        
+                        <c:if test="${!empty myElement.default}">
+                            <p>Default: <code>${myElement.default}</code></p>
+                        </c:if>
+                        
+                        <div class="codetabs">
+                            <c:forEach items="${myElement.examples}" var="example">
+                                <h2><a href="#${example.type}">${example.title}</a></h2>
+                                <div data-tab="${example.type}" class="tab">
+                                    <c:if test="${!empty example.request}">
+                                        <p>
+                                            Request:
+                                            <a class="request" href="${document.requestBase}${example.request}">
+                                                ${example.request}
+                                            </a>
+                                        </p>
+                                        <pre class="${example.type}"></pre>
+                                    </c:if>
+                                    <c:if test="${!empty example.content}">
+                                        ${example.content}
+                                    </c:if>
+                               </div>
+                            </c:forEach>
+                        </div>
                     </c:forEach>
-                    ${document.parameters}
                 </div>
             </div>
         </div>
