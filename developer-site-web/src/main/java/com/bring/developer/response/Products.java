@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 
 
-@XmlRootElement(name = "products")
+@XmlRootElement(name = "Products")
 public class Products {
     
     @XmlElement(name = "Product")
