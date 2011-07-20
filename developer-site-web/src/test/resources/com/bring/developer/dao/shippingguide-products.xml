@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Products>
+    <RequestBase>http://fraktguide.bring.no/fraktguide/products/</RequestBase>
 	<Product>
 		<Name>
 			Klimanøytral Servicepakke
