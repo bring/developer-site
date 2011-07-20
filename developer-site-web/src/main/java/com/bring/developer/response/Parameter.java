@@ -12,7 +12,7 @@ public class Parameter {
     @XmlElement(name = "Description")
     private String description;
     @XmlElement(name = "Example")
-    private List<Example> example = new ArrayList<Example>();
+    private List<Example> example1 = new ArrayList<Example>();
     @XmlElement(name = "Default")
     private String defaultValue;
 
@@ -24,7 +24,15 @@ public class Parameter {
         return description.trim();
     }
     
-    public List<Example> getExample() {
-        return example;
-    } 
+    public List<Example> getExamples() {
+        return example1;
+    }
+
+    public Example getExample(int i) {
+        return example1.get(i);
+    }
+
+    public String getDefaultValue() {
+        return defaultValue;
+    }
 }
