@@ -259,10 +259,9 @@ ul.avatar-list li:last-child {
 
 .talkbox {
 /*     font-size: 0.75em; */
-    margin: 10px;
+    margin-left: 10px;
 /*     background-color: #f0f0f1; */
     width: 302px;
-    padding-bottom: 20px;
 }
 
 .talkbox a:hover{
