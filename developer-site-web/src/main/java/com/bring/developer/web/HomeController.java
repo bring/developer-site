@@ -27,13 +27,8 @@ public class HomeController {
     }
     
     @RequestMapping(value = "/learn/shippingguide/apireference.html")
-    public String apiReference(ModelMap model) {
-        try {
-            model.put("document", dao.query("shippingguide"));
-        } catch (JAXBException e) {
-            // TODO handle error
-            e.printStackTrace();
-        }
+    public String apiReference(ModelMap model) throws JAXBException {
+        model.put("document", dao.query("shippingguide"));
         return "learn/shippingguide/apireference";
     }
 }
