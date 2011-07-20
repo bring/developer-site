@@ -11,10 +11,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Document {
     
     @XmlElement(name = "Parameter")
-    private List<Parameter> parameter = new ArrayList<Parameter>();
+    private List<Parameter> parameters = new ArrayList<Parameter>();
 
-    public List<Parameter> getParameter() {
-        return parameter;
+    public List<Parameter> getParameters() {
+        return parameters;
+    }
+
+    public Parameter getParameter(int i) {
+        return parameters.get(i);
     }
     
 }

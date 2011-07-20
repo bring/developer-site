@@ -4,19 +4,21 @@
 <%@ attribute name="level2" required="false" type="java.lang.String" rtexprvalue="true"%>
 <%@ attribute name="level3" required="false" type="java.lang.String" rtexprvalue="true"%>
 
+<%! /* @todo Clean up this mess...*/ %>
+
 <c:if test="${!empty level1 }">
 <div id="breadcrumbs" class="menubox">
     <ul class="menulist level1 breadcrumbs">
-        <li class="marked breadcrumb ${!empty level2 ? '' : 'current-page'}">
-            <a class="menubutton" href="#">${level1}</a>
+        <li class="marked breadcrumb">
+            <a class="menubutton ${!empty level2 ? '' : 'current-page'}" href="#">${level1}</a>
             <c:if test="${!empty level2 }">
                 <ul class="level2">
-                    <li class="marked breadcrumb ${!empty level3 ? '' : 'current-page'}">
-                        <a class="menubutton" href="#">${level2}</a>
+                    <li class="marked breadcrumb">
+                        <a class="menubutton ${!empty level3 ? '' : 'current-page'}" href="#">${level2}</a>
                         <c:if test="${!empty level3 }">
                             <ul class="level3">
-                                <li class="marked breadcrumb current-page">
-                                    <a class="menubutton" href="#">${level3}</a>
+                                <li class="marked breadcrumb">
+                                    <a class="menubutton current-page" href="#">${level3}</a>
                                 </li>
                             </ul>
                         </c:if>
