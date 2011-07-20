@@ -12,6 +12,9 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a class="menubutton" href="/learn/shippingguide/apireference.html">API Reference</a>
+                </li>
             </ul>
         </li>
         
