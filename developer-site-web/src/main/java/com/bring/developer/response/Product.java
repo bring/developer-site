@@ -1,22 +1,23 @@
 package com.bring.developer.response;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 
 public class Product {
     
     @XmlAttribute(name = "note")
     private String note;
     
-    @XmlAttribute(name = "Name")
+    @XmlElement(name = "Name")
     private Name name;
 
-    @XmlAttribute(name = "Code")
+    @XmlElement(name = "Code")
     private Code code;
 
-    @XmlAttribute(name = "Price")
+    @XmlElement(name = "Price")
     private Price price;
     
-    @XmlAttribute(name = "ExpectedDelivery")
+    @XmlElement(name = "ExpectedDelivery")
     private ExpectedDelivery expectedDelivery;
     
     public Name getName() {
