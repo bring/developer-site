@@ -14,6 +14,6 @@ public class ApiReferenceDao {
     
     public Document query(InputStream inputStream) throws JAXBException{
         System.out.println(inputStream);
-        return new Parser().unmarshal(inputStream);
+        return new XmlParser().unmarshal(inputStream);
     }
 }

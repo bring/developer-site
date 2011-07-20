@@ -6,25 +6,29 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import com.bring.developer.response.Document;
+/**
+ * Response element parser that uses JAXB.
+ * 
+ * @param <T>
+ *            The type of the input / result object
+ */
+public class XmlParser<T> {
 
-public class Parser {
-    
     private JAXBContext context;
-    
-    public Parser(){
+
+    public XmlParser(Class<T> typeParameterClass) {
         try {
-            context = JAXBContext.newInstance(Document.class);
+            context = JAXBContext.newInstance(typeParameterClass);
         } catch (JAXBException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
-    public Document unmarshal(InputStream inputStream) throws JAXBException {
+    public T unmarshal(InputStream inputStream) throws JAXBException {
+        
         Unmarshaller unmarshaller = context.createUnmarshaller();
-        System.out.println(unmarshaller);
-        Document p = (Document) unmarshaller.unmarshal(inputStream);
+        T p = (T) unmarshaller.unmarshal(inputStream);
         return p;
     }
 }
