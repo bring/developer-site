@@ -4,29 +4,45 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
 public class Example {
-    
-    @XmlAttribute(name = "type", required = true)
     private String type;
-    @XmlElement(name = "Title")
     private String title;
-    @XmlElement(name = "Content")
     private String content;
-    @XmlElement(name = "Request")
     private String request;
     
+    @XmlAttribute(name = "type", required = true)
     public String getType() {
         return type.trim();
     }
+    
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    @XmlElement(name = "Title")
     public String getTitle() {
-        return title.trim();
+        return title;
     }
     
+    public void setTitle(String title) {
+        this.title = title.trim();
+    }
+    
+    @XmlElement(name = "Content")
     public String getContent() {
-        return content.trim();
+        return content;
     }
     
+    public void setContent(String content) {
+        this.content = content.trim();
+    }
+    
+    @XmlElement(name = "Request")
     public String getRequest() {
-        return request.trim();
+        return request;
+    }
+    
+    public void setRequest(String request) {
+        this.request = request.trim();
     }
 
 }

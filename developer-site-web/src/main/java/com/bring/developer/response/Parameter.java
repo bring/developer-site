@@ -13,6 +13,8 @@ public class Parameter {
     private String description;
     @XmlElement(name = "Example")
     private List<Example> example = new ArrayList<Example>();
+    @XmlElement(name = "Default")
+    private String defaultValue;
 
     public String getTitle() {
         return title.trim();
@@ -24,5 +26,5 @@ public class Parameter {
     
     public List<Example> getExample() {
         return example;
-    }  
+    } 
 }

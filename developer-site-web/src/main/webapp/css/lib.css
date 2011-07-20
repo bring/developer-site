@@ -85,7 +85,6 @@ html[xmlns] .group {
     
     /* css3 */
     box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
-    z-index: 1;
 }
 
 /* Box with shadow */
@@ -407,7 +406,7 @@ ul.avatar-list li:last-child {
     background-color: #666;;
 }
 
-.breadcrumb .current-page a:after {
+a.current-page:after {
     right: 15px;
     top: 2px;
     position: absolute;
