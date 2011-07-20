@@ -5,7 +5,7 @@
         <div class="talkbox-header group">
             <a href="http://twitter.com/bringapi">@bringapi</a>
         </div>
-        <pre class="quote"><blockquote id="twittertalkquote">Loading...</blockquote></pre>
+        <div class="quote"><blockquote id="twittertalkquote">Loading...</blockquote></div>
         <div class="talkbox-footer">
             <img id="twittertalkimage" class="talkbox-image" src="" />
                 <span id="twittertalkuser" class="user"></span><span id="twittertalktime" class="time"></span>

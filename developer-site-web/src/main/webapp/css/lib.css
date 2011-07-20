@@ -52,21 +52,21 @@ html[xmlns] .group {
 
 /* Tabs */
 
-.tabs {
+.global-tabs {
     list-style: none;
 }
 
-.tabs li {
+.global-tabs li {
     display: inline;
 }
 
-.tabs li:first-child a:before {
+.global-tabs li:first-child a:before {
     content: "‹ ";
     margin-right: 5px;
     font-weight: bold;
 }
 
-.tabs li a {
+.global-tabs li a {
     cursor: pointer;
     color: #676767;
     background: #e1e1e1;
@@ -79,7 +79,7 @@ html[xmlns] .group {
     text-decoration: none;
 }
 
-.tabs li a:hover, .tabs li a.tabs-chosen {
+.global-tabs li a:hover, .global-tabs li a.global-tabs-chosen {
     color: #fff;
     background: #7fc14b;
     
@@ -493,4 +493,34 @@ li.marked > a {
     white-space: -moz-pre-wrap; /* Mozilla */
     white-space: -hp-pre-wrap;  /* HP Printers */
     word-wrap: break-word;      /* IE 5+ */
+}
+
+/* Code tabs*/
+.codetabs {
+    overflow: auto;
+}
+.codetabs h2,
+.codetabs h3,
+.codetabs h4,
+.codetabs h5,
+.codetabs h6
+ {
+    float: left;
+    width: auto;
+    margin-right: 20px;
+}
+
+.codetabs .active {
+    font-weight: bold;
+    color: #565656;
+}
+
+.codetabs .tab {
+    clear: both;
+}
+
+.codetabs pre {
+    border: 1px solid #ccc;
+    background-color: #f0f0f1;
+    padding: 10px 0;
 }
