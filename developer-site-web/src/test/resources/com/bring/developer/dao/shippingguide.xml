@@ -142,7 +142,7 @@ Example output
 				XML
             </Title>
 			<Request>
-				price.xml?from=7600&to=1407&weightInGrams=1500
+				price.xml?from=7600&amp;o=1407&amp;weightInGrams=1500
             </Request>
 		</Example>
 		<Example type="json">
@@ -150,7 +150,7 @@ Example output
 				JSON
             </Title>
 			<Request>
-				price.json?from=7600&to=1407&weightInGrams=1500
+				price.json?from=7600&amp;to=1407&amp;weightInGrams=1500
             </Request>
 		</Example>
 		<Example type="webservice">
@@ -199,14 +199,14 @@ Example output
 			Package dimensions
         </Title>
 		<Description><![CDATA[
-            <p>Is specified by adding <code>&length=30&width=40&height=40</code>.</p>
+            <p>Is specified by adding <code>&amp;length=30&amp;width=40&amp;height=40</code>.</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
 				XML
             </Title>
 			<Request>
-				price.xml?from=7600&to=1407&length=30&width=40&height=40
+				price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40
 			</Request>
 		</Example>
 		<Example type="json">
@@ -214,7 +214,7 @@ Example output
 				JSON
             </Title>
 			<Request>
-				price.json?from=7600&to=1407&length=30&width=40&height=40
+				price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;eight=40
 			</Request>
 		</Example>
 		<Example type="webservice">
@@ -285,7 +285,7 @@ Example output
             </Title>
 			<Request>
 				/price.json?from=7600&amp;to=1407&amp;volume=33
-            </Request>
+          </Request>
 			<Content><![CDATA[
                 <p>Note the content of the <code>TraceMessages</code> object.</p>
             ]]></Content>
