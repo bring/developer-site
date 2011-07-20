@@ -26,6 +26,5 @@ public class Parser {
         System.out.println(unmarshaller);
         Document p = (Document) unmarshaller.unmarshal(inputStream);
         return p;
-
     }
 }
