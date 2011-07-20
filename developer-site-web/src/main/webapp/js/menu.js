@@ -1,43 +1,57 @@
 (function($) {
 	var State = {
 		BREADCRUMBS: 0,
-		MENU: 1
+		MENU: 1,
+		createFromStr: function(str) {
+		    if (str == "breadcrumbs") {
+		        return State.BREADCRUMBS;
+		    }
+		    else if (str == "menu") {
+		        return State.MENU;
+		    }
+		}
 	};
 	var state = State.BREADCRUMBS;
 	var navigationElement;
 	var options = {
-        breadcrumbs: []
+	    section: "#learn",
+        breadcrumbs: [],
+        state: "breadcrumbs"
 	}
 	
 	var methods = {
 	    init: function(optionsArg) {
 	        navigationElement = this;
 	        $.extend(options, optionsArg);
-	        methods.markBreadcrumbs(options.breadcrumbs);
+	        methods.initBreadcrumbs();
             methods.bindMenutabEvents();
             methods.bindMouseOverEvents();
             methods.bindClickEvents();
+            state = State.createFromStr(options.state)
 	    },
 	        
-	    markBreadcrumbs: function(breadcrumbs) {
-	        $listContainer = navigationElement;
-	        for (var i = 1; i <= breadcrumbs.length; i++) {
+	    initBreadcrumbs: function() {
+	        $listContainer = $(options.section, navigationElement);
+	        for (var i = 1; i <= options.breadcrumbs.length; i++) {
 	            var $current = $(".level"+i, $listContainer);
-	            $listContainer = $($current.children()[breadcrumbs[i-1]-1]); 
+	            $listContainer = $($current.children()[options.breadcrumbs[i-1]-1]); 
 	            $listContainer.addClass("breadcrumb");
 	        }
 	    },
 	    
+	    markBreadcrumbs: function() {
+    	    $(".breadcrumb", $(options.section, navigationElement)).each(function() {
+    	        $(this).addClass("marked");
+    	    });
+	    },
+	    
 	    activateMenu: function() {
 	        state = State.MENU;
-            methods.markBreadcrumbs(options.breadcrumbs);
-            $(".breadcrumb").each(function() {
-                $(this).addClass("marked");
-            });
+	        methods.markBreadcrumbs();
 	    },
 	    
 	    deactivateMenu: function() {
-	        $(".marked").each(function() {
+	        $(".marked", navigationElement).each(function() {
                 if (!$(this).hasClass("breadcrumb")) {
                     $(this).removeClass("marked");
                 }
@@ -45,19 +59,19 @@
             state = State.BREADCRUMBS;
 	    },
 	    
-	    bindMenutabEvents: function() {
-	        navigationElement.bind("menutabChanged", function() {
-                methods.activateMenu();
-            }).bind("menuDeactivated", function() {
-                methods.deactivateMenu();
-            });
-	    },
-	    
 	    updateMenu: function(element) {
             var context = $(element).parent().parent().parent();
             $(".marked", context).removeClass("marked");
+            $("#breadcrumbs .breadcrumb").addClass("marked");
             $(element).parent().addClass("marked");
-            $(".breadcrumb", $(element).parent()).addClass("marked");
+	    },
+	    
+	    bindMenutabEvents: function() {
+	        navigationElement.bind("stateMenu", function() {
+	            methods.activateMenu();
+	        }).bind("stateHiddenBefore", function() {
+	            methods.deactivateMenu();
+	        });
 	    },
 	    
 	    bindMouseOverEvents: function() {
@@ -81,9 +95,6 @@
 	                    event.preventDefault();
 	                    break;
 	                case State.MENU:
-	                    if ($(this).attr("href") == "#") {
-	                        event.preventDefault();
-	                    }
 	                    break;
 	                }
 	         });

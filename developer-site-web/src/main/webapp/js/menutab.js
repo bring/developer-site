@@ -1,92 +1,111 @@
-/**
- * @todo Mulighet for preventDefault
- * @todo Rydde i reset options.metoden, muligens bruke events heller?
- * @todo calculateHeight burde ikke bruke #breadcrumbs direkte
- * @todo Rydde menuActivated og duration
- */
-
 (function($) {
+    var State = {
+        HIDDEN: 0,
+        MENU: 1,
+        BUSY: 2
+    }
+    var state = State.HIDDEN;
 	var active = null;
-	var ignoreEvents = false;
 	var navigationElement;
-	var initialized = false;
-	var menuActivated = false;
 	
 	var options = {
-		section: "#learn",
+		sectionId: "#chosen-section",
 		tabs: [ "#learn", "#download", "#talk" ],
 		duration: 350,
-		
-		reset: function(methods, options, callback) {
-			var chosen = {
-				tab: $("#breadcrumbs"), 
-				launcher: $(options.section+"-launcher")
-			};
-			
-			if (!initialized) {
-				methods.clean();
-				methods.markLauncher($(options.section+"-launcher"));
-				methods.activateTab(chosen, callback);
-				initialized = true;
-			}
-			else {
-				methods.unmarkLauncher(active.launcher);
-				methods.markLauncher(chosen.launcher);
-				methods.deactivateTab(function() {methods.activateTab(chosen, callback);});
-				navigationElement.trigger("menutabActivated");
-			}
-		}
+		menu: {},
 	};
 	
 	var methods = {
 		init: function(optionsArg) {
 			navigationElement = this;
-			$.extend(options,optionsArg)
+			$.extend(options,optionsArg);
 			methods.bindEvents();
 			methods.calculateHeights();
-			options.reset(methods, options);
-			return this;
-		},
-		
-		reset: function() {
-			options.reset();
-		},
-		
-		clean: function() {
-			methods.hideTabs(0);
-			methods.unmarkLaunchers();
-			active = null;
+			methods.clean();
+            methods.stateHidden();
+			this.menu(options.menu);
 			return this;
 		},
 		
 		tabSelected: function(tabId) {
-			if (ignoreEvents)
-				return this;
-			ignoreEvents = true;
+		    if (state == State.HIDDEN) {
+                methods.stateMenu(tabId);
+            }
 			
-			var chosen = methods.getChosen(tabId);
-			if (methods.isActive(chosen)) {
-				menuActivated = false;
-				options.reset(methods, options, function() { ignoreEvents = false; }); 
-				navigationElement.trigger("menuDeactivated");
+			else if (state == State.MENU) {
+			    if (methods.isActive(methods.getChosen(tabId))) {
+			        methods.stateHidden();
+			    }
+			    else {
+			        methods.changeMenutab(tabId);
+			    }
 			}
-			else if (methods.tabsActivated()) {
-				menuActivated = true;
-				methods.unmarkLauncher(active.launcher);
-				methods.markLauncher(chosen.launcher);
-				methods.deactivateTab(function() {methods.activateTab(chosen); ignoreEvents = false;});
-				navigationElement.trigger("menutabChanged");
-			}
-			else {
-				menuActivated = true;
-				methods.markLauncher(chosen.launcher);
-				methods.activateTab(chosen, function() {ignoreEvents = false});
-				navigationElement.trigger("menuActivated");
-				console.log("activated");
-			}
+		    
 			return this;
 		},
+	      
+        stateMenu: function(tabId, callback) {
+            if (state == State.BUSY) {
+                return this;
+            }
+            navigationElement.trigger("stateMenu", [ methods ]);
+            methods.changeMenutab(tabId);
+            return this;
+        },
+        
+        hideHelper: function(callback) {
+            state = State.HIDDEN;
+            methods.handleCallback(callback);
+            navigationElement.trigger("stateHiddenAfter", [ methods ]);
+            return this;
+        },
+        
+        stateHidden: function(callback) {
+            if (state == State.BUSY) {
+                return this;
+            }
+            navigationElement.trigger("stateHiddenBefore", [ methods ]);
+            state = State.BUSY;
+            var chosen = methods.getBreadcrumbs();
+            if (chosen.tab.length == 0) {
+                methods.deactivateTab(function() {
+                    if (active != null) {
+                        methods.unmarkLauncher(active.launcher);
+                    }
+                   methods.hideHelper();
+                });
+                return this;
+            }
+            if (active != null) {
+                methods.unmarkLauncher(active.launcher);
+            }
+            methods.markLauncher(chosen.launcher);
+            methods.deactivateTab(function() {
+                methods.activateTab(chosen, function() {
+                    methods.hideHelper();
+                });
+            });
+            return this;
+        },
 		
+		changeMenutab: function(tabId, callback) {
+            if (state == State.BUSY) {
+                return this;
+            }
+            
+            state = State.BUSY;
+            var chosen = methods.getChosen(tabId);
+            if (active != null) {
+                methods.unmarkLauncher(active.launcher);
+            }
+            methods.markLauncher(chosen.launcher);
+            methods.deactivateTab(function() {
+                methods.activateTab(chosen); 
+                state = State.MENU;
+            });
+            return this;
+		},
+
 		activateTab: function(activeElement, callback) {
 			active = activeElement;
 			methods.fixHeight(active.tab);
@@ -95,6 +114,9 @@
 		},
 		
 		deactivateTab: function(callback) {
+		    if (active == null) {
+		        return methods.handleCallback(callback);
+		    }
 			methods.hideTab(active.tab, callback);
 			active = null;
 			return this;
@@ -102,17 +124,12 @@
 		
 		bindEvents: function() {
 			navigationElement.bind("clickoutside", function() {
-				if (!menuActivated) {
-					return this;
-				}
-				ignoreEvents = true;
-				options.reset(methods, options, function() {ignoreEvents = false});
-				navigationElement.trigger("menuDeactivated");
-				menuActivated = false;
+			    if (state != State.HIDDEN) {
+			        methods.stateHidden();
+			    }
 			});
 			$(options.tabs).each(
 				function(i,tabSelector) {
-					// Bind event
 					$("[href="+tabSelector+"]").click(function(event) {
 						$.fn.menutab("tabSelected", tabSelector);
 						event.preventDefault();
@@ -124,7 +141,6 @@
 		
 		fixHeight: function(activeMenu) {
             var maxHeight = 0;
-            //add(".dropdown-menu").
             methods.calculateHeight(activeMenu);
             $(".menulist, .marked > ul, .dropdown-menu",activeMenu).each(function(i,element) {
             	maxHeight = Math.max(maxHeight, $(element).data("height"));
@@ -157,7 +173,7 @@
 		},
 		
 		showTab: function(tab, callback, duration) {
-			tab.slideDown(isNaN(duration) ? options.duration : duration,callback);
+			tab.slideDown(isNaN(duration) ? options.duration : duration, callback);
 			return this;
 		},
 		
@@ -178,8 +194,12 @@
 			return this;
 		},
 		
+		getActive: function() {
+		    return active;
+		},
+		
 		unmarkLauncher: function(launcher) {
-			launcher.removeClass("menutab-selected");
+			$(launcher).removeClass("menutab-selected");
 			return this;
 		},
 		
@@ -188,6 +208,12 @@
 				methods.unmarkLauncher($(element+"-launcher"));
 			});
 			return this;
+		},
+		
+		eachLauncher: function(delegate) {
+		    $(options.tabs).each(function(i,element) {
+		        delegate(i,$(element+"-launcher"));
+		    });
 		},
 		
 		getChosen: function(tabId) {
@@ -204,6 +230,21 @@
 		tabsActivated: function() {
 			return active != null;
 		},
+	      
+        getBreadcrumbs: function() {
+          return { 
+              tab: $("#breadcrumbs"), 
+              launcher: $(options.section+"-launcher")
+          };
+        },
+        
+        clean: function() {
+            methods.hideTabs(0);
+            methods.unmarkLaunchers();
+            active = null;
+            return this;
+        },
+		
 	};
 	
 	$.fn.menutab = function(method) {

@@ -11,8 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.bring.developer.web.Menu;
-
 @Configuration
 public class ApplicationConfig {
     
@@ -30,10 +28,5 @@ public class ApplicationConfig {
         params.setParameter(CoreConnectionPNames.SO_TIMEOUT, config.evaluateToInt("http.client.socket.timeout"));
         ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
         return new DefaultHttpClient(connectionManager, params); 
-    }
-    
-    @Bean
-    public Menu createMenu() {
-		return new Menu();
     }
 }
