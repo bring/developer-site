@@ -402,6 +402,20 @@ ul.avatar-list li:last-child {
     right: -332px;
 }
 
+.breadcrumbs .breadcrumb a {
+    color: #ccc;
+    background-color: #666;;
+}
+
+.breadcrumb .current-page a:after {
+    right: 15px;
+    top: 2px;
+    position: absolute;
+    content: "\02022";
+    font-size: 2.75em;
+    color: #79b54b
+}
+
 .menulist, .menulist ul {
     text-transform: uppercase;
     letter-spacing: -0.05em;

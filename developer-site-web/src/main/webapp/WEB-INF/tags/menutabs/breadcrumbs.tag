@@ -6,12 +6,12 @@
 
 <c:if test="${!empty level1 }">
 <div id="breadcrumbs" class="menubox">
-    <ul class="menulist level1">
-        <li class="marked breadcrumb ${level2 ? '' : 'current-page'}">
+    <ul class="menulist level1 breadcrumbs">
+        <li class="marked breadcrumb ${!empty level2 ? '' : 'current-page'}">
             <a class="menubutton" href="#">${level1}</a>
             <c:if test="${!empty level2 }">
                 <ul class="level2">
-                    <li class="marked breadcrumb ${level3 ? '' : 'current-page'}">
+                    <li class="marked breadcrumb ${!empty level3 ? '' : 'current-page'}">
                         <a class="menubutton" href="#">${level2}</a>
                         <c:if test="${!empty level3 }">
                             <ul class="level3">
