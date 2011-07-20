@@ -1,11 +1,16 @@
 package com.bring.developer.web;
 
+import javax.xml.bind.JAXBException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.bring.developer.dao.ApiReferenceDao;
+
 @Controller
 public class HomeController {
+    ApiReferenceDao dao = new ApiReferenceDao();
     
     @RequestMapping(value = "/home.html")
     public String home() {
@@ -23,7 +28,12 @@ public class HomeController {
     
     @RequestMapping(value = "/learn/shippingguide/apireference.html")
     public String apiReference(ModelMap model) {
-        model.put("test", "foo");
+        try {
+            model.put("document", dao.query("shippingguide"));
+        } catch (JAXBException e) {
+            // TODO handle error
+            e.printStackTrace();
+        }
         return "learn/shippingguide/apireference";
     }
 }
