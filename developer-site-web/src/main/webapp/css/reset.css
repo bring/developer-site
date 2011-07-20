@@ -14,7 +14,7 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acron
 	vertical-align: baseline;
 }
 
-p,blockquote,pre,address,dl,ol,ul,table {
+p,pre,address,dl,ol,ul,table,cite,blockquote {
     font-size: 0.75em;
 }
 
@@ -53,13 +53,6 @@ blockquote,q {
 a img {
 	border: none;
 }
-
-/* developer.bring.com typesetting */
-
-p, .quote {
-   font-size: 0.75em; 
-}
-
 
 /* 
  * Typesetting
@@ -130,4 +123,7 @@ a:hover, a:focus {
 /* default code style. */
 code {
     font-weight: bold;
+}
+.box-footer {
+    font-size: 0.75em;
 }

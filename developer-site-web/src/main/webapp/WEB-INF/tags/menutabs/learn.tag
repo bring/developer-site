@@ -8,7 +8,7 @@
                     <a class="menubutton" href="#">Shipping Introduction</a>
                     <ul class="level3">
                         <li>
-                            <a class="menubutton" href="index.html">Shipping test</a>
+                            <a class="menubutton" href="#">Shipping test</a>
                         </li>
                     </ul>
                 </li>
@@ -19,7 +19,7 @@
             <a class="menubutton" href="#">Tracking API beta</a>
             <ul class="level2">
                 <li>
-                    <a class="menubutton" href="index.html">Introduction</a>
+                    <a class="menubutton" href="/learn/tracking/index.html">Introduction</a>
                 </li>
             </ul>
         </li>

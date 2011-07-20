@@ -59,25 +59,16 @@
                     $(element).addClass("box");
                 });
             });
+            
+            $("#twittercontent").performTwitterSearch(1, function(image, user, text, time){
+                return '<li class="group"><img class="avatar" src="' + 
+                image + '"/><div class="avatar-list-text"><div class="question-title">' +
+                user + '</div><div class="question-text"><blockquote class="twittercontent">' + 
+                text + '</blockquote></div>' + '<div class="datetime">' + 
+                time + '</div></div></li>';
+            });
         });
     </script>
-     
-    <!-- 
-    <misc:jquery />
-    <script src="js/menutab.js"></script>
-    <script src="js/twitter.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#twittercontent").performTwitterSearch(1, function(image, user, text, time){
-				return '<li class="group"><img class="avatar" src="' + 
-				image + '"/><div class="avatar-list-text"><div class="question-title">' +
-				user + '</div><div class="question-text"><pre>' + 
-				text + '</pre></div>' + '<div class="datetime">' + 
-				time + '</div></div></li>';
-			});
-		});
-	</script>
--->    
 </body>
 
 </html>

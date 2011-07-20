@@ -147,17 +147,6 @@ ul.avatar-list li:last-child {
     position: absolute;
 }
 
-pre{
-    white-space: pre;           /* CSS 2.0 */
-    white-space: pre-wrap;      /* CSS 2.1 */
-    white-space: pre-line;      /* CSS 3.0 */
-    white-space: -pre-wrap;     /* Opera 4-6 */
-    white-space: -o-pre-wrap;   /* Opera 7 */
-    white-space: -moz-pre-wrap; /* Mozilla */
-    white-space: -hp-pre-wrap;  /* HP Printers */
-    word-wrap: break-word;      /* IE 5+ */
-}
-
 .avatar-list-footer {
     font-size: 0.75em;
     min-height: 0;
@@ -270,7 +259,7 @@ pre{
 /* talkbox */
 
 .talkbox {
-    font-size: 0.75em;
+/*     font-size: 0.75em; */
     margin: 10px;
 /*     background-color: #f0f0f1; */
     width: 302px;
@@ -282,6 +271,7 @@ pre{
 }
 
 .talkbox-header {
+    font-size: 0.75em;
     position: relative;
 }
 
@@ -341,14 +331,17 @@ pre{
 }
 
 .talkbox blockquote {
-	font-size: 1.3em;
+/* 	font-size: 1.3em; */
     margin-bottom: 0;
     height: 90px;
 }
 
+.talkbox-footer {
+    font-size: 0.75em;
+}
+
 .talkbox-footer .time {
     color: #cbcbcb;
-    font-size: 0.813em;
 }
 
 /* Learn */
@@ -368,10 +361,11 @@ pre{
 
 .menutab-selected:after {
     background-color: #3b3b3b;
+/*     border: 1px solid red; */
     width: 322px;
     height: 15px;
     left: 0;
-    bottom: -6px;
+    bottom: -10px;
     z-index: 2;
     position: absolute;
     display: block;
@@ -393,7 +387,7 @@ pre{
 
 .navigation-tabs {
     position: relative;
-    margin: 0 10px 0 0;
+    margin: 5px 10px 0 0;
 }
 
 .menubox {
@@ -473,4 +467,17 @@ li.marked > a {
     background-color: #fff;
     font-size: 0.75em;
     color: #999;
+}
+
+/* Twitter */
+
+#twittertalkquote, .twittercontent {
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
 }

@@ -42,7 +42,6 @@
 }
 
 .toolbox a {
-	font-size: 0.7em;
 	width: 311px;
 	position: absolute;
 	height: 30px;
@@ -50,9 +49,19 @@
 	padding: 10px 0 0 10px;
 }
 
-.toolbox li>*:before {
+.toolbox a > span {
+    position: absolute;
+    top: 12px;
+    left: 30px;
+}
+
+.toolbox a > span:before {
+    position: absolute;
+    top: -8px;
+    left: -20px;
+    font-size: 1.75em;
 	margin-right: 5px;
-	content: "‹ ";
+	content: "\02039 ";
 	font-weight: bold;
 }
 
@@ -81,7 +90,7 @@
 .intro-category {
 	position: absolute;
 	right: 0px;
-	height: 91px;
+	height: 90px;
 	width: 20px;
     z-index: 1;
     background-color: orange;
@@ -89,12 +98,12 @@
 
 .intro-category>span{
     position: absolute;
-    left: 38px;
+    left: 37px;
     top: 10px;
     width: inherit;
     height: inherit;
     color: #fff;
-    font-size: 0.6em;
+    font-size: 0.75em;
 }
 
 .quickstart-list li:last-child {
@@ -113,12 +122,12 @@
 
 .quickstart-category>span{
 	position: absolute;
-	left: 63px;
+	left: 62px;
 	top: 25px;
 	width: inherit;
 	height: inherit;
 	color: #fff;
-	font-size: 0.6em;
+	font-size: 0.75em;
 
 }
 

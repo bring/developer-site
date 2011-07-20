@@ -18,8 +18,8 @@
                <span class="rotate-text">INTRO</span>
             </div>
             <ul class="intro-list">
-                <li><a>WHAT ARE BRING APIS?</a></li>
-                <li><a>INTEGRATE SHIPPING GUIDE WIDGET</a></li>
+                <li><a><span>WHAT ARE BRING APIS?</span></a></li>
+                <li><a><span>INTEGRATE SHIPPING GUIDE WIDGET</span></a></li>
             </ul>
         </div>
         
@@ -28,9 +28,9 @@
                 <span class="rotate-text">QUICKSTART</span>
             </div>
             <ul class="quickstart-list">
-                <li><a>ADD SHIPMENT TRACKING WIDGET</a></li>
-                <li><a>VALIDATE POSTAL CODE FIELD</a></li>
-                <li class="selected"><a>VALIDATE POSTAL CODE FIELD</a></li>
+                <li><a><span>ADD SHIPMENT TRACKING WIDGET</span></a></li>
+                <li><a><span>VALIDATE POSTAL CODE FIELD</span></a></li>
+                <li class="selected"><a><span>VALIDATE POSTAL CODE FIELD</span></a></li>
             </ul>
         </div>
     </div>
