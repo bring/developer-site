@@ -345,7 +345,7 @@
 		<p>B-Økonomi is intended for bulk sendings and has a mimimum requirement of 20 parcels, however,
 			if weight exceeds 100g this limit is ignored.</p>
 	]]></Note>
-	<Note><![CDATA[
+	<Note id="3"><![CDATA[
 		<p>Due to look-up in flight schedules, a request for this product has longer response time
 			than for other products.</p>
 	]]></Note>

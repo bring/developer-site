@@ -32,4 +32,8 @@ public class Products {
         return additionalService;
     }
     
+    public Note getNote() {
+        return note;
+    }
+    
 }
