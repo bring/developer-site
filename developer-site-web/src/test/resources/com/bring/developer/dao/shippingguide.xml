@@ -512,11 +512,29 @@ Example output
             </Title>
             <Content><![CDATA[
 <pre class="java">
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
         
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withEdi(false);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
 Example output
 <pre>
-    Price: 106.00 NOK
+    Price: 81.00 NOK
 
 </pre>
             ]]></Content>
@@ -559,9 +577,35 @@ Example output
 			<Title>
 				Java
             </Title>
-			<Content>
+            <Content><![CDATA[
+<pre class="java">
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withPostingAtPostOffice(true);
+        shipment.addProduct(ProductType.SERVICEPAKKE);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
+</pre>
+Example output
+<pre>
+    Price: 92.00 NOK
 
-			</Content>
+</pre>
+            ]]></Content>
 		</Example>
 	</Parameter>
 	<Parameter>
@@ -606,10 +650,41 @@ Example output
 			<Title>
 				Java
             </Title>
-			<Content><![CDATA[
-                <pre class="java">
+            <Content><![CDATA[
+<pre class="java">
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withShippingDateTime(new DateTime("2009-03-27"));
+        
+        Set<AdditionalService> additionalServices = new HashSet<AdditionalService>();
+        additionalServices.add(AdditionalService.EVARSLING);
+        additionalServices.add(AdditionalService.LORDAGSUTKJORING);
+        additionalServices.add(AdditionalService.POSTOPPKRAV);
+        
+        shipment.withAdditionalServices(additionalServices);
+        shipment.addProduct(ProductType.SERVICEPAKKE);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
+</pre>
+Example output
+<pre>
+    Price: 78.00 NOK
 
-                </pre>
+</pre>
             ]]></Content>
 		</Example>
 	</Parameter>
