@@ -1,618 +1,618 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Document>
-    <Section>
-        <Title>
-            Postal code
+	<Parameter>
+		<Title>
+			Postal code
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Is specified by adding <code>?from=7600&amp;to=1407</code>.</p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                expectedDelivery.xml?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				expectedDelivery.xml?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                expectedDelivery.json?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				expectedDelivery.json?from=7600&amp;to=1407&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
-            <Content><![CDATA[
+			<Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("1407");
-shipment.withToPostalCode("7600");
-shipment.addPackage(packet);
-shipment.addProduct(ProductType.SERVICEPAKKE);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
-String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
-
-// Print out
-System.out.println("Expected delivery days: " + expectedDeliveryDays);
+	// Initialize library
+	String clientId = "www.mywebshop.com";
+	BringService bringService = new BringService(clientId);
+	
+	// Prepare query
+	Package packet = new Package();
+	Shipment shipment = new Shipment();
+	shipment.withFromPostalCode("1407");
+	shipment.withToPostalCode("7600");
+	shipment.addPackage(packet);
+	shipment.addProduct(ProductType.SERVICEPAKKE);
+	
+	// Fetch price information from Bring
+	ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
+    String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
+    
+    // Print out
+    System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Expected delivery days: 2
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            Country Code
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Country Code
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Is specified by adding <code>?fromCountry=NO&amp;toCountry=DK</code>.</p>
             <p><a href="http://www.iso.org/iso/english_country_names_and_code_elements">Country Codes are ISO-3166-1-alpha-2</a></p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
-            <Content><![CDATA[
+			<Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("4233");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("2100");
-shipment.withFromCountry("NO");
-shipment.withToPostalCode("2100");
-shipment.withToCountry("DK");
-shipment.addPackage(packet);
-shipment.addProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
-String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY).getExpectedDelivery().getWorkingDays();
-
-// Print out
-System.out.println("Expected delivery days: " + expectedDeliveryDays);
+    // Initialize library
+    String clientId = "www.mywebshop.com";
+    BringService bringService = new BringService(clientId);
+    
+    // Prepare query
+    Package packet = new Package();
+    packet.withWeightInGrams("4233");
+    Shipment shipment = new Shipment();
+    shipment.withFromPostalCode("2100");
+    shipment.withFromCountry("NO");
+    shipment.withToPostalCode("2100");
+    shipment.withToCountry("DK");
+    shipment.addPackage(packet);
+    shipment.addProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY);
+    
+    // Fetch price information from Bring
+    ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
+    String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY).getExpectedDelivery().getWorkingDays();
+    
+    // Print out
+    System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Expected delivery days: 3-5
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section note="1">
-        <Title>
-            Weight in grams
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Weight in grams
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Is specified by adding <code>?weightInGrams=1500</code>.</p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                price.xml?from=7600&amp;o=1407&amp;weightInGrams=1500
+			<Request>
+				price.xml?from=7600&amp;o=1407&amp;weightInGrams=1500
             </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                price.json?from=7600&amp;to=1407&amp;weightInGrams=1500
+			<Request>
+				price.json?from=7600&amp;to=1407&amp;weightInGrams=1500
             </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
-            <Content><![CDATA[
+			<Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 94.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section note="1">
-        <Title>
-            Package dimensions
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Package dimensions
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Is specified by adding <code>&amp;length=30&amp;width=40&amp;height=40</code>.</p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;eight=40
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;eight=40
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
-            <Content><![CDATA[
+			<Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withLength("30").withWidth("40").withHeight("40");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+    // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withLength("30").withWidth("40").withHeight("40");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 120.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section note="1">
-        <Title>
-            Volume
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Volume
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Instead of, or in addition to, using the package's weight and dimensions you can
                 specify volume. This is relevant for non-rectangular hexahedron shaped packages,
                 and depending on the volume, it could affect the set of available products.</p>
             <p>The unit is dm<sup>3</sup>.</p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example title="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                /price.xml?from=7600&amp;to=1407&amp;volume=33
+			<Request>
+				/price.xml?from=7600&amp;to=1407&amp;volume=33
             </Request>
-            <Content><![CDATA[
+			<Content><![CDATA[
                 <p>Note the content of the <code>TraceMessages</code> element.</p>
             ]]></Content>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+		</Example>
+		<Example title="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                /price.json?from=7600&amp;to=1407&amp;volume=33
-            </Request>
-            <Content><![CDATA[
+			<Request>
+				/price.json?from=7600&amp;to=1407&amp;volume=33
+          </Request>
+			<Content><![CDATA[
                 <p>Note the content of the <code>TraceMessages</code> object.</p>
             ]]></Content>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+		</Example>
+		<Example title="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example title="java">
+			<Title>
+				Java
             </Title>
             <Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withVolume("33");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+    // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withVolume("33");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 106.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            Shipping date
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Shipping date
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>This parameter specifies which date the shipment is picked-up or delivered to Bring
                 to be delivered to the recipient.</p>
             <p>Accepted format is: <code>YYYY-MM-DD</code>.</p>
             <p>If this parameter is specified the response will include expected delivery date in
                 addition to amount of working days.</p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                /all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                /all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
             <Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withVolume("33");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withShippingDateTime(new DateTime("2011-07-30"));
-shipment.addProduct(ProductType.EKSPRESS09);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.EKSPRESS09).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withVolume("33");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withShippingDateTime(new DateTime("2011-07-30"));
+        shipment.addProduct(ProductType.EKSPRESS09);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
+        String price = shippingGuideResult.getProduct(ProductType.EKSPRESS09).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 408.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            Shipping time
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Shipping time
         </Title>
-        <Description><![CDATA[
-            <p>Use this parameter if you would like to specify when during the day the package needs
+		<Description><![CDATA[
+            <p>Use this paramter if you would like to specify when during the day the package needs
                 to be picked up from the departure point.</p>
             <p>This parameter is only considered for courier and express products. It is also optional.</p>
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         ]]></Description>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                /all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                /all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming</p> ]]>
+			<Content>
+				Example coming
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
             <Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withVolume("33");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withShippingDateTime(new DateTime(2011, 8, 30, 13, 37, 0, 0));
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withVolume("33");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withShippingDateTime(new DateTime(2011, 8, 30, 13, 37, 0, 0));
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 106.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            EDI setting
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			EDI setting
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Specify the whether or the shipment has been pre-registered (EDI).</p>
             <p>Can be specified with the <code>edi=false</code> parameter.</p>
             <p>This will affect response prices and might affect which products are
                 available.</p>
         ]]></Description>
-        <Default>
-            true
+		<Default>
+			true
         </Default>
-        <Example type="xml">
-            <Title>
-                XML
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                /price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                /price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
             <Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withEdi(false);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withEdi(false);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 81.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            Shipped from post office
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Shipped from post office
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>The response data may vary depending on whether or not Bring must collect the
                 shipment or if the customer delivers the shipment from a post office.</p>
         ]]></Description>
-        <Default>false</Default>
-        <Example type="xml">
-            <Title>
-                XML
+		<Default>false</Default>
+		<Example type="xml">
+			<Title>
+				XML
             </Title>
-            <Request>
-                /price.xml?from=7600&amp;to=&amp;407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				/price.xml?from=7600&amp;to=&amp;407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                /price.json?from=7600&amp;to=&amp;407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				/price.json?from=7600&amp;to=&amp;407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming</p> ]]>
+			<Content>
+				Example coming
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
             <Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withPostingAtPostOffice(true);
-shipment.addProduct(ProductType.SERVICEPAKKE);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withPostingAtPostOffice(true);
+        shipment.addProduct(ProductType.SERVICEPAKKE);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 92.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            Additional services
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Additional services
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <p>Adds information about additional services when they are available.</p>
             <p>There are currently 3 additional services that can be specified this way. To add
                 multiple services simply chain the parameters.</p>
@@ -622,77 +622,77 @@ System.out.println("Price: " + price + " NOK");
                 <li><code>&amp;additional=lordagsutkjoring</code></li>
             </ul>
         ]]></Description>
-        <Example type="XML">
-            <Title>
-                XML
+		<Example type="XML">
+			<Title>
+				XML
             </Title>
-            <Request>
-                /price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring
-            </Request>
-        </Example>
-        <Example type="json">
-            <Title>
-                JSON
+			<Request>
+				/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
             </Title>
-            <Request>
-                /price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring
-            </Request>
-        </Example>
-        <Example type="webservice">
-            <Title>
-                Web Service
+			<Request>
+				/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring
+			</Request>
+		</Example>
+		<Example type="webservice">
+			<Title>
+				Web Service
             </Title>
-            <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+			<Content>
+				Example coming.
             </Content>
-        </Example>
-        <Example type="java">
-            <Title>
-                Java
+		</Example>
+		<Example type="java">
+			<Title>
+				Java
             </Title>
             <Content><![CDATA[
 <pre class="java">
-// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withShippingDateTime(new DateTime("2009-03-27"));
-
-Set<AdditionalService> additionalServices = new HashSet<AdditionalService>();
-additionalServices.add(AdditionalService.EVARSLING);
-additionalServices.add(AdditionalService.LORDAGSUTKJORING);
-additionalServices.add(AdditionalService.POSTOPPKRAV);
-
-shipment.withAdditionalServices(additionalServices);
-shipment.addProduct(ProductType.SERVICEPAKKE);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
+        // Initialize library
+        String clientId = "www.mywebshop.com";
+        BringService bringService = new BringService(clientId);
+        
+        // Prepare query
+        Package packet = new Package();
+        packet.withWeightInGrams("1500");
+        Shipment shipment = new Shipment();
+        shipment.withFromPostalCode("7600");
+        shipment.withToPostalCode("1407");
+        shipment.withShippingDateTime(new DateTime("2009-03-27"));
+        
+        Set<AdditionalService> additionalServices = new HashSet<AdditionalService>();
+        additionalServices.add(AdditionalService.EVARSLING);
+        additionalServices.add(AdditionalService.LORDAGSUTKJORING);
+        additionalServices.add(AdditionalService.POSTOPPKRAV);
+        
+        shipment.withAdditionalServices(additionalServices);
+        shipment.addProduct(ProductType.SERVICEPAKKE);
+        shipment.addPackage(packet);
+        
+        // Fetch price information from Bring
+        ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+        String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+        
+        // Print out
+        System.out.println("Price: " + price + " NOK");
 </pre>
-<p>Example output</p>
+Example output
 <pre>
     Price: 78.00 NOK
 
 </pre>
             ]]></Content>
-        </Example>
-    </Section>
-    <Section>
-        <Title>
-            Public ID
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Public ID
         </Title>
-        <Description><![CDATA[
+		<Description><![CDATA[
             <pPublic ID your personal Shipping Guide account id. It the the a sequence of
                 alphanumeric characters after the last dash in your identificator. (Please
                 login to see your identificator string).</p>
@@ -700,14 +700,11 @@ System.out.println("Price: " + price + " NOK");
             <p>Bring requires this parameter in order to know who to contact if they
                 would require support or follow-up to a certain API request.</p>
         ]]></Description>
-        <Example>
-            <Content><![CDATA[
+		<Example>
+			<Content><![CDATA[
                 <p>If your Shipping Guide IE is: <code>372b269a-4f07-4c4e-92b9-460cb92b0767</code>
                     your pid is <code>460cb92b0767</code></p>
             ]]></Content>
-        </Example>
-    </Section>
-    <Note id="1"><![CDATA[
-        <p>Required if you want price information.</p>
-    ]]></Note>
+		</Example>
+	</Parameter>
 </Document>

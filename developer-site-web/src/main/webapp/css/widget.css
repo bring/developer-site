@@ -103,7 +103,8 @@
     min-height: 200px;
     margin-right: 10px;
     margin-bottom: 20px;
-    background: #999;
+    background: #ccc;
+    position: relative;
 }
 
 
@@ -118,4 +119,39 @@
     width: 302px;
     min-height: 200px;
     float: right;  
+}
+
+widget-container{
+    overflow: auto;
+}
+
+.widget-container h3
+ {
+    float: left;
+    width: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: red;
+}
+
+.widget-container .tab {
+    clear: both;
+}
+
+.widget-tabs{
+	position: absolute;
+	bottom: -40px;
+	right: 0px;
+    width: 200px;
+    height: 40px;
+    background-color: #ccc;
+    color: f0f0f1;
+}
+
+.widget-tabs .active {
+    font-weight: bold;
+    color: #565656;
+    background-color: #999;
+    display: block;
+    width: 100%;
 }
