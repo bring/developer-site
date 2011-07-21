@@ -27,6 +27,16 @@ public class HomeController {
         return "learn/tracking/index";
     }
     
+    @RequestMapping(value = "/download/widget/index.html")
+    public String widget() {
+        return "/download/widget/index";
+    }
+    
+    @RequestMapping(value = "/download/widget/optionalpostoffice.html")
+    public String optionalpostoffice() {
+        return "/download/widget/optionalpostoffice";
+    }
+    
     @RequestMapping(value = "/learn/shippingguide/apireference.html")
     public String apiReference(ModelMap model) throws JAXBException {
         Document document = dao.query("shippingguide");

@@ -1,0 +1,121 @@
+.widgetcontent {
+    width: 654px;
+    margin-left: 5px;
+    float: left;
+    margin-top: -30px;
+}
+
+.widgetbox{
+    position: relative;
+    float: left;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-bottom: 10px;
+    width: 208px;
+    height: 204px;
+    display: block;
+    color: #676767;
+    background-color: #f0f0f1;
+    border: 1px solid #ccc;
+}
+
+.widgetbox:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+    border-color: #bbb;
+}
+
+.widgetbox img{
+	max-width: 208px;
+	max-height: 120px;
+}
+
+.widgetbox .title{
+    position: absolute;
+    top: 135px;
+    display: block;
+    width: 188px;
+    left: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    line-height: 100%;
+}
+
+.widgetbox .by{
+    position: absolute;
+    top: 165px;
+    width: 188px;
+    left: 10px;
+    font-size: 0.8em;
+    color: #999;
+}
+
+.widgetbox .from{
+    position: absolute;
+    top: 180px;
+    width: 188px;
+    left: 10px;
+    font-size: 0.8em;
+    color: #999;
+}
+
+.sidebox{
+	margin-left: 5px;
+    width: 322px;
+    float: right;
+    margin-top: -30px;
+}
+
+.widgetdescription{
+	padding: 10px 10px 10px 10px;
+    width: 302px;
+    background: #f0f0f1;
+}
+
+.widgetdescription h1{
+    font-weight:500;
+    margin: 0 0 10px 0;
+    font-size: 0.9em;
+}
+
+.sidebox p{
+    padding-bottom: 0px;
+}
+
+.widgetinfo{
+    width: 644px;
+    min-height: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.widget-content{
+    width: 654px;
+    margin-right: 10px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    float:left;
+}
+.widgetpreview {
+    width: 654px;
+    min-height: 200px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background: #999;
+}
+
+
+.widgetarticle{
+    width: 302px;
+    min-height: 200px;
+    margin-right: 40px;
+    float:left;
+}
+
+.widget-tools{
+    width: 302px;
+    min-height: 200px;
+    float: right;  
+}
