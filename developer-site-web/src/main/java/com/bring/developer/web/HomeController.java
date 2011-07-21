@@ -26,24 +26,17 @@ public class HomeController {
     public String tracking() {
         return "learn/tracking/index";
     }
-    
+
+    /**
+     * @todo Add RequestParam (so that the controller can open other XML files)
+     * @param model
+     * @return
+     * @throws JAXBException
+     */
     @RequestMapping(value = "/learn/shippingguide/apireference.html")
     public String apiReference(ModelMap model) throws JAXBException {
         Document document = dao.query("shippingguide");
         model.put("document", document);
-        
-//        Parameter parameter = new Parameter();
-//        parameter.setTitle("The foo");
-//        System.out.println(parameter.getTitle());
-//        
-//        List<Parameter> paramList = new ArrayList<Parameter>();
-//        paramList.add(parameter);
-//        
-//        Document document = new Document();
-//        document.setParameters(paramList);
-        
-        model.put("document", document);
-        
         return "learn/shippingguide/apireference";
     }
 }
