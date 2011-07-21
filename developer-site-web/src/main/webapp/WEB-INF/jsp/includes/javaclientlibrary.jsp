@@ -1,8 +1,3 @@
-<%@ tag language="java" pageEncoding="UTF-8"%>
-
-                <div class="article">
-              
-                      
 <h1>Bring open source Java client library</h1>
 
 <h2>Introduction</h2>
@@ -74,5 +69,4 @@ Joda-Time</p>
  .getValue();</p>
 
 <p> //Display result<br />
- System.out.println("Total weight:" + totalWeight);</p>
-</div>
+System.out.println("Total weight:" + totalWeight);</p>

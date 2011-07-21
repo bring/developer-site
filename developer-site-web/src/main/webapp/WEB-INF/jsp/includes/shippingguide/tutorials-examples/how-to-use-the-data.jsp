@@ -1,8 +1,3 @@
-<%@ tag language="java" pageEncoding="UTF-8"%>
-
-                <div class="article">
-              
-                      
 <h1>How to use the data?</h1>
 
 <p>Create your own services with data from Bring! Choose how you want to retrieve data from the Shipping Guide.</p>
@@ -58,7 +53,3 @@
 	     <a target="_blank" href="http://www.bring.no/324.cms"> estimated shipping weight (volume weight) </a>, and more.
 	     Remember to update the data at pricechanges!
 </p>
-
-
-
-                    </div>

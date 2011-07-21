@@ -19,7 +19,7 @@
     <div class="wrapper">
         <misc:header />
         <div class="main">
-            <menutabs:showMenu cssClass="menutab" level1="Shipping guide API" level2="API Reference" />
+            <menutabs:showMenu cssClass="menutab" level1="${category}" level2="${subcategory}" level3="${subsubcategory}" />
             
             <div class="content group">
                 <div class="article">

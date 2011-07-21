@@ -6,7 +6,6 @@
 
 <%! /* @todo Clean up this mess...*/ %>
 
-<c:if test="${!empty level1 }">
 <div id="breadcrumbs" class="menubox">
     <ul class="menulist level1 breadcrumbs">
         <li class="marked breadcrumb">
@@ -28,4 +27,3 @@
         </li>
     </ul>
 </div>
-</c:if>

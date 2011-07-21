@@ -72,10 +72,12 @@
                     if (active != null) {
                         methods.unmarkLauncher(active.launcher);
                     }
-                   methods.hideHelper();
+                   methods.hideHelper(callback);
                 });
                 return this;
             }
+            
+            // Breadcrumbs
             if (active != null) {
                 methods.unmarkLauncher(active.launcher);
             }
