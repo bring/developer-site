@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document>
+    <RequestBase>
+        http://fraktguide.bring.no/fraktguide/
+    </RequestBase>
+    <Parameter>
+        <Title>
+            Postal code
+        </Title>
+        <Description><![CDATA[
+            <p>The postal code is specified using the <code>pnr</code> parameter.</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /api/postalCode.xml?pnr=1337
+            </Request>
+            <Content><![CDATA[
+                <p>XPath example on checking if response is valid:<br />
+                <code>//Response/@valid</code></p>
+            ]]></Content>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /api/postalCode.json?pnr=1337
+            </Request>
+            <Content>
+                
+            </Content>
+        </Example>
+        <Example type="html">
+            <Title>
+                HTML
+            </Title>
+            <Request>
+                /api/postalCode.html?pnr=1337
+            </Request>
+            <Content><![CDATA[
+                <p>The HTML API will return a <code>span</code> element where the
+                <code>id="bringPostnumberQueryResult"</code>, the text is the postal name
+                and the <code>class</code> will be either
+                <code>bringPostnumberQueryValidPostnumber</code> or
+                <code>bringPostnumberQueryInvalidPostnumber</code>.</p>
+            ]]></Content>
+        </Example>
+    </Parameter>
+    <Parameter>
+        <Title>
+            Country code
+        </Title>
+        <Description><![CDATA[
+            <p>You may specify country using the <code>country</code> parameter.</p>
+            <p>Only ISO 3166-1-alpha-2 formatted contry codes are allowed.</p>
+            <p>Currently only these countries are supported:</p>
+            <ul>
+                <li><code>NO</code> - Norway</li>
+                <li><code>DK</code> - Denmark</li>
+                <li><code>SE</code> - Sweden</li>
+                <li><code>FI</code> - Finland</li>
+            </ul>
+            <p>This service queries <a href="http://www.geonames.org/">GeoNames</a> for all
+                countries except for Norway.</p>
+                
+            <h2>Blank response</h2>
+            <p>If the response returns valid but postal name is blank, it is either because:</p>
+            <ul>
+                <li>There are multiple postal names for the given postal code. This is relevant
+                    for France.</li>
+                <li>This service does not have any postal code data for the given country.</li>
+            </ul>
+            <p>If the response is blank and a postal name is required, it is recommended to
+                ask the user input it himself/herself.</p>
+        ]]></Description>
+        <Default>
+            NO
+        </Default>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /api/postalCode.xml?pnr=4000&amp;country=DK
+            </Request>
+            <Content><![CDATA[
+                <p>XPath example on checking if response is valid:<br />
+                <code>//Response/@valid</code></p>
+            ]]></Content>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /api/postalCode.json?pnr=4000&amp;country=DK
+            </Request>
+        </Example>
+        <Example type="html">
+            <Title>
+                HTML
+            </Title>
+            <Request>
+                /api/postalCode.html?pnr=4000&amp;country=DK
+            </Request>
+        </Example>
+    </Parameter>
+</Document>

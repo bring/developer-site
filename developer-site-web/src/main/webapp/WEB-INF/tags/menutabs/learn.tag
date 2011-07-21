@@ -22,7 +22,7 @@
             <a class="menubutton" href="#">Tracking API beta</a>
             <ul class="level2">
                 <li>
-                    <a class="menubutton" href="/learn/tracking/index.html">Introduction</a>
+                    <a class="menubutton" href="/learn/tracking/introduction.html">Introduction</a>
                 </li>
             </ul>
         </li>

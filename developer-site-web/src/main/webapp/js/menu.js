@@ -16,6 +16,7 @@
 	var options = {
 	    section: "#learn",
         breadcrumbs: [],
+        currentUrl: window.location.pathname + window.location.search,
         state: "breadcrumbs"
 	}
 	
@@ -29,14 +30,34 @@
             methods.bindClickEvents();
             state = State.createFromStr(options.state)
 	    },
-	        
+	       
+	    
+	    getPath : function() {
+            var path = [];
+            var currentLink = $("a[href='"+options.currentUrl+"']", navigationElement);
+            while ((currentLink = currentLink.parent()).length != 0 && !currentLink.hasClass("menulist")) {
+                if (currentLink[0].tagName.toLowerCase() == "li") {
+                    path[path.length] = currentLink[0];
+                }
+            }
+            return path;	        
+	    },
+	    
 	    initBreadcrumbs: function() {
+	        
+	        var path = methods.getPath();
+	        for(var i in path) {
+	            $(path[i]).addClass("breadcrumb");
+	            console.debug(path[i]);
+	        }
+	        
+	        /*
 	        $listContainer = $(options.section, navigationElement);
 	        for (var i = 1; i <= options.breadcrumbs.length; i++) {
 	            var $current = $(".level"+i, $listContainer);
 	            $listContainer = $($current.children()[options.breadcrumbs[i-1]-1]); 
 	            $listContainer.addClass("breadcrumb");
-	        }
+	        }*/
 	    },
 	    
 	    markBreadcrumbs: function() {
