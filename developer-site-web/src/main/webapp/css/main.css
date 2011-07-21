@@ -73,7 +73,7 @@ body:before {
     background-image: url("/img/logo.png");
 }
 
-.tabs {
+.global-tabs {
     bottom: 0;
     position: absolute;
     left: 50%;

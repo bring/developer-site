@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/css/lib.css" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery.snippet.css" />
 </head>
 
 <body>
@@ -35,7 +36,7 @@
                         
                         <div class="codetabs">
                             <c:forEach items="${myElement.examples}" var="example">
-                                <h2><a href="#${example.type}">${example.title}</a></h2>
+                                <h3><a href="#${example.type}">${example.title}</a></h3>
                                 <div data-tab="${example.type}" class="tab">
                                     <c:if test="${!empty example.request}">
                                         <p>
@@ -61,8 +62,11 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script>
+    <script type="text/javascript" src="/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript">
         $(document).ready(function() {
+
+            // Navigation
             var sectionId = "#learn";
             $("#navigation").menutab("init", {
                 section: sectionId,
@@ -73,6 +77,7 @@
                 breadcrumbs: [2, 1]
             });
             
+            // Twitter
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
                 image + '"/><div class="avatar-list-text"><div class="question-title">' +
@@ -80,6 +85,93 @@
                 text + '</blockquote></div>' + '<div class="datetime">' + 
                 time + '</div></div></li>';
             });
+            
+            
+            // Syntax highlighter
+            $(".article pre").each(function(index, item) {
+                var lang = $(item).attr("class");
+                
+                var langMap = {
+                     json : "javascript",
+                     webservice : "c#"
+                };
+                
+                for(fromLang in langMap) {
+                    if(langMap.hasOwnProperty(fromLang) && fromLang === lang) {
+                        lang = langMap[fromLang];
+                        break;
+                    }
+                }
+                
+                if(lang) {
+                    $(item).snippet(lang, {
+                        style: "ide-eclipse"
+                    });
+                }
+            });
+            
+            // Tabs
+            var codetabs = $(".codetabs");
+            
+            codetabs.each(function(i, tabscontanier) {
+                
+                $(".tab", tabscontanier).each(function(i, tab) {
+                    $(tabscontanier).append($(tab));
+                    
+                    var tabName = $(tab).attr("data-tab");
+                    $(tab).data("tab-name", tabName);
+                    
+                    var triggers = $("a[href$=#" + tabName + "]", tabscontanier) ;
+                    $(triggers).each(function(i, trigger) {
+                        $(trigger).click(function(e) {
+                            e.preventDefault();
+                            var openTabName = $(trigger).attr("href").substring(1);
+//                             tabscontanier.showTab(openTabName);
+                            codetabs.showTab(openTabName);
+                        });
+                    });
+                    
+                    $(tab).data("tab-triggers", triggers);
+                });
+            });
+            
+            codetabs.showTab = function(tabName) {
+                $(codetabs).each(function(i, tabscontainer) {
+                    tabscontainer.showTab(tabName);
+                });
+            };
+            
+            
+            // Add tab functinoality to tabscontainer
+            codetabs.each(function(i, tabscontainer) {
+                tabscontainer.showTab = function(tabName) {
+                    if(!tabName) return;
+                    //var tab = $("*[data-tab="+tabName+"]", tabscontainer);
+                    var tabs = $(".tab", tabscontainer);
+                    $(tabs).each(function(i, tab) {
+                        var curTabName = $(tab).data("tab-name");
+                        if(tabName === curTabName) {
+                            $(tab).show();
+                            $(tab).data("tab-triggers").addClass("active");
+                        }
+                        else {
+                            $(tab).hide();
+                            $(tab).data("tab-triggers").removeClass("active");
+                        }
+                        
+                        // TODO: triggers
+                    });
+                };
+            });
+            
+            // Show the correct tab on init
+            codetabs.showTab("java");
+            /*codetabs.each(function(i, tabscontainer) {
+                var firstTab = $($(".tab:first", tabscontainer));
+                console.debug(firstTab.data("tab-name"));
+                tabscontainer.showTab(firstTab.data("tab-name"));
+            });*/
+            
         });
     </script>
 </body>
