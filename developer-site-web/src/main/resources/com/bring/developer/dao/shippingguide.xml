@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Document>
-    <Parameter>
+    <Section>
         <Title>
             Postal code
         </Title>
@@ -62,8 +62,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             Country Code
         </Title>
@@ -129,8 +129,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section note="1">
         <Title>
             Weight in grams
         </Title>
@@ -193,8 +193,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section note="1">
         <Title>
             Package dimensions
         </Title>
@@ -257,8 +257,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section note="1">
         <Title>
             Volume
         </Title>
@@ -330,8 +330,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             Shipping date
         </Title>
@@ -400,13 +400,13 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             Shipping time
         </Title>
         <Description><![CDATA[
-            <p>Use this paramter if you would like to specify when during the day the package needs
+            <p>Use this parameter if you would like to specify when during the day the package needs
                 to be picked up from the departure point.</p>
             <p>This parameter is only considered for courier and express products. It is also optional.</p>
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
@@ -468,8 +468,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             EDI setting
         </Title>
@@ -539,8 +539,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             Shipped from post office
         </Title>
@@ -607,8 +607,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             Additional services
         </Title>
@@ -687,8 +687,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Parameter>
-    <Parameter>
+    </Section>
+    <Section>
         <Title>
             Public ID
         </Title>
@@ -706,5 +706,8 @@ System.out.println("Price: " + price + " NOK");
                     your pid is <code>460cb92b0767</code></p>
             ]]></Content>
         </Example>
-    </Parameter>
+    </Section>
+    <Note id="1"><![CDATA[
+        <p>Required if you want price information.</p>
+    ]]></Note>
 </Document>
