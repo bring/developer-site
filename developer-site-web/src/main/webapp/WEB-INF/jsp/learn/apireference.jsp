@@ -62,8 +62,10 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/codetabs.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -75,8 +77,7 @@
             });
 
             $("#navigation").menu({
-                section: sectionId,
-                breadcrumbs: [2, 1]
+                section: sectionId
             });
             
             // Twitter
@@ -88,67 +89,12 @@
                 time + '</div></div></li>';
             });
             
-            // Tabs
-            var codetabs = $(".codetabs");
-            
-            codetabs.each(function(i, tabscontanier) {
-                
-                $(".tab", tabscontanier).each(function(i, tab) {
-                    $(tabscontanier).append($(tab));
-                    
-                    var tabName = $(tab).attr("data-tab");
-                    $(tab).data("tab-name", tabName);
-                    
-                    var triggers = $("a[href$=#" + tabName + "]", tabscontanier) ;
-                    $(triggers).each(function(i, trigger) {
-                        $(trigger).click(function(e) {
-                            e.preventDefault();
-                            var openTabName = $(trigger).attr("href").substring(1);
-//                             tabscontanier.showTab(openTabName);
-                            codetabs.showTab(openTabName);
-                        });
-                    });
-                    
-                    $(tab).data("tab-triggers", triggers);
-                });
-            });
-            
-            codetabs.showTab = function(tabName) {
-                $(codetabs).each(function(i, tabscontainer) {
-                    tabscontainer.showTab(tabName);
-                });
-            };
-            
-            
-            // Add tab functinoality to tabscontainer
-            codetabs.each(function(i, tabscontainer) {
-                tabscontainer.showTab = function(tabName) {
-                    if(!tabName) return;
-                    //var tab = $("*[data-tab="+tabName+"]", tabscontainer);
-                    var tabs = $(".tab", tabscontainer);
-                    $(tabs).each(function(i, tab) {
-                        var curTabName = $(tab).data("tab-name");
-                        if(tabName === curTabName) {
-                            $(tab).show();
-                            $(tab).data("tab-triggers").addClass("active");
-                        }
-                        else {
-                            $(tab).hide();
-                            $(tab).data("tab-triggers").removeClass("active");
-                        }
-                        
-                        // TODO: triggers
-                    });
-                };
-            });
-            
+
             // Show the correct tab on init
-            codetabs.showTab("java");
-            /*codetabs.each(function(i, tabscontainer) {
-                var firstTab = $($(".tab:first", tabscontainer));
-                console.debug(firstTab.data("tab-name"));
-                tabscontainer.showTab(firstTab.data("tab-name"));
-            });*/
+            $(".codetabs").codetabs({
+				cookies : true,
+				defaultTab : ""
+			});
             
         });
     </script>

@@ -62,7 +62,7 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
 

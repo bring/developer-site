@@ -2,6 +2,7 @@ $(document).ready(function() {
     // Syntax highlighter
     $(".article pre, .widgetpreview pre").each(function(index, item) {
         var lang = $(item).attr("class");
+        var lines = $(item).attr("data-highlightlines");
         
         var langMap = {
              json : "javascript",
@@ -17,7 +18,8 @@ $(document).ready(function() {
         
         if(lang) {
             $(item).snippet(lang, {
-                style: "ide-eclipse"
+                style: "ide-eclipse",
+                box: lines
             });
         }
     });

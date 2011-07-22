@@ -34,7 +34,7 @@
 				<div class="widget-content">
 					<div class="widgetpreview">
 							<div data-tab="code" class="tab codetab">
-								<pre class="html">
+								<pre class="html" data-highlightlines="2,5-7">
 &lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js&quot;&gt;&lt;/script&gt;
 
@@ -86,7 +86,7 @@
     
     <misc:jqueryblob />
 	<script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
-    <script type="text/javascript" src="/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script>
         $(document).ready(function() {

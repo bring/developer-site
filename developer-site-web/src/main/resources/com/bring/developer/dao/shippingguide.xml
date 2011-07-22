@@ -36,17 +36,15 @@
 				Java
             </Title>
 			<Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="7,8">
 	// Initialize library
 	String clientId = "www.mywebshop.com";
 	BringService bringService = new BringService(clientId);
 	
 	// Prepare query
-	Package packet = new Package();
 	Shipment shipment = new Shipment();
 	shipment.withFromPostalCode("1407");
 	shipment.withToPostalCode("7600");
-	shipment.addPackage(packet);
 	shipment.addProduct(ProductType.SERVICEPAKKE);
 	
 	// Fetch price information from Bring
@@ -100,20 +98,17 @@ Example output
 				Java
             </Title>
 			<Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="8,10">
     // Initialize library
     String clientId = "www.mywebshop.com";
     BringService bringService = new BringService(clientId);
     
     // Prepare query
-    Package packet = new Package();
-    packet.withWeightInGrams("4233");
     Shipment shipment = new Shipment();
     shipment.withFromPostalCode("2100");
     shipment.withFromCountry("NO");
     shipment.withToPostalCode("2100");
     shipment.withToCountry("DK");
-    shipment.addPackage(packet);
     shipment.addProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY);
     
     // Fetch price information from Bring
@@ -166,7 +161,7 @@ Example output
 				Java
             </Title>
 			<Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="7">
         // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
@@ -230,7 +225,7 @@ Example output
 				Java
             </Title>
 			<Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="7">
     // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
@@ -268,7 +263,7 @@ Example output
                 and depending on the volume, it could affect the set of available products.</p>
             <p>The unit is dm<sup>3</sup>.</p>
         ]]></Description>
-		<Example title="xml">
+		<Example type="xml">
 			<Title>
 				XML
             </Title>
@@ -279,7 +274,7 @@ Example output
                 <p>Note the content of the <code>TraceMessages</code> element.</p>
             ]]></Content>
 		</Example>
-		<Example title="json">
+		<Example type="json">
 			<Title>
 				JSON
             </Title>
@@ -290,7 +285,7 @@ Example output
                 <p>Note the content of the <code>TraceMessages</code> object.</p>
             ]]></Content>
 		</Example>
-		<Example title="webservice">
+		<Example type="webservice">
 			<Title>
 				Web Service
             </Title>
@@ -298,13 +293,13 @@ Example output
 				Example coming.
             </Content>
 		</Example>
-		<Example title="java">
+		<Example type="java">
 			<Title>
 				Java
             </Title>
             <Content><![CDATA[
-<pre class="java">
-    // Initialize library
+<pre class="java" data-highlightlines="7">
+        // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
         
@@ -371,7 +366,7 @@ Example output
 				Java
             </Title>
             <Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="11">
         // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
@@ -440,7 +435,7 @@ Example output
 				Java
             </Title>
             <Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="11">
         // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
@@ -511,7 +506,7 @@ Example output
 				Java
             </Title>
             <Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="11">
         // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
@@ -578,7 +573,7 @@ Example output
 				Java
             </Title>
             <Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="11">
         // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
@@ -651,7 +646,7 @@ Example output
 				Java
             </Title>
             <Content><![CDATA[
-<pre class="java">
+<pre class="java" data-highlightlines="14-16">
         // Initialize library
         String clientId = "www.mywebshop.com";
         BringService bringService = new BringService(clientId);
