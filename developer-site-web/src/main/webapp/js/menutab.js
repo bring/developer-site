@@ -20,23 +20,25 @@
 			navigationElement = this;
 			$.extend(options,optionsArg);
 			methods.bindEvents();
-			methods.calculateHeights();
 			methods.clean();
             methods.stateHidden();
-			this.menu(options.menu);
+			this.menu(options.menu); // Start menu functionality
 			return this;
 		},
 		
 		tabSelected: function(tabId) {
 		    if (state == State.HIDDEN) {
+		        console.log("tabSelected (State.HIDDEN)");
                 methods.stateMenu(tabId);
             }
 			
 			else if (state == State.MENU) {
 			    if (methods.isActive(methods.getChosen(tabId))) {
+			        console.log("tabSelected (State.MENU, Clicked on active launcher)");
 			        methods.stateHidden();
 			    }
 			    else {
+			        console.log("tabSelected (State.MENU, Clicked on )");
 			        methods.changeMenutab(tabId);
 			    }
 			}
@@ -53,40 +55,31 @@
             return this;
         },
         
-        hideHelper: function(callback) {
-            state = State.HIDDEN;
-            methods.handleCallback(callback);
-            navigationElement.trigger("stateHiddenAfter", [ methods ]);
-            return this;
-        },
-        
         stateHidden: function(callback) {
             if (state == State.BUSY) {
                 return this;
             }
-            navigationElement.trigger("stateHiddenBefore", [ methods ]);
-            state = State.BUSY;
-            var chosen = methods.getBreadcrumbs();
-            if (chosen.tab.length == 0) {
-                methods.deactivateTab(function() {
-                    if (active != null) {
-                        methods.unmarkLauncher(active.launcher);
-                    }
-                   methods.hideHelper(callback);
-                });
+            
+            var event = jQuery.Event("stateHiddenBefore");
+            var eventData = {tabToHeight: 0};
+            navigationElement.trigger(event, [ methods, eventData ]);
+            if (event.isDefaultPrevented()) {
                 return this;
             }
             
-            // Breadcrumbs
-            if (active != null) {
-                methods.unmarkLauncher(active.launcher);
-            }
-            methods.markLauncher(chosen.launcher);
+            state = State.BUSY;
             methods.deactivateTab(function() {
-                methods.activateTab(chosen, function() {
-                    methods.hideHelper();
-                });
-            });
+                if (active != null) {
+                    methods.unmarkLauncher(active.launcher);
+                }
+                else {
+                    methods.unmarkLauncher(options.sectionId);
+                    methods.hideTab($(options.sectionId));
+                }
+                state = State.HIDDEN;
+                methods.handleCallback(callback);
+                navigationElement.trigger("stateHiddenAfter", [ methods ]);
+            }, eventData.tabToHeight);
             return this;
         },
 		
@@ -115,11 +108,11 @@
 			return this;
 		},
 		
-		deactivateTab: function(callback) {
+		deactivateTab: function(callback, tabToHeight) {
 		    if (active == null) {
 		        return methods.handleCallback(callback);
 		    }
-			methods.hideTab(active.tab, callback);
+			methods.hideTab(active.tab, tabToHeight, callback);
 			active = null;
 			return this;
 		},
@@ -133,7 +126,7 @@
 			$(options.tabs).each(
 				function(i,tabSelector) {
 					$("[href="+tabSelector+"]").click(function(event) {
-						$.fn.menutab("tabSelected", tabSelector);
+						methods.tabSelected(tabSelector);
 						event.preventDefault();
 					})
 				}
@@ -145,21 +138,15 @@
             var maxHeight = 0;
             methods.calculateHeight(activeMenu);
             $(".menulist, .marked > ul, .dropdown-menu",activeMenu).each(function(i,element) {
-            	maxHeight = Math.max(maxHeight, $(element).data("height"));
+            	maxHeight = Math.max(maxHeight, $(element).data("visibleHeight"));
             });
-            activeMenu.height(maxHeight);
+            activeMenu.data("currentHeight", maxHeight);
         	return this;
 		},
 		
-		calculateHeights: function() {
-			$(options.tabs).each(function(i,tab) {
-				methods.calculateHeight(tab);
-			});
-		},
-		
 		calculateHeight: function(tab) {
-			$(".menulist, .marked > ul, .dropdown-menu", $(tab)).add($("#breadcrumbs ul")).each(function(i2, ul) {
-				$(ul).data("height", methods.getHeight(ul));
+			$(".menulist, .marked > ul, .dropdown-menu", $(tab)).each(function(i2, ul) {
+				$(ul).data("visibleHeight", methods.getHeight(ul));
 			});
 		},
 		
@@ -175,18 +162,45 @@
 		},
 		
 		showTab: function(tab, callback, duration) {
-			tab.slideDown(isNaN(duration) ? options.duration : duration, callback);
+            duration = isNaN(duration) ? options.duration : duration;
+		    if(true || tab.is(":visible")) {
+		        tab.css({
+		            display: "block",
+		            visibility: "visible"
+		        });
+	            tab.animate({
+	                height : tab.data("currentHeight")
+	            }, duration, callback);
+		    }
+		    else {
+    			tab.slideDown(duration, callback);
+		    }
 			return this;
 		},
 		
-		hideTab: function(tab, callback, duration) {
-			tab.slideUp(isNaN(duration) ? options.duration : duration, callback);
+		hideTab: function(tab, tabToHeight, callback, duration) {
+		    duration = isNaN(duration) ? options.duration : duration;
+		    
+		    if(isNaN(tabToHeight) || tabToHeight <= 0) {
+		        tab.slideUp(duration, callback);
+		    }
+		    else {
+		        tab.animate({height: tabToHeight}, duration, function() {
+		            if(tabToHeight == 0) {
+    		            tab.css({
+    		                display: "none",
+    		                visibility: "hidden"
+    		            });
+		            }
+		            methods.handleCallback(callback);
+		        });
+		    }
 			return this;
 		},
 		
 		hideTabs: function(duration) {
 			$(options.tabs).each(function(i,element) {
-				methods.hideTab($(element), undefined, isNaN(duration) ? options.duration : duration);
+				methods.hideTab($(element), 0, undefined, isNaN(duration) ? options.duration : duration);
 			});
 			return this;
 		},
@@ -233,13 +247,6 @@
 			return active != null;
 		},
 	      
-        getBreadcrumbs: function() {
-          return { 
-              tab: $("#breadcrumbs"), 
-              launcher: $(options.section+"-launcher")
-          };
-        },
-        
         clean: function() {
             methods.hideTabs(0);
             methods.unmarkLaunchers();
