@@ -27,6 +27,17 @@ public class HomeController {
     public String tracking() {
         return "learn/tracking/index";
     }
+    
+    @RequestMapping(value = "/download/widget/index.html")
+    public String widget() {
+        return "/download/widget/index";
+    }
+    
+    @RequestMapping(value = "/download/widget/optionalpostoffice.html")
+    public String optionalpostoffice() {
+        return "/download/widget/optionalpostoffice";
+    }
+    
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {

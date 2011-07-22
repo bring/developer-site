@@ -63,6 +63,7 @@
     
     <misc:jqueryblob />
     <script type="text/javascript" src="/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -72,6 +73,7 @@
                 section: sectionId,
                 tabs: [ "#learn", "#download", "#talk" ],
             });
+
             $("#navigation").menu({
                 section: sectionId,
                 breadcrumbs: [2, 1]
@@ -84,30 +86,6 @@
                 user + '</div><div class="question-text"><blockquote>' + 
                 text + '</blockquote></div>' + '<div class="datetime">' + 
                 time + '</div></div></li>';
-            });
-            
-            
-            // Syntax highlighter
-            $(".article pre").each(function(index, item) {
-                var lang = $(item).attr("class");
-                
-                var langMap = {
-                     json : "javascript",
-                     webservice : "c#"
-                };
-                
-                for(fromLang in langMap) {
-                    if(langMap.hasOwnProperty(fromLang) && fromLang === lang) {
-                        lang = langMap[fromLang];
-                        break;
-                    }
-                }
-                
-                if(lang) {
-                    $(item).snippet(lang, {
-                        style: "ide-eclipse"
-                    });
-                }
             });
             
             // Tabs
