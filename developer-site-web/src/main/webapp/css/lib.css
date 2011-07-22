@@ -389,6 +389,7 @@ ul.avatar-list li:last-child {
 }
 
 .menubox {
+    overflow: hidden;
     width: 100%;
     z-index: 1;
     position: absolute;
@@ -422,6 +423,10 @@ a.current-page:after {
     list-style: none;
 }
 
+.menulist li {
+    margin: 2px 0;
+}
+
 .menulist li a {
     padding: 10px;
     width: 282px;
@@ -434,10 +439,17 @@ a.current-page:after {
 .menulist ul {
     font-size: 1em;
     visibility: hidden;
+    opacity: 0;
 }
 
 .menulist .marked > ul {
     visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 500ms ease-in-out;
+    -moz-transition: opacity 500ms ease-in-out;
+    -o-transition: opacity 500ms ease-in-out;
+    -ms-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
 }
 
 li.marked > a {
@@ -446,7 +458,7 @@ li.marked > a {
 }
 
 .menubutton {
-    margin: 2px 10px;
+    margin: 0 10px;
 }
 
 .menubutton:after {

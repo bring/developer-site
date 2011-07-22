@@ -3,9 +3,9 @@
 
 <misc:jquery />
 <script src="/js/jquery.actual.js"></script>
-<script src="/js/jquery.ba-outside-events.js"></script>
-<script src="/js/menutab.js"></script>
-<script src="/js/menu.js"></script>
+<script src="/js/jquery.outerclick.js"></script>
+<script src="/js/navigation/menutab.js"></script>
+<script src="/js/navigation/menu.js"></script>
 <script src="/js/twitter.js"></script>
 <script>
     $(document).ready(function() {
@@ -13,6 +13,7 @@
          * Twitter
          */
          
+         /*
         $("#talk").performTwitterSearch(1, function(image, user, text, time) {
             return '<div class="talkbox dropdown-menu">' + 
                         '<div class="talkbox-header group">' +
@@ -25,5 +26,6 @@
                         '</div>' + 
                     '</div>';   
         });
+        */
  });
 </script>

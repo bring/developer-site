@@ -11,6 +11,7 @@
 		    }
 		}
 	};
+	
 	var state = State.BREADCRUMBS;
 	var navigationElement;
 	var options = {
@@ -28,10 +29,9 @@
             methods.bindMenutabEvents();
             methods.bindMouseOverEvents();
             methods.bindClickEvents();
-            state = State.createFromStr(options.state)
+            state = State.createFromStr(options.state);
 	    },
 	       
-	    
 	    getPath : function() {
             var path = [];
             var currentLink = $("a[href='"+options.currentUrl+"']", navigationElement);
@@ -48,16 +48,7 @@
 	        var path = methods.getPath();
 	        for(var i in path) {
 	            $(path[i]).addClass("breadcrumb");
-	            console.debug(path[i]);
 	        }
-	        
-	        /*
-	        $listContainer = $(options.section, navigationElement);
-	        for (var i = 1; i <= options.breadcrumbs.length; i++) {
-	            var $current = $(".level"+i, $listContainer);
-	            $listContainer = $($current.children()[options.breadcrumbs[i-1]-1]); 
-	            $listContainer.addClass("breadcrumb");
-	        }*/
 	    },
 	    
 	    markBreadcrumbs: function() {
@@ -81,9 +72,8 @@
 	    },
 	    
 	    updateMenu: function(element) {
-            var context = $(element).parent().parent().parent();
+            var context = $(element).parentsUntil("li.marked");
             $(".marked", context).removeClass("marked");
-            $("#breadcrumbs .breadcrumb").addClass("marked");
             $(element).parent().addClass("marked");
 	    },
 	    
@@ -110,9 +100,9 @@
 	    
 	    bindClickEvents: function() {
 	         $(".menulist a").click(function(event) {
-	                switch (state) {
+                switch (state) {
 	                case State.BREADCRUMBS:
-	                    navigationElement.menutab("tabSelected", "#learn");
+	                    navigationElement.methods.tabSelected("#learn");
 	                    event.preventDefault();
 	                    break;
 	                case State.MENU:

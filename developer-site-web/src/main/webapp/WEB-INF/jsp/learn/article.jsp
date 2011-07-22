@@ -17,7 +17,7 @@
     <div class="wrapper">
         <misc:header />
         <div class="main">
-            <menutabs:showMenu cssClass="menutab" level1="${section}" level2="${subsection}" level3="${subsubsection}" />
+            <menutabs:showMenu cssClass="menutab" />
             <div class="content group">
                 <div class="article">
                     <jsp:include page="/WEB-INF/jsp/includes/${articlePath}" flush="true" />
@@ -29,18 +29,18 @@
     <misc:footer />
     
     <misc:jqueryblob />
+    <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
+    <script type="text/javascript" src="/js/navigation/menutab-hider.js"></script>
+    <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
+    
     <script>
         $(document).ready(function() {
-            var sectionId = "#learn";
-            $("#navigation").menutab("init", {
-                section: sectionId,
-                tabs: [ "#learn", "#download", "#talk" ],
-            });
-            $("#navigation").menu({
-                section: sectionId,
-                breadcrumbs: [2, 1]
-            });
+            var navElement = $("#navigation");
+            navElement.menu();
+            navElement.menutab();
+            navElement.menuBreadcrumbs();
             
+            /*
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
                 image + '"/><div class="avatar-list-text"><div class="question-title">' +
@@ -48,6 +48,7 @@
                 text + '</blockquote></div>' + '<div class="datetime">' + 
                 time + '</div></div></li>';
             });
+            */
         });
     </script>
 </body>
