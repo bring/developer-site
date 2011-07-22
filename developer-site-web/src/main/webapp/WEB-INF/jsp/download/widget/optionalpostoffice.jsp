@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
     <link rel="stylesheet" type="text/css" href="/css/widget.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery.snippet.css" />
 
 
 </head>
@@ -32,9 +33,8 @@
 			<div class="content group">
 				<div class="widget-content">
 					<div class="widgetpreview">
-						<div class="widget-container">
-							<div data-tab="code" class="tab">
-								<pre>
+							<div data-tab="code" class="tab codetab">
+								<pre class="html">
 &lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js&quot;&gt;&lt;/script&gt;
 
@@ -47,31 +47,33 @@
 &lt;form&gt;
    &lt;div id=&quot;divid&quot;&gt;&lt;/div&gt;
 &lt;/form&gt;
-								</pre>
+&lt;/form&gt;
+&lt;/form&gt;
+&lt;/form&gt;
+						</pre>
 							</div>
-							<div data-tab="preview" class="tab">
+							<div data-tab="preview" class="tab previewtab">
 								<form>
 								   <div id="divid"></div>
 								</form>
 							</div>
 							<div class="widget-tabs">
-								<h3><a href="#code">Code</a></h3>
-								<h3><a href="#preview" class="active">Widget Preview</a></h3>
+								<a href="#code" class="widget-tab">Code</a>
+								<a href="#preview" class="widget-tab active">Widget Preview</a>
 							</div>
-						</div>
 					</div>
 					<div class="widgetinfo">
 						<div class="widgetarticle">
 							<h1>Optional Post office</h1>
 							<p>Optional post office is a service that allows an end user can choose to pick up their package at another post office / post office than the local. This can be done directly from the online store's image for the choice of shipping.</p>
 							<h2>How to install</h2>
-							<p>etpoewt</p>
+							<p>...</p>
 							<h2>More information</h2>
-							<p>eroe</p>
+							<p>...</p>
 						</div>
 						<div class="widget-tools">
 							<h2>Tools</h2>
-							
+							<a href="#" class="download-button">Download</a> 
 						</div>
 					</div>
 				</div>
@@ -84,6 +86,8 @@
     
     <misc:jqueryblob />
 	<script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
+    <script type="text/javascript" src="/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script>
         $(document).ready(function() {
             var sectionId = "#download";
@@ -93,7 +97,7 @@
             });
             
 			            // Tabs
-			            var codetabs = $(".widget-container");
+			            var codetabs = $(".widgetpreview");
 
 			            codetabs.each(function(i, tabscontanier) {
 

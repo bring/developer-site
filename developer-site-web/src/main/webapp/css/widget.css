@@ -98,15 +98,6 @@
     margin-bottom: 20px;
     float:left;
 }
-.widgetpreview {
-    width: 654px;
-    min-height: 200px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    background: #ccc;
-    position: relative;
-}
-
 
 .widgetarticle{
     width: 302px;
@@ -121,37 +112,70 @@
     float: right;  
 }
 
-widget-container{
-    overflow: auto;
+.download-button{
+    width: 50px;
+    height: 20px;
+    background-color: #7fc14b;
+    padding: 5px;
+    color: #f0f0f1;
 }
 
-.widget-container h3
- {
-    float: left;
-    width: auto;
-    padding-right: 10px;
-    padding-left: 10px;
-    background: red;
+
+.widgetpreview {
+    width: 654px;
+    min-height: 250px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background: #ccc;
+    position: relative;
 }
 
-.widget-container .tab {
+.widgetpreview .tab {
     clear: both;
+}
+
+.widgetpreview .codetab {
+	border: 1px solid #ccc;
+}
+
+.widgetpreview .codetab pre{
+    margin: 0;
+    max-height: 1000px;
+}
+
+.widgetpreview .previewtab {
+    padding: 20px;
 }
 
 .widget-tabs{
 	position: absolute;
-	bottom: -40px;
+	bottom: -28px;
 	right: 0px;
-    width: 200px;
-    height: 40px;
-    background-color: #ccc;
-    color: f0f0f1;
+	overflow: auto;
 }
 
-.widget-tabs .active {
-    font-weight: bold;
-    color: #565656;
-    background-color: #999;
+
+.widget-tab{
+    position: relative;
+    float: left;
+    width: auto;
+    padding: 5px 10px;
+    margin-left: 1px;
     display: block;
-    width: 100%;
+    color: #f0f0f1;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    background-color: #999;
+}
+
+.widget-tab.active{
+    background-color: #565656;
+    line-height: 18px;
+    
+}
+
+.widget-tab:hover{
+    background-color: #565656;
+    line-height: 18px;
+    color: #fff;
 }

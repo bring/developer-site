@@ -15,6 +15,5 @@ public class ProductListDaoTest {
         Products products = dao.query("shippingguide-products");
         String title = products.getProduct(0).getCode().getValue();
         System.out.println(title);
-    } 
-    
+    }
 }
