@@ -121,6 +121,47 @@ pre {
     margin-bottom: 1em;
 }
 
+
+/**
+ *     Minimalistic scrollbars
+ */
+pre::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+pre::-webkit-scrollbar-button:start:decrement,
+pre::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 10px;
+}
+
+pre::-webkit-scrollbar-button:vertical:increment {
+    background-color: #fff;
+}
+
+pre::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+    -webkit-border-radius: 3px;
+}
+
+pre::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #ccc;
+    -webkit-border-radius: 3px;
+}
+
+pre::-webkit-scrollbar-thumb:horizontal {
+    width: 50px;
+    background-color: #ccc;
+    -webkit-border-radius: 3px;
+}
+
+
+
+
+
+
  .article {
     width: 644px;
     float: left;

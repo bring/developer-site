@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -35,18 +35,24 @@
 					<div class="widgetpreview">
 						<div data-tab="code" class="tab codetab">
 							<pre class="html" data-highlightlines="2,5-7">
-&lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js&quot;&gt;&lt;/script&gt;
+&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"&gt;&lt;/script&gt;
 
-&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;script type="text/javascript"&gt;
    $(document).ready(function() {
-      $(&#39;#divid&#39;).utleveringsenhet();
+      console.debug("hello");
+      console.debug($("#targetDiv"));
+      console.debug($("body"));
+      $("#targetDiv").css({
+          "padding" : "20px",
+          "background-color" : "red"
+      });
+      $("#targetDiv").utleveringsenhet();
    });
 &lt;/script&gt;
 
-&lt;form&gt;
-   &lt;div id=&quot;divid&quot;&gt;&lt;/div&gt;
-&lt;/form&gt;</pre>
+&lt;div id="targetDiv"&gt;loading...&lt;/div&gt;
+</pre>
 							</div>
 							<div data-tab="preview" class="tab previewtab">
                                 <!-- Widget is inputed here -->
@@ -92,7 +98,7 @@
             });
 			$(".widgetpreview").codetabs({
 				defaultTab : "preview"
-			});
+			});            
 						
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
@@ -102,6 +108,12 @@
                 time + '</div></div></li>';
             });
 		    
+            // Dynamic widget generation from code example
+            var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
+            console.debug(widgetSource);
+            var previewTab = $(".widgetpreview .previewtab");
+            /*console.debug($("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body"));*/
+            $("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
         });
     </script>
 </body>
