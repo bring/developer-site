@@ -15,9 +15,9 @@
                  <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
                     <ul class="level3">
-                        <li>
-                            <a class="menubutton" href="/learn/shippingguide/tutorials-examples/how-to-use-the-data.html">How to use the data</a>
-                        </li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Fetch all information (single parcel)</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Fetch all information (multiple parcels)</a></li>
                     </ul>
                 </li>
                 <li>
