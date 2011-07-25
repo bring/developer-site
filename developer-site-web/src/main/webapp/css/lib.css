@@ -364,7 +364,7 @@ ul.avatar-list li:last-child {
     height: 15px;
     left: 0;
     bottom: -10px;
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     display: block;
     content: " ";
@@ -380,18 +380,15 @@ ul.avatar-list li:last-child {
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
     box-shadow: 0 0 10px #999;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
 }
 
 .navigation-tabs {
     position: relative;
     margin: 5px 10px 0 0;
-}
-
-.menubox {
-    overflow: hidden;
-    width: 100%;
-    z-index: 1;
-    position: absolute;
 }
 
 .marked ul {

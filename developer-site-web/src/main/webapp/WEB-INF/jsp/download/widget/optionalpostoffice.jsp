@@ -21,15 +21,8 @@
     <div class="wrapper">
         <misc:header />
         <div class="main">
-			<div id="navigation">
-			    <misc:launchers cssClass="menutab" />
-			    <div class="navigation-tabs">
-			        <div id="breadcrumbs" class="menubox"></div>
-			        <menutabs:learn />
-			        <menutabs:download />
-			        <menutabs:talk />
-			    </div>
-			</div>
+			<menutabs:showMenu cssClass="menutab" />
+	        
 			<div class="content group">
 				<div class="widget-content">
 					<div class="widgetpreview">
@@ -89,16 +82,15 @@
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
+	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
     <script>
         $(document).ready(function() {
-            var sectionId = "#download";
-            $("#navigation").menutab("init", {
-                section: sectionId,
-                tabs: [ "#learn", "#download", "#talk" ],
-            });
-			$(".widgetpreview").codetabs({
-				defaultTab : "preview"
-			});            
+	
+			var navElement = $("#navigation");
+            navElement.menu();
+			navElement.downloadmenuHider();
+		    navElement.menutab({defaultTab: 1});
+	
 						
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
