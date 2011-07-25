@@ -16,6 +16,25 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acron
 	border: 0;
 }
 
+/**
+ * Fix IE's bad image resize rendering by enabling bicubic
+ * rescaling.
+ */
+img {
+    -ms-interpolation-mode: bicubic;
+}
+
+
+/* Remove outlines */
+a, a:active, a:focus, :-moz-any-link:focus,
+button, button:active, button:focus,
+input[type=submit], input[type=submit]:active, input[type=submit]:focus,
+input[type=reset], input[type=reset]:active, input[type=reset]:focus {
+    outline:none;
+    -moz-outline-style:none;
+}
+
+
 p,pre,address,dl,ol,ul,table,cite,blockquote {
     font-size: 0.75em;
 }

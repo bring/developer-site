@@ -46,18 +46,15 @@
 
 &lt;form&gt;
    &lt;div id=&quot;divid&quot;&gt;&lt;/div&gt;
-&lt;/form&gt;
-							</pre>
-						</div>
-						<div data-tab="preview" class="tab previewtab">
-							<form>
-							   <div id="divid"></div>
-							</form>
-						</div>
-						<div class="widget-tabs">
-							<a href="#code" class="widget-tab">Code</a>
-							<a href="#preview" class="widget-tab">Widget Preview</a>
-						</div>
+&lt;/form&gt;</pre>
+							</div>
+							<div data-tab="preview" class="tab previewtab">
+                                <!-- Widget is inputed here -->
+							</div>
+							<div class="widget-tabs">
+								<a href="#code" class="widget-tab">Code</a>
+								<a href="#preview" class="widget-tab active">Widget Preview</a>
+							</div>
 					</div>
 					<div class="widgetinfo">
 						<div class="widgetarticle">
@@ -82,7 +79,6 @@
     <misc:footer />
     
     <misc:jqueryblob />
-	<script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
     <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
@@ -94,7 +90,6 @@
                 section: sectionId,
                 tabs: [ "#learn", "#download", "#talk" ],
             });
-            
 			$(".widgetpreview").codetabs({
 				defaultTab : "preview"
 			});
@@ -106,9 +101,6 @@
                 text + '</blockquote></div>' + '<div class="datetime">' + 
                 time + '</div></div></li>';
             });
-
-			//widget preview
-			  $('#divid').utleveringsenhet();
 		    
         });
     </script>
