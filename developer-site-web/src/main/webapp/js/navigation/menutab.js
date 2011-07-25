@@ -4,6 +4,7 @@
     var busy = false;
     var options = {
         hidden: false,
+        defaultTab: 0
     }
 	
 	var methods = {
@@ -13,7 +14,7 @@
 			methods.bindEvents();
             methods.hideTabs(function() {
                 if (!options.hidden) {
-                    methods.showTab(0);
+                    methods.showTab(defaultTab);
                 }
                 else {
                     navigationElement.menutab.hidden = true;

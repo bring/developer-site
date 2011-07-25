@@ -6,7 +6,7 @@
 
 <head>
     <misc:contenttype />
-    <misc:title value="${title}" />
+    <misc:title value="${article.title}" />
     <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/css/lib.css" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -20,7 +20,7 @@
             <menutabs:showMenu cssClass="menutab" />
             <div class="content group">
                 <div class="article">
-                    <jsp:include page="/WEB-INF/jsp/includes/${articlePath}" flush="true" />
+                    ${article.content}
                 </div>
                 <misc:socialfeed />
             </div>

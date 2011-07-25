@@ -50,24 +50,26 @@ public class HomeController {
     }
     
     @RequestMapping(value = "/learn/{section}.html")
-    public String article(ModelMap model, @PathVariable String section) {
-        createIncludePath(model, section);
+    public String article(ModelMap model, @PathVariable String section) throws JAXBException {
+        handleArticleRequest(model, section);
         return "learn/article";
     }
     @RequestMapping(value = "/learn/{section}/{subsection}.html")
-    public String article(ModelMap model, @PathVariable String section, @PathVariable String subsection) {
-        createIncludePath(model, section + "/" + subsection);
+    public String article(ModelMap model, @PathVariable String section, @PathVariable String subsection) throws JAXBException {
+        handleArticleRequest(model, section + "/" + subsection);
         return "learn/article";
     }
     
     @RequestMapping(value = "/learn/{section}/{subsection}/{subsubsection}.html")
-    public String article(ModelMap model, @PathVariable String section, @PathVariable String subsection, @PathVariable String subsubsection) {
-        createIncludePath(model, section + "/" + subsection + "/" + subsubsection);
+    public String article(ModelMap model, @PathVariable String section, @PathVariable String subsection, @PathVariable String subsubsection) throws JAXBException {
+        handleArticleRequest(model, section + "/" + subsection + "/" + subsubsection);
         return "learn/article";
     }
     
-    private void createIncludePath(ModelMap model, String section) {
+    private void handleArticleRequest(ModelMap model, String section) throws JAXBException {
+        Article article = articleDao.query("learn/"+section);
+        model.put("article", article);
         model.put("articlePath", section+".jsp");
-        model.put("title", "Learn");
+        model.put("title", "Lern");
     }
 }
