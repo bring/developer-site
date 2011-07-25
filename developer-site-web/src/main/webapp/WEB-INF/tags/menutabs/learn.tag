@@ -4,14 +4,6 @@
         <li>
             <a class="menubutton" href="/learn/shippingguide/index.html">Shipping guide API</a>
             <ul class="level2">
-                <li>
-                    <a class="menubutton" href="#">Shipping Introduction</a>
-                    <ul class="level3">
-                        <li>
-                            <a class="menubutton" href="#">Shipping test</a>
-                        </li>
-                    </ul>
-                </li>
                  <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
                     <ul class="level3">
@@ -21,10 +13,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="menubutton" href="/learn/shippingguide/apireference.html">API Reference</a>
-                    <ul class="level3">
-                        <li><a class="menubutton" href="/learn/shippingguide/apireference.html">API Reference</a></li>
-                    </ul>
+                    <a class="menubutton" href="/learn/shipping-guide/apireference.html">API Reference</a>
                 </li>
             </ul>
         </li>
@@ -39,11 +28,11 @@
         </li>
         
         <li>
-            <a class="menubutton" href="/learn/postalcodevalidation/index.html">Postal code validate API</a>
+            <a class="menubutton" href="#">Postal code validate API</a>
         </li>
         
         <li>
-            <a class="menubutton" href="/learn/postofficechooser/index.html">Post office chooser API</a>
+            <a class="menubutton" href="#">Post office chooser API</a>
         </li>
     </ul>
 </div>

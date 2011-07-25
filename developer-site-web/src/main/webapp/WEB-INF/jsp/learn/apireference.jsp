@@ -19,7 +19,7 @@
     <div class="wrapper">
         <misc:header />
         <div class="main">
-            <menutabs:showMenu cssClass="menutab" level1="${category}" level2="${subcategory}" level3="${subsubcategory}" />
+            <menutabs:showMenu cssClass="menutab" />
             
             <div class="content group">
                 <div class="article">
@@ -62,6 +62,7 @@
     <misc:footer />
     
     <misc:jqueryblob />
+    <script type="text/javascript" src="/js/navigation/menutab-breadcrumbs.js"  />
     <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
