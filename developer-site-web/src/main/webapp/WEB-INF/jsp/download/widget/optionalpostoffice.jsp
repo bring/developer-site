@@ -33,8 +33,8 @@
 			<div class="content group">
 				<div class="widget-content">
 					<div class="widgetpreview">
-							<div data-tab="code" class="tab codetab">
-								<pre class="html" data-highlightlines="2,5-7">
+						<div data-tab="code" class="tab codetab">
+							<pre class="html" data-highlightlines="2,5-7">
 &lt;script src=&quot;http://code.jquery.com/jquery-latest.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js&quot;&gt;&lt;/script&gt;
 
@@ -46,11 +46,7 @@
 
 &lt;form&gt;
    &lt;div id=&quot;divid&quot;&gt;&lt;/div&gt;
-&lt;/form&gt;
-&lt;/form&gt;
-&lt;/form&gt;
-&lt;/form&gt;
-						</pre>
+&lt;/form&gt;</pre>
 							</div>
 							<div data-tab="preview" class="tab previewtab">
                                 <!-- Widget is inputed here -->
@@ -85,6 +81,8 @@
     <misc:jqueryblob />
     <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/codetabs.js"></script>
     <script>
         $(document).ready(function() {
             var sectionId = "#download";
@@ -92,62 +90,9 @@
                 section: sectionId,
                 tabs: [ "#learn", "#download", "#talk" ],
             });
-            
-			            // Tabs
-			            var codetabs = $(".widgetpreview");
-
-			            codetabs.each(function(i, tabscontanier) {
-
-			                $(".tab", tabscontanier).each(function(i, tab) {
-			                    $(tabscontanier).append($(tab));
-
-			                    var tabName = $(tab).attr("data-tab");
-			                    $(tab).data("tab-name", tabName);
-
-			                    var triggers = $("a[href$=#" + tabName + "]", tabscontanier) ;
-			                    $(triggers).each(function(i, trigger) {
-			                        $(trigger).click(function(e) {
-			                            e.preventDefault();
-			                            var openTabName = $(trigger).attr("href").substring(1);
-			                            codetabs.showTab(openTabName);
-			                        });
-			                    });
-
-			                    $(tab).data("tab-triggers", triggers);
-			                });
-			            });
-
-			            codetabs.showTab = function(tabName) {
-			                $(codetabs).each(function(i, tabscontainer) {
-			                    tabscontainer.showTab(tabName);
-			                });
-			            };
-
-
-			            // Add tab functinoality to tabscontainer
-			            codetabs.each(function(i, tabscontainer) {
-			                tabscontainer.showTab = function(tabName) {
-			                    if(!tabName) return;
-			                    //var tab = $("*[data-tab="+tabName+"]", tabscontainer);
-			                    var tabs = $(".tab", tabscontainer);
-			                    $(tabs).each(function(i, tab) {
-			                        var curTabName = $(tab).data("tab-name");
-			                        if(tabName === curTabName) {
-			                            $(tab).show();
-			                            $(tab).data("tab-triggers").addClass("active");
-			                        }
-			                        else {
-			                            $(tab).hide();
-			                            $(tab).data("tab-triggers").removeClass("active");
-			                        }
-
-			                        // TODO: triggers
-			                    });
-			                };
-			            });
-					
-					
-			codetabs.showTab("preview");
+			$(".widgetpreview").codetabs({
+				defaultTab : "preview"
+			});
 						
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 

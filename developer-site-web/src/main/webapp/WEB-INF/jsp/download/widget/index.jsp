@@ -20,15 +20,8 @@
     <div class="wrapper">
         <misc:header />
         <div class="main">
-			<div id="navigation">
-			    <misc:launchers cssClass="menutab" />
-			    <div class="navigation-tabs">
-			        <div id="breadcrumbs" class="menubox"></div>
-			        <menutabs:learn />
-			        <menutabs:download />
-			        <menutabs:talk />
-			    </div>
-			</div>
+	
+	        <menutabs:showMenu cssClass="menutab" />
 			<div class="content group">
 				<div class="widgetcontent">
 					<a class="widgetbox" href="#">
@@ -53,12 +46,56 @@
     <misc:jqueryblob />
     <script>
         $(document).ready(function() {
-            var sectionId = "#download";
-            $("#navigation").menutab("init", {
-                section: sectionId,
-                tabs: [ "#learn", "#download", "#talk" ],
-            });
-            
+	
+            var navElement = $("#navigation");
+			navElement.menutab.hidden = false;
+            navElement.menu();
+            navElement.menutab({defaultTab: 1});
+			//6px for the download box arrow 
+			$("#download").data("default-height", $($("#download").children()[0]).height());
+			$("#download").data("default-padding", $($("#download").children()[0]).css("padding-top"));
+			
+            //$("#download *").hide();
+			
+			navElement.bind(
+				{
+					launch: function(event, chosenTab, currentTab){
+						if(navElement.menutab("isBusy")){
+							return;
+						}
+						if(navElement.menutab.hidden){
+						    if(chosenTab == 1){
+								$("#download > *").css({
+									"display": "block",
+									visibility: "visible",
+									overflow: "visible"
+								});
+								$("#download > *").animate({
+									height: $("#download").data("default-height"),
+									padding: 10
+								}, 400);
+							}
+							navElement.menutab.hidden = false;
+						}
+						else{
+							$("#download > *").css({
+								overflow: "hidden"
+							});
+							
+							$("#download > *").animate({
+								height: 0,
+								padding: 0,
+							});
+
+							navElement.menutab.hidden = true;
+						}
+					},
+					
+					onclick: function(event) {
+						event.preventDefault();
+					}
+				});
+
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
                 image + '"/><div class="avatar-list-text"><div class="question-title">' +
