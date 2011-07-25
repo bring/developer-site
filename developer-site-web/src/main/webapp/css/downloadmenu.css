@@ -73,6 +73,7 @@
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;
+    z-index: 1;
 }
 
 .downloadbox span:after {
@@ -86,6 +87,7 @@
     /* reduce the damage in FF3.0 */
     display:block; 
     width:0;
+    z-index: 1;
 }
 
 .downloadbox:hover span:after{

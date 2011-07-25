@@ -69,17 +69,11 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
-            // Navigation
-            var sectionId = "#learn";
-            $("#navigation").menutab("init", {
-                section: sectionId,
-                tabs: [ "#learn", "#download", "#talk" ],
-            });
+            var navElement = $("#navigation");
+            navElement.menu();
+            navElement.menutab();
+            navElement.menuBreadcrumbs();
 
-            $("#navigation").menu({
-                section: sectionId
-            });
-            
             // Twitter
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
