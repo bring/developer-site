@@ -7,6 +7,8 @@
 		var tabElement = $("#download");
 		tabElement.data("default-height", $(tabElement.children()[0]).height());
 		tabElement.data("default-padding-bottom", 10);
+		var hidden = false;
+		var preventNextShow = false;
 		
 		var options = {
 			chosenTab: 1
@@ -14,25 +16,30 @@
 		
 		var methods = {
 			init: function() {
+				methods.hide(0);
 				methods.bindEvent();
-				methods.hide();
 			},
 				
-			hide: function() {
+			hide: function(duration) {
+				if (duration == undefined) {
+					duration = 400;
+				}
+				
 				$(tabElement.children()[0]).css({
 					overflow: "hidden"
 				});
 				
 				$(tabElement.children()[0]).animate({
 					height: 0,
-				});
+				}, duration);
 				
-				tabElement.animate({"padding-bottom": 0});
+				tabElement.animate({"padding-bottom": 0}, duration);
 				
-				tabElement.menutab.hidden = true;
+				hidden = true;
 			},
 			
 			show: function() {
+				console.log("show");
 				$(tabElement.children()[0]).css({
 					overflow: "visible"
 				});
@@ -44,7 +51,7 @@
 				tabElement.animate({
 					"padding-bottom": tabElement.data("default-padding-bottom")
 				});
-				tabElement.menutab.hidden = false;
+				hidden = false;
 			},
 	
 			bindEvent: function(){
@@ -55,7 +62,7 @@
 						}
 						
 						if(chosenTab == options.chosenTab) {
-							if (tabElement.menutab.hidden) {
+							if (hidden) {
 						    	methods.show();
 							}
 							else if (chosenTab == currentTab){
@@ -64,12 +71,26 @@
 						}
 					},
 					
+					outerClick: function(event){
+					
+						if(!hidden){
+							methods.hide();
+						}
+	                    if (navElement.menutab("getActive") && navElement.menutab("getActive").index != options.chosenTab) {
+	                    	preventNextShow = true;
+	                        navElement.menutab("changeTab", options.chosenTab, function() {
+	                        	preventNextShow = false;
+	                        	methods.hide();
+	                        	});
+	                    }
+					},
+					
 					changeTab: function(event, chosenTab, currentTab) {
 						tabElement.css("padding-bottom", 10);
 						if (navElement.menutab("isBusy")) {
 							return;
 						}
-						if (chosenTab == options.chosenTab && tabElement.menutab.hidden) {
+						if (chosenTab == options.chosenTab && hidden && !preventNextShow) {
 							methods.show();
 						}
 					}

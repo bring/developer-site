@@ -88,9 +88,9 @@
 	
 			var navElement = $("#navigation");
             navElement.menu();
-		    navElement.menutab({defaultTab: 1});
-			
 			navElement.downloadmenuHider();
+		    navElement.menutab({defaultTab: 1});
+	
 						
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
