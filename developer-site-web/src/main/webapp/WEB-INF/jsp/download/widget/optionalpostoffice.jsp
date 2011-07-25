@@ -22,7 +22,6 @@
         <misc:header />
         <div class="main">
 			<menutabs:showMenu cssClass="menutab" />
-	        
 			<div class="content group">
 				<div class="widget-content">
 					<div class="widgetpreview">
@@ -82,15 +81,18 @@
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
-	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
+	<script src="/js/navigation/downloadmenu-hider.js"></script>
     <script>
         $(document).ready(function() {
 	
 			var navElement = $("#navigation");
             navElement.menu();
 			navElement.downloadmenuHider();
-		    navElement.menutab({defaultTab: 1});
-	
+		    navElement.menutab({defaultTab: 1});   
+						
+			$(".widgetpreview").codetabs({
+				defaultTab : "preview"
+			});			
 						
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
@@ -102,10 +104,10 @@
 		    
             // Dynamic widget generation from code example
             var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
-            console.debug(widgetSource);
+            //console.debug(widgetSource);
             var previewTab = $(".widgetpreview .previewtab");
             /*console.debug($("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body"));*/
-            $("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
+            //$("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
         });
     </script>
 </body>
