@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+	<Title>
+		Optional post office widget
+	</Title>
+	<Description><![CDATA[
+		<p>This widget uses Bring's Optional Post Office API to allow the user to choose their
+			preferred post office. This is mainly intended for online shopping to allow the
+			user to choose another post office than the one closest to their shipping address.</p>
+	]]></Description>
+	<Install>
+		<Step><![CDATA[
+			<p>This widget depends on jQuery, so please add jQuery to your site first.</p>
+		]]></Step>
+		<Step><![CDATA[
+			<p>Add the Optional Post Office widget:</p>
+			<pre class="html">
+				<script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
+			</pre>
+		]]></Step>
+		<Step><![CDATA[
+			<p>Initialize it</p>
+			<pre class="javascript">
+				$("divid").utleveringsenhet();
+			</pre>
+		]]></Step>
+	</Install>
+	<PreviewCode><![CDATA[
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#divid').utleveringsenhet();
+    });
+</script>
+<form>
+	<div id="divid"></div>
+</form>
+		]]></PreviewCode>
+	<Repository>
+		http://github.com/bringapi/blahblah/master
+	</Repository>
+	<WhoIsUsing>
+		<Site>
+			<Title>Komplett</Title>
+			<Url>http://komplett.no</Url>
+		</Site>
+	</WhoIsUsing>
+</Pack>

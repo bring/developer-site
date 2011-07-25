@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bring.developer.dao.XmlDao;
-import com.bring.developer.response.Document;
+import com.bring.developer.response.apireference.Api;
 import com.bring.developer.response.article.Article;
 
 @Controller
 public class HomeController {
-    XmlDao<Document> apiReferenceDao = new XmlDao<Document>(Document.class);
+    XmlDao<Api> apiReferenceDao = new XmlDao<Api>(Api.class);
     XmlDao<Article> articleDao = new XmlDao<Article>(Article.class);
     
     @RequestMapping(value = "/home.html")
@@ -44,8 +44,8 @@ public class HomeController {
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {
-        Document document = apiReferenceDao.query("learn/"+api+"/apireference");
-        model.put("document", document);
+        Api apiDoc = apiReferenceDao.query("learn/"+api+"/apireference");
+        model.put("document", apiDoc);
         return "learn/apireference";
     }
     

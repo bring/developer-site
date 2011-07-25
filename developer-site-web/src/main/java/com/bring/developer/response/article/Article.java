@@ -2,6 +2,9 @@ package com.bring.developer.response.article;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import com.bring.developer.dao.XmlNormalizeString;
 
 @XmlRootElement(name = "Article")
 public class Article {
@@ -10,6 +13,7 @@ public class Article {
     private String content;
     
     @XmlElement(name = "Title")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getTitle() {
         return title;
     }
@@ -18,6 +22,7 @@ public class Article {
     }
     
     @XmlElement(name = "MenuTitle")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getMenuTitle() {
         return menuTitle;
     }
@@ -26,10 +31,11 @@ public class Article {
     }
     
     @XmlElement(name = "Content")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getContent() {
         return content;
     }
     public void setContent(String content) {
-        this.content = content.trim();
+        this.content = content;
     }
 }

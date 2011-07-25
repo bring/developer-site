@@ -8,48 +8,47 @@ import javax.xml.bind.JAXBException;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.bring.developer.response.Document;
-import com.bring.developer.response.Example;
-import com.bring.developer.response.Parameter;
+import com.bring.developer.response.apireference.Api;
+import com.bring.developer.response.apireference.Example;
+import com.bring.developer.response.apireference.Parameter;
 
 
 public class XmlDaoApiReferenceTest {
-    private XmlDao<Document> dao;
+    private XmlDao<Api> dao;
+    private Api api;
+    private Api trimApi;
     
     @Before
-    public void setUp() {
-        dao = new XmlDao<Document>(Document.class);
+    public void setUp() throws JAXBException {
+        dao = new XmlDao<Api>(Api.class);
+        api = dao.query("apireference");
+        trimApi = dao.query("apireference-trim");
     }
 
     @Test
-    public void shouldReturnPostalCodeFromShippingguide() throws JAXBException {
-        Document document = dao.query("shippingguide");
-        String title = document.getParameters().get(0).getTitle();
+    public void shouldReturnPostalCodeFromShippingguide() {
+        String title = api.getParameters().get(0).getTitle();
         assertEquals("Postal code", title);
-        System.out.println(document.getParameters().get(0).getExamples().get(1).getContent());
+        System.out.println(api.getParameters().get(0).getExamples().get(1).getContent());
     } 
  
     @Test
-    public void shouldNotFailOnMissingContent() throws JAXBException {
-        Document document = dao.query("shippingguide");
-        assertEquals(null, document.getParameters().get(0).getExamples().get(0).getContent());
+    public void shouldNotFailOnMissingContent() {
+        assertEquals(null, api.getParameters().get(0).getExamples().get(0).getContent());
     }
     
     @Test
-    public void shouldTrimContent() throws JAXBException {
-        Document document = dao.query("trim");
-        assertEquals("Foo", document.getParameters().get(0).getExamples().get(0).getContent());
+    public void shouldTrimContent() {
+        assertEquals("Foo", trimApi.getParameters().get(0).getExamples().get(0).getContent());
     }
     
     @Test
-    public void shouldBeAbleToGetParameterDirectlyFromDocument() throws JAXBException {
-        Document document = dao.query("trim");
-        assertTrue(document.getParameter(0) instanceof Parameter);
+    public void shouldBeAbleToGetParameterDirectlyFromDocument() {
+        assertTrue(trimApi.getParameter(0) instanceof Parameter);
     }
     
     @Test
-    public void shouldBeAbleToGetExampleDirectlyFromParameter() throws JAXBException {
-        Document document = dao.query("trim");
-        assertTrue(document.getParameter(0).getExample(0) instanceof Example);
+    public void shouldBeAbleToGetExampleDirectlyFromParameter() {
+        assertTrue(trimApi.getParameter(0).getExample(0) instanceof Example);
     }
 }

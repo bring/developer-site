@@ -1,14 +1,17 @@
-package com.bring.developer.response;
+package com.bring.developer.response.apireference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import com.bring.developer.dao.XmlNormalizeString;
 
 
-@XmlRootElement(name = "Document")
-public class Document {
+@XmlRootElement(name = "Api")
+public class Api {
     
     private List<Parameter> parameters = new ArrayList<Parameter>();
     private String requestBase;
@@ -31,11 +34,12 @@ public class Document {
     }
 
     @XmlElement(name ="RequestBase")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getRequestBase() {
         return requestBase;
     }
 
     public void setRequestBase(String requestBase) {
-        this.requestBase = requestBase.trim();
+        this.requestBase = requestBase;
     }
 }
