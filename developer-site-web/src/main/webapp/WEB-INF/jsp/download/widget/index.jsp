@@ -44,57 +44,15 @@
     <misc:footer />
     
     <misc:jqueryblob />
+	<script src="/js/navigation/downloadmenu-hider.js"></script>
     <script>
         $(document).ready(function() {
 	
-            var navElement = $("#navigation");
-			navElement.menutab.hidden = false;
+			var navElement = $("#navigation");
             navElement.menu();
-            navElement.menutab({defaultTab: 1});
-			//6px for the download box arrow 
-			$("#download").data("default-height", $($("#download").children()[0]).height());
-			$("#download").data("default-padding", $($("#download").children()[0]).css("padding-top"));
+		    navElement.menutab({defaultTab: 1});
 			
-            //$("#download *").hide();
-			
-			navElement.bind(
-				{
-					launch: function(event, chosenTab, currentTab){
-						if(navElement.menutab("isBusy")){
-							return;
-						}
-						if(navElement.menutab.hidden){
-						    if(chosenTab == 1){
-								$("#download > *").css({
-									"display": "block",
-									visibility: "visible",
-									overflow: "visible"
-								});
-								$("#download > *").animate({
-									height: $("#download").data("default-height"),
-									padding: 10
-								}, 400);
-							}
-							navElement.menutab.hidden = false;
-						}
-						else{
-							$("#download > *").css({
-								overflow: "hidden"
-							});
-							
-							$("#download > *").animate({
-								height: 0,
-								padding: 0,
-							});
-
-							navElement.menutab.hidden = true;
-						}
-					},
-					
-					onclick: function(event) {
-						event.preventDefault();
-					}
-				});
+			navElement.downloadmenuHider();
 
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
