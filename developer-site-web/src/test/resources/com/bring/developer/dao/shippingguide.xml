@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Document>
-    <Section>
+    <Parameter>
         <Title>
             Postal code
         </Title>
@@ -62,8 +62,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             Country Code
         </Title>
@@ -129,8 +129,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section note="1">
+    </Parameter>
+    <Parameter note="1">
         <Title>
             Weight in grams
         </Title>
@@ -193,8 +193,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section note="1">
+    </Parameter>
+    <Parameter note="1">
         <Title>
             Package dimensions
         </Title>
@@ -257,8 +257,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section note="1">
+    </Parameter>
+    <Parameter note="1">
         <Title>
             Volume
         </Title>
@@ -330,8 +330,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             Shipping date
         </Title>
@@ -400,8 +400,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             Shipping time
         </Title>
@@ -468,8 +468,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             EDI setting
         </Title>
@@ -539,8 +539,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             Shipped from post office
         </Title>
@@ -607,8 +607,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             Additional services
         </Title>
@@ -687,8 +687,8 @@ System.out.println("Price: " + price + " NOK");
 </pre>
             ]]></Content>
         </Example>
-    </Section>
-    <Section>
+    </Parameter>
+    <Parameter>
         <Title>
             Public ID
         </Title>
@@ -706,7 +706,7 @@ System.out.println("Price: " + price + " NOK");
                     your pid is <code>460cb92b0767</code></p>
             ]]></Content>
         </Example>
-    </Section>
+    </Parameter>
     <Note id="1"><![CDATA[
         <p>Required if you want price information.</p>
     ]]></Note>

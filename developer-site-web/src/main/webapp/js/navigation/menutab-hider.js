@@ -1,25 +1,46 @@
 (function($) {
     $.fn.menutabHider = function() {
         var navElement = this;
-        this.bind("launch", function(event, chosenTab, currentTab) {
+        var launchers = navElement.menutab("getLaunchers");
+        
+        var hide = function() {
             var launchers = navElement.menutab("getLaunchers");
-            if (navElement.menutab.hidden) {
-                $(launchers).removeClass("box");
-                $(launchers).addClass("menutab");
-                if (chosenTab == currentTab) {
-                    event.preventDefault();
-                    navElement.menutab("showTab", chosenTab);
+            $(launchers).removeClass("menutab");
+            $(launchers).addClass("box");
+            navElement.menutab("hideActive");
+            navElement.menutab.hidden = true;
+        }
+        
+        this.bind({
+            launch: function(event, chosenTab, currentTab) {
+                if (navElement.menutab("isBusy")) {
+                    return;
                 }
-                navElement.menutab.hidden = false;
-            }
-            else {
-                if (chosenTab == currentTab) {
-                    $(launchers).removeClass("menutab");
-                    $(launchers).addClass("box");
-                    event.preventDefault();
-                    navElement.menutab("hideActive");
-                    navElement.menutab.hidden = true;
+                
+                if (navElement.menutab.hidden) {
+                    navElement.menu("unmarkAll");
+                    navElement.menu("recalculateHeight", true);
+                    $(launchers).removeClass("box");
+                    $(launchers).addClass("menutab");
+                    if (chosenTab == currentTab) {
+                        event.preventDefault();
+                        navElement.menutab("showTab", chosenTab);
+                    }
+                    navElement.menutab.hidden = false;
                 }
+                else {
+                    if (chosenTab == currentTab) {
+                        hide();
+                        event.preventDefault();
+                    }
+                }
+            },
+            
+            outerClick: function(event) {
+                if (navElement.menutab("isBusy")) {
+                    return;
+                }
+                hide();
             }
         });
     }

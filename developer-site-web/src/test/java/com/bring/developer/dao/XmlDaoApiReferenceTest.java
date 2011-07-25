@@ -13,12 +13,12 @@ import com.bring.developer.response.Example;
 import com.bring.developer.response.Parameter;
 
 
-public class ApiReferenceDaoTest {
-    private ApiReferenceDao dao;
+public class XmlDaoApiReferenceTest {
+    private XmlDao<Document> dao;
     
     @Before
     public void setUp() {
-        dao = new ApiReferenceDao();
+        dao = new XmlDao<Document>(Document.class);
     }
 
     @Test

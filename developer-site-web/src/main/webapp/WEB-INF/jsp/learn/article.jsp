@@ -30,7 +30,6 @@
     
     <misc:jqueryblob />
     <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
-    <script type="text/javascript" src="/js/navigation/menutab-hider.js"></script>
     <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
     
     <script>
@@ -40,7 +39,6 @@
             navElement.menutab();
             navElement.menuBreadcrumbs();
             
-            /*
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
                 image + '"/><div class="avatar-list-text"><div class="question-title">' +
@@ -48,7 +46,6 @@
                 text + '</blockquote></div>' + '<div class="datetime">' + 
                 time + '</div></div></li>';
             });
-            */
         });
     </script>
 </body>

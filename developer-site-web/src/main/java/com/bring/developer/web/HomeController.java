@@ -7,17 +7,20 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bring.developer.dao.ApiReferenceDao;
+import com.bring.developer.dao.XmlDao;
 import com.bring.developer.response.Document;
+import com.bring.developer.response.article.Article;
 
 @Controller
 public class HomeController {
-    ApiReferenceDao dao = new ApiReferenceDao();
+    XmlDao<Document> apiReferenceDao = new XmlDao<Document>(Document.class);
+    XmlDao<Article> articleDao = new XmlDao<Article>(Article.class);
     
     @RequestMapping(value = "/home.html")
     public String home() {
         return "home";
     }
+    
     @RequestMapping(value = "/talk.html")
     public String talk() {
         return "talk";
@@ -41,7 +44,7 @@ public class HomeController {
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {
-        Document document = dao.query(api);
+        Document document = apiReferenceDao.query(api);
         model.put("document", document);
         return "learn/apireference";
     }
@@ -64,10 +67,7 @@ public class HomeController {
     }
     
     private void createIncludePath(ModelMap model, String section) {
-        String[] sectionAr = section.split("/");
-        model.put("section", (sectionAr.length < 1 || sectionAr[0].isEmpty()) ? "Learn" : sectionAr[0]);
-        model.put("subsection", (sectionAr.length < 2) ? null : sectionAr[1]);
-        model.put("subsubsection", (sectionAr.length < 3) ? null : sectionAr[2]);
         model.put("articlePath", section+".jsp");
+        model.put("title", "Learn");
     }
 }

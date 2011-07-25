@@ -7,10 +7,11 @@
 <head>
     <misc:contenttype />
     <misc:title value="Home" />
-    <link rel="stylesheet" type="text/css" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="css/lib.css" />
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <link rel="stylesheet" type="text/css" href="css/showcase.css" />
+    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/css/lib.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/showcase.css" />
+    <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
 </head>
 
 <body>
@@ -19,9 +20,9 @@
 	    
 	    <div class="main group">
             <misc:showcase />
-        
+            
             <menutabs:showMenu cssClass="box" />
-                
+            
             <div class="group">
                 <misc:quote />
                 <misc:popularwidgets />
@@ -33,32 +34,15 @@
 	</div>
     
 	<misc:footer />
-    <misc:jqueryblob />
     
+    <misc:jqueryblob />
+    <script type="text/javascript" src="/js/navigation/menutab-hider.js"></script>
     <script>
         $(document).ready(function() {
-            $("#navigation").menutab("init", {
-                tabs: [ "#learn", "#download", "#talk" ],
-                menu: { state: "menu" },
-                reset: function(methods, options, callback) {
-                    methods.handleCallback(callback); // Do nothing (override default: show breadcrumbs)
-                }
-            });
-            
-            $("#navigation").bind("stateMenu", function(event, methods) {
-                methods.eachLauncher(function(i,element) {
-                    $(element).removeClass("box");
-                    $(element).addClass("menutab");
-                });
-            });
-            
-            $("#navigation").bind("stateHiddenAfter", function(event, methods) {
-                methods.eachLauncher(function(i,element) {
-                    $(element).removeClass("menutab-selected");
-                    $(element).removeClass("menutab");
-                    $(element).addClass("box");
-                });
-            });
+            var navElement = $("#navigation");
+            navElement.menu();
+            navElement.menutab({hidden: true});
+            navElement.menutabHider();
             
             $("#twittercontent").performTwitterSearch(1, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 

@@ -376,8 +376,7 @@ ul.avatar-list li:last-child {
 }
 
 .menubox {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0;
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
     box-shadow: 0 0 10px #999;
@@ -399,11 +398,6 @@ ul.avatar-list li:last-child {
     position: absolute;
     top: 0;
     right: -332px;
-}
-
-.breadcrumbs .breadcrumb a {
-    color: #ccc;
-    background-color: #666;;
 }
 
 a.current-page:after {
@@ -459,6 +453,25 @@ li.marked > a {
 
 .menubutton {
     margin: 0 10px;
+}
+
+.breadcrumb > a {
+/*      -webkit-transition: all 500ms ease-in-out; */
+/*     -moz-transition: all 500ms ease-in-out; */
+/*     -o-transition: all 500ms ease-in-out; */
+/*     -ms-transition: opacity 500ms ease-in-out; */
+/*     transition: opacity 500ms ease-in-out; */
+}
+
+.breadcrumbs .breadcrumb > a {
+    color: red;
+    color: #ccc;
+    background-color: #666;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -ms-transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out;
 }
 
 .menubutton:after {

@@ -13,7 +13,6 @@
          * Twitter
          */
          
-         /*
         $("#talk").performTwitterSearch(1, function(image, user, text, time) {
             return '<div class="talkbox dropdown-menu">' + 
                         '<div class="talkbox-header group">' +
@@ -26,6 +25,5 @@
                         '</div>' + 
                     '</div>';   
         });
-        */
  });
 </script>

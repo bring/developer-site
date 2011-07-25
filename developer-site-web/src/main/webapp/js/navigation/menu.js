@@ -23,10 +23,10 @@
             }
             else {
                 menuElement.stop().animate({
+                    padding: "10px 0",
                     height: maxHeight 
                 });
             }
-            console.debug(maxHeight);
         	return this;
 		},
 	    
@@ -51,6 +51,10 @@
 	                }    
 	            }
 	        });
+	    },
+	    
+	    unmarkAll: function() {
+	        $(".marked", navigationElement).removeClass("marked");
 	    }
 	};
 	

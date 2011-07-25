@@ -2,13 +2,22 @@
 	var navigationElement;
     var activeMenutab;
     var busy = false;
+    var options = {
+        hidden: false,
+    }
 	
 	var methods = {
-		init: function() {
+		init: function(optionsArg) {
+		    $.extend(options, optionsArg)
 			navigationElement = this;
 			methods.bindEvents();
             methods.hideTabs(function() {
-                methods.changeTab(0)
+                if (!options.hidden) {
+                    methods.showTab(0);
+                }
+                else {
+                    navigationElement.menutab.hidden = true;
+                }
             });
 			return this;
 		},
@@ -69,7 +78,7 @@
             return this;
         },
 
-        showTab: function(i) {
+        showTab: function(i, callback) {
             //console.debug("showTab("+i+")");
             busy = true;
             menutab = {
@@ -78,7 +87,12 @@
                 tab: methods.getTabs()[i]
             };
             $(menutab.launcher).addClass("menutab-selected");
-            $(menutab.tab).slideDown();
+            $(menutab.tab).slideDown("normal", function() {
+                if (callback != null) {
+                    busy = false;
+                    callback();
+                }
+            });
             activeMenutab = menutab;
             busy = false;
         },
@@ -93,16 +107,13 @@
                 tab: methods.getTabs()[i]
             };
             $(menutab.launcher).addClass("menutab-selected");
-            methods.hideActive(function() {
-                $(menutab.tab).slideDown("normal", function() {
-                    if (callback != null) {
-                        callback();
-                    }
-                });
-                activeMenutab = menutab;
-                $(menutab.launcher).addClass("menutab-selected"); // TODO refactor
-                busy = false;
-            }, true);
+            
+            if (activeMenutab == null) {
+                methods.showTab(i, callback);
+            }
+            else {
+                methods.hideActive(function() {methods.showTab(i, callback);}, true);
+            }
         },
 
         launch: function(i) {
@@ -111,12 +122,16 @@
             }
             //console.debug("launch(" + i + ")");
             var event = jQuery.Event("launch");
-            navigationElement.trigger(event, [ i, activeMenutab.index ]);
+            navigationElement.trigger(event, [ i, (activeMenutab ? activeMenutab.index : null) ]);
             if (event.isDefaultPrevented()) {
                 return this;
             }
-            if (i != activeMenutab.index)
+            if (activeMenutab && i != activeMenutab.index) {
                 methods.changeTab(i);
+            }
+            else {
+                methods.showTab(i);
+            }
             return this;
         },
 
@@ -127,6 +142,14 @@
         getLaunchers: function() {
             return $(".navigation-launchers > *", navigationElement);
         },
+        
+        isBusy: function() {
+            return busy;
+        },
+        
+        getActive: function() {
+            return activeMenutab;
+        }
 	};
 	
 	$.fn.menutab = function(method) {

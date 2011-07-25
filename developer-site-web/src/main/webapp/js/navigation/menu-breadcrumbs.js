@@ -1,5 +1,7 @@
 (function($) {
     var navigationElement;
+    var currentPageLink;
+    var path;
 
     var options = {
         currentUrl: window.location.pathname + window.location.search
@@ -8,20 +10,37 @@
     var methods = {
         init: function() {
             navigationElement = this;
+            currentPageLink = methods.getCurrentPageLink();
+            path = methods.getBreadcrumbsPath();
+            currentPageLink.addClass("current-page");
+            
+            // Update page title
+            $(path).each(function(i, element) {
+                link = $("a:first", element);
+                $("title").prepend(" - ");
+                $("title").prepend($(link).text());                
+            });
+            
             methods.initBreadcrumbs();
             methods.bindEvents();
+            methods.markBreadcrumbs();
+            methods.closeMenu();
+            
         },
 
         initBreadcrumbs: function() {
-            var path = methods.getBreadcrumbsPath();
             for(var i in path) {
                 $(path[i]).addClass("breadcrumb");
             }
         },
+        
+        getCurrentPageLink: function() {
+            return currentLink = $("a[href='"+options.currentUrl+"']", navigationElement);
+        },
            
         getBreadcrumbsPath : function() {
             var path = [];
-            var currentLink = $("a[href='"+options.currentUrl+"']", navigationElement);
+            var currentLink = currentPageLink;
             while ((currentLink = currentLink.parent()).length != 0 && !currentLink.hasClass("menulist")) {
                 if (currentLink[0].tagName.toLowerCase() == "li") {
                     path[path.length] = currentLink[0];
@@ -50,6 +69,7 @@
             var liElements = $(".menulist > li:not(.breadcrumb), li.breadcrumb li:not(.breadcrumb)", $(".menulist").parent());
             var hasRun = false;
             liElements.removeClass("marked");
+            navigationElement.addClass("breadcrumbs");
             liElements.slideUp("normal", function() {
                 if(!hasRun) {
                     navigationElement.menu("recalculateHeight");
@@ -59,6 +79,7 @@
         },
 
         cleanKitchenTable: function() {
+            navigationElement.removeClass("breadcrumbs");
             methods.unmarkAll();
             methods.markBreadcrumbs();
             var liElements = $(".menulist > li:not(.breadcrumb), li.breadcrumb li:not(.breadcrumb)", $(".menulist").parent());
@@ -97,7 +118,6 @@
         bindEvents: function() {
             $(navigationElement).bind( {
                 changeTab: function(event, chosenTab, currentTab) {
-                    console.log("current: "+currentTab);
                     if (currentTab === 0) {
                         methods.unmarkAll();
                         methods.markBreadcrumbs();
@@ -126,6 +146,9 @@
                 outerClick: function() {
                     methods.markBreadcrumbs();
                     methods.closeMenu();
+                    if (navigationElement.menutab("getActive") && navigationElement.menutab("getActive").index != 0) {
+                        navigationElement.menutab("changeTab", 0);
+                    }
                 }
             });
         }
