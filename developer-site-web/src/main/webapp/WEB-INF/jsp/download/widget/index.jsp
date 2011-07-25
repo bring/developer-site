@@ -51,7 +51,6 @@
 			var navElement = $("#navigation");
             navElement.menu();
 		    navElement.menutab({defaultTab: 1});
-			
 			navElement.downloadmenuHider();
 
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){

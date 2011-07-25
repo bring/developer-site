@@ -3,18 +3,21 @@
 	 * tabElement must have one and only one child element.
 	 */
 	
-    $.fn.downloadmenuHider = function() {
 		var navElement = $("#navigation");
 		var tabElement = $("#download");
-		tabElement.menutab.hidden = false;
 		tabElement.data("default-height", $(tabElement.children()[0]).height());
 		tabElement.data("default-padding-bottom", 10);
 		
 		var options = {
 			chosenTab: 1
-		}
+		};
 		
 		var methods = {
+			init: function() {
+				methods.bindEvent();
+				methods.hide();
+			},
+				
 			hide: function() {
 				$(tabElement.children()[0]).css({
 					overflow: "hidden"
@@ -42,35 +45,46 @@
 					"padding-bottom": tabElement.data("default-padding-bottom")
 				});
 				tabElement.menutab.hidden = false;
-			}
-		}
-		
-		navElement.bind(
-			{
-				launch: function(event, chosenTab, currentTab) {
-					if (navElement.menutab("isBusy")) {
-						return;
-					}
+			},
+	
+			bindEvent: function(){
+				navElement.bind({
+					launch: function(event, chosenTab, currentTab) {
+						if (navElement.menutab("isBusy")) {
+							return;
+						}
+						
+						if(chosenTab == options.chosenTab) {
+							if (tabElement.menutab.hidden) {
+						    	methods.show();
+							}
+							else if (chosenTab == currentTab){
+								methods.hide();
+							}
+						}
+					},
 					
-					if(chosenTab == options.chosenTab) {
-						if (tabElement.menutab.hidden) {
-					    	methods.show();
+					changeTab: function(event, chosenTab, currentTab) {
+						tabElement.css("padding-bottom", 10);
+						if (navElement.menutab("isBusy")) {
+							return;
 						}
-						else if (chosenTab == currentTab){
-							methods.hide();
+						if (chosenTab == options.chosenTab && tabElement.menutab.hidden) {
+							methods.show();
 						}
 					}
-				},
-				
-				changeTab: function(event, chosenTab, currentTab) {
-					tabElement.css("padding-bottom", 10);
-					if (navElement.menutab("isBusy")) {
-						return;
-					}
-					if (chosenTab == options.chosenTab && tabElement.menutab.hidden) {
-						methods.show();
-					}
-				}
-			});
-	  }
+				});
+			}
+		};
+
+	
+	$.fn.downloadmenuHider = function(method) {
+	    if (methods[method]) {
+            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return methods.init.apply(this, arguments);
+        } else {
+            $.error('Method ' + method + ' does not exist');
+        }   
+    }
 })(jQuery);
