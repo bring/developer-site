@@ -368,6 +368,9 @@ ul.avatar-list li:last-child {
     position: absolute;
     display: block;
     content: " ";
+    
+    /* css3 */
+    /* box-shadow: 0 0 3px #aaa;  TODO shadow left and right */
 }
 
 .menutab-selected {
