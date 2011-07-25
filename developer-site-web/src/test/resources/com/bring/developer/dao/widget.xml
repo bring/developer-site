@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+	<Title>
+		Widget title
+	</Title>
+	<Description><![CDATA[
+		Description content
+	]]></Description>
+	<Install>
+		<Step><![CDATA[
+			First step
+		]]></Step>
+		<Step><![CDATA[
+			Second step
+		]]></Step>
+		<Step><![CDATA[
+			Third step
+		]]></Step>
+	</Install>
+	<PreviewCode><![CDATA[
+Some code
+		]]></PreviewCode>
+	<Repository>
+		http://example.com/repo
+	</Repository>
+	<WhoIsUsing>
+		<Site>
+			<Title>Komplett</Title>
+			<Url>http://komplett.no</Url>
+		</Site>
+	</WhoIsUsing>
+</Pack>

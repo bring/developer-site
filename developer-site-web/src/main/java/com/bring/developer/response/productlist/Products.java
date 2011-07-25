@@ -1,4 +1,4 @@
-package com.bring.developer.response;
+package com.bring.developer.response.productlist;
 
 import java.util.ArrayList;
 import java.util.List;
