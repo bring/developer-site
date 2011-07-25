@@ -13,14 +13,6 @@
             currentPageLink = methods.getCurrentPageLink();
             path = methods.getBreadcrumbsPath();
             currentPageLink.addClass("current-page");
-            
-            // Update page title
-            $(path).each(function(i, element) {
-                link = $("a:first", element);
-                $("title").prepend(" - ");
-                $("title").prepend($(link).text());                
-            });
-            
             methods.initBreadcrumbs();
             methods.bindEvents();
             methods.markBreadcrumbs();

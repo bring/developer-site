@@ -364,7 +364,7 @@ ul.avatar-list li:last-child {
     height: 15px;
     left: 0;
     bottom: -10px;
-    z-index: 2;
+    z-index: 3;
     position: absolute;
     display: block;
     content: " ";
@@ -380,18 +380,15 @@ ul.avatar-list li:last-child {
     margin: 0 5px 0 5px;
     background-color: #3b3b3b;
     box-shadow: 0 0 10px #999;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    position: absolute;
 }
 
 .navigation-tabs {
     position: relative;
     margin: 5px 10px 0 0;
-}
-
-.menubox {
-    overflow: hidden;
-    width: 100%;
-    z-index: 1;
-    position: absolute;
 }
 
 .marked ul {
@@ -400,14 +397,6 @@ ul.avatar-list li:last-child {
     right: -332px;
 }
 
-a.current-page:after {
-    right: 15px;
-    top: 2px;
-    position: absolute;
-    content: "\02022";
-    font-size: 2.75em;
-    color: #79b54b
-}
 
 .menulist, .menulist ul {
     text-transform: uppercase;
@@ -449,6 +438,20 @@ a.current-page:after {
 li.marked > a {
     color: #fff;
     background-color: #999;
+}
+
+.current-page {
+    color: red;
+    position: relative;
+}
+
+li a.current-page:after {
+    right: 5px;
+    top: 1px;
+    position: absolute;
+    content: "\02022";
+    font-size: 2.75em;
+    color: #79b54b
 }
 
 .menubutton {

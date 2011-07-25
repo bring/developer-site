@@ -44,8 +44,8 @@ public class HomeController {
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {
-        Api document = apiReferenceDao.query(api);
-        model.put("document", document);
+        Api apiDoc = apiReferenceDao.query("learn/"+api+"/apireference");
+        model.put("document", apiDoc);
         return "learn/apireference";
     }
     

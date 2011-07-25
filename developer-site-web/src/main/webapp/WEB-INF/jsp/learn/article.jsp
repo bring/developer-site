@@ -3,7 +3,6 @@
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-
 <head>
     <misc:contenttype />
     <misc:title value="${article.title}" />
@@ -20,6 +19,7 @@
             <menutabs:showMenu cssClass="menutab" />
             <div class="content group">
                 <div class="article">
+                    <h1>${article.title}</h1>
                     ${article.content}
                 </div>
                 <misc:socialfeed />
@@ -29,9 +29,7 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
     <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
-    
     <script>
         $(document).ready(function() {
             var navElement = $("#navigation");
@@ -49,5 +47,4 @@
         });
     </script>
 </body>
-
 </html>

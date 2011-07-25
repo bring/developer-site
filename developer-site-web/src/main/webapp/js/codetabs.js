@@ -122,6 +122,7 @@
 			if(t != null && t.length > 0) {
 				t.removeClass("active");
 			}
+			console.log("actuallyHideTab");
 		}
 	};
 	

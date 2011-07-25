@@ -27,23 +27,7 @@
 					<div class="widgetpreview">
 						<div data-tab="code" class="tab codetab">
 							<pre class="html" data-highlightlines="2,5-7">
-&lt;script src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
-&lt;script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"&gt;&lt;/script&gt;
 
-&lt;script type="text/javascript"&gt;
-   $(document).ready(function() {
-      console.debug("hello");
-      console.debug($("#targetDiv"));
-      console.debug($("body"));
-      $("#targetDiv").css({
-          "padding" : "20px",
-          "background-color" : "red"
-      });
-      $("#targetDiv").utleveringsenhet();
-   });
-&lt;/script&gt;
-
-&lt;div id="targetDiv"&gt;loading...&lt;/div&gt;
 </pre>
 							</div>
 							<div data-tab="preview" class="tab previewtab">
@@ -56,7 +40,7 @@
 					</div>
 					<div class="widgetinfo">
 						<div class="widgetarticle">
-							<h1>Optional Post office</h1>
+							<h1>Postal Code Validation</h1>
 							<p>Optional post office is a service that allows an end user can choose to pick up their package at another post office / post office than the local. This can be done directly from the online store's image for the choice of shipping.</p>
 							<h2>How to install</h2>
 							<p>...</p>

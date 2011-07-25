@@ -17,11 +17,11 @@ $(document).ready(function() {
         }
         
         if(lang) {
+        	console.debug($(item));
             $(item).snippet(lang, {
                 style: "ide-eclipse",
                 box: lines
             });
         }
     });
-    console.log("highlight");
 });
