@@ -14,7 +14,7 @@
 			methods.bindEvents();
             methods.hideTabs(function() {
                 if (!options.hidden) {
-                    methods.showTab(defaultTab);
+                    methods.showTab(options.defaultTab);
                 }
                 else {
                     navigationElement.menutab.hidden = true;
