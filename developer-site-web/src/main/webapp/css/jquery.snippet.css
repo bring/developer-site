@@ -238,14 +238,13 @@
 .snippet-wrap .snippet-num li {
     list-style: decimal-leading-zero outside none;
 }
-
+/*
 .snippet-wrap .snippet-no-num li.box {
     padding: 0 6px;
     margin-left: -6px;
 }
-
+/*
 .snippet-wrap .snippet-num li.box {
-    border: 1px solid;
     list-style-position: inside;
     margin-left: -3em;
     padding-left: 6px;
@@ -258,7 +257,7 @@
 * html .snippet-wrap .snippet-num li.box {
     margin-left: -2.4em;
 }
-
+/*
 .snippet-wrap li.box-top {
     border-width: 1px 1px 0 !important;
 }
@@ -269,7 +268,7 @@
 
 .snippet-wrap li.box-mid {
     border-width: 0 1px !important;
-}
+}*/
 
 .snippet-wrap .snippet-num li .box-sp {
     width: 18px;
@@ -284,10 +283,16 @@
     width: 27px;
 }
 
-.snippet-wrap .snippet-no-num li.box {
-    border: 1px solid;
+.snippet-wrap .snippet-num li.box {
+    /*border: 1px solid;*/
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+    margin: 0;
 }
 
-.snippet-wrap .snippet-no-num li .box-sp {
+
+.snippet-wrap .snippet-num li .box-sp {
     display: none;
 }
