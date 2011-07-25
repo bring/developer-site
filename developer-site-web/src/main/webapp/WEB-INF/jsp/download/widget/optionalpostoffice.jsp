@@ -53,9 +53,7 @@
 						</pre>
 							</div>
 							<div data-tab="preview" class="tab previewtab">
-								<form>
-								   <div id="divid"></div>
-								</form>
+                                <!-- Widget is inputed here -->
 							</div>
 							<div class="widget-tabs">
 								<a href="#code" class="widget-tab">Code</a>
@@ -85,7 +83,6 @@
     <misc:footer />
     
     <misc:jqueryblob />
-	<script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
     <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script>
@@ -112,7 +109,6 @@
 			                        $(trigger).click(function(e) {
 			                            e.preventDefault();
 			                            var openTabName = $(trigger).attr("href").substring(1);
-			//                             tabscontanier.showTab(openTabName);
 			                            codetabs.showTab(openTabName);
 			                        });
 			                    });
@@ -160,9 +156,6 @@
                 text + '</blockquote></div>' + '<div class="datetime">' + 
                 time + '</div></div></li>';
             });
-
-			//widget preview
-			  $('#divid').utleveringsenhet();
 		    
         });
     </script>
