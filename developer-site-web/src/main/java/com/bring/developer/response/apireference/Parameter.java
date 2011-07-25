@@ -1,9 +1,12 @@
-package com.bring.developer.response;
+package com.bring.developer.response.apireference;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import com.bring.developer.dao.XmlNormalizeString;
 
 public class Parameter {
     
@@ -13,15 +16,17 @@ public class Parameter {
     private String defaultValue;
     
     @XmlElement(name = "Title")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getTitle() {
         return title;
     }
     
     public void setTitle(String title) {
-        this.title = title.trim();
+        this.title = title;
     }
     
     @XmlElement(name = "Description")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getDescription() {
         return description;
     }
@@ -44,6 +49,7 @@ public class Parameter {
     }
     
     @XmlElement(name = "Default")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
     public String getDefault() {
         return defaultValue;
     }

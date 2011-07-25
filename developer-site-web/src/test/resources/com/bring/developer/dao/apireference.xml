@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Document>
+<Api>
     <Parameter>
         <Title>
             Postal code
@@ -710,4 +710,4 @@ System.out.println("Price: " + price + " NOK");
     <Note id="1"><![CDATA[
         <p>Required if you want price information.</p>
     ]]></Note>
-</Document>
+</Api>

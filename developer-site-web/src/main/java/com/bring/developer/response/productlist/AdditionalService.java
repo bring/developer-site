@@ -1,19 +1,32 @@
-package com.bring.developer.response;
+package com.bring.developer.response.productlist;
 
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import com.bring.developer.dao.XmlNormalizeString;
 
 public class AdditionalService {
     
-    @XmlAttribute(name = "Name")
-    private Name name;
+	private String name;
+	private String code;
+	
+	@XmlElement(name = "Name")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@XmlElement(name = "Code")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-    @XmlAttribute(name = "Code")
-    private Code code;
-
-    public Name getName() {
-        return name;
-    }
-    public Code getCode() {
-        return code;
-    }
+	
 }
