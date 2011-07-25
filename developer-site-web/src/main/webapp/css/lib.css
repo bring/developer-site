@@ -447,7 +447,7 @@ li.marked > a {
 
 li a.current-page:after {
     right: 5px;
-    top: 1px;
+    top: 0;
     position: absolute;
     content: "\02022";
     font-size: 2.75em;

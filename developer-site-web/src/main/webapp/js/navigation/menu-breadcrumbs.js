@@ -58,6 +58,7 @@
         },
 
         eatBread: function() {
+            $(".breadcrumb").bind("click", methods.cleanKitchenTable);
             var liElements = $(".menulist > li:not(.breadcrumb), li.breadcrumb li:not(.breadcrumb)", $(".menulist").parent());
             var hasRun = false;
             liElements.removeClass("marked");
@@ -71,6 +72,7 @@
         },
 
         cleanKitchenTable: function() {
+            $(".breadcrumb").unbind("click", methods.cleanKitchenTable);
             navigationElement.removeClass("breadcrumbs");
             methods.unmarkAll();
             methods.markBreadcrumbs();

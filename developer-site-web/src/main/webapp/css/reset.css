@@ -157,11 +157,6 @@ pre::-webkit-scrollbar-thumb:horizontal {
     -webkit-border-radius: 3px;
 }
 
-
-
-
-
-
  .article {
     width: 644px;
     float: left;
@@ -179,10 +174,16 @@ pre blockquote {
     font-size: 1em;
 }
 
+.article ol {
+    padding: 15px;
+}
+
+.article ul, .article ol {
+/*     margin: 10px 5px 10px 5px; */
+}
 
 .article ul {
     list-style: none;
-    margin: 10px 5px 10px 5px;
 }
 
 

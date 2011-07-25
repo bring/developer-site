@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/css/lib.css" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
     <link rel="stylesheet" type="text/css" href="/css/jquery.snippet.css" />
 </head>
 
@@ -62,14 +63,13 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/navigation/menutab-breadcrumbs.js"  />
+    <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
     <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-
             var navElement = $("#navigation");
             navElement.menu();
             navElement.menutab();
