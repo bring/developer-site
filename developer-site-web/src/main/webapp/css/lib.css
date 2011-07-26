@@ -242,6 +242,7 @@ ul.avatar-list li:last-child {
     height: 100%; 
     display: block; 
     z-index: 1;
+    font-size: 0.9em;
 }
 
 .section-title a span {
@@ -551,7 +552,6 @@ ul.avatar-list li:last-child {
     padding-left: 10px;
     padding-right: 10px;
     background-color: #fff;
-    font-size: 0.75em;
     color: #999;
 }
 

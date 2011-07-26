@@ -3,6 +3,13 @@
 <link rel="stylesheet" type="text/css" href="/css/lib.css" />
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
 <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
-<link rel="stylesheet" type="text/css" href="/css/widget.css" />
-<link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
+
+<!-- Showcase -->
 <link rel="stylesheet" type="text/css" href="/css/showcase.css" />
+
+<!-- Download -->
+<link rel="stylesheet" type="text/css" href="/css/download-overview.css" />
+<link rel="stylesheet" type="text/css" href="/css/download-package.css" />
+
+<!-- 3rd party stuff -->
+<link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />

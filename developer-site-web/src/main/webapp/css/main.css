@@ -94,7 +94,7 @@ body:before {
 .content {
 	font-size: 0.75em;
     min-height: 300px;
-    padding-top: 60px;
+    padding-top: 30px;
     margin: 0 5px 50px 5px;
     background-color: #fff;
     
@@ -102,6 +102,11 @@ body:before {
     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
     -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
     box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
+}
+
+.page-article .content,
+.page-apireference .content {
+	padding-top: 60px;
 }
 
 .home-content {
@@ -116,13 +121,14 @@ body:before {
 }
 
 .footer {
+	font-size: 0.75em;
     text-align: center;
     padding-top: 120px;
     background-color: #afb0b2;
     position: relative;
     margin-top: -150px; 
     height: 30px;
-    clear:both;
+    clear: both;
     
     /* css3 */
     -moz-box-shadow: inset 0px 10px 8px #888;

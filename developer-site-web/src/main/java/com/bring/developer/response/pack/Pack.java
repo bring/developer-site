@@ -17,6 +17,7 @@ public class Pack {
 	private String description;
 	private Code previewCode;
 	private URL repository;
+	private URL download;
 	private Install installSteps;
 	private List<Person> persons;
 	
@@ -55,6 +56,15 @@ public class Pack {
 	
 	public URL getRepository() {
 		return repository;
+	}
+	
+	@XmlElement(name = "Download")
+	@XmlJavaTypeAdapter(XmlNormalizeURL.class)
+	public void setDownload(URL download) {
+		this.download = download;
+	}
+	public URL getDownload() {
+		return download;
 	}
 	
 	@XmlElement(name = "Install")

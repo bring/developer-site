@@ -10,6 +10,7 @@ public class Code {
 
 	private String content;
 	private String highlightLines;
+	private int height;
 	
 	@XmlValue
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
@@ -27,5 +28,14 @@ public class Code {
 	}
 	public void setHighlightLines(String highlightLines) {
 		this.highlightLines = highlightLines;
+	}
+	
+	
+	@XmlAttribute(name = "height")
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
 	}
 }

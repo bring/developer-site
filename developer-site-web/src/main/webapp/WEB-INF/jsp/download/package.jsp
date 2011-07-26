@@ -16,14 +16,14 @@
         <div class="main">
 			<menutabs:showMenu cssClass="menutab" />
 			<div class="content group">
-				<div class="widget-content">
+				<div class="package-content">
 					<c:if test="${!empty pack.previewCode}">
 						<div class="widgetpreview">
 							<div data-tab="code" class="tab codetab">
 								<pre class="html" data-highlightlines="${pack.previewCode.highlightLines}"><c:out value="${pack.previewCode.content }"></c:out></pre>
 							</div>
 							<div data-tab="preview" class="tab previewtab">
-                                <iframe class="preview-frame" src="/download/widget/${pack.handle}/preview.html"></iframe>
+                                <iframe class="preview-frame" src="/download/widget/${pack.handle}/preview.html" height="${pack.previewCode.height}"></iframe>
 							</div>
 							<div class="widget-tabs">
 								<a href="#code" class="widget-tab">Code</a>
@@ -31,8 +31,8 @@
 							</div>
 						</div>
 					</c:if>
-					<div class="widgetinfo">
-						<div class="widgetarticle">
+					<div class="package-info">
+						<div class="package-description">
 							<h1>${pack.title}</h1>
 							${pack.description}
 							
@@ -46,8 +46,8 @@
 							</c:if>
 						</div>
 						<div class="widget-tools">
-							<a href="#" class="download-button">Download</a>
-							<a href="${pack.repository}">Repository</a>
+							<a href="${pack.download}" class="download-button">Download</a>
+							<a href="${pack.repository}" class="repo-button">Repository</a>
 						</div>
 					</div>
 				</div>

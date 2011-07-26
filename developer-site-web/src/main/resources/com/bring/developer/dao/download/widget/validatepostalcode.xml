@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+	<Title>
+		Validate postal code
+	</Title>
+	<Description><![CDATA[
+		<p>This widget validates a postal code while the user types. Please see the postal code
+			API for more info.</p>
+	]]></Description>
+	<Person role="author">
+		<Name>Bring developer</Name>
+		<Company>Bring</Company>
+	</Person>
+	<Install>
+		<Step><![CDATA[
+			<p>This widget depends on jQuery, so please include jQuery first.</p>
+		]]></Step>
+		<Step><![CDATA[
+			<p>Download the code, or copy it from the "Code" tab in the preview area above.</p>
+		]]></Step>
+	</Install>
+	<PreviewCode highlightLines="7-17" height="50"><![CDATA[
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      var inputField = $('#postnummerInput');
+      var outputElement = $('#postnummerResult');
+      
+      inputField.keyup(function() {
+         if (inputField.val().length == 4) {
+            $.getJSON('http://fraktguide.bring.no/fraktguide/api/postalCode.json?pnr='+ inputField.val() +'&callback=?',
+            function(data){
+               outputElement.text(data.result);
+            });
+         }
+         else {
+            outputElement.text('');
+         }
+      });
+   });
+</script>
+<form>
+   Postal code: <input type="text" id="postnummerInput" style="width: 4em;"/>  <span id="postnummerResult"> </span>
+</form>
+	]]></PreviewCode>
+</Pack>

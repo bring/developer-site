@@ -6,6 +6,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<misc:title value="${widget.title} preview"></misc:title>
+	<link rel="stylesheet" type="text/css" href="/css/preview.css" />
 </head>
 <body>
 	${widget.previewCode.content}
