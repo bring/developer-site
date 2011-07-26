@@ -68,7 +68,8 @@
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
 	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
-    <script type="text/javascript">
+	<script type="text/javascript" src="/js/widgets/postalcodevalidation.js"></script>
+    <script>
         $(document).ready(function() {
 	
 			var navElement = $("#navigation");
@@ -88,7 +89,7 @@
                 time + '</div></div></li>';
             });
 		    
-			$(".codetab").postalcodeValidation();
+			$(".codetab").postalcodevalidation();
 			
         });
     </script>

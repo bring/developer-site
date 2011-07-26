@@ -7,7 +7,7 @@
 			
 		init: function(){
 			methods.bindEvent();
-		}
+		},
 			
 		bindEvent: function(){			
 			inputField.keyup(function() {
