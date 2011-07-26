@@ -36,7 +36,9 @@
 		
 		addCookieEvents : function() {
 			codetabs.bind("showTab", function(e, toTab) {
-				$.cookie(options.cookieName, toTab);
+				$.cookie(options.cookieName, toTab, {
+					expires : 365
+				});
 			});
 		},
 		

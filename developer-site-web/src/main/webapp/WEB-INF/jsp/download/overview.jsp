@@ -18,9 +18,9 @@
         <div class="main">
 	        <menutabs:showMenu cssClass="menutab" />
 			<div class="content group">
-				<div class="widgetcontent">
+				<div class="overview-packages">
 					<c:forEach var="pack" items="${packages}">
-						<a class="widgetbox" href="/download/${overview.type}/${pack.handle}.html">
+						<a class="packagebox" href="/download/${overview.type}/${pack.handle}.html">
 							<img src="/img/tempwidget.png" alt="Preview" />
 							<strong class="title">${pack.title}</strong>
 							<span class="by">by ${pack.person.name}</span>
@@ -29,7 +29,7 @@
 					</c:forEach>
 				</div>
 				<div class="sidebox">
-					<div class="widgetdescription">
+					<div class="overview-description">
 						<h1>${overview.title}</h1>
 						${overview.description}
 					</div>			

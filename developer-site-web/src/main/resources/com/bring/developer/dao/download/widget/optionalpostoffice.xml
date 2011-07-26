@@ -26,9 +26,9 @@
 			<pre class="javascript">$("divid").utleveringsenhet();</pre>
 		]]></Step>
 	</Install>
-	<PreviewCode highlightLines="2,5"><![CDATA[
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
+	<PreviewCode highlightLines="2,5" height="200"><![CDATA[
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#divid').utleveringsenhet();
@@ -39,8 +39,11 @@
 </form>
 		]]></PreviewCode>
 	<Repository>
-		http://github.com/bringapi/blahblah/master
+		http://github.com/bringapi/blahblah/master/
 	</Repository>
+	<Download>
+		http://github.com/bringapi/blahblah/zipball/master/
+	</Download>
 	<WhoIsUsing>
 		<Site>
 			<Title>Komplett</Title>
