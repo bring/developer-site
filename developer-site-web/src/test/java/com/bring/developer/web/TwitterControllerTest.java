@@ -23,7 +23,6 @@ public class TwitterControllerTest {
         initMocks(this);
     }
     
-    
     public void shouldReturnResponseEntity() {
         TwitterController twitterController = new TwitterController(twitterDao);
         when(twitterDao.performSearch("http://search.twitter.com/search.json?q=from:bringapi%20OR%20%40bringapi")).thenReturn("{ result : []}");

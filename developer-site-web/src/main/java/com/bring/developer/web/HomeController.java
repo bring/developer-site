@@ -109,6 +109,11 @@ public class HomeController {
         return "learn/article";
     }
     
+    @RequestMapping(value = "/abc/test.fff")
+    public String foobar() {
+        return "learn/article";
+    }
+    
     private void handleArticleRequest(ModelMap model, String section) throws JAXBException {
         Article article = XmlDao.createDao(Article.class).query("learn/"+section);
         model.put("article", article);

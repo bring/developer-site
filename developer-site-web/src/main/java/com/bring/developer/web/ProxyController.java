@@ -43,7 +43,6 @@ public class ProxyController {
     public ProxyController (HttpClient httpClient) {
         this.httpClient = httpClient;
     }
-
     
     @RequestMapping(value = "/api/**", method = RequestMethod.GET)
     public ResponseEntity<String> shippingGuideRequest(HttpServletRequest request, @RequestParam Map<String, String> params) {
