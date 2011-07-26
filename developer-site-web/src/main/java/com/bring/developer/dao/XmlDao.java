@@ -19,4 +19,8 @@ public class XmlDao<T> {
     public T query(InputStream inputStream) throws JAXBException{
         return xmlParser.unmarshal(inputStream);
     }
+    
+    public static <T> XmlDao<T> createDao(Class<T> type) {
+    	return new XmlDao<T>(type);
+    }
 }

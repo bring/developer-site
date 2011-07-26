@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.bring.developer.dao.XmlDao;
 import com.bring.developer.response.apireference.Api;
 import com.bring.developer.response.article.Article;
+import com.bring.developer.response.pack.Pack;
 
 @Controller
 public class HomeController {
-    XmlDao<Api> apiReferenceDao = new XmlDao<Api>(Api.class);
-    XmlDao<Article> articleDao = new XmlDao<Article>(Article.class);
+	
     
     @RequestMapping(value = "/home.html")
     public String home() {
@@ -26,6 +26,7 @@ public class HomeController {
         return "talk";
     }
     
+    /// Temp
     @RequestMapping(value = "/learn/tracking/index.html")
     public String tracking() {
         return "learn/tracking/index";
@@ -41,15 +42,26 @@ public class HomeController {
         return "/download/widget/optionalpostoffice";
     }
     
-    @RequestMapping(value = "/download/widget/postalcodevalidation/index.html")
+
+    @RequestMapping(value = "/download/widget/postalcodevalidation.html")
     public String postalcodevalidation() {
         return "/download/widget/postalcodevalidation/index";
     }
+
+    /// End temp
     
+    
+    @RequestMapping(value = "/download/{type}/{packageName}.html")
+    public String downloadPackagePage(ModelMap model, @PathVariable String type, @PathVariable String packageName) throws JAXBException {
+    	Pack pack = XmlDao.createDao(Pack.class).query(type + "/" + packageName);
+    	model.put("pack", pack);
+    	model.put("type", type);
+    	return "download/package";
+    }
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {
-        Api apiDoc = apiReferenceDao.query("learn/"+api+"/apireference");
+        Api apiDoc = XmlDao.createDao(Api.class).query("learn/"+api+"/apireference");
         model.put("document", apiDoc);
         return "learn/apireference";
     }
@@ -72,7 +84,7 @@ public class HomeController {
     }
     
     private void handleArticleRequest(ModelMap model, String section) throws JAXBException {
-        Article article = articleDao.query("learn/"+section);
+        Article article = XmlDao.createDao(Article.class).query("learn/"+section);
         model.put("article", article);
         model.put("articlePath", section+".jsp");
         model.put("title", "Lern");

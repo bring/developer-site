@@ -29,7 +29,7 @@ public class XmlDaoApiReferenceTest {
     public void shouldReturnPostalCodeFromShippingguide() {
         String title = api.getParameters().get(0).getTitle();
         assertEquals("Postal code", title);
-        System.out.println(api.getParameters().get(0).getExamples().get(1).getContent());
+        //System.out.println(api.getParameters().get(0).getExamples().get(1).getContent());
     } 
  
     @Test
