@@ -61,7 +61,7 @@
 	        });
 	    },
 	    
-	    unmarkAll: function() {
+	    unmarkAll: function() {
 	        $(".marked", menulistElement).removeClass("marked");
 	    }
 	};

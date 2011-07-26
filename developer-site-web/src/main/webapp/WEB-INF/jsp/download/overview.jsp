@@ -9,10 +9,10 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<misc:title value="${overview.title}"></misc:title>
-	<misc:css></misc:css>
+	<misc:css />
 </head>
 
-<body>
+<body class="page-package-overview">
     <div class="wrapper">
         <misc:header />
         <div class="main">
@@ -37,27 +37,7 @@
             </div>
         </div>
     </div>
-    
     <misc:footer />
-    
     <misc:jqueryblob />
-	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-	
-			var navElement = $("#navigation");
-            navElement.menu();
-			navElement.downloadmenuHider();
-		    navElement.menutab({defaultTab: 1});
-
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote>' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
-        });
-    </script>
 </body>
 </html>

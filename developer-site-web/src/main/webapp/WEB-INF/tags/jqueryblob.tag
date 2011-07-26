@@ -29,8 +29,7 @@
             
             
             function isPageType(type) {
-                console.log($("body").hasClass("page-"+type));
-                return $("body").hasClass("page-"+type);
+                                return $("body").hasClass("page-"+type);
             }
             
             // Twitter for the menu..
@@ -73,9 +72,13 @@
             }
             
             else if (isPageType("package-overview")) {
+                $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
+                $("#twittercontent").performTwitterSearch(3, twitterView); 
             }
             
             else if(isPageType("package")) {
+                $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
+                $("#twittercontent").performTwitterSearch(3, twitterView); 
             }
             
             else if(isPageType("package-subpage")) {
@@ -85,7 +88,6 @@
             }
         });
 </script>
-
 <!--     <script type="text/javascript"> -->
 <!--         $(document).ready(function() { -->
 <!--             $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1}); -->

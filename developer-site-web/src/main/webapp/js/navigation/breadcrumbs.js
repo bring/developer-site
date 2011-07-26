@@ -92,7 +92,7 @@
             });  
         },
         
-        showBreadcrumbs: function() {
+        showBreadcrumbs: function() {
             hidden = true;
             $(breadcrumbElements).each(function() {
                 this.bind("click", methods.showMenu);    

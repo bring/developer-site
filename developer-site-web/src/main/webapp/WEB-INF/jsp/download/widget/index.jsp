@@ -6,17 +6,11 @@
 
 <head>
     <misc:contenttype />
-    <misc:title value="Tracking" />
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/lib.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
-    <link rel="stylesheet" type="text/css" href="/css/widget.css" />
-
-
+    <misc:css />
+    <misc:title value="Tracking widget" />
 </head>
 
-<body>
+<body class="page-package">
     <div class="wrapper">
         <misc:header />
         <div class="main">
@@ -42,26 +36,6 @@
     </div>
     
     <misc:footer />
-    
     <misc:jqueryblob />
-	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-	
-			var navElement = $("#navigation");
-            navElement.menu();
-			navElement.downloadmenuHider();
-		    navElement.menutab({defaultTab: 1});
-
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote>' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
-        });
-    </script>
 </body>
-
 </html>
