@@ -2,11 +2,15 @@
 <Api>
 	<Parameter>
 		<Title>
-			Find delivery place based on the recipient's postal code
+			Find delivery places based on the recipient's postal code
 		</Title>
 		<Description><![CDATA[
-            <p>Is specified by <code>/api/pickuppoint/postalcode/<strong>postalcode.filetype</strong></code> The basename is the postal code.</p>
-            <p>Example: Delivery locations near postalcode 1407 Vinterbro</p>
+		    <p>Optional post office is a service that allows an end user to choose the pickup point.</p>
+		    <p>The 10 nearest pickup point are returned, based on the given postal code.</p>
+            <p>The URL is specified by <code>/api/pickuppoint/postalcode/&lt;postalcode&gt;.&lt;extension&gt;</code></p>
+            <p><code>&lt;extension&gt; = xml | json</code></p>
+            <p><code>&lt;postalcode&gt; = a valid ZIP code</code></p>
+            <p>Example below: Delivery locations near postalcode 1407 Vinterbro</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
@@ -35,11 +39,13 @@
 	</Parameter>
 	<Parameter>
 		<Title>
-			Find delivery place based on optional location
+			Find delivery places based on optional location
         </Title>
 		<Description><![CDATA[
-            <p>Is specified by <code>/api/pickuppoint/location/<strong>latitude</strong>/<strong>longitude.filetype</strong></code></p>
-            <p>Example: Delivery Locations near the position of Oslo city</p>
+		    <p>The 10 nearest pickup point are returned, based on the given postal code.</p>
+            <p>The URL is specified by <code>/api/pickuppoint/location/&lt;latitude&gt;/&lt;longitude&gt;.&lt;extension&gt;</code></p>
+            <p><code>&lt;extension&gt; = xml | json</code></p>
+            <p>Example below: Delivery Locations near the position of Oslo city (60.395226, 5.321725)</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
@@ -71,10 +77,9 @@
 			Filter results by text
         </Title>
 		<Description><![CDATA[
-            <p>Is specified by adding <code>?searchForText=<strong>text</strong></code></p>
-            <p>You can search by name, address, city, municipality name, county name or location </p>
-            <p>Search string can include partial names / criterias</p>
-            <p>Example: ?searchForText=KIWI</p>
+            <p>Is specified by adding <code>?searchForText=&lt;text&gt;</code></p>
+            <p>You can search by name, address, city, municipality name, county name or location, and the search string can include partial names / criterias.</p>
+            <p>Example below: Search for text "KIWI" near postal code 1407.</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
@@ -106,6 +111,7 @@
 			Filter results by opening times
         </Title>
 		<Description><![CDATA[
+            <p>Is spesified by adding <code>?openingHoursSearchType=&lt;day&gt;</code>
             <p>Requires that the place is open on the day (s) as specified.</p>
             <p>If you want you can also send openOnOrBefore and / or openOnOrAfter, then apply it in the day specified in this parameter.</p>
             <p>The options are ALL_WEEKDAYS (default), MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY</p>
@@ -141,6 +147,7 @@
 			Filter results by opening hours (on or before)
         </Title>
 		<Description><![CDATA[
+		    <p>Is spesified by adding <code>?openOnOrBefore=&lt;HHMM&gt;</code>
             <p>Requires that the place is open on the specified time.</p>
             <p>Format HHMM</p>
             <p>Example: ?openOnOrBefore=0800</p>
@@ -175,6 +182,7 @@
 			Filter results by opening hours (on or after)
         </Title>
 		<Description><![CDATA[
+		    <p>Is spesified by adding <code>?openOnOrAfter=&lt;HHMM&gt;</code>
             <p>Requires that the place is open on the specified time.</p>
             <p>Format HHMM</p>
             <p>Example: ?openOnOrAfter=0800</p>
