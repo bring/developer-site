@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Api>
+	<Parameter>
+		<Title>
+			Find delivery place based on the recipient's postal code
+		</Title>
+		<Description><![CDATA[
+            <p>Is specified by <code>/api/pickuppoint/postalcode/<strong>postalcode.filetype</strong></code> The basename is the postal code.</p>
+            <p>Example: Delivery locations near postalcode 1407 Vinterbro</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.xml
+            </Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json
+            </Request>
+		</Example>
+		<Example type="jsonp">
+			<Title>
+				JSONP
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?callback=myCallback
+			</Request>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Find delivery place based on optional location
+        </Title>
+		<Description><![CDATA[
+            <p>Is specified by <code>/api/pickuppoint/location/<strong>latitude</strong>/<strong>longitude.filetype</strong></code></p>
+            <p>Example: Delivery Locations near the position of Oslo city</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				api/pickuppoint/location/60.395226/5.321725.xml
+            </Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				api/pickuppoint/location/60.395226/5.321725.json
+            </Request>
+		</Example>
+		<Example type="jsonp">
+			<Title>
+				JSONP
+            </Title>
+			<Request>
+				api/pickuppoint/location/60.395226/5.321725.json?callback=myCallback
+			</Request>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Filter results by text
+        </Title>
+		<Description><![CDATA[
+            <p>Is specified by adding <code>?searchForText=<strong>text</strong></code></p>
+            <p>You can search by name, address, city, municipality name, county name or location </p>
+            <p>Search string can include partial names / criterias</p>
+            <p>Example: ?searchForText=KIWI</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.xml?searchForText=KIWI
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?searchForText=KIWI
+			</Request>
+		</Example>
+		<Example type="jsonp">
+			<Title>
+				JSONP
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?searchForText=KIWI&callback=MyCallback
+			</Request>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Filter results by opening times
+        </Title>
+		<Description><![CDATA[
+            <p>Requires that the place is open on the day (s) as specified.</p>
+            <p>If you want you can also send openOnOrBefore and / or openOnOrAfter, then apply it in the day specified in this parameter.</p>
+            <p>The options are ALL_WEEKDAYS (default), MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY</p>
+            <p>Example: ?openingHoursSearchType=SUNDAY</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY
+			</Request>
+		</Example>
+		<Example type="jsonp">
+			<Title>
+				JSONP
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&callback=MyCallback
+			</Request>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Filter results by opening hours (on or before)
+        </Title>
+		<Description><![CDATA[
+            <p>Requires that the place is open on the specified time.</p>
+            <p>Format HHMM</p>
+            <p>Example: ?openOnOrBefore=0800</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800
+			</Request>
+		</Example>
+		<Example type="jsonp">
+			<Title>
+				JSONP
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&callback=MyCallback
+			</Request>
+		</Example>
+	</Parameter>
+	<Parameter>
+		<Title>
+			Filter results by opening hours (on or after)
+        </Title>
+		<Description><![CDATA[
+            <p>Requires that the place is open on the specified time.</p>
+            <p>Format HHMM</p>
+            <p>Example: ?openOnOrAfter=0800</p>
+        ]]></Description>
+		<Example type="xml">
+			<Title>
+				XML
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.xml?openOnOrAfter=0800
+			</Request>
+		</Example>
+		<Example type="json">
+			<Title>
+				JSON
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?openOnOrAfter=0800
+			</Request>
+		</Example>
+		<Example type="jsonp">
+			<Title>
+				JSONP
+            </Title>
+			<Request>
+				api/pickuppoint/postalcode/1407.json?openOnOrAfter=0800&callback=MyCallback
+			</Request>
+		</Example>
+	</Parameter>
+</Api>
