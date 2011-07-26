@@ -42,7 +42,12 @@ public class XmlDaoPackTest {
 	
 	@Test
 	public void shouldGetPreviewCode() {
-		assertEquals("Some code", widget.getPreviewCode());
+		assertEquals("Some code", widget.getPreviewCode().getContent());
+	}
+	
+	@Test
+	public void shouldGetHighlightLinesForPreviewCode() {
+		assertEquals("1,2", widget.getPreviewCode().getHighlightLines());
 	}
 	
 	@Test

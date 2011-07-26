@@ -12,7 +12,7 @@ import com.bring.developer.dao.XmlNormalizeURL;
 public class Pack {
 	private String title;
 	private String description;
-	private String previewCode;
+	private Code previewCode;
 	private URL repository;
 	private Install installSteps;
 	
@@ -35,11 +35,10 @@ public class Pack {
 	}
 	
 	@XmlElement(name = "PreviewCode")
-	@XmlJavaTypeAdapter(XmlNormalizeString.class)
-	public String getPreviewCode() {
+	public Code getPreviewCode() {
 		return previewCode;
 	}
-	public void setPreviewCode(String previewCode) {
+	public void setPreviewCode(Code previewCode) {
 		this.previewCode = previewCode;
 	}
 	
