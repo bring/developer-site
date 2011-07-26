@@ -31,6 +31,9 @@
 							</div>
 							<div data-tab="preview" class="tab previewtab">
                                 <!-- Widget is inputed here -->
+								<form>
+								   <input type="text" id="postnummerInput" style="width: 4em;"/>  <span id="postnummerResult"> </span>
+								</form>
 							</div>
 							<div class="widget-tabs">
 								<a href="#code" class="widget-tab">Code</a>
@@ -85,12 +88,8 @@
                 time + '</div></div></li>';
             });
 		    
-            // Dynamic widget generation from code example
-            var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
-            //console.debug(widgetSource);
-            var previewTab = $(".widgetpreview .previewtab");
-            /*console.debug($("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body"));*/
-            //$("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
+			$(".codetab").postalcodeValidation();
+			
         });
     </script>
 </body>
