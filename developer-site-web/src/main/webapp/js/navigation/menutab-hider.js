@@ -43,5 +43,7 @@
                 hide();
             }
         });
+        
+        return this;
     }
 })(jQuery);

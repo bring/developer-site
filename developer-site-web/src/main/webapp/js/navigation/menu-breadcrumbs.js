@@ -1,7 +1,6 @@
 (function($) {
     var navigationElement;
     var currentPageLink;
-    var path;
 
     var options = {
         currentUrl: window.location.pathname + window.location.search
@@ -11,17 +10,16 @@
         init: function() {
             navigationElement = this;
             currentPageLink = methods.getCurrentPageLink();
-            path = methods.getBreadcrumbsPath();
             currentPageLink.addClass("current-page");
             methods.initBreadcrumbs();
             methods.bindEvents();
             methods.markBreadcrumbs();
             methods.closeMenu();
-            
+            return this;
         },
 
         initBreadcrumbs: function() {
-            for(var i in path) {
+            for(var i in methods.getBreadcrumbsPath()) {
                 $(path[i]).addClass("breadcrumb");
             }
         },

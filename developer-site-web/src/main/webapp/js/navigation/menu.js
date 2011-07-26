@@ -11,6 +11,7 @@
 	        $.extend(options, optionsArg);
             methods.recalculateHeight(true);
             methods.bindEvents();
+            return this;
 	    },
 	    
 		recalculateHeight: function(hidden) {
