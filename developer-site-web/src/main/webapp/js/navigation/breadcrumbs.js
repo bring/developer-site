@@ -149,7 +149,7 @@
                         return;
                     }
                     
-                    if (chosenTab === currentTab) {
+                    if (chosenTab === currentTab) { // Menu tab activated
                         event.preventDefault();
                         if (hidden) {
                             methods.showMenu();    
@@ -158,6 +158,9 @@
                             methods.showBreadcrumbs();
                             methods.refreshMenu();
                         }
+                    }
+                    else { // Menutab not activated
+                        methods.showMenu();
                     }
                 },
                 

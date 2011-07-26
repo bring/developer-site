@@ -40,7 +40,6 @@
 			},
 			
 			show: function() {
-				console.log("show");
 				$(tabElement.children()[0]).css({
 					overflow: "visible"
 				});
