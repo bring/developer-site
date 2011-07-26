@@ -59,6 +59,7 @@ public class ProxyController {
             }
         }
         
+        
         LOG.info("Performing Fraktguide request: " + "http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/"+postalcode+"."+extension+parameters);
         
         String result = performRequest("http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/"+postalcode+"."+extension+parameters);
