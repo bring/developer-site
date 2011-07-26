@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/css/lib.css" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
-    <link rel="stylesheet" type="text/css" href="/css/jquery.snippet.css" />
+    <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
 </head>
 
 <body>
@@ -63,10 +63,10 @@
     <misc:footer />
     
     <misc:jqueryblob />
+    <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
-    <script type="text/javascript" src="/js/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
-    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {

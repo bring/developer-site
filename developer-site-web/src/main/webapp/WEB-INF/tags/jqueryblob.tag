@@ -2,8 +2,8 @@
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 
 <misc:jquery />
-<script src="/js/jquery.actual.js"></script>
-<script src="/js/jquery.outerclick.js"></script>
+<script src="/js/lib/jquery.actual.js"></script>
+<script src="/js/lib/jquery.outerclick.js"></script>
 <script src="/js/navigation/menutab.js"></script>
 <script src="/js/navigation/menu.js"></script>
 <script src="/js/twitter.js"></script>
