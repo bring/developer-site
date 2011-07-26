@@ -19,7 +19,8 @@
         },
 
         initBreadcrumbs: function() {
-            for(var i in methods.getBreadcrumbsPath()) {
+            var path = methods.getBreadcrumbsPath()
+            for(var i in path) {
                 $(path[i]).addClass("breadcrumb");
             }
         },
