@@ -2,6 +2,7 @@
     var navigationElement;
     var breadcrumbElements = [];
     var allElementsNotBreadcrumbs;
+    var hidden = false;
 
     var options = {
         currentUrl: window.location.pathname + window.location.search,
@@ -95,7 +96,7 @@
         },
         
         showBreadcrumbs: function() {
-            $(navigationElement).menutab.hidden = true;
+            hidden = true;
             $(breadcrumbElements).each(function() {
                 this.bind("click", methods.showMenu);    
             });
@@ -113,7 +114,7 @@
         
 
         showMenu: function() {
-            $(navigationElement).menutab.hidden = false;
+            hidden = false;
             $(breadcrumbElements).each(function() {
                 this.unbind("click", methods.showMenu);  
             });
@@ -151,7 +152,7 @@
                         return;
                     }
                     
-                    if ($(navigationElement).menutab.hidden) {
+                    if (hidden) {
                         methods.showMenu();
                     }
                     else {
@@ -167,6 +168,7 @@
                 
                 outerClick: function() {
                     if (navigationElement.menutab("getActive") && navigationElement.menutab("getActive").index != options.tabIndex) {
+                        navigationElement.menutab("stop");
                         methods.getAllLiElementsNotBreadcrumbs().hide();
                         navigationElement.menutab("changeTab", options.tabIndex);
                     }
