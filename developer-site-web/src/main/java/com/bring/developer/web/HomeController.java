@@ -41,7 +41,7 @@ public class HomeController {
         return "/download/widget/optionalpostoffice";
     }
     
-    @RequestMapping(value = "/download/widget/postalcodevalidation/index.hmtl")
+    @RequestMapping(value = "/download/widget/postalcodevalidation/index.html")
     public String postalcodevalidation() {
         return "/download/widget/postalcodevalidation/index";
     }
