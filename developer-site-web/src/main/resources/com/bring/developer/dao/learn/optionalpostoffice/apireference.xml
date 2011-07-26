@@ -28,14 +28,6 @@
 				api/pickuppoint/postalcode/1407.json
             </Request>
 		</Example>
-		<Example type="jsonp">
-			<Title>
-				JSONP
-            </Title>
-			<Request>
-				api/pickuppoint/postalcode/1407.json?callback=myCallback
-			</Request>
-		</Example>
 	</Parameter>
 	<Parameter>
 		<Title>
@@ -63,14 +55,6 @@
 				api/pickuppoint/location/60.395226/5.321725.json
             </Request>
 		</Example>
-		<Example type="jsonp">
-			<Title>
-				JSONP
-            </Title>
-			<Request>
-				api/pickuppoint/location/60.395226/5.321725.json?callback=myCallback
-			</Request>
-		</Example>
 	</Parameter>
 	<Parameter>
 		<Title>
@@ -95,14 +79,6 @@
             </Title>
 			<Request>
 				api/pickuppoint/postalcode/1407.json?searchForText=KIWI
-			</Request>
-		</Example>
-		<Example type="jsonp">
-			<Title>
-				JSONP
-            </Title>
-			<Request>
-				api/pickuppoint/postalcode/1407.json?searchForText=KIWI&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
@@ -133,14 +109,6 @@
 				api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY
 			</Request>
 		</Example>
-		<Example type="jsonp">
-			<Title>
-				JSONP
-            </Title>
-			<Request>
-				api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callback=MyCallback
-			</Request>
-		</Example>
 	</Parameter>
 	<Parameter>
 		<Title>
@@ -168,14 +136,6 @@
 				api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800
 			</Request>
 		</Example>
-		<Example type="jsonp">
-			<Title>
-				JSONP
-            </Title>
-			<Request>
-				api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callback=MyCallback
-			</Request>
-		</Example>
 	</Parameter>
 	<Parameter>
 		<Title>
@@ -201,14 +161,6 @@
             </Title>
 			<Request>
 				api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200
-			</Request>
-		</Example>
-		<Example type="jsonp">
-			<Title>
-				JSONP
-            </Title>
-			<Request>
-				api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
