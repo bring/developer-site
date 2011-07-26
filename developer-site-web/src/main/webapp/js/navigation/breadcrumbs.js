@@ -17,6 +17,7 @@
             methods.initBreadcrumbs(currentPageLink);
             methods.bindEvents();
             methods.markBreadcrumbs();
+            this.menu({initHeight: false});
             methods.showBreadcrumbs();
             return this;
         },
@@ -65,10 +66,6 @@
             });
         },
         
-        unmarkAll: function() {
-            $(".marked", navigationElement).removeClass("marked");
-        },
-        
         unmark: function(element) {
             element.removeClass("marked");
         },
@@ -113,7 +110,6 @@
             });
         },
         
-
         showMenu: function() {
             hidden = false;
             $(breadcrumbElements).each(function() {
@@ -131,7 +127,7 @@
                 i = i + 1;
                 if (i == allLiElementsNotBreadcrumbs.length) {
                     // Recalculate height after last element has been shown
-                    navigationElement.menu("recalculateHeight");
+//                    navigationElement.menu("recalculateHeight");
                 }
             });
         },
@@ -153,15 +149,13 @@
                         return;
                     }
                     
-                    if (hidden) {
-                        methods.showMenu();
-                    }
-                    else {
-                        if (chosenTab == currentTab) {
-                            event.preventDefault();
-                            methods.showBreadcrumbs();
+                    if (chosenTab === currentTab) {
+                        event.preventDefault();
+                        if (hidden) {
+                            methods.showMenu();    
                         }
                         else {
+                            methods.showBreadcrumbs();
                             methods.refreshMenu();
                         }
                     }
@@ -180,7 +174,7 @@
         }
     };
 
-    $.fn.menuBreadcrumbs = function(method) {
+    $.fn.menuWithBreadcrumbs = function(method) {
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         } else if (typeof method === 'object' || !method) {

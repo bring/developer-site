@@ -77,11 +77,7 @@
 	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-	
-			var navElement = $("#navigation");
-            navElement.menu();
-			navElement.downloadmenuHider();
-		    navElement.menutab({defaultTab: 1});   
+			$("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
 						
 			$(".widgetpreview").codetabs({
 				defaultTab : "preview"

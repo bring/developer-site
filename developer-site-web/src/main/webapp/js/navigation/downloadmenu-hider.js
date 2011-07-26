@@ -18,6 +18,7 @@
 			init: function() {
 				methods.hide(0);
 				methods.bindEvent();
+				return this;
 			},
 				
 			hide: function(duration) {

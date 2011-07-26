@@ -37,13 +37,10 @@
     
     <misc:jqueryblob />
     <script type="text/javascript" src="/js/navigation/menutab-hider.js"></script>
+    <script type="text/javascript" src="/js/navigation/navigation.js"></script>
     <script>
         $(document).ready(function() {
-            var navElement = $("#navigation");
-            navElement.menu();
-            navElement.menutab({hidden: true});
-            navElement.menutabHider();
-            
+            $("#navigation").navigation({mode: "hidden"});
             $("#twittercontent").performTwitterSearch(1, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
                 image + '"/><div class="avatar-list-text"><div class="question-title">' +

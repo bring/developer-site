@@ -125,3 +125,9 @@ body:before {
     -webkit-box-shadow: inset 0px 10px 8px #888;
     box-shadow: inset 0px 10px 8px #888;
 }
+
+/* hack */
+
+#learn {
+    height: 44px;
+}

@@ -26,14 +26,11 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
+    <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
+    <script type="text/javascript" src="/js/navigation/navigation.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var navElement = $("#navigation");
-            navElement.menu();
-            navElement.menutab();
-            navElement.menuBreadcrumbs();
-            
+            $("#navigation").navigation({mode: "breadcrumbs"});
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
                 return '<li class="group"><img class="avatar" src="' + 
                 image + '"/><div class="avatar-list-text"><div class="question-title">' +

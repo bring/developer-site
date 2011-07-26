@@ -61,13 +61,13 @@
     <misc:jqueryblob />
     <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
     <script type="text/javascript" src="/js/lib/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
+    <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
+    <script type="text/javascript" src="/js/navigation/navigation.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            var navElement = $("#navigation");
-            navElement.menu().menuBreadcrumbs().menutab();
+            $("#navigation").navigation({mode: "breadcrumbs"});
 
             // Twitter
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
