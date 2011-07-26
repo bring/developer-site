@@ -9,11 +9,7 @@
 <head>
     <misc:contenttype />
     <misc:title value="API Reference" />
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/lib.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
-    <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
+    <misc:css />
 </head>
 
 <body>

@@ -36,7 +36,7 @@ input[type=reset], input[type=reset]:active, input[type=reset]:focus {
 
 
 p,pre,address,dl,ol,ul,table,cite,blockquote {
-    font-size: 0.75em;
+    /*font-size: 0.75em;*/
 }
 
 body {
@@ -89,24 +89,24 @@ h1 {
     font-weight:normal;
     letter-spacing: -0.05em;
     margin: 2em 0 1em 0;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 h2 {
     margin-top: 30px;
-	font-size: 0.8em;
+	font-size: 1.05em;
 	font-weight: bold;
     border-bottom: 3px solid #ddd;
 }
 
 h3 {
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 
 h4 {
 	font-weight: bold;
-    font-size: 0.75em;
+    font-size: 1em;
 }
 
 p {
@@ -173,6 +173,17 @@ pre cite,
 pre blockquote {
     font-size: 1em;
 }
+/*
+li p,
+li address,
+li dl,
+li ol, 
+li ul, 
+li table,
+li cite,
+li blockquote {
+    font-size: 1em;
+}*/
 
 .article ol {
     padding: 15px;

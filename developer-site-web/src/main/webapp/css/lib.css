@@ -61,9 +61,10 @@ html[xmlns] .group {
 }
 
 .global-tabs li:first-child a:before {
-    content: "‹ ";
+    content: "\002039";
     margin-right: 5px;
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 .global-tabs li a {
@@ -86,6 +87,11 @@ html[xmlns] .group {
     /* css3 */
     box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
 }
+
+.global-tabs-chosen {
+	line-height: 22px;
+}
+
 
 /* Box with shadow */
 
@@ -160,13 +166,12 @@ ul.avatar-list li:last-child {
 /* Question */
 
 .datetime {
-    font-size: 0.75em;
+    font-size: 0.9em;
     color: #9A9999;
     margin-right: 0;
 }
 
 .question-title {
-    font-size: 0.75em;
     font-weight: bold;
 }
 
@@ -269,7 +274,6 @@ ul.avatar-list li:last-child {
 }
 
 .talkbox-header {
-    font-size: 0.75em;
     position: relative;
 }
 
@@ -307,7 +311,7 @@ ul.avatar-list li:last-child {
     border-top: 1px solid #3b3b3b;
     color: #f0f0f1;
     background-color: #999;
-    padding: 10px 0 0 40px;
+    padding: 10px 0 0 45px;
     position: relative;
     font-weight: bold;
     z-index: -1;
@@ -335,7 +339,7 @@ ul.avatar-list li:last-child {
 }
 
 .talkbox-footer {
-    font-size: 0.75em;
+    
 }
 
 .talkbox-footer .time {
@@ -390,6 +394,7 @@ ul.avatar-list li:last-child {
 }
 
 .navigation-tabs {
+	font-size: 0.75em;
     position: relative;
     margin: 5px 10px 0 0;
 }
@@ -413,15 +418,6 @@ ul.avatar-list li:last-child {
     margin: 2px 0;
 }
 
-.menulist li a {
-    padding: 10px;
-    width: 282px;
-    display: block;
-    background-color: #666;
-    text-decoration: none;
-    color: #ccc;
-}
-
 .menulist ul {
     font-size: 1em;
     visibility: hidden;
@@ -438,65 +434,113 @@ ul.avatar-list li:last-child {
     transition: opacity 500ms ease-in-out;
 }
 
-li.marked > a {
-    color: #fff;
-    background-color: #999;
-}
-
 .current-page {
-    color: red;
     position: relative;
 }
 
-li a.current-page:after {
-    right: 5px;
-    top: 0;
-    position: absolute;
+.menulist .marked.breadcrumb > .menubutton.current-page:after {
+	padding-top: 12px;
     content: "\02022";
     font-size: 2.75em;
-    color: #79b54b
+    color: #f0f0f1;
+    /*color: #79b54b;*/
 }
 
 .menubutton {
+	padding: 12px 10px 8px 10px;
+	height: 20px;
     margin: 0 10px;
+    overflow: hidden;
+    width: 282px;
+    display: block;
+    background-color: #666;
+    text-decoration: none;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    text-overflow: ellipsis-word;
+    color: #ccc;
+    position: relative;
 }
 
-.breadcrumb > a {
+/*.breadcrumb > a {*/
 /*      -webkit-transition: all 500ms ease-in-out; */
 /*     -moz-transition: all 500ms ease-in-out; */
 /*     -o-transition: all 500ms ease-in-out; */
 /*     -ms-transition: opacity 500ms ease-in-out; */
 /*     transition: opacity 500ms ease-in-out; */
+/*}*/
+
+
+.menubutton:before,
+.breadcrumbs .marked > .menubutton:before {
+	content: " ";
+	position: absolute;
+	display: block;
+	right: 0;
+	top: 0;
+	height: 40px;
+	width: 100px;
+	background: -moz-linear-gradient(left, rgba(102,102,102,0) 0%, rgba(102,102,102,1) 100%); /*FF3.6+*/
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(102,102,102,0)), color-stop(100%,rgba(102,102,102,1)));/* Chrome,Safari4+*/
+	background: -webkit-linear-gradient(left, rgba(102,102,102,0) 0%,rgba(102,102,102,1) 100%); /*Chrome10+,Safari5.1+*/
+	background: -o-linear-gradient(left, rgba(102,102,102,0) 0%,rgba(102,102,102,1) 100%); /*Opera11.10+*/
+	background: -ms-linear-gradient(left, rgba(102,102,102,0) 0%,rgba(102,102,102,1) 100%); /*IE10+*/
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66666600', endColorstr='#666666FF',GradientType=1 );/*IE6-9*/
+	background: linear-gradient(left, rgba(102,102,102,0) 0%,rgba(102,102,102,1) 100%); /*W3C */
+	-webkit-transition: background 250ms ease-in-out;
+    -moz-transition: background 250ms ease-in-out;
+    -o-transition: background 250ms ease-in-out;
+    -ms-transition: background 250ms ease-in-out;
+    transition: background 250ms ease-in-out;
 }
 
-.breadcrumbs .breadcrumb > a {
-    color: red;
-    color: #ccc;
-    background-color: #666;
-    /* css 3 */
-    -webkit-transition: all 500ms ease-in-out;
-    -moz-transition: all 500ms ease-in-out;
-    -o-transition: all 500ms ease-in-out;
-    -ms-transition: opacity 500ms ease-in-out;
-    transition: opacity 500ms ease-in-out;
+.menubutton:hover:before, 
+.marked > .menubutton:before,
+.breadcrumbs .marked > .menubutton:hover:before {
+	background: -moz-linear-gradient(left, rgba(153,153,153,0) 0%, rgba(153,153,153,1) 100%); /*FF3.6+*/
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(153,153,153,0)), color-stop(100%,rgba(153,153,153,1))); /*Chrome,Safari4+*/
+	background: -webkit-linear-gradient(left, rgba(153,153,153,0) 0%,rgba(153,153,153,1) 100%); /*Chrome10+,Safari5.1+*/
+	background: -o-linear-gradient(left, rgba(153,153,153,0) 0%,rgba(153,153,153,1) 100%); /*Opera11.10+*/
+	background: -ms-linear-gradient(left, rgba(153,153,153,0) 0%,rgba(153,153,153,1) 100%); /*IE10+*/
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99999900', endColorstr='#999999FF',GradientType=1 ); /*IE6-9*/
+	background: linear-gradient(left, rgba(153,153,153,0) 0%,rgba(153,153,153,1) 100%); /*W3C*/
 }
 
-.menubutton:after {
-    margin-top: -5px;
+.menubutton:after,
+.menulist .marked.breadcrumb > .menubutton:after {
     font-size: 1.5em;
     content: "\203A";
-    float: right;
-    margin-right: 5px;
     font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 20px;
+    line-height: 17px;
+    padding: 10px 15px 10px 10px;
+    color: #ccc;
 }
 
-.menulist  li a.selected, .menulist li a:hover {
+.menulist .menubutton.selected,
+.menulist .menubutton:hover,
+.menulist .breadcrumb > .menubutton:hover,
+.menulist .marked > .menubutton {
+	color: #fff;
     background-color: #999;
-    color: #fff;
 }
+
+.breadcrumbs .breadcrumb > .menubutton {
+    color: #ccc;
+    background: #666;
+    -webkit-transition: background 500ms ease-in-out;
+    -moz-transition: background 500ms ease-in-out;
+    -o-transition: background 500ms ease-in-out;
+    -ms-transition: background 500ms ease-in-out;
+    transition: background 500ms ease-in-out;
+}
+
 
 .menulist  li a img {
-    float:right;
+    float: right;
     margin: 5px;
 }
 

@@ -18,7 +18,7 @@
 			Third step
 		]]></Step>
 	</Install>
-	<PreviewCode><![CDATA[
+	<PreviewCode highlightLines="1,2"><![CDATA[
 Some code
 		]]></PreviewCode>
 	<Repository>

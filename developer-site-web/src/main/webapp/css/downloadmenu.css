@@ -59,41 +59,38 @@
     display: block;
     width: 100%;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 1em;
 }
 
-.downloadbox span:before {
-    content:"";
-    position:absolute;
-    bottom:-16px;
-    left:151px;
-    border-width:0 0 6px 6px;
-    border-style:solid;
-    border-color:transparent #f0f0f1;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-    z-index: 1;
-}
-
+.downloadbox span:before,
 .downloadbox span:after {
     content:"";
     position:absolute;
     bottom:-16px;
-    left:145px;
-    border-width:0 6px 6px 0;
     border-style:solid;
     border-color:transparent #f0f0f1;
-    /* reduce the damage in FF3.0 */
-    display:block; 
+    display:none; 
     width:0;
     z-index: 1;
 }
 
-.downloadbox:hover span:after{
-    border-color:transparent #7fc14b;
+.downloadbox span:before {
+    left:151px;
+    border-width:0 0 6px 6px;
 }
 
-.downloadbox:hover span:before{
+.downloadbox span:after {
+    left:145px;
+    border-width:0 6px 6px 0;
+}
+
+.downloadbox.active span:after,
+.downloadbox.active span:before {
+	display: block;
+}
+
+.downloadbox:hover span:after,
+.downloadbox:hover span:before {
+	display: block;
     border-color:transparent #7fc14b;
 }

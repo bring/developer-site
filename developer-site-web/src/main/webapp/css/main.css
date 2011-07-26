@@ -74,6 +74,7 @@ body:before {
 }
 
 .global-tabs {
+	text-transform: uppercase;
     bottom: 0;
     position: absolute;
     left: 50%;
@@ -91,6 +92,7 @@ body:before {
 }
 
 .content {
+	font-size: 0.75em;
     min-height: 300px;
     padding-top: 60px;
     margin: 0 5px 50px 5px;
@@ -103,6 +105,7 @@ body:before {
 }
 
 .header {
+	font-size: 0.75em;
     background-color: #fff;
     border-bottom: 15px solid #7fc14b;
     padding-top: 15px;
