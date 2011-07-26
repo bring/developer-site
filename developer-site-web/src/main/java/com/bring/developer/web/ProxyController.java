@@ -3,6 +3,7 @@ package com.bring.developer.web;
 import java.io.IOException;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.xml.bind.JAXBException;
 
 import org.apache.commons.io.IOUtils;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.HandlerMapping;
 
 import com.bring.developer.dao.TwitterDao;
 import com.bring.developer.dao.XmlDao;
@@ -42,6 +44,36 @@ public class ProxyController {
         this.httpClient = httpClient;
     }
 
+    
+    @RequestMapping(value = "/api/**", method = RequestMethod.GET)
+    public ResponseEntity<String> shippingGuideRequest(HttpServletRequest request, @RequestParam Map<String, String> params) {
+        
+        String parameters = "";
+        int i = 0;
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if(i==0){
+                parameters += "?" + entry.getKey() + "=" + entry.getValue();                
+            }
+            else if(i>0){
+                parameters += "&" + entry.getKey() + "=" + entry.getValue();
+            }
+            i++;
+        }
+        
+        String restOfTheUrl = (String) request.getAttribute(HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
+        int dot = restOfTheUrl.lastIndexOf(".");
+        String fileExtension = restOfTheUrl.substring(dot + 1);
+        
+        String result = performRequest("http://fraktguide.bring.no/fraktguide/api/" + restOfTheUrl + parameters);
+        
+        //TODO: fix headers
+        MultiValueMap<String, String> headers = new HttpHeaders();
+        headers.add("Content-Type", "application/" + fileExtension + ";charset=utf-8");
+        return new ResponseEntity<String>(result, headers, HttpStatus.OK);
+    }
+    
+    /*
+    
     @RequestMapping(value = "/api/pickuppoint/postalcode/{postalcode}.{extension}", method = RequestMethod.GET)
     public ResponseEntity<String> search(
             @PathVariable String postalcode, 
@@ -69,6 +101,8 @@ public class ProxyController {
         headers.add("Content-Type", "application/" + extension + ";charset=utf-8");
         return new ResponseEntity<String>(result, headers, HttpStatus.OK);
     }
+    */
+    
     
     private String performRequest(String request) {
         System.out.println("perform request");
