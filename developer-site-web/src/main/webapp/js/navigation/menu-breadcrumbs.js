@@ -103,6 +103,7 @@
             var allLiElementsNotBreadcrumbs = methods.getAllLiElementsNotBreadcrumbs();
             allLiElementsNotBreadcrumbs.removeClass("marked");
             navigationElement.addClass("breadcrumbs");
+            $(".breadcrumb").addClass("marked");
             var hasRun = false;
             allLiElementsNotBreadcrumbs.slideUp("normal", function() {
                 if(!hasRun) {
@@ -169,6 +170,7 @@
                 outerClick: function() {
                     if (navigationElement.menutab("getActive") && navigationElement.menutab("getActive").index != options.tabIndex) {
                         navigationElement.menutab("stop");
+                        methods.markBreadcrumbs();
                         methods.getAllLiElementsNotBreadcrumbs().hide();
                         navigationElement.menutab("changeTab", options.tabIndex);
                     }

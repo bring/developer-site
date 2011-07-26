@@ -1,5 +1,9 @@
-<h1>Bring open source Java client library</h1>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+    <Title>Bring open source Java client library</Title>
+    <MenuTitle>Java client library</MenuTitle>
+    <Content>
+<![CDATA[
 <h2>Introduction</h2>
 
 <p>The client Library provides services from shipping guide and tracking.<br/>
@@ -70,3 +74,6 @@ Joda-Time</p>
 
 <p> //Display result<br />
 System.out.println("Total weight:" + totalWeight);</p>
+]]>
+    </Content>
+</Article>
