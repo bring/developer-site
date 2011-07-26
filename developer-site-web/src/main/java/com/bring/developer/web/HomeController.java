@@ -1,5 +1,7 @@
 package com.bring.developer.web;
 
+import java.util.List;
+
 import javax.xml.bind.JAXBException;
 
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import com.bring.developer.dao.XmlDao;
 import com.bring.developer.response.apireference.Api;
 import com.bring.developer.response.article.Article;
 import com.bring.developer.response.pack.Pack;
+import com.bring.developer.response.pack.PackagesCategory;
 
 @Controller
 public class HomeController {
@@ -19,6 +22,11 @@ public class HomeController {
     @RequestMapping(value = "/home.html")
     public String home() {
         return "home";
+    }
+    
+    @RequestMapping(value = "/index.html")
+    public String index() {
+    	return home();
     }
     
     @RequestMapping(value = "/talk.html")
@@ -32,7 +40,7 @@ public class HomeController {
         return "learn/tracking/index";
     }
     
-    @RequestMapping(value = "/download/widget/index.html")
+    //@RequestMapping(value = "/download/widget/index.html")
     public String widget() {
         return "/download/widget/index";
     }
@@ -49,6 +57,16 @@ public class HomeController {
     }
     /// End temp
     
+    @RequestMapping(value = "/download/{type}/index.html")
+    public String downloadOverview(ModelMap model, @PathVariable String type) throws JAXBException {
+    	PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("download/" + type);
+    	List<Pack> packs = XmlDao.createDaos(Pack.class, "download/" + type);
+    	System.out.println(packs.size());
+    	model.put("overview", packagesCategory);
+    	model.put("packages", packs);
+    	
+    	return "download/overview";
+    }
     
     @RequestMapping(value = "/download/{type}/{packageName}.html")
     public String downloadPackagePage(ModelMap model, @PathVariable String type, @PathVariable String packageName) throws JAXBException {
@@ -57,6 +75,14 @@ public class HomeController {
     	model.put("type", type);
     	return "download/package";
     }
+    
+    @RequestMapping(value = "/download/widget/{widget}/preview.html")
+    public String widgetPreview(ModelMap model, @PathVariable String widget) throws JAXBException {
+    	Pack pack = XmlDao.createDao(Pack.class).query("download/widget/" + widget);
+    	model.put("widget", pack);
+    	return "download/widgetpreview";
+    }
+    
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {

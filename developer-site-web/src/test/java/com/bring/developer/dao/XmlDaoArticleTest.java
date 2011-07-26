@@ -14,7 +14,7 @@ public class XmlDaoArticleTest {
     
     @Before
     public void setUp() {
-        dao = new XmlDao<Article>(Article.class);
+        dao = XmlDao.createDao(Article.class);
     }
     
     @Test
