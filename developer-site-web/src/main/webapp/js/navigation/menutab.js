@@ -2,6 +2,10 @@
 	var navigationElement;
     var activeMenutab;
     var busy = false;
+    var tabs;
+    var launchers;
+    var queue = [];
+    
     var options = {
         hidden: false,
         defaultTab: 0
@@ -9,8 +13,10 @@
 	
 	var methods = {
 		init: function(optionsArg) {
-		    $.extend(options, optionsArg)
+		    $.extend(options, optionsArg);
 			navigationElement = this;
+            tabs = $(".navigation-tabs > *", navigationElement);
+            launchers = $(".navigation-launchers > *", navigationElement);
 			methods.bindEvents();
             methods.hideTabs(function() {
                 if (!options.hidden) {
@@ -24,7 +30,7 @@
 		},
 		
 		bindEvents: function() {
-            methods.getLaunchers().each(function(i, launcher) {
+            launchers.each(function(i, launcher) {
                 $(launcher).click(function(event) {
                     methods.launch(i);
                     event.preventDefault();
@@ -34,41 +40,41 @@
 		},
 
 		hideTabs: function(callback) {
-            //console.debug("hideTabs()");
-            busy = true;
-            var tabs = methods.getTabs();
-            var i = 0;
-            $(methods.getLaunchers()[0]).each(function(i, launcher) {
-                $(launcher).removeClass("menutab-selected");
+            $(launchers).each(function(i, launcher) {
+                methods.unmarkLauncher(launcher);
             });
+            var i = 0;
             tabs.hide(0, function() {
                 i = i + 1;
                 if (i == tabs.length && callback != null) {
-                    busy = false;
                     callback();
-                }
+                } 
             });
 		},
+		
+		hideActive: function(callback, hideTabFirst) {
+		    methods.hideTab(activeMenutab, callback, hideTabFirst);
+		},
 
-        hideActive: function(callback, hideTabFirst) {
-            //console.debug("hideActive()");
+        hideTab: function(menutab, callback, hideTabFirst) {
             busy = true;
-            if (activeMenutab == null) {
+            if (menutab == null) {
                 busy = false;
                 if (callback != null) {
                     callback();
                 }
                 return this;
             }
+            
+            console.debug("hideTab"+menutab.index);
 
             if (hideTabFirst) {
-                $(activeMenutab.launcher).removeClass("menutab-selected");
+                methods.unmarkLauncher(menutab.launcher);
             }
-            $(activeMenutab.tab).slideUp(
-                "normal",
+            $(menutab.tab).slideUp("normal",
                 function() {
                     if (!hideTabFirst) {
-                        $(activeMenutab.launcher).removeClass("menutab-selected");
+                        methods.unmarkLauncher(menutab.launcher);
                     }
                     busy = false;
                     if (callback != null) {
@@ -80,76 +86,105 @@
         },
 
         showTab: function(i, callback) {
-            //console.debug("showTab("+i+")");
+            console.debug("showTab"+i);
             busy = true;
-            menutab = {
+            activeMenutab = {
                 index: i,
-                launcher: methods.getLaunchers()[i],
-                tab: methods.getTabs()[i]
+                launcher: launchers[i],
+                tab: tabs[i]
             };
-            $(menutab.launcher).addClass("menutab-selected");
-            $(menutab.tab).slideDown("normal", function() {
+            
+            methods.markLauncher(activeMenutab.launcher);
+            $(activeMenutab.tab).slideDown("normal", function() {
+                busy = false;
                 if (callback != null) {
-                    busy = false;
                     callback();
                 }
             });
-            activeMenutab = menutab;
-            busy = false;
         },
 
         changeTab: function(i, callback) {
-            //console.debug("changeTab("+i+")");
+            console.debug("changeTab"+i);
             navigationElement.trigger("changeTab", [ i, (activeMenutab ? activeMenutab.index : null) ]);
             busy = true;
-            menutab = {
+            var oldMenutab = activeMenutab;
+            var newMenutab = {
                 index: i,
-                launcher: methods.getLaunchers()[i],
-                tab: methods.getTabs()[i]
+                launcher: launchers[i],
+                tab: tabs[i]
             };
-            $(menutab.launcher).addClass("menutab-selected");
-            
-            if (activeMenutab == null) {
-                methods.showTab(i, callback);
-            }
-            else {
-                methods.hideActive(function() {methods.showTab(i, callback);}, true);
-            }
+            activeMenutab = newMenutab;
+
+            methods.markLauncher(newMenutab.launcher);
+            queue.push(function() {methods.hideTab(oldMenutab, function(){queue.shift()();}, true);});
+            queue.push(function() {methods.showTab(i,callback)});
+            queue.shift()();
+//            methods.hideTab(oldMenutab,
+//                function() {
+//                    methods.showTab(i, callback);
+//            }, true);
         },
 
         launch: function(i) {
-            if (busy) {
-                return;
-            }
-            //console.debug("launch(" + i + ")");
+//            if (busy) { // TODO FIX
+//                return;
+//            }
+
+            methods.stop();
             var event = jQuery.Event("launch");
             navigationElement.trigger(event, [ i, (activeMenutab ? activeMenutab.index : null) ]);
             if (event.isDefaultPrevented()) {
                 return this;
             }
+            
             if (activeMenutab && i != activeMenutab.index) {
                 methods.changeTab(i);
             }
             else {
-                methods.showTab(i);
+//                methods.showTab(i);
+                queue.push(function() {methods.showTab(i);});
+                queue.shift()();
             }
             return this;
         },
-
-        getTabs: function() {
-            return $(".navigation-tabs > *", navigationElement);
-        },
-
-        getLaunchers: function() {
-            return $(".navigation-launchers > *", navigationElement);
+        
+        stop: function() {
+            $(tabs).each(function(i,tab) {
+                $(tab).stop(false,true);
+            });
+//            $(launchers).each(function(i,launcher) {
+//                methods.unmarkLauncher(launcher);
+//            });
         },
         
-        isBusy: function() {
-            return busy;
+        unmarkLauncher: function(launcher) {
+            $(launcher).removeClass("menutab-selected");
+        },
+        
+        markLauncher: function(launcher) {
+            $(launcher).addClass("menutab-selected");
+        },
+        
+        markActive: function() {
+            if (activeMenutab != null) {
+                methods.markLauncher(activeMenutab.launcher);
+            }
         },
         
         getActive: function() {
             return activeMenutab;
+        },
+
+        getTabs: function() {
+            return tabs;
+        },
+
+        getLaunchers: function() {
+            return launchers;
+        },
+        
+        isBusy: function() {
+            return busy;
         }
 	};
 	

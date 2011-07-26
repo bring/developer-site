@@ -76,13 +76,13 @@
             navElement.menuBreadcrumbs();
 
             // Twitter
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote>' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
+//             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
+//                 return '<li class="group"><img class="avatar" src="' + 
+//                 image + '"/><div class="avatar-list-text"><div class="question-title">' +
+//                 user + '</div><div class="question-text"><blockquote>' + 
+//                 text + '</blockquote></div>' + '<div class="datetime">' + 
+//                 time + '</div></div></li>';
+//             });
             
 
             // Show the correct tab on init

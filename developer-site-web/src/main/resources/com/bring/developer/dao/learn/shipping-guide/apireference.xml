@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Document>
+<Api>
 	<Parameter>
 		<Title>
 			Postal code
@@ -704,4 +704,4 @@ Example output
             ]]></Content>
 		</Example>
 	</Parameter>
-</Document>
+</Api>

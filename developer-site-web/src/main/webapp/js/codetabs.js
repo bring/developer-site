@@ -108,8 +108,8 @@
 			tab = $(tab);
 			tab.show();
 			var t = tab.data("tab-triggers");
-			console.debug("Triggers:");
-			console.debug(t);
+//			console.debug("Triggers:");
+//			console.debug(t);
 			if(t != null && t.length > 0) {
 				t.addClass("active");
 			}
@@ -122,7 +122,7 @@
 			if(t != null && t.length > 0) {
 				t.removeClass("active");
 			}
-			console.log("actuallyHideTab");
+//			console.log("actuallyHideTab");
 		}
 	};
 	
