@@ -4,7 +4,6 @@
     var busy = false;
     var tabs;
     var launchers;
-    var queue = [];
     
     var options = {
         hidden: false,
@@ -66,8 +65,8 @@
                 return this;
             }
             
-            console.debug("hideTab"+menutab.index);
-
+            $(menutab.tab).stop(false,true);
+            
             if (hideTabFirst) {
                 methods.unmarkLauncher(menutab.launcher);
             }
@@ -86,8 +85,10 @@
         },
 
         showTab: function(i, callback) {
-            console.debug("showTab"+i);
             busy = true;
+            if (activeMenutab != undefined) {
+                $(activeMenutab.tab).stop(false,true);
+            }
             activeMenutab = {
                 index: i,
                 launcher: launchers[i],
@@ -104,29 +105,26 @@
         },
 
         changeTab: function(i, callback) {
-            console.debug("changeTab"+i);
-            navigationElement.trigger("changeTab", [ i, (activeMenutab ? activeMenutab.index : null) ]);
             busy = true;
+            if (activeMenutab != undefined) {
+                $(activeMenutab.tab).stop(false,true);
+            }
             var oldMenutab = activeMenutab;
             var newMenutab = {
                 index: i,
                 launcher: launchers[i],
                 tab: tabs[i]
             };
+            $(newMenutab.tab).stop(false,true);
             activeMenutab = newMenutab;
 
             methods.markLauncher(newMenutab.launcher);
-            queue.push(function() {methods.hideTab(oldMenutab, function(){queue.shift()();}, true);});
-            queue.push(function() {methods.showTab(i,callback)});
-            queue.shift()();
-//            methods.hideTab(oldMenutab,
-//                function() {
-//                    methods.showTab(i, callback);
-//            }, true);
+            methods.hideTab(oldMenutab, function(){methods.showTab(i,callback);}, true);
+            navigationElement.trigger("changeTab", [ i, (activeMenutab ? activeMenutab.index : null) ]);
         },
 
         launch: function(i) {
-//            if (busy) { // TODO FIX
+//            if (busy) {  
 //                return;
 //            }
 
@@ -141,9 +139,7 @@
                 methods.changeTab(i);
             }
             else {
-//                methods.showTab(i);
-                queue.push(function() {methods.showTab(i);});
-                queue.shift()();
+                methods.showTab(i);
             }
             return this;
         },
@@ -152,9 +148,9 @@
             $(tabs).each(function(i,tab) {
                 $(tab).stop(false,true);
             });
-//            $(launchers).each(function(i,launcher) {
-//                methods.unmarkLauncher(launcher);
-//            });
+            $(launchers).each(function(i,launcher) {
+                methods.unmarkLauncher(launcher);
+            });
         },
         
         unmarkLauncher: function(launcher) {
