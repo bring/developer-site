@@ -131,6 +131,11 @@
     position: relative;
 }
 
+.widgetpreview .preview-frame {
+	width: 100%;
+	min-height: 200px;
+}
+
 .widgetpreview .tab {
     clear: both;
 }

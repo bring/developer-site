@@ -1,12 +1,15 @@
 package com.bring.developer.response.pack;
 
 import java.net.URL;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.bring.developer.dao.XmlNormalizeString;
 import com.bring.developer.dao.XmlNormalizeURL;
+import com.bring.developer.response.Person;
 
 @XmlRootElement(name = "Pack")
 public class Pack {
@@ -15,6 +18,7 @@ public class Pack {
 	private Code previewCode;
 	private URL repository;
 	private Install installSteps;
+	private List<Person> persons;
 	
 	@XmlElement(name = "Title")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
@@ -61,4 +65,20 @@ public class Pack {
 		this.installSteps = installSteps;
 	}
 	
+	@XmlElement(name = "Person")
+	public List<Person> getPersons() {
+		return persons;
+	}
+	public void setPersons(List<Person> persons) {
+		this.persons = persons;
+	}
+	
+	
+	public String getHandle() {
+		return getTitle().toLowerCase().replace(" ", "");
+	}
+	
+	public Person getPerson() {
+		return getPersons().get(0);
+	}
 }

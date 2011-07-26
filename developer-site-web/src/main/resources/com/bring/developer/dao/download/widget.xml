@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PackagesOverview type="widget">
+	<Title>Widgets</Title>
+	<Description><![CDATA[
+		<p>Widgets are small HTML, CSS and Javascript elements which provides some functionality to
+			the user. They are easily installed, lightweight and run soley in the user's browser.</p>
+	]]></Description>
+</PackagesOverview>

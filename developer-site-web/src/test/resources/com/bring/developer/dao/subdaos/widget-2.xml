@@ -2,15 +2,11 @@
 
 <Pack type="widget">
 	<Title>
-		Widget title
+		Widget title 2
 	</Title>
 	<Description><![CDATA[
 		Description content
 	]]></Description>
-	<Person role="author">
-		<Name>Michael Jackson</Name>
-		<Company>Neverland Kindergarden</Company>
-	</Person>
 	<Install>
 		<Step><![CDATA[
 			First step

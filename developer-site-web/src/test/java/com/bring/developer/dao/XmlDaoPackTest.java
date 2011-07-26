@@ -11,6 +11,7 @@ import javax.xml.bind.JAXBException;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bring.developer.response.Person;
 import com.bring.developer.response.pack.Pack;
 
 
@@ -65,5 +66,13 @@ public class XmlDaoPackTest {
 		assertEquals("First step", steps.get(0));
 		assertEquals("Second step", steps.get(1));
 		assertEquals("Third step", steps.get(2));
+	}
+	
+	@Test
+	public void shouldGetAllPersons() {
+		List<Person> persons = widget.getPersons();
+		assertEquals("Michael Jackson", persons.get(0).getName());
+		assertEquals("author", persons.get(0).getRole());
+		assertEquals("Neverland Kindergarden", persons.get(0).getCompany());
 	}
 }

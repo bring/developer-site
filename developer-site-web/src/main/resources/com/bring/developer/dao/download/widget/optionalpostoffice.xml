@@ -2,13 +2,17 @@
 
 <Pack type="widget">
 	<Title>
-		Optional post office widget
+		Optional post office
 	</Title>
 	<Description><![CDATA[
 		<p>This widget uses Bring's Optional Post Office API to allow the user to choose their
 			preferred post office. This is mainly intended for online shopping to allow the
 			user to choose another post office than the one closest to their shipping address.</p>
 	]]></Description>
+	<Person role="author">
+		<Name>Bring developer</Name>
+		<Company>Bring</Company>
+	</Person>
 	<Install>
 		<Step><![CDATA[
 			<p>This widget depends on jQuery, so please add jQuery to your site first.</p>
