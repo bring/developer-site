@@ -1,27 +1,36 @@
 (function($) {
     var navigationElement;
-    var currentPageLink;
+    var breadcrumbElements = [];
+    var allElementsNotBreadcrumbs;
 
     var options = {
-        currentUrl: window.location.pathname + window.location.search
+        currentUrl: window.location.pathname + window.location.search,
+        tabIndex: 0
     };
 
     var methods = {
         init: function() {
             navigationElement = this;
-            currentPageLink = methods.getCurrentPageLink();
-            currentPageLink.addClass("current-page");
-            methods.initBreadcrumbs();
+            var currentPageLink = methods.getCurrentPageLink();
+            methods.markCurrentPage(currentPageLink);
+            methods.initBreadcrumbs(currentPageLink);
             methods.bindEvents();
             methods.markBreadcrumbs();
-            methods.closeMenu();
+            methods.showBreadcrumbs();
             return this;
         },
 
+        markCurrentPage: function(currentPageLink) {
+            currentPageLink.addClass("current-page");            
+        },
+        
         initBreadcrumbs: function() {
             var path = methods.getBreadcrumbsPath()
+            var breadcrumb;
             for(var i in path) {
-                $(path[i]).addClass("breadcrumb");
+                breadcrumbElement = $(path[i]) 
+                breadcrumbElement.addClass("breadcrumb");
+                breadcrumbElements.push(breadcrumbElement);
             }
         },
         
@@ -29,9 +38,11 @@
             return currentLink = $("a[href='"+options.currentUrl+"']", navigationElement);
         },
            
-        getBreadcrumbsPath : function() {
+        getBreadcrumbsPath : function(currentLink) {
             var path = [];
-            var currentLink = currentPageLink;
+            if (currentLink == undefined) {
+                currentLink = methods.getCurrentPageLink();
+            }
             while ((currentLink = currentLink.parent()).length != 0 && !currentLink.hasClass("menulist")) {
                 if (currentLink[0].tagName.toLowerCase() == "li") {
                     path[path.length] = currentLink[0];
@@ -41,107 +52,125 @@
         },
 
         markBreadcrumbs: function() {
-            $(".breadcrumb").addClass("marked");
+            $(breadcrumbElements).each(function() {
+                this.addClass("marked");
+            });
         },
 
+        
+        unmarkBreadcrumbs: function() {
+            $(breadcrumbElements).each(function() {
+                this.removeClass("marked");
+            });
+        },
+        
         unmarkAll: function() {
             $(".marked", navigationElement).removeClass("marked");
         },
         
-        unmarkBreadcrumbs: function() {
-            $(".marked", navigationElement).each(function() {
-                if (!$(this).hasClass("breadcrumb")) {
-                    $(this).removeClass("marked");
-                }
-            });
+        unmark: function(element) {
+            element.removeClass("marked");
         },
-
-        eatBread: function() {
-            $(".breadcrumb").bind("click", methods.cleanKitchenTable);
-            var liElements = $(".menulist > li:not(.breadcrumb), li.breadcrumb li:not(.breadcrumb)", $(".menulist").parent());
-            var hasRun = false;
-            liElements.removeClass("marked");
+        
+        getAllLiElementsNotBreadcrumbs: function() {
+            if (allElementsNotBreadcrumbs == undefined) {
+                allElementsNotBreadcrumbs = $(".menulist li:not(.breadcrumb)", $(".menulist").parent()); 
+            }
+            return allElementsNotBreadcrumbs;
+        },
+        
+        recalculateHeightWhileHidden: function(hiddenElements) {
+            var styles = [];
+            hiddenElements.each(function(i) {
+                styles[i] = $(this).attr("style");
+            });
+            hiddenElements.css({
+                visibility: "hidden",
+                display: "block"
+            });
+            navigationElement.menu("recalculateHeight");
+            hiddenElements.each(function(i) {
+                $(this).attr("style", styles[i]);
+            });  
+        },
+        
+        showBreadcrumbs: function() {
+            $(navigationElement).menutab.hidden = true;
+            $(breadcrumbElements).each(function() {
+                this.bind("click", methods.showMenu);    
+            });
+            var allLiElementsNotBreadcrumbs = methods.getAllLiElementsNotBreadcrumbs();
+            allLiElementsNotBreadcrumbs.removeClass("marked");
             navigationElement.addClass("breadcrumbs");
-            liElements.slideUp("normal", function() {
+            var hasRun = false;
+            allLiElementsNotBreadcrumbs.slideUp("normal", function() {
                 if(!hasRun) {
                     navigationElement.menu("recalculateHeight");
                     hasRun = true;
                 }
             });
         },
+        
 
-        cleanKitchenTable: function() {
-            $(".breadcrumb").unbind("click", methods.cleanKitchenTable);
+        showMenu: function() {
+            $(navigationElement).menutab.hidden = false;
+            $(breadcrumbElements).each(function() {
+                this.unbind("click", methods.showMenu);  
+            });
             navigationElement.removeClass("breadcrumbs");
-            methods.unmarkAll();
+            var allLiElementsNotBreadcrumbs = methods.getAllLiElementsNotBreadcrumbs();
+            allLiElementsNotBreadcrumbs.each(function() {
+                methods.unmark($(this));
+            });
             methods.markBreadcrumbs();
-            var liElements = $(".menulist > li:not(.breadcrumb), li.breadcrumb li:not(.breadcrumb)", $(".menulist").parent());
-            //var liElements = $("li:not(.breadcrumb)",$(".menulist"));
+            methods.recalculateHeightWhileHidden(allLiElementsNotBreadcrumbs);
             var i = 0;
-            
-            // "show" li elements for height calc
-            var styles = [];
-            liElements.each(function(i, el) {
-                styles[i] = $(el).attr("style");
-            });
-            liElements.css({
-                visibility: "hidden",
-                display: "block"
-            });
-            
-            navigationElement.menu("recalculateHeight");
-            
-            liElements.each(function(i, el) {
-                $(el).attr("style", styles[i]);
-            });
-            
-            liElements.slideDown(/*function() {
+            allLiElementsNotBreadcrumbs.slideDown(function() {
                 i = i + 1;
-                if (i == liElements.length) {
+                if (i == allLiElementsNotBreadcrumbs.length) {
+                    // Recalculate height after last element has been shown
                     navigationElement.menu("recalculateHeight");
                 }
-            }*/);
+            });
         },
         
-        closeMenu: function() {
-            methods.eatBread();
-            $(navigationElement).menutab.hidden = true;
+        refreshMenu: function() {
+            var allLiElementsNotBreadcrumbs = methods.getAllLiElementsNotBreadcrumbs();
+            allLiElementsNotBreadcrumbs.each(function() {
+                methods.unmark($(this));
+            });
+            methods.markBreadcrumbs();
+            methods.recalculateHeightWhileHidden(allLiElementsNotBreadcrumbs);
         },
 
         bindEvents: function() {
             $(navigationElement).bind( {
-                changeTab: function(event, chosenTab, currentTab) {
-                    if (currentTab === 0) {
-                        methods.unmarkAll();
-                        methods.markBreadcrumbs();
-                        navigationElement.menu("recalculateHeight");
-                    }
-                },
-                
                 launch: function(event, chosenTab, currentTab) {
-                    if (chosenTab !== 0) {
+                    if (chosenTab !== options.tabIndex) {
+                        // Don't care if other tabs are clicked..
                         return;
                     }
                     
-                    methods.markBreadcrumbs();
                     if ($(navigationElement).menutab.hidden) {
-                        methods.cleanKitchenTable();
-                        $(navigationElement).menutab.hidden = false;
+                        methods.showMenu();
                     }
                     else {
                         if (chosenTab == currentTab) {
                             event.preventDefault();
-                            methods.closeMenu();
+                            methods.showBreadcrumbs();
+                        }
+                        else {
+                            methods.refreshMenu();
                         }
                     }
                 },
                 
                 outerClick: function() {
-                    methods.markBreadcrumbs();
-                    methods.closeMenu();
-                    if (navigationElement.menutab("getActive") && navigationElement.menutab("getActive").index != 0) {
-                        navigationElement.menutab("changeTab", 0);
+                    if (navigationElement.menutab("getActive") && navigationElement.menutab("getActive").index != options.tabIndex) {
+                        methods.getAllLiElementsNotBreadcrumbs().hide();
+                        navigationElement.menutab("changeTab", options.tabIndex);
                     }
+                    methods.showBreadcrumbs();
                 }
             });
         }
@@ -156,5 +185,4 @@
             $.error('Method ' + method + ' does not exist.');
         }   
     }
-
 })(jQuery);

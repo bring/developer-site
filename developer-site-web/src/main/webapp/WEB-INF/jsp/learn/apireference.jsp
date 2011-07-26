@@ -71,7 +71,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             var navElement = $("#navigation");
-            navElement.menutab().menu().menuBreadcrumbs();
+            navElement.menu().menuBreadcrumbs().menutab();
 
             // Twitter
             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
