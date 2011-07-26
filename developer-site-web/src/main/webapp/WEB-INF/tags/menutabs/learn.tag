@@ -32,6 +32,10 @@
             </ul>
         </li>
         
+        <li>
+            <a class="menubutton" href="/learn/java-client-api.html">Java client API</a>
+        </li>
+        
 <!--         <li><a class="menubutton" href="#">Postal code validate API</a></li> -->
         
 <!--         <li><a class="menubutton" href="#">Post office chooser API</a></li> -->
