@@ -97,7 +97,7 @@
 				JSONP
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.json?searchForText=KIWI&callback=MyCallback
+				api/pickuppoint/postalcode/1407.json?searchForText=KIWI&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
@@ -132,7 +132,7 @@
 				JSONP
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&callback=MyCallback
+				api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
@@ -166,7 +166,7 @@
 				JSONP
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&callback=MyCallback
+				api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
@@ -200,7 +200,7 @@
 				JSONP
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.json?openOnOrAfter=0800&callback=MyCallback
+				api/pickuppoint/postalcode/1407.json?openOnOrAfter=0800&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
