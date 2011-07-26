@@ -5,13 +5,14 @@
 <html>
 <head>
     <misc:contenttype />
-    <misc:title value="${article.title}" />
     <misc:css />
+    <misc:title value="${article.title}" />
 </head>
 
-<body>
+<body class="page-article">
     <div class="wrapper">
         <misc:header />
+        
         <div class="main">
             <menutabs:showMenu cssClass="menutab" />
             <div class="content group">
@@ -22,23 +23,10 @@
                 <misc:socialfeed />
             </div>
         </div>
+        
     </div>
-    <misc:footer />
     
+    <misc:footer />
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
-    <script type="text/javascript" src="/js/navigation/navigation.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#navigation").navigation({mode: "breadcrumbs"});
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote>' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
-        });
-    </script>
 </body>
 </html>

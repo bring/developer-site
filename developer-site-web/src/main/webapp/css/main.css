@@ -104,6 +104,10 @@ body:before {
     box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
 }
 
+.home-content {
+    font-size: 0.75em;
+}
+
 .header {
 	font-size: 0.75em;
     background-color: #fff;

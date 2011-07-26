@@ -12,27 +12,27 @@
     <misc:css />
 </head>
 
-<body>
+<body class="page-apireference">
     <div class="wrapper">
         <misc:header />
+        
         <div class="main">
             <menutabs:showMenu cssClass="menutab" />
-            
             <div class="content group">
                 <div class="article">
                     <h1>API Reference</h1>
                     
-                    <c:forEach items="${document.parameters}" var="myElement" >
-                        <h2>${myElement.title}</h2>
+                    <c:forEach items="${document.parameters}" var="parameter" >
+                        <h2>${parameter.title}</h2>
                         
-                        ${myElement.description}
+                        ${parameter.description}
                         
-                        <c:if test="${!empty myElement.default}">
-                            <p>Default: <code>${myElement.default}</code></p>
+                        <c:if test="${!empty parameter.default}">
+                            <p>Default: <code>${parameter.default}</code></p>
                         </c:if>
                         
                         <div class="codetabs">
-                            <c:forEach items="${myElement.examples}" var="example">
+                            <c:forEach items="${parameter.examples}" var="example">
                                 <h3><a href="#${example.type}">${example.title}</a></h3>
                                 <div data-tab="${example.type}" class="tab">
                                     <c:if test="${!empty example.request}">
@@ -52,41 +52,12 @@
                         </div>
                     </c:forEach>
                 </div>
+                <misc:socialfeed />
             </div>
         </div>
     </div>
     
     <misc:footer />
-    
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
-    <script type="text/javascript" src="/js/lib/jquery.cookie.js"></script>
-    <script type="text/javascript" src="/js/navigation/breadcrumbs.js"></script>
-    <script type="text/javascript" src="/js/navigation/navigation.js"></script>
-    <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
-    <script type="text/javascript" src="/js/codetabs.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#navigation").navigation({mode: "breadcrumbs"});
-
-            // Twitter
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote>' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
-            
-
-            // Show the correct tab on init
-            $(".codetabs").codetabs({
-				cookies : true,
-				defaultTab : ""
-			});
-            
-        });
-    </script>
 </body>
-
 </html>

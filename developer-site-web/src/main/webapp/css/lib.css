@@ -111,7 +111,6 @@ html[xmlns] .group {
 }
 
 .box-text {
-    font-size: 0.75em;
     padding: 10px;
     background-color: #f0f0f1;
 }
@@ -153,7 +152,6 @@ ul.avatar-list li:last-child {
 }
 
 .avatar-list-footer {
-    font-size: 0.75em;
     min-height: 0;
     margin: 10px solid red;
 }

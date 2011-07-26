@@ -5,3 +5,4 @@
 <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
 <link rel="stylesheet" type="text/css" href="/css/widget.css" />
 <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="/css/showcase.css" />

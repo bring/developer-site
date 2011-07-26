@@ -6,24 +6,18 @@
 
 <head>
     <misc:contenttype />
+    <misc:css />
     <misc:title value="Home" />
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/lib.css" />
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/css/showcase.css" />
-    <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
 </head>
 
-<body>
+<body class="page-home">
 	<div class="wrapper">
 	    <misc:header />
-	    
+        
 	    <div class="main group">
             <misc:showcase />
-            
             <menutabs:showMenu cssClass="box" />
-            
-            <div class="group">
+            <div class="group home-content">
                 <misc:quote />
                 <misc:popularwidgets />
                 <div class="box span-2 last">
@@ -31,25 +25,9 @@
                 </div>
             </div>
 		</div>
+        
 	</div>
-    
 	<misc:footer />
-    
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/navigation/menutab-hider.js"></script>
-    <script type="text/javascript" src="/js/navigation/navigation.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#navigation").navigation({mode: "hidden"});
-            $("#twittercontent").performTwitterSearch(1, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote class="twittercontent">' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
-        });
-    </script>
 </body>
-
 </html>
