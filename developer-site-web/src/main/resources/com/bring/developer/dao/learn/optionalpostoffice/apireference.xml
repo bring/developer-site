@@ -77,7 +77,7 @@
 			Filter results by text
         </Title>
 		<Description><![CDATA[
-            <p>Is specified by adding <code>?searchForText=&lt;text&gt;</code></p>
+            <p>Is specified by adding <code>?searchForText=&lt;text&gt;</code> to the URL.</p>
             <p>You can search by name, address, city, municipality name, county name or location, and the search string can include partial names / criterias.</p>
             <p>Example below: Search for text "KIWI" near postal code 1407.</p>
         ]]></Description>
@@ -111,11 +111,11 @@
 			Filter results by opening times
         </Title>
 		<Description><![CDATA[
-            <p>Is spesified by adding <code>?openingHoursSearchType=&lt;day&gt;</code>
-            <p>Requires that the place is open on the day (s) as specified.</p>
-            <p>If you want you can also send openOnOrBefore and / or openOnOrAfter, then apply it in the day specified in this parameter.</p>
-            <p>The options are ALL_WEEKDAYS (default), MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY</p>
-            <p>Example: ?openingHoursSearchType=SUNDAY</p>
+            <p>Is spesified by adding <code>?openingHoursSearchType=&lt;day&gt; to the URL.</code>
+            <p>Requires that the place is open on the day(s) as specified.</p>
+            <p>If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even more.</p>
+            <p><code>&lt;day&gt; = ALL_WEEKDAYS (default) | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY</code></p>
+            <p>Example below: opening hours on SUNDAY near postal code 1407</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
@@ -147,10 +147,10 @@
 			Filter results by opening hours (on or before)
         </Title>
 		<Description><![CDATA[
-		    <p>Is spesified by adding <code>?openOnOrBefore=&lt;HHMM&gt;</code>
+		    <p>Is spesified by adding <code>?openOnOrBefore=&lt;time&gt;</code> to the URL.</p>
             <p>Requires that the place is open on the specified time.</p>
-            <p>Format HHMM</p>
-            <p>Example: ?openOnOrBefore=0800</p>
+            <p><code>&lt;time&gt; format: HHMM</p>
+            <p>Example below: Open on or before 0800 near postal code 1407</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
@@ -182,17 +182,17 @@
 			Filter results by opening hours (on or after)
         </Title>
 		<Description><![CDATA[
-		    <p>Is spesified by adding <code>?openOnOrAfter=&lt;HHMM&gt;</code>
+            <p>Is spesified by adding <code>?openOnOrAfter=&lt;time&gt;</code> to the URL.</p>
             <p>Requires that the place is open on the specified time.</p>
-            <p>Format HHMM</p>
-            <p>Example: ?openOnOrAfter=0800</p>
+            <p><code>&lt;time&gt; format: HHMM</p>
+            <p>Example below: Open on or after 2200 near postal code 1407</p>
         ]]></Description>
 		<Example type="xml">
 			<Title>
 				XML
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.xml?openOnOrAfter=0800
+				api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200
 			</Request>
 		</Example>
 		<Example type="json">
@@ -200,7 +200,7 @@
 				JSON
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.json?openOnOrAfter=0800
+				api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200
 			</Request>
 		</Example>
 		<Example type="jsonp">
@@ -208,7 +208,7 @@
 				JSONP
             </Title>
 			<Request>
-				api/pickuppoint/postalcode/1407.json?openOnOrAfter=0800&amp;callback=MyCallback
+				api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callback=MyCallback
 			</Request>
 		</Example>
 	</Parameter>
