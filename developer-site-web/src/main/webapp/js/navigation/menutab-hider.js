@@ -4,6 +4,7 @@
         var launchers = navElement.menutab("getLaunchers");
         
         var hide = function() {
+            navElement.menutab("stop");
             var launchers = navElement.menutab("getLaunchers");
             $(launchers).removeClass("menutab");
             $(launchers).addClass("box");
@@ -13,10 +14,6 @@
         
         this.bind({
             launch: function(event, chosenTab, currentTab) {
-                if (navElement.menutab("isBusy")) {
-                    return;
-                }
-                
                 if (navElement.menutab.hidden) {
                     navElement.menu("unmarkAll");
                     navElement.menu("recalculateHeight", true);
@@ -37,9 +34,6 @@
             },
             
             outerClick: function(event) {
-                if (navElement.menutab("isBusy")) {
-                    return;
-                }
                 hide();
             }
         });
