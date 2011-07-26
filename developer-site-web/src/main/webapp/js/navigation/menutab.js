@@ -148,9 +148,9 @@
             $(tabs).each(function(i,tab) {
                 $(tab).stop(false,true);
             });
-            $(launchers).each(function(i,launcher) {
-                methods.unmarkLauncher(launcher);
-            });
+//            $(launchers).each(function(i,launcher) {
+//                methods.unmarkLauncher(launcher);
+//            });
         },
         
         unmarkLauncher: function(launcher) {
