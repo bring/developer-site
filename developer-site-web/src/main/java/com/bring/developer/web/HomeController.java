@@ -41,6 +41,11 @@ public class HomeController {
         return "/download/widget/optionalpostoffice";
     }
     
+    @RequestMapping(value = "/download/widget/postalcodevalidation/index.hmtl")
+    public String postalcodevalidation() {
+        return "/download/widget/postalcodevalidation/index";
+    }
+    
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {
