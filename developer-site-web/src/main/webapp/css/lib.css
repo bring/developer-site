@@ -368,6 +368,9 @@ ul.avatar-list li:last-child {
     position: absolute;
     display: block;
     content: " ";
+    
+    /* css3 */
+    /* box-shadow: 0 0 3px #aaa;  TODO shadow left and right */
 }
 
 .menutab-selected {
@@ -447,7 +450,7 @@ li.marked > a {
 
 li a.current-page:after {
     right: 5px;
-    top: 1px;
+    top: 0;
     position: absolute;
     content: "\02022";
     font-size: 2.75em;

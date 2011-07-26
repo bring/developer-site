@@ -30,7 +30,7 @@
     
     <misc:jqueryblob />
     <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function() {
             var navElement = $("#navigation");
             navElement.menu();

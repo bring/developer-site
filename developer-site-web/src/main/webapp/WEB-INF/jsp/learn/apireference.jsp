@@ -12,7 +12,8 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="/css/lib.css" />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="/css/jquery.snippet.css" />
+    <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
+    <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
 </head>
 
 <body>
@@ -62,27 +63,26 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/navigation/menutab-breadcrumbs.js"  />
-    <script type="text/javascript" src="/js/jquery.snippet.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/navigation/menu-breadcrumbs.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
-    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-
             var navElement = $("#navigation");
             navElement.menu();
             navElement.menutab();
             navElement.menuBreadcrumbs();
 
             // Twitter
-            $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
-                return '<li class="group"><img class="avatar" src="' + 
-                image + '"/><div class="avatar-list-text"><div class="question-title">' +
-                user + '</div><div class="question-text"><blockquote>' + 
-                text + '</blockquote></div>' + '<div class="datetime">' + 
-                time + '</div></div></li>';
-            });
+//             $("#twittercontent").performTwitterSearch(3, function(image, user, text, time){
+//                 return '<li class="group"><img class="avatar" src="' + 
+//                 image + '"/><div class="avatar-list-text"><div class="question-title">' +
+//                 user + '</div><div class="question-text"><blockquote>' + 
+//                 text + '</blockquote></div>' + '<div class="datetime">' + 
+//                 time + '</div></div></li>';
+//             });
             
 
             // Show the correct tab on init

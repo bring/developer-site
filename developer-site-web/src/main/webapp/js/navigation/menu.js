@@ -22,7 +22,9 @@
                 menuElement.css("height", maxHeight);
             }
             else {
-                menuElement.stop().animate({
+                navigationElement.menutab("stop");
+                navigationElement.menutab("markActive");
+                menuElement.animate({
                     padding: "10px 0",
                     height: maxHeight 
                 });
@@ -31,10 +33,8 @@
 		},
 	    
 	    updateMenuPath: function(element) {
-	        console.log("updateMenuPath");
             var context = $(element).parentsUntil("li.marked");
             $(".marked", context).removeClass("marked");
-            console.log($(element).parent());
             $(element).parent().addClass("marked");
             methods.recalculateHeight();
 	    },

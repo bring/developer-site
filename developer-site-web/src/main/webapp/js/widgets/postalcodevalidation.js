@@ -1,13 +1,13 @@
 (function($){
 
-	var inputField;
-	
+    var inputField = $('#postnummerInput');
+    var outputElement = $('#postnummerResult');
+    
 	var methods = {
 			
 		init: function(){
-			inputField = this;
 			methods.bindEvent();
-		}
+		},
 			
 		bindEvent: function(){			
 			inputField.keyup(function() {

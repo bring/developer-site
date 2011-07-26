@@ -12,8 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link rel="stylesheet" type="text/css" href="/css/downloadmenu.css" />
     <link rel="stylesheet" type="text/css" href="/css/widget.css" />
-    <link rel="stylesheet" type="text/css" href="/css/jquery.snippet.css" />
-
+    <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
 
 </head>
 
@@ -32,6 +31,9 @@
 							</div>
 							<div data-tab="preview" class="tab previewtab">
                                 <!-- Widget is inputed here -->
+								<form>
+								   <input type="text" id="postnummerInput" style="width: 4em;"/>  <span id="postnummerResult"> </span>
+								</form>
 							</div>
 							<div class="widget-tabs">
 								<a href="#code" class="widget-tab">Code</a>
@@ -61,11 +63,12 @@
     <misc:footer />
     
     <misc:jqueryblob />
-    <script type="text/javascript" src="/js/jquery.snippet.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
+    <script type="text/javascript" src="/js/lib/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
-    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/codetabs.js"></script>
-	<script src="/js/navigation/downloadmenu-hider.js"></script>
+	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
+	<script type="text/javascript" src="/js/widgets/postalcodevalidation.js"></script>
     <script>
         $(document).ready(function() {
 	
@@ -86,12 +89,8 @@
                 time + '</div></div></li>';
             });
 		    
-            // Dynamic widget generation from code example
-            var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
-            //console.debug(widgetSource);
-            var previewTab = $(".widgetpreview .previewtab");
-            /*console.debug($("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body"));*/
-            //$("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
+			$(".codetab").postalcodevalidation();
+			
         });
     </script>
 </body>

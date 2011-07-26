@@ -1,8 +1,5 @@
 package com.bring.developer.web;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.xml.bind.JAXBException;
 
 import org.springframework.stereotype.Controller;
@@ -45,7 +42,15 @@ public class HomeController {
         return "/download/widget/optionalpostoffice";
     }
     
+
+    @RequestMapping(value = "/download/widget/postalcodevalidation.html")
+    public String postalcodevalidation() {
+        return "/download/widget/postalcodevalidation/index";
+    }
+
     /// End temp
+    
+    
     @RequestMapping(value = "/download/{type}/{packageName}.html")
     public String downloadPackagePage(ModelMap model, @PathVariable String type, @PathVariable String packageName) throws JAXBException {
     	Pack pack = XmlDao.createDao(Pack.class).query(type + "/" + packageName);
@@ -53,7 +58,6 @@ public class HomeController {
     	model.put("type", type);
     	return "download/package";
     }
-    
 
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {

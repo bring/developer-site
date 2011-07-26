@@ -2,7 +2,7 @@
 <div id="learn" class="menubox">
     <ul class="menulist level1">
         <li>
-            <a class="menubutton" href="/learn/shippingguide/index.html">Shipping guide API</a>
+            <a class="menubutton" href="#">Shipping guide API</a>
             <ul class="level2">
                  <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
@@ -21,18 +21,12 @@
         <li>
             <a class="menubutton" href="#">Tracking API beta</a>
             <ul class="level2">
-                <li>
-                    <a class="menubutton" href="/learn/tracking/introduction.html">Introduction</a>
-                </li>
+                <li><a class="menubutton" href="/learn/tracking/introduction.html">Introduction</a></li>
             </ul>
         </li>
         
-        <li>
-            <a class="menubutton" href="#">Postal code validate API</a>
-        </li>
+<!--         <li><a class="menubutton" href="#">Postal code validate API</a></li> -->
         
-        <li>
-            <a class="menubutton" href="#">Post office chooser API</a>
-        </li>
+<!--         <li><a class="menubutton" href="#">Post office chooser API</a></li> -->
     </ul>
 </div>

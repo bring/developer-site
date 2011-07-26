@@ -44,8 +44,8 @@
     <misc:footer />
     
     <misc:jqueryblob />
-	<script src="/js/navigation/downloadmenu-hider.js"></script>
-    <script>
+	<script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
+    <script type="text/javascript">
         $(document).ready(function() {
 	
 			var navElement = $("#navigation");

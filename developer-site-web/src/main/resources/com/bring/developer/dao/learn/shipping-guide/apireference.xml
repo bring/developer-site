@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Document>
+<Api>
 	<Parameter>
 		<Title>
 			Postal code
@@ -35,7 +35,8 @@
 			<Title>
 				Java
             </Title>
-			<Content><![CDATA[
+			<Content>
+<![CDATA[
 <pre class="java" data-highlightlines="7,8">
 	// Initialize library
 	String clientId = "www.mywebshop.com";
@@ -54,11 +55,13 @@
     // Print out
     System.out.println("Expected delivery days: " + expectedDeliveryDays);
 </pre>
+
 Example output
 <pre>
     Expected delivery days: 2
 </pre>
-            ]]></Content>
+]]>
+            </Content>
 		</Example>
 	</Parameter>
 	<Parameter>
@@ -678,7 +681,6 @@ Example output
 Example output
 <pre>
     Price: 78.00 NOK
-
 </pre>
             ]]></Content>
 		</Example>
@@ -702,4 +704,4 @@ Example output
             ]]></Content>
 		</Example>
 	</Parameter>
-</Document>
+</Api>
