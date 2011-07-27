@@ -25,6 +25,7 @@ $(document).ready(function() {
     if (isPageType("home")) {
         $("#navigation").navigation({mode: "hidden"});
         $("#twittercontent").performTwitterSearch(1, twitterView);
+        $(".big-banner").bringBanner();
     }
     
     else if (isPageType("apireference")) {
@@ -38,6 +39,11 @@ $(document).ready(function() {
         $(".codetabs").codetabs({
             cookies : true,
             defaultTab : ""
+        });
+        
+        $(".toc").tableOfContents($(".article"), {
+        	startLevel: 2,
+        	depth: 1
         });
     }
     

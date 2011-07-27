@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.bring.developer.dao.XmlNormalizeString;
 import com.bring.developer.dao.XmlNormalizeURL;
+import com.bring.developer.response.Media;
 import com.bring.developer.response.Person;
 import com.bring.developer.response.Site;
 
@@ -22,6 +23,7 @@ public class Pack {
 	private Install installSteps;
 	private List<Person> persons;
 	private List<Site> whoIsUsing;
+	private List<Media> medias;
 	
 	@XmlElement(name = "Title")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
@@ -93,6 +95,14 @@ public class Pack {
 		this.whoIsUsing = whoIsUsing;
 	}
 	
+	@XmlElement(name = "Media")
+	public List<Media> getMedias() {
+		return medias;
+	}
+	public void setMedias(List<Media> medias) {
+		this.medias = medias;
+	}
+	
 	
 	public String getHandle() {
 		return getTitle().toLowerCase().replace(" ", "");
@@ -100,5 +110,16 @@ public class Pack {
 	
 	public Person getPerson() {
 		return getPersons().get(0);
+	}
+	
+	public Media getPreviewMedia() {
+		Media media = null;
+		for (Media m : getMedias()) {
+			if(m.getRole() != null && m.getRole().equals("preview")) {
+				media = m;
+				break;
+			}
+		}
+		return media;
 	}
 }

@@ -5,7 +5,7 @@
         </h1>
         
         <ul class="global-tabs group">
-        	<li><a href="http://www.bring.com">BACK TO BRING.COM</a></li>
-        	<li><a class="global-tabs-chosen" href="/home.html">DEVELOPER.BRING.COM</a></li>
+        	<li><a href="http://www.bring.com">Bring.com</a></li>
+        	<li><a class="global-tabs-chosen" href="/home.html">developer.bring.com</a></li>
         </ul>
 </div>

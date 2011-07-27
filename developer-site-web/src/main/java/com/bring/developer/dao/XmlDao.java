@@ -37,7 +37,6 @@ public class XmlDao<T> {
     	while(scanner.hasNextLine()) {
     		String file = scanner.nextLine();
     		if(file.endsWith(".xml")) {
-    			System.out.println("WTF: " + file);
     			file = file.substring(0, file.length() - ".xml".length());
     			typesList.add(XmlDao.createDao(types).query(daosDir + "/" + file));
     		}
