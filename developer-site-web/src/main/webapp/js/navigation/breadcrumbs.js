@@ -105,7 +105,8 @@
             allLiElementsNotBreadcrumbs.slideUp("normal");
         },
         
-        showMenu: function() {
+        showMenu: function(event) {
+            event.preventDefault();
             hidden = false;
             $(breadcrumbElements).each(function() {
                 this.unbind("click", methods.showMenu);  

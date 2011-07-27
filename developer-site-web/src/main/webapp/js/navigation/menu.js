@@ -29,7 +29,7 @@
 	    
 	    getHeightOfOneElement: function() {
 	        if (heightOfOneElement == undefined) {
-	            heightOfOneElement = $($("li:visible", menulistElement)[0]).height();
+	            heightOfOneElement = $($("li:visible", menulistElement)[0]).outerHeight(true);
 	        }
 	        return heightOfOneElement;
 	    },
@@ -41,7 +41,7 @@
 			    maxHeight = Math.max(maxHeight, $(ul).children().length*methods.getHeightOfOneElement());
 			});
 			
-			var height = maxHeight + 10; 
+			var height = maxHeight; 
             if (hidden) {
                 menuElement.css("height", height);
             }
