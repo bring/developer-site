@@ -445,7 +445,7 @@ ul.avatar-list li:last-child {
     /*color: #79b54b;*/
 }
 
-.menubutton {
+.menubutton, .menubutton:focus {
 	padding: 12px 10px 8px 10px;
 	height: 20px;
     margin: 0 10px;
@@ -525,6 +525,11 @@ ul.avatar-list li:last-child {
 .menulist .marked > .menubutton {
 	color: #fff;
     background-color: #999;
+}
+
+.breadcrumbs ul {
+    display: block;
+    visibility: visible;
 }
 
 .breadcrumbs .breadcrumb > .menubutton {

@@ -6,6 +6,7 @@
 	};
     var menuElement = $("#learn");
     var menulistElement = $(".menulist");
+    var heightOfOneElement;
 	
 	var methods = {
 	    init: function(optionsArg) {
@@ -26,21 +27,37 @@
             });
 	    },
 	    
+	    getHeightOfOneElement: function() {
+	        if (heightOfOneElement == undefined) {
+	            heightOfOneElement = $($("li:visible", menulistElement)[0]).height();
+	        }
+	        return heightOfOneElement;
+	    },
+	    
 		recalculateHeight: function(hidden) {
             var maxHeight = 0;
 			$(".marked > ul", menulistElement).add(menulistElement).each(function(i, ul) {
-            	maxHeight = Math.max(maxHeight, $(ul).actual("outerHeight"));
+//            	maxHeight = Math.max(maxHeight, $(ul).actual("outerHeight"));
+			    maxHeight = Math.max(maxHeight, $(ul).children().length*methods.getHeightOfOneElement());
 			});
+			
+			var height = maxHeight + 10; 
             if (hidden) {
-                menuElement.css("height", maxHeight);
+                menuElement.css("height", height);
             }
             else {
-                methods.slideToHeight(maxHeight);
+                methods.slideToHeight(height);
             }
         	return this;
 		},
 	    
 	    updateMenuPath: function(linkElement) {
+	        var event = jQuery.Event("updateMenuPath");
+	        navigationElement.trigger(event);
+	        if (event.isDefaultPrevented()) {
+	            return;
+	        }
+	        
             var context = $(linkElement).parentsUntil(".marked");
             $(".marked", context).removeClass("marked");
             $(linkElement).parent().addClass("marked");

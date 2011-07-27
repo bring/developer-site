@@ -6,10 +6,10 @@
 <%@ attribute name="enableBreadcrumbs" required="false" type="java.lang.String" %>
 
 <div id="navigation" class="${enableBreadcrumbs ? 'breadcrumbs' : ''}">
-    <misc:launchers cssClass="${cssClass}" />
+    <menutabs:launchers cssClass="${cssClass}" />
     <div class="navigation-tabs">
-        <menutabs:learn />
-        <menutabs:download />
-        <menutabs:talk />
+        <menutabs:tab-learn />
+        <menutabs:tab-download />
+        <menutabs:tab-talk />
     </div>
 </div>
