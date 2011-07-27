@@ -10,8 +10,10 @@
 			user to choose another post office than the one closest to their shipping address.</p>
 	]]></Description>
 	<Person role="author">
-		<Name>Bring developer</Name>
+		<Name>Bring Developer</Name>
 		<Company>Bring</Company>
+		<Email>fraktguide@bring.no</Email>
+		<Url>http://developer.bring.com</Url>
 	</Person>
 	<Install>
 		<Step><![CDATA[

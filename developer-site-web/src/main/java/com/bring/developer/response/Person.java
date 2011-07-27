@@ -1,16 +1,25 @@
 package com.bring.developer.response;
 
+import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+import org.apache.commons.codec.binary.Hex;
+
 import com.bring.developer.dao.XmlNormalizeString;
+import com.bring.developer.dao.XmlNormalizeURL;
 
 public class Person {
 
 	private String role;
 	private String name;
 	private String company;
+	private String email;
+	private URL url;
 	
 	@XmlAttribute(name = "role")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
@@ -39,4 +48,28 @@ public class Person {
 		this.company = company;
 	}
 	
+	@XmlElement(name = "Email")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	@XmlElement(name = "Url")
+	@XmlJavaTypeAdapter(XmlNormalizeURL.class)
+	public URL getUrl() {
+		return url;
+	}
+	public void setUrl(URL url) {
+		this.url = url;
+	}
+	
+	
+	public String getAvatarUrl() throws NoSuchAlgorithmException {
+		String email = getEmail() == null ? "" : getEmail().trim().toLowerCase();
+		String hash = Hex.encodeHexString(MessageDigest.getInstance("MD5").digest(email.getBytes()));
+		return "http://www.gravatar.com/avatar/" + hash + ".jpg?d=identicon";
+	}
 }

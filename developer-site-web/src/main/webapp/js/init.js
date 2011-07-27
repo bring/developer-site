@@ -29,7 +29,7 @@ $(document).ready(function() {
     
     else if (isPageType("apireference")) {
         $("#navigation").navigation({mode: "breadcrumbs"});
-        $("#twittercontent").performTwitterSearch(3, twitterView); 
+//        $("#twittercontent").performTwitterSearch(3, twitterView); 
         
         // Show the correct tab on init
         $(".codetabs").codetabs({
@@ -40,7 +40,7 @@ $(document).ready(function() {
     
     else if (isPageType("article")) {
         $("#navigation").navigation({mode: "breadcrumbs"});
-        $("#twittercontent").performTwitterSearch(3, twitterView); 
+//        $("#twittercontent").performTwitterSearch(3, twitterView); 
         $(".codetabs").codetabs({
         	defaultTab : "xml",
         	cookies : true
@@ -49,12 +49,12 @@ $(document).ready(function() {
     
     else if (isPageType("package-overview")) {
         $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
-        $("#twittercontent").performTwitterSearch(3, twitterView); 
+//        $("#twittercontent").performTwitterSearch(3, twitterView); 
     }
     
     else if(isPageType("package")) {
         $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
-        $("#twittercontent").performTwitterSearch(3, twitterView);
+//        $("#twittercontent").performTwitterSearch(3, twitterView);
         $(".widgetpreview").codetabs({defaultTab : "preview"});         
                     
         // Dynamic widget generation from code example

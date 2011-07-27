@@ -14,7 +14,7 @@
 
 <p>
     If the query string is a sender's reference, then it's recommended to filter on the sender's 
-    id ("akt�rnummer"), <br/> if available. Then the results will be unique for that sender. 
+    id ("aktornummer"), <br/> if available. Then the results will be unique for that sender. 
     This is done with the parameter aktornummer, e.g. <code>&aktornummer=123.</code>
 </p>
 
