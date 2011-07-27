@@ -165,6 +165,13 @@ pre::-webkit-scrollbar-thumb:horizontal {
     padding: 0 20px 20px 10px;
 }
 
+.toc-wrap {
+	margin-top: 40px;
+}
+.toc {
+	padding-left: 15px;
+}
+
 pre p,
 pre address,
 pre dl,

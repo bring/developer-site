@@ -6,6 +6,7 @@
 <script type="text/javascript" src="/js/lib/jquery.outerclick.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/lib/jquery.tableofcontents.js"></script>
 <script type="text/javascript" src="/js/navigation/menutab.js"></script>
 <script type="text/javascript" src="/js/navigation/menu.js"></script>
 <script type="text/javascript" src="/js/twitter.js"></script>

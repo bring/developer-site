@@ -37,6 +37,11 @@ $(document).ready(function() {
             cookies : true,
             defaultTab : ""
         });
+        
+        $(".toc").tableOfContents($(".article"), {
+        	startLevel: 2,
+        	depth: 1
+        });
     }
     
     else if (isPageType("article")) {

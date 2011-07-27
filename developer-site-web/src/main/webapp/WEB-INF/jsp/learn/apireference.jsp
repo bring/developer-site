@@ -53,6 +53,7 @@
                     </c:forEach>
                 </div>
                 <div class="span-2 last">
+                	<misc:toc></misc:toc>
 					<misc:comments />
 				</div>
             </div>
