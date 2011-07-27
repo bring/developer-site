@@ -83,6 +83,7 @@ h1, h2, h3, h4 {
     margin-bottom: 10px;
     color: #565656;
     text-transform: uppercase;
+    line-height: 120%;
 }
 
 h1 {
@@ -112,7 +113,6 @@ h4 {
 p {
     line-height: 140%;
     padding-bottom: 1em;
-    text-align: justify;
 }
 
 pre {
@@ -189,7 +189,7 @@ li blockquote {
 
 .article ol {
     padding-left: 15px;
-    margin: 10px 0;
+    margin-bottom: 1em;
 }
 
 .article ul, .article ol {
@@ -197,7 +197,9 @@ li blockquote {
 }
 
 .article ul {
-    list-style: none;
+    list-style-type: disc;
+    padding-left: 15px;
+    margin-bottom: 1em;
 }
 
 

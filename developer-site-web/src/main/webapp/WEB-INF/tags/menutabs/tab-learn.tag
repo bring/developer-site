@@ -1,15 +1,15 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div id="learn" class="menubox">
-    <ul class="menulist level1">
+    <ul class="menulist">
         <li>
             <a class="menubutton" href="#">Shipping guide API</a>
-            <ul class="level2">
+            <ul>
                  <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
-                    <ul class="level3">
-                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Fetch single parcel info</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Fetch multiple parcels info</a></li>
+                    <ul>
+<!--                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li> -->
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Single parcel example</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Multi-parcels example</a></li>
                     </ul>
                 </li>
                 <li>
@@ -20,20 +20,20 @@
         
         <li>
             <a class="menubutton" href="#">Tracking API beta</a>
-            <ul class="level2">
+            <ul>
                 <li><a class="menubutton" href="/learn/tracking/introduction.html">Introduction</a></li>
             </ul>
         </li>
         
         <li>
             <a class="menubutton" href="#">Optional Post Office</a>
-            <ul class="level2">
+            <ul>
                 <li><a class="menubutton" href="/learn/optionalpostoffice/apireference.html">API Reference</a></li>
             </ul>
         </li>
         
         <li><a class="menubutton" href="#">Postal code API</a>
-            <ul class="level2">
+            <ul>
                 <li><a class="menubutton" href="/learn/postalcode/apireference.html">API Reference</a></li>
             </ul>
         </li>

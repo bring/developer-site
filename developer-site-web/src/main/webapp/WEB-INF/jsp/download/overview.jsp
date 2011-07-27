@@ -21,7 +21,15 @@
 				<div class="overview-packages">
 					<c:forEach var="pack" items="${packages}">
 						<a class="packagebox" href="/download/${overview.type}/${pack.handle}.html">
-							<img src="/img/tempwidget.png" alt="Preview" />
+							<c:choose>
+								<c:when test="${!empty pack.medias and !empty pack.previewMedia}">
+									<img src="/media/${overview.type}/${pack.handle}/${pack.previewMedia.file}" alt="Preview" />
+								</c:when>
+								<c:otherwise>
+									<img src="/img/default-widget-preview.png" alt="Preview" />
+								</c:otherwise>
+							</c:choose>
+							
 							<strong class="title">${pack.title}</strong>
 							<span class="by">by ${pack.person.name}</span>
 							<span class="from">from ${pack.person.company}</span>

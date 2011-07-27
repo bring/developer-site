@@ -22,7 +22,8 @@
 			<p>Download the code, or copy it from the "Code" tab in the preview area above.</p>
 		]]></Step>
 	</Install>
-	<PreviewCode highlightLines="7-17" height="50"><![CDATA[
+	<PreviewCode highlightLines="8-18" height="150"><![CDATA[
+<link rel="stylesheet" type="text/css" href="/media/widget/validatepostalcode/style.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
    $(document).ready(function() {
@@ -43,7 +44,17 @@
    });
 </script>
 <form>
-   Postal code: <input type="text" id="postnummerInput" style="width: 4em;"/>  <span id="postnummerResult"> </span>
+   <input type="text" id="postnummerInput" />  <span id="postnummerResult"> </span>
 </form>
 	]]></PreviewCode>
+	<Media>
+		<File>
+			postalcodevalidate-full.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			postalcodevalidate-screenshot.png
+		</File>
+	</Media>
 </Pack>

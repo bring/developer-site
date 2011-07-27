@@ -11,6 +11,7 @@ import javax.xml.bind.JAXBException;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bring.developer.response.Media;
 import com.bring.developer.response.Person;
 import com.bring.developer.response.pack.Pack;
 
@@ -74,5 +75,18 @@ public class XmlDaoPackTest {
 		assertEquals("Michael Jackson", persons.get(0).getName());
 		assertEquals("author", persons.get(0).getRole());
 		assertEquals("Neverland Kindergarden", persons.get(0).getCompany());
+	}
+	
+	@Test
+	public void shouldGetAllMedias() {
+		List<Media> medias = widget.getMedias();
+		assertEquals(2, medias.size());
+	}
+	
+	@Test
+	public void shouldGetPreviewMedia() {
+		Media previewMedia = widget.getPreviewMedia();
+		assertEquals("preview", previewMedia.getRole());
+		assertEquals("preview.png", previewMedia.getFile());
 	}
 }

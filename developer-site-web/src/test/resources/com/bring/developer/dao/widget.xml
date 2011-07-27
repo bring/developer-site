@@ -34,4 +34,14 @@ Some code
 			<Url>http://komplett.no</Url>
 		</Site>
 	</WhoIsUsing>
+	<Media>
+		<File>
+			full.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			preview.png
+		</File>
+	</Media>
 </Pack>
