@@ -32,20 +32,20 @@
 							</div>
 						</div>
 					</c:if>
+					<div class="package-description">
+						<h1>${pack.title}</h1>
+						${pack.description}
+						
+						<h2>How to install</h2>
+						<c:if test="${!empty pack.installSteps.steps}">
+							<ol class="installsteps">
+								<c:forEach var="step" items="${pack.installSteps.steps}">
+									<li>${step}</li>
+								</c:forEach>
+							</ol>
+						</c:if>
+					</div>
 					<div class="package-info">
-						<div class="package-description">
-							<h1>${pack.title}</h1>
-							${pack.description}
-							
-							<h2>How to install</h2>
-							<c:if test="${!empty pack.installSteps.steps}">
-								<ol class="installsteps">
-									<c:forEach var="step" items="${pack.installSteps.steps}">
-										<li>${step}</li>
-									</c:forEach>
-								</ol>
-							</c:if>
-						</div>
 						<div class="package-tools">
 							<c:if test="${!empty pack.download }">
 								<a href="${pack.download}" class="download-button">Download</a>
@@ -54,6 +54,16 @@
 								<a href="${pack.repository}" class="repo-button">Repository</a>
 							</c:if>
 						</div>
+						<c:if test="${!empty pack.whoIsUsing}">
+							<div class="package-whoisusing">
+								<h2>Who is using</h2>
+								<ul>
+									<c:forEach var="using" items="${pack.whoIsUsing}">
+										<a href="${using.url }">${using.title }</a>
+									</c:forEach>
+								</ul>
+							</div>
+						</c:if>
 					</div>
 				</div>
 				<div class="span-2 last">

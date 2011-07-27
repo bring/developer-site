@@ -41,10 +41,8 @@
 	<Download>
 		http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js
 	</Download>
-	<WhoIsUsing>
-		<Site>
-			<Title>Komplett</Title>
-			<Url>http://komplett.no</Url>
-		</Site>
-	</WhoIsUsing>
+	<OnSite>
+		<Title>Komplett</Title>
+		<Url>http://komplett.no</Url>
+	</OnSite>
 </Pack>
