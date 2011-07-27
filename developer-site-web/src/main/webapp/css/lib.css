@@ -422,7 +422,7 @@ ul.avatar-list li:last-child {
 }
 
 .menulist li {
-    margin: 2px 0;
+    margin: 0 0 2px 0;
 }
 
 .menulist ul {
