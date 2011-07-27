@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Api>
+    <RequestBase type="external">
+        http://fraktguide.bring.no/tracking/
+    </RequestBase>
+    <RequestBase type="internal">
+        /api/tracking/
+    </RequestBase>
     <Parameter>
         <Title>
             Postal code

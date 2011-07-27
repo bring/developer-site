@@ -5,16 +5,13 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import com.bring.developer.dao.XmlNormalizeString;
 
 
 @XmlRootElement(name = "Api")
 public class Api {
     
     private List<Parameter> parameters = new ArrayList<Parameter>();
-    private String requestBase;
+    private List<RequestBase> requestBases;
 
     @XmlElement(name = "Parameter")
     public List<Parameter> getParameters() {
@@ -34,12 +31,28 @@ public class Api {
     }
 
     @XmlElement(name ="RequestBase")
-    @XmlJavaTypeAdapter(XmlNormalizeString.class)
-    public String getRequestBase() {
-        return requestBase;
+    public List<RequestBase> getRequestBases() {
+        return requestBases;
     }
 
-    public void setRequestBase(String requestBase) {
-        this.requestBase = requestBase;
+    public void setRequestBases(List<RequestBase> requestBases) {
+        this.requestBases = requestBases;
+    }
+    
+    public RequestBase getRequestBase(String type) {
+        for (RequestBase requestBase: requestBases) {
+            if (requestBase.getType().equals(type)) {
+                return requestBase;
+            }
+        }
+        return null;
+    }
+
+    public RequestBase getExternalRequestBase() {
+        return getRequestBase("external");
+    }
+
+    public RequestBase getInternalRequestBase() {
+        return getRequestBase("internal");
     }
 }

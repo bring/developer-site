@@ -29,8 +29,11 @@ $(document).ready(function() {
     
     else if (isPageType("apireference")) {
         $("#navigation").navigation({mode: "breadcrumbs"});
-//        $("#twittercontent").performTwitterSearch(3, twitterView); 
         
+        $(".api-call").each(function() {
+            $(this).xmlExampleRequest();
+        });
+            
         // Show the correct tab on init
         $(".codetabs").codetabs({
             cookies : true,
@@ -40,7 +43,6 @@ $(document).ready(function() {
     
     else if (isPageType("article")) {
         $("#navigation").navigation({mode: "breadcrumbs"});
-//        $("#twittercontent").performTwitterSearch(3, twitterView); 
         $(".codetabs").codetabs({
         	defaultTab : "xml",
         	cookies : true
@@ -49,20 +51,15 @@ $(document).ready(function() {
     
     else if (isPageType("package-overview")) {
         $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
-//        $("#twittercontent").performTwitterSearch(3, twitterView); 
     }
     
     else if(isPageType("package")) {
         $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
-//        $("#twittercontent").performTwitterSearch(3, twitterView);
         $(".widgetpreview").codetabs({defaultTab : "preview"});         
                     
         // Dynamic widget generation from code example
         var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
-        //console.debug(widgetSource);
         var previewTab = $(".widgetpreview .previewtab");
-        /*console.debug($("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body"));*/
-        //$("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
     }
     
     else if(isPageType("package-subpage")) {

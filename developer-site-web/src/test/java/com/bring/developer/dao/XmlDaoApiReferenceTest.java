@@ -51,4 +51,13 @@ public class XmlDaoApiReferenceTest {
     public void shouldBeAbleToGetExampleDirectlyFromParameter() {
         assertTrue(trimApi.getParameter(0).getExample(0) instanceof Example);
     }
+    
+    @Test
+    public void shouldGetExternalRequestBaseFromApireferenceXml() {
+        assertEquals("http://fraktguide.bring.no/tracking/", api.getExternalRequestBase().getContent());
+    }
+    
+    @Test public void shouldGetInternalRequestBaseFromApiRefereceXml() {
+        assertEquals("/api/tracking/", api.getInternalRequestBase().getContent());
+    }
 }

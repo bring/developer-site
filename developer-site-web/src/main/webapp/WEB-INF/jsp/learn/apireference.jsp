@@ -22,7 +22,7 @@
                 <div class="article">
                     <h1>API Reference</h1>
                     
-                    <c:forEach items="${document.parameters}" var="parameter" >
+                    <c:forEach items="${apiReference.parameters}" var="parameter" >
                         <h2>${parameter.title}</h2>
                         
                         ${parameter.description}
@@ -36,13 +36,15 @@
                                 <h3><a href="#${example.type}">${example.title}</a></h3>
                                 <div data-tab="${example.type}" class="tab">
                                     <c:if test="${!empty example.request}">
-                                        <p>
-                                            Request:
-                                            <a class="request" href="${document.requestBase}${example.request}">
-                                                ${example.request}
-                                            </a>
-                                        </p>
-                                        <pre class="${example.type}"></pre>
+                                        <div class="api-call">
+                                            <p>
+                                                Request:
+                                                <a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">
+                                                    ${example.request}
+                                                </a>
+                                            </p>
+                                            <pre class="${example.type} response"></pre>
+                                        </div>
                                     </c:if>
                                     <c:if test="${!empty example.content}">
                                         ${example.content}
