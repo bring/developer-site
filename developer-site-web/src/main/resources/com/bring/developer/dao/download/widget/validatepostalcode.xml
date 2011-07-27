@@ -9,8 +9,10 @@
 			API for more info.</p>
 	]]></Description>
 	<Person role="author">
-		<Name>Bring developer</Name>
+		<Name>Bring Developer</Name>
 		<Company>Bring</Company>
+		<Email>fraktguide@bring.no</Email>
+		<Url>http://developer.bring.com</Url>
 	</Person>
 	<Install>
 		<Step><![CDATA[

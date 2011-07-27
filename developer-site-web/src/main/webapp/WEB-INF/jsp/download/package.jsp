@@ -46,6 +46,15 @@
 						</c:if>
 					</div>
 					<div class="package-info">
+						<c:forEach var="person" items="${pack.persons }">
+							<div class="person">
+								<a href="${person.url}">
+									<img class="avatar" src="${person.avatarUrl}" alt="Avatar" />
+									<span class="name">${person.name }</span>
+									<span class="company">${person.company }</span>
+								</a>
+							</div>
+						</c:forEach>
 						<div class="package-tools">
 							<c:if test="${!empty pack.download }">
 								<a href="${pack.download}" class="download-button">Download</a>
