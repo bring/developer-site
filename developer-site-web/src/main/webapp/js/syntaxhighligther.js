@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Syntax highlighter
-    $(".article pre, .widgetpreview pre").each(function(index, item) {
+    $(".article pre:not(.delay-snippet), .widgetpreview pre").each(function(index, item) {
         var lang = $(item).attr("class");
         var lines = $(item).attr("data-highlightlines");
         

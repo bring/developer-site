@@ -43,7 +43,7 @@
                                                     ${example.request}
                                                 </a>
                                             </p>
-                                            <pre class="${example.type} response"></pre>
+                                            <pre class="${example.type} response delay-snippet"></pre>
                                         </div>
                                     </c:if>
                                     <c:if test="${!empty example.content}">
