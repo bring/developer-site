@@ -117,7 +117,7 @@
 		<Description><![CDATA[
 		    <p>Is spesified by adding <code>?openOnOrBefore=&lt;time&gt;</code> to the URL.</p>
             <p>Requires that the place is open on the specified time.</p>
-            <p><code>&lt;time&gt; format: HHMM</p>
+            <p><code>&lt;time&gt;</code> format: HHMM</p>
             <p>Example below: Open on or before 0800 near postal code 1407</p>
         ]]></Description>
 		<Example type="xml">
@@ -144,7 +144,7 @@
 		<Description><![CDATA[
             <p>Is spesified by adding <code>?openOnOrAfter=&lt;time&gt;</code> to the URL.</p>
             <p>Requires that the place is open on the specified time.</p>
-            <p><code>&lt;time&gt; format: HHMM</p>
+            <p><code>&lt;time&gt;</code> format: HHMM</p>
             <p>Example below: Open on or after 2200 near postal code 1407</p>
         ]]></Description>
 		<Example type="xml">
