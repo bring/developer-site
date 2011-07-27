@@ -361,8 +361,19 @@ ul.avatar-list li:last-child {
 }
 
 .menutab-selected:after {
-    background-color: #3b3b3b;
-/*     border: 1px solid red; */
+	content: " ";
+	position: absolute;
+	width: 322px;
+	height: 7px;
+	left: 0;
+	bottom: -10px;
+	z-index: 2;
+	display: block;
+	box-shadow: 0 0 10px #999;
+}
+
+.menutab-selected:before {
+    background: #3b3b3b;
     width: 322px;
     height: 15px;
     left: 0;
@@ -371,9 +382,6 @@ ul.avatar-list li:last-child {
     position: absolute;
     display: block;
     content: " ";
-    
-    /* css3 */
-    /* box-shadow: 0 0 3px #aaa;  TODO shadow left and right */
 }
 
 .menutab-selected {
@@ -443,6 +451,14 @@ ul.avatar-list li:last-child {
     font-size: 2.75em;
     color: #f0f0f1;
     /*color: #79b54b;*/
+}
+
+.menubutton[href^="http"]:after,
+.menubutton[href^="/"]:after {
+	content: "\03007";
+	font-weight: bold;
+	font-size: 1em;
+	padding-top: 13px;
 }
 
 .menubutton, .menubutton:focus {

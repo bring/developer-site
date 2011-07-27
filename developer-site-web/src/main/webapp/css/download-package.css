@@ -30,7 +30,7 @@
 	line-height: 100%;
 }
 
-.widget-tools {
+.package-tools {
     width: 302px;
     min-height: 200px;
     float: right;  
@@ -79,6 +79,7 @@
 	background: -ms-linear-gradient(top, #98989c 0%,#818186 50%,#6e6d71 51%,#4e4d50 100%); /* IE10+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#98989c', endColorstr='#4e4d50',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #98989c 0%,#818186 50%,#6e6d71 51%,#4e4d50 100%); /* W3C */
+	border-color: #565656;
 }
 
 .download-button:hover,
