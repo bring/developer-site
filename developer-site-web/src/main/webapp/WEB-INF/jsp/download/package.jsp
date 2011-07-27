@@ -56,7 +56,9 @@
 						</div>
 					</div>
 				</div>
-				<misc:socialfeed />
+				<div class="span-2 last">
+					<misc:comments />
+				</div>
             </div>
         </div>
     </div>

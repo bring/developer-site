@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";
+
+.disqus-wrap {
+	padding-right: 10px;
+}
+/*
+.dsq-post-tools {
+	height: 55px;
+}*/
+
+
+.disqus-wrap .dsq-post-tools .dsq-post-as .dsq-button {
+	/*width: 100%;
+	top: 32px;
+	right: 0;*/
+	width: 64px;
+	overflow: hidden;
+	line-height: 22px;
+	font-size: 12px;
+	padding: 6px 16px;
+	text-transform: uppercase;
+}
+
+#dsq-subscribe {
+	display: none;
+}
