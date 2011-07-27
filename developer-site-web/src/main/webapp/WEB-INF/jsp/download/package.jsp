@@ -47,8 +47,12 @@
 							</c:if>
 						</div>
 						<div class="widget-tools">
-							<a href="${pack.download}" class="download-button">Download</a>
-							<a href="${pack.repository}" class="repo-button">Repository</a>
+							<c:if test="${!empty pack.download }">
+								<a href="${pack.download}" class="download-button">Download</a>
+							</c:if>
+							<c:if test="${!empty pack.repository }">
+								<a href="${pack.repository}" class="repo-button">Repository</a>
+							</c:if>
 						</div>
 					</div>
 				</div>
