@@ -453,8 +453,12 @@ ul.avatar-list li:last-child {
     /*color: #79b54b;*/
 }
 
-.menubutton[href!="#"] {
-	content: "\09675";
+.menubutton[href^="http"]:after,
+.menubutton[href^="/"]:after {
+	content: "\03007";
+	font-weight: bold;
+	font-size: 1em;
+	padding-top: 13px;
 }
 
 .menubutton, .menubutton:focus {

@@ -46,7 +46,7 @@
 								</ol>
 							</c:if>
 						</div>
-						<div class="widget-tools">
+						<div class="package-tools">
 							<c:if test="${!empty pack.download }">
 								<a href="${pack.download}" class="download-button">Download</a>
 							</c:if>
