@@ -25,6 +25,7 @@ $(document).ready(function() {
     if (isPageType("home")) {
         $("#navigation").navigation({mode: "hidden"});
         $("#twittercontent").performTwitterSearch(1, twitterView);
+        $(".big-banner").bringBanner();
     }
     
     else if (isPageType("apireference")) {

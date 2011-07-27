@@ -111,6 +111,8 @@ body:before {
 
 .home-content {
     font-size: 0.75em;
+    padding-bottom: 30px;
+    margin-top: -5px;
 }
 
 .header {
