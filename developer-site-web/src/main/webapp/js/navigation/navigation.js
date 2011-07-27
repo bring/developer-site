@@ -10,7 +10,7 @@
             $.extend(options, optionsArg);
             navigationElement = this;
             if (options.mode == "breadcrumbs") {
-                navigationElement .menutab().menuWithBreadcrumbs();
+                navigationElement.menutab().menuWithBreadcrumbs();
             }
             else if (options.mode == "hidden") {
                 navigationElement.menu().menutab({hidden: true}).menutabHider();

@@ -50,13 +50,18 @@ $(document).ready(function() {
     
     else if(isPageType("package")) {
         $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
-        $("#twittercontent").performTwitterSearch(3, twitterView); 
+        $("#twittercontent").performTwitterSearch(3, twitterView);
+        $(".widgetpreview").codetabs({defaultTab : "preview"});         
+                    
+        // Dynamic widget generation from code example
+        var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
+        //console.debug(widgetSource);
+        var previewTab = $(".widgetpreview .previewtab");
+        /*console.debug($("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body"));*/
+        //$("<iframe id=\"widgetPreview\"></iframe>").appendTo(previewTab).contents().find("body").html(widgetSource);
     }
     
     else if(isPageType("package-subpage")) {
-    }
-    
-    else if(isPageType("apireference")) {
     }
     
     /*

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Products>
+    <RequestBase>http://fraktguide.bring.no/fraktguide/products/</RequestBase>
+	<Product>
+		<Name>
+			Klimanøytral Servicepakke
+		</Name>
+		<Code>
+			SERVICEPAKKE
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			På Døren
+		</Name>
+		<Code>
+			PA_DOREN
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Bedriftspakke
+		</Name>
+		<Code>
+			BPAKKE_DOR-DOR
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Ekspress 07
+		</Name>
+		<Code>
+			EKSPRESS07
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Ekspress 09
+		</Name>
+		<Code>
+			EKSPRESS09
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product note="1">
+		<Name>
+			A-Prioritert
+		</Name>
+		<Code>
+			A-POST
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product note="2">
+		<Name>
+			B-Økonomi
+		</Name>
+		<Code>
+			B-POST
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product note="3">
+		<Name>
+			Quickpack
+		</Name>
+		<Code>
+			QUICKPACK
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Business Norway
+		</Name>
+		<Code>
+			CARRYON BUSINESS NORWAY
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Business Sweden
+		</Name>
+		<Code>
+			CARRYON BUSINESS SWEDEN
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Business Denmark
+		</Name>
+		<Code>
+			CARRYON BUSINESS DENMARK
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Business Finland
+		</Name>
+		<Code>
+			CARRYON BUSINESS FINLAND
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Homeshopping Norway
+		</Name>
+		<Code>
+			CARRYON HOMESHOPPING NORWAY
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Homeshopping Sweden
+		</Name>
+		<Code>
+			CARRYON HOMESHOPPING SWEDEN
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Homeshopping Denmark
+		</Name>
+		<Code>
+			CARRYON HOMESHOPPING DENMARK
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			CarryOn Homeshopping Finland
+		</Name>
+		<Code>
+			CARRYON HOMESHOPPING FINLAND
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			HomeDelivery CurbSide
+		</Name>
+		<Code>
+			HOMEDELIVERY_CURBSIDE_DAG
+		</Code>
+		<Price>
+			0
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Bud VIP
+		</Name>
+		<Code>
+			COURIER_VIP
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Bud 1 hour
+		</Name>
+		<Code>
+			COURIER_1H
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Bud 2 hour
+		</Name>
+		<Code>
+			COURIER_2H
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Bud 4 hour
+		</Name>
+		<Code>
+			COURIER_4H
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	<Product>
+		<Name>
+			Bud 6 hour
+		</Name>
+		<Code>
+			COURIER_6H
+		</Code>
+		<Price>
+			1
+		</Price>
+		<ExpectedDelivery>
+			1
+		</ExpectedDelivery>
+	</Product>
+	
+	
+	<AdditionalService>
+		<Name>
+			eVarsling
+		</Name>
+		<Code>
+			EVARSLING
+		</Code>
+	</AdditionalService>
+	<AdditionalService>
+		<Name>
+			Postoppkrav
+		</Name>
+		<Code>
+			POSTOPPKRAV
+		</Code>
+	</AdditionalService>
+	<AdditionalService>
+		<Name>
+			Lørdagsutkjøring
+		</Name>
+		<Code>
+			LORDAGSUTKJORING
+		</Code>
+	</AdditionalService>
+	
+	
+	
+	<Note id="1"><![CDATA[
+		<p>Requests for expected delivery has longer response time.</p>
+	]]></Note>
+	<Note id="2"><![CDATA[
+		<p>B-Økonomi is intended for bulk sendings and has a mimimum requirement of 20 parcels, however,
+			if weight exceeds 100g this limit is ignored.</p>
+	]]></Note>
+	<Note id="3"><![CDATA[
+		<p>Due to look-up in flight schedules, a request for this product has longer response time
+			than for other products.</p>
+	]]></Note>
+</Products>

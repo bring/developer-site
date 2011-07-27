@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Document>
+<Api>
     <RequestBase>
         http://fraktguide.bring.no/fraktguide/
     </RequestBase>
@@ -108,4 +108,4 @@
             </Request>
         </Example>
     </Parameter>
-</Document>
+</Api>

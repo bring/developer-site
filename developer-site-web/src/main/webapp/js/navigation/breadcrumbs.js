@@ -99,15 +99,10 @@
             });
             var allLiElementsNotBreadcrumbs = methods.getAllLiElementsNotBreadcrumbs();
             allLiElementsNotBreadcrumbs.removeClass("marked");
-            navigationElement.addClass("breadcrumbs");
-            $(".breadcrumb").addClass("marked");
-            var hasRun = false;
-            allLiElementsNotBreadcrumbs.slideUp("normal", function() {
-                if(!hasRun) {
-                    navigationElement.menu("recalculateHeight");
-                    hasRun = true;
-                }
-            });
+            $(navigationElement).addClass("breadcrumbs");
+            methods.markBreadcrumbs();
+            navigationElement.menu("slideToHeight", navigationElement.menu("getHeightOfOneElement"));
+            allLiElementsNotBreadcrumbs.slideUp("normal");
         },
         
         showMenu: function() {
@@ -122,23 +117,7 @@
             });
             methods.markBreadcrumbs();
             methods.recalculateHeightWhileHidden(allLiElementsNotBreadcrumbs);
-            var i = 0;
-            allLiElementsNotBreadcrumbs.slideDown(function() {
-                i = i + 1;
-                if (i == allLiElementsNotBreadcrumbs.length) {
-                    // Recalculate height after last element has been shown
-//                    navigationElement.menu("recalculateHeight");
-                }
-            });
-        },
-        
-        refreshMenu: function() {
-            var allLiElementsNotBreadcrumbs = methods.getAllLiElementsNotBreadcrumbs();
-            allLiElementsNotBreadcrumbs.each(function() {
-                methods.unmark($(this));
-            });
-            methods.markBreadcrumbs();
-            methods.recalculateHeightWhileHidden(allLiElementsNotBreadcrumbs);
+            allLiElementsNotBreadcrumbs.slideDown();
         },
 
         bindEvents: function() {
@@ -156,7 +135,6 @@
                         }
                         else {
                             methods.showBreadcrumbs();
-                            methods.refreshMenu();
                         }
                     }
                     else { // Menutab not activated
@@ -167,11 +145,16 @@
                 outerClick: function() {
                     if (navigationElement.menutab("getActive") && navigationElement.menutab("getActive").index != options.tabIndex) {
                         navigationElement.menutab("stop");
-                        methods.markBreadcrumbs();
                         methods.getAllLiElementsNotBreadcrumbs().hide();
                         navigationElement.menutab("changeTab", options.tabIndex);
                     }
                     methods.showBreadcrumbs();
+                },
+                
+                updateMenuPath: function(event) {
+                    if (hidden) {
+                        event.preventDefault();
+                    }
                 }
             });
         }

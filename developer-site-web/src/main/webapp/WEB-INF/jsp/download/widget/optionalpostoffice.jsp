@@ -7,7 +7,7 @@
 <head>
     <misc:contenttype />
     <misc:title value="Tracking" />
-    <misc:css></misc:css>
+    <misc:css ></misc:css>
 </head>
 
 <body>
