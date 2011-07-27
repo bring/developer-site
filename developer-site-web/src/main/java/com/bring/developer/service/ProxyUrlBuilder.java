@@ -2,7 +2,7 @@ package com.bring.developer.service;
 
 import java.util.Map;
 
-public class ProxyUrlTranslator {
+public class ProxyUrlBuilder {
     public static final String TRACKING_URL = "http://sporing.bring.no/";
     public static final String SHIPPINGGUIDE_URL = "http://fraktguide.bring.no/fraktguide/";
     

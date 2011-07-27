@@ -23,7 +23,7 @@ public abstract class ProxyDao {
         this.httpClient = httpClient;
     }
     
-    public HttpResponse performRequestRaw(String request) {
+    public HttpResponse performRequest(String request) {
         Validate.notEmpty(request);
         HttpGet httpGet = new HttpGet(request);
         HttpResponse result = null;
@@ -40,8 +40,8 @@ public abstract class ProxyDao {
         }
     }
     
-    public String performRequest(String request) {
-        return consumeResultAndReturnAsString(performRequestRaw(request));
+    public String performRequestConsumeAndReturnAsString(String request) {
+        return consumeResultAndReturnAsString(performRequest(request));
     }
     
 

@@ -10,11 +10,11 @@ import org.junit.Test;
 
 public class ProxyUrlTranslatorTest {
     
-    ProxyUrlTranslator proxyTranslator;
+    ProxyUrlBuilder proxyTranslator;
     
     @Before
     public void setup(){
-        proxyTranslator = new ProxyUrlTranslator();        
+        proxyTranslator = new ProxyUrlBuilder();        
     }
     
     @Test

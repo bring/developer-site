@@ -18,12 +18,12 @@ public class TwitterDao extends ProxyDao{
     	
 	@Cacheable(cacheName = "twitterCacheSearch")
 	public String performSearch(String request) {
-		return performRequest(request);
+		return performRequestConsumeAndReturnAsString(request);
 	}
 	
 	@Cacheable(cacheName = "twitterCacheStatus")
 	public String performGetStatus(String request) {
-	    return performRequest(request);
+	    return performRequestConsumeAndReturnAsString(request);
     }
 
 	protected void failOnInvalidResponseHeader(HttpResponse result) throws IOException {
