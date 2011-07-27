@@ -102,11 +102,13 @@
             $(navigationElement).addClass("breadcrumbs");
             methods.markBreadcrumbs();
             navigationElement.menu("slideToHeight", navigationElement.menu("getHeightOfOneElement"));
-            allLiElementsNotBreadcrumbs.slideUp("normal");
+            allLiElementsNotBreadcrumbs.stop(false,true).slideUp("normal");
         },
         
         showMenu: function(event) {
-            event.preventDefault();
+            if (event != undefined) {
+                event.preventDefault();
+            }
             hidden = false;
             $(breadcrumbElements).each(function() {
                 this.unbind("click", methods.showMenu);  

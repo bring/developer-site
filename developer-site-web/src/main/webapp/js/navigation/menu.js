@@ -21,7 +21,7 @@
 	    
 	    slideToHeight: function(heightArg) {
 	        navigationElement.trigger("menu-animation");
-	        menuElement.animate({
+	        menuElement.stop(false,true).animate({
                 padding: "10px 0",
                 height: heightArg
             });
