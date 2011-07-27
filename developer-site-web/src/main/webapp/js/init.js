@@ -32,7 +32,7 @@ $(document).ready(function() {
         $("#navigation").navigation({mode: "breadcrumbs"});
         
         $(".api-call").each(function() {
-            $(this).xmlExampleRequest();
+            $(this).exampleRequest();
         });
             
         // Show the correct tab on init

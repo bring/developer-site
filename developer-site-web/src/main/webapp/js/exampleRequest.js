@@ -8,8 +8,10 @@
             $.extend(options, optionsArg);
             responseElement = $(".response", this);
             if (responseElement.hasClass("xml")) {
-//                console.log(responseElement);
                 methods.performXmlRequest(responseElement, $(".request", this).attr("data-internal"));
+            }
+            else if (responseElement.hasClass("json")) {
+                methods.performJsonRequest(responseElement, $(".request", this).attr("data-internal"));
             }
         },
             
@@ -81,6 +83,10 @@
             return output;
         },
         
+        failedRequestCallback: function(responseElement, jqXHR, textStatus, errorThrown) {
+            responseElement.text(jqXHR.responseText);
+        },
+        
         performXmlRequest: function(responseElement, urlArg) {
             $.ajax({
                 url: urlArg,
@@ -93,13 +99,26 @@
                         style: "ide-eclipse"
                     });
                 },
-                error: function(jqXHR, textStatus, errorThrown) {
-                    responseElement.text(jqXHR.responseText);
-                }
+                error: function(jqXHR, textStatus, errorThrown) {methods.failedRequestCallback(responseElement, jqXHR, textStatus, errorThrown)}
+            });
+        },
+        
+        // TODO reformat JSON object (indentation)
+        performJsonRequest: function(responseElement, urlArg) {
+            $.ajax({
+                url: urlArg,
+                dataType: "json",
+                success: function(data, textStatus, jqXHR) {
+                    responseElement.text(formatJson(data));
+                    responseElement.snippet("javascript", {
+                        style: "ide-eclipse"
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown) {methods.failedRequestCallback(responseElement, jqXHR, textStatus, errorThrown)}
             });
         }
     }
-    $.fn.xmlExampleRequest = function(method) {
+    $.fn.exampleRequest = function(method) {
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
         } else if (typeof method === 'object' || !method) {
