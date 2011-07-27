@@ -88,7 +88,7 @@
                 success: function(data, textStatus, jqXHR) {
                     var rootElement = $(data).children()[0];
                     var xmlText = methods.formatXml(rootElement, 0);
-                    responseElement.text("FOOO"+xmlText);
+                    responseElement.text(xmlText);
                     responseElement.snippet("xml", {
                         style: "ide-eclipse"
                     });
