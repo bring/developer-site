@@ -5,11 +5,9 @@
 /** Package page */
 
 .package-info {
-    width: 644px;
-    min-height: 200px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
+	width: 302px;
+	padding: 0 10px;
+	float: right;
 }
 
 .package-content{
@@ -22,7 +20,7 @@
 .package-description{
     width: 302px;
     min-height: 200px;
-    margin-right: 40px;
+    padding: 0 10px;
     float:left;
 }
 
@@ -32,10 +30,10 @@
 
 .package-tools {
     width: 302px;
-    min-height: 200px;
     float: right;  
     margin-top: 20px;
     padding-top: 30px;
+    margin-bottom: 40px;
 }
 
 .download-button,

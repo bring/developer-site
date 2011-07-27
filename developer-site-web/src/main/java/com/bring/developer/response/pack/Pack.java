@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import com.bring.developer.dao.XmlNormalizeString;
 import com.bring.developer.dao.XmlNormalizeURL;
 import com.bring.developer.response.Person;
+import com.bring.developer.response.Site;
 
 @XmlRootElement(name = "Pack")
 public class Pack {
@@ -20,6 +21,7 @@ public class Pack {
 	private URL download;
 	private Install installSteps;
 	private List<Person> persons;
+	private List<Site> whoIsUsing;
 	
 	@XmlElement(name = "Title")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
@@ -81,6 +83,14 @@ public class Pack {
 	}
 	public void setPersons(List<Person> persons) {
 		this.persons = persons;
+	}
+	
+	@XmlElement(name = "OnSite")
+	public List<Site> getWhoIsUsing() {
+		return whoIsUsing;
+	}
+	public void setWhoIsUsing(List<Site> whoIsUsing) {
+		this.whoIsUsing = whoIsUsing;
 	}
 	
 	

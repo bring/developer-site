@@ -41,6 +41,10 @@ $(document).ready(function() {
     else if (isPageType("article")) {
         $("#navigation").navigation({mode: "breadcrumbs"});
         $("#twittercontent").performTwitterSearch(3, twitterView); 
+        $(".codetabs").codetabs({
+        	defaultTab : "xml",
+        	cookies : true
+		});
     }
     
     else if (isPageType("package-overview")) {

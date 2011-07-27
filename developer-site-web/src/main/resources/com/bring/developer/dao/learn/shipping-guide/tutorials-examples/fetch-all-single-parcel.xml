@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
     <Title>Get price, expected delivery and text for single parcel.</Title>
-    <MenuTitle>Fetch all information (single parcel)</MenuTitle>
+    <MenuTitle>Single parcel example</MenuTitle>
     <Content>
 <![CDATA[
 <p>This example shows you how to retrieve the price, expected delivery time and additional
@@ -12,8 +12,8 @@
     <li><code>from</code>=7600</li>
     <li><code>to</code>=1407</li>
 </ul>
-<div class="tabs">
-    <h2><a href="#xml">XML</a></h2>
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
     <div data-tab="xml" class="tab">
         <p>Request:
             <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">
@@ -23,7 +23,7 @@
         <pre class="xml response"></pre>
     </div>
         
-    <h2><a href="#json">JSON</a></h2>
+    <h3><a href="#json">JSON</a></h3>
     <div data-tab="json" class="tab">
         Request:
         <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407">
@@ -34,43 +34,39 @@
             specified JSONP callback function.</p>
     </div>
     
-    <h2><a href="#webservice">Web Service</a></h2>
+    <h3><a href="#webservice">Web Service</a></h3>
     <div data-tab="webservice" class="tab">
         <p>Example coming</p>
     </div>
     
-    <h2><a href="#java">Java</a></h2>
+    <h3><a href="#java">Java</a></h3>
     <div data-tab="java" class="tab">
-        <pre class="java">
-            // Initialize library
-            String clientId = "www.mywebshop.com";
-            BringService bringService = new BringService(clientId);
+        <pre class="java">// Initialize library
+String clientId = "www.mywebshop.com";
+BringService bringService = new BringService(clientId);
 
-            // Prepare query
-            Package packet = new Package();
-            packet.withWeightInGrams("1500");
-            Shipment shipment = new Shipment();
-            shipment.withFromPostalCode("7600");
-            shipment.withToPostalCode("1407");
-            shipment.addPackage(packet);
+// Prepare query
+Package packet = new Package();
+packet.withWeightInGrams("1500");
+Shipment shipment = new Shipment();
+shipment.withFromPostalCode("7600");
+shipment.withToPostalCode("1407");
+shipment.addPackage(packet);
 
-            // Fetch price information from Bring
-            ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-            String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-            String workingDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
-            String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getGuiInformation().getDescriptionText();
+// Fetch price information from Bring
+ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
+String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+String workingDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
+String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getGuiInformation().getDescriptionText();
 
-            // Print out
-            System.out.println("Price: " + price + " NOK");
-            System.out.println("Working days: " + workingDays);
-            System.out.println("Display name: " + descriptionText);
-        </pre>
-        <pre>
-            <p>Expected result:</p>
-            <p>Price: 81.00 NOK</p>
-            <p>Working days: 2</p>
-            <p>Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800</p>
-        </pre>
+// Print out
+System.out.println("Price: " + price + " NOK");
+System.out.println("Working days: " + workingDays);
+System.out.println("Display name: " + descriptionText);</pre>
+        <p>Expected result:</p>
+        <pre>Price: 81.00 NOK
+Working days: 2
+Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800</pre>
     </div>
 </div>
 ]]>

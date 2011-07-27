@@ -112,6 +112,7 @@ h4 {
 p {
     line-height: 140%;
     padding-bottom: 1em;
+    text-align: justify;
 }
 
 pre {
@@ -119,6 +120,7 @@ pre {
     overflow: auto;
     max-height: 300px;
     margin-bottom: 1em;
+    padding: 10px;
 }
 
 
@@ -157,10 +159,10 @@ pre::-webkit-scrollbar-thumb:horizontal {
     -webkit-border-radius: 3px;
 }
 
- .article {
-    width: 644px;
+.article {
+    width: 634px;
     float: left;
-    padding: 0 10px 20px 10px;
+    padding: 0 20px 20px 10px;
 }
 
 pre p,
@@ -186,7 +188,8 @@ li blockquote {
 }*/
 
 .article ol {
-    padding: 15px;
+    padding-left: 15px;
+    margin: 10px 0;
 }
 
 .article ul, .article ol {
