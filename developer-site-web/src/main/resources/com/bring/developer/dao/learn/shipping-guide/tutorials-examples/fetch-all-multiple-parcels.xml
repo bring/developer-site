@@ -26,23 +26,28 @@
 
 <div class="codetabs">
 	<h3><a href="#xml">XML</a></h3>
-	<div data-tab="xml" class="tab">
+	<div data-tab="xml" class="tab api-call">
 		<p>Request:
-			<a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+			<a class="request" 
+                href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
+                data-internal="/proxy/shipping-guide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
 				/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30
 			</a>
 		</p>
-		<pre class="xml response"></pre>
+		<pre class="xml response delay-snippet"></pre>
 	</div>
 	
 	<h3><a href="#json">JSON</a></h3>
-	<div data-tab="json" class="tab">
+	<div data-tab="json" class="tab api-call">
 		<p>Request:
-			<a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+			<a class="request" 
+            href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
+            data-internal="/proxy/shipping-guide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+            
 				/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30
 			</a>
 		</p>
-		<pre class="json response"></pre>
+		<pre class="json response delay-snippet"></pre>
 		<p>By adding the <code>callback</code> parameter the response will be wrapped in the
 			specified JSONP callback function.</p>
 	</div>

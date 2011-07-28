@@ -38,7 +38,7 @@ $(document).ready(function() {
         // Show the correct tab on init
         $(".codetabs").codetabs({
             cookies : true,
-            defaultTab : ""
+            defaultTab : "xml"
         });
         
         $(".toc").tableOfContents($(".article"), {
@@ -49,6 +49,10 @@ $(document).ready(function() {
     
     else if (isPageType("article")) {
         $("#navigation").navigation({mode: "breadcrumbs"});
+        
+        $(".api-call").each(function() {
+            $(this).exampleRequest();
+        });
         $(".codetabs").codetabs({
         	defaultTab : "xml",
         	cookies : true
