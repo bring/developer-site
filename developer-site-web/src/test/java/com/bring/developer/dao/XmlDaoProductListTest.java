@@ -27,5 +27,14 @@ public class XmlDaoProductListTest {
     public void shouldGetProducts() {
     	assertEquals(Product.class, products.get(0).getClass());
     }
+	
+    @Test
+    public void shouldGetFirstProductName() {
+        assertEquals("Klimanøytral Servicepakke", products.get(0).getName());
+    }
     
+    @Test
+    public void shouldGetFirstProductPrice() {
+        assertTrue(products.get(0).getPrice());
+    }
 }

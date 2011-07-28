@@ -15,7 +15,7 @@ public class Product {
 	private Boolean expectedDelivery;
 	private int note;
 	
-	@XmlAttribute(name = "Name")
+	@XmlElement(name = "Name")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
 	public String getName() {
 		return name;
@@ -24,7 +24,7 @@ public class Product {
 		this.name = name;
 	}
 	
-	@XmlAttribute(name = "Code")
+	@XmlElement(name = "Code")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
 	public String getCode() {
 		return code;
@@ -35,7 +35,7 @@ public class Product {
 	
 	@XmlElement(name = "Price")
 	@XmlJavaTypeAdapter(XmlNormalizeBoolean.class)
-	public Boolean isPrice() {
+	public Boolean getPrice() {
 		return price;
 	}
 	public void setPrice(Boolean price) {
@@ -44,7 +44,7 @@ public class Product {
 	
 	@XmlElement(name = "ExpectedDelivery")
 	@XmlJavaTypeAdapter(XmlNormalizeBoolean.class)
-	public Boolean isExpectedDelivery() {
+	public Boolean getExpectedDelivery() {
 		return expectedDelivery;
 	}
 	public void setExpectedDelivery(Boolean expectedDelivery) {

@@ -15,6 +15,9 @@
                 <li>
                     <a class="menubutton" href="/learn/shipping-guide/apireference.html">API Reference</a>
                 </li>
+                 <li>
+                    <a class="menubutton" href="/learn/shipping-guide/productlist.html">Product List</a>
+                </li>
             </ul>
         </li>
         
