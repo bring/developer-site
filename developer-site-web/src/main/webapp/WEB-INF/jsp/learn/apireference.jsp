@@ -23,7 +23,8 @@
                     <h1>API Reference</h1>
                     
                     <p>
-                        <code>&lt;RequestBase&gt; = <c:out value="${apiReference.externalRequestBase.content}" /></code>
+                    	Please note the request prefixes:<br />
+                        <code>&hellip;</code> = <code><c:out value="${apiReference.externalRequestBase.content}" /></code>
                     </p>
                     
                     <c:forEach items="${apiReference.parameters}" var="parameter" >
@@ -46,6 +47,9 @@
                                             Response:
                                             <pre class="${example.type} response delay-snippet"></pre>
                                         </div>
+                                        <c:if test="${example.type == 'json'}">
+                                        	<p>To make a JSONP request simply add <code>&amp;callback=functionName</code> to the JSON request.</p>
+                                        </c:if>
                                     </c:if>
                                     <c:if test="${!empty example.content}">
                                         ${example.content}

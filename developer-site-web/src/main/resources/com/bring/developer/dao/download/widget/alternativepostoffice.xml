@@ -2,10 +2,10 @@
 
 <Pack type="widget">
 	<Title>
-		Optional post office
+		Alternative post office
 	</Title>
 	<Description><![CDATA[
-		<p>This widget uses Bring's Optional Post Office API to allow the user to choose their
+		<p>This widget uses Bring's Post Office API to allow the user to choose their
 			preferred post office. This is mainly intended for online shopping to allow the
 			user to choose another post office than the one closest to their shipping address.</p>
 	]]></Description>
