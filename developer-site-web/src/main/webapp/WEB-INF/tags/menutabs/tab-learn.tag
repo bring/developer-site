@@ -14,7 +14,6 @@
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Single parcel example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Multi-parcels example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/bestpractices.html">Best Practices</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/offlinedata.html">Offline Data</a></li>
                     </ul>
                 </li>
                 <li>
@@ -23,6 +22,7 @@
                         <li><a class="menubutton" href="/learn/shipping-guide/apireference/usage.html">Usage</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/apireference/products.html">Products</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/apireference/errorcodes.html">Error Codes</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/offlinedata.html">Offline Data</a></li>
                     </ul>
                 </li>
             </ul>
