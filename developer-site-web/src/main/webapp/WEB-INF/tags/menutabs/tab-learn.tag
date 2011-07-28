@@ -5,13 +5,7 @@
             <a class="menubutton" href="#">Shipping guide API</a>
             <ul>
                  <li>
-                    <a class="menubutton" href="#">Introduction</a>
-                    <ul>
-                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/productlist.html">Product List</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/bestpractice.html">Best Practice</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/offlinedata.html">Offline Data</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/errorcodes.html">Error Codes</a></li>
-                    </ul>
+                    <a class="menubutton" href="/learn/shipping-guide/introduction.html">Introduction</a>
                 </li>
                  <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
@@ -19,10 +13,17 @@
 <!--                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li> -->
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Single parcel example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Multi-parcels example</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/bestpractices.html">Best Practices</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/offlinedata.html">Offline Data</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a class="menubutton" href="/learn/shipping-guide/apireference.html">API Reference</a>
+                    <a class="menubutton" href="#">API Reference</a>
+                    <ul>
+                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/usage.html">Usage</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/products.html">Products</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/errorcodes.html">Error Codes</a></li>
+                    </ul>
                 </li>
             </ul>
         </li>
