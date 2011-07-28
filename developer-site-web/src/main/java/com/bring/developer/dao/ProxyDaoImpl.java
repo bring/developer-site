@@ -11,7 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 
-import com.bring.developer.service.ProxyUrlBuilder;
+import request.ProxyUrlBuilder;
+
 
 @Component
 public class ProxyDaoImpl extends ProxyDao {
