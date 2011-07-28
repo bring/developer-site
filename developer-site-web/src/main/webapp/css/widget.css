@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+
+
+
+/* Widget preview */
+
+.widget-preview {
+    width: 160px; /* (322px - 2px margin) / 2 */
+    background-color: #f0f0f1;
+}
+
+.widget-preview .title {
+    font-weight: bold;
+}
+
+.widget-title:after {
+    content: "\02B07";
+    float: right;
+}

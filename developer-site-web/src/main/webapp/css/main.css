@@ -73,12 +73,55 @@ body:before {
     background-image: url("/img/logo.png");
 }
 
+/* Tabs */
+
 .global-tabs {
 	text-transform: uppercase;
     bottom: 0;
     position: absolute;
     left: 50%;
     margin: 0 0 0 -493px;
+}
+
+
+.global-tabs {
+    list-style: none;
+}
+
+.global-tabs li {
+    display: inline;
+}
+
+.global-tabs li:first-child a:before {
+    content: "\002039";
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.global-tabs li a {
+    cursor: pointer;
+    color: #676767;
+    background: #e1e1e1;
+    float: left;
+    display: block;
+    padding: 10px 20px 5px 20px;
+    margin-left: -1px;
+    position: relative;
+    left: 1px;
+    text-decoration: none;
+}
+
+.global-tabs li a:hover, .global-tabs li a.global-tabs-chosen {
+    color: #fff;
+    background: #7fc14b;
+    
+    /* css3 */
+    box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
+}
+
+.global-tabs-chosen {
+	line-height: 22px;
 }
 
 /* .header > * { */
