@@ -84,19 +84,28 @@ public class HomeController {
     	return "download/widgetpreview";
     }
     
-
     @RequestMapping(value = "/learn/{api}/apireference.html")
     public String apiReference(ModelMap model, @PathVariable String api) throws JAXBException {
-        Api apiDoc = XmlDao.createDao(Api.class).query("learn/"+api+"/apireference");
-        model.put("apiReference", apiDoc);
-        return "learn/apireference";
+        return apiReferenceHelper(model, api);
     }
     
-    @RequestMapping(value = "/learn/{api}/productlist.html")
+    @RequestMapping(value = "/learn/{api}/apireference/usage.html")
+    public String apiReferenceUsage(ModelMap model, @PathVariable String api) throws JAXBException {
+        return apiReferenceHelper(model, api, "/usage");
+    }
+    
+    private String apiReferenceHelper(ModelMap model, String api, String... suffix) throws JAXBException {
+        Api apiDoc = XmlDao.createDao(Api.class).query("learn/"+api+"/apireference"+(suffix.length > 0 ? suffix[0] : ""));
+        model.put("apiReference", apiDoc);
+        return "learn/apireference";     
+    }
+    
+    
+    @RequestMapping(value = "/learn/{api}/apireference/products.html")
     public String productList(ModelMap model, @PathVariable String api) throws JAXBException {
-        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/productlist");
+        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/apireference/products");
         model.put("productList", products);
-        return "learn/productlist";
+        return "learn/products";
     }
     
     @RequestMapping(value = "/learn/{section}.html")

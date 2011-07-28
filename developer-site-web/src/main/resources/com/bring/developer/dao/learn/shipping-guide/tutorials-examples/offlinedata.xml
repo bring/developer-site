@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+    <Title>Offline Data</Title>
+    <MenuTitle>Offline Data</MenuTitle>
+    <Content>
+<![CDATA[
+<p>By using the <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a>, you can download price lists, transport times and additional services designed for offline usage.<br/>
+
+<p>NB! With offline data, you have to deal with all the rules of special goods, shipping calculated weight (volume weight), and more. These rules are located on the respective product pages on bring.com. Remember to update the database at price changes!</p>
+
+<p>The service is available free of charge, provided acceptance of the terms of use. Note that only registered users will receive notifications of changes in service!</p>
+
+<p>For those who use the offline data, we recommend to get the updates automatically via Shipping Guide Web Services.</p>
+
+<p>Offline data is suitable as a failover solution if the Shipping Guide does not respond or responds with an error message, or if there are extreme demands on performance.</p>
+
+<p>Price zone, price and transport time can be retrieved with XPath, if the XML format is used on the downloaded data. The following XPath picks the data for the product SERVICEPAKKE to postal code 2000 with weight 4 kg:</p>
+
+<pre>
+Get Price Zone (returns an empty answer if toPostalCode is outside the coverage area for the chosen product):
+//Product[@productId='SERVICEPAKKE']//PriceZone[@toPostalCode='2000']/text()
+
+Get Price based on Price Zone "2":
+//Product[@productId="SERVICEPAKKE"]//Price[@priceZone="2" and @weight="4000"]/text()
+
+Get transport time:
+//Product[@productId='SERVICEPAKKE']//WorkingDays[@toPostalCode="2000"]/text()
+</pre>
+]]>
+    </Content>
+</Article>

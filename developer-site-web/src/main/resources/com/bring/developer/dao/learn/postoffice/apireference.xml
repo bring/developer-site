@@ -95,8 +95,8 @@
         <Description><![CDATA[
             <p>Is spesified by adding <code>?openingHoursSearchType=&lt;day&gt; to the URL.</code>
             <p>Requires that the place is open on the day(s) as specified.</p>
-            <p>If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even more.</p>
             <p><code>&lt;day&gt; = ALL_WEEKDAYS (default) | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY</code></p>
+            <p>If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even more.</p>
             <p>Example below: opening hours on SUNDAY near postal code 1407</p>
         ]]></Description>
         <Example type="xml">
