@@ -4,7 +4,7 @@
 		http://fraktguide.bring.no/fraktguide/api/pickuppoint
 	</RequestBase>
 	<RequestBase type="internal">
-		/api/optionalpostoffice
+		/proxy/shipping-guide/api/pickuppoint
 	</RequestBase>
 	<Parameter>
 		<Title>

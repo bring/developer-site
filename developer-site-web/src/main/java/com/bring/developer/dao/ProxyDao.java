@@ -1,6 +1,8 @@
 package com.bring.developer.dao;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.Validate;
@@ -47,7 +49,8 @@ public abstract class ProxyDao {
 
     public String consumeResultAndReturnAsString(HttpResponse response) {
         try {
-            return IOUtils.toString(response.getEntity().getContent(), "UTF-8");
+            InputStream content = response.getEntity().getContent();
+            return IOUtils.toString(content, "UTF-8");
         } 
         catch (IOException e) {
             throw new RuntimeException(e);
@@ -55,6 +58,23 @@ public abstract class ProxyDao {
         finally {
             consumeEntity(response);
         }
+    }
+    
+    public byte[] consumeResultAndReturnAsByteArray(HttpResponse response) {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[4096];
+        int output = 0;
+        InputStream inputStream;
+        try {
+            inputStream = response.getEntity().getContent();
+            while((output = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, output);
+            }
+        } 
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return outputStream.toByteArray();
     }
 
     private void consumeEntity(HttpResponse result) {
