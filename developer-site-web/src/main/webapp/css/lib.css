@@ -447,6 +447,7 @@ ul.avatar-list li:last-child {
     position: relative;
 }
 
+.menulist .breadcrumb > .menubutton.current-page:after, 
 .menulist .marked.breadcrumb > .menubutton.current-page:after {
 	padding-top: 12px;
     content: "\02022";
