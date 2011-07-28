@@ -22,29 +22,34 @@
                 <div class="article">
                     <h1>API Reference</h1>
                     
+                    <p>
+                    	Please note the request prefixes:<br />
+                        <code>&hellip;</code> = <code><c:out value="${apiReference.externalRequestBase.content}" /></code>
+                    </p>
+                    
                     <c:forEach items="${apiReference.parameters}" var="parameter" >
-                        <h2>${parameter.title}</h2>
+                        <h2><c:out value="${parameter.title}" /></h2>
                         
                         ${parameter.description}
                         
                         <c:if test="${!empty parameter.default}">
-                            <p>Default: <code>${parameter.default}</code></p>
+                            <p>Default: <code><c:out value="${parameter.default}" /></code></p>
                         </c:if>
                         
                         <div class="codetabs">
                             <c:forEach items="${parameter.examples}" var="example">
-                                <h3><a href="#${example.type}">${example.title}</a></h3>
+                                <h3><a href="#${example.type}"><c:out value="${example.title}" /></a></h3>
                                 <div data-tab="${example.type}" class="tab">
                                     <c:if test="${!empty example.request}">
                                         <div class="api-call">
-                                            <p>
-                                                Request:
-                                                <a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">
-                                                    ${example.request}
-                                                </a>
-                                            </p>
-                                            <pre class="${example.type} response delay-snippet"></pre>
+                                            Request: 
+                                            <pre><a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
+                                            Response:
+                                            <pre class="${example.type} response delay-snippet">Running request...</pre>
                                         </div>
+                                        <c:if test="${example.type == 'json'}">
+                                        	<p>To make a JSONP request simply add <code>&amp;callback=functionName</code> to the JSON request.</p>
+                                        </c:if>
                                     </c:if>
                                     <c:if test="${!empty example.content}">
                                         ${example.content}

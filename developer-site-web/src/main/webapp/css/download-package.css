@@ -178,3 +178,25 @@
     color: #fff;
 }
 
+
+.package-media {
+	margin-left: -10px;
+	overflow: auto;
+}
+.package-media .thumb {
+	display: block;
+	float: left;
+	width: 149px;
+	height: 96px;
+	overflow: hidden;
+	margin: 5px 0 5px 10px;
+	border: 1px solid #e2e3e4;
+	opacity: 0.7;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
+}
+.package-media .thumb:hover,
+.package-media .thumb:focus {
+	box-shadow:0px 0px 5px #ccc;
+	opacity: 1;
+}
