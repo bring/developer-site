@@ -10,6 +10,9 @@
             if (responseElement.hasClass("xml")) {
                 methods.performXmlRequest(responseElement, $(".request", this).attr("data-internal"));
             }
+            if (responseElement.hasClass("html")) {
+                methods.performXmlRequest(responseElement, $(".request", this).attr("data-internal"));
+            }
             else if (responseElement.hasClass("json")) {
                 methods.performJsonRequest(responseElement, $(".request", this).attr("data-internal"));
             }
@@ -36,12 +39,17 @@
         
         attributes: function(element) {
             var output = "";
-            var attribute;
-            for (var i = 0; i < element.attributes.length; i++) {
-                attribute = element.attributes.item(i); 
-                output += attribute.name+"="+'"'+escape(attribute.value)+'"';
+            if (element.attributes.length > 0) {
+                output += methods.attribute(element.attributes.item(0));
+            }
+            for (var i = 1; i < element.attributes.length; i++) {
+                output += " " + methods.attribute(element.attributes.item(i));
             }
             return output;
+        },
+        
+        attribute: function(attrItem) {
+            return attrItem.name+"="+'"'+escape(attrItem.value)+'"';  
         },
         
         textContent: function(element, level) {
