@@ -4,17 +4,9 @@
     <MenuTitle>Offline Data</MenuTitle>
     <Content>
 <![CDATA[
-<h2>Introduction</h2>
-<p>By using the <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a>, you can download price lists, transport times and additional services specifically designed for offline usage.<br/>
-Enter the zip code you are sending from and which products you want data for. For each:<p>
+<p>By using the <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a>, you can download price lists, transport times and additional services designed for offline usage.<br/>
 
-<ul>
-<li>Price Zone and the transport time in working days for each to-zip code</li>
-<li>Prices for each price zone</li>
-<li>Maximum Weight and Maximum measures</li>
-<li>Price for special goods as well and value added services</li>
-</ul>
-<p>NB! With offline data, you have to deal with all the rules of special goods, shipping calculated weight (volume weight), and more. These rules are located on the respective product pages on bring.no. Remember to update the database at price changes!</p>
+<p>NB! With offline data, you have to deal with all the rules of special goods, shipping calculated weight (volume weight), and more. These rules are located on the respective product pages on bring.com. Remember to update the database at price changes!</p>
 
 <p>The service is available free of charge, provided acceptance of the terms of use. Note that only registered users will receive notifications of changes in service!</p>
 
