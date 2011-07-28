@@ -23,7 +23,7 @@
                     <h1>API Reference</h1>
                     
                     <p>
-                        <code>&lt;RequestBase&gt; = <c:out value="${apiReference.externalRequestBase.content}" /></code>
+                        All requests should be prefixed with <code><c:out value="${apiReference.externalRequestBase.content}" /></code>
                     </p>
                     
                     <c:forEach items="${apiReference.parameters}" var="parameter" >

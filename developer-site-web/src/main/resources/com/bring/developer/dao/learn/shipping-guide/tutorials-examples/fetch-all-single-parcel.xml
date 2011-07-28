@@ -14,22 +14,24 @@
 </ul>
 <div class="codetabs">
     <h3><a href="#xml">XML</a></h3>
-    <div data-tab="xml" class="tab">
+    <div data-tab="xml" class="tab api-call">
         <p>Request:
-            <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">
+            <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407"
+            data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">
                 /all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407
             </a>
         </p>
-        <pre class="xml response"></pre>
+        <pre class="xml response delay-snippet"></pre>
     </div>
         
     <h3><a href="#json">JSON</a></h3>
-    <div data-tab="json" class="tab">
+    <div data-tab="json" class="tab api-call">
         Request:
-        <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407">
+        <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407"
+            data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407">
             /all.json?weightInGrams=1500&amp;from=7600&amp;to=1407
         </a>
-        <pre class="json response"></pre>
+        <pre class="json response delay-snippet"></pre>
         <p>By adding the <code>callback</code> parameter the response will be wrapped in the
             specified JSONP callback function.</p>
     </div>
