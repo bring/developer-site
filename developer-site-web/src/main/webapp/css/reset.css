@@ -209,6 +209,36 @@ li blockquote {
     margin-bottom: 1em;
 }
 
+.article thead{
+    background-color: #e2e3e4;
+}
+
+.article th {
+    text-transform: uppercase;
+    font-weight: bold;    
+}
+
+.article td,
+ .article th {
+    padding: 5px;
+}
+
+.article tr {
+    margin-bottom: 1px;
+}
+
+.article tr:hover {
+    background-color: #f0f0f1;
+}
+
+.article tr:nth-child(even) {
+    background-color: #f0f0f1;
+}
+
+.article table{
+	margin-left: -5px;
+}
+
 
 /*
 .article li:before {

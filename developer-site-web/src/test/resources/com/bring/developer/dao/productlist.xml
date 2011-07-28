@@ -118,7 +118,7 @@
 			CarryOn Business Norway
 		</Name>
 		<Code>
-			CARRYON BUSINESS NORWAY
+			CARRYON_BUSINESS_NORWAY
 		</Code>
 		<Price>
 			1
@@ -132,7 +132,7 @@
 			CarryOn Business Sweden
 		</Name>
 		<Code>
-			CARRYON BUSINESS SWEDEN
+			CARRYON_BUSINESS_SWEDEN
 		</Code>
 		<Price>
 			1
@@ -146,7 +146,7 @@
 			CarryOn Business Denmark
 		</Name>
 		<Code>
-			CARRYON BUSINESS DENMARK
+			CARRYON_BUSINESS_DENMARK
 		</Code>
 		<Price>
 			1
@@ -160,7 +160,7 @@
 			CarryOn Business Finland
 		</Name>
 		<Code>
-			CARRYON BUSINESS FINLAND
+			CARRYON_BUSINESS_FINLAND
 		</Code>
 		<Price>
 			1
@@ -174,7 +174,7 @@
 			CarryOn Homeshopping Norway
 		</Name>
 		<Code>
-			CARRYON HOMESHOPPING NORWAY
+			CARRYON_HOMESHOPPING_NORWAY
 		</Code>
 		<Price>
 			1
@@ -188,7 +188,7 @@
 			CarryOn Homeshopping Sweden
 		</Name>
 		<Code>
-			CARRYON HOMESHOPPING SWEDEN
+			CARRYON_HOMESHOPPING_SWEDEN
 		</Code>
 		<Price>
 			1
@@ -202,7 +202,7 @@
 			CarryOn Homeshopping Denmark
 		</Name>
 		<Code>
-			CARRYON HOMESHOPPING DENMARK
+			CARRYON_HOMESHOPPING_DENMARK
 		</Code>
 		<Price>
 			1
@@ -216,7 +216,7 @@
 			CarryOn Homeshopping Finland
 		</Name>
 		<Code>
-			CARRYON HOMESHOPPING FINLAND
+			CARRYON_HOMESHOPPING_FINLAND
 		</Code>
 		<Price>
 			1

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Api>
     <RequestBase type="external">
-        http://fraktguide.bring.no/fraktguide/
+        http://fraktguide.bring.no/fraktguide
     </RequestBase>
     <RequestBase type="internal">
-    	
+        /proxy/shipping-guide
     </RequestBase>
     <Parameter>
         <Title>

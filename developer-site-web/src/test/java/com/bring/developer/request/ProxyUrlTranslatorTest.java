@@ -1,4 +1,4 @@
-package com.bring.developer.service;
+package com.bring.developer.request;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,9 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.bring.developer.request.ProxyUrlBuilder;
+
 
 public class ProxyUrlTranslatorTest {
     
@@ -19,8 +22,8 @@ public class ProxyUrlTranslatorTest {
     
     @Test
     public void shouldGetCorrectUrlForTrackingService() {
-        assertEquals("http://sporing.bring.no/", proxyTranslator.getUrlForService("tracking"));
-    }
+        assertEquals("http://sporing.bring.no", proxyTranslator.getUrlForService("tracking"));
+    }   
     
     @Test
     public void shouldTranslateEmptyParameterMapToEmptyString() {
@@ -62,13 +65,6 @@ public class ProxyUrlTranslatorTest {
     }
     
     @Test
-    public void shouldCreateCorrectUrlForShippingGuideServiceWithApiPath() {
-        String path = "pickuppoint/postalcode/6057.xml";
-        String expected = "http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/6057.xml";
-        assertEquals(expected, proxyTranslator.createUrl("shipping-guide", path, new HashMap<String,String>()));
-    }
-    
-    @Test
     public void shouldCreateCorrectUrlWithMultipleParameters() {
         String path = "products/SERVICEPAKKE/price.json";
         Map<String, String> paramMap = new HashMap<String, String>();
@@ -80,5 +76,13 @@ public class ProxyUrlTranslatorTest {
         assertTrue(result.contains("&"));
         assertTrue(result.contains("from=1234"));
         assertTrue(result.contains("to=4321"));
+    }
+    
+    
+    @Test
+    public void shouldCreateCorrectUrlForPostalcodeService() {
+        String path = "api/pickuppoint/postalcode/1407.xml";
+        String expected = "http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml";
+        assertEquals(expected, proxyTranslator.createUrl("shipping-guide", path, new HashMap<String,String>()));
     }
 }

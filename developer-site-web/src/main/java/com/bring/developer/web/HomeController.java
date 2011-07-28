@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bring.developer.dao.XmlDao;
+import com.bring.developer.response.productlist.Products;
 import com.bring.developer.response.apireference.Api;
 import com.bring.developer.response.article.Article;
 import com.bring.developer.response.pack.Pack;
@@ -89,6 +90,13 @@ public class HomeController {
         Api apiDoc = XmlDao.createDao(Api.class).query("learn/"+api+"/apireference");
         model.put("apiReference", apiDoc);
         return "learn/apireference";
+    }
+    
+    @RequestMapping(value = "/learn/{api}/productlist.html")
+    public String productList(ModelMap model, @PathVariable String api) throws JAXBException {
+        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/productlist");
+        model.put("productList", products);
+        return "learn/productlist";
     }
     
     @RequestMapping(value = "/learn/{section}.html")

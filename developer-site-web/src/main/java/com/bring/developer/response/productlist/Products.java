@@ -11,15 +11,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "Products")
 public class Products {
     
-    @XmlElement(name = "Product")
-    private List<Product> product = new ArrayList<Product>();
-    
-    @XmlElement(name = "AdditionalService")
+    private List<Product> product = new ArrayList<Product>();    
     private List<AdditionalService> additionalService = new ArrayList<AdditionalService>();
-
-    @XmlElement(name = "Note")
     private Note note;
     
+    @XmlElement(name = "Product")
     public List<Product> getProducts() {
         return product;
     }
@@ -28,10 +24,12 @@ public class Products {
         return product.get(i);
     }
 
+    @XmlElement(name = "AdditionalService")
     public List<AdditionalService> getAdditionalService() {
         return additionalService;
     }
     
+    @XmlElement(name = "Note")
     public Note getNote() {
         return note;
     }

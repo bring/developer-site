@@ -78,6 +78,10 @@ $(document).ready(function() {
     else if(isPageType("package-subpage")) {
     }
     
+    else if (isPageType("productlist")) {
+        $("#navigation").navigation({mode: "breadcrumbs"});
+    }
+    
     /*
      * Helper functions
      */
