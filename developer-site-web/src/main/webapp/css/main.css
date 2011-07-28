@@ -105,7 +105,8 @@ body:before {
 }
 
 .page-article .content,
-.page-apireference .content {
+.page-apireference .content,
+.page-productlist .content {
 	padding-top: 60px;
 }
 

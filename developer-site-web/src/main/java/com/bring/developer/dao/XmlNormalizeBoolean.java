@@ -11,7 +11,7 @@ public class XmlNormalizeBoolean extends XmlAdapter<String, Boolean> {
 
 	@Override
 	public Boolean unmarshal(String arg0) throws Exception {
-		return Boolean.parseBoolean(arg0);
+	    return arg0.trim().equals("1");
 	}
 
 }

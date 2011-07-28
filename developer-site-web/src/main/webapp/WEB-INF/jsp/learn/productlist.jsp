@@ -20,42 +20,30 @@
             <menutabs:showMenu cssClass="menutab" />
             <div class="content group">
                 <div class="article">
-                    <h1>API Reference</h1>
+                    <h1>Product list</h1>
                     
-                    <c:forEach items="${apiReference.parameters}" var="parameter" >
-                        <h2>${parameter.title}</h2>
-                        
-                        ${parameter.description}
-                        
-                        <c:if test="${!empty parameter.default}">
-                            <p>Default: <code>${parameter.default}</code></p>
-                        </c:if>
-                        
-                        <div class="codetabs">
-                            <c:forEach items="${parameter.examples}" var="example">
-                                <h3><a href="#${example.type}">${example.title}</a></h3>
-                                <div data-tab="${example.type}" class="tab">
-                                    <c:if test="${!empty example.request}">
-                                        <div class="api-call">
-                                            <p>
-                                                Request:
-                                                <a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">
-                                                    ${example.request}
-                                                </a>
-                                            </p>
-                                            <pre class="${example.type} response delay-snippet"></pre>
-                                        </div>
-                                    </c:if>
-                                    <c:if test="${!empty example.content}">
-                                        ${example.content}
-                                    </c:if>
-                               </div>
-                            </c:forEach>
-                        </div>
-                    </c:forEach>
+					<table class="productlist">
+						<thead>
+						<tr>
+							<th>Product</th>
+							<th>Product code</th>
+							<th>Price</th>
+							<th>Expected Delivery</th>
+						</tr>
+						</thead>
+						<tbody>
+                    	<c:forEach items="${productList.products}" var="product" >
+							<tr>
+								<td><c:out value="${product.name}" /></td>
+								<td><code><c:out value="${product.code}" /></code></td>
+								<td><c:out value="${product.price ? 'Yes' : 'No'}" /></td>
+								<td><c:out value="${product.expectedDelivery ? 'Yes' : 'No'}" /></td>
+							</tr>
+                    	</c:forEach>
+						</tbody>
+					</table>
                 </div>
                 <div class="span-2 last">
-                	<misc:toc></misc:toc>
 					<misc:comments />
 				</div>
             </div>
