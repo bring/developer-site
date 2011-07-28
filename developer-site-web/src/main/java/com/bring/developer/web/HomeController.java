@@ -92,9 +92,9 @@ public class HomeController {
         return "learn/apireference";
     }
     
-    @RequestMapping(value = "/learn/{api}/productlist.html")
+    @RequestMapping(value = "/learn/{api}/introduction/productlist.html")
     public String productList(ModelMap model, @PathVariable String api) throws JAXBException {
-        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/productlist");
+        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/introduction/productlist");
         model.put("productList", products);
         return "learn/productlist";
     }

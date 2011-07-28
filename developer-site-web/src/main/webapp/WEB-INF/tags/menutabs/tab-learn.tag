@@ -5,6 +5,15 @@
             <a class="menubutton" href="#">Shipping guide API</a>
             <ul>
                  <li>
+                    <a class="menubutton" href="#">Introduction</a>
+                    <ul>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/productlist.html">Product List</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/bestpractice.html">Best Practice</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/offlinedata.html">Offline Data</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/errorcodes.html">Error Codes</a></li>
+                    </ul>
+                </li>
+                 <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
                     <ul>
 <!--                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li> -->
@@ -14,9 +23,6 @@
                 </li>
                 <li>
                     <a class="menubutton" href="/learn/shipping-guide/apireference.html">API Reference</a>
-                </li>
-                 <li>
-                    <a class="menubutton" href="/learn/shipping-guide/productlist.html">Product List</a>
                 </li>
             </ul>
         </li>

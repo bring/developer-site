@@ -224,7 +224,7 @@ li blockquote {
 
 .article td,
  .article th {
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .article tr {
@@ -237,10 +237,6 @@ li blockquote {
 
 .article tr:nth-child(even) {
     background-color: #f0f0f1;
-}
-
-.article table{
-	margin-left: -5px;
 }
 
 
