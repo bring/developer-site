@@ -18,45 +18,11 @@ import com.bring.developer.response.pack.PackagesCategory;
 
 @Controller
 public class HomeController {
-	
-    
-    @RequestMapping(value = "/home.html")
-    public String home() {
-        return "home";
-    }
     
     @RequestMapping(value = "/index.html")
     public String index() {
-    	return home();
+        return "home";
     }
-    
-    @RequestMapping(value = "/talk.html")
-    public String talk() {
-        return "talk";
-    }
-    
-    /// Temp
-    @RequestMapping(value = "/learn/tracking/index.html")
-    public String tracking() {
-        return "learn/tracking/index";
-    }
-    
-    //@RequestMapping(value = "/download/widget/index.html")
-    public String widget() {
-        return "/download/widget/index";
-    }
-    
-    //@RequestMapping(value = "/download/widget/optionalpostoffice.html")
-    public String optionalpostoffice() {
-        return "/download/widget/optionalpostoffice";
-    }
-    
-
-    //@RequestMapping(value = "/download/widget/postalcodevalidation.html")
-    public String postalcodevalidation() {
-        return "/download/widget/postalcodevalidation/index";
-    }
-    /// End temp
     
     @RequestMapping(value = "/download/{type}/index.html")
     public String downloadOverview(ModelMap model, @PathVariable String type) throws JAXBException {
@@ -89,9 +55,9 @@ public class HomeController {
         return apiReferenceHelper(model, api);
     }
     
-    @RequestMapping(value = "/learn/{api}/apireference/usage.html")
+    @RequestMapping(value = "/learn/{api}/apireference/documentation.html")
     public String apiReferenceUsage(ModelMap model, @PathVariable String api) throws JAXBException {
-        return apiReferenceHelper(model, api, "/usage");
+        return apiReferenceHelper(model, api, "/documentation");
     }
     
     private String apiReferenceHelper(ModelMap model, String api, String... suffix) throws JAXBException {
@@ -101,11 +67,11 @@ public class HomeController {
     }
     
     
-    @RequestMapping(value = "/learn/{api}/apireference/products.html")
+    @RequestMapping(value = "/learn/{api}/apireference/product-list.html")
     public String productList(ModelMap model, @PathVariable String api) throws JAXBException {
-        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/apireference/products");
+        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/apireference/product-list");
         model.put("productList", products);
-        return "learn/products";
+        return "learn/product-list";
     }
     
     @RequestMapping(value = "/learn/{section}.html")

@@ -7,7 +7,7 @@
 		<h1 class="banner-title">How can Bring APIs improve your webshop?</h1>
 		
 		<div class="banner-section shippingguide" data-background="shippingguide">
-			<a href="/learn/shipping-guide/apireference.html">
+			<a href="/learn/shipping-guide/apireference/documentation.html">
 				<strong class="title">Shipping Guide</strong>
 				<span class="description">
 					Allow your customers to choose their preferred shipping method.
@@ -16,7 +16,7 @@
 		</div>
 		
 		<div class="banner-section tracking" data-background="tracking">
-			<a href="/learn/tracking/introduction.html">
+			<a href="/learn/tracking/documentation.html">
 				<strong class="title">Tracking Parcels</strong>
 				<span class="description">
 					Show your customers the current status of their shipment.

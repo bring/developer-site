@@ -16,7 +16,22 @@ import com.bring.developer.request.ProxyUrlBuilder;
 @Component
 public class ProxyDaoImpl extends ProxyDao {
 
-    private ProxyUrlBuilder urlBuider = new ProxyUrlBuilder();
+    private ProxyUrlBuilder urlBuilder;
+    
+    /**
+     * TODO Move configuration out of the constructor.
+     */
+    public ProxyDaoImpl() {
+        super();
+        urlBuilder = new ProxyUrlBuilder();
+        urlBuilder.addService("tracking", "http://sporing.bring.no");
+        urlBuilder.addService("shipping-guide", "http://fraktguide.bring.no/fraktguide");
+    }
+    
+    public ProxyDaoImpl(ProxyUrlBuilder urlBuilder) {
+        super();
+        this.urlBuilder = urlBuilder;
+    }
     
     @Override
     protected void failOnInvalidResponseHeader(HttpResponse result)  throws IOException {
@@ -24,7 +39,7 @@ public class ProxyDaoImpl extends ProxyDao {
     }
     
     public ResponseEntity<byte[]> performRequest(String service, String requestPath, Map<String,String> requestParams) {
-        HttpResponse response = performRequest(urlBuider.createUrl(service, requestPath, requestParams));
+        HttpResponse response = performRequest(urlBuilder.createUrl(service, requestPath, requestParams));
         MultiValueMap<String, String> headers = translateHeaders(response.getAllHeaders());
         HttpStatus httpStatus = HttpStatus.valueOf(response.getStatusLine().getStatusCode());
         return new ResponseEntity<byte[]>(consumeResultAndReturnAsByteArray(response), headers, httpStatus);

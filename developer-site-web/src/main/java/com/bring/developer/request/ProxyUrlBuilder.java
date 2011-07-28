@@ -1,10 +1,17 @@
 package com.bring.developer.request;
 
+import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ProxyUrlBuilder {
-    public static final String TRACKING_URL = "http://sporing.bring.no";
-    public static final String SHIPPINGGUIDE_URL = "http://fraktguide.bring.no/fraktguide";
+    private Map<String,String> services;
+    
+    public ProxyUrlBuilder() {
+        setServices(new HashMap<String, String>());
+    }
     
     public String createUrl(String service, String path, Map<String, String> paramMap) {
         if (!path.isEmpty()) {
@@ -14,13 +21,7 @@ public class ProxyUrlBuilder {
     }
     
     public String getUrlForService(String service) {
-        if (service.equals("tracking")) {
-            return TRACKING_URL;            
-        }
-        else if (service.equals("shipping-guide")) {
-            return SHIPPINGGUIDE_URL;
-        }
-        return null;
+        return getServices().get(service);
     }
 
     public String paramsToQueryString(Map<String, String> paramMap) {
@@ -33,5 +34,17 @@ public class ProxyUrlBuilder {
             queryString += "&" + keys[i] + "=" + paramMap.get(keys[i]);
         }
         return queryString;
+    }
+
+    public void addService(String service, String url) {
+        getServices().put(service, url);
+    }
+
+    public Map<String,String> getServices() {
+        return services;
+    }
+
+    public void setServices(Map<String,String> services) {
+        this.services = services;
     }
 }

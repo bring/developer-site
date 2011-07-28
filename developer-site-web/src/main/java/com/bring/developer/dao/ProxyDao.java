@@ -11,13 +11,10 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class ProxyDao {
     
-    public static final Logger LOG = LoggerFactory.getLogger(TwitterDao.class);
     HttpClient httpClient;
 
     @Autowired
@@ -45,7 +42,6 @@ public abstract class ProxyDao {
     public String performRequestConsumeAndReturnAsString(String request) {
         return consumeResultAndReturnAsString(performRequest(request));
     }
-    
 
     public String consumeResultAndReturnAsString(HttpResponse response) {
         try {

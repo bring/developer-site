@@ -20,7 +20,7 @@ public class ProxyController{
     private ProxyDaoImpl proxyDao;
 
     @Autowired
-    public ProxyController (ProxyDaoImpl proxyDao) {
+    public ProxyController(ProxyDaoImpl proxyDao) {
         this.proxyDao = proxyDao;
     }
     
