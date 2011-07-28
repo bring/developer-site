@@ -5,6 +5,15 @@
             <a class="menubutton" href="#">Shipping guide API</a>
             <ul>
                  <li>
+                    <a class="menubutton" href="#">Introduction</a>
+                    <ul>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/productlist.html">Product List</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/bestpractice.html">Best Practice</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/offlinedata.html">Offline Data</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/introduction/errorcodes.html">Error Codes</a></li>
+                    </ul>
+                </li>
+                 <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
                     <ul>
 <!--                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li> -->
@@ -14,9 +23,6 @@
                 </li>
                 <li>
                     <a class="menubutton" href="/learn/shipping-guide/apireference.html">API Reference</a>
-                </li>
-                 <li>
-                    <a class="menubutton" href="/learn/shipping-guide/productlist.html">Product List</a>
                 </li>
             </ul>
         </li>
@@ -29,13 +35,13 @@
         </li>
         
         <li>
-            <a class="menubutton" href="#">Optional Post Office</a>
+            <a class="menubutton" href="#">Post Office API</a>
             <ul>
-                <li><a class="menubutton" href="/learn/optionalpostoffice/apireference.html">API Reference</a></li>
+                <li><a class="menubutton" href="/learn/postoffice/apireference.html">API Reference</a></li>
             </ul>
         </li>
         
-        <li><a class="menubutton" href="#">Postal code API</a>
+        <li><a class="menubutton" href="#">Postal Code API</a>
             <ul>
                 <li><a class="menubutton" href="/learn/postalcode/apireference.html">API Reference</a></li>
             </ul>
