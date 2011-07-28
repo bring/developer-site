@@ -3,7 +3,7 @@
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	    var disqus_shortname = 'newzoo'; // required: replace example with your forum shortname
+	    var disqus_shortname = 'bringdevelopers'; // required: replace example with your forum shortname
 	    var disqus_developer = 1; // Remove this for prod
 	
 	    // The following are highly recommended additional parameters. Remove the slashes in front to use.

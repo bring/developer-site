@@ -28,7 +28,7 @@
 							</div>
 							<div class="widget-tabs">
 								<a href="#code" class="widget-tab">Code</a>
-								<a href="#preview" class="widget-tab active">Widget Preview</a>
+								<a href="#preview" class="widget-tab active">Preview</a>
 							</div>
 						</div>
 					</c:if>
@@ -46,6 +46,16 @@
 						</c:if>
 					</div>
 					<div class="package-info">
+						<div class="package-media">
+							<c:forEach var="media" items="${pack.medias}" varStatus="status">
+								<c:if test="${empty media.role}">
+									<a class="thumb zoom" href="/media/${type}/${pack.handle}/${media.file}">
+										<img src="/media/${type}/${pack.handle}/${media.file}" />
+									</a>
+								</c:if>
+							</c:forEach>
+						</div>
+						<h2>Made by</h2>
 						<c:forEach var="person" items="${pack.persons }">
 							<div class="person">
 								<a href="${person.url}">

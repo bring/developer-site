@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="clientlibrary">
+	<Title>
+		Java API
+	</Title>
+	<Description><![CDATA[
+		<p>This library makes it easier for a Java developer to interact with Bring's APIs.</p>
+		<p>It currently supports <a href="/learn/shippingguide/apireference.html">Bring's Shipping
+			Guide API</a> and <a href="/learn/tracking/introduction.html">Bring's Tracking API</a>.</p>
+	]]></Description>
+	<Person role="author">
+		<Name>Bring Developer</Name>
+		<Company>Bring</Company>
+		<Url>http://developer.bring.com</Url>
+		<Email>fraktguide@bring.no</Email>
+	</Person>
+	<Install>
+		<Step><![CDATA[
+			<p>Download the jar-file and include with your project.</p>
+		]]></Step>
+		<Step><![CDATA[
+			<p>Or, install using Maven.</p>
+		]]></Step>
+	</Install>
+	<Repository>
+		https://github.com/bring/open-java-api
+	</Repository>
+</Pack>

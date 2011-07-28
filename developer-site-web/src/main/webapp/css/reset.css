@@ -209,6 +209,10 @@ li blockquote {
     margin-bottom: 1em;
 }
 
+.article table {
+	width: 100%;
+}
+
 .article thead{
     background-color: #e2e3e4;
 }
