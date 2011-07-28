@@ -11,8 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 
-import request.ProxyUrlBuilder;
-
+import com.bring.developer.request.ProxyUrlBuilder;
 
 @Component
 public class ProxyDaoImpl extends ProxyDao {
@@ -20,16 +19,15 @@ public class ProxyDaoImpl extends ProxyDao {
     private ProxyUrlBuilder urlBuider = new ProxyUrlBuilder();
     
     @Override
-    protected void failOnInvalidResponseHeader(HttpResponse result) 
-            throws IOException {
+    protected void failOnInvalidResponseHeader(HttpResponse result)  throws IOException {
+        // Ignore invalid headers
     }
     
-    public ResponseEntity<String> performRequest(String service, String requestPath, Map<String,String> requestParams) {
+    public ResponseEntity<byte[]> performRequest(String service, String requestPath, Map<String,String> requestParams) {
         HttpResponse response = performRequest(urlBuider.createUrl(service, requestPath, requestParams));
         MultiValueMap<String, String> headers = translateHeaders(response.getAllHeaders());
         HttpStatus httpStatus = HttpStatus.valueOf(response.getStatusLine().getStatusCode());
-        String responseString = consumeResultAndReturnAsString(response);
-        return new ResponseEntity<String>(responseString, headers, httpStatus);
+        return new ResponseEntity<byte[]>(consumeResultAndReturnAsByteArray(response), headers, httpStatus);
     }
 
     private MultiValueMap<String, String> translateHeaders(Header[] responseHeaders) {

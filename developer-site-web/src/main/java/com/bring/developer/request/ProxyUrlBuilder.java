@@ -1,14 +1,14 @@
-package request;
+package com.bring.developer.request;
 
 import java.util.Map;
 
 public class ProxyUrlBuilder {
-    public static final String TRACKING_URL = "http://sporing.bring.no/";
-    public static final String SHIPPINGGUIDE_URL = "http://fraktguide.bring.no/fraktguide/";
+    public static final String TRACKING_URL = "http://sporing.bring.no";
+    public static final String SHIPPINGGUIDE_URL = "http://fraktguide.bring.no/fraktguide";
     
     public String createUrl(String service, String path, Map<String, String> paramMap) {
-        if (service.equals("shipping-guide") && !(path.startsWith("products/"))) {
-            path = "api/" + path;
+        if (!path.isEmpty()) {
+            path = "/" + path;
         }
         return getUrlForService(service) + path + paramsToQueryString(paramMap);
     }

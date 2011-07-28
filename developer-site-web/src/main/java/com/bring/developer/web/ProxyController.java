@@ -24,8 +24,8 @@ public class ProxyController{
         this.proxyDao = proxyDao;
     }
     
-    @RequestMapping(value = "/api/{service}/**", method = RequestMethod.GET)
-    public ResponseEntity<String> shippingGuideRequest(HttpServletRequest request,@PathVariable String service, @RequestParam Map<String, String> params) {
+    @RequestMapping(value = "/proxy/{service}/**", method = RequestMethod.GET)
+    public ResponseEntity<byte[]> shippingGuideRequest(HttpServletRequest request,@PathVariable String service, @RequestParam Map<String, String> params) {
         String requestPath = (String) request.getAttribute(HandlerMapping.PATH_WITHIN_HANDLER_MAPPING_ATTRIBUTE);
         return proxyDao.performRequest(service, requestPath, params);
     }
