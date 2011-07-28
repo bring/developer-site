@@ -1,3 +1,13 @@
+
+/* Showcase */
+
+.showcase {
+    min-height: 200px;
+    margin-bottom: 10px;
+}
+
+
+
 /* Introbanner */
 .introbanner {
 	background-color: #fff;
@@ -255,3 +265,6 @@
 .intro {
     position: relative;
 }
+
+
+

@@ -2,6 +2,7 @@
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -48,7 +49,11 @@
                                             <pre class="${example.type} response delay-snippet">Running request...</pre>
                                         </div>
                                         <c:if test="${example.type == 'json'}">
-                                        	<p>To make a JSONP request simply add <code>&amp;callback=functionName</code> to the JSON request.</p>
+                                        	<p>To make a JSONP request simply add
+                                        		<a href="${apiReference.externalRequestBase.content}${example.request}${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName">
+                                        			<code>${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName</code>
+                                        		</a>
+                                        		to the JSON request.</p>
                                         </c:if>
                                     </c:if>
                                     <c:if test="${!empty example.content}">

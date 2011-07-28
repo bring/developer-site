@@ -58,7 +58,7 @@
         </Title>
         <Description><![CDATA[
             <p>You may specify country using the <code>country</code> parameter.</p>
-            <p>Only ISO 3166-1-alpha-2 formatted contry codes are allowed.</p>
+            <p>Only ISO 3166-1-alpha-2 formatted country codes are allowed.</p>
             <p>Currently only these countries are supported:</p>
             <ul>
                 <li><code>NO</code> - Norway</li>
