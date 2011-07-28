@@ -42,20 +42,25 @@
     line-height: 100%;
 }
 
-.packagebox .by{
+.packagebox .by,
+.packagebox .from {
     position: absolute;
-    top: 165px;
     width: 188px;
     left: 10px;
     color: #999;
 }
 
+.packagebox:hover .by,
+.packagebox:hover .from {
+	color: #565656;
+}
+
+.packagebox .by{
+    top: 165px;
+}
+
 .packagebox .from{
-    position: absolute;
     top: 180px;
-    width: 188px;
-    left: 10px;
-    color: #999;
 }
 
 .sidebox{

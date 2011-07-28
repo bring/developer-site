@@ -45,7 +45,7 @@
                                             Request: 
                                             <pre><a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
                                             Response:
-                                            <pre class="${example.type} response delay-snippet"></pre>
+                                            <pre class="${example.type} response delay-snippet">Running request...</pre>
                                         </div>
                                         <c:if test="${example.type == 'json'}">
                                         	<p>To make a JSONP request simply add <code>&amp;callback=functionName</code> to the JSON request.</p>
