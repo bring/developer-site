@@ -11,7 +11,7 @@
             Postal code
         </Title>
         <Description><![CDATA[
-            <p>Is specified by adding <code>?from=7600&amp;to=1407</code>.</p>
+            <p>Specified using <code>from=7600&amp;to=1407</code>.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -75,7 +75,7 @@ Example output
             Country Code
         </Title>
         <Description><![CDATA[
-            <p>Is specified by adding <code>?fromCountry=NO&amp;toCountry=DK</code>.</p>
+            <p>Specified using <code>fromCountry=NO&amp;toCountry=DK</code>.</p>
             <p><a href="http://www.iso.org/iso/english_country_names_and_code_elements">Country Codes are ISO-3166-1-alpha-2</a></p>
         ]]></Description>
         <Example type="xml">
@@ -139,7 +139,7 @@ Example output
             Weight in grams
         </Title>
         <Description><![CDATA[
-            <p>Is specified by adding <code>?weightInGrams=1500</code>.</p>
+            <p>Specified using <code>weightInGrams=1500</code>.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -203,7 +203,7 @@ Example output
             Package dimensions
         </Title>
         <Description><![CDATA[
-            <p>Is specified by adding <code>&amp;length=30&amp;width=40&amp;height=40</code>.</p>
+            <p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -267,10 +267,11 @@ Example output
             Volume
         </Title>
         <Description><![CDATA[
-            <p>Instead of, or in addition to, using the package's weight and dimensions you can
+            <p>Instead of, or in addition to using the package's weight and dimensions you can
                 specify volume. This is relevant for non-rectangular hexahedron shaped packages,
                 and depending on the volume, it could affect the set of available products.</p>
             <p>The unit is dm<sup>3</sup>.</p>
+            <p>Specified using <code>volume=33</code>.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -340,11 +341,12 @@ Example output
             Shipping date
         </Title>
         <Description><![CDATA[
-            <p>This parameter specifies which date the shipment is picked-up or delivered to Bring
-                to be delivered to the recipient.</p>
-            <p>Accepted format is: <code>YYYY-MM-DD</code>.</p>
-            <p>If this parameter is specified the response will include expected delivery date in
-                addition to amount of working days.</p>
+            <p>Specifies the date the package is delivered to Bring. Used to calculate the 
+            expected delivery date.</p>
+            <p>Specified using <code>date=2009-02-03</code>.</p>
+            <p>Accepted date format: <code>YYYY-MM-DD</code>.</p>
+            <p>If this parameter is specified,  the response will include expected delivery date, 
+            in addition to expected number of working days.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -412,7 +414,8 @@ Example output
         <Description><![CDATA[
             <p>Use this paramter if you would like to specify when during the day the package needs
                 to be picked up from the departure point.</p>
-            <p>This parameter is only considered for courier and express products. It is also optional.</p>
+            <p>This parameter is only considered for courier and express products.</p>
+            <p>Specified using <code>date=2011-07-28&time=13:37</code> (date and time is required to use this option).</p>
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         ]]></Description>
         <Example type="xml">
@@ -478,10 +481,9 @@ Example output
             EDI setting
         </Title>
         <Description><![CDATA[
-            <p>Specify the whether or the shipment has been pre-registered (EDI).</p>
-            <p>Can be specified with the <code>edi=false</code> parameter.</p>
-            <p>This will affect response prices and might affect which products are
-                available.</p>
+            <p>Specify whether or not the shipment has been pre-registered (EDI).</p>
+            <p>Specified using <code>edi=false</code>.</p>
+            <p>This will affect response prices and might affect which products are available.</p>
         ]]></Description>
         <Default>
             true
@@ -550,7 +552,9 @@ Example output
         </Title>
         <Description><![CDATA[
             <p>The response data may vary depending on whether or not Bring must collect the
-                shipment or if the customer delivers the shipment from a post office.</p>
+                shipment, or if the customer delivers the shipment from a post office.</p>
+            <p>This parameter specifies whether or not the package is delivered to a post office before shipping</p>
+            <p>Specified using <code>postingAtPostOffice=true</code></p>
         ]]></Description>
         <Default>false</Default>
         <Example type="xml">
@@ -617,14 +621,10 @@ Example output
             Additional services
         </Title>
         <Description><![CDATA[
-            <p>Adds information about additional services when they are available.</p>
-            <p>There are currently 3 additional services that can be specified this way. To add
-                multiple services simply chain the parameters.</p>
-            <ul>
-                <li><code>&amp;additional=postoppkrav</code></li>
-                <li><code>&amp;additional=evarsling</code></li>
-                <li><code>&amp;additional=lordagsutkjoring</code></li>
-            </ul>
+            <p>There are currently 3 additional services that can be specified using this option. 
+            To add multiple services simply chain the parameters.</p>
+            <p>Specified using <code>additional=postoppkrav</code>, <code>additional=evarsling</code>, or <code>additional=lordagsutkjoring</code>.</p>
+            <p>Example using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".</p>
         ]]></Description>
         <Example type="xml">
             <Title>
