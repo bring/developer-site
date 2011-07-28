@@ -4,7 +4,7 @@
         http://fraktguide.bring.no/fraktguide
     </RequestBase>
     <RequestBase type="internal">
-        /api/shipping-guide/
+        /api/shipping-guide
     </RequestBase>
     <Parameter>
         <Title>
@@ -146,7 +146,7 @@ Example output
                 XML
             </Title>
             <Request>
-                /products/price.xml?from=7600&amp;o=1407&amp;weightInGrams=1500
+                /products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500
             </Request>
         </Example>
         <Example type="json">
@@ -558,7 +558,7 @@ Example output
                 XML
             </Title>
             <Request>
-                /products/price.xml?from=7600&amp;to=&amp;407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
+                /products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
             </Request>
         </Example>
         <Example type="json">
@@ -626,7 +626,7 @@ Example output
                 <li><code>&amp;additional=lordagsutkjoring</code></li>
             </ul>
         ]]></Description>
-        <Example type="XML">
+        <Example type="xml">
             <Title>
                 XML
             </Title>
