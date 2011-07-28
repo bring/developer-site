@@ -13,16 +13,14 @@ import org.springframework.util.MultiValueMap;
 
 import com.bring.developer.request.ProxyUrlBuilder;
 
-
-
 @Component
 public class ProxyDaoImpl extends ProxyDao {
 
     private ProxyUrlBuilder urlBuider = new ProxyUrlBuilder();
     
     @Override
-    protected void failOnInvalidResponseHeader(HttpResponse result) 
-            throws IOException {
+    protected void failOnInvalidResponseHeader(HttpResponse result)  throws IOException {
+        // Ignore invalid headers
     }
     
     public ResponseEntity<byte[]> performRequest(String service, String requestPath, Map<String,String> requestParams) {
