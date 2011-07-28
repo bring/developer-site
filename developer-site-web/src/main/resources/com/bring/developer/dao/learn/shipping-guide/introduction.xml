@@ -1,10 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Best Practices</Title>
-    <MenuTitle>Best Practices</MenuTitle>
+    <Title>Introduction</Title>
+    <MenuTitle>Introduction</MenuTitle>
     <Content>
 <![CDATA[
-<h2>Introduction</h2>
+
+<p> 
+Shippingguide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations, product information and environmental information (and more). 
+You can get finished rendered HTML, XML API (RESTful), JSON or use our Web Service.
+</p> 
+<h2>XML Schema Versioning</h2> 
+<p> 
+    Fraktguiden makes an effort to always be backwards compatible regarding dataformat for requests and responses of the Web Service.
+</p> 
+<p> 
+    To achieve this, a <b>SchemaVersion</b> element is used in the request, indicating which version the client is on and
+    what dataformat the client expects in the result.
+    We make an effort not to return new elements in the response when an old schema version is specified.
+</p> 
+<p> 
+    When changes in the schema are made, the SchemaVersion is incremented by one.
+    The new schema is used at the <b>same endpoint URL</b> as before and uses the same namespace for its XML elements.
+    A TraceMessage element (info message) in the
+    response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
+</p> 
+<p> 
+    Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API is
+    expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in that elements are not renamed or deleted.
+</p> 
+
+<p class="exampleLink"> 
+    <a href="/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL</a> (latest schema version)
+</p> 
+<p> 
+    It is also possible to download specific WSDL / schema versions:
+    <a href="/fraktguide/ws/fraktguide-v1.wsdl" target="_blank">1</a>,
+    <a href="/fraktguide/ws/fraktguide-v2.wsdl" target="_blank">2</a>,
+    <a href="/fraktguide/ws/fraktguide-v3.wsdl" target="_blank">3</a>,
+    <a href="/fraktguide/ws/fraktguide-v4.wsdl" target="_blank">4</a>.
+    Current version is 4.
+</p> 
+<p class="exampleLink"> 
+    <a href="/fraktguide/schemaDoc.do" target="_blank">Fraktguide XML Schema documentation</a> 
+</p> 
+ 
+<h2>JSON</h2> 
+<p> 
+    We also provide JSON (beta). This enables AJAX-calls and cross-site live retrieval.
+</p> 
+<p> 
+    JSON mimics the XML API, and you can find more information and examples in the <a href="jsonp.do">Norwegian
+    JSON example page</a>.
+</p> 
+<p> 
+    Most notably
+</p> 
+<ul> 
+    <li>Append a "callback=yourFunctionName" parameter to get a callback function returned (JSONP)</li> 
+</ul> 
+ 
 ]]>
     </Content>
 </Article>
