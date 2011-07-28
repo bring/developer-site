@@ -14,3 +14,4 @@
 <!-- 3rd party stuff -->
 <link rel="stylesheet" type="text/css" href="/css/disqus.css" />
 <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
+<link rel="stylesheet" type="text/css" href="/css/lib/jquery.fancybox.css" />

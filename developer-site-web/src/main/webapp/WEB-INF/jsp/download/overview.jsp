@@ -26,7 +26,7 @@
 									<img src="/media/${overview.type}/${pack.handle}/${pack.previewMedia.file}" alt="Preview" />
 								</c:when>
 								<c:otherwise>
-									<img src="/img/default-widget-preview.png" alt="Preview" />
+									<img src="/img/default-${overview.type}-preview.png" alt="Preview" />
 								</c:otherwise>
 							</c:choose>
 							

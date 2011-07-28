@@ -66,6 +66,13 @@ $(document).ready(function() {
         // Dynamic widget generation from code example
         var widgetSource = $($(".widgetpreview .codetab pre.sh_sourceCode:not(.snippet-formatted)")[0]).text();
         var previewTab = $(".widgetpreview .previewtab");
+        
+        // Fancy zoom on package media
+        $(".package-media a.zoom").fancybox({
+        	overlayColor : "#fff",
+        	padding: 0,
+        	hideOnContentClick : true
+        });
     }
     
     else if(isPageType("package-subpage")) {

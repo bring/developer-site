@@ -8,43 +8,48 @@
 		<p>This ZenCart module adds the possibility of letting users pick their preferred shipping
 			method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery
 			times and product descriptions.</p>
+		<p>More information in the
+			<a href="http://code.google.com/p/fraktpriserzencart/source/browse/trunk/zencart/pakkepriser/lesmeg.txt">
+			readme file</a> (Norsk).</p>
 	]]></Description>
 	<Person role="author">
-		<Name>Bring Developer</Name>
+		<Name>Arne Unneland</Name>
 		<Company>Bring</Company>
-		<Email>fraktguide@bring.no</Email>
-		<Url>http://developer.bring.com</Url>
+		<Email>arne.unneland@gmail.com</Email>
+		<Url>http://unneland.com</Url>
+	</Person>
+	<Person>
+		<Name>Rune Rassmusen</Name>
+		<Company>Syntax Error</Company>
+		<Email>syntaxerror@gmail.com</Email>
+		<Url>http://syntaxerror.no</Url>
 	</Person>
 	<Install>
 		<Step><![CDATA[
-			<p>This widget depends on jQuery, so please add jQuery to your site first.</p>
+			<p>Download and extract the plugin.</p>
 		]]></Step>
 		<Step><![CDATA[
-			<p>Add the Optional Post Office widget:</p>
-			<pre class="html">&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"&gt;&lt;/script&gt;</pre>
+			<p>It is recommended that you backup your ZenCart first.</p>
 		]]></Step>
 		<Step><![CDATA[
-			<p>Initialize it</p>
-			<pre class="javascript">$("divid").utleveringsenhet();</pre>
+			<p>Upload the <code>includes</code> folder from the extracted plugin to your ZenCart
+				webshop's root directory.</p>
+		]]></Step>
+		<Step><![CDATA[
+			<p>Go to <code>Modules &rarr; Shipping</code>. The module you are looking for is suffixed
+				by "(Bring Fraktguide)".</p>
+		]]></Step>
+		<Step><![CDATA[
+			<p>Install the shipping options you want by clicking the "Install" button next to them.</p>
 		]]></Step>
 	</Install>
-	<PreviewCode highlightLines="2,5" height="200"><![CDATA[
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#divid').utleveringsenhet();
-    });
-</script>
-<form>
-	<div id="divid"></div>
-</form>
-		]]></PreviewCode>
+	<Repository>
+		http://code.google.com/p/fraktpriserzencart/
+	</Repository>
 	<Download>
-		http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js
+		http://code.google.com/p/fraktpriserzencart/downloads/list
 	</Download>
-	<OnSite>
-		<Title>Komplett</Title>
-		<Url>http://komplett.no</Url>
-	</OnSite>
+	<Media>
+		<File>zencart-screenshot.png</File>
+	</Media>
 </Pack>

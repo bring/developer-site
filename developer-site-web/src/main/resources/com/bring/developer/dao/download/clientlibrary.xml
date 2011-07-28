@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PackagesOverview type="clientlibrary">
+	<Title>Client Libraries</Title>
+	<Description><![CDATA[
+		<p>Client libraries are packages which makes it easier for a developer to interact with
+			Bring's APIs.</p>
+	]]></Description>
+</PackagesOverview>

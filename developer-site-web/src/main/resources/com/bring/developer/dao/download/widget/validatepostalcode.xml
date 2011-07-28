@@ -23,7 +23,7 @@
 		]]></Step>
 	</Install>
 	<PreviewCode highlightLines="8-18" height="150"><![CDATA[
-<link rel="stylesheet" type="text/css" href="/media/widget/validatepostalcode/style.css" />
+<link rel="stylesheet" type="text/css" href="/media/widget/validatepostalcode/style.css" /> <!-- Put it in your head -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
    $(document).ready(function() {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PackagesOverview type="plugin">
+	<Title>Plugins</Title>
+	<Description><![CDATA[
+		<p>Plugins are additional modules/extensions you can easily add to an existing webshop.
+			Since a plugin can include both client-side code as well as do back-end processing
+			they often offer more comprehensive functionality than widgets.</p>
+	]]></Description>
+</PackagesOverview>
