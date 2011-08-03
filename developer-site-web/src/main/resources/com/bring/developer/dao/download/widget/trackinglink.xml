@@ -5,7 +5,7 @@
 		Tracking link
 	</Title>
 	<Description><![CDATA[
-		<p>Use this URL to directly link to tracking information from Posten & Bring.</p>
+		<p>Use this URL to directly link to tracking information from Posten & Bring. This is not a real installable widget, but information on how to link to the tracking web page.</p>
 	]]></Description>
 	<Person role="author">
 		<Name>Bring Developer</Name>
