@@ -13,16 +13,22 @@
 			readme file</a> (Norsk).</p>
 	]]></Description>
 	<Person role="author">
-		<Name>Arne Unneland</Name>
-		<Company>Bring</Company>
-		<Email>arne.unneland@gmail.com</Email>
-		<Url>http://unneland.com</Url>
-	</Person>
-	<Person>
 		<Name>Rune Rassmusen</Name>
 		<Company>Syntax Error</Company>
 		<Email>syntaxerror@gmail.com</Email>
 		<Url>http://syntaxerror.no</Url>
+	</Person>
+    <Person>
+        <Name>Arne Unneland</Name>
+        <Company>Bring</Company>
+        <Email>arne.unneland@gmail.com</Email>
+        <Url>http://www.linkedin.com/in/arneunneland</Url>
+    </Person>
+    <Person>
+		<Name>Ingvald Haaland</Name>
+		<Company></Company>
+		<Email>ingvald@haaland.net</Email>
+		<Url>http://www.linkedin.com/pub/ingvald-haaland/7/726/3b</Url>
 	</Person>
 	<Install>
 		<Step><![CDATA[
