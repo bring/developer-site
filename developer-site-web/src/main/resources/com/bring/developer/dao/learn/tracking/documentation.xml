@@ -4,30 +4,6 @@
     <MenuTitle>Documentation</MenuTitle>
     <Content>
 <![CDATA[
-<h2>Tracking Link</h2>
-<p>
-    Links to tracking can be the same as the URL of a normal tracking request. 
-    E.g.: <br/> <code>http://sporing.bring.no/sporing.html?q=...</code>
-</p>
-
-<p>The parameter "q" is the query string (reference, shipment or package number).</p>
-
-<p>
-    If the query string is a sender's reference, then it's recommended to filter on the sender's 
-    id ("aktornummer"), <br/> if available. Then the results will be unique for that sender. 
-    This is done with the parameter aktornummer, e.g. <code>&aktornummer=123.</code>
-</p>
-
-<p>
-    For results without the top menu, add the following request parameter: &layout=standalone<br />
-    E.g.: <code>http://sporing.bring.no/sporing.html?q=...&layout=standalone</code>
-</p>
-
-<p>
-    The latter is suited for e.g. popup windows. Please note that the width of the popup window 
-    should be equal to or greater than 1024 pixels.
-</p>
-
 <h2>Tracking API</h2>
 
 <p>This information is only relevant for system developers.</p>
