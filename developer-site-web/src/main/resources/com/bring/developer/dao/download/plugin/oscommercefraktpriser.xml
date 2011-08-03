@@ -10,14 +10,22 @@
 			times and product descriptions.</p>
 	]]></Description>
 	<Person role="author">
+		<Name>Kortshop</Name>
+        <Company>Kortshop</Company>
+        <Email>salg@kortshop.no</Email>
+		<Url>http://www.kortshop.no/</Url>
+	</Person>
+    <Person>
 		<Name>Arne Unneland</Name>
 		<Company>Bring</Company>
 		<Email>arne.unneland@gmail.com</Email>
-		<Url>http://unneland.com</Url>
+		<Url>http://www.linkedin.com/in/arneunneland</Url>
 	</Person>
-	<Person>
-		<Name>kortshop</Name>
-		<Url>http://addons.oscommerce.com/profile/49075</Url>
+    <Person>
+		<Name>Yngve</Name>
+		<Company>Mystore.no</Company>
+		<Email>kundeservice@y1.no</Email>
+		<Url>http://mystore.no</Url>
 	</Person>
 	<Install>
 		<Step><![CDATA[
@@ -35,6 +43,6 @@
 		]]></Step>
 	</Install>
 	<Download>
-		http://addons.oscommerce.com/info/6616#tabs-list
+		http://addons.oscommerce.com/info/7811
 	</Download>
 </Pack>
