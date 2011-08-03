@@ -78,7 +78,7 @@
 								<h2>Who is using</h2>
 								<ul>
 									<c:forEach var="using" items="${pack.whoIsUsing}">
-										<a href="${using.url }">${using.title }</a>
+										<a href="${using.url }">${using.title }</a><br/>
 									</c:forEach>
 								</ul>
 							</div>

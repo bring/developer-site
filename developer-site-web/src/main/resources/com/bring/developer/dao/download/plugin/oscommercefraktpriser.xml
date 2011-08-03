@@ -45,4 +45,16 @@
 	<Download>
 		http://addons.oscommerce.com/info/7811
 	</Download>
+    <OnSite>
+        <Title>Kortshop</Title>
+        <Url>http://kortshop.no/</Url>
+    </OnSite>
+    <OnSite>
+        <Title>MAGASI.NET</Title>
+        <Url>http://magasi.net/</Url>
+    </OnSite>
+    <OnSite>
+        <Title>FlightSim.no Shop</Title>
+        <Url>http://flightSim.no/</Url>
+    </OnSite>
 </Pack>

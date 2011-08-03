@@ -58,4 +58,16 @@
 	<Media>
 		<File>zencart-screenshot.png</File>
 	</Media>
+    <OnSite>
+        <Title>Sune Sport &amp; Games</Title>
+        <Url>http://www.sunesport.no/</Url>
+    </OnSite>
+    <OnSite>
+        <Title>iUtstyr.no</Title>
+        <Url>http://iutstyr.no/</Url>
+    </OnSite>
+    <OnSite>
+        <Title>evenstadmusikk.no</Title>
+        <Url>http://evenstadmusikk.no/</Url>
+    </OnSite>
 </Pack>
