@@ -45,6 +45,16 @@
 	<Download>
 		http://addons.oscommerce.com/info/7811
 	</Download>
+    <Media>
+		<File>
+			full.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			logo.png
+		</File>
+	</Media>
     <OnSite>
         <Title>Kortshop</Title>
         <Url>http://kortshop.no/</Url>

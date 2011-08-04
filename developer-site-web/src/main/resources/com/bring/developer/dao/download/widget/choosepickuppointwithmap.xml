@@ -2,12 +2,12 @@
 
 <Pack type="widget">
 	<Title>
-		Alternative post office
+		Choose pickup point with map
 	</Title>
 	<Description><![CDATA[
-		<p>This widget uses Bring's Post Office API to allow the user to choose their
+		<p>This widget uses Bring's Pickup point API to allow the user to choose their
 			preferred post office. This is mainly intended for online shopping to allow the
-			user to choose another post office than the one closest to their shipping address.</p>
+			user to choose another pickup point than the default to their shipping address.</p>
 	]]></Description>
 	<Person role="author">
 		<Name>Stian Mathiassen</Name>
@@ -34,12 +34,16 @@
 			<pre class="javascript">$("divid").utleveringsenhet();</pre>
 		]]></Step>
 	</Install>
-	<PreviewCode highlightLines="2,5" height="200"><![CDATA[
+	<PreviewCode highlightLines="2,5-9" height="200"><![CDATA[
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#divid').utleveringsenhet();
+        $('#divid').utleveringsenhet({
+             googleMaps: true,
+             mapHeight: 400,
+             mapWidth: 400
+        });
     });
 </script>
 <form>
@@ -49,8 +53,14 @@
 	<Download>
 		http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js
 	</Download>
-<!--	<OnSite>
-		<Title>Komplett</Title>
-		<Url>http://komplett.no</Url>
-	</OnSite>-->
+    <Media>
+		<File>
+			full.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			screenshot.png
+		</File>
+	</Media>
 </Pack>

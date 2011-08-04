@@ -56,7 +56,14 @@
 		http://code.google.com/p/fraktpriserzencart/downloads/list
 	</Download>
 	<Media>
-		<File>zencart-screenshot.png</File>
+		<File>
+			full.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			logo.png
+		</File>
 	</Media>
     <OnSite>
         <Title>Sune Sport &amp; Games</Title>
