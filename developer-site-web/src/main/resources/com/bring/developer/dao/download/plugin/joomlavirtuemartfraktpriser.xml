@@ -51,6 +51,12 @@
 			virtuemart-logo.png
 		</File>
 	</Media>
+    <Media>
+		<File>
+			google_code_logo.gif
+		</File>
+	</Media>
+
 	<Media role="preview">
 		<File>
 			combined-logo.png

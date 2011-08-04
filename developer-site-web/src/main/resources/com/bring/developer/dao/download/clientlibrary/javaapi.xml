@@ -23,8 +23,26 @@
 		<Step><![CDATA[
 			<p>Or, install using Maven.</p>
 		]]></Step>
+        <Step><![CDATA[
+			<p>Or, build it yourself from GitHub.</p>
+		]]></Step>
 	</Install>
 	<Repository>
 		https://github.com/bring/open-java-api
 	</Repository>
+    <Media>
+		<File>
+			logo.png
+		</File>
+	</Media>
+    <Media>
+		<File>
+			github_logo.png
+		</File>
+	</Media>
+    <Media role="preview">
+		<File>
+			logo.png
+		</File>
+	</Media>
 </Pack>
