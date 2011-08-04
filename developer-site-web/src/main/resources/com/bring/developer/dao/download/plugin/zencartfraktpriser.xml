@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Pack type="widget">
+    <Handle>
+        zencartfraktpriser
+    </Handle>
 	<Title>
 		ZenCart Fraktpriser
 	</Title>
@@ -20,7 +23,7 @@
 	</Person>
     <Person>
         <Name>Arne Unneland</Name>
-        <Company>Bring</Company>
+        <Company></Company>
         <Email>arne.unneland@gmail.com</Email>
         <Url>http://www.linkedin.com/in/arneunneland</Url>
     </Person>
@@ -55,11 +58,16 @@
 	<Download>
 		http://code.google.com/p/fraktpriserzencart/downloads/list
 	</Download>
-	<Media>
-		<File>
-			full.png
-		</File>
-	</Media>
+    <Media>
+        <File>
+            full.png
+        </File>
+    </Media>
+    <Media>
+        <File>
+            logo.png
+        </File>
+    </Media>
 	<Media role="preview">
 		<File>
 			logo.png

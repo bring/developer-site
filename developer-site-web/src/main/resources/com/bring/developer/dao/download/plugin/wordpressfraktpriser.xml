@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+    <Handle>
+        wordpressfraktpriser
+    </Handle>
+	<Title>
+		WordPress e-Commerce Bring Fraktguide
+	</Title>
+	<Description><![CDATA[
+		<p>This is a shipping module for WP e-Commerce. It uses the Bring Fraktguide XML API to get shipping quotes. It will get accurate prices based on delivery postcode, weight, length, width, height and volume. The plugin only supports WP e-Commerce 3.8 and later.</p>
+	]]></Description>
+	<Person role="author">
+		<Name>Leif-Arne Helland</Name>
+        <Company>Helland Webutvikling</Company>
+        <Email></Email>
+		<Url>http://www.hwu.no/</Url>
+	</Person>
+	<Install>
+		<Step><![CDATA[
+			<p>Use instructions on download page and the readme.txt within the download</p>
+		]]></Step>
+	</Install>
+	<Download>
+		http://wordpress.org/extend/plugins/wp-e-commerce-bring-fraktguide/
+	</Download>
+    <Media>
+		<File>
+			screenshot1.png
+		</File>
+	</Media>
+    <Media>
+		<File>
+			screenshot2.png
+		</File>
+	</Media>
+    <Media>
+		<File>
+			logo.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			logo.png
+		</File>
+	</Media>
+
+</Pack>

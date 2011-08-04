@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,7 +33,7 @@
 							
 							<strong class="title">${pack.title}</strong>
 							<span class="by">by ${pack.person.name}</span>
-							<span class="from">from ${pack.person.company}</span>
+                            <c:if test="${fn:length(pack.persons) gt 1}"><span class="others"> and others</span></c:if>
 						</a>
 					</c:forEach>
 				</div>

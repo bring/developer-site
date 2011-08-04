@@ -143,7 +143,7 @@
 }
 
 .packagebox .by,
-.packagebox .from {
+.packagebox .others {
     position: absolute;
     width: 188px;
     left: 10px;
@@ -151,7 +151,7 @@
 }
 
 .packagebox:hover .by,
-.packagebox:hover .from {
+.packagebox:hover .others {
 	color: #565656;
 }
 
@@ -159,7 +159,7 @@
     top: 165px;
 }
 
-.packagebox .from{
+.packagebox .others{
     top: 180px;
 }
 

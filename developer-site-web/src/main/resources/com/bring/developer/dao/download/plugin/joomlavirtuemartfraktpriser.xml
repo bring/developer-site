@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+    <Handle>
+        joomlavirtuemartfraktpriser
+    </Handle>
+	<Title>
+		Fraktpriser Joomla! VirtueMart
+	</Title>
+	<Description><![CDATA[
+		<p>This is a shipping module for Joomla Virtuemart. It uses the Bring Fraktguide XML API to get shipping quotes. It will get accurate prices based on delivery postcode, weight, length, width, height and volume.</p>
+	]]></Description>
+	<Person role="author">
+		<Name>Magnus Feiring</Name>
+        <Company></Company>
+        <Email>magnusfeiring@gmail.com</Email>
+		<Url>http://www.magnusfeiring.com/</Url>
+	</Person>
+    <Person>
+		<Name>Rune Rassmusen</Name>
+		<Company>Syntax Error</Company>
+		<Email>syntaxerror@gmail.com</Email>
+		<Url>http://syntaxerror.no/</Url>
+	</Person>
+	<Install>
+		<Step><![CDATA[
+			<p>Use instructions within the downloaded file. Please commit your updates to the Google Code project</p>
+		]]></Step>
+        <Step><![CDATA[
+            <p>Se også <a target="_new" href="http://forum.joomla.org/viewtopic.php?t=377821">denne tråden</a></p>
+        ]]></Step>
+	</Install>
+    <Repository>
+        http://code.google.com/p/fraktpriservirtuemart/
+    </Repository>
+	<Download>
+		http://code.google.com/p/fraktpriservirtuemart/downloads/list
+	</Download>
+    <Media>
+		<File>
+			screenshot.png
+		</File>
+	</Media>
+    <Media>
+		<File>
+			joomla-logo.png
+		</File>
+	</Media>
+    <Media>
+		<File>
+			virtuemart-logo.png
+		</File>
+	</Media>
+	<Media role="preview">
+		<File>
+			combined-logo.png
+		</File>
+	</Media>
+
+</Pack>

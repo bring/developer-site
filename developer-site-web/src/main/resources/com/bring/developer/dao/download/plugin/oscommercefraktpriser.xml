@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Pack type="widget">
-	<Title>
+	<Handle>
+        oscommercefraktpriser
+	</Handle>
+    <Title>
 		osCommerce Fraktpriser
 	</Title>
 	<Description><![CDATA[
@@ -11,13 +14,13 @@
 	]]></Description>
 	<Person role="author">
 		<Name>Kortshop</Name>
-        <Company>Kortshop</Company>
+        <Company></Company>
         <Email>salg@kortshop.no</Email>
 		<Url>http://www.kortshop.no/</Url>
 	</Person>
     <Person>
 		<Name>Arne Unneland</Name>
-		<Company>Bring</Company>
+		<Company></Company>
 		<Email>arne.unneland@gmail.com</Email>
 		<Url>http://www.linkedin.com/in/arneunneland</Url>
 	</Person>
@@ -48,6 +51,11 @@
     <Media>
 		<File>
 			full.png
+		</File>
+	</Media>
+    <Media>
+		<File>
+			logo.png
 		</File>
 	</Media>
 	<Media role="preview">

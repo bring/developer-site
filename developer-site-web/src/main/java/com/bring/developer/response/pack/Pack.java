@@ -24,7 +24,17 @@ public class Pack {
 	private List<Person> persons;
 	private List<Site> whoIsUsing;
 	private List<Media> medias;
-	
+    private String handle;
+
+    @XmlElement(name = "Handle")
+    @XmlJavaTypeAdapter(XmlNormalizeString.class)
+    public String getHandle() {
+        return handle;
+    }
+    public void setHandle(String handle) {
+        this.handle = handle;
+    }
+
 	@XmlElement(name = "Title")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
 	public String getTitle() {
@@ -101,11 +111,6 @@ public class Pack {
 	}
 	public void setMedias(List<Media> medias) {
 		this.medias = medias;
-	}
-	
-	
-	public String getHandle() {
-		return getTitle().toLowerCase().replace(" ", "");
 	}
 	
 	public Person getPerson() {

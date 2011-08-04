@@ -28,10 +28,8 @@ public class HomeController {
     public String downloadOverview(ModelMap model, @PathVariable String type) throws JAXBException {
     	PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("download/" + type);
     	List<Pack> packs = XmlDao.createDaos(Pack.class, "download/" + type);
-    	System.out.println(packs.size());
     	model.put("overview", packagesCategory);
     	model.put("packages", packs);
-    	
     	return "download/overview";
     }
     
