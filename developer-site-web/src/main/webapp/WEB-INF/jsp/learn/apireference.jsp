@@ -45,16 +45,16 @@
                                         <div class="api-call">
                                             Request: 
                                             <pre><a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
+                                            <c:if test="${example.type == 'json'}">
+                                                <p class="right">To make a JSONP request simply add
+                                                    <a href="${apiReference.externalRequestBase.content}${example.request}${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName">
+                                                        <code>${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName</code>
+                                                    </a>
+                                                    to the JSON request.</p>
+                                            </c:if>
                                             Response:
                                             <pre class="${example.type} response delay-snippet">Running request...</pre>
                                         </div>
-                                        <c:if test="${example.type == 'json'}">
-                                        	<p>To make a JSONP request simply add
-                                        		<a href="${apiReference.externalRequestBase.content}${example.request}${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName">
-                                        			<code>${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName</code>
-                                        		</a>
-                                        		to the JSON request.</p>
-                                        </c:if>
                                     </c:if>
                                     <c:if test="${!empty example.content}">
                                         ${example.content}

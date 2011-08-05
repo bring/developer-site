@@ -31,14 +31,9 @@
         </li>
         
         <li>
-            <a class="menubutton" href="#">Tracking API beta</a>
+            <a class="menubutton" href="#">Tracking API</a>
             <ul>
-                <li>
-                   <a class="menubutton" href="#">Tutorials & Examples</a>
-                   <ul>
-                       <li><a class="menubutton" href="/learn/tracking/tutorials-examples/example-edi.html">Example EDI</a></li>
-                   </ul>
-                </li>
+                <li><a class="menubutton" href="/learn/tracking/examples.html">Examples</a></li>
                 <li><a class="menubutton" href="/learn/tracking/apireference.html">API Reference</a></li>
             </ul>
         </li>

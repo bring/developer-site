@@ -182,6 +182,10 @@ body:before {
     box-shadow: inset 0px 10px 8px #888;
 }
 
+p.right {
+    text-align: right;
+}
+
 /* hack */
 
 #learn {

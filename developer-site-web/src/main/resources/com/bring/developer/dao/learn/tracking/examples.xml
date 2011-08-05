@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Api>
+    <RequestBase type="external">
+        http://beta.bring.no/sporing
+    </RequestBase>
+    <RequestBase type="internal">
+        /proxy/tracking
+    </RequestBase>
+    <Parameter>
+        <Title>
+            Package - Notification recieived
+        </Title>
+        <Description><![CDATA[
+            <p>Example below is showing a package that have been EDI notified, but is not recieved by Bring</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /sporing.xml?q=TESTPACKAGE-EDI
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /sporing.json?q=TESTPACKAGE-EDI
+            </Request>
+        </Example>
+    </Parameter>
+
+    <Parameter>
+        <Title>
+            Package - Waiting at pickup point
+        </Title>
+        <Description><![CDATA[
+            <p>Example below is showing a package waiting for the recipient to collect it at a pickup point (post office)</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT
+            </Request>
+        </Example>
+    </Parameter>
+
+    <Parameter>
+        <Title>
+            Package - Loaded for delivery
+        </Title>
+        <Description><![CDATA[
+            <p>Example below is showing a package that has been loaded on a distribution car for delivery to the reciepient</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY
+            </Request>
+        </Example>
+    </Parameter>
+
+    <Parameter>
+        <Title>
+            Package - Delivered
+        </Title>
+        <Description><![CDATA[
+            <p>Example below is showing a package that has been delivered to the reciepient</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /sporing.xml?q=TESTPACKAGE-DELIVERED
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /sporing.json?q=TESTPACKAGE-DELIVERED
+            </Request>
+        </Example>
+    </Parameter>
+
+</Api>
