@@ -36,9 +36,9 @@
         </li>
         
         <li>
-            <a class="menubutton" href="#">Post Office API</a>
+            <a class="menubutton" href="#">Pickup Point API</a>
             <ul>
-                <li><a class="menubutton" href="/learn/postoffice/apireference.html">API Reference</a></li>
+                <li><a class="menubutton" href="/learn/pickuppoint/apireference.html">API Reference</a></li>
             </ul>
         </li>
         
