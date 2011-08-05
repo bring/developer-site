@@ -22,9 +22,8 @@
                     <a class="menubutton" href="#">API Reference</a>
                     <ul>
                         <li><a class="menubutton" href="/learn/shipping-guide/apireference/documentation.html">Documentation</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/xmljsonorws.html">XML, JSON or WebServices?</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/errorcodes.html">Error Codes</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/apireference/bestpractices.html">Best Practices</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/apireference/errorcodes.html">Error Codes</a></li>
                     </ul>
                 </li>
             </ul>

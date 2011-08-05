@@ -6,59 +6,44 @@
 <![CDATA[
 
 <p> 
-Shippingguide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations, product information and environmental information (and more). 
-You can get finished rendered HTML, XML API (RESTful), JSON or use our Web Service.
-</p> 
-<h2>XML Schema Versioning</h2> 
-<p> 
-    Fraktguiden makes an effort to always be backwards compatible regarding dataformat for requests and responses of the Web Service.
-</p> 
-<p> 
-    To achieve this, a <b>SchemaVersion</b> element is used in the request, indicating which version the client is on and
-    what dataformat the client expects in the result.
-    We make an effort not to return new elements in the response when an old schema version is specified.
-</p> 
-<p> 
-    When changes in the schema are made, the SchemaVersion is incremented by one.
-    The new schema is used at the <b>same endpoint URL</b> as before and uses the same namespace for its XML elements.
-    A TraceMessage element (info message) in the
-    response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
-</p> 
-<p> 
-    Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API is
-    expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in that elements are not renamed or deleted.
-</p> 
+Shippingguide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations, product information and environmental information (and more).
+</p>
+<p>
+    <a target="_new" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&nextDayStopTime=15:00">Try the service!</a> (Norwegian)
+</p>
 
-<p class="exampleLink"> 
-    <a href="/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL</a> (latest schema version)
-</p> 
-<p> 
-    It is also possible to download specific WSDL / schema versions:
-    <a href="/fraktguide/ws/fraktguide-v1.wsdl" target="_blank">1</a>,
-    <a href="/fraktguide/ws/fraktguide-v2.wsdl" target="_blank">2</a>,
-    <a href="/fraktguide/ws/fraktguide-v3.wsdl" target="_blank">3</a>,
-    <a href="/fraktguide/ws/fraktguide-v4.wsdl" target="_blank">4</a>.
-    Current version is 4.
-</p> 
-<p class="exampleLink"> 
-    <a href="/fraktguide/schemaDoc.do" target="_blank">Fraktguide XML Schema documentation</a> 
-</p> 
- 
-<h2>JSON</h2> 
-<p> 
-    We also provide JSON (beta). This enables AJAX-calls and cross-site live retrieval.
-</p> 
-<p> 
-    JSON mimics the XML API, and you can find more information and examples in the <a href="jsonp.do">Norwegian
-    JSON example page</a>.
-</p> 
-<p> 
-    Most notably
-</p> 
-<ul> 
-    <li>Append a "callback=yourFunctionName" parameter to get a callback function returned (JSONP)</li> 
-</ul> 
- 
+<h2>XML</h2>
+<p>
+	XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides access to data from Bring via a single interface.</p>
+
+<h2>JSON / JSONP</h2>
+<p>
+   	Web browsers can retrieve information from external sites if the data are made available in JSONP format.
+	The purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping guide without server components on your web page.
+</p>
+<p>
+	JSON has the same functionality as the XML API and can deliver data in JSON or JSONP format.
+</p>
+
+<h2>Web Services</h2>
+<p>
+	With Online Web Services, you can look up price, transportation, area coverage and product information for each product as required.
+	For advanced users we recommend the Web Services with several options in the query.
+</p>
+
+<h2> Offline data (manual download and Web Service) </h2>
+<p>
+     This is pre-prepared data for offline use.
+     Enter the zip code you are sending from and which products you want data for. For each product you get:
+</p>
+<p>
+    <a target="_new" href="http://fraktguide.bring.no/fraktguide/offlineData.do">Try offline data!</a> (Norwegian)
+</p>
+<p>
+    <a href="tutorials-examples/offlinedata.html">more information about offline data</a>
+</p>
+
+
 ]]>
     </Content>
 </Article>

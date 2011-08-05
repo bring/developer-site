@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>TODO Offline Data</Title>
+    <Title>Offline Data</Title>
     <MenuTitle>Offline Data</MenuTitle>
     <Content>
 <![CDATA[
-<p>By using the <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a>, you can download price lists, transport times and additional services designed for offline usage.<br/>
+<p>By using the <a target="_new" href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a> (Norwegian), you can download price lists, transport times and additional services designed for offline usage.<br/>
 
 <p>NB! With offline data, you have to deal with all the rules of special goods, shipping calculated weight (volume weight), and more. These rules are located on the respective product pages on bring.com. Remember to update the database at price changes!</p>
 
@@ -16,7 +16,9 @@
 
 <p>Price zone, price and transport time can be retrieved with XPath, if the XML format is used on the downloaded data. The following XPath picks the data for the product SERVICEPAKKE to postal code 2000 with weight 4 kg:</p>
 
-<pre>
+
+<h2>Useful XPaths when processing offline data</h2>
+<pre class="java">
 Get Price Zone (returns an empty answer if toPostalCode is outside the coverage area for the chosen product):
 //Product[@productId='SERVICEPAKKE']//PriceZone[@toPostalCode='2000']/text()
 
