@@ -11,7 +11,6 @@
                  <li>
                     <a class="menubutton" href="#">Tutorials & Examples</a>
                     <ul>
-                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/how-to-use-the-data.html">How to use the data</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Single parcel example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Multi-parcels example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/offlinedata.html">Offline data</a></li>

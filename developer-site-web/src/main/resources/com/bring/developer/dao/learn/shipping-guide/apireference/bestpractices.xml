@@ -9,9 +9,9 @@
 <p>If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query.
 This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
 <h2>Error Handling</h2>
-<p>NB! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store, see <a href="/learn/shipping-guide/introduction/errorcodes.html">Error codes</a>.</p>
+<p>NB! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store, see <a href="errorcodes.html">Error codes</a>.</p>
 <h2>Error Handling Strategies:</h2>
-<p>Use the """offline data to calculate price, or</p>
+<p>Use the <a href="../tutorials-examples/offlinedata.html">offline data</a> to calculate price, or</p>
 <p>Set a fixed standard price of the package</p>
 <p>Note that if a package is out of coverage area or are too big / heavy to send, the Shipping Guide may not offer any products for sending and thus gives an empty answer set. Remember to add a default handling of this case.<p>
 <h2>XML Schema Versioning</h2>
@@ -35,18 +35,18 @@ This makes it possible for us to send any relevant messages via the registered e
 </p>
 
 <p class="exampleLink">
-    <a href="/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL</a> (latest schema version)
+    <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL</a> (latest schema version)
 </p>
 <p>
     It is also possible to download specific WSDL / schema versions:
-    <a href="/fraktguide/ws/fraktguide-v1.wsdl" target="_blank">1</a>,
-    <a href="/fraktguide/ws/fraktguide-v2.wsdl" target="_blank">2</a>,
-    <a href="/fraktguide/ws/fraktguide-v3.wsdl" target="_blank">3</a>,
-    <a href="/fraktguide/ws/fraktguide-v4.wsdl" target="_blank">4</a>.
+    <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl" target="_blank">1</a>,
+    <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl" target="_blank">2</a>,
+    <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl" target="_blank">3</a>,
+    <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl" target="_blank">4</a>.
     Current version is 4.
 </p>
 <p class="exampleLink">
-    <a href="/fraktguide/schemaDoc.do" target="_blank">Fraktguide XML Schema documentation</a>
+    <a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do" target="_blank">Fraktguide XML Schema documentation</a>
 </p>
 
 ]]>
