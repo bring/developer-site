@@ -19,6 +19,7 @@
                 <div class="article">
                     <h1>${article.title}</h1>
                     ${article.content}
+                    <misc:license />
                 </div>
                 <div class="span-2 last">
 					<misc:comments />

@@ -42,6 +42,7 @@
                     	</c:forEach>
 						</tbody>
 					</table>
+                    <misc:license />
                 </div>
                 <div class="span-2 last">
 					<misc:comments />

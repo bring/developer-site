@@ -63,6 +63,7 @@
                             </c:forEach>
                         </div>
                     </c:forEach>
+                    <misc:license />
                 </div>
                 <div class="span-2 last">
                 	<misc:toc></misc:toc>

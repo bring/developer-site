@@ -34,7 +34,7 @@
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -98,7 +98,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -164,7 +164,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -228,7 +228,7 @@ System.out.println("Price: " + price + " NOK");
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -301,7 +301,7 @@ System.out.println("Price: " + price + " NOK");
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -369,7 +369,7 @@ System.out.println("Price: " + price + " NOK");
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -509,7 +509,7 @@ System.out.println("Price: " + price + " NOK");
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -649,7 +649,7 @@ System.out.println("Price: " + price + " NOK");
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ <p>Example coming.</p> ]]>
+                <![CDATA[ <p>Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>.</p> ]]>
             </Content>
         </Example>
         <Example type="java">
