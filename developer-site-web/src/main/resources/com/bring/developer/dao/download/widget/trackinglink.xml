@@ -35,8 +35,7 @@
             should be equal to or greater than 1024 pixels.
 		]]></Step>
 	</Install>
-	<PreviewCode highlightLines="6-6" height="50"><![CDATA[
-        <link rel="stylesheet" type="text/css" href="/media/widget/validatepostalcode/style.css" /> <!-- Put it in your head -->
+	<PreviewCode highlightLines="5-5" height="50"><![CDATA[
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
         <script type="text/javascript">
            $(document).ready(function() {
