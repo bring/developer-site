@@ -16,7 +16,7 @@
 		</div>
 		
 		<div class="banner-section tracking" data-background="tracking">
-			<a href="/learn/tracking/documentation.html">
+			<a href="/learn/tracking/apireference.html">
 				<strong class="title">Tracking Parcels</strong>
 				<span class="description">
 					Show your customers the current status of their shipment.

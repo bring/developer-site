@@ -3,10 +3,10 @@
 <div class="span-2 box">
    <div class="quote">
         <blockquote>
-            By using Bring APIs you can let your customers choose their preferred
+            By using Bring APIs we can let our customers choose their preferred
             shipping method, making it even more convenient to shop online.
         </blockquote>
-        <cite>Arne Unneland</cite>
+        <cite>Mister Smith</cite>
    </div>
    <div class="box-footer">
        bring.no

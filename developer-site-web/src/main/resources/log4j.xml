@@ -11,8 +11,21 @@
 		</layout>
 	</appender>
 
+    <appender name="developerlog" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="developer.log"/>
+        <param name="MaxFileSize" value="1MB"/>
+        <param name="MaxBackupIndex" value="5"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss,SSS} %X{IP} [%.3t] %-5p [%.30c] - %m%n"/>
+        </layout>
+    </appender>
+
     <logger name="com.bring">
         <level value="info" />
+    </logger>
+
+    <logger name="com.bring.developer.dao.TwitterDao">
+        <level value="warn" />
     </logger>
 
 	<!-- 3rdparty Loggers -->
@@ -24,6 +37,7 @@
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
+        <appender-ref ref="developerlog" />
 	</root>
 	
 </log4j:configuration>
