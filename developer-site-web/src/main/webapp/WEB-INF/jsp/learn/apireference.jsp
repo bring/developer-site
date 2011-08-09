@@ -67,6 +67,7 @@
                 </div>
                 <div class="span-2 last">
                 	<misc:toc></misc:toc>
+                    <misc:getsatisfaction/>
 					<misc:comments />
 				</div>
             </div>

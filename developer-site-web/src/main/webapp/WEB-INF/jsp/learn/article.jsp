@@ -22,6 +22,7 @@
                     <misc:license />
                 </div>
                 <div class="span-2 last">
+                    <misc:getsatisfaction/>
 					<misc:comments />
 				</div>
             </div>
