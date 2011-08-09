@@ -84,7 +84,6 @@
 							</div>
 						</c:if>
 					</div>
-                    <misc:license />
 				</div>
 				<div class="span-2 last">
 					<misc:comments />
