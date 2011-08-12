@@ -13,6 +13,7 @@
                     <ul>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Single parcel example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Multi-parcels example</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/webservices.html">Using webservices</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/offlinedata.html">Offline data</a></li>
                     </ul>
                 </li>

@@ -6,6 +6,7 @@
     <RequestBase type="internal">
         /proxy/shipping-guide
     </RequestBase>
+
     <Parameter>
         <Title>
             Postal code
@@ -691,6 +692,8 @@ Example output
             ]]></Content>
         </Example>
     </Parameter>
+
+
     <Parameter>
         <Title>
             Public ID
