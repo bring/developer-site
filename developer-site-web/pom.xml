@@ -158,6 +158,11 @@
 				<artifactId>maven-jetty-plugin</artifactId>
 				<version>6.1.10</version>
 				<configuration>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8082</port>
+                        </connector>
+                    </connectors>
 					<contextPath>/</contextPath>
 					<scanIntervalSeconds>5</scanIntervalSeconds>
 				</configuration>
