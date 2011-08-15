@@ -28,7 +28,7 @@
 		]]></Step>
 		<Step><![CDATA[
 			<p>Add the Optional Post Office widget:</p>
-			<pre class="html">&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"&gt;&lt;/script&gt;</pre>
+			<pre class="html">&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</pre>
 		]]></Step>
 		<Step><![CDATA[
 			<p>Initialize it</p>
@@ -37,7 +37,7 @@
 	</Install>
 	<PreviewCode highlightLines="2,5-9" height="200"><![CDATA[
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js"></script>
+<script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('#divid').utleveringsenhet({
@@ -52,7 +52,7 @@
 </form>
 		]]></PreviewCode>
 	<Download>
-		http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.0.js
+		http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js
 	</Download>
     <Media>
 		<File>
