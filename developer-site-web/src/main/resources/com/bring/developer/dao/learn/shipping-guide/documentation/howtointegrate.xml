@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Introduction</Title>
-    <MenuTitle>Introduction</MenuTitle>
+    <Title>How to integrate</Title>
+    <MenuTitle>How to integrate</MenuTitle>
     <Content>
 <![CDATA[
 
@@ -12,11 +12,13 @@ Shippingguide (Fraktguiden) is a free service from Bring that allows you to calc
     <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&nextDayStopTime=15:00">Demo!</a> (Norwegian)
 </p>
 
+<p>The data is available using different integration methods. Choose the option that fits your need best</p>
+
 <h2>XML</h2>
 <p>
 	XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides access to data from Bring via a single interface.</p>
 <p>
-	<a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407&length=30&width=40&height=40&volume=33&date=2009-2-3">Show me data!</a>
+	<a href="apireference.html">API Reference</a>
 </p>
 
 <h2>JSON / JSONP</h2>
@@ -25,10 +27,7 @@ Shippingguide (Fraktguiden) is a free service from Bring that allows you to calc
 	The purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping guide without server components on your web page.
 </p>
 <p>
-	JSON has the same functionality as the XML API and can deliver data in JSON or JSONP format.
-</p>
-<p>
-	<a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&from=7600&to=1407&length=30&width=40&height=40&volume=33&date=2009-2-3">Show me data!</a>
+	<a href="apireference.html">API Reference</a>
 </p>
 
 <h2>Web Services</h2>
@@ -37,7 +36,7 @@ Shippingguide (Fraktguiden) is a free service from Bring that allows you to calc
 	For advanced users we recommend the Web Services with several options in the query.
 </p>
 <p>
-    <a href="tutorials-examples/webservices.html">How to use Web Services</a>
+    <a href="webservices.html">How to use Web Services</a>
 </p>
 
 <h2> Offline data (manual download and Web Service) </h2>
@@ -46,7 +45,7 @@ Shippingguide (Fraktguiden) is a free service from Bring that allows you to calc
      Enter the zip code you are sending from and which products you want data for. For each product you get:
 </p>
 <p>
-    <a href="tutorials-examples/offlinedata.html">more information about offline data</a>
+    <a href="offlinedata.html">more information about offline data</a>
 </p>
 
 

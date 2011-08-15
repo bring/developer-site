@@ -4,15 +4,15 @@
     <MenuTitle>Using webservices</MenuTitle>
     <Content>
 <![CDATA[
-<p>TODO (get from written documentation)</p>
-
-<p>Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a><br/>
+<p>Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. You may also find help studying the <a href="apireference.html">API Reference</a>.</p>
 
 <p><a target="_blank" href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a><p>
 
 <p>To execute the webservice you will need a identification string. To get this - please <a target="_blank" href="http://fraktguide.bring.no/fraktguide/registrerBruker.do">register</a></p>
 
-<p>We recommend <a target="blank" href="http://www.soapui.org/">soapUI</a> to test the Web Service. </a>
+<p>We recommend <a target="blank" href="http://www.soapui.org/">soapUI</a> to test the Web Service.</p>
+
+<p>Please refer to common information regarding <a href="../information/bestpractices.html">best practice</a>, <a href="../information/product-list.html">product codes</a> and <a href="../information/errorcodes.html">error codes</a>.</p>
 
 ]]>
     </Content>
