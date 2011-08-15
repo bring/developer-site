@@ -58,9 +58,9 @@ public class HomeController {
         return apiReferenceHelper(model, api, "examples");
     }
 
-    @RequestMapping(value = "/learn/{api}/apireference/documentation.html")
+    @RequestMapping(value = "/learn/{api}/documentation/apireference.html")
     public String apiReferenceUsage(ModelMap model, @PathVariable String api) throws JAXBException {
-        return apiReferenceHelper(model, api, "apireference/documentation");
+        return apiReferenceHelper(model, api, "documentation/apireference");
     }
     
     private String apiReferenceHelper(ModelMap model, String api, String... suffix) throws JAXBException {
@@ -70,9 +70,9 @@ public class HomeController {
     }
     
     
-    @RequestMapping(value = "/learn/{api}/product-list.html")
+    @RequestMapping(value = "/learn/{api}/information/product-list.html")
     public String productList(ModelMap model, @PathVariable String api) throws JAXBException {
-        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/product-list");
+        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/information/product-list");
         model.put("productList", products);
         return "learn/product-list";
     }
