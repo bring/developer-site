@@ -9,6 +9,37 @@
 
     <Parameter>
         <Title>
+            Select resource
+        </Title>
+        <Description><![CDATA[
+            <p>You may query the information most suited for your need.</p>
+            <ul>
+            <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">Only price</a></li>
+            <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">Only delivery time</a></li>
+            <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">All available information</a></li>
+            </ul>
+            <p>Please refer to <a href="../information/xmlschema.html">XML Schema</a> for information on elements in the response</p>
+
+        ]]></Description>
+    </Parameter>
+
+    <Parameter>
+        <Title>
+            Select product
+        </Title>
+        <Description><![CDATA[
+            <p>You may query the information most suited for your need.</p>
+            <ul>
+            <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">Only SERVICEPAKKE</a></li>
+            <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN">Both SERVICEPAKKE and PA_DOREN</a></li>
+            <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">All available products</a> (for combination of postal codes and country)</li>
+</ul>       </ul>
+
+        ]]></Description>
+    </Parameter>
+
+    <Parameter>
+        <Title>
             Postal code
         </Title>
         <Description><![CDATA[
@@ -35,7 +66,7 @@
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -100,7 +131,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -163,7 +194,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -227,7 +258,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -301,7 +332,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -370,7 +401,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -440,7 +471,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -510,7 +541,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -579,7 +610,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -648,7 +679,7 @@ Example output
                 Web Service
             </Title>
             <Content>
-                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="http://fraktguide.bring.no/fraktguide/documents/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
+                <![CDATA[ Example coming. Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. ]]>
             </Content>
         </Example>
         <Example type="java">
@@ -711,6 +742,30 @@ Example output
                 <p>If your Shipping Guide IE is: <code>372b269a-4f07-4c4e-92b9-460cb92b0767</code>
                     your pid is <code>460cb92b0767</code></p>
             ]]></Content>
+        </Example>
+    </Parameter>
+    <Parameter>
+        <Title>
+            Price adjustments
+        </Title>
+        <Description><![CDATA[
+            <p>Let you modify the prices returned. The adjustments are done to the price without VAT. <a href="../tutorials-examples/priceadjustments.html">More details on price adjustments</a>.
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p
+            </Request>
         </Example>
     </Parameter>
 </Api>

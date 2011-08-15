@@ -9,6 +9,7 @@
                     <ul>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-single-parcel.html">Single parcel example</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html">Multi-parcels example</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/tutorials-examples/priceadjustments.html">Modificators on price</a></li>
                     </ul>
                 </li>
 
