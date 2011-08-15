@@ -27,7 +27,8 @@
                     <ul>
                         <li><a class="menubutton" href="/learn/shipping-guide/information/product-list.html">Product List</a></li>
                         <li><a class="menubutton" href="/learn/shipping-guide/information/bestpractices.html">Best Practices</a></li>
-                        <li><a class="menubutton" href="/learn/shipping-guide/information/errorcodes.html">Error Codes</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/information/errorhandling.html">Error Handling</a></li>
+                        <li><a class="menubutton" href="/learn/shipping-guide/information/xmlschema.html">WSDL & XML Schema</a></li>
                     </ul>
                 </li>
 

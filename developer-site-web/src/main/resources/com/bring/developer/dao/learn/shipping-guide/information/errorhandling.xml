@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Error Codes</Title>
-    <MenuTitle>Error Codes</MenuTitle>
+    <Title>Error Handling</Title>
+    <MenuTitle>Error Handling</MenuTitle>
     <Content>
 <![CDATA[
+<p>NB! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store.</p>
+<h2>Error Handling Strategies:</h2>
+<ul>
+<li>Use the <a href="../tutorials-examples/offlinedata.html">offline data</a> to calculate price, or</li>
+<li>Set a fixed standard price of the package</li>
+</ul>
+<p>Note that if a package is out of coverage area or are too big / heavy to send, the Shipping Guide may not offer any products for sending and thus gives an empty answer set. Remember to add a default handling of this case.<p>
+
+<h2>Error codes</h2>
 
 <table> 
 <thead> 

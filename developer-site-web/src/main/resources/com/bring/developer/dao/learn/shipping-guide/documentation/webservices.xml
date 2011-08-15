@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Using webservices</Title>
-    <MenuTitle>Using webservices</MenuTitle>
+    <Title>Web Services (Online and Offline data)</Title>
+    <MenuTitle>Web Services</MenuTitle>
     <Content>
 <![CDATA[
+<p><b>To execute the webservice you will need a identification string. To get this - please <a target="_blank" href="http://fraktguide.bring.no/fraktguide/registrerBruker.do">register</a></b></p>
+
 <p>Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. You may also find help studying the <a href="apireference.html">API Reference</a>.</p>
 
-<p><a target="_blank" href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a><p>
-
-<p>To execute the webservice you will need a identification string. To get this - please <a target="_blank" href="http://fraktguide.bring.no/fraktguide/registrerBruker.do">register</a></p>
+<p><a target="_blank" href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a> (will always link to the latest version). <a href="../information/xmlschema.html">More information about WSDL/XML Schema.</a><p>
 
 <p>We recommend <a target="blank" href="http://www.soapui.org/">soapUI</a> to test the Web Service.</p>
 
