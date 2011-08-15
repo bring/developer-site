@@ -2,7 +2,7 @@
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -46,11 +46,11 @@
                                             Request: 
                                             <pre><a class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
                                             <c:if test="${example.type == 'json'}">
-                                                <p class="right">To make a JSONP request simply add
-                                                    <a href="${apiReference.externalRequestBase.content}${example.request}${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName">
+                                                <p class="right">JSONP request:
+                                                    <a href="${apiReference.externalRequestBase.content}${fn:replace(example.request, ".json", ".jsonp")}${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName">
                                                         <code>${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName</code>
                                                     </a>
-                                                    to the JSON request.</p>
+                                                    </p>
                                             </c:if>
                                             Response:
                                             <pre class="${example.type} response delay-snippet">Running request...</pre>
