@@ -18,6 +18,7 @@
 
     <modules>
         <module>developer-site-web</module>
+        <module>developer-site-jetty</module>
     </modules>
 
     <dependencyManagement>
