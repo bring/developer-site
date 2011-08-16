@@ -749,7 +749,7 @@ Example output
             Price adjustments
         </Title>
         <Description><![CDATA[
-            <p>Let you modify the prices returned. The adjustments are done to the price without VAT. <a href="../tutorials-examples/priceadjustments.html">More details on price adjustments</a>.
+            <p>Let you modify the prices returned. The adjustments are done to the price without VAT. <a href="../tutorials-examples/priceadjustments.html">More details on price adjustments</a>.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -767,5 +767,18 @@ Example output
                 /products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p
             </Request>
         </Example>
+    </Parameter>
+    <Parameter>
+        <Title>
+            Limitations in API
+        </Title>
+        <Description><![CDATA[
+            <p>All shipping guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API
+            <ul>
+                <li>Using XML API you cant mark a parcel as a special item. If you need to do this you must use the Web Service</li>
+            </ul>
+            </p>
+        ]]></Description>
+
     </Parameter>
 </Api>
