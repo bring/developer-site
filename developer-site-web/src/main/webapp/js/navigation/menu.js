@@ -2,7 +2,7 @@
 	var navigationElement;
 	var options = {
         currentUrl: window.location.pathname + window.location.search,
-        initHeight: true,
+        initHeight: true
 	};
     var menuElement = $("#learn");
     var menulistElement = $(".menulist");
