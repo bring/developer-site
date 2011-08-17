@@ -1,10 +1,9 @@
 package com.bring.developer.response.productlist;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 
@@ -13,7 +12,7 @@ public class Products {
     
     private List<Product> product = new ArrayList<Product>();    
     private List<AdditionalService> additionalService = new ArrayList<AdditionalService>();
-    private Note note;
+    private List<Note> note = new ArrayList<Note>();
     
     @XmlElement(name = "Product")
     public List<Product> getProducts() {
@@ -30,7 +29,7 @@ public class Products {
     }
     
     @XmlElement(name = "Note")
-    public Note getNote() {
+    public List<Note> getNote() {
         return note;
     }
     
