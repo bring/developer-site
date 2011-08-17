@@ -45,7 +45,7 @@
         </li>
 
         <li>
-            <a class="menubutton" href="#">Reports API</a>
+            <a class="menubutton" href="#">Reports API (beta)</a>
             <ul>
                 <li><a class="menubutton" href="/learn/reports/api.html">API Reference</a></li>
             </ul>

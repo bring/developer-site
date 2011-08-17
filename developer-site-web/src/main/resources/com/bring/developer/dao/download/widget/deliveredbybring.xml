@@ -3,7 +3,7 @@
 <Pack type="widget">
     <Handle>deliveredbybring</Handle>
 	<Title>
-		"Delivered by Bring"
+		Product selection as HTML
 	</Title>
 	<Description><![CDATA[
 		<p>"Delivered by Bring" is a solution where Bring deliveres finished HTML for the selection of freight products. You can use this HTML directly in your webshop. By using CSS you can adapt the appearance to your layout.</p>
