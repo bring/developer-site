@@ -322,15 +322,12 @@ function TopMenu(pView, pContextPath, jsonData) {
         }
 
         function setMenuState() {
-            console.info("set menu state");
             breadCrumbsView.hide();
-            console.info(menuView);
             menuView.show();
             that.currentState = that.states.menu;
         }
 
         function setBreadCrumbsState() {
-            console.info("set bread state");
             menuView.hide();
             breadCrumbsView.show();
             that.currentState = that.states.breadCrumbs;
@@ -369,9 +366,7 @@ function TopMenu(pView, pContextPath, jsonData) {
         this.init = function() {
             that.isOnPath = (window.location.href.indexOf("/" + that.id  + "/") > 0);
             breadCrumbsView = $("." + that.id + ".breadcrumbs");
-            console.info("init launcher");  
             menuView = $("." + that.id + ".menubox");
-            console.info(menuView);
 
             if (that.isOnPath) {
                 if(that.hasBreadCrumbs) {
