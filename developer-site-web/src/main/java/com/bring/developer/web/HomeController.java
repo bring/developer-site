@@ -1,20 +1,19 @@
 package com.bring.developer.web;
 
-import java.util.List;
-
-import javax.xml.bind.JAXBException;
-
+import com.bring.developer.dao.XmlDao;
+import com.bring.developer.response.apireference.Api;
+import com.bring.developer.response.article.Article;
+import com.bring.developer.response.pack.Pack;
+import com.bring.developer.response.pack.PackagesCategory;
+import com.bring.developer.response.productlist.Products;
+import org.joda.time.DateTime;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bring.developer.dao.XmlDao;
-import com.bring.developer.response.productlist.Products;
-import com.bring.developer.response.apireference.Api;
-import com.bring.developer.response.article.Article;
-import com.bring.developer.response.pack.Pack;
-import com.bring.developer.response.pack.PackagesCategory;
+import javax.xml.bind.JAXBException;
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -74,6 +73,7 @@ public class HomeController {
     public String productList(ModelMap model, @PathVariable String api) throws JAXBException {
         Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/information/product-list");
         model.put("productList", products);
+        model.put("todayString", new DateTime().toString("yyyy-MM-dd"));
         return "learn/product-list";
     }
     

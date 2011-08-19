@@ -1,352 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Products>
     <RequestBase>http://fraktguide.bring.no/fraktguide/products/</RequestBase>
+
     <Product>
-        <Name>
-            Klimanøytral Servicepakke
-        </Name>
-        <Code>
-            SERVICEPAKKE
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Klimanøytral Servicepakke</Name>
+        <Code>SERVICEPAKKE</Code>
+        <CodeLink>/products/SERVICEPAKKE/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/SERVICEPAKKE/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            På Døren
-        </Name>
-        <Code>
-            PA_DOREN
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>På Døren</Name>
+        <Code>PA_DOREN</Code>
+        <CodeLink>/products/PA_DOREN/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/PA_DOREN/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/PA_DOREN/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            Bedriftspakke
-        </Name>
-        <Code>
-            BPAKKE_DOR-DOR
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Bedriftspakke</Name>
+        <Code>BPAKKE_DOR-DOR</Code>
+        <CodeLink>/products/BPAKKE_DOR-DOR/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/BPAKKE_DOR-DOR/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/BPAKKE_DOR-DOR/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            Ekspress 07
-        </Name>
-        <Code>
-            EKSPRESS07
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Ekspress 07</Name>
+        <Code>EKSPRESS07</Code>
+        <CodeLink>/products/EKSPRESS07/all.xml?weightInGrams=1500&amp;from=1407&amp;to=9007&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/EKSPRESS07/price.xml?weightInGrams=1500&amp;from=1407&amp;to=9007&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/EKSPRESS07/expectedDelivery.xml?from=1407&amp;to=9007&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            Ekspress 09
-        </Name>
-        <Code>
-            EKSPRESS09
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Ekspress 09</Name>
+        <Code>EKSPRESS09</Code>
+        <CodeLink>/products/EKSPRESS09/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/EKSPRESS09/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product note="1">
-        <Name>
-            A-Prioritert
-        </Name>
-        <Code>
-            A-POST
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>A-Prioritert</Name>
+        <Code>A-POST</Code>
+        <CodeLink>/products/A-POST/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/A-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/A-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***"></ExpectedDeliveryLink>
     </Product>
+
     <Product note="2">
-        <Name>
-            B-Økonomi
-        </Name>
-        <Code>
-            B-POST
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>B-Økonomi</Name>
+        <Code>B-POST</Code>
+        <CodeLink>/products/B-POST/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/B-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/B-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product note="3">
-        <Name>
-            Quickpack
-        </Name>
-        <Code>
-            QUICKPACK
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>QuickPack</Name>
+        <Code>QUICKPACK</Code>
+        <CodeLink>/products/QUICKPACK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/QUICKPACK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/QUICKPACK/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Business Norway
-        </Name>
-        <Code>
-            CARRYON_BUSINESS_NORWAY
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Business Norway</Name>
+        <Code>CARRYON BUSINESS NORWAY</Code>
+        <CodeLink>/products/CARRYON_BUSINESS_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_BUSINESS_NORWAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_BUSINESS_NORWAY/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Business Sweden
-        </Name>
-        <Code>
-            CARRYON_BUSINESS_SWEDEN
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Business Sweden</Name>
+        <Code>CARRYON BUSINESS SWEDEN</Code>
+        <CodeLink>/products/CARRYON_BUSINESS_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_BUSINESS_SWEDEN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_BUSINESS_SWEDEN/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Business Denmark
-        </Name>
-        <Code>
-            CARRYON_BUSINESS_DENMARK
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Business Denmark</Name>
+        <Code>CARRYON BUSINESS DENMARK</Code>
+        <CodeLink>/products/CARRYON_BUSINESS_DENMARK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_BUSINESS_DENMARK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_BUSINESS_DENMARK/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Business Finland
-        </Name>
-        <Code>
-            CARRYON_BUSINESS_FINLAND
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Business Finland</Name>
+        <Code>CARRYON BUSINESS FINLAND</Code>
+        <CodeLink>/products/CARRYON_BUSINESS_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_BUSINESS_FINLAND/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_BUSINESS_FINLAND/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Homeshopping Norway
-        </Name>
-        <Code>
-            CARRYON_HOMESHOPPING_NORWAY
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Homeshopping Norway</Name>
+        <Code>CARRYON HOMESHOPPING NORWAY</Code>
+        <CodeLink>/products/CARRYON_HOMESHOPPING_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_HOMESHOPPING_NORWAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_HOMESHOPPING_NORWAY/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Homeshopping Sweden
-        </Name>
-        <Code>
-            CARRYON_HOMESHOPPING_SWEDEN
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Homeshopping Sweden</Name>
+        <Code>CARRYON HOMESHOPPING SWEDEN</Code>
+        <CodeLink>/products/CARRYON_HOMESHOPPING_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_HOMESHOPPING_SWEDEN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_HOMESHOPPING_SWEDEN/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Homeshopping Denmark
-        </Name>
-        <Code>
-            CARRYON_HOMESHOPPING_DENMARK
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Homeshopping Denmark</Name>
+        <Code>CARRYON HOMESHOPPING DENMARK</Code>
+        <CodeLink>/products/CARRYON_HOMESHOPPING_DENMARK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_HOMESHOPPING_DENMARK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_HOMESHOPPING_DENMARK/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            CarryOn Homeshopping Finland
-        </Name>
-        <Code>
-            CARRYON_HOMESHOPPING_FINLAND
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>CarryOn Homeshopping Finland</Name>
+        <Code>CARRYON HOMESHOPPING FINLAND</Code>
+        <CodeLink>/products/CARRYON_HOMESHOPPING_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/CARRYON_HOMESHOPPING_FINLAND/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/CARRYON_HOMESHOPPING_FINLAND/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            HomeDelivery CurbSide
-        </Name>
-        <Code>
-            HOMEDELIVERY_CURBSIDE_DAG
-        </Code>
-        <Price>
-            0
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>HomeDelivery CurbSide</Name>
+        <Code>HOMEDELIVERY_CURBSIDE_DAG</Code>
+        <CodeLink>/products/HOMEDELIVERY_CURBSIDE_DAG/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
+        <Price>0</Price>
+        <PriceLink>/products/HOMEDELIVERY_CURBSIDE_DAG/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***"</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/HOMEDELIVERY_CURBSIDE_DAG/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            Bud VIP
-        </Name>
-        <Code>
-            COURIER_VIP
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Bud VIP</Name>
+        <Code>COURIER_VIP</Code>
+        <CodeLink>/products/COURIER_VIP/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/COURIER_VIP/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/COURIER_VIP/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            Bud 1 hour
-        </Name>
-        <Code>
-            COURIER_1H
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Bud 1 time</Name>
+        <Code>COURIER_1H</Code>
+        <CodeLink>/products/COURIER_1H/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/COURIER_1H/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/COURIER_1H/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
-        <Name>
-            Bud 2 hour
-        </Name>
-        <Code>
-            COURIER_2H
-        </Code>
-        <Price>
-            1
-        </Price>
-        <ExpectedDelivery>
-            1
-        </ExpectedDelivery>
+        <Name>Bud 2 timer</Name>
+        <Code>COURIER_2H</Code>
+        <CodeLink>/products/COURIER_2H/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/COURIER_2H/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/COURIER_2H/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>
+
     <Product>
+        <Name>Bud 4 timer</Name>
+        <Code>COURIER_4H</Code>
+        <CodeLink>/products/COURIER_4H/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/COURIER_4H/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/COURIER_4H/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</ExpectedDeliveryLink>
+    </Product>
+
+    <Product>
+        <Name>Bud 6 timer</Name>
+        <Code>COURIER_6H</Code>
+        <CodeLink>/products/COURIER_6H/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/COURIER_6H/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/COURIER_6H/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=***DATESTRING***</ExpectedDeliveryLink>
+    </Product>
+
+
+    <AdditionalService>
         <Name>
-            Bud 4 hour
+            eVarsling
         </Name>
         <Code>
-            COURIER_4H
-		</Code>
-		<Price>
-			1
-		</Price>
-		<ExpectedDelivery>
-			1
-		</ExpectedDelivery>
-	</Product>
-	<Product>
-		<Name>
-			Bud 6 hour
-		</Name>
-		<Code>
-			COURIER_6H
-		</Code>
-		<Price>
-			1
-		</Price>
-		<ExpectedDelivery>
-			1
-		</ExpectedDelivery>
-	</Product>
-	
-	
-	<AdditionalService>
-		<Name>
-			eVarsling
-		</Name>
-		<Code>
-			EVARSLING
-		</Code>
-	</AdditionalService>
-	<AdditionalService>
-		<Name>
-			Postoppkrav
-		</Name>
-		<Code>
-			POSTOPPKRAV
-		</Code>
-	</AdditionalService>
-	<AdditionalService>
-		<Name>
-			Lørdagsutkjøring
-		</Name>
-		<Code>
-			LORDAGSUTKJORING
-		</Code>
-	</AdditionalService>
+            EVARSLING
+        </Code>
+        <CodeLink>/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=EVARSLING</CodeLink>
+    </AdditionalService>
+    <AdditionalService>
+        <Name>
+            Postoppkrav
+        </Name>
+        <Code>
+            POSTOPPKRAV
+        </Code>
+        <CodeLink>/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=POSTOPPKRAV</CodeLink>
+    </AdditionalService>
+    <AdditionalService>
+        <Name>
+            Lørdagsutkjøring
+        </Name>
+        <Code>
+            LORDAGSUTKJORING
+        </Code>
+        <CodeLink>/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2009-03-27&amp;additional=LORDAGSUTKJORING</CodeLink>
+    </AdditionalService>
 	
 	
 	
 	<Note id="1"><![CDATA[
-		<p>Requests for expected delivery has longer response time.</p>
+		Requests for expected delivery has longer response time.
 	]]></Note>
 	<Note id="2"><![CDATA[
-		<p>B-Økonomi is intended for bulk sendings and has a mimimum requirement of 20 parcels, however,
-			if weight exceeds 100g this limit is ignored.</p>
+		B-Økonomi is intended for bulk sendings and has a mimimum requirement of 20 parcels, however,
+			if weight exceeds 100g this limit is ignored.
 	]]></Note>
 	<Note id="3"><![CDATA[
-		<p>Due to look-up in flight schedules, a request for this product has longer response time
-			than for other products.</p>
+		Due to look-up in flight schedules, a request for this product has longer response time
+			than for other products.
 	]]></Note>
 </Products>

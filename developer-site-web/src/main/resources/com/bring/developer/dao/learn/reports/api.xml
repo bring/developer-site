@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+    <Title>API Reference</Title>
+    <MenuTitle>API Reference</MenuTitle>
+    <Content>
+<![CDATA[
+                <p>
+                    <b>Note!</b> The Reports API is currently in closed BETA testing. Please contact us at fraktguide@posten.no if you are interested in testing this service
+                </p>
+                <p>
+                    The API lets you view customer accounts associated with your account, find available reports
+                    for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
+                </p>
+
+                <p>
+                    The API uses two headers to customize the answers. One header to choose between XML or JSON-reponses,
+                    and one header to choose language in text-fields in the responses. Every call can return both JSON and XML,
+                    except the call to get a report. The report is only available in XML and Excel.
+                </p>
+
+                <h4>XML-response</h4>
+                <pre class="code">Accept: application/xml</pre>
+                <h4>JSON-response</h4>
+                <pre class="code">Accept: application/json</pre>
+                <h4>Language</h4>
+                <pre class="code">Accept-Language: no,en</pre>
+
+                <p>
+                    The two first steps in the process is only necessary to find the correct IDs for the customer account and
+                    report. You can save these IDs, and perform the generation-step without verifying the IDs.
+                </p>
+
+                <p>
+                    The response may get added information, so implementation should ignore new elements added to the response.
+                </p>
+
+                <h2>Authentication</h2>
+                <p>
+                    Since reports is a logged in service, you need to authenticate to use the API. All mybring-APIs use a simple
+                    authentication-scheme. By adding two headers to all requests, you will authenticate your request. The API-Key is currently
+                    available to pilot customers. Please contact us at fraktguide@posten.no if you are interested in using this API.
+                </p>
+                <h4>Authentication headers example</h4>
+                <pre class="code">
+X-MyBring-API-Uid: user@email.com
+X-MyBring-API-Key: a141879d-608e-4ee4-95bd-8a083e04b599
+</pre>
+
+                <h2>1. Get customer accounts</h2>
+                <p>
+                    The first step is to get a list of available customer accounts.
+                </p>
+
+                <h4>Request</h4>
+                <pre class="code">
+https://www.mybring.com/reports/api/generate/</pre>
+
+                <h4>Example Reponse</h4>
+                <pre class="json code">
+{"customers":[
+    {
+        "id":"PARCELS_NORWAY-00012341234",
+        "name":"TEST CUSTOMER",
+        "fullName":"TEST CUSTOMER (00012341234)",
+        "reports":"http://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/"
+    }
+]}</pre>
+
+                <h2>2. Get list of available reports</h2>
+                <p>
+                    Each customer have a set of reports available.
+                </p>
+
+                <h4>Example Request</h4>
+                <pre class="code">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/</pre>
+
+                <h4>Example Response</h4>
+                <pre class="json code">
+{"reports":[
+    {
+        "id":"DELIVERED",
+        "name":"Delivered to recipient",
+        "description":"Overview of parcels which are delivered to the recipient.",
+        "url":"http://local.mybring.com:8080/reports/api/generate/PARCELS_NORWAY-00012341324/DELIVERED/",
+        "parameters":[
+            {
+                "name":"fromDate",
+                "type":"date",
+                "description":"Startdate of the report. Format: DD.MM.YYYY"
+            },
+            {
+                "name":"toDate",
+                "type":"date",
+                "description":"Enddate of the report. Format: DD.MM.YYYY"
+            }
+        ]
+    }
+]}
+</pre>
+                <h2>3. Generate report</h2>
+                <p>
+                    To generate a report do a POST to the supplied URL, and include the parameters described in the response.
+                    These parameters are considered to be static, so it should not be neccessary to do the two first steps for
+                    every report generation.
+                </p>
+                <p>
+                    The POST-call will return 202, telling the caller the that the request for a report is put on the queue.
+                    The location-header will tell you the url to query to get the status for the request.
+                </p>
+
+                <h4>Example Request</h4>
+                <pre class="code">
+POST /reports/api/generate/PARCELS_NORWAY-00012341234/DELIVERED/ HTTP/1.1
+Host: www.mybring.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 37
+
+fromDate=01.07.2011&toDate=01.07.2011
+</pre>
+
+                <h4>Example Response</h4>
+                <pre class="code">
+HTTP/1.1 202 Accepted
+Location: http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/
+Content-Length: 0
+</pre>
+
+                <h2>4. Check status of report</h2>
+                <p>
+                    Since the generation of reports may take several minutes, we supply a status address to check the status of the report
+                    generation. The status page will display NOT_DONE, until the report is ready to be downloaded. When the report is ready,
+                    URLs to download the report will be in the response.
+                </p>
+
+                <h4>Request</h4>
+                <pre class="code">http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/</pre>
+                <h4>Report not finished response</h4>
+                <pre class="json code">
+{
+"status":"NOT_DONE"
+}
+</pre>
+                <h4>Report available response</h4>
+                <pre class="json code">
+{
+"status":"DONE",
+"url":"http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/",
+"xmlUrl":"http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xml",
+"xlsUrl":"http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xls"
+}
+</pre>
+                <h4>Report failed response</h4>
+                <pre class="json code">
+{
+"status":"FAILED"
+}
+</pre>
+
+                <h2>5. Download report</h2>
+                <p>
+                    The reports are available in XML or Excel format. Either use the link with .xml og .xls extension, or use
+                    the Accept-header to get the correct format.
+                </p>
+
+                <h4>XML Request</h4>
+                <pre class="code">
+GET /reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/ HTTP/1.1
+Host: www.mybring.com
+Accept: application/xml
+</pre>
+                <h4>Excel Request</h4>
+                <pre class="code">
+GET /reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/ HTTP/1.1
+Host: www.mybring.com
+Accept: application/vnd.ms-excel
+</pre>
+]]>
+    </Content>
+</Article>

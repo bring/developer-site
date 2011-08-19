@@ -1,11 +1,11 @@
 package com.bring.developer.response.productlist;
 
+import com.bring.developer.dao.XmlNormalizeBoolean;
+import com.bring.developer.dao.XmlNormalizeString;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import com.bring.developer.dao.XmlNormalizeBoolean;
-import com.bring.developer.dao.XmlNormalizeString;
 
 public class Product {
 	
@@ -14,8 +14,11 @@ public class Product {
 	private Boolean price;
 	private Boolean expectedDelivery;
 	private int note;
-	
-	@XmlElement(name = "Name")
+    private String codeLink;
+    private String priceLink;
+    private String expectedDeliveryLink;
+
+    @XmlElement(name = "Name")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
 	public String getName() {
 		return name;
@@ -24,7 +27,34 @@ public class Product {
 		this.name = name;
 	}
 	
-	@XmlElement(name = "Code")
+	@XmlElement(name = "CodeLink")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getCodeLink() {
+		return codeLink;
+	}
+	public void setCodeLink(String codeLink) {
+		this.codeLink = codeLink;
+	}
+
+    @XmlElement(name = "PriceLink")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getPriceLink() {
+		return priceLink;
+	}
+	public void setPriceLink(String priceLink) {
+		this.priceLink = priceLink;
+	}
+
+    @XmlElement(name = "ExpectedDeliveryLink")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getExpectedDeliveryLink() {
+		return expectedDeliveryLink;
+	}
+	public void setExpectedDeliveryLink(String expectedDeliveryLink) {
+		this.expectedDeliveryLink = expectedDeliveryLink;
+	}
+
+    @XmlElement(name = "Code")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
 	public String getCode() {
 		return code;

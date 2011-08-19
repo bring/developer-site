@@ -18,12 +18,14 @@
 
     <modules>
         <module>developer-site-web</module>
+        <module>developer-site-jetty</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
 
             <!--  Bring -->
+
 
             <!--  Constretto -->
             <dependency>

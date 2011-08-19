@@ -1,0 +1,22 @@
+production:
+  hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
+  user: bring
+  prefix: /u01/bring
+  restart_command: sh /u01/bring/bin/developer-site.sh stop; sleep 1; sh /u01/bring/bin/developer-site.sh start
+  start_command: sh /u01/bring/bin/developer-site.sh start
+  stop_command: sh /u01/bring/bin/developer-site.sh stop
+  version_url: http://developer.bring.com/revision.txt
+  healthcheck_url: http://developer.bring.com/bigip.txt
+  rollback: false
+  production_environment: true
+qa:
+  hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
+  user: bring_qa
+  prefix: /u01/bring_qa
+  restart_command: sh /u01/bring_qa/bin/developer-site.sh stop; sleep 1; sh /u01/bring_qa/bin/developer-site.sh start
+  start_command: sh /u01/bring_qa/bin/developer-site.sh start
+  stop_command: sh /u01/bring_qa/bin/developer-site.sh stop
+  version_url: http://developer.qa.bring.com/revisiton.txt
+  healthcheck_url: http://developer.qa.bring.com/bigip.txt
+  rollback: false
+  production_environment: false

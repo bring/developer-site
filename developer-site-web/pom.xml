@@ -137,7 +137,12 @@
 			<version>1.8.4</version>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>

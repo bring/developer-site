@@ -36,8 +36,8 @@
 						<h1>${pack.title}</h1>
 						${pack.description}
 						
+                        <c:if test="${!empty pack.installSteps.steps}">
 						<h2>How to install</h2>
-						<c:if test="${!empty pack.installSteps.steps}">
 							<ol class="installsteps">
 								<c:forEach var="step" items="${pack.installSteps.steps}">
 									<li>${step}</li>

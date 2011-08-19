@@ -93,6 +93,11 @@ pre {
     padding: 10px 0 10px 10px;
 }
 
+pre.code {
+    border: 1px solid #ccc;
+    background-color: #f0f0f1;
+}
+
 
 /**
  *     Minimalistic scrollbars

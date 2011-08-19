@@ -1,16 +1,17 @@
 package com.bring.developer.response.productlist;
 
+import com.bring.developer.dao.XmlNormalizeString;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import com.bring.developer.dao.XmlNormalizeString;
 
 public class AdditionalService {
     
 	private String name;
 	private String code;
-	
-	@XmlElement(name = "Name")
+    private String codeLink;
+
+    @XmlElement(name = "Name")
 	@XmlJavaTypeAdapter(XmlNormalizeString.class)
 	public String getName() {
 		return name;
@@ -26,6 +27,15 @@ public class AdditionalService {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+    @XmlElement(name = "CodeLink")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getCodeLink() {
+		return codeLink;
+	}
+	public void setCodeLink(String codeLink) {
+		this.codeLink = codeLink;
 	}
 
 	

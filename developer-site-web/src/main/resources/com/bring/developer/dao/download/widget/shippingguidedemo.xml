@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+    <Handle>shippingguidedemo</Handle>
+	<Title>
+		Display Shipping Guide information using JSONP
+	</Title>
+	<Description><![CDATA[
+		<p>This demonstration illustrates how you can use JSONP to include information from Shipping Guide inline in your website.</p>
+		<p>Please use the code provided as a template that you can adjust to your requirements</p>
+	]]></Description>
+	<Person role="author">
+		<Name>Bring Developer</Name>
+		<Company>Bring</Company>
+		<Email>fraktguide@bring.no</Email>
+		<Url>http://developer.bring.com</Url>
+	</Person>
+
+    <PreviewCode highlightLines="5" height="150"><![CDATA[
+        <script src="http://code.jquery.com/jquery-latest.js"> </script>
+
+        <script type="text/javascript">
+         $(document).ready(function() {
+          var inputField = $('#postnummer');
+          var outputElement = $('#textResult');
+          inputField.keyup(function() {
+           if (inputField.val().length > 3) {
+            $.getJSON('http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/all.json?from=0150&to='+ inputField.val() +'&weightInGrams=3&date=2011-08-17&callback=?',
+                 function(data){
+                  outputElement.html('<ul><li>...det koste ' + data.Product.Price.PackagePriceWithoutAdditionalServices.AmountWithVAT + ' + mva.</li>' +
+                   ' <li>...transporttid være ' + data.Product.ExpectedDelivery.WorkingDays + ' virkedag(er). </li>' +
+                   ' <li>...pakken være hos mottaker den ' + data.Product.ExpectedDelivery.FormattedExpectedDeliveryDate + ' dersom pakken er levert på terminal innenfor fristen i dag.</li>' +
+                   ' <li>...informasjon om utlevering: ' + data.Product.GuiInformation.DescriptionText + '</li></ul>');
+                 });
+           } else {
+            outputElement.html('');
+           }
+          });
+         });
+        </script>
+
+        <p>
+          Dersom du sender en Klimanøytral Servicepakke på 3 kilo <br/>fra Oslo til postnummer <input type="text" id="postnummer" style="width: 3em;" maxlength="4"/> vil... <br/><span id="textResult"></span>
+        </p>
+
+
+]]></PreviewCode>
+
+	<Media role="preview">
+		<File>
+			preview.png
+		</File>
+	</Media>
+</Pack>

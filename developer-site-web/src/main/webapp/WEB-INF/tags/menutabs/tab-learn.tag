@@ -43,6 +43,13 @@
                 <li><a class="menubutton" href="/learn/tracking/apireference.html">API Reference</a></li>
             </ul>
         </li>
+
+        <li>
+            <a class="menubutton" href="#">Reports API (beta)</a>
+            <ul>
+                <li><a class="menubutton" href="/learn/reports/api.html">API Reference</a></li>
+            </ul>
+        </li>
         
         <li>
             <a class="menubutton" href="#">Pickup Point API</a>
