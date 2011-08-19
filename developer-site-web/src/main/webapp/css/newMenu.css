@@ -1,0 +1,202 @@
+@CHARSET "UTF-8";
+
+#navigation {
+    float: left;
+}
+
+/* Section launchers */
+
+.section-launcher {
+    width: 302px;
+    height: 50px;
+    padding: 10px;
+    color: #b7b7b7;
+    background-color: #3b3b3b;
+}
+.section-title {
+    font-size: 1.25em;
+}
+.section-title a {
+    color: #79b54b;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+.section-description {
+    font-size: 0.75em;
+}
+.menutab {
+    margin: 5px 5px 0px 5px;
+    height: 50px;
+	color: #999;
+    text-transform: uppercase;
+    background-color: #f2f2f2;
+    border-bottom: 10px solid #e2e3e4;
+    box-shadow: 0 0 3px #aaa; /* css3 */
+}
+.menutab.active {
+    color: #b7b7b7;
+    background-color: #3b3b3b;
+    border-bottom-color: #3b3b3b;
+    box-shadow: 0 0 10px #999;
+}
+
+/* Drop down menu */
+
+.navigation-tabs-container {
+    float: left;
+    clear: both;
+    position: relative;
+    width: 986px;
+    height: 20px;
+    margin: 0 5px;
+    background: white;
+}
+.navigation-tabs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 986px;
+    margin: 0 10px 0 0;
+    font-size: 0.75em;
+}
+.menubox, .breadcrumbs {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    width: 986px;
+    overflow: hidden;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #3b3b3b;
+    box-shadow: 0 0 10px #999;
+    text-transform: uppercase;
+}
+
+/* Learn menu */
+
+.learn.menubox {
+    height: 208px;
+}
+.learn.menubox ul {
+    position: absolute;
+    z-index: 3;
+    left: 10px;
+    top: 10px;
+    width: 302px;
+}
+.learn.menubox ul ul {
+    display: none;
+    left: 332px;
+    top : 0;
+}
+.learn.menubox ul ul ul {
+    display: none;
+    left: 332px;
+    top : 0;
+}
+.learn.menubox ul li {
+    float: left;
+    clear: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 322px;
+}
+.learn.menubox ul li a {
+    display: block;
+    width: 282px;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #CCCCCC;
+    background-color: #666666;
+    margin: 0 0 2px 0;
+    padding: 12px 10px 8px;
+}
+.learn.menubox ul li a.active {
+    background-color: red;
+}
+
+/* Download menu */
+
+.download.menubox, .talk.menubox {
+    height: 160px;
+}
+.download.menubox ul, .talk.menubox ul {
+    position: absolute;
+    z-index: 3;
+    left: 10px;
+    top: 10px;
+    width: 966px;
+}
+.download.menubox ul li, .talk.menubox ul li {
+    float: left;
+    list-style: none;
+    width: 302px;
+    height: 160px;
+    margin: 0;
+    padding: 0;
+    background: red;
+}
+.download.menubox ul li#download_0,
+.download.menubox ul li#download_1,
+.talk.menubox ul li#talk_0,
+.talk.menubox ul li#talk_1 {
+    margin-right: 30px;
+}
+.download.menubox ul li a, .talk.menubox ul li a {
+    display: block;
+    width: 302px;
+    height: 50px;
+    background: white;
+    text-align: center;
+    padding-top: 110px;
+}
+
+/* Bread crumbs */
+.breadcrumbs {
+    display: none;
+    height: 40px;
+}
+.download.breadcrumbs, .talk.breadcrumbs {
+    height: 10px;
+    padding: 0;
+}
+.breadcrumbs ul {
+    position: absolute;
+    z-index: 3;
+    left: 10px;
+    top: 10px;
+    width: 302px;
+}
+.breadcrumbs ul ul {
+    left: 332px;
+    top : 0;
+}
+.breadcrumbs ul ul ul {
+    left: 332px;
+    top : 0;
+}
+.breadcrumbs ul li {
+    float: left;
+    clear: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 322px;
+}
+.breadcrumbs ul li a {
+    display: block;
+    width: 282px;
+    height: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #CCCCCC;
+    background-color: #666666;
+    margin: 0 0 2px 0;
+    padding: 12px 10px 8px;
+}
+.breadcrumbs ul li a.active {
+    background-color: red;
+}

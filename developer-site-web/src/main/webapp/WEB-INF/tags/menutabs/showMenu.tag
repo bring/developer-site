@@ -7,9 +7,8 @@
 
 <div id="navigation" class="${enableBreadcrumbs ? 'breadcrumbs' : ''}">
     <menutabs:launchers cssClass="${cssClass}" />
-    <div class="navigation-tabs">
-        <menutabs:tab-learn />
-        <menutabs:tab-download />
-        <menutabs:tab-talk />
+    <div class="navigation-tabs-container">
+        <div class="navigation-tabs">
+        </div>
     </div>
 </div>

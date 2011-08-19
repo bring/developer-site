@@ -20,4 +20,6 @@
 <script type="text/javascript" src="/js/navigation/menutab-hider.js"></script>
 <script type="text/javascript" src="/js/navigation/downloadmenu-hider.js"></script>
 <script type="text/javascript" src="/js/exampleRequest.js"></script>
+<script type="text/javascript" src="/js/navigation/menuDefinition.js"></script>
+<script type="text/javascript" src="/js/navigation/newMenu.js"></script>
 <script type="text/javascript" src="/js/init.js"></script>

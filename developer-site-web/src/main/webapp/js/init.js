@@ -29,8 +29,8 @@ $(document).ready(function() {
     }
     
     else if (isPageType("apireference")) {
-        $("#navigation").navigation({mode: "breadcrumbs"});
-        
+        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+
         $(".api-call").each(function() {
             $(this).exampleRequest();
         });
@@ -48,7 +48,7 @@ $(document).ready(function() {
     }
     
     else if (isPageType("article")) {
-        $("#navigation").navigation({mode: "breadcrumbs"});
+        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
         
         $(".api-call").each(function() {
             $(this).exampleRequest();
@@ -60,11 +60,12 @@ $(document).ready(function() {
     }
     
     else if (isPageType("package-overview")) {
-        $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
+        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
     }
     
     else if(isPageType("package")) {
-        $("#navigation").menu().downloadmenuHider().menutab({defaultTab: 1});
+        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        
         $(".widgetpreview").codetabs({defaultTab : "preview"});         
                     
         // Dynamic widget generation from code example
@@ -83,7 +84,7 @@ $(document).ready(function() {
     }
     
     else if (isPageType("productlist")) {
-        $("#navigation").navigation({mode: "breadcrumbs"});
+        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
     }
     
     /*

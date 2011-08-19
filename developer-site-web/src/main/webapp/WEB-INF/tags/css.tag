@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="/css/reset.css" />
 <link rel="stylesheet" type="text/css" href="/css/lib.css" />
 <link rel="stylesheet" type="text/css" href="/css/main.css" />
-<link rel="stylesheet" type="text/css" href="/css/menu.css" />
+<link rel="stylesheet" type="text/css" href="/css/newMenu.css" />
 <link rel="stylesheet" type="text/css" href="/css/widget.css" />
 
 <!-- Talk -->
