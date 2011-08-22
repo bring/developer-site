@@ -72,19 +72,24 @@
             var indent = methods.repeatString(tab, level);
             var output = indent + methods.startTag(root) + "\n";
             $($(root).contents()).each(function() {
-                switch (this.nodeType) {
-                    case Node.ELEMENT_NODE:
-                        output += methods.formatXml(this, level + 1);
-                        break;
-                    case Node.TEXT_NODE:
-                        output += methods.textContent(this, level + 1);   
-                        break;
-                    case Node.COMMENT_NODE:
-                        output += indent + methods.comment(this) + "\n";
-                        break;
-                    case Node.CDATA_SECTION_NODE:
-                        output += indent + methods.cdata(this) + "\n";
-                        break;
+                try {
+                    switch (this.nodeType) {
+                        case Node.ELEMENT_NODE:
+                            output += methods.formatXml(this, level + 1);
+                            break;
+                        case Node.TEXT_NODE:
+                            output += methods.textContent(this, level + 1);
+                            break;
+                        case Node.COMMENT_NODE:
+                            output += indent + methods.comment(this) + "\n";
+                            break;
+                        case Node.CDATA_SECTION_NODE:
+                            output += indent + methods.cdata(this) + "\n";
+                            break;
+                    }
+                }
+                catch (err) {
+                    //TODO: Handle error more apropriate; for now, just avoid it.
                 }
             });
             output += indent + methods.endTag(root) + "\n";
