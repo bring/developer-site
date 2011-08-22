@@ -776,7 +776,7 @@ Example output
             <p>
             <ul>
                 <li>All shipping guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
-                <li>Using XML API you cant mark a parcel as a special item. If you need to do this you must use the Web Service.</li>
+                <li>Using XML API you cant mark a parcel as a specialized goods. If you need to do this you must use the Web Service.</li>
                 <li>Shippingguide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their salessituation.</li>
             </ul>
             </p>
