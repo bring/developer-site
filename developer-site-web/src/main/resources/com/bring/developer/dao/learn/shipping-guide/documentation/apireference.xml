@@ -44,6 +44,7 @@
         </Title>
         <Description><![CDATA[
             <p>Specified using <code>from=7600&amp;to=1407</code>.</p>
+            <p>For international shipments to countries without a postal code; Specify city with the optional <code>toCity</code> parameter, e.g. <code>&toCity=Dublin</code></p>
         ]]></Description>
         <Example type="xml">
             <Title>
