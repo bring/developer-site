@@ -73,8 +73,8 @@
             <h2>Blank response</h2>
             <p>If the response returns valid but postal name is blank, it is either because:</p>
             <ul>
-                <li>There are multiple postal names for the given postal code. This is relevant
-                    for France.</li>
+                <li>There are multiple postal names for the given postal code. This is the case in
+                    France and several other countries.</li>
                 <li>This service does not have any postal code data for the given country.</li>
             </ul>
             <p>If the response is blank and a postal name is required, it is recommended to
