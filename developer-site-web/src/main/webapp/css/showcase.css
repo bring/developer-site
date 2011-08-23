@@ -44,9 +44,15 @@
 
 	.banner-section {
 		float: left;
-		width: 33.33%;
+		width: 33%;
 		margin-top: 200px;
 	}
+
+@-moz-document url-prefix() /* Firefox hack */
+.banner-section {
+    width: 33.33%;
+}
+
 		.banner-section a {
 			background-repeat: no-repeat;
 			background-position: 30px 0;
@@ -90,36 +96,34 @@
 		.banner-section.postalcode a {
 			background-image: url(/img/postalcode-icon.png);
 		}
-		
-		
-		.big-banner.custom-section .banner-section:hover {
-		    
-		}
-			.big-banner.custom-section .banner-title,
-			.big-banner.custom-section .banner-section {
-				opacity: 0;
-			    -webkit-transition: all 250ms ease-in-out;
-			    -moz-transition: all 250ms ease-in-out;
-			    -o-transition: all 250ms ease-in-out;
-			    -ms-transition: all 250ms ease-in-out;
-			    transition: all 250ms ease-in-out;
-			}
-			.big-banner.custom-section .banner-section:hover {
-				opacity: 1;
 
-			}
-		
-		.big-banner.shippingguide {
-			background-image: url(/img/shippingguide-banner-bg.png);
-		}
-		.big-banner.tracking {
-			background-image: url(/img/tracking-banner-bg.png);
-		}
-		.big-banner.postalcode {
-			background-image: url(/img/postalcode-banner-bg.png);
-		}
+.big-banner.custom-section .banner-section:hover {
 
+}
 
+.big-banner.custom-section .banner-title,
+.big-banner.custom-section .banner-section {
+    opacity: 0;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+
+.big-banner.custom-section .banner-section:hover {
+    opacity: 1;
+}
+
+.big-banner.shippingguide {
+    background-image: url(/img/shippingguide-banner-bg.png);
+}
+.big-banner.tracking {
+    background-image: url(/img/tracking-banner-bg.png);
+}
+.big-banner.postalcode {
+    background-image: url(/img/postalcode-banner-bg.png);
+}
 
 .panels {
 	width: 653px;
@@ -167,22 +171,6 @@
 	padding: 10px 0 0 10px;
 }
 
-.toolbox a > span {
-    position: absolute;
-    top: 12px;
-    left: 30px;
-}
-
-.toolbox a > span:before {
-    position: absolute;
-    top: -8px;
-    left: -20px;
-    font-size: 1.75em;
-	margin-right: 5px;
-	content: "\02039 ";
-	font-weight: bold;
-}
-
 .toolbox li:hover {
 	background-color: #fff;
 }
@@ -205,50 +193,6 @@
 	width: 5%;
 }
 
-.intro-category {
-	position: absolute;
-	right: 0px;
-	height: 90px;
-	width: 20px;
-    z-index: 1;
-    background-color: orange;
-}
-
-.intro-category>span{
-    position: absolute;
-    left: 37px;
-    top: 10px;
-    width: inherit;
-    height: inherit;
-    color: #fff;
-    font-size: 0.75em;
-}
-
-.quickstart-list li:last-child {
-	height: 40px;
-	margin-bottom: 0;
-}
-
-.quickstart-category {
-    position: absolute;
-    right: 0px;
-    height: 100%;
-    width: 20px;
-    z-index: 1;
-    background-color: #7FC14B;
-}
-
-.quickstart-category>span{
-	position: absolute;
-	left: 62px;
-	top: 25px;
-	width: inherit;
-	height: inherit;
-	color: #fff;
-	font-size: 0.75em;
-
-}
-
 .rotate-text {
 	/* css3 */
     -webkit-transform: rotate(270deg);
@@ -256,10 +200,6 @@
     -ms-transform: rotate(270deg);
     -o-transform: rotate(270deg);
     transform: rotate(270deg);
-}
-
-.quickstart {
-    position: relative;
 }
 
 .intro {

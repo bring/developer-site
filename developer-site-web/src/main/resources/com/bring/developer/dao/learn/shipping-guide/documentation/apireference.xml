@@ -44,6 +44,7 @@
         </Title>
         <Description><![CDATA[
             <p>Specified using <code>from=7600&amp;to=1407</code>.</p>
+            <p>For international shipments to countries without a postal code; Specify city with the optional <code>toCity</code> parameter, e.g. <code>&toCity=Dublin</code></p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -776,7 +777,7 @@ Example output
             <p>
             <ul>
                 <li>All shipping guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
-                <li>Using XML API you cant mark a parcel as a special item. If you need to do this you must use the Web Service.</li>
+                <li>Using XML API you cant mark a parcel as a specialized goods. If you need to do this you must use the Web Service.</li>
                 <li>Shippingguide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their salessituation.</li>
             </ul>
             </p>
