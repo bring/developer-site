@@ -47,6 +47,12 @@
 		width: 33%;
 		margin-top: 200px;
 	}
+
+@-moz-document url-prefix() /* Firefox hack */
+.banner-section {
+    width: 33.33%;
+}
+
 		.banner-section a {
 			background-repeat: no-repeat;
 			background-position: 30px 0;
