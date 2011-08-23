@@ -94,7 +94,7 @@
                     when we reach this amount. Leave empty to indicate
                     unlimited tests.  Recommended: some number much larger
                     than what you think your website contains."
-            key="max_tests">999</preference>
+            key="max_tests">9999</preference>
 
 
     </single_value_preferences>
