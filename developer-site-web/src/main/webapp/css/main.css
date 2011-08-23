@@ -150,7 +150,10 @@ body:before {
 .page-article .content,
 .page-apireference .content,
 .page-productlist .content {
-	padding-top: 60px;
+    float: left;
+    clear: both;
+    width: 986px;
+    padding-top: 50px;
 }
 
 .home-content {
@@ -186,8 +189,7 @@ p.right {
     text-align: right;
 }
 
-/* hack */
-
-#learn {
-    height: 42px;
+/* Util */
+.clear {
+    clear: both;
 }
