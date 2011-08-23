@@ -19,7 +19,7 @@ public class ApplicationConfig {
 
     ConstrettoConfiguration config;
 
-    public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "fraktguide.bring.no"; //default
+    public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
 
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
