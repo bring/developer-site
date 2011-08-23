@@ -89,7 +89,7 @@ function TopMenu(pView, pContextPath, jsonData) {
     }
 
     function createMenuNodeHtml(menuNode) {
-        return '<a href="' + menuNode.url + '" class="' + menuNode.htmlId + '">' + menuNode.title +'</a>';
+        return '<a href="' + menuNode.url + '" class="' + menuNode.htmlId + (menuNode.isOnPath ? ' path' : '') + (menuNode.isLeafNode() ? ' leaf' : ' parent') + '">' + menuNode.title +'</a>';
     }
 
     function initLaunchers() {
@@ -177,15 +177,30 @@ function TopMenu(pView, pContextPath, jsonData) {
                 if(currentJsonLauncher.menuNodes && currentJsonLauncher.menuNodes.length > 0) {
                     subNodes = parseFirstLevel(currentJsonLauncher.menuNodes, currentJsonLauncher.id);
                 }
-                var menuLauncher = new MenuLauncher(currentJsonLauncher.id, subNodes);
-                if(currentJsonLauncher.breadCrumbs) {
-                    menuLauncher.hasBreadCrumbs = true;
-                    menuLauncher.breadCrumbs = parseBreadCrumbs();
+                var menuLauncher = new MenuLauncher(currentJsonLauncher.id, subNodes, (window.location.href.indexOf("/" + currentJsonLauncher.id  + "/") > 0));
+                if(menuLauncher.isOnPath) {
+                    var breadCrumbNodes = parseBreadCrumbs();
+                    populateIsOnPath(breadCrumbNodes);
+
+                    if(currentJsonLauncher.breadCrumbs) {
+                        menuLauncher.hasBreadCrumbs = true;
+                        menuLauncher.breadCrumbs = breadCrumbNodes;
+                    }
                 }
+
                 resultingLaunchers.push(menuLauncher);
             }
 
             return resultingLaunchers;
+        }
+
+        function populateIsOnPath(breadCrumbNodes) {
+            for(var i=0; i<breadCrumbNodes.length; i++) {
+                var currentBreadCrumbNode = breadCrumbNodes[i];
+                if(currentBreadCrumbNode != null) {
+                    currentBreadCrumbNode.isOnPath = true;
+                }
+            }
         }
 
         function parseFirstLevel(jsonMenuNodes, launcherId) {
@@ -250,10 +265,10 @@ function TopMenu(pView, pContextPath, jsonData) {
         this.launchers = launchers;
     }
 
-    function MenuLauncher(id, subNodes) {
+    function MenuLauncher(id, subNodes, isOnPath) {
         this.id = id;
         this.subNodes = subNodes;
-        this.isOnPath = false;
+        this.isOnPath = isOnPath;
         this.hasBreadCrumbs = false;
         this.breadCrumbs = [];
         this.states = {hidden : "hidden", breadCrumbs : "breadCrumbs", menu : "menu" };
@@ -338,14 +353,14 @@ function TopMenu(pView, pContextPath, jsonData) {
 
             html += '<ul>';
             html += '<li>';
-            html += '<a href="#">' + that.breadCrumbs[0].title + '</a>';
+            html += createMenuNodeHtml(that.breadCrumbs[0]);
             html += '<ul>';
             html += '<li>';
-            html += '<a href="#">' + that.breadCrumbs[1].title + '</a>';
+            html += createMenuNodeHtml(that.breadCrumbs[1]);
             if(that.breadCrumbs[2] !== null) {
                 html += '<ul>';
                 html += '<li>';
-                html += '<a href="#">' + that.breadCrumbs[2].title + '</a>';
+                html += createMenuNodeHtml(that.breadCrumbs[2]);
                 html += '</li>';
                 html += '</ul>';
             }
@@ -364,7 +379,6 @@ function TopMenu(pView, pContextPath, jsonData) {
         }
 
         this.init = function() {
-            that.isOnPath = (window.location.href.indexOf("/" + that.id  + "/") > 0);
             breadCrumbsView = $("." + that.id + ".breadcrumbs");
             menuView = $("." + that.id + ".menubox");
 
@@ -390,6 +404,7 @@ function TopMenu(pView, pContextPath, jsonData) {
         this.subNodes = subNodes;
         this.htmlId = htmlId;
         this.menuLevel = menuLevel;
+        this.isOnPath = false;
         this.linkDomNode = null;
 
         var that = this;
@@ -419,6 +434,10 @@ function TopMenu(pView, pContextPath, jsonData) {
 
             that.linkDomNode.removeClass("active");
             active = false;
+        };
+
+        this.isLeafNode = function() {
+            return that.subNodes.length == 0;
         };
 
         function deActivateActiveSiblings() {
