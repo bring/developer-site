@@ -110,12 +110,25 @@
     overflow: hidden;
     white-space: nowrap;
     color: #CCCCCC;
-    background-color: #666666;
+    background: #666666 url(../img/parent_normal.gif) center right no-repeat;
     margin: 0 0 2px 0;
     padding: 12px 10px 8px;
 }
+.learn.menubox ul li a.leaf {
+    background-image: url(../img/leaf_normal.gif);
+}
+.learn.menubox ul li a.leaf.path {
+    background-image: url(../img/leaf_selected.gif);
+}
 .learn.menubox ul li a.active {
-    background-color: red;
+    color: white;
+    background: #999999 url(../img/parent_over.gif) center right no-repeat;
+}
+.learn.menubox ul li a.active.leaf {
+    background-image: url(../img/leaf_normal_over.gif);
+}
+.learn.menubox ul li a.active.leaf.path {
+    background-image: url(../img/leaf_selected_over.gif);
 }
 
 /* Download menu */
@@ -213,7 +226,4 @@
     background-color: #666666;
     margin: 0 0 2px 0;
     padding: 12px 10px 8px;
-}
-.breadcrumbs ul li a.active {
-    background-color: red;
 }
