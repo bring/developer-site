@@ -23,7 +23,8 @@ $(document).ready(function() {
      */
     
     if (isPageType("home")) {
-        $("#navigation").navigation({mode: "hidden"});
+        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        
         $("#twittercontent").performTwitterSearch(1, twitterView);
         $(".big-banner").bringBanner();
     }
