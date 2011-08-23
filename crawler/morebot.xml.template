@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- preference settings for "morebot" web test tool;
+    descriptions are intended as read-only; just change the values.
+    if you do not want a feature, just make the value empty.
+    For example, if you do not have an application-specific
+    error string, then make the preference "error_string" empty,
+    and this will not be checked -->
+
+<!--note: use CDATA format for any URL which has xml-forbidden chars, like an ampersand -->
+<morebotpreferences>
+
+    <!--  preferences which can have multiple values: more than one entry makes sense.
+    for example, multiple "start_URL" entries are ok -->
+    <multiple_value_preferences>
+
+
+        <preference
+            description="URL of page(s) that will START spidering; multiple items ok.
+                        these are the START pages, which cannot be reached by
+                        spidering other pages.  But redundancy is not a problem,
+                        because the spider keeps a hash of travelled pages and
+                        does not retest pages which have been traveled"
+            key="start_URL">http://xSERVERx/</preference>
+
+
+        <preference
+            description="Allowed host(s) for URLs; multiple items ok.
+                Any host in this list will be followed, and vice-versa.
+                Include host name always, but include port only if port is
+                not default port 80. All hosts from start_URLs will
+                be automatically added to this list."
+            key="allowed_host">xSERVERx</preference>
+        <preference
+            key="allowed_host">xFRAKTGUIDEx</preference>
+
+        <!--
+        <preference
+            description="If a disallowed string is found anywhere in a URL,
+                        we always skip that URL"
+            key="disallowed"></preference>
+        -->
+
+        <preference
+            description="The strings that identify page(s) that should
+                    be regarded as an error/failure. This is appropriate for
+                    an error page which does NOT return an HTTP code 500,
+                    but rather just a normal HTML page that explains to
+                    the user some internal problem.  In order to recognize
+                    the error pages, provide some string that is unique
+                    in the page."
+            key="error_string">xception</preference>
+        <preference key="error_string">not found</preference>
+        <preference key="error_string">error has occurred</preference>
+
+        <!-- limit repetitions -->
+        <!--
+        <preference
+                description="Adding a regular expression (regexp) here defines a class of URLs
+                such that after the first instance, any further such URLs are skipped.
+                This is useful to shorten the spider duration when against database-driven sites, where
+                the same code is being used over and over to present items from the same database table(s).
+                In the example below, all URLs that contain the string '/producer/', anywhere in the URL,
+                are treated as a single class of URLs, and limited from repetition."
+                key="limitRepetionsRegexp"></preference>
+        -->
+                
+    </multiple_value_preferences>
+
+<!--  preferences for which only a single entry make sense.  -->
+    <single_value_preferences>
+
+        <preference
+            description="Verbose flag, for more description in output during test."
+            key="verbose">false</preference>
+
+        <preference
+            description="User agent reported for http queries"
+            key="useragent">MorebotRig</preference>
+
+
+        <preference
+            description="Boolean flag for whether to visit expresso states
+                                just once per state; usually true, except when
+                                redundant visits are desired, such as a load test."
+            key="expresso_states_only_once">true</preference>
+
+        <preference
+            description="Number of threads to use when doing a load test."
+            key="num_load_test_treads">3</preference>
+
+        <preference
+            description="Maximum number of pages to test. Quit testing
+                    when we reach this amount. Leave empty to indicate
+                    unlimited tests.  Recommended: some number much larger
+                    than what you think your website contains."
+            key="max_tests">999</preference>
+
+
+    </single_value_preferences>
+</morebotpreferences>
