@@ -93,53 +93,6 @@ class DeployHelper < Bundler::GemHelper
           end
           rollback
         end
-
-        namespace :db do
-          desc "Deploy latest liquibase bundle"
-          task :deploy => :backup do
-            upload_db
-          end
-
-          desc "Migrate Database to newest"
-          task :migrate => :deploy do
-            if not user_verifies_operation_for_production_environment "migrate"
-              Bundler.ui.confirm "Aborted."
-              return
-            end
-            migrate
-          end
-
-          desc "Backup Database"
-          task :backup => :environment do
-            backup_db
-          end
-
-          # Don't support dropping data in production
-          unless env.to_s == 'production'
-
-          end
-        end
-
-      end
-    end
-
-    namespace :local do
-      desc "Migrate db for localhost"
-      task :migrate do
-        @environment = 'local'
-        local_liquibase_invoke('migrate')
-      end
-
-      desc "Drop db for localhost"
-      task :drop_all do
-        @environment = 'local'
-        local_liquibase_invoke('dropAll')
-      end
-
-      desc "Drop and create empty db for localhost"
-      task :init do
-        @environment = 'local'
-        local_mysql_init
       end
     end
 
@@ -151,16 +104,6 @@ class DeployHelper < Bundler::GemHelper
     desc "Start jetty for given default env (dev)"
     task :server do
       local_jetty_init
-    end
-
-    desc "Start jetty for given default env (dev)"
-    task :mybring do
-      local_jetty_init('mybring_dev')
-    end
-
-    desc "Start jetty for mybring without dummy user (dev)"
-    task :mybring_integration do
-      local_jetty_init('mybring_integration_dev')
     end
 
   end
@@ -222,57 +165,9 @@ class DeployHelper < Bundler::GemHelper
   ### localhost database/liquibase convenience
   ###
 
-  def local_mysql_init
-    Bundler.ui.info "Initializing local database..."
-    sql = <<-EOS
-    DROP DATABASE IF EXISTS #{database['db']};
-    CREATE DATABASE #{database['db']};
-    GRANT ALL ON #{database['db']}.* TO '#{database['username']}'@'#{database['host']}' IDENTIFIED BY '#{database['password']}';
-    EOS
-    IO.popen("mysql -uroot -p", 'w+') { |f| f.write sql; f.close }
-    Bundler.ui.confirm "Done!"
-  end
-
   def parse_liquibase_version
     doc = Nokogiri::XML(open(File.dirname(__FILE__) + '/pom.xml'))
     doc.xpath("//xmlns:project/xmlns:dependencyManagement/xmlns:dependencies/xmlns:dependency[xmlns:artifactId/text()='liquibase-core']/xmlns:version/text()").first.content
-  end
-
-  def parse_mysql_version
-    doc = Nokogiri::XML(open(File.dirname(__FILE__) + '/pom.xml'))
-    doc.xpath("//xmlns:project/xmlns:dependencyManagement/xmlns:dependencies/xmlns:dependency[xmlns:artifactId/text()='mysql-connector-java']/xmlns:version/text()").first.content
-  end
-
-  def local_liquibase_invoke(cmd)
-    Bundler.ui.info "Executing liquibase(#{cmd}) on localhost database"
-
-    migrations = File.dirname(__FILE__) + "/database/src/main/resources/"
-    liquibase_jar = ENV['HOME'] + "/.m2/repository/org/liquibase/liquibase-core/#{parse_liquibase_version}/liquibase-core-#{parse_liquibase_version}.jar"
-    mysql_connector_jar = ENV['HOME'] + "/.m2/repository/mysql/mysql-connector-java/#{parse_mysql_version}/mysql-connector-java-#{parse_mysql_version}.jar"
-
-    [migrations, liquibase_jar, mysql_connector_jar].each do |f|
-      unless File.exist?(f)
-        Bundler.ui.error "Error: #{f} does not exist (in local maven repository?)! "
-        Kernel.exit
-      end
-    end
-
-    default_liquibase_args = [
-            "--driver=com.mysql.jdbc.Driver",
-            "--url=jdbc:mysql://#{database['host']}/#{database['db']}",
-            "--username=#{database['username']}",
-            "--password=#{database['password']}",
-            "--changeLogFile=#{database['changelog']}"
-    ]
-
-    if ('Windows_NT'.== ENV['OS'])
-      cp_separator = ';'
-    else
-      cp_separator = ':'
-    end
-
-    exec("java -classpath #{migrations}#{cp_separator}#{mysql_connector_jar}#{cp_separator}#{liquibase_jar} liquibase.integration.commandline.Main #{default_liquibase_args.join(" ")} #{cmd}")
-    Bundler.ui.confirm "Done!"
   end
 
   def local_jetty_init(app_env = 'dev')
@@ -284,7 +179,7 @@ class DeployHelper < Bundler::GemHelper
       maven_opts = "#{maven_opts} -noverify -javaagent:#{jrebel_jar} -Drebel.velocity_plugin=true -Drebel.log4j-plugin=true -Drebel.jackson_plugin=true -XX:+UseParallelGC -XX:+CMSClassUnloadingEnabled"
     end
     ENV['MAVEN_OPTS'] = maven_opts
-    exec("mvn -o jetty:run -f #{File.dirname(__FILE__)}/webapp/pom.xml -Djetty.port=8090 -Djetty.stopPort=10001 -DCONSTRETTO_TAGS=#{app_env} -Djetty.scanIntervalSeconds=5 -Dnet.jawr.debug.on=true")
+    exec("mvn -o jetty:run -f #{File.dirname(__FILE__)}/developer-site-web/pom.xml -Djetty.port=8090 -Djetty.stopPort=10001 -DCONSTRETTO_TAGS=#{app_env} -Djetty.scanIntervalSeconds=5 -Dnet.jawr.debug.on=true")
     Bundler.ui.confirm "Aye."
   end
 
@@ -388,44 +283,6 @@ class DeployHelper < Bundler::GemHelper
       Bundler.ui.info "Starting service on #{host}..."
       ssh.exec(cfg(:start_command))
     end
-  end
-
-  def upload_db
-    server_file = "#{prefix}/sql/#{File.basename(liquibase_jar_path)}"
-
-    Net::SCP.start(database['host'], user) do |scp|
-      Bundler.ui.info "Uploading #{liquibase_jar_path}..."
-      scp.upload!(liquibase_jar_path, server_file)
-    end
-  end
-
-  def backup_db
-    Net::SSH.start(database['host'], user) do |ssh|
-      target_file = "#{prefix}/sql/#{database['db']}.#{Time.now.strftime('%Y%m%d%H%M')}.sql"
-      Bundler.ui.warn "Backing up database... on #{database['host']} to #{target_file}"
-      ssh.exec!("mysqldump -u#{database['username']} -p#{database['password']} #{database['db']} > #{target_file}")
-    end
-  end
-
-  def exec_liquibase(cmd)
-    server_file = "#{prefix}/sql/#{File.basename(liquibase_jar_path)}"
-    Net::SSH.start(database['host'], user) do |ssh|
-      Bundler.ui.warn "Running Liquibase command: #{cmd} on #{database['host']}"
-      ssh.exec!("java -jar #{server_file} --url='jdbc:mysql://localhost/#{database['db']}' --username=#{database['username']} --password=#{database['password']} #{cmd}")
-    end
-  end
-
-  def drop_all
-    exec_liquibase('dropAll')
-  end
-
-  def migrate
-    exec_liquibase('migrate')
-  end
-
-  def rebuild_db
-    exec_liquibase('dropAll')
-    exec_liquibase('migrate')
   end
 
   def verify
