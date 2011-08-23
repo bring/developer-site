@@ -446,8 +446,14 @@ function TopMenu(pView, pContextPath, jsonData) {
         }
 
         function initEvents() {
-            that.linkDomNode.mouseover(function(evt) {
-                that.activate();
+            var timer = null;
+            that.linkDomNode.mouseenter(function(evt) {
+                timer = setTimeout(function(that) { that.activate(); }, 100, that);
+            });
+            that.linkDomNode.mouseleave(function(evt) {
+                if(timer !== null) {
+                    clearTimeout(timer);
+                }
             });
             if(that.url == "#") {
                 that.linkDomNode.click(function(evt) {
