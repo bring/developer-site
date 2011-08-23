@@ -44,7 +44,7 @@
 
 	.banner-section {
 		float: left;
-		width: 33.33%;
+		width: 33%;
 		margin-top: 200px;
 	}
 		.banner-section a {
@@ -90,34 +90,34 @@
 		.banner-section.postalcode a {
 			background-image: url(/img/postalcode-icon.png);
 		}
-		
-		
-		.big-banner.custom-section .banner-section:hover {
-		    
-		}
-			.big-banner.custom-section .banner-title,
-			.big-banner.custom-section .banner-section {
-				opacity: 0;
-			    -webkit-transition: all 250ms ease-in-out;
-			    -moz-transition: all 250ms ease-in-out;
-			    -o-transition: all 250ms ease-in-out;
-			    -ms-transition: all 250ms ease-in-out;
-			    transition: all 250ms ease-in-out;
-			}
-			.big-banner.custom-section .banner-section:hover {
-				opacity: 1;
 
-			}
-		
-		.big-banner.shippingguide {
-			background-image: url(/img/shippingguide-banner-bg.png);
-		}
-		.big-banner.tracking {
-			background-image: url(/img/tracking-banner-bg.png);
-		}
-		.big-banner.postalcode {
-			background-image: url(/img/postalcode-banner-bg.png);
-		}
+.big-banner.custom-section .banner-section:hover {
+
+}
+
+.big-banner.custom-section .banner-title,
+.big-banner.custom-section .banner-section {
+    opacity: 0;
+    -webkit-transition: all 250ms ease-in-out;
+    -moz-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    -ms-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+
+.big-banner.custom-section .banner-section:hover {
+    opacity: 1;
+}
+
+.big-banner.shippingguide {
+    background-image: url(/img/shippingguide-banner-bg.png);
+}
+.big-banner.tracking {
+    background-image: url(/img/tracking-banner-bg.png);
+}
+.big-banner.postalcode {
+    background-image: url(/img/postalcode-banner-bg.png);
+}
 
 
 
