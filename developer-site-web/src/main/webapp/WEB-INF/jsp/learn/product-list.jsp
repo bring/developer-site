@@ -3,8 +3,8 @@
 <%@ taglib prefix="menutabs" tagdir="/WEB-INF/tags/menutabs" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="static com.bring.developer.config.ApplicationConfig.FRAKTGUIDE_URL_FOR_ENVIRONMENT" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<%@page import="org.joda.time.DateTime"%>
 
 <c:set var="today" value="${todayString}"/>
 
@@ -42,9 +42,9 @@
                     	<c:forEach items="${productList.products}" var="product" >
 							<tr>
 								<td><c:out value="${product.name}" /><c:if test="${product.note > 0}"> <sup><c:out value="${product.note}"/></sup></c:if></td>
-								<td><a target="_blank" href="http://fraktguide.bring.no/fraktguide<c:out value="${fn:replace(product.codeLink, '***DATESTRING***', today)}" />"><code><c:out value="${product.code}" /></code></a></td>
-								<td><a target="_blank" href="http://fraktguide.bring.no/fraktguide<c:out value="${fn:replace(product.priceLink, '***DATESTRING***', today)}" />"><c:out value="${product.price ? 'Yes' : 'No'}" /></a></td>
-								<td><a target="_blank" href="http://fraktguide.bring.no/fraktguide<c:out value="${fn:replace(product.expectedDeliveryLink, '***DATESTRING***', today)}" />"><c:out value="${product.expectedDelivery ? 'Yes' : 'No'}" /></a></td>
+								<td><a target="_blank" href="http://<%= FRAKTGUIDE_URL_FOR_ENVIRONMENT %>/fraktguide<c:out value="${fn:replace(product.codeLink, '***DATESTRING***', today)}" />"><code><c:out value="${product.code}" /></code></a></td>
+								<td><a target="_blank" href="http://<%= FRAKTGUIDE_URL_FOR_ENVIRONMENT %>/fraktguide<c:out value="${fn:replace(product.priceLink, '***DATESTRING***', today)}" />"><c:out value="${product.price ? 'Yes' : 'No'}" /></a></td>
+								<td><a target="_blank" href="http://<%= FRAKTGUIDE_URL_FOR_ENVIRONMENT %>/fraktguide<c:out value="${fn:replace(product.expectedDeliveryLink, '***DATESTRING***', today)}" />"><c:out value="${product.expectedDelivery ? 'Yes' : 'No'}" /></a></td>
 							</tr>
                     	</c:forEach>
 						</tbody>
@@ -67,7 +67,7 @@
 						<tbody>
                     	<c:forEach items="${productList.additionalService}" var="service" >
 							<tr>
-                                <td><a target="_blank" href="http://fraktguide.bring.no/fraktguide<c:out value="${fn:replace(service.codeLink, '***DATESTRING***', today)}" />"><c:out value="${service.code}" /></a></td>
+                                <td><a target="_blank" href="http://<%= FRAKTGUIDE_URL_FOR_ENVIRONMENT %>/fraktguide<c:out value="${fn:replace(service.codeLink, '***DATESTRING***', today)}" />"><c:out value="${service.code}" /></a></td>
                                 <td><c:out value="${service.name}" /></td>
 							</tr>
                     	</c:forEach>

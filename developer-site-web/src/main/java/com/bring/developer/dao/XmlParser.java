@@ -1,10 +1,16 @@
 package com.bring.developer.dao;
 
-import java.io.InputStream;
+import org.apache.commons.io.IOUtils;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import java.io.IOException;
+import java.io.InputStream;
+
+import static com.bring.developer.config.ApplicationConfig.FRAKTGUIDE_URL_FOR_ENVIRONMENT;
+import static org.apache.commons.io.IOUtils.toInputStream;
+import static org.springframework.util.StringUtils.replace;
 
 /**
  * Response element parser that uses JAXB.
@@ -20,15 +26,32 @@ public class XmlParser<T> {
         try {
             context = JAXBContext.newInstance(typeParameterClass);
         } catch (JAXBException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
     public T unmarshal(InputStream inputStream) throws JAXBException {
-        
+
         Unmarshaller unmarshaller = context.createUnmarshaller();
-        T p = (T) unmarshaller.unmarshal(inputStream);
+
+        InputStream filteredXml = replaceUrlToFraktguideWithCorrectEnvironment(inputStream);
+        
+        T p = (T) unmarshaller.unmarshal(filteredXml);
         return p;
+    }
+
+    private InputStream replaceUrlToFraktguideWithCorrectEnvironment(InputStream inputStream) {
+        if (FRAKTGUIDE_URL_FOR_ENVIRONMENT.equals("fraktguide.bring.no")) {
+            //performance optimization
+            return inputStream;
+        }
+
+        try {
+            String xml = IOUtils.toString(inputStream);
+            return toInputStream(replace(xml, "fraktguide.bring.no", FRAKTGUIDE_URL_FOR_ENVIRONMENT));
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

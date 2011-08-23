@@ -19,9 +19,12 @@ public class ApplicationConfig {
 
     ConstrettoConfiguration config;
 
+    public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "fraktguide.bring.no"; //default
+
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
         this.config = config;
+        FRAKTGUIDE_URL_FOR_ENVIRONMENT = config.evaluateToString("fraktguideUrl");
     }
 
     @Bean
@@ -39,4 +42,9 @@ public class ApplicationConfig {
         ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
         return new DefaultHttpClient(connectionManager, params);
     }
+
+    public String getFraktguideUrlForEnvironment() {
+        return FRAKTGUIDE_URL_FOR_ENVIRONMENT;
+    }
+
 }
