@@ -9,9 +9,6 @@ function TopMenu(pView, pContextPath, jsonData) {
     var activeMenuNodes = [];
     var mouseOverNavigation = false;
 
-    var states = {breadCrumbs : "breadCrumbs", menu : "menu" };
-    var currentState = states.breadCrumbs;
-
     // Event handlers
 
     function bodyClickEventHandler() {
@@ -126,10 +123,6 @@ function TopMenu(pView, pContextPath, jsonData) {
     }
 
     function init() {
-        if(jsonData.mode && jsonData.mode == "breadCrumbs") {
-            currentState = states.breadCrumbs;
-        }
-
         menuData = parseMenu(jsonData.launchers);
 
         view.html(createDropDownMenuHtml());
@@ -428,7 +421,7 @@ function TopMenu(pView, pContextPath, jsonData) {
 
             if(that.menuLevel < 3) {
                 var nextLevel = that.menuLevel + 1;
-                daActivateChildren(nextLevel);
+                deActivateChildren(nextLevel);
                 $("#" + that.htmlId + " ul.level_" + nextLevel).hide();
             }
 
@@ -445,7 +438,7 @@ function TopMenu(pView, pContextPath, jsonData) {
                 activeMenuNodes[that.menuLevel].deActivate();
             }
         }
-        function daActivateChildren(nextLevel) {
+        function deActivateChildren(nextLevel) {
             var nextLevelActiveNode = activeMenuNodes[nextLevel];
             if (nextLevelActiveNode) {
                 nextLevelActiveNode.deActivate();
