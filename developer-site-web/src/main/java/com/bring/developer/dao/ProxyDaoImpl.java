@@ -1,31 +1,30 @@
 package com.bring.developer.dao;
 
-import java.io.IOException;
-import java.util.Map;
-
+import com.bring.developer.config.ApplicationConfig;
+import com.bring.developer.request.ProxyUrlBuilder;
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 
-import com.bring.developer.request.ProxyUrlBuilder;
+import java.io.IOException;
+import java.util.Map;
 
 @Component
 public class ProxyDaoImpl extends ProxyDao {
 
     private ProxyUrlBuilder urlBuilder;
     
-    /**
-     * TODO Move configuration out of the constructor.
-     */
-    public ProxyDaoImpl() {
+    @Autowired
+    public ProxyDaoImpl(ApplicationConfig config) {
         super();
         urlBuilder = new ProxyUrlBuilder();
         urlBuilder.addService("tracking", "http://beta.bring.no/sporing");
-        urlBuilder.addService("shipping-guide", "http://fraktguide.bring.no/fraktguide");
+        urlBuilder.addService("shipping-guide", config.getFraktguideUrlForEnvironment());
     }
     
     public ProxyDaoImpl(ProxyUrlBuilder urlBuilder) {
