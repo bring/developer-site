@@ -36,11 +36,6 @@
             specified JSONP callback function.</p>
     </div>
     
-    <h3><a href="#webservice">Web Service</a></h3>
-    <div data-tab="webservice" class="tab">
-        <p>Example coming</p>
-    </div>
-    
     <h3><a href="#java">Java</a></h3>
     <div data-tab="java" class="tab">
         <pre class="java">// Initialize library
