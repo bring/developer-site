@@ -150,7 +150,7 @@ body:before {
 .page-article .content,
 .page-apireference .content,
 .page-productlist .content {
-    float: left;
+    float: none;
     clear: both;
     width: 986px;
     padding-top: 50px;

@@ -10,8 +10,8 @@
 
 /* Introbanner */
 .introbanner {
-	background-color: #fff;
-	font-size: 0.75em;
+    background-color: #fff;
+    font-size: 0.75em;
 }
 
 /**
@@ -19,83 +19,83 @@
  * It is used until we get a multi-banner with vertical-tabs thingy up
  */
 .big-banner {
-	position: relative;
-	min-height: 360px;
-	background: #ffffff; /* Old browsers */
-	background: -moz-linear-gradient(top, #ffffff 0%, #e2e3e4 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e2e3e4)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e3e4',GradientType=0 ); /* IE6-9 */
-	background: linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* W3C */
+    position: relative;
+    min-height: 360px;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e2e3e4 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e2e3e4)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e3e4',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* W3C */
 }
-	.big-banner .banner-title {
-		font-size: 2.5em;
-		color: #565656;
-		position: absolute;
-		top: 50px;
-		left: 30px;
-		text-transform: none;
-		margin: 0;
-		padding: 0;
-		width: 310px;
-	}
+    .big-banner .banner-title {
+        font-size: 2.5em;
+        color: #565656;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        text-transform: none;
+        margin: 0;
+        padding: 0;
+        width: 310px;
+    }
 
-	.banner-section {
-		float: left;
-		width: 33%;
-		margin-top: 200px;
-	}
+    .banner-section {
+        float: left;
+        width: 33%;
+        margin-top: 200px;
+    }
 
 @-moz-document url-prefix() /* Firefox hack */
 .banner-section {
     width: 33.33%;
 }
 
-		.banner-section a {
-			background-repeat: no-repeat;
-			background-position: 30px 0;
-			display: block;
-			padding: 70px 30px 0 30px;
-			color: #565656;
-		}
+        .banner-section a {
+            background-repeat: no-repeat;
+            background-position: 30px 0;
+            display: block;
+            padding: 70px 30px 0 30px;
+            color: #565656;
+        }
 
-		.banner-section .title {
-			display: block;
-			font-size: 1.15em;
-			line-height: 100%;
-			min-height: 25px;
-			text-transform: uppercase;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-			.banner-section .title:after {
-				content: "\203A";
-				margin-left: 5px;
-				color: #7fc14b;
-				font-size: 1.5em;
-				font-weight: bold;
-			}
-		
-		.banner-section .description {
-			color: #999;
-		}
-			.banner-section a:hover .description {
-				color: #565656;
-			}
+        .banner-section .title {
+            display: block;
+            font-size: 1.15em;
+            line-height: 100%;
+            min-height: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+            .banner-section .title:after {
+                content: "\203A";
+                margin-left: 5px;
+                color: #7fc14b;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        
+        .banner-section .description {
+            color: #999;
+        }
+            .banner-section a:hover .description {
+                color: #565656;
+            }
 
 
 
-		.banner-section.shippingguide a {
-			background-image: url(/img/shippingguide-icon.png);
-		}
-		.banner-section.tracking a {
-			background-image: url(/img/tracking-icon.png);
-		}
-		.banner-section.postalcode a {
-			background-image: url(/img/postalcode-icon.png);
-		}
+        .banner-section.shippingguide a {
+            background-image: url(/img/shippingguide-icon.png);
+        }
+        .banner-section.tracking a {
+            background-image: url(/img/tracking-icon.png);
+        }
+        .banner-section.postalcode a {
+            background-image: url(/img/postalcode-icon.png);
+        }
 
 .big-banner.custom-section .banner-section:hover {
 
@@ -118,29 +118,31 @@
 .big-banner.shippingguide {
     background-image: url(/img/shippingguide-banner-bg.png);
 }
+
 .big-banner.tracking {
     background-image: url(/img/tracking-banner-bg.png);
 }
+
 .big-banner.postalcode {
     background-image: url(/img/postalcode-banner-bg.png);
 }
 
 .panels {
-	width: 653px;
-	height: 240px;
-	margin-right: 0;
-	padding-right: 10px;
-	background-color: #f1f1f1;
-	border-style: inset;
-	border-left: 1px solid #ddd;
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
-	
-	
-	/* css3 */
-/*	-moz-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
-	-webkit-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
-	box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;*/
+    width: 653px;
+    height: 240px;
+    margin-right: 0;
+    padding-right: 10px;
+    background-color: #f1f1f1;
+    border-style: inset;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    
+    
+    /* css3 */
+/*    -moz-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
+    -webkit-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
+    box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;*/
 }
 
 /* Toolbox */
@@ -152,27 +154,27 @@
 }
 
 .toolbox ul {
-	list-style: none;
-	background-color: #fff;
+    list-style: none;
+    background-color: #fff;
 }
 
 .toolbox li {
-	border-left: 1px solid #ddd;
-	/* 	margin-bottom: 10px; */
-	height: 50px;
-	position: relative;
+    border-left: 1px solid #ddd;
+    /*     margin-bottom: 10px; */
+    height: 50px;
+    position: relative;
 }
 
 .toolbox a {
-	width: 311px;
-	position: absolute;
-	height: 30px;
-	background: #f1f1f1;
-	padding: 10px 0 0 10px;
+    width: 311px;
+    position: absolute;
+    height: 30px;
+    background: #f1f1f1;
+    padding: 10px 0 0 10px;
 }
 
 .toolbox li:hover {
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .toolbox li.selected{
@@ -180,21 +182,21 @@
 }
 
 .toolbox li.selected a{
-	border-style: inset;
+    border-style: inset;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
 
 .toolbox .selected a,.toolbox .hover a {
-	color: #7FC14B;
+    color: #7FC14B;
 }
 
 .toolbox li img {
-	width: 5%;
+    width: 5%;
 }
 
 .rotate-text {
-	/* css3 */
+    /* css3 */
     -webkit-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
     -ms-transform: rotate(270deg);
