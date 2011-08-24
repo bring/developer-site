@@ -21,21 +21,24 @@
 			<div class="content group">
 				<div class="overview-packages">
 					<c:forEach var="pack" items="${packages}">
-						<a class="packagebox" href="/download/${overview.type}/${pack.handle}.html">
-							<c:choose>
-								<c:when test="${!empty pack.medias and !empty pack.previewMedia}">
-									<img src="/media/${overview.type}/${pack.handle}/${pack.previewMedia.file}" alt="Preview" />
-								</c:when>
-								<c:otherwise>
-									<img src="/img/default-${overview.type}-preview.png" alt="Preview" />
-								</c:otherwise>
-							</c:choose>
-							
-							<strong class="title">${pack.title}</strong>
-							<span class="by">by ${pack.person.name}</span>
-                            <c:if test="${fn:length(pack.persons) gt 1}"><span class="others"> and others</span></c:if>
-						</a>
+						<div class="packagebox-outer">
+                            <a class="packagebox" href="/download/${overview.type}/${pack.handle}.html">
+                                <c:choose>
+                                    <c:when test="${!empty pack.medias and !empty pack.previewMedia}">
+                                        <img src="/media/${overview.type}/${pack.handle}/${pack.previewMedia.file}" alt="Preview" />
+                                    </c:when>
+                                    <c:otherwise>
+                                        <img src="/img/default-${overview.type}-preview.png" alt="Preview" />
+                                    </c:otherwise>
+                                </c:choose>
+
+                                <strong class="title">${pack.title}</strong>
+                                <span class="by">by ${pack.person.name}</span>
+                                <c:if test="${fn:length(pack.persons) gt 1}"><span class="others"> and others</span></c:if>
+                            </a>
+                        </div>
 					</c:forEach>
+                    <div class="clear"></div>
 				</div>
 				<div class="sidebox">
 					<div class="overview-description">

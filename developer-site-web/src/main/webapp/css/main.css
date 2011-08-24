@@ -151,7 +151,7 @@ body:before {
 }
 .page-package .content,
 .page-package-overview .content {
-    padding-top: 10px;
+    padding-top: 0px;
 }
 
 .home-content {
