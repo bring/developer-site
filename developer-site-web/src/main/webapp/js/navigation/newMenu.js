@@ -90,7 +90,11 @@ function TopMenu(pView, pContextPath, jsonData) {
     }
 
     function createMenuNodeHtml(menuNode) {
-        return '<a href="' + menuNode.url + '" class="' + menuNode.htmlId + (menuNode.isOnPath ? ' path' : '') + (menuNode.isLeafNode() ? ' leaf' : ' parent') + '">' + menuNode.title +'</a>';
+        var target = "";
+        if (menuNode.url.indexOf("http") > -1) {
+            target = ' target="_blank" ';
+        }
+        return '<a href="' + menuNode.url + '" ' + target + 'class="' + menuNode.htmlId + (menuNode.isOnPath ? ' path' : '') + (menuNode.isLeafNode() ? ' leaf' : ' parent') + '">' + menuNode.title +'</a>';
     }
 
     function initLaunchers() {

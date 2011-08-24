@@ -124,15 +124,15 @@ var menuJsonData =
             "breadCrumbs":false,
             "menuNodes":[{
                     "title":"Github",
-                    "url":"http://github.com/"
+                    "url":"https://github.com/bring"
                 },
                 {
                     "title":"Twitter",
-                    "url":"http://twitter.com/"
+                    "url":"http://twitter.com/#!/bringapi"
                 },
                 {
                     "title":"Get satisfaction",
-                    "url":"http://getsatisfaction.com"
+                    "url":"http://getsatisfaction.com/bring"
                 }
             ]
         }
