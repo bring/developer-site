@@ -123,12 +123,16 @@ var menuJsonData =
             "id":"talk",
             "breadCrumbs":false,
             "menuNodes":[{
+                    "title":"Github",
+                    "url":"http://github.com/"
+                },
+                {
                     "title":"Twitter",
-                    "url":"/download/plugin/index.html"
+                    "url":"http://twitter.com/"
                 },
                 {
                     "title":"Get satisfaction",
-                    "url":"/download/widget/index.html"
+                    "url":"http://getsatisfaction.com"
                 }
             ]
         }

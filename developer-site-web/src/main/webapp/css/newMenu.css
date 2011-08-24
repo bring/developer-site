@@ -136,7 +136,7 @@
     background-image: url(../img/leaf_selected_over.gif);
 }
 
-/* Download menu */
+/* Download and talk menu */
 
 .download.menubox, .talk.menubox {
     height: 160px;
@@ -186,6 +186,15 @@
 }
 .download.menubox ul li a.download_2 {
     background-image: url("/img/download-sdk-green.png");
+}
+.talk.menubox ul li a.talk_0 {
+    background-image: url("/img/github.png");
+}
+.talk.menubox ul li a.talk_1 {
+    background-image: url("/img/twitter.png");
+}
+.talk.menubox ul li a.talk_2 {
+    background-image: url("/img/getsatisfaction.png");
 }
 
 
