@@ -292,7 +292,12 @@ function TopMenu(pView, pContextPath, jsonData) {
                 }
             }
             else {
-                switchState();
+                if(that.isOnPath) {
+                    switchState();
+                }
+                else {
+                    setLaunchersToInitialState();
+                }
             }
         };
 

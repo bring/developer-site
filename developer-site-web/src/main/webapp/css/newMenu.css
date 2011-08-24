@@ -13,6 +13,10 @@
     color: #b7b7b7;
     background-color: #3b3b3b;
 }
+.page-home .section-launcher.inactive {
+    background-color: #F2F2F2;
+    color: #999999;
+}
 .section-title {
     font-size: 1.25em;
 }
