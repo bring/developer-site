@@ -188,13 +188,13 @@
     background-image: url("/img/download-sdk-green.png");
 }
 .talk.menubox ul li a.talk_0 {
-    background-image: url("/img/github.png");
+    background-image: url("/img/talk_github.png");
 }
 .talk.menubox ul li a.talk_1 {
-    background-image: url("/img/twitter.png");
+    background-image: url("/img/talk_twitter.png");
 }
 .talk.menubox ul li a.talk_2 {
-    background-image: url("/img/getsatisfaction.png");
+    background-image: url("/img/talk_get_satisfaction.png");
 }
 
 
