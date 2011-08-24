@@ -16,7 +16,7 @@
         
 	    <div class="main group">
             <misc:showcase />
-            <menutabs:showMenu cssClass="box" />
+            <menutabs:showMenu cssClass="menutab" />
             <div class="group home-content">
                 <misc:quote />
                 <misc:popularwidgets />

@@ -11,11 +11,6 @@
     height: 50px;
     padding: 10px;
     color: #b7b7b7;
-    background-color: #3b3b3b;
-}
-.page-home .section-launcher.inactive {
-    background-color: #F2F2F2;
-    color: #999999;
 }
 .section-title {
     font-size: 1.25em;
@@ -28,19 +23,21 @@
 .section-description {
     font-size: 0.75em;
 }
-.menutab {
+.menutab, .page-home .menutab.inactive {
     margin: 5px 5px 0px 5px;
-    height: 50px;
+    height: 60px;
 	color: #999;
     text-transform: uppercase;
-    background-color: #f2f2f2;
-    border-bottom: 10px solid #e2e3e4;
+    background: transparent url(../img/launcher_bg_inactive.gif) repeat-x;
+    padding-bottom: 10px;
     box-shadow: 0 0 3px #aaa; /* css3 */
+}
+.page-home .menutab {
+    background: transparent url(../img/launcher_bg_active.gif) repeat-x;
 }
 .menutab.active {
     color: #b7b7b7;
-    background-color: #3b3b3b;
-    border-bottom-color: #3b3b3b;
+    background: transparent url(../img/launcher_bg_active.gif) repeat;
     box-shadow: 0 0 10px #999;
 }
 

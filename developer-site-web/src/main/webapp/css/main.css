@@ -135,25 +135,23 @@ body:before {
 }
 
 .content {
-	font-size: 0.75em;
+    float: none;
+    clear: both;
+    width: 986px;
     min-height: 300px;
-    padding-top: 30px;
+    padding-top: 50px;
     margin: 0 5px 50px 5px;
     background-color: #fff;
-    
+    font-size: 0.75em;
+
     /* css3 */
     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
     -webkit-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
     box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
 }
-
-.page-article .content,
-.page-apireference .content,
-.page-productlist .content {
-    float: none;
-    clear: both;
-    width: 986px;
-    padding-top: 50px;
+.page-package .content,
+.page-package-overview .content {
+    padding-top: 10px;
 }
 
 .home-content {
