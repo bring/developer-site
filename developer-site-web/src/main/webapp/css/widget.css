@@ -1,7 +1,5 @@
 @CHARSET "UTF-8";
 
-
-
 /* Widget preview */
 
 .widget-preview {
@@ -14,6 +12,6 @@
 }
 
 .widget-title:after {
-    content: "\02B07";
+    content: url(../img/downarrow.png);
     float: right;
 }
