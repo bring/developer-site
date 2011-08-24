@@ -448,7 +448,8 @@ function TopMenu(pView, pContextPath, jsonData) {
         function initEvents() {
             var timer = null;
             that.linkDomNode.mouseenter(function(evt) {
-                timer = setTimeout(function(that) { that.activate(); }, 100, that);
+                var f = function() { that.activate(); };
+                timer = setTimeout(f, 100);
             });
             that.linkDomNode.mouseleave(function(evt) {
                 if(timer !== null) {
