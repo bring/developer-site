@@ -244,7 +244,7 @@
     height: 20px;
     overflow: hidden;
     white-space: nowrap;
-    color: #CCCCCC;
+    color: white;
     background: #999999 url(../img/leaf_selected_over.gif) center right no-repeat;
     margin: 0 0 2px 0;
     padding: 12px 10px 8px;
