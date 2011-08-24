@@ -294,9 +294,7 @@ function TopMenu(pView, pContextPath, jsonData) {
                 }
             }
             else {
-                if(that.isOnPath) {
-                    switchState();
-                }
+                switchState();
             }
         };
 

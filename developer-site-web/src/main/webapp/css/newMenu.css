@@ -51,6 +51,9 @@
     margin: 0 5px;
     background: white;
 }
+.page-home .navigation-tabs-container {
+    height: 0px;
+}
 .navigation-tabs {
     position: absolute;
     top: 0;
@@ -192,6 +195,14 @@
 .download.breadcrumbs, .talk.breadcrumbs {
     height: 10px;
     padding: 0;
+}
+.page-home .learn.breadcrumbs,
+.page-home .download.breadcrumbs,
+.page-home .talk.breadcrumbs {
+    float: left;
+    height: 0px;
+    margin: 0;
+    padding:  0;
 }
 .breadcrumbs ul {
     position: absolute;
