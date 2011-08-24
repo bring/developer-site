@@ -57,9 +57,9 @@
 }
 .navigation-tabs {
     position: absolute;
+    z-index: 10;
     top: 0;
     left: 0;
-    z-index: 1;
     width: 986px;
     margin: 0 10px 0 0;
     font-size: 0.75em;
@@ -67,7 +67,7 @@
 .menubox, .breadcrumbs {
     display: none;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     width: 986px;
     overflow: hidden;
     margin: 0;
@@ -84,7 +84,7 @@
 }
 .learn.menubox ul {
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     left: 10px;
     top: 10px;
     width: 302px;
@@ -142,7 +142,7 @@
 }
 .download.menubox ul, .talk.menubox ul {
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     left: 10px;
     top: 10px;
     width: 966px;
@@ -207,7 +207,7 @@
 }
 .breadcrumbs ul {
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     left: 10px;
     top: 10px;
     width: 302px;

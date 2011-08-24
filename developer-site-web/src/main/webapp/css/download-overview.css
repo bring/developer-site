@@ -54,6 +54,7 @@
 
 .downloadbox span{
     position: absolute;
+    z-index: 1;
     bottom: 10px;
     text-align: center;
     display: block;
@@ -65,13 +66,13 @@
 .downloadbox span:before,
 .downloadbox span:after {
     content:"";
-    position:absolute;
-    bottom:-16px;
-    border-style:solid;
-    border-color:transparent #f0f0f1;
-    display:none; 
-    width:0;
+    position: absolute;
     z-index: 1;
+    bottom: -16px;
+    border-style: solid;
+    border-color: transparent #f0f0f1;
+    display: none;
+    width:0;
 }
 
 .downloadbox span:before {
@@ -133,10 +134,11 @@
 
 .packagebox .title{
     position: absolute;
+    z-index: 1;
     top: 135px;
-    display: block;
-    width: 188px;
     left: 10px;
+    width: 188px;
+    display: block;
     font-weight: bold;
     text-transform: uppercase;
     line-height: 100%;
@@ -145,8 +147,9 @@
 .packagebox .by,
 .packagebox .others {
     position: absolute;
-    width: 188px;
+    z-index: 1;
     left: 10px;
+    width: 188px;
     color: #999;
 }
 
