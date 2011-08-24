@@ -5,7 +5,6 @@ function TopMenu(pView, pContextPath, jsonData) {
     var launcherIdMap = [];
     var menuNodeIdMap = [];
     var activeLauncher = null;
-    var launcherOnPath = null;
     var activeMenuNodes = [];
     var mouseOverNavigation = false;
 
@@ -13,12 +12,17 @@ function TopMenu(pView, pContextPath, jsonData) {
 
     function bodyClickEventHandler() {
         if (!mouseOverNavigation) {
-            if (activeLauncher !== null && activeLauncher !== launcherOnPath) {
+            if (activeLauncher !== null) {
                 activeLauncher.deActivate();
             }
-            if (launcherOnPath !== null) {
-                launcherOnPath.setToInitialState();
-            }
+
+            setLaunchersToInitialState();
+        }
+    }
+
+    function setLaunchersToInitialState() {
+        for (var i=0; i<menuData.launchers.length; i++) {
+            menuData.launchers[i].setToInitialState();
         }
     }
 
@@ -97,7 +101,6 @@ function TopMenu(pView, pContextPath, jsonData) {
             currentLauncher.init();
             if(currentLauncher.isOnPath) {
                 activeLauncher = currentLauncher;
-                launcherOnPath = currentLauncher;
             }
         }
     }
@@ -264,7 +267,7 @@ function TopMenu(pView, pContextPath, jsonData) {
         this.isOnPath = isOnPath;
         this.hasBreadCrumbs = false;
         this.breadCrumbs = [];
-        this.states = {hidden : "hidden", breadCrumbs : "breadCrumbs", menu : "menu" };
+        this.states = { hidden : "hidden", breadCrumbs : "breadCrumbs", menu : "menu" };
         this.currentState = this.states.hidden;
         this.domNode = null;
 
@@ -279,12 +282,7 @@ function TopMenu(pView, pContextPath, jsonData) {
 
         this.activate = function() {
             if(!active) {
-                if (activeLauncher !== null) {
-                    activeLauncher.deActivate();
-                }
-                activeLauncher = that;
-                that.domNode.addClass("active");
-                active = true;
+                deActivateOtherLaunchers();
 
                 if (that.isOnPath) {
                     setBreadCrumbsState();
@@ -303,20 +301,26 @@ function TopMenu(pView, pContextPath, jsonData) {
                 activeMenuNodes[1].deActivate();
             }
 
-            menuView.hide();
-            breadCrumbsView.hide();
-            that.domNode.removeClass("active");
-            active = false;
+            setInActiveState();
         };
 
         this.setToInitialState = function() {
-            menuView.hide();
-            breadCrumbsView.show();
-            that.domNode.addClass("active");
-            that.currentState = that.states.breadCrumbs;
-            activeLauncher = that;
-            active = true;
+            if(that.isOnPath) {
+                setBreadCrumbsState();
+            }
+            else {
+                setInitialState();
+            }
         };
+
+        function deActivateOtherLaunchers() {
+            for (var i=0; i<menuData.launchers.length; i++) {
+                var currentLauncher = menuData.launchers[i];
+                if (currentLauncher !== that) {
+                    currentLauncher.deActivate();
+                }
+            }
+        }
 
         function switchState() {
             if (that.currentState == that.states.menu) {
@@ -327,16 +331,44 @@ function TopMenu(pView, pContextPath, jsonData) {
             }
         }
 
-        function setMenuState() {
+        function setInitialState() {
+            active = false;
+            menuView.hide();
             breadCrumbsView.hide();
-            menuView.show();
+            that.domNode.addClass("init");
+            that.domNode.removeClass("active");
+            that.domNode.removeClass("inactive");
+        }
+
+        function setInActiveState() {
+            active = false;
+            menuView.hide();
+            breadCrumbsView.hide();
+            that.domNode.removeClass("init");
+            that.domNode.removeClass("active");
+            that.domNode.addClass("inactive");
+        }
+
+        function setMenuState() {
+            activeLauncher = that;
+            active = true;
             that.currentState = that.states.menu;
+            menuView.show();
+            breadCrumbsView.hide();
+            that.domNode.removeClass("init");
+            that.domNode.addClass("active");
+            that.domNode.removeClass("inactive");
         }
 
         function setBreadCrumbsState() {
+            activeLauncher = that;
+            active = true;
+            that.currentState = that.states.breadCrumbs;
             menuView.hide();
             breadCrumbsView.show();
-            that.currentState = that.states.breadCrumbs;
+            that.domNode.removeClass("init");
+            that.domNode.addClass("active");
+            that.domNode.removeClass("inactive");
         }
 
         function createBreadCrumbsHtml() {
@@ -381,8 +413,10 @@ function TopMenu(pView, pContextPath, jsonData) {
                     });
                 }
                 setBreadCrumbsState();
-                that.domNode.addClass("active");
                 active = true;
+            }
+            else {
+               setInitialState();
             }
 
             initEvents();
