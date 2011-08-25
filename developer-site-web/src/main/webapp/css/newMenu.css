@@ -240,14 +240,14 @@
 }
 .breadcrumbs ul li a {
     display: block;
-    width: 282px;
+    width: 292px;
     height: 20px;
     overflow: hidden;
     white-space: nowrap;
     color: white;
     background: #999999 url(../img/leaf_selected_over.gif) center right no-repeat;
     margin: 0 0 2px 0;
-    padding: 12px 10px 8px;
+    padding: 12px 0 8px 10px;
 }
 .breadcrumbs ul li a.parent {
     background-image: url(../img/parent_over.gif);
