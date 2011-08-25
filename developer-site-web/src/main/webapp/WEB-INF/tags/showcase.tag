@@ -4,7 +4,9 @@
 <div class="introbanner group box">
 
 	<div class="big-banner">
-		<h1 class="banner-title">How can Bring APIs improve your webshop?</h1>
+        <div class="illustration-container">
+		    <h1 class="banner-title">How can Bring APIs improve your webshop?</h1>
+        </div>
 		
 		<div class="banner-section shippingguide" data-background="shippingguide">
 			<a href="/learn/shipping-guide/documentation/apireference.html">

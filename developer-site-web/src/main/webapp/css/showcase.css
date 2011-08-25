@@ -1,23 +1,14 @@
 
-/* Showcase */
-
 .showcase {
     min-height: 200px;
     margin-bottom: 10px;
 }
 
-
-
-/* Introbanner */
 .introbanner {
     background-color: #fff;
     font-size: 0.75em;
 }
 
-/**
- * Big banner
- * It is used until we get a multi-banner with vertical-tabs thingy up
- */
 .big-banner {
     position: relative;
     min-height: 360px;
@@ -30,99 +21,74 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e3e4',GradientType=0 ); /* IE6-9 */
     background: linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* W3C */
 }
-    .big-banner .banner-title {
-        font-size: 2.5em;
-        color: #565656;
-        position: absolute;
-        top: 50px;
-        left: 30px;
-        text-transform: none;
-        margin: 0;
-        padding: 0;
-        width: 310px;
-    }
-
-    .banner-section {
-        float: left;
-        width: 33%;
-        margin-top: 200px;
-    }
-
-@-moz-document url-prefix() /* Firefox hack */
+.big-banner .illustration-container {
+    float: left;
+    width: 986px;
+    height: 200px;
+}
+.big-banner .banner-title {
+    font-size: 2.5em;
+    color: #565656;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+    width: 310px;
+}
 .banner-section {
-    width: 33.33%;
+    float: left;
+    width: 325px;
+    margin-top: 0;
 }
-
-        .banner-section a {
-            background-repeat: no-repeat;
-            background-position: 30px 0;
-            display: block;
-            padding: 70px 30px 0 30px;
-            color: #565656;
-        }
-
-        .banner-section .title {
-            display: block;
-            font-size: 1.15em;
-            line-height: 100%;
-            min-height: 25px;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-            .banner-section .title:after {
-                content: "\203A";
-                margin-left: 5px;
-                color: #7fc14b;
-                font-size: 1.5em;
-                font-weight: bold;
-            }
-        
-        .banner-section .description {
-            color: #999;
-        }
-            .banner-section a:hover .description {
-                color: #565656;
-            }
-
-
-
-        .banner-section.shippingguide a {
-            background-image: url(/img/shippingguide-icon.png);
-        }
-        .banner-section.tracking a {
-            background-image: url(/img/tracking-icon.png);
-        }
-        .banner-section.postalcode a {
-            background-image: url(/img/postalcode-icon.png);
-        }
-
-.big-banner.custom-section .banner-section:hover {
-
+.banner-section a {
+    background-repeat: no-repeat;
+    background-position: 30px 0;
+    display: block;
+    padding: 70px 30px 0 30px;
+    color: #565656;
 }
-
-.big-banner.custom-section .banner-title,
-.big-banner.custom-section .banner-section {
-    opacity: 0;
-    -webkit-transition: all 250ms ease-in-out;
-    -moz-transition: all 250ms ease-in-out;
-    -o-transition: all 250ms ease-in-out;
-    -ms-transition: all 250ms ease-in-out;
-    transition: all 250ms ease-in-out;
+.banner-section .title {
+    display: block;
+    font-size: 1.15em;
+    line-height: 100%;
+    min-height: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-
-.big-banner.custom-section .banner-section:hover {
-    opacity: 1;
+.banner-section .title:after {
+    content: "\203A";
+    margin-left: 5px;
+    color: #7fc14b;
+    font-size: 1.5em;
+    font-weight: bold;
 }
-
+.banner-section .description {
+    color: #999;
+}
+.banner-section a:hover .description {
+    color: #565656;
+}
+.banner-section.shippingguide a {
+    background-image: url(/img/shippingguide-icon.png);
+}
+.banner-section.tracking a {
+    background-image: url(/img/tracking-icon.png);
+}
+.banner-section.postalcode a {
+    background-image: url(/img/postalcode-icon.png);
+}
+.big-banner.custom-section .banner-title {
+    display: none;
+}
 .big-banner.shippingguide {
     background-image: url(/img/shippingguide-banner-bg.png);
 }
-
 .big-banner.tracking {
     background-image: url(/img/tracking-banner-bg.png);
 }
-
 .big-banner.postalcode {
     background-image: url(/img/postalcode-banner-bg.png);
 }
