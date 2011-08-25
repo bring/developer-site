@@ -123,15 +123,15 @@ var menuJsonData =
             "id":"talk",
             "breadCrumbs":false,
             "menuNodes":[{
-                    "title":"Github",
+                    "title":"Go to Github",
                     "url":"https://github.com/bring"
                 },
                 {
-                    "title":"Twitter",
+                    "title":"Go to Twitter",
                     "url":"http://twitter.com/#!/bringapi"
                 },
                 {
-                    "title":"Get satisfaction",
+                    "title":"Go to Get satisfaction",
                     "url":"http://getsatisfaction.com/bring"
                 }
             ]
