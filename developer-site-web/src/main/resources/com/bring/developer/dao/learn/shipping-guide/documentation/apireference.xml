@@ -374,7 +374,7 @@ Example output
             Shipping date
         </Title>
         <Description><![CDATA[
-            <p>Specifies the date the package is delivered to Bring. Used to calculate the 
+            <p>Specifies the date the package is delivered to Bring. The parameter is used to calculate the
             expected delivery date.</p>
             <p>Specified using <code>date=2009-02-03</code>.</p>
             <p>Accepted date format: <code>YYYY-MM-DD</code>.</p>
@@ -777,8 +777,8 @@ Example output
             <p>
             <ul>
                 <li>All shipping guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
-                <li>Using XML API you cant mark a parcel as a specialized goods. If you need to do this you must use the Web Service.</li>
-                <li>Shippingguide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their salessituation.</li>
+                <li>Using XML API you can not mark a parcel as a specialized goods. If you need to do this you must use the Web Service.</li>
+                <li>Shippingguide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their situation of sale.</li>
             </ul>
             </p>
         ]]></Description>

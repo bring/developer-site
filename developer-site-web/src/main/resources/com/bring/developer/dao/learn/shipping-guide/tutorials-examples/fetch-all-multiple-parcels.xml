@@ -20,9 +20,9 @@
 </ol>
 <p>It is possible to combine weight, volume and dimensions for multiple parcels.</p>
 
-<p>Multiple parcels are specified by suffixing either <code>weightInGrams</code>, <code>
+<p>Multiple parcels are specified by suffixing <code>weightInGrams</code>, <code>
 	volume</code> or dimensions (<code>length</code>, <code>width</code> or <code>height
-	with sequencial numbers from 0.</code></p>
+	with sequential numbers from 0.</code></p>
 
 <div class="codetabs">
 	<h3><a href="#xml">XML</a></h3>

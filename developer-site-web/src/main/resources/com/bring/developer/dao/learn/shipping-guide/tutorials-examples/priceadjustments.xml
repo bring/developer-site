@@ -6,11 +6,10 @@
 <![CDATA[
 
 <p>
-    For å justere prisen legges parameteren <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a> på i spørringen. <br/>
     The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in Levert av Bring. To adjust the price, add <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a> to the query.
 </p>
 <p>
-    The parameter is build up in the form <strong>[produktkode_][o]10[p]</strong>. Parts of the parameter whit square brackets ( [] ) is optional. Explanation of the parameters follows:
+    The parameter is built up in the form <strong>[produktkode_][o]10[p]</strong>. Parts of the parameter whit square brackets ( [] ) is optional. Explanation of the parameters follows:
 </p>
     <ul>
         <li> <strong>produktkode_</strong> used if price adjustments are only made for a single product. Example: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_m20">&amp;priceAdjustment=SERVICEPAKKE_m20</a> lowers the price on product <i>Servicepakke</i> with NOK 20.</li>
@@ -21,8 +20,8 @@
                 <li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_79">&amp;priceAdjustment=SERVICEPAKKE_79</a> puts a fixed price on <i>Servicepakke</i> on NOK 79.</li>
             </ul>
         </li>
-        <li> <strong>10</strong> indicates the factor to be usede in the price adjustment. This number can be a fixed amount or percentage to be added/subtracted, or a fixed price to be added/subtracted depending on other parameters.  This number can be set to a fixed amount or be added/subtracted as Dette tallet kan angi et fast kronebeløp som skal legges til/trekkes fra, en prosent som skal legges til/trekkes fra eller en fastpris avhengig av de andre parametrene.</li>
-        <li> <strong>p</strong> indicates that the operation should be done as a percentage calculation. Note that this is only valid for operations doing additions and subtractions (not fixed prices).</li>
+        <li> <strong>10</strong> indicate the factor to be used in the price adjustment. This number can be a fixed amount or percentage to be added/subtracted, or a fixed price to be added/subtracted depending on other parameters.</li>
+        <li> <strong>p</strong> indicate that the operation should be done as a percentage calculation. Note that this is only valid for operations doing additions and subtractions (not fixed prices).</li>
     </ul>
 <p>
     Though <strong>not recommended</strong>, it is possible to make overlapping queries. If there is a need to do multiple simultaneous price adjustments, it should be done on a product-by-product basis using the product code prefix.
