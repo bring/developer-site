@@ -16,7 +16,7 @@
     <h3><a href="#xml">XML</a></h3>
     <div data-tab="xml" class="tab api-call">
         <p>Request:
-            <a class="request" href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407"
+            <a target="_blank" class="request" href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407"
             data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">
                 /all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407
             </a>
