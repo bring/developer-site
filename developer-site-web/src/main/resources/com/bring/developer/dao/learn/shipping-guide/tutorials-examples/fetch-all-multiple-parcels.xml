@@ -20,15 +20,15 @@
 </ol>
 <p>It is possible to combine weight, volume and dimensions for multiple parcels.</p>
 
-<p>Multiple parcels are specified by suffixing either <code>weightInGrams</code>, <code>
+<p>Multiple parcels are specified by suffixing <code>weightInGrams</code>, <code>
 	volume</code> or dimensions (<code>length</code>, <code>width</code> or <code>height
-	with sequencial numbers from 0.</code></p>
+	with sequential numbers from 0.</code></p>
 
 <div class="codetabs">
 	<h3><a href="#xml">XML</a></h3>
 	<div data-tab="xml" class="tab api-call">
 		<p>Request:
-			<a class="request" 
+			<a target="_blank" class="request"
                 href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
                 data-internal="/proxy/shipping-guide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
 				/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30

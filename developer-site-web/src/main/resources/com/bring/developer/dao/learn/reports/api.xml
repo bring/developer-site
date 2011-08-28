@@ -13,9 +13,10 @@
                 </p>
 
                 <p>
-                    The API uses two headers to customize the answers. One header to choose between XML or JSON-reponses,
-                    and one header to choose language in text-fields in the responses. Every call can return both JSON and XML,
-                    except the call to get a report. The report is only available in XML and Excel.
+                    The API uses two headers to customize the answers. One header is for choosing between XML
+                    and JSON responses, and the second header is to choose language in text-fields in the responses.
+                    Every call can return both JSON and XML, except the call to get a report.
+                    The report is only available in XML and Excel.
                 </p>
 
                 <h4>XML-response</h4>
@@ -36,7 +37,7 @@
 
                 <h2>Authentication</h2>
                 <p>
-                    Since reports is a logged in service, you need to authenticate to use the API. All mybring-APIs use a simple
+                    Since reports are a logged in service, you need to authenticate to use the API. All mybring-APIs use a simple
                     authentication-scheme. By adding two headers to all requests, you will authenticate your request. The API-Key is currently
                     available to pilot customers. Please contact us at fraktguide@posten.no if you are interested in using this API.
                 </p>
@@ -68,7 +69,7 @@ https://www.mybring.com/reports/api/generate/</pre>
 
                 <h2>2. Get list of available reports</h2>
                 <p>
-                    Each customer have a set of reports available.
+                    Each customer has a set of reports available.
                 </p>
 
                 <h4>Example Request</h4>
@@ -100,7 +101,7 @@ https://www.mybring.com/reports/api/generate/</pre>
                 <h2>3. Generate report</h2>
                 <p>
                     To generate a report do a POST to the supplied URL, and include the parameters described in the response.
-                    These parameters are considered to be static, so it should not be neccessary to do the two first steps for
+                    These parameters are considered to be static, so it should not be necessary to do the two first steps for
                     every report generation.
                 </p>
                 <p>

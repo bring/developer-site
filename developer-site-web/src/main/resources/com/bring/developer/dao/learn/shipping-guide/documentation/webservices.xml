@@ -4,7 +4,7 @@
     <MenuTitle>Web Services</MenuTitle>
     <Content>
 <![CDATA[
-<p><b>To execute the webservice you will need a identification string. To get this - please <a target="_blank" href="http://fraktguide.bring.no/fraktguide/registrerBruker.do">register</a></b></p>
+<p><b>To execute the web-service you will need a identification string. To get this - please <a target="_blank" href="http://fraktguide.bring.no/fraktguide/registrerBruker.do">register</a></b></p>
 
 <p>Please refer to written documentation in <a target="_blank" href="/downloads/BringFraktguide_Developer_Notes.pdf">english</a> or <a target="_blank" href="/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>. You may also find help studying the <a href="apireference.html">API Reference</a>.</p>
 

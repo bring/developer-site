@@ -16,7 +16,7 @@
             <p>The URL is specified by <code>/api/pickuppoint/postalcode/&lt;postalcode&gt;.&lt;extension&gt;</code></p>
             <p><code>&lt;extension&gt; = xml | json</code></p>
             <p><code>&lt;postalcode&gt; = a valid ZIP code</code></p>
-            <p>Example below: Delivery locations near postalcode 1407 Vinterbro</p>
+            <p>Example below: Delivery locations near postal code 1407 Vinterbro</p>
         ]]></Description>
         <Example type="xml">
             <Title>
@@ -68,7 +68,7 @@
         </Title>
         <Description><![CDATA[
             <p>Is specified by adding <code>?searchForText=&lt;text&gt;</code> to the URL.</p>
-            <p>You can search by name, address, city, municipality name, county name or location, and the search string can include partial names / criterias.</p>
+            <p>You can search by name, address, city, municipality name, county name or location, and the search string can include partial names / criteria's.</p>
             <p>Example below: Search for text "KIWI" near postal code 1407.</p>
         ]]></Description>
         <Example type="xml">
@@ -93,8 +93,8 @@
             Filter results by opening times
         </Title>
         <Description><![CDATA[
-            <p>Is spesified by adding <code>?openingHoursSearchType=&lt;day&gt; to the URL.</code>
-            <p>Requires that the place is open on the day(s) as specified.</p>
+            <p>Is specified by adding <code>?openingHoursSearchType=&lt;day&gt; to the URL.</code>
+            <p>Require that the place is open on the day(s) as specified.</p>
             <p><code>&lt;day&gt; = ALL_WEEKDAYS (default) | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY</code></p>
             <p>If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even more.</p>
             <p>Example below: opening hours on SUNDAY near postal code 1407</p>
@@ -121,8 +121,8 @@
             Filter results by opening hours (on or before)
         </Title>
         <Description><![CDATA[
-            <p>Is spesified by adding <code>?openOnOrBefore=&lt;time&gt;</code> to the URL.</p>
-            <p>Requires that the place is open on the specified time.</p>
+            <p>Is specified by adding <code>?openOnOrBefore=&lt;time&gt;</code> to the URL.</p>
+            <p>Require that the place is open on the specified time.</p>
             <p><code>&lt;time&gt;</code> format: HHMM</p>
             <p>Example below: Open on or before 0800 near postal code 1407</p>
         ]]></Description>

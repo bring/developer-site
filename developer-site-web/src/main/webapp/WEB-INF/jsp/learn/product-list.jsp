@@ -27,7 +27,7 @@
                 <div class="article">
                     <h1>Product list</h1>
                     <p>The Shipping Guide offers a broad range of products by Bring. We will gradually increase the number of products and functionality available in the service.</p>
-                    <p>The table below shows currently available products and which information that are available. The links are to examples using XML API.</p>
+                    <p>The table below shows currently available products and which information that is available. The links are to examples using XML API.</p>
                     
 					<table class="productlist">
 						<thead>
@@ -55,7 +55,7 @@
 
                     <br/><br/>
                     <h3>Additional Services</h3>
-                    <p>The Shipping Guide offers some functionality regarding additional services. Please use the provieded codes below when accessing the service. The links are to examples using XML API.</p>
+                    <p>The Shipping Guide offers some functionality regarding additional services. Please use the provided codes below when accessing the service. The links are to examples using XML API.</p>
 
 					<table class="productlist">
 						<thead>

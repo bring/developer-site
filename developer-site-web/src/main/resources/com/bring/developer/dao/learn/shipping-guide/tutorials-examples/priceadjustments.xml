@@ -5,31 +5,29 @@
     <Content>
 <![CDATA[
 
-TODO - TRANSLATE
-
 <p>
-	Fraktguiden tilbyr justering av prisene som vises. Denne tjenesten er tilgjengelig både i XML APIet og i Levert av Bring. For å justere prisen legges parameteren <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a> på i spørringen. <br/>
+    The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in Levert av Bring. To adjust the price, add <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a> to the query.
 </p>
 <p>
-	Parameteren bygges opp på formen <strong>[produktkode_][o]10[p]</strong>. Deler av parameteren med firkantklammer ([ ]) rundt er frivillige. De ulike delene av parameteren har følgende betydning:
+    The parameter is built up in the form <strong>[produktkode_][o]10[p]</strong>. Parts of the parameter whit square brackets ( [] ) is optional. Explanation of the parameters follows:
 </p>
-	<ul>
-		<li> <strong>produktkode_</strong> brukes dersom prisjusteringen kun skal gjøres for ett produkt. Eksempel: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_m20">&amp;priceAdjustment=SERVICEPAKKE_m20</a> senker prisen på Servicepakke med 20 kroner.</li>
-		<li> <strong>o</strong> angir hvilken operasjon som skal utføres. Støttede operasjoner er 'p' for pluss, 'm' for minus eller blankt for fastprisjustering. Eksempel:
-			<ul style="margin-bottom: 0px;">
-				<li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20">&amp;priceAdjustment=m20</a> slår av 20 kroner på alle produktene.</li>
-				<li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=p20">&amp;priceAdjustment=p20</a> legger til 20 kroner på alle produktene.</li>
-				<li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_79">&amp;priceAdjustment=SERVICEPAKKE_79</a> setter Servicepakke til fastpris på 79 kroner.</li>
-			</ul>
-		</li>
-		<li> <strong>10</strong> angir faktoren som skal brukes i prisjusteringen. Dette tallet kan angi et fast kronebeløp som skal legges til/trekkes fra, en prosent som skal legges til/trekkes fra eller en fastpris avhengig av de andre parametrene.</li>
-		<li> <strong>p</strong> angir at operasjonen gjelder prosent. Merk at dette kun er gyldig for pluss- og minusoperasjoner (ikke fastpris).</li>
-	</ul>
+    <ul>
+        <li> <strong>produktkode_</strong> used if price adjustments are only made for a single product. Example: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_m20">&amp;priceAdjustment=SERVICEPAKKE_m20</a> lowers the price on product <i>Servicepakke</i> with NOK 20.</li>
+        <li> <strong>o</strong> specifies the operation to be performed. Operations supported are 'p' for positive, 'm' for negative or blank for a fixed price adjustment. Examples:
+            <ul style="margin-bottom: 0px;">
+                <li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20">&amp;priceAdjustment=m20</a> deducts NOK 20 on all products.</li>
+                <li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=p20">&amp;priceAdjustment=p20</a> adds NOK 20 to all products.</li>
+                <li> <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_79">&amp;priceAdjustment=SERVICEPAKKE_79</a> puts a fixed price on <i>Servicepakke</i> on NOK 79.</li>
+            </ul>
+        </li>
+        <li> <strong>10</strong> indicate the factor to be used in the price adjustment. This number can be a fixed amount or percentage to be added/subtracted, or a fixed price to be added/subtracted depending on other parameters.</li>
+        <li> <strong>p</strong> indicate that the operation should be done as a percentage calculation. Note that this is only valid for operations doing additions and subtractions (not fixed prices).</li>
+    </ul>
 <p>
-	Det er mulig å kombinere flere prisjusteringer i en spørring. Det er <strong>ikke</strong> anbefalt å gjøre overlappende spørringer. Dersom det er behov for å gjøre flere samtidige prisjusteringer bør det gjøres for hvert enkelt produkt ved hjelp av produktkode-prefikset.
+    Though <strong>not recommended</strong>, it is possible to make overlapping queries. If there is a need to do multiple simultaneous price adjustments, it should be done on a product-by-product basis using the product code prefix.
 </p>
 <p>
-	Eksempel: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p">&amp;priceAdjustment=SERVICEPAKKE_79 &amp;priceAdjustment=EKSPRESS09_m20p</a> setter fastpris på 79 kroner for Servicepakke og trekker fra 20% på Bedriftspakke Ekspress Over natten 09.
+    Example: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p">&amp;priceAdjustment=SERVICEPAKKE_79 &amp;priceAdjustment=EKSPRESS09_m20p</a> set fixed price of NOK 79 for <i>Servicepakke</i> and deduct 20% on <i>Bedriftspakke Ekspress Over natten 09</i>.
 </p>
 
 ]]>
