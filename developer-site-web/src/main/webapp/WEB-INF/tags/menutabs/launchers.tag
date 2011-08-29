@@ -7,8 +7,8 @@
        <span class="section-description">TUTORIALS, EXAMPLES, API REFERENCE</span>
     </div>
     <div id="download-launcher" class="section-launcher ${cssClass} span-2">
-       <div class="section-title"><a href="#download"><span>DOWNLOAD</span></a></div>
-       <span class="section-description">PLUGINS, WIDGETS, SDK</span>
+       <div class="section-title"><a href="#download"><span>USE</span></a></div>
+       <span class="section-description">PLUGINS, WIDGETS, CLIENT LIBRARIES</span>
     </div>
     <div id="talk-launcher" class="section-launcher ${cssClass} span-2 last">
        <div class="section-title"><a href="#talk"><span>TALK</span></a></div>
