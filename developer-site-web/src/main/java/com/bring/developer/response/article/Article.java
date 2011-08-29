@@ -8,17 +8,17 @@ import com.bring.developer.dao.XmlNormalizeString;
 
 @XmlRootElement(name = "Article")
 public class Article {
-    private String title;
+    private String ingress;
     private String menuTitle;
     private String content;
     
-    @XmlElement(name = "Title")
+    @XmlElement(name = "Ingress")
     @XmlJavaTypeAdapter(XmlNormalizeString.class)
-    public String getTitle() {
-        return title;
+    public String getIngress() {
+        return ingress;
     }
-    public void setTitle(String title) {
-        this.title = title;
+    public void setIngress(String title) {
+        this.ingress = title;
     }
     
     @XmlElement(name = "MenuTitle")

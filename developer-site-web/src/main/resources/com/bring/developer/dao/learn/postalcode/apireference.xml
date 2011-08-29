@@ -11,7 +11,7 @@
             Postal code
         </Title>
         <Description><![CDATA[
-            <p>The postal code is specified using the <code>pnr</code> parameter.</p>
+            <p>The postal code is specified using the <code>pnr</code> parameter. Will default to Norwegian postal codes.</p>
         ]]></Description>
         <Example type="xml">
             <Title>

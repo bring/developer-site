@@ -74,16 +74,16 @@
             $($(root).contents()).each(function() {
                 try {
                     switch (this.nodeType) {
-                        case Node.ELEMENT_NODE:
+                        case 1: //Node.ELEMENT_NODE
                             output += methods.formatXml(this, level + 1);
                             break;
-                        case Node.TEXT_NODE:
+                        case 3: //Node.TEXT_NODE
                             output += methods.textContent(this, level + 1);
                             break;
-                        case Node.COMMENT_NODE:
+                        case 8: //Node.COMMENT_NODE
                             output += indent + methods.comment(this) + "\n";
                             break;
-                        case Node.CDATA_SECTION_NODE:
+                        case 4: // Node.CDATA_SECTION_NODE
                             output += indent + methods.cdata(this) + "\n";
                             break;
                     }

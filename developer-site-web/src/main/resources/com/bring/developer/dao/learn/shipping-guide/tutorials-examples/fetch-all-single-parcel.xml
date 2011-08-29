@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Get price, expected delivery and text for single parcel.</Title>
     <MenuTitle>Single parcel example</MenuTitle>
+    <Ingress>This example shows you how to retrieve the price, expected delivery time and additional
+        GUI text for sending a single parcel between two postal codes.</Ingress>
     <Content>
 <![CDATA[
-<p>This example shows you how to retrieve the price, expected delivery time and additional
-    GUI text for sending a single parcel between two postal codes.</p>
-<p>The data used in this example are:</p>
+<p>The data used in this example is:</p>
 <ul>
     <li><code>weightInGrams</code>=1500</li>
     <li><code>from</code>=7600</li>

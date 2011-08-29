@@ -5,5 +5,8 @@
 	<Description><![CDATA[
 		<p>Client libraries are packages which makes it easier for a developer to interact with
 			Bring's APIs.</p>
+			<br/>
+	    <p>The use of these modules are at your own risk and with no support from Bring.
+	        We encourage you to contribute your improvements to the community.</p>
 	]]></Description>
 </PackagesOverview>

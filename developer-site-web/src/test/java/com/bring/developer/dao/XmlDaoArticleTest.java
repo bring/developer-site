@@ -24,7 +24,7 @@ public class XmlDaoArticleTest {
     
     @Test
     public void shouldGetTitleFromArticleXml() throws JAXBException {
-       assertEquals("The foo", dao.query("article").getTitle()); 
+       assertEquals("The foo", dao.query("article").getIngress());
     }
     
     @Test
