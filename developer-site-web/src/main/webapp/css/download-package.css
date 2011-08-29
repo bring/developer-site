@@ -154,16 +154,17 @@ a:focus.download-button {
     font-size: 0.9em;
     text-transform: uppercase;
     background-color: #999;
+    line-height: 18px;
 }
 
 .widget-tab.active {
-    background-color: #565656;
+    background-color: #D7D7D7;
     line-height: 18px;
-    
+    color: #565656;
 }
 
-.widget-tab:hover, .widget-tab:active, .widget-tab:focus{
-    background-color: #565656;
+.widget-tab:hover {
+    background-color: #D7D7D7;
     line-height: 18px;
     color: #fff;
 }

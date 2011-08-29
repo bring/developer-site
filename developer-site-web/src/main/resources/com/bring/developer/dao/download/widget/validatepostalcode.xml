@@ -35,17 +35,24 @@
          if (inputField.val().length == 4) {
             $.getJSON('http://fraktguide.bring.no/fraktguide/api/postalCode.json?pnr='+ inputField.val() +'&callback=?',
             function(data){
-               outputElement.text(data.result);
+               if (data.valid) {
+                  outputElement.text(data.result);
+               }
+               else {
+                  outputElement.text('Invalid postal code');
+               }
             });
          }
          else {
-            outputElement.text('');
+            outputElement.text('Norwegian postal code');
          }
       });
+
+      inputField.focus();
    });
 </script>
 <form>
-   <input type="text" id="postnummerInput" />  <span id="postnummerResult"> </span>
+   <input type="text" id="postnummerInput" maxlength="4" />  <span id="postnummerResult">Norwegian postalcode</span>
 </form>
 	]]></PreviewCode>
 	<Media>
