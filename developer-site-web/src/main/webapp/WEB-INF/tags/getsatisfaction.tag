@@ -19,7 +19,7 @@
 </div>
 <div class='powered_by'>
 <a href="https://getsatisfaction.com/bring/"><img alt="Burst16" src="http://getsatisfaction.com/images/burst16.png" style="vertical-align: middle;" /></a>
-<a href="https://getsatisfaction.com/bring/">Get Satisfaction support network</a>
+<a href="https://getsatisfaction.com/bring/">Brings's community on Get Satisfaction</a>
 </div>
 </div>
 <script src="https://getsatisfaction.com/bring/widgets/javascripts/591aae28cd/widgets.js" type="text/javascript"></script>
