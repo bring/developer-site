@@ -1,6 +1,5 @@
-function TopMenu(pView, pContextPath, jsonData) {
+function TopMenu(pView, jsonData) {
     var view = pView;
-    var contextPath = pContextPath;
     var menuData = null;
     var launcherIdMap = [];
     var menuNodeIdMap = [];
@@ -411,7 +410,7 @@ function TopMenu(pView, pContextPath, jsonData) {
         }
 
         function initEvents() {
-            that.domNode.click(function(evt) {
+            that.domNode.click(function() {
                 that.activate();
             });
         }
@@ -423,7 +422,7 @@ function TopMenu(pView, pContextPath, jsonData) {
             if (that.isOnPath) {
                 if(that.hasBreadCrumbs) {
                     breadCrumbsView.html(createBreadCrumbsHtml());
-                    breadCrumbsView.click(function(evt) {
+                    breadCrumbsView.click(function() {
                         that.activate();
                     });
                 }
@@ -494,7 +493,7 @@ function TopMenu(pView, pContextPath, jsonData) {
 
         function initEvents() {
             var timer = null;
-            that.linkDomNode.mouseenter(function(evt) {
+            that.linkDomNode.mouseenter(function() {
                 if(that.subNodes.length > 0) {
                     var f = function() { that.activate(); };
                     timer = setTimeout(f, 100);
@@ -503,7 +502,7 @@ function TopMenu(pView, pContextPath, jsonData) {
                     that.activate();
                 }
             });
-            that.linkDomNode.mouseleave(function(evt) {
+            that.linkDomNode.mouseleave(function() {
                 if(timer !== null) {
                     clearTimeout(timer);
                 }
@@ -530,5 +529,3 @@ function TopMenu(pView, pContextPath, jsonData) {
         
     }
 }
-
-
