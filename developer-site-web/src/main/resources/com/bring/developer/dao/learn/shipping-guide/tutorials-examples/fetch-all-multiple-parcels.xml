@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Example: Get price, expected delivery and text for multiple parcels</Title>
     <MenuTitle>Multi-parcels example</MenuTitle>
+    <Ingress>This example shows you how to retrieve total price, expected delivery time and help
+        texts for a shipment of multiple parcels.</Ingress>
     <Content>
 <![CDATA[
-<p>This example shows you how to retrieve total price, expected delivery time and help
-	texts for a shipment of multiple parcels.</p>
-<p>The data used in this example are:</p>
+<p>The data used in this example is:</p>
 <ul>
 	<li><code>from</code>=7041</li>
 	<li><code>to</code>=0558</li>
@@ -21,8 +20,8 @@
 <p>It is possible to combine weight, volume and dimensions for multiple parcels.</p>
 
 <p>Multiple parcels are specified by suffixing <code>weightInGrams</code>, <code>
-	volume</code> or dimensions (<code>length</code>, <code>width</code> or <code>height
-	with sequential numbers from 0.</code></p>
+	volume</code> or dimensions (<code>length</code>, <code>width</code> or <code>height</code>),
+	with sequential numbers from 0.</p>
 
 <div class="codetabs">
 	<h3><a href="#xml">XML</a></h3>

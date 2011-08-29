@@ -17,7 +17,7 @@ var menuJsonData =
                                     "url":"/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html"
                                 },
                                 {
-                                    "title":"Modificators on price",
+                                    "title":"Price Adjustments",
                                     "url":"/learn/shipping-guide/tutorials-examples/priceadjustments.html"
                                 }
                             ]
