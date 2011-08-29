@@ -5,7 +5,8 @@
     <Content>
 <![CDATA[
                 <p>
-                    <b>Note!</b> The Reports API is currently in closed BETA testing. Please contact us at fraktguide@posten.no if you are interested in testing this service
+                    <b>Note! The Reports API is currently in closed BETA testing. Please contact us at
+                    fraktguide@posten.no if you are interested in testing this service</b>
                 </p>
                 <p>
                     The API lets you view customer accounts associated with your account, find available reports
@@ -16,7 +17,7 @@
                     The API uses two headers to customize the answers. One header is for choosing between XML
                     and JSON responses, and the second header is to choose language in text-fields in the responses.
                     Every call can return both JSON and XML, except the call to get a report.
-                    The report is only available in XML and Excel.
+                    The report is available in XML and Excel.
                 </p>
 
                 <h4>XML-response</h4>
@@ -63,7 +64,7 @@ https://www.mybring.com/reports/api/generate/</pre>
         "id":"PARCELS_NORWAY-00012341234",
         "name":"TEST CUSTOMER",
         "fullName":"TEST CUSTOMER (00012341234)",
-        "reports":"http://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/"
+        "reports":"https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/"
     }
 ]}</pre>
 
@@ -100,30 +101,24 @@ https://www.mybring.com/reports/api/generate/</pre>
 </pre>
                 <h2>3. Generate report</h2>
                 <p>
-                    To generate a report do a POST to the supplied URL, and include the parameters described in the response.
+                    To generate a report do a GET to the supplied URL, and include the parameters described in the response.
                     These parameters are considered to be static, so it should not be necessary to do the two first steps for
                     every report generation.
                 </p>
                 <p>
-                    The POST-call will return 202, telling the caller the that the request for a report is put on the queue.
-                    The location-header will tell you the url to query to get the status for the request.
+                    The GET-call will return 202, telling the caller the that the request for a report is put on the queue.
+                    The url to query to get the status for the request if provided as an HTTP header and also in the response.
                 </p>
 
                 <h4>Example Request</h4>
-                <pre class="code">
-POST /reports/api/generate/PARCELS_NORWAY-00012341234/DELIVERED/ HTTP/1.1
-Host: www.mybring.com
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 37
-
-fromDate=01.07.2011&toDate=01.07.2011
-</pre>
+                <pre class="code">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/DELIVEREDfromDate=01.07.2011&toDate=01.07.2011</pre>
 
                 <h4>Example Response</h4>
-                <pre class="code">
-HTTP/1.1 202 Accepted
-Location: http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/
-Content-Length: 0
+                <pre class="json code">
+{
+    "statusMessage":"The report is now beeing processed. Please use the statusUrl to check when the report is ready. Reloading this page will generate a new report.",
+    "statusUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/",
+}
 </pre>
 
                 <h2>4. Check status of report</h2>
@@ -134,7 +129,7 @@ Content-Length: 0
                 </p>
 
                 <h4>Request</h4>
-                <pre class="code">http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/</pre>
+                <pre class="code">https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/</pre>
                 <h4>Report not finished response</h4>
                 <pre class="json code">
 {
@@ -145,9 +140,8 @@ Content-Length: 0
                 <pre class="json code">
 {
 "status":"DONE",
-"url":"http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/",
-"xmlUrl":"http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xml",
-"xlsUrl":"http://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xls"
+"xmlUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xml",
+"xlsUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xls"
 }
 </pre>
                 <h4>Report failed response</h4>
@@ -159,22 +153,13 @@ Content-Length: 0
 
                 <h2>5. Download report</h2>
                 <p>
-                    The reports are available in XML or Excel format. Either use the link with .xml og .xls extension, or use
-                    the Accept-header to get the correct format.
+                    The reports are available in XML or Excel format. Please use the link with .xml or .xls extension to download the report.
                 </p>
 
                 <h4>XML Request</h4>
-                <pre class="code">
-GET /reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/ HTTP/1.1
-Host: www.mybring.com
-Accept: application/xml
-</pre>
+                <pre class="code">https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xml</pre>
                 <h4>Excel Request</h4>
-                <pre class="code">
-GET /reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/ HTTP/1.1
-Host: www.mybring.com
-Accept: application/vnd.ms-excel
-</pre>
+                <pre class="code">https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xls</pre>
 ]]>
     </Content>
 </Article>
