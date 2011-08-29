@@ -49,7 +49,7 @@ function TopMenu(pView, jsonData) {
             for (var j=0; j<currentLauncher.subNodes.length; j++) {
                 var firstLevelNode = currentLauncher.subNodes[j];
                 html += '<li id="' + firstLevelNode.htmlId + '">';
-                html += createMenuNodeHtml(firstLevelNode);
+                html += createMenuNodeHtml(firstLevelNode, firstLevelNode.htmlId);
 
                 if (firstLevelNode.subNodes.length > 0) {
                     html += '<ul class="level_2">';
@@ -57,7 +57,7 @@ function TopMenu(pView, jsonData) {
                     for (var k=0; k<firstLevelNode.subNodes.length; k++) {
                         var secondLevelNode = firstLevelNode.subNodes[k];
                         html += '<li id="' + secondLevelNode.htmlId + '">';
-                        html += createMenuNodeHtml(secondLevelNode);
+                        html += createMenuNodeHtml(secondLevelNode, secondLevelNode.htmlId);
 
                         if (secondLevelNode.subNodes.length > 0) {
                             html += '<ul class="level_3">';
@@ -65,7 +65,7 @@ function TopMenu(pView, jsonData) {
                             for (var l=0; l<secondLevelNode.subNodes.length; l++) {
                                 var thirdLevelNode = secondLevelNode.subNodes[l];
                                 html += '<li id="' + thirdLevelNode.htmlId + '">';
-                                html += createMenuNodeHtml(thirdLevelNode);
+                                html += createMenuNodeHtml(thirdLevelNode, thirdLevelNode.htmlId);
                                 html += '</li>';
                             }
 
@@ -88,12 +88,14 @@ function TopMenu(pView, jsonData) {
         return html;
     }
 
-    function createMenuNodeHtml(menuNode) {
+    function createMenuNodeHtml(menuNode, htmlId) {
         var target = "";
         if (menuNode.url.indexOf("http") > -1) {
             target = ' target="_blank" ';
         }
-        return '<a href="' + menuNode.url + '" ' + target + 'class="' + menuNode.htmlId + (menuNode.isOnPath ? ' path' : '') + (menuNode.isLeafNode() ? ' leaf' : ' parent') + '">' + menuNode.title +'</a>';
+        return '<a href="' + menuNode.url + '" ' + target + 'class="' + htmlId
+            + (menuNode.isOnPath ? ' path' : '') + (menuNode.isLeafNode() ? ' leaf' : ' parent') + '">'
+            + menuNode.title +'</a>';
     }
 
     function initLaunchers() {
@@ -163,10 +165,10 @@ function TopMenu(pView, jsonData) {
                     nodeLevel2 = currentNode;
                 }
 
-                breadCrumbNodes[0] = new BreadCrumbNode(nodeLevel1, nodeLevel2);
-                breadCrumbNodes[1] = new BreadCrumbNode(nodeLevel2, nodeLevel3);
+                breadCrumbNodes[0] = new BreadCrumbNode(nodeLevel1);
+                breadCrumbNodes[1] = new BreadCrumbNode(nodeLevel2);
                 if(nodeLevel3 !== null) {
-                    breadCrumbNodes[2] = new BreadCrumbNode(nodeLevel3, null);
+                    breadCrumbNodes[2] = new BreadCrumbNode(nodeLevel3);
                 }
             }
         }
@@ -390,14 +392,14 @@ function TopMenu(pView, jsonData) {
 
             html += '<ul>';
             html += '<li>';
-            html += createMenuNodeHtml(that.breadCrumbs[0].menuNode);
+            html += createMenuNodeHtml(that.breadCrumbs[0].menuNode, that.breadCrumbs[0].htmlId);
             html += '<ul>';
             html += '<li>';
-            html += createMenuNodeHtml(that.breadCrumbs[1].menuNode);
+            html += createMenuNodeHtml(that.breadCrumbs[1].menuNode, that.breadCrumbs[1].htmlId);
             if(that.breadCrumbs.length > 2) {
                 html += '<ul>';
                 html += '<li>';
-                html += createMenuNodeHtml(that.breadCrumbs[2].menuNode);
+                html += createMenuNodeHtml(that.breadCrumbs[2].menuNode, that.breadCrumbs[2].htmlId);
                 html += '</li>';
                 html += '</ul>';
             }
@@ -407,6 +409,24 @@ function TopMenu(pView, jsonData) {
             html += '</ul>';
 
             return html;
+        }
+
+        function initBreadCrumbsEvents() {
+            for(var i=0; i<that.breadCrumbs.length; i++) {
+                var currentBreadCrumbNode = that.breadCrumbs[i];
+                currentBreadCrumbNode.linkDomNode = $('a.' + currentBreadCrumbNode.htmlId);
+                currentBreadCrumbNode.linkDomNode.click(function(evt) {
+                    evt.preventDefault();
+                    activateMenuFromBreadCrumbs();
+                });
+            }
+        }
+
+        function activateMenuFromBreadCrumbs() {
+            that.activate();
+            for(var i=0; i<that.breadCrumbs.length; i++) {
+                that.breadCrumbs[i].menuNode.activate();
+            }
         }
 
         function initEvents() {
@@ -422,9 +442,7 @@ function TopMenu(pView, jsonData) {
             if (that.isOnPath) {
                 if(that.hasBreadCrumbs) {
                     breadCrumbsView.html(createBreadCrumbsHtml());
-                    breadCrumbsView.click(function() {
-                        that.activate();
-                    });
+                    initBreadCrumbsEvents();
                 }
                 setBreadCrumbsState();
                 active = true;
@@ -519,13 +537,9 @@ function TopMenu(pView, jsonData) {
         };
     }
 
-    function BreadCrumbNode(menuNode, subNode) {
+    function BreadCrumbNode(menuNode) {
         this.menuNode = menuNode;
-        this.subNode = subNode;
+        this.htmlId = "bread-" + menuNode.htmlId;
         this.linkDomNode = null;
-
-        var that = this;
-
-        
     }
 }
