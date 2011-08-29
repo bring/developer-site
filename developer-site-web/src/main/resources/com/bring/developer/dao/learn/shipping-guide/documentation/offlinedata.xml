@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Offline Data</Title>
     <MenuTitle>Offline Data</MenuTitle>
+    <Ingress>Offline data lets you download a failover version of the data from the shipping guide.</Ingress>
     <Content>
 <![CDATA[
-<p>By using the <a target="_blank" href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a> (Norwegian), you can download price lists, transport times and additional services designed for offline usage.<br/>
+<p>By using the <a target="_blank" href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a> (Norwegian), you can download price lists, transport times and additional services designed for offline usage.</p>
 
 <p>Offline data is suitable as a failover solution if the Shipping Guide does not respond or responds with an error message, or if there are extreme demands on performance.</p>
 

@@ -251,7 +251,7 @@ Example output
                 JSON
             </Title>
             <Request>
-                /products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;eight=40
+                /products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40
             </Request>
         </Example>
         <Example type="webservice">
@@ -603,7 +603,7 @@ Example output
                 JSON
             </Title>
             <Request>
-                /products/price.json?from=7600&amp;to=&amp;407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
+                /products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE
             </Request>
         </Example>
         <Example type="webservice">
