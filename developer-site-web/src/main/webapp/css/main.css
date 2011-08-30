@@ -115,13 +115,17 @@ body:before {
 .global-tabs li a:hover, .global-tabs li a.global-tabs-chosen {
     color: #fff;
     background: #7fc14b;
-    
-    /* css3 */
-    box-shadow: -1px -1px 1px #999, 1px -1px 1px #999;
+
+    border-bottom: 0px;
+    border-left:  1px;
+    border-right: 1px;
+    border-top: 1px;
+    border-color: #CCC;
+    border-style: solid;
 }
 
 .global-tabs-chosen {
-	line-height: 22px;
+    line-height: 1.5em;
 }
 
 /* .header > * { */
