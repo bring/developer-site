@@ -289,11 +289,21 @@ code {
 
 .home-banner-box {
     min-height: 150px;
+    margin: 0 5px 5px 5px;
+}
+.home-banner-box.customer-quote {
+    position: relative;
+    background-color: #F0F0F1;
 }
 
 .box-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 302px;
+    background-color: white;
     line-height: 0;
-    padding: 10px;
+    padding: 9px 10px 10px 10px;
 }
 
 .box-text {
@@ -371,7 +381,7 @@ ul.avatar-list li {
     position: relative;
     padding: 10px;
     background-color: #f0f0f1;
-    line-height: 18px;
+    line-height: 20px;
 }
 
 /* Code tabs*/
