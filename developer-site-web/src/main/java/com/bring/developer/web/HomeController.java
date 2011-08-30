@@ -23,28 +23,28 @@ public class HomeController {
         return "home";
     }
     
-    @RequestMapping(value = "/download/{type}/index.html")
-    public String downloadOverview(ModelMap model, @PathVariable String type) throws JAXBException {
-    	PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("download/" + type);
-    	List<Pack> packs = XmlDao.createDaos(Pack.class, "download/" + type);
+    @RequestMapping(value = "/use/{type}/index.html")
+    public String useOverview(ModelMap model, @PathVariable String type) throws JAXBException {
+    	PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("use/" + type);
+    	List<Pack> packs = XmlDao.createDaos(Pack.class, "use/" + type);
     	model.put("overview", packagesCategory);
     	model.put("packages", packs);
-    	return "download/overview";
+    	return "use/overview";
     }
     
-    @RequestMapping(value = "/download/{type}/{packageName}.html")
-    public String downloadPackagePage(ModelMap model, @PathVariable String type, @PathVariable String packageName) throws JAXBException {
-    	Pack pack = XmlDao.createDao(Pack.class).query("download/" + type + "/" + packageName);
+    @RequestMapping(value = "/use/{type}/{packageName}.html")
+    public String usePackagePage(ModelMap model, @PathVariable String type, @PathVariable String packageName) throws JAXBException {
+    	Pack pack = XmlDao.createDao(Pack.class).query("use/" + type + "/" + packageName);
     	model.put("pack", pack);
     	model.put("type", type);
-    	return "download/package";
+    	return "use/package";
     }
     
-    @RequestMapping(value = "/download/widget/{widget}/preview.html")
+    @RequestMapping(value = "/use/widget/{widget}/preview.html")
     public String widgetPreview(ModelMap model, @PathVariable String widget) throws JAXBException {
-    	Pack pack = XmlDao.createDao(Pack.class).query("download/widget/" + widget);
+    	Pack pack = XmlDao.createDao(Pack.class).query("use/widget/" + widget);
     	model.put("widget", pack);
-    	return "download/widgetpreview";
+    	return "use/widgetpreview";
     }
     
     @RequestMapping(value = "/learn/{api}/apireference.html")

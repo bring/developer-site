@@ -22,7 +22,7 @@
 				<div class="overview-packages">
 					<c:forEach var="pack" items="${packages}">
 						<div class="packagebox-outer">
-                            <a class="packagebox" href="/download/${overview.type}/${pack.handle}.html">
+                            <a class="packagebox" href="/use/${overview.type}/${pack.handle}.html">
                                 <c:choose>
                                     <c:when test="${!empty pack.medias and !empty pack.previewMedia}">
                                         <img src="/media/${overview.type}/${pack.handle}/${pack.previewMedia.file}" alt="Preview" />

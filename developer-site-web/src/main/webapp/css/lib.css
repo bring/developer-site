@@ -11,7 +11,7 @@ html[xmlns] .group {
 
 body {
     color: #656565;
-	line-height: 1.5;
+    line-height: 1.5em;
 }
 
 /* Tables still need 'cellspacing="0"' in the markup. */

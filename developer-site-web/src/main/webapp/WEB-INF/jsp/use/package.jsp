@@ -24,7 +24,7 @@
 								<pre class="html" data-highlightlines="${pack.previewCode.highlightLines}"><c:out value="${pack.previewCode.content }"></c:out></pre>
 							</div>
 							<div data-tab="preview" class="tab previewtab">
-                                <iframe class="preview-frame" src="/download/widget/${pack.handle}/preview.html" height="${pack.previewCode.height}"></iframe>
+                                <iframe class="preview-frame" src="/use/widget/${pack.handle}/preview.html" height="${pack.previewCode.height}"></iframe>
 							</div>
 							<div class="widget-tabs">
 								<a href="#code" class="widget-tab">Code</a>
