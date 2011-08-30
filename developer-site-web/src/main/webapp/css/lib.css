@@ -353,11 +353,13 @@ ul.avatar-list li {
 
 .avatar-list-text .question-text {
     float: left;
+    clear: left;
     line-height: 16px;
 }
 
 .avatar-list-text .datetime {
     float: left;
+    clear: left;
     font-size: 11px;
     color: #9A9999;
     margin-right: 0;
