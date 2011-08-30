@@ -129,19 +129,19 @@
     background-image: url(../img/leaf_selected_over.gif);
 }
 
-/* Download and talk menu */
+/* Use and talk menu */
 
-.download.menubox, .talk.menubox {
+.use.menubox, .talk.menubox {
     height: 160px;
 }
-.download.menubox ul, .talk.menubox ul {
+.use.menubox ul, .talk.menubox ul {
     position: absolute;
     z-index: 10;
     left: 10px;
     top: 10px;
     width: 966px;
 }
-.download.menubox ul li, .talk.menubox ul li {
+.use.menubox ul li, .talk.menubox ul li {
     float: left;
     list-style: none;
     width: 302px;
@@ -149,13 +149,13 @@
     margin: 0;
     padding: 0;
 }
-.download.menubox ul li#download_0,
-.download.menubox ul li#download_1,
+.use.menubox ul li#use_0,
+.use.menubox ul li#use_1,
 .talk.menubox ul li#talk_0,
 .talk.menubox ul li#talk_1 {
     margin-right: 30px;
 }
-.download.menubox ul li a, .talk.menubox ul li a {
+.use.menubox ul li a, .talk.menubox ul li a {
     display: block;
     width: 302px;
     height: 28px;
@@ -168,16 +168,16 @@
     font-weight: bold;
     color: #444444;
 }
-.download.menubox ul li a.active, .talk.menubox ul li a.active {
+.use.menubox ul li a.active, .talk.menubox ul li a.active {
     background-color: #999999;
 }
-.download.menubox ul li a.download_0 {
+.use.menubox ul li a.use_0 {
     background-image: url("/img/download-plugin-green.png");
 }
-.download.menubox ul li a.download_1 {
+.use.menubox ul li a.use_1 {
     background-image: url("/img/download-widget-green.png");
 }
-.download.menubox ul li a.download_2 {
+.use.menubox ul li a.use_2 {
     background-image: url("/img/download-sdk-green.png");
 }
 .talk.menubox ul li a.talk_0 {
@@ -196,12 +196,12 @@
     display: none;
     height: 40px;
 }
-.download.breadcrumbs, .talk.breadcrumbs {
+.use.breadcrumbs, .talk.breadcrumbs {
     height: 10px;
     padding: 0;
 }
 .page-home .learn.breadcrumbs,
-.page-home .download.breadcrumbs,
+.page-home .use.breadcrumbs,
 .page-home .talk.breadcrumbs {
     float: left;
     height: 0px;

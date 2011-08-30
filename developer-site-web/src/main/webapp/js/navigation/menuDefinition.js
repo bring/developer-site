@@ -99,7 +99,7 @@ var menuJsonData =
             ]
         },
         {
-            "id":"download",
+            "id":"use",
             "breadCrumbs":false,
             "menuNodes":[{
                     "title":"Plugins",
