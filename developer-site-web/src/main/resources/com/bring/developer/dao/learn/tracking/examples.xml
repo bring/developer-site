@@ -7,6 +7,15 @@
         /proxy/tracking
     </RequestBase>
     <Parameter>
+        <Title>Example parcels numbers</Title>
+        <Description><![CDATA[
+            <p>
+                The parcel numbers in this page are static identifiers, and will always return the same result.
+                These examples are recommended to use for integration testing.
+            </p>
+        ]]></Description>
+    </Parameter>
+    <Parameter>
         <Title>
             Package - Notification recieived
         </Title>
