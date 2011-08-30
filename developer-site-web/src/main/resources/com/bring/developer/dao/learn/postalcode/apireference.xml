@@ -67,7 +67,7 @@
                 <li><code>FI</code> - Finland</li>
                 <li><code>NL</code> - Netherlands</li>
             </ul>
-            <p>This service queries <a href="http://www.geonames.org/">GeoNames</a> for all
+            <p>This service queries <a target="_blank" href="http://www.geonames.org/">GeoNames</a> for all
                 countries except for Norway.</p>
                 
             <h2>Blank response</h2>

@@ -59,7 +59,7 @@
         <Price>1</Price>
         <PriceLink>/products/A-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407</PriceLink>
         <ExpectedDelivery>1</ExpectedDelivery>
-        <ExpectedDeliveryLink>/products/A-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=***DATESTRING***"></ExpectedDeliveryLink>
+        <ExpectedDeliveryLink>/products/A-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=2011-08-30</ExpectedDeliveryLink>
     </Product>
 
     <Product note="2">
@@ -167,7 +167,7 @@
         <Code>HOMEDELIVERY_CURBSIDE_DAG</Code>
         <CodeLink>/products/HOMEDELIVERY_CURBSIDE_DAG/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
         <Price>0</Price>
-        <PriceLink>/products/HOMEDELIVERY_CURBSIDE_DAG/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***"</PriceLink>
+        <PriceLink>/products/HOMEDELIVERY_CURBSIDE_DAG/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***</PriceLink>
         <ExpectedDelivery>1</ExpectedDelivery>
         <ExpectedDeliveryLink>/products/HOMEDELIVERY_CURBSIDE_DAG/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***</ExpectedDeliveryLink>
     </Product>

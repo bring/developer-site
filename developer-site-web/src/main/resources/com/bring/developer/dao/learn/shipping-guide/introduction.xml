@@ -15,7 +15,7 @@
 <p>
 	XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides access to data from Bring via a single interface.</p>
 <p>
-	<a href="apireference.html">API Reference</a>
+	<a href="./documentation/apireference.html">API Reference</a>
 </p>
 
 <h2>JSON / JSONP</h2>
@@ -24,7 +24,7 @@
 	The purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping guide without server components on your web page.
 </p>
 <p>
-	<a href="apireference.html">API Reference</a>
+	<a href="./documentation/apireference.html">API Reference</a>
 </p>
 
 <h2>Web Services</h2>
@@ -33,7 +33,7 @@
 	For advanced users we recommend the Web Services with several options in the query.
 </p>
 <p>
-    <a href="webservices.html">How to use Web Services</a>
+    <a href="./documentation/webservices.html">How to use Web Services</a>
 </p>
 
 <h2> Offline data (manual download and Web Service) </h2>
@@ -42,7 +42,7 @@
      Enter the zip code you are sending from and which products you want data for. For each product you get:
 </p>
 <p>
-    <a href="offlinedata.html">More information about offline data</a>
+    <a href="./documentation/offlinedata.html">More information about offline data</a>
 </p>
 
 

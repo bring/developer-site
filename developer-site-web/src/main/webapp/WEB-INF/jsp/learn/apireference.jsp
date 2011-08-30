@@ -44,7 +44,7 @@
                                     <c:if test="${!empty example.request}">
                                         <div class="api-call">
                                             Request: 
-                                            <pre><a <c:if test="${example.title eq 'XML' or example.title eq 'HTML'}"> target="_blank" </c:if> class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
+                                            <pre><a target="_blank" class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
                                             <c:if test="${example.type == 'json'}">
                                                 <p class="right">JSONP request:
                                                     <a target="_blank" href="${apiReference.externalRequestBase.content}${example.request}${fn:contains(example.request, '?') ? '&amp;' : '?'}callback=functionName">
