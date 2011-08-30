@@ -49,10 +49,6 @@ var menuJsonData =
                                     "url":"/learn/shipping-guide/information/product-list.html"
                                 },
                                 {
-                                    "title":"Best Practices",
-                                    "url":"/learn/shipping-guide/information/bestpractices.html"
-                                },
-                                {
                                     "title":"Error Handling",
                                     "url":"/learn/shipping-guide/information/errorhandling.html"
                                 },

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>The foo</Title>
+    <Ingress>The foo</Ingress>
     <MenuTitle>The bar</MenuTitle>
     <Content>
 <![CDATA[
