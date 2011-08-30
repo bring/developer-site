@@ -33,7 +33,7 @@
             <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">Only SERVICEPAKKE</a></li>
             <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN">Both SERVICEPAKKE and PA_DOREN</a></li>
             <li><a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">All available products</a> (for combination of postal codes and country)</li>
-</ul>       </ul>
+            </ul>
 
         ]]></Description>
     </Parameter>
