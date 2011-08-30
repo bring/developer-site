@@ -17,7 +17,7 @@ var menuJsonData =
                                     "url":"/learn/shipping-guide/tutorials-examples/fetch-all-multiple-parcels.html"
                                 },
                                 {
-                                    "title":"Modificators on price",
+                                    "title":"Price Adjustments",
                                     "url":"/learn/shipping-guide/tutorials-examples/priceadjustments.html"
                                 }
                             ]
@@ -47,10 +47,6 @@ var menuJsonData =
                             "menuNodes":[{
                                     "title":"Product List",
                                     "url":"/learn/shipping-guide/information/product-list.html"
-                                },
-                                {
-                                    "title":"Best Practices",
-                                    "url":"/learn/shipping-guide/information/bestpractices.html"
                                 },
                                 {
                                     "title":"Error Handling",

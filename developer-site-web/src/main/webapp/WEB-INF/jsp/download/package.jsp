@@ -58,7 +58,7 @@
 						<h2>Made by</h2>
 						<c:forEach var="person" items="${pack.persons }">
 							<div class="person">
-								<a href="${person.url}">
+								<a href="${person.url}" target="_blank">
 									<img class="avatar" src="${person.avatarUrl}" alt="Avatar" />
 									<span class="name">${person.name }</span>
 									<span class="company">${person.company }</span>

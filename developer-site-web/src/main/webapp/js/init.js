@@ -23,14 +23,14 @@ $(document).ready(function() {
      */
     
     if (isPageType("home")) {
-        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        var menu = new TopMenu($('.navigation-tabs'), menuJsonData);
         
         $("#twittercontent").performTwitterSearch(1, twitterView);
         $(".big-banner").bringBanner();
     }
     
     else if (isPageType("apireference")) {
-        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        var menu = new TopMenu($('.navigation-tabs'), menuJsonData);
 
         $(".api-call").each(function() {
             $(this).exampleRequest();
@@ -49,7 +49,7 @@ $(document).ready(function() {
     }
     
     else if (isPageType("article")) {
-        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        var menu = new TopMenu($('.navigation-tabs'), menuJsonData);
         
         $(".api-call").each(function() {
             $(this).exampleRequest();
@@ -61,11 +61,11 @@ $(document).ready(function() {
     }
     
     else if (isPageType("package-overview")) {
-        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        var menu = new TopMenu($('.navigation-tabs'), menuJsonData);
     }
     
     else if(isPageType("package")) {
-        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        var menu = new TopMenu($('.navigation-tabs'), menuJsonData);
         
         $(".widgetpreview").codetabs({defaultTab : "preview"});         
                     
@@ -85,7 +85,7 @@ $(document).ready(function() {
     }
     
     else if (isPageType("productlist")) {
-        var menu = new TopMenu($('.navigation-tabs'), '/', menuJsonData);
+        var menu = new TopMenu($('.navigation-tabs'), menuJsonData);
     }
     
     /*

@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>How to integrate</Title>
+    <Ingress>Shippingguide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations, product information and environmental information (and more).</Ingress>
     <MenuTitle>How to integrate</MenuTitle>
     <Content>
 <![CDATA[
 
-<p> 
-Shippingguide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations, product information and environmental information (and more).
-</p>
 <p>
     <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&nextDayStopTime=15:00">Demo!</a> (Norwegian)
 </p>

@@ -85,6 +85,11 @@ p {
     padding-bottom: 1em;
 }
 
+p.ingress {
+    font-style: italic;
+    padding-bottom: 2.5em;
+}
+
 pre {
     font-family: Consolas, monospace;
     overflow: auto;
@@ -170,7 +175,7 @@ li blockquote {
 }*/
 
 .article ol {
-    padding-left: 15px;
+    padding-left: 28px;
     margin-bottom: 1em;
 }
 
@@ -180,7 +185,7 @@ li blockquote {
 
 .article ul {
     list-style-type: disc;
-    padding-left: 15px;
+    padding-left: 28px;
     margin-bottom: 1em;
 }
 
@@ -242,7 +247,6 @@ a:hover, a:focus {
 /* default code style. */
 code {
     font-family: Consolas, monospace;
-    background-color: #f0f0f1;
 }
 .box-footer {
 }

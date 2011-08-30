@@ -42,16 +42,22 @@
     font-weight: bold;
     padding: 10px 20px 8px 20px;
     margin-right: 10px;
-    color: #f0f0f1;
+    color: white;
     border-bottom: 1px solid #529136;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	text-shadow: 0px 0px 3px #999999;
 	filter: dropshadow(color=#999999, offx=0, offy=0);
 	-webkit-box-shadow: 0px 2px 1px 1px #e2e3e4;
 	-moz-box-shadow: 0px 2px 1px 1px #e2e3e4;
 	box-shadow: 0px 2px 1px 1px #e2e3e4;
+}
+
+a:hover.download-button,
+a:focus.download-button,
+a:hover.repo-button,
+a:focus.download-button {
+    color: white;
 }
 
 .download-button {
@@ -76,22 +82,6 @@
 	background: linear-gradient(top, #98989c 0%,#818186 50%,#6e6d71 51%,#4e4d50 100%); /* W3C */
 	border-color: #565656;
 }
-
-.download-button:hover,
-.download-button:focus,
-.repo-button:hover,
-.repo-button:focus {
-	border-color: #FCA800;
-	background: #f9e4bb; /* Old browsers */
-	background: -moz-linear-gradient(top, #f9e4bb 0%, #f9d89a 50%, #f9cc70 51%, #fdbb2f 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9e4bb), color-stop(50%,#f9d89a), color-stop(51%,#f9cc70), color-stop(100%,#fdbb2f)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f9e4bb 0%,#f9d89a 50%,#f9cc70 51%,#fdbb2f 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f9e4bb 0%,#f9d89a 50%,#f9cc70 51%,#fdbb2f 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #f9e4bb 0%,#f9d89a 50%,#f9cc70 51%,#fdbb2f 100%); /* IE10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9e4bb', endColorstr='#fdbb2f',GradientType=0 ); /* IE6-9 */
-	background: linear-gradient(top, #f9e4bb 0%,#f9d89a 50%,#f9cc70 51%,#fdbb2f 100%); /* W3C */
-}
-
 
 .installsteps > li {
 	font-weight: bold;
@@ -164,16 +154,17 @@
     font-size: 0.9em;
     text-transform: uppercase;
     background-color: #999;
+    line-height: 18px;
 }
 
 .widget-tab.active {
-    background-color: #565656;
+    background-color: #D7D7D7;
     line-height: 18px;
-    
+    color: #565656;
 }
 
-.widget-tab:hover, .widget-tab:active, .widget-tab:focus{
-    background-color: #565656;
+.widget-tab:hover {
+    background-color: #D7D7D7;
     line-height: 18px;
     color: #fff;
 }

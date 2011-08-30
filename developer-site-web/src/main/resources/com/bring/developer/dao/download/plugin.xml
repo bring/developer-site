@@ -6,5 +6,10 @@
 		<p>Plugins are additional modules/extensions you can easily add to an existing webshop.
 			Since a plugin can include both client-side code as well as do back-end processing
 			they often offer more comprehensive functionality than widgets.</p>
+	    <br/>
+	    <p>Plugins are typically developed by individuals or webshops that need the functionality and
+	        later made the code available for others. Please understand that listing them on this page
+	        is for your convenience. Using a plugin is at your own risk and with no support from Bring.
+	        We encourage you to contribute your improvements to the community.</p>
 	]]></Description>
 </PackagesOverview>
