@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>Error Handling</Title>
     <MenuTitle>Error Handling</MenuTitle>
+    <Ingress>
+        When using the Shipping Guide, it is important to handle errors gracefully.
+        Your web shop's users should still be able to order, even if the Shipping Guide returns an error.
+    </Ingress>
     <Content>
 <![CDATA[
-<p>NB! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store.</p>
 <h2>Error Handling Strategies:</h2>
 <ul>
 <li>Use the <a href="../documentation/offlinedata.html">offline data</a> to calculate price, or</li>
