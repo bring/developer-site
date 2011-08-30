@@ -149,7 +149,7 @@ function TopMenu(pView, jsonData) {
 
         for (currentId in menuNodeIdMap) {
             var currentNode = menuNodeIdMap[currentId];
-            if (currentNode.url != "#" && window.location.href.indexOf(currentNode.url) > 0) {
+            if (currentNode.url != "#" && window.location.href.indexOf(currentNode.url) > 0 && currentNode.menuLevel > 1) {
                 var currentHtmlId = currentNode.htmlId;
                 var nodeLevel1 = null;
                 var nodeLevel2 = null;
