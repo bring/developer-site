@@ -4,26 +4,20 @@
 
 (function($) {
 	
-	var options = {
-		addHoverClass : "custom-section"
-	};
-	
 	var methods = {
-		init : function(optionsArg) {
-			$.extend(options, optionsArg);
-			
+		init : function() {
 			var banner = $(this);
 			$(".banner-section", $(this)).each(function(index, item) {
 				item = $(item);
-				var itemBanner = item.attr("data-background");
+
+				var cssClass = item.attr("class").replace("banner-section", "").replace(" ", "");
+
 				item.hover(
 					function() {
-						banner.addClass(itemBanner);
-						banner.addClass(options.addHoverClass);
+						banner.addClass(cssClass);
 					},
 					function() {
-						banner.removeClass(itemBanner);
-						banner.removeClass(options.addHoverClass);
+						banner.removeClass(cssClass);
 					}
 				);
 			});

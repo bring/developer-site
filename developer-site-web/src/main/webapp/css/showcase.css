@@ -9,17 +9,15 @@
     font-size: 0.75em;
 }
 
+.big-banner-container {
+    position: relative;
+    min-height: 360px;
+    background: #e2e3e4 url(/img/big-banner-bg.png) no-repeat top left;
+}
 .big-banner {
     position: relative;
     min-height: 360px;
-    background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 0%, #e2e3e4 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e2e3e4)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* Opera11.10+ */
-    background: -ms-linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e3e4',GradientType=0 ); /* IE6-9 */
-    background: linear-gradient(top, #ffffff 0%,#e2e3e4 100%); /* W3C */
+    background: transparent none no-repeat top left;
 }
 .big-banner .illustration-container {
     float: left;
@@ -80,7 +78,9 @@
 .banner-section.postalcode a {
     background-image: url(/img/postalcode-icon.png);
 }
-.big-banner.custom-section .banner-title {
+.big-banner.shippingguide .banner-title,
+.big-banner.tracking .banner-title,
+.big-banner.postalcode .banner-title {
     display: none;
 }
 .big-banner.shippingguide {
@@ -103,12 +103,6 @@
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    
-    
-    /* css3 */
-/*    -moz-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
-    -webkit-box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;
-    box-shadow: inset 1px 1px 1px #ddd, inset 1px -1px 1px #ddd;*/
 }
 
 /* Toolbox */
