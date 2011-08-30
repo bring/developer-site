@@ -79,10 +79,10 @@ https://www.mybring.com/reports/api/generate/</pre>
                 <pre class="json code">
 {"reports":[
     {
-        "id":"DELIVERED",
+        "id":"PARCELS-DELIVERED",
         "name":"Delivered to recipient",
         "description":"Overview of parcels which are delivered to the recipient.",
-        "url":"http://local.mybring.com:8080/reports/api/generate/PARCELS_NORWAY-00012341324/DELIVERED/",
+        "url":"http://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341324/PARCELS-DELIVERED/",
         "parameters":[
             {
                 "name":"fromDate",
@@ -123,7 +123,7 @@ https://www.mybring.com/reports/api/generate/</pre>
                 <h2>4. Check status of report</h2>
                 <p>
                     Since the generation of reports may take several minutes, we supply a status address to check the status of the report
-                    generation. The status page will display NOT_DONE, until the report is ready to be downloaded. When the report is ready,
+                    generation. The status page will display <code>NOT_DONE</code>, until the report is ready to be downloaded. When the report is ready,
                     URLs to download the report will be in the response.
                 </p>
 
