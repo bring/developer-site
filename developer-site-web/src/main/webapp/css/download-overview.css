@@ -60,7 +60,6 @@
     display: block;
     width: 100%;
     font-weight: bold;
-    font-size: 1em;
 }
 
 .downloadbox span:before,
@@ -187,7 +186,7 @@
 .overview-description h1{
     font-weight:500;
     margin: 0 0 10px 0;
-    font-size: 1.2em;
+    font-size: 14px;
 }
 
 .sidebox p{
