@@ -33,8 +33,3 @@ input[type=reset], input[type=reset]:active, input[type=reset]:focus {
     outline:none;
     -moz-outline-style:none;
 }
-
-
-p,pre,address,dl,ol,ul,table,cite,blockquote {
-    /*font-size: 0.75em;*/
-}

@@ -5,6 +5,8 @@ html {
 body {
 	height: 100%;
     background-color: #afb0b2;
+    color: #656565;
+    font-size: 12px;
 }
 
 blockquote {
@@ -96,7 +98,7 @@ body:before {
     content: "\002039";
     margin-right: 5px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 14px;
 }
 
 .global-tabs li a {
@@ -146,7 +148,6 @@ body:before {
     padding-top: 40px;
     margin: 0 5px 50px 5px;
     background-color: #fff;
-    font-size: 0.75em;
 
     /* css3 */
     -moz-box-shadow: -3px 3px 3px #ddd, 3px 3px 3px #ddd;
@@ -159,20 +160,17 @@ body:before {
 }
 
 .home-content {
-    font-size: 0.75em;
     padding-bottom: 30px;
     margin-top: -5px;
 }
 
 .header {
-	font-size: 0.75em;
     background-color: #fff;
     border-bottom: 15px solid #7fc14b;
     padding-top: 15px;
 }
 
 .footer {
-	font-size: 0.75em;
     text-align: center;
     padding-top: 40px;
     background-color: #afb0b2;

@@ -4,9 +4,7 @@
 /* talkbox */
 
 .talkbox {
-/*     font-size: 0.75em; */
     margin-left: 10px;
-/*     background-color: #f0f0f1; */
     width: 302px;
 }
 
@@ -44,7 +42,6 @@
     position: absolute;
     right: 6px;
     top: -4px;
-    font-size: 1.75em;
 }
 
 .talkbox-footer {
@@ -74,7 +71,6 @@
 }
 
 .talkbox blockquote {
-/* 	font-size: 1.3em; */
     margin-bottom: 0;
     height: 90px;
 }
