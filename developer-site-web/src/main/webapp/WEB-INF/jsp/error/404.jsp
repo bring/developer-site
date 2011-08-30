@@ -18,7 +18,7 @@
             <menutabs:showMenu cssClass="box" />
             <div class="content">
                 <div class="error">
-                    <h1>404 - Page not found</h1>
+                    <h1>Page not found</h1>
                 </div>
             </div>
         </div>
