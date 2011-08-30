@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>XML Schema</Title>
-    <MenuTitle>XML Schema</MenuTitle>
+    <MenuTitle>WSDL &amp; XML Schema</MenuTitle>
+    <Ingress>The Shipping Guide uses schemas for XML and WSDL to make it easier to integrate with the WebService</Ingress>
     <Content>
 <![CDATA[
 

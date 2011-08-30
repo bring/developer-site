@@ -90,7 +90,7 @@
     </Parameter>
     <Parameter>
         <Title>
-            Filter results by opening times
+            Filter results by open on days
         </Title>
         <Description><![CDATA[
             <p>Is specified by adding <code>?openingHoursSearchType=&lt;day&gt; to the URL.</code>

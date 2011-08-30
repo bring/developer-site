@@ -106,9 +106,9 @@ body:before {
     float: left;
     display: block;
     padding: 10px 20px 5px 20px;
-    margin-left: -1px;
+    margin-left: 0px;
     position: relative;
-    left: 1px;
+    left: 0px;
     text-decoration: none;
 }
 
@@ -116,15 +116,15 @@ body:before {
     color: #fff;
     background: #7fc14b;
 
-    border-bottom: 0px;
-    border-left:  1px;
-    border-right: 1px;
-    border-top: 1px;
     border-color: #CCC;
     border-style: solid;
 }
 
 .global-tabs-chosen {
+    line-height: 25px;
+}
+
+.global-tabs-not-chosen {
     line-height: 24px;
 }
 

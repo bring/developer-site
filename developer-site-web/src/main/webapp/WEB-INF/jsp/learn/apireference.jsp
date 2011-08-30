@@ -21,7 +21,7 @@
             <menutabs:showMenu cssClass="menutab" />
             <div class="content group">
                 <div class="article">
-                    <h1>API Reference</h1>
+                    <h1><c:out value="${title}"/></h1>
                     
                     <p>
                     	Please note the request prefixes:<br />

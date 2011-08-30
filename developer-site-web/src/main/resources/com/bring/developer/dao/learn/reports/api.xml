@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
-    <Title>API Reference</Title>
     <MenuTitle>API Reference</MenuTitle>
+    <Ingress>
+        The API lets you view customer accounts associated with your account, find available reports
+        for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
+    </Ingress>
     <Content>
 <![CDATA[
                 <p>
                     <b>Note! The Reports API is currently in closed BETA testing. Please contact us at
                     fraktguide@posten.no if you are interested in testing this service</b>
-                </p>
-                <p>
-                    The API lets you view customer accounts associated with your account, find available reports
-                    for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
                 </p>
 
                 <p>
