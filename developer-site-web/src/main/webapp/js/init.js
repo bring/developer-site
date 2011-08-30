@@ -1,22 +1,10 @@
 $(document).ready(function() {
-    
+
     /*
      * Initialization for all pages
      */
 
-    // Display twitter message in navigation element
-    $("#talk").performTwitterSearch(1, function(image, user, text, time) {
-        return '<div class="talkbox dropdown-menu">' + 
-                    '<div class="talkbox-header group">' +
-                        '<a href="http://twitter.com/bringapi">@bringapi</a>' + 
-                    '</div>' + 
-                    '<div class="quote"><blockquote id="twittertalkquote">' + text + '</blockquote></div>' + 
-                    '<div class="talkbox-footer">' + 
-                        '<img id="twittertalkimage" class="talkbox-image" src="' + image + '" />' + 
-                        '<span id="twittertalkuser" class="user">' + user + '</span><span id="twittertalktime" class="time">' + time + '</span>' + 
-                    '</div>' + 
-                '</div>';   
-    });
+    
     
     /*
      * Initialization based on page type
