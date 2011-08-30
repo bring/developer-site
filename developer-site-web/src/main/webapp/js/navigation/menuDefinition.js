@@ -103,15 +103,15 @@ var menuJsonData =
             "breadCrumbs":false,
             "menuNodes":[{
                     "title":"Plugins",
-                    "url":"/download/plugin/index.html"
+                    "url":"/use/plugin/index.html"
                 },
                 {
                     "title":"Widgets",
-                    "url":"/download/widget/index.html"
+                    "url":"/use/widget/index.html"
                 },
                 {
                     "title":"Client Libraries",
-                    "url":"/download/clientlibrary/index.html"
+                    "url":"/use/clientlibrary/index.html"
                 }
             ]
         },
