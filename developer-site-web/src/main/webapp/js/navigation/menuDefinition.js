@@ -33,10 +33,14 @@ var menuJsonData =
                                     "url":"/learn/shipping-guide/documentation/apireference.html"
                                 },
                                 {
-                                    "title":"Web Services",
-                                    "url":"/learn/shipping-guide/documentation/webservices.html"
-                                },
+                                     "title":"Parameters in detail",
+                                     "url":"/learn/shipping-guide/documentation/parametersindetail.html"
+                                 },
                                 {
+                                     "title":"Web Services",
+                                     "url":"/learn/shipping-guide/documentation/webservices.html"
+                                 },
+                                  {
                                     "title":"Offline data",
                                     "url":"/learn/shipping-guide/documentation/offlinedata.html"
                                 }

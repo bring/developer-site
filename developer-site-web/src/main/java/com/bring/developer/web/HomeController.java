@@ -64,7 +64,13 @@ public class HomeController {
         model.put("title", "API Reference");
         return apiReferenceHelper(model, api, "documentation/apireference");
     }
-    
+
+    @RequestMapping(value = "/learn/{api}/documentation/parametersindetail.html")
+    public String apiReferenceExamples(ModelMap model, @PathVariable String api) throws JAXBException {
+        model.put("title", "API Reference - Examples");
+        return apiReferenceHelper(model, api, "documentation/parametersindetail");
+    }
+
     private String apiReferenceHelper(ModelMap model, String api, String suffix) throws JAXBException {
         Api apiDoc = XmlDao.createDao(Api.class).query("learn/" + api + "/" + suffix);
         model.put("apiReference", apiDoc);
