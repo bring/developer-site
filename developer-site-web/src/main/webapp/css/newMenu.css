@@ -31,7 +31,7 @@
 .page-home .menutab {
     background: transparent url(../img/launcher_bg_active.gif) repeat-x;
 }
-.menutab.active {
+.menutab.active, .box.active {
     color: #b7b7b7;
     background: transparent url(../img/launcher_bg_active.gif) repeat;
 }

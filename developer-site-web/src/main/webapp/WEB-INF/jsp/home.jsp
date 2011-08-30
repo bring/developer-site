@@ -20,7 +20,7 @@
             <div class="group home-content">
                 <misc:quote />
                 <misc:popularwidgets />
-                <div class="box span-2 last">
+                <div class="box span-2 last home-banner-box">
                     <ul id="twittercontent" class="avatar-list group"></ul>
                 </div>
             </div>

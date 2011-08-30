@@ -2,11 +2,11 @@
 
 <div class="span-2 box">
     <div class="group">
-        <div class="widget-preview leftcol">
+        <div class="widget-preview leftcol home-banner-box">
             <div class="box-text widget-title"><a href="./use/widget/choosepickuppointwithmap.html">PICKUP POINT</a></div>
             <p class="box-text">Let the customer choose pickup point in a map</p>
         </div>
-        <div class="widget-preview rightcol">
+        <div class="widget-preview rightcol  home-banner-box">
             <div class="box-text widget-title"><a href="use/clientlibrary/javaapi.html">JAVA SDK</a></div>
             <p class="box-text">Try our new Java SDK which is convenient for accessing our API</p>
         </div>

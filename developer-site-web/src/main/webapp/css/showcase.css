@@ -58,6 +58,7 @@
 }
 .banner-section .description {
     color: #999;
+    line-height: 18px;
 }
 .banner-section a:hover .description {
     color: #565656;
