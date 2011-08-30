@@ -1,14 +1,7 @@
-
-.showcase {
-    min-height: 200px;
-    margin-bottom: 10px;
-}
-
 .introbanner {
     background-color: #fff;
     font-size: 0.75em;
 }
-
 .big-banner-container {
     position: relative;
     min-height: 360px;
@@ -92,81 +85,3 @@
 .big-banner.postalcode {
     background-image: url(/img/postalcode-banner-bg.png);
 }
-
-.panels {
-    width: 653px;
-    height: 240px;
-    margin-right: 0;
-    padding-right: 10px;
-    background-color: #f1f1f1;
-    border-style: inset;
-    border-left: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Toolbox */
-
-.toolbox{
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    overflow: hidden;
-}
-
-.toolbox ul {
-    list-style: none;
-    background-color: #fff;
-}
-
-.toolbox li {
-    border-left: 1px solid #ddd;
-    /*     margin-bottom: 10px; */
-    height: 50px;
-    position: relative;
-}
-
-.toolbox a {
-    width: 311px;
-    position: absolute;
-    height: 30px;
-    background: #f1f1f1;
-    padding: 10px 0 0 10px;
-}
-
-.toolbox li:hover {
-    background-color: #fff;
-}
-
-.toolbox li.selected{
-    border: none;
-}
-
-.toolbox li.selected a{
-    border-style: inset;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-}
-
-.toolbox .selected a,.toolbox .hover a {
-    color: #7FC14B;
-}
-
-.toolbox li img {
-    width: 5%;
-}
-
-.rotate-text {
-    /* css3 */
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    transform: rotate(270deg);
-}
-
-.intro {
-    position: relative;
-}
-
-
-
