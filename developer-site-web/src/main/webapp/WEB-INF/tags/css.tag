@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="/css/showcase.css" />
 
 <!-- Download -->
-<link rel="stylesheet" type="text/css" href="/css/download-overview.css" />
 <link rel="stylesheet" type="text/css" href="/css/download-package.css" />
 
 <!-- 3rd party stuff -->
