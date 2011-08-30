@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Article>
     <MenuTitle>Offline Data</MenuTitle>
-    <Ingress>Offline data lets you download a failover version of the data from the shipping guide.</Ingress>
+    <Ingress>Offline data lets you download a failover version of the data from the Shipping Guide.</Ingress>
     <Content>
 <![CDATA[
 <p>By using the <a target="_blank" href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a> (Norwegian), you can download price lists, transport times and additional services designed for offline usage.</p>
