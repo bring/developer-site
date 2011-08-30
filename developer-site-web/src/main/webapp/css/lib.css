@@ -24,15 +24,6 @@ table,td,th {
 	vertical-align: middle;
 }
 
-/* Remove possible quote marks (") from <q>, <blockquote>. */
-blockquote:before,blockquote:after,q:before,q:after {
-	content: "";
-}
-
-blockquote,q {
-	quotes: "" "";
-}
-
 
 /* Remove annoying border on linked images. */
 a img {
@@ -237,9 +228,6 @@ a:hover, a:focus {
 code {
     font-family: Consolas, monospace;
 }
-.box-footer {
-}
-
 
 .group:after {
     content: ".";
@@ -298,7 +286,13 @@ code {
     box-shadow: 0 0 5px #999;
 }
 
+
+.home-banner-box {
+    min-height: 150px;
+}
+
 .box-footer {
+    line-height: 0;
     padding: 10px;
 }
 
@@ -320,19 +314,16 @@ ul.avatar-list {
 }
 
 ul.avatar-list li {
-    margin-bottom: 10px;
-}
-ul.avatar-list li:last-child {
     margin-bottom: 0;
 }
 
 .avatar-list-text {
-    min-height: 40px;
-    width: 260px;
     float: right;
-    background-color: #f0f0f1;
+    width: 260px;
+    min-height: 140px;
     padding: 5px;
-    position: relative;
+    margin: 0;
+    background-color: #f0f0f1;
 }
 
 .blocklink {
@@ -345,7 +336,7 @@ ul.avatar-list li:last-child {
 
 .avatar-list-footer {
     min-height: 0;
-    margin: 10px solid red;
+    margin: 10px;
 }
 
 .avatar {
@@ -355,37 +346,31 @@ ul.avatar-list li:last-child {
 
 /* Question */
 
-.datetime {
+.avatar-list-text .question-title {
+    float: left;
+    font-weight: bold;
+}
+
+.avatar-list-text .question-text {
+    float: left;
+    line-height: 16px;
+}
+
+.avatar-list-text .datetime {
+    float: left;
     font-size: 11px;
     color: #9A9999;
     margin-right: 0;
 }
 
-.question-title {
-    font-weight: bold;
-}
-
 /* Quote */
 
 .quote {
+    position: relative;
     padding: 10px;
     background-color: #f0f0f1;
-    position:relative;
+    line-height: 18px;
 }
-
-.quote:before {
-    content:"";
-    position:absolute;
-    bottom:-8px;
-    left:50px;
-    border-width:0 0 8px 8px;
-    border-style:solid;
-    border-color:transparent #f0f0f1;
-    /* reduce the damage in FF3.0 */
-    display:block; 
-    width:0;
-}
-
 
 /* Code tabs*/
 .codetabs {

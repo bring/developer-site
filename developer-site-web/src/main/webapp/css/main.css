@@ -9,18 +9,6 @@ body {
     font-size: 12px;
 }
 
-blockquote {
-    margin-bottom: 5px;
-}
-
-blockquote:before {
-    content: "\"";
-}
-
-blockquote:after {
-    content: "\"";
-}
-
 /*Opera Fix - sticky footer*/
 body:before {
 	content:"";
@@ -160,8 +148,8 @@ body:before {
 }
 
 .home-content {
+    float: left;
     padding-bottom: 30px;
-    margin-top: -5px;
 }
 
 .header {

@@ -81,11 +81,15 @@ $(document).ready(function() {
      */
     
     function twitterView(image, user, text, time) {
-        return '<li class="group"><img class="avatar" src="' + 
-        image + '"/><div class="avatar-list-text"><div class="question-title">' +
-        user + '</div><div class="question-text"><blockquote>' + 
-        text + '</blockquote></div>' + '<div class="datetime">' + 
-        time + '</div></div></li>';
+        return '' +
+            '<li class="group">' +
+                '<img class="avatar" src="' + image + '"/>' +
+                '<div class="avatar-list-text">' +
+                    '<div class="question-title">' + user + '</div>' +
+                    '<div class="question-text">"' + text + '"</div>' +
+                    '<div class="datetime">' + time + '</div>' +
+                '</div>' +
+            '</li>';
     }
     
     function isPageType(type) {
