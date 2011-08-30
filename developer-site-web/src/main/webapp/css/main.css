@@ -124,6 +124,10 @@ body:before {
     line-height: 25px;
 }
 
+.global-tabs-not-chosen {
+    line-height: 24px;
+}
+
 /* .header > * { */
 /*     width: 986px; */
 /*     margin: 0 auto; */
