@@ -289,7 +289,7 @@ code {
 
 .home-banner-box {
     min-height: 150px;
-    margin: 0 5px 5px 5px;
+    margin: 5px;
 }
 .home-banner-box.customer-quote {
     position: relative;
