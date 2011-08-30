@@ -14,6 +14,7 @@
 }
 .section-title {
     font-size: 18px;
+    padding: 2px 0 7px 0;
 }
 .section-title a {
     color: #79b54b;
@@ -109,7 +110,7 @@
     color: #CCCCCC;
     background: #666666 url(../img/parent_normal.gif) center right no-repeat;
     margin: 0 0 2px 0;
-    padding: 12px 10px 8px;
+    padding: 14px 10px 6px 10px;
 }
 .learn.menubox ul li a.leaf {
     background-image: url(../img/leaf_normal.gif);
@@ -239,7 +240,7 @@
     color: white;
     background: #999999 url(../img/leaf_selected_over.gif) center right no-repeat;
     margin: 0 0 2px 0;
-    padding: 12px 0 8px 10px;
+    padding: 14px 0 6px 10px;
 }
 .breadcrumbs ul li a.parent {
     background-image: url(../img/parent_over.gif);
