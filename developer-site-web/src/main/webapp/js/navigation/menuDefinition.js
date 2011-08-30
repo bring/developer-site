@@ -7,6 +7,10 @@ var menuJsonData =
             "menuNodes":[{
                     "title":"Shipping guide API",
                     "menuNodes":[{
+                            "title":"Introduction",
+                            "url":"/learn/shipping-guide/introduction.html"
+                        },
+                        {
                             "title":"Tutorials & Examples",
                             "menuNodes":[{
                                     "title":"Single parcel example",
@@ -25,10 +29,6 @@ var menuJsonData =
                         {
                             "title":"Documentation",
                             "menuNodes":[{
-                                    "title":"How to integrate",
-                                    "url":"/learn/shipping-guide/documentation/howtointegrate.html"
-                                },
-                                {
                                     "title":"API Reference",
                                     "url":"/learn/shipping-guide/documentation/apireference.html"
                                 },
