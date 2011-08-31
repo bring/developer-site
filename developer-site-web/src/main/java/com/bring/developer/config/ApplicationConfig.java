@@ -20,11 +20,13 @@ public class ApplicationConfig {
     ConstrettoConfiguration config;
 
     public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
+    public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
 
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
         this.config = config;
         FRAKTGUIDE_URL_FOR_ENVIRONMENT = config.evaluateToString("fraktguideUrl");
+        STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = config.evaluateToString("statistics.trackerId");
     }
 
     @Bean
@@ -47,4 +49,7 @@ public class ApplicationConfig {
         return FRAKTGUIDE_URL_FOR_ENVIRONMENT;
     }
 
+    public static String getStatisticsTrackerIdForEnvironment() {
+        return STATISTICS_TRACKER_ID_FOR_ENVIRONMENT;
+    }
 }
