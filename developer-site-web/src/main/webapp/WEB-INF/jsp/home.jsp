@@ -7,7 +7,7 @@
 <head>
     <misc:contenttype />
     <misc:css />
-    <misc:title value="Home" />
+    <misc:title value="Developer" />
 </head>
 
 <body class="page-home">
