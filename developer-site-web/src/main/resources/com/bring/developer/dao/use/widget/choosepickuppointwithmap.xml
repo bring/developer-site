@@ -24,10 +24,10 @@
 	</Person>
 	<Install>
 		<Step><![CDATA[
-			<p>This widget depends on jQuery, so please add jQuery to your site first.</p>
+			<p>This widget depends on jQuery and Google Maps, so please add those to your site first.</p>
 		]]></Step>
 		<Step><![CDATA[
-			<p>Add the Optional Post Office widget:</p>
+			<p>Add the Post Office widget:</p>
 			<pre class="html">&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</pre>
 		]]></Step>
 		<Step><![CDATA[
@@ -37,6 +37,7 @@
 	</Install>
 	<PreviewCode highlightLines="2,5-9" height="200"><![CDATA[
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
