@@ -27,7 +27,7 @@
 			<p>This widget depends on jQuery, so please add jQuery to your site first.</p>
 		]]></Step>
 		<Step><![CDATA[
-			<p>Add the Optional Post Office widget:</p>
+			<p>Add the Post Office widget:</p>
 			<pre class="html">&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</pre>
 		]]></Step>
 		<Step><![CDATA[
