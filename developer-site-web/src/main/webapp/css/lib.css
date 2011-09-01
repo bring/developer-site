@@ -288,22 +288,12 @@ code {
 
 
 .home-banner-box {
-    min-height: 150px;
+    min-height: 178px;
     margin: 5px;
 }
 .home-banner-box.customer-quote {
     position: relative;
     background-color: #F0F0F1;
-}
-
-.box-footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 302px;
-    background-color: white;
-    line-height: 0;
-    padding: 9px 10px 10px 10px;
 }
 
 .box-text {
@@ -329,9 +319,9 @@ ul.avatar-list li {
 
 .avatar-list-text {
     float: right;
-    width: 260px;
-    min-height: 140px;
-    padding: 5px;
+    width: 252px;
+    min-height: 163px;
+    padding: 5px 10px 10px 10px;
     margin: 0;
     background-color: #f0f0f1;
 }
@@ -359,6 +349,7 @@ ul.avatar-list li {
 .avatar-list-text .question-title {
     float: left;
     font-weight: bold;
+    padding: 3px 0;
 }
 
 .avatar-list-text .question-text {
@@ -373,15 +364,25 @@ ul.avatar-list li {
     font-size: 11px;
     color: #9A9999;
     margin-right: 0;
+    padding-top: 1px;
 }
 
 /* Quote */
 
-.quote {
-    position: relative;
+.customer-quote .quote {
     padding: 10px;
     background-color: #f0f0f1;
-    line-height: 20px;
+    line-height: 17px;
+}
+.customer-quote .author {
+    font-style: italic;
+    padding: 0 10px 10px 10px;
+}
+.customer-quote .logo {
+    width: 302px;
+    background-color: white;
+    line-height: 0;
+    padding: 9px 10px 10px 10px;
 }
 
 /* Code tabs*/
