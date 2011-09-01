@@ -11,17 +11,21 @@
             Postal code
         </Title>
         <Description><![CDATA[
-            <p>The postal code is specified using the <code>pnr</code> parameter. Will default to Norwegian postal codes.</p>
+            <p>The postal code lookup takes two parameters:</p>
+            <ul>
+                <li><code>pnr</code> - the postal code to be looked up.
+                <li><code>country</code> - the ISO 3166-1-alpha-2 country code.
+            </ul>
         ]]></Description>
         <Example type="xml">
             <Title>
                 XML
             </Title>
             <Request>
-                /api/postalCode.xml?pnr=1337
+                /api/postalCode.xml?country=no&amp;pnr=1337
             </Request>
             <Content><![CDATA[
-                <p>XPath example on checking if response is valid:<br />
+                <p>XPath for checking if the response is valid:<br />
                 <code>//Response/@valid</code></p>
             ]]></Content>
         </Example>
@@ -30,7 +34,7 @@
                 JSON
             </Title>
             <Request>
-                /api/postalCode.json?pnr=1337
+                /api/postalCode.json?country=no&amp;pnr=1337
             </Request>
             <Content>
                 
@@ -41,14 +45,16 @@
                 HTML
             </Title>
             <Request>
-                /api/postalCode.html?pnr=1337
+                /api/postalCode.html?country=no&amp;pnr=1337
             </Request>
             <Content><![CDATA[
-                <p>The HTML API will return a <code>span</code> element where the
-                <code>id="bringPostnumberQueryResult"</code>, the text is the postal name
-                and the <code>class</code> will be either
+                <p>The HTML API will return a <code>span</code> element with
+                <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
+                and the <code>class</code> either
                 <code>bringPostnumberQueryValidPostnumber</code> or
                 <code>bringPostnumberQueryInvalidPostnumber</code>.</p>
+                <p>If the postal code has multiple city names, the response have class <code>bringPostnumberQueryValidPostnumber</code>, but the element
+                will be empty.</p>
             ]]></Content>
         </Example>
     </Parameter>
@@ -57,9 +63,8 @@
             Country code
         </Title>
         <Description><![CDATA[
-            <p>You may specify country using the <code>country</code> parameter.</p>
-            <p>Only ISO 3166-1-alpha-2 formatted country codes are allowed.</p>
-            <p>Currently the following countries are supported:</p>
+            <p>The country is specified using the <code>country</code> parameter with ISO 3166-1-alpha-2 formatted country codes.</p>
+            <p>The following countries are supported:</p>
             <ul>
                 <li><code>NO</code> - Norway</li>
                 <li><code>DK</code> - Denmark</li>
@@ -70,31 +75,34 @@
                 <li><code>US</code> - United States</li>
                 <li><code>BE</code> - Belgium</li>
             </ul>
-            <p>This service queries <a target="_blank" href="http://www.geonames.org/">GeoNames</a> for all
-                countries except for Norway.</p>
-                
-            <h2>Blank response</h2>
-            <p>If the response returns valid but postal name is blank, it is either because:</p>
-            <ul>
-                <li>There are multiple postal names for the given postal code. This is the case in
-                    France and several other countries.</li>
-                <li>This service does not have any postal code data for the given country.</li>
-            </ul>
-            <p>If the response is blank and a postal name is required, it is recommended to
-                ask the user input it himself/herself.</p>
+            <p>The service uses <a target="_blank" href="http://www.geonames.org/">GeoNames</a> as source for all
+                countries except Norway.</p>
+
+            <p>For unsupported countries, all postal codes with be marked as valid with no city name returned. In these cases
+            it is recommended to prompt the user to input the city name himself/herself.</p>
         ]]></Description>
-        <Default>
-            NO
-        </Default>
+    </Parameter>
+
+    <Parameter>
+        <Title>
+            Postal codes with multiple cities
+        </Title>
+        <Description><![CDATA[
+            <p>
+                In some countries, such as for example Germany and France, postal codes are non-unique. This means that one postal code
+                might have multiple city names. In these cases, the ordinary response element will be blank. The integration APIs (json and xml)
+                will have separate elements containing the list of cities, while the html response will only contain the blank element.
+            </p>
+        ]]></Description>
         <Example type="xml">
             <Title>
                 XML
             </Title>
             <Request>
-                /api/postalCode.xml?pnr=4000&amp;country=DK
+                /api/postalCode.xml?country=DE&amp;pnr=99869
             </Request>
             <Content><![CDATA[
-                <p>XPath example on checking if response is valid:<br />
+                <p>XPath example on checking whether response is valid:<br />
                 <code>//Response/@valid</code></p>
             ]]></Content>
         </Example>
@@ -103,7 +111,7 @@
                 JSON
             </Title>
             <Request>
-                /api/postalCode.json?pnr=4000&amp;country=DK
+                /api/postalCode.json?country=DE&amp;pnr=99869
             </Request>
         </Example>
         <Example type="html">
@@ -111,7 +119,7 @@
                 HTML
             </Title>
             <Request>
-                /api/postalCode.html?pnr=4000&amp;country=DK
+                /api/postalCode.html?country=DE&amp;pnr=99869
             </Request>
         </Example>
     </Parameter>
