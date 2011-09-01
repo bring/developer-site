@@ -59,13 +59,16 @@
         <Description><![CDATA[
             <p>You may specify country using the <code>country</code> parameter.</p>
             <p>Only ISO 3166-1-alpha-2 formatted country codes are allowed.</p>
-            <p>Currently only these countries are supported:</p>
+            <p>Currently the following countries are supported:</p>
             <ul>
                 <li><code>NO</code> - Norway</li>
                 <li><code>DK</code> - Denmark</li>
                 <li><code>SE</code> - Sweden</li>
                 <li><code>FI</code> - Finland</li>
                 <li><code>NL</code> - Netherlands</li>
+                <li><code>DE</code> - Germany</li>
+                <li><code>US</code> - United States</li>
+                <li><code>BE</code> - Belgium</li>
             </ul>
             <p>This service queries <a target="_blank" href="http://www.geonames.org/">GeoNames</a> for all
                 countries except for Norway.</p>
