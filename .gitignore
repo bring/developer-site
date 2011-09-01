@@ -8,3 +8,4 @@ target
 *.ipr
 *.iws
 *.log
+Gemfile.lock
