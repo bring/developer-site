@@ -1,6 +1,5 @@
 package com.bring.developer.config;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
@@ -10,6 +9,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.params.HttpParams;
 import org.constretto.ConstrettoConfiguration;
+import org.constretto.exception.ConstrettoExpressionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,11 +35,14 @@ public class ApplicationConfig {
         params.setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, config.evaluateToInt("http.client.connection.timeout"));
         params.setParameter(CoreConnectionPNames.SO_TIMEOUT, config.evaluateToInt("http.client.socket.timeout"));
 
-        String proxyHost = config.evaluateToString("http.client.proxy.host");
-        if (StringUtils.isNotBlank(proxyHost)) {
-            HttpHost proxy = new HttpHost(proxyHost, config.evaluateToInt("http.client.proxy.port"));
+        try {
+            HttpHost proxy = new HttpHost(config.evaluateToString("http.client.proxy.host"), config.evaluateToInt("http.client.proxy.port"));
             params.setParameter(ConnRoutePNames.DEFAULT_PROXY, proxy);
         }
+        catch (ConstrettoExpressionException notFound) {
+            // Ok, no proxy
+        }
+
 
         ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
         return new DefaultHttpClient(connectionManager, params);
