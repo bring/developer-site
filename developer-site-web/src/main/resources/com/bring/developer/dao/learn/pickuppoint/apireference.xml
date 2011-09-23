@@ -170,4 +170,29 @@
             </Request>
         </Example>
     </Parameter>
+    <Parameter>
+        <Title>
+            Lookup single delivery place by id
+        </Title>
+        <Description><![CDATA[
+            <p>Example below: Delivery location with id 121110</p>
+        ]]></Description>
+        <Example type="xml">
+            <Title>
+                XML
+            </Title>
+            <Request>
+                /api/pickuppoint/id/121110.xml
+            </Request>
+        </Example>
+        <Example type="json">
+            <Title>
+                JSON
+            </Title>
+            <Request>
+                /api/pickuppoint/id/121110.json
+            </Request>
+        </Example>
+    </Parameter>
+
 </Api>
