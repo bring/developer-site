@@ -10,7 +10,7 @@
             </div>
 
             <div class="banner-section shippingguide">
-                <a href="/learn/shipping-guide/documentation/apireference.html">
+                <a href="/learn/shipping-guide/introduction.html">
                     <strong class="title">Shipping Guide</strong>
                     <span class="description">
                         Allow your customers to choose their preferred shipping method.
