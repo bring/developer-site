@@ -66,14 +66,15 @@ var menuJsonData =
                 },
                 {
                     "title":"Tracking API",
-                    "menuNodes":[{
-                            "title":"Examples",
-                            "url":"/learn/tracking/examples.html"
-                        },
-                        {
-                            "title":"API Reference",
-                            "url":"/learn/tracking/apireference.html"
-                        }
+                    "menuNodes":[
+                      {
+                          "title":"API Reference",
+                          "url":"/learn/tracking/apireference.html"
+                      },
+                      {
+                          "title":"Examples",
+                          "url":"/learn/tracking/examples.html"
+                      }
                     ]
                 },
                 {
