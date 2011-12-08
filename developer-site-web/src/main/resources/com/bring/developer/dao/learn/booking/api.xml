@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+    <MenuTitle>API Reference</MenuTitle>
+    <Ingress>
+        The Bring Booking API is a logged-in service that lets mybring-users (users of mybring.com) programmatically
+        create a booking by invoking a Web Service or by posting XML/JSON over HTTP.
+        The API uses the same backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels.
+    </Ingress>
+    <Content>
+<![CDATA[
+        <p>
+          Currently supported products include Bring Parcel products (domestic Norway), Courier Services
+          for Nordic cities and the QuickPack product line for international express shipments.
+        </p>
+
+        <p>
+          Bring Booking uses Bring Fraktguide as source for price and availability for the different products,
+          and clients of the Booking API can use Fraktguiden for getting the list price and checking
+          availability before sending a booking request.
+        </p>
+
+        <p>
+          Note that invoice payment is the only available payment option for the Booking API. This means that
+          the mybring user ID used in the booking request must have access to the customer number specified as
+          payer of the booking.
+        </p>
+
+        <p>
+          The API is currently under development and will have multiple releases, each extending the available
+          functionality and products. A test version of the API will be made available ultimo 2011 and a final
+          first version of the API will be available early in 2012.
+        </p>
+
+        <h4>Releases</h4>
+
+        <p>
+          V1: Initial version supporting a single consignment with a single package. Planned for early 2012.
+        </p>
+
+        <h2>Technical information</h2>
+
+        <h4>Lables and EDI</h4>
+
+        <p>
+          The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a
+          PDF label is returned. This label must be printed and be attached to the shipment.  A URL that points
+          to tracking information is also returned.
+        </p>
+
+        <p>
+          Regarding label format, please see PDF file sent together with this document. A screenshot of the
+          label is presented below.
+        </p>
+
+        <h4>Versioning strategy</h4>
+
+        <p>
+          Each request has a schemaVersion element indicating which release of the schema is being used in the
+          request and expected schema format in the response.
+          Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements
+          should be ignored.
+          The client framework used by client must thus not crash when unknown elements are encountered. Note
+          that this requirement excludes the (old) Apache Axis 1.x Web Service client framework.
+        </p>
+
+        <h4>Mybring integration</h4>
+
+        <p>
+          Only users with a mybring user (with attached customer numbers) can use the Booking API.
+          In the Booking Web Service / XML API request, you must set two HTTP headers to access the API:
+        </p>
+
+        <table>
+          <tr>
+            <th>Header name</th>
+            <th>Example header value</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>X-MyBring-API-Uid</td>
+            <td>test@testesen.com</td>
+            <td>This is the mybring login ID</td>
+          </tr>
+          <tr>
+            <td>X-MyBring-API-Key</td>
+            <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
+            <td>This is the API key of the mybring user</td>
+          </tr>
+        </table>
+
+        <br/>
+        
+        <p>
+          Please contact the development team (bringdev@gmail.com) for how to get an API key for mybring.
+        </p>
+
+        <h4>Data structure</h4>
+
+        <p>
+          See sample requests and responses below, as well as the XML Schema. Please note that this is a
+          beta-version of the schema. The final structure of the schema will be released with version 1.
+        </p>
+
+        <p>
+          Note that although the schema allows multiple consignments and packages, as of version 1, only one
+          consignment with one package will be supported.
+        </p>
+
+        <h4>Error handling</h4>
+
+        <p>
+          If an error occurs, the following will be provided:
+        </p>
+
+        <table>
+          <tr>
+            <td>uniqueId</td>
+            <td>A unique log ID that can be used as a reference for the error</td>
+          </tr>
+          <tr>
+            <td>code</td>
+            <td>An error code describing the error</td>
+          </tr>
+          <tr>
+            <td>messages</td>
+            <td>
+              Internationalized messages (with <message lang=”xx”> elements). First version will be with
+              lang=”en” (English) only.
+            </td>
+          </tr>
+        </table>
+
+        <br/>
+
+        <p>
+          The enumeration of error codes have not yet been established.
+          It will probably be similar to the Bring Fraktguide error codes:
+          <a href="http://developer.bring.com/learn/shipping-guide/information/errorhandling.html">
+            http://developer.bring.com/learn/shipping-guide/information/errorhandling.html
+          </a>
+        </p>
+
+
+        <h4>Example request</h4>
+
+        <pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;booking&gt;
+  &lt;schemaVersion&gt;1&lt;/schemaVersion&gt;
+
+  &lt;consignments&gt;
+
+    &lt;consignment correlationId=&quot;123456&quot;&gt;
+
+      &lt;shippingDateTime&gt;2011-11-23T06:24:09&lt;/shippingDateTime&gt;
+
+      &lt;parties&gt;
+        &lt;sender&gt;
+          &lt;name&gt;Ola Nordmann&lt;/name&gt;
+          &lt;addressLine&gt;Testsvingen 12&lt;/addressLine&gt;
+          &lt;postalCode&gt;0263&lt;/postalCode&gt;
+          &lt;city&gt;OSLO&lt;/city&gt;
+          &lt;countryCode&gt;no&lt;/countryCode&gt;
+          &lt;reference&gt;1234&lt;/reference&gt;
+          &lt;additionalAddressInfo&gt;Hentes p&#229; baksiden etter klokken to&lt;/additionalAddressInfo&gt;
+          &lt;contact&gt;
+            &lt;name&gt;Trond Nordmann&lt;/name&gt;
+            &lt;email&gt;trond@normanntest.no&lt;/email&gt;
+            &lt;phoneNumber&gt;99999999&lt;/phoneNumber&gt;
+          &lt;/contact&gt;
+        &lt;/sender&gt;
+
+        &lt;recipient&gt;
+          &lt;name&gt;Tore Mottaker&lt;/name&gt;
+          &lt;addressLine&gt;Mottakerveien 14&lt;/addressLine&gt;
+          &lt;addressLine2&gt;c/o Tina Mottaker&lt;/addressLine2&gt;
+          &lt;postalCode&gt;0659&lt;/postalCode&gt;
+          &lt;city&gt;OSLO&lt;/city&gt;
+          &lt;countryCode&gt;no&lt;/countryCode&gt;
+          &lt;reference&gt;43242&lt;/reference&gt;
+          &lt;additionalAddressInfo&gt;Bruk ringeklokken&lt;/additionalAddressInfo&gt;
+          &lt;contact&gt;
+            &lt;name&gt;Tore Mottaker&lt;/name&gt;
+            &lt;email&gt;tore@mottakertest.no&lt;/email&gt;
+            &lt;phoneNumber&gt;88888888&lt;/phoneNumber&gt;
+          &lt;/contact&gt;
+        &lt;/recipient&gt;
+      &lt;/parties&gt;
+
+      &lt;product&gt;
+        &lt;id&gt;SERVICEPAKKE&lt;/id&gt;
+        &lt;customerNumber&gt;112-TEST&lt;/customerNumber&gt;
+        &lt;services&gt;
+          &lt;recipientNotification&gt;
+            &lt;email&gt;sender@sender.com&lt;/email&gt;
+            &lt;mobile&gt;777777&lt;/mobile&gt;
+          &lt;/recipientNotification&gt;
+        &lt;/services&gt;
+      &lt;/product&gt;
+
+      &lt;packages&gt;
+        &lt;package correlationId=&quot;123&quot;&gt;
+          &lt;weightInKg&gt;1.1&lt;/weightInKg&gt;
+          &lt;measurements&gt;
+            &lt;heightInCm&gt;10&lt;/heightInCm&gt;
+            &lt;widthInCm&gt;10&lt;/widthInCm&gt;
+            &lt;lengthInCm&gt;10&lt;/lengthInCm&gt;
+          &lt;/measurements&gt;
+        &lt;/package&gt;
+      &lt;/packages&gt;
+
+    &lt;/consignment&gt;
+  &lt;/consignments&gt;
+&lt;/booking&gt;
+        </pre>
+
+
+
+        <br/>
+        <h4>Example response – successful booking:</h4>
+        
+        <pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;booking&gt;
+  &lt;consignments&gt;
+
+    &lt;consignment correlationId=&quot;123456&quot;&gt;
+      &lt;confirmation&gt;
+        &lt;consignmentNumber&gt;7107212131311211&lt;/consignmentNumber&gt;
+        &lt;links&gt;
+          &lt;labels&gt;https://labels.bring.com/booking_labels/2335234234234234.pdf&lt;/labels&gt;
+          &lt;tracking&gt;https://sporing.bring.no/tracking/23423423&lt;/tracking&gt;
+        &lt;/links&gt;
+        &lt;dateAndTimes&gt;
+          &lt;expectedDelivery&gt;2011-11-25T12:00:00&lt;/expectedDelivery&gt;
+        &lt;/dateAndTimes&gt;
+        &lt;packages&gt;
+          &lt;package correlationId=&quot;123&quot;&gt;
+            &lt;packageNumber&gt;3707121021021212&lt;/packageNumber&gt;
+          &lt;/package&gt;
+        &lt;/packages&gt;
+      &lt;/confirmation&gt;
+    &lt;/consignment&gt;
+
+  &lt;/consignments&gt;
+&lt;/booking&gt;
+        </pre>
+
+
+
+        <br/>
+        <h4>Example response – failed booking:</h4>
+        
+        <pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;booking&gt;
+  &lt;consignments&gt;
+
+    &lt;consignment correlationId=&quot;w232432&quot;&gt;
+      &lt;error&gt;
+        &lt;uniqueId&gt;3b473ad0-15c5-11e1-be50-0800200c9a66&lt;/uniqueId&gt;
+        &lt;code&gt;BOOK-INPUT-1&lt;/code&gt;
+        &lt;messages&gt;
+          &lt;message lang=&quot;en&quot;&gt;Package measurements are required for QuickPack. Package index: 3, correlationId: blabla&lt;/message&gt;
+        &lt;/messages&gt;
+      &lt;/error&gt;
+    &lt;/consignment&gt;
+
+  &lt;/consignments&gt;
+&lt;/booking&gt;
+        </pre>
+
+
+
+        <br/>
+        <h4>XML Schema</h4>
+
+        <pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;xs:schema elementFormDefault=&quot;qualified&quot; version=&quot;1.0&quot; targetNamespace=&quot;http://www.bring.no/booking/&quot; xmlns=&quot;http://www.bring.no/booking/&quot; xmlns:tns=&quot;http://www.bring.no/booking/&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+
+  &lt;xs:element name=&quot;bookingRequest&quot; type=&quot;BookingRequestType&quot;/&gt;
+
+  &lt;xs:element name=&quot;bookingResponse&quot; type=&quot;BookingResponseType&quot;/&gt;
+
+  &lt;xs:complexType name=&quot;BookingRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;schemaVersion&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;consignments&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;consignment&quot; type=&quot;ConsignmentRequestType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:all&gt;
+    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ConsignmentRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;shippingDateTime&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;parties&quot; type=&quot;PartiesRequestType&quot;/&gt;
+      &lt;xs:element name=&quot;product&quot; type=&quot;ProductRequestType&quot;/&gt;
+      &lt;xs:element name=&quot;packages&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;package&quot; type=&quot;PackageRequestType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:all&gt;
+    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;PartiesRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;sender&quot; type=&quot;PartyRequestType&quot;/&gt;
+      &lt;xs:element name=&quot;recipient&quot; type=&quot;PartyRequestType&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;PartyRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;addressLine&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;addressLine2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;postalCode&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;countryCode&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;reference&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;additionalAddressInfo&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;contact&quot; type=&quot;ContactRequestType&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ContactRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;phoneNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ProductRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;id&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;customerNumber&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;services&quot; type=&quot;ServicesRequestType&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ServicesRequestType&quot;&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name=&quot;recipientNotification&quot; type=&quot;RecipientNotificationRequestType&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;RecipientNotificationRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;mobile&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;PackageRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;weightInKg&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;goodsDescription&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;measurements&quot; type=&quot;MeasurementsRequestType&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;MeasurementsRequestType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;heightInCm&quot; type=&quot;xs:int&quot;/&gt;
+      &lt;xs:element name=&quot;widthInCm&quot; type=&quot;xs:int&quot;/&gt;
+      &lt;xs:element name=&quot;lengthInCm&quot; type=&quot;xs:int&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;BookingResponseType&quot;&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name=&quot;consignments&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;consignment&quot; type=&quot;ConsignmentResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ConsignmentResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;confirmation&quot; type=&quot;ConfirmationResponseType&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;error&quot; type=&quot;ErrorResponseType&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ConfirmationResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;consignmentNumber&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;productSpecificData&quot; type=&quot;ProductSpecificDataResponseType&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;links&quot; type=&quot;LinksResponseType&quot;/&gt;
+      &lt;xs:element name=&quot;dateAndTimes&quot; type=&quot;DtoDateAndTimesResponseType&quot;/&gt;
+      &lt;xs:element name=&quot;packages&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;package&quot; type=&quot;PackageResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ProductSpecificDataResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;upsShipmentNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;upsTrackingNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;LinksResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;labels&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;tracking&quot; type=&quot;xs:string&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;DtoDateAndTimesResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;earliestPickup&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;expectedDelivery&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;PackageResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;packageNumber&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;productSpecificData&quot; type=&quot;ProductSpecificDataResponseType&quot; minOccurs=&quot;0&quot;/&gt;
+    &lt;/xs:all&gt;
+    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;ErrorResponseType&quot;&gt;
+    &lt;xs:all&gt;
+      &lt;xs:element name=&quot;uniqueId&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;code&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;xs:element name=&quot;messages&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;message&quot; type=&quot;MessageResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
+    &lt;/xs:all&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:complexType name=&quot;MessageResponseType&quot;&gt;
+    &lt;xs:simpleContent&gt;
+      &lt;xs:extension base=&quot;xs:string&quot;&gt;
+        &lt;xs:attribute name=&quot;lang&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
+      &lt;/xs:extension&gt;
+    &lt;/xs:simpleContent&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:schema&gt;
+        </pre>
+
+
+]]>
+    </Content>
+</Article>
