@@ -100,6 +100,14 @@ var menuJsonData =
                             "url":"/learn/postalcode/apireference.html"
                         }
                     ]
+                },
+                {
+                    "title":"Booking API (alpha)",
+                    "menuNodes":[{
+                            "title":"API Reference",
+                            "url":"/learn/booking/api.html"
+                        }
+                    ]
                 }
             ]
         },
