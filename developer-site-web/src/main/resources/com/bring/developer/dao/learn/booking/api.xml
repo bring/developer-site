@@ -63,7 +63,36 @@
           that this requirement excludes the (old) Apache Axis 1.x Web Service client framework.
         </p>
 
-        <h4>Mybring integration</h4>
+
+        <h4>XML/JSON API Content type negotiation</h4>
+
+        <p>
+          The following applies only to the XML/JSON API (and not to the SOAP Web Service endpoint).
+          The XML/JSON API uses two headers to specify request and response format.
+        </p>
+
+        <table>
+          <tr>
+            <th>Header name</th>
+            <th>Possible header values</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+            <td>Content-Type</td>
+            <td>application/xml or application/json</td>
+            <td>This specifies the request format</td>
+          </tr>
+          <tr>
+            <td>Accept</td>
+            <td>application/xml or application/json</td>
+            <td>This specifies the desired response format</td>
+          </tr>
+        </table>
+
+        <br/>
+
+
+        <h4>API Login - Mybring integration</h4>
 
         <p>
           Only users with a mybring user (with attached customer numbers) can use the Booking API.
@@ -140,12 +169,11 @@
           </a>
         </p>
 
-
-        <h4>Example request</h4>
+        <h4>Example request for XML API (must be sent using POST-method)</h4>
 
         <pre class="code">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;booking&gt;
+&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
   &lt;schemaVersion&gt;1&lt;/schemaVersion&gt;
 
   &lt;consignments&gt;
@@ -201,17 +229,17 @@
       &lt;packages&gt;
         &lt;package correlationId=&quot;123&quot;&gt;
           &lt;weightInKg&gt;1.1&lt;/weightInKg&gt;
-          &lt;measurements&gt;
+          &lt;dimensions&gt;
             &lt;heightInCm&gt;10&lt;/heightInCm&gt;
             &lt;widthInCm&gt;10&lt;/widthInCm&gt;
             &lt;lengthInCm&gt;10&lt;/lengthInCm&gt;
-          &lt;/measurements&gt;
+          &lt;/dimensions&gt;
         &lt;/package&gt;
       &lt;/packages&gt;
 
     &lt;/consignment&gt;
   &lt;/consignments&gt;
-&lt;/booking&gt;
+&lt;/bookingRequest&gt;
         </pre>
 
 
@@ -220,30 +248,28 @@
         <h4>Example response – successful booking:</h4>
         
         <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;booking&gt;
-  &lt;consignments&gt;
-
-    &lt;consignment correlationId=&quot;123456&quot;&gt;
-      &lt;confirmation&gt;
-        &lt;consignmentNumber&gt;7107212131311211&lt;/consignmentNumber&gt;
-        &lt;links&gt;
-          &lt;labels&gt;https://labels.bring.com/booking_labels/2335234234234234.pdf&lt;/labels&gt;
-          &lt;tracking&gt;https://sporing.bring.no/tracking/23423423&lt;/tracking&gt;
-        &lt;/links&gt;
-        &lt;dateAndTimes&gt;
-          &lt;expectedDelivery&gt;2011-11-25T12:00:00&lt;/expectedDelivery&gt;
-        &lt;/dateAndTimes&gt;
-        &lt;packages&gt;
-          &lt;package correlationId=&quot;123&quot;&gt;
-            &lt;packageNumber&gt;3707121021021212&lt;/packageNumber&gt;
-          &lt;/package&gt;
-        &lt;/packages&gt;
-      &lt;/confirmation&gt;
-    &lt;/consignment&gt;
-
-  &lt;/consignments&gt;
-&lt;/booking&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+    &lt;consignments&gt;
+        &lt;consignment correlationId=&quot;123456&quot;&gt;
+            &lt;confirmation&gt;
+                &lt;consignmentNumber&gt;70438101268012087&lt;/consignmentNumber&gt;
+                &lt;links&gt;
+                    &lt;labels&gt;http://beta.qa.bring.no/booking/labels/1370?auth-token=a2148be1-8530-4e85-8e57-4e94e0a591f1&lt;/labels&gt;
+                    &lt;tracking&gt;http://sporing.bring.no/api/tracking.xml?q=70438101268012087&lt;/tracking&gt;
+                &lt;/links&gt;
+                &lt;dateAndTimes&gt;
+                    &lt;expectedDelivery&gt;2011-12-09T09:24:59.949+01:00&lt;/expectedDelivery&gt;
+                &lt;/dateAndTimes&gt;
+                &lt;packages&gt;
+                    &lt;package correlationId=&quot;123&quot;&gt;
+                        &lt;packageNumber&gt;370438101268040241&lt;/packageNumber&gt;
+                    &lt;/package&gt;
+                &lt;/packages&gt;
+            &lt;/confirmation&gt;
+        &lt;/consignment&gt;
+    &lt;/consignments&gt;
+&lt;/bookingResponse&gt;
         </pre>
 
 
@@ -253,22 +279,23 @@
         
         <pre class="code">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;booking&gt;
+&lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
   &lt;consignments&gt;
 
     &lt;consignment correlationId=&quot;w232432&quot;&gt;
-      &lt;error&gt;
-        &lt;uniqueId&gt;3b473ad0-15c5-11e1-be50-0800200c9a66&lt;/uniqueId&gt;
-        &lt;code&gt;BOOK-INPUT-1&lt;/code&gt;
-        &lt;messages&gt;
-          &lt;message lang=&quot;en&quot;&gt;Package measurements are required for QuickPack. Package index: 3, correlationId: blabla&lt;/message&gt;
-        &lt;/messages&gt;
-      &lt;/error&gt;
+      &lt;errors&gt;
+        &lt;error&gt;
+          &lt;uniqueId&gt;3b473ad0-15c5-11e1-be50-0800200c9a66&lt;/uniqueId&gt;
+          &lt;code&gt;BOOK-INPUT-1&lt;/code&gt;
+          &lt;messages&gt;
+            &lt;message lang=&quot;en&quot;&gt;Package measurements are required for QuickPack. Package index: 3, correlationId: blabla&lt;/message&gt;
+          &lt;/messages&gt;
+        &lt;/error&gt;
+      &lt;/errors&gt;
     &lt;/consignment&gt;
 
   &lt;/consignments&gt;
-&lt;/booking&gt;
-        </pre>
+&lt;/bookingResponse&gt;        </pre>
 
 
 
@@ -326,7 +353,7 @@
       &lt;xs:element name=&quot;addressLine&quot; type=&quot;xs:string&quot;/&gt;
       &lt;xs:element name=&quot;addressLine2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
       &lt;xs:element name=&quot;postalCode&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;
       &lt;xs:element name=&quot;countryCode&quot; type=&quot;xs:string&quot;/&gt;
       &lt;xs:element name=&quot;reference&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
       &lt;xs:element name=&quot;additionalAddressInfo&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
@@ -367,7 +394,7 @@
     &lt;xs:all&gt;
       &lt;xs:element name=&quot;weightInKg&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot;/&gt;
       &lt;xs:element name=&quot;goodsDescription&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;measurements&quot; type=&quot;MeasurementsRequestType&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;dimensions&quot; type=&quot;MeasurementsRequestType&quot; minOccurs=&quot;0&quot;/&gt;
     &lt;/xs:all&gt;
     &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
   &lt;/xs:complexType&gt;
@@ -395,7 +422,13 @@
   &lt;xs:complexType name=&quot;ConsignmentResponseType&quot;&gt;
     &lt;xs:all&gt;
       &lt;xs:element name=&quot;confirmation&quot; type=&quot;ConfirmationResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;error&quot; type=&quot;ErrorResponseType&quot; minOccurs=&quot;0&quot;/&gt;
+      &lt;xs:element name=&quot;errors&quot; minOccurs=&quot;0&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+            &lt;xs:element name=&quot;error&quot; type=&quot;ErrorResponseType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+      &lt;/xs:element&gt;
     &lt;/xs:all&gt;
     &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
   &lt;/xs:complexType&gt;
