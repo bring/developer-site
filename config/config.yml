@@ -16,7 +16,7 @@ qa:
   restart_command: sh /u01/bring_qa/bin/developer-site.sh stop; sleep 1; sh /u01/bring_qa/bin/developer-site.sh start
   start_command: sh /u01/bring_qa/bin/developer-site.sh start
   stop_command: sh /u01/bring_qa/bin/developer-site.sh stop
-  version_url: http://developer.qa.bring.com/revision.txt
-  healthcheck_url: http://developer.qa.bring.com/bigip.txt
+  version_url: http://developer:developer@developer.qa.bring.com/revision.txt
+  healthcheck_url: http://developer:developer@developer.qa.bring.com/bigip.txt
   rollback: false
   production_environment: false
