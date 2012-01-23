@@ -302,8 +302,8 @@
            bookings.
         </p>
 
-        <h5>Example request header</h5>
-        <pre class="code>
+        <h5>JSON/XML API - Example request header</h5>
+        <pre class="code">
 POST /booking/api/booking HTTP/1.1
 Content-Type: application/xml
 Accept: application/xml
@@ -410,7 +410,7 @@ Content-Length: 2126
 }
         </pre>
 
-        <h5>JSON API: Example response: failed request</h5>
+        <h5>JSON API - Example response: failed request</h5>
         <pre class="code">
 {
     "consignments": [
