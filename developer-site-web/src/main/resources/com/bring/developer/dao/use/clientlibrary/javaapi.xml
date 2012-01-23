@@ -7,8 +7,8 @@
 	</Title>
 	<Description><![CDATA[
 		<p>This library makes it easier for a Java developer to interact with Bring's APIs.</p>
-		<p>It currently supports <a href="/learn/shippingguide/apireference.html">Bring's Shipping
-			Guide API</a> and <a href="/learn/tracking/introduction.html">Bring's Tracking API</a>.</p>
+		<p>It currently supports <a href="../../learn/shipping-guide/documentation/apireference.html">Bring's Shipping
+			Guide API</a> and <a href="../../learn/tracking/apireference.html">Bring's Tracking API</a>.</p>
 	]]></Description>
 	<Person role="author">
 		<Name>Bring Developer</Name>

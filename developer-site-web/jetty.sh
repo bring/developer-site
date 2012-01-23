@@ -1,5 +1,5 @@
 #!/bin/sh
-MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -XX:MaxPermSize=356m -Xmx512m"
+MAVEN_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,address=8003,server=y,suspend=n -XX:MaxPermSize=356m -Xmx512m"
 
 if [ -f /opt/jrebel/jrebel.jar ]; then
   if [ -z "$SKIP_JREBEL" ]; then

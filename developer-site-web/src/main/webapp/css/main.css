@@ -44,8 +44,7 @@ body:before {
     position: relative;
     height: 90px;
 }
-
-.logo {
+.header .logo {
     display: block;
     height: 54px;
     width: 130px;
@@ -53,8 +52,7 @@ body:before {
     left: 50%;
     margin: 0 0 0 -493px;
 }
-
-.logo a {
+.header .logo a {
     display: block;
     width: 100%;
     height: 100%;
