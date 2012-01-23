@@ -145,7 +145,7 @@
           The customer number is added to the product-specification of the request.
         </p>
 
-        <h5>JSON API - customer number</h5>
+        <h4>JSON API - customer number</h4>
         <pre class="code">
 "product": {
     "id": "BEDRIFTSPAKKE",
@@ -153,7 +153,7 @@
     // Etc...
 }
         </pre>
-        <h5>XML API - customer number</h5>
+        <h4>XML API - customer number</h4>
         <pre class="code">
 &lt;product&gt;
     &lt;id&gt;QUICKPACK_DAY_CERTAIN&lt;/id&gt;
@@ -200,7 +200,7 @@
           To use the test mode, you need to set the testIndicator flag on the root node.
         </p>
 
-        <h5>JSON: testIndicator</h5>
+        <h4>JSON: testIndicator</h4>
         <pre class="code">
 {
     "testIndicator": true,
@@ -210,7 +210,7 @@
         </pre>
 
 
-        <h5>XML: testIndicator</h5>
+        <h4>XML: testIndicator</h4>
         <pre class="code">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
@@ -302,7 +302,7 @@
            bookings.
         </p>
 
-        <h5>JSON/XML API - Example request header</h5>
+        <h4>JSON/XML API - Example request header</h4>
         <pre class="code">
 POST /booking/api/booking HTTP/1.1
 Content-Type: application/xml
@@ -379,7 +379,7 @@ Content-Length: 2126
 }
         </pre>
 
-        <h5>JSON API - Example response: succesful request</h5>
+        <h4>JSON API - Example response: succesful request</h4>
         <pre class="code">
 {
     "consignments": [
@@ -410,7 +410,7 @@ Content-Length: 2126
 }
         </pre>
 
-        <h5>JSON API - Example response: failed request</h5>
+        <h4>JSON API - Example response: failed request</h4>
         <pre class="code">
 {
     "consignments": [
