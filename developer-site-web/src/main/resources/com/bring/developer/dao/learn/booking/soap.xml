@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+    <MenuTitle>SOAP API Reference</MenuTitle>
+    <Ingress>
+        The Bring Booking SOAP API is a logged-in service that lets mybring-users (customers of mybring.com) programmatically
+        create a booking by invoking a SOAP Web Service.
+        The API uses the same backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels.
+    </Ingress>
+    <Content>
+<![CDATA[
+        <p>
+          We support several means of integration with the Booking API. For XML or JSON over HTTP, <a href="api.html" alt="XML/JSON API">see this document</a>.
+        </p>
+        <p>
+          WSDL: <a href="https://www.mybring.com/booking/api/ws/booking-v1.wsdl">https://www.mybring.com/booking/api/ws/booking-v1.wsdl</a>
+        </p>
+        <p>
+          Endpoint: <a href="https://www.mybring.com/booking/api/ws">https://www.mybring.com/booking/api/ws</a>
+        </p>
+
+        <p>
+          See the <a href="api.html">JSON/XML API reference</a> for <a href="api.html#authentication">Authentication</a>,
+          <a href="api.html#authorization">Authorization</a>, <a href="api.html#testing">Testing</a>, and
+          <a href="api.html#error-handling">Error handling</a> information.
+        </p>
+
+        <p>
+          The SOAP Body follow the same <a href="api.html#schema">XML Schema Definition (XSD)</a> as the XML API.
+        </p>
+
+        <h4>Sample SOAP request</h4>
+        <pre class="code">
+&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+    &lt;soapenv:Header/&gt;
+    &lt;soapenv:Body&gt;
+		&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
+		  &lt;schemaVersion&gt;1&lt;/schemaVersion&gt;
+		  &lt;consignments&gt;
+		    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
+		      &lt;shippingDateTime&gt;2012-01-23T06:24:09&lt;/shippingDateTime&gt;
+		      &lt;parties&gt;
+		        &lt;sender&gt;
+		          &lt;name&gt;Ola Nordmann&lt;/name&gt;
+		          &lt;addressLine&gt;Testsvingen 12&lt;/addressLine&gt;
+		          &lt;postalCode&gt;0263&lt;/postalCode&gt;
+		          &lt;city&gt;OSLO&lt;/city&gt;
+		          &lt;countryCode&gt;no&lt;/countryCode&gt;
+		          &lt;reference&gt;1234&lt;/reference&gt;
+		          &lt;additionalAddressInfo&gt;Hentes p&#229; baksiden etter klokken to&lt;/additionalAddressInfo&gt;
+		          &lt;contact&gt;
+		            &lt;name&gt;Trond Nordmann&lt;/name&gt;
+		            &lt;email&gt;trond@normanntest.no&lt;/email&gt;
+		            &lt;phoneNumber&gt;99999999&lt;/phoneNumber&gt;
+		          &lt;/contact&gt;
+		        &lt;/sender&gt;
+		        &lt;recipient&gt;
+		          &lt;name&gt;Tore Mottaker&lt;/name&gt;
+		          &lt;addressLine&gt;Mottakerveien 14&lt;/addressLine&gt;
+		          &lt;addressLine2&gt;c/o Tina Mottaker&lt;/addressLine2&gt;
+		          &lt;postalCode&gt;0659&lt;/postalCode&gt;
+		          &lt;city&gt;OSLO&lt;/city&gt;
+		          &lt;countryCode&gt;no&lt;/countryCode&gt;
+		          &lt;reference&gt;43242&lt;/reference&gt;
+		          &lt;additionalAddressInfo&gt;Bruk ringeklokken&lt;/additionalAddressInfo&gt;
+		          &lt;contact&gt;
+		            &lt;name&gt;Tore Mottaker&lt;/name&gt;
+		            &lt;email&gt;tore@mottakertest.no&lt;/email&gt;
+		            &lt;phoneNumber&gt;88888888&lt;/phoneNumber&gt;
+		          &lt;/contact&gt;
+		        &lt;/recipient&gt;
+		      &lt;/parties&gt;
+		      &lt;product&gt;
+		        &lt;id&gt;SERVICEPAKKE&lt;/id&gt;
+		        &lt;customerNumber&gt;PARCELS_NORWAY-00003950870&lt;/customerNumber&gt;
+		        &lt;services&gt;
+		          &lt;recipientNotification&gt;
+		            &lt;email&gt;sender@sender.com&lt;/email&gt;
+		            &lt;mobile&gt;777777&lt;/mobile&gt;
+		          &lt;/recipientNotification&gt;
+		        &lt;/services&gt;
+		      &lt;/product&gt;
+		      &lt;packages&gt;
+		        &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
+		          &lt;weightInKg&gt;1.1&lt;/weightInKg&gt;
+		          &lt;dimensions&gt;
+		            &lt;heightInCm&gt;10&lt;/heightInCm&gt;
+		            &lt;widthInCm&gt;10&lt;/widthInCm&gt;
+		            &lt;lengthInCm&gt;10&lt;/lengthInCm&gt;
+		          &lt;/dimensions&gt;
+		        &lt;/package&gt;
+		      &lt;/packages&gt;
+		    &lt;/consignment&gt;
+		  &lt;/consignments&gt;
+		&lt;/bookingRequest&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+        </pre>
+
+]]>
+    </Content>
+</Article>

@@ -102,11 +102,16 @@ var menuJsonData =
                     ]
                 },
                 {
-                    "title":"Booking API (alpha)",
-                    "menuNodes":[{
-                            "title":"API Reference",
-                            "url":"/learn/booking/api.html"
-                        }
+                    "title":"Booking API (beta)",
+                    "menuNodes":[
+                      {
+                        "title":"JSON/XML API Reference",
+                        "url":"/learn/booking/api.html"
+                      },
+                      {
+                        "title":"SOAP WS API Reference",
+                        "url":"/learn/booking/soap.html"
+                      }
                     ]
                 }
             ]
