@@ -20,7 +20,7 @@ body:before {
 
 .wrapper { /* Contains everything besides the footer */
 	min-height: 100%;
-	
+
 	/* css3 */
     -moz-box-shadow: inset 0px 2px 4px #999;
     -webkit-box-shadow: inset 0px 2px 4px #999;
@@ -42,7 +42,7 @@ body:before {
 
 .header {
     position: relative;
-    height: 90px;
+    height: 130px;
 }
 .header .logo {
     display: block;
@@ -161,7 +161,7 @@ body:before {
     padding-top: 40px;
     background-color: #afb0b2;
     position: relative;
-    margin-top: -150px; 
+    margin-top: -150px;
     height: 120px;
     clear: both;
 
