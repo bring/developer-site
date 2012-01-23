@@ -137,8 +137,11 @@
         <p>
           In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings.
           The authorization is currently handled with customer numbers on a per specialist basis.
-          We are currently developing a simpler API to obtain your different customer numbers, for now, please consult
-          the development team (developer@bring.com) to obtain your customer numbers.
+        </p>
+
+        <p>
+          We are currently developing a simpler API to obtain your different customer numbers, it is currently available
+          here (Alpha): <a href="https://www.mybring.com/booking/api/customers" alt="Customer numbers API">Customer numbers API</a>.
         </p>
 
         <p>
