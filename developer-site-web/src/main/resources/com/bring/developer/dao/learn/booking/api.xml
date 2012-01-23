@@ -125,11 +125,11 @@
         </table>
 
         <br/>
-        
+
         <p>
           To become a mybring customer, <a href="http://www.mybring.com/useradmin/open/signup/new">signup to mybring</a>.
           The API key is currently only visible to organization administrators. Please contact the development team
-          (bringdev@gmail.com) to receive a Beta API-key.
+          (developer@bring.com) to receive a Beta API-key.
         </p>
 
         <h4><a name="authorization">Authorization - By product and specialist</a></h4>
@@ -138,7 +138,7 @@
           In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings.
           The authorization is currently handled with customer numbers on a per specialist basis.
           We are currently developing a simpler API to obtain your different customer numbers, for now, please consult
-          the development team (bringdev@gmail.com) to obtain your customer numbers.
+          the development team (developer@bring.com) to obtain your customer numbers.
         </p>
 
         <p>
@@ -590,7 +590,7 @@ Content-Length: 2126
 
         <br/>
         <h4>XML API - Example response: successful booking</h4>
-        
+
         <pre class="code">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
@@ -618,7 +618,7 @@ Content-Length: 2126
 
         <br/>
         <h4>XML API - Example response: failed booking</h4>
-        
+
         <pre class="code">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
