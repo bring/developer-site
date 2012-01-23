@@ -2,20 +2,25 @@
 <Article>
     <MenuTitle>API Reference</MenuTitle>
     <Ingress>
-        The Bring Booking API is a logged-in service that lets mybring-users (users of mybring.com) programmatically
+        The Bring Booking API is a logged-in service that lets mybring-users (customers of mybring.com) programmatically
         create a booking by invoking a Web Service or by posting XML/JSON over HTTP.
         The API uses the same backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels.
     </Ingress>
     <Content>
 <![CDATA[
         <p>
+          We support several means of integration with the Booking API. For XML or JSON over HTTP, see this document.
+          For the documentation for the SOAP WebService, see <a href="soap.html" alt="SOAP WebService">SOAP</a>.
+        </p>
+
+        <p>
           Currently supported products include Bring Parcel products (domestic Norway), Courier Services
           for Nordic cities and the QuickPack product line for international express shipments.
         </p>
 
         <p>
-          Bring Booking uses Bring Fraktguide as source for price and availability for the different products,
-          and clients of the Booking API can use Fraktguiden for getting the list price and checking
+          Bring Booking uses Bring Fraktguide as source for price and availability for the different products.
+          We advise clients of the Booking API to use Fraktguiden for getting the list price and checking
           availability before sending a booking request.
         </p>
 
@@ -27,14 +32,14 @@
 
         <p>
           The API is currently under development and will have multiple releases, each extending the available
-          functionality and products. A test version of the API will be made available ultimo 2011 and a final
-          first version of the API will be available early in 2012.
+          functionality and products. An early beta-version of the API is available now as of january 2012, this
+          beta will lead to a final stable V1 of the API will be available during Q1 2012.
         </p>
 
         <h4>Releases</h4>
 
         <p>
-          V1: Initial version supporting a single consignment with a single package. Planned for early 2012.
+          V1: Initial version supporting a single consignment with a single package. Beta launched january 2012.
         </p>
 
         <h2>Technical information</h2>
@@ -92,11 +97,13 @@
         <br/>
 
 
-        <h4>API Login - Mybring integration</h4>
+        <h4>Authentication - API Login with Mybring</h4>
 
         <p>
-          Only users with a mybring user (with attached customer numbers) can use the Booking API.
-          In the Booking Web Service / XML API request, you must set two HTTP headers to access the API:
+          We use the mybring authentication framework. This is a proprietary single-sign on solution that uses two
+          HTTP Headers for authentication to the API. Only users with a mybring user (with attached customer numbers)
+          can use the Booking API. In the Booking Web Service / XML API request, you must set two HTTP headers to
+          access the API:
         </p>
 
         <table>
@@ -107,21 +114,103 @@
           </tr>
           <tr>
             <td>X-MyBring-API-Uid</td>
-            <td>test@testesen.com</td>
-            <td>This is the mybring login ID</td>
+            <td>booking@customer.com</td>
+            <td>This is the mybring login ID.</td>
           </tr>
           <tr>
             <td>X-MyBring-API-Key</td>
             <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
-            <td>This is the API key of the mybring user</td>
+            <td>This is the API key of the mybring user.</td>
           </tr>
         </table>
 
         <br/>
         
         <p>
-          Please contact the development team (bringdev@gmail.com) for how to get an API key for mybring.
+          To become a mybring customer, <a href="http://www.mybring.com/useradmin/open/signup/new">signup to mybring</a>.
+          The API key is currently only visible to organization administrators. Please contact the development team
+          (bringdev@gmail.com) to receive a Beta API-key.
         </p>
+
+        <h4>Authorization</h4>
+
+        <p>
+          In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings.
+          The authorization is currently handled with customer numbers on a per specialist basis.
+          We are currently developing a simpler API to obtain your different customer numbers, for now, please consult
+          the development team (bringdev@gmail.com) to obtain your customer numbers.
+        </p>
+
+        <p>
+          The customer number is added to the product-specification of the request.
+
+          <strong>Example XML:</strong>
+          <pre class="code">
+  &lt;product&gt;
+      &lt;id&gt;QUICKPACK_DAY_CERTAIN&lt;/id&gt;
+      &lt;customerNumber&gt;EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66&lt;/customerNumber&gt;
+      &lt;!-- Etc... --&gt;
+  &lt;/product&gt;
+          </pre>
+
+          <strong>Example JSON:</strong>
+          <pre class="code">
+  "product": {
+      "id": "BEDRIFTSPAKKE",
+      "customerNumber": "PARCELS_NORWAY-10001123123",
+      // Etc...
+  }
+          </pre>
+
+          <p>
+            The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
+            Bring Express-products, we use a UUID to identify users.
+          </p>
+
+          <table>
+            <tr>
+              <th>Specialist</th>
+              <th>Example products</th>
+              <th>Example customerNumber</th>
+            </tr>
+            <tr>
+              <td>Bring Parcels, Norway</td>
+              <td>BEDRIFTSPAKKE, PA_DOREN, EKSPRESS09</td>
+              <td>PARCELS_NORWAY-10001123123</td>
+            </tr>
+            <tr>
+              <td>Bring Express, Norway</td>
+              <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
+              <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
+            </tr>
+            <tr>
+              <td>Bring Express, Sweden</td>
+              <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
+              <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
+            </tr>
+          </table>
+        </p>
+
+        <h4>TESTING - Important Information!</h4>
+
+        <p>
+          This service is currently only live. It will send actual production orders unless it is set to testing mode.
+        </p>
+        <p>
+          To use the test mode, you need to set the testIndicator flag on the root node.
+        </p>
+        <h5>XML: testIndicator</h5>
+        <pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
+    ...
+<&lt;/bookingRequest&gt;
+        </pre>
+        <h5>JSON: testIndicator</h5>
+        <pre class="code">
+        </pre>
+
+
 
         <h4>Data structure</h4>
 
@@ -144,7 +233,7 @@
         <table>
           <tr>
             <td>uniqueId</td>
-            <td>A unique log ID that can be used as a reference for the error</td>
+            <td>A unique log ID (UUID) that can be used as a reference for the error</td>
           </tr>
           <tr>
             <td>code</td>
@@ -162,25 +251,82 @@
         <br/>
 
         <p>
-          The enumeration of error codes have not yet been established.
-          It will probably be similar to the Bring Fraktguide error codes:
-          <a href="http://developer.bring.com/learn/shipping-guide/information/errorhandling.html">
-            http://developer.bring.com/learn/shipping-guide/information/errorhandling.html
-          </a>
+          The enumeration of error codes for version 1 (beta) is currently as follows:
         </p>
+
+        <table>
+          <tr><th>Error code</th><th>Example error message</th></tr>
+          <tr><td>BOOK-INPUT-001</td><td>Bad request</td></tr>
+          <tr><td>BOOK-INPUT-002</td><td>Weight is required</td></tr>
+          <tr><td>BOOK-INPUT-003</td><td>Schema version must be present</td></tr>
+          <tr><td>BOOK-INPUT-004</td><td>At least one consignment must be specified</td></tr>
+          <tr><td>BOOK-INPUT-005</td><td>Multiple consignments in one booking is not supported</td></tr>
+          <tr><td>BOOK-INPUT-006</td><td>Sender must be specified</td></tr>
+          <tr><td>BOOK-INPUT-007</td><td>Recipient must be specified</td></tr>
+          <tr><td>BOOK-INPUT-008</td><td>Product must be set</td></tr>
+          <tr><td>BOOK-INPUT-009</td><td>Package must be specified</td></tr>
+          <tr><td>BOOK-INPUT-011</td><td>Multiple packages in one booking is not supported</td></tr>
+          <tr><td>BOOK-INPUT-012</td><td>Shipping date and time must be provided</td></tr>
+          <tr><td>BOOK-INPUT-013</td><td>Package dimensions must be provided</td></tr>
+          <tr><td>BOOK-INPUT-014</td><td>Name must be provided</td></tr>
+          <tr><td>BOOK-INPUT-015</td><td>Address must be provided</td></tr>
+          <tr><td>BOOK-INPUT-016</td><td>City must be provided</td></tr>
+          <tr><td>BOOK-INPUT-017</td><td>ISO Country code must be provided</td></tr>
+          <tr><td>BOOK-INPUT-018</td><td>Product ID must be provided</td></tr>
+          <tr><td>BOOK-INPUT-019</td><td>Customer number must be provided</td></tr>
+          <tr><td>BOOK-INPUT-020</td><td>Invalid product ID</td></tr>
+          <tr><td>BOOK-INPUT-021</td><td>Invalid customer number</td></tr>
+          <tr><td>BOOK-INPUT-022</td><td>Illegal product for country</td></tr>
+          <tr><td>BOOK-INPUT-023</td><td>The shipment is to big to send with the given product</td></tr>
+          <tr><td>BOOK-INPUT-024</td><td>The product is not available between the given addresses (outside coverage)</td></tr>
+          <tr><td>BOOK-INPUT-025</td><td>The product is not available between the given countries</td></tr>
+          <tr><td>BOOK-INPUT-027</td><td>Failed because of product specific requirements</td></tr>
+          <tr><td>BOOK-INPUT-028</td><td>Invalid country code</td></tr>
+          <tr><td>BOOK-AUTHORIZATION-001</td><td>Your user is not authorized to perform this action</td></tr>
+          <tr><td>BOOK-VALIDATION-001</td><td>Unexpected business validation rule failure</td></tr>
+          <tr><td>BOOK-INTERNAL-001</td><td>An unexpected error occured</td></tr>
+          <tr><td>BOOK-INTERNAL-002</td><td>A required external service is unavailable</td></tr>
+        </table>
+
+        <h3>JSON and XML Examples</h3>
+
+        <p>
+          All requests for the API must include the aforementioned authentication headers.
+        </p>
+
+        <h5>Example request header</h5>
+        <pre class="code>
+POST /booking/api/booking HTTP/1.1
+Content-Type: application/xml
+Accept: application/xml
+X-MyBring-API-Uid: oc@java.no
+X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
+User-Agent: oc-rest-cli/0.1.1-235dff
+Host: www.mybring.com
+Connection: keep-alive
+Content-Length: 2126
+        </pre>
+
+        <h4>Example request for JSON API (must be sent using POST-method)</h4>
+
+        <pre class="code">
+
+        </pre>
 
         <h4>Example request for XML API (must be sent using POST-method)</h4>
 
+        <h5>Example request</h5>
+
         <pre class="code">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
   &lt;schemaVersion&gt;1&lt;/schemaVersion&gt;
 
   &lt;consignments&gt;
 
-    &lt;consignment correlationId=&quot;123456&quot;&gt;
+    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
 
-      &lt;shippingDateTime&gt;2011-11-23T06:24:09&lt;/shippingDateTime&gt;
+      &lt;shippingDateTime&gt;2012-01-23T06:24:09&lt;/shippingDateTime&gt;
 
       &lt;parties&gt;
         &lt;sender&gt;
@@ -217,7 +363,7 @@
 
       &lt;product&gt;
         &lt;id&gt;SERVICEPAKKE&lt;/id&gt;
-        &lt;customerNumber&gt;112-TEST&lt;/customerNumber&gt;
+        &lt;customerNumber&gt;PARCELS_NORWAY-10001234123&lt;/customerNumber&gt;
         &lt;services&gt;
           &lt;recipientNotification&gt;
             &lt;email&gt;sender@sender.com&lt;/email&gt;
@@ -227,7 +373,7 @@
       &lt;/product&gt;
 
       &lt;packages&gt;
-        &lt;package correlationId=&quot;123&quot;&gt;
+        &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
           &lt;weightInKg&gt;1.1&lt;/weightInKg&gt;
           &lt;dimensions&gt;
             &lt;heightInCm&gt;10&lt;/heightInCm&gt;
@@ -251,7 +397,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
 &lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
     &lt;consignments&gt;
-        &lt;consignment correlationId=&quot;123456&quot;&gt;
+        &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
             &lt;confirmation&gt;
                 &lt;consignmentNumber&gt;70438101268012087&lt;/consignmentNumber&gt;
                 &lt;links&gt;
@@ -262,7 +408,7 @@
                     &lt;expectedDelivery&gt;2011-12-09T09:24:59.949+01:00&lt;/expectedDelivery&gt;
                 &lt;/dateAndTimes&gt;
                 &lt;packages&gt;
-                    &lt;package correlationId=&quot;123&quot;&gt;
+                    &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
                         &lt;packageNumber&gt;370438101268040241&lt;/packageNumber&gt;
                     &lt;/package&gt;
                 &lt;/packages&gt;
@@ -272,8 +418,6 @@
 &lt;/bookingResponse&gt;
         </pre>
 
-
-
         <br/>
         <h4>Example response – failed booking:</h4>
         
@@ -282,21 +426,21 @@
 &lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
   &lt;consignments&gt;
 
-    &lt;consignment correlationId=&quot;w232432&quot;&gt;
+    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
       &lt;errors&gt;
         &lt;error&gt;
           &lt;uniqueId&gt;3b473ad0-15c5-11e1-be50-0800200c9a66&lt;/uniqueId&gt;
           &lt;code&gt;BOOK-INPUT-1&lt;/code&gt;
           &lt;messages&gt;
-            &lt;message lang=&quot;en&quot;&gt;Package measurements are required for QuickPack. Package index: 3, correlationId: blabla&lt;/message&gt;
+            &lt;message lang=&quot;en&quot;&gt;Package measurements are required for QuickPack. Package index: 3, correlationId: PACKAGE-123&lt;/message&gt;
           &lt;/messages&gt;
         &lt;/error&gt;
       &lt;/errors&gt;
     &lt;/consignment&gt;
 
   &lt;/consignments&gt;
-&lt;/bookingResponse&gt;        </pre>
-
+&lt;/bookingResponse&gt;
+        </pre>
 
 
         <br/>
@@ -501,7 +645,6 @@
   &lt;/xs:complexType&gt;
 &lt;/xs:schema&gt;
         </pre>
-
 
 ]]>
     </Content>
