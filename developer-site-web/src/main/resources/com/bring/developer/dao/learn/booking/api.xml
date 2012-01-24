@@ -148,7 +148,7 @@
         <h4>JSON API - customer number</h4>
         <pre class="code">
 "product": {
-    "id": "BEDRIFTSPAKKE",
+    "id": "BPAKKE_DOR-DOR",
     "customerNumber": "PARCELS_NORWAY-10001123123",
     // Etc...
 }
@@ -176,7 +176,7 @@
           </tr>
           <tr>
             <td>Bring Parcels, Norway</td>
-            <td>BEDRIFTSPAKKE, PA_DOREN, EKSPRESS09</td>
+            <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
             <td>PARCELS_NORWAY-10001123123</td>
           </tr>
           <tr>
