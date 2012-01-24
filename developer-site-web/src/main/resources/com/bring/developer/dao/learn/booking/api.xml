@@ -44,6 +44,10 @@
 
         <h2>Technical information</h2>
 
+        <p>
+          XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+        </p>
+
         <h4>Lables and EDI</h4>
 
         <p>

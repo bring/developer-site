@@ -12,7 +12,10 @@
           We support several means of integration with the Booking API. For XML or JSON over HTTP, <a href="api.html" alt="XML/JSON API">see this document</a>.
         </p>
         <p>
-          WSDL: <a href="https://www.mybring.com/booking/api/ws/booking-v1.wsdl">https://www.mybring.com/booking/api/ws/booking-v1.wsdl</a>
+          WSDL (must be logged in to mybring before downloading): <a href="https://www.mybring.com/booking/api/ws/booking-v1.wsdl">https://www.mybring.com/booking/api/ws/booking-v1.wsdl</a>
+        </p>
+        <p>
+          XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
         </p>
         <p>
           Endpoint: <a href="https://www.mybring.com/booking/api/ws">https://www.mybring.com/booking/api/ws</a>
