@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Pack type="widget">
+    <Handle>
+        prestashopfraktpriser
+    </Handle>
+	<Title>
+		Prestashop - Fraktguide
+	</Title>
+	<Description><![CDATA[
+		<p>This Prestashop module adds the possibility of letting users pick their preferred shipping
+			method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery
+			times and product descriptions.</p>
+		<p>More information in the
+			<a href="https://github.com/nilsga/prestashop-fraktguide">
+			GitHub repository</a> (Norsk).</p>
+	]]></Description>
+	<Person role="author">
+		<Name>Nils-Helge Garli Hegvik</Name>
+		<Company></Company>
+		<Email>post@hegvikconsulting.no</Email>
+		<Url>http://www.lånekalkulatoren.no/</Url>
+	</Person>
+	<Install>
+		<Step><![CDATA[
+			<p>Please follow instruction on the <a href="https://github.com/nilsga/prestashop-fraktguide">
+			GitHub repository</a></p>
+		]]></Step>
+	</Install>
+	<Repository>
+        https://github.com/nilsga/prestashop-fraktguide
+	</Repository>
+	<Download>
+        https://github.com/nilsga/prestashop-fraktguide
+	</Download>
+    <Media>
+        <File>
+            customerexp.png
+        </File>
+    </Media>
+    <Media>
+        <File>
+            config1.png
+        </File>
+    </Media>
+    <Media>
+        <File>
+            config2.png
+        </File>
+    </Media>
+    <Media>
+        <File>
+            install.png
+        </File>
+    </Media>
+
+	<Media role="preview">
+		<File>
+            customerexp.png
+		</File>
+	</Media>
+</Pack>
