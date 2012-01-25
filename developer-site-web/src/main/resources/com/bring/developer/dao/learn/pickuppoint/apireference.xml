@@ -172,7 +172,7 @@
     </Parameter>
     <Parameter>
         <Title>
-            Lookup single delivery place by id (new functionality available shortly)
+            Lookup single delivery place by id
         </Title>
         <Description><![CDATA[
             <p>Example below: Delivery location with id 121110</p>

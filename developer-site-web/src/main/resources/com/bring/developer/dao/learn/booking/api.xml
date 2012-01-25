@@ -44,6 +44,10 @@
 
         <h2>Technical information</h2>
 
+        <p>
+          XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+        </p>
+
         <h4>Lables and EDI</h4>
 
         <p>
@@ -153,7 +157,7 @@
         <h4>JSON API - customer number</h4>
         <pre class="code">
 "product": {
-    "id": "BEDRIFTSPAKKE",
+    "id": "BPAKKE_DOR-DOR",
     "customerNumber": "PARCELS_NORWAY-10001123123",
     // Etc...
 }
@@ -181,7 +185,7 @@
           </tr>
           <tr>
             <td>Bring Parcels, Norway</td>
-            <td>BEDRIFTSPAKKE, PA_DOREN, EKSPRESS09</td>
+            <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
             <td>PARCELS_NORWAY-10001123123</td>
           </tr>
           <tr>
