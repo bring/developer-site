@@ -141,29 +141,35 @@
         <p>
           In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings.
           The authorization is currently handled with customer numbers on a per specialist basis.
-          We are currently developing a simpler API to obtain your different customer numbers, for now, please consult
-          the development team (developer@bring.com) to obtain your customer numbers.
         </p>
 
+        <h4><a name="customersApi">Customer numbers API (JSON / XML)</a></h4>
         <p>
-          The customer number is added to the product-specification of the request.
+          To perform a booking, you must specify which customer number to use.
+          For your convenience, there is an API for getting the customer numbers of your mybring user.
+          To get the customers you have access to, perform a GET to this URL:<br/>
+          <a href="http://www.mybring.com/booking/api/customers">http://www.mybring.com/booking/api/customers</a>
         </p>
 
-        <h4>JSON API - customer number</h4>
+        <h4>Example response - Customer number API (XML)</h4>
         <pre class="code">
-"product": {
-    "id": "BPAKKE_DOR-DOR",
-    "customerNumber": "PARCELS_NORWAY-10001123123",
-    // Etc...
-}
-        </pre>
-        <h4>XML API - customer number</h4>
-        <pre class="code">
-&lt;product&gt;
-    &lt;id&gt;QUICKPACK_DAY_CERTAIN&lt;/id&gt;
-    &lt;customerNumber&gt;EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66&lt;/customerNumber&gt;
-    &lt;!-- Etc... --&gt;
-&lt;/product&gt;
+&lt;customersResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+    &lt;customers&gt;
+        &lt;customer&gt;
+            &lt;name&gt;A/S TEST (00001234567)&lt;/name&gt;
+            &lt;customerNumber&gt;PARCELS_NORWAY-00001234567&lt;/customerNumber&gt;
+            &lt;countryCode&gt;NO&lt;/countryCode&gt;
+            &lt;products&gt;
+
+                &lt;product&gt;SERVICEPAKKE&lt;/product&gt;
+                &lt;product&gt;EKSPRESS09&lt;/product&gt;
+                &lt;product&gt;BPAKKE_DOR-DOR&lt;/product&gt;
+                &lt;product&gt;PA_DOREN&lt;/product&gt;
+            &lt;/products&gt;
+        &lt;/customer&gt;
+        ...
+    &lt;/customers&gt;
+&lt;/customersResponse&gt;
         </pre>
 
 
@@ -198,7 +204,7 @@
         <h4><a name="testing">Testing - Important Information reguarding test requests</a></h4>
 
         <p>
-          This service is currently only live. It will send actual production orders unless it is set to testing mode.
+          This service will send actual production orders unless it is set to testing mode.
         </p>
         <p>
           To use the test mode, you need to set the testIndicator flag on the root node.
@@ -644,209 +650,6 @@ Content-Length: 2126
 &lt;/bookingResponse&gt;
         </pre>
 
-
-        <br/>
-        <h4><a name="schema">XML Schema Definition (XSD)</a></h4>
-
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;xs:schema elementFormDefault=&quot;qualified&quot; version=&quot;1.0&quot; targetNamespace=&quot;http://www.bring.no/booking/&quot; xmlns=&quot;http://www.bring.no/booking/&quot; xmlns:tns=&quot;http://www.bring.no/booking/&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-
-  &lt;xs:element name=&quot;bookingRequest&quot; type=&quot;BookingRequestType&quot;/&gt;
-
-  &lt;xs:element name=&quot;bookingResponse&quot; type=&quot;BookingResponseType&quot;/&gt;
-
-  &lt;xs:complexType name=&quot;BookingRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;schemaVersion&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;consignments&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;consignment&quot; type=&quot;ConsignmentRequestType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ConsignmentRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;shippingDateTime&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;parties&quot; type=&quot;PartiesRequestType&quot;/&gt;
-      &lt;xs:element name=&quot;product&quot; type=&quot;ProductRequestType&quot;/&gt;
-      &lt;xs:element name=&quot;packages&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;package&quot; type=&quot;PackageRequestType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PartiesRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;sender&quot; type=&quot;PartyRequestType&quot;/&gt;
-      &lt;xs:element name=&quot;recipient&quot; type=&quot;PartyRequestType&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PartyRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;addressLine&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;addressLine2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;postalCode&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;countryCode&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;reference&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;additionalAddressInfo&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;contact&quot; type=&quot;ContactRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ContactRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;phoneNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ProductRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;id&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;customerNumber&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;services&quot; type=&quot;ServicesRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ServicesRequestType&quot;&gt;
-    &lt;xs:sequence&gt;
-      &lt;xs:element name=&quot;recipientNotification&quot; type=&quot;RecipientNotificationRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:sequence&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;RecipientNotificationRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;mobile&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PackageRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;weightInKg&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;goodsDescription&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;dimensions&quot; type=&quot;MeasurementsRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;MeasurementsRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;heightInCm&quot; type=&quot;xs:int&quot;/&gt;
-      &lt;xs:element name=&quot;widthInCm&quot; type=&quot;xs:int&quot;/&gt;
-      &lt;xs:element name=&quot;lengthInCm&quot; type=&quot;xs:int&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;BookingResponseType&quot;&gt;
-    &lt;xs:sequence&gt;
-      &lt;xs:element name=&quot;consignments&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;consignment&quot; type=&quot;ConsignmentResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ConsignmentResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;confirmation&quot; type=&quot;ConfirmationResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;errors&quot; minOccurs=&quot;0&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;error&quot; type=&quot;ErrorResponseType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ConfirmationResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;consignmentNumber&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;productSpecificData&quot; type=&quot;ProductSpecificDataResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;links&quot; type=&quot;LinksResponseType&quot;/&gt;
-      &lt;xs:element name=&quot;dateAndTimes&quot; type=&quot;DtoDateAndTimesResponseType&quot;/&gt;
-      &lt;xs:element name=&quot;packages&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;package&quot; type=&quot;PackageResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ProductSpecificDataResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;upsShipmentNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;upsTrackingNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;LinksResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;labels&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;tracking&quot; type=&quot;xs:string&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;DtoDateAndTimesResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;earliestPickup&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;expectedDelivery&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PackageResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;packageNumber&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;productSpecificData&quot; type=&quot;ProductSpecificDataResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ErrorResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;uniqueId&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;code&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;messages&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;message&quot; type=&quot;MessageResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;MessageResponseType&quot;&gt;
-    &lt;xs:simpleContent&gt;
-      &lt;xs:extension base=&quot;xs:string&quot;&gt;
-        &lt;xs:attribute name=&quot;lang&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
-      &lt;/xs:extension&gt;
-    &lt;/xs:simpleContent&gt;
-  &lt;/xs:complexType&gt;
-&lt;/xs:schema&gt;
-        </pre>
 
 ]]>
   </Content>
