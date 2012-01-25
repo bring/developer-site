@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "NB! Developer site AND Fraktguiden (jetty) must be started at localhost!"
 echo "Running test......."
 echo
 

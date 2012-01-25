@@ -1,6 +1,4 @@
-var statisticsUrl = (("https:" == document.location.protocol) ? "https://s.yimg.com/mi/ywa.js" : "http://d.yimg.com/mi/eu/ywa.js");
-
-$.getScript(statisticsUrl, function() {
+$.getScript("http://d.yimg.com/mi/eu/ywa.js", function() {
     var YWATracker = YWA.getTracker(YWATrackerId);
     YWATracker.setDocumentGroup('Developer');
     YWATracker.setCF(01, '');

@@ -66,14 +66,15 @@ var menuJsonData =
                 },
                 {
                     "title":"Tracking API",
-                    "menuNodes":[{
-                            "title":"Examples",
-                            "url":"/learn/tracking/examples.html"
-                        },
-                        {
-                            "title":"API Reference",
-                            "url":"/learn/tracking/apireference.html"
-                        }
+                    "menuNodes":[
+                      {
+                          "title":"API Reference",
+                          "url":"/learn/tracking/apireference.html"
+                      },
+                      {
+                          "title":"Examples",
+                          "url":"/learn/tracking/examples.html"
+                      }
                     ]
                 },
                 {
@@ -98,6 +99,19 @@ var menuJsonData =
                             "title":"API Reference",
                             "url":"/learn/postalcode/apireference.html"
                         }
+                    ]
+                },
+                {
+                    "title":"Booking API (beta)",
+                    "menuNodes":[
+                      {
+                        "title":"JSON/XML API Reference",
+                        "url":"/learn/booking/api.html"
+                      },
+                      {
+                        "title":"SOAP WS API Reference",
+                        "url":"/learn/booking/soap.html"
+                      }
                     ]
                 }
             ]

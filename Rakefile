@@ -173,13 +173,13 @@ class DeployHelper < Bundler::GemHelper
   def local_jetty_init(app_env = 'dev')
     ENV['BOOKING_ROOT_DIR'] = "#{File.dirname(__FILE__)}"
     system("mvn -o compile test-compile -f #{File.dirname(__FILE__)}/pom.xml")
-    maven_opts = "-Xdebug -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n -XX:MaxPermSize=512m -Xms256m -Xmx768m"
+    maven_opts = "-Xdebug -Xrunjdwp:transport=dt_socket,address=8295,server=y,suspend=n -XX:MaxPermSize=512m -Xms256m -Xmx768m"
     jrebel_jar = "#{ENV['JREBEL_HOME']}/jrebel.jar"
     if File.exist?(jrebel_jar) and ENV['JREBEL']
       maven_opts = "#{maven_opts} -noverify -javaagent:#{jrebel_jar} -Drebel.velocity_plugin=true -Drebel.log4j-plugin=true -Drebel.jackson_plugin=true -XX:+UseParallelGC -XX:+CMSClassUnloadingEnabled"
     end
     ENV['MAVEN_OPTS'] = maven_opts
-    exec("mvn -o jetty:run -f #{File.dirname(__FILE__)}/developer-site-web/pom.xml -Djetty.port=8090 -Djetty.stopPort=10001 -DCONSTRETTO_TAGS=#{app_env} -Djetty.scanIntervalSeconds=5 -Dnet.jawr.debug.on=true")
+    exec("mvn -o jetty:run -f #{File.dirname(__FILE__)}/developer-site-web/pom.xml -Djetty.port=8082 -Djetty.stopPort=10341 -DCONSTRETTO_TAGS=#{app_env} -Djetty.scanIntervalSeconds=5 -Dnet.jawr.debug.on=true")
     Bundler.ui.confirm "Aye."
   end
 

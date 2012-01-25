@@ -73,13 +73,54 @@
     </Product>
 
     <Product note="3">
-        <Name>QuickPack</Name>
+        <Name>QuickPack SameDay</Name>
         <Code>QUICKPACK_SAMEDAY</Code>
         <CodeLink>/products/QUICKPACK_SAMEDAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
         <Price>1</Price>
         <PriceLink>/products/QUICKPACK_SAMEDAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
         <ExpectedDelivery>1</ExpectedDelivery>
         <ExpectedDeliveryLink>/products/QUICKPACK_SAMEDAY/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
+    </Product>
+
+    <Product>
+      <Name>Quickpack Over Night 0900</Name>
+      <Code>QUICKPACK_OVER_NIGHT_0900</Code>
+      <CodeLink>/products/QUICKPACK_OVER_NIGHT_0900/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+      <Price>1</Price>
+      <PriceLink>/products/QUICKPACK_OVER_NIGHT_0900/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+      <ExpectedDelivery>1</ExpectedDelivery>
+      <ExpectedDeliveryLink>/products/QUICKPACK_OVER_NIGHT_0900/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
+    </Product>
+
+    <Product>
+      <Name>Quickpack Over Night 1200</Name>
+      <Code>QUICKPACK_OVER_NIGHT_1200</Code>
+      <CodeLink>/products/QUICKPACK_OVER_NIGHT_1200/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+      <Price>1</Price>
+      <PriceLink>/products/QUICKPACK_OVER_NIGHT_1200/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+      <ExpectedDelivery>1</ExpectedDelivery>
+      <ExpectedDeliveryLink>/products/QUICKPACK_OVER_NIGHT_1200/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
+    </Product>
+
+    <Product>
+      <Name>Quickpack Day Certain</Name>
+      <Code>QUICKPACK_DAY_CERTAIN</Code>
+      <CodeLink>/products/QUICKPACK_DAY_CERTAIN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+      <Price>1</Price>
+      <PriceLink>/products/QUICKPACK_DAY_CERTAIN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+      <ExpectedDelivery>1</ExpectedDelivery>
+      <ExpectedDeliveryLink>/products/QUICKPACK_DAY_CERTAIN/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
+    </Product>
+
+
+    <Product>
+        <Name>Quickpack Express Economy</Name>
+        <Code>QUICKPACK_EXPRESS_ECONOMY</Code>
+        <CodeLink>/products/QUICKPACK_EXPRESS_ECONOMY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</CodeLink>
+        <Price>1</Price>
+        <PriceLink>/products/QUICKPACK_EXPRESS_ECONOMY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</PriceLink>
+        <ExpectedDelivery>1</ExpectedDelivery>
+        <ExpectedDeliveryLink>/products/QUICKPACK_EXPRESS_ECONOMY/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=57240&amp;toCountry=NO&amp;to=1407&amp;date=***DATESTRING***&amp;time=11:35</ExpectedDeliveryLink>
     </Product>
 
     <Product>
