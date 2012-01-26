@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+  <MenuTitle>SOAP API Examples</MenuTitle>
+  <Ingress>
+    The Bring Booking API is a logged-in service that lets mybring-users (customers of mybring.com) programmatically
+    create a booking by invoking a Web Service over SOAP, or by posting XML/JSON over HTTP.
+    The API uses the same backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels.
+  </Ingress>
+  <Content><![CDATA[
+<p>
+  The SOAP Body follow the same <a href="api.html#schema">XML Schema Definition (XSD)</a> as the XML API.
+</p>
+
+<h4>Example authentication header</h4>
+<pre class="code">
+X-MyBring-API-Uid: oc@java.no
+X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
+</pre>
+
+<h4>Sample SOAP request</h4>
+<pre class="code fixed">
+&lt;soapenv:Envelope
+            xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
+            xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+&lt;soapenv:Header/&gt;
+&lt;soapenv:Body&gt;
+</pre>
+<div data-tab="xml" class="tab api-call">
+  <p>
+      <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
+      data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
+          Example Soap Body Request XML
+      </a>
+  </p>
+  <pre class="xml response delay-snippet"></pre>
+</div>
+<pre class="code fixed">
+&lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</pre>
+]]>
+  </Content>
+</Article>

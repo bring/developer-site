@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Article>
+  <MenuTitle>XML/JSON API Examples</MenuTitle>
+  <Ingress>
+    The Bring Booking API is a logged-in service that lets mybring-users (customers of mybring.com) programmatically
+    create a booking by invoking a Web Service over SOAP, or by posting XML/JSON over HTTP.
+    The API uses the same backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels.
+  </Ingress>
+  <Content><![CDATA[
+<h3>Customer API - Sample request</h3>
+<p>
+  GET <a href="http://www.mybring.com/booking/api/customers">http://www.mybring.com/booking/api/customers</a>
+</p>
+
+<p>
+  The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
+  Bring Express-products, we use a UUID to identify users.
+</p>
+
+<h3>Customer API - Sample response (XML)</h3>
+
+<pre class="code">
+&lt;customersResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+    &lt;customers&gt;
+        &lt;customer&gt;
+            &lt;name&gt;A/S TEST (00001234567)&lt;/name&gt;
+            &lt;customerNumber&gt;PARCELS_NORWAY-00001234567&lt;/customerNumber&gt;
+            &lt;countryCode&gt;NO&lt;/countryCode&gt;
+            &lt;products&gt;
+
+                &lt;product&gt;SERVICEPAKKE&lt;/product&gt;
+                &lt;product&gt;EKSPRESS09&lt;/product&gt;
+                &lt;product&gt;BPAKKE_DOR-DOR&lt;/product&gt;
+                &lt;product&gt;PA_DOREN&lt;/product&gt;
+            &lt;/products&gt;
+        &lt;/customer&gt;
+        ...
+    &lt;/customers&gt;
+&lt;/customersResponse&gt;
+</pre>
+
+]]>
+  </Content>
+</Article>

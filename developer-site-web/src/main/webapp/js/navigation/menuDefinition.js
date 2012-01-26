@@ -105,12 +105,20 @@ var menuJsonData =
                     "title":"Booking API (beta)",
                     "menuNodes":[
                       {
-                        "title":"JSON/XML API Reference",
+                        "title":"Booking API Reference",
                         "url":"/learn/booking/api.html"
                       },
                       {
-                        "title":"SOAP WS API Reference",
-                        "url":"/learn/booking/soap.html"
+                        "title":"XML/JSON API Examples",
+                        "url":"/learn/booking/apiexamples.html"
+                      },
+                      {
+                        "title":"SOAP API Examples",
+                        "url":"/learn/booking/soapexamples.html"
+                      },
+                      {
+                        "title":"Customer API Examples",
+                        "url":"/learn/booking/customerapiexamples.html"
                       }
                     ]
                 }
