@@ -99,6 +99,11 @@
 &lt;/soapenv:Envelope&gt;
         </pre>
 
+        <h4>Customer numbers API</h4>
+        <p>
+          The WSDL also has reference to a SOAP operation to get the customer numbers of your mybring user.
+          See XSD schema definition for response structure and the <a href="api.html#customersApi">customers API docs in the XML API</a>.
+        </p>
 ]]>
     </Content>
 </Article>

@@ -25,6 +25,7 @@ public class ProxyDaoImpl extends ProxyDao {
         urlBuilder = new ProxyUrlBuilder();
         urlBuilder.addService("tracking", "http://beta.bring.no/sporing");
         urlBuilder.addService("shipping-guide", config.getFraktguideUrlForEnvironment());
+        urlBuilder.addService("booking", config.getBookingUrlForEnvironment());
     }
     
     public ProxyDaoImpl(ProxyUrlBuilder urlBuilder) {

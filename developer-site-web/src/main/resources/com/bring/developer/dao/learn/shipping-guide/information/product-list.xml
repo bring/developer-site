@@ -33,7 +33,7 @@
     </Product>
 
     <Product>
-        <Name>Ekspress 07</Name>
+        <Name>Bedriftspakke Ekspress-Over natten 07</Name>
         <Code>EKSPRESS07</Code>
         <CodeLink>/products/EKSPRESS07/all.xml?weightInGrams=1500&amp;from=1407&amp;to=9007&amp;date=***DATESTRING***</CodeLink>
         <Price>1</Price>
@@ -43,7 +43,7 @@
     </Product>
 
     <Product>
-        <Name>Ekspress 09</Name>
+        <Name>Bedriftspakke Ekspress-Over natten 09</Name>
         <Code>EKSPRESS09</Code>
         <CodeLink>/products/EKSPRESS09/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=***DATESTRING***</CodeLink>
         <Price>1</Price>

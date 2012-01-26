@@ -143,26 +143,45 @@
           The authorization is currently handled with customer numbers on a per specialist basis.
         </p>
 
+        <h4><a name="customer-api">Customer numbers API (JSON / XML)</a></h4>
         <p>
-          We are currently developing a simpler API to obtain your different customer numbers, it is currently available
-          here (Alpha): <a href="https://www.mybring.com/booking/api/customers" alt="Customer numbers API">Customer numbers API</a>.
+          To perform a booking, you must specify which customer number to use.
+          For your convenience, there is an API for getting the customer numbers of your mybring user.
+          To get the customers you have access to, perform a GET to this URL:<br/>
+          <a href="http://www.mybring.com/booking/api/customers">http://www.mybring.com/booking/api/customers</a>
         </p>
+        
+        <h4>Customer number API - Example response (XML)</h4>
+        <pre class="code">
+&lt;customersResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
+    &lt;customers&gt;
+        &lt;customer&gt;
+            &lt;name&gt;A/S TEST (00001234567)&lt;/name&gt;
+            &lt;customerNumber&gt;PARCELS_NORWAY-00001234567&lt;/customerNumber&gt;
+            &lt;countryCode&gt;NO&lt;/countryCode&gt;
+            &lt;products&gt;
 
-        <p>
-          Due to the fact that Bring products are connected to specialists, you have to add the customer number is added
-          to the product-specification of the request. For instance the product: BEDRIFTSPAKKE is connected to the
-          Bring Parcels specialist in Norway, you thus have to identify as 'PARCELS_NORWAY-CUSTOMERNO#'.
-        </p>
+                &lt;product&gt;SERVICEPAKKE&lt;/product&gt;
+                &lt;product&gt;EKSPRESS09&lt;/product&gt;
+                &lt;product&gt;BPAKKE_DOR-DOR&lt;/product&gt;
+                &lt;product&gt;PA_DOREN&lt;/product&gt;
+            &lt;/products&gt;
+        &lt;/customer&gt;
+        ...
+    &lt;/customers&gt;
+&lt;/customersResponse&gt;
+        </pre>
 
-        <h4>JSON API - customer number</h4>
+        <h4>Booking API - Use of customer number (JSON)</h4>
         <pre class="code">
 "product": {
     "id": "BPAKKE_DOR-DOR",
-    "customerNumber": "PARCELS_NORWAY-10001123123",
+    "customerNumber": "PARCELS_NORWAY-00001234567",
     // Etc...
 }
         </pre>
-        <h4>XML API - customer number</h4>
+        
+        <h4>Booking API - Use of customer number (XML)</h4>
         <pre class="code">
 &lt;product&gt;
     &lt;id&gt;QUICKPACK_DAY_CERTAIN&lt;/id&gt;
@@ -170,7 +189,6 @@
     &lt;!-- Etc... --&gt;
 &lt;/product&gt;
         </pre>
-
 
         <p>
           The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
@@ -203,11 +221,19 @@
         <h4><a name="testing">Testing - Important Information reguarding test requests</a></h4>
 
         <p>
-          This service is currently only live. It will send actual production orders unless it is set to testing mode.
+          This service will send actual production orders unless it is set to testing mode.
         </p>
         <p>
           To use the test mode, you need to set the testIndicator flag on the root node.
         </p>
+
+        <h4>XML: testIndicator</h4>
+        <pre class="code">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
+    ...
+&lt;/bookingRequest&gt;
+        </pre>
 
         <h4>JSON: testIndicator</h4>
         <pre class="code">
@@ -216,15 +242,6 @@
     "schemaVersion": "1",
     ...
 }
-        </pre>
-
-
-        <h4>XML: testIndicator</h4>
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
-    ...
-&lt;/bookingRequest&gt;
         </pre>
 
         <h4>Data structure</h4>
@@ -326,194 +343,85 @@ Content-Length: 2126
 
         <h4>JSON API - Example request</h4>
 
-        <pre class="code">
-{
-    "testIndicator": true,
-    "schemaVersion": "1",
-    "consignments": [
-        {
-            "correlationId": "INTERNAL-123456",
-            "shippingDateTime": "2012-01-10T10:30:00",
-            "parties": {
-                "sender": {
-                    "name": "Ola Nordmann",
-                    "addressLine": "Testsvingen 12",
-                    "postalCode": "0263",
-                    "city": "OSLO",
-                    "countryCode": "no",
-                    "reference": "1234",
-                    "additionalAddressInfo": "Hentes på baksiden etter klokken to",
-                    "contact": {
-                        "name": "Trond Nordmann",
-                        "email": "trond@normanntest.no",
-                        "phoneNumber": "99999999"
-                    }
-                },
-                "recipient": {
-                    "name": "Tore Mottaker",
-                    "addressLine": "Mottakerveien 14",
-                    "addressLine2": "c/o Tina Mottaker",
-                    "postalCode": "0659",
-                    "city": "OSLO",
-                    "countryCode": "no",
-                    "reference": "43242",
-                    "additionalAddressInfo": "Bruk ringeklokken",
-                    "contact": {
-                        "name": "Tore Mottaker",
-                        "email": "tore@mottakertest.no",
-                        "phoneNumber": "88888888"
-                    }
-                }
-            },
-            "product": {
-                "id": "SERVICEPAKKE",
-                "customerNumber": "PARCELS_NORWAY-10005540322",
-                "services": {
-                    "recipientNotification": {
-                        "email": "sender@sender.com",
-                        "mobile": "97777777"
-                    }
-                }
-            },
-            "packages": [{
-                    "correlationId": "PACKAGE-123",
-                    "weightInKg": "1.1",
-                    "dimensions": {
-                        "heightInCm": "10",
-                        "widthInCm": "10",
-                        "lengthInCm": "10"
-                    }
-            }]
-    }]
-}
-        </pre>
+        <h4>Example request</h4>
 
-        <h4>JSON API - Example response: succesful request</h4>
-        <pre class="code">
-{
-    "consignments": [
-        {
-            "correlationId": "INTERNAL-123456",
-            "confirmation": {
-                "consignmentNumber": "70438101268018539",
-                "productSpecificData": null,
-                "links": {
-                    "labels": "http://s3.amazonaws.com/bring_booking_labels/a21adb80e6d6f7f08264b1570c14ce9ab90b70a3.pdf",
-                    "tracking": "http://sporing.bring.no/sporing.html?q=70438101268018539"
-                },
-                "dateAndTimes": {
-                    "earliestPickup": null,
-                    "expectedDelivery": 1327446000000
-                },
-                "packages": [
-                    {
-                        "correlationId": "PACKAGE-123",
-                        "packageNumber": "370438101268058536",
-                        "productSpecificData": null
-                    }
-                ]
-            },
-            "errors": null
-        }
-    ]
-}
-        </pre>
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
+    <div data-tab="xml" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
+            data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
+                Example request XML
+            </a>
+        </p>
+        <pre class="xml response delay-snippet"></pre>
+    </div>
 
-        <h4>JSON API - Example response: failed request</h4>
-        <pre class="code">
-{
-    "consignments": [
-        {
-            "confirmation": null,
-            "errors": [
-                {
-                    "uniqueId": "b2e73d9f-6281-4ed2-91ee-431eba33f766",
-                    "code": "BOOK-INPUT-023",
-                    "messages": [
-                        {
-                            "lang": "en",
-                            "message": "The shipment is too big to send with the given product"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
-        </pre>
+    <h3><a href="#json">JSON</a></h3>
+    <div data-tab="json" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
+            data-internal="/proxy/booking/api/bookingExamples/validRequest.json">
+                Example request JSON
+            </a>
+        </p>
+        <pre class="json response delay-snippet"></pre>
+    </div>
+</div>
 
-        <h4>XML API - Example request</h4>
+        <h4>Example response: succesful request</h4>
 
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
-  &lt;schemaVersion&gt;1&lt;/schemaVersion&gt;
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
+    <div data-tab="xml" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
+            data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
+                Example response XML
+            </a>
+        </p>
+        <pre class="xml response delay-snippet"></pre>
+    </div>
 
-  &lt;consignments&gt;
+    <h3><a href="#json">JSON</a></h3>
+    <div data-tab="json" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
+            data-internal="/proxy/booking/api/bookingExamples/successfulResponse.json">
+                Example response JSON
+            </a>
+        </p>
+        <pre class="json response delay-snippet"></pre>
+    </div>
+</div>
 
-    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
+        <h4>Example response: failed request</h4>
 
-      &lt;shippingDateTime&gt;2012-01-23T06:24:09&lt;/shippingDateTime&gt;
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
+    <div data-tab="xml" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
+            data-internal="/proxy/booking/api/bookingExamples/failedResponseWithOk.xml">
+                Example response XML
+            </a>
+        </p>
+        <pre class="xml response delay-snippet"></pre>
+    </div>
 
-      &lt;parties&gt;
-        &lt;sender&gt;
-          &lt;name&gt;Ola Nordmann&lt;/name&gt;
-          &lt;addressLine&gt;Testsvingen 12&lt;/addressLine&gt;
-          &lt;postalCode&gt;0263&lt;/postalCode&gt;
-          &lt;city&gt;OSLO&lt;/city&gt;
-          &lt;countryCode&gt;no&lt;/countryCode&gt;
-          &lt;reference&gt;1234&lt;/reference&gt;
-          &lt;additionalAddressInfo&gt;Hentes p&#229; baksiden etter klokken to&lt;/additionalAddressInfo&gt;
-          &lt;contact&gt;
-            &lt;name&gt;Trond Nordmann&lt;/name&gt;
-            &lt;email&gt;trond@normanntest.no&lt;/email&gt;
-            &lt;phoneNumber&gt;99999999&lt;/phoneNumber&gt;
-          &lt;/contact&gt;
-        &lt;/sender&gt;
+    <h3><a href="#json">JSON</a></h3>
+    <div data-tab="json" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
+            data-internal="/proxy/booking/api/bookingExamples/failedResponseWithOk.json">
+                Example response JSON
+            </a>
+        </p>
+        <pre class="json response delay-snippet"></pre>
+    </div>
+</div>
 
-        &lt;recipient&gt;
-          &lt;name&gt;Tore Mottaker&lt;/name&gt;
-          &lt;addressLine&gt;Mottakerveien 14&lt;/addressLine&gt;
-          &lt;addressLine2&gt;c/o Tina Mottaker&lt;/addressLine2&gt;
-          &lt;postalCode&gt;0659&lt;/postalCode&gt;
-          &lt;city&gt;OSLO&lt;/city&gt;
-          &lt;countryCode&gt;no&lt;/countryCode&gt;
-          &lt;reference&gt;43242&lt;/reference&gt;
-          &lt;additionalAddressInfo&gt;Bruk ringeklokken&lt;/additionalAddressInfo&gt;
-          &lt;contact&gt;
-            &lt;name&gt;Tore Mottaker&lt;/name&gt;
-            &lt;email&gt;tore@mottakertest.no&lt;/email&gt;
-            &lt;phoneNumber&gt;88888888&lt;/phoneNumber&gt;
-          &lt;/contact&gt;
-        &lt;/recipient&gt;
-      &lt;/parties&gt;
 
-      &lt;product&gt;
-        &lt;id&gt;SERVICEPAKKE&lt;/id&gt;
-        &lt;customerNumber&gt;PARCELS_NORWAY-10001234123&lt;/customerNumber&gt;
-        &lt;services&gt;
-          &lt;recipientNotification&gt;
-            &lt;email&gt;sender@sender.com&lt;/email&gt;
-            &lt;mobile&gt;97777777&lt;/mobile&gt;
-          &lt;/recipientNotification&gt;
-        &lt;/services&gt;
-      &lt;/product&gt;
-
-      &lt;packages&gt;
-        &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
-          &lt;weightInKg&gt;1.1&lt;/weightInKg&gt;
-          &lt;dimensions&gt;
-            &lt;heightInCm&gt;10&lt;/heightInCm&gt;
-            &lt;widthInCm&gt;10&lt;/widthInCm&gt;
-            &lt;lengthInCm&gt;10&lt;/lengthInCm&gt;
-          &lt;/dimensions&gt;
-        &lt;/package&gt;
-      &lt;/packages&gt;
-
-    &lt;/consignment&gt;
-  &lt;/consignments&gt;
-&lt;/bookingRequest&gt;
-        </pre>
 
         <h4>XML API - Example request: Courier products with product specific demands</h4>
 
@@ -593,266 +501,6 @@ Content-Length: 2126
   &lt;/consignments&gt;
 &lt;/bookingRequest&gt;
         </pre>
-
-
-
-
-        <br/>
-        <h4>XML API - Example response: successful booking</h4>
-
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
-    &lt;consignments&gt;
-        &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
-            &lt;confirmation&gt;
-                &lt;consignmentNumber&gt;70438101268012087&lt;/consignmentNumber&gt;
-                &lt;links&gt;
-                    &lt;labels&gt;http://beta.qa.bring.no/booking/labels/1370?auth-token=a2148be1-8530-4e85-8e57-4e94e0a591f1&lt;/labels&gt;
-                    &lt;tracking&gt;http://sporing.bring.no/api/tracking.xml?q=70438101268012087&lt;/tracking&gt;
-                &lt;/links&gt;
-                &lt;dateAndTimes&gt;
-                    &lt;expectedDelivery&gt;2011-12-09T09:24:59.949+01:00&lt;/expectedDelivery&gt;
-                &lt;/dateAndTimes&gt;
-                &lt;packages&gt;
-                    &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
-                        &lt;packageNumber&gt;370438101268040241&lt;/packageNumber&gt;
-                    &lt;/package&gt;
-                &lt;/packages&gt;
-            &lt;/confirmation&gt;
-        &lt;/consignment&gt;
-    &lt;/consignments&gt;
-&lt;/bookingResponse&gt;
-        </pre>
-
-        <br/>
-        <h4>XML API - Example response: failed booking</h4>
-
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
-  &lt;consignments&gt;
-
-    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
-      &lt;errors&gt;
-        &lt;error&gt;
-          &lt;uniqueId&gt;3b473ad0-15c5-11e1-be50-0800200c9a66&lt;/uniqueId&gt;
-          &lt;code&gt;BOOK-INPUT-016&lt;/code&gt;
-          &lt;messages&gt;
-            &lt;message lang=&quot;en&quot;&gt;City must be provided&lt;/message&gt;
-          &lt;/messages&gt;
-        &lt;/error&gt;
-      &lt;/errors&gt;
-    &lt;/consignment&gt;
-
-  &lt;/consignments&gt;
-&lt;/bookingResponse&gt;
-        </pre>
-
-
-        <br/>
-        <h4><a name="schema">XML Schema Definition (XSD)</a></h4>
-
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;xs:schema elementFormDefault=&quot;qualified&quot; version=&quot;1.0&quot; targetNamespace=&quot;http://www.bring.no/booking/&quot; xmlns=&quot;http://www.bring.no/booking/&quot; xmlns:tns=&quot;http://www.bring.no/booking/&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-
-  &lt;xs:element name=&quot;bookingRequest&quot; type=&quot;BookingRequestType&quot;/&gt;
-
-  &lt;xs:element name=&quot;bookingResponse&quot; type=&quot;BookingResponseType&quot;/&gt;
-
-  &lt;xs:complexType name=&quot;BookingRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;schemaVersion&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;consignments&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;consignment&quot; type=&quot;ConsignmentRequestType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ConsignmentRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;shippingDateTime&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;parties&quot; type=&quot;PartiesRequestType&quot;/&gt;
-      &lt;xs:element name=&quot;product&quot; type=&quot;ProductRequestType&quot;/&gt;
-      &lt;xs:element name=&quot;packages&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;package&quot; type=&quot;PackageRequestType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PartiesRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;sender&quot; type=&quot;PartyRequestType&quot;/&gt;
-      &lt;xs:element name=&quot;recipient&quot; type=&quot;PartyRequestType&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PartyRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;addressLine&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;addressLine2&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;postalCode&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;countryCode&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;reference&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;additionalAddressInfo&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;contact&quot; type=&quot;ContactRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ContactRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;phoneNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ProductRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;id&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;customerNumber&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;services&quot; type=&quot;ServicesRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ServicesRequestType&quot;&gt;
-    &lt;xs:sequence&gt;
-      &lt;xs:element name=&quot;recipientNotification&quot; type=&quot;RecipientNotificationRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:sequence&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;RecipientNotificationRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;email&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;mobile&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PackageRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;weightInKg&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;goodsDescription&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;dimensions&quot; type=&quot;MeasurementsRequestType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;MeasurementsRequestType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;heightInCm&quot; type=&quot;xs:int&quot;/&gt;
-      &lt;xs:element name=&quot;widthInCm&quot; type=&quot;xs:int&quot;/&gt;
-      &lt;xs:element name=&quot;lengthInCm&quot; type=&quot;xs:int&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;BookingResponseType&quot;&gt;
-    &lt;xs:sequence&gt;
-      &lt;xs:element name=&quot;consignments&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;consignment&quot; type=&quot;ConsignmentResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:sequence&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ConsignmentResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;confirmation&quot; type=&quot;ConfirmationResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;errors&quot; minOccurs=&quot;0&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;error&quot; type=&quot;ErrorResponseType&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ConfirmationResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;consignmentNumber&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;productSpecificData&quot; type=&quot;ProductSpecificDataResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;links&quot; type=&quot;LinksResponseType&quot;/&gt;
-      &lt;xs:element name=&quot;dateAndTimes&quot; type=&quot;DtoDateAndTimesResponseType&quot;/&gt;
-      &lt;xs:element name=&quot;packages&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;package&quot; type=&quot;PackageResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ProductSpecificDataResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;upsShipmentNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;upsTrackingNumber&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;LinksResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;labels&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;tracking&quot; type=&quot;xs:string&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;DtoDateAndTimesResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;earliestPickup&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
-      &lt;xs:element name=&quot;expectedDelivery&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;PackageResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;packageNumber&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;productSpecificData&quot; type=&quot;ProductSpecificDataResponseType&quot; minOccurs=&quot;0&quot;/&gt;
-    &lt;/xs:all&gt;
-    &lt;xs:attribute name=&quot;correlationId&quot; type=&quot;xs:string&quot;/&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;ErrorResponseType&quot;&gt;
-    &lt;xs:all&gt;
-      &lt;xs:element name=&quot;uniqueId&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;code&quot; type=&quot;xs:string&quot;/&gt;
-      &lt;xs:element name=&quot;messages&quot;&gt;
-        &lt;xs:complexType&gt;
-          &lt;xs:sequence&gt;
-            &lt;xs:element name=&quot;message&quot; type=&quot;MessageResponseType&quot; maxOccurs=&quot;unbounded&quot;/&gt;
-          &lt;/xs:sequence&gt;
-        &lt;/xs:complexType&gt;
-      &lt;/xs:element&gt;
-    &lt;/xs:all&gt;
-  &lt;/xs:complexType&gt;
-
-  &lt;xs:complexType name=&quot;MessageResponseType&quot;&gt;
-    &lt;xs:simpleContent&gt;
-      &lt;xs:extension base=&quot;xs:string&quot;&gt;
-        &lt;xs:attribute name=&quot;lang&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
-      &lt;/xs:extension&gt;
-    &lt;/xs:simpleContent&gt;
-  &lt;/xs:complexType&gt;
-&lt;/xs:schema&gt;
-        </pre>
-
 ]]>
   </Content>
 </Article>
