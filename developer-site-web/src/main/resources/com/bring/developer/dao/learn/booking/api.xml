@@ -325,196 +325,88 @@ Connection: keep-alive
 Content-Length: 2126
         </pre>
 
-        <h4>JSON API - Example request</h4>
 
-        <pre class="code">
-{
-    "testIndicator": true,
-    "schemaVersion": "1",
-    "consignments": [
-        {
-            "correlationId": "INTERNAL-123456",
-            "shippingDateTime": "2012-01-10T10:30:00",
-            "parties": {
-                "sender": {
-                    "name": "Ola Nordmann",
-                    "addressLine": "Testsvingen 12",
-                    "postalCode": "0263",
-                    "city": "OSLO",
-                    "countryCode": "no",
-                    "reference": "1234",
-                    "additionalAddressInfo": "Hentes på baksiden etter klokken to",
-                    "contact": {
-                        "name": "Trond Nordmann",
-                        "email": "trond@normanntest.no",
-                        "phoneNumber": "99999999"
-                    }
-                },
-                "recipient": {
-                    "name": "Tore Mottaker",
-                    "addressLine": "Mottakerveien 14",
-                    "addressLine2": "c/o Tina Mottaker",
-                    "postalCode": "0659",
-                    "city": "OSLO",
-                    "countryCode": "no",
-                    "reference": "43242",
-                    "additionalAddressInfo": "Bruk ringeklokken",
-                    "contact": {
-                        "name": "Tore Mottaker",
-                        "email": "tore@mottakertest.no",
-                        "phoneNumber": "88888888"
-                    }
-                }
-            },
-            "product": {
-                "id": "SERVICEPAKKE",
-                "customerNumber": "PARCELS_NORWAY-10005540322",
-                "services": {
-                    "recipientNotification": {
-                        "email": "sender@sender.com",
-                        "mobile": "97777777"
-                    }
-                }
-            },
-            "packages": [{
-                    "correlationId": "PACKAGE-123",
-                    "weightInKg": "1.1",
-                    "dimensions": {
-                        "heightInCm": "10",
-                        "widthInCm": "10",
-                        "lengthInCm": "10"
-                    }
-            }]
-    }]
-}
-        </pre>
+        <h4>Example request</h4>
 
-        <h4>JSON API - Example response: succesful request</h4>
-        <pre class="code">
-{
-    "consignments": [
-        {
-            "correlationId": "INTERNAL-123456",
-            "confirmation": {
-                "consignmentNumber": "70438101268018539",
-                "productSpecificData": null,
-                "links": {
-                    "labels": "http://s3.amazonaws.com/bring_booking_labels/a21adb80e6d6f7f08264b1570c14ce9ab90b70a3.pdf",
-                    "tracking": "http://sporing.bring.no/sporing.html?q=70438101268018539"
-                },
-                "dateAndTimes": {
-                    "earliestPickup": null,
-                    "expectedDelivery": 1327446000000
-                },
-                "packages": [
-                    {
-                        "correlationId": "PACKAGE-123",
-                        "packageNumber": "370438101268058536",
-                        "productSpecificData": null
-                    }
-                ]
-            },
-            "errors": null
-        }
-    ]
-}
-        </pre>
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
+    <div data-tab="xml" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
+            data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
+                Example request XML
+            </a>
+        </p>
+        <pre class="xml response delay-snippet"></pre>
+    </div>
 
-        <h4>JSON API - Example response: failed request</h4>
-        <pre class="code">
-{
-    "consignments": [
-        {
-            "confirmation": null,
-            "errors": [
-                {
-                    "uniqueId": "b2e73d9f-6281-4ed2-91ee-431eba33f766",
-                    "code": "BOOK-INPUT-023",
-                    "messages": [
-                        {
-                            "lang": "en",
-                            "message": "The shipment is too big to send with the given product"
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-}
-        </pre>
+    <h3><a href="#json">JSON</a></h3>
+    <div data-tab="json" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
+            data-internal="/proxy/booking/api/bookingExamples/validRequest.json">
+                Example request JSON
+            </a>
+        </p>
+        <pre class="json response delay-snippet"></pre>
+    </div>
+</div>
 
-        <h4>XML API - Example request</h4>
 
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;bookingRequest xmlns=&quot;http://www.bring.no/booking/&quot; testIndicator=&quot;true&quot;&gt;
-  &lt;schemaVersion&gt;1&lt;/schemaVersion&gt;
+        <h4>Example response: succesful request</h4>
 
-  &lt;consignments&gt;
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
+    <div data-tab="xml" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
+            data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
+                Example response XML
+            </a>
+        </p>
+        <pre class="xml response delay-snippet"></pre>
+    </div>
 
-    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
+    <h3><a href="#json">JSON</a></h3>
+    <div data-tab="json" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
+            data-internal="/proxy/booking/api/bookingExamples/successfulResponse.json">
+                Example response JSON
+            </a>
+        </p>
+        <pre class="json response delay-snippet"></pre>
+    </div>
+</div>
 
-      &lt;shippingDateTime&gt;2012-01-23T06:24:09&lt;/shippingDateTime&gt;
 
-      &lt;parties&gt;
-        &lt;sender&gt;
-          &lt;name&gt;Ola Nordmann&lt;/name&gt;
-          &lt;addressLine&gt;Testsvingen 12&lt;/addressLine&gt;
-          &lt;postalCode&gt;0263&lt;/postalCode&gt;
-          &lt;city&gt;OSLO&lt;/city&gt;
-          &lt;countryCode&gt;no&lt;/countryCode&gt;
-          &lt;reference&gt;1234&lt;/reference&gt;
-          &lt;additionalAddressInfo&gt;Hentes p&#229; baksiden etter klokken to&lt;/additionalAddressInfo&gt;
-          &lt;contact&gt;
-            &lt;name&gt;Trond Nordmann&lt;/name&gt;
-            &lt;email&gt;trond@normanntest.no&lt;/email&gt;
-            &lt;phoneNumber&gt;99999999&lt;/phoneNumber&gt;
-          &lt;/contact&gt;
-        &lt;/sender&gt;
+        <h4>Example response: failed request</h4>
 
-        &lt;recipient&gt;
-          &lt;name&gt;Tore Mottaker&lt;/name&gt;
-          &lt;addressLine&gt;Mottakerveien 14&lt;/addressLine&gt;
-          &lt;addressLine2&gt;c/o Tina Mottaker&lt;/addressLine2&gt;
-          &lt;postalCode&gt;0659&lt;/postalCode&gt;
-          &lt;city&gt;OSLO&lt;/city&gt;
-          &lt;countryCode&gt;no&lt;/countryCode&gt;
-          &lt;reference&gt;43242&lt;/reference&gt;
-          &lt;additionalAddressInfo&gt;Bruk ringeklokken&lt;/additionalAddressInfo&gt;
-          &lt;contact&gt;
-            &lt;name&gt;Tore Mottaker&lt;/name&gt;
-            &lt;email&gt;tore@mottakertest.no&lt;/email&gt;
-            &lt;phoneNumber&gt;88888888&lt;/phoneNumber&gt;
-          &lt;/contact&gt;
-        &lt;/recipient&gt;
-      &lt;/parties&gt;
+<div class="codetabs">
+    <h3><a href="#xml">XML</a></h3>
+    <div data-tab="xml" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
+            data-internal="/proxy/booking/api/bookingExamples/failedResponseWithOk.xml">
+                Example response XML
+            </a>
+        </p>
+        <pre class="xml response delay-snippet"></pre>
+    </div>
 
-      &lt;product&gt;
-        &lt;id&gt;SERVICEPAKKE&lt;/id&gt;
-        &lt;customerNumber&gt;PARCELS_NORWAY-10001234123&lt;/customerNumber&gt;
-        &lt;services&gt;
-          &lt;recipientNotification&gt;
-            &lt;email&gt;sender@sender.com&lt;/email&gt;
-            &lt;mobile&gt;97777777&lt;/mobile&gt;
-          &lt;/recipientNotification&gt;
-        &lt;/services&gt;
-      &lt;/product&gt;
+    <h3><a href="#json">JSON</a></h3>
+    <div data-tab="json" class="tab api-call">
+        <p>
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
+            data-internal="/proxy/booking/api/bookingExamples/failedResponseWithOk.json">
+                Example response JSON
+            </a>
+        </p>
+        <pre class="json response delay-snippet"></pre>
+    </div>
+</div>
 
-      &lt;packages&gt;
-        &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
-          &lt;weightInKg&gt;1.1&lt;/weightInKg&gt;
-          &lt;dimensions&gt;
-            &lt;heightInCm&gt;10&lt;/heightInCm&gt;
-            &lt;widthInCm&gt;10&lt;/widthInCm&gt;
-            &lt;lengthInCm&gt;10&lt;/lengthInCm&gt;
-          &lt;/dimensions&gt;
-        &lt;/package&gt;
-      &lt;/packages&gt;
 
-    &lt;/consignment&gt;
-  &lt;/consignments&gt;
-&lt;/bookingRequest&gt;
-        </pre>
 
         <h4>XML API - Example request: Courier products with product specific demands</h4>
 
@@ -595,60 +487,6 @@ Content-Length: 2126
 &lt;/bookingRequest&gt;
         </pre>
 
-
-
-
-        <br/>
-        <h4>XML API - Example response: successful booking</h4>
-
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
-    &lt;consignments&gt;
-        &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
-            &lt;confirmation&gt;
-                &lt;consignmentNumber&gt;70438101268012087&lt;/consignmentNumber&gt;
-                &lt;links&gt;
-                    &lt;labels&gt;http://beta.qa.bring.no/booking/labels/1370?auth-token=a2148be1-8530-4e85-8e57-4e94e0a591f1&lt;/labels&gt;
-                    &lt;tracking&gt;http://sporing.bring.no/api/tracking.xml?q=70438101268012087&lt;/tracking&gt;
-                &lt;/links&gt;
-                &lt;dateAndTimes&gt;
-                    &lt;expectedDelivery&gt;2011-12-09T09:24:59.949+01:00&lt;/expectedDelivery&gt;
-                &lt;/dateAndTimes&gt;
-                &lt;packages&gt;
-                    &lt;package correlationId=&quot;PACKAGE-123&quot;&gt;
-                        &lt;packageNumber&gt;370438101268040241&lt;/packageNumber&gt;
-                    &lt;/package&gt;
-                &lt;/packages&gt;
-            &lt;/confirmation&gt;
-        &lt;/consignment&gt;
-    &lt;/consignments&gt;
-&lt;/bookingResponse&gt;
-        </pre>
-
-        <br/>
-        <h4>XML API - Example response: failed booking</h4>
-
-        <pre class="code">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
-&lt;bookingResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
-  &lt;consignments&gt;
-
-    &lt;consignment correlationId=&quot;INTERNAL-123456&quot;&gt;
-      &lt;errors&gt;
-        &lt;error&gt;
-          &lt;uniqueId&gt;3b473ad0-15c5-11e1-be50-0800200c9a66&lt;/uniqueId&gt;
-          &lt;code&gt;BOOK-INPUT-016&lt;/code&gt;
-          &lt;messages&gt;
-            &lt;message lang=&quot;en&quot;&gt;City must be provided&lt;/message&gt;
-          &lt;/messages&gt;
-        &lt;/error&gt;
-      &lt;/errors&gt;
-    &lt;/consignment&gt;
-
-  &lt;/consignments&gt;
-&lt;/bookingResponse&gt;
-        </pre>
 
 
 ]]>
