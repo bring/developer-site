@@ -13,7 +13,33 @@
   The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
   Bring Express-products, we use a UUID to identify users.
 </p>
+<p>
+  The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
+  Bring Express-products, we use a UUID to identify users.
+</p>
 
+<table>
+  <tr>
+    <th>Specialist</th>
+    <th>Example products</th>
+    <th>Example customerNumber</th>
+  </tr>
+  <tr>
+    <td>Bring Parcels, Norway</td>
+    <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
+    <td>PARCELS_NORWAY-10001123123</td>
+  </tr>
+  <tr>
+    <td>Bring Express, Norway</td>
+    <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
+    <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
+  </tr>
+  <tr>
+    <td>Bring Express, Sweden</td>
+    <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
+    <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
+  </tr>
+</table>
 <h2>Authenticating to use the Customer API - Example request header</h2>
 <p>
   You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user,
@@ -76,7 +102,7 @@ Content-Length: 2126
 </p>
 <pre class="json response delay-snippet"></pre>
 </div>
-
+</div>
 ]]>
   </Content>
 </Article>

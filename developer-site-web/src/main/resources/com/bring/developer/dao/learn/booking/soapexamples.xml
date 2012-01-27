@@ -17,7 +17,7 @@ X-MyBring-API-Uid: oc@java.no
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
-<h4>Sample SOAP request</h4>
+<h4>Sample SOAP request header, body, tail</h4>
 <pre class="code fixed">
 &lt;soapenv:Envelope
             xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;
