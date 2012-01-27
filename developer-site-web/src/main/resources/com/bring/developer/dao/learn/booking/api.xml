@@ -219,7 +219,7 @@
     <td>An error code describing the error</td>
   </tr>
   <tr>
-    <td>messages</td>
+    <td>message</td>
     <td>
       Internationalized messages (with <message lang=”xx”> elements). First version will be with
       lang=”en” (English) only.
@@ -233,39 +233,29 @@
   The enumeration of error codes for version 1 (beta) is currently as follows:
 </p>
 
-<table>
-  <tr><th>Error code</th><th>Example error message</th></tr>
-  <tr><td>BOOK-INPUT-001</td><td>Bad request</td></tr>
-  <tr><td>BOOK-INPUT-002</td><td>Weight is required</td></tr>
-  <tr><td>BOOK-INPUT-003</td><td>Schema version must be present</td></tr>
-  <tr><td>BOOK-INPUT-004</td><td>At least one consignment must be specified</td></tr>
-  <tr><td>BOOK-INPUT-005</td><td>Multiple consignments in one booking is not supported</td></tr>
-  <tr><td>BOOK-INPUT-006</td><td>Sender must be specified</td></tr>
-  <tr><td>BOOK-INPUT-007</td><td>Recipient must be specified</td></tr>
-  <tr><td>BOOK-INPUT-008</td><td>Product must be set</td></tr>
-  <tr><td>BOOK-INPUT-009</td><td>Package must be specified</td></tr>
-  <tr><td>BOOK-INPUT-011</td><td>Multiple packages in one booking is not supported</td></tr>
-  <tr><td>BOOK-INPUT-012</td><td>Shipping date and time must be provided</td></tr>
-  <tr><td>BOOK-INPUT-013</td><td>Package dimensions must be provided</td></tr>
-  <tr><td>BOOK-INPUT-014</td><td>Name must be provided</td></tr>
-  <tr><td>BOOK-INPUT-015</td><td>Address must be provided</td></tr>
-  <tr><td>BOOK-INPUT-016</td><td>City must be provided</td></tr>
-  <tr><td>BOOK-INPUT-017</td><td>ISO Country code must be provided</td></tr>
-  <tr><td>BOOK-INPUT-018</td><td>Product ID must be provided</td></tr>
-  <tr><td>BOOK-INPUT-019</td><td>Customer number must be provided</td></tr>
-  <tr><td>BOOK-INPUT-020</td><td>Invalid product ID</td></tr>
-  <tr><td>BOOK-INPUT-021</td><td>Invalid customer number</td></tr>
-  <tr><td>BOOK-INPUT-022</td><td>Illegal product for country</td></tr>
-  <tr><td>BOOK-INPUT-023</td><td>The shipment is to big to send with the given product</td></tr>
-  <tr><td>BOOK-INPUT-024</td><td>The product is not available between the given addresses (outside coverage)</td></tr>
-  <tr><td>BOOK-INPUT-025</td><td>The product is not available between the given countries</td></tr>
-  <tr><td>BOOK-INPUT-027</td><td>Failed because of product specific requirements</td></tr>
-  <tr><td>BOOK-INPUT-028</td><td>Invalid country code</td></tr>
-  <tr><td>BOOK-AUTHORIZATION-001</td><td>Your user is not authorized to perform this action</td></tr>
-  <tr><td>BOOK-VALIDATION-001</td><td>Unexpected business validation rule failure</td></tr>
-  <tr><td>BOOK-INTERNAL-001</td><td>An unexpected error occured</td></tr>
-  <tr><td>BOOK-INTERNAL-002</td><td>A required external service is unavailable</td></tr>
-</table>
+<div class="codetabs">
+<h3><a href="#xml">XML</a></h3>
+<div data-tab="xml" class="tab api-call">
+<p>
+    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.xml"
+       data-internal="/proxy/booking/api/errors.xml">
+        Example request XML
+    </a>
+</p>
+<pre class="xml response delay-snippet"></pre>
+</div>
+
+<h3><a href="#json">JSON</a></h3>
+<div data-tab="json" class="tab api-call">
+<p>
+    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.json"
+    data-internal="/proxy/booking/api/errors.json">
+        Example request JSON
+    </a>
+</p>
+<pre class="json response delay-snippet"></pre>
+</div>
+
 ]]>
   </Content>
 </Article>
