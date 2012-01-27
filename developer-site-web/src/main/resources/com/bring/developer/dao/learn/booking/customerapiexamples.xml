@@ -7,37 +7,75 @@
     The API uses the same backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels.
   </Ingress>
   <Content><![CDATA[
-<h3>Customer API - Sample request</h3>
-<p>
-  GET <a href="http://www.mybring.com/booking/api/customers">http://www.mybring.com/booking/api/customers</a>
-</p>
+<h2>Overview</h2>
 
 <p>
   The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
   Bring Express-products, we use a UUID to identify users.
 </p>
 
-<h3>Customer API - Sample response (XML)</h3>
+<h2>Authenticating to use the Customer API - Example request header</h2>
+<p>
+  You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user,
+  or you can use the mybring API-key to be authenticated to use the service.
+</p>
 
 <pre class="code">
-&lt;customersResponse xmlns=&quot;http://www.bring.no/booking/&quot;&gt;
-    &lt;customers&gt;
-        &lt;customer&gt;
-            &lt;name&gt;A/S TEST (00001234567)&lt;/name&gt;
-            &lt;customerNumber&gt;PARCELS_NORWAY-00001234567&lt;/customerNumber&gt;
-            &lt;countryCode&gt;NO&lt;/countryCode&gt;
-            &lt;products&gt;
-
-                &lt;product&gt;SERVICEPAKKE&lt;/product&gt;
-                &lt;product&gt;EKSPRESS09&lt;/product&gt;
-                &lt;product&gt;BPAKKE_DOR-DOR&lt;/product&gt;
-                &lt;product&gt;PA_DOREN&lt;/product&gt;
-            &lt;/products&gt;
-        &lt;/customer&gt;
-        ...
-    &lt;/customers&gt;
-&lt;/customersResponse&gt;
+POST /booking/api/customers HTTP/1.1
+Content-Type: application/xml
+Accept: application/xml
+X-MyBring-API-Uid: oc@java.no
+X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
+User-Agent: oc-rest-cli/0.1.1-235dff
+Host: www.mybring.com
+Connection: keep-alive
+Content-Length: 2126
 </pre>
+
+<h2>Customer API - Sample request</h2>
+
+<p>
+  Like the XML/JSON API you can use content-type negotiation to get the desired response format.
+</p>
+
+<pre class="code">
+  Content-Type: application/xml
+  GET <a href="http://www.mybring.com/booking/api/customers">http://www.mybring.com/booking/api/customers</a>
+</pre>
+
+<p>
+  You can also suffix the resource with a supported file name extension (.xml / .json) to force the response.
+</p>
+
+<pre class="code">
+  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a>
+  GET <a href="http://www.mybring.com/booking/api/customers.xml">http://www.mybring.com/booking/api/customers.xml</a>
+</pre>
+
+<h2>Customer API - Sample response</h2>
+
+<div class="codetabs">
+<h3><a href="#xml">XML</a></h3>
+<div data-tab="xml" class="tab api-call">
+<p>
+    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/customers.xml"
+       data-internal="/proxy/booking/api/bookingExamples/customers.xml">
+        Example request XML
+    </a>
+</p>
+<pre class="xml response delay-snippet"></pre>
+</div>
+
+<h3><a href="#json">JSON</a></h3>
+<div data-tab="json" class="tab api-call">
+<p>
+    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/customers.json"
+    data-internal="/proxy/booking/api/bookingExamples/customers.json">
+        Example request JSON
+    </a>
+</p>
+<pre class="json response delay-snippet"></pre>
+</div>
 
 ]]>
   </Content>
