@@ -13,10 +13,6 @@
   The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
   Bring Express-products, we use a UUID to identify users.
 </p>
-<p>
-  The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
-  Bring Express-products, we use a UUID to identify users.
-</p>
 
 <table>
   <tr>
