@@ -9,7 +9,7 @@
 <![CDATA[
                 <p>
                     <b>Note! The Reports API is currently in closed BETA testing. Please contact us at
-                    fraktguide@posten.no if you are interested in testing this service</b>
+                    developer@bring.com if you are interested in testing this service</b>
                 </p>
 
                 <p>
@@ -39,7 +39,7 @@
                 <p>
                     Since reports are a logged in service, you need to authenticate to use the API. All mybring-APIs use a simple
                     authentication-scheme. By adding two headers to all requests, you will authenticate your request. The API-Key is currently
-                    available to pilot customers. Please contact us at fraktguide@posten.no if you are interested in using this API.
+                    available to pilot customers. Please contact us at developer@bring.com if you are interested in using this API.
                 </p>
                 <h4>Authentication headers example</h4>
                 <pre class="code">
