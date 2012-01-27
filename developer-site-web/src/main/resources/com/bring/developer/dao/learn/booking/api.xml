@@ -22,6 +22,16 @@
   getting the list price and checking availability before sending a booking request.
 </p>
 
+<h3>Shipment Labels</h3>
+
+<p>
+  The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a
+  PDF label is returned in responses. This label must be printed and be attached to the shipment. A URL that points
+  to tracking information is also returned.
+</p>
+
+<h3>Billing and Payment</h3>
+
 <p>
   Note that invoice payment is the only available payment option for the Booking API. This means that
   the mybring user ID used in the booking request must have access to the customer number specified as
@@ -57,6 +67,18 @@
 <p>
   XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
 </p>
+
+<h3>Versioning strategy</h3>
+
+<p>
+  Each request has a schemaVersion element indicating which release of the schema is being used in the
+  request and expected schema format in the response.
+  Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements
+  should be ignored.
+  The client framework used by client must thus not crash when unknown elements are encountered. Note
+  that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
+</p>
+
 
 <h3>XML/JSON API - Content-type negotiation</h3>
 
@@ -118,7 +140,7 @@
 
 <br/>
 
-<h2><a name="authorization">Authorization - By product and specialist</a></h2>
+<h2><a name="authorization">Authorization - by customer numbers (per specialist)</a></h2>
 
 <p>
   In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings.
@@ -128,7 +150,7 @@
 <p>
   To perform a booking, you must specify which customer number to use.
   For your convenience, there is an API for getting the customer numbers of your mybring user. See
-  <a href="customerapi.html">Customer API examples</a> for how to obtain the customer numbers
+  <a href="customerapiexamples.html">Customer API examples</a> for how to obtain the customer numbers
   you have access to.
 </p>
 
@@ -152,28 +174,6 @@
     // Etc...
 }
 </pre>
-
-<h2>Request/Response Overview</h2>
-
-<h3>Versioning strategy</h3>
-
-<p>
-  Each request has a schemaVersion element indicating which release of the schema is being used in the
-  request and expected schema format in the response.
-  Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements
-  should be ignored.
-  The client framework used by client must thus not crash when unknown elements are encountered. Note
-  that this requirement excludes the (old) Apache Axis 1.x Web Service client framework.
-</p>
-
-
-<h3>Shipment Labels</h3>
-
-<p>
-  The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a
-  PDF label is returned. This label must be printed and be attached to the shipment. A URL that points
-  to tracking information is also returned.
-</p>
 
 <br/>
 
@@ -202,18 +202,6 @@
     ...
 }
 </pre>
-
-<h3>Data structure</h3>
-
-<p>
-  See <a href="apiexamples.html">sample requests and responses</a>, as well as the XML Schema. Please note that this is a
-  beta-version of the schema. The final structure of the schema will be released with version 1.
-</p>
-
-<p>
-  Note that although the schema allows multiple consignments and packages, as of version 1, only one
-  consignment with one package will be supported.
-</p>
 
 <h2><a name="error-handling">Error handling</a></h2>
 
