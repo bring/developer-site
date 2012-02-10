@@ -61,6 +61,7 @@
 						<thead>
 						<tr>
 							<th>Additional Service Code</th>
+							<th>Applies to</th>
 							<th>Name</th>
 						</tr>
 						</thead>
@@ -68,6 +69,7 @@
                     	<c:forEach items="${productList.additionalService}" var="service" >
 							<tr>
                                 <td><a target="_blank" href="<%= FRAKTGUIDE_URL_FOR_ENVIRONMENT %><c:out value="${fn:replace(service.codeLink, '***DATESTRING***', today)}" />"><c:out value="${service.code}" /></a></td>
+                                <td><c:out value="${service.appliesTo}" escapeXml="false" /></td>
                                 <td><c:out value="${service.name}" /></td>
 							</tr>
                     	</c:forEach>

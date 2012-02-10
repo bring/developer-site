@@ -9,6 +9,7 @@ public class AdditionalService {
     
 	private String name;
 	private String code;
+	private String appliesTo;
     private String codeLink;
 
     @XmlElement(name = "Name")
@@ -27,6 +28,15 @@ public class AdditionalService {
 	}
 	public void setCode(String code) {
 		this.code = code;
+	}
+
+	@XmlElement(name = "AppliesTo")
+	@XmlJavaTypeAdapter(XmlNormalizeString.class)
+	public String getAppliesTo() {
+		return appliesTo;
+	}
+	public void setAppliesTo(String appliesTo) {
+		this.appliesTo = appliesTo;
 	}
 
     @XmlElement(name = "CodeLink")

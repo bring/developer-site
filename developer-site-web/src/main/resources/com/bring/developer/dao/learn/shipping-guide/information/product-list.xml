@@ -268,6 +268,14 @@
         <Name>
             eVarsling
         </Name>
+        <AppliesTo>
+          <![CDATA[
+            BPAKKE_DOR-DOR<br/>
+            SERVICEPAKKE<br/>
+            EKSPRESS07<br/>
+            EKSPRESS09<br/>
+          ]]>
+        </AppliesTo>
         <Code>
             EVARSLING
         </Code>
@@ -277,6 +285,17 @@
         <Name>
             Postoppkrav
         </Name>
+        <AppliesTo>
+          <![CDATA[
+            A-POST<br/>
+            B-POST<br/>
+            BPAKKE_DOR-DOR<br/>
+            SERVICEPAKKE<br/>
+            PA_DOREN<br/>
+            EKSPRESS07<br/>
+            EKSPRESS09<br/>
+          ]]>
+        </AppliesTo>
         <Code>
             POSTOPPKRAV
         </Code>
@@ -286,14 +305,34 @@
         <Name>
             Lørdagsutkjøring
         </Name>
+        <AppliesTo>
+          <![CDATA[
+            EKSPRESS09<br/>
+          ]]>
+        </AppliesTo>
         <Code>
             LORDAGSUTKJORING
         </Code>
-        <CodeLink>/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2009-03-27&amp;additional=LORDAGSUTKJORING</CodeLink>
+        <CodeLink>/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=LORDAGSUTKJORING</CodeLink>
     </AdditionalService>
-	
-	
-	
+    <AdditionalService>
+        <Name>
+            Envelope
+        </Name>
+        <AppliesTo>
+          <![CDATA[
+            QUICKPACK_OVER_NIGHT_0900<br/>
+            QUICKPACK_OVER_NIGHT_1200<br/>
+            QUICKPACK_DAY_CERTAIN<br/>
+          ]]>
+        </AppliesTo>
+        <Code>
+            ENVELOPE
+        </Code>
+        <CodeLink>/products/QUICKPACK_DAY_CERTAIN/price.xml?weightInGrams=1500&amp;length=10&amp;width=10&amp;height=10&amp;from=0150&amp;fromCountry=NO&amp;to=80339&amp;toCountry=DE&amp;additional=ENVELOPE</CodeLink>
+    </AdditionalService>
+
+
 	<Note id="1"><![CDATA[
 		Requests for expected delivery has longer response time.
 	]]></Note>
