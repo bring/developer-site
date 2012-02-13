@@ -13,7 +13,7 @@
 
 <h4>Example authentication header</h4>
 <pre class="code">
-X-MyBring-API-Uid: oc@java.no
+X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
