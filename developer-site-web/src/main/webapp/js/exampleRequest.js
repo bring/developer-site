@@ -49,7 +49,7 @@
         },
         
         attribute: function(attrItem) {
-            return attrItem.name+"="+'"'+escape(attrItem.value)+'"';  
+            return attrItem.name + "=" + '"' + attrItem.value + '"';
         },
         
         textContent: function(element, level) {
