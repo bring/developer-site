@@ -22,7 +22,7 @@
 	</Person>
 	<Install>
         <Step><![CDATA[
-            Take a peek on the <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&date=2011-08-09&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&nextDayStopTime=15:00">demonstration</a>, select the products you will provide and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop
+            Take a peek on the <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&date=2011-08-09&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demonstration</a>, select the products you will provide and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop
             ]]></Step>
         <Step><![CDATA[
             On your website - add <form> tags to contain the selection of freight product
