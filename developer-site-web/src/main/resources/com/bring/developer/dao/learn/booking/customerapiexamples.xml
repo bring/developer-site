@@ -46,9 +46,9 @@
 POST /booking/api/customers HTTP/1.1
 Content-Type: application/xml
 Accept: application/xml
-X-MyBring-API-Uid: oc@java.no
+X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
-User-Agent: oc-rest-cli/0.1.1-235dff
+User-Agent: my-user-agent
 Host: www.mybring.com
 Connection: keep-alive
 Content-Length: 2126
