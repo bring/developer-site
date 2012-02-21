@@ -80,11 +80,6 @@ class DeployHelper < Bundler::GemHelper
           stop
         end
 
-        desc "Check #{name} (#{version}) to #{env.to_s}"
-        task :verify => :environment do
-          verify
-        end
-
         desc "Rollback #{name} (#{version}) to #{env.to_s}"
         task :rollback => :environment do
           if not user_verifies_operation_for_production_environment "rollback"
@@ -225,7 +220,7 @@ class DeployHelper < Bundler::GemHelper
 
     Bundler.ui.info "Waiting 20 seconds for webapps to come back up..."
     sleep 20
-    verify
+    Bundler.ui.info "Done"
   end
 
   def upload
@@ -283,26 +278,6 @@ class DeployHelper < Bundler::GemHelper
       Bundler.ui.info "Starting service on #{host}..."
       ssh.exec(cfg(:start_command))
     end
-  end
-
-  def verify
-    running_version = get_http(cfg(:version_url))
-    healthcheck_response = get_http(cfg(:healthcheck_url))
-
-    dont_include = cfg(:healthcheck_dont_include) || 'FAIL'
-
-    if (running_version != version)
-      Bundler.ui.error "Version FAILED. Expected new running version was '#{version}', actual is '#{running_version}'"
-    else
-      Bundler.ui.confirm "Version OK! ('#{running_version}')"
-    end
-
-    if (healthcheck_response.include? dont_include)
-      Bundler.ui.error "Health FAILED. Response should not include '#{dont_include}', response was:\n#{healthcheck_response}"
-    else
-      Bundler.ui.confirm "Health OK! (Doesn't contain '#{dont_include}')"
-    end
-
   end
 
   def get_http(urlstring)
