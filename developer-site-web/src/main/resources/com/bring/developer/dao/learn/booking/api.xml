@@ -46,7 +46,7 @@
 
 <h2>Technical information</h2>
 
-<h3><a name="soap">SOAP API WebService definition and endpoint</a></h3>
+<h3><a name="soap">SOAP API</a></h3>
 <p>
   WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
 </p>
@@ -63,6 +63,8 @@
 </p>
 <p>
   Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/booking">https://www.mybring.com/booking/api/booking</a>
+</p>
+<p>
   Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
 </p>
 
