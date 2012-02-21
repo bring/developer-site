@@ -10,6 +10,10 @@
 <h2>Overview</h2>
 
 <p>
+  For a general introduction to the Customer number API, see the <a href="api.html#authorization">API docs</a>.
+  It is available in both the SOAP API and the XML/JSON API.
+</p>
+<p>
   The customer numbers are prefixed with the specialist, and then the customer number. For Courier and
   Bring Express-products, we use a UUID to identify users.
 </p>
@@ -36,37 +40,27 @@
     <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
   </tr>
 </table>
-<h2>Authenticating to use the Customer API - Example request header</h2>
+<h2>Authenticating to use the Customer API - Example request headers</h2>
 <p>
-  You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user,
-  or you can use the mybring API-key to be authenticated to use the service.
+  You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user using a
+  web brower, or you can use the mybring API-key to be authenticated to use the service programmatically.
 </p>
 
+<h3>Customer API - Sample XML API request</h3>
+
 <pre class="code">
-POST /booking/api/customers HTTP/1.1
+GET /booking/api/customers HTTP/1.1
 Content-Type: application/xml
 Accept: application/xml
 X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
-User-Agent: my-user-agent
 Host: www.mybring.com
-Connection: keep-alive
-Content-Length: 2126
 </pre>
 
-<h2>Customer API - Sample request</h2>
-
-<p>
-  Like the XML/JSON API you can use content-type negotiation to get the desired response format.
-</p>
-
-<pre class="code">
-  Content-Type: application/xml
-  GET <a href="http://www.mybring.com/booking/api/customers">http://www.mybring.com/booking/api/customers</a>
-</pre>
-
+<h3>Getting customers when logged into mybring</h3>
 <p>
   You can also suffix the resource with a supported file name extension (.xml / .json) to force the response.
+  This enables testing in a web browser that is logged in to mybring.
 </p>
 
 <pre class="code">

@@ -78,7 +78,7 @@
 </p>
 
 
-<h3>XML/JSON API - Content-type negotiation</h3>
+<h2><a name="contentTypes">XML/JSON API - Content-type negotiation</a></h2>
 
 <p>
   The following applies only to the XML/JSON API (and not to the SOAP Web Service endpoint).

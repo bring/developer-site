@@ -9,7 +9,8 @@
   <Content><![CDATA[
 <h2><a name="examples">Examples</a></h2>
 <p>
-   All requests for the API must include the aforementioned authentication headers. Use HTTP POST to create new
+   All requests for the API must include the content type and authentication headers documented in the
+   <a href="api.html#contentTypes">API docs</a>. Use HTTP POST to create new
    bookings.
 </p>
 
@@ -20,13 +21,8 @@ Content-Type: application/xml
 Accept: application/xml
 X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
-User-Agent: my-user-agent
 Host: www.mybring.com
-Connection: keep-alive
-Content-Length: 2126
 </pre>
-
-<h4>JSON API - Example request</h4>
 
 <h4>Example request</h4>
 
