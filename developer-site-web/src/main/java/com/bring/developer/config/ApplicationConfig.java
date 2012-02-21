@@ -22,6 +22,7 @@ public class ApplicationConfig {
     public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
     public static String BOOKING_URL_FOR_ENVIRONMENT = "http://beta.bring.com/booking"; //default
+    public static boolean CLASSPATH_XML_FILES = false; //default
 
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
@@ -29,6 +30,7 @@ public class ApplicationConfig {
         FRAKTGUIDE_URL_FOR_ENVIRONMENT = config.evaluateToString("fraktguideUrl");
         BOOKING_URL_FOR_ENVIRONMENT = config.evaluateToString("bookingUrl");
         STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = config.evaluateToString("statistics.trackerId");
+        CLASSPATH_XML_FILES = config.evaluateToBoolean("classpathXmlFiles");
     }
 
     @Bean

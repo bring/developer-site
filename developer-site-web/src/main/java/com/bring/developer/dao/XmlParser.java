@@ -30,14 +30,17 @@ public class XmlParser<T> {
         }
     }
 
-    public T unmarshal(InputStream inputStream) throws JAXBException {
+    public T unmarshal(InputStream inputStream) {
+        try {
 
-        Unmarshaller unmarshaller = context.createUnmarshaller();
+            Unmarshaller unmarshaller = context.createUnmarshaller();
 
-        InputStream filteredXml = replaceUrlToFraktguideWithCorrectEnvironment(inputStream);
-        
-        T p = (T) unmarshaller.unmarshal(filteredXml);
-        return p;
+            InputStream filteredXml = replaceUrlToFraktguideWithCorrectEnvironment(inputStream);
+
+            return (T) unmarshaller.unmarshal(filteredXml);
+        } catch (JAXBException e) {
+            throw new RuntimeException("Unable to unmarshal XML", e);
+        }
     }
 
     private InputStream replaceUrlToFraktguideWithCorrectEnvironment(InputStream inputStream) {
