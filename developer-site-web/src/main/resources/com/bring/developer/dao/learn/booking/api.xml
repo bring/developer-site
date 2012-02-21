@@ -68,6 +68,31 @@
   Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
 </p>
 
+<h2><a name="kolliGroups">Changelog</a></h2>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Change</th>
+  </tr>
+  <tr>
+    <td>March 2012</td>
+    <td>The consignment request type now accepts either <br/>
+    - a list of packages, or<br/>
+    - a list of package groups<br/>
+    The latter supports setting total weight and volume on a package group, thus
+    supporting booking requests where weight and volume is not available on each individual package.</td>
+  </tr>
+  <tr>
+    <td>March 2012</td>
+    <td>We now support more than one package in the package list of the consignment request type.</td>
+  </tr>
+  <tr>
+    <td>January 2012</td>
+    <td>Initial release (support for single consignment with single package).</td>
+  </tr>
+</table>
+
 <h3>Versioning strategy</h3>
 
 <p>
