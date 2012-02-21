@@ -19,34 +19,6 @@ public class XmlDao<T> {
         this.xmlParser = new XmlParser<T>(typeParameterClass);
     }
     
-    public T query(String api) {
-        InputStream inputStream;
-
-        if (ApplicationConfig.CLASSPATH_XML_FILES) {
-            inputStream = getClass().getResourceAsStream(api + ".xml");
-        }
-        else {
-            String filePath =
-                    "src/main/resources/" +
-                    this.getClass().getPackage().getName().replaceAll("\\.", "/")
-                    + "/" + api + ".xml";
-            try {
-                inputStream = FileUtils.openInputStream(new File(filePath));
-            } catch (IOException e) {
-                throw new RuntimeException("Unable to get file: " + filePath, e);
-            }
-        }
-        return query(inputStream);
-    }
-    
-    public T query(InputStream inputStream) {
-        return xmlParser.unmarshal(inputStream);
-    }
-    
-    public static <T> XmlDao<T> createDao(Class<T> type) {
-    	return new XmlDao<T>(type);
-    }
-    
     public static <T> List<T> createDaos(Class<T> types, String daosDir) {
         InputStream matches = XmlDao.class.getResourceAsStream(daosDir + "/.");
         Scanner scanner = new Scanner(matches);
@@ -61,7 +33,31 @@ public class XmlDao<T> {
                 typesList.add(dao.query(daosDir + "/" + file));
             }
         }
-
         return typesList;
     }
+
+    public T query(String api) {
+        InputStream inputStream;
+
+        if (ApplicationConfig.CLASSPATH_XML_FILES) {
+            inputStream = getClass().getResourceAsStream(api + ".xml");
+        }
+        else {
+            String filePath =
+                    "src/main/resources/" +
+                            this.getClass().getPackage().getName().replaceAll("\\.", "/")
+                            + "/" + api + ".xml";
+            try {
+                inputStream = FileUtils.openInputStream(new File(filePath));
+            } catch (IOException e) {
+                throw new RuntimeException("Unable to get file: " + filePath, e);
+            }
+        }
+        return xmlParser.unmarshal(inputStream);
+    }
+
+    public static <T> XmlDao<T> createDao(Class<T> type) {
+        return new XmlDao<T>(type);
+    }
+
 }
