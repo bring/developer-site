@@ -75,7 +75,7 @@
     <th>Date</th>
     <th>Change</th>
   </tr>
-<!--  <tr>
+  <tr>
     <td>March 2012</td>
     <td>The consignment request type now accepts either <br/>
     - a list of packages, or<br/>
@@ -86,7 +86,7 @@
   <tr>
     <td>March 2012</td>
     <td>We now support more than one package in the package list of the consignment request type.</td>
-  </tr> -->
+  </tr>
   <tr>
     <td>January 2012</td>
     <td>Initial release (support for single consignment with single package).</td>
