@@ -30,6 +30,11 @@
   to tracking information is also returned.
 </p>
 
+<p>
+  A GET to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to Amazon S3).
+  Ensure that your client follows these redirects.
+</p>
+
 <h3>Billing and Payment</h3>
 
 <p>
