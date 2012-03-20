@@ -87,7 +87,7 @@ public class Main {
         } else {
             workDir = new File(currentDir, "work");
         }
-        FileUtils.deleteDirectory(workDir);
+        FileUtils.cleanDirectory(workDir);
         context.setTempDirectory(workDir);
     }
 
