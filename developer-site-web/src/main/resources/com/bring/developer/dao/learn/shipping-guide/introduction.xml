@@ -45,6 +45,23 @@
     <a href="./documentation/offlinedata.html">More information about offline data</a>
 </p>
 
+<h2>Changelog</h2>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Change</th>
+  </tr>
+  <tr>
+    <td>April 17 2012</td>
+    <td>
+      <b>Release of Version 6 of the Shippingguide XML Schema with the following changes:</b><br/>
+      - From/to postal code/country, shipping date and additional services can now only be specified on the "Consignment" element (which now is required).<br/>
+      - New elements "EarliestPickupDate" and "FormattedEarliestPickupDate" for products with pickup. Replaces "CourierSpecificEdiParameters/OrderStartTime".<br/>
+      - Request property "WithPackageDetails" now controls whether price breakdown for each package in the consignment is returned (default is false).<br/>
+    </td>
+  </tr>
+</table>
 
 ]]>
     </Content>
