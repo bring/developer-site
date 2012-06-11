@@ -141,11 +141,11 @@
 -->
         <repository>
             <id>bring.releases</id>
-            <url>http://bring.ewok.no/nexus/content/repositories/releases</url>
+            <url>http://ci.bd.bring.no/nexus/content/repositories/releases</url>
         </repository>
         <repository>
             <id>bring.thirdparty</id>
-            <url>http://bring.ewok.no/nexus/content/repositories/thirdparty</url>
+            <url>http://ci.bd.bring.no/nexus/content/repositories/thirdparty</url>
         </repository>
         <repository>
             <id>java.net-m2</id>
