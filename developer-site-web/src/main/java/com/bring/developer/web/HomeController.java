@@ -19,7 +19,7 @@ public class HomeController {
     
     @RequestMapping(value = "/index.html")
     public String index() {
-        return "home";
+        return "home_v2";
     }
     
     @RequestMapping(value = "/use/{type}/index.html")
