@@ -41,26 +41,42 @@
                         <p>Here you can find information and tutorials for developers of web shops dealing with shipment from Scandinavian countries.
                            How can Bring APIs improve your webshop? <br><br>
                            Learn how to use the different APIs provided by Bring by exploring the different APIs from the sidebar.
-                           Improve the service provided to your customers by allowing customers to choose their preferred shipping method with the Shipping Guide API.
-                           Show your customers the current status of their shipment with the Tracking API.<br><br>
-                           Find the price and availability for different products and book a request through the logged-in service in the Booking API.
-                           Need help? Through the Support page you can get in touch with the API team and the community of developers.
+                           Improve the service provided to your customers by allowing customers to choose their preferred shipping method with the <a href="#">Shipping Guide API</a>.
+                           Show your customers the current status of their shipment with the <a href="#">Tracking API</a>.<br><br>
+                           Find the price and availability for different products and book a request through the logged-in service in the <a href="#">Booking API</a>.
+                           Need help? Through the <a href="#">Support</a> page you can get in touch with the API team and the community of developers.
                         </p>
                     </div>
 
                     <div class="span5 last">
-                        <ul class="menu-group ingress-list">
+                        <ul class="menu-group ingress-list alternativ">
                             <li>
-                                <a class="menu-item" href="#">Lorem ipsum dolor</a>
-                                <span>Lorem ipsum</span>
+                                <a class="menu-item" href="#">Shipping Guide API</a>
+                                <span>Get price and time estimate for shipments</span>
                             </li>
                             <li>
-                                <a class="menu-item" href="#">Lorem ipsum dolor</a>
-                                <span>Lorem ipsum</span>
+                                <a class="menu-item" href="#">Tracking API</a>
+                                <span>See the current status of shipments</span>
                             </li>
                             <li>
-                                <a class="menu-item" href="#">Lorem ipsum dolor</a>
-                                <span>Lorem ipsum</span>
+                                <a class="menu-item" href="#">Reports API (BETA)</a>
+                                <span>Generate customer reports from shipment history</span>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="#">Pickup Point API</a>
+                                <span>Find pickup points near a location</span>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="#">Postal Code API</a>
+                                <span>Lookup and validate postal codes</span>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="#">Booking API (BETA)</a>
+                                <span>Book shipments and generate PDF labels</span>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="#">EDI</a>
+                                <span>Communicate with brings services electronically</span>
                             </li>
                         </ul>
                     </div>

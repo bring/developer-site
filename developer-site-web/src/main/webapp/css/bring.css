@@ -52,7 +52,7 @@ div.radio.profile.focus span.checked, div.radio.profile.active span.checked {
 }
 /* typo */
 a.read-more {
-  background: url('../images/bring/arrow-green-right.png') no-repeat left center;
+  background: url('/images/bring/arrow-green-right.png') no-repeat left center;
 }
 a.read-more:hover {
   color: #7bc144;

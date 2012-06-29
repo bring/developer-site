@@ -21,6 +21,11 @@ public class HomeController {
     public String index() {
         return "home_v2";
     }
+
+    @RequestMapping(value = "/api/pickuppointapi.html")
+    public String pickuppointapi() {
+        return "api/pickuppointapi";
+    }
     
     @RequestMapping(value = "/use/{type}/index.html")
     public String useOverview(ModelMap model, @PathVariable String type) {

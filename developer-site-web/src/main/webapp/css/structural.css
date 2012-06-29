@@ -40,7 +40,7 @@
     border-radius: 3px;
     line-height: 30px;
     min-height: 30px;
-    text-align: center;
+    text-align: left;
 }
 #grid .row .nested {
     background:#eee;
