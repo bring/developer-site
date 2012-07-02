@@ -9,20 +9,32 @@
 
 <h1>Choose pickup point</h1>
 <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post office.
-   This is mainly intended for online shopping to allow the user to choose another pickup point than the default to their shipping address.
+    This is mainly intended for online shopping to allow the user to choose another pickup point than the default to their shipping address.
 </p>
 
 <h4>How to install</h4>
 <ol>
     <li>This widget depends on jQuery, so please add jQuery to your site first.</li>
     <li>Add the Post Office widget:<br>
-    <code><script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"></script></code></li>
+        <code>&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code></li>
     <li>Initialize it<br>
-    <code>$("divid").utleveringsenhet();</code></li>
+        <code>$("divid").utleveringsenhet();</code></li>
 </ol>
 
 <h4>Demo</h4>
 <iframe src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
+
+<h4>Code</h4>
+<code><pre>&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    $(document).ready(function() {
+        $('#divid').utleveringsenhet();
+    });
+&lt;/script&gt;
+&lt;form&gt;
+	&lt;div id="divid"&gt;&lt;/div&gt;
+&lt;/form&gt;</pre></code>
 
 <h4>Made by</h4>
 <ul>

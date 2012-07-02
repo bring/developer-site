@@ -1,7 +1,15 @@
+
+<%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
-<head></head>
+
+<head>
+    <misc:contenttype />
+    <misc:title value="Pickup Point API" />
+</head>
+
 <body>
+
 <h1>Pickup Point API</h1>
 
 <div id="additional-resources">
@@ -9,7 +17,7 @@
 <h3>Widgets</h3>
 <ul>
     <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
-    <li><a href="../widget/choosePickupPointWithMap.html">Choose Pickup Point With Map</a></li>
+    <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With Map</a></li>
 </ul>
 </div>
 

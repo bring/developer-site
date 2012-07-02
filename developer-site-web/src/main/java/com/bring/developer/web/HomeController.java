@@ -41,7 +41,7 @@ public class HomeController {
         return "widget/choosePickupPoint";
     }
 
-    @RequestMapping(value =  "/widget/choose-pickuppoint-with-map.html")
+    @RequestMapping(value =  "/widget/choose-pickup-point-with-map.html")
     public String choosePickupPointWithMap(){
         return "widget/choosePickupPointWithMap";
     }
