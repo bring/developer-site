@@ -3,6 +3,16 @@
 <head></head>
 <body>
 <h1>Pickup Point API</h1>
+
+<div id="additional-resources">
+<h2>Additonal Resources</h2>
+<h3>Widgets</h3>
+<ul>
+    <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
+    <li><a href="../widget/choosePickupPointWithMap.html">Choose Pickup Point With Map</a></li>
+</ul>
+</div>
+
 <h2>Introduction</h2>
 <p>The Pickup point API provides a list of the alternative locations for package pickup.
     Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned. Response is available as either XML or JSON.<br/><br>

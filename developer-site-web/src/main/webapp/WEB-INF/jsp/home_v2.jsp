@@ -63,7 +63,7 @@
                                 <span>Generate customer reports from shipment history</span>
                             </li>
                             <li>
-                                <a class="menu-item" href="#">Pickup Point API</a>
+                                <a class="menu-item" href="/api/pickuppointapi.html">Pickup Point API</a>
                                 <span>Find pickup points near a location</span>
                             </li>
                             <li>

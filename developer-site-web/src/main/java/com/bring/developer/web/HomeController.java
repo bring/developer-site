@@ -26,7 +26,7 @@ public class HomeController {
     public String pickuppointapi() {
         return "api/pickuppointapi";
     }
-    
+
     @RequestMapping(value = "/use/{type}/index.html")
     public String useOverview(ModelMap model, @PathVariable String type) {
     	PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("use/" + type);
@@ -34,6 +34,16 @@ public class HomeController {
     	model.put("overview", packagesCategory);
     	model.put("packages", packs);
     	return "use/overview";
+    }
+
+    @RequestMapping(value = "/widget/choose-pickup-point.html")
+    public String choosePickupPoint(){
+        return "widget/choosePickupPoint";
+    }
+
+    @RequestMapping(value =  "/widget/choose-pickuppoint-with-map.html")
+    public String choosePickupPointWithMap(){
+        return "widget/choosePickupPointWithMap";
     }
     
     @RequestMapping(value = "/use/{type}/{packageName}.html")
