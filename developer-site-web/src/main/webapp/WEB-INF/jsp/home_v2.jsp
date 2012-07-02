@@ -22,8 +22,9 @@
         </a>
         <nav role="main" id="main-menu">
             <ul class="menu-main global-tabs">
-                <li class="menu-level-1"><a class="first" href="http://webguidelines.bring.com/oversikt">Bring.no</a></li>
-                <li class="menu-level-1 path active"><a class="" href="http://webguidelines.bring.com/grid">Developer</a></li>
+                <li class="menu-level-1"><a class="first" href="http://www.bring.no">Bring.no</a></li>
+                <li class="menu-level-1 path active"><a class="" href="index.html">Developer</a></li>
+                <li class="menu-level-1"><a class="" href="support.html">Support</a></li>
             </ul>
         </nav>
     </div>
@@ -44,7 +45,7 @@
                             Improve the service provided to your customers by allowing customers to choose their preferred shipping method with the <a href="#">Shipping Guide API</a>.
                             Show your customers the current status of their shipment with the <a href="#">Tracking API</a>.<br><br>
                             Find the price and availability for different products and book a request through the logged-in service in the <a href="#">Booking API</a>.
-                            Need help? Through the <a href="#">Support</a> page you can get in touch with the API team and the community of developers.
+                            Need help? Through the <a href="/support.html">Support</a> page you can get in touch with the API team and the community of developers.
                         </p>
                     </div>
 

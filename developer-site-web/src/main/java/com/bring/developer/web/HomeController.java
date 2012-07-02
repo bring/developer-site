@@ -27,6 +27,11 @@ public class HomeController {
         return "api/pickuppointapi";
     }
 
+    @RequestMapping(value = "/support.html")
+    public String support() {
+        return "support";
+    }
+
     @RequestMapping(value = "/use/{type}/index.html")
     public String useOverview(ModelMap model, @PathVariable String type) {
     	PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("use/" + type);
