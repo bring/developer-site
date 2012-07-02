@@ -95,8 +95,8 @@
 
 <p>
 <h2>How to Use</h2>
-    First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest delivery locations.
-    The following examples illustrate the different alternatives.
+First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest delivery locations.
+The following examples illustrate the different alternatives.
 </p>
 
 <p>
@@ -114,9 +114,9 @@
 </p><br/>
 
 <p><h4>Using filters</h4>In addition to postal code or location, one or more optional parameters can be added to the request.
-    These parameters can be perceived as &quot;filters&quot;, adding additional restrictions to the pickup points being returned.
-    One such parameter is <code>searchForText=q&lt;texts&gt;</code>, resulting in a response where all pickup points have at least a partial match with the search string given in &lt;texts&gt;.
-    This can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table or see additional examples for more information
+These parameters can be perceived as &quot;filters&quot;, adding additional restrictions to the pickup points being returned.
+One such parameter is <code>searchForText=q&lt;texts&gt;</code>, resulting in a response where all pickup points have at least a partial match with the search string given in &lt;texts&gt;.
+This can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table or see additional examples for more information
 </p>
 
 <div style="border: 1px solid; padding: 2px">
@@ -133,5 +133,33 @@ Response: ...
 
 <h2>Additional examples</h2>
 
+<h4>Find pickup points containing a specified string</h4>
+<p>If you want to return only the pickup points matching a specified string, you may add <code>?searchForText=&lt;text to match&gt;</code> to the request.
+   The string in the <code>&lt;text to match&gt;</code> can be the name of the pickup point, its address, city, county, municipality or location. Partial matches are also allowed.<br><br>
+   Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.<br><br>
+   Request: /api/pickuppoint/postalcode/1407.xml?searchForText=KIWI<br><br>
+   Response: ...
+</p>
+
+<h4>Find pickup points open on specified days</h4>
+<p>If you want to return only the pickup points open on specified days, you may add <code>?openingHoursSearchType=&lt;day&gt;</code> to the request.<br><br>
+    <code>&lt;day&gt; = ALL_WEEKDAYS (default) | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY | SATURDAY | SUNDAY</code><br><br>
+    If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even more.<br><br>
+    Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.<br><br>
+    Request: /api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY<br><br>
+    Response: ...
+</p>
+
+<h4>Find pickup points open at specific hours</h4>
+<p>If you want to return only the pickup points open on specific hours, you may add <code>?openOnOrBefore=&lt;time&gt;</code> and/or <code>?openOnOrAfter=&lt;time&gt;</code> to the request.<br><br>
+    <code>&lt;time&gt; = HHMM</code><br><br>
+    Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00<br><br>
+    Request: /api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800<br><br>
+    Response: ...
+    <br><br>
+    Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00<br><br>
+    Request: /api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200<br><br>
+    Response: ...
+</p>
 </body>
 </html>
