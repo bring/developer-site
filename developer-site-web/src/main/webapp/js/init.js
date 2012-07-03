@@ -1,21 +1,13 @@
 $(document).ready(function() {
 
-    /*
-     * Initialization for all pages
-     */
 
-    new TopMenu($('.navigation-tabs'), menuJsonData);
-    
     /*
      * Initialization based on page type
      */
     
-    if (isPageType("home")) {
-        $("#twittercontent").performTwitterSearch(1, twitterView);
-        $(".big-banner").bringBanner();
-    }
+
     
-    else if (isPageType("apireference")) {
+    if (isPageType("apireference")) {
         $(".api-call").each(function() {
             $(this).exampleRequest();
         });
