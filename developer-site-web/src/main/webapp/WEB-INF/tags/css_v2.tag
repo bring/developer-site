@@ -4,11 +4,6 @@
 
 
 
-
-<link rel="stylesheet" type="text/css" href="/css/reset.css" />
-
-
-
 <link rel="stylesheet" type="text/css" href="/css/v2/app.css" />
 <link rel="stylesheet" type="text/css" href="/css/v2/framework.css" />
 <link rel="stylesheet" type="text/css" href="/css/v2/prettify.css" />
