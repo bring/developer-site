@@ -178,9 +178,10 @@ header .inner {
 header[role="banner"] {
   width: 100%;
   height: 110px;
-  background: #ffffff url('../../images/top.png') top left repeat-x;
-  border-bottom: 30px solid #db2d22;
+  background: #ffffff url('../../images/bring/top.png') top left repeat-x;
+  border-bottom: 30px solid #7BC144;
 }
+
 
 header[role="banner"] #logo {
   float: left;
@@ -195,7 +196,7 @@ header[role="banner"] #logo h1 {
   height: 54px;
   margin: 0;
   text-indent: -9999em;
-  background: url('../../images/logo.png') no-repeat;
+  background: url('../../images/bring/logo.png') no-repeat;
 }
 
 header nav[role="global"] {
@@ -281,18 +282,18 @@ header nav[role="main"] ul li.path a,
 header nav[role="main"] ul li a:hover {
   padding: 12px 20px;
   margin-top: -1px;
-  background: #db2d22;
-  background-color: #db2d22;
-  background-image: -o-linear-gradient(#c9291f, #db2d22 8px, #db2d22);
-  background-image: -webkit-linear-gradient(#c9291f, #db2d22 8px, #db2d22);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#c9291f), color-stop(8px, #db2d22), to(#db2d22));
-  background-image: linear-gradient(#c9291f, #db2d22 8px, #db2d22);
-  background-image: -moz-linear-gradient(top, #c9291f, #db2d22 8px, #db2d22);
-  background-image: -ms-linear-gradient(#c9291f, #db2d22 8px, #db2d22);
+  background: #7BC144;
+  background-color: #7BC144;
+  background-image: -o-linear-gradient(#619936, #7BC144 8px, #7BC144);
+  background-image: -webkit-linear-gradient(#619936, #7BC144 8px, #7BC144);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#619936), color-stop(8px, #7BC144), to(#7BC144));
+  background-image: linear-gradient(#619936, #7BC144 8px, #7BC144);
+  background-image: -moz-linear-gradient(top, #619936, #7BC144 8px, #7BC144);
+  background-image: -ms-linear-gradient(#619936, #7BC144 8px, #7BC144);
   background-repeat: no-repeat;
-  border-top: 1px solid #db2d22;
-  border-bottom: 1px solid #db2d22;
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#c9291f', endColorstr='#db2d22', GradientType=0);
+  border-top: 1px solid #7BC144;
+  border-bottom: 1px solid #7BC144;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#4a8135', endColorstr='#7BC144', GradientType=0);
 }
 
 /* START FOOTER STYLES */
