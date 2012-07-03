@@ -47,7 +47,7 @@
                 </div>
 
 
-                <div class="span5 box">
+                <div class="span5">
                     <ul class="menu-group ingress-list alternativ">
                         <li>
                             <a class="menu-item" href="#">Shipping Guide API</a>
