@@ -13,7 +13,7 @@
 
 <div class="wrapper">
 
-    <misc:header_v2 />
+    <misc:header_v2 selected_tab="support" />
 
     <div id="page">
 
