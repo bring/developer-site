@@ -633,5 +633,13 @@ td:first-child{
 }
 
 div.box>p{
-          margin-top: 10px;
+    margin-top: 10px;
+}
+p.front-page-welcome-text{
+    font-size: 17px;
+}
+
+div.front-page-api-menu {
+    position: relative;
+    top: -13px;
 }

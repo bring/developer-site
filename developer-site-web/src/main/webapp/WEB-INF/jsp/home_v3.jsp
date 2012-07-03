@@ -30,7 +30,7 @@
                 <div class="span7 box">
                     <h2>Welcome to Bring Developer!</h2>
 
-                    <p>Here you can find information and tutorials for developers of web shops dealing with shipment
+                    <p class="front-page-welcome-text">Here you can find information and tutorials for developers of web shops dealing with shipment
                         from Scandinavian countries.
                         How can Bring APIs improve your webshop? <br><br>
                         Learn how to use the different APIs provided by Bring by exploring the different APIs from the
@@ -47,7 +47,7 @@
                 </div>
 
 
-                <div class="span5">
+                <div class="span5 front-page-api-menu">
                     <ul class="menu-group ingress-list alternativ">
                         <li>
                             <a class="menu-item" href="#">Shipping Guide API</a>
