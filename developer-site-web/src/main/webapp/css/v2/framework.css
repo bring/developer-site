@@ -464,13 +464,13 @@ footer[role="contentinfo"] .social a.linkedin {
   }
   header[role="banner"] {
     height: 64px;
-    background-color: #de2c21;
-    background-image: -webkit-linear-gradient(#e32d22, #e32d22 50%, #ca281e);
-    background-image: -moz-linear-gradient(top, #e32d22, #e32d22 50%, #ca281e);
-    background-image: -ms-linear-gradient(#e32d22, #e32d22 50%, #ca281e);
-    background-image: -o-linear-gradient(#e32d22, #e32d22 50%, #ca281e);
-    background-image: linear-gradient(#e32d22, #e32d22 50%, #ca281e);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e32d22), color-stop(50%, #e32d22), to(#ca281e));
+    background-color: #7BC144;
+    background-image: -webkit-linear-gradient(#619936, #619936 50%, #7BC144);
+    background-image: -moz-linear-gradient(top, #619936, #619936 50%, #7BC144);
+    background-image: -ms-linear-gradient(#619936, #619936 50%, #7BC144);
+    background-image: -o-linear-gradient(#619936, #619936 50%, #7BC144);
+    background-image: linear-gradient(#619936, #619936 50%, #7BC144);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#619936), color-stop(50%, #7BC144), to(#7BC144));
     background-repeat: no-repeat;
     border-bottom: 0;
     filter: progid:dximagetransform.microsoft.gradient(startColorstr='#e32d22', endColorstr='#ca281e', GradientType=0);
@@ -489,7 +489,7 @@ footer[role="contentinfo"] .social a.linkedin {
     width: 106px;
     height: 33px;
     margin-top: 5px;
-    background-image: url("../../images/m-logo.png");
+    background-image: url("../../images/bring/m-logo.png");
   }
   header nav[role="main"] {
     position: absolute;
@@ -502,7 +502,7 @@ footer[role="contentinfo"] .social a.linkedin {
     display: block;
     width: 44px;
     height: 70px;
-    background: url('../../images/m-menu.png') no-repeat center center;
+    background: url('../../images/bring/m-menu.png') no-repeat center center;
     -webkit-transition: background-color 0.5s ease-in-out;
        -moz-transition: background-color 0.5s ease-in-out;
         -ms-transition: background-color 0.5s ease-in-out;
@@ -551,7 +551,7 @@ footer[role="contentinfo"] .social a.linkedin {
   }
   header nav[role="main"] ul.menu-main li a:hover {
     padding-right: 45px;
-    background: #e32d22 url('../../images/m-arrow-w-right.png') no-repeat 97% center;
+    background: #7BC144 url('../../images/m-arrow-w-right.png') no-repeat 97% center;
   }
   header nav[role="main"] ul.menu-main li.active a {
     background-color: #717074;
@@ -642,4 +642,9 @@ p.front-page-welcome-text{
 div.front-page-api-menu {
     position: relative;
     top: -13px;
+}
+
+ul.api-menu{
+    margin: 0;
+    padding: 0;
 }

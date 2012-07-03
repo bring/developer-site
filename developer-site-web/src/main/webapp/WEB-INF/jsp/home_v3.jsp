@@ -47,8 +47,8 @@
                 </div>
 
 
-                <div class="span5 front-page-api-menu">
-                    <ul class="menu-group ingress-list alternativ">
+                <div class="span5">
+                    <ul class="menu-group ingress-list alternativ api-menu">
                         <li>
                             <a class="menu-item" href="#">Shipping Guide API</a>
                             <span>Get price and time estimate for shipments</span>
