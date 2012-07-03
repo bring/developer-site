@@ -24,3 +24,5 @@
 <script type="text/javascript" src="/js/banner.js"></script>
 <script type="text/javascript" src="/js/statistics.js"></script>
 <script type="text/javascript" src="/js/init.js"></script>
+
+<script type="text/javascript" src="/js/bootstrap-tabs.js"></script>

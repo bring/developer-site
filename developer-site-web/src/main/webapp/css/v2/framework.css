@@ -643,3 +643,14 @@ div.front-page-api-menu {
     position: relative;
     top: -13px;
 }
+
+.row.no-back {
+    background: #E2E3E4;
+    padding: 10px;
+}
+
+iframe.widget-demo{
+    border: 0px;
+    width: 100%;
+    padding-top: 20px;
+}
