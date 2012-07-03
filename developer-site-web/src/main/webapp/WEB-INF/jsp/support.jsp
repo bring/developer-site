@@ -16,13 +16,19 @@
     <misc:header_v2 selected_tab="support" />
 
     <div id="page">
+        <section id="content">
+            <div class="row-fluid">
+                <div class="span12 box">
+                    <h1>Support</h1>
+                    <p>This is the support site for Bring APIs. Ask questions, share ideas, read the FAQ or report a problem.</p>
+                </div>
 
-        <div>
-            <h1>Support</h1>
-            <p>This is the support site for Bring APIs. Ask questions, share ideas, read the FAQ or report a problem.</p>
-        </div>
+                <div>
+                    <iframe style='width: 100%; height: 1000px;' src="https://getsatisfaction.com/bring"></iframe>
+                </div>
 
-        <iframe style='width: 100%; height: 700px;' src="https://getsatisfaction.com/bring"></iframe>
+            </div>
+        </section>
     </div>
 
 </div>
