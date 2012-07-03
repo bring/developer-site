@@ -644,7 +644,18 @@ div.front-page-api-menu {
     top: -13px;
 }
 
+
 ul.api-menu{
     margin: 0;
     padding: 0;
+
+.row.no-back {
+    background: #E2E3E4;
+    padding: 10px;
+}
+
+iframe.widget-demo{
+    border: 0px;
+    width: 100%;
+    padding-top: 20px;
 }
