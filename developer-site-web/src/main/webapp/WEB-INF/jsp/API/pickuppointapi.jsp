@@ -56,7 +56,7 @@
             </tr>
             <tr class="even">
                 <td><code>/location/&lt;latitude&gt;/&lt;longitude&gt;.&lt;extension&gt;</code></td>
-                <td>Returns the 10 nearest pickup points based on the given location.<br/>
+                <td>Returns the 10 nearest pickup points based on the given location.
                     <ul>
                         <li>
                             <code>&lt;latitude&gt;</code> = geographic coordinate specifying the north-south position.</li>
@@ -67,7 +67,7 @@
             </tr>
             <tr>
                 <td><code>/id/&lt;id&gt;.&lt;extension&gt;</code></td>
-                <td>Returns the 10 nearest pickup points based on the pickup point's id.<br/>
+                <td>Returns the 10 nearest pickup points based on the pickup point's id.
                     <ul>
                         <li>
                             <code>&lt;id&gt;</code> = The pickup point's id.</li>
