@@ -45,10 +45,11 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab1">
-                                    <iframe class= "widget-demo" src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
+                                    <iframe class="widget-demo" src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
                                 </div>
                                 <div class="tab-pane" id="tab2">
-                                    <p><code><pre>&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
+
+                                    <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
 &lt;/script&gt;
 &lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/
 utleveringsenhet-1.0.1.js"&gt;
@@ -60,24 +61,25 @@ utleveringsenhet-1.0.1.js"&gt;
 &lt;/script&gt;
 &lt;form&gt;
     &lt;div id="divid"&gt;&lt;/div&gt;
-&lt;/form&gt;</pre></code></p>
+&lt;/form&gt;</pre>
                                 </div>
                             </div>
                         </div>
                         </div>
 
-
-
-                    <div class="box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
-                            <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
-                        </ul>
-                        <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js" class="btn enhanced">Download</a>
-                    </div>
                 </div>
+
+                <div class="span3 box">
+                    <h4>Made by</h4>
+                    <ul>
+                        <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
+                        <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
+                    </ul>
+                    <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js" class="btn enhanced">Download</a>
+                </div>
+
             </div>
+
         </section>
     </div>
 
@@ -97,11 +99,11 @@ utleveringsenhet-1.0.1.js"&gt;
             $(this).toggleClass('selected').siblings('.content-box').slideToggle();
             e.preventDefault();
         });
-        $(".step-light.large").setEqualHeight();
-        $(".step-light.clickable, .step.clickable").click(function(){
-            $(this).addClass("current").siblings().removeClass("current");
-        });
+
+
     });
+
+    prettyPrint();
 
 </script>
 

@@ -381,15 +381,15 @@ form label {
   font-weight: normal;
 }
 
-/*
+
 .enhanced {
     font-size: 14px;
     font-weight: bold;
     border: 1px solid #d52a20;
     border-top: 1px solid #e32d22;
-    background: url('../images/button-enhanced.png') center left repeat-x #e32d22;
+    background: url('/images/bring/button-enhanced.png') center left repeat-x #e32d22;
 }
-*/
+
 
 input.text.focus,
 textarea.text.focus,
