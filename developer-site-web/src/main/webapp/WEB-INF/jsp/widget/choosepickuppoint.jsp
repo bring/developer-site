@@ -37,7 +37,7 @@
                                 <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
 
-                        <div class="row no-back element-sample">
+                            <div class="row no-back element-sample">
                             <h4>Widget Example</h4>
                             <ul class="tab-group" data-tabs="tabs">
                                 <li class="active"><a href="#tab1">Demo</a></li>
@@ -47,6 +47,7 @@
                                 <div class="tab-pane active" id="tab1">
                                     <iframe class="widget-demo" src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
                                 </div>
+
                                 <div class="tab-pane" id="tab2">
 
                                     <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
@@ -67,6 +68,7 @@ utleveringsenhet-1.0.1.js"&gt;
                         </div>
                         </div>
 
+
                 </div>
 
                 <div class="span3 box">
@@ -82,8 +84,6 @@ utleveringsenhet-1.0.1.js"&gt;
 
         </section>
     </div>
-
-
 
 
 </div>

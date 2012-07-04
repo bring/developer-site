@@ -34,4 +34,7 @@
 </div>
 </body>
 
+<misc:footer />
+<misc:jqueryblob_v2 />
+
 </html>
