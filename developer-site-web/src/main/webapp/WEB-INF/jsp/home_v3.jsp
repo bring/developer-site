@@ -31,13 +31,13 @@
                     <h2>Welcome to Bring Developer!</h2>
 
                     <p class="front-page-welcome-text">Here you can find information and tutorials for developers of web shops dealing with shipment
-                        from Scandinavian countries.
+                        in and from Scandinavian countries.
                         How can Bring APIs improve your webshop? <br><br>
                         Learn how to use the different APIs provided by Bring by exploring the different APIs from the
                         sidebar.
                         Improve the service provided to your customers by allowing customers to choose their preferred
                         shipping method with the <a href="#">Shipping Guide API</a>.
-                        Show your customers the current status of their shipment with the <a href="#">Tracking
+                        Show your customers the current status of their shipment with the <a href="/api/trackingapi.html">Tracking
                             API</a>.<br><br>
                         Find the price and availability for different products and book a request through the logged-in
                         service in the <a href="#">Booking API</a>.

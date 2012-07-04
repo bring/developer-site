@@ -660,3 +660,8 @@ iframe.widget-demo{
     width: 100%;
     padding-top: 20px;
 }
+
+pre.code-box{
+    max-height: 450px;
+    overflow: scroll;
+}
