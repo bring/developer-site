@@ -37,7 +37,7 @@
                                 <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
 
-                        <div class="row no-back element-sample">
+                            <div class="row no-back element-sample">
                             <h4>Widget Example</h4>
                             <ul class="tab-group" data-tabs="tabs">
                                 <li class="active"><a href="#tab1">Demo</a></li>
@@ -66,8 +66,6 @@ utleveringsenhet-1.0.1.js"&gt;
                         </div>
                         </div>
 
-
-
                     <div class="box">
                         <h4>Made by</h4>
                         <ul>
@@ -80,8 +78,6 @@ utleveringsenhet-1.0.1.js"&gt;
             </div>
         </section>
     </div>
-
-
 
 
 </div>
