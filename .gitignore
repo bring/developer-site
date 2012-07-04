@@ -9,3 +9,4 @@ target
 *.iws
 *.log
 Gemfile.lock
+.DS*
