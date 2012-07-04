@@ -417,3 +417,21 @@
     box-shadow: none;
 }
 /* END TAB-GROUP STYLES */
+
+/* START BUTTON STYLE */
+button.enhanced, input.enhanced, a.enhanced {
+    border:none;
+    background: url('/images/bring/button-enhanced.png') center left repeat-x #76c157;
+}
+button.flat.enhanced, input.flat.enhanced, a.flat.enhanced {
+    background: #76c157;
+}
+input.text.profile.focus,
+textarea.text.profile.focus,
+input.text.profile:focus,
+textarea.text.profile:focus,
+input.text.profile:active,
+textarea.text.profile:active {
+    border: 2px solid #77ba42;
+    border-top: 2px solid #6aa63b;
+}
