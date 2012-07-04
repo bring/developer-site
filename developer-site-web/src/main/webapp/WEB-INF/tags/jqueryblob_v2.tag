@@ -28,4 +28,6 @@
 <script type="text/javascript" src="/js/bootstrap-tabs.js"></script>
 <script type="text/javascript" src="/js/prettify.js"></script>
 <script type="text/javascript" src="/js/kp-utilities.js"></script>
+<script type="text/javascript" src="/js/kp-mobile.menu.js"></script>
+
 

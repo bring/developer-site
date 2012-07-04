@@ -14,12 +14,10 @@
 
     <misc:header_v2 selected_tab="developer"/>
 
-    <div class="page">
+    <div id="page">
         <section id="content">
             <div class="row-fluid">
-
                 <div class="span9">
-
                     <div class="box">
                         <h1>Choose pickup point With Map</h1>
 
@@ -41,12 +39,21 @@
                                 <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
 
-                        <h4>Demo</h4>
-                        <iframe src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe>
+                    <div class="row no-back element-sample">
+                        <h4>Widget Example</h4>
 
-                        <div class="row no-back element-sample">
-                            <h4>Code</h4>
-                        <code><pre>&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+                        <ul class="tab-group" data-tabs="tabs">
+                            <li class="active"><a href="#tab1">Demo</a></li>
+                            <li><a href="#tab2">Code</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <iframe class="widget-demo"
+                                        src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe>
+                            </div>
+
+                            <div class="tab-pane" id="tab2">
+                       <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
@@ -61,27 +68,28 @@
 &lt;form&gt;
 	&lt;div id="divid"&gt;&lt;/div&gt;
 &lt;/form&gt;</pre>
-                        </code></div>
-
+                            </div>
+                        </div>
                     </div>
 
-
-
-                    <div class="box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
-                            <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
-                        </ul>
-
-                        <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js">Download</a>
-                    </div>
                 </div>
 
             </div>
-        </section>
 
-    </div>
+            <div class="span3 box">
+                <h4>Made by</h4>
+                <ul>
+                    <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
+                    <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
+                </ul>
+
+                <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js" class="btn enhanced">Download</a>
+            </div>
+
+        </div>
+
+    </section>
+</div>
 </div>
 
 
@@ -89,15 +97,15 @@
 <misc:jqueryblob_v2/>
 
 <script type="text/javascript">
-    $(function(){
+    $(function () {
         // Hides all content boxes that are not selected
         $('.menu-group.collapsing a:not(.selected) + .content-box').hide();
-        $('.menu-group.collapsing a').click(function(e){
+        $('.menu-group.collapsing a').click(function (e) {
             $(this).toggleClass('selected').siblings('.content-box').slideToggle();
             e.preventDefault();
         });
         $(".step-light.large").setEqualHeight();
-        $(".step-light.clickable, .step.clickable").click(function(){
+        $(".step-light.clickable, .step.clickable").click(function () {
             $(this).addClass("current").siblings().removeClass("current");
         });
     });

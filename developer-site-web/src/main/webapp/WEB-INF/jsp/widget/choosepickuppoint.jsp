@@ -47,6 +47,7 @@
                                 <div class="tab-pane active" id="tab1">
                                     <iframe class="widget-demo" src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
                                 </div>
+
                                 <div class="tab-pane" id="tab2">
 
                                     <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
