@@ -24,6 +24,10 @@
 
 <div class="box">
     <h1>Pickup Point API</h1>
+
+
+    <misc:request-response-example requestUrl="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407" />
+
 </div>
 
 <div class="box">
@@ -1040,7 +1044,6 @@
 </div>
 </div>
 </div>
-
 
 
 
