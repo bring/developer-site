@@ -91,21 +91,5 @@ utleveringsenhet-1.0.1.js"&gt;
 <misc:footer/>
 <misc:jqueryblob_v2/>
 
-<script type="text/javascript">
-    $(function(){
-        // Hides all content boxes that are not selected
-        $('.menu-group.collapsing a:not(.selected) + .content-box').hide();
-        $('.menu-group.collapsing a').click(function(e){
-            $(this).toggleClass('selected').siblings('.content-box').slideToggle();
-            e.preventDefault();
-        });
-
-
-    });
-
-    prettyPrint();
-
-</script>
-
 </body>
 </html>

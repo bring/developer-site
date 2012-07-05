@@ -32,3 +32,18 @@
 <!-- <script type="text/javascript" src="/js/kp-mobile.menu.js"></script> -->
 
 
+<script type="text/javascript">
+    $(function(){
+        // Hides all content boxes that are not selected
+        $('.menu-group.collapsing a:not(.selected) + .content-box').hide();
+        $('.menu-group.collapsing a').click(function(e){
+            $(this).toggleClass('selected').siblings('.content-box').slideToggle();
+            e.preventDefault();
+        });
+
+
+    });
+
+    prettyPrint();
+
+</script>

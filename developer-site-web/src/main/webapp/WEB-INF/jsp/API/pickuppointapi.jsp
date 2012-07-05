@@ -26,8 +26,6 @@
     <h1>Pickup Point API</h1>
 
 
-    <misc:request-response-example requestUrl="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407" />
-
 </div>
 
 <div class="box">
@@ -1199,18 +1197,6 @@ reference table or see additional examples for more information
 
 <misc:footer/>
 <misc:jqueryblob_v2/>
-
-<script type="text/javascript"> $(function () {
-// Hides all content boxes that are not selected
-    $('.menu-group.collapsing a:not(.selected) + .content-box').hide();
-    $('.menu-group.collapsing a').click(function (e) {
-        $(this).toggleClass('selected').siblings('.content-box').slideToggle();
-        e.preventDefault();
-    });
-});
-prettyPrint();
-
-</script>
 
 </body>
 </html>
