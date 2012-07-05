@@ -53,12 +53,12 @@ public class HomeController {
 
     @RequestMapping(value = "/widget/choose-pickup-point.html")
     public String choosePickupPoint(){
-        return "widget/choosePickupPoint";
+        return "widget/choosepickuppoint";
     }
 
     @RequestMapping(value =  "/widget/choose-pickup-point-with-map.html")
     public String choosePickupPointWithMap(){
-        return "widget/choosePickupPointWithMap";
+        return "widget/choosepickuppointwithmap";
     }
 
     @RequestMapping(value = "/use/{type}/{packageName}.html")
