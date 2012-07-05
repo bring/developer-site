@@ -1068,3 +1068,202 @@ a.btn.flat {
 .box .push-left {
   margin-left: 10px;
 }
+
+.menu-item {
+    display: block;
+    height: 20px;
+    padding: 7px 10px 3px 10px;
+    margin-bottom: 10px;
+    color: #4d4f53;
+    background: #f0f0f1 url('../../images/arrow-black-right.png') no-repeat 95% center;
+    -webkit-box-shadow: 0 3px 6px -1px #777777;
+    -moz-box-shadow: 0 3px 6px -1px #777777;
+    box-shadow: 0 3px 6px -1px #777777;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+}
+
+.menu-item:hover {
+    color: #fff;
+    background: #7bc144 url('../../images/arrow-white-right.png') no-repeat 95% center;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+}
+
+.menu-group {
+    list-style: none;
+}
+
+.no-shadow .menu-item {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.menu-group .menu-item {
+    margin-bottom: 1px;
+}
+
+.menu-group.ingress-list li {
+    margin-bottom: 1px;
+    background: #F0F0F1;
+    -webkit-box-shadow: 0 3px 6px -1px #777777;
+    -moz-box-shadow: 0 3px 6px -1px #777777;
+    box-shadow: 0 3px 6px -1px #777777;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+}
+
+.menu-group.ingress-list li:hover {
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: background-color 0.3s linear;
+    -moz-transition: background-color 0.3s linear;
+    -o-transition: background-color 0.3s linear;
+}
+
+.menu-group.ingress-list li a {
+    padding-bottom: 0;
+    margin-bottom: -6px;
+    font-weight: bold;
+}
+
+.menu-group.ingress-list li:hover a {
+    color: #7BC144;
+}
+
+.menu-group.ingress-list li span {
+    display: block;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    font-size: 1.3em;
+}
+
+.menu-group.ingress-list .menu-item {
+    width: 250px;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* minimal */
+
+.menu-group.minimal .heading {
+    padding: 7px 0 3px 0;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.menu-group.minimal li {
+    border-bottom: 1px solid #c2c2c4;
+}
+
+.menu-group.minimal .menu-item {
+    padding-left: 0;
+    background: transparent url('../../images/arrow-green-right.png') no-repeat 98% center;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.menu-group.minimal .menu-item:hover {
+    color: #7BC144;
+}
+
+.menu-group.minimal li:last-child {
+    border-bottom: none;
+}
+
+.menu-group.minimal.horizontal {
+    overflow: hidden;
+}
+
+.menu-group.minimal.horizontal li {
+    float: left;
+    margin-right: 10px;
+    border-right: 1px solid #c2c2c4;
+    border-bottom: none;
+}
+
+.menu-group.minimal.horizontal li a {
+    width: auto;
+    height: auto;
+    padding: 0;
+    padding-right: 10px;
+    background: none;
+}
+
+.menu-group.minimal.horizontal li:last-child {
+    margin-right: 0;
+    border-right: none;
+}
+
+
+/*--stuff til developer siten --*/
+
+tr.even{
+    background-color: #EFEFF0;
+}
+
+thead th{
+    background-color: #717074;
+    color: white;
+    padding: 9px 25px 9px 10px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+table{
+    table-layout: fixed;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 0.85em;
+    border: 1px;
+
+}
+
+td:first-child{
+    width: 310px;
+}
+
+div.box>p{
+    margin-top: 10px;
+}
+p.front-page-welcome-text{
+    font-size: 17px;
+}
+
+div.front-page-api-menu {
+    position: relative;
+    top: -13px;
+}
+
+ul.api-menu{
+    margin: 0;
+    padding: 0;
+}
+
+.row.no-back {
+    background: #E2E3E4;
+    padding: 10px;
+}
+
+iframe.widget-demo{
+    border: 0px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+pre.code-box{
+    max-height: 450px;
+    overflow: scroll;
+}

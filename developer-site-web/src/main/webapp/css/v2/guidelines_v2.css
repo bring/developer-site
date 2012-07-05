@@ -149,6 +149,7 @@
 .menu-group.ingress-list.alternative li a {
     color: #4d4f53;
 }
+
 .menu-group.collapsing li {
     border-bottom: 1px solid #fff;
 }
@@ -191,7 +192,7 @@
     color: #fff;
 }
 .menu-group.collapsing .menu-item:hover .arrow {
-    background: transparent url('../images/shared/arrow-white-down.png') no-repeat center left;
+    background: transparent url('/images/shared/arrow-white-down.png') no-repeat center left;
 }
 .menu-group.collapsing .menu-item.selected .arrow, .menu-group.collapsing .menu-item.selected:hover .arrow {
     -webkit-transform: rotate(180deg);
@@ -435,3 +436,20 @@ textarea.text.profile:active {
     border: 2px solid #77ba42;
     border-top: 2px solid #6aa63b;
 }
+
+/* GRID */
+.row {
+    zoom: 1;
+}
+.row:before, .row:after {
+    display: table;
+    content: "";
+    zoom: 1;
+    *display: inline;
+}
+.row:after {
+    clear: both;
+}
+
+/*-- fra structural.ss---*/
+.element-sample { margin-bottom:30px; }
