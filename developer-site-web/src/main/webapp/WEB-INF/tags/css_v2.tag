@@ -10,8 +10,6 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/v2/guidelines_v2.css" />
-
 
 
 
