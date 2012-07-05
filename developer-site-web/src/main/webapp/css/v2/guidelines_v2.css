@@ -150,32 +150,6 @@
     color: #4d4f53;
 }
 
-/*---Start bring css---*/
-.menu-group.collapsing {
-    background-color:#7bc144;
-}
-.menu-group.collapsing .menu-item.selected, .menu-group.collapsing .menu-item.selected:hover, .menu-group.collapsing .menu-item:hover {
-    background-color: transparent;
-}
-
-.link-list li {
-    background: transparent url('../images/bring/arrow-green-right.png') no-repeat left center;
-}
-.link-list li a:hover {
-    color: #5eae1f;
-}
-
-.menu-item:hover {
-    background-color:#7bc144;
-}
-.menu-item.gradient .arrow {
-    background: url('../images/bring/arrow-green-right-ten.png') no-repeat right center;
-}
-.menu-item.gradient:hover {
-    background-color:#7bc144;
-}
-/*---Slutt bring css---*/
-
 .menu-group.collapsing li {
     border-bottom: 1px solid #fff;
 }
