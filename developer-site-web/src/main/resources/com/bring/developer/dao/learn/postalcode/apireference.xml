@@ -26,7 +26,9 @@
             </Request>
             <Content><![CDATA[
                 <p>XPath for checking if the response is valid:<br />
-                <code>//Response/@valid</code></p>
+                <code>//Response/@valid</code></p><br />
+                <p>XPath for type of postalcode (NORMAL / POBOX / SPESIALCUSTOMER):<br />
+                <code>//Response/@postalCodeType</code></p><br />
             ]]></Content>
         </Example>
         <Example type="json">
@@ -36,9 +38,12 @@
             <Request>
                 /api/postalCode.json?country=no&amp;pnr=1337
             </Request>
-            <Content>
-                
-            </Content>
+            <Content><![CDATA[
+                <p>Field for checking if the response is valid:<br />
+                <code>"valid": true</code></p><br />
+                <p>Field for type of postalcode (NORMAL / POBOX / SPESIALCUSTOMER):<br />
+                <code>"postalCodeType": "NORMAL"</code></p><br />
+            ]]></Content>
         </Example>
         <Example type="html">
             <Title>

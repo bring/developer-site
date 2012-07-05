@@ -12,9 +12,8 @@
 
 <body class="page-home">
 	<div class="wrapper">
-	    <misc:header />
-        
-	    <div class="main group">
+        <misc:header />
+        <div class="main group">
             <misc:showcase />
             <menutabs:showMenu cssClass="menutab" />
             <div class="group home-content">

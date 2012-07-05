@@ -215,7 +215,7 @@ Example output
             Package dimensions
         </Title>
         <Description><![CDATA[
-            <p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
+            <p>Specified using <code>length=30&amp;width=40&amp;height=40</code>. The unit is cm.</p>
         ]]></Description>
         <Example type="xml">
             <Title>
