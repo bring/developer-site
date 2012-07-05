@@ -1106,12 +1106,19 @@ reference table or see additional examples for more information
 </div>
 
 <div class="box">
+
+
+
+
+
+
+
     <h2>Additional examples</h2>
-    <ul class="menu-group collapsing">
+    <ul class="menu-group collapsing no-shadow">
 
 
         <li>
-            <a href="#" class="menu item"><h4>Find pickup points containing a specified string</h4></a>
+            <a href="#" class="menu-item"><h4>Find pickup points containing a specified string</h4></a>
 
             <div class="content-box">
                 <p>If you want to return only the pickup points matching a specified string, you may add <code>?searchForText=&lt;text
@@ -1127,7 +1134,7 @@ reference table or see additional examples for more information
         </li>
 
         <li>
-            <a href="#" class="menu item"><h4>Find pickup points open on specified days</h4></a>
+            <a href="#" class="menu-item"><h4>Find pickup points open on specified days</h4></a>
 
             <div class="content-box">
                 <p>If you want to return only the pickup points open on specified days, you may add <code>?openingHoursSearchType=&lt;day&gt;</code>
@@ -1144,7 +1151,7 @@ reference table or see additional examples for more information
         </li>
 
         <li>
-            <a href="#" class="menu item"><h4>Find pickup points open at specific hours</h4></a>
+            <a href="#" class="menu-item"><h4>Find pickup points open at specific hours</h4></a>
 
             <div class="content-box">
                 <p>If you want to return only the pickup points open on specific hours, you may add <code>?openOnOrBefore=&lt;time&gt;</code>
