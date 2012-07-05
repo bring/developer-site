@@ -20,6 +20,11 @@
         <section id="content">
             <div class="row-fluid">
                 <div class="span9">
+
+                    <div class="box">
+                        <misc:request-response-example requestUrl="abc" />
+                    </div>
+
                     <div class="box">
                         <h1>Choose pickup point</h1>
                         <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post office.
