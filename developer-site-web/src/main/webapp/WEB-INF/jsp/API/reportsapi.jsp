@@ -13,73 +13,70 @@
 
 <div class="wrapper">
 
-<misc:header_v2 selected_tab="developer"/>
+    <misc:header_v2 selected_tab="developer"/>
 
-<div id="page">
-<section id="content">
-<div class="row-fluid">
+    <div id="page">
+        <section id="content">
+            <div class="row-fluid">
 
-<div class="span9">
+                <div class="span9">
 
-<div class="box">
-    <h1>Reports API</h1>
-</div>
+                    <div class="box">
+                        <h1>Reports API</h1>
+                    </div>
 
-<div class="box">
-    <h2>Introduction</h2>
+                    <div class="box">
+                        <h2>Introduction</h2>
+                        <p>The API lets you view customer accounts associated with your account, find available reports for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
+                        </p>
 
-    <p>
-    </p>
+                        <div class="information-box"><p><b>Note!</b> The Reports API is currently in closed BETA testing. Please contact us at fraktguide@posten.no if you are interested in testing this service</p>
+                        </div>
 
+                    </div>
 
+                    <div class="box">
+                        <h2>Reference</h2>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Field</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
 
-</div>
+                            </tbody>
+                        </table>
+                    </div>
 
-<div class="box">
-    <h2>Reference</h2>
+                    <div class="box">
+                        <h2>How to Use</h2>
 
-    <p>Request prefix: <br/><code></code></p>
+                    </div>
 
-    <table>
-        <thead>
-        <tr>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
+                    <div class="box">
+                        <h2>Additional examples</h2>
 
-        </tbody>
-    </table>
-</div>
+                    </div>
+                </div>
 
-<div class="box">
-    <h2>How to Use</h2>
+                <div class="span3" id="additional-resources">
+                    <div class="box">
+                        <h2>Additonal Resources</h2>
+                        <ul>
 
-</div>
+                        </ul>
+                    </div>
+                </div>
 
-<div class="box">
-    <h2>Additional examples</h2>
-
-</div>
-</div>
-
-<div class="span3" id="additional-resources">
-    <div class="box">
-        <h2>Additonal Resources</h2>
-        <ul>
-
-        </ul>
+            </div>
+        </section>
     </div>
-</div>
-
-</div>
-</section>
-</div>
 </div>
 
 <misc:footer/>
