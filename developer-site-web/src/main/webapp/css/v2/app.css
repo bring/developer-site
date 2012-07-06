@@ -1015,7 +1015,9 @@ iframe.widget-demo {
 
 pre.code-box {
   max-height: 350px;
-  overflow: scroll;
+  padding: 5px;
+  overflow: auto;
+  background: #f5f5f5;
   border: 1px solid #CCC;
   overflow-wrap: break-word;
 }

@@ -38,7 +38,9 @@
                     <div class="box">
                         <h2>Reference</h2>
 
-                        <p>Common headers for all requests:</p>
+                        <pre class="code-box">Request prefix:
+https://www.mybring.com/reports/api</pre>
+
                         <table>
                             <thead>
                             <tr>
@@ -55,7 +57,7 @@
                                     </ul>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="even">
                                 <td>
                                     <code>Accept-Language: &lt;lang_code&gt;,&lt;lang_code&gt;</code>
                                 </td>
@@ -78,7 +80,7 @@
                                     </ul>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="even">
                                 <td>
                                     <code>X-MyBring-API-Key: &lt;api_key&gt;</code>
                                 </td>
@@ -93,8 +95,6 @@
                             </tbody>
                         </table>
 
-                        <p>Request prefix: </p>
-                        <code>https://www.mybring.com/reports/api</code>
                         <table>
                             <thead>
                             <tr>
@@ -111,7 +111,7 @@
                                     before performing this call</p>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr class="even">
                                 <td><code>.../generate/&lt;customer_account_id&gt;/</code></td>
                                 <td> Get a list of all available reports for the customer with customer id given
                                     by <code>&lt;customer_account_id&gt;</code>.
@@ -255,10 +255,6 @@
 
                     </div>
 
-                    <div class="box">
-                        <h2>Additional examples</h2>
-
-                    </div>
                 </div>
 
                 <div class="span3" id="additional-resources">
