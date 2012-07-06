@@ -643,6 +643,8 @@ a.btn.flat {
 
 .table.inverted tbody th,
 .table.inverted tbody td {
+  margin-top: 0;
+  vertical-align: text-top;
   border-top: none;
 }
 
