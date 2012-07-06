@@ -72,10 +72,54 @@
 
                         <p>
                             Example: TRACK A SHIPMENT<br/>
-                            This example is showing a package waiting to be collected at the pickup point .<br/><br/>
-                            Request: /sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT<br/><br/>
-                            Response: ...
+                            This example is showing a package waiting to be collected at the pickup point .
                         </p>
+
+
+
+                        <div class="row-fluid">
+                            <div class="box">
+                                <div class="row element-sample">
+                                    <ul class="tab-group minimal" data-tabs="tabs">
+                                        <li class="active"><a href="#tab1">XML</a></li>
+                                        <li><a href="#tab2">JSON</a></li>
+                                    </ul>
+                                    <div class="tab-content tab-minimal">
+                                        <div class="tab-pane active" id="tab1">
+                                            <div data-tab="xml" class="tab api-call">
+                                                <p>Request:</p>
+                                                <a target="_blank" class="request"
+                                                   href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT"
+                                                   data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT">
+                                                    .../sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT
+                                                </a>
+                                                <pre class="code-box xml response delay-snippet"></pre>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="tab-pane" id="tab2">
+                                        <div data-tab="json" class="tab api-call">
+                                            <p>Request:</p>
+                                            <a target="_blank" class="request"
+                                               href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT"
+                                               data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">
+                                                .../sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT
+                                            </a>
+                                            <pre class="code-box json response delay-snippet"></pre>
+                                        </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
 
                     <div class="box">
@@ -86,16 +130,58 @@
                             <ul class="menu-group collapsing no-shadow">
 
                                 <li>
-                                    <a href="#" class="menu item"><h4>Package - notification received</h4></a>
+                                    <a href="#" class="menu-item"><h4>Package - notification received</h4></a>
                                     <div class="content-box" style="display: none;">
-                                        <p>The example below is showing a package that have been EDI notified, but is not received by Bring</p><br>
-                                        Request: /sporing.xml?q=TESTPACKAGE-EDI
-                                        Response: ...
+
+
+                                        <p>The example below is showing a package that have been EDI notified, but is not received by Bring</p>
+
+
+
+
+                                        <div class="row element-sample">
+                                            <ul class="tab-group minimal" data-tabs="tabs">
+                                                <li class="active"><a href="#tab11">XML</a></li>
+                                                <li><a href="#tab12">JSON</a></li>
+                                            </ul>
+                                            <div class="tab-content tab-minimal">
+                                                <div class="tab-pane active" id="tab11">
+                                                    <div data-tab="xml" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request"
+                                                           href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT"
+                                                           data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT">
+                                                            .../sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT
+                                                        </a>
+                                                        <pre class="code-box xml response delay-snippet"></pre>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane" id="tab12">
+                                                    <div data-tab="json" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request"
+                                                           href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT"
+                                                           data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">
+                                                            .../sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT
+                                                        </a>
+                                                        <pre class="code-box json response delay-snippet"></pre>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+
+
+
                                     </div>
                                 </li>
 
                                 <li>
-                                    <a href="#" class="menu item"><h4>Package - waiting at pickup point</h4></a>
+                                    <a href="#" class="menu-item"><h4>Package - waiting at pickup point</h4></a>
                                     <div class="content-box">
                                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup point</p><br>
                                         Request: /sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT
@@ -104,7 +190,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#" class="menu item"><h4>Package - loaded for delivery</h4></a>
+                                    <a href="#" class="menu-item"><h4>Package - loaded for delivery</h4></a>
                                     <div class="content-box">
                                         <p>The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient</p><br>
                                         Request: /sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY
@@ -113,7 +199,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="#" class="menu item"><h4>Package - delivered</h4></a>
+                                    <a href="#" class="menu-item"><h4>Package - delivered</h4></a>
                                     <div class="content-box">
                                         <p>The example below is showing a package that has been delivered to the reciepient</p><br>
                                         Request: /sporing.xml?q=TESTPACKAGE-DELIVERED
@@ -143,18 +229,6 @@
 <misc:footer/>
 <misc:jqueryblob_v2/>
 
-<script type="text/javascript"> $(function () {
-// Hides all content boxes that are not selected
-    $('.menu-group.collapsing a:not(.selected) + .content-box').hide();
-    $('.menu-group.collapsing a').click(function (e) {
-        $(this).toggleClass('selected').siblings('.content-box').slideToggle();
-        e.preventDefault();
-    });
-});
-
-prettyPrint();
-
-</script>
 
 </body>
 </html>

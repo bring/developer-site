@@ -954,6 +954,10 @@ a.btn.flat {
   border-right: none;
 }
 
+div.content-box {
+  padding: 15px;
+}
+
 /*--stuff til developer siten --*/
 
 tr.even {
@@ -1012,6 +1016,7 @@ iframe.widget-demo {
 pre.code-box {
   max-height: 350px;
   overflow: scroll;
+  border: 1px solid #CCC;
   overflow-wrap: break-word;
 }
 
