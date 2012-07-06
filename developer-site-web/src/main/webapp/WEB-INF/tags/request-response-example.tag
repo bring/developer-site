@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="tab-pane active" id="tab2">
+                <div class="tab-pane" id="tab2">
                     <div data-tab="json" class="tab api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
