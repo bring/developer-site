@@ -37,6 +37,64 @@
 
                     <div class="box">
                         <h2>Reference</h2>
+
+                        <p>Common headers for all requests:</p>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Header</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td><code>Accept: application/&lt;extension&gt;</code></td>
+                                <td>Choose response format.
+                                    <ul>
+                                        <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>Accept-Language: &lt;lang_code&gt;,&lt;lang_code&gt;</code>
+                                </td>
+                                <td>
+                                    Choose language for text-fields in the responses.
+                                    <ul>
+                                        <li><code>&lt;lang_code&gt;</code> = a language code such as <code>no</code> for norwegian and <code>en</code> for english.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>X-MyBring-API-Uid: &lt;user@email.com&gt;</code>
+                                </td>
+                                <td>Specify your email adress.
+                                    <ul>
+                                        <li>
+                                            <code>&lt;user@email.com&gt;</code> = the users email address.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>X-MyBring-API-Key: &lt;api_key&gt;</code>
+                                </td>
+                                <td>Specify your API-key.
+                                    <ul>
+                                        <li><code>&lt;api_key&gt;</code> = a valid api-key
+                                            such as <code>a141879d-608e-4ee4-95bd-8a083e04b599</code>.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                        <p>Request prefix: </p>
+                        <code>https://www.mybring.com/reports/api</code>
                         <table>
                             <thead>
                             <tr>
@@ -46,12 +104,26 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
+                                <td><code>.../generate/</code></td>
+                                <td>
+                                    <p>Get a list of available customer accounts. Rememeber to set the correct headers
+                                    (<code>Accept, Accept-Language, X-MyBring-API-Uid</code> and <code>X-MyBring-API-Key</code>)
+                                    before performing this call</p>
+                                </td>
                             </tr>
-
+                            <tr>
+                                <td><code>.../generate/&lt;customer_account_id&gt;/</code></td>
+                                <td> Get a list of all available reports for the customer with customer id given
+                                    by <code>&lt;customer_account_id&gt;</code>.
+                                    <ul>
+                                        <li><code>&lt;customer_account_id&gt;</code> = one of the customer account ids
+                                            returned by a call to <code>.../generate/</code>.</li>
+                                    </ul>
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
+
                     </div>
 
                     <div class="box">
