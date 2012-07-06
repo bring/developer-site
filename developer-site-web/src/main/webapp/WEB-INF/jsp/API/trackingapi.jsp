@@ -79,7 +79,7 @@
 
 
                         <div class="row-fluid">
-                            <div class="box">
+                            <div class="box lightBorder">
 
 
                                 <div class="row element-sample">
@@ -142,7 +142,7 @@
                                         <p>The example below is showing a package that have been EDI notified, but is not received by Bring</p>
 
 
-
+                                        <div class="box lightBorder">
 
                                         <div class="row element-sample">
                                             <ul class="tab-group minimal" data-tabs="tabs">
@@ -176,6 +176,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        </div>
+
 
 
 
@@ -185,8 +187,8 @@
                                 <li>
                                     <a href="#" class="menu-item"><h4>Package - waiting at pickup point</h4></a>
                                     <div class="content-box">
-                                        <p>The example below is showing a package waiting for the recipient to collect it at a pickup point</p><br>
-                                        <div class="row element-sample">
+                                        <p>The example below is showing a package waiting for the recipient to collect it at a pickup point</p>
+                                      <div class="box lightBorder">  <div class="row element-sample">
                                             <ul class="tab-group minimal" data-tabs="tabs">
                                                 <li class="active"><a href="#tab21">XML</a></li>
                                                 <li><a href="#tab22">JSON</a></li>
@@ -209,7 +211,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div></div>
 
                                     </div>
                                 </li>
@@ -217,18 +219,65 @@
                                 <li>
                                     <a href="#" class="menu-item"><h4>Package - loaded for delivery</h4></a>
                                     <div class="content-box">
-                                        <p>The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient</p><br>
-                                        Request: /sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY
-                                        Response: ...
+                                        <p>The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient</p>
+                                        <div class="box lightBorder">  <div class="row element-sample">
+                                            <ul class="tab-group minimal" data-tabs="tabs">
+                                                <li class="active"><a href="#tab31">XML</a></li>
+                                                <li><a href="#tab32">JSON</a></li>
+                                            </ul>
+                                            <div class="tab-content tab-minimal">
+                                                <div class="tab-pane active" id="tab31">
+                                                    <div data-tab="xml" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY" data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
+                                                        <pre class="code-box xml response delay-snippet"></pre>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane" id="tab32">
+                                                    <div data-tab="json" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
+                                                        <pre class="code-box json response delay-snippet"></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div></div>
                                     </div>
                                 </li>
 
                                 <li>
                                     <a href="#" class="menu-item"><h4>Package - delivered</h4></a>
                                     <div class="content-box">
-                                        <p>The example below is showing a package that has been delivered to the reciepient</p><br>
-                                        Request: /sporing.xml?q=TESTPACKAGE-DELIVERED
-                                        Response: ...
+                                        <p>The example below is showing a package that has been delivered to the reciepient</p>
+
+                                        <div class="box lightBorder">  <div class="row element-sample">
+                                            <ul class="tab-group minimal" data-tabs="tabs">
+                                                <li class="active"><a href="#tab41">XML</a></li>
+                                                <li><a href="#tab42">JSON</a></li>
+                                            </ul>
+                                            <div class="tab-content tab-minimal">
+                                                <div class="tab-pane active" id="tab41">
+                                                    <div data-tab="xml" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-DELIVERED" data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-DELIVERED">…/sporing.xml?q=TESTPACKAGE-DELIVERED</a>
+                                                        <pre class="code-box xml response delay-snippet"></pre>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane" id="tab42">
+                                                    <div data-tab="json" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-DELIVERED">…/sporing.json?q=TESTPACKAGE-DELIVERED</a>
+                                                        <pre class="code-box json response delay-snippet"></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div></div>
+
+
                                     </div>
                                 </li>
 

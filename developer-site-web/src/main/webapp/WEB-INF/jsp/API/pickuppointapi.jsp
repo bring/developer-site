@@ -139,55 +139,63 @@
 
 <div class="box">
     <h2>How to Use</h2>
+
     <p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10
         nearest delivery locations.
         The following examples illustrate the different alternatives.
     </p>
 
 
-
     <div class="row element-sample">
-        <p><h4>Example: USING THE POSTAL CODE</h4></p>
+
+
+            <p><h4>Example: USING THE POSTAL CODE</h4></p>
         <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro.<br>
         </p>
+        <div class="box lightBorder">
         <ul class="tab-group minimal" data-tabs="tabs">
-            <li class="active"><a href="#tab1">XML</a></li>
-            <li><a href="#tab2">JSON</a></li>
-        </ul>
-        <div class="tab-content tab-minimal">
+                <li class="active"><a href="#tab1">XML</a></li>
+                <li><a href="#tab2">JSON</a></li>
+            </ul>
+            <div class="tab-content tab-minimal">
 
-            <div class="tab-pane active" id="tab1">
-                <div data-tab="xml" class="tab api-call">
-                    <p>Request:</p>
-                    <a target="_blank" class="request"
-                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
-                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
-                        /api/pickuppoint/postalcode/1407.xml
-                    </a>
-                    <pre class="code-box xml response delay-snippet"></pre>
+                <div class="tab-pane active" id="tab1">
+                    <div data-tab="xml" class="tab api-call">
+                        <p>Request:</p>
+                        <a target="_blank" class="request"
+                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
+                           data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
+                            /api/pickuppoint/postalcode/1407.xml
+                        </a>
+                        <pre class="code-box xml response delay-snippet"></pre>
+                    </div>
                 </div>
-            </div>
 
-            <div class="tab-pane" id="tab2">
-                <div data-tab="json" class="tab api-call">
-                    <p>Request:</p>
-                    <a target="_blank" class="request"
-                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
-                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
-                        /api/pickuppoint/postalcode/1407.json
-                    </a>
-                    <pre class="code-box json response delay-snippet"></pre>
+                <div class="tab-pane" id="tab2">
+                    <div data-tab="json" class="tab api-call">
+                        <p>Request:</p>
+                        <a target="_blank" class="request"
+                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
+                           data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
+                            /api/pickuppoint/postalcode/1407.json
+                        </a>
+                        <pre class="code-box json response delay-snippet"></pre>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
+
     </div>
 
     <div class="row element-sample">
         <p><h4>Example: USING GEOGRAPHICAL COORDINATES</h4></p>
         <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725)<br>
         </p>
-        <ul class="tab-group minimal" data-tabs="tabs">
+
+
+       <div class="box lightBorder"> <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab1-1">XML</a></li>
             <li><a href="#tab2-1">JSON</a></li>
         </ul>
@@ -216,11 +224,14 @@
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
+            </div>
         </div>
     </div>
 
 
-    <p><h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
+    <p>
+
+    <h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
     the request.
     These parameters can be perceived as &quot;filters&quot;, adding additional restrictions to the pickup points
     being returned.
@@ -230,7 +241,7 @@
     reference table or see additional examples for more information
     </p>
 
-    <div style="border: 1px solid; padding: 2px">
+    <div class="information-box">
         <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
         parameters using <code>&</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=&quot;Kiwi&quot;<b>&</b>openOnOrBefore=0800</code>
     </div>
@@ -245,7 +256,8 @@
         <p><h4>Example: USING ID TO RETRIEVE INFORMATION ABOUT A PICKUP POINT</h4></p>
         <p>Retrieve more information about the pickup point based on its id, 121110<br>
         </p>
-        <ul class="tab-group minimal" data-tabs="tabs">
+
+        <div class="box lightBorder"><ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab1-2">XML</a></li>
             <li><a href="#tab2-2">JSON</a></li>
         </ul>
@@ -275,6 +287,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </div>
 
@@ -285,6 +298,7 @@
 
         <li>
             <a href="#" class="menu-item"><h4>Find pickup points containing a specified string</h4></a>
+
             <div class="content-box">
                 <p>If you want to return only the pickup points matching a specified string, you may add <code>?searchForText=&lt;text
                     to match&gt;</code> to the request.
@@ -293,8 +307,10 @@
 
 
                 <div class="row element-sample">
-                    <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p></h4>
-                    <ul class="tab-group minimal" data-tabs="tabs">
+                    <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p>
+                    </h4>
+                <div class="box lightBorder">
+                <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab1-3">XML</a></li>
                         <li><a href="#tab2-3">JSON</a></li>
                     </ul>
@@ -324,17 +340,20 @@
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
+                    </div></div>
 
-                    </div>
+
                 </div>
             </div>
         </li>
 
         <li>
             <a href="#" class="menu-item"><h4>Find pickup points open on specified days</h4></a>
+
             <div class="content-box">
 
-                <p>If you want to return only the pickup points open on specified days, you may add <code>?openingHoursSearchType=&lt;day&gt;</code>to the request.
+                <p>If you want to return only the pickup points open on specified days, you may add <code>?openingHoursSearchType=&lt;day&gt;</code>to
+                    the request.
                     <code>&lt;day&gt; = ALL_WEEKDAYS (default) | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY |
                         SATURDAY | SUNDAY</code><br><br>
                     If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even
@@ -344,6 +363,8 @@
                 <div class="row element-sample">
 
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</p></h4>
+                    
+                  <div class="box lightBorder">  
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab1-4">XML</a></li>
                         <li><a href="#tab2-4">JSON</a></li>
@@ -373,17 +394,19 @@
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
-                    </div>
+                    </div></div>
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </li>
 
 
-
-
-
         <li>
             <a href="#" class="menu-item"><h4>Find pickup points open at specific hours</h4></a>
+
             <div class="content-box">
 
                 <p>If you want to return only the pickup points open on specific hours, you may add <code>?openOnOrBefore=&lt;time&gt;</code>
@@ -394,7 +417,10 @@
                 <div class="row element-sample">
 
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</p></h4>
-                    <ul class="tab-group minimal" data-tabs="tabs">
+
+
+               <div class="box lightBorder">
+                   <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab1-5">XML</a></li>
                         <li><a href="#tab2-5">JSON</a></li>
                     </ul>
@@ -423,14 +449,19 @@
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
-                    </div>
+                    </div></div>
+
+
+
                 </div>
 
 
                 <div class="row element-sample">
 
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</p></h4>
-                    <ul class="tab-group minimal" data-tabs="tabs">
+
+
+                   <div class="box lightBorder"> <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab1-6">XML</a></li>
                         <li><a href="#tab2-6">JSON</a></li>
                     </ul>
@@ -460,6 +491,8 @@
                             </div>
                         </div>
                     </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -470,9 +503,7 @@
 </div>
 
 
-
 </div>
-
 
 
 <div class="span3 box">
