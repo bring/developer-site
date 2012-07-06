@@ -34,7 +34,7 @@
                         </p>
 
 
-                        <div style="border: 1px solid; padding: 2px">
+                        <div class="information-box" >
                             <b>Note! </b> We are using our Sporing beta environment to provide testdata for the examples. In production you
                             should use http://sporing.bring.no/sporing.xml
                         </div>
@@ -70,8 +70,9 @@
                         For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real
                         tracking this must be a valid number.
 
+
+                            <h4>Example: TRACK A SHIPMENT</h4>
                         <p>
-                            Example: TRACK A SHIPMENT<br/>
                             This example is showing a package waiting to be collected at the pickup point .
                         </p>
 
@@ -79,6 +80,8 @@
 
                         <div class="row-fluid">
                             <div class="box">
+
+
                                 <div class="row element-sample">
                                     <ul class="tab-group minimal" data-tabs="tabs">
                                         <li class="active"><a href="#tab1">XML</a></li>
@@ -114,6 +117,8 @@
 
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
 
@@ -169,9 +174,6 @@
                                                         <pre class="code-box json response delay-snippet"></pre>
                                                     </div>
                                                 </div>
-
-
-
                                             </div>
                                         </div>
 
@@ -184,8 +186,31 @@
                                     <a href="#" class="menu-item"><h4>Package - waiting at pickup point</h4></a>
                                     <div class="content-box">
                                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup point</p><br>
-                                        Request: /sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT
-                                        Response: ...
+                                        <div class="row element-sample">
+                                            <ul class="tab-group minimal" data-tabs="tabs">
+                                                <li class="active"><a href="#tab21">XML</a></li>
+                                                <li><a href="#tab22">JSON</a></li>
+                                            </ul>
+                                            <div class="tab-content tab-minimal">
+                                                <div class="tab-pane active" id="tab21">
+                                                    <div data-tab="xml" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT" data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT</a>
+                                                        <pre class="code-box xml response delay-snippet"></pre>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane" id="tab22">
+                                                    <div data-tab="json" class="tab api-call">
+                                                        <p>Request:</p>
+                                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT</a>
+                                                        <pre class="code-box json response delay-snippet"></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </li>
 

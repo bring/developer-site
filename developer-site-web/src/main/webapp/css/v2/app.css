@@ -789,6 +789,10 @@ a.btn.flat {
   background-color: #555555;
 }
 
+.box.lightBorder {
+  border: 1px solid #efeff0;
+}
+
 .box .push-top {
   margin-top: 10px;
 }
@@ -1203,3 +1207,12 @@ pre.code-box {
 }
 
 /* END TAB-GROUP STYLES */
+
+div.information-box {
+  min-height: 30px;
+  padding: 5px 0 5px 30px;
+  background-image: url("/images/green-info-icon.png");
+  background-position: 0 8px;
+  background-repeat: no-repeat;
+  border: 1px solid #CCC;
+}
