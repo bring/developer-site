@@ -21,7 +21,6 @@
             <div class="row-fluid">
                 <div class="span9">
 
-
                     <div class="box">
                         <h1>Choose pickup point</h1>
                         <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post office.

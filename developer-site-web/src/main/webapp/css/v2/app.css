@@ -1125,6 +1125,7 @@ pre.code-box {
   padding-right: 10px;
   font-size: 1em;
   font-weight: normal;
+  font-weight: bold;
   color: #4d4f53;
   text-transform: capitalize;
   background: none;
@@ -1133,8 +1134,8 @@ pre.code-box {
           box-shadow: none;
 }
 
-.tab-group.minimal li a:hover {
-  color: #7bc144;
+.tab-group.minimal li.active > a {
+  color: #7BC144;
 }
 
 .tab-group.minimal li:last-child {
