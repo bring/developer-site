@@ -27,6 +27,11 @@ public class HomeController {
         return "api/pickuppointapi";
     }
 
+    @RequestMapping(value = "/api/reportsapi.html")
+    public String reportsapi() {
+        return "api/reportsapi";
+    }
+
     @RequestMapping(value = "/additionalresources/xmlSchemaDefinition.html")
     public String xmlSchemaDefinition() {
         return "additionalresources/xmlSchemaDefinition";

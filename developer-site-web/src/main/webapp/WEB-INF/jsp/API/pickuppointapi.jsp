@@ -138,140 +138,141 @@
 </div>
 
 <div class="box">
-<h2>How to Use</h2>
-<p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10
-    nearest delivery locations.
-    The following examples illustrate the different alternatives.
-</p>
-
-
-
-<div class="row element-sample">
-    <p><h4>Example: USING THE POSTAL CODE</h4></p>
-    <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro.<br>
+    <h2>How to Use</h2>
+    <p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10
+        nearest delivery locations.
+        The following examples illustrate the different alternatives.
     </p>
-    <ul class="tab-group minimal" data-tabs="tabs">
-        <li class="active"><a href="#tab1">XML</a></li>
-        <li><a href="#tab2">JSON</a></li>
-    </ul>
-    <div class="tab-content tab-minimal">
 
-        <div class="tab-pane active" id="tab1">
-            <div data-tab="xml" class="tab api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
-                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
-                    /api/pickuppoint/postalcode/1407.xml
-                </a>
-                <pre class="code-box xml response delay-snippet"></pre>
+
+
+    <div class="row element-sample">
+        <p><h4>Example: USING THE POSTAL CODE</h4></p>
+        <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro.<br>
+        </p>
+        <ul class="tab-group minimal" data-tabs="tabs">
+            <li class="active"><a href="#tab1">XML</a></li>
+            <li><a href="#tab2">JSON</a></li>
+        </ul>
+        <div class="tab-content tab-minimal">
+
+            <div class="tab-pane active" id="tab1">
+                <div data-tab="xml" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
+                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
+                        /api/pickuppoint/postalcode/1407.xml
+                    </a>
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
             </div>
-        </div>
 
-        <div class="tab-pane" id="tab2">
-            <div data-tab="json" class="tab api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
-                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
-                    /api/pickuppoint/postalcode/1407.json
-                </a>
-                <pre class="code-box json response delay-snippet"></pre>
+            <div class="tab-pane" id="tab2">
+                <div data-tab="json" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
+                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
+                        /api/pickuppoint/postalcode/1407.json
+                    </a>
+                    <pre class="code-box json response delay-snippet"></pre>
+                </div>
             </div>
-        </div>
 
-    </div>
-</div>
-
-<div class="row element-sample">
-    <p><h4>Example: USING GEOGRAPHICAL COORDINATES</h4></p>
-    <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725)<br>
-    </p>
-    <ul class="tab-group minimal" data-tabs="tabs">
-        <li class="active"><a href="#tab1-1">XML</a></li>
-        <li><a href="#tab2-1">JSON</a></li>
-    </ul>
-    <div class="tab-content tab-minimal">
-
-        <div class="tab-pane active" id="tab1-1">
-            <div data-tab="xml" class="tab api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
-                   data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
-                    /api/pickuppoint/postalcode/1407.xml
-                </a>
-                <pre class="code-box xml response delay-snippet"></pre>
-            </div>
-        </div>
-
-        <div class="tab-pane" id="tab2-1">
-            <div data-tab="json" class="tab api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json"
-                   data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
-                    /api/pickuppoint/location/60.395226/5.321725.json
-                </a>
-                <pre class="code-box json response delay-snippet"></pre>
-            </div>
         </div>
     </div>
-</div>
 
+    <div class="row element-sample">
+        <p><h4>Example: USING GEOGRAPHICAL COORDINATES</h4></p>
+        <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725)<br>
+        </p>
+        <ul class="tab-group minimal" data-tabs="tabs">
+            <li class="active"><a href="#tab1-1">XML</a></li>
+            <li><a href="#tab2-1">JSON</a></li>
+        </ul>
+        <div class="tab-content tab-minimal">
 
-<p><h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
-the request.
-These parameters can be perceived as &quot;filters&quot;, adding additional restrictions to the pickup points
-being returned.
-One such parameter is <code>searchForText=q&lt;texts&gt;</code>, resulting in a response where all pickup points
-have at least a partial match with the search string given in &lt;texts&gt;.
-This can be the name of the pickup point, its address, city, county, municipality or location. Go to the
-reference table or see additional examples for more information
-</p>
+            <div class="tab-pane active" id="tab1-1">
+                <div data-tab="xml" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
+                       data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
+                        /api/pickuppoint/postalcode/1407.xml
+                    </a>
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
+            </div>
 
-<div style="border: 1px solid; padding: 2px">
-    <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
-    parameters using <code>&</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=&quot;Kiwi&quot;<b>&</b>openOnOrBefore=0800</code>
-</div>
-
-<h3>Using the pickup point's id</h3>
-
-<p>If you already know the id of the pickup point, you can retrieve more information such as the geographical
-    location, opening hours and county.</p>
-
-
-<div class="row element-sample">
-    <p><h4>Example: USING ID TO RETRIEVE INFORMATION ABOUT A PICKUP POINT</h4></p>
-    <p>Retrieve more information about the pickup point based on its id, 121110<br>
-    </p>
-    <ul class="tab-group minimal" data-tabs="tabs">
-        <li class="active"><a href="#tab1-2">XML</a></li>
-        <li><a href="#tab2-2">JSON</a></li>
-    </ul>
-    <div class="tab-content tab-minimal">
-
-        <div class="tab-pane active" id="tab1-2">
-            <div data-tab="xml" class="tab api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
-                   data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
-                    /api/pickuppoint/id/121110.xml
-                </a>
-                <pre class="code-box xml response delay-snippet"></pre>
+            <div class="tab-pane" id="tab2-1">
+                <div data-tab="json" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json"
+                       data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
+                        /api/pickuppoint/location/60.395226/5.321725.json
+                    </a>
+                    <pre class="code-box json response delay-snippet"></pre>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="tab-pane" id="tab2-2">
-            <div data-tab="json" class="tab api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
-                   data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
-                    /api/pickuppoint/id/121110.json
-                </a>
-                <pre class="code-box json response delay-snippet"></pre>
+
+    <p><h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
+    the request.
+    These parameters can be perceived as &quot;filters&quot;, adding additional restrictions to the pickup points
+    being returned.
+    One such parameter is <code>searchForText=q&lt;texts&gt;</code>, resulting in a response where all pickup points
+    have at least a partial match with the search string given in &lt;texts&gt;.
+    This can be the name of the pickup point, its address, city, county, municipality or location. Go to the
+    reference table or see additional examples for more information
+    </p>
+
+    <div style="border: 1px solid; padding: 2px">
+        <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
+        parameters using <code>&</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=&quot;Kiwi&quot;<b>&</b>openOnOrBefore=0800</code>
+    </div>
+
+    <h3>Using the pickup point's id</h3>
+
+    <p>If you already know the id of the pickup point, you can retrieve more information such as the geographical
+        location, opening hours and county.</p>
+
+
+    <div class="row element-sample">
+        <p><h4>Example: USING ID TO RETRIEVE INFORMATION ABOUT A PICKUP POINT</h4></p>
+        <p>Retrieve more information about the pickup point based on its id, 121110<br>
+        </p>
+        <ul class="tab-group minimal" data-tabs="tabs">
+            <li class="active"><a href="#tab1-2">XML</a></li>
+            <li><a href="#tab2-2">JSON</a></li>
+        </ul>
+        <div class="tab-content tab-minimal">
+
+            <div class="tab-pane active" id="tab1-2">
+                <div data-tab="xml" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
+                       data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
+                        /api/pickuppoint/id/121110.xml
+                    </a>
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab2-2">
+                <div data-tab="json" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
+                       data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
+                        /api/pickuppoint/id/121110.json
+                    </a>
+                    <pre class="code-box json response delay-snippet"></pre>
+                </div>
             </div>
         </div>
     </div>
@@ -469,7 +470,7 @@ reference table or see additional examples for more information
 </div>
 
 
-</div>
+
 </div>
 
 

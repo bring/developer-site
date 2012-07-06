@@ -58,7 +58,7 @@
                             <span>See the current status of shipments</span>
                         </li>
                         <li>
-                            <a class="menu-item" href="#">Reports API (BETA)</a>
+                            <a class="menu-item" href="/api/reportsapi.html">Reports API (BETA)</a>
                             <span>Generate customer reports from shipment history</span>
                         </li>
                         <li>

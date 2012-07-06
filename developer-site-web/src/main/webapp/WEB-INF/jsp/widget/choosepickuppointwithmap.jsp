@@ -39,21 +39,26 @@
                                 <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
 
-                    <div class="row no-back element-sample">
-                        <h4>Widget Example</h4>
 
-                        <ul class="tab-group" data-tabs="tabs">
-                            <li class="active"><a href="#tab1">Demo</a></li>
-                            <li><a href="#tab2">Code</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="tab1">
-                                <iframe class="widget-demo"
-                                        src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe>
-                            </div>
 
-                            <div class="tab-pane" id="tab2">
-                       <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
+
+                        <div class="content-box">
+                            <div class="row element-sample">
+
+                                <h4><p>Widget Example</p></h4>
+                                <ul class="tab-group minimal" data-tabs="tabs">
+                                    <li class="active"><a href="#tab1-5">DEMO</a></li>
+                                    <li><a href="#tab2-5">CODE</a></li>
+                                </ul>
+                                <div class="tab-content tab-minimal">
+
+                                    <div class="tab-pane active" id="tab1-5">
+                                        <div class="box lightBorder"><iframe style="height: 450px" class="widget-demo"
+                                                                             src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe></div>
+                                    </div>
+
+                                    <div class="tab-pane" id="tab2-5">
+                                  <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
@@ -68,28 +73,30 @@
 &lt;form&gt;
 	&lt;div id="divid"&gt;&lt;/div&gt;
 &lt;/form&gt;</pre>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
+
                     </div>
 
                 </div>
 
+                <div class="span3 box">
+                    <h4>Made by</h4>
+                    <ul>
+                        <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
+                        <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
+                    </ul>
+
+                    <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js" class="btn enhanced">Download</a>
+                </div>
+
             </div>
 
-            <div class="span3 box">
-                <h4>Made by</h4>
-                <ul>
-                    <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
-                    <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
-                </ul>
-
-                <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js" class="btn enhanced">Download</a>
-            </div>
-
-        </div>
-
-    </section>
-</div>
+        </section>
+    </div>
 </div>
 
 
