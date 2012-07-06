@@ -20,15 +20,32 @@
             <div class="row-fluid">
                 <div class="span9">
                     <div class="box">
-                        <h1>XML Schema Definition</h1>
+                        <h1>XML Schema Definition for Tracking API</h1>
                     </div>
                     <div class="box">
                         <p>
-                            XML Schema definition for the elements available in the response<br><br>
-                        <h4>XSD</h4>
-                        Request: /sporing.xsd<br><br>
-                        Response: ...
+                            XML Schema definition for the elements available in the response from the Tracking API.
                         </p>
+                        <h4>XSD</h4>
+
+                        <div class="box lightBorder">
+
+
+                                    <div data-tab="xml" class="tab api-call">
+                                        <p>Request:</p>
+
+
+                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd" data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
+
+                                        <pre class="code-box xml response delay-snippet"></pre>
+                                    </div>
+
+
+
+                        </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -36,6 +53,9 @@
     </div>
 
 </div>
+
+<misc:footer />
+<misc:jqueryblob_v2 />
 
 </body>
 

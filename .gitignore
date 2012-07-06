@@ -11,4 +11,4 @@ target
 Gemfile.lock
 .DS*
 
-pom.xml~
+*~
