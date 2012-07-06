@@ -21,9 +21,6 @@
             <div class="row-fluid">
                 <div class="span9">
 
-                    <div class="box">
-                        <misc:request-response-example requestUrl="abc" />
-                    </div>
 
                     <div class="box">
                         <h1>Choose pickup point</h1>
