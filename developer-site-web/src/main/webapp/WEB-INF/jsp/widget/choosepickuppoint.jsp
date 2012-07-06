@@ -38,20 +38,22 @@
                                 <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
 
-                            <div class="row no-back element-sample">
-                            <h4>Widget Example</h4>
-                            <ul class="tab-group" data-tabs="tabs">
-                                <li class="active"><a href="#tab1">Demo</a></li>
-                                <li><a href="#tab2">Code</a></li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="tab1">
-                                    <iframe class="widget-demo" src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
-                                </div>
+                        <div class="content-box">
+                            <div class="row element-sample">
 
-                                <div class="tab-pane" id="tab2">
+                                <h4><p>Widget Example</p></h4>
+                                <ul class="tab-group minimal" data-tabs="tabs">
+                                    <li class="active"><a href="#tab1-5">DEMO</a></li>
+                                    <li><a href="#tab2-5">CODE</a></li>
+                                </ul>
+                                <div class="tab-content tab-minimal">
 
-                                    <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
+                                    <div class="tab-pane active" id="tab1-5">
+                                        <div class="box lightBorder"><iframe class="widget-demo" src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe></div>
+                                    </div>
+
+                                    <div class="tab-pane" id="tab2-5">
+                                  <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
 &lt;/script&gt;
 &lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/
 utleveringsenhet-1.0.1.js"&gt;
@@ -64,12 +66,11 @@ utleveringsenhet-1.0.1.js"&gt;
 &lt;form&gt;
     &lt;div id="divid"&gt;&lt;/div&gt;
 &lt;/form&gt;</pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-
-
+                    </div>
                 </div>
 
                 <div class="span3 box">
