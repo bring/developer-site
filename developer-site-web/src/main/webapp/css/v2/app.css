@@ -789,6 +789,10 @@ a.btn.flat {
   background-color: #555555;
 }
 
+.box.lightBorder {
+  border: 1px solid #efeff0;
+}
+
 .box .push-top {
   margin-top: 10px;
 }
