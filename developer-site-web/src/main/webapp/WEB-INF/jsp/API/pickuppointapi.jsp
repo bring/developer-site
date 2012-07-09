@@ -179,6 +179,7 @@
                            data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
                             /api/pickuppoint/postalcode/1407.json
                         </a>
+                        <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a></p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
@@ -221,6 +222,7 @@
                        data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
                         /api/pickuppoint/location/60.395226/5.321725.json
                     </a>
+                    <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json?callbackUrl=functionName">?callback=functionName</a></p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
@@ -283,6 +285,7 @@
                        data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
                         /api/pickuppoint/id/121110.json
                     </a>
+                    <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json?callbackUrl=functionName">?callback=functionName</a></p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
@@ -337,6 +340,7 @@
                                    data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI">
                                     /api/pickuppoint/postalcode/1407.json?searchForText=KIWI
                                 </a>
+                                <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI&callbackUrl=functionName">?callback=functionName</a></p>
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
@@ -391,6 +395,7 @@
                                    data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY">
                                     /api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY
                                 </a>
+                                <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&callbackUrl=functionName">?callback=functionName</a></p>
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
@@ -446,6 +451,7 @@
                                    data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
                                     /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800
                                 </a>
+                                <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&callbackUrl=functionName">?callback=functionName</a></p>
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
@@ -487,6 +493,7 @@
                                    data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
                                     /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200
                                 </a>
+                                <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&callbackUrl=functionName">?callback=functionName</a></p>
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
