@@ -887,6 +887,7 @@ a.flat.enhanced {
 .menu-group.ingress-list li {
   margin-bottom: 1px;
   background: #F0F0F1;
+  background-image: url("/images/bring/arrow-green-right.png");
   -webkit-box-shadow: 0 3px 6px -1px #777777;
      -moz-box-shadow: 0 3px 6px -1px #777777;
           box-shadow: 0 3px 6px -1px #777777;
@@ -1014,6 +1015,8 @@ table {
 
 td:first-child {
   width: 310px;
+  max-width: 310px;
+  word-wrap: break-word;
 }
 
 div.box > p {
