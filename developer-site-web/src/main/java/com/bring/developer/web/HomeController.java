@@ -27,6 +27,21 @@ public class HomeController {
         return "api/pickuppointapi";
     }
 
+    @RequestMapping(value = "/additionalresources/wsdl-xml-schema.html")
+    public String wsdlschema() {
+        return "/additionalresources/wsdl-xml-schema";
+    }
+
+    @RequestMapping(value = "/additionalresources/errorhandling.html")
+    public String errorhandling() {
+        return "/additionalresources/errorhandling";
+    }
+
+    @RequestMapping(value = "/api/shippingguideapi.html")
+    public String shippingguideapi() {
+        return "api/shippingguideapi";
+    }
+
     @RequestMapping(value = "/api/reportsapi.html")
     public String reportsapi() {
         return "api/reportsapi";
