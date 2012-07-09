@@ -55,7 +55,6 @@
         <br>
         <div class="information-box">The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in the "Product selection as HTML"-widget. Read more <a href="../additionalresources/priceadjustments.html">here</a>.</div>
 
-        <hr>
         <h5>NICE TO KNOW</h5>
         <ul><br>
             <li>All Shipping Guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
@@ -114,23 +113,37 @@
                     <h5>SELECT RESOURCE</h5>
                     <p>You may query the information most suited for your need.</p>
                     <ul>
-                        <li><a href="#">Only price</a></li>
-                        <li><a href="#">Only delivery time</a></li>
-                        <li><a href="#">All available information</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">Only price</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">Only delivery time</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">All available information</a></li>
                     </ul>
-                    <p>Please refer to the <a href="#">XML SCHEMA</a> for information on elements in the response</p>
+                    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML SCHEMA</a> for information on elements in the response</p>
                     <hr>
                     <h5>SELECT PRODUCT</h5>
                     <p>You may query the information most suited for your need.</p>
                     <ul>
-                        <li><a href="#">Only SERVICEPAKKE</a></li>
-                        <li><a href="#">Both SERVICEPAKKE and PA_DOREN</a></li>
-                        <li><a href="#">All available products (for combination of postal codes and country)</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">Only SERVICEPAKKE</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN" target="_blank">Both SERVICEPAKKE and PA_DOREN</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">All available products (for combination of postal codes and country)</a></li>
                     </ul>
                 </div>
 
                 <div class="tab-pane" id="tab2">
-                    test2
+                    <h5>SELECT RESOURCE</h5>
+                    <p>You may query the information most suited for your need.</p>
+                    <ul>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500" target="_blank">Only price</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&to=1407&weightInGrams=1500" target="_blank">Only delivery time</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500" target="_blank">All available information</a></li>
+                    </ul>
+                    <hr>
+                    <h5>SELECT PRODUCT</h5>
+                    <p>You may query the information most suited for your need.</p>
+                    <ul>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json?from=7600&to=1407&weightInGrams=1500" target="_blank">Only SERVICEPAKKE</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN" target="_blank">Both SERVICEPAKKE and PA_DOREN</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500" target="_blank">All available products (for combination of postal codes and country)</a></li>
+                    </ul>
                 </div>
 
                 <div class="tab-pane" id="tab3">
