@@ -545,21 +545,6 @@ a.btn.flat {
   padding: 10px;
 }
 
-/*buttons enhanced*/
-
-button.enhanced,
-input.enhanced,
-a.enhanced {
-  background: url('/images/bring/button-enhanced.png') center left repeat-x #76c157;
-  border: none;
-}
-
-button.flat.enhanced,
-input.flat.enhanced,
-a.flat.enhanced {
-  background: #76c157;
-}
-
 /* END BUTTON STYLES*/
 /* START TABLES */
 
@@ -658,8 +643,6 @@ a.flat.enhanced {
 
 .table.inverted tbody th,
 .table.inverted tbody td {
-  margin-top: 0;
-  vertical-align: text-top;
   border-top: none;
 }
 
@@ -858,17 +841,6 @@ a.flat.enhanced {
        -o-transition: background-color 0.3s linear;
 }
 
-.menu-item.selected {
-  color: #fff;
-  background: #7bc144 url('/images/arrow-white-right.png') no-repeat 95% center;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-  -webkit-transition: background-color 0.3s linear;
-     -moz-transition: background-color 0.3s linear;
-       -o-transition: background-color 0.3s linear;
-}
-
 .menu-group {
   padding: 0;
   list-style: none;
@@ -986,10 +958,6 @@ div.content-box {
   padding: 15px;
 }
 
-p.right {
-  text-align: right;
-}
-
 /*--stuff til developer siten --*/
 
 tr.even {
@@ -1014,6 +982,8 @@ table {
 
 td:first-child {
   width: 310px;
+  max-width: 310px;
+  word-wrap: break-word;
 }
 
 div.box > p {

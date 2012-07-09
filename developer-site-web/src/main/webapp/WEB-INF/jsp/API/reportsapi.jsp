@@ -288,9 +288,7 @@ https://www.mybring.com/reports/api</pre>
                 <div class="span3" id="additional-resources">
                     <div class="box">
                         <h2>Additonal Resources</h2>
-                        <ul>
 
-                        </ul>
                     </div>
                 </div>
 
