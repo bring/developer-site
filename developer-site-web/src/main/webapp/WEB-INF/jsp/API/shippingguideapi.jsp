@@ -52,7 +52,10 @@
         <h4>OFFLINE DATA (MANUAL DOWNLOAD AND WEB SERVICE)</h4>
         <hr>
         <p>This is pre-prepared data for offline use. Enter the zip code you are sending from and which products you want data for. For each product you get:</p>
-        <br><hr>
+        <br>
+        <div class="information-box">The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in the "Product selection as HTML"-widget. Read more <a href="../additionalresources/priceadjustments.html">here</a>.</div>
+
+        <hr>
         <h5>NICE TO KNOW</h5>
         <ul><br>
             <li>All Shipping Guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
@@ -65,7 +68,6 @@
             Add the name of the web-shop to the HTTP header "User-Agent", when you send a request to the service. If available, the name of the web-shop owner should also be added to the request.
             If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter <a href="#">HER SKAL DET VÆRE EN LINK!</a> in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
         <br><br><div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web shop's users should still be able to order, even if the Shipping Guide returns an error. Read more about error handling <a href="../additionalresources/errorhandling.html">here.</a></div>
-
     </div>
 
     <div class="box">
@@ -183,6 +185,7 @@ Get transport time:
         <ul>
             <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
             <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
+            <li><a href="../additionalresources/priceadjustments.html">Price adjustments</a></li>
         </ul>
         <h3>Widgets</h3>
         <ul>
