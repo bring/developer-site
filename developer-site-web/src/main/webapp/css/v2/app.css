@@ -563,45 +563,56 @@ a.flat.enhanced {
 /* END BUTTON STYLES*/
 /* START TABLES */
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
+table {
+  width: 99%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 0.85em;
+  word-wrap: break-word;
+  border-collapse: separate;
+  table-layout: fixed;
 }
 
-.table .nowrap {
+table .nowrap {
   white-space: nowrap;
 }
 
-.table .wide {
+table .wide {
   width: 99%;
 }
 
-.table thead th {
-  padding: 9px 10px;
+table thead th {
+  padding: 9px 25px 9px 10px;
+  font-weight: normal;
+  color: white;
   color: #fff;
   text-transform: uppercase;
   background: #717074;
 }
 
-.table thead th * {
+table thead th * {
   color: #fff;
 }
 
-.table thead th.sorting_desc {
+table thead th.sorting_desc {
   background: #4d4f53 url('../images/shared/arrow-white-down.png') no-repeat 98% center;
 }
 
-.table thead th.sorting_asc {
+table thead th.sorting_asc {
   background: #4d4f53 url('../images/shared/arrow-white-up.png') no-repeat 98% center;
 }
 
-.table thead th.sorting,
-.table thead th.sorting_desc,
-.table thead th.sorting_asc {
+table thead th.sorting,
+table thead th.sorting_desc,
+table thead th.sorting_asc {
   cursor: pointer;
 }
 
-.table tbody th {
+table tbody {
+  vertical-align: text-top;
+}
+
+table tbody th {
   padding: 9px 10px;
   color: #fff;
   background: #717074;
@@ -609,73 +620,75 @@ a.flat.enhanced {
   border-right: 1px solid #fff;
 }
 
-.table tbody td {
+table tbody td {
   padding: 9px 10px;
   border-top: 1px solid #fff;
+  table-layout: fixed;
 }
 
-.table tbody tr a {
+table tbody tr a {
   color: #4d4f53;
 }
 
-.table tbody tr.even {
+table tbody tr.even {
   background-color: #efeff0;
 }
 
-.table tbody tr.invert td {
+table tbody tr.invert td {
   color: #fff;
   background: #717074;
 }
 
-.table.hover-effect tbody tr:hover {
+table.hover-effect tbody tr:hover {
   background-color: #e5e6e7;
 }
 
-.table.inverted thead th {
+table.inverted thead th {
   padding-right: 0;
   color: #4d4f53;
   background: #fff;
 }
 
-.table.inverted thead th span {
+table.inverted thead th span {
   display: block;
   height: 1.2em;
   color: #4d4f53;
   border-right: 1px solid #4d4f53;
 }
 
-.table.inverted thead th:last-child span {
+table.inverted thead th:last-child span {
   border-right: none;
 }
 
-.table.inverted thead th.sorting_desc span {
+table.inverted thead th.sorting_desc span {
   background: #ffffff url('../images/arrow-green-down.png') no-repeat 95% center;
 }
 
-.table.inverted thead th.sorting_asc span {
+table.inverted thead th.sorting_asc span {
   background: #ffffff url('../images/arrow-green-up.png') no-repeat 95% center;
 }
 
-.table.inverted tbody th,
-.table.inverted tbody td {
+table.inverted tbody th,
+table.inverted tbody td {
   margin-top: 0;
   vertical-align: text-top;
   border-top: none;
 }
 
-.table.inverted tbody tr {
+table.inverted tbody tr {
   color: #fff;
 }
 
-.table.inverted tbody tr.odd {
+table.inverted tbody tr.odd {
   background-color: #4d4f53;
 }
 
-.table.inverted tbody tr.even {
+table.inverted tbody tr.even {
   background-color: #717074;
 }
 
 /* END TABLES */
+
 /* tab styles */
 
 .tabs {
@@ -897,7 +910,7 @@ a.flat.enhanced {
 }
 
 .menu-group.ingress-list li:hover {
-  background: transparent url('/images/arrow-green-right.png') no-repeat 98% center;
+  background: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
@@ -993,31 +1006,27 @@ p.right {
 
 /*--stuff til developer siten --*/
 
-tr.even {
-  background-color: #EFEFF0;
+/*
+tr.even{
+    background-color: #EFEFF0;
 }
 
-thead th {
-  padding: 9px 25px 9px 10px;
-  font-weight: normal;
-  color: white;
-  text-transform: uppercase;
-  background-color: #717074;
+thead th{
+    background-color: #717074;
+    color: white;
+    padding: 9px 25px 9px 10px;
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
-table {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 0.85em;
-  border: 1px;
-  table-layout: fixed;
+table{
+    table-layout: fixed;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 0.85em;
+    border: 1px;
 }
-
-td:first-child {
-  width: 310px;
-  max-width: 310px;
-  word-wrap: break-word;
-}
+*/
 
 div.box > p {
   margin-top: 10px;
@@ -1252,4 +1261,12 @@ div.information-box {
   background-position: 0 8px;
   background-repeat: no-repeat;
   border: 1px solid #CCC;
+}
+
+img.fitted-width {
+  width: 100%;
+}
+
+img.half-width {
+  width: 50%;
 }

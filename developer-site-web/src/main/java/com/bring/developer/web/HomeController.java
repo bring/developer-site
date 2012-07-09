@@ -67,6 +67,16 @@ public class HomeController {
         return "support";
     }
 
+    @RequestMapping(value = "/plugin/joomla-virtuemart-fraktpriser.html")
+    public String joomlaVirtumartFraktpriser(){
+        return "plugin/joomla-virtuemart-fraktpriser";
+    }
+
+    @RequestMapping(value = "/plugin/oscommerce-fraktpriser.html")
+    public String osCommerceFraktpriser(){
+        return "plugin/oscommerce-fraktpriser";
+    }
+
     @RequestMapping(value = "/use/{type}/index.html")
     public String useOverview(ModelMap model, @PathVariable String type) {
         PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("use/" + type);
