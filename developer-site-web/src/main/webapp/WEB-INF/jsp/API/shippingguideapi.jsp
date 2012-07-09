@@ -65,7 +65,7 @@
         <h5>RECOMMENDATION TO DEVELOPERS</h5>
         <p>Important! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store.
             Add the name of the web-shop to the HTTP header "User-Agent", when you send a request to the service. If available, the name of the web-shop owner should also be added to the request.
-            If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter <a href="#">HER SKAL DET VÆRE EN LINK!</a> in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
+            If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
         <br><br><div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web shop's users should still be able to order, even if the Shipping Guide returns an error. Read more about error handling <a href="../additionalresources/errorhandling.html">here.</a></div>
     </div>
 
