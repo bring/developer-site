@@ -52,7 +52,9 @@
         <h4>OFFLINE DATA (MANUAL DOWNLOAD AND WEB SERVICE)</h4>
         <hr>
         <p>This is pre-prepared data for offline use. Enter the zip code you are sending from and which products you want data for. For each product you get:</p>
-        <br><hr>
+        <br>
+        <div class="information-box">The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in the "Product selection as HTML"-widget. Read more <a href="../additionalresources/priceadjustments.html">here</a>.</div>
+
         <h5>NICE TO KNOW</h5>
         <ul><br>
             <li>All Shipping Guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
@@ -63,9 +65,8 @@
         <h5>RECOMMENDATION TO DEVELOPERS</h5>
         <p>Important! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store.
             Add the name of the web-shop to the HTTP header "User-Agent", when you send a request to the service. If available, the name of the web-shop owner should also be added to the request.
-            If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter <a href="#">HER SKAL DET VÆRE EN LINK!</a> in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
+            If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
         <br><br><div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web shop's users should still be able to order, even if the Shipping Guide returns an error. Read more about error handling <a href="../additionalresources/errorhandling.html">here.</a></div>
-
     </div>
 
     <div class="box">
@@ -112,23 +113,37 @@
                     <h5>SELECT RESOURCE</h5>
                     <p>You may query the information most suited for your need.</p>
                     <ul>
-                        <li><a href="#">Only price</a></li>
-                        <li><a href="#">Only delivery time</a></li>
-                        <li><a href="#">All available information</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">Only price</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">Only delivery time</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">All available information</a></li>
                     </ul>
-                    <p>Please refer to the <a href="#">XML SCHEMA</a> for information on elements in the response</p>
+                    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML SCHEMA</a> for information on elements in the response</p>
                     <hr>
                     <h5>SELECT PRODUCT</h5>
                     <p>You may query the information most suited for your need.</p>
                     <ul>
-                        <li><a href="#">Only SERVICEPAKKE</a></li>
-                        <li><a href="#">Both SERVICEPAKKE and PA_DOREN</a></li>
-                        <li><a href="#">All available products (for combination of postal codes and country)</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">Only SERVICEPAKKE</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN" target="_blank">Both SERVICEPAKKE and PA_DOREN</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500" target="_blank">All available products (for combination of postal codes and country)</a></li>
                     </ul>
                 </div>
 
                 <div class="tab-pane" id="tab2">
-                    test2
+                    <h5>SELECT RESOURCE</h5>
+                    <p>You may query the information most suited for your need.</p>
+                    <ul>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500" target="_blank">Only price</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&to=1407&weightInGrams=1500" target="_blank">Only delivery time</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500" target="_blank">All available information</a></li>
+                    </ul>
+                    <hr>
+                    <h5>SELECT PRODUCT</h5>
+                    <p>You may query the information most suited for your need.</p>
+                    <ul>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json?from=7600&to=1407&weightInGrams=1500" target="_blank">Only SERVICEPAKKE</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN" target="_blank">Both SERVICEPAKKE and PA_DOREN</a></li>
+                        <li><a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500" target="_blank">All available products (for combination of postal codes and country)</a></li>
+                    </ul>
                 </div>
 
                 <div class="tab-pane" id="tab3">
@@ -183,6 +198,7 @@ Get transport time:
         <ul>
             <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
             <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
+            <li><a href="../additionalresources/priceadjustments.html">Price adjustments</a></li>
         </ul>
         <h3>Widgets</h3>
         <ul>
