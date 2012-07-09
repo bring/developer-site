@@ -545,6 +545,21 @@ a.btn.flat {
   padding: 10px;
 }
 
+/*buttons enhanced*/
+
+button.enhanced,
+input.enhanced,
+a.enhanced {
+  background: url('/images/bring/button-enhanced.png') center left repeat-x #76c157;
+  border: none;
+}
+
+button.flat.enhanced,
+input.flat.enhanced,
+a.flat.enhanced {
+  background: #76c157;
+}
+
 /* END BUTTON STYLES*/
 /* START TABLES */
 
@@ -643,6 +658,8 @@ a.btn.flat {
 
 .table.inverted tbody th,
 .table.inverted tbody td {
+  margin-top: 0;
+  vertical-align: text-top;
   border-top: none;
 }
 
@@ -841,6 +858,17 @@ a.btn.flat {
        -o-transition: background-color 0.3s linear;
 }
 
+.menu-item.selected {
+  color: #fff;
+  background: #7bc144 url('/images/arrow-white-right.png') no-repeat 95% center;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s linear;
+     -moz-transition: background-color 0.3s linear;
+       -o-transition: background-color 0.3s linear;
+}
+
 .menu-group {
   padding: 0;
   list-style: none;
@@ -869,7 +897,7 @@ a.btn.flat {
 }
 
 .menu-group.ingress-list li:hover {
-  background: none;
+  background: transparent url('/images/arrow-green-right.png') no-repeat 98% center;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
@@ -957,6 +985,10 @@ a.btn.flat {
 
 div.content-box {
   padding: 15px;
+}
+
+p.right {
+  text-align: right;
 }
 
 /*--stuff til developer siten --*/
