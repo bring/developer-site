@@ -668,9 +668,8 @@ table.inverted thead th.sorting_asc span {
   background: #ffffff url('../images/arrow-green-up.png') no-repeat 95% center;
 }
 
-.table.inverted tbody th,
-.table.inverted tbody td {
->>>>>>> 05d60db99e025bde1ef64fb35e5801066536cc80
+table.inverted tbody th,
+table.inverted tbody td {
   margin-top: 0;
   vertical-align: text-top;
   border-top: none;
@@ -911,7 +910,7 @@ table.inverted tbody tr.even {
 }
 
 .menu-group.ingress-list li:hover {
-  background: transparent url('/images/arrow-green-right.png') no-repeat 98% center;
+  background: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
@@ -1003,12 +1002,6 @@ div.content-box {
 
 p.right {
   text-align: right;
-}
-
-/*--stuff til developer siten --*/
-
-tr.even {
-  background-color: #EFEFF0;
 }
 
 /*--stuff til developer siten --*/
