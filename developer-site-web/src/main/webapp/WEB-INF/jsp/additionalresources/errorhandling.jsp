@@ -23,6 +23,8 @@
                         <h1>Error handling</h1>
                     </div>
                     <div class="box">
+                        Remember to use timeout and error handling when making requests to the service.
+                        Handle errors in a way that is satisfactory for your online store.
                     <h4>Error handling strategies</h4>
                         <ul>
                             <li>Use the <a href="#">Offline data</a> to calculate price, or</li>

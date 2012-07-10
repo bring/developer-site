@@ -5,7 +5,7 @@
 
 <head>
     <misc:contenttype/>
-    <misc:title value="Fraktguide for Prestashop"/>
+    <misc:title value="Fraktguide for Wordpress e-commerce"/>
     <misc:css_v2/>
 </head>
 
@@ -22,32 +22,25 @@
                 <div class="span9">
 
                     <div class="box">
-                        <h1>Fraktguide for Prestashop</h1>
+                        <h1>Fraktguide for Wordpress e-commerce</h1>
 
-                        <p>This Prestashop module adds the possibility of letting users pick their preferred shipping
-                           method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery
-                           times and product descriptions.
+                        <p>This is a shipping module for WP e-Commerce. It uses the Bring Fraktguide XML API to get
+                           shipping quotes. It will get accurate prices based on delivery postcode, weight, length,
+                           width, height and volume. The plugin only supports WP e-Commerce 3.8 and later.
                         </p>
 
-                        <p>More information in the
-                            <a href="https://github.com/nilsga/prestashop-fraktguide">
-                                GitHub repository</a> (Norsk).
-                        </p>
                     </div>
 
                     <div class="box">
                         <h4>How to install</h4>
                         <ol>
                             <li>
-                                <p>Please follow instruction on the
-                                    <a href="https://github.com/nilsga/prestashop-fraktguide">GitHub repository</a>
-                                </p>
+                                Use instructions on download page and the readme.txt within the download
                             </li>
                         </ol>
                     </div>
 
                     <div class="box">
-
 
 
                         <div class="content-box">
@@ -56,42 +49,25 @@
                                 <ul class="tab-group minimal" data-tabs="tabs">
                                     <li class="active"><a href="#tab1">Screenshot 1</a></li>
                                     <li><a href="#tab2">Screenshot 2</a></li>
-                                    <li><a href="#tab3">Screenshot 3</a></li>
-                                    <li><a href="#tab4">Screenshot 4</a></li>
                                 </ul>
                                 <div class="tab-content tab-minimal">
 
                                     <div class="tab-pane active" id="tab1">
                                         <div class="box lightBorder">
-                                              <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/customerexp.png" class="fitted-width"/>
+                                            <img src="http://developer.bring.com/media/plugin/wordpressfraktpriser/screenshot1.png" class="fitted-width"/>
                                         </div>
                                     </div>
 
 
                                     <div class="tab-pane" id="tab2">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/config1.png" class="fitted-width" />
-                                        </div>
-                                    </div>
-
-
-                                    <div class="tab-pane" id="tab3">
-                                        <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/config2.png" class="fitted-width" />
-                                        </div>
-                                    </div>
-
-
-                                    <div class="tab-pane" id="tab4">
-                                        <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/install.png" class="fitted-width" />
+                                            <img src="http://developer.bring.com/media/plugin/wordpressfraktpriser/screenshot2.png" class="fitted-width"/>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-
 
 
                     </div>
@@ -101,12 +77,13 @@
                     <h4>Made by</h4>
                     <ul>
                         <li>
-                            <a href="http://htpc.no/" target="_blank">Nils-Helge Garli Hegvik
+                            <a href="http://www.hwu.no/" target="_blank">
+                                Leif-Arne Helland
                             </a>
                         </li>
                     </ul>
                     <div class="box">
-                        <a href="https://github.com/nilsga/prestashop-fraktguide"
+                        <a href="http://wordpress.org/extend/plugins/wp-e-commerce-bring-fraktguide/"
                            class="btn enhanced">Download</a>
                     </div>
                 </div>

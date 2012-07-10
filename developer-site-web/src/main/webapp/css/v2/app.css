@@ -1264,9 +1264,9 @@ div.information-box {
 }
 
 img.fitted-width {
-  width: 100%;
+  max-width: 100%;
 }
 
 img.half-width {
-  width: 50%;
+  max-width: 50%;
 }

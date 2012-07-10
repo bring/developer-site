@@ -87,6 +87,16 @@ public class HomeController {
         return "plugin/prestashop-fraktguide";
     }
 
+    @RequestMapping(value = "/plugin/wordpress-e-commerce-fraktguide.html")
+    public String wordpressFraktguide(){
+        return "plugin/wordpress-e-commerce-fraktguide";
+    }
+
+    @RequestMapping(value = "/plugin/zencart-fraktguide.html")
+    public String zencartFraktguide(){
+        return "plugin/zencart-fraktguide";
+    }
+
     @RequestMapping(value = "/use/{type}/index.html")
     public String useOverview(ModelMap model, @PathVariable String type) {
         PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("use/" + type);
