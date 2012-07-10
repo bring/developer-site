@@ -60,11 +60,6 @@
     <p>This is pre-prepared data for offline use. Enter the zip code you are sending from and which products you want
        data for. For each product you get:</p><br>
 
-    <div class="information-box">The Shipping Guide provides adjustment of prices shown. This service is available both
-                                 in XML API and in the "Product selection as HTML"-widget. Read more <a
-                href="../additionalresources/priceadjustments.html">here</a>.
-    </div>
-
 </div>
 
 <div class="box">
@@ -642,7 +637,9 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
     <div class="content-box" style="display: none;">
         <div><p>Specified using <code>fromCountry=NO&toCountry=DK</code>.</p>
-        <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a></p>
+
+            <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a>
+            </p>
         </div>
         <div class="box lightBorder">
             <div class="row element-sample">
@@ -732,11 +729,14 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
     <div class="content-box" style="display: none;">
         <div class="row element-sample">
 
+            <p>The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in
+               the <a href="../widget/productselectionashtml.html">Product selection as HTML"-widget.</a></p>
+
             <p>To adjust the price, add <a
                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p">&priceAdjustment=m20p</a>
                to the query.</p>
 
-            <p>The parameter is built up in the form [produktkode_][o]10[p]. Parts of the parameter whit square brackets
+            <p>The parameter is built up in the form [produktkode_][o]10[p]. Parts of the parameter with square brackets
                ( [] ) is optional.</p>
 
             <p>Explanation of the parameters follows:</p>
@@ -777,30 +777,58 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
                product code prefix.</p>
 
-            <p>Example:</p>
+            <div class="box lightBorder">
 
-            <ul class="tab-group minimal" data-tabs="tabs">
-                <li class="active"><a href="#tab991">XML</a></li>
-                <li><a href="#tab992">JSON</a></li>
-            </ul>
+                <p>Example: set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress Over
+                   natten 09.</p>
 
-            <div class="tab-content tab-minimal">
-                <div class="box lightBorder">
-                    <div class="tab-pane active" id="tab991">
-                        <div data-tab="xml" class="tab api-call">
+                <div class="row element-sample">
+                    <ul class="tab-group minimal" data-tabs="tabs">
+                        <li class="active"><a href="#tab991">XML</a></li>
+                        <li><a href="#tab992">JSON</a></li>
+                    </ul>
+                    <div class="tab-content tab-minimal">
+                        <div class="tab-pane active" id="tab991">
+                            <div data-tab="xml" class="tab api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p"
+                                   data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p">
+                                   <pre>
+.../price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE
+             &product=EKSPRESS09
+             &priceAdjustment=SERVICEPAKKE_79
+             &priceAdjustment=EKSPRESS09_m20p</pre>
+                                </a>
+                                <pre class="code-box xml response delay-snippet"></pre>
+                            </div>
 
                         </div>
-                    </div>
 
-                    <div class="tab-pane" id="tab992">
-                        <div data-tab="json" class="tab api-call">
+                        <div class="tab-pane" id="tab992">
+                            <div data-tab="json" class="tab api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p"
+                                   data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p">
+                                   <pre>
+.../price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE
+             &product=EKSPRESS09
+             &priceAdjustment=SERVICEPAKKE_79
+             &priceAdjustment=EKSPRESS09_m20p</pre>
+                                </a>
 
+                                <p class="right">JSONP Request: <a
+                                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p&callbackUrl=functionName">
+                                    ?callback=functionName </a></p>
+                                <pre class="code-box json response delay-snippet"></pre>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-            </div>
 
-            <p>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress Over natten 09.</p>
+            </div>
 
         </div>
     </div>
@@ -824,7 +852,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         </ul>
         <h4>Widgets</h4>
         <ul>
-            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information using jsonp</a></li>
+            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information
+                                                                                   using jsonp</a></li>
             <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
         </ul>
         <h4>Plugins</h4>
