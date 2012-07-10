@@ -840,6 +840,7 @@ table.inverted tbody tr.even {
 }
 
 .menu-group.ingress-list.alternativ li {
+  padding: 3px;
   background-image: url("/images/bring/arrow-green-right.png");
   background-position: 98% center;
   background-repeat: no-repeat;
@@ -922,6 +923,7 @@ table.inverted tbody tr.even {
 .menu-group.ingress-list li a {
   padding-bottom: 0;
   margin-bottom: -6px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
@@ -932,12 +934,13 @@ table.inverted tbody tr.even {
 .menu-group.ingress-list li span {
   display: block;
   padding-bottom: 7px;
-  padding-left: 10px;
-  font-size: 1.3em;
+  font-size: 0.9em;
+  font-weight: normal;
 }
 
 .menu-group.ingress-list .menu-item {
-  width: 250px;
+  width: 350px;
+  height: 100%;
   background: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
@@ -1272,9 +1275,9 @@ div.information-box {
 }
 
 img.fitted-width {
-  width: 100%;
+  max-width: 100%;
 }
 
 img.half-width {
-  width: 50%;
+  max-width: 50%;
 }
