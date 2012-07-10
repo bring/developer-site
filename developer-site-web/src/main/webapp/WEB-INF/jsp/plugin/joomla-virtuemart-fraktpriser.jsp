@@ -24,13 +24,14 @@
                     <div class="box">
                         <h1>Fraktpriser for Joomla! Virtuemart
                         </h1>
+
+                    </div>
+
+                    <div class="box">
                         <p>
                             This is a shipping module for Joomla Virtuemart. It uses the Bring Fraktguide XML API to
                             get shipping quotes. It will get accurate prices based on delivery postcode, weight, length, width, height and volume.
                         </p>
-                    </div>
-
-                    <div class="box">
                         <h4>How to install</h4>
                         <ol>
                             <li>Use instructions within the downloaded file. Please commit your updates to the Google Code project</li>

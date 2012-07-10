@@ -23,15 +23,13 @@
 
                     <div class="box">
                         <h1>Fraktguide for Wordpress e-commerce</h1>
-
-                        <p>This is a shipping module for WP e-Commerce. It uses the Bring Fraktguide XML API to get
-                           shipping quotes. It will get accurate prices based on delivery postcode, weight, length,
-                           width, height and volume. The plugin only supports WP e-Commerce 3.8 and later.
-                        </p>
-
                     </div>
 
                     <div class="box">
+                        <p>This is a shipping module for WP e-Commerce. It uses the Bring Fraktguide XML API to get
+                            shipping quotes. It will get accurate prices based on delivery postcode, weight, length,
+                            width, height and volume. The plugin only supports WP e-Commerce 3.8 and later.
+                        </p>
                         <h4>How to install</h4>
                         <ol>
                             <li>

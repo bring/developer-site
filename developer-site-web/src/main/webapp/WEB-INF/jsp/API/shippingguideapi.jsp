@@ -204,30 +204,13 @@
             </div>
 
             <div class="tab-pane" id="tab3">
-                <br>
 
-                <p>The webservices offers the most options when performing queries to the Shipping Guide.</p><br>
-
-                <p><b>To execute the web-service you will need a identification string. To get this - please <a
-                        href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b>
-                </p>
-
-                <p>Please refer to written documentation in <a
-                        href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or
-                    <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                </p><br>
-
-                <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link
-                                                                                                     to the latest
-                                                                                                     version)</p><br>
-
-                <p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>.</p>
-                <br>
-
+                <br><p>The webservices offers the most options when performing queries to the Shipping Guide. Please refer to written documentation in <a href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.</p><br>
+                <p><b>To execute the web-service you will need a identification string. To get this - please <a href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
+                <p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>.<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link to the latest version)</p><br>
                 <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br>
+                <p>Please refer to common information regarding <a href="../additionalresources/productlist.jsp">product codes</a> and <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
 
-                <p>Please refer to common information regarding <a>product codes</a> and <a
-                        href="../additionalresources/errorhandling.html">error codes</a>.</p>
             </div>
 
             <div class="tab-pane" id="tab4">
@@ -282,6 +265,7 @@ Get transport time:
     </div>
 </div>
 
+<%--Additional examples--%>
 <div class="box">
 <h2>Additional examples</h2>
 
@@ -842,6 +826,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
 </div>
 
+<%--Additional resources--%>
 <div class="span3 box">
     <div id="additional-resources">
         <h2>Additonal Resources</h2>
@@ -849,6 +834,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
             <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
             <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
             <li><a href="../additionalresources/priceadjustments.html">Price adjustments</a></li>
+            <li><a href="../additionalresources/productlist.html">Product list</a></li>
         </ul>
         <h4>Widgets</h4>
         <ul>
@@ -866,6 +852,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         </ul>
     </div>
 </div>
+
 </div>
 </section>
 

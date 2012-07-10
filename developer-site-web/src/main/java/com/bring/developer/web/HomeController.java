@@ -37,6 +37,11 @@ public class HomeController {
         return "/additionalresources/priceadjustments";
     }
 
+    @RequestMapping(value = "/additionalresources/productlist.html")
+    public String productlist() {
+        return "/additionalresources/productlist";
+    }
+
     @RequestMapping(value = "/additionalresources/wsdl-xml-schema.html")
     public String wsdlschema() {
         return "/additionalresources/wsdl-xml-schema";
