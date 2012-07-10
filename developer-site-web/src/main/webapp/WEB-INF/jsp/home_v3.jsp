@@ -50,32 +50,33 @@
                 <div class="span5">
                     <ul class="menu-group ingress-list alternativ api-menu">
                         <li>
-                            <a class="menu-item" href="/api/shippingguideapi.html">Shipping Guide API</a>
-                            <span>Get price and time estimate for shipments</span>
+                            <a class="menu-item" href="/api/shippingguideapi.html">Shipping Guide API
+                                <span>Get price and time estimate for shipments</span>
+                            </a>
                         </li>
                         <li>
-                            <a class="menu-item" href="/api/trackingapi.html">Tracking API</a>
-                            <span>See the current status of shipments</span>
+                            <a class="menu-item" href="/api/trackingapi.html">Tracking API
+                            <span>See the current status of shipments</span></a>
                         </li>
                         <li>
-                            <a class="menu-item" href="/api/reportsapi.html">Reports API (BETA)</a>
-                            <span>Generate customer reports from shipment history</span>
+                            <a class="menu-item" href="/api/reportsapi.html">Reports API (BETA)
+                            <span>Generate customer reports from shipment history</span></a>
                         </li>
                         <li>
-                            <a class="menu-item" href="/api/pickuppointapi.html">Pickup Point API</a>
-                            <span>Find pickup points near a location</span>
+                            <a class="menu-item" href="/api/pickuppointapi.html">Pickup Point API
+                            <span>Find pickup points near a location</span></a>
                         </li>
                         <li>
-                            <a class="menu-item" href="#">Postal Code API</a>
-                            <span>Lookup and validate postal codes</span>
+                            <a class="menu-item" href="#">Postal Code API
+                            <span>Lookup and validate postal codes</span></a>
                         </li>
                         <li>
-                            <a class="menu-item" href="#">Booking API (BETA)</a>
-                            <span>Book shipments and generate PDF labels</span>
+                            <a class="menu-item" href="#">Booking API (BETA)
+                            <span>Book shipments and generate PDF labels</span></a>
                         </li>
                         <li>
-                            <a class="menu-item" href="#">EDI</a>
-                            <span>Communicate with brings services electronically</span>
+                            <a class="menu-item" href="#">EDI
+                            <span>Communicate with brings services electronically</span></a>
                         </li>
                     </ul>
                 </div>
