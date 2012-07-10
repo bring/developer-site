@@ -23,15 +23,16 @@
                         <h1>Error handling</h1>
                     </div>
                     <div class="box">
-                        Remember to use timeout and error handling when making requests to the service.
-                        Handle errors in a way that is satisfactory for your online store.
-                    <h4>Error handling strategies</h4>
-                        <ul>
-                            <li>Use the <a href="#">Offline data</a> to calculate price, or</li>
-                            <li>Set a fixed standard price of the package</li>
-                        </ul>
-                        <h4>Error codes</h4>
+                        <p>
+                            When using the Shipping Guide several errors can occur. Thus it is important to use
+                            timeouts and error handling when making requests to the service. How you handle errors
+                            depends on the nature of your application, but one strategy for handling such situations is
+                            by providing a fall back. For instance your application can respond to an error by using
+                            the offline data set to calculate prices and delivery time estimates. A simpler way would be
+                            to use a a fixed standard price whenever an error occurs.
+                        </p>
 
+                        <h4>Error codes</h4>
                         <table>
                             <thead>
                             <tr>
