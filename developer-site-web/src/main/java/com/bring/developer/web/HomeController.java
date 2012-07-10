@@ -37,6 +37,11 @@ public class HomeController {
         return "/additionalresources/priceadjustments";
     }
 
+    @RequestMapping(value = "/additionalresources/offlinedata.html")
+    public String offlinedata() {
+        return "/additionalresources/offlinedata";
+    }
+
     @RequestMapping(value = "/additionalresources/productlist.html")
     public String productlist() {
         return "/additionalresources/productlist";
