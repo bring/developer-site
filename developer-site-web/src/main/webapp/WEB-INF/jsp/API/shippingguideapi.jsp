@@ -30,17 +30,16 @@
     <h2>Introduction</h2>
 
     <p>Shipping Guide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations,
-        product information and environmental information (and more).</p>
+       product information and environmental information (and more).</p>
 
     <p>
         <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
         Norwegian</p>
 
     <p>All Shipping Guide services are basically the same service, but there are different methods of integration
-        available: XML, JSON and Web Service. Choose the option that fits your need best. Web Services is
-        the core service with all functionality. There are some limitations in the XML/JSON API, such as the inability to
-        mark a parcel as a specialized goods. </p>
-
+       available: XML, JSON and Web Service. Choose the option that fits your need best. Web Services is the core
+       service with all functionality. There are some limitations in the XML/JSON API, such as the inability to mark a
+       parcel as a specialized goods. </p>
 
     <table>
         <thead>
@@ -52,22 +51,24 @@
         </thead>
         <tbody>
         <tr>
-            <td>XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides access to data
-            from Bring via a single interface.
+            <td>XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides
+                access to data from Bring via a single interface.
             </td>
-            <td>Web browsers can retrieve information from external sites if the data are made available in JSONP format. The
-            purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping guide
-            without server components on your web page.
+            <td>Web browsers can retrieve information from external sites if the data are made available in JSONP
+                format. The purpose is that you can paste HTML / Javascript on your web page and easily use data from
+                the Shipping guide without server components on your web page.
             </td>
-            <td>With Online Web Services, you can look up price, transportation, area coverage and product information for each
-            product as required. For advanced users we recommend the Web Services with several options in the query.
+            <td>With Online Web Services, you can look up price, transportation, area coverage and product information
+                for each product as required. For advanced users we recommend the Web Services with several options in
+                the query.
             </td>
 
         </tr>
         </tbody>
     </table>
 
-    <sup>You can also use <a href="../additionalresources/offlinedata.html">Offline data</a> as an integration method</sup><br>
+    <sup>You can also use <a href="../additionalresources/offlinedata.html">Offline data</a> as an integration
+         method</sup><br>
 
 </div>
 
@@ -75,7 +76,7 @@
 
     <h2>Reference</h2>
 
-    <p>Request prefix: <br/><code></code></p>
+    <p>Request prefix: <br/><code>http://fraktguide.bring.no/fraktguide</code></p>
     <table>
         <thead>
         <tr>
@@ -97,135 +98,149 @@
 
 </div>
 
+<%--How to use--%>
 <div class="box">
 
-        <h2>How to Use</h2>
+    <h2>How to Use</h2>
 
-        <div class="information-box">Shipping Guide specifies VAT related to senders country. It's up to the client to
-            decide if VAT is applicable to their situation of sale
-        </div>
+    <p>First you have to decide which integration method you want to use for the available data.</p><br>
 
-        <div class="information-box"> Add the name of the web-shop to the HTTP header "User-Agent", when you send a
-            request to the service. If available, the name of the web-shop owner should also
-            be added to the request. If you have a registered user at fraktguide.bring.no,
-            please also include XML API's Public ID parameter in the query. This makes it
-            possible for us to send any relevant messages via the registered e-mail address.
-        </div>
+    <ul class="tab-group minimal" data-tabs="tabs">
+        <li class="active"><a href="#tab1">XML</a></li>
+        <li><a href="#tab2">JSON</a></li>
+        <li><a href="#tab3">WEB SERVICES</a></li>
+    </ul>
 
-        <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your
-            web shop's users should still be able to order, even if the Shipping Guide returns
-            an error or a timeout occurs. <a href="../additionalresources/errorhandling.html">Read
-                more
-                about
-                error
-                handling
-                and
-                error
-                codes.</a>
-        </div>
-        <p>First you have to decide which integration method you want to use for the available data.</p><br>
-        <div class="box lightBorder">
-            <ul class="tab-group minimal" data-tabs="tabs">
-                <li class="active"><a href="#tab1">XML</a></li>
-                <li><a href="#tab2">JSON</a></li>
-                <li><a href="#tab3">WEB SERVICES</a></li>
+    <div class="tab-content tab-minimal">
+
+        <div class="tab-pane active" id="tab1">
+            <h5>SELECT RESOURCE</h5>
+
+            <p>You may query the information most suited for your need.</p>
+            <ul>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">Only price</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">Only delivery time</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">All available information</a>
+                </li>
             </ul>
+            <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML SCHEMA</a> for information
+               on elements in the response</p>
+            <hr>
+            <h5>SELECT PRODUCT</h5>
 
-            <div class="tab-content tab-minimal">
-
-                <div class="tab-pane active" id="tab1">
-                    <h5>SELECT RESOURCE</h5>
-
-                    <p>You may query the information most suited for your need.</p>
-                    <ul>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">Only price</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">Only delivery time</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">All available information</a>
-                        </li>
-                    </ul>
-                    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML SCHEMA</a> for
-                        information on elements in the response</p>
-                    <hr>
-                    <h5>SELECT PRODUCT</h5>
-
-                    <p>You may query the information most suited for your need.</p>
-                    <ul>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">Only SERVICEPAKKE</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
-                               target="_blank">Both SERVICEPAKKE and PA_DOREN</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">All available products (for combination of postal codes and country)</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="tab-pane" id="tab2">
-                    <h5>SELECT RESOURCE</h5>
-
-                    <p>You may query the information most suited for your need.</p>
-                    <ul>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">Only price</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">Only delivery time</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">All available information</a>
-                        </li>
-                    </ul>
-                    <hr>
-                    <h5>SELECT PRODUCT</h5>
-
-                    <p>You may query the information most suited for your need.</p>
-                    <ul>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">Only SERVICEPAKKE</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
-                               target="_blank">Both SERVICEPAKKE and PA_DOREN</a>
-                        </li>
-                        <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
-                               target="_blank">All available products (for combination of postal codes and country)</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="tab-pane" id="tab3">
-
-                    <br><p>The webservices offers the most options when performing queries to the Shipping Guide. Please refer to written documentation in <a href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.</p><br>
-                    <p><b>To execute the web-service you will need a identification string. To get this - please <a href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
-                    <p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>.<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link to the latest version)</p><br>
-                    <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br>
-                    <p>Please refer to common information regarding <a href="../additionalresources/productlist.jsp">product codes</a> and <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
-
-                </div>
-
-            </div>
+            <p>You may query the information most suited for your need.</p>
+            <ul>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">Only SERVICEPAKKE</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
+                       target="_blank">Both SERVICEPAKKE and PA_DOREN</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">All available products (for combination of postal codes and country)</a>
+                </li>
+            </ul>
         </div>
 
-    <div><p>The Shipping Guide API has a lot of parameters and it is simply too much to cover in this tutorial.
-        We recommend that you get familiar with the reference table and look at all the additional examples for further study</p></div>
+        <div class="tab-pane" id="tab2">
+            <h5>SELECT RESOURCE</h5>
+
+            <p>You may query the information most suited for your need.</p>
+            <ul>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">Only price</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">Only delivery time</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">All available information</a>
+                </li>
+            </ul>
+            <hr>
+            <h5>SELECT PRODUCT</h5>
+
+            <p>You may query the information most suited for your need.</p>
+            <ul>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">Only SERVICEPAKKE</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
+                       target="_blank">Both SERVICEPAKKE and PA_DOREN</a>
+                </li>
+                <li>
+                    <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
+                       target="_blank">All available products (for combination of postal codes and country)</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-pane" id="tab3">
+
+            <br>
+
+            <p>The webservices offers the most options when performing queries to the Shipping Guide. Please refer to
+               written documentation in <a
+                        href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or
+                <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+            </p><br>
+
+            <p><b>To execute the web-service you will need a identification string. To get this - please <a
+                    href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
+
+            <p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>.<a
+                    href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link to
+               the latest version)</p><br>
+
+            <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br>
+
+            <p>Please refer to common information regarding <a href="../additionalresources/productlist.jsp">product
+                                                                                                             codes</a>
+               and <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
+
+        </div>
+
+    </div>
+
+    <div class="information-box">Shipping Guide specifies VAT related to senders country. It's up to the client to
+                                 decide if VAT is applicable to their situation of sale
+    </div>
+
+    <div class="information-box"> Add the name of the web-shop to the HTTP header "User-Agent", when you send a request
+                                  to the service. If available, the name of the web-shop owner should also be added to
+                                  the request. If you have a registered user at fraktguide.bring.no, please also include
+                                  XML API's Public ID parameter in the query. This makes it possible for us to send any
+                                  relevant messages via the registered e-mail address.
+    </div>
+
+    <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web
+                                 shop's users should still be able to order, even if the Shipping Guide returns an error
+                                 or a timeout occurs. <a href="../additionalresources/errorhandling.html">Read more
+                                                                                                          about error
+                                                                                                          handling and
+                                                                                                          error
+                                                                                                          codes.</a>
+    </div>
+
+    <div><p>The Shipping Guide API has a lot of parameters and it is simply too much to cover all of them in detail in this tutorial. We
+            recommend that you get familiar with the reference table and look at all the additional examples for further
+            study.</p></div>
 
 </div>
 
@@ -242,7 +257,7 @@
     <div class="content-box" style="display: none;">
 
         <p>This example shows you how to retrieve the price, expected delivery time and additional GUI text for sending
-            a single parcel between two postal codes.</p><br><br>
+           a single parcel between two postal codes.</p><br><br>
 
         <p>The data used in this example is:</p>
         <ul>
@@ -331,8 +346,8 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
 
         <div>
             <p>It is also possible to combine weight, volume and dimensions for multiple parcels. Multiple parcels are
-                specified by suffixing weightInGrams, volume or dimensions (length, width or height), with sequential
-                numbers from 0.</p>
+               specified by suffixing weightInGrams, volume or dimensions (length, width or height), with sequential
+               numbers from 0.</p>
         </div>
         <p>The data used in this example is:</p>
         <ul>
@@ -470,7 +485,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                     <div class="tab-pane" id="tab33">
                         <p>Please refer to written documentation in <a
                                 href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                         </p>
                     </div>
 
@@ -569,7 +584,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                     <div class="tab-pane" id="tab43">
                         <p>Please refer to written documentation in <a
                                 href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                         </p>
                     </div>
 
@@ -585,7 +600,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
     <div class="content-box" style="display: none;">
         <div><p>Specified using <code>fromCountry=NO&toCountry=DK</code>.</p>
-
 
             <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a>
             </p>
@@ -636,7 +650,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                     <div class="tab-pane" id="tab53">
                         <p>Please refer to written documentation in <a
                                 href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                         </p>
                     </div>
 
@@ -684,21 +698,19 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
             <p>To adjust the price, add <a
                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p">&priceAdjustment=m20p</a>
-                to the query.</p>
-
+               to the query.</p>
 
             <p>The parameter is built up in the form [produktkode_][o]10[p]. Parts of the parameter with square brackets
                ( [] ) is optional.</p>
-
 
             <p>Explanation of the parameters follows:</p>
             <ul>
                 <li><p>produktkode_ used if price adjustments are only made for a single product. Example: <a
                         href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_m20">&priceAdjustment=SERVICEPAKKE_m20</a>
-                    lowers the price on product Servicepakke with NOK 20.</p></li>
+                       lowers the price on product Servicepakke with NOK 20.</p></li>
 
                 <li><p>o specifies the operation to be performed. Operations supported are 'p' for positive, 'm' for
-                    negative or blank for a fixed price adjustment. Examples:</p>
+                       negative or blank for a fixed price adjustment. Examples:</p>
                     <ul>
                         <li>
                             <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20">&priceAdjustment=m20</a>
@@ -726,8 +738,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
             </ul>
 
             <p>Though <b>not recommended</b>, it is possible to make overlapping queries. If there is a need to do
-                multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
-                product code prefix.</p>
+               multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
+               product code prefix.</p>
 
             <div class="box lightBorder">
 

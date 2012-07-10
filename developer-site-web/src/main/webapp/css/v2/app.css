@@ -1044,6 +1044,14 @@ div.front-page-api-menu {
   top: -13px;
 }
 
+div.header-box {
+  padding: 35px;
+  -webkit-border-radius: 7px;
+   -khtml-border-radius: 7px;
+     -moz-border-radius: 7px;
+          border-radius: 7px;
+}
+
 ul.api-menu {
   padding: 0;
   margin: 0;
@@ -1267,9 +1275,9 @@ div.information-box {
 }
 
 img.fitted-width {
-  max-width: 100%;
+  width: 100%;
 }
 
 img.half-width {
-  max-width: 50%;
+  width: 50%;
 }
