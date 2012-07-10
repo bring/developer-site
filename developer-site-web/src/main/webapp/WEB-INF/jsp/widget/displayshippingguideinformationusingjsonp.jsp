@@ -40,7 +40,7 @@
                                 <div class="tab-content tab-minimal">
 
                                     <div class="tab-pane active" id="tab1-5">
-                                            <iframe class="preview-frame widget-demo" src="/use/widget/shippingguidedemo/preview.html" height="150"></iframe>
+                                        <div class="box lightBorder"><iframe class="preview-frame widget-demo" src="/use/widget/shippingguidedemo/preview.html" height="150"></iframe></div>
                                     </div>
 
                                     <div class="tab-pane" id="tab2-5">

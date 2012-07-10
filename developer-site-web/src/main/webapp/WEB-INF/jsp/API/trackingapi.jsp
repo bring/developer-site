@@ -137,7 +137,7 @@
                                 <ul class="menu-group collapsing no-shadow">
 
                                     <li>
-                                        <a href="#" class="menu-item"><h4>Package - notification received</h4></a>
+                                        <a href="#" class="menu-item"><h4>Status - notification received</h4></a>
                                         <div class="content-box" style="display: none;">
 
 
@@ -188,7 +188,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="menu-item"><h4>Package - waiting at pickup point</h4></a>
+                                        <a href="#" class="menu-item"><h4>Status - waiting at pickup point</h4></a>
                                         <div class="content-box">
                                             <p>The example below is showing a package waiting for the recipient to collect it at a pickup point</p>
                                             <div class="box lightBorder">  <div class="row element-sample">
@@ -221,7 +221,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="menu-item"><h4>Package - loaded for delivery</h4></a>
+                                        <a href="#" class="menu-item"><h4>Status - loaded for delivery</h4></a>
                                         <div class="content-box">
                                             <p>The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient</p>
                                             <div class="box lightBorder">  <div class="row element-sample">
@@ -253,7 +253,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="menu-item"><h4>Package - delivered</h4></a>
+                                        <a href="#" class="menu-item"><h4>Status - delivered</h4></a>
                                         <div class="content-box">
                                             <p>The example below is showing a package that has been delivered to the reciepient</p>
 
