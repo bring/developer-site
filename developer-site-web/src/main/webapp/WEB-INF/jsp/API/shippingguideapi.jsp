@@ -641,7 +641,9 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
     <a href="#" class="menu-item"><h4>Using country codes</h4></a>
 
     <div class="content-box" style="display: none;">
-        <div><p>Specified using <code>fromCountry=NO&toCountry=DK</code>.</p></div>
+        <div><p>Specified using <code>fromCountry=NO&toCountry=DK</code>.</p>
+        <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a></p>
+        </div>
         <div class="box lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
@@ -820,12 +822,12 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
             <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
             <li><a href="../additionalresources/priceadjustments.html">Price adjustments</a></li>
         </ul>
-        <h3>Widgets</h3>
+        <h4>Widgets</h4>
         <ul>
-            <li></li>
-            <li></li>
+            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information using jsonp</a></li>
+            <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
         </ul>
-        <h3>Plugins</h3>
+        <h4>Plugins</h4>
         <ul>
             <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
             <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>

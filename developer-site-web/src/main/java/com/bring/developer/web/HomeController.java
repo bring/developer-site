@@ -47,15 +47,27 @@ public class HomeController {
         return "/additionalresources/errorhandling";
     }
 
+    @RequestMapping(value = "/widget/displayshippingguideinformationusingjsonp.html")
+    public String displayshippingguideinformationusingjsonp() {
+        return "/widget/displayshippingguideinformationusingjsonp";
+    }
+
     @RequestMapping(value = "/api/shippingguideapi.html")
     public String shippingguideapi() {
         return "api/shippingguideapi";
     }
 
     @RequestMapping(value = "/api/reportsapi.html")
-    public String reportsapi() {
+     public String reportsapi() {
         return "api/reportsapi";
     }
+
+    @RequestMapping(value = "/widget/productselectionashtml.html")
+    public String productselectionashtml() {
+        return "/widget/productselectionashtml";
+    }
+
+
 
     @RequestMapping(value = "/additionalresources/xmlSchemaDefinition.html")
     public String xmlSchemaDefinition() {
