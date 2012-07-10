@@ -19,6 +19,11 @@ public class HomeController {
 
     @RequestMapping(value = "/index.html")
     public String index() {
+        return "home";
+    }
+
+    @RequestMapping(value = "/index_2.html")
+    public String index2() {
         return "home_v3";
     }
 
@@ -75,6 +80,21 @@ public class HomeController {
     @RequestMapping(value = "/plugin/oscommerce-fraktpriser.html")
     public String osCommerceFraktpriser(){
         return "plugin/oscommerce-fraktpriser";
+    }
+
+    @RequestMapping(value = "/plugin/prestashop-fraktguide.html")
+    public String prestashopFraktguide(){
+        return "plugin/prestashop-fraktguide";
+    }
+
+    @RequestMapping(value = "/plugin/wordpress-e-commerce-fraktguide.html")
+    public String wordpressFraktguide(){
+        return "plugin/wordpress-e-commerce-fraktguide";
+    }
+
+    @RequestMapping(value = "/plugin/zencart-fraktguide.html")
+    public String zencartFraktguide(){
+        return "plugin/zencart-fraktguide";
     }
 
     @RequestMapping(value = "/use/{type}/index.html")

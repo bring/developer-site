@@ -62,12 +62,7 @@
         <li>Shippingguide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their situation of sale</li>
     </ul>
     <hr>
-    <h5>RECOMMENDATION TO DEVELOPERS</h5>
-    <p>Important! Remember to use timeout and error handling when making requests to the service. Handle errors in a way that is satisfactory for your online store.
-        Add the name of the web-shop to the HTTP header "User-Agent", when you send a request to the service. If available, the name of the web-shop owner should also be added to the request.
-        If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.</p>
-    <br><br><div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web shop's users should still be able to order, even if the Shipping Guide returns an error. Read more about error handling <a href="../additionalresources/errorhandling.html">here.</a></div>
-</div>
+
 
 <div class="box">
 
@@ -92,6 +87,25 @@
         </tr>
         </tbody>
     </table>
+
+        <h5>NICE TO KNOW</h5>
+        <ul><br>
+            <li>All Shipping Guide services is basically the same service. Web Services is the core service with all functionality. There are some limitations in the XML API.</li>
+            <li>Using XML API you can not mark a parcel as a specialized goods. If you need to do this you must use the Web Service.</li>
+            <li>Shippingguide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their situation of sale</li>
+        </ul>
+        <hr>
+
+        <div class="information-box"> Add the name of the web-shop to the HTTP header "User-Agent", when you send a request to the service. If available, the name of the web-shop owner should also be added to the request.
+            If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query. This makes it possible for us to send any relevant messages via the registered e-mail address.
+        </div>
+
+
+        <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your
+                                     web shop's users should still be able to order, even if the Shipping Guide returns
+                                     an error or a timeout occurs. <a href="../additionalresources/errorhandling.html">Read more about error handling
+                                     and error codes.</a></div>
+    </div>
 
 </div>
 
@@ -641,6 +655,14 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         <ul>
             <li></li>
             <li></li>
+        </ul>
+        <h3>Plugins</h3>
+        <ul>
+            <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
+            <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
+            <li><a href="../plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
+            <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a></li>
+            <li><a href="../plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
         </ul>
     </div>
 </div>
