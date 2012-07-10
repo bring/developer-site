@@ -23,12 +23,13 @@
 
                     <div class="box">
                         <h1>Choose pickup point</h1>
-                        <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post office.
-                            This is mainly intended for online shopping to allow the user to choose another pickup point than the default to their shipping address.
-                        </p>
+
                     </div>
 
                     <div class="box">
+                        <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post office.
+                            This is mainly intended for online shopping to allow the user to choose another pickup point than the default to their shipping address.
+                        </p>
                         <h4>How to install</h4>
                         <ol>
                             <li>This widget depends on jQuery, so please add jQuery to your site first.</li>

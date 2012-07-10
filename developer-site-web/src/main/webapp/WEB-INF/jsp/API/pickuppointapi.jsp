@@ -517,7 +517,7 @@
     <div id="additional-resources">
         <h2>Additonal Resources</h2>
 
-        <h3>Widgets</h3>
+        <h4>Widgets</h4>
         <ul>
             <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
             <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With Map</a></li>
