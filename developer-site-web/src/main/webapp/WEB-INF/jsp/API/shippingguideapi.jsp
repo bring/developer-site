@@ -103,7 +103,8 @@
 
     <h2>How to Use</h2>
 
-    <p>First you have to decide which integration method you want to use for the available data.</p><br>
+    <p>First you have to decide which integration method you want to use for the available data. The Introduction
+       contains a comparison of the alternatives, to help you decide.</p>
 
     <ul class="tab-group minimal" data-tabs="tabs">
         <li class="active"><a href="#tab1">XML</a></li>
@@ -114,9 +115,17 @@
     <div class="tab-content tab-minimal">
 
         <div class="tab-pane active" id="tab1">
-            <h5>SELECT RESOURCE</h5>
 
-            <p>You may query the information most suited for your need.</p>
+            <p>
+                
+            </p>
+
+            <h5>Price, expected delivery time or both?</h5>
+            <p>
+               The response from the Shipping Guide can contain either
+               the price of the shipment, a delivery time estimate or both.
+            </p>
+
             <ul>
                 <li>
                     <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
@@ -131,10 +140,12 @@
                        target="_blank">All available information</a>
                 </li>
             </ul>
-            <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML SCHEMA</a> for information
+
+            <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information
                on elements in the response</p>
             <hr>
-            <h5>SELECT PRODUCT</h5>
+
+            <h5>Select products</h5>
 
             <p>You may query the information most suited for your need.</p>
             <ul>
