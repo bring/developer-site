@@ -23,7 +23,7 @@
 <script type="text/javascript" src="/js/codetabs.js"></script>
 <script type="text/javascript" src="/js/banner.js"></script>
 <script type="text/javascript" src="/js/statistics.js"></script>
-<script type="text/javascript" src="/js/init.js"></script>
+<script type="text/javascript" src="/js/init_v2.js"></script>
 <script type="text/javascript" src="/js/exampleRequest.js"></script>
 
 <script type="text/javascript" src="/js/bootstrap-tabs.js"></script>
