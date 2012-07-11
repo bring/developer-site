@@ -91,7 +91,7 @@ utleveringsenhet-1.0.1.js"&gt;
 
 </div>
 
-<misc:footer/>
+<misc:footer_v2/>
 <misc:jqueryblob_v2/>
 
 </body>

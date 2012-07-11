@@ -88,7 +88,7 @@
 
 </div>
 
-<misc:footer/> <misc:jqueryblob_v2/> 1
+<misc:footer_v2/> <misc:jqueryblob_v2/> 1
 
 </body>
 </html>
