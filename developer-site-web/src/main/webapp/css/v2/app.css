@@ -939,7 +939,6 @@ table.inverted tbody tr.even {
 }
 
 .menu-group.ingress-list .menu-item {
-  width: 350px;
   height: 100%;
   background: none;
   -webkit-box-shadow: none;
@@ -1275,9 +1274,9 @@ div.information-box {
 }
 
 img.fitted-width {
-  width: 100%;
+  max-width: 100%;
 }
 
 img.half-width {
-  width: 50%;
+  max-width: 50%;
 }
