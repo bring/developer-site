@@ -29,12 +29,12 @@
 <div class="box">
     <h2>Introduction</h2>
 
-    <p>Shipping Guide (Fraktguiden) is a free service from Bring that allows you to calculate prices, time estimations,
-       product information and environmental information (and more).</p>
+    <p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price information, service area or estimated delivery times for different shipping alternatives delivered by Bring. With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the evening. The customers may also choose different shipping methods based on how fast and when they want their products delivered.
+       <br><br>The shipping guide calculates the delivery time and the price based on postal code. Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
 
     <p>
         <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
-        Norwegian</p>
+        (Norwegian)</p>
 
     <p>All Shipping Guide services are basically the same service, but there are different methods of integration
        available: XML, JSON and Web Service. Choose the option that fits your need best. Web Services is the core
@@ -697,6 +697,120 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         </div>
     </div>
 </li>
+
+
+
+
+
+
+
+
+
+
+<li>
+    <a href="#" class="menu-item"><h4>See information based on weight</h4></a>
+
+    <div class="content-box" style="display: none;">
+        <div><p>Specified using <code>weightInGrams=1500</code>.</p>
+
+        </div>
+        <div class="box lightBorder">
+            <div class="row element-sample">
+                <ul class="tab-group minimal" data-tabs="tabs">
+                    <li class="active"><a href="#tab61">XML</a></li>
+                    <li><a href="#tab62">JSON</a></li>
+                    <li><a href="#tab63">WEB SERVICES</a></li>
+                    <li><a href="#tab64">JAVA</a></li>
+                </ul>
+
+                <div class="tab-content tab-minimal">
+
+                    <div class="tab-pane active" id="tab61">
+                        <div data-tab="xml" class="tab api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
+                               data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500">
+                                ../products/price.xml?from=7600&to=1407&weightInGrams=1500</a><br>
+
+                            <p>Response:</p>
+                            <pre class="code-box xml response delay-snippet"></pre>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane" id="tab62">
+                        <div data-tab="json" class="tab api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
+                               data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500">
+                                ../products/price.json?from=7600&to=1407&weightInGrams=1500</a>
+
+                            <p class="right">JSONP Request: <a
+                                    href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&callbackUrl=functionName">?callback=functionName</a>
+                            </p>
+
+                            <p>Response:</p>
+                            <pre class="code-box json response delay-snippet"></pre>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tab63">
+                        <p>Please refer to written documentation in <a
+                                href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
+                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="tab64">
+                        <div><pre class="code-box">// Initialize library
+String clientId = "www.mywebshop.com";
+BringService bringService = new BringService(clientId);
+
+// Prepare query
+Package packet = new Package();
+packet.withWeightInGrams("1500");
+Shipment shipment = new Shipment();
+shipment.withFromPostalCode("7600");
+shipment.withToPostalCode("1407");
+shipment.addPackage(packet);
+
+// Fetch price information from Bring
+ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
+String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+
+// Print out
+System.out.println("Price: " + price + " NOK");</pre>
+                        </div>
+
+                        <div><p>Expected output:</p>
+                            <pre class="code-box">Price: 94.00 NOK</pre>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <li>
     <a href="#" class="menu-item"><h4>Adjust prices</h4></a>
