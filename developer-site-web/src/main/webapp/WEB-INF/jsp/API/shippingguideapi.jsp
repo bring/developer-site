@@ -29,8 +29,13 @@
 <div class="box">
     <h2>Introduction</h2>
 
-    <p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price information, service area or estimated delivery times for different shipping alternatives delivered by Bring. With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the evening. The customers may also choose different shipping methods based on how fast and when they want their products delivered.
-       <br><br>The shipping guide calculates the delivery time and the price based on postal code. Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
+    <p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price
+       information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
+       With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
+       their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
+       evening. The customers may also choose different shipping methods based on how fast and when they want their
+       products delivered. <br><br>The shipping guide calculates the delivery time and the price based on postal code.
+       Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
 
     <p>
         <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
@@ -116,34 +121,56 @@
 
         <div class="tab-pane active" id="tab1">
 
-            <p>
-                
-            </p>
-
-            <h5>Price, expected delivery time or both?</h5>
-            <p>
-               The response from the Shipping Guide can contain either
-               the price of the shipment, a delivery time estimate or both.
-            </p>
-
+            <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are
+                mandatory, others are optional, but any query to the Shipping Guide API must at least contain the
+                following information: </p>
             <ul>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">Only price</a>
+                <li><b>Response type:</b> What do you want in your response? Just the price of the shipment, just an
+                                          estimated delivery time or all available information? By querying <a
+                            href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
+                            target="_blank"><code>price.xml</code></a> you will only get the price of the shipment,
+                                          while <a
+                            href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500"
+                            target="_blank"><code>expectedDelivery.xml</code></a> will only show you an estimated
+                                          delivery time. By querying <a
+                            href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500"
+                            target="_blank"><code>all.xml</code></a> you will not only get the price and the expected
+                                          delivery time, but some additional information such as an indication of which
+                                          alternative has the least environmental impact.
+                </li>
+                <li><b>Origin and destination:</b> Where is the shipment being sent from, and where is it heading? For
+                                                   shipments inside Norway postal codes are sufficient, but for
+                                                   international shipments country codes must be specified, as well as
+                                                   postal codes (or city for countries that are not using postal codes).
+                                                   To specify a postal code such as "0361" add <a
+                            href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=0361&weightInGrams=1500"
+                            target="_blank"><code>&to=0361</code></a> or <a
+                            href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=0361&weightInGrams=1500"
+                            target="_blank"><code>from=0361</code></a> to your request. For international shipments use
+                                                   country codes (such as DK for Denmark) and add <a
+                            href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=2100&weightInGrams=1500&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY"
+                            target="_blank"><code>&toCountry=DK</code></a> or <a
+                            href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=2100&to=0361&weightInGrams=1500&fromCountry=DK&product=CARRYON_HOMESHOPPING_DENMARK"
+                            target="_blank"><code>&fromCountry=DK</code></a> to your request.
                 </li>
                 <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">Only delivery time</a>
-                </li>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">All available information</a>
+                    <b>Package size:</b> How big is the package? This can either be weight of the package in grams, its
+                                         dimensions or volume. A weight of 1500 grams can be specified by <a
+                        target="_blank"
+                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"><code>&weightInGrams=1500</code></a>,
+                                         dimensions of 30cm x 40cm x 40cm as <a target="_blank"
+                                                                                href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&length=30&width=40&height=40">
+                    <code>&length=30&width=40&height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
+                                                                                                       href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&volume=33">
+                    <code>&volume=33</code></a> .
                 </li>
             </ul>
 
+            <p>There are several optional parameters as well. For a complete list see the reference table, and refer to
+               the additional examples for details on how they can be used. </p>
+
             <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information
                on elements in the response</p>
-            <hr>
 
             <h5>Select products</h5>
 
@@ -165,41 +192,7 @@
         </div>
 
         <div class="tab-pane" id="tab2">
-            <h5>SELECT RESOURCE</h5>
 
-            <p>You may query the information most suited for your need.</p>
-            <ul>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">Only price</a>
-                </li>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">Only delivery time</a>
-                </li>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">All available information</a>
-                </li>
-            </ul>
-            <hr>
-            <h5>SELECT PRODUCT</h5>
-
-            <p>You may query the information most suited for your need.</p>
-            <ul>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">Only SERVICEPAKKE</a>
-                </li>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
-                       target="_blank">Both SERVICEPAKKE and PA_DOREN</a>
-                </li>
-                <li>
-                    <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
-                       target="_blank">All available products (for combination of postal codes and country)</a>
-                </li>
-            </ul>
         </div>
 
         <div class="tab-pane" id="tab3">
@@ -249,9 +242,9 @@
                                                                                                           codes.</a>
     </div>
 
-    <div><p>The Shipping Guide API has a lot of parameters and it is simply too much to cover all of them in detail in this tutorial. We
-            recommend that you get familiar with the reference table and look at all the additional examples for further
-            study.</p></div>
+    <div><p>The Shipping Guide API has a lot of parameters and it is simply too much to cover all of them in detail in
+            this tutorial. We recommend that you get familiar with the reference table and look at all the additional
+            examples for further study.</p></div>
 
 </div>
 
@@ -698,15 +691,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
     </div>
 </li>
 
-
-
-
-
-
-
-
-
-
 <li>
     <a href="#" class="menu-item"><h4>See information based on weight</h4></a>
 
@@ -795,22 +779,6 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
     </div>
 </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <li>
     <a href="#" class="menu-item"><h4>Adjust prices</h4></a>
