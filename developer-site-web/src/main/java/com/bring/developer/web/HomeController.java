@@ -19,12 +19,7 @@ public class HomeController {
     
     @RequestMapping(value = "/index.html")
     public String index() {
-        return "home_v2";
-    }
-
-    @RequestMapping(value = "/api/pickuppointapi.html")
-    public String pickuppointapi() {
-        return "api/pickuppointapi";
+        return "home";
     }
     
     @RequestMapping(value = "/use/{type}/index.html")
