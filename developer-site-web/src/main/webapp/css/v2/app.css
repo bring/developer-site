@@ -1265,6 +1265,14 @@ pre.code-box {
 
 /* END TAB-GROUP STYLES */
 
+div.forside-banner {
+  background-image: url("/images/bring/big-banner-bg.png");
+}
+
+div.light-padding {
+  padding-left: 10px;
+}
+
 div.information-box {
   min-height: 30px;
   padding: 5px 0 5px 30px;
