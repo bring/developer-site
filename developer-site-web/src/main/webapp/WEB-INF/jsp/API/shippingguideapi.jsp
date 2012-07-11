@@ -169,6 +169,92 @@
             <p>There are several optional parameters as well. For a complete list see the reference table, and refer to
                the additional examples for details on how they can be used. </p>
 
+
+            <p>This example shows you how to retrieve the price, expected delivery time and additional GUI text for sending
+               a single parcel between two postal codes.</p><br><br>
+
+            <p>The data used in this example is:</p>
+            <ul>
+                <li><code>weightInGrams=1500</code></li>
+                <li><code>from=7600</code></li>
+                <li><code>to=1407</code></li>
+            </ul>
+            <br>
+
+            <div class="box lightBorder">
+
+                <div class="row element-sample">
+                    <ul class="tab-group minimal" data-tabs="tabs">
+                        <li class="active"><a href="#tab11">XML</a></li>
+                        <li><a href="#tab12">JSON</a></li>
+                        <li><a href="#tab13">JAVA</a></li>
+                    </ul>
+                    <div class="tab-content tab-minimal">
+
+                        <div class="tab-pane active" id="tab11">
+                            <div data-tab="xml" class="tab api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407"
+                                   data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&from=7600&to=1407">
+                                    ../all.xml?weightInGrams=1500&from=7600&to=1407 </a>
+                                <pre class="code-box xml response delay-snippet"></pre>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane" id="tab12">
+                            <div data-tab="json" class="tab api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&from=7600&to=1407"
+                                   data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=1500&from=7600&to=1407">
+                                    ../all.json?weightInGrams=1500&from=7600&to=1407 </a>
+
+                                <p class="right">JSONP Request: <a
+                                        href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI&callbackUrl=functionName">?callback=functionName</a>
+                                </p>
+                                <pre class="code-box json response delay-snippet"></pre>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane" id="tab13">
+                            <div><pre class="code-box">// Initialize library
+String clientId = "www.mywebshop.com";
+BringService bringService = new BringService(clientId);
+
+// Prepare query
+Package packet = new Package();
+packet.withWeightInGrams("1500");
+Shipment shipment = new Shipment();
+shipment.withFromPostalCode("7600");
+shipment.withToPostalCode("1407");
+shipment.addPackage(packet);
+
+// Fetch price information from Bring
+ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
+String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
+String workingDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
+String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getGuiInformation().getDescriptionText();
+
+// Print out
+System.out.println("Price: " + price + " NOK");
+System.out.println("Working days: " + workingDays);
+System.out.println("Display name: " + descriptionText);</pre>
+                                <div><p>Expected Result:</p>
+                                            <pre class="code-box">Price: 81.00 NOK
+Working days: 2
+Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800
+                                        </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
             <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information
                on elements in the response</p>
 
@@ -256,94 +342,10 @@
 <ul class="menu-group collapsing no-shadow">
 
 <li>
-    <a href="#" class="menu-item"><h4>Retrieve total price and estimated delivery time</h4></a>
+    <a href="#" class="menu-item">
+        <h4>Retrieve total price and estimated delivery time</h4></a>
 
     <div class="content-box" style="display: none;">
-
-        <p>This example shows you how to retrieve the price, expected delivery time and additional GUI text for sending
-           a single parcel between two postal codes.</p><br><br>
-
-        <p>The data used in this example is:</p>
-        <ul>
-            <li><code>weightInGrams=1500</code></li>
-            <li><code>from=7600</code></li>
-            <li><code>to=1407</code></li>
-        </ul>
-        <br>
-
-        <div class="box lightBorder">
-
-            <div class="row element-sample">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li class="active"><a href="#tab11">XML</a></li>
-                    <li><a href="#tab12">JSON</a></li>
-                    <li><a href="#tab13">JAVA</a></li>
-                </ul>
-                <div class="tab-content tab-minimal">
-
-                    <div class="tab-pane active" id="tab11">
-                        <div data-tab="xml" class="tab api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407"
-                               data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&from=7600&to=1407">
-                                ../all.xml?weightInGrams=1500&from=7600&to=1407 </a>
-                            <pre class="code-box xml response delay-snippet"></pre>
-                        </div>
-
-                    </div>
-
-                    <div class="tab-pane" id="tab12">
-                        <div data-tab="json" class="tab api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&from=7600&to=1407"
-                               data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=1500&from=7600&to=1407">
-                                ../all.json?weightInGrams=1500&from=7600&to=1407 </a>
-
-                            <p class="right">JSONP Request: <a
-                                    href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI&callbackUrl=functionName">?callback=functionName</a>
-                            </p>
-                            <pre class="code-box json response delay-snippet"></pre>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane" id="tab13">
-                        <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-String workingDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
-String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getGuiInformation().getDescriptionText();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
-System.out.println("Working days: " + workingDays);
-System.out.println("Display name: " + descriptionText);</pre>
-                            <div><p>Expected Result:</p>
-                                            <pre class="code-box">Price: 81.00 NOK
-Working days: 2
-Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800
-                                        </pre>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <br>
 
         <p><b>For multiple parcels</b></p>
         <hr>
