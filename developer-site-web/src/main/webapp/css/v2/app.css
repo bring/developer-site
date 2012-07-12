@@ -626,10 +626,6 @@ table tbody td {
   table-layout: fixed;
 }
 
-table tbody tr a {
-  color: #4d4f53;
-}
-
 table tbody tr.even {
   background-color: #efeff0;
 }
@@ -1290,51 +1286,6 @@ div.shippingikon {
   margin-top: 7px;
   margin-left: 7px;
   background: transparent url("/images/bring/api-meny/shipping1.png") no-repeat;
-}
-
-div.trackingikon {
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-top: 7px;
-  margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/tracking1.png") no-repeat;
-}
-
-div.reportsikon {
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-top: 7px;
-  margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/reports1.png") no-repeat;
-}
-
-div.pickuppointikon {
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-top: 7px;
-  margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/pickuppoint1.png") no-repeat;
-}
-
-div.postalcodeikon {
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-top: 7px;
-  margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/postalcode1.png") no-repeat;
-}
-
-div.bookingikon {
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-top: 7px;
-  margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/booking1.png") no-repeat;
 }
 
 span.black {

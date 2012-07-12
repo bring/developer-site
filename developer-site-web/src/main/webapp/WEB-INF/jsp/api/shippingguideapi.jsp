@@ -141,10 +141,10 @@
                     delivery time, but some additional information such as an indication of which alternative has the
                     least environmental impact.
                 </li>
-                <li><b>Origin and destination:</b> Where is the shipment being sent from, and where is it heading? For
-                    shipments inside Norway postal codes are sufficient, but for international shipments country codes
-                    must be specified, as well as postal codes (or city for countries that are not using postal codes).
-                    To specify a postal code such as "0361" add <a
+                <li><b>Origin and destination:</b>What is the origin and destination of the shipment? For domestic
+                    shipments in Norway postal codes are sufficient, but for international shipments country codes must
+                    be specified, as well as postal codes (or city for countries that are not using postal codes). To
+                    specify a postal code such as "0361" add <a
                             href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=0361&weightInGrams=1500"
                             target="_blank"><code>&to=0361</code></a> or <a
                             href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=0361&weightInGrams=1500"
@@ -172,15 +172,17 @@
                 request. If you have a registered user at fraktguide.bring.no, please also include XML API's Public ID
                 parameter in the query. This makes it possible for us to send any relevant messages via the registered
                 e-mail address.
+
+                Public ID your personal Shipping Guide account id. It the the a sequence of alphanumeric characters after the last dash in your identificator. (Please login to see your identificator string).
+                Is specified by using the pid parameter to your request.
+                Bring requires this parameter in order to know who to contact if they would require support or follow-up to a certain API request.
+                If your Shipping Guide IE is: 372b269a-4f07-4c4e-92b9-460cb92b0767 your pid is 460cb92b0767
             </div>
 
-            <p>There are several optional parameters as well. For a complete list see the reference table, and refer to
-                the additional examples for details on how they can be used. </p>
+            <p><b>Example:</b><br> Here is an example combining some of the parameters we have covered. The request is
+                for a package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
             <div class="box lightBorder">
-                <p>Here is an example combining some of the parameters we have covered. The request is for a package
-                    with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
-
                 <div data-tab="xml" class="tab api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
@@ -207,9 +209,9 @@
                         href="/additionalresources/productlist.html"> the product list</a> to find suitable products.
             </p>
 
-            <div class="box lightBorder">
-                <p>Example: limit products to only SERVICEPAKKE and PA_DOREN:</p>
+            <p><b>Example:</b><br> Limit products to only SERVICEPAKKE and PA_DOREN:</p>
 
+            <div class="box lightBorder">
                 <div data-tab="xml" class="tab api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
@@ -224,8 +226,9 @@
                 to decide if VAT is applicable to their situation of sale
             </div>
 
-            <p>The Shipping Guide API has a lot of parameters not covered in this tutorial, and we recommend that you
-                get familiar with the reference table and look at all the additional examples for further study.</p>
+            <p>The Shipping Guide API has a lot of optional parameters not covered in this tutorial, and we recommend
+                that you get familiar with the reference table and look at all the additional examples for further
+                study.</p>
 
         </div>
 

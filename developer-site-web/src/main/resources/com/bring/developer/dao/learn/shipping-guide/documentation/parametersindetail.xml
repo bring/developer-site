@@ -710,7 +710,7 @@ Example output
             Public ID
         </Title>
         <Description><![CDATA[
-            <pPublic ID your personal Shipping Guide account id. It the the a sequence of
+            <p>Public ID your personal Shipping Guide account id. It the the a sequence of
                 alphanumeric characters after the last dash in your identificator. (Please
                 login to see your identificator string).</p>
             <p>Is specified by using the <code>pid</code> parameter to your request.</p>
