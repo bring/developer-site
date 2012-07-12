@@ -28,8 +28,13 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/api/pickuppointapi.html")
-    public String pickuppointapi() {
+     public String pickuppointapi() {
         return "api/pickuppointapi";
+    }
+
+    @RequestMapping(value = "/api/postalcodeapi.html")
+    public String postalcodeapi() {
+        return "api/postalcodeapi";
     }
 
     @RequestMapping(value = "/additionalresources/priceadjustments.html")
