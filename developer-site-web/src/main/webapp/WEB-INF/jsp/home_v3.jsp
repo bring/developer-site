@@ -87,6 +87,7 @@
                                         <span class="black">Lookup and validate postal codes</span></a>
                                 </li>
                                 <li>
+                                    <div class="bookingikon"></div>
                                     <a class="leftmargin" href="#">
                                         <span class="api-link">Booking API (BETA)</span>
                                         <span class="black">Book shipments and generate PDF labels</span></a>
