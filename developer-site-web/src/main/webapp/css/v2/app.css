@@ -1040,6 +1040,7 @@ div.front-page-api-menu {
 }
 
 div.header-box {
+  padding: 35px;
   -webkit-border-radius: 7px;
    -khtml-border-radius: 7px;
      -moz-border-radius: 7px;
@@ -1298,21 +1299,9 @@ span.api-link {
   font-weight: bold !important;
 }
 
-div.welcometext {
-  padding: 10px 0 0px 38px;
-}
-
-ul.welcomelist {
-  font-size: 17px;
-}
-
-div.span5.front-page {
-  margin-left: 1.26%;
-}
-
 div.information-box {
   min-height: 30px;
-  padding: 5px 0 5px 30px;
+  padding: 10px 40px;
   background-image: url("/images/green-info-icon.png");
   background-position: 0 8px;
   background-repeat: no-repeat;
