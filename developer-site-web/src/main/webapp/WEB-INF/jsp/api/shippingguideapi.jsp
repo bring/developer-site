@@ -700,7 +700,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                             <p>Request:</p>
                             <a target="_blank" class="request"
                                href="http://fraktguide.bring.no/fraktguide/products/all.json?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300"
-                               data-internal="/products/all.json?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300">
+                               data-internal="/proxy/shipping-guide/products/all.json?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300">
 <pre>../products/all.json?fromCountry=NO&toCountry=IE
                    &from=7600&to=0&toCity=Dublin
                    &product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300</pre>
