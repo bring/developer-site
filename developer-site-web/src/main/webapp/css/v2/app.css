@@ -863,7 +863,7 @@ table.inverted tbody tr.even {
 
 .menu-item:hover {
   color: #fff;
-  background: #7bc144 url('/images/arrow-white-right.png') no-repeat 95% center;
+  background: transparent url('/images/arrow-white-right.png') no-repeat 95% center;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
@@ -940,7 +940,6 @@ table.inverted tbody tr.even {
 
 .menu-group.ingress-list .menu-item {
   height: 100%;
-  background: none;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
@@ -968,6 +967,7 @@ table.inverted tbody tr.even {
 
 .menu-group.minimal .menu-item:hover {
   color: #7BC144;
+  background: none;
 }
 
 .menu-group.minimal li:last-child {
@@ -1198,6 +1198,10 @@ pre.code-box {
   color: #7BC144;
 }
 
+.tab-group.minimal li a:hover {
+  color: #7bc144;
+}
+
 .tab-group.minimal li:last-child {
   margin-right: 0;
   border-right: none;
@@ -1270,6 +1274,14 @@ div.forside-banner {
 
 div.light-padding {
   padding-left: 10px;
+}
+
+a.leftmargin {
+  margin-left: 60px;
+}
+
+span.shippingikon {
+  background: transparent url("/images/bring/api-meny/shipping1.png") no-repeat;
 }
 
 div.information-box {

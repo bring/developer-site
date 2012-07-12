@@ -836,11 +836,11 @@ System.out.println("Price: " + price + " NOK");</pre>
                multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
                product code prefix.</p>
 
-            <div class="box lightBorder">
 
-                <p>Example: set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress Over
+                <br>
+                <p><b>Example:</b> <br>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress Over
                    natten 09.</p>
-
+            <div class="box lightBorder">
                 <div class="row element-sample">
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab991">XML</a></li>
@@ -908,7 +908,6 @@ System.out.println("Price: " + price + " NOK");</pre>
         <ul>
             <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
             <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
-            <li><a href="../additionalresources/priceadjustments.html">Price adjustments</a></li>
             <li><a href="../additionalresources/productlist.html">Product list</a></li>
             <li><a href="../additionalresources/offlinedata.html">Offline data</a></li>
         </ul>
