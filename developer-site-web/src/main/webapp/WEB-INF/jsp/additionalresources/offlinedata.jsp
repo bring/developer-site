@@ -87,7 +87,7 @@ Get transport time:
 
 </div>
 
-<misc:footer/> <misc:jqueryblob_v2/>
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>

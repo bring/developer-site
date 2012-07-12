@@ -87,7 +87,7 @@
     </section>
 </div>
 
-<misc:footer />
+<misc:footer_v2 />
 
 
 </body>

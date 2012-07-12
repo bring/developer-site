@@ -111,7 +111,7 @@
 
 </div>
 
-<misc:footer/>
+<misc:footer_v2/>
 <misc:jqueryblob_v2/>
 
 </body>

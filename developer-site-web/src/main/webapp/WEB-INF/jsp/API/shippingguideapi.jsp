@@ -169,17 +169,8 @@
             <p>There are several optional parameters as well. For a complete list see the reference table, and refer to
                the additional examples for details on how they can be used. </p>
 
-
-            <p>This example shows you how to retrieve the price, expected delivery time and additional GUI text for sending
-               a single parcel between two postal codes.</p><br><br>
-
-            <p>The data used in this example is:</p>
-            <ul>
-                <li><code>weightInGrams=1500</code></li>
-                <li><code>from=7600</code></li>
-                <li><code>to=1407</code></li>
-            </ul>
-            <br>
+            <p>Here is an example combining some of the parameters we have covered. The request is for a package with <code>weightInGrams=1500</code>,
+                <code>from=7600</code> and <code>to=1407</code>.
 
             <div class="box lightBorder">
 
@@ -253,7 +244,6 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                     </div>
                 </div>
             </div>
-
 
             <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information
                on elements in the response</p>
