@@ -84,7 +84,7 @@
                                 </li>
                                 <li>
                                     <div class="postalcodeikon"></div>
-                                    <a class="leftmargin" href="#">
+                                    <a class="leftmargin" href="/api/postalcodeapi.html">
                                         <span class="api-link">Postal Code API</span>
                                         <span class="black">Lookup and validate postal codes</span></a>
                                 </li>
