@@ -840,7 +840,6 @@ table.inverted tbody tr.even {
 }
 
 .menu-group.ingress-list.alternativ li {
-  padding: 3px;
   background-image: url("/images/bring/arrow-green-right.png");
   background-position: 98% center;
   background-repeat: no-repeat;
@@ -933,7 +932,6 @@ table.inverted tbody tr.even {
 
 .menu-group.ingress-list li span {
   display: block;
-  padding-bottom: 7px;
   font-size: 0.9em;
   font-weight: normal;
 }
@@ -959,6 +957,7 @@ table.inverted tbody tr.even {
 
 .menu-group.minimal .menu-item {
   padding-left: 0;
+  margin-bottom: 1px;
   background: transparent url('/images/arrow-green-right.png') no-repeat 98% center;
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
@@ -966,7 +965,7 @@ table.inverted tbody tr.even {
 }
 
 .menu-group.minimal .menu-item:hover {
-  color: #7BC144;
+  color: #4d4f53;
   background: none;
 }
 
@@ -1052,6 +1051,7 @@ div.header-box {
 }
 
 ul.api-menu {
+  height: 100%;
   padding: 0;
   margin: 0;
 }
@@ -1278,10 +1278,16 @@ div.light-padding {
 
 a.leftmargin {
   margin-left: 60px;
+  color: #4D4F53;
 }
 
 span.shippingikon {
   background: transparent url("/images/bring/api-meny/shipping1.png") no-repeat;
+}
+
+span.black {
+  margin-left: 60px;
+  color: #4d4f53;
 }
 
 div.information-box {

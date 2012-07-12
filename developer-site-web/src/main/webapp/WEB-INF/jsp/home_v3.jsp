@@ -52,31 +52,31 @@
                         </div>
                         <div class="span1"></div>
                         <div class="span5">
-                            <ul class="menu-group ingress-list alternativ api-menu">
+                            <ul class="menu-group minimal ingress-list alternativ api-menu">
                                 <li>
                                     <span class="shippingikon"></span>
-                                    <a class="menu-item leftmargin" href="/api/shippingguideapi.html">Shipping Guide API <span>Get price and time estimate for shipments</span>
+                                    <a class="leftmargin" href="/api/shippingguideapi.html">Shipping Guide API <span class="black">Get price and time estimate for shipments</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="menu-item leftmargin" href="/api/trackingapi.html">Tracking API <span>See the current status of shipments</span></a>
+                                    <a class="leftmargin" href="/api/trackingapi.html">Tracking API <span class="black">See the current status of shipments</span></a>
                                 </li>
                                 <li>
-                                    <a class="menu-item leftmargin" href="/api/reportsapi.html">Reports API (BETA) <span>Generate customer reports from shipment history</span></a>
+                                    <a class="leftmargin" href="/api/reportsapi.html">Reports API (BETA) <span class="black">Generate customer reports from shipment history</span></a>
                                 </li>
                                 <li>
-                                    <a class="menu-item leftmargin" href="/api/pickuppointapi.html">Pickup Point API <span>Find pickup points near a location</span></a>
+                                    <a class="leftmargin" href="/api/pickuppointapi.html">Pickup Point API <span class="black">Find pickup points near a location</span></a>
 
                                 </li>
                                 <li>
-                                    <a class="menu-item leftmargin" href="#">Postal Code API
-                                        <span>Lookup and validate postal codes</span></a>
+                                    <a class="leftmargin" href="#">Postal Code API
+                                        <span class="black">Lookup and validate postal codes</span></a>
                                 </li>
                                 <li>
-                                    <a class="menu-item leftmargin" href="#">Booking API (BETA) <span>Book shipments and generate PDF labels</span></a>
+                                    <a class="leftmargin" href="#">Booking API (BETA) <span class="black">Book shipments and generate PDF labels</span></a>
                                 </li>
                                 <li>
-                                    <a class="menu-item leftmargin" href="#">EDI <span>Communicate with brings services electronically</span></a>
+                                    <a class="leftmargin" href="#">EDI <span class="black">Communicate with brings services electronically</span></a>
                                 </li>
                             </ul>
                         </div>
