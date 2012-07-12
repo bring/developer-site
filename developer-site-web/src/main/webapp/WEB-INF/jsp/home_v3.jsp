@@ -54,8 +54,10 @@
                         <div class="span5">
                             <ul class="menu-group minimal ingress-list alternativ api-menu">
                                 <li>
-                                    <span class="shippingikon"></span>
-                                    <a class="leftmargin" href="/api/shippingguideapi.html">Shipping Guide API <span class="black">Get price and time estimate for shipments</span>
+                                    <div class="shippingikon"></div>
+                                    <a class="leftmargin" href="/api/shippingguideapi.html">
+                                        <span class="api-link">Shipping Guide API</span>
+                                        <span class="black">Get price and time estimate for shipments</span>
                                     </a>
                                 </li>
                                 <li>
