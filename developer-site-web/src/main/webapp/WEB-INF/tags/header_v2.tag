@@ -6,9 +6,12 @@
     <div class="inner group">
 
         <div id="logo">
+
+
             <a href="http://developer.bring.com">
                 <h1>Bring</h1>
             </a>
+
         </div>
 
         <nav role="main" id="main-menu">
