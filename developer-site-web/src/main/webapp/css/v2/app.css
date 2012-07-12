@@ -1044,7 +1044,6 @@ div.front-page-api-menu {
 }
 
 div.header-box {
-  padding: 35px;
   -webkit-border-radius: 7px;
    -khtml-border-radius: 7px;
      -moz-border-radius: 7px;
@@ -1346,6 +1345,18 @@ span.api-link {
   padding-top: 12px;
   margin-left: 60px;
   font-weight: bold !important;
+}
+
+div.welcometext {
+  padding: 10px 0 0px 38px;
+}
+
+ul.welcomelist {
+  font-size: 17px;
+}
+
+div.span5.front-page {
+  margin-left: 1.26%;
 }
 
 div.information-box {

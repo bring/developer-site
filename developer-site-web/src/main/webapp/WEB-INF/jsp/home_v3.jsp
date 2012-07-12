@@ -19,39 +19,41 @@
     <div id="page">
 
         <section id="content">
-            <div class="forside-banner">
+            <div class="forside-banner header-box">
                 <div class="light-padding">
                     <div class="row-fluid">
                         <div class="span6">
-                            <h2>Welcome to Bring Developer!</h2><br>
+                            <div class="welcometext">
+                                <h2>Welcome to Bring Developer!</h2><br>
 
-                            <p class="front-page-welcome-text">On this page you find information and tutorials for
-                                                               developers of web shops dealing with shipment in and from
-                                                               Scandinavian countries.With Bring APIs you can improve
-                                                               the service provided to your customers! </p><br>
+                                <p class="front-page-welcome-text">On this page you find information and tutorials for
+                                                                   developers of web shops dealing with shipment in and from
+                                                                   Scandinavian countries.With Bring APIs you can improve
+                                                                   the service provided to your customers! </p><br>
 
-                            <p class="front-page-welcome-text">
-                            <ul>
-                                <li>Allow alternative shipping methods with the <a href="/api/shippingguideapi.html">Shipping
-                                                                                                                     Guide
-                                                                                                                     API</a>.
-                                </li>
-                                <li>Show your customers the current status of their shipment with the <a
-                                        href="/api/trackingapi.html">Tracking API</a>.
-                                </li>
-                                <li>Find the price and availability for different products and book a request through
-                                    the logged-in service in the <a href="#">Booking API</a>.
-                                </li>
-                            </ul>
-                            </p><br>
+                                <p class="front-page-welcome-text">
+                                <ul class="welcomelist">
+                                    <li>Allow alternative shipping methods with the <a href="/api/shippingguideapi.html">Shipping
+                                                                                                                         Guide
+                                                                                                                         API</a>.
+                                    </li>
+                                    <li>Show your customers the current status of their shipment with the <a
+                                            href="/api/trackingapi.html">Tracking API</a>.
+                                    </li>
+                                    <li>Find the price and availability for different products and book a request through
+                                        the logged-in service in the <a href="#">Booking API</a>.
+                                    </li>
+                                </ul>
+                                </p><br>
 
-                            <p class="front-page-welcome-text">Need help? Through the <a
-                                    href="/support.html">Support</a> page you can get in touch with the API team and
-                                                               other developers.</p>
+                                <p class="front-page-welcome-text">Need help? Through the <a
+                                        href="/support.html">Support</a> page you can get in touch with the API team and
+                                                                   other developers.</p>
 
+                            </div>
                         </div>
                         <div class="span1"></div>
-                        <div class="span5">
+                        <div class="span5 front-page">
                             <ul class="menu-group minimal ingress-list alternativ api-menu">
                                 <li>
                                     <div class="shippingikon"></div>
