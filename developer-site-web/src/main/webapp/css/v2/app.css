@@ -1270,7 +1270,8 @@ pre.code-box {
 /* END TAB-GROUP STYLES */
 
 div.forside-banner {
-  background-image: url("/images/bring/big-banner-bg.png");
+  background-image: url("/images/bring/frontpage-bg-gradient.png");
+  background-repeat: repeat;
 }
 
 div.light-padding {
