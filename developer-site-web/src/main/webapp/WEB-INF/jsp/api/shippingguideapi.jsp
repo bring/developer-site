@@ -176,16 +176,14 @@
         <div class="box lightBorder">
             <div class="row element-sample">
 
-
-                        <div data-tab="xml" class="tab api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407"
-                               data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&from=7600&to=1407">
-                                ../all.xml?weightInGrams=1500&from=7600&to=1407 </a>
-                            <pre class="code-box xml response delay-snippet"></pre>
-                        </div>
-
+                <div data-tab="xml" class="tab api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407"
+                       data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&from=7600&to=1407">
+                        ../all.xml?weightInGrams=1500&from=7600&to=1407 </a>
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
 
             </div>
         </div>
@@ -193,10 +191,11 @@
         <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information on
            elements in the response.</p>
 
-        <p>One parameter that can be quite useful is <code>&product</code>. This parameter lets you specify which product
-           you want to return information about. Use the <a href="">the product list</a> to find suitable products. </p>
-
-
+        <p>One parameter that can be quite useful is <code>&product</code>. This parameter lets you specify which
+           product you want to return information about. Use the <a href="/additionalresources/productlist.html">the
+                                                                                                                 product
+                                                                                                                 list</a>
+           to find suitable products. </p>
 
         <h5>Select products</h5>
 
