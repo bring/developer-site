@@ -32,6 +32,11 @@ public class HomeController {
         return "api/pickuppointapi";
     }
 
+    @RequestMapping(value = "/api/bookingapi.html")
+    public String bookingapi() {
+        return "api/bookingapi";
+    }
+
     @RequestMapping(value = "/api/postalcodeapi.html")
     public String postalcodeapi() {
         return "api/postalcodeapi";

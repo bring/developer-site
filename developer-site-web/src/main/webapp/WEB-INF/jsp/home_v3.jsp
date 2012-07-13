@@ -110,7 +110,7 @@
                                     <div class="api-menu-icons bookingicon"></div>
 
                                     <div class="api-menu-text"></div>
-                                    <a href="#"> <span class="api-link black">Booking API (BETA)</span> <span
+                                    <a href="/api/bookingapi.html"> <span class="api-link black">Booking API (BETA)</span> <span
                                             class="black">Book shipments and generate PDF labels</span></a>
                                 </div>
                             </li>
