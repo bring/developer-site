@@ -40,7 +40,7 @@
         Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
 
     <p>
-        <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
+        <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
         (Norwegian)</p>
 
     <p>All Shipping Guide services are basically the same service, but there are different methods of integration
@@ -97,7 +97,7 @@
             <td><code>/&lt;response type&gt;.&lt;extension&gt;</code></td>
             <td>Returns information.
                 <ul>
-                    <li><code>&lt;response type&gt;</code> = price or expectedDelivery or all./li>
+                    <li><code>&lt;response type&gt;</code> = price or expectedDelivery or all.</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
             </td>
@@ -210,12 +210,12 @@
     <ul>
         <li><b>Response type:</b> What do you want in your response? Just the price of the shipment, just an
                                   estimated delivery time or all available information? By querying <a
-                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>price.xml</code></a> you will only get the price of the shipment, while <a
-                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&to=1407&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>expectedDelivery.xml</code></a> will only show you an estimated delivery
                                   time. By querying <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>all.xml</code></a> you will not only get the price and the expected
                                   delivery time, but some additional information such as an indication of which alternative has the least
                                   environmental impact.
@@ -224,25 +224,25 @@
                                           in Norway postal codes are sufficient, but for international shipments country codes must be specified,
                                           as well as postal codes (or city for countries that are not using postal codes). To specify a postal
                                           code such as "0361" add <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=0361&weightInGrams=1500"
-                    target="_blank"><code>&to=0361</code></a> or <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=0361&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&amp;to=0361&amp;weightInGrams=1500"
+                    target="_blank"><code>&amp;to=0361</code></a> or <a
+                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&amp;to=0361&amp;weightInGrams=1500"
                     target="_blank"><code>from=0361</code></a> to your request. For international shipments use
                                           country codes (such as DK for Denmark) and add <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&to=2100&weightInGrams=1500&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY"
-                    target="_blank"><code>&toCountry=DK</code></a> or <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=2100&to=0361&weightInGrams=1500&fromCountry=DK&product=CARRYON_HOMESHOPPING_DENMARK"
-                    target="_blank"><code>&fromCountry=DK</code></a> to your request.
+                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&amp;to=2100&amp;weightInGrams=1500&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
+                    target="_blank"><code>&amp;toCountry=DK</code></a> or <a
+                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=2100&amp;to=0361&amp;weightInGrams=1500&amp;fromCountry=DK&amp;product=CARRYON_HOMESHOPPING_DENMARK"
+                    target="_blank"><code>&amp;fromCountry=DK</code></a> to your request.
         </li>
         <li>
             <b>Package size:</b> How big is the package? This can either be weight of the package in grams, its
                                  dimensions or volume. A weight of 1500 grams can be specified by <a target="_blank"
-                                                                                                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"><code>&weightInGrams=1500</code></a>,
+                                                                                                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"><code>&amp;weightInGrams=1500</code></a>,
                                  dimensions of 30cm x 40cm x 40cm as <a target="_blank"
-                                                                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&length=30&width=40&height=40">
-            <code>&length=30&width=40&height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
-                                                                                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&volume=33">
-            <code>&volume=33</code></a> .
+                                                                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
+            <code>&amp;length=30&amp;width=40&amp;height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
+                                                                                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;volume=33">
+            <code>&amp;volume=33</code></a> .
         </li>
     </ul>
 
@@ -262,9 +262,9 @@
         <div data-tab="xml" class="tab api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&from=7600&to=1407"
-               data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&from=7600&to=1407">
-                ../all.xml?weightInGrams=1500&from=7600&to=1407 </a>
+               href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407"
+               data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">
+                ../all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407 </a>
             <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
@@ -281,7 +281,7 @@
     <br/>
     <h4>Products</h4>
 
-    <p>One parameter that can be quite useful is <code>&product</code>. This parameter lets you specify which
+    <p>One parameter that can be quite useful is <code>&amp;product</code>. This parameter lets you specify which
        product you want to return information about. Strictly speaking this is an optional parameter, but in some
        situations you will need to specify a product to get a sensible response. For instance if you make a query
        for an international shipment, you will have to specify a product that supports this. Use the <a
@@ -294,9 +294,9 @@
         <div data-tab="xml" class="tab api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
-               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN">
-                ../all.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN </a>
+               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN"
+               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN">
+                ../all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN </a>
             <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
@@ -321,8 +321,8 @@
         <div data-tab="xml" class="tab api-call">
             <p>Request:</p>
                 <pre><a target="_blank" class="request"
-                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarslingadditional=lordagsutkjoring"
-                        data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarsling&additional=lordagsutkjoring">…/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
+                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarslingadditional=lordagsutkjoring"
+                        data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">…/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
                                                                                                                                                                                                              &amp;additional=postoppkrav
                                                                                                                                                                                                              &amp;additional=evarsling
                                                                                                                                                                                                              &amp;additional=lordagsutkjoring</a></pre>
@@ -343,12 +343,12 @@
     <ul>
         <li><b>Response type:</b> What do you want in your response? Just the price of the shipment, just an
                                   estimated delivery time or all available information? By querying <a
-                    href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>price.json</code></a> you will only get the price of the shipment, while <a
-                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&to=1407&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>expectedDelivery.json</code></a> will only show you an estimated delivery
                                   time. By querying <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>all.json</code></a> you will not only get the price and the expected
                                   delivery time, but some additional information such as an indication of which alternative has the least
                                   environmental impact.
@@ -357,25 +357,25 @@
                                           in Norway postal codes are sufficient, but for international shipments country codes must be specified,
                                           as well as postal codes (or city for countries that are not using postal codes). To specify a postal
                                           code such as "0361" add <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&to=0361&weightInGrams=1500"
-                    target="_blank"><code>&to=0361</code></a> or <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&to=0361&weightInGrams=1500"
+                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&amp;to=0361&amp;weightInGrams=1500"
+                    target="_blank"><code>&amp;to=0361</code></a> or <a
+                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&amp;to=0361&amp;weightInGrams=1500"
                     target="_blank"><code>from=0361</code></a> to your request. For international shipments use
                                           country codes (such as DK for Denmark) and add <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&to=2100&weightInGrams=1500&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY"
-                    target="_blank"><code>&toCountry=DK</code></a> or <a
-                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=2100&to=0361&weightInGrams=1500&fromCountry=DK&product=CARRYON_HOMESHOPPING_DENMARK"
-                    target="_blank"><code>&fromCountry=DK</code></a> to your request.
+                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&amp;to=2100&amp;weightInGrams=1500&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
+                    target="_blank"><code>&amp;toCountry=DK</code></a> or <a
+                    href="http://fraktguide.bring.no/fraktguide/products/all.json?from=2100&amp;to=0361&amp;weightInGrams=1500&amp;fromCountry=DK&amp;product=CARRYON_HOMESHOPPING_DENMARK"
+                    target="_blank"><code>&amp;fromCountry=DK</code></a> to your request.
         </li>
         <li>
             <b>Package size:</b> How big is the package? This can either be weight of the package in grams, its
                                  dimensions or volume. A weight of 1500 grams can be specified by <a target="_blank"
-                                                                                                     href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"><code>&weightInGrams=1500</code></a>,
+                                                                                                     href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"><code>&amp;weightInGrams=1500</code></a>,
                                  dimensions of 30cm x 40cm x 40cm as <a target="_blank"
-                                                                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&length=30&width=40&height=40">
-            <code>&length=30&width=40&height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
-                                                                                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&volume=33">
-            <code>&volume=33</code></a> .
+                                                                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
+            <code>&amp;length=30&amp;width=40&amp;height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
+                                                                                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;volume=33">
+            <code>&amp;volume=33</code></a> .
         </li>
     </ul>
 
@@ -395,9 +395,9 @@
         <div data-tab="json" class="tab api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&from=7600&to=1407"
-               data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=1500&from=7600&to=1407">
-                ../all.json?weightInGrams=1500&from=7600&to=1407 </a>
+               href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407"
+               data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407">
+                ../all.json?weightInGrams=1500&amp;from=7600&amp;to=1407 </a>
             <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
@@ -414,7 +414,7 @@
     <br/>
     <h4>Products</h4>
 
-    <p>One parameter that can be quite useful is <code>&product</code>. This parameter lets you specify which
+    <p>One parameter that can be quite useful is <code>&amp;product</code>. This parameter lets you specify which
        product you want to return information about. Strictly speaking this is an optional parameter, but in some
        situations you will need to specify a product to get a sensible response. For instance if you make a query
        for an international shipment, you will have to specify a product that supports this. Use the <a
@@ -427,9 +427,9 @@
         <div data-tab="json" class="tab api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN"
-               data-internal="/proxy/shipping-guide/products/all.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN">
-                ../all.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=PA_DOREN </a>
+               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN"
+               data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN">
+                ../all.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN </a>
             <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
@@ -454,8 +454,8 @@
         <div data-tab="json" class="tab api-call">
             <p>Request:</p>
                 <pre><a target="_blank" class="request"
-                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarslingadditional=lordagsutkjoring"
-                        data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarsling&additional=lordagsutkjoring">…/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
+                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarslingadditional=lordagsutkjoring"
+                        data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">…/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
                                                                                                                                                                                                               &amp;additional=postoppkrav
                                                                                                                                                                                                               &amp;additional=evarsling
                                                                                                                                                                                                               &amp;additional=lordagsutkjoring</a></pre>
@@ -555,7 +555,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
         <ol>
             <li><code>weightInGrams0=1500</code></li>
             <li><code>volume1=33</code></li>
-            <li><code>length2=10&width2=20 &height2=30</code></li>
+            <li><code>length2=10&amp;width2=20 &amp;height2=30</code></li>
         </ol>
         <br/>
 
@@ -573,9 +573,9 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30"
-                               data-internal="/proxy/shipping-guide/products/all.xml?from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30">
-                                ../all.xml?from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30 </a>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
+                               data-internal="/proxy/shipping-guide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+                                ../all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30 </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
 
@@ -585,9 +585,9 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30"
-                               data-internal="/proxy/shipping-guide/products/all.json?from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30">
-                                ../all.json?from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30 </a>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
+                               data-internal="/proxy/shipping-guide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+                                ../all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30 </a>
 
                             <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
@@ -641,7 +641,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
     <a href="#" class="menu-item"><h4>International shipments</h4></a>
 
     <div class="content-box" style="display: none;">
-        <div><p>Specified using <code>fromCountry=NO&toCountry=DK</code>.</p>
+        <div><p>Specified using <code>fromCountry=NO&amp;toCountry=DK</code>.</p>
 
             <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a>
             </p>
@@ -662,9 +662,9 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY"
-                               data-internal="/proxy/shipping-guide/products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY">
-                                ../products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY </a><br/>
+                               href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
+                               data-internal="/proxy/shipping-guide/products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
+                                ../products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a><br/>
 
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -676,12 +676,12 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY"
-                               data-internal="/proxy/shipping-guide/products/expectedDelivery.json?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY">
-                                ../products/expectedDelivery.json?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY </a>
+                               href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
+                               data-internal="/proxy/shipping-guide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
+                                ../products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY&callbackUrl=functionName">?callback=functionName</a>
+                                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;callbackUrl=functionName">?callback=functionName</a>
                             </p>
 
                             <p>Response:</p>
@@ -737,15 +737,15 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         <div><p>In the example below, a parcel is sent from Norway to Dublin, Ireland. <br/><br/>The parameters are:</p>
             <ul>
                 <li><code>?fromCountry=NO</code></li>
-                <li><code>&toCountry=IE</code></li>
-                <li><code>&to=0</code></li>
-                <li><code>&toCity=Dublin</code></li>
+                <li><code>&amp;toCountry=IE</code></li>
+                <li><code>&amp;to=0</code></li>
+                <li><code>&amp;toCity=Dublin</code></li>
             </ul>
             <br/>
 
             <p>To see both the expected delivery time and the price, we've added:</p>
             <ul>
-                <li><code>&weightInGrams=300</code>, and</li>
+                <li><code>&amp;weightInGrams=300</code>, and</li>
                 <li><code>all.xml</code></li>
             </ul>
         </div>
@@ -766,11 +766,11 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300"
-                               data-internal="/proxy/shipping-guide/products/all.xml?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300">
-<pre>../products/all.xml?fromCountry=NO&toCountry=IE
-                   &from=7600&to=0&toCity=Dublin
-                   &product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300"
+                               data-internal="/proxy/shipping-guide/products/all.xml?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300">
+<pre>../products/all.xml?fromCountry=NO&amp;toCountry=IE
+                   &amp;from=7600&amp;to=0&amp;toCity=Dublin
+                   &amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300</pre>
                             </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -781,11 +781,11 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300"
-                               data-internal="/proxy/shipping-guide/products/all.json?fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300">
-<pre>../products/all.json?fromCountry=NO&toCountry=IE
-                   &from=7600&to=0&toCity=Dublin
-                   &product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300"
+                               data-internal="/proxy/shipping-guide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300">
+<pre>../products/all.json?fromCountry=NO&amp;toCountry=IE
+                   &amp;from=7600&amp;to=0&amp;toCity=Dublin
+                   &amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300</pre>
                             </a>
 
                             <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
@@ -831,9 +831,9 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <div data-tab="xml" class="tab api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
-                       href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
-                       data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500">
-                        ../products/price.xml?from=7600&to=1407&weightInGrams=1500</a><br/>
+                       href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
+                       data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">
+                        ../products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500</a><br/>
 
                     <p>Response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
@@ -845,12 +845,12 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <div data-tab="json" class="tab api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
-                       href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500"
-                       data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500">
-                        ../products/price.json?from=7600&to=1407&weightInGrams=1500</a>
+                       href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
+                       data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500">
+                        ../products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500</a>
 
                     <p class="right">JSONP Request: <a
-                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&callbackUrl=functionName">?callback=functionName</a>
+                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;callbackUrl=functionName">?callback=functionName</a>
                     </p>
 
                     <p>Response:</p>
@@ -915,9 +915,9 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <div data-tab="xml" class="tab api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
-                       href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&length=30&width=40&height=40"
-                       data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&length=30&width=40&height=40">
-                        ../products/price.xml?from=7600&to=1407&length=30&width=40&height=40</a><br/>
+                       href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40"
+                       data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
+                        ../products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40</a><br/>
 
                     <p>Response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
@@ -929,12 +929,12 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <div data-tab="json" class="tab api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
-                       href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&length=30&width=40&height=40"
-                       data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&length=30&width=40&height=40">
-                        ../products/price.json?from=7600&to=1407&length=30&width=40&height=40</a>
+                       href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40"
+                       data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
+                        ../products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40</a>
 
                     <p class="right">JSONP Request: <a
-                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&length=30&width=40&height=40&callbackUrl=functionName">?callback=functionName</a>
+                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40&amp;callbackUrl=functionName">?callback=functionName</a>
                     </p>
 
                     <p>Response:</p>
@@ -1020,7 +1020,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                         ../products/price.json?from=7600&amp;to=1407&amp;volume=33</a>
 
                     <p class="right">JSONP Request: <a
-                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&volume=33&callbackUrl=functionName">?callback=functionName</a>
+                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;volume=33&amp;callbackUrl=functionName">?callback=functionName</a>
                     </p>
 
                     <p>Response:</p>
@@ -1099,9 +1099,9 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09"
-                               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09">
-                                <pre>../products/all.xml?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09"
+                               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09">
+                                <pre>../products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09</pre>
                             </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -1112,12 +1112,12 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09"
-                               data-internal="/proxy/shipping-guide/products/all.json?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09">
-                                <pre>../products/all.json?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09"
+                               data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09">
+                                <pre>../products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09</pre>
                             </a>
 
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&volume=33&date=2011-07-30&product=EKSPRESS09&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -1194,9 +1194,9 @@ System.out.println("Price: " + price + " NOK");
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37"
-                               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37">
-                                <pre>../all.xml?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37"
+                               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37">
+                                <pre>../all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37</pre>
                             </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -1207,12 +1207,12 @@ System.out.println("Price: " + price + " NOK");
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37"
-                               data-internal="/proxy/shipping-guide/products/all.json?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37">
-                                <pre>../all.json?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37"
+                               data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37">
+                                <pre>../all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37</pre>
                             </a>
 
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&to=1407&volume=33&date=2011-08-30&time=13:37&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -1286,9 +1286,9 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&edi=false"
-                               data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500&edi=false">
-                                <pre>../price.xml?from=7600&to=1407&weightInGrams=1500&edi=false</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false"
+                               data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false">
+                                <pre>../price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false</pre>
                             </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -1299,12 +1299,12 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&edi=false"
-                               data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500&edi=false">
-                                <pre>../price.json?from=7600&to=1407&weightInGrams=1500&edi=false</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false"
+                               data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false">
+                                <pre>../price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false</pre>
                             </a>
 
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&edi=false&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -1379,9 +1379,9 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <div data-tab="xml" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE"
-                               data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE">
-                                <pre>../price.xml?from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE"
+                               data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE">
+                                <pre>../price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE</pre>
                             </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -1392,12 +1392,12 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <div data-tab="json" class="tab api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE"
-                               data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE">
-                                <pre>../price.json?from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE"
+                               data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE">
+                                <pre>../price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE</pre>
                             </a>
 
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&edi=false&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -1454,7 +1454,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                the <a href="../widget/productselectionashtml.html">Product selection as HTML"-widget.</a></p>
 
             <p>To adjust the price, add <a
-                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p">&priceAdjustment=m20p</a>
+                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a>
                to the query.</p>
 
             <p>The parameter is built up in the form [produktkode_][o]10[p]. Parts of the parameter with square brackets
@@ -1463,22 +1463,22 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p>Explanation of the parameters follows:</p>
             <ul>
                 <li><p>produktkode_ used if price adjustments are only made for a single product. Example: <a
-                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_m20">&priceAdjustment=SERVICEPAKKE_m20</a>
+                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_m20">&amp;priceAdjustment=SERVICEPAKKE_m20</a>
                        lowers the price on product Servicepakke with NOK 20.</p></li>
 
                 <li><p>o specifies the operation to be performed. Operations supported are 'p' for positive, 'm' for
                        negative or blank for a fixed price adjustment. Examples:</p>
                     <ul>
                         <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20">&priceAdjustment=m20</a>
+                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20">&amp;priceAdjustment=m20</a>
                             deducts NOK 20 on all products.
                         </li>
                         <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=p20">&priceAdjustment=p20</a>
+                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=p20">&amp;priceAdjustment=p20</a>
                             adds NOK 20 to all products.
                         </li>
                         <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_79">&priceAdjustment=SERVICEPAKKE_79</a>
+                            <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_79">&amp;priceAdjustment=SERVICEPAKKE_79</a>
                             puts a fixed price on Servicepakke on NOK 79.
                         </li>
 
@@ -1514,13 +1514,13 @@ System.out.println("Price: " + price + " NOK");</pre>
                             <div data-tab="xml" class="tab api-call">
                                 <p>Request:</p>
                                 <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p"
-                                   data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p">
+                                   href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p"
+                                   data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p">
                                    <pre>
-.../price.xml?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE
-             &product=EKSPRESS09
-             &priceAdjustment=SERVICEPAKKE_79
-             &priceAdjustment=EKSPRESS09_m20p</pre>
+.../price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE
+             &amp;product=EKSPRESS09
+             &amp;priceAdjustment=SERVICEPAKKE_79
+             &amp;priceAdjustment=EKSPRESS09_m20p</pre>
                                 </a>
                                 <pre class="code-box xml response delay-snippet"></pre>
                             </div>
@@ -1531,17 +1531,17 @@ System.out.println("Price: " + price + " NOK");</pre>
                             <div data-tab="json" class="tab api-call">
                                 <p>Request:</p>
                                 <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p"
-                                   data-internal="/proxy/shipping-guide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p">
+                                   href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p"
+                                   data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p">
                                    <pre>
-.../price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE
-             &product=EKSPRESS09
-             &priceAdjustment=SERVICEPAKKE_79
-             &priceAdjustment=EKSPRESS09_m20p</pre>
+.../price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE
+             &amp;product=EKSPRESS09
+             &amp;priceAdjustment=SERVICEPAKKE_79
+             &amp;priceAdjustment=EKSPRESS09_m20p</pre>
                                 </a>
 
                                 <p class="right">JSONP Request: <a
-                                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p&callbackUrl=functionName">
+                                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p&amp;callbackUrl=functionName">
                                     ?callback=functionName </a></p>
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>

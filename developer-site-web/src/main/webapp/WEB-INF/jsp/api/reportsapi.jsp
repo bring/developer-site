@@ -240,7 +240,7 @@ https://www.mybring.com/reports/api</pre>
                                     The GET-call will return 202, telling the caller the that the request for a report is put on the queue.
                                     The url to query to get the status for the request if provided as an HTTP header and also in the response.</div><br/>
                                     <div><h5>REQUEST</h5>
-                                        <pre class="code-box">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/DELIVEREDfromDate=01.07.2011&toDate=01.07.2011</pre></div>
+                                        <pre class="code-box">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/DELIVEREDfromDate=01.07.2011&amp;toDate=01.07.2011</pre></div>
                                     <div><h5>EXAMPLE RESPONSE</h5></div>
                                     <div><code><pre class="prettyprint">{
     "statusMessage":"The report is now beeing processed. Please use the statusUrl to check when the report is ready. Reloading this page will generate a new report.",

@@ -47,7 +47,7 @@
                                 webshop's root directory.
                             </li>
 
-                            <li>Go to <code>Modules &rarr; Shipping</code>. The module you are looking for is suffixed
+                            <li>Go to <code>Modules &amp;rarr; Shipping</code>. The module you are looking for is suffixed
                                 by "(Bring Fraktguide)".
                             </li>
 
@@ -67,28 +67,30 @@
                         </div>
                     </div>
                     <div class="box">
+                        <div class="span4 box">
+                            <h4>Made by</h4>
+                            <ul>
+                                <li>
+                                    <a href="http://syntaxerror.no" target="_blank">
+                                        Rune Rassmusen
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.linkedin.com/in/arneunneland" target="_blank">
+                                        Arne Unneland
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.linkedin.com/pub/ingvald-haaland/7/726/3b" target="_blank">
+                                        Ingvald Haaland
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                        <h4>Made by</h4>
-                        <ul>
-                            <li>
-                                <a href="http://syntaxerror.no" target="_blank">
-                                    Rune Rassmusen
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.linkedin.com/in/arneunneland" target="_blank">
-                                    Arne Unneland
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.linkedin.com/pub/ingvald-haaland/7/726/3b" target="_blank">
-                                    Ingvald Haaland
-                                </a>
-                            </li>
-                        </ul>
 
+                        <div class="span4 box">
                         <h4>Used by</h4>
-                        <div class="box">
                             <ul>
                                 <li><a href="http://www.sunesport.no/">Sune Sport &amp; Games</a></li>
                                 <li><a href="http://iutstyr.no/">iUtstyr.no</a></li>
@@ -96,10 +98,13 @@
                             </ul>
                         </div>
 
-                        <div class="box">
+                        <div class="span4 box">
                             <a href="http://code.google.com/p/fraktpriserzencart/downloads/list" class="btn enhanced">Download</a>
+                            <br/>
+                            <br/>
                             <a href="http://code.google.com/p/fraktpriserzencart/" class="btn">Repository</a>
                         </div>
+
                     </div>
                 </div>
 

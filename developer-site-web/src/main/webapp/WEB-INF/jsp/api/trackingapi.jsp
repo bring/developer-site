@@ -109,7 +109,7 @@
                                                data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">
                                                 .../sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT
                                             </a>
-                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&callbackUrl=functionName">?callback=functionName</a></p>
+                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&amp;callbackUrl=functionName">?callback=functionName</a></p>
                                             <pre class="code-box json response delay-snippet"></pre>
                                         </div>
                                         </div>
@@ -173,7 +173,7 @@
                                                                    data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">
                                                                     .../sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT
                                                                 </a>
-                                                                <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI&callbackUrl=functionName">?callback=functionName</a></p>
+                                                                <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI&amp;callbackUrl=functionName">?callback=functionName</a></p>
                                                                 <pre class="code-box json response delay-snippet"></pre>
                                                             </div>
                                                         </div>
@@ -210,7 +210,7 @@
                                                         <div data-tab="json" class="tab api-call">
                                                             <p>Request:</p>
                                                             <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT</a>
-                                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&callbackUrl=functionName">?callback=functionName</a></p>
+                                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&amp;callbackUrl=functionName">?callback=functionName</a></p>
                                                             <pre class="code-box json response delay-snippet"></pre>
                                                         </div>
                                                     </div>
@@ -243,7 +243,7 @@
                                                         <div data-tab="json" class="tab api-call">
                                                             <p>Request:</p>
                                                             <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
-                                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY&callbackUrl=functionName">?callback=functionName</a></p>
+                                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY&amp;callbackUrl=functionName">?callback=functionName</a></p>
                                                             <pre class="code-box json response delay-snippet"></pre>
                                                         </div>
                                                     </div>
@@ -276,7 +276,7 @@
                                                         <div data-tab="json" class="tab api-call">
                                                             <p>Request:</p>
                                                             <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-DELIVERED">…/sporing.json?q=TESTPACKAGE-DELIVERED</a>
-                                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED&callbackUrl=functionName">?callback=functionName</a></p>
+                                                            <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED&amp;callbackUrl=functionName">?callback=functionName</a></p>
                                                             <pre class="code-box json response delay-snippet"></pre>
                                                         </div>
                                                     </div>

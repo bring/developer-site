@@ -25,13 +25,13 @@
 
                     <div class="box">
                         <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post
-                           office. This is mainly intended for online shopping to allow the user to choose another
-                           pickup point than the default to their shipping address. </p>
+                            office. This is mainly intended for online shopping to allow the user to choose another
+                            pickup point than the default to their shipping address. </p>
                         <h4>How to install</h4>
                         <ol>
                             <li>This widget depends on jQuery, so please add jQuery to your site first.</li>
                             <li>Add the Post Office widget:<br/> <code>&lt;script type="text/javascript"
-                                                                      src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
+                                src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
                             </li>
                             <li>Initialize it<br/> <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
@@ -73,14 +73,21 @@ utleveringsenhet-1.0.1.js"&gt;
                         </div>
                     </div>
                     <div class="box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
-                            <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
-                        </ul>
 
-                        <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"
-                           class="btn enhanced">Download</a>
+                        <div class="span4 box"><h4>Made by</h4>
+                            <ul>
+                                <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
+                                <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="span4 box"></div>
+
+                        <div class="span4 box">
+                            <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"
+                               class="btn enhanced">Download</a>
+                        </div>
+
                     </div>
                 </div>
 
@@ -118,7 +125,7 @@ utleveringsenhet-1.0.1.js"&gt;
                             <ul>
                                 <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
                                 <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With
-                                                                                          Map</a></li>
+                                    Map</a></li>
                             </ul>
                         </div>
                     </div>
