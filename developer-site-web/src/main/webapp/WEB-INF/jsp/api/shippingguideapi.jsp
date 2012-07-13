@@ -75,7 +75,7 @@
     </table>
 
     <sup>1 You can also use <a href="../additionalresources/offlinedata.html">Offline data</a> as an integration
-         method</sup><br>
+         method</sup><br/>
 
 </div>
 
@@ -131,14 +131,14 @@
             <td>Shipping date</td>
             <td>
                 Shipping date specifies which date the parcel will be delivered to Bring (within the timelimit), and is used to calculate the delivery date.
-                Specified by adding <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2009-02-03">&amp;date=2009-02-03</a>. <br>Date is specified in ISO-format, YYYY-MM-DD.
+                Specified by adding <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2009-02-03">&amp;date=2009-02-03</a>. <br/>Date is specified in ISO-format, YYYY-MM-DD.
             </td>
         </tr>
         <tr>
             <td>Shippingtime</td>
             <td>
                 Shippingtime may be specified. Note that Bring's courier products are the only one affected by this parameter.
-                <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2009-02-03&amp;time=12:30">&amp;date=2009-02-03&amp;time=12:30</a>. <br>Time is specified in ISO-format, HH:mm.</td>
+                <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2009-02-03&amp;time=12:30">&amp;date=2009-02-03&amp;time=12:30</a>. <br/>Time is specified in ISO-format, HH:mm.</td>
         </tr>
         <tr class="even">
             <td>EDI setting</td>
@@ -166,7 +166,7 @@
         <tr>
             <td>Price adjustments</td>
             <td>
-                Option to adjust the price returned. Specified by adding <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a>.<br>
+                Option to adjust the price returned. Specified by adding <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">&amp;priceAdjustment=m20p</a>.<br/>
                 Note that price adjustments is on prices without VAT. Refer to additional examples to read more.
             </td>
         </tr>
@@ -255,7 +255,7 @@
                                   makes it possible for us to send any relevant messages via the registered e-mail address.
     </div>
 
-    <p><b>Example:</b><br> Here is an example combining some of the parameters we have covered. The request is for a
+    <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
                            package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
     <div class="box lightBorder">
@@ -278,7 +278,7 @@
                                                                                              codes.</a>
     </div>
 
-    <br>
+    <br/>
     <h4>Products</h4>
 
     <p>One parameter that can be quite useful is <code>&product</code>. This parameter lets you specify which
@@ -288,7 +288,7 @@
                 href="/additionalresources/productlist.html"> the product list</a> to find suitable products. </p>
 
     <p>
-        <b>Example:</b><br> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
+        <b>Example:</b><br/> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
 
     <div class="box lightBorder">
         <div data-tab="xml" class="tab api-call">
@@ -305,7 +305,7 @@
                                  decide if VAT is applicable to their situation of sale
     </div>
 
-    <br>
+    <br/>
     <h4>Additional Services</h4>
 
     <p>There are currently 3 additional services that can be specified using this option: <code>additional=postoppkrav</code>,
@@ -314,7 +314,7 @@
 
     <p></p>
 
-    <p><b>Example:</b><br> Using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".
+    <p><b>Example:</b><br/> Using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".
     </p>
 
     <div class="box lightBorder">
@@ -388,7 +388,7 @@
                                   makes it possible for us to send any relevant messages via the registered e-mail address.
     </div>
 
-    <p><b>Example:</b><br> Here is an example combining some of the parameters we have covered. The request is for a
+    <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
                            package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
     <div class="box lightBorder">
@@ -411,7 +411,7 @@
                                                                                              codes.</a>
     </div>
 
-    <br>
+    <br/>
     <h4>Products</h4>
 
     <p>One parameter that can be quite useful is <code>&product</code>. This parameter lets you specify which
@@ -421,7 +421,7 @@
                 href="/additionalresources/productlist.html"> the product list</a> to find suitable products. </p>
 
     <p>
-        <b>Example:</b><br> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
+        <b>Example:</b><br/> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
 
     <div class="box lightBorder">
         <div data-tab="json" class="tab api-call">
@@ -438,7 +438,7 @@
                                  decide if VAT is applicable to their situation of sale
     </div>
 
-    <br>
+    <br/>
     <h4>Additional Services</h4>
 
     <p>There are currently 3 additional services that can be specified using this option: <code>additional=postoppkrav</code>,
@@ -447,7 +447,7 @@
 
     <p></p>
 
-    <p><b>Example:</b><br> Using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".
+    <p><b>Example:</b><br/> Using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".
     </p>
 
     <div class="box lightBorder">
@@ -471,21 +471,21 @@
 
 <div class="tab-pane" id="tab3">
 
-    <br>
+    <br/>
 
     <p>The webservices offers the most options when performing queries to the Shipping Guide. Please refer to
        written documentation in <a href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-    </p><br>
+    </p><br/>
 
     <p><b>To execute the web-service you will need a identification string. To get this - please <a
             href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
 
     <p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>.<a
             href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link to the
-       latest version)</p><br>
+       latest version)</p><br/>
 
-    <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br>
+    <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br/>
 
     <p>Please refer to common information regarding <a href="../additionalresources/productlist.jsp">product
                                                                                                      codes</a> and <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
@@ -833,7 +833,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                     <a target="_blank" class="request"
                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&weightInGrams=1500"
                        data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&weightInGrams=1500">
-                        ../products/price.xml?from=7600&to=1407&weightInGrams=1500</a><br>
+                        ../products/price.xml?from=7600&to=1407&weightInGrams=1500</a><br/>
 
                     <p>Response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
@@ -917,7 +917,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                     <a target="_blank" class="request"
                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&to=1407&length=30&width=40&height=40"
                        data-internal="/proxy/shipping-guide/products/price.xml?from=7600&to=1407&length=30&width=40&height=40">
-                        ../products/price.xml?from=7600&to=1407&length=30&width=40&height=40</a><br>
+                        ../products/price.xml?from=7600&to=1407&length=30&width=40&height=40</a><br/>
 
                     <p>Response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
@@ -1003,7 +1003,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                     <a target="_blank" class="request"
                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;volume=33"
                        data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;volume=33">
-                        ../products/price.xml?from=7600&amp;to=1407&amp;volume=33</a><br>
+                        ../products/price.xml?from=7600&amp;to=1407&amp;volume=33</a><br/>
 
                     <p>Response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
@@ -1177,7 +1177,7 @@ System.out.println("Price: " + price + " NOK");
             <p>Specified using <code>date=2011-07-28&amp;time=13:37</code> (date and time is required to use this option).</p>
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         </div>
-        <br>
+        <br/>
 
         <div class="box lightBorder">
             <div class="row element-sample">
@@ -1269,7 +1269,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p>This will affect response prices and might affect which products are available.</p>
             <p>Default: <code>true</code></p>
         </div>
-        <br>
+        <br/>
 
         <div class="box lightBorder">
             <div class="row element-sample">
@@ -1362,7 +1362,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p>Specified using <code>postingAtPostOffice=true</code></p>
             <p>Default: <code>false</code></p>
         </div>
-        <br>
+        <br/>
 
         <div class="box lightBorder">
             <div class="row element-sample">
@@ -1500,7 +1500,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 
             <br/>
 
-            <p><b>Example:</b> <br>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
+            <p><b>Example:</b> <br/>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
                                    Over natten 09.</p>
 
             <div class="box lightBorder">

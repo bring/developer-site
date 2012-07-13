@@ -154,7 +154,7 @@
 
 
         <p><h4>Example: USING THE POSTAL CODE</h4></p>
-        <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro.<br>
+        <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro.<br/>
         </p>
         <div class="box lightBorder">
             <ul class="tab-group minimal" data-tabs="tabs">
@@ -310,7 +310,7 @@
         <p>If you want to return only the pickup points matching a specified string, you may add <code>?searchForText=&lt;text
                                                                                                        to match&gt;</code> to the request.
            The string in the <code>&lt;text to match&gt;</code> can be the name of the pickup point, its
-           address, city, county, municipality or location. Partial matches are also allowed.<br><br>
+           address, city, county, municipality or location. Partial matches are also allowed.<br/><br/>
 
 
         <div class="row element-sample">
@@ -363,7 +363,7 @@
         <p>If you want to return only the pickup points open on specified days, you may add <code>?openingHoursSearchType=&lt;day&gt;</code>to
            the request.
             <code>&lt;day&gt; = ALL_WEEKDAYS (default) | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY |
-                  SATURDAY | SUNDAY</code><br><br>
+                  SATURDAY | SUNDAY</code><br/><br/>
            If you want you can also add openOnOrBefore and / or openOnOrAfter, to limit the search even
            more.
         </p>
@@ -420,8 +420,8 @@
     <div class="content-box">
 
         <p>If you want to return only the pickup points open on specific hours, you may add <code>?openOnOrBefore=&lt;time&gt;</code>
-           and/or <code>?openOnOrAfter=&lt;time&gt;</code> to the request.<br><br>
-            <code>&lt;time&gt; = HHMM</code><br><br>
+           and/or <code>?openOnOrAfter=&lt;time&gt;</code> to the request.<br/><br/>
+            <code>&lt;time&gt; = HHMM</code><br/><br/>
         </p>
 
         <div class="row element-sample">

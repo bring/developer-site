@@ -48,7 +48,7 @@
                             <tbody>
                             <tr>
                                 <td><code>/&lt;postalcode&gt;.&lt;extension&gt;?country=&lt;country&gt;</code></td>
-                                <td>Returns the location based on the postal code.</br>
+                                <td>Returns the location based on the postal code.<br/>
                                     <li><code>&lt;postalcode&gt;</code> = A valid zip-code</li>
                                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                                     <li><code>&lt;country&gt;</code> = The ISO 3166-1-alpha-2 country code.</li>
@@ -56,7 +56,7 @@
                             </tr>
                             <tr>
                                 <td><code>//Response/@valid</code></td>
-                                <td>XPath for checking if the response is valid </br>
+                                <td>XPath for checking if the response is valid <br/>
                                 </td>
                             </tr>
                             </tbody>
@@ -65,7 +65,7 @@
 
                     <div class="box">
                         <h2><a name="HTU"></a>How to Use</h2>
-                        You have to specify the postal code and the country code to find the location with this API.</br></br>
+                        You have to specify the postal code and the country code to find the location with this API.<br/><br/>
                         The following countries are supported:
 
                         <ul>
@@ -83,7 +83,7 @@
                            countries except Norway.</p>
 
                         <p>For unsupported countries, all postal codes with be marked as valid with no city name returned. In these cases
-                           it is recommended to prompt the user to input the city name himself/herself.</p></br>
+                           it is recommended to prompt the user to input the city name himself/herself.</p><br/>
 
                         To illustrate in a simple matter how to use this API, we provide an example.
 
@@ -128,7 +128,7 @@
                                             <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
                                            and the <code>class</code> either
                                             <code>bringPostnumberQueryValidPostnumber</code> or
-                                            <code>bringPostnumberQueryInvalidPostnumber</code>.</p></br>
+                                            <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
 
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
@@ -197,7 +197,7 @@
                                                             <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
                                                            and the <code>class</code> either
                                                             <code>bringPostnumberQueryValidPostnumber</code> or
-                                                            <code>bringPostnumberQueryInvalidPostnumber</code>.</p></br>
+                                                            <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
 
                                                         <p>Request:</p>
                                                         <a target="_blank" class="request"
