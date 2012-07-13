@@ -49,7 +49,9 @@
                             </div>
 
                     <div class="box">
-                        <h4>Made by</h4>
+
+
+                   <div class="span4 box">     <h4>Made by</h4>
                         <ul>
                             <li>
                                 <a href="http://www.magnusfeiring.com/" target="_blank">
@@ -61,11 +63,20 @@
                                     Rune Rassmusen
                                 </a>
                             </li>
-                        </ul>
-                        <div class="box">
+                        </ul></div>
+
+                        <div class="span4 box"></div>
+
+                        <div class="span4 box">
                             <a href="http://code.google.com/p/fraktpriservirtuemart/downloads/list" class="btn enhanced">Download</a>
+                            <br/>
+                            <br/>
                             <a href="http://code.google.com/p/fraktpriservirtuemart/" class="btn">Repository</a>
                         </div>
+
+
+
+
                     </div>
                 </div>
 

@@ -4,11 +4,8 @@
 <html>
 
 <head>
-    <misc:contenttype/>
-    <misc:title value="Fraktpriser for osCommerce"/>
-    <misc:css_v2/>
+    <misc:contenttype/> <misc:title value="Fraktpriser for osCommerce"/> <misc:css_v2/>
 </head>
-
 
 <body>
 
@@ -24,15 +21,13 @@
                     <div class="box">
                         <h1>Fraktpriser for osCommerce</h1>
 
-
                     </div>
 
                     <div class="box">
                         <p>
                             This osCommerece module adds the possibility of letting users pick their preferred shipping
                             method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery times
-                            and product descriptions.
-                        </p>
+                            and product descriptions. </p>
                         <h4>How to install</h4>
                         <ol>
                             <li>First backup your osCommerce install.</li>
@@ -53,32 +48,37 @@
                                  src="http://developer.bring.com/media/plugin/oscommercefraktpriser/full.png"/>
                         </div>
                     </div>
+
                     <div class="box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li>
-                                <a href="http://www.kortshop.no/" target="_blank">Kortshop</a>
-                            </li>
-                            <li>
-                                <a href="http://www.linkedin.com/in/arneunneland" target="_blank">Arne Unneland</a>
-                            </li>
-                            <li>
-                                <a href="http://mystore.no" target="_blank">Yngve</a>
-                            </li>
-                        </ul>
-                        <h4>Used by</h4>
-                        <ul>
 
-                            <li><a href="http://kortshop.no/" target="_blank">Kortshop</a></li>
+                        <div class="span4 box"><h4>Made by</h4>
+                            <ul>
+                                <li>
+                                    <a href="http://www.kortshop.no/" target="_blank">Kortshop</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.linkedin.com/in/arneunneland" target="_blank">Arne Unneland</a>
+                                </li>
+                                <li>
+                                    <a href="http://mystore.no" target="_blank">Yngve</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                            <li><a href="http://magasi.net/" target="_blank">MAGASI.NET</a></li>
+                        <div class="span4 box"><h4>Used by</h4>
+                            <ul>
 
-                            <li><a href="http://flightSim.no/" target="_blank">FlightSim.no Shop</a></li>
+                                <li><a href="http://kortshop.no/" target="_blank">Kortshop</a></li>
 
-                        </ul>
-                        <div class="box">
-                            <a href="http://addons.oscommerce.com/info/7811"
-                               class="btn enhanced">Download</a>
+                                <li><a href="http://magasi.net/" target="_blank">MAGASI.NET</a></li>
+
+                                <li><a href="http://flightSim.no/" target="_blank">FlightSim.no Shop</a></li>
+
+                            </ul>
+                        </div>
+
+                        <div class="span4 box">
+                            <a href="http://addons.oscommerce.com/info/7811" class="btn enhanced">Download</a>
                         </div>
                     </div>
 
@@ -119,16 +119,18 @@
                         </ul>
                         <h4>Widgets</h4>
                         <ul>
-                            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information
-                                                                                                   using jsonp</a></li>
+                            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping
+                                guide information using jsonp</a></li>
                             <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
                         </ul>
                         <h4>Plugins</h4>
                         <ul>
-                            <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
+                            <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla!
+                                Virtuemart</a></li>
                             <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
                             <li><a href="../plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
-                            <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a></li>
+                            <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress
+                                e-commerce</a></li>
                             <li><a href="../plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
                         </ul>
                     </div>
@@ -139,11 +141,9 @@
         </section>
     </div>
 
-
 </div>
 
-<misc:footer_v2/>
-<misc:jqueryblob_v2/>
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>

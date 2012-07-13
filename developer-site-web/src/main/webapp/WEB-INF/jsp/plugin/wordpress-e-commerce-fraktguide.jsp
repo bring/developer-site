@@ -76,6 +76,8 @@
                             </ul>
                         </div>
 
+                        <div class="span4 box"></div>
+
                         <div class="span4 box">
                             <a href="http://wordpress.org/extend/plugins/wp-e-commerce-bring-fraktguide/"
                                class="btn enhanced">Download</a>
