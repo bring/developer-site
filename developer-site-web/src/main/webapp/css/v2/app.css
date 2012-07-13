@@ -594,6 +594,10 @@ table thead th * {
   color: #fff;
 }
 
+table thead th.shippingguidereferencecolumn {
+  width: 190px;
+}
+
 table thead th.sorting_desc {
   background: #4d4f53 url('../images/shared/arrow-white-down.png') no-repeat 98% center;
 }
@@ -1334,6 +1338,10 @@ div.bookingikon {
 
 span.black {
   margin-left: 60px;
+  color: #4d4f53;
+}
+
+a.black {
   color: #4d4f53;
 }
 

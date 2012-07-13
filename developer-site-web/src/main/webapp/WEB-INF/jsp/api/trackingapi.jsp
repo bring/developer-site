@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="box">
-                        <h2>Introduction</h2>
+                        <h2><a name="introduction"></a>Introduction</h2>
 
                         <p>The tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an
                             easy way to display details and the status of shipments. The information available in this API is the same information available from the <a href="http://tracking.bring.com" target="_blank">Tracking web site</a>.
@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="box">
-                        <h2>Reference</h2>
+                        <h2><a name="reference"></a>Reference</h2>
 
                         <p>Request prefix: <br/><code>http://beta.bring.no/sporing</code></p>
 
@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="box">
-                        <h2>How to Use</h2>
+                        <h2><a name="HTU"></a>How to Use</h2>
                         For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real
                         tracking this must be a valid number.
 
@@ -130,7 +130,7 @@
                     </div>
 
                     <div class="box">
-                            <h2>Additional examples</h2>
+                            <h2><a name="additionalExamples"></a>Additional examples</h2>
                             <p>The parcel numbers used in the examples are static identifiers, and will always return the same result. These examples are recommended to use for integration testing.</p>
 
                             <div class="row element-sample">
@@ -294,6 +294,21 @@
                 </div>
 
                 <div class="span3" id="additional-resources">
+
+                    <div class="box">
+                        <a class="black" href="/api/trackingapi.html">
+                            <h4>Tracking API</h4>
+                        </a>
+                        <ol>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#reference">Reference</a></li>
+                            <li><a href="#HTU">How to Use</a></li>
+                            <li><a href="#additionalExamples">Additional Examples</a></li>
+                        </ol>
+
+                    </div>
+
+
                     <div class="box">
                         <h2>Additonal Resources</h2>
                         <ul>
