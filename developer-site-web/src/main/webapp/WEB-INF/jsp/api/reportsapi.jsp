@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="box">
-                        <h2>Introduction</h2>
+                        <h2><a name="introduction"></a>Introduction</h2>
                         <p>The API lets you view customer accounts associated with your account, find available reports for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
                         </p>
 
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="box">
-                        <h2>Reference</h2>
+                        <h2><a name="reference"></a>Reference</h2>
 
                         <pre class="code-box">Request prefix:
 https://www.mybring.com/reports/api</pre>
@@ -158,7 +158,7 @@ https://www.mybring.com/reports/api</pre>
                     </div>
 
                     <div class="box">
-                        <h2>How to Use</h2>
+                        <h2><a name="HTU"></a>How to Use</h2>
                         <p>The API uses two headers to customize the answers. One header is for choosing between XML and JSON responses,
                             and the second header is to choose language in text-fields in the responses. Every call can return both JSON and XML,
                             except the call to get a report. The report is available in XML and Excel.
@@ -286,10 +286,19 @@ https://www.mybring.com/reports/api</pre>
                 </div>
 
                 <div class="span3" id="additional-resources">
+
                     <div class="box">
-                        <h2>Additonal Resources</h2>
+                        <a class="black" href="/api/reportsapi.html">
+                            <h4>Reports API</h4>
+                        </a>
+                        <ol>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#reference">Reference</a></li>
+                            <li><a href="#HTU">How to Use</a></li>
+                        </ol>
 
                     </div>
+
                 </div>
 
             </div>

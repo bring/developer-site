@@ -3,12 +3,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
-    <misc:contenttype/>
-    <misc:title value="Choose Pickup Point With Map"/>
-    <misc:css_v2/>
+    <misc:contenttype/> <misc:title value="Choose Pickup Point With Map"/> <misc:css_v2/>
 </head>
 <body>
-
 
 <div class="wrapper">
 
@@ -22,25 +19,18 @@
                         <h1>Choose pickup point With Map</h1>
 
                         <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post
-                            office.
-                            This is mainly intended for online shopping to allow the user to choose another pickup point
-                            than the default to their shipping address.
-                        </p>
+                           office. This is mainly intended for online shopping to allow the user to choose another
+                           pickup point than the default to their shipping address. </p>
                     </div>
 
                     <div class="box"><h4>How to install</h4>
                         <ol>
                             <li>This widget depends on jQuery, so please add jQuery to your site first.</li>
-                            <li>Add the Post Office widget:<br/>
-                                <code>&lt;script type="text/javascript"
-                                    src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
+                            <li>Add the Post Office widget:<br> <code>&lt;script type="text/javascript"
+                                                                      src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
                             </li>
-                            <li>Initialize it<br/>
-                                <code>$("divid").utleveringsenhet();</code></li>
+                            <li>Initialize it<br> <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
-
-
-
 
                         <div class="content-box">
                             <div class="row element-sample">
@@ -53,8 +43,10 @@
                                 <div class="tab-content tab-minimal">
 
                                     <div class="tab-pane active" id="tab1-5">
-                                        <div class="box lightBorder"><iframe style="height: 450px" class="widget-demo"
-                                                                             src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe></div>
+                                        <div class="box lightBorder">
+                                            <iframe style="height: 450px" class="widget-demo"
+                                                    src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe>
+                                        </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab2-5">
@@ -80,17 +72,56 @@
                         </div>
 
                     </div>
+                    <div class="box">
+                        <h4>Made by</h4>
+                        <ul>
+                            <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
+                            <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
+                        </ul>
 
+                        <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"
+                           class="btn enhanced">Download</a>
+                    </div>
                 </div>
 
-                <div class="span3 box">
-                    <h4>Made by</h4>
-                    <ul>
-                        <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
-                        <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
-                    </ul>
+                <div class="span3">
+                    <div class="box">
+                        <a class="black" href="/api/pickuppointapi.html">
+                            <h4>Pickup Point API</h4>
+                        </a>
+                        <ol>
+                            <li>
+                                <a href="/api/pickuppointapi.html#introduction"> Introduction </a>
+                            </li>
 
-                    <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js" class="btn enhanced">Download</a>
+                            <li>
+                                <a href="/api/pickuppointapi.html#reference"> Reference </a>
+                            </li>
+
+                            <li>
+                                <a href="/api/pickuppointapi.html#HTU"> How to Use </a>
+                            </li>
+
+                            <li>
+                                <a href="/api/pickuppointapi.html#additionalExamples"> Additional Examples </a>
+                            </li>
+                        </ol>
+
+                    </div>
+
+                    <div class="box">
+                        <div id="additional-resources">
+                            <h2>Additonal Resources</h2>
+
+                            <h4>Widgets</h4>
+                            <ul>
+                                <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
+                                <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With
+                                                                                          Map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -99,9 +130,7 @@
     </div>
 </div>
 
-
-<misc:footer_v2/>
-<misc:jqueryblob_v2/>
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>

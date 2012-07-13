@@ -1327,6 +1327,10 @@ span.black {
   color: #4d4f53;
 }
 
+a.black {
+  color: #4d4f53;
+}
+
 span.api-link {
   font-weight: bold !important;
 }
