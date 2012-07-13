@@ -31,11 +31,11 @@
                     <div class="box"><h4>How to install</h4>
                         <ol>
                             <li>This widget depends on jQuery, so please add jQuery to your site first.</li>
-                            <li>Add the Post Office widget:<br>
+                            <li>Add the Post Office widget:<br/>
                                 <code>&lt;script type="text/javascript"
                                     src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
                             </li>
-                            <li>Initialize it<br>
+                            <li>Initialize it<br/>
                                 <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
 

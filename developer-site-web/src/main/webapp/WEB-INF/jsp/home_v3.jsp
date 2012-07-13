@@ -23,13 +23,12 @@
                 <div class="row-fluid">
                     <div class="span7">
                         <div class="welcometext">
-                            <h2>Welcome to Bring Developer!</h2><br>
+                            <h2>Welcome to Bring Developer!</h2><br/>
 
                             <p class="front-page-welcome-text">On this page you find information and tutorials for
                                 developers of web shops dealing with shipment in and from Scandinavian countries.With
-                                Bring APIs you can improve the service provided to your customers! </p><br>
+                                Bring APIs you can improve the service provided to your customers! </p><br/>
 
-                            <p class="front-page-welcome-text">
                             <ul class="welcomelist">
                                 <li>Allow alternative shipping methods with the <a href="/api/shippingguideapi.html">Shipping
                                     Guide API</a>.
@@ -41,7 +40,7 @@
                                     the logged-in service in the <a href="#">Booking API</a>.
                                 </li>
                             </ul>
-                            </p><br>
+                            <br/>
 
                             <p class="front-page-welcome-text">Need help? Through the <a
                                     href="/support.html">Support</a> page you can get in touch with the API team and
@@ -53,40 +52,74 @@
                     <div class="span5">
                         <ul class="menu-group minimal ingress-list alternativ api-menu">
                             <li>
-                                <div class="shippingikon"></div>
-                                <a class="leftmargin" href="/api/shippingguideapi.html"> <span class="api-link">Shipping Guide API</span>
-                                    <span class="black">Get price and time estimate for shipments</span>
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons shippingicon"></div>
 
-                                </a>
+                                    <div class="api-menu-text">
+                                        <a href="/api/shippingguideapi.html"> <span class="api-link black">Shipping Guide API</span>
+                                            <span class="black">Get price and time estimate for shipments</span> </a>
+                                    </div>
+                                </div>
                             </li>
                             <li>
-                                <div class="trackingikon"></div>
-                                <a class="leftmargin" href="/api/trackingapi.html"> <span
-                                        class="api-link">Tracking API </span> <span class="black">See the current status of shipments</span></a>
-                            </li>
-                            <li>
-                                <div class="reportsikon"></div>
-                                <a class="leftmargin" href="/api/reportsapi.html"> <span class="api-link">Reports API (BETA)</span>
-                                    <span class="black">Generate customer reports from shipment history</span></a>
-                            </li>
-                            <li>
-                                <div class="pickuppointikon"></div>
-                                <a class="leftmargin" href="/api/pickuppointapi.html"> <span class="api-link">Pickup Point API</span>
-                                    <span class="black">Find pickup points near a location</span></a>
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons trackingicon"></div>
 
+                                    <div class="api-menu-text">
+                                        <a href="/api/trackingapi.html"> <span
+                                                class="api-link black">Tracking API </span> <span class="black">See the current status of shipments</span>
+                                        </a>
+                                    </div>
+
+                                </div>
                             </li>
                             <li>
-                                <div class="postalcodeikon"></div>
-                                <a class="leftmargin" href="#"> <span class="api-link">Postal Code API</span> <span
-                                        class="black">Lookup and validate postal codes</span></a>
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons reportsicon"></div>
+
+                                    <div class="api-menu-text">
+                                        <a href="/api/reportsapi.html"> <span
+                                                class="api-link black">Reports API (BETA)</span> <span class="black">Generate customer reports from shipment history</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </li>
                             <li>
-                                <div class="bookingikon"></div>
-                                <a class="leftmargin" href="#"> <span class="api-link">Booking API (BETA)</span> <span
-                                        class="black">Book shipments and generate PDF labels</span></a>
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons pickuppointicon"></div>
+
+                                    <div class="api-menu-text">
+                                        <a href="/api/pickuppointapi.html"> <span class="api-link black">Pickup Point API</span>
+                                            <span class="black">Find pickup points near a location</span></a>
+                                    </div>
+                                </div>
                             </li>
                             <li>
-                                <a class="leftmargin" href="#"> <span class="api-link">EDI</span> <span class="black">Communicate with brings services electronically</span></a>
+
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons postalcodeicon"></div>
+
+                                    <div class="api-menu-text">
+                                        <a href="#"> <span class="api-link black">Postal Code API</span> <span
+                                                class="black">Lookup and validate postal codes</span></a></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons bookingicon"></div>
+
+                                    <div class="api-menu-text"></div>
+                                    <a href="#"> <span class="api-link black">Booking API (BETA)</span> <span
+                                            class="black">Book shipments and generate PDF labels</span></a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="api-menu-item-container">
+                                    <div class="api-menu-icons"></div>
+                                    <div class="api-menu-text"></div>
+                                    <a href="#"> <span class="api-link black">EDI</span> <span
+                                            class="black">Communicate with brings services electronically</span></a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -97,7 +130,7 @@
 
 </div>
 
-<misc:footer_v2/> <misc:jqueryblob_v2/> 1
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>
