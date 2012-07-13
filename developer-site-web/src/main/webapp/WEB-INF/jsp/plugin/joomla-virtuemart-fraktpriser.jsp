@@ -64,8 +64,6 @@
                         </ul>
                         <div class="box">
                             <a href="http://code.google.com/p/fraktpriservirtuemart/downloads/list" class="btn enhanced">Download</a>
-                            <br/>
-                            <br/>
                             <a href="http://code.google.com/p/fraktpriservirtuemart/" class="btn">Repository</a>
                         </div>
                     </div>

@@ -98,8 +98,6 @@
 
                         <div class="box">
                             <a href="http://code.google.com/p/fraktpriserzencart/downloads/list" class="btn enhanced">Download</a>
-                            <br/>
-                            <br/>
                             <a href="http://code.google.com/p/fraktpriserzencart/" class="btn">Repository</a>
                         </div>
                     </div>
