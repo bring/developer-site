@@ -25,7 +25,7 @@
                     
                     <p>
                     	Please note the request prefixes:<br />
-                        <code>&hellip;</code> = <code><c:out value="${apiReference.externalRequestBase.content}" /></code>
+                        <code>&amp;hellip;</code> = <code><c:out value="${apiReference.externalRequestBase.content}" /></code>
                     </p>
                     
                     <c:forEach items="${apiReference.parameters}" var="parameter" >
@@ -44,7 +44,7 @@
                                     <c:if test="${!empty example.request}">
                                         <div class="api-call">
                                             Request: 
-                                            <pre><a target="_blank" class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&hellip;${example.request}</a></pre>
+                                            <pre><a target="_blank" class="request" href="${apiReference.externalRequestBase.content}${example.request}" data-internal="${apiReference.internalRequestBase.content}${example.request}">&amp;hellip;${example.request}</a></pre>
                                             <c:if test="${example.type == 'json'}">
                                                 <p class="right">JSONP request:
                                                     <a target="_blank" href="${apiReference.externalRequestBase.content}${example.request}${fn:contains(example.request, '?') ? '&amp;' : '?'}callbackUrl=functionName">

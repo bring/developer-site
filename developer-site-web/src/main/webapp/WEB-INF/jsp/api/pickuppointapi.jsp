@@ -239,7 +239,7 @@
 
     <h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
                           the request.
-                          These parameters can be perceived as &quot;filters&quot;, adding additional restrictions to the pickup points
+                          These parameters can be perceived as &amp;quot;filters&amp;quot;, adding additional restrictions to the pickup points
                           being returned.
                           One such parameter is <code>searchForText=q&lt;texts&gt;</code>, resulting in a response where all pickup points
                           have at least a partial match with the search string given in &lt;texts&gt;.
@@ -249,7 +249,7 @@
 
     <div class="information-box">
         <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
-                     parameters using <code>&</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=&quot;Kiwi&quot;<b>&</b>openOnOrBefore=0800</code>
+                     parameters using <code>&amp;</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=&amp;quot;Kiwi&amp;quot;<b>&amp;</b>openOnOrBefore=0800</code>
     </div>
 
     <h3>Using the pickup point's id</h3>
@@ -314,7 +314,7 @@
 
 
         <div class="row element-sample">
-            <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p>
+            <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &amp;quot;KIWI&amp;quot;.</p>
             </h4>
             <div class="box lightBorder">
                 <ul class="tab-group minimal" data-tabs="tabs">
@@ -344,7 +344,7 @@
                                data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI">
                                 /api/pickuppoint/postalcode/1407.json?searchForText=KIWI
                             </a>
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -399,7 +399,7 @@
                                data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY">
                                 /api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY
                             </a>
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -456,7 +456,7 @@
                                data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
                                 /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800
                             </a>
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
@@ -498,7 +498,7 @@
                                data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
                                 /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200
                             </a>
-                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&callbackUrl=functionName">?callback=functionName</a></p>
+                            <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a></p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>

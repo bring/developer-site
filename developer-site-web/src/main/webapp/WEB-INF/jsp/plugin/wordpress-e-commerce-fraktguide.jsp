@@ -4,11 +4,8 @@
 <html>
 
 <head>
-    <misc:contenttype/>
-    <misc:title value="Fraktguide for Wordpress e-commerce"/>
-    <misc:css_v2/>
+    <misc:contenttype/> <misc:title value="Fraktguide for Wordpress e-commerce"/> <misc:css_v2/>
 </head>
-
 
 <body>
 
@@ -28,8 +25,7 @@
                     <div class="box">
                         <p>This is a shipping module for WP e-Commerce. It uses the Bring Fraktguide XML API to get
                             shipping quotes. It will get accurate prices based on delivery postcode, weight, length,
-                            width, height and volume. The plugin only supports WP e-Commerce 3.8 and later.
-                        </p>
+                            width, height and volume. The plugin only supports WP e-Commerce 3.8 and later. </p>
                         <h4>How to install</h4>
                         <ol>
                             <li>
@@ -39,7 +35,6 @@
                     </div>
 
                     <div class="box">
-
 
                         <div class="content-box">
                             <div class="row element-sample">
@@ -52,14 +47,15 @@
 
                                     <div class="tab-pane active" id="tab1">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/wordpressfraktpriser/screenshot1.png" class="fitted-width"/>
+                                            <img src="http://developer.bring.com/media/plugin/wordpressfraktpriser/screenshot1.png"
+                                                 class="fitted-width"/>
                                         </div>
                                     </div>
 
-
                                     <div class="tab-pane" id="tab2">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/wordpressfraktpriser/screenshot2.png" class="fitted-width"/>
+                                            <img src="http://developer.bring.com/media/plugin/wordpressfraktpriser/screenshot2.png"
+                                                 class="fitted-width"/>
                                         </div>
                                     </div>
 
@@ -67,22 +63,24 @@
                             </div>
                         </div>
 
-
                     </div>
 
                     <div class="box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li>
-                                <a href="http://www.hwu.no/" target="_blank">
-                                    Leif-Arne Helland
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="box">
+
+                        <div class="span4 box">
+                            <h4>Made by</h4>
+                            <ul>
+                                <li>
+                                    <a href="http://www.hwu.no/" target="_blank"> Leif-Arne Helland </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="span4 box">
                             <a href="http://wordpress.org/extend/plugins/wp-e-commerce-bring-fraktguide/"
                                class="btn enhanced">Download</a>
                         </div>
+
                     </div>
                 </div>
 
@@ -121,16 +119,18 @@
                         </ul>
                         <h4>Widgets</h4>
                         <ul>
-                            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information
-                                                                                                   using jsonp</a></li>
+                            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping
+                                guide information using jsonp</a></li>
                             <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
                         </ul>
                         <h4>Plugins</h4>
                         <ul>
-                            <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
+                            <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla!
+                                Virtuemart</a></li>
                             <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
                             <li><a href="../plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
-                            <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a></li>
+                            <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress
+                                e-commerce</a></li>
                             <li><a href="../plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
                         </ul>
                     </div>
@@ -141,11 +141,9 @@
         </section>
     </div>
 
-
 </div>
 
-<misc:footer_v2/>
-<misc:jqueryblob_v2/>
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>
