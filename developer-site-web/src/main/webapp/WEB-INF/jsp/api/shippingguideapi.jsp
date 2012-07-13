@@ -32,12 +32,12 @@
     <h2><a name="introduction"></a>Introduction</h2>
 
     <p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price
-       information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
-       With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
-       their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
-       evening. The customers may also choose different shipping methods based on how fast and when they want their
-       products delivered. <br><br>The shipping guide calculates the delivery time and the price based on postal code.
-       Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
+        information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
+        With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
+        their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
+        evening. The customers may also choose different shipping methods based on how fast and when they want their
+        products delivered. <br/><br/>The shipping guide calculates the delivery time and the price based on postal code.
+        Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
 
     <p>
         <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&to=1473&weightInGrams=1800&length=10&width=20&height=30&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=a-post&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
@@ -557,7 +557,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
             <li><code>volume1=33</code></li>
             <li><code>length2=10&width2=20 &height2=30</code></li>
         </ol>
-        <br>
+        <br/>
 
         <div class="box lightBorder">
 
@@ -664,7 +664,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                             <a target="_blank" class="request"
                                href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY"
                                data-internal="/proxy/shipping-guide/products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY">
-                                ../products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY </a><br>
+                                ../products/expectedDelivery.xml?from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY </a><br/>
 
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -734,14 +734,14 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
     <div class="content-box" style="display: none;">
 
-        <div><p>In the example below, a parcel is sent from Norway to Dublin, Ireland. <br><br>The parameters are:</p>
+        <div><p>In the example below, a parcel is sent from Norway to Dublin, Ireland. <br/><br/>The parameters are:</p>
             <ul>
                 <li><code>?fromCountry=NO</code></li>
                 <li><code>&toCountry=IE</code></li>
                 <li><code>&to=0</code></li>
                 <li><code>&toCity=Dublin</code></li>
             </ul>
-            <br>
+            <br/>
 
             <p>To see both the expected delivery time and the price, we've added:</p>
             <ul>
@@ -749,7 +749,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <li><code>all.xml</code></li>
             </ul>
         </div>
-        <br>
+        <br/>
 
         <div class="box lightBorder">
             <div class="row element-sample">
@@ -1082,7 +1082,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p>If this parameter is specified,  the response will include expected delivery date,
                in addition to expected number of working days.</p>
         </div>
-        <br>
+        <br/>
 
         <div class="box lightBorder">
             <div class="row element-sample">
@@ -1498,7 +1498,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
                product code prefix.</p>
 
-            <br>
+            <br/>
 
             <p><b>Example:</b> <br>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
                                    Over natten 09.</p>
@@ -1615,7 +1615,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 
 </div>
 
-<misc:footer/> <misc:jqueryblob_v2/>
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>

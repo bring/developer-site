@@ -24,7 +24,7 @@
 
                     <div class="box">
                         <p>Offline data lets you download a failover version of the data from the Shipping Guide.</p>
-                        <br>
+                        <br/>
 
                         <div>By using the <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data
                                                                                                          form</a>
@@ -33,19 +33,19 @@
                              does not respond or responds with an error message, or if there are extreme demands on
                              performance.
                         </div>
-                        <br>
+                        <br/>
 
                         <div><b>Important!</b> With offline data, you have to deal with all the rules of special goods,
                                                shipping calculated weight (volume weight), and more. These rules are
                                                located on the respective product pages on bring.com. Remember to update
                                                the database at price changes!
                         </div>
-                        <br>
+                        <br/>
 
                         <div>The service is available free of charge, provided acceptance of the terms of use. Note that
                              only registered users will receive notifications of changes in service!
                         </div>
-                        <br>
+                        <br/>
 
                         <div>For those who use the offline data, we recommend to get the updates automatically via
                              Shipping Guide Web Services. To execute the web-service you will need a identification
@@ -56,7 +56,7 @@
                              or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>
                              for details.
                         </div>
-                        <br>
+                        <br/>
 
                         <div><h5>USEFUL XPATHS WHEN PROCESSING OFFLINE DATA</h5>
 

@@ -23,8 +23,8 @@
                         <h1>Wsdl/xml Schema</h1>
                     </div>
                     <div class="box">
-                        <p>The Shipping Guide uses schemas for XML and WSDL to make it easier to integrate with the WebService</p><br>
-                        <p><a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p><br>
+                        <p>The Shipping Guide uses schemas for XML and WSDL to make it easier to integrate with the WebService</p><br/>
+                        <p><a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p><br/>
                         <div>
                             <h4>VERSIONING</h4>
                             <hr>
@@ -32,11 +32,11 @@
                             To achieve this, a <b>SchemaVersion</b> element is used in the request, indicating which version the client is on and what data-format the client expects in the result. We make an effort not to return new elements in the response when an old schema version is specified.
                             When changes in the schema are made, the SchemaVersion is incremented by one. The new schema is used at the <b>same endpoint URL</b> as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
                             Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in that elements are not renamed or deleted.</p>
-                        </div><br>
+                        </div><br/>
                         <div>
                             <h4>WSDL</h4>
                             <hr>
-                            <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a> (latest schema version)</p><br>
+                            <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a> (latest schema version)</p><br/>
                             <p>It is possible to download specific WSDL / schema versions: <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl">4</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v5.wsdl">5</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v6.wsdl">6</a> The current version is 6.</p>
                         </div>
                     </div>

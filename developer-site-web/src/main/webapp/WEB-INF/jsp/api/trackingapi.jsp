@@ -55,7 +55,7 @@
                             <tbody>
                             <tr>
                                 <td><code>.&lt;extension&gt;?q=&lt;tracking number&gt;</code></td>
-                                <td>Returns information about the shipment such as the weight, volume and status. <br>
+                                <td>Returns information about the shipment such as the weight, volume and status. <br/>
                                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                                     <li><code>&lt;tracking number&gt;</code> = reference, shipment or package number</li>
                                 </td>
@@ -322,7 +322,7 @@
     </div>
 </div>
 
-<misc:footer/>
+<misc:footer_v2/>
 <misc:jqueryblob_v2/>
 
 

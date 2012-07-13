@@ -380,8 +380,8 @@
     </tbody>
 </table>
 
-<sup>1 Requests for expected delivery has longer response time.</sup><br> <sup>2 B-Økonomi is intended for bulk sendings
-    and has a mimimum requirement of 20 parcels, however, if weight exceeds 100g this limit is ignored.</sup><br> <sup>3
+<sup>1 Requests for expected delivery has longer response time.</sup><br/> <sup>2 B-Økonomi is intended for bulk sendings
+    and has a mimimum requirement of 20 parcels, however, if weight exceeds 100g this limit is ignored.</sup><br/> <sup>3
     Due to look-up in flight schedules, a request for this product has longer response time than for other
     products.</sup>
 
@@ -404,7 +404,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=EVARSLING">EVARSLING</a>
         </td>
-        <td>BPAKKE_DOR-DOR<br> SERVICEPAKKE<br> EKSPRESS07<br> EKSPRESS09<br></td>
+        <td>BPAKKE_DOR-DOR<br/> SERVICEPAKKE<br/> EKSPRESS07<br/> EKSPRESS09<br/></td>
         <td>eVarsling</td>
     </tr>
 
@@ -412,7 +412,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=POSTOPPKRAV">POSTOPPKRAV</a>
         </td>
-        <td>A-POST<br> B-POST<br> BPAKKE_DOR-DOR<br> SERVICEPAKKE<br> PA_DOREN<br> EKSPRESS07<br> EKSPRESS09<br></td>
+        <td>A-POST<br/> B-POST<br/> BPAKKE_DOR-DOR<br/> SERVICEPAKKE<br/> PA_DOREN<br/> EKSPRESS07<br/> EKSPRESS09<br/></td>
         <td>Postoppkrav</td>
     </tr>
 
@@ -420,7 +420,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=LORDAGSUTKJORING">LORDAGSUTKJORING</a>
         </td>
-        <td>EKSPRESS09<br></td>
+        <td>EKSPRESS09<br/></td>
         <td>Lørdagsutkjøring</td>
     </tr>
 
@@ -428,7 +428,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_DAY_CERTAIN/price.xml?weightInGrams=1500&amp;length=10&amp;width=10&amp;height=10&amp;from=0150&amp;fromCountry=NO&amp;to=80339&amp;toCountry=DE&amp;additional=ENVELOPE">ENVELOPE</a>
         </td>
-        <td>QUICKPACK_OVER_NIGHT_0900<br> QUICKPACK_OVER_NIGHT_1200<br> QUICKPACK_DAY_CERTAIN<br></td>
+        <td>QUICKPACK_OVER_NIGHT_0900<br/> QUICKPACK_OVER_NIGHT_1200<br/> QUICKPACK_DAY_CERTAIN<br/></td>
         <td>Envelope</td>
     </tr>
 

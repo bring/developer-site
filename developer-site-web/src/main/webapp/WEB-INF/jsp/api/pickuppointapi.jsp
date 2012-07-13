@@ -196,7 +196,7 @@
 
     <div class="row element-sample">
         <p><h4>Example: USING GEOGRAPHICAL COORDINATES</h4></p>
-        <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725)<br>
+        <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725)<br/>
         </p>
 
 
@@ -260,7 +260,7 @@
 
     <div class="row element-sample">
         <p><h4>Example: USING ID TO RETRIEVE INFORMATION ABOUT A PICKUP POINT</h4></p>
-        <p>Retrieve more information about the pickup point based on its id, 121110<br>
+        <p>Retrieve more information about the pickup point based on its id, 121110<br/>
         </p>
 
         <div class="box lightBorder"><ul class="tab-group minimal" data-tabs="tabs">
@@ -550,7 +550,7 @@
 </div>
 
 
-<misc:footer/>
+<misc:footer_v2/>
 <misc:jqueryblob_v2/>
 
 </body>
