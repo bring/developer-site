@@ -100,9 +100,10 @@
                                     <div class="api-menu-icons postalcodeicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="#"> <span class="api-link black">Postal Code API</span> <span
+                                        <a href="/api/postalcodeapi.html"> <span class="api-link black">Postal Code API</span> <span
                                                 class="black">Lookup and validate postal codes</span></a></div>
                                 </div>
+
                             </li>
                             <li>
                                 <div class="api-menu-item-container">
