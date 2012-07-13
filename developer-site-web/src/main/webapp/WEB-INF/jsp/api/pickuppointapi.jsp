@@ -403,7 +403,8 @@
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-                </div></div>
+                </div>
+            </div>
 
 
 
