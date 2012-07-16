@@ -32,12 +32,12 @@
     <h2><a name="introduction"></a>Introduction</h2>
 
     <p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price
-        information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
-        With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
-        their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
-        evening. The customers may also choose different shipping methods based on how fast and when they want their
-        products delivered. <br/><br/>The shipping guide calculates the delivery time and the price based on postal code.
-        Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
+       information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
+       With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
+       their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
+       evening. The customers may also choose different shipping methods based on how fast and when they want their
+       products delivered. <br/><br/>The shipping guide calculates the delivery time and the price based on postal code.
+       Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
 
     <p>
         <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
@@ -241,7 +241,7 @@
                                  dimensions of 30cm x 40cm x 40cm as <a target="_blank"
                                                                         href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
             <code>&amp;length=30&amp;width=40&amp;height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
-                                                                                               href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;volume=33">
+                                                                                                           href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;volume=33">
             <code>&amp;volume=33</code></a> .
         </li>
     </ul>
@@ -256,7 +256,7 @@
     </div>
 
     <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
-                           package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
+                            package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
     <div class="box lightBorder">
         <div data-tab="xml" class="tab api-call">
@@ -323,9 +323,9 @@
                 <pre><a target="_blank" class="request"
                         href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarslingadditional=lordagsutkjoring"
                         data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">…/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
-                                                                                                                                                                                                             &amp;additional=postoppkrav
-                                                                                                                                                                                                             &amp;additional=evarsling
-                                                                                                                                                                                                             &amp;additional=lordagsutkjoring</a></pre>
+                                                                                                                                                                                                                                     &amp;additional=postoppkrav
+                                                                                                                                                                                                                                     &amp;additional=evarsling
+                                                                                                                                                                                                                                     &amp;additional=lordagsutkjoring</a></pre>
 
             <pre class="code-box xml response delay-snippet">Running request...</pre>
         </div>
@@ -374,7 +374,7 @@
                                  dimensions of 30cm x 40cm x 40cm as <a target="_blank"
                                                                         href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
             <code>&amp;length=30&amp;width=40&amp;height=40</code></a> or volume of 33dm<sup>3</sup> as <a target="_blank"
-                                                                                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;volume=33">
+                                                                                                           href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;volume=33">
             <code>&amp;volume=33</code></a> .
         </li>
     </ul>
@@ -389,7 +389,7 @@
     </div>
 
     <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
-                           package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
+                            package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
     <div class="box lightBorder">
         <div data-tab="json" class="tab api-call">
@@ -456,9 +456,9 @@
                 <pre><a target="_blank" class="request"
                         href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarslingadditional=lordagsutkjoring"
                         data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">…/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
-                                                                                                                                                                                                              &amp;additional=postoppkrav
-                                                                                                                                                                                                              &amp;additional=evarsling
-                                                                                                                                                                                                              &amp;additional=lordagsutkjoring</a></pre>
+                                                                                                                                                                                                                                      &amp;additional=postoppkrav
+                                                                                                                                                                                                                                      &amp;additional=evarsling
+                                                                                                                                                                                                                                      &amp;additional=lordagsutkjoring</a></pre>
 
             <pre class="code-box json response delay-snippet">Running request...</pre>
         </div>
@@ -1501,7 +1501,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <br/>
 
             <p><b>Example:</b> <br/>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
-                                   Over natten 09.</p>
+                                    Over natten 09.</p>
 
             <div class="box lightBorder">
                 <div class="row element-sample">
@@ -1566,9 +1566,8 @@ System.out.println("Price: " + price + " NOK");</pre>
 
 <%--Additional resources--%>
 <div class="span3">
-    <div id="additional-resources">
 
-
+    <div id="sidebar">
         <div class="box">
             <a class="black" href="/api/shippingguideapi.html">
                 <h4>Shipping Guide API</h4>

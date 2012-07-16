@@ -105,6 +105,11 @@
     <li>Set the service to be in test mode with the test indicator flag.</li>
 </ol>
 Each step is covered in detail in the following tutorial.</p>
+</br>
+<h4>Become a mybring user</h4>
+<p>
+    To become a mybring customer, <a href="http://www.mybring.com/useradmin/open/signup/new">signup to mybring</a>.</p>
+</br>
 
 <h4>Authentication - API login with mybring</h4>
 
@@ -112,12 +117,8 @@ Each step is covered in detail in the following tutorial.</p>
     We use the mybring authentication framework. This is a proprietary single-sign on solution that uses two HTTP
     Headers for authentication to the API. Only users with a mybring user (with attached customer numbers) can use the
     Booking API. In the Booking Web Service and XML/JSON API request, you must set two HTTP headers to access the
-    API. </p>
-
-<p>
-    To become a mybring customer, <a href="http://www.mybring.com/useradmin/open/signup/new">signup to mybring</a>. The
-    API key is currently only visible to organization administrators. Please contact the development team
-    (developer@bring.com) to receive a Beta API-key. </p>
+    API. The API key is currently only visible to organization administrators. Please contact the development team
+    (developer@bring.com) to receive a Beta API-key.</p>
 
 <table>
     <tbody>
@@ -676,6 +677,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </div>
 
 <div class="span3">
+    <div id="sidebar">
     <div class="box">
         <a class="black" href="/api/bookingapi.html">
             <h4>Booking API</h4>
@@ -702,6 +704,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
             <li><a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL</a></li>
             <li><a href="https://www.mybring.com/booking/api/ws">Endpoint</a></li>
         </ul>
+    </div>
     </div>
 </div>
 </div>

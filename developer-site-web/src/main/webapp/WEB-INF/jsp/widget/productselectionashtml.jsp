@@ -28,7 +28,7 @@
                     <div class="box">
 
                         <p>"Delivered by Bring" is a solution where Bring deliveres finished HTML for the selection of freight products. You can use this HTML directly in your webshop.
-                            By using CSS you can adapt the appearance to your layout.</p>
+                           By using CSS you can adapt the appearance to your layout.</p>
 
                         <p>The HTML is delivered as the content in a form, but without the &lt;form&gt; elements. This way you can adjust the functionality to your need.</p>
 
@@ -37,7 +37,7 @@
                         <p>If the user select A-POST product from this form:<br/>
                             <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26">http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26</a>
                             <br/><br/>
-                            Use the following XML API request to fetch the price:<br/>
+                           Use the following XML API request to fetch the price:<br/>
                             <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26">http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26</a>
                             <br/><br/>XML API, JSON API and "Delivered by Bring" is all using the same parameters, please see documentation for the API to get information about available parameters and functionality</p>
 
@@ -103,59 +103,58 @@
                 </div>
 
                 <div class="span3">
+                    <div id="sidebar">
 
-                    <div class="box">
-                        <a class="black" href="/api/shippingguideapi.html">
-                            <h4>Shipping Guide API</h4>
-                        </a>
-                        <ol>
-                            <li>
-                                <a href="/api/shippingguideapi.html#introduction"> Introduction </a>
-                            </li>
+                        <div class="box">
+                            <a class="black" href="/api/shippingguideapi.html">
+                                <h4>Shipping Guide API</h4>
+                            </a>
+                            <ol>
+                                <li>
+                                    <a href="/api/shippingguideapi.html#introduction"> Introduction </a>
+                                </li>
 
-                            <li>
-                                <a href="/api/shippingguideapi.html#reference"> Reference </a>
-                            </li>
+                                <li>
+                                    <a href="/api/shippingguideapi.html#reference"> Reference </a>
+                                </li>
 
-                            <li>
-                                <a href="/api/shippingguideapi.html#HTU"> How to Use </a>
-                            </li>
+                                <li>
+                                    <a href="/api/shippingguideapi.html#HTU"> How to Use </a>
+                                </li>
 
-                            <li>
-                                <a href="/api/shippingguideapi.html#additionalExamples"> Additional Examples </a>
-                            </li>
-                        </ol>
+                                <li>
+                                    <a href="/api/shippingguideapi.html#additionalExamples"> Additional Examples </a>
+                                </li>
+                            </ol>
 
+                        </div>
+
+                        <div class="box">
+                            <h2>Additonal Resources</h2>
+                            <ul>
+                                <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
+                                <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
+                                <li><a href="../additionalresources/productlist.html">Product list</a></li>
+                                <li><a href="../additionalresources/offlinedata.html">Offline data</a></li>
+                            </ul>
+                            <h4>Widgets</h4>
+                            <ul>
+                                <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information
+                                                                                                       using jsonp</a></li>
+                                <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
+                            </ul>
+                            <h4>Plugins</h4>
+                            <ul>
+                                <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
+                                <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
+                                <li><a href="../plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
+                                <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a></li>
+                                <li><a href="../plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
+                            </ul>
+                        </div>
                     </div>
-
-                    <div class="box">
-                        <h2>Additonal Resources</h2>
-                        <ul>
-                            <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
-                            <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
-                            <li><a href="../additionalresources/productlist.html">Product list</a></li>
-                            <li><a href="../additionalresources/offlinedata.html">Offline data</a></li>
-                        </ul>
-                        <h4>Widgets</h4>
-                        <ul>
-                            <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide information
-                                                                                                   using jsonp</a></li>
-                            <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
-                        </ul>
-                        <h4>Plugins</h4>
-                        <ul>
-                            <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
-                            <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
-                            <li><a href="../plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
-                            <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a></li>
-                            <li><a href="../plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
-                        </ul>
-                    </div>
-
                 </div>
-
             </div>
-
         </section>
     </div>
 

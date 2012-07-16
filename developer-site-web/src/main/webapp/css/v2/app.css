@@ -1343,6 +1343,12 @@ ul.welcomelist {
   font-size: 17px;
 }
 
+div.stickymenu {
+  position: fixed;
+  top: 0;
+  width: 12.82%;
+}
+
 div.information-box {
   min-height: 30px;
   padding: 10px 40px;

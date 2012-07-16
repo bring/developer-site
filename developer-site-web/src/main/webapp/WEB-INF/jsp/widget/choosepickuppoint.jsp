@@ -25,13 +25,13 @@
 
                     <div class="box">
                         <p>This widget uses Bring's Pickup point API to allow the user to choose their preferred post
-                            office. This is mainly intended for online shopping to allow the user to choose another
-                            pickup point than the default to their shipping address. </p>
+                           office. This is mainly intended for online shopping to allow the user to choose another
+                           pickup point than the default to their shipping address. </p>
                         <h4>How to install</h4>
                         <ol>
                             <li>This widget depends on jQuery, so please add jQuery to your site first.</li>
                             <li>Add the Post Office widget:<br/> <code>&lt;script type="text/javascript"
-                                src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
+                                                                       src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
                             </li>
                             <li>Initialize it<br/> <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
@@ -92,44 +92,46 @@ utleveringsenhet-1.0.1.js"&gt;
                 </div>
 
                 <div class="span3">
+                    <div id="sidebar">
 
-                    <div class="box">
-                        <a class="black" href="/api/pickuppointapi.html">
-                            <h4>Pickup Point API</h4>
-                        </a>
-                        <ol>
-                            <li>
-                                <a href="/api/pickuppointapi.html#introduction"> Introduction </a>
-                            </li>
+                        <div class="box">
+                            <a class="black" href="/api/pickuppointapi.html">
+                                <h4>Pickup Point API</h4>
+                            </a>
+                            <ol>
+                                <li>
+                                    <a href="/api/pickuppointapi.html#introduction"> Introduction </a>
+                                </li>
 
-                            <li>
-                                <a href="/api/pickuppointapi.html#reference"> Reference </a>
-                            </li>
+                                <li>
+                                    <a href="/api/pickuppointapi.html#reference"> Reference </a>
+                                </li>
 
-                            <li>
-                                <a href="/api/pickuppointapi.html#HTU"> How to Use </a>
-                            </li>
+                                <li>
+                                    <a href="/api/pickuppointapi.html#HTU"> How to Use </a>
+                                </li>
 
-                            <li>
-                                <a href="/api/pickuppointapi.html#additionalExamples"> Additional Examples </a>
-                            </li>
-                        </ol>
+                                <li>
+                                    <a href="/api/pickuppointapi.html#additionalExamples"> Additional Examples </a>
+                                </li>
+                            </ol>
 
-                    </div>
-
-                    <div class="box">
-                        <div id="additional-resources">
-                            <h2>Additonal Resources</h2>
-
-                            <h4>Widgets</h4>
-                            <ul>
-                                <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
-                                <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With
-                                    Map</a></li>
-                            </ul>
                         </div>
-                    </div>
 
+                        <div class="box">
+                            <div id="additional-resources">
+                                <h2>Additonal Resources</h2>
+
+                                <h4>Widgets</h4>
+                                <ul>
+                                    <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
+                                    <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With
+                                                                                              Map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>

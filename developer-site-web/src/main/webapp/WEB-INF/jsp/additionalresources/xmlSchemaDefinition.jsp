@@ -31,14 +31,14 @@
                         <div class="box lightBorder">
 
 
-                                    <div data-tab="xml" class="tab api-call">
-                                        <p>Request:</p>
+                            <div data-tab="xml" class="tab api-call">
+                                <p>Request:</p>
 
 
-                                        <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd" data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
+                                <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd" data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
 
-                                        <pre class="code-box xml response delay-snippet"></pre>
-                                    </div>
+                                <pre class="code-box xml response delay-snippet"></pre>
+                            </div>
 
 
 
@@ -49,25 +49,27 @@
                     </div>
                 </div>
                 <div class="span3">
-                    <div class="box">
-                        <a class="black" href="/api/trackingapi.html">
-                            <h4>Tracking API</h4>
-                        </a>
-                        <ol>
-                            <li><a href="/api/trackingapi.html#introduction">Introduction</a></li>
-                            <li><a href="/api/trackingapi.html#reference">Reference</a></li>
-                            <li><a href="/api/trackingapi.html#HTU">How to Use</a></li>
-                            <li><a href="/api/trackingapi.html#additionalExamples">Additional Examples</a></li>
-                        </ol>
+                    <div id="sidebar">
+                        <div class="box">
+                            <a class="black" href="/api/trackingapi.html">
+                                <h4>Tracking API</h4>
+                            </a>
+                            <ol>
+                                <li><a href="/api/trackingapi.html#introduction">Introduction</a></li>
+                                <li><a href="/api/trackingapi.html#reference">Reference</a></li>
+                                <li><a href="/api/trackingapi.html#HTU">How to Use</a></li>
+                                <li><a href="/api/trackingapi.html#additionalExamples">Additional Examples</a></li>
+                            </ol>
 
-                    </div>
+                        </div>
 
 
-                    <div class="box">
-                        <h2>Additonal Resources</h2>
-                        <ul>
-                            <li><a href="../additionalresources/xmlSchemaDefinition.html">XML Schema Definition</a></li>
-                        </ul>
+                        <div class="box">
+                            <h2>Additonal Resources</h2>
+                            <ul>
+                                <li><a href="../additionalresources/xmlSchemaDefinition.html">XML Schema Definition</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
