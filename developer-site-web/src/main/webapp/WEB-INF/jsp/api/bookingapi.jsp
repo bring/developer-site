@@ -110,6 +110,17 @@
 
 <div class="box">
 <h2><a name="HTU"></a>How to Use</h2>
+
+<p>There are several things you have to do before you can start using the Booking API.
+
+<ol>
+    <li>First you have to become a my bring user.</li>
+    <li>Authentication. Get access to the APi through receiving a Beta API-key from the developer team and then setting two HTTP-headers.</li>
+    <li>Authorization. Get your customer number through the customer api.</li>
+    <li>Set the service to be in test mode with the test indicator flag.</li>
+</ol>
+Each step is covered in detail in the following tutorial.</p>
+
 <h4>Authentication - API login with mybring</h4>
 
 <p>
@@ -586,13 +597,13 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
 
-                    <div data-tab="xml" class="tab api-call">
-                        <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
-                            Example Soap Body Request XML
-                        </a>
-                        <div class="box lightBorder">
-                        <pre class="code-box xml response delay-snippet"></pre>
-                    </div>
+        <div data-tab="xml" class="tab api-call">
+            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
+                Example Soap Body Request XML
+            </a>
+            <div class="box lightBorder">
+                <pre class="code-box xml response delay-snippet"></pre>
+            </div>
 
         </div>
 
@@ -622,8 +633,8 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
     <div class="box">
         <h2>Additonal Resources</h2>
         <ul>
-        <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
-        <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
+            <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
+            <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
         </ul>
         <h5>XML/JSON API</h5>
         <ul>
