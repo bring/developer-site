@@ -170,10 +170,6 @@
 
 <div>
     <p>
-        WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
-    </p>
-
-    <p>
         XSD: <a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">https://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
     </p>
 
@@ -189,19 +185,28 @@
 
 <p>
     To use the test mode, you need to set the testIndicator flag on the root node. </p>
-<h5>XML: Testindicator</h5>
-                                <pre class="code-box">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+
+<ul class="tab-group minimal" data-tabs="tabs">
+    <li class="active"><a href="#tab100">XML</a></li>
+    <li><a href="#tab200">JSON</a></li>
+</ul>
+
+<div class="tab-content tab-minimal">
+    <div class="tab-pane active" id="tab100"><pre class="code-box">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true"&gt;
     ...
 &lt;/bookingRequest&gt;
 </pre>
-<h5>JSON: Testindicator</h5>
-                                <pre class="code-box">{
+    </div>
+    <div class="tab-pane" id="tab200"><pre class="code-box">{
     "testIndicator": true,
     "schemaVersion": "1",
     ...
 }
 </pre>
+    </div>
+</div>
+
 <br/>
 
 <div>
@@ -247,7 +252,6 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: www.mybring.com
 </pre>
 
-
     <div class="box lightBorder">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab221">XML</a></li>
@@ -258,7 +262,8 @@ Host: www.mybring.com
             <div class="tab-pane active" id="tab221">
                 <div data-tab="xml" class="tab api-call">
                     <p>Request:</p>
-                    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
+                    <a target="_blank" class="request"
+                       href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml">
                         http://beta.bring.com/booking/api/bookingExamples/validRequest.xml </a>
                     <pre class="code-box xml response delay-snippet"></pre>
@@ -268,7 +273,8 @@ Host: www.mybring.com
             <div class="tab-pane" id="tab222">
                 <div data-tab="json" class="tab api-call">
                     <p>Request:</p>
-                    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
+                    <a target="_blank" class="request"
+                       href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/validRequest.json">
                         http://beta.bring.com/booking/api/bookingExamples/validRequest.json </a>
                     <pre class="code-box json response delay-snippet"></pre>
@@ -278,6 +284,7 @@ Host: www.mybring.com
     </div>
 
     <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
+
     <div class="box lightBorder">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab2221">XML</a></li>
@@ -287,9 +294,10 @@ Host: www.mybring.com
 
             <div class="tab-pane active" id="tab2221">
                 <div data-tab="xml" class="tab api-call">
-                    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
-                       data-internal="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml">
-                        Example response </a>
+                    <a target="_blank" class="request"
+                       href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
+                       data-internal="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"> Example
+                        response </a>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
@@ -297,7 +305,8 @@ Host: www.mybring.com
             <div class="tab-pane" id="tab2222">
                 <div data-tab="json" class="tab api-call">
                     <p>Request:</p>
-                    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
+                    <a target="_blank" class="request"
+                       href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json">
                         Example response </a>
                     <pre class="code-box json response delay-snippet"></pre>
@@ -306,8 +315,8 @@ Host: www.mybring.com
         </div>
     </div>
 
-
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
+
     <div class="box lightBorder">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab991">XML</a></li>
@@ -317,25 +326,25 @@ Host: www.mybring.com
 
             <div class="tab-pane active" id="tab991">
                 <div data-tab="xml" class="tab api-call">
-                    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
-                       data-internal="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml">
-                        Example response </a>
+                    <a target="_blank" class="request"
+                       href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
+                       data-internal="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"> Example
+                        response </a>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
 
             <div class="tab-pane" id="tab992">
                 <div data-tab="json" class="tab api-call">
-                    <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
-                       data-internal="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json">
-                        Example response </a>
+                    <a target="_blank" class="request"
+                       href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
+                       data-internal="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"> Example
+                        response </a>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
         </div>
     </div>
-
-
 
 </div>
 
@@ -438,24 +447,35 @@ Host: www.mybring.com
 
     <h5>How to set customer numbers in Booking API</h5>
 
-    <p>
-        "customerNumber" is value returned from the Customer number API. </p>
-    <b>XML</b>
-                <pre class="code-box">...
+    <p>"customerNumber" is value returned from the Customer number API. </p>
+
+    <ul class="tab-group minimal" data-tabs="tabs">
+        <li class="active"><a href="#tab10">XML</a></li>
+        <li><a href="#tab20">JSON</a></li>
+    </ul>
+
+    <div class="tab-content tab-minimal">
+        <div class="tab-pane active" id="tab10">
+            <pre class="code-box">...
 &lt;product&gt;
     &lt;id&gt;QUICKPACK_DAY_CERTAIN&lt;/id&gt;
     &lt;customerNumber&gt;EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66&lt;/customerNumber&gt;
 &lt;/product&gt;
 ...
 </pre>
-    <b>JSON</b>
-                <pre class="code-box">...
+        </div>
+        <div class="tab-pane" id="tab20">
+             <pre class="code-box">...
 "product": {
     "id": "BPAKKE_DOR-DOR",
     "customerNumber": "PARCELS_NORWAY-00001234567",
 }
 ...
 </pre>
+        </div>
+    </div>
+
+
     <h5>Customer API - Sample XML API Request</h5>
                 <pre class="code-box">GET /booking/api/customers HTTP/1.1
 Content-Type: application/xml
@@ -511,6 +531,10 @@ Host: www.mybring.com
     <h4>Technical information</h4><br/>
 
     <p>
+        WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
+    </p>
+
+    <p>
         XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
     </p>
 
@@ -564,8 +588,7 @@ Host: www.mybring.com
 
     <div>
         <p>
-            The SOAP Body follow the same XML Schema Definition (XSD) as the XML API.
-        </p>
+            The SOAP Body follow the same XML Schema Definition (XSD) as the XML API. </p>
 
         <h5>Example authentication header</h5>
 
@@ -583,13 +606,14 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
         <div class="box lightBorder">
 
-                    <div data-tab="xml" class="tab api-call">
-                        <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
-                            Example Soap Body Request XML
-                        </a>
+            <div data-tab="xml" class="tab api-call">
+                <a target="_blank" class="request"
+                   href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
+                   data-internal="/proxy/booking/api/bookingExamples/validRequest.xml"> Example Soap Body Request
+                    XML </a>
 
-                        <pre class="code-box xml response delay-snippet"></pre>
-                    </div>
+                <pre class="code-box xml response delay-snippet"></pre>
+            </div>
 
         </div>
 
