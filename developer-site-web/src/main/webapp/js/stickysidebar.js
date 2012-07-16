@@ -1,9 +1,6 @@
 /*--
     Sidebar
-
     --*/
-
-
 $(function(){
     var menudefault = $('#sidebar')[0].offsetTop;
 

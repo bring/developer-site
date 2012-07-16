@@ -1345,7 +1345,7 @@ ul.welcomelist {
 
 div.stickymenu {
   position: fixed;
-  top: 0;
+  top: 5px;
   width: 12.82%;
 }
 
