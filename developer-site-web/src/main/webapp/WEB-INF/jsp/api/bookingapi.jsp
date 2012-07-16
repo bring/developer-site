@@ -89,16 +89,19 @@
         </thead>
         <tbody>
         <tr>
-            <td><code>/&lt;postalcode&gt;.&lt;extension&gt;?country=&lt;country&gt;</code></td>
-            <td>Returns the location based on the postal code.<br/>
-                <li><code>&lt;postalcode&gt;</code> = A valid zip-code</li>
-                <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
-                <li><code>&lt;country&gt;</code> = The ISO 3166-1-alpha-2 country code.</li>
+            <td><a href="//beta.bring.com/booking/api/bookingExamples/validRequest.xml">../api/ws/booking-v1.wsdl</a></td>
+            <td>
+                This is an example of how an XML request may look like.
             </td>
         </tr>
         <tr>
-            <td><code>//Response/@valid</code></td>
-            <td>XPath for checking if the response is valid <br/>
+            <td><a href="//beta.bring.com/booking/api/bookingExamples/validRequest.json">../api/bookingExamples/validRequest.json</a></td>
+            <td>This is an example of how a JSON request may look like.
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">../api/ws/booking-v1.wsdl</a></td>
+            <td>The WSDL for the SOAP API.
             </td>
         </tr>
         </tbody>
@@ -581,13 +584,13 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 &lt;soapenv:Header/&gt;
 &lt;soapenv:Body&gt;
 </pre>
-        <div class="box lightBorder">
+
 
                     <div data-tab="xml" class="tab api-call">
                         <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
                             Example Soap Body Request XML
                         </a>
-
+                        <div class="box lightBorder">
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
 
@@ -603,9 +606,6 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </div>
 </div>
 
-<div class="box">
-    <h2><a name="additionalExamples"></a>Additional examples</h2>
-</div>
 </div>
 
 <div class="span3">
@@ -617,9 +617,24 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#reference">Reference</a></li>
             <li><a href="#HTU">How to Use</a></li>
-            <li><a href="#additionalExamples">Additional Examples</a></li>
         </ol>
-
+    </div>
+    <div class="box">
+        <h2>Additonal Resources</h2>
+        <ul>
+        <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
+        <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
+        </ul>
+        <h5>XML/JSON API</h5>
+        <ul>
+            <li><a href="https://www.mybring.com/booking/api/booking">Booking endpoint (use HTTP POST)</a></li>
+            <li><a href="https://www.mybring.com/booking/api/customers">Customer number endpoint (use HTTP GET)</a></li>
+        </ul>
+        <h5>SOAP API</h5>
+        <ul>
+            <li><a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL</a></li>
+            <li><a href="https://www.mybring.com/booking/api/ws">Endpoint</a></li>
+        </ul>
     </div>
 </div>
 </div>
