@@ -85,6 +85,10 @@
             <td>The WSDL for the SOAP API.
             </td>
         </tr>
+        <tr>
+            <td><a href="https://www.mybring.com/booking/api/booking">mybring.com/booking/api/booking</a></td>
+            <td>The endpoint for Booking and Customer.</td>
+        </tr>
         </tbody>
     </table>
 </div>
