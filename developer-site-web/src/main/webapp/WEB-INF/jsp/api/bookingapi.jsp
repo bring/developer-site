@@ -42,19 +42,8 @@
         Bring Booking uses <a href="../shipping-guide/apireference.html">Bring Fraktguide</a> as the source for price
         and availability for the different products. We advise clients of the Booking API to use Fraktguiden for getting
         the list price and checking availability before sending a booking request. </p>
-    <h4>Shipment Labels</h4>
-
-    <p>
-        The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF label
-        is returned in responses. This label must be printed and be attached to the shipment. A URL that points to
-        tracking information is also returned. </p>
-
-    <p>
-        A GET to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to
-        Amazon S3). Ensure that your client follows these redirects. </p>
 
     <h4>Billing and Payment</h4>
-
     <p>
         Note that invoice payment is the only available payment option for the Booking API. This means that the mybring
         user ID used in the booking request must have access to the customer number specified as payer of the
@@ -64,14 +53,6 @@
         The API is currently under development and will have multiple releases, each extending the available
         functionality and products. An early beta-version of the API is available now as of january 2012, this beta will
         lead to a final stable v1 of the API during Q1 2012. </p>
-    <h4>Versioning strategy</h4>
-
-    <p>
-        Each request has a schemaVersion element indicating which release of the schema is being used in the request and
-        expected schema format in the response. Important: All clients must accept new (unknown) elements in the
-        response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when
-        unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache
-        Axis 1.x Web Service client framework. </p>
 
 </div>
 
@@ -176,6 +157,16 @@
     <p>
         Endpoint: <a href="https://www.mybring.com/booking/api/ws">https://www.mybring.com/booking/api/ws</a>
     </p>
+
+    <h4>Versioning strategy</h4>
+
+    <p>
+        Each request has a schemaVersion element indicating which release of the schema is being used in the request and
+        expected schema format in the response. Important: All clients must accept new (unknown) elements in the
+        response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when
+        unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache
+        Axis 1.x Web Service client framework. </p>
+
 </div>
 <br/>
 <h4>Testing</h4>
@@ -346,10 +337,24 @@ Host: www.mybring.com
         </div>
     </div>
 
+
+    <div><h4>Shipment Labels</h4>
+
+        <p>
+            The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF
+            label is returned in responses. This label must be printed and be attached to the shipment. A URL that
+            points to tracking information is also returned. </p>
+
+        <p>
+            A GET to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to
+            Amazon S3). Ensure that your client follows these redirects. </p></div>
+
 </div>
 
 <div>
-    <h4>Error Handling</h4>
+    <br/>
+
+    <h3>Error Handling</h3>
 
     <p>
         If an error occurs, the following will be provided: </p>
@@ -407,14 +412,15 @@ Host: www.mybring.com
         </div>
     </div>
 </div>
-<br/>
 
 <div>
-    <h4>How to use the Customer API</h4>
+    <br/>
+
+    <h3>How to use the Customer API</h3>
 
     <p>
         You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user
-        using a web brower, or you can use the mybring API-key to be authenticated to use the service
+        using a web browser, or you can use the mybring API-key to be authenticated to use the service
         programmatically. </p>
 
     <p>
@@ -475,7 +481,6 @@ Host: www.mybring.com
         </div>
     </div>
 
-
     <h5>Customer API - Sample XML API Request</h5>
                 <pre class="code-box">GET /booking/api/customers HTTP/1.1
 Content-Type: application/xml
@@ -528,33 +533,17 @@ Host: www.mybring.com
 
 </div>
 <div class="tab-pane" id="tab2">
-    <h4>Technical information</h4><br/>
-
-    <p>
-        WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
-    </p>
-
-    <p>
-        XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
-    </p>
-
-    <p>
-        Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/booking">https://www.mybring.com/booking/api/booking</a>
-    </p>
-
-    <p>
-        Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
-    </p>
-
-    <br/><br/>
 
     <div>
         <h4>How to use the Customer API</h4>
 
         <p>
             You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user
-            using a web brower, or you can use the mybring API-key to be authenticated to use the service
+            using a web browser, or you can use the mybring API-key to be authenticated to use the service
             programmatically. </p>
+
+        <p>For the SOAP API, the Customer number API is included as an operation in the <a
+                href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p>
 
         <p>
             The customer numbers are prefixed with the specialist, and then the customer number. For Courier and Bring
@@ -585,6 +574,33 @@ Host: www.mybring.com
         </table>
 
     </div>
+
+    <h4>Technical information</h4>
+
+    <p>
+        WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
+    </p>
+
+    <p>
+        XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+    </p>
+
+    <p>
+        Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/booking">https://www.mybring.com/booking/api/booking</a>
+    </p>
+
+    <p>
+        Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
+    </p>
+
+    <h4>Versioning strategy</h4>
+
+    <p>
+        Each request has a schemaVersion element indicating which release of the schema is being used in the request and
+        expected schema format in the response. Important: All clients must accept new (unknown) elements in the
+        response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when
+        unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache
+        Axis 1.x Web Service client framework. </p>
 
     <div>
         <p>
@@ -622,6 +638,19 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
     </div>
+
+
+    <div><h4>Shipment Labels</h4>
+
+        <p>
+            The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF
+            label is returned in responses. This label must be printed and be attached to the shipment. A URL that
+            points to tracking information is also returned. </p>
+
+        <p>
+            A GET to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to
+            Amazon S3). Ensure that your client follows these redirects. </p></div>
+
 
 </div>
 </div>
