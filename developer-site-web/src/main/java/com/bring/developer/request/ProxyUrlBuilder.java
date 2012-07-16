@@ -13,7 +13,7 @@ public class ProxyUrlBuilder {
         setServices(new HashMap<String, String>());
     }
     
-    public String createUrl(String service, String path, Map<String, String> paramMap) {
+    public String createUrl(String service, String path, Map<String, String[]> paramMap) {
         if (!path.isEmpty()) {
             path = "/" + path;
         }
@@ -24,14 +24,18 @@ public class ProxyUrlBuilder {
         return getServices().get(service);
     }
 
-    public String paramsToQueryString(Map<String, String> paramMap) {
+    public String paramsToQueryString(Map<String, String[]> paramMap) {
         String queryString = "";
         String[] keys = paramMap.keySet().toArray(new String[0]);
         if (keys.length > 0) {
-            queryString += "?" + keys[0] + "=" + paramMap.get(keys[0]);
+            for(int j = 0; j < paramMap.get(keys[0]).length; j++){
+                queryString += "?" + keys[0] + "=" + paramMap.get(keys[0])[j];
+            }
         }
         for (int i = 1; i < keys.length; i++) {
-            queryString += "&" + keys[i] + "=" + paramMap.get(keys[i]);
+            for(int j = 0; j < paramMap.get(keys[i]).length; j++){
+                queryString += "&" + keys[i] + "=" + paramMap.get(keys[i])[j];
+            }
         }
         return queryString;
     }

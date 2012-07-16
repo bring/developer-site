@@ -38,7 +38,7 @@ public class ProxyDaoImpl extends ProxyDao {
         // Ignore invalid headers
     }
     
-    public ResponseEntity<byte[]> performRequest(String service, String requestPath, Map<String,String> requestParams) {
+    public ResponseEntity<byte[]> performRequest(String service, String requestPath, Map<String,String[]> requestParams) {
         HttpResponse response = performRequest(urlBuilder.createUrl(service, requestPath, requestParams));
         MultiValueMap<String, String> headers = translateHeaders(response.getAllHeaders());
         HttpStatus httpStatus = HttpStatus.valueOf(response.getStatusLine().getStatusCode());
