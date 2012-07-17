@@ -559,7 +559,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
         </ol>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
 
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
@@ -647,7 +647,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
             </p>
 
         </div>
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab51">XML</a></li>
@@ -751,7 +751,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab41">XML</a></li>
@@ -816,7 +816,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 <div><p>Specified using <code>weightInGrams=1500</code>.</p>
 
 </div>
-<div class="box lightBorder">
+<div class="lightBorder">
     <div class="row element-sample">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab71">XML</a></li>
@@ -900,7 +900,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <div><p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
 
 </div>
-<div class="box lightBorder">
+<div class="lightBorder">
     <div class="row element-sample">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab61">XML</a></li>
@@ -986,7 +986,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <div><p>Specified using <code>volume=33</code>.</p>
 
 </div>
-<div class="box lightBorder">
+<div class="lightBorder">
     <div class="row element-sample">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab81">XML</a></li>
@@ -1084,7 +1084,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab91">XML</a></li>
@@ -1179,7 +1179,7 @@ System.out.println("Price: " + price + " NOK");
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab111">XML</a></li>
@@ -1271,7 +1271,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab121">XML</a></li>
@@ -1364,7 +1364,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab131">XML</a></li>
@@ -1503,7 +1503,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p><b>Example:</b> <br/>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
                                     Over natten 09.</p>
 
-            <div class="box lightBorder">
+            <div class="lightBorder">
                 <div class="row element-sample">
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab991">XML</a></li>
