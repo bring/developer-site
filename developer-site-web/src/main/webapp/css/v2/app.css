@@ -531,6 +531,7 @@ a.btn {
   padding: 7px 20px 10px;
   font-size: 1.2em;
   vertical-align: middle;
+  border-radius: 5px;
   *zoom: 1;
 }
 
@@ -817,10 +818,6 @@ table.inverted tbody tr.even {
 .box.gray {
   color: #ffffff;
   background-color: #555555;
-}
-
-.box.lightBorder {
-  border: 1px solid #efeff0;
 }
 
 .box .push-top {
@@ -1347,6 +1344,11 @@ div.stickymenu {
   position: fixed;
   top: 5px;
   width: 12.82%;
+}
+
+.lightBorder {
+  padding: 10px;
+  border: 1px solid #efeff0;
 }
 
 div.information-box {
