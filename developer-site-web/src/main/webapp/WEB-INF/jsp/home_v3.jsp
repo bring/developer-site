@@ -23,28 +23,28 @@
                 <div class="row-fluid">
                     <div class="span7">
                         <div class="welcometext">
-                            <h2>Welcome to Bring Developer!</h2><br/>
+                            <h2 class="welcometext">Welcome to Bring Developer!</h2><br/>
 
-                            <p class="front-page-welcome-text">On this page you find information and tutorials for
-                                developers of web shops dealing with shipment in and from Scandinavian countries.With
-                                Bring APIs you can improve the service provided to your customers! </p><br/>
-
+                            <p class="front-page-welcome-text">Bring provides a collection of APIs to facilitate <span class="front-page-welcome-text-highlight">integration</span>
+                                with your systems. If you're running a <span class="front-page-welcome-text-highlight">webshop</span>, or any software dealing with shipments
+                                from Nordic countries, using our APIs can <span class="front-page-welcome-text-highlight">add value to your business and to your
+                                customers:</span> </p>
                             <ul class="welcomelist">
-                                <li>Allow alternative shipping methods with the <a href="/api/shippingguideapi.html">Shipping
-                                    Guide API</a>.
+                                <li>Let the customer choose between alternative shipping methods upon checkout with the <a
+                                        href="/api/shippingguideapi.html">Shipping Guide API</a>.
                                 </li>
                                 <li>Show your customers the current status of their shipment with the <a
                                         href="/api/trackingapi.html">Tracking API</a>.
                                 </li>
-                                <li>Find the price and availability for different products and book a request through
-                                    the logged-in service in the <a href="#">Booking API</a>.
+                                <li>Get price and availability for different products and book a shipment through the <a
+                                        href="#">Booking API</a>.
                                 </li>
                             </ul>
                             <br/>
 
-                            <p class="front-page-welcome-text">Need help? Through the <a
-                                    href="/support.html">Support</a> page you can get in touch with the API team and
-                                other developers.</p>
+
+                            <p class="front-page-welcome-text">Need help? Get in touch with the API team and other
+                                developers through the <a href="/support.html">Support</a> page.</p>
 
                         </div>
                     </div>
@@ -100,8 +100,9 @@
                                     <div class="api-menu-icons postalcodeicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="/api/postalcodeapi.html"> <span class="api-link black">Postal Code API</span> <span
-                                                class="black">Lookup and validate postal codes</span></a></div>
+                                        <a href="/api/postalcodeapi.html"> <span
+                                                class="api-link black">Postal Code API</span> <span class="black">Lookup and validate postal codes</span></a>
+                                    </div>
                                 </div>
 
                             </li>
@@ -110,16 +111,16 @@
                                     <div class="api-menu-icons bookingicon"></div>
 
                                     <div class="api-menu-text"></div>
-                                    <a href="/api/bookingapi.html"> <span class="api-link black">Booking API (BETA)</span> <span
-                                            class="black">Book shipments and generate PDF labels</span></a>
+                                    <a href="/api/bookingapi.html"> <span
+                                            class="api-link black">Booking API (BETA)</span> <span class="black">Book shipments and generate PDF labels</span></a>
                                 </div>
                             </li>
                             <li>
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons"></div>
                                     <div class="api-menu-text"></div>
-                                    <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/artikler/edi-electronic-data-interchange"> <span class="api-link black">EDI</span> <span
-                                            class="black">Communicate with brings services electronically</span></a>
+                                    <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/artikler/edi-electronic-data-interchange">
+                                        <span class="api-link black">EDI</span> <span class="black">Communicate with brings services electronically</span></a>
                                 </div>
                             </li>
                         </ul>
