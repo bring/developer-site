@@ -262,15 +262,14 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: www.mybring.com
 </pre>
 
-    <div class="box lightBorder">
+    <div class="lightBorder">
+        <div class="codetabs">
         <ul class="tab-group minimal" data-tabs="tabs">
-            <li class="active"><a href="#tab221">XML</a></li>
-            <li><a href="#tab222">JSON</a></li>
+            <li><a href="#xml">XML</a></li>
+            <li><a href="#json">JSON</a></li>
         </ul>
-        <div class="tab-content tab-minimal">
-
-            <div class="tab-pane active" id="tab221">
-                <div data-tab="xml" class="tab api-call">
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
@@ -280,8 +279,8 @@ Host: www.mybring.com
                 </div>
             </div>
 
-            <div class="tab-pane" id="tab222">
-                <div data-tab="json" class="tab api-call">
+            <div data-tab="json" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
@@ -295,15 +294,14 @@ Host: www.mybring.com
 
     <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
 
-    <div class="box lightBorder">
+    <div class="lightBorder">
+        <div class="codetabs">
         <ul class="tab-group minimal" data-tabs="tabs">
-            <li class="active"><a href="#tab2221">XML</a></li>
-            <li><a href="#tab2222">JSON</a></li>
+            <li><a href="#xml">XML</a></li>
+            <li><a href="#json">JSON</a></li>
         </ul>
-        <div class="tab-content tab-minimal">
-
-            <div class="tab-pane active" id="tab2221">
-                <div data-tab="xml" class="tab api-call">
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"> Example
@@ -312,8 +310,8 @@ Host: www.mybring.com
                 </div>
             </div>
 
-            <div class="tab-pane" id="tab2222">
-                <div data-tab="json" class="tab api-call">
+            <div data-tab="json" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
@@ -327,15 +325,14 @@ Host: www.mybring.com
 
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
-    <div class="box lightBorder">
+    <div class="lightBorder">
+        <div class="codetabs">
         <ul class="tab-group minimal" data-tabs="tabs">
-            <li class="active"><a href="#tab991">XML</a></li>
-            <li><a href="#tab992">JSON</a></li>
+            <li><a href="#xml">XML</a></li>
+            <li><a href="#json">JSON</a></li>
         </ul>
-        <div class="tab-content tab-minimal">
-
-            <div class="tab-pane active" id="tab991">
-                <div data-tab="xml" class="tab api-call">
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"> Example
@@ -344,8 +341,8 @@ Host: www.mybring.com
                 </div>
             </div>
 
-            <div class="tab-pane" id="tab992">
-                <div data-tab="json" class="tab api-call">
+            <div data-tab="json" class="tab">
+                <div class="api-call">
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"> Example
@@ -402,15 +399,14 @@ Host: www.mybring.com
         means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT"
         if the error is for the recipient party data. </p>
 
-    <div class="box lightBorder">
+    <div class="lightBorder">
+        <div class="codetabs">
         <ul class="tab-group minimal" data-tabs="tabs">
-            <li class="active"><a href="#tab11">XML</a></li>
-            <li><a href="#tab12">JSON</a></li>
+            <li><a href="#xml">XML</a></li>
+            <li><a href="#json">JSON</a></li>
         </ul>
-        <div class="tab-content tab-minimal">
-
-            <div class="tab-pane active" id="tab11">
-                <div data-tab="xml" class="tab api-call">
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.xml"
                        data-internal="http://beta.bring.com/booking/api/errors.xml">
@@ -419,8 +415,8 @@ Host: www.mybring.com
                 </div>
             </div>
 
-            <div class="tab-pane" id="tab12">
-                <div data-tab="json" class="tab api-call">
+            <div data-tab="json" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.json"
                        data-internal="http://beta.bring.com/booking/api/errors.json">
@@ -518,15 +514,14 @@ Host: www.mybring.com
 </pre>
     <h5>Example:</h5>
 
-    <div class="box lightBorder">
+    <div class="lightBorder">
+        <div class="codetabs">
         <ul class="tab-group minimal" data-tabs="tabs">
-            <li class="active"><a href="#tab21">XML</a></li>
-            <li><a href="#tab22">JSON</a></li>
+            <li><a href="#xml">XML</a></li>
+            <li><a href="#json">JSON</a></li>
         </ul>
-        <div class="tab-content tab-minimal">
-
-            <div class="tab-pane active" id="tab21">
-                <div data-tab="xml" class="tab api-call">
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/customers.xml"
@@ -536,8 +531,8 @@ Host: www.mybring.com
                 </div>
             </div>
 
-            <div class="tab-pane" id="tab22">
-                <div data-tab="json" class="tab api-call">
+            <div data-tab="json" class="tab">
+                <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/customers.json"

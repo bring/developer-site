@@ -819,6 +819,10 @@ table.inverted tbody tr.even {
   background-color: #555555;
 }
 
+.box.lightBorder {
+  border: 1px solid #efeff0;
+}
+
 .box .push-top {
   margin-top: 10px;
 }
@@ -1190,10 +1194,6 @@ pre.code-box {
           box-shadow: none;
 }
 
-.tab-group.minimal li.active > a {
-  color: #7BC144;
-}
-
 .tab-group.minimal li a:hover {
   color: #7bc144;
 }
@@ -1343,11 +1343,6 @@ div.stickymenu {
   position: fixed;
   top: 5px;
   width: 12.82%;
-}
-
-.lightBorder {
-  padding: 10px;
-  border: 1px solid #efeff0;
 }
 
 div.information-box {

@@ -89,16 +89,15 @@
 
         <h4><p>Example: Using the postal code and the country code to lookup the location.</p></h4>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
+            <div class="codetabs">
             <ul class="tab-group minimal" data-tabs="tabs">
-                <li class="active"><a href="#tab1-4">XML</a></li>
-                <li><a href="#tab2-4">JSON</a></li>
-                <li><a href="#tab3-4">HTML</a></li>
+                <li><a href="#xml">XML</a></li>
+                <li><a href="#json">JSON</a></li>
+                <li><a href="#html">HTML</a></li>
             </ul>
-            <div class="tab-content tab-minimal">
-
-                <div class="tab-pane active" id="tab1-4">
-                    <div data-tab="xml" class="tab api-call">
+                <div data-tab="xml" class="tab">
+                    <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337"
@@ -109,8 +108,8 @@
                     </div>
                 </div>
 
-                <div class="tab-pane" id="tab2-4">
-                    <div data-tab="json" class="tab api-call">
+                <div data-tab="json" class="tab">
+                    <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337"
@@ -122,8 +121,8 @@
                     </div>
                 </div>
 
-                <div class="tab-pane" id="tab3-4">
-                    <div data-tab="html" class="tab api-call">
+                <div data-tab="html" class="tab">
+                    <div class="api-call">
                         <p>The HTML API will return a <code>span</code> element with
                             <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
                            and the <code>class</code> either
@@ -158,16 +157,15 @@
                            The integration APIs (json and xml) will have separate elements containing the list of cities,
                            while the html response will only contain the blank element.</p>
 
-                        <div class="box lightBorder">
+                        <div class="lightBorder">
+                            <div class="codetabs">
                             <ul class="tab-group minimal" data-tabs="tabs">
-                                <li class="active"><a href="#tab1">XML</a></li>
-                                <li><a href="#tab2">JSON</a></li>
-                                <li><a href="#tab3">HTML</a></li>
+                                <li><a href="#xml">XML</a></li>
+                                <li><a href="#json">JSON</a></li>
+                                <li><a href="#html">HTML</a></li>
                             </ul>
-                            <div class="tab-content tab-minimal">
-
-                                <div class="tab-pane active" id="tab1">
-                                    <div data-tab="xml" class="tab api-call">
+                                <div data-tab="xml" class="tab">
+                                    <div class="api-call">
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=DE&amp;pnr=99869"
@@ -178,8 +176,8 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane" id="tab2">
-                                    <div data-tab="json" class="tab api-call">
+                                <div data-tab="json" class="tab">
+                                    <div class="api-call">
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869"
@@ -191,8 +189,8 @@
                                     </div>
                                 </div>
 
-                                <div class="tab-pane" id="tab3">
-                                    <div data-tab="html" class="tab api-call">
+                                <div data-tab="html" class="tab">
+                                    <div class="api-call">
                                         <p>The HTML API will return a <code>span</code> element with
                                             <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
                                            and the <code>class</code> either
