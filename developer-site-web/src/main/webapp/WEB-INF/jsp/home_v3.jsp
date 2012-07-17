@@ -118,7 +118,7 @@
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons"></div>
                                     <div class="api-menu-text"></div>
-                                    <a href="#"> <span class="api-link black">EDI</span> <span
+                                    <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/artikler/edi-electronic-data-interchange"> <span class="api-link black">EDI</span> <span
                                             class="black">Communicate with brings services electronically</span></a>
                                 </div>
                             </li>
