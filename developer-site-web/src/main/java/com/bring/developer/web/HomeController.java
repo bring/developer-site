@@ -43,8 +43,18 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/additionalresources/priceadjustments.html")
-    public String priceadjustments() {
+     public String priceadjustments() {
         return "/additionalresources/priceadjustments";
+    }
+
+    @RequestMapping(value = "/additionalresources/javaapi.html")
+    public String javaapi() {
+        return "/additionalresources/javaapi";
+    }
+
+    @RequestMapping(value = "/additionalresources/phpapi.html")
+    public String phpapi() {
+        return "/additionalresources/phpapi";
     }
 
     @RequestMapping(value = "/additionalresources/offlinedata.html")
