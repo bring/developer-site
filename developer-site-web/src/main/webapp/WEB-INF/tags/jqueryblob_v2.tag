@@ -2,10 +2,6 @@
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="developer" uri="http://developer.bring.com"%>
 
-<script type="text/javascript">
-    var YWATrackerId = "<developer:trackerId/>";
-</script>
-
 <script type="text/javascript" src="/js/lib/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.actual.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.outerclick.js"></script>
@@ -22,7 +18,6 @@
 <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
 <script type="text/javascript" src="/js/codetabs.js"></script>
 <script type="text/javascript" src="/js/banner.js"></script>
-<script type="text/javascript" src="/js/statistics.js"></script>
 <script type="text/javascript" src="/js/init_v2.js"></script>
 <script type="text/javascript" src="/js/exampleRequest.js"></script>
 

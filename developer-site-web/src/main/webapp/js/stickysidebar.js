@@ -5,6 +5,7 @@ $(function () {
 //    If this page has a sidebar
     if($('#sidebar').length != 0) {
         var menudefault = $('#sidebar')[0].offsetTop;
+        alert(menudefault);
 
         $(document).bind('ready scroll', function () {
             var scroll = $(document).scrollTop();
