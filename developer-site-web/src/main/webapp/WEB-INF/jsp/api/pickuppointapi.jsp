@@ -314,9 +314,9 @@
 
 
         <div class="row element-sample">
-            <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &amp;quot;KIWI&amp;quot;.</p>
+            <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p>
             </h4>
-            <div class="box lightBorder">
+            <div class="lightBorder">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab1-3">XML</a></li>
                     <li><a href="#tab2-3">JSON</a></li>
@@ -372,8 +372,7 @@
 
             <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</p></h4>
 
-
-            <div class="box lightBorder">
+            <div class="lightBorder">
                 <div class="codetabs">
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#xml">XML</a></li>
@@ -420,7 +419,7 @@
 
             <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</p></h4>
 
-            <div class="box lightBorder">
+            <div class="lightBorder">
                 <div class="codetabs">
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#xml">XML</a></li>
@@ -436,6 +435,7 @@
                                 </a>
                                 <pre class="code-box xml response delay-snippet"></pre>
                             </div>
+
                         </div>
 
                         <div data-tab="json" class="tab">
@@ -463,7 +463,7 @@
             <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</p></h4>
 
 
-            <div class="box lightBorder"> <ul class="tab-group minimal" data-tabs="tabs">
+            <div class="lightBorder"> <ul class="tab-group minimal" data-tabs="tabs">
                 <li class="active"><a href="#tab1-6">XML</a></li>
                 <li><a href="#tab2-6">JSON</a></li>
             </ul>

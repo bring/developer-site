@@ -538,7 +538,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
     <a href="#" class="menu-item">
         <h4>Multiple parcels in one query</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box">
 
         <div>
             <p>It is also possible to combine weight, volume and dimensions for multiple parcels. Multiple parcels are
@@ -559,7 +559,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
         </ol>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
 
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
@@ -640,14 +640,14 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
 <li>
     <a href="#" class="menu-item"><h4>International shipments</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box">
         <div><p>Specified using <code>fromCountry=NO&amp;toCountry=DK</code>.</p>
 
             <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a>
             </p>
 
         </div>
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab51">XML</a></li>
@@ -732,7 +732,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 <li>
     <a href="#" class="menu-item"><h4>International shipments to countries without postal codes</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box">
 
         <div><p>In the example below, a parcel is sent from Norway to Dublin, Ireland. <br/><br/>The parameters are:</p>
             <ul>
@@ -751,7 +751,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab41">XML</a></li>
@@ -810,13 +810,13 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 <li>
 <a href="#" class="menu-item"><h4>Three ways to specify a package size</h4></a>
 
-<div class="content-box" style="display: none;">
+<div class="content-box">
 
 <div><h4>Weight in grams</h4></div>
 <div><p>Specified using <code>weightInGrams=1500</code>.</p>
 
 </div>
-<div class="box lightBorder">
+<div class="lightBorder">
     <div class="row element-sample">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab71">XML</a></li>
@@ -900,7 +900,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <div><p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
 
 </div>
-<div class="box lightBorder">
+<div class="lightBorder">
     <div class="row element-sample">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab61">XML</a></li>
@@ -986,7 +986,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <div><p>Specified using <code>volume=33</code>.</p>
 
 </div>
-<div class="box lightBorder">
+<div class="lightBorder">
     <div class="row element-sample">
         <ul class="tab-group minimal" data-tabs="tabs">
             <li class="active"><a href="#tab81">XML</a></li>
@@ -1072,7 +1072,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <li>
     <a href="#" class="menu-item"><h4>Get the expected delivery date</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box" >
 
         <div>
             <p>Specifies the date the package is delivered to Bring. The parameter is used to calculate the
@@ -1084,7 +1084,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab91">XML</a></li>
@@ -1168,7 +1168,7 @@ System.out.println("Price: " + price + " NOK");
 <li>
     <a href="#" class="menu-item"><h4>Specify the pickup time from the departure point</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box" >
 
         <div>
             <p>Use this paramter if you would like to specify when during the day the package needs
@@ -1179,7 +1179,7 @@ System.out.println("Price: " + price + " NOK");
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab111">XML</a></li>
@@ -1261,7 +1261,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <li>
     <a href="#" class="menu-item"><h4>Specify whether or not the shipment has been pre-registered (EDI)</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box" >
 
         <div>
             <p>Specify whether or not the shipment has been pre-registered (EDI).</p>
@@ -1271,7 +1271,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab121">XML</a></li>
@@ -1353,7 +1353,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <li>
     <a href="#" class="menu-item"><h4>Specify if the package was shipped from a post office</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box">
 
         <div>
             <p>The response data may vary depending on whether or not Bring must collect the
@@ -1364,7 +1364,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         </div>
         <br/>
 
-        <div class="box lightBorder">
+        <div class="lightBorder">
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li class="active"><a href="#tab131">XML</a></li>
@@ -1447,7 +1447,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <li>
     <a href="#" class="menu-item"><h4>Adjust prices</h4></a>
 
-    <div class="content-box" style="display: none;">
+    <div class="content-box">
         <div class="row element-sample">
 
             <p>The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in
@@ -1503,7 +1503,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p><b>Example:</b> <br/>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
                                     Over natten 09.</p>
 
-            <div class="box lightBorder">
+            <div class="lightBorder">
                 <div class="row element-sample">
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li class="active"><a href="#tab991">XML</a></li>
