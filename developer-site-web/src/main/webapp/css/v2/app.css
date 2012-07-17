@@ -531,7 +531,6 @@ a.btn {
   padding: 7px 20px 10px;
   font-size: 1.2em;
   vertical-align: middle;
-  border-radius: 5px;
   *zoom: 1;
 }
 
@@ -1193,6 +1192,10 @@ pre.code-box {
   -webkit-box-shadow: none;
      -moz-box-shadow: none;
           box-shadow: none;
+}
+
+.tab-group.minimal a.active {
+  color: #7BC144;
 }
 
 .tab-group.minimal li a:hover {
