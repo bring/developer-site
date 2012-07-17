@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     // Show the correct tab on init
     $(".codetabs").codetabs({
-        cookies : true,
+        cookies : false,
         defaultTab : "xml"
     });
 

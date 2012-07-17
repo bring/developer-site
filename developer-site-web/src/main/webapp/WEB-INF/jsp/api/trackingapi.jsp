@@ -84,8 +84,8 @@
 
             <div class="row element-sample">
                 <ul class="tab-group minimal" data-tabs="tabs">
-                    <li class="active"><a href="#tab1">XML</a></li>
-                    <li><a href="#tab2">JSON</a></li>
+                    <li class="active"><a href="#xml">XML</a></li>
+                    <li><a href="#json">JSON</a></li>
                 </ul>
                 <div class="tab-content tab-minimal">
                     <div class="tab-pane active" id="tab1">
@@ -113,9 +113,6 @@
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
 
