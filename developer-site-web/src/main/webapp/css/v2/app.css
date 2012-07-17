@@ -531,6 +531,7 @@ a.btn {
   padding: 7px 20px 10px;
   font-size: 1.2em;
   vertical-align: middle;
+  border-radius: 5px;
   *zoom: 1;
 }
 
