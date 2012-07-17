@@ -1191,9 +1191,13 @@ pre.code-box {
           box-shadow: none;
 }
 
-.tab-group.minimal a.active {
+.tab-group.minimal li.active > a {
   color: #7BC144;
 }
+
+/*.tab-group.minimal a.active {
+    color: #7BC144;
+}*/
 
 .tab-group.minimal li a:hover {
   color: #7bc144;
