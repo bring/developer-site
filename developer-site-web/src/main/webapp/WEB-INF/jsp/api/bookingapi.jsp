@@ -100,7 +100,7 @@
     <li>Authorization. Get your customer number through the customer api.</li>
     <li>Choose which integration method you would like to use, and read the tutorial.</li>
 </ol>
-Each step is covered in detail in the following tutorial.</p>
+Each step is covered in detail below.</p>
 </br>
 
 <ol>
@@ -157,7 +157,6 @@ Each step is covered in detail in the following tutorial.</p>
 </li>
 
 <br>
-<hr>
     </br>
 <li><p>You can now choose whether you want to see the tutorial for the XML/JSON API or the SOAP API.</p></li>
 </ol>
@@ -249,7 +248,7 @@ Each step is covered in detail in the following tutorial.</p>
 <br/>
 
 <div>
-    <h4>Example</h4>
+    <h4>Examples</h4>
 
     <p>
         All requests for the API must include the content type and authentication headers documented in the API docs.
@@ -305,6 +304,7 @@ Host: www.mybring.com
         </ul>
             <div data-tab="xml" class="tab">
                 <div class="api-call">
+                    <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
                        data-internal="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"> Example
@@ -555,8 +555,6 @@ Host: www.mybring.com
 <div class="tab-pane" id="tab2">
 
     <div>
-
-
         <h4>Technical information</h4>
 
         <p>

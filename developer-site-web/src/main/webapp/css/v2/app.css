@@ -1032,6 +1032,8 @@ div.box > p {
 }
 
 p.front-page-welcome-text {
+  margin-top: 30px;
+  margin-bottom: 20px;
   font-size: 17px;
 }
 
@@ -1337,10 +1339,12 @@ span.api-link {
 }
 
 div.welcometext {
-  padding: 10px 0 0px 38px;
+  padding: 10px 0 30px 38px;
+  font-size: 30px;
 }
 
 ul.welcomelist {
+  margin-top: 5px;
   font-size: 17px;
 }
 

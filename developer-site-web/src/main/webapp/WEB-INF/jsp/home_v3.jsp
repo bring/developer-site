@@ -23,11 +23,11 @@
                 <div class="row-fluid">
                     <div class="span7">
                         <div class="welcometext">
-                            <h2 class="welcometext">Welcome to Bring Developer!</h2><br/>
+                            <h2 class="welcometext">Welcome to Bring Developer!</h2>
 
                             <p class="front-page-welcome-text">Bring provides a collection of APIs to facilitate <span class="front-page-welcome-text-highlight">integration</span>
                                 with your systems. If you're running a <span class="front-page-welcome-text-highlight">webshop</span>, or any software dealing with shipments
-                                from Nordic countries, using our APIs can <span class="front-page-welcome-text-highlight">add value to your business and to your
+                                from Nordic countries, using Bring's APIs can <span class="front-page-welcome-text-highlight">add value to your business and to your
                                 customers:</span> </p>
                             <ul class="welcomelist">
                                 <li>Let the customer choose between alternative shipping methods upon checkout with the <a
@@ -40,9 +40,6 @@
                                         href="#">Booking API</a>.
                                 </li>
                             </ul>
-                            <br/>
-
-
                             <p class="front-page-welcome-text">Need help? Get in touch with the API team and other
                                 developers through the <a href="/support.html">Support</a> page.</p>
 

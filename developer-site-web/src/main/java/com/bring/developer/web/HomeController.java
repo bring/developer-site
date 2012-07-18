@@ -17,12 +17,12 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/index.html")
+    @RequestMapping(value = "/index_old.html")
     public String index() {
         return "home";
     }
 
-    @RequestMapping(value = "/index_new.html")
+    @RequestMapping(value = "/index.html")
     public String index2() {
         return "home_v3";
     }
