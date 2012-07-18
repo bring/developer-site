@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
@@ -32,21 +33,22 @@
     <h2><a name="introduction"></a>Introduction</h2>
 
     <p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price
-       information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
-       With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
-       their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
-       evening. The customers may also choose different shipping methods based on how fast and when they want their
-       products delivered. <br/><br/>The shipping guide calculates the delivery time and the price based on postal code.
-       Which of the different shipping alternatives you want to offer and display in your web shop is up to you.. </p>
+        information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
+        With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
+        their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
+        evening. The customers may also choose different shipping methods based on how fast and when they want their
+        products delivered. <br/><br/>The shipping guide calculates the delivery time and the price based on postal
+        code. Which of the different shipping alternatives you want to offer and display in your web shop is up to you..
+    </p>
 
     <p>
         <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
         (Norwegian)</p>
 
     <p>All Shipping Guide services are basically the same service, but there are different methods of integration
-       available: XML, JSON and Web Service<sup>1</sup>. Choose the option that fits your need best. Web Services is the
-       core service with all functionality. There are some limitations in the XML/JSON API, such as the inability to
-       mark a parcel as a specialized goods. </p>
+        available: XML, JSON and Web Service<sup>1</sup>. Choose the option that fits your need best. Web Services is
+        the core service with all functionality. There are some limitations in the XML/JSON API, such as the inability
+        to mark a parcel as a specialized goods. </p>
 
     <table>
         <thead>
@@ -197,9 +199,8 @@
             <td>
                 Public ID is the last part (after the last dash) of your <a target="_blank"
                                                                             href="http://fraktguide.bring.no/fraktguide/innlogget/identifikatorstreng.do">identification
-                                                                                                                                                          string</a>
-                (logged in information for user of Shipping Guide) Specified by adding the parameter "pid", e.g.
-                pid=abc123456789. This makes the Shipping Guide know who performs the query, so we may contact the
+                string</a> (logged in information for user of Shipping Guide) Specified by adding the parameter "pid",
+                e.g. pid=abc123456789. This makes the Shipping Guide know who performs the query, so we may contact the
                 correct shipping guide user for potential follow ups.
             </td>
         </tr>
@@ -214,7 +215,7 @@
 <h2><a name="HTU"></a>How to Use</h2>
 
 <p>First you have to decide which integration method you want to use for the available data. The Introduction contains a
-   comparison of the alternatives, to help you decide.</p>
+    comparison of the alternatives, to help you decide.</p>
 
 <ul class="tab-group minimal" data-tabs="tabs">
     <li class="active"><a href="#tab1">XML</a></li>
@@ -231,26 +232,26 @@
         information: </p>
     <ul>
         <li><b>Response type:</b> What do you want in your response? Just the price of the shipment, just an estimated
-                                  delivery time or all available information? By querying <a
+            delivery time or all available information? By querying <a
                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>price.xml</code></a> you will only get the price of the shipment, while <a
                     href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>expectedDelivery.xml</code></a> will only show you an estimated delivery time.
-                                  By querying <a
+            By querying <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>all.xml</code></a> you will not only get the price and the expected delivery
-                                  time, but some additional information such as an indication of which alternative has
-                                  the least environmental impact.
+            time, but some additional information such as an indication of which alternative has the least environmental
+            impact.
         </li>
         <li><b>Origin and destination:</b>What is the origin and destination of the shipment? For domestic shipments in
-                                          Norway postal codes are sufficient, but for international shipments country
-                                          codes must be specified, as well as postal codes (or city for countries that
-                                          are not using postal codes). To specify a postal code such as "0361" add <a
+            Norway postal codes are sufficient, but for international shipments country codes must be specified, as well
+            as postal codes (or city for countries that are not using postal codes). To specify a postal code such as
+            "0361" add <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&amp;to=0361&amp;weightInGrams=1500"
                     target="_blank"><code>&amp;to=0361</code></a> or <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&amp;to=0361&amp;weightInGrams=1500"
                     target="_blank"><code>from=0361</code></a> to your request. For international shipments use country
-                                          codes (such as DK for Denmark) and add <a
+            codes (such as DK for Denmark) and add <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=0361&amp;to=2100&amp;weightInGrams=1500&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
                     target="_blank"><code>&amp;toCountry=DK</code></a> or <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=2100&amp;to=0361&amp;weightInGrams=1500&amp;fromCountry=DK&amp;product=CARRYON_HOMESHOPPING_DENMARK"
@@ -258,8 +259,8 @@
         </li>
         <li>
             <b>Package size:</b> How big is the package? This can either be weight of the package in grams, its
-                                 dimensions or volume. A weight of 1500 grams can be specified by <a target="_blank"
-                                                                                                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"><code>
+            dimensions or volume. A weight of 1500 grams can be specified by <a target="_blank"
+                                                                                href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"><code>
             &amp;weightInGrams=1500</code></a>, dimensions of 30cm x 40cm x 40cm as <a target="_blank"
                                                                                        href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
             <code>&amp;length=30&amp;width=40&amp;height=40</code></a> or volume of 33dm<sup>3</sup> as <a
@@ -270,19 +271,16 @@
     </ul>
 
     <div class="information-box"> Please add the name of the web-shop to the HTTP header "User-Agent" on each request to
-                                  the service. If available, the name of the web-shop owner should also be added to the
-                                  request. If you have a registered user at fraktguide.bring.no, please also include XML
-                                  API's Public ID parameter in the query. Public ID is your personal Shipping Guide
-                                  account id. It is a sequence of alphanumeric characters after the last dash in your
-                                  identification. (Please login to see your identification string). If your Shipping
-                                  Guide IE is: 372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b> your pid is
-        <b>460cb92b0767</b>. This makes it possible for us to send any relevant messages via the registered e-mail
-                                  address.
+        the service. If available, the name of the web-shop owner should also be added to the request. If you have a
+        registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query. Public
+        ID is your personal Shipping Guide account id. It is a sequence of alphanumeric characters after the last dash
+        in your identification. (Please login to see your identification string). If your Shipping Guide IE is:
+        372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b> your pid is <b>460cb92b0767</b>. This makes it possible for us to
+        send any relevant messages via the registered e-mail address.
     </div>
 
     <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
-                            package with <code>weightInGrams=1500</code>, <code>from=7600</code> and
-        <code>to=1407</code>.
+        package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
     <div class="box lightBorder">
         <div data-tab="xml" class="tab api-call">
@@ -296,24 +294,20 @@
     </div>
 
     <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information on
-       elements in the response.</p>
+        elements in the response.</p>
 
     <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web
-                                 shop's users should still be able to order, even if the Shipping Guide returns an error
-                                 or a timeout occurs. <a href="../additionalresources/errorhandling.html">Read more
-                                                                                                          about error
-                                                                                                          handling and
-                                                                                                          error
-                                                                                                          codes.</a>
+        shop's users should still be able to order, even if the Shipping Guide returns an error or a timeout occurs. <a
+                href="../additionalresources/errorhandling.html">Read more about error handling and error codes.</a>
     </div>
 
     <br/>
     <h4>Products</h4>
 
     <p>One parameter that can be quite useful is <code>&amp;product</code>. This parameter lets you specify which
-       product you want to return information about. Strictly speaking this is an optional parameter, but in some
-       situations you will need to specify a product to get a sensible response. For instance if you make a query for an
-       international shipment, you will have to specify a product that supports this. Use the <a
+        product you want to return information about. Strictly speaking this is an optional parameter, but in some
+        situations you will need to specify a product to get a sensible response. For instance if you make a query for
+        an international shipment, you will have to specify a product that supports this. Use the <a
                 href="/additionalresources/productlist.html"> the product list</a> to find suitable products. </p>
 
     <p>
@@ -331,7 +325,7 @@
     </div>
 
     <div class="information-box">Shipping Guide specifies VAT related to senders country. It's up to the client to
-                                 decide if VAT is applicable to their situation of sale
+        decide if VAT is applicable to their situation of sale
     </div>
 
     <br/>
@@ -352,16 +346,14 @@
                 <pre><a target="_blank" class="request"
                         href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarslingadditional=lordagsutkjoring"
                         data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">…/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
-                                                                                                                                                                                                                                     &amp;additional=postoppkrav
-                                                                                                                                                                                                                                     &amp;additional=evarsling
-                                                                                                                                                                                                                                     &amp;additional=lordagsutkjoring</a></pre>
+                    &amp;additional=postoppkrav &amp;additional=evarsling &amp;additional=lordagsutkjoring</a></pre>
 
             <pre class="code-box xml response delay-snippet">Running request...</pre>
         </div>
     </div>
 
     <p>The Shipping Guide API has a lot of optional parameters not covered in this tutorial, and we recommend that you
-       get familiar with the reference table and look at all the additional examples for further study.</p>
+        get familiar with the reference table and look at all the additional examples for further study.</p>
 
 </div>
 
@@ -371,26 +363,26 @@
         information: </p>
     <ul>
         <li><b>Response type:</b> What do you want in your response? Just the price of the shipment, just an estimated
-                                  delivery time or all available information? By querying <a
+            delivery time or all available information? By querying <a
                     href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>price.json</code></a> you will only get the price of the shipment, while <a
                     href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>expectedDelivery.json</code></a> will only show you an estimated delivery
-                                  time. By querying <a
+            time. By querying <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                     target="_blank"><code>all.json</code></a> you will not only get the price and the expected delivery
-                                  time, but some additional information such as an indication of which alternative has
-                                  the least environmental impact.
+            time, but some additional information such as an indication of which alternative has the least environmental
+            impact.
         </li>
         <li><b>Origin and destination:</b>What is the origin and destination of the shipment? For domestic shipments in
-                                          Norway postal codes are sufficient, but for international shipments country
-                                          codes must be specified, as well as postal codes (or city for countries that
-                                          are not using postal codes). To specify a postal code such as "0361" add <a
+            Norway postal codes are sufficient, but for international shipments country codes must be specified, as well
+            as postal codes (or city for countries that are not using postal codes). To specify a postal code such as
+            "0361" add <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&amp;to=0361&amp;weightInGrams=1500"
                     target="_blank"><code>&amp;to=0361</code></a> or <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&amp;to=0361&amp;weightInGrams=1500"
                     target="_blank"><code>from=0361</code></a> to your request. For international shipments use country
-                                          codes (such as DK for Denmark) and add <a
+            codes (such as DK for Denmark) and add <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.json?from=0361&amp;to=2100&amp;weightInGrams=1500&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
                     target="_blank"><code>&amp;toCountry=DK</code></a> or <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.json?from=2100&amp;to=0361&amp;weightInGrams=1500&amp;fromCountry=DK&amp;product=CARRYON_HOMESHOPPING_DENMARK"
@@ -398,8 +390,8 @@
         </li>
         <li>
             <b>Package size:</b> How big is the package? This can either be weight of the package in grams, its
-                                 dimensions or volume. A weight of 1500 grams can be specified by <a target="_blank"
-                                                                                                     href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"><code>
+            dimensions or volume. A weight of 1500 grams can be specified by <a target="_blank"
+                                                                                href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"><code>
             &amp;weightInGrams=1500</code></a>, dimensions of 30cm x 40cm x 40cm as <a target="_blank"
                                                                                        href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
             <code>&amp;length=30&amp;width=40&amp;height=40</code></a> or volume of 33dm<sup>3</sup> as <a
@@ -410,19 +402,16 @@
     </ul>
 
     <div class="information-box"> Please add the name of the web-shop to the HTTP header "User-Agent" on each request to
-                                  the service. If available, the name of the web-shop owner should also be added to the
-                                  request. If you have a registered user at fraktguide.bring.no, please also include XML
-                                  API's Public ID parameter in the query. Public ID is your personal Shipping Guide
-                                  account id. It is a sequence of alphanumeric characters after the last dash in your
-                                  identification. (Please login to see your identification string). If your Shipping
-                                  Guide IE is: 372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b> your pid is
-        <b>460cb92b0767</b>. This makes it possible for us to send any relevant messages via the registered e-mail
-                                  address.
+        the service. If available, the name of the web-shop owner should also be added to the request. If you have a
+        registered user at fraktguide.bring.no, please also include XML API's Public ID parameter in the query. Public
+        ID is your personal Shipping Guide account id. It is a sequence of alphanumeric characters after the last dash
+        in your identification. (Please login to see your identification string). If your Shipping Guide IE is:
+        372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b> your pid is <b>460cb92b0767</b>. This makes it possible for us to
+        send any relevant messages via the registered e-mail address.
     </div>
 
     <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
-                            package with <code>weightInGrams=1500</code>, <code>from=7600</code> and
-        <code>to=1407</code>.
+        package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
     <div class="box lightBorder">
         <div data-tab="json" class="tab api-call">
@@ -436,24 +425,20 @@
     </div>
 
     <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information on
-       elements in the response.</p>
+        elements in the response.</p>
 
     <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web
-                                 shop's users should still be able to order, even if the Shipping Guide returns an error
-                                 or a timeout occurs. <a href="../additionalresources/errorhandling.html">Read more
-                                                                                                          about error
-                                                                                                          handling and
-                                                                                                          error
-                                                                                                          codes.</a>
+        shop's users should still be able to order, even if the Shipping Guide returns an error or a timeout occurs. <a
+                href="../additionalresources/errorhandling.html">Read more about error handling and error codes.</a>
     </div>
 
     <br/>
     <h4>Products</h4>
 
     <p>One parameter that can be quite useful is <code>&amp;product</code>. This parameter lets you specify which
-       product you want to return information about. Strictly speaking this is an optional parameter, but in some
-       situations you will need to specify a product to get a sensible response. For instance if you make a query for an
-       international shipment, you will have to specify a product that supports this. Use the <a
+        product you want to return information about. Strictly speaking this is an optional parameter, but in some
+        situations you will need to specify a product to get a sensible response. For instance if you make a query for
+        an international shipment, you will have to specify a product that supports this. Use the <a
                 href="/additionalresources/productlist.html"> the product list</a> to find suitable products. </p>
 
     <p>
@@ -471,7 +456,7 @@
     </div>
 
     <div class="information-box">Shipping Guide specifies VAT related to senders country. It's up to the client to
-                                 decide if VAT is applicable to their situation of sale
+        decide if VAT is applicable to their situation of sale
     </div>
 
     <br/>
@@ -492,16 +477,14 @@
                 <pre><a target="_blank" class="request"
                         href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarslingadditional=lordagsutkjoring"
                         data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">…/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
-                                                                                                                                                                                                                                      &amp;additional=postoppkrav
-                                                                                                                                                                                                                                      &amp;additional=evarsling
-                                                                                                                                                                                                                                      &amp;additional=lordagsutkjoring</a></pre>
+                    &amp;additional=postoppkrav &amp;additional=evarsling &amp;additional=lordagsutkjoring</a></pre>
 
             <pre class="code-box json response delay-snippet">Running request...</pre>
         </div>
     </div>
 
     <p>The Shipping Guide API has a lot of optional parameters not covered in this tutorial, and we recommend that you
-       get familiar with the reference table and look at all the additional examples for further study.</p>
+        get familiar with the reference table and look at all the additional examples for further study.</p>
 </div>
 
 <div class="tab-pane" id="tab3">
@@ -509,8 +492,8 @@
     <br/>
 
     <p>The webservices offers the most options when performing queries to the Shipping Guide. Please refer to written
-       documentation in <a href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-       or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>. </p>
+        documentation in <a href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
+        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>. </p>
     <br/>
 
     <p><b>To execute the web-service you will need a identification string. To get this - please <a
@@ -518,12 +501,12 @@
 
     <p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>.<a
             href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link to the
-       latest version)</p><br/>
+        latest version)</p><br/>
 
     <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br/>
 
     <p>Please refer to common information regarding <a href="../additionalresources/productlist.jsp">product codes</a>
-       and <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
+        and <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
 
     <div><pre class="code-box">// Initialize library
 
@@ -577,8 +560,8 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
 
         <div>
             <p>It is also possible to combine weight, volume and dimensions for multiple parcels. Multiple parcels are
-               specified by suffixing weightInGrams, volume or dimensions (length, width or height), with sequential
-               numbers from 0.</p>
+                specified by suffixing weightInGrams, volume or dimensions (length, width or height), with sequential
+                numbers from 0.</p>
         </div>
         <p>The data used in this example is:</p>
         <ul>
@@ -725,7 +708,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                     <div data-tab="webservice" class="tab">
                         <p>Please refer to written documentation in <a
                                 href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                         </p>
                     </div>
 
@@ -824,7 +807,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                     <div data-tab="webservice" class="tab">
                         <p>Please refer to written documentation in <a
                                 href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                         </p>
                     </div>
 
@@ -886,8 +869,8 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
         <div data-tab="webservice" class="tab">
             <p>Please refer to written documentation in <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or
-                <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                    href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or <a
+                    href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
             </p>
         </div>
 
@@ -920,7 +903,6 @@ System.out.println("Price: " + price + " NOK");</pre>
 
     </div>
 </div>
-
 
 <div><h4>Package dimentions</h4></div>
 <div><p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
@@ -1006,8 +988,8 @@ System.out.println("Price: " + price + " NOK");</pre>
 <div><h4>Volume</h4>
 
     <p>Instead of, or in addition to using the package's weight and dimensions you can specify volume. This is relevant
-       for non-rectangular hexahedron shaped packages, and depending on the volume, it could affect the set of available
-       products. The unit is dm3.</p></div>
+        for non-rectangular hexahedron shaped packages, and depending on the volume, it could affect the set of
+        available products. The unit is dm3.</p></div>
 <div><p>Specified using <code>volume=33</code>.</p>
 
 </div>
@@ -1097,14 +1079,14 @@ System.out.println("Price: " + price + " NOK");</pre>
 
         <div>
             <p>Specifies the date the package is delivered to Bring. The parameter is used to calculate the expected
-               delivery date.</p>
+                delivery date.</p>
 
             <p>Specified using <code>date=2009-02-03</code>.</p>
 
             <p>Accepted date format: <code>YYYY-MM-DD</code>.</p>
 
             <p>If this parameter is specified, the response will include expected delivery date, in addition to expected
-               number of working days.</p>
+                number of working days.</p>
         </div>
         <br/>
 
@@ -1150,7 +1132,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                     <div data-tab="webservice" class="tab">
                         <p>Please refer to written documentation in <a
                                 href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                           or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                         </p>
                     </div>
 
@@ -1197,12 +1179,12 @@ System.out.println("Price: " + price + " NOK");
 
         <div>
             <p>Use this paramter if you would like to specify when during the day the package needs to be picked up from
-               the departure point.</p>
+                the departure point.</p>
 
             <p>This parameter is only considered for courier and express products.</p>
 
             <p>Specified using <code>date=2011-07-28&amp;time=13:37</code> (date and time is required to use this
-               option).</p>
+                option).</p>
 
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         </div>
@@ -1249,7 +1231,7 @@ System.out.println("Price: " + price + " NOK");
                 <div data-tab="webservice" class="tab">
                     <p>Please refer to written documentation in <a
                             href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                       or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                     </p>
                 </div>
 
@@ -1344,7 +1326,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <div data-tab="webservice" class="tab">
                     <p>Please refer to written documentation in <a
                             href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                       or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                     </p>
                 </div>
 
@@ -1389,7 +1371,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 
         <div>
             <p>The response data may vary depending on whether or not Bring must collect the shipment, or if the
-               customer delivers the shipment from a post office.</p>
+                customer delivers the shipment from a post office.</p>
 
             <p>This parameter specifies whether or not the package is delivered to a post office before shipping</p>
 
@@ -1440,7 +1422,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <div data-tab="webservice" class="tab">
                     <p>Please refer to written documentation in <a
                             href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                       or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
+                        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
                     </p>
                 </div>
 
@@ -1486,14 +1468,14 @@ System.out.println("Price: " + price + " NOK");</pre>
         <div class="row element-sample">
 
             <p>The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in
-               the <a href="../widget/productselectionashtml.html">Product selection as HTML"-widget.</a></p>
+                the <a href="../widget/productselectionashtml.html">Product selection as HTML"-widget.</a></p>
 
             <p>To adjust the price, add <a
                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">
                 &amp;priceAdjustment=m20p</a> to the query.</p>
 
             <p>The parameter is built up in the form [produktkode_][o]10[p]. Parts of the parameter with square brackets
-               ( [] ) is optional.</p>
+                ( [] ) is optional.</p>
 
             <p>Explanation of the parameters follows:</p>
             <ul>
@@ -1503,7 +1485,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                 </li>
 
                 <li><p>o specifies the operation to be performed. Operations supported are 'p' for positive, 'm' for
-                       negative or blank for a fixed price adjustment. Examples:</p>
+                    negative or blank for a fixed price adjustment. Examples:</p>
                     <ul>
                         <li>
                             <a href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20">
@@ -1531,13 +1513,13 @@ System.out.println("Price: " + price + " NOK");</pre>
             </ul>
 
             <p>Though <b>not recommended</b>, it is possible to make overlapping queries. If there is a need to do
-               multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
-               product code prefix.</p>
+                multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
+                product code prefix.</p>
 
             <br/>
 
             <p><b>Example:</b> <br/>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
-                                    Over natten 09.</p>
+                Over natten 09.</p>
 
             <div class="lightBorder">
                 <div class="codetabs">
@@ -1589,7 +1571,6 @@ System.out.println("Price: " + price + " NOK");</pre>
 
     </div>
 
-
 </li>
 
 </ul>
@@ -1603,44 +1584,7 @@ System.out.println("Price: " + price + " NOK");</pre>
 <div class="span3">
 
     <div id="sidebar">
-        <div class="box">
-            <a class="black" href="/api/shippingguideapi.html">
-                <h4>Shipping Guide API</h4>
-            </a>
-            <ol>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#reference">Reference</a></li>
-                <li><a href="#HTU">How to Use</a></li>
-                <li><a href="#additionalExamples">Additional Examples</a></li>
-            </ol>
-
-        </div>
-
-        <div class="box">
-            <h2>Additonal Resources</h2>
-            <ul>
-                <li><a href="../additionalresources/errorhandling.html">Error handling</a></li>
-                <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
-                <li><a href="../additionalresources/productlist.html">Product list</a></li>
-                <li><a href="../additionalresources/offlinedata.html">Offline data</a></li>
-                <li><a href="../additionalresources/javaapi.html">Java API</a></li>
-            </ul>
-            <h4>Widgets</h4>
-            <ul>
-                <li><a href="../widget/displayshippingguideinformationusingjsonp.html">Display shipping guide
-                                                                                       information using jsonp</a></li>
-                <li><a href="../widget/productselectionashtml.html">Product selection as html</a></li>
-            </ul>
-            <h4>Plugins</h4>
-            <ul>
-                <li><a href="../plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
-                <li><a href="../plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
-                <li><a href="../plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
-                <li><a href="../plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a>
-                </li>
-                <li><a href="../plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
-            </ul>
-        </div>
+        <sidebar:shipping-guide-sidebar/>
     </div>
 </div>
 
