@@ -26,8 +26,7 @@
                         <p>Most of the existing plugins are developed from a common include file which sends the request to the Shipping Guide API (Fraktguiden). Feel free to be inspired from existing plugins and improve the code if needed.</p>
                         <h2>How to install</h2>
                         <ol>
-                            <li>Be inspired from existing plugin code
-                            </li>
+                            <li>Be inspired from existing plugin code</li>
                             <li>Do what you need, improve the code if needed</li>
                             <li>Add the result to Google Code or GitHub and send us a link, then we will put it here with your name on it... :)</li>
                         </ol>

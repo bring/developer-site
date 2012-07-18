@@ -1623,6 +1623,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <li><a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
                 <li><a href="../additionalresources/productlist.html">Product list</a></li>
                 <li><a href="../additionalresources/offlinedata.html">Offline data</a></li>
+                <li><a href="../additionalresources/javaapi.html">Java API</a></li>
             </ul>
             <h4>Widgets</h4>
             <ul>

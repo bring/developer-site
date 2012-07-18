@@ -691,6 +691,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
         <ul>
             <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
             <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
+            <li><a href="../additionalresources/javaapi.html">Java API</a></li>
         </ul>
         <h5>XML/JSON API</h5>
         <ul>
