@@ -37,7 +37,7 @@
                                         href="/api/trackingapi.html">Tracking API</a>.
                                 </li>
                                 <li>Get price and availability for different products and book a shipment through the <a
-                                        href="#">Booking API</a>.
+                                        href="/api/bookingapi.html">Booking API</a>.
                                 </li>
                             </ul>
                             <p class="front-page-welcome-text">Need help? Get in touch with the API team and other

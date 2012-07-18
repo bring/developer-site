@@ -33,8 +33,7 @@
        easy way to display details and the status of shipments. The information available in this API is the same information available from the <a href="http://tracking.bring.com" target="_blank">Tracking web site</a>.
        Response is available as either XML or JSON.
     </p>
-
-
+    </br>
     <div class="information-box" >
         <b>Note! </b> We are using our Sporing beta environment to provide testdata for the examples. In production you
                       should use http://sporing.bring.no/sporing.xml
@@ -115,7 +114,9 @@
                 </div>
             </div>
         </div>
+        </br>
         <div>You can read more about the XML Schema definition for the elements available in the response <a href="../additionalresources/xmlSchemaDefinition.html">here.</a></div>
+        </br>
     </div>
 </div>
 

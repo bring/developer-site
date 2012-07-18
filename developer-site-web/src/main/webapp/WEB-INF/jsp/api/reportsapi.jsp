@@ -29,7 +29,7 @@
     <h2><a name="introduction"></a>Introduction</h2>
     <p>The API lets you view customer accounts associated with your account, find available reports for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
     </p>
-
+    </br>
     <div class="information-box"><p><b>Note!</b> The Reports API is currently in closed BETA testing. Please contact us at fraktguide@posten.no if you are interested in testing this service.</p>
     </div>
 
