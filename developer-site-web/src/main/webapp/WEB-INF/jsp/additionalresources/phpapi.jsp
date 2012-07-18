@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
@@ -20,7 +21,7 @@
             <div class="row-fluid">
                 <div class="span9">
                     <div class="box">
-                        <h1>Php API</h1>
+                        <h1>PHP API</h1>
                     </div>
                     <div class="box">
                         <p>Most of the existing plugins are developed from a common include file which sends the request to the Shipping Guide API (Fraktguiden). Feel free to be inspired from existing plugins and improve the code if needed.</p>
@@ -46,8 +47,7 @@
                 </div>
                 <div class="span3">
                     <div id="sidebar">
-
-
+                        <sidebar:shipping-guide-sidebar />
                     </div>
                 </div>
             </div>
