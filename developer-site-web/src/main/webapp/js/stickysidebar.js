@@ -13,10 +13,20 @@ $(function () {
             var menudefault = $('#sidebar')[0].offsetTop;
             $(document).bind('ready scroll', function () {
                 var scroll = $(document).scrollTop();
-
-                if (scroll >= menudefault) {
+                var sidebarHeight = $('#sidebar').height();
+                var windowWidth = $(window).width();
+                var windowHeight = $(window).height();
+                if (scroll >= menudefault && windowWidth > 849 && windowHeight > sidebarHeight) {
                     $('#sidebar').addClass('stickymenu');
                 } else {
+                    $('#sidebar').removeClass('stickymenu');
+                }
+
+            });
+
+            $(window).resize(function(){
+                if($(window).width() < 849 || $(window).height() < $('#sidebar').height()){
+                    console.log('resize');
                     $('#sidebar').removeClass('stickymenu');
                 }
             });
