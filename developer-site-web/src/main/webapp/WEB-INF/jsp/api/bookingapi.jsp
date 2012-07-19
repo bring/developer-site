@@ -71,7 +71,7 @@
                 This is an example of how an XML request may look like.
             </td>
         </tr>
-        <tr>
+        <tr class="even">
             <td><a href="//beta.bring.com/booking/api/bookingExamples/validRequest.json">../api/bookingExamples/validRequest.json</a></td>
             <td>This is an example of how a JSON request may look like.
             </td>
@@ -81,7 +81,7 @@
             <td>The WSDL for the SOAP API.
             </td>
         </tr>
-        <tr>
+        <tr class="even">
             <td><a href="https://www.mybring.com/booking/api/booking">mybring.com/booking/api/booking</a></td>
             <td>The endpoint for Booking and Customer.</td>
         </tr>
@@ -131,7 +131,7 @@ Each step is covered in detail below.</p>
         <td>booking@customer.com</td>
         <td>This is the mybring login ID.</td>
     </tr>
-    <tr>
+    <tr class="even">
         <td>X-MyBring-API-Key</td>
         <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
         <td>This is the API key of the mybring user.</td>
@@ -237,7 +237,7 @@ Each step is covered in detail below.</p>
             <td>application/xml or application/json</td>
             <td>This specifies the request format</td>
         </tr>
-        <tr>
+        <tr class="even">
             <td>Accept</td>
             <td>application/xml or application/json</td>
             <td>This specifies the desired response format</td>
@@ -452,12 +452,12 @@ Host: www.mybring.com
             <th>Example products</th>
             <th>Example customerNumber</th>
         </tr>
-        <tr class="even">
+        <tr>
             <td>Bring Parcels, Norway</td>
             <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
             <td>PARCELS_NORWAY-10001123123</td>
         </tr>
-        <tr>
+        <tr class="even">
             <td>Bring Express, Norway</td>
             <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
             <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
@@ -601,12 +601,12 @@ Host: www.mybring.com
                 <th>Example products</th>
                 <th>Example customerNumber</th>
             </tr>
-            <tr class="even">
+            <tr>
                 <td>Bring Parcels, Norway</td>
                 <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
                 <td>PARCELS_NORWAY-10001123123</td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td>Bring Express, Norway</td>
                 <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
                 <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>

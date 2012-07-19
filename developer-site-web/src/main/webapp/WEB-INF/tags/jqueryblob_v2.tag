@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="developer" uri="http://developer.bring.com"%>
 
-<script type="text/javascript" src="/js/lib/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="/js/lib/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.actual.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.outerclick.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.snippet.js"></script>
@@ -21,13 +21,10 @@
 <script type="text/javascript" src="/js/banner.js"></script>
 <script type="text/javascript" src="/js/init_v2.js"></script>
 <script type="text/javascript" src="/js/exampleRequest.js"></script>
-
 <script type="text/javascript" src="/js/bootstrap-tabs.js"></script>
 <script type="text/javascript" src="/js/prettify.js"></script>
 <script type="text/javascript" src="/js/kp-utilities.js"></script>
-<!-- <script type="text/javascript" src="/js/kp-mobile.menu.js"></script> -->
-
-
+<script type="text/javascript" src="/js/kp-mobile.menu.js"></script>
 <script type="text/javascript" src="/js/stickysidebar.js"></script>
 
 

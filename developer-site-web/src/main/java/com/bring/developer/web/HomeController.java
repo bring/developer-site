@@ -111,7 +111,12 @@ public class HomeController {
 
     @RequestMapping(value = "/support.html")
     public String support() {
-        return "support";
+        return "support/support";
+    }
+
+    @RequestMapping(value = "/support/getting-api-keys.html")
+    public String gettingApiKeys() {
+        return "support/getting-api-keys";
     }
 
     @RequestMapping(value = "/plugin/joomla-virtuemart-fraktpriser.html")
