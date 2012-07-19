@@ -36,12 +36,6 @@
                         </ol>
                     </div>
                     <div class=" box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li>
-                                Bring Developer
-                            </li>
-                        </ul>
                         <a href="https://github.com/bring/bring-api-java" class="btn" target="_blank">Repository</a>
                     </div>
 

@@ -11,7 +11,6 @@ public class DisqusConfig {
 
     @Autowired
     DisqusConfig(ConstrettoConfiguration configuration) {
-        disqusDeveloper = configuration.evaluateToBoolean("disqus.developer");
     }
 
     public static boolean isDisqusDeveloper() {

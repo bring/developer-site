@@ -1,5 +1,6 @@
 package com.bring.developer.config;
 
+import com.bring.developer.interceptor.GoogleAnalyticsIDInterceptor;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
@@ -13,6 +14,13 @@ import org.constretto.exception.ConstrettoExpressionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerMapping;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
+import org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping;
+
+import java.util.Map;
+import java.util.Properties;
 
 @Configuration
 public class ApplicationConfig {
@@ -22,6 +30,7 @@ public class ApplicationConfig {
     public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
     public static String BOOKING_URL_FOR_ENVIRONMENT = "http://beta.bring.com/booking"; //default
+    public static String GOOGLE_ANALYTICS_ID = "UA-33478893-1"; //default
     public static boolean CLASSPATH_XML_FILES = true; //default
 
     @Autowired
@@ -29,8 +38,8 @@ public class ApplicationConfig {
         this.config = config;
         FRAKTGUIDE_URL_FOR_ENVIRONMENT = config.evaluateToString("fraktguideUrl");
         BOOKING_URL_FOR_ENVIRONMENT = config.evaluateToString("bookingUrl");
-        STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = config.evaluateToString("statistics.trackerId");
         CLASSPATH_XML_FILES = config.evaluateToBoolean("classpathXmlFiles");
+        GOOGLE_ANALYTICS_ID = config.evaluateToString("googleAnalyticsID");
     }
 
     @Bean
@@ -47,7 +56,6 @@ public class ApplicationConfig {
             // Ok, no proxy
         }
 
-
         ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
         return new DefaultHttpClient(connectionManager, params);
     }
@@ -62,5 +70,9 @@ public class ApplicationConfig {
 
     public static String getStatisticsTrackerIdForEnvironment() {
         return STATISTICS_TRACKER_ID_FOR_ENVIRONMENT;
+    }
+
+    public static String getGoogleAnalyticsIDForEnvironment(){
+        return GOOGLE_ANALYTICS_ID;
     }
 }

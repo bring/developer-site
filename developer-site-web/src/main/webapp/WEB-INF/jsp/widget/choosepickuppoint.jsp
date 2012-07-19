@@ -74,19 +74,8 @@ utleveringsenhet-1.0.1.js"&gt;
                     </div>
                     <div class="box">
 
-                        <div class="span4 box"><h4>Made by</h4>
-                            <ul>
-                                <li><a href="http://www.bekk.no" target="_blank">Stian Mathiassen</a></li>
-                                <li><a href="http://www.bekk.no" target="_blank">Nina Volstad</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="span4 box"></div>
-
-                        <div class="span4 box">
                             <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"
                                class="btn enhanced">Download</a>
-                        </div>
 
                     </div>
                 </div>
