@@ -17,13 +17,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/index_old.html")
-    public String index() {
-        return "home";
-    }
-
     @RequestMapping(value = "/index.html")
-    public String index2() {
+    public String index() {
         return "home_v3";
     }
 
@@ -97,8 +92,6 @@ public class HomeController {
         return "/widget/productselectionashtml";
     }
 
-
-
     @RequestMapping(value = "/additionalresources/xmlSchemaDefinition.html")
     public String xmlSchemaDefinition() {
         return "additionalresources/xmlSchemaDefinition";
@@ -111,7 +104,12 @@ public class HomeController {
 
     @RequestMapping(value = "/support.html")
     public String support() {
-        return "support";
+        return "support/support";
+    }
+
+    @RequestMapping(value = "/support/getting-api-keys.html")
+    public String gettingApiKeys() {
+        return "support/getting-api-keys";
     }
 
     @RequestMapping(value = "/plugin/joomla-virtuemart-fraktpriser.html")
@@ -139,15 +137,6 @@ public class HomeController {
         return "plugin/zencart-fraktguide";
     }
 
-    @RequestMapping(value = "/use/{type}/index.html")
-    public String useOverview(ModelMap model, @PathVariable String type) {
-        PackagesCategory packagesCategory = XmlDao.createDao(PackagesCategory.class).query("use/" + type);
-        List<Pack> packs = XmlDao.createDaos(Pack.class, "use/" + type);
-        model.put("overview", packagesCategory);
-        model.put("packages", packs);
-        return "use/overview";
-    }
-
     @RequestMapping(value = "/widget/choose-pickup-point.html")
     public String choosePickupPoint(){
         return "widget/choosepickuppoint";
@@ -158,87 +147,10 @@ public class HomeController {
         return "widget/choosepickuppointwithmap";
     }
 
-    @RequestMapping(value = "/use/{type}/{packageName}.html")
-    public String usePackagePage(ModelMap model, @PathVariable String type, @PathVariable String packageName) {
-        Pack pack = XmlDao.createDao(Pack.class).query("use/" + type + "/" + packageName);
-        model.put("pack", pack);
-        model.put("type", type);
-        return "use/package";
-    }
-
     @RequestMapping(value = "/use/widget/{widget}/preview.html")
     public String widgetPreview(ModelMap model, @PathVariable String widget) {
         Pack pack = XmlDao.createDao(Pack.class).query("use/widget/" + widget);
         model.put("widget", pack);
         return "use/widgetpreview";
-    }
-
-    @RequestMapping(value = "/learn/{api}/apireference.html")
-    public String apiReference(ModelMap model, @PathVariable String api) {
-        model.put("title", "API Reference");
-        return apiReferenceHelper(model, api, "apireference");
-    }
-
-    @RequestMapping(value = "/learn/{api}/examples.html")
-    public String examples(ModelMap model, @PathVariable String api) {
-        model.put("title", "Examples");
-        return apiReferenceHelper(model, api, "examples");
-    }
-
-    @RequestMapping(value = "/learn/{api}/documentation/apireference.html")
-    public String apiReferenceUsage(ModelMap model, @PathVariable String api) {
-        model.put("title", "API Reference");
-        return apiReferenceHelper(model, api, "documentation/apireference");
-    }
-
-    @RequestMapping(value = "/learn/{api}/documentation/parametersindetail.html")
-    public String apiReferenceExamples(ModelMap model, @PathVariable String api) {
-        model.put("title", "API Reference - Examples");
-        return apiReferenceHelper(model, api, "documentation/parametersindetail");
-    }
-
-    private String apiReferenceHelper(ModelMap model, String api, String suffix) {
-        Api apiDoc = XmlDao.createDao(Api.class).query("learn/" + api + "/" + suffix);
-        model.put("apiReference", apiDoc);
-        return "learn/apireference";
-    }
-
-
-    @RequestMapping(value = "/learn/{api}/information/product-list.html")
-    public String productList(ModelMap model, @PathVariable String api) {
-        Products products = XmlDao.createDao(Products.class).query("learn/"+api+"/information/product-list");
-        model.put("productList", products);
-        model.put("todayString", new DateTime().toString("yyyy-MM-dd"));
-        return "learn/product-list";
-    }
-
-    @RequestMapping(value = "/learn/{section}.html")
-    public String article(ModelMap model, @PathVariable String section) {
-        handleArticleRequest(model, section);
-        return "learn/article";
-    }
-
-    @RequestMapping(value = "/learn/{section}/{subsection}.html")
-    public String article(ModelMap model, @PathVariable String section, @PathVariable String subsection) {
-        handleArticleRequest(model, section + "/" + subsection);
-        return "learn/article";
-    }
-
-    @RequestMapping(value = "/learn/{section}/{subsection}/{subsubsection}.html")
-    public String article(ModelMap model, @PathVariable String section, @PathVariable String subsection, @PathVariable String subsubsection) {
-        handleArticleRequest(model, section + "/" + subsection + "/" + subsubsection);
-        return "learn/article";
-    }
-
-    @RequestMapping(value = "/abc/test.fff")
-    public String foobar() {
-        return "learn/article";
-    }
-
-    private void handleArticleRequest(ModelMap model, String section) {
-        Article article = XmlDao.createDao(Article.class).query("learn/"+section);
-        model.put("article", article);
-        model.put("articlePath", section+".jsp");
-        model.put("title", "Learn");
     }
 }

@@ -24,7 +24,7 @@
                 </div>
 
                 <div>
-                    <iframe style='width: 100%; height: 1000px;' src="https://getsatisfaction.com/bring"></iframe>
+                    <iframe style='width: 100%; height: 1000px;' src="https://getsatisfaction.com/bring?view=recent"></iframe>
                 </div>
 
             </div>
