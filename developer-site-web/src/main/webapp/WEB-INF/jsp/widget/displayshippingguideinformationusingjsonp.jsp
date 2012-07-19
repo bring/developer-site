@@ -76,12 +76,7 @@
                         </div>
 
                     </div>
-                    <div class="box">
-                        <h4>Made by</h4>
-                        <ul>
-                            <li><a href="http://developer.bring.com/index.html" target="_blank"></a>Bring Developer</li>
-                        </ul>
-                    </div>
+
                 </div>
 
                 <div class="span3">
