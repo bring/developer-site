@@ -113,7 +113,7 @@ Each step is covered in detail below.</p>
 <li><h4>Authentication - API login with mybring</h4>
 
 <p>
-    We use the mybring authentication framework. This is a proprietary single-sign in solution that applies two HTTP
+    We use the mybring authentication framework. This is a proprietary single sign-on solution that applies two HTTP
     Headers for authentication to the API. Only users with a mybring user (with attached customer numbers) can use the
     Booking API. In the Booking Web Service and XML/JSON API request, you must set two HTTP headers to access the
     API. The API key is currently only visible to organization administrators. Please contact the development team
