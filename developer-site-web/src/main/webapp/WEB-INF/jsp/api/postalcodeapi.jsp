@@ -24,8 +24,6 @@
 
     <div class="box">
         <h1>Postal Code API</h1>
-
-
     </div>
 
     <div class="box">
@@ -54,7 +52,7 @@
                     <li><code>&lt;country&gt;</code> = The ISO 3166-1-alpha-2 country code.</li>
                 </td>
             </tr>
-            <tr>
+            <tr class="even">
                 <td><code>//Response/@valid</code></td>
                 <td>XPath for checking if the response is valid <br/>
                 </td>
