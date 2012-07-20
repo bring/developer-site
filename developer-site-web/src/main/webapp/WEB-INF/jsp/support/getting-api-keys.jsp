@@ -22,14 +22,14 @@
 
                     <div class="box">
                         <h2>Introduction</h2>
-                        <p>On this page you will find information on how to get your API-key for the APIs requesting one.</p>
+                        <p>Some of Bring APIs require an API-key for authentication. On this page you will find information on how to get your API-key.</p>
                     </div>
                     <div class="box">
                         <p><h4>Do you have a mybring-account?</h4>
 
                         <ul>
                             <li><b>No:</b></br> </br>
-                                Then you need to get access to one. The customer dealing with shipments need to become a mybring user and then retrieve the API-key from the user profile on your behalf. With the API-key you will get access to the APIs.
+                                Then you need to get access to one. Typically, the customer dealing with shipments need to become a mybring user and then retrieve the API-key from the user profile on your behalf. With the API-key you will get access to the APIs.
                                 You need to register a new user connected to the customer number. </br></br>Please visit: <a href="https://www.mybring.com/useradmin/open/signup/new" target="_blank">https://www.mybring.com/useradmin/open/signup/new</a>
                                 </br></br>
                                 <div class="information-box">
@@ -49,7 +49,7 @@
                             <h4>1. First you have to Log in to <a href="http://www.bring.com/all-of-bring/products-and-services/mybring" target="_blank">mybring</a></h4>
                             <img src="../images/mybringLogin.png" alt="Login Screenshot">
                             </br></br><hr></br>
-                            <h4>2. Then you go to your profile</h4>
+                            <h4>2. Then go to your profile</h4>
                             <img src="../images/mybringApi1.png" alt="Mybring Profile Screenshot">
                             </br></br><hr></br>
                             <h4>3. Get the API-key from the "my api-key" tag.</h4>

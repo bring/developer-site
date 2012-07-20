@@ -1370,6 +1370,10 @@ div#wufoo-z7x0r3 iframe {
   heiht: 400px;
 }
 
+p.getSatisfactiontext {
+  text-align: center;
+}
+
 div.information-box {
   min-height: 30px;
   padding: 10px 40px;

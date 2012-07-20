@@ -26,7 +26,7 @@
                             <h3>GetSatisfaction</h3>
                             <p>Bring uses getSatisfaction as a community for support. Here you have the opportunity to ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
                             </br>
-                            <p>Visit <a href="http://getsatisfaction.com/bring" target="_blank">Bring's community</a> on getSatisfaction. </p>
+                            <p class="getSatisfactiontext">Visit <a href="http://getsatisfaction.com/bring" target="_blank">Bring's community</a> on getSatisfaction. </p>
                         </div>
 
                         <div class="text-center lightBorder span7">
