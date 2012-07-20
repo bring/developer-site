@@ -45,7 +45,7 @@
                         <h4>Screenshot</h4>
 
                         <div class="box lightBorder">
-                            <img class="fitted-width" src="http://developer.bring.com/media/plugin/joomlavirtuemartfraktpriser/screenshot.png" />
+                            <img class="fitted-width" src="/img/joomla-virtuemart-screenshot.png" />
                         </div>
                     </div>
 

@@ -147,13 +147,44 @@ public class HomeController {
         return "widget/choosepickuppointwithmap";
     }
 
-    @RequestMapping(value = "/use/widget/{widget}/preview.html")
-    public String widgetPreview(ModelMap model, @PathVariable String widget) {
-        Pack pack = XmlDao.createDao(Pack.class).query("use/widget/" + widget);
-        model.put("widget", pack);
-        return "use/widgetpreview";
+    @RequestMapping(value =  "/widget/link-to-shipment-tracking.html")
+    public String linkToShipmentTracking(){
+        return "widget/linktoshipmenttracking";
     }
 
+    @RequestMapping(value = "widget/validate-postal-code.html")
+    public String validatePostalCode(){
+        return "widget/validatepostalcode";
+    }
 
+    @RequestMapping(value = "widget/preview/choose-pickup-point-preview.html")
+    public String choosePickupPointPreview(){
+        return "widget/preview/choosepickuppoint-preview";
+    }
+
+    @RequestMapping(value = "widget/preview/choose-pickup-point-with-map-preview.html")
+    public String choosePickupPointWithMapPreview(){
+        return "widget/preview/choosepickuppointwithmap-preview";
+    }
+
+    @RequestMapping(value = "widget/preview/display-shipping-guide-info-preview.html")
+    public String displayShippingGuideInfoPreview(){
+        return "widget/preview/displayshippingguideinfo-preview";
+    }
+
+    @RequestMapping(value = "widget/preview/product-selection-as-html-preview.html")
+    public String productSelectionAsHtmlPreview(){
+        return "widget/preview/productselectionashtml-preview";
+    }
+
+    @RequestMapping(value = "widget/preview/tracking-link-preview.html")
+    public String trackingLinkPreview(){
+        return "widget/preview/trackinglink-preview";
+    }
+
+    @RequestMapping(value = "widget/preview/validate-postal-code-preview.html")
+    public String validatePostalCodePreview(){
+        return "widget/preview/validatepostalcode-preview";
+    }
 
 }

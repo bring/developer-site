@@ -45,7 +45,7 @@
                                     <div class="tab-pane active" id="tab1-5">
                                         <div class="box lightBorder">
                                             <iframe style="height: 450px" class="widget-demo"
-                                                    src="http://developer.bring.com/use/widget/choosepickuppointwithmap/preview.html"></iframe>
+                                                    src="/widget/preview/choose-pickup-point-with-map-preview.html"></iframe>
                                         </div>
                                     </div>
 

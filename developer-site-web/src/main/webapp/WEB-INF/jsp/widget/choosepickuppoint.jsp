@@ -49,7 +49,7 @@
                                     <div class="tab-pane active" id="tab1-5">
                                         <div class="box lightBorder">
                                             <iframe class="widget-demo"
-                                                    src="http://developer.bring.com/use/widget/choosepickuppoint/preview.html"></iframe>
+                                                    src="/widget/preview/choose-pickup-point-preview.html"></iframe>
                                         </div>
                                     </div>
 
