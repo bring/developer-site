@@ -23,10 +23,10 @@
                     <div class="box">
                         <div class="span5">
                             </br>
-                            <h3>GetSatisfaction</h3>
+                            <h3><a name="getSatisfaction"></a>GetSatisfaction</h3>
                             <p>Bring uses getSatisfaction as a community for support. Here you have the opportunity to ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
                             </br>
-                            <p class="getSatisfactiontext">Visit <a href="http://getsatisfaction.com/bring" target="_blank">Bring's community</a> on getSatisfaction. </p>
+                            <p class="getSatisfactiontext"><a href="http://getsatisfaction.com/bring" target="_blank">Visit Bring's community on getSatisfaction.</a> </p>
                         </div>
 
                         <div class="text-center lightBorder span7">
@@ -36,7 +36,7 @@
                     <div class="box">
                         <div class="span5">
                             </br>
-                            <h3>Feedback</h3>
+                            <h3><a name="feedback"></a>Feedback</h3>
                             <p>It is appreciated if you use getSatisfaction as a channel to get in touch with the developer team. There we have the opportunity to discuss and answer potential problems fast.
                                </br></br>However, if you prefer sending us a direct message, feel free to do so with the feedback form. We will try to answer as soon as possible.    </p>
                         </div>
@@ -68,12 +68,16 @@
                         <div class="box">
                             <a class="black" href="/support.html">
                                 <h4>Support</h4>
+                                <ol>
+                                    <li><a href="#getSatisfaction">GetSatisfaction</a></li>
+                                    <li><a href="#feedback">Feedback</a></li>
+                                </ol>
                             </a>
                         </div>
                         <div class="box">
                             <h2>Additional Resources</h2>
                             <ul>
-                                <li><a href="http://getsatisfaction.com/bring">GetSatisfaction</a></li>
+                                <li><a href="http://getsatisfaction.com/bring">Bring's community - GetSatisfaction</a></li>
                                 <li><a href="support/getting-api-keys.html">Getting an API-key</a></li>
                             </ul>
                         </div>
