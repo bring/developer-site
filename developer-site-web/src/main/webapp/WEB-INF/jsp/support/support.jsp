@@ -18,15 +18,19 @@
     <div id="page">
         <section id="content">
             <div class="row-fluid">
-                <div class="span12 box">
-                    <h1>Support</h1>
-                    <p>This is the support site for Bring APIs. Ask questions, share ideas, read the FAQ or report a problem.</p>
+                <div class="span9">
+                    <div class="box"><h1>Support</h1></div>
+                    <div class="box">
+                        <p>Bring uses getSatisfaction as a community for support. Here you may ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
+                        <p>Visit <a href="http://getsatisfaction.com/bring" target="_blank">Bring's community</a> on getSatisfaction. </p>
+                        <img src="../images/Screen Shot 2012-07-19 at 4.24.08 PM.png" alt="Screenshot GetSatisfaction">
+                        <img src="../images/Screen Shot 2012-07-19 at 4.23.16 PM.png" alt="Screenshot GetSatisfaction">
+                    </div>
+                    <div class="box">
+                        <h4>Feedback</h4>
+                        <p>If you do not wish to use getSatisfaction to provide feedback to the Bring team, you may...</p>
+                    </div>
                 </div>
-
-                <div>
-                    <iframe style='width: 100%; height: 1000px;' src="https://getsatisfaction.com/bring?view=recent"></iframe>
-                </div>
-
             </div>
         </section>
     </div>
