@@ -1,7 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="developer" uri="http://developer.bring.com"%>
 
 <script type="text/javascript" src="/js/lib/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="/js/lib/jquery.outerclick.js"></script>

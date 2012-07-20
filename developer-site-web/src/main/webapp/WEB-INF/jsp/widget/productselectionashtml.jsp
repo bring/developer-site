@@ -66,7 +66,8 @@
                                 <div class="tab-content tab-minimal">
 
                                     <div class="tab-pane active lightBorder" id="tab1-5">
-                                        <div class="box lightBorder"><iframe class="widget-demo preview-frame" src="/use/widget/deliveredbybring/preview.html" height="150"></iframe></div>
+                                        <div class="box lightBorder">
+                                            <iframe class="widget-demo preview-frame" src="/widget/preview/product-selection-as-html-preview.html" height="150"></iframe></div>
                                     </div>
 
                                     <div class="tab-pane" id="tab2-5">

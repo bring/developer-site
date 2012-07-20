@@ -1,3 +1,4 @@
+<%@ taglib prefix="sidebars" tagdir="/WEB-INF/tags/sidebars" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -219,18 +220,7 @@
 
 <div class="span3">
     <div id="sidebar">
-
-        <div class="box">
-            <a class="black" href="/api/postalcodeapi.html">
-                <h4>Postal Code API</h4>
-            </a>
-            <ol>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#reference">Reference</a></li>
-                <li><a href="#HTU">How to Use</a></li>
-                <li><a href="#additionalExamples">Additional Examples</a></li>
-            </ol>
-        </div>
+        <sidebars:postalcode-sidebar/>
     </div>
 </div>
 </div>

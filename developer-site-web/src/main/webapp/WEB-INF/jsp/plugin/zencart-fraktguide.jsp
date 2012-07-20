@@ -64,7 +64,7 @@
                         <h4>Screenshot</h4>
 
                         <div class="box lightBorder">
-                            <img class="fitted-width" src="http://developer.bring.com/media/plugin/zencartfraktpriser/full.png"/>
+                            <img class="fitted-width" src="/img/zencart-screenshot.png"/>
                         </div>
                     </div>
                     <div class="box">

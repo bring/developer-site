@@ -45,8 +45,7 @@
                         <h4>Screenshot</h4>
 
                         <div class="box lightBorder">
-                            <img class="fitted-width"
-                                 src="http://developer.bring.com/media/plugin/oscommercefraktpriser/full.png"/>
+                            <img class="fitted-width" src="/img/oscommerce-screenshot.png"/>
                         </div>
                     </div>
 

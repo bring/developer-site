@@ -26,12 +26,10 @@ $(function () {
 
             $(window).resize(function(){
                 if($(window).width() < 849 || $(window).height() < $('#sidebar').height()){
-                    console.log('resize');
                     $('#sidebar').removeClass('stickymenu');
                 }
 
                 else if($(window).width() > 849 || $(window).height() > $('#sidebar').height()){
-                    console.log('resize');
                     $('#sidebar').addClass('stickymenu');
                 }
 

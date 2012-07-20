@@ -55,28 +55,28 @@
 
                                     <div class="tab-pane active" id="tab1">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/customerexp.png"
+                                            <img src="/img/prestashop-screenshot1.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab2">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/config1.png"
+                                            <img src="/img/prestashop-screenshot2.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab3">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/config2.png"
+                                            <img src="/img/prestashop-screenshot3.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab4">
                                         <div class="box lightBorder">
-                                            <img src="http://developer.bring.com/media/plugin/prestashopfraktpriser/install.png"
+                                            <img src="/img/prestashop-screenshot4.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
