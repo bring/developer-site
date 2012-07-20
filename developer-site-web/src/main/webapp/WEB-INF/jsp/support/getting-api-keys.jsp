@@ -77,7 +77,7 @@
                             <h2>Additional Resources</h2>
                             <ul>
                                 <li><a href="http://getsatisfaction.com/bring">GetSatisfaction</a></li>
-                                <li><a href="support/getting-api-keys.html">Getting an API-key</a></li>
+                                <li><a href="getting-api-keys.html">Getting an API-key</a></li>
                             </ul>
                         </div>
                     </div>
