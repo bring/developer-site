@@ -63,12 +63,16 @@
                         <div class="box">
                             <a class="black" href="/support.html">
                                 <h4>Support</h4>
+                                <ol>
+                                    <li><a href="../support.html#getSatisfaction">GetSatisfaction</a></li>
+                                    <li><a href="../support.html#feedback">Feedback</a></li>
+                                </ol>
                             </a>
                         </div>
                         <div class="box">
                             <h2>Additional Resources</h2>
                             <ul>
-                                <li><a href="http://getsatisfaction.com/bring">GetSatisfaction</a></li>
+                                <li><a href="http://getsatisfaction.com/bring">Bring's community - GetSatisfaction</a></li>
                                 <li><a href="getting-api-keys.html">Getting an API-key</a></li>
                             </ul>
                         </div>
