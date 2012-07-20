@@ -70,7 +70,7 @@
                             </br><h4>5. You now got your API-key.</h4>
                             <img src="../images/mybringapikeyfinish.png" alt="api-key screenshot"></p>
                         </ul>
-                        <p>Still need more help? Please contact the developer team: <b>developer@bring.com</b></p>
+                        <p>Still need help? Please contact the developer team: <b>developer@bring.com</b></p>
                     </div>
                 </div>
                 <div class="span3">
