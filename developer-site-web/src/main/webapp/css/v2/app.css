@@ -1362,6 +1362,14 @@ div.stickymenu {
   border: 1px solid #efeff0;
 }
 
+.text-center {
+  text-align: center;
+}
+
+div#wufoo-z7x0r3 iframe {
+  heiht: 400px;
+}
+
 div.information-box {
   min-height: 30px;
   padding: 10px 40px;

@@ -21,15 +21,54 @@
                 <div class="span9">
                     <div class="box"><h1>Support</h1></div>
                     <div class="box">
-                        <p>Bring uses getSatisfaction as a community for support. Here you may ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
-                        <p>Visit <a href="http://getsatisfaction.com/bring" target="_blank">Bring's community</a> on getSatisfaction. </p>
-                        <img src="../images/Screen Shot 2012-07-19 at 4.24.08 PM.png" alt="Screenshot GetSatisfaction">
-                        <img src="../images/Screen Shot 2012-07-19 at 4.23.16 PM.png" alt="Screenshot GetSatisfaction">
+                        <div class="span5">
+                            </br>
+                            <h3>GetSatisfaction</h3>
+                            <p>Bring uses getSatisfaction as a community for support. Here you have the opportunity to ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
+                            </br>
+                            <p>Visit <a href="http://getsatisfaction.com/bring" target="_blank">Bring's community</a> on getSatisfaction. </p>
+                        </div>
+
+                        <div class="text-center lightBorder span7">
+                            <a href="http://getsatisfaction.com/bring" target="_blank"><img src="../images/getSatisfactionScreenshot1.png" alt="Screenshot GetSatisfaction"></a>
+                        </div>
                     </div>
                     <div class="box">
-                        <h4>Feedback</h4>
-                        <p>If you do not wish to use getSatisfaction to provide feedback to the Bring team, you may...</p>
+                        <div class="span5">
+                            </br>
+                            <h3>Feedback</h3>
+                            <p>It is appreciated if you use getSatisfaction as a channel to get in touch with the developer team. There we have the opportunity to discuss and answer potential problems fast.
+                               </br></br>However, if you prefer sending us a direct message, feel free to do so with the feedback form. We will try to answer as soon as possible.    </p>
+                        </div>
+                        </br>
+                        </br>
+                        <div class="span7">
+                            <div class="lightBorder" id="wufoo-z7x0r3">
+                            </div>
+                            <script type="text/javascript">var z7x0r3;(function(d, t) {
+                                var s = d.createElement(t), options = {
+                                    'userName':'bringdev',
+                                    'formHash':'z7x0r3',
+                                    'autoResize':true,
+                                    'height':'517',
+                                    'async':true,
+                                    'header':'show',
+                                    'ssl':true};
+                                s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+                                s.onload = s.onreadystatechange = function() {
+                                    var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+                                    try { z7x0r3 = new WufooForm();z7x0r3.initialize(options);z7x0r3.display(); } catch (e) {}};
+                                var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+                            })(document, 'script');</script>
+                        </div>
                     </div>
+                </div>
+                <div class="span3 box">
+                <h3>Additional Resources</h3>
+                    <ul>
+                        <li><a href="http://getsatisfaction.com/bring">GetSatisfaction</a></li>
+                        <li><a href="support/getting-api-keys.html">Getting an API-key</a></li>
+                    </ul>
                 </div>
             </div>
         </section>
