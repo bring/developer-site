@@ -32,10 +32,10 @@
                         <ul>
                             <li><b>No:</b></br> </br>If you are a developer hired to develop an application for a
                                 company, you need the API-key associated with that companys mybring-account. Typically,
-                                the developer does not have a mybring account herself, unless you are running your own
-                                business and doing the development yourself. So step one is to register a mybring
+                                the developer does not have a mybring account, unless they are running their own
+                                business and doing the development themselves. So step one is to register a mybring
                                 account, or tell the company you work for to do so in order for you to get your
-                                API-keys. To register a new user </br></br>please visit: <a
+                                API-keys. To register a new user: </br></br>Please visit: <a
                                         href="https://www.mybring.com/useradmin/open/signup/new" target="_blank">https://www.mybring.com/useradmin/open/signup/new</a></br></br>
 
                                 <div class="information-box">
@@ -58,12 +58,19 @@
                                     target="_blank">mybring</a></h4>
                             <img src="../images/mybringLogin.png" alt="Login Screenshot"></br></br>
                             <hr>
-                            </br><h4>2. go to your "profile"</h4>
+                            </br><h4>2. Go to your "profile"</h4>
                             <img src="../images/mybringApi1.png" alt="Mybring Profile Screenshot"></br></br>
                             <hr>
                             </br><h4>3. Get the API-key from the "my api-key" tab.</h4>
-                            <img src="../images/mybringapiKey.png" alt="my api-key screenshot"></p>
+                            <img src="../images/mybringapiKey.png" alt="my api-key screenshot"></p></br></br>
+                            <hr>
+                            </br><h4>4. Generate the API-key.</h4>
+                            <img src="../images/mybringapikeygeneration.png" alt="Key generation screenshot"></p>
+                            <hr>
+                            </br><h4>5. You now got your API-key.</h4>
+                            <img src="../images/mybringapikeyfinish.png" alt="api-key screenshot"></p>
                         </ul>
+                        <p>Still need more help? Please contact the developer team: <b>developer@bring.com</b></p>
                     </div>
                 </div>
                 <div class="span3">
@@ -80,7 +87,7 @@
                         <div class="box">
                             <h2>Additional Resources</h2>
                             <ul>
-                                <li><a href="http://getsatisfaction.com/bring">Bring's community - GetSatisfaction</a></li>
+                                <li><a href="http://getsatisfaction.com/bring" target="_blank">Bring's community - GetSatisfaction</a></li>
                                 <li><a href="getting-api-keys.html">Getting an API-key</a></li>
                             </ul>
                         </div>
