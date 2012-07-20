@@ -63,12 +63,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="span3 box">
-                <h3>Additional Resources</h3>
-                    <ul>
-                        <li><a href="http://getsatisfaction.com/bring">GetSatisfaction</a></li>
-                        <li><a href="support/getting-api-keys.html">Getting an API-key</a></li>
-                    </ul>
+                <div class="span3">
+                    <div class="sidebar" id="sidebar">
+                        <div class="box">
+                            <a class="black" href="/support.html">
+                                <h4>Support</h4>
+                            </a>
+                        </div>
+                        <div class="box">
+                            <h2>Additional Resources</h2>
+                            <ul>
+                                <li><a href="http://getsatisfaction.com/bring">GetSatisfaction</a></li>
+                                <li><a href="support/getting-api-keys.html">Getting an API-key</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
