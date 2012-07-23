@@ -22,7 +22,7 @@
             <div class="row-fluid">
                 <div class="span9">
                     <div class="box">
-                        <h1>Wsdl/xml Schema</h1>
+                        <h1>WSDL/XML Schema</h1>
                     </div>
                     <div class="box">
                         <p>The Shipping Guide uses schemas for XML and WSDL to make it easier to integrate with the WebService</p><br/>
