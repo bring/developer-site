@@ -74,7 +74,7 @@
         </tr>
         <tr>
             <td><code>/id/&lt;id&gt;.&lt;extension&gt;</code></td>
-            <td>Returns the 10 nearest pickup points based on the pickup point's id.
+            <td>Returns information about the pickup point based on the pickup point's id.
                 <ul>
                     <li>
                         <code>&lt;id&gt;</code> = The pickup point's id.
