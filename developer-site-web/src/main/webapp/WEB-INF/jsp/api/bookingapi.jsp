@@ -59,7 +59,7 @@
 <h2><a name="HTU"></a>How to Use</h2>
 
 <p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
-   Read more about <a href="../support/getting-api-keys.html?from=booking">how to get an API-key</a>, and how to use it for authentication. </p>
+   Read more about <a href="/additionalresources/getting-api-keys.html?from=booking">how to get an API-key</a>, and how to use it for authentication. </p>
 
 <h4>Authorization - by customer numbers (per specialist)</h4>
 

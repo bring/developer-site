@@ -41,7 +41,9 @@
 
     <h2><a name="reference"></a>Reference</h2>
 
-    <p>Request prefix: <br/><code>http://fraktguide.bring.no/fraktguide/api/pickuppoint</code></p>
+    <pre class="code-box">Request prefix:
+http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
+
     <table>
         <thead>
         <tr>
