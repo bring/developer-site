@@ -239,15 +239,15 @@
     <p>
 
     <h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to the
-                          request. These parameters can be perceived as &amp;quot;filters&amp;quot;, adding additional restrictions to the
-                          pickup points being returned. One such parameter is <code>searchForText=q&lt;texts&gt;</code>, resulting in a
+                          request. These parameters can be perceived as &amp;filters&amp;, adding additional restrictions to the
+                          pickup points being returned. One such parameter is <code>searchForText=&lt;texts&gt;</code>, resulting in a
                           response where all pickup points have at least a partial match with the search string given in &lt;texts&gt;. This
                           can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table
                           or see additional examples for more information</p>
 
     <div class="information-box">
         <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
-                     parameters using <code>&amp;</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=&amp;quot;Kiwi&amp;quot;<b>
+                     parameters using <code>&amp;</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=Kiwi<b>
         &amp;</b>openOnOrBefore=0800</code>
     </div>
 
