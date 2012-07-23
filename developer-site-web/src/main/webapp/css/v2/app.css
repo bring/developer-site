@@ -1375,6 +1375,10 @@ p.getSatisfactiontext {
   text-align: center;
 }
 
+a.bringNo {
+  background: #717074 url("/images/m-arrow-w-right2.png") no-repeat 5% center !important;
+}
+
 div.information-box {
   min-height: 30px;
   padding: 10px 40px;

@@ -15,7 +15,7 @@
         <nav role="main" id="main-menu">
             <a href="#menu" class="menu"></a>
             <ul class="menu-main">
-                <li class="menu-level-1"><a href="http://www.bring.no" class="first">Bring.no</a></li>
+                <li class="menu-level-1"><a href="http://www.bring.no" class="bringNo">Bring.no</a></li>
                 <li class="menu-level-1 <c:out value="${selected_tab == 'developer' ? 'path parent' : ''}"/>"><a
                         href="/index.html">Developer</a></li>
                 <li class="menu-level-1 <c:out value="${selected_tab == 'support' ? 'path parent' : ''}"/>"><a
