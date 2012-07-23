@@ -43,7 +43,8 @@
 <div class="box">
     <h2><a name="reference"></a>Reference</h2>
 
-    <p>Request prefix: <br/><code>http://beta.bring.no/sporing</code></p>
+    <pre class="code-box">Request prefix:
+http://beta.bring.no/sporing</pre>
 
     <table>
         <thead>
