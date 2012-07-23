@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <div class="box">
-    <a class="black" href="/api/postalcodeapi.html">
+    <a class="black" href="/api/postalcodeapi.html?from=postalcode">
         <h4>Postal Code API</h4>
     </a>
     <ol>
