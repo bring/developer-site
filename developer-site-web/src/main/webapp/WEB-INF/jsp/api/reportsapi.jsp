@@ -278,8 +278,8 @@ https://www.mybring.com/reports/api</pre>
 
 <div class="span3" id="additional-resources">
     <div id="sidebar">
+        <misc:sidebar/>
     </div>
-    <misc:sidebar/>
 </div>
 
 </div>

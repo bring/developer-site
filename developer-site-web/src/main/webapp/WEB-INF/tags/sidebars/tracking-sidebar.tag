@@ -16,11 +16,11 @@
 <div class="box">
     <h2>Additonal Resources</h2>
     <ul>
-        <li><a href="../additionalresources/xmlSchemaDefinition.html">XML Schema Definition</a></li>
-        <li><a href="../additionalresources/javaapi.html?from=tracking-api">Java API</a></li>
+        <li><a href="/additionalresources/xmlSchemaDefinition.html">XML Schema Definition</a></li>
+        <li><a href="/additionalresources/javaapi.html?from=tracking-api">Java API</a></li>
     </ul>
     <h4>Widgets</h4>
     <ul>
-        <li><a href="../widget/link-to-shipment-tracking.html">Link to shipment tracking</a></li>
+        <li><a href="/widget/link-to-shipment-tracking.html">Link to shipment tracking</a></li>
     </ul>
 </div>

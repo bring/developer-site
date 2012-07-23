@@ -14,7 +14,8 @@
     else if(from.startsWith("reports")) {%><sidebar:reports-sidebar /><%}
     else if(from.startsWith("shipping")) {%><sidebar:shipping-guide-sidebar /><%}
     else if(from.startsWith("support")) {%><sidebar:support-sidebar /><%}
-    else if(from.startsWith("tracking")) {%><tracking-sidebar /><%}
+    else if(from.startsWith("tracking")) {%><sidebar:tracking-sidebar /><%}
+    else if(from.startsWith("pickuppoint")) {%><sidebar:pickuppoint-sidebar /><%}
     else{
     return;
 }

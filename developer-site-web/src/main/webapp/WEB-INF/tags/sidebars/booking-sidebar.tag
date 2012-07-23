@@ -6,9 +6,9 @@
         <h4>Booking API</h4>
     </a>
     <ol>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#reference">Reference</a></li>
-        <li><a href="#HTU">How to Use</a></li>
+        <li><a href="/api/bookingapi.html?from=booking#introduction">Introduction</a></li>
+        <li><a href="/api/bookingapi.html?from=booking#reference">Reference</a></li>
+        <li><a href="/api/bookingapi.html?from=booking#HTU">How to Use</a></li>
     </ol>
 </div>
 <div class="box">
@@ -16,8 +16,8 @@
     <ul>
         <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
         <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
-        <li><a href="../additionalresources/javaapi.html">Java API</a></li>
-        <li><a href="../support/getting-api-keys.html?from=booking">Getting and using API-keys</a></li>
+        <li><a href="/additionalresources/javaapi.html?from=booking">Java API</a></li>
+        <li><a href="/additionalresources/getting-api-keys.html?from=booking">Getting and using API-keys</a></li>
     </ul>
     <h5>XML/JSON API</h5>
     <ul>

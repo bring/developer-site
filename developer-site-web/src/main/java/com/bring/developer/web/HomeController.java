@@ -101,9 +101,9 @@ public class HomeController {
         return "support/support";
     }
 
-    @RequestMapping(value = "/support/getting-api-keys.html")
+    @RequestMapping(value = "/additionalresources/getting-api-keys.html")
     public String gettingApiKeys() {
-        return "support/getting-api-keys";
+        return "additionalresources/getting-api-keys";
     }
 
     @RequestMapping(value = "/plugin/joomla-virtuemart-fraktpriser.html")

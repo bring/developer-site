@@ -26,7 +26,7 @@
                     </div>
                     <div class="box">
                         <p>This library makes it easier for a Java developer to interact with Bring's APIs.</p>
-                        <p>It currently supports Bring's <a href="/api/shippingguideapi.html">Shipping Guide API</a> and Bring's <a href="/api/trackingapi.html">Tracking API.</a></p>
+                        <p>It currently supports Bring's <a href="/api/shippingguideapi.html?from=shipping">Shipping Guide API</a> and Bring's <a href="/api/trackingapi.html?from=tracking">Tracking API.</a></p>
                         <h2>How to install</h2>
                         <ol>
                             <li>Download the jar-file and include with your project.

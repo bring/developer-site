@@ -4,10 +4,10 @@
         <h4>Postal Code API</h4>
     </a>
     <ol>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#reference">Reference</a></li>
-        <li><a href="#HTU">How to Use</a></li>
-        <li><a href="#additionalExamples">Additional Examples</a></li>
+        <li><a href="/api/postalcodeapi.html?from=postalcode#introduction">Introduction</a></li>
+        <li><a href="/api/postalcodeapi.html?from=postalcode#reference">Reference</a></li>
+        <li><a href="/api/postalcodeapi.html?from=postalcode#HTU">How to Use</a></li>
+        <li><a href="/api/postalcodeapi.html?from=postalcode#additionalExamples">Additional Examples</a></li>
     </ol>
 
 </div>
@@ -16,6 +16,6 @@
     <h2>Additonal Resources</h2>
     <h4>Widgets</h4>
     <ul>
-        <li><a href="../widget/validate-postal-code.html">Validate postal code</a></li>
+        <li><a href="/widget/validate-postal-code.html">Validate postal code</a></li>
     </ul>
 </div>
