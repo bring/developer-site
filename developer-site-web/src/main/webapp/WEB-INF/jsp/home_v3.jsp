@@ -22,8 +22,6 @@
                 <div class="row-fluid">
                     <div class="span7">
                         <div class="welcometext">
-                            <h2 class="welcometext">Welcome to Bring Developer!</h2>
-
                             <p class="front-page-welcome-text">Bring provides a collection of APIs to facilitate <span class="front-page-welcome-text-highlight">integration</span>
                                 with your systems. If you're running a <span class="front-page-welcome-text-highlight">webshop</span>, or any software dealing with shipments
                                 from Nordic countries, using Bring APIs can <span class="front-page-welcome-text-highlight">add value to your business and to your

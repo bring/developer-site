@@ -1032,7 +1032,7 @@ div.box > p {
 }
 
 p.front-page-welcome-text {
-  margin-top: 20px;
+  margin-top: 37px;
   margin-bottom: 20px;
   font-size: 17px;
 }
@@ -1375,8 +1375,13 @@ p.getSatisfactiontext {
   text-align: center;
 }
 
-a.bringNo {
-  background: #717074 url("/images/m-arrow-w-right2.png") no-repeat 5% center !important;
+div.bringNo {
+  float: left;
+  width: 11px;
+  height: 14px;
+  margin-top: 12px;
+  margin-left: 6px;
+  background: #717074 url("/images/m-arrow-w-right2.png") no-repeat 5% center;
 }
 
 div.information-box {
