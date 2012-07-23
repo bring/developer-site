@@ -159,6 +159,9 @@ https://www.mybring.com/reports/api</pre>
 
 <div class="box">
     <h2><a name="HTU"></a>How to Use</h2>
+    <p>The Reports API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
+       Read more about <a href="../support/getting-api-keys.html">how to get an API-key</a>, and how to use it for authentication. </p>
+
     <p>The API uses two headers to customize the answers. One header is for choosing between XML and JSON responses,
        and the second header is to choose language in text-fields in the responses. Every call can return both JSON and XML,
        except the call to get a report. The report is available in XML and Excel.
@@ -179,17 +182,6 @@ https://www.mybring.com/reports/api</pre>
            so implementation should ignore new elements added to the response.</p>
     </div>
     <br/>
-    <div>
-        <H4>AUTHENTICATION</H4>
-        <P>Since reports are a logged in service, you need to authenticate to use the API.
-           All mybring-APIs use a simple authentication-scheme. By adding two headers to all requests,
-           you will authenticate your request. The API-Key is currently available to pilot customers.
-           Please contact us at fraktguide@posten.no if you are interested in using this API.
-        </P>
-        <h5>Authentication header example</h5>
-        <div><code><pre class="code-box">X-MyBring-API-Uid: user@email.com<br/>X-MyBring-API-Key: a141879d-608e-4ee4-95bd-8a083e04b599</pre>
-        </code></div>
-    </div>
     <br/><br/>
     <div>
         <ol>
@@ -287,17 +279,7 @@ https://www.mybring.com/reports/api</pre>
 
 <div class="span3" id="additional-resources">
     <div id="sidebar">
-
-        <div class="box">
-            <a class="black" href="/api/reportsapi.html">
-                <h4>Reports API</h4>
-            </a>
-            <ol>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#reference">Reference</a></li>
-                <li><a href="#HTU">How to Use</a></li>
-            </ol>
-        </div>
+        <sidebar:reports-sidebar/>
     </div>
 </div>
 

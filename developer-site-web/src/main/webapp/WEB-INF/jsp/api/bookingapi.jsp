@@ -92,54 +92,9 @@
 <div class="box">
 <h2><a name="HTU"></a>How to Use</h2>
 
-<p>There are several things you have to do before you can start using Bring's Booking API.
+<p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
+   Read more about <a href="../support/getting-api-keys.html">how to get an API-key</a>, and how to use it for authentication. </p>
 
-<ol>
-    <li>First you have to become a mybring user.</li>
-    <li>Authentication. Get access to the APi through receiving a Beta API-key from the developer team (if you're not registered as an organization administrator) and then setting two HTTP-headers.</li>
-    <li>Authorization. Get your customer number through the customer api.</li>
-    <li>Choose which integration method you would like to use, and read the tutorial.</li>
-</ol>
-Each step is covered in detail below.</p>
-</br>
-
-<ol>
-<li><h4>Become a mybring user</h4>
-<p>
-    To become a mybring customer, <a href="http://www.mybring.com/useradmin/open/signup/new" target="_blank">signup to mybring</a>.</p>
-</li>
-    </br>
-
-<li><h4>Authentication - API login with mybring</h4>
-
-<p>
-    We use the mybring authentication framework. This is a proprietary single sign-on solution that applies two HTTP
-    Headers for authentication to the API. Only users with a mybring user (with attached customer numbers) can use the
-    Booking API. In the Booking Web Service and XML/JSON API request, you must set two HTTP headers to access the
-    API. The API key is currently only visible to organization administrators. Please contact the development team
-    (developer@bring.com) to receive a Beta API-key.</p>
-
-<table>
-    <tbody>
-    <tr>
-        <th>Header name</th>
-        <th>Example header value</th>
-        <th>Comment</th>
-    </tr>
-    <tr>
-        <td>X-MyBring-API-Uid</td>
-        <td>booking@customer.com</td>
-        <td>This is the mybring login ID.</td>
-    </tr>
-    <tr class="even">
-        <td>X-MyBring-API-Key</td>
-        <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
-        <td>This is the API key of the mybring user.</td>
-    </tr>
-    </tbody>
-</table>
-</li>
-<li>
 <h4>Authorization - by customer numbers (per specialist)</h4>
 
 <p>
@@ -154,12 +109,11 @@ Each step is covered in detail below.</p>
 <p>
     For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
     endpoint definition in the instructions below. </p>
-</li>
 
 <br>
-    </br>
-<li><p>You can now choose whether you want to see the tutorial for the XML/JSON API or the SOAP API.</p></li>
-</ol>
+
+<p>You can now choose whether you want to see the tutorial for the XML/JSON API or the SOAP API.</p>
+
 
 <ul class="tab-group minimal" data-tabs="tabs">
     <li class="active"><a href="#tab1">XML/JSON</a></li>
@@ -674,34 +628,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
 <div class="span3">
     <div id="sidebar">
-    <div class="box">
-        <a class="black" href="/api/bookingapi.html">
-            <h4>Booking API</h4>
-        </a>
-        <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#reference">Reference</a></li>
-            <li><a href="#HTU">How to Use</a></li>
-        </ol>
-    </div>
-    <div class="box">
-        <h2>Additonal Resources</h2>
-        <ul>
-            <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
-            <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
-            <li><a href="../additionalresources/javaapi.html">Java API</a></li>
-        </ul>
-        <h5>XML/JSON API</h5>
-        <ul>
-            <li><a href="https://www.mybring.com/booking/api/booking">Booking endpoint (use HTTP POST)</a></li>
-            <li><a href="https://www.mybring.com/booking/api/customers">Customer number endpoint (use HTTP GET)</a></li>
-        </ul>
-        <h5>SOAP API</h5>
-        <ul>
-            <li><a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL</a></li>
-            <li><a href="https://www.mybring.com/booking/api/ws">Endpoint</a></li>
-        </ul>
-    </div>
+        <sidebar:booking-sidebar/>
     </div>
 </div>
 </div>
