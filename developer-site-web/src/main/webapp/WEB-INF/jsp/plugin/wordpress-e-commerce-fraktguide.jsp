@@ -48,14 +48,14 @@
 
                                     <div class="tab-pane active" id="tab1">
                                         <div class="box lightBorder">
-                                            <img src="/img/wordpress-ecommerce-screenshot1.png"
+                                            <img src="/images/wordpress-ecommerce-screenshot1.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab2">
                                         <div class="box lightBorder">
-                                            <img src="/img/wordpress-ecommerce-screenshot2.png"
+                                            <img src="/images/wordpress-ecommerce-screenshot2.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
