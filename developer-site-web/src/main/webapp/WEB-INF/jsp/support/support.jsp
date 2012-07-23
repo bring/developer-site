@@ -26,11 +26,11 @@
                             <h3><a name="getSatisfaction"></a>GetSatisfaction</h3>
                             <p>Bring uses getSatisfaction as a community for support. Here you have the opportunity to ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
                             </br>
-                            <p class="getSatisfactiontext"><a href="http://getsatisfaction.com/bring" target="_blank">Visit Bring's community on getSatisfaction.</a> </p>
+                            <p class="getSatisfactiontext"><a href="http://getsatisfaction.com/bring?view=recent" target="_blank">Visit Bring's community on getSatisfaction.</a> </p>
                         </div>
 
-                        <div class="text-center lightBorder span7">
-                            <a href="http://getsatisfaction.com/bring" target="_blank"><img src="../images/getSatisfactionScreenshot1.png" alt="Screenshot GetSatisfaction"></a>
+                        <div class="text-center span7">
+                            <a href="http://getsatisfaction.com/bring?view=recent" target="_blank"><img src="../images/getSatisfactionScreenshot1.png" alt="Screenshot GetSatisfaction"></a>
                         </div>
                     </div>
                     <div class="box">
