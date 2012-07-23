@@ -1381,7 +1381,7 @@ div.bringNo {
   height: 14px;
   margin-top: 12px;
   margin-left: 6px;
-  background: #717074 url("/images/m-arrow-w-right2.png") no-repeat 5% center;
+  background: transparent url("/images/m-arrow-w-right2.png") no-repeat 5% center;
 }
 
 div.information-box {
