@@ -629,7 +629,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
 <div class="span3">
     <div id="sidebar">
-        <sidebar:booking-sidebar/>
+        <misc:sidebar/>
     </div>
 </div>
 </div>
