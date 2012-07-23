@@ -7,7 +7,6 @@
     </a>
     <ol>
         <li><a href="/api/bookingapi.html?from=booking#introduction">Introduction</a></li>
-        <li><a href="/api/bookingapi.html?from=booking#reference">Reference</a></li>
         <li><a href="/api/bookingapi.html?from=booking#HTU">How to Use</a></li>
     </ol>
 </div>

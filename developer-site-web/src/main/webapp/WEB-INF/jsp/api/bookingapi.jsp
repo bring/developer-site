@@ -53,42 +53,7 @@
 
 </div>
 
-<div class="box">
-    <h2><a name="reference"></a>Reference</h2>
 
-    <p>Request prefix: <br/><code></code></p>
-
-    <table>
-        <thead>
-        <tr>
-            <th>Field</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td><a href="//beta.bring.com/booking/api/bookingExamples/validRequest.xml">../api/ws/booking-v1.wsdl</a></td>
-            <td>
-                This is an example of how an XML request may look like.
-            </td>
-        </tr>
-        <tr class="even">
-            <td><a href="//beta.bring.com/booking/api/bookingExamples/validRequest.json">../api/bookingExamples/validRequest.json</a></td>
-            <td>This is an example of how a JSON request may look like.
-            </td>
-        </tr>
-        <tr>
-            <td><a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">../api/ws/booking-v1.wsdl</a></td>
-            <td>The WSDL for the SOAP API.
-            </td>
-        </tr>
-        <tr class="even">
-            <td><a href="https://www.mybring.com/booking/api/booking">mybring.com/booking/api/booking</a></td>
-            <td>The endpoint for Booking and Customer.</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
 
 <div class="box">
 <h2><a name="HTU"></a>How to Use</h2>
