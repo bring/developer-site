@@ -12,7 +12,3 @@
 
 
 <link rel="stylesheet" type="text/css" href="/css/lib/jquery.snippet.css" />
-
-
-
-

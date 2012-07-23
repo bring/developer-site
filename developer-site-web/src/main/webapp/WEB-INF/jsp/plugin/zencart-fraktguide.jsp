@@ -64,7 +64,7 @@
                         <h4>Screenshot</h4>
 
                         <div class="box lightBorder">
-                            <img class="fitted-width" src="/img/zencart-screenshot.png"/>
+                            <img class="fitted-width" src="/images/zencart-screenshot.png"/>
                         </div>
                     </div>
                     <div class="box">

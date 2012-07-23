@@ -45,7 +45,7 @@
                         <h4>Screenshot</h4>
 
                         <div class="box lightBorder">
-                            <img class="fitted-width" src="/img/joomla-virtuemart-screenshot.png" />
+                            <img class="fitted-width" src="/images/joomla-virtuemart-screenshot.png" />
                         </div>
                     </div>
 

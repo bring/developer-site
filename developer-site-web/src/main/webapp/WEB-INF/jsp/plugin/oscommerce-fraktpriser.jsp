@@ -45,7 +45,7 @@
                         <h4>Screenshot</h4>
 
                         <div class="box lightBorder">
-                            <img class="fitted-width" src="/img/oscommerce-screenshot.png"/>
+                            <img class="fitted-width" src="/images/oscommerce-screenshot.png"/>
                         </div>
                     </div>
 

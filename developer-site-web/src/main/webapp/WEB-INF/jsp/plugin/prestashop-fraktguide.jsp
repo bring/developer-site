@@ -55,28 +55,28 @@
 
                                     <div class="tab-pane active" id="tab1">
                                         <div class="box lightBorder">
-                                            <img src="/img/prestashop-screenshot1.png"
+                                            <img src="/images/prestashop-screenshot1.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab2">
                                         <div class="box lightBorder">
-                                            <img src="/img/prestashop-screenshot2.png"
+                                            <img src="/images/prestashop-screenshot2.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab3">
                                         <div class="box lightBorder">
-                                            <img src="/img/prestashop-screenshot3.png"
+                                            <img src="/images/prestashop-screenshot3.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
 
                                     <div class="tab-pane" id="tab4">
                                         <div class="box lightBorder">
-                                            <img src="/img/prestashop-screenshot4.png"
+                                            <img src="/images/prestashop-screenshot4.png"
                                                  class="fitted-width"/>
                                         </div>
                                     </div>
