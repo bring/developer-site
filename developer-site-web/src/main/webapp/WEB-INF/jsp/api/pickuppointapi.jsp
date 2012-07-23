@@ -148,12 +148,7 @@
 
 <div class="row element-sample">
 
-    <p><h4>Example: USING THE POSTAL CODE</h4></p><p>Find pickup points based on the recipient's postal code, 1407
-                                                     Vinterbro.<br/>
-</p>
-
-
-    <p><h4>Example: USING THE POSTAL CODE</h4></p>
+        <p><h4>Example: USING THE POSTAL CODE</h4></p>
     <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro.<br/>
     </p>
     <div class="lightBorder">

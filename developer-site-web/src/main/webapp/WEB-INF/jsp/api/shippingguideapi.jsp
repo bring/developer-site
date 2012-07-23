@@ -76,7 +76,7 @@
         </tbody>
     </table>
 
-    <sup>1 You can also use <a href="../additionalresources/offlinedata.html">Offline data</a> as an integration method</sup><br/>
+    <sup>1 You can also use <a href="../additionalresources/offlinedata.html?from=shipping">Offline data</a> as an integration method</sup><br/>
 
 </div>
 
@@ -293,12 +293,12 @@
         </div>
     </div>
 
-    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information on
+    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html?from=shipping">XML schema</a> for information on
         elements in the response.</p>
 
     <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web
         shop's users should still be able to order, even if the Shipping Guide returns an error or a timeout occurs. <a
-                href="../additionalresources/errorhandling.html">Read more about error handling and error codes.</a>
+                href="../additionalresources/errorhandling.html?from=shipping">Read more about error handling and error codes.</a>
     </div>
 
     <br/>
@@ -308,7 +308,7 @@
         product you want to return information about. Strictly speaking this is an optional parameter, but in some
         situations you will need to specify a product to get a sensible response. For instance if you make a query for
         an international shipment, you will have to specify a product that supports this. Use the <a
-                href="/additionalresources/productlist.html"> the product list</a> to find suitable products. </p>
+                href="/additionalresources/productlist.html?from=shipping"> the product list</a> to find suitable products. </p>
 
     <p>
         <b>Example:</b><br/> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
@@ -424,12 +424,12 @@
         </div>
     </div>
 
-    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html">XML schema</a> for information on
+    <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html?from=shipping">XML schema</a> for information on
         elements in the response.</p>
 
     <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web
         shop's users should still be able to order, even if the Shipping Guide returns an error or a timeout occurs. <a
-                href="../additionalresources/errorhandling.html">Read more about error handling and error codes.</a>
+                href="../additionalresources/errorhandling.html?from=shipping">Read more about error handling and error codes.</a>
     </div>
 
     <br/>
@@ -439,7 +439,7 @@
         product you want to return information about. Strictly speaking this is an optional parameter, but in some
         situations you will need to specify a product to get a sensible response. For instance if you make a query for
         an international shipment, you will have to specify a product that supports this. Use the <a
-                href="/additionalresources/productlist.html"> the product list</a> to find suitable products. </p>
+                href="/additionalresources/productlist.html?from=shipping"> the product list</a> to find suitable products. </p>
 
     <p>
         <b>Example:</b><br/> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
@@ -494,14 +494,14 @@
 <p><b>To execute the web-service you will need a identification string. To get this - please <a
         href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
 
-<p>More information about <a href="../additionalresources/wsdl-xml-schema.html">WSDL/XML Schema</a>. <a
-        href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a>(will always link to the latest
+<p>More information about <a href="../additionalresources/wsdl-xml-schema.html?from=shipping">WSDL/XML Schema</a>. <a
+        href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl?from=shipping">WSDL</a>(will always link to the latest
     version)</p><br/>
 
 <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br/>
 
-<p>Please refer to common information regarding <a href="../additionalresources/productlist.html">product codes</a> and
-    <a href="../additionalresources/errorhandling.html">error codes</a>.</p>
+<p>Please refer to common information regarding <a href="../additionalresources/productlist.html?from=shipping">product codes</a> and
+    <a href="../additionalresources/errorhandling.html?from=shipping">error codes</a>.</p>
 
 <div><pre class="code-box">// Initialize library
 
@@ -1744,7 +1744,7 @@ System.out.println("Price: " + price + " NOK");</pre>
         <div class="row element-sample">
 
             <p>The Shipping Guide provides adjustment of prices shown. This service is available both in XML API and in
-                the <a href="../widget/productselectionashtml.html">Product selection as HTML"-widget.</a></p>
+                the <a href="../widget/productselectionashtml.html?from=shipping">Product selection as HTML"-widget.</a></p>
 
             <p>To adjust the price, add <a
                     href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">

@@ -16,6 +16,6 @@
     <h2>Additonal Resources</h2>
     <h4>Widgets</h4>
     <ul>
-        <li><a href="/widget/validate-postal-code.html">Validate postal code</a></li>
+        <li><a href="/widget/validate-postal-code.html?from=postalcode">Validate postal code</a></li>
     </ul>
 </div>

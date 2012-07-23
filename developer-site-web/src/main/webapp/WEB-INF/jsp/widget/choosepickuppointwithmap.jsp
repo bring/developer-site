@@ -86,7 +86,7 @@
                     <div id="sidebar">
 
                         <div class="box">
-                            <a class="black" href="/api/pickuppointapi.html">
+                            <a class="black" href="/api/pickuppointapi.html?from=pickuppoint">
                                 <h4>Pickup Point API</h4>
                             </a>
                             <ol>
@@ -115,8 +115,8 @@
 
                                 <h4>Widgets</h4>
                                 <ul>
-                                    <li><a href="../widget/choose-pickup-point.html">Choose Pickup Point</a></li>
-                                    <li><a href="../widget/choose-pickup-point-with-map.html">Choose Pickup Point With
+                                    <li><a href="../widget/choose-pickup-point.html?from=pickuppoint">Choose Pickup Point</a></li>
+                                    <li><a href="../widget/choose-pickup-point-with-map.html?from=pickuppoint">Choose Pickup Point With
                                                                                               Map</a></li>
                                 </ul>
                             </div>

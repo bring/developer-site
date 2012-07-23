@@ -15,26 +15,26 @@
 <div class="box">
     <h2>Additonal Resources</h2>
     <ul>
-        <li><a href="/additionalresources/errorhandling.html">Error handling</a></li>
-        <li><a href="/additionalresources/wsdl-xml-schema.html">WSDL/XML SCHEMA</a></li>
-        <li><a href="/additionalresources/productlist.html">Product list</a></li>
-        <li><a href="/additionalresources/offlinedata.html">Offline data</a></li>
-        <li><a href="/additionalresources/javaapi.html?from=shipping-guide-api">Java API</a></li>
-        <li><a href="/additionalresources/phpapi.html">PHP API</a></li>
+        <li><a href="/additionalresources/errorhandling.html?from=shipping">Error handling</a></li>
+        <li><a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL/XML SCHEMA</a></li>
+        <li><a href="/additionalresources/productlist.html?from=shipping">Product list</a></li>
+        <li><a href="/additionalresources/offlinedata.html?from=shipping">Offline data</a></li>
+        <li><a href="/additionalresources/javaapi.html?from=shipping-guide-api?from=shipping">Java API</a></li>
+        <li><a href="/additionalresources/phpapi.html?from=shipping">PHP API</a></li>
     </ul>
     <h4>Widgets</h4>
     <ul>
-        <li><a href="/widget/displayshippingguideinformationusingjsonp.html">Display shipping guide
+        <li><a href="/widget/displayshippingguideinformationusingjsonp.html?from=shipping">Display shipping guide
             information using jsonp</a></li>
-        <li><a href="/widget/productselectionashtml.html">Product selection as html</a></li>
+        <li><a href="/widget/productselectionashtml.html?from=shipping">Product selection as html</a></li>
     </ul>
     <h4>Plugins</h4>
     <ul>
-        <li><a href="/plugin/joomla-virtuemart-fraktpriser.html">Fraktguide for Joomla! Virtuemart</a></li>
-        <li><a href="/plugin/oscommerce-fraktpriser.html">Fraktguide for osCommerce</a></li>
-        <li><a href="/plugin/prestashop-fraktguide.html">Fraktguide for Prestashop</a></li>
-        <li><a href="/plugin/wordpress-e-commerce-fraktguide.html">Fraktguide for Wordpress e-commerce</a>
+        <li><a href="/plugin/joomla-virtuemart-fraktpriser.html?from=shipping">Fraktguide for Joomla! Virtuemart</a></li>
+        <li><a href="/plugin/oscommerce-fraktpriser.html?from=shipping">Fraktguide for osCommerce</a></li>
+        <li><a href="/plugin/prestashop-fraktguide.html?from=shipping">Fraktguide for Prestashop</a></li>
+        <li><a href="/plugin/wordpress-e-commerce-fraktguide.html?from=shipping">Fraktguide for Wordpress e-commerce</a>
         </li>
-        <li><a href="/plugin/zencart-fraktguide.html">Fraktguide for ZenCart</a></li>
+        <li><a href="/plugin/zencart-fraktguide.html?from=shipping">Fraktguide for ZenCart</a></li>
     </ul>
 </div>

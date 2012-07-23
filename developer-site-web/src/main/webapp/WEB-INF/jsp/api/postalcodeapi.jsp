@@ -5,9 +5,7 @@
 <html>
 
 <head>
-    <misc:contenttype/>
-    <misc:title value="Postal Code API"/>
-    <misc:css_v2/>
+    <misc:contenttype/> <misc:title value="Postal Code API"/> <misc:css_v2/>
 </head>
 
 <body>
@@ -15,7 +13,6 @@
 <div class="wrapper">
 
 <misc:header_v2 selected_tab="developer"/>
-
 
 <div id="page">
 <section id="content">
@@ -29,6 +26,7 @@
 
     <div class="box">
         <h2><a name="introduction"></a>Introduction</h2>
+
         <p>With the Postal Code API you can look up the location by using the postal code and the country code.</p>
     </div>
 
@@ -64,8 +62,8 @@
 
     <div class="box">
         <h2><a name="HTU"></a>How to Use</h2>
-        You have to specify the postal code and the country code to find the location with this API.<br/><br/>
-        The following countries are supported:
+        You have to specify the postal code and the country code to find the location with this API.<br/><br/> The
+        following countries are supported:
 
         <ul>
             <li><code>NO</code> - Norway</li>
@@ -78,11 +76,11 @@
             <li><code>BE</code> - Belgium</li>
         </ul>
 
-        <p>The service uses <a target="_blank" href="http://www.geonames.org/">GeoNames</a> as source for all
-           countries except Norway.</p>
+        <p>The service uses <a target="_blank" href="http://www.geonames.org/">GeoNames</a> as source for all countries
+            except Norway.</p>
 
-        <p>For unsupported countries, all postal codes with be marked as valid with no city name returned. In these cases
-           it is recommended to prompt the user to input the city name himself/herself.</p><br/>
+        <p>For unsupported countries, all postal codes will be marked as valid with no city name returned. In these
+            cases it is recommended to prompt the user to input the city name himself/herself.</p><br/>
 
         To illustrate in a simple matter how to use this API, we provide an example.
 
@@ -90,19 +88,18 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-            <ul class="tab-group minimal" data-tabs="tabs">
-                <li><a href="#xml">XML</a></li>
-                <li><a href="#json">JSON</a></li>
-                <li><a href="#html">HTML</a></li>
-            </ul>
+                <ul class="tab-group minimal" data-tabs="tabs">
+                    <li><a href="#xml">XML</a></li>
+                    <li><a href="#json">JSON</a></li>
+                    <li><a href="#html">HTML</a></li>
+                </ul>
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337"
                            data-internal="/proxy/shipping-guide/api/postalCode.xml?country=no&amp;pnr=1337">
-                            /api/postalCode.xml?country=no&amp;pnr=1337
-                        </a>
+                            /api/postalCode.xml?country=no&amp;pnr=1337 </a>
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
                 </div>
@@ -113,27 +110,26 @@
                         <a target="_blank" class="request"
                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337"
                            data-internal="/proxy/shipping-guide/api/postalCode.json?country=no&amp;pnr=1337">
-                            /api/postalCode.json?country=no&amp;pnr=1337
-                        </a>
-                        <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337&amp;callbackUrl=functionName">?callback=functionName</a></p>
+                            /api/postalCode.json?country=no&amp;pnr=1337 </a>
+
+                        <p class="right">JSONP Request: <a
+                                href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337&amp;callbackUrl=functionName">?callback=functionName</a>
+                        </p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
 
                 <div data-tab="html" class="tab">
                     <div class="api-call">
-                        <p>The HTML API will return a <code>span</code> element with
-                            <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
-                           and the <code>class</code> either
-                            <code>bringPostnumberQueryValidPostnumber</code> or
-                            <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
+                        <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
+                            the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
+                            or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
 
                         <p>Request:</p>
                         <a target="_blank" class="request"
                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=no&amp;pnr=1337"
                            data-internal="/proxy/shipping-guide/api/postalCode.html?country=no&amp;pnr=1337">
-                            /api/postalCode.html?country=no&amp;pnr=1337
-                        </a>
+                            /api/postalCode.html?country=no&amp;pnr=1337 </a>
                         <pre class="code-box html response delay-snippet"></pre>
                     </div>
                 </div>
@@ -150,27 +146,26 @@
 
                 <div class="content-box">
                     <div class="row element-sample">
-                        <p>In some countries, such as for example Germany and France, postal codes are non-unique.
-                           This means that one postal code might have multiple city names.
-                           In these cases, the ordinary response element will be blank.
-                           The integration APIs (json and xml) will have separate elements containing the list of cities,
-                           while the html response will only contain the blank element.</p>
+                        <p>In some countries, such as for example Germany and France, postal codes are non-unique. This
+                            means that one postal code might have multiple city names.
+                            In these cases the integration APIs (json and xml) will have separate elements containing
+                            the list of cities, while the ordinary html response element will remain blank.
+                        </p>
 
                         <div class="lightBorder">
                             <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml">XML</a></li>
-                                <li><a href="#json">JSON</a></li>
-                                <li><a href="#html">HTML</a></li>
-                            </ul>
+                                <ul class="tab-group minimal" data-tabs="tabs">
+                                    <li><a href="#xml">XML</a></li>
+                                    <li><a href="#json">JSON</a></li>
+                                    <li><a href="#html">HTML</a></li>
+                                </ul>
                                 <div data-tab="xml" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=DE&amp;pnr=99869"
                                            data-internal="/proxy/shipping-guide/api/postalCode.xml?country=DE&amp;pnr=99869">
-                                            /api/postalCode.xml?country=DE&amp;pnr=99869
-                                        </a>
+                                            /api/postalCode.xml?country=DE&amp;pnr=99869 </a>
                                         <pre class="code-box xml response delay-snippet"></pre>
                                     </div>
                                 </div>
@@ -181,27 +176,26 @@
                                         <a target="_blank" class="request"
                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869"
                                            data-internal="/proxy/shipping-guide/api/postalCode.json?country=DE&amp;pnr=99869">
-                                            /api/postalCode.json?country=DE&amp;pnr=99869
-                                        </a>
-                                        <p class="right">JSONP Request: <a href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869&amp;callbackUrl=functionName">?callback=functionName</a></p>
+                                            /api/postalCode.json?country=DE&amp;pnr=99869 </a>
+
+                                        <p class="right">JSONP Request: <a
+                                                href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869&amp;callbackUrl=functionName">?callback=functionName</a>
+                                        </p>
                                         <pre class="code-box json response delay-snippet"></pre>
                                     </div>
                                 </div>
 
                                 <div data-tab="html" class="tab">
                                     <div class="api-call">
-                                        <p>The HTML API will return a <code>span</code> element with
-                                            <code>id="bringPostnumberQueryResult"</code>, the postal name as contents
-                                           and the <code>class</code> either
-                                            <code>bringPostnumberQueryValidPostnumber</code> or
-                                            <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
+                                        <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
+                                            the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
+                                            or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
 
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=DE&amp;pnr=99869"
                                            data-internal="/proxy/shipping-guide/api/postalCode.html?country=DE&amp;pnr=99869">
-                                            /api/postalCode.html?country=DE&amp;pnr=99869
-                                        </a>
+                                            /api/postalCode.html?country=DE&amp;pnr=99869 </a>
                                         <pre class="code-box html response delay-snippet"></pre>
                                     </div>
                                 </div>
@@ -214,9 +208,7 @@
         </ul>
     </div>
 
-
 </div>
-
 
 <div class="span3">
     <div id="sidebar">
@@ -229,9 +221,7 @@
 
 </div>
 
-
-<misc:footer_v2/>
-<misc:jqueryblob_v2/>
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>
