@@ -10,12 +10,12 @@
     }
 
     if(from.startsWith("booking")) {%><sidebar:booking-sidebar /><%}
-    else if(from.startsWith("postalcode")) {%><sidebar:postalcode-sidebar /><%}
-    else if(from.startsWith("reports")) {%><sidebar:reports-sidebar /><%}
+    else if(from.startsWith("postal")) {%><sidebar:postalcode-sidebar /><%}
+    else if(from.startsWith("report")) {%><sidebar:reports-sidebar /><%}
     else if(from.startsWith("shipping")) {%><sidebar:shipping-guide-sidebar /><%}
     else if(from.startsWith("support")) {%><sidebar:support-sidebar /><%}
     else if(from.startsWith("tracking")) {%><sidebar:tracking-sidebar /><%}
-    else if(from.startsWith("pickuppoint")) {%><sidebar:pickuppoint-sidebar /><%}
+    else if(from.startsWith("pickup")) {%><sidebar:pickuppoint-sidebar /><%}
     else{
     return;
 }
