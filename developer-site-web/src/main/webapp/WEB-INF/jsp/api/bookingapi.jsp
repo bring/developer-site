@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
@@ -93,7 +94,7 @@
 <h2><a name="HTU"></a>How to Use</h2>
 
 <p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
-   Read more about <a href="../support/getting-api-keys.html">how to get an API-key</a>, and how to use it for authentication. </p>
+   Read more about <a href="../support/getting-api-keys.html?from=booking">how to get an API-key</a>, and how to use it for authentication. </p>
 
 <h4>Authorization - by customer numbers (per specialist)</h4>
 

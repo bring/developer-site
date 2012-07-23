@@ -13,6 +13,6 @@
     <h2>Additional Resources</h2>
     <ul>
         <li><a href="http://getsatisfaction.com/bring">Bring's community - GetSatisfaction</a></li>
-        <li><a href="support/getting-api-keys.html">Getting and using API-keys</a></li>
+        <li><a href="support/getting-api-keys.html?from=support">Getting and using API-keys</a></li>
     </ul>
 </div>
