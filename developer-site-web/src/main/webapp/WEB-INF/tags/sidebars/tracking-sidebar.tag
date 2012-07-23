@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div class="box">
-    <a class="black" href="/api/trackingapi.html">
+    <a class="black" href="/api/trackingapi.html?from=tracking">
         <h4>Tracking API</h4>
     </a>
     <ol>

@@ -43,13 +43,7 @@
                 <div class="span3">
                     <div id="sidebar">
 
-                    <%-- If the user is comming from the Shipping Guide API, display the shipping guide menu --%>
-                    <% if(request.getParameter("from") != null && request.getParameter("from").startsWith("ship")) { %>
-                        <sidebar:shipping-guide-sidebar />
-                    <%-- If the user is comming from any other page, display the Tracking menu --%>
-                    <% } else { %>
-                        <sidebar:tracking-sidebar />
-                    <% }%>
+                    <misc:sidebar/>
 
                     </div>
                 </div>

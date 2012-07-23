@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div class="box">
-    <a class="black" href="/api/shippingguideapi.html">
+    <a class="black" href="/api/shippingguideapi.html?from=shipping-guide">
         <h4>Shipping Guide API</h4>
     </a>
     <ol>

@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <div class="box">
-    <a class="black" href="/support.html">
+    <a class="black" href="/support.html?from=support">
         <h4>Support</h4>
         <ol>
             <li><a href="#getSatisfaction">GetSatisfaction</a></li>
