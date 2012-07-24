@@ -5,7 +5,9 @@
 
 <html>
 <head>
-    <misc:contenttype/> <misc:title value="Support"/> <misc:css_v2/>
+    <misc:contenttype />
+    <misc:title value="Support" />
+    <misc:css_v2 />
 </head>
 
 <body>
@@ -21,18 +23,15 @@
                     <div class="box"><h1>Support</h1></div>
                     <div class="box">
                         <div class="span5">
-                            </br><h3><a name="getSatisfaction"></a>GetSatisfaction</h3>
-
-                            <p>Bring uses getSatisfaction as a community for support. Here you have the opportunity to
-                                ask questions and give feedback regarding technical issues integrating with Bring
-                                APIs. </p></br><p class="getSatisfactiontext"><a
-                                href="http://getsatisfaction.com/bring?view=recent" target="_blank">Visit Bring's
-                            community on getSatisfaction.</a></p>
+                            </br>
+                            <h3><a name="getSatisfaction"></a>GetSatisfaction</h3>
+                            <p>Bring uses getSatisfaction as a community for support. Here you have the opportunity to ask questions and give feedback regarding technical issues integrating with Bring APIs. </p>
+                            </br>
+                            <p class="getSatisfactiontext"><a href="http://getsatisfaction.com/bring?view=recent" target="_blank">Visit Bring's community on getSatisfaction.</a> </p>
                         </div>
 
                         <div class="text-center span7">
-                            <a href="http://getsatisfaction.com/bring?view=recent" target="_blank"><img
-                                    src="../images/getSatisfactionScreenshot1.png" alt="Screenshot GetSatisfaction"></a>
+                            <a href="http://getsatisfaction.com/bring?view=recent" target="_blank"><img src="../images/getSatisfactionScreenShot.png" alt="Screenshot GetSatisfaction"></a>
                         </div>
                     </div>
                     <div class="box">
@@ -88,6 +87,7 @@
 </div>
 </body>
 
-<misc:footer_v2/> <misc:jqueryblob_v2/>
+<misc:footer_v2 />
+<misc:jqueryblob_v2 />
 
 </html>
