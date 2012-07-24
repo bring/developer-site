@@ -359,6 +359,8 @@ Host: www.mybring.com
                     <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.json"
                        data-internal="/proxy/booking/api/errors.json">
                         http://beta.bring.com/booking/api/errors.json </a>
+
+                    <p>Example response:</p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>

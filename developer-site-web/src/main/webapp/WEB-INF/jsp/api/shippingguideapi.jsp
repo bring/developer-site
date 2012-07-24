@@ -979,7 +979,6 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#webservice">WEB SERVICES</a></li>
                     <li><a href="#java">JAVA</a></li>
                 </ul>
 
@@ -1015,14 +1014,6 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-
-                    <div data-tab="webservice" class="tab">
-                        <p>Please refer to written documentation in <a
-                                href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                        </p>
-                    </div>
-
                     <div data-tab="java" class="tab">
                         <div><pre class="code-box">// Initialize library
 String clientId = "www.mywebshop.com";
@@ -1143,7 +1134,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         <ul class="tab-group minimal" data-tabs="tabs">
             <li><a href="#xml">XML</a></li>
             <li><a href="#json">JSON</a></li>
-            <li><a href="#webservice">WEB SERVICES</a></li>
             <li><a href="#java">JAVA</a></li>
         </ul>
 
@@ -1176,13 +1166,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <p>Response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
-        </div>
-
-        <div data-tab="webservice" class="tab">
-            <p>Please refer to written documentation in <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-            </p>
         </div>
 
         <div data-tab="java" class="tab">
@@ -1224,7 +1207,6 @@ System.out.println("Price: " + price + " NOK");</pre>
         <ul class="tab-group minimal" data-tabs="tabs">
             <li><a href="#xml">XML</a></li>
             <li><a href="#json">JSON</a></li>
-            <li><a href="#webservice">WEB SERVICES</a></li>
             <li><a href="#java">JAVA</a></li>
         </ul>
 
@@ -1257,13 +1239,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <p>Response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
-        </div>
-
-        <div data-tab="webservice" class="tab">
-            <p>Please refer to written documentation in <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-            </p>
         </div>
 
         <div data-tab="java" class="tab">
@@ -1309,7 +1284,6 @@ System.out.println("Price: " + price + " NOK");</pre>
         <ul class="tab-group minimal" data-tabs="tabs">
             <li><a href="#xml">XML</a></li>
             <li><a href="#json">JSON</a></li>
-            <li><a href="#webservice">WEB SERVICES</a></li>
             <li><a href="#java">JAVA</a></li>
         </ul>
 
@@ -1342,13 +1316,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <p>Response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
-        </div>
-
-        <div data-tab="webservice" class="tab">
-            <p>Please refer to written documentation in <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a> or <a
-                    href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-            </p>
         </div>
 
         <div data-tab="java" class="tab">
@@ -1407,7 +1374,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li><a href="#xml">XML</a></li>
                         <li><a href="#json">JSON</a></li>
-                        <li><a href="#webservice">WEB SERVICES</a></li>
                         <li><a href="#java">JAVA</a></li>
                     </ul>
 
@@ -1438,13 +1404,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                             </p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
-                    </div>
-
-                    <div data-tab="webservice" class="tab">
-                        <p>Please refer to written documentation in <a
-                                href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                        </p>
                     </div>
 
                     <div data-tab="java" class="tab">
@@ -1506,7 +1465,6 @@ System.out.println("Price: " + price + " NOK");
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#webservice">WEB SERVICES</a></li>
                     <li><a href="#java">JAVA</a></li>
                 </ul>
 
@@ -1537,13 +1495,6 @@ System.out.println("Price: " + price + " NOK");
                         </p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
-                </div>
-
-                <div data-tab="webservice" class="tab">
-                    <p>Please refer to written documentation in <a
-                            href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                    </p>
                 </div>
 
                 <div data-tab="java" class="tab">
@@ -1601,7 +1552,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#webservice">WEB SERVICES</a></li>
                     <li><a href="#java">JAVA</a></li>
                 </ul>
 
@@ -1632,13 +1582,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                         </p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
-                </div>
-
-                <div data-tab="webservice" class="tab">
-                    <p>Please refer to written documentation in <a
-                            href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                    </p>
                 </div>
 
                 <div data-tab="java" class="tab">
@@ -1697,7 +1640,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#webservice">WEB SERVICES</a></li>
                     <li><a href="#java">JAVA</a></li>
                 </ul>
 
@@ -1728,13 +1670,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                         </p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
-                </div>
-
-                <div data-tab="webservice" class="tab">
-                    <p>Please refer to written documentation in <a
-                            href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                        or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                    </p>
                 </div>
 
                 <div data-tab="java" class="tab">
