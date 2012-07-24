@@ -69,14 +69,13 @@
 
     <p>
         To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
-        getting the customer numbers of your mybring user (the customer numbers your mybring user has access to). The
+        getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access to). The
         Customer number API also links customer numbers with the products the customer number is valid for. </p>
 
     <p>
         For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
         endpoint definition in the instructions below. </p>
 
-<%--Testing av tabs--%>
 
 <div class="row element-sample">
 </br>
@@ -90,6 +89,7 @@
 
 <div class="tab-pane active" id="tab1">
 <div class="box lightBorder">
+</br>
 <h4>Technical information</h4><br/>
 
 <div>
@@ -371,12 +371,12 @@ Host: www.mybring.com
     <h4>How to use the Customer API</h4>
 
     <p>
-        You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user
+        You must be logged in to mybring to use the Customer API. You can test it as a normal mybring user
         using a web browser, or you can use the mybring API-key to be authenticated to use the service
         programmatically. </p>
 
     <p>
-        The customer numbers are prefixed with the specialist, and then the customer number. For Courier and Bring
+        The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring
         Express-products, we use a UUID to identify users. </p>
     <table>
         <tbody>
@@ -450,7 +450,6 @@ Host: www.mybring.com
                 <pre class="code-box">  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a>
   GET <a href="http://www.mybring.com/booking/api/customers.xml">http://www.mybring.com/booking/api/customers.xml</a>
 </pre>
-    </br>
     <h5>Example:</h5>
 
     <div class="lightBorder">
@@ -491,6 +490,7 @@ Host: www.mybring.com
 <div class="tab-pane" id="tab2">
     <div class="box lightBorder">
         <div>
+            </br>
             <h4>Technical information</h4>
 
             <p>
@@ -520,7 +520,7 @@ Host: www.mybring.com
             <h4>How to use the Customer API</h4>
 
             <p>
-                You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user
+                You must be logged in to mybring to use the Customer API. You can test it as a normal mybring user
                 using a web browser, or you can use the mybring API-key to be authenticated to use the service
                 programmatically. </p>
 
@@ -528,7 +528,7 @@ Host: www.mybring.com
                     href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p>
 
             <p>
-                The customer numbers are prefixed with the specialist, and then the customer number. For Courier and Bring
+                The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring
                 Express-products, we use a UUID to identify users. </p>
             <table>
                 <tbody>
@@ -558,8 +558,10 @@ Host: www.mybring.com
         </div>
 
         <div>
+            <h4>Examples</h4>
+
             <p>
-                The SOAP Body follow the same XML Schema Definition (XSD) as the XML API. </p>
+                The SOAP Body follows the same XML Schema Definition (XSD) as the XML API. </p>
 
             <h5>Example authentication header</h5>
 
@@ -567,7 +569,7 @@ Host: www.mybring.com
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
-            <h5>Sample SOAP request header, body, tail</h5>
+            <h5>Sample SOAP request header</h5>
 
         <pre class="code-box">&lt;soapenv:Envelope
             xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -578,15 +580,12 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
 
             <div data-tab="xml" class="tab api-call">
+                <h5>Sample SOAP request body</h5>
                 <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
-                    Example Soap Body Request XML
                 </a>
-                <div class="box lightBorder">
                     <pre class="code-box xml response delay-snippet"></pre>
-                </div>
-
             </div>
-
+            <h5>Sample SOAP request tail</h5>
         <pre class="code-box">&lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
 </pre>

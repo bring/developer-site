@@ -1118,9 +1118,10 @@ pre.code-box {
           box-shadow: inset 0px -8px 7px -10px #000000;
 }
 
-.tab-group li.active {
+.tab-group li.active a {
   margin: 0;
-  background: #fff;
+  color: black;
+  background: white;
   border-right: none;
   filter: progid:dximagetransform.microsoft.shadow(color='#949598', Direction=150, Strength=3);
   -webkit-box-shadow: 0px 3px 3px 1px #bbbcc0;
@@ -1128,21 +1129,11 @@ pre.code-box {
           box-shadow: 0px 3px 3px 1px #bbbcc0;
 }
 
-.tab-group li.active a {
-  position: relative;
-  margin: 0;
-  color: #4d4f53;
-  background: #7BC144;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-}
-
 .tab-group li:last-child {
   border-right: none;
 }
 
-.tab-group.no-shadow li.active {
+.tab-group.no-shadow li.active a {
   border-top: 1px solid white;
   filter: progid:dximagetransform.microsoft.shadow(enabled=false);
   -webkit-box-shadow: none;
@@ -1191,7 +1182,7 @@ pre.code-box {
           box-shadow: none;
 }
 
-.tab-group.minimal li.active > a {
+.tab-group.minimal a.active {
   color: #7BC144;
 }
 

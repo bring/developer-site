@@ -368,7 +368,7 @@ http://fraktguide.bring.no/fraktguide</pre>
 
         <h5>Response Reference</h5>
             <table>
-        <colgroup width="100"></colgroup>
+        <colgroup width="95"></colgroup>
         <colgroup width="100"></colgroup>
         <colgroup width="35"></colgroup>
         <thead>
@@ -834,7 +834,7 @@ String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE
 System.out.println("Price: " + price + " NOK");
 System.out.println("Working days: " + workingDays);
 System.out.println("Display name: " + descriptionText);</pre>
-            <div><p>Expected Result:</p>
+            <div><h5>Expected Result:</h5>
                                             <pre class="code-box">Price: 81.00 NOK
 Working days: 2
 Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800
