@@ -41,7 +41,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <a href="https://github.com/bring/bring-api-java" class="btn" target="_blank">Repository</a>
+                        <a href="http://code.google.com/p/fraktpriserzencart/" class="btn" target="_blank">Repository</a>
                     </div>
 
                 </div>
