@@ -49,13 +49,7 @@
                         <br/>
 
                         <div>For those who use the offline data, we recommend to get the updates automatically via
-                             Shipping Guide Web Services. To execute the web-service you will need a identification
-                             string. To get this - please <a
-                                    href="http://fraktguide.bring.no/fraktguide/registrerBruker.do">register</a>. Please
-                             refer to written documentation in <a
-                                    href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">english</a>
-                             or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">norwegian</a>
-                             for details.
+                             Shipping Guide Web Services.
                         </div>
                         <br/>
 
