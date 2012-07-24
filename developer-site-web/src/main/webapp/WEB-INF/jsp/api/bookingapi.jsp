@@ -24,6 +24,7 @@
     <h1>Booking API</h1>
 </div>
 
+<%--Introduction--%>
 <div class="box">
     <h2><a name="introduction"></a>Introduction</h2>
 
@@ -53,42 +54,42 @@
 
 </div>
 
-
-
+<%--How to Use--%>
 <div class="box">
-<h2><a name="HTU"></a>How to Use</h2>
+    <h2><a name="HTU"></a>How to Use</h2>
 
-<p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
-   Read more about <a href="/additionalresources/getting-api-keys.html?from=booking">how to get an API-key</a>, and how to use it for authentication. </p>
+    <p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
+       Read more about <a href="/additionalresources/getting-api-keys.html?from=booking">how to get an API-key</a>, and how to use it for authentication. </p>
+    </br>
+    <h4>Authorization - by customer numbers (per specialist)</h4>
 
-<h4>Authorization - by customer numbers (per specialist)</h4>
+    <p>
+        In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings. The
+        authorization is currently handled with customer numbers on a per specialist basis. </p>
 
-<p>
-    In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings. The
-    authorization is currently handled with customer numbers on a per specialist basis. </p>
+    <p>
+        To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
+        getting the customer numbers of your mybring user (the customer numbers your mybring user has access to). The
+        Customer number API also links customer numbers with the products the customer number is valid for. </p>
 
-<p>
-    To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
-    getting the customer numbers of your mybring user (the customer numbers your mybring user has access to). The
-    Customer number API also links customer numbers with the products the customer number is valid for. </p>
+    <p>
+        For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
+        endpoint definition in the instructions below. </p>
 
-<p>
-    For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
-    endpoint definition in the instructions below. </p>
+<%--Testing av tabs--%>
 
-<br>
-
-<p>You can now choose whether you want to see the tutorial for the XML/JSON API or the SOAP API.</p>
-
-
-<ul class="tab-group minimal" data-tabs="tabs">
+<div class="row element-sample">
+</br>
+<h4>Choose between XML/JSON and SOAP</h4>
+<ul class="tab-group" data-tabs="tabs">
     <li class="active"><a href="#tab1">XML/JSON</a></li>
     <li><a href="#tab2">SOAP</a></li>
 </ul>
 
-<div class="tab-content tab-minimal">
+<div class="tab-content">
 
 <div class="tab-pane active" id="tab1">
+<div class="box lightBorder">
 <h4>Technical information</h4><br/>
 
 <div>
@@ -171,7 +172,7 @@
     <h4>Examples</h4>
 
     <p>
-        All requests for the API must include the content type and authentication headers documented in the API docs.
+        All requests for the API must include the content type and authentication headers.
         Use HTTP POST to create new bookings. </p>
 
     <h5>HTTP-Headers</h5>
@@ -186,10 +187,10 @@ Host: www.mybring.com
 
     <div class="lightBorder">
         <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml">XML</a></li>
-            <li><a href="#json">JSON</a></li>
-        </ul>
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li class="active"><a href="#xml">XML</a></li>
+                <li><a href="#json">JSON</a></li>
+            </ul>
             <div data-tab="xml" class="tab">
                 <div class="api-call">
                     <p>Request:</p>
@@ -197,6 +198,7 @@ Host: www.mybring.com
                        href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
                        data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
                         http://beta.bring.com/booking/api/bookingExamples/validRequest.xml </a>
+                    <p>Example response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
@@ -208,6 +210,7 @@ Host: www.mybring.com
                        href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
                        data-internal="/proxy/booking/api/bookingExamples/validRequest.json">
                         http://beta.bring.com/booking/api/bookingExamples/validRequest.json </a>
+                    <p>Example response:</p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
@@ -218,17 +221,18 @@ Host: www.mybring.com
 
     <div class="lightBorder">
         <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml">XML</a></li>
-            <li><a href="#json">JSON</a></li>
-        </ul>
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li class="active"><a href="#xml">XML</a></li>
+                <li><a href="#json">JSON</a></li>
+            </ul>
             <div data-tab="xml" class="tab">
                 <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
-                       data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml"> Example
-                        response </a>
+                       data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
+                        http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml</a>
+                    <p>Example response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
@@ -239,7 +243,9 @@ Host: www.mybring.com
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
                        data-internal="/proxy/booking/api/bookingExamples/successfulResponse.json">
-                        Example response </a>
+                        http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json
+                       </a>
+                    <p>Example response:</p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
@@ -258,31 +264,37 @@ Host: www.mybring.com
         <p>
             A GET to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to
             Amazon S3). Ensure that your client follows these redirects. </p></div>
-      </br>
+    </br>
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
     <div class="lightBorder">
         <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml">XML</a></li>
-            <li><a href="#json">JSON</a></li>
-        </ul>
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li class="active"><a href="#xml">XML</a></li>
+                <li><a href="#json">JSON</a></li>
+            </ul>
             <div data-tab="xml" class="tab">
                 <div class="api-call">
+                    <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
-                       data-internal="/proxy/booking/api/bookingExamples/failedResponse.xml"> Example
-                        response </a>
+                       data-internal="/proxy/booking/api/bookingExamples/failedResponse.xml">
+                        http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml
+                       </a>
+                    <p>Example response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
 
             <div data-tab="json" class="tab">
                 <div class="api-call">
+                    <p>Request:</p>
                     <a target="_blank" class="request"
                        href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
-                       data-internal="/proxy/booking/api/bookingExamples/failedResponse.json"> Example
-                        response </a>
+                       data-internal="/proxy/booking/api/bookingExamples/failedResponse.json">
+                        http://beta.bring.com/booking/api/bookingExamples/failedResponse.json
+                       </a>
+                    <p>Example response:</p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
@@ -325,16 +337,17 @@ Host: www.mybring.com
 
     <div class="lightBorder">
         <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml">XML</a></li>
-            <li><a href="#json">JSON</a></li>
-        </ul>
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li class="active"><a href="#xml">XML</a></li>
+                <li><a href="#json">JSON</a></li>
+            </ul>
             <div data-tab="xml" class="tab">
                 <div class="api-call">
                     <p>Request:</p>
                     <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.xml"
                        data-internal="/proxy/booking/api/errors.xml">
                         http://beta.bring.com/booking/api/errors.xml </a>
+                    <p>Example response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
@@ -442,10 +455,10 @@ Host: www.mybring.com
 
     <div class="lightBorder">
         <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml">XML</a></li>
-            <li><a href="#json">JSON</a></li>
-        </ul>
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li class="active"><a href="#xml">XML</a></li>
+                <li><a href="#json">JSON</a></li>
+            </ul>
             <div data-tab="xml" class="tab">
                 <div class="api-call">
                     <p>Request:</p>
@@ -453,6 +466,7 @@ Host: www.mybring.com
                        href="http://beta.bring.com/booking/api/bookingExamples/customers.xml"
                        data-internal="/proxy/booking/api/bookingExamples/customers.xml">
                         http://beta.bring.com/booking/api/bookingExamples/customers.xml </a>
+                    <p>Example response:</p>
                     <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
@@ -464,94 +478,96 @@ Host: www.mybring.com
                        href="http://beta.bring.com/booking/api/bookingExamples/customers.json"
                        data-internal="/proxy/booking/api/bookingExamples/customers.json">
                         http://beta.bring.com/booking/api/bookingExamples/customers.json </a>
+                    <p>Example response:</p>
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 </div>
+</div>
+
 <div class="tab-pane" id="tab2">
+    <div class="box lightBorder">
+        <div>
+            <h4>Technical information</h4>
 
-    <div>
-        <h4>Technical information</h4>
+            <p>
+                WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
+            </p>
 
-        <p>
-            WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
-        </p>
+            <p>
+                XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+            </p>
 
-        <p>
-            XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
-        </p>
+            <p>
+                Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/booking">https://www.mybring.com/booking/api/booking</a>
+            </p>
 
-        <p>
-            Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/booking">https://www.mybring.com/booking/api/booking</a>
-        </p>
+            <p>
+                Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
+            </p>
+            </br>
+            <h4>Versioning strategy</h4>
+            <p>
+                Each request has a schemaVersion element indicating which release of the schema is being used in the request and
+                expected schema format in the response. Important: All clients must accept new (unknown) elements in the
+                response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when
+                unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache
+                Axis 1.x Web Service client framework. </p>
+            </br>
+            <h4>How to use the Customer API</h4>
 
-        <p>
-            Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
-        </p>
-          </br>
-        <h4>Versioning strategy</h4>
-        <p>
-            Each request has a schemaVersion element indicating which release of the schema is being used in the request and
-            expected schema format in the response. Important: All clients must accept new (unknown) elements in the
-            response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when
-            unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache
-            Axis 1.x Web Service client framework. </p>
-         </br>
-        <h4>How to use the Customer API</h4>
+            <p>
+                You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user
+                using a web browser, or you can use the mybring API-key to be authenticated to use the service
+                programmatically. </p>
 
-        <p>
-            You must be logged in to mybring to use the Customer API. You can test the resource as a normal mybring user
-            using a web browser, or you can use the mybring API-key to be authenticated to use the service
-            programmatically. </p>
+            <p>For the SOAP API, the Customer number API is included as an operation in the <a
+                    href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p>
 
-        <p>For the SOAP API, the Customer number API is included as an operation in the <a
-                href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p>
+            <p>
+                The customer numbers are prefixed with the specialist, and then the customer number. For Courier and Bring
+                Express-products, we use a UUID to identify users. </p>
+            <table>
+                <tbody>
+                <tr>
+                    <th>Specialist</th>
+                    <th>Example products</th>
+                    <th>Example customerNumber</th>
+                </tr>
+                <tr>
+                    <td>Bring Parcels, Norway</td>
+                    <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
+                    <td>PARCELS_NORWAY-10001123123</td>
+                </tr>
+                <tr class="even">
+                    <td>Bring Express, Norway</td>
+                    <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
+                    <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
+                </tr>
+                <tr>
+                    <td>Bring Express, Sweden</td>
+                    <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
+                    <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
+                </tr>
+                </tbody>
+            </table>
 
-        <p>
-            The customer numbers are prefixed with the specialist, and then the customer number. For Courier and Bring
-            Express-products, we use a UUID to identify users. </p>
-        <table>
-            <tbody>
-            <tr>
-                <th>Specialist</th>
-                <th>Example products</th>
-                <th>Example customerNumber</th>
-            </tr>
-            <tr>
-                <td>Bring Parcels, Norway</td>
-                <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
-                <td>PARCELS_NORWAY-10001123123</td>
-            </tr>
-            <tr class="even">
-                <td>Bring Express, Norway</td>
-                <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
-                <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
-            </tr>
-            <tr>
-                <td>Bring Express, Sweden</td>
-                <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
-                <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
-            </tr>
-            </tbody>
-        </table>
+        </div>
 
-    </div>
+        <div>
+            <p>
+                The SOAP Body follow the same XML Schema Definition (XSD) as the XML API. </p>
 
-    <div>
-        <p>
-            The SOAP Body follow the same XML Schema Definition (XSD) as the XML API. </p>
-
-        <h5>Example authentication header</h5>
+            <h5>Example authentication header</h5>
 
         <pre class="code-box">X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
-        <h5>Sample SOAP request header, body, tail</h5>
+            <h5>Sample SOAP request header, body, tail</h5>
 
         <pre class="code-box">&lt;soapenv:Envelope
             xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -561,21 +577,21 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 </pre>
 
 
-        <div data-tab="xml" class="tab api-call">
-            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
-                Example Soap Body Request XML
-            </a>
-            <div class="box lightBorder">
-                <pre class="code-box xml response delay-snippet"></pre>
-            </div>
+            <div data-tab="xml" class="tab api-call">
+                <a target="_blank" class="request" href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml" data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">
+                    Example Soap Body Request XML
+                </a>
+                <div class="box lightBorder">
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
 
-        </div>
+            </div>
 
         <pre class="code-box">&lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
 </pre>
-        </br>
-        <h4>Shipment Labels</h4>
+            </br>
+            <h4>Shipment Labels</h4>
 
             <p>
                 The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF
@@ -585,12 +601,16 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
             <p>
                 A GET to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to
                 Amazon S3). Ensure that your client follows these redirects. </p>
+        </div>
     </div>
+</div>
 </div>
 </div>
 </div>
 
 </div>
+
+
 
 <div class="span3">
     <div id="sidebar">

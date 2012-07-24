@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="text-center span7">
-                            <a href="http://getsatisfaction.com/bring?view=recent" target="_blank"><img src="../images/getSatisfactionScreenshot1.png" alt="Screenshot GetSatisfaction"></a>
+                            <a href="http://getsatisfaction.com/bring?view=recent" target="_blank"><img src="../images/getSatisfactionScreenShot.png" alt="Screenshot GetSatisfaction"></a>
                         </div>
                     </div>
                     <div class="box">
