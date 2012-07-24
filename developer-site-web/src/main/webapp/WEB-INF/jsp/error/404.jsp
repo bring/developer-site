@@ -16,7 +16,10 @@
 
             <div class="row-fluid">
                 <div class="span9 box">
-                    <h1>Page not found</h1>
+                    <h1 style="text-align: center">Page not found :(</h1>
+
+                    <h3>We are terribly sorry, but you'll have to look for it yourself. A good place to start is at
+                        <a href="index.html">our frontpage</a>.</h3>
                 </div>
             </div>
 

@@ -796,7 +796,6 @@ http://fraktguide.bring.no/fraktguide</pre>
 </div>
 
 <div class="tab-pane" id="tab3">
-    <div class="box">
         <p>The webservices offers the most options when performing queries to the Shipping Guide. </p>
 
         <p><b>To execute the web-service you will need a identification string. To get this - please <a
@@ -804,45 +803,13 @@ http://fraktguide.bring.no/fraktguide</pre>
 
         <p>More information about <a href="../additionalresources/wsdl-xml-schema.html?from=shipping">WSDL/XML Schema</a>. <a
                 href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl?from=shipping">WSDL</a>(will always link to the latest
-           version)</p><br/>
+           version)</p>
 
-        <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p><br/>
+        <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p>
 
         <p>Please refer to common information regarding <a href="../additionalresources/productlist.html?from=shipping">product codes</a> and
             <a href="../additionalresources/errorhandling.html?from=shipping">error codes</a>.</p>
 
-        <div><pre class="code-box">// Initialize library
-
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-String workingDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
-String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getGuiInformation().getDescriptionText();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
-System.out.println("Working days: " + workingDays);
-System.out.println("Display name: " + descriptionText);</pre>
-            <div><h5>Expected Result:</h5>
-                                            <pre class="code-box">Price: 81.00 NOK
-Working days: 2
-Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800
-                                        </pre>
-            </div>
-        </div>
-
-    </div>
 </div>
 
 </div>
