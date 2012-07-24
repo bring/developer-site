@@ -82,14 +82,14 @@
 </br><h4>Choose between XML/JSON and SOAP</h4>
 
 <ul class="tab-group" data-tabs="tabs">
-    <li><a href="#tab1">XML/JSON</a></li>
+    <li class="active"><a href="#tab1">XML/JSON</a></li>
     <li><a href="#tab2">SOAP</a></li>
 </ul>
 
 <div class="tab-content">
 
 <div class="tab-pane active" id="tab1">
-<div class="box lightBorder">
+<div class="box">
 </br>
 <h4>Technical information</h4><br/>
 
@@ -494,7 +494,7 @@ Host: www.mybring.com
 </div>
 
 <div class="tab-pane" id="tab2">
-    <div class="box lightBorder">
+    <div class="box">
         <div>
             </br>
             <h4>Technical information</h4>
