@@ -38,7 +38,7 @@
                                 <li>Generate and download reports with the <a href="/api/reportsapi.html?from=reports">Reports API</a></li>
                             </ul>
                             <p class="front-page-welcome-text">Need help? Get in touch with the API team and other
-                                developers through the <a href="/support.html?from=support">Support</a> page.</p>
+                                developers through the <a href="/support">Support</a> page.</p>
 
                         </div>
                     </div>
