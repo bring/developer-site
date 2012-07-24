@@ -1237,9 +1237,6 @@ pre.code-box {
   display: none;
   clear: both;
   background: #fff;
-  -webkit-box-shadow: 0 3px 6px -1px #949598;
-     -moz-box-shadow: 0 3px 6px -1px #949598;
-          box-shadow: 0 3px 6px -1px #949598;
 }
 
 .tab-content {

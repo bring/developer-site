@@ -56,37 +56,35 @@
 </div>
 
 <%--How to Use--%>
-<div class="box">
-<h2><a name="HTU"></a>How to Use</h2>
-
-<p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the
-    API. Read more about <a href="/additionalresources/getting-api-keys.html?from=booking">how to get an API-key</a>,
-    and how to use it for authentication. </p></br><h4>Authorization - by customer numbers (per specialist)</h4>
-
-<p>
-    In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings. The
-    authorization is currently handled with customer numbers on a per specialist basis. </p>
-
-    <p>
-        To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
-        getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access to). The
-        Customer number API also links customer numbers with the products the customer number is valid for. </p>
-
-
-<p>
-    For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
-    endpoint definition in the instructions below. </p>
-
 
 <div class="row element-sample">
-</br><h4>Choose between XML/JSON and SOAP</h4>
-
 <ul class="tab-group" data-tabs="tabs">
     <li class="active"><a href="#tab1">XML/JSON</a></li>
     <li><a href="#tab2">SOAP</a></li>
 </ul>
 
 <div class="tab-content">
+<div class="box">
+<div></div>
+<h2><a name="HTU"></a>How to Use</h2>
+
+<p>The Booking API is a logged-in service and you need to get an API-key and authenticate before being able to use the
+   API. Read more about <a href="/additionalresources/getting-api-keys.html?from=booking">how to get an API-key</a>,
+   and how to use it for authentication. </p></br><h4>Authorization - by customer numbers (per specialist)</h4>
+
+<p>
+    In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings. The
+    authorization is currently handled with customer numbers on a per specialist basis. </p>
+
+<p>
+    To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
+    getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access to). The
+    Customer number API also links customer numbers with the products the customer number is valid for. </p>
+
+
+<p>
+    For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
+    endpoint definition in the instructions below. </p>
 
 <div class="tab-pane active" id="tab1">
 <div class="box">
@@ -494,7 +492,7 @@ Host: www.mybring.com
 </div>
 
 <div class="tab-pane" id="tab2">
-    <div class="box">
+
         <div>
             </br>
             <h4>Technical information</h4>
@@ -609,7 +607,6 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
                 redirect to Amazon S3). Ensure that your client follows these redirects. </p>
         </div>
     </div>
-</div>
 </div>
 </div>
 </div>
