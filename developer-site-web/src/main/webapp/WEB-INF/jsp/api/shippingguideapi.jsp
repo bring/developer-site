@@ -531,7 +531,7 @@ http://fraktguide.bring.no/fraktguide</pre>
 <div class="tab-content">
 
     <div class="tab-pane active" id="tab1">
-    <div class="box lightBorder">
+    <div class="box">
         <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
             others are optional, but any query to the Shipping Guide API must at least contain the following
             information: </p>
@@ -664,7 +664,7 @@ http://fraktguide.bring.no/fraktguide</pre>
 </div>
 
     <div class="tab-pane" id="tab2">
-    <div class="box lightBorder">
+    <div class="box">
         <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
             others are optional, but any query to the Shipping Guide API must at least contain the following
             information: </p>
@@ -796,7 +796,7 @@ http://fraktguide.bring.no/fraktguide</pre>
 </div>
 
     <div class="tab-pane" id="tab3">
-        <div class="box lightBorder">
+        <div class="box">
         <p>The webservices offers the most options when performing queries to the Shipping Guide. </p>
 
         <p><b>To execute the web-service you will need a identification string. To get this - please <a
