@@ -1074,7 +1074,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#webservice">WEB SERVICES</a></li>
                 </ul>
 
                 <div data-tab="xml" class="tab">
@@ -1105,14 +1104,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-
-                    <div data-tab="webservice" class="tab">
-                        <p>Please refer to written documentation in <a
-                                href="http://developer.bring.com/downloads/BringFraktguide_Developer_Notes.pdf">English</a>
-                            or <a href="http://developer.bring.com/downloads/BringFraktguide_Teknisk_beskrivelse.pdf">Norwegian</a>.
-                        </p>
-                    </div>
-
                 </div>
             </div>
         </div>
