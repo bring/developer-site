@@ -1113,9 +1113,6 @@ pre.code-box {
   color: #fff;
   background: #717074;
   zoom: 1;
-  -webkit-box-shadow: inset 0px -8px 7px -10px #000000;
-     -moz-box-shadow: inset 0px -8px 7px -10px #000000;
-          box-shadow: inset 0px -8px 7px -10px #000000;
 }
 
 .tab-group li.active a {
@@ -1123,10 +1120,6 @@ pre.code-box {
   color: black;
   background: white;
   border-right: none;
-  filter: progid:dximagetransform.microsoft.shadow(color='#949598', Direction=150, Strength=3);
-  -webkit-box-shadow: 0px 3px 3px 1px #bbbcc0;
-     -moz-box-shadow: 0px 3px 3px 1px #bbbcc0;
-          box-shadow: 0px 3px 3px 1px #bbbcc0;
 }
 
 .tab-group li:last-child {
