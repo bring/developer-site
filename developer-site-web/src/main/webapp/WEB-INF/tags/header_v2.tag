@@ -19,7 +19,7 @@
                 <li class="menu-level-1 <c:out value="${selected_tab == 'developer' ? 'path parent' : ''}"/>"><a
                         href="/index.html">Developer</a></li>
                 <li class="menu-level-1 <c:out value="${selected_tab == 'support' ? 'path parent' : ''}"/>"><a
-                        href="/support.html?from=support">Support</a></li>
+                        href="/support">Support</a></li>
             </ul>
         </nav>
 

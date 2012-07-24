@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -14,6 +15,11 @@ public class HomeController {
     @RequestMapping(value = "/index.html")
     public String index() {
         return "home_v3";
+    }
+
+    @RequestMapping(value = "/support")
+    public String support() {
+        return "support/support";
     }
 
     @RequestMapping(value = "/api/pickuppointapi.html")
@@ -94,11 +100,6 @@ public class HomeController {
     @RequestMapping(value = "/api/trackingapi.html")
     public String trackingapi() {
         return "api/trackingapi";
-    }
-
-    @RequestMapping(value = "/support.html")
-    public String support() {
-        return "support/support";
     }
 
     @RequestMapping(value = "/additionalresources/getting-api-keys.html")

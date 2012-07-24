@@ -61,6 +61,12 @@
         <servlet-name>developer</servlet-name>
         <url-pattern>*.xsd</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/support</url-pattern>
+    </servlet-mapping>
+
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

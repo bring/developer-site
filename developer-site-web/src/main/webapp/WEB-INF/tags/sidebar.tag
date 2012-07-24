@@ -18,9 +18,6 @@
     else if (from.startsWith("pickup"))  {%><sidebar:pickuppoint-sidebar /><%}
     else { return; }
 
+
+
 %>
-
-
-
-
-
