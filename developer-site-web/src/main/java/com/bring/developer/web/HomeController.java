@@ -47,11 +47,6 @@ public class HomeController {
         return "/additionalresources/javaapi";
     }
 
-    @RequestMapping(value = "/additionalresources/phpapi.html")
-    public String phpapi() {
-        return "/additionalresources/phpapi";
-    }
-
     @RequestMapping(value = "/additionalresources/offlinedata.html")
     public String offlinedata() {
         return "/additionalresources/offlinedata";

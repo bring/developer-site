@@ -57,9 +57,6 @@
                                     <a href="http://www.kortshop.no/" target="_blank">Kortshop</a>
                                 </li>
                                 <li>
-                                    <a href="http://www.linkedin.com/in/arneunneland" target="_blank">Arne Unneland</a>
-                                </li>
-                                <li>
                                     <a href="http://mystore.no" target="_blank">Yngve</a>
                                 </li>
                             </ul>

@@ -77,11 +77,6 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://www.linkedin.com/in/arneunneland" target="_blank">
-                                        Arne Unneland
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="http://www.linkedin.com/pub/ingvald-haaland/7/726/3b" target="_blank">
                                         Ingvald Haaland
                                     </a>

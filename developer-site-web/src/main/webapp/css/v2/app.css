@@ -832,7 +832,8 @@ table.inverted tbody tr.even {
   margin-left: 10px;
 }
 
-div.box > h2:first-child {
+div.box > h2:first-child,
+div.box > a > h4:first-child {
   margin-top: 0;
 }
 
@@ -1370,6 +1371,10 @@ div.bringNo {
   margin-top: 12px;
   margin-left: 6px;
   background: transparent url("/images/m-arrow-w-right2.png") no-repeat 5% center;
+}
+
+a.menu-item h4 {
+  margin: 0;
 }
 
 div.information-box {

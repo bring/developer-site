@@ -20,7 +20,6 @@
         <li><a href="/additionalresources/productlist.html?from=shipping">Product list</a></li>
         <li><a href="/additionalresources/offlinedata.html?from=shipping">Offline data</a></li>
         <li><a href="/additionalresources/javaapi.html?from=shipping-guide-api?from=shipping">Java API</a></li>
-        <li><a href="/additionalresources/phpapi.html?from=shipping">PHP API</a></li>
     </ul>
     <h4>Widgets</h4>
     <ul>
