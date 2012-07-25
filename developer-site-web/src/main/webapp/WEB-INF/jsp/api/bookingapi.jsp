@@ -452,8 +452,6 @@ Host: www.mybring.com
   GET <a href="http://www.mybring.com/booking/api/customers.xml">http://www.mybring.com/booking/api/customers.xml</a>
 </pre>
 
-    <h5>Example:</h5>
-
     <div class="lightBorder">
         <div class="codetabs">
             <ul class="tab-group minimal" data-tabs="tabs">

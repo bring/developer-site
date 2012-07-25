@@ -44,7 +44,7 @@
     <h2><a name="reference"></a>Reference</h2>
 
     <pre class="code-box">Request prefix:
-http://beta.bring.no/sporing</pre>
+http://beta.bring.no</pre>
 
     <table>
         <thead>
@@ -55,7 +55,7 @@ http://beta.bring.no/sporing</pre>
         </thead>
         <tbody>
         <tr>
-            <td><code>.&lt;extension&gt;?q=&lt;tracking number&gt;</code></td>
+            <td><code>/sporing.&lt;extension&gt;?q=&lt;tracking number&gt;</code></td>
             <td>Returns information about the shipment such as the weight, volume and status. <br/>
                 <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 <li><code>&lt;tracking number&gt;</code> = reference, shipment or package number</li>
