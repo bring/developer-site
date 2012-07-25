@@ -90,16 +90,16 @@
 
 <h4>Technical information</h4>
 
-<div>
-    <p>
+    <ul>
+        <li>
         XSD: <a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">https://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
-    </p>
+        </li>
 
-    <p>
+        <li>
         Endpoint: <a href="https://www.mybring.com/booking/api/ws">https://www.mybring.com/booking/api/ws</a>
-    </p>
+        </li>
+    </ul>
 
-</div>
 
 <h4>Versioning strategy</h4>
 
@@ -315,8 +315,8 @@ Host: www.mybring.com
             <td>message</td>
             <td>
                 Internationalized messages (with
-                <message lang="”xx”"> elements). First version will be with lang=”en” (English) only.
-                </message>
+                &lt;message lang="”xx”"&gt; elements). First version will be with lang=”en” (English) only.
+                &lt;/message&gt;
             </td>
         </tr>
         </tbody>

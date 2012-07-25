@@ -15,8 +15,9 @@
     <ul>
         <li><a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">XSD</a></li>
         <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
-        <li><a href="/additionalresources/javaapi.html?from=booking">Java API</a></li>
+        <li><a href="https://github.com/bring/bring-api-java#introduction">Java API</a></li>
         <li><a href="/additionalresources/getting-api-keys.html?from=booking">Getting and using API-keys</a></li>
+        <li><a href="/additionalresources/booking-api-error-codes.html">Error codes</a></li>
     </ul>
     <h5>XML/JSON API</h5>
     <ul>

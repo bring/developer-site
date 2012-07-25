@@ -24,10 +24,10 @@
 
 <div class="box">
 <p>The Shipping Guide offers a broad range of products by Bring. We will gradually increase the number of products and
-   functionality available in the service.</p>
+    functionality available in the service.</p>
 
 <p>The table below shows currently available products and which information that is available. The links are to examples
-   using XML API.</p>
+    using XML API.</p>
 
 <table class="productlist">
 <thead>
@@ -200,7 +200,7 @@
     <td>CarryOn Business Norway</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                          BUSINESS NORWAY</code></a></td>
+        BUSINESS NORWAY</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_NORWAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -213,7 +213,7 @@
     <td>CarryOn Business Sweden</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                            BUSINESS SWEDEN</code></a></td>
+        BUSINESS SWEDEN</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_SWEDEN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -226,7 +226,7 @@
     <td>CarryOn Business Denmark</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_DENMARK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                             BUSINESS DENMARK</code></a></td>
+        BUSINESS DENMARK</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_DENMARK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -239,7 +239,7 @@
     <td>CarryOn Business Finland</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                              BUSINESS FINLAND</code></a></td>
+        BUSINESS FINLAND</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_FINLAND/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -252,7 +252,7 @@
     <td>CarryOn Homeshopping Norway</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                              HOMESHOPPING NORWAY</code></a></td>
+        HOMESHOPPING NORWAY</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -265,7 +265,7 @@
     <td>CarryOn Homeshopping Sweden</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                                HOMESHOPPING SWEDEN</code></a></td>
+        HOMESHOPPING SWEDEN</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_SWEDEN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -278,7 +278,7 @@
     <td>CarryOn Homeshopping Denmark</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_DENMARK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                                 HOMESHOPPING DENMARK</code></a></td>
+        HOMESHOPPING DENMARK</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_DENMARK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -291,7 +291,7 @@
     <td>CarryOn Homeshopping Finland</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
-                                                                                                                                                                                                                                                  HOMESHOPPING FINLAND</code></a></td>
+        HOMESHOPPING FINLAND</code></a></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_FINLAND/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35">Yes</a>
     </td>
@@ -381,15 +381,18 @@
 </tbody>
 </table>
 
-<sup>1 Requests for expected delivery has longer response time.</sup><br/> <sup>2 B-Økonomi is intended for bulk sendings
-                                                                                and has a mimimum requirement of 20 parcels, however, if weight exceeds 100g this limit is ignored.</sup><br/> <sup>3
-                                                                                                                                                                                                    Due to look-up in flight schedules, a request for this product has longer response time than for other
-                                                                                                                                                                                                    products.</sup>
+<sup>1 Requests for expected delivery has longer response time.<br/>
+
+2 B-Økonomi is intended for bulk sendings and has a mimimum requirement of 20 parcels, however, if weight
+    exceeds 100g this limit is ignored.<br/>
+
+3 Due to look-up in flight schedules, a request for this product has longer response time than for other
+    products.</sup>
 
 <h4>Additional Services</h4>
 
 <p>The Shipping Guide offers some functionality regarding additional services. Please use the provided codes below when
-   accessing the service. The links are to examples using XML API.</p>
+    accessing the service. The links are to examples using XML API.</p>
 
 <table class="productlist">
     <thead>
@@ -405,7 +408,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=EVARSLING">EVARSLING</a>
         </td>
-        <td>BPAKKE_DOR-DOR<br/> SERVICEPAKKE<br/> EKSPRESS07<br/> EKSPRESS09<br/></td>
+        <td>BPAKKE_DOR-DOR SERVICEPAKKE EKSPRESS07 EKSPRESS09</td>
         <td>eVarsling</td>
     </tr>
 
@@ -413,7 +416,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=POSTOPPKRAV">POSTOPPKRAV</a>
         </td>
-        <td>A-POST<br/> B-POST<br/> BPAKKE_DOR-DOR<br/> SERVICEPAKKE<br/> PA_DOREN<br/> EKSPRESS07<br/> EKSPRESS09<br/></td>
+        <td>A-POST B-POST BPAKKE_DOR-DOR SERVICEPAKKE PA_DOREN EKSPRESS07 EKSPRESS09</td>
         <td>Postoppkrav</td>
     </tr>
 
@@ -421,7 +424,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=LORDAGSUTKJORING">LORDAGSUTKJORING</a>
         </td>
-        <td>EKSPRESS09<br/></td>
+        <td>EKSPRESS09</td>
         <td>Lørdagsutkjøring</td>
     </tr>
 
@@ -429,7 +432,7 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_DAY_CERTAIN/price.xml?weightInGrams=1500&amp;length=10&amp;width=10&amp;height=10&amp;from=0150&amp;fromCountry=NO&amp;to=80339&amp;toCountry=DE&amp;additional=ENVELOPE">ENVELOPE</a>
         </td>
-        <td>QUICKPACK_OVER_NIGHT_0900<br/> QUICKPACK_OVER_NIGHT_1200<br/> QUICKPACK_DAY_CERTAIN<br/></td>
+        <td>QUICKPACK_OVER_NIGHT_0900 QUICKPACK_OVER_NIGHT_1200 QUICKPACK_DAY_CERTAIN</td>
         <td>Envelope</td>
     </tr>
 
@@ -443,7 +446,7 @@
 </div>
 <div class="span3">
     <div id="sidebar">
-        <misc:sidebar />
+        <misc:sidebar/>
     </div>
 </div>
 </div>

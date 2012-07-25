@@ -30,15 +30,15 @@
                         <h4>How to install</h4>
                         <ol>
                             <li>Links to tracking can be the same as the URL of a normal tracking request.
-                                E.g.: <br> <code>http://sporing.bring.no/sporing.html?q=...</code>
+                                E.g.:  <code>http://sporing.bring.no/sporing.html?q=...</code>
 
                                 <p>The parameter "q" is the query string (reference, shipment or package number).</p></li>
 
                             <li>If the query string is a sender's reference, then it's recommended to filter on the sender's
-                                id ("aktornummer"), <br> if available. Then the results will be unique for that sender.
+                                id ("aktornummer"),  if available. Then the results will be unique for that sender.
                                 This is done with the parameter aktornummer, e.g. <code>&amp;aktornummer=123.</code></li>
 
-                            <li>For results without the top menu, add the following request parameter: &amp;layout=standalone<br>
+                            <li>For results without the top menu, add the following request parameter: &amp;layout=standalone
                                 E.g.: <code>http://sporing.bring.no/sporing.html?q=...&amp;layout=standalone</code></li>
 
                             <li>The latter is suited for e.g. popup windows. Please note that the width of the popup window
