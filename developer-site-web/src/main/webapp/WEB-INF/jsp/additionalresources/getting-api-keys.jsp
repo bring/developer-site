@@ -11,7 +11,7 @@
 
 <div class="wrapper">
 
-    <misc:header_v2 selected_tab="support"/>
+    <misc:header_v2 selected_tab="developer"/>
 
     <div id="page">
         <section id="content">

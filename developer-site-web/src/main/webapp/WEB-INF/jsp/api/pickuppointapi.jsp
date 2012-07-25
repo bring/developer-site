@@ -214,7 +214,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     <a target="_blank" class="request"
                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
                        data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
-                        /api/pickuppoint/postalcode/1407.xml
+                        /api/pickuppoint/location/60.395226/5.321725.xml
                     </a>
                     <pre class="code-box xml response delay-snippet"></pre>
 

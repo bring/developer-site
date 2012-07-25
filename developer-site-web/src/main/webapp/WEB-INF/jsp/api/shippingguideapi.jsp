@@ -96,7 +96,7 @@
 <div></div>
 <h2><a name="reference"></a>Reference</h2>
 <div class="tab-pane active" id="tabx">
-
+ <div class="lightBorder">
     <pre class="code-box">Request prefix:
 http://fraktguide.bring.no/fraktguide</pre>
 
@@ -220,6 +220,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             </tr>
             </tbody>
         </table>
+</div>
 </div>
 
 <div class="tab-pane" id="tabz">
@@ -528,9 +529,6 @@ http://fraktguide.bring.no/fraktguide</pre>
 <div></div>
 <h2><a name="HTU"></a>How to Use</h2>
 
-<p>First you have to decide which integration method you want to use for the available data. The Introduction contains a
-   comparison of the alternatives, to help you decide.</p>
-
 <div class="tab-pane active" id="tab1">
 
     <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
@@ -584,8 +582,8 @@ http://fraktguide.bring.no/fraktguide</pre>
                                   372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b> your pid is <b>460cb92b0767</b>. This makes it possible for us to
                                   send any relevant messages via the registered e-mail address.
     </div>
-
-    <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
+    </br>
+    <p><b>Example:</b><br/> Here is an example combining some of the parameters covered. The request is for a
                             package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
 
@@ -617,6 +615,7 @@ http://fraktguide.bring.no/fraktguide</pre>
                 href="/additionalresources/productlist.html?from=shipping"> the product list</a> to find suitable products. </p>
 
     <p>
+        </br>
         <b>Example:</b><br/> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
 
     <div class="lightBorder">
@@ -642,7 +641,7 @@ http://fraktguide.bring.no/fraktguide</pre>
         <code>additional=lordagsutkjoring</code>. To add multiple services simply chain the parameters.</p>
 
     <p></p>
-
+    </br>
     <p><b>Example:</b><br/> Using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".
     </p>
 
@@ -665,10 +664,9 @@ http://fraktguide.bring.no/fraktguide</pre>
 </div>
 
 <div class="tab-pane" id="tab2">
-
-        <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
-            others are optional, but any query to the Shipping Guide API must at least contain the following
-            information: </p>
+    <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
+        others are optional, but any query to the Shipping Guide API must at least contain the following
+        information: </p>
         <ul>
             <li><b>Response type:</b> What do you want in your response? Just the price of the shipment, just an estimated
                                       delivery time or all available information? By querying <a
@@ -717,8 +715,8 @@ http://fraktguide.bring.no/fraktguide</pre>
                                       372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b> your pid is <b>460cb92b0767</b>. This makes it possible for us to
                                       send any relevant messages via the registered e-mail address.
         </div>
-
-        <p><b>Example:</b><br/> Here is an example combining some of the parameters we have covered. The request is for a
+        </br>
+        <p><b>Example:</b><br/> Here is an example combining some of the parameters covered. The request is for a
                                 package with <code>weightInGrams=1500</code>, <code>from=7600</code> and <code>to=1407</code>.
 
         <div class="box lightBorder">
@@ -731,9 +729,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-
-        <p>Please refer to the <a href="../additionalresources/wsdl-xml-schema.html?from=shipping">XML schema</a> for information on
-           elements in the response.</p>
 
         <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web
                                      shop's users should still be able to order, even if the Shipping Guide returns an error or a timeout occurs. <a
@@ -749,7 +744,7 @@ http://fraktguide.bring.no/fraktguide</pre>
            an international shipment, you will have to specify a product that supports this. Use the <a
                     href="/additionalresources/productlist.html?from=shipping"> the product list</a> to find suitable products. </p>
 
-        <p>
+        <p> </br>
             <b>Example:</b><br/> Limit products to only SERVICEPAKKE and PA_DOREN: </p>
 
         <div class="box lightBorder">
@@ -775,7 +770,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             <code>additional=lordagsutkjoring</code>. To add multiple services simply chain the parameters.</p>
 
         <p></p>
-
+        </br>
         <p><b>Example:</b><br/> Using all of the following services: "postoppkrav", "evarsling", and "lordagsutkjoring".
         </p>
 

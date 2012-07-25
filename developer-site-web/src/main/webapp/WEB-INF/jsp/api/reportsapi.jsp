@@ -91,7 +91,7 @@ https://www.mybring.com/reports/api</pre>
         </thead>
         <tbody>
         <tr>
-            <td><code>.../generate.&lt;extension&gt;</code></td>
+            <td><code>/generate.&lt;extension&gt;</code></td>
             <td>
                 <p>Get a list of available customer accounts. Rememeber to set the correct headers
                    (<code>Accept, X-MyBring-API-Uid</code> and <code>X-MyBring-API-Key</code>)
@@ -102,7 +102,7 @@ https://www.mybring.com/reports/api</pre>
             </td>
         </tr>
         <tr class="even">
-            <td><code>.../generate/&lt;customer_account_id&gt;.&lt;extension&gt;</code></td>
+            <td><code>/generate/&lt;customer_account_id&gt;.&lt;extension&gt;</code></td>
             <td> Get a list of all available reports for the customer with customer id given
                  by <code>&lt;customer_account_id&gt;</code>.
                 <ul>
@@ -113,7 +113,7 @@ https://www.mybring.com/reports/api</pre>
             </td>
         </tr>
         <tr>
-            <td><code>.../generate/&lt;customer_account_id&gt;/&lt;report_type&gt;?&lt;parameter1&gt;&amp;&lt;parameter2&gt;.&lt;extension&gt;</code></td>
+            <td><code>/generate/&lt;customer_account_id&gt;/&lt;report_type&gt;?&lt;parameter1&gt;&amp;&lt;parameter2&gt;.&lt;extension&gt;</code></td>
             <td><p>Order the specified report_type to be generated for the given customer account id.
                    This call will return the HTTP status code 202, and the response body will contain
                    a url for monitoring the status of the report generation.</p>
@@ -127,7 +127,7 @@ https://www.mybring.com/reports/api</pre>
                 </ul></td>
         </tr>
         <tr class="even">
-            <td><code>.../report/&lt;report_id&gt;</a>/status.&lt;extension&gt;</code></td>
+            <td><code>/report/&lt;report_id&gt;</a>/status.&lt;extension&gt;</code></td>
             <td><p>View the status of the report generation for the report specified by <code>report_id</code>.</p>
                 <ul>
                     <li><code>&lt;report_id&gt;</code> = the id for the report you are waiting for.
@@ -138,7 +138,7 @@ https://www.mybring.com/reports/api</pre>
             </td>
         </tr>
         <tr>
-            <td><code>.../report/&lt;report_id&gt;.&lt;extension&gt;</code></td>
+            <td><code>/report/&lt;report_id&gt;.&lt;extension&gt;</code></td>
             <td>
                 <p>Get the actual report with <code>report_id</code> in the file format given by <code>extension</code>.</p>
                 <ul>
