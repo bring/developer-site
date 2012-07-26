@@ -21,7 +21,7 @@
 <div class="span9">
 
 <div class="box">
-    <h1>Booking API</h1>
+    <h1>Booking API (BETA)</h1>
 </div>
 
 <%--Introduction--%>
@@ -48,11 +48,10 @@
         This means that the mybring user ID used in the booking request must have access to the customer number
         specified as payer of the booking. </p>
 
-    <p>
-        The API is currently under development and will have multiple releases, each extending the available
-        functionality and products. An early beta-version of the API is available now as of january 2012, this beta will
-        lead to a final stable v1 of the API during Q1 2012. </p>
 
+    <div class="information-box">BETA! This API is currently in BETA, which means that even though the code is in production and fully functional,
+                                 changes might be made in the future that can break code relying on this specific version.An early beta-version of the API is available now as of january 2012, this beta will
+                                 lead to a final stable v1 of the API during Q1 2012.</div>
 </div>
 
 <%--How to Use--%>

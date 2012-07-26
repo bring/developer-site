@@ -16,7 +16,7 @@
 
             <div class="row-fluid">
                 <div class="span9 box">
-                    <h1 style="text-align: center">404 Page not found</h1>
+                    <h1 style="text-align: left">404 Page not found</h1>
                     <p>Sorry! But the page you requested does not exist. Look for it yourself. A good start is the <a href="index.html">start page</a> :)</p>
                 </div>
             </div>
