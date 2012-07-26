@@ -28,4 +28,6 @@ $(document).ready(function() {
     //Add "even" class to every other table row for styling purposes
     $("table").colorizeTable();
 
+    $("div.multitabs").multitabs();
+
 });

@@ -20,9 +20,10 @@
 
                     <div class="box">
                         <h1>Booking API: Error codes</h1>
-                        </div>
+                    </div>
                     <div class="box">
-                        <p>The following table is generated from <a href="http://beta.bring.com/booking/api/errors.xml">beta.bring.com/booking/api/errors.xml</a></p>
+                        <p>The following table is generated from <a href="http://beta.bring.com/booking/api/errors.xml">beta.bring.com/booking/api/errors.xml</a>
+                        </p>
                         <%-- When adding the data-tab attribute to a
                         table the tableFromJSON script will fetch the
                         contents of the url and print it inside the table
