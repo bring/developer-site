@@ -57,7 +57,7 @@ https://www.mybring.com/reports/api</pre>
                 </ul>
             </td>
         </tr>
-        <tr class="even">
+        <tr >
             <td>
                 <code>X-MyBring-API-Key: &lt;api_key&gt;</code>
             </td>
@@ -101,7 +101,7 @@ https://www.mybring.com/reports/api</pre>
                 </ul>
             </td>
         </tr>
-        <tr class="even">
+        <tr >
             <td><code>/generate/&lt;customer_account_id&gt;.&lt;extension&gt;</code></td>
             <td> Get a list of all available reports for the customer with customer id given
                  by <code>&lt;customer_account_id&gt;</code>.
@@ -126,7 +126,7 @@ https://www.mybring.com/reports/api</pre>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul></td>
         </tr>
-        <tr class="even">
+        <tr >
             <td><code>/report/&lt;report_id&gt;</a>/status.&lt;extension&gt;</code></td>
             <td><p>View the status of the report generation for the report specified by <code>report_id</code>.</p>
                 <ul>

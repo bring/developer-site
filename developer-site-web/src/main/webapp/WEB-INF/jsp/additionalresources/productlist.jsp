@@ -53,7 +53,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>På Døren</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/PA_DOREN/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2012-07-10"><code>PA_DOREN</code></a>
@@ -79,7 +79,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>Bedriftspakke Ekspress-Over natten 07</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS07/all.xml?weightInGrams=1500&amp;from=1407&amp;to=9007&amp;date=2012-07-10"><code>EKSPRESS07</code></a>
@@ -105,7 +105,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>A-Prioritert <sup>1</sup></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/A-POST/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2012-07-10"><code>A-POST</code></a>
@@ -131,7 +131,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>QuickPack SameDay <sup>3</sup></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_SAMEDAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=2012-07-10&amp;time=11:35"><code>QUICKPACK_SAMEDAY</code></a>
@@ -157,7 +157,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>Quickpack Over Night 1200</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_OVER_NIGHT_1200/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=2012-07-10&amp;time=11:35"><code>QUICKPACK_OVER_NIGHT_1200</code></a>
@@ -183,7 +183,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>Quickpack Express Economy</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_EXPRESS_ECONOMY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=2012-07-10&amp;time=11:35"><code>QUICKPACK_EXPRESS_ECONOMY</code></a>
@@ -209,7 +209,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>CarryOn Business Sweden</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
@@ -235,7 +235,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>CarryOn Business Finland</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
@@ -261,7 +261,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>CarryOn Homeshopping Sweden</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
@@ -287,7 +287,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>CarryOn Homeshopping Finland</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
@@ -313,7 +313,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>Bud VIP</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/COURIER_VIP/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=2012-07-10"><code>COURIER_VIP</code></a>
@@ -339,7 +339,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>Bud 2 timer</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/COURIER_2H/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=2012-07-10"><code>COURIER_2H</code></a>
@@ -365,7 +365,7 @@
     </td>
 </tr>
 
-<tr class="even">
+<tr >
     <td>Bud 6 timer</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/COURIER_6H/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=0150&amp;date=2012-07-10"><code>COURIER_6H</code></a>
@@ -412,7 +412,7 @@
         <td>eVarsling</td>
     </tr>
 
-    <tr class="even">
+    <tr >
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=POSTOPPKRAV">POSTOPPKRAV</a>
         </td>
@@ -428,7 +428,7 @@
         <td>Lørdagsutkjøring</td>
     </tr>
 
-    <tr class="even">
+    <tr >
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_DAY_CERTAIN/price.xml?weightInGrams=1500&amp;length=10&amp;width=10&amp;height=10&amp;from=0150&amp;fromCountry=NO&amp;to=80339&amp;toCountry=DE&amp;additional=ENVELOPE">ENVELOPE</a>
         </td>

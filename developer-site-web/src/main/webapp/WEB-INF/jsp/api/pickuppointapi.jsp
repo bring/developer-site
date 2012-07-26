@@ -61,7 +61,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                 </ul>
             </td>
         </tr>
-        <tr class="even">
+        <tr >
             <td><code>/location/&lt;latitude&gt;/&lt;longitude&gt;.&lt;extension&gt;</code></td>
             <td>Returns the 10 nearest pickup points based on the given location.
                 <ul>
@@ -105,7 +105,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                 </ul>
             </td>
         </tr>
-        <tr class="even">
+        <tr >
             <td><code>?openingHoursSearchType=&lt;day&gt;</code></td>
             <td>Return only pickup points that are open on the specified day.
                 <ul>
@@ -123,7 +123,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                 </ul>
             </td>
         </tr>
-        <tr class="even">
+        <tr >
             <td><code>?openOnOrAfter=&lt;time&gt;</code></td>
             <td>Return only pickup points that are open on or before the specified time.
                 <ul>

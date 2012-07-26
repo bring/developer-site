@@ -17,6 +17,8 @@
 <script type="text/javascript" src="/js/kp-utilities.js"></script>
 <script type="text/javascript" src="/js/kp-mobile.menu.js"></script>
 <script type="text/javascript" src="/js/stickysidebar.js"></script>
+<script type="text/javascript" src="/js/tableFromJSON.js"></script>
+<script type="text/javascript" src="/js/colorizeTable.js"></script>
 <script type="text/javascript" src="/js/init_v2.js"></script>
 
 <script type="text/javascript">

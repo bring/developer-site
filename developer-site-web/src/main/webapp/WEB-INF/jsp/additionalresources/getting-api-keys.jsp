@@ -83,18 +83,20 @@
                            All mybring-APIs use a simple authentication-scheme.
                            By adding two headers to all requests, you will authenticate your request. </p>
                         <table>
-                            <tbody>
+                            <thead>
                             <tr>
                                 <th>Header name</th>
                                 <th>Example header value</th>
                                 <th>Comment</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             <tr>
                                 <td>X-MyBring-API-Uid</td>
                                 <td>example@customer.com</td>
                                 <td>This is the mybring login ID.</td>
                             </tr>
-                            <tr class="even">
+                            <tr>
                                 <td>X-MyBring-API-Key</td>
                                 <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
                                 <td>This is the API key of the mybring user.</td>

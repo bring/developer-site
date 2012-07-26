@@ -20,7 +20,7 @@
 <div class="row-fluid">
 <div class="span9">
     <div class="box">
-        <h1>Error handling</h1>
+        <h1>Shipping Guide API: Error handling</h1>
     </div>
     <div class="box">
         <p>
@@ -46,7 +46,7 @@
                 <td>FG_INPUT_001</td>
                 <td>Shipmentdate must be set</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td> FG_INPUT_002</td>
                 <td>Error with Postal code</td>
             </tr>
@@ -55,7 +55,7 @@
                 <td>FG_INPUT_003</td>
                 <td>Missing usercode</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_004</td>
                 <td>At least one product id must be set</td>
             </tr>
@@ -64,7 +64,7 @@
                 <td>FG_INPUT_005</td>
                 <td>Wrong date format</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_006</td>
                 <td>Error with volume</td>
             </tr>
@@ -73,7 +73,7 @@
                 <td>FG_INPUT_008</td>
                 <td>Missing Package element</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_010</td>
                 <td>Error number of alternative deliverydates</td>
             </tr>
@@ -82,7 +82,7 @@
                 <td>FG_INPUT_011</td>
                 <td>Wrong weight unit code</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_012</td>
                 <td>Invalid weight format</td>
             </tr>
@@ -91,7 +91,7 @@
                 <td>FG_INPUT_013</td>
                 <td>Invalid volume format</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_014</td>
                 <td>Invalid volume unit code</td>
             </tr>
@@ -100,7 +100,7 @@
                 <td>FG_INPUT_016</td>
                 <td>Invalid input dimensions</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_017</td>
                 <td>Invalid input dimensions unit code</td>
             </tr>
@@ -109,7 +109,7 @@
                 <td>FG_INPUT_018</td>
                 <td>Too many packages</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_019</td>
                 <td>Productid missing</td>
             </tr>
@@ -118,7 +118,7 @@
                 <td>FG_INPUT_020</td>
                 <td>Invalid offline from post number</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_021</td>
                 <td>Non existing postalcode</td>
             </tr>
@@ -127,7 +127,7 @@
                 <td>FG_INPUT_022</td>
                 <td>Missing weight or volume</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td> FG_INPUT_023</td>
                 <td>Unexpected parameter</td>
             </tr>
@@ -136,7 +136,7 @@
                 <td>FG_INPUT_024</td>
                 <td>Invalid input price adjustment</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td> FG_INPUT_025</td>
                 <td>Unknown public id</td>
             </tr>
@@ -145,7 +145,7 @@
                 <td>FG_INPUT_027</td>
                 <td>Invalid country code</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_029</td>
                 <td>Wrong time format</td>
             </tr>
@@ -154,7 +154,7 @@
                 <td> FG_INPUT_030</td>
                 <td>Invalid request version</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_031</td>
                 <td>Request version missing</td>
             </tr>
@@ -163,7 +163,7 @@
                 <td>FG_INPUT_032</td>
                 <td>Mismatch in value in package and consignment.</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_INPUT_033</td>
                 <td>A consignment element must be specified when requesting a consignment-oriented product.</td>
             </tr>
@@ -172,7 +172,7 @@
                 <td>FG_PRODUCT_001</td>
                 <td>Product unknown</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_PRODUCT_002</td>
                 <td>Product not available as offline data.</td>
             </tr>
@@ -181,7 +181,7 @@
                 <td>FG_UNKNOWN_001</td>
                 <td>Unknown internal error</td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td>FG_USER_002</td>
                 <td>Wrong usercode</td>
             </tr>
