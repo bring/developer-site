@@ -19,6 +19,7 @@
 <script type="text/javascript" src="/js/stickysidebar.js"></script>
 <script type="text/javascript" src="/js/tableFromJSON.js"></script>
 <script type="text/javascript" src="/js/colorizeTable.js"></script>
+<script type="text/javascript" src="/js/multitabs.js"></script>
 <script type="text/javascript" src="/js/init_v2.js"></script>
 
 <script type="text/javascript">
