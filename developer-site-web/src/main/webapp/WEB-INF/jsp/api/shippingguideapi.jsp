@@ -37,7 +37,7 @@
        With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
        their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
        evening. The customers may also choose different shipping methods based on how fast and when they want their
-       products delivered. <br/><br/>The shipping guide calculates the delivery time and the price based on postal
+       products delivered. The shipping guide calculates the delivery time and the price based on postal
        code. Which of the different shipping alternatives you want to offer and display in your web shop is up to you..
     </p>
 
@@ -76,7 +76,7 @@
         </tbody>
     </table>
 
-    <sup>1 You can also use <a href="../additionalresources/offlinedata.html?from=shipping">Offline data</a> as an integration method</sup><br/>
+    <sup>1 You can also use <a href="../additionalresources/offlinedata.html?from=shipping">Offline data</a> as an integration method</sup>
 
 </div>
 
@@ -92,9 +92,9 @@
 </ul>
 
 
-<div class="tab-content">
+<div class="tab-content tab-minimal">
 <div class="box">
-<div class="box">
+
 <h2><a name="reference"></a>Reference</h2>
 <div class="tab-pane active" id="tabx">
 
@@ -162,7 +162,7 @@ http://fraktguide.bring.no/fraktguide</pre>
                     Shipping date specifies which date the parcel will be delivered to Bring (within the timelimit), and is
                     used to calculate the delivery date. Specified by adding <a target="_blank"
                                                                                 href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2009-02-03">
-                    &amp;date=2009-02-03</a>. <br/>Date is specified in ISO-format, YYYY-MM-DD.
+                    &amp;date=2009-02-03</a>. Date is specified in ISO-format, YYYY-MM-DD.
                 </td>
             </tr>
             <tr>
@@ -171,7 +171,7 @@ http://fraktguide.bring.no/fraktguide</pre>
                     Shippingtime may be specified. Note that Bring's courier products are the only one affected by this
                     parameter. <a target="_blank"
                                   href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2009-02-03&amp;time=12:30">
-                    &amp;date=2009-02-03&amp;time=12:30</a>. <br/>Time is specified in ISO-format, HH:mm.
+                    &amp;date=2009-02-03&amp;time=12:30</a>. Time is specified in ISO-format, HH:mm.
                 </td>
             </tr>
             <tr class="even">
@@ -205,7 +205,7 @@ http://fraktguide.bring.no/fraktguide</pre>
                 <td>
                     Option to adjust the price returned. Specified by adding <a target="_blank"
                                                                                 href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">
-                    &amp;priceAdjustment=m20p</a>.<br/> Note that price adjustments is on prices without VAT. Refer to
+                    &amp;priceAdjustment=m20p</a>. Note that price adjustments is on prices without VAT. Refer to
                     additional examples to read more.
                 </td>
             </tr>
@@ -801,15 +801,15 @@ http://fraktguide.bring.no/fraktguide</pre>
     </tr>
     <tr class="even">
         <td>/Packages/Product/Price/ PackagePriceWithoutAdditionalServices/*</td>
-        <td>Price without any additional services All prices are given<br/> -without value added tax (VAT),<br/> -with
-            VAT as well as<br/> -VAT itself specified. Period is used for separating decimals.
+        <td>Price without any additional services All prices are given -without value added tax (VAT), -with
+            VAT as well as -VAT itself specified. Period is used for separating decimals.
         </td>
         <td></td>
     </tr>
     <tr>
         <td>/Packages/Product/Price/ PackagePriceWithAllAdditionalServices/*</td>
-        <td>Price with all requested additional services All prices are given<br/> -without value added tax (VAT),<br/>
-            -with VAT as well as<br/> -VAT itself specified. Period is used for separating decimals.
+        <td>Price with all requested additional services All prices are given -without value added tax (VAT),
+            -with VAT as well as -VAT itself specified. Period is used for separating decimals.
         </td>
         <td></td>
     </tr>
@@ -856,7 +856,7 @@ http://fraktguide.bring.no/fraktguide</pre>
     </tr>
     <tr>
         <td>/Packages/Product/ExpectedDelivery/ UserMessage</td>
-        <td>Important message to end-user in requested language requarding delivery.<br/><br/> We recommend this is
+        <td>Important message to end-user in requested language requarding delivery. We recommend this is
             forwarded to the end-user.
         </td>
         <td>Usually empty response. In special cases a one-liner.</td>
@@ -897,23 +897,26 @@ http://fraktguide.bring.no/fraktguide</pre>
 
 <hr>
 
+
 <h2><a name="HTU"></a>How to Use</h2>
 
 <p>The webservices offers the most options when performing queries to the Shipping Guide. </p>
 
+
 <p><b>To execute the web-service you will need a identification string. To get this - please <a
         href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
+
 
 <p>More information about <a href="../additionalresources/wsdl-xml-schema.html?from=shipping">WSDL/XML Schema</a>. <a
         href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl?from=shipping">WSDL</a>(will always link to the latest
    version)</p>
+
 
 <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service</p>
 
 <p>Please refer to common information regarding <a href="../additionalresources/productlist.html?from=shipping">product codes</a> and
     <a href="../additionalresources/errorhandling.html?from=shipping">error codes</a>.</p>
 
-</div>
 </div>
 </div>
 </div>
@@ -949,7 +952,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             <li><code>volume1=33</code></li>
             <li><code>length2=10&amp;width2=20 &amp;height2=30</code></li>
         </ol>
-        <br/>
+        
 
         <div class="lightBorder">
             <div class="codetabs">
@@ -957,7 +960,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li><a href="#xml">XML</a></li>
                         <li><a href="#json">JSON</a></li>
-                        <li><a href="#java">JAVA</a></li>
                     </ul>
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
@@ -983,44 +985,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-
-                    <div data-tab="java" class="tab">
-                        <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Package packet2 = new Package();
-packet2.withVolume("33");
-Package packet3 = new Package();
-packet3.withLength("10").withWidth("20").withHeight("30");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet).addPackage(packet2).addPackage(packet3);
-
-System.out.println(shipment.toQueryString());
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-String workingDays = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getExpectedDelivery().getWorkingDays();
-String descriptionText = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getGuiInformation().getDescriptionText();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
-System.out.println("Working days: " + workingDays);
-System.out.println("Display name: " + descriptionText);</pre>
-                            <div><p>Expected Result:</p>
-                                            <pre class="code-box">Price: 268.00 NOK
-Working days: 2
-Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-1800
-                                        </pre>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -1042,7 +1006,6 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#java">JAVA</a></li>
                 </ul>
 
                 <div class="tab-content tab-minimal">
@@ -1053,7 +1016,7 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                             <a target="_blank" class="request"
                                href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
                                data-internal="/proxy/shipping-guide/products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
-                                ../products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a><br/>
+                                ../products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a>
 
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -1077,33 +1040,6 @@ Display name: RIMI Vinterbro. Åpningstider Man - Fre: 1000-2100, Lør: 0900-180
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-                    <div data-tab="java" class="tab">
-                        <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("2100");
-shipment.withFromCountry("NO");
-shipment.withToPostalCode("2100");
-shipment.withToCountry("DK");
-shipment.addProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.EXPECTED_DELIVERY);
-String expectedDeliveryDays = shippingGuideResult.getProduct(ProductType.CARRYON_HOMESHOPPING_NORWAY).getExpectedDelivery().getWorkingDays();
-
-// Print out
-System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
-                        </div>
-
-                        <div><p>Expected output:</p>
-                            <pre class="code-box">Expected delivery days: 3-5</pre>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </div>
@@ -1115,14 +1051,14 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
 
     <div class="content-box">
 
-        <div><p>In the example below, a parcel is sent from Norway to Dublin, Ireland. <br/><br/>The parameters are:</p>
+        <div><p>In the example below, a parcel is sent from Norway to Dublin, Ireland. The parameters are:</p>
             <ul>
                 <li><code>?fromCountry=NO</code></li>
                 <li><code>&amp;toCountry=IE</code></li>
                 <li><code>&amp;to=0</code></li>
                 <li><code>&amp;toCity=Dublin</code></li>
             </ul>
-            <br/>
+            
 
             <p>To see both the expected delivery time and the price, we've added:</p>
             <ul>
@@ -1130,7 +1066,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <li><code>all.xml</code></li>
             </ul>
         </div>
-        <br/>
+        
 
         <div class="lightBorder">
             <div class="codetabs">
@@ -1188,7 +1124,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
         <ul class="tab-group minimal" data-tabs="tabs">
             <li><a href="#xml">XML</a></li>
             <li><a href="#json">JSON</a></li>
-            <li><a href="#java">JAVA</a></li>
         </ul>
 
         <div data-tab="xml" class="tab">
@@ -1197,7 +1132,7 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
                 <a target="_blank" class="request"
                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                    data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">
-                    ../products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500</a><br/>
+                    ../products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500</a>
 
                 <p>Response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
@@ -1222,33 +1157,6 @@ System.out.println("Expected delivery days: " + expectedDeliveryDays);</pre>
             </div>
         </div>
 
-        <div data-tab="java" class="tab">
-            <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");</pre>
-            </div>
-
-            <div><p>Expected output:</p>
-                <pre class="code-box">Price: 94.00 NOK</pre>
-            </div>
-
-        </div>
-
     </div>
 </div>
 
@@ -1261,7 +1169,6 @@ System.out.println("Price: " + price + " NOK");</pre>
         <ul class="tab-group minimal" data-tabs="tabs">
             <li><a href="#xml">XML</a></li>
             <li><a href="#json">JSON</a></li>
-            <li><a href="#java">JAVA</a></li>
         </ul>
 
         <div data-tab="xml" class="tab">
@@ -1270,7 +1177,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <a target="_blank" class="request"
                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40"
                    data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
-                    ../products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40</a><br/>
+                    ../products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40</a>
 
                 <p>Response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
@@ -1294,34 +1201,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-
-        <div data-tab="java" class="tab">
-            <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withLength("30").withWidth("40").withHeight("40");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");</pre>
-            </div>
-
-            <div><p>Expected output:</p>
-                <pre class="code-box">Price: 94.00 NOK</pre>
-            </div>
-
-        </div>
-
     </div>
 </div>
 
@@ -1338,7 +1217,6 @@ System.out.println("Price: " + price + " NOK");</pre>
         <ul class="tab-group minimal" data-tabs="tabs">
             <li><a href="#xml">XML</a></li>
             <li><a href="#json">JSON</a></li>
-            <li><a href="#java">JAVA</a></li>
         </ul>
 
         <div data-tab="xml" class="tab">
@@ -1347,7 +1225,7 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <a target="_blank" class="request"
                    href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;volume=33"
                    data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;volume=33">
-                    ../products/price.xml?from=7600&amp;to=1407&amp;volume=33</a><br/>
+                    ../products/price.xml?from=7600&amp;to=1407&amp;volume=33</a>
 
                 <p>Response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
@@ -1371,34 +1249,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-
-        <div data-tab="java" class="tab">
-            <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withVolume("33");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");</pre>
-            </div>
-
-            <div><p>Expected output:</p>
-                <pre class="code-box">Price: 94.00 NOK</pre>
-            </div>
-
-        </div>
-
     </div>
 </div>
 </div>
@@ -1420,7 +1270,7 @@ System.out.println("Price: " + price + " NOK");</pre>
             <p>If this parameter is specified, the response will include expected delivery date, in addition to expected
                number of working days.</p>
         </div>
-        <br/>
+        
 
         <div class="lightBorder">
             <div class="codetabs">
@@ -1428,7 +1278,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li><a href="#xml">XML</a></li>
                         <li><a href="#json">JSON</a></li>
-                        <li><a href="#java">JAVA</a></li>
                     </ul>
 
                     <div data-tab="xml" class="tab">
@@ -1459,36 +1308,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
-
-                    <div data-tab="java" class="tab">
-                        <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withVolume("33");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withShippingDateTime(new DateTime("2011-07-30"));
-shipment.addProduct(ProductType.EKSPRESS09);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.EKSPRESS09).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");
-</pre>
-                        </div>
-
-                        <div><p>Expected output:</p>
-                            <pre class="code-box">Price: 408.00 NOK</pre>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
@@ -1512,14 +1331,13 @@ System.out.println("Price: " + price + " NOK");
 
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         </div>
-        <br/>
+        
 
         <div class="lightBorder">
             <div class="codetabs">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#java">JAVA</a></li>
                 </ul>
 
                 <div data-tab="xml" class="tab">
@@ -1550,34 +1368,6 @@ System.out.println("Price: " + price + " NOK");
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
-
-                <div data-tab="java" class="tab">
-                    <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withVolume("33");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withShippingDateTime(new DateTime(2011, 8, 30, 13, 37, 0, 0));
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");</pre>
-                    </div>
-
-                    <div><p>Expected output:</p>
-                        <pre class="code-box">Price: 106.00 NOK</pre>
-                    </div>
-
-                </div>
             </div>
         </div>
 
@@ -1599,14 +1389,13 @@ System.out.println("Price: " + price + " NOK");</pre>
 
             <p>Default: <code>true</code></p>
         </div>
-        <br/>
+        
 
         <div class="lightBorder">
             <div class="codetabs">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#java">JAVA</a></li>
                 </ul>
 
                 <div data-tab="xml" class="tab">
@@ -1637,34 +1426,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
-
-                <div data-tab="java" class="tab">
-                    <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withEdi(false);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.ALL);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");</pre>
-                    </div>
-
-                    <div><p>Expected output:</p>
-                        <pre class="code-box">Price: 81.00 NOK</pre>
-                    </div>
-
-                </div>
             </div>
         </div>
 
@@ -1687,14 +1448,13 @@ System.out.println("Price: " + price + " NOK");</pre>
 
             <p>Default: <code>false</code></p>
         </div>
-        <br/>
+        
 
         <div class="lightBorder">
             <div class="codetabs">
                 <ul class="tab-group minimal" data-tabs="tabs">
                     <li><a href="#xml">XML</a></li>
                     <li><a href="#json">JSON</a></li>
-                    <li><a href="#java">JAVA</a></li>
                 </ul>
 
                 <div data-tab="xml" class="tab">
@@ -1726,34 +1486,6 @@ System.out.println("Price: " + price + " NOK");</pre>
                     </div>
                 </div>
 
-                <div data-tab="java" class="tab">
-                    <div><pre class="code-box">// Initialize library
-String clientId = "www.mywebshop.com";
-BringService bringService = new BringService(clientId);
-
-// Prepare query
-Package packet = new Package();
-packet.withWeightInGrams("1500");
-Shipment shipment = new Shipment();
-shipment.withFromPostalCode("7600");
-shipment.withToPostalCode("1407");
-shipment.withPostingAtPostOffice(true);
-shipment.addProduct(ProductType.SERVICEPAKKE);
-shipment.addPackage(packet);
-
-// Fetch price information from Bring
-ShippingGuideResult shippingGuideResult = bringService.queryShippingGuide(shipment, QueryType.PRICE);
-String price = shippingGuideResult.getProduct(ProductType.SERVICEPAKKE).getPrice().getPackagePriceWithoutAdditionalServices().getAmountWithoutVAT();
-
-// Print out
-System.out.println("Price: " + price + " NOK");</pre>
-                    </div>
-
-                    <div><p>Expected output:</p>
-                        <pre class="code-box">Price: 92.00 NOK</pre>
-                    </div>
-
-                </div>
             </div>
         </div>
 
@@ -1816,9 +1548,9 @@ System.out.println("Price: " + price + " NOK");</pre>
                multiple simultaneous price adjustments, it should be done on a product-by-product basis using the
                product code prefix.</p>
 
-            <br/>
+            
 
-            <p><b>Example:</b> <br/>set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
+            <p><b>Example:</b> set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress
                                     Over natten 09.</p>
 
             <div class="lightBorder">
@@ -1889,6 +1621,8 @@ System.out.println("Price: " + price + " NOK");</pre>
 </div>
 
 </div>
+
+
 </section>
 
 </div>

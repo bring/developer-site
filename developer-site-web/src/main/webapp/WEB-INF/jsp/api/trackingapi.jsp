@@ -5,9 +5,7 @@
 <html>
 
 <head>
-    <misc:contenttype/>
-    <misc:title value="Tracking API"/>
-    <misc:css_v2/>
+    <misc:contenttype/> <misc:title value="Tracking API"/> <misc:css_v2/>
 </head>
 
 <body>
@@ -30,13 +28,13 @@
     <h2><a name="introduction"></a>Introduction</h2>
 
     <p>The tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an
-       easy way to display details and the status of shipments. The information available in this API is the same information available from the <a href="http://tracking.bring.com" target="_blank">Tracking web site</a>.
-       Response is available as either XML or JSON.
-    </p>
-    </br>
-    <div class="information-box" >
+        easy way to display details and the status of shipments. The information available in this API is the same
+        information available from the <a href="http://tracking.bring.com" target="_blank">Tracking web site</a>.
+        Response is available as either XML or JSON. </p>
+
+    <div class="information-box">
         <b>Note! </b> We are using our Sporing beta environment to provide testdata for the examples. In production you
-                      should use http://sporing.bring.no/sporing.xml or http://sporing.bring.no/sporing.json
+        should use http://sporing.bring.no/sporing.xml or http://sporing.bring.no/sporing.json
     </div>
 </div>
 
@@ -56,7 +54,7 @@ http://beta.bring.no</pre>
         <tbody>
         <tr>
             <td><code>/sporing.&lt;extension&gt;?q=&lt;tracking number&gt;</code></td>
-            <td>Returns information about the shipment such as the weight, volume and status. <br/>
+            <td>Returns information about the shipment such as the weight, volume and status.
                 <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 <li><code>&lt;tracking number&gt;</code> = reference, shipment or package number</li>
             </td>
@@ -68,22 +66,18 @@ http://beta.bring.no</pre>
 
 <div class="box">
     <h2><a name="HTU"></a>How to Use</h2>
-    For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real
-    tracking this must be a valid number.
-
+    <p>For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real
+    tracking this must be a valid number.</p>
 
     <h4>Example: TRACK A SHIPMENT</h4>
+
     <p>
-        This example is showing a package waiting to be collected at the pickup point .
-    </p>
-
-
+        This example is showing a package waiting to be collected at the pickup point . </p>
 
     <div class="row-fluid">
 
         <div class="row element-sample">
-            <div class="lightBorder">
-                <div class="codetabs">
+                <div class="codetabs lightBorder">
                     <ul class="tab-group minimal" data-tabs="tabs">
                         <li><a href="#xml">XML</a></li>
                         <li><a href="#json">JSON</a></li>
@@ -94,99 +88,104 @@ http://beta.bring.no</pre>
                             <a target="_blank" class="request"
                                href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT"
                                data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT">
-                                .../sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT
-                            </a>
+                                .../sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
 
-                        <div data-tab="json"class="tab">
-                            <div  class="api-call">
+                        <div data-tab="json" class="tab">
+                            <div class="api-call">
                                 <p>Request:</p>
                                 <a target="_blank" class="request"
                                    href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT"
                                    data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">
-                                    .../sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT
-                                </a>
-                                <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&amp;callbackUrl=functionName">?callback=functionName</a></p>
+                                    .../sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT </a>
+
+                                <p class="right">JSONP Request: <a
+                                        href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&amp;callbackUrl=functionName">?callback=functionName</a>
+                                </p>
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
-        </br>
-        <div>You can read more about the XML Schema definition for the elements available in the response <a href="../additionalresources/xmlSchemaDefinition.html?from=shipping">here.</a></div>
-        </br>
+
+        <p>You can read more about the <a
+                href="../additionalresources/xmlSchemaDefinition.html?from=shipping">XML Schema definition for the elements available in the response.</a></p>
+
     </div>
 </div>
 
 <div class="box">
     <h2><a name="additionalExamples"></a>Additional examples</h2>
-    <p>The parcel numbers used in the examples are static identifiers, and will always return the same result. These examples are recommended to use for integration testing.</p>
+
+    <p>The parcel numbers used in the examples are static identifiers, and will always return the same result. These
+        examples are recommended to use for integration testing.</p>
 
     <div class="row element-sample">
         <ul class="menu-group collapsing no-shadow">
 
             <li>
                 <a href="#" class="menu-item"><h4>Status - notification received</h4></a>
+
                 <div class="content-box" style="display: none;">
 
-
-                    <p>The example below is showing a package that have been EDI notified, but is not received by Bring</p>
+                    <p>The example below is showing a package that have been EDI notified, but is not received by
+                        Bring</p>
 
                     <div class="row element-sample">
-                        <div class="lightBorder">
-                            <div class="codetabs">
+                            <div class="codetabs lightBorder">
                                 <ul class="tab-group minimal" data-tabs="tabs">
                                     <li><a href="#xml">XML</a></li>
                                     <li><a href="#json">JSON</a></li>
                                 </ul>
                                 <div data-tab="xml" class="tab">
-                                    <div  class="api-call">
+                                    <div class="api-call">
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
                                            href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-EDI"
                                            data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-EDI">
-                                            .../sporing.xml?q=TESTPACKAGE-EDI
-                                        </a>
+                                            .../sporing.xml?q=TESTPACKAGE-EDI </a>
                                         <pre class="code-box xml response delay-snippet"></pre>
                                     </div>
                                 </div>
 
                                 <div data-tab="json" class="tab">
-                                    <div  class="api-call">
+                                    <div class="api-call">
                                         <p>Request:</p>
                                         <a target="_blank" class="request"
                                            href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI"
                                            data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-EDI">
-                                            .../sporing.json?q=TESTPACKAGE-EDI
-                                        </a>
-                                        <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI&amp;callbackUrl=functionName">?callback=functionName</a></p>
+                                            .../sporing.json?q=TESTPACKAGE-EDI </a>
+
+                                        <p class="right">JSONP Request: <a
+                                                href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-EDI&amp;callbackUrl=functionName">?callback=functionName</a>
+                                        </p>
                                         <pre class="code-box json response delay-snippet"></pre>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </li>
 
             <li>
                 <a href="#" class="menu-item"><h4>Status - waiting at pickup point</h4></a>
-                <div class="content-box">
-                    <p>The example below is showing a package waiting for the recipient to collect it at a pickup point</p>
 
-                    <div class="lightBorder">
-                        <div class="codetabs">
+                <div class="content-box">
+                    <p>The example below is showing a package waiting for the recipient to collect it at a pickup
+                        point</p>
+                        <div class="codetabs lightBorder">
                             <ul class="tab-group minimal" data-tabs="tabs">
                                 <li><a href="#xml">XML</a></li>
                                 <li><a href="#json">JSON</a></li>
                             </ul>
                             <div data-tab="xml" class="tab">
-                                <div  class="api-call">
+                                <div class="api-call">
                                     <p>Request:</p>
-                                    <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT" data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT</a>
+                                    <a target="_blank" class="request"
+                                       href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT"
+                                       data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.xml?q=TESTPACKAGE-AT-PICKUPPOINT</a>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
 
@@ -195,78 +194,94 @@ http://beta.bring.no</pre>
                             <div data-tab="json" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
-                                    <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT</a>
-                                    <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&amp;callbackUrl=functionName">?callback=functionName</a></p>
+                                    <a target="_blank" class="request"
+                                       href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT"
+                                       data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT">…/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT</a>
+
+                                    <p class="right">JSONP Request: <a
+                                            href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-AT-PICKUPPOINT&amp;callbackUrl=functionName">?callback=functionName</a>
+                                    </p>
                                     <pre class="code-box json response delay-snippet"></pre>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
                 </div>
             </li>
 
             <li>
                 <a href="#" class="menu-item"><h4>Status - loaded for delivery</h4></a>
-                <div class="content-box">
-                    <p>The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient</p>
 
-                    <div class="lightBorder">
-                        <div class="codetabs">
-                        <ul class="tab-group minimal" data-tabs="tabs">
-                            <li><a href="#xml">XML</a></li>
-                            <li><a href="#json">JSON</a></li>
-                        </ul>
-                        <div data-tab="xml" class="tab">
+                <div class="content-box">
+                    <p>The example below is showing a package that has been loaded on a distribution car for delivery to
+                        the reciepient</p>
+
+                        <div class="codetabs lightBorder">
+                            <ul class="tab-group minimal" data-tabs="tabs">
+                                <li><a href="#xml">XML</a></li>
+                                <li><a href="#json">JSON</a></li>
+                            </ul>
+                            <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
-                                    <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY" data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
+                                    <a target="_blank" class="request"
+                                       href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY"
+                                       data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.xml?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
 
+                                <div data-tab="json" class="tab">
+                                    <div class="api-call">
+                                        <p>Request:</p>
+                                        <a target="_blank" class="request"
+                                           href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY"
+                                           data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
 
-                            <div data-tab="json" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY">…/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY</a>
-                                    <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY&amp;callbackUrl=functionName">?callback=functionName</a></p>
-                                    <pre class="code-box json response delay-snippet"></pre>
+                                        <p class="right">JSONP Request: <a
+                                                href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-LOADED-FOR-DELIVERY&amp;callbackUrl=functionName">?callback=functionName</a>
+                                        </p>
+                                        <pre class="code-box json response delay-snippet"></pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div></div>
                 </div>
             </li>
 
             <li>
                 <a href="#" class="menu-item"><h4>Status - delivered</h4></a>
+
                 <div class="content-box">
                     <p>The example below is showing a package that has been delivered to the reciepient</p>
 
-                    <div class="lightBorder">
-                        <div class="codetabs">
-                        <ul class="tab-group minimal" data-tabs="tabs">
-                            <li><a href="#xml">XML</a></li>
-                            <li><a href="#json">JSON</a></li>
-                        </ul>
-                        <div data-tab="xml" class="tab">
-                                <div  class="api-call">
+                        <div class="codetabs lightBorder">
+                            <ul class="tab-group minimal" data-tabs="tabs">
+                                <li><a href="#xml">XML</a></li>
+                                <li><a href="#json">JSON</a></li>
+                            </ul>
+                            <div data-tab="xml" class="tab">
+                                <div class="api-call">
                                     <p>Request:</p>
-                                    <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-DELIVERED" data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-DELIVERED">…/sporing.xml?q=TESTPACKAGE-DELIVERED</a>
+                                    <a target="_blank" class="request"
+                                       href="http://beta.bring.no/sporing/sporing.xml?q=TESTPACKAGE-DELIVERED"
+                                       data-internal="/proxy/tracking/sporing.xml?q=TESTPACKAGE-DELIVERED">…/sporing.xml?q=TESTPACKAGE-DELIVERED</a>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
 
-                            <div data-tab="json" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED" data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-DELIVERED">…/sporing.json?q=TESTPACKAGE-DELIVERED</a>
-                                    <p class="right">JSONP Request: <a href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED&amp;callbackUrl=functionName">?callback=functionName</a></p>
-                                    <pre class="code-box json response delay-snippet"></pre>
+                                <div data-tab="json" class="tab">
+                                    <div class="api-call">
+                                        <p>Request:</p>
+                                        <a target="_blank" class="request"
+                                           href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED"
+                                           data-internal="/proxy/tracking/sporing.json?q=TESTPACKAGE-DELIVERED">…/sporing.json?q=TESTPACKAGE-DELIVERED</a>
+
+                                        <p class="right">JSONP Request: <a
+                                                href="http://beta.bring.no/sporing/sporing.json?q=TESTPACKAGE-DELIVERED&amp;callbackUrl=functionName">?callback=functionName</a>
+                                        </p>
+                                        <pre class="code-box json response delay-snippet"></pre>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div></div>
-
 
                 </div>
             </li>
@@ -279,7 +294,7 @@ http://beta.bring.no</pre>
 
 <div class="span3" id="additional-resources">
     <div id="sidebar">
-        <misc:sidebar />
+        <misc:sidebar/>
     </div>
 </div>
 
@@ -288,9 +303,7 @@ http://beta.bring.no</pre>
 </div>
 </div>
 
-<misc:footer_v2/>
-<misc:jqueryblob_v2/>
-
+<misc:footer_v2/> <misc:jqueryblob_v2/>
 
 </body>
 </html>

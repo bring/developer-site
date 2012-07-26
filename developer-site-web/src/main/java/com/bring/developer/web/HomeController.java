@@ -22,6 +22,11 @@ public class HomeController {
         return "support/support";
     }
 
+    @RequestMapping(value = "/additionalresources/booking-api-error-codes.html")
+    public String bookingErrorCodes(){
+        return "/additionalresources/booking-error-codes";
+    }
+
     @RequestMapping(value = "/api/pickuppointapi.html")
      public String pickuppointapi() {
         return "api/pickuppointapi";
@@ -40,16 +45,6 @@ public class HomeController {
     @RequestMapping(value = "/additionalresources/priceadjustments.html")
      public String priceadjustments() {
         return "/additionalresources/priceadjustments";
-    }
-
-    @RequestMapping(value = "/additionalresources/javaapi.html")
-    public String javaapi() {
-        return "/additionalresources/javaapi";
-    }
-
-    @RequestMapping(value = "/additionalresources/phpapi.html")
-    public String phpapi() {
-        return "/additionalresources/phpapi";
     }
 
     @RequestMapping(value = "/additionalresources/offlinedata.html")
