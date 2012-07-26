@@ -90,11 +90,10 @@
 </ul>
 
 <div class="box">
-<div class="tab-content tab-minimal">
-
 <h2><a name="reference"></a>Reference</h2>
-
-<div class="tab-pane active tab" data-tab="xml">
+<div class="tab-content">
+<div class="active tab" data-tab="xml">
+<div class="box">
 <div class="api-call">
 <pre class="code-box">Request prefix:
 http://fraktguide.bring.no/fraktguide</pre>
@@ -357,7 +356,8 @@ http://fraktguide.bring.no/fraktguide</pre>
 
 </div>
 </div>
-<div class="tab-pane tab" data-tab="json">
+</div>
+<div class="tab" data-tab="json">
 <div class="api-call">
 <pre class="code-box">Request prefix:
 http://fraktguide.bring.no/fraktguide</pre>
@@ -618,7 +618,7 @@ http://fraktguide.bring.no/fraktguide</pre>
 
 </div>
 </div>
-<div class="tab-pane tab" data-tab="soap">
+<div class="tab" data-tab="soap">
 <div class="api-call">
 <h5>Request Reference</h5>
 <table>
