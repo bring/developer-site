@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <misc:contenttype/> <misc:title value="Error codes"/> <misc:css_v2/>
+    <misc:contenttype/> <misc:title value="Booking API Error codes"/> <misc:css_v2/>
 </head>
 
 <body>
@@ -19,28 +19,15 @@
                 <div class="span9">
 
                     <div class="box">
-                        <h4>Error codes</h4>
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Error code</th>
-                                <th>Description</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            <tr>
-                                <td>FG_INPUT_001</td>
-                                <td>Shipmentdate must be set</td>
-                            </tr>
-                            <tr class="even">
-                                <td> FG_INPUT_002</td>
-                                <td>Error with Postal code</td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-
+                        <h1>Booking API: Error codes</h1>
+                        </div>
+                    <div class="box">
+                        <p>The following table is generated from <a href="http://beta.bring.com/booking/api/errors.xml">beta.bring.com/booking/api/errors.xml</a></p>
+                        <%-- When adding the data-tab attribute to a
+                        table the tableFromJSON script will fetch the
+                        contents of the url and print it inside the table
+                        (with headers) --%>
+                        <table data-tab="/proxy/booking/api/errors.json"></table>
                     </div>
                 </div>
                 <div class="span3">
@@ -55,20 +42,6 @@
 </div>
 
 <misc:footer_v2/> <misc:jqueryblob_v2/>
-
-<script type="text/javascript">
-    $.ajax({
-        url:"/proxy/booking/api/errors.json",
-        cache:false,
-        dataType:"json"
-    }).done(function (errorCodes) {
-                for(var errorCode in errorCodes['errorTypes']){
-                    for(var e in errorCode){
-                        console.log(e);
-                    }
-                }
-            });
-</script>
 
 </body>
 

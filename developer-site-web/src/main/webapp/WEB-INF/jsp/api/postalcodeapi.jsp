@@ -51,7 +51,7 @@ http://fraktguide.bring.no/fraktguide</pre>
                     <li><code>&lt;country&gt;</code> = The ISO 3166-1-alpha-2 country code.</li>
                 </td>
             </tr>
-            <tr class="even">
+            <tr >
                 <td><code>//Response/@valid</code></td>
                 <td>XPath for checking if the response is valid <br/>
                 </td>

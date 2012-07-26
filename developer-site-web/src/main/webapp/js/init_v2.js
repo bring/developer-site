@@ -17,11 +17,15 @@ $(document).ready(function() {
             $(this).toggleClass('selected').siblings('.content-box').slideToggle();
             e.preventDefault();
         });
-
-
     });
 
     /* Add syntax highlighting to certain code-snippets on the page */
     prettyPrint();
+
+    //Create tables dynamically from tags like: <table data-tab="url">
+    $("table[data-tab]").tableFromJSON();
+
+    //Add "even" class to every other table row for styling purposes
+    $("table").colorizeTable();
 
 });
