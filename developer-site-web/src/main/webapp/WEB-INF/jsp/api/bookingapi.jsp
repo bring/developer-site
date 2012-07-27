@@ -74,8 +74,9 @@
 <h4>Authorization - by customer numbers (per specialist)</h4>
 
 <p>
-    In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings. The
-    authorization is currently handled with customer numbers on a per specialist basis. </p>
+    In addition to authentication, you need to be authorized with the BUYER role in order to perform bookings.
+    Read about <a href="/additionalresources/getting-api-keys.html?from=booking#buyer">how to get authorized with the buyer role</a>.
+    The authorization is currently handled with customer numbers on a per specialist basis. </p>
 
 <p>
     To perform a booking, you must specify which customer number to use. For your convenience, there is an API for

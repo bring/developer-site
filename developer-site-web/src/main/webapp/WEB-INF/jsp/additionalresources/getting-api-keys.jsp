@@ -25,7 +25,7 @@
                         <h2><a name="introduction"></a>Introduction</h2>
 
                         <p>Some of Bring APIs require an API-key for authentication. On this page we provide
-                            information about getting API-keys and how to use them for authentication.</p>
+                           information about getting API-keys and how to use them for authentication.</p>
                     </div>
                     <div class="box">
                         <h2><a name="getting"></a>Getting an API-key</h2>
@@ -33,19 +33,19 @@
 
                         <ul>
                             <li><b>No:</b></br> </br>If you are a developer hired to develop an application for a
-                                company, you need the API-key associated with that companys mybring-account. Typically,
-                                as a developer you do not have a mybring account, unless you are running your own
-                                business and doing the development yourself. So step one is to register a mybring
-                                account, or tell the company you work for to do so in order for you to get your
-                                API-keys. To register a new user: </br></br>Please visit: <a
+                                                     company, you need the API-key associated with that companys mybring-account. Typically,
+                                                     as a developer you do not have a mybring account, unless you are running your own
+                                                     business and doing the development yourself. So step one is to register a mybring
+                                                     account, or tell the company you work for to do so in order for you to get your
+                                                     API-keys. To register a new user: </br></br>Please visit: <a
                                         href="https://www.mybring.com/useradmin/open/signup/new" target="_blank">https://www.mybring.com/useradmin/open/signup/new</a></br></br>
 
                                 <div class="information-box">
                                     <b>What's mybring?</b></br>Mybring is a logged-in service for Bring's customers.
-                                    With MyBring the customers get improved possibility to follow up their own goods
-                                    flows, finance and quality. MyBring will also offer existing services such as
-                                    tracking and booking. After you have someone with access to a mybring account, you
-                                    may retrieve your API-key.
+                                                               With MyBring the customers get improved possibility to follow up their own goods
+                                                               flows, finance and quality. MyBring will also offer existing services such as
+                                                               tracking and booking. After you have someone with access to a mybring account, you
+                                                               may retrieve your API-key.
                                 </div>
 
                             </li>
@@ -103,6 +103,17 @@
                             </tr>
                             </tbody>
                         </table>
+                    </div>
+
+
+                    <div class="box">
+                    <h2><a name="buyer"></a>How to get authorized with the buyer role</h2>
+                    <p>To be able to use the Booking API the customer (mybring user) needs to be authorized with the buyer role.
+                    That means having the authorization to receive invoices on behalf of the company.
+                    To get this authorization go to the profile in mybring and choose the tab "my authorizations" and the relevant company to extend/change the accesses for your customer-profile.
+                    You have to check the box: Receive invoices on behalf of the company to be authorized with the buyer role.</p>
+                    <em>If you're trying to retrieve the customer number with the Booking API and the customer does not have this authorization, an empty list is returned.</em>
+
                     </div>
 
 

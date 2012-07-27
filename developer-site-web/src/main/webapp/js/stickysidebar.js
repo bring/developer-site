@@ -11,11 +11,13 @@ $(function () {
         //If this page has a sidebar
         if ($('#sidebar').length != 0) {
             var menudefault = $('#sidebar')[0].offsetTop;
+
             $(document).bind('ready scroll', function () {
                 var scroll = $(document).scrollTop();
                 var sidebarHeight = $('#sidebar').height();
                 var windowWidth = $(window).width();
                 var windowHeight = $(window).height();
+
                 if (scroll >= menudefault && windowWidth > 849 && windowHeight > sidebarHeight) {
                     $('#sidebar').addClass('stickymenu');
                 } else {
@@ -26,6 +28,7 @@ $(function () {
             $(window).resize(function(){
                 var menudefault = $('#sidebar')[0].offsetTop;
                 var scroll = $(document).scrollTop();
+
                 if($(window).width() < 849 || $(window).height() < $('#sidebar').height() || scroll <= menudefault){
                     $('#sidebar').removeClass('stickymenu');
                 }
