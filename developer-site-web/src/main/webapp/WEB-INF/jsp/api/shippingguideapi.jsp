@@ -62,7 +62,7 @@
         </thead>
         <tbody>
         <tr>
-            <td>XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides
+            <td>XML API is the easiest way to integrate the Shipping Guide with an online store. The method provides
                 access to data from Bring via a single interface.
             </td>
             <td>Web browsers can retrieve information from external sites if the data are made available in JSONP
