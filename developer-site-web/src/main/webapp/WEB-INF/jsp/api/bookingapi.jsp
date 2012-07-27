@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
@@ -184,7 +185,7 @@ Host: www.mybring.com
                 <a target="_blank" class="request"
                    href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
                    data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">http://beta.bring.com/booking/api/bookingExamples/validRequest.xml </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
             </div>
@@ -204,7 +205,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
                    data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
                     http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml</a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
             </div>
@@ -235,7 +236,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
                    data-internal="/proxy/booking/api/bookingExamples/failedResponse.xml">
                     http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
             </div>
@@ -283,7 +284,7 @@ Host: www.mybring.com
                 <p>Request:</p>
                 <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.xml"
                    data-internal="/proxy/booking/api/errors.xml"> http://beta.bring.com/booking/api/errors.xml </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
             </div>
@@ -377,7 +378,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/customers.xml"
                    data-internal="/proxy/booking/api/bookingExamples/customers.xml">
                     http://beta.bring.com/booking/api/bookingExamples/customers.xml </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
             </div>
@@ -485,7 +486,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/validRequest.json"
                    data-internal="/proxy/booking/api/bookingExamples/validRequest.json">
                     http://beta.bring.com/booking/api/bookingExamples/validRequest.json </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
@@ -505,7 +506,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json"
                    data-internal="/proxy/booking/api/bookingExamples/successfulResponse.json">
                     http://beta.bring.com/booking/api/bookingExamples/successfulResponse.json </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
@@ -536,7 +537,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.json"
                    data-internal="/proxy/booking/api/bookingExamples/failedResponse.json">
                     http://beta.bring.com/booking/api/bookingExamples/failedResponse.json </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
@@ -584,7 +585,7 @@ Host: www.mybring.com
                 <p>Request:</p>
                 <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.json"
                    data-internal="/proxy/booking/api/errors.json"> http://beta.bring.com/booking/api/errors.json </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
@@ -678,7 +679,7 @@ Host: www.mybring.com
                    href="http://beta.bring.com/booking/api/bookingExamples/customers.json"
                    data-internal="/proxy/booking/api/bookingExamples/customers.json">
                     http://beta.bring.com/booking/api/bookingExamples/customers.json </a>
-                </br></br>
+                
                 <p>Example response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
@@ -812,7 +813,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
 <div class="span3">
     <div id="sidebar">
-        <misc:sidebar/>
+        <sidebar:booking-sidebar/>
     </div>
 </div>
 </div>

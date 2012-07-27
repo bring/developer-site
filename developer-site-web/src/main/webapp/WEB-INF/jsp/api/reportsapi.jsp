@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
 <html>
 
 <head>
@@ -262,7 +263,7 @@ https://www.mybring.com/reports/api</pre>
 
 <div class="span3" id="additional-resources">
     <div id="sidebar">
-        <misc:sidebar/>
+        <sidebar:reports-sidebar/>
     </div>
 </div>
 
