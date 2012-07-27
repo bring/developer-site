@@ -60,18 +60,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>XML API is the easiest way to integrate the Shipping Guide to an online store. The method provides
-                    access to data from Bring via a single interface.
-                </td>
-                <td>Web browsers can retrieve information from external sites if the data are made available in JSONP
-                    format. The purpose is that you can paste HTML / Javascript on your web page and easily use data
-                    from the Shipping guide without server components on your web page.
-                </td>
-                <td>With Online Web Services, you can look up price, transportation, area coverage and product
-                    information for each product as required. For advanced users we recommend the Web Services with
-                    several options in the query.
-                </td>
+        <tr>
+            <td>XML API is the easiest way to integrate the Shipping Guide with an online store. The method provides
+                access to data from Bring via a single interface.
+            </td>
+            <td>Web browsers can retrieve information from external sites if the data are made available in JSONP
+                format. The purpose is that you can paste HTML / Javascript on your web page and easily use data
+                from the Shipping guide without server components on your web page.
+            </td>
+            <td>With Online Web Services, you can look up price, transportation, area coverage and product
+                information for each product as required. For advanced users we recommend the Web Services with
+                several options in the query.
+            </td>
 
             </tr>
         </tbody>

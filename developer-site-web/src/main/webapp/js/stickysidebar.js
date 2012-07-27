@@ -21,19 +21,18 @@ $(function () {
                 } else {
                     $('#sidebar').removeClass('stickymenu');
                 }
-
             });
 
             $(window).resize(function(){
-                if($(window).width() < 849 || $(window).height() < $('#sidebar').height()){
+                var menudefault = $('#sidebar')[0].offsetTop;
+                var scroll = $(document).scrollTop();
+                if($(window).width() < 849 || $(window).height() < $('#sidebar').height() || scroll <= menudefault){
                     $('#sidebar').removeClass('stickymenu');
                 }
 
                 else if($(window).width() > 849 || $(window).height() > $('#sidebar').height()){
                     $('#sidebar').addClass('stickymenu');
                 }
-
-
             });
         }
     }
