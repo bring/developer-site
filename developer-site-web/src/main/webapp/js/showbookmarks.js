@@ -4,7 +4,7 @@
 
 function showBookmark (sBookmark) {
     var bookmark = $("[name="+sBookmark+"]");
-    if(bookmark){
+    if(bookmark.length > 0){
         var bookmarkOffset = bookmark.position().top;
         $('body').scrollTop(bookmarkOffset);
         $('html').scrollTop(bookmarkOffset);//works in FF

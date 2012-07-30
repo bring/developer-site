@@ -66,6 +66,8 @@ in something.js:
                     var tabName = $(this).attr("data-tab");
                     //Add the tabName to the hash-part of the url
                     window.location.hash = tabName;
+                    //Store the tabName in a cookie
+                    $.cookies.set("selectedTab", tabName);
                     //Select all tabs where 'tabName' is a part of the data-tab value
                     var tabsToBeDisplayed = $("div[data-tab~="+tabName+"]");
                     methods.hideAllTabs();
@@ -81,14 +83,23 @@ in something.js:
         selectTabFromHash: function(triggers){
             if(!window.location.hash){ return false;}
             //find the trigger matching the hash
+            return methods.clickTab(triggers, window.location.hash.slice(1));
+        },
+
+        clickTab: function(triggers, trigger){
             for(var i = 0; i < triggers.length; i++){
                 currentTrigger = $(triggers[i]);
-                if(currentTrigger.attr("data-tab") === window.location.hash.slice(1)){
+                if(currentTrigger.attr("data-tab") === trigger){
                     currentTrigger.click();
                     return true;
                 };
             };
             return false;
+        },
+
+        selectTabFromCookies: function(triggers){
+            var cookieValue = $.cookies.get("selectedTab");
+            return methods.clickTab(triggers, cookieValue);
         }
 
     }
@@ -100,8 +111,10 @@ in something.js:
         var tabFound = false;
         //If there is a hash in the url, switch to that tab
         if(!methods.selectTabFromHash(triggers)){
-            //If no valid hash is provided, select the first tab as a default
-            $(triggers[0]).click();
+            if(!methods.selectTabFromCookies(triggers)){
+                //If no valid hash or cookie is provided, select the first tab as a default
+                $(triggers[0]).click();
+            }
         }
         return this;
     }

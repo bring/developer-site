@@ -21,6 +21,7 @@
 <script type="text/javascript" src="/js/colorizeTable.js"></script>
 <script type="text/javascript" src="/js/multitabs.js"></script>
 <script type="text/javascript" src="/js/showbookmarks.js"></script>
+<script type="text/javascript" src="/js/lib/jquery.cookies.2.2.0.min.js"></script>
 <script type="text/javascript" src="/js/init_v2.js"></script>
 
 <script type="text/javascript">
