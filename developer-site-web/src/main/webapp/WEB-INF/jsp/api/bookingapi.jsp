@@ -57,14 +57,16 @@
 
 <%--How to Use--%>
 
-<div class="row element-sample">
-<ul class="tab-group" data-tabs="tabs">
-    <li class="active"><a href="#tab1">XML</a></li>
-    <li><a href="#tab2">JSON</a></li>
-    <li><a href="#tab3">SOAP</a></li>
+
+<div class="multitabs">
+
+<ul class="tab-group">
+    <li><a href="#xml" data-tab="xml">XML</a></li>
+    <li><a href="#json" data-tab="json">JSON</a></li>
+    <li><a href="#soap" data-tab="soap">SOAP</a></li>
 </ul>
 
-<div class="tab-content tab-minimal">
+
 <div class="box">
 <h2><a name="HTU"></a>How to Use</h2>
 
@@ -88,7 +90,7 @@
     For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
     endpoint definition in the instructions below. </p>
 
-<div class="tab-pane active" id="tab1">
+<div data-tab="xml">
 
 <h4>Technical information</h4>
 
@@ -386,7 +388,7 @@ Host: www.mybring.com
     </div>
 </div>
 </div>
-<div class="tab-pane" id="tab2">
+<div data-tab="json">
 
 <h4>Technical information</h4>
 
@@ -687,7 +689,7 @@ Host: www.mybring.com
     </div>
 </div>
 </div>
-<div class="tab-pane" id="tab3">
+<div data-tab="soap">
 
     <div>
         <h4>Technical information</h4>
@@ -806,7 +808,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
 
 </div>
-</div>
+
 </div>
 
 </div>

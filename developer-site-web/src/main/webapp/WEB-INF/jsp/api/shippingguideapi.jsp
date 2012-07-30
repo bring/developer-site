@@ -1402,7 +1402,7 @@
             <p>To see both the expected delivery time and the price, we've added:</p>
             <ul>
                 <li><code>&amp;weightInGrams=300</code>, and</li>
-                <li><code>all.xml</code></li>
+                <li><code>all.json</code></li>
             </ul>
         </div>
 

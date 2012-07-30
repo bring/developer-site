@@ -68,7 +68,6 @@ http://beta.bring.no</pre>
                 <li><code>&lt;tracking number&gt;</code> = reference, shipment or package number</li>
             </td>
         </tr>
-
         </tbody>
     </table>
 
