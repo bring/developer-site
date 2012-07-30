@@ -60,7 +60,7 @@ in something.js:
         bindTriggersToActions: function(triggers){
             for(var i = 0; i < triggers.length; i++){
                 //Bind actions to triggers
-                $(triggers[i]).bind('click', function(){
+                $(triggers[i]).bind('click', function(event){
                     event.preventDefault();
                     //select all tabs to be displayed (ie. tabs having a matching value for the data-tab attribute
                     var tabName = $(this).attr("data-tab");
