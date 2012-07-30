@@ -41,30 +41,68 @@ in something.js:
 
  */
 (function($) {
-    $.fn.multitabs = function(method) {
-        //Hide all tabs
-        $('div[data-tab]').hide();
-        //Register triggers
-        var triggers = this.find('li>a[data-tab]');
-        for(var i = 0; i < triggers.length; i++){
-            //Bind actions to triggers
-            $(triggers[i]).bind('click', function(){
-                event.preventDefault();
-                //select all tabs to be displayed (ie. tabs having a matching value for the data-tab attribute
-                var tabName = $(this).attr("data-tab");
-                //Select all tabs where 'tabName' is a part of the data-tab value
-                var tabsToBeDisplayed = $("div[data-tab~="+tabName+"]");
-                //Hide all tabs
-                $('div[data-tab]').hide();
-                //Remove the active class from all triggers/buttons
-                $('a[data-tab]').parents().removeClass("active");
-                //Add "active" class to the trigger/button
-                $("a[data-tab="+tabName+"]").parents().addClass("active");
-                //Display all the selected tabs
-                tabsToBeDisplayed.show();
-            });
+
+    var methods = {
+
+        hideAllTabs: function() {
+            $('div[data-tab]').hide();
+        },
+
+        findTriggersInsideElement: function(parentElement) {
+            return parentElement.find('li>a[data-tab]');
+        },
+
+        removeActiveClassFromAllTriggers: function(){
+        //Remove the active class from all triggers/buttons
+            $('a[data-tab]').parents().removeClass("active");
+        },
+
+        bindTriggersToActions: function(triggers){
+            for(var i = 0; i < triggers.length; i++){
+                //Bind actions to triggers
+                $(triggers[i]).bind('click', function(){
+                    event.preventDefault();
+                    //select all tabs to be displayed (ie. tabs having a matching value for the data-tab attribute
+                    var tabName = $(this).attr("data-tab");
+                    //Add the tabName to the hash-part of the url
+                    window.location.hash = tabName;
+                    //Select all tabs where 'tabName' is a part of the data-tab value
+                    var tabsToBeDisplayed = $("div[data-tab~="+tabName+"]");
+                    methods.hideAllTabs();
+                    methods.removeActiveClassFromAllTriggers();
+                    //Add "active" class to the trigger/button
+                    $("a[data-tab="+tabName+"]").parents().addClass("active");
+                    //Display all the selected tabs
+                    tabsToBeDisplayed.show();
+                });
+            }
+        },
+
+        selectTabFromHash: function(triggers){
+            if(!window.location.hash){ return false;}
+            //find the trigger matching the hash
+            for(var i = 0; i < triggers.length; i++){
+                currentTrigger = $(triggers[i]);
+                if(currentTrigger.attr("data-tab") === window.location.hash.slice(1)){
+                    currentTrigger.click();
+                    return true;
+                };
+            };
+            return false;
         }
-        //Set the first trigger to be the default
-        $(triggers[0]).click();
+
+    }
+
+    $.fn.multitabs = function(method) {
+        methods.hideAllTabs();
+        var triggers = methods.findTriggersInsideElement(this);
+        methods.bindTriggersToActions(triggers);
+        var tabFound = false;
+        //If there is a hash in the url, switch to that tab
+        if(!methods.selectTabFromHash(triggers)){
+            //If no valid hash is provided, select the first tab as a default
+            $(triggers[0]).click();
+        }
+        return this;
     }
 })(jQuery);

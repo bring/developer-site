@@ -28,14 +28,14 @@
                                 customers:</span> </p>
                             <ul class="welcomelist">
                                 <li>Let the customer choose between alternative shipping methods upon checkout with the <a
-                                        href="/api/shippingguideapi.html?from=shipping">Shipping Guide API</a>.
+                                        href="/api/shippingguideapi.html">Shipping Guide API</a>.
                                 </li>
                                 <li>Show your customers the current status of their shipment with the <a
-                                        href="/api/trackingapi.html?from=tracking">Tracking API</a>.
+                                        href="/api/trackingapi.html">Tracking API</a>.
                                 </li>
-                                <li>Book a shipment through the <a href="/api/bookingapi.html?from=booking">Booking API</a>.
+                                <li>Book a shipment through the <a href="/api/bookingapi.html">Booking API</a>.
                                 </li>
-                                <li>Generate and download reports with the <a href="/api/reportsapi.html?from=reports">Reports API</a></li>
+                                <li>Generate and download reports with the <a href="/api/reportsapi.html">Reports API</a></li>
                             </ul>
                             <p class="front-page-welcome-text">Need help? Get in touch with the API team and other
                                 developers through the <a href="/support">Support</a> page.</p>
@@ -50,7 +50,7 @@
                                     <div class="api-menu-icons shippingicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="/api/shippingguideapi.html?from=shipping"> <span class="api-link black">Shipping Guide API</span>
+                                        <a href="/api/shippingguideapi.html"> <span class="api-link black">Shipping Guide API</span>
                                             <span class="black">Get price and time estimate for shipments</span> </a>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                     <div class="api-menu-icons trackingicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="/api/trackingapi.html?from=tracking"> <span
+                                        <a href="/api/trackingapi.html"> <span
                                                 class="api-link black">Tracking API </span> <span class="black">See the current status of shipments</span>
                                         </a>
                                     </div>
@@ -72,7 +72,7 @@
                                     <div class="api-menu-icons reportsicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="/api/reportsapi.html?from=reports"> <span
+                                        <a href="/api/reportsapi.html"> <span
                                                 class="api-link black">Reports API (BETA)</span> <span class="black">Generate customer reports from shipment history</span>
                                         </a>
                                     </div>
@@ -83,7 +83,7 @@
                                     <div class="api-menu-icons pickuppointicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="/api/pickuppointapi.html?from=pickuppoint"> <span class="api-link black">Pickup Point API</span>
+                                        <a href="/api/pickuppointapi.html"> <span class="api-link black">Pickup Point API</span>
                                             <span class="black">Find pickup points near a location</span></a>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                     <div class="api-menu-icons postalcodeicon"></div>
 
                                     <div class="api-menu-text">
-                                        <a href="/api/postalcodeapi.html?from=postalcode"> <span
+                                        <a href="/api/postalcodeapi.html"> <span
                                                 class="api-link black">Postal Code API</span> <span class="black">Lookup and validate postal codes</span></a>
                                     </div>
                                 </div>
@@ -105,7 +105,7 @@
                                     <div class="api-menu-icons bookingicon"></div>
 
                                     <div class="api-menu-text"></div>
-                                    <a href="/api/bookingapi.html?from=booking"> <span
+                                    <a href="/api/bookingapi.html"> <span
                                             class="api-link black">Booking API (BETA)</span> <span class="black">Book shipments and generate PDF labels</span></a>
                                 </div>
                             </li>
