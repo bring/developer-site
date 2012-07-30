@@ -187,7 +187,7 @@ Host: www.mybring.com
         </div>
     </div>
 
-    <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
+    <h5>EXAMPLE RESPONSE: SUCCESSFUL REQUEST</h5>
 
     <div class="codetabs lightBorder">
         <div data-tab="xml" class="tab">
