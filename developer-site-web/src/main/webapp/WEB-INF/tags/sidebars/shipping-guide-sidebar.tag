@@ -4,10 +4,10 @@
         <h4>Shipping Guide API</h4>
     </a>
     <ol>
-        <li><a onclick="showBookmark('introduction');">Introduction</a></li>
-        <li><a onclick="showBookmark('reference');">Reference</a></li>
-        <li><a onclick="showBookmark('HTU');">How to Use</a></li>
-        <li><a onclick="showBookmark('additionalExamples');">Additional Examples</a></li>
+        <li><a onclick="showBookmark('introduction', '/api/shippingguideapi.html');">Introduction</a></li>
+        <li><a onclick="showBookmark('reference', '/api/shippingguideapi.html');">Reference</a></li>
+        <li><a onclick="showBookmark('HTU', '/api/shippingguideapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('additionalExamples', '/api/shippingguideapi.html');">Additional Examples</a></li>
     </ol>
 
 </div>

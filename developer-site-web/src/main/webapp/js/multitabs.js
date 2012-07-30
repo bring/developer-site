@@ -67,7 +67,9 @@ in something.js:
                     //Add the tabName to the hash-part of the url
                     window.location.hash = tabName;
                     //Store the tabName in a cookie
-                    $.cookies.set("selectedTab", tabName);
+                    if($.cookies){
+                        $.cookies.set("selectedTab", tabName);
+                    }
                     //Select all tabs where 'tabName' is a part of the data-tab value
                     var tabsToBeDisplayed = $("div[data-tab~="+tabName+"]");
                     methods.hideAllTabs();
