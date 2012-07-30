@@ -97,10 +97,6 @@ http://fraktguide.bring.no/fraktguide</pre>
         <h4><p>Example: Using the postal code and the country code to lookup the location.</p></h4>
 
         <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-
-                </ul>
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -114,9 +110,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                 </div>
             </div>
         <div class="codetabs">
-            <ul class="tab-group minimal" data-tabs="tabs">
-                <li><a href="#json"></a></li>
-            </ul>
             <div data-tab="json" class="tab">
                 <div class="api-call">
                     <p>Request:</p>
@@ -134,9 +127,6 @@ http://fraktguide.bring.no/fraktguide</pre>
             </div>
         </div>
         <div class="codetabs">
-            <ul class="tab-group minimal" data-tabs="tabs">
-                <li><a href="#html"></a></li>
-            </ul>
             <div data-tab="html" class="tab">
                 <div class="api-call">
                     <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
@@ -168,9 +158,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                             the list of cities, while the ordinary html response element will remain blank.
                         </p>
                         <div class="codetabs">
-                                <ul class="tab-group minimal" data-tabs="tabs">
-                                    <li><a href="#xml"></a></li>
-                                </ul>
                                 <div data-tab="xml" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>
@@ -184,9 +171,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                                 </div>
                             </div>
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#json"></a></li>
-                            </ul>
                             <div data-tab="json" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -204,9 +188,6 @@ http://fraktguide.bring.no/fraktguide</pre>
                             </div>
                         </div>
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#html"></a></li>
-                            </ul>
                             <div data-tab="html" class="tab">
                                 <div class="api-call">
                                     <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,

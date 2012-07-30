@@ -369,9 +369,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p>
                     </h4>
                     <div class="codetabs">
-                        <ul class="tab-group minimal" data-tabs="tabs">
-                            <li><a href="#xml"></a></li>
-                        </ul>
                         <div data-tab="xml" class="tab">
                             <div class="api-call">
                                 <p>Request:</p>
@@ -386,10 +383,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     </div>
             </div>
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#json"></a></li>
-                            </ul>
-
                             <div data-tab="json" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -425,9 +418,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</p></h4>
 
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -459,9 +449,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                         </div>
 
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#json"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -508,9 +495,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</p></h4>
 
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -524,10 +508,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                         </div>
 
                     <div class="codetabs">
-                        <ul class="tab-group minimal" data-tabs="tabs">
-                            <li><a href="#json"></a></li>
-                        </ul>
-
                         <div data-tab="json" class="tab">
                             <div class="api-call">
                                 <p>Request:</p>
@@ -553,9 +533,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
 
                         <div class="codetabs">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -571,10 +548,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                         </div>
 
                     <div class="codetabs">
-                        <ul class="tab-group minimal" data-tabs="tabs">
-                            <li><a href="#json"></a></li>
-                        </ul>
-
                         <div data-tab="json" class="tab">
                             <div class="api-call">
                                 <p>Request:</p>

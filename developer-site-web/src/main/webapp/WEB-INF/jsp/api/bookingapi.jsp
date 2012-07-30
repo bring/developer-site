@@ -121,9 +121,6 @@
     To use the test mode, you need to set the testIndicator flag on the root node. </p>
 
 <div class="codetabs LightBorder">
-    <ul class="tab-group minimal" data-tabs="tabs">
-        <li><a href="#xml"></a>Example:</li>
-    </ul>
     <div class="tab" data-tab="xml"><pre class="code-box">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true"&gt;
     ...
@@ -177,9 +174,6 @@ Host: www.mybring.com
 </pre>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -196,9 +190,6 @@ Host: www.mybring.com
     <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -227,9 +218,6 @@ Host: www.mybring.com
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -277,9 +265,6 @@ Host: www.mybring.com
         if the error is for the recipient party data. </p>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -335,10 +320,6 @@ Host: www.mybring.com
     <p>"customerNumber" is a value returned from the Customer number API. </p>
 
     <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
-
         <div class="tab-content tab-minimal">
             <div class="tab" data-tab="xml">
             <pre class="code-box">...
@@ -369,9 +350,6 @@ Host: www.mybring.com
 </pre>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -419,9 +397,6 @@ Host: www.mybring.com
     To use the test mode, you need to set the testIndicator flag on the root node. </p>
 
 <div class="codetabs LightBorder">
-    <ul class="tab-group minimal" data-tabs="tabs">
-        <li><a href="#json"></a>Example:</li>
-    </ul>
 
     <div class="tab" data-tab="json"><pre class="code-box">{
     "testIndicator": true,
@@ -477,9 +452,6 @@ Host: www.mybring.com
 </pre>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#json"></a></li>
-        </ul>
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -497,9 +469,6 @@ Host: www.mybring.com
     <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#json"></a></li>
-        </ul>
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -528,9 +497,6 @@ Host: www.mybring.com
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#json"></a></li>
-        </ul>
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -578,9 +544,6 @@ Host: www.mybring.com
         if the error is for the recipient party data. </p>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#json"></a></li>
-        </ul>
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -636,9 +599,6 @@ Host: www.mybring.com
     <p>"customerNumber" is a value returned from the Customer number API. </p>
 
     <div class="codetabs">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#json"></a></li>
-        </ul>
 
         <div class="tab-content tab-minimal">
             <div class="tab" data-tab="json">
@@ -670,9 +630,6 @@ Host: www.mybring.com
 </pre>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#json"></a></li>
-        </ul>
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
