@@ -5,10 +5,10 @@
         <h4>Pickup Point API</h4>
     </a>
     <ol>
-        <li><a href="/api/pickuppointapi.html?from=pickuppoint#introduction">Introduction</a></li>
-        <li><a href="/api/pickuppointapi.html?from=pickuppoint#reference">Reference</a></li>
-        <li><a href="/api/pickuppointapi.html?from=pickuppoint#HTU">How to Use</a></li>
-        <li><a href="/api/pickuppointapi.html?from=pickuppoint#additionalExamples">Additional Examples</a></li>
+        <li><a onclick="showBookmark('introduction',        '/api/pickuppointapi.html');">Introduction</a></li>
+        <li><a onclick="showBookmark('reference',           '/api/pickuppointapi.html');">Reference</a></li>
+        <li><a onclick="showBookmark('HTU',                 '/api/pickuppointapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('additionalExamples',  '/api/pickuppointapi.html');">Additional Examples</a></li>
     </ol>
 
 </div>
