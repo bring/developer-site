@@ -6,8 +6,8 @@
         <h4>Booking API</h4>
     </a>
     <ol>
-        <li><a href="/api/bookingapi.html?from=booking#introduction">Introduction</a></li>
-        <li><a href="/api/bookingapi.html?from=booking#HTU">How to Use</a></li>
+        <li><a onclick="showBookmark('introduction',        '/api/bookingguideapi.html');">Introduction</a></li>
+        <li><a onclick="showBookmark('HTU',                 '/api/bookingguideapi.html');">How to Use</a></li>
     </ol>
 </div>
 <div class="box">
