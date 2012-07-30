@@ -133,7 +133,7 @@ h3 {
 }
 
 h4 {
-  margin: 0.8em 0 0.3em;
+  margin: 2em 0 0;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -159,7 +159,7 @@ a.read-more {
 }
 
 p {
-  margin: 0.5em 0;
+  margin: 0 0 1em;
 }
 
 .ingress {
@@ -799,10 +799,6 @@ table.inverted tbody tr.even {
   padding: 0;
 }
 
-.box :first-child {
-  margin-top: 0;
-}
-
 .box .graylighter,
 .box.graylighter {
   background-color: #efeff0;
@@ -836,7 +832,14 @@ table.inverted tbody tr.even {
   margin-left: 10px;
 }
 
+div.box > h2:first-child,
+div.box > a > h4:first-child,
+div.box > h4:first-child {
+  margin-top: 0;
+}
+
 .menu-group.ingress-list.alternativ li {
+  height: 55px;
   cursor: pointer;
   background-image: url("/images/bring/arrow-green-right.png");
   background-position: 98% center;
@@ -919,7 +922,6 @@ table.inverted tbody tr.even {
 
 .menu-group.ingress-list li a {
   padding-bottom: 0;
-  margin-bottom: -6px;
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -1003,6 +1005,10 @@ p.right {
   text-align: right;
 }
 
+li a.menu-item h4 {
+  margin: 0;
+}
+
 /*--stuff til developer siten --*/
 
 /*
@@ -1027,7 +1033,7 @@ table{
 }
 */
 
-div.box > p {
+div.box > p:first-child {
   margin-top: 10px;
 }
 
@@ -1514,6 +1520,7 @@ div.bringNo {
 div.information-box {
   min-height: 30px;
   padding: 10px 40px;
+  margin: 1em 0 1em 0;
   background-image: url("/images/green-info-icon.png");
   background-position: 0 8px;
   background-repeat: no-repeat;

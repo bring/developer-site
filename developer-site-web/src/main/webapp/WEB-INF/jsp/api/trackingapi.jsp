@@ -86,9 +86,6 @@ http://beta.bring.no</pre>
 
             <div class="row element-sample">
                 <div class="codetabs">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#xml"></a></li>
-                    </ul>
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -113,9 +110,6 @@ http://beta.bring.no</pre>
 
             <div class="row element-sample">
                 <div class="codetabs">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#json"></a></li>
-                    </ul>
                         <div data-tab="json" class="tab">
                             <div class="api-call">
                                 <p>Request:</p>
@@ -155,9 +149,6 @@ http://beta.bring.no</pre>
 
                         <div class="row element-sample">
                             <div class="codetabs lightBorder">
-                                <ul class="tab-group minimal" data-tabs="tabs">
-                                    <li><a href="#xml"></a></li>
-                                </ul>
                                 <div data-tab="xml" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>
@@ -181,9 +172,6 @@ http://beta.bring.no</pre>
                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup
                            point</p>
                         <div class="codetabs lightBorder">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -203,12 +191,9 @@ http://beta.bring.no</pre>
 
                     <div class="content-box">
                         <p>The example below is showing a package that has been loaded on a distribution car for delivery to
-                           the reciepient</p>
+                           the recipient</p>
 
                         <div class="codetabs lightBorder">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -227,12 +212,9 @@ http://beta.bring.no</pre>
                     <a href="#" class="menu-item"><h4>Status - delivered</h4></a>
 
                     <div class="content-box">
-                        <p>The example below is showing a package that has been delivered to the reciepient</p>
+                        <p>The example below is showing a package that has been delivered to the recipient</p>
 
                         <div class="codetabs lightBorder">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml"></a></li>
-                            </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -244,10 +226,8 @@ http://beta.bring.no</pre>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </li>
-
             </ul>
         </div>
     </div>
@@ -266,9 +246,6 @@ http://beta.bring.no</pre>
 
                         <div class="row element-sample">
                             <div class="codetabs lightBorder">
-                                <ul class="tab-group minimal" data-tabs="tabs">
-                                    <li><a href="#json"></a></li>
-                                </ul>
                                 <div data-tab="json" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>
@@ -296,9 +273,6 @@ http://beta.bring.no</pre>
                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup
                            point</p>
                         <div class="codetabs lightBorder">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#json"></a></li>
-                            </ul>
                             <div data-tab="json" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -325,9 +299,6 @@ http://beta.bring.no</pre>
                            the reciepient</p>
 
                         <div class="codetabs lightBorder">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#json"></a></li>
-                            </ul>
                                 <div data-tab="json" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>
@@ -353,9 +324,6 @@ http://beta.bring.no</pre>
                         <p>The example below is showing a package that has been delivered to the reciepient</p>
 
                         <div class="codetabs lightBorder">
-                            <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#json"></a></li>
-                            </ul>
                                 <div data-tab="json" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>

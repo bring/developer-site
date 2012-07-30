@@ -473,7 +473,7 @@
                 </tr>
                 <tr>
                     <td>/Packages/Product/ExpectedDelivery/ UserMessage</td>
-                    <td>Important message to end-user in requested language requarding delivery. We recommend this is forwarded
+                    <td>Important message to end-user in requested language regarding delivery. We recommend this is forwarded
                         to the end-user.
                     </td>
                     <td>Usually empty response. In special cases a one-liner.</td>
@@ -482,7 +482,7 @@
                     <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates</td>
                     <td>Collection for alternate delivery dates if NumberOfAlternativeDeliveryDates is specified in request. In
                         practise this collection can be used to let the customer decide which day to receive the package. The
-                        datastructure also provides the sender when to deliver to the postal service in order to reach the
+                        data structure also provides the sender when to deliver to the postal service in order to reach the
                         customer on the given day
                     </td>
                     <td></td>
@@ -808,9 +808,6 @@
         <div class="lightBorder">
             <div class="codetabs">
                 <div class="row element-sample">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#xml"></a></li>
-                    </ul>
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -842,10 +839,6 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
                 <div class="tab-content tab-minimal">
 
                     <div data-tab="xml" class="tab">
@@ -890,10 +883,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -926,10 +915,6 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -949,17 +934,13 @@
             </div>
         </div>
 
-        <div><h4>Package dimentions</h4></div>
+        <div><h4>Package dimensions</h4></div>
         <div>
             <p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
 
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -989,11 +970,7 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
-                <div data-tab="xml" class="tab">
+            <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
@@ -1033,10 +1010,6 @@
         <div class="lightBorder">
             <div class="codetabs">
                 <div class="row element-sample">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#xml"></a></li>
-                    </ul>
-
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -1065,7 +1038,7 @@
     <div class="content-box">
 
         <div>
-            <p>Use this paramter if you would like to specify when during the day the package needs to be picked up from
+            <p>Use this parameter if you would like to specify when during the day the package needs to be picked up from
                the departure point.
             </p>
 
@@ -1080,10 +1053,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1121,10 +1090,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
-
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1133,7 +1098,7 @@
                            data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false">
                             <pre>../price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false</pre>
                         </a>
-                        <p>Reponse:</p>
+                        <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
 
@@ -1164,9 +1129,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml"></a></li>
-                </ul>
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1255,9 +1217,6 @@
 
             <div class="lightBorder">
                 <div class="codetabs">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#xml">XML</a></li>
-                    </ul>
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -1321,9 +1280,6 @@
         <div class="lightBorder">
             <div class="codetabs">
                 <div class="row element-sample">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#json"></a></li>
-                    </ul>
                     <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -1357,10 +1313,6 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div class="tab-content tab-minimal">
 
                     <div data-tab="json" class="tab">
@@ -1408,10 +1360,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                         <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -1445,10 +1393,6 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1475,10 +1419,6 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1511,10 +1451,6 @@
         </div>
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1558,10 +1494,6 @@
         <div class="lightBorder">
             <div class="codetabs">
                 <div class="row element-sample">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#json"></a></li>
-                    </ul>
-
                     <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -1590,7 +1522,7 @@
     <div class="content-box">
 
         <div>
-            <p>Use this paramter if you would like to specify when during the day the package needs to be picked up from
+            <p>Use this parameter if you would like to specify when during the day the package needs to be picked up from
                the departure point.
             </p>
 
@@ -1605,10 +1537,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1621,7 +1549,7 @@
                         <p class="right">JSONP Request: <a
                                 href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
-                        <p>Reponse:</p>
+                        <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
@@ -1649,10 +1577,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1695,10 +1619,6 @@
 
         <div class="lightBorder">
             <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#json"></a></li>
-                </ul>
-
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -1792,9 +1712,6 @@
 
             <div class="lightBorder">
                 <div class="codetabs">
-                    <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#json"></a></li>
-                    </ul>
                     <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>

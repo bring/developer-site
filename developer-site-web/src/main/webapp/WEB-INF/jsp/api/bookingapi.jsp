@@ -193,7 +193,7 @@ Host: www.mybring.com
         </div>
     </div>
 
-    <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
+    <h5>EXAMPLE RESPONSE: SUCCESSFUL REQUEST</h5>
 
     <div class="codetabs lightBorder">
         <ul class="tab-group minimal" data-tabs="tabs">
