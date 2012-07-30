@@ -45,77 +45,75 @@
 
                     <div class="span5">
                         <ul class="menu-group minimal ingress-list alternativ api-menu">
-                            <li>
+                            <li><a href="/api/shippingguideapi.html">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons shippingicon"></div>
-
                                     <div class="api-menu-text">
-                                        <a href="/api/shippingguideapi.html"> <span class="api-link black">Shipping Guide API</span>
-                                            <span class="black">Get price and time estimate for shipments</span> </a>
+                                         <span class="api-link black">Shipping Guide API</span>
+                                            <span class="black">Get price and time estimate for shipments</span>
                                     </div>
                                 </div>
+                            </a>
                             </li>
-                            <li>
+                            <li><a href="/api/trackingapi.html">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons trackingicon"></div>
-
                                     <div class="api-menu-text">
-                                        <a href="/api/trackingapi.html"> <span
+                                         <span
                                                 class="api-link black">Tracking API </span> <span class="black">See the current status of shipments</span>
-                                        </a>
                                     </div>
-
                                 </div>
+                            </a>
                             </li>
                             <li>
+                                <a href="/api/reportsapi.html">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons reportsicon"></div>
-
                                     <div class="api-menu-text">
-                                        <a href="/api/reportsapi.html"> <span
-                                                class="api-link black">Reports API (BETA)</span> <span class="black">Generate customer reports from shipment history</span>
-                                        </a>
+                                         <span class="api-link black">Reports API (BETA)</span> <span class="black">Generate customer reports from shipment history</span>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                             <li>
+                                <a href="/api/pickuppointapi.html">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons pickuppointicon"></div>
-
                                     <div class="api-menu-text">
-                                        <a href="/api/pickuppointapi.html"> <span class="api-link black">Pickup Point API</span>
-                                            <span class="black">Find pickup points near a location</span></a>
+                                         <span class="api-link black">Pickup Point API</span>
+                                            <span class="black">Find pickup points near a location</span>
                                     </div>
                                 </div>
+                                </a>
                             </li>
                             <li>
 
+                                <a href="/api/postalcodeapi.html">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons postalcodeicon"></div>
-
                                     <div class="api-menu-text">
-                                        <a href="/api/postalcodeapi.html"> <span
-                                                class="api-link black">Postal Code API</span> <span class="black">Lookup and validate postal codes</span></a>
+                                         <span class="api-link black">Postal Code API</span> <span class="black">Lookup and validate postal codes</span>
                                     </div>
                                 </div>
-
+                                </a>
                             </li>
                             <li>
+                                <a href="/api/bookingapi.html">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons bookingicon"></div>
-
                                     <div class="api-menu-text"></div>
-                                    <a href="/api/bookingapi.html"> <span
-                                            class="api-link black">Booking API (BETA)</span> <span class="black">Book shipments and generate PDF labels</span></a>
+                                     <span class="api-link black">Booking API (BETA)</span> <span class="black">Book shipments and generate PDF labels</span>
                                 </div>
+                                </a>
                             </li>
                             <li>
+                                <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/artikler/edi-electronic-data-interchange">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons"></div>
                                     <div class="api-menu-text"></div>
-                                    <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/artikler/edi-electronic-data-interchange">
-                                        <span class="api-link black">EDI</span> <span class="black">Communicate with brings services electronically</span></a>
+                                        <span class="api-link black">EDI</span> <span class="black">Communicate with brings services electronically</span>
                                 </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
