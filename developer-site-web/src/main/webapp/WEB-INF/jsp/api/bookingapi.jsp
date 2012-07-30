@@ -227,9 +227,6 @@ Host: www.mybring.com
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
     <div class="codetabs lightBorder">
-        <ul class="tab-group minimal" data-tabs="tabs">
-            <li><a href="#xml"></a></li>
-        </ul>
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
