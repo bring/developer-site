@@ -164,8 +164,6 @@ https://www.mybring.com/reports/api</pre>
            You can save these IDs, and perform the generation-step without verifying the IDs. The response may get added information,
            so implementation should ignore new elements added to the response.</p>
     </div>
-    <br/>
-    <br/><br/>
     <div>
         <ol>
             <li><h4>GET CUSTOMER ACCOUNTS</h4></li>

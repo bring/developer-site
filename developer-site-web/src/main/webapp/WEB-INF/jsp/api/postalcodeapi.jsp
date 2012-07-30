@@ -29,6 +29,17 @@
         <p>With the Postal Code API you can look up the location by using the postal code and the country code.</p>
     </div>
 
+
+
+
+
+    <div class="multitabs">
+
+        <ul class="tab-group">
+            <li><a href="#xml" data-tab="xml">XML</a></li>
+            <li><a href="#json" data-tab="json">JSON</a></li>
+        </ul>
+
     <div class="box">
         <h2><a name="reference"></a>Reference</h2>
 
@@ -58,9 +69,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             </tr>
             </tbody>
         </table>
-    </div>
-
-    <div class="box">
+        </br><hr></br>
         <h2><a name="HTU"></a>How to Use</h2>
         You have to specify the postal code and the country code to find the location with this API.<br/><br/> The
         following countries are supported:
@@ -86,12 +95,10 @@ http://fraktguide.bring.no/fraktguide</pre>
 
         <h4><p>Example: Using the postal code and the country code to lookup the location.</p></h4>
 
-        <div class="lightBorder">
-            <div class="codetabs">
+
+        <div class="codetabs">
                 <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml">XML</a></li>
-                    <li><a href="#json">JSON</a></li>
-                    <li><a href="#html">HTML</a></li>
+                    <li><a href="#xml"></a></li>
                 </ul>
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -100,45 +107,53 @@ http://fraktguide.bring.no/fraktguide</pre>
                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337"
                            data-internal="/proxy/shipping-guide/api/postalCode.xml?country=no&amp;pnr=1337">
                             /api/postalCode.xml?country=no&amp;pnr=1337 </a>
+                        <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
                 </div>
+            </div>
+        <div class="codetabs">
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li><a href="#json"></a></li>
+            </ul>
+            <div data-tab="json" class="tab">
+                <div class="api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337"
+                       data-internal="/proxy/shipping-guide/api/postalCode.json?country=no&amp;pnr=1337">
+                        /api/postalCode.json?country=no&amp;pnr=1337 </a>
 
-                <div data-tab="json" class="tab">
-                    <div class="api-call">
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337"
-                           data-internal="/proxy/shipping-guide/api/postalCode.json?country=no&amp;pnr=1337">
-                            /api/postalCode.json?country=no&amp;pnr=1337 </a>
-
-                        <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337&amp;callbackUrl=functionName">?callback=functionName</a>
-                        </p>
-                        <pre class="code-box json response delay-snippet"></pre>
-                    </div>
+                    <p class="right">JSONP Request: <a
+                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337&amp;callbackUrl=functionName">?callback=functionName</a>
+                    </p>
+                    <p>Response:</p>
+                    <pre class="code-box json response delay-snippet"></pre>
                 </div>
-
-                <div data-tab="html" class="tab">
-                    <div class="api-call">
-                        <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
-                            the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
-                            or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
-
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=no&amp;pnr=1337"
-                           data-internal="/proxy/shipping-guide/api/postalCode.html?country=no&amp;pnr=1337">
-                            /api/postalCode.html?country=no&amp;pnr=1337 </a>
-                        <pre class="code-box html response delay-snippet"></pre>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
+        <div class="codetabs">
+            <ul class="tab-group minimal" data-tabs="tabs">
+                <li><a href="#html"></a></li>
+            </ul>
+            <div data-tab="html" class="tab">
+                <div class="api-call">
+                    <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
+                       the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
+                       or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
 
-    <div class="box">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=no&amp;pnr=1337"
+                       data-internal="/proxy/shipping-guide/api/postalCode.html?country=no&amp;pnr=1337">
+                        /api/postalCode.html?country=no&amp;pnr=1337 </a>
+                    <p>Response:</p>
+                    <pre class="code-box html response delay-snippet"></pre>
+                </div>
+            </div>
+        </div>
+
+</br><hr></br>
         <h2><a name="additionalExamples"></a>Additional examples</h2>
         <ul class="menu-group collapsing no-shadow">
             <li>
@@ -151,13 +166,9 @@ http://fraktguide.bring.no/fraktguide</pre>
                             In these cases the integration APIs (json and xml) will have separate elements containing
                             the list of cities, while the ordinary html response element will remain blank.
                         </p>
-
-                        <div class="lightBorder">
-                            <div class="codetabs">
+                        <div class="codetabs">
                                 <ul class="tab-group minimal" data-tabs="tabs">
-                                    <li><a href="#xml">XML</a></li>
-                                    <li><a href="#json">JSON</a></li>
-                                    <li><a href="#html">HTML</a></li>
+                                    <li><a href="#xml"></a></li>
                                 </ul>
                                 <div data-tab="xml" class="tab">
                                     <div class="api-call">
@@ -166,40 +177,49 @@ http://fraktguide.bring.no/fraktguide</pre>
                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=DE&amp;pnr=99869"
                                            data-internal="/proxy/shipping-guide/api/postalCode.xml?country=DE&amp;pnr=99869">
                                             /api/postalCode.xml?country=DE&amp;pnr=99869 </a>
+                                        <p>Response:</p>
                                         <pre class="code-box xml response delay-snippet"></pre>
                                     </div>
                                 </div>
+                            </div>
+                        <div class="codetabs">
+                            <ul class="tab-group minimal" data-tabs="tabs">
+                                <li><a href="#json"></a></li>
+                            </ul>
+                            <div data-tab="json" class="tab">
+                                <div class="api-call">
+                                    <p>Request:</p>
+                                    <a target="_blank" class="request"
+                                       href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869"
+                                       data-internal="/proxy/shipping-guide/api/postalCode.json?country=DE&amp;pnr=99869">
+                                        /api/postalCode.json?country=DE&amp;pnr=99869 </a>
 
-                                <div data-tab="json" class="tab">
-                                    <div class="api-call">
-                                        <p>Request:</p>
-                                        <a target="_blank" class="request"
-                                           href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869"
-                                           data-internal="/proxy/shipping-guide/api/postalCode.json?country=DE&amp;pnr=99869">
-                                            /api/postalCode.json?country=DE&amp;pnr=99869 </a>
-
-                                        <p class="right">JSONP Request: <a
-                                                href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869&amp;callbackUrl=functionName">?callback=functionName</a>
-                                        </p>
-                                        <pre class="code-box json response delay-snippet"></pre>
-                                    </div>
+                                    <p class="right">JSONP Request: <a
+                                            href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=DE&amp;pnr=99869&amp;callbackUrl=functionName">?callback=functionName</a>
+                                    </p>
+                                    <p>Response:</p>
+                                    <pre class="code-box json response delay-snippet"></pre>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="codetabs">
+                            <ul class="tab-group minimal" data-tabs="tabs">
+                                <li><a href="#html"></a></li>
+                            </ul>
+                            <div data-tab="html" class="tab">
+                                <div class="api-call">
+                                    <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
+                                       the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
+                                       or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
 
-                                <div data-tab="html" class="tab">
-                                    <div class="api-call">
-                                        <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
-                                            the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
-                                            or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
-
-                                        <p>Request:</p>
-                                        <a target="_blank" class="request"
-                                           href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=DE&amp;pnr=99869"
-                                           data-internal="/proxy/shipping-guide/api/postalCode.html?country=DE&amp;pnr=99869">
-                                            /api/postalCode.html?country=DE&amp;pnr=99869 </a>
-                                        <pre class="code-box html response delay-snippet"></pre>
-                                    </div>
+                                    <p>Request:</p>
+                                    <a target="_blank" class="request"
+                                       href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=DE&amp;pnr=99869"
+                                       data-internal="/proxy/shipping-guide/api/postalCode.html?country=DE&amp;pnr=99869">
+                                        /api/postalCode.html?country=DE&amp;pnr=99869 </a>
+                                    <p>Response:</p>
+                                    <pre class="code-box html response delay-snippet"></pre>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -208,6 +228,7 @@ http://fraktguide.bring.no/fraktguide</pre>
         </ul>
     </div>
 
+</div>
 </div>
 
 <div class="span3">

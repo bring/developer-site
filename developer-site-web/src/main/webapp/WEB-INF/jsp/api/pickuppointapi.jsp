@@ -36,6 +36,14 @@
         offices and selected grocery stores.</p>
 </div>
 
+
+<div class="multitabs">
+
+<ul class="tab-group">
+    <li><a href="#xml" data-tab="xml">XML</a></li>
+    <li><a href="#json" data-tab="json">JSON</a></li>
+</ul>
+
 <%--Reference table--%>
 <div class="box">
 
@@ -110,7 +118,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
             <td>Return only pickup points that are open on the specified day.
                 <ul>
                     <li><code>&lt;day&gt;</code> = ALL_WEEKDAYS | MONDAY | TUESDAY | WEDNESDAY | THURSDAY | FRIDAY |
-                        SATURDAY | SUNDAY
+                                                 SATURDAY | SUNDAY
                     </li>
                 </ul>
             </td>
@@ -134,170 +142,216 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
         </tbody>
     </table>
 
-    <p>
-</div>
 
-<%--How to Use--%>
-<div class="box">
 
+
+   </br><hr></br>
     <h2><a name="HTU"></a>How to Use</h2>
-
     <p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest
-        delivery locations. The following examples illustrate the different alternatives. </p>
+       delivery locations. The following examples illustrate the different alternatives. </p>
 
-    <div class="row element-sample">
+  <div data-tab="xml">
+      <div class="row element-sample">
 
-        <h4>Example: USING THE POSTAL CODE</h4>
+          <h4>Example: USING THE POSTAL CODE</h4>
 
-        <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
+          <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
-        <div class="lightBorder">
-            <div class="codetabs">
+          <div class="lightBorder">
+              <div class="codetabs">
 
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml">XML</a></li>
-                    <li><a href="#json">JSON</a></li>
-                </ul>
+                  <ul class="tab-group minimal" data-tabs="tabs">
+                      <li><a href="#xml"></a></li>
+                  </ul>
 
-                <div data-tab="xml" class="tab">
-                    <div class="api-call">
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
-                           data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
-                            /api/pickuppoint/postalcode/1407.xml </a>
-                        <pre class="code-box xml response delay-snippet"></pre>
+                  <div data-tab="xml" class="tab">
+                      <div class="api-call">
+                          <p>Request:</p>
+                          <a target="_blank" class="request"
+                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
+                             data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
+                              /api/pickuppoint/postalcode/1407.xml </a>
+                          <p>Response:</p>
+                          <pre class="code-box xml response delay-snippet"></pre>
 
-                    </div>
-                </div>
+                      </div>
+                  </div>
 
-                <div data-tab="json" class="tab">
-                    <div class="api-call">
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
-                           data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
-                            /api/pickuppoint/postalcode/1407.json </a>
+              </div>
+          </div>
 
-                        <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a>
-                        </p>
-                        <pre class="code-box json response delay-snippet"></pre>
+      </div>
+  </div>
+  <div data-tab="json">
+      <div class="row element-sample">
 
-                    </div>
-                </div>
+          <h4>Example: USING THE POSTAL CODE</h4>
 
-            </div>
-        </div>
+          <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
-    </div>
+          <div class="lightBorder">
+              <div class="codetabs">
 
-    <div class="row element-sample">
-        <h4>Example: USING GEOGRAPHICAL COORDINATES</h4>
+                  <ul class="tab-group minimal" data-tabs="tabs">
+                      <li><a href="#json"></a></li>
+                  </ul>
 
-        <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725) </p>
+                  <div data-tab="json" class="tab">
+                      <div class="api-call">
+                          <p>Request:</p>
+                          <a target="_blank" class="request"
+                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
+                             data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
+                              /api/pickuppoint/postalcode/1407.json </a>
 
-        <div class="lightBorder">
-            <div class="codetabs">
-                <ul class="tab-group minimal" data-tabs="tabs">
-                    <li><a href="#xml">XML</a></li>
-                    <li><a href="#json">JSON</a></li>
-                </ul>
-                <div data-tab="xml" class="tab">
-                    <div class="api-call">
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
-                           data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
-                            /api/pickuppoint/location/60.395226/5.321725.xml </a>
-                        <pre class="code-box xml response delay-snippet"></pre>
+                          <p class="right">JSONP Request: <a
+                                  href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a>
+                          </p>
+                          <p>Response:</p>
+                          <pre class="code-box json response delay-snippet"></pre>
 
-                    </div>
-                </div>
+                      </div>
+                  </div>
 
-                <div data-tab="json" class="tab">
-                    <div class="api-call">
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json"
-                           data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
-                            /api/pickuppoint/location/60.395226/5.321725.json </a>
+              </div>
+          </div>
 
-                        <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json?callbackUrl=functionName">?callback=functionName</a>
-                        </p>
-                        <pre class="code-box json response delay-snippet"></pre>
+      </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
+  </div>
 
-        <p>
 
-        <h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
-        the request. These parameters can be perceived as &amp;filters&amp;, adding additional restrictions to the
-        pickup points being returned. One such parameter is <code>searchForText=&lt;texts&gt;</code>, resulting in a
-        response where all pickup points have at least a partial match with the search string given in &lt;texts&gt;.
-        This can be the name of the pickup point, its address, city, county, municipality or location. Go to the
-        reference table or see additional examples for more information</p>
+    <h4>Example: USING GEOGRAPHICAL COORDINATES</h4>
 
-        <div class="information-box">
-            <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
-            parameters using <code>&amp;</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=Kiwi<b>
-            &amp;</b>openOnOrBefore=0800</code>
-        </div>
+    <p>Find pickup points based on the recipient's geographical coordinates, Bergen city (60.395226, 5.321725) </p>
 
-        <h3>Using the pickup point's id</h3>
-
-        <p>If you already know the id of the pickup point, you can retrieve more information such as the geographical
-            location, opening hours and county.</p>
-
+    <div data-tab="xml">
         <div class="row element-sample">
-            <h4>Example: USING ID TO RETRIEVE INFORMATION ABOUT A PICKUP POINT</h4>
-
-            <p>Retrieve more information about the pickup point based on its id, 121110 </p>
-
             <div class="lightBorder">
                 <div class="codetabs">
                     <ul class="tab-group minimal" data-tabs="tabs">
-                        <li><a href="#xml">XML</a></li>
-                        <li><a href="#json">JSON</a></li>
+                        <li><a href="#xml"></a></li>
                     </ul>
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
-
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
-                                /api/pickuppoint/id/121110.xml </a>
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
+                                /api/pickuppoint/location/60.395226/5.321725.xml </a>
+                            <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
+
                         </div>
                     </div>
-
+                </div>
+            </div>
+            </div>
+    </div>
+    <div data-tab="json">
+        <div class="row element-sample">
+            <div class="lightBorder">
+                <div class="codetabs">
+                    <ul class="tab-group minimal" data-tabs="tabs">
+                        <li><a href="#json"></a></li>
+                    </ul>
                     <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
-                                /api/pickuppoint/id/121110.json </a>
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
+                                /api/pickuppoint/location/60.395226/5.321725.json </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json?callbackUrl=functionName">?callback=functionName</a>
+                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json?callbackUrl=functionName">?callback=functionName</a>
                             </p>
+                            <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <h3>Using filters</h3>In addition to postal code or location, one or more optional parameters can be added to
+                          the request. These parameters can be perceived as &amp;filters&amp;, adding additional restrictions to the
+                          pickup points being returned. One such parameter is <code>searchForText=&lt;texts&gt;</code>, resulting in a
+                          response where all pickup points have at least a partial match with the search string given in &lt;texts&gt;.
+                          This can be the name of the pickup point, its address, city, county, municipality or location. Go to the
+                          reference table or see additional examples for more information</p>
+
+    <div class="information-box">
+        <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
+                     parameters using <code>&amp;</code>. For instance: <code>/api/pickuppoint/postalcode/1407.xml?searchForText=Kiwi<b>
+        &amp;</b>openOnOrBefore=0800</code>
+    </div>
+
+    <h3>Using the pickup point's id</h3>
+
+    <p>If you already know the id of the pickup point, you can retrieve more information such as the geographical
+       location, opening hours and county.</p>
+
+    <h4>Example: USING ID TO RETRIEVE INFORMATION ABOUT A PICKUP POINT</h4>
+
+    <p>Retrieve more information about the pickup point based on its id, 121110 </p>
+
+
+        <div data-tab="xml">
+            <div class="row element-sample">
+                <div class="lightBorder">
+                    <div class="codetabs">
+                        <ul class="tab-group minimal" data-tabs="tabs">
+                            <li><a href="#xml"></a></li>
+                        </ul>
+                        <div data-tab="xml" class="tab">
+                            <div class="api-call">
+
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
+                                    /api/pickuppoint/id/121110.xml </a>
+                                <p>Response:</p>
+                                <pre class="code-box xml response delay-snippet"></pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-tab="json">
+            <div class="row element-sample">
+                <div class="lightBorder">
+                    <div class="codetabs">
+                        <ul class="tab-group minimal" data-tabs="tabs">
+                            <li><a href="#json"></a></li>
+                        </ul>
+
+                        <div data-tab="json" class="tab">
+                            <div class="api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
+                                    /api/pickuppoint/id/121110.json </a>
+
+                                <p class="right">JSONP Request: <a
+                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json?callbackUrl=functionName">?callback=functionName</a>
+                                </p>
+                                <p>Response:</p>
+                                <pre class="code-box json response delay-snippet"></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="box">
-
+    </br><hr></br>
     <h2><a name="additionalExamples"></a>Additional examples</h2>
     <ul class="menu-group collapsing no-shadow">
 
@@ -313,22 +367,27 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                 <div class="row element-sample">
                     <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p>
                     </h4>
-                    <div class="lightBorder">
+                    <div class="codetabs">
+                        <ul class="tab-group minimal" data-tabs="tabs">
+                            <li><a href="#xml"></a></li>
+                        </ul>
+                        <div data-tab="xml" class="tab">
+                            <div class="api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?searchForText=KIWI"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?searchForText=KIWI">
+                                    /api/pickuppoint/postalcode/1407.xml?searchForText=KIWI </a>
+                                <p>Response:</p>
+                                <pre class="code-box xml response delay-snippet"></pre>
+                            </div>
+                        </div>
+                    </div>
+            </div>
                         <div class="codetabs">
                             <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml">XML</a></li>
-                                <li><a href="#json">JSON</a></li>
+                                <li><a href="#json"></a></li>
                             </ul>
-                            <div data-tab="xml" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?searchForText=KIWI"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?searchForText=KIWI">
-                                        /api/pickuppoint/postalcode/1407.xml?searchForText=KIWI </a>
-                                    <pre class="code-box xml response delay-snippet"></pre>
-                                </div>
-                            </div>
 
                             <div data-tab="json" class="tab">
                                 <div class="api-call">
@@ -341,15 +400,13 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                                     <p class="right">JSONP Request: <a
                                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI&amp;callbackUrl=functionName">?callback=functionName</a>
                                     </p>
+                                    <p>Response:</p>
                                     <pre class="code-box json response delay-snippet"></pre>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                </div>
-            </div>
-
         </li>
 
         <li>
@@ -366,11 +423,9 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</p></h4>
 
-                    <div class="lightBorder">
                         <div class="codetabs">
                             <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml">XML</a></li>
-                                <li><a href="#json">JSON</a></li>
+                                <li><a href="#xml"></a></li>
                             </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
@@ -379,6 +434,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY"
                                        data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY">
                                         /api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY </a>
+                                    <p>Response:</p>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
                             </div>
@@ -394,12 +450,46 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                                     <p class="right">JSONP Request: <a
                                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a>
                                     </p>
+                                    <p>Response:</p>
                                     <pre class="code-box json response delay-snippet"></pre>
                                 </div>
                             </div>
 
                         </div>
-                    </div>
+
+                        <div class="codetabs">
+                            <ul class="tab-group minimal" data-tabs="tabs">
+                                <li><a href="#json"></a></li>
+                            </ul>
+                            <div data-tab="xml" class="tab">
+                                <div class="api-call">
+                                    <p>Request:</p>
+                                    <a target="_blank" class="request"
+                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY"
+                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY">
+                                        /api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY </a>
+                                    <p>Response:</p>
+                                    <pre class="code-box xml response delay-snippet"></pre>
+                                </div>
+                            </div>
+
+                            <div data-tab="json" class="tab">
+                                <div class="api-call">
+                                    <p>Request:</p>
+                                    <a target="_blank" class="request"
+                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY"
+                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY">
+                                        /api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY </a>
+
+                                    <p class="right">JSONP Request: <a
+                                            href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a>
+                                    </p>
+                                    <p>Response:</p>
+                                    <pre class="code-box json response delay-snippet"></pre>
+                                </div>
+                            </div>
+
+                        </div>
                 </div>
             </div>
         </li>
@@ -416,11 +506,9 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</p></h4>
 
-                    <div class="lightBorder">
                         <div class="codetabs">
                             <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml">XML</a></li>
-                                <li><a href="#json">JSON</a></li>
+                                <li><a href="#xml"></a></li>
                             </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
@@ -431,36 +519,41 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                                         /api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800 </a>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
-
                             </div>
+                        </div>
 
-                            <div data-tab="json" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
-                                        /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800 </a>
+                    <div class="codetabs">
+                        <ul class="tab-group minimal" data-tabs="tabs">
+                            <li><a href="#json"></a></li>
+                        </ul>
 
-                                    <p class="right">JSONP Request: <a
-                                            href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a>
-                                    </p>
-                                    <pre class="code-box json response delay-snippet"></pre>
-                                </div>
+                        <div data-tab="json" class="tab">
+                            <div class="api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
+                                    /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800 </a>
+
+                                <p class="right">JSONP Request: <a
+                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a>
+                                </p>
+                                <p>Response:</p>
+                                <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="row element-sample">
 
                     <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</p></h4>
 
-                    <div class="lightBorder">
+
                         <div class="codetabs">
                             <ul class="tab-group minimal" data-tabs="tabs">
-                                <li><a href="#xml">XML</a></li>
-                                <li><a href="#json">JSON</a></li>
+                                <li><a href="#xml"></a></li>
                             </ul>
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
@@ -469,23 +562,31 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200"
                                        data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200">
                                         /api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200 </a>
+                                    <p>Response:</p>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
                             </div>
 
-                            <div data-tab="json" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
-                                        /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200 </a>
+                        </div>
 
-                                    <p class="right">JSONP Request: <a
-                                            href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a>
-                                    </p>
-                                    <pre class="code-box json response delay-snippet"></pre>
-                                </div>
+                    <div class="codetabs">
+                        <ul class="tab-group minimal" data-tabs="tabs">
+                            <li><a href="#json"></a></li>
+                        </ul>
+
+                        <div data-tab="json" class="tab">
+                            <div class="api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
+                                    /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200 </a>
+
+                                <p class="right">JSONP Request: <a
+                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a>
+                                </p>
+                                <p>Response:</p>
+                                <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
                     </div>
@@ -499,8 +600,9 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
     </ul>
 </div>
 
-</div>
 
+</div>
+</div>
 <div class="span3">
     <div id="sidebar">
         <misc:sidebar/>
