@@ -35,7 +35,7 @@
         backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels. </p>
 
     <p>
-        We support two types of integration with the Booking API. <b>XML/JSON over HTTP</b>, and <b>SOAP (over HTTP)</b>.
+        We support two types of integration with the Booking API. <b>XML/JSON over HTTP</b> and <b>SOAP (over HTTP)</b>.
     </p>
 
     <p>
@@ -51,7 +51,7 @@
 
 
     <div class="information-box">BETA! This API is currently in BETA, which means that even though the code is in production and fully functional,
-                                 changes might be made in the future that can break code relying on this specific version.An early beta-version of the API is available now as of january 2012, this beta will
+                                 changes might be made in the future that can break code relying on this specific version. An early beta-version of the API is available now as of january 2012, this beta will
                                  lead to a final stable v1 of the API during Q1 2012.</div>
 </div>
 
@@ -86,9 +86,8 @@
     getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access
     to). The Customer number API also links customer numbers with the products the customer number is valid for. </p>
 
-<p>
-    For the SOAP API, the Customer number API is included as an operation in the WSDL. For the XML/JSON API, see
-    endpoint definition in the instructions below. </p>
+
+    <div data-tab="soap">For the SOAP API, the Customer number API is included as an operation in the WSDL.</div>
 
 <div data-tab="xml">
 

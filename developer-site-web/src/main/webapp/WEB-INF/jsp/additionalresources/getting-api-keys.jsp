@@ -45,7 +45,7 @@
                                                                With MyBring the customers get improved possibility to follow up their own goods
                                                                flows, finance and quality. MyBring will also offer existing services such as
                                                                tracking and booking. After you have someone with access to a mybring account, you
-                                                               may retrieve your API-key.
+                                                               may retrieve the API-key.
                                 </div>
 
                             </li>
@@ -53,8 +53,6 @@
                             <li><p>
                                 <b>Yes:</b></br></br>Follow the steps below to get the API-key. </p>
                             </li>
-                            </br>
-
                             <h4>1. Log in to <a
                                     href="http://www.bring.com/all-of-bring/products-and-services/mybring"
                                     target="_blank">mybring</a></h4>
@@ -64,13 +62,13 @@
                             <img src="../images/mybringApi1.png" alt="Mybring Profile Screenshot"></br></br>
                             <hr>
                             </br><h4>3. Get the API-key from the "my api-key" tab.</h4>
-                            <img src="../images/mybringapiKey.png" alt="my api-key screenshot"></p></br></br>
+                            <img src="../images/mybringapiKey.png" alt="my api-key screenshot"></br></br>
                             <hr>
                             </br><h4>4. Generate the API-key.</h4>
-                            <img src="../images/mybringapikeygeneration.png" alt="Key generation screenshot"></p>
+                            <img src="../images/mybringapikeygeneration.png" alt="Key generation screenshot">
                             <hr>
                             </br><h4>5. You now got your API-key.</h4>
-                            <img src="../images/mybringapikeyfinish.png" alt="api-key screenshot"></p>
+                            <img src="../images/mybringapikeyfinish.png" alt="api-key screenshot">
                         </ul>
                         <p>Still need help? Please contact the developer team: <b>developer@bring.com</b></p>
                     </div>
@@ -108,15 +106,15 @@
 
                     <div class="box">
                     <h2><a name="buyer"></a>How to get authorized with the buyer role</h2>
-                    <p>To be able to use the Booking API the customer (mybring user) needs to be authorized with the buyer role.
+                    <p>To be able to use the <b>Booking API</b> the customer (mybring user) needs to be authorized with the buyer role.
                     That means having the authorization to receive invoices on behalf of the company.
-                    To get this authorization go to the profile in mybring and choose the tab "my authorizations" and the relevant company to extend/change the accesses for your customer-profile.
-                    You have to check the box: Receive invoices on behalf of the company to be authorized with the buyer role.</p>
-                    <em>If you're trying to retrieve the customer number with the Booking API and the customer does not have this authorization, an empty list is returned.</em>
-
+                    To get this authorization go to mybring and choose the tab "my authorizations" and the relevant company to extend/change the accesses for your customer-profile.
+                    You have to check the box: "Receive invoices on behalf of the company" to be authorized with the buyer role.</p>
+                    <img src="../images/buyer-role.png" alt="buyer role screenshot">
+                        </br></br>
+                        <div><p><em>If you're trying to retrieve the customer number with the Booking API and the customer does not have this authorization, an empty list is returned.</em>
+                        </p></div>
                     </div>
-
-
                 </div>
                 <div class="span3">
                     <div id="sidebar">
@@ -127,6 +125,7 @@
                                 <li><a href="#introduction">Introduction</a></li>
                                 <li><a href="#getting">Getting an API-key</a></li>
                                 <li><a href="#using">Using the API-key</a></li>
+                                <li><a href="#buyer">How to get authorized with the buyer role</a></li>
                             </ol>
                         </div>
                         <misc:sidebar/>
