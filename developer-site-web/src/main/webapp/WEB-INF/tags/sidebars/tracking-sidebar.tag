@@ -4,10 +4,10 @@
         <h4>Tracking API</h4>
     </a>
     <ol>
-        <li><a href="/api/trackingapi.html?from=tracking#introduction">Introduction</a></li>
-        <li><a href="/api/trackingapi.html?from=tracking#reference">Reference</a></li>
-        <li><a href="/api/trackingapi.html?from=tracking#HTU">How to Use</a></li>
-        <li><a href="/api/trackingapi.html?from=tracking#additionalExamples">Additional Examples</a></li>
+        <li><a onclick="showBookmark('introduction',        '/api/trackingapi.html');">Introduction</a></li>
+        <li><a onclick="showBookmark('reference',           '/api/trackingapi.html');">Reference</a></li>
+        <li><a onclick="showBookmark('HTU',                 '/api/trackingapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('additionalExamples',  '/api/trackingapi.html');">Additional Examples</a></li>
     </ol>
 
 </div>

@@ -13,5 +13,7 @@
 
 <div class="box">
     <h2>Additonal Resources</h2>
-    <li><a href="/additionalresources/getting-api-keys.html?from=reports">Getting and using API-keys</a></li>
+    <ul>
+        <li><a href="/additionalresources/getting-api-keys.html?from=reports">Getting and using API-keys</a></li>
+    </ul>
 </div>

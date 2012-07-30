@@ -6,8 +6,8 @@
         <h4>Booking API</h4>
     </a>
     <ol>
-        <li><a onclick="showBookmark('introduction',        '/api/bookingguideapi.html');">Introduction</a></li>
-        <li><a onclick="showBookmark('HTU',                 '/api/bookingguideapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('introduction',        '/api/bookingapi.html');">Introduction</a></li>
+        <li><a onclick="showBookmark('HTU',                 '/api/bookingapi.html');">How to Use</a></li>
     </ol>
 </div>
 <div class="box">
@@ -17,7 +17,7 @@
         <li><a href="http://www.mybring.com/useradmin/open/signup/new">Signup to mybring</a></li>
         <li><a href="https://github.com/bring/bring-api-java#introduction">Java API</a></li>
         <li><a href="/additionalresources/getting-api-keys.html?from=booking">Getting and using API-keys</a></li>
-        <li><a href="/additionalresources/booking-api-error-codes.html">Error codes</a></li>
+        <li><a href="/additionalresources/booking-api-error-codes.html?from=booking">Error codes</a></li>
     </ul>
     <h5>XML/JSON API</h5>
     <ul>

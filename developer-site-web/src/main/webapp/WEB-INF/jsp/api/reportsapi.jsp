@@ -130,7 +130,7 @@ https://www.mybring.com/reports/api</pre>
                 </ul></td>
         </tr>
         <tr >
-            <td><code>/report/&lt;report_id&gt;</a>/status.&lt;extension&gt;</code></td>
+            <td><code>/report/&lt;report_id&gt;/status.&lt;extension&gt;</code></td>
             <td><p>View the status of the report generation for the report specified by <code>report_id</code>.</p>
                 <ul>
                     <li><code>&lt;report_id&gt;</code> = the id for the report you are waiting for.
@@ -145,7 +145,7 @@ https://www.mybring.com/reports/api</pre>
             <td>
                 <p>Get the actual report with <code>report_id</code> in the file format given by <code>extension</code>.</p>
                 <ul>
-                    <li><code>&lt;report_id&gt;</code> = the id for the report, as given by the call to <code>.../report/&lt;report_id&gt;</a>/status/</code></li>
+                    <li><code>&lt;report_id&gt;</code> = the id for the report, as given by the call to <code>.../report/&lt;report_id&gt;/status/</code></li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>xls</code> (excel)</li>
                 </ul>
             </td>
@@ -167,26 +167,26 @@ https://www.mybring.com/reports/api</pre>
     </div>
     <div>
         <ol>
-            <li><h4>GET CUSTOMER ACCOUNTS</h4></li>
+            <li><h4>GET CUSTOMER ACCOUNTS</h4>
             <div>The first step is to get a list of available customer accounts.<br/><br/>
                 <div><h5>REQUEST</h5>
                     <pre class="code-box">https://www.mybring.com/reports/api/generate.json</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
-                <div><code><pre class="prettyprint">{"customers":[
+                <div><pre class="prettyprint">{"customers":[
     {
         "id":"PARCELS_NORWAY-00012341234",
         "name":"TEST CUSTOMER",
         "fullName":"TEST CUSTOMER (00012341234)",
         "reports":"https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/"
     }
-]}</pre></code></div></div>
+]}</pre></div></div>
 
-            <li><h4>GET LIST OF AVAILABLE REPORTS</h4></li>
+            <li><h4>GET LIST OF AVAILABLE REPORTS</h4>
             <div><div>Each customer has a set of reports available.</div><br/><br/>
                 <div><h5>REQUEST</h5>
                     <pre class="code-box"> https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234.json</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
-                <div><code><pre class="prettyprint">{"reports":[
+                <div><pre class="prettyprint">{"reports":[
     {
         "id":"PARCELS-DELIVERED",
         "name":"Delivered to recipient",
@@ -205,9 +205,9 @@ https://www.mybring.com/reports/api</pre>
             }
         ]
     }
-]}</pre></code></div></div>
+]}</pre></div></div></li>
 
-            <li><h4>GENERATE REPORT</h4></li>
+            <li><h4>GENERATE REPORT</h4>
 
             <div><div>To generate a report do a GET to the supplied URL, and include the parameters described in the response.
                       These parameters are considered to be static, so it should not be necessary to do the two first steps for every report generation.
@@ -216,35 +216,38 @@ https://www.mybring.com/reports/api</pre>
                 <div><h5>REQUEST</h5>
                     <pre class="code-box">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234.json?DELIVEREDfromDate=01.07.2011&amp;toDate=01.07.2011</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
-                <div><code><pre class="prettyprint">{
+                <div><pre class="prettyprint">{
     "statusMessage":"The report is now beeing processed. Please use the statusUrl to check when the report is ready. Reloading this page will generate a new report.",
     "statusUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/",
-}</pre></code></div></div>
+}</pre></div></div>
 
-            <li><h4>CHECK STATUS OF REPORT</h4></li>
+            <li><h4>CHECK STATUS OF REPORT</h4>
 
-            <div><div>TSince the generation of reports may take several minutes, we supply a status address to check the status of the report generation.
+            <div>Since the generation of reports may take several minutes, we supply a status address to check the status of the report generation.
                       The status page will display NOT_DONE, until the report is ready to be downloaded. When the report is ready, URLs to download the report will be in the response.<br/><br/>
                 <div><h5>REQUEST</h5>
                     <pre class="code-box"> https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status.json</pre></div>
 
                 <div><h5>REPORT NOT FINISHED RESPONSE</h5></div>
-                <div><code><pre class="prettyprint">{
+                <div><pre class="prettyprint">{
 "status":"NOT_DONE"
-}</pre></code></div></div>
+}</pre></div>
 
                 <div><h5>REPORT AVAILABLE RESPONSE</h5></div>
-                <div><code><pre class="prettyprint">{
+                <div><pre class="prettyprint">{
 "status":"DONE",
 "xmlUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xml",
 "xlsUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xls"
-}</pre></code></div></div>
-            <div><h5>REPORT FAILED RESPONSE</h5>
-                <div><code><pre class="prettyprint">{
-"status":"FAILED"
-}</pre></code></div></div>
+}</pre></div></div>
 
-            <li><h4>DOWNLOAD REPORT</h4></li>
+            <div>
+                <h5>REPORT FAILED RESPONSE</h5>
+                <div><pre class="prettyprint">{
+"status":"FAILED"
+}</pre></div></div></li>
+
+
+            <li><h4>DOWNLOAD REPORT</h4>
 
             <div>The reports are available in XML or Excel format. Please use the link with .xml or .xls extension to download the report.<br/><br/>
 
@@ -254,6 +257,7 @@ https://www.mybring.com/reports/api</pre>
                 <div><h5>EXCEL-REQUEST</h5></div>
                 <div><pre class="code-box"> https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73.xls</pre></div>
             </div>
+            </li>
         </ol>
     </div>
 </div>

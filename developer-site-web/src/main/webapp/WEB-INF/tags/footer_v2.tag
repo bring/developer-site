@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <footer id="footer" role="contentinfo">
     <p>
-        <!-- This empty paragraph is a IE7 fix. Without it the footer will jump to the middle of the page when an additional example is expanded--->
+        <!-- This empty paragraph is a IE7 fix. Without it the footer will jump to the middle of the page when an additional example is expanded -->
     </p>
 
     <div class="inner">

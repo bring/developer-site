@@ -33,7 +33,7 @@
                         <div class="box lightBorder">
 
 
-                            <div data-tab="xml" class="tab api-call">
+                            <div class="tab api-call">
                                 <p>Request:</p>
 
 

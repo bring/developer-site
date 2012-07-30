@@ -4,10 +4,10 @@
         <h4>Postal Code API</h4>
     </a>
     <ol>
-        <li><a href="/api/postalcodeapi.html?from=postalcode#introduction">Introduction</a></li>
-        <li><a href="/api/postalcodeapi.html?from=postalcode#reference">Reference</a></li>
-        <li><a href="/api/postalcodeapi.html?from=postalcode#HTU">How to Use</a></li>
-        <li><a href="/api/postalcodeapi.html?from=postalcode#additionalExamples">Additional Examples</a></li>
+        <li><a onclick="showBookmark('introduction',        '/api/postalcodeapi.html');">Introduction</a></li>
+        <li><a onclick="showBookmark('reference',           '/api/postalcodeapi.html');">Reference</a></li>
+        <li><a onclick="showBookmark('HTU',                 '/api/postalcodeapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('additionalExamples',  '/api/postalcodeapi.html');">Additional Examples</a></li>
     </ol>
 
 </div>
