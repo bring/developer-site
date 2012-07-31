@@ -141,7 +141,9 @@ http://beta.bring.no</pre>
             <ul class="menu-group collapsing no-shadow">
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - notification received</h4></a>
+                    <a href="#" class="menu-item">Status - notification received
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box" style="display: none;">
 
@@ -167,7 +169,9 @@ http://beta.bring.no</pre>
                 </li>
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - waiting at pickup point</h4></a>
+                    <a href="#" class="menu-item">Status - waiting at pickup point
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box">
                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup
@@ -188,7 +192,9 @@ http://beta.bring.no</pre>
                 </li>
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - loaded for delivery</h4></a>
+                    <a href="#" class="menu-item">Status - loaded for delivery
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box">
                         <p>The example below is showing a package that has been loaded on a distribution car for delivery to
@@ -210,7 +216,9 @@ http://beta.bring.no</pre>
                 </li>
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - delivered</h4></a>
+                    <a href="#" class="menu-item">Status - delivered
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box">
                         <p>The example below is showing a package that has been delivered to the recipient</p>
@@ -238,7 +246,9 @@ http://beta.bring.no</pre>
             <ul class="menu-group collapsing no-shadow">
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - notification received</h4></a>
+                    <a href="#" class="menu-item">Status - notification received
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box" style="display: none;">
 
@@ -268,7 +278,9 @@ http://beta.bring.no</pre>
                 </li>
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - waiting at pickup point</h4></a>
+                    <a href="#" class="menu-item">Status - waiting at pickup point
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box">
                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup
@@ -293,7 +305,9 @@ http://beta.bring.no</pre>
                 </li>
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - loaded for delivery</h4></a>
+                    <a href="#" class="menu-item">Status - loaded for delivery
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box">
                         <p>The example below is showing a package that has been loaded on a distribution car for delivery to
@@ -319,7 +333,9 @@ http://beta.bring.no</pre>
                 </li>
 
                 <li>
-                    <a href="#" class="menu-item"><h4>Status - delivered</h4></a>
+                    <a href="#" class="menu-item">Status - delivered
+                        <span class="arrow"></span>
+                    </a>
 
                     <div class="content-box">
                         <p>The example below is showing a package that has been delivered to the reciepient</p>

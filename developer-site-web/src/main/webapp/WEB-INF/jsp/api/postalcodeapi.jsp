@@ -149,7 +149,9 @@ http://fraktguide.bring.no/fraktguide</pre>
         <h2><a name="additionalExamples"></a>Additional examples</h2>
         <ul class="menu-group collapsing no-shadow">
             <li>
-                <a href="#" class="menu-item"><h4>Finding the location for postal codes with multiple locations</h4></a>
+                <a href="#" class="menu-item">Finding the location for postal codes with multiple locations
+                    <span class="arrow"></span>
+                </a>
 
                 <div class="content-box">
                     <div class="row element-sample">
