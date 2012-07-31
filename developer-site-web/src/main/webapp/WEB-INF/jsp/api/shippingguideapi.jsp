@@ -100,7 +100,7 @@
         <div data-tab="xml json">
             <div class="api-call">
     <pre class="code-box">Request prefix:
-    http://fraktguide.bring.no/fraktguide</pre>
+http://fraktguide.bring.no/fraktguide</pre>
 
             <table>
                 <thead>
