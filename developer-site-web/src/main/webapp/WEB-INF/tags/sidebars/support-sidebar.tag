@@ -12,6 +12,6 @@
 <div class="box">
     <h2>Additional Resources</h2>
     <ul>
-        <li><a href="http://getsatisfaction.com/bring">Bring's community - GetSatisfaction</a></li>
+        <li><a target="_blank" href="http://getsatisfaction.com/bring">Bring's community - GetSatisfaction</a></li>
     </ul>
 </div>
