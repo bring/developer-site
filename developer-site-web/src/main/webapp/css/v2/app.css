@@ -943,6 +943,97 @@ div.box > h4:first-child {
           box-shadow: none;
 }
 
+/*--collapsing--*/
+
+.menu-group.collapsing {
+  background-color: #7bc144;
+}
+
+.menu-group.collapsing .menu-item.selected,
+.menu-group.collapsing .menu-item.selected:hover,
+.menu-group.collapsing .menu-item:hover {
+  background-color: transparent;
+}
+
+.menu-group.collapsing li {
+  border-bottom: 1px solid #fff;
+}
+
+.menu-group.collapsing .menu-item {
+  position: relative;
+  margin-bottom: 0;
+  background: #f0f0f1;
+  zoom: 1;
+}
+
+.menu-group.collapsing .menu-item .arrow {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 15px;
+  height: 16px;
+  background: transparent url('/images/arrow-black-down.png') no-repeat center left;
+  -webkit-transition: all 0.2s linear;
+     -moz-transition: all 0.2s linear;
+      -ms-transition: all 0.2s linear;
+       -o-transition: all 0.2s linear;
+          transition: all 0.2s linear;
+  -webkit-backface-visibility: hidden;
+}
+
+.menu-group.collapsing .menu-item:hover {
+  color: #4d4f53;
+  -webkit-box-shadow: 0 3px 6px -1px #949598;
+     -moz-box-shadow: 0 3px 6px -1px #949598;
+          box-shadow: 0 3px 6px -1px #949598;
+  /*filter: progid:DXImageTransform.Microsoft.Shadow(color='#949598', Direction=150, Strength=3);*/
+
+  /*had to remove the shadow on IE due to flickering*/
+
+}
+
+.menu-group.collapsing .menu-item.selected,
+.menu-group.collapsing .menu-item.selected:hover {
+  color: #fff;
+  background: #7bc144;
+  filter: progid:dximagetransform.microsoft.shadow(enabled=false);
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu-group.collapsing .menu-item:hover {
+  color: #fff;
+}
+
+.menu-group.collapsing .menu-item:hover .arrow {
+  background: transparent url('/images/arrow-white-down.png') no-repeat center left;
+}
+
+.menu-group.collapsing .menu-item.selected .arrow,
+.menu-group.collapsing .menu-item.selected:hover .arrow {
+  background: transparent url('/images/arrow-white-down.png') no-repeat center left;
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-backface-visibility: hidden;
+}
+
+.menu-group.collapsing .content-box {
+  padding: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.menu-group.collapsing.no-shadow .menu-item:hover {
+  filter: progid:dximagetransform.microsoft.shadow(enabled=false);
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+
 /* minimal */
 
 .menu-group.minimal .heading {
