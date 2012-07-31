@@ -19,7 +19,7 @@
         <li><a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL/XML SCHEMA</a></li>
         <li><a href="/additionalresources/productlist.html?from=shipping">Product list</a></li>
         <li><a href="/additionalresources/offlinedata.html?from=shipping">Offline data</a></li>
-        <li><a href="https://github.com/bring/bring-api-java#introduction">Java API</a></li>
+        <li><a href="https://github.com/bring/bring-api-java#introduction" target="_blank">Java API</a></li>
     </ul>
     <h4>Widgets</h4>
     <ul>

@@ -57,18 +57,18 @@
                             <h4>1. Log in to <a
                                     href="http://www.bring.com/all-of-bring/products-and-services/mybring"
                                     target="_blank">mybring</a></h4>
-                            <img src="../images/mybringLogin.png" alt="Login Screenshot"></br></br>
+                            <img src="../images/mybringLogin.png" alt="Login Screenshot">
                             <hr>
-                            </br><h4>2. Go to your "profile"</h4>
-                            <img src="../images/mybringApi1.png" alt="Mybring Profile Screenshot"></br></br>
+                            <h4>2. Go to your "profile"</h4>
+                            <img src="../images/mybringApi1.png" alt="Mybring Profile Screenshot">
                             <hr>
-                            </br><h4>3. Get the API-key from the "my api-key" tab.</h4>
-                            <img src="../images/mybringapiKey.png" alt="my api-key screenshot"></br></br>
+                            <h4>3. Get the API-key from the "my api-key" tab.</h4>
+                            <img src="../images/mybringapiKey.png" alt="my api-key screenshot">
                             <hr>
-                            </br><h4>4. Generate the API-key.</h4>
+                            <h4>4. Generate the API-key.</h4>
                             <img src="../images/mybringapikeygeneration.png" alt="Key generation screenshot">
                             <hr>
-                            </br><h4>5. You now got your API-key.</h4>
+                            <h4>5. You now got your API-key.</h4>
                             <img src="../images/mybringapikeyfinish.png" alt="api-key screenshot">
                         </ul>
                         <p>Still need help? Please contact the developer team: <b>developer@bring.com</b></p>

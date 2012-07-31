@@ -147,6 +147,14 @@ a {
   text-decoration: none;
 }
 
+hr{
+   margin: 3em 0.5em 3em 0.5em;
+    border-top: solid 1px darkGray;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
 a:focus,
 a:hover {
   color: #4d4f53;

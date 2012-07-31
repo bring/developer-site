@@ -17,7 +17,7 @@
     <h2>Additonal Resources</h2>
     <ul>
         <li><a href="/additionalresources/xmlSchemaDefinition.html?from=tracking">XML Schema Definition</a></li>
-        <li><a href="https://github.com/bring/bring-api-java#introduction">Java API</a></li>
+        <li><a href="https://github.com/bring/bring-api-java#introduction" target="_blank">Java API</a></li>
     </ul>
     <h4>Widgets</h4>
     <ul>

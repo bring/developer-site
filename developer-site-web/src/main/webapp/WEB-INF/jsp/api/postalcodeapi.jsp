@@ -71,7 +71,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             </tr>
             </tbody>
         </table>
-        </br><hr></br>
+        <hr>
         <h2><a name="HTU"></a>How to Use</h2>
         You have to specify the postal code and the country code to find the location with this API.<br/><br/> The
         following countries are supported:
@@ -145,7 +145,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             </div>
         </div>
 
-</br><hr></br>
+<hr>
         <h2><a name="additionalExamples"></a>Additional examples</h2>
         <ul class="menu-group collapsing no-shadow">
             <li>

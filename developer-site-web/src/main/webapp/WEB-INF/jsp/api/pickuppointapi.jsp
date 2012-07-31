@@ -147,7 +147,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
 
 
-   </br><hr></br>
+   <hr>
     <h2><a name="HTU"></a>How to Use</h2>
     <p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest
        delivery locations. The following examples illustrate the different alternatives. </p>
@@ -329,7 +329,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
             </div>
         </div>
 
-    </br><hr></br>
+    <hr>
     <h2><a name="additionalExamples"></a>Additional examples</h2>
     <ul class="menu-group collapsing no-shadow">
         <li>

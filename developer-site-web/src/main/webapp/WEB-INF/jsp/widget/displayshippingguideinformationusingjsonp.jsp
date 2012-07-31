@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="box">
-                        <p>This demonstration illustrates how you can use JSONP to include information from Shipping Guide inline in your website.<br/><br/>
+                        <p>This demonstration illustrates how you can use JSONP to include information from Shipping Guide inline on your website.<br/><br/>
                            Please use the code provided as a template that you can adjust to your requirements</p>
 
 

@@ -36,10 +36,8 @@
 
                             <div class="tab api-call">
                                 <p>Request:</p>
-
-
                                 <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd" data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
-
+                                <p>Response:</p>
                                 <pre class="code-box xml response delay-snippet"></pre>
                             </div>
 
