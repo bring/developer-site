@@ -299,7 +299,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
     <p>Retrieve more information about the pickup point based on its id, 121110 </p>
 
-
         <div data-tab="xml">
             <div class="row element-sample">
                 <div class="lightBorder">
@@ -355,9 +354,10 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
     </br><hr></br>
     <h2><a name="additionalExamples"></a>Additional examples</h2>
     <ul class="menu-group collapsing no-shadow">
-
         <li>
-            <a href="#" class="menu-item"><h4>Find pickup points containing a specified string</h4></a>
+            <a href="#" class="menu-item">Find pickup points containing a specified string
+                <span class="arrow"></span>
+            </a>
 
             <div class="content-box">
                 <p>If you want to return only the pickup points matching a specified string, you may add <code>?searchForText=&lt;text
@@ -402,9 +402,10 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                         </div>
                     </div>
         </li>
-
         <li>
-            <a href="#" class="menu-item"><h4>Find pickup points open on specified days</h4></a>
+            <a href="#" class="menu-item">Find pickup points open on specified days
+                <span class="arrow"></span>
+            </a>
 
             <div class="content-box">
 
@@ -481,9 +482,10 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                 </div>
             </div>
         </li>
-
         <li>
-            <a href="#" class="menu-item"><h4>Find pickup points open at specific hours</h4></a>
+            <a href="#" class="menu-item">Find pickup points open at specific hours
+                <span class="arrow"></span>
+            </a>
 
             <div class="content-box">
                 <p>If you want to return only the pickup points open on specific hours, you may add <code>?openOnOrBefore=&lt;time&gt;</code>
@@ -570,7 +572,6 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
             </div>
 
         </li>
-
     </ul>
 </div>
 

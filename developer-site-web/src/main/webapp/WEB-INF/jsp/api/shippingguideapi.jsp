@@ -1280,7 +1280,9 @@
 
 <li>
     <a href="#" class="menu-item">
-        <h4>Multiple parcels in one query</h4></a>
+        Multiple parcels in one query
+        <span class="arrow"></span>
+    </a>
 
     <div class="content-box">
 
@@ -1327,7 +1329,8 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>International shipments</h4></a>
+    <a href="#" class="menu-item">International shipments
+        <span class="arrow"></span></a>
 
     <div class="content-box">
         <div>
@@ -1364,7 +1367,9 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>International shipments to countries without postal codes</h4></a>
+    <a href="#" class="menu-item">International shipments to countries without postal codes
+        <span class="arrow"></span>
+    </a>
 
     <div class="content-box">
 
@@ -1408,7 +1413,9 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>Three ways to specify a package size</h4></a>
+    <a href="#" class="menu-item">Three ways to specify a package size
+        <span class="arrow"></span>
+    </a>
 
     <div class="content-box">
 
@@ -1499,7 +1506,9 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>Get the expected delivery date</h4></a>
+    <a href="#" class="menu-item">
+        Get the expected delivery date
+        <span class="arrow"></span></a>
 
     <div class="content-box">
 
@@ -1543,7 +1552,10 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>Specify the pickup time from the departure point</h4></a>
+    <a href="#" class="menu-item">
+        Specify the pickup time from the departure point
+        <span class="arrow"></span>
+    </a>
 
     <div class="content-box">
 
@@ -1587,7 +1599,10 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>Specify whether or not the shipment has been pre-registered (EDI)</h4></a>
+    <a href="#" class="menu-item">
+        Specify whether or not the shipment has been pre-registered (EDI)
+        <span class="arrow"></span>
+    </a>
 
     <div class="content-box">
 
@@ -1627,7 +1642,10 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>Specify if the package was shipped from a post office</h4></a>
+    <a href="#" class="menu-item">
+        Specify if the package was shipped from a post office
+        <span class="arrow"></span>
+    </a>
 
     <div class="content-box">
 
@@ -1670,7 +1688,8 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item"><h4>Adjust prices</h4></a>
+    <a href="#" class="menu-item">Adjust prices
+        <span class="arrow"></span></a>
 
     <div class="content-box">
         <div class="row element-sample">
