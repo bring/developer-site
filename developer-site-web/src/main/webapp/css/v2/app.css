@@ -167,7 +167,7 @@ a.read-more {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 1em 0 0 0;
 }
 
 .ingress {
@@ -963,7 +963,7 @@ div.box > h4:first-child {
   background-color: transparent;
 }
 
-.menu-group.collapsing li {
+.menu-group.collapsing>li {
   border-bottom: 1px solid #fff;
 }
 
@@ -1590,6 +1590,7 @@ div.stickymenu {
 }
 
 .lightBorder {
+  margin: 1em 0 0 0;
   padding: 10px;
   border: 1px solid #efeff0;
 }

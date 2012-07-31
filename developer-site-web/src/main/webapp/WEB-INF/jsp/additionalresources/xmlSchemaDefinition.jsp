@@ -31,21 +31,16 @@
                         </p>
                         <h4>XSD</h4>
 
-                        <div class="box lightBorder">
+
+                        <div class="tab api-call">
+                            <p>Request:</p>
 
 
-                            <div class="tab api-call">
-                                <p>Request:</p>
-                                <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd" data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
-                                <p>Response:</p>
-                                <pre class="code-box xml response delay-snippet"></pre>
-                            </div>
+                            <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd"
+                               data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
 
-
-
+                            <pre class="code-box xml response delay-snippet"></pre>
                         </div>
-
-
 
                     </div>
                 </div>

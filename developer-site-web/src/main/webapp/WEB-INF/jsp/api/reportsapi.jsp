@@ -31,6 +31,7 @@
     <h2><a name="introduction"></a>Introduction</h2>
     <p>The API lets you view customer accounts associated with your account, find available reports for those accounts and generate and download reports. This is a step-by-step guide on how to use the API.
     </p>
+
     <div class="information-box">BETA! This API is currently in BETA, which means that even though the code is in production and fully functional,
          changes might be made in the future that can break code relying on this specific version.</div>
 </div>
@@ -169,7 +170,7 @@ https://www.mybring.com/reports/api</pre>
         <ol>
             <li><h4>GET CUSTOMER ACCOUNTS</h4>
 
-            <div>The first step is to get a list of available customer accounts.<br/><br/>
+            <div>The first step is to get a list of available customer accounts.
                 <div><h5>REQUEST</h5>
                     <pre class="code-box">https://www.mybring.com/reports/api/generate.json</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
@@ -185,7 +186,7 @@ https://www.mybring.com/reports/api</pre>
 ]}</pre></div></div>
 
             <li><h4>GET LIST OF AVAILABLE REPORTS</h4>
-            <div><div>Each customer has a set of reports available.</div><br/><br/>
+            <div><div>Each customer has a set of reports available.</div>
                 <div><h5>REQUEST</h5>
                     <pre class="code-box"> https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234.json</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
@@ -219,7 +220,7 @@ https://www.mybring.com/reports/api</pre>
                       These parameters are considered to be static, so it should not be necessary to do the two first steps for every report generation.
                       The GET-call will return 202, telling the caller the that the request for a report is put on the queue.
                       The url to query to get the status for the request if provided as an HTTP header and also in the response.
-                </div><br>
+                </div>
                 <div><h5>REQUEST</h5>
 
                     <pre class="code-box">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234.json?DELIVEREDfromDate=01.07.2011&amp;toDate=01.07.2011</pre></div>
@@ -232,7 +233,7 @@ https://www.mybring.com/reports/api</pre>
             <li><h4>CHECK STATUS OF REPORT</h4>
 
             <div>Since the generation of reports may take several minutes, we supply a status address to check the status of the report generation.
-                      The status page will display NOT_DONE, until the report is ready to be downloaded. When the report is ready, URLs to download the report will be in the response.<br/><br/>
+                      The status page will display NOT_DONE, until the report is ready to be downloaded. When the report is ready, URLs to download the report will be in the response.
 
                 <div><h5>REQUEST</h5>
                     <pre class="code-box"> https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status.json</pre>
@@ -262,7 +263,7 @@ https://www.mybring.com/reports/api</pre>
 
             <li><h4>DOWNLOAD REPORT</h4>
 
-            <div>The reports are available in XML or Excel format. Please use the link with .xml or .xls extension to download the report.<br/><br/>
+            <div>The reports are available in XML or Excel format. Please use the link with .xml or .xls extension to download the report.
 
 
                 <div><h5>XML-REQUEST</h5>
