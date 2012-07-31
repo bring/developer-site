@@ -31,8 +31,10 @@
                         </p>
                         <h4>XSD</h4>
 
+
                         <div class="tab api-call">
                             <p>Request:</p>
+
 
                             <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd"
                                data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>

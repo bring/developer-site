@@ -224,11 +224,9 @@
                     </tr>
                 </tbody>
             </table>
-
             <hr>
         </div>
         </div> <!-- xml json -->
-
         <div data-tab="soap">
 
         <div class="api-call">
@@ -634,6 +632,7 @@
                href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407"
                data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=1500&amp;from=7600&amp;to=1407">
                 ../all.json?weightInGrams=1500&amp;from=7600&amp;to=1407 </a>
+            <br><br><p>Response:</p>
             <pre class="code-box json response delay-snippet"></pre>
         </div>
 
@@ -644,6 +643,7 @@
                    href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407"
                    data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">
                     ../all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407 </a>
+                <br><br><p>Response:</p>
                 <pre class="code-box xml response delay-snippet"></pre>
             </div>
 
@@ -685,6 +685,7 @@
                href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN"
                data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN">
                 ../all.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN </a>
+            <br><br><p>Response:</p>
             <pre class="code-box xml response delay-snippet"></pre>
         </div>
 
@@ -699,7 +700,8 @@
                 <p class="right">JSONP Request: <a
                         href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09&amp;callbackUrl=functionName">?callback=functionName</a>
                 </p>
-                <pre class="code-box json response delay-snippet"></pre>
+            <p>Response:</p>
+            <pre class="code-box json response delay-snippet"></pre>
         </div>
 
 
@@ -727,6 +729,7 @@
 …/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
                               &amp;additional=postoppkrav&amp;additional=evarsling
                               &amp;additional=lordagsutkjoring</a></pre>
+            <p>Response:</p>
             <pre class="code-box xml response delay-snippet">Running request...</pre>
         </div>
 
@@ -738,6 +741,7 @@
 …/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27
                                &amp;additional=postoppkrav&amp;additional=evarsling
                                &amp;additional=lordagsutkjoring</a></pre>
+            <p>Response:</p>
             <pre class="code-box json response delay-snippet">Running request...</pre>
         </div>
 
@@ -771,9 +775,7 @@
 <%--Additional examples--%>
 
 <div data-tab="xml json">
-    </br>
     <hr>
-    </br>
     <h2><a name="additionalExamples"></a>Additional examples</h2></div>
 
 <div data-tab="xml">
@@ -818,7 +820,7 @@
                                href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
                                data-internal="/proxy/shipping-guide/products/all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
                                 ../all.xml?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30 </a>
-                            <p>Response:</p>
+                            <br><br><p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
 
@@ -854,7 +856,7 @@
                                href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
                                data-internal="/proxy/shipping-guide/products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
                                 ../products/expectedDelivery.xml?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a>
-
+                            <br> <br>
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -934,8 +936,7 @@
                            href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500"
                            data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500">
                             ../products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500</a>
-
-                        <p>Response:</p>
+                        <br><br><p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
 
@@ -960,7 +961,6 @@
                            href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40"
                            data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
                             ../products/price.xml?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40</a>
-
                         <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
@@ -1161,6 +1161,7 @@
                            data-internal="/proxy/shipping-guide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE">
                             <pre>../price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE</pre>
                         </a>
+                        <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
 
@@ -1356,7 +1357,7 @@
                             <p class="right">JSONP Request: <a
                                     href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;callbackUrl=functionName">?callback=functionName</a>
                             </p>
-
+                            <br>
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
@@ -1434,15 +1435,13 @@
                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                            data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500">
                             ../products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500</a>
-
+                        <br>
+                        <br>
                         <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
 
                 </div>
-
-
-
             </div>
         </div>
 
