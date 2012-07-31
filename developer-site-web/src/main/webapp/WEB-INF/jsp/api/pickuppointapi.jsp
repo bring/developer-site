@@ -147,7 +147,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
 
 
-   </br><hr></br>
+   <hr>
     <h2><a name="HTU"></a>How to Use</h2>
     <p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest
        delivery locations. The following examples illustrate the different alternatives. </p>
@@ -159,7 +159,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
           <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
-          <div class="lightBorder">
+          <div class="">
               <div class="codetabs">
                   <div data-tab="xml" class="tab">
                       <div class="api-call">
@@ -186,7 +186,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
           <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
-          <div class="lightBorder">
+          <div class="">
               <div class="codetabs">
                   <div data-tab="json" class="tab">
                       <div class="api-call">
@@ -219,7 +219,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
     <div data-tab="xml">
         <div class="row element-sample">
-            <div class="lightBorder">
+            <div class="">
                 <div class="codetabs">
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
@@ -239,7 +239,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
     </div>
     <div data-tab="json">
         <div class="row element-sample">
-            <div class="lightBorder">
+            <div class="">
                 <div class="codetabs">
                     <div data-tab="json" class="tab">
                         <div class="api-call">
@@ -286,7 +286,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
         <div data-tab="xml">
             <div class="row element-sample">
-                <div class="lightBorder">
+                <div class="">
                     <div class="codetabs">
                         <div data-tab="xml" class="tab">
                             <div class="api-call">
@@ -307,7 +307,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
         </div>
         <div data-tab="json">
             <div class="row element-sample">
-                <div class="lightBorder">
+                <div class="">
                     <div class="codetabs">
                         <div data-tab="json" class="tab">
                             <div class="api-call">
@@ -329,7 +329,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
             </div>
         </div>
 
-    </br><hr></br>
+    <hr>
     <h2><a name="additionalExamples"></a>Additional examples</h2>
     <ul class="menu-group collapsing no-shadow">
         <li>
@@ -344,7 +344,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     also allowed.
 
                 <div class="row element-sample">
-                    <h4>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</h4>
+                    <h4>Example: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</h4>
                     <div class="codetabs">
                         <div data-tab="xml" class="tab">
                             <div class="api-call">
@@ -393,7 +393,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                 <div class="row element-sample">
 
-                    <h4>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</h4>
+                    <h4>Example: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</h4>
 
                         <div class="codetabs">
                             <div data-tab="xml" class="tab">
@@ -440,7 +440,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                 <div class="row element-sample">
 
-                    <h4>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</h4>
+                    <h4>Example: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</h4>
 
                         <div class="codetabs">
                             <div data-tab="xml" class="tab">
@@ -477,7 +477,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                 <div class="row element-sample">
 
-                    <h4>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</h4>
+                    <h4>Example: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</h4>
 
 
                         <div class="codetabs">

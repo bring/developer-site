@@ -116,7 +116,7 @@
 <p>
     To use the test mode, you need to set the testIndicator flag on the root node. </p>
 
-<div class="codetabs LightBorder">
+<div class="codetabs">
     <div class="tab" data-tab="xml"><pre class="code-box">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true"&gt;
     ...
@@ -169,7 +169,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: www.mybring.com
 </pre>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs">
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -185,7 +185,7 @@ Host: www.mybring.com
 
     <h5>EXAMPLE RESPONSE: SUCCESSFUL REQUEST</h5>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -213,7 +213,7 @@ Host: www.mybring.com
             Amazon S3). Ensure that your client follows these redirects. </p></div>
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -260,7 +260,7 @@ Host: www.mybring.com
         means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT"
         if the error is for the recipient party data. </p>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -345,7 +345,7 @@ Host: www.mybring.com
                 <pre class="code-box">GET <a href="http://www.mybring.com/booking/api/customers.xml">http://www.mybring.com/booking/api/customers.xml</a>
 </pre>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="xml" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -392,7 +392,7 @@ Host: www.mybring.com
 <p>
     To use the test mode, you need to set the testIndicator flag on the root node. </p>
 
-<div class="codetabs LightBorder">
+<div class="codetabs ">
 
     <div class="tab" data-tab="json"><pre class="code-box">{
     "testIndicator": true,
@@ -447,7 +447,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: www.mybring.com
 </pre>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -464,7 +464,7 @@ Host: www.mybring.com
 
     <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -492,7 +492,7 @@ Host: www.mybring.com
             Amazon S3). Ensure that your client follows these redirects. </p></div>
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -539,7 +539,7 @@ Host: www.mybring.com
         means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT"
         if the error is for the recipient party data. </p>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -625,7 +625,7 @@ Host: www.mybring.com
                 <pre class="code-box">  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a>
 </pre>
 
-    <div class="codetabs lightBorder">
+    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>

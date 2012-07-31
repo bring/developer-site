@@ -808,7 +808,7 @@
             <li><code>length2=10&amp;width2=20 &amp;height2=30</code></li>
         </ol>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="xml" class="tab">
@@ -843,7 +843,7 @@
             </p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div class="tab-content tab-minimal">
 
@@ -890,7 +890,7 @@
             </ul>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -925,7 +925,7 @@
             <p>Specified using <code>weightInGrams=1500</code>.</p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -951,7 +951,7 @@
             <p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -980,7 +980,7 @@
             <p>Specified using <code>volume=33</code>.</p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
             <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -1022,7 +1022,7 @@
             </p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="xml" class="tab">
@@ -1069,7 +1069,7 @@
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -1109,7 +1109,7 @@
             <p>Default: <code>true</code></p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -1151,7 +1151,7 @@
             <p>Default: <code>false</code></p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
@@ -1242,7 +1242,7 @@
                                natten 09.
             </p>
 
-            <div class="lightBorder">
+            <div class="">
                 <div class="codetabs">
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
@@ -1306,7 +1306,7 @@
             <li><code>length2=10&amp;width2=20 &amp;height2=30</code></li>
         </ol>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="json" class="tab">
@@ -1341,7 +1341,7 @@
             </p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div class="tab-content tab-minimal">
 
@@ -1390,7 +1390,7 @@
             </ul>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                         <div data-tab="json" class="tab">
                         <div class="api-call">
@@ -1425,7 +1425,7 @@
             <p>Specified using <code>weightInGrams=1500</code>.</p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
@@ -1451,7 +1451,7 @@
             <p>Specified using <code>length=30&amp;width=40&amp;height=40</code>.</p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
@@ -1483,7 +1483,7 @@
             <p>Specified using <code>volume=33</code>.</p>
 
         </div>
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
@@ -1527,7 +1527,7 @@
             </p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="json" class="tab">
@@ -1574,7 +1574,7 @@
             <p>Accepted format is <code>hh:mm</code>. (AM and PM not allowed, please use 24-hour clock.)</p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
@@ -1617,7 +1617,7 @@
             <p>Default: <code>true</code></p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
@@ -1662,7 +1662,7 @@
             <p>Default: <code>false</code></p>
         </div>
 
-        <div class="lightBorder">
+        <div class="">
             <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
@@ -1756,7 +1756,7 @@
                                natten 09.
             </p>
 
-            <div class="lightBorder">
+            <div class="">
                 <div class="codetabs">
                     <div data-tab="json" class="tab">
                         <div class="api-call">
