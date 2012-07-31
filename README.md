@@ -26,17 +26,17 @@ Hopefully the only confusing thing about this site is the way we have divided th
 <pre>
 &lt;div data-tab="xml"&gt;
  This content will only be visible when xml is selected in the menu
-</div>
+&lt;/div&gt;
 
-<p>
+&lt;p&gt;
  This will always be visible
-</p>
+&lt;/p&gt;
 
-<div data-tab="xml json">
+&lt;div data-tab="xml json"&gt;
  This will be visible when either of xml or json is selected.
-</div>
+&lt;/div&gt;
 
-<div data-tab="soap">
+&lt;div data-tab="soap"&gt;
  This will only be visible if SOAP is selected in the menu
-</div>
+&gt;/div&gt;
 </pre>
