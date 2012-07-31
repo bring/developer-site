@@ -39,10 +39,6 @@
     </p>
 
     <p>
-        The currently supported products include Bring Parcel products (domestic Norway), Courier Services for Nordic
-        cities, and the QuickPack product line for international express shipments. </p>
-
-    <p>
         Bring Booking uses Bring Fraktguide as the source for price and availability for the different products. We
         advise clients of the Booking API to use Fraktguiden for getting the list price and checking availability before
         sending a booking request. Note that invoice payment is the only available payment option for the Booking API.
@@ -51,8 +47,7 @@
 
 
     <div class="information-box">BETA! This API is currently in BETA, which means that even though the code is in production and fully functional,
-                                 changes might be made in the future that can break code relying on this specific version. An early beta-version of the API is available now as of january 2012, this beta will
-                                 lead to a final stable v1 of the API during Q1 2012.</div>
+                                 changes might be made in the future that can break code relying on this specific version.</div>
 </div>
 
 <%--How to Use--%>
@@ -227,7 +222,7 @@ Host: www.mybring.com
                     http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml </a>
                 
                 <p>Example response:</p>
-                <pre class="code-box xml response delay-snippet"></pre>
+                <pre style="min-height: 25px;" class="code-box xml response delay-snippet"></pre>
             </div>
         </div>
     </div>
@@ -506,7 +501,7 @@ Host: www.mybring.com
                     http://beta.bring.com/booking/api/bookingExamples/failedResponse.json </a>
                 
                 <p>Example response:</p>
-                <pre class="code-box json response delay-snippet"></pre>
+                <pre style="min-height: 30px;" class="code-box json response delay-snippet"></pre>
             </div>
         </div>
     </div>
