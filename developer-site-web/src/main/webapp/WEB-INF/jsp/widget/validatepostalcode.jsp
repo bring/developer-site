@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -35,7 +36,7 @@
                         <div class="content-box">
                             <div class="row element-sample">
 
-                                <h4><p>Widget Example</p></h4>
+                                <h4>Widget Example</h4>
                                 <ul class="tab-group minimal" data-tabs="tabs">
                                     <li class="active"><a href="#tab1-5">DEMO</a></li>
                                     <li><a href="#tab2-5">CODE</a></li>

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -282,7 +283,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                           pickup points being returned. One such parameter is <code>searchForText=&lt;texts&gt;</code>, resulting in a
                           response where all pickup points have at least a partial match with the search string given in &lt;texts&gt;.
                           This can be the name of the pickup point, its address, city, county, municipality or location. Go to the
-                          reference table or see additional examples for more information</p>
+                          reference table or see additional examples for more information.
 
     <div class="information-box">
         <b>Note! </b>If you want to add more than one parameter at the end of a request, separate the subsequent
@@ -366,8 +367,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
                     also allowed.
 
                 <div class="row element-sample">
-                    <h4><p>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</p>
-                    </h4>
+                    <h4>Example below: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</h4>
                     <div class="codetabs">
                         <div data-tab="xml" class="tab">
                             <div class="api-call">
@@ -415,7 +415,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                 <div class="row element-sample">
 
-                    <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</p></h4>
+                    <h4>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</h4>
 
                         <div class="codetabs">
                             <div data-tab="xml" class="tab">
@@ -492,7 +492,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                 <div class="row element-sample">
 
-                    <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</p></h4>
+                    <h4>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</h4>
 
                         <div class="codetabs">
                             <div data-tab="xml" class="tab">
@@ -529,7 +529,7 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
                 <div class="row element-sample">
 
-                    <h4><p>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</p></h4>
+                    <h4>Example below: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</h4>
 
 
                         <div class="codetabs">
