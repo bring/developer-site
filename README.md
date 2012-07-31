@@ -38,5 +38,5 @@ Hopefully the only confusing thing about this site is the way we have divided th
 
 &lt;div data-tab="soap"&gt;
  This will only be visible if SOAP is selected in the menu
-&gt;/div&gt;
+&lt;/div&gt;
 </pre>
