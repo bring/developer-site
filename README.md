@@ -20,11 +20,11 @@ To do this, add the following line to your hosts file (/etc/hosts on mac, c:\\wi
 The architecture of this site is very simple and cosists of jsp-files and a few tags. The jsp-files are located in 
 <pre>/developer-site-web/src/main/webapp/WEB-INF/jsp</pre>
 and the the tags are in
-<pre>/developer-site-web/src/main/webapp/WEB-INF/tags</pre>.
+<pre>/developer-site-web/src/main/webapp/WEB-INF/tags</pre>
 
 Hopefully the only confusing thing about this site is the way we have divided the contents of the API pages into tabs (such as XML, JSON and SOAP):
 <pre>
-<div data-tab="xml">
+&lt;div data-tab="xml"&gt;
  This content will only be visible when xml is selected in the menu
 </div>
 
