@@ -35,6 +35,6 @@
         <li><a href="/plugin/wordpress-e-commerce-fraktguide.html?from=shipping">Shipping Guide for Wordpress e-commerce</a>
         </li>
         <li><a href="/plugin/zencart-fraktguide.html?from=shipping">Shipping Guide for ZenCart</a></li>
-        <li><a href="http://www.bring.no/hele-bring/produkter-og-tjenester/hvem-kan-hjelpe-deg">Various Shipping Guide integrations by commercial providers</a></li>
+        <li><a target="_blank" href="http://www.bring.no/hele-bring/produkter-og-tjenester/hvem-kan-hjelpe-deg">Various Shipping Guide integrations by commercial providers</a></li>
     </ul>
 </div>
