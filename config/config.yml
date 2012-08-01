@@ -32,3 +32,19 @@ environments:
     http_auth_password: developer
     rollback: false
     production_environment: false
+  test:
+    selvdrift_layout: true
+    bigip_frontend: false
+    hosts: [bopak.bd.bring.no]
+    port: 8040
+    user: bring
+    prefix: /var/apps/developer_test/
+    service_name: developer_test
+    start_command: sudo service developer_test start
+    stop_command: sudo service developer_test stop
+    external_url: http://developer:developer@developer.test.bring.com/revision.txt
+    internal_url: /
+    http_auth_user: developer
+    http_auth_password: developer
+    rollback: false
+    production_environment: false
