@@ -2,30 +2,31 @@ name: developer-site
 jettypath: developer-site-jetty
 internal_check_type: statuscode
 external_url_skip_version_check: true
-service_name: developer-site
 environments:
   production:
-    selvdrift_layout: false
+    selvdrift_layout: true
     bigip_frontend: false
-    hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
-    port: 7012
+    hosts: [aldea.bd.bring.no, antos.bd.bring.no]
+    port: 8040
     user: bring
-    prefix: /u01/bring
-    start_command: sh /u01/bring/bin/developer-site.sh start
-    stop_command: sh /u01/bring/bin/developer-site.sh stop
+    prefix: /var/apps/developer/
+    service_name: developer
+    start_command: sudo service developer start
+    stop_command: sudo service developer stop
     external_url: http://developer.bring.com/revision.txt
     internal_url: /
     rollback: false
     production_environment: true
   qa:
-    selvdrift_layout: false
+    selvdrift_layout: true
     bigip_frontend: false
-    hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
-    port: 7011
-    user: bring_qa
-    prefix: /u01/bring_qa
-    start_command: sh /u01/bring_qa/bin/developer-site.sh start
-    stop_command: sh /u01/bring_qa/bin/developer-site.sh stop
+    hosts: [aldea.bd.bring.no, antos.bd.bring.no]
+    port: 8540
+    user: bring
+    prefix: /var/apps/developer_qa/
+    service_name: developer_qa
+    start_command: sudo service developer_qa start
+    stop_command: sudo service developer_qa stop
     external_url: http://developer:developer@developer.qa.bring.com/revision.txt
     internal_url: /
     http_auth_user: developer
