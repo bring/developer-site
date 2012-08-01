@@ -135,36 +135,58 @@
   </dependencies>
 
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-war-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.mortbay.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <version>${jetty.version}</version>
-        <configuration>
-          <reload>manual</reload>
-          <webAppConfig>
-            <contextPath>/</contextPath>
-          </webAppConfig>
-          <connectors>
-            <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-              <port>8082</port>
-            </connector>
-          </connectors>
-        </configuration>
-      </plugin>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.6</source>
+                  <target>1.6</target>
+                  <encoding>UTF-8</encoding>
+              </configuration>
+          </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-war-plugin</artifactId>
+          </plugin>
+          <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>jetty-maven-plugin</artifactId>
+              <version>${jetty.version}</version>
+              <configuration>
+                  <reload>manual</reload>
+                  <webAppConfig>
+                      <contextPath>/</contextPath>
+                  </webAppConfig>
+                  <connectors>
+                      <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+                          <port>8082</port>
+                      </connector>
+                  </connectors>
+              </configuration>
+          </plugin>
+          <plugin>
+              <groupId>org.codehaus.mojo</groupId>
+              <artifactId>exec-maven-plugin</artifactId>
+              <!-- outputFile doesn't work in the regular v1.2 (see MEXEC-86) -->
+              <version>1.2.1-BRING</version>
+              <executions>
+                  <execution>
+                      <id>git-revision</id>
+                      <phase>compile</phase>
+                      <goals>
+                          <goal>exec</goal>
+                      </goals>
+                  </execution>
+              </executions>
+              <configuration>
+                  <executable>bash</executable>
+                  <arguments>
+                      <argument>${project.basedir}/scripts/revision.sh</argument>
+                  </arguments>
+                  <outputFile>${project.basedir}/src/main/webapp/revision.txt</outputFile>
+              </configuration>
+          </plugin>
     </plugins>
   </build>
 </project>
