@@ -166,7 +166,7 @@ a.read-more {
   background: url('../../images/read_more_highlight.gif') no-repeat left center;
 }
 
-p+p, p:first-child {
+a+p, p+p, p:first-child {
   margin: 1em 0 0 0;
 }
 
@@ -1414,7 +1414,7 @@ div.bookingicon {
   margin-top: 13px !important;
   margin-top: 7px;
   margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/booking1.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/booking2.png") no-repeat;
 }
 
 div.api-menu-icons {
