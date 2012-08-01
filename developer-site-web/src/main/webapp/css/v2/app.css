@@ -166,7 +166,7 @@ a.read-more {
   background: url('../../images/read_more_highlight.gif') no-repeat left center;
 }
 
-p+p, p:first-child {
+a+p, p+p, p:first-child {
   margin: 1em 0 0 0;
 }
 
