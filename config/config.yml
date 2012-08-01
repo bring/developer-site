@@ -1,22 +1,34 @@
-production:
-  hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
-  user: bring
-  prefix: /u01/bring
-  restart_command: sh /u01/bring/bin/developer-site.sh stop; sleep 1; sh /u01/bring/bin/developer-site.sh start
-  start_command: sh /u01/bring/bin/developer-site.sh start
-  stop_command: sh /u01/bring/bin/developer-site.sh stop
-  version_url: http://developer.bring.com/revision.txt
-  healthcheck_url: http://developer.bring.com/bigip.txt
-  rollback: false
-  production_environment: true
-qa:
-  hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
-  user: bring_qa
-  prefix: /u01/bring_qa
-  restart_command: sh /u01/bring_qa/bin/developer-site.sh stop; sleep 1; sh /u01/bring_qa/bin/developer-site.sh start
-  start_command: sh /u01/bring_qa/bin/developer-site.sh start
-  stop_command: sh /u01/bring_qa/bin/developer-site.sh stop
-  version_url: http://developer:developer@developer.qa.bring.com/revision.txt
-  healthcheck_url: http://developer:developer@developer.qa.bring.com/bigip.txt
-  rollback: false
-  production_environment: false
+name: developer-site
+jettypath: developer-site-jetty
+internal_check_type: statuscode
+external_url_skip_version_check: true
+service_name: developer-site
+environments:
+  production:
+    selvdrift_layout: false
+    bigip_frontend: false
+    hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
+    port: 7012
+    user: bring
+    prefix: /u01/bring
+    start_command: sh /u01/bring/bin/developer-site.sh start
+    stop_command: sh /u01/bring/bin/developer-site.sh stop
+    external_url: http://developer.bring.com/revision.txt
+    internal_url: /
+    rollback: false
+    production_environment: true
+  qa:
+    selvdrift_layout: false
+    bigip_frontend: false
+    hosts: [lochee.os.ergo.no, dunbar.os.ergo.no]
+    port: 7011
+    user: bring_qa
+    prefix: /u01/bring_qa
+    start_command: sh /u01/bring_qa/bin/developer-site.sh start
+    stop_command: sh /u01/bring_qa/bin/developer-site.sh stop
+    external_url: http://developer:developer@developer.qa.bring.com/revision.txt
+    internal_url: /
+    http_auth_user: developer
+    http_auth_password: developer
+    rollback: false
+    production_environment: false
