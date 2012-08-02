@@ -227,7 +227,7 @@ http://fraktguide.bring.no/fraktguide</pre>
             </table>
             <hr>
         </div>
-        </div> <!-- xml json -->
+        </div>
         <div data-tab="soap">
 
         <div class="api-call">
@@ -514,7 +514,7 @@ http://fraktguide.bring.no/fraktguide</pre>
 
         <hr>
         </div>
-        </div> <!-- soap -->
+        </div>
 
         <h2><a name="HTU"></a>How to Use</h2>
 
@@ -1809,13 +1809,13 @@ http://fraktguide.bring.no/fraktguide</pre>
 
 
 
-</div> <!-- .row-fluid -->
+</div>
 
 </section>
 
-</div><!-- #page -->
+</div>
 
-</div><!-- .wrapper -->
+</div>
 
 <misc:footer_v2/> <misc:jqueryblob_v2/>
 
