@@ -13,8 +13,10 @@
         <constretto.version>1.1</constretto.version>
         <spring.version>3.0.5.RELEASE</spring.version>
         <org.slf4j.version>1.5.11</org.slf4j.version>
-    </properties>
 
+        <jetty.version>8.1.0.v20120127</jetty.version>
+        <bring.jetty.launcher.version>1.1.8</bring.jetty.launcher.version>
+    </properties>
 
     <modules>
         <module>developer-site-web</module>
@@ -153,5 +155,16 @@
             <url>http://download.java.net/maven/2</url>
         </repository>
     </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bring.releases</id>
+            <url>http://ci.bd.bring.no/nexus/content/repositories/releases</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>bring.thirdparty</id>
+            <url>http://ci.bd.bring.no/nexus/content/repositories/thirdparty</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>

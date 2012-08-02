@@ -12,75 +12,20 @@
     <artifactId>developer-site-jetty</artifactId>
     <name>Bring developer site: Jetty7 Standalone Jar</name>
 
-    <properties>
-        <jetty.version>7.4.2.v20110526</jetty.version>
-        <glassfish-jsp-2.1.version>2.1.v20100127</glassfish-jsp-2.1.version>
-        <servlet-api.version>2.5</servlet-api.version>
-        <jsp-api.version>2.2</jsp-api.version>
-        <el-impl.version>2.2</el-impl.version>
-        <el-api.version>2.2</el-api.version>
-        <jstl.version>1.2</jstl.version>
-    </properties>
-
     <dependencies>
-        <!-- booking -->
+        <!-- developer -->
         <dependency>
             <groupId>com.bring</groupId>
             <artifactId>developer-site-web</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
-        <!-- jetty -->
+        <!-- launcher -->
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
+            <groupId>com.bring</groupId>
+            <artifactId>jetty-launcher</artifactId>
+            <version>${jetty.version}-BRING-${bring.jetty.launcher.version}</version>
         </dependency>
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>jsp-api</artifactId>
-            <scope>provided</scope>
-            <version>${jsp-api.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <scope>provided</scope>
-            <version>${jstl.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-server</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-webapp</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
-            <version>${jetty.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-api-2.1-glassfish</artifactId>
-            <version>${glassfish-jsp-2.1.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-2.1-glassfish</artifactId>
-            <version>${glassfish-jsp-2.1.version}</version>
-        </dependency>
-        <!-- booking-jetty -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>1.4</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
@@ -89,7 +34,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>1.4</version>
+                <version>1.6</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
