@@ -145,6 +145,7 @@ h4.normal {
 a {
   color: #00b2e4;
   text-decoration: none;
+    cursor: pointer;
 }
 
 hr{
