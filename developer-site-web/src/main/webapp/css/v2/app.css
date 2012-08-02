@@ -1141,8 +1141,13 @@ div.box > p:first-child {
   margin-top: 10px;
 }
 
+
+h1.front-page-welcome-text {
+    padding-top: 10px;
+}
+
 p.front-page-welcome-text {
-  margin-top: 37px;
+  margin-top: 20px;
   margin-bottom: 20px;
   font-size: 17px;
 }
