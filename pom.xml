@@ -156,4 +156,15 @@
         </repository>
     </repositories>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bring.releases</id>
+            <url>http://ci.bd.bring.no/nexus/content/repositories/releases</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>bring.thirdparty</id>
+            <url>http://ci.bd.bring.no/nexus/content/repositories/thirdparty</url>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>
