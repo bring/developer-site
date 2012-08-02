@@ -1,8 +1,8 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
         <div class="row-fluid">
 
             <div class="row element-sample">
-                <div class="codetabs">
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -14,7 +14,6 @@
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
 

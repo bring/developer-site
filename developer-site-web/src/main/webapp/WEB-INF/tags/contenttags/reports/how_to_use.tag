@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <p>The Reports API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
        Read more about <a href="/additionalresources/getting-api-keys.html?from=reports">how to get an API-key</a>, and how to use it for authentication. </p>
     <div>

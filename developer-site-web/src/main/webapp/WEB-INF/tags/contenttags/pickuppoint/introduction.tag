@@ -1,3 +1,5 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
+
 <p>The Pickup point API provides a list of the alternative locations for package pickup. Based on a specified postal
         code or a geographical location, the 10 nearest pickup points are returned. Response is available as either XML
         or JSON.</p>

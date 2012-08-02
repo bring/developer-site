@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json">
 
 <h4>Technical information</h4>
@@ -29,7 +30,6 @@
 <p>
     To use the test mode, you need to set the testIndicator flag on the root node. </p>
 
-<div class="codetabs ">
 
     <div class="tab" data-tab="json"><pre class="code-box">{
     "testIndicator": true,
@@ -38,7 +38,6 @@
 }
 </pre>
     </div>
-</div>
 
 <div>
     <h4>Content-type negotiation</h4>
@@ -84,7 +83,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: www.mybring.com
 </pre>
 
-    <div class="codetabs ">
+
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -97,11 +96,10 @@ Host: www.mybring.com
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-    </div>
+
 
     <h5>EXAMPLE RESPONSE: SUCCESFUL REQUEST</h5>
 
-    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -114,7 +112,6 @@ Host: www.mybring.com
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-    </div>
 
     <div>
         <h4>Shipment Labels</h4>
@@ -129,7 +126,6 @@ Host: www.mybring.com
             Amazon S3). Ensure that your client follows these redirects. </p></div>
     <h5>EXAMPLE RESPONSE: FAILED REQUEST</h5>
 
-    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -142,7 +138,6 @@ Host: www.mybring.com
                 <pre style="min-height: 30px;" class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-    </div>
 
 </div>
 
@@ -176,7 +171,6 @@ Host: www.mybring.com
         means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT"
         if the error is for the recipient party data. </p>
 
-    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -187,7 +181,6 @@ Host: www.mybring.com
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-    </div>
 </div>
 
 <div>
@@ -231,7 +224,6 @@ Host: www.mybring.com
 
     <p>"customerNumber" is a value returned from the Customer number API. </p>
 
-    <div class="codetabs">
 
         <div class="tab-content tab-minimal">
             <div class="tab" data-tab="json">
@@ -244,7 +236,6 @@ Host: www.mybring.com
 </pre>
             </div>
         </div>
-    </div>
 
     <h5>Customer API - Sample JSON API Request</h5>
                 <pre class="code-box">GET /booking/api/customers HTTP/1.1
@@ -262,7 +253,6 @@ Host: www.mybring.com
                 <pre class="code-box">  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a>
 </pre>
 
-    <div class="codetabs ">
         <div data-tab="json" class="tab">
             <div class="api-call">
                 <p>Request:</p>
@@ -275,6 +265,5 @@ Host: www.mybring.com
                 <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
-    </div>
 </div>
 </div>

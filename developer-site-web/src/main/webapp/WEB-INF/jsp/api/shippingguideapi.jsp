@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
-<%@ taglib prefix="content" tagdir="/WEB-INF/tags/contenttags/shippingguide" %>
+<%@ taglib prefix="shippingguide" tagdir="/WEB-INF/tags/contenttags/shippingguide" %>
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@
 <div class="box">
     <h2><a name="introduction"></a>
         Introduction</h2>
-    <content:introduction />
+    <shippingguide:introduction />
 </div>
 
 <div class="multitabs">
@@ -39,18 +39,18 @@
     <div class="box">
         <h2><a name="reference"></a>
             Reference</h2>
-        <content:reference_xml_json/>
-        <content:reference_soap/>
+        <shippingguide:reference_xml_json/>
+        <shippingguide:reference_soap/>
 
         <h2><a name="HTU"></a>
             How to Use</h2>
-        <content:how_to_use_xml_json/>
-        <content:how_to_use_soap/>
+        <shippingguide:how_to_use_xml_json/>
+        <shippingguide:how_to_use_soap/>
 
         <div data-tab="xml json"><hr><h2><a name="additionalExamples"></a>
             Additional examples</h2></div>
-        <content:additional_examples_xml/>
-        <content:additional_examples_json/>
+        <shippingguide:additional_examples_xml/>
+        <shippingguide:additional_examples_json/>
 
     </div>
 </div>

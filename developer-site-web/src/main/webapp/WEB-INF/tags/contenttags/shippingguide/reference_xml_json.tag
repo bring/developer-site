@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml json">
             <div class="api-call">
     <pre class="code-box">Request prefix:

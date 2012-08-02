@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
         <div class="row element-sample">
             <ul class="menu-group collapsing no-shadow">
@@ -13,7 +14,6 @@
                            Bring</p>
 
                         <div class="row element-sample">
-                            <div class="codetabs ">
                                 <div data-tab="xml" class="tab">
                                     <div class="api-call">
                                         <p>Request:</p>
@@ -25,7 +25,6 @@
                                         <pre class="code-box xml response delay-snippet"></pre>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -38,7 +37,6 @@
                     <div class="content-box">
                         <p>The example below is showing a package waiting for the recipient to collect it at a pickup
                            point</p>
-                        <div class="codetabs ">
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -49,7 +47,6 @@
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </li>
 
@@ -62,7 +59,6 @@
                         <p>The example below is showing a package that has been loaded on a distribution car for delivery to
                            the recipient</p>
 
-                        <div class="codetabs ">
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -72,7 +68,6 @@
                                     <p>Response:</p>
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </li>
@@ -85,7 +80,6 @@
                     <div class="content-box">
                         <p>The example below is showing a package that has been delivered to the recipient</p>
 
-                        <div class="codetabs ">
                             <div data-tab="xml" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -96,7 +90,6 @@
                                     <pre class="code-box xml response delay-snippet"></pre>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </li>
             </ul>

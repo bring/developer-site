@@ -1,8 +1,8 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json">
         <div class="row-fluid">
 
             <div class="row element-sample">
-                <div class="codetabs">
                         <div data-tab="json" class="tab">
                             <div class="api-call">
                                 <p>Request:</p>
@@ -18,7 +18,6 @@
                                 <pre class="code-box json response delay-snippet"></pre>
                             </div>
                         </div>
-                </div>
             </div>
         </div>
     </div>

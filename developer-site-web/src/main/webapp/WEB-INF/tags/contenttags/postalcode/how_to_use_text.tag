@@ -1,5 +1,6 @@
-You have to specify the postal code and the country code to find the location with this API.<br/><br/> The
-        following countries are supported:
+<%@ tag language="java" pageEncoding="UTF-8"%>
+<p>You have to specify the postal code and the country code to find the location with this API.<br/><br/> The
+        following countries are supported:</p>
 
         <ul>
             <li><code>NO</code> - Norway</li>
@@ -18,4 +19,4 @@ You have to specify the postal code and the country code to find the location wi
         <p>For unsupported countries, all postal codes will be marked as valid with no city name returned. In these
             cases it is recommended to prompt the user to input the city name himself/herself.</p><br/>
 
-        To illustrate in a simple matter how to use this API, we provide an example.
+        <p>To illustrate in a simple matter how to use this API, we provide an example.</p>

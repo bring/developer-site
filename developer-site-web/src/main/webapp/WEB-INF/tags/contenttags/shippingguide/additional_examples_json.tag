@@ -1,13 +1,11 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json">
 
 <div class="row element-sample">
 <ul class="menu-group collapsing no-shadow">
 
 <li>
-    <a href="#" class="menu-item">
-        Multiple parcels in one query
-        <span class="arrow"></span>
-    </a>
+    <a href="#" class="menu-item"> Multiple parcels in one query <span class="arrow"></span> </a>
 
     <div class="content-box">
 
@@ -31,21 +29,19 @@
         </ol>
 
         <div class="">
-            <div class="codetabs">
-                <div class="row element-sample">
-                    <div data-tab="json" class="tab">
-                        <div class="api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
-                               data-internal="/proxy/shipping-guide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
-                                ../all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30 </a>
+            <div class="row element-sample">
+                <div data-tab="json" class="tab">
+                    <div class="api-call">
+                        <p>Request:</p>
+                        <a target="_blank" class="request"
+                           href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
+                           data-internal="/proxy/shipping-guide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+                            ../all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30 </a>
 
-                            <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
+                        <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
 
-                            <p>Response:</p>
-                            <pre class="code-box json response delay-snippet"></pre>
-                        </div>
+                        <p>Response:</p>
+                        <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
             </div>
@@ -54,8 +50,7 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item">International shipments
-        <span class="arrow"></span></a>
+    <a href="#" class="menu-item">International shipments <span class="arrow"></span></a>
 
     <div class="content-box">
         <div>
@@ -66,24 +61,23 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
-                <div class="tab-content tab-minimal">
+            <div class="tab-content tab-minimal">
 
-                    <div data-tab="json" class="tab">
-                        <div class="api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
-                               data-internal="/proxy/shipping-guide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
-                                ../products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a>
+                <div data-tab="json" class="tab">
+                    <div class="api-call">
+                        <p>Request:</p>
+                        <a target="_blank" class="request"
+                           href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
+                           data-internal="/proxy/shipping-guide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
+                            ../products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a>
 
-                            <p class="right">JSONP Request: <a
-                                    href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;callbackUrl=functionName">?callback=functionName</a>
-                            </p>
-                            <br>
-                            <p>Response:</p>
-                            <pre class="code-box json response delay-snippet"></pre>
-                        </div>
+                        <p class="right">JSONP Request: <a
+                                href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;callbackUrl=functionName">?callback=functionName</a>
+                        </p>
+                        <br>
+
+                        <p>Response:</p>
+                        <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
             </div>
@@ -92,8 +86,7 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item">International shipments to countries without postal codes
-        <span class="arrow"></span>
+    <a href="#" class="menu-item">International shipments to countries without postal codes <span class="arrow"></span>
     </a>
 
     <div class="content-box">
@@ -115,32 +108,28 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
-                        <div data-tab="json" class="tab">
-                        <div class="api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300"
-                               data-internal="/proxy/shipping-guide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300">
+                <div data-tab="json" class="tab">
+                    <div class="api-call">
+                        <p>Request:</p>
+                        <a target="_blank" class="request"
+                           href="http://fraktguide.bring.no/fraktguide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300"
+                           data-internal="/proxy/shipping-guide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300">
 <pre>../products/all.json?fromCountry=NO&amp;toCountry=IE
                    &amp;from=7600&amp;to=0&amp;toCity=Dublin
                    &amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300</pre>
-                            </a>
+                        </a>
 
-                            <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
-                            <p>Response:</p>
-                            <pre class="code-box json response delay-snippet"></pre>
-                        </div>
+                        <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
+                        <p>Response:</p>
+                        <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 </li>
 
 <li>
-    <a href="#" class="menu-item">Three ways to specify a package size
-        <span class="arrow"></span>
-    </a>
+    <a href="#" class="menu-item">Three ways to specify a package size <span class="arrow"></span> </a>
 
     <div class="content-box">
 
@@ -150,21 +139,18 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
                            data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500">
-                            ../products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500</a>
-                        <br>
-                        <br>
+                            ../products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500</a> <br> <br>
+
                         <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
 
-                </div>
             </div>
         </div>
 
@@ -174,7 +160,6 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -191,7 +176,6 @@
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
-            </div>
         </div>
 
         <div><h4>Volume</h4>
@@ -206,7 +190,6 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -223,15 +206,12 @@
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </li>
 
 <li>
-    <a href="#" class="menu-item">
-        Get the expected delivery date
-        <span class="arrow"></span></a>
+    <a href="#" class="menu-item"> Get the expected delivery date <span class="arrow"></span></a>
 
     <div class="content-box">
 
@@ -250,7 +230,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="json" class="tab">
                         <div class="api-call">
@@ -260,31 +239,27 @@
                                data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09">
                                 <pre>../products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09</pre>
                             </a>
+
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
 
                     </div>
 
-
                 </div>
-            </div>
 
         </div>
     </div>
 </li>
 
 <li>
-    <a href="#" class="menu-item">
-        Specify the pickup time from the departure point
-        <span class="arrow"></span>
-    </a>
+    <a href="#" class="menu-item"> Specify the pickup time from the departure point <span class="arrow"></span> </a>
 
     <div class="content-box">
 
         <div>
-            <p>Use this parameter if you would like to specify when during the day the package needs to be picked up from
-               the departure point.
+            <p>Use this parameter if you would like to specify when during the day the package needs to be picked up
+               from the departure point.
             </p>
 
             <p>This parameter is only considered for courier and express products.</p>
@@ -297,7 +272,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -314,7 +288,6 @@
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
-            </div>
         </div>
 
     </div>
@@ -322,10 +295,8 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item">
-        Specify whether or not the shipment has been pre-registered (EDI)
-        <span class="arrow"></span>
-    </a>
+    <a href="#" class="menu-item"> Specify whether or not the shipment has been pre-registered (EDI) <span
+            class="arrow"></span> </a>
 
     <div class="content-box">
 
@@ -340,7 +311,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -357,7 +327,6 @@
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
                 </div>
-            </div>
         </div>
 
     </div>
@@ -365,9 +334,7 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item">
-        Specify if the package was shipped from a post office
-        <span class="arrow"></span>
+    <a href="#" class="menu-item"> Specify if the package was shipped from a post office <span class="arrow"></span>
     </a>
 
     <div class="content-box">
@@ -385,7 +352,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="json" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -401,8 +367,6 @@
                         <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
                     </div>
-                </div>
-
             </div>
         </div>
 
@@ -411,14 +375,13 @@
 </li>
 
 <li>
-    <a href="#" class="menu-item">Adjust prices
-        <span class="arrow"></span></a>
+    <a href="#" class="menu-item">Adjust prices <span class="arrow"></span></a>
 
     <div class="content-box">
         <div class="row element-sample">
 
-            <p>The Shipping Guide provides adjustment of prices shown. This service is available both in JSON and in
-               the <a href="../widget/productselectionashtml.html?from=shipping">Product selection as HTML"-widget.</a>
+            <p>The Shipping Guide provides adjustment of prices shown. This service is available both in JSON and in the
+                <a href="../widget/productselectionashtml.html?from=shipping">Product selection as HTML"-widget.</a>
             </p>
 
             <p>To adjust the price, add <a
@@ -479,7 +442,6 @@
             </p>
 
             <div class="">
-                <div class="codetabs">
                     <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -499,8 +461,6 @@
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
                         </div>
-                    </div>
-
                 </div>
             </div>
 

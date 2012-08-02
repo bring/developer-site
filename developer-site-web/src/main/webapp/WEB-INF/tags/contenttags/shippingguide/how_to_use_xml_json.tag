@@ -1,4 +1,5 @@
-   <div data-tab="json xml">
+<%@ tag language="java" pageEncoding="UTF-8"%>
+<div data-tab="json xml">
             <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
                 others are optional, but any query to the Shipping Guide API must at least contain the following information:
             </p>
@@ -176,7 +177,6 @@
                href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN"
                data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN">
                 ../all.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=PA_DOREN </a>
-            </a>
 
             <p class="right">JSONP Request: <a
                     href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09&amp;callbackUrl=functionName">?callback=functionName</a>

@@ -1,19 +1,17 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <h4><p>Example: Using the postal code and the country code to lookup the location.</p></h4>
 
-        <div class="codetabs">
-                <div data-tab="xml" class="tab">
-                    <div class="api-call">
-                        <p>Request:</p>
-                        <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337"
-                           data-internal="/proxy/shipping-guide/api/postalCode.xml?country=no&amp;pnr=1337">
-                            /api/postalCode.xml?country=no&amp;pnr=1337 </a>
-                        <p>Response:</p>
-                        <pre class="code-box xml response delay-snippet"></pre>
-                    </div>
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
+                    <p>Request:</p>
+                    <a target="_blank" class="request"
+                       href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337"
+                       data-internal="/proxy/shipping-guide/api/postalCode.xml?country=no&amp;pnr=1337">
+                        /api/postalCode.xml?country=no&amp;pnr=1337 </a>
+                    <p>Response:</p>
+                    <pre class="code-box xml response delay-snippet"></pre>
                 </div>
             </div>
-        <div class="codetabs">
             <div data-tab="json" class="tab">
                 <div class="api-call">
                     <p>Request:</p>
@@ -29,8 +27,6 @@
                     <pre class="code-box json response delay-snippet"></pre>
                 </div>
             </div>
-        </div>
-        <div class="codetabs">
             <div data-tab="html" class="tab">
                 <div class="api-call">
                     <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
@@ -46,4 +42,3 @@
                     <pre class="code-box html response delay-snippet"></pre>
                 </div>
             </div>
-        </div>

@@ -1,4 +1,5 @@
- <div data-tab="soap">
+<%@ tag language="java" pageEncoding="UTF-8"%>
+<div data-tab="soap">
         <p>The webservices offers the most options when performing queries to the Shipping Guide.</p>
 
         <p><b>To execute the web-service you will need a identification string. To get this - please <a

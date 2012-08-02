@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <pre class="code-box">Request prefix:
 http://sporing.bring.no</pre>
 

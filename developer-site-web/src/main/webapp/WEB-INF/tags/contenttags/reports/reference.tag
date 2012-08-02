@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <pre class="code-box">Request prefix:
 https://www.mybring.com/reports/api</pre>
 

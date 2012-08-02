@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
 <div class="row element-sample">
@@ -31,7 +32,6 @@
         </ol>
 
         <div class="">
-            <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
@@ -45,7 +45,6 @@
                         </div>
 
                     </div>
-                </div>
             </div>
         </div>
     </div>
@@ -66,7 +65,6 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
                 <div class="tab-content tab-minimal">
 
                     <div data-tab="xml" class="tab">
@@ -81,7 +79,6 @@
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
 
-                    </div>
                 </div>
             </div>
         </div>
@@ -113,7 +110,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -128,7 +124,6 @@
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
                 </div>
-            </div>
         </div>
 
     </div>
@@ -148,7 +143,6 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -161,10 +155,6 @@
                     </div>
 
                 </div>
-
-
-
-            </div>
         </div>
 
         <div><h4>Package dimensions</h4></div>
@@ -173,7 +163,6 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -186,7 +175,6 @@
                     </div>
 
                 </div>
-            </div>
         </div>
 
         <div><h4>Volume</h4>
@@ -201,7 +189,6 @@
 
         </div>
         <div class="">
-            <div class="codetabs">
             <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -214,7 +201,6 @@
                         <pre class="code-box xml response delay-snippet"></pre>
                     </div>
 
-                </div>
             </div>
         </div>
     </div>
@@ -243,7 +229,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div class="row element-sample">
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
@@ -261,7 +246,6 @@
 
 
                 </div>
-            </div>
 
         </div>
     </div>
@@ -290,7 +274,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -304,7 +287,6 @@
                     </div>
 
                 </div>
-            </div>
         </div>
 
     </div>
@@ -330,7 +312,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -344,7 +325,6 @@
                     </div>
 
                 </div>
-            </div>
         </div>
 
     </div>
@@ -372,7 +352,6 @@
         </div>
 
         <div class="">
-            <div class="codetabs">
                 <div data-tab="xml" class="tab">
                     <div class="api-call">
                         <p>Request:</p>
@@ -386,7 +365,6 @@
                     </div>
 
                 </div>
-            </div>
         </div>
 
     </div>
@@ -464,7 +442,6 @@
             </p>
 
             <div class="">
-                <div class="codetabs">
                     <div data-tab="xml" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -482,7 +459,6 @@
                         </div>
 
                     </div>
-                </div>
             </div>
 
         </div>

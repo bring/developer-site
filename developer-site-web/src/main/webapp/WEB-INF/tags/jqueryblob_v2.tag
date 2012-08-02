@@ -10,7 +10,6 @@
 <script type="text/javascript" src="/js/lib/jquery.tableofcontents.js"></script>
 <script type="text/javascript" src="/js/lib/jsonFormatter.js"></script>
 <script type="text/javascript" src="/js/syntaxhighligther.js"></script>
-<script type="text/javascript" src="/js/codetabs.js"></script>
 <script type="text/javascript" src="/js/banner.js"></script>
 <script type="text/javascript" src="/js/exampleRequest.js"></script>
 <script type="text/javascript" src="/js/bootstrap-tabs.js"></script>

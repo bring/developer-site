@@ -1,3 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
 <ul class="menu-group collapsing no-shadow">
         <li>
             <a href="#" class="menu-item">Find pickup points containing a specified string
@@ -12,7 +13,6 @@
 
                 <div class="row element-sample">
                     <h4>Example: FIND THE PICKUP POINTS NEAR POSTAL CODE 1407 CONTAINING &quot;KIWI&quot;.</h4>
-                    <div class="codetabs">
                         <div data-tab="xml" class="tab">
                             <div class="api-call">
                                 <p>Request:</p>
@@ -24,9 +24,7 @@
                                 <pre class="code-box xml response delay-snippet"></pre>
                             </div>
                         </div>
-                    </div>
             </div>
-                        <div class="codetabs">
                             <div data-tab="json" class="tab">
                                 <div class="api-call">
                                     <p>Request:</p>
@@ -42,8 +40,6 @@
                                     <pre class="code-box json response delay-snippet"></pre>
                                 </div>
                             </div>
-
-                        </div>
                     </div>
         </li>
         <li>
@@ -62,35 +58,32 @@
 
                     <h4>Example: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON SUNDAYS.</h4>
 
-                        <div class="codetabs">
-                            <div data-tab="xml" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY">
-                                        /api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY </a>
-                                    <p>Response:</p>
-                                    <pre class="code-box xml response delay-snippet"></pre>
-                                </div>
+                        <div data-tab="xml" class="tab">
+                            <div class="api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY">
+                                    /api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY </a>
+                                <p>Response:</p>
+                                <pre class="code-box xml response delay-snippet"></pre>
                             </div>
+                        </div>
 
-                            <div data-tab="json" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY">
-                                        /api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY </a>
+                        <div data-tab="json" class="tab">
+                            <div class="api-call">
+                                <p>Request:</p>
+                                <a target="_blank" class="request"
+                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY">
+                                    /api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY </a>
 
-                                    <p class="right">JSONP Request: <a
-                                            href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a>
-                                    </p>
-                                    <p>Response:</p>
-                                    <pre class="code-box json response delay-snippet"></pre>
-                                </div>
+                                <p class="right">JSONP Request: <a
+                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a>
+                                </p>
+                                <p>Response:</p>
+                                <pre class="code-box json response delay-snippet"></pre>
                             </div>
-
                         </div>
                 </div>
             </div>
@@ -109,34 +102,30 @@
 
                     <h4>Example: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR BEFORE 08.00</h4>
 
-                        <div class="codetabs">
-                            <div data-tab="xml" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800">
-                                        /api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800 </a>
-                                    <pre class="code-box xml response delay-snippet"></pre>
-                                </div>
-                            </div>
+                    <div data-tab="xml" class="tab">
+                        <div class="api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800">
+                                /api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800 </a>
+                            <pre class="code-box xml response delay-snippet"></pre>
                         </div>
+                    </div>
 
-                    <div class="codetabs">
-                        <div data-tab="json" class="tab">
-                            <div class="api-call">
-                                <p>Request:</p>
-                                <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
-                                    /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800 </a>
+                    <div data-tab="json" class="tab">
+                        <div class="api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
+                                /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800 </a>
 
-                                <p class="right">JSONP Request: <a
-                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a>
-                                </p>
-                                <p>Response:</p>
-                                <pre class="code-box json response delay-snippet"></pre>
-                            </div>
+                            <p class="right">JSONP Request: <a
+                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a>
+                            </p>
+                            <p>Response:</p>
+                            <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
 
@@ -146,43 +135,34 @@
 
                     <h4>Example: PICKUP POINTS NEAR POSTAL CODE 1407 OPEN ON OR AFTER 22.00</h4>
 
-
-                        <div class="codetabs">
-                            <div data-tab="xml" class="tab">
-                                <div class="api-call">
-                                    <p>Request:</p>
-                                    <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200">
-                                        /api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200 </a>
-                                    <p>Response:</p>
-                                    <pre class="code-box xml response delay-snippet"></pre>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    <div class="codetabs">
-                        <div data-tab="json" class="tab">
-                            <div class="api-call">
-                                <p>Request:</p>
-                                <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
-                                    /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200 </a>
-
-                                <p class="right">JSONP Request: <a
-                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a>
-                                </p>
-                                <p>Response:</p>
-                                <pre class="code-box json response delay-snippet"></pre>
-                            </div>
+                    <div data-tab="xml" class="tab">
+                        <div class="api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200">
+                                /api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200 </a>
+                            <p>Response:</p>
+                            <pre class="code-box xml response delay-snippet"></pre>
                         </div>
                     </div>
 
+                    <div data-tab="json" class="tab">
+                        <div class="api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
+                                /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200 </a>
+
+                            <p class="right">JSONP Request: <a
+                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a>
+                            </p>
+                            <p>Response:</p>
+                            <pre class="code-box json response delay-snippet"></pre>
+                        </div>
+                    </div>
                 </div>
-
             </div>
-
         </li>
     </ul>

@@ -1,4 +1,6 @@
-   <p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest
+<%@ tag language="java" pageEncoding="UTF-8"%>
+
+<p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest
        delivery locations. The following examples illustrate the different alternatives. </p>
 
   <div data-tab="xml">
@@ -9,7 +11,6 @@
           <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
           <div class="">
-              <div class="codetabs">
                   <div data-tab="xml" class="tab">
                       <div class="api-call">
                           <p>Request:</p>
@@ -22,8 +23,6 @@
 
                       </div>
                   </div>
-
-              </div>
           </div>
 
       </div>
@@ -36,27 +35,23 @@
           <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
           <div class="">
-              <div class="codetabs">
-                  <div data-tab="json" class="tab">
-                      <div class="api-call">
-                          <p>Request:</p>
-                          <a target="_blank" class="request"
-                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
-                             data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
-                              /api/pickuppoint/postalcode/1407.json </a>
+              <div data-tab="json" class="tab">
+                  <div class="api-call">
+                      <p>Request:</p>
+                      <a target="_blank" class="request"
+                         href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
+                         data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
+                          /api/pickuppoint/postalcode/1407.json </a>
 
-                          <p class="right">JSONP Request: <a
-                                  href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a>
-                          </p>
-                          <p>Response:</p>
-                          <pre class="code-box json response delay-snippet"></pre>
+                      <p class="right">JSONP Request: <a
+                              href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a>
+                      </p>
+                      <p>Response:</p>
+                      <pre class="code-box json response delay-snippet"></pre>
 
-                      </div>
                   </div>
-
               </div>
           </div>
-
       </div>
 
   </div>
@@ -68,18 +63,16 @@
     <div data-tab="xml">
         <div class="row element-sample">
             <div class="">
-                <div class="codetabs">
-                    <div data-tab="xml" class="tab">
-                        <div class="api-call">
-                            <p>Request:</p>
-                            <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
-                                /api/pickuppoint/location/60.395226/5.321725.xml </a>
-                            <p>Response:</p>
-                            <pre class="code-box xml response delay-snippet"></pre>
+                <div data-tab="xml" class="tab">
+                    <div class="api-call">
+                        <p>Request:</p>
+                        <a target="_blank" class="request"
+                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
+                           data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
+                            /api/pickuppoint/location/60.395226/5.321725.xml </a>
+                        <p>Response:</p>
+                        <pre class="code-box xml response delay-snippet"></pre>
 
-                        </div>
                     </div>
                 </div>
             </div>
@@ -88,7 +81,6 @@
     <div data-tab="json">
         <div class="row element-sample">
             <div class="">
-                <div class="codetabs">
                     <div data-tab="json" class="tab">
                         <div class="api-call">
                             <p>Request:</p>
@@ -104,7 +96,6 @@
                             <pre class="code-box json response delay-snippet"></pre>
 
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -135,20 +126,16 @@
         <div data-tab="xml">
             <div class="row element-sample">
                 <div class="">
-                    <div class="codetabs">
-                        <div data-tab="xml" class="tab">
-                            <div class="api-call">
-
-                                <p>Request:</p>
-                                <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
-                                    /api/pickuppoint/id/121110.xml </a>
-                                <p>Response:</p>
-                                <pre class="code-box xml response delay-snippet"></pre>
-                            </div>
+                    <div data-tab="xml" class="tab">
+                        <div class="api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
+                                /api/pickuppoint/id/121110.xml </a>
+                            <p>Response:</p>
+                            <pre class="code-box xml response delay-snippet"></pre>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -156,21 +143,19 @@
         <div data-tab="json">
             <div class="row element-sample">
                 <div class="">
-                    <div class="codetabs">
-                        <div data-tab="json" class="tab">
-                            <div class="api-call">
-                                <p>Request:</p>
-                                <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
-                                    /api/pickuppoint/id/121110.json </a>
+                    <div data-tab="json" class="tab">
+                        <div class="api-call">
+                            <p>Request:</p>
+                            <a target="_blank" class="request"
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
+                                /api/pickuppoint/id/121110.json </a>
 
-                                <p class="right">JSONP Request: <a
-                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json?callbackUrl=functionName">?callback=functionName</a>
-                                </p>
-                                <p>Response:</p>
-                                <pre class="code-box json response delay-snippet"></pre>
-                            </div>
+                            <p class="right">JSONP Request: <a
+                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json?callbackUrl=functionName">?callback=functionName</a>
+                            </p>
+                            <p>Response:</p>
+                            <pre class="code-box json response delay-snippet"></pre>
                         </div>
                     </div>
                 </div>
