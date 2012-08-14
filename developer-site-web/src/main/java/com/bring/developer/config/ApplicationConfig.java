@@ -1,6 +1,5 @@
 package com.bring.developer.config;
 
-import com.bring.developer.interceptor.GoogleAnalyticsIDInterceptor;
 import org.apache.http.HttpHost;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.params.ConnRoutePNames;
@@ -14,13 +13,6 @@ import org.constretto.exception.ConstrettoExpressionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.HandlerMapping;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
-import org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping;
-
-import java.util.Map;
-import java.util.Properties;
 
 @Configuration
 public class ApplicationConfig {
@@ -33,6 +25,8 @@ public class ApplicationConfig {
     public static String GOOGLE_ANALYTICS_ID = "UA-33478893-1"; //default
     public static boolean CLASSPATH_XML_FILES = true; //default
 
+    public static String TEALIUM_URI = "qa";
+
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
         this.config = config;
@@ -40,6 +34,7 @@ public class ApplicationConfig {
         BOOKING_URL_FOR_ENVIRONMENT = config.evaluateToString("bookingUrl");
         CLASSPATH_XML_FILES = config.evaluateToBoolean("classpathXmlFiles");
         GOOGLE_ANALYTICS_ID = config.evaluateToString("googleAnalyticsID");
+        TEALIUM_URI = config.evaluateToString("developer.tealium.script.uri");
     }
 
     @Bean
