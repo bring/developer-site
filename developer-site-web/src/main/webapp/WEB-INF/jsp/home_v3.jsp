@@ -109,7 +109,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/artikler/edi-electronic-data-interchange">
+                                <a href="http://www.bring.no/hele-bring/edi-i-bring">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons"></div>
                                     <div class="api-menu-text"></div>
