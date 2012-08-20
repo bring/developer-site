@@ -25,7 +25,7 @@ public class ApplicationConfig {
     public static String GOOGLE_ANALYTICS_ID = "UA-33478893-1"; //default
     public static boolean CLASSPATH_XML_FILES = true; //default
 
-    public static String TEALIUM_URI = "qa";
+    public static String TEALIUM_URI;
 
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
