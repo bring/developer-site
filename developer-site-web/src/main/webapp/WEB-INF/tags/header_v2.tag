@@ -1,6 +1,23 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ attribute name="selected_tab" required="true" type="java.lang.String" rtexprvalue="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="delivery" uri="http://www.posten.no/developer" %>
+
+<script type="text/javascript">
+    /*
+     * This snippet loads tealium (utag.js) asynchronously.
+     */
+    (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'tealium';
+        t.src = '<delivery:tealiumUri/>';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+    })();
+</script>
+
 <header role="banner">
     <div class="inner group">
 
