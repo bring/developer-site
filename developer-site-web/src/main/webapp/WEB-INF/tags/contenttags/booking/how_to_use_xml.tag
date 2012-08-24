@@ -209,6 +209,11 @@ Host: www.mybring.com
             <td>PARCELS_NORWAY-10001123123</td>
         </tr>
         <tr>
+            <td>Bring Cargo, Norway</td>
+            <td>CARGO_GROUPAGE</td>
+            <td>CARGO_NORWAY-10001123123</td>
+        </tr>
+        <tr>
             <td>Bring Express, Norway</td>
             <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
             <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
