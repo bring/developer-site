@@ -5,11 +5,15 @@
 
 <ul>
     <li>
-        XSD: <a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd">https://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+        XSD: <a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">https://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
     </li>
 
     <li>
-        Endpoint: <a href="https://www.mybring.com/booking/api/ws">https://www.mybring.com/booking/api/ws</a>
+        Endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/booking" target="_blank">https://www.mybring.com/booking/api/booking</a>
+    </li>
+
+    <li>
+      Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers" target="_blank">https://www.mybring.com/booking/api/customers</a>
     </li>
 </ul>
 

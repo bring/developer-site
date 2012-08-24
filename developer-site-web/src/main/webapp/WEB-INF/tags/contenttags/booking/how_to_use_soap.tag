@@ -5,20 +5,16 @@
         <h4>Technical information</h4>
 
         <p>
-            WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
+            WSDL: <a href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl" target="_blank">https://beta.bring.com/booking/api/ws/booking-v1.wsdl</a>
         </p>
 
         <p>
-            XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+            XSD: <a href="http://beta.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">http://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
         </p>
 
         <p>
-            Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/booking">https://www.mybring.com/booking/api/booking</a>
+            Booking endpoint (use HTTP POST): <a href="https://www.mybring.com/booking/api/ws" target="_blank">https://www.mybring.com/booking/api/ws</a>
         </p>
-
-        <p>
-            Customer number endpoint (use HTTP GET): <a href="https://www.mybring.com/booking/api/customers">https://www.mybring.com/booking/api/booking</a>
-        </p><h4>Versioning strategy</h4>
 
         <p>
             Each request has a schemaVersion element indicating which release of the schema is being used in the request
