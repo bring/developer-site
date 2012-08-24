@@ -200,10 +200,10 @@
 <tr>
   <td>Cargo</td>
   <td><a target="_blank"
-         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2012-07-10"><code>CARGO_GROUPAGE</code></a>
+         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/all.xml?weightInGrams=44000&amp;from=7600&amp;to=1407&amp;date=2012-07-10"><code>CARGO_GROUPAGE</code></a>
   </td>
   <td><a target="_blank"
-         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2012-07-10">Yes</a>
+         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/price.xml?weightInGrams=44000&amp;from=7600&amp;to=1407&amp;date=2012-07-10">Yes</a>
   </td>
   <td><a target="_blank"
          href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=2012-07-10">Yes</a>
