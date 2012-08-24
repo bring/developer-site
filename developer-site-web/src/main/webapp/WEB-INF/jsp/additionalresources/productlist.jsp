@@ -198,6 +198,19 @@
 </tr>
 
 <tr>
+  <td>Cargo</td>
+  <td><a target="_blank"
+         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2012-07-10"><code>CARGO_GROUPAGE</code></a>
+  </td>
+  <td><a target="_blank"
+         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=2012-07-10">Yes</a>
+  </td>
+  <td><a target="_blank"
+         href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=2012-07-10">Yes</a>
+  </td>
+</tr>
+
+<tr>
     <td>CarryOn Business Norway</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=2012-07-10&amp;time=11:35"><code>CARRYON
