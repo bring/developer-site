@@ -51,7 +51,6 @@
             Additional examples</h2></div>
         <shippingguide:additional_examples_xml/>
         <shippingguide:additional_examples_json/>
-        <shippingguide:additional_examples_soap/>
 
     </div>
 </div>
