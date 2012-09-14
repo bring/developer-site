@@ -1,7 +1,9 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json">
 
-<h4>How to set customer numbers in Booking API</h4>
+<h4>Examples</h4>
+
+<h5>How to set customer numbers in Booking API</h5>
 
 <p>"customerNumber" is a value returned from the Customer number API. </p>
 
@@ -18,7 +20,7 @@
   </div>
 </div>
 
-<h4>Customer API - Sample JSON API Request</h4>
+<h5>Customer API - Sample JSON API Request</h5>
                 <pre class="code-box">GET /booking/api/customers HTTP/1.1
 Content-Type: application/json
 Accept: application/json
@@ -26,7 +28,7 @@ X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: www.mybring.com
 </pre>
-<h4>Getting customers when logged into mybring</h4>
+<h5>Getting customers when logged into mybring</h5>
 
 <p>
   You can also suffix the resource with a supported file name extension (.json) to force the response. This
