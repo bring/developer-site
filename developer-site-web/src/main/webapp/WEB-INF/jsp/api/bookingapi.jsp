@@ -37,6 +37,7 @@
 <h2><a name="HTU"></a>How to Use</h2>
 
 <booking:how_to_use_common_text/>
+<booking:specialist/>
 
     <div data-tab="soap">For the SOAP API, the Customer number API is included as an operation in the WSDL.</div>
 

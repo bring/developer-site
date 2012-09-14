@@ -1,6 +1,52 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json">
 
+<h4>How to set customer numbers in Booking API</h4>
+
+<p>"customerNumber" is a value returned from the Customer number API. </p>
+
+
+<div class="tab-content tab-minimal">
+  <div class="tab" data-tab="json">
+             <pre class="code-box">...
+"product": {
+    "id": "BPAKKE_DOR-DOR",
+    "customerNumber": "PARCELS_NORWAY-00001234567",
+}
+...
+</pre>
+  </div>
+</div>
+
+<h4>Customer API - Sample JSON API Request</h4>
+                <pre class="code-box">GET /booking/api/customers HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+X-MyBring-API-Uid: mybringuser@example.org
+X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
+Host: www.mybring.com
+</pre>
+<h4>Getting customers when logged into mybring</h4>
+
+<p>
+  You can also suffix the resource with a supported file name extension (.json) to force the response. This
+  enables testing in a web browser that is logged in to mybring. </p>
+                <pre class="code-box">  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a>
+</pre>
+
+<div data-tab="json" class="tab">
+  <div class="api-call">
+    <p>Request:</p>
+    <a target="_blank" class="request"
+       href="http://beta.bring.com/booking/api/bookingExamples/customers.json"
+       data-internal="/proxy/booking/api/bookingExamples/customers.json">
+      http://beta.bring.com/booking/api/bookingExamples/customers.json </a>
+
+    <p>Example response:</p>
+    <pre class="code-box json response delay-snippet"></pre>
+  </div>
+</div>
+
 <h4>Technical information</h4>
 
 <ul>
@@ -180,95 +226,6 @@ Host: www.mybring.com
                 <p>Request:</p>
                 <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.json"
                    data-internal="/proxy/booking/api/errors.json"> http://beta.bring.com/booking/api/errors.json </a>
-
-                <p>Example response:</p>
-                <pre class="code-box json response delay-snippet"></pre>
-            </div>
-        </div>
-</div>
-
-<div>
-
-    <h4>How to use the Customer API</h4>
-
-    <p>
-        You must be logged in to mybring to use the Customer API. You can test it as a normal mybring user using a web
-        browser, or you can use the mybring API-key to be authenticated to use the service programmatically. </p>
-
-    <p>
-        The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring
-        Express-products, we use a UUID to identify users. </p>
-    <table>
-        <thead>
-        <tr>
-            <th>Specialist</th>
-            <th>Example products</th>
-            <th>Example customerNumber</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Bring Parcels, Norway</td>
-            <td>BPAKKE_DOR-DOR, PA_DOREN, EKSPRESS09</td>
-            <td>PARCELS_NORWAY-10001123123</td>
-        </tr>
-        <tr>
-            <td>Bring Cargo, Norway</td>
-            <td>CARGO_GROUPAGE</td>
-            <td>CARGO_NORWAY-10001123123</td>
-        </tr>
-        <tr>
-            <td>Bring Express, Norway</td>
-            <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
-            <td>EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66</td>
-        </tr>
-        <tr>
-            <td>Bring Express, Sweden</td>
-            <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
-            <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
-        </tr>
-        </tbody>
-    </table>
-    <h5>How to set customer numbers in Booking API</h5>
-
-    <p>"customerNumber" is a value returned from the Customer number API. </p>
-
-
-        <div class="tab-content tab-minimal">
-            <div class="tab" data-tab="json">
-             <pre class="code-box">...
-"product": {
-    "id": "BPAKKE_DOR-DOR",
-    "customerNumber": "PARCELS_NORWAY-00001234567",
-}
-...
-</pre>
-            </div>
-        </div>
-
-    <h5>Customer API - Sample JSON API Request</h5>
-                <pre class="code-box">GET /booking/api/customers HTTP/1.1
-Content-Type: application/json
-Accept: application/json
-X-MyBring-API-Uid: mybringuser@example.org
-X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
-Host: www.mybring.com
-</pre>
-    <h5>Getting customers when logged into mybring</h5>
-
-    <p>
-        You can also suffix the resource with a supported file name extension (.json) to force the response. This
-        enables testing in a web browser that is logged in to mybring. </p>
-                <pre class="code-box">  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a>
-</pre>
-
-        <div data-tab="json" class="tab">
-            <div class="api-call">
-                <p>Request:</p>
-                <a target="_blank" class="request"
-                   href="http://beta.bring.com/booking/api/bookingExamples/customers.json"
-                   data-internal="/proxy/booking/api/bookingExamples/customers.json">
-                    http://beta.bring.com/booking/api/bookingExamples/customers.json </a>
 
                 <p>Example response:</p>
                 <pre class="code-box json response delay-snippet"></pre>
