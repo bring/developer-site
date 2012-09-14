@@ -137,7 +137,7 @@ Host: www.mybring.com
                href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">http://beta.bring.com/booking/api/bookingExamples/validRequest.xml </a>
 
-            <p>Example response:</p>
+            <p>Example request:</p>
             <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
