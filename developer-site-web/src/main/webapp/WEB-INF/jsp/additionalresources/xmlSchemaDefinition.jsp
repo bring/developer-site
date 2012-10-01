@@ -36,8 +36,8 @@
                             <p>Request:</p>
 
 
-                            <a target="_blank" class="request" href="http://beta.bring.no/sporing/sporing.xsd"
-                               data-internal="/proxy/tracking/sporing.xsd">…/sporing.xsd</a>
+                            <a target="_blank" class="request" href="http://beta.bring.no/sporing/api/schema/sporing-v1.xsd"
+                               data-internal="/proxy/tracking/sporing.xsd">…/sporing-v1.xsd</a>
 
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
