@@ -20,7 +20,7 @@
         var outputElement = $('#textResult');
         inputField.keyup(function() {
             if (inputField.val().length > 3) {
-                $.getJSON('http://local.bring.no:8080/fraktguide/products/SERVICEPAKKE/all.json?from=1473&to='+ inputField.val() +'&weightInGrams=3&date=2011-08-17&callback=?',
+                $.getJSON('http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/all.json?from=1473&to='+ inputField.val() +'&weightInGrams=3&date=2011-08-17&callback=?',
                         function(data){
                             outputElement.html('<ul><li>...det koste ' + data.Product.Price.PackagePriceWithoutAdditionalServices.AmountWithVAT + ' + mva.</li>' +
                                     ' <li>...transporttid være ' + data.Product.ExpectedDelivery.WorkingDays + ' virkedag(er). </li>' +
