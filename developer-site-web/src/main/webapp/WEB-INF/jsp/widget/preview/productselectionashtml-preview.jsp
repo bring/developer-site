@@ -12,13 +12,13 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#onlyhtml").live('click', function(event) {
-            window.open('http://local.bring.no:8080/fraktguide/products.html?from=7600&to=1473&weightInGrams=1000&date=2009-02-26', '','width=1080,height=800');
+            window.open('http://fraktguide.bring.no/fraktguide/products.html?from=7600&to=1473&weightInGrams=1000&date=2009-02-26', '','width=1080,height=800');
         });
         $("#onlyxml").live('click', function(event) {
-            window.open('http://local.bring.no:8080/fraktguide/products/all.xml?from=7600&to=1473&weightInGrams=1000&date=2009-02-26', '','width=1080,height=800');
+            window.open('http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1473&weightInGrams=1000&date=2009-02-26', '','width=1080,height=800');
         });
         $("#onlycss").live('click', function(event) {
-            window.open('http://local.bring.no:8080/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');
+            window.open('http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');
         });
     });
 </script>
