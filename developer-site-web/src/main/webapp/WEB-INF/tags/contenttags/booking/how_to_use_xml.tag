@@ -231,19 +231,16 @@ Host: www.mybring.com
 
 <div>
 
-  <h4>PickUp when using specialist Bring Cargo</h4>
-
-  <p>Pickup is default set when ordering CARGO_GROUPAGE shipment. These pickup orders is aggregated in the same day.</p>
-
+  <booking:cargo_groupage_defaults />
   <div class="tab-content tab-minimal">
     <div class="tab" data-tab="xml">
-            <pre class="code-box">...
+      <pre class="code-box">...
 &lt;product&gt;
     &lt;id&gt;CARGO_GROUPAGE&lt;/id&gt;
     &lt;customerNumber&gt;CARGO_NORWAY-10001123123&lt;/customerNumber&gt;
 &lt;/product&gt;
 ...
-</pre>
+      </pre>
     </div>
   </div>
 
