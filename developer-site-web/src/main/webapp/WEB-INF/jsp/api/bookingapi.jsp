@@ -38,6 +38,7 @@
 
 <booking:how_to_use_common_text/>
 <booking:specialist/>
+<booking:cargo_groupage_defaults />
 
     <div data-tab="soap"><p>For the SOAP API, the Customer number API is included as an operation in the <a
         href="https://beta.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p></div>

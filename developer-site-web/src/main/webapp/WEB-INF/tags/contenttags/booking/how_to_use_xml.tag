@@ -1,3 +1,4 @@
+<%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -230,20 +231,6 @@ Host: www.mybring.com
 </div>
 
 <div>
-
-  <booking:cargo_groupage_defaults />
-  <div class="tab-content tab-minimal">
-    <div class="tab" data-tab="xml">
-      <pre class="code-box">...
-&lt;product&gt;
-    &lt;id&gt;CARGO_GROUPAGE&lt;/id&gt;
-    &lt;customerNumber&gt;CARGO_NORWAY-10001123123&lt;/customerNumber&gt;
-&lt;/product&gt;
-...
-      </pre>
-    </div>
-  </div>
-
 
 </div>
 </div>
