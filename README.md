@@ -2,9 +2,19 @@
 
 The developer site relies on rake for building and deployment. For an overview of the available commands, run
 <pre>
-$ rake -T
+  rake -T
 </pre>
 
+#Start the server locally for development
+first build the project with maven
+<pre>
+  mvn clean install
+</pre>
+start the server (from top directory)
+<pre>
+  sh jetty.sh
+</pre>  
+server should be started on localhost listening on port 8082
 
 ## Hosts
 
