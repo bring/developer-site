@@ -1,3 +1,4 @@
+<%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -230,23 +231,6 @@ Host: www.mybring.com
 </div>
 
 <div>
-
-  <h4>PickUp when using specialist Bring Cargo</h4>
-
-  <p>Pickup is default set when ordering CARGO_GROUPAGE shipment. These pickup orders is aggregated in the same day.</p>
-
-  <div class="tab-content tab-minimal">
-    <div class="tab" data-tab="xml">
-            <pre class="code-box">...
-&lt;product&gt;
-    &lt;id&gt;CARGO_GROUPAGE&lt;/id&gt;
-    &lt;customerNumber&gt;CARGO_NORWAY-10001123123&lt;/customerNumber&gt;
-&lt;/product&gt;
-...
-</pre>
-    </div>
-  </div>
-
 
 </div>
 </div>
