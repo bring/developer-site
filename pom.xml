@@ -11,7 +11,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <constretto.version>1.1</constretto.version>
-        <spring.version>3.1.1.RELEASE</spring.version>
+
+        <!-- NB! Do not change Spring version without testing API examples, e.g. for the shippingguide. -->
+        <spring.version>3.0.5.RELEASE</spring.version>
+
         <org.slf4j.version>1.5.11</org.slf4j.version>
 
         <jetty.version>8.1.0.v20120127</jetty.version>
