@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json xml">
-            <p> The Shipping Guide API is quite complex and supports a number of parameters. Some parameters are mandatory,
+            <p> The Shipping Guide API supports a number of parameters. Some parameters are mandatory,
                 others are optional, but any query to the Shipping Guide API must at least contain the following information:
             </p>
         </div>
