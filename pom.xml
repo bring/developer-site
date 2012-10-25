@@ -5,6 +5,11 @@
     <groupId>com.bring</groupId>
     <artifactId>developer-site-all</artifactId>
     <name>Bring developer site: All</name>
+    <parent>
+      <groupId>com.bring</groupId>
+      <artifactId>bring-uber-pom</artifactId>
+      <version>1.4.1</version>
+    </parent>
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <properties>
@@ -131,42 +136,8 @@
     
     <repositories>
         <repository>
-            <id>codehaus</id>
-            <url>http://repository.codehaus.org</url>
-        </repository>
-<!--
-        <repository>
-            <id>org.jboss.repository.maven</id>
-            <url>http://repository.jboss.org/maven2</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
--->
-        <repository>
             <id>bring.releases</id>
             <url>http://ci.bd.bring.no/nexus/content/repositories/releases</url>
-        </repository>
-        <repository>
-            <id>bring.thirdparty</id>
-            <url>http://ci.bd.bring.no/nexus/content/repositories/thirdparty</url>
-        </repository>
-        <repository>
-            <id>java.net-m2</id>
-            <name>java.net M2</name>
-            <url>http://download.java.net/maven/2</url>
         </repository>
     </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>bring.releases</id>
-            <url>http://ci.bd.bring.no/nexus/content/repositories/releases</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>bring.thirdparty</id>
-            <url>http://ci.bd.bring.no/nexus/content/repositories/thirdparty</url>
-        </pluginRepository>
-    </pluginRepositories>
-
 </project>
