@@ -82,15 +82,9 @@
 
 <tr >
     <td>Bedriftspakke Ekspress-Over natten 07</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS07/all.xml?weightInGrams=1500&amp;from=1407&amp;to=9007&amp;date=2012-07-10"><code>EKSPRESS07</code></a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS07/price.xml?weightInGrams=1500&amp;from=1407&amp;to=9007&amp;date=2012-07-10">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS07/expectedDelivery.xml?from=1407&amp;to=9007&amp;date=2012-07-10">Yes</a>
-    </td>
+    <td>Product is discontinued</td>
+    <td>NO</td>
+    <td>NO</td>
 </tr>
 
 <tr>
