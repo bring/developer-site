@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="shippingguide" tagdir="/WEB-INF/tags/contenttags/shippingguide" %>
 <div data-tab="soap">
         <p>The webservices offers the most options when performing queries to the Shipping Guide.</p>
 
@@ -16,4 +17,7 @@
                                                                                                                         codes</a>
            and <a href="../additionalresources/errorhandling.html?from=shipping">error codes</a>.
         </p>
-    </div>
+
+        <shippingguide:evarsling_notice/>
+
+</div>

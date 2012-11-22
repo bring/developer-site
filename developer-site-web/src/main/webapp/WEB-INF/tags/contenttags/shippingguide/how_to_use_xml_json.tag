@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="shippingguide" tagdir="/WEB-INF/tags/contenttags/shippingguide" %>
 <div data-tab="json xml">
             <p> The Shipping Guide API supports a number of parameters. Some parameters are mandatory,
                 others are optional, but any query to the Shipping Guide API must at least contain the following information:
@@ -101,6 +102,9 @@
                                           your pid is <b>460cb92b0767</b>. This makes it possible for us to send
                                           any relevant messages via the registered e-mail address.
             </div>
+
+            <shippingguide:evarsling_notice/>
+
 
             <p><b>Example:</b> Here is an example combining some of the parameters covered. The request is for a package with <code>weightInGrams=1500</code>,
                 <code>from=7600</code> and <code>to=1407</code>.
