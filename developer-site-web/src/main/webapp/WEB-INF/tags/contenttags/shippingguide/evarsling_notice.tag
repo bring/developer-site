@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div class="information-box">
-  Make sure you specify the correct Additional Services for a package when querying the Shipping Guide.
+  Make sure you specify the correct additional services for a package when querying the Shipping Guide.
   <br/><br/>
   Especially the "eVarsling" additional service for the Servicepakke product (recipient notification over SMS or E-Mail) will affect the
   base package price returned from the Shipping Guide, and should therefore be set according to what will be sent in the actual EDI message.

@@ -394,7 +394,11 @@
 <h4><a name="additionalServices"></a>Additional Services</h4>
 
 <p>The Shipping Guide supports the additional services listed in the table below.
-   The value in the column "additional service code" is used when accessing the service. The links are to examples using XML API.
+   The value in the column "additional service code" is used when accessing the service.
+</p>
+<p>
+  The links are to examples using XML API. See the <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL/XML Schema page</a>
+   for how to set these additional services in a SOAP request.
 </p>
 <div class="information-box">
   Some additional services get their own price in the response from the Shipping Guide, others are included (and change) the base package price.
@@ -407,8 +411,8 @@
     <thead>
     <tr>
         <th>Additional Service Code</th>
+        <th>Additional Service</th>
         <th>Applies to</th>
-        <th>Name</th>
         <th>Affects base package price?</th>
     </tr>
     </thead>
@@ -418,8 +422,8 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=EVARSLING">EVARSLING</a>
         </td>
+        <td>Recipient notification over SMS or E-Mail</td>
         <td>BPAKKE_DOR-DOR, SERVICEPAKKE, EKSPRESS09</td>
-        <td>eVarsling</td>
         <td>Yes, causes lower base package price from 2013-01-01</td>
     </tr>
 
@@ -427,26 +431,26 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=POSTOPPKRAV">POSTOPPKRAV</a>
         </td>
+        <td>Cash on Delivery</td>
         <td>A-POST, B-POST, BPAKKE_DOR-DOR, SERVICEPAKKE, PA_DOREN, EKSPRESS09</td>
-        <td>Postoppkrav</td>
-        <td>No, is a stand alone price</td>
+        <td>No, is a stand-alone price</td>
     </tr>
 
     <tr>
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;additional=LORDAGSUTKJORING">LORDAGSUTKJORING</a>
         </td>
+        <td>Delivery on Saturdays</td>
         <td>EKSPRESS09</td>
-        <td>Lørdagsutkjøring</td>
-        <td>No, is a stand alone price</td>
+        <td>No, is a stand-alone price</td>
     </tr>
 
     <tr>
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_DAY_CERTAIN/price.xml?weightInGrams=1500&amp;length=10&amp;width=10&amp;height=10&amp;from=0150&amp;fromCountry=NO&amp;to=80339&amp;toCountry=DE&amp;additional=ENVELOPE">ENVELOPE</a>
         </td>
+        <td>QuickPack Envelope</td>
         <td>QUICKPACK_OVER_NIGHT_0900, QUICKPACK_OVER_NIGHT_1200, QUICKPACK_DAY_CERTAIN</td>
-        <td>Envelope</td>
         <td>Yes, causes lower base package price</td>
     </tr>
 
@@ -454,9 +458,9 @@
         <td><a target="_blank"
                href="http://fraktguide.bring.no/fraktguide/products/CARGO_GROUPAGE/price.xml?weightInGrams=150000&amp;length=100&amp;width=100&amp;height=100&amp;from=0150&amp;to=0484&amp;additional=ADVISERING">ADVISERING</a>
         </td>
+        <td>Bring contacts recipient</td>
         <td>CARGO_GROUPAGE</td>
-        <td>Advisering</td>
-        <td>No, is a stand alone price</td>
+        <td>No, is a stand-alone price</td>
     </tr>
 
     </tbody>
