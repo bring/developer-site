@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 
@@ -76,9 +77,16 @@
                 </div>
                 <div class="span3">
                     <div class="sidebar" id="sidebar">
-                        <%--This page does not use misc:sidebar to resolve sidebar,
-                        because it does not make any sense to use any other sidebar on this page. --%>
-                        <sidebar:support-sidebar/>
+                        <c:choose>
+                          <c:when test="${not empty param.from}">
+                            <%-- resolve correct sidebar --%>
+                            <misc:sidebar/>
+                          </c:when>
+                          <c:otherwise>
+                            <%-- use default support sidebar --%>
+                            <sidebar:support-sidebar/>
+                          </c:otherwise>
+                        </c:choose>
                     </div>
                 </div>
             </div>

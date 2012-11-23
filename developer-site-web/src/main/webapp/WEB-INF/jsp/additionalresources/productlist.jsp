@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="shippingguide" tagdir="/WEB-INF/tags/contenttags/shippingguide" %>
 
 <!DOCTYPE html>
 
@@ -399,8 +400,10 @@
 
 <h4><a name="additionalServices"></a>Additional Services</h4>
 
-<p>The Shipping Guide offers some functionality regarding additional services. Please use the provided codes below when
-    accessing the service. The links are to examples using XML API.</p>
+<p>The Shipping Guide supports the additional services listed in the table below.
+   The value in the column "additional service code" is used when accessing the service. The links are to examples using XML API.</p>
+
+<shippingguide:evarsling_notice/>
 
 <table class="productlist">
     <thead>
