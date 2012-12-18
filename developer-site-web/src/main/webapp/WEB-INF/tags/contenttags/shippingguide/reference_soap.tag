@@ -53,8 +53,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>/RequestProperties/ PostingAtPostoffice</td>
-                    <td>Flag to indicate that the packages will be delivered to a post office terminal (may affect the price in
+                    <td>/RequestProperties/PostingAtPostoffice</td>
+                    <td>Flag to indicate that the packages will be delivered to a post office (may affect the price in
                         certain cases)
                     </td>
                     <td>false
