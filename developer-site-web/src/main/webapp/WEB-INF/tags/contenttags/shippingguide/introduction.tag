@@ -1,22 +1,41 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
-<p>The Shipping Guide (Fraktguiden) is a free service from Bring that is useful for anyone in need of price
-   information, service area or estimated delivery times for different shipping alternatives delivered by Bring.
-   With the shipping guide it is easy to offer different shipping alternatives to your customers: whether they want
-   their products delivered in their mail box, wish to pick them up at the post office or want home delivery in the
-   evening. The customers may also choose different shipping methods based on how fast and when they want their
-   products delivered. The shipping guide calculates the delivery time and the price based on postal code. Which of
-   the different shipping alternatives you want to offer and display in your web shop is up to you..
-</p>
-
 <p>
-    <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo</a>
+  The Shipping Guide (Fraktguiden) is a free service from Bring that provides
+  <ul>
+    <li>price information,</li>
+    <li>service area (norwegian: dekningsområde), and</li>
+    <li>estimated delivery times</li>
+  </ul>
+  ... for most shipping alternatives offered by Bring.
+</p>
+<p>
+  With the shipping guide it is easy to offer different shipping alternatives to your end customers. Whether they want to
+  <ul>
+    <li>get delivery to the door (daytime or evening),</li>
+    <li>pick up the shipment at a post office, or</li>
+    <li>get the shipment delivered to the mailbox</li>
+  </ul>
+</p>
+<p>
+  The customers may also choose different shipping alternatives based on how fast they want delivery, e.g. courier products.
+</p>
+<p>
+    <b>
+      <a href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=0484&amp;to=0150&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;product=ekspress09&amp;product=b-post&amp;product=courier_1h&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">Demo shipping alternatives form</a>
+    </b>
     (Norwegian)
 </p>
-
-<p>All Shipping Guide services are basically the same service, but there are different methods of integration
-   available: XML, JSON and Web Service<sup>1</sup>. Choose the option that fits your need best. Web Services is the
-   core service with all functionality. There are some limitations in the XML/JSON API, such as the inability to
-   mark a parcel as a specialized goods.
+<p>
+    The demo shows the recommended way to present the shipping alternatives, not using their product names, but focusing on delivery method.
+    The Shipping Guide returns product categories for each request, making a shipping alternatives-page easy to set up.
+</p>
+<p>
+  The Shipping Guide has several interfaces (SOAP and XML/JSON).
+  Choose the option that fits your need best (see table below). The SOAP interface is the core service with complete functionality.
+  There are some limitations in the XML/JSON API, such as the inability to mark a parcel as a specialized goods.
+</p>
+<p>
+  There is also a <a href="/additionalresources/offlinedata.html?from=shipping">Offline SOAP service</a> for retrieving data for offline use (get prices, service area and delivery times based on a fixed consignor postal code).
 </p>
 
 <table>
@@ -29,22 +48,18 @@
     </thead>
     <tbody>
         <tr>
-            <td>XML API is an easy way to integrate the Shipping Guide with an online store. The method provides
-                access to data from Bring via a single interface.
+            <td>The XML API is an easy way to integrate with the Shipping Guide using plain HTTP clients. It is also the best API to use when exploring the service.
             </td>
             <td>Web browsers can retrieve information from external sites if the data are made available in JSONP
                 format. The purpose is that you can paste HTML / Javascript on your web page and easily use data
-                from the Shipping guide without server components on your web page.
+                from the Shipping Guide without server components on your web page.
             </td>
-            <td>With Online Web Services, you can look up price, transportation, area coverage and product
-                information for each product as required. For advanced users we recommend the Web Services with
-                several options in the query.
+            <td>The SOAP API has the complete feature set of the Shipping Guide. It requires a SOAP client and the use of our <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL</a>.
+              It has an Online version (one request per shipment) or an offline version (e.g. nightly fetch prices, service area and delivery times based on a fixed consignor postal code).
             </td>
 
         </tr>
     </tbody>
 </table>
 
-<sup>1 You can also use <a href="../additionalresources/offlinedata.html?from=shipping">Offline data</a> as an
-     integration method</sup>
 
