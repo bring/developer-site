@@ -47,6 +47,8 @@
 <booking:how_to_use_json/>
 <booking:how_to_use_soap/>
 
+<booking:performance/>
+
 </div>
 </div>
 </div>
