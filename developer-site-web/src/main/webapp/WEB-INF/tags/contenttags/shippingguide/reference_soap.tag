@@ -2,7 +2,7 @@
 <div data-tab="soap">
 
         <div class="api-call">
-        <h5>Request Reference</h5>
+        <h4>Request Reference</h4>
         <table>
             <colgroup width="100"></colgroup>
             <colgroup width="100"></colgroup>
@@ -144,7 +144,7 @@
                 </tr>
         </table>
 
-        <h5>Response Reference</h5>
+        <h4>Response Reference</h4>
         <table>
             <colgroup width="95"></colgroup>
             <colgroup width="100"></colgroup>

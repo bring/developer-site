@@ -37,8 +37,7 @@
     </ul>
 
     <div class="box">
-        <h2><a name="reference"></a>
-            Reference</h2>
+        <h2><a name="reference"></a>Reference</h2>
         <shippingguide:reference_xml_json/>
         <shippingguide:reference_soap/>
 
@@ -47,7 +46,7 @@
         <shippingguide:how_to_use_xml_json/>
         <shippingguide:how_to_use_soap/>
 
-        <div data-tab="xml json soap"><hr><h2><a name="additionalExamples"></a>
+        <div data-tab="xml json"><hr><h2><a name="additionalExamples"></a>
             Additional examples</h2></div>
         <shippingguide:additional_examples_xml/>
         <shippingguide:additional_examples_json/>

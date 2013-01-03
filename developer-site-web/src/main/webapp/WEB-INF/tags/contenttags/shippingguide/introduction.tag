@@ -1,23 +1,20 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <p>
-  The Shipping Guide (Fraktguiden) is a free service from Bring that provides
+  The Shipping Guide (Fraktguiden) is a free service from Bring that&mdash;for most shipping alternatives offered by Bring&mdash;provides
   <ul>
     <li>price information,</li>
     <li>service area (norwegian: dekningsområde), and</li>
-    <li>estimated delivery times</li>
+    <li>estimated delivery times.</li>
   </ul>
-  ... for most shipping alternatives offered by Bring.
 </p>
 <p>
-  With the shipping guide it is easy to offer different shipping alternatives to your end customers. Whether they want to
+  With the Shipping Guide it is easy to offer different shipping alternatives to your end customers. Whether they want to
   <ul>
     <li>get delivery to the door (daytime or evening),</li>
     <li>pick up the shipment at a post office, or</li>
     <li>get the shipment delivered to the mailbox</li>
   </ul>
-</p>
-<p>
-  The customers may also choose different shipping alternatives based on how fast they want delivery, e.g. courier products.
+  The Shipping Guide returns the recommended way to present these shipping alternatives, as well as prices and delivery times.
 </p>
 <p>
     <b>
@@ -26,16 +23,17 @@
     (Norwegian)
 </p>
 <p>
-    The demo shows the recommended way to present the shipping alternatives, not using their product names, but focusing on delivery method.
-    The Shipping Guide returns product categories for each request, making a shipping alternatives-page easy to set up.
+  The demo shows that the Shipping Guide returns product categories for each request, making a shipping alternatives-page easy to set up.
+  The focus is on delivery methods to the end customer, not product names.
 </p>
 <p>
   The Shipping Guide has several interfaces (SOAP and XML/JSON).
-  Choose the option that fits your need best (see table below). The SOAP interface is the core service with complete functionality.
+  Choose the option that fits your needs best (see table below).
+  The SOAP interface is the core interface with complete functionality.
   There are some limitations in the XML/JSON API, such as the inability to mark a parcel as a specialized goods.
 </p>
 <p>
-  There is also a <a href="/additionalresources/offlinedata.html?from=shipping">Offline SOAP service</a> for retrieving data for offline use (get prices, service area and delivery times based on a fixed consignor postal code).
+  There is also a <a href="/additionalresources/offlinedata.html?from=shipping">Offline SOAP service</a> for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
 </p>
 
 <table>
@@ -48,11 +46,11 @@
     </thead>
     <tbody>
         <tr>
-            <td>The XML API is an easy way to integrate with the Shipping Guide using plain HTTP clients. It is also the best API to use when exploring the service.
+            <td>The XML API is an easy way to integrate with the Shipping Guide using plain HTTP clients. It is also the best API to use when exploring the service using a web browser.
             </td>
-            <td>Web browsers can retrieve information from external sites if the data are made available in JSONP
+            <td>Web browsers can (using JavaScript) retrieve information from external sites if the data are made available in JSONP
                 format. The purpose is that you can paste HTML / Javascript on your web page and easily use data
-                from the Shipping Guide without server components on your web page.
+                from the Shipping Guide without server components on your web page. See <a href="/widget/displayshippingguideinformationusingjsonp.html?from=shipping">widgets</a>.
             </td>
             <td>The SOAP API has the complete feature set of the Shipping Guide. It requires a SOAP client and the use of our <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL</a>.
               It has an Online version (one request per shipment) or an offline version (e.g. nightly fetch prices, service area and delivery times based on a fixed consignor postal code).
