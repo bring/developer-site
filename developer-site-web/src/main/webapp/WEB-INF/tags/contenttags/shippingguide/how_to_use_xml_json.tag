@@ -49,16 +49,18 @@
 </div>
 
 <div data-tab="xml json">
-    <div class="information-box"> Please add the name of the web-shop to the HTTP header "User-Agent" on
-                                  each request to the service. If available, the name of the web-shop
-                                  owner should also be added to the request. If you have a registered
-                                  user at fraktguide.bring.no, please also include XML API's Public ID
-                                  parameter in the query. Public ID is your personal Shipping Guide
-                                  account id. It is a sequence of alphanumeric characters after the last
-                                  dash in your identification. (Please login to see your identification
-                                  string). If your Shipping Guide IE is: 372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b>
-                                  your pid is <b>460cb92b0767</b>. This makes it possible for us to send
-                                  any relevant messages via the registered e-mail address.
+    <div class="information-box">
+        If you have a registered
+        user at fraktguide.bring.no (recommended!), please include a Public ID
+        parameter in the query. E.g. if your Shipping Guide ID is: 372b269a-4f07-4c4e-92b9-<b>460cb92b0767</b>
+        you set the public id with <b>pid=460cb92b0767</b>.
+        <br/>
+        <br/>
+        This makes it possible for us to send any relevant messages via the registered e-mail address.
+        <br/>
+        <br/>
+        If you have not registred a user for the client, please add the name of the web-shop to the HTTP header "User-Agent" on
+        each request to the service. If available, the name of the web-shop owner should also be set.
     </div>
 
     <shippingguide:evarsling_notice/>
@@ -79,7 +81,7 @@
 
 <div data-tab="json xml">
     <div class="information-box">Shipping Guide specifies VAT related to senders country. It's up to the client to decide if
-                                 VAT is applicable to their situation of sale
+                                 VAT is applicable to their situation of sale.
     </div>
 </div>
 
