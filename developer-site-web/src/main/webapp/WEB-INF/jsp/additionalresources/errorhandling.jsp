@@ -25,11 +25,17 @@
     </div>
     <div class="box">
         <p>
-            When using the Shipping Guide several errors can occur. Thus it is important to use
-            timeouts and error handling when making requests to the service. How you handle errors
+            When using the Shipping Guide, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use
+            timeouts and other error handling techniques when making requests to the service.
+        </p>
+        <p>
+            How you handle errors
             depends on the nature of your application, but one strategy for handling such situations is
-            by providing a failover. For instance your application can respond to an error by using
-            the offline data set to calculate prices and delivery time estimates. Another alternative would be
+            by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
+        </p>
+        <p>
+          For instance your application can respond to an error by using
+            prefetched <a href="/additionalresources/offlinedata.html?from=shipping">offline data</a> to calculate prices and delivery time estimates. Another alternative would be
             to use a a fixed standard price whenever an error occurs.
         </p>
 

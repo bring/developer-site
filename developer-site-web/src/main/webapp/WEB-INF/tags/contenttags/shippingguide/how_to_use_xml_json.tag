@@ -63,29 +63,15 @@
         each request to the service. If available, the name of the web-shop owner should also be set.
     </div>
 
+
+</div>
+
+
+<shippingguide:common_warnings/>
+
+<div data-tab="json xml">
     <shippingguide:evarsling_notice/>
 
-</div>
-
-
-<div data-tab="xml json">
-    <div class="information-box">When using the Shipping Guide, it is important to handle errors gracefully. Your web shop's
-                                 users should still be able to order, even if the Shipping Guide returns an error or a
-                                 timeout occurs.
-      <a href="../additionalresources/errorhandling.html?from=shipping">
-        Read more about error handling and error codes.
-      </a>
-    </div>
-
-</div>
-
-<div data-tab="json xml">
-    <div class="information-box">Shipping Guide specifies VAT related to senders country. It's up to the client to decide if
-                                 VAT is applicable to their situation of sale.
-    </div>
-</div>
-
-<div data-tab="json xml">
     <p>The Shipping Guide API has a lot of optional parameters not covered in this tutorial, and we recommend that you get
        familiar with the reference table and look at all the additional examples for further study.
     </p>

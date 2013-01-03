@@ -10,6 +10,8 @@
        and <a href="../additionalresources/errorhandling.html?from=shipping">error handling</a>.
     </p>
 
+    <shippingguide:common_warnings/>
+
     <shippingguide:evarsling_notice/>
 
 </div>
