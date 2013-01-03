@@ -1,6 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="shippingguide" tagdir="/WEB-INF/tags/contenttags/shippingguide" %>
 <div data-tab="xml json">
+  <h2><a name="HTU"></a>How to Use</h2>
   <p>
     For a given shipment from A to B, the core way to use the Shipping Guide is to query for <em>all</em> the products you know how to send (e.g. the products you have a customer agreement for).
     From that given set of products specified in the request, the Shipping Guide will return the products that are relevant for the shipment, based on product attributes (e.g. max package size and weight)

@@ -1,8 +1,20 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="soap">
+    <h2><a name="reference"></a>Reference</h2>
+    <div class="api-call">
+        <p>The web service interface offers the most options when performing queries to the Shipping Guide.</p>
 
-        <div class="api-call">
-        <h4>Request Reference</h4>
+        <p><b>To execute the web-service you will need a user code (identification string). To get this, please <a
+                href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
+
+        <p>
+          <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL and XML Schema documentation</a>
+        </p>
+        <p>
+        The table below lists the most important elements. For complete XML Schema Reference, see the
+        automatically generated <a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do" target="_blank">XML Schema Reference</a>.
+        </p>
+        <h4>Request elements</h4>
         <table>
             <colgroup width="100"></colgroup>
             <colgroup width="100"></colgroup>
@@ -17,38 +29,34 @@
             <tbody>
                 <tr>
                     <td>/UserInformation/Usercode</td>
-                    <td>Identificator String</td>
+                    <td>Identifies the client</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/RequestProperties/*</td>
-                    <td>Contains optional elements that can be used to affect the response</td>
-                    <td></td>
+                  <td>/Packages/Package/FromPostalCode</td>
+                  <td>Postalcode from (sender)</td>
+                  <td></td>
                 </tr>
                 <tr>
-                    <td>/RequestProperties/Language</td>
-                    <td>Language of the response. At the moment, only Norwegian is supported.</td>
-                    <td>no</td>
+                  <td>/Packages/Package/ToPostalCode</td>
+                  <td>Postalcode to (recipient)</td>
+                  <td></td>
                 </tr>
                 <tr>
-                    <td>/RequestProperties/WithPrice/</td>
-                    <td>Flag to indicate if prices should be returned.</td>
-                    <td>true</td>
-                </tr>
-                <tr>
-                    <td>/RequestProperties/ WithExpectedDelivery</td>
-                    <td>Flag to indicate if expected deliver date is to be returned</td>
-                    <td>true
-                    </td>
+                  <td>/Packages/Package/ShippingDate/*</td>
+                  <td>Date to ship (delivery date to the postal service) within the shipment/pickup date-time. If date is
+                    given, you will receive a "ExpectedDelivery" element in ShippingGuideResponse
+                  </td>
+                  <td></td>
                 </tr>
                 <tr>
                     <td>/RequestProperties/ NumberOfAlternativeDeliveryDates/</td>
-                    <td>Number of ”ShipmentDates” the service should calculate. Max value is 9</td>
+                    <td>Number of "ShipmentDates" the service should calculate. Max value is 9</td>
                     <td>0</td>
                 </tr>
                 <tr>
                     <td>/RequestProperties/EDI</td>
-                    <td>Flag to indicate if the packages are to be sent via EDI</td>
+                    <td>Flag to indicate if the packages are to be sent via EDI (may affect price and applicable products)</td>
                     <td>true
                     </td>
                 </tr>
@@ -62,13 +70,14 @@
                 </tr>
                 <tr>
                     <td>/ProductIds/ProductId</td>
-                    <td>List of Product IDs you wish to get alternatives for. See more in table below.</td>
+                    <td>List of Product IDs you wish to get alternatives for. The shipping guide will skip products that are not applicable (e.g. shipment is too large for product type
+                    or the postal codes are outside of the service area of the product.</td>
                     <td>No defaults – required field</td>
                 </tr>
                 <tr>
                     <td>/Packages/Package/@packageId</td>
                     <td>If you ship more than one package, you can add a reference to each package. This reference will be
-                        included in the response. Maximum 10 Package elements for each request.
+                        included in the response.
                     </td>
                     <td></td>
                 </tr>
@@ -94,7 +103,7 @@
                 </tr>
                 <tr>
                     <td>/Packages/Package/Volume</td>
-                    <td>Volume of package in dm <sup>3</sup></td>
+                    <td>Volume of package in dm <sup>3</sup> (litres)</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -103,40 +112,14 @@
                     <td>false</td>
                 </tr>
                 <tr>
-                    <td>/Packages/Package/FromPostalCode</td>
-                    <td>Postalcode from (sender)</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>/Packages/Package/ToPostalCode</td>
-                    <td>Postalcode to (recipient)</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>/Packages/Package/ShippingDate/*</td>
-                    <td>Date to ship (delivery date to the postal service) within the shipment/pickup date-time. If date is
-                        given, you will receive a ”ExpectedDelivery” element in ShippingGuideResponse
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>/Packages/Package/AdditionalServices/*</td>
-                    <td>Element containing additional services you wish to request the prices for.</td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td>/Packages/Package/AdditionalServices/ AdditionalServiceId</td>
-                    <td>Id of additional service you request the price for. See table below.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>/Packages/Package/AdditionalServices/ AdditionalServiceParameters/*</td>
-                    <td>Parameters for the respective additional service. (For future use).</td>
+                    <td>Additional service code to include in the request (may affect e.g. price and expected delivery).
+                      Combinations of products / additional service codes that are not applicable will be ignored.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Package/EarlyCollectionAtTerminal</td>
-                    <td>Postalcode for terminal. If you have an agreement for same-day delivery, and ship a &quot;På Døren&quot;
+                    <td>Postal code for terminal. If you have an agreement for same-day delivery, and ship a &quot;På Døren&quot;
                         (To the Door) package to the Oslo terminal – within the deadline of the agreement; use code 0024 in this
                         field. Using this field currently only affects shipment times for these packages.
                     </td>
@@ -144,7 +127,7 @@
                 </tr>
         </table>
 
-        <h4>Response Reference</h4>
+        <h4>Response elements</h4>
         <table>
             <colgroup width="95"></colgroup>
             <colgroup width="100"></colgroup>
@@ -159,27 +142,22 @@
             <tbody>
                 <tr>
                     <td>/Packages/*</td>
-                    <td>Contains the requested packages</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>/Packages/Package/*</td>
-                    <td>A single package. The attribute packageId contains the reference you specified in the request</td>
+                    <td>Contains the requested packages (and within each package, the products applicable for that package).</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Package/Product/*</td>
-                    <td>Information about the product. Can contain 0-n products.</td>
+                    <td>Information about the product. Can contain 0...n products.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ProductId</td>
-                    <td>Product ID. See table below.</td>
-                    <td>SERVICE PAKKE</td>
+                    <td>Product ID</td>
+                    <td>SERVICEPAKKE</td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/GuiInformation/*</td>
-                    <td>Product texts. See more complete description below.</td>
+                    <td>Product texts and category. See more complete description below.</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -189,27 +167,25 @@
                 </tr>
                 <tr>
                     <td>/Packages/Product/Price/ PackagePriceWithoutAdditionalServices/*</td>
-                    <td>Price without any additional services All prices are given -without value added tax (VAT), -with VAT as
-                        well as -VAT itself specified. Period is used for separating decimals.
+                    <td>Price without any additional services. Period is used for separating decimals.
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/Price/ PackagePriceWithAllAdditionalServices/*</td>
-                    <td>Price with all requested additional services All prices are given -without value added tax (VAT), -with
-                        VAT as well as -VAT itself specified. Period is used for separating decimals.
+                    <td>Price with all requested additional services. Period is used for separating decimals.
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ Price/AdditionalServicePrices/*</td>
-                    <td>Collection containing all requested additional services with respective prices</td>
+                    <td>Collection containing all requested additional services with respective prices.</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ Price/AdditionalServicePrices/ AdditionalService/AdditionalServiceId</td>
-                    <td>Id of additional service.</td>
-                    <td>POST OPPKRAV</td>
+                    <td>Additional service code.</td>
+                    <td>POSTOPPKRAV</td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ Price/AdditionalServicePrices/ AdditionalService/AdditionalServicePrice</td>
@@ -217,30 +193,24 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/*</td>
-                    <td>Collection for all information related to delivery time</td>
-                    <td></td>
+                  <td>/Packages/Product/ExpectedDelivery/ ExpectedDeliveryDate</td>
+                  <td>Expected delivery date based on the request parameters (product, postalcodes and shipping date). Contains elements year, month, day.</td>
+                  <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ExpectedDelivery/ WorkingDays</td>
-                    <td>Number of week days from pickup to delivery. First day is day 0. NOTE! If this number is used, know that
+                    <td>Number of working days from pickup to delivery. First day is day 0. NOTE! If this number is used, know that
                         there are special rules surrounding christmas, easter, shipments to Svalbard and certain other
-                        destinations. For the complete picture of delivery time, it is important that the message in UserMessage
-                        is made available to the end user
+                        destinations. If shipping date is specified in the request, then these rules are applied automatically
+                        for you when calculating the expected delivery date.
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ExpectedDelivery/ FormattedExpectedDeliveryDate</td>
-                    <td>Expected delivery date based on the request parameters (product, postalcodes and ShipmentDate). This
-                        field is preformatted.
+                    <td>Expected delivery date, preformatted.
                     </td>
                     <td>DD.MM.YYYY</td>
-                </tr>
-                <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ ExpectedDeliveryDate</td>
-                    <td>Expected delivery date based on request parameters. Contains elements year, month, day.</td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Product/ExpectedDelivery/ UserMessage</td>
@@ -252,7 +222,7 @@
                 <tr>
                     <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates</td>
                     <td>Collection for alternate delivery dates if NumberOfAlternativeDeliveryDates is specified in request. In
-                        practise this collection can be used to let the customer decide which day to receive the package. The
+                        practice this collection can be used to let the customer decide which day to receive the package. The
                         data structure also provides the sender when to deliver to the postal service in order to reach the
                         customer on the given day
                     </td>
@@ -275,14 +245,7 @@
                     <td>Estimated delivery date based on ShippingDate for alternate delivery dates.</td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates/ AlternativeDeliveryDate/UserMessage</td>
-                    <td>See (...)/ExpectedDelivery/UserMessage</td>
-                    <td></td>
-                </tr>
             </tbody>
         </table>
-
-        <hr>
-        </div>
-        </div>
+    </div>
+</div>

@@ -1,10 +1,12 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
-<div class="row element-sample">
-<ul class="menu-group collapsing no-shadow">
+  <div data-tab="xml json"><h2><a name="additionalExamples"></a>Additional examples</h2></div>
 
-<li>
+  <div class="row element-sample">
+  <ul class="menu-group collapsing no-shadow">
+
+  <li>
     <a href="#" class="menu-item">
         Multiple parcels in one query
     <span class="arrow"></span>
@@ -464,8 +466,8 @@
 
     </div>
 
-</li>
+    </li>
 
-</ul>
-</div>
+  </ul>
+  </div>
 </div>
