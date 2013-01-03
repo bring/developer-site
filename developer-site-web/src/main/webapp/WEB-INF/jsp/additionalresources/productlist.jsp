@@ -391,7 +391,7 @@
 3 Due to look-up in flight schedules, a request for this product has longer response time than for other
     products.</sup>
 
-<h4><a name="additionalServices"></a>Additional Services</h4>
+<h3><a name="additionalServices"></a>Additional Services</h3>
 
 <p>The Shipping Guide supports the additional services listed in the table below.
    The value in the column "additional service code" is used when accessing the service.
