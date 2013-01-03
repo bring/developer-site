@@ -26,10 +26,14 @@
                         <h1>WSDL/XML Schema</h1>
                     </div>
                     <div class="box">
-                        <p>The Shipping Guide uses schemas for XML and WSDL to make it easier to integrate with the WebService</p>
+                      <div>
+                        <h2>WSDL</h2>
+                        <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL with latest schema version</a></p>
+                        <p>It is possible to download specific WSDL / schema versions: <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl">4</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v5.wsdl">5</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v6.wsdl">6</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v7.wsdl">7</a> The current version is 7.</p>
                         <p><a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p>
+                      </div>
                         <div>
-                            <h4>VERSIONING</h4>
+                            <h2>VERSIONING</h2>
                             <p>Fraktguiden makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service.
                                To achieve this, a <b>SchemaVersion</b> element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
                             </p>
@@ -43,11 +47,6 @@
                             </p>
                         </div>
                         <hr>
-                        <div>
-                            <h4>WSDL</h4>
-                            <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl">WSDL</a> (latest schema version)</p>
-                            <p>It is possible to download specific WSDL / schema versions: <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl">4</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v5.wsdl">5</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v6.wsdl">6</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v7.wsdl">7</a> The current version is 7.</p>
-                        </div>
                     </div>
                 </div>
                 <div class="span3">
