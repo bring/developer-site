@@ -93,6 +93,7 @@
          href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;date=2009-3-27&amp;additional=postoppkrav&amp;additional=evarsling&amp;additional=lordagsutkjoring">
         &amp;additional=postoppkrav&amp;additional=evarsling</a>. See the <a
             href="/additionalresources/productlist.html?from=shipping#additionalServices">additional services list</a>.
+        The Shipping Guide will match the additional service codes to the requested products and ignore product / additional service codes that are not applicable.
     </td>
   </tr>
   <tr>
