@@ -21,16 +21,16 @@
                 <div class="span9">
 
                     <div class="box">
-                        <h1>Fraktguide for Prestashop</h1>
+                        <h1>Shipping Guide for Prestashop</h1>
                     </div>
 
                     <div class="box">
-                        <p>This Prestashop module adds the possibility of letting users pick their preferred shipping
+                        <p>This Prestashop module lets users pick their preferred shipping
                            method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery times
                            and product descriptions. </p>
 
-                        <p>More information in the <a href="https://github.com/nilsga/prestashop-fraktguide"> GitHub
-                                                                                                              repository</a> (Norsk). </p>
+                        <p>More information in the
+                          <a href="https://github.com/nilsga/prestashop-fraktguide">GitHub repository</a> (Norsk).</p>
                         <h4>How to install</h4>
                         <ol>
                             <li>

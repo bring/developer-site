@@ -21,13 +21,13 @@
                 <div class="span9">
 
                     <div class="box">
-                        <h1>Fraktpriser for osCommerce</h1>
+                        <h1>Shipping Guide for osCommerce</h1>
 
                     </div>
 
                     <div class="box">
                         <p>
-                            This osCommerece module adds the possibility of letting users pick their preferred shipping
+                            This osCommerece module lets users pick their preferred shipping
                             method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery times
                             and product descriptions. </p>
                         <h4>How to install</h4>

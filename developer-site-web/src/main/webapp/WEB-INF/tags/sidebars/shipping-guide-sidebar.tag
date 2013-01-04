@@ -29,12 +29,12 @@
     </ul>
     <h4>Plugins</h4>
     <ul>
-        <li><a href="/plugin/joomla-virtuemart-fraktpriser.html?from=shipping">Shipping Guide for Joomla! Virtuemart</a></li>
-        <li><a href="/plugin/oscommerce-fraktpriser.html?from=shipping">Shipping Guide for osCommerce</a></li>
-        <li><a href="/plugin/prestashop-fraktguide.html?from=shipping">Shipping Guide for Prestashop</a></li>
-        <li><a href="/plugin/wordpress-e-commerce-fraktguide.html?from=shipping">Shipping Guide for Wordpress e-commerce</a>
+        <li><a href="/plugin/joomla-virtuemart-fraktpriser.html?from=shipping">Joomla! Virtuemart</a></li>
+        <li><a href="/plugin/oscommerce-fraktpriser.html?from=shipping">osCommerce</a></li>
+        <li><a href="/plugin/prestashop-fraktguide.html?from=shipping">Prestashop</a></li>
+        <li><a href="/plugin/wordpress-e-commerce-fraktguide.html?from=shipping">Wordpress e-commerce</a>
         </li>
-        <li><a href="/plugin/zencart-fraktguide.html?from=shipping">Shipping Guide for ZenCart</a></li>
+        <li><a href="/plugin/zencart-fraktguide.html?from=shipping">ZenCart</a></li>
         <li><a target="_blank" href="http://www.bring.no/hele-bring/produkter-og-tjenester/hvem-kan-hjelpe-deg">Various Shipping Guide integrations by commercial providers</a></li>
     </ul>
 </div>

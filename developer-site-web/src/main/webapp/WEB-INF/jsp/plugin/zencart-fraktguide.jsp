@@ -24,13 +24,13 @@
                 <div class="span9">
 
                     <div class="box">
-                        <h1>Fraktpriser for ZenCart </h1>
+                        <h1>Shipping Guide for ZenCart </h1>
                     </div>
 
                     <div class="box">
 
-                        <p>This ZenCart module adds the possibility of letting users pick their preferred shipping
-                           method. It connects to Bring's Shipping Guide API to fetch prices, estimated delivery
+                        <p>This ZenCart module lets users pick their preferred shipping
+                           method. It connects to Bring Shipping Guide API to fetch prices, estimated delivery
                            times and product descriptions.
                         </p>
 

@@ -24,6 +24,18 @@
         <h1>Shipping Guide API: Error handling</h1>
     </div>
     <div class="box">
+        <h4>No products applicable</h4>
+        <p>
+          If there are no products applicable for the requested shipment, an empty resultset will be returned.
+          This means that for the passed-in product list, no products can be used for the shipment. Either the shipment is too large
+          or is outside of the coverage area of all the requested products.
+          Your code should handle this case, i.e. an empty product list for the shipment.
+        </p>
+        <p>
+          One suggestion is to include more products in each request, e.g. a Cargo-product to handle large shipments. You should know how to send Cargo products
+          before including it though.
+        </p>
+        <h4>General errors</h4>
         <p>
             When using the Shipping Guide, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use
             timeouts and other error handling techniques when making requests to the service.
@@ -39,7 +51,7 @@
             to use a a fixed standard price whenever an error occurs.
         </p>
 
-        <h4>Error codes</h4>
+        <h4>Error codes for rejected requests</h4>
         <table>
             <thead>
             <tr>

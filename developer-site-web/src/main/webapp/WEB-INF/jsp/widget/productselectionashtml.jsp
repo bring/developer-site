@@ -28,30 +28,48 @@
 
                     <div class="box">
 
-                        <p>"Delivered by Bring" is a solution where Bring deliveres finished HTML for the selection of freight products. You can use this HTML directly in your webshop.
-                           By using CSS you can adapt the appearance to your layout.</p>
+                        <p>
+                          "Delivered by Bring" is a widget you can request (server-side) from the Shipping Guide. You get a pre-generated shipping alternatives form as HTML. You can use this HTML directly in your webshop.
+                          By using CSS you can adapt the appearance of the form.
+                        </p>
+                        <p>
+                          Advantages of using this widget:
+                          <ul>
+                            <li>You get the recommended way to present the Bring products (focus on product categories and attributes instead of product names).</li>
+                            <li>You let the end-user select product in a standardized way based on their delivery preference.</li>
+                            <li>You get help texts and tooltips for e.g. fastest product, cheapest and most environmental friendly.</li>
+                          </ul>
+                        </p>
 
-                        <p>The HTML is delivered as the content in a form, but without the &lt;form&gt; elements. This way you can adjust the functionality to your need.</p>
+                        <p>
+                          The HTML is delivered as the content in a form, but without the &lt;form&gt; tag. This way you can adjust the functionality to your needs.
+                        </p>
 
-                        <p>The price is not a available parameter. We suggest that you fetch the price using XML API serverside to prevent that it's modified.</p>
+                        <p>
+                          The price is not set as an input parameter in the HTML of the returned form for security reasons (to prevent end user tampering of the price in the browser).
+                          We suggest that you re-fetch the price on the server side after you know which product the end-user has selected.</p>
 
-                        <p>If the user select A-POST product from this form:<br/>
+                        <p>
+                          <b>Example:</b> If the user select A-POST product from this shipping alternatives form:<br/>
                             <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26">http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26</a>
                             <br/><br/>
                            Use the following XML API request to fetch the price:<br/>
                             <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26">http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=2009-02-26</a>
                             <br/><br/>XML API, JSON API and "Delivered by Bring" is all using the same parameters, please see documentation for the API to get information about available parameters and functionality</p>
 
-                        <div><br/>
-                            <h4>How to install</h4>
-                            <ol>
-                                <li>Take a peek on the <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;date=2011-08-09&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demonstration</a>, select the products you will provide and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop</li>
-                                <li>On your website - add <form> tags to contain the selection of freight product</form></li>
-                                <li>Fetch and display the HTML code from "Delivered by Bring". Please check that your frameworks does not modify the HTML code.</li>
-                                <li>Write/modify a CSS to make the page look good. You can find an example here: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css">http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css</a></li>
-                                <li>Write the code to handle the form submittion. Use XML API to fetch the price.</li>
-                                <li>Tip! The generated HTML code contains information about the products offered. You can use jQuery/JavaScript to display this information for instance as tooltip.</li>
-                            </ol>
+                        <div>
+                          <h4>How to install</h4>
+                          <ol>
+                              <li>
+                                Take a peek on the
+                                <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;date=2011-08-09&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demo</a>,
+                                select the products you will offer to your customers and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop</li>
+                              <li>On your website - add &lt;form&gt; tags to contain the selection of shipping alternatives</li>
+                              <li>Fetch and display the HTML code from "Delivered by Bring".</li>
+                              <li>Write/modify a CSS to make the page look good. You can find an example here: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css">http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css</a></li>
+                              <li>Write the code to handle the form submittion. Use XML API or SOAP to re-fetch the price.</li>
+                              <li>Tip! The generated HTML code contains information about the products offered. You can use jQuery/JavaScript to display this information for instance as tooltip.</li>
+                          </ol>
                         </div>
 
 
@@ -60,7 +78,6 @@
                                 <h4><p>Widget Example</p></h4>
                                 <ul class="tab-group minimal" data-tabs="tabs">
                                     <li class="active"><a href="#tab1-5">DEMO</a></li>
-                                    <li><a href="#tab2-5">CODE</a></li>
                                 </ul>
 
                                 <div class="tab-content tab-minimal">
