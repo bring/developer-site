@@ -108,7 +108,16 @@
                                 </div>
                                 </a>
                             </li>
-                            <li>
+                          <li>
+                            <a href="/api/purchaseorderapi.html">
+                              <div class="api-menu-item-container">
+                                <div class="api-menu-icons purchaseicon"></div>
+                                <div class="api-menu-text"></div>
+                                <span class="api-link black">PurchaseOrder API (BETA)</span> <span class="black">Create, update and query Purchase Orders</span>
+                              </div>
+                            </a>
+                          </li>
+                          <li>
                                 <a href="http://www.bring.no/hele-bring/edi-i-bring">
                                 <div class="api-menu-item-container">
                                     <div class="api-menu-icons"></div>

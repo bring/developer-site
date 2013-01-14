@@ -77,6 +77,11 @@ public class HomeController {
         return "api/shippingguideapi";
     }
 
+    @RequestMapping(value = "/api/purchaseorderapi.html")
+    public String purchaseorderapi() {
+        return "api/purchaseorderapi";
+    }
+
     @RequestMapping(value = "/api/reportsapi.html")
      public String reportsapi() {
         return "api/reportsapi";

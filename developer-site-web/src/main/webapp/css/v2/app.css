@@ -1413,6 +1413,10 @@ div.postalcodeicon {
   background: transparent url("/images/bring/api-meny/postalcode1.png") no-repeat;
 }
 
+div.purchaseicon {
+  background: transparent url("/images/bring/api-meny/purchaseorder.png") no-repeat;
+}
+
 div.bookingicon {
   float: left;
   width: 40px;
