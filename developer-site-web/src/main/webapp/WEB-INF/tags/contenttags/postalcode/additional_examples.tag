@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="postalcode" tagdir="/WEB-INF/tags/contenttags/postalcode" %>
 <ul class="menu-group collapsing no-shadow">
             <li>
                 <a href="#" class="menu-item">Finding the location for postal codes with multiple locations

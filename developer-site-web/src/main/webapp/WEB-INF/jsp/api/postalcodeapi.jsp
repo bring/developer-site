@@ -22,7 +22,20 @@
 
     <div class="box">
         <h2><a name="introduction"></a>Introduction</h2>
-        <p>With the Postal Code API you can look up the location by using the postal code and the country code.</p>
+        <p>With the Postal Code API you can
+          <ul>
+            <li>
+              validate a postal code
+            </li>
+            <li>
+              look up the city of a postal code
+            </li>
+            <li>
+              get the postal code type, e.g. normal or P.O. Box (for Norway)
+            </li>
+        </ul>
+        The API has three interfaces: XML, JSON and HTML.
+      </p>
     </div>
 
     <div class="multitabs">
@@ -33,17 +46,15 @@
         </ul>
 
     <div class="box">
-        <h2><a name="reference"></a>
-            Reference</h2>
-      <postalcode:reference/>
+        <h2><a name="reference"></a>Reference</h2>
+        <postalcode:reference/>
         <hr>
 
-        <h2><a name="HTU"></a>
-            How to Use</h2>
+        <h2><a name="HTU"></a>How to Use</h2>
         <postalcode:how_to_use_text/>
         <postalcode:how_to_use_examples/>
 
-<hr>
+        <hr>
         <h2><a name="additionalExamples"></a>Additional examples</h2>
         <postalcode:additional_examples/>
     </div>

@@ -1,5 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
-<h4><p>Example: Using the postal code and the country code to lookup the location.</p></h4>
+<%@ taglib prefix="postalcode" tagdir="/WEB-INF/tags/contenttags/postalcode" %>
+<h4><p>Example: Look up city using postal code and country code</p></h4>
 
             <div data-tab="xml" class="tab">
                 <div class="api-call">
@@ -30,8 +31,7 @@
             <div data-tab="html" class="tab">
                 <div class="api-call">
                     <p>The HTML API will return a <code>span</code> element with <code>id="bringPostnumberQueryResult"</code>,
-                       the postal name as contents and the <code>class</code> either <code>bringPostnumberQueryValidPostnumber</code>
-                       or <code>bringPostnumberQueryInvalidPostnumber</code>.</p><br/>
+                       with the city as contents.</p><br/>
 
                     <p>Request:</p>
                     <a target="_blank" class="request"

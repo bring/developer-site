@@ -21,7 +21,7 @@
       Specified by adding <a target="_blank"
                              href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/expectedDelivery.${suffix}?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK">?fromCountry=NO&amp;toCountry=DK</a>.
       Country code <a tabindex="99"
-                      href="http://www.iso.org/iso/english_country_names_and_code_elements"
+                      href="http://www.iso.org/iso/country_names_and_code_elements"
                       target="_blank">ISO-code</a>. Norway is default when country code is not set.
     </td>
   </tr>

@@ -58,7 +58,7 @@
         <div>
             <p>Specified using <code>fromCountry=NO&amp;toCountry=DK</code>.</p>
 
-            <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a>
+            <p><a href="http://www.iso.org/iso/country_names_and_code_elements">Country Codes are ISO-3166-1-alpha-2</a>
             </p>
 
         </div>

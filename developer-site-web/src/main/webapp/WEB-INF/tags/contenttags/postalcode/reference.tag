@@ -1,49 +1,89 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
-  <pre class="code-box">Request prefix:
-http://fraktguide.bring.no/fraktguide</pre>
+<%@ taglib prefix="postalcode" tagdir="/WEB-INF/tags/contenttags/postalcode" %>
 <div data-tab="xml">
-    <table>
-    <thead>
-    <tr>
-        <th>Field</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><code>/postalCode.&lt;extension&gt;?country=&lt;country&gt;&amp;&lt;postalcode&gt;</code></td>
-        <td>Returns the location based on the postal code.<br/>
-            <li><code>&lt;postalcode&gt;</code> = A valid zip-code</li>
-            <li><code>&lt;extension&gt;</code> = <code>xml</code>, <code>json</code> or <code>html</code></li>
-            <li><code>&lt;country&gt;</code> = The ISO 3166-1-alpha-2 country code.</li>
-        </td>
-    </tr>
-    <tr >
-        <td><code>//Response/@valid</code></td>
-        <td>XPath for checking if the response is valid <br/>
-        </td>
-    </tr>
-    </tbody>
-    </table>
+  <p>
+    The XML API lets you query postal code and get results as XML.
+  </p>
+  <p>
+    Example:
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337">
+      /api/postalCode.xml?country=no&amp;pnr=1337
+    </a>
+  </p>
+  <postalcode:parameter_table show_callback_param="false" />
+  <p>
+    For Norway, you also get information about the postal code type.
+    This is set in the XML attribute <code>postalCodeType</code> in the response:
+  </p>
+</div>
+<div data-tab="json">
+  <p>
+    The JSON API lets you query postal code and get results as JSON, suitable for embedding in a web page (support for JSONP).
+    Note that the JSON API takes an optional <code>callback</code> parameter which enables queries to this service from client browsers with JSONP.
+  </p>
+  <p>
+    Example:
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337">
+      /api/postalCode.json?country=no&amp;pnr=1337
+    </a>
+  </p>
+  <postalcode:parameter_table show_callback_param="true" />
+  <p>
+    For Norway, you also get information about the postal code type.
+    This is set in the JSON property <code>postalCodeType</code> in the response:
+  </p>
+</div>
+<div data-tab="html">
+  <p>
+    The HTML API lets you query postal code and get results as HTML, suitable for embedding in a web page.
+  </p>
+  <p>
+    Example:
+  </p>
+  <p>
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=no&amp;pnr=1337">
+      /api/postalCode.html?country=no&amp;pnr=1337
+    </a> (view source!)
+  </p>
+  <postalcode:parameter_table show_callback_param="false" />
+  <p>
+    The resulting HTML will get the CSS class
+    <ul>
+      <li><code>bringPostnumberQueryValidPostnumber</code>: Valid postal code</li>
+      <li><code>bringPostnumberQueryInvalidPostnumber</code>: Invalid postal code</li>
+    </ul>
+    For Norway, you also get information about the postal code type.
+    This is set in the CSS class name <code>bringPostalCodeType&lt;type&gt;</code> (e.g. <code>bringPostalCodeTypeNORMAL</code>) in the response:
+  </p>
 </div>
 
-<div data-tab="json html">
-    <table>
-        <thead>
-            <tr>
-                <th>Field</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>/postalCode.&lt;extension&gt;?country=&lt;country&gt;&amp;&lt;postalcode&gt;</code></td>
-                <td>Returns the location based on the postal code.<br/>
-                    <li><code>&lt;postalcode&gt;</code> = A valid zip-code</li>
-                    <li><code>&lt;extension&gt;</code> = <code>xml</code>, <code>json</code> or <code>html</code></li>
-                    <li><code>&lt;country&gt;</code> = The ISO 3166-1-alpha-2 country code.</li>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table>
+  <thead>
+  <tr>
+    <th>postalCodeType</th>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>NORMAL</td>
+    <td>Normal postal code suitable for delivering packages. Contains street addresses or mix of street and other postal code types.</td>
+  </tr>
+  <tr>
+    <td>POBOX</td>
+    <td>Postal code contains only P.O. Box addresses. Only certain Bring products can be delivered to these addresses (see the <a href="/api/shippingguideapi.html">Shipping Guide</a>).</td>
+  </tr>
+  <tr>
+    <td>SPECIALCUSTOMER</td>
+    <td>Special, e.g special return postal codes for selected customers.</td>
+  </tr>
+  <tr>
+    <td>SPECIALNOSTREET</td>
+    <td>Special, e.g special postal codes for customers with old "serviceboks".</td>
+  </tr>
+  <tr>
+    <td>UNKNOWN</td>
+    <td>Unknown postal code type. Used for e.g. international postal codes.</td>
+  </tr>
+  </tbody>
+</table>
