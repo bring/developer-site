@@ -37,7 +37,7 @@
     <td>Dimensions</td>
     <td>Specified by adding <a target="_blank"
                                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
-      &amp;length=30&amp;width=40&amp;height=40</a>.
+      &amp;length=30&amp;width=40&amp;height=40</a>. All dimensions are in cm.
     </td>
   </tr>
   <tr>
