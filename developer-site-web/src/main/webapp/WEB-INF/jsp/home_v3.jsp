@@ -30,12 +30,12 @@
                                 customers:</span> </p>
                             <ul class="welcomelist">
                                 <li>Let the customer choose between alternative shipping methods upon checkout with the <a
-                                        href="/api/shippingguideapi.html">Shipping Guide API</a>.
+                                        href="/api/shippingguideapi.html">Shipping Guide API</a>
                                 </li>
                                 <li>Show your customers the current status of their shipment with the <a
-                                        href="/api/trackingapi.html">Tracking API</a>.
+                                        href="/api/trackingapi.html">Tracking API</a>
                                 </li>
-                                <li>Book a shipment through the <a href="/api/bookingapi.html">Booking API</a>.
+                                <li>Book a shipment through the <a href="/api/bookingapi.html">Booking API</a>
                                 </li>
                                 <li>Generate and download reports with the <a href="/api/reportsapi.html">Reports API</a></li>
                             </ul>
