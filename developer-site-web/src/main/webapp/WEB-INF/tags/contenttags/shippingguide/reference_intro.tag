@@ -58,3 +58,6 @@
     <code>&amp;volume=33</code></a> .
   </li>
 </ul>
+<p>
+  The more parameters in the input (e.g. dimensions of the package) the more accurate the price calculations will be.
+</p>

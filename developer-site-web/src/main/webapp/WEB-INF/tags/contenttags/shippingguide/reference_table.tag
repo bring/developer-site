@@ -22,7 +22,7 @@
                              href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/expectedDelivery.${suffix}?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK">?fromCountry=NO&amp;toCountry=DK</a>.
       Country code <a tabindex="99"
                       href="http://www.iso.org/iso/country_names_and_code_elements"
-                      target="_blank">ISO-code</a>. Norway is default when country code is not set.
+                      target="_blank">ISO-code</a>. Default country is <b>Norway</b>.
     </td>
   </tr>
   <tr>
@@ -69,19 +69,19 @@
   <tr class="even">
     <td>EDI setting</td>
     <td>
-      Flag that tells if the parcel is registred using EDI. Specified by adding <a target="_blank"
+      Flag that tells if the parcel will be registred using EDI when it is shipped. Specified by adding <a target="_blank"
                                                                                    href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=true">
-      &amp;edi=true</a>. Default is <b>true</b>. Note that this flag may affect price and which
+      &amp;edi=true</a>. Default value is <b><code>true</code></b>. Note that this flag may affect price and which
       products are available.
     </td>
   </tr>
   <tr>
     <td>Shipped from post office</td>
     <td>
-      Flag that tells whether the parcel is delivered at a post office when it is sent. Specified by adding
+      Flag that tells whether the parcel is delivered at a post office when it is shipped. Specified by adding
       <a target="_blank"
          href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true">
-        &amp;postingAtPostoffice=true</a>. Default is <b>false</b>.
+        &amp;postingAtPostoffice=true</a>. Default value is <b><code>false</code></b>.
     </td>
   </tr>
   <tr class="even">
