@@ -2,10 +2,11 @@ name: developer-site
 jettypath: developer-site-jetty
 internal_check_type: statuscode
 external_url_skip_version_check: true
+healthcheck: jetty
 environments:
   production:
     selvdrift_layout: true
-    bigip_frontend: false
+    bigip_frontend: true
     hosts: [aldea.bd.bring.no, antos.bd.bring.no]
     port: 8040
     user: bring
@@ -15,11 +16,10 @@ environments:
     stop_command: sudo service developer stop
     external_url: http://developer.bring.com/revision.txt
     internal_url: /
-    rollback: false
     production_environment: true
   qa:
     selvdrift_layout: true
-    bigip_frontend: false
+    bigip_frontend: true
     hosts: [aldea.bd.bring.no, antos.bd.bring.no]
     port: 8540
     user: bring
@@ -31,7 +31,6 @@ environments:
     internal_url: /
     http_auth_user: developer
     http_auth_password: developer
-    rollback: false
     production_environment: false
   test:
     selvdrift_layout: true
@@ -47,5 +46,4 @@ environments:
     internal_url: /
     http_auth_user: developer
     http_auth_password: developer
-    rollback: false
     production_environment: false
