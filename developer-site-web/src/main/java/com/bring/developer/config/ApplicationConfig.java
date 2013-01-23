@@ -21,7 +21,7 @@ public class ApplicationConfig {
 
     public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
-    public static String BOOKING_URL_FOR_ENVIRONMENT = "http://beta.bring.com/booking"; //default
+    public static String BOOKING_URL_FOR_ENVIRONMENT = "https://www.bring.no/booking/products"; //default
     public static String GOOGLE_ANALYTICS_ID = "UA-33478893-1"; //default
     public static boolean CLASSPATH_XML_FILES = true; //default
 
