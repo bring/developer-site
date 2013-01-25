@@ -8,6 +8,7 @@
 <p>
   The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring
   Express-products, we use a UUID to identify users. </p>
+<p>The customer API will return for each specialist a list with the products that you can order through the booking API</p>
 <table>
   <thead>
   <tr>
