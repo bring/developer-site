@@ -28,7 +28,7 @@
         <ol>
             <li><code>weightInGrams0=1500</code></li>
             <li><code>volume1=33</code></li>
-            <li><code>length2=10&amp;width2=20 &amp;height2=30</code></li>
+            <li><code>length2=10&amp;width2=20&amp;height2=30</code></li>
         </ol>
 
         <div class="">
