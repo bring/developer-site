@@ -39,9 +39,9 @@ Host: www.mybring.com
   <div class="api-call">
     <p>Request:</p>
     <a target="_blank" class="request"
-       href="http://beta.bring.com/booking/api/bookingExamples/customers.xml"
+       href="https://www.bring.no/booking/api/bookingExamples/customers.xml"
        data-internal="/proxy/booking/api/bookingExamples/customers.xml">
-      http://beta.bring.com/booking/api/bookingExamples/customers.xml </a>
+      https://www.bring.no/booking/api/bookingExamples/customers.xml </a>
 
     <p>Example response:</p>
     <pre class="code-box xml response delay-snippet"></pre>
@@ -52,7 +52,7 @@ Host: www.mybring.com
 
 <ul>
     <li>
-        XSD: <a href="https://beta.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">https://beta.bring.com/booking/api/schema/booking-v1.xsd</a>
+        XSD: <a href="https://www.bring.no/booking/api/schema/booking-v1.xsd" target="_blank">https://www.bring.no/booking/api/schema/booking-v1.xsd</a>
     </li>
 
     <li>
@@ -137,8 +137,8 @@ Host: www.mybring.com
         <div class="api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://beta.bring.com/booking/api/bookingExamples/validRequest.xml"
-               data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">http://beta.bring.com/booking/api/bookingExamples/validRequest.xml </a>
+               href="https://www.bring.no/booking/api/bookingExamples/validRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">https://www.bring.no/booking/api/bookingExamples/validRequest.xml </a>
 
             <p>Example request:</p>
             <pre class="code-box xml response delay-snippet"></pre>
@@ -151,9 +151,9 @@ Host: www.mybring.com
         <div class="api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml"
+               href="https://www.bring.no/booking/api/bookingExamples/successfulResponse.xml"
                data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
-                http://beta.bring.com/booking/api/bookingExamples/successfulResponse.xml</a>
+                https://www.bring.no/booking/api/bookingExamples/successfulResponse.xml</a>
 
             <p>Example response:</p>
             <pre class="code-box xml response delay-snippet"></pre>
@@ -177,9 +177,9 @@ Host: www.mybring.com
         <div class="api-call">
             <p>Request:</p>
             <a target="_blank" class="request"
-               href="http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml"
+               href="https://www.bring.no/booking/api/bookingExamples/failedResponse.xml"
                data-internal="/proxy/booking/api/bookingExamples/failedResponse.xml">
-                http://beta.bring.com/booking/api/bookingExamples/failedResponse.xml </a>
+                https://www.bring.no/booking/api/bookingExamples/failedResponse.xml </a>
 
             <p>Example response:</p>
             <pre style="min-height: 25px;" class="code-box xml response delay-snippet"></pre>
@@ -221,8 +221,8 @@ Host: www.mybring.com
     <div data-tab="xml" class="tab">
         <div class="api-call">
             <p>Request:</p>
-            <a target="_blank" class="request" href="http://beta.bring.com/booking/api/errors.xml"
-               data-internal="/proxy/booking/api/errors.xml"> http://beta.bring.com/booking/api/errors.xml </a>
+            <a target="_blank" class="request" href="https://www.bring.no/booking/api/errors.xml"
+               data-internal="/proxy/booking/api/errors.xml"> https://www.bring.no/booking/api/errors.xml </a>
 
             <p>Example response:</p>
             <pre class="code-box xml response delay-snippet"></pre>

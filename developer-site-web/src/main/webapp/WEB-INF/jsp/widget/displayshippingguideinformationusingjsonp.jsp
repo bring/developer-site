@@ -1,3 +1,4 @@
+<%@ page import="org.joda.time.LocalDate" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 
@@ -56,7 +57,7 @@
           var outputElement = $('#textResult');
           inputField.keyup(function() {
            if (inputField.val().length &gt; 3) {
-            $.getJSON('http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/all.json?from=1473&amp;to='+ inputField.val() +'&amp;weightInGrams=3&amp;date=2011-08-17&amp;callback=?',
+            $.getJSON('http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/all.json?from=1473&amp;to='+ inputField.val() +'&amp;weightInGrams=3&amp;date=<%=new LocalDate()%>&amp;callback=?',
                  function(data){
                   outputElement.html('&lt;ul&gt;&lt;li&gt;...det koste ' + data.Product.Price.PackagePriceWithoutAdditionalServices.AmountWithVAT + ' + mva.&lt;/li&gt;' +
                    ' &lt;li&gt;...transporttid være ' + data.Product.ExpectedDelivery.WorkingDays + ' virkedag(er). &lt;/li&gt;' +

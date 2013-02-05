@@ -1,8 +1,8 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <p>
-    The Bring Booking API is a logged-in service that lets mybring-users (customers of mybring.com) programmatically
+    The Bring Booking API is a logged-in service that lets mybring-users (customers of mybring.com) programatically
     create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same
-    backend as Bring Booking web (beta.bring.no/booking) and the same PDF labels. </p>
+    backend as Bring Booking web (www.bring.no/booking) and the same PDF labels. </p>
 
 <p>
     We support two types of integration with the Booking API. <b>XML/JSON over HTTP</b> and <b>SOAP (over HTTP)</b>.

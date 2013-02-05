@@ -1,3 +1,4 @@
+<%@ tag import="org.joda.time.LocalDate" %>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -62,7 +63,7 @@
         <div>
             <p>Specified using <code>fromCountry=NO&amp;toCountry=DK</code>.</p>
 
-            <p><a href="http://www.iso.org/iso/iso-3166-1_decoding_table.html">Country Codes are ISO-3166-1-alpha-2</a>
+            <p><a href="http://www.iso.org/iso/country_names_and_code_elements">Country Codes are ISO-3166-1-alpha-2</a>
             </p>
 
         </div>
@@ -221,7 +222,7 @@
                delivery date.
             </p>
 
-            <p>Specified using <code>date=2009-02-03</code>.</p>
+            <p>Specified using <code>date=<%=new LocalDate()%></code>.</p>
 
             <p>Accepted date format: <code>YYYY-MM-DD</code>.</p>
 
@@ -236,9 +237,9 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09"
-                               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09">
-                                <pre>../products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-07-30&amp;product=EKSPRESS09</pre>
+                               href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09"
+                               data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09">
+                                <pre>../products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09</pre>
                             </a>
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -268,7 +269,7 @@
 
             <p>This parameter is only considered for courier and express products.</p>
 
-            <p>Specified using <code>date=2011-07-28&amp;time=13:37</code> (date and time is required to use this
+            <p>Specified using <code>date=<%=new LocalDate()%>&amp;time=13:37</code> (date and time is required to use this
                option).
             </p>
 
@@ -280,9 +281,9 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37"
-                           data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37">
-                            <pre>../all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=2011-08-30&amp;time=13:37</pre>
+                           href="http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37"
+                           data-internal="/proxy/shipping-guide/products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37">
+                            <pre>../all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37</pre>
                         </a>
                         <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>

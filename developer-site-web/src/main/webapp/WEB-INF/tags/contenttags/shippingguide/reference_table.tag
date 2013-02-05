@@ -1,3 +1,4 @@
+<%@ tag import="org.joda.time.LocalDate" %>
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ attribute name="suffix" required="true" type="java.lang.String" %>
 
@@ -21,8 +22,8 @@
       Specified by adding <a target="_blank"
                              href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/expectedDelivery.${suffix}?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK">?fromCountry=NO&amp;toCountry=DK</a>.
       Country code <a tabindex="99"
-                      href="http://www.iso.org/iso/english_country_names_and_code_elements"
-                      target="_blank">ISO-code</a>. Norway is default when country code is not set.
+                      href="http://www.iso.org/iso/country_names_and_code_elements"
+                      target="_blank">ISO-code</a>. Default country is <b>Norway</b>.
     </td>
   </tr>
   <tr>
@@ -37,7 +38,7 @@
     <td>Dimensions</td>
     <td>Specified by adding <a target="_blank"
                                href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
-      &amp;length=30&amp;width=40&amp;height=40</a>.
+      &amp;length=30&amp;width=40&amp;height=40</a>. All dimensions are in cm.
     </td>
   </tr>
   <tr>
@@ -53,8 +54,8 @@
     <td>
       Shipping date specifies which date the parcel will be delivered to Bring (within the timelimit),
       and is used to calculate the delivery date. Specified by adding e.g. <a target="_blank"
-                                                                              href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;volume=33&amp;date=2012-12-18">
-      &amp;date=2012-12-18</a>. Date is specified in ISO-format, YYYY-MM-DD.
+                                                                              href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>">
+      &amp;date=<%=new LocalDate()%></a>. Date is specified in ISO-format, YYYY-MM-DD.
     </td>
   </tr>
   <tr>
@@ -62,26 +63,26 @@
     <td>
       Shipping time may be specified. Note that Bring's courier products are the only one affected by
       this parameter. <a target="_blank"
-                         href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;volume=33&amp;date=2012-12-18&amp;time=12:30">
-      &amp;date=2012-12-18&amp;time=12:30</a>. Time is specified in ISO-format, HH:mm.
+                         href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=12:30">
+      &amp;date=<%=new LocalDate()%>&amp;time=12:30</a>. Time is specified in ISO-format, HH:mm.
     </td>
   </tr>
   <tr class="even">
     <td>EDI setting</td>
     <td>
-      Flag that tells if the parcel is registred using EDI. Specified by adding <a target="_blank"
+      Flag that tells if the parcel will be registred using EDI when it is shipped. Specified by adding <a target="_blank"
                                                                                    href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=true">
-      &amp;edi=true</a>. Default is <b>true</b>. Note that this flag may affect price and which
+      &amp;edi=true</a>. Default value is <b><code>true</code></b>. Note that this flag may affect price and which
       products are available.
     </td>
   </tr>
   <tr>
     <td>Shipped from post office</td>
     <td>
-      Flag that tells whether the parcel is delivered at a post office when it is sent. Specified by adding
+      Flag that tells whether the parcel is delivered at a post office when it is shipped. Specified by adding
       <a target="_blank"
          href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true">
-        &amp;postingAtPostoffice=true</a>. Default is <b>false</b>.
+        &amp;postingAtPostoffice=true</a>. Default value is <b><code>false</code></b>.
     </td>
   </tr>
   <tr class="even">
