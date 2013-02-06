@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="sidebar" tagdir="/WEB-INF/tags/sidebars" %>
 
 
 <!DOCTYPE html>
@@ -28,13 +29,12 @@
                     <div class="box">
                       <div>
                         <h2>WSDL</h2>
-                        <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL with latest schema version</a></p>
-                        <p>It is possible to download specific WSDL / schema versions: <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl">4</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v5.wsdl">5</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v6.wsdl">6</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v7.wsdl">7</a> The current version is 7.</p>
-                        <p><a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p>
+                        <div class="information-box">ALPHA! This API is currently in ALPHA, changes will be made in the future that can break code relying on this specific version.</div>
+                        <p><a href="https://api.qa.bring.com/po/api/ws/purchaseorder-v1.wsdl" target="_blank">WSDL with latest schema version</a></p>
                       </div>
                         <div>
                             <h2>VERSIONING</h2>
-                            <p>Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service.
+                            <p>Purchase Order makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service.
                                To achieve this, a <b>SchemaVersion</b> element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
                             </p>
                             <p>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="span3">
                     <div id="sidebar">
-                        <misc:sidebar />
+                        <sidebar:purchaseorder-sidebar />
                     </div>
                 </div>
             </div>
