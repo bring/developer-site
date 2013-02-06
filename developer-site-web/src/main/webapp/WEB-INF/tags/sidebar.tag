@@ -22,6 +22,9 @@
   <c:when test="${param.from eq 'tracking'}">
     <sidebar:tracking-sidebar/>
   </c:when>
+  <c:when test="${param.from eq 'purchaseorder'}">
+    <sidebar:purchaseorder-sidebar/>
+  </c:when>
   <c:when test="${param.from eq 'pickup'}">
     <sidebar:pickuppoint-sidebar/>
   </c:when>

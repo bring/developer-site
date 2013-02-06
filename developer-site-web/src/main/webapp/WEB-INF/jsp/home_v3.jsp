@@ -113,7 +113,7 @@
                               <div class="api-menu-item-container">
                                 <div class="api-menu-icons purchaseicon"></div>
                                 <div class="api-menu-text"></div>
-                                <span class="api-link black">PurchaseOrder API (BETA)</span> <span class="black">Create, update and query Purchase Orders</span>
+                                <span class="api-link black">PurchaseOrder API (ALPHA)</span> <span class="black">Create, update and query Purchase Orders</span>
                               </div>
                             </a>
                           </li>

@@ -2,13 +2,12 @@
 <div data-tab="soap">
     <h2><a name="reference"></a>Reference</h2>
     <div class="api-call">
-        <p>The web service interface offers the most options when performing queries to the Shipping Guide.</p>
+        <p>The web service interface offers the most options when performing queries and updates to the Purchase Order.</p>
 
-        <p><b>To execute the web-service you will need a user code (identification string). To get this, please <a
-                href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
+        <p><b>To execute the web-service you will need a user code (identification string). </b></p>
 
         <p>
-          <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL and XML Schema documentation</a>
+          <a href="/additionalresources/wsdlschema.html?from=purchaseorder">WSDL and XML Schema documentation</a>
         </p>
         <p>
         The table below lists the most important elements. For complete XML Schema Reference, see the

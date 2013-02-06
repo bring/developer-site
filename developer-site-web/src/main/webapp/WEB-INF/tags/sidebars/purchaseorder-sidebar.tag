@@ -14,8 +14,8 @@
 
 <div class="box">
     <h2>Additonal Resources</h2>
-    <h4>Widgets</h4>
-    <ul>
-        <li></li>
-    </ul>
+      <ul>
+        <li><a href="/additionalresources/po-error.html?from=purchaseorder">Error handling</a></li>
+        <li><a href="/additionalresources/wsdlschema.html?from=purchaseorder">WSDL/XML SCHEMA</a></li>
+      </ul>
 </div>
