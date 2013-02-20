@@ -88,10 +88,23 @@
            href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>EKSPRESS09</code></a>
     </td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+           href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
     </td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/EKSPRESS09/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+    </td>
+</tr>
+
+<tr>
+    <td>Minipakken</td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/MINIPAKKE/all.xml?weightInGrams=1500&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>MINIPAKKE</code></a>
+    </td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/MINIPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
+    </td>
+    <td>
+         No
     </td>
 </tr>
 
@@ -308,8 +321,8 @@
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/HOMEDELIVERY_CURBSIDE_DAG/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>HOMEDELIVERY_CURBSIDE_DAG</code></a>
     </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/HOMEDELIVERY_CURBSIDE_DAG/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>">No</a>
+    <td>
+      No
     </td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/HOMEDELIVERY_CURBSIDE_DAG/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
