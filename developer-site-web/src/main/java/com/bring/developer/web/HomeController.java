@@ -77,6 +77,21 @@ public class HomeController {
         return "api/shippingguideapi";
     }
 
+    @RequestMapping(value = "/api/purchaseorderapi.html")
+    public String purchaseorderapi() {
+        return "api/purchaseorderapi";
+    }
+
+    @RequestMapping(value = "/additionalresources/po-error.html")
+    public String po_error() {
+        return "/additionalresources/po-error";
+    }
+
+    @RequestMapping(value = "/additionalresources/wsdlschema.html")
+    public String wsdlschema_po() {
+        return "/additionalresources/wsdlschema";
+    }
+
     @RequestMapping(value = "/api/reportsapi.html")
      public String reportsapi() {
         return "api/reportsapi";
