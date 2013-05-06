@@ -1,4 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <div data-tab="json">
 
 <h4>Examples</h4>
@@ -119,32 +120,44 @@ Host: www.mybring.com
 </div>
 
 <div>
-    <h4>recipientNotification</h4>
-    <p>
-        The "recipientNotification"-element must be set for all products that allow electronic notification,
-        in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
-    </p>
-    <p>
-      The follow products support electronic notification:
-    </p>
-    <ul class="recipient-notification-products">
-        <li>
-            SERVICEPAKKE
-        </li>
-        <li>
-            NORGESPAKKE
-        </li>
-        <li>
-            PA_DOREN
-        </li>
-        <li>
-            BEDRIFTSPAKKE
-        </li>
-        <li>
-            EKSPRESS09
-        </li>
-    </ul>
+<h4>Additional services</h4>
+<p>The following products have available additional services:</p>
+  <table>
+      <tbody>
+      <tr>
+          <td>uniqueId</td>
+          <td>A unique log ID (UUID) that can be used as a reference for the error</td>
+      </tr>
+      <tr>
+          <td>code</td>
+          <td>An error code describing the error</td>
+      </tr>
+      <tr>
+          <td>message</td>
+          <td>
+              Internationalized messages (with &lt;message lang="”xx”"&gt; elements). First version will be with
+              lang=”en” (English) only. &lt;/message&gt;
+          </td>
+      </tr>
+      </tbody>
+  </table>
+
+  <div data-tab="json" class="tab">
+      <div class="api-call">
+          <p>Request:</p>
+          <a target="_blank" class="request"
+             href="http://www.bring.no/booking/api/additionalServicesForProduct.json"
+             data-internal="/proxy/booking/api/additionalServicesForProduct.json">
+              http://www.bring.no/booking/api/additionalServicesForProduct.json</a>
+
+          <p>Example response:</p>
+          <pre class="code-box json response delay-snippet"></pre>
+      </div>
+  </div>
+
 </div>
+
+<booking:recipient_notification/>
 
 <div>
     <h4>Examples</h4>
