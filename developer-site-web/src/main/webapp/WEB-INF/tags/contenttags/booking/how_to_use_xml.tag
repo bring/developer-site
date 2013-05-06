@@ -115,7 +115,21 @@ Host: www.mybring.com
         </tbody>
     </table>
 </div>
+<div>
+    <booking:additional_services/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/additionalServicesForProduct.xml"
+               data-internal="/proxy/booking/api/additionalServicesForProduct.xml">
+                https://www.bring.no/booking/api/additionalServicesForProduct.xml</a>
 
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
+</div>
 <booking:recipient_notification/>
 
 <div>
