@@ -118,7 +118,6 @@
         
         // TODO reformat JSON object (indentation)
         performJsonRequest: function(responseElement, urlArg) {
-          console.log(urlArg);
             $.ajax({
                 url: urlArg,
                 dataType: "json",
