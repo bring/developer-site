@@ -7,7 +7,7 @@
     var methods = {
         init: function(optionsArg) {
             $.extend(options, optionsArg);
-            additionalServicesTable = $('.additional-services');
+            additionalServicesTable = $('.additional-services-view');
             responseElement = $(".response", this);
             if (responseElement.hasClass("xml")) {
                 methods.performXmlRequest(responseElement, $(".request", this).attr("data-internal"));

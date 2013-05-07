@@ -7,6 +7,6 @@
         <th>Additional services</th>
     </tr>
     </thead>
-    <tbody class="additional-services">
+    <tbody class="additional-services-view">
     </tbody>
 </table>
