@@ -2,10 +2,12 @@
     var tab = "    ";
     var options = {}
     var responseElement;
+    var additionalServicesTable
     
     var methods = {
         init: function(optionsArg) {
             $.extend(options, optionsArg);
+            additionalServicesTable = $('.additional-services-view');
             responseElement = $(".response", this);
             if (responseElement.hasClass("xml")) {
                 methods.performXmlRequest(responseElement, $(".request", this).attr("data-internal"));
@@ -101,10 +103,14 @@
         },
         
         performXmlRequest: function(responseElement, urlArg) {
-            $.ajax({
+          var that = this;
+          $.ajax({
                 url: urlArg,
                 dataType: "xml",
                 success: function(data, textStatus, jqXHR) {
+                    if (data['productsWithAdditionalServices']) {
+                        that.formatAdditionalServiceTable(data);
+                    }
                     var rootElement = $(data).children()[0];
                     var xmlText = methods.formatXml(rootElement, 0);
                     responseElement.text(xmlText);
@@ -115,13 +121,17 @@
                 error: function(jqXHR, textStatus, errorThrown) {methods.failedRequestCallback(responseElement, jqXHR, textStatus, errorThrown)}
             });
         },
-        
+
         // TODO reformat JSON object (indentation)
         performJsonRequest: function(responseElement, urlArg) {
+          var that = this;
             $.ajax({
                 url: urlArg,
                 dataType: "json",
                 success: function(data, textStatus, jqXHR) {
+                    if (data['productsWithAdditionalServices']) {
+                        that.formatAdditionalServiceTable(data['productsWithAdditionalServices']);
+                    }
                     responseElement.text(formatJson(data));
                     responseElement.snippet("javascript", {
                         style: "ide-eclipse"
@@ -129,8 +139,17 @@
                 },
                 error: function(jqXHR, textStatus, errorThrown) {methods.failedRequestCallback(responseElement, jqXHR, textStatus, errorThrown)}
             });
-        }
+        },
+
+      formatAdditionalServiceTable: function(data) {
+        $.each(data, function(key) {
+            var product = data[key]['product'];
+            var additionalServices = data[key]['additionalServices'];
+            $(additionalServicesTable).append("<tr><td>"+product+"</td><td>"+additionalServices+"</td></tr>");
+        });
+      }
     }
+
     $.fn.exampleRequest = function(method) {
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));

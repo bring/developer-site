@@ -1,4 +1,4 @@
-<%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
+<%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -116,33 +116,64 @@ Host: www.mybring.com
     </table>
 </div>
 
-<div>
-  <h4>recipientNotification</h4>
-    <p>
-      The "recipientNotification"-element must be set for all products that allow electronic notification,
-      in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
-    </p>
-    <p>
-      The follow products support electronic notification:
-    </p>
-    <ul class="recipient-notification-products">
-      <li>
-        SERVICEPAKKE
-      </li>
-      <li>
-        NORGESPAKKE
-      </li>
-      <li>
-        PA_DOREN
-      </li>
-      <li>
-        BEDRIFTSPAKKE
-      </li>
-      <li>
-        EKSPRESS09
-      </li>
-    </ul>
+<div class="additional-services">
+    <additionalServices:additional_services/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/additionalServicesForProduct.xml"
+               data-internal="/proxy/booking/api/additionalServicesForProduct.xml">
+                https://www.bring.no/booking/api/additionalServicesForProduct.xml</a>
+
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
+    <additionalServices:recipient_notification/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/recipientNotificationRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/recipientNotificationRequest.xml">
+                https://www.bring.no/booking/api/bookingExamples/recipientNotificationRequest.xml </a>
+
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
+
+    <additionalServices:cash_on_delivery/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/cashOnDeliveryRequest.xml">
+                https://www.bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.xml </a>
+
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
+
+    <additionalServices:quickpack_envelope/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/quickPackEnvelopeRequest.xml">
+                https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml </a>
+
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
 </div>
+
+
 <div>
     <h4>Examples</h4>
 
