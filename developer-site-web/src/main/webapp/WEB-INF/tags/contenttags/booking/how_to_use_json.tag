@@ -133,6 +133,7 @@ Host: www.mybring.com
             <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
+
     <additionalServices:recipient_notification/>
     <div data-tab="json" class="tab">
         <div class="api-call">
