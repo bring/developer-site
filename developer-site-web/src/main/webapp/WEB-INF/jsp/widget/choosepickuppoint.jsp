@@ -32,7 +32,7 @@
                         <ol>
                             <li>This widget depends on jQuery, so please add jQuery to your site first.</li>
                             <li>Add the Post Office widget:<br/> <code>&lt;script type="text/javascript"
-                                                                       src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
+                                                                       src="https://api.bring.com/shippingguide/js/utleveringsenhet-1.0.1.js"&gt;&lt;/script&gt;</code>
                             </li>
                             <li>Initialize it<br/> <code>$("divid").utleveringsenhet();</code></li>
                         </ol>
@@ -57,7 +57,7 @@
                                     <div class="tab-pane" id="tab2-5">
                                   <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
 &lt;/script&gt;
-&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/
+&lt;script type="text/javascript" src="https://api.bring.com/shippingguide/js/
 utleveringsenhet-1.0.1.js"&gt;
 &lt;/script&gt;
 &lt;script type="text/javascript"&gt;
@@ -75,7 +75,7 @@ utleveringsenhet-1.0.1.js"&gt;
                     </div>
                     <div class="box">
 
-                            <a href="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"
+                            <a href="https://api.bring.com/shippingguide/js/utleveringsenhet-1.0.1.js"
                                class="btn enhanced">Download</a>
 
                     </div>

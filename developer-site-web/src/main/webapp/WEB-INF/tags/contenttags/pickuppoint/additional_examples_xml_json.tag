@@ -17,8 +17,8 @@
                             <div class="api-call">
                                 <p>Request:</p>
                                 <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?searchForText=KIWI"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?searchForText=KIWI">
+                                   href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&searchForText=KIWI"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&clientUrl=insertYourClientUrlHere&searchForText=KIWI">
                                     /api/pickuppoint/postalcode/1407.xml?searchForText=KIWI </a>
                                 <p>Response:</p>
                                 <pre class="code-box xml response delay-snippet"></pre>
@@ -29,12 +29,12 @@
                                 <div class="api-call">
                                     <p>Request:</p>
                                     <a target="_blank" class="request"
-                                       href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI"
-                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI">
+                                       href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&searchForText=KIWI"
+                                       data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&clientUrl=insertYourClientUrlHere&searchForText=KIWI">
                                         /api/pickuppoint/postalcode/1407.json?searchForText=KIWI </a>
 
                                     <p class="right">JSONP Request: <a
-                                            href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?searchForText=KIWI&amp;callbackUrl=functionName">?callback=functionName</a>
+                                            href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&searchForText=KIWI&amp;callbackUrl=functionName">?callback=functionName</a>
                                     </p>
                                     <p>Response:</p>
                                     <pre class="code-box json response delay-snippet"></pre>
@@ -62,8 +62,8 @@
                             <div class="api-call">
                                 <p>Request:</p>
                                 <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY">
+                                   href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&openingHoursSearchType=SUNDAY"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&clientUrl=insertYourClientUrlHere&openingHoursSearchType=SUNDAY">
                                     /api/pickuppoint/postalcode/1407.xml?openingHoursSearchType=SUNDAY </a>
                                 <p>Response:</p>
                                 <pre class="code-box xml response delay-snippet"></pre>
@@ -74,12 +74,12 @@
                             <div class="api-call">
                                 <p>Request:</p>
                                 <a target="_blank" class="request"
-                                   href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY"
-                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY">
+                                   href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openingHoursSearchType=SUNDAY"
+                                   data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&clientUrl=insertYourClientUrlHere&openingHoursSearchType=SUNDAY">
                                     /api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY </a>
 
                                 <p class="right">JSONP Request: <a
-                                        href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a>
+                                        href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openingHoursSearchType=SUNDAY&amp;callbackUrl=functionName">?callback=functionName</a>
                                 </p>
                                 <p>Response:</p>
                                 <pre class="code-box json response delay-snippet"></pre>
@@ -106,8 +106,8 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800">
+                               href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&openOnOrBefore=0800"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&openOnOrBefore=0800">
                                 /api/pickuppoint/postalcode/1407.xml?openOnOrBefore=0800 </a>
                             <pre class="code-box xml response delay-snippet"></pre>
                         </div>
@@ -117,12 +117,12 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800">
+                               href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openOnOrBefore=0800"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openOnOrBefore=0800">
                                 /api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800 </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a>
+                                    href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openOnOrBefore=0800&amp;callbackUrl=functionName">?callback=functionName</a>
                             </p>
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
@@ -139,8 +139,8 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200">
+                               href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&openOnOrAfter=2200"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere&openOnOrAfter=2200">
                                 /api/pickuppoint/postalcode/1407.xml?openOnOrAfter=2200 </a>
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -151,12 +151,12 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200">
+                               href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openOnOrAfter=2200"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openOnOrAfter=2200">
                                 /api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200 </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a>
+                                    href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&openOnOrAfter=2200&amp;callbackUrl=functionName">?callback=functionName</a>
                             </p>
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>

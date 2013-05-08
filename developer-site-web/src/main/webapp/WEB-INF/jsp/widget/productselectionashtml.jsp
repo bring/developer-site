@@ -52,10 +52,10 @@
 
                         <p>
                           <b>Example:</b> If the user select A-POST product from this shipping alternatives form:<br/>
-                            <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
+                            <a target="_blank" href="https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
                             <br/><br/>
                            Use the following XML API request to fetch the price:<br/>
-                            <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
+                            <a target="_blank" href="https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
                             <br/><br/>XML API, JSON API and "Delivered by Bring" is all using the same parameters, please see documentation for the API to get information about available parameters and functionality</p>
 
                         <div>
@@ -67,7 +67,7 @@
                                 select the products you will offer to your customers and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop</li>
                               <li>On your website - add &lt;form&gt; tags to contain the selection of shipping alternatives</li>
                               <li>Fetch and display the HTML code from "Delivered by Bring".</li>
-                              <li>Write/modify a CSS to make the page look good. You can find an example here: <a target="_blank" href="http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css">http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css</a></li>
+                              <li>Write/modify a CSS to make the page look good. You can find an example here: <a target="_blank" href="https://api.bring.com/shippingguide/css/fraktalternativer.css">https://api.bring.com/shippingguide/css/fraktalternativer.css</a></li>
                               <li>Write the code to handle the form submittion. Use XML API or SOAP to re-fetch the price.</li>
                               <li>Tip! The generated HTML code contains information about the products offered. You can use jQuery/JavaScript to display this information for instance as tooltip.</li>
                           </ol>
@@ -93,13 +93,13 @@
         &lt;script type="text/javascript"&gt;
            $(document).ready(function() {
               $("#onlyhtml").live('click', function(event) {
-                window.open('http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+                window.open('https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
               $("#onlyxml").live('click', function(event) {
-                window.open('http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+                window.open('https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
               $("#onlycss").live('click', function(event) {
-                window.open('http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');
+                window.open('https://api.bring.com/shippingguide/css/fraktalternativer.css', '','width=1080,height=800');
               });
            });
         &lt;/script&gt;

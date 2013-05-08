@@ -44,14 +44,14 @@ public class XmlParser<T> {
     }
 
     private InputStream replaceUrlToFraktguideWithCorrectEnvironment(InputStream inputStream) {
-        if (FRAKTGUIDE_URL_FOR_ENVIRONMENT.equals("http://fraktguide.bring.no/fraktguide")) {
+        if (FRAKTGUIDE_URL_FOR_ENVIRONMENT.equals("https://api.bring.com/shippingguide")) {
             //performance optimization
             return inputStream;
         }
 
         try {
             String xml = IOUtils.toString(inputStream);
-            return toInputStream(replace(xml, "http://fraktguide.bring.no/fraktguide", FRAKTGUIDE_URL_FOR_ENVIRONMENT));
+            return toInputStream(replace(xml, "https://api.bring.com/shippingguide", FRAKTGUIDE_URL_FOR_ENVIRONMENT));
         }
         catch (IOException e) {
             throw new RuntimeException(e);

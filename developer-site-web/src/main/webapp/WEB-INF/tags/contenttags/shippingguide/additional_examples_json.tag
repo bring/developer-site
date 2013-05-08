@@ -37,8 +37,8 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
-                           data-internal="/proxy/shipping-guide/products/all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
+                           href="https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30"
+                           data-internal="/proxy/shipping-guide/products/all.json?clientUrl=insertYourClientUrlHere&from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30">
                             ../all.json?from=7041&amp;to=0558&amp;weightInGrams0=1500&amp;volume1=33&amp;length2=10&amp;width2=20&amp;height2=30 </a>
 
                         <p class="right">JSONP Request: <a href="#">?callback=functionName</a></p>
@@ -70,12 +70,12 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
-                           data-internal="/proxy/shipping-guide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
+                           href="https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=insertYourClientUrlHere&from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY"
+                           data-internal="/proxy/shipping-guide/products/expectedDelivery.json?clientUrl=insertYourClientUrlHere&from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY">
                             ../products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY </a>
 
                         <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/products/expectedDelivery.json?from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;callbackUrl=functionName">?callback=functionName</a>
+                                href="https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=insertYourClientUrlHere&from=2100&amp;to=2100&amp;fromCountry=NO&amp;toCountry=DK&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
                         <br>
 
@@ -115,8 +115,8 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300"
-                           data-internal="/proxy/shipping-guide/products/all.json?fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300">
+                           href="https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300"
+                           data-internal="/proxy/shipping-guide/products/all.json?clientUrl=insertYourClientUrlHere&fromCountry=NO&amp;toCountry=IE&amp;from=7600&amp;to=0&amp;toCity=Dublin&amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300">
 <pre>../products/all.json?fromCountry=NO&amp;toCountry=IE
                    &amp;from=7600&amp;to=0&amp;toCity=Dublin
                    &amp;product=CARRYON_HOMESHOPPING_NORWAY&amp;weightInGrams=300</pre>
@@ -146,8 +146,8 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500"
-                           data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500">
+                           href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500"
+                           data-internal="/proxy/shipping-guide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500">
                             ../products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500</a> <br> <br>
 
                         <p>Response:</p>
@@ -167,12 +167,12 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40"
-                           data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
+                           href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40"
+                           data-internal="/proxy/shipping-guide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40">
                             ../products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40</a>
 
                         <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40&amp;callbackUrl=functionName">?callback=functionName</a>
+                                href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;length=30&amp;width=40&amp;height=40&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
 
                         <p>Response:</p>
@@ -197,12 +197,12 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;volume=33"
-                           data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;volume=33">
+                           href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33"
+                           data-internal="/proxy/shipping-guide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33">
                             ../products/price.json?from=7600&amp;to=1407&amp;volume=33</a>
 
                         <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;volume=33&amp;callbackUrl=functionName">?callback=functionName</a>
+                                href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
 
                         <p>Response:</p>
@@ -238,8 +238,8 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09"
-                               data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09">
+                               href="https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09"
+                               data-internal="/proxy/shipping-guide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09">
                                 <pre>../products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09</pre>
                             </a>
 
@@ -279,13 +279,13 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37"
-                           data-internal="/proxy/shipping-guide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37">
+                           href="https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37"
+                           data-internal="/proxy/shipping-guide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37">
                             <pre>../all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37</pre>
                         </a>
 
                         <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/products/all.json?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37&amp;callbackUrl=functionName">?callback=functionName</a>
+                                href="https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
                         <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
@@ -318,13 +318,13 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false"
-                           data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false">
+                           href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false"
+                           data-internal="/proxy/shipping-guide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false">
                             <pre>../price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false</pre>
                         </a>
 
                         <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false&amp;callbackUrl=functionName">?callback=functionName</a>
+                                href="https://api.bring.com/shippingguide/products/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
                         <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
@@ -359,13 +359,13 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE"
-                           data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE">
+                           href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE"
+                           data-internal="/proxy/shipping-guide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE">
                             <pre>../price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true&amp;product=SERVICEPAKKE</pre>
                         </a>
 
                         <p class="right">JSONP Request: <a
-                                href="http://fraktguide.bring.no/fraktguide/products/price.xml?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false&amp;callbackUrl=functionName">?callback=functionName</a>
+                                href="https://api.bring.com/shippingguide/products/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;edi=false&amp;callbackUrl=functionName">?callback=functionName</a>
                         </p>
                         <p>Response:</p>
                         <pre class="code-box json response delay-snippet"></pre>
@@ -388,7 +388,7 @@
             </p>
 
             <p>To adjust the price, add <a
-                    href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">
+                    href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20p">
                 &amp;priceAdjustment=m20p</a> to the query.
             </p>
 
@@ -400,7 +400,7 @@
             <ul>
                 <li>
                     <p>produktkode_ used if price adjustments are only made for a single product. Example: <a
-                            href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_m20">
+                            href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_m20">
                         &amp;priceAdjustment=SERVICEPAKKE_m20</a> lowers the price on product Servicepakke with NOK 20.
                     </p>
                 </li>
@@ -411,15 +411,15 @@
                     </p>
                     <ul>
                         <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20">
+                            <a href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=m20">
                                 &amp;priceAdjustment=m20</a> deducts NOK 20 on all products.
                         </li>
                         <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=p20">
+                            <a href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=p20">
                                 &amp;priceAdjustment=p20</a> adds NOK 20 to all products.
                         </li>
                         <li>
-                            <a href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_79">
+                            <a href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;priceAdjustment=SERVICEPAKKE_79">
                                 &amp;priceAdjustment=SERVICEPAKKE_79</a> puts a fixed price on Servicepakke on NOK 79.
                         </li>
 
@@ -449,8 +449,8 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p"
-                               data-internal="/proxy/shipping-guide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p">
+                               href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p"
+                               data-internal="/proxy/shipping-guide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p">
                                    <pre>.../price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE
              &amp;product=EKSPRESS09
              &amp;priceAdjustment=SERVICEPAKKE_79
@@ -458,7 +458,7 @@
                             </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="http://fraktguide.bring.no/fraktguide/products/price.json?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p&amp;callbackUrl=functionName">
+                                    href="https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=SERVICEPAKKE&amp;product=EKSPRESS09&amp;priceAdjustment=SERVICEPAKKE_79&amp;priceAdjustment=EKSPRESS09_m20p&amp;callbackUrl=functionName">
                                 ?callback=functionName </a></p>
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
