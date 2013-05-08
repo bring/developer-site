@@ -15,7 +15,7 @@ public class ProxyUrlBuilderTest {
     public void setup(){
         proxyUrlBuilder = new ProxyUrlBuilder();
         proxyUrlBuilder.addService("tracking", "http://sporing.bring.no");
-        proxyUrlBuilder.addService("shipping-guide", "https://api.bring.com/shippingguide");
+        proxyUrlBuilder.addService("shipping-guide", "http://fraktguide.bring.no/fraktguide");
     }
     
     @Test
@@ -52,13 +52,13 @@ public class ProxyUrlBuilderTest {
 
     @Test
     public void shouldGetUrlWithoutApiPathElementForNormalShippingGuideRequest() {
-//        assertEquals("https://api.bring.com/shippingguide", proxyTranslator.getUrl(""))
+//        assertEquals("http://fraktguide.bring.no/fraktguide", proxyTranslator.getUrl(""))
     }
 
     @Test
     public void shouldCreateCorrectUrlWithoutParameters() {
         String path = "products/SERVICEPAKKE/price.json";
-        String expected = "https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json";
+        String expected = "http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json";
         assertEquals(expected, proxyUrlBuilder.createUrl("shipping-guide", path, new HashMap<String,String[]>()));
     }
 
@@ -68,7 +68,7 @@ public class ProxyUrlBuilderTest {
         Map<String, String[]> paramMap = new HashMap<String, String[]>();
         paramMap.put("from", new String[] {"1234"});
         paramMap.put("to", new String[] {"4321"});
-        String expected = "https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json";
+        String expected = "http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.json?";
         String result = proxyUrlBuilder.createUrl("shipping-guide", path, paramMap);
         assertTrue(result.startsWith(expected));
         assertTrue(result.contains("&"));
@@ -79,7 +79,7 @@ public class ProxyUrlBuilderTest {
     @Test
     public void shouldCreateCorrectUrlForPostalcodeService() {
         String path = "api/pickuppoint/postalcode/1407.xml";
-        String expected = "https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.xml";
+        String expected = "http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml";
         assertEquals(expected, proxyUrlBuilder.createUrl("shipping-guide", path, new HashMap<String,String[]>()));
     }
 

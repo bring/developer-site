@@ -6,7 +6,7 @@
   </p>
   <p>
     Example:
-    <a target="_blank" href="https://api.bring.com/shippingguide/api/postalCode.xml?clientUrl=insertYourClientUrlHere&country=no&amp;pnr=1337">
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/api/postalCode.xml?country=no&amp;pnr=1337">
       /api/postalCode.xml?country=no&amp;pnr=1337
     </a>
   </p>
@@ -23,7 +23,7 @@
   </p>
   <p>
     Example:
-    <a target="_blank" href="https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=insertYourClientUrlHere&country=no&amp;pnr=1337">
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/api/postalCode.json?country=no&amp;pnr=1337">
       /api/postalCode.json?country=no&amp;pnr=1337
     </a>
   </p>
@@ -41,7 +41,7 @@
     Example:
   </p>
   <p>
-    <a target="_blank" href="https://api.bring.com/shippingguide/api/postalCode.html?clientUrl=insertYourClientUrlHere&country=no&amp;pnr=1337">
+    <a target="_blank" href="http://fraktguide.bring.no/fraktguide/api/postalCode.html?country=no&amp;pnr=1337">
       /api/postalCode.html?country=no&amp;pnr=1337
     </a> (view source!)
   </p>

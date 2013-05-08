@@ -25,8 +25,8 @@
 <div data-tab="json" class="tab api-call">
   <p>Request:</p>
   <a target="_blank" class="request"
-     href="https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post"
-     data-internal="/proxy/shipping-guide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post">
+     href="http://fraktguide.bring.no/fraktguide/products/all.json?weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post"
+     data-internal="/proxy/shipping-guide/products/all.json?weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post">
     ../all.json?weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post</a>
   <br><br><p>Response:</p>
   <pre class="code-box json response delay-snippet"></pre>
@@ -36,8 +36,8 @@
   <div class="tab api-call">
     <p>Request:</p>
     <a target="_blank" class="request"
-       href="https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post"
-       data-internal="/proxy/shipping-guide/products/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post">
+       href="http://fraktguide.bring.no/fraktguide/products/all.xml?weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post"
+       data-internal="/proxy/shipping-guide/products/all.xml?weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post">
       ../all.xml?weightInGrams=2500&amp;from=0484&amp;to=5600&amp;product=servicepakke&amp;product=bpakke_dor-dor&amp;product=ekspress09&amp;product=pa_doren&amp;product=a-post&amp;product=b-post</a>
     <br><br><p>Response:</p>
     <pre class="code-box xml response delay-snippet"></pre>

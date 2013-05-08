@@ -5,7 +5,7 @@
         <p>The web service interface offers the most options when performing queries to the Shipping Guide.</p>
 
         <p><b>To execute the web-service you will need a user code (identification string). To get this, please <a
-                href="https://api.bring.com/shippingguide/registrerBruker.do" target=_blank>register</a>.</b></p>
+                href="http://fraktguide.bring.no/fraktguide/registrerBruker.do" target=_blank>register</a>.</b></p>
 
         <p>
           <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL and XML Schema documentation</a>

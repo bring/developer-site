@@ -15,9 +15,9 @@
                       <div class="api-call">
                           <p>Request:</p>
                           <a target="_blank" class="request"
-                             href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere"
-                             data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml?clientUrl=insertYourClientUrlHere">
-                              /api/pickuppoint/postalcode/1407.xml</a>
+                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
+                             data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
+                              /api/pickuppoint/postalcode/1407.xml </a>
                           <p>Response:</p>
                           <pre class="code-box xml response delay-snippet"></pre>
 
@@ -39,12 +39,12 @@
                   <div class="api-call">
                       <p>Request:</p>
                       <a target="_blank" class="request"
-                         href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere"
-                         data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere">
-                          /api/pickuppoint/postalcode/1407.json</a>
+                         href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
+                         data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
+                          /api/pickuppoint/postalcode/1407.json </a>
 
                       <p class="right">JSONP Request: <a
-                              href="https://api.bring.com/shippingguide/api/pickuppoint/postalcode/1407.json?clientUrl=insertYourClientUrlHere&callbackUrl=functionName">?callback=functionName</a>
+                              href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a>
                       </p>
                       <p>Response:</p>
                       <pre class="code-box json response delay-snippet"></pre>
@@ -67,8 +67,8 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="https://api.bring.com/shippingguide/api/pickuppoint/location/60.395226/5.321725.xml?clientUrl=insertYourClientUrlHere"
-                           data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml?clientUrl=insertYourClientUrlHere">
+                           href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.xml"
+                           data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.xml">
                             /api/pickuppoint/location/60.395226/5.321725.xml </a>
                         <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
@@ -85,12 +85,12 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="https://api.bring.com/shippingguide/api/pickuppoint/location/60.395226/5.321725.json?clientUrl=insertYourClientUrlHere"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json?clientUrl=insertYourClientUrlHere">
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
                                 /api/pickuppoint/location/60.395226/5.321725.json </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="https://api.bring.com/shippingguide/api/pickuppoint/location/60.395226/5.321725.json?clientUrl=insertYourClientUrlHere&callbackUrl=functionName">?callback=functionName</a>
+                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json?callbackUrl=functionName">?callback=functionName</a>
                             </p>
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>
@@ -130,8 +130,8 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="https://api.bring.com/shippingguide/api/pickuppoint/id/121110.xml?clientUrl=insertYourClientUrlHere"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml?clientUrl=insertYourClientUrlHere">
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.xml"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.xml">
                                 /api/pickuppoint/id/121110.xml </a>
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -147,12 +147,12 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="https://api.bring.com/shippingguide/api/pickuppoint/id/121110.json?clientUrl=insertYourClientUrlHere"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json?clientUrl=insertYourClientUrlHere">
+                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json"
+                               data-internal="/proxy/shipping-guide/api/pickuppoint/id/121110.json">
                                 /api/pickuppoint/id/121110.json </a>
 
                             <p class="right">JSONP Request: <a
-                                    href="https://api.bring.com/shippingguide/api/pickuppoint/id/121110.json?clientUrl=insertYourClientUrlHere&callbackUrl=functionName">?callback=functionName</a>
+                                    href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/121110.json?callbackUrl=functionName">?callback=functionName</a>
                             </p>
                             <p>Response:</p>
                             <pre class="code-box json response delay-snippet"></pre>

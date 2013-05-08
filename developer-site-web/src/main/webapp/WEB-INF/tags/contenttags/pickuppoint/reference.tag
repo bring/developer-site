@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <pre class="code-box">Request prefix:
-https://api.bring.com/shippingguide/api/pickuppoint</pre>
+http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
 
     <table>
         <thead>

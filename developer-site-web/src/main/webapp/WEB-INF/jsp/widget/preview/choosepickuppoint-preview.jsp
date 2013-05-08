@@ -10,7 +10,7 @@
 </head>
 <body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="https://api.bring.com/shippingguide/js/utleveringsenhet-1.0.1.js"></script>
+<script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#divid').utleveringsenhet();
