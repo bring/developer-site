@@ -6,7 +6,7 @@ source :rubygems
 
 gem "net-ssh", '~> 2.0.23'
 gem "net-scp", '~> 1.0.4'
-gem "bundler", '~> 1.0'
+gem "bundler", '~> 1.3.1'
 gem "thor", '~> 0.14.2'
 gem "nokogiri", '~> 1.4.4'
 gem "rake", "~> 0.9.2"
