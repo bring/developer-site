@@ -33,6 +33,13 @@
                         <p><a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p>
                       </div>
                         <div>
+
+                            <%
+                                //NOTE TO BRING DEVELOPERS:
+                                //CLIENTS DO NOT ADHERE TO THE WARNINGS AND POLICY BELOW,
+                                //SO WE SHOULD IDEALLY NOT PRESENT NEW XML ELEMENTS WITHOUT A NEW SCHEMA VERSION.
+                            %>
+
                             <h2>VERSIONING</h2>
                             <p>The Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service.
                                To achieve this, a <b>SchemaVersion</b> element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
