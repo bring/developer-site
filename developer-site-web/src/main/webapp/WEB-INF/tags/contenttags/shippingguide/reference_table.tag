@@ -83,6 +83,23 @@
       <a target="_blank"
          href="http://fraktguide.bring.no/fraktguide/products/SERVICEPAKKE/price.${suffix}?from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true">
         &amp;postingAtPostoffice=true</a>. Default value is <b><code>false</code></b>.
+        <p class="surcharge-description">A surcharge will be applied for the following products.</p>
+        <table class="surcharge-description">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Code</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Klimanøytral Servicepakke</td>
+                <td>SERVICEPAKKE</td>
+            </tr>
+            <tr class="even">
+                <td>Bedriftspakke</td>
+                <td>BPAKKE_DOR-DOR</td>
+            </tr>
+        </table>
     </td>
   </tr>
   <tr class="even">

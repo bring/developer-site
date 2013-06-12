@@ -175,6 +175,10 @@ p {
     margin: 0;
 }
 
+.surcharge-description {
+  margin-top: 5px;
+}
+
 .ingress {
   font-size: 1.6em;
   color: #8c8d8e;
