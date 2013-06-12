@@ -92,11 +92,11 @@
                 </tr>
             </thead>
             <tr>
-                <td>Klimanøytral Servicepakke</td>
+                <td>Klimanøytral Servicepakke (after January 1st 2013)</td>
                 <td>SERVICEPAKKE</td>
             </tr>
             <tr class="even">
-                <td>Bedriftspakke</td>
+                <td>Bedriftspakke (after July 1st 2013)</td>
                 <td>BPAKKE_DOR-DOR</td>
             </tr>
         </table>
