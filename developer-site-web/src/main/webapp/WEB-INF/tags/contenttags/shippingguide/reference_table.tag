@@ -92,7 +92,7 @@
                 </tr>
             </thead>
             <tr>
-                <td>Klimanøytral Servicepakke (after January 1st 2013)</td>
+                <td>Klimanøytral Servicepakke</td>
                 <td>SERVICEPAKKE</td>
             </tr>
             <tr class="even">
