@@ -63,7 +63,7 @@
                 <tr>
                     <td>/RequestProperties/PostingAtPostoffice</td>
                     <td>Flag to indicate that the packages will be delivered to a post office (may affect the price in
-                        certain cases)
+                        certain cases, e.g. with product codes SERVICEPAKKE and BPAKKE_DOR-DOR after July 1st 2013)
                     </td>
                     <td>false
                     </td>
