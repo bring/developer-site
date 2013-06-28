@@ -92,13 +92,13 @@
                                   <pre class="prettyprint" data-highlightlines="5">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
         &lt;script type="text/javascript"&gt;
            $(document).ready(function() {
-              $("#onlyhtml").live('click', function(event) {
+              $("#onlyhtml").on('click', function(event) {
                 window.open('http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
-              $("#onlyxml").live('click', function(event) {
+              $("#onlyxml").on('click', function(event) {
                 window.open('http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
-              $("#onlycss").live('click', function(event) {
+              $("#onlycss").on('click', function(event) {
                 window.open('http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');
               });
            });

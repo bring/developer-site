@@ -12,13 +12,13 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $("#onlyhtml").live('click', function(event) {
+        $("#onlyhtml").on('click', function(event) {
             window.open('http://fraktguide.bring.no/fraktguide/products.html?from=7600&to=1473&weightInGrams=1000&date=<%=new LocalDate()%>', '','width=1080,height=800');
         });
-        $("#onlyxml").live('click', function(event) {
+        $("#onlyxml").on('click', function(event) {
             window.open('http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&to=1473&weightInGrams=1000&date=<%=new LocalDate()%>', '','width=1080,height=800');
         });
-        $("#onlycss").live('click', function(event) {
+        $("#onlycss").on('click', function(event) {
             window.open('http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');
         });
     });
