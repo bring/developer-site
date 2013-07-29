@@ -7,7 +7,7 @@
 <html>
 <head>
     <misc:contenttype/>
-    <misc:title value="Purchase Order API (ALPHA)"/>
+    <misc:title value="Purchase Order API (BETA)"/>
     <misc:css_v2/>
 </head>
 <body>
@@ -19,7 +19,7 @@
 <div class="span9">
 
 <div class="box">
-    <h1>Purchase Order API (ALPHA)</h1>
+    <h1>Purchase Order API (BETA)</h1>
 </div>
 
 <div class="box">

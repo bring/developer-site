@@ -2,7 +2,7 @@
 <p>The API lets you view your customers purchacorders for you and register transport booking, delivery notice on this orders. This is a step-by-step guide on how to use the API.
 </p>
 
-<div class="information-box">ALPHA! This API is currently in ALPHA, changes will be made in the future that can break code relying on this specific version.</div>
+<div class="information-box">BETA! This API is currently in BETA, changes will be made in the future that can break code relying on this specific version.</div>
 <p>
   Purchase Order has several interfaces (SOAP and XML/JSON).
   Choose the option that fits your needs best (see table below).
