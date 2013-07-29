@@ -13,7 +13,6 @@
     <thead>
         <tr>
             <th>xml</th>
-            <th>json/jsonp</th>
             <th>Web Services/SOAP</th>
         </tr>
     </thead>
@@ -21,11 +20,7 @@
         <tr>
             <td>The XML API is an easy way to integrate with the Purchase Order using plain HTTP clients. It is also the best API to use when exploring the service using a web browser.
             </td>
-            <td>Web browsers can (using JavaScript) retrieve information from external sites if the data are made available in JSONP
-                format. The purpose is that you can paste HTML / Javascript on your web page and easily use data
-                from the Purchase Order without server components on your web page.</a>.
-            </td>
-            <td>The SOAP API requires a SOAP client and the use of our <a href="/additionalresources/wsdl-xml-schema.html?from=purchaseorder">WSDL</a>.
+             <td>The SOAP API requires a SOAP client and the use of our <a href="/additionalresources/wsdl-xml-schema.html?from=purchaseorder">WSDL</a>.
             </td>
 
         </tr>

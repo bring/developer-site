@@ -6,7 +6,7 @@
     <p>We recommend <a href="http://www.soapui.org/">soapUI</a> to test the Web Service.</p>
 
     <p>Please refer to common information regarding
-      <a href="../additionalresources/errorhandling.html?from=shipping">error handling</a>.
+      <a href="../additionalresources/po-error.html?from=purchaseorder">error handling</a>.
     </p>
 
     <purchaseorder:common_warnings/>

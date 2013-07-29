@@ -9,11 +9,7 @@
         <p>
           <a href="/additionalresources/wsdlschema.html?from=purchaseorder">WSDL and XML Schema documentation</a>
         </p>
-        <p>
-        The table below lists the most important elements. For complete XML Schema Reference, see the
-        automatically generated <a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do" target="_blank">XML Schema Reference</a>.
-        </p>
-        <h4>Request elements</h4>
+         <h4>Request elements</h4>
         <table>
             <colgroup width="100"></colgroup>
             <colgroup width="100"></colgroup>
