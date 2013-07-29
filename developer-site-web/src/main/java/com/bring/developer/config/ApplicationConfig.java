@@ -22,6 +22,7 @@ public class ApplicationConfig {
     public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
     public static String BOOKING_URL_FOR_ENVIRONMENT = "https://www.bring.no/booking/products"; //default
+    public static String PURCHASEORDER_URL_FOR_ENVIROMENT = "https://api.bring.com/po/api/"; //default
     public static String GOOGLE_ANALYTICS_ID = "UA-33478893-1"; //default
     public static boolean CLASSPATH_XML_FILES = true; //default
 
@@ -32,6 +33,7 @@ public class ApplicationConfig {
         this.config = config;
         FRAKTGUIDE_URL_FOR_ENVIRONMENT = config.evaluateToString("fraktguideUrl");
         BOOKING_URL_FOR_ENVIRONMENT = config.evaluateToString("bookingUrl");
+        PURCHASEORDER_URL_FOR_ENVIROMENT = config.evaluateToString("purchaseorderUrl");
         CLASSPATH_XML_FILES = config.evaluateToBoolean("classpathXmlFiles");
         GOOGLE_ANALYTICS_ID = config.evaluateToString("googleAnalyticsID");
         TEALIUM_URI = config.evaluateToString("developer.tealium.script.uri");
@@ -61,6 +63,10 @@ public class ApplicationConfig {
     
     public String getBookingUrlForEnvironment() {
         return BOOKING_URL_FOR_ENVIRONMENT;
+    }
+
+    public String getPurchaseorderUrlForEnviroment() {
+        return PURCHASEORDER_URL_FOR_ENVIROMENT;
     }
 
     public static String getStatisticsTrackerIdForEnvironment() {
