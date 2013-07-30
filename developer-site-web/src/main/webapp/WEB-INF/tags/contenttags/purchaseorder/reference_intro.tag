@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <pre class="code-box">Request prefix:
-https://api.qa.bring.com/po/api/v1/</pre>
+https://api.bring.com/po/api/v1/</pre>
 
   <table>
     <thead>
@@ -14,50 +14,64 @@ https://api.qa.bring.com/po/api/v1/</pre>
     </thead>
     <tbody>
     <tr>
-      <td><code>/order/&lt;customernumber&gt;/&lt;purchaseordernumber&gt;</code></td>
-      <td>Returns the 10 nearest pickup points based on the given postalcode.
+      <td><code>/purchaseorderCustomer/&lt;customernumber&gt;</code></td>
+      <td>Returns true if given customer is an valid Bring PurchaseOrder customer.
         <ul>
           <li>
-            <code>&lt;postalcode&gt;</code> = any valid postal code
+            <code>&lt;customernumber&gt;</code> = valid Bring customer number
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>/order/&lt;customernumber&gt;/&lt;purchaseordernumber&gt;</code></td>
+      <td>Returns complete purchase order information including order items.
+        <ul>
+          <li>
+            <code>&lt;customernumber&gt;</code> = valid Bring PurchaseOrder customer number
           </li>
           <li>
-            <code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code>
+            <code>&lt;purchaseordernumber&gt;</code> = valid purchase order number
           </li>
         </ul>
       </td>
     </tr>
     <tr >
       <td><code>/items/&lt;customernumber&gt;/&lt;purchaseordernumber&gt;</code></td>
-      <td>Returns the 10 nearest pickup points based on the given location.
+      <td>Returns purchase order items.
         <ul>
           <li>
-            <code>&lt;latitude&gt;</code> = geographic coordinate specifying the north-south position.
+            <code>&lt;customernumber&gt;</code> = valid Bring PurchaseOrder customer number
           </li>
-          <li><code>&lt;longitude&gt;</code> = geographic coordinate specifying the east-west position.
+          <li>
+            <code>&lt;purchaseordernumber&gt;</code> = valid purchase order number
           </li>
-          <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><code>/transport/&lt;id&gt;.&lt;extension&gt;</code></td>
-      <td>Returns information about the pickup point based on the pickup point's id.
+      <td><code>/transport/&lt;customernumber&gt;/&lt;purchaseordernumber&gt;</code></td>
+      <td>Returns transportorders if any on given purchaseorder.
         <ul>
           <li>
-            <code>&lt;id&gt;</code> = The pickup point's id.
+            <code>&lt;customernumber&gt;</code> = valid Bring PurchaseOrder customer number
           </li>
-          <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
+          <li>
+            <code>&lt;purchaseordernumber&gt;</code> = valid purchase order number
+          </li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td><code>/event/&lt;id&gt;.&lt;extension&gt;</code></td>
-      <td>Returns information about the pickup point based on the pickup point's id.
+      <td><code>/senderStatus/&lt;customernumber&gt;/&lt;purchaseordernumber&gt;</code></td>
+      <td>Returns Open or Locked status on given purchase order.
         <ul>
           <li>
-            <code>&lt;id&gt;</code> = The pickup point's id.
+            <code>&lt;customernumber&gt;</code> = valid Bring PurchaseOrder customer number
           </li>
-          <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
+          <li>
+            <code>&lt;purchaseordernumber&gt;</code> = valid purchase order number
+          </li>
         </ul>
       </td>
     </tr>
