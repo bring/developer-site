@@ -135,6 +135,31 @@
 </tr>
 
 <tr >
+    <td>Småpakke A-post</td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_A-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_A-POST_FOR_WEB</code></a>
+    </td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_A-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
+    </td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_A-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+    </td>
+</tr>
+<tr >
+    <td>Småpakke B-post</td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_A-POST_FOR_WEB</code></a>
+    </td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
+    </td>
+    <td><a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+    </td>
+</tr>
+
+<tr >
     <td>QuickPack SameDay <sup>3</sup></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/QUICKPACK_SAMEDAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>QUICKPACK_SAMEDAY</code></a>
