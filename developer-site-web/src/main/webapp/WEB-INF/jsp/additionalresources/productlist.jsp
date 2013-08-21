@@ -104,7 +104,8 @@
            href="http://fraktguide.bring.no/fraktguide/products/MINIPAKKE/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
     </td>
     <td>
-         No
+        <a target="_blank"
+           href="http://fraktguide.bring.no/fraktguide/products/MINIPAKKE/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
     </td>
 </tr>
 
@@ -116,8 +117,8 @@
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
     </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/A-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+    <td>
+        No
     </td>
 </tr>
 
@@ -149,7 +150,7 @@
 <tr >
     <td>Småpakke B-post</td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_A-POST</code></a>
+           href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_B-POST</code></a>
     </td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
