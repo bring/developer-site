@@ -171,6 +171,20 @@ Host: www.mybring.com
             <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
+
+    <additionalServices:flex_delivery/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/flexDeliveryRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/flexDeliveryRequest.xml">
+                https://www.bring.no/booking/api/bookingExamples/flexDeliveryRequest.xml </a>
+
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
 </div>
 
 

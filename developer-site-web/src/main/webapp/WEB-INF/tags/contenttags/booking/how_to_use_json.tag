@@ -173,6 +173,19 @@ Host: www.mybring.com
             <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
+    <additionalServices:flex_delivery/>
+    <div data-tab="json" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/flexDeliveryRequest.json"
+               data-internal="/proxy/booking/api/bookingExamples/flexDeliveryRequest.json">
+                https://www.bring.no/booking/api/bookingExamples/flexDeliveryRequest.json </a>
+
+            <p>Example response:</p>
+            <pre class="code-box json response delay-snippet"></pre>
+        </div>
+    </div>
 </div>
 
 <div>
