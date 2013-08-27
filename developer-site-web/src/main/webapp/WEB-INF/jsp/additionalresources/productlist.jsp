@@ -213,106 +213,28 @@
 </tr>
 
 <tr>
-    <td>CarryOn Business Norway</td>
+    <td>CarryOn Business</td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        BUSINESS NORWAY</code></a></td>
+           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
+        BUSINESS</code></a></td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_NORWAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_NORWAY/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-</tr>
-
-<tr >
-    <td>CarryOn Business Sweden</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        BUSINESS SWEDEN</code></a></td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_SWEDEN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_SWEDEN/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
 </tr>
 
 <tr>
-    <td>CarryOn Business Denmark</td>
+    <td>CarryOn Homeshopping</td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_DENMARK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        BUSINESS DENMARK</code></a></td>
+           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
+        HOMESHOPPING</code></a></td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_DENMARK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
     <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_DENMARK/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-</tr>
-
-<tr >
-    <td>CarryOn Business Finland</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        BUSINESS FINLAND</code></a></td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_FINLAND/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS_FINLAND/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-</tr>
-
-<tr>
-    <td>CarryOn Homeshopping Norway</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        HOMESHOPPING NORWAY</code></a></td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_NORWAY/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-</tr>
-
-<tr >
-    <td>CarryOn Homeshopping Sweden</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_SWEDEN/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        HOMESHOPPING SWEDEN</code></a></td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_SWEDEN/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_SWEDEN/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=SE&amp;from=11446&amp;toCountry=FR&amp;to=14400&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-</tr>
-
-<tr>
-    <td>CarryOn Homeshopping Denmark</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_DENMARK/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        HOMESHOPPING DENMARK</code></a></td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_DENMARK/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_DENMARK/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=DK&amp;from=2100&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-</tr>
-
-<tr >
-    <td>CarryOn Homeshopping Finland</td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_FINLAND/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
-        HOMESHOPPING FINLAND</code></a></td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_FINLAND/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
-    </td>
-    <td><a target="_blank"
-           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING_FINLAND/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=FI&amp;from=17220&amp;toCountry=BR&amp;to=123453&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
 </tr>
 
