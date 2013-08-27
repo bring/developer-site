@@ -126,6 +126,15 @@
                                 </div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="/api/easyreturnserviceapi.html">
+                                    <div class="api-menu-item-container">
+                                        <div class="api-menu-icons purchaseicon"></div>
+                                        <div class="api-menu-text"></div>
+                                        <span class="api-link black">Easy Return Service API</span> <span class="black">Create labels for returning cross-border parcels</span>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

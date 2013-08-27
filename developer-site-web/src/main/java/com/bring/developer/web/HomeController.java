@@ -1,13 +1,7 @@
 package com.bring.developer.web;
 
-import com.bring.developer.dao.XmlDao;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.util.List;
 
 @Controller
 public class HomeController {
@@ -192,4 +186,8 @@ public class HomeController {
         return "widget/preview/validatepostalcode-preview";
     }
 
+    @RequestMapping(value = "/api/easyreturnserviceapi.html")
+    public String easyreturnserviceapi() {
+        return "api/easyreturnserviceapi";
+    }
 }
