@@ -1,6 +1,5 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <pre class="code-box">
-<?xml version="1.0" encoding="UTF-8"?>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;LabelRequest&gt;
   &lt;CustomerId&gt;&lt;/CustomerId&gt;

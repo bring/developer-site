@@ -7,7 +7,7 @@
 <html>
 <head>
     <misc:contenttype/>
-    <misc:title value="Easy Return Serivce API (BETA)"/>
+    <misc:title value="Easy Return Service API"/>
     <misc:css_v2/>
 </head>
 <body>

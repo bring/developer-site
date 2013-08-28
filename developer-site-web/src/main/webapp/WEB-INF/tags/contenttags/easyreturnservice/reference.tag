@@ -52,7 +52,7 @@ https://api.mybring.com/easy-return-service/api</pre>
         <td>
             <p>Create a new return label. Remember to set the correct headers
                 (<code>X-MyBring-API-Uid</code> and <code>X-MyBring-API-Key</code>)
-                before performing this call</p>
+                before performing this call</p><a href="#ExampleXML">XML format.</a>
 
         </td>
     </tr>
@@ -61,6 +61,13 @@ https://api.mybring.com/easy-return-service/api</pre>
         <td><code>/label</code></td>
         <td>
             <p>Get a list of all previously created labels.</p>
+        </td>
+    </tr>
+    <tr>
+        <td><code>GET</code></td>
+        <td><code>/label/{id}</code></td>
+        <td>
+            <p>Get a label by its ID.</p>
         </td>
     </tr>
     </tbody>
