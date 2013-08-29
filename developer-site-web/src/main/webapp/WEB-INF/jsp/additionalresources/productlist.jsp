@@ -136,7 +136,7 @@
 </tr>
 
 <tr >
-    <td>Småpakke A-post</td>
+    <td>Småpakke A-Post</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_A-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_A-POST</code></a>
     </td>
@@ -148,7 +148,7 @@
     </td>
 </tr>
 <tr >
-    <td>Småpakke B-post</td>
+    <td>Småpakke B-Økonomi</td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/SMAAPAKKER_B-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_B-POST</code></a>
     </td>
