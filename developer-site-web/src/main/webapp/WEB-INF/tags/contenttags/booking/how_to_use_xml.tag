@@ -1,5 +1,4 @@
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
-<%@ taglib prefix="availableProducts" tagdir="/WEB-INF/tags/contenttags/booking/availableProducts" %>
 
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
@@ -116,19 +115,6 @@ Host: www.mybring.com
         </tr>
         </tbody>
     </table>
-</div>
-
-<div class="available-products">
-    <availableProducts:available_products/>
-    <div data-tab="xml" class="tab">
-        <div class="api-call">
-            <a target="_blank" class="request"
-               href="http://bring.no/booking/api/specialistsWithProducts.xml"
-               data-internal="/proxy/booking/api/specialistsWithProducts.xml">
-            </a>
-            <pre class="code-box xml response delay-snippet hidden"></pre>
-        </div>
-    </div>
 </div>
 
 <div class="additional-services">

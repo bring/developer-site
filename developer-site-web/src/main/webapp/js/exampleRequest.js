@@ -165,7 +165,10 @@
       $.each(data, function(key) {
         var specialist = data[key]['specialist'];
         var products = data[key]['products'];
-        $(specialistsWithProductsTable).append("<tr><td>"+specialist+"</td><td>"+products+"</td></tr>");
+        $.each(products, function(product) {
+          $(specialistsWithProductsTable).append("<tr><td>"+specialist+"</td><td>"+products[product]+"</td></tr>");
+        });
+
       });
     }
   }
