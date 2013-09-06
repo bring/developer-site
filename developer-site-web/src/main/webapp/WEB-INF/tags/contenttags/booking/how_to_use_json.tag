@@ -1,5 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
+<%@ taglib prefix="availableProducts" tagdir="/WEB-INF/tags/contenttags/booking/availableProducts" %>
 <div data-tab="json">
 
 <h4>Examples</h4>
@@ -119,6 +120,19 @@ Host: www.mybring.com
     </table>
 </div>
 
+<div class="available-products">
+  <availableProducts:available_products/>
+  <div data-tab="json" class="tab">
+      <div class="api-call">
+          <a target="_blank" class="request"
+             href="https://www.bring.no/booking/api/specialistsWithProducts.json"
+             data-internal="/proxy/booking/api/specialistsWithProducts.json">
+          </a>
+          <pre class="code-box json response delay-snippet hidden"></pre>
+      </div>
+  </div>
+</div>
+
 <div class="additional-services">
     <additionalServices:additional_services/>
     <div data-tab="json" class="tab">
@@ -129,8 +143,7 @@ Host: www.mybring.com
                data-internal="/proxy/booking/api/additionalServicesForProduct.json">
                 https://www.bring.no/booking/api/additionalServicesForProduct.json</a>
 
-            <p>Example response:</p>
-            <pre class="code-box json response delay-snippet"></pre>
+            <pre class="code-box json response delay-snippet hidden"></pre>
         </div>
     </div>
 
