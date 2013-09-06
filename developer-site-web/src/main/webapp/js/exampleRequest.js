@@ -166,7 +166,12 @@
         var specialist = data[key]['specialist'];
         var products = data[key]['products'];
         $.each(products, function(product) {
-          $(specialistsWithProductsTable).append("<tr><td>"+specialist+"</td><td>"+products[product]+"</td></tr>");
+          if (product === 0) {
+            $(specialistsWithProductsTable).append("<tr><td>"+specialist+"</td><td>"+products[product]+"</td></tr>");
+          }
+          else {
+            $(specialistsWithProductsTable).append("<tr><td></td><td>"+products[product]+"</td></tr>");
+          }
         });
 
       });
