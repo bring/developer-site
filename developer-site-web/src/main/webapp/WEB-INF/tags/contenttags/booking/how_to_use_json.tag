@@ -129,8 +129,7 @@ Host: www.mybring.com
                data-internal="/proxy/booking/api/additionalServicesForProduct.json">
                 https://www.bring.no/booking/api/additionalServicesForProduct.json</a>
 
-            <p>Example response:</p>
-            <pre class="code-box json response delay-snippet"></pre>
+            <pre class="code-box json response delay-snippet hidden"></pre>
         </div>
     </div>
 

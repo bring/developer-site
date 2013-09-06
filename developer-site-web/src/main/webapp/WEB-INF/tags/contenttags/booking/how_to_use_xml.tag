@@ -1,4 +1,5 @@
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
+
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -126,8 +127,7 @@ Host: www.mybring.com
                data-internal="/proxy/booking/api/additionalServicesForProduct.xml">
                 https://www.bring.no/booking/api/additionalServicesForProduct.xml</a>
 
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
+            <pre class="code-box xml response delay-snippet hidden"></pre>
         </div>
     </div>
     <additionalServices:recipient_notification/>
