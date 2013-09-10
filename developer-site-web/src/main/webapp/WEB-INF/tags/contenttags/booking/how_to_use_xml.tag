@@ -1,4 +1,5 @@
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
+<%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
@@ -38,14 +39,12 @@ Host: www.mybring.com
 </pre>
 <div data-tab="xml" class="tab">
   <div class="api-call">
-    <p>Request:</p>
+    <p>Example response:</p>
+    <pre class="code-box xml response delay-snippet"></pre>
     <a target="_blank" class="request"
        href="https://www.bring.no/booking/api/bookingExamples/customers.xml"
        data-internal="/proxy/booking/api/bookingExamples/customers.xml">
       https://www.bring.no/booking/api/bookingExamples/customers.xml </a>
-
-    <p>Example response:</p>
-    <pre class="code-box xml response delay-snippet"></pre>
   </div>
 </div>
 
@@ -121,68 +120,60 @@ Host: www.mybring.com
     <additionalServices:additional_services/>
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>XML:</p>
+            <pre class="code-box xml response delay-snippet hidden"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/additionalServicesForProduct.xml"
                data-internal="/proxy/booking/api/additionalServicesForProduct.xml">
                 https://www.bring.no/booking/api/additionalServicesForProduct.xml</a>
 
-            <pre class="code-box xml response delay-snippet hidden"></pre>
         </div>
     </div>
     <additionalServices:recipient_notification/>
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/recipientNotificationRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/recipientNotificationRequest.xml">
                 https://www.bring.no/booking/api/bookingExamples/recipientNotificationRequest.xml </a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 
     <additionalServices:cash_on_delivery/>
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/cashOnDeliveryRequest.xml">
                 https://www.bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.xml </a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 
     <additionalServices:quickpack_envelope/>
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/quickPackEnvelopeRequest.xml">
                 https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml </a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 
     <additionalServices:deliveryOption/>
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/deliveryOptionRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/deliveryOptionRequest.xml">
                 https://www.bring.no/booking/api/bookingExamples/deliveryOptionRequest.xml </a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 </div>
@@ -207,13 +198,10 @@ Host: www.mybring.com
 
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/validRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/validRequest.xml">https://www.bring.no/booking/api/bookingExamples/validRequest.xml </a>
-
-            <p>Example request:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 
@@ -221,14 +209,11 @@ Host: www.mybring.com
 
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/successfulResponse.xml"
                data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
                 https://www.bring.no/booking/api/bookingExamples/successfulResponse.xml</a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 
@@ -247,14 +232,11 @@ Host: www.mybring.com
 
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <pre style="min-height: 25px;" class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/failedResponse.xml"
                data-internal="/proxy/booking/api/bookingExamples/failedResponse.xml">
                 https://www.bring.no/booking/api/bookingExamples/failedResponse.xml </a>
-
-            <p>Example response:</p>
-            <pre style="min-height: 25px;" class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 
@@ -292,12 +274,9 @@ Host: www.mybring.com
 
     <div data-tab="xml" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request" href="https://www.bring.no/booking/api/errors.xml"
                data-internal="/proxy/booking/api/errors.xml"> https://www.bring.no/booking/api/errors.xml </a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
 </div>
@@ -305,4 +284,23 @@ Host: www.mybring.com
 <div>
 
 </div>
+
+<booking:performance/>
+
+<div>
+
+    <h4><a name="Pickup_order"></a>Pickup order</h4>
+
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Example request:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+            <a target="_blank" class="request" href="https://www.bring.no/booking/api/bookingExamples/pickupOrderRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/pickupOrderRequest.xml"> https://www.bring.no/booking/api/bookingExamples/pickupOrderRequest.xml</a>
+        </div>
+    </div>
+
+</div>
+
+
 </div>
