@@ -12,4 +12,15 @@
         </div>
     </div>
 
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/pickupOrderResponse.xml"
+               data-internal="/proxy/booking/api/bookingExamples/pickupOrderResponse.xml">
+                https://www.bring.no/booking/api/bookingExamples/pickupOrderResponse.xml</a>
+        </div>
+    </div>
+
 </div>

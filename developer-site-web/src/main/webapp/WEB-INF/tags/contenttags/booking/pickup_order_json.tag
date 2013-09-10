@@ -12,4 +12,15 @@
         </div>
     </div>
 
+    <div data-tab="json" class="tab">
+        <div class="api-call">
+            <p>Example response:</p>
+            <pre class="code-box json response delay-snippet"></pre>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/pickupOrderResponse.json"
+               data-internal="/proxy/booking/api/bookingExamples/pickupOrderResponse.json">
+                https://www.bring.no/booking/api/bookingExamples/pickupOrderResponse.json</a>
+        </div>
+    </div>
+
 </div>
