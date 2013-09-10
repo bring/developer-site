@@ -289,7 +289,7 @@ Host: www.mybring.com
 
 <div>
 
-    <h4><a name="Pickup_order"></a>Pickup order</h4>
+    <h2><a name="Pickup_order"></a>Pickup order</h2>
 
     <div data-tab="xml" class="tab">
         <div class="api-call">
