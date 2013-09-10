@@ -48,6 +48,7 @@
 <booking:how_to_use_soap/>
 
 <booking:performance/>
+<booking:pickuporder/>
 
 </div>
 </div>
