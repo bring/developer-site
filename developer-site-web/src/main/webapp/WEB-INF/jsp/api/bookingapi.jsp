@@ -52,8 +52,10 @@
 
                             <h2><a name="Pickup_order"></a>Pickup order</h2>
 
+                            <booking:pickup_order_common/>
                             <booking:pickup_order_xml/>
                             <booking:pickup_order_json/>
+                            <booking:pickup_order_soap/>
 
                         </div>
                     </div>
