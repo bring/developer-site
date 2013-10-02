@@ -239,7 +239,7 @@
 </tr>
 
 <tr>
-    <td>CarryOn Business</td>
+    <td>CarryOn Business <sup>4</sup></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_BUSINESS/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
         BUSINESS</code></a></td>
@@ -252,7 +252,7 @@
 </tr>
 
 <tr>
-    <td>CarryOn Homeshopping</td>
+    <td>CarryOn Homeshopping <sup>4</sup></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
         HOMESHOPPING</code></a></td>
@@ -345,13 +345,18 @@
 </tbody>
 </table>
 
-<sup>1 Requests for expected delivery has longer response time.<br/>
+<sup>
+1 Requests for expected delivery has longer response time.<br/>
 
 2 B-Økonomi is intended for bulk sendings and has a mimimum requirement of 20 parcels, however, if weight
     exceeds 100g this limit is ignored.<br/>
 
 3 Due to look-up in flight schedules, a request for this product has longer response time than for other
-    products.</sup>
+    products.<br/>
+
+4 <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/pakker/produkt/_attachment/9000" target="_blank">Fuel surcharge</a> is not included in the price returned from the ShippingGuide and must be calculated / added manually.
+  Bring Parcels is entitled to change this charge without notice to the customer. Any fuel surcharge applied will be detailed on the invoice.
+</sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>
 
