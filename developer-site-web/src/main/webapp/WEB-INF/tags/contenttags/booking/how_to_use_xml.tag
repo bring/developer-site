@@ -1,4 +1,5 @@
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
+
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -126,8 +127,7 @@ Host: www.mybring.com
                data-internal="/proxy/booking/api/additionalServicesForProduct.xml">
                 https://www.bring.no/booking/api/additionalServicesForProduct.xml</a>
 
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
+            <pre class="code-box xml response delay-snippet hidden"></pre>
         </div>
     </div>
     <additionalServices:recipient_notification/>
@@ -166,6 +166,20 @@ Host: www.mybring.com
                href="https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/quickPackEnvelopeRequest.xml">
                 https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml </a>
+
+            <p>Example response:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
+        </div>
+    </div>
+
+    <additionalServices:deliveryOption/>
+    <div data-tab="xml" class="tab">
+        <div class="api-call">
+            <p>Request:</p>
+            <a target="_blank" class="request"
+               href="https://www.bring.no/booking/api/bookingExamples/deliveryOptionRequest.xml"
+               data-internal="/proxy/booking/api/bookingExamples/deliveryOptionRequest.xml">
+                https://www.bring.no/booking/api/bookingExamples/deliveryOptionRequest.xml </a>
 
             <p>Example response:</p>
             <pre class="code-box xml response delay-snippet"></pre>

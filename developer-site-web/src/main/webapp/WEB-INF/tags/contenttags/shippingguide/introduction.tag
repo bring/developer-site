@@ -19,7 +19,7 @@
 </p>
 <p>
     <b>
-      <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=0484&amp;to=0470&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;product=ekspress09&amp;product=b-post&amp;product=courier_1h&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&amp;date=<%=new LocalDate()%>">Demo shipping alternatives form</a>
+      <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=0484&amp;to=0470&amp;weightInGrams=800&amp;length=10&amp;width=20&amp;height=5&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=smaapakker_a-post&amp;product=ekspress09&amp;product=smaapakker_b-post&amp;product=courier_1h&amp;product=minipakke&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&amp;date=<%=new LocalDate()%>">Demo shipping alternatives form</a>
     </b>
     (Norwegian)
 </p>
