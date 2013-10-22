@@ -32,5 +32,14 @@
         <li>
             CARRYON_BUSINESS
         </li>
+        <li>
+            CARRYON_BUSINESS_PALLET
+        </li>
+        <li>
+            CARRYON_BUSINESS_HALFPALLET
+        </li>
+        <li>
+            CARRYON_BUSINESS_QUARTERPALLET
+        </li>
     </ul>
 </div>
