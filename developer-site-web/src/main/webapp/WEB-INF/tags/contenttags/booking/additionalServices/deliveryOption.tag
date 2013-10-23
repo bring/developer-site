@@ -21,13 +21,4 @@
         - TWO_DELIVERIES_THEN_PIB<br>
         - TWO_DELIVERIES_THEN_RETURN<br>
     </p>
-    <p>
-        The following products support cash on delivery:
-    </p>
-    <ul class="additional-services-list">
-        <li>
-            BEDRIFTSPAKKE
-        </li>
-    </ul>
-
 </div>
