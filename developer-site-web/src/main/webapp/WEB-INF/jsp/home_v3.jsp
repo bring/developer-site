@@ -23,12 +23,6 @@
                 <div class="row-fluid">
                     <div class="span7">
                         <div class="welcometext">
-                            <p class="front-page-welcome-text"><b>Ledige stillinger hos Bring (norwegian / swedish)</b>
-                                <br/>- <a href="https://posten.easycruit.com/vacancy/1062609/44947">Systemutvikler i Oslo</a>
-                                <br/>- <a href="https://posten.easycruit.com/intranet/bring_se/vacancy/1039151/95261">Teamleader Systemutvecklare i Stockholm</a>
-                                <br/>- <a href="https://posten.easycruit.com/intranet/bring_se/vacancy/1039885/95261">Systemutvecklare i Stockholm</a>
-                            </p>
-
                             <h1 class="front-page-welcome-text">Bring Developer</h1>
                             <p class="front-page-welcome-text">Bring provides a collection of APIs to facilitate <span class="front-page-welcome-text-highlight">integration</span>
                                 with your systems. If you're running a <span class="front-page-welcome-text-highlight">webshop</span>, or any software dealing with shipments
