@@ -8,6 +8,7 @@
     <ol>
         <li><a onclick="showBookmark('introduction',        '/api/bookingapi.html');">Introduction</a></li>
         <li><a onclick="showBookmark('HTU',                 '/api/bookingapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('Pickup_order',        '/api/bookingapi.html');">Pickup order</a></li>
     </ol>
 </div>
 <div class="box">

@@ -1,5 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
+<%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <div data-tab="json">
 
 <h4>Examples</h4>
@@ -39,14 +40,12 @@ Host: www.mybring.com
 
 <div data-tab="json" class="tab">
   <div class="api-call">
-    <p>Request:</p>
+    <p>Example response:</p>
+    <pre class="code-box json response delay-snippet"></pre>
     <a target="_blank" class="request"
        href="https://www.bring.no/booking/api/bookingExamples/customers.json"
        data-internal="/proxy/booking/api/bookingExamples/customers.json">
       https://www.bring.no/booking/api/bookingExamples/customers.json</a>
-
-    <p>Example response:</p>
-    <pre class="code-box json response delay-snippet"></pre>
   </div>
 </div>
 
@@ -123,67 +122,58 @@ Host: www.mybring.com
     <additionalServices:additional_services/>
     <div data-tab="json" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>JSON:</p>
+            <pre class="code-box json response delay-snippet hidden"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/additionalServicesForProduct.json"
                data-internal="/proxy/booking/api/additionalServicesForProduct.json">
                 https://www.bring.no/booking/api/additionalServicesForProduct.json</a>
-
-            <pre class="code-box json response delay-snippet hidden"></pre>
         </div>
     </div>
 
     <additionalServices:recipient_notification/>
     <div data-tab="json" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/recipientNotificationRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/recipientNotificationRequest.json">
                 https://www.bring.no/booking/api/bookingExamples/recipientNotificationRequest.json </a>
-
-            <p>Example response:</p>
-            <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
     <additionalServices:cash_on_delivery/>
     <div data-tab="json" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/cashOnDeliveryRequest.json">
                 https://www.bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.json </a>
-
-            <p>Example response:</p>
-            <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
     <additionalServices:quickpack_envelope/>
     <div data-tab="json" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/quickPackEnvelopeRequest.json">
                 https://www.bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.json </a>
-
-            <p>Example response:</p>
-            <pre class="code-box json response delay-snippet"></pre>
         </div>
     </div>
 
     <additionalServices:deliveryOption/>
     <div data-tab="json" class="tab">
         <div class="api-call">
-            <p>Request:</p>
+            <p>Example:</p>
+            <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://www.bring.no/booking/api/bookingExamples/deliveryOptionRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/deliveryOptionRequest.json">
                 https://www.bring.no/booking/api/bookingExamples/deliveryOptionRequest.json </a>
-
-            <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
         </div>
     </div>
     <additionalServices:flex_delivery/>
@@ -221,14 +211,11 @@ Host: www.mybring.com
 
         <div data-tab="json" class="tab">
             <div class="api-call">
-                <p>Request:</p>
+                <pre class="code-box json response delay-snippet"></pre>
                 <a target="_blank" class="request"
                    href="https://www.bring.no/booking/api/bookingExamples/validRequest.json"
                    data-internal="/proxy/booking/api/bookingExamples/validRequest.json">
                     https://www.bring.no/booking/api/bookingExamples/validRequest.json </a>
-
-                <p>Example response:</p>
-                <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
 
@@ -237,14 +224,11 @@ Host: www.mybring.com
 
         <div data-tab="json" class="tab">
             <div class="api-call">
-                <p>Request:</p>
+                <pre class="code-box json response delay-snippet"></pre>
                 <a target="_blank" class="request"
                    href="https://www.bring.no/booking/api/bookingExamples/successfulResponse.json"
                    data-internal="/proxy/booking/api/bookingExamples/successfulResponse.json">
                     https://www.bring.no/booking/api/bookingExamples/successfulResponse.json </a>
-
-                <p>Example response:</p>
-                <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
 
@@ -263,14 +247,11 @@ Host: www.mybring.com
 
         <div data-tab="json" class="tab">
             <div class="api-call">
-                <p>Request:</p>
+                <pre style="min-height: 30px;" class="code-box json response delay-snippet"></pre>
                 <a target="_blank" class="request"
                    href="https://www.bring.no/booking/api/bookingExamples/failedResponse.json"
                    data-internal="/proxy/booking/api/bookingExamples/failedResponse.json">
                     https://www.bring.no/booking/api/bookingExamples/failedResponse.json </a>
-
-                <p>Example response:</p>
-                <pre style="min-height: 30px;" class="code-box json response delay-snippet"></pre>
             </div>
         </div>
 
@@ -308,13 +289,11 @@ Host: www.mybring.com
 
         <div data-tab="json" class="tab">
             <div class="api-call">
-                <p>Request:</p>
+                <pre class="code-box json response delay-snippet"></pre>
                 <a target="_blank" class="request" href="https://www.bring.no/booking/api/errors.json"
                    data-internal="/proxy/booking/api/errors.json"> https://www.bring.no/booking/api/errors.json </a>
-
-                <p>Example response:</p>
-                <pre class="code-box json response delay-snippet"></pre>
             </div>
         </div>
 </div>
+
 </div>

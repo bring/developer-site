@@ -167,6 +167,12 @@ a.read-more {
   background: url('../../images/read_more_highlight.gif') no-repeat left center;
 }
 
+a.request {
+    text-align: right;
+    width: 100%;
+    display: block;
+}
+
 a+p, p+p, p:first-child {
   margin: 1em 0 0 0;
 }
