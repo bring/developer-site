@@ -37,16 +37,18 @@
                             <h2><a name="HTU"></a>How to Use</h2>
 
                             <booking:how_to_use_common_text/>
-                            <booking:specialist/>
-                            <booking:cargo_groupage_defaults/>
 
                             <div data-tab="soap"><p>For the SOAP API, the Customer number API is included as an
                                 operation in the <a
-                                        href="https://www.bring.no/booking/api/ws/booking-v1.wsdl">WSDL.</a></p></div>
+                                        href="https://api.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p></div>
 
                             <booking:how_to_use_xml/>
                             <booking:how_to_use_json/>
                             <booking:how_to_use_soap/>
+
+                            <booking:customer_endpoint_json/>
+                            <booking:customer_endpoint_xml/>
+                            <booking:cargo_groupage_defaults/>
 
                             <booking:performance/>
 

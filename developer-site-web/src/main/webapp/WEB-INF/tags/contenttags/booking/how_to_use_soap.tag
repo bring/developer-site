@@ -3,6 +3,8 @@
 
   <div>
 
+    <h3 class="with-padding">Bookins Endpoint</h3>
+
     <h4>Examples</h4>
 
     <p>
@@ -25,7 +27,7 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
     <div data-tab="xml" class="tab api-call">
       <h5>Sample SOAP request body</h5>
-      <a target="_blank" class="request" href="https://www.bring.no/booking/api/bookingExamples/validRequest.xml"
+      <a target="_blank" class="request" href="https://api.bring.com/booking/api/bookingExamples/validRequest.xml"
          data-internal="/proxy/booking/api/bookingExamples/validRequest.xml"> </a>
 
       <pre class="code-box xml response delay-snippet"></pre>
@@ -51,11 +53,11 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 
         <ul>
           <li>
-              WSDL: <a href="https://www.bring.no/booking/api/ws/booking-v1.wsdl" target="_blank">https://www.bring.no/booking/api/ws/booking-v1.wsdl</a>
+              WSDL: <a href="https://api.bring.com/booking/api/ws/booking-v1.wsdl" target="_blank">https://api.bring.com/booking/api/ws/booking-v1.wsdl</a>
           </li>
 
           <li>
-              XSD: <a href="https://www.bring.no/booking/api/schema/booking-v1.xsd" target="_blank">https://www.bring.no/booking/api/schema/booking-v1.xsd</a>
+              XSD: <a href="https://api.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">https://api.bring.com/booking/api/schema/booking-v1.xsd</a>
           </li>
 
           <li>

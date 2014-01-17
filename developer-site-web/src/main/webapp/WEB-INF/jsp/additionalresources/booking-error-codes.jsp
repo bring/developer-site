@@ -23,7 +23,7 @@
                         <h1>Booking API: Error codes</h1>
                     </div>
                     <div class="box">
-                        <p>The following table is generated from <a href="https://www.bring.no/booking/api/errors.xml">www.bring.no/booking/api/errors.xml</a>
+                        <p>The following table is generated from <a href="https://api.bring.com/booking/api/errors.xml">api.bring.com/booking/api/errors.xml</a>
                         </p>
                         <%-- When adding the data-tab attribute to a
                         table the tableFromJSON script will fetch the

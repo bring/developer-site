@@ -1,5 +1,4 @@
 <div>
-    <h5>deliveryOption</h5>
     <p>
         If a sender want their package delivered to the door, and it cannot be delivered (i.e. Business closed or recipient is not present),
         then you can now choose what will happen with your package.<br>
