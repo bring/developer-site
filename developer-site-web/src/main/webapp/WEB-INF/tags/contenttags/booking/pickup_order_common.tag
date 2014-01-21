@@ -7,6 +7,8 @@
 </p>
 <p>Pickup in the different countries requires different customer numbers.</p>
 
+<p><strong>Endpoint:</strong> <code class="inline-code">https://api.bring.com/booking/api/pickupOrder</code></p>
+
 <table>
     <thead>
         <tr>
