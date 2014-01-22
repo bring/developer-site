@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
     ConstrettoConfiguration config;
-
+    public static String TRACKING_URL_FOR_ENVIRONMENT = "http://sporing.bring.no/"; //default
     public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
     public static String BOOKING_URL_FOR_ENVIRONMENT = "https://www.bring.no/booking/products"; //default
@@ -31,6 +31,7 @@ public class ApplicationConfig {
     @Autowired
     public void setConstrettoConfig(ConstrettoConfiguration config) {
         this.config = config;
+        TRACKING_URL_FOR_ENVIRONMENT = config.evaluateToString("sporingUrl");
         FRAKTGUIDE_URL_FOR_ENVIRONMENT = config.evaluateToString("fraktguideUrl");
         BOOKING_URL_FOR_ENVIRONMENT = config.evaluateToString("bookingUrl");
         PURCHASEORDER_URL_FOR_ENVIROMENT = config.evaluateToString("purchaseorderUrl");
@@ -55,6 +56,10 @@ public class ApplicationConfig {
 
         ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
         return new DefaultHttpClient(connectionManager, params);
+    }
+
+    public String getTrackingUrlForEnvironment(){
+        return TRACKING_URL_FOR_ENVIRONMENT;
     }
 
     public String getFraktguideUrlForEnvironment() {

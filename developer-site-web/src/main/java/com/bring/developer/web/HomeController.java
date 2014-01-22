@@ -17,8 +17,13 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/additionalresources/booking-api-error-codes.html")
-    public String bookingErrorCodes(){
+    public String bookingErrorCodes() {
         return "/additionalresources/booking-error-codes";
+    }
+
+    @RequestMapping(value = "/additionalresources/bookingproductlist.html")
+    public String bookingProductList() {
+        return "/additionalresources/bookingproductlist";
     }
 
     @RequestMapping(value = "/api/pickuppointapi.html")

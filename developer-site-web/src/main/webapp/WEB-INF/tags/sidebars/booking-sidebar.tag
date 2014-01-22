@@ -8,6 +8,7 @@
     <ol>
         <li><a onclick="showBookmark('introduction',        '/api/bookingapi.html');">Introduction</a></li>
         <li><a onclick="showBookmark('HTU',                 '/api/bookingapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('Pickup_order',        '/api/bookingapi.html');">Pickup order</a></li>
     </ol>
 </div>
 <div class="box">
@@ -28,5 +29,9 @@
     <ul>
         <li><a href="https://www.bring.no/booking/api/ws/booking-v1.wsdl" target="_blank">WSDL</a></li>
         <li><a href="https://www.mybring.com/booking/api/ws" target="_blank">Endpoint</a></li>
+    </ul>
+    <h5>Available products</h5>
+    <ul>
+        <li><a href="/additionalresources/bookingproductlist.html?from=booking" target="_blank">Product list</a></li>
     </ul>
 </div>

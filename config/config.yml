@@ -20,7 +20,7 @@ environments:
   qa:
     selvdrift_layout: true
     bigip_frontend: true
-    hosts: [aldea.bd.bring.no, antos.bd.bring.no]
+    hosts: [arret.bd.bring.no]
     port: 8540
     user: bring
     prefix: /var/apps/developer_qa/
