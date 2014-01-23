@@ -8,6 +8,7 @@
 	&lt;Name&gt;&lt;/Name&gt;
 	&lt;PostalCode&gt;&lt;/PostalCode&gt;
 	&lt;StateOrRegion&gt;&lt;/StateOrRegion&gt;
+	&lt;City&gt;&lt;/City&gt;
 	&lt;CountryCode&gt;&lt;/CountryCode&gt;
 	&lt;Street&gt;&lt;/Street&gt;
 	&lt;AddressLine&gt;&lt;/AddressLine&gt;

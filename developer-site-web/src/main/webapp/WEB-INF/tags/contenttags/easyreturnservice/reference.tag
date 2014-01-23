@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <pre class="code-box">Request prefix:
-https://api.bring.com/easy-return-service</pre>
+https://api.bring.com/documents/ipc/ers</pre>
 
 <table>
     <thead>
