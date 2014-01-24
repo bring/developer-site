@@ -65,7 +65,7 @@ Host: www.mybring.com
     <p>Example response:</p>
     <pre class="code-box json response delay-snippet"></pre>
     <a target="_blank" class="request"
-       href=""
-       data-internal="/proxy/booking/api/bookingExamples/customers.json"></a>
+       href="https://bring.no/booking/api/bookingExamples/customers.json"
+       data-internal="/proxy/booking/api/bookingExamples/customers.json"> https://bring.no/booking/api/bookingExamples/customers.json</a>
   </div>
 </div>

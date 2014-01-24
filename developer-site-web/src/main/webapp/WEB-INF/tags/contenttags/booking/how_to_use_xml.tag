@@ -180,9 +180,9 @@ Host: api.bring.com
         <div class="api-call">
             <pre style="min-height: 25px;" class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://api.bring.com/booking/api/bookingExamples/failedResponse.xml"
+               href="https://bring.no/booking/api/bookingExamples/failedResponse.xml"
                data-internal="/proxy/booking/api/bookingExamples/failedResponse.xml">
-                https://api.bring.com/booking/api/bookingExamples/failedResponse.xml </a>
+                https://bring.no/booking/api/bookingExamples/failedResponse.xml </a>
         </div>
     </div>
 
@@ -221,8 +221,9 @@ Host: api.bring.com
     <div data-tab="xml" class="tab">
         <div class="api-call">
             <pre class="code-box xml response delay-snippet"></pre>
-            <a target="_blank" class="request" href="https://api.bring.com/booking/api/errors.xml"
-               data-internal="/proxy/booking/api/errors.xml"> https://api.bring.com/booking/api/errors.xml </a>
+            <a target="_blank" class="request" href="https://bring.no/booking/api/errors.xml"
+               href="https://bring.no/booking/api/errors.xml"
+               data-internal="/proxy/booking/api/errors.xml"> https://bring.no/booking/api/errors.xml </a>
         </div>
     </div>
 </div>

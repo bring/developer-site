@@ -19,16 +19,16 @@ X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
     <h5>Sample SOAP request header</h5>
 
         <pre class="code-box">&lt;soapenv:Envelope
-            xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-            xmlns="http://www.bring.no/booking/"&gt;
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns="http://www.bring.no/booking/"&gt;
 &lt;soapenv:Header/&gt;
 &lt;soapenv:Body&gt;
 </pre>
 
     <div data-tab="xml" class="tab api-call">
       <h5>Sample SOAP request body</h5>
-      <a target="_blank" class="request" href="https://api.bring.com/booking/api/bookingExamples/validRequest.xml"
-         data-internal="/proxy/booking/api/bookingExamples/validRequest.xml"> </a>
+      <a target="_blank" class="request" href="https://bring.no/booking/api/bookingExamples/validRequest.xml"
+         data-internal="/proxy/booking/api/bookingExamples/validRequest.xml"> "https://bring.no/booking/api/bookingExamples/validRequest.xml</a>
 
       <pre class="code-box xml response delay-snippet"></pre>
     </div>

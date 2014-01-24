@@ -7,9 +7,9 @@
             <p>Example request for a Parcels Norway customer:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://api.bring.com/booking/api/bookingExamples/pickupOrderParcelRequest.xml"
+               href="https://bring.no/booking/api/bookingExamples/pickupOrderParcelRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderParcelRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/pickupOrderParcelRequest.xml</a>
+                https://bring.no/booking/api/bookingExamples/pickupOrderParcelRequest.xml</a>
         </div>
     </div>
 
@@ -18,9 +18,9 @@
             <p>Example request for a Parcels Sweden customer:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://api.bring.com/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.xml"
+               href="https://bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.xml</a>
+                https://bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.xml</a>
         </div>
     </div>
 
@@ -29,9 +29,9 @@
             <p>Example request for a Cargo customer:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://api.bring.com/booking/api/bookingExamples/pickupOrderCargoRequest.xml"
+               href="https://bring.no/booking/api/bookingExamples/pickupOrderCargoRequest.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderCargoRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/pickupOrderCargoRequest.xml</a>
+                https://bring.no/booking/api/bookingExamples/pickupOrderCargoRequest.xml</a>
         </div>
     </div>
 
@@ -40,9 +40,9 @@
             <p>Example response:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://api.bring.com/booking/api/bookingExamples/pickupOrderResponse.xml"
+               href="https://bring.no/booking/api/bookingExamples/pickupOrderResponse.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderResponse.xml">
-                https://api.bring.com/booking/api/bookingExamples/pickupOrderResponse.xml</a>
+                https://bring.no/booking/api/bookingExamples/pickupOrderResponse.xml</a>
         </div>
     </div>
 

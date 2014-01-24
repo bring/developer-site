@@ -31,9 +31,9 @@ Host: api.bring.com
   <div class="api-call">
     <pre class="code-box json response delay-snippet"></pre>
     <a target="_blank" class="request"
-       href="https://api.bring.com/booking/api/bookingExamples/basicRequest.json"
+       href="https://bring.no/booking/api/bookingExamples/basicRequest.json"
        data-internal="/proxy/booking/api/bookingExamples/basicRequest.json">
-      https://api.bring.com/booking/api/bookingExamples/validRequest.json </a>
+      https://bring.no/booking/api/bookingExamples/validRequest.json </a>
   </div>
 </div>
 
@@ -44,9 +44,9 @@ Host: api.bring.com
   <div class="api-call">
     <pre class="code-box json response delay-snippet"></pre>
     <a target="_blank" class="request"
-       href="https://api.bring.com/booking/api/bookingExamples/successfulResponse.json"
+       href="https://bring.no/booking/api/bookingExamples/successfulResponse.json"
        data-internal="/proxy/booking/api/bookingExamples/successfulResponse.json">
-      https://api.bring.com/booking/api/bookingExamples/successfulResponse.json </a>
+      https://bring.no/booking/api/bookingExamples/successfulResponse.json </a>
   </div>
 </div>
 
@@ -154,9 +154,9 @@ Host: api.bring.com
     <div class="api-call">
       <pre style="min-height: 30px;" class="code-box json response delay-snippet"></pre>
       <a target="_blank" class="request"
-         href="https://api.bring.com/booking/api/bookingExamples/failedResponse.json"
+         href="https://bring.no/booking/api/bookingExamples/failedResponse.json"
          data-internal="/proxy/booking/api/bookingExamples/failedResponse.json">
-        https://api.bring.com/booking/api/bookingExamples/failedResponse.json </a>
+        https://bring.no/booking/api/bookingExamples/failedResponse.json </a>
     </div>
   </div>
 
@@ -195,8 +195,8 @@ Host: api.bring.com
   <div data-tab="json" class="tab">
     <div class="api-call">
       <pre class="code-box json response delay-snippet"></pre>
-      <a target="_blank" class="request" href="https://api.bring.com/booking/api/errors.json"
-         data-internal="/proxy/booking/api/errors.json"> https://api.bring.com/booking/api/errors.json </a>
+      <a target="_blank" class="request" href="https://bring.no/booking/api/errors.json"
+         data-internal="/proxy/booking/api/errors.json"> https://bring.no/booking/api/errors.json </a>
     </div>
   </div>
 </div>

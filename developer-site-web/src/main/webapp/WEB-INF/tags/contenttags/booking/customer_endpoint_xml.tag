@@ -66,8 +66,8 @@ Host: www.mybring.com
     <p>Example response:</p>
     <pre class="code-box xml response delay-snippet"></pre>
     <a target="_blank" class="request"
-       href="https://api.bring.com/booking/api/bookingExamples/customers.xml"
+       href="https://bring.no/booking/api/bookingExamples/customers.xml"
        data-internal="/proxy/booking/api/bookingExamples/customers.xml">
-      https://api.bring.com/booking/api/bookingExamples/customers.xml</a>
+      https://bring.no/booking/api/bookingExamples/customers.xml</a>
   </div>
 </div>

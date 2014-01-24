@@ -23,5 +23,5 @@
 </p>
 
 <pre class="code-box">
-  X-Bring-Client-URL: http://example.org/shop
+X-Bring-Client-URL: http://example.org/shop
 </pre>

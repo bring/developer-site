@@ -40,9 +40,9 @@
               <p>Example:</p>
               <pre class="code-box xml response delay-snippet"></pre>
               <a target="_blank" class="request"
-                 href="https://api.bring.com/booking/api/bookingExamples/recipientNotificationRequest.xml"
+                 href="https://bring.no/booking/api/bookingExamples/recipientNotificationRequest.xml"
                  data-internal="/proxy/booking/api/bookingExamples/recipientNotificationRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/recipientNotificationRequest.xml </a>
+                https://bring.no/booking/api/bookingExamples/recipientNotificationRequest.xml </a>
             </div>
           </div>
 
@@ -59,9 +59,9 @@
               <p>Example:</p>
               <pre class="code-box xml response delay-snippet"></pre>
               <a target="_blank" class="request"
-                 href="https://api.bring.com/booking/api/bookingExamples/cashOnDeliveryRequest.xml"
+                 href="https://bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.xml"
                  data-internal="/proxy/booking/api/bookingExamples/cashOnDeliveryRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/cashOnDeliveryRequest.xml </a>
+                https://bring.no/booking/api/bookingExamples/cashOnDeliveryRequest.xml </a>
             </div>
           </div>
 
@@ -78,9 +78,9 @@
               <p>Example:</p>
               <pre class="code-box xml response delay-snippet"></pre>
               <a target="_blank" class="request"
-                 href="https://api.bring.com/booking/api/bookingExamples/quickPackEnvelopeRequest.xml"
+                 href="https://bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml"
                  data-internal="/proxy/booking/api/bookingExamples/quickPackEnvelopeRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/quickPackEnvelopeRequest.xml </a>
+                https://bring.no/booking/api/bookingExamples/quickPackEnvelopeRequest.xml </a>
             </div>
           </div>
 
@@ -97,9 +97,9 @@
               <p>Example:</p>
               <pre class="code-box xml response delay-snippet"></pre>
               <a target="_blank" class="request"
-                 href="https://api.bring.com/booking/api/bookingExamples/deliveryOptionRequest.xml"
+                 href="https://bring.no/booking/api/bookingExamples/deliveryOptionRequest.xml"
                  data-internal="/proxy/booking/api/bookingExamples/deliveryOptionRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/deliveryOptionRequest.xml </a>
+                https://bring.no/booking/api/bookingExamples/deliveryOptionRequest.xml </a>
             </div>
           </div>
 
@@ -115,9 +115,9 @@
             <div class="api-call">
               <p>Request:</p>
               <a target="_blank" class="request"
-                 href="https://api.bring.com/booking/api/bookingExamples/flexDeliveryRequest.xml"
+                 href="https://bring.no/booking/api/bookingExamples/flexDeliveryRequest.xml"
                  data-internal="/proxy/booking/api/bookingExamples/flexDeliveryRequest.xml">
-                https://api.bring.com/booking/api/bookingExamples/flexDeliveryRequest.xml </a>
+                https://bring.no/booking/api/bookingExamples/flexDeliveryRequest.xml </a>
 
               <p>Example response:</p>
               <pre class="code-box xml response delay-snippet"></pre>
