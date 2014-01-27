@@ -28,7 +28,7 @@
                            <div data-tab="json" class="tab">
                                <div class="api-call">
                                    <a target="_blank" class="request"
-                                      href="https://www.bring.no/booking/api/specialistsWithProducts.json"
+                                      href="https://api.bring.com/booking/api/specialistsWithProducts.json"
                                       data-internal="/proxy/booking/api/specialistsWithProducts.json">
                                    </a>
                                    <pre class="code-box json response delay-snippet hidden"></pre>

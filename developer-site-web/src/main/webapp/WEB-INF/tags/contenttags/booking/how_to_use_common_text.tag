@@ -14,3 +14,20 @@
     To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
     getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access
     to). The Customer number API also links customer numbers with the products the customer number is valid for. </p>
+
+<div data-tab="soap">
+    <p>For the SOAP API, the Customer number API is included as an
+    operation in the <a href="https://api.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a>
+    </p>
+</div>
+
+<h4>Client URL</h4>
+<p>
+    To use the Booking API you must also send a client url. The client url should be set to the url of the web shop
+    or application the end user is ordering from. The client url can be send to the Booking API as a url parameter, <code class="inline-code">clientUrl</code>,
+    or as a header, <code class="inline-code">X-Bring-Client-URL</code>.
+</p>
+
+<pre class="code-box">
+X-Bring-Client-URL: http://example.org/shop
+</pre>
