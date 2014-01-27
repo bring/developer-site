@@ -19,9 +19,9 @@
       <p>JSON:</p>
       <pre class="code-box json response delay-snippet hidden"></pre>
       <a target="_blank" class="request"
-         href="https://bring.no/booking/api/bookingExamples/additionalServicesForProduct.json"
+         href="https://bring.no/booking/api/additionalServicesForProduct.json"
          data-internal="/proxy/booking/api/additionalServicesForProduct.json">
-         https://bring.no/booking/api/bookingExamples/additionalServicesForProduct.json
+         https://bring.no/booking/api/additionalServicesForProduct.json
       </a>
     </div>
   </div>

@@ -52,7 +52,7 @@ Host: api.bring.com
 
 <h5>How to set customer numbers in Booking API</h5>
 
-<p>"customerNumber" is a value returned from the Customer number API. See <a href="#customers">Customers Endpoint</a> to learn more about getting customer numbers.</p>
+<p>"customerNumber" is a value returned from the Customer number API. See <a onclick="showBookmark('customers_json', '/api/bookingapi.html');" >Customers Endpoint</a> to learn more about getting customer numbers.</p>
 
 
 <div class="tab-content tab-minimal">

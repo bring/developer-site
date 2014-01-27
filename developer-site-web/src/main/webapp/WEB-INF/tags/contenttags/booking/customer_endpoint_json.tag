@@ -1,6 +1,6 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="json" class="tab">
-  <a name="customers"></a>
+  <a name="customers_json"></a>
   <h3 class="with-padding">Customer Endpoint</h3>
 
   <h4 class="no-top-pad">How to use the Customer API</h4>
@@ -51,15 +51,9 @@ Accept: application/json
 X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 X-Bring-Client-URL: http://example.org/shop
-Host: www.mybring.com
+Host: api.bring.com
 </pre>
 
-  <h5>Getting customers when logged into mybring</h5>
-
-  <p>
-    You can also suffix the resource with a supported file name extension (.json) to force the response. This
-    enables testing in a web browser that is logged in to mybring. </p>
-  <pre class="code-box">  GET <a href="http://www.mybring.com/booking/api/customers.json">http://www.mybring.com/booking/api/customers.json</a></pre>
 
   <div class="api-call">
     <p>Example response:</p>
@@ -68,4 +62,11 @@ Host: www.mybring.com
        href="https://bring.no/booking/api/bookingExamples/customers.json"
        data-internal="/proxy/booking/api/bookingExamples/customers.json"> https://bring.no/booking/api/bookingExamples/customers.json</a>
   </div>
+
+  <h5>Getting customers when logged into mybring</h5>
+  <p>
+    You can also get the API customer numbers from a page in mybring. Log into mybring and go to <a
+          href="https://www.mybring.com/useradmin/account/apicustomernumber">https://www.mybring.com/useradmin/account/apicustomernumber</a>
+    to see your customer numbers and corresponding API customer numbers.
+  </p>
 </div>

@@ -31,9 +31,9 @@ Host: api.bring.com
     <div class="api-call">
       <pre class="code-box xml response delay-snippet"></pre>
       <a target="_blank" class="request"
-         href="https://api.bring.com/booking/api/bookingExamples/basicRequest.xml"
+         href="https://bring.no/booking/api/bookingExamples/basicRequest.xml"
          data-internal="/proxy/booking/api/bookingExamples/basicRequest.xml">
-        https://api.bring.com/booking/api/bookingExamples/basicRequest.xml </a>
+        https://bring.no/booking/api/bookingExamples/basicRequest.xml </a>
     </div>
   </div>
 
@@ -44,17 +44,15 @@ Host: api.bring.com
     <div class="api-call">
       <pre class="code-box xml response delay-snippet"></pre>
       <a target="_blank" class="request"
-         href="https://api.bring.com/booking/api/bookingExamples/successfulResponse.xml"
+         href="https://bring.no/booking/api/bookingExamples/successfulResponse.xml"
          data-internal="/proxy/booking/api/bookingExamples/successfulResponse.xml">
-        https://api.bring.com/booking/api/bookingExamples/successfulResponse.xml </a>
+        https://bring.no/booking/api/bookingExamples/successfulResponse.xml </a>
     </div>
   </div>
 
-  <h4>Examples</h4>
-
   <h5>How to set customer numbers in Booking API</h5>
 
-  <p>"customerNumber" is a value returned from the Customer number API. See <a href="#customers">Customers Endpoint</a> to learn more about getting customer numbers.</p>
+  <p>"customerNumber" is a value returned from the Customer number API. See <a onClick="showBookmark('customers_xml', '/api/bookingapi.html');">Customers Endpoint</a> to learn more about getting customer numbers.</p>
 
   <div class="tab-content tab-minimal">
     <div class="tab" data-tab="xml">
@@ -87,9 +85,9 @@ Host: api.bring.com
       <p>Example response:</p>
       <pre class="code-box xml response delay-snippet"></pre>
       <a target="_blank" class="request"
-         href="https://api.bring.com/booking/api/bookingExamples/customers.xml"
+         href="https://bring.no/booking/api/bookingExamples/customers.xml"
          data-internal="/proxy/booking/api/bookingExamples/customers.xml">
-        https://api.bring.com/booking/api/bookingExamples/customers.xml </a>
+        https://bring.no/booking/api/bookingExamples/customers.xml </a>
     </div>
   </div>
 
