@@ -15,9 +15,11 @@
     getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access
     to). The Customer number API also links customer numbers with the products the customer number is valid for. </p>
 
-<div data-tab="soap"><p>For the SOAP API, the Customer number API is included as an
-  operation in the <a
-          href="https://api.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a></p></div>
+<div data-tab="soap">
+    <p>For the SOAP API, the Customer number API is included as an
+    operation in the <a href="https://api.bring.com/booking/api/ws/booking-v1.wsdl">WSDL.</a>
+    </p>
+</div>
 
 <h4>Client URL</h4>
 <p>

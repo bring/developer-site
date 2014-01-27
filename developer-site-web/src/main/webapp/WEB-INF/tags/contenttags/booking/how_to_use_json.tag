@@ -7,11 +7,7 @@
 <h4 class="no-top-pad">Creating a booking</h4>
 <p>
   All requests for the API must include the content type and authentication headers. Use HTTP POST to create new
-  bookings.
-</p>
-
-<p>
-  Below you can se a basic booking example of a SERVICEPAKKE product with out any additional services.
+  bookings. Below you can see a basic booking example of a SERVICEPAKKE product with out any additional services.
 </p>
 
 <h5>HTTP-Headers</h5>
