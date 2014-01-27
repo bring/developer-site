@@ -3,7 +3,7 @@
 
   <div>
 
-    <h3 class="with-padding">Bookins Endpoint</h3>
+    <h3 class="with-padding">Booking Endpoint</h3>
 
     <h4>Examples</h4>
 

@@ -2,7 +2,6 @@
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
 <%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <div data-tab="json">
-<a name="bookings"></a>
 <h3 class="with-padding">Booking Endpoint</h3>
 
 <h4 class="no-top-pad">Creating a booking</h4>

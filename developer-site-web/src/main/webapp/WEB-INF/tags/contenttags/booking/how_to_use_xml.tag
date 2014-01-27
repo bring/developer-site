@@ -2,7 +2,6 @@
 <%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
-  <a name="bookings"></a>
   <h3 class="with-padding">Booking Endpoint</h3>
 
   <h4 class="no-top-pad">Creating a booking</h4>
