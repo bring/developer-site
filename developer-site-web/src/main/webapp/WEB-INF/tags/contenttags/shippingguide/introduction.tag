@@ -36,6 +36,28 @@
 <p>
   There is also a <a href="/additionalresources/offlinedata.html?from=shipping">Offline SOAP service</a> for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
 </p>
+<h2>Guidelines</h2>
+<p>
+    &lt;MainDisplayCategory&gt; should be written in bold text and followed by our logo. <a target="_blank" href="http://mediaweb.posten.no/fotoweb/grid.fwx?archiveId=5005">Get approved logo here</a>.
+</p>
+<p>
+    In the webshop you should display
+    <ul>
+        <li>&lt;MainDisplayCategory&gt;</li>
+        <li>&lt;DisplayName&gt;</li>
+        <li>&lt;DescriptionText&gt;</li>
+    </ul>
+    Repeat the last two as needed, depending on the number of options you would like to display.
+</p>
+<p>
+    <i>The following values are not meant for display in the webshop and as such should not be visible on your site</i>
+    <ul>
+        <li>&lt;Product&gt;</li>
+        <li>&lt;ProductId&gt;</li>
+        <li>&lt;ProductCodeInProductionSystem&gt;</li>
+    </ul>
+    We strongly advise that you give your customers at least two options, home delivery and pickup point.
+</p>
 
 <table>
     <thead>
