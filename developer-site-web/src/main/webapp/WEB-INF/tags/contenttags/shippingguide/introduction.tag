@@ -56,7 +56,7 @@
         <li>&lt;ProductId&gt;</li>
         <li>&lt;ProductCodeInProductionSystem&gt;</li>
     </ul>
-    We strongly advise that you give your customers at least two options, home delivery and pickup point.
+    <strong>We strongly advise that you give your customers at least two options, home delivery and pickup point.</strong>
 </p>
 
 <table>
