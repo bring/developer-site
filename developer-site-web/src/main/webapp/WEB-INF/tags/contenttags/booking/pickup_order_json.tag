@@ -11,7 +11,7 @@
         <div class="content-box">
           <div class="api-call">
             <p>Example request for a Parcels Norway customer:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://bring.no/booking/api/bookingExamples/pickupOrderParcelRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderParcelRequest.json">
@@ -24,7 +24,7 @@
         <div class="content-box">
           <div class="api-call">
             <p>Example request for a Parcels Sweden customer:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderParcelInternationalRequest.json">
@@ -37,7 +37,7 @@
         <div class="content-box">
           <div class="api-call">
             <p>Example request for a Cargo customer:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://bring.no/booking/api/bookingExamples/pickupOrderCargoRequest.json"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderCargoRequest.json">
@@ -50,7 +50,7 @@
         <div class="content-box">
           <div class="api-call">
             <p>Example response:</p>
-            <pre class="code-box xml response delay-snippet"></pre>
+            <pre class="code-box json response delay-snippet"></pre>
             <a target="_blank" class="request"
                href="https://bring.no/booking/api/bookingExamples/pickupOrderResponse.json"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderResponse.json">
