@@ -1,6 +1,8 @@
+<%@ page import="com.bring.developer.config.featuretoggle.FeatureToggle" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -126,16 +128,18 @@
                                     </div>
                                 </a>
                             </li>
-                            <%--<li>--%>
-                                <%--<a href="/api/easyreturnserviceapi.html">--%>
-                                    <%--<div class="api-menu-item-container">--%>
-                                        <%--<div class="api-menu-icons purchaseicon"></div>--%>
-                                        <%--<div class="api-menu-text"></div>--%>
-                                        <%--<span class="api-link black">Easy Return Service API</span>--%>
-                                        <%--<span class="black">Create labels for returning cross-border parcels</span>--%>
-                                    <%--</div>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
+                            <c:if test="${featureToggle.easyReturnService}">
+                            <li>
+                                <a href="/api/easyreturnserviceapi.html">
+                                    <div class="api-menu-item-container">
+                                        <div class="api-menu-icons purchaseicon"></div>
+                                        <div class="api-menu-text"></div>
+                                        <span class="api-link black">Easy Return Service API</span>
+                                        <span class="black">Create labels for returning cross-border parcels</span>
+                                    </div>
+                                </a>
+                            </li>
+                            </c:if>
                             <li>
                                 <a href="http://www.bring.no/hele-bring/edi-i-bring">
                                     <div class="api-menu-item-container">
