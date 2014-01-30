@@ -1,3 +1,4 @@
+<%@ page import="com.bring.developer.config.featuretoggle.FeatureToggle" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -126,16 +127,18 @@
                                     </div>
                                 </a>
                             </li>
-                            <%--<li>--%>
-                                <%--<a href="/api/easyreturnserviceapi.html">--%>
-                                    <%--<div class="api-menu-item-container">--%>
-                                        <%--<div class="api-menu-icons purchaseicon"></div>--%>
-                                        <%--<div class="api-menu-text"></div>--%>
-                                        <%--<span class="api-link black">Easy Return Service API</span>--%>
-                                        <%--<span class="black">Create labels for returning cross-border parcels</span>--%>
-                                    <%--</div>--%>
-                                <%--</a>--%>
-                            <%--</li>--%>
+                            <% if (((FeatureToggle)request.getAttribute(FeatureToggle.REQUEST_ATTRIBUTE_NAME)).isEasyReturnService()) { %>
+                            <li>
+                                <a href="/api/easyreturnserviceapi.html">
+                                    <div class="api-menu-item-container">
+                                        <div class="api-menu-icons purchaseicon"></div>
+                                        <div class="api-menu-text"></div>
+                                        <span class="api-link black">Easy Return Service API</span>
+                                        <span class="black">Create labels for returning cross-border parcels</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <% } %>
                             <li>
                                 <a href="http://www.bring.no/hele-bring/edi-i-bring">
                                     <div class="api-menu-item-container">
