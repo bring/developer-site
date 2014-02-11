@@ -18,7 +18,7 @@
                 <div class="span9">
 
                     <div class="box">
-                        <h1>Booking API (BETA)</h1>
+                        <h1>Booking API</h1>
                     </div>
 
                     <div class="box">
