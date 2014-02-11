@@ -13,7 +13,3 @@
     sending a booking request. Note that invoice payment is the only available payment option for the Booking API.
     This means that the mybring user ID used in the booking request must have access to the customer number
     specified as payer of the booking. </p>
-
-
-<div class="information-box">BETA! This API is currently in BETA, which means that even though the code is in production and fully functional,
-                             changes might be made in the future that can break code relying on this specific version.</div>
