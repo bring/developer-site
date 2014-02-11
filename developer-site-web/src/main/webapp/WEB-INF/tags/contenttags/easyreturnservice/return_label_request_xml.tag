@@ -45,6 +45,7 @@
             <td>
                 <ul>
                     <li>Required</li>
+                    <li>Must be a valid customer ID</li>
                     <li>Must be a numerical value either 8 or 11 characters long</li>
                 </ul>
             </td>
