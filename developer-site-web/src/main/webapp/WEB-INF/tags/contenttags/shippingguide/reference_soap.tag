@@ -69,6 +69,14 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>/RequestProperties/Language</td>
+                    <td>Which language the descriptive product texts should have. Supported languages are English (en), Swedish (se), Finnish (fi), Danish (da) and Norwegian (no).
+                        If no language is set, or text is not available in the requested language, norwegian text is returned.
+                    </td>
+                    <td>no
+                    </td>
+                </tr>
+                <tr>
                     <td>/ProductIds/ProductId</td>
                     <td>List of Product IDs you wish to get alternatives for. The shipping guide will skip products that are not applicable (e.g. shipment is too large for product type
                     or the postal codes are outside of the service area of the product.</td>

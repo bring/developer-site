@@ -143,5 +143,12 @@
         product=servicepakke&product=bpakke_dor-dor</a>.
     </td>
   </tr>
+  <tr>
+      <td>Language</td>
+      <td>
+          Which language the descriptive product texts should have. Supported languages are English (en), Swedish (se), Finnish (fi), Danish (da) and Norwegian (no).
+          If no language is set, or text is not available in the requested language, norwegian text is returned.
+      </td>
+  </tr>
   </tbody>
 </table>
