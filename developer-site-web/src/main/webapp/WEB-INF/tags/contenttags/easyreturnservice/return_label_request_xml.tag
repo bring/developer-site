@@ -31,3 +31,61 @@
   &lt;/Shipment&gt;
 &lt;/LabelRequest&gt;
 </pre>
+<h2>Validation</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Rules</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>LabelRequest/CustomerId</td>
+            <td>
+                <ul>
+                    <li>Required</li>
+                    <li>Must be a numerical value either 8 or 11 characters long</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>LabelRequest/Sender</td>
+            <td>
+                <ul>
+                    <li>Required</li>
+                    <li>Name, Street, PostalCode, City and CountryCode are required</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>LabelRequest/Recipient</td>
+            <td>
+                <ul>
+                    <li>Required</li>
+                    <li>CustomerId, Name, Street, PostalCode, City and CountryCode are required</li>
+                    <li>CustomerId must be a numerical value either 8 or 11 characters long</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>LabelRequest/Shipment/PackageId</td>
+            <td>
+                <ul>
+                    <li>Required</li>
+                    <li>Must be a valid PackageId in the form <i>AB123456789NO</i></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>LabelRequest/Shipment/Weight</td>
+            <td>
+                <ul>
+                    <li>Required</li>
+                    <li>Must be an integer between 0 and 20</li>
+                    <li>The unit is kilogram</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
