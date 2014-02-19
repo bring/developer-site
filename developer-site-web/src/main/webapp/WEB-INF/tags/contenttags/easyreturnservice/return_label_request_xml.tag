@@ -46,7 +46,7 @@
                 <ul>
                     <li>Required</li>
                     <li>Must be a valid Mybring customer number</li>
-                    <li><a href="http://developer.bring.com/api/bookingapi.html#customers_xml">Read more about Mybring customer numbers</a></li>
+                    <li><a href="/api/bookingapi.html#customers_xml">Read more about Mybring customer numbers</a></li>
                 </ul>
             </td>
         </tr>
@@ -66,7 +66,7 @@
                     <li>Required</li>
                     <li>CustomerId, Name, Street, PostalCode, City and CountryCode are required</li>
                     <li>CustomerId must be a valid Mybring customer number</li>
-                    <li><a href="http://developer.bring.com/api/bookingapi.html#customers_xml">Read more about Mybring customer numbers</a></li>
+                    <li><a href="/api/bookingapi.html#customers_xml">Read more about Mybring customer numbers</a></li>
                 </ul>
             </td>
         </tr>
