@@ -69,11 +69,11 @@ X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 Host: api.bring.com
 </pre>
-  <h5>Getting customers when logged into mybring</h5>
+  <h5>Getting customers when logged into Mybring</h5>
 
   <p>
     You can also suffix the resource with a supported file name extension (.xml) to force the response. This
-    enables testing in a web browser that is logged in to mybring. </p>
+    enables testing in a web browser that is logged in to Mybring. </p>
   <pre class="code-box">GET <a href="http://www.mybring.com/booking/api/customers.xml">http://www.mybring.com/booking/api/customers.xml</a></pre>
   <div data-tab="xml" class="tab">
     <div class="api-call">

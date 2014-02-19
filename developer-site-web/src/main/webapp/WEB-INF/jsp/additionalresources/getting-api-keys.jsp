@@ -30,22 +30,22 @@
                     </div>
                     <div class="box">
                         <h2><a name="getting"></a>Getting an API-key</h2>
-                        <p><h4>Do you have a mybring-account?</h4>
+                        <p><h4>Do you have a Mybring account?</h4>
 
                         <ul>
                             <li><b>No:</b></br> </br>If you are a developer hired to develop an application for a
-                                                     company, you need the API-key associated with that companys mybring-account. Typically,
-                                                     as a developer you do not have a mybring account, unless you are running your own
-                                                     business and doing the development yourself. So step one is to register a mybring
+                                                     company, you need the API-key associated with that companys Mybring account. Typically,
+                                                     as a developer you do not have a Mybring account, unless you are running your own
+                                                     business and doing the development yourself. So step one is to register a Mybring
                                                      account, or tell the company you work for to do so in order for you to get your
                                                      API-keys. To register a new user: </br></br>Please visit: <a
                                         href="https://www.mybring.com/useradmin/open/signup/new" target="_blank">https://www.mybring.com/useradmin/open/signup/new</a></br></br>
 
                                 <div class="information-box">
-                                    <b>What's mybring?</b></br>Mybring is a logged-in service for Bring's customers.
-                                                               With MyBring the customers get improved possibility to follow up their own goods
-                                                               flows, finance and quality. MyBring will also offer existing services such as
-                                                               tracking and booking. After you have someone with access to a mybring account, you
+                                    <b>What's Mybring?</b></br>Mybring is a logged-in service for Bring's customers.
+                                                               With Mybring the customers get improved possibility to follow up their own goods
+                                                               flows, finance and quality. Mybring will also offer existing services such as
+                                                               tracking and booking. After you have someone with access to a Mybring account, you
                                                                may retrieve the API-key.
                                 </div>
 
@@ -56,7 +56,7 @@
                             </li>
                             <h4>1. Log in to <a
                                     href="http://www.bring.com/all-of-bring/products-and-services/mybring"
-                                    target="_blank">mybring</a></h4>
+                                    target="_blank">Mybring</a></h4>
                             <img src="../images/mybringLogin.png" alt="Login Screenshot">
                             <hr>
                             <h4>2. Go to your "profile"</h4>
@@ -77,9 +77,9 @@
 
                     <div class="box">
                         <h2><a name="using"></a>Using API-keys</h2>
-                        <p>After retrieving an API-key, you may use it to authenticate. We use the mybring authentication framework.
+                        <p>After retrieving an API-key, you may use it to authenticate. We use the Mybring authentication framework.
                            This is a proprietary single sign-on solution that applies two HTTP Headers for authentication to the API.
-                           All mybring-APIs use a simple authentication-scheme.
+                           All Mybring APIs use a simple authentication scheme.
                            By adding two headers to all requests, you will authenticate your request. </p>
                         <table>
                             <thead>
@@ -93,12 +93,12 @@
                             <tr>
                                 <td>X-MyBring-API-Uid</td>
                                 <td>example@customer.com</td>
-                                <td>This is the mybring login ID.</td>
+                                <td>This is the Mybring login ID.</td>
                             </tr>
                             <tr>
                                 <td>X-MyBring-API-Key</td>
                                 <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
-                                <td>This is the API key of the mybring user.</td>
+                                <td>This is the API key of the Mybring user.</td>
                             </tr>
                             </tbody>
                         </table>
@@ -107,9 +107,9 @@
 
                     <div class="box">
                     <h2><a name="buyer"></a>How to get authorized with the buyer role</h2>
-                    <p>To be able to use the <b>Booking API</b> the customer (mybring user) needs to be authorized with the buyer role.
+                    <p>To be able to use the <b>Booking API</b> the customer (Mybring user) needs to be authorized with the buyer role.
                     That means having the authorization to receive invoices on behalf of the company.
-                    To get this authorization go to mybring and choose the tab "my authorizations" and the relevant company to extend/change the accesses for your customer-profile.
+                    To get this authorization go to Mybring and choose the tab "my authorizations" and the relevant company to extend/change the accesses for your customer-profile.
                     You have to check the box: "Receive invoices on behalf of the company" to be authorized with the buyer role.</p>
                     <img src="../images/buyer-role.png" alt="buyer role screenshot">
                         </br></br>

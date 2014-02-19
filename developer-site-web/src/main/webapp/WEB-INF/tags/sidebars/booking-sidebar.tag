@@ -15,7 +15,7 @@
     <h2>Additonal Resources</h2>
     <ul>
         <li><a href="https://api.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">XSD</a></li>
-        <li><a href="http://www.mybring.com/useradmin/open/signup/new" target="_blank">Signup to mybring</a></li>
+        <li><a href="http://www.mybring.com/useradmin/open/signup/new" target="_blank">Signup to Mybring</a></li>
         <li><a href="https://github.com/bring/bring-api-java#introduction" target="_blank">Java API</a></li>
         <li><a href="/additionalresources/getting-api-keys.html?from=booking">Getting and using API-keys</a></li>
         <li><a href="/additionalresources/booking-api-error-codes.html?from=booking">Error codes</a></li>

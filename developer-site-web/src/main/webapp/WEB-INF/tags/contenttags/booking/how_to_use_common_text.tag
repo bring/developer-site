@@ -12,7 +12,7 @@
 
 <p>
     To perform a booking, you must specify which customer number to use. For your convenience, there is an API for
-    getting the customer numbers associated with your mybring user (the customer numbers your mybring user has access
+    getting the customer numbers associated with your Mybring user (the customer numbers your Mybring user has access
     to). The Customer number API also links customer numbers with the products the customer number is valid for. </p>
 
 <div data-tab="soap">

@@ -5,8 +5,8 @@
 
   <h4 class="no-top-pad">How to use the Customer API</h4>
   <p>
-    You must be logged in to mybring to use the Customer API. You can test it as a normal mybring user using a web
-    browser, or you can use the mybring API-key to be authenticated to use the service programmatically. </p>
+    You must be logged in to Mybring to use the Customer API. You can test it as a normal Mybring user using a web
+    browser, or you can use the Mybring API-key to be authenticated to use the service programmatically. </p>
 
   <p>
     The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring
@@ -63,9 +63,9 @@ Host: api.bring.com
       https://bring.no/booking/api/bookingExamples/customers.xml</a>
   </div>
 
-  <h5>Getting customers when logged into mybring</h5>
+  <h5>Getting customers when logged into Mybring</h5>
   <p>
-    You can also get the API customer numbers from a page in mybring. Log into mybring and go to <a
+    You can also get the API customer numbers from a page in Mybring. Log into mybring and go to <a
           href="https://www.mybring.com/useradmin/account/apicustomernumber">https://www.mybring.com/useradmin/account/apicustomernumber</a>
     to see your customer numbers and corresponding API customer numbers.
   </p>
