@@ -58,9 +58,9 @@ Host: api.bring.com
     <p>Example response:</p>
     <pre class="code-box xml response delay-snippet"></pre>
     <a target="_blank" class="request"
-       href="https://bring.no/booking/api/bookingExamples/customers.xml"
+       href="https://www.bring.no/booking/api/bookingExamples/customers.xml"
        data-internal="/proxy/booking/api/bookingExamples/customers.xml">
-      https://bring.no/booking/api/bookingExamples/customers.xml</a>
+      https://www.bring.no/booking/api/bookingExamples/customers.xml</a>
   </div>
 
   <h5>Getting customers when logged into Mybring</h5>

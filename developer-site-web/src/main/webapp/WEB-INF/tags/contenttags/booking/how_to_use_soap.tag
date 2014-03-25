@@ -27,8 +27,8 @@ xmlns="http://www.bring.no/booking/"&gt;
 
     <div data-tab="xml" class="tab api-call">
       <h5>Sample SOAP request body</h5>
-      <a target="_blank" class="request" href="https://bring.no/booking/api/bookingExamples/validRequest.xml"
-         data-internal="/proxy/booking/api/bookingExamples/validRequest.xml"> "https://bring.no/booking/api/bookingExamples/validRequest.xml</a>
+      <a target="_blank" class="request" href="https://www.bring.no/booking/api/bookingExamples/validRequest.xml"
+         data-internal="/proxy/booking/api/bookingExamples/validRequest.xml"> "https://www.bring.no/booking/api/bookingExamples/validRequest.xml</a>
 
       <pre class="code-box xml response delay-snippet"></pre>
     </div>

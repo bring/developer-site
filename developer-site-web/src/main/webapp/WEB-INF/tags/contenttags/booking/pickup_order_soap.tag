@@ -12,9 +12,9 @@
             <p>Example request for a Parcels Norway customer:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://bring.no/booking/api/bookingExamples/pickupOrderParcelRequestSOAP.xml"
+               href="https://www.bring.no/booking/api/bookingExamples/pickupOrderParcelRequestSOAP.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderParcelRequestSOAP.xml">
-              https://bring.no/booking/api/bookingExamples/pickupOrderParcelRequestSOAP.xml</a>
+              https://www.bring.no/booking/api/bookingExamples/pickupOrderParcelRequestSOAP.xml</a>
           </div>
         </div>
       </li>
@@ -25,9 +25,9 @@
             <p>Example request for a Parcels Sweden customer:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequestSOAP.xml"
+               href="https://www.bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequestSOAP.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderParcelInternationalRequestSOAP.xml">
-              https://bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequestSOAP.xml</a>
+              https://www.bring.no/booking/api/bookingExamples/pickupOrderParcelInternationalRequestSOAP.xml</a>
           </div>
         </div>
       </li>
@@ -38,9 +38,9 @@
             <p>Example request for a Cargo customer:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://bring.no/booking/api/bookingExamples/pickupOrderCargoRequestSOAP.xml"
+               href="https://www.bring.no/booking/api/bookingExamples/pickupOrderCargoRequestSOAP.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderCargoRequestSOAP.xml">
-              https://bring.no/booking/api/bookingExamples/pickupOrderCargoRequestSOAP.xml</a>
+              https://www.bring.no/booking/api/bookingExamples/pickupOrderCargoRequestSOAP.xml</a>
           </div>
         </div>
       </li>
@@ -51,9 +51,9 @@
             <p>Example response:</p>
             <pre class="code-box xml response delay-snippet"></pre>
             <a target="_blank" class="request"
-               href="https://bring.no/booking/api/bookingExamples/pickupOrderResponseSOAP.xml"
+               href="https://www.bring.no/booking/api/bookingExamples/pickupOrderResponseSOAP.xml"
                data-internal="/proxy/booking/api/bookingExamples/pickupOrderResponseSOAP.xml">
-              https://bring.no/booking/api/bookingExamples/pickupOrderResponseSOAP.xml</a>
+              https://www.bring.no/booking/api/bookingExamples/pickupOrderResponseSOAP.xml</a>
           </div>
         </div>
       </li>
