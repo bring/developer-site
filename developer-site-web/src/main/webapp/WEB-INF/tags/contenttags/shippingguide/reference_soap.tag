@@ -84,7 +84,10 @@
                 </tr>
                 <tr>
                   <td>/ProductIds/ProductId/@customerNumber</td>
-                  <td>The mybring API customer number for the specified product. E.g. "PARCELS_NORWAY-00012341234" Bring Cargo has different customer numbers from Bring Express and Bring Parcels, therefore the customer number is specified for each requested product. There exists an API /web pages for getting the API customer numbers of your mybring user that also maps customer number to products. See developer.bring.com. If the customerNumber attribute is set, then net (customer agreement) prices will be returned for the specified product. If the attribute is not set, then list (gross) prices will be returned for the product.</td>
+                  <td>The mybring API customer number for the specified product, e.g. "PARCELS_NORWAY-00012341234".<br/><br/>
+                    Bring Cargo has different customer numbers from Bring Express and Bring Parcels, therefore the customer number is specified for each requested product.<br/><br/>
+                    There exists an API /web pages for getting the API customer numbers of your mybring user that also maps customer number to products. See <a href="http://developer.bring.com/additionalresources/getting-api-keys.html">http://developer.bring.com/additionalresources/getting-api-keys.html</a><br/><br/>
+                    If the customerNumber attribute is set, then net (customer agreement) prices will be returned for the specified product. If the attribute is not set, then list (gross) prices will be returned for the product.</td>
                   <td></td>
                 </tr>
                 <tr>
@@ -116,7 +119,7 @@
                 </tr>
                 <tr>
                     <td>/Packages/Package/Volume</td>
-                    <td>Volume of package in dm <sup>3</sup> (litres)</td>
+                    <td>Volume of package in dm<sup>3</sup> (litres)</td>
                     <td></td>
                 </tr>
                 <tr>
