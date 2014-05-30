@@ -23,7 +23,7 @@ public class ApplicationConfig {
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
     public static String BOOKING_URL_FOR_ENVIRONMENT = "https://www.bring.no/booking/products"; //default
     public static String PURCHASEORDER_URL_FOR_ENVIROMENT = "https://api.bring.com/po/api"; //default
-    public static String PICKUP_POINT_FOR_ENVIRONMENT = "https://api.bring.com/pickuppoint/api"; //default
+    public static String PICKUP_POINT_FOR_ENVIRONMENT = "https://api.bring.com/pickuppoint"; //default
     public static String GOOGLE_ANALYTICS_ID = "UA-33478893-1"; //default
     public static boolean CLASSPATH_XML_FILES = true; //default
 

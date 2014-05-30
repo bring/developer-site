@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <pre class="code-box">Request prefix:
-    http://api.bring.com/pickuppoint/api/v2/pickuppoint</pre>
+    https://api.bring.com/pickuppoint/api/pickuppoint</pre>
 
     <table>
         <thead>
@@ -12,36 +12,33 @@
         </thead>
         <tbody>
         <tr>
-            <td><code>&lt;countryCode&gt;/&lt;postalCode&gt;.&lt;extension&gt;</code></td></code></td>
+            <td><code>/&lt;countryCode&gt;/&lt;postalCode&gt;.&lt;extension&gt;</code></td></code></td>
             <td>Returns the 10 nearest pickup points based on the given postal code.
                 <ul>
-                    <li><code>&lt;countryCode&gt;</code> = a valid country code, NO and DK supported now</li>
-                    <li><code>&lt;postalCode&gt;</code> = any valid postal code</li>
+                    <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
+                    <li><code>&lt;postalCode&gt;</code> = any valid postal code in specified country</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
             </td>
         </tr>
         <tr >
-            <td><code>/location/&lt;latitude&gt;/&lt;longitude&gt;.&lt;extension&gt;</code></td>
+            <td><code>/&lt;countryCode&gt;/location/&lt;latitude&gt;,&lt;longitude&gt;.&lt;extension&gt;</code></td>
             <td>Returns the 10 nearest pickup points based on the given location.
                 <ul>
-                    <li>
-                        <code>&lt;latitude&gt;</code> = geographic coordinate specifying the north-south position.
-                    </li>
-                    <li><code>&lt;longitude&gt;</code> = geographic coordinate specifying the east-west position.
-                    </li>
+                    <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
+                    <li><code>&lt;latitude&gt;</code> = geographic coordinate specifying the north-south position.</li>
+                    <li><code>&lt;longitude&gt;</code> = geographic coordinate specifying the east-west position.</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td><code>/id/&lt;id&gt;.&lt;extension&gt;</code></td>
+            <td><code>/&lt;countryCode&gt;/id/&lt;id&gt;.&lt;extension&gt;</code></td>
             <td>Returns information about the pickup point based on the pickup point's id.
                 <ul>
-                    <li>
-                        <code>&lt;id&gt;</code> = The pickup point's id.
-                    </li>
-                    <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
+                  <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
+                  <li><code>&lt;id&gt;</code> = The pickup point's id.</li>
+                  <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
             </td>
         </tr>
@@ -95,7 +92,7 @@
             <td><code>?street=&lt;street&gt;</code></td>
             <td>Searches for pickup points that is located in a street named &lt;street&gt;
                 <ul>
-                    <li><code>&lt;street&gt;</code> = The street name where the pickup point is located. Must match if provided</li>
+                    <li><code>&lt;street&gt;</code> = The street name where the pickup point is located. The street name supports partial searches by specifing a wildcard "*". Only supported when country is DK</li>
                 </ul>
             </td>
         </tr>
@@ -103,7 +100,7 @@
             <td><code>?streetNumber=&lt;streetNumber&gt;</code></td>
             <td>Searches for pickup points that is located at an address with street number = &lt;street&gt;
                 <ul>
-                    <li><code>&lt;street&gt;</code> = The street number where the pickup point is located. Must match if provided</li>
+                    <li><code>&lt;streetNumber&gt;</code> = The street number where the pickup point is located. The street number supports partial searches by specifing a wildcard "*". Only supported when country is DK</li>
                 </ul>
             </td>
         </tr>
