@@ -1,12 +1,9 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
-<p>First you have to choose whether you want to use a postal code or geographical coordinates to find the 10 nearest
-       delivery locations. The following examples illustrate the different alternatives. </p>
-
   <div data-tab="xml">
       <div class="row element-sample">
 
-          <h4>Example: USING THE POSTAL CODE</h4>
+          <h4>Example</h4>
 
           <p>Find pickup points based on the recipient's postal code, 1407 Vinterbro. </p>
 
@@ -15,9 +12,9 @@
                       <div class="api-call">
                           <p>Request:</p>
                           <a target="_blank" class="request"
-                             href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.xml"
-                             data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.xml">
-                              /api/pickuppoint/postalcode/1407.xml </a>
+                             href="http://api.bring.com/pickuppoint/api/v2/pickuppoint/NO/1407.xml"
+                             data-internal="/proxy/pickuppoint/v2/pickuppoint/NO/1407.xml">
+                              /pickuppoint/api/v2/pickuppoint/NO/1407.xml </a>
                           <p>Response:</p>
                           <pre class="code-box xml response delay-snippet"></pre>
 
@@ -39,12 +36,12 @@
                   <div class="api-call">
                       <p>Request:</p>
                       <a target="_blank" class="request"
-                         href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json"
-                         data-internal="/proxy/shipping-guide/api/pickuppoint/postalcode/1407.json">
-                          /api/pickuppoint/postalcode/1407.json </a>
+                         href="http://api.bring.com/pickuppoint/api/v2/pickuppoint/NO/1407.json"
+                         data-internal="/proxy/pickuppoint/v2/pickuppoint/NO/1407.json">
+                          /pickuppoint/api/v2/pickuppoint/NO/1407.json </a>
 
                       <p class="right">JSONP Request: <a
-                              href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/postalcode/1407.json?callbackUrl=functionName">?callback=functionName</a>
+                              href="http://api.bring.com/pickuppoint/api/v2/pickuppoint/NO/1407.json?callback=functionName">?callback=functionName</a>
                       </p>
                       <p>Response:</p>
                       <pre class="code-box json response delay-snippet"></pre>

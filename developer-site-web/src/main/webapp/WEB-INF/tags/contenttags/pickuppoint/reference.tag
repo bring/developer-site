@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 
 <pre class="code-box">Request prefix:
-http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
+    http://api.bring.com/pickuppoint/api/v2/pickuppoint</pre>
 
     <table>
         <thead>
@@ -12,10 +12,11 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
         </thead>
         <tbody>
         <tr>
-            <td><code>/postalcode/&lt;postalcode&gt;.&lt;extension&gt;</code></td>
-            <td>Returns the 10 nearest pickup points based on the given postalcode.
+            <td><code>&lt;countryCode&gt;/&lt;postalCode&gt;.&lt;extension&gt;</code></td></code></td>
+            <td>Returns the 10 nearest pickup points based on the given postal code.
                 <ul>
-                    <li><code>&lt;postalcode&gt;</code> = any valid postal code</li>
+                    <li><code>&lt;countryCode&gt;</code> = a valid country code, NO and DK supported now</li>
+                    <li><code>&lt;postalCode&gt;</code> = any valid postal code</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
             </td>
@@ -87,6 +88,30 @@ http://fraktguide.bring.no/fraktguide/api/pickuppoint</pre>
             <td>Return only pickup points that are open on or before the specified time.
                 <ul>
                     <li><code>&lt;time&gt;</code> = format: HHMM</li>
+                </ul>
+            </td>
+        </tr>
+        <tr >
+            <td><code>?street=&lt;street&gt;</code></td>
+            <td>Searches for pickup points that is located in a street named &lt;street&gt;
+                <ul>
+                    <li><code>&lt;street&gt;</code> = The street name where the pickup point is located. Must match if provided</li>
+                </ul>
+            </td>
+        </tr>
+        <tr >
+            <td><code>?streetNumber=&lt;streetNumber&gt;</code></td>
+            <td>Searches for pickup points that is located at an address with street number = &lt;street&gt;
+                <ul>
+                    <li><code>&lt;street&gt;</code> = The street number where the pickup point is located. Must match if provided</li>
+                </ul>
+            </td>
+        </tr>
+        <tr >
+            <td><code>?callback=&lt;callback&gt;</code></td>
+            <td>Support for JSONP
+                <ul>
+                    <li><code>&lt;callback&gt;</code> = The name of the function that should be called on the client side</li>
                 </ul>
             </td>
         </tr>

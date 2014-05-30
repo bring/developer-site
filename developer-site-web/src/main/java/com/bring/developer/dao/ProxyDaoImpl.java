@@ -23,6 +23,7 @@ public class ProxyDaoImpl extends ProxyDao {
     public ProxyDaoImpl(ApplicationConfig config) {
         super();
         urlBuilder = new ProxyUrlBuilder();
+        urlBuilder.addService("pickuppoint", config.getPickupPointUrlForEnvironment());
         urlBuilder.addService("tracking", config.getTrackingUrlForEnvironment());
         urlBuilder.addService("shipping-guide", config.getFraktguideUrlForEnvironment());
         urlBuilder.addService("booking", config.getBookingUrlForEnvironment());
