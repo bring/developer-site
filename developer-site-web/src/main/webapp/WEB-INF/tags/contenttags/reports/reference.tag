@@ -112,5 +112,15 @@ https://www.mybring.com/reports/api</pre>
                 </ul>
             </td>
         </tr>
+        <tr>
+            <td><code>/invoices/&lt;customer_or_group_id&gt;.&lt;extension&gt;</code></td>
+            <td>
+                <p>Get the list of invoice numbers for <code>customer_or_group_id</code> in the file format given by <code>extension</code>.</p>
+                <ul>
+                    <li><code>&lt;customer_or_group_id&gt;</code> = The id for customer or customer group. Customer group id should have the prefix <code>GROUP_</code>.
+                    <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
+                </ul>
+            </td>
+        </tr>
         </tbody>
     </table>
