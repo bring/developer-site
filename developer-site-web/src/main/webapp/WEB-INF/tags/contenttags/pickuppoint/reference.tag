@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         <tr>
-            <td><code>/&lt;countryCode&gt;/&lt;postalCode&gt;.&lt;extension&gt;</code></td></code></td>
+            <td><code>/&lt;countryCode&gt;/postalCode/&lt;postalCode&gt;.&lt;extension&gt;</code></td></code></td>
             <td>Returns the 10 nearest pickup points based on the given postal code.
                 <ul>
                     <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
