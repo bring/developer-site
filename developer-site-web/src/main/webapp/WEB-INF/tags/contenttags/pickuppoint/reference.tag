@@ -62,7 +62,7 @@
                 </ul>
             </td>
         </tr>
-        <tr >
+        <tr>
             <td><code>?openingHoursSearchType=&lt;day&gt;</code></td>
             <td>Return only pickup points that are open on the specified day.
                 <ul>
@@ -80,7 +80,7 @@
                 </ul>
             </td>
         </tr>
-        <tr >
+        <tr>
             <td><code>?openOnOrAfter=&lt;time&gt;</code></td>
             <td>Return only pickup points that are open on or before the specified time.
                 <ul>
@@ -88,7 +88,15 @@
                 </ul>
             </td>
         </tr>
-        <tr >
+        <tr>
+            <td><code>?numberOfResponses=&lt;integer&gt;</code></td>
+            <td>Return the number of specified responses instead of the default 10.
+                <ul>
+                    <li><code>&lt;integer&gt;</code> = number between 1 and 100</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td><code>?street=&lt;street&gt;</code></td>
             <td>Searches for pickup points that is located in a street named &lt;street&gt;
                 <ul>
@@ -96,7 +104,7 @@
                 </ul>
             </td>
         </tr>
-        <tr >
+        <tr>
             <td><code>?streetNumber=&lt;streetNumber&gt;</code></td>
             <td>Searches for pickup points that is located at an address with street number = &lt;street&gt;
                 <ul>
@@ -104,7 +112,7 @@
                 </ul>
             </td>
         </tr>
-        <tr >
+        <tr>
             <td><code>?callback=&lt;callback&gt;</code></td>
             <td>Support for JSONP
                 <ul>
