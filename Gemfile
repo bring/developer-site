@@ -2,7 +2,7 @@
 # Edit project.gems.rb and run 'rake setup:update' to update this file
 
 # Common gems
-source :rubygems
+source 'https://rubygems.org'
 
 gem "net-ssh", '~> 2.0.23'
 gem "net-scp", '~> 1.0.4'
