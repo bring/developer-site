@@ -129,9 +129,9 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="http://fraktguide.bring.no/fraktguide/api/pickuppoint/location/60.395226/5.321725.json"
-                               data-internal="/proxy/shipping-guide/api/pickuppoint/location/60.395226/5.321725.json">
-                                /api/pickuppoint/location/60.395226/5.321725.json </a>
+                               href="https://api.bring.com/pickuppoint/api/pickuppoint/NO/location/60.395226,5.321725.json"
+                               data-internal="/proxy/pickuppoint/api/pickuppoint/NO/location/60.395226,5.321725.json">
+                                /api/pickuppoint/NO/location/60.395226,5.321725.json </a>
 
                             <p class="right">JSONP Request: <a
                                     href="https://api.bring.com/pickuppoint/api/pickuppoint/NO/location/60.395226,5.321725.json?callbackUrl=functionName">?callback=functionName</a>
