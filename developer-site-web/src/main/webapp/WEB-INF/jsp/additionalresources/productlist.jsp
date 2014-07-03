@@ -247,7 +247,7 @@
            href="http://api.bring.com/shippingguide/products/CARRYON_BUSINESS/price.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/fraktguide/products/CARRYON_BUSINESS/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://api.bring.com/shippingguide/products/CARRYON_BUSINESS/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
 </tr>
 
