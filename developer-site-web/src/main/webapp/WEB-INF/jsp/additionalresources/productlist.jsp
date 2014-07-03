@@ -138,13 +138,13 @@
 <tr >
     <td>Småpakke A-Post</td>
     <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_A-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_A-POST</code></a>
+           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_A-POST/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_A-POST</code></a>
     </td>
     <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_A-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
+           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_A-POST/price.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
     </td>
     <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_A-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_A-POST/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
     </td>
 </tr>
 <tr >
