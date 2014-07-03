@@ -6,8 +6,6 @@
   <div class="row element-sample">
   <ul class="menu-group collapsing no-shadow">
 
-
-
   </ul>
   </div>
 </div>

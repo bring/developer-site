@@ -37,18 +37,15 @@
             by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
         </p>
 
-        <h4>Error codes for rejected requests</h4>
-        <table>
-            <thead>
-            <tr>
-                <th>Error code</th>
-                <th>Description</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+        <div class="box">
+          <p>The following table is generated from <a href="https://api.bring.com/po/api/v1/errorCodes.xml">api.bring.com/po/api/v1/errorCodes.xml</a>
+          </p>
+          <%-- When adding the data-tab attribute to a
+        table the tableFromJSON script will fetch the
+        contents of the url and print it inside the table
+        (with headers) --%>
+          <table data-tab="/proxy/purchaseorder/v1/errorCodes.json"></table>
+        </div>
 
     </div>
 </div>

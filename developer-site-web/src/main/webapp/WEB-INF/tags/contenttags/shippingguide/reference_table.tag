@@ -83,6 +83,23 @@
       <a target="_blank"
          href="https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;postingAtPostoffice=true">
         &amp;postingAtPostoffice=true</a>. Default value is <b><code>false</code></b>.
+        <p class="surcharge-description">A surcharge will be applied for the following products.</p>
+        <table class="surcharge-description">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Code</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Klimanøytral Servicepakke</td>
+                <td>SERVICEPAKKE</td>
+            </tr>
+            <tr class="even">
+                <td>Bedriftspakke (after July 1st 2013)</td>
+                <td>BPAKKE_DOR-DOR</td>
+            </tr>
+        </table>
     </td>
   </tr>
   <tr class="even">
@@ -125,6 +142,13 @@
          href="https://api.bring.com/shippingguide/products/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=servicepakke&product=bpakke_dor-dor">
         product=servicepakke&product=bpakke_dor-dor</a>.
     </td>
+  </tr>
+  <tr>
+      <td>Language</td>
+      <td>
+          Which language the descriptive product texts should have. Supported languages are English (en), Swedish (se), Finnish (fi), Danish (da) and Norwegian (no).
+          If no language is set, or text is not available in the requested language, norwegian text is returned.
+      </td>
   </tr>
   </tbody>
 </table>

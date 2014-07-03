@@ -8,25 +8,30 @@
     <ol>
         <li><a onclick="showBookmark('introduction',        '/api/bookingapi.html');">Introduction</a></li>
         <li><a onclick="showBookmark('HTU',                 '/api/bookingapi.html');">How to Use</a></li>
+        <li><a onclick="showBookmark('Pickup_order',        '/api/bookingapi.html');">Pickup order</a></li>
     </ol>
 </div>
 <div class="box">
     <h2>Additonal Resources</h2>
     <ul>
-        <li><a href="https://www.bring.no/booking/api/schema/booking-v1.xsd" target="_blank">XSD</a></li>
-        <li><a href="http://www.mybring.com/useradmin/open/signup/new" target="_blank">Signup to mybring</a></li>
+        <li><a href="https://api.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">XSD</a></li>
+        <li><a href="http://www.mybring.com/useradmin/open/signup/new" target="_blank">Signup to Mybring</a></li>
         <li><a href="https://github.com/bring/bring-api-java#introduction" target="_blank">Java API</a></li>
         <li><a href="/additionalresources/getting-api-keys.html?from=booking">Getting and using API-keys</a></li>
         <li><a href="/additionalresources/booking-api-error-codes.html?from=booking">Error codes</a></li>
     </ul>
     <h5>XML/JSON API</h5>
     <ul>
-        <li><a href="https://www.mybring.com/booking/api/booking" target="_blank">Booking endpoint (use HTTP POST)</a></li>
-        <li><a href="https://www.mybring.com/booking/api/customers" target="_blank">Customer number endpoint (use HTTP GET)</a></li>
+        <li><a href="https://api.bring.com/booking/api/booking" target="_blank">Booking endpoint (use HTTP POST)</a></li>
+        <li><a href="https://api.bring.com/booking/api/customers" target="_blank">Customer number endpoint (use HTTP GET)</a></li>
     </ul>
     <h5>SOAP API</h5>
     <ul>
-        <li><a href="https://www.bring.no/booking/api/ws/booking-v1.wsdl" target="_blank">WSDL</a></li>
-        <li><a href="https://www.mybring.com/booking/api/ws" target="_blank">Endpoint</a></li>
+        <li><a href="https://api.bring.com/booking/api/ws/booking-v1.wsdl" target="_blank">WSDL</a></li>
+        <li><a href="https://api.bring.com/booking/api/ws" target="_blank">Endpoint</a></li>
+    </ul>
+    <h5>Available products</h5>
+    <ul>
+        <li><a href="/additionalresources/bookingproductlist.html?from=booking" target="_blank">Product list</a></li>
     </ul>
 </div>

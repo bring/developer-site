@@ -19,7 +19,7 @@
 </p>
 <p>
     <b>
-      <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=0484&amp;to=0470&amp;weightInGrams=1800&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;product=ekspress09&amp;product=b-post&amp;product=courier_1h&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&amp;date=<%=new LocalDate()%>">Demo shipping alternatives form</a>
+      <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=0484&amp;to=0470&amp;weightInGrams=800&amp;length=10&amp;width=20&amp;height=5&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=smaapakker_a-post&amp;product=ekspress09&amp;product=smaapakker_b-post&amp;product=courier_1h&amp;product=minipakke&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&amp;date=<%=new LocalDate()%>">Demo shipping alternatives form</a>
     </b>
     (Norwegian)
 </p>
@@ -35,6 +35,28 @@
 </p>
 <p>
   There is also a <a href="/additionalresources/offlinedata.html?from=shipping">Offline SOAP service</a> for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
+</p>
+<h2>Guidelines</h2>
+<p>
+    &lt;MainDisplayCategory&gt; should be written in bold text and followed by our logo. <a target="_blank" href="http://mediaweb.posten.no/fotoweb/grid.fwx?archiveId=5005">Get approved logo here</a>.
+</p>
+<p>
+    In the webshop you should display
+    <ul>
+        <li>&lt;MainDisplayCategory&gt;</li>
+        <li>&lt;DisplayName&gt;</li>
+        <li>&lt;DescriptionText&gt;</li>
+    </ul>
+    Repeat the last two as needed, depending on the number of options you would like to display.
+</p>
+<p>
+    <i>The following values are not meant for display in the webshop and as such should not be visible on your site</i>
+    <ul>
+        <li>&lt;Product&gt;</li>
+        <li>&lt;ProductId&gt;</li>
+        <li>&lt;ProductCodeInProductionSystem&gt;</li>
+    </ul>
+    <strong>We strongly advise that you give your customers at least two options, home delivery and pickup point.</strong>
 </p>
 
 <table>

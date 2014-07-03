@@ -28,4 +28,7 @@
   <c:when test="${param.from eq 'pickup'}">
     <sidebar:pickuppoint-sidebar/>
   </c:when>
+  <c:when test="${param.from eq 'easyreturnservice'}">
+    <sidebar:easyreturnservice-sidebar/>
+  </c:when>
 </c:choose>

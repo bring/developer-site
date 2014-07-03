@@ -50,7 +50,7 @@
                   <td></td>
                 </tr>
                 <tr>
-                    <td>/RequestProperties/ NumberOfAlternativeDeliveryDates/</td>
+                    <td>/RequestProperties/NumberOfAlternativeDeliveryDates/</td>
                     <td>Number of "ShipmentDates" the service should calculate. Max value is 9</td>
                     <td>0</td>
                 </tr>
@@ -63,9 +63,17 @@
                 <tr>
                     <td>/RequestProperties/PostingAtPostoffice</td>
                     <td>Flag to indicate that the packages will be delivered to a post office (may affect the price in
-                        certain cases)
+                        certain cases, e.g. with product codes SERVICEPAKKE and BPAKKE_DOR-DOR after July 1st 2013)
                     </td>
                     <td>false
+                    </td>
+                </tr>
+                <tr>
+                    <td>/RequestProperties/Language</td>
+                    <td>Which language the descriptive product texts should have. Supported languages are English (en), Swedish (se), Finnish (fi), Danish (da) and Norwegian (no).
+                        If no language is set, or text is not available in the requested language, norwegian text is returned.
+                    </td>
+                    <td>no
                     </td>
                 </tr>
                 <tr>
@@ -73,6 +81,14 @@
                     <td>List of Product IDs you wish to get alternatives for. The shipping guide will skip products that are not applicable (e.g. shipment is too large for product type
                     or the postal codes are outside of the service area of the product.</td>
                     <td>No defaults – required field</td>
+                </tr>
+                <tr>
+                  <td>/ProductIds/ProductId/@customerNumber</td>
+                  <td>The mybring API customer number for the specified product, e.g. "PARCELS_NORWAY-00012341234".<br/><br/>
+                    Bring Cargo has different customer numbers from Bring Express and Bring Parcels, therefore the customer number is specified for each requested product.<br/><br/>
+                    There exists an API /web pages for getting the API customer numbers of your mybring user that also maps customer number to products. See <a href="http://developer.bring.com/additionalresources/getting-api-keys.html">http://developer.bring.com/additionalresources/getting-api-keys.html</a><br/><br/>
+                    If the customerNumber attribute is set, then net (customer agreement) prices will be returned for the specified product. If the attribute is not set, then list (gross) prices will be returned for the product.</td>
+                  <td></td>
                 </tr>
                 <tr>
                     <td>/Packages/Package/@packageId</td>
@@ -103,7 +119,7 @@
                 </tr>
                 <tr>
                     <td>/Packages/Package/Volume</td>
-                    <td>Volume of package in dm <sup>3</sup> (litres)</td>
+                    <td>Volume of package in dm<sup>3</sup> (litres)</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -112,9 +128,9 @@
                     <td>false</td>
                 </tr>
                 <tr>
-                    <td>/Packages/Package/AdditionalServices/ AdditionalServiceId</td>
+                    <td>/Packages/Package/AdditionalServices/AdditionalServiceId</td>
                     <td>Additional service code to include in the request (may affect e.g. price and expected delivery).
-                      Combinations of products / additional service codes that are not applicable will be ignored.</td>
+                      Combinations of products /additional service codes that are not applicable will be ignored.</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -146,59 +162,64 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Package/Product/*</td>
-                    <td>Information about the product. Can contain 0...n products.</td>
-                    <td></td>
+                  <td>/Packages/Package/Product/*</td>
+                  <td>Information about the product. Can contain 0...n products.</td>
+                  <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ProductId</td>
+                  <td>/Consignment/*</td>
+                  <td>Element will be included in response if a Consignment element is specified in the request. Contains aggregated prices and delivery information.</td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td>//Product/ProductId</td>
                     <td>Product ID</td>
                     <td>SERVICEPAKKE</td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/GuiInformation/*</td>
+                    <td>//Product/GuiInformation/*</td>
                     <td>Product texts and category. See more complete description below.</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/Price/*</td>
-                    <td>Collection for all information related to prices.</td>
+                    <td>//Product/Price/*<br/>//Product/NetPrice/*</td>
+                    <td>Collection for all information related to prices. The "Price" element shows gross prices, whilst the "NetPrice" element shows net (customer agreement) prices.</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/Price/ PackagePriceWithoutAdditionalServices/*</td>
+                    <td>//Product/Price/PackagePriceWithoutAdditionalServices/*<br/>//Product/NetPrice/PackagePriceWithoutAdditionalServices/*</td>
                     <td>Price without any additional services. Period is used for separating decimals.
                     </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/Price/ PackagePriceWithAllAdditionalServices/*</td>
+                    <td>//Product/Price/PackagePriceWithAllAdditionalServices/*<br/>//Product/NetPrice/PackagePriceWithAllAdditionalServices/*</td>
                     <td>Price with all requested additional services. Period is used for separating decimals.
                     </td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ Price/AdditionalServicePrices/*</td>
+                    <td>//Product/Price/AdditionalServicePrices/*<br/>//Product/NetPrice/AdditionalServicePrices/*</td>
                     <td>Collection containing all requested additional services with respective prices.</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ Price/AdditionalServicePrices/ AdditionalService/AdditionalServiceId</td>
+                    <td>//Product/Price/AdditionalServicePrices/AdditionalService/AdditionalServiceId<br/>//Product/NetPrice/AdditionalServicePrices/AdditionalService/AdditionalServiceId</td>
                     <td>Additional service code.</td>
                     <td>POSTOPPKRAV</td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ Price/AdditionalServicePrices/ AdditionalService/AdditionalServicePrice</td>
+                    <td>//Product/Price/AdditionalServicePrices/AdditionalService/AdditionalServicePrice<br/>//Product/NetPrice/AdditionalServicePrices/AdditionalService/AdditionalServicePrice</td>
                     <td>Price for the single additional service.</td>
                     <td></td>
                 </tr>
                 <tr>
-                  <td>/Packages/Product/ExpectedDelivery/ ExpectedDeliveryDate</td>
+                  <td>//Product/ExpectedDelivery/ExpectedDeliveryDate</td>
                   <td>Expected delivery date based on the request parameters (product, postalcodes and shipping date). Contains elements year, month, day.</td>
                   <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ WorkingDays</td>
+                    <td>//Product/ExpectedDelivery/WorkingDays</td>
                     <td>Number of working days from pickup to delivery. First day is day 0. NOTE! If this number is used, know that
                         there are special rules surrounding christmas, easter, shipments to Svalbard and certain other
                         destinations. If shipping date is specified in the request, then these rules are applied automatically
@@ -207,20 +228,20 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ FormattedExpectedDeliveryDate</td>
+                    <td>//Product/ExpectedDelivery/FormattedExpectedDeliveryDate</td>
                     <td>Expected delivery date, preformatted.
                     </td>
                     <td>DD.MM.YYYY</td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ UserMessage</td>
+                    <td>//Product/ExpectedDelivery/UserMessage</td>
                     <td>Important message to end-user in requested language regarding delivery. We recommend this is forwarded
                         to the end-user.
                     </td>
                     <td>Usually empty response. In special cases a one-liner.</td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates</td>
+                    <td>//Product/ExpectedDelivery/AlternativeDeliveryDates</td>
                     <td>Collection for alternate delivery dates if NumberOfAlternativeDeliveryDates is specified in request. In
                         practice this collection can be used to let the customer decide which day to receive the package. The
                         data structure also provides the sender when to deliver to the postal service in order to reach the
@@ -229,19 +250,17 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates/ AlternativeDeliveryDate</td>
+                    <td>//Product/ExpectedDelivery/AlternativeDeliveryDates/AlternativeDeliveryDate</td>
                     <td>An alternate delivery date.</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates/ AlternativeDeliveryDate/ShippingDate</td>
+                    <td>//Product/ExpectedDelivery/AlternativeDeliveryDates/AlternativeDeliveryDate/ShippingDate</td>
                     <td>The date the shop must ship the package by make the delivery date</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>/Packages/Product/ExpectedDelivery/ AlternativeDeliveryDates/ AlternativeDeliveryDate/
-                        ExpectedDeliveryDate
-                    </td>
+                    <td>//Product/ExpectedDelivery/AlternativeDeliveryDates/AlternativeDeliveryDate/ExpectedDeliveryDate</td>
                     <td>Estimated delivery date based on ShippingDate for alternate delivery dates.</td>
                     <td></td>
                 </tr>

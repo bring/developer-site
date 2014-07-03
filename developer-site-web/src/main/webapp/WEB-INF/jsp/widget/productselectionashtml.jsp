@@ -92,14 +92,14 @@
                                   <pre class="prettyprint" data-highlightlines="5">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;&lt;/script&gt;
         &lt;script type="text/javascript"&gt;
            $(document).ready(function() {
-              $("#onlyhtml").live('click', function(event) {
-                window.open('https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+              $("#onlyhtml").on('click', function(event) {
+                window.open('http://api.bring.com/shippingguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
-              $("#onlyxml").live('click', function(event) {
-                window.open('https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+              $("#onlyxml").on('click', function(event) {
+                window.open('http://api.bring.com/shippingguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
-              $("#onlycss").live('click', function(event) {
-                window.open('https://api.bring.com/shippingguide/css/fraktalternativer.css', '','width=1080,height=800');
+              $("#onlycss").on('click', function(event) {
+                window.open('http://api.bring.com/shippingguide/css/fraktalternativer.css', '','width=1080,height=800');
               });
            });
         &lt;/script&gt;

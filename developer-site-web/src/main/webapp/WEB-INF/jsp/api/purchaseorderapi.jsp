@@ -7,7 +7,7 @@
 <html>
 <head>
     <misc:contenttype/>
-    <misc:title value="Purchase Order API (ALPHA)"/>
+    <misc:title value="Purchase Order API (BETA)"/>
     <misc:css_v2/>
 </head>
 <body>
@@ -19,7 +19,7 @@
 <div class="span9">
 
 <div class="box">
-    <h1>Purchase Order API (ALPHA)</h1>
+    <h1>Purchase Order API (BETA)</h1>
 </div>
 
 <div class="box">
@@ -32,13 +32,12 @@
 
     <ul class="tab-group">
         <li><a href="#xml" data-tab="xml">XML</a></li>
-        <li><a href="#json" data-tab="json">JSON</a></li>
         <li><a href="#soap" data-tab="soap">SOAP</a></li>
     </ul>
 
     <div class="box">
 
-      <div data-tab="xml json">
+      <div data-tab="xml">
         <purchaseorder:reference_xml_json/>
         <hr />
         <purchaseorder:how_to_use_xml_json/>

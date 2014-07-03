@@ -116,5 +116,38 @@
                 </div>
             </div>
             </li>
+
+            <li>
+                <h4>GET LIST OF INVOICE NUMBERS FOR GIVEN CUSTOMER OR GROUP</h4>
+                <div>Customer or group has list of invoice numbers.</div>
+                <h5>REQUEST</h5>
+                <div><pre class="code-box"> https://www.mybring.com/reports/api/invoices/PARCELS_NORWAY-10001041234.json</pre></div>
+                <h5>EXAMPLE RESPONSE</h5>
+                <div>
+                    <pre class="prettyprint">
+                        {
+                            customerId: "PARCELS_NORWAY-10001041234"
+                            invoiceNumbers: [2]
+                            0:  {
+                                label: "702414111 (6/16/2014)"
+                                id: "702414111"
+                                year: 2014
+                                month: 6
+                                day: 16
+                            }
+                            -
+                            1:  {
+                                label: "702383222 (5/25/2014)"
+                                id: "702383222"
+                                year: 2014
+                                month: 5
+                                day: 25
+                            }
+                            -
+                            -
+                        }
+                    </pre>
+               </div>
+           </li>
         </ol>
     </div>
