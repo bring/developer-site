@@ -29,7 +29,16 @@
                       <div>
                         <h2>WSDL</h2>
                         <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL with latest schema version</a></p>
-                        <p>It is possible to download specific WSDL / schema versions: <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl">4</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v5.wsdl">5</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v6.wsdl">6</a>,<a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v7.wsdl">7</a> The current version is 7.</p>
+                        <p>It is possible to download specific WSDL / schema versions:
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v4.wsdl">4</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v5.wsdl">5</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v6.wsdl">6</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v7.wsdl">7</a>,
+                            <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v8.wsdl">8</a>.
+                            The current version is 8.</p>
                         <p><a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p>
                       </div>
                         <div>
