@@ -150,13 +150,13 @@
 <tr >
     <td>Småpakke B-Økonomi</td>
     <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_B-POST/all.xml?weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_B-POST</code></a>
+           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_B-POST/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=200&amp;from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>SMAAPAKKER_B-POST</code></a>
     </td>
     <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_B-POST/price.xml?weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
+           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_B-POST/price.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;from=7600&amp;to=1407">Yes</a>
     </td>
     <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_B-POST/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+           href="https://api.bring.com/shippingguide/products/SMAAPAKKER_B-POST/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
     </td>
 </tr>
 
@@ -241,26 +241,26 @@
 <tr>
     <td>CarryOn Business <sup>4</sup></td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/products/CARRYON_BUSINESS/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
+           href="http://api.bring.com/shippingguide/products/CARRYON_BUSINESS/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
         BUSINESS</code></a></td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/products/CARRYON_BUSINESS/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://api.bring.com/shippingguide/products/CARRYON_BUSINESS/price.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/fraktguide/products/CARRYON_BUSINESS/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://api.bring.com/shippingguide/fraktguide/products/CARRYON_BUSINESS/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
 </tr>
 
 <tr>
     <td>CarryOn Homeshopping <sup>4</sup></td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/products/CARRYON_HOMESHOPPING/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
+           href="http://api.bring.com/shippingguide/products/CARRYON_HOMESHOPPING/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
         HOMESHOPPING</code></a></td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/products/CARRYON_HOMESHOPPING/price.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://api.bring.com/shippingguide/products/CARRYON_HOMESHOPPING/price.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
     <td><a target="_blank"
-           href="http://api.bring.com/shippingguide/products/CARRYON_HOMESHOPPING/expectedDelivery.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
+           href="http://api.bring.com/shippingguide/products/CARRYON_HOMESHOPPING/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35">Yes</a>
     </td>
 </tr>
 
