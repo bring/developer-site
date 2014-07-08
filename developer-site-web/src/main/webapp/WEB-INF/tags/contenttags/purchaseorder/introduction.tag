@@ -9,6 +9,11 @@
   The SOAP interface is the core interface with complete functionality.
 </p>
 
+<p>
+    A typical usage pattern is to check whether a customer is a purchaseorder customer. Then follow up with creating a purchase order. And
+    lastly create a packaging list for the given order.
+</p>
+
 <table>
     <thead>
         <tr>

@@ -32,12 +32,13 @@
 
     <ul class="tab-group">
         <li><a href="#xml" data-tab="xml">XML</a></li>
+        <li><a href="#json" data-tab="json">JSON</a></li>
         <li><a href="#soap" data-tab="soap">SOAP</a></li>
     </ul>
 
     <div class="box">
 
-      <div data-tab="xml">
+      <div data-tab="xml json">
         <purchaseorder:reference_xml_json/>
         <hr />
         <purchaseorder:how_to_use_xml_json/>
