@@ -12,10 +12,10 @@
         </thead>
         <tbody>
         <tr>
-            <td><code>/&lt;countryCode&gt;/postalCode/&lt;postalCode&gt;.&lt;extension&gt;</code></td></code></td>
+            <td><code>/&lt;countryCode&gt;/postalCode/&lt;postalCode&gt;.&lt;extension&gt;</code></td>
             <td>Returns the 10 nearest pickup points based on the given postal code.
                 <ul>
-                    <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
+                    <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code; NO, DK, SE and FI supported</li>
                     <li><code>&lt;postalCode&gt;</code> = any valid postal code in specified country</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
@@ -25,7 +25,7 @@
             <td><code>/&lt;countryCode&gt;/location/&lt;latitude&gt;,&lt;longitude&gt;.&lt;extension&gt;</code></td>
             <td>Returns the 10 nearest pickup points based on the given location.
                 <ul>
-                    <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
+                    <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code; NO, DK and FI supported</li>
                     <li><code>&lt;latitude&gt;</code> = geographic coordinate specifying the north-south position.</li>
                     <li><code>&lt;longitude&gt;</code> = geographic coordinate specifying the east-west position.</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
@@ -36,7 +36,7 @@
             <td><code>/&lt;countryCode&gt;/id/&lt;id&gt;.&lt;extension&gt;</code></td>
             <td>Returns information about the pickup point based on the pickup point's id.
                 <ul>
-                  <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code, NO and DK supported</li>
+                  <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code; NO, DK, SE and FI supported</li>
                   <li><code>&lt;id&gt;</code> = The pickup point's id.</li>
                   <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
