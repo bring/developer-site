@@ -38,7 +38,7 @@ https://api.bring.com/po/api/v1/</pre>
     </tr>
     <tr>
         <td><code>POST /order/</code></td>
-        <td>todo...</td>
+        <td></td>
     </tr>
     <tr >
       <td><code>GET /items/&lt;customernumber&gt;/&lt;purchaseordernumber&gt;</code></td>
@@ -102,7 +102,7 @@ https://api.bring.com/po/api/v1/</pre>
     <tr>
         <td><code>POST /event</code></td>
         <td>Creates the TMSEvents supplied in the request.
-        Todo...
+
         </td>
     </tr>
     <tr>

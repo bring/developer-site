@@ -85,9 +85,7 @@
                 <div class="content-box">
 
                     <p>
-                        TODO
                     </p>
-
 
                 </div>
             </li>
