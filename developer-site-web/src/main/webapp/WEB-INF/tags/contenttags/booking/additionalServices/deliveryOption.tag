@@ -1,8 +1,8 @@
 <div>
   <h4>Delivery to pickup point in Denmark</h4>
   <p>
-    The products CARRYON_HOMESHOPPING and CARRYON_HOMESHOPPING_BULKSPLIT support the delivery option PICKUP_POINT for
-    shipments within Denmark and to Denmark, respectively. The parcel will be delivered to the pick up point closest to
+    The products CARRYON_HOMESHOPPING and CARRYON_HOMESHOPPING_BULKSPLIT support the deliveryOption=PICKUP_POINT for
+    shipments within Denmark and to Denmark, respectively. The parcel will be delivered to the pickup point closest to
     the recipient address and the recipient will receive a notification when the parcel arrives.
     If you do not specify a delivery option for these products in Denmark, the package will be delivered to the door.
   </p>
