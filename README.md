@@ -12,7 +12,7 @@ first build the project with maven
 </pre>
 start the server (from top directory)
 <pre>
-  sh jetty.sh
+  rake dev:server
 </pre>  
 server should be started on localhost listening on port 8082
 
