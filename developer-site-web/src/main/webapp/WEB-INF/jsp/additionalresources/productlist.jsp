@@ -430,6 +430,15 @@
         <td>No, is a stand-alone price</td>
     </tr>
 
+    <tr>
+      <td><a target="_blank"
+             href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING/price.xml?weightInGrams=1500&amp;length=60&amp;width=60&amp;height=60&amp;from=2000&amp;to=2000&amp;fromCountry=DK&amp;toCountry=DK&amp;additional=PICKUP_POINT">PICKUP_POINT</a>
+      </td>
+      <td>Delivery to pickup point</td>
+      <td>CARRYON_HOMESHOPPING, CARRYON_HOMESHOPPING_BULKSPLIT</td>
+      <td>Yes, causes lower base package price</td>
+    </tr>
+
     </tbody>
 </table>
 
