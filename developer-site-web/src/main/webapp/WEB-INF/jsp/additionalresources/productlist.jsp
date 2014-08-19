@@ -252,7 +252,7 @@
 </tr>
 
 <tr>
-    <td>CarryOn Homeshopping <sup>4</sup></td>
+    <td>CarryOn Homeshopping <sup>4</sup> <sup>5</sup></td>
     <td><a target="_blank"
            href="http://fraktguide.bring.no/fraktguide/products/CARRYON_HOMESHOPPING/all.xml?weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=DK&amp;to=1407&amp;date=<%=new LocalDate()%>&amp;time=11:35"><code>CARRYON
         HOMESHOPPING</code></a></td>
@@ -355,7 +355,9 @@
     products.<br/>
 
 4 <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/pakker/produkt/_attachment/9000" target="_blank">Fuel surcharge</a> is not included in the price returned from the ShippingGuide and must be calculated / added manually.
-  Bring Parcels is entitled to change this charge without notice to the customer. Any fuel surcharge applied will be detailed on the invoice.
+  Bring Parcels is entitled to change this charge without notice to the customer. Any fuel surcharge applied will be detailed on the invoice.<br/>
+
+5 For shipments to Denmark, CARRYON_HOMESHOPPING needs to be ordered with the “PICKUP_POINT” additional service to send as a low-cost delivery from Bring’s parcel shops or parcel lockers. Otherwise the shipment will be sent as a more expensive home delivery.
 </sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>
