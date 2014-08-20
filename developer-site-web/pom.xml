@@ -80,6 +80,11 @@
       <artifactId>log4j</artifactId>
       <scope>runtime</scope>
     </dependency>
+    <dependency>
+      <groupId>net.logstash.log4j</groupId>
+      <artifactId>jsonevent-layout</artifactId>
+      <version>1.6</version>
+    </dependency>
 
     <!-- Commons -->
     <dependency>
