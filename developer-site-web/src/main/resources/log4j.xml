@@ -20,6 +20,13 @@
         </layout>
     </appender>
 
+    <appender name="logstash" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="logstash.log"/>
+        <param name="MaxFileSize" value="20MB"/>
+        <param name="MaxBackupindex" value="2"/>
+        <layout class="net.logstash.log4j.JSONEventLayoutV1"/>
+    </appender>
+
     <logger name="com.bring">
         <level value="info" />
     </logger>
@@ -34,6 +41,7 @@
 		<priority value="warn" />
 		<appender-ref ref="console" />
         <appender-ref ref="developerlog" />
+        <appender-ref ref="logstash" />
 	</root>
 	
 </log4j:configuration>
