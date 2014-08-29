@@ -6,11 +6,27 @@
     the recipient address and the recipient will receive a notification when the parcel arrives.
     If you do not specify a delivery option for these products in Denmark, the package will be delivered to the door.
   </p>
+  <h4>Delivery to Selected pickup point in Denmark</h4>
   <p>
       You can also specify a pickup point id to get the package delivered at a specific pickup point.
-      To get pickup points Id use <a  href="http://developer.bring.com/api/pickuppointapi.html#xml"> Pickup point API.  </a>
-      Pickup point id and country code has to be specified under <strong>pickupPoint</strong> tag within parties tag.Please refer to deliveryOptionRequest.xml below.
-   </p> 
+      Use <a  href="http://developer.bring.com/api/pickuppointapi.html#xml"> Pickup point API </a>to get list of nearest pickup points.
+      Pickup point id and country code has to be specified under <strong>pickupPoint</strong> tag within parties tag as shown below.
+
+      <div class="tab" data-tab="xml">
+        <pre class="code-box">&lt;parties&gt;
+    &lt;sender&gt;.. &lt;/sender&gt;
+    &lt;recipient&gt;... &lt;/recipient&gt;
+    &lt;pickupPoint&gt;
+        &lt;id&gt;1151&lt;/id&gt;
+        &lt;countryCode&gt;DK&lt;/countryCode&gt;
+    &lt;/pickupPoint&gt;
+&lt;/parties&gt;
+        </pre>
+      </div>
+      <strong>pickupPoint tag is optional but both id and countryCode element inside it are mandatory</strong>.
+      This tag has precedence over deliveryOption=PICKUP_POINT i.e. if this tag is present then pickup point specified in it will be selected irrespective
+      of value set in deliveryOption.
+   </p>
   <p>
     Pickup point delivery requires that the <strong>recipient has email and/or phone number set</strong>, so that he can receive notification
     when the package arrives at the pickup point.
