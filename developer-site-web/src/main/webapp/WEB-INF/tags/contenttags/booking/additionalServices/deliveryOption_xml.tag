@@ -10,7 +10,7 @@
   <p>
       You can also specify a pickup point id to get the package delivered at a specific pickup point.
       Use <a  href="http://developer.bring.com/api/pickuppointapi.html#xml"> Pickup Point API </a>to get list of nearest pickup points.
-      Pickup point id and country code has to be specified under <strong>pickupPoint</strong> tag within parties tag as shown below.
+      Pickup point id and country code has to be specified under <strong>pickupPoint</strong> element within parties element as shown below.
 
      <div data-tab="xml" class="tab">
          <div class="api-call">
@@ -22,8 +22,8 @@
              https://www.bring.no/booking/api/bookingExamples/basicPickupPointIdRequest.xml </a>
          </div>
        </div>
-      <strong>pickupPoint tag is optional but both id and countryCode element inside it are mandatory</strong>.
-      This tag has precedence over deliveryOption=PICKUP_POINT i.e. if this tag is present then pickup point specified in it will be selected irrespective
+      <strong>pickupPoint element is optional but both id and countryCode element inside it are mandatory</strong>.
+      This element has precedence over deliveryOption=PICKUP_POINT i.e. if this element is present then pickup point specified in it will be selected irrespective
       of value set in deliveryOption.
    </p>
   <p>
