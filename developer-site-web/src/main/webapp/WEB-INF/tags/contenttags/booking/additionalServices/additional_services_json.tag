@@ -95,7 +95,7 @@
 
         <div class="content-box">
 
-          <additionalServices:deliveryOption/>
+          <additionalServices:deliveryOption_json/>
           <div data-tab="json" class="tab">
             <div class="api-call">
               <p>Example:</p>

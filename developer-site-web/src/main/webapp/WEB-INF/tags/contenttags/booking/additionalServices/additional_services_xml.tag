@@ -91,7 +91,7 @@
 
         <div class="content-box">
 
-          <additionalServices:deliveryOption/>
+          <additionalServices:deliveryOption_xml/>
           <div data-tab="xml" class="tab">
             <div class="api-call">
               <p>Example:</p>
