@@ -105,7 +105,7 @@
     </td>
     <td>
         <a target="_blank"
-           href="https://api.bring.com/shippingguide/products/MINIPAKKE/expectedDelivery.xml?from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
+           href="https://api.bring.com/shippingguide/products/MINIPAKKE/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
     </td>
 </tr>
 
