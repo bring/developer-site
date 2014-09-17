@@ -52,10 +52,10 @@
 
                         <p>
                           <b>Example:</b> If the user select A-POST product from this shipping alternatives form:<br/>
-                            <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
+                            <a target="_blank" href="https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
                             <br/><br/>
                            Use the following XML API request to fetch the price:<br/>
-                            <a target="_blank" href="http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">http://fraktguide.bring.no/fraktguide/products/A-POST/price.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
+                            <a target="_blank" href="https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
                             <br/><br/>XML API, JSON API and "Delivered by Bring" is all using the same parameters, please see documentation for the API to get information about available parameters and functionality</p>
 
                         <div>
@@ -93,13 +93,13 @@
         &lt;script type="text/javascript"&gt;
            $(document).ready(function() {
               $("#onlyhtml").on('click', function(event) {
-                window.open('http://fraktguide.bring.no/fraktguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+                window.open('http://api.bring.com/shippingguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
               $("#onlyxml").on('click', function(event) {
-                window.open('http://fraktguide.bring.no/fraktguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+                window.open('http://api.bring.com/shippingguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
               });
               $("#onlycss").on('click', function(event) {
-                window.open('http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');
+                window.open('http://api.bring.com/shippingguide/css/fraktalternativer.css', '','width=1080,height=800');
               });
            });
         &lt;/script&gt;

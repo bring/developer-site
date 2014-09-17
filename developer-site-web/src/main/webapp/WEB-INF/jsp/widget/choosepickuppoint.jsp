@@ -57,8 +57,7 @@
                                     <div class="tab-pane" id="tab2-5">
                                   <pre class="prettyprint">&lt;script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"&gt;
 &lt;/script&gt;
-&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/
-utleveringsenhet-1.0.1.js"&gt;
+&lt;script type="text/javascript" src="http://fraktguide.bring.no/fraktguide/js/utleveringsenhet-1.0.1.js"&gt;
 &lt;/script&gt;
 &lt;script type="text/javascript"&gt;
     $(document).ready(function() {

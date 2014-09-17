@@ -21,7 +21,7 @@
 
         inputField.keyup(function() {
             if (inputField.val().length == 4) {
-                $.getJSON('http://fraktguide.bring.no/fraktguide/api/postalCode.json?pnr='+ inputField.val() +'&callback=?',
+                $.getJSON('https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=insertYourClientUrlHere&pnr='+ inputField.val() +'&callback=?',
                         function(data){
                             if (data.valid) {
                                 outputElement.text(data.result);

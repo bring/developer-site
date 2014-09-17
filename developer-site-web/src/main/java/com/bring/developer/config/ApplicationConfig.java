@@ -18,8 +18,9 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
     ConstrettoConfiguration config;
+
+    public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "https://api.bring.com/shippingguide"; //default
     public static String TRACKING_URL_FOR_ENVIRONMENT = "http://sporing.bring.no/"; //default
-    public static String FRAKTGUIDE_URL_FOR_ENVIRONMENT = "http://fraktguide.bring.no/fraktguide"; //default
     public static String STATISTICS_TRACKER_ID_FOR_ENVIRONMENT = "1000918585199"; //default - test tracker
     public static String BOOKING_URL_FOR_ENVIRONMENT = "https://www.bring.no/booking/products"; //default
     public static String PURCHASEORDER_URL_FOR_ENVIROMENT = "https://api.bring.com/po/api"; //default
