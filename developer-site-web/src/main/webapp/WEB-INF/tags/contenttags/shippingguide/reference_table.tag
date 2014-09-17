@@ -42,7 +42,6 @@
     </td>
   </tr>
   <tr>
-
     <td>Volume</td>
     <td>Specified by adding <a target="_blank"
                                href="https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33">
@@ -68,6 +67,14 @@
     </td>
   </tr>
   <tr class="even">
+      <td>Client URL</td>
+      <td>
+          To use the Shipping Guide you must specify a client url parameter. The client url should be set to the url of the web shop
+          or application the end user is ordering from. The client url can be sent as a url parameter, <code class="inline-code">clientUrl</code>,
+          or as a header, <code class="inline-code">X-Bring-Client-URL</code>.
+      </td>
+  </tr>
+  <tr>
     <td>EDI setting</td>
     <td>
       Flag that tells if the parcel will be registred using EDI when it is shipped. Specified by adding <a target="_blank"
@@ -76,7 +83,7 @@
       products are available.
     </td>
   </tr>
-  <tr>
+  <tr class="even">
     <td>Shipped from post office</td>
     <td>
       Flag that tells whether the parcel is delivered at a post office when it is shipped. Specified by adding
@@ -102,7 +109,7 @@
         </table>
     </td>
   </tr>
-  <tr class="even">
+  <tr>
     <td>Additional services</td>
     <td>
       Request additional services for the package. Specified by adding one or more "additional" parameters to the
@@ -114,7 +121,7 @@
         The Shipping Guide will match the additional service codes to the requested products and ignore product / additional service codes that are not applicable.
     </td>
   </tr>
-  <tr>
+  <tr class="even">
     <td>Price adjustments</td>
     <td>
       Option to adjust the price returned. Specified by adding <a target="_blank"
@@ -123,7 +130,7 @@
       additional examples to read more.
     </td>
   </tr>
-  <tr class="even">
+  <tr>
     <td>Public ID</td>
     <td>
       Public ID is the last part (after the last dash) of your identification string
@@ -132,7 +139,7 @@
       the correct shipping guide user for potential follow ups.
     </td>
   </tr>
-  <tr>
+  <tr class="even">
     <td>Products</td>
     <td>
       This parameter lets you specify which products you want to return information about.

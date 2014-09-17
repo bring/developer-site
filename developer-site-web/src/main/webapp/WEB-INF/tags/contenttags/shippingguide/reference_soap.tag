@@ -28,8 +28,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>/UserInformation/Usercode</td>
-                    <td>Identifies the client</td>
+                    <td>/UserInformation/ClientURL</td>
+                    <td>To use the Shipping Guide you must specify a client url parameter. The client url should be set to the URL of the web shop
+                        or application the end user is ordering from.</td>
                     <td></td>
                 </tr>
                 <tr>
