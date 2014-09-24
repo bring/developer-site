@@ -79,7 +79,7 @@
                                  <div class="api-menu-item-container">
                                      <div class="api-menu-icons reportsicon"></div>
                                      <div class="api-menu-text">
-                                         <span class="api-link black">Reports API (BETA)</span>
+                                         <span class="api-link black">Reports API</span>
                                          <span class="black">Generate customer reports from shipment history</span>
                                       </div>
                                   </div>
