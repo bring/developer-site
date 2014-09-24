@@ -2,15 +2,27 @@
 <%@ taglib prefix="additionalServices" tagdir="/WEB-INF/tags/contenttags/booking/additionalServices" %>
 <%@ taglib prefix="booking" tagdir="/WEB-INF/tags/contenttags/booking" %>
 <div data-tab="json">
-<h3 class="with-padding">Booking Endpoint</h3>
+  <h3 class="with-padding">Booking Endpoint</h3>
 
-<h4 class="no-top-pad">Creating a booking</h4>
-<p>
-  All requests for the API must include the content type and authentication headers. Use HTTP POST to create new
-  bookings. Below you can see a basic booking example of a SERVICEPAKKE product with out any additional services.
-</p>
+  <h4>Technical information</h4>
 
-<h5>HTTP-Headers</h5>
+  <ul>
+    <li>
+      Booking endpoint: <code class="inline-code">https://api.bring.com/booking/api/booking</code>
+    </li>
+
+    <li>
+      Customer number endpoint: <code class="inline-code">https://api.bring.com/booking/api/customers</code>
+    </li>
+  </ul>
+
+  <h4 class="no-top-pad">Creating a booking</h4>
+  <p>
+    All requests for the API must include the content type and authentication headers. Use HTTP POST to create new
+    bookings. Below you can see a basic booking example of a SERVICEPAKKE product with out any additional services.
+  </p>
+
+  <h5>HTTP-Headers</h5>
 
 <pre class="code-box">POST /booking/api/booking HTTP/1.1
 Content-Type: application/json
@@ -61,22 +73,6 @@ Host: api.bring.com
 </pre>
   </div>
 </div>
-
-<h4>Technical information</h4>
-
-<ul>
-  <li>
-    XSD: <a href="https://api.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">https://api.bring.com/booking/api/schema/booking-v1.xsd</a>
-  </li>
-
-  <li>
-    Endpoint (use HTTP POST): https://api.bring.com/booking/api/booking
-  </li>
-
-  <li>
-    Customer number endpoint (use HTTP GET): https://api.bring.com/booking/api/customers
-  </li>
-</ul>
 
 <h4>Versioning strategy</h4>
 

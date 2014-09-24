@@ -4,6 +4,21 @@
 <div data-tab="xml">
   <h3 class="with-padding">Booking Endpoint</h3>
 
+  <h4>Technical information</h4>
+
+  <ul>
+    <li>
+      Booking endpoint: <code class="inline-code">https://api.bring.com/booking/api/booking</code>
+    </li>
+
+    <li>
+      Customer number endpoint: <code class="inline-code">https://api.bring.com/booking/api/customers</code>
+    </li>
+    <li>
+      XML Schema: <a href="https://api.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">https://api.bring.com/booking/api/schema/booking-v1.xsd</a>
+    </li>
+  </ul>
+
   <h4 class="no-top-pad">Creating a booking</h4>
   <p>
     All requests for the API must include the content type and authentication headers. Use HTTP POST to create new
@@ -85,22 +100,6 @@ Host: api.bring.com
         https://www.bring.no/booking/api/bookingExamples/customers.xml </a>
     </div>
   </div>
-
-  <h4>Technical information</h4>
-
-  <ul>
-      <li>
-          XSD: <a href="https://api.bring.com/booking/api/schema/booking-v1.xsd" target="_blank">https://api.bring.com/booking/api/schema/booking-v1.xsd</a>
-      </li>
-
-      <li>
-          Endpoint (use HTTP POST): <code class="inline-code">https://api.bring.com/booking/api/booking</code>
-      </li>
-
-      <li>
-        Customer number endpoint (use HTTP GET): https://api.bring.com/booking/api/customers
-      </li>
-  </ul>
 
   <h4>Versioning strategy</h4>
 
