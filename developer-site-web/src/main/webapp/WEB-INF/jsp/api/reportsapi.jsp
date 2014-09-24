@@ -19,7 +19,7 @@
 <div class="span9">
 
 <div class="box">
-    <h1>Reports API (BETA)</h1>
+    <h1>Reports API</h1>
 </div>
 
 <div class="box">
