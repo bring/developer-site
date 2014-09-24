@@ -28,8 +28,7 @@
                     <div class="box">
                       <div>
                         <h2>WSDL</h2>
-                        <p><a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-latest.wsdl" target="_blank">WSDL with latest schema version</a></p>
-                        <p>It is possible to download specific WSDL / schema versions:
+                        <p>WSDL / schema versions:
                             <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v1.wsdl">1</a>,
                             <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v2.wsdl">2</a>,
                             <a href="http://fraktguide.bring.no/fraktguide/ws/fraktguide-v3.wsdl">3</a>,
