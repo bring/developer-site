@@ -25,7 +25,7 @@
         </li>
     </ul>
 
-    For all the above APIs we need to input who the user is. This is done by passing the following header information. These are described in Reference section:
+    For all the above APIs we need to identify and authenticate the user. This is done by passing the following header information. These are described in Reference section:
     <ul>
         <li>
             User email
