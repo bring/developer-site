@@ -7,6 +7,6 @@
     "description": "A guide to all public API's provided by Bring",
     "private": true,
     "dependencies": {
-        "posten-tracking": "git@github.com:bring/tracking-web-component.git#master"
+        "posten-tracking": "git@github.com:bring/tracking-web-component.git#1.0.0"
     }
 }
