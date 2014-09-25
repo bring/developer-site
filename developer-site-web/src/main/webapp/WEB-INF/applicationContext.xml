@@ -46,4 +46,6 @@
         <bean class="com.bring.developer.config.featuretoggle.FeatureToggleInterceptor" />
     </mvc:interceptors>
 
+    <mvc:default-servlet-handler/>
+
 </beans>

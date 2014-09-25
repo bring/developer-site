@@ -12,4 +12,6 @@ target
 *.orig
 *~
 
+bower_components/
+
 revision.txt
