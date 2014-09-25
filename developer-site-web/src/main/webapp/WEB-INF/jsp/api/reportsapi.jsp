@@ -29,17 +29,16 @@
 </div>
 
 <div class="box">
-    <h2><a name="reference"></a>
-        Reference</h2>
-    <reports:reference/>
-</div>
-
-<div class="box">
     <h2><a name="HTU"></a>
         How to Use</h2>
     <reports:how_to_use/>
 </div>
 
+<div class="box">
+    <h2><a name="reference"></a>
+        Reference</h2>
+    <reports:reference/>
+</div>
 </div>
 
 <div class="span3" id="additional-resources">
