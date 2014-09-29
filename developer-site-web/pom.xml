@@ -201,6 +201,52 @@
                   <outputFile>${project.basedir}/src/main/webapp/revision.txt</outputFile>
               </configuration>
           </plugin>
+          <plugin>
+            <groupId>com.github.eirslett</groupId>
+            <artifactId>frontend-maven-plugin</artifactId>
+            <!-- NB! Set <version> to the latest released version of frontend-maven-plugin, like in README.md -->
+            <version>0.0.17-BRING-1</version>
+
+            <executions>
+
+              <execution>
+                <id>install node and npm</id>
+                <goals>
+                  <goal>install-node-and-npm</goal>
+                </goals>
+                <configuration>
+                  <nodeVersion>v0.10.30</nodeVersion>
+                  <npmVersion>1.4.21</npmVersion>
+                  <workingDirectory>${basedir}/src/main/webapp/</workingDirectory>
+                </configuration>
+              </execution>
+
+              <execution>
+                <id>npm install</id>
+                <goals>
+                  <goal>npm</goal>
+                </goals>
+                <!-- Optional configuration which provides for running any npm command -->
+                <configuration>
+                  <arguments>install</arguments>
+                  <workingDirectory>${basedir}/src/main/webapp/</workingDirectory>
+                </configuration>
+              </execution>
+
+              <execution>
+                <id>bower install</id>
+                <goals>
+                  <goal>bower</goal>
+                </goals>
+                <configuration>
+                  <arguments>install</arguments>
+                  <environmentVariables>http_proxy sig-web.posten.no:3128 https_proxy sig-web.posten.no:3128</environmentVariables>
+                  <workingDirectory>${basedir}/src/main/webapp/</workingDirectory>
+                </configuration>
+              </execution>
+
+            </executions>
+          </plugin>
     </plugins>
   </build>
 </project>
