@@ -195,4 +195,9 @@ public class HomeController {
     public String easyreturnserviceapi() {
         return "api/easyreturnserviceapi";
     }
+
+    @RequestMapping(value = "/widget/trackingcomponent.html")
+    public String trackingComponent() {
+        return "widget/trackingcomponent";
+    }
 }

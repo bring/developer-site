@@ -934,12 +934,13 @@ div.box > h4:first-child {
 }
 
 .menu-group.ingress-list li {
+    margin: 5px;
   margin-bottom: 1px;
   background: #F0F0F1;
   background-image: url("/images/bring/arrow-green-right.png");
-  -webkit-box-shadow: 0 3px 6px -1px #777777;
-     -moz-box-shadow: 0 3px 6px -1px #777777;
-          box-shadow: 0 3px 6px -1px #777777;
+  /*-webkit-box-shadow: 0 3px 6px -1px #777777;*/
+     /*-moz-box-shadow: 0 3px 6px -1px #777777;*/
+          /*box-shadow: 0 3px 6px -1px #777777;*/
   -webkit-transition: background-color 0.3s linear;
      -moz-transition: background-color 0.3s linear;
        -o-transition: background-color 0.3s linear;
@@ -1078,7 +1079,7 @@ div.box > h4:first-child {
 }
 
 .menu-group.minimal li {
-  border-bottom: 1px solid #c2c2c4;
+  /*border-bottom: 1px solid #c2c2c4;*/
 }
 
 .menu-group.minimal .menu-item {
@@ -1180,16 +1181,17 @@ div.front-page-api-menu {
 }
 
 div.header-box {
-  -webkit-border-radius: 7px;
-   -khtml-border-radius: 7px;
-     -moz-border-radius: 7px;
-          border-radius: 7px;
+  /*-webkit-border-radius: 7px;*/
+   /*-khtml-border-radius: 7px;*/
+     /*-moz-border-radius: 7px;*/
+          /*border-radius: 7px;*/
+    padding-bottom: 25px;
 }
 
 ul.api-menu {
   height: 100%;
   padding: 0;
-  margin: 0;
+  margin: 25px 20px 0 0;
 }
 
 .row.no-back {
@@ -1403,9 +1405,10 @@ code.inline-code {
 /* END TAB-GROUP STYLES */
 
 div.forside-banner {
-  background-image: url("/images/bring/frontpage-bg-gradient.png");
-  background-repeat: repeat;
-  background-size: auto 512px;
+  /*background-image: url("/images/bring/frontpage-bg-gradient.png");*/
+  /*background-repeat: repeat;*/
+  /*background-size: auto 800px;*/
+    background-color: white;
 }
 
 div.light-padding {
@@ -1681,3 +1684,54 @@ img.half-width {
 ul.additional-services-list li {
   margin-top: 10px;
 }
+
+#tracking-demo ul {
+    padding: 0;
+}
+
+#tracking-demo ul > li {
+    padding: 3px;
+}
+
+#tracking-demo h1 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5em 0;
+}
+
+#tracking-demo h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 1em 0 0.5em 0;
+    color: #666;
+}
+
+#tracking-demo p {
+    margin-bottom: 1em;
+}
+
+#tracking-demo p.license {
+    color: #888;
+    margin-top: 4em;
+}
+
+posten-tracking {
+    box-shadow: none;
+    margin-left: -10px;
+    margin-bottom: 2em;
+}
+
+#news {
+    font-size: 1rem;
+}
+
+#news h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#news h3 {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 0.5em;
+}
+

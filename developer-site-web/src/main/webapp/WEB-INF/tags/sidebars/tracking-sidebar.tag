@@ -14,13 +14,13 @@
 
 
 <div class="box">
-    <h2>Additonal Resources</h2>
+    <h2>Additional Resources</h2>
     <ul>
         <li><a href="/additionalresources/xmlSchemaDefinition.html?from=tracking">XML Schema Definition</a></li>
         <li><a href="https://github.com/bring/bring-api-java#introduction" target="_blank">Java API</a></li>
     </ul>
     <h4>Widgets</h4>
     <ul>
-        <li><a href="/widget/link-to-shipment-tracking.html?from=tracking">Link to shipment tracking</a></li>
+        <li><a href="/widget/trackingcomponent.html">Tracking widget</a></li>
     </ul>
 </div>

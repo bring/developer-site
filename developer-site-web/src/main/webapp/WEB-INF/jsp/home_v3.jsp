@@ -1,4 +1,3 @@
-<%@ page import="com.bring.developer.config.featuretoggle.FeatureToggle" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -9,7 +8,6 @@
 
 <head>
     <misc:contenttype/> <misc:title value="Developer"/> <misc:css_v2/>
-
 </head>
 
 <body>
@@ -49,6 +47,13 @@
                             </ul>
                             <p class="front-page-welcome-text">Need help? Get in touch with the API team and other
                                 developers through the <a href="/support">Support</a> page.</p>
+
+                            <div id="news">
+                              <h2>News</h2>
+
+                              <h3>Tracking widget</h3>
+                              <p>A <a href="/widget/trackingcomponent.html">tracking widget</a> is now available for displaying shipment tracking information directly in your webshop</p>
+                            </div>
 
                         </div>
                     </div>
@@ -150,6 +155,18 @@
                                     </div>
                                 </a>
                             </li>
+
+                            <li>
+                              <a href="/widget/trackingcomponent.html">
+                                <div class="api-menu-item-container">
+                                  <div class="api-menu-icons"></div>
+                                  <div class="api-menu-text"></div>
+                                  <span class="api-link black">Tracking widget</span>
+                                  <span class="black">Integrate shipment tracking on your own site</span>
+                                </div>
+                              </a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

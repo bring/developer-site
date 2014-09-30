@@ -304,7 +304,7 @@ footer[role="contentinfo"] {
   line-height: 1.8;
   color: #4D4F53;
   background: none repeat scroll 0 0 #A8A8AA;
-  box-shadow: 0 8px 10px rgba(30, 30, 30, 0.4) inset;
+  /*box-shadow: 0 8px 10px rgba(30, 30, 30, 0.4) inset;*/
 }
 
 footer[role="contentinfo"] ul {
