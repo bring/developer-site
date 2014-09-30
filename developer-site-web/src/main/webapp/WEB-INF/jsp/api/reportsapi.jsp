@@ -9,6 +9,30 @@
     <misc:contenttype/>
     <misc:title value="Reports API"/>
     <misc:css_v2/>
+<script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $.ajax({
+      url: 'https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-10001040731/PARCELS-DELIVERED.json/?fromDate=01.08.2014&toDate=01.09.2014',
+      type: 'GET',
+      dataType: 'JSONP',
+      jsonpCallback: 'callback',
+      success: function (data) {
+              console.log(data);
+          },
+      beforeSend: setHeader
+    });
+  });
+
+  function fnsuccesscallback() {
+   alert('done');
+  }
+  function setHeader(xhr) {
+    xhr.setRequestHeader('X-MyBring-API-Uid', 'savitad.2007@gmail.com');
+    xhr.setRequestHeader('X-MyBring-API-Key', '3c180005-4b9a-42a3-b06e-13cfacab64ba');
+  }
+</script>
+
 </head>
 <body>
 <div class="wrapper">
@@ -24,6 +48,7 @@
 
                     <div class="box">
                         <h2><a name="introduction"></a>
+                        <div id=resp></div>
                             Introduction</h2>
                         <reports:introduction/>
                     </div>
