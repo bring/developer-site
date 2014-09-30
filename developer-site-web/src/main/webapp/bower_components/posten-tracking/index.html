@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posten Tracking</title>
+  <meta name="viewport"
+        content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+  <meta charset="utf-8">
+
+  <script src="bower_components/platform/platform.js"></script>
+
+  <link rel="stylesheet" href="global.css">
+  <link rel="import" href="bower_components/font-roboto/roboto.html">
+  <link rel="import" href="posten-tracking.html">
+
+</head>
+<body unresolved touch-action="auto" fullbleed>
+  <div fit class="app">
+    <h1>Examples of usage</h1>
+    <p>Here's a few ways you can use the Posten tracking web component:</p>
+
+    <h2>Just a search field</h2>
+    <posten-tracking></posten-tracking>
+
+    <h2>Here's an invalid tracking number</h2>
+    <posten-tracking trackingNumber="370716484945439589123" language="no"></posten-tracking>
+
+    <h2>Here's another result</h2>
+    <posten-tracking trackingNumber="370438101464673342"></posten-tracking>
+
+    <h2>Here's the same result (in English)</h2>
+    <posten-tracking trackingNumber="370438101464673342" language="en"></posten-tracking>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'RobotoDraft', sans-serif;
+    font-size: 0.9rem;
+    color: #444;
+}
+body {
+    padding-bottom: 50px;
+}
+.app {
+    padding: 20px;
+}
+body h1 {
+    font-size: 1.4rem;
+    color: #666;
+}

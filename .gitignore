@@ -12,7 +12,6 @@ target
 *.orig
 *~
 
-bower_components/
 node/
 node_modules/
 

@@ -1,0 +1,61 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer-jsonp/polymer-jsonp.html">
+<link rel="import" href="../paper-input/paper-input.html">
+
+<polymer-element name="posten-tracking-search" attributes="trackingNumber package language error" layout vertical>
+  <template>
+
+    <polymer-jsonp id="ajax" auto url="{{url}}"></polymer-jsonp>
+
+    <paper-input label="{{language | i18n('trackingNumberPlaceholder')}}" hidden?="{{ trackingNumber && !error }}" on-keypress="{{search}}"></paper-input>
+
+  </template>
+  <script>
+    Polymer("posten-tracking-search", {
+      search: function(ev, detail, sender) {
+          var code = ev.keyCode || ev.charCode;
+          var key = ev.keyIdentifier;
+          if ((key === 'Enter' || code === 13)) {
+              this.trackingNumber = sender.inputValue;
+              this.url = this.searchUrl(this.trackingNumber);
+          }
+      },
+      ready: function () {
+        var self = this;
+        if(this.trackingNumber) {
+            this.url = this.searchUrl(this.trackingNumber, this.language);
+        }
+        this.$.ajax.addEventListener("polymer-response",
+            function(e) {
+                self.error = false;
+
+                var response = e.detail.response.consignmentSet[0];
+                if(!response.error) {
+                    self.package = response.packageSet[0];
+                }
+                else {
+                    self.error = response.error;
+                }
+            }
+        );
+      },
+      searchUrl: function(trackingNumber, langCode) {
+          return 'http://sporing.bring.no/sporing.json?q=' + trackingNumber + '&lang=' + langCode + '&callback=';
+      },
+      i18n: function(language, key) {
+          if(this.texts[key] && this.texts[key][language]) {
+              return this.texts[key][language];
+          }
+          return '';
+      },
+      texts: {
+          'trackingNumberPlaceholder': {
+              no: 'Sporingsnummer',
+              en: 'Tracking number',
+              sv: 'Spårningsnummer',
+              da: 'Sporingsnummer'
+          }
+      }
+    });
+  </script>
+</polymer-element>

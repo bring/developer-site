@@ -1,0 +1,86 @@
+:host {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 0px 2px 4px, rgba(0, 0, 0, 0.0980392) 0px 0px 3px;
+    background-color: rgb(255, 255, 255);
+    padding: 0 10px 10px 10px;
+}
+
+h1.small {
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+p.hvaskjera {
+  font-weight: bold;
+    margin-left: 5px;
+}
+
+.package {
+    width: 40px;
+    height: 60px;
+    margin-right: 10px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2OS44MTIiIGhlaWdodD0iNjYuNDg4IiB2aWV3Qm94PSIwIDAuMjE3IDY5LjgxMiA2Ni40ODgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwLjIxNyA2OS44MTIgNjYuNDg4Ij48cG9seWdvbiBmaWxsPSIjZmZmIiBzdHJva2U9IiNFMzJFMjYiIHN0cm9rZS13aWR0aD0iMiIgcG9pbnRzPSIxLDE3Ljk0OCAxLDQ4LjQzIDM5LjAxMiw2NS41NjMgNjguODEyLDQ1LjI0NSA2OC44MTIsMTYuMjU1IDMxLjU1NSwxLjMyIi8+PGxpbmUgc3Ryb2tlPSIjRTMyRTI2IiB4MT0iMTguODA1IiB5MT0iMjUuMjUxIiB4Mj0iNDkuNTczIiB5Mj0iOC4zNzUiIGZpbGw9Im5vbmUiLz48cG9seWdvbiBzdHJva2U9IiNFMzJFMjYiIHBvaW50cz0iMzAuMTY0LDI0Ljg5MyAzNy43ODcsMjcuODg4IDUzLjUzOSwxOC45NzkgNDUuODA5LDE2LjIzNiIgZmlsbD0ibm9uZSIvPjxwYXRoIHN0cm9rZT0iI0UzMkUyNiIgc3Ryb2tlLXdpZHRoPSIyIiBkPSJNMzkuMjUyIDMzLjgyNCIgZmlsbD0ibm9uZSIvPjxwb2x5bGluZSBzdHJva2U9IiNFMzJFMjYiIHBvaW50cz0iMSwxOC4wMSAzOS4yNTIsMzMuODg3IDM5LjI1Miw2NC42MiAzOS4yNTIsMzMuODg3IDY4LjgxMiwxNi4zMTciIGZpbGw9Im5vbmUiLz48L3N2Zz4=');
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: 0px 10px;
+    vertical-align: top;
+}
+
+#events {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#events li {
+    display: none;
+}
+
+#events li:nth-child(2) {
+    display: block;
+}
+
+#events.expanded li {
+    display: block;
+}
+
+li {
+    padding: 5px;
+}
+
+li:nth-child(odd) {
+    background-color: #eeeeee;
+}
+
+#package-number {
+    margin-left: 5px;
+}
+
+#show-all-button {
+    margin-left: -2px;
+}
+
+/*@media screen and (max-width: 700px) {*/
+    /*.package {*/
+        /*display: none;*/
+    /*}*/
+/*}*/
+
+double-bounce::shadow .spinner {
+    height: 30px;
+    width: 30px;
+    margin: 10px auto;
+}
+
+@media screen and (min-width: 600px) {
+    double-bounce::shadow .spinner {
+        height: 30px;
+        width: 30px;
+        margin: 10px;
+    }
+}

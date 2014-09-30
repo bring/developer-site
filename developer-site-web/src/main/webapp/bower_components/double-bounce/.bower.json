@@ -1,0 +1,32 @@
+{
+  "name": "double-bounce",
+  "version": "0.0.1",
+  "authors": [
+    {
+      "name": "Florian Voutzinos",
+      "email": "florian@voutzinos.com",
+      "homepage": "http://florian.voutzinos.com"
+    }
+  ],
+  "description": "Double-bounce spinner as a Polymer element",
+  "keywords": "spinner, loading, polymer, web-components",
+  "main": "double-bounce.html",
+  "license": "MIT",
+  "homepage": "https://github.com/florianv/double-bounce",
+  "ignore": [
+    "**/.*",
+    "demo.html"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#>=0.4.0 <1.0.0"
+  },
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "bfef2f0fabc8aadde6549f1b41110c6146310697"
+  },
+  "_source": "https://github.com/florianv/double-bounce.git",
+  "_target": "~0.0.1",
+  "_originalSource": "double-bounce"
+}

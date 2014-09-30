@@ -1,0 +1,46 @@
+html {
+  font-family: "Arial";
+  padding: 2em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+}
+
+th, td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px 10px 0;
+  vertical-align: top;
+}
+
+posten-tracking {
+  font-size: 0.9em;
+  margin-top: -11px;
+  padding: 0;
+  box-shadow: none;
+}
+
+posten-tracking /deep/ h1.small {
+  font-size: 1.1em;
+  color: red;
+  margin-bottom: 0;
+}
+
+posten-tracking /deep/ h1.small:before {
+   content: "Sendingsnummer: ";
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  white-space: nowrap;;
+}
