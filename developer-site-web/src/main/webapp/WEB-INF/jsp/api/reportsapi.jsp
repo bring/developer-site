@@ -12,45 +12,44 @@
 </head>
 <body>
 <div class="wrapper">
-<misc:header_v2 selected_tab="developer"/>
-<div id="page">
-<section id="content">
-<div class="row-fluid">
-<div class="span9">
+    <misc:header_v2 selected_tab="developer"/>
+    <div id="page">
+        <section id="content">
+            <div class="row-fluid">
+                <div class="span9">
 
-<div class="box">
-    <h1>Reports API (BETA)</h1>
-</div>
+                    <div class="box">
+                        <h1>Reports API</h1>
+                    </div>
 
-<div class="box">
-    <h2><a name="introduction"></a>
-        Introduction</h2>
-    <reports:introduction/>
-</div>
+                    <div class="box">
+                        <h2><a name="introduction"></a>
+                            Introduction</h2>
+                        <reports:introduction/>
+                    </div>
 
-<div class="box">
-    <h2><a name="reference"></a>
-        Reference</h2>
-    <reports:reference/>
-</div>
+                    <div class="box">
+                        <h2><a name="HTU"></a>
+                            How to Use</h2>
+                        <reports:how_to_use/>
+                    </div>
 
-<div class="box">
-    <h2><a name="HTU"></a>
-        How to Use</h2>
-    <reports:how_to_use/>
-</div>
+                    <div class="box">
+                        <h2><a name="reference"></a>
+                            Reference</h2>
+                        <reports:reference/>
+                    </div>
+                </div>
 
-</div>
+                <div class="span3" id="additional-resources">
+                    <div id="sidebar">
+                        <sidebar:reports-sidebar/>
+                    </div>
+                </div>
 
-<div class="span3" id="additional-resources">
-    <div id="sidebar">
-        <sidebar:reports-sidebar/>
+            </div>
+        </section>
     </div>
-</div>
-
-</div>
-</section>
-</div>
 </div>
 
 <misc:footer_v2/>

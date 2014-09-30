@@ -58,7 +58,7 @@ https://www.mybring.com/reports/api</pre>
         <tr>
             <td><code>/generate.&lt;extension&gt;</code></td>
             <td>
-                <p>Get a list of available customer accounts. Remember to set the correct headers
+                <p>Get a list of available customers. Remember to set the correct headers
                    (<code>Accept, X-MyBring-API-Uid</code> and <code>X-MyBring-API-Key</code>)
                    before performing this call</p>
                 <ul>
@@ -67,26 +67,26 @@ https://www.mybring.com/reports/api</pre>
             </td>
         </tr>
         <tr >
-            <td><code>/generate/&lt;customer_account_id&gt;.&lt;extension&gt;</code></td>
+            <td><code>/generate/&lt;customer_id&gt;.&lt;extension&gt;</code></td>
             <td> Get a list of all available reports for the customer with customer id given
-                 by <code>&lt;customer_account_id&gt;</code>.
+                 by <code>&lt;customer_id&gt;</code>.
                 <ul>
-                    <li><code>&lt;customer_account_id&gt;</code> = one of the customer account ids
+                    <li><code>&lt;customer_id&gt;</code> = one of the customer ids
                                                                  returned by a call to <code>.../generate/</code>.</li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td><code>/generate/&lt;customer_account_id&gt;/&lt;report_type&gt;?&lt;parameter1&gt;&amp;&lt;parameter2&gt;.&lt;extension&gt;</code></td>
-            <td><p>Order the specified report_type to be generated for the given customer account id.
+            <td><code>/generate/&lt;customer_id&gt;/&lt;report_type&gt;.&lt;extension&gt;?&lt;parameter1&gt;&amp;&lt;parameter2&gt;</code></td>
+            <td><p>Order the specified report_type to be generated for the given customer id.
                    This call will return the HTTP status code 202, and the response body will contain
                    a url for monitoring the status of the report generation.</p>
                 <ul>
-                    <li><code>&lt;customer_account_id&gt;</code> = one of the customer account ids
+                    <li><code>&lt;customer_id&gt;</code> = one of the customer ids
                                                                  returned by a call to <code>.../generate/</code>.</li>
                     <li><code>&lt;report_type&gt;</code> = one of the report types returned by a call
-                                                         to <code>.../generate/&lt;customer_account_id&gt;/</code> (ie. <code>PARCELS-DELIVERED</code>)</li>
+                                                         to <code>.../generate/&lt;customer_id&gt;/</code> (ie. <code>PARCELS-DELIVERED</code>)</li>
                     <li><code>&lt;parameters&gt;</code> = parameters specific for the given <code>report_type</code>. The available parameters can be found in the response from <code>.../generate/&lt;customer_account_id&gt;/</code></li>
                     <li><code>&lt;extension&gt;</code> = <code>xml</code> or <code>json</code></li>
                 </ul></td>

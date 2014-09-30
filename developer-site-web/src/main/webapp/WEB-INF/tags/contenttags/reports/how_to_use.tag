@@ -2,15 +2,15 @@
 <p>The Reports API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
        Read more about <a href="/additionalresources/getting-api-keys.html?from=reports">how to get an API-key</a>, and how to use it for authentication. </p>
     <div>
-        <p>The two first steps in the process is only necessary to find the correct IDs for the customer account and report.
+        <p>The two first steps in the process is only necessary to find customer numbers and report types for the user.
            You can save these IDs, and perform the generation-step without verifying the IDs. The response may get added information,
            so implementation should ignore new elements added to the response.</p>
     </div>
     <div>
         <ol>
-            <li><h4>GET CUSTOMER ACCOUNTS</h4>
+            <li><h4>GET CUSTOMER IDS</h4>
 
-            <div>The first step is to get a list of available customer accounts.
+            <div>The first step is to get a list of available customers. Note that we are requesting output in json format.
                 <div><h5>REQUEST</h5>
                     <pre class="code-box">https://www.mybring.com/reports/api/generate.json</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
@@ -26,7 +26,7 @@
 ]}</pre></div></div>
 
             <li><h4>GET LIST OF AVAILABLE REPORTS</h4>
-            <div><div>Each customer has a set of reports available.</div>
+            <div><div>Each customer has a set of reports available. Now lets search reports for customer with id: <i>PARCELS_NORWAY-00012341234</i>.</div>
                 <div><h5>REQUEST</h5>
                     <pre class="code-box"> https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234.json</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
@@ -55,19 +55,21 @@
 
             <li><h4>GENERATE REPORT</h4>
 
-            <div><div>To generate a report do a GET to the supplied URL, and include the parameters described in the response.
+            <div><div>To generate a report do a GET to the supplied URL, and include the parameters described in the previous response.
 
-                      These parameters are considered to be static, so it should not be necessary to do the two first steps for every report generation.
-                      The GET-call will return 202, telling the caller the that the request for a report is put on the queue.
+                      You need not invoke the two first steps for every report generation if customer id and report type are known.
+                      This is asynchronous request. So the GET-call will return 202, telling the caller the that the request for a report is put on the queue.
                       The url to query to get the status for the request if provided as an HTTP header and also in the response.
+                </div>
+                <div>
+                    Now lets generate report for customer id: PARCELS_NORWAY-00012341234 and report: PARCELS-DELIVERED from 01.07.2014 to 01.08.2014:
                 </div>
                 <div><h5>REQUEST</h5>
 
-                    <pre class="code-box">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234.json?DELIVEREDfromDate=01.07.2011&amp;toDate=01.07.2011</pre></div>
+                    <pre class="code-box">https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/PARCELS-DELIVERED.json?fromDate=01.07.2014&toDate=01.08.2014</pre></div>
                 <div><h5>EXAMPLE RESPONSE</h5></div>
                 <div><pre class="prettyprint">{
-    "statusMessage":"The report is now beeing processed. Please use the statusUrl to check when the report is ready. Reloading this page will generate a new report.",
-    "statusUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/",
+    "statusUrl":"https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/"
 }</pre></div></div>
 
             <li><h4>CHECK STATUS OF REPORT</h4>
