@@ -36,6 +36,3 @@ Dir["./deploy-scripts/lib/bring/tasks/*.rb"].each {|file| require file }
 Bring::Tasks.init
 
 class VerificationError < StandardError; end
-
-# Load Rakefiles from subprojects
-Dir["#{File.dirname(__FILE__)}/*/Rakefile"].each { |f| load f }
