@@ -7,8 +7,8 @@
 
 <head>
     <misc:contenttype/> <misc:title value="Tracking widget"/> <misc:css_v2/>
-  <script src="../../bower_components/platform/platform.js"></script>
-  <link rel="import" href="../../bower_components/posten-tracking/posten-tracking.html">
+  <script src="../../../bower_components/platform/platform.js"></script>
+  <link rel="import" href="../../../bower_components/posten-tracking/posten-tracking.html">
 </head>
 
 <body>
