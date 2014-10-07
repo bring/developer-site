@@ -342,6 +342,16 @@
     </td>
 </tr>
 
+<tr>
+  <td>Oil Express <sup>6</sup></td>
+  <td><code>OX</code>
+  </td>
+  <td>Yes
+  </td>
+  <td>Yes
+  </td>
+</tr>
+
 </tbody>
 </table>
 
@@ -357,7 +367,9 @@
 4 <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/pakker/produkt/_attachment/9000" target="_blank">Fuel surcharge</a> is not included in the price returned from the ShippingGuide and must be calculated / added manually.
   Bring Parcels is entitled to change this charge without notice to the customer. Any fuel surcharge applied will be detailed on the invoice.<br/>
 
-5 For shipments to Denmark, CARRYON_HOMESHOPPING needs to be ordered with the “PICKUP_POINT” additional service to send as a low-cost delivery from Bring’s parcel shops or parcel lockers. Otherwise the shipment will be sent as a more expensive home delivery.
+5 For shipments to Denmark, CARRYON_HOMESHOPPING needs to be ordered with the “PICKUP_POINT” additional service to send as a low-cost delivery from Bring’s parcel shops or parcel lockers. Otherwise the shipment will be sent as a more expensive home delivery.<br/>
+
+6 Oil Express products can be shipped only in Norway and between certain postal codes.
 </sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>
@@ -439,6 +451,15 @@
       <td>Delivery to pickup point</td>
       <td>CARRYON_HOMESHOPPING, CARRYON_HOMESHOPPING_BULKSPLIT</td>
       <td>Yes, causes lower base package price</td>
+    </tr>
+
+
+    <tr>
+      <td>OX_EXPRESS
+      </td>
+      <td>Express delivery for oil products</td>
+      <td>OX</td>
+      <td>Yes, causes higher base package price</td>
     </tr>
 
     </tbody>
