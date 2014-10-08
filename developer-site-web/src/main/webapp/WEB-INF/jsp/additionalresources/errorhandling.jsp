@@ -216,7 +216,7 @@
             </tr>
             <tr >
                 <td>FG_INPUT_041</td>
-                <td>Oil express product requires a customer, because only contract prices are available.</td>
+                <td>Oil express product requires a customer number set on the product element, because only contract prices are available.</td>
             </tr>
 
             <tr>
