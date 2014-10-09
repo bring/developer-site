@@ -186,6 +186,38 @@
                 <td>FG_INPUT_033</td>
                 <td>A consignment element must be specified when requesting a consignment-oriented product.</td>
             </tr>
+            <tr >
+                <td>FG_INPUT_034</td>
+                <td>Invalid City.</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_035</td>
+                <td>Shipping date must be current date or in the future when net prices are requested.</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_036</td>
+                <td>Schema version 8 and newer does no longer support user code. Use Client URL instead. See XSD Schema documentation.</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_037</td>
+                <td>Schema version 8 and newer requires Client URL element set. See XSD Schema documentation.</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_038</td>
+                <td>Schema version 8 and newer requires that the api.bring.com/shippingguide endpoint is used. Check out developer.bring.com</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_039</td>
+                <td>Endpoint at api.bring.com/shippingguide requires that schema version 8 or newer is used. Check out developer.bring.com</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_040</td>
+                <td>Invalid UNNumber format. UNNumber must be a four digit string. Ex: 0030</td>
+            </tr>
+            <tr >
+                <td>FG_INPUT_041</td>
+                <td>Oil express product requires a customer number set on the product element, because only contract prices are available.</td>
+            </tr>
 
             <tr>
                 <td>FG_PRODUCT_001</td>
