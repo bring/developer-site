@@ -28,8 +28,8 @@
   <h5>HTTP-Headers</h5>
 
   <pre class="code-box">POST /booking/api/booking HTTP/1.1
-Content-Type: application/json
-Accept: application/json
+Content-Type: application/xml
+Accept: application/xml
 X-MyBring-API-Uid: mybringuser@example.org
 X-MyBring-API-Key: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff00
 X-Bring-Client-URL: http://example.org/shop
