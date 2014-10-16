@@ -1,18 +1,16 @@
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="postalcode" tagdir="/WEB-INF/tags/contenttags/postalcode" %>
-<p>
-  The following countries are supported:
-  <ul>
-    <li><code>NO</code> - Norway</li>
-    <li><code>DK</code> - Denmark</li>
-    <li><code>SE</code> - Sweden</li>
-    <li><code>FI</code> - Finland</li>
-    <li><code>NL</code> - Netherlands</li>
-    <li><code>DE</code> - Germany</li>
-    <li><code>US</code> - United States</li>
-    <li><code>BE</code> - Belgium</li>
-  </ul>
-</p>
+<p>The following countries are supported:</p>
+<ul>
+  <li><code>NO</code> - Norway</li>
+  <li><code>DK</code> - Denmark</li>
+  <li><code>SE</code> - Sweden</li>
+  <li><code>FI</code> - Finland</li>
+  <li><code>NL</code> - Netherlands</li>
+  <li><code>DE</code> - Germany</li>
+  <li><code>US</code> - United States</li>
+  <li><code>BE</code> - Belgium</li>
+</ul>
 
 <p>The service uses <a target="_blank" href="http://www.geonames.org/">GeoNames</a> as source for all countries
     except Norway.</p>
