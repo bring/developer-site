@@ -124,7 +124,7 @@
     </table>
 
     <p>
-        New field <code>&lt;distanceType&gt;&lt;/distanceType&gt;</code> is added in response which specifies whether distance return by pickup point api is driving distance using road/ferries or
-        it is aerial distance between source and pickup points.<br />
+        New field <code>&lt;distanceType&gt;&lt;/distanceType&gt;</code> is added in the response which specifies whether distance return by pickup point api is driving distance using road/ferries or
+        it is the aerial distance between source and pickup points.<br />
         At present driving distance is returned only for Denmark and Sweden. If driving distance is not available for a pickup point then aerial distance is returned.
     </p>
