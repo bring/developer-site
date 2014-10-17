@@ -7,10 +7,3 @@
 
 <p>A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post
   offices and selected grocery stores.</p>
-
-<p>The following countries are supported:</p>
-<ul>
-  <li><code>NO</code> - Norway</li>
-  <li><code>DK</code> - Denmark</li>
-  <li><code>FI</code> - Finland</li>
-</ul>
