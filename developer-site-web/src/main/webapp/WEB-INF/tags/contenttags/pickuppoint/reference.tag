@@ -100,7 +100,7 @@
             <td><code>?street=&lt;street&gt;</code></td>
             <td>Searches for pickup points that is located in a street named &lt;street&gt;
                 <ul>
-                    <li><code>&lt;street&gt;</code> = The street name where the pickup point is located. The street name supports partial searches by specifing a wildcard "*". Only supported when country is DK and SE</li>
+                    <li><code>&lt;street&gt;</code> = The street name where the pickup point is located. The street name supports partial searches by specifing a wildcard "*". Supported countries are DK and SE.</li>
                 </ul>
             </td>
         </tr>
@@ -108,7 +108,7 @@
             <td><code>?streetNumber=&lt;streetNumber&gt;</code></td>
             <td>Searches for pickup points that is located at an address with street number = &lt;street&gt;
                 <ul>
-                    <li><code>&lt;streetNumber&gt;</code> = The street number where the pickup point is located. The street number supports partial searches by specifing a wildcard "*". Only supported when country is DK and SE</li>
+                    <li><code>&lt;streetNumber&gt;</code> = The street number where the pickup point is located. The street number supports partial searches by specifing a wildcard "*". Supported countries are DK and SE.</li>
                 </ul>
             </td>
         </tr>
