@@ -453,15 +453,6 @@
       <td>Yes, causes lower base package price</td>
     </tr>
 
-
-    <tr>
-      <td>OX_EXPRESS
-      </td>
-      <td>Express delivery for oil products</td>
-      <td>OX</td>
-      <td>Yes, causes higher base package price</td>
-    </tr>
-
     </tbody>
 </table>
 
