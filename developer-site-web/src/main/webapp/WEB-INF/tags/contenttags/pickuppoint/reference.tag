@@ -98,17 +98,17 @@
         </tr>
         <tr>
             <td><code>?street=&lt;street&gt;</code></td>
-            <td>Searches for pickup points that is located in a street named &lt;street&gt;
+            <td>Searches for the nearest pickup points to the street with name = <code>&lt;street&gt;</code>
                 <ul>
-                    <li><code>&lt;street&gt;</code> = The street name where the pickup point is located. The street name supports partial searches by specifing a wildcard "*". Supported countries are DK and SE.</li>
+                    <li><code>&lt;street&gt;</code> = The street name to find nearest pickup points for. The street name supports partial searches by specifying a wildcard "*". Supported countries are DK and SE.</li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td><code>?streetNumber=&lt;streetNumber&gt;</code></td>
-            <td>Searches for pickup points that is located at an address with street number = &lt;street&gt;
+            <td>Searches for the nearest pickup points to the street with street number = <code>&lt;streetNumber&gt;</code>
                 <ul>
-                    <li><code>&lt;streetNumber&gt;</code> = The street number where the pickup point is located. The street number supports partial searches by specifing a wildcard "*". Supported countries are DK and SE.</li>
+                    <li><code>&lt;streetNumber&gt;</code> = The street number to find pickup points for. The street number supports partial searches by specifying a wildcard "*". Supported countries are DK and SE.</li>
                 </ul>
             </td>
         </tr>
