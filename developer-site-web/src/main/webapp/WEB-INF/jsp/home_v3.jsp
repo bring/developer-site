@@ -128,7 +128,7 @@
                                     <div class="api-menu-item-container">
                                         <div class="api-menu-icons purchaseicon"></div>
                                         <div class="api-menu-text"></div>
-                                        <span class="api-link black">PurchaseOrder API (BETA)</span> <span
+                                        <span class="api-link black">PurchaseOrder API</span> <span
                                             class="black">Create, update and query Purchase Orders</span>
                                     </div>
                                 </a>
@@ -137,7 +137,7 @@
                             <li>
                                 <a href="/api/easyreturnserviceapi.html">
                                     <div class="api-menu-item-container">
-                                        <div class="api-menu-icons purchaseicon"></div>
+                                        <div class="api-menu-icons easyreturnicon"></div>
                                         <div class="api-menu-text"></div>
                                         <span class="api-link black">Easy Return Service API</span>
                                         <span class="black">Create labels for returning cross-border parcels</span>
@@ -148,7 +148,7 @@
                             <li>
                                 <a href="http://www.bring.no/hele-bring/edi-i-bring">
                                     <div class="api-menu-item-container">
-                                        <div class="api-menu-icons"></div>
+                                        <div class="api-menu-icons ediicon"></div>
                                         <div class="api-menu-text"></div>
                                         <span class="api-link black">EDI</span>
                                         <span class="black">Communicate with brings services electronically</span>
@@ -159,7 +159,7 @@
                             <li>
                               <a href="/widget/trackingcomponent.html">
                                 <div class="api-menu-item-container">
-                                  <div class="api-menu-icons"></div>
+                                  <div class="api-menu-icons trackingwidgeticon"></div>
                                   <div class="api-menu-text"></div>
                                   <span class="api-link black">Tracking widget</span>
                                   <span class="black">Integrate shipment tracking on your own site</span>

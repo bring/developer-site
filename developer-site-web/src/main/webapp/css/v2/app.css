@@ -1425,28 +1425,40 @@ div.api-menu-text {
 
 div.shippingicon {
   margin-top: 7px !important;
-  background: transparent url("/images/bring/api-meny/shipping1.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/shipping.png") no-repeat;
 }
 
 div.trackingicon {
   margin-top: 7px !important;
-  background: transparent url("/images/bring/api-meny/tracking1.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/tracking.png") no-repeat;
 }
 
 div.reportsicon {
-  background: transparent url("/images/bring/api-meny/reports1.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/reports.png") no-repeat;
 }
 
 div.pickuppointicon {
-  background: transparent url("/images/bring/api-meny/pickuppoint1.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/pickuppoint.png") no-repeat;
 }
 
 div.postalcodeicon {
-  background: transparent url("/images/bring/api-meny/postalcode1.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/postalcode.png") no-repeat;
 }
 
 div.purchaseicon {
   background: transparent url("/images/bring/api-meny/purchaseorder.png") no-repeat;
+}
+
+div.easyreturnicon {
+  background: transparent url("/images/bring/api-meny/easyreturn.png") no-repeat;
+}
+
+div.ediicon {
+  background: transparent url("/images/bring/api-meny/edi.png") no-repeat;
+}
+
+div.trackingwidgeticon {
+  background: transparent url("/images/bring/api-meny/trackingwidget.png") no-repeat;
 }
 
 div.bookingicon {
@@ -1456,7 +1468,7 @@ div.bookingicon {
   margin-top: 13px !important;
   margin-top: 7px;
   margin-left: 7px;
-  background: transparent url("/images/bring/api-meny/booking2.png") no-repeat;
+  background: transparent url("/images/bring/api-meny/booking.png") no-repeat;
 }
 
 div.api-menu-icons {
