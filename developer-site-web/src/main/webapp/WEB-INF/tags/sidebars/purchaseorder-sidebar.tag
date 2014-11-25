@@ -1,7 +1,7 @@
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <div class="box">
     <a class="black" href="/api/purchaseorderapi.html">
-        <h4>PurchaseOrder API (BETA)</h4>
+        <h4>PurchaseOrder API</h4>
     </a>
     <ol>
         <li><a onclick="showBookmark('introduction',        '/api/purchaseorderapi.html');">Introduction</a></li>

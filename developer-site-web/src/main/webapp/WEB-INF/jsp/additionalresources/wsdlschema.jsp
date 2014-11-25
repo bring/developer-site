@@ -29,7 +29,6 @@
                     <div class="box">
                       <div>
                         <h2>WSDL</h2>
-                        <div class="information-box">BETA! This API is currently in BETA, changes will be made in the future that can break code relying on this specific version.</div>
                         <p><a href="https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl" target="_blank">WSDL with latest schema version</a></p>
                       </div>
                         <div>
