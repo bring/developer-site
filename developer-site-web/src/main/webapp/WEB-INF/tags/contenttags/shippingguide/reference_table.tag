@@ -157,5 +157,14 @@
           If no language is set, or text is not available in the requested language, norwegian text is returned.
       </td>
   </tr>
+  <tr class="even">
+    <td>Special volume</td>
+    <td>
+      Flag to indicate if the package has a shape that may require 'special handling fee'. Is set to false by default.
+      <a target="_blank"
+         href="https://api.bring.com/shippingguide/products/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;weightInGrams=1500&amp;product=servicepakke&product=bpakke_dor-dor&volumeSpecial=true">
+        product=servicepakke&product=bpakke_dor-dor</a>.
+    </td>
+  </tr>
   </tbody>
 </table>
