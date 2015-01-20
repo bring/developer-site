@@ -31,7 +31,7 @@
                         <p>
                           By using the
                           Offline Data Web Service (see <a href="/additionalresources/wsdl-xml-schema.html?from=shipping">WSDL</a>)
-                          or <a href="http://fraktguide.bring.no/fraktguide/offlineData.do">Offline Data form</a>
+                          or <a href="https://api.bring.com/shippingguide/offlineData.do">Offline Data form</a>
                           you can download price lists, transport times and additional services designed
                           for offline usage. Offline data is suitable as a failover solution if the Shipping Guide
                           does not respond or responds with an error message, or if there are extreme demands on
