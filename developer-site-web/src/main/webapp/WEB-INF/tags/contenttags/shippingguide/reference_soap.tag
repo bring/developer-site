@@ -12,7 +12,7 @@
         </p>
         <p>
         The table below lists the most important elements. For complete XML Schema Reference, see the
-        automatically generated <a href="http://fraktguide.bring.no/fraktguide/schemaDoc.do" target="_blank">XML Schema Reference</a>.
+        automatically generated <a href="https://api.bring.com/shippingguide/schemaDoc.do?clientUrl=developer.bring.com" target="_blank">XML Schema Reference</a>.
         </p>
         <h4>Request elements</h4>
         <table>

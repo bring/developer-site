@@ -38,7 +38,7 @@
                             <a href="https://api.bring.com/shippingguide/api/ws/fraktguide-v7.wsdl">7</a>,
                             <a href="https://api.bring.com/shippingguide/api/ws/fraktguide-v8.wsdl">8</a>.
                             The current version is 8.</p>
-                        <p><a href="https://api.bring.com/shippingguide/schemaDoc.do">Fraktguide XML Schema documentation</a></p>
+                        <p><a href="https://api.bring.com/shippingguide/schemaDoc.do?clientUrl=developer.bring.com">Fraktguide XML Schema documentation</a></p>
                       </div>
                         <div>
 
