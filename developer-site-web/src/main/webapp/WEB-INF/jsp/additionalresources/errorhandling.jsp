@@ -51,8 +51,8 @@
             to use a a fixed standard price whenever an error occurs.
         </p>
 
-        <h4>Error codes for rejected requests</h4>
-        <table data-tab="/proxy/shipping-guide/api/errorCodes.json?clientUrl=developer.bring.com"></table>
+         <h4>Error codes for rejected requests</h4>
+         <table data-tab="/proxy/shipping-guide/api/errors.json?clientUrl=developer.bring.com"></table>
 
     </div>
 </div>
