@@ -63,7 +63,7 @@
                           <ol>
                               <li>
                                 Take a peek on the
-                                <a target="_blank" href="http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=7600&amp;to=1473&amp;weightInGrams=1800&amp;date=<%=new LocalDate()%>&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demo</a>,
+                                <a target="_blank" href="https://api.bring.com/shippingguide/demoVelgFraktalternativ.do?clientUrl=developer.bring.com&from=7600&amp;to=1473&amp;weightInGrams=1800&amp;date=<%=new LocalDate()%>&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demo</a>,
                                 select the products you will offer to your customers and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop</li>
                               <li>On your website - add &lt;form&gt; tags to contain the selection of shipping alternatives</li>
                               <li>Fetch and display the HTML code from "Delivered by Bring".</li>
