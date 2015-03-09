@@ -21,15 +21,16 @@
 
         <tr>
           <td>error_message</td>
-          <td>The maximum number of requests per hour has been exceeded.</td>
+          <td>The maximum number of requests per minute has been exceeded.</td>
         </tr>
 
     </tbody>
 </table>
 
 
-<p>Also, product List should always be shown regardless of the fact that you have been rate limited or on the
-    availability of the Pickup Point.</p>
+<p>As an additional note, While accessing the Pickup point API through the Shipping Guide API,
+    the product list should be displayed even in the case that the request has been rate limited
+    by the Pickup point API.</p>
 
 <h3>High-volume users</h3>
 
