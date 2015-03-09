@@ -9,6 +9,7 @@
         <li><a onclick="showBookmark('reference',           '/api/pickuppointapi.html');">Reference</a></li>
         <li><a onclick="showBookmark('HTU',                 '/api/pickuppointapi.html');">How to Use</a></li>
         <li><a onclick="showBookmark('additionalExamples',  '/api/pickuppointapi.html');">Additional Examples</a></li>
+        <li><a onclick="showBookmark('rateLimiting',        '/api/pickuppointapi.html');">Rate Limiting</a></li>
     </ol>
 
 </div>
