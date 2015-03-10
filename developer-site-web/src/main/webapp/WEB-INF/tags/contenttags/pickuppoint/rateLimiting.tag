@@ -28,7 +28,7 @@
 </table>
 
 
-<p>As an additional note, While accessing the Pickup point API through the Shipping Guide API,
+<p>As an additional note, While accessing the Pickup point API together with Shipping Guide API,
     the product list should be displayed even in the case that the request has been rate limited
     by the Pickup point API.</p>
 
