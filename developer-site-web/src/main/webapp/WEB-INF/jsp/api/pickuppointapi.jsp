@@ -48,6 +48,10 @@
     <h2><a name="additionalExamples"></a>
         Additional examples</h2>
     <pickuppoint:additional_examples_xml_json/>
+
+    <hr>
+    <h2><a name="rateLimiting"></a>Rate Limiting</h2>
+    <pickuppoint:rateLimiting/>
 </div>
 
 </div>
