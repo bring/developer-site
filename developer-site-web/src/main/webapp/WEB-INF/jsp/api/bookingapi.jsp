@@ -55,6 +55,13 @@
                             <booking:pickup_order_json/>
                             <booking:pickup_order_soap/>
 
+                            <h2>Encoding</h2>
+
+                            <p>
+                              The booking API supports characters included in the ISO-8859-1 charset. If unsupported characters are being sent,
+                              you will get a validation error as described above.
+                            </p>
+
                         </div>
                     </div>
                 </div>
