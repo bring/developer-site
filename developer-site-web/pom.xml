@@ -6,12 +6,12 @@
   <artifactId>developer-site-web</artifactId>
   <name>Bring developer site: Webapp</name>
   <packaging>war</packaging>
-  <version>1.61</version>
+  <version>1.62-SNAPSHOT</version>
 
   <parent>
     <groupId>com.bring</groupId>
     <artifactId>developer-site-all</artifactId>
-    <version>1.61</version>
+    <version>1.62-SNAPSHOT</version>
   </parent>
 
   <dependencies>
