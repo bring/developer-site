@@ -16,9 +16,9 @@
       <p>Example:</p>
         <pre class="code-box json response delay-snippet"></pre>
               <a target="_blank" class="request"
-                 href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointIdRequest.json"
-                 data-internal="/proxy/booking/api/bookingExamples/basicPickupPointIdRequest.json">
-                https://www.bring.no/booking/api/bookingExamples/basicPickupPointIdRequest.json
+                 href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointDKRequest.json"
+                 data-internal="/proxy/booking/api/bookingExamples/basicPickupPointDKRequest.json">
+                https://www.bring.no/booking/api/bookingExamples/basicPickupPointDKRequest.json
               </a>
         </pre>
       </div>

@@ -119,14 +119,51 @@
                  data-internal="/proxy/booking/api/bookingExamples/flexDeliveryRequest.xml">
                 https://www.bring.no/booking/api/bookingExamples/flexDeliveryRequest.xml </a>
 
-              <p>Example response:</p>
+              <p>Example request:</p>
               <pre class="code-box xml response delay-snippet"></pre>
             </div>
           </div>
 
         </div>
       </li>
+      <li>
+        <a href="#" class="menu-item"> Select Pickup Point Norway <span class="arrow"></span> </a>
 
+        <div class="content-box">
+
+            <additionalServices:selectPickupPoint_norway/>
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
+                    <p>Example Request:</p>
+                    <a target="_blank" class="request"
+                       href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointNORequest.xml"
+                       data-internal="/proxy/booking/api/bookingExamples/basicPickupPointNORequest.xml">
+                        https://www.bring.no/booking/api/bookingExamples/basicPickupPointNORequest.xml </a>
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
+            </div>
+
+        </div>
+      </li>
+      <li>
+        <a href="#" class="menu-item"> Select Pickup Point Sweden <span class="arrow"></span> </a>
+
+        <div class="content-box">
+
+            <additionalServices:selectPickupPoint_sweden/>
+            <div data-tab="xml" class="tab">
+                <div class="api-call">
+                    <p>Example Request:</p>
+                    <a target="_blank" class="request"
+                       href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointSERequest.xml"
+                       data-internal="/proxy/booking/api/bookingExamples/basicPickupPointSERequest.xml">
+                        https://www.bring.no/booking/api/bookingExamples/basicPickupPointSERequest.xml </a>
+                    <pre class="code-box xml response delay-snippet"></pre>
+                </div>
+            </div>
+
+        </div>
+      </li>
     </ul>
   </div>
 
