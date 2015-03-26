@@ -17,9 +17,9 @@
            <p>Example:</p>
            <pre class="code-box xml response delay-snippet"></pre>
            <a target="_blank" class="request"
-              href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointIdRequest.xml"
-              data-internal="/proxy/booking/api/bookingExamples/basicPickupPointIdRequest.xml">
-             https://www.bring.no/booking/api/bookingExamples/basicPickupPointIdRequest.xml </a>
+              href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointDKRequest.xml"
+              data-internal="/proxy/booking/api/bookingExamples/basicPickupPointDKRequest.xml">
+             https://www.bring.no/booking/api/bookingExamples/basicPickupPointDKRequest.xml </a>
          </div>
        </div>
       <strong>pickupPoint element is optional but both id and countryCode element inside it are mandatory</strong>.
