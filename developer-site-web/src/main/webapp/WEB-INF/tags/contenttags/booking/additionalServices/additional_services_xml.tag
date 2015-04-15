@@ -217,25 +217,6 @@
 
         </div>
       </li>
-      <li>
-        <a href="#" class="menu-item"> Dangerous Goods <span class="arrow"></span> </a>
-
-        <div class="content-box">
-
-          <additionalServices:dangerousGoods_xml />
-          <div data-tab="xml" class="tab">
-            <div class="api-call">
-              <p>Request:</p>
-              <a target="_blank" class="request"
-                 href="https://www.bring.no/booking/api/bookingExamples/dangerousGoodsRequest.xml"
-                 data-internal="/proxy/booking/api/bookingExamples/dangerousGoodsRequest.xml">
-                https://www.bring.no/booking/api/bookingExamples/dangerousGoodsRequest.xml </a>
-
-              <pre class="code-box xml response delay-snippet"></pre>
-            </div>
-          </div>
-        </div>
-      </li>
     </ul>
   </div>
 

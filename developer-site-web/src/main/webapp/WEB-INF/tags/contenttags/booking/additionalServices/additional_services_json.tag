@@ -229,26 +229,6 @@
 
         </div>
       </li>
-      <li>
-        <a href="#" class="menu-item"> Dangerous Goods <span class="arrow"></span> </a>
-
-        <div class="content-box">
-
-          <additionalServices:dangerousGoods_json />
-          <div data-tab="json" class="tab">
-            <div class="api-call">
-              <p>Request:</p>
-              <a target="_blank" class="request"
-                 href="https://www.bring.no/booking/api/bookingExamples/dangerousGoodsRequest.json"
-                 data-internal="/proxy/booking/api/bookingExamples/dangerousGoodsRequest.json">
-                https://www.bring.no/booking/api/bookingExamples/dangerousGoodsRequest.json </a>
-
-              <pre class="code-box json response delay-snippet"></pre>
-            </div>
-          </div>
-
-        </div>
-      </li>
     </ul>
   </div>
 
