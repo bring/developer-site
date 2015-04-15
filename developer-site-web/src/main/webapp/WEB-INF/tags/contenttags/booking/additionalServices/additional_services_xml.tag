@@ -164,6 +164,24 @@
 
         </div>
       </li>
+        <li>
+            <a href="#" class="menu-item"> Select Pickup Point Denmark <span class="arrow"></span> </a>
+
+            <div class="content-box">
+                <additionalServices:selectPickupPoint_denmark/>
+                <div data-tab="xml" class="tab">
+                    <div class="api-call">
+                        <p>Example Request:</p>
+                        <a target="_blank" class="request"
+                           href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointDKRequest.xml"
+                           data-internal="/proxy/booking/api/bookingExamples/basicPickupPointDKRequest.xml">
+                            https://www.bring.no/booking/api/bookingExamples/basicPickupPointDKRequest.xml
+                        </a>
+                        <pre class="code-box xml response delay-snippet"></pre>
+                    </div>
+                </div>
+            </div>
+        </li>
     </ul>
   </div>
 
