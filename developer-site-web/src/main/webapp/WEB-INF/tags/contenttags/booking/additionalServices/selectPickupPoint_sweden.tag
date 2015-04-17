@@ -6,7 +6,8 @@
     </p>
     <p>
         The parcel will be delivered to the pickup point specified in the request with SMS/Email notification.
-        Recipient phone no and email address is mandatory if using pickup point delivery as it is required for notification.
+        Pickup point delivery requires that the <strong>recipient has email and/or phone number set</strong>, so that he can receive notification
+        when the package arrives at the pickup point.
     </p>
     <p>
         Pickup point id and country code has to be specified under <strong>pickupPoint</strong> element within <strong>parties</strong> element as shown below.
