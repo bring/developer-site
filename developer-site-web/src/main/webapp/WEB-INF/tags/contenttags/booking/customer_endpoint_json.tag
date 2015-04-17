@@ -41,6 +41,11 @@
       <td>COURIER_4H, QUICKPACK_SAMEDAY, QUICKPACK_DAY_CERTAIN</td>
       <td>EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66</td>
     </tr>
+    <tr>
+      <td>Oil Express, Norway</td>
+      <td>OIL_EXPRESS</td>
+      <td>SYSPED_NORWAY-12345</td>
+    </tr>
     </tbody>
   </table>
 
