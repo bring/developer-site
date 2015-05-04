@@ -264,19 +264,6 @@
     </td>
 </tr>
 
-<tr>
-    <td>HomeDelivery CurbSide</td>
-    <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/HOMEDELIVERY_CURBSIDE_DAG/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>HOMEDELIVERY_CURBSIDE_DAG</code></a>
-    </td>
-    <td>
-      No
-    </td>
-    <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/HOMEDELIVERY_CURBSIDE_DAG/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
-    </td>
-</tr>
-
 <tr >
     <td>Bud VIP</td>
     <td><a target="_blank"
@@ -381,7 +368,7 @@
 
 6 Oil Express products can be shipped only in Norway and between certain postal codes.<br/>
 
-7 Customers should have access to PARCELS NORWAY customers and should be aware of cut-off time.
+7 Lead time given is from first Bring terminal to the terminal delivering the goods. Customers should have access to PARCELS NORWAY customers and should be aware of cut-off time.
 </sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>

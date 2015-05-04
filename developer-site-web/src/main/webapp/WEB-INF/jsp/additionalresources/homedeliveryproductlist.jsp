@@ -97,11 +97,7 @@
                             </tr>
                             <tr>
                                 <td>Return Home Delivery</td>
-                                <td>RETURN_HOME_DELIVERY</td>
-                            </tr>
-                            <tr>
-                                <td>Technical Distribution</td>
-                                <td>TECHNICAL_DISTRIBUTION</td>
+                                <td>HOME_DELIVERY_RETURN</td>
                             </tr>
                             <tr>
                                 <td>Double Indoor (NO)</td>
@@ -122,30 +118,6 @@
                             <tr>
                               <td>Indoor Light Evening</td>
                               <td>INDOOR_LIGHT_EVENING</td>
-                            </tr>
-                            <tr>
-                              <td>Pickup Point</td>
-                              <td>HOME_DELIVERY_PICKUP_POINT</td>
-                            </tr>
-                            <tr>
-                              <td>Business Distribution A</td>
-                              <td>BUSINESS_DISTRIBUTION_A</td>
-                            </tr>
-                            <tr>
-                              <td>Business Distribution B</td>
-                              <td>BUSINESS_DISTRIBUTION_B</td>
-                            </tr>
-                            <tr>
-                              <td>Courier Distribution A</td>
-                              <td>COURIER_DISTRIBUTION_A</td>
-                            </tr>
-                            <tr>
-                              <td>Courier Distribution B</td>
-                              <td>COURIER_DISTRIBUTION_B</td>
-                            </tr>
-                            <tr>
-                              <td>Value Added Service Only</td>
-                              <td>HOME_DELIVERY_VAS</td>
                             </tr>
 
                             </tbody>

@@ -220,6 +220,11 @@
                   <td></td>
                 </tr>
                 <tr>
+                  <td>//Product/ExpectedDelivery/ExpectedDeliveryDate/TimeSlots</td>
+                  <td>Single/Multiple time slots for product delivery. Only applicable for few products like Home Delivery.</td>
+                  <td></td>
+                </tr>
+                <tr>
                     <td>//Product/ExpectedDelivery/WorkingDays</td>
                     <td>Number of working days from pickup to delivery. First day is day 0. NOTE! If this number is used, know that
                         there are special rules surrounding christmas, easter, shipments to Svalbard and certain other
