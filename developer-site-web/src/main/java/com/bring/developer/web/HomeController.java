@@ -200,4 +200,8 @@ public class HomeController {
     public String trackingComponent() {
         return "widget/trackingcomponent";
     }
+
+    @RequestMapping(value = "/additionalresources/homedeliveryproductlist.html")
+    public String homeDeliveryProductList() { return "/additionalresources/homedeliveryproductlist"; }
+    
 }
