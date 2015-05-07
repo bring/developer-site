@@ -341,7 +341,7 @@
 
 <tr>
   <td>Home Delivery <sup>7</sup></td>
-  <td><a href="/additionalresources/homedeliveryproductlist.html">List of Codes</a>
+  <td><a href="/additionalresources/homedeliveryproductlist.html?from=shipping">List of Codes</a>
   </td>
   <td>No
   </td>
@@ -368,7 +368,7 @@
 
 6 Oil Express products can be shipped only in Norway and between certain postal codes.<br/>
 
-7 Lead time given is from first Bring terminal to the terminal delivering the goods. Customers should have access to PARCELS NORWAY customers and should be aware of cut-off time.
+7 Lead time given is from first Bring terminal to the terminal delivering the goods. Customers must have access to PARCELS NORWAY customers and should be aware of cut-off time.
 </sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>
