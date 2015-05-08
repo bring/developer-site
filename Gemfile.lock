@@ -34,7 +34,6 @@ GEM
     thor (0.14.6)
     typhoeus (0.2.4)
       mime-types
-      mime-types
     tzinfo (0.3.37)
     uuidtools (2.1.4)
 
