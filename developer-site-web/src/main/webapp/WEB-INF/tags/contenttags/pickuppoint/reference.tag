@@ -42,6 +42,14 @@
                 </ul>
             </td>
         </tr>
+        <tr>
+            <td><code>/&lt;countryCode&gt;/all</code></td>
+            <td>Returns information about all pickup points in a country
+                <ul>
+                  <li><code>&lt;countryCode&gt;</code> = a valid ISO 3166-1 country code; NO, DK and FI supported</li>
+                </ul>
+            </td>
+        </tr>
         </tbody>
     </table>
 
