@@ -264,19 +264,6 @@
     </td>
 </tr>
 
-<tr>
-    <td>HomeDelivery CurbSide</td>
-    <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/HOMEDELIVERY_CURBSIDE_DAG/all.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>"><code>HOMEDELIVERY_CURBSIDE_DAG</code></a>
-    </td>
-    <td>
-      No
-    </td>
-    <td><a target="_blank"
-           href="https://api.bring.com/shippingguide/products/HOMEDELIVERY_CURBSIDE_DAG/expectedDelivery.xml?clientUrl=insertYourClientUrlHere&weightInGrams=1500&amp;volume=100&amp;fromCountry=NO&amp;from=1068&amp;toCountry=NO&amp;to=1407&amp;date=<%=new LocalDate()%>">Yes</a>
-    </td>
-</tr>
-
 <tr >
     <td>Bud VIP</td>
     <td><a target="_blank"
@@ -344,9 +331,19 @@
 
 <tr>
   <td>Oil Express <sup>6</sup></td>
-  <td><code>OX</code>
+  <td><code>OIL_EXPRESS</code>
   </td>
   <td>Yes
+  </td>
+  <td>Yes
+  </td>
+</tr>
+
+<tr>
+  <td>Home Delivery <sup>7</sup></td>
+  <td><a href="/additionalresources/homedeliveryproductlist.html?from=shipping">List of Codes</a>
+  </td>
+  <td>No
   </td>
   <td>Yes
   </td>
@@ -369,7 +366,9 @@
 
 5 For shipments to Denmark, CARRYON_HOMESHOPPING needs to be ordered with the “PICKUP_POINT” additional service to send as a low-cost delivery from Bring’s parcel shops or parcel lockers. Otherwise the shipment will be sent as a more expensive home delivery.<br/>
 
-6 Oil Express products can be shipped only in Norway and between certain postal codes.
+6 Oil Express products can be shipped only in Norway and between certain postal codes.<br/>
+
+7 Lead time given is from first Bring terminal to the terminal delivering the goods. Local cut-off times are not accounted for, so the client should adjust for these. These products are only available when accessed with a PARCELS_NORWAY customer number tied to an appropriate agreement.
 </sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>

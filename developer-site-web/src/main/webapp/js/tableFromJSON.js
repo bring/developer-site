@@ -7,13 +7,24 @@
         //Get the url from the data-tab attribute declared in <table>
         var url = this.attr("data-tab");
         var table = this;
+        
+        var childNames = ['errorTypes', 'products'];
+        var childName = null;
+
         //Fetch the json to display
         $.getJSON(url, function (errorCodes) {
+            //Find actual child name present in object
+            $.each(childNames, function(index, value) {
+                if(errorCodes.hasOwnProperty(value)) {
+                    childName = value;
+                }
+            });
+            
             //Create headers from the json keys
             var headers = [];
-            $.each(errorCodes.errorTypes[0], function(key, val){
+            $.each(errorCodes[childName][0], function(key, val){
                 headers.push(key);
-            })
+            });
 
             //Create markup from the headers-array
             var tableHeaders = "<thead>";
@@ -24,7 +35,7 @@
 
             //Create markup for contents of table
             var tableContent = "";
-            $.each(errorCodes.errorTypes, function (key, val) {
+            $.each(errorCodes[childName], function (key, val) {
                 tableContent += '<tr>\n';
                 for(var i = 0; i < headers.length; i++){
                     tableContent += '<td>' + val[headers[i]] + '</td>\n';
