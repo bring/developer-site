@@ -368,7 +368,7 @@
 
 6 Oil Express products can be shipped only in Norway and between certain postal codes.<br/>
 
-7 Lead time given is from first Bring terminal to the terminal delivering the goods. Customers must have access to PARCELS NORWAY customers and should be aware of cut-off time.
+7 Lead time given is from first Bring terminal to the terminal delivering the goods. Local cut-off times are not accounted for, so the client should adjust for these. These products are only available when accessed with a PARCELS_NORWAY customer number tied to an appropriate agreement.
 </sup>
 
 <h3><a name="additionalServices"></a>Additional Services</h3>
