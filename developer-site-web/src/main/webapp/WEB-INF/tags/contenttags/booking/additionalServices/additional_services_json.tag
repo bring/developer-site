@@ -191,26 +191,6 @@
            </div>
       </li>
       <li>
-        <a href="#" class="menu-item"> Customs Clearance <span class="arrow"></span> </a>
-
-        <div class="content-box">
-
-          <additionalServices:customs_clearance/>
-          <div data-tab="json" class="tab">
-            <div class="api-call">
-              <p>Request:</p>
-              <a target="_blank" class="request"
-                 href="https://www.bring.no/booking/api/bookingExamples/customsClearanceRequest.json"
-                 data-internal="/proxy/booking/api/bookingExamples/customsClearanceRequest.json">
-                https://www.bring.no/booking/api/bookingExamples/customsClearanceRequest.json </a>
-
-              <pre class="code-box json response delay-snippet"></pre>
-            </div>
-          </div>
-
-        </div>
-      </li>
-      <li>
         <a href="#" class="menu-item"> Express <span class="arrow"></span> </a>
 
         <div class="content-box">
