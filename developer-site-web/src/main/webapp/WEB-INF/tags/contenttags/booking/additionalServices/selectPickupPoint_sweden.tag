@@ -1,7 +1,7 @@
 <div>
     <h4>Delivery to Pickup Point in Sweden</h4>
     <p>
-        You can specify pickup point Id in request for CARRYON_HOMESHOPPING and CARRYON_HOMESHOPPING_BULKSPLIT products for delivery of parcels within Sweden and to Sweden from other countries.
+        You can specify pickup point Id in request for CARRYON_HOMESHOPPING_BULKSPLIT products for delivery of parcels within Sweden and to Sweden from other countries.
         Use <a  href="http://developer.bring.com/api/pickuppointapi.html#xml"> Pickup Point API </a>to get list of nearest pickup points.
     </p>
     <p>
