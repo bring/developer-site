@@ -6,202 +6,202 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/index.html")
+    @RequestMapping("/index.html")
     public String index() {
         return "home_v3";
     }
 
-    @RequestMapping(value = "/support")
+    @RequestMapping("/support")
     public String support() {
         return "support/support";
     }
 
-    @RequestMapping(value = "/additionalresources/booking-api-error-codes.html")
+    @RequestMapping("/additionalresources/booking-api-error-codes.html")
     public String bookingErrorCodes() {
         return "/additionalresources/booking-error-codes";
     }
 
-    @RequestMapping(value = "/additionalresources/bookingproductlist.html")
+    @RequestMapping("/additionalresources/bookingproductlist.html")
     public String bookingProductList() {
         return "/additionalresources/bookingproductlist";
     }
 
-    @RequestMapping(value = "/api/pickuppointapi.html")
+    @RequestMapping("/api/pickuppointapi.html")
      public String pickuppointapi() {
         return "api/pickuppointapi";
     }
 
-    @RequestMapping(value = "/api/bookingapi.html")
+    @RequestMapping("/api/bookingapi.html")
     public String bookingapi() {
         return "api/bookingapi";
     }
 
-    @RequestMapping(value = "/api/postalcodeapi.html")
+    @RequestMapping("/api/postalcodeapi.html")
     public String postalcodeapi() {
         return "api/postalcodeapi";
     }
 
-    @RequestMapping(value = "/additionalresources/priceadjustments.html")
+    @RequestMapping("/additionalresources/priceadjustments.html")
      public String priceadjustments() {
         return "/additionalresources/priceadjustments";
     }
 
-    @RequestMapping(value = "/additionalresources/offlinedata.html")
+    @RequestMapping("/additionalresources/offlinedata.html")
     public String offlinedata() {
         return "/additionalresources/offlinedata";
     }
 
-    @RequestMapping(value = "/additionalresources/productlist.html")
+    @RequestMapping("/additionalresources/productlist.html")
     public String productlist() {
         return "/additionalresources/productlist";
     }
 
-    @RequestMapping(value = "/additionalresources/wsdl-xml-schema.html")
+    @RequestMapping("/additionalresources/wsdl-xml-schema.html")
     public String wsdlschema() {
         return "/additionalresources/wsdl-xml-schema";
     }
 
-    @RequestMapping(value = "/additionalresources/errorhandling.html")
+    @RequestMapping("/additionalresources/errorhandling.html")
     public String errorhandling() {
         return "/additionalresources/errorhandling";
     }
 
-    @RequestMapping(value = "/widget/displayshippingguideinformationusingjsonp.html")
+    @RequestMapping("/widget/displayshippingguideinformationusingjsonp.html")
     public String displayshippingguideinformationusingjsonp() {
         return "/widget/displayshippingguideinformationusingjsonp";
     }
 
-    @RequestMapping(value = "/api/shippingguideapi.html")
+    @RequestMapping("/api/shippingguideapi.html")
     public String shippingguideapi() {
         return "api/shippingguideapi";
     }
 
-    @RequestMapping(value = "/api/purchaseorderapi.html")
+    @RequestMapping("/api/purchaseorderapi.html")
     public String purchaseorderapi() {
         return "api/purchaseorderapi";
     }
 
-    @RequestMapping(value = "/additionalresources/po-error.html")
+    @RequestMapping("/additionalresources/po-error.html")
     public String po_error() {
         return "/additionalresources/po-error";
     }
 
-    @RequestMapping(value = "/additionalresources/wsdlschema.html")
+    @RequestMapping("/additionalresources/wsdlschema.html")
     public String wsdlschema_po() {
         return "/additionalresources/wsdlschema";
     }
 
-    @RequestMapping(value = "/api/reportsapi.html")
+    @RequestMapping("/api/reportsapi.html")
      public String reportsapi() {
         return "api/reportsapi";
     }
 
-    @RequestMapping(value = "/widget/productselectionashtml.html")
+    @RequestMapping("/widget/productselectionashtml.html")
     public String productselectionashtml() {
         return "/widget/productselectionashtml";
     }
 
-    @RequestMapping(value = "/additionalresources/xmlSchemaDefinition.html")
+    @RequestMapping("/additionalresources/xmlSchemaDefinition.html")
     public String xmlSchemaDefinition() {
         return "additionalresources/xmlSchemaDefinition";
     }
 
-    @RequestMapping(value = "/api/trackingapi.html")
+    @RequestMapping("/api/trackingapi.html")
     public String trackingapi() {
         return "api/trackingapi";
     }
 
-    @RequestMapping(value = "/additionalresources/getting-api-keys.html")
+    @RequestMapping("/additionalresources/getting-api-keys.html")
     public String gettingApiKeys() {
         return "additionalresources/getting-api-keys";
     }
 
-    @RequestMapping(value = "/plugin/joomla-virtuemart-fraktpriser.html")
+    @RequestMapping("/plugin/joomla-virtuemart-fraktpriser.html")
     public String joomlaVirtumartFraktpriser(){
         return "plugin/joomla-virtuemart-fraktpriser";
     }
 
-    @RequestMapping(value = "/plugin/oscommerce-fraktpriser.html")
+    @RequestMapping("/plugin/oscommerce-fraktpriser.html")
     public String osCommerceFraktpriser(){
         return "plugin/oscommerce-fraktpriser";
     }
 
-    @RequestMapping(value = "/plugin/prestashop-fraktguide.html")
+    @RequestMapping("/plugin/prestashop-fraktguide.html")
     public String prestashopFraktguide(){
         return "plugin/prestashop-fraktguide";
     }
 
-    @RequestMapping(value = "/plugin/wordpress-e-commerce-fraktguide.html")
+    @RequestMapping("/plugin/wordpress-e-commerce-fraktguide.html")
     public String wordpressFraktguide(){
         return "plugin/wordpress-e-commerce-fraktguide";
     }
 
-    @RequestMapping(value = "/plugin/zencart-fraktguide.html")
+    @RequestMapping("/plugin/zencart-fraktguide.html")
     public String zencartFraktguide(){
         return "plugin/zencart-fraktguide";
     }
 
-    @RequestMapping(value = "/widget/choose-pickup-point.html")
+    @RequestMapping("/widget/choose-pickup-point.html")
     public String choosePickupPoint(){
         return "widget/choosepickuppoint";
     }
 
-    @RequestMapping(value =  "/widget/choose-pickup-point-with-map.html")
+    @RequestMapping("/widget/choose-pickup-point-with-map.html")
     public String choosePickupPointWithMap(){
         return "widget/choosepickuppointwithmap";
     }
 
-    @RequestMapping(value =  "/widget/link-to-shipment-tracking.html")
+    @RequestMapping("/widget/link-to-shipment-tracking.html")
     public String linkToShipmentTracking(){
         return "widget/linktoshipmenttracking";
     }
 
-    @RequestMapping(value = "widget/validate-postal-code.html")
+    @RequestMapping("widget/validate-postal-code.html")
     public String validatePostalCode(){
         return "widget/validatepostalcode";
     }
 
-    @RequestMapping(value = "widget/preview/choose-pickup-point-preview.html")
+    @RequestMapping("widget/preview/choose-pickup-point-preview.html")
     public String choosePickupPointPreview(){
         return "widget/preview/choosepickuppoint-preview";
     }
 
-    @RequestMapping(value = "widget/preview/choose-pickup-point-with-map-preview.html")
+    @RequestMapping("widget/preview/choose-pickup-point-with-map-preview.html")
     public String choosePickupPointWithMapPreview(){
         return "widget/preview/choosepickuppointwithmap-preview";
     }
 
-    @RequestMapping(value = "widget/preview/display-shipping-guide-info-preview.html")
+    @RequestMapping("widget/preview/display-shipping-guide-info-preview.html")
     public String displayShippingGuideInfoPreview(){
         return "widget/preview/displayshippingguideinfo-preview";
     }
 
-    @RequestMapping(value = "widget/preview/product-selection-as-html-preview.html")
+    @RequestMapping("widget/preview/product-selection-as-html-preview.html")
     public String productSelectionAsHtmlPreview(){
         return "widget/preview/productselectionashtml-preview";
     }
 
-    @RequestMapping(value = "widget/preview/tracking-link-preview.html")
+    @RequestMapping("widget/preview/tracking-link-preview.html")
     public String trackingLinkPreview(){
         return "widget/preview/trackinglink-preview";
     }
 
-    @RequestMapping(value = "widget/preview/validate-postal-code-preview.html")
+    @RequestMapping("widget/preview/validate-postal-code-preview.html")
     public String validatePostalCodePreview(){
         return "widget/preview/validatepostalcode-preview";
     }
 
-    @RequestMapping(value = "/api/easyreturnserviceapi.html")
+    @RequestMapping("/api/easyreturnserviceapi.html")
     public String easyreturnserviceapi() {
         return "api/easyreturnserviceapi";
     }
 
-    @RequestMapping(value = "/widget/trackingcomponent.html")
+    @RequestMapping("/widget/trackingcomponent.html")
     public String trackingComponent() {
         return "widget/trackingcomponent";
     }
 
-    @RequestMapping(value = "/additionalresources/homedeliveryproductlist.html")
+    @RequestMapping("/additionalresources/homedeliveryproductlist.html")
     public String homeDeliveryProductList() { return "/additionalresources/homedeliveryproductlist"; }
     
 }
