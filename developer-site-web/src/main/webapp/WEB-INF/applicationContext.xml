@@ -34,10 +34,11 @@
 
     <!-- Resolves view names to protected .jsp resources within the /WEB-INF/views directory -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-    
+
     <ehcache:annotation-driven cache-manager="ehCacheManager" />
     <bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean"/>
 
