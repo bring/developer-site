@@ -146,7 +146,7 @@
                             </li>
                             </c:if>
                             <li>
-                                <a href="http://www.bring.no/hele-bring/edi-i-bring">
+                                <a href="/edi/">
                                     <div class="api-menu-item-container">
                                         <div class="api-menu-icons ediicon"></div>
                                         <div class="api-menu-text"></div>
