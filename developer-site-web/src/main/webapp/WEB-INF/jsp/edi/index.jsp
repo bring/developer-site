@@ -67,49 +67,49 @@
                             <tr>
                                 <td>Axia</td>
                                 <td>69128500</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=firmapost@axia.no" class="external" target="_blank">firmapost@axia.no</a></td>
+                                <td><a href="mailto:firmapost@axia.no" class="external" target="_blank">firmapost@axia.no</a></td>
                                 <td><a href="http://www.axiafrakt.no/" class="external">www.axiafrakt.no</a></td>
                                 <td>Norge</td>
                             </tr>
                             <tr>
                                 <td>EDI Soft</td>
                                 <td>23249490</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=salg@edi-soft.no" class="external" target="_blank">salg@edi-soft.no</a></td>
+                                <td><a href="mailto:salg@edi-soft.no" class="external" target="_blank">salg@edi-soft.no</a></td>
                                 <td><a href="http://www.edisoft.no/" class="external">www.edisoft.no</a></td>
                                 <td>Norge/Sverige/Danmark</td>
                             </tr>
                             <tr>
                                 <td>Pitney Bowes</td>
                                 <td>61159000</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=support@edipost.no" class="external" target="_blank">support@edipost.no</a></td>
+                                <td><a href="mailto:support@edipost.no" class="external" target="_blank">support@edipost.no</a></td>
                                 <td><a href="http://www.edipost.no/" class="external">www.edipost.no</a></td>
                                 <td>Norge</td>
                             </tr>
                             <tr>
                                 <td>Centiro Solutions</td>
                                 <td>92466629</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=sales@centiro.com" class="external" target="_blank">sales@centiro.com</a></td>
+                                <td><a href="mailto:sales@centiro.com" class="external" target="_blank">sales@centiro.com</a></td>
                                 <td><a href="http://www.centiro.com" class="external">www.centiro.com</a></td>
                                 <td>Norge/Sverige</td>
                             </tr>
                             <tr>
                                 <td>Logistra</td>
                                 <td>40002312</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=post@logistra.no" class="external" target="_blank">post@logistra.no</a></td>
+                                <td><a href="mailto:post@logistra.no" class="external" target="_blank">post@logistra.no</a></td>
                                 <td><a href="http://www.logistra.no/cargonizer/" class="external">www.logistra.no</a></td>
                                 <td>Norge</td>
                             </tr>
                             <tr>
                                 <td>ProTeria</td>
                                 <td>45286660</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=salg@proteria.no" class="external" target="_blank">salg@proteria.no</a></td>
+                                <td><a href="mailto:salg@proteria.no" class="external" target="_blank">salg@proteria.no</a></td>
                                 <td><a href="http://www.proteria.no/" class="external">www.proteria.no</a></td>
                                 <td>Norge</td>
                             </tr>
                             <tr>
                                 <td>Logtrade</td>
                                 <td>+ 46 (0)406307200</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=info@logtrade.se" class="external" target="_blank">info@logtrade.se</a></td>
+                                <td><a href="mailto:info@logtrade.se" class="external" target="_blank">info@logtrade.se</a></td>
                                 <td><a href="http://www.logtrade.se" class="external">www.logtrade.se</a></td>
                                 <td>Sverige</td>
                             </tr>
@@ -118,21 +118,21 @@
                                 <td>
                                     <div><span style="white-space: nowrap;">+46 (0)31-7253500</span></div>
                                 </td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=info@unifaun.se" class="external" target="_blank">info@unifaun.se</a></td>
+                                <td><a href="mailto:info@unifaun.se" class="external" target="_blank">info@unifaun.se</a></td>
                                 <td><a href="http://www.unifaun.se" class="external">www.unifaun.se</a></td>
                                 <td>Norge/Sverige/Danmark</td>
                             </tr>
                             <tr>
                                 <td>Transportnett</td>
                                 <td>95968000</td>
-                                <td><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=post@transportnett.no" class="external" target="_blank">post@transportnett.no</a></td>
+                                <td><a href="mailto:post@transportnett.no" class="external" target="_blank">post@transportnett.no</a></td>
                                 <td><a href="http://www.transportnett.no" class="external">www.transportnett.no</a></td>
                                 <td>Norge</td>
                             </tr>
                             <tr>
                                 <td>KSD EDICOM</td>
                                 <td>22129770</td>
-                                <td>&nbsp; <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=info@ksdsoftware.com" class="external" target="_blank">info@ksdsoftware.com</a></td>
+                                <td>&nbsp; <a href="mailto:info@ksdsoftware.com" class="external" target="_blank">info@ksdsoftware.com</a></td>
                                 <td>&nbsp; <a href="http://www.ksdsoftware.com/no/" class="external">http://www.ksdsoftware.com/no/</a></td>
                                 <td>Norge/Sverige/Danmark</td>
                             </tr>
