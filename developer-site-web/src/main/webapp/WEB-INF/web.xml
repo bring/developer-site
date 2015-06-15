@@ -68,6 +68,64 @@
         <url-pattern>/support</url-pattern>
     </servlet-mapping>
 
+    <!-- EDI -->
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/transportinstruks</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/transportinstruks/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/tolldokumenter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/tolldokumenter/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/management</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/management/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/ig-for-efaktura</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/ig-for-efaktura/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/statuskoder-iftsta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/statuskoder-iftsta/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/spesifikasjon-transportetikett</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>developer</servlet-name>
+        <url-pattern>/edi/spesifikasjon-transportetikett/</url-pattern>
+    </servlet-mapping>
+
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
