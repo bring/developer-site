@@ -18,12 +18,12 @@ public class HomeController {
 
     @RequestMapping("/additionalresources/booking-api-error-codes.html")
     public String bookingErrorCodes() {
-        return "/additionalresources/booking-error-codes";
+        return "additionalresources/booking-error-codes";
     }
 
     @RequestMapping("/additionalresources/bookingproductlist.html")
     public String bookingProductList() {
-        return "/additionalresources/bookingproductlist";
+        return "additionalresources/bookingproductlist";
     }
 
     @RequestMapping("/api/pickuppointapi.html")
@@ -43,32 +43,32 @@ public class HomeController {
 
     @RequestMapping("/additionalresources/priceadjustments.html")
      public String priceadjustments() {
-        return "/additionalresources/priceadjustments";
+        return "additionalresources/priceadjustments";
     }
 
     @RequestMapping("/additionalresources/offlinedata.html")
     public String offlinedata() {
-        return "/additionalresources/offlinedata";
+        return "additionalresources/offlinedata";
     }
 
     @RequestMapping("/additionalresources/productlist.html")
     public String productlist() {
-        return "/additionalresources/productlist";
+        return "additionalresources/productlist";
     }
 
     @RequestMapping("/additionalresources/wsdl-xml-schema.html")
     public String wsdlschema() {
-        return "/additionalresources/wsdl-xml-schema";
+        return "additionalresources/wsdl-xml-schema";
     }
 
     @RequestMapping("/additionalresources/errorhandling.html")
     public String errorhandling() {
-        return "/additionalresources/errorhandling";
+        return "additionalresources/errorhandling";
     }
 
     @RequestMapping("/widget/displayshippingguideinformationusingjsonp.html")
     public String displayshippingguideinformationusingjsonp() {
-        return "/widget/displayshippingguideinformationusingjsonp";
+        return "widget/displayshippingguideinformationusingjsonp";
     }
 
     @RequestMapping("/api/shippingguideapi.html")
@@ -83,12 +83,12 @@ public class HomeController {
 
     @RequestMapping("/additionalresources/po-error.html")
     public String po_error() {
-        return "/additionalresources/po-error";
+        return "additionalresources/po-error";
     }
 
     @RequestMapping("/additionalresources/wsdlschema.html")
     public String wsdlschema_po() {
-        return "/additionalresources/wsdlschema";
+        return "additionalresources/wsdlschema";
     }
 
     @RequestMapping("/api/reportsapi.html")
@@ -98,7 +98,7 @@ public class HomeController {
 
     @RequestMapping("/widget/productselectionashtml.html")
     public String productselectionashtml() {
-        return "/widget/productselectionashtml";
+        return "widget/productselectionashtml";
     }
 
     @RequestMapping("/additionalresources/xmlSchemaDefinition.html")
@@ -202,6 +202,6 @@ public class HomeController {
     }
 
     @RequestMapping("/additionalresources/homedeliveryproductlist.html")
-    public String homeDeliveryProductList() { return "/additionalresources/homedeliveryproductlist"; }
-    
+    public String homeDeliveryProductList() { return "additionalresources/homedeliveryproductlist"; }
+
 }
