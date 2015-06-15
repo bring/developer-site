@@ -19,7 +19,8 @@
 <div data-tab="json">
   <p>
     The JSON API lets you query postal code and get results as JSON, suitable for embedding in a web page (support for JSONP).
-    Note that the JSON API takes an optional <code>callback</code> parameter which enables queries to this service from client browsers with JSONP.
+    Note that the JSON API takes an optional <code>callback</code> parameter which enables queries to this service from client browsers with JSONP.<br/>
+    Postal Code API supports and recommends <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a> but will continue to support JSONP for older browsers.
   </p>
   <p>
     Example:
