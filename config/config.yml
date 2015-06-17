@@ -3,6 +3,8 @@ jettypath: developer-site-jetty
 internal_check_type: statuscode
 external_url_skip_version_check: true
 healthcheck: jetty
+slack_notifications: [api]
+
 environments:
   production:
     selvdrift_layout: true
