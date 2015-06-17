@@ -1,4 +1,4 @@
-<%@ tag import="org.joda.time.LocalDate" %>
+<%@ tag import="java.time.LocalDate" %>
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ attribute name="suffix" required="true" type="java.lang.String" %>
 
@@ -53,8 +53,8 @@
     <td>
       Shipping date specifies which date the parcel will be delivered to Bring (within the timelimit),
       and is used to calculate the delivery date. Specified by adding e.g. <a target="_blank"
-                                                                              href="https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>">
-      &amp;date=<%=new LocalDate()%></a>. Date is specified in ISO-format, YYYY-MM-DD.
+                                                                              href="https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>">
+      &amp;date=<%=LocalDate.now()%></a>. Date is specified in ISO-format, YYYY-MM-DD.
     </td>
   </tr>
   <tr>
@@ -62,8 +62,8 @@
     <td>
       Shipping time may be specified. Note that Bring's courier products are the only one affected by
       this parameter. <a target="_blank"
-                         href="https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=12:30">
-      &amp;date=<%=new LocalDate()%>&amp;time=12:30</a>. Time is specified in ISO-format, HH:mm.
+                         href="https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.${suffix}?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;time=12:30">
+      &amp;date=<%=LocalDate.now()%>&amp;time=12:30</a>. Time is specified in ISO-format, HH:mm.
     </td>
   </tr>
   <tr class="even">

@@ -1,4 +1,4 @@
-<%@ page import="org.joda.time.LocalDate" %>
+<%@ page import="java.time.LocalDate" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 
@@ -13,10 +13,10 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#onlyhtml").on('click', function(event) {
-            window.open('http://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&to=1473&weightInGrams=1000&date=<%=new LocalDate()%>', '','width=1080,height=800');
+            window.open('http://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&to=1473&weightInGrams=1000&date=<%=LocalDate.now()%>', '','width=1080,height=800');
         });
         $("#onlyxml").on('click', function(event) {
-            window.open('http://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&to=1473&weightInGrams=1000&date=<%=new LocalDate()%>', '','width=1080,height=800');
+            window.open('http://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&to=1473&weightInGrams=1000&date=<%=LocalDate.now()%>', '','width=1080,height=800');
         });
         $("#onlycss").on('click', function(event) {
             window.open('http://fraktguide.bring.no/fraktguide/css/fraktalternativer.css', '','width=1080,height=800');

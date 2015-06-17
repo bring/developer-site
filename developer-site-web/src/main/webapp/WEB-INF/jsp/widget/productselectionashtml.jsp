@@ -1,4 +1,4 @@
-<%@ page import="org.joda.time.LocalDate" %>
+<%@ page import="java.time.LocalDate" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="misc" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
@@ -52,10 +52,10 @@
 
                         <p>
                           <b>Example:</b> If the user select A-POST product from this shipping alternatives form:<br/>
-                            <a target="_blank" href="https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
+                            <a target="_blank" href="https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=LocalDate.now()%>">https://api.bring.com/shippingguide/products.html?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=LocalDate.now()%></a>
                             <br/><br/>
                            Use the following XML API request to fetch the price:<br/>
-                            <a target="_blank" href="https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>">https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%></a>
+                            <a target="_blank" href="https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=LocalDate.now()%>">https://api.bring.com/shippingguide/products/A-POST/price.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=LocalDate.now()%></a>
                             <br/><br/>XML API, JSON API and "Delivered by Bring" is all using the same parameters, please see documentation for the API to get information about available parameters and functionality</p>
 
                         <div>
@@ -63,7 +63,7 @@
                           <ol>
                               <li>
                                 Take a peek on the
-                                <a target="_blank" href="https://api.bring.com/shippingguide/demoVelgFraktalternativ.do?clientUrl=developer.bring.com&from=7600&amp;to=1473&amp;weightInGrams=1800&amp;date=<%=new LocalDate()%>&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demo</a>,
+                                <a target="_blank" href="https://api.bring.com/shippingguide/demoVelgFraktalternativ.do?clientUrl=developer.bring.com&from=7600&amp;to=1473&amp;weightInGrams=1800&amp;date=<%=LocalDate.now()%>&amp;length=10&amp;width=20&amp;height=30&amp;product=servicepakke&amp;product=pa_doren&amp;product=bpakke_dor-dor&amp;product=a-post&amp;callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp">demo</a>,
                                 select the products you will offer to your customers and learn how the products are displayed. In the low left part of the demonstration page you can link directly to the HTML code you use in your netshop</li>
                               <li>On your website - add &lt;form&gt; tags to contain the selection of shipping alternatives</li>
                               <li>Fetch and display the HTML code from "Delivered by Bring".</li>
@@ -93,10 +93,10 @@
         &lt;script type="text/javascript"&gt;
            $(document).ready(function() {
               $("#onlyhtml").on('click', function(event) {
-                window.open('http://api.bring.com/shippingguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+                window.open('http://api.bring.com/shippingguide/products.html?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=LocalDate.now()%>', '','width=1080,height=800');
               });
               $("#onlyxml").on('click', function(event) {
-                window.open('http://api.bring.com/shippingguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=new LocalDate()%>', '','width=1080,height=800');
+                window.open('http://api.bring.com/shippingguide/products/all.xml?from=7600&amp;to=1473&amp;weightInGrams=1000&amp;date=<%=LocalDate.now()%>', '','width=1080,height=800');
               });
               $("#onlycss").on('click', function(event) {
                 window.open('http://api.bring.com/shippingguide/css/fraktalternativer.css', '','width=1080,height=800');

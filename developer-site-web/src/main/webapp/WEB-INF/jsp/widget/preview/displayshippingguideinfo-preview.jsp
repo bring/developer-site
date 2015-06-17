@@ -1,4 +1,4 @@
-<%@ page import="org.joda.time.LocalDate" %>
+<%@ page import="java.time.LocalDate" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 
@@ -21,7 +21,7 @@
         var outputElement = $('#textResult');
         inputField.keyup(function() {
             if (inputField.val().length > 3) {
-                $.getJSON('https://api.bring.com/shippingguide/products/SERVICEPAKKE/all.json?clientUrl=insertYourClientUrlHere&from=1473&to='+ inputField.val() +'&weightInGrams=3&date=<%=new LocalDate()%>&callback=?',
+                $.getJSON('https://api.bring.com/shippingguide/products/SERVICEPAKKE/all.json?clientUrl=insertYourClientUrlHere&from=1473&to='+ inputField.val() +'&weightInGrams=3&date=<%=LocalDate.now()%>&callback=?',
                         function(data){
                             outputElement.html('<ul><li>...det koste ' + data.Product.Price.PackagePriceWithoutAdditionalServices.AmountWithVAT + ' + mva.</li>' +
                                     ' <li>...transporttid være ' + data.Product.ExpectedDelivery.WorkingDays + ' virkedag(er). </li>' +

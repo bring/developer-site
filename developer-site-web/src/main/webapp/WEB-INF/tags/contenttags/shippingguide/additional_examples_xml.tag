@@ -1,4 +1,4 @@
-<%@ tag import="org.joda.time.LocalDate" %>
+<%@ tag import="java.time.LocalDate" %>
 <%@ tag language="java" pageEncoding="UTF-8"%>
 <div data-tab="xml">
 
@@ -222,7 +222,7 @@
                delivery date.
             </p>
 
-            <p>Specified using <code>date=<%=new LocalDate()%></code>.</p>
+            <p>Specified using <code>date=<%=LocalDate.now()%></code>.</p>
 
             <p>Accepted date format: <code>YYYY-MM-DD</code>.</p>
 
@@ -237,9 +237,9 @@
                         <div class="api-call">
                             <p>Request:</p>
                             <a target="_blank" class="request"
-                               href="https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09"
-                               data-internal="/proxy/shipping-guide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09">
-                                <pre>../products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;product=EKSPRESS09</pre>
+                               href="https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;product=EKSPRESS09"
+                               data-internal="/proxy/shipping-guide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;product=EKSPRESS09">
+                                <pre>../products/all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;product=EKSPRESS09</pre>
                             </a>
                             <p>Response:</p>
                             <pre class="code-box xml response delay-snippet"></pre>
@@ -269,7 +269,7 @@
 
             <p>This parameter is only considered for courier and express products.</p>
 
-            <p>Specified using <code>date=<%=new LocalDate()%>&amp;time=13:37</code> (date and time is required to use this
+            <p>Specified using <code>date=<%=LocalDate.now()%>&amp;time=13:37</code> (date and time is required to use this
                option).
             </p>
 
@@ -281,9 +281,9 @@
                     <div class="api-call">
                         <p>Request:</p>
                         <a target="_blank" class="request"
-                           href="https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37"
-                           data-internal="/proxy/shipping-guide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37">
-                            <pre>../all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=new LocalDate()%>&amp;time=13:37</pre>
+                           href="https://api.bring.com/shippingguide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;time=13:37"
+                           data-internal="/proxy/shipping-guide/products/all.xml?clientUrl=insertYourClientUrlHere&from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;time=13:37">
+                            <pre>../all.xml?from=7600&amp;to=1407&amp;volume=33&amp;date=<%=LocalDate.now()%>&amp;time=13:37</pre>
                         </a>
                         <p>Response:</p>
                         <pre class="code-box xml response delay-snippet"></pre>
