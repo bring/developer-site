@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE log4j:configuration PUBLIC "-//LOGGER" "log4j.dtd">
-
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-	<!-- Appenders -->
 	<appender name="console" class="org.apache.log4j.ConsoleAppender">
 		<param name="Target" value="System.out" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss,SSS} [CID:%X{correlationId}] %X{IP} [%.3t] %-5p [%.30c] - %m%n"/>
 		</layout>
 	</appender>
 
-    <appender name="developerlog" class="org.apache.log4j.RollingFileAppender">
+    <appender name="logfile" class="org.apache.log4j.RollingFileAppender">
         <param name="File" value="developer-site.log"/>
         <param name="MaxFileSize" value="1MB"/>
         <param name="MaxBackupIndex" value="5"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss,SSS} %X{IP} [%.3t] %-5p [%.30c] - %m%n"/>
+            <param name="ConversionPattern" value="%d{dd.MM.yyyy HH:mm:ss,SSS} [CID:%X{correlationId}] %X{IP} [%.3t] %-5p [%.30c] - %m%n"/>
         </layout>
     </appender>
 
@@ -36,12 +34,11 @@
 		<level value="error" />
 	</logger>
 
-	<!-- Root Logger -->
 	<root>
 		<priority value="warn" />
 		<appender-ref ref="console" />
-        <appender-ref ref="developerlog" />
+        <appender-ref ref="logfile" />
         <appender-ref ref="logstash" />
 	</root>
-	
+
 </log4j:configuration>
