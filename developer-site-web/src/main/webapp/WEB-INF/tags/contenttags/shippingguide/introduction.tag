@@ -38,7 +38,7 @@
 </p>
 <h2>Guidelines</h2>
 <p>
-    &lt;MainDisplayCategory&gt; should be written in bold text and followed by our logo. <a target="_blank" href="http://mediaweb.posten.no/fotoweb/grid.fwx?archiveId=5005">Get approved logo here</a>.
+    &lt;MainDisplayCategory&gt; should be written in bold text and followed by our logo. <a target="_blank" href="http://mediaweb.posten.no/fotoweb/Default.fwx?archiveId=5005">Get approved logo here</a>.
 </p>
 <p>
     In the webshop you should display
