@@ -6,12 +6,12 @@
     <parent>
         <groupId>com.bring</groupId>
         <artifactId>developer-site-all</artifactId>
-        <version>1.70-SNAPSHOT</version>
+        <version>1.70</version>
     </parent>
 
     <groupId>com.bring</groupId>
     <artifactId>developer-site-web</artifactId>
-    <version>1.70-SNAPSHOT</version>
+    <version>1.70</version>
     <packaging>war</packaging>
 
     <dependencies>
