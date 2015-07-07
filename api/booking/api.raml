@@ -1,0 +1,73 @@
+#%RAML 0.8
+---
+title: Booking API
+baseUri: http://api.bring.com/booking/api
+
+securitySchemes:
+- mybring_headers:
+    description: |
+      The API supports using Mybring headers for authenticating requests.
+    type: x-headers
+    describedBy:
+      headers:
+        X-MyBring-API-Uid:
+          displayName: Mybring user id
+          required: true
+          example: mybring-user@example.com
+        X-MyBring-API-Key:
+          displayName: Mybring API key
+          required: true
+          example: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff0
+        X-Bring-Client-URL:
+          displayName: client url
+          required: true
+          example: https://example.com/shop
+      responses:
+        400:
+          description: Authentication failed.
+
+documentation:
+- title: Introduction
+  content: |
+      The Bring Booking API is a logged-in service that lets Mybring users 
+      (customers of mybring.com) programatically create a booking by
+      invoking  a Web Service over SOAP or by posting XML/JSON over HTTP. 
+      The API uses the same backend as 
+      [Mybring Booking](https://www.mybring.com/booking/) and the same 
+      PDF labels.
+      \
+      We support two types of integration with the Booking API. XML/JSON 
+      over HTTP and SOAP (over HTTP).
+
+/booking:
+  post:
+    displayName: andreas
+    description: Make a booking
+    securedBy: [mybring_headers]
+    body:
+      application/json:
+        example: !include examples/basicRequest.json
+      application/xml:
+        example: !include examples/basicRequest.xml
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/successfulResponse.json
+          application/xml:
+            example: !include examples/successfulResponse.xml
+/ws:
+  post:
+    description: SOAP
+    body:
+      application/soap+xml:
+        schema: schemas/booking-v1.xsd
+        example: !include examples/soap_response_booking.xml
+    responses:
+      200:
+        body:
+          application/soap+xml:
+            example: !include examples/soap_response_booking.xml
+
+
+
