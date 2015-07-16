@@ -14,5 +14,9 @@ target
 
 node/
 node_modules/
+api/
 
 revision.txt
+_site
+.sass-cache
+.jekyll-metadata
