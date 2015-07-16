@@ -1,0 +1,18 @@
+# Site settings
+title: Bring Developer
+email: developer@bring.com
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://developer.bring.com/" # the base hostname & protocol for your site
+twitter_username: BringAPI
+github_username:  bring
+
+# RAML settings
+raml_map:
+  specs/booking/api.raml: api/booking/index.html
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules]
