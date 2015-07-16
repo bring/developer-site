@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico"></link>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/v1.css" media="screen"></link>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/print-layout.css" media="print"></link>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"></link>
+
+    <script src="{{ site.baseurl }}/js/v1.js"></script>
+  </head>
+
+  <body>
+    <div class="page-header">
+      <div class="page-content-container">
+        <div class="mybring-logo">
+          <a href="{{ site.baseurl }}/">Home</a>
+        </div>
+        <div class="user-tools">
+          <a class="bring-logo" href="http://www.bring.com"> </a>
+          <ul class="user-toolbar  superuser ">
+              <li class="username">
+                  <span title="You are a superuser with admin rights" >eirik.lied@bekk.no</span>
+                  <ul>
+                      <li>
+                          <a href="http://www.test.mybring.com/useradmin/account/profile">My profile</a>
+                      </li>
+                      <li>
+                          <a href="/frontpage/faq.html">Contact us</a>
+                      </li>
+                      <li>
+                          <a id="logout-link" class="log-out" href="http://id.test.bring.com/mybring/logout-and-redirect">Logout</a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+        </div> <!-- /user-tools -->
+        <div class="applications-menu-container">
+          <ul class="application-menu">
+            <li id="app-menu-booking" class=" ">
+              <a href="http://www.test.mybring.com/booking/"><span>Booking</span></a>
+            </li>
+            <li id="app-menu-tracking" class="nomenu ">
+              <a href="http://www.test.mybring.com/tracking/"><span>Tracking</span></a>
+            </li>
+            <li id="app-menu-reports" class=" ">
+              <a href="http://www.test.mybring.com/reports/"><span>Reports</span></a>
+            </li>
+            <li id="app-menu-calculator" class="nomenu ">
+              <a href="http://www.test.mybring.com/calculator/"><span>Calculate price and time</span></a>
+            </li>
+            <li id="app-menu-invoice-archive" class="nomenu ">
+              <a href="http://www.test.mybring.com/invoicearchive/"><span>Invoice Archive</span></a>
+            </li>
+            <li id="app-menu-more" class=" ">
+              <a href="#"><span>More</span></a>
+            </li>
+          </ul>
+        </div> <!-- /applications-menu-container -->
+      </div> <!-- /page-content-container -->
+    </div> <!-- /page-header -->
+
+    <div class="application-menu-submenus">
+      <div class="page-content-container">
+        <div class="menuContainers">
+          <div class="menuContainer" id="app-menu-more-content">
+            <div class="informationMenuContainer hierarchy">
+              <ol class="level-one">
+                <li>
+                  <span>More</span>
+                  <ol class="level-two">
+                    <li><a href="http://www.test.mybring.com/merkeskiltordre/">Pallet labels unaddressed</a></li>
+                    <li><a href="http://www.test.mybring.com/avisleveringer/">Newspaper report</a></li>
+                    <li><a href="http://www.test.mybring.com/packet-returns/">Packet returns</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            <div class="informationMenuContainer hierarchy">
+              <ol class="level-one">
+                <li>
+                  <span>Control Tower</span>
+                  <ol class="level-two">
+                    <li><a href="http://www.test.mybring.com/po/index.html">Purchase Order</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            <div class="informationMenuContainer hierarchy">
+              <ol class="level-one">
+                <li>
+                  <span>Addresses</span>
+                  <ol class="level-two">
+                    <li><a href="http://www.test.mybring.com/addresses/nb/addresses/search">Search Norwegian addresses</a></li>
+                    <li><a href="http://www.test.mybring.com/addresses/nb/postal_codes/search">Search Norwegian postal codes</a></li>
+                    <li><a href="http://www.test.mybring.com/addresses/nb/resources">Download files</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            <div class="informationMenuContainer hierarchy">
+              <ol class="level-one">
+                <li>
+                  <span>mybring Admin</span>
+                  <ol class="level-two">
+                    <li><a href="http://www.test.mybring.com/useradmin/internal/customers">Customers</a></li>
+                    <li><a href="http://www.test.mybring.com/useradmin/internal/requests">Requests</a></li>
+                    <li><a href="http://www.test.mybring.com/useradmin/internal/employees">Bring Super Users</a></li>
+                    <li><a href="http://www.test.mybring.com/useradmin/internal/stats/users">Statistics</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+            <div class="clearer"></div>
+          </div> <!-- /menuContainer -->
+        </div> <!-- /menuContainers -->
+      </div> <!-- /page-content-container -->
+    </div> <!-- /application-menu-submenus -->
+
+    <div class="page-body">
+      <div class="page-content-container">
+{{ content }}
+      </div>
+    </div>
+
+    <footer class="sitefooter" role="contentinfo">
+      <div class="noindex">
+        <div class="container">
+          <div class="bottom">
+            <p>
+              (c) 2015 Posten Norge AS
+              - <a href="http://www.bring.com/privacy-policy">Personvern og sikkerhet</a>
+              - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
