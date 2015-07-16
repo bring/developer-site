@@ -29,21 +29,17 @@ securitySchemes:
 documentation:
 - title: Introduction
   content: |
-      The Bring Booking API is a logged-in service that lets Mybring users 
-      (customers of mybring.com) programatically create a booking by
-      invoking  a Web Service over SOAP or by posting XML/JSON over HTTP. 
-      The API uses the same backend as 
-      [Mybring Booking](https://www.mybring.com/booking/) and the same 
-      PDF labels.
-      \
-      We support two types of integration with the Booking API. XML/JSON 
-      over HTTP and SOAP (over HTTP).
+      The Bring Booking API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same backend as [Mybring Booking](https://www.mybring.com/booking/) and the same PDF labels.
+
+      We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
+
+      Bring Booking uses Bring Fraktguide as the source for price and availability for the different products. We advise clients of the Booking API to use Fraktguiden for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
 /booking:
+  securedBy: [mybring_headers]
   post:
     displayName: andreas
     description: Make a booking
-    securedBy: [mybring_headers]
     body:
       application/json:
         example: !include examples/basicRequest.json
@@ -56,7 +52,26 @@ documentation:
             example: !include examples/successfulResponse.json
           application/xml:
             example: !include examples/successfulResponse.xml
+
+/customers{mediaTypeExtension}:
+  securedBy: [mybring_headers]
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/customers.json
+          application/xml:
+            example: !include examples/customers.xml
+    
+
+
 /ws:
+  securedBy: [mybring_headers]
   post:
     description: SOAP
     body:

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customersResponse xmlns="http://www.bring.no/booking/">
+  <customers>
+    <customer>
+      <name>Testkunde (00012341234)</name>
+      <customerNumber>PARCELS_NORWAY-00012341234</customerNumber>
+      <countryCode>NO</countryCode>
+      <products>
+        <product>SERVICEPAKKE</product>
+        <product>EKSPRESS09</product>
+        <product>BEDRIFTSPAKKE</product>
+        <product>BPAKKE_DOR-DOR</product>
+        <product>PA_DOREN</product>
+        <product>BPAKKE_DOR-DOR_RETURSERVICE</product>
+        <product>EKSPRESS09_RETURSERVICE</product>
+        <product>SERVICEPAKKE_RETURSERVICE</product>
+        <product>MINIPAKKE</product>
+        <product>CARRYON_BUSINESS</product>
+        <product>CARRYON_HOMESHOPPING</product>
+        <product>CARRYON_BUSINESS_PALLET</product>
+        <product>CARRYON_BUSINESS_HALFPALLET</product>
+        <product>CARRYON_BUSINESS_QUARTERPALLET</product>
+        <product>CARRYON_BUSINESS_BULKSPLIT</product>
+        <product>CARRYON_BUSINESS_BULKSPLIT_0900</product>
+        <product>CARRYON_HOMESHOPPING_BULKSPLIT</product>
+        <product>CARRYON_HOMESHOPPING_BULKSPLIT_HOME</product>
+        <product>CARRYON_HOMESHOPPING_BULKSPLIT_MINI</product>
+      </products>
+    </customer>
+    <customer>
+      <name>Testkund (TEST-112)</name>
+      <customerNumber>EXPRESS_SWEDEN-f47ac10b-58cc-4372-a567-0e02b2c3d479</customerNumber>
+      <countryCode>SE</countryCode>
+      <products>
+        <product>COURIER_VIP</product>
+        <product>COURIER_1H</product>
+        <product>COURIER_2H</product>
+        <product>COURIER_4H</product>
+        <product>COURIER_6H</product>
+        <product>COURIER_LONG_DISTANCE</product>
+        <product>COURIER_BICYCLE_VIP</product>
+        <product>COURIER_BICYCLE_1H</product>
+        <product>COURIER_BICYCLE_2H</product>
+        <product>COURIER_BICYCLE_4H</product>
+        <product>QUICKPACK_SAMEDAY</product>
+        <product>QUICKPACK_OVER_NIGHT_0900</product>
+        <product>QUICKPACK_OVER_NIGHT_1200</product>
+        <product>QUICKPACK_DAY_CERTAIN</product>
+        <product>QUICKPACK_EXPRESS_ECONOMY</product>
+      </products>
+    </customer>
+  </customers>
+</customersResponse>
