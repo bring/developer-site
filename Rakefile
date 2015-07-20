@@ -15,14 +15,14 @@ end
 desc 'Build the _site directory'
 task :build => [:clean] do
   puts '= build using jekyll'
-  system('bundle exec jekyll build')
+  system('bundle exec jekyll build --trace')
 end
 
 namespace :dev do
   desc 'Run locally using jekyll'
   task :server => [:clean] do
     puts '= serve using jekyll'
-    system('bundle exec jekyll serve')
+    system('bundle exec jekyll serve --trace')
   end
 end
 
