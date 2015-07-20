@@ -1,41 +1,83 @@
 require 'raml_parser'
 require 'pp'
+require 'jekyll'
 
-module RamlGenerator
+module Jekyll
 
-  def self.generate_api_docs(site, site_payload)
-    site.config.fetch('raml_map').each do |raml_file, html_file|
-      raml2html(raml_file, html_file)
-    end
-  end
+  class ApiPage < Jekyll::Page
 
-  def self.raml2html(raml_file, html_file)
-    puts "Convert #{raml_file} to #{html_file}"
-    raml = RamlParser::Parser.parse_file(raml_file)
+    def initialize(site, raml_hash, output_file)
+      @site = site
+      @base = site.source
+      @dir = File.dirname(output_file)
+      @name = File.basename(output_file)
 
-    output_dir = File.dirname(html_file)
-    FileUtils.mkdir_p(output_dir) unless File.directory? output_dir
-    File.open(html_file, 'w') do |f|
-      f.write("---
-layout: page
-title: #{raml.title}
----
-<div class=\"post\">
+      pp raml_hash
 
-  <header class=\"post-header\">
-    <h1 class=\"post-title\">#{raml.title}</h1>
-  </header>
-
-</div>
-
-")
+      self.process(@name)
+      self.read_yaml(File.join(site.source, '_layouts'), 'api.html')
+      self.data['title'] = raml_hash['title']
+      self.data['api'] = raml_hash
     end
 
   end
 
-  def self.register_jekyll_hook
-    Jekyll::Hooks.register :site, :pre_render, &RamlGenerator.method(:generate_api_docs)
+  class RamlGenerator < Jekyll::Generator
+
+    attr_reader :site
+
+    def generate(site)
+      @site = site
+      Jekyll.logger.info('RAML', '- generate API documentation from RAML files')
+      site.config.fetch('raml_map', {}).each do |raml_file, html_file|
+        Jekyll.logger.info('RAML', "- convert #{raml_file} to #{html_file}")
+        raml = raml_file_to_hash(raml_file)
+        site.pages << ApiPage.new(site, raml, html_file)
+      end
+    end
+
+    def raml_file_to_hash(raml_file)
+      raml = RamlParser::Parser.parse_file(raml_file)
+      to_deep_hash(raml)
+    end
+
+    protected
+
+    def to_deep_hash(val)
+      hash = {}
+      val.instance_variables.each do |key|
+        hash[key[1..-1]] = deeply_to_hash(val.instance_variable_get(key))
+      end
+      hash
+    end
+
+    def deeply_to_hash(val)
+      if val.is_a?(Hash)
+        convert_hash_values(val)
+      elsif val.is_a?(Array)
+        convert_array_values(val)
+      elsif val.instance_variables.size > 0
+        to_deep_hash(val)
+      else
+        val
+      end
+    end
+
+    def convert_hash_values(hash)
+      new_hash = {}
+      hash.each do |key, val|
+        new_hash[key] = deeply_to_hash(val)
+      end
+      new_hash
+    end
+
+    def convert_array_values(array)
+      new_array = []
+      array.each_index do |index|
+        new_array[index] = deeply_to_hash(array[index])
+      end
+      new_array
+    end
+
   end
 end
-
-RamlGenerator.register_jekyll_hook

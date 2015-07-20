@@ -4,12 +4,10 @@ task :default do
   system('rake -T')
 end
 
-desc 'Delete RAML build (api/) and Jekyll build (_site/)'
+desc 'Delete Jekyll build directory (_site/)'
 task :clean do
   puts '= delete _site directory'
   system('rm -R _site/ 2>/dev/null')
-  puts '= delete api directory'
-  system('rm -R api/ 2>/dev/null')
 end
 
 desc 'Build the _site directory'
