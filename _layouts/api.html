@@ -1,9 +1,16 @@
 ---
 layout: default
 ---
-<h1 class="centerify">{{ page.title }}</h1>
-<div class="container">
-  <article class="post-content">
-    {{ content }}
-  </article>
-</div>
+
+<h1 class="centerify">{{ api.title }}</h1>
+
+hello is this thing on
+
+{% for chapter in api.documentation %}
+  <div class="container">
+    <h3 id="{{ chapter.uniqueId }}"><a href="#{{ chapter.uniqueId }}">{{ chapter.title }}</a></h3>
+    <article class="documentation">
+      {{ chapter.content | markdownify }}
+    </article>
+  </div>
+{% endfor %}
