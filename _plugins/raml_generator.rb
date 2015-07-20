@@ -1,5 +1,4 @@
 require 'raml_parser'
-require 'pp'
 require 'jekyll'
 
 module Jekyll
@@ -11,8 +10,6 @@ module Jekyll
       @base = site.source
       @dir = File.dirname(output_file)
       @name = File.basename(output_file)
-
-      pp raml_hash
 
       self.process(@name)
       self.read_yaml(File.join(site.source, '_layouts'), 'api.html')
