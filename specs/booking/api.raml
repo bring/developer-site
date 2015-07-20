@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
 title: Booking API
-baseUri: http://api.bring.com/booking/api
+baseUri: https://api.bring.com/booking/api
 
 securitySchemes:
 - mybring_headers:
@@ -35,29 +35,16 @@ documentation:
 
       Bring Booking uses Bring Fraktguide as the source for price and availability for the different products. We advise clients of the Booking API to use Fraktguiden for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
-/booking:
-  securedBy: [mybring_headers]
-  post:
-    displayName: andreas
-    description: Make a booking
-    body:
-      application/json:
-        example: !include examples/basicRequest.json
-      application/xml:
-        example: !include examples/basicRequest.xml
-    responses:
-      200:
-        body:
-          application/json:
-            example: !include examples/successfulResponse.json
-          application/xml:
-            example: !include examples/successfulResponse.xml
+- title: Multi-word Title
+  content: This is quite alright.
 
 /customers{mediaTypeExtension}:
+  displayName: customers endpoint
+  description: 
   securedBy: [mybring_headers]
   uriParameters:
     mediaTypeExtension:
-      enum: [ .json .xml ]
+      enum: [ .json, .xml ]
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
     responses:
@@ -67,13 +54,33 @@ documentation:
             example: !include examples/customers.json
           application/xml:
             example: !include examples/customers.xml
+
+/booking:
+  displayName: booking endpoint (REST)
+  description: Make a booking, get a label
+  securedBy: [mybring_headers]
+  post:
+    body:
+      application/json:
+        example: !include examples/basicRequest.json
+      application/xml:
+        example: !include examples/basicRequest.xml
+    responses:
+      200:
+        description: A label
+        body:
+          application/json:
+            example: !include examples/successfulResponse.json
+          application/xml:
+            example: !include examples/successfulResponse.xml
     
 
 
 /ws:
+  displayName: booking endpoint (SOAP)
+  description: Make a booking, get a label
   securedBy: [mybring_headers]
   post:
-    description: SOAP
     body:
       application/soap+xml:
         schema: schemas/booking-v1.xsd
