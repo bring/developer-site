@@ -2,11 +2,9 @@
 layout: default
 ---
 
-<h1 class="centerify">{{ api.title }}</h1>
+<h1 class="centerify">{{ page.api.title }}</h1>
 
-hello is this thing on
-
-{% for chapter in api.documentation %}
+{% for chapter in page.api.documentation %}
   <div class="container">
     <h3 id="{{ chapter.uniqueId }}"><a href="#{{ chapter.uniqueId }}">{{ chapter.title }}</a></h3>
     <article class="documentation">
