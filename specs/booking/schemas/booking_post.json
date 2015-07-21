@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": true,
+  "description": "A booking request",
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "description": "Each request has a schemaVersion element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework"
+    },
+    "consignments": {
+      "type": "array",
+      "required": true,
+      "description": "List of consignments to book",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shippingDateTime": {
+            "type": "string",
+            "description": "Either a string with the format '2015-08-18T14:10:00' or an integer timestamp in milliseconds since 1970"
+          },
+          "parties": {
+            "type": "object",
+            "description": "Sender, recipient, pickup point",
+            "properties": {
+              "sender": {
+                "type": "object",
+                "description": "The sender of the consignment",
+                "required": true,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "addressLine": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "addressLine2": {
+                    "type": "null",
+                    "required": false
+                  },
+                  "postalCode": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "city": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "countryCode": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "reference": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "additionalAddressInfo": {
+                    "type": "string",
+                    "required": false,
+                    "description": "Pick up behind store after 14:00"
+                  },
+                  "contact": {
+                    "type": "object",
+                    "required": true,
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "email": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "phoneNumber": {
+                        "type": "string",
+                        "required": true
+                      }
+                    }
+                  }
+                }
+              },
+              "recipient": {
+                "type": "object",
+                "description": "The recipient of the consignment",
+                "required": true,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "addressLine": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "addressLine2": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "postalCode": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "city": {
+                    "type": "string"
+                  },
+                  "countryCode": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "reference": {
+                    "type": "string",
+                    "required": false
+                  },
+                  "additionalAddressInfo": {
+                    "type": "string",
+                    "description": "E.g., use the doorbell"
+                  },
+                  "contact": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "email": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "phoneNumber": {
+                        "type": "string",
+                        "required": true
+                      }
+                    }
+                  }
+                }
+              },
+              "pickupPoint": {
+                "type": "object",
+                "description": "A pickup point where the consignment should be sent",
+                "required": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "A pickup point id from the Pikcup Point API"
+                  },
+                  "countryCode": {
+                    "type": "string",
+                    "enum": ["NO", "SE", "DK", "FI"]
+                  }
+                }
+              }
+            }
+          },
+          "product": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "customerNumber": {
+                "type": "string"
+              },
+              "services": {
+                "type": "null"
+              },
+              "customsDeclaration": {
+                "type": "null"
+              }
+            }
+          },
+          "purchaseOrder": {
+            "type": "null"
+          },
+          "correlationId": {
+            "type": "string"
+          },
+          "packages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "weightInKg": {
+                  "type": "number"
+                },
+                "goodsDescription": {
+                  "type": "string"
+                },
+                "dimensions": {
+                  "type": "object",
+                  "properties": {
+                    "heightInCm": {
+                      "type": "integer"
+                    },
+                    "widthInCm": {
+                      "type": "integer"
+                    },
+                    "lengthInCm": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "containerId": {
+                  "type": "null"
+                },
+                "packageType": {
+                  "type": "null"
+                },
+                "numberOfItems": {
+                  "type": "null"
+                },
+                "correlationId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "testIndicator": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "description": "If set to true, the service will not send actual production orders."
+    }
+  }
+}
