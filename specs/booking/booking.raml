@@ -39,8 +39,7 @@ documentation:
   content: This is quite alright.
 
 /customers{mediaTypeExtension}:
-  displayName: customers endpoint
-  description: 
+  displayName: /customers.json or /customers.xml
   securedBy: [mybring_headers]
   uriParameters:
     mediaTypeExtension:
@@ -56,14 +55,16 @@ documentation:
             example: !include examples/customers.xml
 
 /booking:
-  displayName: booking endpoint (REST)
+  displayName: /booking
   description: Make a booking, get a label
-  securedBy: [mybring_headers]
+  securedBy: [mybring_headers, null]
   post:
     body:
       application/json:
+        schema: !include schemas/booking_post.json
         example: !include examples/basicRequest.json
       application/xml:
+        schema: !include schemas/booking-v1.xsd
         example: !include examples/basicRequest.xml
     responses:
       200:
@@ -77,7 +78,7 @@ documentation:
 
 
 /ws:
-  displayName: booking endpoint (SOAP)
+  displayName: /ws
   description: Make a booking, get a label
   securedBy: [mybring_headers]
   post:
