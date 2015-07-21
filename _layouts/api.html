@@ -58,25 +58,44 @@ layout: default
   {% for method in resource.methods %}
     <div class="container">
 
-      <h2>{{ method[1].method }} {{ relativeUriTitle }}</h2>
+      <h1>{{ method[1].method }} {{ resource.display_name }}</h1>
 
-      <dl>
-        <dt>Description</dt>
-        <dd>method.description</dd>
-        
-        <dt>Endpoint</dt>
-        <dd>method.description</dd>
-        
-        <dt>Security</dt>
-        <dd>method.description</dd>
-      </dl>
+      <h2>URL:</h2>
+      <p><code>{{ absoluteUriTitle }}</code></p>
 
-      <h3>URL:</h3>
-      <code>{{ absoluteUriTitle }}</code>
-
-      {% if method.description %}
-        <p>{{ method.description }}</p>
+      {% if resource.description %}
+        <h2>About</h2>
+        <p>{{ resource.description }}</p>
       {% endif %}
-    </div>
-  {% endfor %}
+
+      <h2>API explorer</h2>
+
+      <form action="{{ resource.absolute_uri }}" method="{{ method.method }}">
+
+      {% if resource.secured_by.size > 0 %}
+        {% assign auth_required = true %}
+        {% for security in resource.secured_by %}
+          {% if !security %}
+            {% assign auth_required = false %}
+          {% endif %}
+        {% endfor %}
+        {% for security in resource.secured_by %}
+          {% if security %}
+            <h3>Authentication{% if auth_required == false %} (optional) {% endif %}</h3>
+            {% assign sec_scheme = page.api.security_schemes[security] %}
+            {% for header in sec_scheme.described_by.headers %}
+              <div class="form-row form-cell">
+              <label class="separator">{{ header[1].name }}
+                <input type="text" name="{{ header[1].name }}" placeholder="{{ header[1].example }}" />
+              </label>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endfor %}
+      {% endif %} <!-- if secured_by -->
+
+      </form>
+
+    </div> <!-- /container -->
+  {% endfor %} <!-- /for method in methods -->
 {% endfor %}
