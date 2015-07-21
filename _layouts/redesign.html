@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico"></link>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" media="screen"></link>
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/print-layout.css" media="print"></link>
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"></link>
+
+    <script src="{{ site.baseurl }}/js/v1.js"></script>
+  </head>
+
+  <body>
+
+    <div id="head-container">
+       <div class="head-wrap">
+          <header role="banner" class="no-search">
+             <div class="noindex">
+                <div id="skiptocontent"><a href="#container">Til hovedinnhold</a></div><a class="logo" href="http://www.bring.no/forside"><img src="http://www.bring.no/_public/themes/bring-new/img/bring-logo-hi.png?_ts=14853e38608" alt="Til forsiden" width="101" height="39"></img></a><div role="search" class="menu-search">
+                   <form method="get" action="http://www.bring.no/sok"><label for="q">SPOR eller SØK</label><input id="q" name="q" type="text" value="" class="text query" placeholder="SPOR eller SØK"></input><button class="site-search-btn" type="submit" title="Søk">Søk</button></form>
+                </div>
+                <nav role="navigation"><a class="toggle-login" href="#" aria-haspopup="true" aria-owns="login-menu" aria-controls="login-menu" aria-expanded="false">Logg inn</a><a class="toggle-menu" href="#" aria-haspopup="true" aria-owns="dropdown-menu" aria-controls="dropdown-menu" aria-expanded="false">Meny<span class="hamburger"><span class="wat"></span></span></a></nav>
+             </div>
+          </header>
+       </div>
+    </div>
+
+    <div id="container">
+      <div class="region">
+{{ content }}
+      </div>
+    </div>
+
+    <footer class="sitefooter" role="contentinfo">
+      <div class="noindex">
+        <div class="container">
+          <div class="bottom">
+            <p>
+              (c) 2015 Posten Norge AS
+              - <a href="http://www.bring.com/privacy-policy">Personvern og sikkerhet</a>
+              - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
