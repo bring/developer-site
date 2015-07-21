@@ -1,0 +1,68 @@
+// Container
+.wrapper {
+	max-width: $container-max-width;
+	margin: 0 auto;
+	padding: 70px $container-horizontal-margins;
+}
+
+.editor .wrapper {
+	max-width: 700px;
+	padding-top: 0;
+}
+
+// Very simple three column system
+.column, .box {
+  	box-sizing: border-box;
+	&.fourth {
+		float: left;
+		width: 23.94%;
+  	margin-right: 1.4125%;
+		
+		&.last, &:nth-of-type(4n){
+			margin-right: 0;
+		}		
+	}
+	&.third {
+		float: left;
+  		width: 31.45%;
+  		margin-right: 2.825%;
+		&.last, &:nth-of-type(3n){
+  			margin-right: 0;
+  		}
+	}
+	&.two-thirds {
+		float:left;
+		width: 65%;
+		margin-right:2.825%;
+		&.last {
+			margin-right:0;
+		}
+	}
+	&.half {
+		float: left;
+		width:48%;
+		margin-right: 4%;
+		&.last, &:nth-of-type(2n){
+			margin-right: 0;
+		}
+	}
+	&.full {
+		width:100%;
+	}
+}
+
+@include phone { 
+	.column.fourth, .box.fourth,
+	.column.third, .box.third,
+	.column.half, .box.half, .column.two-thirds {
+		width: 100%;
+		margin-right: 0;
+		float: none;
+		&:nth-of-type(3n){
+			margin-right: 0;
+		}
+	}
+	.wrapper {
+		padding: 0px $container-horizontal-margins-phone 20px;
+	}
+}

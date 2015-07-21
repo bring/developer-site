@@ -1,0 +1,387 @@
+@font-face {
+  font-family: 'FoundryMonoline';
+  font-weight: normal;
+  src: url('../fonts/foundmonreg-webfont.eot');
+  src: local('Foundry Monoline Regular'), local('Foundry Monoline Regular'),
+         url('../fonts/foundmonreg-webfont.woff') format('woff'),
+         url('../fonts/foundmonreg-webfont.ttf') format('truetype'),
+         url('../fonts/foundmonreg-webfont.svg#FoundryMonoline') format('svg');
+}
+
+@font-face {
+  font-family: 'FoundryMonoline';
+  font-weight: bold;
+  src: url('../fonts/foundmonbol-webfont.eot');
+  src: local('Foundry Monoline Bold'), local('Foundry Monoline Bold'),
+         url('../fonts/foundmonbol-webfont.woff') format('woff'),
+         url('../fonts/foundmonbol-webfont.ttf') format('truetype'),
+         url('../fonts/foundmonbol-webfont.svg#FoundryMonolineBold') format('svg');
+}
+
+@font-face {
+  font-family: 'FoundryMonoline';
+  font-weight: lighter;
+  src: url('../fonts/foundmonlig-webfont.eot');
+  src: local('Foundry Monoline Light'), local('Foundry Monoline Light'),
+         url('../fonts/foundmonlig-webfont.woff') format('woff'),
+         url('../fonts/foundmonlig-webfont.ttf') format('truetype'),
+         url('../fonts/foundmonlig-webfont.svg#FoundryMonolineLight') format('svg');
+}
+
+@font-face {
+  font-family: 'FoundryMonolineMedium';
+  src: url('../fonts/foundmonmed-webfont.eot');
+  src: local('Foundry Monoline Medium'), local('Foundry Monoline Medium'),
+         url('../fonts/foundmonmed-webfont.woff') format('woff'),
+         url('../fonts/foundmonmed-webfont.ttf') format('truetype'),
+         url('../fonts/foundmonmed-webfont.svg#FoundryMonolineMedium') format('svg');
+}
+
+
+@mixin font-size($size) {
+  font-size: #{$size}px;
+  font-size: #{$size/10}rem; // No use for rems at the moment AFAIK since base font size is always 10px.
+
+  // Our letter spacing on all fonts should be a bit tighter than default
+  // except when uppercased. Then we want to go back to normal
+  // so when using this mixin within a class, you need to reset letterspacing 
+  // after with letter-spacing: 0em;
+  letter-spacing: -0.02em;
+}
+
+// Placeholders used for extending
+@mixin giant-heading {
+    @include font-size(64);
+    font-family: 'FoundryMonolineMedium';
+}
+
+@mixin large-heading {
+    @include font-size(42);
+    font-family: 'FoundryMonolineMedium';
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+}
+
+
+/* start heading styles */
+h1, h2, h3, h4 {
+    color: $grey-dark-1;
+    font-family: 'FoundryMonoline';
+    @include font-size($font-size-paragraph-desktop);
+    &.giant {
+        @include giant-heading;
+    }
+    &.large {
+        @include large-heading;
+    }    
+    &.center {
+        text-align: center;
+    }  
+    &.light {
+      color: $white;
+    }  
+}
+
+h1 {
+    @include large-heading;
+}
+
+h2, h3, h4 {
+    @include font-size($font-size-ingress-desktop);
+}
+/* end heading styles */
+
+p {
+    color: $grey-dark-1;
+    font-family: 'FoundryMonoline';
+    @include font-size($font-size-paragraph-desktop);
+    line-height: 1.5;
+}
+
+.responsive-table {
+    overflow-x: scroll;
+}
+
+ul.regular {
+    list-style: none;
+    li {
+        color: $grey-dark-1;
+        font-family: 'FoundryMonoline';
+        @include font-size($font-size-paragraph-desktop);
+        line-height: 1.2;
+        margin-bottom: 25px;
+        padding-left: 24px;
+        position: relative;
+        &:before {
+            color: $grey-light-8;
+            content: "•";
+            font-size: 48px;
+            font-family: Arial, sans-serif;
+            line-height: 0.5;
+            position: absolute;
+            top: -1px;
+            left: 0;
+        }
+    }
+}
+
+ul, ol {
+    &.three-column {
+        overflow: hidden;
+        li {
+            float: left;
+            padding-right: 22px;
+            width: 33.33%;
+            box-sizing: border-box;
+            &:nth-of-type(4n){
+                clear: left;              
+            }
+        }
+    }
+    &.flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;        
+    }
+}
+
+/*General styling. Should be overridden below for html fields in content. Added because of postoffice show page*/
+a {
+  color: $link-color;
+  font-family: 'FoundryMonolineMedium';
+  text-decoration: none;
+}
+strong { 
+  font-family: 'FoundryMonoline';
+  font-weight: bold;
+  color: $grey-dark-1;
+}
+table {
+  th, td {
+      padding: 0 2em 0 0;
+      line-height: 1.5;
+      vertical-align: top;
+      font-family: 'FoundryMonoline';
+      &:last-child { padding-right: 0; }
+  }
+  th {
+      background-color: $grey-dark-1;
+      color: $white;
+      @include font-size($font-size-table-th-desktop);
+      font-weight: bold;
+  }
+  td {
+      @include font-size($font-size-table-td-desktop);
+  }
+}
+
+.ingress, .preface {
+    margin-bottom: 40px;
+    .editor {
+        p {
+            @include font-size($font-size-ingress-desktop);
+        }
+        > {
+            h1, h2, p, ul, ol  {
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+                &.expand {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    &.center {
+        text-align: center;
+    }
+}
+
+.narrow {
+  max-width: 732px;
+  margin: 0 auto;
+}
+
+
+// EDITOR STYLES
+.editor {
+
+    .row {
+        @include clearfix();
+    }
+
+    table {
+        th, td {
+            padding: 20px 19px;
+            line-height: 1.5;
+            vertical-align: top;
+            font-family: 'FoundryMonoline';
+        }
+        th {
+            background-color: $grey-dark-1;
+            color: $white;
+            @include font-size($font-size-table-th-desktop);
+            font-weight: bold;
+        }
+        td {
+            @include font-size($font-size-table-td-desktop);
+            border-bottom: 1px solid $grey-light-3;
+        }
+        tr:last-child {
+            td {
+                border-bottom: 0;  
+            }
+        }
+    }
+
+    ul, ol {
+        list-style: none;
+        li {
+            color: $grey-dark-1;
+            display: block;
+            font-family: 'FoundryMonoline';
+            @include font-size($font-size-paragraph-desktop);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            position: relative;
+            text-align: left;
+            p {
+                /*margin-bottom: 0;*/ /* Commenting this out probably breaks something, but I'd like to make it more specific if possible: Tracking-article has a lot of paragraphs under LIs */
+                line-height: 1.5;
+            }
+            ul, ol {
+              margin-bottom: 22px;
+              li {
+                margin-bottom: 10px;
+              }
+            }
+        }
+    }
+
+    ul {
+        li {
+            padding-left: 22px;
+            &:before {
+                color: $grey-light-3;
+                content: "•";
+                font-size: 36px;
+                font-family: Arial;
+                line-height: 0.5;
+                position: absolute;
+                top: 3px;
+                left: 0;
+            }
+        }
+    }
+
+    ol { 
+        counter-reset: item;
+        li { 
+            padding-left: 22px;
+            &:before {
+                content: counter(item) ". "; 
+                counter-increment: item;
+                font-weight: bold;
+                margin-right: 5px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                line-height: 1.6;
+            }
+        }
+    }
+
+    h3, h4 {
+      @include font-size($font-size-paragraph-desktop);
+      font-weight: bold;
+      margin-top: 54px;
+      margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 10px;
+        &.editor-p-center {
+            text-align: center;
+        }
+        &.editor-p-block {
+            img {
+                max-width: 100%;
+                height: auto;  
+            }
+        }
+        &.heading {
+          font-weight: bold;
+        }
+    }
+
+    a {
+        color: $link-color;
+        font-family: 'FoundryMonolineMedium';
+        text-decoration: none;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+}
+
+@include tablet {
+  h1, h2, h3, h4 {
+    &.large {
+      @include font-size(29);
+    }
+  }
+  ul.regular {
+    li {
+      @include font-size($font-size-paragraph-phone);
+      padding-left: 23px;
+      &:before {
+        font-size: 38px;
+        line-height: 0.4;
+      }
+    }
+  }
+}
+
+@include phone {
+
+  // EDITOR STYLES
+  .editor {
+    ul, ol {
+      li {
+        @include font-size($font-size-paragraph-phone);
+        margin-bottom: 25px;
+      }
+    }
+    table {
+        th, td {
+            padding: 20px 10px;
+      }
+    }
+    p {
+      @include font-size($font-size-paragraph-phone);
+    }
+  }
+  .ingress, .preface {
+    .editor p {
+      @include font-size($font-size-ingress-phone);
+    }
+  }
+
+  p {
+    @include font-size($font-size-paragraph-phone);
+  }
+}
+
+@mixin u-truncate-text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

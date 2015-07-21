@@ -1,0 +1,59 @@
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin flexbox() {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin wavy-border($color){
+  // TODO: some fallback stuff for IE, and also add all the browser prefixes
+  background:
+    linear-gradient(
+      45deg, transparent 33.333%,
+      $color 33.333%, $color 66.667%,
+      transparent 66.667%),
+    linear-gradient(
+      -45deg, transparent 33.333%,
+      $color 33.333%, $color 66.667%,
+      transparent 66.667%);
+  background-size: 20px 40px;
+}
+
+@mixin wavy-border-opposite($color){
+  // TODO: some fallback stuff for IE, and also add all the browser prefixes
+  background: linear-gradient(-45deg, transparent 75%, $color 75%) 0 50%, linear-gradient( 45deg, transparent 75%, $color 75%) 0 50%;
+  background-repeat: repeat-x;
+  background-size: 30px 30px, 30px 30px;
+  top: 0;
+}
+
+@mixin wavy-section($color){
+  background-color: $color;
+  &:before {
+    @include wavy-border($color);
+  }
+}

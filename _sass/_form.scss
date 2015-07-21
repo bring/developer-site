@@ -1,0 +1,443 @@
+/* START FORM AND UNIFORM STYLES */
+input {
+    border-radius: 0;
+}
+
+span.explanation {
+    visibility: hidden;
+}
+
+.selector, .radio, .checker {
+    display: -moz-inline-box;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    &:focus, &:active {
+        outline: 0;
+        border: none;
+    }
+}
+
+div.center {
+    text-align: center;
+}
+
+div.outer-text 
+{    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+div.confirmation {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.gray {
+    max-width: $container-max-width;
+    margin: 0px auto 40px;
+    padding: 0px 5%;
+    background-color: $grey-light-5;
+    width: $container-width;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    
+    .form-block {
+        padding-bottom: 3em;
+    }
+}
+article.form {
+    background: $white;
+    padding: 8em 0 4em;
+    h1 {max-width: $container-tight-max-width; margin: 0 auto 1em;}
+
+    &.offsite {
+        .form-row.postcode {
+            width: 22%;
+            strong.display-postcode {
+                padding: 1em 0 .1em;
+                display: block;
+                &.wrong-postcode {
+                    padding-top: 0;
+                }
+            }
+            .wrong-postcode-link {
+                @include font-size(12);
+            }
+        }
+    }
+}
+.add-fields {
+    text-align: center;
+    font-family: 'FoundryMonolineMedium';
+    @include font-size(14);
+    text-transform: uppercase;
+    &:before {
+        content: "+";
+        margin-right: 10px;
+    }
+}
+
+.form-row:before, .form-row:after {
+  display: table;
+  content: "";
+  zoom: 1;
+  *display: inline;
+}
+.form-row:after {
+  clear: both;
+}
+
+div.form-row {
+    padding: 2% 0px; 
+    box-sizing: border-box;
+    clear: both;
+    &.column {
+        clear: none;
+    }
+    &.postnummer-column {
+        float: left;
+        width: 12%;
+        margin-right: 4%;
+    }
+    &.poststed-column {
+        float: left;
+        width: 3%;
+        margin-right: 2%;
+        &.last, &:nth-child(3n){
+            margin-right: 0;
+        }
+    }
+}
+
+label span {
+    color: $grey-dark-1;
+    cursor: pointer;
+    font-family: 'FoundryMonoline';
+    @include font-size(15);
+}
+
+label.separator {
+    padding: .4em 0px;
+    display: block;
+    color: $grey-dark-1;
+    cursor: pointer;
+    font-family: 'FoundryMonoline';
+    @include font-size(12);
+    line-height: 1.5; 
+    padding-left: .4em;    
+}
+.radio-group, .check-group {
+    label.separator {
+        padding-left: 0;
+    }
+    .field_with_errors { display: inline-block;}
+}
+
+.separator-row {
+    text-align: center;
+    border-top: 19px solid $white;
+    padding: 10px 10px 0;
+    // not ideal, but we need a scalable way to get the white separator row
+    // to break the entire gray box that is surrounding the form. Therefore 
+    // the negative margins.
+    margin-left: -10%;
+    margin-right: -10%; 
+    &:first-child {
+        border-top: none;
+        span { display: none;}
+    }
+    .separator-text {
+        max-width: 890px;
+        margin: 0 auto;
+    }
+}
+
+div.separator-row span.white-arrow {
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid $grey-light-5;
+    padding-top: 17px;
+}
+
+div.separator-row h2 {    
+    text-align: center;    
+}
+
+.box-error {
+    input, textarea, .file-input {
+        background-color: $red-light;
+        border: 1px solid $grey-light-5;
+    }
+    padding: 5px 10px;
+}
+
+.error, .form-warning {
+    /* background: transparent url('../../shared/images/form-exclamation-small.png') no-repeat left center;*/
+    clear: both;
+    display: block;
+    font-family: 'FoundryMonolineMedium';
+    @include font-size(14);
+    margin-top: .5em;
+    padding-left: .4285714286em;
+    color: red;    
+}
+div.form-warning {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+div.actions {
+    margin: 0px auto;
+    text-align: center;
+}
+
+.column.form-half {
+    float: left;
+    width:48%;
+    margin-right: 4%;
+    &.last {
+        margin-right: 0;
+    }
+}
+
+/* Select */
+div.selector {
+    background: $grey-light-5;
+    border: 4px solid $grey-light-2;
+    cursor: pointer;
+    height: 55px;
+    position: relative;
+    box-sizing: border-box;
+    &:focus, &:active {
+        border: 4px solid $grey-light-2;
+    }
+}
+div.selector span {
+    background: transparent url('../img/dropdown-arrow-hi.png') no-repeat 98% center;
+    background-size: 23px 15px;
+    color: $grey-dark-1;
+    cursor: pointer;
+    display: block;
+    font-family: 'FoundryMonoline';
+    @include font-size(16);
+    font-weight: bold;
+    line-height: 1;
+    padding: 16px 8% 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+div.selector select {
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include font-size(17);
+    height: 55px;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+/* Checker */
+div.checker {
+    background: $white;
+    border: 1px solid $grey-light-2;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    input {
+        cursor: pointer;
+        background: none;
+        display: inline-block;
+        filter: alpha(opacity=0);
+        //height: 29px;
+        width: 29px;
+        opacity: 0;
+    }
+    span.checked {
+        display: block;
+        background: transparent url('../img/checked-grey.png') no-repeat 98% center;
+        background-size: 29px 29px;
+        background-position: 0px 0px;
+    }
+    &:focus, &:active {
+        border: 1px solid $grey-light-2;
+        outline: 0;
+    }
+}
+
+
+/* Checkgroup */
+div.check-group, div.radio-group {
+    .separator {
+        float: left;
+        display: inline-block;
+        width: 33%;
+    }
+}
+/* Styling for description in caesar forms*/
+.description.editor {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.checkbox.in-collection.separator {
+    padding-left: 0;
+    width: 33%;
+    display: inline-block;
+}
+
+/* File */
+.file-row {
+    position: relative;
+    text-align: center;
+    padding: 2% 0px;
+    .form-row { 
+        width: 70%;
+        display: inline-block;
+        padding: 0;
+    }
+    .remove_fields, .clear_file_input {
+        @include font-size(15);
+        font-family: 'FoundryMonoline';
+        padding: .5em .5em 1.2em;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+}
+div.file-input {
+    height: 50px;    
+    margin: 0 auto;    
+    position: relative;
+    text-align: center;
+     span {        
+        display: inline-block;
+        font-family: 'FoundryMonoline';
+        @include font-size(14);
+        line-height: 1.4;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        padding: .75em .3em .85em;
+        display: inline-block;
+        vertical-align: top;
+
+        &.filename{
+            border: 4px solid transparent;
+            margin-right: 4%;
+            text-overflow: ellipsis;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;            
+            cursor: default;
+            width: 46%;
+
+            &.selected { color: $green-1;}
+        }
+        &.action {            
+            border: 4px solid $grey-dark-1;            
+            padding-left: .5em;
+            padding-right: .5em;
+            position:relative;            
+            z-index: 0;
+            cursor: pointer;
+            width: 40%;
+            text-align: center;            
+        }
+     }
+     input[type="file"] {        
+        height: 50px;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;   
+        cursor: pointer;   
+        width: 100%;      
+     }
+}
+
+div.radio {
+    background: $white;
+    border: 1px solid $grey-light-2;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    input {
+        cursor: pointer;
+        background: none;
+        display: block;
+        filter: alpha(opacity=0);
+        opacity: 0;        
+    }
+    span.checked {
+        height: 32px;
+        width: 32px;
+        display: block;
+        background: transparent url('../img/dark-grey-dot-lo.png') no-repeat 98% center;
+        background-size: 18px 18px;
+        background-position: center;
+    }
+    &:focus, &:active {
+        border: 1px solid $grey-light-2;
+        outline: 0;
+    }
+}
+
+input[type="text"], input[type="email"], textarea {
+    border: 1px solid $grey-light-3;
+    width: 100%;
+    font-family: 'FoundryMonolineMedium';    
+    @include font-size(16);
+    padding: .3em;
+    box-sizing: border-box;
+}
+
+input[type="text"], input[type="email"] {
+    height: 40px;
+    padding: 0 .3em;
+}
+
+textarea {
+    height: 220px;
+}
+
+
+@include tablet { 
+    div.check-group, div.radio-group { 
+        .separator { width: 48%; }
+    }
+    .checkbox.in-collection.separator {
+        width: 48%;
+    }
+}
+
+@include phone {
+    div.check-group, div.radio-group {
+        .separator { width: 100%; }
+    }
+    div.file-input { width: 100%; }
+    .checkbox.in-collection.separator { width: 100%; }
+}   
