@@ -8,7 +8,7 @@ github_username:  bring
 
 # RAML settings
 raml_map:
-  specs/booking/api.raml: api/booking/index.html
+  specs/booking/booking.raml: api/booking/index.html
 
 # Build settings
 markdown: kramdown
