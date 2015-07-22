@@ -67,13 +67,28 @@ html.menu-open {
 		width: $container-width;
 		max-width: 1300px;
 		.logo {
+            color: #7bc144;
+            height: 39px;
+            top: 0;
+            left: 0;
+            line-height: 39px;
+            padding-top: 17px;
+            padding-bottom: 14px;
+            position: absolute;
+            /*
 			width: 101px;
-			height: 39px;
-			padding-top: 17px;
-			padding-bottom: 14px;
-			position: absolute;
-			top: 0;
-			left: 0;
+            */
+            span {
+                display: inline-block;
+                position: relative;
+                top: -14px;
+                @include font-size(30);
+                height: 39px;
+                line-height: 39px;
+                vertical-align: middle;
+                padding: 0 0 0 5px;
+                letter-spacing: -0.05em;
+            }
 		}
 
 		&.no-search {
@@ -97,10 +112,11 @@ html.menu-open {
 			display: inline-block;
 			line-height: 1;
 			padding: 22px 0 18px;
+            margin-left: 15px;
 			text-decoration: none;
 			text-transform: uppercase;
 			&.toggle-menu {
-				margin-left: 30px;
+                margin-left: 30px;
 				.hamburger {
 					display: inline-block;
 					position: relative;

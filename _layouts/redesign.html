@@ -18,39 +18,40 @@
   </head>
 
   <body>
-
     <div id="head-container">
-       <div class="head-wrap">
-          <header role="banner" class="no-search">
-             <div class="noindex">
-                <div id="skiptocontent"><a href="#container">Til hovedinnhold</a></div><a class="logo" href="http://www.bring.no/forside"><img src="http://www.bring.no/_public/themes/bring-new/img/bring-logo-hi.png?_ts=14853e38608" alt="Til forsiden" width="101" height="39"></img></a><div role="search" class="menu-search">
-                   <form method="get" action="http://www.bring.no/sok"><label for="q">SPOR eller SØK</label><input id="q" name="q" type="text" value="" class="text query" placeholder="SPOR eller SØK"></input><button class="site-search-btn" type="submit" title="Søk">Søk</button></form>
-                </div>
-                <nav role="navigation"><a class="toggle-login" href="#" aria-haspopup="true" aria-owns="login-menu" aria-controls="login-menu" aria-expanded="false">Logg inn</a><a class="toggle-menu" href="#" aria-haspopup="true" aria-owns="dropdown-menu" aria-controls="dropdown-menu" aria-expanded="false">Meny<span class="hamburger"><span class="wat"></span></span></a></nav>
-             </div>
-          </header>
-       </div>
-    </div>
-
-    <div id="container">
-      <div class="region">
-{{ content }}
+      <div class="head-wrap">
+        <header role="banner" class="no-search">
+          <div class="noindex">
+            <a class="logo" href="{{ site.baseurl }}"><img src="http://www.bring.no/_public/themes/bring-new/img/bring-logo-hi.png?_ts=14853e38608" alt="Bring" width="101" height="39"></img><span>developer</span></a>
+            <nav role="navigation">
+              <a href="{{ site.baseurl }}/api/">API</a>
+              <a href="{{ site.baseurl }}/api/">EDI</a>
+              <a href="{{ site.baseurl }}/blog/">Blog</a>
+              <a href="{{ site.baseurl }}/support/">Support</a>
+              <a class="toggle-menu" href="#" aria-haspopup="true" aria-owns="dropdown-menu" aria-controls="dropdown-menu" aria-expanded="false">Menu<span class="hamburger"><span class="wat"></span></span></a>
+            </nav>
+          </div>
+        </header>
       </div>
     </div>
 
-    <footer class="sitefooter" role="contentinfo">
-      <div class="noindex">
-        <div class="container">
-          <div class="bottom">
-            <p>
-              (c) 2015 Posten Norge AS
-              - <a href="http://www.bring.com/privacy-policy">Personvern og sikkerhet</a>
-              - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
-            </p>
-          </div>
+  <div id="container">
+{{ content }}
+  </div>
+
+  <footer class="sitefooter" role="contentinfo">
+    <div class="noindex">
+      <div class="container">
+        <div class="bottom">
+          <p>
+            (c) 2015 Posten Norge AS
+            - <a href="http://www.bring.com/privacy-policy">Privacy policy</a>
+            - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
+          </p>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
   </body>
 
