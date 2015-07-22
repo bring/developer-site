@@ -19,4 +19,5 @@ api/
 revision.txt
 _site
 .sass-cache
+_sass.build
 .jekyll-metadata
