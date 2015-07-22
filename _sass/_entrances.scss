@@ -1,0 +1,549 @@
+.box-container {
+	@include clearfix();
+	&.flex {
+		@include flexbox();
+	}
+	.separator-1, .separator-2 {
+		display: none;
+	}
+	&.loose {
+	  .separator-1, .separator-2 {
+	    margin: 0 2rem 0 2rem;
+	    margin-top: 90px;
+	    margin-bottom:50px;
+	    border-left: solid 1px $grey-light-4;
+	    display: block;
+	    float: left;
+	  }
+	}
+}
+
+
+// different variations on box entrances / links
+.box {
+	background-color: $white;
+	color: $grey-dark-1;
+	display: block;
+	height: 350px;
+	margin-bottom: 2.825%;
+	padding: 7.23% 2.0657% 0;
+	text-decoration: none;
+
+	h2, .heading {
+		font-family: 'FoundryMonoline';
+		@include font-size(16);
+		font-weight: bold;
+		line-height: 1.2;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-family: 'FoundryMonoline';
+		@include font-size(15);
+		line-height: 1.5;
+	}
+
+	figure {
+		img {
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+	}
+
+	&:hover {
+		box-shadow: none;
+	}
+
+  
+	// MODULAR VARIATIONS
+
+	/*------------------------------------*\
+    	#BASIC ENTRANCE
+    	 - Simple box with heading, subtext 
+    	   and arrow
+	\*------------------------------------*/
+
+	&.basic {
+		background: white url("../img/arrow-grey-right-lo.png") no-repeat center 85%;
+		background-size: 23px 26px;
+		border: 1px solid $grey-light-4;
+		height: 230px;
+		
+		padding-top: 4.038%;
+		text-align: center;
+		box-shadow: rgba(77, 79, 83, 0.09804) 0 2px 7px 1px;
+	  	transition: box-shadow 0.2s, ease-out, background 0.2s ease-out;
+
+		h2, .heading {
+			text-transform: uppercase;
+			letter-spacing: 0;
+		}
+
+		p {
+			font-weight: lighter;
+			@include font-size(18);
+		}
+
+		&:hover, &:active, &:focus {
+			background-color: $grey-light-7;
+			background-image: url("../img/arrow-green-right-lo.png");
+		}
+	}
+
+	/*------------------------------------*\
+    	#HELP ENTRANCE
+    	 - Dark entrance box with icon
+
+    	 - Variation: light
+    	 	- White background and dark text
+	\*------------------------------------*/
+
+	&.help {
+		background: $grey-dark-1 url('../img/arrow-white-right-lo.png') no-repeat center 85.0%;
+		background-size: 23px 26px;
+		padding-top: 15.2%;
+		position: relative;
+		text-align: center;
+	  	box-shadow: none;
+		transition: background 0.2s ease-out;
+		// TODO: generalize!
+		.bg-icon {
+			position: absolute;
+			bottom: 225px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h2, .heading {
+			color: $white;
+			font-family: 'FoundryMonolineMedium';
+			@include font-size(19);
+		}
+		p {
+			color: $white;
+		}
+		
+		&:hover, &:active, &:focus {
+			background-color: $grey-dark-1;
+			background-image: url('../img/arrow-green-right-lo.png');
+		}
+
+		&.light {
+			background-color: $white;
+			background-image: url('../img/arrow-grey-right-lo.png');
+			h2, .heading, p {
+				color: $grey-dark-1;
+			}
+			&:hover, &:active, &:focus {
+				background-image: url('../img/arrow-green-right-lo.png');		
+			}
+		}
+	}
+
+	/*------------------------------------*\
+    	#ARTICLE/THEME ENTRANCE
+    	 - Entrance with image heading
+    	   and subtext
+
+    	 - Variation: large
+    	   - Larger image and heading, no
+    	     subtext
+	\*------------------------------------*/
+
+	&.article, &.theme {
+        &.hide-on-overflow {
+            // white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+		border: 1px solid $grey-light-4;
+		padding: 0;
+	  	box-shadow: none;
+		h2, .heading {
+			padding: 6.55% 6.55% 0;
+			text-transform: uppercase;
+			letter-spacing: 0em;
+		}
+
+		p {
+			padding: 0 6.55% 6.55%;
+		}
+
+        .article-image {
+            width: auto;
+            height: 175px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: 33% 33%;
+        }
+		figure {
+            // max-height: 158px;
+			max-height: 175px;
+			overflow: hidden;
+			img {
+                // width: 100%;
+				width: auto;
+                // height: auto;
+				height: 175px;
+				vertical-align: top;
+			}
+		}
+		&.large {
+			figure {
+				height: 260px;
+			}
+		}
+		.noimage {
+			margin-top: 100px;
+		}
+	}
+
+	/*------------------------------------*\
+    	#SERVICE ENTRANCE
+    	 
+	\*------------------------------------*/
+
+	&.service-entry {
+		position: relative;
+		padding-top: 130px;
+		background: $white url('../img/arrow-grey-right-lo.png') no-repeat center 85%;
+		background-size: 23px 26px;
+	  	box-shadow: none;
+		transition: background-image 0.2s ease-out;
+
+		.product-name {
+			@include font-size(14);
+			font-family: 'FoundryMonoline';
+			margin-bottom: 12px;
+			display: block;
+			height: 14px;
+			color: $green-dark-1;
+			-webkit-transform: translateZ(0);
+		}
+
+		.icon-holder {
+			position: absolute;
+			bottom: 70%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			img {
+				height: 100%;
+				width: auto;
+				transition: transform 0.2s ease-out;
+			}
+		}
+
+		h2, .heading {
+			text-transform: uppercase;
+			letter-spacing: 0;
+		}
+		.price {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 20px;
+			background: $green-1;
+			color: $white;
+			text-align: right;
+			padding: 12px 20px;
+			span {
+				vertical-align: top;
+				&:after {
+					content: ',-';
+				}
+			}
+		}
+		&:hover, &:active, &:focus {
+			background-image: url('../img/arrow-green-right-lo.png');
+			&:hover, &:active, &:focus {
+				.icon-holder img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+
+	/*------------------------------------*\
+    	#LOOSE ENTRANCE
+    	 
+	\*------------------------------------*/
+
+	&.loose {
+		background: transparent;
+		height: auto;
+		padding: 0 10px 40px;
+		h2, .heading {
+			margin-bottom: 12px;
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 0em;
+		}
+		p {
+			@include font-size(18);
+		}
+		figure, .figure {
+			height: 235px;
+			position: relative;
+			img {
+				height: auto;
+				width: auto;
+				max-height: 235px;
+				max-width: 100%;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+		}
+		.actions {
+			text-align: center;
+			a {
+				margin-bottom: 22px;
+			}
+			a.plain {
+				color: $link-color;
+				display: block;
+				font-family: 'FoundryMonolineMedium';
+				@include font-size(15);
+				line-height: 1.5;
+				text-decoration: none;
+			}
+		}
+
+		// left orient everything
+		&.left {
+			h2, .heading {
+				text-align: left;
+			}
+			figure, .figure {
+				img {
+					margin: initial;
+				}
+			}
+		}
+	}
+}
+
+a.box {
+	cursor: pointer;
+	&.loose {
+		background: transparent url('../img/arrow-grey-right-lo.png') no-repeat center bottom;
+		background-size: 23px 26px;
+		transition: background-image 0.2s ease-out;
+
+		&:hover, &:active, &:focus {
+			background-image: url('../img/arrow-green-right-lo.png');
+		}
+	}
+}
+
+// Some special cases shall have vertical seperators
+// Therefor need to remove some margin styiling
+
+#forside-innganger {
+    .box-container .box {
+        &.third {
+            margin-right: 0;
+        }
+    }
+}
+
+.box.with-separator {
+	margin-right: 0;
+}
+
+// Retina arrows
+@include retina {
+	.box {
+		&.plain, &.service-entry {
+			background-image: url('../img/arrow-grey-right-hi.png');
+			&:hover, &:active, &:focus {
+				background-image: url('../img/arrow-green-right-hi.png');
+			}
+		}
+		&.help {
+			background-image: url('../img/arrow-white-right-hi.png');
+			&:hover, &:active, &:focus {
+				background-image: url('../img/arrow-green-right-hi.png');
+			}
+		}
+		&.basic {
+			background-image: url('../img/arrow-grey-right-hi.png');
+			&:hover, &:active, &:focus {
+				background-image: url('../img/arrow-green-right-hi.png');
+			}
+		}
+	}
+
+	a.box {
+		&.loose {
+			background-image: url('../img/arrow-grey-right-hi.png');
+			&:hover, &:active, &:focus {
+				background-image: url('../img/arrow-green-right-hi.png');
+			}
+		}
+	}
+}
+
+// screen sizes should have preference over retina specific styling, hence they come after
+@include tablet {
+	.box {
+		height: 320px;
+		padding: 5.23% 2.0657% 0;
+
+		&.basic {
+			height: 205px;
+			p {
+				@include font-size(15);
+			}
+		}
+		&.service-entry {
+			background-position-y: 95%;
+			.bg-icon {
+				bottom: 75%;
+			}
+			.price {
+				height: 12px;
+				padding: 10px 16px;
+				@include font-size(12);
+				line-height: 1;
+			}
+			.editor p {
+				@include font-size(14);
+			}
+		}
+
+		&.article, &.theme {
+			h2, .heading {
+				@include font-size(14);
+			}
+		}
+	}
+}
+
+@include phone { 
+	a.box, .box.box-contact-regular {
+		// check if this is needed
+		height: 290px;
+		&.service-entry {
+			text-align: center;
+			background-position-y: 90%;
+			padding-top: 100px;
+		}
+		&.basic {
+			height: 120px;
+			padding: 5.23%;
+			margin: 0;
+			h2, .heading {
+				@include font-size(12);
+				margin-bottom: 8px;
+			}
+		}
+		&.help {
+			height: 240px;
+			padding-top: 100px;
+			h2, .heading {
+				@include font-size(16);
+				margin-bottom: 6px;
+			}
+			.bg-icon {
+				bottom: 67%;
+			}
+		}
+		&.article, &.theme {
+			height: 320px;
+            figure {
+                img {
+                    height: 240px;
+                }
+            }
+		}
+	}
+	a.box.loose {
+		background-color: white;
+		text-align: center;
+		background-image: none;
+		padding:10px;
+		&:hover, &:active, &:focus {
+			background-image: none;
+		}
+		figure, .figure {
+			height: auto;
+			img {
+				position: initial;
+				height: 100px;
+			}
+		}
+		h2 { margin-bottom: 5px; }
+		p { 
+			@include font-size(15);
+		}
+		&.left {
+			text-align: left;
+		}
+		
+		&.fourth {
+			figure, .figure {
+				height: auto;
+				img {
+					position: initial;
+				}	
+			}
+		}
+	}
+	.box.box-contact-regular.loose {
+		text-align: center;
+		background-image: none;
+		padding:10px;
+		&:hover, &:active, &:focus {
+			background-image: none;
+		}
+		figure, .figure {
+			height: auto;
+			img {
+				position: initial;
+				height: 100px;
+			}
+		}
+		h2 { margin-bottom: 5px; }
+		p { 
+			@include font-size(15);
+		}
+		&.left {
+			text-align: left;
+		}
+		
+		&.fourth {
+			figure, .figure {
+				height: auto;
+				img {
+					position: initial;
+				}	
+			}
+		}
+	}
+	.box-container {
+		&.loose {
+			.separator-1, .separator-2 {
+				display: none;
+			}
+		}
+		&.flex {
+			display: block;
+		}
+	}
+
+	.box-entrance-list {
+		h1 { margin-bottom: 20px; }
+	}
+
+}
+
+
