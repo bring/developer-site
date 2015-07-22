@@ -16,3 +16,6 @@ kramdown:
   input: GFM
 
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules]
+
+# this is just for debugging locally, remove before production
+include: [_sass]
