@@ -108,7 +108,7 @@ p {
     overflow-x: scroll;
 }
 
-ul.regular {
+ul {
     list-style: none;
     li {
         color: $grey-dark-1;
@@ -157,7 +157,7 @@ a {
   font-family: 'FoundryMonolineMedium';
   text-decoration: none;
 }
-strong { 
+strong, em { 
   font-family: 'FoundryMonoline';
   font-weight: bold;
   color: $grey-dark-1;
@@ -207,129 +207,6 @@ table {
 .narrow {
   max-width: 732px;
   margin: 0 auto;
-}
-
-
-// EDITOR STYLES
-.editor {
-
-    .row {
-        @include clearfix();
-    }
-
-    table {
-        th, td {
-            padding: 20px 19px;
-            line-height: 1.5;
-            vertical-align: top;
-            font-family: 'FoundryMonoline';
-        }
-        th {
-            background-color: $grey-dark-1;
-            color: $white;
-            @include font-size($font-size-table-th-desktop);
-            font-weight: bold;
-        }
-        td {
-            @include font-size($font-size-table-td-desktop);
-            border-bottom: 1px solid $grey-light-3;
-        }
-        tr:last-child {
-            td {
-                border-bottom: 0;  
-            }
-        }
-    }
-
-    ul, ol {
-        list-style: none;
-        li {
-            color: $grey-dark-1;
-            display: block;
-            font-family: 'FoundryMonoline';
-            @include font-size($font-size-paragraph-desktop);
-            margin-bottom: 20px;
-            line-height: 1.5;
-            position: relative;
-            text-align: left;
-            p {
-                /*margin-bottom: 0;*/ /* Commenting this out probably breaks something, but I'd like to make it more specific if possible: Tracking-article has a lot of paragraphs under LIs */
-                line-height: 1.5;
-            }
-            ul, ol {
-              margin-bottom: 22px;
-              li {
-                margin-bottom: 10px;
-              }
-            }
-        }
-    }
-
-    ul {
-        li {
-            padding-left: 22px;
-            &:before {
-                color: $grey-light-3;
-                content: "•";
-                font-size: 36px;
-                font-family: Arial;
-                line-height: 0.5;
-                position: absolute;
-                top: 3px;
-                left: 0;
-            }
-        }
-    }
-
-    ol { 
-        counter-reset: item;
-        li { 
-            padding-left: 22px;
-            &:before {
-                content: counter(item) ". "; 
-                counter-increment: item;
-                font-weight: bold;
-                margin-right: 5px;
-                position: absolute;
-                top: 0;
-                left: 0;
-                line-height: 1.6;
-            }
-        }
-    }
-
-    h3, h4 {
-      @include font-size($font-size-paragraph-desktop);
-      font-weight: bold;
-      margin-top: 54px;
-      margin-bottom: 10px;
-    }
-
-    p {
-        margin-bottom: 10px;
-        &.editor-p-center {
-            text-align: center;
-        }
-        &.editor-p-block {
-            img {
-                max-width: 100%;
-                height: auto;  
-            }
-        }
-        &.heading {
-          font-weight: bold;
-        }
-    }
-
-    a {
-        color: $link-color;
-        font-family: 'FoundryMonolineMedium';
-        text-decoration: none;
-    }
-
-    strong {
-        font-weight: bold;
-    }
 }
 
 @include tablet {
