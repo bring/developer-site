@@ -1,47 +1,38 @@
 ---
 layout: redesign
 ---
-<div class="row">
-  <div class="region col span-12 my-region-1">
 
-    <article class="large-banner light lightgrey-bg overlay-50 bottom">
+    <article class="front-banner light">
       <div class="background"></div>
       <div class="content">
         <div class="container">
           <h1 class="giant">Bring Developer</h1>
-          <div class="editor">
-            <p>
-              API documentation, EDI documentation, widgets, and more.
-            </p>
-          </div>
+          <p>API documentation, EDI documentation, widgets, and more.</p>
         </div>
       </div>
     </article>
 
-    <article class="entrance-onepager js-scroll-to" data-scroll-to="">
-      <section class="component article-entrance frontpage-article-list ">
-        <div id="starte-nettbutikk-articles" class="article-list">
-          <a href="{{ site.baseurl }}/api/" class="box third article hide-on-overflow local">
-            <div class="article-image" style="background-image: url(http://www.bring.no/radgivning/netthandel/starte-nettbutikk/_image/610981.jpeg?_encoded=2f66666666666678302f35372f&amp;_ts=14e0ae32c28);"></div>
+    <article>
+      <section class="front-boxes">
+        <div class="article-list">
+          <a href="{{ site.baseurl }}/api/" class="box third article api">
+            <div class="article-image"></div>
             <h2>API documentation</h2>
-            <p>Hva må du tenke på når du ønsker å starte nettbutikk? Her får du noen ekspertråd på veien.</p>
+            <p>Use our APIs for tracking, integrating shipping in your webshop, and supporting your value chain.</p>
           </a>
-          <a href="{{ site.baseurl }}/edi/" class="box third article hide-on-overflow local">
-            <div class="article-image" style="background-image: url(http://www.bring.no/radgivning/netthandel/starte-nettbutikk/_image/610108.jpeg?_encoded=2f66666666666678302f35372f&amp;_ts=14dfc89d910);"></div>
+          <a href="{{ site.baseurl }}/edi/" class="box third article edi">
+            <div class="article-image"></div>
             <h2>EDI documentation</h2>
-            <p>Slik lykkes du med å få nettstedet ditt til å dukke opp høyt i Google og andre søkemotorer.</p>
+            <p>If you're an EDI vendor, this is where you will find our implementation guides.</p>
           </a>
-          <a href="{{ site.baseurl }}/#/" class="box third article hide-on-overflow local">
-            <div class="article-image" style="background-image: url(http://www.bring.no/radgivning/netthandel/starte-nettbutikk/_image/610121.jpeg?_encoded=2f66666666666678302f35372f&amp;_ts=14dfca54c68);"></div>
-            <h2>Something else</h2>
-            <p>Dette bør du tenke på før du oppretter en profil til nettbutikken din på Facebook og i andre sosiale medier.</p>
+          <a href="{{ site.baseurl }}/#/" class="box third article support">
+            <div class="article-image"></div>
+            <h2>Support</h2>
+            <p>Have questions? Need help getting started? Found a bug? We are here to help.</p>
           </a>
         </div>
-        <div class="center next-section">
-          <p><a href="#" class="local">Go bananas right here</a></p>
+        <div class="center get-started">
+          <p><a href="{{ site.baseurl }}/api/getting-started/">Get started with our APIs</a></p>
         </div>
       </section>
     </article>
-    
-  </div> <!-- /region -->
-</div> <!-- /row -->

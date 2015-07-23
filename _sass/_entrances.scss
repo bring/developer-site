@@ -344,17 +344,6 @@ a.box {
 	}
 }
 
-// Some special cases shall have vertical seperators
-// Therefor need to remove some margin styiling
-
-#forside-innganger {
-    .box-container .box {
-        &.third {
-            margin-right: 0;
-        }
-    }
-}
-
 .box.with-separator {
 	margin-right: 0;
 }

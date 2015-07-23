@@ -1,87 +1,64 @@
 /*------------------------------------*\
-    #LARGE-BANNER
+    Front banner
 \*------------------------------------*/
 
-
-.large-banner {
+.front-banner {
 	position: relative;
-	.background {
-		// height: 740px;
-		height: 400px;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-        background-image: url('../img/megaheader/1071155.jpg');
-        background-image: url('../img/megaheader/35-A_9455-final-2.jpg');
-		//background-position: top center;
-	}
 
-	figure {
-		padding-top: 30px;
-		text-align: center;
-		img {
-			height: auto;
-			max-width: 100%;	
-		}
-	}
+    .background {
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        //background-image: url('../img/megaheader/1071155.jpg');
+        background-image: url('../img/megaheader/35-A_9455-final-2.jpg');
+    }
 
 	.content {
-		margin: 0 auto;
+        position: absolute;
 		width: 100%;
-		position: absolute;
+        height: 50%;
+        top: 25%;
 		left: 0;
-        bottom: 25%;
+
 		.container {
+            /*
 			max-height: 100%;
 			max-width: $container-max-width;
-			width: 100%;
+            width: 100%;
+            height: 100%;
 			margin: 0 auto;
-			padding: 1.5% $container-horizontal-margins;
+            */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 25%;
+            margin: 0 auto;
+			padding: 0 $container-horizontal-margins;
 			text-align: center;
-			position: absolute;
-			left: 0;
-			right: 0;
 		  	box-sizing: border-box;
 		}
-		.editor {
-			margin: 0 auto 25px;
-			max-width: 750px;
-		}
+
 		p {
 			color: $grey-dark-1;
 			@include font-size($font-size-ingress-desktop);
-      font-weight: normal;
+            font-weight: normal;
 			font-family: 'FoundryMonoline';
 			line-height: 1.5;
-			margin-bottom: 10px;
 		}
 	}
 
-	&.overlay-50, &.overlay-100 {
+    &.dark {
+        .content {
+            background-color: rgba(255,255,255,0.8);
+        }
+    }
 
-		&.dark {
-			.content {
-				background-color: rgba(255,255,255,0.8);
-			}
-		}
-
-		&.light {
-			.content {
-				background-color: rgba(0,0,0,0.4);
-			}
-		}
-
-
-		.content {
-			height: 50%;
-		}
-	}
-
-	&.overlay-0, &.overlay-100 {
-		.content {
-			height: 100%;
-		}
-	}
+    &.light {
+        .content {
+            background-color: rgba(0,0,0,0.4);
+        }
+    }
 
 	&.light {
 		.content {
@@ -96,57 +73,10 @@
 			}
 		}
 	}
-
-	&.special {
-		height: 720px;
-		.content {
-			width: auto;
-			position: inherit;
-			top: inherit;
-			left: inherit;
-			.container {
-				padding: 0;
-			}
-		}
-	}
-
-	&.white-bg {
-		background-color: $white;
-	}
-	&.lightgrey-bg {
-		background-color: $grey-light-7;
-	}
-	&.grey-bg {
-		background-color: $grey-dark-1;
-	}
-	&.green-bg {
-		background-color: $green-2;
-	}
-
-
-	
-	&.bottom {
-		.content .container {
-			bottom: 0;
-		}
-	}
-	&.top {
-		.content .container {
-			top: 0;
-		}
-	}
-
-	//this is a special banner top which has integrated breadcrumb and sticky menu 
-	&.special-nav {
-		margin-bottom: 40px;
-		.breadcrumb {
-			padding-top: 0;
-		}
-	}
 }
 
 @include tablet {
-	.large-banner {
+	.front-banner {
 		.content {
 			p {
 				@include font-size($font-size-ingress-phone);
@@ -156,14 +86,12 @@
 }
 
 @include phone {
-	.large-banner {
-		
-		&.overlay-50, &.overlay-100 {
-			height: auto;
-			&.dark, &.light {
-				.content {
-					background-color: transparent;
-				}
+	.front-banner {
+		height: auto;
+
+		&.dark, &.light {
+			.content {
+				background-color: transparent;
 			}
 		}
 
@@ -172,20 +100,11 @@
 		}
 
 		.content {
-			div.breadcrumb {
-				a {
-					color: $grey-dark-1;
-				}
-			}
 			position: relative;
 			top: 0;
 			.container {
 				position: relative;
-				bottom: 0;
 				width: 100%;
-			}
-			.editor {
-				margin-bottom: 25px;
 			}
 			h1, h2, h3 {
 				@include font-size(20);
@@ -201,32 +120,46 @@
 				@include font-size($font-size-ingress-phone);
 			}
 		}
-
-		&.white-bg, &.lightgrey-bg {
-			.content {
-				h1, h2, h3 {
-				color: $grey-dark-1;
-				}
-				p {
-					color: $grey-dark-1;
-				}
-			}
-		}
-		
-		&.grey-bg, &.green-bg {
-			.content {
-				h1, h2, h3 {
-					color: $white;
-				}
-				p {
-					color: $white;
-				}
-			}
-		}
-
-		.more-scroller {
-			bottom: 20px;
-			position: relative;
-		}
 	}
+}
+
+/*------------------------------------*\
+    Link boxes
+\*------------------------------------*/
+
+section.front-boxes {
+    position: relative;
+    margin: 30px auto;
+
+    a h2 {
+        text-align: center;
+    }
+
+    a.api .article-image {
+        background-image: url('../img/boxes/api.jpg');
+    }
+
+    a.edi .article-image {
+        background-image: url('../img/boxes/edi.jpg');
+    }
+
+    a.support .article-image {
+        background-image: url('../img/boxes/something_else.jpg');
+    }
+
+    p {
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    div.get-started {
+        a {
+            background: transparent url('../img/blue-circle-arrow.png') no-repeat left center;
+            background-size: 15px 15px;
+            text-decoration: none;
+            padding-left: 25px;
+            margin-right: 10px;
+        }
+    }
 }
