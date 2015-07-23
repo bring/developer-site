@@ -551,45 +551,6 @@ article.article {
 	}
 }
 
-/*------------------------------------*\
-    #JOB PAGES
-\*------------------------------------*/
-#easycruit {
-	h1 {
-		padding-bottom: 30px;
-	}
-	table {
-		thead {
-			cursor: pointer;
-		}
-		thead tr {
-			height: 45px;
-			& th {
-				&.sorting_desc {
-					background: $grey-dark-1 url('../img/arrow-white-down.png') no-repeat 98%;
-					background-size: 16px 10px;
-				}
-				&.sorting_asc {
-					background: $grey-dark-1 url('../img/arrow-white-up.png') no-repeat 98%;
-					background-size: 16px 10px;
-				}
-				vertical-align: middle;
-			}
-		}
-		width: 100%;
-		th:first-child, tr td:first-child  {
-			padding-left: 10px;
-		}
-		tbody {
-			& tr {
-				height: 40px;
-				& td {
-					vertical-align: bottom;
-				}
-			}
-		}
-	}
-}
 
 .image-with-text {
 	position: relative;
@@ -669,17 +630,6 @@ article.article {
 		form {
 			.selector {
 				width: 100%;
-			}
-		}
-	}
-	#easycruit {
-		table {
-			thead tr {
-				& th {
-					&.sorting_desc, &.sorting_asc {
-						background-image: none;
-					}
-				}
 			}
 		}
 	}
