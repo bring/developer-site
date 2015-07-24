@@ -95,6 +95,11 @@ h1 {
 h2, h3, h4 {
     @include font-size($font-size-ingress-desktop);
 }
+h3, h4 {
+  font-weight: bold;
+  margin-top: 54px;
+  margin-bottom: 10px;
+}
 /* end heading styles */
 
 p {
@@ -102,52 +107,71 @@ p {
     font-family: 'FoundryMonoline';
     @include font-size($font-size-paragraph-desktop);
     line-height: 1.5;
+    margin-bottom: 10px;
+    &.heading {
+      font-weight: bold;
+    }
 }
 
 .responsive-table {
     overflow-x: scroll;
 }
 
-ul {
+
+ul, ol {
     list-style: none;
     li {
         color: $grey-dark-1;
+        display: block;
         font-family: 'FoundryMonoline';
         @include font-size($font-size-paragraph-desktop);
-        line-height: 1.2;
-        margin-bottom: 25px;
-        padding-left: 24px;
+        margin-bottom: 20px;
+        line-height: 1.5;
         position: relative;
+        text-align: left;
+        p {
+            /*margin-bottom: 0;*/ /* Commenting this out probably breaks something, but I'd like to make it more specific if possible: Tracking-article has a lot of paragraphs under LIs */
+            line-height: 1.5;
+        }
+        ul, ol {
+          margin-bottom: 22px;
+          li {
+            margin-bottom: 10px;
+          }
+        }
+    }
+}
+
+ul {
+    li {
+        padding-left: 22px;
         &:before {
-            color: $grey-light-8;
+            color: $grey-light-3;
             content: "•";
-            font-size: 48px;
-            font-family: Arial, sans-serif;
+            font-size: 36px;
+            font-family: Arial;
             line-height: 0.5;
             position: absolute;
-            top: -1px;
+            top: 3px;
             left: 0;
         }
     }
 }
 
-ul, ol {
-    &.three-column {
-        overflow: hidden;
-        li {
-            float: left;
-            padding-right: 22px;
-            width: 33.33%;
-            box-sizing: border-box;
-            &:nth-of-type(4n){
-                clear: left;              
-            }
+ol { 
+    counter-reset: item;
+    li { 
+        padding-left: 22px;
+        &:before {
+            content: counter(item) ". "; 
+            counter-increment: item;
+            font-weight: bold;
+            margin-right: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            line-height: 1.6;
         }
-    }
-    &.flex {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;        
     }
 }
 
@@ -162,43 +186,50 @@ strong, em {
   font-weight: bold;
   color: $grey-dark-1;
 }
+
 table {
-  th, td {
-      padding: 0 2em 0 0;
-      line-height: 1.5;
-      vertical-align: top;
-      font-family: 'FoundryMonoline';
-      &:last-child { padding-right: 0; }
-  }
-  th {
-      background-color: $grey-dark-1;
-      color: $white;
-      @include font-size($font-size-table-th-desktop);
-      font-weight: bold;
-  }
-  td {
-      @include font-size($font-size-table-td-desktop);
-  }
+    width: 100%;
+
+    th, td {
+        padding: 20px 19px;
+        line-height: 1.5;
+        vertical-align: top;
+        font-family: 'FoundryMonoline';
+    }
+    th {
+        background-color: $grey-dark-1;
+        color: $white;
+        @include font-size($font-size-table-th-desktop);
+        font-weight: bold;
+        text-align: left;
+    }
+    td {
+        @include font-size($font-size-table-td-desktop);
+        border-bottom: 1px solid $grey-light-3;
+    }
+    tr:last-child {
+        td {
+            border-bottom: 0;  
+        }
+    }
 }
 
 .ingress, .preface {
     margin-bottom: 40px;
-    .editor {
-        p {
-            @include font-size($font-size-ingress-desktop);
-        }
-        > {
-            h1, h2, p, ul, ol  {
-                max-width: 700px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 10px;
-                &.expand {
-                    max-width: 100%;
-                }
+    p {
+        @include font-size($font-size-ingress-desktop);
+    }
+    > {
+        h1, h2, p, ul, ol  {
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+            &.expand {
+                max-width: 100%;
             }
         }
-    }
+        }
     &.center {
         text-align: center;
     }
@@ -229,25 +260,25 @@ table {
 
 @include phone {
 
-  // EDITOR STYLES
-  .editor {
-    ul, ol {
-      li {
-        @include font-size($font-size-paragraph-phone);
-        margin-bottom: 25px;
-      }
-    }
-    table {
-        th, td {
-            padding: 20px 10px;
-      }
-    }
-    p {
+  ul, ol {
+    li {
       @include font-size($font-size-paragraph-phone);
+      margin-bottom: 25px;
     }
   }
+
+  table {
+      th, td {
+          padding: 20px 10px;
+    }
+  }
+
+  p {
+    @include font-size($font-size-paragraph-phone);
+  }
+
   .ingress, .preface {
-    .editor p {
+    p {
       @include font-size($font-size-ingress-phone);
     }
   }

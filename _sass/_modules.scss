@@ -27,6 +27,8 @@ meta.foundation-data-attribute-namespace {
 
 .not-exist {
 	padding: 100px 0;
+    max-width: 700px;
+    margin: 0 auto;
 	h1 {
 		font-weight: bold;
 		margin-bottom: 12px; 
@@ -35,13 +37,9 @@ meta.foundation-data-attribute-namespace {
 		text-align: center;
 		margin-bottom: 40px;
 	}
-	.editor {
-		max-width: 700px;
-		margin: 0 auto;
-		p {
-			@include font-size($font-size-paragraph-desktop);
-		}
-	}
+    p {
+        @include font-size($font-size-paragraph-desktop);
+    }
 }
 
 .terms {
@@ -474,21 +472,6 @@ article.article {
 	}
 
 	section {
-
-		.ingress, .preface {
-			// padding-top: 20px;
-			// p {
-			// 	max-width: 700px;
-			// 	margin: 0 auto 30px;
-			// 	&.wide, &.editor-p-center {
-			// 		max-width: $container-max-width;
-			// 		img {
-			// 			height: auto;
-			// 			max-width: 100%;
-			// 		}	
-			// 	}
-			// }
-		}
 		
 		.box-entrances {
 			max-width: $container-max-width;
@@ -559,9 +542,6 @@ article.article {
 		width: 100%;
 		vertical-align: bottom;
 	}
-	.editor {
-		position: absolute;
-	}
 }
 
 
@@ -589,13 +569,11 @@ article.article {
 		}
 		.detailed-info {
 			max-width: $container-max-width;
+            width: initial;
 			margin: 0 auto;
 			padding: 60px $container-horizontal-margins;
-			.editor {
-				width: initial;
-				p, a {
-					@include font-size(16);
-				}
+			p, a {
+				@include font-size(16);
 			}
 		}
 

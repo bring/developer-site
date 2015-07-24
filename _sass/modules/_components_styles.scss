@@ -21,16 +21,14 @@ section.component {
 
 
 		.maintext {
-			.editor {
-				> {
-					h1, h2, h3, h4, p, ul, ol {
-						max-width: 700px;
-						margin-left: auto;
-						margin-right: auto;
-						margin-bottom: 10px;
-						&.expand {
-							max-width: 100%;		
-						}
+			> {
+				h1, h2, h3, h4, p, ul, ol {
+					max-width: 700px;
+					margin-left: auto;
+					margin-right: auto;
+					margin-bottom: 10px;
+					&.expand {
+						max-width: 100%;		
 					}
 				}
 			}
@@ -145,17 +143,15 @@ section.component {
 
     &.green {
 		background-color: $green-1;
-		.editor {
-			table {
-				th, td {
-					color: $grey-dark-3;
-				}
-				th {
-					background-color: rgba(255,255,255, 0.6);
-				}
-				td {
-					border-color: rgba(255,255,255, 0.3);
-				}
+		table {
+			th, td {
+				color: $grey-dark-3;
+			}
+			th {
+				background-color: rgba(255,255,255, 0.6);
+			}
+			td {
+				border-color: rgba(255,255,255, 0.3);
 			}
 		}
 
