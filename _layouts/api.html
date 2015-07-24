@@ -9,29 +9,33 @@ layout: redesign
 
     <section class="component white">
       <div class="container">
-        {% for chapter in page.api.documentation %}
-        <h2 class="large center module-heading anchored">{{ chapter.title }}</h2>
-        <article class="documentation">
-          {{ chapter.content | markdownify }}
-        </article>
-        {% endfor %}
 
-        <h2>Overview of endpoints</h2>
-        <p>Base URL: <code>{{ page.api.base_uri }}</code></p>
-        <table class="default">
+        {% for chapter in page.api.documentation %}
+        <h2 class="anchored">{{ chapter.title }}</h2>
+        {{ chapter.content | markdownify }}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="component grey">
+      <div class="container">
+        <h2 class="large anchored">Overview of endpoints</h2>
+
+        <h3>Base URL</h3>
+        <pre>{{ page.api.base_uri }}</pre>
+
+        <table class="full">
           <thead>
             <th>Method</th>
             <th>Endpoint</th>
             <th>Usage</th>
-            <th>Returns</th>
           </thead>
           {% for resource in page.api.resources %}
             {% for method in resource.methods %}
               <tr>
                 <td>{{ method[1].method }}</td>
                 <td>{{ resource.relative_uri }} </td>
-                <td>{{ resource.description }}</td>
-                <td>{{ resource.display_name }}</td>
+                <td>{{ method[1].description }}</td>
               </tr>
             {% endfor %}
           {% endfor %}
@@ -59,19 +63,59 @@ layout: redesign
       {% endif %}
 
       {% for method in resource.methods %}
+      <section class="component {% cycle 'white', 'grey' %}">
         <div class="container">
 
-          <h1>{{ method[1].method }} {{ resource.display_name }}</h1>
-
-          <h2>URL:</h2>
-          <p><code>{{ absoluteUriTitle }}</code></p>
+          <h2 class="large anchored">{{ method[1].method }} {{ resource.display_name }}</h2>
 
           {% if resource.description %}
-            <h2>About</h2>
-            <p>{{ resource.description }}</p>
+          {{ resource.description | markdownify }}
           {% endif %}
 
-          <h2>API explorer</h2>
+          <h3>URL</h3>
+          <pre>{{ absoluteUriTitle }}</pre>
+
+          {% if method[1].query_parameters.size > 0 %}
+            <h3>Query Parameters</h3>
+            <table>
+              <thead>
+                <th>Query parameter</th>
+                <th>Type</th>
+                <th>Required?</th>
+                <th>Value</th>
+              </thead>
+            {% for qp in method[1].query_parameters %}
+              <tr>
+                <td><code>{{ qp[1].name }}</code></td>
+                <td><code>{{ qp[1].type }}<code></td>
+                <td><code>{% if qp[1].required %}Yes{% else %}No{% endif %}<code></td>
+                <td>{{ qp[1].description }}</td>
+              </tr>
+            {% endfor %}
+            </table>
+          {% endif %}
+
+          {% if method[1].headers.size > 0 %}
+            <h3>Headers</h3>
+            <table>
+              <thead>
+                <th>Header name</th>
+                <th>Type</th>
+                <th>Required?</th>
+                <th>Value</th>
+              </thead>
+            {% for qh in method[1].headers %}
+              <tr>
+                <td><code>{{ qh[1].name }}</code></td>
+                <td><code>{{ qh[1].type }}<code></td>
+                <td><code>{% if qh[1].required %}Yes{% else %}No{% endif %}<code></td>
+                <td>{{ qh[1].description }}</td>
+              </tr>
+            {% endfor %}
+            </table>
+          {% endif %}
+
+          <h3>API explorer</h3>
 
           <form action="{{ resource.absolute_uri }}" method="{{ method.method }}">
 
@@ -84,12 +128,12 @@ layout: redesign
             {% endfor %}
             {% for security in resource.secured_by %}
               {% if security %}
-                <h3>Authentication{% if auth_required == false %} (optional) {% endif %}</h3>
+                <h3>Authentication{% if auth_required == false %} (optional){% endif %}</h3>
                 {% assign sec_scheme = page.api.security_schemes[security] %}
                 {% for header in sec_scheme.described_by.headers %}
                   <div class="form-row form-cell">
                   <label class="separator">{{ header[1].name }}
-                    <input type="text" name="{{ header[1].name }}" placeholder="{{ header[1].example }}" />
+                    <input type="text" name="header[{{ header[1].name }}]" placeholder="{{ header[1].example }}" />
                   </label>
                   </div>
                 {% endfor %}
@@ -100,6 +144,7 @@ layout: redesign
           </form>
 
         </div> <!-- /container -->
+      </section>
       {% endfor %} <!-- /for method in methods -->
     {% endfor %}
 
