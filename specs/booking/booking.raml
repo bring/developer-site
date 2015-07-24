@@ -35,17 +35,34 @@ documentation:
 
       Bring Booking uses Bring Fraktguide as the source for price and availability for the different products. We advise clients of the Booking API to use Fraktguiden for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
-- title: Multi-word Title
-  content: This is quite alright.
+- title: Versioning strategy
+  content: |
+      Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
 
 /customers{mediaTypeExtension}:
   displayName: /customers.json or /customers.xml
   securedBy: [mybring_headers]
+  description: |
+      The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-products, we use a UUID to identify users.
+
+      The customer API will return for each specialist a list with the products that you can order through the booking API.
+
+      You can also get the API customer numbers from [this page in Mybring](https://www.mybring.com/useradmin/account/apicustomernumber).
+
+      | Specialist | Example products | Example customer number |
+      |:-----------|:-----------------|:------------------------|
+      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09` | `PARCELS_NORWAY-10001123123` |
+      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO_NORWAY-10001123123` |
+      | Bring Express, Norway | `COURIER_4H`, `QUICKPACK_SAMEDAY`, `QUICKPACK_DAY_CERTAIN` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
+      | Bring Express, Sweden | `COURIER_4H`, `QUICKPACK_SAMEDAY`, `QUICKPACK_DAY_CERTAIN` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
+      | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
+
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
+    description: List available customers and products
     responses:
       200:
         body:
@@ -56,9 +73,13 @@ documentation:
 
 /booking:
   displayName: /booking
-  description: Make a booking, get a label
-  securedBy: [mybring_headers, null]
+  description: |
+      ### Content-Type Negotiation
+
+
+  securedBy: [mybring_headers]
   post:
+    description: Make a booking
     body:
       application/json:
         schema: !include schemas/booking_post.json
@@ -82,7 +103,8 @@ documentation:
   description: Make a booking, get a label
   securedBy: [mybring_headers]
   post:
-    body:
+    description: Make a booking (SOAP)
+    body: 
       application/soap+xml:
         schema: schemas/booking-v1.xsd
         example: !include examples/soap_response_booking.xml
