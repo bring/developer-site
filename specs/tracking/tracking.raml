@@ -1,0 +1,75 @@
+#%RAML 0.8
+---
+title: Tracking API
+baseUri: http://sporing.bring.no
+
+securitySchemes:
+- mybring_headers:
+    description: |
+      The API supports using Mybring headers for authenticating requests.
+    type: x-headers
+    describedBy:
+      headers:
+        X-MyBring-API-Uid:
+          displayName: Mybring user id
+          required: true
+          example: mybring-user@example.com
+        X-MyBring-API-Key:
+          displayName: Mybring API key
+          required: true
+          example: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff0
+        X-Bring-Client-URL:
+          displayName: client url
+          required: true
+          example: https://example.com/shop
+      responses:
+        400:
+          description: Authentication failed.
+
+documentation:
+- title: Introduction
+  content: |
+      The tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to display details and the status of shipments. The information available in this API is the same information available from the [Tracking web site](http://tracking.bring.com/). Response is available as either XML or JSON.
+
+/sporing{mediaTypeExtension}:
+  displayName: /sporing.json or /sporing.xml
+  securedBy: [mybring_headers, null]
+  description: |
+      For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: Get information about a shipment
+    queryParameters:
+      q:
+        description: Reference, package number, shipment number to search for
+        type: string
+        required: true
+        example: TESTPACKAGE-AT-PICKUPPOINT
+      callback:
+        description: JSONP callback function name
+        type: string
+        required: false
+    headers:
+      X-Testing-A-Header:
+        description: This is just a test to see how it renders
+        type: integer
+        required: false
+        minimum: 1
+        maximum: 100
+        example: 42
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            example: !include examples/testpackage.json
+          application/xml:
+            example: !include examples/testpackage.xml
+            schema: !include schemas/sporing-v1.xsd
+
+
+

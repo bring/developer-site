@@ -9,6 +9,7 @@ github_username:  bring
 # RAML settings
 raml_map:
   specs/booking/booking.raml: api/booking/index.html
+  specs/tracking/tracking.raml: api/tracking/index.html
 
 # Build settings
 markdown: kramdown
