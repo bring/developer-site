@@ -85,7 +85,13 @@ h1, h2, h3, h4 {
     }  
     &.light {
       color: $white;
-    }  
+      a.anchorjs-link {
+        color: $white;
+      }
+    } 
+    a.anchorjs-link {
+      color: $grey-dark-1;
+    }
 }
 
 h1 {
