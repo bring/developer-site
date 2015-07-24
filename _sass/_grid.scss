@@ -5,11 +5,6 @@
     padding: 70px $container-horizontal-margins;
 }
 
-.editor .wrapper {
-    max-width: 700px;
-    padding-top: 0;
-}
-
 .row {
     @include clearfix();
 }
