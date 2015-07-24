@@ -246,6 +246,27 @@ table {
   margin: 0 auto;
 }
 
+/* code styles */
+code {
+  white-space: nowrap;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  @include font-size(14);
+}
+pre code {
+  white-space: pre;
+}
+pre {
+  border: 1px solid #cacaca;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  @include font-size(14);
+  padding: 10px;
+  overflow:auto;
+  border-radius: 3px;
+  background-color: #fafafb;
+  color: #393939;
+  margin: 2em 0;
+}
+
 @include tablet {
   h1, h2, h3, h4 {
     &.large {
