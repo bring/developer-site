@@ -82,13 +82,19 @@ layout: redesign
                 <th>Query parameter</th>
                 <th>Type</th>
                 <th>Required?</th>
-                <th>Value</th>
+                <th>Description</th>
               </thead>
             {% for qp in method[1].query_parameters %}
               <tr>
                 <td><code>{{ qp[1].name }}</code></td>
                 <td><code>{{ qp[1].type }}<code></td>
-                <td><code>{% if qp[1].required %}Yes{% else %}No{% endif %}<code></td>
+                <td>
+                  {% if qp[1].required %}
+                  Yes
+                  {% else %}
+                  No {% if qp[1].default %} (default: {{ qp[1].default }}){% endif %}
+                  {% endif %}
+                </td>
                 <td>{{ qp[1].description }}</td>
               </tr>
             {% endfor %}
@@ -102,13 +108,19 @@ layout: redesign
                 <th>Header name</th>
                 <th>Type</th>
                 <th>Required?</th>
-                <th>Value</th>
+                <th>Description</th>
               </thead>
             {% for qh in method[1].headers %}
               <tr>
                 <td><code>{{ qh[1].name }}</code></td>
                 <td><code>{{ qh[1].type }}<code></td>
-                <td><code>{% if qh[1].required %}Yes{% else %}No{% endif %}<code></td>
+                <td>
+                  {% if qh[1].required %}
+                  Yes
+                  {% else %}
+                  No {% if qh[1].default %} (default: {{ qh[1].default }}){% endif %}
+                  {% endif %}
+                </td>
                 <td>{{ qh[1].description }}</td>
               </tr>
             {% endfor %}

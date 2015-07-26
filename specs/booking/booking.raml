@@ -80,6 +80,16 @@ documentation:
   securedBy: [mybring_headers]
   post:
     description: Make a booking
+    headers:
+      Content-Type:
+        description: Specify request format (application/json, application/xml)
+        required: true
+        enum: [ application/json, application/xml ]
+      Accept:
+        description: Specify response format (application/json, application/xml)
+        required: false
+        default: same as Content-Type
+        enum: [ application/json, application/xml ]
     body:
       application/json:
         schema: !include schemas/booking_post.json
