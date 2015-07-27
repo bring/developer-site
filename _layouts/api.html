@@ -12,6 +12,19 @@ layout: redesign
     </div>
   </header>
 
+  <div class="nav-wrapper sticky-nav">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#api-documentation" class="local"><span data-hover="Documentation">Documentation</span></a></li>
+      {% for resource in page.api.resources %}
+        {% for method in resource.methods %}
+          {% assign link_name = method[1].method | append:' ' | append: resource.display_name %}
+          {% assign link_id = link_name | slugify %}
+          <li><a href="#{{ link_id }}" class="local"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+
   <section class="component white" id="api-documentation">
     <div class="container">
       {% for chapter in page.api.documentation %}
