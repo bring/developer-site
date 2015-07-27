@@ -37,7 +37,7 @@ layout: redesign
       <h3>Base URL</h3>
       <pre>{{ page.api.base_uri }}</pre>
 
-      <table>
+      <table class="linked-rows">
         <thead>
           <th>Method</th>
           <th>Endpoint</th>
@@ -46,9 +46,9 @@ layout: redesign
         {% for resource in page.api.resources %}
           {% for method in resource.methods %}
             <tr>
-              <td>{{ method[1].method }}</td>
-              <td>{{ resource.relative_uri }} </td>
-              <td>{{ method[1].description }}</td>
+              <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].method }}</a></td>
+              <td><a href="#{{ resource.display_name | slugify }}">{{ resource.relative_uri }}</a></td>
+              <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].description }}</a></td>
             </tr>
           {% endfor %}
         {% endfor %}
