@@ -30,7 +30,7 @@ layout: redesign
     </div>
   </section>
 
-  <section class="component grey">
+  <section class="component lightgrey">
     <div class="container">
       <h2 class="large anchored">Overview of endpoints</h2>
 
@@ -76,7 +76,7 @@ layout: redesign
     {% endif %}
 
     {% for method in resource.methods %}
-    <section class="component {% cycle 'white', 'grey' %}">
+    <section class="component {% cycle 'white', 'lightgrey' %}">
       <div class="container">
 
         <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
