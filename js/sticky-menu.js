@@ -31,21 +31,14 @@ window.scrollToExact = function(elementId) {
   scrollToHeight($elementToScrollTo.offset().top);
 }
 
-window.scrollToWithSticky = function(elementId) {
+window.scrollToWithSticky = function(elementId, offset) {
   var hashElementId = elementId.indexOf('#') === 0 ? elementId : '#' + elementId;
   var $elementToScrollTo = $(hashElementId);
   if($elementToScrollTo.length === 0) { return; }
 
-  scrollToHeight($elementToScrollTo.offset().top - $('.sticky-nav').height() + 1);
+
+  scrollToHeight($elementToScrollTo.offset().top - $('.sticky-nav').height() + (offset ? offset : 0));
 }
-
-$(window).on('load', function(){ // running after load so everything else runs more smoothly
-  var $scrollToContainer = $('.js-scroll-to'),
-      id = $scrollToContainer.data('scroll-to');
-
-  if($scrollToContainer.length === 0 || !id || id.replace(/^\s+|\s+$/g, '').length === 0) { return; }
-  scrollToWithSticky(id);
-});
 
 
 /**

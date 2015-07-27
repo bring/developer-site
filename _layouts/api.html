@@ -177,6 +177,13 @@ layout: redesign
     {% endfor %} <!-- /for method in methods -->
   {% endfor %} <!-- /for resource in resources -->
 
+  <script>
+    $(document).on('ready', function() {
+      if (window.location.hash) {
+        window.scrollToWithSticky(window.location.hash.substr(1), -40);
+      }
+    });
+  </script
 </article>
 
 
