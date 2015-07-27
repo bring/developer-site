@@ -16,11 +16,7 @@ layout: redesign
     <ul class="nav nav-tabs">
       <li class="active"><a href="#api-documentation" class="local"><span data-hover="Documentation">Documentation</span></a></li>
       {% for resource in page.api.resources %}
-        {% for method in resource.methods %}
-          {% assign link_name = method[1].method | append:' ' | append: resource.display_name %}
-          {% assign link_id = link_name | slugify %}
-          <li><a href="#{{ link_id }}" class="local"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
-        {% endfor %}
+        <li><a href="#{{ resource.display_name | slugify }}" class="local"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
       {% endfor %}
     </ul>
   </div>
@@ -83,7 +79,7 @@ layout: redesign
     <section class="component {% cycle 'white', 'grey' %}">
       <div class="container">
 
-        <h2 class="large anchored">{{ method[1].method }} {{ resource.display_name }}</h2>
+        <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
 
         {% if resource.description %}
         {{ resource.description | markdownify }}
