@@ -195,19 +195,23 @@ strong, em {
 
 table {
     width: 100%;
+    margin: 4em 0;
 
     th, td {
-        padding: 20px 19px;
+        padding: 1em;
         line-height: 1.5;
         vertical-align: top;
         font-family: 'FoundryMonoline';
     }
     th {
-        background-color: $grey-dark-1;
-        color: $white;
+        background-color: $grey-light-7;
+        color: $grey-dark-1;
         @include font-size($font-size-table-th-desktop);
         font-weight: bold;
         text-align: left;
+        text-transform: uppercase;
+        //border-top: 2px solid $grey-light-3;
+        //border-bottom: 2px solid $grey-light-3;
     }
     td {
         @include font-size($font-size-table-td-desktop);
@@ -217,6 +221,21 @@ table {
         td {
             border-bottom: 0;  
         }
+    }
+
+    &.linked-rows {
+      tr:hover {
+        background-color: $grey-light-7;
+      }
+      td {
+        padding: 0;
+        a {
+          display: block;
+          padding: 1em;
+          font-family: 'FoundryMonoline';
+          color: $grey-dark-1;
+        }
+      }
     }
 }
 
@@ -261,8 +280,7 @@ pre {
   @include font-size(14);
   padding: 10px;
   overflow:auto;
-  border-radius: 3px;
-  background-color: $grey-light-6;
+  background-color: $grey-light-7;
   color: $grey-dark-1;
   margin: 2em 0;
 }

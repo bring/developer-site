@@ -135,10 +135,31 @@ section.component {
 
 	&.white {
 		background-color: $white;
+        table {
+            td {
+                border-color: $grey-light-7;
+            }
+        }
 	}
 
 	&.lightgrey {
 		background-color: $grey-light-7;
+        table {
+            th {
+                background-color: rgba(255,255,255, 0.8);
+            }
+            td {
+                border-color: rgba(255,255,255, 0.5);
+            }
+            &.linked-rows {
+                tr:hover {
+                    background-color: rgba(255,255,255, 0.5);
+                }
+            }
+        }
+        pre {
+            background-color: rgba(255,255,255, 0.8);
+        }
 	}
 
     &.green {
@@ -148,7 +169,7 @@ section.component {
 				color: $grey-dark-3;
 			}
 			th {
-				background-color: rgba(255,255,255, 0.6);
+				//background-color: rgba(255,255,255, 0.6);
 			}
 			td {
 				border-color: rgba(255,255,255, 0.3);
