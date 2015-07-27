@@ -140,34 +140,6 @@ layout: redesign
           </table>
         {% endif %}
 
-        <h3>API explorer</h3>
-
-        <form action="{{ resource.absolute_uri }}" method="{{ method.method }}">
-
-        {% if resource.secured_by.size > 0 %}
-          {% assign auth_required = true %}
-          {% for security in resource.secured_by %}
-            {% if !security %}
-              {% assign auth_required = false %}
-            {% endif %}
-          {% endfor %}
-          {% for security in resource.secured_by %}
-            {% if security %}
-              <h3>Authentication{% if auth_required == false %} (optional){% endif %}</h3>
-              {% assign sec_scheme = page.api.security_schemes[security] %}
-              {% for header in sec_scheme.described_by.headers %}
-                <div class="form-row form-cell">
-                <label class="separator">{{ header[1].name }}
-                  <input type="text" name="header[{{ header[1].name }}]" placeholder="{{ header[1].example }}" />
-                </label>
-                </div>
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
-        {% endif %} <!-- if secured_by -->
-
-        </form>
-
       </div> <!-- /container -->
     </section>
     {% endfor %} <!-- /for method in methods -->
