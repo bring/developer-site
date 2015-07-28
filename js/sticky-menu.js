@@ -49,7 +49,10 @@ $(window).on('load', function() {
   // for performance, dont try to initialize any more unless there is a sticky-nav on the page
   if($('.sticky-nav').length === 0) { return; } 
 
-  $('body').scrollspy({ target: '.sticky-nav', offset: $('.sticky-nav .nav-tabs').outerHeight(true) });
+  $('body').scrollspy({
+    target: '.sticky-nav',
+    offset: $('.sticky-nav .nav-tabs').outerHeight(true) + 50
+  });
 
   $('.sticky-nav').waypoint(function(direction) {
       if (direction === 'down') {
