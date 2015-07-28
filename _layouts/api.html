@@ -14,7 +14,7 @@ layout: redesign
 
   <div class="nav-wrapper sticky-nav">
     <ul class="nav nav-tabs">
-      <li class="active"><a href="#api-documentation" class="local"><span data-hover="Documentation">Documentation</span></a></li>
+      <li><a href="#api-documentation" class="local"><span data-hover="Documentation">Documentation</span></a></li>
       {% for resource in page.api.resources %}
         <li><a href="#{{ resource.display_name | slugify }}" class="local"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
       {% endfor %}
@@ -88,6 +88,13 @@ layout: redesign
         <h3>URL</h3>
         <pre>{{ absoluteUriTitle }}</pre>
 
+        {% comment %}
+        ----------------------------------------
+        --
+        -- List all query parameters
+        --
+        ----------------------------------------
+        {% endcomment %}
         {% if method[1].query_parameters.size > 0 %}
           <h3>Query Parameters</h3>
           <table>
@@ -114,6 +121,13 @@ layout: redesign
           </table>
         {% endif %}
 
+        {% comment %}
+        ----------------------------------------
+        --
+        -- List all headers
+        --
+        ----------------------------------------
+        {% endcomment %}
         {% if method[1].headers.size > 0 %}
           <h3>Headers</h3>
           <table>
@@ -140,14 +154,49 @@ layout: redesign
           </table>
         {% endif %}
 
+        {% comment %}
+        ----------------------------------------
+        --
+        -- List request body
+        --
+        ----------------------------------------
+        {% endcomment %}
+        {% if method[1].bodies.size > 0 %}
+          <h3>Request body</h3>
+
+          {% for body in method[1].bodies %}
+
+            {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+
+            {% comment %}
+            <h4>{{ body[1].media_type | mediatype_displayname }}</h4>
+
+            {% if body[1].schema %} 
+              <h5>Schema</h5>
+              {% if hljs_lang == 'xml' %}
+                <pre><code class="{{ hljs_lang }}">{{ body[1].schema | xml_escape}}</code></pre>
+              {% else %}
+                <pre><code class="{{ hljs_lang }}">{{ body[1].schema }}</code></pre>
+              {% endif %}
+            {% endif %}
+            {% endcomment %}
+
+
+          {% endfor %}
+
+          </ul>
+        {% endif %}
+
       </div> <!-- /container -->
     </section>
-    {% endfor %} <!-- /for method in methods -->
-  {% endfor %} <!-- /for resource in resources -->
+    {% endfor %}{% comment %} endfor method in methods {% endcomment %}
+  {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
 
   <script>
     $(document).on('ready', function() {
       if (window.location.hash) {
+        // scroll with offset on page load, so the header isn't hidden
+        // behind the sticky navbar
         window.scrollToWithSticky(window.location.hash.substr(1), -40);
       }
     });
