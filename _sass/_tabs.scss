@@ -148,14 +148,14 @@ div.easycruit-navigation {
                 padding: 10px 15px 6px;
                 margin: 0;
 
-              span::before {
-                display: none;
-              }
+                span::before {
+                    display: none;
+                }
 
-              &:hover span,
-              &:focus span {
-                transform: none;
-              }
+                &:hover span,
+                &:focus span {
+                    transform: none;
+                }
 
             }
         }
