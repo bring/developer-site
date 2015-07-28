@@ -12,6 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
 
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" media="screen" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/highlight/default.css" media="screen" />
     
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 
@@ -58,7 +59,8 @@
     </div>
   </footer>
 
-  <script src="{{ site.baseurl }}/js/anchor.min.js" onload="window.anchors.options = { placement: 'left' }; window.anchors.add('.anchored')"></script>
+  <script async src="{{ site.baseurl }}/js/anchor.min.js" onload="window.anchors.options = { placement: 'left' }; window.anchors.add('.anchored')"></script>
+  <script async src="{{ site.baseurl }}/js/highlight.pack.js" onload="window.hljs.initHighlightingOnLoad()"></script>
 </body>
 
 </html>
