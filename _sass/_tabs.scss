@@ -1,6 +1,6 @@
 // Sticky nav tabs
 
-.nav-tabs {
+.sticky-nav .nav-tabs {
 	background-color: $white;
 	border-bottom: 1px solid $grey-light-5;
 	display: block;
@@ -139,7 +139,7 @@ div.easycruit-navigation {
 }
 
 @include tablet {
-	.nav-tabs {
+	.sticky-nav .nav-tabs {
 		li {
 			padding-top: 5px;
 			padding-bottom: 5px;
