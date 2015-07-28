@@ -77,4 +77,40 @@ module Jekyll
     end
 
   end
+
+  module ApiFilters
+
+    def mediatype_displayname(input)
+      case input
+      when /application\/json/i
+        "JSON"
+      when /application\/xml/i
+        "XML"
+      when /text\/xml/i
+        "XML"
+      when /application\/soap/i
+        "SOAP"
+      else
+        input
+      end
+    end
+
+    def mediatype_highlight_lang(input)
+      case input
+      when /application\/json/i
+        "json"
+      when /application\/xml/i
+        "xml"
+      when /text\/xml/i
+        "xml"
+      when /application\/soap/i
+        "xml"
+      else
+        input
+      end
+    end
+
+  end
 end
+
+Liquid::Template.register_filter(Jekyll::ApiFilters)
