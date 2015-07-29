@@ -283,6 +283,12 @@ pre {
   background-color: $grey-light-7;
   color: $grey-dark-1;
   margin: 2em 0;
+
+  &.highlight {
+    padding: 0;
+    border: 0;
+    @include font-size(12);
+  }
 }
 
 @include tablet {
