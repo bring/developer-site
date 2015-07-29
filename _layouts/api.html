@@ -164,27 +164,26 @@ layout: redesign
         {% if method[1].bodies.size > 0 %}
           <h3>Request body</h3>
 
+          <ul class="tabs" role="tablist">
           {% for body in method[1].bodies %}
-
-            {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
-
-            {% comment %}
-            <h4>{{ body[1].media_type | mediatype_displayname }}</h4>
-
-            {% if body[1].schema %} 
-              <h5>Schema</h5>
-              {% if hljs_lang == 'xml' %}
-                <pre><code class="{{ hljs_lang }}">{{ body[1].schema | xml_escape}}</code></pre>
-              {% else %}
-                <pre><code class="{{ hljs_lang }}">{{ body[1].schema }}</code></pre>
-              {% endif %}
-            {% endif %}
-            {% endcomment %}
-
-
+            {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+            {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
+            <li role="presentation"{% if forloop.first %} class="active"{% endif %}><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" data-toggle="tab">{{ mt_display_name }}</a></li>
           {% endfor %}
-
-          </ul>
+          </ul><div class="tab-content">
+          {% for body in method[1].bodies %}
+            {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+            {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+            {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
+            <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+              {% if hljs_lang == 'xml' %}
+              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+              {% else %}
+              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+              {% endif %}
+            </div>
+          {% endfor %}
+          </div>
         {% endif %}
 
       </div> <!-- /container -->
