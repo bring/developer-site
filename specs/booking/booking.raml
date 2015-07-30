@@ -65,6 +65,7 @@ documentation:
     description: List available customers and products
     responses:
       200:
+        displayName: List of available customers and products
         body:
           application/json:
             example: !include examples/customers.json
@@ -99,7 +100,8 @@ documentation:
         example: !include examples/basicRequest.xml
     responses:
       200:
-        description: A label
+        displayName: Successful booking
+        description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
         body:
           application/json:
             example: !include examples/successfulResponse.json
@@ -120,6 +122,7 @@ documentation:
         example: !include examples/soap_response_booking.xml
     responses:
       200:
+        displayName: Successful booking
         body:
           application/soap+xml:
             example: !include examples/soap_response_booking.xml
