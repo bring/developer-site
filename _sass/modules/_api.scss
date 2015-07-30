@@ -51,7 +51,7 @@ article.api {
             p {
                 color: $grey-dark-1;
                 @include font-size($font-size-ingress-desktop);
-          font-weight: normal;
+                font-weight: normal;
                 font-family: 'FoundryMonoline';
                 line-height: 1.5;
                 margin-bottom: 10px;
