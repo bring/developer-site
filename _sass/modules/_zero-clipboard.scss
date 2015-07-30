@@ -1,0 +1,29 @@
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+
+    .btn-clipboard {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        padding: 5px 6px 4px 7px;
+        margin: 0;
+        cursor: pointer;
+        color: $grey-light-1;
+        border-bottom: 1px solid $grey-light-3;
+        border-left: 1px solid $grey-light-3;
+        border-bottom-left-radius: 4px;
+
+        font-family: FoundryMonolineMedium;
+        @include font-size(12);
+
+        &:hover,
+        &.zeroclipboard-is-hover {
+            color: $white;
+            background-color: $green-1;
+            border-color: $white;
+        }
+    }
+}
