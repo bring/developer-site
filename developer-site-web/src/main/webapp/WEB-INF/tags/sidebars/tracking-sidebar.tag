@@ -8,6 +8,7 @@
         <li><a onclick="showBookmark('reference',           '/api/trackingapi.html');">Reference</a></li>
         <li><a onclick="showBookmark('HTU',                 '/api/trackingapi.html');">How to Use</a></li>
         <li><a onclick="showBookmark('additionalExamples',  '/api/trackingapi.html');">Additional Examples</a></li>
+        <li><a onclick="showBookmark('loggedInTracking',    '/api/trackingapi.html');">Logged in tracking</a></li>
     </ol>
 
 </div>

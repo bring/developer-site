@@ -55,7 +55,17 @@
        examples are recommended to use for integration testing.</p>
     <tracking:additional_examples_xml/>
     <tracking:additional_examples_json/>
-</div>
+
+    <h2><a name="loggedInTracking"></a>
+        Logged in tracking</h2>
+    <p>If you are a user of MyBring you can logg in with your username and api-key to performe tracking.
+        The urls and request are the same but you have to add your username and API-Key as header.
+    The API-Key is found in http://www.mybring.com log in, go to our user profile and select tab My API-Key</p>
+
+    <tracking:loggedInTracking_xml/>
+    <tracking:loggedInTracking_json/>
+ </div>
+
 </div>
 </div>
 
@@ -64,6 +74,7 @@
         <sidebar:tracking-sidebar />
     </div>
 </div>
+
 
 </div>
 </section>
