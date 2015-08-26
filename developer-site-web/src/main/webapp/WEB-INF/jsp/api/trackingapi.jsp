@@ -86,8 +86,6 @@
          </tbody>
      </table>
 
-     <tracking:loggedInTracking_xml/>
-    <tracking:loggedInTracking_json/>
  </div>
 
 </div>
