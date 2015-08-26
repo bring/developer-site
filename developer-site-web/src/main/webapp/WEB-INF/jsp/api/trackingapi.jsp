@@ -55,7 +55,39 @@
        examples are recommended to use for integration testing.</p>
     <tracking:additional_examples_xml/>
     <tracking:additional_examples_json/>
-</div>
+
+    <h2><a name="loggedInTracking"></a>
+        Logged in tracking</h2>
+    <p>If you are a user of MyBring you can logg in with your username and api-key to performe tracking.
+        Then you will get more specified information about your parcels. And do not have the same limmitation
+        of number of requests in a given time frame.<br>
+        The urls and request are the same but you have to add your username and API-Key as header.
+        <a href="http://developer.bring.com/additionalresources/getting-api-keys.html"> How to get an API-KEY </a></p>
+
+     <table>
+         <thead>
+         <tr>
+             <th>Header name</th>
+             <th>Example header value</th>
+             <th>Comment</th>
+         </tr>
+         </thead>
+         <tbody>
+         <tr>
+             <td>X-MyBring-API-Uid</td>
+             <td>example@customer.com</td>
+             <td>This is the Mybring login ID.</td>
+         </tr>
+         <tr>
+             <td>X-MyBring-API-Key</td>
+             <td>1234abc-abcd-1234-5678-abcd1234abcd</td>
+             <td>This is the API key of the Mybring user.</td>
+         </tr>
+         </tbody>
+     </table>
+
+ </div>
+
 </div>
 </div>
 
@@ -64,6 +96,7 @@
         <sidebar:tracking-sidebar />
     </div>
 </div>
+
 
 </div>
 </section>
