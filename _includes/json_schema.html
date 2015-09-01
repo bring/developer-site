@@ -1,0 +1,12 @@
+<table class="schema">
+  <thead>
+    <th>Request body data</th>
+    <th>Type</th>
+    <th>Description</th>
+  </thead>
+  {% for prop in include.schema.properties %}
+    {% assign property_name = prop[0] %}
+    {% assign property = prop[1] %}
+    {% include json_schema_row.html property_name=property_name property=property %}
+  {% endfor %}
+</table>
