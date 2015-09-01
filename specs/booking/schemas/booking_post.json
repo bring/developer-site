@@ -16,6 +16,7 @@
       "description": "List of consignments to book",
       "items": {
         "type": "object",
+        "description": "Consignment object",
         "properties": {
           "shippingDateTime": {
             "type": "string",

@@ -1,0 +1,27 @@
+{% assign property_name = include.property_name %}
+{% assign property_type = include.property.type %}
+{% assign property_desc = include.property.description %}
+<tr>
+  <td><code>{{ property_name }}</code></td>
+  <td><code>{{ property_type }}{% if property_type == 'array' %} of {{ include.property.items.description }} {% endif %}</code></td>
+  <td><i>{% if include.property.required %}Required{% else %}Optional{% endif %}</i> {{ property_desc }}</td>
+</tr>
+{% if property_type == 'array' %}
+  {% assign array_name = property_name | append: '.' | append: 'items' %}
+  {% assign array_element = include.property.items %}
+  {% include json_schema_row.html property_name=array_name property=array_element %}
+{% elsif property_type == 'object' %}
+  <tr>
+    <td>foo</td>
+    <td>foo</td>
+    <td>foo</td>
+  </tr>
+  {% comment %}
+  {% for sub_property in include.property.properties %}
+    {% assign obj_name = property_name | append: '.' | append: sub_property[0] %}
+    {% assign obj_element = sub_property[1] %}
+    {% include json_schema_row.html property_name=obj_name property=obj_element %}
+  {% endfor %}
+  {% endcomment %}
+{% endif %}
+

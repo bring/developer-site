@@ -91,6 +91,7 @@ layout: redesign
         {% comment %}
         ----------------------------------------
         --
+        -- For each endpoint:
         -- List all query parameters
         --
         ----------------------------------------
@@ -124,6 +125,7 @@ layout: redesign
         {% comment %}
         ----------------------------------------
         --
+        -- For each endpoint:
         -- List all headers
         --
         ----------------------------------------
@@ -157,6 +159,7 @@ layout: redesign
         {% comment %}
         ----------------------------------------
         --
+        -- For each endpoint:
         -- Request
         --
         ----------------------------------------
@@ -177,11 +180,18 @@ layout: redesign
             {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
             {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
             <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+              <div class="content">
               {% if hljs_lang == 'xml' %}
-              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
-              {% else %}
-              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+              {% elsif hljs_lang == 'json' %}
+                {% if body[1].schema %}
+                  {% assign schema = body[1].schema | json2hash %}
+                  {% include json_schema.html schema=schema %}
+                {% endif %}
+                <h3>Example</h3>
+                <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
               {% endif %}
+              </div>
             </div>
           {% endfor %}
           </div>
@@ -190,6 +200,7 @@ layout: redesign
         {% comment %}
         ----------------------------------------
         --
+        -- For each endpoint:
         -- Response
         --
         ----------------------------------------
@@ -197,7 +208,9 @@ layout: redesign
         <h3>Response</h3>
         {% for response in method[1].responses %}
           <h4>{{ response[1].display_name }} ({{ response[1].status_code }})</h4>
-          {{ response[1].description | markdownify }}
+          {% if response[1].description %}
+            {{ response[1].description | markdownify }}
+          {% endif %}
 
           {% if response[1].bodies.size > 0 %}
             <ul class="tabs" role="tablist">
