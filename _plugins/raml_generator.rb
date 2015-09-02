@@ -1,5 +1,6 @@
 require 'raml_parser'
 require 'jekyll'
+require 'json'
 
 module Jekyll
 
@@ -108,6 +109,10 @@ module Jekyll
       else
         input
       end
+    end
+
+    def json2hash(input)
+      JSON.parse(input)
     end
 
   end
