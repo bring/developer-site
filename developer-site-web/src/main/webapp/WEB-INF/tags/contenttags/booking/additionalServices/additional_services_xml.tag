@@ -181,6 +181,24 @@
         </div>
       </li>
       <li>
+          <a href="#" class="menu-item"> Select Pickup Point Finland <span class="arrow"></span> </a>
+
+          <div class="content-box">
+              <additionalServices:selectPickupPoint_finland/>
+              <div data-tab="xml" class="tab">
+                  <div class="api-call">
+                      <p>Example Request:</p>
+                      <a target="_blank" class="request"
+                         href="https://www.bring.no/booking/api/bookingExamples/basicPickupPointFIRequest.xml"
+                         data-internal="/proxy/booking/api/bookingExamples/basicPickupPointFIRequest.xml">
+                          https://www.bring.no/booking/api/bookingExamples/basicPickupPointFIRequest.xml
+                      </a>
+                      <pre class="code-box xml response delay-snippet"></pre>
+                  </div>
+              </div>
+          </div>
+      </li>
+      <li>
         <a href="#" class="menu-item"> Express <span class="arrow"></span> </a>
 
         <div class="content-box">
