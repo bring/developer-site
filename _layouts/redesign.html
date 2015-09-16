@@ -11,7 +11,8 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" media="screen" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/v1.css" media="screen" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/shame.css" media="screen" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/highlight/github-gist.css" media="screen" />
     
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
@@ -24,11 +25,10 @@
   </head>
 
   <body>
-    <div id="head-container">
-      <div class="head-wrap">
-        <header role="banner" class="no-search">
-          <div class="noindex">
-            <a class="logo" href="{{ site.baseurl }}/"><img src="http://www.bring.no/_public/themes/bring-new/img/bring-logo-hi.png?_ts=14853e38608" alt="Bring" width="101" height="39"></img><span>developer</span></a>
+    <div class="page-row">
+      <div class="page-header">  
+          <div class="page-content-container">
+            <a class="logo-bringdev" href="{{ site.baseurl }}/"><img src="http://www.bring.no/_public/themes/bring-new/img/bring-logo-hi.png?_ts=14853e38608" alt="Bring" width="101" height="39"></img><span>developer</span></a>
             <nav role="navigation">
               <a href="{{ site.baseurl }}/api/">API</a>
               <a href="{{ site.baseurl }}/api/">EDI</a>
@@ -36,28 +36,32 @@
               <a href="{{ site.baseurl }}/support/">Support</a>
               <a class="toggle-menu" href="#" aria-haspopup="true" aria-owns="dropdown-menu" aria-controls="dropdown-menu" aria-expanded="false">Menu<span class="hamburger"><span class="wat"></span></span></a>
             </nav>
-          </div>
-        </header>
-      </div>
-    </div>
-
-  <div id="container">
-{{ content }}
-  </div>
-
-  <footer class="sitefooter" role="contentinfo">
-    <div class="noindex">
-      <div class="container">
-        <div class="bottom">
-          <p>
-            (c) 2015 Posten Norge AS
-            - <a href="http://www.bring.com/privacy-policy">Privacy policy</a>
-            - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
-          </p>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="page-row-expanded">
+      <div class="page-body">  
+        <div class="page-content-container">
+{{ content }}
+        </div>
+      </div>
+    </div>
+    <div class="page-row">
+      <footer class="sitefooter" role="contentinfo">
+          <div class="noindex">
+              <div class="container">
+                  <div class="bottom">
+                      <p>(C) 2015 Posten Norge AS
+                          <span class="nowrap">
+                              - <a href="http://www.bring.com/privacy-policy">Personvern og sikkerhet</a>
+                              - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
+                          </span>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+    </div>
 
   <script async src="{{ site.baseurl }}/js/anchor.min.js" onload="window.anchors.options = { placement: 'left' }; window.anchors.add('.anchored')"></script>
   <script async src="{{ site.baseurl }}/js/highlight.pack.js" onload="window.hljs.initHighlightingOnLoad()"></script>
