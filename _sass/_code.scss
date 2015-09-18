@@ -1,0 +1,27 @@
+
+code {
+    white-space: nowrap;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    @include font-size(14);
+}
+
+pre code {
+    white-space: pre;
+}
+
+pre {
+    border: 1px solid $grey-light-3;
+    font-family: Consolas, 'Liberation Mono', Courier, monospace;
+    @include font-size(14);
+    padding: 10px;
+    overflow:auto;
+    background-color: $grey-light-7;
+    color: $grey-dark-1;
+    margin: 0;
+
+    &.highlight {
+        padding: 0;
+        border: 0;
+        @include font-size(12);
+    }
+}
