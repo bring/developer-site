@@ -21,39 +21,13 @@
   }
 }
 
-@mixin flexbox() {
-	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-	display: -ms-flexbox;      /* TWEENER - IE 10 */
-	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-}
+@mixin font-size($size) {
+  font-size: #{$size}px;
+  font-size: #{$size/10}rem; // No use for rems at the moment AFAIK since base font size is always 10px.
 
-@mixin wavy-border($color){
-  // TODO: some fallback stuff for IE, and also add all the browser prefixes
-  background:
-    linear-gradient(
-      45deg, transparent 33.333%,
-      $color 33.333%, $color 66.667%,
-      transparent 66.667%),
-    linear-gradient(
-      -45deg, transparent 33.333%,
-      $color 33.333%, $color 66.667%,
-      transparent 66.667%);
-  background-size: 20px 40px;
-}
-
-@mixin wavy-border-opposite($color){
-  // TODO: some fallback stuff for IE, and also add all the browser prefixes
-  background: linear-gradient(-45deg, transparent 75%, $color 75%) 0 50%, linear-gradient( 45deg, transparent 75%, $color 75%) 0 50%;
-  background-repeat: repeat-x;
-  background-size: 30px 30px, 30px 30px;
-  top: 0;
-}
-
-@mixin wavy-section($color){
-  background-color: $color;
-  &:before {
-    @include wavy-border($color);
-  }
+  // Our letter spacing on all fonts should be a bit tighter than default
+  // except when uppercased. Then we want to go back to normal
+  // so when using this mixin within a class, you need to reset letterspacing 
+  // after with letter-spacing: 0em;
+  letter-spacing: -0.02em;
 }
