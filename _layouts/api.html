@@ -166,7 +166,11 @@ layout: redesign
         {% endcomment %}
         {% if method[1].bodies.size > 0 %}
           <h3>Request body</h3>
+          {% comment %}
 
+          Tabs for JSON, XML, SOAP
+
+          {% endcomment %}
           <ul class="tabs" role="tablist">
           {% for body in method[1].bodies %}
             {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
@@ -184,10 +188,6 @@ layout: redesign
               {% if hljs_lang == 'xml' %}
                 <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
               {% elsif hljs_lang == 'json' %}
-                {% if body[1].schema %}
-                  {% assign schema = body[1].schema | json2hash %}
-                  {% include json_schema.html schema=schema %}
-                {% endif %}
                 <h3>Example</h3>
                 <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
               {% endif %}
@@ -211,7 +211,11 @@ layout: redesign
           {% if response[1].description %}
             {{ response[1].description | markdownify }}
           {% endif %}
+          {% comment %}
 
+          Tabs for JSON, XML, SOAP
+
+          {% endcomment %}
           {% if response[1].bodies.size > 0 %}
             <ul class="tabs" role="tablist">
             {% for body in response[1].bodies %}
