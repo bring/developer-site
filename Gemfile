@@ -6,10 +6,11 @@ source 'https://rubygems.org'
 
 gem "net-ssh", '~> 2.0.23'
 gem "net-scp", '~> 1.0.4'
-gem "thor", '~> 0.14.2'
-gem "nokogiri", '~> 1.4.4'
+gem "thor", '~> 0.18'
+gem "nokogiri", '~> 1.6.5'
 gem "rake", "~> 10.0.4"
-gem 'typhoeus', '~> 0.2.4'
+gem 'typhoeus', '~> 0.6.9'
 gem "rspec", '~> 2.0.0.beta.22'
 gem 'rufus-scheduler'
 gem "aws-sdk", "~> 1.6.9"
+gem 'deploy-scripts', git: 'git@github.com:bring/deploy-scripts.git'
