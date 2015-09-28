@@ -452,6 +452,15 @@
       <td>Yes, causes lower base package price</td>
     </tr>
 
+    <tr>
+        <td><a target="_blank"
+               href="https://api.bring.com/shippingguide/products/CARGO/price.xml?clientUrl=insertYourClientUrlHere&weightInGrams=150000&amp;length=100&amp;width=100&amp;height=100&amp;from=0150&amp;to=0484&amp;additional=EVE_DELIVERY">EVE_DELIVERY</a>
+        </td>
+        <td>Evening delivery</td>
+        <td>CARGO, CARGO_GROUPAGE</td>
+        <td>No, is a stand-alone price</td>
+    </tr>
+
     </tbody>
 </table>
 
