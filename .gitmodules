@@ -1,3 +1,0 @@
-[submodule "deploy-scripts"]
-	path = deploy-scripts
-	url = git@github.com:bring/deploy-scripts.git
