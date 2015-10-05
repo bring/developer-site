@@ -10,6 +10,17 @@
   max-width: 40em;
 }
 
+// url quickfix
+
+.page-body .icon-box-button {
+	background-image: url('../img/arrow-grey-right-lo.png');
+}
+
+.page-body .icon-box-button:hover, 
+.page-body .icon-box-button:active, 
+.page-body .icon-box-button:focus {
+	background-image: url('../img/arrow-green-right-lo.png');
+}
 
 // direct overrides of the web guidelines
 
@@ -20,6 +31,3 @@
 .page-header .page-content-container {
 	margin-bottom: 0;
 }
-
-
-
