@@ -1,6 +1,8 @@
 ---
 layout: redesign
 ---
+
+
 <article class="api {{ page.api.title | remove:'API' | slugify }}">
 
   <header class="banner light overlay-100 bottom">
@@ -11,6 +13,9 @@ layout: redesign
       </div>
     </div>
   </header>
+
+  <div class="page-body">
+    <div class="page-content-container">
 
   <div class="nav-wrapper sticky-nav">
     <ul class="nav nav-tabs">
@@ -245,16 +250,12 @@ layout: redesign
     {% endfor %}{% comment %} endfor method in methods {% endcomment %}
   {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
 
-  <script>
-    $(document).on('ready', function() {
-      if (window.location.hash) {
-        // scroll with offset on page load, so the header isn't hidden
-        // behind the sticky navbar
-        window.scrollToWithSticky(window.location.hash.substr(1), -40);
-      }
-    });
-  </script>
+    </div>
+  </div>
+
 </article>
+
+
 <script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
 <script>
   function initZeroClipBoard() {
