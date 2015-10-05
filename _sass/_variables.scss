@@ -2,6 +2,44 @@
 // COLORS
 //
 
+
+// white
+$white: #ffffff;
+
+// Light background for disabled elements on page background
+$background-light: #fcfcfc;
+
+// Page background and info boxes on wihte
+$background-grey: #f2f2f3;
+
+// Secondary background color, inactive elements
+$background-dark: #dbdbdb;
+
+// Input box borders, placeholder paragraph
+$medium-grey: #b2b2b2;
+
+// Text on inactive elements
+$medium-grey-text: #a7a7a7;
+
+// Top menu, older interactive elements
+$menu-grey: #717074;
+
+// Headers, paragraphs, table top, footer, new interactive elements
+$dark-grey: #414141;
+
+// Everything green
+$bring-green: #7bc144;
+
+// Links
+$link-blue: #0088b5;
+
+// Graphical elements related to warning messages
+$warning-orange: #ffa400;
+
+// Text and borders related to validation error
+$error-red: #e61919;
+
+
 $grey-light-hover: #999;
 
 // Almost 50 shades of grey. Try to consolidate with designer
