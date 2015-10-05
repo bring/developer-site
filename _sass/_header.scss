@@ -1,0 +1,57 @@
+
+.bringdev-header {
+  background-color: #fff;
+}
+
+.bringdev-content-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bringdev-logo {
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.bringdev-logo img {
+  position: relative;
+  top: 7px;
+  margin-right: 5px;
+}
+
+.bringdev-logo span {
+  display: inline-block;
+  font-family: 'FoundryMonoline';
+  font-weight: normal;
+  font-size: 30px;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+  color: #7bc144;
+}
+
+.bringdev-menu {
+  padding-top: 30px;
+  margin-bottom: 20px;
+}
+
+.bringdev-menu li {
+  display: inline-block;
+}
+
+.bringdev-menu a {
+  color: #444444;
+  font-size: 14px;
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  font-family: 'FoundryMonoline';
+  font-weight: bold;
+  padding: 22px 0 18px;
+  margin-left: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
