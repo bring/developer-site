@@ -14,23 +14,34 @@ layout: redesign
   <div class="page-body">
     <div class="page-content-container">
 
-  <div class="nav-wrapper sticky-nav">
-    <ul class="nav nav-tabs">
-      <li><a href="#api-documentation" class="local"><span data-hover="Documentation">Documentation</span></a></li>
-      {% for resource in page.api.resources %}
-        <li><a href="#{{ resource.display_name | slugify }}" class="local"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
-      {% endfor %}
-    </ul>
-  </div>
+      <div class="container">
+        <div class="gridline">
+          <div class="col-3-4">
+            <section id="api-documentation">
+              {% for chapter in page.api.documentation %}
+              <h2 class="anchored">{{ chapter.title }}</h2>
+              {{ chapter.content | markdownify }}
+              {% endfor %}
+            </section>
+          </div>
+          <div class="col-1-4">
+            <div class="nav-wrapper sticky-nav">
+              <ul class="nav nav-tabs">
+                <li>
+                  <a href="{{ page.url }}">{{ page.api.title }}</a>
+                  <ul>
+                    <li><a href="#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
+                    {% for resource in page.api.resources %}
+                      <li><a href="{{ page.url }}#{{ resource.display_name | slugify }}" class="local"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <section class="component white" id="api-documentation">
-    <div class="container">
-      {% for chapter in page.api.documentation %}
-      <h2 class="anchored">{{ chapter.title }}</h2>
-      {{ chapter.content | markdownify }}
-      {% endfor %}
-    </div>
-  </section>
 
   <section class="component lightgrey">
     <div class="container">
