@@ -2,22 +2,37 @@
 // that need attention later 
 
 .tmp-banner {
-  max-width: 100%;
-  margin-bottom: 10px;
+    max-width: 100%;
+    margin-bottom: 10px;
 }
 
 .tmp-linelengtminimizer {
-  max-width: 40em;
+    max-width: 40em;
+}
+
+
+
+// WIP new banner with text options
+
+.bringdevbanner {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.bringdevbanner-img img {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 // url quickfix
 
 .page-body .icon-box-button {
-	background-image: url('../img/arrow-grey-right-lo.png');
+    background-image: url('../img/arrow-grey-right-lo.png');
 }
 
 .page-body .icon-box-button:hover, 
 .page-body .icon-box-button:active, 
 .page-body .icon-box-button:focus {
-	background-image: url('../img/arrow-green-right-lo.png');
+    background-image: url('../img/arrow-green-right-lo.png');
 }
