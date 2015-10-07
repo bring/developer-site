@@ -4,13 +4,16 @@ article.api {
     &.booking header.banner {
         background-image: url('../img/megaheader/28-A_9328-final.jpg');
         background-position: 0 -100px, center;
-        background-position: 0 0, center;
     }
 
     &.tracking header.banner {
         background-image: url('../img/megaheader/BRING_EXPRESS_QUICKPACK_CAR_PLANE3-kopi.jpg');
         background-position: 0 -100px, center;
-        background-position: 0 0, center;
+    }
+
+    &.shipping-guide header.banner {
+        background-image: url('../img/megaheader/1071155.jpg');
+        background-position: 0 -100px, center;
     }
 
     header.banner {
