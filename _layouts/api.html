@@ -1,8 +1,6 @@
 ---
 layout: redesign
 ---
-
-
 <article class="api {{ page.api.title | remove:'API' | slugify }}">
 
   <header class="banner">
@@ -23,6 +21,216 @@ layout: redesign
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
+            <section>
+              <h2 class="large anchored">Overview of endpoints</h2>
+
+              <h3>Base URL</h3>
+              <pre>{{ page.api.base_uri }}</pre>
+
+              <table class="linked-rows">
+                <thead>
+                  <th>Method</th>
+                  <th>Endpoint</th>
+                  <th>Usage</th>
+                </thead>
+                {% for resource in page.api.resources %}
+                  {% for method in resource.methods %}
+                    <tr>
+                      <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].method }}</a></td>
+                      <td><a href="#{{ resource.display_name | slugify }}">{{ resource.relative_uri }}</a></td>
+                      <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].description }}</a></td>
+                    </tr>
+                  {% endfor %}
+                {% endfor %}
+              </table>
+            </section>
+
+
+            {% for resource in page.api.resources %}
+
+              {% if resource.uri_parameters contains 'mediaTypeExtension' %}
+                {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
+                  {% assign absolute_extension = resource.absolute_uri | replace:'{mediaTypeExtension}',extension %}
+                  {% assign relative_extension = resource.relative_uri | replace:'{mediaTypeExtension}',extension %}
+                  {% unless forloop.first %}
+                    {% assign absoluteUriTitle = absoluteUriTitle | append: '<br/>'  %}
+                    {% assign relativeUriTitle = relativeUriTitle | append: ' or '  %}
+                  {% endunless %}
+                  {% assign absoluteUriTitle = absoluteUriTitle | append: absolute_extension  %}
+                  {% assign relativeUriTitle = relativeUriTitle | append: relative_extension  %}
+                {% endfor %}
+              {% else %}
+                {% assign absoluteUriTitle = resource.absolute_uri %}
+                {% assign relativeUriTitle = resource.relative_uri %}
+              {% endif %}
+
+              {% for method in resource.methods %}
+              <section class="component {% cycle 'white', 'lightgrey' %}">
+
+                <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
+
+                {% if resource.description %}
+                {{ resource.description | markdownify }}
+                {% endif %}
+
+                <h3>URL</h3>
+                <pre>{{ absoluteUriTitle }}</pre>
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all query parameters
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method[1].query_parameters.size > 0 %}
+                  <h3>Query Parameters</h3>
+                  <table>
+                    <thead>
+                      <th>Query parameter</th>
+                      <th>Type</th>
+                      <th>Required?</th>
+                      <th>Description</th>
+                    </thead>
+                  {% for qp in method[1].query_parameters %}
+                    <tr>
+                      <td><code>{{ qp[1].name }}</code></td>
+                      <td><code>{{ qp[1].type }}<code></td>
+                      <td>
+                        {% if qp[1].required %}
+                        Yes
+                        {% else %}
+                        No {% if qp[1].default %} (default: {{ qp[1].default }}){% endif %}
+                        {% endif %}
+                      </td>
+                      <td>{{ qp[1].description }}</td>
+                    </tr>
+                  {% endfor %}
+                  </table>
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all headers
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method[1].headers.size > 0 %}
+                  <h3>Headers</h3>
+                  <table>
+                    <thead>
+                      <th>Header name</th>
+                      <th>Type</th>
+                      <th>Required?</th>
+                      <th>Description</th>
+                    </thead>
+                  {% for qh in method[1].headers %}
+                    <tr>
+                      <td><code>{{ qh[1].name }}</code></td>
+                      <td><code>{{ qh[1].type }}<code></td>
+                      <td>
+                        {% if qh[1].required %}
+                        Yes
+                        {% else %}
+                        No {% if qh[1].default %} (default: {{ qh[1].default }}){% endif %}
+                        {% endif %}
+                      </td>
+                      <td>{{ qh[1].description }}</td>
+                    </tr>
+                  {% endfor %}
+                  </table>
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- Request
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method[1].bodies.size > 0 %}
+                  <h3>Request body</h3>
+                  {% comment %}
+
+                  Tabs for JSON, XML, SOAP
+
+                  {% endcomment %}
+                  <ul class="tabs" role="tablist">
+                  {% for body in method[1].bodies %}
+                    {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                    {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
+                    <li role="presentation"{% if forloop.first %} class="active"{% endif %}><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" data-toggle="tab">{{ mt_display_name }}</a></li>
+                  {% endfor %}
+                  </ul>
+                  <div class="tab-content">
+                  {% for body in method[1].bodies %}
+                    {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                    {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+                    {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
+                    <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                      <div class="content">
+                      {% if hljs_lang == 'xml' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                      {% elsif hljs_lang == 'json' %}
+                        <h3>Example</h3>
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                      {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- Response
+                --
+                ----------------------------------------
+                {% endcomment %}
+                <h3>Response</h3>
+                {% for response in method[1].responses %}
+                  <h4>{{ response[1].display_name }} ({{ response[1].status_code }})</h4>
+                  {% if response[1].description %}
+                    {{ response[1].description | markdownify }}
+                  {% endif %}
+                  {% comment %}
+
+                  Tabs for JSON, XML, SOAP
+
+                  {% endcomment %}
+                  {% if response[1].bodies.size > 0 %}
+                    <ul class="tabs" role="tablist">
+                    {% for body in response[1].bodies %}
+                      {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                      {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | append: '-response' | slugify %}
+                      <li role="presentation"{% if forloop.first %} class="active"{% endif %}><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" data-toggle="tab">{{ mt_display_name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    <div class="tab-content">
+                    {% for body in response[1].bodies %}
+                      {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                      {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+                      {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | append: '-response' | slugify %}
+                      <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                        {% if hljs_lang == 'xml' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                        {% else %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                {% endfor %}
+
+              </section>
+              {% endfor %}{% comment %} endfor method in methods {% endcomment %}
+            {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
           </div>
           <div class="col-1-4">
             <nav>
@@ -41,232 +249,13 @@ layout: redesign
               {% endfor %}
               </ul>
             </nav>
-          </div>
-        </div>
-      </div>
-
-
-  <section class="component lightgrey">
-    <div class="container">
-      <h2 class="large anchored">Overview of endpoints</h2>
-
-      <h3>Base URL</h3>
-      <pre>{{ page.api.base_uri }}</pre>
-
-      <table class="linked-rows">
-        <thead>
-          <th>Method</th>
-          <th>Endpoint</th>
-          <th>Usage</th>
-        </thead>
-        {% for resource in page.api.resources %}
-          {% for method in resource.methods %}
-            <tr>
-              <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].method }}</a></td>
-              <td><a href="#{{ resource.display_name | slugify }}">{{ resource.relative_uri }}</a></td>
-              <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].description }}</a></td>
-            </tr>
-          {% endfor %}
-        {% endfor %}
-      </table>
-    </div>
-  </section>
-
-
-  {% for resource in page.api.resources %}
-
-    {% if resource.uri_parameters contains 'mediaTypeExtension' %}
-      {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
-        {% assign absolute_extension = resource.absolute_uri | replace:'{mediaTypeExtension}',extension %}
-        {% assign relative_extension = resource.relative_uri | replace:'{mediaTypeExtension}',extension %}
-        {% unless forloop.first %}
-          {% assign absoluteUriTitle = absoluteUriTitle | append: '<br/>'  %}
-          {% assign relativeUriTitle = relativeUriTitle | append: ' or '  %}
-        {% endunless %}
-        {% assign absoluteUriTitle = absoluteUriTitle | append: absolute_extension  %}
-        {% assign relativeUriTitle = relativeUriTitle | append: relative_extension  %}
-      {% endfor %}
-    {% else %}
-      {% assign absoluteUriTitle = resource.absolute_uri %}
-      {% assign relativeUriTitle = resource.relative_uri %}
-    {% endif %}
-
-    {% for method in resource.methods %}
-    <section class="component {% cycle 'white', 'lightgrey' %}">
-      <div class="container">
-
-        <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
-
-        {% if resource.description %}
-        {{ resource.description | markdownify }}
-        {% endif %}
-
-        <h3>URL</h3>
-        <pre>{{ absoluteUriTitle }}</pre>
-
-        {% comment %}
-        ----------------------------------------
-        --
-        -- For each endpoint:
-        -- List all query parameters
-        --
-        ----------------------------------------
-        {% endcomment %}
-        {% if method[1].query_parameters.size > 0 %}
-          <h3>Query Parameters</h3>
-          <table>
-            <thead>
-              <th>Query parameter</th>
-              <th>Type</th>
-              <th>Required?</th>
-              <th>Description</th>
-            </thead>
-          {% for qp in method[1].query_parameters %}
-            <tr>
-              <td><code>{{ qp[1].name }}</code></td>
-              <td><code>{{ qp[1].type }}<code></td>
-              <td>
-                {% if qp[1].required %}
-                Yes
-                {% else %}
-                No {% if qp[1].default %} (default: {{ qp[1].default }}){% endif %}
-                {% endif %}
-              </td>
-              <td>{{ qp[1].description }}</td>
-            </tr>
-          {% endfor %}
-          </table>
-        {% endif %}
-
-        {% comment %}
-        ----------------------------------------
-        --
-        -- For each endpoint:
-        -- List all headers
-        --
-        ----------------------------------------
-        {% endcomment %}
-        {% if method[1].headers.size > 0 %}
-          <h3>Headers</h3>
-          <table>
-            <thead>
-              <th>Header name</th>
-              <th>Type</th>
-              <th>Required?</th>
-              <th>Description</th>
-            </thead>
-          {% for qh in method[1].headers %}
-            <tr>
-              <td><code>{{ qh[1].name }}</code></td>
-              <td><code>{{ qh[1].type }}<code></td>
-              <td>
-                {% if qh[1].required %}
-                Yes
-                {% else %}
-                No {% if qh[1].default %} (default: {{ qh[1].default }}){% endif %}
-                {% endif %}
-              </td>
-              <td>{{ qh[1].description }}</td>
-            </tr>
-          {% endfor %}
-          </table>
-        {% endif %}
-
-        {% comment %}
-        ----------------------------------------
-        --
-        -- For each endpoint:
-        -- Request
-        --
-        ----------------------------------------
-        {% endcomment %}
-        {% if method[1].bodies.size > 0 %}
-          <h3>Request body</h3>
-          {% comment %}
-
-          Tabs for JSON, XML, SOAP
-
-          {% endcomment %}
-          <ul class="tabs" role="tablist">
-          {% for body in method[1].bodies %}
-            {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-            {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
-            <li role="presentation"{% if forloop.first %} class="active"{% endif %}><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" data-toggle="tab">{{ mt_display_name }}</a></li>
-          {% endfor %}
-          </ul>
-          <div class="tab-content">
-          {% for body in method[1].bodies %}
-            {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-            {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
-            {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | slugify %}
-            <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
-              <div class="content">
-              {% if hljs_lang == 'xml' %}
-                <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
-              {% elsif hljs_lang == 'json' %}
-                <h3>Example</h3>
-                <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
-              {% endif %}
-              </div>
-            </div>
-          {% endfor %}
-          </div>
-        {% endif %}
-
-        {% comment %}
-        ----------------------------------------
-        --
-        -- For each endpoint:
-        -- Response
-        --
-        ----------------------------------------
-        {% endcomment %}
-        <h3>Response</h3>
-        {% for response in method[1].responses %}
-          <h4>{{ response[1].display_name }} ({{ response[1].status_code }})</h4>
-          {% if response[1].description %}
-            {{ response[1].description | markdownify }}
-          {% endif %}
-          {% comment %}
-
-          Tabs for JSON, XML, SOAP
-
-          {% endcomment %}
-          {% if response[1].bodies.size > 0 %}
-            <ul class="tabs" role="tablist">
-            {% for body in response[1].bodies %}
-              {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-              {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | append: '-response' | slugify %}
-              <li role="presentation"{% if forloop.first %} class="active"{% endif %}><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" data-toggle="tab">{{ mt_display_name }}</a></li>
-            {% endfor %}
-            </ul>
-            <div class="tab-content">
-            {% for body in response[1].bodies %}
-              {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-              {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
-              {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | append: '-response' | slugify %}
-              <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
-                {% if hljs_lang == 'xml' %}
-                <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
-                {% else %}
-                <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
-                {% endif %}
-              </div>
-            {% endfor %}
-          {% endif %}
-        {% endfor %}
-
-      </div> <!-- /container -->
-    </section>
-    {% endfor %}{% comment %} endfor method in methods {% endcomment %}
-  {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
-
-    </div>
-  </div>
+          </div> <!-- /sidebar column -->
+        </div> <!-- /gridline -->
+      </div> <!-- /outer-most container -->
+    </div> <!-- /page-content-container -->
+  </div> <!-- /page-body -->
 
 </article>
-
-
 <script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
 <script>
   function initZeroClipBoard() {
