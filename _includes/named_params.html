@@ -1,0 +1,29 @@
+
+                  <h3>{{ include.title }}</h3>
+                  <table class="default">
+                    <thead>
+                      <th>Parameter</th>
+                      <th>Type</th>
+                      <th>Required?</th>
+                      <th>Description</th>
+                    </thead>
+                  {% for param in include.params %}
+                    <tr>
+                      <td><code>{{ param[1].name }}</code></td>
+                      <td><code>{{ param[1].type }}<code></td>
+                      <td>
+                        {% if param[1].required %}
+                        Yes
+                        {% else %}
+                        No {% if param[1].default %} (default: {{ param[1].default }}){% endif %}
+                        {% endif %}
+                      </td>
+                      <td>
+                      {% if param[1].display_name != param[1].name %}
+                        {{ param[1].display_name }}.
+                      {% endif %}
+                      {{ param[1].description}}
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </table>
