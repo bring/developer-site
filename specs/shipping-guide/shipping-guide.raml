@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
 title: Shipping Guide API
-baseUri: https://api.bring.com/shippingguide/products
+baseUri: https://api.bring.com/shippingguide
 
 documentation:
 - title: Introduction
@@ -28,33 +28,111 @@ documentation:
 
       There is also a [Offline SOAP service](http://developer.bring.com/additionalresources/offlinedata.html?from=shipping) for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
 
-- title: Guidelines
+- title: How to use
   content: |
-      `<MainDisplayCategory>` should be written in bold text and followed by our logo. [Get approved logo here](http://mediaweb.posten.no/fotoweb/Default.fwx?archiveId=5005).
+      For a given shipment from A to B, the core way to use the Shipping Guide is to query for all the products you know how to send (e.g. the products you have a customer agreement for). From that given set of products specified in the request, the Shipping Guide will return the products that are relevant for the shipment, based on product attributes (e.g. max package size and weight) and service area (norwegian: dekningsområde), e.g. not all products are offered to all postal codes.
 
-      In the webshop you should display
+      *Example:* You have a package of 2,5 kilos from postal codes 0484 to 5600 that you want to send. Your webshop knows how to send (e.g. has a customer agreement) for sending the following Bring products:
 
-      * `<MainDisplayCategory>`
-      * `<DisplayName>`
-      * `<DescriptionText>`
+      * Servicepakke
+      * Bedriftspakke
+      * Bedriftspakke Ekspress - Over Natten
+      * På Døren
+      * A-Post
+      * B-Post
 
-      Repeat the last two as needed, depending on the number of options you would like to display.
+      The [Shipping Guide request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=a-post&product=b-post) should then be made for all the products (explicitly set using multiple product parameters), and the Shipping Guide will tell you which products are applicable. E.g. A-Post and B-Post are not applicable since the package is greater than 2 kg, and postal code 5600 is outside the service area for "På Døren".
 
-      The following values are not meant for display in the webshop and as such should not be visible on your site
+- title: General Guidelines
+  content: |
+      ### VAT
 
-      * `<Product>`
-      * `<ProductId>`
-      * `<ProductCodeInProductionSystem>`
+      Shipping Guide specifies VAT related to senders country. It's up to the client to decide if VAT is applicable to their situation of sale.
 
-      *We strongly advise that you give your customers at least two options, home delivery and pickup point.*
+      ### Additional services affecting price
 
-      | XML | JSON/JSONP | Web services/SOAP |
-      |:----|:-----------|:------------------|
-      | The XML API is an easy way to integrate with the Shipping Guide using plain HTTP clients. It is also the best API to use when exploring the service using a web browser. | Web browsers can (using JavaScript) retrieve information from external sites if the data are made available in JSONP format. The purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping Guide without server components on your web page. See widgets. | The SOAP API has the complete feature set of the Shipping Guide. It requires a SOAP client and the use of our WSDL. It has an Online version (one request per shipment) or an offline version (e.g. nightly fetch prices, service area and delivery times based on a fixed consignor postal code). |
+      Make sure you specify the correct additional services for a package when querying the Shipping Guide. 
 
-/price{mediaTypeExtension}:
+      Especially the `evarsling` additional service for the Servicepakke product (recipient notification over SMS or E-Mail) will affect the base package price returned from the Shipping Guide, and should therefore be set according to what will be sent in the actual EDI message. 
+
+      If `evarsling` is not specified in the request, Fraktguiden will from 2013-01-01 add a fee for paper based recipient notification to the base package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
+
+- title: Error Handling Guidelines
+  content: |
+      When using the Shipping Guide, it is important to handle errors gracefully. Your web shop's users should still be able to order, even if the Shipping Guide returns an error or a timeout occurs.
+
+      ### No products applicable
+
+      If there are no products applicable for the requested shipment, an empty resultset will be returned. This means that for the passed-in product list, no products can be used for the shipment. Either the shipment is too large or is outside of the coverage area of all the requested products. Your code should handle this case, i.e. an empty product list for the shipment.
+
+      One suggestion is to include more products in each request, e.g. a Cargo-product to handle large shipments. You should know how to send Cargo products before including it though.
+
+
+      ### General errors
+
+      When using the Shipping Guide, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
+
+      How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
+
+      For instance your application can respond to an error by using prefetched [offline data](/api/shipping-guide/offline/) to calculate prices and delivery time estimates. Another alternative would be to use a a fixed standard price whenever an error occurs.
+
+      ### Error codes for rejected requests
+
+      | Code | Message in English | Message in Norwegian |
+      |:-----|:-------------------|:---------------------|
+      | FG_INPUT_001 | Shipping date must be set | Innleveringsdato må være satt |
+      | FG_INPUT_002 | Error with Postal code | Feil i postnummer |
+      | FG_INPUT_003 | Missing UserInformation element in request | Mangler UserInformation element i request. |
+      | FG_INPUT_004 | At least one product id must be set | Minst et produkt må være valgt |
+      | FG_INPUT_005 | Wrong date format | Feil i datoformat |
+      | FG_INPUT_006 | Error with volume | Feil med volum |
+      | FG_INPUT_008 | Missing Package element | Mangler Package element |
+      | FG_INPUT_010 | Error number of alternative deliverydates | Feil antall alternative leveringsdager |
+      | FG_INPUT_011 | Wrong weight unit code | Feil vektkode |
+      | FG_INPUT_012 | Invalid weight format | Feil vekt format |
+      | FG_INPUT_013 | Invalid volume format | Feil volum format |
+      | FG_INPUT_014 | Invalid volume unit code | Feil volumkode |
+      | FG_INPUT_016 | Invalid input dimensions | Feil med dimensjoner |
+      | FG_INPUT_017 | Invalid input dimensions unit code | Feil dimensjonskode |
+      | FG_INPUT_018 | Too many packages | For mange pakker |
+      | FG_INPUT_019 | Product id missing | Produkt id mangler |
+      | FG_INPUT_020 | Invalid offline from post number | Feil offline fra postnummer |
+      | FG_INPUT_021 | Non existing postalcode | Postnummer eksisterer ikke |
+      | FG_INPUT_022 | Missing weight or volume | Mangler vekt eller volum |
+      | FG_INPUT_023 | Unexpected parameter | Ikke gyldig parameter |
+      | FG_INPUT_024 | Invalid input price adjustment | Feil input til prisjustering |
+      | FG_INPUT_025 | Unknown public id | Feil public id |
+      | FG_INPUT_027 | Invalid country code | Feil landkode |
+      | FG_INPUT_029 | Wrong time format | Feil tidsformat |
+      | FG_INPUT_030 | Invalid request version | Ugyldig request versjon |
+      | FG_INPUT_031 | Request version missing | Request versjon mangler |
+      | FG_INPUT_032 | Mismatch in value in package and consignment. | Mismatch i verdi i pakke i forhold til sending. |
+      | FG_INPUT_033 | A consignment element must be specified when requesting a consignment-oriented product. | Det må spesifiseres et consignment-element når det bes om et sendingsorientert produkt. |
+      | FG_INPUT_034 | Error with City | Feil i city |
+      | FG_INPUT_035 | Shipping date must be current date or in the future when net prices are requested. | Avtalepriser støtter ikke shipping date tilbake i tid. |
+      | FG_INPUT_036 | Schema version 8 and newer does no longer support user code. Use Client URL instead. See XSD Schema documentation. | Schema versjon 8 og nyere støtter ikke lenger user code. Bruk heller Client URL. Sjekk XSD Schema dokumentasjon. |
+      | FG_INPUT_037 | Schema version 8 and newer requires Client URL element set. See XSD Schema documentation. | Schema versjon 8 og nyere krever Client URL element set. Sjekk XSD Schema dokumentasjon. |
+      | FG_INPUT_038 | Schema version 8 and newer requires that the api.bring.com/shippingguide endpoint is used. Check out developer.bring.com | Schema versjon 8 og nyere krever at api.bring.com/shippingguide endpoint benyttes. Se developer.bring.com. |
+      | FG_INPUT_039 | Endpoint at api.bring.com/shippingguide requires that schema version 8 or newer is used. Check out developer.bring.com | Endpoint på api.bring.com/shippingguide krever at schema version 8 eller nyere benyttes. Se developer.bring.com. |
+      | FG_INPUT_040 | Invalid UNNumber format. UNNumber must be a four digit string. Ex: 0030 | Feil UNNumber format. UNNumber skal være en fire sifret streng. Eks: 0030 |
+      | FG_INPUT_041 | Oil express product requires a customer number set on the product element, because only contract prices are available. | Oljeekspressproduktet krever et kundenummer. Kun avtalepris tilgjengelig. |
+      | FG_PRODUCT_001 | Product unknown | Produkt ukjent |
+      | FG_PRODUCT_002 | Product not available as offline data. | Produkt ikke tilgjengelig i offline data-format. |
+      | FG_PRODUCT_003 | Outside of coverage area for product. | Utenfor dekningsområde for produkt. |
+      | FG_UNKNOWN_001 | Unknown internal error | Ukjent intern feil |
+      | FG_USER_002 | Wrong usercode | Feil identifiakasjonsstreng |
+      | FG_USER_007 | Customer number specified, but user is not logged in. Please set the mybring authentication headers. | Kundenummer angitt, men bruker er ikke innlogget. Vennligst sett mybring autentiseringsheadere. |
+      | FG_USER_008 | Logged-in user does not have access to specified customer | Pålogget bruker har ikke tilgang spesifisert kunde |
+      | FG_USER_009 | Customer number is not applicable for specified produkt | Kundenummer er ikke gyldig for spesifisert produktkode |
+      | FG_USER_010 | Customer not found for super user. | Kunde ikke funnet for superbruker |
+      | FG_USER_011 | Customer does not have right access role for service | Kunde har ikke riktig tilgangs rolle for tjenesten |
+      | FG_EXTERNAL_SERVICE_NO_PRICE | An external system failed to return the cost for the actual shipping. Please check your input data. | Et eksternt system returnerte ikke pris på selve frakten. Vennligst sjekk input data. |
+
+
+
+
+/products/price{mediaTypeExtension}:
   displayName: Get shipment prices
-  securedBy: [mybring_headers, null]
   description: |
       TODO: description
   uriParameters:
@@ -156,9 +234,8 @@ documentation:
           application/json:
           application/xml:
 
-/expectedDelivery{mediaTypeExtension}:
+/products/expectedDelivery{mediaTypeExtension}:
   displayName: Get estimated delivery time
-  securedBy: [mybring_headers, null]
   description: |
       TODO: description
   uriParameters:
@@ -185,11 +262,38 @@ documentation:
           application/json:
           application/xml:
 
-/all{mediaTypeExtension}:
+/products/all{mediaTypeExtension}:
   displayName: Get shipment prices, estimated delivery and more
-  securedBy: [mybring_headers, null]
   description: |
       TODO: description
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: Get shipment prices, estimated delivery and more
+    queryParameters:
+      q:
+        description: Get shipment prices, estimated delivery time and additional information
+        type: string
+        required: true
+        example: TESTPACKAGE-AT-PICKUPPOINT
+      callback:
+        description: JSONP callback function name
+        type: string
+        required: false
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+          application/xml:
+
+/api/ws:
+  displayName: SOAP
+  description: |
+      The web service interface offers the most options when performing queries to the Shipping Guide.
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
