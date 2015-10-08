@@ -85,29 +85,8 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% if method[1].query_parameters.size > 0 %}
-                  <h3>Query Parameters</h3>
-                  <table>
-                    <thead>
-                      <th>Query parameter</th>
-                      <th>Type</th>
-                      <th>Required?</th>
-                      <th>Description</th>
-                    </thead>
-                  {% for qp in method[1].query_parameters %}
-                    <tr>
-                      <td><code>{{ qp[1].name }}</code></td>
-                      <td><code>{{ qp[1].type }}<code></td>
-                      <td>
-                        {% if qp[1].required %}
-                        Yes
-                        {% else %}
-                        No {% if qp[1].default %} (default: {{ qp[1].default }}){% endif %}
-                        {% endif %}
-                      </td>
-                      <td>{{ qp[1].description }}</td>
-                    </tr>
-                  {% endfor %}
-                  </table>
+                  {% assign include_params = method[1].query_parameters %}
+                  {% include named_params.html title="Query Parameters" params=include_params %}
                 {% endif %}
 
                 {% comment %}
