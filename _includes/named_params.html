@@ -19,10 +19,13 @@
                         {% endif %}
                       </td>
                       <td>
-                      {% if param[1].display_name != param[1].name %}
-                        {{ param[1].display_name }}.
-                      {% endif %}
-                      {{ param[1].description}}
+                        {% if param[1].display_name != param[1].name %}
+                          {{ param[1].display_name }}.
+                        {% endif %}
+
+                        {% if param[1].description %}
+                          {{ param[1].description | markdownify }}
+                        {% endif %}
                       </td>
                     </tr>
                   {% endfor %}
