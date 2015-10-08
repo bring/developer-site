@@ -3,13 +3,26 @@
 // This is heavy documentation and needs to use
 // a more legible font than the branding typeface.
 
-.page-body p {
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-    font-weight: normal;
-    letter-spacing: 0;
-    line-height: 1.6;
-    color: #555555;
+.page-body {
+    p,
+    a,
+    li {
+        font-size: 15px;
+        //line-height: 1.8;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: #555555;
+        letter-spacing: 0;
+    }
+
+    strong,
+    em,
+    table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    a {
+        color: $link-blue;
+    }
 }
 
 // …and then it makes sense to bump up the weight
