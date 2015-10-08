@@ -50,52 +50,65 @@
 }
 
 // Uniform font-size plz
+// and nuke letter-spacing that comes from the same less variable in the guidelines
 
 .page-body {
 
     h3 {
         font-size: 15px;
+        letter-spacing: 0;
     }
     div {
         font-size: 15px;
+        letter-spacing: 0;
     }
     p {
         font-size: 15px;
+        letter-spacing: 0;
     }
     strong {
         font-size: 15px;
+        letter-spacing: 0;
     }
     ul.default, ol.default {
         li {
             font-size: 15px;
+            letter-spacing: 0;
             }
     }
     table.linked-rows {
         td {
             a {
                 font-size: 15px;
+                letter-spacing: 0;
             }
         }
     }
     a, button, input {
         &.button {
             font-size: 15px;
+            letter-spacing: 0;
         }
     }
     input[type="text"], input[type="email"], textarea {
         font-size: 15px;
+        letter-spacing: 0;
     }
     label.error {
         font-size: 15px;
+        letter-spacing: 0;
     }
     .error-message {
         font-size: 15px;
+        letter-spacing: 0;
     }
     div.selector span {
         font-size: 15px;
+        letter-spacing: 0;
     }
     div.selector select {
         font-size: 15px;
+        letter-spacing: 0;
     }
 
 }
