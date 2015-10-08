@@ -113,6 +113,16 @@
 
 }
 
+// type tweeks
+
+.page-body {
+    ul {
+        list-style-type: disc;
+        list-style-position: inside;
+        margin-left: 2rem;
+    }
+}
+
 // …and then it makes sense to bump up the weight
 // of these titles to match the heavier paragraphs.
 
@@ -128,9 +138,14 @@ article.api header.banner .overlay h1 {
     font-family: 'FoundryMonolineMedium';	
 }
 
-.nav-tabs {
-    ul {
-        margin-left: 20px;
-        list-style-type: '— ';
+.page-body {
+    .nav-tabs {
+        list-style-type: none;
+        margin-left: 0;
+
+        ul {
+            margin-left: 20px;
+            list-style-type: none;
+        }
     }
 }
