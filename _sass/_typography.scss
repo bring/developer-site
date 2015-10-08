@@ -49,13 +49,55 @@
     }
 }
 
+// Uniform font-size plz
+
 .page-body {
-    p,
-    li {
+
+    h3 {
         font-size: 15px;
-        color: #555555;
-        letter-spacing: 0;
     }
+    div {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
+    strong {
+        font-size: 15px;
+    }
+    ul.default, ol.default {
+        li {
+            font-size: 15px;
+            }
+    }
+    table.linked-rows {
+        td {
+            a {
+                font-size: 15px;
+            }
+        }
+    }
+    a, button, input {
+        &.button {
+            font-size: 15px;
+        }
+    }
+    input[type="text"], input[type="email"], textarea {
+        font-size: 15px;
+    }
+    label.error {
+        font-size: 15px;
+    }
+    .error-message {
+        font-size: 15px;
+    }
+    div.selector span {
+        font-size: 15px;
+    }
+    div.selector select {
+        font-size: 15px;
+    }
+
 }
 
 // …and then it makes sense to bump up the weight
