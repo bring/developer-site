@@ -294,22 +294,8 @@ documentation:
   displayName: SOAP
   description: |
       The web service interface offers the most options when performing queries to the Shipping Guide.
-  uriParameters:
-    mediaTypeExtension:
-      enum: [ .json, .xml ]
-      description: Use .json to specify application/json or .xml to specify application/xml
   get:
-    description: Get shipment prices, estimated delivery and more
-    queryParameters:
-      q:
-        description: Get shipment prices, estimated delivery time and additional information
-        type: string
-        required: true
-        example: TESTPACKAGE-AT-PICKUPPOINT
-      callback:
-        description: JSONP callback function name
-        type: string
-        required: false
+    description: SOAP
 
     responses:
       200:
