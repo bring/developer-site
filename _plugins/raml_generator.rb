@@ -91,6 +91,8 @@ module Jekyll
         "XML"
       when /application\/soap/i
         "SOAP"
+      when /text\/html/i
+        "HTML"
       else
         input
       end
@@ -106,6 +108,8 @@ module Jekyll
         "xml"
       when /application\/soap/i
         "xml"
+      when /application\/html/i
+        "html"
       else
         input
       end
