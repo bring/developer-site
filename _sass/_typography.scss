@@ -4,19 +4,58 @@
 // a more legible font than the branding typeface.
 
 .page-body {
+    h3 {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    div {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    p {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    a {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: bold;
+    }
+    strong {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    ul.default, ol.default {
+        li {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            }
+        }
+    table.linked-rows {
+        td {
+            a {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            }
+        }
+    }
+    a, button, input {
+        &.button {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+    }
+    input[type="text"], input[type="email"], textarea {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    label.error {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .error-message {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+}
+
+.page-body {
     p,
     a,
     li {
         font-size: 15px;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         color: #555555;
         letter-spacing: 0;
-    }
-
-    strong,
-    em,
-    table {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
     a {
