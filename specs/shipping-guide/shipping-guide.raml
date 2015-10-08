@@ -1,4 +1,215 @@
 #%RAML 0.8
 ---
 title: Shipping Guide API
-baseUri: https://api.bring.com/shippingguide/
+baseUri: https://api.bring.com/shippingguide/products
+
+documentation:
+- title: Introduction
+  content: |
+      The Shipping Guide (Fraktguiden) is a free service from Bring that provides
+
+      * price information,
+      * service area (norwegian: dekningsområde), and
+      * estimated delivery times.
+
+      With the Shipping Guide it is easy to offer different shipping alternatives to your end customers. Whether they want to
+
+      * get delivery to the door (daytime or evening),
+      * pick up the shipment at a post office, or
+      * get the shipment delivered to the mailbox
+
+      The Shipping Guide returns the recommended way to present these shipping alternatives, as well as prices and delivery times.
+
+      [Demo shipping alternatives](http://fraktguide.bring.no/fraktguide/demoVelgFraktalternativ.do?from=0484&to=0470&weightInGrams=800&length=10&width=20&height=5&product=servicepakke&product=pa_doren&product=bpakke_dor-dor&product=smaapakker_a-post&product=ekspress09&product=smaapakker_b-post&product=courier_1h&product=minipakke&callbackUrl=http://fraktguide.bring.no/fraktguide/popupCallback.jsp&date=2015-10-07) form (Norwegian).
+
+      The demo shows that the Shipping Guide returns product categories for each request, making a shipping alternatives-page easy to set up. The focus is on delivery methods to the end customer, not product names.
+
+      The Shipping Guide has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality. There are some limitations in the XML/JSON API, such as the inability to mark a parcel as a specialized goods.
+
+      There is also a [Offline SOAP service](http://developer.bring.com/additionalresources/offlinedata.html?from=shipping) for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
+
+- title: Guidelines
+  content: |
+      `<MainDisplayCategory>` should be written in bold text and followed by our logo. [Get approved logo here](http://mediaweb.posten.no/fotoweb/Default.fwx?archiveId=5005).
+
+      In the webshop you should display
+
+      * `<MainDisplayCategory>`
+      * `<DisplayName>`
+      * `<DescriptionText>`
+
+      Repeat the last two as needed, depending on the number of options you would like to display.
+
+      The following values are not meant for display in the webshop and as such should not be visible on your site
+
+      * `<Product>`
+      * `<ProductId>`
+      * `<ProductCodeInProductionSystem>`
+
+      *We strongly advise that you give your customers at least two options, home delivery and pickup point.*
+
+      | XML | JSON/JSONP | Web services/SOAP |
+      |:----|:-----------|:------------------|
+      | The XML API is an easy way to integrate with the Shipping Guide using plain HTTP clients. It is also the best API to use when exploring the service using a web browser. | Web browsers can (using JavaScript) retrieve information from external sites if the data are made available in JSONP format. The purpose is that you can paste HTML / Javascript on your web page and easily use data from the Shipping Guide without server components on your web page. See widgets. | The SOAP API has the complete feature set of the Shipping Guide. It requires a SOAP client and the use of our WSDL. It has an Online version (one request per shipment) or an offline version (e.g. nightly fetch prices, service area and delivery times based on a fixed consignor postal code). |
+
+/price{mediaTypeExtension}:
+  displayName: Get shipment prices
+  securedBy: [mybring_headers, null]
+  description: |
+      TODO: description
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: Get shipment prices
+    queryParameters:
+      from:
+        description: Sending from postal code
+        type: string
+        example: 7600
+      to:
+        description: Sending to postal code
+        type: string
+        example: 1407
+      weightInGrams:
+        description: Weight of package in grams
+        type: integer
+        example: 1500
+      width:
+        description: Package width in centimeters
+        type: integer
+        example: 40
+      length:
+        description: Package length in centimeters
+        type: integer
+        example: 40
+      height:
+        description: Package height in centimeters
+        type: integer
+        example: 30
+      date:
+        description: Shipping date specifies which date the parcel will be delivered to Bring (within the timelimit), and is used to calculate the delivery date. Date is specified in ISO-format, YYYY-MM-DD.
+        type: date
+        example: 2015-11-18
+      time:
+        description: Shipping time may be specified. Note that Bring's courier products are the only one affected by this parameter. Time is specified in ISO-format, HH:mm.
+        type: date
+        example: 12:30
+      clientUrl:
+        displayName: Client URL
+        description: To use the Shipping Guide you must specify a client url parameter. The client url should be set to the url of the web shop or application the end user is ordering from. The client url can be sent as a url parameter, clientUrl, or as a header, `X-Bring-Client-URL`.
+        type: string
+        example: https://www.example.org/webshop
+      edi:
+        displayName: EDI setting
+        description: Flag that tells if the parcel will be registred using EDI when it is shipped. Note that this flag may affect price and which products are available.
+        type: boolean
+        default: true
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+      foo:
+        description: TODO
+        type: string
+        example: foo
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+          application/xml:
+
+/expectedDelivery{mediaTypeExtension}:
+  displayName: Get estimated delivery time
+  securedBy: [mybring_headers, null]
+  description: |
+      TODO: description
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: Get estimated delivery time
+    queryParameters:
+      q:
+        description: Reference, package number, shipment number to search for
+        type: string
+        required: true
+        example: TESTPACKAGE-AT-PICKUPPOINT
+      callback:
+        description: JSONP callback function name
+        type: string
+        required: false
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+          application/xml:
+
+/all{mediaTypeExtension}:
+  displayName: Get shipment prices, estimated delivery and more
+  securedBy: [mybring_headers, null]
+  description: |
+      TODO: description
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: Get shipment prices, estimated delivery and more
+    queryParameters:
+      q:
+        description: Get shipment prices, estimated delivery time and additional information
+        type: string
+        required: true
+        example: TESTPACKAGE-AT-PICKUPPOINT
+      callback:
+        description: JSONP callback function name
+        type: string
+        required: false
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+          application/xml:
+
+
