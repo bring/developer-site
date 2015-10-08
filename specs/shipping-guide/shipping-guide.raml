@@ -65,87 +65,89 @@ documentation:
     description: Get shipment prices
     queryParameters:
       from:
-        description: Sending from postal code
+        displayName: From postal code
         type: string
         example: 7600
       to:
-        description: Sending to postal code
+        displayName: To postal code
         type: string
         example: 1407
       weightInGrams:
-        description: Weight of package in grams
+        displayName: Weight of package in grams
         type: integer
         example: 1500
       width:
-        description: Package width in centimeters
+        displayName: Package width in centimeters
         type: integer
         example: 40
       length:
-        description: Package length in centimeters
+        displayName: Package length in centimeters
         type: integer
         example: 40
       height:
-        description: Package height in centimeters
+        displayName: Package height in centimeters
         type: integer
         example: 30
       date:
-        description: Shipping date specifies which date the parcel will be delivered to Bring (within the timelimit), and is used to calculate the delivery date. Date is specified in ISO-format, YYYY-MM-DD.
+        displayName: Shipping date
+        description: Specifies which date the parcel will be delivered to Bring (within the time limit), and is used to calculate the delivery date. Date is specified in ISO format, `YYYY-MM-DD`.
         type: date
         example: 2015-11-18
       time:
-        description: Shipping time may be specified. Note that Bring's courier products are the only one affected by this parameter. Time is specified in ISO-format, HH:mm.
+        displayName: Shipping time
+        description: Shipping time may be specified. Note that Bring's courier products are the only one affected by this parameter. Time is specified in ISO format, `HH:mm`.
         type: date
         example: 12:30
       clientUrl:
         displayName: Client URL
         description: To use the Shipping Guide you must specify a client url parameter. The client url should be set to the url of the web shop or application the end user is ordering from. The client url can be sent as a url parameter, clientUrl, or as a header, `X-Bring-Client-URL`.
         type: string
-        example: https://www.example.org/webshop
+        example: https://www.example.com/amazing-clothes/
       edi:
         displayName: EDI setting
         description: Flag that tells if the parcel will be registred using EDI when it is shipped. Note that this flag may affect price and which products are available.
         type: boolean
         default: true
-      foo:
-        description: TODO
+      postingAtPostOffice:
+        description: |
+          Flag that tells whether the parcel is delivered at a post office when it is shipped.
+
+          A surcharge will be applied for the following products:
+
+          * SERVICEPAKKE
+          * BPAKKE_DOR-DOR (Bedriftspakke)
+        type: boolean
+        default: false
+      additional:
+        displayName: Additional services
+        description: Request additional services for the package. Specified by adding one or more `additional` parameters to the request, e.g. [&additional=postoppkrav&additional=evarsling](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarsling&additional=lordagsutkjoring). See the [additional services list](/api/product-list/#additional-services). The Shipping Guide will match the additional service codes to the requested products and ignore product / additional service codes that are not applicable.
         type: string
-        example: foo
-      foo:
-        description: TODO
+        example: evarsling
+      priceAdjustments:
+        displayName: Price adjustments
+        description: Option to adjust the price returned. Specified by adding [&priceAdjustment=m20p](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p). Note that price adjustments is on prices without VAT. Refer to additional examples to read more.
         type: string
-        example: foo
-      foo:
-        description: TODO
+        example: m20p
+      pid:
+        displayName: Public ID
+        description: The last part (after the last dash) of your identification string (logged-in information for user of Shipping Guide). This makes the Shipping Guide know who performs the query, so we may contact the correct shipping guide user for potential follow ups.
         type: string
-        example: foo
-      foo:
-        description: TODO
+      product:
+        displayName: Products
+        description: This parameter lets you specify which products you want to return information about. If you omit this parameter, you get the default product list (not recommended for production usage). Product is specified by adding one or more product parameters, e.g. [product=servicepakke&product=bpakke_dor-dor](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=servicepakke&product=bpakke_dor-dor).
         type: string
-        example: foo
-      foo:
-        description: TODO
+        example: bpakke_dor-dor
+      language:
+        displayName: Language
+        description: Which language the descriptive product texts should have. Supported languages are English (en), Swedish (se), Finnish (fi), Danish (da) and Norwegian (no). If no language is set, or text is not available in the requested language, norwegian text is returned.
         type: string
-        example: foo
-      foo:
-        description: TODO
-        type: string
-        example: foo
-      foo:
-        description: TODO
-        type: string
-        example: foo
-      foo:
-        description: TODO
-        type: string
-        example: foo
-      foo:
-        description: TODO
-        type: string
-        example: foo
-      foo:
-        description: TODO
-        type: string
-        example: foo
+        default: no
+        example: en
+      volumeSpecial:
+        displayName: Special volume
+        description: Flag to indicate if the package has a shape that may require 'special handling fee'. [product=servicepakke&product=bpakke_dor-dor](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=servicepakke&product=bpakke_dor-dor&volumeSpecial=true).
+        type: boolean
+        default: false
 
     responses:
       200:
