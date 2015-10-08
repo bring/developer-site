@@ -154,6 +154,8 @@ layout: redesign
                       <div class="content">
                       {% if hljs_lang == 'xml' %}
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                      {% elsif hljs_lang == 'html' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
                       {% elsif hljs_lang == 'json' %}
                         <h3>Example</h3>
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
@@ -198,6 +200,8 @@ layout: redesign
                       {% assign tab_id =  method[1].method | append: '_' | append: resource.display_name | append: '_' | append: mt_display_name | append: '-response' | slugify %}
                       <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
                         {% if hljs_lang == 'xml' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                        {% elsif hljs_lang == 'html' %}
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
                         {% else %}
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
