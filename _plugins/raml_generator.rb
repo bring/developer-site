@@ -12,6 +12,11 @@ module Jekyll
       @dir = File.dirname(output_file)
       @name = File.basename(output_file)
 
+      # Write RAML to /tmp/<name>.json
+      #File.open("/tmp/#{raml_hash['title'].split(' ').first.downcase}.json", 'w') do |f|
+      #  f.write(JSON.pretty_generate(raml_hash).to_s)
+      #end
+
       self.process(@name)
       self.read_yaml(File.join(site.source, '_layouts'), 'api.html')
       self.data['title'] = raml_hash['title']
