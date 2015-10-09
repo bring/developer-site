@@ -7,7 +7,7 @@
                   {% for param in include.params %}
                     <tr>
                       <td><code>{{ param[1].name }}</code></td>
-                      <td><code>{{ param[1].type }}<code></td>
+                      <td><code>{{ param[1].type }}</code></td>
                       <td>
                         {% if param[1].required %}
                           {% assign desc = '_Required._ ' %}
@@ -25,6 +25,17 @@
 
                         {% if param[1].description %}
                           {% assign desc = desc | append: param[1].description %}
+                        {% endif %}
+
+                        {% if param[1].enum.size > 0 %}
+                          {% assign desc = desc | append: ' Possible values:
+
+' %}
+                          {% for item in param[1].enum %}
+                            {% assign desc = desc | append: ' * `
+' | append: item | append: '`
+' %}
+                          {% endfor %}
                         {% endif %}
 
                         {{ desc | markdownify }}
