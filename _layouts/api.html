@@ -85,8 +85,11 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% if resource.uri_parameters.size > 0 %}
-                  {% assign include_params = resource.uri_parameters %}
-                  {% include named_params.html title="URI parameter" params=include_params %}
+                  {% if resource.uri_parameters.size != 1 
+                        or resource.uri_parameters.first[1].name != 'mediaTypeExtension' %}
+                    {% assign include_params = resource.uri_parameters %}
+                    {% include named_params.html title="URI parameter" params=include_params %}
+                  {% endif %}
                 {% endif %}
 
                 {% comment %}
