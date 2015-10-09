@@ -252,7 +252,7 @@ ul.pills {
     > .active {
         display: block;
     }
-    p:last-child {
+    :last-child {
         margin-bottom: 0;
     }
 }
