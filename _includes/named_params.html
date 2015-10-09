@@ -4,7 +4,6 @@
                     <thead>
                       <th>Parameter</th>
                       <th>Type</th>
-                      <th>Required?</th>
                       <th>Description</th>
                     </thead>
                   {% for param in include.params %}
@@ -13,17 +12,20 @@
                       <td><code>{{ param[1].type }}<code></td>
                       <td>
                         {% if param[1].required %}
-                        Yes
+                          {% assign desc = '_Required._ ' %}
                         {% else %}
-                        No {% if param[1].default %} (default: {{ param[1].default }}){% endif %}
+                          {% assign desc = '_Optional._ ' %}
                         {% endif %}
-                      </td>
-                      <td>
+
                         {% if param[1].display_name != param[1].name %}
-                          {{ param[1].display_name | append:'. ' | append: param[1].description | markdownify }}
-                        {% elsif param[1].description %}
-                          {{ param[1].description | markdownify }}
+                          {% assign desc = desc | append: param[1].display_name | append: '. ' %}
                         {% endif %}
+
+                        {% if param[1].description %}
+                          {% assign desc = desc | append: param[1].description %}
+                        {% endif %}
+
+                        {{ desc | markdownify }}
                       </td>
                     </tr>
                   {% endfor %}
