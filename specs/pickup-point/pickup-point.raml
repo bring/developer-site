@@ -2,3 +2,133 @@
 ---
 title: Pickup Point API
 baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
+
+documentation:
+- title: Introduction
+  content: |
+      The Pickup point API provides a list of the alternative locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned. Response is available as either XML or JSON.
+
+      A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices and selected grocery stores.
+
+/{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
+  displayName: Pickup points for postal code
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ NO DK SE FI ]
+    postalCode:
+      displayName: Postal code
+      type: string
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML.
+  get:
+    description: List pickup points for postal code
+    queryParameters:
+      searchForText:
+        displayName: Text filter
+        type: string
+      openingHoursSearchType:
+        displayName: Filter using opening hours
+        enum: [ ALL_WEEKDAYS MONDAY TUESDAY WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY ]
+      openOnOrBefore:
+        description: Format `HH:mm`. Return only pickup points that are open on or before the specified time.
+        type: string
+      openOnOrAfter:
+        description: Format `HH:mm`. Return only pickup points that are open on or after the specified time.
+        type: string
+      numberOfResponses:
+        description: Return the specified number of pickup points instead of the default.
+        type: integer
+        default: 10
+      street:
+        description: Searches for the nearest pickup points to the given street.
+        type: string
+      streetNumber:
+        description: Searches for the nearest pickup points to the given street number.
+        type: string
+      callback:
+        description: JSONP callback function name.
+        type: string
+
+/{countryCode}/location/{latitude},{longitude}{mediaTypeExtension}:
+  displayName: Pickup points for location
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ NO DK SE FI ]
+    latitude:
+      displayName: Latitude
+      description: Geographic coordinate specifying the north-south position.
+      type: string
+    longitude:
+      displayName: Longitude
+      description: Geographic coordinate specifying the east-west position.
+      type: string
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml. 
+  get:
+    description: List pickup points closest to location
+    queryParameters:
+      searchForText:
+        displayName: Text filter
+        type: string
+      openingHoursSearchType:
+        displayName: Filter using opening hours
+        enum: [ ALL_WEEKDAYS MONDAY TUESDAY WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY ]
+      openOnOrBefore:
+        description: Format `HH:mm`. Return only pickup points that are open on or before the specified time.
+        type: string
+      openOnOrAfter:
+        description: Format `HH:mm`. Return only pickup points that are open on or after the specified time.
+        type: string
+      numberOfResponses:
+        description: Return the specified number of pickup points instead of the default.
+        type: integer
+        default: 10
+      street:
+        description: Searches for the nearest pickup points to the given street.
+        type: string
+      streetNumber:
+        description: Searches for the nearest pickup points to the given street number.
+        type: string
+      callback:
+        description: JSONP callback function name.
+        type: string
+
+/{countryCode}/id/{id}{mediaTypeExtension}:
+  displayName: A specific pickup point
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ NO DK SE FI ]
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: Look up a specific pickup point
+    queryParameters:
+      callback:
+        displayName: JSONP support
+        description: Callback function name.
+        type: string
+
+/{countryCode}/all{mediaTypeExtension}:
+  displayName: All pickup points in a country
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ NO DK SE FI ]
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: All pickup points in a country
+    queryParameters:
+      callback:
+        displayName: JSONP support
+        description: Callback function name.
+        type: string
+
+
