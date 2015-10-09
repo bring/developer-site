@@ -45,20 +45,26 @@ img {
 
 // table stuff to put somewhere else later
 
-table {
-    border-collapse: collapse;
-    margin: 30px 0 50px 0;
+.page-body {
 
-    td, th {
-        text-align: left;
-        border-bottom: 1px solid #999;
-        padding: 1rem 2rem;
+    table {
+        border-collapse: collapse;
+        margin: 20px 0 50px 0;
+
+        td, th {
+            text-align: left;
+            border-bottom: 1px solid #999;
+            padding: 0.75rem 2rem;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
     }
-
-    em {
-        font-style: italic;
-    }
-
 }
 
 thead {
