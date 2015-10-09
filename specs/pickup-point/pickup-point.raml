@@ -15,7 +15,7 @@ documentation:
   uriParameters:
     countryCode:
       displayName: Country
-      enum: [ NO DK SE FI ]
+      enum: [ "NO", "DK", "SE", "FI" ]
     postalCode:
       displayName: Postal code
       type: string
@@ -30,7 +30,7 @@ documentation:
         type: string
       openingHoursSearchType:
         displayName: Filter using opening hours
-        enum: [ ALL_WEEKDAYS MONDAY TUESDAY WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY ]
+        enum: [ ALL_WEEKDAYS, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
       openOnOrBefore:
         description: Format `HH:mm`. Return only pickup points that are open on or before the specified time.
         type: string
@@ -56,7 +56,7 @@ documentation:
   uriParameters:
     countryCode:
       displayName: Country
-      enum: [ NO DK SE FI ]
+      enum: [ "NO", "DK", "SE", "FI" ]
     latitude:
       displayName: Latitude
       description: Geographic coordinate specifying the north-south position.
@@ -76,7 +76,7 @@ documentation:
         type: string
       openingHoursSearchType:
         displayName: Filter using opening hours
-        enum: [ ALL_WEEKDAYS MONDAY TUESDAY WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY ]
+        enum: [ ALL_WEEKDAYS, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
       openOnOrBefore:
         description: Format `HH:mm`. Return only pickup points that are open on or before the specified time.
         type: string
@@ -102,7 +102,7 @@ documentation:
   uriParameters:
     countryCode:
       displayName: Country
-      enum: [ NO DK SE FI ]
+      enum: [ "NO", DK, SE, FI ]
     mediaTypeExtension:
       enum: [ .json, .xml ]
       description: Use .json to get application/json or .xml to get application/xml.
@@ -119,7 +119,7 @@ documentation:
   uriParameters:
     countryCode:
       displayName: Country
-      enum: [ NO DK SE FI ]
+      enum: [ "NO", DK, SE, FI ]
     mediaTypeExtension:
       enum: [ .json, .xml ]
       description: Use .json to get application/json or .xml to get application/xml.
