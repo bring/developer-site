@@ -86,7 +86,7 @@ layout: redesign
                 {% endcomment %}
                 {% if resource.uri_parameters.size > 0 %}
                   {% assign include_params = resource.uri_parameters %}
-                  {% include named_params.html title="URI Parameters" params=include_params %}
+                  {% include named_params.html title="URI parameter" params=include_params %}
                 {% endif %}
 
                 {% comment %}
@@ -99,7 +99,7 @@ layout: redesign
                 {% endcomment %}
                 {% if method[1].query_parameters.size > 0 %}
                   {% assign include_params = method[1].query_parameters %}
-                  {% include named_params.html title="Query Parameters" params=include_params %}
+                  {% include named_params.html title="Query parameter" params=include_params %}
                 {% endif %}
 
                 {% comment %}
