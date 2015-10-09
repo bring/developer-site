@@ -42,3 +42,31 @@ img {
 .page-body .icon-box-button:focus {
     background-image: url('../img/arrow-green-right-lo.png');
 }
+
+// table stuff to put somewhere else later
+
+table {
+    border-collapse: collapse;
+    margin: 30px 0 50px 0;
+
+    td, th {
+        text-align: left;
+        border-bottom: 1px solid #999;
+        padding: 1rem 2rem;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+}
+
+thead {
+    font-weight: bold;
+}
+
+.page-body table p:last-child,
+.page-body table ul,
+.page-body table ol {
+    margin-bottom: 0;
+}
