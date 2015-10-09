@@ -80,6 +80,19 @@ layout: redesign
                 ----------------------------------------
                 --
                 -- For each endpoint:
+                -- List all URI parameters
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if resource.uri_parameters.size > 0 %}
+                  {% assign include_params = resource.uri_parameters %}
+                  {% include named_params.html title="URI Parameters" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
                 -- List all query parameters
                 --
                 ----------------------------------------
