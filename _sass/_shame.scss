@@ -14,8 +14,18 @@ img {
 	max-width: 100%;
 }
 
-.tmp-iconstuffs {
-	max-width: 50%;
+.tmp-button {
+    text-align: center;
+    display: block;
+
+   .tmp-iconstuffs {
+       max-width: 50%;
+       margin: 0 auto 10px auto;
+   }
+
+    h2 {
+        margin-bottom: 10px;
+    }
 }
 
 // WIP new banner with text options
