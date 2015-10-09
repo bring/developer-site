@@ -75,8 +75,15 @@ layout: redesign
 
                 <h2>URL</h2>
                 <pre>{{ absoluteUriTitle }}</pre>
+
+                {% assign has_other_uri_params_than_mediatype = false %}
+                {% if resource.uri_parameters.size > 1 %}
+                  {% assign has_other_uri_params_than_mediatype = true %}
+                {% elsif resource.uri_parameters.size == 1 and resource.uri_parameters.first[1].name != 'mediaTypeExtension' %}
+                  {% assign has_other_uri_params_than_mediatype = true %}
+                {% endif %}
                 
-                {% if resource.uri_parameters.size > 0 
+                {% if has_other_uri_params_than_mediatype
                     or method[1].headers.size > 0 
                     or method[1].query_parameters.size > 0 %}
                 <h2>Request params</h2>
@@ -90,12 +97,9 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
-                {% if resource.uri_parameters.size > 0 %}
-                  {% if resource.uri_parameters.size != 1 
-                        or resource.uri_parameters.first[1].name != 'mediaTypeExtension' %}
-                    {% assign include_params = resource.uri_parameters %}
-                    {% include named_params.html title="URI parameter" params=include_params %}
-                  {% endif %}
+                {% if has_other_uri_params_than_mediatype %}
+                  {% assign include_params = resource.uri_parameters %}
+                  {% include named_params.html title="URI parameter" params=include_params %}
                 {% endif %}
 
                 {% comment %}
