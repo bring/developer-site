@@ -141,8 +141,10 @@ article.api header.banner .overlay h1 {
     .nav-tabs {
         list-style-type: none;
         margin-left: 0;
+        font-weight: bold;
 
         ul {
+            font-weight: normal;
             margin-left: 20px;
             list-style-type: none;
         }
