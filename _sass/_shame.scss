@@ -33,12 +33,27 @@ img {
 .bringdevbanner {
     max-height: 400px;
     overflow: hidden;
+    position: relative;
 }
 
 .bringdevbanner-img img {
     max-width: 100%;
     width: 100%;
-    margin-bottom: 20px;
+}
+
+.bringdevbanner-txt {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+
+    h1 {
+        font-size: 7rem;
+        font-family: 'FoundryMonolineMedium';
+        margin-bottom: 10px;
+    }
 }
 
 // url quickfix
