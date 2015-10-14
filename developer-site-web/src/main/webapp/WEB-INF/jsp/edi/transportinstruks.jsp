@@ -35,8 +35,6 @@
     </p>
     <p><a href="/edi/BIG14_Appendix_5.pdf">Appendix 5 Document type</a></p>
     <p><a href="/edi/BIG14_Appendix_6.pdf">Appendix 6 HUB-information</a></p>
-    <p><strong>Tilleggsinformasjon&nbsp;for&nbsp;Bring Cargo Inrikes, Bring Cargo East og Bring Cargo West</strong></p>
-    <p><a href="/edi/BIG14_BCI_Appendix_2.pdf">Additional Appendix 2 for Bring Cargo Inrikes, Bring Cargo West and Bring Cargo East</a></p>
     <p><strong>Tilleggsinformasjon&nbsp;for Bring Parcel AB (CarryOn):</strong></p>
     <p><a href="/edi/BIG14_BCAB_Appendix_A.pdf">Appendix A - Bring Parcels products and services from DK, FI, NO, SE and Europe</a></p>
     <p>&nbsp;<a href="/edi/BIG14_BCAP_service_codes.pdf">Tilleggsinformasjon - Service Code 0010 and 0011 to Denmark (BIG14) 1.3</a></p>
