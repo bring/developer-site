@@ -58,11 +58,14 @@
 
     <h2><a name="loggedInTracking"></a>
         Logged in tracking</h2>
-    <p>If you are a user of MyBring you can logg in with your username and api-key to performe tracking.
+     <p>If you are a user of MyBring you can logg in with your username and api-key to performe tracking.
         Then you will get more specified information about your parcels. And do not have the same limmitation
         of number of requests in a given time frame.<br>
-        The urls and request are the same but you have to add your username and API-Key as header.
-        <a href="http://developer.bring.com/additionalresources/getting-api-keys.html"> How to get an API-KEY </a></p>
+        Note for the signed in tracking you have to add your username and API-Key as header.
+        <a href="http://developer.bring.com/additionalresources/getting-api-keys.html"> How to get an API-KEY </a><br/>
+        You also have to use the following url:<BR/>
+        <a href="https://www.mybring.com/tracking/api/tracking.xml?q=TESTPACKAGE-AT-PICKUPPOINT">https://www.mybring.com/tracking/api/tracking.xml?q=TESTPACKAGE-AT-PICKUPPOINT</a>
+     </p>
 
      <table>
          <thead>
