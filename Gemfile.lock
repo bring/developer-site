@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:bring/deploy-scripts.git
-  revision: 3401184a7ab43090a1f108a3cd4a7c4047056db0
+  revision: 82b1dad242ee1571eead240adb69b78152f7337d
   specs:
     deploy-scripts (0.1.0)
       json (~> 1.8)
