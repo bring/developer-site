@@ -8,14 +8,14 @@ github_username:  bring
 
 # RAML settings
 raml_map:
-  specs/shipping-guide/shipping-guide.raml: api/shipping-guide/index.html
-  specs/postal-code/postal-code.raml: api/postal-code/index.html
-  specs/booking/booking.raml: api/booking/index.html
-  specs/pickup-point/pickup-point.raml: api/pickup-point/index.html
-  specs/tracking/tracking.raml: api/tracking/index.html
-  specs/reports/reports.raml: api/reports/index.html
-  specs/easy-return-service/ers.raml: api/easy-return-service/index.html
-  specs/purchase-order/purchase-order.raml: api/purchase-order/index.html
+  api/shipping-guide/api.raml: api/shipping-guide/index.html
+  api/postal-code/api.raml: api/postal-code/index.html
+  api/booking/api.raml: api/booking/index.html
+  api/pickup-point/api.raml: api/pickup-point/index.html
+  api/tracking/api.raml: api/tracking/index.html
+  api/reports/api.raml: api/reports/index.html
+  api/easy-return-service/api.raml: api/easy-return-service/index.html
+  api/purchase-order/api.raml: api/purchase-order/index.html
 
 # Build settings
 markdown: kramdown
