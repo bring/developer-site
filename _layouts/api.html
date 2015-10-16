@@ -47,23 +47,6 @@ layout: redesign
 
 
             {% for resource in page.api.resources %}
-
-              {% if resource.uri_parameters contains 'mediaTypeExtension' %}
-                {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
-                  {% assign absolute_extension = resource.absolute_uri | replace:'{mediaTypeExtension}',extension %}
-                  {% assign relative_extension = resource.relative_uri | replace:'{mediaTypeExtension}',extension %}
-                  {% unless forloop.first %}
-                    {% assign absoluteUriTitle = absoluteUriTitle | append: '<br/>'  %}
-                    {% assign relativeUriTitle = relativeUriTitle | append: ' or '  %}
-                  {% endunless %}
-                  {% assign absoluteUriTitle = absoluteUriTitle | append: absolute_extension  %}
-                  {% assign relativeUriTitle = relativeUriTitle | append: relative_extension  %}
-                {% endfor %}
-              {% else %}
-                {% assign absoluteUriTitle = resource.absolute_uri %}
-                {% assign relativeUriTitle = resource.relative_uri %}
-              {% endif %}
-
               {% for method in resource.methods %}
               <section class="component {% cycle 'white', 'lightgrey' %}">
 
@@ -74,7 +57,18 @@ layout: redesign
                 {% endif %}
 
                 <h2>URL</h2>
-                <pre>{{ absoluteUriTitle }}</pre>
+                {% if resource.uri_parameters contains 'mediaTypeExtension' %}
+                  {% assign url_output = '' %}
+                  {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
+                    {% assign url_output = url_output | append: resource.absolute_uri | replace:'{mediaTypeExtension}',extension %}
+                    {% unless forloop.last %}
+                      {% assign url_output = url_output | append: '<br />' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% else %}
+                  {% assign url_output = resource.absolute_uri %}
+                {% endif %}
+                <pre>{{ url_output }}</pre>
 
                 {% assign has_other_uri_params_than_mediatype = false %}
                 {% if resource.uri_parameters.size > 1 %}
