@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
 title: Postal Code API
-baseUri: https://api.bring.com/shippingguide/api/
+baseUri: https://api.bring.com/shippingguide/api
 
 documentation:
 - title: Introduction
@@ -53,7 +53,7 @@ documentation:
       TODO: description
   uriParameters:
     mediaTypeExtension:
-      enum: [ .json, .xml .html ]
+      enum: [ .json, .xml, .html ]
       description: Use .json to get application/json, .xml to get application/xml or .html to get HTML. 
   get:
     description: Lookup postal code
