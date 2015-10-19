@@ -10,7 +10,9 @@
                       <td><code>{{ param[1].name }}</code></td>
                       <td><code>{{ param[1].type }}</code></td>
                       <td>
-                        {% if param[1].required %}
+                        {% if include.hide_required %}
+                          {% assign desc = '' %}
+                        {% elsif param[1].required %}
                           {% assign desc = '_Required._ ' %}
                         {% else %}
                           {% assign desc = '_Optional._ ' %}

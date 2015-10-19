@@ -178,6 +178,20 @@ layout: redesign
                   {% if response[1].description %}
                     {{ response[1].description | markdownify }}
                   {% endif %}
+
+                  {% comment %}
+                  ----------------------------------------
+                  --
+                  -- For each endpoint:
+                  -- List all headers
+                  --
+                  ----------------------------------------
+                  {% endcomment %}
+                  {% if response[1].headers.size > 0 %}
+                    {% assign include_params = response[1].headers %}
+                    {% include named_params.html title="Header name" params=include_params hide_required=true %}
+                  {% endif %}
+
                   {% comment %}
 
                   Tabs for JSON, XML, SOAP
