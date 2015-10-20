@@ -20,3 +20,4 @@ _site
 .sass-cache
 _sass.build
 .jekyll-metadata
+_preview.site
