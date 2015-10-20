@@ -1,0 +1,24 @@
+<Invoice>
+  <customerId>PARCELS_NORWAY-00012341234</customerId>
+  <invoiceNumbers>
+    <label>702941479 (10/18/2015)</label>
+    <id>702941479</id>
+    <year>2015</year>
+    <month>10</month>
+    <day>18</day>
+  </invoiceNumbers>
+  <invoiceNumbers>
+    <label>702926498 (10/8/2015)</label>
+    <id>702926498</id>
+    <year>2015</year>
+    <month>10</month>
+    <day>8</day>
+  </invoiceNumbers>
+  <invoiceNumbers>
+    <label>702916952 (10/1/2015)</label>
+    <id>702916952</id>
+    <year>2015</year>
+    <month>10</month>
+    <day>1</day>
+  </invoiceNumbers>
+</Invoice>
