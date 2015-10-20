@@ -240,11 +240,11 @@ layout: redesign
               {% for api_page in site.pages %}
                 {% unless api_page.api %}{% continue %}{% endunless %}
                 <li>
-                  <a href="{{ api_page.url }}">{{ api_page.api.title }}</a>
+                  <a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a>
                   <ul>
-                    <li><a href="{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
+                    <li><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
                     {% for resource in api_page.api.resources %}
-                      <li><a href="{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
+                      <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
                     {% endfor %}
                   </ul>
                 </li>
