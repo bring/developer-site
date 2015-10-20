@@ -11,7 +11,7 @@
 
     <groupId>com.bring</groupId>
     <artifactId>developer-site-all</artifactId>
-    <version>1.75-SNAPSHOT</version>
+    <version>1.75</version>
     <packaging>pom</packaging>
 
     <properties>
