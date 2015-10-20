@@ -49,6 +49,11 @@ documentation:
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: List available customers
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
     responses:
       200:
         displayName: Successful response
@@ -72,6 +77,11 @@ documentation:
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: List available reports for a customer
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
     responses:
       200:
         displayName: Successful response
@@ -104,16 +114,15 @@ documentation:
   get:
     description: Generate a report
     queryParameters:
-      fromDate:
-        description: Report starting from `DD.MM.YYYY`.
-        type: date
+      parameterName:
+        description: The different report types have different params. The params are doucmented in the list of available reports, for example `fromDate` and `toDate`.
+        type: string
         required: true
-        example: 20.10.2015
-      toDate:
-        description: Report ending at `DD.MM.YYYY`.
-        type: date
-        required: true
-        example: 30.10.2015
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
     responses:
       202:
         displayName: Successful response
@@ -143,6 +152,11 @@ documentation:
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: Check the status of a report
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
     responses:
       200:
         displayName: Report status
@@ -160,3 +174,56 @@ documentation:
             example: !include examples/status_done.xml
           application/xml+failed:
             example: !include examples/status_failed.xml
+
+/reports/{reportId}{mediaTypeExtension}:
+  displayName: Get report
+  description: |
+    Returns the generated report.
+  uriParameters:
+    reportId:
+      description: A report ID from a 'generate a report' call.
+      type: string
+      required: true
+    mediaTypeExtension:
+      enum: [ .xls, .xml ]
+      description: Use .xls to get Excel file or .xml to get XML file.
+  get:
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
+    responses:
+      200:
+        displayName: Report
+        description: Examples show different statuses.
+        body:
+          application/xml:
+            example: !include examples/empty_report.xml
+
+/invoices/{customerOrGroupId}{mediaTypeExtension}:
+  displayName: List invoice numbers
+  description: |
+    Get the list of invoice numbers for a customer id or a customer group.
+  uriParameters:
+    customerOrGroupId:
+      description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
+      type: string
+      required: true
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            example: !include examples/list_invoices.json
+          application/xml:
+            example: !include examples/list_invoices.xml
