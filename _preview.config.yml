@@ -1,7 +1,7 @@
 # Site settings
 title: Bring Developer
 email: developer@bring.com
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/demo-on-demand/developer-site" # the subpath of your site, e.g. /blog/
 url: "http://developer.bring.com/" # the base hostname & protocol for your site
 twitter_username: BringAPI
 github_username:  bring
