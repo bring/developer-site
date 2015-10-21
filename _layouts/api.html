@@ -172,7 +172,9 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
+                {% unless method[1].responses == empty %}
                 <h2>Response</h2>
+                {% endunless %}
                 {% for response in method[1].responses %}
                   <h3>{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
                   {% if response[1].description %}
