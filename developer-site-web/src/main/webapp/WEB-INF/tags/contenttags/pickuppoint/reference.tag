@@ -128,6 +128,14 @@
                 </ul>
             </td>
         </tr>
+        <tr>
+            <td><code>?pickupPointType=&lt;manned|locker&gt;</code></td>
+            <td>Support for JSONP
+                <ul>
+                    <li><code>&lt;manned|locker&gt;</code> = manned means Manned pickup point, locker means Digital locker pickup point. </li>
+                </ul>
+            </td>
+        </tr>
         </tbody>
     </table>
 
