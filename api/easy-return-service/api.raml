@@ -2,3 +2,32 @@
 ---
 title: Easy Return Service API
 baseUri: https://api.bring.com/documents/ipc/ers
+
+documentation:
+- title: Introduction
+  content: |
+    The API lets you create labels for parcels returning to cross-border e-retailers.
+
+/label:
+  displayName: Create or list labels
+  post:
+    description: Create new label
+    body:
+      application/xml:
+        example: !include examples/request.xml
+    responses:
+      200:
+        body:
+          application/xml:
+            example: !include examples/response.xml
+  get:
+    description: List previously created labels
+  /{id}:
+    displayName: Look up a specific label
+    uriParameters:
+      id:
+        description: Id of the label to retrieve.
+        type: string
+        required: true
+    get:
+      description: Get label by ID

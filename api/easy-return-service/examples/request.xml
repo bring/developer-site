@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelRequest>
+  <CustomerId>99999999999</CustomerId>
+  <OrderDate>22.01.2014 11:36:22</OrderDate>
+  <Sender>
+    <Name>Test sender</Name>
+    <PostalCode>4567</PostalCode>
+    <StateOrRegion>Hamburg</StateOrRegion>
+    <City>Hamburg</City>
+    <CountryCode>DE</CountryCode>
+    <Street>HamburgStrasse 28</Street>
+    <AddressLine></AddressLine>
+  </Sender>
+  <Recipient>
+    <CustomerId>10000000000</CustomerId>
+    <Name>Test recipient</Name>
+    <PostalCode>1234</PostalCode>
+    <City>Bergen</City>
+    <CountryCode>NO</CountryCode>
+    <Street>Nøstegaten 28</Street>
+    <AddressLine></AddressLine>
+  </Recipient>
+  <Shipment>
+    <PackageId>AB123456789NO</PackageId>
+    <ShipmentId>70508608105602299</ShipmentId>
+    <CustomerReference>123</CustomerReference>
+    <ProductCode>0341</ProductCode>
+    <Weight>5</Weight>
+  </Shipment>
+</LabelRequest>
