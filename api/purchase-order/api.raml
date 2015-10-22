@@ -1,4 +1,131 @@
 #%RAML 0.8
 ---
 title: Purchase Order API
-baseUri: https://api.bring.com/po/api/v1/
+baseUri: https://api.bring.com/po/api/v1
+
+documentation:
+- title: Introduction
+  content: |
+    The API lets you view your customers purchacorders for you and register transport booking, delivery notice on this orders. This is a step-by-step guide on how to use the API.
+
+    Purchase Order has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality.
+
+    A typical usage pattern is to check whether a customer is a purchaseorder customer. Then follow up with creating a purchase order. And lastly create a packaging list for the given order.
+
+    Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
+
+/purchaseorderCustomer/{customerId}:
+  get:
+    description: |
+      Retrieve resource(s)
+    responses:
+      200:
+        description: |
+          Successfully retrieved resource(s)
+  
+
+/order/{customerId}/{purchaseorderId}:
+  get:
+    description: |
+      Retrieve resource(s)
+    responses:
+      200:
+        description: |
+          Successfully retrieved resource(s)
+
+
+
+/order:
+  post:
+    description: |
+      Create a new resource
+    body:
+      application/json: !!null
+    responses:
+      201:
+        description: |
+          Successfully created a new resource
+        headers:
+          Location:
+            description: |
+              Location of the newly created resource
+            type: string
+            required: false
+
+
+/items/{customerId}/{purchaseorderId}:
+  get:
+    description: |
+      Retrieve resource(s)
+    responses:
+      200:
+        description: |
+          Successfully retrieved resource(s)
+
+/transport/{customerId}/{purchaseorderId}:
+  get:
+    description: |
+      Retrieve resource(s)
+    responses:
+      200:
+        description: |
+          Successfully retrieved resource(s)
+
+/transport:
+  post:
+    description: |
+      Create a new resource
+    body:
+      application/json: !!null
+    responses:
+      201:
+        description: |
+          Successfully created a new resource
+        headers:
+          Location:
+            description: |
+              Location of the newly created resource
+            type: string
+            required: false
+
+/senderStatus/{customerId}/{purchaseorderId}:
+  get:
+    description: |
+      Retrieve resource(s)
+    responses:
+      200:
+        description: |
+          Successfully retrieved resource(s)
+
+/event:
+  post:
+    description: |
+      Create a new resource
+    body:
+      application/json: !!null
+    responses:
+      201:
+        description: |
+          Successfully created a new resource
+        headers:
+          Location:
+            description: |
+              Location of the newly created resource
+            type: string
+            required: false
+  
+/errorCodes:
+  get:
+    description: |
+      Retrieve resource(s)
+    responses:
+      200:
+        description: |
+          Successfully retrieved resource(s)
+
+
+
+
+
+
+
