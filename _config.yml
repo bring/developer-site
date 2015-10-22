@@ -9,8 +9,8 @@ github_username:  bring
 # RAML settings
 raml_map:
   api/shipping-guide/api.raml: api/shipping-guide/index.html
-  api/booking/api.raml: api/booking/index.html
   api/pickup-point/api.raml: api/pickup-point/index.html
+  api/booking/api.raml: api/booking/index.html
   api/tracking/api.raml: api/tracking/index.html
   api/reports/api.raml: api/reports/index.html
   api/postal-code/api.raml: api/postal-code/index.html
