@@ -36,7 +36,7 @@
     <p><a href="/edi/BIG14_Appendix_5.pdf">Appendix 5 Document type</a></p>
     <p><a href="/edi/BIG14_Appendix_6.pdf">Appendix 6 HUB-information</a></p>
     <p><strong>Tilleggsinformasjon&nbsp;for Bring Parcel AB (CarryOn):</strong></p>
-    <p><a href="/edi/Appendix_A_2015-08-01_rev_2015-10-05.pdf">Appendix A - Bring Parcels products and services from DK, FI, NO, SE and Europe</a></p>
+    <p><a href="/edi/Appendix_A_2015-10-22.pdf">Appendix A - Bring Parcels products and services from DK, FI, NO, SE and Europe</a></p>
     <p>&nbsp;<a href="/edi/BIG14_BCAP_service_codes.pdf">Tilleggsinformasjon - Service Code 0010 and 0011 to Denmark (BIG14) 1.3</a></p>
   </div>
           </div>
