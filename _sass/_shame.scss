@@ -56,6 +56,29 @@ img {
     }
 }
 
+// WIP list for api index
+
+.page-body {
+
+    .apiindex {
+        list-style-type: none;
+
+        li {
+            max-width: 36em;
+            margin-bottom: 1em;
+        }
+        a {
+        }
+    }
+
+    .apiindex-title {
+        margin-bottom: 0;
+        line-height: 1.2;
+    }
+
+}
+
+
 // url quickfix
 
 .page-body .icon-box-button {
