@@ -37,7 +37,7 @@ environments:
   test:
     selvdrift_layout: true
     bigip_frontend: false
-    hosts: [bopak.bd.bring.no]
+    hosts: [alt-daran.bd.bring.no]
     port: 8040
     user: bring
     prefix: /var/apps/developer_test/
