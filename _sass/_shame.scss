@@ -76,6 +76,30 @@ img {
         line-height: 1.2;
     }
 
+ .apiindex-link {
+    display: inline-block;
+    padding-left: 4em;
+    background-repeat: no-repeat;
+ }
+
+.apiindex_tracking {background-image: url('../img/icons/tracking.png');}
+.apiindex_shippingguide {background-image: url('../img/icons/shippingguide.png');}
+.apiindex_booking {background-image: url('../img/icons/booking.png');}
+.apiindex_pickuppoint {background-image: url('../img/icons/pickuppoint.png');}
+.apiindex_reports {background-image: url('../img/icons/reports.png');}
+.apiindex_purchaseorder {background-image: url('../img/icons/purchaseorder.png');}
+.apiindex_easyreturn {background-image: url('../img/icons/easyreturn.png');}
+
+
+
+
+.apiindex_EDI {background-image: url('../img/icons/EDI.png');}
+
+.apiindex_postalcode {background-image: url('../img/icons/postalcode.png');}
+
+.apiindex_tracking-widget {background-image: url('../img/icons/tracking-widget.png');}
+
+
 }
 
 
