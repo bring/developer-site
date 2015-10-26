@@ -18,16 +18,16 @@ layout: redesign
         <div class="gridline">
           <div class="col-1-3">
             <a href="{{ site.baseurl }}/api/getting-started/" class="tmp-button">
-              <img class="tmp-iconstuffs" src="{{ site.baseurl }}/img/boxes/gettingstarted.svg" alt="">
-              <h2>Getting started</h2>
-              <p class="description">Don’t know where to start?<br/> Then this handy guide is for you.</p>
+              <img class="tmp-iconstuffs" src="{{ site.baseurl }}/img/boxes/api.svg" alt="">
+              <h2>Integrate services from Bring on your site</h2>
+              <p class="description">Hello world, here is some stuff on why you may want to use our APIs.</p>
             </a>
           </div>
           <div class="col-1-3">
             <a href="{{ site.baseurl }}/api/" class="tmp-button">
-              <img class="tmp-iconstuffs" src="{{ site.baseurl }}/img/boxes/api.svg" alt="">
-              <h2>API documentation</h2>
-              <p class="description">APIs for tracking, integrating shipping in your webshop, and supporting your value chain.</p>
+              <img class="tmp-iconstuffs" src="{{ site.baseurl }}/img/boxes/gettingstarted.svg" alt="">
+              <h2>Getting started with&nbsp;our&nbsp;APIs</h2>
+              <p class="description">How to use the APIs. Authentication and stuff like that. </p>
             </a>
           </div>
           <div class="col-1-3">
@@ -39,5 +39,59 @@ layout: redesign
           </div>
         </div>
       </div>
+
+      <ul class="apilist">
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/tracking/" class="apilist-link apilist-link_tracking">
+            <h2 class="apilist-title">Tracking API</h2>
+            <p class="apilist-descr">Use a reference, package or shipment number to display details about sender, recipient, weight/volume, shipment history and current status.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/shipping-guide/" class="apilist-link apilist-link_shippingguide">
+            <h2 class="apilist-title">Shipping Guide API</h2>
+            <p class="apilist-descr">Look up available options for shipping with Bring: price information, service&nbsp;area, estimated delivery times, delivery alternatives.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/booking/" class="apilist-link apilist-link_booking">
+            <h2 class="apilist-title">Booking API</h2>
+            <p class="apilist-descr">A logged-in service for Mybring users that let’s you programatically book shipments and generate PDF labels.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/pickup-point/" class="apilist-link apilist-link_pickuppoint">
+            <h2 class="apilist-title">Pickup Point API</h2>
+            <p class="apilist-descr">List the nearest pickup points. These are locations that deliver packages for Bring and Posten, such as post offices and selected grocery stores.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/reports/" class="apilist-link apilist-link_reports">
+            <h2 class="apilist-title">Reports API</h2>
+            <p class="apilist-descr">A logged-in service for Mybring users. Generate shipment reports, the same reports that are available for you about a set of customers in Mybring.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/purchase-order/" class="apilist-link apilist-link_purchaseorder">
+            <h2 class="apilist-title">Purchase Order API</h2>
+            <p class="apilist-descr">Create, update and query Purchase Orders.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/easy-return-service/" class="apilist-link apilist-link_easyreturn">
+            <h2 class="apilist-title">Easy Return Service API</h2>
+            <p class="apilist-descr">A logged-in service for Mybring users to create labels for returning 
+            cross&#8209;border parcels.</p>
+          </a>
+        </li>
+        <li class="apilist-item">
+          <a href="{{ site.baseurl }}/api/postal-code/" class="apilist-link apilist-link_postalcode">
+            <h2 class="apilist-title">Postal Code API</h2>
+            <p class="apilist-descr">Check if a number is a valid postal code, and look up name of the geografic area. For&nbsp;Norway and some additional supported countries.</p>
+          </a>
+        </li>
+      </ul>
+
+
     </div>
   </div>
