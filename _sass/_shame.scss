@@ -56,53 +56,6 @@ img {
     }
 }
 
-// WIP list for api index
-
-.page-body {
-
-    .apilist {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .apilist-item {
-        display: inline-block;
-        max-width: 320px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        background-color: #fff;
-    }
-
-    .apilist-link {
-        display: inline-block;
-        padding: 6em 2em 0 2em;
-        text-align: center;
-        background-repeat: no-repeat;
-        background-position: center 2em;
-    }
-
-    .apilist-link_tracking {background-image: url('../img/icons/tracking.png');}
-    .apilist-link_shippingguide {background-image: url('../img/icons/shippingguide.png');}
-    .apilist-link_booking {background-image: url('../img/icons/booking.png');}
-    .apilist-link_pickuppoint {background-image: url('../img/icons/pickuppoint.png');}
-    .apilist-link_reports {background-image: url('../img/icons/reports.png');}
-    .apilist-link_purchaseorder {background-image: url('../img/icons/purchaseorder.png');}
-    .apilist-link_easyreturn {background-image: url('../img/icons/easyreturn.png');}
-    .apilist-link_postalcode {background-image: url('../img/icons/postalcode.png');}
-
-    .apilist-title {
-        margin-bottom: 0.25em;
-        line-height: 1.1;
-    }
-
-    .apilist-descr {
-        line-height: 1.3;
-    }
-
-}
-
-
 // url quickfix
 
 .page-body .icon-box-button {
