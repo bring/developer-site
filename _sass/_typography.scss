@@ -119,6 +119,12 @@
     ul {
         list-style-type: disc;
         list-style-position: inside;
+        padding-left: 2em;
+    }
+    ol {
+        list-style-type: decimal;
+        list-style-position: outside;
+        padding-left: 3em;
     }
 }
 
