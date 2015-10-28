@@ -22,41 +22,16 @@
   </head>
 
   <body>
-    <div class="bringdev-header">
-      <div class="bringdev-content-container">
-        <a class="bringdev-logo" href="{{ site.baseurl }}/">
-          <img src="{{ site.baseurl }}/img/bring-logo-hi.png" alt="Bring" width="101" height="39"></img>
-          <span class="bring-green">developer</span>
-        </a>
-        <nav role="navigation">
-          <ul class="bringdev-menu">
-            <li><a href="{{ site.baseurl }}/api/">API</a></li>
-            <li><a href="{{ site.baseurl }}/api/">EDI</a></li>
-            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
-            <li><a href="{{ site.baseurl }}/support/">Support</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="page-row-expanded">
+
+    <div class="page">
 {{ content }}
     </div>
-    <div class="page-row">
-      <footer class="sitefooter" role="contentinfo">
-          <div class="noindex">
-              <div class="container">
-                  <div class="bottom">
-                      <p>(C) 2015 Posten Norge AS
-                          <span class="nowrap">
-                              - <a href="http://www.bring.com/privacy-policy">Privacy policy</a>
-                              - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
-                          </span>
-                      </p>
-                  </div>
-              </div>
-          </div>
-      </footer>
-    </div>
+
+  <footer>
+    <p>(C) 2015 Posten Norge AS - <a href="http://www.bring.com/privacy-policy">Privacy policy</a> - <a href="http://www.bring.no/hele-bring/produkter-og-tjenester/bruk-av-cookies">Cookies</a>
+    </p>
+  </footer>
+
 
   <script async src="{{ site.baseurl }}/js/anchor.min.js" onload="window.anchors.options = { placement: 'left' }; window.anchors.add('.anchored')"></script>
   <script async src="{{ site.baseurl }}/js/highlight.pack.js" onload="window.hljs.initHighlightingOnLoad()"></script>
