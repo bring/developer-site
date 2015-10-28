@@ -3,6 +3,41 @@
 ---
 @charset "utf-8";
 
+@import "node_modules/inuit-defaults/settings.defaults";
+//@import "settings.colors";
+@import "node_modules/inuit-normalize/generic.normalize";
+@import "node_modules/inuit-responsive-settings/settings.responsive";
+
+@import "node_modules/inuit-functions/tools.functions";
+@import "node_modules/inuit-mixins/tools.mixins";
+@import "node_modules/inuit-responsive-tools/tools.responsive";
+//@import "tools.aliases";
+
+@import "node_modules/inuit-normalize/generic.normalize";
+@import "node_modules/inuit-box-sizing/generic.box-sizing";
+@import "node_modules/inuit-shared/generic.shared";
+
+@import "node_modules/inuit-page/base.page";
+@import "node_modules/inuit-headings/base.headings";
+//@import "base.links";
+//@import "base.quotes";
+
+@import "node_modules/inuit-buttons/objects.buttons";
+@import "node_modules/inuit-layout/objects.layout";
+@import "node_modules/inuit-clearfix/trumps.clearfix";
+@import "node_modules/inuit-media/objects.media";
+
+//@import "components.page-head";
+//@import "components.page-foot";
+//@import "components.site-nav";
+//@import "components.ads";
+//@import "components.promo";
+
+@import "node_modules/inuit-tools-widths/tools.widths";
+@import "node_modules/inuit-widths/trumps.widths";
+@import "node_modules/inuit-spacing/trumps.spacing";
+
+/*
 @import "variables";
 @import "utilities";
 @import "responsive-mixins";
@@ -17,3 +52,4 @@
 @import "components/zero-clipboard";
 
 @import "modules/api";
+*/
