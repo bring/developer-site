@@ -26,7 +26,7 @@
     </p>
     <p>For andre versjoner (D04A BIG01) kan du kontakte&nbsp;EDI Support.</p>
     <p><strong>Vedlagt kan Brings siste versjon av IFTMIN D04A BIG 14 lastes ned:</strong></p>
-    <p><a href="/edi/BIG14_1_5_2015-03-04.pdf">Hoveddokument D04A BIG14</a></p>
+    <p><a href="/edi/IG_BIG14_1_5_2015-10-28.pdf">Hoveddokument D04A BIG14</a></p>
     <p><strong>Appendix til nedlasting:</strong></p>
     <p><a href="/edi/BIG14_Appendix_1.pdf">Appendix 1 Locations</a></p>
     <p><a href="/edi/BIG14_Appendix_2.pdf">Appendix 2 Services</a> &nbsp;(Oversikt over tjenester, husk også å lese Appendix2A)
