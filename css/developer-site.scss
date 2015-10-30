@@ -112,6 +112,7 @@ $inuit-enable-layout--rev: true;
 *   Layout-classes, overrides, and helper classes.
 ------------------------------------------------------- */
 
+$inuit-enable-margins: true;
 @import "node_modules/inuit-headings-trumps/_trumps.headings.scss";
 @import "node_modules/inuit-clearfix/trumps.clearfix";
 @import "node_modules/inuit-widths/trumps.widths";
