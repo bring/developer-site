@@ -3,55 +3,143 @@
 ---
 @charset "utf-8";
 
-$inuit-base-font-size:   16px;
-$inuit-base-line-height: 24px;
-@import "node_modules/inuit-defaults/settings.defaults";
-//@import "settings.colors";
-@import "node_modules/inuit-normalize/generic.normalize";
-@import "node_modules/inuit-responsive-settings/settings.responsive";
+/* ------------------------------------------------------- 
+This SCSS is based upon inuit.css
+https://github.com/inuitcss/getting-started
 
+Comments explaining the architecture is inspired by
+https://github.com/mhauken/start
+
+inuitcss consists of small, composable modules 
+that we need to piece together in the correct order:
+
+1. Settings
+2. Tools
+3. Generic
+4. Base
+5. Objects
+6. Components
+7. Trumps
+------------------------------------------------------- */
+
+
+
+/* ------------------------------------------------------- 
+*   # SETTINGS
+*
+*   Global variables, site-wide settings.
+*   For SCSS only – nothing gets compiled to CSS directly.
+------------------------------------------------------- */
+
+@import "_settings.vars.scss"; //our own variables
+@import "node_modules/inuit-defaults/settings.defaults";
+@import "node_modules/inuit-responsive-settings/settings.responsive.scss";
+@import "_settings.aliases.scss"; //lets remap some common variables
+
+
+/* ------------------------------------------------------- 
+*   # TOOLS
+*
+*   Site-wide mixins and functions.
+*   For SCSS only – nothing gets compiled to CSS directly.
+------------------------------------------------------- */
 @import "node_modules/inuit-functions/tools.functions";
 @import "node_modules/inuit-mixins/tools.mixins";
 @import "node_modules/inuit-responsive-tools/tools.responsive";
-//@import "tools.aliases";
+@import "node_modules/inuit-tools-widths/tools.widths";
 
+
+/* ------------------------------------------------------- 
+*   # GENERIC
+*
+*   Low-specificity, normalize FTW, box-sizing \o/
+*   a small reset to complement normalize.css
+*   and other far-reaching rulesets. Tread carefully plz.
+------------------------------------------------------- */
 @import "node_modules/inuit-normalize/generic.normalize";
+@import "node_modules/inuit-reset/generic.reset.scss";
 @import "node_modules/inuit-box-sizing/generic.box-sizing";
 @import "node_modules/inuit-shared/generic.shared";
 
-@import "node_modules/inuit-page/base.page";
-@import "node_modules/inuit-headings/base.headings";
-//@import "base.links";
-//@import "base.quotes";
 
-@import "node_modules/inuit-buttons/objects.buttons";
+/* ------------------------------------------------------- 
+*   # BASE
+*
+*   Unclassed HTML elements. Tread very carefully plz.
+------------------------------------------------------- */
+
+@import "node_modules/inuit-page/base.page.scss";
+@import "node_modules/inuit-paragraphs/base.paragraphs.scss";
+@import "node_modules/inuit-images/base.images.scss";
+@import "node_modules/inuit-lists/base.lists.scss";
+@import "node_modules/inuit-headings/_base.headings.scss";
+@import "_base.page.scss";
+
+
+/* ------------------------------------------------------- 
+*   # OBJECTS
+*
+*   Abstractions and design patterns without styling.
+*
+*   Missing some abstractions? Read through the inuit SCSS-files 
+*   to turn on variables — or get new ones from here:
+*   https://github.com/inuitcss?query=objects.
+------------------------------------------------------- */
+
+$inuit-enable-layout--huge: true;
+$inuit-enable-layout--rev: true;
 @import "node_modules/inuit-layout/objects.layout";
-@import "node_modules/inuit-clearfix/trumps.clearfix";
+@import "node_modules/inuit-box/objects.box.scss";
+@import "node_modules/inuit-buttons/objects.buttons";
 @import "node_modules/inuit-media/objects.media";
+@import "objects.wrapper.scss";
 
-//@import "components.page-head";
-//@import "components.page-foot";
-//@import "components.site-nav";
-//@import "components.ads";
-//@import "components.promo";
 
-@import "node_modules/inuit-tools-widths/tools.widths";
+/* ------------------------------------------------------- 
+*   # COMPONENTS
+*
+*   Complete chunks of UI. No inuit, so knock yourself out.
+*   All our own components and modifiers to objects.
+------------------------------------------------------- */
+
+@import "_components.awesome.scss";
+
+
+/* ------------------------------------------------------- 
+*   # TRUMPS
+*
+*   Utilities, high-specificity, very explicit selectors. 
+*   Layout-classes, overrides, and helper classes.
+------------------------------------------------------- */
+
+@import "node_modules/inuit-headings-trumps/_trumps.headings.scss";
+@import "node_modules/inuit-clearfix/trumps.clearfix";
 @import "node_modules/inuit-widths/trumps.widths";
 @import "node_modules/inuit-spacing/trumps.spacing";
+@import "trumps.helpers.scss";
 
-/*
-@import "variables";
-@import "utilities";
-@import "responsive-mixins";
-@import "base";
-@import "shame";
-@import "header";
-@import "typography";
-@import "modules";
 
-@import "components/code";
-@import "components/bootstrap-tabs";
-@import "components/zero-clipboard";
 
-@import "modules/api";
-*/
+// old stuff:
+
+// @import "settings.colors";
+// @import "tools.aliases";
+// @import "base.links";
+// @import "base.quotes";
+// @import "components.page-head";
+// @import "components.page-foot";
+// @import "components.site-nav";
+// @import "components.ads";
+// @import "components.promo";
+// @import "variables";
+// @import "utilities";
+// @import "responsive-mixins";
+// @import "shame";
+// @import "header";
+// @import "typography";
+// @import "modules";
+// @import "components/code";
+// @import "components/bootstrap-tabs";
+// @import "components/zero-clipboard";
+// @import "modules/api";
+// 
