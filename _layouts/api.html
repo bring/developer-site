@@ -237,16 +237,16 @@ layout: redesign
             --
             ----------------------------------------
             {% endcomment %}
-            <nav>
-              <ul class="menu">
+            <nav class="apimenu">
+              <ul class="apimenu__list">
               {% for api_page in site.pages %}
                 {% unless api_page.api %}{% continue %}{% endunless %}
-                <li>
-                  <h3 class="menu-pagetitle"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
-                  <ul class="menu-sub">
-                    <li class="menu-moarstuff"><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
+                <li class="apimenu__item">
+                  <h3 class="delta"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
+                  <ul class="apimenu__sublist">
+                    <li><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
                     {% for resource in api_page.api.resources %}
-                      <li class="menu-moarstuff"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
+                      <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
                     {% endfor %}
                   </ul>
                 </li>
