@@ -9,12 +9,10 @@ layout: redesign
     </div>
   </header>
 
-  <div class="page-body">
-    <div class="page-content-container">
 
-      <div class="container">
-        <div class="gridline">
-          <div class="col-3-4">
+      <div class="wrapper">
+        <div class="layout layout--huge layout--rev">
+          <div class="layout__item u-3/4">
             <section id="api-documentation">
               {% for chapter in page.api.documentation %}
               <h1 class="anchored">{{ chapter.title }}</h1>
@@ -228,8 +226,8 @@ layout: redesign
               </section>
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
-          </div>
-          <div class="col-1-4">
+          </div><!-- 
+          --><div class="layout__item u-1/4">
             {% comment %}
             ----------------------------------------
             --
@@ -253,11 +251,9 @@ layout: redesign
               {% endfor %}
               </ul>
             </nav>
-          </div> <!-- /sidebar column -->
-        </div> <!-- /gridline -->
-      </div> <!-- /outer-most container -->
-    </div> <!-- /page-content-container -->
-  </div> <!-- /page-body -->
+          </div>
+        </div>
+      </div>
 
 </article>
 <script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
