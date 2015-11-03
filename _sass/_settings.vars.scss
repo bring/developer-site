@@ -16,8 +16,19 @@ $font-size-small: 14px;
    Colors
 ------------------------------------------------------- */
 
-// Everything green
+// descriptive variables:
 $bring-green: #7bc144;
-
-// Links
-$color-links: #0088b5;
+$link-blue: #0088b5;
+$medium-grey: #b2b2b2;
+$dark-grey: #414141;
+$background-light: #fcfcfc;
+$background-grey: #f2f2f3;
+$background-dark: #dbdbdb;
+$warning-orange: #ffa400;
+$error-red: #e61919;
+ 
+// functional variables:
+$color-branding: $bring-green;
+$color-text: $dark-grey;
+$color-links: $link-blue;
+$color-background: $background-grey;
