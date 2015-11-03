@@ -94,6 +94,7 @@ $inuit-enable-layout--flush: true;
 @import "node_modules/inuit-box/objects.box.scss";
 @import "node_modules/inuit-buttons/objects.buttons";
 @import "node_modules/inuit-media/objects.media";
+@import "node_modules/inuit-list-inline/_objects.list-inline.scss";
 @import "objects.wrapper.scss";
 
 
@@ -107,6 +108,7 @@ $inuit-enable-layout--flush: true;
 @import "_components.apiflock.scss";
 @import "_components.apimenu.scss";
 @import "_components.awesome.scss";
+@import "_components.sitefooter.scss";
 @import "_components.welcome.scss";
 
 
@@ -118,6 +120,7 @@ $inuit-enable-layout--flush: true;
 ------------------------------------------------------- */
 
 $inuit-enable-margins: true;
+$inuit-enable-paddings: true;
 @import "node_modules/inuit-headings-trumps/_trumps.headings.scss";
 @import "node_modules/inuit-clearfix/trumps.clearfix";
 @import "node_modules/inuit-widths/trumps.widths";
