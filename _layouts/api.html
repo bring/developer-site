@@ -3,17 +3,11 @@ layout: redesign
 ---
 <article class="api {{ page.api.title | remove:'API' | slugify }}">
 
-  <header class="banner">
-    <div class="wrapper">
-      <h1>{{ page.api.title }}</h1>
-    </div>
-  </header>
-
-
-      <div class="wrapper">
-        <div class="layout layout--huge layout--rev">
+      <div class="wrapperx">
+        <div class="layout layout--large layout--rev">
           <div class="layout__item u-3/4">
             <section id="api-documentation">
+            <h1>{{ page.api.title }}</h1>
               {% for chapter in page.api.documentation %}
               <h1 class="anchored">{{ chapter.title }}</h1>
               {{ chapter.content | markdownify }}
@@ -240,7 +234,7 @@ layout: redesign
               {% for api_page in site.pages %}
                 {% unless api_page.api %}{% continue %}{% endunless %}
                 <li class="apimenu__item">
-                  <h3 class="delta"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
+                  <h3 class="epsilon u-mb0"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
                   <ul class="apimenu__sublist">
                     <li><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
                     {% for resource in api_page.api.resources %}
