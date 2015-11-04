@@ -9,12 +9,12 @@ layout: redesign
             <section id="api-documentation">
             <h1>{{ page.api.title }}</h1>
               {% for chapter in page.api.documentation %}
-              <h1 class="anchored">{{ chapter.title }}</h1>
+              <h2 class="anchored">{{ chapter.title }}</h2>
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
             <section>
-              <h1 class="anchored">Overview of endpoints</h1>
+              <h2 class="anchored">Overview of endpoints</h2>
 
               <h3>Base URL</h3>
               <pre>{{ page.api.base_uri }}</pre>
