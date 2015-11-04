@@ -87,7 +87,7 @@ that we need to piece together in the correct order:
 *   https://github.com/inuitcss?query=objects.
 ------------------------------------------------------- */
 
-$inuit-enable-layout--huge: true;
+$inuit-enable-layout--large: true;
 $inuit-enable-layout--rev: true;
 $inuit-enable-layout--flush: true;
 @import "node_modules/inuit-layout/objects.layout";
