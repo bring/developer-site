@@ -2,18 +2,30 @@
 /* ------------------------------------------------------- 
 *   # .WELCOME
 *
-*   Boxes on the front page
+*   Site intro and top boxes on the front page
 ------------------------------------------------------- */
 
-
 .welcome {
+    background-color: $background-grey;
+    padding: $inuit-base-spacing-unit 0;
+    margin-bottom: $inuit-base-spacing-unit*2;
     text-align: center;
     a {
         color: $color-text;
     }
-    h2 {
-        margin-bottom: 0.25em;
-    }
+}
+
+.welcome__title {
+    font-size: 4.2em;
+    font-family: Monaco;
+    color: $color-branding;
+    margin-bottom: 0;
+}
+
+.welcome__tagline {
+    font-size: $inuit-base-font-size;
+    font-weight: normal;
+    margin-bottom: $inuit-base-spacing-unit;
 }
 
 .welcome__list {
@@ -21,9 +33,19 @@
 }
 
 .welcome__item {
-    
+    img {
+        max-width: 200px;
+        margin-bottom: $inuit-base-spacing-unit/2;
+    }
+    h2 {
+        margin-bottom: $inuit-base-spacing-unit/4;
+    }
+    p {
+        line-height: 1.2;
+    }
 }
 
 .welcome__link {
     display: block;
+    padding: $inuit-base-spacing-unit;
 }
