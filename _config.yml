@@ -20,5 +20,7 @@ raml_map:
 markdown: kramdown
 kramdown:
   input: GFM
+sass: 
+  style: compressed
 
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, _preview.site, _preview.config.yml]
