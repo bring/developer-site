@@ -28,6 +28,7 @@
     "inuit-shared": "^0.1.5",
     "inuit-spacing": "^0.7.0",
     "inuit-starter-kit": "^0.2.9",
+    "inuit-tabs": "^0.2.1",
     "inuit-tools-widths": "^0.1.4",
     "inuit-widths": "^0.4.2"
   }
