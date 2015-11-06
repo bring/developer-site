@@ -13,9 +13,6 @@
         cursor: pointer;
         color: $grey-light-1;
 
-        font-family: FoundryMonolineMedium, sans-serif;
-        @include font-size(12);
-
         &:hover,
         &.zeroclipboard-is-hover {
             color: $white;
