@@ -98,6 +98,7 @@ $inuit-btn-color: $color-text;
 @import "node_modules/inuit-buttons/objects.buttons";
 @import "node_modules/inuit-media/objects.media";
 @import "node_modules/inuit-list-inline/_objects.list-inline.scss";
+@import "node_modules/inuit-tabs/_objects.tabs.scss";
 @import "objects.wrapper.scss";
 
 
@@ -110,12 +111,10 @@ $inuit-btn-color: $color-text;
 
 @import "_components.apiflock.scss";
 @import "_components.apimenu.scss";
-@import "_components.tabs.scss";
 @import "_components.sitefooter.scss";
 @import "_components.siteheader.scss";
 @import "_components.welcome.scss";
 
-@import "_zero-clipboard.scss";
 
 /* ------------------------------------------------------- 
 *   # TRUMPS
