@@ -1,10 +1,24 @@
 
+/* ------------------------------------------------------- 
+*   # TABS
+*
+*   Most of this stuff comes from Twitter Bootstrap.
+------------------------------------------------------- */
+
+
+ul.tabs::after,
+ul.tabs::before {
+    display: table;
+    content: " ";
+}
+
+
 ul.tabs {
     margin-bottom: 0;
+    margin-left: 0;
     padding-left: 0; 
     list-style: none;
     border-bottom: 1px solid $grey-light-3;
-    @include clearfix();
 
     > li {
         position: relative;
@@ -13,7 +27,6 @@ ul.tabs {
         padding: 0;
         /* Make the list-items overlay the bottom border */
         margin-bottom: -1px;
-        //font-size: 15px;
 
         &:before {
             /* hide dot before list element */
@@ -144,14 +157,12 @@ ul.pills {
     margin-bottom: 0;
     padding-left: 0; /* Override default ul/ol */
     list-style: none;
-    @include clearfix();
 
     > li {
         position: relative;
         display: block;
         float: left;
         padding: 0;
-        @include font-size(16);
 
         &:before {
             display: none;

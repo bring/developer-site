@@ -8,7 +8,7 @@ code {
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
     font-size: 14px;
     background-color: $background-grey;
-    padding: 0 0.25em;
+
 }
 
 pre code {
@@ -24,6 +24,7 @@ pre {
     padding-right: $inuit-base-spacing-unit;
     padding-bottom: $inuit-base-spacing-unit / 2;
     padding-left: $inuit-base-spacing-unit;
+    overflow:auto;
 
     &.highlight {
         padding: 0;
