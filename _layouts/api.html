@@ -3,7 +3,7 @@ layout: redesign
 ---
 <article class="api {{ page.api.title | remove:'API' | slugify }}">
 
-      <div class="wrapperx">
+      <div class="wrapper wrapper--wide">
         <div class="layout layout--large layout--rev">
           <div class="layout__item u-3/4">
             <section id="api-documentation">
@@ -196,7 +196,7 @@ layout: redesign
                     {% for body in response[1].bodies %}
                       {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                       {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
-                      <li role="presentation" class="tabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="tabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
+                      <li role="presentation" class="apiresponse__tabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="tabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
                     {% endfor %}
                     </ul>
                     <div class="tab-content">
