@@ -7,14 +7,14 @@ layout: redesign
       <div class="layout layout--flush layout--rev">
         <div class="layout__item u-3/4">
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
-            <section id="api-documentation">
+            <section id="api-documentation" class="api__section">
             <h1>{{ page.api.title }}</h1>
               {% for chapter in page.api.documentation %}
               <h2 class="anchored">{{ chapter.title }}</h2>
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
-            <section>
+            <section class="api__section">
               <h2 class="anchored">Overview of endpoints</h2>
 
               <h3>Base URL</h3>
@@ -41,7 +41,7 @@ layout: redesign
 
             {% for resource in page.api.resources %}
               {% for method in resource.methods %}
-              <section class="component {% cycle 'white', 'lightgrey' %}">
+              <section class="api__section">
 
                 <h1 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h1>
 
