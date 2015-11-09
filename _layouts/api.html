@@ -1,11 +1,12 @@
 ---
 layout: redesign
 ---
-<article class="api {{ page.api.title | remove:'API' | slugify }}">
 
-      <div class="wrapper wrapper--wide">
-        <div class="layout layout--large layout--rev">
-          <div class="layout__item u-3/4">
+
+    <div class="wrapper wrapper--wide">
+      <div class="layout layout--large layout--rev">
+        <div class="layout__item u-3/4">
+          <article class="api {{ page.api.title | remove:'API' | slugify }}">
             <section id="api-documentation">
             <h1>{{ page.api.title }}</h1>
               {% for chapter in page.api.documentation %}
@@ -220,8 +221,9 @@ layout: redesign
               </section>
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
-          </div><!-- 
-          --><div class="layout__item u-1/4">
+          </article>
+      </div><!-- 
+      --><div class="layout__item u-1/4">
             {% comment %}
             ----------------------------------------
             --
@@ -245,11 +247,10 @@ layout: redesign
               {% endfor %}
               </ul>
             </nav>
-          </div>
         </div>
       </div>
+    </div>
 
-</article>
 <script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
 <script>
   function initZeroClipBoard() {
