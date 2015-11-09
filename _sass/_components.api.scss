@@ -6,7 +6,7 @@
 .api {
     border-left: 2px solid $background-grey;
     border-right: 2px solid $background-grey;
-    padding-top: $inuit-base-spacing-unit * 2;
+    padding-top: $inuit-base-spacing-unit;
     padding-bottom: $inuit-base-spacing-unit * 2;
 }
 
@@ -20,4 +20,9 @@
 
 .api__section:last-of-type {
     border-bottom: none;
+}
+
+.api__title {
+    font-size: 52px;
+    color: $color-branding;
 }
