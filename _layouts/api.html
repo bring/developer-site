@@ -17,7 +17,7 @@ layout: redesign
             <section class="api__section">
               <h2 class="anchored">Overview of endpoints</h2>
 
-              <h3>Base URL</h3>
+              <h3 class="delta">Base URL</h3>
               <pre>{{ page.api.base_uri }}</pre>
 
               <table class="linked-rows">
@@ -49,7 +49,7 @@ layout: redesign
                 {{ resource.description | markdownify }}
                 {% endif %}
 
-                <h2>URL</h2>
+                <h2 class="delta">URL</h2>
                 {% if resource.uri_parameters contains 'mediaTypeExtension' %}
                   {% assign url_output = '' %}
                   {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
@@ -73,7 +73,7 @@ layout: redesign
                 {% if has_other_uri_params_than_mediatype
                     or method[1].headers.size > 0 
                     or method[1].query_parameters.size > 0 %}
-                <h2>Request params</h2>
+                <h2 class="delta">Request params</h2>
                 {% endif %}
 
                 {% comment %}
@@ -166,7 +166,7 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% unless method[1].responses == empty %}
-                <h2>Response</h2>
+                <h2 class="delta">Response</h2>
                 {% endunless %}
                 {% for response in method[1].responses %}
                   <h3>{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
