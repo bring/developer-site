@@ -5,10 +5,26 @@
 ------------------------------------------------------- */
 
 .siteheader {
-    padding: $inuit-base-spacing-unit/4 0;
+    padding-top: $inuit-base-spacing-unit/2;
+    padding-bottom: $inuit-base-spacing-unit/2;
     background-color: $dark-grey;
 }
 
-.siteheader-logo {
+.siteheader a {
+    display: inline-block;
+}
+
+.siteheader__logo {
     max-width: 150px;
+}
+
+.siteheader__tagline {
+    color: $white;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0.37em;
+    vertical-align: bottom;
+    margin-left: 0.25em;
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: 24px;
 }
