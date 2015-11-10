@@ -6,5 +6,38 @@
 ------------------------------------------------------- */
 
 .apiresponse {
-    background-color: #eee;
+
+}
+
+.apiresponse__item {
+    background-color: $medium-grey;
+    border: 1px solid #ccc;
+}
+.apiresponse__item.active {
+    background-color: $background-grey;
+    border-bottom: 0;
+}
+
+.apiresponse__link {
+    padding-top: $inuit-base-spacing-unit/2;
+    padding-bottom: $inuit-base-spacing-unit/2;
+    color: $dark-grey;
+}
+
+.apiresponse__content {
+    background-color: $background-grey;
+    border: 1px solid #ccc;
+    border-top: 0;
+    padding-top: $inuit-base-spacing-unit*2;
+}
+
+.apiresponse__panel {
+    background-color: $background-grey;
+    .hljs {
+        background-color: $background-grey;       
+    }
+}
+
+.apiresponse__panel:not(.active) {
+    display: none;
 }

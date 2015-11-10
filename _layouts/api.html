@@ -197,15 +197,15 @@ layout: redesign
                     {% for body in response[1].bodies %}
                       {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                       {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
-                      <li role="presentation" class="apiresponse__tabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="tabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
+                      <li role="presentation" class="tabs__item apiresponse__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="tabs__link apiresponse__link" data-toggle="tab">{{ mt_display_name }}</a></li>
                     {% endfor %}
                     </ul>
-                    <div class="tab-content">
+                    <div class="apiresponse__content">
                     {% for body in response[1].bodies %}
                       {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                       {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
                       {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
-                      <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                      <div role="tabpanel" class="apiresponse__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
                         {% if hljs_lang == 'xml' %}
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
                         {% elsif hljs_lang == 'html' %}
