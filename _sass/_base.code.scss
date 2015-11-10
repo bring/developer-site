@@ -6,7 +6,7 @@
 code {
     white-space: nowrap;
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
-    font-size: 13px;
+    font-size: $font-size-small;
 }
 
 pre code {
@@ -17,7 +17,7 @@ pre {
     border-left: 5px solid $bring-green;
     background-color: $background-grey;
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
-    font-size: 13px;
+    font-size: $font-size-small;
     padding-top: $inuit-base-spacing-unit / 2;
     padding-right: $inuit-base-spacing-unit;
     padding-bottom: $inuit-base-spacing-unit / 2;
