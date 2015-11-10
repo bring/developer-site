@@ -17,9 +17,16 @@ raml_map:
   api/easy-return-service/api.raml: api/easy-return-service/index.html
 
 # Build settings
+gems:
+- jekyll-paginate
+
+paginate: 5
+paginate_path: :num # default is page:num
+
 markdown: kramdown
 kramdown:
   input: GFM
+
 sass: 
   style: compressed
 

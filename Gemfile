@@ -2,5 +2,6 @@ source 'https://rubygems.org'
 
 gem 'bundler'
 gem 'rake'
-gem 'jekyll', '>= 3.0.0.pre.beta8'
+gem 'jekyll'
+gem 'jekyll-paginate'
 gem 'raml_parser'
