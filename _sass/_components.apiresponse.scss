@@ -12,15 +12,21 @@
 
 .apiresponse__item {
     display: inline-block;
+    position: relative;
+
 }
 
 .apiresponse__item:not(.active) {
-    background-color: $medium-grey;
+    background-color: $background-grey;
+    top: 0;
 }
 
 .apiresponse__item.active {
-    background-color: $background-grey;
     border-top: 5px solid $bring-green;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    top: 1px;
+    background-color: $white;
 }
 
 .apiresponse__link {
@@ -32,15 +38,12 @@
 }
 
 .apiresponse__content {
-    background-color: $background-grey;
     padding-top: $inuit-base-spacing-unit*2;
+    border: 1px solid #ccc;
 }
 
 .apiresponse__panel {
-    background-color: $background-grey;
-    .hljs {
-        background-color: $background-grey;       
-    }
+
 }
 
 .apiresponse__panel:not(.active) {
