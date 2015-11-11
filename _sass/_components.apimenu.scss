@@ -36,6 +36,10 @@
     list-style-type: none;
     margin-left: 0;
     line-height: 1.5;
+
+    .active {
+        border-left: 1px solid $bring-green;
+    }
 }
 
 @media (min-width: 700px) {
