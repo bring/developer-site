@@ -51,10 +51,7 @@
   }
 
   var tabs = {
-
     init: function() {
-      console.log('Initialize tabs');
-
       var tabElements = Array.prototype.slice.call(document.querySelectorAll('[data-toggle="tab"]'));
       tabElements.forEach(function(tabElement) {
         tabElement.addEventListener('click', function(e) {
