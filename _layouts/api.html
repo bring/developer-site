@@ -130,19 +130,19 @@ layout: redesign
                   Tabs for JSON, XML, SOAP
 
                   {% endcomment %}
-                  <ul class="tabs" role="tablist">
+                  <ul class="codetabs" role="tablist">
                   {% for body in method[1].bodies %}
                     {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                     {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
-                    <li role="presentation"{% if forloop.first %} class="active"{% endif %}><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" data-toggle="tab">{{ mt_display_name }}</a></li>
+                    <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
                   {% endfor %}
                   </ul>
-                  <div class="tab-content">
+                  <div class="codetabs__content">
                   {% for body in method[1].bodies %}
                     {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                     {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
                     {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
-                    <div role="tabpanel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                    <div role="codetabs__panel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
                       <div class="content">
                       {% if hljs_lang == 'xml' %}
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
