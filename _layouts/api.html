@@ -264,7 +264,7 @@ layout: redesign
     $$('pre.highlight').forEach(function(pre) {
       var zeroClipboard = document.createElement('div');
       zeroClipboard.className = 'zero-clipboard';
-      zeroClipboard.innerHTML = '<span class="btn u-m" title="Copy to clipboard">Copy</span>';
+      zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
       pre.parentNode.insertBefore(zeroClipboard, pre);
     });
 
