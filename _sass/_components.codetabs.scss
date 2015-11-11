@@ -1,27 +1,27 @@
 
 /* ------------------------------------------------------- 
-*   # .APIRESPONSE
+*   # .CODETABS
 *
-*   Styling for response tabs
+*   Styling for narrow tabs.
 ------------------------------------------------------- */
 
-.apiresponse {
+.codetabs {
     list-style-type: none;
     margin: 0;
 }
 
-.apiresponse__item {
+.codetabs__item {
     display: inline-block;
     position: relative;
 
 }
 
-.apiresponse__item:not(.active) {
+.codetabs__item:not(.active) {
     background-color: $background-grey;
     top: 0;
 }
 
-.apiresponse__item.active {
+.codetabs__item.active {
     border-top: 5px solid $bring-green;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -29,7 +29,7 @@
     background-color: $white;
 }
 
-.apiresponse__link {
+.codetabs__link {
     display: inline-block;
     padding: 0 2em;
     padding-top: $inuit-base-spacing-unit/2;
@@ -37,15 +37,15 @@
     color: $dark-grey;
 }
 
-.apiresponse__content {
+.codetabs__content {
     padding: $inuit-base-spacing-unit;
     border: 1px solid #ccc;
 }
 
-.apiresponse__panel {
+.codetabs__panel {
 
 }
 
-.apiresponse__panel:not(.active) {
+.codetabs__panel:not(.active) {
     display: none;
 }
