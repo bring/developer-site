@@ -6,19 +6,26 @@
 ------------------------------------------------------- */
 
 .apiresponse {
-
+    list-style-type: none;
+    margin: 0;
 }
 
 .apiresponse__item {
-    background-color: $medium-grey;
-    border: 1px solid #ccc;
+    display: inline-block;
 }
+
+.apiresponse__item:not(.active) {
+    background-color: $medium-grey;
+}
+
 .apiresponse__item.active {
     background-color: $background-grey;
-    border-bottom: 0;
+    border-top: 5px solid $bring-green;
 }
 
 .apiresponse__link {
+    display: inline-block;
+    padding: 0 2em;
     padding-top: $inuit-base-spacing-unit/2;
     padding-bottom: $inuit-base-spacing-unit/2;
     color: $dark-grey;
@@ -26,8 +33,6 @@
 
 .apiresponse__content {
     background-color: $background-grey;
-    border: 1px solid #ccc;
-    border-top: 0;
     padding-top: $inuit-base-spacing-unit*2;
 }
 
