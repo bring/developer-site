@@ -15,12 +15,9 @@
     var distance = this.element.offsetTop - scrollPosition;
 
     if (!this.stuck && distance <= 0) {
-      console.log('Stick');
       this.stick();
     } else if (this.stuck && scrollPosition <= this.stickAtOffset) {
-      console.log('Unstick');
       this.unstick();
-    } else {
     }
   }
 
@@ -36,8 +33,6 @@
 
   var sticky = {
     init: function() {
-      console.log('Initialize sticky elements');
-
       var stickyElements = Array.prototype.slice.call(document.querySelectorAll('[data-sticky="true"]'));
       stickyElements.forEach(function (element) {
         new Sticky(element);
