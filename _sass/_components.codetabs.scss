@@ -38,7 +38,9 @@
 }
 
 .codetabs__content {
-    padding: $inuit-base-spacing-unit;
+    padding-top: $inuit-base-spacing-unit;
+    padding-right: $inuit-base-spacing-unit;
+    padding-left: $inuit-base-spacing-unit;
     border: 1px solid #ccc;
 }
 
