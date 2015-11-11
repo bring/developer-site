@@ -37,3 +37,11 @@
     margin-left: 0;
     line-height: 1.5;
 }
+
+@media (min-width: 700px) {
+    .stick {
+        position: fixed;
+        top: 0;
+        width: 300px;
+    }
+}
