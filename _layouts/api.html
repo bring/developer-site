@@ -231,7 +231,7 @@ layout: redesign
             --
             ----------------------------------------
             {% endcomment %}
-            <nav class="apimenu">
+            <nav class="apimenu" data-sticky="true">
               <ul class="apimenu__list">
               {% for api_page in site.pages %}
                 {% unless api_page.api %}{% continue %}{% endunless %}
