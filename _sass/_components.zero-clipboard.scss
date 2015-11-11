@@ -1,0 +1,19 @@
+
+.zero-clipboard {
+    display: block;
+    position: relative;
+}
+
+.zero-clipboard__btn {
+    display: block;
+    position: absolute;
+    right: $inuit-base-spacing-unit/2;
+    top: $inuit-base-spacing-unit/2;
+    padding: $inuit-base-spacing-unit/4 $inuit-base-spacing-unit/2;
+    cursor: pointer;
+
+    &:hover,
+    &.zeroclipboard-is-hover {
+        color: $white;
+        background-color: $color-branding;
+}
