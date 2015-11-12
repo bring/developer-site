@@ -142,7 +142,7 @@ layout: redesign
                     {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                     {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
                     {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
-                    <div role="codetabs__panel" class="tab-pane{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                    <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
                       <div class="content">
                       {% if hljs_lang == 'xml' %}
                         <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
