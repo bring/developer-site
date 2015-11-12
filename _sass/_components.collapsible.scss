@@ -10,7 +10,14 @@
 }
 
 .collapsible__toggler {
+    background-color: $color-branding;
+    color: $white;
+    display: block;
+    padding: $inuit-base-spacing-unit / 2;
+}
 
+.collapsible__toggler:hover {
+    background-color: $dark-grey;
 }
 
 .collapsible__toggler--collapsed {
@@ -26,7 +33,8 @@
 }
 
 .collapsible__item--collapsed {
-
+    display: none;
+    visibility: hidden;
 }
 
 .collapsible__item--expanded {
