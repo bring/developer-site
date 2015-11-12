@@ -1,7 +1,114 @@
 ---
-title: API Documentation
+title: API Docs
 layout: redesign
 ---
+<div class="wrapper">
+  <div class="layout layout--flush layout--rev">
+    <div class="layout__item u-3/4">
+      <article class="api">
+
+        <section class="api__section">
+          <h1 class="api__title">Getting Started</h1>
+
+          <h2 class="anchored">Introduction</h2>
+
+          <p>
+            Bring provides a collection of APIs to facilitate integration with your systems. If you're running a webshop, or any software dealing with shipments from Nordic countries, using Bring APIs can add value to your business and to your customers:
+          </p>
+
+          <ul>
+            <li>Let the customer choose between alternative shipping methods upon checkout with the <a href="{{ site.baseurl }}/api/shipping-guide/">Shipping Guide API</a></li>
+            <li>Show your customers the current status of their shipment with the <a href="{{ site.baseurl }}/api/tracking/">Tracking API</a></li>
+            <li>Book a shipment through the <a href="{{ site.baseurl }}/api/booking/">Booking API</a></li>
+            <li>Generate and download reports with the <a href="{{ site.baseurl }}/api/reports">Reports API</a></li>
+          </ul>
+
+        </section>
+
+        <section class="api__section" id="">
+          <h2 class="anchored">Authentication</h2>
+
+          <p>
+            Most of our APIs are open, but
+            <a href="{{ site.baseurl }}/api/booking/">Booking</a> and
+            <a href="{{ site.baseurl }}/api/easy-return-service/">Easy Return Service</a> 
+            require authentication, while
+            <a href="{{ site.baseurl }}/api/shipping-guide/">Shipping Guide</a> and 
+            <a href="{{ site.baseurl }}/api/tracking/">Tracking</a> have extra
+            features when authenticated.
+          </p>
+
+          <p>
+            We currently use custom headers for authenticating:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Header</th>
+                <th>Example</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>X-MyBring-API-Uid</code></td>
+                <td><code>john.doe@example.com</code></td>
+                <td>Mybring login ID</td>
+              </tr>
+              <tr>
+                <td><code>X-MyBring-API-Key</code></td>
+                <td><code>1234abc-abcd-1234-5678-abcd1234abcd</code></td>
+                <td>Your user's API key</td>
+              </tr>
+              <tr>
+                <td><code>X-Bring-Client-URL</code></td>
+                <td><code>https://example.com/</code></td>
+                <td>A URL that sort of identifies where you're using the APIs.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 class="epsilon">API key, huh? Where do I get that?</h3>
+
+          <p>
+            To get an API key, you must be <a href="https://www.mybring.com/">registered in Mybring</a> and have an invoice agreement with Bring. 
+          </p>
+
+          <p>
+            If you're already registered in Mybring, head to the <a href="https://www.mybring.com/useradmin/account/settings/">settings and API</a> page to get your API key.
+          </p>
 
 
+        </section>
 
+        <section class="api__section" id="">
+          <h2 class="anchored">Product List</h2>
+
+          <p>An extensive list of products.</p>
+
+          <dl>
+          {% for product_listing in site.data.products %}
+            <dt>{{ product_listing.specialist }}</dt>
+            {% for product in product_listing.products %}
+            <dd><code>{{ product }}</code></dd>
+            {% endfor %}
+          {% endfor %}
+          </dl>
+
+        </section>
+
+      </article>
+    </div><!-- 
+ --><div class="layout__item u-1/4">
+      {% comment %}
+      ----------------------------------------
+      --
+      -- Sidebar menu
+      --
+      ----------------------------------------
+      {% endcomment %}
+      {% include api_menu.html %}
+    </div>
+  </div>
+</div>
