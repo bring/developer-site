@@ -28,6 +28,7 @@
     line-height: 1.2;
     background-repeat: no-repeat;
     background-position: 20px 20px;
+    background-size: 70px;
     border: 1px solid #fff;
 }
 
@@ -35,11 +36,11 @@
     border: 1px solid #eee;
 }
 
-.apiflock__link--tracking {background-image: url('../img/icons/tracking.png');}
-.apiflock__link--shippingguide {background-image: url('../img/icons/shippingguide.png');}
-.apiflock__link--booking {background-image: url('../img/icons/booking.png');}
-.apiflock__link--pickuppoint {background-image: url('../img/icons/pickuppoint.png');}
-.apiflock__link--reports {background-image: url('../img/icons/reports.png');}
+.apiflock__link--tracking {background-image: url('../img/icons/tracking.svg');}
+.apiflock__link--shippingguide {background-image: url('../img/icons/shippingguide.svg');}
+.apiflock__link--booking {background-image: url('../img/icons/booking.svg');}
+.apiflock__link--pickuppoint {background-image: url('../img/icons/pickuppoint.svg');}
+.apiflock__link--reports {background-image: url('../img/icons/reports.svg');}
 .apiflock__link--purchaseorder {background-image: url('../img/icons/purchaseorder.png');}
-.apiflock__link--easyreturn {background-image: url('../img/icons/easyreturn.png');}
-.apiflock__link--postalcode {background-image: url('../img/icons/postalcode.png');}
+.apiflock__link--easyreturn {background-image: url('../img/icons/easyreturn.svg');}
+.apiflock__link--postalcode {background-image: url('../img/icons/postalcode.svg');}
