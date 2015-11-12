@@ -268,7 +268,7 @@ layout: redesign
       pre.parentNode.insertBefore(zeroClipboard, pre);
     });
 
-    var client = new ZeroClipboard($$('.btn-clipboard'));
+    var client = new ZeroClipboard($$('.zero-clipboard__btn'));
     client.on('copy', function(event) {
       var copyButton = event.target.parentNode;
       var pre = copyButton.nextSibling;
