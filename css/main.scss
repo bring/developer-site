@@ -99,6 +99,8 @@ $inuit-btn-color: $color-text;
 @import "node_modules/inuit-buttons/objects.buttons";
 @import "node_modules/inuit-media/objects.media";
 @import "node_modules/inuit-list-inline/_objects.list-inline.scss";
+$inuit-enable-list-block--small: true;
+@import "node_modules/inuit-list-block/_objects.list-block.scss";
 @import "objects.wrapper.scss";
 
 
