@@ -19,10 +19,10 @@ pre {
     background-color: $background-grey;
     font-family: Monaco, Consolas, 'Lucida Console', monospace;
     font-size: $font-size-small;
-    padding-top: $inuit-base-spacing-unit / 2;
-    padding-right: $inuit-base-spacing-unit;
-    padding-bottom: $inuit-base-spacing-unit / 2;
-    padding-left: $inuit-base-spacing-unit;
+    padding-top: $spacing / 2;
+    padding-right: $spacing;
+    padding-bottom: $spacing / 2;
+    padding-left: $spacing;
     overflow:auto;
 
     &.highlight {

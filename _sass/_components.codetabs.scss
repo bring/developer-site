@@ -32,17 +32,17 @@
 .codetabs__link {
     display: inline-block;
     padding: 0 2em;
-    padding-top: $inuit-base-spacing-unit/2;
-    padding-bottom: $inuit-base-spacing-unit/2;
+    padding-top: $spacing/2;
+    padding-bottom: $spacing/2;
     color: $dark-grey;
 }
 
 .codetabs__content {
-    padding-top: $inuit-base-spacing-unit;
-    padding-right: $inuit-base-spacing-unit;
-    padding-left: $inuit-base-spacing-unit;
+    padding-top: $spacing;
+    padding-right: $spacing;
+    padding-left: $spacing;
     border: 1px solid #ccc;
-    margin-bottom: $inuit-base-spacing-unit;
+    margin-bottom: $spacing;
 }
 
 .codetabs__panel {

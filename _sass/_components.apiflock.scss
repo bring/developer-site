@@ -21,18 +21,18 @@
         color: $color-text;
     }
     h2 {
-        margin-bottom: $inuit-base-spacing-unit/2;
+        margin-bottom: $spacing/2;
     }
 }
 
 .apiflock__link {
     display: block;
     width: 18em;
-    padding: $inuit-base-spacing-unit;
+    padding: $spacing;
     padding-top: 80px; // icon
     line-height: 1.2;
     background-repeat: no-repeat;
-    background-position: center $inuit-base-spacing-unit;
+    background-position: center $spacing;
     background-size: 70px;
     border: 3px solid $background-grey;
     text-align: center;
