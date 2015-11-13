@@ -1,0 +1,19 @@
+
+/* ------------------------------------------------------- 
+*   # .FANCY-DL
+*
+*   A component for making a fancy definition list.
+------------------------------------------------------- */
+
+.fancy-dl {
+    dt {
+        background-color: $dark-grey;
+        color: $white;
+        font-weight: bold;
+        padding-top: $inuit-base-spacing-unit / 4;
+        padding-bottom: $inuit-base-spacing-unit / 4;
+        padding-left: $inuit-base-spacing-unit * 2;
+        margin-top: $inuit-base-spacing-unit;
+        margin-bottom: $inuit-base-spacing-unit / 2;
+    }
+}
