@@ -7,16 +7,16 @@
 
 .apimenu {
     background-color: $background-grey;
-    padding-top: $inuit-base-spacing-unit;
-    padding-bottom: $inuit-base-spacing-unit;
+    padding-top: $spacing;
+    padding-bottom: $spacing;
 
     a {
         color: $color-text;
         display: block;
-        padding-left: $inuit-base-spacing-unit;
-        padding-right: $inuit-base-spacing-unit;        
-        padding-top: $inuit-base-spacing-unit / 4;
-        padding-bottom: $inuit-base-spacing-unit / 6;   
+        padding-left: $spacing;
+        padding-right: $spacing;        
+        padding-top: $spacing / 4;
+        padding-bottom: $spacing / 6;   
     }
     a:hover {
         background-color: $background-dark;
@@ -29,7 +29,7 @@
 }
 
 .apimenu__item {
-    margin-bottom: $inuit-base-spacing-unit;
+    margin-bottom: $spacing;
 }
 
 .apimenu__sublist {

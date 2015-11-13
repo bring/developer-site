@@ -28,10 +28,10 @@ tr {
 
 th,
 td {
-    padding-top: $inuit-base-spacing-unit / 4;
-    padding-right: $inuit-base-spacing-unit;    
-    padding-bottom: $inuit-base-spacing-unit / 4;   
-    padding-left: $inuit-base-spacing-unit / 2;   
+    padding-top: $spacing / 4;
+    padding-right: $spacing;
+    padding-bottom: $spacing / 4;
+    padding-left: $spacing / 2;
 }
 
 td > p {
