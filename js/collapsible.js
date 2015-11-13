@@ -19,24 +19,24 @@
 
   Collapsible.prototype.collapse = function() {
     this.toggler.classList.remove(CLS_TOGGLER_EXPANDED);
-    if (this.toggler.classList.contains(CLS_TOGGLER_COLLAPSED)) {
+    if (!this.toggler.classList.contains(CLS_TOGGLER_COLLAPSED)) {
       this.toggler.classList.add(CLS_TOGGLER_COLLAPSED);
     }
     
     this.target.classList.remove(CLS_TARGET_EXPANDED);
-    if (this.target.classList.contains(CLS_TARGET_COLLAPSED)) {
+    if (!this.target.classList.contains(CLS_TARGET_COLLAPSED)) {
       this.target.classList.add(CLS_TARGET_COLLAPSED);
     }
   };
 
   Collapsible.prototype.expand = function() {
     this.toggler.classList.remove(CLS_TOGGLER_COLLAPSED);
-    if (this.toggler.classList.contains(CLS_TOGGLER_EXPANDED)) {
+    if (!this.toggler.classList.contains(CLS_TOGGLER_EXPANDED)) {
       this.toggler.classList.add(CLS_TOGGLER_EXPANDED);
     }
     
     this.target.classList.remove(CLS_TARGET_COLLAPSED);
-    if (this.target.classList.contains(CLS_TARGET_EXPANDED)) {
+    if (!this.target.classList.contains(CLS_TARGET_EXPANDED)) {
       this.target.classList.add(CLS_TARGET_EXPANDED);
     }
   };
