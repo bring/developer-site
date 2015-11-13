@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="140px" height="100px" viewBox="0 0 140 100" enable-background="new 0 0 140 100" xml:space="preserve">
-<polygon fill="none" stroke="#7BC144" stroke-width="6" stroke-linecap="square" stroke-miterlimit="10" points="15,25 125,25 
-	125,75 101,75 101,46 71,46 71,75 15,75 "/>
-<line fill="none" stroke="#7BC144" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="86" y1="46" x2="86" y2="77"/>
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="140px" height="100px" viewBox="0 0 140 100">
+  <g stroke="#7BC144" fill="none" stroke-miterlimit="10">
+    <polygon stroke-width="6" stroke-linecap="square" points="15,25 125,25 125,75 103,75 103,45 71,45 71,75 15,75 "/>
+    <line stroke-width="2" stroke-linecap="square" x1="87" y1="46" x2="87" y2="77"/>
+  </g>
 </svg>
