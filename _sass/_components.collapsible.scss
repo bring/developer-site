@@ -11,13 +11,14 @@
 
 .collapsible__toggler {
     background-color: $color-branding;
-    color: $white;
+    color: #222;
     display: block;
     padding: $spacing / 2;
 }
 
 .collapsible__toggler:hover {
     background-color: $dark-grey;
+    color: #fff;
 }
 
 .collapsible__toggler--collapsed {
@@ -29,7 +30,7 @@
 }
 
 .collapsible__item {
-
+    padding: $spacing / 2;
 }
 
 .collapsible__item--collapsed {
