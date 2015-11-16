@@ -27,6 +27,7 @@ $background-grey: #f2f2f3;
 $background-dark: #dbdbdb;
 $warning-orange: #ffa400;
 $error-red: #e61919;
+$white: #ffffff;
  
 // functional variables:
 $color-branding: $bring-green;
@@ -34,19 +35,3 @@ $color-text: $dark-grey;
 $color-links: $link-blue;
 $color-background: $background-grey;
 $color-background-footer: $dark-grey;
-
-
-/* ------------------------------------------------------- 
-   other variables to not break the tabs sass for now
-------------------------------------------------------- */
-
-$white:           #ffffff;
-$green-1:         #7bc144;
-$link-color:      #048ebb;
-$grey-standard:   #717074;
-$grey-dark-1:     #444444;
-$grey-light-1:    #737376;
-$grey-light-3:    #bfc0c4;
-$grey-light-4:    #c9cacb;
-$grey-light-hover:   #999;
-$screen-size-small-width: 767px;
