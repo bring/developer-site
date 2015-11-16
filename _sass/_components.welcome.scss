@@ -27,20 +27,23 @@
     margin-bottom: $spacing;
 }
 
-.welcome__list {
-    
-}
-
 .welcome__item {
-    img {
-        max-width: 200px;
-        margin-bottom: $spacing/2;
-    }
+
     h2 {
         margin-bottom: $spacing/4;
     }
-    p {
-        line-height: 1.2;
+
+    img {
+        max-height: 100px;
+    }
+
+    @include media-query(lap-and-up) {
+
+        img {
+            max-width: 200px;
+            max-height: none;
+            margin-bottom: $spacing/2;
+        }
     }
 }
 
