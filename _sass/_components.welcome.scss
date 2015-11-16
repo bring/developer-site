@@ -7,7 +7,7 @@
 
 .welcome {
     background-color: $background-grey;
-    padding: $spacing 0;
+    padding: $spacing;
     margin-bottom: $spacing*2;
     text-align: center;
     a {
@@ -16,9 +16,13 @@
 }
 
 .welcome__title {
-    font-size: 4.2em;
     color: $color-branding;
-    margin-bottom: 0.2em;
+    margin-bottom: $spacing/2;
+
+    @include media-query(lap-and-up) {
+        font-size: 4.2em;
+    }
+
 }
 
 .welcome__tagline {
