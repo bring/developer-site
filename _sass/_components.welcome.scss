@@ -43,6 +43,7 @@
 .welcome__item {
 
     h2 {
+        font-size: $inuit-heading-size-4;
         margin-bottom: $spacing/4;
     }
 
@@ -55,8 +56,11 @@
         img {
             max-width: 200px;
             max-height: none;
-            margin-bottom: $spacing/2;
         }
+        h2 {
+            font-size: $inuit-heading-size-3;
+        }
+
     }
 }
 
