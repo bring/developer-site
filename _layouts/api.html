@@ -119,12 +119,12 @@ layout: redesign
                 ----------------------------------------
                 --
                 -- For each endpoint:
-                -- Request
+                -- Request body
                 --
                 ----------------------------------------
                 {% endcomment %}
                 {% if method[1].bodies.size > 0 %}
-                  <h2>Request body</h2>
+                  <h2 class="delta">Request body</h2>
                   {% comment %}
 
                   Tabs for JSON, XML, SOAP
@@ -168,7 +168,7 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% unless method[1].responses == empty %}
-                <h2 class="delta">Response</h2>
+                <h2>Response</h2>
                 {% endunless %}
                 {% for response in method[1].responses %}
                   {% if response[1].status_code > 220 and response[1].status_code < 300 %}
@@ -183,7 +183,7 @@ layout: redesign
                     {% assign additional_examples = true %}
                     {% continue %}
                   {% endif %}
-                  <h3>{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
+                  <h3 class="delta">{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
                   {% if response[1].description %}
                     {{ response[1].description | markdownify }}
                   {% endif %}
@@ -234,7 +234,7 @@ layout: redesign
                 {% endfor %}
 
                 {% if additional_examples %}
-                  <h2>We have additional examples!!!!</h2>
+                  <h2>More examples</h2>
 
                   <div class="collapsible u-mb++">
                     <ul class="list-block list-block--small">
