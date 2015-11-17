@@ -16,19 +16,28 @@
 }
 
 .welcome__title {
+    font-size: $inuit-heading-size-2;
     color: $color-branding;
     margin-bottom: $spacing/2;
 
-    @include media-query(lap-and-up) {
-        font-size: 4.2em;
-    }
-
+        @include media-query(lap-and-up) {
+            color: $white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+            font-size: 5.4em;
+            margin-top: -180px;
+        }
 }
 
 .welcome__tagline {
-    font-size: $inuit-base-font-size;
+    font-size: $inuit-heading-size-5;
     font-weight: normal;
     margin-bottom: $spacing;
+
+        @include media-query(lap-and-up) {
+            font-size: $inuit-heading-size-4;
+            color: $white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    }
 }
 
 .welcome__item {
