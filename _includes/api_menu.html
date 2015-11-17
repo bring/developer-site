@@ -1,10 +1,10 @@
 
       <nav class="apimenu" data-sticky="true">
-        <ul class="apimenu__list">
-          <li class="apimenu__item{% if page.url == '/api/' %} active{% endif %}">
-            <h3 class="epsilon u-mb0"><a href="{{ site.baseurl }}/api/">Getting Started</a></h3>
+        <ul class="list-bare apimenu__list">
+          <li class="{% if page.url == '/api/' %} active{% endif %}">
+            <h3 class="apimenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/">Getting Started</a></h3>
             {% if page.url == '/api/' %}
-            <ul class="apimenu__sublist">
+            <ul class="list-bare apimenu__sublist">
               <li class="active" data-scrollspy="#introduction"><a href="{{ site.baseurl }}/api/#introduction">Introduction</a></li>
               <li data-scrollspy="#authentication"><a href="{{ site.baseurl }}/api/#authentication">Authentication</a></li>
               <li data-scrollspy="#formats"><a href="{{ site.baseurl }}/api/#formats">Formats</a></li>
@@ -19,10 +19,10 @@
           {% else %}
             {% assign active_page = false %}
           {% endif %}
-          <li class="apimenu__item{% if active_page %} active{% endif %}">
-            <h3 class="epsilon u-mb0"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
+          <li class="{% if active_page %} active{% endif %}">
+            <h3 class="apimenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
             {% if active_page %}
-            <ul class="apimenu__sublist">
+            <ul class="list-bare apimenu__sublist">
               <li class="active" data-scrollspy="#api-documentation"><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
               {% for resource in api_page.api.resources %}
                 <li data-scrollspy="#{{ resource.display_name | slugify }}"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
