@@ -3,8 +3,18 @@ title: Getting started with our APIs
 layout: redesign
 ---
 <div class="wrapper">
-  <div class="layout layout--flush layout--rev">
-    <div class="layout__item palm-one-whole desk-three-quarters">
+  <div class="layout layout--flush">
+    <div class="layout__item palm-one-whole desk-one-quarter">
+      {% comment %}
+      ----------------------------------------
+      --
+      -- Sidebar menu
+      --
+      ----------------------------------------
+      {% endcomment %}
+      {% include api_menu.html %}
+    </div><!-- 
+ --><div class="layout__item palm-one-whole desk-three-quarters">
       <article class="api">
 
         <section class="api__section">
@@ -182,16 +192,6 @@ layout: redesign
         </section>
 
       </article>
-    </div><!-- 
- --><div class="layout__item palm-one-whole desk-one-quarter">
-      {% comment %}
-      ----------------------------------------
-      --
-      -- Sidebar menu
-      --
-      ----------------------------------------
-      {% endcomment %}
-      {% include api_menu.html %}
     </div>
   </div>
 </div>
