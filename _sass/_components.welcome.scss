@@ -22,8 +22,8 @@
 
         @include media-query(lap-and-up) {
             color: $white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
-            font-size: 5.4em;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            font-size: 5.2em;
             margin-top: -180px;
         }
 }
@@ -36,7 +36,7 @@
         @include media-query(lap-and-up) {
             font-size: $inuit-heading-size-4;
             color: $white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
     }
 }
 
