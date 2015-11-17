@@ -23,19 +23,22 @@
 }
 
 .collapsible__toggler::after {
-    font-size: 1.5em;
+    font-size: 2em;
     position: relative;
-    top: -0.25em;
+    top: -0.3em;
+    right: 0.3em;
     color: rgba(0,0,0,0.2);
     float: right;
+    transition: transform 0.2s ease 0s;
 }
 
 .collapsible__toggler--collapsed::after {
-    content: "▼";
+    content: "▾";
 }
 
 .collapsible__toggler--expanded::after {
-    content: "▲";
+    content: "▾";
+    transform: rotate(-180deg);
 }
 
 .collapsible__toggler:hover::after {
