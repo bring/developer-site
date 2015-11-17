@@ -11,7 +11,8 @@
 
 .collapsible__toggler {
     background-color: $color-branding;
-    color: #222;
+    color: $dark-grey;
+    font-weight: bold;
     display: block;
     padding: $spacing / 2;
 }
@@ -21,12 +22,24 @@
     color: #fff;
 }
 
-.collapsible__toggler--collapsed {
-
+.collapsible__toggler::after {
+    font-size: 1.5em;
+    position: relative;
+    top: -0.25em;
+    color: rgba(0,0,0,0.2);
+    float: right;
 }
 
-.collapsible__toggler--expanded {
+.collapsible__toggler--collapsed::after {
+    content: "▼";
+}
 
+.collapsible__toggler--expanded::after {
+    content: "▲";
+}
+
+.collapsible__toggler:hover::after {
+    color: $white;
 }
 
 .collapsible__item {
