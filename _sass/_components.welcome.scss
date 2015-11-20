@@ -68,3 +68,9 @@
     display: block;
     padding: $spacing;
 }
+
+.welcome__link:hover {
+    img {
+        opacity: 0.8;
+    }
+}
