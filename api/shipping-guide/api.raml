@@ -289,6 +289,174 @@ documentation:
         body:
           application/json:
           application/xml:
+      250:
+        displayName: Multiple parcels in one query
+        description: |
+          It is also possible to combine weight, volume and dimensions for multiple parcels. Multiple parcels are specified by suffixing weightInGrams, volume or dimensions (length, width or height), with sequential numbers from 0.
+          
+          The data used in this example is:
+          
+          - `from=7041`
+          - `to=0558`
+          
+          Parcels:
+          
+          1. `weightInGrams0=1500`
+          2. `volume1=33`
+          3. `length2=10&width2=20&height2=30`
+
+          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7041&to=0558&weightInGrams0=1500&volume1=33&length2=10&width2=20&height2=30)
+        body:
+          application/json:
+            example: !include examples/multiple_parcels.json
+          application/xml:
+            example: !include examples/multiple_parcels.xml
+      251:
+        displayName: International shipments
+        description: |
+          Specified using `fromCountry=NO&toCountry=DK`.
+
+          [Country Codes are ISO-3166-1-alpha-2](http://www.iso.org/iso/country_names_and_code_elements).
+
+          [Example request](https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=insertYourClientUrlHere&from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY).
+        body:
+          application/json:
+            example: !include examples/international_shipments.json
+          application/xml:
+            example: !include examples/international_shipments.xml
+      252:
+        displayName: International shipments to countries without postal codes
+        description: |
+          In the example below, a parcel is sent from Norway to Dublin, Ireland. The parameters are:
+
+          - `?fromCountry=NO`
+          - `&toCountry=IE`
+          - `&to=0`
+          - `&toCity=Dublin`
+          
+          To see both the expected delivery time and the price, we've added:
+          
+          - `&weightInGrams=300`, and
+          - `all.json`
+
+          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300)
+        body:
+          application/json:
+            example: !include examples/international_without_postal_codes.json
+          application/xml:
+            example: !include examples/international_without_postal_codes.xml
+      253:
+        displayName: Three ways to specify a package size
+        description: |
+          ### Weight in grams
+
+          Specified using [`weightInGrams=1500`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500).
+
+          ### Package dimensions
+
+          Specified using [`length=30&width=40&height=40`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&length=30&width=40&height=40).
+
+          ### Volume
+
+          Instead of, or in addition to using the package's weight and dimensions you can specify volume. This is relevant for non-rectangular hexahedron shaped packages, and depending on the volume, it could affect the set of available products. The unit is dm3.
+
+          Specified using [`volume=33`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&volume=33).
+        body:
+          application/json:
+            example: !include examples/specify_package_size.json
+          application/xml:
+            example: !include examples/specify_package_size.xml
+      254:
+        displayName: Get the expected delivery date
+        description: |
+          Specifies the date the package is delivered to Bring. The parameter is used to calculate the expected delivery date.
+
+          Specified using `date=YYYY-MM-DD`.
+
+          If this parameter is specified, the response will include expected delivery date, in addition to expected number of working days.
+
+          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&volume=33&date=2015-11-27&product=EKSPRESS09)
+        body:
+          application/json:
+            example: !include examples/expected_delivery_date.json
+          application/xml:
+            example: !include examples/expected_delivery_date.xml
+      255:
+        displayName: Specify the pickup time from the departure point
+        description: |
+          Use this parameter if you would like to specify when during the day the package needs to be picked up from the departure point.
+          
+          This parameter is only considered for courier and express products.
+          
+          Specified using `date=HHHH-YY-MM&time=mm:ss` (date and time are required to use this option).
+
+          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&volume=33&date=2015-11-27&time=13:37)
+        body:
+          application/json:
+            example: !include examples/specify_pickup_time.json
+          application/xml:
+            example: !include examples/specify_pickup_time.xml
+      256:
+        displayName: Specify whether or not the shipment has been pre-registered (EDI)
+        description: |
+          Specify whether or not the shipment has been pre-registered (EDI).
+
+          Specified using `edi=false`.
+
+          This will affect response prices and might affect which products are available.
+
+          Default: `true`
+
+          [Example request](https://api.bring.com/shippingguide/products/price.xml?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&edi=false)
+        body:
+          application/json:
+            example: !include examples/speciy_edi_registered.json
+          application/xml:
+            example: !include examples/speciy_edi_registered.xml
+      257:
+        displayName: Specify if the package was shipped from a post office
+        description: |
+          The response data may vary depending on whether or not Bring must collect the shipment, or if the customer delivers the shipment from a post office.
+          
+          This parameter specifies whether or not the package is delivered to a post office before shipping
+          
+          Specified using `postingAtPostOffice=true`
+          
+          Default: `false`
+
+          [Example request](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE)
+        body:
+          application/json:
+            example: !include examples/specify_shipped_from_post_office.json
+          application/xml:
+            example: !include examples/specify_shipped_from_post_office.xml
+      258:
+        displayName: Adjust prices
+        description: |
+          The Shipping Guide provides adjustment of prices shown.
+          
+          To adjust the price, add [`&priceAdjustment=m20p`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p) to the query.
+          
+          The parameter is built up in the form `[produktkode_][o]10[p]`. Parts of the parameter with square brackets ( [] ) is optional.
+          
+          Explanation of the parameters follows:
+          
+          - `produktkode_` used if price adjustments are only made for a single product. Example: [`&priceAdjustment=SERVICEPAKKE_m20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_m20) lowers the price on product Servicepakke with NOK 20.
+          - `o` specifies the operation to be performed. Operations supported are `p` for positive, `m` for negative or blank for a fixed price adjustment. Examples:
+            - [`&priceAdjustment=m20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20) deducts NOK 20 on all products.
+            - [`&priceAdjustment=p20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=p20) adds NOK 20 to all products.
+            - [`&priceAdjustment=SERVICEPAKKE_79`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_79) puts a fixed price on Servicepakke on NOK 79.
+          - `10` indicates the factor to be used in the price adjustment. This number can be a fixed amount or percentage to be added/subtracted, or a fixed price to be added/subtracted depending on other parameters.
+          - `p` indicates that the operation should be done as a percentage calculation. Note that this is only valid for operations doing additions and subtractions (not fixed prices).
+          
+          Though *not recommended*, it is possible to make overlapping queries. If there is a need to do multiple simultaneous price adjustments, it should be done on a product-by-product basis using the product code prefix.
+          
+          *Example*: [set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress Over natten 09](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p).
+        body:
+          application/json:
+            example: !include examples/adjust_prices.json
+          application/xml:
+            example: !include examples/adjust_prices.xml
 
 /api/ws:
   displayName: SOAP
