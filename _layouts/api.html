@@ -252,10 +252,7 @@ layout: redesign
                       {% unless response[1].status_code > 220 and response[1].status_code < 300 %}
                         {% continue %}
                       {% endunless %}
-                      {% comment %}
                       {% assign example_id = response[1].display_name | append: response[1].status_code | slugify %}
-                      {% endcomment %}
-                      {% assign example_id = 'kokeboklord' %}
                       <li>
                         <a href="#" data-collapse="#{{ example_id }}" class="collapsible__toggler collapsible__toggler--collapsed">{{ response[1].display_name }}</a>
                         <div id="{{ example_id }}" class="collapsible__item collapsible__item--collapsed">
