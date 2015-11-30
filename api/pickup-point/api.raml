@@ -6,9 +6,13 @@ baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 documentation:
 - title: Introduction
   content: |
-      The Pickup point API provides a list of the alternative locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned. Response is available as either XML or JSON.
+      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned. Response is available as either XML or JSON.
 
-      A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices and selected grocery stores.
+      A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers, etc.
+
+      ### Filtering results
+
+      In addition to postal code or location, one or more optional parameters can be added to the request, adding additional restrictions to the pickup points being returned. One such parameter is `searchForText=<texts>`, resulting in a response where all pickup points have at least a partial match with the search string given in `<texts>`. This can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table or see additional examples for more information.
 
 /{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
   displayName: Pickup points for postal code
@@ -50,6 +54,71 @@ documentation:
       callback:
         description: JSONP callback function name.
         type: string
+    responses:
+      200:
+        displayName: Example response for NO/postalCode/1407
+        body:
+          application/json:
+            example: !include examples/by_postal_code.json
+          application/xml:
+            example: !include examples/by_postal_code.xml
+      250:
+        displayName: Using postal code and street address
+        description: |
+          Sometimes (especially in Denmark) it's a good idea to also specify the address when searching for pickup points, to get more accurate results.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/DK/postalCode/2000.json?street=Smallegade&streetNumber=3), we look for pickup points in Smallegade 3, 2000 Frederiksberg.          
+        body:
+          application/json:
+            example: !include examples/filter_address.json
+          application/xml:
+            example: !include examples/filter_address.xml
+      251:
+        displayName: Find pickup points containing a specific string
+        description: |
+          If you want to return only the pickup points matching a specific string, you may use the `searchForText` query param. The given text can be the name of the pickup point, its address, city, county, municipality or location. Partial matches are also allowed.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?searchForText=KIWI), we look for pickup points near NO/1407 cotaining "Kiwi".
+        body:
+          application/json:
+            example: !include examples/filter_search.json
+          application/xml:
+            example: !include examples/filter_search.xml
+      252:
+        displayName: Find pickup points open on specific days
+        description: |
+          If you want to return only the pickup points open on specified days, you may use the `openingHoursSearchType=<day>` query param. `<day>` be:
+
+          - `ALL_WEEKDAYS` (default)
+          - `MONDAY`
+          - `TUESDAY`
+          - `WEDNESDAY`
+          - `THURSDAY`
+          - `FRIDAY`
+          - `SATURDAY`
+          - `SUNDAY`
+
+          If you want you can also add `openOnOrBefore` and / or `openOnOrAfter`, to limit the search even more.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openingHoursSearchType=SUNDAY), we look for pickup points near NO/1407 that are open Sundays.
+        body:
+          application/json:
+            example: !include examples/filter_days.json
+          application/xml:
+            example: !include examples/filter_days.xml
+      253:
+        displayName: Find pickup points open at specific hours
+        description: |
+          If you want to return only the pickup points open on specific hours, you may use the `openOnOrBefore=<time>` and/or `openOnOrAfter=<time>` query params.
+
+          The format of `<time>` is `hhmm`.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openOnOrBefore=0800), we look for pickup points near NO/1407 open on or before 08:00.
+        body:
+          application/json:
+            example: !include examples/filter_hours.json
+          application/xml:
+            example: !include examples/filter_hours.xml
 
 /{countryCode}/location/{latitude},{longitude}{mediaTypeExtension}:
   displayName: Pickup points for location
@@ -96,6 +165,14 @@ documentation:
       callback:
         description: JSONP callback function name.
         type: string
+    responses:
+      200:
+        displayName: Example response for location/60.395226,5.321725
+        body:
+          application/json:
+            example: !include examples/by_coordinates.json
+          application/xml:
+            example: !include examples/by_coordinates.xml
 
 /{countryCode}/id/{id}{mediaTypeExtension}:
   displayName: A specific pickup point
@@ -113,6 +190,14 @@ documentation:
         displayName: JSONP support
         description: Callback function name.
         type: string
+    responses:
+      200:
+        displayName: Example response for id/121110
+        body:
+          application/json:
+            example: !include examples/by_id.json
+          application/xml:
+            example: !include examples/by_id.xml
 
 /{countryCode}/all{mediaTypeExtension}:
   displayName: All pickup points in a country
