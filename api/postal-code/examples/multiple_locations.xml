@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PostalCodeQueryResponse>
+    <Response valid="true" postalCodeType="UNKNOWN"></Response>
+    <MultipleMatches>
+        <Value>Ballstädt</Value>
+        <Value>Brüheim</Value>
+        <Value>Bufleben</Value>
+        <Value>Ebenheim</Value>
+        <Value>Emleben</Value>
+        <Value>Eschenbergen</Value>
+        <Value>Friedrichswerth</Value>
+        <Value>Friemar</Value>
+        <Value>Goldbach</Value>
+        <Value>Grabsleben</Value>
+        <Value>Günthersleben</Value>
+        <Value>Haina</Value>
+        <Value>Hochheim</Value>
+        <Value>Molschleben</Value>
+        <Value>Mühlberg</Value>
+        <Value>Pferdingsleben</Value>
+        <Value>Remstädt</Value>
+        <Value>Schwabhausen</Value>
+        <Value>Seebergen</Value>
+        <Value>Sonneborn</Value>
+        <Value>Tröchtelborn</Value>
+        <Value>Tüttleben</Value>
+        <Value>Wandersleben</Value>
+        <Value>Wangenheim</Value>
+        <Value>Warza</Value>
+        <Value>Wechmar</Value>
+        <Value>Weingarten</Value>
+        <Value>Westhausen</Value>
+    </MultipleMatches>
+</PostalCodeQueryResponse>
