@@ -14,118 +14,142 @@ documentation:
 
     Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
 
+    ## SOAP
+
+    ### Versioning
+
+    Purchase Order makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service. To achieve this, a SchemaVersion element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
+
+    We make an effort not to return new elements in the response when an old schema version is specified. When changes in the schema are made, the SchemaVersion is incremented by one. The new schema is used at the same endpoint URL as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
+
+    Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in the sense that elements are not renamed or deleted.
+
+    ### WSDL
+
+    [https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+
+    ## Error handling
+
+    When using the Purchase Order, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
+
+    How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
+
+    See [the list of error codes](#list-error-codes) for hints on how to implement error handling.
+
 /purchaseorderCustomer/{customerId}:
+  displayName: Check if customer is valid for purchase orders
   get:
-    description: |
-      Retrieve resource(s)
+    description: Check if customer is valid for purchase orders
     responses:
       200:
+        displayName: Success
         description: |
-          Successfully retrieved resource(s)
-  
+          Returns `true` if given customer is a valid for purchase orders.
+        body:
+          application/xml:
+            example: !include examples/verify_customer.xml
 
 /order/{customerId}/{purchaseorderId}:
+  displayName: List purhcase order information
   get:
-    description: |
-      Retrieve resource(s)
+    description: List purhcase order information
     responses:
       200:
+        displayName: Success
         description: |
-          Successfully retrieved resource(s)
-
-
+          Complete purchase order information including order items.
+        body:
+          application/xml:
+            example: !include examples/retrieve_purchaseorder.xml
 
 /order:
+  displayName: Send a purchase order
   post:
-    description: |
-      Create a new resource
-    body:
-      application/json: !!null
+    description: Send a purchase order
     responses:
-      201:
+      200:
+        displayName: Success
         description: |
-          Successfully created a new resource
-        headers:
-          Location:
-            description: |
-              Location of the newly created resource
-            type: string
-            required: false
-
+          Successfully created a purhcase order.
+        body:
+          application/xml:
+            example: !include examples/create_purchaseorder.xml
 
 /items/{customerId}/{purchaseorderId}:
+  displayName: List purchase order items
   get:
-    description: |
-      Retrieve resource(s)
+    description: List purchase order items
     responses:
       200:
+        displayName: Success
         description: |
-          Successfully retrieved resource(s)
+          List of purchase order items.
+        body:
+          application/xml:
+            example: !include examples/retrieve_orderitems.xml
 
 /transport/{customerId}/{purchaseorderId}:
+  displayName: List transport orders for purchase order
   get:
-    description: |
-      Retrieve resource(s)
+    description: List transport orders for purchase order
     responses:
       200:
+        displayName: Success
         description: |
-          Successfully retrieved resource(s)
+          List of transport orders for given purchase order, if any.
+        body:
+          application/xml:
+            example: !include examples/retrieve_orderitems.xml
 
 /transport:
+  displayName: Add packaging list
   post:
-    description: |
-      Create a new resource
+    description: Add packaging list
     body:
-      application/json: !!null
+      application/xml:
+        example: !include examples/create_packaging_list.xml
     responses:
-      201:
+      200:
+        displayName: Success
         description: |
-          Successfully created a new resource
-        headers:
-          Location:
-            description: |
-              Location of the newly created resource
-            type: string
-            required: false
+          Successfully added packaging list.
 
 /senderStatus/{customerId}/{purchaseorderId}:
+  displayName: Get status for purchase order
   get:
-    description: |
-      Retrieve resource(s)
+    description: Get status for purchase order
     responses:
       200:
-        description: |
-          Successfully retrieved resource(s)
+        displayName: Success
+        description: Open or Locked.
+        body:
+          application/xml:
+            example: !include examples/check_status.xml
 
 /event:
+  displayName: Create TMSEvents
   post:
-    description: |
-      Create a new resource
+    description: Create TMSEvents
     body:
-      application/json: !!null
-    responses:
-      201:
-        description: |
-          Successfully created a new resource
-        headers:
-          Location:
-            description: |
-              Location of the newly created resource
-            type: string
-            required: false
-  
-/errorCodes:
-  get:
-    description: |
-      Retrieve resource(s)
+      application/xml:
+        example: !include examples/create_events.xml
     responses:
       200:
+        displayName: Success
         description: |
-          Successfully retrieved resource(s)
-
-
-
-
-
+          Successfully created a new resource
+  
+/errorCodes:
+  displayName: List error codes
+  get:
+    description: List error codes
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Dynamic list of error codes used in the solution.
+        body:
+          application/xml:
+            example: !include examples/error_codes.xml
 
 
