@@ -3,29 +3,6 @@
 title: Booking API
 baseUri: https://api.bring.com/booking/api
 
-securitySchemes:
-- mybring_headers:
-    description: |
-      The API supports using Mybring headers for authenticating requests.
-    type: x-headers
-    describedBy:
-      headers:
-        X-MyBring-API-Uid:
-          displayName: Mybring user id
-          required: true
-          example: mybring-user@example.com
-        X-MyBring-API-Key:
-          displayName: Mybring API key
-          required: true
-          example: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff0
-        X-Bring-Client-URL:
-          displayName: client url
-          required: true
-          example: https://example.com/shop
-      responses:
-        400:
-          description: Authentication failed.
-
 documentation:
 - title: Introduction
   content: |
@@ -39,9 +16,20 @@ documentation:
   content: |
       Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
 
+- title: Authentication
+  content: |
+    The Booking API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+
+    Those headers must be set for all endpoints documented below.
+
 /customers{mediaTypeExtension}:
   displayName: Customers endpoint
-  securedBy: [mybring_headers]
   description: |
       The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-products, we use a UUID to identify users.
 
@@ -76,9 +64,6 @@ documentation:
   displayName: Booking endpoint (REST)
   description: |
       Book shipments, get labels.
-
-
-  securedBy: [mybring_headers]
   post:
     description: Make a booking (REST)
     headers:
@@ -247,7 +232,6 @@ documentation:
 /ws:
   displayName: Booking endpoint (SOAP)
   description: Make a booking, get a label
-  securedBy: [mybring_headers]
   post:
     description: Make a booking (SOAP)
     body: 

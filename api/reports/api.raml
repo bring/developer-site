@@ -38,6 +38,17 @@ documentation:
     5. Download report
     6. Get list of invoice numbers for given customer or group
 
+- title: Authentication
+  content: |
+    The Reports API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+
+    Those headers must be set for all endpoints documented below.
 
 /generate{mediaTypeExtension}:
   displayName: List available customers
