@@ -8,6 +8,18 @@ documentation:
   content: |
     The API lets you create labels for parcels returning to cross-border e-retailers.
 
+- title: Authentication
+  content: |
+    The Easy Return Service API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+
+    Those headers must be set for all endpoints documented below.
+
 /label:
   displayName: Create or list labels
   post:

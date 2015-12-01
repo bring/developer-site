@@ -3,34 +3,27 @@
 title: Tracking API
 baseUri: https://tracking.bring.com
 
-securitySchemes:
-- mybring_headers:
-    description: |
-      The API supports using Mybring headers for authenticating requests.
-    type: x-headers
-    describedBy:
-      headers:
-        X-MyBring-API-Uid:
-          displayName: Mybring user id
-          required: true
-          example: mybring-user@example.com
-        X-MyBring-API-Key:
-          displayName: Mybring API key
-          required: true
-          example: f00f000f-00f0-f0f0-f0f0-f0f0f0f0ff0
-        X-Bring-Client-URL:
-          displayName: client url
-          required: true
-          example: https://example.com/shop
-      responses:
-        400:
-          displayName: Authentication failed
-          description: Authentication failed.
-
 documentation:
 - title: Introduction
   content: |
       The tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to display details and the status of shipments. The information available in this API is the same information available from the [Tracking web site](http://tracking.bring.com/). Response is available as either XML or JSON.
+
+- title: Authentication
+  content: |
+    If you are a Mybring user, you can authenticate requests to the Tracking API. Authenticated requests have the following benefits:
+
+    - You get more information about your parcels, for example signatures for proof of develiery
+    - No rate limiting
+
+    See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+
+    Those headers must be present for authenticating requests.
 
 /sporing{mediaTypeExtension}:
   displayName: Tracking endpoint
