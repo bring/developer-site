@@ -1,0 +1,102 @@
+{
+  "consignmentSet": [
+    {
+      "consignmentId": "SHIPMENTNUMBER",
+      "previousConsignmentId": "",
+      "packageSet": [
+        {
+          "statusDescription": "Package can be collected at pickup point or pickup locker.",
+          "descriptions": [
+            
+          ],
+          "packageNumber": "TESTPACKAGEATPICKUPPOINT",
+          "previousPackageNumber": "",
+          "productName": "KLIMAN\u00d8YTRAL SERVICEPAKKE",
+          "productCode": "1202",
+          "brand": "POSTEN",
+          "lengthInCm": 41,
+          "widthInCm": 38,
+          "heightInCm": 29,
+          "volumeInDm3": 45.2,
+          "weightInKgs": 16.5,
+          "pickupCode": "AA11",
+          "dateOfReturn": "01.12.2011",
+          "senderName": "POSTEN NORGE AS",
+          "senderAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "",
+            "city": "",
+            "countryCode": "",
+            "country": ""
+          },
+          "recipientHandlingAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "1407",
+            "city": "VINTERBRO",
+            "countryCode": "",
+            "country": ""
+          },
+          "eventSet": [
+            {
+              "description": "Package has arrived at pickup point or pickup locker",
+              "status": "READY_FOR_PICKUP",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "122608",
+              "unitInformationUrl": "http:\/\/fraktguide.bring.no\/fraktguide\/api\/pickuppoint\/id\/122608",
+              "unitType": "BRING",
+              "postalCode": "2341",
+              "city": "L\u00d8TEN",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2010-10-01T08:30:25+02:00",
+              "displayDate": "01.10.2010",
+              "displayTime": "08:30",
+              "consignmentEvent": false
+            },
+            {
+              "description": "Package has been handed in at terminal and forwarded",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "032850",
+              "unitType": "BRING",
+              "postalCode": "0024",
+              "city": "OSLO",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2010-09-30T08:27:08+02:00",
+              "displayDate": "30.09.2010",
+              "displayTime": "08:27",
+              "consignmentEvent": false
+            }
+          ]
+        }
+      ],
+      "senderName": "POSTEN NORGE AS",
+      "senderAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "",
+        "city": "",
+        "countryCode": "",
+        "country": ""
+      },
+      "recipientHandlingAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "1407",
+        "city": "VINTERBRO",
+        "countryCode": "",
+        "country": ""
+      },
+      "senderReference": "",
+      "totalWeightInKgs": 16.5,
+      "totalVolumeInDm3": 45.2
+    }
+  ]
+}

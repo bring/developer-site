@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
 title: Tracking API
-baseUri: http://sporing.bring.no
+baseUri: https://tracking.bring.com
 
 securitySchemes:
 - mybring_headers:
@@ -71,6 +71,42 @@ documentation:
           application/xml:
             example: !include examples/testpackage.xml
             schema: !include schemas/sporing-v1.xsd
+      250:
+        displayName: Status - notification received
+        description: |
+          The example below is showing a package that have been EDI notified, but is not received by Bring.
+        body:
+          application/json:
+            example: !include examples/notification_received.json
+          application/xml:
+            example: !include examples/notification_received.xml
+      251:
+        displayName: Status - waiting at pickup point
+        description: |
+          The example below is showing a package waiting for the recipient to collect it at a pickup point
+        body:
+          application/json:
+            example: !include examples/waiting_at_pup.json
+          application/xml:
+            example: !include examples/waiting_at_pup.xml
+      252:
+        displayName: Status - loaded for delivery
+        description: |
+          The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient.
+        body:
+          application/json:
+            example: !include examples/loaded_for_delivery.json
+          application/xml:
+            example: !include examples/loaded_for_delivery.xml
+      253:
+        displayName: Status - delivered
+        description: |
+          The example below is showing a package that has been delivered to the reciepient.
+        body:
+          application/json:
+            example: !include examples/delivered.json
+          application/xml:
+            example: !include examples/delivered.xml
 
 
 

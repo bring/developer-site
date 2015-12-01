@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ConsignmentSet xmlns="http://www.bring.no/sporing/1.0">
+<Consignment previousConsignmentId="" consignmentId="SHIPMENTNUMBER">
+    <TotalWeight unitCode="kg">16.5</TotalWeight>
+    <TotalVolume unitCode="dm3">45.2</TotalVolume>
+    <SenderReference/>
+    <PackageSet>
+        <Package previousPackageId="" packageId="TESTPACKAGEEDI">
+            <StatusDescription>Norway Post/Bring has received a message from sender that a package is on its way, but has not yet received the package. In case of questions, please contact the sender</StatusDescription>
+            <Descriptions/>
+            <ProductName>P&#xC5; D&#xD8;REN</ProductName>
+            <ProductCode>1736</ProductCode>
+            <Brand>POSTEN</Brand>
+            <Weight unitCode="kg">16.5</Weight>
+            <Length unitCode="cm">41</Length>
+            <Width unitCode="cm">38</Width>
+            <Height unitCode="cm">29</Height>
+            <Volume unitCode="dm3">45.2</Volume>
+            <EventSet>
+                <Event>
+                    <Description>The consignment has not been received by Bring</Description>
+                    <Status>PRE_NOTIFIED</Status>
+                    <RecipientSignature>
+                        <Name/>
+                    </RecipientSignature>
+                    <UnitId>904030</UnitId>
+                    <UnitType>BRING</UnitType>
+                    <PostalCode/>
+                    <City/>
+                    <CountryCode/>
+                    <Country/>
+                    <OccuredAtIsoDateTime>2015-11-29T12:44:12.000+01:00</OccuredAtIsoDateTime>
+                    <OccuredAtDisplayDate>29.11.2015</OccuredAtDisplayDate>
+                    <OccuredAtDisplayTime>12.44</OccuredAtDisplayTime>
+                    <ConsignmentEvent>false</ConsignmentEvent>
+                </Event>
+            </EventSet>
+        </Package>
+    </PackageSet>
+</Consignment>
+</ConsignmentSet>
