@@ -14,6 +14,23 @@ documentation:
 
       In addition to postal code or location, one or more optional parameters can be added to the request, adding additional restrictions to the pickup points being returned. One such parameter is `searchForText=<texts>`, resulting in a response where all pickup points have at least a partial match with the search string given in `<texts>`. This can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table or see additional examples for more information.
 
+      ### Rate limiting
+
+      The Pickup point API has a rate limit, primarily considered on a per-user basis. Currently it limits API users to no more than 60 requests within a minute from a single IP address.
+
+      Once you go over the rate limit, you will receive a response with an HTTP response code of 429 (Too Many Requests). The body of the response will consist of the following fields:
+
+      - `code`: `429`
+      - `error_message`: `The maximum number of requests per minute has been exceeded.`
+
+      As an additional note, While accessing the Pickup point API together with Shipping Guide API, the product list should be displayed even in the case that the request has been rate limited by the Pickup point API.
+
+      #### High-volume users
+
+      If you're a high-volume user of the Pickup Point API, please [contact Customer Service](http://developer.bring.com/support/) to discuss your options.
+
+      When contacting Bring support include a description of how you are using the Pickup Point API, also an estimate of current request volumes.
+
 /{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
   displayName: Pickup points for postal code
   uriParameters:
