@@ -32,6 +32,8 @@ documentation:
   securedBy: [mybring_headers, null]
   description: |
       For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
+
+      You can find an XSD for the XML response here: [tracking-v1.xsd](/api/tracking/schemas/tracking-v1.xsd).
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
@@ -65,7 +67,7 @@ documentation:
             example: !include examples/testpackage.json
           application/xml:
             example: !include examples/testpackage.xml
-            schema: !include schemas/sporing-v1.xsd
+            schema: !include schemas/tracking-v1.xsd
       250:
         displayName: Status - notification received
         description: |
