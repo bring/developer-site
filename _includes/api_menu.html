@@ -24,9 +24,6 @@
             {% if active_page %}
             <ul class="list-bare apimenu__sublist">
               <li class="active" data-scrollspy="#api-documentation"><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
-              {% if api_page.api.title == 'Shipping Guide API' %}
-              <li data-scrollspy="#offline-data"><a href="{{ site.baseurl }}{{ api_page.url }}offline.html"><span data-hover="Offline data">Offline data</span></a></li>
-              {% endif %}
               {% for resource in api_page.api.resources %}
                 <li data-scrollspy="#{{ resource.display_name | slugify }}"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
               {% endfor %}

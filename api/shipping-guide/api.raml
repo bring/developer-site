@@ -130,6 +130,32 @@ documentation:
       | FG_USER_011 | Customer does not have right access role for service | Kunde har ikke riktig tilgangs rolle for tjenesten |
       | FG_EXTERNAL_SERVICE_NO_PRICE | An external system failed to return the cost for the actual shipping. Please check your input data. | Et eksternt system returnerte ikke pris på selve frakten. Vennligst sjekk input data. |
 
+- title: Offline data
+  content: |
+    Offline data lets you download a failover version of the data from the Shipping Guide.
+
+    By using the Offline Data Web Service (see [WSDL](#soap)) or [Offline Data form](https://api.bring.com/shippingguide/offlineData.do?clientUrl=developer.bring.com) you can download price lists, transport times and additional services designed for offline usage. Offline data is suitable as a failover solution if the Shipping Guide does not respond or responds with an error message, or if there are extreme demands on performance.
+
+    *Important!* With offline data, you have to deal with all the rules of special goods, shipping calculated weight (volume weight), and more. These rules are located on the respective product pages on bring.com. Remember to update the database at price changes!
+
+    The service is available free of charge, provided acceptance of the terms of use. Note that only registered users will receive notifications of changes in service!
+
+    For those who use the offline data, we recommend to get the updates automatically via Offline Data Web Service.
+
+    #### Useful XPaths when processing offline data
+
+    Get Price Zone (returns an empty answer if toPostalCode is outside the coverage area for the chosen product):
+
+        //Product[@productId='SERVICEPAKKE']//PriceZone[@toPostalCode='2000']/text()
+        
+    Get Price based on Price Zone "2":
+    
+        //Product[@productId="SERVICEPAKKE"]//Price[@priceZone="2" and @weight="4000"]/text()
+        
+    Get transport time:
+
+        //Product[@productId='SERVICEPAKKE']//WorkingDays[@toPostalCode="2000"]/text()
+
 - title: Authentication
   content: |
     If you are a Mybring user, you can authenticate requests to the Shipping Guide. Authenticated requests have the following benefits:
@@ -148,10 +174,6 @@ documentation:
     | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
 
     Those headers must be present for authenticating requests.
-
-- title: Offline data
-  content: |
-    There is also a [Offline SOAP service](/api/shipping-guide/offline.html) for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
 
 
 /products/price{mediaTypeExtension}:
