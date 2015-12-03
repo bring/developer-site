@@ -26,22 +26,7 @@ documentation:
 
       The Shipping Guide has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality. There are some limitations in the XML/JSON API, such as the inability to mark a parcel as a specialized goods.
 
-      There is also a [Offline SOAP service](http://developer.bring.com/additionalresources/offlinedata.html?from=shipping) for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
-
-- title: How to use
-  content: |
-      For a given shipment from A to B, the core way to use the Shipping Guide is to query for all the products you know how to send (e.g. the products you have a customer agreement for). From that given set of products specified in the request, the Shipping Guide will return the products that are relevant for the shipment, based on product attributes (e.g. max package size and weight) and service area (norwegian: dekningsområde), e.g. not all products are offered to all postal codes.
-
-      *Example:* You have a package of 2,5 kilos from postal codes 0484 to 5600 that you want to send. Your webshop knows how to send (e.g. has a customer agreement) for sending the following Bring products:
-
-      * Servicepakke
-      * Bedriftspakke
-      * Bedriftspakke Ekspress - Over Natten
-      * På Døren
-      * A-Post
-      * B-Post
-
-      The [Shipping Guide request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=a-post&product=b-post) should then be made for all the products (explicitly set using multiple product parameters), and the Shipping Guide will tell you which products are applicable. E.g. A-Post and B-Post are not applicable since the package is greater than 2 kg, and postal code 5600 is outside the service area for "På Døren".
+      There is also a [Offline SOAP service](#offline-data) for retrieving data for offline use (get complete prices, service area and delivery times based on a fixed sender postal code).
 
       *Psst!* We also have a [Java client library](https://github.com/bring/bring-api-java) for the Shipping Guide API.
 
@@ -275,9 +260,15 @@ documentation:
     responses:
       200:
         displayName: Successful response
+        description: |
+          In this example, we're querying for prices for CarryOn HomeShopping and CarryOn HomeShopping Business for a 2,5kg package from Sweden to Denmark.
+
+          Request: [...&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=carryon_homeshopping&product=carryon_business](https://api.bring.com/shippingguide/products/price.json?clientUrl=https://example.com/&weightInGrams=2500&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=carryon_homeshopping&product=carryon_business)
         body:
           application/json:
+            example: !include examples/price.json
           application/xml:
+            example: !include examples/price.xml
 
 /products/expectedDelivery{mediaTypeExtension}:
   displayName: Get estimated delivery time
@@ -290,22 +281,103 @@ documentation:
   get:
     description: Get estimated delivery time
     queryParameters:
-      q:
-        description: Reference, package number, shipment number to search for
+      from:
+        displayName: From postal code
         type: string
-        required: true
-        example: TESTPACKAGE-AT-PICKUPPOINT
-      callback:
-        description: JSONP callback function name
+        example: 7600
+      to:
+        displayName: To postal code
         type: string
-        required: false
+        example: 1407
+      weightInGrams:
+        displayName: Weight of package in grams
+        type: integer
+        example: 1500
+      width:
+        displayName: Package width in centimeters
+        type: integer
+        example: 40
+      length:
+        displayName: Package length in centimeters
+        type: integer
+        example: 40
+      height:
+        displayName: Package height in centimeters
+        type: integer
+        example: 30
+      date:
+        displayName: Shipping date
+        description: Specifies which date the parcel will be delivered to Bring (within the time limit), and is used to calculate the delivery date. Date is specified in ISO format, `YYYY-MM-DD`.
+        type: date
+        example: 2015-11-18
+      time:
+        displayName: Shipping time
+        description: Shipping time may be specified. Note that Bring's courier products are the only one affected by this parameter. Time is specified in ISO format, `HH:mm`.
+        type: date
+        example: 12:30
+      clientUrl:
+        displayName: Client URL
+        description: To use the Shipping Guide you must specify a client url parameter. The client url should be set to the url of the web shop or application the end user is ordering from. The client url can be sent as a url parameter, clientUrl, or as a header, `X-Bring-Client-URL`.
+        type: string
+        example: https://www.example.com/amazing-clothes/
+      edi:
+        displayName: EDI setting
+        description: Flag that tells if the parcel will be registred using EDI when it is shipped. Note that this flag may affect price and which products are available.
+        type: boolean
+        default: true
+      postingAtPostOffice:
+        description: |
+          Flag that tells whether the parcel is delivered at a post office when it is shipped.
+
+          A surcharge will be applied for the following products:
+
+          * SERVICEPAKKE
+          * BPAKKE_DOR-DOR (Bedriftspakke)
+        type: boolean
+        default: false
+      additional:
+        displayName: Additional services
+        description: Request additional services for the package. Specified by adding one or more `additional` parameters to the request, e.g. [&additional=postoppkrav&additional=evarsling](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarsling&additional=lordagsutkjoring). See the [additional services list](/api/product-list/#additional-services). The Shipping Guide will match the additional service codes to the requested products and ignore product / additional service codes that are not applicable.
+        type: string
+        example: evarsling
+      priceAdjustments:
+        displayName: Price adjustments
+        description: Option to adjust the price returned. Specified by adding [&priceAdjustment=m20p](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p). Note that price adjustments is on prices without VAT. Refer to additional examples to read more.
+        type: string
+        example: m20p
+      pid:
+        displayName: Public ID
+        description: The last part (after the last dash) of your identification string (logged-in information for user of Shipping Guide). This makes the Shipping Guide know who performs the query, so we may contact the correct shipping guide user for potential follow ups.
+        type: string
+      product:
+        displayName: Products
+        description: This parameter lets you specify which products you want to return information about. If you omit this parameter, you get the default product list (not recommended for production usage). Product is specified by adding one or more product parameters, e.g. [product=servicepakke&product=bpakke_dor-dor](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=servicepakke&product=bpakke_dor-dor).
+        type: string
+        example: bpakke_dor-dor
+      language:
+        displayName: Language
+        description: Which language the descriptive product texts should have. Supported languages are English (en), Swedish (se), Finnish (fi), Danish (da) and Norwegian (no). If no language is set, or text is not available in the requested language, norwegian text is returned.
+        type: string
+        default: no
+        example: en
+      volumeSpecial:
+        displayName: Special volume
+        description: Flag to indicate if the package has a shape that may require 'special handling fee'. [product=servicepakke&product=bpakke_dor-dor](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=servicepakke&product=bpakke_dor-dor&volumeSpecial=true).
+        type: boolean
+        default: false
 
     responses:
       200:
         displayName: Successful response
+        description: |
+          In this example, we're querying for expected delivery time for various products for a package from Sweden to Denmark.
+
+          Request: [...fromCountry=SE&from=11640&toCountry=DK&to=1440&product=CARRYON_HOMESHOPPING&product=CARRYON_HOMESHOPPING_BULKSPLIT&product=SERVICEPAKKE&product=BPAKKE_DOR-DOR](https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=https://example.com/&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=CARRYON_HOMESHOPPING&product=CARRYON_HOMESHOPPING_BULKSPLIT&product=SERVICEPAKKE&product=BPAKKE_DOR-DOR)
         body:
           application/json:
+            example: !include examples/expectedDelivery.json
           application/xml:
+            example: !include examples/expectedDelivery.xml
 
 /products/all{mediaTypeExtension}:
   displayName: Get shipment prices, estimated delivery and more
@@ -331,9 +403,26 @@ documentation:
     responses:
       200:
         displayName: Successful response
+        description: |
+          For a given shipment from A to B, the core way to use the Shipping Guide is to query for all the products you know how to send (e.g. the products you have a customer agreement for). From that given set of products specified in the request, the Shipping Guide will return the products that are relevant for the shipment, based on product attributes (e.g. max package size and weight) and service area (norwegian: dekningsområde), e.g. not all products are offered to all postal codes.
+
+          *Example:* You have a package of 2,5 kilos from postal codes 0484 to 5600 that you want to send. Your webshop knows how to send (e.g. has a customer agreement) for sending the following Bring products:
+
+          * Servicepakke
+          * Bedriftspakke
+          * Bedriftspakke Ekspress - Over Natten
+          * På Døren
+          * A-Post
+          * B-Post
+
+          The Shipping Guide request should then be made for all the products (explicitly set using multiple product parameters), and the Shipping Guide will tell you which products are applicable. E.g. A-Post and B-Post are not applicable since the package is greater than 2 kg, and postal code 5600 is outside the service area for "På Døren".
+
+          Request: [../all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=a-post&product=b-post](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=a-post&product=b-post)
         body:
           application/json:
+            example: !include examples/all.json
           application/xml:
+            example: !include examples/all.xml
       250:
         displayName: Multiple parcels in one query
         description: |
