@@ -2,11 +2,21 @@
 title: EDI
 layout: redesign
 ---
-
-
-    <div class="wrapper">
-      <div class="u-mv+">
+<div class="wrapper">
+  <div class="layout layout--flush">
+    <div class="layout__item palm-one-whole desk-one-quarter">
+      {% comment %}
+      ----------------------------------------
+      --
+      -- Sidebar menu
+      --
+      ----------------------------------------
+      {% endcomment %}
+      {% include api_menu.html %}
+    </div><!-- 
+ --><div class="layout__item palm-one-whole desk-three-quarters">
       <article class="api">
+
         <section class="api__section" id="">
           <h1 class="api__title">EDI</h1>
           <p>EDI (Electronic Data Interchange) i Bring og Posten startet på 90-tallet. Det har blitt laget EDI Guider basert på ulike versjoner av EDIFACT og XML. Dette er Iftmin s93a, d97a, BringXML og Posten XML. Pluss dagens versjon som er basert på D04A.</p>
@@ -81,5 +91,6 @@ layout: redesign
 
 
       </article>
-      </div>
     </div>
+  </div>
+</div>
