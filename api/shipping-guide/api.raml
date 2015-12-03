@@ -668,6 +668,8 @@ documentation:
   description: |
       The web service interface offers the most options when performing queries to the Shipping Guide.
 
+      Note that to use the SOAP service, you have to [authenticate the requests](#authentication).
+
       ### WSDL
 
       WSDL / schema versions: [1](https://api.bring.com/shippingguide/api/ws/fraktguide-v1.wsdl), [2](https://api.bring.com/shippingguide/api/ws/fraktguide-v2.wsdl), [3](https://api.bring.com/shippingguide/api/ws/fraktguide-v3.wsdl), [4](https://api.bring.com/shippingguide/api/ws/fraktguide-v4.wsdl), [5](https://api.bring.com/shippingguide/api/ws/fraktguide-v5.wsdl), [6](https://api.bring.com/shippingguide/api/ws/fraktguide-v6.wsdl), [7](https://api.bring.com/shippingguide/api/ws/fraktguide-v7.wsdl), [8](https://api.bring.com/shippingguide/api/ws/fraktguide-v8.wsdl). The current version is 8.
@@ -685,12 +687,5 @@ documentation:
       Regarding the XML/JSON API (not Web Services), an XML Schema is not used at all. Clients of the XML/JSON API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in the sense that elements are not renamed.
   get:
     description: SOAP
-
-    responses:
-      200:
-        displayName: Successful response
-        body:
-          application/json:
-          application/xml:
 
 
