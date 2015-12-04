@@ -1,0 +1,109 @@
+#%RAML 0.8
+---
+title: Tracking API
+baseUri: https://tracking.bring.com
+
+documentation:
+- title: Introduction
+  content: |
+      The tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to display details and the status of shipments. The information available in this API is the same information available from the [Tracking web site](http://tracking.bring.com/). Response is available as either XML or JSON.
+
+      *Oh by the way*, we also have a [Java client library](https://github.com/bring/bring-api-java) for the Tracking API.
+
+- title: Authentication
+  content: |
+    If you are a Mybring user, you can authenticate requests to the Tracking API. Authenticated requests have the following benefits:
+
+    - You get more information about your parcels, for example signatures for proof of develiery
+    - No rate limiting
+
+    See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+
+    Those headers must be present for authenticating requests.
+
+/sporing{mediaTypeExtension}:
+  displayName: Tracking endpoint
+  securedBy: [mybring_headers, null]
+  description: |
+      For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
+
+      You can find an XSD for the XML response here: [tracking-v1.xsd](/api/tracking/schemas/tracking-v1.xsd).
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: Get information about a shipment
+    queryParameters:
+      q:
+        description: Reference, package number, shipment number to search for
+        type: string
+        required: true
+        example: TESTPACKAGE-AT-PICKUPPOINT
+      callback:
+        description: JSONP callback function name
+        type: string
+        required: false
+    headers:
+      X-Testing-A-Header:
+        description: This is just a test to see how it renders
+        type: integer
+        required: false
+        minimum: 1
+        maximum: 100
+        example: 42
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            example: !include examples/testpackage.json
+          application/xml:
+            example: !include examples/testpackage.xml
+            schema: !include schemas/tracking-v1.xsd
+      250:
+        displayName: Status - notification received
+        description: |
+          The example below is showing a package that have been EDI notified, but is not received by Bring.
+        body:
+          application/json:
+            example: !include examples/notification_received.json
+          application/xml:
+            example: !include examples/notification_received.xml
+      251:
+        displayName: Status - waiting at pickup point
+        description: |
+          The example below is showing a package waiting for the recipient to collect it at a pickup point
+        body:
+          application/json:
+            example: !include examples/waiting_at_pup.json
+          application/xml:
+            example: !include examples/waiting_at_pup.xml
+      252:
+        displayName: Status - loaded for delivery
+        description: |
+          The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient.
+        body:
+          application/json:
+            example: !include examples/loaded_for_delivery.json
+          application/xml:
+            example: !include examples/loaded_for_delivery.xml
+      253:
+        displayName: Status - delivered
+        description: |
+          The example below is showing a package that has been delivered to the reciepient.
+        body:
+          application/json:
+            example: !include examples/delivered.json
+          application/xml:
+            example: !include examples/delivered.xml
+
+
+

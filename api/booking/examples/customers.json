@@ -1,0 +1,52 @@
+{
+  "customers": [
+    {
+      "name": "Testkunde (00012341234)",
+      "customerNumber": "PARCELS_NORWAY-00012341234",
+      "countryCode": "NO",
+      "products": [
+        "SERVICEPAKKE",
+        "EKSPRESS09",
+        "BEDRIFTSPAKKE",
+        "BPAKKE_DOR-DOR",
+        "PA_DOREN",
+        "BPAKKE_DOR-DOR_RETURSERVICE",
+        "EKSPRESS09_RETURSERVICE",
+        "SERVICEPAKKE_RETURSERVICE",
+        "MINIPAKKE",
+        "CARRYON_BUSINESS",
+        "CARRYON_HOMESHOPPING",
+        "CARRYON_BUSINESS_PALLET",
+        "CARRYON_BUSINESS_HALFPALLET",
+        "CARRYON_BUSINESS_QUARTERPALLET",
+        "CARRYON_BUSINESS_BULKSPLIT",
+        "CARRYON_BUSINESS_BULKSPLIT_0900",
+        "CARRYON_HOMESHOPPING_BULKSPLIT",
+        "CARRYON_HOMESHOPPING_BULKSPLIT_HOME",
+        "CARRYON_HOMESHOPPING_BULKSPLIT_MINI"
+      ]
+    },
+    {
+      "name": "Testkund (TEST-112)",
+      "customerNumber": "EXPRESS_SWEDEN-f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "countryCode": "SE",
+      "products": [
+        "COURIER_VIP",
+        "COURIER_1H",
+        "COURIER_2H",
+        "COURIER_4H",
+        "COURIER_6H",
+        "COURIER_LONG_DISTANCE",
+        "COURIER_BICYCLE_VIP",
+        "COURIER_BICYCLE_1H",
+        "COURIER_BICYCLE_2H",
+        "COURIER_BICYCLE_4H",
+        "QUICKPACK_SAMEDAY",
+        "QUICKPACK_OVER_NIGHT_0900",
+        "QUICKPACK_OVER_NIGHT_1200",
+        "QUICKPACK_DAY_CERTAIN",
+        "QUICKPACK_EXPRESS_ECONOMY"
+      ]
+    }
+  ]
+}

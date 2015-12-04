@@ -1,0 +1,28 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Package packageId="0">
+  <!--See service terms and conditions at http://developer.bring.com/-->
+  <Product>
+    <ProductId>CARRYON_HOMESHOPPING_BULKSPLIT</ProductId>
+    <ProductCodeInProductionSystem>0342</ProductCodeInProductionSystem>
+    <ExpectedDelivery>
+      <WorkingDays/>
+      <UserMessage>Fremsendingstider er ikke tilgjengelig for dette produktet.</UserMessage>
+      <FormattedExpectedDeliveryDate/>
+      <FormattedEarliestPickupDate/>
+    </ExpectedDelivery>
+  </Product>
+  <Product>
+    <ProductId>CARRYON_HOMESHOPPING</ProductId>
+    <ProductCodeInProductionSystem>0340</ProductCodeInProductionSystem>
+    <ExpectedDelivery>
+      <WorkingDays>1-2</WorkingDays>
+      <UserMessage/>
+      <AlternativeDeliveryDates/>
+    </ExpectedDelivery>
+  </Product>
+  <TraceMessages>
+    <Message>Product SERVICEPAKKE can not be sent from country SWEDEN to country DENMARK</Message>
+    <Message>Product BPAKKE_DOR-DOR can not be sent from country SWEDEN to country DENMARK</Message>
+  </TraceMessages>
+</Package>

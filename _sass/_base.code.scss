@@ -1,0 +1,33 @@
+
+/* ------------------------------------------------------- 
+*   # CODE
+------------------------------------------------------- */
+
+code {
+    white-space: nowrap;
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: $font-size-small;
+}
+
+pre code {
+    white-space: pre;
+    font-size: 12px;
+}
+
+pre {
+    border-left: 5px solid $bring-green;
+    background-color: $background-grey;
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: $font-size-small;
+    padding-top: $spacing / 2;
+    padding-right: $spacing;
+    padding-bottom: $spacing / 2;
+    padding-left: $spacing;
+    overflow:auto;
+
+    &.highlight {
+        padding: 0;
+        border: 0;
+        max-height: 350px;
+    }
+}

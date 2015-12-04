@@ -1,0 +1,39 @@
+/* ------------------------------------------------------- 
+*   TABLES
+*
+*   Because our content comes from RAML, we can't
+*   add proper class names for tables like we should.
+*
+*   Styling base table elements like this is a pragmatic
+*   decision for this specific project and should not be copied.
+*
+*   Okay?! Use inuit tables elsewhere, they’re awesome.
+*
+------------------------------------------------------- */
+
+table {
+
+}
+
+thead {
+    font-size: $font-size-small;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+tr {
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+th,
+td {
+    padding-top: $spacing / 4;
+    padding-right: $spacing;
+    padding-bottom: $spacing / 4;
+    padding-left: $spacing / 2;
+}
+
+td > p {
+    margin-bottom: 0;
+}

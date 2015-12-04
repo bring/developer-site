@@ -1,0 +1,105 @@
+#%RAML 0.8
+---
+title: Postal Code API
+baseUri: https://api.bring.com/shippingguide/api
+
+documentation:
+- title: Introduction
+  content: |
+      With the Postal Code API you can
+
+      * validate a postal code
+      * look up the city of a postal code
+      * get the postal code type, e.g. normal or P.O. Box (for Norway)
+
+      The API has three interfaces: XML, JSON and HTML.
+
+- title: Supported Countries
+  content: |
+      The following countries are supported:
+
+      * NO - Norway
+      * DK - Denmark
+      * SE - Sweden
+      * FI - Finland
+      * NL - Netherlands
+      * DE - Germany
+      * US - United States
+      * BE - Belgium
+      * FO - Faroe Islands
+      * GL - Greenland
+
+      The service uses [GeoNames](http://www.geonames.org/) as source for all countries except Norway.
+
+      For unsupported countries (countries not in the list above), all postal codes will be marked as valid with no city name returned. In these cases it is recommended to prompt the user to input the city name themselves.
+
+      For countries that have multiple results (cities) for a given postal code, a list of cities will be returned. See example below.
+
+      ### Postal Code type for Norway
+
+      For Norway, you also get information about the postal code type. This is set in the `postalCodeType` in the response:
+
+      | `postalCodeType` | Description |
+      |:-----------------|:------------|
+      | NORMAL | Normal postal code suitable for delivering packages. Contains street addresses or mix of street and other postal code types. |
+      | POBOX | Postal code contains only P.O. Box addresses. Only certain Bring products can be delivered to these addresses (see the [Shipping Guide](/api/shipping-guide/)). |
+      | SPECIALCUSTOMER | Special, e.g special return postal codes for selected customers. |
+      | SPECIALNOSTREET | Special, e.g special postal codes for customers with old "serviceboks". |
+      | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
+
+/postalCode{mediaTypeExtension}:
+  displayName: Lookup postal code
+  description: |
+      TODO: description
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml, .html ]
+      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML. 
+  get:
+    description: Lookup postal code
+    queryParameters:
+      clientUrl:
+        displayName: Client URL
+        description: To use the API you must specify a client url parameter. The client url should be set to the url of the web shop or application the end user is ordering from. The client url can be sent as a url parameter, clientUrl, or as a header, `X-Bring-Client-URL`.
+        type: string
+        required: true
+        example: https://www.example.com/amazing-clothes/
+      pnr:
+        displayName: Postal code
+        type: string
+        required: true
+        example: 1337
+      country:
+        displayName: Country
+        required: false
+        type: string
+        default: Norway
+        example: 1337
+      callback:
+        displayName: JSONP callback function
+        type: string
+        example: callback
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            example: !include examples/response.json
+          application/xml:
+            example: !include examples/response.xml
+          text/html:
+            example: !include examples/response.html
+      250:
+        displayName: Finding the location for postal codes with multiple locations
+        description: |
+          In some countries, such as for example Germany and France, postal codes are non-unique. This means that one postal code might have multiple city names. In these cases the integration APIs (json and xml) will have separate elements containing the list of cities, while the ordinary html response element will remain blank.
+
+          Example request: […&country=DE&pnr=99869](https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=insertYourClientUrlHere&country=DE&pnr=99869)
+        body:
+          application/json:
+            example: !include examples/multiple_locations.json
+          application/xml:
+            example: !include examples/multiple_locations.xml
+
+

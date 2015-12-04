@@ -16,3 +16,8 @@ node/
 node_modules/
 
 revision.txt
+_site
+.sass-cache
+_sass.build
+.jekyll-metadata
+_preview.site

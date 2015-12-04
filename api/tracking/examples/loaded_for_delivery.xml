@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<ConsignmentSet xmlns="http://www.bring.no/sporing/1.0">
+<Consignment previousConsignmentId="" consignmentId="SHIPMENTNUMBER">
+    <TotalWeight unitCode="kg">16.5</TotalWeight>
+    <TotalVolume unitCode="dm3">45.2</TotalVolume>
+    <SenderReference/>
+    <PackageSet>
+        <Package previousPackageId="" packageId="TESTPACKAGELOADEDFORDELIVERY">
+            <StatusDescription>Package will be delivered to recipient this evening between 1700 and 2100. The driver will call 30 - 60 minutes before delivery</StatusDescription>
+            <Descriptions/>
+            <ProductName>P&#xC5; D&#xD8;REN</ProductName>
+            <ProductCode>1736</ProductCode>
+            <Brand>POSTEN</Brand>
+            <Weight unitCode="kg">16.5</Weight>
+            <Length unitCode="cm">41</Length>
+            <Width unitCode="cm">38</Width>
+            <Height unitCode="cm">29</Height>
+            <Volume unitCode="dm3">45.2</Volume>
+            <EventSet>
+                <Event>
+                    <Description>Package has been loaded for delivery</Description>
+                    <Status>TRANSPORT_TO_RECIPIENT</Status>
+                    <RecipientSignature>
+                        <Name/>
+                    </RecipientSignature>
+                    <UnitId>971190</UnitId>
+                    <UnitType>BRING</UnitType>
+                    <PostalCode>0001</PostalCode>
+                    <City>OSLO</City>
+                    <CountryCode>NO</CountryCode>
+                    <Country>Norway</Country>
+                    <OccuredAtIsoDateTime>2010-09-30T16:48:57.000+02:00</OccuredAtIsoDateTime>
+                    <OccuredAtDisplayDate>30.09.2010</OccuredAtDisplayDate>
+                    <OccuredAtDisplayTime>16.48</OccuredAtDisplayTime>
+                    <ConsignmentEvent>false</ConsignmentEvent>
+                </Event>
+                <Event>
+                    <Description>Package has been handed in at terminal and forwarded</Description>
+                    <Status>IN_TRANSIT</Status>
+                    <RecipientSignature>
+                        <Name/>
+                    </RecipientSignature>
+                    <UnitId>032850</UnitId>
+                    <UnitType>BRING</UnitType>
+                    <PostalCode>0024</PostalCode>
+                    <City>OSLO</City>
+                    <CountryCode>NO</CountryCode>
+                    <Country>Norway</Country>
+                    <OccuredAtIsoDateTime>2010-09-30T08:27:08.000+02:00</OccuredAtIsoDateTime>
+                    <OccuredAtDisplayDate>30.09.2010</OccuredAtDisplayDate>
+                    <OccuredAtDisplayTime>08.27</OccuredAtDisplayTime>
+                    <ConsignmentEvent>false</ConsignmentEvent>
+                </Event>
+            </EventSet>
+        </Package>
+    </PackageSet>
+</Consignment>
+</ConsignmentSet>

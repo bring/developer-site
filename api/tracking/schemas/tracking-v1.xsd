@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.bring.no/sporing/1.0" xmlns:tns="http://www.bring.no/sporing/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Consignment" nillable="true" type="xs:anyType"/>
+
+  <xs:element name="ConsignmentSet" type="tns:ConsignmentSetType"/>
+
+  <xs:element name="Event" nillable="true" type="xs:anyType"/>
+
+  <xs:element name="PackageType" type="tns:PackageType"/>
+
+  <xs:element name="Status" type="tns:TraceStatusType"/>
+
+  <xs:complexType name="ConsignmentSetType">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="tns:Consignment"/>
+        <xs:element ref="tns:Consignment"/>
+        <xs:element ref="tns:Status"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="consigmentElementType" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="consignmentType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tns:consigmentElementType">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="oppdragConsignmentType">
+    <xs:complexContent>
+      <xs:extension base="tns:consignmentType">
+        <xs:sequence>
+          <xs:element name="UniqueNumber" type="xs:string"/>
+          <xs:element name="SequenceNumber" type="xs:string"/>
+          <xs:element name="ShipmentNumber" type="xs:string"/>
+          <xs:element name="SenderAddress" type="tns:addressType"/>
+          <xs:element name="SenderHandlingAddress" type="tns:addressType"/>
+          <xs:element name="SenderName" type="xs:string"/>
+          <xs:element name="SenderHandlingName" type="xs:string"/>
+          <xs:element name="SenderReference" type="xs:string" minOccurs="0"/>
+          <xs:element name="ProductCode" type="xs:string"/>
+          <xs:element name="EventSet" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element ref="tns:Event" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="addressType">
+    <xs:sequence>
+      <xs:element name="AddressLine1" type="xs:string"/>
+      <xs:element name="AddressLine2" type="xs:string"/>
+      <xs:element name="PostalCode" type="xs:string"/>
+      <xs:element name="City" type="xs:string"/>
+      <xs:element name="CountryCode" type="xs:string"/>
+      <xs:element name="Country" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="oppdragEventType">
+    <xs:complexContent>
+      <xs:extension base="tns:eventType">
+        <xs:sequence>
+          <xs:element name="Name" type="xs:string"/>
+          <xs:element name="Address" type="tns:addressType"/>
+          <xs:element name="HandlingAddress" type="tns:addressType"/>
+          <xs:element name="HandlingName" type="xs:string"/>
+          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="LmEventCode" type="xs:string" minOccurs="0"/>
+          <xs:element name="OccuredAtDisplayDate" type="xs:string"/>
+          <xs:element name="OccuredAtDisplayTime" type="xs:string"/>
+          <xs:element name="OccuredAtIsoDateTime" type="xs:string"/>
+          <xs:element name="Status" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="eventType" abstract="true">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="pakkeCargoEventType">
+    <xs:complexContent>
+      <xs:extension base="tns:eventType">
+        <xs:sequence>
+          <xs:element name="Description" type="xs:string"/>
+          <xs:element name="Status" type="xs:string"/>
+          <xs:element name="LmEventCode" type="xs:string" minOccurs="0"/>
+          <xs:element name="RecipientSignature" type="tns:RecipientSignatureType"/>
+          <xs:element name="UnitId" type="xs:string"/>
+          <xs:element name="UnitInformationUrl" type="xs:string"/>
+          <xs:element name="UnitType" type="xs:string"/>
+          <xs:element name="PostalCode" type="xs:string"/>
+          <xs:element name="City" type="xs:string"/>
+          <xs:element name="CountryCode" type="xs:string"/>
+          <xs:element name="Country" type="xs:string"/>
+          <xs:element name="OccuredAtIsoDateTime" type="xs:string"/>
+          <xs:element name="OccuredAtDisplayDate" type="xs:string"/>
+          <xs:element name="OccuredAtDisplayTime" type="xs:string"/>
+          <xs:element name="ConsignmentEvent" type="xs:boolean"/>
+          <xs:element name="Dictionary" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Definition" type="tns:definitionType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RecipientSignatureType">
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string"/>
+      <xs:element name="LinkToImage" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="definitionType">
+    <xs:sequence>
+      <xs:element name="Term" type="xs:string" minOccurs="0"/>
+      <xs:element name="Explanation" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pakkeCargoConsignmentType">
+    <xs:complexContent>
+      <xs:extension base="tns:consignmentType">
+        <xs:sequence>
+          <xs:element name="TotalWeight" type="tns:WeightType"/>
+          <xs:element name="TotalVolume" type="tns:VolumeType"/>
+          <xs:element name="SenderReference" type="xs:string" minOccurs="0"/>
+          <xs:element name="SenderName" type="xs:string" minOccurs="0"/>
+          <xs:element name="SenderAddress" type="tns:addressType" minOccurs="0"/>
+          <xs:element name="SenderHandlingAddress" type="tns:addressType" minOccurs="0"/>
+          <xs:element name="RecipientName" type="xs:string" minOccurs="0"/>
+          <xs:element name="RecipientAddress" type="tns:addressType" minOccurs="0"/>
+          <xs:element name="RecipientHandlingAddress" type="tns:addressType" minOccurs="0"/>
+          <xs:element name="PackageSet" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Package" type="tns:PackageType" minOccurs="0" maxOccurs="unbounded"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="consignmentId" type="xs:string"/>
+        <xs:attribute name="previousConsignmentId" type="xs:string"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WeightType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="unitCode" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="VolumeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="unitCode" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PackageType">
+    <xs:sequence>
+      <xs:element name="StatusDescription" type="xs:string"/>
+      <xs:element name="Descriptions" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Description" type="tns:descriptionType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProductName" type="xs:string"/>
+      <xs:element name="ProductCode" type="xs:string"/>
+      <xs:element name="Brand" type="xs:string"/>
+      <xs:element name="Weight" type="tns:WeightType"/>
+      <xs:element name="Length" type="tns:LengthType"/>
+      <xs:element name="Width" type="tns:LengthType"/>
+      <xs:element name="Height" type="tns:LengthType"/>
+      <xs:element name="Volume" type="tns:VolumeType"/>
+      <xs:element name="PickupCode" type="xs:string" minOccurs="0"/>
+      <xs:element name="LastRetrievalDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="EstimatedDeliveryDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="DeliveryDate" type="xs:string" minOccurs="0"/>
+      <xs:element name="SenderName" type="xs:string" minOccurs="0"/>
+      <xs:element name="SenderAddress" type="tns:addressType" minOccurs="0"/>
+      <xs:element name="SenderHandlingAddress" type="tns:addressType" minOccurs="0"/>
+      <xs:element name="RecipientName" type="xs:string" minOccurs="0"/>
+      <xs:element name="RecipientAddress" type="tns:addressType" minOccurs="0"/>
+      <xs:element name="RecipientHandlingAddress" type="tns:addressType" minOccurs="0"/>
+      <xs:element name="EventSet" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="tns:Event"/>
+              <xs:element ref="tns:Event"/>
+            </xs:choice>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AdditionalServicesSet" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="AdditionalService" type="tns:AdditionalServiceType" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="packageId" type="xs:string"/>
+    <xs:attribute name="previousPackageId" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="descriptionType">
+    <xs:sequence>
+      <xs:element name="Text" type="xs:string" minOccurs="0"/>
+      <xs:element name="Type" type="xs:string" minOccurs="0"/>
+      <xs:element name="Url" type="xs:anyURI" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="LengthType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="unitCode" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="AdditionalServiceType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:string"/>
+      <xs:element name="Description" type="xs:string"/>
+      <xs:element name="Amount" type="xs:string"/>
+      <xs:element name="CurrencyCode" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TraceStatusType">
+    <xs:complexContent>
+      <xs:extension base="tns:consigmentElementType">
+        <xs:sequence>
+          <xs:element name="System" type="xs:string"/>
+          <xs:element name="Code" type="xs:int"/>
+          <xs:element name="Error" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
+

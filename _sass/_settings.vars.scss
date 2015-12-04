@@ -1,0 +1,37 @@
+/* ------------------------------------------------------- 
+*   # VARS
+*
+*   Our own variables
+------------------------------------------------------- */
+
+$inuit-base-font-size:   15px;
+$inuit-base-line-height: 20px;
+$inuit-base-text-color: #414141;
+
+$main-font-family: Arial, sans-serif;
+
+$font-size-small: 13px;
+
+
+/* ------------------------------------------------------- 
+   Colors
+------------------------------------------------------- */
+
+// descriptive variables:
+$bring-green: #7bc144;
+$link-blue: #0088b5;
+$medium-grey: #b2b2b2;
+$dark-grey: #414141;
+$background-light: #fcfcfc;
+$background-grey: #f2f2f3;
+$background-dark: #dbdbdb;
+$warning-orange: #ffa400;
+$error-red: #e61919;
+$white: #ffffff;
+ 
+// functional variables:
+$color-branding: $bring-green;
+$color-text: $dark-grey;
+$color-links: $link-blue;
+$color-background: $background-grey;
+$color-background-footer: $dark-grey;

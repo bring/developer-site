@@ -1,0 +1,76 @@
+
+/* ------------------------------------------------------- 
+*   # .WELCOME
+*
+*   Site intro and top boxes on the front page
+------------------------------------------------------- */
+
+.welcome {
+    background-color: $background-grey;
+    padding: $spacing;
+    margin-bottom: $spacing*2;
+    text-align: center;
+    a {
+        color: $color-text;
+    }
+}
+
+.welcome__title {
+    font-size: $inuit-heading-size-2;
+    color: $color-branding;
+    margin-bottom: $spacing/2;
+
+        @include media-query(lap-and-up) {
+            color: $white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+            font-size: 5.2em;
+            margin-top: -180px;
+        }
+}
+
+.welcome__tagline {
+    font-size: $inuit-heading-size-5;
+    font-weight: normal;
+    margin-bottom: $spacing;
+
+        @include media-query(lap-and-up) {
+            font-size: $inuit-heading-size-4;
+            color: $white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+}
+
+.welcome__item {
+
+    h2 {
+        font-size: $inuit-heading-size-4;
+        margin-bottom: $spacing/4;
+    }
+
+    img {
+        max-height: 100px;
+    }
+
+    @include media-query(lap-and-up) {
+
+        img {
+            max-width: 200px;
+            max-height: none;
+        }
+        h2 {
+            font-size: $inuit-heading-size-3;
+        }
+
+    }
+}
+
+.welcome__link {
+    display: block;
+    padding: $spacing;
+}
+
+.welcome__link:hover {
+    img {
+        opacity: 0.8;
+    }
+}

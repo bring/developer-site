@@ -1,0 +1,389 @@
+#%RAML 0.8
+---
+title: Booking API
+baseUri: https://api.bring.com/booking/api
+
+documentation:
+- title: Introduction
+  content: |
+      The Bring Booking API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same backend as [Mybring Booking](https://www.mybring.com/booking/) and the same PDF labels.
+
+      We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
+
+      Booking uses Shipping Guide as the source for price and availability for the different products. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
+
+- title: Versioning strategy
+  content: |
+      Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
+
+- title: Authentication
+  content: |
+    The Booking API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+
+    Those headers must be set for all endpoints documented below.
+
+- title: Authorization
+  content: |
+    In addition to authentication, you need to be authorized with the "booing" right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):
+
+    ![Authorized for booking](booking_authorization.png)
+
+    To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#list-customer-numbers) associated with your API user. The Customer Number API also links customer numbers with the products the customer number is valid for.
+
+- title: Making labels
+  content: |
+    The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF label is returned in responses. This label must be printed and be attached to the shipment. A URL that points to tracking information is also returned.
+
+    A GET request to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to Amazon S3). Ensure that your client follows these redirects.
+
+- title: Performance
+  content: |
+    Different product groups have different response times in booking:
+
+    - Parcels and courier products
+      - A booking will typically take < 2 seconds
+    - QuickPack UPS products and Cargo
+      - A booking will typically take < 3 seconds
+    - QuickPack SameDay
+      - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
+
+/customers{mediaTypeExtension}:
+  displayName: List customer numbers
+  description: |
+      The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-products, we use a UUID to identify users.
+
+      The customer API will return for each specialist a list with the products that you can order through the booking API.
+
+      You can also get the API customer numbers from [this page in Mybring](https://www.mybring.com/useradmin/account/settings#customerApiKeyContainer).
+
+      | Specialist | Example products | Example customer number |
+      |:-----------|:-----------------|:------------------------|
+      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09` | `PARCELS_NORWAY-10001123123` |
+      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO_NORWAY-10001123123` |
+      | Bring Express, Norway | `COURIER_4H`, `QUICKPACK_SAMEDAY`, `QUICKPACK_DAY_CERTAIN` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
+      | Bring Express, Sweden | `COURIER_4H`, `QUICKPACK_SAMEDAY`, `QUICKPACK_DAY_CERTAIN` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
+      | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
+
+      [Check out this page](/api/products/#booking) to see the whole list of products for each customer type.
+
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: List customer numbers and products
+    responses:
+      200:
+        displayName: List of available customers and products
+        body:
+          application/json:
+            example: !include examples/customers.json
+          application/xml:
+            example: !include examples/customers.xml
+
+/booking:
+  displayName: Book shipments
+  description: |
+      This is the endpoint where you can book a shipment and get a printable label in return.
+
+      #### Additional services
+
+      The following products have available additional services:
+
+      | Product | Additional services |
+      |:--------|:--------------------|
+      | SERVICEPAKKE | cashOnDelivery, recipientNotification, socialControl |
+      | BPAKKE_DOR-DOR | recipientNotification, simpleDelivery, deliveryOption |
+      | EKSPRESS09 | recipientNotification, saturdayDelivery |
+      | CARRYON_HOMESHOPPING | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
+      | CARRYON_HOMESHOPPING_BULKSPLIT | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
+      | CARRYON_HOMESHOPPING_BULKSPLIT_HOME | cashOnDelivery, flexDelivery, recipientNotification |
+      | CARRYON_BUSINESS | cashOnDelivery, flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS_BULKSPLIT | cashOnDelivery, flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS_BULKSPLIT_0900 | cashOnDelivery, flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS_PALLET | flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS_HALFPALLET | flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS_QUARTERPALLET | flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS_0900 | flexDelivery, recipientNotification, phonenotification |
+
+      See the "More examples" section below to see examples on how to use additional services.
+
+      #### Error handling
+
+      If an error occurs, the following will be provided:
+
+      - `uniqueId`: A unique log ID (UUID) that can be used as a reference for the error
+      - `code`: An error code describing the error
+      - `message`: Internationalized messages (with <message lang="”xx”"> elements). First version will be with lang=”en” (English) only. </message>
+
+      See the [error codes](#error-codes) below to get an overview of error codes and what they mean.
+
+      #### Testing
+
+      This service will send actual production orders unless it is set to testing mode.
+
+      To use the test mode, you need to set the `testIndicator` flag to `true` on the root node.
+
+      Note that the examples below use `testIndicator=true`, so remove this when implementing the Booking API in your production system.
+  post:
+    description: Make a booking
+    headers:
+      Content-Type:
+        description: Specify request format (application/json, application/xml)
+        required: true
+        enum: [ application/json, application/xml ]
+      Accept:
+        description: Specify response format (application/json, application/xml)
+        required: false
+        default: same as Content-Type
+        enum: [ application/json, application/xml ]
+    body:
+      application/json:
+        example: !include examples/basicRequest.json
+      application/xml:
+        schema: !include schemas/booking-v1.xsd
+        example: !include examples/basicRequest.xml
+    responses:
+      200:
+        displayName: Successful booking
+        description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
+        body:
+          application/json:
+            example: !include examples/successfulResponse.json
+          application/xml:
+            example: !include examples/successfulResponse.xml
+      250:
+        displayName: Recipient Notification
+        description: The `recipientNotification` attribute/element must be set for all products that allow electronic notification, in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
+        body:
+          application/json:
+            example: !include examples/recipientNotificationRequest.json
+          application/xml:
+            example: !include examples/recipientNotificationRequest.xml
+      251:
+        displayName: Cash On Delivery
+        description: |
+          The `cashOnDelivery` element/attribute can be set for products that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
+
+          `Amount` field only accepts numeric values without comma in it and with two decimal places.
+        body:
+          application/json:
+            example: !include examples/cashOnDelivery.json
+          application/xml:
+            example: !include examples/cashOnDelivery.xml
+      252:
+        displayName: QuickPack Envelope
+        description: |
+          The `quickPackEnvelope` element/attribute is of type boolean, and can be set for products that allow quickpack envelope shipment. We recommend using the weight and measurements shown in the example, for correct mapping.
+        body:
+          application/json:
+            example: !include examples/quickPackEnvelope.json
+          application/xml:
+            example: !include examples/quickPackEnvelope.xml
+      253:
+        displayName: Delivery Option
+        description: |
+
+          #### Attempted delivery
+
+          If a sender want their package delivered to the door, and it cannot be delivered (i.e. Business closed or recipient is not present), then you can now choose what will happen with your package.
+
+          If this option is not set, then the default behaviour is `TWO_DELIVERIES_THEN_RETURN`.
+
+          If you want Bring to try deliver only once and/or deliver package to nearest PiB, then you must tell us by setting this option. These options cost extra money but the customer/sender will only be charged if the event happen.
+
+          Example:
+
+          You send a package to a business with the `deliveryOption=TWO_DELIVERIES_THEN_PIB`.
+
+          - If Bring manage to deliver the package to the recipient on first try, then no extra charges is made.
+          - If first attempt to deliver fails, then Bring will do a second attempt. The customer/sender will be charged extra.
+          - If the second attempt also fails, then the package will be delivered to nearest PiB. The customer/sender will be charged extra.
+
+          Possible options:
+
+          - Not set = `TWO_DELIVERIES_THEN_RETURN`
+          - `ONE_DELIVERY_THEN_PIB`
+          - `TWO_DELIVERIES_THEN_PIB`
+          - `TWO_DELIVERIES_THEN_RETURN`
+        body:
+          application/json:
+            example: !include examples/deliveryOption.json
+          application/xml:
+            example: !include examples/deliveryOption.xml
+      254:
+        displayName: Flex Delivery
+        description: |
+          The `flexDelivery` element/attribute can be set for products that allow flex delivery. This element must contain an instruction message for the driver.
+        body:
+          application/json:
+            example: !include examples/flexDelivery.json
+          application/xml:
+            example: !include examples/flexDelivery.xml
+      255:
+        displayName: Select Pickup Point in Norway
+        description: |
+          You can specify pickup point Id in request for `SERVICEPAKKE` and `CARRYON_HOMESHOPPING_BULKSPLIT` products for delivery of parcels within Norway and to Norway from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
+
+          The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
+
+          Pickup point id and country code has to be specified under `pickupPoint` within `parties` as shown below.
+        body:
+          application/json:
+            example: !include examples/selectPickupPoint_NO.json
+          application/xml:
+            example: !include examples/selectPickupPoint_NO.xml
+      256:
+        displayName: Select Pickup Point in Sweden
+        description: |
+          You can specify pickup point Id in request for `CARRYON_HOMESHOPPING_BULKSPLIT` products for delivery of parcels within Sweden and to Sweden from other countries except Norway. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
+          
+          The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
+          
+          Pickup point id and country code has to be specified under `pickupPoint` in `parties` as shown below.
+        body:
+          application/json:
+            example: !include examples/selectPickupPoint_SE.json
+          application/xml:
+            example: !include examples/selectPickupPoint_SE.xml
+      257:
+        displayName: Select Pickup Point in Denmark
+        description: |
+          The products `CARRYON_HOMESHOPPING` and `CARRYON_HOMESHOPPING_BULKSPLIT` support the `deliveryOption=PICKUP_POINT` for shipments within Denmark and to Denmark, respectively. The parcel will be delivered to the pickup point closest to the recipient address and the recipient will receive a notification when the parcel arrives. If you do not specify a delivery option for these products in Denmark, the package will be delivered to the door.
+          
+          You can also specify a pickup point id to get the package delivered at a specific pickup point. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points. Pickup point id and country code has to be specified under `pickupPoint` within `parties` as shown below.
+          
+          `pickupPoint` is optional but both `id` and `countryCode` inside it are mandatory. This element has precedence over `deliveryOption=PICKUP_POINT` i.e. if this element is present then pickup point specified in it will be selected irrespective of value set in `deliveryOption`.
+          
+          Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
+        body:
+          application/json:
+            example: !include examples/selectPickupPoint_DK.json
+          application/xml:
+            example: !include examples/selectPickupPoint_DK.xml
+      258:
+        displayName: Select Pickup Point in Finland
+        description: |
+          You can specify pickup point Id in request for `CARRYON_HOMESHOPPING_BULKSPLIT` products for delivery of parcels to Finland from other countries except Norway. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
+          
+          The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
+          
+          Pickup point id and country code has to be specified under `pickupPoint` within `parties` as shown below.
+        body:
+          application/json:
+            example: !include examples/selectPickupPoint_FI.json
+          application/xml:
+            example: !include examples/selectPickupPoint_FI.xml
+      259:
+        displayName: Express
+        description: |
+          ### Express service for Oil Express
+          
+          You can use Express service if you want to send your goods urgently (this service is *applicable only for Oil Express* product). In case of express delivery, goods are picked up as soon as possible and delivered to its destination.
+          
+          For using Express service send `true` value in `express` as shown in below example.
+        body:
+          application/json:
+            example: !include examples/express.json
+          application/xml:
+            example: !include examples/express.xml
+
+/errors{mediaTypeExtension}:
+  displayName: Error codes
+  description: |
+    Programming is hard. Something will always go wrong. See below for the current enumeration of error codes. A value of "true" for the attribute "suffixable" means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT" if the error is for the recipient party data.
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    body:
+      application/json:
+        example: !include examples/errors.json
+      application/xml:
+        example: !include examples/errors.json
+
+
+/pickupOrder:
+  displayName: Order pickups
+  description: |
+    The Pickup Order Api is for ordering a single pickup at a particular address.
+
+    Parcels Norway, Parcels Sweden, Parcels Denmark and Cargo Customers with a Mybring user ID can use this service. Customer numbers in this API is the same as to booking API, obtained either through your Mybring profile or the customer number API.
+
+    Pickup in the different countries requires different customer numbers:
+
+    | Customer number prefix | Pickup in country | Required information element |
+    |:-----------------------|:------------------|:-----------------------------|
+    | PARCELS_NORWAY         | Norway (parcels)  | `parcelsInformation`         |
+    | CARGO                  | Norway (cargo)    | `cargoInformation`           |
+    | PARCELS_NORWAY_INTERNATIONAL, PARCELS_SWEDEN, PARCELS_DENMARK, PARCELS_FINLAND BRING_DENMARK_AS | Sweden, Denmark | parcelsInternationalInformation |
+
+    #### Pickup ordered by default with product CARGO_GROUPAGE from Bring Cargo
+
+    A pickup order is necessary to get the goods collected for transportation by Bring Cargo but you don't have to worry about it when ordering with the API .
+
+    A pickup will be automatically ordered together with the shipment when ordering a `CARGO_GROUPAGE` shipment.
+
+    If you order many shipments the pickups will be aggregated by Bring Cargo to one pickup by place and date.
+  post:
+    description: Order a pickup
+    body:
+      application/json:
+        example: !include examples/pickuporder_NO.json
+      application/xml:
+        example: !include examples/pickuporder_NO.xml
+    responses:
+      200:
+        displayName: Successful pickup order
+        body:
+          application/json:
+            example: !include examples/pickuporder_response.json
+          application/xml:
+            example: !include examples/pickuporder_response.xml
+      250:
+        displayName: Parcels Sweden request
+        body:
+          application/json:
+            example: !include examples/pickuporder_SE.json
+          application/xml:
+            example: !include examples/pickuporder_SE.xml
+      251:
+        displayName: Cargo request
+        body:
+          application/json:
+            example: !include examples/pickuporder_CARGO.json
+          application/xml:
+            example: !include examples/pickuporder_CARGO.xml
+
+
+/ws:
+  displayName: SOAP
+  description: |
+    The SOAP Body follows the same XML Schema Definition (XSD) as the XML API.
+
+    The SOAP endpoint has the same operations as the endpoints listed above:
+
+    - list customers
+    - book shipments
+    - order pikcups
+
+    #### WSDL
+
+    [https://api.bring.com/booking/api/ws/booking-v1.wsdl](https://api.bring.com/booking/api/ws/booking-v1.wsdl)
+
+    #### XSD
+
+    [https://api.bring.com/booking/api/schema/booking-v1.xsd](https://api.bring.com/booking/api/schema/booking-v1.xsd)
+
+  post:
+    description: SOAP
+
+
+

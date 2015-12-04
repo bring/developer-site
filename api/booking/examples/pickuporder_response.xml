@@ -1,0 +1,13 @@
+<pickupOrderResponse xmlns="http://www.bring.no/booking/">
+    <pickupConfirmation>
+        <status>
+            OK
+        </status>
+        <earliestPickupDate>
+            2015-12-04T00:00:00+01:00
+        </earliestPickupDate>
+        <latestPickupDate>
+            2015-12-05T00:00:00+01:00
+        </latestPickupDate>
+    </pickupConfirmation>
+</pickupOrderResponse>

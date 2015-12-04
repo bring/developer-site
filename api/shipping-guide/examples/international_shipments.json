@@ -1,0 +1,13 @@
+{
+    "@packageId": "0",
+    "Product": {
+        "ProductId": "CARRYON_HOMESHOPPING_NORWAY",
+        "ProductCodeInProductionSystem": "0340",
+        "ExpectedDelivery": {
+            "WorkingDays": "3-5",
+            "UserMessage": null,
+            "AlternativeDeliveryDates": null
+        }
+    },
+    "TraceMessages": null
+}

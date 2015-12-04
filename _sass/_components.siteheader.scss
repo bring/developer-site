@@ -1,0 +1,30 @@
+
+/* ------------------------------------------------------- 
+*   # .SITEHEADER
+*
+------------------------------------------------------- */
+
+.siteheader {
+    padding-top: $spacing/2;
+    padding-bottom: $spacing/2;
+    background-color: $dark-grey;
+}
+
+.siteheader a {
+    display: inline-block;
+}
+
+.siteheader__logo {
+    max-width: 150px;
+}
+
+.siteheader__tagline {
+    color: $white;
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 0.37em;
+    vertical-align: bottom;
+    margin-left: 0.25em;
+    font-family: Monaco, Consolas, 'Lucida Console', monospace;
+    font-size: 24px;
+}
