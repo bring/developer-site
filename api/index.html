@@ -171,22 +171,6 @@ layout: redesign
 
         </section>
 
-        <section class="api__section" id="">
-          <h2 class="anchored">Product List</h2>
-
-          <p>An extensive list of products.</p>
-
-          <dl class="fancy-dl">
-          {% for product_listing in site.data.products %}
-            <dt>{{ product_listing.specialist }}</dt>
-            {% for product in product_listing.products %}
-            <dd><code>{{ product }}</code></dd>
-            {% endfor %}
-          {% endfor %}
-          </dl>
-
-        </section>
-
         <section class="u-mt+">
           {% include apiflock.html %}
         </section>
