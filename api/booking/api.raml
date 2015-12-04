@@ -37,7 +37,7 @@ documentation:
     To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#customers-endpoint) associated with your API user. The Customer Number API also links customer numbers with the products the customer number is valid for.
 
 /customers{mediaTypeExtension}:
-  displayName: Customers endpoint
+  displayName: List customer numbers
   description: |
       The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-products, we use a UUID to identify users.
 
@@ -58,7 +58,7 @@ documentation:
       enum: [ .json, .xml ]
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
-    description: List available customers and products
+    description: List customer numbers and products
     responses:
       200:
         displayName: List of available customers and products
@@ -69,7 +69,7 @@ documentation:
             example: !include examples/customers.xml
 
 /booking:
-  displayName: Booking endpoint (REST)
+  displayName: Book shipments
   description: |
       Book shipments, get labels.
   post:
