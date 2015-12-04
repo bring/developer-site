@@ -65,7 +65,7 @@ documentation:
   description: |
       Book shipments, get labels.
   post:
-    description: Make a booking (REST)
+    description: Make a booking
     headers:
       Content-Type:
         description: Specify request format (application/json, application/xml)
@@ -226,14 +226,57 @@ documentation:
             example: !include examples/express.json
           application/xml:
             example: !include examples/express.xml
-    
+
+/pickupOrder:
+  displayName: Order pickups
+  description: |
+    The Pickup Order Api is for ordering a single pickup at a particular address.
+
+    Parcels Norway, Parcels Sweden, Parcels Denmark and Cargo Customers with a Mybring user ID can use this service. Customer numbers in this API is the same as to booking API, obtained either through your Mybring profile or the customer number API.
+
+    Pickup in the different countries requires different customer numbers:
+
+    | Customer number prefix | Pickup in country | Required information element |
+    |:-----------------------|:------------------|:-----------------------------|
+    | PARCELS_NORWAY         | Norway (parcels)  | `parcelsInformation`         |
+    | CARGO                  | Norway (cargo)    | `cargoInformation`           |
+    | PARCELS_NORWAY_INTERNATIONAL, PARCELS_SWEDEN, PARCELS_DENMARK, PARCELS_FINLAND BRING_DENMARK_AS | Sweden, Denmark | parcelsInternationalInformation |
+  post:
+    description: Order a pickup
+    body:
+      application/json:
+        example: !include examples/pickuporder_NO.json
+      application/xml:
+        example: !include examples/pickuporder_NO.xml
+    responses:
+      200:
+        displayName: Successful pickup order
+        body:
+          application/json:
+            example: !include examples/pickuporder_response.json
+          application/xml:
+            example: !include examples/pickuporder_response.xml
+      250:
+        displayName: Parcels Sweden request
+        body:
+          application/json:
+            example: !include examples/pickuporder_SE.json
+          application/xml:
+            example: !include examples/pickuporder_SE.xml
+      251:
+        displayName: Cargo request
+        body:
+          application/json:
+            example: !include examples/pickuporder_CARGO.json
+          application/xml:
+            example: !include examples/pickuporder_CARGO.xml
 
 
 /ws:
-  displayName: Booking endpoint (SOAP)
+  displayName: Booking SOAP service
   description: Make a booking, get a label
   post:
-    description: Make a booking (SOAP)
+    description: SOAP
     body: 
       application/soap+xml:
         schema: schemas/booking-v1.xsd

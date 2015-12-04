@@ -1,0 +1,8 @@
+{
+    "pickupConfirmation": {
+        "status": "OK",
+        "earliestPickupDate": 1449097200000,
+        "latestPickupDate": 1449183600000
+    },
+    "errors": null
+}
