@@ -70,6 +70,8 @@ documentation:
       | Bring Express, Sweden | `COURIER_4H`, `QUICKPACK_SAMEDAY`, `QUICKPACK_DAY_CERTAIN` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
       | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
 
+      [Check out this page](/api/products/#booking) to see the whole list of products for each customer type.
+
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
@@ -111,6 +113,14 @@ documentation:
       | CARRYON_BUSINESS_0900 | flexDelivery, recipientNotification, phonenotification |
 
       See the "More examples" section below to see examples on how to use additional services.
+
+      #### Error handling
+
+      If an error occurs, the following will be provided:
+
+      - `uniqueId`: A unique log ID (UUID) that can be used as a reference for the error
+      - `code`: An error code describing the error
+      - `message`: Internationalized messages (with <message lang="”xx”"> elements). First version will be with lang=”en” (English) only. </message>
 
       #### Testing
 
