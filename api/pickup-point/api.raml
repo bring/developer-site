@@ -58,6 +58,10 @@ documentation:
       openOnOrAfter:
         description: Format `HH:mm`. Return only pickup points that are open on or after the specified time.
         type: string
+      pickupPointType:
+        displayName: Pickup-point type
+        description: Currently available for Swedish pickup point request only.
+        enum: [ manned, locker ]
       numberOfResponses:
         description: Return the specified number of pickup points instead of the default.
         type: integer
@@ -169,6 +173,10 @@ documentation:
       openOnOrAfter:
         description: Format `HH:mm`. Return only pickup points that are open on or after the specified time.
         type: string
+      pickupPointType:
+        displayName: Pickup-point type
+        description: Currently available for Swedish pickup point request only.
+        enum: [ manned, locker ]
       numberOfResponses:
         description: Return the specified number of pickup points instead of the default.
         type: integer
