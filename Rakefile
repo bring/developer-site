@@ -1,3 +1,4 @@
+require 'json'
 require 'raml_parser'
 
 task :default do
