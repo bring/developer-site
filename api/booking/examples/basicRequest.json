@@ -1,4 +1,5 @@
 {
+  "testIndicator": true,
   "schemaVersion": 1,
   "consignments": [
     {
@@ -22,7 +23,7 @@
         "recipient": {
           "name": "Tore Mottaker",
           "addressLine": "Mottakerveien 14",
-          "addressLine2": "c\/o Tina Mottaker",
+          "addressLine2": "c/o Tina Mottaker",
           "postalCode": "0659",
           "city": "OSLO",
           "countryCode": "no",
@@ -60,6 +61,5 @@
         }
       ]
     }
-  ],
-  "testIndicator": true
+  ]
 }
