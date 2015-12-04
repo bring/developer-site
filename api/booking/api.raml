@@ -249,6 +249,14 @@ documentation:
     | PARCELS_NORWAY         | Norway (parcels)  | `parcelsInformation`         |
     | CARGO                  | Norway (cargo)    | `cargoInformation`           |
     | PARCELS_NORWAY_INTERNATIONAL, PARCELS_SWEDEN, PARCELS_DENMARK, PARCELS_FINLAND BRING_DENMARK_AS | Sweden, Denmark | parcelsInternationalInformation |
+
+    #### Pickup ordered by default with product CARGO_GROUPAGE from Bring Cargo
+
+    A pickup order is necessary to get the goods collected for transportation by Bring Cargo but you don't have to worry about it when ordering with the API .
+
+    A pickup will be automatically ordered together with the shipment when ordering a `CARGO_GROUPAGE` shipment.
+
+    If you order many shipments the pickups will be aggregated by Bring Cargo to one pickup by place and date.
   post:
     description: Order a pickup
     body:
