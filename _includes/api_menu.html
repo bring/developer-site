@@ -31,5 +31,8 @@
             {% endif %}
           </li>
         {% endfor %}
+          <li class="{% if page.url == '/edi/' %} active{% endif %}">
+            <h3 class="apimenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/edi/">EDI</a></h3>
+          </li>
         </ul>
       </nav>
