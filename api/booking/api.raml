@@ -10,7 +10,7 @@ documentation:
 
       We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
 
-      Bring Booking uses Bring Fraktguide as the source for price and availability for the different products. We advise clients of the Booking API to use Fraktguiden for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
+      Booking uses Shipping Guide as the source for price and availability for the different products. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
 - title: Versioning strategy
   content: |
@@ -36,6 +36,23 @@ documentation:
 
     To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#customers-endpoint) associated with your API user. The Customer Number API also links customer numbers with the products the customer number is valid for.
 
+- title: Making labels
+  content: |
+    The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF label is returned in responses. This label must be printed and be attached to the shipment. A URL that points to tracking information is also returned.
+
+    A GET request to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to Amazon S3). Ensure that your client follows these redirects.
+
+- title: Performance
+  content: |
+    Different product groups have different response times in booking:
+
+    - Parcels and courier products
+      - A booking will typically take < 2 seconds
+    - QuickPack UPS products and Cargo
+      - A booking will typically take < 3 seconds
+    - QuickPack SameDay
+      - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
+
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
   description: |
@@ -43,7 +60,7 @@ documentation:
 
       The customer API will return for each specialist a list with the products that you can order through the booking API.
 
-      You can also get the API customer numbers from [this page in Mybring](https://www.mybring.com/useradmin/account/apicustomernumber).
+      You can also get the API customer numbers from [this page in Mybring](https://www.mybring.com/useradmin/account/settings#customerApiKeyContainer).
 
       | Specialist | Example products | Example customer number |
       |:-----------|:-----------------|:------------------------|
@@ -71,7 +88,15 @@ documentation:
 /booking:
   displayName: Book shipments
   description: |
-      Book shipments, get labels.
+      This is the endpoint where you can book a shipment and get a printable label in return.
+
+      #### Testing
+
+      This service will send actual production orders unless it is set to testing mode.
+
+      To use the test mode, you need to set the `testIndicator` flag to `true` on the root node.
+
+      Note that the examples below use `testIndicator=true`, so remove this when implementing the Booking API in your production system.
   post:
     description: Make a booking
     headers:
@@ -290,7 +315,8 @@ documentation:
 
 /ws:
   displayName: SOAP
-  description: Make a booking, get a label
+  description: |
+    The SOAP Body follows the same XML Schema Definition (XSD) as the XML API.
   post:
     description: SOAP
     body: 
