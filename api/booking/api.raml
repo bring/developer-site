@@ -122,6 +122,8 @@ documentation:
       - `code`: An error code describing the error
       - `message`: Internationalized messages (with <message lang="”xx”"> elements). First version will be with lang=”en” (English) only. </message>
 
+      See the [error codes](#error-codes) below to get an overview of error codes and what they mean.
+
       #### Testing
 
       This service will send actual production orders unless it is set to testing mode.
@@ -291,6 +293,22 @@ documentation:
             example: !include examples/express.json
           application/xml:
             example: !include examples/express.xml
+
+/errors{mediaTypeExtension}:
+  displayName: Error codes
+  description: |
+    Programming is hard. Something will always go wrong. See below for the current enumeration of error codes. A value of "true" for the attribute "suffixable" means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT" if the error is for the recipient party data.
+  uriParameters:
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    body:
+      application/json:
+        example: !include examples/errors.json
+      application/xml:
+        example: !include examples/errors.json
+
 
 /pickupOrder:
   displayName: Order pickups
