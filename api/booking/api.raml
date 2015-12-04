@@ -339,18 +339,23 @@ documentation:
   displayName: SOAP
   description: |
     The SOAP Body follows the same XML Schema Definition (XSD) as the XML API.
+
+    The SOAP endpoint has the same operations as the endpoints listed above:
+
+    - list customers
+    - book shipments
+    - order pikcups
+
+    #### WSDL
+
+    [https://api.bring.com/booking/api/ws/booking-v1.wsdl](https://api.bring.com/booking/api/ws/booking-v1.wsdl)
+
+    #### XSD
+
+    [https://api.bring.com/booking/api/schema/booking-v1.xsd](https://api.bring.com/booking/api/schema/booking-v1.xsd)
+
   post:
     description: SOAP
-    body: 
-      application/soap+xml:
-        schema: schemas/booking-v1.xsd
-        example: !include examples/soap_response_booking.xml
-    responses:
-      200:
-        displayName: Successful booking
-        body:
-          application/soap+xml:
-            example: !include examples/soap_response_booking.xml
 
 
 
