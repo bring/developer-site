@@ -36,7 +36,7 @@ end
 namespace :test do
   desc 'Deploy to test'
   task :deploy => :build do
-    deploy_to_server('alt-daled.bd.bring.no')
+    deploy_to_server('mybring1test.bd.bring.no')
     puts '= done! http://developer.test.bring.com/'
   end
 end
@@ -44,8 +44,8 @@ end
 namespace :qa do
   desc 'Deploy to QA'
   task :deploy => :build  do
-    deploy_to_server('posap402.bd.bring.no')
-    deploy_to_server('posap403.bd.bring.no')
+    deploy_to_server('mybring7qa.bd.bring.no')
+    deploy_to_server('mybring8qa.bd.bring.no')
     puts '= done! http://developer.qa.bring.com/'
   end
 end
@@ -53,8 +53,8 @@ end
 namespace :production do
   desc 'Deploy to production'
   task :deploy => :build do
-    deploy_to_server('posap394.bd.bring.no')
-    deploy_to_server('posap395.bd.bring.no')
+    deploy_to_server('mybring7prod.bd.bring.no')
+    deploy_to_server('mybring8prod.bd.bring.no')
     notify_slack('New version of http://developer.bring.com/ deployed')
     puts '= done! http://developer.bring.com/'
   end
