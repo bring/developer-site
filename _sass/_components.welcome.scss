@@ -5,6 +5,10 @@
 *   Site intro and top boxes on the front page
 ------------------------------------------------------- */
 
+picture img {
+    width: 100%;
+}
+
 .welcome {
     background-color: $background-grey;
     padding: $spacing;
