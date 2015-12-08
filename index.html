@@ -3,9 +3,10 @@ layout: redesign
 ---
 
 
-    <picture class="">
+    <picture class="megaheader">
       <source srcset="{{ site.baseurl }}/img/megaheader/picture-a.jpg" media="(min-width: 1000px)">
-      <img src="{{ site.baseurl }}/img/megaheader/picture-b.jpg" alt="">
+      <source srcset="{{ site.baseurl }}/img/megaheader/picture-b.jpg" media="(max-width: 1000px)">
+      <img src="{{ site.baseurl }}/img/megaheader/picture-b.jpg" srcset="{{ site.baseurl }}/img/megaheader/picture-b.jpg 1000w, {{ site.baseurl }}/img/megaheader/picture-a.jpg 2000w" alt="">
     </picture>
     <div class="welcome">
 
