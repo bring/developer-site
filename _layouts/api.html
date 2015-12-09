@@ -309,14 +309,19 @@ layout: redesign
 <script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
 <script>
   function initZeroClipBoard() {
-    $$('pre.highlight').forEach(function(pre) {
+
+    var qsa = function (selector) {
+      return Array.prototype.slice.call(document.querySelectorAll(selector));
+    }
+
+    qsa('pre.highlight').forEach(function(pre) {
       var zeroClipboard = document.createElement('div');
       zeroClipboard.className = 'zero-clipboard';
       zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
       pre.parentNode.insertBefore(zeroClipboard, pre);
     });
 
-    var client = new ZeroClipboard($$('.zero-clipboard__btn'));
+    var client = new ZeroClipboard(qsa('.zero-clipboard__btn'));
     client.on('copy', function(event) {
       var copyButton = event.target.parentNode;
       var pre = copyButton.nextSibling;
