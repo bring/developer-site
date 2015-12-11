@@ -691,6 +691,12 @@ documentation:
       When incompatible changes in the schema are made (other than addition of new elements), the SchemaVersion is incremented by one. The new schema is used at the *same endpoint URL* as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
 
       Regarding the XML/JSON API (not Web Services), an XML Schema is not used at all. Clients of the XML/JSON API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in the sense that elements are not renamed.
+
+      ### Holidays and Home Delivery
+
+      There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter.
+
+      The service will not take this into account. This must be handled by clients. End-users should not get delivery dates for holidays.
   get:
     description: SOAP
 
