@@ -34,6 +34,27 @@ documentation:
       For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
 
       You can find an XSD for the XML response here: [tracking-v1.xsd](/api/tracking/schemas/tracking-v1.xsd).
+
+      A parcel has a number of events connected to it during its travel. Here are a list of current event statuses that can be returned.
+
+      - ARRIVED_COLLECTION
+      - ARRIVED_DELIVERY
+      - CUSTOMS
+      - COLLECTED
+      - DELIVERED
+      - DELIVERY_CANCELLED
+      - DELIVERY_CHANGED
+      - DELIVERY_ORDERED
+      - DEVIATION
+      - HANDED_IN
+      - INTERNATIONAL
+      - IN_TRANSIT
+      - NOTIFICATION_SENT
+      - PRE_NOTIFIED
+      - READY_FOR_PICKUP
+      - RETURN
+      - TRANSPORT_TO_RECIPIENT
+
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
