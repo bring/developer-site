@@ -297,6 +297,11 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
+      <code>BOOK-INPUT-062</code>
+      <message>Missing required message input for delivery indoor</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
       <code>BOOK-AUTHORIZATION-001</code>
       <message>Your user is not authorized to perform this action</message>
       <suffixable>false</suffixable>
@@ -329,6 +334,11 @@
     <errorType>
       <code>BOOK_VALIDATION-006</code>
       <message>Phone Notification requires recipient number to be present.</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-007</code>
+      <message>Delivery indoor is available in Sweden and Denmark only.</message>
       <suffixable>false</suffixable>
     </errorType>
     <errorType>

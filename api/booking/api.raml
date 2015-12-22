@@ -104,13 +104,13 @@ documentation:
       | CARRYON_HOMESHOPPING | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
       | CARRYON_HOMESHOPPING_BULKSPLIT | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
       | CARRYON_HOMESHOPPING_BULKSPLIT_HOME | cashOnDelivery, flexDelivery, recipientNotification |
-      | CARRYON_BUSINESS | cashOnDelivery, flexDelivery, recipientNotification, phonenotification |
-      | CARRYON_BUSINESS_BULKSPLIT | cashOnDelivery, flexDelivery, recipientNotification, phonenotification |
-      | CARRYON_BUSINESS_BULKSPLIT_0900 | cashOnDelivery, flexDelivery, recipientNotification, phonenotification |
-      | CARRYON_BUSINESS_PALLET | flexDelivery, recipientNotification, phonenotification |
-      | CARRYON_BUSINESS_HALFPALLET | flexDelivery, recipientNotification, phonenotification |
-      | CARRYON_BUSINESS_QUARTERPALLET | flexDelivery, recipientNotification, phonenotification |
-      | CARRYON_BUSINESS_0900 | flexDelivery, recipientNotification, phonenotification |
+      | CARRYON_BUSINESS | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | CARRYON_BUSINESS_BULKSPLIT | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | CARRYON_BUSINESS_BULKSPLIT_0900 | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | CARRYON_BUSINESS_PALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | CARRYON_BUSINESS_HALFPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | CARRYON_BUSINESS_QUARTERPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | CARRYON_BUSINESS_0900 | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
 
       See the "More examples" section below to see examples on how to use additional services.
 
@@ -293,6 +293,14 @@ documentation:
             example: !include examples/express.json
           application/xml:
             example: !include examples/express.xml
+      260:
+        displayName: Delivery Indoors
+        description: The `deliveryIndoors` element/attribute can be set for products that allow delivery indoors. This element must contain an instruction message for the driver.
+        body:
+          application/json:
+            example: !include examples/deliveryIndoors.json
+          application/xml:
+            example: !include examples/deliveryIndoors.xml
 
 /errors{mediaTypeExtension}:
   displayName: Error codes

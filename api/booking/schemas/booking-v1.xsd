@@ -1,430 +1,439 @@
-<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bring.no/booking/" elementFormDefault="qualified" targetNamespace="http://www.bring.no/booking/" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bring.no/booking/"
+           elementFormDefault="qualified" targetNamespace="http://www.bring.no/booking/" version="1.0">
 
-  <xs:element name="bookingRequest" type="BookingRequestType"/>
+    <xs:element name="bookingRequest" type="BookingRequestType"/>
 
-  <xs:element name="bookingResponse" type="BookingResponseType"/>
+    <xs:element name="bookingResponse" type="BookingResponseType"/>
 
-  <xs:element name="cargoInformation">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="numberOfPackages" type="xs:int"/>
-        <xs:element name="weightInGrams" type="xs:int"/>
-        <xs:element name="volumeInDm3" type="xs:decimal"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="customerInformation">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="customerNumber" type="xs:string"/>
-        <xs:element name="companyName" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="customersRequest" type="CustomersRequestType"/>
-
-  <xs:element name="customersResponse" type="CustomersResponseType"/>
-
-  <xs:element name="parcelsInformation">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="numberOfPackages" type="xs:int"/>
-        <xs:element name="numberOfPostContainers" type="xs:int"/>
-        <xs:element name="numberOfPallets" type="xs:int"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="pickupAddress">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="street" type="xs:string"/>
-        <xs:element name="postalCode" type="xs:string"/>
-        <xs:element name="email" type="xs:string"/>
-        <xs:element name="phoneNumber" type="xs:string"/>
-        <xs:element name="city" type="xs:string"/>
-        <xs:element minOccurs="0" name="messageToDriver" type="xs:string"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-  <xs:element name="pickupConfirmation" type="PickupConfirmationType"/>
-
-  <xs:element name="pickupOrderRequest" type="PickupOrderRequestType"/>
-
-  <xs:element name="pickupOrderResponse" type="PickupOrderResponseType"/>
-
-  <xs:complexType name="BookingRequestType">
-    <xs:all>
-      <xs:element name="schemaVersion" type="xs:int"/>
-      <xs:element name="consignments">
+    <xs:element name="cargoInformation">
         <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="consignment" type="ConsignmentRequestType"/>
-          </xs:sequence>
+            <xs:sequence>
+                <xs:element name="numberOfPackages" type="xs:int"/>
+                <xs:element name="weightInGrams" type="xs:int"/>
+                <xs:element name="volumeInDm3" type="xs:decimal"/>
+            </xs:sequence>
         </xs:complexType>
-      </xs:element>
-    </xs:all>
-    <xs:attribute name="testIndicator" type="xs:boolean" use="required"/>
-  </xs:complexType>
+    </xs:element>
 
-  <xs:complexType name="ConsignmentRequestType">
-    <xs:sequence>
-      <xs:element name="shippingDateTime" type="xs:dateTime"/>
-      <xs:element name="parties" type="PartiesRequestType"/>
-      <xs:element name="product" type="ProductRequestType"/>
-      <xs:element minOccurs="0" name="purchaseOrder" type="PurchaseOrderRequestType"/>
-      <xs:choice>
-        <xs:element name="packages" type="PackagesRequestType"/>
-        <xs:element name="packageGroups" type="PackageGroupsRequestType"/>
-      </xs:choice>
-    </xs:sequence>
-    <xs:attribute name="correlationId" type="xs:string"/>
-  </xs:complexType>
+    <xs:element name="customerInformation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customerNumber" type="xs:string"/>
+                <xs:element name="companyName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-  <xs:complexType name="PartiesRequestType">
-    <xs:all>
-      <xs:element name="sender" type="PartyRequestType"/>
-      <xs:element name="recipient" type="PartyRequestType"/>
-      <xs:element minOccurs="0" name="pickupPoint" type="PickupPointRequestType"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="customersRequest" type="CustomersRequestType"/>
 
-  <xs:complexType name="PartyRequestType">
-    <xs:all>
-      <xs:element name="name" type="xs:string"/>
-      <xs:element name="addressLine" type="xs:string"/>
-      <xs:element minOccurs="0" name="addressLine2" type="xs:string"/>
-      <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
-      <xs:element name="city" type="xs:string"/>
-      <xs:element name="countryCode" type="xs:string"/>
-      <xs:element minOccurs="0" name="reference" type="xs:string"/>
-      <xs:element minOccurs="0" name="additionalAddressInfo" type="xs:string"/>
-      <xs:element minOccurs="0" name="contact" type="ContactRequestType"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="customersResponse" type="CustomersResponseType"/>
 
-  <xs:complexType name="ContactRequestType">
-    <xs:all>
-      <xs:element minOccurs="0" name="name" type="xs:string"/>
-      <xs:element minOccurs="0" name="email" type="xs:string"/>
-      <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="parcelsInformation">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="numberOfPackages" type="xs:int"/>
+                <xs:element name="numberOfPostContainers" type="xs:int"/>
+                <xs:element name="numberOfPallets" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-  <xs:complexType name="PickupPointRequestType">
-    <xs:all>
-      <xs:element name="id" type="xs:string"/>
-      <xs:element name="countryCode" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="pickupAddress">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="street" type="xs:string"/>
+                <xs:element name="postalCode" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="phoneNumber" type="xs:string"/>
+                <xs:element name="city" type="xs:string"/>
+                <xs:element minOccurs="0" name="messageToDriver" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 
-  <xs:complexType name="ProductRequestType">
-    <xs:all>
-      <xs:element name="id" type="xs:string"/>
-      <xs:element name="customerNumber" type="xs:string"/>
-      <xs:element minOccurs="0" name="services" type="ServicesRequestType"/>
-      <xs:element minOccurs="0" name="customsDeclaration" type="CustomsDeclarationRequestType"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="pickupConfirmation" type="PickupConfirmationType"/>
 
-  <xs:complexType name="ServicesRequestType">
-    <xs:all>
-      <xs:element minOccurs="0" name="recipientNotification" type="RecipientNotificationRequestType"/>
-      <xs:element minOccurs="0" name="quickPackEnvelope" type="xs:string"/>
-      <xs:element minOccurs="0" name="cashOnDelivery" type="CashOnDeliveryRequestType"/>
-      <xs:element minOccurs="0" name="deliveryOption" type="xs:string"/>
-      <xs:element minOccurs="0" name="flexDelivery" type="FlexDeliveryRequestType"/>
-      <xs:element minOccurs="0" name="nonFreeze" type="xs:string"/>
-      <xs:element minOccurs="0" name="dangerousGoods" type="DangerousGoodsRequestType"/>
-      <xs:element minOccurs="0" name="express" type="xs:string"/>
-      <xs:element minOccurs="0" name="eveDelivery" type="xs:string"/>
-      <xs:element minOccurs="0" name="advisering" type="xs:string"/>
-      <xs:element minOccurs="0" name="simpleDelivery" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="pickupOrderRequest" type="PickupOrderRequestType"/>
 
-  <xs:complexType name="RecipientNotificationRequestType">
-    <xs:all>
-      <xs:element minOccurs="0" name="email" type="xs:string"/>
-      <xs:element minOccurs="0" name="mobile" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:element name="pickupOrderResponse" type="PickupOrderResponseType"/>
 
-  <xs:complexType name="CashOnDeliveryRequestType">
-    <xs:all>
-      <xs:element name="accountNumber" type="xs:string"/>
-      <xs:element minOccurs="0" name="accountType" type="AccountType"/>
-      <xs:element name="amount" type="xs:double"/>
-      <xs:element name="currencyCode" type="xs:string"/>
-      <xs:element minOccurs="0" name="message" type="CashOnDeliveryMessageRequestType"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:complexType name="BookingRequestType">
+        <xs:all>
+            <xs:element name="schemaVersion" type="xs:int"/>
+            <xs:element name="consignments">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="consignment" type="ConsignmentRequestType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="testIndicator" type="xs:boolean" use="required"/>
+    </xs:complexType>
 
-  <xs:complexType name="CashOnDeliveryMessageRequestType">
-    <xs:all>
-      <xs:element name="value" type="xs:string"/>
-      <xs:element name="type" type="MessageTypeRequestType"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:complexType name="ConsignmentRequestType">
+        <xs:sequence>
+            <xs:element name="shippingDateTime" type="xs:dateTime"/>
+            <xs:element name="parties" type="PartiesRequestType"/>
+            <xs:element name="product" type="ProductRequestType"/>
+            <xs:element minOccurs="0" name="purchaseOrder" type="PurchaseOrderRequestType"/>
+            <xs:choice>
+                <xs:element name="packages" type="PackagesRequestType"/>
+                <xs:element name="packageGroups" type="PackageGroupsRequestType"/>
+            </xs:choice>
+        </xs:sequence>
+        <xs:attribute name="correlationId" type="xs:string"/>
+    </xs:complexType>
 
-  <xs:complexType name="FlexDeliveryRequestType">
-    <xs:sequence>
-      <xs:element name="message" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="PartiesRequestType">
+        <xs:all>
+            <xs:element name="sender" type="PartyRequestType"/>
+            <xs:element name="recipient" type="PartyRequestType"/>
+            <xs:element minOccurs="0" name="pickupPoint" type="PickupPointRequestType"/>
+        </xs:all>
+    </xs:complexType>
 
-  <xs:complexType name="DangerousGoodsRequestType">
-    <xs:all>
-        <xs:element minOccurs="0" name="containerId" type="xs:string"/>
-        <xs:element minOccurs="1" name="weightInGrams" type="xs:integer"/>
-        <xs:element minOccurs="1" name="unNumber" type="xs:string"/>
-        <xs:element minOccurs="1" name="commodity" type="xs:string"/>
-        <xs:element minOccurs="0" name="packingGroup" type="xs:string"/>
-        <xs:element minOccurs="1" name="dangerClass" type="xs:string"/>
-        <xs:element minOccurs="0" name="tunnelRestrictionCode" type="xs:string"/>
-        <xs:element minOccurs="0" name="safetyMarkCode" type="xs:string"/>
-        <xs:element minOccurs="0" name="factor" type="xs:integer"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:complexType name="PartyRequestType">
+        <xs:all>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="addressLine" type="xs:string"/>
+            <xs:element minOccurs="0" name="addressLine2" type="xs:string"/>
+            <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="countryCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="reference" type="xs:string"/>
+            <xs:element minOccurs="0" name="additionalAddressInfo" type="xs:string"/>
+            <xs:element minOccurs="0" name="contact" type="ContactRequestType"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="ContactRequestType">
+        <xs:all>
+            <xs:element minOccurs="0" name="name" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="PickupPointRequestType">
+        <xs:all>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="countryCode" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="ProductRequestType">
+        <xs:all>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="customerNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="services" type="ServicesRequestType"/>
+            <xs:element minOccurs="0" name="customsDeclaration" type="CustomsDeclarationRequestType"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="ServicesRequestType">
+        <xs:all>
+            <xs:element minOccurs="0" name="recipientNotification" type="RecipientNotificationRequestType"/>
+            <xs:element minOccurs="0" name="quickPackEnvelope" type="xs:string"/>
+            <xs:element minOccurs="0" name="cashOnDelivery" type="CashOnDeliveryRequestType"/>
+            <xs:element minOccurs="0" name="deliveryOption" type="xs:string"/>
+            <xs:element minOccurs="0" name="flexDelivery" type="FlexDeliveryRequestType"/>
+            <xs:element minOccurs="0" name="deliveryIndoors" type="DeliveryIndoorsRequestType"/>
+            <xs:element minOccurs="0" name="nonFreeze" type="xs:string"/>
+            <xs:element minOccurs="0" name="dangerousGoods" type="DangerousGoodsRequestType"/>
+            <xs:element minOccurs="0" name="express" type="xs:string"/>
+            <xs:element minOccurs="0" name="eveDelivery" type="xs:string"/>
+            <xs:element minOccurs="0" name="advisering" type="xs:string"/>
+            <xs:element minOccurs="0" name="simpleDelivery" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="RecipientNotificationRequestType">
+        <xs:all>
+            <xs:element minOccurs="0" name="email" type="xs:string"/>
+            <xs:element minOccurs="0" name="mobile" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="CashOnDeliveryRequestType">
+        <xs:all>
+            <xs:element name="accountNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="accountType" type="AccountType"/>
+            <xs:element name="amount" type="xs:double"/>
+            <xs:element name="currencyCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="message" type="CashOnDeliveryMessageRequestType"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="CashOnDeliveryMessageRequestType">
+        <xs:all>
+            <xs:element name="value" type="xs:string"/>
+            <xs:element name="type" type="MessageTypeRequestType"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="FlexDeliveryRequestType">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DeliveryIndoorsRequestType">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DangerousGoodsRequestType">
+        <xs:all>
+            <xs:element minOccurs="0" name="containerId" type="xs:string"/>
+            <xs:element minOccurs="1" name="weightInGrams" type="xs:integer"/>
+            <xs:element minOccurs="1" name="unNumber" type="xs:string"/>
+            <xs:element minOccurs="1" name="commodity" type="xs:string"/>
+            <xs:element minOccurs="0" name="packingGroup" type="xs:string"/>
+            <xs:element minOccurs="1" name="dangerClass" type="xs:string"/>
+            <xs:element minOccurs="0" name="tunnelRestrictionCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="safetyMarkCode" type="xs:string"/>
+            <xs:element minOccurs="0" name="factor" type="xs:integer"/>
+        </xs:all>
+    </xs:complexType>
 
     <xs:complexType name="CustomsDeclarationRequestType">
-    <xs:all>
-      <xs:element name="customsDeclarationType" type="xs:string"/>
-      <xs:element minOccurs="0" name="customsDeclarationText" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
+        <xs:all>
+            <xs:element name="customsDeclarationType" type="xs:string"/>
+            <xs:element minOccurs="0" name="customsDeclarationText" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
 
-  <xs:complexType name="PurchaseOrderRequestType">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="purchaseOrderNumber" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="PurchaseOrderRequestType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="purchaseOrderNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="PackagesRequestType">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="package" type="PackageRequestType"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="PackagesRequestType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="package" type="PackageRequestType"/>
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="PackageRequestType">
-    <xs:all>
-      <xs:element name="weightInKg" type="xs:double"/>
-      <xs:element minOccurs="0" name="goodsDescription" type="xs:string"/>
-      <xs:element name="dimensions" type="MeasurementsRequestType"/>
-      <xs:element minOccurs="0" name="containerId" type="xs:string"/>
-      <xs:element minOccurs="0" name="packageType" type="xs:string"/>
-      <xs:element minOccurs="0" name="numberOfItems" type="xs:int"/>
-    </xs:all>
-    <xs:attribute name="correlationId" type="xs:string"/>
-  </xs:complexType>
+    <xs:complexType name="PackageRequestType">
+        <xs:all>
+            <xs:element name="weightInKg" type="xs:double"/>
+            <xs:element minOccurs="0" name="goodsDescription" type="xs:string"/>
+            <xs:element name="dimensions" type="MeasurementsRequestType"/>
+            <xs:element minOccurs="0" name="containerId" type="xs:string"/>
+            <xs:element minOccurs="0" name="packageType" type="xs:string"/>
+            <xs:element minOccurs="0" name="numberOfItems" type="xs:int"/>
+        </xs:all>
+        <xs:attribute name="correlationId" type="xs:string"/>
+    </xs:complexType>
 
-  <xs:complexType name="MeasurementsRequestType">
-    <xs:all>
-      <xs:element name="heightInCm" type="xs:int"/>
-      <xs:element name="widthInCm" type="xs:int"/>
-      <xs:element name="lengthInCm" type="xs:int"/>
-    </xs:all>
-  </xs:complexType>
+    <xs:complexType name="MeasurementsRequestType">
+        <xs:all>
+            <xs:element name="heightInCm" type="xs:int"/>
+            <xs:element name="widthInCm" type="xs:int"/>
+            <xs:element name="lengthInCm" type="xs:int"/>
+        </xs:all>
+    </xs:complexType>
 
-  <xs:complexType name="PackageGroupsRequestType">
-    <xs:sequence>
-      <xs:element maxOccurs="unbounded" name="packageGroup" type="PackageGroupRequestType"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="PackageGroupsRequestType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="packageGroup" type="PackageGroupRequestType"/>
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="PackageGroupRequestType">
-    <xs:all>
-      <xs:element name="totalWeightInKg" type="xs:double"/>
-      <xs:element minOccurs="0" name="goodsDescription" type="xs:string"/>
-      <xs:element name="totalDimensions" type="MeasurementsRequestType"/>
-      <xs:element name="numberOfPackages" type="xs:int"/>
-    </xs:all>
-    <xs:attribute name="correlationId" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="BookingResponseType">
-    <xs:sequence>
-      <xs:element name="consignments">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="consignment" type="ConsignmentResponseType"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="ConsignmentResponseType">
-    <xs:all>
-      <xs:element minOccurs="0" name="confirmation" type="ConfirmationResponseType"/>
-      <xs:element minOccurs="0" name="errors">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="ErrorResponseType"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:all>
-    <xs:attribute name="correlationId" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="ConfirmationResponseType">
-    <xs:all>
-      <xs:element name="consignmentNumber" type="xs:string"/>
-      <xs:element minOccurs="0" name="productSpecificData" type="ProductSpecificDataResponseType"/>
-      <xs:element name="links" type="LinksResponseType"/>
-      <xs:element name="dateAndTimes" type="DtoDateAndTimesResponseType"/>
-      <xs:element name="packages">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="package" type="PackageResponseType"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:all>
-  </xs:complexType>
-
-  <xs:complexType name="ProductSpecificDataResponseType">
-    <xs:all>
-      <xs:element minOccurs="0" name="upsShipmentNumber" type="xs:string"/>
-      <xs:element minOccurs="0" name="upsTrackingNumber" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
-
-  <xs:complexType name="LinksResponseType">
-    <xs:all>
-      <xs:element name="labels" type="xs:string"/>
-      <xs:element minOccurs="0" name="waybill" type="xs:string"/>
-      <xs:element name="tracking" type="xs:string"/>
-    </xs:all>
-  </xs:complexType>
-
-  <xs:complexType name="DtoDateAndTimesResponseType">
-    <xs:all>
-      <xs:element minOccurs="0" name="earliestPickup" type="xs:dateTime"/>
-      <xs:element minOccurs="0" name="expectedDelivery" type="xs:dateTime"/>
-    </xs:all>
-  </xs:complexType>
-
-  <xs:complexType name="PackageResponseType">
-    <xs:sequence>
-      <xs:element name="packageNumber" type="xs:string"/>
-    </xs:sequence>
-    <xs:attribute name="correlationId" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="ErrorResponseType">
-    <xs:all>
-      <xs:element name="uniqueId" type="xs:string"/>
-      <xs:element name="code" type="xs:string"/>
-      <xs:element name="messages">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="message" type="MessageResponseType"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:all>
-    <xs:attribute name="consignmentCorrelationId" type="xs:string"/>
-    <xs:attribute name="packageCorrelationId" type="xs:string"/>
-  </xs:complexType>
-
-  <xs:complexType name="MessageResponseType">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute name="lang" type="xs:string" use="required"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-
-  <xs:complexType name="CustomersRequestType">
-    <xs:all/>
-  </xs:complexType>
-
-  <xs:complexType name="CustomersResponseType">
-    <xs:sequence>
-      <xs:element name="customers">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="customer" type="CustomerResponseType"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="CustomerResponseType">
-    <xs:all>
-      <xs:element name="name" type="xs:string"/>
-      <xs:element name="customerNumber" type="xs:string"/>
-      <xs:element name="countryCode" type="xs:string"/>
-      <xs:element name="products">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="product" type="xs:string"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:all>
-  </xs:complexType>
-
-  <xs:complexType name="PickupOrderRequestType">
-    <xs:sequence>
-      <xs:element ref="customerInformation"/>
-      <xs:element ref="pickupAddress"/>
-      <xs:element name="pickupDate" type="xs:date"/>
-      <xs:element minOccurs="0" name="pickupIsReadyAtTime" type="xs:time"/>
-      <xs:element minOccurs="0" ref="parcelsInformation"/>
-      <xs:element name="countryCode" type="xs:string"/>
-      <xs:element minOccurs="0" ref="cargoInformation"/>
-      <xs:element minOccurs="0" name="parcelsInternationalInformation">
-        <xs:complexType>
-          <xs:sequence>
+    <xs:complexType name="PackageGroupRequestType">
+        <xs:all>
+            <xs:element name="totalWeightInKg" type="xs:double"/>
+            <xs:element minOccurs="0" name="goodsDescription" type="xs:string"/>
+            <xs:element name="totalDimensions" type="MeasurementsRequestType"/>
             <xs:element name="numberOfPackages" type="xs:int"/>
-            <xs:element name="numberOfPallets" type="xs:int"/>
-            <xs:element name="weightInGrams" type="xs:int"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="testIndicator" type="xs:boolean" use="required"/>
-  </xs:complexType>
+        </xs:all>
+        <xs:attribute name="correlationId" type="xs:string"/>
+    </xs:complexType>
 
-  <xs:complexType name="PickupOrderResponseType">
-    <xs:all>
-      <xs:element minOccurs="0" ref="pickupConfirmation"/>
-      <xs:element minOccurs="0" name="errors">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="ErrorResponseType"/>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-    </xs:all>
-  </xs:complexType>
+    <xs:complexType name="BookingResponseType">
+        <xs:sequence>
+            <xs:element name="consignments">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="consignment" type="ConsignmentResponseType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
-  <xs:complexType name="PickupConfirmationType">
-    <xs:sequence>
-      <xs:element name="status" type="xs:string"/>
-      <xs:element name="earliestPickupDate" type="xs:dateTime"/>
-      <xs:element minOccurs="0" name="latestPickupDate" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:complexType name="ConsignmentResponseType">
+        <xs:all>
+            <xs:element minOccurs="0" name="confirmation" type="ConfirmationResponseType"/>
+            <xs:element minOccurs="0" name="errors">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="ErrorResponseType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="correlationId" type="xs:string"/>
+    </xs:complexType>
 
-  <xs:simpleType name="AccountType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="bankgiro"/>
-      <xs:enumeration value="plusgiro"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexType name="ConfirmationResponseType">
+        <xs:all>
+            <xs:element name="consignmentNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="productSpecificData" type="ProductSpecificDataResponseType"/>
+            <xs:element name="links" type="LinksResponseType"/>
+            <xs:element name="dateAndTimes" type="DtoDateAndTimesResponseType"/>
+            <xs:element name="packages">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="package" type="PackageResponseType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
 
-  <xs:simpleType name="MessageTypeRequestType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="kid"/>
-      <xs:enumeration value="text"/>
-    </xs:restriction>
-  </xs:simpleType>
+    <xs:complexType name="ProductSpecificDataResponseType">
+        <xs:all>
+            <xs:element minOccurs="0" name="upsShipmentNumber" type="xs:string"/>
+            <xs:element minOccurs="0" name="upsTrackingNumber" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="LinksResponseType">
+        <xs:all>
+            <xs:element name="labels" type="xs:string"/>
+            <xs:element minOccurs="0" name="waybill" type="xs:string"/>
+            <xs:element name="tracking" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="DtoDateAndTimesResponseType">
+        <xs:all>
+            <xs:element minOccurs="0" name="earliestPickup" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="expectedDelivery" type="xs:dateTime"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="PackageResponseType">
+        <xs:sequence>
+            <xs:element name="packageNumber" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="correlationId" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="ErrorResponseType">
+        <xs:all>
+            <xs:element name="uniqueId" type="xs:string"/>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="messages">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="message" type="MessageResponseType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+        <xs:attribute name="consignmentCorrelationId" type="xs:string"/>
+        <xs:attribute name="packageCorrelationId" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="MessageResponseType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="lang" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="CustomersRequestType">
+        <xs:all/>
+    </xs:complexType>
+
+    <xs:complexType name="CustomersResponseType">
+        <xs:sequence>
+            <xs:element name="customers">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="customer" type="CustomerResponseType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CustomerResponseType">
+        <xs:all>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="customerNumber" type="xs:string"/>
+            <xs:element name="countryCode" type="xs:string"/>
+            <xs:element name="products">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="product" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="PickupOrderRequestType">
+        <xs:sequence>
+            <xs:element ref="customerInformation"/>
+            <xs:element ref="pickupAddress"/>
+            <xs:element name="pickupDate" type="xs:date"/>
+            <xs:element minOccurs="0" name="pickupIsReadyAtTime" type="xs:time"/>
+            <xs:element minOccurs="0" ref="parcelsInformation"/>
+            <xs:element name="countryCode" type="xs:string"/>
+            <xs:element minOccurs="0" ref="cargoInformation"/>
+            <xs:element minOccurs="0" name="parcelsInternationalInformation">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="numberOfPackages" type="xs:int"/>
+                        <xs:element name="numberOfPallets" type="xs:int"/>
+                        <xs:element name="weightInGrams" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="testIndicator" type="xs:boolean" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PickupOrderResponseType">
+        <xs:all>
+            <xs:element minOccurs="0" ref="pickupConfirmation"/>
+            <xs:element minOccurs="0" name="errors">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="error" type="ErrorResponseType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="PickupConfirmationType">
+        <xs:sequence>
+            <xs:element name="status" type="xs:string"/>
+            <xs:element name="earliestPickupDate" type="xs:dateTime"/>
+            <xs:element minOccurs="0" name="latestPickupDate" type="xs:dateTime"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="AccountType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="bankgiro"/>
+            <xs:enumeration value="plusgiro"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MessageTypeRequestType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="kid"/>
+            <xs:enumeration value="text"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
