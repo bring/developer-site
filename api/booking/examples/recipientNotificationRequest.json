@@ -48,6 +48,7 @@
           "cashOnDelivery": null,
           "deliveryOption": null,
           "flexDelivery": null,
+          "deliveryIndoors": null,
           "nonFreeze": null,
           "dangerousGoods": null,
           "express": null,

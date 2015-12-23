@@ -63,6 +63,9 @@
             <tns:flexDelivery>
               <tns:message/>
             </tns:flexDelivery>
+            <tns:deliveryIndoors>
+              <tns:message/>
+            </tns:deliveryIndoors>
             <tns:nonFreeze/>
             <tns:dangerousGoods>
               <tns:containerId/>
@@ -148,6 +151,9 @@
             <tns:flexDelivery>
               <tns:message/>
             </tns:flexDelivery>
+            <tns:deliveryIndoors>
+              <tns:message/>
+            </tns:deliveryIndoors>
             <tns:nonFreeze/>
             <tns:dangerousGoods>
               <tns:containerId/>
@@ -233,6 +239,9 @@
             <tns:flexDelivery>
               <tns:message/>
             </tns:flexDelivery>
+            <tns:deliveryIndoors>
+              <tns:message/>
+            </tns:deliveryIndoors>
             <tns:nonFreeze/>
             <tns:dangerousGoods>
               <tns:containerId/>
