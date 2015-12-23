@@ -265,7 +265,7 @@ layout: redesign
                           <ul class="codetabs" role="tablist">
                           {% for body in response[1].bodies %}
                             {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-                            {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-example-' | append: forloop.index | slugify %}
+                            {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-example-' | append: response[1].status_code | append: '-' | append: mt_display_name | slugify %}
                             <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
                           {% endfor %}
                           </ul>
@@ -273,7 +273,7 @@ layout: redesign
                           {% for body in response[1].bodies %}
                             {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
                             {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
-                            {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-example-' | append: forloop.index | slugify %}
+                            {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-example-' | append: response[1].status_code | append: '-' | append: mt_display_name | slugify %}
                             <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
                               {% if hljs_lang == 'xml' %}
                               <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
