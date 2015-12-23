@@ -48,6 +48,7 @@
                         "message": "Legg pakken i garasjen."
                     },
                     "nonFreeze": null,
+                    "deliveryIndoors": null,
                     "dangerousGoods": null,
                     "express": null,
                     "eveDelivery": null,

@@ -1,8 +1,8 @@
 {
-    "schemaVersion": null,
+    "schemaVersion": 1,
     "consignments": [
         {
-            "shippingDateTime": 1448632597122,
+            "shippingDateTime": 1447751818783,
             "parties": {
                 "sender": {
                     "name": "Ola Nordmann",
@@ -23,9 +23,9 @@
                     "name": "Tore Mottaker",
                     "addressLine": "Mottakerveien 14",
                     "addressLine2": "c/o Tina Mottaker",
-                    "postalCode": "0659",
-                    "city": "OSLO",
-                    "countryCode": "NO",
+                    "postalCode": "10005",
+                    "city": "STOCKHOLM",
+                    "countryCode": "SE",
                     "reference": "43242",
                     "additionalAddressInfo": "Bruk ringeklokken",
                     "contact": {
@@ -37,19 +37,20 @@
                 "pickupPoint": null
             },
             "product": {
-                "id": "OIL_EXPRESS",
-                "customerNumber": "SYSPED_NORWAY-17931",
+                "id": "CARRYON_BUSINESS",
+                "customerNumber": "PARCELS_NORWAY-00040067266",
                 "services": {
                     "recipientNotification": null,
                     "quickPackEnvelope": null,
                     "cashOnDelivery": null,
                     "deliveryOption": null,
-                    "flexDelivery": null,
-                    "deliveryIndoors": null,
-                    "phoneNotification": null,
+                    "deliveryIndoors": {
+                        "message": "Legg pakken i garasjen."
+                    },
                     "nonFreeze": null,
+                    "flexDelivery": null,
                     "dangerousGoods": null,
-                    "express": "TRUE",
+                    "express": null,
                     "eveDelivery": null,
                     "advisering": null,
                     "simpleDelivery": null
@@ -68,13 +69,13 @@
                         "widthInCm": 23,
                         "lengthInCm": 10
                     },
-                    "containerId": "123",
-                    "packageType": "ox_container",
-                    "numberOfItems": 1,
+                    "containerId": null,
+                    "packageType": null,
+                    "numberOfItems": null,
                     "correlationId": "PACKAGE-123"
                 }
             ]
         }
     ],
-    "testIndicator": null
+    "testIndicator": true
 }

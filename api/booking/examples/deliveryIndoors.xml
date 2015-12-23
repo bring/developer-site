@@ -1,0 +1,119 @@
+<bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
+  <schemaVersion>
+    1
+  </schemaVersion>
+  <consignments>
+    <consignment correlationId="INTERNAL-123456">
+      <shippingDateTime>
+        2015-12-22T20:04:33.131+01:00
+      </shippingDateTime>
+      <parties>
+        <sender>
+          <name>
+            Ola Nordmann
+          </name>
+          <addressLine>
+            Testsvingen 12
+          </addressLine>
+          <postalCode>
+            0263
+          </postalCode>
+          <city>
+            OSLO
+          </city>
+          <countryCode>
+            NO
+          </countryCode>
+          <reference>
+            1234
+          </reference>
+          <additionalAddressInfo>
+            Hentes på baksiden etter klokken to
+          </additionalAddressInfo>
+          <contact>
+            <name>
+              Trond Nordmann
+            </name>
+            <email>
+              trond@nordmanntest.no
+            </email>
+            <phoneNumber>
+              99999999
+            </phoneNumber>
+          </contact>
+        </sender>
+        <recipient>
+          <name>
+            Tore Mottaker
+          </name>
+          <addressLine>
+            Mottakerveien 14
+          </addressLine>
+          <addressLine2>
+            c/o Tina Mottaker
+          </addressLine2>
+          <postalCode>
+            10005
+          </postalCode>
+          <city>
+            STOCKHOLM
+          </city>
+          <countryCode>
+            SE
+          </countryCode>
+          <reference>
+            43242
+          </reference>
+          <additionalAddressInfo>
+            Bruk ringeklokken
+          </additionalAddressInfo>
+          <contact>
+            <name>
+              Tore mottaker
+            </name>
+            <email>
+              tore@mottakertest.no
+            </email>
+            <phoneNumber>
+              +46700000000
+            </phoneNumber>
+          </contact>
+        </recipient>
+      </parties>
+      <product>
+        <id>
+          CARRYON_BUSINESS
+        </id>
+        <customerNumber>PARCELS_NORWAY-00096060397</customerNumber>
+        <services>
+          <deliveryIndoors>
+            <message>
+              Legg pakken i garasjen.
+            </message>
+          </deliveryIndoors>
+        </services>
+      </product>
+      <packages>
+        <package correlationId="PACKAGE-123">
+          <weightInKg>
+            1.1
+          </weightInKg>
+          <goodsDescription>
+            Testing equipment
+          </goodsDescription>
+          <dimensions>
+            <heightInCm>
+              13
+            </heightInCm>
+            <widthInCm>
+              23
+            </widthInCm>
+            <lengthInCm>
+              10
+            </lengthInCm>
+          </dimensions>
+        </package>
+      </packages>
+    </consignment>
+  </consignments>
+</bookingRequest>

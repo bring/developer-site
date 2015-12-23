@@ -236,6 +236,10 @@
     "message": "Maximum 400 characters are allowed in Message For Recipient field.",
     "suffixable": false
   }, {
+      "code": "BOOK-INPUT-062",
+      "message": "Missing required message input for delivery indoor",
+      "suffixable": false
+  },{
     "code": "BOOK-AUTHORIZATION-001",
     "message": "Your user is not authorized to perform this action",
     "suffixable": false
@@ -264,6 +268,10 @@
     "message": "Phone Notification requires recipient number to be present.",
     "suffixable": false
   }, {
+      "code": "BOOK_VALIDATION-007",
+      "message": "Delivery indoor is available in Sweden and Denmark only.",
+      "suffixable": false
+    },{
     "code": "BOOK-INTERNAL-001",
     "message": "An unexpected error occured",
     "suffixable": false
