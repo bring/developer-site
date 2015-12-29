@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 140 100">
-  <g stroke="#7BC144" fill="none" stroke-miterlimit="10">
-    <polygon stroke-width="6" points="29,28 69,11 109,28 109,71 69,91 29,71 "/>
-    <polyline stroke-width="6" points="29,28 69,47 109,28 "/>
-    <line stroke-width="6" x1="69" y1="47" x2="69" y2="91"/>
-    <line stroke-width="2" x1="51" y1="21" x2="87" y2="37"/>
-  </g>
-</svg>
