@@ -6,7 +6,10 @@ baseUri: https://tracking.bring.com
 documentation:
 - title: Introduction
   content: |
-      The tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to display details and the status of shipments. The information available in this API is the same information available from the [Tracking web site](http://tracking.bring.com/). Response is available as either XML or JSON.
+      The tracking API provides the opportunity to track shipments by reference, package or shipment number.
+      It is an easy way to display details and the status of shipments.
+      The information available in this API is the same information available from the [Tracking web site](http://tracking.bring.com/).
+      Response is available as either XML or JSON.
 
       *Oh by the way*, we also have a [Java client library](https://github.com/bring/bring-api-java) for the Tracking API.
 
@@ -25,7 +28,9 @@ documentation:
     | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
     | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
 
-    Those headers must be present for authenticating requests.
+    Those headers must be present for authenticating requests, and you have to use the endpoint
+        
+        https://www.mybring.com/tracking/api/
 
 /tracking{mediaTypeExtension}:
   displayName: Tracking endpoint
