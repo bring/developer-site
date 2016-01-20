@@ -17,9 +17,17 @@ raml_map:
 # Build settings
 gems:
 - jekyll-paginate
+- jekyll-archives
 
 paginate: 5
-paginate_path: :num # default is page:num
+paginate_path: /blog/page/:num # default is page:num
+
+jekyll-archives:
+  enabled: [categories]
+  layouts:
+    category: archives/category
+  permalinks:
+    category: '/blog/category/:name/'
 
 markdown: kramdown
 kramdown:

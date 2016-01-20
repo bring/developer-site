@@ -1,0 +1,23 @@
+---
+layout: page
+---
+<div class="blog">
+  <h2>{{ page.title }}</h2>
+  {% for post in page.posts %}
+    {% assign this_month = post.date | date: "%B %Y" %}
+    {% if this_month != prev_month %}
+      {% unless forloop.first %}
+  </ul>
+      {% endunless %}
+  <h3>{{ this_month }}</h3>
+  <ul>
+    {% endif %}
+    <li>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>,
+        <time datetime="{{ post.date | date_to_xmlschema}}" is="relative-time">{{ post.date | date: "%b %-d, %Y" }}</time>
+        in {{ post.categories | first }}
+    </li>
+    {% assign prev_month = this_month %}
+  {% endfor %}
+  </ul>
+</div>
