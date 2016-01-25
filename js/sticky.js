@@ -22,12 +22,12 @@
   }
 
   Sticky.prototype.stick = function() {
-    this.element.classList.add('apimenu--stick');
+    this.element.classList.add('sticky');
     this.stuck = true;
   }
 
   Sticky.prototype.unstick = function() {
-    this.element.classList.remove('apimenu--stick');
+    this.element.classList.remove('sticky');
     this.stuck = false;
   }
 
