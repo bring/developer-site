@@ -54,6 +54,7 @@
   <script async src="{{ site.baseurl }}/js/sticky.js" onload="window.sticky.init()"></script>
   <script async src="{{ site.baseurl }}/js/scrollspy.js" onload="window.scrollspy.init()"></script>
   <script async src="{{ site.baseurl }}/js/collapsible.js" onload="window.collapsible.init()"></script>
+  {% if jekyll.environment == 'production' %}
   <!-- Google Tag Manager for Bring -->
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-THZNF2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -63,6 +64,7 @@
   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-THZNF2');</script>
   <!-- End Google Tag Manager for Bring -->
+  {% endif %}
 </body>
 
 </html>
