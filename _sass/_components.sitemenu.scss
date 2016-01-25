@@ -25,11 +25,36 @@
         background-color: rgba(0,0,0,0.1);
     }
 
-    @media screen and (min-width: 700px) and (min-height: 500px) {
-        &.sticky {
+    // this is the same as @include media-query(desk) + and min-height
+    @media screen and (min-width: 64em) and (min-height: 500px) {
+
+        &.sticky--top,
+        &.sticky--bottom {
             position: fixed;
-            top: 0;
-            width: 280px;
+            /*
+            sort of a hack:
+            the wrapper is max-width: 1200px, so here calculate the menu width
+            like so:
+                (wrapper width - the wrapper's side padding of 40px)
+                * 25% which is the width of the layout width of the layout for this media
+                - 20px which is the menu's margin-right
+
+            also, we can't use scss variables ($spacing) within calc
+            */
+            width: calc((1200px - 40px) / 100 * 25 - 20px);
+
+            @media screen and (max-width: 1200px) {
+                /*
+                ... and here we know the wrapper is less than 1200px, so
+                here we use 100%
+                */
+                width: calc((100% - 40px) / 100 * 25 - 20px);
+            }
+        }
+
+        &.sticky--top {
+            // compensate for top margin
+            top: -$spacing;
         }
     }
 }
