@@ -1,11 +1,11 @@
 
 /* ------------------------------------------------------- 
-*   # .APIMENU
+*   # .SITEMENU
 *
-*   Navigation in APIs for sidebar on api pages
+*   Navigation in sidebar on pages
 ------------------------------------------------------- */
 
-.apimenu {
+.sitemenu {
     background-color: $background-grey;
     padding-top: $spacing;
     padding-bottom: $spacing;
@@ -24,9 +24,17 @@
     a:hover {
         background-color: rgba(0,0,0,0.1);
     }
+
+    @media screen and (min-width: 700px) and (min-height: 500px) {
+        &.sticky {
+            position: fixed;
+            top: 0;
+            width: 280px;
+        }
+    }
 }
 
-.apimenu__apititle {
+.sitemenu__apititle {
     a {
         line-height: 1;
         padding-top: $spacing / 2;
@@ -34,7 +42,7 @@
     }
 }
 
-.apimenu__sublist {
+.sitemenu__sublist {
     line-height: 1.3;
     margin-bottom: $spacing;
 
@@ -44,10 +52,3 @@
     }
 }
 
-@media screen and (min-width: 700px) and (min-height: 500px) {
-    .apimenu--stick {
-        position: fixed;
-        top: 0;
-        width: 280px;
-    }
-}
