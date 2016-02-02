@@ -42,5 +42,17 @@
           <li class="{% if page.url == '/edi/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/edi/">EDI</a></h3>
           </li>
+          <li class="{% if page.url contains '/blog/' %} active{% endif %}">
+            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/blog/">Blog</a></h3>
+            {% if page.url contains '/blog/' %}
+            <ul class="list-bare sitemenu__sublist">
+              {% assign sorted_categories = site.categories | sort %}
+              {% for category in sorted_categories %}
+                {% assign slug = category[0] | slugify %}
+                <li><a href="{{ site.jekyll-archives.permalinks.category | replace: ':name', slug | prepend: site.baseurl }}">{{ category[0] }}</a>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
         </ul>
       </nav>
