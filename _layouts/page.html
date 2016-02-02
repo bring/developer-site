@@ -1,15 +1,14 @@
 ---
 layout: redesign
 ---
-
-      <div class="page-body">  
-        <div class="page-content-container">
-          <div class="page-body-header" id="headings-paragraphs">
-              <h1>{{ page.title }}</h1>
-          </div>
-
+{% include icons.svg %}
+<div class="wrapper">
+  <div class="layout layout--flush">
+    <div class="layout__item palm-one-whole desk-one-quarter">
+{% include sitemenu.html %}
+    </div><!--
+ --><div class="layout__item palm-one-whole desk-three-quarters">
 {{ content }}
-
-        </div>
-      </div>
-
+    </div>
+  </div>
+</div>
