@@ -19,65 +19,63 @@ layout: redesign
 
         <section class="api__section" id="">
           <h1 class="api__title">EDI</h1>
-          <p>EDI (Electronic Data Interchange) i Bring og Posten startet på 90-tallet. Det har blitt laget EDI Guider basert på ulike versjoner av EDIFACT og XML. Dette er Iftmin s93a, d97a, BringXML og Posten XML. Pluss dagens versjon som er basert på D04A.</p>
-          <p>Selv om Bring og Posten fortsatt støtter tidligere versjoner, vil ikke disse bli oppdatert med endringer. Alle anbefales derfor å benytte D04A eller XML.</p>
+          <p>EDI (Electronic Data Interchange) was started in Bring and the Norwegian postal services in the 90s. On this page you will find EDI guides based on different versions of EDIFACT and XML that is in use today.</p>
+          <p>Even if Bring and the Norwegian postal services still support older versions of the formats they will not be updated with new changes and services. It is recommendet that everyone either use D04A EDIFACT, XML or the MyBring APIs.</p>
         </section>
 
         <section class="api__section" id="">
-          <h2>Transportinstruks for IFTMIN 04</h2>
-          <p>Denne guiden er en rettesnor for gjennomføring av Brings fraktinnstruks basert på IFTMIN D04A EDIFACT. Oversikten og guiden viser i detalj informasjon om hvordan tjenester og tilleggstjenester skal angis korrekt i Bring sine EDI intrukser.</p>
+          <h2>Transport instruction on IFTMIN 04</h2>
+          <p>This guide details how to implement an Bring transport instruction based on IFTMIN D04A EDIFACT. The different documents listed also gives an overview over the diffent services and additional services and how they can be combined in a Bring trasport instruction.</p>
           <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/IG_BIG14_1_5_2015-10-28.pdf">Hoveddokument — D04A BIG14</a></li>
+            <li><a href="{{ site.baseurl }}/files/IG_BIG14_1_5_2015-10-28.pdf">Main document — D04A BIG14</a></li>
             <li><a href="{{ site.baseurl }}/files/Appendix_A_2015-10-22_and_2016-01-04.pdf">Appendix 1 — Locations</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix2nov2015.pdf">Appendix 2 — Services</a> (Oversikt over tjenester, se også 2A)</li>
+            <li><a href="{{ site.baseurl }}/files/Appendix2nov2015.pdf">Appendix 2 — Services</a> (Overview of services, also see 2A)</li>
             <li><a href="{{ site.baseurl }}/files/Appendix2ANov2015.pdf">Appendix 2A</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_Appendix_5.pdf">Appendix 5 — Document type</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_Appendix_6.pdf">Appendix 6 — HUB-information</a></li>
             <li><a href="{{ site.baseurl }}/files/BPI_subset_BIG14_1_3.pdf">Subset for Bring Parcel AB (International Packages) IFTMIN BIG14</a></li>
             <li><a href="{{ site.baseurl }}/files/New_product_names-_Appendix_A_all_countries_2015-10-22_and_2016-01-04.pdf">Appendix A — Bring Parcels products and services from DK, FI, NO, SE and Europe</a></li>
-            <li><a href="{{ site.baseurl }}/files/BIG14_BCAP_service_codes.pdf">Tilleggsinformasjon — Service Code 0010 and 0011 to Denmark (BIG14) 1.3</a></li>
+            <li><a href="{{ site.baseurl }}/files/BIG14_BCAP_service_codes.pdf">Additional information — Service Code 0010 and 0011 to Denmark (BIG14) 1.3</a></li>
             <li><a href="{{ site.baseurl }}/files/Service_Code_1095_(BIG14)_1.0.pdf">Service Code 1095 (Collect at store) for Bring Parcel AB</a></li>
             <li><a href="{{ site.baseurl }}/files/Appendix_F.pdf"> Appendix F (Special information to Finland)</a></li>
           </ul>
-
-          <p>Her kan du laste ned EDIFACT meldinger som sikrer at din bedrift har støtte for en effektiv informasjonsflyt. Disse kan leveres på en FTP-konto som vi oppretter til deg eller vi kan sende det til dere via SMTP.</p>
         </section>
 
         <section class="api__section" id="">
-          <h2>Flere implementasjonsguider</h2>
-          <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
+          <h2>Additional guides for implementation</h2>
+          <h3 class="epsilon u-mb--">Download documentation</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/fortolling.pdf">Fortolling</a></li>
+            <li><a href="{{ site.baseurl }}/files/fortolling.pdf">Customs</a></li>
             <li><a href="{{ site.baseurl }}/files/wms.pdf">Warehouse Management</a></li>
-            <li><a href="{{ site.baseurl }}/files/efaktura.xml">XML for Efaktura</a></li>
+            <li><a href="{{ site.baseurl }}/files/efaktura.xml">XML for E-Invoice</a></li>
           </ul>
         </section>
 
         <section class="api__section" id="">
-          <h2>Statuskoder (IFTSTA)</h2>
-          <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
+          <h2>Events (IFTSTA)</h2>
+          <h3 class="epsilon u-mb--">Download documentation</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/statuskoder_D96A.pdf">Bring Norge Pakker (IFTSTA D96A)</a></li>
-            <li><a href="{{ site.baseurl }}/files/statuskoder_D04A.pdf">Bring Norge Stykk/Parti og Pakker, Bring Express Norge, Sverige og Danmark (IFTSTA D04A)</a></li>
+            <li><a href="{{ site.baseurl }}/files/statuskoder_D96A.pdf">Bring Norway Parcels (IFTSTA D96A)</a></li>
+            <li><a href="{{ site.baseurl }}/files/statuskoder_D04A.pdf">Bring Norway FIXME: Stykk/Parti og Pakker, Bring Express Norway, Sweden and Denmark (IFTSTA D04A)</a></li>
             <li><a href="{{ site.baseurl }}/files/statuskoder_D94A.pdf">Bring Parcels AB (CarryOn)</a></li>
           </ul>
         </section>
 
         <section class="api__section" id="">
-          <h2>Spesifikasjon transportetikett</h2>
-          <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
+          <h2>Spesification for transport labels</h2>
+          <h3 class="epsilon u-mb--">Download documentation</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/labelspec_1.pdf">Bring Pakker, Bring Cargo AS, Bring Cargo Inrikes AB, Bring Cargo International AB</a></li>
+            <li><a href="{{ site.baseurl }}/files/labelspec_1.pdf">Bring Parcels, Bring Cargo AS, FIXME: Bring Cargo Inrikes AB, Bring Cargo International AB</a></li>
             <li><a href="{{ site.baseurl }}/files/labelspec_2.pdf">Bring Parcels AB (CarryOn)</a></li>
             <li><a href="{{ site.baseurl }}/files/labelspec_3.pdf">Bring Parcels AB (CarryOn) Label description - Appendix E</a></li>
-            <li><a href="{{ site.baseurl }}/files/Logo_Bring_etikett.zip">logo til etikett</a></li>
+            <li><a href="{{ site.baseurl }}/files/Logo_Bring_etikett.zip">logo for use in label</a></li>
           </ul>
         </section>
 
         <section class="api__section" id="">
-          <h2>Leverandører av EDI-løsninger</h2>
-          <p>Med et EDI-program kan dere velge fritt i alle våre pakkeprodukter og tilleggstjenester for både innland og utland. Hver enkelt leverandør må svare på hvilke av Bring sine tjenester de har tilgjengelig.</p>  
+          <h2>Suppliers of EDI-solutions</h2>
+          <p>By using an EDI application you are free to choose in all our services and additional services. Please refer to the list to find an EDI supplier that suits your needs.</p>  
 
           <ul class="list-bare">
             <li><a href="http://www.axiafrakt.no"><h3 class="epsilon u-mb-">AxiaFrakt</h3></a></li>
