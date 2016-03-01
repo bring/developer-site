@@ -265,9 +265,9 @@ documentation:
       200:
         displayName: Successful response
         description: |
-          In this example, we're querying for prices for CarryOn HomeShopping and CarryOn HomeShopping Business for a 2,5kg package from Sweden to Denmark.
+          In this example, we're querying for prices for Pickup Parcel and Pickup Parcel Business for a 2,5kg package from Sweden to Denmark.
 
-          Request: [...&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=carryon_homeshopping&product=carryon_business](https://api.bring.com/shippingguide/products/price.json?clientUrl=https://example.com/&weightInGrams=2500&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=carryon_homeshopping&product=carryon_business)
+          Request: [...&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=pickup_parcel&product=business_parcel](https://api.bring.com/shippingguide/products/price.json?clientUrl=https://example.com/&weightInGrams=2500&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=pickup_parcel&product=business_parcel)
         body:
           application/json:
             example: !include examples/price.json
@@ -374,7 +374,7 @@ documentation:
         description: |
           In this example, we're querying for expected delivery time for various products for a package from Sweden to Denmark.
 
-          Request: [...fromCountry=SE&from=11640&toCountry=DK&to=1440&product=CARRYON_HOMESHOPPING&product=CARRYON_HOMESHOPPING_BULKSPLIT&product=SERVICEPAKKE&product=BPAKKE_DOR-DOR](https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=https://example.com/&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=CARRYON_HOMESHOPPING&product=CARRYON_HOMESHOPPING_BULKSPLIT&product=SERVICEPAKKE&product=BPAKKE_DOR-DOR)
+          Request: [...fromCountry=SE&from=11640&toCountry=DK&to=1440&product=PICKUP_PARCEL&product=PICKUP_PARCEL_BULK&product=SERVICEPAKKE&product=BPAKKE_DOR-DOR](https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=https://example.com/&fromCountry=SE&from=11640&toCountry=DK&to=1440&product=PICKUP_PARCEL&product=PICKUP_PARCEL_BULK&product=SERVICEPAKKE&product=BPAKKE_DOR-DOR)
         body:
           application/json:
             example: !include examples/expectedDelivery.json
@@ -529,7 +529,7 @@ documentation:
 
           [Country Codes are ISO-3166-1-alpha-2](http://www.iso.org/iso/country_names_and_code_elements).
 
-          [Example request](https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=insertYourClientUrlHere&from=2100&to=2100&fromCountry=NO&toCountry=DK&product=CARRYON_HOMESHOPPING_NORWAY).
+          [Example request](https://api.bring.com/shippingguide/products/expectedDelivery.json?clientUrl=insertYourClientUrlHere&from=2100&to=2100&fromCountry=NO&toCountry=DK&product=PICKUP_PARCEL).
         body:
           application/json:
             example: !include examples/international_shipments.json
@@ -550,7 +550,7 @@ documentation:
           - `&weightInGrams=300`, and
           - `all.json`
 
-          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=CARRYON_HOMESHOPPING_NORWAY&weightInGrams=300)
+          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&fromCountry=NO&toCountry=IE&from=7600&to=0&toCity=Dublin&product=PICKUP_PARCEL&weightInGrams=300)
         body:
           application/json:
             example: !include examples/international_without_postal_codes.json

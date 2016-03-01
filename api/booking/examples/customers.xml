@@ -15,16 +15,16 @@
         <product>EKSPRESS09_RETURSERVICE</product>
         <product>SERVICEPAKKE_RETURSERVICE</product>
         <product>MINIPAKKE</product>
-        <product>CARRYON_BUSINESS</product>
-        <product>CARRYON_HOMESHOPPING</product>
-        <product>CARRYON_BUSINESS_PALLET</product>
-        <product>CARRYON_BUSINESS_HALFPALLET</product>
-        <product>CARRYON_BUSINESS_QUARTERPALLET</product>
-        <product>CARRYON_BUSINESS_BULKSPLIT</product>
-        <product>CARRYON_BUSINESS_BULKSPLIT_0900</product>
-        <product>CARRYON_HOMESHOPPING_BULKSPLIT</product>
-        <product>CARRYON_HOMESHOPPING_BULKSPLIT_HOME</product>
-        <product>CARRYON_HOMESHOPPING_BULKSPLIT_MINI</product>
+        <product>BUSINESS_PARCEL</product>
+        <product>PICKUP_PARCEL</product>
+        <product>BUSINESS_PALLET</product>
+        <product>BUSINESS_PARCEL_HALFPALLET</product>
+        <product>BUSINESS_PARCEL_QUARTERPALLET</product>
+        <product>BUSINESS_PARCEL_BULK</product>
+        <product>EXPRESS_NORDIC_0900_BULK</product>
+        <product>PICKUP_PARCEL_BULK</product>
+        <product>HOME_DELIVERY_PARCEL</product>
+        <product>HOME_DELIVERY_MAILBOX</product>
       </products>
     </customer>
     <customer>
@@ -42,11 +42,11 @@
         <product>COURIER_BICYCLE_1H</product>
         <product>COURIER_BICYCLE_2H</product>
         <product>COURIER_BICYCLE_4H</product>
-        <product>QUICKPACK_SAMEDAY</product>
-        <product>QUICKPACK_OVER_NIGHT_0900</product>
-        <product>QUICKPACK_OVER_NIGHT_1200</product>
-        <product>QUICKPACK_DAY_CERTAIN</product>
-        <product>QUICKPACK_EXPRESS_ECONOMY</product>
+        <product>EXPRESS_NORDIC_SAME_DAY</product>
+        <product>EXPRESS_INTERNATIONAL_0900</product>
+        <product>EXPRESS_INTERNATIONAL_1200</product>
+        <product>EXPRESS_INTERNATIONAL</product>
+        <product>EXPRESS_ECONOMY</product>
       </products>
     </customer>
   </customers>

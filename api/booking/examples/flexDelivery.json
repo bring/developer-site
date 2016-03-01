@@ -37,7 +37,7 @@
                 "pickupPoint": null
             },
             "product": {
-                "id": "CARRYON_BUSINESS",
+                "id": "BUSINESS_PARCEL",
                 "customerNumber": "PARCELS_NORWAY-00040067266",
                 "services": {
                     "recipientNotification": null,
