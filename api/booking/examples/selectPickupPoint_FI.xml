@@ -90,7 +90,7 @@
             </parties>
             <product>
                 <id>
-                    CARRYON_HOMESHOPPING_BULKSPLIT
+                    PICKUP_PARCEL_BULK
                 </id>
                 <customerNumber>
                     PARCELS_SWEDEN-123456

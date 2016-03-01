@@ -1,7 +1,7 @@
 {
     "@packageId": "0",
     "Product": {
-        "ProductId": "CARRYON_HOMESHOPPING_NORWAY",
+        "ProductId": "PICKUP_PARCEL_NORWAY",
         "ProductCodeInProductionSystem": "0340",
         "GuiInformation": {
             "SortOrder": "50",
@@ -36,7 +36,7 @@
     "TraceMessages": {
         "Message": [
             "Using VAT rate of origin country and leaving it up to you as a client to decide whether or not VAT is applicable in the specific sales situation.",
-            "Price for CARRYON_HOMESHOPPING_NORWAY is without fuel surcharge. This fee must be added manually by the client."
+            "Price for PICKUP_PARCEL_NORWAY is without fuel surcharge. This fee must be added manually by the client."
         ]
     }
 }
