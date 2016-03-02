@@ -1,7 +1,7 @@
 {
     "@packageId": "0",
     "Product": {
-        "ProductId": "CARRYON_HOMESHOPPING_NORWAY",
+        "ProductId": "PICKUP_PARCEL_NORWAY",
         "ProductCodeInProductionSystem": "0340",
         "ExpectedDelivery": {
             "WorkingDays": "3-5",

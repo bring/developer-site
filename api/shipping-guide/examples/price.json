@@ -1,7 +1,7 @@
 {
    "@packageId": "0",
    "Product": [{
-      "ProductId": "CARRYON_HOMESHOPPING",
+      "ProductId": "PICKUP_PARCEL",
       "ProductCodeInProductionSystem": "0340",
       "Price": {
          "@currencyIdentificationCode": "SEK",
@@ -17,7 +17,7 @@
          }
       }
    }, {
-      "ProductId": "CARRYON_BUSINESS",
+      "ProductId": "BUSINESS_PARCEL",
       "ProductCodeInProductionSystem": "0330",
       "Price": {
          "@currencyIdentificationCode": "SEK",
@@ -34,6 +34,6 @@
       }
    }],
    "TraceMessages": {
-      "Message": ["Using VAT rate of origin country and leaving it up to you as a client to decide whether or not VAT is applicable in the specific sales situation.", "Price for CARRYON_HOMESHOPPING is without fuel surcharge. This fee must be added manually by the client.", "Price for CARRYON_BUSINESS is without fuel surcharge. This fee must be added manually by the client."]
+      "Message": ["Using VAT rate of origin country and leaving it up to you as a client to decide whether or not VAT is applicable in the specific sales situation.", "Price for PICKUP_PARCEL is without fuel surcharge. This fee must be added manually by the client.", "Price for BUSINESS_PARCEL is without fuel surcharge. This fee must be added manually by the client."]
    }
 }

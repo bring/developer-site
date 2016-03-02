@@ -177,7 +177,7 @@
     "suffixable": false
   }, {
     "code": "BOOK-INPUT-047",
-    "message": "Pickup point delivery method is only available for CARRYON_HOMESHOPPING within Denmark, CARRYON_HOMESHOPPING_BULKSPLIT to Denmark, Norway, Sweden, Finland and for SERVICEPAKKE within NORWAY.",
+    "message": "Pickup point delivery method is only available for PICKUP_PARCEL within Denmark, PICKUP_PARCEL_BULK to Denmark, Norway, Sweden, Finland and for SERVICEPAKKE within NORWAY.",
     "suffixable": false
   }, {
     "code": "BOOK-INPUT-048",
