@@ -1,7 +1,7 @@
 {
   "@packageId": "0",
   "Product": [{
-    "ProductId": "CARRYON_HOMESHOPPING_BULKSPLIT",
+    "ProductId": "PICKUP_PARCEL_BULK",
     "ProductCodeInProductionSystem": "0342",
     "ExpectedDelivery": {
       "WorkingDays": null,
@@ -10,7 +10,7 @@
       "FormattedEarliestPickupDate": null
     }
   }, {
-    "ProductId": "CARRYON_HOMESHOPPING",
+    "ProductId": "PICKUP_PARCEL",
     "ProductCodeInProductionSystem": "0340",
     "ExpectedDelivery": {
       "WorkingDays": "1-2",
