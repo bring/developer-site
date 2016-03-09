@@ -1,56 +1,45 @@
 ---
 title: Blog
-layout: page
+layout: blog
 ---
-      <div class="blog">
-      {% for post in paginator.posts %}
-        <article class="blog-post">
-          <header class="blog-post__header">
-            <h2 class="blog-post__heading gamma"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h2>
-            <ul class="blog-post__meta list-inline">
-              <li class="blog-post__meta-item">
-                <a href="https://github.com/{{ post.author }}">
-                  <img alt="👤" class="icon" src="https://avatars.githubusercontent.com/{{ post.author }}?s=48" />
-                  <span>{{ post.author }}</span>
-                </a>
-              </li>
-              <li class="blog-post__meta-item">
-                <svg class="icon"><use xlink:href="#calendar" /></svg>
-                <time datetime="{{ post.date | date_to_xmlschema}}" is="relative-time">{{ post.date | date: "%b %-d, %Y" }}</time>
-              </li>
-              <li class="blog-post__meta-item">
-                {% assign category_slug = post.category | slugify %}
-                <a href="{{ site.jekyll-archives.permalinks.category | replace:':name',category_slug }}">
-                  <svg class="icon"><use xlink:href="#tag" /></svg>
-                  <span>{{ post.category }}</span>
-                </a>
-              </li>
-              <li class="blog-post__meta-item">
-                <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">
-                  <svg class="icon"><use xlink:href="#comments" /></svg>
-                  <span data-disqus-identifier="{{ post.id }}"  >0 comments</span>
-                </a>
-              </li>
-            </ul>
-          </header>
-          <div class="blog-post__content">
-            {{ post.excerpt }}
-          </div>
-          {% capture content_words %}
-            {{ post.content | number_of_words }}
-          {% endcapture %}
-          {% capture excerpt_words %}
-            {{ post.excerpt | number_of_words }}
-          {% endcapture %}
-          {% if excerpt_words != content_words %}
-          <footer class="blog-post__footer">
-            <a class="blog-post__readmore" href="{{ post.url | prepend: site.baseurl }}">Read on…</a>
-          </footer>
-          {% endif %}
-        </article>
-      {% endfor %}
-      {% if paginator.previous_page or paginator.next_page %}
-        <ul class="layout blog__paginator">
+    {% for post in paginator.posts %}
+      <article class="blog__post">
+        <header class="blog__post__header">
+          <h2 class="blog__post__heading gamma"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h2>
+          <ul class="blog__post__meta list-inline">
+            <li class="blog__post__meta-item">
+              <a href="https://github.com/{{ post.author }}">
+                <img alt="👤" class="icon" src="https://avatars.githubusercontent.com/{{ post.author }}?s=48" width="24" height="24" />
+                <span>{{ post.author }}</span>
+              </a>
+            </li>
+            <li class="blog__post__meta-item">
+              <svg class="icon"><use xlink:href="#calendar" /></svg>
+              <time datetime="{{ post.date | date_to_xmlschema}}" is="relative-time">{{ post.date | date: "%b %-d, %Y" }}</time>
+            </li>
+            <li class="blog__post__meta-item">
+              {% assign category_slug = post.category | slugify %}
+              <a href="{{ site.jekyll-archives.permalinks.category | replace:':name',category_slug }}">
+                <svg class="icon"><use xlink:href="#tag" /></svg>
+                <span>{{ post.category }}</span>
+              </a>
+            </li>
+            <li class="blog__post__meta-item">
+              <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">
+                <svg class="icon"><use xlink:href="#comments" /></svg>
+                <span data-disqus-identifier="{{ post.id }}"  >0 comments</span>
+              </a>
+            </li>
+          </ul>
+        </header>
+        <div class="blog__post__content">
+          {{ post.content }}
+        </div>
+      </article>
+    {% endfor %}
+    {% if paginator.previous_page or paginator.next_page %}
+      <div class="blog__paginator">
+        <ul class="layout">
           <li class="layout__item layout--right palm-one-whole lap-and-up-one-third">
             {% if paginator.next_page %}
             <a class="blog__paginator__button" href="{{ paginator.next_page_path }}">← Older posts</a>
@@ -69,5 +58,5 @@ layout: page
             {% endif %}
           </li>
         </ul>
-      {% endif %}
       </div>
+    {% endif %}

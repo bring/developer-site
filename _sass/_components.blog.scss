@@ -4,31 +4,28 @@
 ------------------------------------------------------- */
 
 .blog {
-    border-left: 2px solid $background-grey;
-    border-right: 2px solid $background-grey;
-    padding-bottom: $spacing * 2;
+    margin: 0 auto;
+    max-width: 666px;
+}
 
-    :first-child {
-        margin-top: 0;
+.blog__post {
+    margin: $spacing 0 4*$spacing 0;
+
+    &:last-child {
+        margin-bottom: 2*$spacing;
     }
 }
 
-.blog-post {
-    margin: 2em 0;
-    padding: 1em;
-}
-
-.blog-archive {
-    margin: 2em 0;
-    padding: 1em;
+.blog__archive {
+    margin: $spacing 0;
     min-height: 555px;
 }
 
-.blog-post__header {
+.blog__post__header {
 
 }
 
-.blog-post__heading {
+.blog__post__heading {
     margin: 0;
 
     a {
@@ -39,11 +36,11 @@
     }
 }
 
-.blog-post__meta {
+.blog__post__meta {
     margin: 0.9em 0;
 }
 
-.blog-post__meta-item {
+.blog__post__meta-item {
     color: $medium-grey;
 
     &:not(:last-child):after {
@@ -52,14 +49,14 @@
     }
 }
 
-.blog-post__meta-item a {
+.blog__post__meta-item a {
     color: $medium-grey;
     &:hover {
         color: $dark-grey;
     }
 }
 
-.blog-post__meta .icon, {
+.blog__post__meta .icon, {
     width: 18px;
     height: 18px;
     border-radius: 3px;
@@ -68,34 +65,34 @@
     top: -2px;
 }
 
-.blog-post__meta svg.icon {
+.blog__post__meta svg.icon {
     fill: $medium-grey;
 }
 
-.blog-post__meta a:hover svg.icon {
+.blog__post__meta a:hover svg.icon {
     fill: $dark-grey;
 }
 
-.blog-post__meta img.icon {
+.blog__post__meta img.icon {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
-.blog-post__meta a:hover img.icon {
+.blog__post__meta a:hover img.icon {
     -webkit-filter: none;
     filter: none;
 }
 
-.blog-post__content > :last-child {
+.blog__post__content > :last-child {
     padding-bottom: 0;
     margin-bottom: 0;
 }
 
-.blog-post__footer {
-    margin-top: $spacing;
+.blog__post__footer {
+    margin-top: 2*$spacing;
 }
 
-.blog-post__readmore {
+.blog__post__readmore {
     color: $medium-grey;
     text-align: center;
     &:hover {
@@ -105,7 +102,7 @@
 
 .blog__paginator {
     text-align: center;
-    margin: 1.8em 0;
+    margin: 2*$spacing 0;
 }
 
 .blog__paginator__info {
@@ -118,11 +115,15 @@
     padding: 0.8em 1em;
 }
 
-a.blog__paginator__button:hover {
+.blog__paginator__button:hover {
     border-color: $link-blue;
 }
 
 .blog__paginator__button--disabled {
     color: $medium-grey;
     cursor: default;
+}
+
+.blog__paginator__button--disabled:hover {
+    border-color: inherit;
 }
