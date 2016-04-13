@@ -236,9 +236,10 @@ documentation:
         type: string
         example: evarsling
       priceAdjustments:
-        displayName: Price adjustments
-        description: Option to adjust the price returned. Specified by adding [&priceAdjustment=m20p](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p). Note that price adjustments is on prices without VAT. Refer to additional examples to read more.
+        description: |
+          Adjusts the price (w/o VAT) returned. The format of it is <code>[productCode_&lt;productname&gt;][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
         type: string
+        pattern: ^((productCode_\w*)?(p|m|)\d*(\.\d|)|(productCode_\w*)?(p|m)\d*(\.\d|)p)$
         example: m20p
       pid:
         displayName: Public ID
@@ -344,8 +345,10 @@ documentation:
         example: evarsling
       priceAdjustments:
         displayName: Price adjustments
-        description: Option to adjust the price returned. Specified by adding [&priceAdjustment=m20p](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p). Note that price adjustments is on prices without VAT. Refer to additional examples to read more.
+        description: |
+          Adjusts the price (w/o VAT) returned. The format of it is <code>[productCode_&lt;productname&gt;][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
         type: string
+        pattern: ^((productCode_\w*)?(p|m|)\d*(\.\d|)|(productCode_\w*)?(p|m)\d*(\.\d|)p)$
         example: m20p
       pid:
         displayName: Public ID
@@ -453,7 +456,9 @@ documentation:
         example: evarsling
       priceAdjustments:
         displayName: Price adjustments
-        description: Option to adjust the price returned. Specified by adding [&priceAdjustment=m20p](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p). Note that price adjustments is on prices without VAT. Refer to additional examples to read more.
+        description: |
+          Adjusts the price (w/o VAT) returned. The format of it is <code>[productCode_&lt;productname&gt;][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
+        pattern: ^((productCode_\w*)?(p|m|)\d*(\.\d|)|(productCode_\w*)?(p|m)\d*(\.\d|)p)$
         type: string
         example: m20p
       pid:
@@ -699,5 +704,3 @@ documentation:
       The service will not take this into account. This must be handled by clients. End-users should not get delivery dates for holidays.
   get:
     description: SOAP
-
-

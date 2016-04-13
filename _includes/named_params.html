@@ -42,6 +42,19 @@
                         {% endif %}
 
                         {{ desc | markdownify }}
+
+                        {% if param[1].pattern %}
+                        <br/>
+                        <strong>Pattern</strong><br/>
+                        <code>{{ param[1].pattern }}</code>
+                        {% endif %}
+
+                        {% if param[1].example %}
+                        <br/>
+                        <strong>Example</strong><br/>
+                        <code>{{ param[1].example }}</code>
+                        {% endif %}
+
                       </td>
                     </tr>
                   {% endfor %}
