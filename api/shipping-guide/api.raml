@@ -220,6 +220,7 @@ documentation:
         description: Flag that tells if the parcel will be registred using EDI when it is shipped. Note that this flag may affect price and which products are available.
         type: boolean
         default: true
+        enum: [true, false]
       postingAtPostOffice:
         description: |
           Flag that tells whether the parcel is delivered at a post office when it is shipped.
@@ -230,6 +231,7 @@ documentation:
           * BPAKKE_DOR-DOR (Bedriftspakke)
         type: boolean
         default: false
+        enum: [true, false]
       additional:
         displayName: Additional services
         description: Request additional services for the package. Specified by adding one or more `additional` parameters to the request, e.g. [&additional=postoppkrav&additional=evarsling](https://api.bring.com/shippingguide/products/SERVICEPAKKE/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&date=2009-3-27&additional=postoppkrav&additional=evarsling&additional=lordagsutkjoring). See the [additional services list](/api/products/#additional-services). The Shipping Guide will match the additional service codes to the requested products and ignore product / additional service codes that are not applicable.
