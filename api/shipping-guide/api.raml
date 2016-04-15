@@ -653,23 +653,24 @@ documentation:
         description: |
           The Shipping Guide provides adjustment of prices shown.
           
-          To adjust the price, add [`&priceAdjustment=m20p`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p) to the query.
+          To adjust the price add e.g. [`&priceAdjustment=m20p`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p) to the query.
           
-          The parameter is built up in the form `[produktkode_][o]10[p]`. Parts of the parameter with square brackets ( [] ) is optional.
-          
-          Explanation of the parameters follows:
-          
-          - `produktkode_` used if price adjustments are only made for a single product. Example: [`&priceAdjustment=SERVICEPAKKE_m20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_m20) lowers the price on product Servicepakke with NOK 20.
-          - `o` specifies the operation to be performed. Operations supported are `p` for positive, `m` for negative or blank for a fixed price adjustment. Examples:
-            - [`&priceAdjustment=m20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20) deducts NOK 20 on all products.
-            - [`&priceAdjustment=p20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=p20) adds NOK 20 to all products.
-            - [`&priceAdjustment=SERVICEPAKKE_79`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_79) puts a fixed price on Servicepakke on NOK 79.
-          - `10` indicates the factor to be used in the price adjustment. This number can be a fixed amount or percentage to be added/subtracted, or a fixed price to be added/subtracted depending on other parameters.
-          - `p` indicates that the operation should be done as a percentage calculation. Note that this is only valid for operations doing additions and subtractions (not fixed prices).
-          
-          Though *not recommended*, it is possible to make overlapping queries. If there is a need to do multiple simultaneous price adjustments, it should be done on a product-by-product basis using the product code prefix.
-          
-          *Example*: [set fixed price of NOK 79 for Servicepakke and deduct 20% on Bedriftspakke Ekspress Over natten 09](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p).
+          The format of it is <code>[&lt;product code&gt;_][p(lus)&#124;m(inus)]factor[p(ercentage)]</code> where parts inside square brackets are optional and parts inside parentheses are for informational purpose.
+
+          | `produkt code_` | _optional_ Used if price adjustments are only made for a single product. |
+          | `p`&#124;`m`    | _optional_ The operation to be performed. `p` is for adding to the price, `m` for subtracting, and if left out the price is replaced with the _factorn_ |
+          | `factor`        | The factor to be used in the price adjustment. This number can be a fixed amount or percentage to be added/subtracted, or a fixed price to be added/subtracted depending on other parameters.
+          | `p`             | _optional_ Indicates that the operation should be done as a percentage calculation. Note that this is only valid for additions and subtractions and not fixed prices.
+
+          ##### Examples
+
+          | [`&priceAdjustment=10`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=10) | Set price to 10 |
+          | [`&priceAdjustment=p20.5`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=p20.5) | Add 20.5 to the price |
+          | [`&priceAdjustment=m20`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20) | Subtract 20 from the price |
+          | [`&priceAdjustment=SERVICEPAKKE_79`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_79) | Set fixed price of SERVICEPAKKE to 79 |
+          | [`&priceAdjustment=SERVICEPAKKE_p30p`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=SERVICEPAKKE_p30p) | Add 30% to the price of SERVICEPAKKE |
+          | [&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&product=SERVICEPAKKE&product=EKSPRESS09&priceAdjustment=SERVICEPAKKE_79&priceAdjustment=EKSPRESS09_m20p) | Set fixed price of NOK 79 for SERVICEPAKKE and deduct 20% on Bedriftspakke Ekspress Over Night 09 |
+
         body:
           application/json:
             example: !include examples/adjust_prices.json
