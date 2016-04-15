@@ -239,9 +239,9 @@ documentation:
         example: evarsling
       priceAdjustments:
         description: |
-          Adjusts the price (w/o VAT) returned. The format of it is <code>[productCode_&lt;productname&gt;][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
+          Adjusts the price (w/o VAT) returned. The format of it is <code>[&lt;product code&gt;_][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
         type: string
-        pattern: ^((productCode_\w*)?(p|m|)\d*(\.\d|)|(productCode_\w*)?(p|m)\d*(\.\d|)p)$
+        pattern: ^((\w*_)?(p|m|)\d*(\.\d|)|(\w*_)?(p|m)\d*(\.\d|)p)$
         example: m20p
       pid:
         displayName: Public ID
@@ -348,9 +348,9 @@ documentation:
       priceAdjustments:
         displayName: Price adjustments
         description: |
-          Adjusts the price (w/o VAT) returned. The format of it is <code>[productCode_&lt;productname&gt;][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
+          Adjusts the price (w/o VAT) returned. The format of it is <code>[&lt;product code&gt;_][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
         type: string
-        pattern: ^((productCode_\w*)?(p|m|)\d*(\.\d|)|(productCode_\w*)?(p|m)\d*(\.\d|)p)$
+        pattern: ^((\w*_)?(p|m|)\d*(\.\d|)|(\w*_)?(p|m)\d*(\.\d|)p)$
         example: m20p
       pid:
         displayName: Public ID
@@ -459,8 +459,8 @@ documentation:
       priceAdjustments:
         displayName: Price adjustments
         description: |
-          Adjusts the price (w/o VAT) returned. The format of it is <code>[productCode_&lt;productname&gt;][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
-        pattern: ^((productCode_\w*)?(p|m|)\d*(\.\d|)|(productCode_\w*)?(p|m)\d*(\.\d|)p)$
+          Adjusts the price (w/o VAT) returned. The format of it is <code>[&lt;product code&gt;_][p(lus)&#124;m(inus)]factor[p(ercentage)]</code>
+        pattern: ^((\w*_)?(p|m|)\d*(\.\d|)|(\w*_)?(p|m)\d*(\.\d|)p)$
         type: string
         example: m20p
       pid:
