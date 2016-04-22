@@ -53,11 +53,13 @@ documentation:
         displayName: Filter using opening hours
         enum: [ ALL_WEEKDAYS, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
       openOnOrBefore:
-        description: Format `HH:mm`. Return only pickup points that are open on or before the specified time.
+        description: Format `HHmm`. Return only pickup points that are open on or before the specified time.
         type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
       openOnOrAfter:
-        description: Format `HH:mm`. Return only pickup points that are open on or after the specified time.
+        description: Format `HHmm`. Return only pickup points that are open on or after the specified time.
         type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
       pickupPointType:
         displayName: Pickup-point type
         description: Currently available for Swedish, Finnish and Danish pickup point request only.
@@ -135,7 +137,7 @@ documentation:
         description: |
           If you want to return only the pickup points open on specific hours, you may use the `openOnOrBefore=<time>` and/or `openOnOrAfter=<time>` query params.
 
-          The format of `<time>` is `hhmm`.
+          The format of `<time>` is `HHmm`.
 
           In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openOnOrBefore=0800), we look for pickup points near NO/1407 open on or before 08:00.
         body:
@@ -171,11 +173,13 @@ documentation:
         displayName: Filter using opening hours
         enum: [ ALL_WEEKDAYS, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
       openOnOrBefore:
-        description: Format `HH:mm`. Return only pickup points that are open on or before the specified time.
+        description: Format `HHmm`. Return only pickup points that are open on or before the specified time.
         type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
       openOnOrAfter:
-        description: Format `HH:mm`. Return only pickup points that are open on or after the specified time.
+        description: Format `HHmm`. Return only pickup points that are open on or after the specified time.
         type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
       pickupPointType:
         displayName: Pickup-point type
         description: Currently available for Swedish, Finnish and Danish pickup point request only.
