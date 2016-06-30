@@ -40,7 +40,7 @@
         "id": "FRIGO",
         "customerNumber": "FRIGO-123456",
         "services": {
-          "frigoTemperatureZone": "FRIGO_COOL"
+          "frigoTemperatureZone": "cool"
         },
         "customsDeclaration": null
       },

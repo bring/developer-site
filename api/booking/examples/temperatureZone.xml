@@ -39,7 +39,7 @@
         <id>FRIGO</id>
         <customerNumber>FRIGO-123456</customerNumber>
         <services>
-          <frigoTemperatureZone>fish</frigoTemperatureZone>
+          <frigoTemperatureZone>cool</frigoTemperatureZone>
         </services>
       </product>
       <packages>
