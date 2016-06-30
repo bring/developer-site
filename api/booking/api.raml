@@ -61,6 +61,7 @@ documentation:
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
       | Bring Express, Sweden | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
       | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
+      | Frigo, Norway | `FRIGO` | `FRIGO-123456` |
 
       [Check out this page](/api/products/#booking) to see the whole list of products for each customer type.
 
@@ -293,6 +294,14 @@ documentation:
             example: !include examples/deliveryIndoors.json
           application/xml:
             example: !include examples/deliveryIndoors.xml
+      261:
+        displayName: Temperature Zone
+        description: The `frigoTemperatureZone` element/attribute can be set for Frigo product for the goods which requires temperature controlled environment. This element allows either of 4 values `frozen`, `cool`, `dry` and `fish`.
+        body:
+          application/json:
+            example: !include examples/temperatureZone.json
+          application/xml:
+            example: !include examples/temperatureZone.xml
 
 /errors{mediaTypeExtension}:
   displayName: Error codes
