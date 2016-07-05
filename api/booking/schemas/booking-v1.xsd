@@ -152,7 +152,7 @@
             <xs:element minOccurs="0" name="eveDelivery" type="xs:string"/>
             <xs:element minOccurs="0" name="advisering" type="xs:string"/>
             <xs:element minOccurs="0" name="simpleDelivery" type="xs:string"/>
-            <xs:element minOccurs="0" name="frigoTemperatureZone" type="xs:string"/>
+            <xs:element minOccurs="0" name="temperatureZone" type="xs:string"/>
         </xs:all>
     </xs:complexType>
 
