@@ -311,6 +311,23 @@ documentation:
                   example: !include examples/incotermRule.json
                 application/xml:
                   example: !include examples/incotermRule.xml
+      263:
+              displayName: Cargo International - Dangerous Goods
+              description: The `dangerousGoods` attribute/element block should be there in request for Cargo International to create an order with dangerous goods.
+              body:
+                application/json:
+                  example: !include examples/bciDangerousGoods.json
+                application/xml:
+                  example: !include examples/bciDangerousGoods.xml
+      264:
+                    displayName: Cargo Norway - Dangerous Goods
+                    description: The `dangerousGoods` attribute/element block should be there in request for Cargo Norway to create an order with dangerous goods.
+                    body:
+                      application/json:
+                        example: !include examples/cargoDangerousGoods.json
+                      application/xml:
+                        example: !include examples/cargoDangerousGoods.xml
+
 /errors{mediaTypeExtension}:
   displayName: Error codes
   description: |
