@@ -25,6 +25,7 @@ Run locally
 
 Jekyll can serve the site locally and auto-watch for changes:
 
+    brew install node
     bundle install
     bundle exec rake serve
 
