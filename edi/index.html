@@ -4,23 +4,28 @@ layout: page
 ---
       <article class="api">
 
-        <section class="api__section" id="">
+        <section class="api__section" >
           <h1 class="api__title">EDI</h1>
-          <p>EDI (Electronic Data Interchange) i Bring og Posten startet på 90-tallet. Det har blitt laget EDI Guider basert på ulike versjoner av EDIFACT og XML. Dette er Iftmin s93a, d97a, BringXML og Posten XML. Pluss dagens versjon som er basert på D04A.</p>
+          <p>EDI (Electronic Data Interchange) i Bring og Posten startet på 90-tallet. Det har blitt laget EDI Guider basert på ulike versjoner av EDIFACT og API. Dette er Iftmin s93a, d97a og API. Pluss dagens versjon som er basert på D04A.</p>
           <p>Selv om Bring og Posten fortsatt støtter tidligere versjoner, vil ikke disse bli oppdatert med endringer. Alle anbefales derfor å benytte D04A eller XML.</p>
         </section>
 
-        <section class="api__section" id="">
+        <section class="api__section" >
           <h2>Transportinstruks for IFTMIN 04</h2>
           <p>Denne guiden er en rettesnor for gjennomføring av Brings fraktinnstruks basert på IFTMIN D04A EDIFACT. Oversikten og guiden viser i detalj informasjon om hvordan tjenester og tilleggstjenester skal angis korrekt i Bring sine EDI intrukser.</p>
           <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/IG_BIG14_1_5_2015-10-28.pdf">Hoveddokument — D04A BIG14</a></li>
+            <li><a href="{{ site.baseurl }}/files/IG_BIG14_1_5_2016-03-21.pdf">Hoveddokument — D04A BIG14</a></li>
             <li><a href="{{ site.baseurl }}/files/Appendix_A_2015-10-22_and_2016-01-04.pdf">Appendix 1 — Locations</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix2nov2015.pdf">Appendix 2 — Services</a> (Oversikt over tjenester, se også 2A)</li>
-            <li><a href="{{ site.baseurl }}/files/Appendix2ANov2015.pdf">Appendix 2A</a></li>
+            <li><a href="{{ site.baseurl }}/files/Appendix2_1-3-16.pdf">Appendix 2 — Services</a> (Oversikt over tjenester, se også 2A)</li>
+            <li><a href="{{ site.baseurl }}/files/Appendix2A_Beskrivelse-1-3-16.pdf">Appendix 2A</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_Appendix_5.pdf">Appendix 5 — Document type</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_Appendix_6.pdf">Appendix 6 — HUB-information</a></li>
+            <li><a href="{{ site.baseurl }}/files/Revisjon Appendix2A_1-3-16.pdf">Revisjon Appendix 2A</a></li>
+            <li><a href="{{ site.baseurl }}/files/Detailed description of Pakke i Postkassen.pdf">Pakke i Posten</a></li>
+          </ul>
+          <h3 class="epsilon u-mb--">Spesielt Bring Parcel AB</h3>
+          <ul>
             <li><a href="{{ site.baseurl }}/files/BPI_subset_BIG14_1_3.pdf">Subset for Bring Parcel AB (International Packages) IFTMIN BIG14</a></li>
             <li><a href="{{ site.baseurl }}/files/New_product_names-_Appendix_A_all_countries_2015-10-22_and_2016-01-04.pdf">Appendix A — Bring Parcels products and services from DK, FI, NO, SE and Europe</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_BCAP_service_codes.pdf">Tilleggsinformasjon — Service Code 0010 and 0011 to Denmark (BIG14) 1.3</a></li>
@@ -31,7 +36,7 @@ layout: page
           <p>Her kan du laste ned EDIFACT meldinger som sikrer at din bedrift har støtte for en effektiv informasjonsflyt. Disse kan leveres på en FTP-konto som vi oppretter til deg eller vi kan sende det til dere via SMTP.</p>
         </section>
 
-        <section class="api__section" id="">
+        <section class="api__section">
           <h2>Flere implementasjonsguider</h2>
           <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
           <ul>
@@ -41,7 +46,7 @@ layout: page
           </ul>
         </section>
 
-        <section class="api__section" id="">
+        <section class="api__section" >
           <h2>Statuskoder (IFTSTA)</h2>
           <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
           <ul>
@@ -51,7 +56,7 @@ layout: page
           </ul>
         </section>
 
-        <section class="api__section" id="">
+        <section class="api__section" >
           <h2>Spesifikasjon transportetikett</h2>
           <h3 class="epsilon u-mb--">Last ned dokumentasjon</h3>
           <ul>
@@ -60,10 +65,12 @@ layout: page
             <li><a href="{{ site.baseurl }}/files/labelspec_3.pdf">Bring Parcels AB (CarryOn) Label description - Appendix E</a></li>
             <li><a href="{{ site.baseurl }}/files/Etikettspesifikasjon_REK_v1_5.pdf">Bring Post – Etikettspesifikasjon for REK</a></li>
             <li><a href="{{ site.baseurl }}/files/Logo_Bring_etikett.zip">Logo til etikett</a></li>
+            <li><a href="{{ site.baseurl }}/files/Label_Specification_Bring_Frigo_v_2_0.pdf">Transport label specification for thermo</a></li>
+            <li><a href="{{ site.baseurl }}/files/Label specification for Packet in Letterbox1-4-16.pdf">Label specification for Packet</a></li>
           </ul>
         </section>
 
-        <section class="api__section" id="">
+        <section class="api__section" >
           <h2>Leverandører av EDI-løsninger</h2>
           <p>Med et EDI-program kan dere velge fritt i alle våre pakkeprodukter og tilleggstjenester for både innland og utland. Hver enkelt leverandør må svare på hvilke av Bring sine tjenester de har tilgjengelig.</p>  
 
@@ -73,14 +80,19 @@ layout: page
             <li><a href="https://www.descartes.com/"><h3 class="epsilon u-mb-">Descartes</h3></a></li>
             <li><a href="http://www.consignor.no/"><h3 class="epsilon u-mb-">Consignor</h3></a></li>
             <li><a href="http://www.edipost.no"><h3 class="epsilon u-mb-">EDIPost.no</h3></a></li>
+            <li><a href="http://www.eseco.se"><h3 class="epsilon u-mb-">Eseco</h3></a></li>
             <li><a href="http://www.logistra.no/"><h3 class="epsilon u-mb-">Logistra</h3></a></li>
             <li><a href="http://www.logtrade.se"><h3 class="epsilon u-mb-">LogTrade</h3></a></li>
+            <li><a href="http://www.metapack.com"><h3 class="epsilon u-mb-">Metapack</h3></a></li>
             <li><a href="http://www.proteria.no"><h3 class="epsilon u-mb-">ProTeria</h3></a></li>
+            <li><a href="https://www.intercomp.se"><h3 class="epsilon u-mb-">Protrans</h3></a></li>
+            <li><a href="http://www.pulsen.se"><h3 class="epsilon u-mb-">Pulsen</h3></a></li>
             <li><a href="http://www.transportnett.no"><h3 class="epsilon u-mb-">Transportnett</h3></a></li>
+            <li><a href="http://www.unifaun.com"><h3 class="epsilon u-mb-">Unifaun</h3></a></li>
           </ul>
         </section>
 
-        <section class="api__section" id="">
+        <section class="api__section" >
           {% include disqus.html %}
         </section>
 

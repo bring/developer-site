@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bring.no/booking/"
-           elementFormDefault="qualified" targetNamespace="http://www.bring.no/booking/" version="1.0">
+
+<?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bring.no/booking/" elementFormDefault="qualified" targetNamespace="http://www.bring.no/booking/" version="1.0">
 
     <xs:element name="bookingRequest" type="BookingRequestType"/>
 
@@ -90,6 +89,8 @@
         <xs:all>
             <xs:element name="sender" type="PartyRequestType"/>
             <xs:element name="recipient" type="PartyRequestType"/>
+            <xs:element minOccurs="0" name="consignor" type="PartyRequestType"/>
+            <xs:element minOccurs="0" name="consignee" type="PartyRequestType"/>
             <xs:element minOccurs="0" name="pickupPoint" type="PickupPointRequestType"/>
         </xs:all>
     </xs:complexType>
@@ -104,6 +105,7 @@
             <xs:element name="countryCode" type="xs:string"/>
             <xs:element minOccurs="0" name="reference" type="xs:string"/>
             <xs:element minOccurs="0" name="additionalAddressInfo" type="xs:string"/>
+            <xs:element minOccurs="0" name="vatNumber" type="xs:string"/>
             <xs:element minOccurs="0" name="contact" type="ContactRequestType"/>
         </xs:all>
     </xs:complexType>
@@ -129,6 +131,9 @@
             <xs:element name="customerNumber" type="xs:string"/>
             <xs:element minOccurs="0" name="services" type="ServicesRequestType"/>
             <xs:element minOccurs="0" name="customsDeclaration" type="CustomsDeclarationRequestType"/>
+            <xs:element minOccurs="0" name="messageForRecipient" type="xs:string"/>
+            <xs:element minOccurs="0" name="whoPaysInvoice" type="whoPaysInvoice"/>
+            <xs:element minOccurs="0" name="incotermRule" type="incotermRule"/>
         </xs:all>
     </xs:complexType>
 
@@ -140,12 +145,14 @@
             <xs:element minOccurs="0" name="deliveryOption" type="xs:string"/>
             <xs:element minOccurs="0" name="flexDelivery" type="FlexDeliveryRequestType"/>
             <xs:element minOccurs="0" name="deliveryIndoors" type="DeliveryIndoorsRequestType"/>
+            <xs:element minOccurs="0" name="phoneNotification" type="xs:string"/>
             <xs:element minOccurs="0" name="nonFreeze" type="xs:string"/>
             <xs:element minOccurs="0" name="dangerousGoods" type="DangerousGoodsRequestType"/>
             <xs:element minOccurs="0" name="express" type="xs:string"/>
             <xs:element minOccurs="0" name="eveDelivery" type="xs:string"/>
             <xs:element minOccurs="0" name="advisering" type="xs:string"/>
             <xs:element minOccurs="0" name="simpleDelivery" type="xs:string"/>
+            <xs:element minOccurs="0" name="temperatureZone" type="xs:string"/>
         </xs:all>
     </xs:complexType>
 
@@ -188,14 +195,14 @@
     <xs:complexType name="DangerousGoodsRequestType">
         <xs:all>
             <xs:element minOccurs="0" name="containerId" type="xs:string"/>
-            <xs:element minOccurs="1" name="weightInGrams" type="xs:integer"/>
-            <xs:element minOccurs="1" name="unNumber" type="xs:string"/>
-            <xs:element minOccurs="1" name="commodity" type="xs:string"/>
+            <xs:element name="weightInGrams" type="xs:int"/>
+            <xs:element name="unNumber" type="xs:string"/>
+            <xs:element name="commodity" type="xs:string"/>
             <xs:element minOccurs="0" name="packingGroup" type="xs:string"/>
-            <xs:element minOccurs="1" name="dangerClass" type="xs:string"/>
+            <xs:element name="dangerClass" type="xs:string"/>
             <xs:element minOccurs="0" name="tunnelRestrictionCode" type="xs:string"/>
             <xs:element minOccurs="0" name="safetyMarkCode" type="xs:string"/>
-            <xs:element minOccurs="0" name="factor" type="xs:integer"/>
+            <xs:element minOccurs="0" name="factor" type="xs:int"/>
         </xs:all>
     </xs:complexType>
 
@@ -226,6 +233,7 @@
             <xs:element minOccurs="0" name="containerId" type="xs:string"/>
             <xs:element minOccurs="0" name="packageType" type="xs:string"/>
             <xs:element minOccurs="0" name="numberOfItems" type="xs:int"/>
+            <xs:element minOccurs="0" name="isStackable" type="xs:boolean"/>
         </xs:all>
         <xs:attribute name="correlationId" type="xs:string"/>
     </xs:complexType>
@@ -434,6 +442,32 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="kid"/>
             <xs:enumeration value="text"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="whoPaysInvoice">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="sender"/>
+            <xs:enumeration value="recipient"/>
+            <xs:enumeration value="thirdParty"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="incotermRule">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DDP"/>
+            <xs:enumeration value="DAP"/>
+            <xs:enumeration value="FCA"/>
+            <xs:enumeration value="FAS"/>
+            <xs:enumeration value="FOB"/>
+            <xs:enumeration value="CFR"/>
+            <xs:enumeration value="CIF"/>
+            <xs:enumeration value="CPT"/>
+            <xs:enumeration value="CIP"/>
+            <xs:enumeration value="DAT"/>
+            <xs:enumeration value="DAF"/>
+            <xs:enumeration value="DES"/>
+            <xs:enumeration value="EXW"/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

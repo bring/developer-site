@@ -38,27 +38,42 @@ documentation:
   description: |
       For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
 
-      You can find an XSD for the XML response here: [tracking-v1.xsd](/api/tracking/schemas/tracking-v1.xsd).
+      You can find an XSD for the XML response here: [tracking-v1.xsd](https://tracking.bring.com/api/schema/sporing-v1.xsd).
 
       A parcel has a number of events connected to it during its travel. Here are a list of current event statuses that can be returned.
 
-      - ARRIVED_COLLECTION
       - ARRIVED_DELIVERY
-      - CUSTOMS
-      - COLLECTED
-      - DELIVERED
+        Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading. 
+      - CUSTOMS 
+        Package is in customs clearance.
+      - COLLECTED 
+        The parcel has been collected at pickup address.
+      - DELIVERED 
+        Package has been delivered. This can be both to the receiver or returned to the sender.
       - DELIVERY_CANCELLED
-      - DELIVERY_CHANGED
-      - DELIVERY_ORDERED
-      - DEVIATION
-      - HANDED_IN
-      - INTERNATIONAL
-      - IN_TRANSIT
-      - NOTIFICATION_SENT
-      - PRE_NOTIFIED
-      - READY_FOR_PICKUP
-      - RETURN
-      - TRANSPORT_TO_RECIPIENT
+         Home delivery has been canceled by the customer.
+      - DELIVERY_CHANGED 
+        Date for Home delivery has been changed by customer.
+      - DELIVERY_ORDERED 
+        Home delivery has been ordered.
+      - DEVIATION 
+        Deviation in production. Something wrong has happened and there is a probability for delay.
+      - HANDED_IN 
+        Package has been handed in to Bring.
+      - INTERNATIONAL 
+        Package has been sent from origin country or arrived at destination country. 
+      - IN_TRANSIT 
+        Package is in transit.
+      - NOTIFICATION_SENT 
+        Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice.
+      - PRE_NOTIFIED 
+        EDI message for the package has been received by Bring.
+      - READY_FOR_PICKUP 
+        Package has arrived at pickup point.
+      - RETURN 
+        The package has been returned to sender. 
+      - TRANSPORT_TO_RECIPIENT 
+        Package has been loaded for delivery to the recipient.
 
   uriParameters:
     mediaTypeExtension:
@@ -85,7 +100,6 @@ documentation:
             example: !include examples/testpackage.json
           application/xml:
             example: !include examples/testpackage.xml
-            schema: !include schemas/tracking-v1.xsd
       250:
         displayName: Status - notification received
         description: |

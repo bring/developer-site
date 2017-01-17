@@ -197,11 +197,6 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
-      <code>BOOK-INPUT-042</code>
-      <message>Missing required message input for flex delivery</message>
-      <suffixable>false</suffixable>
-    </errorType>
-    <errorType>
       <code>BOOK-INPUT-043</code>
       <message>The customer does not have a return agreement for that country/product.</message>
       <suffixable>false</suffixable>
@@ -223,7 +218,7 @@
     </errorType>
     <errorType>
       <code>BOOK-INPUT-047</code>
-      <message>Pickup point delivery method is only available for PICKUP_PARCEL within Denmark, PICKUP_PARCEL_BULK to Denmark, Norway, Sweden, Finland and for SERVICEPAKKE within NORWAY.</message>
+      <message>Pickup point delivery method is only available for PICKUP_PARCEL from other countries than Norway to Denmark and Sweden, PICKUP_PARCEL_BULK to Denmark, Norway, Sweden, Finland and for SERVICEPAKKE within NORWAY.</message>
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
@@ -299,6 +294,41 @@
     <errorType>
       <code>BOOK-INPUT-062</code>
       <message>Missing required message input for delivery indoor</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-063</code>
+      <message>Consignor must be specified</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-064</code>
+      <message>Consignee must be specified</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-065</code>
+      <message>Incoterm must be specified</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-066</code>
+      <message>Valid temperature zones are: frozen, cool, dry, fish</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-067</code>
+      <message>Option isStackable must be specified for Frigo HALF_PALLET</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-068</code>
+      <message>Package type must be specified for Frigo product.</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-069</code>
+      <message>Invalid package type for Frigo product. Available options: 'frigo_whole', 'frigo_half', 'frigo_import', 'frigo_bison', 'frigo_flower', 'frigo_single'</message>
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
@@ -414,6 +444,11 @@
     <errorType>
       <code>PICKUP-INPUT-012</code>
       <message>Selected pickup point should be in recipient country</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>PICKUP-INPUT-013</code>
+      <message>Combination pickupIsReadyAtTime and pickupDate must be in the future</message>
       <suffixable>false</suffixable>
     </errorType>
     <errorType>

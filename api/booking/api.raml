@@ -20,17 +20,9 @@ documentation:
   content: |
     The Booking API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
 
-    | Header | Example | Comment |
-    |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
-
-    Those headers must be set for all endpoints documented below.
-
 - title: Authorization
   content: |
-    In addition to authentication, you need to be authorized with the "booing" right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):
+    In addition to authentication, you need to be authorized with the _booking_ right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):
 
     ![Authorized for booking](booking_authorization.png)
 
@@ -66,9 +58,11 @@ documentation:
       |:-----------|:-----------------|:------------------------|
       | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09` | `PARCELS_NORWAY-10001123123` |
       | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO_NORWAY-10001123123` |
+      | Bring Cargo, International | `CARGO_INTERNATIONAL` | `CARGO-803739` |
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
       | Bring Express, Sweden | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
       | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
+      | Frigo, Norway | `FRIGO` | `FRIGO-123456` |
 
       [Check out this page](/api/products/#booking) to see the whole list of products for each customer type.
 
@@ -100,6 +94,7 @@ documentation:
       |:--------|:--------------------|
       | SERVICEPAKKE | cashOnDelivery, recipientNotification, socialControl |
       | BPAKKE_DOR-DOR | recipientNotification, simpleDelivery, deliveryOption |
+      | PA_DOREN | recipientNotification, simpleDelivery |
       | EKSPRESS09 | recipientNotification, saturdayDelivery |
       | PICKUP_PARCEL | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
       | PICKUP_PARCEL_BULK | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
@@ -143,6 +138,154 @@ documentation:
         required: false
         default: same as Content-Type
         enum: [ application/json, application/xml ]
+    queryParameters:
+        testIndicator:
+            description:  It is true for test orders.
+            type: boolean
+            example: false
+            required: true
+        schemaVersion:
+            description: Currently, it is 1
+            type: integer
+            example: 1
+            required: true
+        shippingDateTime:
+            description: The date and time when an order is ready to be transported. The label generated against a booking will be valid for 52 weeks when Bring receives the request for an order.
+            type: dateTime
+            example: 2016-07-26T06:24:09
+            required: true
+        customerNumber:
+            description: Specify API customer number. This parameter can be maximum 35 character long.
+            type: string
+            example: PARCELS_NORWAY-demo0000026303
+            required: true
+        addressLine:
+            description: Specify address. This parameter can be maximum 35 character long.
+            type: string
+            example: Testsvingen 12
+            required: true
+        addressLine2:
+            description: Specify address line 2. This parameter can be 35 character long.
+            type: string
+        customsDeclarationType:
+            description: Declaration for customs clarance usage
+            enum: [OTHER, REPAIR_OR_RETURN, DOCUMENTS, COMMERCIAL_SAMPLE, TEMPORARY_EXP, GIFT]
+            example: COMMERCIAL_SAMPLE
+            required: true
+        customsDeclarationText:
+            description: Describe good inside the package for custom clearance. This parameter can be maximum 35 character long.
+            type: string
+            example: Sample for verification
+        purchaseOrderNumber:
+            type: string
+            description: Specify when there is any purchase orders associated with the booking. This parameter can be maximum 35 character long.
+        weightInKg:
+            description: Specify weight in kilograms
+            type: double
+            example: 15.2
+            required: true
+        goodsDescription:
+            description: Describe what is inside the package. This parameter can be maximum 35 character long.
+            type: string
+        heightInCm:
+            description: Specify height in cm
+            type: integer
+            example: 100
+            required: true
+        widthInCm:
+            description: Specify width in cm
+            type: integer
+            example: 100
+            required: true
+        lengthInCm:
+             description: Specify length in cm
+             type: integer
+             example: 100
+             required: true
+        numberOfItems:
+             description: Specify number of items within a package
+             type: integer
+             example: 5
+             required: true
+        volumeInDm3:
+             description: Specify volume in cubic decimeter
+             type: decimal
+             required: true
+        whoPaysInvoice:
+             description: Specify which party will pay the invoice for the booking. This parameter can be maximum 35 character long.
+             type: string
+             enum: [sender, recipient, thirdParty]
+        accountNumber:
+             description: Specify account number for cash on delivery. This parameter can be maximum 35 character long.
+             type: string
+             example: 12345678903
+             required: true
+        accountType:
+             description: Specify account type. This parameter can be maximum 35 character long.
+             type: string
+             enum: [bankgiro,plusgiro]
+        amount:
+             description: Specify amount
+             type: double
+        currencyCode:
+             description: Specify currency code
+             type: string
+             example: NOK
+        correlationId:
+             description: Specify something to correlate packages which belong to same order
+             type: string
+        containerId:
+             description: Specify the container identification in which dangerous good is packed. This parameter can be maximum 35 character long.
+             type: string
+             example: 1236
+        unNumber:
+             description: Specify UN number of dangerous good. This parameter can be maximum 35 character long.
+             type: string
+             example: 1560
+             required: true
+        commodity:
+             description: Specify name of the dangerous good. This parameter can be maximum 35 character long.
+             type: string
+             example: ARSENTRIKLORID
+             required: true
+        dangerClass:
+             description: Specify the class of dangerous good. This parameter can be maximum 35 character long.
+             type: string
+             example: 1
+             required: true
+        postalCode:
+             description: Specify the postal code. This parameter can be maximum 35 character long.
+             type: string
+             required: true
+        city:
+            description: Specify the city. This parameter can be maximum 35 character long.
+            type : string
+            required: true
+        countryCode:
+            description: Specify the country code. This parameter can be maximum 35 character long.
+            type: string
+            example: NO
+            required: true
+        reference:
+            description: Specify shipper or consignee reference. This parameter can be maximum 35 character long.
+            type: string
+        additionalAddressInfo:
+            description: Pickup instruction and delivery instruction. This parameter can be maximum 35 character long.
+            type: string
+        vatNumber:
+            description: Specify organisation number. This parameter can be maximum 35 character long.
+            type: string
+        email:
+            description: Specify email address. This parameter can be maximum 35 character long.
+            type: string
+            pattern: ^((\w*_)?(p|m|)\d*(\.\d|)|(\w*_)?(p|m)\d*(\.\d|)p)$
+        phoneNumber:
+            description: Specify phone number.
+            type: string
+        messageForRecipient:
+            description: Specify message to recipient . This parameter can be maximum 35 character long.
+            type: string
+
     body:
       application/json:
         example: !include examples/basicRequest.json
@@ -301,6 +444,47 @@ documentation:
             example: !include examples/deliveryIndoors.json
           application/xml:
             example: !include examples/deliveryIndoors.xml
+      261:
+        displayName: Temperature Zone
+        description: The `temperatureZone` element/attribute can be set for Frigo product for the goods which requires temperature controlled environment. This element allows either of 4 values `FROZEN`, `COOL`, `DRY` and `FISH`.
+        body:
+          application/json:
+            example: !include examples/temperatureZone.json
+          application/xml:
+            example: !include examples/temperatureZone.xml
+      262:
+              displayName: Cargo International - Incoterms
+              description: The `incotermRule` element/attribute can be set for Cargo International product. This is a mandatory element while creating an order for Cargo International. API request will return error code i.e., `BOOK-INPUT-065` in case of no IncotermRule is provided in request. This element allows either of 13 values `DDP`, `DAP`, `FCA`, `FAS`, `FOB`, `CFR`, `CIF`, `CPT`, `CIP`, `DAT`, `DAF`, `DES` and `EXW`.
+              body:
+                application/json:
+                  example: !include examples/incotermRule.json
+                application/xml:
+                  example: !include examples/incotermRule.xml
+      263:
+              displayName: Cargo International - Dangerous Goods
+              description: The `dangerousGoods` attribute/element block should be there in request for Cargo International to create an order with dangerous goods.
+              body:
+                application/json:
+                  example: !include examples/bciDangerousGoods.json
+                application/xml:
+                  example: !include examples/bciDangerousGoods.xml
+      264:
+                    displayName: Cargo Norway - Dangerous Goods
+                    description: The `dangerousGoods` attribute/element block should be there in request for Cargo Norway to create an order with dangerous goods.
+                    body:
+                      application/json:
+                        example: !include examples/cargoDangerousGoods.json
+                      application/xml:
+                        example: !include examples/cargoDangerousGoods.xml
+      265:
+              displayName: Simple Delivery
+              description: |
+                The `simpleDelivery` element/attribute can be set for products that allow simple delivery.
+              body:
+                application/json:
+                  example: !include examples/simpleDelivery.json
+                application/xml:
+                  example: !include examples/simpleDelivery.xml
 
 /errors{mediaTypeExtension}:
   displayName: Error codes
@@ -315,7 +499,7 @@ documentation:
       application/json:
         example: !include examples/errors.json
       application/xml:
-        example: !include examples/errors.json
+        example: !include examples/errors.xml
 
 
 /pickupOrder:
