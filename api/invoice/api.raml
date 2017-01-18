@@ -1,0 +1,56 @@
+#%RAML 0.8
+---
+title: Invoice API
+baseUri: https://www.mybring.com
+
+documentation:
+- title: Introduction
+  content: |
+      The Invoice API is used to download the invoice pdfs same as in mybring.
+
+- title: Authentication
+  content: |
+    The Invoice API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. |
+
+    Those headers must be present for authenticating requests.
+
+/invoicearchive/pdf/{invoiceType}/{customerNumberUnique}/{invoiceNumber}.pdf:
+  displayName: Invoice PDF download endpoint
+  securedBy: [mybring_headers, null]
+  description: |
+      This link is used to download the invoice pdf for the customer by providing the type of invoice (NORMAL or SPECIFIED) based on customer type along with API Customer Id and invoice number in URI params
+
+
+  uriParameters:
+    invoiceType:
+      description: Type can be NORMAL and SPECIFIED for particular customers
+    customerNumberUnique:
+      description: Unique API Customer Number for each customer.
+    invoiceNumber:
+      description: Invoice number of the particular invoice to be downloaded.
+
+  get:
+    description: Download pdf for invoice
+
+/reports/api/invoices/{customerOrGroupId}{mediaTypeExtension}:
+  displayName: List of all Invoice using existing Reports API
+  description: |
+    Use the existing [Reports Api List invoice numbers](/api/reports/#list-invoice-numbers) for this feature.
+  uriParameters:
+      customerOrGroupId:
+        description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
+        type: string
+        required: true
+      mediaTypeExtension:
+        enum: [ .json, .xml ]
+        description: Use .json to specify application/json or .xml to specify application/xml
+
+  get:
+    description: List invoice numbers
