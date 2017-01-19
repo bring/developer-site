@@ -6,7 +6,7 @@ baseUri: https://www.mybring.com
 documentation:
 - title: Introduction
   content: |
-      The Invoice API is used to download the invoice pdfs same as in mybring.
+      The Invoice API is used to download the invoice pdfs same as in Mybring.
 
 - title: Authentication
   content: |
@@ -40,12 +40,12 @@ documentation:
     description: Download pdf for invoice
 
 /reports/api/invoices/{customerOrGroupId}{mediaTypeExtension}:
-  displayName: List of all Invoice using existing Reports API
+  displayName: List of all Invoice
   description: |
     Use the existing [Reports Api List invoice numbers](/api/reports/#list-invoice-numbers) for this feature.
   uriParameters:
       customerOrGroupId:
-        description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
+        description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.  For e.g. GROUP_12345
         type: string
         required: true
       mediaTypeExtension:
