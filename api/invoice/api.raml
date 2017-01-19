@@ -40,12 +40,12 @@ documentation:
     description: Download pdf for invoice
 
 /reports/api/invoices/{customerOrGroupId}{mediaTypeExtension}:
-  displayName: List of all Invoice
+  displayName: List of all Invoices
   description: |
     Use the existing [Reports Api List invoice numbers](/api/reports/#list-invoice-numbers) for this feature.
   uriParameters:
       customerOrGroupId:
-        description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.  For e.g. GROUP_12345
+        description: Id for customer or customer group. Customer group id should have the prefix `GROUP_` e.g. GROUP_12345
         type: string
         required: true
       mediaTypeExtension:
