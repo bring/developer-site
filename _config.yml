@@ -4,7 +4,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://developer.bring.com" # the base hostname & protocol for your site
 
 # RAML settings
-raml_map:
+raml_08_map:
   api/shipping-guide/api.raml: api/shipping-guide/index.html
   api/pickup-point/api.raml: api/pickup-point/index.html
   api/booking/api.raml: api/booking/index.html
@@ -14,6 +14,9 @@ raml_map:
   api/postal-code/api.raml: api/postal-code/index.html
   api/easy-return-service/api.raml: api/easy-return-service/index.html
   api/purchase-order/api.raml: api/purchase-order/index.html
+
+raml_10_map:
+  api/order/to-mailbox/api.raml: api/order/to-mailbox/index.html
 
 # Build settings
 gems:
@@ -26,7 +29,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-sass: 
+sass:
   style: compressed
 
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, LICENSE]

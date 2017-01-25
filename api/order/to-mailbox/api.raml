@@ -1,0 +1,229 @@
+#%RAML 1.0
+---
+title: Order to Mailbox API
+version: v1
+baseUri: https://api.bring.com/order/to-mailbox
+mediaType: application/json
+types:
+  PostalCode:
+    type: string
+    pattern: "[0-9][0-9][0-9][0-9]"
+  EmailAddress:
+    type: string
+    pattern: ".+@.+"
+  PhoneNumber:
+    type: string
+    pattern: "\\+[0-9]+"
+  Order:
+    type: object
+    properties:
+      customerNumber:
+        type: string
+        required: true
+      senderName:
+        type: string
+        required: true
+      postalCode:
+        type: PostalCode
+        required: true
+      streetAddress:
+        type: string
+        required: true
+      reference:
+        required: true
+        type: string
+      packages:
+        minItems: 1
+        type: Package[]
+  OrderWithLabels:
+    type: Order
+    properties:
+      id: number
+      customerName: string
+      email: EmailAddress
+      labelUri:
+        type: string
+        description: URL to PDF label if ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label if ordered with tracking.
+      priceWithoutVat:
+        type: number
+      priceWithVat:
+        type: number
+      currency:
+        type: string
+        default: NOK
+      postalPlace: string
+      packages: PackageWithNumbers[]
+  Package:
+    type: object
+    properties:
+      priority:
+        enum: [ A, B ]
+        description: Tracking with RFID
+      rfid: boolean
+      weight:
+        maximum: 2000
+        type: integer
+      recipientName: string
+      postalCode:
+        type: PostalCode
+        required: true
+      streetAddress:
+        type: string
+        required: true
+      phoneNumber:
+        type: PhoneNumber
+        required: true
+      email:
+        type: EmailAddress
+        required: true
+  PackageWithNumbers:
+    type: Package
+    properties:
+      postalPlace: string
+      shipmentNumber:
+        type: string
+        description: The shipment number for this package.
+      packageNumber:
+        type: string
+        description: The package number for this package.
+      agreementNumber:
+        type: boolean
+        description: Whether you got an agreement price for this package.
+  OrderRequestData:
+    type: object
+    properties:
+      type:
+        pattern: orders
+        type: string
+      attributes: Order
+  OrderRequest:
+    type: object
+    properties:
+      data: OrderRequestData
+  OrderResponseData:
+    type: object
+    properties:
+      type:
+        type: string
+        pattern: order
+      id: string
+      attributes: OrderWithLabels
+  OrderResponse:
+    type: object
+    properties:
+      data: OrderResponseData
+
+documentation:
+- title: Introduction
+  content: |
+      This API is for ordering [Pakke i postkassen](http://www.bring.no/sende/pakker/private-i-norge/pakke-i-postkassen) (Delivery to Mailbox) shipments.
+
+      The Delivery to Mailbox service is available domestically in Norway, and will replace "Minipakke" and "Småpakker".
+
+- title: Tracking with RFID
+  content: |
+      Delivery to Mailbox shipments can optionally be ordered with tracking using RFID.
+
+      #### How does tracking with RFID work?
+
+      Normally, we create PDF labels that can be printed on any printer.
+
+      If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
+
+      The labels will be ZPL code containing instructions for programming the passive RFID antenna in the printer's labels with package numbers.
+
+      In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
+
+      #### Special hardware required
+
+      RFID-tagged labels require special printer hardware. Currently we support the following printers:
+
+      - Zebra ZT410
+      - Zebra ZT420
+
+- title: Without tracking
+  content: |
+      If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
+
+- title: Authentication
+  content: |
+    The API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+
+    Those headers must be present for authenticating requests.
+
+- title: JSON API
+  content: |
+      This API adheres to the [JSON API](http://jsonapi.org/) specification. This means
+
+/{orderId}:
+  displayName: Fetch order
+  get:
+    headers:
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    uriParameters:
+      orderId:
+        type: string
+        required: true
+/:
+  displayName: Order shipments
+  description: |
+      This is the endpoint where you can book a shipment and get a printable label in return.
+
+      See the "More examples" section below to see examples on how to use additional services.
+
+      #### Error handling
+
+      If an error occurs, the following will be provided:
+
+      - `uniqueId`: A unique log ID (UUID) that can be used as a reference for the error
+      - `code`: An error code describing the error
+      - `message`: Internationalized messages (with <message lang="”xx”"> elements). First version will be with lang=”en” (English) only. </message>
+
+      See the [error codes](#error-codes) below to get an overview of error codes and what they mean.
+
+      #### Testing (validation only)
+
+      This service will send actual production orders unless it is set to testing mode.
+
+      To use the test mode, you need to set the `validate` flag to `true`.
+
+  post:
+    description: Order shipments
+    headers:
+      Content-Type:
+        description: Specify request format (application/json)
+        required: true
+        enum: [ application/json ]
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    queryParameters:
+        validate:
+            description: If this is set to true, the order will only be validated, not ordered in our production systems.
+            type: boolean
+            example: true
+            required: false
+    body:
+      application/json:
+        example: !include examples/without_tracking.json
+        type: OrderRequest
+    responses:
+      201:
+        description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
+        body:
+          application/json:
+            type: OrderResponse
+            example: !include examples/without_tracking_response.json

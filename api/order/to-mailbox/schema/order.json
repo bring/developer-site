@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "customerNumber": {
+              "type": "string"
+            },
+            "senderName": {
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "streetAddress": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "reference": {
+              "type": "string"
+            },
+            "packages": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "priority": {
+                    "type": "string"
+                  },
+                  "rfid": {
+                    "type": "boolean"
+                  },
+                  "weight": {
+                    "type": "integer"
+                  },
+                  "recipientName": {
+                    "type": "string"
+                  },
+                  "postalCode": {
+                    "type": "string"
+                  },
+                  "streetAddress": {
+                    "type": "string"
+                  },
+                  "phoneNumber": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "priority",
+                  "rfid",
+                  "weight",
+                  "recipientName",
+                  "postalCode",
+                  "streetAddress",
+                  "phoneNumber",
+                  "email"
+                ]
+              }
+            }
+          },
+          "required": [
+            "customerNumber",
+            "senderName",
+            "postalCode",
+            "streetAddress",
+            "email",
+            "reference",
+            "packages"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ]
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

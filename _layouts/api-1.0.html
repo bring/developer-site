@@ -1,0 +1,333 @@
+---
+layout: redesign
+---
+
+
+    <div class="wrapper">
+      <div class="layout layout--flush">
+        <div class="layout__item palm-one-whole desk-one-quarter">
+            {% comment %}
+            ----------------------------------------
+            --
+            -- Sidebar menu
+            --
+            ----------------------------------------
+            {% endcomment %}
+            {% include sitemenu.html %}
+        </div><!-- 
+     --><div class="layout__item palm-one-whole desk-three-quarters">
+          <article class="api {{ page.api.title | remove:'API' | slugify }}">
+            <section id="api-documentation" class="api__section">
+            <h1 class="api__title">{{ page.api.title }}</h1>
+              {% for chapter in page.api.documentation %}
+              <h2 class="anchored">{{ chapter.title }}</h2>
+              {{ chapter.content | markdownify }}
+              {% endfor %}
+            </section>
+            <section class="api__section">
+              <h2 class="anchored">Overview of endpoints</h2>
+
+              <h3 class="delta">Base URL</h3>
+              <pre>{{ page.api.base_uri }}</pre>
+
+              <table class="linked-rows table--cosy table--rows">
+                <thead>
+                  <th>Method</th>
+                  <th>Endpoint</th>
+                  <th>Usage</th>
+                </thead>
+                {% for resource in page.api.resources %}
+                  {% for method in resource.methods %}
+                    <tr>
+                      <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].method }}</a></td>
+                      <td><a href="#{{ resource.display_name | slugify }}">{{ resource.relative_uri }}</a></td>
+                      <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].description }}</a></td>
+                    </tr>
+                  {% endfor %}
+                {% endfor %}
+              </table>
+            </section>
+
+
+            {% for resource in page.api.resources %}
+              {% for method in resource.methods %}
+              <section class="api__section">
+
+                <h1 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h1>
+
+                {% if resource.description %}
+                {{ resource.description | markdownify }}
+                {% endif %}
+
+                <h2 class="delta">URL</h2>
+                {% if resource.uri_parameters contains 'mediaTypeExtension' %}
+                  {% assign url_output = '' %}
+                  {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
+                    {% assign url_output = url_output | append: resource.absolute_uri | replace:'{mediaTypeExtension}',extension %}
+                    {% unless forloop.last %}
+                      {% assign url_output = url_output | append: '<br />' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% else %}
+                  {% assign url_output = resource.absolute_uri %}
+                {% endif %}
+                <pre>{{ url_output }}</pre>
+
+                {% assign has_other_uri_params_than_mediatype = false %}
+                {% if resource.uri_parameters.size > 1 %}
+                  {% assign has_other_uri_params_than_mediatype = true %}
+                {% elsif resource.uri_parameters.size == 1 and resource.uri_parameters.first[1].name != 'mediaTypeExtension' %}
+                  {% assign has_other_uri_params_than_mediatype = true %}
+                {% endif %}
+                
+                {% if has_other_uri_params_than_mediatype
+                    or method[1].headers.size > 0 
+                    or method[1].query_parameters.size > 0 %}
+                <h2 class="delta">Request params</h2>
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all URI parameters
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if has_other_uri_params_than_mediatype %}
+                  {% assign include_params = resource.uri_parameters %}
+                  {% include named_params.html title="URI parameter" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all headers
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method[1].headers.size > 0 %}
+                  {% assign include_params = method[1].headers %}
+                  {% include named_params.html title="Header name" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all query parameters
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method[1].query_parameters.size > 0 %}
+                  {% assign include_params = method[1].query_parameters %}
+                  {% include named_params.html title="Query parameter" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- Request body
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method[1].bodies.size > 0 %}
+                  <h2 class="delta">Request body</h2>
+                  {% comment %}
+
+                  Tabs for JSON, XML, SOAP
+
+                  {% endcomment %}
+                  <ul class="codetabs" role="tablist">
+                  {% for body in method[1].bodies %}
+                    {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                    {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
+                    <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
+                  {% endfor %}
+                  </ul>
+                  <div class="codetabs__content">
+                  {% for body in method[1].bodies %}
+                    {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                    {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+                    {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
+                    <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                      <div class="content">
+                      {% if hljs_lang == 'xml' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                      {% elsif hljs_lang == 'html' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                      {% elsif hljs_lang == 'json' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                      {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% assign additional_examples = false %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- Response
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% unless method[1].responses == empty %}
+                <h2>Response</h2>
+                {% endunless %}
+                {% for response in method[1].responses %}
+                  {% if response[1].status_code > 220 and response[1].status_code < 300 %}
+                    {% comment %}
+                    This is a really neat hack to use fake response statuses to allow for
+                    additional examples, since RAML 0.8 only allows one example. This will
+                    be fixed in RAML 1.0 which has support for multiple examples.
+
+                    If a status code is between 220 and 300, don't list it here. Instead,
+                    loop responses after this section and list those as additional examples.
+                    {% endcomment %}
+                    {% assign additional_examples = true %}
+                    {% continue %}
+                  {% endif %}
+                  <h3 class="delta">{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
+                  {% if response[1].description %}
+                    {{ response[1].description | markdownify }}
+                  {% endif %}
+
+                  {% comment %}
+                  ----------------------------------------
+                  --
+                  -- For each endpoint:
+                  -- List all headers
+                  --
+                  ----------------------------------------
+                  {% endcomment %}
+                  {% if response[1].headers.size > 0 %}
+                    {% assign include_params = response[1].headers %}
+                    {% include named_params.html title="Header name" params=include_params hide_required=true %}
+                  {% endif %}
+
+                  {% comment %}
+
+                  Tabs for JSON, XML, SOAP
+
+                  {% endcomment %}
+                  {% if response[1].bodies.size > 0 %}
+                    <ul class="codetabs" role="tablist">
+                    {% for body in response[1].bodies %}
+                      {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                      {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
+                      <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    <div class="codetabs__content">
+                    {% for body in response[1].bodies %}
+                      {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                      {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+                      {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
+                      <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                        {% if hljs_lang == 'xml' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                        {% elsif hljs_lang == 'html' %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                        {% else %}
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+
+                {% if additional_examples %}
+                  <h2>More examples</h2>
+
+                  <div class="collapsible u-mb++">
+                    <ul class="list-block list-block--small">
+                    {% for response in method[1].responses %}
+                      {% unless response[1].status_code > 220 and response[1].status_code < 300 %}
+                        {% continue %}
+                      {% endunless %}
+                      {% assign example_id = response[1].display_name | append: response[1].status_code | slugify %}
+                      <li>
+                        <a href="#" data-collapse="#{{ example_id }}" class="collapsible__toggler collapsible__toggler--collapsed">{{ response[1].display_name }}</a>
+                        <div id="{{ example_id }}" class="collapsible__item collapsible__item--collapsed">
+
+                        {% if response[1].description %}
+                          {{ response[1].description | markdownify }}
+                        {% endif %}
+
+                        {% if response[1].bodies.size > 0 %}
+                          <ul class="codetabs" role="tablist">
+                          {% for body in response[1].bodies %}
+                            {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                            {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-example-' | append: response[1].status_code | append: '-' | append: mt_display_name | slugify %}
+                            <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
+                          {% endfor %}
+                          </ul>
+                          <div class="codetabs__content">
+                          {% for body in response[1].bodies %}
+                            {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                            {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
+                            {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-example-' | append: response[1].status_code | append: '-' | append: mt_display_name | slugify %}
+                            <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
+                              {% if hljs_lang == 'xml' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                              {% elsif hljs_lang == 'html' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                              {% else %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                          </div>
+                        {% endif %} {% comment %} /if response.bodies.size > 0{% endcomment %}
+                        </div>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+
+              </section>
+              {% endfor %}{% comment %} endfor method in methods {% endcomment %}
+            {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
+
+            <section class="api__section">
+              {% include disqus.html %}
+            </section>
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+<script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
+<script>
+  function initZeroClipBoard() {
+
+    var qsa = function (selector) {
+      return Array.prototype.slice.call(document.querySelectorAll(selector));
+    }
+
+    qsa('pre.highlight').forEach(function(pre) {
+      var zeroClipboard = document.createElement('div');
+      zeroClipboard.className = 'zero-clipboard';
+      zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
+      pre.parentNode.insertBefore(zeroClipboard, pre);
+    });
+
+    var client = new ZeroClipboard(qsa('.zero-clipboard__btn'));
+    client.on('copy', function(event) {
+      var copyButton = event.target.parentNode;
+      var pre = copyButton.nextSibling;
+      client.setText(pre.textContent);
+    });
+  }
+</script>
+
+

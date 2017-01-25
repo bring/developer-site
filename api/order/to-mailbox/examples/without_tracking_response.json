@@ -1,0 +1,94 @@
+{
+  "data": {
+    "type": "order",
+    "id": "182",
+    "attributes": {
+      "id": 182,
+      "customerName": "Posten Norge AS",
+      "customerNumber": "PARCELS_NORWAY-1234567890",
+      "senderName": "Posten Norge AS",
+      "streetAddress": "Biskop Gunnerus' gate 14A",
+      "postalCode": "0182",
+      "postalPlace": "OSLO",
+      "email": "customer@example.com",
+      "reference": "OUR-REF-123",
+      "labelUri": "http://example.com/bring.booking.labels/154bc692d0d5610fa088eca200dbe9e3acee5591.pdf",
+      "rfidLabelUri": "",
+      "priceWithoutVat": 277.02,
+      "priceWithVat": 346.26,
+      "currency": "NOK",
+      "packages": [
+        {
+          "priority": "A",
+          "rfid": false,
+          "recipientName": "Ola Nordmann",
+          "streetAddress": "Storgata 55",
+          "postalCode": "9406",
+          "postalPlace": "HARSTAD",
+          "phoneNumber": "+4790012345",
+          "email": "recipient@example.com",
+          "weight": 1200,
+          "shipmentNumber": "70438101412638989",
+          "packageNumber": "LA297785772NO",
+          "agreementNumber": false
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "recipientName": "Kari Nordmann",
+          "streetAddress": "Munkegata 31",
+          "postalCode": "7011",
+          "postalPlace": "TRONDHEIM",
+          "phoneNumber": "+4790023456",
+          "email": "recipient@example.com",
+          "weight": 400,
+          "shipmentNumber": "70438101412638996",
+          "packageNumber": "LA297785786NO",
+          "agreementNumber": false
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "recipientName": "Ola Nordmann",
+          "streetAddress": "Klubbgata 7",
+          "postalCode": "4013",
+          "postalPlace": "STAVANGER",
+          "phoneNumber": "+4790034567",
+          "email": "recipient@example.com",
+          "weight": 900,
+          "shipmentNumber": "70438101412639009",
+          "packageNumber": "LA297785790NO",
+          "agreementNumber": false
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "recipientName": "Kari Nordmann",
+          "streetAddress": "Sentrumsvegen 51B",
+          "postalCode": "4700",
+          "postalPlace": "VENNESLA",
+          "phoneNumber": "+4790045678",
+          "email": "recipient@example.com",
+          "weight": 1800,
+          "shipmentNumber": "70438101412639016",
+          "packageNumber": "LA297785809NO",
+          "agreementNumber": false
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "recipientName": "Ola Nordmann",
+          "streetAddress": "Adolph Tidemands gate 24",
+          "postalCode": "2000",
+          "postalPlace": "LILLESTRØM",
+          "phoneNumber": "+4790056789",
+          "email": "recipient@example.com",
+          "weight": 200,
+          "shipmentNumber": "70438101412639023",
+          "packageNumber": "LA297785812NO",
+          "agreementNumber": false
+        }
+      ]
+    }
+  }
+}

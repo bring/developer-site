@@ -1,0 +1,64 @@
+{
+  "data": {
+    "type": "orders",
+    "attributes": {
+      "customerNumber": "PARCELS-NORWAY-1234567890",
+      "senderName": "Posten Norge AS",
+      "postalCode": "0182",
+      "streetAddress": "Biskop Gunnerus' gate 14A",
+      "reference": "OUR-REF-123",
+      "packages": [
+        {
+          "priority": "A",
+          "rfid": false,
+          "weight": 1200,
+          "recipientName": "Ola Nordmann",
+          "postalCode": "9406",
+          "streetAddress": "Storgata 55",
+          "phoneNumber": "+4790012345",
+          "email": "recipient@example.com"
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "weight": 400,
+          "recipientName": "Kari Nordmann",
+          "postalCode": "7011",
+          "streetAddress": "Munkegata 31",
+          "phoneNumber": "+4790023456",
+          "email": "recipient@example.com"
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "weight": 900,
+          "recipientName": "Ola Nordmann",
+          "postalCode": "4013",
+          "streetAddress": "Klubbgata 7",
+          "phoneNumber": "+4790034567",
+          "email": "recipient@example.com"
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "weight": 1800,
+          "recipientName": "Kari Nordmann",
+          "postalCode": "4700",
+          "streetAddress": "Sentrumsvegen 51B",
+          "phoneNumber": "+4790045678",
+          "email": "recipient@example.com"
+        },
+        {
+          "priority": "A",
+          "rfid": false,
+          "weight": 200,
+          "recipientName": "Ola Nordmann",
+          "postalCode": "2000",
+          "streetAddress": "Adolph Tidemands gate 24",
+          "phoneNumber": "+4790056789",
+          "email": "recipient@example.com"
+        }
+      ]
+    }
+  }
+}

@@ -1,10 +1,11 @@
 require 'raml_parser'
+require 'brujula'
 require 'jekyll'
 require 'json'
 
 module Jekyll
 
-  class ApiPage < Jekyll::Page
+  class Api08Page < Jekyll::Page
 
     def initialize(site, raml_hash, output_file)
       @site = site
@@ -13,12 +14,33 @@ module Jekyll
       @name = File.basename(output_file)
 
       # Write RAML to /tmp/<name>.json
-      #File.open("/tmp/#{raml_hash['title'].split(' ').first.downcase}.json", 'w') do |f|
-      #  f.write(JSON.pretty_generate(raml_hash).to_s)
-      #end
+      File.open("/tmp/#{raml_hash['title'].split(' ').first.downcase}.json", 'w') do |f|
+        f.write(JSON.pretty_generate(raml_hash).to_s)
+      end
 
       self.process(@name)
-      self.read_yaml(File.join(site.source, '_layouts'), 'api.html')
+      self.read_yaml(File.join(site.source, '_layouts'), 'api-0.8.html')
+      self.data['title'] = raml_hash['title']
+      self.data['api'] = raml_hash
+    end
+
+  end
+
+  class Api10Page < Jekyll::Page
+
+    def initialize(site, raml_hash, output_file)
+      @site = site
+      @base = site.source
+      @dir = File.dirname(output_file)
+      @name = File.basename(output_file)
+
+      # Write RAML to /tmp/<name>.json
+      File.open("/tmp/#{raml_hash['title'].split(' ').first.downcase}.json", 'w') do |f|
+        f.write(JSON.pretty_generate(raml_hash).to_s)
+      end
+
+      self.process(@name)
+      self.read_yaml(File.join(site.source, '_layouts'), 'api-1.0.html')
       self.data['title'] = raml_hash['title']
       self.data['api'] = raml_hash
     end
@@ -32,15 +54,25 @@ module Jekyll
     def generate(site)
       @site = site
       Jekyll.logger.info('RAML', '- generate API documentation from RAML files')
-      site.config.fetch('raml_map', {}).each do |raml_file, html_file|
+      site.config.fetch('raml_08_map', {}).each do |raml_file, html_file|
         Jekyll.logger.info('RAML', "- convert #{raml_file} to #{html_file}")
-        raml = raml_file_to_hash(raml_file)
-        site.pages << ApiPage.new(site, raml, html_file)
+        raml = raml_08_file_to_hash(raml_file)
+        site.pages << Api08Page.new(site, raml, html_file)
+      end
+      site.config.fetch('raml_10_map', {}).each do |raml_file, html_file|
+        Jekyll.logger.info('RAML', "- convert #{raml_file} to #{html_file}")
+        raml = raml_1_file_to_hash(raml_file)
+        site.pages << Api10Page.new(site, raml, html_file)
       end
     end
 
-    def raml_file_to_hash(raml_file)
+    def raml_08_file_to_hash(raml_file)
       raml = RamlParser::Parser.parse_file(raml_file)
+      to_deep_hash(raml)
+    end
+
+    def raml_10_file_to_hash(raml_file)
+      raml = Brujula.parse_file(raml_file)
       to_deep_hash(raml)
     end
 
