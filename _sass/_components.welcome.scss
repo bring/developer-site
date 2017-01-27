@@ -78,3 +78,17 @@ picture.megaheader img {
         opacity: 0.8;
     }
 }
+
+.welcome__hint {
+    font-size: $inuit-heading-size-5;
+    margin: 2*$spacing auto;
+    text-align: center;
+}
+
+.welcome__hint__link {
+    color: $medium-grey;
+
+    &:hover {
+        color: $dark-grey;
+    }
+}

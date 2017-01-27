@@ -1,0 +1,129 @@
+/* ------------------------------------------------------- 
+*   # .BLOG
+*
+------------------------------------------------------- */
+
+.blog {
+    margin: 0 auto;
+    max-width: 666px;
+}
+
+.blog__post {
+    margin: $spacing 0 4*$spacing 0;
+
+    &:last-child {
+        margin-bottom: 2*$spacing;
+    }
+}
+
+.blog__archive {
+    margin: $spacing 0;
+    min-height: 555px;
+}
+
+.blog__post__header {
+
+}
+
+.blog__post__heading {
+    margin: 0;
+
+    a {
+        color: $dark-grey;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.blog__post__meta {
+    margin: 0.9em 0;
+}
+
+.blog__post__meta-item {
+    color: $medium-grey;
+
+    &:not(:last-child):after {
+        padding: 0em 0.4em;
+        content: '·';
+    }
+}
+
+.blog__post__meta-item a {
+    color: $medium-grey;
+    &:hover {
+        color: $dark-grey;
+    }
+}
+
+.blog__post__meta .icon, {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+
+.blog__post__meta svg.icon {
+    fill: $medium-grey;
+}
+
+.blog__post__meta a:hover svg.icon {
+    fill: $dark-grey;
+}
+
+.blog__post__meta img.icon {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.blog__post__meta a:hover img.icon {
+    -webkit-filter: none;
+    filter: none;
+}
+
+.blog__post__content > :last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.blog__post__footer {
+    margin-top: 2*$spacing;
+}
+
+.blog__post__readmore {
+    color: $medium-grey;
+    text-align: center;
+    &:hover {
+        color: $dark-grey;
+    }
+}
+
+.blog__paginator {
+    text-align: center;
+    margin: 2*$spacing 0;
+}
+
+.blog__paginator__info {
+    color: $medium-grey;
+}
+
+.blog__paginator__button {
+    border: 1px solid $medium-grey;
+    border-radius: 3px;
+    padding: 0.8em 1em;
+}
+
+.blog__paginator__button:hover {
+    border-color: $link-blue;
+}
+
+.blog__paginator__button--disabled {
+    color: $medium-grey;
+    cursor: default;
+}
+
+.blog__paginator__button--disabled:hover {
+    border-color: inherit;
+}

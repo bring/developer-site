@@ -9,11 +9,6 @@ code {
     font-size: $font-size-small;
 }
 
-pre code {
-    white-space: pre;
-    font-size: 12px;
-}
-
 pre {
     border-left: 5px solid $bring-green;
     background-color: $background-grey;
@@ -30,4 +25,14 @@ pre {
         border: 0;
         max-height: 350px;
     }
+
+    code {
+        white-space: pre;
+        font-size: 12px;
+    }
+}
+
+// force non-white background color for code blocks in markdown (e.g., blog)
+.highlighter-rouge pre.highlight code.hljs {
+    background-color: $background-light;
 }
