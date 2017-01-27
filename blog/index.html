@@ -8,10 +8,19 @@ layout: blog
           <h2 class="blog__post__heading gamma"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h2>
           <ul class="blog__post__meta list-inline">
             <li class="blog__post__meta-item">
+              {% if post.author.first %}
+              {% for author in post.author %}
+              <a href="https://github.com/{{ author }}">
+                <img alt="👤" class="icon" src="https://avatars.githubusercontent.com/{{ author }}?s=48" width="24" height="24" />
+                <span>{{ author }}</span>
+              </a>
+              {% endfor %}
+              {% else %}
               <a href="https://github.com/{{ post.author }}">
                 <img alt="👤" class="icon" src="https://avatars.githubusercontent.com/{{ post.author }}?s=48" width="24" height="24" />
                 <span>{{ post.author }}</span>
               </a>
+              {% endif %}
             </li>
             <li class="blog__post__meta-item">
               <svg class="icon"><use xlink:href="#calendar" /></svg>
