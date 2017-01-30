@@ -1,5 +1,4 @@
 require 'raml_parser'
-require 'brujula'
 require 'jekyll'
 require 'json'
 
@@ -61,7 +60,7 @@ module Jekyll
       end
       site.config.fetch('raml_10_map', {}).each do |raml_file, html_file|
         Jekyll.logger.info('RAML', "- convert #{raml_file} to #{html_file}")
-        raml = raml_1_file_to_hash(raml_file)
+        raml = raml_10_file_to_hash(raml_file)
         site.pages << Api10Page.new(site, raml, html_file)
       end
     end
@@ -72,8 +71,7 @@ module Jekyll
     end
 
     def raml_10_file_to_hash(raml_file)
-      raml = Brujula.parse_file(raml_file)
-      to_deep_hash(raml)
+      JSON.parse(`b raml2json #{raml_file}`)
     end
 
     protected
