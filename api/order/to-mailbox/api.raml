@@ -19,19 +19,14 @@ types:
     properties:
       customerNumber:
         type: string
-        required: true
       senderName:
         type: string
-        required: true
       postalCode:
         type: PostalCode
-        required: true
       streetAddress:
         type: string
-        required: true
       reference:
         required: true
-        type: string
       packages:
         minItems: 1
         type: Package[]
@@ -69,16 +64,12 @@ types:
       recipientName: string
       postalCode:
         type: PostalCode
-        required: true
       streetAddress:
         type: string
-        required: true
       phoneNumber:
         type: PhoneNumber
-        required: true
       email:
         type: EmailAddress
-        required: true
   PackageWithNumbers:
     type: Package
     properties:
@@ -115,6 +106,27 @@ types:
     type: object
     properties:
       data: OrderResponseData
+  ErrorResponse:
+    type: object
+    properties:
+      errors:
+        type: ErrorObject[]
+        description: See the [JSON-API documentation](http://jsonapi.org/format/#error-objects).
+  ErrorObject:
+    type: object
+    properties:
+      code:
+        type: string
+        description: Machine-readable description of error.
+      title:
+        type: string
+        description: Human-readable description of error.
+      source:
+        type: object
+        properties:
+          pointer:
+            type: string
+            description: A JSON pointer to the associated entity of
 
 documentation:
 - title: Introduction
@@ -164,40 +176,30 @@ documentation:
   content: |
       This API adheres to the [JSON API](http://jsonapi.org/) specification. This means
 
-/{orderId}:
-  displayName: Fetch order
-  get:
-    headers:
-      Accept:
-        description: Specify response format (application/json)
-        required: true
-        enum: [ application/json ]
-    uriParameters:
-      orderId:
-        type: string
-        required: true
 /:
-  displayName: Order shipments
+  displayName: Order shipment
   description: |
-      This is the endpoint where you can book a shipment and get a printable label in return.
+      Order (or validate) a shipment.
 
-      See the "More examples" section below to see examples on how to use additional services.
+      #### Error codes
 
-      #### Error handling
+      We follow the [JSON API](http://jsonapi.org/format/#error-objects) specification.
 
-      If an error occurs, the following will be provided:
+      From the spec, we use `code`, `title`, and `source.pointer` to describe errors.
 
-      - `uniqueId`: A unique log ID (UUID) that can be used as a reference for the error
-      - `code`: An error code describing the error
-      - `message`: Internationalized messages (with <message lang="”xx”"> elements). First version will be with lang=”en” (English) only. </message>
+      | Code | Meaning | Example pointer |
+      | 500 | Internal, unknown aplpication error | `/` |
+      | 1000 | Missing field value | `/streetAddress` |
+      | 2000 | Order must contain at least one package | `/packages` |
+      | 3000 | Invalid email address | `/packages/0/email` |
+      | 4000 | Invalid postal code |  `/packages/1/postalCode` |
+      | 5000 | User does not have access to customer number | `/customerNumber` |
+      | 5500 | Customer hasn't made agreement with Posten to send "Pakke i postkassen" | `/customerNumber` |
+      | 6000 | Weight cannot be more than 2000 grams | `/packages/2/weight` |
+      | 7000 | Priority must be A or B | `/packages/3/priority` |
+      | 8000 | Invalid phone number | `/pacakges/4/phoneNumber` |
+      | 9000 | Invalid JSON API resource type (must be orders) | `/data/type` |
 
-      See the [error codes](#error-codes) below to get an overview of error codes and what they mean.
-
-      #### Testing (validation only)
-
-      This service will send actual production orders unless it is set to testing mode.
-
-      To use the test mode, you need to set the `validate` flag to `true`.
 
   post:
     description: Order shipments
@@ -227,3 +229,22 @@ documentation:
           application/json:
             type: OrderResponse
             example: !include examples/without_tracking_response.json
+      500:
+        description: If we have an error in our backend, we'll return a 500 error.
+        body:
+          application/json:
+            example: !include examples/500.json
+
+  /{orderId}:
+    displayName: Fetch order
+    uriParameters:
+      orderId:
+        type: string
+        description: Id from when placing an order.
+    get:
+      description: Show previously ordered shipment
+      headers:
+        Accept:
+          description: Specify response format (application/json)
+          required: true
+          enum: [ application/json ]
