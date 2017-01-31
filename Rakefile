@@ -9,21 +9,22 @@ task :clean do
   system('rm -R _site/ 2>/dev/null')
 end
 
-desc 'Install css dependencies using npm'
-task :install_css do
+desc 'Install dependencies'
+task :install_dependencies do
+  puts '= install RAML parse dependencies using yarn'
+  system('yarn install')
   puts '= install css dependencies using npm'
   system('cd _sass && npm install')
 end
 
 desc 'Build the _site directory'
-task :build => [:clean, :install_css] do
+task :build => [:clean, :install_dependencies] do
   puts '= build using jekyll'
   system('bundle exec jekyll build --trace')
 end
 
 desc 'Run locally using jekyll'
-task :serve => [:clean, :install_css] do
+task :serve => [:clean, :install_dependencies] do
   puts '= serve using jekyll'
-  system('cd _sass && npm install')
   system('bundle exec jekyll serve --trace')
 end
