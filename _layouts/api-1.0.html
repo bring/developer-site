@@ -14,7 +14,7 @@ layout: redesign
             ----------------------------------------
             {% endcomment %}
             {% include sitemenu.html %}
-        </div><!-- 
+        </div><!--
      --><div class="layout__item palm-one-whole desk-three-quarters">
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
             <section id="api-documentation" class="api__section">
@@ -28,7 +28,7 @@ layout: redesign
               <h2 class="anchored">Overview of endpoints</h2>
 
               <h3 class="delta">Base URL</h3>
-              <pre>{{ page.api.base_uri }}</pre>
+              <pre>{{ page.api.baseUri }}</pre>
 
               <table class="linked-rows table--cosy table--rows">
                 <thead>
@@ -39,9 +39,9 @@ layout: redesign
                 {% for resource in page.api.resources %}
                   {% for method in resource.methods %}
                     <tr>
-                      <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].method }}</a></td>
-                      <td><a href="#{{ resource.display_name | slugify }}">{{ resource.relative_uri }}</a></td>
-                      <td><a href="#{{ resource.display_name | slugify }}">{{ method[1].description }}</a></td>
+                      <td><a href="#{{ resource.displayName | slugify }}">{{ method.method | upcase }}</a></td>
+                      <td><a href="#{{ resource.displayName | slugify }}">{{ resource.relativeUri }}</a></td>
+                      <td><a href="#{{ resource.displayName | slugify }}">{{ method.description }}</a></td>
                     </tr>
                   {% endfor %}
                 {% endfor %}
@@ -53,36 +53,36 @@ layout: redesign
               {% for method in resource.methods %}
               <section class="api__section">
 
-                <h1 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h1>
+                <h1 class="large anchored" id="{{ resource.displayName | slugify }}">{{ resource.displayName }}</h1>
 
                 {% if resource.description %}
                 {{ resource.description | markdownify }}
                 {% endif %}
 
                 <h2 class="delta">URL</h2>
-                {% if resource.uri_parameters contains 'mediaTypeExtension' %}
+                {% if resource.uriParameters contains 'mediaTypeExtension' %}
                   {% assign url_output = '' %}
-                  {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
-                    {% assign url_output = url_output | append: resource.absolute_uri | replace:'{mediaTypeExtension}',extension %}
+                  {% for extension in resource.uriParameters.mediaTypeExtension.enum %}
+                    {% assign url_output = url_output | append: resource.absoluteUri | replace:'{mediaTypeExtension}',extension %}
                     {% unless forloop.last %}
                       {% assign url_output = url_output | append: '<br />' %}
                     {% endunless %}
                   {% endfor %}
                 {% else %}
-                  {% assign url_output = resource.absolute_uri %}
+                  {% assign url_output = resource.absoluteUri %}
                 {% endif %}
                 <pre>{{ url_output }}</pre>
 
                 {% assign has_other_uri_params_than_mediatype = false %}
-                {% if resource.uri_parameters.size > 1 %}
+                {% if resource.uriParameters.size > 1 %}
                   {% assign has_other_uri_params_than_mediatype = true %}
-                {% elsif resource.uri_parameters.size == 1 and resource.uri_parameters.first[1].name != 'mediaTypeExtension' %}
+                {% elsif resource.uriParameters.size == 1 and resource.uriParameters.first[1].name != 'mediaTypeExtension' %}
                   {% assign has_other_uri_params_than_mediatype = true %}
                 {% endif %}
-                
+
                 {% if has_other_uri_params_than_mediatype
-                    or method[1].headers.size > 0 
-                    or method[1].query_parameters.size > 0 %}
+                    or method.headers.size > 0
+                    or method.queryParameters.size > 0 %}
                 <h2 class="delta">Request params</h2>
                 {% endif %}
 
@@ -95,8 +95,8 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% if has_other_uri_params_than_mediatype %}
-                  {% assign include_params = resource.uri_parameters %}
-                  {% include named_params.html title="URI parameter" params=include_params %}
+                  {% assign include_params = resource.uriParameters %}
+                  {% include named_params_10.html title="URI parameter" params=include_params %}
                 {% endif %}
 
                 {% comment %}
@@ -107,9 +107,9 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
-                {% if method[1].headers.size > 0 %}
-                  {% assign include_params = method[1].headers %}
-                  {% include named_params.html title="Header name" params=include_params %}
+                {% if method.headers.size > 0 %}
+                  {% assign include_params = method.headers %}
+                  {% include named_params_10.html title="Header name" params=include_params %}
                 {% endif %}
 
                 {% comment %}
@@ -120,9 +120,9 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
-                {% if method[1].query_parameters.size > 0 %}
-                  {% assign include_params = method[1].query_parameters %}
-                  {% include named_params.html title="Query parameter" params=include_params %}
+                {% if method.queryParameters.size > 0 %}
+                  {% assign include_params = method.queryParameters %}
+                  {% include named_params_10.html title="Query parameter" params=include_params %}
                 {% endif %}
 
                 {% comment %}
@@ -329,5 +329,3 @@ layout: redesign
     });
   }
 </script>
-
-
