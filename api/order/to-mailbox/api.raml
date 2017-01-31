@@ -174,7 +174,7 @@ documentation:
 
 - title: JSON API
   content: |
-      This API adheres to the [JSON API](http://jsonapi.org/) specification. This means
+      This API adheres to the [JSON API](http://jsonapi.org/) specification.
 
 /:
   displayName: Order shipment
@@ -198,11 +198,11 @@ documentation:
       | 6000 | Weight cannot be more than 2000 grams | `/packages/2/weight` |
       | 7000 | Priority must be A or B | `/packages/3/priority` |
       | 8000 | Invalid phone number | `/pacakges/4/phoneNumber` |
-      | 9000 | Invalid JSON API resource type (must be orders) | `/data/type` |
+      | 9000 | Invalid JSON API resource type (must be `orders`) | `/data/type` |
 
 
   post:
-    description: Order shipments
+    description: Order shipment
     headers:
       Content-Type:
         description: Specify request format (application/json)
@@ -229,22 +229,35 @@ documentation:
           application/json:
             type: OrderResponse
             example: !include examples/without_tracking_response.json
+      422:
+        description: Validation error
+        body:
+          application/json:
+            type: ErrorResponse
+            example: !include examples/422.json
       500:
         description: If we have an error in our backend, we'll return a 500 error.
         body:
           application/json:
+            type: ErrorResponse
             example: !include examples/500.json
 
-  /{orderId}:
-    displayName: Fetch order
-    uriParameters:
-      orderId:
-        type: string
-        description: Id from when placing an order.
-    get:
-      description: Show previously ordered shipment
-      headers:
-        Accept:
-          description: Specify response format (application/json)
-          required: true
-          enum: [ application/json ]
+/{orderId}:
+  displayName: Fetch order
+  uriParameters:
+    orderId:
+      type: string
+      description: Id from when placing an order.
+  get:
+    description: Fetch previously ordered shipment
+    headers:
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    responses:
+      200:
+        body:
+          application/json:
+            type: OrderResponse
+            example: !include examples/without_tracking_response.json
