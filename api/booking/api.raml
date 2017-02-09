@@ -188,17 +188,17 @@ documentation:
             description: Describe what is inside the package. This parameter can be maximum 35 character long.
             type: string
         heightInCm:
-            description: Specify height in cm
+            description: Specify height in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
             type: integer
             example: 100
             required: true
         widthInCm:
-            description: Specify width in cm
+            description: Specify width in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
             type: integer
             example: 100
             required: true
         lengthInCm:
-             description: Specify length in cm
+             description: Specify length in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
              type: integer
              example: 100
              required: true
@@ -208,7 +208,7 @@ documentation:
              example: 5
              required: true
         volumeInDm3:
-             description: Specify volume in cubic decimeter
+             description: Specify volume in cubic decimeter. This is optional when dimension is specified in the request for cargo.
              type: decimal
              required: true
         whoPaysInvoice:
