@@ -31,18 +31,9 @@ layout: blog
                 <span>{{ page.category }}</span>
               </a>
             </li>
-            <li class="blog__post__meta-item">
-              <a href="{{ page.url | prepend: site.baseurl }}#disqus_thread">
-                <svg class="icon"><use xlink:href="#comments" /></svg>
-                <span data-disqus-identifier="{{ page.id }}"  >0 comments</span>
-              </a>
-            </li>
           </ul>
         </header>
         <div class="blog__post__content">
           {{ page.content }}
         </div>
-        <footer class="blog__post__footer">
-          {% include disqus.html %}
-        </footer>
       </article>
