@@ -33,7 +33,7 @@ For example:
 6. ???
 7. Developer goes home after work
 
-We think we could manage to sort out the above incident. Our current idea is that we would use our backup and our WAL archive to do a point in time recovery to time 1. We wouldn't do that on our current master database, because would cause us to lose transactions. So we'd set up an entirely new database server from the backup instead. From this new instance, we can do a full dump of any relevant tables using [`pg_dump`](https://www.postgresql.org/docs/9.5/static/app-pgdump.html). Hopefully, we can then import the generated SQL to our master database.
+We think we could manage to sort out the above incident. Our current idea is that we would use our backup and our WAL archive to do a point in time recovery to time 1. We wouldn't do that on our current master database, because would cause us to lose the transactions between time 1 and time 5. So we'd set up an entirely new database server from the backup instead. From this new instance, we can do a full dump of any relevant tables using [`pg_dump`](https://www.postgresql.org/docs/9.5/static/app-pgdump.html). Hopefully, we can then import the generated SQL to our master database.
 
 This is a problem you can't really solve with a standby.
 
