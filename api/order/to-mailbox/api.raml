@@ -57,7 +57,9 @@ types:
       priority:
         enum: [ A, B ]
         description: Tracking with RFID
-      rfid: boolean
+      rfid:
+        type: boolean
+        description: Whether to activate [tracking for the package](#tracking-with-rfid)
       weight:
         maximum: 2000
         type: integer
@@ -83,29 +85,27 @@ types:
       agreementNumber:
         type: boolean
         description: Whether you got an agreement price for this package.
-  OrderRequestData:
-    type: object
-    properties:
-      type:
-        pattern: orders
-        type: string
-      attributes: Order
   OrderRequest:
     type: object
     properties:
-      data: OrderRequestData
-  OrderResponseData:
-    type: object
-    properties:
-      type:
-        type: string
-        pattern: order
-      id: string
-      attributes: OrderWithLabels
+      data:
+        type: object
+        properties:
+          type:
+            type: string
+            pattern: "orders"
+          attributes: Order
   OrderResponse:
     type: object
     properties:
-      data: OrderResponseData
+      data:
+        type: object
+        properties:
+          type:
+            type: string
+            pattern: "order"
+          id: string
+          attributes: OrderWithLabels
   ErrorResponse:
     type: object
     properties:
