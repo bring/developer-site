@@ -6,7 +6,7 @@ baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 documentation:
 - title: Introduction
   content: |
-      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned. Response is available as either XML or JSON.
+      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). Response is available as either XML or JSON.
 
       A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers, etc.
 
@@ -67,14 +67,14 @@ documentation:
         description: Currently available for Swedish, Finnish and Danish pickup point request only.
         enum: [ manned, locker ]
       numberOfResponses:
-        description: Return the specified number of pickup points instead of the default.
+        description: Return the specified number of pickup points instead of the default. Try this param to get more pickup points, if a desired pickup point is missing in the response.
         type: integer
         default: 10
       street:
-        description: Searches for the nearest pickup points to the given street.
+        description: Searches for the nearest pickup points to the given street. Use this param to get more accurate result.
         type: string
       streetNumber:
-        description: Searches for the nearest pickup points to the given street number.
+        description: Searches for the nearest pickup points to the given street number.Use this param to get more accurate result.
         type: string
       callback:
         description: JSONP callback function name.
