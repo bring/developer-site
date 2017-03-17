@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tuning postgres bgwriter
+title: Checking out checkpoints
 date: 2017-03-17 13:51:43 01:00
 category: postgres
 author:
