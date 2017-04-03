@@ -5,6 +5,7 @@ layout: page
       <style>
         .feature-table{
           width: 100%;
+          margin-top: 1.333rem;
         }
         .feature-table>tbody>tr>td:first-child{
           width: 284px;
@@ -18,48 +19,36 @@ layout: page
           Each section represents a part of a suggested order process and contains a list of suggested features for that step in the process.
           <br/>
           <br/>
-          <br/>
-          <br/>
-          <header>
-            <h4>Prerequisites&nbsp;<small><a href="{{ site.baseurl }}/api/postal-code">Postal Code API</a></small></h4>
-          </header>
-          <table class="feature-table">
-            <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead><tbody>
-          <tr><td>Verify postal code</td><td>Verify receiver's postal code by using <a href="{{ site.baseurl }}/api/shipping-guide">Postal Code API</a></td></tr>
-          </table>
 
-          <br/>
-          <br/>
           <header>
-            <h4>Selecting a shipment method&nbsp;<small><a href="{{ site.baseurl }}/api/shipping-guide">Shipping Guide API</a></small></h4>
+            <h3>Selecting a shipping method&nbsp;<small><a href="{{ site.baseurl }}/api/shipping-guide">Shipping Guide API</a></small></h3>
           </header>
+          A shipping method is a way to fulfill delivery to customers of the goods that they purchased. The Shipping Guide API shows your customers which shipping methods are available; for example an express delivery,  parcels delivered to your door or perhaps a parcel that is paid on delivery.
 
           <table class="feature-table" >
           <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead><tbody>
           <tr><td>Selection of a shipping method</td><td>Display minimum 2 available shipping methods and support manual selection of a shipping method</td></tr>
           <tr><td>Shipping method titles</td><td>Display shipping method titles defined in the response from Bring Shipping Guide API or the overridden titles</td></tr>
           <tr><td>Sort order of shipping methods</td><td>Display shipping methods in the exact order defined in the response from Bring Shipping Guide API or in an overridden order</td></tr>
-          <tr><td>Shipping method language</td><td>Provide Bring Shipping Guide API queries with the language displayed to the end user</td></tr>
+          <tr><td>Shipping method language</td><td>Provide Bring Shipping Guide API queries with the language displayed to the end user to ensure that the description of the methods are in the preferred language</td></tr>
           <tr><td>Estimated time of delivery </td><td>Display estimated time of delivery for shipment methods</td></tr>
           <tr><td>Posten / Bring logo</td><td>Display Posten / Bring logo with the shipping methods in accordance with guidelines by Posten/Bring</td></tr>
-          <tr><td>Include weight in shipping method queries</td><td>Include total weight of order in shipping methods queries</td></tr>
+          <tr><td>Order weight</td><td>Include total weight of order in grams in Bring Shipping Guide API queries</td></tr>
+          <tr><td>Order dimensions or volume</td><td>Include dimensions or volume of order in Bring Shipping Guide API queries</td></tr>
           <tr><td>Adjust Bring Shipping Guide API prices </td><td>Display adjusted prices</td></tr>
           <tr><td>Rounding of prices</td><td>Display rounded prices for shipping methods</td></tr>
           <tr><td>Relative price</td><td>Display additional service charges separately at selection. Shipping method prices are relative to the currently selected shipping method's price</td></tr>
           <tr><td>Coupon code for discounted or free shipment</td><td>Display input field for coupon code and adjust prices according to the code</td></tr>
           <tr><td>Support free shipment based on criteria</td><td>Adjust price if some criteria are met</td></tr>
-          <tr><td>Weight in grams or kilos</td><td>&nbsp;</td></tr>
           <tr><td>Hide shipping method(s) based on total price</td><td>Hide shipping method(s) if the total price of items exceeds given max price</td></tr>
           <tr><td>eVarsling</td><td>Include eVarsling data when requesting shipping methods from Bring Shipping Guide API</td></tr>
-          <tr><td>Parcel delivered at post office</td><td>N/A</td></tr>
+          <tr><td>Parcel delivered at post office</td><td>Include whether a parcel is delivered at the post office or not when quering Bring Shipping Guide API for prices</td></tr>
           <tr><td>Support item dimensions</td><td>Include item dimensions (if available) when quering Bring Shipping Guide API for prices</td></tr>
           </tbody></table>
 
 
-          <br/>
-          <br/>
-          <h4>Selecting a pickup point&nbsp;<small><a href="{{ site.baseurl }}/api/pickup-point">Pickup Point API</a></small></h4>
-
+          <h3>Selecting a pickup point&nbsp;<small><a href="{{ site.baseurl }}/api/pickup-point">Pickup Point API</a></small></h3>
+          Freedom of choice is essential when shopping online and that is also true when it comes to choosing your favorite pickup point. The Pickup Point API let’s your customers decide which pickup point they prefer; for example the closest one to their work place, kindergarten or perhaps mother in law. Via the API you can also display, in addition to the address, the opening hours of the pickup point.
           <table class="feature-table" >
             <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead>
             <tbody>
@@ -69,48 +58,33 @@ layout: page
           <tr><td>Address/postal code for pickup point queries</td><td>Ensure address specifications in pickup point queries (country code and postal and/or address)</td></tr>
           </tbody></table>
 
-
-          <br/>
-          <br/>
-          <h4>Select booking details&nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small></h4>
+          <h3>Booking details&nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small></h3>
           <table class="feature-table">
             <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead>
             <tbody>
-          <tr><td>Support usage of Bring Booking API</td><td>Bring Booking API is used for creating bookings</td></tr>
           <tr><td>Delivery option</td><td>Customer can choose delivery option and price is updated accordingly</td></tr>
           <tr><td>Message for recipient</td><td>Support free text information for receiver in transport booking</td></tr>
           <tr><td>Cash on delivery</td><td>Support display of "Cash on delivery" as an option for supported shipping methods</td></tr>
           <tr><td>Customs declaration </td><td>Display input field for the end user or provide customs information when performing the booking throught Bring Booking API</td></tr>
-          <tr><td>Use volume when creating a booking</td><td>Include volume when quering Bring Shipping Guide API</td></tr>
-          </tbody></table>
-
-
-          <br/>
-          <br/>
-          <h4>Booking confirmation&nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small></h4>
-          <table class="feature-table">
-            <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead>
-            <tbody>
+          <tr><td>Order weight</td><td>Include total weight of order in grams when creating a booking through Bring Booking API</td></tr>
+          <tr><td>Order dimensions or volume</td><td>Include dimensions or volume when creating a booking through Bring Booking API</td></tr>
           <tr><td>Tracking link</td><td>Display a shipment tracking link returned by the Bring Booking API for the customer on the order confirmation (page and/or email)</td></tr>
           <tr><td>Expected delivery time</td><td>Display expected delivery time on the receipt</td></tr>
             </tbody></table>
 
 
-          <br/>
-          <br/>
-          <h4>Label management&nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small></h4>
+          <h3>Label management&nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small></h3>
+          The Booking API sends all necessary EDI messages and a PDF label is returned in responses. Having a label management system makes it possible for the web shops to print it's own labels and attach it to the shipments.
           <table class="feature-table">
             <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead>
             <tbody>
           <tr><td>Label list</td><td>Support handling of label URLs returned by the Bring Booking API for local printing</td></tr>
             </tbody></table>
 
-          <br/>
-          <br/>
-          <h4>Configuration
+          <h3>Configuration
             &nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small>
             &nbsp;<small><a href="{{ site.baseurl }}/api/shipping-guide">Shipping Guide API</a></small>
-          </h4>
+          </h3>
           <table class="feature-table">
             <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead>
             <tbody>
@@ -119,20 +93,21 @@ layout: page
           <tr><td>Supported sender countries</td><td>Sender countries available for use by the Bring APIs are supported</td></tr>
             </tbody></table>
 
-
-          <br/>
-          <br/>
-          <h4>Error handling
+          <h3>Error handling and validation
             &nbsp;<small><a href="{{ site.baseurl }}/api/booking">Booking API</a></small>
             &nbsp;<small><a href="{{ site.baseurl }}/api/pickup-point">Pickup Point API</a></small>
             &nbsp;<small><a href="{{ site.baseurl }}/api/shipping-guide">Shipping Guide API</a></small>
-          </h4>
+            &nbsp;<small><a href="{{ site.baseurl }}/api/postal-code">Postal Code API</a></small>
+          </h3>
+          Well-written applications include error-handling code that allows them to recover gracefully from unexpected errors. The order should still be intact, even if the Shipping Guide returns an error or a timeout occurs.
+
           <table class="feature-table">
             <thead><tr ><th>Feature</th><th>Suggested web store implementation</th></tr></thead>
             <tbody>
           <tr><td>Shipping Guide errors</td><td>Log error data and prevent display of error message to end users. Bring shipping methods should not be displayed to the customer when an error occurs.</td></tr>
           <tr><td>Booking errors</td><td>Log error data and prevent display of error message to end users.</td></tr>
           <tr><td>Tracking errors</td><td>Log error data and prevent display of error message to end users.</td></tr>
+          <tr><td>Verify postal code</td><td>Verify receiver's postal code by using <a href="{{ site.baseurl }}/api/shipping-guide">Postal Code API</a></td></tr>
           </tbody></table>
         </section>
       </article>
