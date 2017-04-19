@@ -689,6 +689,26 @@ documentation:
           application/xml:
             example: !include examples/adjust_prices.xml
 
+      259:
+        displayName: Multiple Cargo Agreements in response
+        description: |
+          The Shipping Guide provides multiple cargo agreement prices depending upon the customer contract.
+
+          Below are the possible combinations of package details
+
+          * Number of packages, weight, volume, dimensions, number of pallets and load meters
+          * Number of packages and weight or volume or dimensions or load meters
+          * Number of packages and volume or dimensions
+          * Number of packages and weight
+          * Number of packages and load meters
+          * Number of packages and number of pallets and weight or volume or dimensions or load meters
+
+        body:
+          application/json:
+            example: !include examples/cargo_agreements.json
+          application/xml:
+            example: !include examples/cargo_agreements.xml
+
 /api/ws:
   displayName: SOAP
   description: |
@@ -698,7 +718,7 @@ documentation:
 
       ### WSDL
 
-      WSDL / schema versions: [1](https://api.bring.com/shippingguide/api/ws/fraktguide-v1.wsdl), [2](https://api.bring.com/shippingguide/api/ws/fraktguide-v2.wsdl), [3](https://api.bring.com/shippingguide/api/ws/fraktguide-v3.wsdl), [4](https://api.bring.com/shippingguide/api/ws/fraktguide-v4.wsdl), [5](https://api.bring.com/shippingguide/api/ws/fraktguide-v5.wsdl), [6](https://api.bring.com/shippingguide/api/ws/fraktguide-v6.wsdl), [7](https://api.bring.com/shippingguide/api/ws/fraktguide-v7.wsdl), [8](https://api.bring.com/shippingguide/api/ws/fraktguide-v8.wsdl), [9](https://api.bring.com/shippingguide/api/ws/fraktguide-v9.wsdl). The current version is 9.
+      WSDL / schema versions: [1](https://api.bring.com/shippingguide/api/ws/fraktguide-v1.wsdl), [2](https://api.bring.com/shippingguide/api/ws/fraktguide-v2.wsdl), [3](https://api.bring.com/shippingguide/api/ws/fraktguide-v3.wsdl), [4](https://api.bring.com/shippingguide/api/ws/fraktguide-v4.wsdl), [5](https://api.bring.com/shippingguide/api/ws/fraktguide-v5.wsdl), [6](https://api.bring.com/shippingguide/api/ws/fraktguide-v6.wsdl), [7](https://api.bring.com/shippingguide/api/ws/fraktguide-v7.wsdl), [8](https://api.bring.com/shippingguide/api/ws/fraktguide-v8.wsdl), [9](https://api.bring.com/shippingguide/api/ws/fraktguide-v9.wsdl), [10](https://api.bring.com/shippingguide/api/ws/fraktguide-v10.wsdl). The current version is 10.
 
       [Fraktguide XML Schema documentation](https://api.bring.com/shippingguide/schemaDoc.do?clientUrl=developer.bring.com)
 
