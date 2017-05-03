@@ -1,0 +1,208 @@
+#%RAML 0.8
+---
+title: Order Management API
+baseUri: https://api.bring.com/po/api/v1
+
+documentation:
+- title: Introduction
+  content: |
+    There are different customer types in Order Management and depending on what kind of customer you are setts the usage pattern for Order Management API.
+
+    This is a step-by-step guide on how to use the API.
+
+    A typical usage pattern for an Warehousing cutomer type is to create an order in Order Management that will go to the correct warehouse for picking, packing and sending. Then follow up with creating a packing list from the warehouse with transport information. All steps can be followed in Order Management.
+
+    An other usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
+
+    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality.
+
+    Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
+
+    ## SOAP
+
+    ### Versioning
+
+    Order Management makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service. To achieve this, a SchemaVersion element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
+
+    We make an effort not to return new elements in the response when an old schema version is specified. When changes in the schema are made, the SchemaVersion is incremented by one. The new schema is used at the same endpoint URL as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
+
+    Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in the sense that elements are not renamed or deleted.
+
+    ### WSDL
+
+    [https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+
+    ## Error handling
+
+    When using the Order Management, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
+
+    How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
+
+    See [the list of error codes](#list-error-codes) for hints on how to implement error handling.
+
+- title: Authentication
+  content: |
+    The Order Management API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. |
+
+    Those headers must be set for all endpoints documented below.
+
+/purchaseorderCustomer/{customerId}:
+  displayName: Check if customer is valid for order management
+  get:
+    description: Check if customer is valid for order management
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Returns `true` if given customer is a valid for order management.
+        body:
+          application/xml:
+            example: !include examples/verify_customer.xml
+
+/order/{customerId}/{orderId}:
+  displayName: List order information
+  get:
+    description: List order information
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Complete order information including order items.
+        body:
+          application/xml:
+            example: !include examples/retrieve_purchaseorder.xml
+
+/order:
+  displayName: Send an order
+  post:
+    description: Send an order
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Successfully created a order.
+        body:
+          application/xml:
+            example: !include examples/create_purchaseorder.xml
+
+/items/{customerId}/{orderId}:
+  displayName: List order items
+  get:
+    description: List order items
+    responses:
+      200:
+        displayName: Success
+        description: |
+          List of order items.
+        body:
+          application/xml:
+            example: !include examples/retrieve_orderitems.xml
+
+/transport/{customerId}/{orderId}:
+  displayName: List transport orders for order
+  get:
+    description: List transport orders for order
+    responses:
+      200:
+        displayName: Success
+        description: |
+          List of transport orders for given order, if any.
+        body:
+          application/xml:
+            example: !include examples/retrieve_orderitems.xml
+
+/transport:
+  displayName: Add packaging list
+  post:
+    description: Add packaging list
+    body:
+      application/xml:
+        example: !include examples/create_packaging_list.xml
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Successfully added packaging list.
+
+/senderStatus/{customerId}/{orderId}:
+  displayName: Get status for order
+  get:
+    description: Get status for order
+    responses:
+      200:
+        displayName: Success
+        description: Open or Locked.
+        body:
+          application/xml:
+            example: !include examples/check_status.xml
+
+/event:
+  displayName: Create TMSEvents
+  post:
+    description: Create TMSEvents
+    body:
+      application/xml:
+        example: !include examples/create_events.xml
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Successfully created a new resource
+
+/articlebalance:
+  displayName: Create or update article balance list
+  post:
+    description: Create or update article balance list
+    body:
+      application/xml:
+        example: !include examples/create_articlebalance.xml
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Successfully created balance list
+
+/articlebalance/{customerId}/{articleNo}:
+  displayName: Get stock balance and info for one article
+  get:
+    description: Get stock balance and info for one article
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            example: !include examples/check_status.xml
+
+/articlebalance/info/{customerId}/{articleSearchString}:
+  displayName: Get stock balance and info for all articles matching search string
+  get:
+    description: Get stock balance and info for all articles matching search string
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            example: !include examples/check_status.xml
+
+/errorCodes:
+  displayName: List error codes
+  get:
+    description: List error codes
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Dynamic list of error codes used in the solution.
+        body:
+          application/xml:
+            example: !include examples/error_codes.xml
+
+

@@ -14,7 +14,7 @@ raml_map:
   api/invoice/api.raml: api/invoice/index.html
   api/postal-code/api.raml: api/postal-code/index.html
   api/easy-return-service/api.raml: api/easy-return-service/index.html
-  api/purchase-order/api.raml: api/purchase-order/index.html
+  api/order-management/api.raml: api/order-management/index.html
 
 # Build settings
 gems:
