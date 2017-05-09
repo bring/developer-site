@@ -9,13 +9,13 @@ author:
 
 As mentioned in our previous blog, We at bring, use influx and grafana extensively, as one of the monitoring tools to collect statistics and visualize different aspects of applications performance.
 
-We have been quite excited with the latest version of grafana, which now provides Alert engine, using which we can set up alert rules on the statistics that we collect all over. 
+We have been quite excited with the latest version of grafana, which now provides alerting engine, which we can set up alert rules on the statistics that we collect all over. 
 
 <img src="{{ site.baseurl }}/img/grafana-notification-channels.png" />
 
 As shown in above image, grafana provides built in support for configuring different types of notification channels on which you would want to get notified when the alert rule set up on your monitoring is satisfied.
 
-We use slack as the common communication tools and wanted alerts from grafana to reach out on slack, Fortunately, grafana also provides a built in support for integrating these alerts to slack, but unfortunately latest released version of grafana has a bug, because of which the slack integration do not really works due to some proxy issue.
+We use slack as the common communication tools and wanted alerts from grafana to reach out on slack, grafana also provides a built in support for integrating these alerts to slack, but there's an issue with proxy support in the latest version of grafana that causes slack integration to not work for us.
 
 So we moved towards another possible simplest solution, grafana also provides ability to get alerts posted on a webhook with a predefined payload which looks something like this.
 
@@ -39,11 +39,11 @@ So we moved towards another possible simplest solution, grafana also provides ab
 
 ```
 
-So it was as simple as creating a web hook in one of our custom monitoring application,  parsing above payload and post it to slack, via a home grown library which can post to slack. Advantage of using web hook is that it lets you do any custom processing that you might need to do when a alert rule triggers an alert.
+So it was as simple as creating a web hook in one of our custom monitoring application,  parsing above payload and post it to slack, via a home grown library which can post to slack. The advantage of using web hook is that it lets you do any custom processing that you might need to do when an alert rule triggers an alert.
 
-So once you have configured a notification channel (which in our case is a webhook), we can move towards setting up Rule on our stats that we measure and then grafana takes care of posting to the configured notification channel on that alert rule, when the rule passes.
+So once configurations for notification channel is done (which in our case is a webhook), we can move towards setting up Rule on our stats that we measure and then grafana takes care of posting to the configured notification channel on that alert rule, when the rule passes.
 
-Way to configure a [rule](http://docs.grafana.org/alerting/rules/) is pretty straightforward and simple. 
+The way to configure a [rule](http://docs.grafana.org/alerting/rules/) is pretty straightforward and simple. 
 
 <img src="{{ site.baseurl }}/img/configure-grafana-alert.png" />
 
