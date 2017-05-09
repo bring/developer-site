@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Alerting in grafana
-date: 2017-05-08 09:00:00 00:00
+date: 2017-05-09 09:00:00 00:00
 category: monitoring
 author:
     - pankajagrawal16
@@ -43,7 +43,7 @@ So it was as simple as creating a web hook in one of our custom monitoring appli
 
 So once you have configured a notification channel (which in our case is a webhook), we can move towards setting up Rule on our stats that we measure and then grafana takes care of posting to the configured notification channel on that alert rule, when the rule passes.
 
-Way to configure a [rule](http://docs.grafana.org/alerting/rules/) pretty straightforward and simple. 
+Way to configure a [rule](http://docs.grafana.org/alerting/rules/) is pretty straightforward and simple. 
 
 <img src="{{ site.baseurl }}/img/configure-grafana-alert.png" />
 
