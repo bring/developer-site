@@ -7,7 +7,7 @@ author:
     - imprashast
 ---
 
-We at Bring have been using [c3p0](http://www.mchange.com/projects/c3p0/) in some of out applications from the past few years. Recently in once of the applications we faced an issue where we started to see lots of `APPARENT DEADLOCK` WARN errors.
+We at Bring have been using [c3p0](http://www.mchange.com/projects/c3p0/) in one of our application from the past few years. Recently we faced an issue where we started to see lots of `APPARENT DEADLOCK` WARN errors.
 
 The underlying database is MySql for reference. Logs looked something like this:
 
