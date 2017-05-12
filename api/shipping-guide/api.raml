@@ -194,6 +194,14 @@ documentation:
         displayName: Package height in centimeters
         type: integer
         example: 30
+      loadMeters:
+        displayName: Package loading meters in meters
+        type: double
+        example: 1.22
+      numberOfPallets:
+        displayName: Number of pallets
+        type: integer
+        example: 10
       NonStackable:
         displayName: Default false. Set to true if you know that pallet would be non-stackable
         type: boolean
@@ -313,6 +321,14 @@ documentation:
         displayName: Package height in centimeters
         type: integer
         example: 30
+      loadMeters:
+        displayName: Package loading meters in meters
+        type: double
+        example: 1.22
+      numberOfPallets:
+        displayName: Number of pallets
+        type: integer
+        example: 10
       date:
         displayName: Shipping date
         description: Specifies which date the parcel will be delivered to Bring (within the time limit), and is used to calculate the delivery date. Date is specified in ISO format, `YYYY-MM-DD`.
@@ -424,6 +440,14 @@ documentation:
         displayName: Package height in centimeters
         type: integer
         example: 30
+      loadMeters:
+        displayName: Package loading meters in meters
+        type: double
+        example: 1.22
+      numberOfPallets:
+        displayName: Number of pallets
+        type: integer
+        example: 10
       NonStackable:
         displayName: Default false. Set to true if you know that pallet would be non-stackable
         type: boolean
@@ -692,7 +716,7 @@ documentation:
       259:
         displayName: Multiple Cargo Agreements in response
         description: |
-          The Shipping Guide provides multiple cargo agreement prices depending upon the customer contract.
+          The Shipping Guide provides multiple cargo agreement prices depending upon the customer contract. This request should be authenticated using mybring credentials
 
           Below are the possible combinations of package details
 
@@ -702,6 +726,8 @@ documentation:
           * Number of packages and weight
           * Number of packages and load meters
           * Number of packages and number of pallets and weight or volume or dimensions or load meters
+
+          [Example request](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=5132&to=1481&weightInGrams=1500&loadMeters=1.22&numberOfPallets=100&product=CARGO&customerNumber=CARGO-123456)
 
         body:
           application/json:
