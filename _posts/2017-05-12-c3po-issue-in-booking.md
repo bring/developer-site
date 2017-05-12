@@ -22,9 +22,11 @@ Upon digging in further we found that:
 
 Futher on analysing the application logs, which looked something like this:
 
-`WARN  [c.ThreadPoolAsynchronousRunner] [user:] - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35`
+`WARN  [c.ThreadPoolAsynchronousRunner] [user:] -`
+`com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35`
 `-- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!`
-`WARN  [c.ThreadPoolAsynchronousRunner] [user:] - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35` 
+`WARN  [c.ThreadPoolAsynchronousRunner] [user:] -`
+`com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35` 
 `-- APPARENT DEADLOCK!!! Complete Status:`
 
 Some of those were `CannotGetJdbcConnectionException` which is how we identified it was a c3p0 issue. 
