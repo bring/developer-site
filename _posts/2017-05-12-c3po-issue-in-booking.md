@@ -12,6 +12,7 @@ We at Bring have been using [c3p0](http://www.mchange.com/projects/c3p0/) in sev
 We thought that the issues were related to a migration to a new data center at first, but we ruled that out once we checked out that there were not enough slow queries to back this claim.
 
 Stacktrace:
+
 ```
 org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is java.sql.SQLException: An attempt by a client to checkout a Connection has timed out.
 at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:80)
@@ -41,6 +42,7 @@ Caused by: com.mchange.v2.resourcepool.TimeoutException: A client timed out whil
 	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutAndMarkConnectionInUse(C3P0PooledConnectionPool.java:758)
 	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool.checkoutPooledConnection(C3P0PooledConnectionPool.java:685)
 	... 108 more
+
 ```
 
 Upon digging in further we found that:
@@ -54,14 +56,13 @@ Upon digging in further we found that:
 
 Futher on analysing the application logs, which looked something like this:
 
-`WARN  [c.ThreadPoolAsynchronousRunner] [user:] -`
-`com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35`
-`-- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!`
-`WARN  [c.ThreadPoolAsynchronousRunner] [user:] -`
-`com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35` 
-`-- APPARENT DEADLOCK!!! Complete Status:`
+```
+WARN  [c.ThreadPoolAsynchronousRunner] [user:] - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!
+WARN  [c.ThreadPoolAsynchronousRunner] [user:] - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35 -- APPARENT DEADLOCK!!! Complete Status:
 
-Some of those were `CONNECTION TIMEOUT` and `APPARENT DEADLOCK` WARN Errors which is how we identified it was a c3p0 issue. Then we found more details about this on [stack overflow](http://stackoverflow.com/questions/30952887/apparent-deadlock-c3p0-0-9-5-1-spring). Reply from `Steve Waldman` who developed c3p0 helped us in this problem.
+```
+
+Some of those were `CONNECTION TIMEOUT` and `APPARENT DEADLOCK` WARN Errors which is how we identified it was a c3p0 issue. Then we found more details about this on [stack overflow](http://stackoverflow.com/questions/30952887/apparent-deadlock-c3p0-0-9-5-1-spring). Reply from `Steve Waldman`, who developed c3p0 helped us solving this problem.
 
 Looking at our configurations we found one property to be configured somewhat wrong. `maxStatements` in c3p0 was set to a higher value.
 
