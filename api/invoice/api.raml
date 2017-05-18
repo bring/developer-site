@@ -21,16 +21,14 @@ documentation:
 
     Those headers must be present for authenticating requests.
 
-/invoicearchive/pdf/{invoiceType}/{customerNumberUnique}/{invoiceNumber}.pdf:
+/invoicearchive/pdf/{customerNumberUnique}/{invoiceNumber}.pdf:
   displayName: Invoice PDF download endpoint
   securedBy: [mybring_headers, null]
   description: |
-      This link is used to download the invoice pdf for the customer by providing the type of invoice (NORMAL or SPECIFIED) based on customer type along with API Customer Id and invoice number in URI params
+      This link is used to download the invoice pdf for the customers by providing API Customer Id and invoice number in URI params.
 
 
   uriParameters:
-    invoiceType:
-      description: Type can be NORMAL and SPECIFIED for particular customers
     customerNumberUnique:
       description: Unique API Customer Number for each customer.
     invoiceNumber:
