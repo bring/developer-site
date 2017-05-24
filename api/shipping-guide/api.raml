@@ -735,6 +735,20 @@ documentation:
           application/xml:
             example: !include examples/cargo_agreements.xml
 
+      260:
+        displayName: Internationalization of Product help text information
+        description: |
+          To view product help text information in the response, you need to set the `GuiInformation` flag to true. Supported languages are Norwegian (no), Swedish (se), Danish (da)  and English (en). Set the locale as per your need in the request `Language` flag to get the response accordingly.
+
+          [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=5132&to=1481&weightInGrams=1500&product=CARGO&customerNumber=CARGO-123456)
+
+        body:
+          application/json:
+            example: !include examples/guiInformation.json
+          application/xml:
+            example: !include examples/guiInformation.xml
+
+
 /api/ws:
   displayName: SOAP
   description: |
