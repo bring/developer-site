@@ -1,13 +1,28 @@
-<CreateTransportOrderRequest xmlns="http://api.bring.com/po">
+<CreatePackagingListRequest>
     <RequestProperties>
         <SchemaVersion>1</SchemaVersion>
-        <Locale>en</Locale>
-        <DateAndTimes subClass="RequestDate">2014-07-01T10:00:26.686+02:00</DateAndTimes>
+        <Locale>no</Locale>
+        <DateAndTimes subClass="DocumentDate">2014-11-11T07:32:54.284+01:00</DateAndTimes>
     </RequestProperties>
-    <CustomerNo>12345</CustomerNo>
-    <PurchaseOrderNo>1234</PurchaseOrderNo>
-    <TransportOrder>
-        <ConsignmentId>1353</ConsignmentId>
-        <PackingListSet orderLineId="1"></PackingListSet>
-    </TransportOrder>
-</CreateTransportOrderRequest>
+    <CustomerNo>99999999</CustomerNo>
+    <PurchaseOrderNo>12345678</PurchaseOrderNo>
+    <PackingList>
+        <ConsignmentId>70703223343223526</ConsignmentId>
+        <PackageId>370794836448493247</PackageId>
+        <PackingListSet orderLineId="1">
+            <PackingListItem articleLineId="10">
+                <ArticleQuantity>10</ArticleQuantity>
+            </PackingListItem>
+        </PackingListSet>
+        <PackingListSet orderLineId="1">
+            <PackingListItem articleLineId="20">
+                <ArticleQuantity>3</ArticleQuantity>
+            </PackingListItem>
+        </PackingListSet>
+        <PackingListSet orderLineId="1">
+            <PackingListItem articleLineId="30">
+                <ArticleQuantity>5</ArticleQuantity>
+            </PackingListItem>
+        </PackingListSet>
+    </PackingList>
+</CreatePackagingListRequest>
