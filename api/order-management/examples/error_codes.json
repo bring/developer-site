@@ -81,6 +81,22 @@
             "Description": "Must provide valid transport order"
         },
         {
+            "Code": "PO_INPUT_021",
+            "Description": "Article number is required"
+        },
+        {
+            "Code": "PO_INPUT_022",
+            "Description": "Article number is required"
+        },
+        {
+            "Code": "PO_INPUT_023",
+            "Description": "Content for article balance is required"
+        },
+        {
+            "Code": "PO_INPUT_024",
+            "Description": "Attempted to create/insert a purchase order that already existed. Maybe wrong updateIndicator"
+        },
+        {
             "Code": "PO_STATE_001",
             "Description": "Purchase order not found"
         },
