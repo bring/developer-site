@@ -1,21 +1,35 @@
-<GetPurchaseOrderItemResponse xmlns="http://api.bring.com/po">
+<GetPurchaseOrderItemResponse xmlns="http://api.bring.com/po" updateIndicator="Original">
     <ResponseProperties>
-        <SchemaVersion>
-            1
-        </SchemaVersion>
-        <Locale>
-            en
-        </Locale>
-        <DateAndTimes subClass="ResponseDate">
-            2015-12-01T08:10:01.161+01:00
-        </DateAndTimes>
-        <Error>
-            <Code>
-                PO_STATE_002
-            </Code>
-            <Description>
-                You must log in to use this endpoint. See developer.bring.com for details about login with HTTP-headers.
-            </Description>
-        </Error>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2017-06-03T00:55:49.372+02:00</DateAndTimes>
     </ResponseProperties>
+    <PurchaseOrderItem>
+        <OrderLineSet>
+            <OrderItem articleLineId="1">
+                <ArticleId>035033999990</ArticleId>
+                <ArticleQuantity>1</ArticleQuantity>
+                <RemainingArticleQuantity>0</RemainingArticleQuantity>
+                <Description>
+                    <Text>DIVERSE DELER</Text>
+                    <Usage></Usage>
+                </Description>
+                <ArticleMonetaryAmounts>
+                    <UnitPrice currencyIdentificationCode="">0.00</UnitPrice>
+                </ArticleMonetaryAmounts>
+            </OrderItem>
+            <OrderItem articleLineId="2">
+                <ArticleId>009080 999</ArticleId>
+                <ArticleQuantity>0</ArticleQuantity>
+                <RemainingArticleQuantity>0</RemainingArticleQuantity>
+                <Description>
+                    <Text>PORTO</Text>
+                    <Usage></Usage>
+                </Description>
+                <ArticleMonetaryAmounts>
+                    <UnitPrice currencyIdentificationCode="">0.00</UnitPrice>
+                </ArticleMonetaryAmounts>
+            </OrderItem>
+        </OrderLineSet>
+    </PurchaseOrderItem>
 </GetPurchaseOrderItemResponse>

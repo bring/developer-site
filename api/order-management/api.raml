@@ -55,7 +55,8 @@ documentation:
 /purchaseorderCustomer/{customerId}:
   displayName: Check if customer is valid for order management
   get:
-    description: Check if customer is valid for order management
+    description:
+     Check if customer is valid for order management
     responses:
       200:
         displayName: Success
@@ -80,6 +81,15 @@ documentation:
 
 /order:
   displayName: Send an order
+  description: |
+      Send an order to Order Management. There are different types of order supported in Order Management.
+
+       - Order / SalesOrder (as an pickorder for Warehousing)
+            - Order Management act as an order repository.
+            - When Warehousing functionality Order Management sends it to Warhousing system for picking and delivery.
+       - PurchaseOrder
+            - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
+            - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
   post:
     description: Send an order
     responses:
@@ -93,6 +103,8 @@ documentation:
 
 /items/{customerId}/{orderId}:
   displayName: List order items
+  description: |
+      List all item lines on an order.
   get:
     description: List order items
     responses:
@@ -106,6 +118,8 @@ documentation:
 
 /transport/{customerId}/{orderId}:
   displayName: List transport orders for order
+  description: |
+      List all transport information for this order. One order can have multiple transport orders.
   get:
     description: List transport orders for order
     responses:
@@ -115,10 +129,12 @@ documentation:
           List of transport orders for given order, if any.
         body:
           application/xml:
-            example: !include examples/retrieve_orderitems.xml
+            example: !include examples/retrieve_packinglist.xml
 
 /transport:
   displayName: Add packaging list
+  description: |
+      When an order have been picked and sent, add packing list on order with transport information.
   post:
     description: Add packaging list
     body:
@@ -132,6 +148,8 @@ documentation:
 
 /senderStatus/{customerId}/{orderId}:
   displayName: Get status for order
+  description: |
+      Check status for an order. Open when not fully delivered or locked when fully delivered.
   get:
     description: Get status for order
     responses:
