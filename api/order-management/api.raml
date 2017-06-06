@@ -96,6 +96,66 @@ documentation:
             - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
   post:
     description: Send an order
+    queryParameters:
+      CustomerNo:
+          description: Customer Number which Bring has provided. It cannot be demo customer number.
+          type: string
+          required: true
+          example: 10000000000
+      DateAndTimes subClass DocumentDate:
+          description: The date on which order is booked.
+          type: dateTime
+          required: true
+          example: 22.01.2017 11:36:22
+      updateIndicator
+          description: Type of order data. Original, Update or Delete
+          type: string
+          required: true
+          example: Original
+      Party/subClass OrderingParty:
+          description: Details of sender. Must have Name, Street, City, CountryCode.
+          required: true
+      Party/subClass DeliveryParty:
+          description: Details of recipient. Must have Name, Street, City, CountryCode.
+          required: true
+      Party/subClass Supplier:
+          description: Details of supplier. Must have Name, Street, City, CountryCode if used.
+          required: false
+      OrderLineSet:
+          description: Set of order items.
+          type: sequence
+          required: true
+      OrderItem articleLineId:
+          description: Line id for this order line.
+          type: integer
+          required: true
+          example: 10
+      ArticleId:
+          description: Article number or id.
+          type: string
+          required: false
+          example: 123-4000
+      ArticleQuantity:
+          description: Quantity ordered.
+          type: float
+          required: true
+          example: 2.0
+      Description:
+          description: Article description / name.
+          type: string
+          required: true
+          example: Spear parts
+      Description:
+          description: Article description / name.
+          type: string
+          required: true
+          example: Spear parts
+      DateAndTimes subClass DeliveryDateRequested:
+          description: The date on which order is requested delivered.
+          type: dateTime
+          required: true
+          example: 22.01.2017 11:36:22
+
     body:
       application/xml:
         example: !include examples/create_purchaseorder.xml
