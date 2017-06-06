@@ -96,14 +96,14 @@ documentation:
             - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
   post:
     description: Send an order
+    body:
+      application/xml:
+        example: !include examples/create_purchaseorder.xml
     responses:
       200:
         displayName: Success
         description: |
           Successfully created a order.
-        body:
-          application/xml:
-            example: !include examples/create_purchaseorder.xml
 
 /items/{customerId}/{orderId}:
   displayName: List order items
@@ -166,6 +166,8 @@ documentation:
 
 /event:
   displayName: Create TMSEvents
+  description: |
+      Create tracking events on shipments associated with orders in Order Management.
   post:
     description: Create TMSEvents
     body:
