@@ -54,6 +54,8 @@ documentation:
 
 /purchaseorderCustomer/{customerId}:
   displayName: Check if customer is valid for order management
+  description: |
+      Check if a given customer number is an valid Order Management customer.
   get:
     description:
      Check if customer is valid for order management
@@ -68,6 +70,8 @@ documentation:
 
 /order/{customerId}/{orderId}:
   displayName: List order information
+  description: |
+      Get all information on a given order.
   get:
     description: List order information
     responses:
