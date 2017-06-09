@@ -42,7 +42,8 @@ layout: blog
           </ul>
         </header>
         <div class="blog__post__content">
-          {{ post.content }}
+          {{ post.excerpt }}
+          <a href="{{ post.url | prepend: site.baseurl }}">Read more ></a>
         </div>
       </article>
     {% endfor %}
