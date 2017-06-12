@@ -33,12 +33,6 @@ layout: blog
                 <span>{{ post.category }}</span>
               </a>
             </li>
-            <li class="blog__post__meta-item">
-              <a href="{{ post.url | prepend: site.baseurl }}#disqus_thread">
-                <svg class="icon"><use xlink:href="#comments" /></svg>
-                <span data-disqus-identifier="{{ post.id }}"  >0 comments</span>
-              </a>
-            </li>
           </ul>
         </header>
         <div class="blog__post__content">
