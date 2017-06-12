@@ -4,13 +4,15 @@
 ------------------------------------------------------- */
 
 .blog {
-    margin: 0 auto;
+    margin: 2*$spacing auto;
     max-width: 666px;
     padding: 0 $spacing/2;
 }
 
 .blog__post {
-    margin: $spacing 0 4*$spacing 0;
+    margin: $spacing 0 2*$spacing 0;
+    padding-bottom: 2*$spacing;
+    border-bottom: 2px solid #eee;
 
     &:last-child {
         margin-bottom: 2*$spacing;

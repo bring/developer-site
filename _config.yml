@@ -21,7 +21,7 @@ gems:
 - jekyll-paginate
 - jekyll-archives
 
-paginate: 5
+paginate: 10
 paginate_path: /blog/page/:num # default is page:num
 
 jekyll-archives:

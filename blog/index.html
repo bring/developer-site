@@ -5,7 +5,7 @@ layout: blog
     {% for post in paginator.posts %}
       <article class="blog__post">
         <header class="blog__post__header">
-          <h2 class="blog__post__heading gamma"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h2>
+          <h2 class="blog__post__heading alpha"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a></h2>
           <ul class="blog__post__meta list-inline">
             <li class="blog__post__meta-item">
               {% if post.author.first %}
@@ -42,7 +42,8 @@ layout: blog
           </ul>
         </header>
         <div class="blog__post__content">
-          {{ post.content }}
+          {{ post.excerpt }}
+          <a href="{{ post.url | prepend: site.baseurl }}">Read more ></a>
         </div>
       </article>
     {% endfor %}
