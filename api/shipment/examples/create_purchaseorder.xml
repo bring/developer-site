@@ -1,0 +1,125 @@
+<CreatePurchaseOrderRequest>
+  <RequestProperties>
+    <SchemaVersion>?</SchemaVersion>
+    <Locale>?</Locale>
+    <DateAndTimes subClass="?">?</DateAndTimes>
+  </RequestProperties>
+  <CustomerNo>?</CustomerNo>
+  <!--Optional:-->
+  <PurchaseOrderSet updateIndicator="?">
+    <PurchaseOrder orderId="?">
+      <!--Optional:-->
+      <SenderStatus>?</SenderStatus>
+      <!--Optional:-->
+      <OrderStatus>?</OrderStatus>
+      <!--1 or more repetitions:-->
+      <Reference>
+        <ReferenceNo>?</ReferenceNo>
+        <ReferenceType>?</ReferenceType>
+        <Text>?</Text>
+      </Reference>
+      <DateAndTimes subClass="?">?</DateAndTimes>
+      <TermsOfDelivery>
+        <TODConditionCode>?</TODConditionCode>
+        <TODConditionCodeList>?</TODConditionCodeList>
+        <TODLocation>?</TODLocation>
+      </TermsOfDelivery>
+    </PurchaseOrder>
+    <TransportLeg>
+      <TransportLeg>?</TransportLeg>
+      <ModeOfTransport>?</ModeOfTransport>
+      <MeansOfTransport>
+        <MeansOfTransportId/>
+        <Name>?</Name>
+      </MeansOfTransport>
+      <!--1 or more repetitions:-->
+      <Location locationId="?" subClass="?">
+        <LocationName>?</LocationName>
+        <CountryCode>?</CountryCode>
+      </Location>
+    </TransportLeg>
+    <!--1 or more repetitions:-->
+    <Party idType="?" partyId="?" subClass="?">
+      <Name>?</Name>
+      <!--Optional:-->
+      <VATNo>?</VATNo>
+      <Address subClass="?">
+        <!--Optional:-->
+        <PostalCode>?</PostalCode>
+        <City>?</City>
+        <!--Optional:-->
+        <StateOrRegion>?</StateOrRegion>
+        <CountryCode>?</CountryCode>
+        <!--Optional:-->
+        <AddressLine>?</AddressLine>
+        <!--Optional:-->
+        <Street>?</Street>
+      </Address>
+      <Contact>
+        <ContactName>?</ContactName>
+        <PhoneNo>?</PhoneNo>
+        <!--Optional:-->
+        <TelefaxNo>?</TelefaxNo>
+        <!--Optional:-->
+        <CellPhoneNo>?</CellPhoneNo>
+        <!--Optional:-->
+        <Mail>?</Mail>
+      </Contact>
+      <!--Optional:-->
+      <PlantId>?</PlantId>
+    </Party>
+    <!--1 or more repetitions:-->
+    <OrderLineSet orderLineId="?">
+      <!--1 or more repetitions:-->
+      <OrderItem articleLineId="?">
+        <ArticleId>?</ArticleId>
+        <ArticleQuantity>?</ArticleQuantity>
+        <!--Optional:-->
+        <RemainingArticleQuantity>?</RemainingArticleQuantity>
+        <Description>
+          <Text>?</Text>
+          <Usage>?</Usage>
+        </Description>
+        <!--1 or more repetitions:-->
+        <DateAndTimes subClass="?">?</DateAndTimes>
+        <ArticleMonetaryAmounts>
+          <UnitPrice currencyIdentificationCode="?">?</UnitPrice>
+        </ArticleMonetaryAmounts>
+      </OrderItem>
+    </OrderLineSet>
+    <!--1 or more repetitions:-->
+    <DateAndTimes subClass="?">?</DateAndTimes>
+    <!--Zero or more repetitions:-->
+    <TransportOrder>
+      <ConsignmentId>?</ConsignmentId>
+      <!--Optional:-->
+      <PackageId>?</PackageId>
+      <!--Zero or more repetitions:-->
+      <PackingListSet orderLineId="?">
+        <!--Zero or more repetitions:-->
+        <PackingListItem articleLineId="?">
+          <ArticleQuantity>?</ArticleQuantity>
+        </PackingListItem>
+      </PackingListSet>
+      <!--Zero or more repetitions:-->
+      <PackingListAdditionalSet>
+        <!--Zero or more repetitions:-->
+        <PackingListAdditionalItem>
+          <ArticleId>?</ArticleId>
+          <ArticleQuantity>?</ArticleQuantity>
+          <!--Optional:-->
+          <Description>
+            <Text>?</Text>
+            <Usage>?</Usage>
+          </Description>
+          <!--Optional:-->
+          <DateAndTimes subClass="?">?</DateAndTimes>
+          <!--Optional:-->
+          <ArticleMonetaryAmounts>
+            <UnitPrice currencyIdentificationCode="?">?</UnitPrice>
+          </ArticleMonetaryAmounts>
+        </PackingListAdditionalItem>
+      </PackingListAdditionalSet>
+    </TransportOrder>
+  </PurchaseOrderSet>
+</CreatePurchaseOrderRequest>

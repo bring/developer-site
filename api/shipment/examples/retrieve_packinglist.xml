@@ -1,0 +1,20 @@
+<GetTransportOrderResponse xmlns="http://api.bring.com/po">
+    <ResponseProperties>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2017-06-02T23:03:45.693+02:00</DateAndTimes>
+    </ResponseProperties>
+    <TransportOrderSet>
+        <TransportOrder>
+            <ConsignmentId>70707730127404618</ConsignmentId>
+            <PackingListSet>
+                <PackingListItem articleLineId="2">
+                    <ArticleQuantity>0</ArticleQuantity>
+                </PackingListItem>
+                <PackingListItem articleLineId="1">
+                    <ArticleQuantity>1</ArticleQuantity>
+                </PackingListItem>
+            </PackingListSet>
+        </TransportOrder>
+    </TransportOrderSet>
+</GetTransportOrderResponse>
