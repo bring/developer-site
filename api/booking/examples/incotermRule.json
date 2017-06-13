@@ -6,7 +6,7 @@
     "consignments": {
       "consignment": {
         "-correlationId": "INTERNAL-123456",
-        "shippingDateTime": "2016-08-10T22:05:39.454+01:00",
+        "shippingDateTime": 1470846939000,
         "parties": {
           "sender": {
             "name": "Ola Nordmann",
