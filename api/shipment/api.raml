@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
 title: Shipment API
-baseUri: https://api.bring.com/mb/api/
+baseUri: https://api.bring.com/mb/api
 
 documentation:
 - title: Introduction
@@ -27,13 +27,13 @@ documentation:
   post:
     description:
      Request is used to either create a booking or an order for Bring.
+    body:
+        application/xml:
+          example: !include examples/basic_example.xml
+        application/json:
+          example: !include examples/basic_example.json
     responses:
       200:
         displayName: Success
         description: |
           Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
-        body:
-          application/xml:
-            example: !include examples/basic_example.xml
-          application/json:
-            example: !include examples/basic_example.json
