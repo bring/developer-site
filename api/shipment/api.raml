@@ -2,3 +2,38 @@
 ---
 title: Shipment API
 baseUri: https://api.bring.com/mb/api/
+
+documentation:
+- title: Introduction
+  content: |
+    The API lets you create bookings and orders for Bring.
+
+- title: Authentication
+  content: |
+    The Shipment API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. |
+
+    Those headers must be set for all endpoints documented below.
+
+/CreateShipment:
+  displayName: Creates a new booking or order.
+  description: |
+      Request is used to either create a booking or an order for Bring. 
+  post:
+    description:
+     Request is used to either create a booking or an order for Bring.
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
+        body:
+          application/xml:
+            example: !include examples/basic_example.xml
+          application/json:
+            example: !include examples/basic_example.json
