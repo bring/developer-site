@@ -47,4 +47,8 @@ Vi står foran mange spennende prosjektutfordringer hvor vi skal lage løsninger
 
 Hos oss får du motiverte arbeidskolleger, stort ansvar og plass til å utvikle deg, både faglig og personlig. Vi holder til midt i sentrum, vegg i vegg med Oslo&nbsp;S.
 
+Dersom du har spørsmål til stillingen, ta gjerne kontakt med Avdelingsleder [Arne Moen](mailto:arne.moen@bring.com), mobil 902 02 239, eller Fagsjef Web [Andreas Jacobsen](mailto:andreas.jacobsen@bring.com), mobil 416 14 065.
+
+[Send søknad!](mailto:arne.moen@bring.com?cc=andreas.jacobsen@bring.com)
+
 ---
