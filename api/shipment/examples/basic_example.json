@@ -1,70 +1,72 @@
 {
-    "CreateShipmentRequest": {
-        "RequestVersion": "1",
-        "RequestDate": "2017-06-14T12:07:24",
-        "Shipment": {
-            "ShipmentHeaders": {
-                "SendersReference": "CUSTOMER REFERENCE",
-                "NumberOfPackages": "2",
-                "GrossWeight": {
-                    "_unitCode": "KGM",
-                    "__text": "2"
-                },
-                "DateAndTimes": {
-                    "Date": "2017-06-14",
-                    "Time": "11:11:54",
-                    "_subClass": "DocumentDate"
-                },
-                "Sender": {
-                    "Name": "Sender name",
-                    "Address": {
-                        "AddressLine": "MyStreet 123",
-                        "PostalCode": "1234",
-                        "City": "My City",
-                        "CountryCode": "NO"
-                    },
-                    "MobilePhone": "12345678",
-                    "Email": "Sender@Sender.com",
-                    "_partyId": "BRING-CUSTOMER-ID"
-                },
-                "Receiver": {
-                    "Name": "Receiver name",
-                    "Address": {
-                        "AddressLine": "MyStreet 123",
-                        "PostalCode": "4321",
-                        "City": "Other City",
-                        "CountryCode": "NO"
-                    },
-                    "MobilePhone": "87654321",
-                    "Email": "Receiver@Receiver.com"
-                },
-                "ProductAndService": {
-                    "ProductCode": "",
-                    "AdditionalService": ""
-                },
-                "GoodsItem": {
-                    "GoodsDescription": "Socks",
-                    "Package": [
-                        {
-                            "GrossWeight": {
-                                "_unitCode": "KGM",
-                                "__text": "1"
-                            },
-                            "_packageId": "123456"
-                        },
-                        {
-                            "GrossWeight": {
-                                "_unitCode": "KGM",
-                                "__text": "1"
-                            },
-                            "_packageId": "654321"
-                        }
-                    ]
-                },
-                "_consignmentId": "1234567890"
-            },
-            "_updateIndicator": "Original",
-            "_shipmentType": "Instruction"
+  "RequestVersion": "1",
+  "RequestDate": "2017-06-14T12:07:24",
+  "Shipment": {
+    "updateIndicator": "Original",
+    "shipmentType": "Instruction",
+    "ShipmentHeaders": {
+      "SendersReference": "CUSTOMER REFERENCE",
+      "NumberOfPackages": "2",
+      "GrossWeight": {
+        "unitCode": "KGM",
+        "Value": 2.0
+      },
+      "consignmentId": "1234567890"
+    },
+    "DateAndTimes": [
+      {
+        "DateTime": "2017-06-14T11:06:24",
+        "subClass": "DocumentDate"
+      }
+    ],
+    "Sender": {
+      "Name": "Sender name",
+      "Address": {
+        "AddressLine": [
+          "MyStreet 123"
+        ],
+        "PostalCode": "1234",
+        "City": "My City",
+        "CountryCode": "NO"
+      },
+      "MobilePhone": "12345678",
+      "Email": "Sender@Sender.com",
+      "partyId": "BRING-CUSTOMER-ID"
+    },
+    "Receiver": {
+      "Name": "Receiver name",
+      "Address": {
+        "AddressLine": [
+          "MyStreet 123"
+        ],
+        "PostalCode": "4321",
+        "City": "Other City",
+        "CountryCode": "NO"
+      },
+      "MobilePhone": "87654321",
+      "Email": "Receiver@Receiver.com"
+    },
+    "ProductAndService": {
+      "ProductCode": "COURIER_1H"
+    },
+    "GoodsItem": {
+      "GoodsDescription": "Socks",
+      "Package": [
+        {
+          "GrossWeight": {
+            "unitCode": "KGM",
+            "Value": 1.0
+          },
+          "packageId": "123456"
         },
+        {
+          "GrossWeight": {
+            "unitCode": "KGM",
+            "Value": 1.0
+          },
+          "packageId": "654321"
+        }
+      ]
     }
+  }
 }
