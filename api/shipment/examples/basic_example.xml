@@ -1,67 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ns0:CreateShipmentRequest xmlns:ns0="http://api.bring.com/CreateShipment">
-    <!-- The version of the request -->
-    <RequestVersion>1</RequestVersion>
-    <!-- Date of request creation  -->
-    <RequestDate>2017-06-14T12:07:24</RequestDate>
-    <!-- Shipment record. UpdateIndicaor used to specify new order. ShipmentType to specify Instruction or Booking -->
-    <Shipment updateIndicator="Original" shipmentType="Instruction">
-        <!-- Information for the whole shipment -->
-        <ShipmentHeaders consignmentId="1234567890">
-            <!-- The sending parties own reference to this shipment -->
-            <SendersReference>CUSTOMER REFERENCE</SendersReference>
-            <!-- Total number of packages on this shipment -->
-            <NumberOfPackages>2</NumberOfPackages>
-            <!-- Total weight for this shipment -->
-            <GrossWeight unitCode="KGM">2</GrossWeight>
-            <!-- Date and or time of order creation -->
-            <DateAndTimes subClass="DocumentDate">
-                <Date>2017-06-14</Date>
-                <Time>11:11:54</Time>
-            </DateAndTimes>
-            <!-- Sender information -->
-            <Sender partyId="BRING-CUSTOMER-ID">
-                <Name>Sender name</Name>
-                <Address>
-                    <AddressLine>MyStreet 123</AddressLine>
-                    <PostalCode>1234</PostalCode>
-                    <City>My City</City>
-                    <CountryCode>NO</CountryCode>
-                </Address>
-                <MobilePhone>12345678</MobilePhone>
-                <Email>Sender@Sender.com</Email>
-            </Sender>
-            <!-- Receiver information -->
-            <Receiver>
-                <Name>Receiver name</Name>
-                <Address>
-                    <AddressLine>MyStreet 123</AddressLine>
-                    <PostalCode>4321</PostalCode>
-                    <City>Other City</City>
-                    <CountryCode>NO</CountryCode>
-                </Address>
-                <MobilePhone>87654321</MobilePhone>
-                <Email>Receiver@Receiver.com</Email>
-            </Receiver>
-            <!-- Bring product and additional services on that product that is ordered -->
-            <ProductAndService>
-                <ProductCode></ProductCode>
-                <AdditionalService></AdditionalService>
-            </ProductAndService>
-            <!-- Specifies a collection of packages -->
-            <GoodsItem>
-                <!-- Description of content in packages-->
-                <GoodsDescription>Socks</GoodsDescription>
-                <!-- Information for first package in this shipment -->
-                <Package packageId="123456">
-                    <!-- Information of the spesific package weight -->
-                    <GrossWeight unitCode="KGM">1</GrossWeight>
-                </Package>
-                <!-- Information for second package in this shipment -->
-                <Package packageId="654321">
-                    <!-- Information of the spesific package weight -->
-                    <GrossWeight unitCode="KGM">1</GrossWeight>
-                </Package>
-            </GoodsItem>
-        </ShipmentHeaders>
-    </Shipment>
+	<!-- The version of the request -->
+	<RequestVersion>1</RequestVersion>
+	<!-- Date of request creation  -->
+	<RequestDate>2017-06-14T12:07:24</RequestDate>
+	<!-- Shipment record. UpdateIndicaor used to specify new order. ShipmentType to specify Instruction or Booking -->
+	<Shipment shipmentType="Instruction" updateIndicator="Original">
+		<!-- Information for the whole shipment -->
+		<ShipmentHeaders consignmentId="1234567890">
+			<!-- The sending parties own reference to this shipment -->
+			<SendersReference>CUSTOMER REFERENCE</SendersReference>
+			<!-- Total number of packages on this shipment -->
+			<NumberOfPackages>2</NumberOfPackages>
+			<!-- Total weight for this shipment -->
+			<GrossWeight unitCode="KGM">2</GrossWeight>
+			<!-- Date and or time of order creation -->
+		</ShipmentHeaders>
+		<DateAndTimes subClass="DocumentDate">
+			<DateTime>2017-06-14T11:11:54</DateTime>
+		</DateAndTimes>
+		<!-- Sender information -->
+		<Sender partyId="BRING-CUSTOMER-ID">
+			<Name>Sender name</Name>
+			<Address>
+				<AddressLine>MyStreet 123</AddressLine>
+				<PostalCode>1234</PostalCode>
+				<City>My City</City>
+				<CountryCode>NO</CountryCode>
+			</Address>
+			<MobilePhone>12345678</MobilePhone>
+			<Email>Sender@Sender.com</Email>
+		</Sender>
+		<!-- Receiver information -->
+		<Receiver>
+			<Name>Receiver name</Name>
+			<Address>
+				<AddressLine>MyStreet 123</AddressLine>
+				<PostalCode>4321</PostalCode>
+				<City>Other City</City>
+				<CountryCode>NO</CountryCode>
+			</Address>
+			<MobilePhone>87654321</MobilePhone>
+			<Email>Receiver@Receiver.com</Email>
+		</Receiver>
+		<!-- Bring product and additional services on that product that is ordered -->
+		<ProductAndService>
+			<ProductCode>COURIER_1H</ProductCode>
+		</ProductAndService>
+		<!-- Specifies a collection of packages -->
+		<GoodsItem>
+			<!-- Description of content in packages-->
+			<GoodsDescription>Socks</GoodsDescription>
+			<!-- Information for first package in this shipment -->
+			<Package packageId="123456">
+				<!-- Information of the spesific package weight -->
+				<GrossWeight unitCode="KGM">1</GrossWeight>
+			</Package>
+			<!-- Information for second package in this shipment -->
+			<Package packageId="654321">
+				<!-- Information of the spesific package weight -->
+				<GrossWeight unitCode="KGM">1</GrossWeight>
+			</Package>
+		</GoodsItem>
+	</Shipment>
 </ns0:CreateShipmentRequest>
