@@ -1,5 +1,5 @@
 
-/* ------------------------------------------------------- 
+/* -------------------------------------------------------
 *   # .SITEFOOTER
 *
 ------------------------------------------------------- */
@@ -14,12 +14,19 @@
     a {
         color: #fff;
     }
+    a:hover {
+        color: #ccc;
+    }
 }
 
-.sitefooter-legal {
+.sitefooter-links {
     list-style-type: none;
     li {
         margin-right: 2em;
         margin-bottom: 2em;
     }
+}
+
+.sitefooter-nav {
+    font-weight: bold;
 }
