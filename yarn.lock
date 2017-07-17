@@ -97,7 +97,7 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
-date-and-time@0.3.0:
+date-and-time@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.3.0.tgz#576a6fa600611264a4d05e41a6ae84d6a5152a24"
 
@@ -185,6 +185,10 @@ json-stable-stringify@^1.0.1:
   dependencies:
     jsonify "~0.0.0"
 
+json-to-ast@^2.0.0-alpha1.2:
+  version "2.0.0-alpha1.2"
+  resolved "https://registry.yarnpkg.com/json-to-ast/-/json-to-ast-2.0.0-alpha1.2.tgz#fe27fd89eb639eca1e01f578e79d46ee36e238e8"
+
 jsonify@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
@@ -239,7 +243,7 @@ map-obj@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
-marked@^0.3.3:
+marked@^0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.6.tgz#b2c6c618fccece4ef86c4fc6cb8a7cbf5aeda8d7"
 
@@ -323,9 +327,9 @@ qs@^6.1.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
-raml-1-parser@^1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/raml-1-parser/-/raml-1-parser-1.1.13.tgz#acff2ce7467f5e8039cb56d1999ffd95b8646558"
+raml-1-parser@^1.1.28:
+  version "1.1.28"
+  resolved "https://registry.yarnpkg.com/raml-1-parser/-/raml-1-parser-1.1.28.tgz#de1ece73b6a2b22da8df261fc265f1bb447710ac"
   dependencies:
     base64url "^1.0.6"
     change-case "^2.3.1"
@@ -336,15 +340,15 @@ raml-1-parser@^1.1.13:
     json-stable-stringify "^1.0.1"
     loophole "^1.1.0"
     lrucache "^0.2.0"
-    marked "^0.3.3"
+    marked "^0.3.6"
     media-typer "^0.3.0"
     mkdirp "^0.5.0"
     pluralize "^1.2.0"
     promise-polyfill "^5.1.0"
     q "^1.0.0"
-    raml-definition-system "0.0.55"
+    raml-definition-system "0.0.65"
     then-request "^2.2.0"
-    ts-model "0.0.13"
+    ts-model "0.0.14"
     ts-structure-parser "0.0.12"
     typescript-compiler "1.4.1-2"
     underscore "^1.8.3"
@@ -352,41 +356,42 @@ raml-1-parser@^1.1.13:
     xhr2 "^0.1.3"
     xmldom "^0.1.22"
     xmlhttprequest "^1.8.0"
-    yaml-ast-parser "0.0.31"
+    yaml-ast-parser "0.0.34"
     z-schema "^3.16.1"
 
-raml-definition-system@0.0.55:
-  version "0.0.55"
-  resolved "https://registry.yarnpkg.com/raml-definition-system/-/raml-definition-system-0.0.55.tgz#04dbd3deee09b928da28db509924f9f69111c2a3"
+raml-definition-system@0.0.65:
+  version "0.0.65"
+  resolved "https://registry.yarnpkg.com/raml-definition-system/-/raml-definition-system-0.0.65.tgz#e9cbf46ff84ed754e747ca971edf808ce299a9c6"
   dependencies:
     know-your-http-well "^0.2.0"
-    raml-typesystem "0.0.61"
+    raml-typesystem "0.0.71"
     ts-structure-parser "0.0.12"
     underscore "^1.8.3"
 
-raml-json-validation@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/raml-json-validation/-/raml-json-validation-0.0.11.tgz#cd5ebfb332a3e6b9d23f026334930fc3481590e5"
+raml-json-validation@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/raml-json-validation/-/raml-json-validation-0.0.12.tgz#3ef6c05f3547628243b343415807c1648515cb65"
   dependencies:
     z-schema "^3.16.1"
 
-raml-typesystem@0.0.61:
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/raml-typesystem/-/raml-typesystem-0.0.61.tgz#964b1a8c00101ca04d6148e79b3b9d740fa41b64"
+raml-typesystem@0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/raml-typesystem/-/raml-typesystem-0.0.71.tgz#9d71384ce72e498c37519dbe98e781ab37590500"
   dependencies:
-    date-and-time "0.3.0"
+    date-and-time "^0.3.0"
     json-schema-compatibility "^1.1.0"
+    json-to-ast "^2.0.0-alpha1.2"
     lrucache "^1.0.0"
     underscore "^1.8.3"
     xml2js "^0.4.16"
     xmldom "^0.1.22"
   optionalDependencies:
-    raml-json-validation "0.0.11"
-    raml-xml-validation "0.0.10"
+    raml-json-validation "0.0.12"
+    raml-xml-validation "0.0.11"
 
-raml-xml-validation@0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/raml-xml-validation/-/raml-xml-validation-0.0.10.tgz#0d205a33347b28836ed74739a8e0872b942d8d31"
+raml-xml-validation@0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/raml-xml-validation/-/raml-xml-validation-0.0.11.tgz#73644e7d4310e19674b70a3ee9ac7c8b06d1ea20"
   dependencies:
     xmllint-jsparser "^0.0.3"
 
@@ -462,9 +467,9 @@ title-case@^1.1.0:
     sentence-case "^1.1.1"
     upper-case "^1.0.3"
 
-ts-model@0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/ts-model/-/ts-model-0.0.13.tgz#225186bc56de1510bea9ff2b75b19fc61aa71787"
+ts-model@0.0.14:
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/ts-model/-/ts-model-0.0.14.tgz#0dc787047491f76cef1d8d7e7610436ae3196800"
   dependencies:
     underscore "^1.8.3"
 
@@ -542,9 +547,9 @@ xmllint-jsparser@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/xmllint-jsparser/-/xmllint-jsparser-0.0.3.tgz#68b051343917da95f77b7a0c7a0fbb400175e366"
 
-yaml-ast-parser@0.0.31:
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/yaml-ast-parser/-/yaml-ast-parser-0.0.31.tgz#5404bd14f4d8e7997d9f9b276e22e601d7b2753d"
+yaml-ast-parser@0.0.34:
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/yaml-ast-parser/-/yaml-ast-parser-0.0.34.tgz#d00f3cf9d773b7241409ae92a6740d1db19f49e6"
 
 z-schema@^3.16.1:
   version "3.18.2"
