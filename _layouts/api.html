@@ -67,7 +67,8 @@ layout: page
                 
                 {% if has_other_uri_params_than_mediatype
                     or method[1].headers.size > 0 
-                    or method[1].query_parameters.size > 0 %}
+                    or method[1].query_parameters.size > 0
+                    or method[1].field_desc.size > 0 %}
                 <h2 class="delta">Request params</h2>
                 {% endif %}
 
@@ -108,6 +109,23 @@ layout: page
                 {% if method[1].query_parameters.size > 0 %}
                   {% assign include_params = method[1].query_parameters %}
                   {% include named_params.html title="Query parameter" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all fields
+                --
+                ----------------------------------------
+                {% endcomment %}
+
+                {% if method[1].field_desc.size > 0 %}
+                  <h2 class="delta">Request fields</h2>
+                  {% endif %}
+                {% if method[1].fielddesc.size > 0 %}
+                {% assign include_params = method[1].field_desc %}
+                {% include named_fields.html title="Field description" params=include_params %}
                 {% endif %}
 
                 {% comment %}

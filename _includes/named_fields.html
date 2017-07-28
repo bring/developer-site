@@ -1,0 +1,59 @@
+                  <table>
+                    <thead>
+                      <th>{{ include.title }}</th>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </thead>
+                  {% for param in include.params %}
+                    {% if param[1].name == 'mediaTypeExtension' %}{% continue %}{% endif %}
+                    <tr>
+                      <td><code>{{ param[1].name }}</code></td>
+                      <td><code>{{ param[1].type }}</code></td>
+                      <td>
+                        {% if include.hide_required %}
+                          {% assign desc = '' %}
+                        {% elsif param[1].required %}
+                          {% assign desc = '<small>_Required._</small> ' %}
+                        {% else %}
+                          {% assign desc = '<small>_Optional._</small> ' %}
+                        {% endif %}
+
+                        {% if param[1].display_name != param[1].name %}
+                          {% assign desc = desc | append: param[1].display_name | append: '. ' %}
+                        {% endif %}
+
+
+                        {% if param[1].description %}
+                          {% assign desc = desc | append: param[1].description %}
+                        {% endif %}
+
+                        {{ desc | markdownify }}
+
+                        {% if param[1].enum != empty %}
+                        Possible values
+                        <ul>
+                          {% for item in param[1].enum %}
+                          <li><code>{{ item }}</code></li>
+                          {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if param[1].default %}
+                          <br/>
+                          <em>Default value:</em> <code>{{ param[1].default }}</code>
+                        {% endif %}
+
+                        {% if param[1].pattern %}
+                          <br/>
+                          <em>Pattern:</em> <code>{{ param[1].pattern }}</code>
+                        {% endif %}
+
+                        {% if param[1].example %}
+                        <br/>
+                        <em>Example:</em> <code>{{ param[1].example }}</code>
+                        {% endif %}
+
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </table>
