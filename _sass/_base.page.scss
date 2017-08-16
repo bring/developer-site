@@ -22,3 +22,8 @@ p {
     max-width: 610px; /* [1] */
     max-width: 38rem; /* [1] */
 }
+
+hr {
+    border: 0;
+    border-top: 2px solid #ccc;
+}
