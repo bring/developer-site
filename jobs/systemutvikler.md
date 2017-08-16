@@ -12,8 +12,8 @@ Har du lyst til å lage brukervennlige og moderne webapps? Hjelp oss å bli verd
 ##### Hos oss vil du inngå i et av våre utviklingsteam som jobber med:
 
 * [påloggingsløsninger](https://id.bring.com/) 🔒
-* løsninger for [booking](http://bring.no/booking) av transport 🚚
-* [sporing](http://sporing.bring.no/) av pakker 📦
+* løsninger for [booking](https://bring.no/booking) av transport 🚚
+* [sporing](https://sporing.bring.no/) av pakker 📦
 * [API-løsninger](https://developer.bring.com/) 💻
 
 Ditt team har ansvar for hele stacken fra brukerflatene ned til databasen, men du har muligheten til å fokusere på det du synes er viktigst og mest gøy. Du bruker erfaringen din og den tiden som trengs for å lage løsninger av høy kvalitet, som gir minst mulig forvaltning og vedlikehold. Det gir deg tid til å lære nye teknologier, samt logistikkdomenet. Med denne bakgrunnen er du med på å bestemme retningen både teknologisk og funksjonelt - for systemene vi lager.
