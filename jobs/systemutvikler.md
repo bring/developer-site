@@ -50,7 +50,6 @@ Dersom du har spørsmål til stillingen, ta gjerne kontakt med
 Avdelingsleder Arne Moen, mobil 902&nbsp;02&nbsp;239,
 eller Fagsjef Web Andreas Jacobsen, mobil 416&nbsp;14&nbsp;065.
 
-[Søk på stillingen](https://posten.easycruit.com/vacancy/application/1894085/44947)
+[Send søknad!](mailto:arne.moen@bring.com?cc=andreas.jacobsen@bring.com)
 
-**Søknadsfrist:** snarest og senest innen 03.09.2017.
 Vi ser frem til å høre fra deg!
