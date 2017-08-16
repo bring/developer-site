@@ -24,10 +24,6 @@
     min-height: 555px;
 }
 
-.blog__post__header {
-
-}
-
 .blog__post__heading {
     margin: 0;
 
@@ -56,6 +52,9 @@
     color: $medium-grey;
     &:hover {
         color: $dark-grey;
+    }
+    &:not(:last-child) {
+    margin-right: 0.5rem;
     }
 }
 
@@ -134,4 +133,17 @@
 .blog h3 {
     font-size: 1.3rem;
     margin-bottom: 0;
+}
+
+.blog blockquote {
+    border-left: 4px solid #ddd;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+.blog hr {
+    border: none;
+    border-bottom: 2px solid #ddd;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
