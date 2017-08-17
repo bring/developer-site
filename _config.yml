@@ -1,7 +1,7 @@
 # Site settings
 title: Bring Developer
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://developer.bring.com" # the base hostname & protocol for your site
+url: "https://developer.bring.com" # the base hostname & protocol for your site
 permalink: /blog/:title/
 
 # RAML settings
@@ -35,7 +35,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-sass: 
+sass:
   style: compressed
 
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, LICENSE]

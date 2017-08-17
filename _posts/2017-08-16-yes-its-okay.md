@@ -9,7 +9,7 @@ author:
 
 ---
 
-We really like an idea that the team at Government Digital Service (GDS) wrote about last year in blogpost: [It's ok to say what's ok](https://gds.blog.gov.uk/2016/05/25/its-ok-to-say-whats-ok/). 🙌
+We really like an idea that the team at Government Digital Service (GDS) wrote about last year in a blogpost: [It's ok to say what's ok](https://gds.blog.gov.uk/2016/05/25/its-ok-to-say-whats-ok/). 🙌
 
 > Maybe we just need to say what’s ok. To be explicit about the things that those of us who have been here a few years take for granted. So our team wrote a list of things it's ok to do at GDS.
 
