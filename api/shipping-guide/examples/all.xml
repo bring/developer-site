@@ -15,6 +15,9 @@
       <HelpText>Sendingen er en Klimanøytral Servicepakke som blir levert til mottakers postkontor/ post i butikk. Mottaker kan velge å hente sendingen på et annet postkontor/post i butikk enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Transporttid er normalt 1-3 virkedager, avhengig av strekning. Sendingen kan spores ved hjelp av sporingsnummeret.</HelpText>
       <Tip>Minst miljøbelastende!</Tip>
       <MaxWeightInKgs>35</MaxWeightInKgs>
+      <ShortName>Klimanøytral Servicepakke</ShortName>
+      <ProductURL>http://www.bring.no/sende/pakker/private-i-norge/hentes-pa-posten</ProductURL>
+      <DeliveryType>Hentested</DeliveryType>
     </GuiInformation>
     <Price currencyIdentificationCode="NOK">
       <PackagePriceWithoutAdditionalServices>
@@ -45,6 +48,9 @@
       <ProductName>Bedriftspakke</ProductName>
       <DescriptionText>Leveres uten at sjåføren ringer først</DescriptionText>
       <HelpText>Sendingen er en Bedriftspakke som leveres til mottakers arbeidssted mellom klokken 08 og 16. Bestiller du varsling, vil mottaker varsles når sendingen er lastet på bil for uttkjøring, via SMS og/eller e-post. Dersom sendingen ikke kan leveres, blir den fraktet til lokalt postkontor/ post i butikk. Mottaker varsles om dette via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingssnummeret.</HelpText>
+      <ShortName>Klimanøytral Servicepakke</ShortName>
+      <ProductURL>http://www.bring.no/sende/pakker/private-i-norge/hentes-pa-posten</ProductURL>
+      <DeliveryType>Hentested</DeliveryType>
       <Tip/>
       <MaxWeightInKgs>35</MaxWeightInKgs>
     </GuiInformation>
@@ -75,8 +81,16 @@
       <SubDisplayCategory>Til døren</SubDisplayCategory>
       <DisplayName>Ekspress over natten</DisplayName>
       <ProductName>Bedriftspakke Ekspress-Over natten</ProductName>
-      <DescriptionText>Levering på dør vil skje påfølgende dag før kl 0900. På ditt postnummer vil noen adresser få levering innen kl 1600.</DescriptionText>
-      <HelpText>Levering hjem på dør før kl 0900 (til mindre steder normalt før kl 1600). Du kan varsles ved SMS/e-post, forutsatt at du har oppgitt telefonnummer/epostadresse ved bestilling. Sendingen kan spores ved hjelp av sporingsnummeret.</HelpText>
+      <DescriptionText>Levering på dør vil skje påfølgende dag før kl 0900. På ditt postnummer vil noen adresser få
+        levering innen kl 1600.
+      </DescriptionText>
+      <HelpText>Levering hjem på dør før kl 0900 (til mindre steder normalt før kl 1600). Du kan varsles ved SMS/e-post,
+        forutsatt at du har oppgitt telefonnummer/epostadresse ved bestilling. Sendingen kan spores ved hjelp av
+        sporingsnummeret.
+      </HelpText>
+      <ShortName>Bedriftspakke ekspress over natten</ShortName>
+      <ProductURL>http://www.bring.no/sende/pakker/bedrift-i-norge/hurtig-til-bedrift</ProductURL>
+      <DeliveryType>Dør</DeliveryType>
       <Tip/>
       <MaxWeightInKgs>35</MaxWeightInKgs>
     </GuiInformation>
