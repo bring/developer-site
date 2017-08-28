@@ -133,33 +133,40 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
-                {% if method[1].bodies.size > 0 %}
+                {% if method.body %}
                   <h2 class="delta">Request body</h2>
+                  {% comment %}
+
+                  Request body type
+
+                  {% endcomment %}
+
+
                   {% comment %}
 
                   Tabs for JSON, XML, SOAP
 
                   {% endcomment %}
                   <ul class="codetabs" role="tablist">
-                  {% for body in method[1].bodies %}
-                    {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
+                  {% for body in method.body %}
+                    {% assign mt_display_name = body[1].name | mediatype_displayname %}
                     {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
                     <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
                   {% endfor %}
                   </ul>
                   <div class="codetabs__content">
-                  {% for body in method[1].bodies %}
-                    {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-                    {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
-                    {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
+                  {% for body in method.body %}
+                    {% assign mt_display_name = body[1].name | mediatype_displayname %}
+                    {% assign hljs_lang = body[1].name | mediatype_highlight_lang  %}
+                    {% assign tab_id =  method.method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
                     <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
                       <div class="content">
                       {% if hljs_lang == 'xml' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].structuredExample.value | xml_escape}}</code></pre>
                       {% elsif hljs_lang == 'html' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].structuredExample.value | xml_escape}}</code></pre>
                       {% elsif hljs_lang == 'json' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
+                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].structuredExample.value }}</code></pre>
                       {% endif %}
                       </div>
                     </div>
@@ -296,6 +303,17 @@ layout: redesign
               </section>
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
+
+
+            {% comment %}
+
+            List API types
+
+            {% endcomment %}
+            <section class="api__section">
+              <h2 class="anchored">Types</h2>
+                {% include raml_type.html type='OrderWithLabels' types=page.api.types %}
+            </section>
 
             <section class="api__section">
               {% include disqus.html %}

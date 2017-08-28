@@ -1,0 +1,55 @@
+{% for wrappedTypeDefinitionHash in include.types %}
+  {% for typeDefinitionHash in wrappedTypeDefinitionHash %}
+    {% assign typeDefinition = typeDefinitionHash[1] %}
+
+    {% unless include.hide_header %}
+    <h3 class="anchored">{{ typeDefinition.name }}</h3>
+    {% endunless %}
+
+    {% case typeDefinition.type[0] %}
+
+    {% when 'string' %}
+      it's a string type
+
+    {% when 'number' or 'integer' %}
+      it's a numeric type
+
+    {% when 'boolean' %}
+      it's a bool type
+
+    {% when 'date-only' or 'time-only' or 'datetime-only' or 'datetime' %}
+      it's a date-ish type
+
+    {% when 'file' %}
+      it's any type
+
+    {% when 'any' %}
+      it's any type
+
+    {% when 'nil' %}
+      it's a nil type
+
+    {% when 'array' %}
+      it's an array of {{ typeDefinition.items }}
+
+    {% when 'object' %}
+      {% assign desc = '' %}
+      <table>
+        <thead>
+          <th>Field</th>
+          <th>Type</th>
+          <th>Description</th>
+        </thead>
+        <tbody>
+        {% for propHash in typeDefinition.properties %}
+          {% assign prop = propHash[1] %}
+          {% include raml_type_row.html prop=prop %}
+        {% endfor %}
+        </tbody>
+      </table>
+
+    {% else %}
+      it's a custom type of {{ typeDefinition.type[0] }}
+    {% endcase %}
+  {% endfor %}
+{% endfor %}

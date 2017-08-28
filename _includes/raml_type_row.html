@@ -1,0 +1,57 @@
+{% assign prop = include.prop %}
+{% assign prefix = '' | append: include.prefix %}
+<tr>
+  <td><code>{{ prefix | append: prop.name }}</code></td>
+  <td><code>{{ prop.type }}</code></td>
+  <td>
+    {% if include.hide_required %}
+      {% assign desc = '' %}
+    {% elsif prop.required %}
+      {% assign desc = '_Required._ ' %}
+    {% else %}
+      {% assign desc = '_Optional._ ' %}
+    {% endif %}
+
+    {% if prop.displayName != prop.name %}
+      {% assign desc = desc | append: prop.displayName | append: '. ' %}
+    {% endif %}
+
+    {% if prop.description %}
+      {% assign desc = desc | append: prop.description %}
+    {% endif %}
+
+    {{ desc | markdownify }}
+
+    {% if prop.enum %}
+    Possible values
+    <ul>
+      {% for item in prop.enum %}
+      <li><code>{{ item }}</code></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if prop.default %}
+      <br/>
+      <em>Default value:</em> <code>{{ prop.default }}</code>
+    {% endif %}
+
+    {% if prop.pattern %}
+      <br/>
+      <em>Pattern:</em> <code>{{ prop.pattern }}</code>
+    {% endif %}
+
+    {% if prop.example %}
+      <br/>
+      <em>Example:</em> <code>{{ prop.example }}</code>
+    {% endif %}
+  </td>
+</tr>
+
+{% if prop.type[0] == 'object' %}
+  {% for propHash in prop.properties %}
+    {% assign subProp = propHash[1] %}
+    {% assign subPrefix = prefix %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix %}
+  {% endfor %}
+{% endif %}
