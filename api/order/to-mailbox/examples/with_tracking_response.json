@@ -90,14 +90,14 @@
           "agreementNumber": false
         }
       ],
-      "labelUri": "https://example.com/17673176-8531-48dd-b407-d84bb2f26a8b.zpl",
-      "rfidLabelUri": "",
+      "labelUri": "",
+      "rfidLabelUri": "https://example.com/17673176-8531-48dd-b407-d84bb2f26a8b.zpl",
       "waybillUri": "https://example.com/bafc82c5-e8c2-4abf-4c0a-c40ff06eb4fa.pdf",
       "priceWithoutVat": 193.25,
       "priceWithVat": 241.55,
       "vat": 48.30,
       "currency": "NOK",
-      "orderTime": "2017-09-01T11:59:32.410Z",
+      "orderTime": "2017-09-01T11:59:32.410168Z",
       "userEmail": "user@example.com",
       "userPhone": "+4790123456",
       "userFullName": "Art Vandelay",

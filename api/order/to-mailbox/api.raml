@@ -5,15 +5,6 @@ version: v1
 baseUri: https://api.bring.com/order/to-mailbox
 mediaType: application/json
 types:
-  PostalCode:
-    type: string
-    pattern: "[0-9][0-9][0-9][0-9]"
-  EmailAddress:
-    type: string
-    pattern: ".+@.+"
-  PhoneNumber:
-    type: string
-    pattern: "\\+[0-9]+"
   Order:
     type: object
     properties:
@@ -21,8 +12,14 @@ types:
         type: string
       senderName:
         type: string
+      senderEmail:
+        required: false
+        type: string
+        pattern: ".+@.+"
+        description: Defaults to the user's email address.
       postalCode:
-        type: PostalCode
+        type: string
+        description: A valid Norwegian postal code.
       streetAddress:
         type: string
       reference:
@@ -30,33 +27,12 @@ types:
       packages:
         minItems: 1
         type: Package[]
-  OrderWithLabels:
-    type: Order
-    properties:
-      id: number
-      customerName: string
-      email: EmailAddress
-      labelUri:
-        type: string
-        description: URL to PDF label if ordered without tracking.
-      rfidLabelUri:
-        type: string
-        description: URL to ZPL label if ordered with tracking.
-      priceWithoutVat:
-        type: number
-      priceWithVat:
-        type: number
-      currency:
-        type: string
-        default: NOK
-      postalPlace: string
-      packages: PackageWithNumbers[]
   Package:
     type: object
     properties:
       priority:
         enum: [ A, B ]
-        description: Tracking with RFID
+        description: Delivery speed (A-post or B-post).
       rfid:
         type: boolean
         description: Whether to activate [tracking for the package](#tracking-with-rfid)
@@ -65,17 +41,108 @@ types:
         type: integer
       recipientName: string
       postalCode:
-        type: PostalCode
+        type: string
+        description: A valid Norwegian postal code.
       streetAddress:
         type: string
       phoneNumber:
-        type: PhoneNumber
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: A phone number including country code
+        example: "+4700000000"
       email:
-        type: EmailAddress
-  PackageWithNumbers:
-    type: Package
+        type: string
+        pattern: ".+@.+"
+  SuccessfulOrder:
     properties:
-      postalPlace: string
+      id:
+        type: number
+      customerName:
+        type: string
+      customerOrganizationNumber:
+        type: string
+      customerNumber:
+        type: string
+      senderName:
+        type: string
+      streetAddress:
+        type: string
+      postalCode:
+        type: string
+        description: A valid Norwegian postal code.
+      postalPlace:
+        type: string
+      email:
+        type: string
+        pattern: ".+@.+"
+      reference:
+        type: string
+      labelUri:
+        type: string
+        description: URL to PDF label if ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label if ordered with tracking.
+      waybillUri:
+        type: string
+        description: URL to waybill PDF that goes with the order.
+      priceWithoutVat:
+        type: number
+      priceWithVat:
+        type: number
+      vat:
+        type: number
+      currency:
+        type: string
+        default: NOK
+      orderTime:
+        type: datetime
+      userEmail:
+        type: string
+        description: The email address for the user that placed the order.
+      userPhone:
+        type: string
+        description: The phone number for the user that placed the order.
+      userFullName:
+        type: string
+        description: The name for the user that placed the order.
+      orderNumberReference:
+        type: string
+        description: The order number reference for the placed order. This is the number on the waybill.
+      packages:
+        minItems: 1
+        type: OrderedPackage[]
+  OrderedPackage:
+    properties:
+      priority:
+        enum: [ A, B ]
+        description: Delivery speed (A-post or B-post).
+      rfid:
+        type: boolean
+        description: Whether to [tracking for the package](#tracking-with-rfid) was activated.
+      specialist:
+        type: string
+        description: The type of customer for which the order was placed.
+      recipientName:
+        type: string
+      streetAddress:
+        type: string
+      postalCode:
+        type: string
+        description: A valid Norwegian postal code.
+      postalPlace:
+        type: string
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: A phone number including country code
+        example: "+4700000000"
+      email:
+        type: string
+        pattern: ".+@.+"
+      weight:
+        maximum: 2000
+        type: integer
       shipmentNumber:
         type: string
         description: The shipment number for this package.
@@ -105,7 +172,7 @@ types:
             type: string
             pattern: "order"
           id: string
-          attributes: OrderWithLabels
+          attributes: SuccessfulOrder
   ErrorResponse:
     type: object
     properties:
@@ -218,7 +285,7 @@ documentation:
             required: false
     body:
       application/json:
-        example: !include examples/without_tracking.json
+        example: !include examples/without_tracking_request.json
         type: OrderRequest
     responses:
       201:
