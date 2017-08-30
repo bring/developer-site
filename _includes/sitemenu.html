@@ -32,9 +32,16 @@
             {% if active_page %}
             <ul class="list-bare sitemenu__sublist">
               <li class="active" data-scrollspy="#api-documentation"><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
-              {% for resource in api_page.api.resources %}
-                <li data-scrollspy="#{{ resource.display_name | slugify }}"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
-              {% endfor %}
+              {% if api_page.api.types %}
+                {% for resource in api_page.api.resources %}
+                  <li data-scrollspy="#{{ resource.displayName | slugify }}"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.displayName | slugify }}"><span data-hover="{{ resource.displayName }}">{{ resource.displayName }}</span></a></li>
+                {% endfor %}
+                <li data-scrollspy="#types"><a href="{{ site.baseurl }}{{ api_page.url }}#types"><span data-hover="Types">Types</span></a></li>
+              {% else %}
+                {% for resource in api_page.api.resources %}
+                  <li data-scrollspy="#{{ resource.display_name | slugify }}"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
+                {% endfor %}
+              {% endif %}
             </ul>
             {% endif %}
           </li>
