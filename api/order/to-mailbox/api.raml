@@ -190,18 +190,6 @@ types:
         default: NOK
       orderTime:
         type: datetime
-      userEmail:
-        type: string
-        description: The email address for the user that placed the order.
-      userPhone:
-        type: string
-        description: The phone number for the user that placed the order.
-      userFullName:
-        type: string
-        description: The name for the user that placed the order.
-      orderNumberReference:
-        type: string
-        description: The order number reference for the placed order. This is the number on the waybill.
       packages:
         minItems: 1
         type: ValidatedPackage[]
@@ -257,6 +245,17 @@ types:
             pattern: "order"
           id: string
           attributes: SuccessfulOrder
+  ValidatedOrderResponse:
+    type: object
+    properties:
+      data:
+        type: object
+        properties:
+          type:
+            type: string
+            pattern: "order"
+          id: string
+          attributes: ValidatedOrder
   ErrorResponse:
     type: object
     properties:
@@ -372,6 +371,12 @@ documentation:
         example: !include examples/without_tracking_request.json
         type: OrderRequest
     responses:
+      200:
+        description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
+        body:
+          application/json:
+            type: ValidatedOrderResponse
+            example: !include examples/validate_order_response.json
       201:
         description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
         body:
