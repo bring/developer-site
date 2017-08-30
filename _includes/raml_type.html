@@ -2,6 +2,10 @@
   {% for typeDefinitionHash in wrappedTypeDefinitionHash %}
     {% assign typeDefinition = typeDefinitionHash[1] %}
 
+    {% if typeDefinition.annotations and typeDefinition.annotations.hideInDocumentation and typeDefinition.annotations.hideInDocumentation.structuredValue %}
+      {% continue %}
+    {% endif %}
+
     {% unless include.hide_header %}
     <h3 class="anchored">{{ typeDefinition.name }}</h3>
     {% endunless %}

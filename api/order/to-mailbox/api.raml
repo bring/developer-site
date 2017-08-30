@@ -4,6 +4,8 @@ title: Order to Mailbox API
 version: v1
 baseUri: https://api.bring.com/order/to-mailbox
 mediaType: application/json
+annotationTypes:
+  hideInDocumentation: boolean
 types:
   Order:
     type: object
@@ -225,6 +227,7 @@ types:
         type: boolean
         description: Whether you got an agreement price for this package.
   OrderRequest:
+    (hideInDocumentation): true
     type: object
     properties:
       data:
@@ -235,6 +238,7 @@ types:
             pattern: "orders"
           attributes: Order
   SuccessfulOrderResponse:
+    (hideInDocumentation): true
     type: object
     properties:
       data:
@@ -246,6 +250,7 @@ types:
           id: string
           attributes: SuccessfulOrder
   ValidatedOrderResponse:
+    (hideInDocumentation): true
     type: object
     properties:
       data:
@@ -257,12 +262,14 @@ types:
           id: string
           attributes: ValidatedOrder
   ErrorResponse:
+    (hideInDocumentation): true
     type: object
     properties:
       errors:
         type: ErrorObject[]
         description: See the [JSON-API documentation](http://jsonapi.org/format/#error-objects).
   ErrorObject:
+    (hideInDocumentation): true
     type: object
     properties:
       code:
