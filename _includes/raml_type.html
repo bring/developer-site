@@ -13,7 +13,7 @@
 
     <article class="api__type">
       {% unless include.hide_header %}
-      <h4 class="anchored">Type: {{ typeDefinition.displayName }}</h4>
+      <h4 class="anchored" id="type-{{ typeDefinition.name | slugify }}">{{ typeDefinition.displayName }}</h4>
       {% endunless %}
 
       {% case typeDefinition.type[0] %}
