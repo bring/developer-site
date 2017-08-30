@@ -6,6 +6,11 @@
       {% continue %}
     {% endif %}
 
+    {% assign hide_required = false %}
+    {% if typeDefinition.annotations and typeDefinition.annotations.hideRequired and typeDefinition.annotations.hideRequired.structuredValue %}
+      {% assign hide_required = true %}
+    {% endif %}
+
     <article class="api__type">
       {% unless include.hide_header %}
       <h4 class="anchored">Type: {{ typeDefinition.displayName }}</h4>
@@ -48,7 +53,7 @@
           <tbody>
           {% for propHash in typeDefinition.properties %}
             {% assign prop = propHash[1] %}
-            {% include raml_type_row.html prop=prop %}
+            {% include raml_type_row.html prop=prop hide_required=hide_required %}
           {% endfor %}
           </tbody>
         </table>

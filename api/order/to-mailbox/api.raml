@@ -6,6 +6,7 @@ baseUri: https://api.bring.com/order/to-mailbox
 mediaType: application/json
 annotationTypes:
   hideInDocumentation: boolean
+  hideRequired: boolean
 types:
   Order:
     type: object
@@ -56,6 +57,7 @@ types:
         type: string
         pattern: ".+@.+"
   SuccessfulOrder:
+    (hideRequired): true
     displayName: Successful Order
     properties:
       id:
@@ -119,6 +121,7 @@ types:
         minItems: 1
         type: OrderedPackage[]
   OrderedPackage:
+    (hideRequired): true
     displayName: Ordered Package
     properties:
       priority:
@@ -160,6 +163,7 @@ types:
         type: boolean
         description: Whether you got an agreement price for this package.
   ValidatedOrder:
+    (hideRequired): true
     displayName: Validated Order
     properties:
       id:
@@ -199,6 +203,7 @@ types:
         minItems: 1
         type: ValidatedPackage[]
   ValidatedPackage:
+    (hideRequired): true
     displayName: Validated Package
     properties:
       priority:
@@ -242,6 +247,7 @@ types:
             pattern: "orders"
           attributes: Order
   SuccessfulOrderResponse:
+    (hideRequired): true
     (hideInDocumentation): true
     type: object
     properties:
@@ -254,6 +260,7 @@ types:
           id: string
           attributes: SuccessfulOrder
   ValidatedOrderResponse:
+    (hideRequired): true
     (hideInDocumentation): true
     type: object
     properties:
@@ -266,6 +273,7 @@ types:
           id: string
           attributes: ValidatedOrder
   ErrorResponse:
+    (hideRequired): true
     (hideInDocumentation): true
     type: object
     properties:
@@ -273,6 +281,7 @@ types:
         type: ErrorObject[]
         description: See the [JSON-API documentation](http://jsonapi.org/format/#error-objects).
   ErrorObject:
+    (hideRequired): true
     (hideInDocumentation): true
     type: object
     properties:
