@@ -20,7 +20,7 @@ end
 desc 'Build the _site directory'
 task :build => [:clean, :install_dependencies] do
   puts '= build using jekyll'
-  system('bundle exec jekyll build --trace')
+  system('JEKYLL_ENV=production bundle exec jekyll build --trace')
 end
 
 desc 'Run locally using jekyll'
