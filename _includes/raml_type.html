@@ -6,54 +6,56 @@
       {% continue %}
     {% endif %}
 
-    {% unless include.hide_header %}
-    <h4 class="anchored">{{ typeDefinition.displayName }}</h4>
-    {% endunless %}
+    <article class="api__type">
+      {% unless include.hide_header %}
+      <h4 class="anchored">Type: {{ typeDefinition.displayName }}</h4>
+      {% endunless %}
 
-    {% case typeDefinition.type[0] %}
+      {% case typeDefinition.type[0] %}
 
-    {% when 'string' %}
-      it's a string type
+      {% when 'string' %}
+        it's a string type
 
-    {% when 'number' or 'integer' %}
-      it's a numeric type
+      {% when 'number' or 'integer' %}
+        it's a numeric type
 
-    {% when 'boolean' %}
-      it's a bool type
+      {% when 'boolean' %}
+        it's a bool type
 
-    {% when 'date-only' or 'time-only' or 'datetime-only' or 'datetime' %}
-      it's a date-ish type
+      {% when 'date-only' or 'time-only' or 'datetime-only' or 'datetime' %}
+        it's a date-ish type
 
-    {% when 'file' %}
-      it's any type
+      {% when 'file' %}
+        it's any type
 
-    {% when 'any' %}
-      it's any type
+      {% when 'any' %}
+        it's any type
 
-    {% when 'nil' %}
-      it's a nil type
+      {% when 'nil' %}
+        it's a nil type
 
-    {% when 'array' %}
-      it's an array of {{ typeDefinition.items }}
+      {% when 'array' %}
+        it's an array of {{ typeDefinition.items }}
 
-    {% when 'object' %}
-      {% assign desc = '' %}
-      <table>
-        <thead>
-          <th>Field</th>
-          <th>Type</th>
-          <th>Description</th>
-        </thead>
-        <tbody>
-        {% for propHash in typeDefinition.properties %}
-          {% assign prop = propHash[1] %}
-          {% include raml_type_row.html prop=prop %}
-        {% endfor %}
-        </tbody>
-      </table>
+      {% when 'object' %}
+        {% assign desc = '' %}
+        <table>
+          <thead>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+          {% for propHash in typeDefinition.properties %}
+            {% assign prop = propHash[1] %}
+            {% include raml_type_row.html prop=prop %}
+          {% endfor %}
+          </tbody>
+        </table>
 
-    {% else %}
-      it's a custom type of {{ typeDefinition.type[0] }}
-    {% endcase %}
+      {% else %}
+        it's a custom type of {{ typeDefinition.type[0] }}
+      {% endcase %}
+    </article>
   {% endfor %}
 {% endfor %}
