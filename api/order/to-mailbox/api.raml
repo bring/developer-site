@@ -56,6 +56,7 @@ types:
         type: string
         pattern: ".+@.+"
   SuccessfulOrder:
+    displayName: Successful Order
     properties:
       id:
         type: number
@@ -118,6 +119,7 @@ types:
         minItems: 1
         type: OrderedPackage[]
   OrderedPackage:
+    displayName: Ordered Package
     properties:
       priority:
         enum: [ A, B ]
@@ -158,6 +160,7 @@ types:
         type: boolean
         description: Whether you got an agreement price for this package.
   ValidatedOrder:
+    displayName: Validated Order
     properties:
       id:
         type: number
@@ -196,6 +199,7 @@ types:
         minItems: 1
         type: ValidatedPackage[]
   ValidatedPackage:
+    displayName: Validated Package
     properties:
       priority:
         enum: [ A, B ]
