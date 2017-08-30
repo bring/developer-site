@@ -234,7 +234,7 @@ types:
             type: string
             pattern: "orders"
           attributes: Order
-  OrderResponse:
+  SuccessfulOrderResponse:
     type: object
     properties:
       data:
@@ -381,7 +381,7 @@ documentation:
         description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
         body:
           application/json:
-            type: OrderResponse
+            type: SuccessfulOrderResponse
             example: !include examples/without_tracking_response.json
       422:
         description: Validation error
@@ -413,5 +413,5 @@ documentation:
       200:
         body:
           application/json:
-            type: OrderResponse
+            type: SuccessfulOrderResponse
             example: !include examples/without_tracking_response.json
