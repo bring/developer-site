@@ -1,13 +1,13 @@
 {% assign prop = include.prop %}
 {% assign propType = prop.type[0] %}
 {% assign prefix = '' | append: include.prefix %}
-{% assign ramlBultInTypes = 'any,object,array,number,boolean,string,date-only,time-only,datetime-only,datetime,file,integer,nil' | split:',' %}
 <tr>
   <td><code>{{ prefix | append: prop.name }}</code></td>
   <td>
     {% if propType == 'array' %}
-      {% if ramlBultInTypes | contains prop.items %}
-        <code>array of {{ prop.items }} (builtin)</code>
+      {% assign is_builtin = prop.items | is_raml_builtin_type %}
+      {% if is_builtin %}
+        <code>array of {{ prop.items }}</code>
       {% else %}
         <code>array of <a href="#type-{{ prop.items | slugify }}">{{ prop.items }}</a></code>
       {% endif %}
