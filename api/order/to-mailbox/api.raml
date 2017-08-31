@@ -13,23 +13,29 @@ types:
     properties:
       customerNumber:
         type: string
+        description: API customer number for which to place the order.
       senderName:
         type: string
+        description: Sender's name.
+        example: Min Bedrift
       senderEmail:
         required: false
         type: string
         pattern: ".+@.+"
-        description: Defaults to the user's email address.
+        description: Sender's email address. Defaults to the user's email address.
       postalCode:
         type: string
-        description: A valid Norwegian postal code.
+        description: Sender's postal code. Must be a valid Norwegian postal code.
       streetAddress:
         type: string
+        description: Sender's street address.
       reference:
         required: true
+        description: A reference for the shipment (all packages).
       packages:
         minItems: 1
         type: Package[]
+        description: The packages to send in this shipment.
   Package:
     type: object
     properties:
@@ -38,50 +44,64 @@ types:
         description: Delivery speed (A-post or B-post).
       rfid:
         type: boolean
-        description: Whether to activate [tracking for the package](#tracking-with-rfid)
+        description: Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.
       weight:
         maximum: 2000
         type: integer
-      recipientName: string
+        description: Weight in grams.
+      recipientName:
+        type: string
+        description: Recipient name.
       postalCode:
         type: string
         description: A valid Norwegian postal code.
       streetAddress:
         type: string
+        description: Recipient's street address.
       phoneNumber:
         type: string
         pattern: "\\+[0-9 ]+"
-        description: A phone number including country code
+        description: Recipient's phone number, including country code.
         example: "+4700000000"
       email:
         type: string
         pattern: ".+@.+"
+        description: Recipient's email address.
   SuccessfulOrder:
     (hideRequired): true
     displayName: Successful Order
     properties:
       id:
         type: number
-      customerName:
-        type: string
-      customerOrganizationNumber:
-        type: string
+        description: The ID of the order that was placed.
       customerNumber:
         type: string
+        description: The API customer number for which the order was placed.
+      customerName:
+        type: string
+        description: The name of the customer for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
       senderName:
         type: string
+        description: Sender's name.
       streetAddress:
         type: string
+        description: Sender's street address.
       postalCode:
         type: string
-        description: A valid Norwegian postal code.
+        description: Sender's postal code.
       postalPlace:
         type: string
+        description: The city/place for the postal code.
       email:
         type: string
         pattern: ".+@.+"
+        description: Sender's email address that for the order that was placed.
       reference:
         type: string
+        description: A reference for the shipment (all packages)
       labelUri:
         type: string
         description: URL to PDF label if ordered without tracking.
@@ -93,15 +113,21 @@ types:
         description: URL to waybill PDF that goes with the order.
       priceWithoutVat:
         type: number
+        description: Price of shipment without VAT (MVA).
       priceWithVat:
         type: number
+        description: Price of shipment with VAT (MVA).
       vat:
         type: number
+        description: How much of the price was VAT (MVA).
       currency:
         type: string
         default: NOK
+        description: The currency for the price.
       orderTime:
         type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
       userEmail:
         required: false
         type: string
@@ -119,6 +145,7 @@ types:
         description: The order number reference for the placed order. This is the number on the waybill.
       packages:
         minItems: 1
+        description: Packages in this shipment.
         type: OrderedPackage[]
   OrderedPackage:
     (hideRequired): true
@@ -135,72 +162,86 @@ types:
         description: The type of customer for which the order was placed.
       recipientName:
         type: string
+        description: Recipient name.
       streetAddress:
         type: string
+        description: Recipient's street address.
       postalCode:
         type: string
-        description: A valid Norwegian postal code.
+        description: Recipient's postal code.
       postalPlace:
         type: string
+        description: The city/place for the postal code.
       phoneNumber:
         type: string
         pattern: "\\+[0-9 ]+"
-        description: A phone number including country code
-        example: "+4700000000"
+        description: Recipient's phone number.
       email:
         type: string
         pattern: ".+@.+"
+        description: Recipient's email address.
       weight:
         maximum: 2000
         type: integer
+        description: Package weight in grams.
       shipmentNumber:
         type: string
-        description: The shipment number for this package.
+        description: The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.
       packageNumber:
         type: string
-        description: The package number for this package.
+        description: The package number for this package. This goes on the label.
       agreementNumber:
         type: boolean
-        description: Whether you got an agreement price for this package.
+        description: Whether the customer has an agreement price for this package.
   ValidatedOrder:
     (hideRequired): true
     displayName: Validated Order
     properties:
-      id:
-        type: number
-      customerName:
-        type: string
-      customerOrganizationNumber:
-        type: string
       customerNumber:
         type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The name of the customer for the validated order.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for the validated order.
       senderName:
         type: string
+        description: The sender's name.
       streetAddress:
         type: string
+        description: The sender's street address.
       postalCode:
         type: string
-        description: A valid Norwegian postal code.
+        description: The sender's postal code.
       postalPlace:
         type: string
+        description: The city/place for the postal code.
       email:
         type: string
-        pattern: ".+@.+"
+        description: The sender's email address.
       reference:
         type: string
+        description: A reference for the shipment (all packages).
       priceWithoutVat:
         type: number
+        description: Calculated price without VAT (MVA).
       priceWithVat:
         type: number
+        description: Calulated price with VAT (MVA).
       vat:
         type: number
+        description: Calculated VAT (MVA).
       currency:
         type: string
-        default: NOK
+        description: The price's currency.
       orderTime:
         type: datetime
+        description: Timestamp for when the order was validated.
       packages:
         minItems: 1
+        description: Packages in this validated shipment.
         type: ValidatedPackage[]
   ValidatedPackage:
     (hideRequired): true
@@ -211,41 +252,46 @@ types:
         description: Delivery speed (A-post or B-post).
       rfid:
         type: boolean
-        description: Whether to [tracking for the package](#tracking-with-rfid) was activated.
+        description: Whether to [tracking with RFID](#tracking-with-rfid) was activated for the package.
       recipientName:
         type: string
+        description: Recipient's name.
       streetAddress:
         type: string
+        description: Recipient's email address.
       postalCode:
         type: string
-        description: A valid Norwegian postal code.
+        description: Recipient's postal code.
       postalPlace:
         type: string
+        description: The city/place for the postal code.
       phoneNumber:
         type: string
-        pattern: "\\+[0-9 ]+"
-        description: A phone number including country code
-        example: "+4700000000"
+        description: Recipient's phone number.
       email:
         type: string
-        pattern: ".+@.+"
+        description: Recipient's email address.
       weight:
-        maximum: 2000
         type: integer
+        description: Package weight in grams.
       agreementNumber:
         type: boolean
-        description: Whether you got an agreement price for this package.
+        description: Whether the customer has an agreement price for this package.
   OrderRequest:
     (hideInDocumentation): true
     type: object
     properties:
       data:
         type: object
+        description: JSON-API data object.
         properties:
           type:
             type: string
             pattern: "orders"
-          attributes: Order
+            description: JSON-API type.
+          attributes:
+            type: Order
+            description: Order properties.
   SuccessfulOrderResponse:
     (hideRequired): true
     (hideInDocumentation): true
@@ -253,12 +299,15 @@ types:
     properties:
       data:
         type: object
+        description: JSON-API data object.
         properties:
           type:
             type: string
-            pattern: "order"
+            description: JSON-API type.
           id: string
-          attributes: SuccessfulOrder
+          attributes:
+            type: SuccessfulOrder
+            description: Order properties.
   ValidatedOrderResponse:
     (hideRequired): true
     (hideInDocumentation): true
@@ -266,12 +315,15 @@ types:
     properties:
       data:
         type: object
+        description: JSON-API data object.
         properties:
           type:
             type: string
             pattern: "order"
-          id: string
-          attributes: ValidatedOrder
+            description: JSON-API type.
+          attributes:
+            type: ValidatedOrder
+            description: Order properties.
   ErrorResponse:
     (hideRequired): true
     (hideInDocumentation): true
