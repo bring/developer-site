@@ -67,6 +67,6 @@
   {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
   {% for propHash in prop.properties %}
     {% assign subProp = propHash[1] %}
-    {% include raml_type_row.html prop=subProp prefix=subPrefix %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
   {% endfor %}
 {% endif %}
