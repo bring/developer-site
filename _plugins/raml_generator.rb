@@ -155,7 +155,6 @@ module Jekyll
     end
 
     def is_raml_builtin_type(input)
-      puts "Check if #{input} is builtin"
       ['any', 'object', 'array', 'number', 'boolean', 'string',
         'date-only', 'time-only', 'datetime-only', 'datetime',
         'file', 'integer', 'nil'].include? input
