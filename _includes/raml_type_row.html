@@ -64,7 +64,7 @@
 </tr>
 
 {% if prop.type[0] == 'object' %}
-  {% assign subPrefix = prefix | append: prop.name | append: '.' %}
+  {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
   {% for propHash in prop.properties %}
     {% assign subProp = propHash[1] %}
     {% include raml_type_row.html prop=subProp prefix=subPrefix %}
