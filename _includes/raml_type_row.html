@@ -1,21 +1,15 @@
 {% assign prop = include.prop %}
 {% assign propType = prop.type[0] %}
 {% assign prefix = '' | append: include.prefix %}
+{% assign is_custom_type = propType | is_raml_custom_type %}
+
 <tr>
   <td><code>{{ prefix | append: prop.name }}</code></td>
   <td>
-    {% assign is_custom_type = propType | is_raml_custom_type %}
-    {% if propType == 'array' %}
-      {% assign is_builtin = prop.items | is_raml_builtin_type %}
-      {% if is_builtin %}
-        <code>array of {{ prop.items }}</code>
-      {% else %}
-        <code>array of <a href="#type-{{ prop.items | slugify }}">{{ prop.items }}</a></code>
-      {% endif %}
-    {% elsif is_custom_type %}
-      <code><a href="#type-{{ propType | slugify }}">{{ propType }}</a></code>
+    {% if is_custom_type %}
+      <code>object</code>
     {% else %}
-    <code>{{ propType }}</code>
+      <code>{{ propType }}</code>
     {% endif %}
   </td>
   <td>
@@ -63,9 +57,23 @@
   </td>
 </tr>
 
-{% if prop.type[0] == 'object' %}
+{% if propType == 'object' %}
   {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
   {% for propHash in prop.properties %}
+    {% assign subProp = propHash[1] %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
+  {% endfor %}
+{% elsif propType == 'array' %}
+  {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
+  {% assign subType = page.api.types | extract_type: prop.items %}
+  {% for propHash in subType.properties %}
+    {% assign subProp = propHash[1] %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
+  {% endfor %}
+{% elsif is_custom_type %}
+  {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
+  {% assign subType = page.api.types | extract_type: propType %}
+  {% for propHash in subType.properties %}
     {% assign subProp = propHash[1] %}
     {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
   {% endfor %}

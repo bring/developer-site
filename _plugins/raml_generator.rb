@@ -1,6 +1,7 @@
 require 'raml_parser'
 require 'jekyll'
 require 'json'
+require 'pp'
 
 module Jekyll
 
@@ -162,6 +163,15 @@ module Jekyll
 
     def is_raml_custom_type(input)
       not is_raml_builtin_type(input)
+    end
+
+    def extract_type(types, type_name)
+      match = types.select do |t|
+        t[type_name]
+      end
+
+      first_match = match.first
+      if first_match then first_match[type_name] else nil end
     end
 
   end
