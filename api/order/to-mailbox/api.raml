@@ -10,6 +10,7 @@ annotationTypes:
 types:
   Order:
     type: object
+    description: An order to place in Mybring.
     properties:
       customerNumber:
         type: string
@@ -38,6 +39,7 @@ types:
         description: The packages to send in this shipment.
   Package:
     type: object
+    description: A single package in a shipment.
     properties:
       priority:
         enum: [ A, B ]
@@ -70,6 +72,7 @@ types:
   SuccessfulOrder:
     (hideRequired): true
     displayName: Successful Order
+    description: A successfully placed order that contains links to labels and waybill.
     properties:
       id:
         type: number
@@ -150,6 +153,7 @@ types:
   OrderedPackage:
     (hideRequired): true
     displayName: Ordered Package
+    description: A single package in a successfully ordered shipment.
     properties:
       priority:
         enum: [ A, B ]
@@ -196,6 +200,7 @@ types:
   ValidatedOrder:
     (hideRequired): true
     displayName: Validated Order
+    description: A valid order that can be placed.
     properties:
       customerNumber:
         type: string
@@ -246,6 +251,7 @@ types:
   ValidatedPackage:
     (hideRequired): true
     displayName: Validated Package
+    description: A single, valid package in a valid shipment.
     properties:
       priority:
         enum: [ A, B ]
