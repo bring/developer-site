@@ -40,7 +40,7 @@
           "email": "recipient@example.com"
         },
         {
-          "priority": "A",
+          "priority": "B",
           "rfid": false,
           "weight": 200,
           "recipientName": "Dina Davidsen",
@@ -50,7 +50,7 @@
           "email": "recipient@example.com"
         },
         {
-          "priority": "A",
+          "priority": "B",
           "rfid": false,
           "weight": 150,
           "recipientName": "Eskil Erlandsen",

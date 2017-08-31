@@ -13,9 +13,9 @@
       "postalPlace": "OSLO",
       "email": "sender@example.com",
       "reference": "Fredag uke 35",
-      "priceWithoutVat": 193.25,
-      "priceWithVat": 241.55,
-      "vat": 48.30,
+      "priceWithoutVat": 189.45,
+      "priceWithVat": 236.81,
+      "vat": 47.36,
       "currency": "NOK",
       "orderTime": "2017-09-01T11:59:32.410168Z",
       "userEmail": "user@example.com",
@@ -72,7 +72,7 @@
           "agreementNumber": false
         },
         {
-          "priority": "A",
+          "priority": "B",
           "rfid": true,
           "specialist": "PARCELS_NORWAY",
           "recipientName": "Dina Davidsen",
@@ -87,7 +87,7 @@
           "agreementNumber": false
         },
         {
-          "priority": "A",
+          "priority": "B",
           "rfid": true,
           "specialist": "PARCELS_NORWAY",
           "recipientName": "Eskil Erlandsen",

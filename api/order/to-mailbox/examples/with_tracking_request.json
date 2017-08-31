@@ -40,8 +40,8 @@
           "email": "recipient@example.com"
         },
         {
-          "priority": "A",
-          "rfid": true,
+          "priority": "B",
+          "rfid": false,
           "weight": 200,
           "recipientName": "Dina Davidsen",
           "postalCode": "1337",
@@ -50,8 +50,8 @@
           "email": "recipient@example.com"
         },
         {
-          "priority": "A",
-          "rfid": true,
+          "priority": "B",
+          "rfid": false,
           "weight": 150,
           "recipientName": "Eskil Erlandsen",
           "postalCode": "0666",
