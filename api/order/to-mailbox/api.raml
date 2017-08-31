@@ -489,7 +489,15 @@ documentation:
         enum: [ application/json ]
     responses:
       200:
+        description: Success!!!!
         body:
           application/json:
+            displayName: JSON response
+            description: A response in the form of application/json
+            type: SuccessfulOrderResponse
+            example: !include examples/without_tracking_response.json
+          application/vnd.api+json:
+            displayName: Also JSON response
+            description: A response in the form of application/vnd.api+json
             type: SuccessfulOrderResponse
             example: !include examples/without_tracking_response.json
