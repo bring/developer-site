@@ -324,17 +324,6 @@ layout: redesign
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
 
-
-            {% comment %}
-
-            List API types
-
-            {% endcomment %}
-            <section class="api__section">
-              <h2 class="anchored">Types</h2>
-                {% include raml_type.html types=page.api.types %}
-            </section>
-
             <section class="api__section">
               {% include disqus.html %}
             </section>
