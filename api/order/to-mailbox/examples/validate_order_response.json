@@ -1,9 +1,7 @@
 {
   "data": {
     "type": "order",
-    "id": "2664",
     "attributes": {
-      "id": 2664,
       "customerName": "Posten Norge AS",
       "customerOrganizationNumber": "984661185",
       "customerNumber": "PARCELS_NORWAY-1234567890",
@@ -17,7 +15,7 @@
       "priceWithVat": 236.81,
       "vat": 47.36,
       "currency": "NOK",
-      "orderTime": "2017-09-01T11:59:32.410168Z",
+      "orderTime": "2017-09-01T15:29:32.000+02:00",
       "packages": [
         {
           "priority": "A",
