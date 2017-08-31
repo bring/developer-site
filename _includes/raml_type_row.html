@@ -11,8 +11,10 @@
       {% else %}
         <code>array of <a href="#type-{{ prop.items | slugify }}">{{ prop.items }}</a></code>
       {% endif %}
+    {% elsif propType | is_raml_builtin_type %}
+      <code>{{ propType }} (builtin)</code>
     {% else %}
-      <code>{{ propType }}</code>
+      <code><a href="#type-{{ propType | slugify }}">{{ propType }}</a></code>
     {% endif %}
   </td>
   <td>
