@@ -4,6 +4,7 @@
 <tr>
   <td><code>{{ prefix | append: prop.name }}</code></td>
   <td>
+    {% assign is_custom_type = propType | is_raml_custom_type %}
     {% if propType == 'array' %}
       {% assign is_builtin = prop.items | is_raml_builtin_type %}
       {% if is_builtin %}
@@ -11,10 +12,10 @@
       {% else %}
         <code>array of <a href="#type-{{ prop.items | slugify }}">{{ prop.items }}</a></code>
       {% endif %}
-    {% elsif propType | is_raml_builtin_type %}
-      <code>{{ propType }} (builtin)</code>
-    {% else %}
+    {% elsif is_custom_type %}
       <code><a href="#type-{{ propType | slugify }}">{{ propType }}</a></code>
+    {% else %}
+    <code>{{ propType }}</code>
     {% endif %}
   </td>
   <td>

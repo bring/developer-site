@@ -160,6 +160,10 @@ module Jekyll
         'file', 'integer', 'nil'].include? input
     end
 
+    def is_raml_custom_type(input)
+      not is_raml_builtin_type(input)
+    end
+
   end
 end
 
