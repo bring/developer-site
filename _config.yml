@@ -41,4 +41,4 @@ kramdown:
 sass:
   style: compressed
 
-exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, LICENSE]
+exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, LICENSE, package.json, yarn.lock]
