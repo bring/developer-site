@@ -50,6 +50,16 @@
       <em>Pattern:</em> <code>{{ prop.pattern }}</code>
     {% endif %}
 
+    {% if prop.minItems %}
+      <br/>
+      <em>Minimum number of items:</em> <code>{{ prop.minItems }}</code>
+    {% endif %}
+
+    {% if prop.maxItems %}
+      <br/>
+      <em>Maximum number of items:</em> <code>{{ prop.maxItems }}</code>
+    {% endif %}
+
     {% if prop.example %}
       <br/>
       <em>Example:</em> <code>{{ prop.example }}</code>
