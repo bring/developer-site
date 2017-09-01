@@ -18,18 +18,14 @@
       "vat": 47.36,
       "currency": "NOK",
       "orderTime": "2017-09-01T11:59:32.410168Z",
-      "userEmail": "user@example.com",
-      "userPhone": "+4790123456",
-      "userFullName": "Art Vandelay",
-      "orderNumberReference": "20002429",
       "labelUri": "",
       "rfidLabelUri": "https://example.com/17673176-8531-48dd-b407-d84bb2f26a8b.zpl",
       "waybillUri": "https://example.com/bafc82c5-e8c2-4abf-4c0a-c40ff06eb4fa.pdf",
+      "orderNumberReference": "20002429",
       "packages": [
         {
           "priority": "A",
           "rfid": true,
-          "specialist": "PARCELS_NORWAY",
           "recipientName": "Arne Andersen",
           "streetAddress": "Brurvikvegen 10c",
           "postalCode": "9409",
@@ -44,7 +40,6 @@
         {
           "priority": "A",
           "rfid": true,
-          "specialist": "PARCELS_NORWAY",
           "recipientName": "Berit Burger",
           "streetAddress": "Heggebakken 1",
           "postalCode": "5018",
@@ -59,7 +54,6 @@
         {
           "priority": "A",
           "rfid": true,
-          "specialist": "PARCELS_NORWAY",
           "recipientName": "Charles Caspersen",
           "streetAddress": "Åkebergveien 56A",
           "postalCode": "0650",
@@ -74,7 +68,6 @@
         {
           "priority": "B",
           "rfid": true,
-          "specialist": "PARCELS_NORWAY",
           "recipientName": "Dina Davidsen",
           "streetAddress": "Øvre torv 2",
           "postalCode": "1337",
@@ -89,7 +82,6 @@
         {
           "priority": "B",
           "rfid": true,
-          "specialist": "PARCELS_NORWAY",
           "recipientName": "Eskil Erlandsen",
           "streetAddress": "Klosterheimveien 14",
           "postalCode": "0666",
