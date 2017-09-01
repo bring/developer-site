@@ -189,6 +189,10 @@ layout: redesign
                   {% assign response_id = resource.displayName | append: '-response-' | append: response.code | slugify %}
                   <h3 class="delta anchored" id="{{ response_id }}">HTTP status code {{ response.code }}</h3>
 
+                  {% if response.description %}
+                    {{ response.description | markdownify }}
+                  {% endif %}
+
                   {% for bodyHash in response.body %}
                     {% assign responseBody = bodyHash[1] %}
                     {% assign hljs_lang = responseBody.name | mediatype_highlight_lang  %}
