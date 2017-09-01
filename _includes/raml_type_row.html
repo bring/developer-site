@@ -29,6 +29,11 @@
       {% assign desc = desc | append: prop.description %}
     {% endif %}
 
+    {% comment %}
+    We're building a desc to ensure that required/optional, displayName and
+    description will be in the same paragraph, since we have to markdownify
+    the description.
+    {% endcomment %}
     {{ desc | markdownify }}
 
     {% if prop.enum %}
