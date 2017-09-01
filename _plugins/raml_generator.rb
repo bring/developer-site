@@ -136,15 +136,13 @@ module Jekyll
 
     def mediatype_highlight_lang(input)
       case input
-      when /application\/json/i
+      when /json/i
         "json"
-      when /application\/xml/i
+      when /xml/i
         "xml"
-      when /text\/xml/i
+      when /soap/i
         "xml"
-      when /application\/soap/i
-        "xml"
-      when /text\/html/i
+      when /html/i
         "html"
       else
         input
