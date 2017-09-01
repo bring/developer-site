@@ -454,25 +454,40 @@ documentation:
         body:
           application/json:
             type: ValidatedOrderResponse
-            example: !include examples/validate_order_response.json
+            examples:
+              valid_order:
+                displayName: Valid order
+                value: !include examples/validate_order_response.json
       201:
         description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
         body:
           application/json:
             type: SuccessfulOrderResponse
-            example: !include examples/without_tracking_response.json
+            examples:
+              with_tracking:
+                displayName: With tracking
+                value: !include examples/with_tracking_response.json
+              without_tracking:
+                displayName: Without tracking
+                value: !include examples/without_tracking_response.json
       422:
         description: Validation error
         body:
           application/json:
             type: ErrorResponse
-            example: !include examples/422.json
+            examples:
+              invalid_order:
+                displayName: Invalid order
+                value: !include examples/422.json
       500:
         description: If we have an error in our backend, we'll return a 500 error.
         body:
           application/json:
             type: ErrorResponse
-            example: !include examples/500.json
+            examples:
+              server_error:
+                displayName: Server error
+                value: !include examples/500.json
 
 /{orderId}:
   displayName: Fetch order
@@ -495,9 +510,15 @@ documentation:
             displayName: JSON response
             description: A response in the form of application/json
             type: SuccessfulOrderResponse
-            example: !include examples/without_tracking_response.json
+            examples:
+              without_tracking:
+                displayName: Without tracking
+                value: !include examples/without_tracking_response.json
           application/vnd.api+json:
             displayName: Also JSON response
             description: A response in the form of application/vnd.api+json
             type: SuccessfulOrderResponse
-            example: !include examples/without_tracking_response.json
+            examples:
+              without_tracking:
+                displayName: Without tracking
+                value: !include examples/without_tracking_response.json
