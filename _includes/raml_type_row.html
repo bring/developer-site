@@ -32,7 +32,8 @@
     {{ desc | markdownify }}
 
     {% if prop.enum %}
-    <br/>Possible values
+    <br/>
+    Possible values:
     <ul>
       {% for item in prop.enum %}
       <li><code>{{ item }}</code></li>
@@ -42,27 +43,27 @@
 
     {% if prop.default %}
       <br/>
-      <em>Default value:</em> <code>{{ prop.default }}</code>
+      Default value: <code>{{ prop.default }}</code>
     {% endif %}
 
     {% if prop.pattern %}
       <br/>
-      <em>Pattern:</em> <code>{{ prop.pattern }}</code>
+      Pattern: <code>{{ prop.pattern }}</code>
     {% endif %}
 
     {% if prop.minItems %}
       <br/>
-      <em>Minimum number of items:</em> <code>{{ prop.minItems }}</code>
+      Minimum number of items: <code>{{ prop.minItems }}</code>
     {% endif %}
 
     {% if prop.maxItems %}
       <br/>
-      <em>Maximum number of items:</em> <code>{{ prop.maxItems }}</code>
+      Maximum number of items: <code>{{ prop.maxItems }}</code>
     {% endif %}
 
     {% if prop.example %}
       <br/>
-      <em>Example:</em> <code>{{ prop.example }}</code>
+      Example: <code>{{ prop.example }}</code>
     {% endif %}
   </td>
 </tr>
