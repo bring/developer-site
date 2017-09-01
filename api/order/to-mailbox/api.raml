@@ -107,13 +107,13 @@ types:
         description: A reference for the shipment (all packages)
       labelUri:
         type: string
-        description: URL to PDF label if ordered without tracking.
+        description: URL to PDF label(s) for packages ordered without tracking.
       rfidLabelUri:
         type: string
-        description: URL to ZPL label if ordered with tracking.
+        description: URL to ZPL label(s) for packages ordered with tracking.
       waybillUri:
         type: string
-        description: URL to waybill PDF that goes with the order.
+        description: URL to waybill PDF that has to be printed and sent with the shipment.
       priceWithoutVat:
         type: number
         description: Price of shipment without VAT (MVA).
