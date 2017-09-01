@@ -1,21 +1,6 @@
 ---
-layout: redesign
+layout: page
 ---
-
-
-    <div class="wrapper">
-      <div class="layout layout--flush">
-        <div class="layout__item palm-one-whole desk-one-quarter">
-            {% comment %}
-            ----------------------------------------
-            --
-            -- Sidebar menu
-            --
-            ----------------------------------------
-            {% endcomment %}
-            {% include sitemenu.html %}
-        </div><!-- 
-     --><div class="layout__item palm-one-whole desk-three-quarters">
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
             <section id="api-documentation" class="api__section">
             <h1 class="api__title">{{ page.api.title }}</h1>
@@ -302,32 +287,26 @@ layout: redesign
             </section>
 
           </article>
-        </div>
-      </div>
-    </div>
+          <script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
+          <script>
+            function initZeroClipBoard() {
 
-<script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
-<script>
-  function initZeroClipBoard() {
+              var qsa = function (selector) {
+                return Array.prototype.slice.call(document.querySelectorAll(selector));
+              }
 
-    var qsa = function (selector) {
-      return Array.prototype.slice.call(document.querySelectorAll(selector));
-    }
+              qsa('pre.highlight').forEach(function(pre) {
+                var zeroClipboard = document.createElement('div');
+                zeroClipboard.className = 'zero-clipboard';
+                zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
+                pre.parentNode.insertBefore(zeroClipboard, pre);
+              });
 
-    qsa('pre.highlight').forEach(function(pre) {
-      var zeroClipboard = document.createElement('div');
-      zeroClipboard.className = 'zero-clipboard';
-      zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
-      pre.parentNode.insertBefore(zeroClipboard, pre);
-    });
-
-    var client = new ZeroClipboard(qsa('.zero-clipboard__btn'));
-    client.on('copy', function(event) {
-      var copyButton = event.target.parentNode;
-      var pre = copyButton.nextSibling;
-      client.setText(pre.textContent);
-    });
-  }
-</script>
-
-
+              var client = new ZeroClipboard(qsa('.zero-clipboard__btn'));
+              client.on('copy', function(event) {
+                var copyButton = event.target.parentNode;
+                var pre = copyButton.nextSibling;
+                client.setText(pre.textContent);
+              });
+            }
+          </script>

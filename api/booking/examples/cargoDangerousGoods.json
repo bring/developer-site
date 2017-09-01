@@ -6,7 +6,7 @@
     "consignments": {
       "consignment": {
         "-correlationId": "123456",
-        "shippingDateTime": "2016-08-05T06:24:09",
+        "shippingDateTime": 1470358449000,
         "parties": {
           "sender": {
             "name": "Ola Danske",

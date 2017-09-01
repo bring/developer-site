@@ -1,20 +1,7 @@
 ---
 title: Getting started with our APIs
-layout: redesign
+layout: page
 ---
-<div class="wrapper">
-  <div class="layout layout--flush">
-    <div class="layout__item palm-one-whole desk-one-quarter">
-      {% comment %}
-      ----------------------------------------
-      --
-      -- Sidebar menu
-      --
-      ----------------------------------------
-      {% endcomment %}
-      {% include sitemenu.html %}
-    </div><!-- 
- --><div class="layout__item palm-one-whole desk-three-quarters">
       <article class="api">
 
         <section class="api__section">
@@ -40,8 +27,9 @@ layout: redesign
 
           <p>
             Most of our APIs are open, but
-            <a href="{{ site.baseurl }}/api/booking/">Booking</a> and
-            <a href="{{ site.baseurl }}/api/reports/">Reports</a>, and
+            <a href="{{ site.baseurl }}/api/booking/">Booking</a>,
+            <a href="{{ site.baseurl }}/api/reports/">Reports</a>,
+            <a href="{{ site.baseurl }}/api/order-management/">Order Management</a> and
             <a href="{{ site.baseurl }}/api/easy-return-service/">Easy Return Service</a> 
             require authentication, while
             <a href="{{ site.baseurl }}/api/shipping-guide/">Shipping Guide</a> and 
@@ -159,6 +147,14 @@ layout: redesign
                 <td class="apitable__togglecell">—</td>
               </tr>
               <tr>
+                <td><a href="{{ site.baseurl }}/api/order-management/">Order Management</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
                 <td><a href="{{ site.baseurl }}/api/easy-return-service/">Easy Return Service</a></td>
                 <td class="apitable__togglecell">—</td>
                 <td class="apitable__togglecell">✓</td>
@@ -180,6 +176,3 @@ layout: redesign
         </section>
 
       </article>
-    </div>
-  </div>
-</div>

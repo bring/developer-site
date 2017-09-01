@@ -152,7 +152,7 @@ documentation:
         shippingDateTime:
             description: The date and time when an order is ready to be transported. The label generated against a booking will be valid for 52 weeks when Bring receives the request for an order.
             type: dateTime
-            example: 2016-07-26T06:24:09
+            example: 2016-07-26T06:24:09 or 1469494449000 (for json req)
             required: true
         customerNumber:
             description: Specify API customer number. This parameter can be maximum 35 character long.
@@ -188,17 +188,17 @@ documentation:
             description: Describe what is inside the package. This parameter can be maximum 35 character long.
             type: string
         heightInCm:
-            description: Specify height in cm
+            description: Specify height in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
             type: integer
             example: 100
             required: true
         widthInCm:
-            description: Specify width in cm
+            description: Specify width in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
             type: integer
             example: 100
             required: true
         lengthInCm:
-             description: Specify length in cm
+             description: Specify length in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
              type: integer
              example: 100
              required: true
@@ -208,7 +208,7 @@ documentation:
              example: 5
              required: true
         volumeInDm3:
-             description: Specify volume in cubic decimeter
+             description: Specify volume in cubic decimeter. This is optional when dimension is specified in the request for cargo.
              type: decimal
              required: true
         whoPaysInvoice:
@@ -386,9 +386,9 @@ documentation:
         displayName: Select Pickup Point in Sweden
         description: |
           You can specify pickup point Id in request for `PICKUP_PARCEL_BULK` products for delivery of parcels within Sweden and to Sweden from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
-          
+
           The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
-          
+
           Pickup point id and country code has to be specified under `pickupPoint` in `parties` as shown below.
         body:
           application/json:
@@ -399,11 +399,11 @@ documentation:
         displayName: Select Pickup Point in Denmark
         description: |
           The products `PICKUP_PARCEL` and `PICKUP_PARCEL_BULK` support the `deliveryOption=PICKUP_POINT` for shipments within Denmark and to Denmark, respectively. The parcel will be delivered to the pickup point closest to the recipient address and the recipient will receive a notification when the parcel arrives. If you do not specify a delivery option for these products in Denmark, the package will be delivered to the door.
-          
+
           You can also specify a pickup point id to get the package delivered at a specific pickup point. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points. Pickup point id and country code has to be specified under `pickupPoint` within `parties` as shown below.
-          
+
           `pickupPoint` is optional but both `id` and `countryCode` inside it are mandatory. This element has precedence over `deliveryOption=PICKUP_POINT` i.e. if this element is present then pickup point specified in it will be selected irrespective of value set in `deliveryOption`.
-          
+
           Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
         body:
           application/json:
@@ -414,9 +414,9 @@ documentation:
         displayName: Select Pickup Point in Finland
         description: |
           You can specify pickup point Id in request for `PICKUP_PARCEL_BULK` products for delivery of parcels to Finland from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
-          
+
           The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
-          
+
           Pickup point id and country code has to be specified under `pickupPoint` within `parties` as shown below.
         body:
           application/json:
@@ -427,9 +427,9 @@ documentation:
         displayName: Express
         description: |
           ### Express service for Oil Express
-          
+
           You can use Express service if you want to send your goods urgently (this service is *applicable only for Oil Express* product). In case of express delivery, goods are picked up as soon as possible and delivered to its destination.
-          
+
           For using Express service send `true` value in `express` as shown in below example.
         body:
           application/json:
@@ -515,7 +515,7 @@ documentation:
     |:-----------------------|:------------------|:-----------------------------|
     | PARCELS_NORWAY         | Norway (parcels)  | `parcelsInformation`         |
     | CARGO                  | Norway (cargo)    | `cargoInformation`           |
-    | PARCELS_NORWAY_INTERNATIONAL, PARCELS_SWEDEN, PARCELS_DENMARK, PARCELS_FINLAND BRING_DENMARK_AS | Sweden, Denmark | parcelsInternationalInformation |
+    | PARCELS_NORWAY_INTERNATIONAL, PARCELS_SWEDEN, PARCELS_DENMARK, PARCELS_FINLAND | Sweden, Denmark | parcelsInternationalInformation |
 
     #### Pickup ordered by default with product CARGO_GROUPAGE from Bring Cargo
 

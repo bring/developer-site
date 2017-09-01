@@ -1,7 +1,8 @@
 # Site settings
 title: Bring Developer
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://developer.bring.com" # the base hostname & protocol for your site
+url: "https://developer.bring.com" # the base hostname & protocol for your site
+permalink: /blog/:title/
 
 # RAML settings
 raml_08_map:
@@ -13,7 +14,7 @@ raml_08_map:
   api/invoice/api.raml: api/invoice/index.html
   api/postal-code/api.raml: api/postal-code/index.html
   api/easy-return-service/api.raml: api/easy-return-service/index.html
-  api/purchase-order/api.raml: api/purchase-order/index.html
+  api/order-management/api.raml: api/order-management/index.html
 
 raml_10_map:
   api/order/to-mailbox/api.raml: api/order/to-mailbox/index.html
@@ -21,9 +22,17 @@ raml_10_map:
 # Build settings
 gems:
 - jekyll-paginate
+- jekyll-archives
 
-paginate: 5
-paginate_path: :num # default is page:num
+paginate: 10
+paginate_path: /blog/page/:num # default is page:num
+
+jekyll-archives:
+  enabled: [categories]
+  layouts:
+    category: archives/category
+  permalinks:
+    category: '/blog/category/:name/'
 
 markdown: kramdown
 kramdown:

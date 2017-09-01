@@ -26,5 +26,6 @@ end
 desc 'Run locally using jekyll'
 task :serve => [:clean, :install_dependencies] do
   puts '= serve using jekyll'
-  system('bundle exec jekyll serve --trace')
+  system('cd _sass && npm install')
+  system('bundle exec jekyll serve --trace --incremental')
 end
