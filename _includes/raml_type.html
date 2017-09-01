@@ -15,7 +15,7 @@
       {% assign hide_required = true %}
     {% endif %}
 
-    <article class="api__type">
+    <article>
       {% unless include.hide_header %}
       <h4 class="anchored" id="type-{{ typeDefinition.name | slugify }}">{{ typeDefinition.displayName }}</h4>
       {% endunless %}
