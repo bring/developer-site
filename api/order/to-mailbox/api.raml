@@ -293,7 +293,7 @@ types:
         properties:
           type:
             type: string
-            pattern: "orders"
+            enum: [ orders ]
             description: JSON-API type.
           attributes:
             type: Order
@@ -337,7 +337,7 @@ types:
     properties:
       errors:
         type: ErrorObject[]
-        description: See the [JSON-API documentation](http://jsonapi.org/format/#error-objects).
+        description: List of errors.
   ErrorObject:
     (hideRequired): true
     (hideInDocumentation): true
@@ -354,7 +354,7 @@ types:
         properties:
           pointer:
             type: string
-            description: A JSON pointer to the associated entity of
+            description: A JSON pointer to the invalid field.
 
 documentation:
 - title: Introduction
@@ -402,7 +402,9 @@ documentation:
 
 - title: JSON API
   content: |
-      This API adheres to the [JSON API](http://jsonapi.org/) specification.
+      We follow the [JSON API](http://jsonapi.org/) specification with one
+      exception: we allow media type to be specified as `application/json`
+      instead of `application/vnd.api+json`.
 
 /:
   displayName: Order shipment
