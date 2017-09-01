@@ -409,6 +409,14 @@ documentation:
   description: |
       Order (or validate) a shipment.
 
+      #### New endpoint coming
+
+      Currently, we have only one endpoint for ordering shipments. This
+      endpoint requires all packages in the shipment to be ordered at once. We
+      are working on a new endpoint that can be used for generating labels before
+      placing the order. This will allow you to stick labels on packages so they're
+      ready to be sent, then later place an order to get a waybill.
+
       #### Error codes
 
       From the [JSON API specification](http://jsonapi.org/format/#error-objects),
@@ -465,7 +473,14 @@ documentation:
                 displayName: Valid order
                 value: !include examples/validate_order_response.json
       201:
-        description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
+        description: |
+          On a successful order, the response gives information about the shipment.
+          Most importantly it contains a links to labels and waybill that have to
+          be printed and sent with the shipment:
+
+          - `labelUri`: PDF for packages without tracking
+          - `rfidLabelUri`: ZPL for packages with tracking
+          - `waybillUri`: PDF for the shipment's waybill
         body:
           application/json:
             type: SuccessfulOrderResponse
@@ -477,7 +492,9 @@ documentation:
                 displayName: Without tracking
                 value: !include examples/without_tracking_response.json
       422:
-        description: Validation error
+        description: |
+          When the request contained invalid data, we return a 422 with a list
+          of errors for the shipment.
         body:
           application/json:
             type: ErrorResponse
@@ -510,7 +527,7 @@ documentation:
         enum: [ application/json ]
     responses:
       200:
-        description: Success!!!!
+        description: Returns the same object that was returned when placing the order.
         body:
           application/json:
             displayName: JSON response
