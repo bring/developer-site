@@ -114,6 +114,9 @@ types:
       waybillUri:
         type: string
         description: URL to waybill PDF that has to be printed and sent with the shipment.
+      orderNumberReference:
+        type: string
+        description: The order number reference for the placed order. This is the number on the waybill.
       priceWithoutVat:
         type: number
         description: Price of shipment without VAT (MVA).
@@ -143,9 +146,6 @@ types:
         required: false
         type: string
         description: The name for the user that placed the order.
-      orderNumberReference:
-        type: string
-        description: The order number reference for the placed order. This is the number on the waybill.
       packages:
         minItems: 1
         description: Packages in this shipment.
