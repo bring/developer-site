@@ -1,0 +1,526 @@
+#%RAML 1.0
+---
+title: Mailbox Packet API
+version: v1
+baseUri: https://api.bring.com/order/to-mailbox
+mediaType: application/json
+annotationTypes:
+  hideInDocumentation: boolean
+  hideRequired: boolean
+types:
+  Order:
+    type: object
+    description: An order to place in Mybring.
+    properties:
+      customerNumber:
+        type: string
+        description: API customer number for which to place the order.
+      senderName:
+        type: string
+        description: Sender's name.
+        example: Min Bedrift
+      senderEmail:
+        required: false
+        type: string
+        pattern: ".+@.+"
+        description: Sender's email address. Defaults to the user's email address.
+      postalCode:
+        type: string
+        description: Sender's postal code. Must be a valid Norwegian postal code.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      reference:
+        required: true
+        description: A reference for the shipment (all packages).
+      packages:
+        minItems: 1
+        type: Package[]
+        description: The packages to send in this shipment.
+  Package:
+    type: object
+    description: A single package in a shipment.
+    properties:
+      priority:
+        enum: [ A, B ]
+        description: Delivery speed (A-post or B-post).
+      rfid:
+        type: boolean
+        description: Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.
+      weight:
+        maximum: 2000
+        type: integer
+        description: Weight in grams.
+      recipientName:
+        type: string
+        description: Recipient name.
+      postalCode:
+        type: string
+        description: A valid Norwegian postal code.
+      streetAddress:
+        type: string
+        description: Recipient's street address.
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number, including country code.
+        example: "+4700000000"
+      email:
+        type: string
+        pattern: ".+@.+"
+        description: Recipient's email address.
+  SuccessfulOrder:
+    (hideRequired): true
+    displayName: Successful Order
+    description: A successfully placed order that contains links to labels and waybill.
+    properties:
+      id:
+        type: number
+        description: The ID of the order that was placed.
+      customerNumber:
+        type: string
+        description: The API customer number for which the order was placed.
+      customerName:
+        type: string
+        description: The name of the customer for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
+      senderName:
+        type: string
+        description: Sender's name.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      postalCode:
+        type: string
+        description: Sender's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      email:
+        type: string
+        pattern: ".+@.+"
+        description: Sender's email address for the order that was placed.
+      reference:
+        type: string
+        description: A reference for the shipment (all packages)
+      labelUri:
+        type: string
+        description: URL to PDF label(s) for packages ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label(s) for packages ordered with tracking.
+      waybillUri:
+        type: string
+        description: URL to waybill PDF that has to be printed and sent with the shipment.
+      orderNumberReference:
+        type: string
+        description: The order number reference for the placed order. This is the number on the waybill.
+      priceWithoutVat:
+        type: number
+        description: Price of shipment without VAT (MVA).
+      priceWithVat:
+        type: number
+        description: Price of shipment with VAT (MVA).
+      vat:
+        type: number
+        description: How much of the price was VAT (MVA).
+      currency:
+        type: string
+        default: NOK
+        description: The currency for the price.
+      orderTime:
+        type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
+      packages:
+        minItems: 1
+        description: Packages in this shipment.
+        type: OrderedPackage[]
+  OrderedPackage:
+    (hideRequired): true
+    displayName: Ordered Package
+    description: A single package in a successfully ordered shipment.
+    properties:
+      priority:
+        enum: [ A, B ]
+        description: Delivery speed (A-post or B-post).
+      rfid:
+        type: boolean
+        description: Whether to [tracking for the package](#tracking-with-rfid) was activated.
+      recipientName:
+        type: string
+        description: Recipient name.
+      streetAddress:
+        type: string
+        description: Recipient's street address.
+      postalCode:
+        type: string
+        description: Recipient's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number.
+      email:
+        type: string
+        pattern: ".+@.+"
+        description: Recipient's email address.
+      weight:
+        maximum: 2000
+        type: integer
+        description: Package weight in grams.
+      shipmentNumber:
+        type: string
+        description: The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.
+      packageNumber:
+        type: string
+        description: The package number for this package. This goes on the label.
+      agreementNumber:
+        type: boolean
+        description: Whether the customer has an agreement price for this package.
+  ValidatedOrder:
+    (hideRequired): true
+    displayName: Validated Order
+    description: A valid order that can be placed.
+    properties:
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The name of the customer for the validated order.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for the validated order.
+      senderName:
+        type: string
+        description: The sender's name.
+      streetAddress:
+        type: string
+        description: The sender's street address.
+      postalCode:
+        type: string
+        description: The sender's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      email:
+        type: string
+        description: The sender's email address.
+      reference:
+        type: string
+        description: A reference for the shipment (all packages).
+      priceWithoutVat:
+        type: number
+        description: Calculated price without VAT (MVA).
+      priceWithVat:
+        type: number
+        description: Calulated price with VAT (MVA).
+      vat:
+        type: number
+        description: Calculated VAT (MVA).
+      currency:
+        type: string
+        description: The price's currency.
+      orderTime:
+        type: datetime
+        description: Timestamp for when the order was validated.
+      packages:
+        minItems: 1
+        description: Packages in this validated shipment.
+        type: ValidatedPackage[]
+  ValidatedPackage:
+    (hideRequired): true
+    displayName: Validated Package
+    description: A single, valid package in a valid shipment.
+    properties:
+      priority:
+        enum: [ A, B ]
+        description: Delivery speed (A-post or B-post).
+      rfid:
+        type: boolean
+        description: Whether to [tracking with RFID](#tracking-with-rfid) was activated for the package.
+      recipientName:
+        type: string
+        description: Recipient's name.
+      streetAddress:
+        type: string
+        description: Recipient's email address.
+      postalCode:
+        type: string
+        description: Recipient's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      phoneNumber:
+        type: string
+        description: Recipient's phone number.
+      email:
+        type: string
+        description: Recipient's email address.
+      weight:
+        type: integer
+        description: Package weight in grams.
+      agreementNumber:
+        type: boolean
+        description: Whether the customer has an agreement price for this package.
+  OrderRequest:
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            enum: [ orders ]
+            description: JSON-API type.
+          attributes:
+            type: Order
+            description: Order properties.
+  SuccessfulOrderResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            description: JSON-API type.
+          id: string
+          attributes:
+            type: SuccessfulOrder
+            description: Order properties.
+  ValidatedOrderResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            pattern: "order"
+            description: JSON-API type.
+          attributes:
+            type: ValidatedOrder
+            description: Order properties.
+  ErrorResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      errors:
+        type: ErrorObject[]
+        description: List of errors.
+  ErrorObject:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      code:
+        type: string
+        description: Machine-readable description of error.
+      title:
+        type: string
+        description: Human-readable description of error.
+      source:
+        type: object
+        properties:
+          pointer:
+            type: string
+            description: A JSON pointer to the invalid field.
+
+documentation:
+- title: Introduction
+  content: |
+      This API is for ordering [Pakke i postkassen](http://www.bring.no/sende/pakker/private-i-norge/pakke-i-postkassen) (Mailbox Packet) shipments.
+
+      The Mailbox Packet service is available domestically in Norway, and will replace "Minipakke" and "Småpakker".
+
+- title: Tracking with RFID
+  content: |
+      Mailbox Packet shipments can optionally be ordered with tracking using RFID.
+
+      #### How does tracking with RFID work?
+
+      Normally, we create PDF labels that can be printed on any printer.
+
+      If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
+
+      The labels will be ZPL code containing instructions for programming the passive RFID antenna in the printer's labels with package numbers.
+
+      In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
+
+      #### Special hardware required
+
+      RFID-tagged labels require special printer hardware. Currently we support the following printers:
+
+      - Zebra R410
+      - Zebra 500R
+
+- title: Without tracking
+  content: |
+      If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
+
+- title: Authentication
+  content: |
+    The API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+
+    Those headers must be present for authenticating requests.
+
+- title: JSON API
+  content: |
+      We follow the [JSON API](http://jsonapi.org/) specification with one
+      exception: we allow media type to be specified as `application/json`
+      instead of `application/vnd.api+json`.
+
+/:
+  displayName: Order shipment
+  description: |
+      Order (or validate) a shipment.
+
+      #### New endpoint coming
+
+      Currently, we have only one endpoint for ordering shipments. This
+      endpoint requires all packages in the shipment to be ordered at once. We
+      are working on a new endpoint that can be used for generating labels before
+      placing the order. This will allow you to stick labels on packages so they're
+      ready to be sent, then later place an order to get a waybill.
+
+      #### Error codes
+
+      From the [JSON API specification](http://jsonapi.org/format/#error-objects),
+      we use `code`, `title`, and `source.pointer` to describe errors.
+
+      | Code | Meaning | Example pointer |
+      | 500 | Internal, unknown application error | `/` |
+      | 1000 | Missing field value | `/streetAddress` |
+      | 2000 | Order must contain at least one package | `/packages` |
+      | 3000 | Invalid email address | `/packages/0/email` |
+      | 4000 | Invalid postal code |  `/packages/1/postalCode` |
+      | 5000 | User does not have access to customer number | `/customerNumber` |
+      | 5500 | Customer hasn't made agreement with Posten to send "Pakke i postkassen" | `/customerNumber` |
+      | 6000 | Weight cannot be more than 2000 grams | `/packages/2/weight` |
+      | 7000 | Priority must be A or B | `/packages/3/priority` |
+      | 8000 | Invalid phone number | `/pacakges/4/phoneNumber` |
+      | 9000 | Invalid JSON API resource type (must be `orders`) | `/data/type` |
+
+
+  post:
+    description: Order shipment
+    headers:
+      Content-Type:
+        description: Specify request format (application/json)
+        required: true
+        enum: [ application/json ]
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    queryParameters:
+        validate:
+            description: If this is set to true, the order will only be validated, not ordered in our production systems.
+            type: boolean
+            required: false
+    body:
+      application/json:
+        examples:
+          with_tracking:
+            displayName: With tracking
+            value: !include examples/with_tracking_request.json
+          without_tracking:
+            displayName: Without tracking
+            value: !include examples/without_tracking_request.json
+        type: OrderRequest
+    responses:
+      200:
+        description: The API returns 200 when validating the request by specifying query parameter `validate=true`.
+        body:
+          application/json:
+            type: ValidatedOrderResponse
+            examples:
+              valid_order:
+                displayName: Valid order
+                value: !include examples/validate_order_response.json
+      201:
+        description: |
+          On a successful order, the response gives information about the shipment.
+          Most importantly it contains a links to labels and waybill that have to
+          be printed and sent with the shipment:
+
+          - `labelUri`: PDF for packages without tracking
+          - `rfidLabelUri`: ZPL for packages with tracking
+          - `waybillUri`: PDF for the shipment's waybill
+        body:
+          application/json:
+            type: SuccessfulOrderResponse
+            examples:
+              with_tracking:
+                displayName: With tracking
+                value: !include examples/with_tracking_response.json
+              without_tracking:
+                displayName: Without tracking
+                value: !include examples/without_tracking_response.json
+      422:
+        description: |
+          When the request contained invalid data, we return a 422 with a list
+          of errors for the shipment.
+        body:
+          application/json:
+            type: ErrorResponse
+            examples:
+              invalid_order:
+                displayName: Invalid order
+                value: !include examples/422.json
+      500:
+        description: If we have an error in our backend, we'll return a 500 error.
+        body:
+          application/json:
+            type: ErrorResponse
+            examples:
+              server_error:
+                displayName: Server error
+                value: !include examples/500.json
+
+/{orderId}:
+  displayName: Fetch order
+  uriParameters:
+    orderId:
+      type: string
+      description: Id from when placing an order.
+  get:
+    description: Fetch previously ordered shipment
+    headers:
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    responses:
+      200:
+        description: Returns the same object that was returned when placing the order.
+        body:
+          application/json:
+            displayName: JSON response
+            description: A response in the form of application/json
+            type: SuccessfulOrderResponse
+            examples:
+              without_tracking:
+                displayName: Without tracking
+                value: !include examples/without_tracking_response.json

@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "code": "8000",
+      "title": "Invalid phone number",
+      "source": {
+        "pointer": "/packages/0/phoneNumber"
+      }
+    }
+  ]
+}

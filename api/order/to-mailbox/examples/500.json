@@ -1,0 +1,11 @@
+{
+  "errors":[
+    {
+      "code": "500",
+      "title": "An unknown error occured",
+      "source": {
+        "pointer": "/"
+      }
+    }
+  ]
+}

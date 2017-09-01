@@ -1,0 +1,96 @@
+{% assign prop = include.prop %}
+{% assign propType = prop.type[0] %}
+{% assign prefix = '' | append: include.prefix %}
+{% assign is_custom_type = propType | is_raml_custom_type %}
+
+<tr>
+  <td><code>{{ prefix | append: prop.name }}</code></td>
+  <td>
+    {% if is_custom_type %}
+      <code>object</code>
+    {% else %}
+      <code>{{ propType }}</code>
+    {% endif %}
+  </td>
+  <td>
+    {% if include.hide_required %}
+      {% assign desc = '' %}
+    {% elsif prop.required %}
+      {% assign desc = '_Required._ ' %}
+    {% else %}
+      {% assign desc = '_Optional._ ' %}
+    {% endif %}
+
+    {% if prop.displayName != prop.name %}
+      {% assign desc = desc | append: prop.displayName | append: '. ' %}
+    {% endif %}
+
+    {% if prop.description %}
+      {% assign desc = desc | append: prop.description %}
+    {% endif %}
+
+    {% comment %}
+    We're building a desc to ensure that required/optional, displayName and
+    description will be in the same paragraph, since we have to markdownify
+    the description.
+    {% endcomment %}
+    {{ desc | markdownify }}
+
+    {% if prop.enum %}
+    <br/>
+    Possible values:
+    <ul>
+      {% for item in prop.enum %}
+      <li><code>{{ item }}</code></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if prop.default %}
+      <br/>
+      Default value: <code>{{ prop.default }}</code>
+    {% endif %}
+
+    {% if prop.pattern %}
+      <br/>
+      Pattern: <code>{{ prop.pattern }}</code>
+    {% endif %}
+
+    {% if prop.minItems %}
+      <br/>
+      Minimum number of items: <code>{{ prop.minItems }}</code>
+    {% endif %}
+
+    {% if prop.maxItems %}
+      <br/>
+      Maximum number of items: <code>{{ prop.maxItems }}</code>
+    {% endif %}
+
+    {% if prop.example %}
+      <br/>
+      Example: <code>{{ prop.example }}</code>
+    {% endif %}
+  </td>
+</tr>
+
+{% if propType == 'object' %}
+  {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
+  {% for propHash in prop.properties %}
+    {% assign subProp = propHash[1] %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
+  {% endfor %}
+{% elsif propType == 'array' %}
+  {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
+  {% assign subType = page.api.types | extract_type: prop.items %}
+  {% for propHash in subType.properties %}
+    {% assign subProp = propHash[1] %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
+  {% endfor %}
+{% elsif is_custom_type %}
+  {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
+  {% assign subType = page.api.types | extract_type: propType %}
+  {% for propHash in subType.properties %}
+    {% assign subProp = propHash[1] %}
+    {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
+  {% endfor %}
+{% endif %}
