@@ -174,8 +174,6 @@ layout: redesign
                   </div>
                 {% endif %}
 
-                {% assign additional_examples = false %}
-
                 {% comment %}
                 ----------------------------------------
                 --
@@ -185,141 +183,60 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% unless method.responses == empty %}
-                <h2>Response</h2>
+                <h2 class="beta">Responses</h2>
                 {% for responseHash in method.responses %}
                   {% assign response = responseHash[1] %}
-                  {% assign response_id = method.method | append: '-' | append: resource.displayName | append: '-response-' | append: response.code | slugify %}
-                  <h3 id="{{ response_id }}" class="anchored">HTTP status code {{ response.code }}</h3>
+                  {% assign response_id = resource.displayName | append: '-response-' | append: response.code | slugify %}
+                  <h3 class="delta anchored" id="{{ response_id }}">HTTP status code {{ response.code }}</h3>
 
                   {% for bodyHash in response.body %}
                     {% assign responseBody = bodyHash[1] %}
-                    <div><strong>Media Type:</strong> {{ responseBody.name }}</div>
-                    {% if responseBody.type %}
-                      {% assign responseBodyType = responseBody.type.first %}
-                      <div>
-                        <h4>Response format</h4>
+                    {% assign hljs_lang = responseBody.name | mediatype_highlight_lang  %}
+                    <p>
+                      <strong>Media Type:</strong> <code>{{ responseBody.name }}</code>
+                    </p>
 
-                        {% include raml_type.html types=page.api.types type=responseBodyType hide_header=true %}
-                      </div>
-                    {% endif %}
-                  {% endfor %}
-                {% endfor %}
-
-
-
-                <!--
-                <ul class="codetabs" role="tablist">
-                  {% for response in method.responses %}
-                    {% assign tab_name = response[1].code %}
-                    {% assign tab_id = method.method | append: '-' | append: resource.displayName | append: '-response-' | append: tab_name | slugify %}
-                    <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ tab_name }}</a></li>
-                  {% endfor %}
-                </ul>
-                <div class="codetabs__content">
-                  {% for response in method.responses %}
-                    {% assign tab_name = response[1].code %}
-                    {% assign tab_id = method.method | append: '-' | append: resource.displayName | append: '-response-' | append: tab_name | slugify %}
-                    <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
-                      {{ response[1].description | markdownify }}
-
-                      {% if response[1].headers.size > 0 %}
-                        {% assign include_params = response[1].headers %}
-                        {% include named_params.html title="Header name" params=include_params hide_required=true %}
-                      {% endif %}
-
-                      {% if response[1].body.size > 1 %}
-                        {% comment %}
-
-                        There are more than one response body type:
-
-                        List all in accordion.
-
-                        {% endcomment %}
-                        <div class="collapsible u-mb++">
-                          <ul class="list-block list-block--small">
-                            {% for responseBody in response[1].body %}
-                              {% assign body_name = responseBody[1].displayName %}
-                              {% assign accordion_id = method.method | append: '-' | append: resource.displayName | append: '-response-body-' | append: body_name | slugify %}
-                              <li>
-                                <a href="#" data-collapse="#{{ accordion_id }}" class="collapsible__toggler collapsible__toggler--collapsed">{{ responseBody[1].displayName }}</a>
-                                <div id="{{ accordion_id }}" class="collapsible__item collapsible__item--collapsed">
-
-                                {% if responseBody[1].description %}
-                                  {{ responseBody[1].description | markdownify }}
-                                {% endif %}
-                                </div>
-                              </li>
-                            {% endfor %}
-                          </ul>
-                        </div>
-                      {% else %}
-                        {% comment %}
-
-                        There is only one response body type: no need for accordion.
-
-                        {% endcomment %}
-                        response body
-                      {% endif %}
-                    </div>
-                  {% endfor %}
-                </div>
-                -->
-                {% endunless %}
-
-
-
-
-                <!--
-                {% for response in method.responses %}
-                  <h3 class="delta">{{ response[1].displayName }} ({{ response[1].code }})</h3>
-                  {% if response[1].description %}
-                    {{ response[1].description | markdownify }}
-                  {% endif %}
-
-                  {% comment %}
-
-                  For each endpoint:
-                  List all headers
-
-                  {% endcomment %}
-                  {% if response[1].headers.size > 0 %}
-                    {% assign include_params = response[1].headers %}
-                    {% include named_params.html title="Header name" params=include_params hide_required=true %}
-                  {% endif %}
-
-                  {% comment %}
-
-                  Tabs for JSON, XML, SOAP
-
-                  {% endcomment %}
-                  {% if response[1].bodies.size > 0 %}
                     <ul class="codetabs" role="tablist">
-                    {% for body in response[1].bodies %}
-                      {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-                      {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
-                      <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
-                    {% endfor %}
+                      {% if responseBody.type %}
+                        {% assign responseBodyType = responseBody.type.first %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-format' | slugify %}
+                        <li role="presentation" class="codetabs__item active"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Response format</a></li>
+                      {% endif %}
+                      {% for example in responseBody.examples %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <li role="presentation" class="codetabs__item"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
+                      {% endfor %}
                     </ul>
-                    <div class="codetabs__content">
-                    {% for body in response[1].bodies %}
-                      {% assign mt_display_name = body[1].media_type | mediatype_displayname %}
-                      {% assign hljs_lang = body[1].media_type | mediatype_highlight_lang  %}
-                      {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-response-' | append: forloop.index | slugify %}
-                      <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
-                        {% if hljs_lang == 'xml' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
-                        {% elsif hljs_lang == 'html' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example | xml_escape}}</code></pre>
-                        {% else %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].example }}</code></pre>
-                        {% endif %}
-                      </div>
-                    {% endfor %}
-                    </div>
-                  {% endif %}
-                {% endfor %}
-                -->
 
+                    <div class="codetabs__content">
+                      {% if responseBody.type %}
+                        {% assign responseBodyType = responseBody.type.first %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-format' | slugify %}
+                        <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
+                          {% include raml_type.html types=page.api.types type=responseBodyType hide_header=true %}
+                        </div>
+                      {% endif %}
+                      {% for example in responseBody.examples %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <div role="tabpanel" class="codetabs__panel" id="{{ tab_id }}">
+                          <div class="content">
+                            {% if example.description %}
+                            {{ example.description | markdownify }}
+                            {% endif %}
+                            {% if hljs_lang == 'xml' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'html' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'json' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value }}</code></pre>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}{% comment %} endfor body in response {% endcomment %}
+                {% endfor %}{% comment %} endfor response in method.responses {% endcomment %}
+                {% endunless %}{% comment %} endunless method.responses == empty {% endcomment %}
               </section>
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
