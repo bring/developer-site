@@ -1,0 +1,295 @@
+---
+layout: redesign
+---
+
+
+    <div class="wrapper">
+      <div class="layout layout--flush">
+        <div class="layout__item palm-one-whole desk-one-quarter">
+            {% comment %}
+            ----------------------------------------
+            --
+            -- Sidebar menu
+            --
+            ----------------------------------------
+            {% endcomment %}
+            {% include sitemenu.html %}
+        </div><!--
+     --><div class="layout__item palm-one-whole desk-three-quarters">
+          <article class="api {{ page.api.title | remove:'API' | slugify }}">
+            <section id="api-documentation" class="api__section">
+            <h1 class="api__title">{{ page.api.title }}</h1>
+              {% for chapter in page.api.documentation %}
+              <h2 class="anchored">{{ chapter.title }}</h2>
+              {{ chapter.content | markdownify }}
+              {% endfor %}
+            </section>
+            <section class="api__section">
+              <h2 class="anchored">Overview of endpoints</h2>
+
+              <h3 class="delta">Base URL</h3>
+              <pre>{{ page.api.baseUri }}</pre>
+
+              <table class="linked-rows table--cosy table--rows">
+                <thead>
+                  <th>Method</th>
+                  <th>Endpoint</th>
+                  <th>Usage</th>
+                </thead>
+                {% for resource in page.api.resources %}
+                  {% for method in resource.methods %}
+                    <tr>
+                      <td><a href="#{{ resource.displayName | slugify }}">{{ method.method | upcase }}</a></td>
+                      <td><a href="#{{ resource.displayName | slugify }}">{{ resource.relativeUri }}</a></td>
+                      <td><a href="#{{ resource.displayName | slugify }}">{{ method.description }}</a></td>
+                    </tr>
+                  {% endfor %}
+                {% endfor %}
+              </table>
+            </section>
+
+
+            {% for resource in page.api.resources %}
+              {% for method in resource.methods %}
+              <section class="api__section">
+
+                <h1 class="large anchored" id="{{ resource.displayName | slugify }}">{{ resource.displayName }}</h1>
+
+                {% if resource.description %}
+                {{ resource.description | markdownify }}
+                {% endif %}
+
+                <h2 class="delta">URL</h2>
+                {% if resource.uriParameters contains 'mediaTypeExtension' %}
+                  {% assign url_output = '' %}
+                  {% for extension in resource.uriParameters.mediaTypeExtension.enum %}
+                    {% assign url_output = url_output | append: resource.absoluteUri | replace:'{mediaTypeExtension}',extension %}
+                    {% unless forloop.last %}
+                      {% assign url_output = url_output | append: '<br />' %}
+                    {% endunless %}
+                  {% endfor %}
+                {% else %}
+                  {% assign url_output = resource.absoluteUri %}
+                {% endif %}
+                <pre class="api__url">{{ url_output }}</pre>
+
+                {% assign has_other_uri_params_than_mediatype = false %}
+                {% if resource.uriParameters.size > 1 %}
+                  {% assign has_other_uri_params_than_mediatype = true %}
+                {% elsif resource.uriParameters.size == 1 and resource.uriParameters.first[1].name != 'mediaTypeExtension' %}
+                  {% assign has_other_uri_params_than_mediatype = true %}
+                {% endif %}
+
+                {% if has_other_uri_params_than_mediatype
+                    or method.headers.size > 0
+                    or method.queryParameters.size > 0 %}
+                <h2 class="delta">Request params</h2>
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all URI parameters
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if has_other_uri_params_than_mediatype %}
+                  {% assign include_params = resource.uriParameters %}
+                  {% include named_params_10.html title="URI parameter" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all headers
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method.headers.size > 0 %}
+                  {% assign include_params = method.headers %}
+                  {% include named_params_10.html title="Header name" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- List all query parameters
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method.queryParameters.size > 0 %}
+                  {% assign include_params = method.queryParameters %}
+                  {% include named_params_10.html title="Query param" params=include_params %}
+                {% endif %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- Request body
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% if method.body %}
+                  <h2 class="delta">Request body</h2>
+
+                  {% for bodyHash in method.body %}
+                    {% assign requestBody = bodyHash[1] %}
+                    {% assign hljs_lang = requestBody.name | mediatype_highlight_lang  %}
+
+                    {% if method.body.size > 1 %}
+                    <p>
+                      <strong>Media Type:</strong> <code>{{ requestBody.name }}</code>
+                    </p>
+                    {% endif %}
+
+                    <ul class="codetabs" role="tablist">
+                      {% if requestBody.type %}
+                        {% assign requestBodyType = requestBody.type.first %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
+                        <li role="presentation" class="codetabs__item active"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Request format</a></li>
+                      {% endif %}
+                      {% for example in requestBody.examples %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <li role="presentation" class="codetabs__item"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
+                      {% endfor %}
+                    </ul>
+
+                    <div class="codetabs__content">
+                      {% if requestBody.type %}
+                        {% assign requestBodyType = requestBody.type.first %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
+                        <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
+                          {% include raml_type.html types=page.api.types type=requestBodyType hide_header=true %}
+                        </div>
+                      {% endif %}
+                      {% for example in requestBody.examples %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <div role="tabpanel" class="codetabs__panel" id="{{ tab_id }}">
+                          <div class="content">
+                            {% if example.description %}
+                            {{ example.description | markdownify }}
+                            {% endif %}
+                            {% if hljs_lang == 'xml' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'html' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'json' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value }}</code></pre>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}{% comment %} endfor bodyHash in method.body {% endcomment %}
+                {% endif %}{% comment %} endif method.body {% endcomment %}
+
+                {% comment %}
+                ----------------------------------------
+                --
+                -- For each endpoint:
+                -- Response
+                --
+                ----------------------------------------
+                {% endcomment %}
+                {% unless method.responses == empty %}
+                <h2 class="beta">Responses</h2>
+                {% for responseHash in method.responses %}
+                  {% assign response = responseHash[1] %}
+                  {% assign response_id = resource.displayName | append: '-response-' | append: response.code | slugify %}
+                  <h3 class="delta anchored" id="{{ response_id }}">HTTP status code {{ response.code }}</h3>
+
+                  {% if response.description %}
+                    {{ response.description | markdownify }}
+                  {% endif %}
+
+                  {% for bodyHash in response.body %}
+                    {% assign responseBody = bodyHash[1] %}
+                    {% assign hljs_lang = responseBody.name | mediatype_highlight_lang  %}
+
+                    {% if response.body.size > 1 %}
+                    <p>
+                      <strong>Media Type:</strong> <code>{{ responseBody.name }}</code>
+                    </p>
+                    {% endif %}
+
+                    <ul class="codetabs" role="tablist">
+                      {% if responseBody.type %}
+                        {% assign responseBodyType = responseBody.type.first %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-format' | slugify %}
+                        <li role="presentation" class="codetabs__item active"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Response format</a></li>
+                      {% endif %}
+                      {% for example in responseBody.examples %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <li role="presentation" class="codetabs__item"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
+                      {% endfor %}
+                    </ul>
+
+                    <div class="codetabs__content">
+                      {% if responseBody.type %}
+                        {% assign responseBodyType = responseBody.type.first %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-format' | slugify %}
+                        <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
+                          {% include raml_type.html types=page.api.types type=responseBodyType hide_header=true %}
+                        </div>
+                      {% endif %}
+                      {% for example in responseBody.examples %}
+                        {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <div role="tabpanel" class="codetabs__panel" id="{{ tab_id }}">
+                          <div class="content">
+                            {% if example.description %}
+                            {{ example.description | markdownify }}
+                            {% endif %}
+                            {% if hljs_lang == 'xml' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'html' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'json' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value }}</code></pre>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endfor %}{% comment %} endfor body in response {% endcomment %}
+                {% endfor %}{% comment %} endfor response in method.responses {% endcomment %}
+                {% endunless %}{% comment %} endunless method.responses == empty {% endcomment %}
+              </section>
+              {% endfor %}{% comment %} endfor method in methods {% endcomment %}
+            {% endfor %}{% comment %} endfor resource in resources {% endcomment %}
+
+            <section class="api__section">
+              {% include disqus.html %}
+            </section>
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+<script async src="{{ site.baseurl }}/js/ZeroClipboard.min.js" onload="initZeroClipBoard()"></script>
+<script>
+  function initZeroClipBoard() {
+
+    var qsa = function (selector) {
+      return Array.prototype.slice.call(document.querySelectorAll(selector));
+    }
+
+    qsa('pre.highlight').forEach(function(pre) {
+      var zeroClipboard = document.createElement('div');
+      zeroClipboard.className = 'zero-clipboard';
+      zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
+      pre.parentNode.insertBefore(zeroClipboard, pre);
+    });
+
+    var client = new ZeroClipboard(qsa('.zero-clipboard__btn'));
+    client.on('copy', function(event) {
+      var copyButton = event.target.parentNode;
+      var pre = copyButton.nextSibling;
+      client.setText(pre.textContent);
+    });
+  }
+</script>

@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var raml = require('raml-1-parser');
+var fs = require('fs');
+var path = require('path');
+
+var args = process.argv.slice(2);
+
+if (args.length < 1) {
+  console.log('Must provide input RAML file');
+  process.exit(1);
+}
+
+var raml_file = path.resolve(args[0]);
+
+var api = raml.loadApiSync(raml_file);
+console.log(JSON.stringify(api.toJSON(), null, 2));
