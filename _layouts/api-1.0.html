@@ -135,44 +135,54 @@ layout: redesign
                 {% endcomment %}
                 {% if method.body %}
                   <h2 class="delta">Request body</h2>
-                  {% comment %}
 
-                  Request body type
+                  {% for bodyHash in method.body %}
+                    {% assign requestBody = bodyHash[1] %}
+                    {% assign hljs_lang = requestBody.name | mediatype_highlight_lang  %}
+                    <p>
+                      <strong>Media Type:</strong> <code>{{ requestBody.name }}</code>
+                    </p>
 
-                  {% endcomment %}
-
-
-                  {% comment %}
-
-                  Tabs for JSON, XML, SOAP
-
-                  {% endcomment %}
-                  <ul class="codetabs" role="tablist">
-                  {% for body in method.body %}
-                    {% assign mt_display_name = body[1].name | mediatype_displayname %}
-                    {% assign tab_id =  method[1].method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
-                    <li role="presentation" class="codetabs__item{% if forloop.first %} active{% endif %}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">{{ mt_display_name }}</a></li>
-                  {% endfor %}
-                  </ul>
-                  <div class="codetabs__content">
-                  {% for body in method.body %}
-                    {% assign mt_display_name = body[1].name | mediatype_displayname %}
-                    {% assign hljs_lang = body[1].name | mediatype_highlight_lang  %}
-                    {% assign tab_id =  method.method | append: '-' | append: resource.display_name | append: '-request-' | append: forloop.index | slugify %}
-                    <div role="tabpanel" class="codetabs__panel{% if forloop.first %} active{% endif %}" id="{{ tab_id }}">
-                      <div class="content">
-                      {% if hljs_lang == 'xml' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].structuredExample.value | xml_escape}}</code></pre>
-                      {% elsif hljs_lang == 'html' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].structuredExample.value | xml_escape}}</code></pre>
-                      {% elsif hljs_lang == 'json' %}
-                        <pre class="highlight"><code class="{{ hljs_lang }}">{{ body[1].structuredExample.value }}</code></pre>
+                    <ul class="codetabs" role="tablist">
+                      {% if requestBody.type %}
+                        {% assign requestBodyType = requestBody.type.first %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
+                        <li role="presentation" class="codetabs__item active"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Request format</a></li>
                       {% endif %}
-                      </div>
+                      {% for example in requestBody.examples %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <li role="presentation" class="codetabs__item"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
+                      {% endfor %}
+                    </ul>
+
+                    <div class="codetabs__content">
+                      {% if requestBody.type %}
+                        {% assign requestBodyType = requestBody.type.first %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
+                        <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
+                          {% include raml_type.html types=page.api.types type=requestBodyType hide_header=true %}
+                        </div>
+                      {% endif %}
+                      {% for example in requestBody.examples %}
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}
+                        <div role="tabpanel" class="codetabs__panel" id="{{ tab_id }}">
+                          <div class="content">
+                            {% if example.description %}
+                            {{ example.description | markdownify }}
+                            {% endif %}
+                            {% if hljs_lang == 'xml' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'html' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
+                            {% elsif hljs_lang == 'json' %}
+                              <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value }}</code></pre>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
                     </div>
-                  {% endfor %}
-                  </div>
-                {% endif %}
+                  {% endfor %}{% comment %} endfor bodyHash in method.body {% endcomment %}
+                {% endif %}{% comment %} endif method.body {% endcomment %}
 
                 {% comment %}
                 ----------------------------------------

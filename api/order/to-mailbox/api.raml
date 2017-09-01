@@ -446,7 +446,13 @@ documentation:
             required: false
     body:
       application/json:
-        example: !include examples/without_tracking_request.json
+        examples:
+          with_tracking:
+            displayName: With tracking
+            value: !include examples/with_tracking_request.json
+          without_tracking:
+            displayName: Without tracking
+            value: !include examples/without_tracking_request.json
         type: OrderRequest
     responses:
       200:
