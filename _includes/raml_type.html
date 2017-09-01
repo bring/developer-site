@@ -20,37 +20,7 @@
       <h4 class="anchored" id="type-{{ typeDefinition.name | slugify }}">{{ typeDefinition.displayName }}</h4>
       {% endunless %}
 
-      {% if typeDefinition.description %}
-        {{ typeDefinition.description | markdownify }}
-      {% endif %}
-
-      {% case typeDefinition.type[0] %}
-
-      {% when 'string' %}
-        it's a string type
-
-      {% when 'number' or 'integer' %}
-        it's a numeric type
-
-      {% when 'boolean' %}
-        it's a bool type
-
-      {% when 'date-only' or 'time-only' or 'datetime-only' or 'datetime' %}
-        it's a date-ish type
-
-      {% when 'file' %}
-        it's any type
-
-      {% when 'any' %}
-        it's any type
-
-      {% when 'nil' %}
-        it's a nil type
-
-      {% when 'array' %}
-        it's an array of {{ typeDefinition.items }}
-
-      {% when 'object' %}
+      {% if typeDefinition.type[0] == 'object' %}
         {% assign desc = '' %}
         <table>
           <thead>
@@ -67,8 +37,64 @@
         </table>
 
       {% else %}
-        it's a custom type of {{ typeDefinition.type[0] }}
-      {% endcase %}
+        {% assign desc = 'Type: `' | append: typeDefinition.type[0] | append: '` ' %}
+        {% if include.hide_required %}
+        {% elsif typeDefinition.required %}
+          {% assign desc = desc | append: '_Required._ ' %}
+        {% else %}
+          {% assign desc = desc | append: '_Optional._ ' %}
+        {% endif %}
+
+        {% if typeDefinition.displayName != typeDefinition.name %}
+          {% assign desc = desc | append: typeDefinition.displayName | append: '. ' %}
+        {% endif %}
+
+        {% if typeDefinition.description %}
+          {% assign desc = desc | append: typeDefinition.description %}
+        {% endif %}
+
+        {% comment %}
+        We're building a desc to ensure that required/optional, displayName and
+        description will be in the same paragraph, since we have to markdownify
+        the description.
+        {% endcomment %}
+        {{ desc | markdownify }}
+
+        {% if typeDefinition.enum %}
+        <br/>
+        Possible values:
+        <ul>
+          {% for item in typeDefinition.enum %}
+          <li><code>{{ item }}</code></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if typeDefinition.default %}
+          <br/>
+          Default value: <code>{{ typeDefinition.default }}</code>
+        {% endif %}
+
+        {% if typeDefinition.pattern %}
+          <br/>
+          Pattern: <code>{{ typeDefinition.pattern }}</code>
+        {% endif %}
+
+        {% if typeDefinition.minItems %}
+          <br/>
+          Minimum number of items: <code>{{ typeDefinition.minItems }}</code>
+        {% endif %}
+
+        {% if typeDefinition.maxItems %}
+          <br/>
+          Maximum number of items: <code>{{ typeDefinition.maxItems }}</code>
+        {% endif %}
+
+        {% if typeDefinition.example %}
+          <br/>
+          Example: <code>{{ typeDefinition.example }}</code>
+        {% endif %}
+      {% endif %}
     </article>
   {% endfor %}
 {% endfor %}
