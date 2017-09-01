@@ -456,7 +456,7 @@ documentation:
         type: OrderRequest
     responses:
       200:
-        description: On a successful request, the response gives information about the booking. Most importantly it contains a link to the label for the shipment.
+        description: The API returns 200 when validating the request by specifying query parameter `validate=true`.
         body:
           application/json:
             type: ValidatedOrderResponse
