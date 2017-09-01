@@ -139,9 +139,12 @@ layout: redesign
                   {% for bodyHash in method.body %}
                     {% assign requestBody = bodyHash[1] %}
                     {% assign hljs_lang = requestBody.name | mediatype_highlight_lang  %}
+
+                    {% if method.body.size > 1 %}
                     <p>
                       <strong>Media Type:</strong> <code>{{ requestBody.name }}</code>
                     </p>
+                    {% endif %}
 
                     <ul class="codetabs" role="tablist">
                       {% if requestBody.type %}
@@ -206,9 +209,12 @@ layout: redesign
                   {% for bodyHash in response.body %}
                     {% assign responseBody = bodyHash[1] %}
                     {% assign hljs_lang = responseBody.name | mediatype_highlight_lang  %}
+
+                    {% if response.body.size > 1 %}
                     <p>
                       <strong>Media Type:</strong> <code>{{ responseBody.name }}</code>
                     </p>
+                    {% endif %}
 
                     <ul class="codetabs" role="tablist">
                       {% if responseBody.type %}
