@@ -32,7 +32,7 @@
     {{ desc | markdownify }}
 
     {% if prop.enum %}
-    Possible values
+    <br/>Possible values
     <ul>
       {% for item in prop.enum %}
       <li><code>{{ item }}</code></li>
