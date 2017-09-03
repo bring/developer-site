@@ -229,6 +229,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/check_status.xml
+          application/json:
+            example: !include examples/check_status.json
 
 /event:
   displayName: Create TMSEvents
@@ -268,7 +270,7 @@ documentation:
         description: |
         body:
           application/xml:
-            example: !include examples/retrieve_articlebalance_one.xml
+            example: !include examples/retrieve_articlebalance_all.xml
           application/json:
             example: !include examples/retrieve_articlebalance_all.json
 
@@ -283,6 +285,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/retrieve_articlebalance_one.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_one.json
 
 /articlebalance/info/{customerId}/{articleSearchString}:
   displayName: Get stock balance and info for all articles matching search string
@@ -295,6 +299,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/retrieve_articlebalance_search.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_search.json
 
 /errorCodes:
   displayName: List error codes
