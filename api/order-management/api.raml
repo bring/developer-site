@@ -67,6 +67,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/verify_customer.xml
+          application/json:
+            example: !include examples/verify_customer.json
 
 /order/{customerId}/{orderId}:
   displayName: List order information
@@ -179,23 +181,27 @@ documentation:
         body:
           application/xml:
             example: !include examples/retrieve_orderitems.xml
+          application/json:
+            example: !include examples/retrieve_orderitems.json
 
-/transport/{customerId}/{orderId}:
-  displayName: List transport orders for order
+/packaginglist/{customerId}/{orderId}:
+  displayName: List packaging list for order
   description: |
-      List all transport information for this order. One order can have multiple transport orders.
+      List all packaging list information for this order. One order can have multiple packaging lists.
   get:
-    description: List transport orders for order
+    description: List packaging list for order
     responses:
       200:
         displayName: Success
         description: |
-          List of transport orders for given order, if any.
+          List of packaging list for given order, if any.
         body:
           application/xml:
             example: !include examples/retrieve_packinglist.xml
+          application/json:
+            example: !include examples/retrieve_packinglist.json
 
-/transport:
+/packaginglist:
   displayName: Add packaging list
   description: |
       When an order have been picked and sent, add packing list on order with transport information.
@@ -223,6 +229,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/check_status.xml
+          application/json:
+            example: !include examples/check_status.json
 
 /event:
   displayName: Create TMSEvents
@@ -252,6 +260,20 @@ documentation:
         description: |
           Successfully created balance list
 
+/articlebalance/{customerId}:
+  displayName: Get stock balance and info for all articles
+  get:
+    description: Get stock balance and info for all articles
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            example: !include examples/retrieve_articlebalance_all.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_all.json
+
 /articlebalance/{customerId}/{articleNo}:
   displayName: Get stock balance and info for one article
   get:
@@ -263,6 +285,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/retrieve_articlebalance_one.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_one.json
 
 /articlebalance/info/{customerId}/{articleSearchString}:
   displayName: Get stock balance and info for all articles matching search string
@@ -275,6 +299,8 @@ documentation:
         body:
           application/xml:
             example: !include examples/retrieve_articlebalance_search.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_search.json
 
 /errorCodes:
   displayName: List error codes

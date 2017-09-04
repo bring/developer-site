@@ -11,6 +11,6 @@
         </DateAndTimes>
     </ResponseProperties>
     <IsPurchaseOrderCustomer>
-        false
+      true
     </IsPurchaseOrderCustomer>
 </IsPurchaseorderCustomerResponse>
