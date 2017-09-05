@@ -1,7 +1,7 @@
 #%RAML 0.8
 ---
 title: Tracking API
-baseUri: https://tracking.bring.com
+baseUri: https://tracking.bring.com/api
 
 documentation:
 - title: Introduction
@@ -13,12 +13,33 @@ documentation:
 
       *Oh by the way*, we also have a [Java client library](https://github.com/bring/bring-api-java) for the Tracking API.
 
+- title: Versioning
+  content: |
+    We encourage you to use the latest version of our API all time.  Of course we keep the previous version for some time so that you will get enought time to convert your application. This API supports versioning by two means. 
+
+    - **Setting requst header with version number.**
+      Then you use the normal URL but add Request Header.
+       
+      | Header | Example |
+      |:-------|:--------|
+      | `api-version` | `2` | 
+    
+    - **Setting version number in the url.**
+      Then you have to update the url by adding *v2*
+      example for open tracking:
+      https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT 
+      example for logged in tracking:
+      https://mybring.com/tracking/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT 
+
+      You can verify that you are doing it correctly by checking that the response should contain the element *"apiVersion": "2"*.
+
+
 - title: Authentication
   content: |
     If you are a Mybring user, you can authenticate requests to the Tracking API. Authenticated requests have the following benefits:
 
-    - You get more information about your parcels, for example signatures for proof of develiery
-    - No rate limiting
+    - You get more information about your parcels, for example prices, name, address and signatures for proof of develiery
+    - Less strict rate limiting
 
     See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
 
@@ -38,7 +59,7 @@ documentation:
   description: |
       For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
 
-      You can find an XSD for the XML response here: [tracking-v1.xsd](https://tracking.bring.com/api/schema/sporing-v1.xsd).
+      You can find an XSD for the XML response here: [tracking-v2.xsd](https://tracking.bring.com/api/schema/sporing-v2.xsd).
 
       A parcel has a number of events connected to it during its travel. Here are a list of current event statuses that can be returned.
 
