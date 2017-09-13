@@ -22,6 +22,7 @@
       "rfidLabelUri": "https://example.com/17673176-8531-48dd-b407-d84bb2f26a8b.pdf",
       "waybillUri": "https://example.com/bafc82c5-e8c2-4abf-4c0a-c40ff06eb4fa.pdf",
       "orderNumberReference": "20002429",
+      "testIndicator": true,
       "packages": [
         {
           "priority": "A",

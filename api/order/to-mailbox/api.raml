@@ -12,6 +12,10 @@ types:
     type: object
     description: An order to place in Mybring.
     properties:
+      testIndicator:
+        required: false
+        type: boolean
+        description: Set to true when testing API implementation.
       customerNumber:
         type: string
         description: API customer number for which to place the order.
@@ -74,6 +78,9 @@ types:
     displayName: Successful Order
     description: A successfully placed order that contains links to labels and waybill.
     properties:
+      testIndicator:
+        type: boolean
+        description: Wheter the placed order had the testIndicator flag set or not.
       id:
         type: number
         description: The ID of the order that was placed.
@@ -187,6 +194,9 @@ types:
     displayName: Validated Order
     description: A valid order that can be placed.
     properties:
+      testIndicator:
+        type: boolean
+        description: Wheter the validated order had the testIndicator flag set or not.
       customerNumber:
         type: string
         description: The API customer number for the validated order.
@@ -421,6 +431,12 @@ documentation:
       | 7000 | Priority must be A or B | `/packages/3/priority` |
       | 8000 | Invalid phone number | `/pacakges/4/phoneNumber` |
       | 9000 | Invalid JSON API resource type (must be `orders`) | `/data/type` |
+
+      #### Testing
+
+      This service will send actual production orders unless it is set to testing mode.
+      To use the test mode, you need to set the `testIndicator` flag to true in the order attributes.
+      Note that the examples below use `"testIndicator":true`, so remove this when implementing the API in your production system.
 
 
   post:
