@@ -8,6 +8,7 @@
       "streetAddress": "Biskop Gunnerus' gate 14A",
       "senderEmail": "sender@example.com",
       "reference": "Fredag uke 35",
+      "testIndicator": true,
       "packages": [
         {
           "priority": "A",
