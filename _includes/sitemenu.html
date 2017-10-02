@@ -1,6 +1,9 @@
 
       <nav class="sitemenu" data-sticky="true">
         <ul class="list-bare sitemenu__list">
+          <li class="{% if page.url == '/api/introduction/' %} active{% endif %}">
+            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/introduction/">Why use our APIs?</a></h3>
+          </li>
           <li class="{% if page.url == '/api/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/">Getting Started</a></h3>
             {% if page.url == '/api/' %}
