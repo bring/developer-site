@@ -96,24 +96,45 @@ documentation:
        - PurchaseOrder
             - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
             - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
+
   post:
     description: Send an order
     queryParameters:
-      CustomerNo:
+      CreateOrderRequest messageFunction:
+          description: Type of order. Order, PurchaseOrder...
+          type: string
+          required: true
+          example: 10000000000
+      MessageSender partyId:
           description: Customer Number which Bring has provided. It cannot be demo customer number.
           type: string
           required: true
           example: 10000000000
+      MessageRecipient partyId:
+          description: Receiving Bring system. Constant value.
+          type: string
+          required: true
+          example: NO98466118506
+      MessageDate:
+          description: The date on which message is sent.
+          type: dateTime
+          required: true
+          example: 22.01.2017 11:36:22
+      OrderSet updateIndicator:
+          description: Type of order data. Original, Update or Delete
+          type: string
+          required: true
+          example: Original
+      Order orderId:
+          description: Ordernumber.
+          type: dateTime
+          required: true
+          example: 101010
       DateAndTimes subClass DocumentDate:
           description: The date on which order is booked.
           type: dateTime
           required: true
           example: 22.01.2017 11:36:22
-      updateIndicator:
-          description: Type of order data. Original, Update or Delete
-          type: string
-          required: true
-          example: Original
       Party/subClass OrderingParty:
           description: Details of sender. Must have Name, Street, City, CountryCode.
           required: true
@@ -159,8 +180,10 @@ documentation:
           example: 22.01.2017 11:36:22
 
     body:
-      application/xml:
-        example: !include examples/create_purchaseorder.xml
+        application/xml:
+          example: !include examples/create_order.xml
+        application/json:
+          example: !include examples/create_order.json
     responses:
       200:
         displayName: Success
