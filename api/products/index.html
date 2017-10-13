@@ -131,6 +131,64 @@ layout: redesign
               </td>
           </tr>
 
+          <tr>
+              <td>Pakke i postkassen A <sup>9</sup></td>
+              <td>
+                  PAKKE_I_POSTKASSEN_A
+              </td>
+              <td>
+                   Yes
+              </td>
+              <td>
+                   Yes
+              </td>
+          </tr>
+
+          <tr>
+              <td>Pakke i postkassen B <sup>9</sup></td>
+              <td>
+                  PAKKE_I_POSTKASSEN_B
+              </td>
+              <td>
+                    Yes
+
+              </td>
+              <td>
+                   Yes
+
+              </td>
+          </tr>
+
+          <tr>
+              <td>Pakke i postkassen A sporbar <sup>9</sup></td>
+              <td>
+                 PAKKE_I_POSTKASSEN_A_SPORBAR
+              </td>
+              <td>
+                  Yes
+
+              </td>
+              <td>
+                  Yes
+
+              </td>
+          </tr>
+
+          <tr>
+              <td>Pakke i postkassen B sporbar <sup>9</sup></td>
+              <td>
+                 PAKKE_I_POSTKASSEN_B_SPORBAR
+              </td>
+              <td>
+                   Yes
+                 
+              </td>
+              <td>
+                Yes
+
+              </td>
+          </tr>
+
           <tr class="even">
               <td>Express Nordic Same Day <sup>3</sup><br/><strike>QuickPack SameDay</strike></td>
               <td>
@@ -360,7 +418,7 @@ layout: redesign
           </tr>
 
           <tr>
-            <td>Frigo</td>
+            <td>Frigo <sup>8</sup></td>
             <td><code>FRIGO</code>
             </td>
             <td>Yes
@@ -390,7 +448,9 @@ layout: redesign
 
           7 Lead time given is from first Bring terminal to the terminal delivering the goods. Local cut-off times are not accounted for, so the client should adjust for these. These products are only available when accessed with a PARCELS_NORWAY customer number tied to an appropriate agreement.<br>
             
-          8 Frigo products can be ordered only in Norway and requires a Frigo customer.
+          8 Frigo products can be ordered only in Norway and requires a Frigo customer.<br>
+
+          9 A customer number is required for ordering Pakke i postkassen services. There is a minimum fee of 150,- for each order.
           </sup>
 
           <h3 id="additional-services" class="anchored">Additional Services</h3>
@@ -615,11 +675,11 @@ layout: redesign
             <dt>Bring Parcels, Norway</dt>
             <dd><code>BPAKKE_DOR-DOR</code></dd>
             <dd><code>BPAKKE_DOR-DOR_RETURSERVICE</code></dd>
-            <dd><code>BUSINESS_PALLET</code></dd>
             <dd><code>BUSINESS_PARCEL</code></dd>
             <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-            <dd><code>BUSINESS_PARCEL_HALFPALLET</code></dd>
-            <dd><code>BUSINESS_PARCEL_QUARTERPALLET</code></dd>
+            <dd><code>BUSINESS_PALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_HALFPALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_QUARTERPALLET</code></dd>
             <dd><code>EKSPRESS09</code></dd>
             <dd><code>EKSPRESS09_RETURSERVICE</code></dd>
             <dd><code>EXPRESS_NORDIC_0900</code></dd>
@@ -633,10 +693,10 @@ layout: redesign
 
 
             <dt>Bring International Parcels</dt>
-            <dd><code>BUSINESS_PALLET</code></dd>
             <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-            <dd><code>BUSINESS_PARCEL_HALFPALLET</code></dd>
-            <dd><code>BUSINESS_PARCEL_QUARTERPALLET</code></dd>
+            <dd><code>BUSINESS_PALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_HALFPALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_QUARTERPALLET</code></dd>
             <dd><code>EXPRESS_NORDIC_0900</code></dd>
             <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
             <dd><code>HOME_DELIVERY_PARCEL</code></dd>
@@ -644,11 +704,11 @@ layout: redesign
             
           
             <dt>Bring Parcels, Denmark</dt>
-            <dd><code>BUSINESS_PALLET</code></dd>
             <dd><code>BUSINESS_PARCEL</code></dd>
             <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-            <dd><code>BUSINESS_PARCEL_HALFPALLET</code></dd>
-            <dd><code>BUSINESS_PARCEL_QUARTERPALLET</code></dd>
+            <dd><code>BUSINESS_PALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_HALFPALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_QUARTERPALLET</code></dd>
             <dd><code>EXPRESS_NORDIC_0900</code></dd>
             <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
             <dd><code>HOME_DELIVERY_PARCEL</code></dd>
@@ -657,11 +717,11 @@ layout: redesign
             
           
             <dt>Bring Parcels, Sweden</dt>
-            <dd><code>BUSINESS_PALLET</code></dd>
             <dd><code>BUSINESS_PARCEL</code></dd>
             <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-            <dd><code>BUSINESS_PARCEL_HALFPALLET</code></dd>
-            <dd><code>BUSINESS_PARCEL_QUARTERPALLET</code></dd>
+            <dd><code>BUSINESS_PALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_HALFPALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_QUARTERPALLET</code></dd>
             <dd><code>EXPRESS_NORDIC_0900</code></dd>
             <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
             <dd><code>HOME_DELIVERY_PARCEL</code></dd>
@@ -670,11 +730,11 @@ layout: redesign
             
           
             <dt>Bring Parcels, Finland</dt>
-            <dd><code>BUSINESS_PALLET</code></dd>
             <dd><code>BUSINESS_PARCEL</code></dd>
             <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-            <dd><code>BUSINESS_PARCEL_HALFPALLET</code></dd>
-            <dd><code>BUSINESS_PARCEL_QUARTERPALLET</code></dd>
+            <dd><code>BUSINESS_PALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_HALFPALLET</code></dd>
+            <dd><code>CARRYON_BUSINESS_QUARTERPALLET</code></dd>
             <dd><code>EXPRESS_NORDIC_0900</code></dd>
             <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
             <dd><code>HOME_DELIVERY_PARCEL</code></dd>
@@ -747,6 +807,10 @@ layout: redesign
             
             <dt>Bring Frigo, Norway</dt>
             <dd><code>FRIGO</code></dd>
+
+            <dt>Minipakke, Norway</dt>
+            <dd><code>MINIPAKKE</code></dd>
+            <dd>Minipakke is phased out by 1st October 2017. Alternative services are Pakke i postkassen and Klimanøytral Servicepakke. Starting 8th October 2017, Minipakke orders will be automatically converted into Klimanøytral Servicepakke orders when scanned at the production terminal. If questions, contact integrasjon.norge@bring.com</dd>
 
 
           </dl>

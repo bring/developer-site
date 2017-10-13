@@ -16,6 +16,7 @@
       "vat": 47.36,
       "currency": "NOK",
       "orderTime": "2017-09-01T15:29:32.000+02:00",
+      "testIndicator": true,
       "packages": [
         {
           "priority": "A",

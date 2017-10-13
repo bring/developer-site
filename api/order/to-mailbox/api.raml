@@ -12,6 +12,10 @@ types:
     type: object
     description: An order to place in Mybring.
     properties:
+      testIndicator:
+        required: false
+        type: boolean
+        description: Set to true when testing API implementation.
       customerNumber:
         type: string
         description: API customer number for which to place the order.
@@ -31,10 +35,11 @@ types:
         type: string
         description: Sender's street address.
       reference:
-        required: true
-        description: A reference for the shipment (all packages).
+        required: false
+        description: A reference for the shipment that will be shown on the invoice.
       packages:
         minItems: 1
+        maxItems: 500
         type: Package[]
         description: The packages to send in this shipment.
   Package:
@@ -74,6 +79,9 @@ types:
     displayName: Successful Order
     description: A successfully placed order that contains links to labels and waybill.
     properties:
+      testIndicator:
+        type: boolean
+        description: Whether the placed order had the testIndicator flag set or not.
       id:
         type: number
         description: The ID of the order that was placed.
@@ -104,7 +112,7 @@ types:
         description: Sender's email address for the order that was placed.
       reference:
         type: string
-        description: A reference for the shipment (all packages)
+        description: A reference for the shipment that will be shown on the invoice.
       labelUri:
         type: string
         description: URL to PDF label(s) for packages ordered without tracking.
@@ -187,6 +195,9 @@ types:
     displayName: Validated Order
     description: A valid order that can be placed.
     properties:
+      testIndicator:
+        type: boolean
+        description: Whether the validated order had the testIndicator flag set or not.
       customerNumber:
         type: string
         description: The API customer number for the validated order.
@@ -213,7 +224,7 @@ types:
         description: The sender's email address.
       reference:
         type: string
-        description: A reference for the shipment (all packages).
+        description: A reference for the shipment that will be shown on the invoice.
       priceWithoutVat:
         type: number
         description: Calculated price without VAT (MVA).
@@ -413,6 +424,7 @@ documentation:
       | 500 | Internal, unknown application error | `/` |
       | 1000 | Missing field value | `/streetAddress` |
       | 2000 | Order must contain at least one package | `/packages` |
+      | 2500 | Order can maximum contain 500 packages | `/packages` |
       | 3000 | Invalid email address | `/packages/0/email` |
       | 4000 | Invalid postal code |  `/packages/1/postalCode` |
       | 5000 | User does not have access to customer number | `/customerNumber` |
@@ -421,6 +433,12 @@ documentation:
       | 7000 | Priority must be A or B | `/packages/3/priority` |
       | 8000 | Invalid phone number | `/pacakges/4/phoneNumber` |
       | 9000 | Invalid JSON API resource type (must be `orders`) | `/data/type` |
+
+      #### Testing
+
+      This service will send actual production orders unless it is set to testing mode.
+      To use the test mode, you need to set the `testIndicator` flag to true in the order attributes.
+      Note that the examples below use `"testIndicator":true`, so remove this when implementing the API in your production system.
 
 
   post:
