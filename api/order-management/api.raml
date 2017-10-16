@@ -101,10 +101,10 @@ documentation:
     description: Send an order
     queryParameters:
       CreateOrderRequest messageFunction:
-          description: Type of order. Order, PurchaseOrder...
+          description: Type of order. Order, OrderResponse, SalesOrder, NotifyTransport, PurchaseOrder, ArticleBalance, DespatchAdvice, ReceivingAdvice, PackageList.
           type: string
           required: true
-          example: 10000000000
+          example: Order
       MessageSender partyId:
           description: Customer Number which Bring has provided. It cannot be demo customer number.
           type: string
@@ -121,7 +121,7 @@ documentation:
           required: true
           example: 22.01.2017 11:36:22
       OrderSet updateIndicator:
-          description: Type of order data. Original, Update or Delete
+          description: Type of order data. Original, Update or Deletion
           type: string
           required: true
           example: Original
@@ -130,6 +130,20 @@ documentation:
           type: dateTime
           required: true
           example: 101010
+      Reference:
+          description: Set of references.
+          type: sequence
+          required: false
+      Reference referenceType:
+          description: Type of reference coded. https://www.stylusstudio.com/edifact/D04A/1153.htm
+          type: String
+          required: true
+          example: CMR
+      Reference ReferenceNo:
+          description: Reference.
+          type: String
+          required: true
+          example: 10003455TT
       DateAndTimes subClass DocumentDate:
           description: The date on which order is booked.
           type: dateTime
@@ -158,6 +172,11 @@ documentation:
           type: string
           required: false
           example: 123-4000
+      ArticleQuantity unitCode:
+          description: Unit code for quantity ordered.
+          type: string
+          required: true
+          example: STK
       ArticleQuantity:
           description: Quantity ordered.
           type: float

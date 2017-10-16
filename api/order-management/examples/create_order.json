@@ -1,1714 +1,1216 @@
 {
   "CreateOrderRequest": {
+    "@version": "4.0",
+    "@definedBy": "BIG",
+    "@domain": "String",
+    "@collaboration": "Order",
+    "@messageFunction": "ArticleBalance",
+    "@profile": "String",
+    "@language": "String",
+    "@messageId": "String",
+    "@updateIndicator": "Deletion",
+    "@testIndicator": "NO",
     "MessageDetails": {
       "MessageSender": {
-        "_partyId": "String",
-        "_idCodeList": "CNO",
-        "_idType": "String",
-        "_subPartyId": "String",
-        "_subPartyIdType": "String"
+        "@partyId": "String",
+        "@idCodeList": "CNO",
+        "@idType": "String",
+        "@subPartyId": "String",
+        "@subPartyIdType": "String"
       },
       "MessageRecipient": {
-        "_partyId": "String",
-        "_idCodeList": "CID",
-        "_idType": "String",
-        "_subPartyId": "String",
-        "_subPartyIdType": "String"
+        "@partyId": "String",
+        "@idCodeList": "CID",
+        "@idType": "String",
+        "@subPartyId": "String",
+        "@subPartyIdType": "String"
       },
       "MessageDate": {
-        "_dstIndicator": "YES",
-        "_timeZone": "+00:00",
-        "__text": "2001-12-17T09:30:47Z",
-        "toString": [
-          null
-        ]
+        "@dstIndicator": "YES",
+        "@timeZone": "+00:00",
+        "#text": "2001-12-17T09:30:47Z"
       }
     },
     "SupplyStructure": {
+      "@structureType": "Summary",
       "OrderSet": {
+        "@updateIndicator": "Other",
         "Order": {
-          "Reference": [
-            {
-              "ReferenceNo": "String",
-              "Text": [
-                "String"
-              ],
-              "ReferenceDate": {
-                "Date": "1967-08-13",
-                "Time": "14:20:00.0Z",
-                "_subClass": "DeliveryDate",
-                "_timeZone": "String",
-                "_dstIndicator": "String"
-              },
-              "_referenceType": "String",
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String"
-            },
-            {
-              "ReferenceNo": "String",
-              "Text": [
-                "String"
-              ],
-              "ReferenceDate": {
-                "Date": "1967-08-13",
-                "Time": "14:20:00.0Z",
-                "_subClass": "LoadingDate",
-                "_timeZone": "String",
-                "_dstIndicator": "String"
-              },
-              "_referenceType": "String",
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String"
-            }
-          ],
-          "DateAndTimes": [
-            {
+          "@orderId": "String",
+          "@idType": "String",
+          "Reference": [{
+            "@referenceType": "String",
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "ReferenceNo": "String",
+            "Text": "String",
+            "ReferenceDate": {
+              "@subClass": "DeliveryDate",
+              "@timeZone": "String",
+              "@dstIndicator": "String",
               "Date": "1967-08-13",
-              "Time": "14:20:00.0Z",
-              "_subClass": "DeliveryDateActual",
-              "_timeZone": "String",
-              "_dstIndicator": "String"
+              "Time": "14:20:00.0Z"
             }
-          ],
-          "TermsOfDelivery": [
+          },
             {
-              "TODConditionCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "TODConditionCodeList": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "TODLocation": "String"
+              "@referenceType": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "ReferenceNo": "String",
+              "Text": "String",
+              "ReferenceDate": {
+                "@subClass": "LoadingDate",
+                "@timeZone": "String",
+                "@dstIndicator": "String",
+                "Date": "1967-08-13",
+                "Time": "14:20:00.0Z"
+              }
+            }],
+          "DateAndTimes": {
+            "@subClass": "DeliveryDateActual",
+            "@timeZone": "String",
+            "@dstIndicator": "String",
+            "Date": "1967-08-13",
+            "Time": "14:20:00.0Z"
+          },
+          "TermsOfDelivery": [{
+            "TODConditionCode": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             },
+            "TODConditionCodeList": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
+            },
+            "TODLocation": "String"
+          },
             {
               "TODConditionCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
               },
               "TODConditionCodeList": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
               },
               "TODLocation": "String"
-            }
-          ],
+            }],
           "POResponse": {
             "ResponseTypeCoded": "RejectWithExceptionDetailOnly",
             "ResponseTypeCodedOther": "String"
           },
-          "FreeText": [
-            {
-              "Text": [
-                {
-                  "_sequence": "String",
-                  "_code": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_sequence": "String",
-                  "_code": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "LanguageCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "_usageCode": "String",
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String"
+          "FreeText": [{
+            "@usageCode": "String",
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "Text": [{
+              "@sequence": "String",
+              "@code": "String",
+              "#text": "String"
             },
-            {
-              "Text": [
-                {
-                  "_sequence": "String",
-                  "_code": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_sequence": "String",
-                  "_code": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "LanguageCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "_usageCode": "String",
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String"
+              {
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              }],
+            "LanguageCode": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             }
-          ],
-          "_orderId": "String",
-          "_idType": "String"
+          },
+            {
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Text": [{
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              },
+                {
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                }],
+              "LanguageCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            }]
         },
         "TransportService": {
           "BasicServiceCode": {
-            "_codeListIdentifier": "String",
-            "_codeListAgencyIdentifier": "String",
-            "_name": "String",
-            "__text": "String",
-            "toString": [
-              null
-            ]
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "#text": "String"
           },
-          "AdditionalService": [
-            {
-              "AdditionalServiceCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "ServiceRequirements": [
-                {
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ServiceContact": [
-                {
-                  "_comType": "CellPhone",
-                  "_channel": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_comType": "CellPhone",
-                  "_channel": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ]
+          "AdditionalService": [{
+            "AdditionalServiceCode": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             },
+            "ServiceRequirements": [{
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
+            },
+              {
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }],
+            "ServiceContact": [{
+              "@comType": "CellPhone",
+              "@channel": "String",
+              "#text": "String"
+            },
+              {
+                "@comType": "CellPhone",
+                "@channel": "String",
+                "#text": "String"
+              }]
+          },
             {
               "AdditionalServiceCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
               },
-              "ServiceRequirements": [
+              "ServiceRequirements": [{
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              },
                 {
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
+                  "@usageCode": "String",
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }],
+              "ServiceContact": [{
+                "@comType": "Mail",
+                "@channel": "String",
+                "#text": "String"
+              },
                 {
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ServiceContact": [
-                {
-                  "_comType": "Mail",
-                  "_channel": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_comType": "Email",
-                  "_channel": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ]
-            }
-          ],
+                  "@comType": "Email",
+                  "@channel": "String",
+                  "#text": "String"
+                }]
+            }],
           "TariffReference": {
-            "_codeListIdentifier": "String",
-            "_codeListAgencyIdentifier": "String",
-            "_name": "String",
-            "__text": "String",
-            "toString": [
-              null
-            ]
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "#text": "String"
           },
           "NatureOfCargo": {
-            "_codeListIdentifier": "String",
-            "_codeListAgencyIdentifier": "String",
-            "_name": "String",
-            "__text": "String",
-            "toString": [
-              null
-            ]
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "#text": "String"
           },
           "Priority": {
-            "_codeListIdentifier": "String",
-            "_codeListAgencyIdentifier": "String",
-            "_name": "String",
-            "__text": "String",
-            "toString": [
-              null
-            ]
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "#text": "String"
           },
-          "Utility": [
-            {
-              "Value": [
-                {
-                  "_sequence": "String",
-                  "_valueType": "String",
-                  "_valueCode": "text",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_sequence": "String",
-                  "_valueType": "String",
-                  "_valueCode": "text",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "_usageCode": "String",
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String"
+          "Utility": [{
+            "@usageCode": "String",
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "Value": [{
+              "@sequence": "String",
+              "@valueType": "String",
+              "@valueCode": "text",
+              "#text": "String"
             },
+              {
+                "@sequence": "String",
+                "@valueType": "String",
+                "@valueCode": "text",
+                "#text": "String"
+              }]
+          },
             {
-              "Value": [
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Value": [{
+                "@sequence": "String",
+                "@valueType": "String",
+                "@valueCode": "text",
+                "#text": "String"
+              },
                 {
-                  "_sequence": "String",
-                  "_valueType": "String",
-                  "_valueCode": "text",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_sequence": "String",
-                  "_valueType": "String",
-                  "_valueCode": "text",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "_usageCode": "String",
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String"
-            }
-          ]
+                  "@sequence": "String",
+                  "@valueType": "String",
+                  "@valueCode": "text",
+                  "#text": "String"
+                }]
+            }]
         },
         "TransportLeg": {
           "TransportLegType": {
-            "_codeListIdentifier": "String",
-            "_codeListAgencyIdentifier": "String",
-            "_name": "String",
-            "__text": "String",
-            "toString": [
-              null
-            ]
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "#text": "String"
           },
           "TransportLegId": "String",
           "ModeOfTransport": {
-            "_codeListIdentifier": "String",
-            "_codeListAgencyIdentifier": "String",
-            "_name": "String",
-            "__text": "String",
-            "toString": [
-              null
-            ]
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "#text": "String"
           },
           "MeansOfTransport": {
             "MeansOfTransportId": "String",
             "CountryCode": {
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String",
-              "__text": "String",
-              "toString": [
-                null
-              ]
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             },
             "Name": "String",
             "MeansOfTransportType": {
-              "_codeListIdentifier": "String",
-              "_codeListAgencyIdentifier": "String",
-              "_name": "String",
-              "__text": "String",
-              "toString": [
-                null
-              ]
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             }
           },
-          "Location": [
-            {
-              "LocationType": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "LocationName": "String",
-              "CountryCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "_subClass": "UltimateEndLocation",
-              "_locationId": "String",
-              "_idType": "String"
+          "Location": [{
+            "@subClass": "UltimateEndLocation",
+            "@locationId": "String",
+            "@idType": "String",
+            "LocationType": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             },
+            "LocationName": "String",
+            "CountryCode": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
+            }
+          },
             {
+              "@subClass": "CustomsDepartment",
+              "@locationId": "String",
+              "@idType": "String",
               "LocationType": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
               },
               "LocationName": "String",
               "CountryCode": {
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String",
-                "__text": "String",
-                "toString": [
-                  null
-                ]
-              },
-              "_subClass": "CustomsDepartment",
-              "_locationId": "String",
-              "_idType": "String"
-            }
-          ]
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            }]
         },
-        "Party": [
-          {
-            "Name": "String",
-            "VATNo": "String",
-            "CustomsCreditNo": "String",
-            "AccountNo": "String",
-            "BankName": "String",
-            "SwiftCode": "String",
-            "Address": [
-              {
-                "PostalCode": "String",
-                "City": "String",
-                "ZIPCode": "String",
-                "StateOrRegion": "String",
-                "CountryCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "Street": "String",
-                "StreetNo": "String",
-                "AddressLine": [
-                  "String",
-                  "String"
-                ],
-                "POBox": "String",
-                "PostOffice": "String",
-                "_subClass": "PostalAddress"
-              },
-              {
-                "PostalCode": "String",
-                "City": "String",
-                "ZIPCode": "String",
-                "StateOrRegion": "String",
-                "CountryCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "Street": "String",
-                "StreetNo": "String",
-                "AddressLine": [
-                  "String",
-                  "String"
-                ],
-                "POBox": "String",
-                "PostOffice": "String",
-                "_subClass": "PhysicalAddress"
-              }
-            ],
-            "Contact": [
-              {
-                "PhoneNo": "String",
-                "CellPhoneNo": "String",
-                "TelefaxNo": "String",
-                "EMailAddress": "String",
-                "WebAddress": "String",
-                "ContactName": "String",
-                "ContactFunction": "String"
-              },
-              {
-                "PhoneNo": "String",
-                "CellPhoneNo": "String",
-                "TelefaxNo": "String",
-                "EMailAddress": "String",
-                "WebAddress": "String",
-                "ContactName": "String",
-                "ContactFunction": "String"
-              }
-            ],
-            "Reference": [
-              {
-                "ReferenceNo": "String",
-                "Text": [
-                  "String"
-                ],
-                "ReferenceDate": {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "MessageDate",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                },
-                "_referenceType": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              },
-              {
-                "ReferenceNo": "String",
-                "Text": [
-                  "String"
-                ],
-                "ReferenceDate": {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "DepartureDateRequested",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                },
-                "_referenceType": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              }
-            ],
-            "FreeText": [
-              {
-                "Text": [
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  }
-                ],
-                "LanguageCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "_usageCode": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              },
-              {
-                "Text": [
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  }
-                ],
-                "LanguageCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "_usageCode": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              }
-            ],
-            "_subClass": "MessageCopyRecipient",
-            "_partyId": "String",
-            "_idCodeList": "AMP",
-            "_idType": "String",
-            "_subPartyId": "String",
-            "_subPartyIdType": "String"
-          },
-          {
-            "Name": "String",
-            "VATNo": "String",
-            "CustomsCreditNo": "String",
-            "AccountNo": "String",
-            "BankName": "String",
-            "SwiftCode": "String",
-            "Address": [
-              {
-                "PostalCode": "String",
-                "City": "String",
-                "ZIPCode": "String",
-                "StateOrRegion": "String",
-                "CountryCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "Street": "String",
-                "StreetNo": "String",
-                "AddressLine": [
-                  "String",
-                  "String"
-                ],
-                "POBox": "String",
-                "PostOffice": "String",
-                "_subClass": "PostalAddress"
-              },
-              {
-                "PostalCode": "String",
-                "City": "String",
-                "ZIPCode": "String",
-                "StateOrRegion": "String",
-                "CountryCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "Street": "String",
-                "StreetNo": "String",
-                "AddressLine": [
-                  "String",
-                  "String"
-                ],
-                "POBox": "String",
-                "PostOffice": "String",
-                "_subClass": "PostalAddress"
-              }
-            ],
-            "Contact": [
-              {
-                "PhoneNo": "String",
-                "CellPhoneNo": "String",
-                "TelefaxNo": "String",
-                "EMailAddress": "String",
-                "WebAddress": "String",
-                "ContactName": "String",
-                "ContactFunction": "String"
-              },
-              {
-                "PhoneNo": "String",
-                "CellPhoneNo": "String",
-                "TelefaxNo": "String",
-                "EMailAddress": "String",
-                "WebAddress": "String",
-                "ContactName": "String",
-                "ContactFunction": "String"
-              }
-            ],
-            "Reference": [
-              {
-                "ReferenceNo": "String",
-                "Text": [
-                  "String"
-                ],
-                "ReferenceDate": {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "DeliveryDateLatest",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                },
-                "_referenceType": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              },
-              {
-                "ReferenceNo": "String",
-                "Text": [
-                  "String"
-                ],
-                "ReferenceDate": {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "ProductionDate",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                },
-                "_referenceType": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              }
-            ],
-            "FreeText": [
-              {
-                "Text": [
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  }
-                ],
-                "LanguageCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "_usageCode": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              },
-              {
-                "Text": [
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  {
-                    "_sequence": "String",
-                    "_code": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  }
-                ],
-                "LanguageCode": {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                "_usageCode": "String",
-                "_codeListIdentifier": "String",
-                "_codeListAgencyIdentifier": "String",
-                "_name": "String"
-              }
-            ],
-            "_subClass": "OrderingParty",
-            "_partyId": "String",
-            "_idCodeList": "FNR",
-            "_idType": "String",
-            "_subPartyId": "String",
-            "_subPartyIdType": "String"
-          }
-        ],
-        "OrderLineSet": {
-          "OrderItem": [
-            {
-              "ArticleId": [
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ArticleQuantity": {
-                "_unitCode": "String",
-                "__text": "3.14159E0",
-                "toString": [
-                  null
-                ]
-              },
-              "ArticleBalanceQuantity": {
-                "_unitCode": "String",
-                "__text": "3.14159E0",
-                "toString": [
-                  null
-                ]
-              },
-              "ArticleWorkQuantity": {
-                "_unitCode": "String",
-                "__text": "3.14159E0",
-                "toString": [
-                  null
-                ]
-              },
-              "ArticleVariance": [
-                {
-                  "_varianceCode": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_varianceCode": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ArticleOwner": [
-                "String",
-                "String"
-              ],
-              "PackageTypeCode": [
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ArticleReference": [
-                {
-                  "ReferenceNo": "String",
-                  "Text": [
-                    "String"
-                  ],
-                  "ReferenceDate": {
-                    "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "DepartureDateRequested",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
-                  },
-                  "_referenceType": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                },
-                {
-                  "ReferenceNo": "String",
-                  "Text": [
-                    "String"
-                  ],
-                  "ReferenceDate": {
-                    "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "ProductionDate",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
-                  },
-                  "_referenceType": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                }
-              ],
-              "Description": [
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                },
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                }
-              ],
-              "DateAndTimes": [
-                {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "ReceivedDateEstimated",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                },
-                {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "OrderDeliveryDateEstimated",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                }
-              ],
-              "ArticleMonetaryAmounts": {
-                "UnitPrice": {
-                  "_currencyIdentificationCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
-                },
-                "ArticleTax": {
-                  "TaxType": "String",
-                  "ArticleTaxRate": {
-                    "_currencyIdentificationCode": "String",
-                    "__text": "3.14159E0",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "GrossAmount": {
-                    "_currencyIdentificationCode": "String",
-                    "__text": "3.14159E0",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "TaxAmount": {
-                    "_currencyIdentificationCode": "String",
-                    "__text": "3.14159E0",
-                    "toString": [
-                      null
-                    ]
-                  }
-                },
-                "ReductionInformation": {
-                  "ReductionRate": "String",
-                  "ValidFrom": {
-                    "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "OrderDeliveryDate",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
-                  },
-                  "ValidUntil": {
-                    "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "OrderDeliveryDate",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
-                  }
-                }
-              },
-              "ItemTotals": {
-                "NumberOfPackages": {
-                  "_unitCode": "String",
-                  "__text": "0",
-                  "toString": [
-                    null
-                  ]
-                },
-                "GrossWeight": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
-                },
-                "GrossVolume": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
-                },
-                "LoadingMetres": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
-                },
-                "PalletFootPrints": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
-                },
-                "Measures": [
-                  {
-                    "MeasureEntity": {
-                      "_attributeCode": "String"
-                    },
-                    "Measure": {
-                      "_unitCode": "String",
-                      "__text": "0",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    "_subClass": "String"
-                  },
-                  {
-                    "MeasureEntity": {
-                      "_attributeCode": "String"
-                    },
-                    "Measure": {
-                      "_unitCode": "String",
-                      "__text": "0",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    "_subClass": "String"
-                  }
-                ]
-              },
-              "Utility": [
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                },
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                }
-              ],
-              "ItemResponse": {
-                "ResponseTypeCoded": "MeetingHeld",
-                "ResponseTypeCodedOther": "String"
-              },
-              "ArticleStatus": "String",
-              "ArticleSerialNo": "String",
-              "ArticleBatchNo": "String",
-              "FreeText": [
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                },
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                }
-              ],
-              "ArticleName": "String",
-              "_articleLineId": "String",
-              "_idType": "String"
+        "Party": [{
+          "@subClass": "MessageCopyRecipient",
+          "@partyId": "String",
+          "@idCodeList": "AMP",
+          "@idType": "String",
+          "@subPartyId": "String",
+          "@subPartyIdType": "String",
+          "Name": "String",
+          "VATNo": "String",
+          "CustomsCreditNo": "String",
+          "AccountNo": "String",
+          "BankName": "String",
+          "SwiftCode": "String",
+          "Address": [{
+            "@subClass": "PostalAddress",
+            "PostalCode": "String",
+            "City": "String",
+            "ZIPCode": "String",
+            "StateOrRegion": "String",
+            "CountryCode": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
             },
+            "Street": "String",
+            "StreetNo": "String",
+            "AddressLine": ["String",
+              "String"],
+            "POBox": "String",
+            "PostOffice": "String"
+          },
             {
-              "ArticleId": [
+              "@subClass": "PhysicalAddress",
+              "PostalCode": "String",
+              "City": "String",
+              "ZIPCode": "String",
+              "StateOrRegion": "String",
+              "CountryCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              },
+              "Street": "String",
+              "StreetNo": "String",
+              "AddressLine": ["String",
+                "String"],
+              "POBox": "String",
+              "PostOffice": "String"
+            }],
+          "Contact": [{
+            "PhoneNo": "String",
+            "CellPhoneNo": "String",
+            "TelefaxNo": "String",
+            "EMailAddress": "String",
+            "WebAddress": "String",
+            "ContactName": "String",
+            "ContactFunction": "String"
+          },
+            {
+              "PhoneNo": "String",
+              "CellPhoneNo": "String",
+              "TelefaxNo": "String",
+              "EMailAddress": "String",
+              "WebAddress": "String",
+              "ContactName": "String",
+              "ContactFunction": "String"
+            }],
+          "Reference": [{
+            "@referenceType": "String",
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "ReferenceNo": "String",
+            "Text": "String",
+            "ReferenceDate": {
+              "@subClass": "MessageDate",
+              "@timeZone": "String",
+              "@dstIndicator": "String",
+              "Date": "1967-08-13",
+              "Time": "14:20:00.0Z"
+            }
+          },
+            {
+              "@referenceType": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "ReferenceNo": "String",
+              "Text": "String",
+              "ReferenceDate": {
+                "@subClass": "DepartureDateRequested",
+                "@timeZone": "String",
+                "@dstIndicator": "String",
+                "Date": "1967-08-13",
+                "Time": "14:20:00.0Z"
+              }
+            }],
+          "FreeText": [{
+            "@usageCode": "String",
+            "@codeListIdentifier": "String",
+            "@codeListAgencyIdentifier": "String",
+            "@name": "String",
+            "Text": [{
+              "@sequence": "String",
+              "@code": "String",
+              "#text": "String"
+            },
+              {
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              }],
+            "LanguageCode": {
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
+            }
+          },
+            {
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Text": [{
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              },
                 {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                }],
+              "LanguageCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            }]
+        },
+          {
+            "@subClass": "OrderingParty",
+            "@partyId": "String",
+            "@idCodeList": "FNR",
+            "@idType": "String",
+            "@subPartyId": "String",
+            "@subPartyIdType": "String",
+            "Name": "String",
+            "VATNo": "String",
+            "CustomsCreditNo": "String",
+            "AccountNo": "String",
+            "BankName": "String",
+            "SwiftCode": "String",
+            "Address": [{
+              "@subClass": "PostalAddress",
+              "PostalCode": "String",
+              "City": "String",
+              "ZIPCode": "String",
+              "StateOrRegion": "String",
+              "CountryCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              },
+              "Street": "String",
+              "StreetNo": "String",
+              "AddressLine": ["String",
+                "String"],
+              "POBox": "String",
+              "PostOffice": "String"
+            },
+              {
+                "@subClass": "PostalAddress",
+                "PostalCode": "String",
+                "City": "String",
+                "ZIPCode": "String",
+                "StateOrRegion": "String",
+                "CountryCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
                 },
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
+                "Street": "String",
+                "StreetNo": "String",
+                "AddressLine": ["String",
+                  "String"],
+                "POBox": "String",
+                "PostOffice": "String"
+              }],
+            "Contact": [{
+              "PhoneNo": "String",
+              "CellPhoneNo": "String",
+              "TelefaxNo": "String",
+              "EMailAddress": "String",
+              "WebAddress": "String",
+              "ContactName": "String",
+              "ContactFunction": "String"
+            },
+              {
+                "PhoneNo": "String",
+                "CellPhoneNo": "String",
+                "TelefaxNo": "String",
+                "EMailAddress": "String",
+                "WebAddress": "String",
+                "ContactName": "String",
+                "ContactFunction": "String"
+              }],
+            "Reference": [{
+              "@referenceType": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "ReferenceNo": "String",
+              "Text": "String",
+              "ReferenceDate": {
+                "@subClass": "DeliveryDateLatest",
+                "@timeZone": "String",
+                "@dstIndicator": "String",
+                "Date": "1967-08-13",
+                "Time": "14:20:00.0Z"
+              }
+            },
+              {
+                "@referenceType": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "ReferenceNo": "String",
+                "Text": "String",
+                "ReferenceDate": {
+                  "@subClass": "ProductionDate",
+                  "@timeZone": "String",
+                  "@dstIndicator": "String",
+                  "Date": "1967-08-13",
+                  "Time": "14:20:00.0Z"
                 }
-              ],
+              }],
+            "FreeText": [{
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Text": [{
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              },
+                {
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                }],
+              "LanguageCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            },
+              {
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                },
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }
+              }]
+          }],
+        "OrderLineSet": {
+          "OrderItem": [{
+            "@articleLineId": "String",
+            "@idType": "String",
+            "ArticleId": [{
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
+            },
+              {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }],
+            "ArticleQuantity": {
+              "@unitCode": "String",
+              "#text": "3.14159E0"
+            },
+            "ArticleBalanceQuantity": {
+              "@unitCode": "String",
+              "#text": "3.14159E0"
+            },
+            "ArticleWorkQuantity": {
+              "@unitCode": "String",
+              "#text": "3.14159E0"
+            },
+            "ArticleVariance": [{
+              "@varianceCode": "String",
+              "#text": "String"
+            },
+              {
+                "@varianceCode": "String",
+                "#text": "String"
+              }],
+            "ArticleOwner": ["String",
+              "String"],
+            "PackageTypeCode": [{
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "#text": "String"
+            },
+              {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }],
+            "ArticleReference": [{
+              "@referenceType": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "ReferenceNo": "String",
+              "Text": "String",
+              "ReferenceDate": {
+                "@subClass": "DepartureDateRequested",
+                "@timeZone": "String",
+                "@dstIndicator": "String",
+                "Date": "1967-08-13",
+                "Time": "14:20:00.0Z"
+              }
+            },
+              {
+                "@referenceType": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "ReferenceNo": "String",
+                "Text": "String",
+                "ReferenceDate": {
+                  "@subClass": "ProductionDate",
+                  "@timeZone": "String",
+                  "@dstIndicator": "String",
+                  "Date": "1967-08-13",
+                  "Time": "14:20:00.0Z"
+                }
+              }],
+            "Description": [{
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Text": [{
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              },
+                {
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                }],
+              "LanguageCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            },
+              {
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                },
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }
+              }],
+            "DateAndTimes": [{
+              "@subClass": "ReceivedDateEstimated",
+              "@timeZone": "String",
+              "@dstIndicator": "String",
+              "Date": "1967-08-13",
+              "Time": "14:20:00.0Z"
+            },
+              {
+                "@subClass": "OrderDeliveryDateEstimated",
+                "@timeZone": "String",
+                "@dstIndicator": "String",
+                "Date": "1967-08-13",
+                "Time": "14:20:00.0Z"
+              }],
+            "ArticleMonetaryAmounts": {
+              "UnitPrice": {
+                "@currencyIdentificationCode": "String",
+                "#text": "3.14159E0"
+              },
+              "ArticleTax": {
+                "TaxType": "String",
+                "ArticleTaxRate": {
+                  "@currencyIdentificationCode": "String",
+                  "#text": "3.14159E0"
+                },
+                "GrossAmount": {
+                  "@currencyIdentificationCode": "String",
+                  "#text": "3.14159E0"
+                },
+                "TaxAmount": {
+                  "@currencyIdentificationCode": "String",
+                  "#text": "3.14159E0"
+                }
+              },
+              "ReductionInformation": {
+                "ReductionRate": "String",
+                "ValidFrom": {
+                  "@subClass": "OrderDeliveryDate",
+                  "@timeZone": "String",
+                  "@dstIndicator": "String",
+                  "Date": "1967-08-13",
+                  "Time": "14:20:00.0Z"
+                },
+                "ValidUntil": {
+                  "@subClass": "OrderDeliveryDate",
+                  "@timeZone": "String",
+                  "@dstIndicator": "String",
+                  "Date": "1967-08-13",
+                  "Time": "14:20:00.0Z"
+                }
+              }
+            },
+            "ItemTotals": {
+              "NumberOfPackages": {
+                "@unitCode": "String",
+                "#text": "0"
+              },
+              "GrossWeight": {
+                "@unitCode": "String",
+                "#text": "3.14159E0"
+              },
+              "GrossVolume": {
+                "@unitCode": "String",
+                "#text": "3.14159E0"
+              },
+              "LoadingMetres": {
+                "@unitCode": "String",
+                "#text": "3.14159E0"
+              },
+              "PalletFootPrints": {
+                "@unitCode": "String",
+                "#text": "3.14159E0"
+              },
+              "Measures": [{
+                "@subClass": "String",
+                "MeasureEntity": {
+                  "@attributeCode": "String"
+                },
+                "Measure": {
+                  "@unitCode": "String",
+                  "#text": "0"
+                }
+              },
+                {
+                  "@subClass": "String",
+                  "MeasureEntity": {
+                    "@attributeCode": "String"
+                  },
+                  "Measure": {
+                    "@unitCode": "String",
+                    "#text": "0"
+                  }
+                }]
+            },
+            "Utility": [{
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Text": [{
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              },
+                {
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                }],
+              "LanguageCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            },
+              {
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                },
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }
+              }],
+            "ItemResponse": {
+              "ResponseTypeCoded": "MeetingHeld",
+              "ResponseTypeCodedOther": "String"
+            },
+            "ArticleStatus": "String",
+            "ArticleSerialNo": "String",
+            "ArticleBatchNo": "String",
+            "FreeText": [{
+              "@usageCode": "String",
+              "@codeListIdentifier": "String",
+              "@codeListAgencyIdentifier": "String",
+              "@name": "String",
+              "Text": [{
+                "@sequence": "String",
+                "@code": "String",
+                "#text": "String"
+              },
+                {
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                }],
+              "LanguageCode": {
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              }
+            },
+              {
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                },
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }
+              }],
+            "ArticleName": "String"
+          },
+            {
+              "@articleLineId": "String",
+              "@idType": "String",
+              "ArticleId": [{
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              },
+                {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }],
               "ArticleQuantity": {
-                "_unitCode": "String",
-                "__text": "3.14159E0",
-                "toString": [
-                  null
-                ]
+                "@unitCode": "String",
+                "#text": "3.14159E0"
               },
               "ArticleBalanceQuantity": {
-                "_unitCode": "String",
-                "__text": "3.14159E0",
-                "toString": [
-                  null
-                ]
+                "@unitCode": "String",
+                "#text": "3.14159E0"
               },
               "ArticleWorkQuantity": {
-                "_unitCode": "String",
-                "__text": "3.14159E0",
-                "toString": [
-                  null
-                ]
+                "@unitCode": "String",
+                "#text": "3.14159E0"
               },
-              "ArticleVariance": [
+              "ArticleVariance": [{
+                "@varianceCode": "String",
+                "#text": "String"
+              },
                 {
-                  "_varianceCode": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
+                  "@varianceCode": "String",
+                  "#text": "String"
+                }],
+              "ArticleOwner": ["String",
+                "String"],
+              "PackageTypeCode": [{
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "#text": "String"
+              },
                 {
-                  "_varianceCode": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ArticleOwner": [
-                "String",
-                "String"
-              ],
-              "PackageTypeCode": [
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                },
-                {
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String",
-                  "__text": "String",
-                  "toString": [
-                    null
-                  ]
-                }
-              ],
-              "ArticleReference": [
-                {
-                  "ReferenceNo": "String",
-                  "Text": [
-                    "String"
-                  ],
-                  "ReferenceDate": {
-                    "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "OrderDeliveryDateEstimated",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
-                  },
-                  "_referenceType": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                },
-                {
-                  "ReferenceNo": "String",
-                  "Text": [
-                    "String"
-                  ],
-                  "ReferenceDate": {
-                    "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "ArrivalDateActual",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
-                  },
-                  "_referenceType": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                }
-              ],
-              "Description": [
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                },
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
-                }
-              ],
-              "DateAndTimes": [
-                {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }],
+              "ArticleReference": [{
+                "@referenceType": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "ReferenceNo": "String",
+                "Text": "String",
+                "ReferenceDate": {
+                  "@subClass": "OrderDeliveryDateEstimated",
+                  "@timeZone": "String",
+                  "@dstIndicator": "String",
                   "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "LoadingDate",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
-                },
-                {
-                  "Date": "1967-08-13",
-                  "Time": "14:20:00.0Z",
-                  "_subClass": "ProductionDate",
-                  "_timeZone": "String",
-                  "_dstIndicator": "String"
+                  "Time": "14:20:00.0Z"
                 }
-              ],
+              },
+                {
+                  "@referenceType": "String",
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "ReferenceNo": "String",
+                  "Text": "String",
+                  "ReferenceDate": {
+                    "@subClass": "ArrivalDateActual",
+                    "@timeZone": "String",
+                    "@dstIndicator": "String",
+                    "Date": "1967-08-13",
+                    "Time": "14:20:00.0Z"
+                  }
+                }],
+              "Description": [{
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                },
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
+                }
+              },
+                {
+                  "@usageCode": "String",
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "Text": [{
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  },
+                    {
+                      "@sequence": "String",
+                      "@code": "String",
+                      "#text": "String"
+                    }],
+                  "LanguageCode": {
+                    "@codeListIdentifier": "String",
+                    "@codeListAgencyIdentifier": "String",
+                    "@name": "String",
+                    "#text": "String"
+                  }
+                }],
+              "DateAndTimes": [{
+                "@subClass": "LoadingDate",
+                "@timeZone": "String",
+                "@dstIndicator": "String",
+                "Date": "1967-08-13",
+                "Time": "14:20:00.0Z"
+              },
+                {
+                  "@subClass": "ProductionDate",
+                  "@timeZone": "String",
+                  "@dstIndicator": "String",
+                  "Date": "1967-08-13",
+                  "Time": "14:20:00.0Z"
+                }],
               "ArticleMonetaryAmounts": {
                 "UnitPrice": {
-                  "_currencyIdentificationCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
+                  "@currencyIdentificationCode": "String",
+                  "#text": "3.14159E0"
                 },
                 "ArticleTax": {
                   "TaxType": "String",
                   "ArticleTaxRate": {
-                    "_currencyIdentificationCode": "String",
-                    "__text": "3.14159E0",
-                    "toString": [
-                      null
-                    ]
+                    "@currencyIdentificationCode": "String",
+                    "#text": "3.14159E0"
                   },
                   "GrossAmount": {
-                    "_currencyIdentificationCode": "String",
-                    "__text": "3.14159E0",
-                    "toString": [
-                      null
-                    ]
+                    "@currencyIdentificationCode": "String",
+                    "#text": "3.14159E0"
                   },
                   "TaxAmount": {
-                    "_currencyIdentificationCode": "String",
-                    "__text": "3.14159E0",
-                    "toString": [
-                      null
-                    ]
+                    "@currencyIdentificationCode": "String",
+                    "#text": "3.14159E0"
                   }
                 },
                 "ReductionInformation": {
                   "ReductionRate": "String",
                   "ValidFrom": {
+                    "@subClass": "ArrivalDate",
+                    "@timeZone": "String",
+                    "@dstIndicator": "String",
                     "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "ArrivalDate",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
+                    "Time": "14:20:00.0Z"
                   },
                   "ValidUntil": {
+                    "@subClass": "DeliveryDate",
+                    "@timeZone": "String",
+                    "@dstIndicator": "String",
                     "Date": "1967-08-13",
-                    "Time": "14:20:00.0Z",
-                    "_subClass": "DeliveryDate",
-                    "_timeZone": "String",
-                    "_dstIndicator": "String"
+                    "Time": "14:20:00.0Z"
                   }
                 }
               },
               "ItemTotals": {
                 "NumberOfPackages": {
-                  "_unitCode": "String",
-                  "__text": "0",
-                  "toString": [
-                    null
-                  ]
+                  "@unitCode": "String",
+                  "#text": "0"
                 },
                 "GrossWeight": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
+                  "@unitCode": "String",
+                  "#text": "3.14159E0"
                 },
                 "GrossVolume": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
+                  "@unitCode": "String",
+                  "#text": "3.14159E0"
                 },
                 "LoadingMetres": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
+                  "@unitCode": "String",
+                  "#text": "3.14159E0"
                 },
                 "PalletFootPrints": {
-                  "_unitCode": "String",
-                  "__text": "3.14159E0",
-                  "toString": [
-                    null
-                  ]
+                  "@unitCode": "String",
+                  "#text": "3.14159E0"
                 },
-                "Measures": [
-                  {
-                    "MeasureEntity": {
-                      "_attributeCode": "String"
-                    },
-                    "Measure": {
-                      "_unitCode": "String",
-                      "__text": "0",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    "_subClass": "String"
+                "Measures": [{
+                  "@subClass": "String",
+                  "MeasureEntity": {
+                    "@attributeCode": "String"
                   },
-                  {
-                    "MeasureEntity": {
-                      "_attributeCode": "String"
-                    },
-                    "Measure": {
-                      "_unitCode": "String",
-                      "__text": "0",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    "_subClass": "String"
+                  "Measure": {
+                    "@unitCode": "String",
+                    "#text": "0"
                   }
-                ]
-              },
-              "Utility": [
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
                 },
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
+                  {
+                    "@subClass": "String",
+                    "MeasureEntity": {
+                      "@attributeCode": "String"
                     },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
+                    "Measure": {
+                      "@unitCode": "String",
+                      "#text": "0"
                     }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
+                  }]
+              },
+              "Utility": [{
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
+                },
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
                 }
-              ],
+              },
+                {
+                  "@usageCode": "String",
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "Text": [{
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  },
+                    {
+                      "@sequence": "String",
+                      "@code": "String",
+                      "#text": "String"
+                    }],
+                  "LanguageCode": {
+                    "@codeListIdentifier": "String",
+                    "@codeListAgencyIdentifier": "String",
+                    "@name": "String",
+                    "#text": "String"
+                  }
+                }],
               "ItemResponse": {
                 "ResponseTypeCoded": "ApprovedAsSubmitted",
                 "ResponseTypeCodedOther": "String"
@@ -1716,109 +1218,68 @@
               "ArticleStatus": "String",
               "ArticleSerialNo": "String",
               "ArticleBatchNo": "String",
-              "FreeText": [
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
+              "FreeText": [{
+                "@usageCode": "String",
+                "@codeListIdentifier": "String",
+                "@codeListAgencyIdentifier": "String",
+                "@name": "String",
+                "Text": [{
+                  "@sequence": "String",
+                  "@code": "String",
+                  "#text": "String"
                 },
-                {
-                  "Text": [
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    },
-                    {
-                      "_sequence": "String",
-                      "_code": "String",
-                      "__text": "String",
-                      "toString": [
-                        null
-                      ]
-                    }
-                  ],
-                  "LanguageCode": {
-                    "_codeListIdentifier": "String",
-                    "_codeListAgencyIdentifier": "String",
-                    "_name": "String",
-                    "__text": "String",
-                    "toString": [
-                      null
-                    ]
-                  },
-                  "_usageCode": "String",
-                  "_codeListIdentifier": "String",
-                  "_codeListAgencyIdentifier": "String",
-                  "_name": "String"
+                  {
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  }],
+                "LanguageCode": {
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "#text": "String"
                 }
-              ],
-              "ArticleName": "String",
-              "_articleLineId": "String",
-              "_idType": "String"
-            }
-          ]
+              },
+                {
+                  "@usageCode": "String",
+                  "@codeListIdentifier": "String",
+                  "@codeListAgencyIdentifier": "String",
+                  "@name": "String",
+                  "Text": [{
+                    "@sequence": "String",
+                    "@code": "String",
+                    "#text": "String"
+                  },
+                    {
+                      "@sequence": "String",
+                      "@code": "String",
+                      "#text": "String"
+                    }],
+                  "LanguageCode": {
+                    "@codeListIdentifier": "String",
+                    "@codeListAgencyIdentifier": "String",
+                    "@name": "String",
+                    "#text": "String"
+                  }
+                }],
+              "ArticleName": "String"
+            }]
         },
-        "DateAndTimes": [
+        "DateAndTimes": [{
+          "@subClass": "ExpirationDate",
+          "@timeZone": "String",
+          "@dstIndicator": "String",
+          "Date": "1967-08-13",
+          "Time": "14:20:00.0Z"
+        },
           {
+            "@subClass": "DepartureDateRequested",
+            "@timeZone": "String",
+            "@dstIndicator": "String",
             "Date": "1967-08-13",
-            "Time": "14:20:00.0Z",
-            "_subClass": "ExpirationDate",
-            "_timeZone": "String",
-            "_dstIndicator": "String"
-          },
-          {
-            "Date": "1967-08-13",
-            "Time": "14:20:00.0Z",
-            "_subClass": "DepartureDateRequested",
-            "_timeZone": "String",
-            "_dstIndicator": "String"
-          }
-        ],
-        "_updateIndicator": "Other"
-      },
-      "_structureType": "Summary"
-    },
-    "_version": "4.0",
-    "_definedBy": "BIG",
-    "_domain": "String",
-    "_collaboration": "Order",
-    "_messageFunction": "ArticleBalance",
-    "_profile": "String",
-    "_language": "String",
-    "_messageId": "String",
-    "_updateIndicator": "Deletion",
-    "_testIndicator": "NO"
+            "Time": "14:20:00.0Z"
+          }]
+      }
+    }
   }
 }
