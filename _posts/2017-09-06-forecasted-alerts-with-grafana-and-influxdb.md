@@ -75,7 +75,7 @@ That might look something like this:
 
 <img src="{{ site.baseurl }}/img/disk_forecast_alert.png" />
 
-Once you've created the alert, you'll notice that there's a red line in the graph showing the treshold where the alert would trigger, like this:
+Once you've created the alert, you'll notice that there's a red line in the graph showing the threshold where the alert would trigger, like this:
 
 <img src="{{ site.baseurl }}/img/disk_forecast_alert_graph.png" />
 
