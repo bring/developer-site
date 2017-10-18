@@ -7,6 +7,6 @@ javaBuildReleaseDeploy {
     releaseCommand = "echo Skipping release for Jekyll application"
     deployTestCommand = "b deploy test"
     deployQaCommand  = "b deploy qa"
-    deployProdCommand  = ""
+    deployProdCommand  = "b deploy production"
 }
 
