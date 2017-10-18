@@ -716,15 +716,15 @@
           ],
           "ArticleQuantity": {
             "unitCode": "String",
-            "value": "3.14159E0"
+            "value": 32.50
           },
           "ArticleBalanceQuantity": {
             "unitCode": "String",
-            "value": "3.14159E0"
+            "value": 32.50
           },
           "ArticleWorkQuantity": {
             "unitCode": "String",
-            "value": "3.14159E0"
+            "value": 32.50
           },
           "ArticleVariance": [
             {
@@ -855,21 +855,21 @@
           "ArticleMonetaryAmounts": {
             "UnitPrice": {
               "currencyIdentificationCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "ArticleTax": {
               "TaxType": "String",
               "ArticleTaxRate": {
                 "currencyIdentificationCode": "String",
-                "value": "3.14159E0"
+                "value": 32.50
               },
               "GrossAmount": {
                 "currencyIdentificationCode": "String",
-                "value": "3.14159E0"
+                "value": 32.50
               },
               "TaxAmount": {
                 "currencyIdentificationCode": "String",
-                "value": "3.14159E0"
+                "value": 32.50
               }
             },
             "ReductionInformation": {
@@ -897,19 +897,19 @@
             },
             "GrossWeight": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "GrossVolume": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "LoadingMetres": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "PalletFootPrints": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "Measures": [
               {
@@ -1062,15 +1062,15 @@
           ],
           "ArticleQuantity": {
             "unitCode": "String",
-            "value": "3.14159E0"
+            "value": 32.50
           },
           "ArticleBalanceQuantity": {
             "unitCode": "String",
-            "value": "3.14159E0"
+            "value": 32.50
           },
           "ArticleWorkQuantity": {
             "unitCode": "String",
-            "value": "3.14159E0"
+            "value": 32.50
           },
           "ArticleVariance": [
             {
@@ -1201,21 +1201,21 @@
           "ArticleMonetaryAmounts": {
             "UnitPrice": {
               "currencyIdentificationCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "ArticleTax": {
               "TaxType": "String",
               "ArticleTaxRate": {
                 "currencyIdentificationCode": "String",
-                "value": "3.14159E0"
+                "value": 32.50
               },
               "GrossAmount": {
                 "currencyIdentificationCode": "String",
-                "value": "3.14159E0"
+                "value": 32.50
               },
               "TaxAmount": {
                 "currencyIdentificationCode": "String",
-                "value": "3.14159E0"
+                "value": 32.50
               }
             },
             "ReductionInformation": {
@@ -1243,19 +1243,19 @@
             },
             "GrossWeight": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "GrossVolume": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "LoadingMetres": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "PalletFootPrints": {
               "unitCode": "String",
-              "value": "3.14159E0"
+              "value": 32.50
             },
             "Measures": [
               {
