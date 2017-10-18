@@ -33,9 +33,16 @@ This will clean the build, install necessary SASS dependencies
 and launch the site at http://127.0.0.1:4000/
 
 
-Build release
--------------
+Release and deploy
+------------------
 
-Build a release (populate the `_site` dir) by running
+The site is built and deployed to test, qa and master by Jenkins.
+
+You can still build it (populate the `_site` dir) manually by running
 
     bundle exec rake build
+
+and then deploy as normal with 
+
+    b deploy [test|qa|production]
+
