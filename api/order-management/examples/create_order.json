@@ -27,7 +27,7 @@
     "MessageDate": {
       "dstIndicator": "YES",
       "timeZone": "+00:00",
-      "value": "2001-12-17T09:30:47Z"
+      "value": 1504460506061
     }
   },
   "SupplyStructure": {
@@ -893,7 +893,7 @@
           "ItemTotals": {
             "NumberOfPackages": {
               "unitCode": "String",
-              "value": "0"
+              "value": 10
             },
             "GrossWeight": {
               "unitCode": "String",
@@ -919,7 +919,7 @@
                 },
                 "Measure": {
                   "unitCode": "String",
-                  "value": "0"
+                  "value": 3.5
                 }
               },
               {
@@ -929,7 +929,7 @@
                 },
                 "Measure": {
                   "unitCode": "String",
-                  "value": "0"
+                  "value": 3.5
                 }
               }
             ]
@@ -1239,7 +1239,7 @@
           "ItemTotals": {
             "NumberOfPackages": {
               "unitCode": "String",
-              "value": "0"
+              "value": 10
             },
             "GrossWeight": {
               "unitCode": "String",
@@ -1265,7 +1265,7 @@
                 },
                 "Measure": {
                   "unitCode": "String",
-                  "value": "0"
+                  "value": 3.5
                 }
               },
               {
@@ -1275,7 +1275,7 @@
                 },
                 "Measure": {
                   "unitCode": "String",
-                  "value": "0"
+                  "value": 3.5
                 }
               }
             ]
