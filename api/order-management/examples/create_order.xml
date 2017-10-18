@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <CreateOrderRequest version="4.0" definedBy="BIG" domain="String" collaboration="Order" messageFunction="ArticleBalance" profile="String" language="String" messageId="String" updateIndicator="Deletion" testIndicator="NO">
   <MessageDetails>
     <MessageSender partyId="String" idCodeList="CNO" idType="String" subPartyId="String" subPartyIdType="String"/>
