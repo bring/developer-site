@@ -3,7 +3,7 @@ title: Systemutvikler web
 layout: blog
 ---
 
-# Systemutvikler web
+# Systemutvikler web<br> i Oslo eller Trondheim
 
 Har du lyst til å lage brukervennlige og moderne webapps? Hjelp oss å bli verdens mest fremtidsrettede post- og logistikkonsern!
 
@@ -44,7 +44,7 @@ Vi står foran mange spennende prosjektutfordringer hvor vi skal lage løsninger
 
 Webteamet består av ca 40 kloke ansatte og konsulenter som brenner for å lage brukervennlige og stabile lettvektsløsninger. Avdelingen er delt inn i smidige team med utviklere, interaksjonsdesignere og produkteiere. Vi har varierte arbeidsoppgaver som fordeles etter ønsker og kompetanse, og legger til rette for de som ønsker det til å ta større ansvar innen fag/teknologi eller som Scrum Master. Vi er opptatt av faglig utvikling og har faste arenaer for deling av erfaring og kunnskap.
 
-Vi byr på spennende og varierte arbeidsoppgaver, et sterkt faglig miljø med dyktige kolleger, markedslønn og et meget hyggelig sosialt miljø. Vi holder til midt i hjertet av sentrum vegg i vegg med Oslo S.
+Vi byr på spennende og varierte arbeidsoppgaver, et sterkt faglig miljø med dyktige kolleger, markedslønn og et meget hyggelig sosialt miljø. Vi holder til midt i hjertet av sentrum vegg i vegg med Oslo S. Alternativt arbeidssted er Torgarden i Trondheim.
 
 Dersom du har spørsmål til stillingen, ta gjerne kontakt med
 Avdelingsleder Arne Moen, mobil 902&nbsp;02&nbsp;239,
