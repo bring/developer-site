@@ -72,7 +72,7 @@ documentation:
           application/json:
             example: !include examples/verify_customer.json
 
-/order/{customerId}/{orderId}:
+/oorder/{customerId}/{orderId}:
   displayName: List order information
   description: |
       Get all information on a given order.
@@ -87,7 +87,7 @@ documentation:
           application/xml:
             example: !include examples/retrieve_purchaseorder.xml
 
-/order:
+/omorder:
   displayName: Send an order
   description: |
       Send an order to Order Management. There are different types of order supported in Order Management.
