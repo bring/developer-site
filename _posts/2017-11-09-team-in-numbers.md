@@ -46,7 +46,8 @@ In order to get all of that work done, our deploy script has been running for mo
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/deploy-script.svg">
 
-It's a very diligent script!
+It's a very diligent script! 11 441 of the deploys were done by our build server, which is doing more and more of our work for us. We're automating more and more things and it's helping us set aside more time for what's fun. We're also branching out to deploying from the train because we see at least 2 deploys from NSB_INTERAKTIV!
+
 
 What do our users do?
 ---
