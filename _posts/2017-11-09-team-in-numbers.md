@@ -14,7 +14,7 @@ Sometimes it's fun to take a break and look back at what's happened in the past 
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/developers.svg">
 
-What can 42 developers can do in 365 days!
+What can 42 developers do in 365 days!
 ---
 
 We have produced a total of 6296 pull requests on github -- that's change proposals to code and documentation.
