@@ -48,6 +48,9 @@ In order to get all of that work done, our deploy script has been running for mo
 
 It's a very diligent script! 11 441 of the deploys were done by our build server, which is doing more and more of our work for us. We're automating more and more things and it's helping us set aside more time for what's fun. We're also branching out to deploying from the train because we see at least 2 deploys from NSB_INTERAKTIV!
 
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/steps.svg">
+
+We've climbed exactly<sup><a href="#estimation" id="estimation-ref">1</a></sup> 301337 steps the last 365 days! That's a fair bit of climbing!
 
 What do our users do?
 ---
@@ -66,3 +69,7 @@ We took a sample of these tracking requests done over a period of one week -- he
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/browsers.svg">
 
 The business applications that most of us work on have users with older browsers than the general public, so we have to build UIs that take this into account. Internet Explorer 11 is now over 4 years old, so this provides… interesting challenges.
+
+<hr>
+
+<sup id="estimation"><a href="#estimation-ref">1</a></sup> Strictly speaking, at least, not exactly. Who's counting? There at least 200 working days in the year and at least 5 people take the stairs after lunch every day. On average we work on at least the 15th floor and there are at least 20 steps to go up one floor. So that's at least 300 000 steps!
