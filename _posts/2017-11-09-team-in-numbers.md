@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The web team in numbers
-date: 2017-11-09 13:00:43 01:00
+date: 2017-11-09 16:08:43 01:00
 category: webteam
 author:
     - AnshikaKoul
@@ -46,7 +46,7 @@ In order to get all of that work done, our deploy script has been running for mo
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/deploy-script.svg">
 
-It's a very diligent script! 11 441 of the deploys were done by our build server, which is doing more and more of our work for us. We're automating more and more things and it's helping us set aside more time for what's fun. We're also branching out to deploying from the train because we see at least 2 deploys from NSB_INTERAKTIV!
+It's a very diligent script! 11 441 of the deploys were done by our build server, which is doing a lot of our work for us. We're increasingly automating our way out of having to do work ourselves so we have more time for blogging. We're also branching out to deploying from the train because we see at least 2 deploys from NSB_INTERAKTIV!
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/steps.svg">
 
