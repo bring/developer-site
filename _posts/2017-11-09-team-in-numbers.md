@@ -39,9 +39,15 @@ It's a very diligent script!
 What do our users do?
 ---
 
-This would really take way too much investigation to answer thoroughly, but one thing we know they really like doing is to track shipments! We took a sample of 8 916 295 tracking requests done over a period of one week -- here's a few fun numbers we found:
+This would really take way too much investigation to answer thoroughly, but one thing we know they really like doing is to track shipments! 
+
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/tracking.svg">
+
+We took a sample of these tracking requests done over a period of one week -- here's a few fun numbers we found:
 
 - On average, each tracking request is sent 10.5 times to us. Clearly an indication that shipments get there faster if they are tracked a lot!
 - Some shipments are tracked a lot of times! The most popular one was tracked 13 791 times, the runner up has 10 041 tracking requests.
 - Only 312 231 tracking requests happened only once -- that's only 3.5%.
 - 177 856 tracking requests were seen over 10 times that's a bit less than 2%.
+
+
