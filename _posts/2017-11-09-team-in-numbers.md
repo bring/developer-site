@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The web team in numbers
+title: The Web Team in Numbers
 date: 2017-11-09 16:08:43 01:00
 category: webteam
 author:
