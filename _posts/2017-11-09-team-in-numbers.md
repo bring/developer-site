@@ -12,6 +12,8 @@ author:
 
 There will a short introduction here
 
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/developers.svg">
+
 
 > Maybe even a fun quote about measuring things or numbers
 
@@ -19,6 +21,8 @@ What does XXX developers do in a year? (what do we do)
 ---
 
 We have produced a total of 6296 pull requests on github -- that's change proposals to code and documentation.
+
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/pullrequests.svg">
 
 That has produced 4469 releases of our applications MAYBE MENTION AN APPLICATION
 
