@@ -30,7 +30,18 @@ Also you know what is more amazing than writing a brand new super-useful, super 
 
 That has produced 4469 releases of our applications MAYBE MENTION AN APPLICATION
 
-By the looks of it, we're deploying most of the time. The last year, we have logged 26 284 deploys, 12 721 to our happy test servers who live on the bleeding edge all the time, 9 459 times to our more stable QA environment and 4 104 to our lovely production servers. In order to get all of that work done, our deploy script has been running for more than 3 513 887 seconds, or just a little bit less than 6 weeks. 
+By the looks of it, we're deploying most of the time. The last year, we have logged 26 284 deploys in total! 
+
+12 721 to our happy test servers who live on the bleeding edge all the time, 
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/deploys-test.svg">
+
+9 459 times to our more stable QA environment...
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/deploys-qa.svg"> 
+ 
+... 4 104 to our lovely production servers. 
+<img src="{{ site.baseurl }}/img/webteam-in-numbers/deploys-prod.svg"> 
+
+In order to get all of that work done, our deploy script has been running for more than 3 513 887 seconds, or just a little bit less than 6 weeks.
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/deploy-script.svg">
 
