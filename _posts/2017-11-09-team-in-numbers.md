@@ -2,7 +2,7 @@
 layout: post
 title: The web team in numbers
 date: 2017-11-09 13:00:43 01:00
-category: trivia
+category: webteam
 author:
     - AnshikaKoul
     - kaaveland
@@ -14,7 +14,7 @@ Sometimes it's fun to take a break and look back at what's happened in the past 
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/developers.svg">
 
-So let's try to find out what 42 developers can do in 365 days!
+What can 42 developers can do in 365 days!
 ---
 
 We have produced a total of 6296 pull requests on github -- that's change proposals to code and documentation.
@@ -31,7 +31,7 @@ One heroic developer deleted 1.24M lines alone. That's probably saving us megaby
 
 We produced 4469 releases of our applications. That's more than 20 releases per working day!
 
-By the looks of it, we're deploying most of the time. The last year, we have logged 26 284 deploys in total!
+By the looks of it, we're deploying most of the time. The last year, we have logged 26 284 deployments in total!
 
 12 721 to our happy test servers who enjoy life on the bleeding edge,
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/deploys-test.svg">
@@ -50,7 +50,7 @@ It's a very diligent script! 11 441 of the deploys were done by our build server
 
 <img src="{{ site.baseurl }}/img/webteam-in-numbers/steps.svg">
 
-We've climbed exactly<sup><a href="#estimation" id="estimation-ref">1</a></sup> 301337 steps the last 365 days! That's a fair bit of climbing!
+We've climbed exactly<sup><a href="#estimation" id="estimation-ref">1</a></sup> 301337 steps the last 365 days! That probably means we've climbed Everest, right?
 
 What do our users do?
 ---
