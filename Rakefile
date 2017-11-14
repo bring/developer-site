@@ -21,6 +21,7 @@ desc 'Build the _site directory'
 task :build => [:clean, :install_dependencies] do
   puts '= build using jekyll'
   system('JEKYLL_ENV=production bundle exec jekyll build --trace')
+  system('git rev-parse HEAD >> _site/.gitcommit')
 end
 
 desc 'Run locally using jekyll'
