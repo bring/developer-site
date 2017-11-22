@@ -85,7 +85,9 @@ documentation:
           Complete order information including order items.
         body:
           application/xml:
-            example: !include examples/retrieve_purchaseorder.xml
+            example: !include examples/retrieve_order.xml
+          application/json:
+            example: !include examples/retrieve_order.json
 
 /omorder:
   displayName: Send an order
@@ -103,7 +105,7 @@ documentation:
     description: Send an order
     queryParameters:
       CreateOrderRequest messageFunction:
-          description: Type of order. Order, OrderResponse, SalesOrder, NotifyTransport, PurchaseOrder, ArticleBalance, DespatchAdvice, ReceivingAdvice, PackageList.
+          description: Type of order. <br>"Order"<br>"OrderResponse"<br>"SalesOrder"<br>"NotifyTransport"<br>"PurchaseOrder"<br>"ArticleBalance"<br>"DespatchAdvice"<br>"ReceivingAdvice"<br>"PackageList"
           type: string
           required: true
           example: Order
@@ -152,10 +154,25 @@ documentation:
           required: true
           example: 22.01.2017 11:36:22
       TransportService BasicServiceCode:
-          description: Transport product for shipment to customer.
+          description: Transport product for shipment to customer. http://developer.bring.com/api/products/
           type: String
           required: true
           example: SERVICEPAKKE
+      TransportService AdditionalService AdditionalServiceCode:
+          description: Transport services for shipment to customer. http://developer.bring.com/api/products/
+          type: String
+          required: true
+          example: EVARSLING
+      TransportLeg TransportLegType:
+          description: TransportLegType id. Default value 30.
+          type: String
+          required: true
+          example: 30
+      TransportLeg ModeOfTransport:
+          description: Type of transport. <br>1 = Sea<br>2 = Train<br>3 = Road<br>4 = Air.
+          type: String
+          required: true
+          example: 3
       Party/subClass OrderingParty:
           description: Details of sender. Must have Name, Street, City, CountryCode.
           required: true
@@ -165,6 +182,11 @@ documentation:
       Party/subClass Supplier:
           description: Details of supplier. Must have Name, Street, City, CountryCode if used.
           required: false
+      Party/subClass PerformingUnit partyId:
+          description: Warehouse id for order. Required if order to Warehousing system.
+          type: string
+          required: false
+          example: BERGER
       OrderLineSet:
           description: Set of order items.
           type: sequence
@@ -176,9 +198,14 @@ documentation:
           example: 10
       ArticleId:
           description: Article number or id.
+          type: sequence
+          required: true
+          example: 123-4000
+      ArticleId codeListAgencyIdentifier:
+          description: Sets type of ArticleId. <br>"CustomerItemNo"<br>"VendorItemNo"<br>"EAN"<br>If not used ArticleId default is CustomerItemNo.
           type: string
           required: false
-          example: 123-4000
+          example: VendorItemNo
       ArticleQuantity unitCode:
           description: Unit code for quantity ordered.
           type: string
@@ -189,15 +216,20 @@ documentation:
           type: float
           required: true
           example: 2.0
-      Description:
-          description: Article description / name.
+      Description usageCode:
+          description: Article description type. If description used set to AAA.
           type: string
-          required: true
-          example: Spear parts
+          required: false
+          example: AAA
       Description:
-          description: Article description / name.
+          description: Article description.
           type: string
-          required: true
+          required: false
+          example: Spear parts with all parts
+      ArticleName:
+          description: Article name.
+          type: string
+          required: false
           example: Spear parts
       DateAndTimes subClass DeliveryDateRequested:
           description: The date on which order is requested delivered.
@@ -266,9 +298,9 @@ documentation:
           Successfully added packaging list.
 
 /senderStatus/{customerId}/{orderId}:
-  displayName: Get status for order
+  displayName: Get sender status for order
   description: |
-      Check status for an order. Open when not fully delivered or locked when fully delivered.
+      Check sender status for an order. Open when not fully delivered or locked when fully delivered.
   get:
     description: Get status for order
     responses:
