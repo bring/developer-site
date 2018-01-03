@@ -25,7 +25,6 @@
       "testIndicator": true,
       "packages": [
         {
-          "priority": "A",
           "rfid": true,
           "recipientName": "Arne Andersen",
           "streetAddress": "Brurvikvegen 10c",
@@ -39,7 +38,6 @@
           "agreementNumber": false
         },
         {
-          "priority": "A",
           "rfid": true,
           "recipientName": "Berit Burger",
           "streetAddress": "Heggebakken 1",
@@ -53,7 +51,6 @@
           "agreementNumber": false
         },
         {
-          "priority": "A",
           "rfid": true,
           "recipientName": "Charles Caspersen",
           "streetAddress": "Åkebergveien 56A",
@@ -67,7 +64,6 @@
           "agreementNumber": false
         },
         {
-          "priority": "B",
           "rfid": true,
           "recipientName": "Dina Davidsen",
           "streetAddress": "Øvre torv 2",
@@ -81,7 +77,6 @@
           "agreementNumber": false
         },
         {
-          "priority": "B",
           "rfid": true,
           "recipientName": "Eskil Erlandsen",
           "streetAddress": "Klosterheimveien 14",

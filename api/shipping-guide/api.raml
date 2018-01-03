@@ -44,9 +44,9 @@ documentation:
 
       ### Additional services affecting price
 
-      Make sure you specify the correct additional services for a package when querying the Shipping Guide. 
+      Make sure you specify the correct additional services for a package when querying the Shipping Guide.
 
-      Especially the `evarsling` additional service for the Servicepakke product (recipient notification over SMS or E-Mail) will affect the base package price returned from the Shipping Guide, and should therefore be set according to what will be sent in the actual EDI message. 
+      Especially the `evarsling` additional service for the Servicepakke product (recipient notification over SMS or E-Mail) will affect the base package price returned from the Shipping Guide, and should therefore be set according to what will be sent in the actual EDI message.
 
       If `evarsling` is not specified in the request, Fraktguiden will from 2013-01-01 add a fee for paper based recipient notification to the base package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
 
@@ -141,11 +141,11 @@ documentation:
     Get Price Zone (returns an empty answer if toPostalCode is outside the coverage area for the chosen product):
 
         //Product[@productId='SERVICEPAKKE']//PriceZone[@toPostalCode='2000']/text()
-        
+
     Get Price based on Price Zone "2":
-    
+
         //Product[@productId="SERVICEPAKKE"]//Price[@priceZone="2" and @weight="4000"]/text()
-        
+
     Get transport time:
 
         //Product[@productId='SERVICEPAKKE']//WorkingDays[@toPostalCode="2000"]/text()
@@ -532,12 +532,11 @@ documentation:
           * Bedriftspakke
           * Bedriftspakke Ekspress - Over Natten
           * På Døren
-          * A-Post
-          * B-Post
+          * Post
 
-          The Shipping Guide request should then be made for all the products (explicitly set using multiple product parameters), and the Shipping Guide will tell you which products are applicable. E.g. A-Post and B-Post are not applicable since the package is greater than 2 kg, and postal code 5600 is outside the service area for "På Døren".
+          The Shipping Guide request should then be made for all the products (explicitly set using multiple product parameters), and the Shipping Guide will tell you which products are applicable. E.g. Post is not applicable since the package is greater than 2 kg, and postal code 5600 is outside the service area for "På Døren".
 
-          Request: [../all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=a-post&product=b-post](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=a-post&product=b-post)
+          Request: [../all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=post](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&weightInGrams=2500&from=0484&to=5600&product=servicepakke&product=bpakke_dor-dor&product=ekspress09&product=pa_doren&product=post)
         body:
           application/json:
             example: !include examples/all.json
@@ -547,14 +546,14 @@ documentation:
         displayName: Multiple parcels in one query
         description: |
           It is also possible to combine weight, volume and dimensions for multiple parcels. Multiple parcels are specified by suffixing weightInGrams, volume or dimensions (length, width or height), with sequential numbers from 0.
-          
+
           The data used in this example is:
-          
+
           - `from=7041`
           - `to=0558`
-          
+
           Parcels:
-          
+
           1. `weightInGrams0=1500`
           2. `volume1=33`
           3. `length2=10&width2=20&height2=30`
@@ -587,9 +586,9 @@ documentation:
           - `&toCountry=IE`
           - `&to=0`
           - `&toCity=Dublin`
-          
+
           To see both the expected delivery time and the price, we've added:
-          
+
           - `&weightInGrams=300`, and
           - `all.json`
 
@@ -639,9 +638,9 @@ documentation:
         displayName: Specify the pickup time from the departure point
         description: |
           Use this parameter if you would like to specify when during the day the package needs to be picked up from the departure point.
-          
+
           This parameter is only considered for courier and express products.
-          
+
           Specified using `date=HHHH-YY-MM&time=mm:ss` (date and time are required to use this option).
 
           [Example request](https://api.bring.com/shippingguide/products/all.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&volume=33&date=2015-11-27&time=13:37)
@@ -671,11 +670,11 @@ documentation:
         displayName: Specify if the package was shipped from a post office
         description: |
           The response data may vary depending on whether or not Bring must collect the shipment, or if the customer delivers the shipment from a post office.
-          
+
           This parameter specifies whether or not the package is delivered to a post office before shipping
-          
+
           Specified using `postingAtPostOffice=true`
-          
+
           Default: `false`
 
           [Example request](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&postingAtPostoffice=true&product=SERVICEPAKKE)
@@ -688,9 +687,9 @@ documentation:
         displayName: Adjust prices
         description: |
           The Shipping Guide provides adjustment of prices shown.
-          
+
           To adjust the price add e.g. [`&priceAdjustment=m20p`](https://api.bring.com/shippingguide/products/price.json?clientUrl=insertYourClientUrlHere&from=7600&to=1407&weightInGrams=1500&priceAdjustment=m20p) to the query.
-          
+
           The format of it is <code>[&lt;product code&gt;_][p(lus)&#124;m(inus)]factor[p(ercentage)]</code> where parts inside square brackets are optional and parts inside parentheses are for informational purpose.
 
           | `produkt code_` | _optional_ Used if price adjustments are only made for a single product. |
