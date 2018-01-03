@@ -77,7 +77,7 @@
                 "SubDisplayCategory": "Til døren",
                 "DisplayName": "På jobben, 08-16",
                 "ProductName": "Bedriftspakke",
-                "DescriptionText": "Leveres uten at sjåføren ringer først 
+                "DescriptionText": "Leveres uten at sjåføren ringer først
 ",
                 "HelpText": "Sendingen er en Bedriftspakke som leveres til mottakers arbeidssted mellom klokken 08 og 16. Bestiller du varsling, vil mottaker varsles når sendingen er lastet på bil for uttkjøring, via SMS og/eller e-post. Dersom sendingen ikke kan leveres, blir den fraktet til lokalt postkontor/ post i butikk. Mottaker varsles om dette via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingssnummeret.",
                 "Tip": null,
@@ -139,13 +139,10 @@
     "TraceMessages": {
         "Message": [
             "Some inconsistency in weight and volume input (not uniformly weight and/or volume set on all packages). All available data will be used for price calculation.",
-            "Length, Width and Height is required for exact price calculation for product B-POST",
-            "Length, Width and Height is required for exact price calculation for product A-POST",
+            "Length, Width and Height is required for exact price calculation for product POST",
             "Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.",
-            "Package exceed maximum measurements for product B-POST ",
-            "Package exceed maximum measurements for product A-POST ",
-            "Product B-POST requires weight information ",
-            "Product A-POST requires weight information "
+            "Package exceed maximum measurements for product POST ",
+            "Product POST requires weight information "
         ]
     }
 }

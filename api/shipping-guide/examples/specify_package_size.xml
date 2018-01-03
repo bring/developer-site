@@ -67,8 +67,7 @@
     </Price>
   </Product>
   <TraceMessages>
-    <Message>Package exceed maximum measurements for product B-POST</Message>
-    <Message>Package exceed maximum measurements for product A-POST</Message>
+    <Message>Package exceed maximum measurements for product POST</Message>
     <Message>Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.</Message>
   </TraceMessages>
 </Package>

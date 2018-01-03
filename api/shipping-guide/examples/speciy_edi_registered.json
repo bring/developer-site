@@ -2,24 +2,7 @@
     "@packageId": "0",
     "Product": [
         {
-            "ProductId": "B-POST",
-            "ProductCodeInProductionSystem": null,
-            "Price": {
-                "@currencyIdentificationCode": "NOK",
-                "PackagePriceWithoutAdditionalServices": {
-                    "AmountWithoutVAT": "72.00",
-                    "VAT": "18.00",
-                    "AmountWithVAT": "90.00"
-                },
-                "PackagePriceWithAdditionalServices": {
-                    "AmountWithoutVAT": "72.00",
-                    "VAT": "18.00",
-                    "AmountWithVAT": "90.00"
-                }
-            }
-        },
-        {
-            "ProductId": "A-POST",
+            "ProductId": "POST",
             "ProductCodeInProductionSystem": null,
             "Price": {
                 "@currencyIdentificationCode": "NOK",
@@ -89,8 +72,7 @@
     ],
     "TraceMessages": {
         "Message": [
-            "Length, Width and Height is required for exact price calculation for product B-POST",
-            "Length, Width and Height is required for exact price calculation for product A-POST",
+            "Length, Width and Height is required for exact price calculation for product POST",
             "Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified."
         ]
     }
