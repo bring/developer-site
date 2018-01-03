@@ -46,9 +46,6 @@ types:
     type: object
     description: A single package in a shipment.
     properties:
-      priority:
-        enum: [ A, B ]
-        description: Delivery speed (A-post or B-post).
       rfid:
         type: boolean
         description: Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.
@@ -151,9 +148,6 @@ types:
     displayName: Ordered Package
     description: A single package in a successfully ordered shipment.
     properties:
-      priority:
-        enum: [ A, B ]
-        description: Delivery speed (A-post or B-post).
       rfid:
         type: boolean
         description: Whether to [tracking for the package](#tracking-with-rfid) was activated.
@@ -249,9 +243,6 @@ types:
     displayName: Validated Package
     description: A single, valid package in a valid shipment.
     properties:
-      priority:
-        enum: [ A, B ]
-        description: Delivery speed (A-post or B-post).
       rfid:
         type: boolean
         description: Whether to [tracking with RFID](#tracking-with-rfid) was activated for the package.
@@ -430,7 +421,6 @@ documentation:
       | 5000 | User does not have access to customer number | `/customerNumber` |
       | 5500 | Customer hasn't made agreement with Posten to send "Pakke i postkassen" | `/customerNumber` |
       | 6000 | Weight cannot be more than 2000 grams | `/packages/2/weight` |
-      | 7000 | Priority must be A or B | `/packages/3/priority` |
       | 8000 | Invalid phone number | `/pacakges/4/phoneNumber` |
       | 9000 | Invalid JSON API resource type (must be `orders`) | `/data/type` |
 
