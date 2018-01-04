@@ -281,16 +281,16 @@
             Some inconsistency in weight and volume input (not uniformly weight and/or volume set on all packages). All available data will be used for price calculation.
         </Message>
         <Message>
-            Length, Width and Height is required for exact price calculation for product POST
+            Length, Width and Height is required for exact price calculation for product MAIL
         </Message>
         <Message>
             Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.
         </Message>
         <Message>
-            Package exceed maximum measurements for product POST
+            Package exceed maximum measurements for product MAIL
         </Message>
         <Message>
-            Product POST requires weight information
+            Product MAIL requires weight information
         </Message>
     </TraceMessages>
 </Package>
