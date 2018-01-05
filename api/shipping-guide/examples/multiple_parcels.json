@@ -139,10 +139,10 @@
     "TraceMessages": {
         "Message": [
             "Some inconsistency in weight and volume input (not uniformly weight and/or volume set on all packages). All available data will be used for price calculation.",
-            "Length, Width and Height is required for exact price calculation for product POST",
+            "Length, Width and Height is required for exact price calculation for product MAIL",
             "Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.",
-            "Package exceed maximum measurements for product POST ",
-            "Product POST requires weight information "
+            "Package exceed maximum measurements for product MAIL ",
+            "Product MAIL requires weight information "
         ]
     }
 }

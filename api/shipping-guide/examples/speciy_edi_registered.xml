@@ -2,38 +2,7 @@
 <!--See service terms and conditions at http://developer.bring.com/-->
     <Product>
         <ProductId>
-            B-POST
-        </ProductId>
-        <ProductCodeInProductionSystem>
-        </ProductCodeInProductionSystem>
-        <Price currencyIdentificationCode="NOK">
-            <PackagePriceWithoutAdditionalServices>
-                <AmountWithoutVAT>
-                    72.00
-                </AmountWithoutVAT>
-                <VAT>
-                    18.00
-                </VAT>
-                <AmountWithVAT>
-                    90.00
-                </AmountWithVAT>
-            </PackagePriceWithoutAdditionalServices>
-            <PackagePriceWithAdditionalServices>
-                <AmountWithoutVAT>
-                    72.00
-                </AmountWithoutVAT>
-                <VAT>
-                    18.00
-                </VAT>
-                <AmountWithVAT>
-                    90.00
-                </AmountWithVAT>
-            </PackagePriceWithAdditionalServices>
-        </Price>
-    </Product>
-    <Product>
-        <ProductId>
-            POST
+            MAIL
         </ProductId>
         <ProductCodeInProductionSystem>
         </ProductCodeInProductionSystem>
@@ -160,7 +129,7 @@
     </Product>
     <TraceMessages>
         <Message>
-            Length, Width and Height is required for exact price calculation for product POST
+            Length, Width and Height is required for exact price calculation for product MAIL
         </Message>
         <Message>
             Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.

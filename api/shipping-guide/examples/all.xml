@@ -112,6 +112,6 @@
     <Message>Added fee 'brev-varsling' (NOK 13.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.</Message>
     <Message>EKSPRESS09 delivery requested for divided postal code</Message>
     <Message>Product PA_DOREN can not be sent between the given postal codes / countries</Message>
-    <Message>Package exceed maximum measurements for product POST</Message>
+    <Message>Package exceed maximum measurements for product MAIL</Message>
   </TraceMessages>
 </Package>

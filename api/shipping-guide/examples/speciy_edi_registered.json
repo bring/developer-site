@@ -2,7 +2,7 @@
     "@packageId": "0",
     "Product": [
         {
-            "ProductId": "POST",
+            "ProductId": "MAIL",
             "ProductCodeInProductionSystem": null,
             "Price": {
                 "@currencyIdentificationCode": "NOK",
@@ -72,7 +72,7 @@
     ],
     "TraceMessages": {
         "Message": [
-            "Length, Width and Height is required for exact price calculation for product POST",
+            "Length, Width and Height is required for exact price calculation for product MAIL",
             "Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified."
         ]
     }
