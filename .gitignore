@@ -21,3 +21,5 @@ _site
 _sass.build
 .jekyll-metadata
 _preview.site
+.bundle/
+_buildtmp/
