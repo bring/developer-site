@@ -1,0 +1,31 @@
+{
+  "data": {
+    "type": "labels",
+    "attributes": {
+      "customerNumber": "PARCELS_NORWAY-XXXXXXXXXXXXX",
+      "packages": [
+        {
+          "recipientName": "Pooja",
+          "streetAddress": "AA",
+          "postalCode": "0150",
+          "email": "a@b.com",
+          "phoneNumber": "+4799999999",
+          "weight": 200
+        },
+        {
+          "recipientName": "Pooja",
+          "streetAddress": "BB",
+          "postalCode": "0150",
+          "email": "a@b.com",
+          "phoneNumber": "+4799999999",
+          "weight": 200
+        }
+      ],
+      "senderName": "Self",
+      "senderEmail": "abc@gmail.com",
+      "streetAddress": "A-905",
+      "postalCode": "0150",
+      "reference": "123456"
+    }
+  }
+}
