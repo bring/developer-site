@@ -36,7 +36,7 @@ and launch the site at http://127.0.0.1:4000/
 Release and deploy
 ------------------
 
-The site is built and deployed to test, qa and master by Jenkins.
+Merging will automatically build and deploy to test, QA and production. 💥
 
 You can still build it (populate the `_site` dir) manually by running
 
