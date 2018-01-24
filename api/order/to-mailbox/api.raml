@@ -12,10 +12,6 @@ types:
     type: object
     description: An order to place in Mybring.
     properties:
-      testIndicator:
-        required: false
-        type: boolean
-        description: Set to true when testing API implementation.
       customerNumber:
         type: string
         description: API customer number for which to place the order.
@@ -26,7 +22,6 @@ types:
       senderEmail:
         required: false
         type: string
-        pattern: ".+@.+"
         description: Sender's email address. Defaults to the user's email address.
       postalCode:
         type: string
@@ -37,6 +32,10 @@ types:
       reference:
         required: false
         description: A reference for the shipment that will be shown on the invoice.
+      testIndicator:
+        required: false
+        type: boolean
+        description: Set to true when testing API implementation.
       packages:
         minItems: 1
         maxItems: 500
@@ -69,7 +68,6 @@ types:
         example: "+4700000000"
       email:
         type: string
-        pattern: ".+@.+"
         description: Recipient's email address.
   SuccessfulOrder:
     (hideRequired): true
@@ -105,7 +103,6 @@ types:
         description: The city/place for the postal code.
       email:
         type: string
-        pattern: ".+@.+"
         description: Sender's email address for the order that was placed.
       reference:
         type: string
@@ -169,7 +166,6 @@ types:
         description: Recipient's phone number.
       email:
         type: string
-        pattern: ".+@.+"
         description: Recipient's email address.
       weight:
         maximum: 2000
@@ -342,13 +338,289 @@ types:
           pointer:
             type: string
             description: A JSON pointer to the invalid field.
+  PackageWithNumbers:
+    displayName: Package Details
+    description: Package Details with OrderID
+    properties:
+      rfid:
+        type: boolean
+        description: Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.
+      recipientName:
+        type: string
+        description: Recipient name.
+      streetAddress:
+        type: string
+        description: Recipient's Street address.
+      postalCode:
+        type: string
+        description: A valid Norwegian postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number, including country code.
+        example: "+4700000000"
+      email:
+        type: string
+        description: Recipient's email address.
+      weight:
+        maximum: 2000
+        type: integer
+        description: Package weight in grams.
+      shipmentNumber:
+        type: string
+        description: The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.
+      packageNumber:
+        type: string
+        description: The package number for this package. This goes on the label.
+      priceType:
+        type: string
+        description: Whether the Price is Agreement or List
+        enum: [ AGREEMENT_PRICE,  LIST_PRICE]
+  OrderWithLabelResponse:
+    (hideRequired): true
+    displayName: Successful Order
+    description: A successfully label generation that contains links to labels.
+    properties:
+      reference:
+        type: string
+        description: A reference for the shipment that will be shown on the invoice.
+      senderName:
+        type: string
+        description: Sender's name.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      email:
+        type: string
+        description: Sender's email address for the order that was placed.
+      labelUri:
+        type: string
+        description: URL to PDF label(s) for packages ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label(s) for packages ordered with tracking.
+      orderTime:
+        type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
+      postalCode:
+        type: string
+        description: Sender's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The API customer name for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
+      testIndicator:
+        type: boolean
+        description: Whether the placed order had the testIndicator flag set or not.
+      packages:
+        minItems: 1
+        description: Packages Number for the shipment.
+        type: PackageWithNumbers[]
+  SuccessfulLabelGenerationResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            enum: [ labels ]
+            description: JSON-API type.
+          attributes:
+            type: OrderWithLabelResponse
+            description: Order properties.
+  LabelRequest:
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            enum: [ labels ]
+            description: JSON-API type.
+          attributes:
+            type: CreateOrderRequest
+            description: Order properties.
+  CreateOrderRequest:
+    displayName: Create Order Request
+    description: It creates the Request for Label Generation.
+    properties:
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      senderName:
+        type: string
+        description: The sender's name.
+      senderEmail:
+        required: false
+        type: string
+        description: Sender's email address. Defaults to the user's email address.
+      postalCode:
+        type: string
+        description: Sender's postal code. Must be a valid Norwegian postal code.
+      streetAddress:
+        type: string
+        description: Recipient's email address.
+      reference:
+        required: false
+        description: A reference for the shipment that will be shown on the invoice.
+      testIndicator:
+        type: boolean
+        description: Whether the validated order had the testIndicator flag set or not.
+      packages:
+        minItems: 1
+        maxItems: 500
+        type: Package[]
+        description: The packages to send in this shipment.
+  LabelOrderRequest:
+      (hideInDocumentation): true
+      type: object
+      properties:
+        data:
+          type: object
+          description: JSON-API data object.
+          properties:
+            type:
+              type: string
+              enum: [ label_orders ]
+              description: JSON-API type.
+            attributes:
+              type: CreateLabelOrderRequest
+              description: Create Order properties.
+  CreateLabelOrderRequest:
+    displayName: Create Label Order Request
+    description: Create Label Order Request
+    properties:
+      customerNumber:
+        type: string
+        description: The API customer number.
+      packageNumbers:
+        type: string[]
+        description: List of Package Numbers.
+  OrderWithIdAndEdiMessage:
+    displayName: Reponse of Create Order Request
+    description: Reponse of Create Order Request
+    properties:
+      id:
+        type: number
+        description: The ID of the order that was placed.
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The API customer name for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
+      senderName:
+        type: string
+        description: Sender's name.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      email:
+        type: string
+        description: Sender's email address for the order that was placed.
+      postalCode:
+        type: string
+        description: Sender's postal code.
+      reference:
+        type: string
+        description: A reference for the shipment that will be shown on the invoice.
+      labelUri:
+        type: string
+        description: URL to PDF label(s) for packages ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label(s) for packages ordered with tracking.
+      waybillUri:
+        type: string
+        description: URL to waybill PDF that has to be printed and sent with the shipment.
+      orderNumberReference:
+        type: string
+        description: The order number reference for the placed order. This is the number on the waybill.
+      priceWithoutVat:
+        type: number
+        description: Price of shipment without VAT (MVA).
+      priceWithVat:
+        type: number
+        description: Price of shipment with VAT (MVA).
+      vat:
+        type: number
+        description: How much of the price was VAT (MVA).
+      currency:
+        type: string
+        default: NOK
+        description: The currency for the price.
+      orderTime:
+        type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
+      packages:
+        minItems: 1
+        description: Packages Number for the shipment.
+        type: PackageWithNumbers[]
+  SuccessfulLabelOrderResponse:
+     (hideRequired): true
+     (hideInDocumentation): true
+     type: object
+     properties:
+       data:
+         type: object
+         description: JSON-API data object.
+         properties:
+           type:
+             type: string
+             enum: [ order ]
+             description: JSON-API type.
+           id:
+             type: string
+             description: Order Id
+           attributes:
+             type: OrderWithIdAndEdiMessage
+             description: Label Order properties.
 
 documentation:
 - title: Introduction
   content: |
-      This API is for ordering [Pakke i postkassen](http://www.bring.no/sende/pakker/private-i-norge/pakke-i-postkassen) (Mailbox Packet) shipments.
+      Mailbox Packet API is an API for ordering [Pakke i postkassen](http://www.bring.no/sende/pakker/private-i-norge/pakke-i-postkassen) (Mailbox Packet) shipments. The Mailbox Packet service is available domestically in Norway, and has replaced the services Minipakke and Småpakke.
 
-      The Mailbox Packet service is available domestically in Norway, and will replace "Minipakke" and "Småpakker".
+      ##### There are two ways of using Mailbox Packet API
+
+         - *Single step*: is the preferred way of usage when your work flow requires label generation, booking and waybill generation to be executed in one single step.
+         - *Two steps*: is the preferred way of usage when your work flow requires flexibility, i.e. label generation to be separated from booking and waybill generation.
+
+      ##### Single step
+
+         - Label generation, booking and waybill generation is done in one step by requesting the rest API "[Order shipments in single step](#order-shipments-in-single-step)"
+
+      ##### Two steps
+
+        The process of ordering transport is split into
+
+       - **Label generation**: first, labels are generated by requesting the rest API “[Label generation](#label-generation).” All shipments that are made through this endpoint are stored. Using this endpoint provides flexibility: Packing shipments, generating labels and sticking labels on respective shipments can be done throughout the day, without placing an order and generating a waybill.
+
+       - **Booking and waybill generation**: second, order is placed and waybill is generated by requesting the rest API “[Waybill generation](#waybill-generation)”. The request must specify which shipments (i.e. package numbers) that are to be ordered. Note that all specified shipments in the request must already be stored, i.e. labels must already have been generated. Using this endpoint also provides flexibility: It is possible to order only a selection of the shipments stored in the database. That way, you avoid paying for shipments cancelled by end customers after the labels have been generated.
+          - Shipments (i.e. package numbers) that have been stored for 72 hours without being ordered (step 2) will automatically be deleted.
 
 - title: Tracking with RFID
   content: |
@@ -394,17 +666,9 @@ documentation:
       instead of `application/vnd.api+json`.
 
 /:
-  displayName: Order shipment
+  displayName: Order shipments in single step
   description: |
-      Order (or validate) a shipment.
-
-      #### New endpoint coming
-
-      Currently, we have only one endpoint for ordering shipments. This
-      endpoint requires all packages in the shipment to be ordered at once. We
-      are working on a new endpoint that can be used for generating labels before
-      placing the order. This will allow you to stick labels on packages so they're
-      ready to be sent, then later place an order to get a waybill.
+      Generate labels, place order and generate waybill in one go.
 
       #### Error codes
 
@@ -507,6 +771,119 @@ documentation:
                 displayName: Server error
                 value: !include examples/500.json
 
+/labels:
+  displayName: Label generation
+  description: |
+      This is step 1 in the two-step way of using the Mailbox Packet API. Note that this rest API is just used to generate labels. Booking and waybill generation is done separately in step 2 by requesting the rest API “[Waybill generation.](#waybill-generation)”
+
+  post:
+    description: Generate Label for packets
+    headers:
+      Content-Type:
+        description: Specify request format (application/json)
+        required: true
+        enum: [ application/json ]
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    body:
+      application/json:
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include examples/label_generation_request.json
+        type: LabelRequest
+    responses:
+      201:
+        description: |
+          On a successful label generation, the response gives information about the shipment.
+          Most importantly it contains a links to labels that have to
+          be printed and sent with the shipment:
+
+          - `labelUri`: PDF for packages without tracking
+          - `rfidLabelUri`: ZPL for packages with tracking
+
+        body:
+          application/json:
+            type: SuccessfulLabelGenerationResponse
+            examples:
+              valid_response:
+                displayName: Valid Response
+                value: !include examples/label_generation_response.json
+      422:
+        description: |
+                When the request contained invalid data, we return a 422 with a list
+                of errors for the shipment.
+        body:
+          application/json:
+            type: ErrorResponse
+            examples:
+              invalid_label_geneation_request:
+                displayName: Invalid Label Generation Request
+                value: !include examples/422.json
+      500:
+        description: If we have an error in our backend, we'll return a 500 error.
+        body:
+          application/json:
+            type: ErrorResponse
+            examples:
+              server_error:
+                displayName: Server error
+                value: !include examples/500.json
+/label/order:
+  displayName: Waybill generation
+  description: This is step 2 in the two-step way of using the Mailbox Packet API. Note that this rest API is just used for booking and waybill generation. Labels must already have been generated in step 1 by requesting the rest API "[Label generation](#label-generation)”.
+  post:
+    description: Generate Waybill for packets
+    headers:
+      Content-Type:
+        description: Specify request format (application/json)
+        required: true
+        enum: [ application/json ]
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    body:
+      application/json:
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include examples/label_order_create_request.json
+        type: LabelOrderRequest
+    responses:
+      201:
+        description: |
+          On a successful Transport Booking, the response gives information about the Waybill.
+        body:
+          application/json:
+            type: SuccessfulLabelOrderResponse
+            examples:
+              valid_response:
+                displayName: Valid Response
+                value: !include examples/label_order_create_response.json
+      422:
+        description: |
+                When the request contained invalid data, we return a 422 with a list
+                of errors for the shipment.
+        body:
+          application/json:
+            type: ErrorResponse
+            examples:
+              invalid_label_geneation_request:
+                displayName: Invalid Label Generation Request
+                value: !include examples/422.json
+      500:
+        description: If we have an error in our backend, we'll return a 500 error.
+        body:
+          application/json:
+            type: ErrorResponse
+            examples:
+              server_error:
+                displayName: Server error
+                value: !include examples/500.json
+
 /{orderId}:
   displayName: Fetch order
   uriParameters:
@@ -532,3 +909,4 @@ documentation:
               without_tracking:
                 displayName: Without tracking
                 value: !include examples/without_tracking_response.json
+
