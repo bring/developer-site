@@ -18,7 +18,7 @@ raml_08_map:
 
 raml_10_map:
   api/order/to-mailbox/api.raml: api/order/to-mailbox/index.html
-  api/shipping-guide_v2/api.raml: api/shipping-guide_v2/index.html
+  api/shipping-guide_2/api.raml: api/shipping-guide_2/index.html
 
 # Build settings
 gems:
