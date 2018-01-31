@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.bring.no/booking/" elementFormDefault="qualified" targetNamespace="http://www.bring.no/booking/" version="1.0">
 
     <xs:element name="bookingRequest" type="BookingRequestType"/>
@@ -228,12 +227,15 @@
     <xs:complexType name="PackageRequestType">
         <xs:all>
             <xs:element name="weightInKg" type="xs:double"/>
+            <xs:element name="volumeInDm3" type="xs:double"/>
             <xs:element minOccurs="0" name="goodsDescription" type="xs:string"/>
             <xs:element name="dimensions" type="MeasurementsRequestType"/>
             <xs:element minOccurs="0" name="containerId" type="xs:string"/>
             <xs:element minOccurs="0" name="packageType" type="xs:string"/>
             <xs:element minOccurs="0" name="numberOfItems" type="xs:int"/>
             <xs:element minOccurs="0" name="isStackable" type="xs:boolean"/>
+            <xs:element minOccurs="0" name="numberOfPallets" type="xs:int"/>
+            <xs:element minOccurs="0" name="loadMeters" type="xs:double"/>
         </xs:all>
         <xs:attribute name="correlationId" type="xs:string"/>
     </xs:complexType>
