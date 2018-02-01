@@ -211,6 +211,16 @@ documentation:
              description: Specify volume in cubic decimeter. This is optional when dimension is specified in the request for cargo.
              type: decimal
              required: true
+        numberOfPallets:
+             description: Specify Number of pallets when request is for Cargo
+             type: integer
+             required: false
+             example: 3
+        loadMeters:
+             description: Specify Load meters when request is for Cargo. Maximum value is 49.9
+             type: double
+             required: false
+             example: 2.0
         whoPaysInvoice:
              description: Specify which party will pay the invoice for the booking. This parameter can be maximum 35 character long.
              type: string
@@ -485,6 +495,15 @@ documentation:
                   example: !include examples/simpleDelivery.json
                 application/xml:
                   example: !include examples/simpleDelivery.xml
+      266:
+              displayName: Cargo Norway - Number of Pallets & Load Meters
+              description: The `numberOfPallets` element can be set for Number of pallets & `loadMeters` can be set for Load Metres
+              body:
+                application/json:
+                  example: !include examples/cargowithPallets.json
+                application/xml:
+                  example: !include examples/cargoWithPallets.xml
+
 
 /errors{mediaTypeExtension}:
   displayName: Error codes
