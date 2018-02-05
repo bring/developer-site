@@ -1,18 +1,12 @@
 #%RAML 0.8
 ---
-title: Order Management API
+title: Warehousing API
 baseUri: https://api.bring.com/po/api/v1
 
 documentation:
 - title: Introduction
   content: |
-    There are different customer types in Order Management and depending on what kind of customer you are setts the usage pattern for Order Management API.
-
-    This is a step-by-step guide on how to use the API.
-
     A typical usage pattern for an Warehousing customer type is to create an order in Order Management that will go to the correct warehouse for picking, packing and sending. Then follow up with creating a packing list from the warehouse with transport information. All steps can be followed in Order Management.
-
-    An other usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
 
     Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality.
 
@@ -54,24 +48,6 @@ documentation:
 
     Those headers must be set for all endpoints documented below.
 
-/purchaseorderCustomer/{customerId}:
-  displayName: Check if customer is valid for order management
-  description: |
-      Check if a given customer number is an valid Order Management customer.
-  get:
-    description:
-     Check if customer is valid for order management
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Returns `true` if given customer is a valid for order management.
-        body:
-          application/xml:
-            example: !include examples/verify_customer.xml
-          application/json:
-            example: !include examples/verify_customer.json
-
 /omorder/{customerId}/{orderId}:
   displayName: List order information
   description: |
@@ -92,15 +68,11 @@ documentation:
 /omorder:
   displayName: Send an order
   description: |
-      Send an order to Order Management. There are different types of order supported in Order Management.
+      Send an order to Warehousing system. There are different types of order supported in Warehousing system.
 
        - Order / SalesOrder (as an pickorder for Warehousing)
             - Order Management act as an order repository.
             - When Warehousing functionality Order Management sends it to Warhousing system for picking and delivery.
-       - PurchaseOrder
-            - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
-            - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
-
   post:
     description: Send an order
     queryParameters:
@@ -265,68 +237,60 @@ documentation:
           application/json:
             example: !include examples/retrieve_orderitems.json
 
-/packaginglist/{customerId}/{orderId}:
-  displayName: List packaging list for order
-  description: |
-      List all packaging list information for this order. One order can have multiple packaging lists.
-  get:
-    description: List packaging list for order
-    responses:
-      200:
-        displayName: Success
-        description: |
-          List of packaging list for given order, if any.
-        body:
-          application/xml:
-            example: !include examples/retrieve_packinglist.xml
-          application/json:
-            example: !include examples/retrieve_packinglist.json
-
-/packaginglist:
-  displayName: Add packaging list
-  description: |
-      When an order have been picked and sent, add packing list on order with transport information.
+/articlebalance:
+  displayName: Create or update article balance list
   post:
-    description: Add packaging list
+    description: Create or update article balance list
     body:
       application/xml:
-        example: !include examples/create_packaging_list.xml
+        example: !include examples/create_articlebalance.xml
     responses:
       200:
         displayName: Success
         description: |
-          Successfully added packaging list.
+          Successfully created balance list
 
-/senderStatus/{customerId}/{orderId}:
-  displayName: Get sender status for order
-  description: |
-      Check sender status for an order. Open when not fully delivered or locked when fully delivered.
+/articlebalance/{customerId}:
+  displayName: Get stock balance and info for all articles
   get:
-    description: Get status for order
+    description: Get stock balance and info for all articles
     responses:
       200:
         displayName: Success
-        description: Open or Locked.
+        description: |
         body:
           application/xml:
-            example: !include examples/check_status.xml
+            example: !include examples/retrieve_articlebalance_all.xml
           application/json:
-            example: !include examples/check_status.json
+            example: !include examples/retrieve_articlebalance_all.json
 
-/event:
-  displayName: Create TMSEvents
-  description: |
-      Create tracking events on shipments associated with orders in Order Management.
-  post:
-    description: Create TMSEvents
-    body:
-      application/xml:
-        example: !include examples/create_events.xml
+/articlebalance/{customerId}/{articleNo}:
+  displayName: Get stock balance and info for one article
+  get:
+    description: Get stock balance and info for one article
     responses:
       200:
         displayName: Success
         description: |
-          Successfully created a new resource
+        body:
+          application/xml:
+            example: !include examples/retrieve_articlebalance_one.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_one.json
+
+/articlebalance/info/{customerId}/{articleSearchString}:
+  displayName: Get stock balance and info for all articles matching search string
+  get:
+    description: Get stock balance and info for all articles matching search string
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            example: !include examples/retrieve_articlebalance_search.xml
+          application/json:
+            example: !include examples/retrieve_articlebalance_search.json
 
 /errorCodes:
   displayName: List error codes
