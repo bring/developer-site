@@ -49,11 +49,36 @@ layout: page
         </section>
 
         <section class="api__section">
+          <h2>Warehouse Management</h2>
+          <p>
+            Documents for an Warehousing customer to create an order in warehousing system that will go to the correct warehouse for picking, packing and sending.
+            Customers can get several messages back for status on orders, inventory and warehousing receiving of goods.
+            Inbound and outbound messages are based on GS1 xml Standard V3.1
+          </p>
+          <p>
+            Please ask our integration consultants if you have specific needs or for more detailed information.
+          </p>
+          <h3 class="epsilon u-mb--">Inbound - To Warehousing</h3>
+          <ul>
+            <li><a href="{{ site.baseurl }}/files/CustomerOrder-GS1-BMS-31-16.pdf">Customer order</a></li>
+            <li><a href="{{ site.baseurl }}/files/ReceivingAdvice-GS1-BMS-31-2.pdf">Customer receiving advice / purchaceorder</a></li>
+            <li><a href="{{ site.baseurl }}/files/DespatchAdvice-inbound-GS1-BMS-31-3.xml">DespatchAdvice inbound</a></li>
+            <li><a href="{{ site.baseurl }}/files/ItemDataNotification-GS1-BMS-31-5.pdf">ItemDataNotification</a></li>
+          </ul>
+          <h3 class="epsilon u-mb--">Outbound - From Warehousing</h3>
+          <ul>
+            <li><a href="{{ site.baseurl }}/files/OrderResponse-GS1-BMS-31-1">Order response</a></li>
+            <li><a href="{{ site.baseurl }}/files/DespatchAdvice-outbound-GS1-BMS-31-5.pdf">DespatchAdvice outbound</a></li>
+            <li><a href="{{ site.baseurl }}/files/InventoryReport-GS1-BMS-31-2.pdf">Inventory report</a></li>
+            <li><a href="{{ site.baseurl }}/files/InventoryReportAdjustments-GS1-BMS-31-2.pdf">Inventory adjustments report</a></li>
+          </ul>
+        </section>
+
+        <section class="api__section">
           <h2>Other Implementation Guides</h2>
           <h3 class="epsilon u-mb--">Download Documentation</h3>
           <ul>
             <li><a href="{{ site.baseurl }}/files/fortolling.pdf">Customer Handling</a></li>
-            <li><a href="{{ site.baseurl }}/files/wms.pdf">Warehouse Management</a></li>
             <li><a href="{{ site.baseurl }}/files/efaktura.xml">XML format for eInvoice E2B</a></li>
             <li><a href="{{ site.baseurl }}/files/dangerous_goods_specification_BIG14_v1.pdf">Dangerous Goods Specification (BIG14)</a></li>
             <li><a href="{{ site.baseurl }}/files/dangerous_goods_specification_BIG01_v1.pdf">Dangerous Goods Specification (BIG01)</a></li>
