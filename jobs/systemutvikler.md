@@ -48,8 +48,8 @@ Vi byr på spennende og varierte arbeidsoppgaver, et sterkt faglig miljø med dy
 
 Dersom du har spørsmål til stillingen, ta gjerne kontakt med
 Avdelingsleder Arne Moen, mobil 902&nbsp;02&nbsp;239,
-eller Fagsjef Web Andreas Jacobsen, mobil 416&nbsp;14&nbsp;065.
+eller Fagsjef Web Endre Midtgård Meckelborg, mobil 930&nbsp;14&nbsp;504.
 
-[Send søknad!](mailto:arne.moen@bring.com?cc=andreas.jacobsen@bring.com)
+[Send søknad!](mailto:arne.moen@bring.com?cc=endre.midtgard.meckelborg@bring.com)
 
 Vi ser frem til å høre fra deg!
