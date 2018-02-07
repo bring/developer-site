@@ -26,6 +26,10 @@ tr {
     border-bottom: 1px solid #ccc;
 }
 
+tr:last-child {
+    border-bottom: none;
+}
+
 th,
 td {
     padding-top: $spacing / 4;
