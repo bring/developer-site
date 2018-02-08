@@ -1,0 +1,82 @@
+---
+title: Shipping Guide upgrade guide
+layout: redesign
+---
+<div class="wrapper">
+  <div class="layout layout--flush">
+    <div class="layout__item palm-one-whole desk-one-quarter">
+      {% comment %}
+      ----------------------------------------
+      --
+      -- Sidebar menu
+      --
+      ----------------------------------------
+      {% endcomment %}
+      {% include sitemenu.html %}
+    </div><!--
+ --><div class="layout__item palm-one-whole desk-three-quarters">
+      <article class="api">
+        <section class="api__section">
+          <h1 class="api__title">Upgrading to version 2</h1>
+          <p>This is a short summary of the differences between version 1 and 2 of the Shipping Guide API and will help
+            you migrate to version 2 of the API.</p>
+          <p>We recommend always updating to the latest version and to do it at your earliest convenience. Upgrading to
+            the latest version miximizes the time between upgrades.</p>
+          <p>The older 1.x versions will become deprecated and shut down some time in the future.</p>
+        </section>
+        <section class="api__section">
+          <h2>SOAP and JSON interface</h2>
+          <h3>What we have changed</h3>
+          <p>This section describes the main changes we have done to both the SOAP and the JSON interface</p>
+          <h4>Authentication is mandatory</h4>
+          <p>
+            TODO: Auth is now mandatory blabla... Why is it like that? Is it different from the existing auth, do i need
+            to do any changes? Link to authentication part in /api/#authentication
+          </p>
+
+          <h4 class="anchored">Restructured error response</h4>
+          <p>
+            In version 1 of the Shipping Guide API client and server error responses are mainly a HTML document
+            describing what went wrong, but in some cases trace messages are used. In version 2 this is changed to be
+            easier to parse and to... TODO: finish selling points
+            You can read more about the new format of the errors in <a href="/api/shipping-guide_2/#handle-api-errors">Handle API errors</a> and
+            warnings in <a href="/api/shipping-guide_2/topics/#warnings">Should I handle warnings?</a>
+            in TODO: Add link to warning section
+          </p>
+
+          <h4>Introduced warnings</h4>
+          <p>
+            TODO: Bla bla bla replaced some trace messages blablabla
+          </p>
+        </section>
+
+        <section class="api__section">
+          <h2>SOAP interface</h2>
+          <h3>What we have removed</h3>
+          <h4>Unit code for dimension</h4>
+          <p>
+            TODO: unitCode is removed from the measurements lxwxh. The unit used is now!
+          </p>
+          <p>
+
+          </p>
+        </section>
+        <section class="api__section">
+          <h2>JSON interface</h2>
+          <h3>What we have removed</h3>
+          <h4>Price adjustment</h4>
+          <p>
+            TODO:
+          </p>
+          <h4>XML is not supported (yet?)</h4>
+          <p>
+            TODO: We do not support XML format for this interface anymore. Maybe we'll do that in the future, but right now....blablabla
+          </p>
+        </section>
+        <section class="api__section" id="">
+          {% include disqus.html %}
+        </section>
+      </article>
+    </div>
+  </div>
+</div>

@@ -16,23 +16,17 @@ documentation:
 
       The Shipping Guide API 2.0 has both a JSON and a SOAP interface. The JSON interface is typically used for a single service or similar services and is only for a single consignment. The SOAP interface can be used for multiple consignments and has the complete functionality of Shipping Guide API.
 
-      ### What's new
-      With the major version of 2.0, the Shipping Guide team has taken the opportunity to make changes to clean up the API and fix bugs that may prove to break the previous API.
-
-      * [Authentication](/api/#authentication) is now required
-      * [Errors](/api/shipping-guide_v2/#handle-api-errors) are now in a more structured format in the body of the respons and contain error IDs
-      TODO: Complete this list
-
       ### Why upgrade?
       TODO: Create a text that sells this version to the end users
 
+      * [Easier to handle errors](/api/shipping-guide_2/upgrade-to-version-2/#restructured-error-response)
+
       ### How to upgrade
-      Now that Shipping Guide API 2.0 is out, you might be wondering how to upgrade to it. [The upgrade guide](/api/shipping-guide_2/upgrade-guide.html) will walk you through the major steps involved in upgrading, and help you to upgrade from the version you are using.
+      Now that Shipping Guide API 2.0 is out, you might be wondering how to upgrade to it. The [Upgrade to version 2](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
 
 - title: Getting started
   content: |
       This guide will walk you through getting shipment methods for your first package using Shipping Guide API. In this example, we will be calling the SOAP interface with a HTTP client and query for the services `SERVICEPAKKE` and `PA_DOREN` for two packages.
-      TODO: Change to a product that isn't being phased out
 
       ### Before you start
       Before you can begin integrating with or testing the new API, you'll have to do the following:
@@ -213,6 +207,10 @@ documentation:
 
 
 
+
+- title: Shipping Guide topics
+  content: |
+      TODO: If you want to know more about cornercases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
 
 - title: Handle API errors
   content: |
