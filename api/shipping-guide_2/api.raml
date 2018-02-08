@@ -244,9 +244,14 @@ documentation:
 
 - title: Improve performance
   content: |
-      TODO: Write about limiting the request to only the services needed since the respons time on some services are slow compared to others
-      TODO: Write about limiting the response by using the prices / leadtime json interfaces or SOAP with flags. lets say u only need prices and do not care about
+      To have better performance of the api
 
+      * Request can be limited to have only the services needed since the response time of some services can be slow as compared to others
+      * If the request is only to find the lead time / prices of different services, the flag for withExpectedDelivery / withPrices should be set to true and others can be set to false
+      * For net prices requests should include customer number and correct package details
+      * Request can include limited number of consignments in each request for quick response.
+      * New shipments request can be part of separate request
+      
 
 
 /v2/services:
