@@ -56,7 +56,7 @@ At this point, we felt like we really needed more information than what we had a
 Finding some actual errors
 ---
 
-Google didn't help much -- we were finding lots of reports that proxies can break websocket connections, but it was also written that this shouldn't be a problem on secure websocket connections (`wss://`, which we were using). A couple of hours after we activated reporting to sentry.io, we were able to get in touch with an affected user on the phone. He was super-helpful -- at first we attempted to set screen-sharing over [appear.in](appear.in), but we were unable to do that. The stream and chat both simply never loaded on the users' machine. This seemed to confirm the theory that there was something super-secure with that user's setup. After talking for a while, we were able to uncover 3 errors in his IE11 developer console that seemed worth looking into. They were:
+Google didn't help much -- we were finding lots of reports that proxies can break websocket connections, but it was also written that this shouldn't be a problem on secure websocket connections (`wss://`, which we were using). A couple of hours after we activated reporting to sentry.io, we were able to get in touch with an affected user on the phone. He was super-helpful -- at first we attempted to set screen-sharing over [appear.in](https://appear.in), but we were unable to do that. The stream and chat both simply never loaded on the users' machine. This seemed to confirm the theory that there was something super-secure with that user's setup. After talking for a while, we were able to uncover 3 errors in his IE11 developer console that seemed worth looking into. They were:
 
 - `SCRIPT12152: Websocket Error: Network Error 12152, The server returned an invalid or unrecognized response`
 - `SEC7122: Credentials flag was set to true, but Access-Control-Allow-Credentials was not present, or was not set to "true".`
@@ -70,7 +70,7 @@ None of the other errors gave any definitive answer about what was going on, eve
 
 - Which exact operating system and browsers were affected?
 - Is it only the websocket traffic that breaks?
-- Do websockets work with other webpages? We used [websocket.org](websocket.org/echo.html).
+- Do websockets work with other webpages? We used [websocket.org](https://websocket.org/echo.html).
 - Is there a proxy that is interfering somehow?
 
 Additionally we ensure that we generated a `tcpdump` on our server from the failing traffic in order to be able to study that in more detail. The operating system and browser versions didn't help us, in the end. Only the websocket traffic seemed affected. The user reported that the echo-test on websocket.org worked. The machine was not configured to use a proxy. The `SCRIPT12152`-error was still showing up in the console, but we weren't seeing any network traffic at all in the F12 Development Tool menu in IE11.
@@ -85,7 +85,7 @@ The `tcpdump` did help us, though. It was executed inside our network, between t
 
 One curious thing we saw was that there was `Via:`-header inserted into the `Upgrade` request. That clearly shouldn't have been there, as no proxy was configured on the client, and the client was communicating with a TLS-enabled load-balancer.
 
-We thought maybe the server started sending data too soon, so we changed the flow so that the server sent no data until it had received a message from the client saying to start. At that point, we picked up an interesting `tcpdump` where the load-balancer would send TCP `FIN` before sending us a message from the client at all. That indicated that the problem happened before any messages were sent, pointing towards the websocket handshake going wrong somehow. At this point, we were pretty certain that the problem must be some overzealous network gear in the users' network not understanding websockets properly. The only problem with that theory was that we had confirmed over the phone that the websocket [echo-test](websocket.org/echo.html) worked affected networks.
+We thought maybe the server started sending data too soon, so we changed the flow so that the server sent no data until it had received a message from the client saying to start. At that point, we picked up an interesting `tcpdump` where the load-balancer would send TCP `FIN` before sending us a message from the client at all. That indicated that the problem happened before any messages were sent, pointing towards the websocket handshake going wrong somehow. At this point, we were pretty certain that the problem must be some overzealous network gear in the users' network not understanding websockets properly. The only problem with that theory was that we had confirmed over the phone that the websocket [echo-test](https://websocket.org/echo.html) worked affected networks.
 
 Confirming the problem
 ---
