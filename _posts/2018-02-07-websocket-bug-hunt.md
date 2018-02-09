@@ -96,6 +96,8 @@ The websocket.org echo-test didn't work from this network (unlike what we had be
 
 The fallback solution will tell the users that websockets aren't working and it's probably something they should talk to their IT department about.
 
+<img src="{{ site.baseurl }}/img/websockets_fallback_message.png" />
+
 Learning summary
 ---
 
