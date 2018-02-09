@@ -77,13 +77,13 @@ Additionally we ensure that we generated a `tcpdump` on our server from the fail
 
 The `tcpdump` did help us, though. It was executed inside our network, between the load-balancer and the application server and gave the following traffic flow:
 
-1. Load-balancer sends upgrade request to our endpoint
+1. Load-balancer sends `Upgrade` request to our endpoint
 2. Server responds with Switching Protocols
 3. Server immediately sends a message notifying the client that data is coming
 4. Server sends `n` messages containing data as it becomes available
 5. Load-balancer closes connection to the server (TCP `FIN`)
 
-One curious thing we saw was that there was `Via:`-header inserted into upgrade request. That clearly shouldn't have been there, as no proxy was configured on the client, and the client was communicating with a TLS-enabled load-balancer.
+One curious thing we saw was that there was `Via:`-header inserted into the `Upgrade` request. That clearly shouldn't have been there, as no proxy was configured on the client, and the client was communicating with a TLS-enabled load-balancer.
 
 We thought maybe the server started sending data too soon, so we changed the flow so that the server sent no data until it had received a message from the client saying to start. At that point, we picked up an interesting `tcpdump` where the load-balancer would send TCP `FIN` before sending us a message from the client at all. That indicated that the problem happened before any messages were sent, pointing towards the websocket handshake going wrong somehow. At this point, we were pretty certain that the problem must be some overzealous network gear in the users' network not understanding websockets properly. The only problem with that theory was that we had confirmed over the phone that the websocket [echo-test](websocket.org/echo.html) worked affected networks.
 
