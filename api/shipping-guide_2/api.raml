@@ -17,9 +17,11 @@ documentation:
       The Shipping Guide API 2.0 has both a JSON and a SOAP interface. The JSON interface is typically used for a single service or similar services and is only for a single consignment. The SOAP interface can be used for multiple consignments and has the complete functionality of Shipping Guide API.
 
       ### Why upgrade?
-      TODO: Create a text that sells this version to the end users
 
-      * [Easier to handle errors](/api/shipping-guide_2/upgrade-to-version-2/#restructured-error-response)
+      * [Unified request and response model](/api/shipping-guide_2/#getting-started): Due to backward compatibility, existing SOAP API versions had too many ways of requesting to Shipping guide which was always confusing for clients. This has been simplified in new version with one unified way of requesting to Shipping guide.
+      * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#handle-api-errors): New version of API gives ability to handle error in much simpler way.
+      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple product and along with multiple customer number in a single REST request. TODO Details of how link.
+      * [New restructured service models](): New product codes as part of Posten and Bring restructuring will be supported on new version only. TODO Details of service details links
 
       ### How to upgrade
       Now that Shipping Guide API 2.0 is out, you might be wondering how to upgrade to it. The [Upgrade to version 2](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
