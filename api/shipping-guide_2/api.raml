@@ -47,9 +47,9 @@ documentation:
       Authenticate your request by adding the three headers: Your Mybring username, API key and a client URL. A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
 
       ### 3. Add additional headers
-      Since we're using the SOAP interface we'll have to add the following header:
+      Since we're using the SOAP (1.1) interface we'll have to add the following header:
 
-      - `Content-type: text/xml` TODO: Is this right?
+      - `Content-type: text/xml`
 
       If you're using a SOAP client it may be that this is done for you, meaning you can skip this step.
 
@@ -104,8 +104,8 @@ documentation:
       ### 5. Submit the request
       The request should now be complete, so now it is time to submit it.
 
-      TODO: Write better text
-      You will get a response that looks something like this:
+
+      The respons may have changed since it was documented but you will get a response that looks something like this:
 
       ```
       <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
@@ -205,6 +205,8 @@ documentation:
       </SOAP-ENV:Envelope>
       ```
 
+      If you want to know more about the fields you can have a look at the XSD linked from the section [Request and response structure](/api/shipping-guide_2/#request-and-response-structure)
+
 
 
 
@@ -225,9 +227,9 @@ documentation:
 
       TODO: Write about error ID (code) and that texts (trace and error descriptions) should not be parsed...blablabla
 
-- title: Response structure
+- title: Request and response structure
   content: |
-      If you request shipping methods via API, you will receive an object which complies to the following schemas:
+      If you request shipping methods via API, your request and response will have comply with the following schemas:
 
       #### SOAP
 
