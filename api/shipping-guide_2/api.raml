@@ -290,7 +290,6 @@ documentation:
         description: Your user's API key
       Content-Type:
         description: The API key needed to create a new job
-
     queryParameters:
       fromcountry:
         description: Sender country code
@@ -303,6 +302,9 @@ documentation:
         type: string
       topostalcode:
         description: Receiver postal code
+        type: string
+      product:
+        description: List of products requested. Multiple products can be requested in a single request. Requested product can also be specified with a customer number separated with delimiter (**:**). For example CARGO**:**CARGO-123456
         type: string
       date:
         description: Shipping date
@@ -368,9 +370,10 @@ documentation:
         type: string
         required: true
       customernumber:
-        description: Lets you specify which customer number to use in the request
+        description: Lets you specify which customer number to use in the request. If specified and product is not supplied with delimited customer number, then it will be applied on all request products
         type: string
         example: CARGO-123456
+        required: false
       language:
         description: Language used for the service texts
         type: string
