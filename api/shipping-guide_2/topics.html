@@ -24,122 +24,108 @@ layout: redesign
 
       <section class="api__section">
         <h2>No applicable services found</h2>
-        <p>When no services are applicable for the requested you've made an empty resultset is returned. Reasons can be
-          that the shipment was too large or too small, or the requested shipment was outside the coverage area of the
-          requested services. Your code should handle these cases, i.e. an empty result, and should not fail because of
-          this.</p>
-        <p>How can I fix this? You could e.g. use a Cargo service when you want to send large shipments, or you could
-          request other services and see which ones that fits your need and find your service by using <a
-              href="https://www.bring.no/english/sending">What would you like to send?</a>.</p>
+        <p align="justify">When no services are applicable for the requested you've made an empty resultset is returned. Reasons can be that the shipment was too large or too small, or the requested shipment
+          was outside the coverage area of the requested services. Your code should handle these cases, i.e. an empty result, and should not fail because of this.</p>
+        <p align="justify">How can I fix this? You could e.g. use a Cargo service when you want to send large shipments, or you could request other services and see which ones that fits your need and find your service by using <a href="https://www.bring.no/english/sending">What would you like to send?</a>.
+        </p>
       </section>
+
       <section class="api__section">
         <h2>Failover when I can't reach the API</h2>
-        <p>Offline data lets you download a failover version of the data from the Shipping Guide.</p>
+        <p align="justify">Offline data lets you download a failover version of the data from the Shipping Guide.</p>
 
-        <p>By using the Offline Data Web Service or <a href="/shipping-guide/offline">Offline Data form</a> you can
-          download price lists, transport times and additional services designed for offline usage. Offline data is
-          suitable as a failover solution if the Shipping Guide does not respond or responds with an error message, or
-          if there are extreme demands on performance.</p>
+        <p align="justify">By using the Offline Data Web Service or <a href="/shipping-guide/offline">Offline Data form</a> you can download price lists, transport times and additional services designed for offline usage.
+          Offline data is suitable as a failover solution if the Shipping Guide does not respond or responds with an error message, or if there are extreme demands on performance.</p>
 
-        <p><strong>Important!</strong> With offline data, you have to deal with all the rules of special goods, shipping
-          calculated weight (volume weight), and more. These rules are located on the respective product pages on
-          bring.com. Remember to update the database at price changes!</p>
+        <p align="justify"><strong>Important!</strong> With offline data, you have to deal with all the rules of special goods, shipping calculated weight (volume weight), and more.
+          These rules are located on the respective product pages on bring.com. Remember to update the database at price changes!</p>
 
-        <p>The service is available free of charge, provided acceptance of the terms of use. Note that only registered
-          users will receive notifications of changes in service!</p>
+        <p align="justify">The service is available free of charge, provided acceptance of the terms of use. Note that only registered users will receive notifications of changes in service!</p>
 
-        <p>For those who use the offline data, we recommend to get the updates automatically via Offline Data Web
-          Service.</p>
-        </p>
+        <p align="justify">For those who use the offline data, we recommend to get the updates automatically via Offline Data Web Service.</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Volume, weight, dimensions and load metering</h2>
-        <p>TODO: Write something about when the different elements are needed and what happens if you provide multiple
-          elements</p>
+        <p align="justify">TODO: Write something about when the different elements are needed and what happens if you provide multiple elements</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Pre-registered - EDI</h2>
-        <p>TODO: Write about when to use, what it will affect in the respons etc.</p>
+        <p align="justify">TODO: Write about when to use, what it will affect in the respons etc.</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Min and max dimensions</h2>
-        <p>TODO: Write about the limitations</p>
+        <p align="justify">TODO: Write about the limitations</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>What to do when you do not have weight, volume or dimensions</h2>
-        <p>TODO: </p>
+        <p align="justify">TODO: </p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Special goods fee</h2>
-        <p>TODO: Write about when this fee is applied and </p>
+        <p align="justify">TODO: Write about when this fee is applied and </p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Shipments to countries without postal codes</h2>
-        <p>TODO: Write about </p>
+        <p align="justify">TODO: Write about </p>
       </section>
+
       <section class="api__section">
-
         <h2>Holidays and Home Delivery</h2>
-        <p>There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on
-          certain days during Christmas or Easter.
-
-          The service will not take this into account. This must be handled by clients. End-users should not get
-          delivery dates for holidays.</p>
+        <p align="justify">There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter. The service will not take this into account.
+          This must be handled by clients. End-users should not get delivery dates for holidays.</p>
         <p>TODO:</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>More than one customer number with JSON</h2>
-        <p>TODO: Explain that it is not possible for now. Explain that it can be solved by doing multiple calls</p>
+        <p align="justify">This is now possible with version 2.0. Now we can request for multiple products with multiple customer number in single REST request similar to that SOAP version.
+          Way this has been made possible is to send product along with API customer number delimited with <i>:</i>. More details can be found <a href="/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery">here</a> </p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>The service has been renamed</h2>
-        <p>TODO: Explain why this may happen, how to handle it etc.</p>
+        <p align="justify">TODO: Explain why this may happen, how to handle it etc.</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Loading meter</h2>
-        <p>TODO: What is it? Which product uses it? What happens if I provide this for a product that doesn't use
-          it?</p>
+        <p align="justify">TODO: What is it? Which product uses it? What happens if I provide this for a product that doesn't use it?</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>How to query multiple packages</h2>
-        <p>TODO: Write something about when the different elements are needed and what happens if you provide multiple
-          elements</p>
+        <p align="justify">TODO: Write something about when the different elements are needed and what happens if you provide multiple elements</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Adjusting prices</h2>
-        <p>TODO: Write about that the client have to do it since it was removed from the new end point</p>
+        <p align="justify">TODO: Write about that the client have to do it since it was removed from the new end point</p>
       </section>
+
       <section class="api__section">
         <h2 class="anchored">Should I handle warnings?</h2>
-        <p>NOOOO!ODO: Warnings are messages for???? They are going to be used for???</p>
-        <p>TODO: Point out that the user should NOT parse this. If so it is on their own risk since they may change.</p>
+        <p align="justify">NOOOO!ODO: Warnings are messages for???? They are going to be used for???</p>
+        <p align="justify">TODO: Point out that the user should NOT parse this. If so it is on their own risk since they may change.</p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>HTTP status codes in JSON interface</h2>
-        <p>
-          The JSON interface uses <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status
-          codes</a> to indicate the success or failure of an API request.
-          TODO: BLABLABLA
+        <p align="justify">
+          The JSON interface uses <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a> to indicate the success or failure of an API request. TODO: BLABLABLA
         </p>
       </section>
-      <section class="api__section">
 
+      <section class="api__section">
         <h2>Additional service XXX is not applicable for product YYY</h2>
-        <p>TODO: What is this? Why does it happen? How do i solve this problem? Is it possible for me to get a list of
-          which additional services are applicable for the different services?</p>
+        <p align="justify">TODO: What is this? Why does it happen? How do i solve this problem? Is it possible for me to get a list of which additional services are applicable for the different services?</p>
       </section>
+
       <section class="api__section" id="">
         {% include disqus.html %}
       </section>
