@@ -117,8 +117,22 @@ layout: redesign
       <section class="api__section">
         <h2>HTTP status codes in JSON interface</h2>
         <p align="justify">
-          The JSON interface uses <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a> to indicate the success or failure of an API request. TODO: BLABLABLA
+          The JSON interface uses <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a> to indicate the success or failure of an API request.
         </p>
+        <p>
+          Here are some codes with added context :
+        </p>
+        <ul>
+          <li>
+            400 - Bad Request. If request parameters are bad, or any of the mandatory request parameters is missing.
+          </li>
+          <li>
+            401 - Unauthorised request. If user has not sent MyBring authentication header or invaild X-MyBring-API-Uid/X-Mybring-API-Key
+          </li>
+          <li>
+            404 - If the request doesn't come from API domain URL (api.bring.com).
+          </li>
+        </ul>
       </section>
 
       <section class="api__section">
