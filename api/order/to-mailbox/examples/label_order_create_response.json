@@ -2,14 +2,14 @@
   "data": {
     "attributes": {
       "id": 3115,
-      "customerName": "GET INSPIRED AS",
-      "customerOrganizationNumber": "912636712",
-      "customerNumber": "PARCELS_NORWAY-10019415859",
+      "customerName": "Posten Norge AS",
+      "customerOrganizationNumber": "984661185",
+      "customerNumber": "PARCELS_NORWAY-1234567890",
       "senderName": "Self",
       "streetAddress": "A-905",
       "postalCode": "0150",
       "postalPlace": "OSLO",
-      "email": "abc@gmail.com",
+      "email": "sender@example.com",
       "reference": "123456",
       "packages": [
         {
