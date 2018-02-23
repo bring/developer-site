@@ -19,7 +19,6 @@ layout: redesign
 
       <section class="api__section">
         <h1 class="api__title">Let's talk about Shipping Guide</h1>
-        <p>This lists...TODO: BLABLABLA</p>
       </section>
 
       <section class="api__section">
@@ -56,21 +55,6 @@ layout: redesign
       </section>
 
       <section class="api__section">
-        <h2>Min and max dimensions</h2>
-        <p align="justify">TODO: Write about the limitations</p>
-      </section>
-
-      <section class="api__section">
-        <h2>What to do when you do not have weight, volume or dimensions</h2>
-        <p align="justify">TODO: </p>
-      </section>
-
-      <section class="api__section">
-        <h2>Special goods fee</h2>
-        <p align="justify">TODO: Write about when this fee is applied and </p>
-      </section>
-
-      <section class="api__section">
         <h2>Shipments to countries without postal codes</h2>
         <p align="justify">TODO: Write about </p>
       </section>
@@ -79,7 +63,6 @@ layout: redesign
         <h2>Holidays and Home Delivery</h2>
         <p align="justify">There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter. The service will not take this into account.
           This must be handled by clients. End-users should not get delivery dates for holidays.</p>
-        <p>TODO:</p>
       </section>
 
       <section class="api__section">
@@ -94,24 +77,15 @@ layout: redesign
       </section>
 
       <section class="api__section">
-        <h2>Loading meter</h2>
-        <p align="justify">TODO: What is it? Which product uses it? What happens if I provide this for a product that doesn't use it?</p>
-      </section>
-
-      <section class="api__section">
-        <h2>How to query multiple packages</h2>
-        <p align="justify">TODO: Write something about when the different elements are needed and what happens if you provide multiple elements</p>
-      </section>
-
-      <section class="api__section">
         <h2>Adjusting prices</h2>
-        <p align="justify">TODO: Write about that the client have to do it since it was removed from the new end point</p>
+        <p align="justify">We do not support price adjustment in Shipping Guide 2.0. The pricing model is very simple now.
+          It should be very easy to do price adjustment at client side.</p>
       </section>
 
       <section class="api__section">
         <h2 class="anchored">Should I handle warnings?</h2>
-        <p align="justify">NOOOO!ODO: Warnings are messages for???? They are going to be used for???</p>
-        <p align="justify">TODO: Point out that the user should NOT parse this. If so it is on their own risk since they may change.</p>
+        <p align="justify">Ideally clients should not parse these warning codes for any logic as they are bound to change. These are supposed to be treated as informational data.
+          More info can be found <a href="/api/shipping-guide_2/upgrade-to-version-2/#introduced-warnings">here</a>.</p>
       </section>
 
       <section class="api__section">
@@ -137,7 +111,9 @@ layout: redesign
 
       <section class="api__section">
         <h2>Additional service XXX is not applicable for product YYY</h2>
-        <p align="justify">TODO: What is this? Why does it happen? How do i solve this problem? Is it possible for me to get a list of which additional services are applicable for the different services?</p>
+        <p align="justify">If a requested additional service is not supported on requested product, API will just ignore that additional service for price calculation and return info as a trace message.
+          Supported list of addtional services on products can be found <a href="/api/products/#additional-services">here</a>.
+        </p>
       </section>
 
       <section class="api__section" id="">

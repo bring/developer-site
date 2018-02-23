@@ -20,7 +20,7 @@ documentation:
 
       * [Unified request and response model](/api/shipping-guide_2/#getting-started): Due to backward compatibility, existing SOAP API versions had too many ways of requesting to Shipping guide which was always confusing for clients. This has been simplified in new version with one unified way of requesting to Shipping guide.
       * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#handle-api-errors): New version of API gives ability to handle error in much simpler way.
-      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple product and along with multiple customer number in a single REST request. TODO Details of how link.
+      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple product and along with multiple customer number in a single REST request. [How?](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
       * [New restructured service models](): New product codes as part of Posten and Bring restructuring will be supported on new version only. TODO Details of service details links
 
       ### How to upgrade
@@ -66,6 +66,7 @@ documentation:
               <ns:ShippingGuideRequest xmlns:ns="http://www.bring.no/logistics/shippingguide/2.0">
                   <ns:RequestProperties>
                       <ns:Language>no</ns:Language>
+                      <ns:Trace>true</ns:Trace>
                   </ns:RequestProperties>
                   <ns:Consignments>
                       <ns:Consignment consignmentId="101">
@@ -214,7 +215,7 @@ documentation:
 
 - title: Shipping Guide topics
   content: |
-      TODO: If you want to know more about cornercases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
+      If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
 
 - title: Handle API errors
   content: |
