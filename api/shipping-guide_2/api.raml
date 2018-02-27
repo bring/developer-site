@@ -6,15 +6,15 @@ baseUri: https://api.bring.com/shippingguide
 documentation:
 - title: Introduction
   content: |
-      The Shipping Guide API 2.0 will allow you to easily get shipping methods for your new shipments. If you request applicable shipping methods with all details, you will receive an object with the following data:
+      The Shipping Guide API 2.0 lets you query for shipping methods for your shipments. If you request applicable shipping methods with all details you will receive an object with the following data:
 
       - Prices
       - Estimated delivery times
       - GUI information
 
-      The API returns the recommended way to present these shipping methods, meaning that the actual response can be shown in e.g. a web-shop checking without any sorting or filtering and with human readable service texts.
+      The API returns the recommended way to present these shipping methods, meaning that the actual response can be shown in a web-shop checkout without any sorting or filtering and with human readable service texts.
 
-      The Shipping Guide API 2.0 has both a JSON and a SOAP interface. The JSON interface is typically used for a single service or similar services and is only for a single consignment. The SOAP interface can be used for multiple consignments and has the complete functionality of Shipping Guide API.
+      The Shipping Guide API 2.0 has both a REST and a SOAP interface. The REST interface only supports single consignments. While the SOAP interface can be used for multiple consignments.
 
       ### Why upgrade?
 
@@ -24,14 +24,14 @@ documentation:
       * [New restructured service models](): New product codes as part of Posten and Bring restructuring will be supported on new version only. TODO Details of service details links
 
       ### How to upgrade
-      Now that Shipping Guide API 2.0 is out, you might be wondering how to upgrade to it. The [Upgrade to version 2](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
+      Now that Shipping Guide API 2.0 is out you might be wondering how to upgrade to it. The [Upgrade to version 2](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
 
 - title: Getting started
   content: |
-      This guide will walk you through getting shipment methods for your first package using Shipping Guide API. In this example, we will be calling the SOAP interface with a HTTP client and query for the services `SERVICEPAKKE` and `PA_DOREN` for two packages.
+      This guide will walk you through getting shipment methods for your first consignment using Shipping Guide API. In this example we will be calling the SOAP interface with a HTTP client and query for the services `SERVICEPAKKE` and `PA_DOREN` for two packages.
 
       ### Before you start
-      Before you can begin integrating with or testing the new API, you'll have to do the following:
+      Before you can begin using the new API you'll have to do the following:
 
       * [Sign up for a MyBring account](https://www.mybring.com/signup/register/user) if you do not already have one
       * [Generate an API key](/api/#authentication) for your user
@@ -40,23 +40,23 @@ documentation:
       ### 1. Get your API key from Mybring
       To make API requests you will need an API key.
 
-      To do this click the button below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key, which will be used when creating you request is available here.
+      To do this click the button below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
       <br>
       <a href="https://www.mybring.com/useradmin/account/settings" class="blog__paginator__button">Get API key</a>
       <br>
 
       ### 2. Add authentication headers
-      Authenticate your request by adding the three headers: Your Mybring username and API key. A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
+      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
 
       ### 3. Add additional headers
       Since we're using the SOAP (1.1) interface we'll have to add the following header:
 
       - `Content-type: text/xml`
 
-      If you're using a SOAP client it may be that this is done for you, meaning you can skip this step.
+      Most SOAP libraries will do this for you.
 
       ### 4. Add the body to the request
-      In this request we'll be querying prices and expected delivery time for the service `SERVICEPAKKE`, for a single package being sent from the postal code 0015 to 5518 in Norway.
+      In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
       ```
       <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -105,10 +105,9 @@ documentation:
       ```
 
       ### 5. Submit the request
-      The request should now be complete, so now it is time to submit it.
 
 
-      The respons may have changed since it was documented but you will get a response that looks something like this:
+      The response may have changed since it was documented but you will get a response that looks something like this:
 
       ```
       <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
@@ -219,14 +218,14 @@ documentation:
 
 - title: Handle API errors
   content: |
-      When using the Shipping Guide, it is important to handle errors gracefully. Your users should still be able to order, even if the Shipping Guide API returns an error or e.g. a timeout occurs.
+      When using the Shipping Guide it is important to handle errors gracefully. Your users should still be able to order even if the Shipping Guide API returns an error or if there is an error establishing a connection to the API.
 
       The Shipping Guide API return two levels of error information:
 
       * HTTP error codes or SOAP fault with a message in the body
 
-        For JSON, we follow general convention of Http status code. In case of SOAP, we gives out detailed info of error along with error code which can be parsed easily programmatically, making it easier to understand the reason of failure.
-        No longer need to depend on messages in fault to identify reason of failure.
+        For REST we follow general convention of HTTP status codes.
+        For SOAP we give out detailed error decription along with an error code which can be parsed programmatically.
 
         ```
         <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
@@ -250,11 +249,11 @@ documentation:
 
       * An error object in the response that is on a service level
 
-        When we are not able to process one of the product requested, we will respond with a error on product level. Details of possible error code are well documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-2.0.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-2.0.wsdl) itself, making it easier for clients to parse it.
+        When we are not able to process one of the product requested, we will respond with a error on product level. Details of possible error codes are documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-2.0.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-2.0.wsdl) itself, making it easier for clients to parse it.
 
 - title: Request and response structure
   content: |
-      If you request shipping methods via API, your request and response will have comply with the following schemas:
+      If you request shipping methods via the API your request and response will have to comply with the following schemas:
 
       #### SOAP
 
