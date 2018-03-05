@@ -393,10 +393,14 @@ documentation:
         default: false
         required: false
       incoterms:
-                description: Leveringsbetingelser
-                type: string
-                example: EXW
-                required: false
+        description: Leveringsbetingelser
+        type: string
+        example: EXW
+        required: false
+      unnumber:
+        description: Kode for farlig gods
+        type: integer
+        required: false
 
     responses:
       200:
