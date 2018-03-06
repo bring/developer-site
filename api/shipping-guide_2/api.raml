@@ -33,7 +33,7 @@ documentation:
       ### Before you start
       Before you can begin using the new API you'll have to do the following:
 
-      * [Sign up for a MyBring account](https://www.mybring.com/signup/register/user) if you do not already have one
+      * [Sign up for a MyBring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](/useradmin/account/settings/) page to get your API key.
       * [Generate an API key](/api/#authentication) for your user
 
 
@@ -252,7 +252,7 @@ documentation:
         Possible error codes can be found [here](https://api.bring.com/shippingguide/api/errors?clientUrl=developer.bring.com)
 
 
-      * An error object in the response that is on a service level
+      * An error object in the response that is on product level
 
         When we are not able to process one of the product requested, we will respond with a error on product level. Details of possible error codes are documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-2.0.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-2.0.wsdl) itself, making it easier for clients to parse it.
 
@@ -278,15 +278,15 @@ documentation:
   content: |
       To have better performance of the api
 
-      * Request can be limited to have only the services needed since the response time of some services can be slow as compared to others
-      * If the request is only to find the lead time / prices of different services, the flag for withExpectedDelivery / withPrices should be set to true and others can be set to false
+      * Request can be limited to have only the products needed since the response time of some products can be slow as compared to others
+      * If the request is only to find the lead time / prices of different product, the flag for withExpectedDelivery / withPrices should be set to true and others can be set to false. In case of REST these are different endpoints.
       * For net prices requests should include customer number and correct package details
       * Request can include limited number of consignments in each request for quick response.
       * New shipments request can be part of separate request
       
 
 
-/v2/services:
+/v2/products:
   displayName: Get shipment prices and estimated delivery
   description: Use this endpoint to get expected delivery, product categories and additional information.
   get:
@@ -373,17 +373,13 @@ documentation:
         description: Multiple additional services can be requested by repeating this parameter
         required: false
         type: string
-      service:
-        description: Multiple services can be requested by repeating this parameter
-        type: string
-        required: true
       customernumber:
         description: Lets you specify which customer number to use in the request. If specified and product is not supplied with delimited customer number, then it will be applied on all request products
         type: string
         example: CARGO-123456
         required: false
       language:
-        description: Language used for the service texts
+        description: Language used for the product texts
         type: string
         default: no
         required: false
@@ -415,14 +411,14 @@ documentation:
         description: |
           A failed response when the request is unauthenticated
 
-/v2/services/price:
+/v2/products/price:
   displayName: Get shipment prices
   description: |
       Use this endpoint to get prices. The request parameters are the same as for [Get shipment prices and estimated delivery](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
   get:
     description: Use this endpoint to get price. The request parameters are the same as for [Get shipment prices and estimated delivery](/api/shipping-guide_v2/#get-shipment-prices-and-estimated-delivery)
 
-/v2/services/expectedDelivery:
+/v2/products/expectedDelivery:
   displayName: Get expected delivery times
   description: |
       Use this endpoint to get expected delivery. The request parameters are the same as for [Get shipment prices and estimated delivery](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
