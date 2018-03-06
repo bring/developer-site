@@ -45,6 +45,11 @@ layout: redesign
       </section>
 
       <section class="api__section">
+        <h2>Trace messages</h2>
+        <p align="justify">Trace messages are meant as debug messages to the developer and are <strong>not intended to be parsed by the application</strong>. Parsing the trace messages may result in unexpected behaviour since they may change. The new Shipping Guide endpoint supports structured errors so it shouldn't be necessary to parse trace messages, but if you see the need feel free to contact us.</p>
+      </section>
+
+      <section class="api__section">
         <h2>Volume, weight, dimensions and loading meter</h2>
         <p align="justify">Shipping Guide use measurement of the package to calculate price of the Shipment. Shipping Guide accept measurements in <code>Volume</code>, <code>Weight </code>and <code>Dimensions(Length, Width and Height)</code>. Either <code>Volume</code> or <code>Weight</code> or <code>Dimensions</code> must be  present in the request.
           It is recommended to request Shipping Guide with accurate measurements to get most precise price. Apart from these measurements, <code>Loading meter </code> is a kind of measurement which can be sent in the  request for CARGO products to get more precise price information.</p>
