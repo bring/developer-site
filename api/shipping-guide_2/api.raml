@@ -1,0 +1,439 @@
+#%RAML 1.0
+---
+title: Shipping Guide API 2.0
+baseUri: https://api.bring.com/shippingguide
+
+documentation:
+- title: Introduction
+  content: |
+      The Shipping Guide API 2.0 lets you query for shipping methods for your shipments. If you request applicable shipping methods with all details you will receive an object with the following data:
+
+      - Prices
+      - Estimated delivery times
+      - GUI information
+
+      The API returns the recommended way to present these shipping methods, meaning that the actual response can be shown in a web-shop checkout without any sorting or filtering and with human readable service texts.
+
+      The Shipping Guide API 2.0 has both a REST and a SOAP interface. The REST interface only supports single consignments. While the SOAP interface can be used for multiple consignments.
+
+      ### Why upgrade?
+
+      * [Unified request and response model](/api/shipping-guide_2/#getting-started): Due to backward compatibility, existing SOAP API versions had too many ways of requesting to Shipping guide which was always confusing for clients. This has been simplified in new version with one unified way of requesting to Shipping guide.
+      * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#handle-api-errors): New version of API gives ability to handle error in much simpler way.
+      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple product and along with multiple customer number in a single REST request. [How?](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
+      * [New restructured service models](): New product codes as part of Posten and Bring restructuring will be supported on new version only. More details on restructuring coming soon.
+
+      ### How to upgrade
+      Now that Shipping Guide API 2.0 is out you might be wondering how to upgrade to it. The [Upgrade to version 2](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
+
+- title: Getting started
+  content: |
+      This guide will walk you through getting shipment methods for your first consignment using Shipping Guide API. In this example we will be calling the SOAP interface with a HTTP client and query for the services `SERVICEPAKKE` and `PA_DOREN` for two packages.
+
+      ### Before you start
+      Before you can begin using the new API you'll have to do the following:
+
+      * [Sign up for a MyBring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](/useradmin/account/settings/) page to get your API key.
+      * [Generate an API key](/api/#authentication) for your user
+
+
+      ### 1. Get your API key from Mybring
+      To make API requests you will need an API key.
+
+      To do this click the button below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
+      <br>
+      <a href="https://www.mybring.com/useradmin/account/settings" class="blog__paginator__button">Get API key</a>
+      <br>
+
+      ### 2. Add authentication headers
+      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
+
+      ### 3. Add additional headers
+      Since we're using the SOAP (1.1) interface we'll have to add the following header:
+
+      - `Content-type: text/xml`
+
+      Most SOAP libraries will do this for you.
+
+      ### 4. Add the body to the request
+      In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
+
+      ```
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                        xmlns:ns="http://www.bring.no/logistics/shippingguide/2.0">
+          <soapenv:Header/>
+          <soapenv:Body>
+              <ns:ShippingGuideRequest xmlns:ns="http://www.bring.no/logistics/shippingguide/2.0">
+                  <ns:RequestProperties>
+                      <ns:Language>no</ns:Language>
+                      <ns:Trace>true</ns:Trace>
+                  </ns:RequestProperties>
+                  <ns:Consignments>
+                      <ns:Consignment consignmentId="101">
+                          <ns:ProductIds>
+                              <ns:ProductId>SERVICEPAKKE</ns:ProductId>
+                              <ns:ProductId>PA_DOREN</ns:ProductId>
+                          </ns:ProductIds>
+                          <ns:FromCountryCode>NO</ns:FromCountryCode>
+                          <ns:FromPostalCode>0015</ns:FromPostalCode>
+                          <ns:ToCountryCode>NO</ns:ToCountryCode>
+                          <ns:ToPostalCode>5518</ns:ToPostalCode>
+                          <ns:ShippingDate>
+                              <ns:Year>2018</ns:Year>
+                              <ns:Month>10</ns:Month>
+                              <ns:Day>10</ns:Day>
+                          </ns:ShippingDate>
+                          <ns:Packages>
+                              <ns:Package>
+                                  <ns:Height>19</ns:Height>
+                                  <ns:Width>12</ns:Width>
+                                  <ns:Length>30</ns:Length>
+                                  <ns:GrossWeight>120</ns:GrossWeight>
+                              </ns:Package>
+                              <ns:Package>
+                                  <ns:Height>30</ns:Height>
+                                  <ns:Width>15</ns:Width>
+                                  <ns:Length>22</ns:Length>
+                                  <ns:GrossWeight>240</ns:GrossWeight>
+                              </ns:Package>
+                          </ns:Packages>
+                      </ns:Consignment>
+                  </ns:Consignments>
+              </ns:ShippingGuideRequest>
+          </soapenv:Body>
+      </soapenv:Envelope>
+      ```
+
+      ### 5. Submit the request
+
+      Post at:
+
+      ```
+
+        https://api.bring.com/shippingguide/api/ws
+
+      ```
+
+      The response may have changed since it was documented but you will get a response that looks something like this:
+
+      ```
+      <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+          <SOAP-ENV:Header/>
+          <SOAP-ENV:Body>
+              <ns2:ShippingGuideResponse xmlns:ns2="http://www.bring.no/logistics/shippingguide/2.0">
+                  <ns2:TraceMessages>
+                      <ns2:Message>Defaulting to current time of day as no hour and minute component present in date time element.</ns2:Message>
+                      <ns2:Message>Added fee 'brev-varsling' (NOK 13.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.</ns2:Message>
+                  </ns2:TraceMessages>
+                  <ns2:Consignments>
+                      <ns2:Consignment consignmentId="101">
+                          <ns2:Products>
+                              <ns2:Product>
+                                  <ns2:ProductId>SERVICEPAKKE</ns2:ProductId>
+                                  <ns2:ProductCodeInProductionSystem>1202</ns2:ProductCodeInProductionSystem>
+                                  <ns2:GuiInformation>
+                                      <ns2:SortOrder>11</ns2:SortOrder>
+                                      <ns2:MainDisplayCategory>Pakke</ns2:MainDisplayCategory>
+                                      <ns2:SubDisplayCategory>Til private</ns2:SubDisplayCategory>
+                                      <ns2:DisplayName>Klimanøytral Servicepakke</ns2:DisplayName>
+                                      <ns2:ProductName>Klimanøytral Servicepakke</ns2:ProductName>
+                                      <ns2:DescriptionText>Pakken kan spores og utleveres på ditt lokale hentested.</ns2:DescriptionText>
+                                      <ns2:HelpText>Klimanøytral Servicepakke leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.</ns2:HelpText>
+                                      <ns2:ShortName>Klimanøytral Servicepakke</ns2:ShortName>
+                                      <ns2:ProductURL>http://www.bring.no/sende/pakker/private-i-norge/hentes-pa-posten</ns2:ProductURL>
+                                      <ns2:DeliveryType>Hentested</ns2:DeliveryType>
+                                      <ns2:Tip/>
+                                      <ns2:MaxWeightInKgs>35</ns2:MaxWeightInKgs>
+                                  </ns2:GuiInformation>
+                                  <ns2:Price currencyIdentificationCode="NOK">
+                                      <ns2:PriceWithoutAdditionalServices>
+                                          <ns2:AmountWithoutVAT>239.00</ns2:AmountWithoutVAT>
+                                          <ns2:VAT>59.75</ns2:VAT>
+                                          <ns2:AmountWithVAT>298.75</ns2:AmountWithVAT>
+                                      </ns2:PriceWithoutAdditionalServices>
+                                      <ns2:PriceWithAdditionalServices>
+                                          <ns2:AmountWithoutVAT>239.00</ns2:AmountWithoutVAT>
+                                          <ns2:VAT>59.75</ns2:VAT>
+                                          <ns2:AmountWithVAT>298.75</ns2:AmountWithVAT>
+                                      </ns2:PriceWithAdditionalServices>
+                                  </ns2:Price>
+                                  <ns2:ExpectedDelivery>
+                                      <ns2:WorkingDays>2</ns2:WorkingDays>
+                                      <ns2:UserMessage/>
+                                      <ns2:FormattedExpectedDeliveryDate>12.10.2018</ns2:FormattedExpectedDeliveryDate>
+                                      <ns2:ExpectedDeliveryDate>
+                                          <ns2:Year>2018</ns2:Year>
+                                          <ns2:Month>10</ns2:Month>
+                                          <ns2:Day>12</ns2:Day>
+                                      </ns2:ExpectedDeliveryDate>
+                                      <ns2:AlternativeDeliveryDates/>
+                                  </ns2:ExpectedDelivery>
+                              </ns2:Product>
+                              <ns2:Product>
+                                  <ns2:ProductId>PA_DOREN</ns2:ProductId>
+                                  <ns2:ProductCodeInProductionSystem>1736</ns2:ProductCodeInProductionSystem>
+                                  <ns2:GuiInformation>
+                                      <ns2:SortOrder>41</ns2:SortOrder>
+                                      <ns2:MainDisplayCategory>Pakke</ns2:MainDisplayCategory>
+                                      <ns2:SubDisplayCategory>Til private</ns2:SubDisplayCategory>
+                                      <ns2:DisplayName>På Døren</ns2:DisplayName>
+                                      <ns2:ProductName>På Døren</ns2:ProductName>
+                                      <ns2:DescriptionText>Pakken kan spores og leveres hjem til deg mellom kl. 17-21. Sjåføren ringer 30-60 min før ankomst.</ns2:DescriptionText>
+                                      <ns2:HelpText>På Døren leveres hjem til mottaker mellom kl. 17 og 21. Mottaker varsles i god tid om forventet utleveringsdag via SMS eller e-post, i tillegg til nytt varsel når sendingen er lastet på bil for utkjøring samme kveld. Sjåføren ringer mottaker 30-60 minutter før ankomst. Mottaker kan endre leveringsdag når pakken spores (gjelder ikke lokalpakker). Dersom sendingen ikke kan leveres, blir den sendt til mottakers lokale hentested (postkontor eller Post i Butikk). Sendingen kan spores ved hjelp av sporingsnummeret.</ns2:HelpText>
+                                      <ns2:ShortName>På Døren</ns2:ShortName>
+                                      <ns2:ProductURL>http://www.bring.no/sende/pakker/private-i-norge/hjemlevering</ns2:ProductURL>
+                                      <ns2:DeliveryType>Dør</ns2:DeliveryType>
+                                      <ns2:Tip/>
+                                      <ns2:MaxWeightInKgs>35</ns2:MaxWeightInKgs>
+                                  </ns2:GuiInformation>
+                                  <ns2:Price currencyIdentificationCode="NOK">
+                                      <ns2:PriceWithoutAdditionalServices>
+                                          <ns2:AmountWithoutVAT>270.00</ns2:AmountWithoutVAT>
+                                          <ns2:VAT>67.50</ns2:VAT>
+                                          <ns2:AmountWithVAT>337.50</ns2:AmountWithVAT>
+                                      </ns2:PriceWithoutAdditionalServices>
+                                      <ns2:PriceWithAdditionalServices>
+                                          <ns2:AmountWithoutVAT>270.00</ns2:AmountWithoutVAT>
+                                          <ns2:VAT>67.50</ns2:VAT>
+                                          <ns2:AmountWithVAT>337.50</ns2:AmountWithVAT>
+                                      </ns2:PriceWithAdditionalServices>
+                                  </ns2:Price>
+                                  <ns2:ExpectedDelivery>
+                                      <ns2:WorkingDays/>
+                                      <ns2:UserMessage>Ingen fremsendingstidsgaranti for oppgitt tilpostnummer.</ns2:UserMessage>
+                                      <ns2:FormattedExpectedDeliveryDate/>
+                                      <ns2:AlternativeDeliveryDates/>
+                                      <ns2:FormattedEarliestPickupDate/>
+                                  </ns2:ExpectedDelivery>
+                              </ns2:Product>
+                          </ns2:Products>
+                      </ns2:Consignment>
+                  </ns2:Consignments>
+              </ns2:ShippingGuideResponse>
+          </SOAP-ENV:Body>
+      </SOAP-ENV:Envelope>
+      ```
+
+      If you want to know more about the fields you can have a look at the XSD linked from the section [Request and response structure](/api/shipping-guide_2/#request-and-response-structure)
+
+
+- title: Shipping Guide topics
+  content: |
+      If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
+
+- title: Handle API errors
+  content: |
+      When using the Shipping Guide it is important to handle errors gracefully. Your users should still be able to order even if the Shipping Guide API returns an error or if there is an error establishing a connection to the API.
+
+      The Shipping Guide API return two levels of error information:
+
+      * HTTP error codes or SOAP fault with a message in the body
+
+        For REST we follow general convention of HTTP status codes.
+        For SOAP we give out detailed error decription along with an error code which can be parsed programmatically.
+
+        ```
+        <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+            <SOAP-ENV:Header/>
+            <SOAP-ENV:Body>
+                <SOAP-ENV:Fault>
+                    <faultcode>SOAP-ENV:Client</faultcode>
+                    <faultstring>FG_INPUT_010 Number of alternative delivery dates must be numeric and less than 10 [errorId 2806bbda-1df0-4b1b-b008-1068f5c57f06]
+                    </faultstring>
+                    <detail>
+                        <code>FG_INPUT_010</code>
+                        <description>Error number of alternative deliverydates</description>
+                    </detail>
+                </SOAP-ENV:Fault>
+            </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+        ```
+
+        Possible error codes can be found [here](https://api.bring.com/shippingguide/api/errors?clientUrl=developer.bring.com)
+
+
+      * An error object in the response that is on product level
+
+        When we are not able to process one of the product requested, we will respond with a error on product level. Details of possible error codes are documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-2.0.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-2.0.wsdl) itself, making it easier for clients to parse it.
+
+- title: Request and response structure
+  content: |
+      If you request shipping methods via the API your request and response will have to comply with the following schemas:
+
+      #### SOAP
+
+      [https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd](https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd)
+
+      [https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl)
+
+- title: Versioning
+  content: |
+       The Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses. To achieve this, namespace schema versioning is used in the request for webservices, indicating which version the client is on and what data-format the client expects in the result. For REST, versioning is defined as part of endpoint itself.
+
+       *Important*: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must not crash when unknown elements are encountered.
+
+       When incompatible changes in the schema are made (other than addition of new elements), the namespace versioning will be updated accordingly. The new schema is used at the *same endpoint URL* as before for webservices. Old schema versions will be shut down some time in the future, so its recommended always updating to the latest version.
+
+- title: Improve performance
+  content: |
+      To have better performance of the api
+
+      * Request can be limited to have only the products needed since the response time of some products can be slow as compared to others
+      * If the request is only to find the lead time / prices of different product, the flag for withExpectedDelivery / withPrices should be set to true and others can be set to false. In case of REST these are different endpoints.
+      * For net prices requests should include customer number and correct package details
+      * Request can include limited number of consignments in each request for quick response.
+      * New shipments request can be part of separate request
+      
+
+
+/v2/products:
+  displayName: Get shipment prices and estimated delivery
+  description: Use this endpoint to get expected delivery, product categories and additional information.
+  get:
+    description: Get shipment prices
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      Content-Type:
+        description: The API key needed to create a new job
+    queryParameters:
+      fromcountry:
+        description: Sender country code
+        type: string
+      tocountry:
+        description: Receiver country code
+        type: string
+      frompostalcode:
+        description: Sender postal code
+        type: string
+      topostalcode:
+        description: Receiver postal code
+        type: string
+      product:
+        description: List of products requested. Multiple products can be requested in a single request. Requested product can also be specified with a customer number separated with delimiter (**:**). For example CARGO**:**CARGO-123456
+        type: string
+      date:
+        description: Shipping date
+        type: date
+        example: 2018-11-18
+        required: false
+      time:
+        description: Shipping time
+        type: date
+        example: 12:30
+        required: false
+      weight:
+        description: Package weight in grams
+        type: integer
+        required: false
+      volumeindm3:
+        description: Package volume in dm3
+        type: integer
+        required: false
+      loadingmeter:
+        description: Package loading meters
+        type: double
+        required: false
+      width:
+        description: Package width in cm
+        type: integer
+        required: false
+      length:
+        description: Package length in cm
+        type: integer
+        required: false
+      height:
+        description: Package height in cm
+        type: integer
+        required: false
+      numberofpallets:
+        displayName: Number of pallets
+        type: integer
+        required: false
+      nonstackable:
+        description: Set to true if you know that pallet would be non-stackable
+        type: boolean
+        required: false
+        default: false
+      edi:
+        description: Tells if the parcel will be registered using EDI when being booked. It may affect price and which services are available
+        type: boolean
+        required: false
+        default: true
+      postingatpostoffice:
+        description: |
+          Tells whether the parcel is delivered at a post office when it is shipped. A surcharge will be applied for SERVICEPAKKE and BPAKKE_DOR-DOR
+        type: boolean
+        required: false
+        default: false
+      additional:
+        displayName: Additional service
+        description: Multiple additional services can be requested by repeating this parameter
+        required: false
+        type: string
+      customernumber:
+        description: Lets you specify which customer number to use in the request. If specified and product is not supplied with delimited customer number, then it will be applied on all request products
+        type: string
+        example: CARGO-123456
+        required: false
+      language:
+        description: Language used for the product texts
+        type: string
+        default: no
+        required: false
+      volumeSpecial:
+        description: True if the package has a shape that requires special handling
+        type: boolean
+        default: false
+        required: false
+      incoterms:
+        description: Terms of delivery
+        type: string
+        required: false
+      unnumber:
+        description: Code for dangerous goods
+        type: integer
+        required: false
+
+    responses:
+      200:
+        displayName: Successful response
+        description: |
+          A successful response
+      400:
+        displayName: User error
+        description: |
+          This can mean that a required field or parameter has not been provided, the value supplied is invalid, or the combination of provided fields is invalid.
+      401:
+        displayName: Unauthorized
+        description: |
+          A failed response when the request is unauthenticated
+
+/v2/products/price:
+  displayName: Get shipment prices
+  description: |
+      Use this endpoint to get prices. The request parameters are the same as for [Get shipment prices and estimated delivery](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
+  get:
+    description: Use this endpoint to get price. The request parameters are the same as for [Get shipment prices and estimated delivery](/api/shipping-guide_v2/#get-shipment-prices-and-estimated-delivery)
+
+/v2/products/expectedDelivery:
+  displayName: Get expected delivery times
+  description: |
+      Use this endpoint to get expected delivery. The request parameters are the same as for [Get shipment prices and estimated delivery](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
+  get:
+    description: Get estimated delivery time
+
+/api/ws:
+  displayName: Get shipment prices and estimated delivery
+  description: Use this endpoint to get expected delivery, product categories and additional information.
+  post:
+    description: Use this endpoint to get expected delivery, product categories and additional information.
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      Content-Type:
+        description: The API key needed to create a new job

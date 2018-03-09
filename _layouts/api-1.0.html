@@ -195,7 +195,7 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
-                {% unless method.responses == empty %}
+                {% if method.responses %}
                 <h2 class="beta">Responses</h2>
                 {% for responseHash in method.responses %}
                   {% assign response = responseHash[1] %}
@@ -256,7 +256,7 @@ layout: redesign
                     </div>
                   {% endfor %}{% comment %} endfor body in response {% endcomment %}
                 {% endfor %}{% comment %} endfor response in method.responses {% endcomment %}
-                {% endunless %}{% comment %} endunless method.responses == empty {% endcomment %}
+                {% endif %}{% comment %} endif method.responses {% endcomment %}
               </section>
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}

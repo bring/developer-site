@@ -2,10 +2,8 @@
   "data": {
     "type": "label_orders",
     "attributes": {
-      "customerNumber": "PARCELS_NORWAY-XXXXXXXXXXXXX",
-      "packageNumbers": [
-        "LA297895248NO"
-      ]
+      "customerNumber": "PARCELS_NORWAY-1234567890",
+      "packageNumbers": ["LA297895248NO"]
     }
   }
 }

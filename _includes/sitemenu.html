@@ -25,6 +25,11 @@
           </li>
         {% for api_page in site.pages %}
           {% unless api_page.api %}{% continue %}{% endunless %}
+
+          <!--Temporarily disable shipping guide 2 doc-->
+          {% if api_page.url == "/api/shipping-guide_2/" %}{% continue %}{% endif %}
+          <!--END-->
+
           {% if page.url contains api_page.url %}
             {% assign active_page = true %}
           {% else %}
