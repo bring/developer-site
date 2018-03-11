@@ -10,11 +10,9 @@ documentation:
 
     This is a step-by-step guide on how to use the API.
 
-    A typical usage pattern for an Warehousing customer type is to create an order in Order Management that will go to the correct warehouse for picking, packing and sending. Then follow up with creating a packing list from the warehouse with transport information. All steps can be followed in Order Management.
+    A typical usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
 
-    An other usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
-
-    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality.
+    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The XML/JSON interface is the core interface with complete functionality.
 
     Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
 
@@ -72,32 +70,12 @@ documentation:
           application/json:
             example: !include examples/verify_customer.json
 
-/omorder/{customerId}/{orderId}:
-  displayName: List order information
-  description: |
-      Get all information on a given order.
-  get:
-    description: List order information
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Complete order information including order items.
-        body:
-          application/xml:
-            example: !include examples/retrieve_order.xml
-          application/json:
-            example: !include examples/retrieve_order.json
-
 /omorder:
   displayName: Send an order
   description: |
       Send an order to Order Management. There are different types of order supported in Order Management.
 
-       - Order / SalesOrder (as an pickorder for Warehousing)
-            - Order Management act as an order repository.
-            - When Warehousing functionality Order Management sends it to Warhousing system for picking and delivery.
-       - PurchaseOrder
+       - Order/PurchaseOrder
             - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
             - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
 
@@ -247,6 +225,23 @@ documentation:
         displayName: Success
         description: |
           Successfully created a order.
+
+/omorder/{customerId}/{orderId}:
+  displayName: List order information
+  description: |
+      Get all information on a given order.
+  get:
+    description: List order information
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Complete order information including order items.
+        body:
+          application/xml:
+            example: !include examples/retrieve_order.xml
+          application/json:
+            example: !include examples/retrieve_order.json
 
 /items/{customerId}/{orderId}:
   displayName: List order items

@@ -6,9 +6,9 @@ baseUri: https://api.bring.com/po/api/v1
 documentation:
 - title: Introduction
   content: |
-    A typical usage pattern for an Warehousing customer type is to create an order in Order Management that will go to the correct warehouse for picking, packing and sending. Then follow up with creating a packing list from the warehouse with transport information. All steps can be followed in Order Management.
+    A typical usage pattern for an Warehousing customer type is to create an order in Order Management that will go to the correct warehouse for picking, packing and sending. Then follow up with creating a packing list from the warehouse with transport information. All steps can be followed in Mybring Order Management.
 
-    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality.
+    Warehousing API has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The XML/JSON interface is the core interface with complete functionality.
 
     Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
 
@@ -16,7 +16,7 @@ documentation:
 
     ### Versioning
 
-    Order Management makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service. To achieve this, a SchemaVersion element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
+    Warehousing API makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service. To achieve this, a SchemaVersion element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
 
     We make an effort not to return new elements in the response when an old schema version is specified. When changes in the schema are made, the SchemaVersion is incremented by one. The new schema is used at the same endpoint URL as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
 
@@ -30,7 +30,7 @@ documentation:
 
     ## Error handling
 
-    When using the Order Management, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
+    When using the Warehousing API, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
 
     How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
 
@@ -38,7 +38,7 @@ documentation:
 
 - title: Authentication
   content: |
-    The Order Management API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+    The Warehousing API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
 
     | Header | Example | Comment |
     |:-------|:--------|:--------|
@@ -48,31 +48,13 @@ documentation:
 
     Those headers must be set for all endpoints documented below.
 
-/omorder/{customerId}/{orderId}:
-  displayName: List order information
-  description: |
-      Get all information on a given order.
-  get:
-    description: List order information
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Complete order information including order items.
-        body:
-          application/xml:
-            example: !include examples/retrieve_order.xml
-          application/json:
-            example: !include examples/retrieve_order.json
-
 /omorder:
   displayName: Send an order
   description: |
       Send an order to Warehousing system. There are different types of order supported in Warehousing system.
 
        - Order / SalesOrder (as an pickorder for Warehousing)
-            - Order Management act as an order repository.
-            - When Warehousing functionality Order Management sends it to Warhousing system for picking and delivery.
+            - Warehousing functionality sends it to Warhousing system for picking and delivery.
   post:
     description: Send an order
     queryParameters:
@@ -220,6 +202,23 @@ documentation:
         description: |
           Successfully created a order.
 
+/omorder/{customerId}/{orderId}:
+  displayName: List order information
+  description: |
+      Get all information on a given order.
+  get:
+    description: List order information
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Complete order information including order items.
+        body:
+          application/xml:
+            example: !include examples/retrieve_order.xml
+          application/json:
+            example: !include examples/retrieve_order.json
+            
 /items/{customerId}/{orderId}:
   displayName: List order items
   description: |
