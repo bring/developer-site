@@ -55,11 +55,14 @@ documentation:
 
        - Order / SalesOrder (as an pickorder for Warehousing)
             - Warehousing functionality sends it to Warhousing system for picking and delivery.
+       - PurchaseOrder (as an receiving order for Warehousing)
+            - Warehousing functionality sends it to Warhousing system for receiving orderinfo.
+
   post:
     description: Send an order
     queryParameters:
       CreateOrderRequest messageFunction:
-          description: Type of order. <br>"Order"<br>"OrderResponse"<br>"SalesOrder"<br>"NotifyTransport"<br>"PurchaseOrder"<br>"ArticleBalance"<br>"DespatchAdvice"<br>"ReceivingAdvice"<br>"PackageList"
+          description: Type of order. <br>"Order"<br>"OrderResponse"<br>"SalesOrder"<br>"NotifyTransport"<br>"PurchaseOrder"<br>"ArticleBalance"<br>"DespatchAdvice"<br>"ReceivingAdvice"<br>"PackageList"<br>"OrderReceipt"<br>"InventoryReport"<br>"InventoryReportAd"<br>"ItemData"
           type: string
           required: true
           example: Order
@@ -218,7 +221,7 @@ documentation:
             example: !include examples/retrieve_order.xml
           application/json:
             example: !include examples/retrieve_order.json
-            
+
 /items/{customerId}/{orderId}:
   displayName: List order items
   description: |
