@@ -6,34 +6,34 @@ baseUri: https://api.bring.com/shippingguide
 documentation:
 - title: Introduction
   content: |
-      The Shipping Guide API 2.0 lets you query for shipping methods for your shipments. If you request applicable shipping methods with all details you will receive an object with the following data:
+      The Shipping Guide API 2.0 (Fraktguiden) for provides you with different shipping alternatives for your shipments. If you request applicable shipping alternatives with all relevant details you will receive an object with the following data:
 
       - Prices
       - Estimated delivery times
       - GUI information
 
-      The API returns the recommended way to present these shipping methods, meaning that the actual response can be shown in a web-shop checkout without any sorting or filtering and with human readable product texts.
+      The API returns the recommended way to present these shipping alternatives, meaning that the actual response can easily be shown in a web-shop checkout without any sorting or filtering and with human readable product texts.
 
-      The Shipping Guide API 2.0 has both a REST and a SOAP interface. The REST interface only supports single consignments. While the SOAP interface can be used for multiple consignments.
+      The Shipping Guide API 2.0 has both a REST and a SOAP interface. The REST interface only supports single consignments, while the SOAP interface can be used for multiple consignments.
 
       ### Why upgrade?
 
-      * [Unified request and response model](/api/shipping-guide_2/#getting-started): Due to backward compatibility, existing SOAP API versions had too many ways of requesting to Shipping guide which was always confusing for clients. This has been simplified in new version with one unified way of requesting to Shipping guide.
-      * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#handle-api-errors): New version of API gives ability to handle error in much simpler way.
-      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple product and along with multiple customer number in a single REST request. [How?](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
-      * [New restructured product models](): New product codes as part of Posten and Bring restructuring will be supported on new version only. More details on restructuring coming soon.
+      * [Unified request and response model](/api/shipping-guide_2/#getting-started): Due to backward compatibility, existing SOAP API versions had too many ways of requesting to Shipping Guide could be always confusing for clients. This has been simplified in the new version with one unified way of requesting to Shipping Guide.
+      * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#handle-api-errors): The new version of API gives ability to handle error in a much simpler way.
+      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple products and along with multiple customer number in a single REST request. [How?](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
+      *  Some improvements to our service offering are planned for 2018-19. More info about upcoming changes will follow to all our partners. Future services will be supported by this new API-version in addition to other improvements. Note that our current API’s will not support future changes in our service offering.
 
       ### How to upgrade
-      Now that Shipping Guide API 2.0 is out you might be wondering how to upgrade to it. The [Upgrade to version 2](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
+      Now that Shipping Guide API 2.0 is out you might be wondering how to upgrade to it. The [Upgrade to version 2.0](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2 of the Shipping Guide API.
 
 - title: Getting started
   content: |
-      This guide will walk you through getting shipment methods for your first consignment using Shipping Guide API. In this example we will be calling the SOAP interface with a HTTP client and query for the product `SERVICEPAKKE` and `PA_DOREN` for two packages.
+      This guide will walk you through getting shipment alternatives for your first consignment using Shipping Guide API. In this example we will be calling the SOAP interface with a HTTP client and query for the product `SERVICEPAKKE` and `PA_DOREN` for two packages.
 
       ### Before you start
       Before you can begin using the new API you'll have to do the following:
 
-      * [Sign up for a MyBring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](/useradmin/account/settings/) page to get your API key.
+      * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](/useradmin/account/settings/) page to get your API key.
       * [Generate an API key](/api/#authentication) for your user
 
 
@@ -258,7 +258,7 @@ documentation:
 
 - title: Request and response structure
   content: |
-      If you request shipping methods via the API your request and response will have to comply with the following schemas:
+      If you request shipping alternatives via the API your request and response will have to comply with the following schemas:
 
       #### SOAP
 
