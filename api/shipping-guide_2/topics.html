@@ -22,10 +22,10 @@ layout: redesign
       </section>
 
       <section class="api__section">
-        <h2>No applicable services found</h2>
-        <p align="justify">When no services are applicable for the requested you've made an empty resultset is returned. Reasons can be that the shipment was too large or too small, or the requested shipment
-          was outside the coverage area of the requested services. Your code should handle these cases, i.e. an empty result, and should not fail because of this.</p>
-        <p align="justify">How can I fix this? You could e.g. use a Cargo service when you want to send large shipments, or you could request other services and see which ones that fits your need and find your service by using <a href="https://www.bring.no/english/sending">What would you like to send?</a>.
+        <h2>No applicable products found</h2>
+        <p align="justify">When no products are applicable for the requested you've made an empty resultset is returned. Reasons can be that the shipment was too large or too small, or the requested shipment
+          was outside the coverage area of the requested products. Your code should handle these cases, i.e. an empty result, and should not fail because of this.</p>
+        <p align="justify">How can I fix this? You could e.g. use a Cargo product when you want to send large shipments, or you could request other services and see which ones that fits your need and find your service by using <a href="https://www.bring.no/english/sending">What would you like to send?</a>.
         </p>
       </section>
 
@@ -42,12 +42,12 @@ layout: redesign
 
       <section class="api__section">
         <h2>Pre-registered - EDI</h2>
-        <p align="justify">It is possible to tell the Shipping Guide API that your parcel is registered using EDI when it is shipped, there is a parameter <code>edi</code> for that. Using this parameter may limit the available services and affect the price of others.</p>
+        <p align="justify">It is possible to tell the Shipping Guide API that your parcel is registered using EDI when it is shipped, there is a parameter <code>edi</code> for that. Using this parameter may limit the available products and affect the price of others.</p>
       </section>
 
       <section class="api__section">
         <h2>Holidays and Home Delivery</h2>
-        <p align="justify">There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter. The service will not take this into account.
+        <p align="justify">There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter. The products will not take this into account.
           This must be handled by clients. End-users should not get delivery dates for holidays.</p>
       </section>
 
