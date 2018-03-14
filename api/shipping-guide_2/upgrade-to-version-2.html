@@ -122,6 +122,18 @@ layout: redesign
             parent tag. Refer schema of Shipping Guide 2.0.
           </p>
 
+          <h3>What we have changed in response</h3>
+          <h4>ProductId</h4>
+          <p align="justify"><code>ProductId</code> element is renamed to <code>Id</code>.</p>
+
+          <h4>CustomerNumber</h4>
+          <p align="justify"><code>CustomerNumber</code> attribute is changed to being an element.</p>
+          <h4>ProductCodeInProductionSystem</h4>
+          <p align="justify"><code>ProductCodeInProductionSystem</code>element is renamed to <code>ProductionCode</code>.</p>
+          <h4>EDI information</h4>
+          <p align="justify"><code>CourierSpecificEdiParameters</code>, <code>QuickpackSpecificEdiParametersType</code> and <code>UpsSpecificEdiParametersType</code> elements are grouped inside a <code>Edi</code> element and the names are shortened, i.e. "SpecificEdiParametersType" is removed from the names.</p>
+          <h4>Price information</h4>
+          <p align="justify"><code>Price</code> is renamed to <code>ListPrice</code> and that element, <code>NetPrice</code> and <code>PipSpecificPrice</code> are grouped inside a <code>Price</code> element.</p>
           <h3>What we have removed in Response</h3>
 
           <h4>Packages and Consignment response tags</h4>
