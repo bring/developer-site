@@ -80,10 +80,18 @@ layout: redesign
           <h3>What we have removed in Request</h3>
           <h4>Request properties</h4>
           <p align="justify">
+            The tag is no longer available, as we have moved all its tags up to be parent tag, ShippingGuideRequest
+          </p>
+          <p align="justify">
             <code>WithPackageDetails</code> tag is no longer available, as we have discontinued package based shipping guide request.
           </p>
 
-          <h4>Product IDs, Consignment and Packages tags</h4>
+          <h4>TimeSlots tagg</h4>
+          <p align="justify">
+            The tag is removed and no longer available.
+          </p>
+
+          <h4>Consignment and Packages tags</h4>
           <p align="justify">
             These tags are no longer available. From schema version 9, we introduced Consignments tag which consists of
             all of these tags.
@@ -98,6 +106,7 @@ layout: redesign
             So in Shipping guide 2.0, we have generalised it, and removed all the individual tags which are already part
             of Consignments tag.
           </p>
+
 
           <h4>Unit code for dimension in Consignments tag</h4>
           <p align="justify">
@@ -121,6 +130,46 @@ layout: redesign
             This tag is just unwrapped, all the tags are still present, but not grouped. They are now part of the
             parent tag. Refer schema of Shipping Guide 2.0.
           </p>
+
+
+          <h3>What we have changed in Request</h3>
+
+          <h4>ConsignmentId attribute in Consignments tag</h4>
+          <p align="justify">
+            The attribute is renamed to Id only.
+          </p>
+
+          <h4>AdditionalServiceId tag under the AdditionalService tag</h4>
+          <p align="justify">
+            The attribute is renamed to Id only.
+          </p>
+
+          <h4>ProductIds tag and its children</h4>
+          <p align="justify">
+            The ProductIds tag is now called Products.
+          </p>
+          <p align="justify">
+            For each previous ProductId tag, we now have a new tag called Product.
+            All the previous attributes of the ProductId tag, are now moved to separate nested tags under the Product tag.
+          </p>
+          <p align="justify">
+            The ProductId tag is now in a tag called Id.
+          </p>
+          <p align="justify">
+            The customerNumber attribute is now moved to a separate tag called CustomerNumber.
+          </p>
+          <p align="justify">
+            The autoSelectCustomerNumber attribute is now moved to a separate tag called AutoSelectCustomerNumber.
+          </p>
+          <p align="justify">
+            The whichPartyIsPayer attribute is now moves to a separate tag called Payer with these valid values:
+          <ul>
+            <li><code>SENDER</code></li>
+            <li><code>RECEIVER</code></li>
+            <li><code>THIRD_PARTY</code></li>
+          </ul>
+          </p>
+
 
           <h3>What we have changed in response</h3>
           <h4>ProductId</h4>
