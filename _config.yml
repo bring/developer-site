@@ -8,7 +8,7 @@ permalink: /blog/:title/
 raml_08_map:
   api/shipping-guide/api.raml:
     target: api/shipping-guide/index.html
-    sort_order: 1
+    sort_order: 10
   api/pickup-point/api.raml:
     target: api/pickup-point/index.html
     sort_order: 20
@@ -43,7 +43,7 @@ raml_10_map:
     sort_order: 110
   api/shipping-guide_2/api.raml:
     target: api/shipping-guide_2/index.html
-    sort_order: 10
+    sort_order: 1
 
 # Build settings
 gems:
