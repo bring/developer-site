@@ -36,3 +36,13 @@
 .api__params {
   margin-bottom: $spacing * 2;
 }
+
+.api__warning-box {
+  width:100%;
+  height:auto;
+  min-height: 50px;
+  background-color: #fef2d9;
+  border: 1px solid #fdbb2f;
+  padding: 2%;
+  margin-bottom: 2%;
+}
