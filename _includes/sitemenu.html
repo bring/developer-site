@@ -33,9 +33,6 @@
             {% assign active_page = false %}
           {% endif %}
           <li class="{% if active_page %} active{% endif %}">
-            {% if api_page.url == "/api/shipping-guide_2/" %}
-              {% continue %}
-            {% endif %}
 
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
             {% if active_page %}
