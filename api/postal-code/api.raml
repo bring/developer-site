@@ -50,15 +50,14 @@ documentation:
       | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
 
 /postalCode{mediaTypeExtension}:
-  displayName: Lookup postal code
-  description: |
-      TODO: description
+  displayName: Lookup Postal Code
+
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml, .html ]
-      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML. 
+      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML.
   get:
-    description: Lookup postal code
+    description: Lookup Postal Code
     queryParameters:
       clientUrl:
         displayName: Client URL
