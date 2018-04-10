@@ -44,21 +44,21 @@ layout: blog
     {% if paginator.previous_page or paginator.next_page %}
       <div class="blog__paginator">
         <ul class="layout">
-          <li class="layout__item layout--right palm-one-whole lap-and-up-one-third">
-            {% if paginator.next_page %}
-            <a class="blog__paginator__button" href="{{ paginator.next_page_path }}">← Older posts</a>
+          <li class="layout__item palm-one-whole lap-and-up-one-third">
+            {% if paginator.previous_page %}
+            <a class="blog__paginator__button" href="{{ paginator.previous_page_path }}">← Newer posts</a>
             {% else %}
-            <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no older posts">← Older posts</span>
+            <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no newer posts">← Newer posts</span>
             {% endif %}
           </li><!--
        --><li class="layout__item layout--center palm-one-whole lap-and-up-one-third">
             <span class="blog__paginator__info">Page {{ paginator.page }}/{{ paginator.total_pages }}</span>
           </li><!--
        --><li class="layout__item palm-one-whole lap-and-up-one-third">
-            {% if paginator.previous_page %}
-            <a class="blog__paginator__button" href="{{ paginator.previous_page_path }}">Newer posts →</a>
+            {% if paginator.next_page %}
+            <a class="blog__paginator__button" href="{{ paginator.next_page_path }}">Older posts →</a>
             {% else %}
-            <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no newer posts">Newer posts →</span>
+            <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no older posts">Older posts →</span>
             {% endif %}
           </li>
         </ul>
