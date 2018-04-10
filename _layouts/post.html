@@ -3,7 +3,8 @@ layout: blog
 ---
       <article class="blog__post">
         <header class="blog__post__header u-mb+">
-          <h2 class="blog__post__heading alpha"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title | xml_escape }}</a></h2>
+          <a href="{{ site.baseurl }}/blog/">&lt; Back to blog</a>
+          <h2 class="u-mt blog__post__heading alpha"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title | xml_escape }}</a></h2>
           <ul class="blog__post__meta list-inline">
             <li class="blog__post__meta-item">
               {% if page.author.first %}
@@ -33,7 +34,8 @@ layout: blog
             </li>
           </ul>
         </header>
-        <div class="blog__post__content">
+        <div class="blog__post__content u-mb++">
           {{ page.content }}
         </div>
+        <a href="{{ site.baseurl }}/blog/">&lt; Back to blog</a>
       </article>
