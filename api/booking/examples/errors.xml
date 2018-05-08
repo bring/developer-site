@@ -332,6 +332,36 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
+      <code>BOOK-INPUT-070</code>
+      <message>The product is not available</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-071</code>
+      <message>Invalid package type for Home Delivery product. Available options: 'hd_eur', 'hd_half', 'hd_quarter', 'hd_loose'</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-072</code>
+      <message>Missing both recipient phone number and mobile number.</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-073</code>
+      <message>Invalid package type for Home Delivery product. Available options: 'hd_eur', 'hd_half', 'hd_loose'</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-074</code>
+      <message>Only one of [packages, packageGroups] can be set</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK-INPUT-075</code>
+      <message>Dangerous goods cannot be booked with simple delivery</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
       <code>BOOK-AUTHORIZATION-001</code>
       <message>Your user is not authorized to perform this action</message>
       <suffixable>false</suffixable>
