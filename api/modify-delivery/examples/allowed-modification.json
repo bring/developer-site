@@ -1,0 +1,12 @@
+{
+  "allowedModifications": [
+    "MODIFY_COD"
+  ],
+  "failureCauses": {
+    "STOP_DELIVERY": [
+      "PRODUCT_NOT_VALID_FOR_REQUEST"
+    ]
+  },
+  "userLang": "en"
+}
+
