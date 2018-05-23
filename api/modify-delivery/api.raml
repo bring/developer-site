@@ -1,0 +1,72 @@
+#%RAML 0.8
+---
+title: Modify delivery
+baseUri: https://www.mybring.com/modify-delivery
+
+documentation:
+- title: Introduction
+  content: |
+      The modify delivery api is used to modify a shipment currently on it's way.
+      Below are the various modifications (which will be API calls) supported:
+        - Stop shipment.
+        - Change cash on deivery.
+
+
+- title: Authentication
+  content: |
+    The Modify delivery API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
+    | Header | Example | Comment |
+    |:-------|:--------|:--------|
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
+    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. |
+
+    Those headers must be present for authenticating requests.
+
+/allowed-modification:
+  displayName: Allowed modifications
+  get:
+    description: List of allowed modifications, along with failure causes.
+    queryParameters:
+        q:
+            description: Shipment number to be checked for.
+            type: string
+            required: true
+            example: 707262014721
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/allowed-modification.json
+
+/stop-shipment:
+  displayName: Stop shipment
+
+  post:
+    description: Stop a shipment and return to sender.
+    body:
+      application/json:
+        example: !include examples/stoprequest.json
+
+    responses:
+      200:
+        body:
+          application/xml:
+            example: !include examples/stopresponse.json
+
+/change-cod:
+  displayName: Change cash on delivery
+
+  post:
+    description: Change cash on delivery amount to be paid.
+    body:
+      application/json:
+        example: !include examples/changecodrequest.json
+
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/changecodresponse.json
+
