@@ -74,23 +74,29 @@
 </tr>
 
 {% if propType == 'object' %}
+  {% assign subPrefixPreAppend = prefix %}
   {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
   {% for propHash in prop.properties %}
     {% assign subProp = propHash[1] %}
     {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
   {% endfor %}
+  {% assign subPrefix = subPrefixPreAppend %}
 {% elsif propType == 'array' %}
+  {% assign subPrefixPreAppend = prefix %}
   {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
   {% assign subType = page.api.types | extract_type: prop.items %}
   {% for propHash in subType.properties %}
     {% assign subProp = propHash[1] %}
     {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
   {% endfor %}
+  {% assign subPrefix = subPrefixPreAppend %}
 {% elsif is_custom_type %}
+  {% assign subPrefixPreAppend = prefix %}
   {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
   {% assign subType = page.api.types | extract_type: propType %}
   {% for propHash in subType.properties %}
     {% assign subProp = propHash[1] %}
     {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
   {% endfor %}
+  {% assign subPrefix = subPrefixPreAppend %}
 {% endif %}

@@ -1,95 +1,235 @@
-<?xml version="1.0"?>
-<ConsignmentSet xmlns="http://www.bring.no/sporing/1.0">
-<Consignment previousConsignmentId="" consignmentId="SHIPMENTNUMBER">
-    <TotalWeight unitCode="kg">16.5</TotalWeight>
-    <TotalVolume unitCode="dm3">45.2</TotalVolume>
-    <SenderReference/>
-    <SenderName>POSTEN NORGE AS</SenderName>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConsignmentSet xmlns="http://www.bring.no/sporing/2.0">
+  <ApiVersion>2</ApiVersion>
+  <Consignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="packageCargoConsignmentType" consignmentId="SHIPMENTNUMBER" previousConsignmentId="">
+    <TotalWeight unitCode="kg">2.8</TotalWeight>
+    <TotalVolume unitCode="dm3">13.9</TotalVolume>
+    <SenderReference>reference</SenderReference>
+    <SenderCustomerNumber></SenderCustomerNumber>
+    <SenderCustomerMasterNumber></SenderCustomerMasterNumber>
+    <SenderName>COMPANY AS</SenderName>
     <SenderAddress>
-        <AddressLine1/>
-        <AddressLine2/>
-        <PostalCode/>
-        <City/>
-        <CountryCode/>
-        <Country/>
+      <AddressLine1></AddressLine1>
+      <AddressLine2></AddressLine2>
+      <PostalCode></PostalCode>
+      <City></City>
+      <CountryCode></CountryCode>
+      <Country></Country>
     </SenderAddress>
+    <SenderCustomerType>ABCD</SenderCustomerType>
+    <RecipientCustomerNumber></RecipientCustomerNumber>
+    <RecipientCustomerMasterNumber></RecipientCustomerMasterNumber>
+    <RecipientCustomerType></RecipientCustomerType>
+    <RecipientAddress>
+      <AddressLine1></AddressLine1>
+      <AddressLine2></AddressLine2>
+      <PostalCode>3610</PostalCode>
+      <City>Kongsberg</City>
+      <CountryCode>NO</CountryCode>
+      <Country>Norway</Country>
+    </RecipientAddress>
     <RecipientHandlingAddress>
-        <AddressLine1/>
-        <AddressLine2/>
-        <PostalCode>1407</PostalCode>
-        <City>VINTERBRO</City>
-        <CountryCode/>
-        <Country/>
+      <AddressLine1></AddressLine1>
+      <AddressLine2></AddressLine2>
+      <PostalCode>3610</PostalCode>
+      <City>Kongsberg</City>
+      <CountryCode>NO</CountryCode>
+      <Country>Norway</Country>
     </RecipientHandlingAddress>
     <PackageSet>
-        <Package previousPackageId="" packageId="TESTPACKAGEATPICKUPPOINT">
-            <StatusDescription>Package can be collected at pickup point or pickup locker.</StatusDescription>
-            <Descriptions/>
-            <ProductName>KLIMAN&#xD8;YTRAL SERVICEPAKKE</ProductName>
-            <ProductCode>1202</ProductCode>
-            <Brand>POSTEN</Brand>
-            <Weight unitCode="kg">16.5</Weight>
-            <Length unitCode="cm">41</Length>
-            <Width unitCode="cm">38</Width>
-            <Height unitCode="cm">29</Height>
-            <Volume unitCode="dm3">45.2</Volume>
-            <PickupCode>AA11</PickupCode>
-            <LastRetrievalDate>01.12.2011</LastRetrievalDate>
-            <SenderName>POSTEN NORGE AS</SenderName>
-            <SenderAddress>
-                <AddressLine1/>
-                <AddressLine2/>
-                <PostalCode/>
-                <City/>
-                <CountryCode/>
-                <Country/>
-            </SenderAddress>
-            <RecipientHandlingAddress>
-                <AddressLine1/>
-                <AddressLine2/>
-                <PostalCode>1407</PostalCode>
-                <City>VINTERBRO</City>
-                <CountryCode/>
-                <Country/>
-            </RecipientHandlingAddress>
-            <EventSet>
-                <Event>
-                    <Description>Package has arrived at pickup point or pickup locker</Description>
-                    <Status>READY_FOR_PICKUP</Status>
-                    <RecipientSignature>
-                        <Name/>
-                    </RecipientSignature>
-                    <UnitId>122608</UnitId>
-                    <UnitInformationUrl>http://fraktguide.bring.no/fraktguide/api/pickuppoint/id/122608</UnitInformationUrl>
-                    <UnitType>BRING</UnitType>
-                    <PostalCode>2341</PostalCode>
-                    <City>L&#xD8;TEN</City>
-                    <CountryCode>NO</CountryCode>
-                    <Country>Norway</Country>
-                    <OccuredAtIsoDateTime>2010-10-01T08:30:25.000+02:00</OccuredAtIsoDateTime>
-                    <OccuredAtDisplayDate>01.10.2010</OccuredAtDisplayDate>
-                    <OccuredAtDisplayTime>08.30</OccuredAtDisplayTime>
-                    <ConsignmentEvent>false</ConsignmentEvent>
-                </Event>
-                <Event>
-                    <Description>Package has been handed in at terminal and forwarded</Description>
-                    <Status>IN_TRANSIT</Status>
-                    <RecipientSignature>
-                        <Name/>
-                    </RecipientSignature>
-                    <UnitId>032850</UnitId>
-                    <UnitType>BRING</UnitType>
-                    <PostalCode>0024</PostalCode>
-                    <City>OSLO</City>
-                    <CountryCode>NO</CountryCode>
-                    <Country>Norway</Country>
-                    <OccuredAtIsoDateTime>2010-09-30T08:27:08.000+02:00</OccuredAtIsoDateTime>
-                    <OccuredAtDisplayDate>30.09.2010</OccuredAtDisplayDate>
-                    <OccuredAtDisplayTime>08.27</OccuredAtDisplayTime>
-                    <ConsignmentEvent>false</ConsignmentEvent>
-                </Event>
-            </EventSet>
-        </Package>
+      <Package packageId="TESTPACKAGEATPICKUPPOINT" previousPackageId="">
+        <StatusDescription>Package can be collected at &lt;a target=&quot;_blank&quot; title=&quot;See where you may find Extra Gamlegrendåsen&quot; href=&quot;https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122564&quot; class=&quot;sporing-lightbox-postoffice&quot;&gt;Extra Gamlegrendåsen&lt;/a&gt;. Opening hours: Mon - Fri: 0700-2300, Sat: 0800-2100</StatusDescription>
+        <Descriptions/>
+        <ProductName>CARBON-NEUTRAL SERVICE PARCEL</ProductName>
+        <ProductCode>1202</ProductCode>
+        <ProductLink>http://www.bring.no/english/shortcuts/1202</ProductLink>
+        <Brand>POSTEN</Brand>
+        <Weight unitCode="kg">2.8</Weight>
+        <Length unitCode="cm">33</Length>
+        <Width unitCode="cm">28</Width>
+        <Height unitCode="cm">15</Height>
+        <Volume unitCode="dm3">13.9</Volume>
+        <PickupCode>AA11</PickupCode>
+        <LastRetrievalDate>01.06.2018</LastRetrievalDate>
+        <SenderName>COMPANY AS</SenderName>
+        <SenderAddress>
+          <AddressLine1></AddressLine1>
+          <AddressLine2></AddressLine2>
+          <PostalCode></PostalCode>
+          <City></City>
+          <CountryCode></CountryCode>
+          <Country></Country>
+        </SenderAddress>
+        <RecipientAddress>
+          <AddressLine1></AddressLine1>
+          <AddressLine2></AddressLine2>
+          <PostalCode>3610</PostalCode>
+          <City>Kongsberg</City>
+          <CountryCode>NO</CountryCode>
+          <Country>Norway</Country>
+        </RecipientAddress>
+        <RecipientHandlingAddress>
+          <AddressLine1></AddressLine1>
+          <AddressLine2></AddressLine2>
+          <PostalCode>3610</PostalCode>
+          <City>Kongsberg</City>
+          <CountryCode>NO</CountryCode>
+          <Country>Norway</Country>
+        </RecipientHandlingAddress>
+        <EventSet>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has arrived at &lt;a target=&quot;_blank&quot; title=&quot;See where you may find Extra Gamlegrendåsen&quot; href=&quot;https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122564&quot; class=&quot;sporing-lightbox-postoffice&quot;&gt;Extra Gamlegrendåsen&lt;/a&gt;.</Description>
+            <Status>READY_FOR_PICKUP</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>122564</UnitId>
+            <UnitInformationUrl>https://api.bring.com/pickuppoint/api/pickuppoint/NO/id/122564.xml</UnitInformationUrl>
+            <UnitType>BRING</UnitType>
+            <PostalCode>3610</PostalCode>
+            <City>KONGSBERG</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-18T07:56:22.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>18.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>07.56</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has arrived at terminal.</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>032825</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>3003</PostalCode>
+            <City>DRAMMEN</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-16T12:59:15.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>16.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>12.59</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has arrived at terminal and will be forwarded.</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>032825</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>3414</PostalCode>
+            <City>LIERSTRANDA</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-16T10:45:24.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>16.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>10.45</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment is in transit</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>032941</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>0024</PostalCode>
+            <City>OSLO</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-16T06:40:06.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>16.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>06.40</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has been sorted and forwarded.</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>032850</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>0024</PostalCode>
+            <City>OSLO</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-16T04:00:59.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>16.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>04.00</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has arrived at terminal.</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>032915</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>0024</PostalCode>
+            <City>OSLO</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-16T03:27:45.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>16.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>03.27</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment is in transit</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>973322</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>5020</PostalCode>
+            <City>BERGEN</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-15T18:31:43.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>15.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>18.31</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has been handed in at terminal and forwarded.</Description>
+            <Status>IN_TRANSIT</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>032840</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>5020</PostalCode>
+            <City>BERGEN</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2018-05-15T16:35:17.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>15.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>16.35</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+        </EventSet>
+        <AdditionalServicesSet/>
+      </Package>
     </PackageSet>
-</Consignment>
+    <IsPickupNoticeAvailable>true</IsPickupNoticeAvailable>
+    <ConsignmentActionSet>
+      <ActionType>ORDER_HOMEDELIVERY</ActionType>
+      <ActionURL>https://sending.posten.no/hjemlevering/search.html?q=SHIPMENTNUMBER&amp;fromapp=sporing</ActionURL>
+    </ConsignmentActionSet>
+  </Consignment>
 </ConsignmentSet>

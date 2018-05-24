@@ -1,27 +1,27 @@
 {
+  "apiVersion": "2",
   "consignmentSet": [
     {
       "consignmentId": "SHIPMENTNUMBER",
       "previousConsignmentId": "",
       "packageSet": [
         {
-          "statusDescription": "Package can be collected at pickup point or pickup locker.",
-          "descriptions": [
-            
-          ],
+          "statusDescription": "Package can be collected at <a target=\"_blank\" title=\"See where you may find Extra Gamlegrendåsen\" href=\"https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122564\" class=\"sporing-lightbox-postoffice\">Extra Gamlegrendåsen</a>. Opening hours: Mon - Fri: 0700-2300, Sat: 0800-2100",
+          "descriptions": [],
           "packageNumber": "TESTPACKAGEATPICKUPPOINT",
           "previousPackageNumber": "",
-          "productName": "KLIMAN\u00d8YTRAL SERVICEPAKKE",
+          "productName": "CARBON-NEUTRAL SERVICE PARCEL",
           "productCode": "1202",
+          "productLink": "http://www.bring.no/english/shortcuts/1202",
           "brand": "POSTEN",
-          "lengthInCm": 41,
-          "widthInCm": 38,
-          "heightInCm": 29,
-          "volumeInDm3": 45.2,
-          "weightInKgs": 16.5,
+          "lengthInCm": 33,
+          "widthInCm": 28,
+          "heightInCm": 15,
+          "volumeInDm3": 13.9,
+          "weightInKgs": 2.8,
           "pickupCode": "AA11",
-          "dateOfReturn": "01.12.2011",
-          "senderName": "POSTEN NORGE AS",
+          "dateOfReturn": "01.06.2018",
+          "senderName": "COMPANY AS",
           "senderAddress": {
             "addressLine1": "",
             "addressLine2": "",
@@ -30,35 +30,98 @@
             "countryCode": "",
             "country": ""
           },
+          "recipientAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "3610",
+            "city": "Kongsberg",
+            "countryCode": "NO",
+            "country": "Norway"
+          },
           "recipientHandlingAddress": {
             "addressLine1": "",
             "addressLine2": "",
-            "postalCode": "1407",
-            "city": "VINTERBRO",
-            "countryCode": "",
-            "country": ""
+            "postalCode": "3610",
+            "city": "Kongsberg",
+            "countryCode": "NO",
+            "country": "Norway"
           },
           "eventSet": [
             {
-              "description": "Package has arrived at pickup point or pickup locker",
+              "description": "The shipment has arrived at <a target=\"_blank\" title=\"See where you may find Extra Gamlegrendåsen\" href=\"https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122564\" class=\"sporing-lightbox-postoffice\">Extra Gamlegrendåsen</a>.",
               "status": "READY_FOR_PICKUP",
               "recipientSignature": {
                 "name": ""
               },
-              "unitId": "122608",
-              "unitInformationUrl": "http:\/\/fraktguide.bring.no\/fraktguide\/api\/pickuppoint\/id\/122608",
+              "unitId": "122564",
+              "unitInformationUrl": "https://api.bring.com/pickuppoint/api/pickuppoint/NO/id/122564.xml",
               "unitType": "BRING",
-              "postalCode": "2341",
-              "city": "L\u00d8TEN",
+              "postalCode": "3610",
+              "city": "KONGSBERG",
               "countryCode": "NO",
               "country": "Norway",
-              "dateIso": "2010-10-01T08:30:25+02:00",
-              "displayDate": "01.10.2010",
-              "displayTime": "08:30",
-              "consignmentEvent": false
+              "dateIso": "2018-05-18T07:56:22+02:00",
+              "displayDate": "18.05.2018",
+              "displayTime": "07:56",
+              "consignmentEvent": false,
+              "insignificant": false
             },
             {
-              "description": "Package has been handed in at terminal and forwarded",
+              "description": "The shipment has arrived at terminal.",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "032825",
+              "unitType": "BRING",
+              "postalCode": "3003",
+              "city": "DRAMMEN",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2018-05-16T12:59:15+02:00",
+              "displayDate": "16.05.2018",
+              "displayTime": "12:59",
+              "consignmentEvent": false,
+              "insignificant": false
+            },
+            {
+              "description": "The shipment has arrived at terminal and will be forwarded.",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "032825",
+              "unitType": "BRING",
+              "postalCode": "3414",
+              "city": "LIERSTRANDA",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2018-05-16T10:45:24+02:00",
+              "displayDate": "16.05.2018",
+              "displayTime": "10:45",
+              "consignmentEvent": false,
+              "insignificant": false
+            },
+            {
+              "description": "The shipment is in transit",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "032941",
+              "unitType": "BRING",
+              "postalCode": "0024",
+              "city": "OSLO",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2018-05-16T06:40:06+02:00",
+              "displayDate": "16.05.2018",
+              "displayTime": "06:40",
+              "consignmentEvent": false,
+              "insignificant": false
+            },
+            {
+              "description": "The shipment has been sorted and forwarded.",
               "status": "IN_TRANSIT",
               "recipientSignature": {
                 "name": ""
@@ -69,15 +132,90 @@
               "city": "OSLO",
               "countryCode": "NO",
               "country": "Norway",
-              "dateIso": "2010-09-30T08:27:08+02:00",
-              "displayDate": "30.09.2010",
-              "displayTime": "08:27",
-              "consignmentEvent": false
+              "dateIso": "2018-05-16T04:00:59+02:00",
+              "displayDate": "16.05.2018",
+              "displayTime": "04:00",
+              "consignmentEvent": false,
+              "insignificant": false
+            },
+            {
+              "description": "The shipment has arrived at terminal.",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "032915",
+              "unitType": "BRING",
+              "postalCode": "0024",
+              "city": "OSLO",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2018-05-16T03:27:45+02:00",
+              "displayDate": "16.05.2018",
+              "displayTime": "03:27",
+              "consignmentEvent": false,
+              "insignificant": false
+            },
+            {
+              "description": "The shipment is in transit",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "973322",
+              "unitType": "BRING",
+              "postalCode": "5020",
+              "city": "BERGEN",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2018-05-15T18:31:43+02:00",
+              "displayDate": "15.05.2018",
+              "displayTime": "18:31",
+              "consignmentEvent": false,
+              "insignificant": false
+            },
+            {
+              "description": "The shipment has been handed in at terminal and forwarded.",
+              "status": "IN_TRANSIT",
+              "recipientSignature": {
+                "name": ""
+              },
+              "unitId": "032840",
+              "unitType": "BRING",
+              "postalCode": "5020",
+              "city": "BERGEN",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2018-05-15T16:35:17+02:00",
+              "displayDate": "15.05.2018",
+              "displayTime": "16:35",
+              "consignmentEvent": false,
+              "insignificant": false
             }
-          ]
+          ],
+          "additionalServiceSet": []
         }
       ],
-      "senderName": "POSTEN NORGE AS",
+      "recipientAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "3610",
+        "city": "Kongsberg",
+        "countryCode": "NO",
+        "country": "Norway"
+      },
+      "recipientHandlingAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "3610",
+        "city": "Kongsberg",
+        "countryCode": "NO",
+        "country": "Norway"
+      },
+      "senderReference": "reference",
+      "senderCustomerNumber": "",
+      "senderCustomerMasterNumber": "",
+      "senderName": "COMPANY AS",
       "senderAddress": {
         "addressLine1": "",
         "addressLine2": "",
@@ -86,17 +224,19 @@
         "countryCode": "",
         "country": ""
       },
-      "recipientHandlingAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "1407",
-        "city": "VINTERBRO",
-        "countryCode": "",
-        "country": ""
-      },
-      "senderReference": "",
-      "totalWeightInKgs": 16.5,
-      "totalVolumeInDm3": 45.2
+      "senderCustomerType": "ABCD",
+      "recipientCustomerNumber": "",
+      "recipientCustomerMasterNumber": "",
+      "recipientCustomerType": "",
+      "isPickupNoticeAvailable": true,
+      "consignmentActionSet": [
+        {
+          "actionType": "ORDER_HOMEDELIVERY",
+          "actionURL": "https://sending.posten.no/hjemlevering/search.html?q=SHIPMENTNUMBER&fromapp=sporing"
+        }
+      ],
+      "totalWeightInKgs": 2.8,
+      "totalVolumeInDm3": 13.9
     }
   ]
 }

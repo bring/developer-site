@@ -1,41 +1,102 @@
-<?xml version="1.0"?>
-<ConsignmentSet xmlns="http://www.bring.no/sporing/1.0">
-<Consignment previousConsignmentId="" consignmentId="SHIPMENTNUMBER">
-    <TotalWeight unitCode="kg">16.5</TotalWeight>
-    <TotalVolume unitCode="dm3">45.2</TotalVolume>
-    <SenderReference/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConsignmentSet xmlns="http://www.bring.no/sporing/2.0">
+  <ApiVersion>2</ApiVersion>
+  <Consignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="packageCargoConsignmentType" consignmentId="SHIPMENTNUMBER" previousConsignmentId="">
+    <TotalWeight unitCode="kg">2.4</TotalWeight>
+    <TotalVolume unitCode="dm3">0.0</TotalVolume>
+    <SenderReference>reference</SenderReference>
+    <SenderCustomerNumber></SenderCustomerNumber>
+    <SenderCustomerMasterNumber></SenderCustomerMasterNumber>
+    <SenderName>COMPANY AS</SenderName>
+    <SenderAddress>
+      <AddressLine1></AddressLine1>
+      <AddressLine2></AddressLine2>
+      <PostalCode></PostalCode>
+      <City></City>
+      <CountryCode></CountryCode>
+      <Country></Country>
+    </SenderAddress>
+    <SenderCustomerType>ABCD</SenderCustomerType>
+    <RecipientCustomerNumber></RecipientCustomerNumber>
+    <RecipientCustomerMasterNumber></RecipientCustomerMasterNumber>
+    <RecipientCustomerType></RecipientCustomerType>
+    <RecipientAddress>
+      <AddressLine1></AddressLine1>
+      <AddressLine2></AddressLine2>
+      <PostalCode>7036</PostalCode>
+      <City>TRONDHEIM</City>
+      <CountryCode>NO</CountryCode>
+      <Country>Norway</Country>
+    </RecipientAddress>
+    <RecipientHandlingAddress>
+      <AddressLine1></AddressLine1>
+      <AddressLine2></AddressLine2>
+      <PostalCode>7431</PostalCode>
+      <City>TRONDHEIM</City>
+      <CountryCode>NO</CountryCode>
+      <Country>Norway</Country>
+    </RecipientHandlingAddress>
     <PackageSet>
-        <Package previousPackageId="" packageId="TESTPACKAGEEDI">
-            <StatusDescription>Norway Post/Bring has received a message from sender that a package is on its way, but has not yet received the package. In case of questions, please contact the sender</StatusDescription>
-            <Descriptions/>
-            <ProductName>P&#xC5; D&#xD8;REN</ProductName>
-            <ProductCode>1736</ProductCode>
-            <Brand>POSTEN</Brand>
-            <Weight unitCode="kg">16.5</Weight>
-            <Length unitCode="cm">41</Length>
-            <Width unitCode="cm">38</Width>
-            <Height unitCode="cm">29</Height>
-            <Volume unitCode="dm3">45.2</Volume>
-            <EventSet>
-                <Event>
-                    <Description>The consignment has not been received by Bring</Description>
-                    <Status>PRE_NOTIFIED</Status>
-                    <RecipientSignature>
-                        <Name/>
-                    </RecipientSignature>
-                    <UnitId>904030</UnitId>
-                    <UnitType>BRING</UnitType>
-                    <PostalCode/>
-                    <City/>
-                    <CountryCode/>
-                    <Country/>
-                    <OccuredAtIsoDateTime>2015-11-29T12:44:12.000+01:00</OccuredAtIsoDateTime>
-                    <OccuredAtDisplayDate>29.11.2015</OccuredAtDisplayDate>
-                    <OccuredAtDisplayTime>12.44</OccuredAtDisplayTime>
-                    <ConsignmentEvent>false</ConsignmentEvent>
-                </Event>
-            </EventSet>
-        </Package>
+      <Package packageId="TESTPACKAGEATPICKUPPOINT" previousPackageId="">
+        <StatusDescription>Norway Post/Bring has received a message from COMPANY AS that a package is on its way, but has not yet received the package. In case of questions, please contact the sender</StatusDescription>
+        <Descriptions/>
+        <ProductName>CARBON-NEUTRAL SERVICE PARCEL</ProductName>
+        <ProductCode>1202</ProductCode>
+        <ProductLink>http://www.bring.no/english/shortcuts/1202</ProductLink>
+        <Brand>POSTEN</Brand>
+        <Weight unitCode="kg">2.4</Weight>
+        <Length unitCode="cm">0</Length>
+        <Width unitCode="cm">0</Width>
+        <Height unitCode="cm">0</Height>
+        <Volume unitCode="dm3">0.0</Volume>
+        <SenderName>COMPANY AS</SenderName>
+        <SenderAddress>
+          <AddressLine1></AddressLine1>
+          <AddressLine2></AddressLine2>
+          <PostalCode></PostalCode>
+          <City></City>
+          <CountryCode></CountryCode>
+          <Country></Country>
+        </SenderAddress>
+        <RecipientAddress>
+          <AddressLine1></AddressLine1>
+          <AddressLine2></AddressLine2>
+          <PostalCode>7036</PostalCode>
+          <City>TRONDHEIM</City>
+          <CountryCode>NO</CountryCode>
+          <Country>Norway</Country>
+        </RecipientAddress>
+        <RecipientHandlingAddress>
+          <AddressLine1></AddressLine1>
+          <AddressLine2></AddressLine2>
+          <PostalCode>7431</PostalCode>
+          <City>TRONDHEIM</City>
+          <CountryCode>NO</CountryCode>
+          <Country>Norway</Country>
+        </RecipientHandlingAddress>
+        <EventSet>
+          <Event xsi:type="packageCargoEventType">
+            <Description>No shipment has been received yet, only notification of the shipment.</Description>
+            <Status>PRE_NOTIFIED</Status>
+            <RecipientSignature>
+              <Name></Name>
+            </RecipientSignature>
+            <UnitId>904030</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode></PostalCode>
+            <City></City>
+            <CountryCode></CountryCode>
+            <Country></Country>
+            <OccuredAtIsoDateTime>2018-05-24T07:20:52.000+02:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>24.05.2018</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>07.20</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+          </Event>
+        </EventSet>
+        <AdditionalServicesSet/>
+      </Package>
     </PackageSet>
-</Consignment>
+    <IsPickupNoticeAvailable>false</IsPickupNoticeAvailable>
+  </Consignment>
 </ConsignmentSet>
