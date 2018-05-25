@@ -6,44 +6,19 @@
       "previousConsignmentId": "",
       "packageSet": [
         {
-          "statusDescription": "",
+          "statusDescription": "Package will be delivered to recipient this evening between 1700 and 2100. The driver will call 30 - 60 minutes before delivery",
           "descriptions": [],
-          "packageNumber": "TESTPACKAGEATPICKUPPOINT",
+          "packageNumber": "TESTPACKAGELOADEDFORDELIVERY",
           "previousPackageNumber": "",
-          "productName": "MAILBOX PACKET",
-          "productCode": "3570",
-          "productLink": "",
-          "brand": "UNDEFINED",
-          "lengthInCm": 0,
-          "widthInCm": 0,
-          "heightInCm": 0,
-          "volumeInDm3": 0,
-          "weightInKgs": 0.1,
-          "senderName": "COMPANY AS",
-          "senderAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "",
-            "city": "",
-            "countryCode": "",
-            "country": ""
-          },
-          "recipientAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "7340",
-            "city": "OPPDAL",
-            "countryCode": "NO",
-            "country": "Norway"
-          },
-          "recipientHandlingAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "7340",
-            "city": "OPPDAL",
-            "countryCode": "NO",
-            "country": "Norway"
-          },
+          "productName": "HOME DELIVERY",
+          "productCode": "1736",
+          "productLink": "http://www.bring.no/english/shortcuts/1736",
+          "brand": "POSTEN",
+          "lengthInCm": 41,
+          "widthInCm": 38,
+          "heightInCm": 29,
+          "volumeInDm3": 45.2,
+          "weightInKgs": 16.5,
           "eventSet": [
             {
               "description": "The shipment has been loaded for delivery.",
@@ -51,51 +26,33 @@
               "recipientSignature": {
                 "name": ""
               },
-              "unitId": "101598",
+              "unitId": "971190",
               "unitType": "BRING",
-              "postalCode": "7093",
-              "city": "TILLER",
+              "postalCode": "0001",
+              "city": "OSLO",
               "countryCode": "NO",
               "country": "Norway",
-              "dateIso": "2018-05-24T00:01:28+02:00",
-              "displayDate": "24.05.2018",
-              "displayTime": "00:01",
+              "dateIso": "2010-09-30T16:48:57+02:00",
+              "displayDate": "30.09.2010",
+              "displayTime": "16:48",
               "consignmentEvent": false,
               "insignificant": false
             },
             {
-              "description": "The shipment has arrived at terminal and will be forwarded.",
+              "description": "The shipment has been handed in at terminal and forwarded.",
               "status": "IN_TRANSIT",
               "recipientSignature": {
                 "name": ""
               },
-              "unitId": "922000",
+              "unitId": "032850",
               "unitType": "BRING",
-              "postalCode": "7093",
-              "city": "TILLER",
+              "postalCode": "0024",
+              "city": "OSLO",
               "countryCode": "NO",
               "country": "Norway",
-              "dateIso": "2018-05-22T23:11:03+02:00",
-              "displayDate": "22.05.2018",
-              "displayTime": "23:11",
-              "consignmentEvent": false,
-              "insignificant": false
-            },
-            {
-              "description": "The shipment has been sorted and forwarded.",
-              "status": "IN_TRANSIT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "101006",
-              "unitType": "BRING",
-              "postalCode": "1470",
-              "city": "LØRENSKOG",
-              "countryCode": "NO",
-              "country": "Norway",
-              "dateIso": "2018-05-22T00:27:28+02:00",
-              "displayDate": "22.05.2018",
-              "displayTime": "00:27",
+              "dateIso": "2010-09-30T08:27:08+02:00",
+              "displayDate": "30.09.2010",
+              "displayTime": "08:27",
               "consignmentEvent": false,
               "insignificant": false
             }
@@ -103,41 +60,16 @@
           "additionalServiceSet": []
         }
       ],
-      "recipientAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "7340",
-        "city": "OPPDAL",
-        "countryCode": "NO",
-        "country": "Norway"
-      },
-      "recipientHandlingAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "7340",
-        "city": "OPPDAL",
-        "countryCode": "NO",
-        "country": "Norway"
-      },
-      "senderReference": "reference",
+      "senderReference": "",
       "senderCustomerNumber": "",
       "senderCustomerMasterNumber": "",
-      "senderName": "COMPANY AS",
-      "senderAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "",
-        "city": "",
-        "countryCode": "",
-        "country": ""
-      },
-      "senderCustomerType": "ABCD",
+      "senderCustomerType": "",
       "recipientCustomerNumber": "",
       "recipientCustomerMasterNumber": "",
       "recipientCustomerType": "",
       "isPickupNoticeAvailable": false,
-      "totalWeightInKgs": 0.1,
-      "totalVolumeInDm3": 0
+      "totalWeightInKgs": 16.5,
+      "totalVolumeInDm3": 45.2
     }
   ]
 }

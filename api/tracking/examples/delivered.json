@@ -8,205 +8,51 @@
         {
           "statusDescription": "",
           "descriptions": [],
-          "packageNumber": "TESTPACKAGEATPICKUPPOINT",
+          "packageNumber": "TESTPACKAGEDELIVERED",
           "previousPackageNumber": "",
-          "productName": "CARBON-NEUTRAL SERVICE PARCEL",
-          "productCode": "1202",
-          "productLink": "http://www.bring.no/english/shortcuts/1202",
+          "productName": "HOME DELIVERY",
+          "productCode": "1736",
+          "productLink": "http://www.bring.no/english/shortcuts/1736",
           "brand": "POSTEN",
-          "lengthInCm": 31,
-          "widthInCm": 20,
-          "heightInCm": 12,
-          "volumeInDm3": 7.4,
-          "weightInKgs": 1.2,
-          "pickupCode": "AA11",
-          "dateOfReturn": "28.05.2018",
-          "senderName": "COMPANY AS",
-          "senderAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "",
-            "city": "",
-            "countryCode": "",
-            "country": ""
-          },
-          "recipientAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "9512",
-            "city": "ALTA",
-            "countryCode": "NO",
-            "country": "Norway"
-          },
-          "recipientHandlingAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "9501",
-            "city": "ALTA",
-            "countryCode": "NO",
-            "country": "Norway"
-          },
+          "lengthInCm": 41,
+          "widthInCm": 38,
+          "heightInCm": 29,
+          "volumeInDm3": 45.2,
+          "weightInKgs": 16.5,
           "eventSet": [
             {
               "description": "The shipment has been delivered.",
               "status": "DELIVERED",
               "recipientSignature": {
-                "name": ""
+                "name": "O Nordmann"
               },
-              "unitId": "127105",
+              "unitId": "971190",
               "unitType": "BRING",
               "postalCode": "",
               "city": "",
               "countryCode": "",
               "country": "",
-              "dateIso": "2018-05-24T10:54:36+02:00",
-              "displayDate": "24.05.2018",
-              "displayTime": "10:54",
+              "dateIso": "2010-09-30T17:45:25+02:00",
+              "displayDate": "30.09.2010",
+              "displayTime": "17:45",
               "consignmentEvent": false,
               "insignificant": false
             },
             {
-              "description": "Reminder about package sent to recipient by SMS",
-              "status": "NOTIFICATION_SENT",
+              "description": "The shipment has been loaded for delivery.",
+              "status": "TRANSPORT_TO_RECIPIENT",
               "recipientSignature": {
                 "name": ""
               },
-              "unitId": "032451",
+              "unitId": "971190",
               "unitType": "BRING",
-              "postalCode": "",
-              "city": "",
-              "countryCode": "",
-              "country": "",
-              "dateIso": "2018-05-17T17:19:05+02:00",
-              "displayDate": "17.05.2018",
-              "displayTime": "17:19",
-              "consignmentEvent": false,
-              "insignificant": true
-            },
-            {
-              "description": "Reminder about package sent to recipient by e-mail",
-              "status": "NOTIFICATION_SENT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "032451",
-              "unitType": "BRING",
-              "postalCode": "",
-              "city": "",
-              "countryCode": "",
-              "country": "",
-              "dateIso": "2018-05-17T17:19:02+02:00",
-              "displayDate": "17.05.2018",
-              "displayTime": "17:19",
-              "consignmentEvent": false,
-              "insignificant": true
-            },
-            {
-              "description": "Receipt notification has been sent to recipient. by SMS",
-              "status": "NOTIFICATION_SENT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "032451",
-              "unitType": "BRING",
-              "postalCode": "",
-              "city": "",
-              "countryCode": "",
-              "country": "",
-              "dateIso": "2018-05-14T09:54:49+02:00",
-              "displayDate": "14.05.2018",
-              "displayTime": "09:54",
-              "consignmentEvent": false,
-              "insignificant": true
-            },
-            {
-              "description": "Receipt notification has been sent to recipient. by e-mail",
-              "status": "NOTIFICATION_SENT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "032451",
-              "unitType": "BRING",
-              "postalCode": "",
-              "city": "",
-              "countryCode": "",
-              "country": "",
-              "dateIso": "2018-05-14T09:54:26+02:00",
-              "displayDate": "14.05.2018",
-              "displayTime": "09:54",
-              "consignmentEvent": false,
-              "insignificant": true
-            },
-            {
-              "description": "The shipment has arrived at <a target=\"_blank\" title=\"See where you may find Extra Bossekop\" href=\"https://www.posten.no/kundeservice/postkontor-info?enhetsnr=127105\" class=\"sporing-lightbox-postoffice\">Extra Bossekop</a>.",
-              "status": "READY_FOR_PICKUP",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "127105",
-              "unitInformationUrl": "https://api.bring.com/pickuppoint/api/pickuppoint/NO/id/127105.xml",
-              "unitType": "BRING",
-              "postalCode": "9501",
-              "city": "ALTA",
-              "countryCode": "NO",
-              "country": "Norway",
-              "dateIso": "2018-05-14T09:53:30+02:00",
-              "displayDate": "14.05.2018",
-              "displayTime": "09:53",
-              "consignmentEvent": false,
-              "insignificant": false
-            },
-            {
-              "description": "The shipment has been sorted and forwarded.",
-              "status": "IN_TRANSIT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "107499",
-              "unitType": "BRING",
-              "postalCode": "9515",
-              "city": "ALTA",
-              "countryCode": "NO",
-              "country": "Norway",
-              "dateIso": "2018-05-13T09:29:06+02:00",
-              "displayDate": "13.05.2018",
-              "displayTime": "09:29",
-              "consignmentEvent": false,
-              "insignificant": false
-            },
-            {
-              "description": "The shipment has arrived at terminal.",
-              "status": "IN_TRANSIT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "101658",
-              "unitType": "BRING",
-              "postalCode": "9515",
-              "city": "ALTA",
-              "countryCode": "NO",
-              "country": "Norway",
-              "dateIso": "2018-05-13T09:05:54+02:00",
-              "displayDate": "13.05.2018",
-              "displayTime": "09:05",
-              "consignmentEvent": false,
-              "insignificant": false
-            },
-            {
-              "description": "The shipment is in transit",
-              "status": "IN_TRANSIT",
-              "recipientSignature": {
-                "name": ""
-              },
-              "unitId": "032942",
-              "unitType": "BRING",
-              "postalCode": "0024",
+              "postalCode": "0001",
               "city": "OSLO",
               "countryCode": "NO",
               "country": "Norway",
-              "dateIso": "2018-05-11T08:04:33+02:00",
-              "displayDate": "11.05.2018",
-              "displayTime": "08:04",
+              "dateIso": "2010-09-30T16:48:57+02:00",
+              "displayDate": "30.09.2010",
+              "displayTime": "16:48",
               "consignmentEvent": false,
               "insignificant": false
             },
@@ -222,9 +68,9 @@
               "city": "OSLO",
               "countryCode": "NO",
               "country": "Norway",
-              "dateIso": "2018-05-11T06:28:06+02:00",
-              "displayDate": "11.05.2018",
-              "displayTime": "06:28",
+              "dateIso": "2010-09-30T08:27:08+02:00",
+              "displayDate": "30.09.2010",
+              "displayTime": "08:27",
               "consignmentEvent": false,
               "insignificant": false
             }
@@ -232,41 +78,16 @@
           "additionalServiceSet": []
         }
       ],
-      "recipientAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "9512",
-        "city": "ALTA",
-        "countryCode": "NO",
-        "country": "Norway"
-      },
-      "recipientHandlingAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "9501",
-        "city": "ALTA",
-        "countryCode": "NO",
-        "country": "Norway"
-      },
-      "senderReference": "reference",
+      "senderReference": "",
       "senderCustomerNumber": "",
       "senderCustomerMasterNumber": "",
-      "senderName": "COMPANY AS",
-      "senderAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "",
-        "city": "",
-        "countryCode": "",
-        "country": ""
-      },
-      "senderCustomerType": "ABCD",
+      "senderCustomerType": "",
       "recipientCustomerNumber": "",
       "recipientCustomerMasterNumber": "",
       "recipientCustomerType": "",
       "isPickupNoticeAvailable": false,
-      "totalWeightInKgs": 1.2,
-      "totalVolumeInDm3": 7.4
+      "totalWeightInKgs": 16.5,
+      "totalVolumeInDm3": 45.2
     }
   ]
 }

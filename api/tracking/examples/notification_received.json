@@ -6,44 +6,19 @@
       "previousConsignmentId": "",
       "packageSet": [
         {
-          "statusDescription": "Norway Post/Bring has received a message from COMPANY AS that a package is on its way, but has not yet received the package. In case of questions, please contact the sender",
+          "statusDescription": "Norway Post/Bring has received a message from sender that a package is on its way, but has not yet received the package. In case of questions, please contact the sender",
           "descriptions": [],
-          "packageNumber": "TESTPACKAGEATPICKUPPOINT",
+          "packageNumber": "TESTPACKAGEEDI",
           "previousPackageNumber": "",
-          "productName": "CARBON-NEUTRAL SERVICE PARCEL",
-          "productCode": "1202",
-          "productLink": "http://www.bring.no/english/shortcuts/1202",
+          "productName": "HOME DELIVERY",
+          "productCode": "1736",
+          "productLink": "http://www.bring.no/english/shortcuts/1736",
           "brand": "POSTEN",
-          "lengthInCm": 0,
-          "widthInCm": 0,
-          "heightInCm": 0,
-          "volumeInDm3": 0,
-          "weightInKgs": 2.4,
-          "senderName": "COMPANY AS",
-          "senderAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "",
-            "city": "",
-            "countryCode": "",
-            "country": ""
-          },
-          "recipientAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "7036",
-            "city": "TRONDHEIM",
-            "countryCode": "NO",
-            "country": "Norway"
-          },
-          "recipientHandlingAddress": {
-            "addressLine1": "",
-            "addressLine2": "",
-            "postalCode": "7431",
-            "city": "TRONDHEIM",
-            "countryCode": "NO",
-            "country": "Norway"
-          },
+          "lengthInCm": 41,
+          "widthInCm": 38,
+          "heightInCm": 29,
+          "volumeInDm3": 45.2,
+          "weightInKgs": 16.5,
           "eventSet": [
             {
               "description": "No shipment has been received yet, only notification of the shipment.",
@@ -57,9 +32,9 @@
               "city": "",
               "countryCode": "",
               "country": "",
-              "dateIso": "2018-05-24T07:20:52+02:00",
+              "dateIso": "2018-05-24T12:44:12+02:00",
               "displayDate": "24.05.2018",
-              "displayTime": "07:20",
+              "displayTime": "12:44",
               "consignmentEvent": false,
               "insignificant": false
             }
@@ -67,41 +42,16 @@
           "additionalServiceSet": []
         }
       ],
-      "recipientAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "7036",
-        "city": "TRONDHEIM",
-        "countryCode": "NO",
-        "country": "Norway"
-      },
-      "recipientHandlingAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "7431",
-        "city": "TRONDHEIM",
-        "countryCode": "NO",
-        "country": "Norway"
-      },
-      "senderReference": "reference",
+      "senderReference": "",
       "senderCustomerNumber": "",
       "senderCustomerMasterNumber": "",
-      "senderName": "COMPANY AS",
-      "senderAddress": {
-        "addressLine1": "",
-        "addressLine2": "",
-        "postalCode": "",
-        "city": "",
-        "countryCode": "",
-        "country": ""
-      },
-      "senderCustomerType": "ABCD",
+      "senderCustomerType": "",
       "recipientCustomerNumber": "",
       "recipientCustomerMasterNumber": "",
       "recipientCustomerType": "",
       "isPickupNoticeAvailable": false,
-      "totalWeightInKgs": 2.4,
-      "totalVolumeInDm3": 0
+      "totalWeightInKgs": 16.5,
+      "totalVolumeInDm3": 45.2
     }
   ]
 }
