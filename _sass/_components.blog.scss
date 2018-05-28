@@ -151,3 +151,15 @@
 .blog p {
     max-width: none;
 }
+
+.breakout {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .breakout {
+        max-width: none;
+        margin-left: -280px;
+    }
+}
