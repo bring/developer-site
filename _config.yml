@@ -15,9 +15,6 @@ raml_08_map:
   api/booking/api.raml:
     target: api/booking/index.html
     sort_order: 30
-  api/tracking/api.raml:
-    target: api/tracking/index.html
-    sort_order: 40
   api/reports/api.raml:
     target: api/reports/index.html
     sort_order: 50
@@ -47,6 +44,9 @@ raml_10_map:
   api/shipping-guide_2/api.raml:
     target: api/shipping-guide_2/index.html
     sort_order: 1
+  api/tracking/api.raml:
+    target: api/tracking/index.html
+    sort_order: 40
 
 # Build settings
 gems:
