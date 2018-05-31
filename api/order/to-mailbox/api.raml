@@ -232,7 +232,7 @@ types:
         description: Timestamp for when the order was validated.
       packages:
         minItems: 1
-        description: Packages in this validated shipment.
+        description: Packages in this validated shipment. The packages in the response will correspond to same order as it was in the request to make it easier for clients to do any mapping if needed.
         type: ValidatedPackage[]
   ValidatedPackage:
     (hideRequired): true
@@ -489,7 +489,7 @@ types:
         minItems: 1
         maxItems: 500
         type: Package[]
-        description: The packages to send in this shipment.
+        description: The packages to send in this shipment. Response will have packages in same order as requested to make it easier for clients to do any mapping if needed.
   LabelOrderRequest:
       (hideInDocumentation): true
       type: object
