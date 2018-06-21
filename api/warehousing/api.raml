@@ -86,30 +86,40 @@ documentation:
           type: string
           required: true
           example: Original
-      Order orderId:
+      Order/orderId:
           description: Ordernumber.
           type: dateTime
           required: true
           example: 101010
-      Reference:
+      Order/Reference:
           description: Set of references.
           type: sequence
           required: false
-      Reference referenceType:
+      Order/Reference referenceType:
           description: Type of reference coded. https://www.stylusstudio.com/edifact/D04A/1153.htm
           type: String
           required: true
           example: CMR
-      Reference ReferenceNo:
+      Order/Reference ReferenceNo:
           description: Reference.
           type: String
           required: true
           example: 10003455TT
-      DateAndTimes subClass DocumentDate:
+      Order/DateAndTimes Date & Time with subClass DocumentDate:
           description: The date on which order is booked.
           type: dateTime
           required: true
-          example: 22.01.2017 11:36:22
+          example: Date 22.01.2017 Time 11:36:22
+      Order/DateAndTimes Date & Time with subClass DeliveryDateRequested:
+          description: The date on which order is requested delivered.
+          type: dateTime
+          required: true
+          example: Date 22.01.2017 Time 11:36:22
+      Order/TermsOfDelivery TODConditionCode:
+          description: Ordernumber.
+          type: dateTime
+          required: false
+          example: DDP
       TransportService BasicServiceCode:
           description: Transport product for shipment to customer. http://developer.bring.com/api/products/
           type: String
@@ -118,17 +128,17 @@ documentation:
       TransportService AdditionalService AdditionalServiceCode:
           description: Transport services for shipment to customer. http://developer.bring.com/api/products/
           type: String
-          required: true
+          required: false
           example: EVARSLING
       TransportLeg TransportLegType:
           description: TransportLegType id. Default value 30.
           type: String
-          required: true
+          required: false
           example: 30
       TransportLeg ModeOfTransport:
           description: Type of transport. <br>1 = Sea<br>2 = Train<br>3 = Road<br>4 = Air.
           type: String
-          required: true
+          required: false
           example: 3
       Party/subClass OrderingParty:
           description: Details of sender. Must have Name, Street, City, CountryCode.
@@ -142,57 +152,53 @@ documentation:
       Party/subClass PerformingUnit partyId:
           description: Warehouse id for order. Required if order to Warehousing system.
           type: string
-          required: false
+          required: true
           example: BERGER
       OrderLineSet:
           description: Set of order items.
           type: sequence
           required: true
-      OrderItem articleLineId:
+      OrderItem/articleLineId:
           description: Line id for this order line.
           type: integer
           required: true
           example: 10
-      ArticleId:
+      OrderItem/ArticleId codeListAgencyIdentifier:
+          description: Sets type of ArticleId. <br>"CustomerItemNo"<br>"VendorItemNo"<br>"EAN"<br>If not used ArticleId default is CustomerItemNo.
+          type: string
+          required: true
+          example: VendorItemNo
+      OrderItem/ArticleId:
           description: Article number or id.
           type: sequence
           required: true
           example: 123-4000
-      ArticleId codeListAgencyIdentifier:
-          description: Sets type of ArticleId. <br>"CustomerItemNo"<br>"VendorItemNo"<br>"EAN"<br>If not used ArticleId default is CustomerItemNo.
-          type: string
-          required: false
-          example: VendorItemNo
-      ArticleQuantity unitCode:
+      OrderItem/ArticleQuantity unitCode:
           description: Unit code for quantity ordered.
           type: string
           required: true
           example: STK
-      ArticleQuantity:
+      OrderItem/ArticleQuantity:
           description: Quantity ordered.
           type: float
           required: true
           example: 2.0
-      Description usageCode:
+      OrderItem/Description usageCode:
           description: Article description type. If description used set to AAA.
           type: string
           required: false
           example: AAA
-      Description:
+      OrderItem/Description:
           description: Article description.
           type: string
           required: false
           example: Spear parts with all parts
-      ArticleName:
+      OrderItem/ArticleName:
           description: Article name.
           type: string
           required: false
           example: Spear parts
-      DateAndTimes subClass DeliveryDateRequested:
-          description: The date on which order is requested delivered.
-          type: dateTime
-          required: true
-          example: 22.01.2017 11:36:22
+
 
     body:
         application/xml:
