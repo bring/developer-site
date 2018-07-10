@@ -361,6 +361,11 @@
       "suffixable": false
     },
     {
+      "code": "BOOK-INPUT-076",
+      "message": "Dangerous goods cannot be booked with non freeze",
+      "suffixable": false
+    },
+    {
       "code": "BOOK-AUTHORIZATION-001",
       "message": "Your user is not authorized to perform this action",
       "suffixable": false
