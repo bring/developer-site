@@ -362,6 +362,11 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
+      <code>BOOK-INPUT-076</code>
+      <message>Dangerous goods cannot be booked with non freeze</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
       <code>BOOK-AUTHORIZATION-001</code>
       <message>Your user is not authorized to perform this action</message>
       <suffixable>false</suffixable>
