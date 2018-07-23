@@ -18,8 +18,8 @@
         <product>BUSINESS_PARCEL</product>
         <product>PICKUP_PARCEL</product>
         <product>BUSINESS_PALLET</product>
-        <product>CARRYON_BUSINESS_HALFPALLET</product>
-        <product>CARRYON_BUSINESS_QUARTERPALLET</product>
+        <product>BUSINESS_HALFPALLET</product>
+        <product>BUSINESS_QUARTERPALLET</product>
         <product>BUSINESS_PARCEL_BULK</product>
         <product>EXPRESS_NORDIC_0900_BULK</product>
         <product>PICKUP_PARCEL_BULK</product>
