@@ -39,7 +39,7 @@ $ jenv add /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
   
 * Type `jenv versions` on terminal. You would see something similar to this..
 ```
-  \* system (set by /Users/sujithsreekumar/.jenv/version)
+  system (set by /Users/sujithsreekumar/.jenv/version)
   1.8
   1.8.0.92
   10.0
