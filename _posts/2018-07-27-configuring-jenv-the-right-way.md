@@ -14,7 +14,7 @@ Background
 
 `jenv` is a cool tool that helps you switch between different java versions in your development machine. But unfortunately, the documentation in `http://www.jenv.be/` is not proper to help you with the setup. There's something more you need to do to make it work properly. This blog is for the newbies who are trying out `jenv` for the first time or for those who still couldn't get it working properly.
 
-You could try following the steps mentioned in [jenv website  ](http://www.jenv.be/) , but I bet, you wont get it working, right away!
+You could try following the steps mentioned in [jenv website](http://www.jenv.be/), but I bet, you wont get it working, right away!
 
 Setup
 ---
@@ -31,7 +31,7 @@ Okay, lets get startled ;) !!!!
   $ echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 ```
 
-* Now, before you do anything else, you must run `unset JAVA_TOOL_OPTIONS` on your terminal. Without this the command following below will not work as expected.
+* Now, before you do anything else, you must run `unset JAVA_TOOL_OPTIONS` on your terminal(in case you have output that breaks the text parsing). Without this the command following below will not work as expected.
 
 * Check you jdk installation directories.. and then run the below commands as appropriate for you..
 ```
@@ -54,7 +54,7 @@ $ jenv add /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
   - oracle64-9.0.1
 ```
 
-  You could remove the ones like `oracle64-1.8.0.92` , `oracle64-10.0.1` etc. that got added by itself, by using the command `jenv remove oracle64-1.8.0.92`. But that's completely optional... You could leave them there if you want. No harm.
+  You could remove the ones like `oracle64-1.8.0.92`, `oracle64-10.0.1` etc. that got added by itself, by using the command `jenv remove oracle64-1.8.0.92`. But that's completely optional... You could leave them there if you want. No harm.
 
   Are we done? **_Not yet!!!_**
 
