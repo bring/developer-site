@@ -26,6 +26,8 @@ Okay, lets get startled ;) !!!!
 * Run the following commands :
 ```
   $ echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+```
+```
   $ echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 ```
 
@@ -38,27 +40,31 @@ $ jenv add /Library/Java/JavaVirtualMachines/jdk-10.0.1.jdk/Contents/Home
    You can add multiple jdks if you want.
   
 * Type `jenv versions` on terminal. You would see something similar to this..
+
 ```
   system (set by /Users/sujithsreekumar/.jenv/version)
-  1.8
-  1.8.0.92
-  10.0
-  10.0.1
-  9.0
-  9.0.1
-  oracle64-1.8.0.92
-  oracle64-10.0.1
-  oracle64-9.0.1
+  - 1.8
+  - 1.8.0.92
+  - 10.0
+  - 10.0.1
+  - 9.0
+  - 9.0.1
+  - oracle64-1.8.0.92
+  - oracle64-10.0.1
+  - oracle64-9.0.1
 ```
+
   You could remove the ones like `oracle64-1.8.0.92` , `oracle64-10.0.1` etc. that got added by itself, by using the command `jenv remove oracle64-1.8.0.92`. But that's completely optional... You could leave them there if you want. No harm.
 
   Are we done? **_Not yet!!!_**
 
-There are a couple of thing more that you need to do to get it working properly...
+There are a couple of things more that you need to do to get it working properly...
 
-* Run the following commands :
+* Run the following commands if you are using maven :
 ```
   $ jenv enable-plugins maven
+```
+```
   $ jenv enable-plugins export
 ```
 
