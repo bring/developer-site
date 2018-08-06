@@ -22,6 +22,20 @@ layout: redesign
           <p>This page lists all the products available in the <a href="/api/shipping-guide_2/">Shipping Guide API</a> and <a href="/api/booking/">Booking API</a></p>
         </section>
 
+        {% assign base_url = 'http://api.test.bring.com' %}
+
+        {% if jekyll.environment == 'test' %}
+          {% assign base_url = 'http://api.test.bring.com' %}
+        {% endif %}
+
+        {% if jekyll.environment == 'qa' %}
+          {% assign base_url = 'https://api.qa.bring.com' %}
+        {% endif %}
+
+        {% if jekyll.environment == 'production' %}
+          {% assign base_url = 'https://api.bring.com' %}
+        {% endif %}
+
         <section class="api__section" id="shipping-guide">
           <h2>Shipping Guide API</h2>
 
@@ -47,13 +61,13 @@ layout: redesign
               <td>Klimanøytral Servicepakke</td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE">
                       <code>SERVICEPAKKE</code>
                   </a>
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE">
+                     href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE">
                       Yes
                   </a>
               </td>
@@ -61,7 +75,7 @@ layout: redesign
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE">
+                     href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE">
                       Yes
                   </a>
               </td>
@@ -70,33 +84,33 @@ layout: redesign
           <tr class="even">
               <td>På Døren</td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN">
                       <code>PA_DOREN</code></a>
               </td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN">Yes</a>
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN">Yes</a>
               </td>
             <td>Yes
             </td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN">Yes</a>
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN">Yes</a>
               </td>
           </tr>
 
           <tr>
               <td>Bedriftspakke</td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR">
                       <code>BPAKKE_DOR-DOR</code></a>
               </td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR">
                       Yes</a>
               </td>
             <td>Yes
             </td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR">
                       Yes</a>
               </td>
           </tr>
@@ -104,27 +118,27 @@ layout: redesign
           <tr class="even">
               <td>Bedriftspakke Ekspress-Over natten 09</td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09">
                       <code>EKSPRESS09</code></a>
               </td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09">
                       Yes</a>
               </td>
             <td>Yes
             </td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09">
                       Yes</a>
               </td>
           </tr>
 
           <tr class="even">
               <td>Post<sup>8</sup></td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL">
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL">
                 <code>MAIL</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL">Yes</a>
               </td>
               <td>No
               </td>
@@ -169,30 +183,30 @@ layout: redesign
               <td>Express Nordic Same Day <sup>1</sup><br/><strike>QuickPack SameDay</strike></td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY">
                       <code>EXPRESS_NORDIC_SAME_DAY<br/><strike>QUICKPACK_SAMEDAY</strike></code>
                   </a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY">Yes</a>
               </td>
               <td>No
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY">Yes</a>
               </td>
           </tr>
 
           <tr>
               <td>Express International 09:00<br/><strike>Quickpack Over Night 0900</strike></td>
               <td>
-                  <a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900">
+                  <a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900">
                   <code>EXPRESS_INTERNATIONAL_0900<br/><strike>QUICKPACK_OVER_NIGHT_0900</strike></code>
                   </a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900">Yes</a>
               </td>
               <td>No
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900">Yes</a>
               </td>
           </tr>
 
@@ -200,18 +214,18 @@ layout: redesign
               <td>Express International 12:00<br/><strike>Quickpack Over Night 1200</strike></td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200">
                       <code>EXPRESS_INTERNATIONAL_1200<br/><strike>QUICKPACK_OVER_NIGHT_1200</strike></code></a>
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200">Yes</a>
+                     href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200">Yes</a>
               </td>
               <td>No
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200">Yes</a>
+                     href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200">Yes</a>
               </td>
           </tr>
 
@@ -219,13 +233,13 @@ layout: redesign
               <td>Express International<br/><strike>Quickpack Day Certain</strike></td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL">
                       <code>EXPRESS_INTERNATIONAL<br/><strike>QUICKPACK_DAY_CERTAIN</strike></code>
                   </a>
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL">
+                     href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL">
                       Yes
                   </a>
               </td>
@@ -233,7 +247,7 @@ layout: redesign
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL">
+                     href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL">
                       Yes
                   </a>
               </td>
@@ -244,13 +258,13 @@ layout: redesign
               <td>Express Nordic 0900<br/></td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=10012&amp;fromcountry=SE&amp;tocountry=SE&amp;product=EXPRESS_NORDIC_0900">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=10012&amp;fromcountry=SE&amp;tocountry=SE&amp;product=EXPRESS_NORDIC_0900">
                       <code>EXPRESS_NORDIC_0900<br/></code>
                   </a>
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=10012&amp;fromcountry=SE&amp;tocountry=SE&amp;product=EXPRESS_NORDIC_0900">
+                     href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=10012&amp;fromcountry=SE&amp;tocountry=SE&amp;product=EXPRESS_NORDIC_0900">
                       Yes
                   </a>
               </td>
@@ -258,7 +272,7 @@ layout: redesign
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=10012&amp;fromcountry=SE&amp;tocountry=SE&amp;product=EXPRESS_NORDIC_0900">
+                     href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=10012&amp;fromcountry=SE&amp;tocountry=SE&amp;product=EXPRESS_NORDIC_0900">
                       Yes
                   </a>
               </td>
@@ -266,40 +280,40 @@ layout: redesign
 
           <tr class="even">
               <td>Express Economy<br/><strike>Quickpack Express Economy</strike></td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY">
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY">
                   <code>EXPRESS_ECONOMY<br/><strike>QUICKPACK_EXPRESS_ECONOMY</strike></code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY">
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY">
                   Yes
               </a>
               </td>
               <td>No
               </td>
-             <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY">Yes</a>
+             <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY">Yes</a>
              </td>
           </tr>
 
           <tr>
             <td>Cargo Norway</td>
-            <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE"><code>CARGO_GROUPAGE</code></a>
+            <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE"><code>CARGO_GROUPAGE</code></a>
             </td>
-            <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE">Yes</a>
+            <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE">Yes</a>
             </td>
             <td>Yes
             </td>
-            <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE">Yes</a>
+            <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE">Yes</a>
             </td>
           </tr>
 
           <tr>
               <td>Cargo International</td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"><code>CARGO_INTERNATIONAL</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"><code>CARGO_INTERNATIONAL</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"><code>Yes</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"><code>Yes</code></a>
               </td>
               <td>Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"><code>Yes</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"><code>Yes</code></a>
               </td>
           </tr>
 
@@ -307,16 +321,16 @@ layout: redesign
               <td>Business Parcel <sup>2</sup><br/><strike>CarryOn Business</strike></td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL">
                       <code>BUSINESS_PARCEL<br/><strike>CARRYON_BUSINESS</strike></code>
                   </a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL">Yes</a>
               </td>
               <td>
                 Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL">Yes</a>
               </td>
           </tr>
 
@@ -324,13 +338,13 @@ layout: redesign
               <td>PickUp Parcel <sup>2</sup> <sup>3</sup><br/><strike>CarryOn Homeshopping</strike></td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL">
+                     href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL">
                       <code>PICKUP_PARCEL<br/><strike>CARRYON_HOMESHOPPING</strike></code>
                   </a>
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL">
+                     href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL">
                       Yes
                   </a>
               </td>
@@ -339,7 +353,7 @@ layout: redesign
               </td>
               <td>
                   <a target="_blank"
-                     href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL">
+                     href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL">
                       Yes
                   </a>
               </td>
@@ -347,61 +361,61 @@ layout: redesign
 
           <tr class="even">
               <td>Bud VIP</td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP"><code>COURIER_VIP</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP"><code>COURIER_VIP</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP">Yes</a>
               </td>
               <td>Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP">Yes</a>
               </td>
           </tr>
 
           <tr>
               <td>Bud 1 time</td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H"><code>COURIER_1H</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H"><code>COURIER_1H</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H">Yes</a>
               </td>
               <td>Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H">Yes</a>
               </td>
           </tr>
 
           <tr class="even">
               <td>Bud 2 timer</td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H"><code>COURIER_2H</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H"><code>COURIER_2H</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H">Yes</a>
               </td>
               <td>Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H">Yes</a>
               </td>
           </tr>
 
           <tr>
               <td>Bud 4 timer</td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H"><code>COURIER_4H</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H"><code>COURIER_4H</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H">Yes</a>
               </td>
               <td>Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H">Yes</a>
               </td>
           </tr>
 
           <tr class="even">
               <td>Bud 6 timer</td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H"><code>COURIER_6H</code></a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H"><code>COURIER_6H</code></a>
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H">Yes</a>
               </td>
               <td>Yes
               </td>
-              <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H">Yes</a>
+              <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H">Yes</a>
               </td>
           </tr>
 
@@ -470,7 +484,7 @@ layout: redesign
              The value in the column "additional service code" is used when accessing the service.
           </p>
           <p>
-            The links are to examples using XML API. Have a look at the <a href="https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl">WSDL</a> or <a href="https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd">XSD</a>
+            The links are to examples using XML API. Have a look at the <a href="{{ base_url }}/shippingguide/api/ws/shippingguide-20.wsdl">WSDL</a> or <a href="{{ base_url }}/shippingguide/api/ws/shipping-guide-20.xsd">XSD</a>
              for help to set these additional services in a SOAP request.
           </p>
           <div class="information-box">
@@ -489,7 +503,6 @@ layout: redesign
             to the base package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
           </div>
 
-
           <table class="productlist">
               <thead>
               <tr>
@@ -502,7 +515,7 @@ layout: redesign
               <tbody>
 
               <tr>
-                  <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=EVARSLING">EVARSLING</a>
+                  <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=EVARSLING">EVARSLING</a>
                   </td>
                   <td>Recipient notification over SMS or E-Mail</td>
                   <td>BPAKKE_DOR-DOR, SERVICEPAKKE, EKSPRESS09</td>
@@ -510,7 +523,7 @@ layout: redesign
               </tr>
 
               <tr class="even">
-                  <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=POSTOPPKRAV">POSTOPPKRAV</a>
+                  <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=POSTOPPKRAV">POSTOPPKRAV</a>
                   </td>
                   <td>Cash on Delivery</td>
                   <td>MAIL, BPAKKE_DOR-DOR, SERVICEPAKKE, PA_DOREN, EKSPRESS09</td>
@@ -518,7 +531,7 @@ layout: redesign
               </tr>
 
               <tr>
-                  <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09&amp;additionalservice=LORDAGSUTKJORING">LORDAGSUTKJORING</a>
+                  <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09&amp;additionalservice=LORDAGSUTKJORING">LORDAGSUTKJORING</a>
                   </td>
                   <td>Delivery on Saturdays</td>
                   <td>EKSPRESS09</td>
@@ -526,7 +539,7 @@ layout: redesign
               </tr>
 
               <tr class="even">
-                  <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;length=10&amp;width=10&amp;height=10&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=EXPRESS_INTERNATIONAL&amp;additionalservice=ENVELOPE">ENVELOPE</a>
+                  <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;length=10&amp;width=10&amp;height=10&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=EXPRESS_INTERNATIONAL&amp;additionalservice=ENVELOPE">ENVELOPE</a>
                   </td>
                   <td>Express Envelope</td>
                   <td>EXPRESS_INTERNATIONAL_0900, EXPRESS_INTERNATIONAL_1200, EXPRESS_INTERNATIONAL</td>
@@ -534,7 +547,7 @@ layout: redesign
               </tr>
 
               <tr>
-                  <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=0150&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE&amp;additionalservice=ADVISERING">ADVISERING</a>
+                  <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=0150&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE&amp;additionalservice=ADVISERING">ADVISERING</a>
                   </td>
                   <td>Bring contacts recipient</td>
                   <td>CARGO_GROUPAGE</td>
@@ -542,7 +555,7 @@ layout: redesign
               </tr>
 
               <tr class="even">
-                <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=1500&amp;length=60&amp;width=60&amp;height=60&amp;frompostalcode=2000&amp;topostalcode=2000&amp;fromcountry=DK&amp;tocountry=DK&amp;product=PICKUP_PARCEL&amp;additionalservice=PICKUP_POINT">PICKUP_POINT</a>
+                <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;length=60&amp;width=60&amp;height=60&amp;frompostalcode=2000&amp;topostalcode=2000&amp;fromcountry=DK&amp;tocountry=DK&amp;product=PICKUP_PARCEL&amp;additionalservice=PICKUP_POINT">PICKUP_POINT</a>
                 </td>
                 <td>Delivery to pickup point</td>
                 <td>PICKUP_PARCEL, PICKUP_PARCEL_BULK</td>
@@ -550,7 +563,7 @@ layout: redesign
               </tr>
 
               <tr>
-                  <td><a target="_blank" href="https://api.bring.com/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=0150&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO&amp;additionalservice=EVE_DELIVERY">EVE_DELIVERY</a>
+                  <td><a target="_blank" href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=1166&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO&amp;additionalservice=EVE_DELIVERY">EVE_DELIVERY</a>
                   </td>
                   <td>Evening delivery</td>
                   <td>CARGO, CARGO_GROUPAGE</td>

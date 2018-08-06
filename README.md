@@ -27,8 +27,8 @@ Jekyll can serve the site locally and auto-watch for changes:
 
     brew install node
     bundle install
-    bundle exec rake serve
-
+    bundle exec rake serve or bundle exec rake serve[env(test, qa, production)]
+    
 This will clean the build, install necessary SASS dependencies
 and launch the site at http://127.0.0.1:4000/
 
@@ -40,7 +40,7 @@ Merging will automatically build and deploy to test, QA and production. 💥
 
 You can still build it (populate the `_site` dir) manually by running
 
-    bundle exec rake build
+    bundle exec rake build or bundle exec rake build[env(test, qa, production)]
 
 and then deploy as normal with 
 

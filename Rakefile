@@ -18,15 +18,17 @@ task :install_dependencies do
 end
 
 desc 'Build the _site directory'
-task :build => [:clean, :install_dependencies] do
-  puts '= build using jekyll'
-  system('JEKYLL_ENV=production bundle exec jekyll build --trace')
+task :build, [:environment] => [:clean, :install_dependencies] do |t, args|
+  args.with_defaults(:environment => "production")
+  puts "= build using jekyll with env #{args.environment}"
+  system("JEKYLL_ENV=#{args.environment} bundle exec jekyll build --trace")
   system('git rev-parse HEAD >> _site/.gitcommit')
 end
 
 desc 'Run locally using jekyll'
-task :serve => [:clean, :install_dependencies] do
-  puts '= serve using jekyll'
+task :serve, [:environment] => [:clean, :install_dependencies] do |t, args|
+  args.with_defaults(:environment => "production")
+  puts "= serve using jekyll with env #{args.environment}"
   system('cd _sass && npm install')
-  system('bundle exec jekyll serve --trace --incremental')
+  system("JEKYLL_ENV=#{args.environment} bundle exec jekyll serve --trace --incremental")
 end
