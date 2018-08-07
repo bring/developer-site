@@ -19,7 +19,7 @@ end
 
 desc 'Build the _site directory'
 task :build, [:environment] => [:clean, :install_dependencies] do |t, args|
-  args.with_defaults(:environment => "production")
+  args.with_defaults(:environment => "test")
   puts "= build using jekyll with env #{args.environment}"
   system("JEKYLL_ENV=#{args.environment} bundle exec jekyll build --trace")
   system('git rev-parse HEAD >> _site/.gitcommit')
@@ -27,7 +27,7 @@ end
 
 desc 'Run locally using jekyll'
 task :serve, [:environment] => [:clean, :install_dependencies] do |t, args|
-  args.with_defaults(:environment => "production")
+  args.with_defaults(:environment => "test")
   puts "= serve using jekyll with env #{args.environment}"
   system('cd _sass && npm install')
   system("JEKYLL_ENV=#{args.environment} bundle exec jekyll serve --trace --incremental")
