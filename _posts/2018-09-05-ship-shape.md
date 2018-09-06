@@ -34,7 +34,7 @@ One of the concerns with automating the deploy was that we needed our qa environ
 Luckily another team working at a similarly aged and complex project came up with the idea of a using a release train. Where commits would go into master, and then in a seperate scheduled job the releases would run every two hours from master. This turned out to be a success and left the team able to spend most of their time focusing on changing code, rather than babysitting builds and deploys. On feature branches we would run the tests that behaved well in parallel. And then every other hour all verifications would run on master, if all was ok a release would be made. If there was a failure, it would notify us and slack and we all agreed to immediately jump on these issues. Master being releaseable had higher priority than anything else.
 
 
-![release train](/img/release_train.png)
+![release train](/img/ship-shape/release_train.png)
 _release train is informing us that its heading to production with a release containing three commits and bringing attention to the authors of those commits_
 
 ## Testing with Wiremock
