@@ -2,7 +2,7 @@
 layout: post
 title: Shipshape
 date: 2018-09-05 16:00:00 01:00
-category: code-and-design
+category: refactoring
 author:
     - jonasac
     - anirbansingharoy
