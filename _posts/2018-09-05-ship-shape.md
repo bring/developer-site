@@ -9,7 +9,7 @@ author:
 
 ---
 
-The Shipping Guide is one of our oldest applications. As part of a large internal project we knew we were going to do quite a few changes to it. The project was born on the 26th of September 2008. Since then 91 people have worked on the project, contributing 17863 commits to the master branch. Our team did not have much experience with the project and making large changes across the codebase seemed like a daunting task.
+Shipping Guide is one of our oldest applications. As part of a large internal project we knew we were going to do quite a few changes to it. The project was born on the 26th of September 2008. Since then 91 people have worked on the project, contributing 17863 commits to the master branch. Our team did not have much experience with the project and making large changes across the codebase seemed like a daunting task.
 
 
 The overall architecture was quite solid, but we saw all these bits and bobs attached here and there that didn't quite fit with the underlying architecture. This was probably due to business needs changing over time and these changes not always fitting with the architecture laid out in the beginning of the project. It's quite hard for people working on a project in the beginning to forsee what changes a project will need to support over a timespan of 10 years.
@@ -19,7 +19,7 @@ We were able to reduce code in the project by 14% and the size of our deployable
 
 ## Stabilizing the build
 
-There were some legends around the office about the Shippingguide. One of them was that it would take one workday to release a new version of it. And that it was a long manual process of verification scripts and tests to ensure that everything was still working.
+There were some legends around the office about Shipping Guide. One of them was that it would take one workday to release a new version of it. And that it was a long manual process of verification scripts and tests to ensure that everything was still working.
 
 
 We wanted to work continually on the software and release our changes as often as possible. Preferably outsourcing most of the verification and actual deployment to our automated build agent. This would allow developers to spend most of their time working with the code (which is the fun part anyway).
@@ -39,10 +39,10 @@ _release train is informing us that its heading to production with a release con
 
 ## Testing with Wiremock
 
-When we started out there were 2938 tests in The Shipping Guide. Some of these were integration tests that contacted live servers in our QA environments. This caused the tests to sometimes fail due to factors outside of our control. To be able to rapidly build and deploy the Shipping Guide we had to find a way to get rid of this dependence on external systems. There were previous attempts to do this via libraries like mockito but we felt it did not provide quite the functionality we needed. 
+When we started out there were 2938 tests in the project. Some of these were integration tests that contacted live servers in our QA environments. This caused the tests to sometimes fail due to factors outside of our control. To be able to rapidly build and deploy  we had to find a way to get rid of this dependence on external systems. There were previous attempts to do this via libraries like mockito but we felt it did not provide quite the functionality we needed. 
 
 
-[Wiremock](http://wiremock.org/) is a tool that allows you to run it in proxy mode for recording communications between endpoint and then storing these recordings to have Wiremock act as a mock server. So rather than writing a bunch of Mockito code, we could point our integrations to the Wiremock server containing our recordings. This way we didn't have to write mock variants of our services and we could exercise the code up until the point where it left the server. This stabilized the build quite a lot and gave the developers more confidence in the tests. With the help of Wiremock we can now build and test The Shipping Guide without internet access, something which seemed far fetched at the beginning of this journey.
+[Wiremock](http://wiremock.org/) is a tool that allows you to run it in proxy mode for recording communications between endpoint and then storing these recordings to have Wiremock act as a mock server. So rather than writing a bunch of Mockito code, we could point our integrations to the Wiremock server containing our recordings. This way we didn't have to write mock variants of our services and we could exercise the code up until the point where it left the server. This stabilized the build quite a lot and gave the developers more confidence in the tests. With the help of Wiremock we can now build and test the project without internet access, something which seemed far-fetched at the beginning of this journey.
 
 
 ## Getting rid of dependencies
@@ -58,16 +58,16 @@ To this day the size of the deployable has been reduced by 25MB.
 ## Decoupling Web & API
 
 
-The Shipping Guide is primarily an API, but in the beginning it also served a frontend. Some of the frontend features had been subsumed by other applications in our ecosystem, some were no longer in use and rest were stuff we wanted to keep around in a more up to date and modern fashion. 
+Shipping Guide is primarily an API, but in the beginning it also served a frontend. Some of the frontend features had been subsumed by other applications in our ecosystem, some were no longer in use and rest were stuff we wanted to keep around in a more up to date and modern fashion. 
 
-We decided move all frontend related code to a different deployable which would get its data from The Shipping Guide the same way our users does. Keeping the frontend and backend contexts separate like this enabled us to work faster on each deployable and gave us more confidence in cleaning up the frontend code without messing up stuff for the backend. 
+We decided move all frontend related code to a different deployable which would get its data from Shipping Guide the same way our users does. Keeping the frontend and backend contexts separate like this enabled us to work faster on each deployable and gave us more confidence in cleaning up the frontend code without messing up stuff for the backend. 
 
 
 ## Summary
 
-All in all we are quite happy about where The Shipping Guide is now. There will always been things to improve in projects like this, but our focus on cleaning up the things that would let us move faster with more confidence have made those future cleanups seem less like extensive and more like a walk around the woods.
+All in all we are quite happy about where Shipping Guide is now. There will always been things to improve in projects like this, but our focus on cleaning up the things that would let us move faster with more confidence have made those future cleanups seem less like extensive and more like a walk around the woods.
 
-Below are some interesting stats across some of the many releases of The Shipping Guide the past year.
+Below are some interesting stats across some of the many releases of Shipping Guide the past year.
 
 
 ### Code smells
