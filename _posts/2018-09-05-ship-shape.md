@@ -1,13 +1,15 @@
 ---
 layout: post
-title: Shipshape
+title: Shipshape Shipping Guide
 date: 2018-09-05 16:00:00 01:00
 category: refactoring
 author:
     - jonasac
     - anirbansingharoy
+    - pankajagrawal16
 
 ---
+![Shipping Guide 2.0](/img/ship-shape/shipping-guide.png)
 
 Shipping Guide is one of our oldest applications. As part of a [large internal project](/api/shipping-guide_2/) we knew we were going to do quite a few changes to it. The project was born on the 26th of September 2008. Since then 91 people have worked on the project, contributing 17863 commits to the master branch. Our team did not have much experience with the project and making large changes across the codebase seemed like a daunting task.
 
