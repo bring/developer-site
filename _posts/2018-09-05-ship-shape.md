@@ -9,7 +9,7 @@ author:
 
 ---
 
-Shipping Guide is one of our oldest applications. As part of a large internal project we knew we were going to do quite a few changes to it. The project was born on the 26th of September 2008. Since then 91 people have worked on the project, contributing 17863 commits to the master branch. Our team did not have much experience with the project and making large changes across the codebase seemed like a daunting task.
+Shipping Guide is one of our oldest applications. As part of a [large internal project](/api/shipping-guide_2/) we knew we were going to do quite a few changes to it. The project was born on the 26th of September 2008. Since then 91 people have worked on the project, contributing 17863 commits to the master branch. Our team did not have much experience with the project and making large changes across the codebase seemed like a daunting task.
 
 
 The overall architecture was quite solid, but we saw all these bits and bobs attached here and there that didn't quite fit with the underlying architecture. This was probably due to business needs changing over time and these changes not always fitting with the architecture laid out in the beginning of the project. It's quite hard for people working on a project in the beginning to forsee what changes a project will need to support over a timespan of 10 years.
