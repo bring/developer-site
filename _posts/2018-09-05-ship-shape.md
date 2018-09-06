@@ -70,17 +70,27 @@ All in all we are quite happy about where Shipping Guide is now. There will alwa
 Below are some interesting stats across some of the many releases of Shipping Guide the past year.
 
 
-### Code smells
+### Odeurs
+
+Cause who likes to work in a smelly environment?
 <img src="/img/ship-shape/code_smells.png">
 
 ### Cyclomatic & Cognitive complexity
+
+Cause who likes to work on code they cannot comprehend?
 <img src="/img/ship-shape/cognitive_complexity.png">
 
 ### Lines of code
+
+Cause less is more!
 <img src="/img/ship-shape/lines_of_code.png">
 
 ### Technical debt
+
+Cause the power of compounding is not always beneficial!
 <img src="/img/ship-shape/technical_debt.png">
 
 ### Vulnerabilities
+
+Cause security!
 <img src="/img/ship-shape/vulnerabilities.png">
