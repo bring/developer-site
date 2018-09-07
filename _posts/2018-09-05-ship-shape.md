@@ -74,12 +74,12 @@ Below are some interesting stats across some of the many releases of Shipping Gu
 
 ### Odeurs
 
-Cause who likes to work in a smelly environment?
+Cause who likes to work in a smelly environment?[^1]
 <img src="/img/ship-shape/code_smells.png">
 
 ### Cyclomatic & Cognitive complexity
 
-Cause who likes to work on code they cannot comprehend?
+Cause who likes to work on code they cannot comprehend?[^2]
 <img src="/img/ship-shape/cognitive_complexity.png">
 
 ### Lines of code
@@ -89,10 +89,14 @@ Cause less is more!
 
 ### Technical debt
 
-Cause the power of compounding is not always beneficial!
+Cause the power of compounding is not always beneficial [^3]
 <img src="/img/ship-shape/technical_debt.png">
 
 ### Vulnerabilities
 
 Cause security!
 <img src="/img/ship-shape/vulnerabilities.png">
+
+[^1]: <a href="https://en.wikipedia.org/wiki/Code_smell">https://en.wikipedia.org/wiki/Code_smell</a>
+[^2]: <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">https://en.wikipedia.org/wiki/Cyclomatic_complexity</a>
+[^3]: <a href="https://en.wikipedia.org/wiki/Technical_debt">https://en.wikipedia.org/wiki/Technical_debt</a>
