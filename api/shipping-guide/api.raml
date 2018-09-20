@@ -161,9 +161,13 @@ documentation:
 
         //Product[@productId="SERVICEPAKKE"]//Price[@priceZone="2" and @weight="4000"]/text()
 
-    Get transport time:
+    Get transport time (older versions):
 
         //Product[@productId='SERVICEPAKKE']//WorkingDays[@toPostalCode="2000"]/text()
+
+    Get transport time (version 11):
+
+        //Product[@productId='SERVICEPAKKE']//ExpectedDeliveryTime[@toPostalCode="2000"]/WorkingDays/text()
 
 - title: Additional information
   content: |
