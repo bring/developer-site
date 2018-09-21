@@ -8,6 +8,46 @@ annotationTypes:
   hideInDocumentation: boolean
   hideRequired: boolean
 types:
+  Address:
+    type: object
+    description: An address
+    properties:
+      name:
+        type: string
+        required: true
+        description: Name
+      streetAddress:
+        type: string
+        required: true
+        description: Senders address
+      postalCode:
+        type: string
+        required: true
+        description: Postal code. Must be a valid Norwegian postal code.
+        pattern: "[0-9]{4}"
+        example: "0150"
+  AddressWithPostalName:
+    type: object
+    description: An address
+    properties:
+      name:
+        type: string
+        required: true
+        description: Name
+      streetAddress:
+        type: string
+        required: true
+        description: Senders address
+      postalCode:
+        type: string
+        required: true
+        description: Senders postal code. Must be a valid Norwegian postal code.
+        pattern: "[0-9]{4}"
+        example: "0150"
+      postalName:
+        type: string
+        required: true
+        description: Name of the postalCode
   Order:
     type: object
     description: An order to place in Mybring.
@@ -36,6 +76,10 @@ types:
         required: false
         type: boolean
         description: Set to true when testing API implementation.
+      returnAddress:
+        required: false
+        type: Address
+        description: An optional return address. If set will override the return address in generated label.
       packages:
         minItems: 1
         maxItems: 500
@@ -136,6 +180,10 @@ types:
         type: datetime
         example: 2017-09-01T14:00:00.000Z
         description: Timestamp for when the order was placed.
+      returnAddress:
+        type: AddressWithPostalName
+        required: false
+        description: Return address for the order if one is set
       packages:
         minItems: 1
         description: Packages in this shipment.
@@ -230,6 +278,10 @@ types:
       orderTime:
         type: datetime
         description: Timestamp for when the order was validated.
+      returnAddress:
+        type: AddressWithPostalName
+        required: false
+        description: Return address for the order if one is set
       packages:
         minItems: 1
         description: Packages in this validated shipment. The packages in the response will correspond to same order as it was in the request to make it easier for clients to do any mapping if needed.
@@ -575,6 +627,10 @@ types:
         type: datetime
         example: 2017-09-01T14:00:00.000Z
         description: Timestamp for when the order was placed.
+      returnAddress:
+        type: AddressWithPostalName
+        required: false
+        description: Return address for the order if one is set
       packages:
         minItems: 1
         description: Packages Number for the shipment.
