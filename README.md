@@ -46,7 +46,7 @@ You can still build it (populate the `_site` dir) manually by running
     bundle exec rake build
     
     # or if you want to build for a specific environment:
-    bundle exec rake build[<env>] # test, qa, or production
+    bundle exec rake build [<env>] # test, qa, or production
 
 and then deploy as normal with 
 
