@@ -195,7 +195,7 @@ layout: redesign
                 --
                 ----------------------------------------
                 {% endcomment %}
-                {% unless method.responses == empty %}
+                {% if method.responses %}
                 <h2 class="beta">Responses</h2>
                 {% for responseHash in method.responses %}
                   {% assign response = responseHash[1] %}
@@ -222,9 +222,14 @@ layout: redesign
                         {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-format' | slugify %}
                         <li role="presentation" class="codetabs__item active"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Response format</a></li>
                       {% endif %}
+                      {% if responseBody.examples.size > 3 %}
+                      {%  assign tooManyRowsClass =  'extended' %}
+                      {% else  %}
+                      {%  assign tooManyRowsClass = '' %}
+                      {% endif %}
                       {% for example in responseBody.examples %}
                         {% assign tab_id = response_id | append: '-' | append: responseBody.name | append: '-example-' | append: forloop.index | slugify %}
-                        <li role="presentation" class="codetabs__item"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
+                        <li role="presentation" class="codetabs__item {{tooManyRowsClass}}"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
                       {% endfor %}
                     </ul>
 
@@ -256,7 +261,7 @@ layout: redesign
                     </div>
                   {% endfor %}{% comment %} endfor body in response {% endcomment %}
                 {% endfor %}{% comment %} endfor response in method.responses {% endcomment %}
-                {% endunless %}{% comment %} endunless method.responses == empty {% endcomment %}
+                {% endif %}{% comment %} endif method.responses {% endcomment %}
               </section>
               {% endfor %}{% comment %} endfor method in methods {% endcomment %}
             {% endfor %}{% comment %} endfor resource in resources {% endcomment %}

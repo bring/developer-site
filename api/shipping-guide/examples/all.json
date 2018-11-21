@@ -1,10 +1,10 @@
 {
   "@packageId": "0",
-  "Product": [
+  "Product":    [
     {
       "ProductId": "SERVICEPAKKE",
       "ProductCodeInProductionSystem": "1202",
-      "GuiInformation": {
+      "GuiInformation":          {
         "SortOrder": "11",
         "MainDisplayCategory": "Pakke",
         "SubDisplayCategory": "Til private",
@@ -18,20 +18,20 @@
         "Tip": null,
         "MaxWeightInKgs": "35"
       },
-      "Price": {
+      "Price":          {
         "@currencyIdentificationCode": "NOK",
-        "PackagePriceWithoutAdditionalServices": {
-          "AmountWithoutVAT": "127.00",
-          "VAT": "31.75",
-          "AmountWithVAT": "158.75"
+        "PackagePriceWithoutAdditionalServices":             {
+          "AmountWithoutVAT": "132.00",
+          "VAT": "33.00",
+          "AmountWithVAT": "165.00"
         },
-        "PackagePriceWithAdditionalServices": {
-          "AmountWithoutVAT": "127.00",
-          "VAT": "31.75",
-          "AmountWithVAT": "158.75"
+        "PackagePriceWithAdditionalServices":             {
+          "AmountWithoutVAT": "132.00",
+          "VAT": "33.00",
+          "AmountWithVAT": "165.00"
         }
       },
-      "ExpectedDelivery": {
+      "ExpectedDelivery":          {
         "WorkingDays": "2",
         "UserMessage": null,
         "AlternativeDeliveryDates": null
@@ -40,7 +40,7 @@
     {
       "ProductId": "BPAKKE_DOR-DOR",
       "ProductCodeInProductionSystem": "1000",
-      "GuiInformation": {
+      "GuiInformation":          {
         "SortOrder": "42",
         "MainDisplayCategory": "Pakke",
         "SubDisplayCategory": "Til bedrift",
@@ -54,21 +54,21 @@
         "Tip": null,
         "MaxWeightInKgs": "35"
       },
-      "Price": {
+      "Price":          {
         "@currencyIdentificationCode": "NOK",
-        "PackagePriceWithoutAdditionalServices": {
-          "AmountWithoutVAT": "165.00",
-          "VAT": "41.25",
-          "AmountWithVAT": "206.25"
+        "PackagePriceWithoutAdditionalServices":             {
+          "AmountWithoutVAT": "173.00",
+          "VAT": "43.25",
+          "AmountWithVAT": "216.25"
         },
-        "PackagePriceWithAdditionalServices": {
-          "AmountWithoutVAT": "165.00",
-          "VAT": "41.25",
-          "AmountWithVAT": "206.25"
+        "PackagePriceWithAdditionalServices":             {
+          "AmountWithoutVAT": "173.00",
+          "VAT": "43.25",
+          "AmountWithVAT": "216.25"
         }
       },
-      "ExpectedDelivery": {
-        "WorkingDays": "2",
+      "ExpectedDelivery":          {
+        "WorkingDays": "1",
         "UserMessage": null,
         "AlternativeDeliveryDates": null
       }
@@ -76,7 +76,7 @@
     {
       "ProductId": "EKSPRESS09",
       "ProductCodeInProductionSystem": "1002",
-      "GuiInformation": {
+      "GuiInformation":          {
         "SortOrder": "44",
         "MainDisplayCategory": "Pakke",
         "SubDisplayCategory": "Til bedrift",
@@ -90,34 +90,31 @@
         "Tip": null,
         "MaxWeightInKgs": "35"
       },
-      "Price": {
+      "Price":          {
         "@currencyIdentificationCode": "NOK",
-        "PackagePriceWithoutAdditionalServices": {
+        "PackagePriceWithoutAdditionalServices":             {
           "AmountWithoutVAT": "463.00",
           "VAT": "115.75",
           "AmountWithVAT": "578.75"
         },
-        "PackagePriceWithAdditionalServices": {
+        "PackagePriceWithAdditionalServices":             {
           "AmountWithoutVAT": "463.00",
           "VAT": "115.75",
           "AmountWithVAT": "578.75"
         }
       },
-      "ExpectedDelivery": {
+      "ExpectedDelivery":          {
         "WorkingDays": "1",
         "UserMessage": null,
         "AlternativeDeliveryDates": null
       }
     }
   ],
-  "TraceMessages": {
-    "Message": [
-      "From or To country is not defined in request. Using Norway as default country",
-      "Product PA_DOREN can not be sent between the given postal codes / countries ",
-      "Added fee 'brev-varsling' (NOK 13.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.",
-      "EKSPRESS09 delivery requested for divided postal code",
-      "Package exceed maximum measurements for product B-POST ",
-      "Package exceed maximum measurements for product A-POST "
-    ]
-  }
+  "TraceMessages": {"Message":    [
+    "From or To country is not defined in request. Using Norway as default country",
+    "Added fee 'brev-varsling' (NOK 13.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified.",
+    "EKSPRESS09 delivery requested for divided postal code",
+    "Product PA_DOREN can not be sent between the given postal codes / countries ",
+    "Package exceed maximum measurements for product MAIL "
+  ]}
 }

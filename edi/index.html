@@ -27,18 +27,18 @@ layout: page
           <h3 class="epsilon u-mb--">General Documentation</h3>
           <ul>
             <li><a href="{{ site.baseurl }}/files/IG_BIG14_1_5_2017-08-09.pdf">Main Specification — IFTMIN D04A BIG14</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix_A_2015-10-22_and_2016-01-04.pdf">Appendix 1 — Locations</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix2_1-5-17.pdf">Appendix 2 — Available Services</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix2A_Beskrivelse_1-5-17.pdf">Appendix 2A - Instructions for Service Implementation (Norwegian)</a></li>
+            <li><a href="{{ site.baseurl }}/files/Appendix1_LocationsV1_2018.pdf">Appendix 1 — Locations</a></li>
+            <li><a href="{{ site.baseurl }}/files/Appendix2_1-7-18-V3.pdf">Appendix 2 — Available Services</a></li>
+            <li><a href="{{ site.baseurl }}/files/Appendix2A_Descriptions_1-8-17_V3.pdf">Appendix 2A - Instructions for Service Implementation (Norwegian)</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_Appendix_5.pdf">Appendix 5 — Document type</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_Appendix_6.pdf">Appendix 6 — HUB-information</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix G.PDF">Mailbox-Packet</a></li>
+            <li><a href="{{ site.baseurl }}/files/appendix_g_20171201.pdf">Mailbox-Packet</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG23 Package Types_ver 1.0.xls">Package Type Codes and Descriptions – BIG 23</a></li>
           </ul>
           <h3 class="epsilon u-mb--">Bring Parcel AB Specific Documentation</h3>
           <ul>
             <li><a href="{{ site.baseurl }}/files/BPI_Bring_Parcels_AB_subset_BIG14_1_5.pdf">Subset for Bring Parcel AB (International Packages) IFTMIN BIG14</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix A release by 2017-02_01_3.pdf">Appendix A — Bring Parcels products and services from DK, FI, NO, SE and Europe</a></li>
+            <li><a href="{{ site.baseurl }}/files/appendix_A_release_by_2017_10_17.pdf">Appendix A — Bring Parcels products and services from DK, FI, NO, SE and Europe</a></li>
             <li><a href="{{ site.baseurl }}/files/BIG14_BCAP_service_codes.pdf">Additional Information — Service Code 0010 and 0011 to Denmark (BIG14) 1.3</a></li>
             <li><a href="{{ site.baseurl }}/files/Service_Code_1095_(BIG14)_1.0.pdf">Service Code 1095 (Collect at store) for Bring Parcel AB</a></li>
             <li><a href="{{ site.baseurl }}/files/Appendix_F.pdf"> Appendix F (Special information to Finland)</a></li>
@@ -49,14 +49,41 @@ layout: page
         </section>
 
         <section class="api__section">
+          <h2>Warehouse Management</h2>
+          <p>
+            Documents for an Warehousing customer to create an order in warehousing system that will go to the correct warehouse for picking, packing and sending.
+            Customers can get several messages back for status on orders, inventory and warehousing receiving of goods.
+            Inbound and outbound messages are based on GS1 xml Standard V3.1
+          </p>
+          <p>
+            Please ask our integration consultants if you have specific needs or for more detailed information.
+          </p>
+          <h3 class="epsilon u-mb--">Inbound - To Warehousing</h3>
+          <ul>
+            <li><a href="{{ site.baseurl }}/files/CustomerOrder-GS1-BMS-31-16.pdf">Customer order</a></li>
+            <li><a href="{{ site.baseurl }}/files/DespatchAdvice-inbound-GS1-BMS-31-3.pdf">DespatchAdvice inbound</a></li>
+            <li><a href="{{ site.baseurl }}/files/ItemDataNotification-GS1-BMS-31-5.pdf">ItemDataNotification</a></li>
+            <li><a href="{{ site.baseurl }}/files/WarehousingOperationsNotification-GS1-BMS-31-2.pdf">WarehousingOperationsNotification</a></li>
+          </ul>
+          <h3 class="epsilon u-mb--">Outbound - From Warehousing</h3>
+          <ul>
+            <li><a href="{{ site.baseurl }}/files/OrderResponse-GS1-BMS-31-1.pdf">Order response</a></li>
+            <li><a href="{{ site.baseurl }}/files/DespatchAdvice-outbound-GS1-BMS-31-5.pdf">DespatchAdvice outbound</a></li>
+            <li><a href="{{ site.baseurl }}/files/InventoryReport-GS1-BMS-31-2.pdf">Inventory report</a></li>
+            <li><a href="{{ site.baseurl }}/files/InventoryReportAdjustments-GS1-BMS-31-2.pdf">Inventory adjustments report</a></li>
+            <li><a href="{{ site.baseurl }}/files/ReceivingAdvice-GS1-BMS-31-2.pdf">Customer receiving advice</a></li>
+          </ul>
+        </section>
+
+        <section class="api__section">
           <h2>Other Implementation Guides</h2>
           <h3 class="epsilon u-mb--">Download Documentation</h3>
           <ul>
             <li><a href="{{ site.baseurl }}/files/fortolling.pdf">Customer Handling</a></li>
-            <li><a href="{{ site.baseurl }}/files/wms.pdf">Warehouse Management</a></li>
             <li><a href="{{ site.baseurl }}/files/efaktura.xml">XML format for eInvoice E2B</a></li>
             <li><a href="{{ site.baseurl }}/files/dangerous_goods_specification_BIG14_v1.pdf">Dangerous Goods Specification (BIG14)</a></li>
             <li><a href="{{ site.baseurl }}/files/dangerous_goods_specification_BIG01_v1.pdf">Dangerous Goods Specification (BIG01)</a></li>
+            <li><a href="{{ site.baseurl }}/files/bfs_bring_frigo_se_subset_big14_0.pdf">Subset for Bring Frigo Sverige  IFTMIN BIG14</a></li>
           </ul>
         </section>
 
@@ -73,7 +100,7 @@ layout: page
             consultants if you have specific needs for more detailed Status Information.</p>
           <h3 class="epsilon u-mb--">Download Documentation</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/statuskoder_D04A.pdf">Bring Norway – Partload/Groupage/Parcels, Bring Express NO/SE/DK (IFTSTA D04A)</a></li>
+            <li><a href="{{ site.baseurl }}/files/BIG07_IFTSTA_Event_and_Delivery_Report_1_1.pdf">Bring standard IFTSTA (BIG07)</a></li>
             <li><a href="{{ site.baseurl }}/files/statuskoder_D94A.pdf">Bring Parcels AB</a></li>
           </ul>
         </section>
@@ -82,13 +109,13 @@ layout: page
           <h2>Transport Label Specifications</h2>
           <h3 class="epsilon u-mb--">Download Documentation</h3>
           <ul>
-            <li><a href="{{ site.baseurl }}/files/Labelspecifications_for_Bring_v_4_97.pdf">Bring Parcels Norway, Bring Cargo Norway, Bring Cargo Domestic Sweden and Bring Cargo International</a></li>
-            <li><a href="{{ site.baseurl }}/files/Bring Parcels Label Description 20170301.pdf">Bring Parcels Sweden</a></li>
-            <li><a href="{{ site.baseurl }}/files/Appendix E 20170301.pdf">Bring Parcels Sweden Label description</a></li>
-            <li><a href="{{ site.baseurl }}/files/Etikettspesifikasjon_REK_v1_5.pdf">Bring Mail (Posten) – Label Specification for REK</a></li>
+            <li><a href="{{ site.baseurl }}/files/Labelspecifications_for_Bring_v_4_991.pdf">Bring Parcels Norway, Bring Cargo Norway, Bring Cargo Domestic Sweden and Bring Cargo International</a></li>
+            <li><a href="{{ site.baseurl }}/files/bring_parcels_label_description_20171001.pdf">Bring Parcels Sweden</a></li>
+            <li><a href="{{ site.baseurl }}/files/appendix_e_20171101.pdf">Bring Parcels Sweden Label description</a></li>
+            <li><a href="{{ site.baseurl }}/files/Etikettspesifikasjon_REK_v2_0.pdf">Bring Mail (Posten) – Label Specification for REK</a></li>
             <li><a href="{{ site.baseurl }}/files/Logo_Bring_etikett.zip">Logo for Labels</a></li>
-            <li><a href="{{ site.baseurl }}/files/Label_Specification_Bring_Frigo_v_2_0.pdf">Transport label specification for Temperature Regulated Goods</a></li>
-            <li><a href="{{ site.baseurl }}/files/Label specification for letter package 2_0.pdf">Label specification for Mailbox-Packet</a></li>
+            <li><a href="{{ site.baseurl }}/files/Label_specification_Bring_Frigo_Norge_v3_0.pdf">Transport label specification for Temperature Regulated Goods</a></li>
+            <li><a href="{{ site.baseurl }}/files/Label_specification_for_mailbox_package_2_2.pdf">Label specification for Mailbox-Packet</a></li>
           </ul>
         </section>
 

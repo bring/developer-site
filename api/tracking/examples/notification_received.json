@@ -1,18 +1,18 @@
 {
+  "apiVersion": "2",
   "consignmentSet": [
     {
       "consignmentId": "SHIPMENTNUMBER",
       "previousConsignmentId": "",
       "packageSet": [
         {
-          "statusDescription": "Norway Post\/Bring has received a message from sender that a package is on its way, but has not yet received the package. In case of questions, please contact the sender",
-          "descriptions": [
-            
-          ],
+          "statusDescription": "Norway Post/Bring has received a message from sender that a package is on its way, but has not yet received the package. In case of questions, please contact the sender",
+          "descriptions": [],
           "packageNumber": "TESTPACKAGEEDI",
           "previousPackageNumber": "",
-          "productName": "P\u00c5 D\u00d8REN",
+          "productName": "HOME DELIVERY",
           "productCode": "1736",
+          "productLink": "http://www.bring.no/english/shortcuts/1736",
           "brand": "POSTEN",
           "lengthInCm": 41,
           "widthInCm": 38,
@@ -21,7 +21,7 @@
           "weightInKgs": 16.5,
           "eventSet": [
             {
-              "description": "The consignment has not been received by Bring",
+              "description": "No shipment has been received yet, only notification of the shipment.",
               "status": "PRE_NOTIFIED",
               "recipientSignature": {
                 "name": ""
@@ -32,15 +32,24 @@
               "city": "",
               "countryCode": "",
               "country": "",
-              "dateIso": "2015-11-29T12:44:12+01:00",
-              "displayDate": "29.11.2015",
+              "dateIso": "2018-05-24T12:44:12+02:00",
+              "displayDate": "24.05.2018",
               "displayTime": "12:44",
-              "consignmentEvent": false
+              "consignmentEvent": false,
+              "insignificant": false
             }
-          ]
+          ],
+          "additionalServiceSet": []
         }
       ],
       "senderReference": "",
+      "senderCustomerNumber": "",
+      "senderCustomerMasterNumber": "",
+      "senderCustomerType": "",
+      "recipientCustomerNumber": "",
+      "recipientCustomerMasterNumber": "",
+      "recipientCustomerType": "",
+      "isPickupNoticeAvailable": false,
       "totalWeightInKgs": 16.5,
       "totalVolumeInDm3": 45.2
     }

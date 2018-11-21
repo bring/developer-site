@@ -6,19 +6,47 @@ permalink: /blog/:title/
 
 # RAML settings
 raml_08_map:
-  api/shipping-guide/api.raml: api/shipping-guide/index.html
-  api/pickup-point/api.raml: api/pickup-point/index.html
-  api/booking/api.raml: api/booking/index.html
-  api/tracking/api.raml: api/tracking/index.html
-  api/reports/api.raml: api/reports/index.html
-  api/invoice/api.raml: api/invoice/index.html
-  api/postal-code/api.raml: api/postal-code/index.html
-  api/easy-return-service/api.raml: api/easy-return-service/index.html
-  api/order-management/api.raml: api/order-management/index.html
-  api/shipment/api.raml: api/shipment/index.html
+  api/shipping-guide/api.raml:
+    target: api/shipping-guide/index.html
+    sort_order: 10
+  api/pickup-point/api.raml:
+    target: api/pickup-point/index.html
+    sort_order: 20
+  api/booking/api.raml:
+    target: api/booking/index.html
+    sort_order: 30
+  api/reports/api.raml:
+    target: api/reports/index.html
+    sort_order: 50
+  api/invoice/api.raml:
+    target: api/invoice/index.html
+    sort_order: 60
+  api/postal-code/api.raml:
+    target: api/postal-code/index.html
+    sort_order: 70
+  api/easy-return-service/api.raml:
+    target: api/easy-return-service/index.html
+    sort_order: 80
+  api/order-management/api.raml:
+    target: api/order-management/index.html
+    sort_order: 90
+  api/warehousing/api.raml:
+    target: api/warehousing/index.html
+    sort_order: 100
+  api/modify-delivery/api.raml:
+    target: api/modify-delivery/index.html
+    sort_order: 120
 
 raml_10_map:
-  api/order/to-mailbox/api.raml: api/order/to-mailbox/index.html
+  api/order/to-mailbox/api.raml:
+    target: api/order/to-mailbox/index.html
+    sort_order: 110
+  api/shipping-guide_2/api.raml:
+    target: api/shipping-guide_2/index.html
+    sort_order: 1
+  api/tracking/api.raml:
+    target: api/tracking/index.html
+    sort_order: 40
 
 # Build settings
 gems:
@@ -42,4 +70,4 @@ kramdown:
 sass:
   style: compressed
 
-exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, LICENSE, package.json, yarn.lock]
+exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, bower.json, developer-site.iml, node_modules, LICENSE, package.json, yarn.lock, Jenkinsfile]

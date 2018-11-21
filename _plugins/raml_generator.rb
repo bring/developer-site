@@ -6,12 +6,14 @@ require 'pp'
 module Jekyll
 
   class Api08Page < Jekyll::Page
+    attr_reader :sort_order
 
-    def initialize(site, raml_hash, output_file)
+    def initialize(site, raml_hash, output_file, sort_order)
       @site = site
       @base = site.source
       @dir = File.dirname(output_file)
       @name = File.basename(output_file)
+      @sort_order = sort_order
 
       # Write RAML to /tmp/<name>.json
       File.open("/tmp/#{raml_hash['title'].split(' ').first.downcase}.json", 'w') do |f|
@@ -23,16 +25,17 @@ module Jekyll
       self.data['title'] = raml_hash['title']
       self.data['api'] = raml_hash
     end
-
   end
 
   class Api10Page < Jekyll::Page
+    attr_reader :sort_order
 
-    def initialize(site, raml_hash, output_file)
+    def initialize(site, raml_hash, output_file, sort_order)
       @site = site
       @base = site.source
       @dir = File.dirname(output_file)
       @name = File.basename(output_file)
+      @sort_order = sort_order
 
       # Write RAML to /tmp/<name>.json
       File.open("/tmp/#{raml_hash['title'].split(' ').first.downcase}.json", 'w') do |f|
@@ -54,16 +57,19 @@ module Jekyll
     def generate(site)
       @site = site
       Jekyll.logger.info('RAML', '- generate API documentation from RAML files')
-      site.config.fetch('raml_08_map', {}).each do |raml_file, html_file|
-        Jekyll.logger.info('RAML', "- convert #{raml_file} to #{html_file}")
+
+      unsorted_pages = []
+      site.config.fetch('raml_08_map', {}).each do |raml_file, raml_file_data|
+        Jekyll.logger.info('RAML', "- convert #{raml_file} to #{raml_file_data['target']}")
         raml = raml_08_file_to_hash(raml_file)
-        site.pages << Api08Page.new(site, raml, html_file)
+        unsorted_pages << Api08Page.new(site, raml, raml_file_data['target'], raml_file_data['sort_order'])
       end
-      site.config.fetch('raml_10_map', {}).each do |raml_file, html_file|
-        Jekyll.logger.info('RAML', "- convert #{raml_file} to #{html_file}")
+      site.config.fetch('raml_10_map', {}).each do |raml_file, raml_file_data|
+        Jekyll.logger.info('RAML', "- convert #{raml_file} to #{raml_file_data['target']}")
         raml = raml_10_file_to_hash(raml_file)
-        site.pages << Api10Page.new(site, raml, html_file)
+        unsorted_pages << Api10Page.new(site, raml, raml_file_data['target'], raml_file_data['sort_order'])
       end
+      site.pages.push(*(unsorted_pages.sort_by {|page| page.sort_order}))
     end
 
     def raml_08_file_to_hash(raml_file)

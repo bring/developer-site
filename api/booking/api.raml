@@ -10,11 +10,15 @@ documentation:
 
       We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
 
-      Booking uses Shipping Guide as the source for price and availability for the different products. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
+      Booking uses Shipping Guide as the source for price and availability for the different products. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide_2/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
 - title: Versioning strategy
   content: |
       Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
+
+- title: Encoding
+  content: |
+    Booking endpoints will assume all requests are UTF-8 encoded
 
 - title: Authentication
   content: |
@@ -57,7 +61,7 @@ documentation:
       | Specialist | Example products | Example customer number |
       |:-----------|:-----------------|:------------------------|
       | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09` | `PARCELS_NORWAY-10001123123` |
-      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO_NORWAY-10001123123` |
+      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO-329511` |
       | Bring Cargo, International | `CARGO_INTERNATIONAL` | `CARGO-803739` |
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
       | Bring Express, Sweden | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
@@ -103,8 +107,8 @@ documentation:
       | BUSINESS_PARCEL_BULK | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
       | EXPRESS_NORDIC_0900_BULK | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
       | BUSINESS_PALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | CARRYON_BUSINESS_HALFPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | CARRYON_BUSINESS_QUARTERPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | BUSINESS_HALFPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | BUSINESS_QUARTERPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
       | EXPRESS_NORDIC_0900 | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
 
       See the "More examples" section below to see examples on how to use additional services.
@@ -126,6 +130,7 @@ documentation:
       To use the test mode, you need to set the `testIndicator` flag to `true` on the root node.
 
       Note that the examples below use `testIndicator=true`, so remove this when implementing the Booking API in your production system.
+
   post:
     description: Make a booking
     headers:
@@ -211,6 +216,16 @@ documentation:
              description: Specify volume in cubic decimeter. This is optional when dimension is specified in the request for cargo.
              type: decimal
              required: true
+        numberOfPallets:
+             description: Specify Number of pallets when request is for Cargo
+             type: integer
+             required: false
+             example: 3
+        loadMeters:
+             description: Specify Load meters when request is for Cargo. Maximum value is 49.9
+             type: double
+             required: false
+             example: 2.0
         whoPaysInvoice:
              description: Specify which party will pay the invoice for the booking. This parameter can be maximum 35 character long.
              type: string
@@ -485,6 +500,15 @@ documentation:
                   example: !include examples/simpleDelivery.json
                 application/xml:
                   example: !include examples/simpleDelivery.xml
+      266:
+              displayName: Cargo Norway - Number of Pallets & Load Meters
+              description: The `numberOfPallets` element can be set for Number of pallets & `loadMeters` can be set for Load Metres
+              body:
+                application/json:
+                  example: !include examples/cargowithPallets.json
+                application/xml:
+                  example: !include examples/cargoWithPallets.xml
+
 
 /errors{mediaTypeExtension}:
   displayName: Error codes

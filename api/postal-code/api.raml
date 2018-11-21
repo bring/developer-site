@@ -31,7 +31,7 @@ documentation:
       * FO - Faroe Islands
       * GL - Greenland
 
-      The service uses [GeoNames](http://www.geonames.org/) as source for all countries except Norway.
+      The service uses [GeoNames](http://www.geonames.org/) as source for most countries except Norway.
 
       For unsupported countries (countries not in the list above), all postal codes will be marked as valid with no city name returned. In these cases it is recommended to prompt the user to input the city name themselves.
 
@@ -44,21 +44,20 @@ documentation:
       | `postalCodeType` | Description |
       |:-----------------|:------------|
       | NORMAL | Normal postal code suitable for delivering packages. Contains street addresses or mix of street and other postal code types. |
-      | POBOX | Postal code contains only P.O. Box addresses. Only certain Bring products can be delivered to these addresses (see the [Shipping Guide](/api/shipping-guide/)). |
+      | POBOX | Postal code contains only P.O. Box addresses. Only certain Bring products can be delivered to these addresses (see the [Shipping Guide](/api/shipping-guide_2/)). |
       | SPECIALCUSTOMER | Special, e.g special return postal codes for selected customers. |
       | SPECIALNOSTREET | Special, e.g special postal codes for customers with old "serviceboks". |
       | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
 
 /postalCode{mediaTypeExtension}:
-  displayName: Lookup postal code
-  description: |
-      TODO: description
+  displayName: Lookup Postal Code
+
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml, .html ]
-      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML. 
+      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML.
   get:
-    description: Lookup postal code
+    description: Lookup Postal Code
     queryParameters:
       clientUrl:
         displayName: Client URL
@@ -75,8 +74,8 @@ documentation:
         displayName: Country
         required: false
         type: string
-        default: Norway
-        example: 1337
+        default: "NO"
+        example: SE
       callback:
         displayName: JSONP callback function
         type: string

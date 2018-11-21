@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="expires" content="{{site.time | date: '%s%N'}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
@@ -11,7 +12,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico" />
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" media="screen" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css?{{site.time | date: '%s%N'}}" media="screen" />
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
 
@@ -38,12 +39,12 @@
       <ul class="list-inline sitefooter-links sitefooter-nav delta">
         <li><a href="{{ site.baseurl }}/" title="Bring Developer Blog">Bring Developer</a></li>
         <li><a href="https://github.com/bring/developer-site" title="The source code for this site">GitHub</a></li>
-        <li><a href="https://twitter.com/bringdeveloper" title="Our Twitter account">@bringdeveloper</a></li>
         <li><a href="{{ site.baseurl }}/blog/" title="Bring Developer Blog">Blog</a></li>
         <li><a href="{{ site.baseurl }}/jobs/">Jobs</a></li>
+        <li><a href="{{ site.baseurl }}/files/General_Terms_and_Conditions_for_Self_Service_Solutions.pdf">Terms & Conditions</a></li>
       </ul>
       <ul class="list-inline sitefooter-links zeta">
-        <li>© 2017 Posten Norge AS</li>
+        <li>© 2018 Posten Norge AS</li>
         <li><a href="http://www.bring.com/privacy-policy">Privacy policy</a></li>
         <li><a href="http://www.bring.com/use-of-cookies">Cookies</a></li>
       </ul>

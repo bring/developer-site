@@ -1,5 +1,6 @@
 ---
 layout: post
+disqus: true
 title: Alerting in grafana
 date: 2017-05-09 09:00:00 00:00
 category: monitoring

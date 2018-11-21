@@ -10,11 +10,9 @@ documentation:
 
     This is a step-by-step guide on how to use the API.
 
-    A typical usage pattern for an Warehousing cutomer type is to create an order in Order Management that will go to the correct warehouse for picking, packing and sending. Then follow up with creating a packing list from the warehouse with transport information. All steps can be followed in Order Management.
+    A typical usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
 
-    An other usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
-
-    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The SOAP interface is the core interface with complete functionality.
+    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The XML/JSON interface is the core interface with complete functionality.
 
     Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
 
@@ -31,6 +29,8 @@ documentation:
     ### WSDL
 
     [https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+
+    [https://api.bring.com/po/api/ws/om-order-v1.wsdl](https://api.bring.com/po/api/ws/om-order-v1.wsdl)
 
     ## Error handling
 
@@ -70,7 +70,163 @@ documentation:
           application/json:
             example: !include examples/verify_customer.json
 
-/order/{customerId}/{orderId}:
+/omorder:
+  displayName: Send an order
+  description: |
+      Send an order to Order Management. There are different types of order supported in Order Management.
+
+       - Order/PurchaseOrder
+            - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
+            - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
+
+  post:
+    description: Send an order
+    queryParameters:
+      CreateOrderRequest messageFunction:
+          description: Type of order. <br>"Order"<br>"OrderResponse"<br>"SalesOrder"<br>"NotifyTransport"<br>"PurchaseOrder"<br>"ArticleBalance"<br>"DespatchAdvice"<br>"ReceivingAdvice"<br>"PackageList"
+          type: string
+          required: true
+          example: Order
+      MessageSender partyId:
+          description: Customer Number which Bring has provided. It cannot be demo customer number.
+          type: string
+          required: true
+          example: 10000000000
+      MessageRecipient partyId:
+          description: Receiving Bring system. Constant value.
+          type: string
+          required: true
+          example: NO98466118506
+      MessageDate:
+          description: The date on which message is sent.
+          type: dateTime
+          required: true
+          example: 22.01.2017 11:36:22
+      OrderSet updateIndicator:
+          description: Type of order data. Original, Update or Deletion
+          type: string
+          required: true
+          example: Original
+      Order orderId:
+          description: Ordernumber.
+          type: dateTime
+          required: true
+          example: 101010
+      Reference:
+          description: Set of references.
+          type: sequence
+          required: false
+      Reference referenceType:
+          description: Type of reference coded. https://www.stylusstudio.com/edifact/D04A/1153.htm
+          type: String
+          required: true
+          example: CMR
+      Reference ReferenceNo:
+          description: Reference.
+          type: String
+          required: true
+          example: 10003455TT
+      DateAndTimes subClass DocumentDate:
+          description: The date on which order is booked.
+          type: dateTime
+          required: true
+          example: 22.01.2017 11:36:22
+      TransportService BasicServiceCode:
+          description: Transport product for shipment to customer. http://developer.bring.com/api/products/
+          type: String
+          required: true
+          example: SERVICEPAKKE
+      TransportService AdditionalService AdditionalServiceCode:
+          description: Transport services for shipment to customer. http://developer.bring.com/api/products/
+          type: String
+          required: true
+          example: EVARSLING
+      TransportLeg TransportLegType:
+          description: TransportLegType id. Default value 30.
+          type: String
+          required: true
+          example: 30
+      TransportLeg ModeOfTransport:
+          description: Type of transport. <br>1 = Sea<br>2 = Train<br>3 = Road<br>4 = Air.
+          type: String
+          required: true
+          example: 3
+      Party/subClass OrderingParty:
+          description: Details of sender. Must have Name, Street, City, CountryCode.
+          required: true
+      Party/subClass DeliveryParty:
+          description: Details of recipient. Must have Name, Street, City, CountryCode.
+          required: true
+      Party/subClass Supplier:
+          description: Details of supplier. Must have Name, Street, City, CountryCode if used.
+          required: false
+      Party/subClass PerformingUnit partyId:
+          description: Warehouse id for order. Required if order to Warehousing system.
+          type: string
+          required: false
+          example: BERGER
+      OrderLineSet:
+          description: Set of order items.
+          type: sequence
+          required: true
+      OrderItem articleLineId:
+          description: Line id for this order line.
+          type: integer
+          required: true
+          example: 10
+      ArticleId:
+          description: Article number or id.
+          type: sequence
+          required: true
+          example: 123-4000
+      ArticleId codeListAgencyIdentifier:
+          description: Sets type of ArticleId. <br>"CustomerItemNo"<br>"VendorItemNo"<br>"EAN"<br>If not used ArticleId default is CustomerItemNo.
+          type: string
+          required: false
+          example: VendorItemNo
+      ArticleQuantity unitCode:
+          description: Unit code for quantity ordered.
+          type: string
+          required: true
+          example: STK
+      ArticleQuantity:
+          description: Quantity ordered.
+          type: float
+          required: true
+          example: 2.0
+      Description usageCode:
+          description: Article description type. If description used set to AAA.
+          type: string
+          required: false
+          example: AAA
+      Description:
+          description: Article description.
+          type: string
+          required: false
+          example: Spear parts with all parts
+      ArticleName:
+          description: Article name.
+          type: string
+          required: false
+          example: Spear parts
+      DateAndTimes subClass DeliveryDateRequested:
+          description: The date on which order is requested delivered.
+          type: dateTime
+          required: true
+          example: 22.01.2017 11:36:22
+
+    body:
+        application/xml:
+          example: !include examples/create_order.xml
+        application/json:
+          example: !include examples/create_order.json
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Successfully created a order.
+
+/omorder/{customerId}/{orderId}:
   displayName: List order information
   description: |
       Get all information on a given order.
@@ -83,89 +239,9 @@ documentation:
           Complete order information including order items.
         body:
           application/xml:
-            example: !include examples/retrieve_purchaseorder.xml
-
-/order:
-  displayName: Send an order
-  description: |
-      Send an order to Order Management. There are different types of order supported in Order Management.
-
-       - Order / SalesOrder (as an pickorder for Warehousing)
-            - Order Management act as an order repository.
-            - When Warehousing functionality Order Management sends it to Warhousing system for picking and delivery.
-       - PurchaseOrder
-            - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
-            - When Warehousing functionality Order Management sends it to Warhousing system for receiving notice.
-  post:
-    description: Send an order
-    fielddesc:
-      CustomerNo:
-          description: Customer Number which Bring has provided. It cannot be demo customer number.
-          type: string
-          required: true
-          example: 10000000000
-      DateAndTimes subClass DocumentDate:
-          description: The date on which order is booked.
-          type: dateTime
-          required: true
-          example: 22.01.2017 11:36:22
-      updateIndicator:
-          description: Type of order data. Original, Update or Delete
-          type: string
-          required: true
-          example: Original
-      Party/subClass OrderingParty:
-          description: Details of sender. Must have Name, Street, City, CountryCode.
-          required: true
-      Party/subClass DeliveryParty:
-          description: Details of recipient. Must have Name, Street, City, CountryCode.
-          required: true
-      Party/subClass Supplier:
-          description: Details of supplier. Must have Name, Street, City, CountryCode if used.
-          required: false
-      OrderLineSet:
-          description: Set of order items.
-          type: sequence
-          required: true
-      OrderItem articleLineId:
-          description: Line id for this order line.
-          type: integer
-          required: true
-          example: 10
-      ArticleId:
-          description: Article number or id.
-          type: string
-          required: false
-          example: 123-4000
-      ArticleQuantity:
-          description: Quantity ordered.
-          type: float
-          required: true
-          example: 2.0
-      Description:
-          description: Article description / name.
-          type: string
-          required: true
-          example: Spear parts
-      Description:
-          description: Article description / name.
-          type: string
-          required: true
-          example: Spear parts
-      DateAndTimes subClass DeliveryDateRequested:
-          description: The date on which order is requested delivered.
-          type: dateTime
-          required: true
-          example: 22.01.2017 11:36:22
-
-    body:
-      application/xml:
-        example: !include examples/create_purchaseorder.xml
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Successfully created a order.
+            example: !include examples/retrieve_order.xml
+          application/json:
+            example: !include examples/retrieve_order.json
 
 /items/{customerId}/{orderId}:
   displayName: List order items
@@ -217,9 +293,9 @@ documentation:
           Successfully added packaging list.
 
 /senderStatus/{customerId}/{orderId}:
-  displayName: Get status for order
+  displayName: Get sender status for order
   description: |
-      Check status for an order. Open when not fully delivered or locked when fully delivered.
+      Check sender status for an order. Open when not fully delivered or locked when fully delivered.
   get:
     description: Get status for order
     responses:
@@ -246,61 +322,6 @@ documentation:
         displayName: Success
         description: |
           Successfully created a new resource
-
-/articlebalance:
-  displayName: Create or update article balance list
-  post:
-    description: Create or update article balance list
-    body:
-      application/xml:
-        example: !include examples/create_articlebalance.xml
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Successfully created balance list
-
-/articlebalance/{customerId}:
-  displayName: Get stock balance and info for all articles
-  get:
-    description: Get stock balance and info for all articles
-    responses:
-      200:
-        displayName: Success
-        description: |
-        body:
-          application/xml:
-            example: !include examples/retrieve_articlebalance_all.xml
-          application/json:
-            example: !include examples/retrieve_articlebalance_all.json
-
-/articlebalance/{customerId}/{articleNo}:
-  displayName: Get stock balance and info for one article
-  get:
-    description: Get stock balance and info for one article
-    responses:
-      200:
-        displayName: Success
-        description: |
-        body:
-          application/xml:
-            example: !include examples/retrieve_articlebalance_one.xml
-          application/json:
-            example: !include examples/retrieve_articlebalance_one.json
-
-/articlebalance/info/{customerId}/{articleSearchString}:
-  displayName: Get stock balance and info for all articles matching search string
-  get:
-    description: Get stock balance and info for all articles matching search string
-    responses:
-      200:
-        displayName: Success
-        description: |
-        body:
-          application/xml:
-            example: !include examples/retrieve_articlebalance_search.xml
-          application/json:
-            example: !include examples/retrieve_articlebalance_search.json
 
 /errorCodes:
   displayName: List error codes

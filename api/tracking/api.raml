@@ -1,7 +1,175 @@
-#%RAML 0.8
+#%RAML 1.0
 ---
 title: Tracking API
+version: v2
 baseUri: https://tracking.bring.com/api
+types:
+  Consignment:
+    type: object
+    properties:
+      consignmentSet:
+        type: ConsignmentSet
+      apiVersion:
+        type: ApiVersion
+  ConsignmentSet:
+    type: object
+    description: ?
+    properties:
+      consignmentId:
+        type: string
+      previousConsignmentId:
+        type: string
+        required: false
+      packageSet:
+        type: Package[]
+      recipientAddress:
+        type: Address
+      recipientHandlingAddress:
+        type: Address
+      senderReference:
+        type: string
+      senderCustomerNumber:
+        type: string
+      senderCustomerMasterNumber:
+        type: string
+      senderName:
+        type: string
+      senderAddress:
+        type: Address
+      senderCustomerType:
+        type: string
+      recipientCustomerNumber:
+        type: string
+      recipientCustomerMasterNumber:
+        type: string
+      recipientCustomerType:
+        type: string
+      isPickupNoticeAvailable:
+        type: boolean
+      consignmentActionSet:
+        type: ConsignmentAction
+      totalWeightInKgs:
+        type: number
+      totalVolumeInDm3:
+        type: number
+  ApiVersion:
+    type: object
+  ConsignmentAction:
+    type: object
+    properties:
+      actionType:
+        type: string
+      actionURL:
+        type: string
+  Package:
+    type: object
+    properties:
+      statusDescription:
+        type: string
+      descriptions:
+        type: string[]
+        required: false
+      packageNumber:
+        type: string
+      previousPackageNumber:
+        type: string
+      productName:
+        type: string
+      productCode:
+        type: string
+      productLink:
+        type: string
+      brand:
+        type: string
+      lengthInCm:
+        type: number
+      widthInCm:
+        type: number
+      heightInCm:
+        type: number
+      volumeInDm3:
+        type: number
+      weightInKgs:
+        type: number
+      pickupCode:
+        type: string
+      dateOfReturn:
+        type: string
+      senderName:
+        type: string
+      senderAddress:
+        type: Address
+      recipientAddress:
+        type: Address
+      recipientHandlingAddress:
+        type: Address
+      eventSet:
+        type: Event[]
+      additionalServiceSet:
+        type: object[]
+        required: false
+  Event:
+    type: object
+    properties:
+      description: string
+      status:
+        type: string
+      recipientSignature:
+        type: NamedElement
+      unitId:
+        type: string
+      unitType:
+        type: string
+      postalCode:
+        type: string
+        required: false
+      city:
+        type: string
+        required: false
+      countryCode:
+        type: string
+        required: false
+      country:
+        type: string
+        required: false
+      dateIso:
+        type: string
+      displayDate:
+        type: string
+      displayTime:
+        type: string
+      consignmentEvent:
+        type: boolean
+      insignificant:
+        type: boolean
+  Address:
+    type: object
+    properties:
+      addressLine1:
+        type: string
+        required: false
+      addressLine2:
+        type: string
+        required: false
+      postalCode:
+        type: string
+        required: false
+      city:
+        type: string
+        required: false
+      countryCode:
+        type: string
+        required: false
+      country:
+        type: string
+        required: false
+  NamedElement:
+    type: object
+    properties:
+      name:
+        type: string
+        required: false
+
 
 documentation:
 - title: Introduction
@@ -15,30 +183,40 @@ documentation:
 
 - title: Versioning
   content: |
-    We encourage you to use the latest version of our API all time.  Of course, we keep the previous version for some time so that you will get enough time to convert your application. This API supports versioning by two means. 
+    We encourage you to use the latest version of our API all time.  Of course, we keep the previous version for some time so that you will get enough time to convert your application. This API supports versioning by two means.
 
     - **Setting requst header with version number.**
-      Then you use the normal URL but add Request Header.
-       
+      Use the normal URL but add the following Request Header. Example:
+
       | Header | Example |
       |:-------|:--------|
-      | `api-version` | `2` | 
-    
-    - **Setting version number in the url.**
-      Then you have to update the url by adding *v2*
-      example for open tracking:
-      https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT 
-      example for logged in tracking:
-      https://mybring.com/tracking/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT 
+      | `api-version` | `2` |
 
-      You can verify that you are doing it correctly by checking that the response should contain the element *"apiVersion": "2"*.
+    - **Setting version number in the url.**
+      Use the normal URL, but add **```{v1, v2}```** to the URL. Example:
+
+      | Application | URL example |
+      |:-------|:--------|
+      | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
+      | Logged-in tracking | https://mybring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
+
+      You can verify that your request were used correctly by certifying that the response contains an element based on the request type:
+
+      | URI request | Response type | Example |
+      |:-------|:--------|:--------|
+      | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
+      | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
 
 
 - title: Authentication
   content: |
     If you are a Mybring user, you can authenticate requests to the Tracking API. Authenticated requests have the following benefits:
 
-    - You get more information about your parcels, for example prices, name, address and signatures for proof of develiery
+    - More information about parcels:
+      - Prices
+      - Name
+      - Address
+      - Signatures for proof of develiery
     - Less strict rate limiting
 
     See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
@@ -47,118 +225,138 @@ documentation:
     |:-------|:--------|:--------|
     | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
     | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
+    | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies where you're using the APIs. |
 
     Those headers must be present for authenticating requests, and you have to use the endpoint
-        
+
         https://www.mybring.com/tracking/api/
+- title: JSON API
+  content: |
+      We follow the [JSON API](http://jsonapi.org/) specification with one
+      exception: we allow media type to be specified as `application/json`
+      instead of `application/vnd.api+json`.
 
-/tracking{mediaTypeExtension}:
+
+/{version}/tracking{mediaTypeExtension}:
   displayName: Tracking endpoint
-  securedBy: [mybring_headers, null]
-  description: |
-      For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
-
-      You can find an XSD for the XML response here: [tracking-v2.xsd](https://tracking.bring.com/api/schema/sporing-v2.xsd).
-
-      A parcel has a number of events connected to it during its travel. Here are a list of current event statuses that can be returned.
-
-      - ARRIVED_DELIVERY
-        Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading. 
-      - CUSTOMS 
-        Package is in customs clearance.
-      - COLLECTED 
-        The parcel has been collected at pickup address.
-      - DELIVERED 
-        Package has been delivered.
-      - DELIVERED_SENDER
-        Package has been returned to the sender
-      - DELIVERY_CANCELLED
-         Home delivery has been canceled by the customer.
-      - DELIVERY_CHANGED 
-        Date for Home delivery has been changed by customer.
-      - DELIVERY_ORDERED 
-        Home delivery has been ordered.
-      - DEVIATION 
-        Deviation in production. Something wrong has happened and there is a probability for delay.
-      - HANDED_IN 
-        Package has been handed in to Bring.
-      - INTERNATIONAL 
-        Package has been sent from origin country or arrived at destination country. 
-      - IN_TRANSIT 
-        Package is in transit.
-      - NOTIFICATION_SENT 
-        Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice.
-      - PRE_NOTIFIED 
-        EDI message for the package has been received by Bring.
-      - READY_FOR_PICKUP 
-        Package has arrived at pickup point.
-      - RETURN 
-        The package has been returned to sender. 
-      - TRANSPORT_TO_RECIPIENT 
-        Package has been loaded for delivery to the recipient.
-
+  description: Get information about an existing shipment based on a tracking number, shipment number or reference.
   uriParameters:
+    version:
+      enum: [ v1, v2 ]
+      description: v1 is deprecated and will be removed soon. Use v2 when requesting the tracking API
     mediaTypeExtension:
       enum: [ .json, .xml ]
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: Get information about a shipment
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      X-Bring-Client-URL:
+        description: A URL that sort of identifies where you're using the APIs.
     queryParameters:
       q:
         description: Reference, package number, shipment number to search for
         type: string
         required: true
-        example: TESTPACKAGE-AT-PICKUPPOINT
+        example: TESTPACKAGE-AT-PICKUPPOINT, 370000000000000001
+      aktornummer:
+        description: Represents a valid customer number registered with Posten
+        type: string
+        required: false
+        example: "12345678901"
       callback:
         description: JSONP callback function name
         type: string
         required: false
-
     responses:
       200:
         displayName: Successful response
-        body:
-          application/json:
-            example: !include examples/testpackage.json
-          application/xml:
-            example: !include examples/testpackage.xml
-      250:
-        displayName: Status - notification received
         description: |
-          The example below is showing a package that have been EDI notified, but is not received by Bring.
-        body:
-          application/json:
-            example: !include examples/notification_received.json
-          application/xml:
-            example: !include examples/notification_received.xml
-      251:
-        displayName: Status - waiting at pickup point
-        description: |
-          The example below is showing a package waiting for the recipient to collect it at a pickup point
-        body:
-          application/json:
-            example: !include examples/waiting_at_pup.json
-          application/xml:
-            example: !include examples/waiting_at_pup.xml
-      252:
-        displayName: Status - loaded for delivery
-        description: |
-          The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient.
-        body:
-          application/json:
-            example: !include examples/loaded_for_delivery.json
-          application/xml:
-            example: !include examples/loaded_for_delivery.xml
-      253:
-        displayName: Status - delivered
-        description: |
-          The example below is showing a package that has been delivered to the reciepient.
-        body:
-          application/json:
-            example: !include examples/delivered.json
-          application/xml:
-            example: !include examples/delivered.xml
+          For testing you can use "TESTPACKAGE-AT-PICKUPPOINT" as the tracking number to generate test results. For real tracking this must be a valid number.
+
+          You can find an XSD for the XML response here: [tracking-v2.xsd](https://tracking.bring.com/api/schema/sporing-v2.xsd).
+
+          A parcel has a number of events connected to it during its travel. Here are a list of current event statuses that can be returned.
+
+          | Event | Description |
+          |:-------|:--------|
+          | `ARRIVED_DELIVERY` | Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading.  |
+          | `ARRIVED_COLLECTION` | Arrived for collection at pickup point |
+          | `CUSTOMS` | Package is in customs clearance. |
+          | `COLLECTED` | The parcel has been collected at pickup address. |
+          | `DELIVERED` | Package has been delivered. |
+          | `DELIVERED_SENDER` | Package has been returned to the sender |
+          | `DELIVERY_CANCELLED` | Home delivery has been canceled by the customer. |
+          | `DELIVERY_CHANGED` | Date for Home delivery has been changed by customer. |
+          | `DELIVERY_ORDERED` | Home delivery has been ordered |
+          | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |
+          | `HANDED_IN` | Package has been handed in to Bring. |
+          | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country.  |
+          | `IN_TRANSIT` | Package is in transit. |
+          | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
+          | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
+          | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
+          | `RETURN` | The package has been returned to sender.  |
+          | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
+          | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
+          | `UNKNOWN` | Represents unknown / undefined events |
 
 
-
+        body:
+          application/json:
+            type: Consignment
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows an successful deliverance of a package at a pickup point
+                value: !include examples/successful.json
+              unsuccessful:
+                displayName: Unsuccessful request
+                description: Returned upon no search responses being returned for the request itself
+                value: !include examples/unsuccessful.json
+              notification_received:
+                displayName: Unreceived package, with notification regarding EDI
+                description: The example below is showing a package that have been EDI notified, but is not received by Bring.
+                value: !include examples/notification_received.json
+              waiting_at_pup:
+                displayName: Waiting at Pickup Point
+                description: The example below is showing a package waiting for the recipient to collect it at a pickup point
+                value: !include examples/waiting_at_pup.json
+              loaded_for_delivery:
+                displayName: Package loaded for delivery
+                description: The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient.
+                value: !include examples/loaded_for_delivery.json
+              delivered:
+                displayName: Package delivered to customer
+                description: The example below is showing a package that has been delivered to the reciepient.
+                value: !include examples/delivered.json
+          application/xml:
+            type: Consignment
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below is showing a package that have been EDI notified, but is not received by Bring.
+                value: !include examples/successful.xml
+              unsuccessful:
+                displayName: Unsuccessful request
+                description: Returned upon no search responses being returned for the request itself
+                value: !include examples/unsuccessful.xml
+              notification_received:
+                displayName: Unreceived package, with notification regarding EDI
+                description: The example below is showing a package that have been EDI notified, but is not received by Bring.
+                value: !include examples/notification_received.xml
+              waiting_at_pup:
+                displayName: Waiting at Pickup Point
+                description: The example below is showing a package waiting for the recipient to collect it at a pickup point
+                value: !include examples/waiting_at_pup.xml
+              loaded_for_delivery:
+                displayName: Package loaded for delivery
+                description: The example below is showing a package that has been loaded on a distribution car for delivery to the reciepient.
+                value: !include examples/loaded_for_delivery.xml
+              delivered:
+                displayName: Package delivered to customer
+                description: The example below is showing a package that has been delivered to the reciepient.
+                value: !include examples/delivered.xml

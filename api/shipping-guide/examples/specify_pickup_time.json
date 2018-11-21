@@ -89,7 +89,7 @@
                 "SubDisplayCategory": "Til døren",
                 "DisplayName": "På jobben, 08-16",
                 "ProductName": "Bedriftspakke",
-                "DescriptionText": "Leveres uten at sjåføren ringer først 
+                "DescriptionText": "Leveres uten at sjåføren ringer først
 ",
                 "HelpText": "Sendingen er en Bedriftspakke som leveres til mottakers arbeidssted mellom klokken 08 og 16. Bestiller du varsling, vil mottaker varsles når sendingen er lastet på bil for uttkjøring, via SMS og/eller e-post. Dersom sendingen ikke kan leveres, blir den fraktet til lokalt postkontor/ post i butikk. Mottaker varsles om dette via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingssnummeret.",
                 "Tip": null,
@@ -164,8 +164,7 @@
     ],
     "TraceMessages": {
         "Message": [
-            "Package exceed maximum measurements for product B-POST ",
-            "Package exceed maximum measurements for product A-POST ",
+            "Package exceed maximum measurements for product MAIL ",
             "Added fee 'brev-varsling' (NOK 7.00) to base price of SERVICEPAKKE since request did not have additional service 'eVarsling' specified."
         ]
     }

@@ -14,7 +14,7 @@ layout: page
           </p>
 
           <ul>
-            <li>Let the customer choose between alternative shipping methods upon checkout with the <a href="{{ site.baseurl }}/api/shipping-guide/">Shipping Guide API</a></li>
+            <li>Let the customer choose between alternative shipping methods upon checkout with the <a href="{{ site.baseurl }}/api/shipping-guide_2/">Shipping Guide API</a></li>
             <li>Show your customers the current status of their shipment with the <a href="{{ site.baseurl }}/api/tracking/">Tracking API</a></li>
             <li>Book a shipment through the <a href="{{ site.baseurl }}/api/booking/">Booking API</a></li>
             <li>Generate and download reports with the <a href="{{ site.baseurl }}/api/reports">Reports API</a></li>
@@ -26,15 +26,16 @@ layout: page
           <h2 class="anchored">Authentication</h2>
 
           <p>
-            Most of our APIs are open, but
+            APIs for
             <a href="{{ site.baseurl }}/api/booking/">Booking</a>,
+            <a href="{{ site.baseurl }}/api/shipping-guide_2/">Shipping Guide</a> and
             <a href="{{ site.baseurl }}/api/reports/">Reports</a>,
             <a href="{{ site.baseurl }}/api/order-management/">Order Management</a> and
-            <a href="{{ site.baseurl }}/api/easy-return-service/">Easy Return Service</a> 
+            <a href="{{ site.baseurl }}/api/easy-return-service/">Easy Return Service</a>
             require authentication, while
-            <a href="{{ site.baseurl }}/api/shipping-guide/">Shipping Guide</a> and 
             <a href="{{ site.baseurl }}/api/tracking/">Tracking</a> have extra
             features when authenticated.
+            <a href="{{ site.baseurl }}/api/postal-code/">Postal Code</a> is a open API.
           </p>
 
           <p>
@@ -99,12 +100,12 @@ layout: page
             </thead>
             <tbody>
               <tr>
-                <td><a href="{{ site.baseurl }}/api/shipping-guide/">Shipping Guide</a></td>
+                <td><a href="{{ site.baseurl }}/api/shipping-guide_2/">Shipping Guide</a></td>
+                <td class="apitable__togglecell">✓</td>
                 <td class="apitable__togglecell">✓</td>
                 <td class="apitable__togglecell">✓</td>
                 <td class="apitable__togglecell">✓</td>
                 <td class="apitable__togglecell">—</td>
-                <td class="apitable__togglecell">✓</td>
               </tr>
               <tr>
                 <td><a href="{{ site.baseurl }}/api/pickup-point/">Pickup Point</a></td>
@@ -148,6 +149,14 @@ layout: page
               </tr>
               <tr>
                 <td><a href="{{ site.baseurl }}/api/order-management/">Order Management</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a href="{{ site.baseurl }}/api/warehousing/">Warehousing</a></td>
                 <td class="apitable__togglecell">✓</td>
                 <td class="apitable__togglecell">✓</td>
                 <td class="apitable__togglecell">✓</td>

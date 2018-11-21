@@ -331,6 +331,41 @@
       "suffixable": false
     },
     {
+      "code": "BOOK-INPUT-070",
+      "message": "The product is not available",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK-INPUT-071",
+      "message": "Invalid package type for Home Delivery product. Available options: 'hd_eur', 'hd_half', 'hd_quarter', 'hd_loose'",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK-INPUT-072",
+      "message": "Missing both recipient phone number and mobile number.",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK-INPUT-073",
+      "message": "Invalid package type for Home Delivery product. Available options: 'hd_eur', 'hd_half', 'hd_loose'",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK-INPUT-074",
+      "message": "Only one of [packages, packageGroups] can be set",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK-INPUT-075",
+      "message": "Dangerous goods cannot be booked with simple delivery",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK-INPUT-076",
+      "message": "Dangerous goods cannot be booked with non freeze",
+      "suffixable": false
+    },
+    {
       "code": "BOOK-AUTHORIZATION-001",
       "message": "Your user is not authorized to perform this action",
       "suffixable": false

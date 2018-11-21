@@ -1,0 +1,43 @@
+{
+  "data": {
+    "attributes": {
+      "id": 3115,
+      "customerName": "Posten Norge AS",
+      "customerOrganizationNumber": "984661185",
+      "customerNumber": "PARCELS_NORWAY-1234567890",
+      "senderName": "Self",
+      "streetAddress": "A-905",
+      "postalCode": "0150",
+      "postalPlace": "OSLO",
+      "email": "sender@example.com",
+      "reference": "123456",
+      "packages": [
+        {
+          "priority": "",
+          "rfid": false,
+          "recipientName": "Pooja",
+          "streetAddress": "AA",
+          "postalCode": "0150",
+          "postalPlace": "OSLO",
+          "phoneNumber": "+4799999999",
+          "email": "a@b.com",
+          "weight": 200,
+          "shipmentNumber": "70438101412779446",
+          "packageNumber": "LA297895248NO",
+          "priceType": "AGREEMENT_PRICE"
+        }
+      ],
+      "labelUri": "https://api.bring.com/labels/id/f57ec601-5c33-4128-abe7-da80c70f99d1.pdf",
+      "rfidLabelUri": "",
+      "waybillUri": "https://api.bring.com/labels/id/187a6a51-26b5-4345-82a9-6429001e7c3b.pdf",
+      "priceWithoutVat": 150,
+      "priceWithVat": 187.5,
+      "vat": 37.5,
+      "currency": "NOK",
+      "orderTime": "2017-09-13T13:25:11.875363Z",
+      "orderNumberReference": "20002880"
+    },
+    "type": "order",
+    "id": "3115"
+  }
+}
