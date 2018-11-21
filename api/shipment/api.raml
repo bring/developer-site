@@ -26,13 +26,20 @@ documentation:
 
     Those headers must be set for all endpoints documented below.
 
-/CreateShipment:
-  displayName: CreateShipment
+/sendshipment/?shipmentId={createShipmentId}&packageIds={createPackageId}:
+  displayName: Create shipment
+  uriParameters:
+    createShipmentId:
+      displayName: Create shipment id
+      type: boolean
+    createPackageId:
+      displayName: Create packaging ids
+      type: boolean
   description: |
-      Request is used to either create a booking or an instruction for Bring. 
+      Request is used to either create, update or delete an instruction for Bring.
   post:
     description:
-     Request is used to either create a booking or an instruction for Bring.
+     Request is used to either create, update or delete an instruction for Bring.
     body:
         application/xml:
           example: !include examples/basic_example.xml
@@ -44,6 +51,21 @@ documentation:
         description: |
           Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
 
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request.
+
+      417:
+        displayName: Error
+        description: |
+          Missing authentication headers.
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination.
+
       250:
         displayName: Bring Express Courier
         description: Sample request to book a Bring Express Courier shipment.
@@ -53,3 +75,42 @@ documentation:
           application/json:
             example: !include examples/basic_example.json
 
+/sendbooking/?shipmentId={createShipmentId}&packageIds={createPackageId}:
+  displayName: Create shipment booking
+  uriParameters:
+    createShipmentId:
+      displayName: Create shipment id
+      type: boolean
+    createPackageId:
+      displayName: Create packaging ids
+      type: boolean
+  description: |
+      Request is used to either create, update or delete an booking for Bring.
+  post:
+    description:
+     Request is used to either create, update or delete an booking for Bring.
+    body:
+        application/xml:
+          example: !include examples/basic_example_booking.xml
+        application/json:
+          example: !include examples/basic_example_booking.json
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
+
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request.
+
+      417:
+        displayName: Error
+        description: |
+          Missing authentication headers.
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination.
