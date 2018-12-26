@@ -1,7 +1,948 @@
-#%RAML 0.8
+#%RAML 1.0
 ---
 title: Shipment API
-baseUri: https://api.bring.com/mb/api
+version: v1
+baseUri: https://api.bring.com/shipment
+mediaType: application/json, application/xml
+annotationTypes:
+  hideInDocumentation: boolean
+  hideRequired: boolean
+types:
+ReferenceTYPE:
+  description:
+  type: object
+  properties:
+    ReferenceValue:
+      description: Extra reference
+      type: String
+      required: True
+      example: 4440/0189981/WEJ
+    referenceType:
+      description: Referencetype. Valid values are DESPATCH_ADVICE_NUMBER, TRANSPORT_DOCUMENT_NUMBER, CUSTOMS_DECLARATION_NUMBER, ACCOUNT_NUMBER, PROJECT_NUMBER, SECONDARY_CUSTOMS_REFERENCE, TEMPORARY_IMPORTATION_DOCUMENT_NUMBER, SENDERS_REFERENCE, AIR_WAYBILL, BILL_OF_LADING, BOOKING_REFERENCE, ROAD_CONSIGNMENT_NOTE, SHIPMENT_REFERENCE, TRANSPORT_INSTRUCTION, GOODS_NUMBER
+      type: String
+      required: True
+      example: TRANSPORT_DOCUMENT_NUMBER
+FreeTextTYPEText:
+  description:
+  type: object
+  properties:
+    sequence:
+      description: Order of freetext elements
+      type: String
+      required: False
+      example: 0
+    Value:
+      description: Actual freetext
+      type: String
+      required: True
+      example: Call the contact before delivering item.
+FreeTextTYPE:
+  description:
+  type: object
+  properties:
+    Text:
+      description: Sequence of freetext
+      type: FreeTextTYPEText[]
+      required: True
+      example:
+    usageCode:
+      description: Type of freetext. Valid values are PICKUP_INSTRUCTIONS, DELIVERY_INSTRUCTIONS, CARRIER_INSTRUCTIONS
+      type: String
+      required: True
+      example: PICKUP_INSTRUCTIONS
+ccWeight:
+  description:
+  type: object
+  properties:
+    unitCode:
+      description: Unitcode for weight. Valid values are GRM, KGM
+      type: String
+      required: True
+      example: KGM
+    Value:
+      description: Weightvalue
+      type: Float
+      required: True
+      example: 2.33
+ccVolume:
+  description:
+  type: object
+  properties:
+    unitCode:
+      description: Unitcode for volume measurement. Valid values are DMQ, MTQ
+      type: String
+      required: True
+      example: DMQ
+    Value:
+      description: Value of volume measurement
+      type: Float
+      required: True
+      example: 18.22
+ccLength:
+  description:
+  type: object
+  properties:
+    unitCode:
+      description: Unit for the length. Valid values are CMT, DMT, MTR
+      type: String
+      required: False
+      example: CMT
+    Value:
+      description: The length
+      type: Float
+      required: False
+      example: 1.22
+DimensionsTYPE:
+  description:
+  type: object
+  properties:
+    Height:
+      description: Height of package
+      type: ccLength
+      required: True
+      example:
+    Length:
+      description: Length of package
+      type: ccLength
+      required: True
+      example:
+    Width:
+      description: Width of package
+      type: ccLength
+      required: True
+      example:
+ExchangeableEquipment:
+  description:
+  type: object
+  properties:
+    UnitType:
+      description: Type of exchangable equipment. Valid values are EFP
+      type: String
+      required: True
+      example: EFP
+    Value:
+      description: Quantity of exhangable equipments
+      type: Integer
+      required: True
+      example: 3
+ShipmentHeaders:
+  description:
+  type: object
+  properties:
+    SendersReference:
+      description: Senders reference for the shipment
+      type: String
+      required: True
+      example: SOA-123222
+    ReceiversReference:
+      description: Receivers reference for the shipment
+      type: String
+      required: False
+      example: SOA-123222
+    NumberOfPackages:
+      description: Total number of packages for the whole shipment across all goodsitems.
+      type: String
+      required: True
+      example: 3
+    AdditionalReference:
+      description: Additional references for the shipment as indicated by referenceType
+      type: ReferenceTYPE[]
+      required: False
+      example:
+    FreeText:
+      description: Freetext elements
+      type: FreeTextTYPE[]
+      required: False
+      example:
+    GrossWeight:
+      description: GrossWeight for the whole shipment
+      type: ccWeight
+      required: False
+      example:
+    GrossVolume:
+      description: Grossvolume for the whole shipment
+      type: ccVolume
+      required: False
+      example:
+    Dimensions:
+      description: Dimensions required for the whole shipment
+      type: DimensionsTYPE
+      required: False
+      example:
+    LoadingMetres:
+      description: How many meters of loading space required of a truck's length.
+      type: Float
+      required: False
+      example: 12
+    PalletFootPrints:
+      description: How many palletfootprints are needed for the shipment
+      type: Integer
+      required: False
+      example: 3
+    HazardPoints:
+      description: Sum of hazardpoints for the shipment
+      type: Integer
+      required: False
+      example: 22
+    ExchangeableEquipment:
+      description: Equipment that can be reused, ie. pallets
+      type: ExchangeableEquipment
+      required: False
+      example:
+    shipmentId:
+      description: Id for the whole shipment, can be retrieved by the API.
+      type: String
+      required: False
+      example: 70438101412575352
+DateAndTimes:
+  description: Handles date and times
+  type: object
+  properties:
+    subClass:
+      description: Type of datetime. Valid values are DocumentDate, PickupRequested, PickupEarliest, PickupLatest, DeliveryRequested, DeliveryEarliest, DeliveryLatest
+      type: String
+      required: True
+      example: DocumentDate
+    DateTime:
+      description: Date and time
+      type: dateTime
+      required: True
+      example: 2018-11-22T08:58:52
+AddressTYPE:
+  description:
+  type: object
+  properties:
+    AddressLine:
+      description: Address lines. The first line will be mapped to primary address line
+      type: String[]
+      required: True
+      example: Kong Oscars gate 12
+    PostalCode:
+      description: Postal code for address
+      type: String
+      required: True
+      example: 5122
+    City:
+      description: City for the postal code
+      type: String
+      required: True
+      example: Morvik
+    StateOrRegion:
+      description: State or region, not in use in the nordic countries
+      type: String
+      required: False
+      example: Washington DC
+    CountryCode:
+      description: Countrycode. Use valid country codes
+      type: String
+      required: True
+      example: NO
+BasicPartyTYPE:
+  description:
+  type: object
+  properties:
+    partyId:
+      description: Identifier for the party
+      type: String
+      required: False
+      example: BEX
+    subPartyId:
+      description: Further identification of the party
+      type: String
+      required: False
+      example: GLW
+    Name:
+      description: Partyname
+      type: String
+      required: False
+      example: Bring
+    Address:
+      description: Partyaddress
+      type: AddressTYPE
+      required: False
+      example:
+    ContactName:
+      description: ContactName for the party
+      type: String
+      required: False
+      example: Atle Thorstensen
+    Phone:
+      description: Phone
+      type: String
+      required: False
+      example: +4712345678
+    MobilePhone:
+      description: MobilePhone
+      type: String
+      required: False
+      example: +47123456789
+    Email:
+      description: Email
+      type: String
+      required: False
+      example: mail@mail.com
+    Fax:
+      description: Fax
+      type: String
+      required: False
+      example: +4712345678
+    Reference:
+      description: References related to the party, can be used for accountnumber of pallet system in sweden for instance
+      type: ReferenceTYPE[]
+      required: False
+      example: SO-12345678
+PartyTYPE:
+  description:
+  type: object
+  properties:
+    subClass:
+      description: Type of party. Valid values are DespatchParty, DeliveryParty, OrderingParty, FreightPayer, CashOnDeliveryPayee, GoodsReturnParty, NotifyParty, TransportCompany
+      type: String
+      required: True
+      example: DeliveryParty
+    partyId:
+      description: Identifier for the party
+      type: String
+      required: True
+      example: BEX
+    subPartyId:
+      description: Further identification for the party
+      type: String
+      required: False
+      example: GLW
+    Name:
+      description: Partyname
+      type: String
+      required: False
+      example: Rogers antistatiske overledninger
+    Address:
+      description: Partyaddress
+      type: AddressTYPE
+      required: False
+      example:
+    ContactName:
+      description: Party contactname
+      type: String
+      required: False
+      example: Ola Nordmann
+    Phone:
+      description: Phone
+      type: String
+      required: False
+      example: +4712345678
+    MobilePhone:
+      description: MobilePhone
+      type: String
+      required: False
+      example: +4712345678
+    Email:
+      description: Email
+      type: String
+      required: False
+      example: mail@mail.com
+    Fax:
+      description: Fax
+      type: String
+      required: False
+      example: +4712345678
+    Reference:
+      description: Further references related to the party
+      type: ReferenceTYPE[]
+      required: False
+      example: SOA-121232332-AN
+AdditionalService:
+  description:
+  type: object
+  properties:
+    AdditionalServiceCode:
+      description: The additional service code for the product. Refer to documentation for valid values
+      type: String
+      required: True
+      example: EVARSLING
+    ServiceRequirements:
+      description: Some AdditionalServiceCodes / valueadded service might require extra information. Refer to the documentation for the specific code for further information. Example includes quantity for code
+      type: String[]
+      required: True
+      example: 02
+ProductAndService:
+  description:
+  type: object
+  properties:
+    ProductCode:
+      description: Productcode for shipment, refer to documentation for valid productcodes for this service
+      type: String
+      required: True
+      example: COURIER_1H
+    AdditionalService:
+      description: Additional service codes. Refer to documentation for valid codes
+      type: AdditionalService[]
+      required: False
+      example:
+    TariffReference:
+      description: Additional information about the price of the cargo in connection with the service. Refer to documentation for codes.. Valid values are COOL_ABERRANT, GENERAL_CARGO, MINERAL_WATER, CHILLED_0_4, TIRES, COOL_5_8, FISH_0_4, FROZEN_CARGO, FROST_FREE_CARGO, EARLY_DELIVERY, LATE_DELIVERY, SPECIAL_CARGO, COOL_0_2
+      type: String
+      required: False
+      example: GNCG
+    NatureOfCargo:
+      description: Indicates if the cargo is out of bound of general expected parameters, dangerous goods or out og gauge
+      type: String
+      required: False
+      example: 11
+DeliveryTermsLocation:
+  description:
+  type: object
+  properties:
+    City:
+      description: City where the deliveryterms are valid to or from
+      type: String
+      required: True
+      example: Bergen
+    CountryCode:
+      description: Country where the deliveryterms ar valid to or from
+      type: String
+      required: True
+      example: NO
+DeliveryTerms:
+  description:
+  type: object
+  properties:
+    ConditionCode:
+      description: The actual terms for the chosen deliverytermstype
+      type: String
+      required: True
+      example: EXW
+    Location:
+      description: The location where the given deliveryterms (condition) applies (to or from given conditioncode.)
+      type: DeliveryTermsLocation
+      required: False
+      example:
+    termsType:
+      description: Terms valid for this shipment. Valid values are Incoterms, Freightterms, Combiterms, PrePaid, ThirdParty
+      type: String
+      required: True
+      example: Incoterms
+CashOnDeliveryTransactionIdentifier:
+  description:
+  type: object
+  properties:
+    identifierType:
+      description: Type of cash on delivery.. Valid values are PQ, SS
+      type: String
+      required: True
+      example: PQ
+    accountType:
+      description: Type of account to receive payment. Valid values are Bank, Bankgiro, Plus, Post, Iban, Other
+      type: String
+      required: True
+      example: Bank
+    Value:
+      description: The value to identify where the money should be sent
+      type: String
+      required: True
+      example: 1234.12.123456
+ccAmount:
+  description:
+  type: object
+  properties:
+    currencyCode:
+      description: Currencycode, valid currency codes allowed
+      type: String
+      required: False
+      example: NOK
+CashOnDeliveryMonetaryAccountNumber:
+  description:
+  type: object
+  properties:
+    accountType:
+      description: Type of account to receive payment on delivery. Valid values are Bank, Bankgiro, Plus, Post, Iban, Other
+      type: String
+      required: True
+      example:
+    Value:
+      description: Actual account number
+      type: String
+      required: True
+      example: 4567.45.12345
+CashOnDeliveryMonetaryAccount:
+  description:
+  type: object
+  properties:
+    AccountNumber:
+      description: Account number to receive payment
+      type: CashOnDeliveryMonetaryAccountNumber
+      required: True
+      example:
+    SwiftCode:
+      description: Swift code for international transfers
+      type: String
+      required: True
+      example: DNBANOKK
+    BankName:
+      description: Bank where account is created
+      type: String
+      required: True
+      example: DNB
+    AccountHolderName:
+      description: Name of the owner of the account
+      type: String
+      required: True
+      example: Ola Nordmann
+CashOnDelivery:
+  description:
+  type: object
+  properties:
+    TransactionIdentifier:
+      description: Senders identifier for the transaction
+      type: CashOnDeliveryTransactionIdentifier
+      required: False
+      example:
+    Amount:
+      description: Amount expected on delivery
+      type: ccAmount
+      required: False
+      example: 12450
+    ControlDigit:
+      description: Controldigit for incoming amount when there is specified a KID number (norwegian only)
+      type: Integer
+      required: False
+      example: 8
+    DocumentId:
+      description: Documentids for cashondelivery
+      type: String[]
+      required: False
+      example: SA-46789
+    MonetaryAccount:
+      description: Description of where money should be received
+      type: CashOnDeliveryMonetaryAccount
+      required: False
+      example:
+    codType:
+      description: Type of cash on delivery. Valid values are CashOnDelivery, PrePaid, CreditCard
+      type: String
+      required: True
+      example: CashOnDelivery
+ccTempMeasure:
+  description:
+  type: object
+  properties:
+    unitCode:
+      description: Unitcode for temperature measure. Valid values are CEL, FAH
+      type: String
+      required: True
+      example: CEL
+    minimum:
+      description: Minimum allowed temperature
+      type: String
+      required: False
+      example: -8
+    maximum:
+      description: Maximum allowed temperature
+      type: String
+      required: False
+      example: 4
+    Value:
+      description: Specific temperature for transportation of the cargo.
+      type: Integer
+      required: True
+      example: 3
+GoodsItemTemperature:
+  description:
+  type: object
+  properties:
+    Transport:
+      description: Temperature requirements during transport
+      type: ccTempMeasure
+      required: False
+      example:
+    Storage:
+      description: Temperature requirements for storage of goods.
+      type: ccTempMeasure
+      required: False
+      example:
+PackageInsuranceInsuranceValue:
+  description:
+  type: object
+  properties:
+    currencyCode:
+      description: Currencycode for insured amount
+      type: String
+      required: True
+      example: NOK
+    Value:
+      description: Amount the package is insured for.
+      type: Float
+      required: False
+      example: 100000
+PackageInsurance:
+  description:
+  type: object
+  properties:
+    InsuranceValue:
+      description: The amount the package is insured fors
+      type: PackageInsuranceInsuranceValue
+      required: False
+      example:
+    GoodsDescription:
+      description: Description of insured package
+      type: String
+      required: False
+      example: Gold
+    Email:
+      description: Email related to insuranceinformation
+      type: String
+      required: False
+      example: henvendelser@vesta.no
+Package:
+  description:
+  type: object
+  properties:
+    GrossWeight:
+      description: Gross weight for package
+      type: ccWeight
+      required: False
+      example:
+    GrossVolume:
+      description: Gross volume for package
+      type: ccVolume
+      required: False
+      example:
+    Dimensions:
+      description: Dimension of the package
+      type: DimensionsTYPE
+      required: False
+      example:
+    Insurance:
+      description: Insuranceinformation for the package
+      type: PackageInsurance
+      required: False
+      example:
+    packageId:
+      description: Package id, can be inserted by the API
+      type: String
+      required: False
+      example: 370438101412578910
+DangerousGoodsUNDGInformation:
+  description:
+  type: object
+  properties:
+    HazardIdentifier:
+      description: United nations dangerous goods hazard identifier
+      type: String
+      required: False
+      example: 1.1D
+    FlaspointDescription:
+      description: Flashopint for dangerousgoods.
+      type: String
+      required: False
+      example: BLACK POWDER, granulated or in powderform
+DangerousGoodsFlashpoint:
+  description:
+  type: object
+  properties:
+    unitCode:
+      description: Unitcode for flashpoint. Valid values are CEL, FAH
+      type: String
+      required: False
+      example: CEL
+    Value:
+      description: Value when flashpoint occurs/ignites
+      type: Integer
+      required: False
+      example: 18
+ccMeasure:
+  description:
+  type: object
+  properties:
+    unitCode:
+      description: Unitcode for measure
+      type: String
+      required: True
+      example: DMQ
+    Value:
+      description: Measurevalue
+      type: Float
+      required: True
+      example: 1.22
+MeasuresTYPE:
+  description:
+  type: object
+  properties:
+    Measure:
+      description: Measurements for goods
+      type: ccMeasure
+      required: False
+      example:
+    subClass:
+      description: Should be enum???
+      type: String
+      required: False
+      example: NetHazardWeight
+DangerousGoodsRestrictions:
+  description:
+  type: object
+  properties:
+    restrictionType:
+      description: Type of restriction. Valid values are Tunnel
+      type: String
+      required: False
+      example: Tunnel
+    Value:
+      description: Freetext specification of restriction for given tunnel. One element for each UN number in the dangerousgoods sequence.
+      type: String
+      required: False
+      example: Ellingsøy- og Valderøytunnelen på riksveg 658 utenfor Ålesund. Her gjelder tunnelkategori C i tidsrommet kl. 0600–2400 hver dag.
+GoodsItemDangerousGoods:
+  description:
+  type: object
+  properties:
+    UNDGInformation:
+      description: United nations dangerous goods infomrmation
+      type: DangerousGoodsUNDGInformation
+      required: False
+      example:
+    Flashpoint:
+      description: Flashpointinformation for dangerousgoods (when will the item become volatile?)
+      type: DangerousGoodsFlashpoint
+      required: False
+      example:
+    HazardClass:
+      description: Classification of hazard
+      type: String
+      required: False
+      example: 4.1
+    AdditionalHazard:
+      description: Additional codes for hazard
+      type: String
+      required: False
+      example: 2.3(8)
+    PackingGroup:
+      description: Packing danger level code, roman numeral between 1 and 3.
+      type: String
+      required: False
+      example: II
+    Measures:
+      description: Measures for dangerous goods
+      type: MeasuresTYPE[]
+      required: False
+      example:
+    TechnicalName:
+      description: Technical name of hazard
+      type: String
+      required: False
+      example: KALSIUMRESINAT, SINTRET
+    Restrictions:
+      description: Restrictions when carrying these harzardous goods
+      type: DangerousGoodsRestrictions[]
+      required: False
+      example:
+    HazardPoints:
+      description: Points for this hazard. Calculated from factor for dangerousgoods multiplied by amount in kg / dm3 for each material in cargo.
+      type: Integer
+      required: False
+      example: 10
+    regulationCode:
+      description: Regulationscodes for the hazardous goods.
+      type: String
+      required: False
+      example: ADR
+GoodsItem:
+  description:
+  type: object
+  properties:
+    PackageTypeCode:
+      description: Types of cargo, packaging of cargo.
+      type: String
+      required: True
+      example: ???
+    GoodsDescription:
+      description: Description of goods being shipped
+      type: String
+      required: False
+      example: Contains socks
+    LoadCarrier:
+      description: Transport equipment (pallet, container etc)
+      type: String
+      required: False
+      example: EFP
+    SealId:
+      description: Item sealed for customs etc, number of the seal
+      type: String
+      required: False
+      example: 123456
+    Temperature:
+      description: Temperaturerequirements for goods being shipped
+      type: GoodsItemTemperature
+      required: False
+      example:
+    Package:
+      description: List of packages being shipped
+      type: Package[]
+      required: True
+      example:
+    DangerousGoods:
+      description: Information about dangerousgoods being shipped
+      type: GoodsItemDangerousGoods
+      required: False
+      example:
+Shipment:
+  description:
+  type: object
+  properties:
+    updateIndicator:
+      description: Is this request an original, update or deletion. Valid values are Original, Update, Replace, Delete
+      type: String
+      required: True
+      example: Original
+    shipmentType:
+      description: Type of shipment. Valid values are Instruction, Booking, Healthcheck
+      type: String
+      required: True
+      example: Instruction
+    ShipmentHeaders:
+      description: Structure that handles information for the whole shipment
+      type: ShipmentHeaders
+      required: True
+      example:
+    DateAndTimes:
+      description: Date and times for the message, repeatable structure. Several dates are required
+      type: DateAndTimes[]
+      required: True
+      example:
+    Sender:
+      description: Structure to hold sender information
+      type: BasicPartyTYPE
+      required: True
+      example:
+    Receiver:
+      description: Structure to hold receiver information
+      type: BasicPartyTYPE
+      required: True
+      example:
+    AdditionalParty:
+      description: Additionalparties for the shipment, repeatable. Refer to detailed instructions
+      type: PartyTYPE[]
+      required: True
+      example:
+    ProductAndService:
+      description: Product and service codes in addition to value added service structures
+      type: ProductAndService
+      required: True
+      example:
+    DeliveryTerms:
+      description: Terms for delivery
+      type: DeliveryTerms
+      required: False
+      example:
+    CashOnDelivery:
+      description: CashOnDelivery for the shipment
+      type: CashOnDelivery
+      required: False
+      example:
+    GoodsItems:
+      description: Information about goods being shipped
+      type: GoodsItem[]
+      required: True
+      example:
+CreateShipmentResponseErrors:
+  description:
+  type: object
+  properties:
+    Error:
+      description: . Valid values are VALIDATION, SYSTEM, BAD_REQUEST
+      type: String
+      required: False
+      example:
+    ErrorText:
+      description:
+      type: String
+      required: False
+      example:
+CreateShipmentResponseIdentities:
+  description:
+  type: object
+  properties:
+    PackageId:
+      description:
+      type: String[]
+      required: False
+      example:
+    ShipmentId:
+      description:
+      type: String
+      required: False
+      example:
+CreateShipmentRequest:
+  description:
+  type: object
+  properties:
+    RequestVersion:
+      description: Request version to use
+      type: String
+      required: True
+      example: 1
+    RequestDate:
+      description: Date and time for when the request was created
+      type: dateTime
+      required: True
+      example: 2018-11-22T08:58:52
+    Shipment:
+      description: Structure for the shipment
+      type: Shipment
+      required: False
+      example:
+CreateBookingRequest:
+  description:
+  type: object
+  properties:
+    RequestVersion:
+      description: Request version to use
+      type: String
+      required: True
+      example: 1
+    RequestDate:
+      description: Date and time for when the request was created
+      type: dateTime
+      required: True
+      example: 2018-11-22T08:58:52
+    Shipment:
+      description: Structure for the shipment
+      type: Shipment
+      required: False
+      example:
+CreateShipmentResponse:
+  description:
+  type: object
+  properties:
+    Status:
+      description: . Valid values are OK, OK_CONFIRMED, ERROR, VALIDATION_ERROR, FORBIDDEN
+      type: String
+      required: False
+      example:
+    StatusText:
+      description:
+      type: String
+      required: False
+      example:
+    Errors:
+      description:
+      type: CreateShipmentResponseErrors[]
+      required: False
+      example:
+    Identities:
+      description:
+      type: CreateShipmentResponseIdentities[]
+      required: False
+      example:
+    ProcessingID:
+      description:
+      type: String
+      required: False
+      example:
+    EndpointProcessingID:
+      description:
+      type: String
+      required: False
+      example:
 
 documentation:
 - title: Introduction
@@ -28,6 +969,13 @@ documentation:
 
 /sendshipment/?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment
+  description: |
+        Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
+
+        A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Refer to the documentation for [valid values](http://posap741/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
+
+        The structure and most of the content will be validated.
+
   uriParameters:
     createShipmentId:
       displayName: If "true" the API will assign a shipment ID for you and return it in the response.
