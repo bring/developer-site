@@ -33,6 +33,31 @@ documentation:
 
       When contacting Bring support include a description of how you are using the Pickup Point API, also an estimate of current request volumes.
 
+      #### Distinct PickupPointType
+
+      Norway :
+        - Type 4  : Post i Butikk
+        - Type 19 : Posten pakkeutlevering
+        - Type 21 : Postkontor
+        - Type 27 : Pakkeautomat
+        - Type 32 : Postpunkt, egendrevet
+        - Type 33 : Postpunkt
+
+
+      Sweden :
+        - Type 28 : Manned
+        - Type 29 : Locker
+
+      Denmark :
+        - Type 85 : Manned
+        - Type 85 : Locker
+
+      Finland :
+        - Type SmartPOST  : Finland Smart Post Pickup
+        - Type Posti      : Finland Posti Pickup Point
+        - Type Noutopiste : Finland Pickup Point
+
+
 /{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
   displayName: Pickup points for postal code
   uriParameters:
