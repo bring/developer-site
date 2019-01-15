@@ -42,7 +42,6 @@
             "product": {
                 "id": "PICKUP_PARCEL",
                 "customerNumber": "PARCELS_DK-10005540322",
-                "services": null,
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },

@@ -39,21 +39,11 @@
             "product": {
                 "id": "OIL_EXPRESS",
                 "customerNumber": "SYSPED_NORWAY-17931",
-                "services": {
-                    "recipientNotification": null,
-                    "quickPackEnvelope": null,
-                    "cashOnDelivery": null,
-                    "deliveryOption": null,
-                    "flexDelivery": null,
-                    "deliveryIndoors": null,
-                    "phoneNotification": null,
-                    "nonFreeze": null,
-                    "dangerousGoods": null,
-                    "express": "TRUE",
-                    "eveDelivery": null,
-                    "advisering": null,
-                    "simpleDelivery": null
-                },
+                "additionalServices": [
+                  {
+                    "id": "OX_EXPRESS"
+                  }
+                ],
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },

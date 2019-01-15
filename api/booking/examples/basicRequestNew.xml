@@ -38,6 +38,18 @@
       <product>
         <id>SERVICEPAKKE</id>
         <customerNumber>*************</customerNumber>
+        <additionalServices>
+          <additionalService>
+            <id>2084</id>
+            <email>sender@sender.com</email>
+            <mobile>12345</mobile>
+          </additionalService>
+          <additionalService>
+            <id>1245</id>
+            <mobile>777777</mobile>
+            <unNumber>ABC</unNumber>
+          </additionalService>
+        </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">

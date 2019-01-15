@@ -42,7 +42,6 @@
             "product": {
                 "id": "PICKUP_PARCEL_BULK",
                 "customerNumber": "PARCELS_SWEDEN-123456",
-                "services": null,
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "consignments": [
     {
-      "shippingDateTime": 1479547018000,
+      "shippingDateTime": 1447751168645,
       "parties": {
         "sender": {
           "name": "Ola Nordmann",
@@ -37,11 +37,11 @@
         "pickupPoint": null
       },
       "product": {
-        "id": "BPAKKE_DOR-DOR",
-        "customerNumber": "**********",
+        "id": "SERVICEPAKKE",
+        "customerNumber": "PARCELS_NORWAY-10005540322",
         "additionalServices": [
           {
-            "id": "0041"
+            "id": "1000"
           }
         ],
         "customsDeclaration": null,

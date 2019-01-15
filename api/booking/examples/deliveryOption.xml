@@ -77,19 +77,20 @@
                     </contact>
                 </recipient>
             </parties>
-            <product>
-                <id>
-                    BPAKKE_DOR-DOR
-                </id>
-                <customerNumber>
-                    ***************
-                </customerNumber>
-                <services>
-                    <deliveryOption>
-                        TWO_DELIVERIES_THEN_PIB
-                    </deliveryOption>
-                </services>
-            </product>
+          <product>
+            <id>
+              BPAKKE_DOR-DOR
+            </id>
+            <customerNumber>
+                ***************
+            </customerNumber>
+            <additionalServices>
+              <additionalService>
+                <id></id>
+                <message>TWO_DELIVERIES_THEN_PIB</message>
+              </additionalService>
+            </additionalServices>
+          </product>
         </consignment>
     </consignments>
 </bookingRequest>

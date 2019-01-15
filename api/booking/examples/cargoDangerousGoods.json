@@ -38,8 +38,9 @@
         "product": {
           "id": "CARGO_GROUPAGE",
           "customerNumber": "***********",
-          "services": {
-            "dangerousGoods": {
+          "additionalServices": [
+            {
+              "id": "1245",
               "containerId": "1236",
               "weightInGrams": "500000",
               "unNumber": "1560",
@@ -48,7 +49,7 @@
               "dangerClass": "1",
               "safetyMarkCode": "6.1"
             }
-          }
+          ]
         },
         "packages": {
           "package": {

@@ -40,8 +40,16 @@
       "product": {
         "id": "SERVICEPAKKE",
         "customerNumber": "***********",
-        "services": null,
-        "customsDeclaration": null
+        "customsDeclaration": null,
+        "additionalServices": [
+          {
+            "id": "1245",
+            "unNumber": "ABC"
+          },
+          {
+            "id": "1000"
+          }
+        ]
       },
       "purchaseOrder": null,
       "correlationId": "INTERNAL-123456",

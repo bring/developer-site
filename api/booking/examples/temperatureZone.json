@@ -39,9 +39,11 @@
       "product": {
         "id": "FRIGO",
         "customerNumber": "FRIGO-123456",
-        "services": {
-          "temperatureZone": "COOL"
-        },
+        "additionalServices": [
+          {
+            "id": "2402"
+          }
+        ],
         "customsDeclaration": null
       },
       "purchaseOrder": null,

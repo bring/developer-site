@@ -5,7 +5,7 @@
     <consignments>
         <consignment correlationId="INTERNAL-123456">
             <shippingDateTime>
-                2015-11-17T10:06:08.571+01:00
+                2015-11-17T10:06:08.541+01:00
             </shippingDateTime>
             <parties>
                 <sender>
@@ -80,20 +80,19 @@
                     </contact>
                 </recipient>
             </parties>
-          <product>
-            <id>
-              BUSINESS_PARCEL
-            </id>
-            <customerNumber>
-              ************
-            </customerNumber>
-            <additionalServices>
-              <additionalService>
-                <id>FLEX_DELIVERY</id>
-                <message>Legg pakken i garasjen.</message>
-              </additionalService>
-            </additionalServices>
-          </product>
+            <product>
+                <id>
+                    SERVICEPAKKE
+                </id>
+                <customerNumber>
+                    PARCELS_NORWAY-10005540322
+                </customerNumber>
+               <additionalServices>
+                 <additionalService>
+                   <id>1000</id>
+                 </additionalService>
+               </additionalServices>
+            </product>
             <packages>
                 <package correlationId="PACKAGE-123">
                     <weightInKg>

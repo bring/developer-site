@@ -37,9 +37,11 @@
       <product>
         <id>BPAKKE_DOR-DOR</id>
         <customerNumber>**********</customerNumber>
-        <services>
-          <simpleDelivery>true</simpleDelivery>
-        </services>
+        <additionalServices>
+          <additionalService>
+            <id>0041</id>
+          </additionalService>
+        </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">

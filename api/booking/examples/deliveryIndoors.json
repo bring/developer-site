@@ -39,22 +39,12 @@
             "product": {
                 "id": "BUSINESS_PARCEL",
                 "customerNumber": "**********",
-                "services": {
-                    "recipientNotification": null,
-                    "quickPackEnvelope": null,
-                    "cashOnDelivery": null,
-                    "deliveryOption": null,
-                    "deliveryIndoors": {
-                        "message": "Legg pakken i garasjen."
-                    },
-                    "nonFreeze": null,
-                    "flexDelivery": null,
-                    "dangerousGoods": null,
-                    "express": null,
-                    "eveDelivery": null,
-                    "advisering": null,
-                    "simpleDelivery": null
-                },
+                "additionalServices": [
+                  {
+                    "id": "DELIVERY_INDOOR",
+                    "message" : "Legg pakken i garasje"
+                  }
+                ],
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },

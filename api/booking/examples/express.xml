@@ -78,17 +78,17 @@
                 </recipient>
             </parties>
             <product>
-                <id>
-                    OIL_EXPRESS
-                </id>
-                <customerNumber>
-                    SYSPED_NORWAY-17931
-                </customerNumber>
-                <services>
-                    <express>
-                        TRUE
-                    </express>
-                </services>
+              <id>
+                OIL_EXPRESS
+              </id>
+              <customerNumber>
+                SYSPED_NORWAY-17931
+              </customerNumber>
+              <additionalServices>
+                <additionalService>
+                  <id>OX_EXPRESS</id>
+                </additionalService>
+              </additionalServices>
             </product>
             <packages>
                 <package correlationId="PACKAGE-123">

@@ -85,13 +85,14 @@
           BUSINESS_PARCEL
         </id>
         <customerNumber>**************</customerNumber>
-        <services>
-          <deliveryIndoors>
-            <message>
-              Legg pakken i garasjen.
-            </message>
-          </deliveryIndoors>
-        </services>
+        <additionalServices>
+          <additionalService>
+            <id>DELIVERY_INDOOR</id>
+            <message>Legg pakken i garasjen.</message>
+            <email>sender@sender.com</email>
+            <mobile>777777</mobile>
+          </additionalService>
+        </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">
