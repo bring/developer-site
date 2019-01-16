@@ -41,7 +41,7 @@
         "customerNumber": "PARCELS_NORWAY-10005540322",
         "additionalServices": [
           {
-            "id": "1000"
+            "id": "POSTOPPKRAV"
           }
         ],
         "customsDeclaration": null,

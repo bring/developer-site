@@ -41,7 +41,7 @@
         "customerNumber": "**********",
         "additionalServices": [
           {
-            "id": "0041"
+            "id": "SIMPLE_DELIVERY"
           }
         ],
         "customsDeclaration": null,

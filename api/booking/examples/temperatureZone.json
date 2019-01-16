@@ -41,7 +41,7 @@
         "customerNumber": "FRIGO-123456",
         "additionalServices": [
           {
-            "id": "2402"
+            "id": "FRIGO_COOL"
           }
         ],
         "customsDeclaration": null

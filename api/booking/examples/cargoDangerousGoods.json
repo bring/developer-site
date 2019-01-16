@@ -40,7 +40,7 @@
           "customerNumber": "***********",
           "additionalServices": [
             {
-              "id": "1245",
+              "id": "DANGEROUS_GOODS",
               "containerId": "1236",
               "weightInGrams": "500000",
               "unNumber": "1560",

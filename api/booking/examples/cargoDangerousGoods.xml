@@ -43,7 +43,7 @@
                 <customerNumber>********</customerNumber>
                 <additionalServices>
                   <additionalService>
-                  <id>1245</id>
+                  <id>DANGEROUS_GOODS</id>
                   <weightInGrams>500000</weightInGrams>
                   <containerId>1236</containerId>
                   <unNumber>1560</unNumber>

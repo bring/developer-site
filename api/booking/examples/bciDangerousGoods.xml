@@ -80,7 +80,7 @@
                 <incotermRule>DDP</incotermRule>
                 <additionalServices>
                   <additionalService>
-                    <id>1245</id>
+                    <id>DANGEROUS_GOODS</id>
                     <containerId>1236</containerId>
                     <weightInGrams>500000</weightInGrams>
                     <unNumber>1560</unNumber>

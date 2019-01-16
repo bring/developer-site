@@ -89,7 +89,7 @@
                 </customerNumber>
                <additionalServices>
                  <additionalService>
-                   <id>1000</id>
+                   <id>POSTOPPKRAV</id>
                  </additionalService>
                </additionalServices>
             </product>

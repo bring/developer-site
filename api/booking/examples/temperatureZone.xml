@@ -40,7 +40,7 @@
         <customerNumber>FRIGO-123456</customerNumber>
         <additionalServices>
           <additionalService>
-            <id>2402</id>
+            <id>FRIGO_COOL</id>
           </additionalService>
         </additionalServices>
       </product>

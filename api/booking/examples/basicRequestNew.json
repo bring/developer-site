@@ -43,11 +43,11 @@
         "customsDeclaration": null,
         "additionalServices": [
           {
-            "id": "1245",
+            "id": "DANGEROUS_GOODS",
             "unNumber": "ABC"
           },
           {
-            "id": "1000"
+            "id": "EVARSLING"
           }
         ]
       },

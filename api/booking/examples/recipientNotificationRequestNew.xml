@@ -40,7 +40,7 @@
             <customerNumber>PARCELS_NORWAY-10005540322</customerNumber>
             <additionalServices>
               <additionalService>
-                <id>2084</id>
+                <id>EVARSLING</id>
                 <email>sender@sender.com</email>
                 <mobile>777777</mobile>
               </additionalService>

@@ -86,7 +86,7 @@
             </customerNumber>
             <additionalServices>
               <additionalService>
-                <id></id>
+                <id>SIMPLE_DELIVERY</id>
                 <message>TWO_DELIVERIES_THEN_PIB</message>
               </additionalService>
             </additionalServices>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.bring.no/booking/"
-           xmlns="http://www.bring.no/booking/"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.bring.no/booking/" xmlns="http://www.bring.no/booking/" xmlns:tns="http://www.bring.no/booking/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
     <xs:element name="bookingRequest" type="BookingRequestType"/>
 
@@ -536,19 +534,32 @@
     <xs:simpleType name="AdditionalServiceCodeType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="1000"/>
+            <xs:enumeration value="POSTOPPKRAV"/>
             <xs:enumeration value="2084"/>
+            <xs:enumeration value="EVARSLING"/>
             <xs:enumeration value="0041"/>
+            <xs:enumeration value="SIMPLE_DELIVERY"/>
             <xs:enumeration value="0068"/>
+            <xs:enumeration value="INSURANCE"/>
             <xs:enumeration value="1062"/>
+            <xs:enumeration value="LORDAGSUTKJORING"/>
             <xs:enumeration value="0015"/>
+            <xs:enumeration value="EVE_DELIVERY"/>
             <xs:enumeration value="2086"/>
             <xs:enumeration value="2141"/>
+            <xs:enumeration value="NON_FREEZE"/>
             <xs:enumeration value="1142"/>
+            <xs:enumeration value="PHONENOTIFICATION"/>
             <xs:enumeration value="2401"/>
+            <xs:enumeration value="FRIGO_FROZEN"/>
             <xs:enumeration value="2402"/>
+            <xs:enumeration value="FRIGO_COOL"/>
             <xs:enumeration value="2404"/>
+            <xs:enumeration value="FRIGO_DRY"/>
             <xs:enumeration value="2405"/>
+            <xs:enumeration value="FRIGO_FISK"/>
             <xs:enumeration value="1245"/>
+            <xs:enumeration value="DANGEROUS_GOODS"/>
             <xs:enumeration value="OX_EXPRESS"/>
             <xs:enumeration value="ADVISERING"/>
             <xs:enumeration value="DELIVERY_INDOOR"/>
