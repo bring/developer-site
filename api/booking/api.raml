@@ -24,6 +24,10 @@ documentation:
   content: |
       <strong>We have added a new tag and by that a new way of requesting additional services. Both ways are still supported, but they can not be combined.</strong>
 
+      * All the new additional services will be added supporting only the new way.
+
+      * The old way will be decommission after some time.
+
       Where you before had to send each additional service as a tag under the services tag, the new way has a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
 
       ```
@@ -39,8 +43,12 @@ documentation:
             <unNumber>ABC</unNumber>
           </additionalService>
        </additionalServices>
+      ```
 
-       The old way of requesting additional servies:
+       <strike>The old way of requesting additional servies:</strike>
+
+
+      ```
 
         <services>
            <simpleDelivery>true</simpleDelivery>
@@ -50,7 +58,10 @@ documentation:
               </message>
            </flexDelivery>
         </services>
+
       ```
+
+
 
 - title: Authentication
   content: |
