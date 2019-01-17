@@ -38,12 +38,10 @@
             },
             "product": {
                 "id": "BPAKKE_DOR-DOR",
-                "customerNumber": "**********",
-                "additionalServices": [
-                  {
-                    "id": "SIMPLE_DELIVERY"
-                  }
-                ],
+                 "customerNumber": "**********",
+                "services": {
+                    "deliveryOption": "TWO_DELIVERIES_THEN_PIB",
+                },
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },

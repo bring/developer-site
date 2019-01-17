@@ -84,12 +84,11 @@
             <customerNumber>
                 ***************
             </customerNumber>
-            <additionalServices>
-              <additionalService>
-                <id>SIMPLE_DELIVERY</id>
-                <message>TWO_DELIVERIES_THEN_PIB</message>
-              </additionalService>
-            </additionalServices>
+            <services>
+              <deliveryOption>
+                TWO_DELIVERIES_THEN_PIB
+              </deliveryOption>
+            </services>
           </product>
         </consignment>
     </consignments>

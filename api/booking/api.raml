@@ -19,49 +19,6 @@ documentation:
 - title: Encoding
   content: |
     Booking endpoints will assume all requests are UTF-8 encoded
-      
-- title: A new way of requesting additional services
-  content: |
-      <strong>We have added a new tag and by that a new way of requesting additional services. Both ways are still supported, but they can not be combined.</strong>
-
-      * All the new additional services will be added supporting only the new way.
-
-      * The old way will be decommission after some time.
-
-      Where you before had to send each additional service as a tag under the services tag, the new way has a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
-
-      ```
-       <additionalServices>
-          <additionalService>
-            <id>EVARSLING</id>
-            <email>sender@sender.com</email>
-            <mobile>12345</mobile>
-          </additionalService>
-          <additionalService>
-            <id>DANGEROUS_GOODS</id>
-            <mobile>777777</mobile>
-            <unNumber>ABC</unNumber>
-          </additionalService>
-       </additionalServices>
-      ```
-
-       <strike>The old way of requesting additional servies:</strike>
-
-
-      ```
-
-        <services>
-           <simpleDelivery>true</simpleDelivery>
-           <flexDelivery>
-              <message>
-                 Legg pakken i garasjen.
-              </message>
-           </flexDelivery>
-        </services>
-
-      ```
-
-
 
 - title: Authentication
   content: |
@@ -139,22 +96,61 @@ documentation:
 
       | Product | Additional services |
       |:--------|:--------------------|
-      | SERVICEPAKKE | cashOnDelivery, recipientNotification, socialControl |
-      | BPAKKE_DOR-DOR | recipientNotification, simpleDelivery, deliveryOption |
-      | PA_DOREN | recipientNotification, simpleDelivery |
-      | EKSPRESS09 | recipientNotification, saturdayDelivery |
-      | PICKUP_PARCEL | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
-      | PICKUP_PARCEL_BULK | cashOnDelivery, flexDelivery, recipientNotification, deliveryOption |
-      | HOME_DELIVERY_PARCEL | cashOnDelivery, flexDelivery, recipientNotification |
-      | BUSINESS_PARCEL | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | BUSINESS_PARCEL_BULK | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | EXPRESS_NORDIC_0900_BULK | cashOnDelivery, flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | BUSINESS_PALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | BUSINESS_HALFPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | BUSINESS_QUARTERPALLET | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
-      | EXPRESS_NORDIC_0900 | flexDelivery, recipientNotification, phonenotification, deliveryIndoors |
+      | SERVICEPAKKE | POSTOPPKRAV, EVARSLING, socialControl |
+      | BPAKKE_DOR-DOR | EVARSLING, SIMPLE_DELIVERY, deliveryOption |
+      | PA_DOREN | EVARSLING, SIMPLE_DELIVERY |
+      | EKSPRESS09 | EVARSLING, LORDAGSUTKJORING |
+      | PICKUP_PARCEL | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, deliveryOption |
+      | PICKUP_PARCEL_BULK | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, deliveryOption |
+      | HOME_DELIVERY_PARCEL | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING |
+      | BUSINESS_PARCEL | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | BUSINESS_PARCEL_BULK | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | EXPRESS_NORDIC_0900_BULK | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | BUSINESS_PALLET | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | BUSINESS_HALFPALLET | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | BUSINESS_QUARTERPALLET | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | EXPRESS_NORDIC_0900 | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
 
       See the "More examples" section below to see examples on how to use additional services.
+
+      <strong>We have added a new tag and by that a new way of requesting additional services. Both ways are still supported, but they can not be combined.</strong>
+
+      * All the new additional services will be added supporting only the new way.
+
+      * The old way will be decommissioned after some time.
+
+      Where you before had to send each additional service as a tag under the services tag, the new way has a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
+
+      ```
+       <additionalServices>
+          <additionalService>
+            <id>EVARSLING</id>
+            <email>sender@sender.com</email>
+            <mobile>12345</mobile>
+          </additionalService>
+          <additionalService>
+            <id>DANGEROUS_GOODS</id>
+            <mobile>777777</mobile>
+            <unNumber>ABC</unNumber>
+          </additionalService>
+       </additionalServices>
+      ```
+
+       <strike>The old way of requesting additional servies:</strike>
+
+
+      ```
+
+        <services>
+           <simpleDelivery>true</simpleDelivery>
+           <flexDelivery>
+              <message>
+                 Legg pakken i garasjen.
+              </message>
+           </flexDelivery>
+        </services>
+
+      ```
 
       #### Error handling
 
