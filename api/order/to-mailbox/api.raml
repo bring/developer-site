@@ -565,6 +565,8 @@ types:
         type: string
         description: The API customer number.
       packageNumbers:
+        minItems: 1
+        maxItems: 500
         type: string[]
         description: List of Package Numbers.
   OrderWithIdAndEdiMessage:
@@ -736,6 +738,7 @@ documentation:
       | 1000 | Missing field value | `/streetAddress` |
       | 2000 | Order must contain at least one package | `/packages` |
       | 2500 | Order can maximum contain 500 packages | `/packages` |
+      | 2600 | Order can maximum contain 500 package numbers | `/packagesNumbers` |
       | 3000 | Invalid email address | `/packages/0/email` |
       | 4000 | Invalid postal code |  `/packages/1/postalCode` |
       | 5000 | User does not have access to customer number | `/customerNumber` |
