@@ -147,7 +147,7 @@ documentation:
           description: Details of recipient. Must have Name, Street, City, CountryCode.
           required: true
       Party/subClass Supplier:
-          description: Details of supplier. Must have Name, Street, City, CountryCode if used.
+          description: Required when sending purchaseorder.Details of supplier. Must have Name, Street, City, CountryCode if used.
           required: false
       Party/subClass PerformingUnit partyId:
           description: Warehouse id for order. Required if order to Warehousing system.
@@ -193,6 +193,11 @@ documentation:
           type: string
           required: false
           example: Spear parts with all parts
+      OrderItem/ArticleMonetaryAmounts :
+          description: Article unit sales price.
+          type: float
+          required: false
+          example: 230.30
       OrderItem/ArticleName:
           description: Article name.
           type: string
