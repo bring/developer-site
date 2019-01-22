@@ -41,7 +41,7 @@
             },
             "product": {
                 "id": "SERVICEPAKKE",
-                "customerNumber": "PARCELS_NORWAY-123456",
+                "customerNumber": "***********",
                 "services": null,
                 "customsDeclaration": null,
                 "messageForRecipient": null

@@ -70,7 +70,7 @@
             </parties>
             <product>
                 <id>CARGO_INTERNATIONAL</id>
-                <customerNumber>CARGO-803739</customerNumber>
+                <customerNumber>*********</customerNumber>
                 <incotermRule>DDP</incotermRule>
             </product>
             <packages>
