@@ -3,7 +3,7 @@
   <customers>
     <customer>
       <name>Testkunde (00012341234)</name>
-      <customerNumber>PARCELS_NORWAY-00012341234</customerNumber>
+      <customerNumber>**************</customerNumber>
       <countryCode>NO</countryCode>
       <products>
         <product>SERVICEPAKKE</product>
@@ -29,7 +29,7 @@
     </customer>
     <customer>
       <name>Testkund (TEST-112)</name>
-      <customerNumber>EXPRESS_SWEDEN-f47ac10b-58cc-4372-a567-0e02b2c3d479</customerNumber>
+      <customerNumber>***************</customerNumber>
       <countryCode>SE</countryCode>
       <products>
         <product>COURIER_VIP</product>

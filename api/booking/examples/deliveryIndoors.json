@@ -38,7 +38,7 @@
             },
             "product": {
                 "id": "BUSINESS_PARCEL",
-                "customerNumber": "PARCELS_NORWAY-00040067266",
+                "customerNumber": "**********",
                 "services": {
                     "recipientNotification": null,
                     "quickPackEnvelope": null,
