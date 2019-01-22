@@ -38,10 +38,12 @@
       },
       "product": {
         "id": "SERVICEPAKKE",
-        "customerNumber": "PARCELS_NORWAY-10005540322",
+        "customerNumber": "**************",
         "additionalServices": [
           {
-            "id": "EVARSLING"
+            "id": "EVARSLING",
+            "email": "recipient@recipient.com",
+            "mobile": "97777777"
           }
         ],
         "customsDeclaration": null,

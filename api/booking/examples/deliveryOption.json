@@ -37,13 +37,13 @@
                 "pickupPoint": null
             },
             "product": {
-                "id": "BPAKKE_DOR-DOR",
+                 "id": "BPAKKE_DOR-DOR",
                  "customerNumber": "**********",
-                "services": {
+                 "services": {
                     "deliveryOption": "TWO_DELIVERIES_THEN_PIB",
-                },
-                "customsDeclaration": null,
-                "messageForRecipient": null
+                 },
+                 "customsDeclaration": null,
+                 "messageForRecipient": null
             },
             "purchaseOrder": null,
             "correlationId": "INTERNAL-123456"

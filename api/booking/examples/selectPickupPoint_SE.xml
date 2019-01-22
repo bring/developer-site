@@ -93,7 +93,7 @@
                     PICKUP_PARCEL
                 </id>
                 <customerNumber>
-                    PARCELS_DK-10005540322
+                   *******************
                 </customerNumber>
             </product>
             <packages>

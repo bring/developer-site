@@ -93,7 +93,7 @@
                     PICKUP_PARCEL_BULK
                 </id>
                 <customerNumber>
-                    PARCELS_SWEDEN-123456
+                    **************
                 </customerNumber>
             </product>
             <packages>

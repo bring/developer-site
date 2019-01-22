@@ -85,11 +85,23 @@
                     SERVICEPAKKE
                 </id>
                 <customerNumber>
-                    PARCELS_NORWAY-10005540322
+                   *************
                 </customerNumber>
                <additionalServices>
                  <additionalService>
                    <id>POSTOPPKRAV</id>
+                   <accountNumber>
+                     12345678903
+                   </accountNumber>
+                   <amount>
+                     1000.0
+                   </amount>
+                   <currencyCode>
+                     NOK
+                   </currencyCode>
+                   <message>
+                       A valid customer identification number
+                   </message>
                  </additionalService>
                </additionalServices>
             </product>
