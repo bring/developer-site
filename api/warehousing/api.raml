@@ -67,15 +67,15 @@ documentation:
           required: true
           example: Order
       MessageSender partyId:
-          description: Customer Number which Bring has provided. It cannot be demo customer number.
+          description: Customer Number which Bring has provided. It cannot be demo customer number. An 6 digits number.
           type: string
           required: true
-          example: 10000000000
+          example: 999999
       MessageRecipient partyId:
-          description: Receiving Bring system. Constant value.
+          description: Receiving Bring system. Constant value. An GLN number for Warehousing. Always use 7080003388100.
           type: string
           required: true
-          example: NO98466118506
+          example: 7080003388100
       MessageDate:
           description: The date on which message is sent.
           type: dateTime
@@ -96,10 +96,10 @@ documentation:
           type: sequence
           required: false
       Order/Reference referenceType:
-          description: Type of reference coded. https://www.stylusstudio.com/edifact/D04A/1153.htm
+          description: Type of reference coded. https://www.stylusstudio.com/edifact/D04A/1153.htm <br>ACD = Additional reference number<br>CU = Sellers reference<br>ON = Buyers reference
           type: String
           required: true
-          example: CMR
+          example: CU
       Order/Reference ReferenceNo:
           description: Reference.
           type: String
@@ -150,7 +150,7 @@ documentation:
           description: Required when sending purchaseorder.Details of supplier. Must have Name, Street, City, CountryCode if used.
           required: false
       Party/subClass PerformingUnit partyId:
-          description: Warehouse id for order. Required if order to Warehousing system.
+          description: Warehouse id for order. Required if order to Warehousing system.<br><br>4033 = Stavanger<br>5500 = Haugesund<br>BERGER = Berger/Skedsmokorset<br>BS02 = Kongshavn<br>BS07 = Trollåsen<br>BS17 = Bergen<br>BS26 = Trondheim<br>BS34 = Tromsø<br>NCD = Lierstrand<br>AES = Ålesund
           type: string
           required: true
           example: BERGER
@@ -159,15 +159,15 @@ documentation:
           type: sequence
           required: true
       OrderItem/articleLineId:
-          description: Line id for this order line.
+          description: Unique line id for this order line. Counter that identify orderline.
           type: integer
           required: true
-          example: 10
+          example: (10) First line<br>(20) Second line
       OrderItem/ArticleId codeListAgencyIdentifier:
-          description: Sets type of ArticleId. <br>"CustomerItemNo"<br>"VendorItemNo"<br>"EAN"<br>If not used ArticleId default is CustomerItemNo.
+          description: Sets type of ArticleId. <br>"CustomerItemNo" = Your article number/id<br>"VendorItemNo" = Supplier article number/id<br>"EAN" = EAN article id<br>If not used ArticleId default is CustomerItemNo.
           type: string
           required: true
-          example: VendorItemNo
+          example: CustomerItemNo
       OrderItem/ArticleId:
           description: Article number or id.
           type: sequence
