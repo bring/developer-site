@@ -87,11 +87,11 @@
                 <customerNumber>
                     ***************
                 </customerNumber>
-                <services>
-                    <quickPackEnvelope>
-                        TRUE
-                    </quickPackEnvelope>
-                </services>
+                <additionalServices>
+                  <additionalService>
+                    <id>ENVELOPE</id>
+                  </additionalService>
+                </additionalServices>
             </product>
             <packages>
                 <package>

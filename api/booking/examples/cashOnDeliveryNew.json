@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "consignments": [
     {
-      "shippingDateTime": 1479547018000,
+      "shippingDateTime": 1447751168645,
       "parties": {
         "sender": {
           "name": "Ola Nordmann",
@@ -37,11 +37,19 @@
         "pickupPoint": null
       },
       "product": {
-        "id": "BPAKKE_DOR-DOR",
-        "customerNumber": "**********",
+        "id": "SERVICEPAKKE",
+        "customerNumber": "*************",
         "additionalServices": [
           {
-            "id": "SIMPLE_DELIVERY"
+            "id": "POSTOPPKRAV",
+            "accountNumber": "12345678903",
+            "accountType": null,
+            "amount": 1000,
+            "currencyCode": "NOK",
+            "message": {
+              "value": "A valid customer identification number",
+              "type": "kid"
+            }
           }
         ],
         "customsDeclaration": null,

@@ -37,24 +37,13 @@
                 "pickupPoint": null
             },
             "product": {
-                "id": "BPAKKE_DOR-DOR",
-                "customerNumber": "**********",
-                "services": {
-                    "recipientNotification": null,
-                    "quickPackEnvelope": null,
-                    "cashOnDelivery": null,
+                 "id": "BPAKKE_DOR-DOR",
+                 "customerNumber": "**********",
+                 "services": {
                     "deliveryOption": "TWO_DELIVERIES_THEN_PIB",
-                    "flexDelivery": null,
-                    "deliveryIndoors": null,
-                    "nonFreeze": null,
-                    "dangerousGoods": null,
-                    "express": null,
-                    "eveDelivery": null,
-                    "advisering": null,
-                    "simpleDelivery": null
-                },
-                "customsDeclaration": null,
-                "messageForRecipient": null
+                 },
+                 "customsDeclaration": null,
+                 "messageForRecipient": null
             },
             "purchaseOrder": null,
             "correlationId": "INTERNAL-123456"

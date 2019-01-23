@@ -41,21 +41,20 @@
             <product>
                 <id>CARGO_GROUPAGE</id>
                 <customerNumber>********</customerNumber>
-                <services>
-                    <dangerousGoods>
-                        <containerId>1236</containerId>
-                        <weightInGrams>500000</weightInGrams>
-                        <unNumber>1560</unNumber>
-                        <commodity>ARSENTRIKLORID</commodity>
-                        <packingGroup>I</packingGroup>
-                        <dangerClass>1</dangerClass>
-                        <tunnelRestrictionCode></tunnelRestrictionCode>
-                        <safetyMarkCode>6.1</safetyMarkCode>
-                        <factor></factor>
-                    </dangerousGoods>
-                </services>
+                <additionalServices>
+                  <additionalService>
+                  <id>DANGEROUS_GOODS</id>
+                  <weightInGrams>500000</weightInGrams>
+                  <containerId>1236</containerId>
+                  <unNumber>1560</unNumber>
+                  <commodity>ARSENTRIKLORID</commodity>
+                  <packingGroup>I</packingGroup>
+                  <dangerClass>1</dangerClass>
+                  <tunnelRestrictionCode></tunnelRestrictionCode>
+                  <safetyMarkCode>6.1</safetyMarkCode>
+                  </additionalService>
+                </additionalServices>
             </product>
-
             <packages>
                 <package correlationId="123">
                     <weightInKg>50</weightInKg>

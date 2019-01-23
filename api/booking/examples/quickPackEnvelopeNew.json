@@ -38,21 +38,12 @@
             },
             "product": {
                 "id": "EXPRESS_INTERNATIONAL",
-                "customerNumber": "*************",
-                "services": {
-                    "recipientNotification": null,
-                    "quickPackEnvelope": "TRUE",
-                    "cashOnDelivery": null,
-                    "deliveryOption": null,
-                    "flexDelivery": null,
-                    "deliveryIndoors": null,
-                    "nonFreeze": null,
-                    "dangerousGoods": null,
-                    "express": null,
-                    "eveDelivery": null,
-                    "advisering": null,
-                    "simpleDelivery": null
-                },
+                 "customerNumber": "*************",
+                "additionalServices": [
+                  {
+                    "id": "ENVELOPE"
+                  }
+                ],
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },
