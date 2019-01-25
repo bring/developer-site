@@ -77,19 +77,19 @@
                     </contact>
                 </recipient>
             </parties>
-            <product>
-                <id>
-                    BPAKKE_DOR-DOR
-                </id>
-                <customerNumber>
-                    PARCELS_NORWAY-10005540322
-                </customerNumber>
-                <services>
-                    <deliveryOption>
-                        TWO_DELIVERIES_THEN_PIB
-                    </deliveryOption>
-                </services>
-            </product>
+          <product>
+            <id>
+              BPAKKE_DOR-DOR
+            </id>
+            <customerNumber>
+                ***************
+            </customerNumber>
+            <services>
+              <deliveryOption>
+                TWO_DELIVERIES_THEN_PIB
+              </deliveryOption>
+            </services>
+          </product>
         </consignment>
     </consignments>
 </bookingRequest>

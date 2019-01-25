@@ -1,9 +1,8 @@
 {
-  "testIndicator": true,
   "schemaVersion": 1,
   "consignments": [
     {
-      "shippingDateTime": 1449216420000,
+      "shippingDateTime": 1447424420243,
       "parties": {
         "sender": {
           "name": "Ola Nordmann",
@@ -11,9 +10,9 @@
           "addressLine2": null,
           "postalCode": "0263",
           "city": "OSLO",
-          "countryCode": "no",
+          "countryCode": "NO",
           "reference": "1234",
-          "additionalAddressInfo": "Hentes på baksiden etter klokken to",
+          "additionalAddressInfo": "Hentes p\u00e5 baksiden etter klokken to",
           "contact": {
             "name": "Trond Nordmann",
             "email": "trond@nordmanntest.no",
@@ -23,25 +22,32 @@
         "recipient": {
           "name": "Tore Mottaker",
           "addressLine": "Mottakerveien 14",
-          "addressLine2": "c/o Tina Mottaker",
+          "addressLine2": "c\/o Tina Mottaker",
           "postalCode": "0659",
           "city": "OSLO",
-          "countryCode": "no",
+          "countryCode": "NO",
           "reference": "43242",
           "additionalAddressInfo": "Bruk ringeklokken",
           "contact": {
             "name": "Tore mottaker",
             "email": "tore@mottakertest.no",
-            "phoneNumber": "88888888"
+            "phoneNumber": "+46700000000"
           }
         },
         "pickupPoint": null
       },
       "product": {
         "id": "SERVICEPAKKE",
-        "customerNumber": "PARCELS_NORWAY-10005540322",
-        "services": null,
-        "customsDeclaration": null
+        "customerNumber": "**************",
+        "additionalServices": [
+          {
+            "id": "EVARSLING",
+            "email": "recipient@recipient.com",
+            "mobile": "97777777"
+          }
+        ],
+        "customsDeclaration": null,
+        "messageForRecipient": null
       },
       "purchaseOrder": null,
       "correlationId": "INTERNAL-123456",
@@ -61,5 +67,6 @@
         }
       ]
     }
-  ]
+  ],
+  "testIndicator": true
 }

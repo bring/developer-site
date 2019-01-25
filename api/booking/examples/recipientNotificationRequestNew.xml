@@ -38,12 +38,13 @@
         <product>
             <id>SERVICEPAKKE</id>
             <customerNumber>**************</customerNumber>
-            <services>
-                <recipientNotification>
-                    <email>recipient@recipient.com</email>
-                    <mobile>97777777</mobile>
-                </recipientNotification>
-            </services>
+            <additionalServices>
+              <additionalService>
+                <id>EVARSLING</id>
+                <email>sender@sender.com</email>
+                <mobile>777777</mobile>
+              </additionalService>
+            </additionalServices>
         </product>
         <packages>
             <package correlationId="PACKAGE-123">

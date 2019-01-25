@@ -76,25 +76,22 @@
 
             <product>
                 <id>CARGO_INTERNATIONAL</id>
-                <customerNumber>CARGO-803739</customerNumber>
+                <customerNumber>************</customerNumber>
                 <incotermRule>DDP</incotermRule>
-                <services>
-                    <dangerousGoods>
-                        <containerId>1236</containerId>
-                        <weightInGrams>500000</weightInGrams>
-                        <unNumber>1560</unNumber>
-                        <commodity>ARSENTRIKLORID</commodity>
-                        <packingGroup>I</packingGroup>
-                        <dangerClass>1</dangerClass>
-                        <tunnelRestrictionCode></tunnelRestrictionCode>
-                        <safetyMarkCode>6.1</safetyMarkCode>
-                        <factor></factor>
-                    </dangerousGoods>
-                </services>
+                <additionalServices>
+                  <additionalService>
+                    <id>DANGEROUS_GOODS</id>
+                    <containerId>1236</containerId>
+                    <weightInGrams>500000</weightInGrams>
+                    <unNumber>1560</unNumber>
+                    <commodity>ARSENTRIKLORID</commodity>
+                    <packingGroup>I</packingGroup>
+                    <dangerClass>1</dangerClass>
+                    <tunnelRestrictionCode></tunnelRestrictionCode>
+                    <safetyMarkCode>6.1</safetyMarkCode>
+                  </additionalService>
+                </additionalServices>
             </product>
-
-
-
             <packages>
                 <package correlationId="PACKAGE-123">
                     <weightInKg>1.1</weightInKg>

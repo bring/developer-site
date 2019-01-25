@@ -38,11 +38,12 @@
       },
       "product": {
         "id": "BPAKKE_DOR-DOR",
-        "customerNumber": "PARCELS_NORWAY-01002197015",
-        "services": {
-
-          "simpleDelivery": true
-        },
+        "customerNumber": "**********",
+        "additionalServices": [
+          {
+            "id": "SIMPLE_DELIVERY"
+          }
+        ],
         "customsDeclaration": null,
         "messageForRecipient": null
       },

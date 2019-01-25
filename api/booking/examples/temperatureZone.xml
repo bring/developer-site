@@ -38,9 +38,11 @@
       <product>
         <id>FRIGO</id>
         <customerNumber>FRIGO-123456</customerNumber>
-        <services>
-          <temperatureZone>COOL</temperatureZone>
-        </services>
+        <additionalServices>
+          <additionalService>
+            <id>FRIGO_COOL</id>
+          </additionalService>
+        </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">

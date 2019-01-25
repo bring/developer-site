@@ -1,8 +1,8 @@
 {
   "customers": [
     {
-      "name": "Testkunde (00012341234)",
-      "customerNumber": "PARCELS_NORWAY-00012341234",
+      "name": "Testkunde (*******)",
+      "customerNumber": "***********",
       "countryCode": "NO",
       "products": [
         "SERVICEPAKKE",
@@ -28,7 +28,7 @@
     },
     {
       "name": "Testkund (TEST-112)",
-      "customerNumber": "EXPRESS_SWEDEN-f47ac10b-58cc-4372-a567-0e02b2c3d479",
+      "customerNumber": "***************",
       "countryCode": "SE",
       "products": [
         "COURIER_VIP",

@@ -5,7 +5,7 @@
     <consignments>
         <consignment correlationId="INTERNAL-123456">
             <shippingDateTime>
-                2015-11-27T14:56:43.405+01:00
+                2015-11-17T10:06:08.541+01:00
             </shippingDateTime>
             <parties>
                 <sender>
@@ -16,13 +16,13 @@
                         Testsvingen 12
                     </addressLine>
                     <postalCode>
-                        12000
+                        0263
                     </postalCode>
                     <city>
-                        Stockholm
+                        OSLO
                     </city>
                     <countryCode>
-                        SE
+                        NO
                     </countryCode>
                     <reference>
                         1234
@@ -53,13 +53,13 @@
                         c/o Tina Mottaker
                     </addressLine2>
                     <postalCode>
-                        21200
+                        0659
                     </postalCode>
                     <city>
-                        Raisio
+                        OSLO
                     </city>
                     <countryCode>
-                        FI
+                        NO
                     </countryCode>
                     <reference>
                         43242
@@ -79,22 +79,31 @@
                         </phoneNumber>
                     </contact>
                 </recipient>
-                <pickupPoint>
-                    <id>
-                        736431
-                    </id>
-                    <countryCode>
-                        FI
-                    </countryCode>
-                </pickupPoint>
             </parties>
             <product>
                 <id>
-                    PICKUP_PARCEL_BULK
+                    SERVICEPAKKE
                 </id>
                 <customerNumber>
-                    **************
+                   *************
                 </customerNumber>
+               <additionalServices>
+                 <additionalService>
+                   <id>POSTOPPKRAV</id>
+                   <accountNumber>
+                     12345678903
+                   </accountNumber>
+                   <amount>
+                     1000.0
+                   </amount>
+                   <currencyCode>
+                     NOK
+                   </currencyCode>
+                   <message>
+                       A valid customer identification number
+                   </message>
+                 </additionalService>
+               </additionalServices>
             </product>
             <packages>
                 <package correlationId="PACKAGE-123">

@@ -1,8 +1,9 @@
 {
+  "testIndicator": true,
   "schemaVersion": 1,
   "consignments": [
     {
-      "shippingDateTime": 1447424420243,
+      "shippingDateTime": 1449216420000,
       "parties": {
         "sender": {
           "name": "Ola Nordmann",
@@ -10,9 +11,9 @@
           "addressLine2": null,
           "postalCode": "0263",
           "city": "OSLO",
-          "countryCode": "NO",
+          "countryCode": "no",
           "reference": "1234",
-          "additionalAddressInfo": "Hentes p\u00e5 baksiden etter klokken to",
+          "additionalAddressInfo": "Hentes på baksiden etter klokken to",
           "contact": {
             "name": "Trond Nordmann",
             "email": "trond@nordmanntest.no",
@@ -22,16 +23,16 @@
         "recipient": {
           "name": "Tore Mottaker",
           "addressLine": "Mottakerveien 14",
-          "addressLine2": "c\/o Tina Mottaker",
+          "addressLine2": "c/o Tina Mottaker",
           "postalCode": "0659",
           "city": "OSLO",
-          "countryCode": "NO",
+          "countryCode": "no",
           "reference": "43242",
           "additionalAddressInfo": "Bruk ringeklokken",
           "contact": {
             "name": "Tore mottaker",
             "email": "tore@mottakertest.no",
-            "phoneNumber": "+46700000000"
+            "phoneNumber": "88888888"
           }
         },
         "pickupPoint": null
@@ -39,25 +40,18 @@
       "product": {
         "id": "SERVICEPAKKE",
         "customerNumber": "***********",
-        "services": {
-          "recipientNotification": {
+        "customsDeclaration": null,
+        "additionalServices": [
+          {
+            "id": "DANGEROUS_GOODS",
+            "unNumber": "ABC"
+          },
+          {
+            "id": "EVARSLING",
             "email": "recipient@recipient.com",
             "mobile": "97777777"
-          },
-          "quickPackEnvelope": null,
-          "cashOnDelivery": null,
-          "deliveryOption": null,
-          "flexDelivery": null,
-          "deliveryIndoors": null,
-          "nonFreeze": null,
-          "dangerousGoods": null,
-          "express": null,
-          "eveDelivery": null,
-          "advisering": null,
-          "simpleDelivery": null
-        },
-        "customsDeclaration": null,
-        "messageForRecipient": null
+          }
+        ]
       },
       "purchaseOrder": null,
       "correlationId": "INTERNAL-123456",
@@ -77,6 +71,5 @@
         }
       ]
     }
-  ],
-  "testIndicator": true
+  ]
 }

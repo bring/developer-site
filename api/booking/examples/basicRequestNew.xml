@@ -37,7 +37,19 @@
       </parties>
       <product>
         <id>SERVICEPAKKE</id>
-        <customerNumber>PARCELS_NORWAY-10005540322</customerNumber>
+        <customerNumber>*************</customerNumber>
+        <additionalServices>
+          <additionalService>
+            <id>EVARSLING</id>
+            <email>sender@sender.com</email>
+            <mobile>12345</mobile>
+          </additionalService>
+          <additionalService>
+            <id>DANGEROUS_GOODS</id>
+            <mobile>777777</mobile>
+            <unNumber>ABC</unNumber>
+          </additionalService>
+        </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">

@@ -84,14 +84,15 @@
         <id>
           BUSINESS_PARCEL
         </id>
-        <customerNumber>PARCELS_NORWAY-00096060397</customerNumber>
-        <services>
-          <deliveryIndoors>
-            <message>
-              Legg pakken i garasjen.
-            </message>
-          </deliveryIndoors>
-        </services>
+        <customerNumber>**************</customerNumber>
+        <additionalServices>
+          <additionalService>
+            <id>DELIVERY_INDOOR</id>
+            <message>Legg pakken i garasjen.</message>
+            <email>sender@sender.com</email>
+            <mobile>777777</mobile>
+          </additionalService>
+        </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">

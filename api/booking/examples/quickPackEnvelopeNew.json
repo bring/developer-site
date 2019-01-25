@@ -38,21 +38,12 @@
             },
             "product": {
                 "id": "EXPRESS_INTERNATIONAL",
-                "customerNumber": "EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66",
-                "services": {
-                    "recipientNotification": null,
-                    "quickPackEnvelope": "TRUE",
-                    "cashOnDelivery": null,
-                    "deliveryOption": null,
-                    "flexDelivery": null,
-                    "deliveryIndoors": null,
-                    "nonFreeze": null,
-                    "dangerousGoods": null,
-                    "express": null,
-                    "eveDelivery": null,
-                    "advisering": null,
-                    "simpleDelivery": null
-                },
+                 "customerNumber": "*************",
+                "additionalServices": [
+                  {
+                    "id": "ENVELOPE"
+                  }
+                ],
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },

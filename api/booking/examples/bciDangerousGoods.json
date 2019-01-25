@@ -73,10 +73,11 @@
         },
         "product": {
           "id": "CARGO_INTERNATIONAL",
-          "customerNumber": "CARGO-803739",
+          "customerNumber": "*********",
           "incotermRule": "DDP",
-          "services": {
-            "dangerousGoods": {
+          "additionalServices": [
+            {
+              "id": "DANGEROUS_GOODS",
               "containerId": "1236",
               "weightInGrams": "500000",
               "unNumber": "1560",
@@ -85,7 +86,7 @@
               "dangerClass": "1",
               "safetyMarkCode": "6.1"
             }
-          }
+          ]
         },
         "packages": {
           "package": {

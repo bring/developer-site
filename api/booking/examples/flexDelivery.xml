@@ -80,21 +80,20 @@
                     </contact>
                 </recipient>
             </parties>
-            <product>
-                <id>
-                    BUSINESS_PARCEL
-                </id>
-                <customerNumber>
-                    PARCELS_NORWAY-00040067266
-                </customerNumber>
-                <services>
-                    <flexDelivery>
-                        <message>
-                            Legg pakken i garasjen.
-                        </message>
-                    </flexDelivery>
-                </services>
-            </product>
+          <product>
+            <id>
+              BUSINESS_PARCEL
+            </id>
+            <customerNumber>
+              ************
+            </customerNumber>
+            <additionalServices>
+              <additionalService>
+                <id>FLEX_DELIVERY</id>
+                <message>Legg pakken i garasjen.</message>
+              </additionalService>
+            </additionalServices>
+          </product>
             <packages>
                 <package correlationId="PACKAGE-123">
                     <weightInKg>

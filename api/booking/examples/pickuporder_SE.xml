@@ -1,7 +1,7 @@
 <pickupOrderRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
     <customerInformation>
         <customerNumber>
-            PARCELS_SWEDEN-12340056789
+            ***************
         </customerNumber>
         <companyName>
             Svensk Bedrift AS

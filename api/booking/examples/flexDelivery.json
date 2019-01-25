@@ -38,23 +38,13 @@
             },
             "product": {
                 "id": "BUSINESS_PARCEL",
-                "customerNumber": "PARCELS_NORWAY-00040067266",
-                "services": {
-                    "recipientNotification": null,
-                    "quickPackEnvelope": null,
-                    "cashOnDelivery": null,
-                    "deliveryOption": null,
-                    "flexDelivery": {
-                        "message": "Legg pakken i garasjen."
-                    },
-                    "nonFreeze": null,
-                    "deliveryIndoors": null,
-                    "dangerousGoods": null,
-                    "express": null,
-                    "eveDelivery": null,
-                    "advisering": null,
-                    "simpleDelivery": null
-                },
+                "customerNumber": "*************",
+                "additionalServices": [
+                  {
+                    "id": "FLEX_DELIVERY",
+                    "message" : "Legg pakken i garasje"
+                  }
+                ],
                 "customsDeclaration": null,
                 "messageForRecipient": null
             },
