@@ -11,9 +11,9 @@ end
 
 desc 'Install dependencies'
 task :install_dependencies do
-  puts '= install RAML parse dependencies using yarn'
-  system('yarn install')
-  puts '= install css dependencies using npm'
+  puts '= install RAML parse dependencies'
+  system('npm install')
+  puts '= install css dependencies'
   system('cd _sass && npm install')
 end
 
