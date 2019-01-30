@@ -35,7 +35,7 @@ GEM
       ruby_dep (~> 1.2)
     mercenary (0.3.6)
     minitest (5.11.3)
-    rake (10.5.0)
+    rake (12.3.2)
     raml_parser (0.2.5)
       activesupport (>= 4.0.0)
     rb-fsevent (0.10.3)
