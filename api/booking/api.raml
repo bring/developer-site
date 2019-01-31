@@ -594,13 +594,46 @@ documentation:
 
     Parcels Norway, Parcels Sweden, Parcels Denmark and Cargo Customers with a Mybring user ID can use this service. Customer numbers in this API is the same as to booking API, obtained either through your Mybring profile or the customer number API.
 
+    <strong>We have added new tags for new way of requesting pickup . Both ways are still supported, but they can not be combined.</strong>
+
+    * All the new pickup services will be added supporting only the new way.
+
+    * The old way will be decommissioned after some time.
+
+    Where  before you had to send different tags under the `pickupOrderRequest` tag for ordering different types of Pickup .
+    Now the new way introduced two tags  `service` and `pickupDetails` under `pickupOrderRequest` tag , one to capture type of service you wanted to book and one to capture what will be picked up.
+
+    Example: Ordering pickup for Parcels in Norway
+
+    The new way of requesting pickup
+
+    ```
+     <service>PARCEL</service>
+     <pickupDetails>
+             <numberOfPackages>1</numberOfPackages>
+             <numberOfPostContainers>1</numberOfPostContainers>
+             <numberOfPallets>1</numberOfPallets>
+     </pickupDetails>
+    ```
+    <strike>The old way of requesting pickup </strike>
+
+    ```
+     <parcelsInformation>
+            <numberOfPackages>1</numberOfPackages>
+            <numberOfPostContainers>1</numberOfPostContainers>
+            <numberOfPallets>1</numberOfPallets>
+     </parcelsInformation>
+    ```
+
+
     Pickup in the different countries requires different customer numbers:
 
-    | Customer number prefix | Pickup in country | Required information element |
-    |:-----------------------|:------------------|:-----------------------------|
-    | PARCELS_NORWAY         | Norway (parcels)  | `parcelsInformation`         |
-    | CARGO                  | Norway (cargo)    | `cargoInformation`           |
-    | PARCELS_NORWAY_INTERNATIONAL, PARCELS_SWEDEN, PARCELS_DENMARK, PARCELS_FINLAND | Sweden, Denmark | parcelsInternationalInformation |
+
+    | Customer number prefix | Pickup in country | Required information element     |
+    |:-----------------------|:------------------|:---------------------------------|
+    | PARCELS_NORWAY         | Norway (parcels)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
+    | CARGO                  | Norway (cargo)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
+    | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
 
     #### Pickup ordered by default with product CARGO_GROUPAGE from Bring Cargo
 
@@ -613,9 +646,9 @@ documentation:
     description: Order a pickup
     body:
       application/json:
-        example: !include examples/pickuporder_NO.json
+        example: !include examples/pickuporder_NO_new_way.json
       application/xml:
-        example: !include examples/pickuporder_NO.xml
+        example: !include examples/pickuporder_NO_new_way.xml
     responses:
       200:
         displayName: Successful pickup order
@@ -625,14 +658,36 @@ documentation:
           application/xml:
             example: !include examples/pickuporder_response.xml
       250:
+        displayName: <strike>Parcels Norway request (Old Way)</strike>
+        body:
+          application/json:
+            example: !include examples/pickuporder_NO.json
+          application/xml:
+            example: !include examples/pickuporder_NO.xml
+
+      251:
         displayName: Parcels Sweden request
+        body:
+          application/json:
+            example: !include examples/pickuporder_SE_new_way.json
+          application/xml:
+            example: !include examples/pickuporder_SE_new_way.xml
+      252:
+        displayName: <strike>Parcels Sweden request (Old Way)</strike>
         body:
           application/json:
             example: !include examples/pickuporder_SE.json
           application/xml:
             example: !include examples/pickuporder_SE.xml
-      251:
+      253:
         displayName: Cargo request
+        body:
+          application/json:
+            example: !include examples/pickuporder_CARGO_new_way.json
+          application/xml:
+            example: !include examples/pickuporder_CARGO_new_way.xml
+      254:
+        displayName: <strike> Cargo request (Old Way)</strike>
         body:
           application/json:
             example: !include examples/pickuporder_CARGO.json
