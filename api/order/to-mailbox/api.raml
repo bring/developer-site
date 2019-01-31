@@ -113,6 +113,10 @@ types:
       email:
         type: string
         description: Recipient's email address.
+      bagOnDoor:
+        type: boolean
+        required: false
+        description: Whether to order "bag on door" delivery
   SuccessfulOrder:
     (hideRequired): true
     displayName: Successful Order
@@ -704,6 +708,10 @@ documentation:
 - title: Without tracking
   content: |
       If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
+
+- title: Delivery with bag on door
+  content: |
+      Using delivery with bag on door allows us to deliver a package in a bag on the recipients door, if the mailbox is full. If this is not selected the package will be delivered to the nearest post office.
 
 - title: Authentication
   content: |
