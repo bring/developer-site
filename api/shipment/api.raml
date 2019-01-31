@@ -3,951 +3,664 @@
 title: Shipment API
 version: v1
 baseUri: https://api.bring.com/shipment
-mediaType: application/json, application/xml
+mediaType: application/json
 annotationTypes:
   hideInDocumentation: boolean
   hideRequired: boolean
 types:
-ReferenceTYPE:
-  description:
-  type: object
-  properties:
-    ReferenceValue:
-      description: Extra reference
-      type: String
-      required: True
-      example: 4440/0189981/WEJ
-    referenceType:
-      description: Referencetype. Valid values are DESPATCH_ADVICE_NUMBER, TRANSPORT_DOCUMENT_NUMBER, CUSTOMS_DECLARATION_NUMBER, ACCOUNT_NUMBER, PROJECT_NUMBER, SECONDARY_CUSTOMS_REFERENCE, TEMPORARY_IMPORTATION_DOCUMENT_NUMBER, SENDERS_REFERENCE, AIR_WAYBILL, BILL_OF_LADING, BOOKING_REFERENCE, ROAD_CONSIGNMENT_NOTE, SHIPMENT_REFERENCE, TRANSPORT_INSTRUCTION, GOODS_NUMBER
-      type: String
-      required: True
-      example: TRANSPORT_DOCUMENT_NUMBER
-FreeTextTYPEText:
-  description:
-  type: object
-  properties:
-    sequence:
-      description: Order of freetext elements
-      type: String
-      required: False
-      example: 0
-    Value:
-      description: Actual freetext
-      type: String
-      required: True
-      example: Call the contact before delivering item.
-FreeTextTYPE:
-  description:
-  type: object
-  properties:
-    Text:
-      description: Sequence of freetext
-      type: FreeTextTYPEText[]
-      required: True
-      example:
-    usageCode:
-      description: Type of freetext. Valid values are PICKUP_INSTRUCTIONS, DELIVERY_INSTRUCTIONS, CARRIER_INSTRUCTIONS
-      type: String
-      required: True
-      example: PICKUP_INSTRUCTIONS
-ccWeight:
-  description:
-  type: object
-  properties:
-    unitCode:
-      description: Unitcode for weight. Valid values are GRM, KGM
-      type: String
-      required: True
-      example: KGM
-    Value:
-      description: Weightvalue
-      type: Float
-      required: True
-      example: 2.33
-ccVolume:
-  description:
-  type: object
-  properties:
-    unitCode:
-      description: Unitcode for volume measurement. Valid values are DMQ, MTQ
-      type: String
-      required: True
-      example: DMQ
-    Value:
-      description: Value of volume measurement
-      type: Float
-      required: True
-      example: 18.22
-ccLength:
-  description:
-  type: object
-  properties:
-    unitCode:
-      description: Unit for the length. Valid values are CMT, DMT, MTR
-      type: String
-      required: False
-      example: CMT
-    Value:
-      description: The length
-      type: Float
-      required: False
-      example: 1.22
-DimensionsTYPE:
-  description:
-  type: object
-  properties:
-    Height:
-      description: Height of package
-      type: ccLength
-      required: True
-      example:
-    Length:
-      description: Length of package
-      type: ccLength
-      required: True
-      example:
-    Width:
-      description: Width of package
-      type: ccLength
-      required: True
-      example:
-ExchangeableEquipment:
-  description:
-  type: object
-  properties:
-    UnitType:
-      description: Type of exchangable equipment. Valid values are EFP
-      type: String
-      required: True
-      example: EFP
-    Value:
-      description: Quantity of exhangable equipments
-      type: Integer
-      required: True
-      example: 3
-ShipmentHeaders:
-  description:
-  type: object
-  properties:
-    SendersReference:
-      description: Senders reference for the shipment
-      type: String
-      required: True
-      example: SOA-123222
-    ReceiversReference:
-      description: Receivers reference for the shipment
-      type: String
-      required: False
-      example: SOA-123222
-    NumberOfPackages:
-      description: Total number of packages for the whole shipment across all goodsitems.
-      type: String
-      required: True
-      example: 3
-    AdditionalReference:
-      description: Additional references for the shipment as indicated by referenceType
-      type: ReferenceTYPE[]
-      required: False
-      example:
-    FreeText:
-      description: Freetext elements
-      type: FreeTextTYPE[]
-      required: False
-      example:
-    GrossWeight:
-      description: GrossWeight for the whole shipment
-      type: ccWeight
-      required: False
-      example:
-    GrossVolume:
-      description: Grossvolume for the whole shipment
-      type: ccVolume
-      required: False
-      example:
-    Dimensions:
-      description: Dimensions required for the whole shipment
-      type: DimensionsTYPE
-      required: False
-      example:
-    LoadingMetres:
-      description: How many meters of loading space required of a truck's length.
-      type: Float
-      required: False
-      example: 12
-    PalletFootPrints:
-      description: How many palletfootprints are needed for the shipment
-      type: Integer
-      required: False
-      example: 3
-    HazardPoints:
-      description: Sum of hazardpoints for the shipment
-      type: Integer
-      required: False
-      example: 22
-    ExchangeableEquipment:
-      description: Equipment that can be reused, ie. pallets
-      type: ExchangeableEquipment
-      required: False
-      example:
-    shipmentId:
-      description: Id for the whole shipment, can be retrieved by the API.
-      type: String
-      required: False
-      example: 70438101412575352
-DateAndTimes:
-  description: Handles date and times
-  type: object
-  properties:
-    subClass:
-      description: Type of datetime. Valid values are DocumentDate, PickupRequested, PickupEarliest, PickupLatest, DeliveryRequested, DeliveryEarliest, DeliveryLatest
-      type: String
-      required: True
-      example: DocumentDate
-    DateTime:
-      description: Date and time
-      type: dateTime
-      required: True
-      example: 2018-11-22T08:58:52
-AddressTYPE:
-  description:
-  type: object
-  properties:
-    AddressLine:
-      description: Address lines. The first line will be mapped to primary address line
-      type: String[]
-      required: True
-      example: Kong Oscars gate 12
-    PostalCode:
-      description: Postal code for address
-      type: String
-      required: True
-      example: 5122
-    City:
-      description: City for the postal code
-      type: String
-      required: True
-      example: Morvik
-    StateOrRegion:
-      description: State or region, not in use in the nordic countries
-      type: String
-      required: False
-      example: Washington DC
-    CountryCode:
-      description: Countrycode. Use valid country codes
-      type: String
-      required: True
-      example: NO
-BasicPartyTYPE:
-  description:
-  type: object
-  properties:
-    partyId:
-      description: Identifier for the party
-      type: String
-      required: False
-      example: BEX
-    subPartyId:
-      description: Further identification of the party
-      type: String
-      required: False
-      example: GLW
-    Name:
-      description: Partyname
-      type: String
-      required: False
-      example: Bring
-    Address:
-      description: Partyaddress
-      type: AddressTYPE
-      required: False
-      example:
-    ContactName:
-      description: ContactName for the party
-      type: String
-      required: False
-      example: Atle Thorstensen
-    Phone:
-      description: Phone
-      type: String
-      required: False
-      example: +4712345678
-    MobilePhone:
-      description: MobilePhone
-      type: String
-      required: False
-      example: +47123456789
-    Email:
-      description: Email
-      type: String
-      required: False
-      example: mail@mail.com
-    Fax:
-      description: Fax
-      type: String
-      required: False
-      example: +4712345678
-    Reference:
-      description: References related to the party, can be used for accountnumber of pallet system in sweden for instance
-      type: ReferenceTYPE[]
-      required: False
-      example: SO-12345678
-PartyTYPE:
-  description:
-  type: object
-  properties:
-    subClass:
-      description: Type of party. Valid values are DespatchParty, DeliveryParty, OrderingParty, FreightPayer, CashOnDeliveryPayee, GoodsReturnParty, NotifyParty, TransportCompany
-      type: String
-      required: True
-      example: DeliveryParty
-    partyId:
-      description: Identifier for the party
-      type: String
-      required: True
-      example: BEX
-    subPartyId:
-      description: Further identification for the party
-      type: String
-      required: False
-      example: GLW
-    Name:
-      description: Partyname
-      type: String
-      required: False
-      example: Rogers antistatiske overledninger
-    Address:
-      description: Partyaddress
-      type: AddressTYPE
-      required: False
-      example:
-    ContactName:
-      description: Party contactname
-      type: String
-      required: False
-      example: Ola Nordmann
-    Phone:
-      description: Phone
-      type: String
-      required: False
-      example: +4712345678
-    MobilePhone:
-      description: MobilePhone
-      type: String
-      required: False
-      example: +4712345678
-    Email:
-      description: Email
-      type: String
-      required: False
-      example: mail@mail.com
-    Fax:
-      description: Fax
-      type: String
-      required: False
-      example: +4712345678
-    Reference:
-      description: Further references related to the party
-      type: ReferenceTYPE[]
-      required: False
-      example: SOA-121232332-AN
-AdditionalService:
-  description:
-  type: object
-  properties:
-    AdditionalServiceCode:
-      description: The additional service code for the product. Refer to documentation for valid values
-      type: String
-      required: True
-      example: EVARSLING
-    ServiceRequirements:
-      description: Some AdditionalServiceCodes / valueadded service might require extra information. Refer to the documentation for the specific code for further information. Example includes quantity for code
-      type: String[]
-      required: True
-      example: 02
-ProductAndService:
-  description:
-  type: object
-  properties:
-    ProductCode:
-      description: Productcode for shipment, refer to documentation for valid productcodes for this service
-      type: String
-      required: True
-      example: COURIER_1H
-    AdditionalService:
-      description: Additional service codes. Refer to documentation for valid codes
-      type: AdditionalService[]
-      required: False
-      example:
-    TariffReference:
-      description: Additional information about the price of the cargo in connection with the service. Refer to documentation for codes.. Valid values are COOL_ABERRANT, GENERAL_CARGO, MINERAL_WATER, CHILLED_0_4, TIRES, COOL_5_8, FISH_0_4, FROZEN_CARGO, FROST_FREE_CARGO, EARLY_DELIVERY, LATE_DELIVERY, SPECIAL_CARGO, COOL_0_2
-      type: String
-      required: False
-      example: GNCG
-    NatureOfCargo:
-      description: Indicates if the cargo is out of bound of general expected parameters, dangerous goods or out og gauge
-      type: String
-      required: False
-      example: 11
-DeliveryTermsLocation:
-  description:
-  type: object
-  properties:
-    City:
-      description: City where the deliveryterms are valid to or from
-      type: String
-      required: True
-      example: Bergen
-    CountryCode:
-      description: Country where the deliveryterms ar valid to or from
-      type: String
-      required: True
-      example: NO
-DeliveryTerms:
-  description:
-  type: object
-  properties:
-    ConditionCode:
-      description: The actual terms for the chosen deliverytermstype
-      type: String
-      required: True
-      example: EXW
-    Location:
-      description: The location where the given deliveryterms (condition) applies (to or from given conditioncode.)
-      type: DeliveryTermsLocation
-      required: False
-      example:
-    termsType:
-      description: Terms valid for this shipment. Valid values are Incoterms, Freightterms, Combiterms, PrePaid, ThirdParty
-      type: String
-      required: True
-      example: Incoterms
-CashOnDeliveryTransactionIdentifier:
-  description:
-  type: object
-  properties:
-    identifierType:
-      description: Type of cash on delivery.. Valid values are PQ, SS
-      type: String
-      required: True
-      example: PQ
-    accountType:
-      description: Type of account to receive payment. Valid values are Bank, Bankgiro, Plus, Post, Iban, Other
-      type: String
-      required: True
-      example: Bank
-    Value:
-      description: The value to identify where the money should be sent
-      type: String
-      required: True
-      example: 1234.12.123456
-ccAmount:
-  description:
-  type: object
-  properties:
-    currencyCode:
-      description: Currencycode, valid currency codes allowed
-      type: String
-      required: False
-      example: NOK
-CashOnDeliveryMonetaryAccountNumber:
-  description:
-  type: object
-  properties:
-    accountType:
-      description: Type of account to receive payment on delivery. Valid values are Bank, Bankgiro, Plus, Post, Iban, Other
-      type: String
-      required: True
-      example:
-    Value:
-      description: Actual account number
-      type: String
-      required: True
-      example: 4567.45.12345
-CashOnDeliveryMonetaryAccount:
-  description:
-  type: object
-  properties:
-    AccountNumber:
-      description: Account number to receive payment
-      type: CashOnDeliveryMonetaryAccountNumber
-      required: True
-      example:
-    SwiftCode:
-      description: Swift code for international transfers
-      type: String
-      required: True
-      example: DNBANOKK
-    BankName:
-      description: Bank where account is created
-      type: String
-      required: True
-      example: DNB
-    AccountHolderName:
-      description: Name of the owner of the account
-      type: String
-      required: True
-      example: Ola Nordmann
-CashOnDelivery:
-  description:
-  type: object
-  properties:
-    TransactionIdentifier:
-      description: Senders identifier for the transaction
-      type: CashOnDeliveryTransactionIdentifier
-      required: False
-      example:
-    Amount:
-      description: Amount expected on delivery
-      type: ccAmount
-      required: False
-      example: 12450
-    ControlDigit:
-      description: Controldigit for incoming amount when there is specified a KID number (norwegian only)
-      type: Integer
-      required: False
-      example: 8
-    DocumentId:
-      description: Documentids for cashondelivery
-      type: String[]
-      required: False
-      example: SA-46789
-    MonetaryAccount:
-      description: Description of where money should be received
-      type: CashOnDeliveryMonetaryAccount
-      required: False
-      example:
-    codType:
-      description: Type of cash on delivery. Valid values are CashOnDelivery, PrePaid, CreditCard
-      type: String
-      required: True
-      example: CashOnDelivery
-ccTempMeasure:
-  description:
-  type: object
-  properties:
-    unitCode:
-      description: Unitcode for temperature measure. Valid values are CEL, FAH
-      type: String
-      required: True
-      example: CEL
-    minimum:
-      description: Minimum allowed temperature
-      type: String
-      required: False
-      example: -8
-    maximum:
-      description: Maximum allowed temperature
-      type: String
-      required: False
-      example: 4
-    Value:
-      description: Specific temperature for transportation of the cargo.
-      type: Integer
-      required: True
-      example: 3
-GoodsItemTemperature:
-  description:
-  type: object
-  properties:
-    Transport:
-      description: Temperature requirements during transport
-      type: ccTempMeasure
-      required: False
-      example:
-    Storage:
-      description: Temperature requirements for storage of goods.
-      type: ccTempMeasure
-      required: False
-      example:
-PackageInsuranceInsuranceValue:
-  description:
-  type: object
-  properties:
-    currencyCode:
-      description: Currencycode for insured amount
-      type: String
-      required: True
-      example: NOK
-    Value:
-      description: Amount the package is insured for.
-      type: Float
-      required: False
-      example: 100000
-PackageInsurance:
-  description:
-  type: object
-  properties:
-    InsuranceValue:
-      description: The amount the package is insured fors
-      type: PackageInsuranceInsuranceValue
-      required: False
-      example:
-    GoodsDescription:
-      description: Description of insured package
-      type: String
-      required: False
-      example: Gold
-    Email:
-      description: Email related to insuranceinformation
-      type: String
-      required: False
-      example: henvendelser@vesta.no
-Package:
-  description:
-  type: object
-  properties:
-    GrossWeight:
-      description: Gross weight for package
-      type: ccWeight
-      required: False
-      example:
-    GrossVolume:
-      description: Gross volume for package
-      type: ccVolume
-      required: False
-      example:
-    Dimensions:
-      description: Dimension of the package
-      type: DimensionsTYPE
-      required: False
-      example:
-    Insurance:
-      description: Insuranceinformation for the package
-      type: PackageInsurance
-      required: False
-      example:
-    packageId:
-      description: Package id, can be inserted by the API
-      type: String
-      required: False
-      example: 370438101412578910
-DangerousGoodsUNDGInformation:
-  description:
-  type: object
-  properties:
-    HazardIdentifier:
-      description: United nations dangerous goods hazard identifier
-      type: String
-      required: False
-      example: 1.1D
-    FlaspointDescription:
-      description: Flashopint for dangerousgoods.
-      type: String
-      required: False
-      example: BLACK POWDER, granulated or in powderform
-DangerousGoodsFlashpoint:
-  description:
-  type: object
-  properties:
-    unitCode:
-      description: Unitcode for flashpoint. Valid values are CEL, FAH
-      type: String
-      required: False
-      example: CEL
-    Value:
-      description: Value when flashpoint occurs/ignites
-      type: Integer
-      required: False
-      example: 18
-ccMeasure:
-  description:
-  type: object
-  properties:
-    unitCode:
-      description: Unitcode for measure
-      type: String
-      required: True
-      example: DMQ
-    Value:
-      description: Measurevalue
-      type: Float
-      required: True
-      example: 1.22
-MeasuresTYPE:
-  description:
-  type: object
-  properties:
-    Measure:
-      description: Measurements for goods
-      type: ccMeasure
-      required: False
-      example:
-    subClass:
-      description: Should be enum???
-      type: String
-      required: False
-      example: NetHazardWeight
-DangerousGoodsRestrictions:
-  description:
-  type: object
-  properties:
-    restrictionType:
-      description: Type of restriction. Valid values are Tunnel
-      type: String
-      required: False
-      example: Tunnel
-    Value:
-      description: Freetext specification of restriction for given tunnel. One element for each UN number in the dangerousgoods sequence.
-      type: String
-      required: False
-      example: Ellingsøy- og Valderøytunnelen på riksveg 658 utenfor Ålesund. Her gjelder tunnelkategori C i tidsrommet kl. 0600–2400 hver dag.
-GoodsItemDangerousGoods:
-  description:
-  type: object
-  properties:
-    UNDGInformation:
-      description: United nations dangerous goods infomrmation
-      type: DangerousGoodsUNDGInformation
-      required: False
-      example:
-    Flashpoint:
-      description: Flashpointinformation for dangerousgoods (when will the item become volatile?)
-      type: DangerousGoodsFlashpoint
-      required: False
-      example:
-    HazardClass:
-      description: Classification of hazard
-      type: String
-      required: False
-      example: 4.1
-    AdditionalHazard:
-      description: Additional codes for hazard
-      type: String
-      required: False
-      example: 2.3(8)
-    PackingGroup:
-      description: Packing danger level code, roman numeral between 1 and 3.
-      type: String
-      required: False
-      example: II
-    Measures:
-      description: Measures for dangerous goods
-      type: MeasuresTYPE[]
-      required: False
-      example:
-    TechnicalName:
-      description: Technical name of hazard
-      type: String
-      required: False
-      example: KALSIUMRESINAT, SINTRET
-    Restrictions:
-      description: Restrictions when carrying these harzardous goods
-      type: DangerousGoodsRestrictions[]
-      required: False
-      example:
-    HazardPoints:
-      description: Points for this hazard. Calculated from factor for dangerousgoods multiplied by amount in kg / dm3 for each material in cargo.
-      type: Integer
-      required: False
-      example: 10
-    regulationCode:
-      description: Regulationscodes for the hazardous goods.
-      type: String
-      required: False
-      example: ADR
-GoodsItem:
-  description:
-  type: object
-  properties:
-    PackageTypeCode:
-      description: Types of cargo, packaging of cargo.
-      type: String
-      required: True
-      example: ???
-    GoodsDescription:
-      description: Description of goods being shipped
-      type: String
-      required: False
-      example: Contains socks
-    LoadCarrier:
-      description: Transport equipment (pallet, container etc)
-      type: String
-      required: False
-      example: EFP
-    SealId:
-      description: Item sealed for customs etc, number of the seal
-      type: String
-      required: False
-      example: 123456
-    Temperature:
-      description: Temperaturerequirements for goods being shipped
-      type: GoodsItemTemperature
-      required: False
-      example:
-    Package:
-      description: List of packages being shipped
-      type: Package[]
-      required: True
-      example:
-    DangerousGoods:
-      description: Information about dangerousgoods being shipped
-      type: GoodsItemDangerousGoods
-      required: False
-      example:
-Shipment:
-  description:
-  type: object
-  properties:
-    updateIndicator:
-      description: Is this request an original, update or deletion. Valid values are Original, Update, Replace, Delete
-      type: String
-      required: True
-      example: Original
-    shipmentType:
-      description: Type of shipment. Valid values are Instruction, Booking, Healthcheck
-      type: String
-      required: True
-      example: Instruction
-    ShipmentHeaders:
-      description: Structure that handles information for the whole shipment
-      type: ShipmentHeaders
-      required: True
-      example:
-    DateAndTimes:
-      description: Date and times for the message, repeatable structure. Several dates are required
-      type: DateAndTimes[]
-      required: True
-      example:
-    Sender:
-      description: Structure to hold sender information
-      type: BasicPartyTYPE
-      required: True
-      example:
-    Receiver:
-      description: Structure to hold receiver information
-      type: BasicPartyTYPE
-      required: True
-      example:
-    AdditionalParty:
-      description: Additionalparties for the shipment, repeatable. Refer to detailed instructions
-      type: PartyTYPE[]
-      required: True
-      example:
-    ProductAndService:
-      description: Product and service codes in addition to value added service structures
-      type: ProductAndService
-      required: True
-      example:
-    DeliveryTerms:
-      description: Terms for delivery
-      type: DeliveryTerms
-      required: False
-      example:
-    CashOnDelivery:
-      description: CashOnDelivery for the shipment
-      type: CashOnDelivery
-      required: False
-      example:
-    GoodsItems:
-      description: Information about goods being shipped
-      type: GoodsItem[]
-      required: True
-      example:
-CreateShipmentResponseErrors:
-  description:
-  type: object
-  properties:
-    Error:
-      description: . Valid values are VALIDATION, SYSTEM, BAD_REQUEST
-      type: String
-      required: False
-      example:
-    ErrorText:
-      description:
-      type: String
-      required: False
-      example:
-CreateShipmentResponseIdentities:
-  description:
-  type: object
-  properties:
-    PackageId:
-      description:
-      type: String[]
-      required: False
-      example:
-    ShipmentId:
-      description:
-      type: String
-      required: False
-      example:
-CreateShipmentRequest:
-  description:
-  type: object
-  properties:
-    RequestVersion:
-      description: Request version to use
-      type: String
-      required: True
-      example: 1
-    RequestDate:
-      description: Date and time for when the request was created
-      type: dateTime
-      required: True
-      example: 2018-11-22T08:58:52
-    Shipment:
-      description: Structure for the shipment
-      type: Shipment
-      required: False
-      example:
-CreateBookingRequest:
-  description:
-  type: object
-  properties:
-    RequestVersion:
-      description: Request version to use
-      type: String
-      required: True
-      example: 1
-    RequestDate:
-      description: Date and time for when the request was created
-      type: dateTime
-      required: True
-      example: 2018-11-22T08:58:52
-    Shipment:
-      description: Structure for the shipment
-      type: Shipment
-      required: False
-      example:
-CreateShipmentResponse:
-  description:
-  type: object
-  properties:
-    Status:
-      description: . Valid values are OK, OK_CONFIRMED, ERROR, VALIDATION_ERROR, FORBIDDEN
-      type: String
-      required: False
-      example:
-    StatusText:
-      description:
-      type: String
-      required: False
-      example:
-    Errors:
-      description:
-      type: CreateShipmentResponseErrors[]
-      required: False
-      example:
-    Identities:
-      description:
-      type: CreateShipmentResponseIdentities[]
-      required: False
-      example:
-    ProcessingID:
-      description:
-      type: String
-      required: False
-      example:
-    EndpointProcessingID:
-      description:
-      type: String
-      required: False
-      example:
+  Address:
+    type: object
+    description: An address
+    properties:
+      name:
+        type: string
+        required: true
+        description: Name
+      streetAddress:
+        type: string
+        required: true
+        description: Senders address
+      postalCode:
+        type: string
+        required: true
+        description: Postal code. Must be a valid Norwegian postal code.
+        pattern: "[0-9]{4}"
+        example: "0150"
+  AddressWithPostalName:
+    type: object
+    description: An address
+    properties:
+      name:
+        type: string
+        required: true
+        description: Name
+      streetAddress:
+        type: string
+        required: true
+        description: Senders address
+      postalCode:
+        type: string
+        required: true
+        description: Senders postal code. Must be a valid Norwegian postal code.
+        pattern: "[0-9]{4}"
+        example: "0150"
+      postalName:
+        type: string
+        required: true
+        description: Name of the postalCode
+  Order:
+    type: object
+    description: An order to place in Mybring.
+    properties:
+      customerNumber:
+        type: string
+        description: API customer number for which to place the order.
+      senderName:
+        type: string
+        description: Sender's name.
+        example: Min Bedrift
+      senderEmail:
+        required: false
+        type: string
+        description: Sender's email address. Defaults to the user's email address.
+      postalCode:
+        type: string
+        description: Sender's postal code. Must be a valid Norwegian postal code.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      reference:
+        required: false
+        description: A reference for the shipment that will be shown on the invoice.
+      testIndicator:
+        required: false
+        type: boolean
+        description: Set to true when testing API implementation.
+      returnAddress:
+        required: false
+        type: Address
+        description: An optional return address. If set will override the return address in generated label.
+      packages:
+        minItems: 1
+        maxItems: 500
+        type: Package[]
+        description: The packages to send in this shipment.
+  Package:
+    type: object
+    description: A single package in a shipment.
+    properties:
+      rfid:
+        type: boolean
+        description: Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.
+      weight:
+        maximum: 2000
+        type: integer
+        description: Weight in grams.
+      recipientName:
+        type: string
+        description: Recipient name.
+      postalCode:
+        type: string
+        description: A valid Norwegian postal code.
+      streetAddress:
+        type: string
+        description: Recipient's street address.
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number, including country code.
+        example: "+4700000000"
+      email:
+        type: string
+        description: Recipient's email address.
+  SuccessfulOrder:
+    (hideRequired): true
+    displayName: Successful Order
+    description: A successfully placed order that contains links to labels and waybill.
+    properties:
+      testIndicator:
+        type: boolean
+        description: Whether the placed order had the testIndicator flag set or not.
+      id:
+        type: number
+        description: The ID of the order that was placed.
+      customerNumber:
+        type: string
+        description: The API customer number for which the order was placed.
+      customerName:
+        type: string
+        description: The name of the customer for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
+      senderName:
+        type: string
+        description: Sender's name.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      postalCode:
+        type: string
+        description: Sender's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      email:
+        type: string
+        description: Sender's email address for the order that was placed.
+      reference:
+        type: string
+        description: A reference for the shipment that will be shown on the invoice.
+      labelUri:
+        type: string
+        description: URL to PDF label(s) for packages ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label(s) for packages ordered with tracking.
+      waybillUri:
+        type: string
+        description: URL to waybill PDF that has to be printed and sent with the shipment.
+      orderNumberReference:
+        type: string
+        description: The order number reference for the placed order. This is the number on the waybill.
+      priceWithoutVat:
+        type: number
+        description: Price of shipment without VAT (MVA).
+      priceWithVat:
+        type: number
+        description: Price of shipment with VAT (MVA).
+      vat:
+        type: number
+        description: How much of the price was VAT (MVA).
+      currency:
+        type: string
+        default: NOK
+        description: The currency for the price.
+      orderTime:
+        type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
+      returnAddress:
+        type: AddressWithPostalName
+        required: false
+        description: Return address for the order if one is set
+      packages:
+        minItems: 1
+        description: Packages in this shipment.
+        type: OrderedPackage[]
+  OrderedPackage:
+    (hideRequired): true
+    displayName: Ordered Package
+    description: A single package in a successfully ordered shipment.
+    properties:
+      rfid:
+        type: boolean
+        description: Whether to [tracking for the package](#tracking-with-rfid) was activated.
+      recipientName:
+        type: string
+        description: Recipient name.
+      streetAddress:
+        type: string
+        description: Recipient's street address.
+      postalCode:
+        type: string
+        description: Recipient's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number.
+      email:
+        type: string
+        description: Recipient's email address.
+      weight:
+        maximum: 2000
+        type: integer
+        description: Package weight in grams.
+      shipmentNumber:
+        type: string
+        description: The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.
+      packageNumber:
+        type: string
+        description: The package number for this package. This goes on the label.
+      agreementNumber:
+        type: boolean
+        description: Whether the customer has an agreement price for this package.
+  ValidatedOrder:
+    (hideRequired): true
+    displayName: Validated Order
+    description: A valid order that can be placed.
+    properties:
+      testIndicator:
+        type: boolean
+        description: Whether the validated order had the testIndicator flag set or not.
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The name of the customer for the validated order.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for the validated order.
+      senderName:
+        type: string
+        description: The sender's name.
+      streetAddress:
+        type: string
+        description: The sender's street address.
+      postalCode:
+        type: string
+        description: The sender's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      email:
+        type: string
+        description: The sender's email address.
+      reference:
+        type: string
+        description: A reference for the shipment that will be shown on the invoice.
+      priceWithoutVat:
+        type: number
+        description: Calculated price without VAT (MVA).
+      priceWithVat:
+        type: number
+        description: Calulated price with VAT (MVA).
+      vat:
+        type: number
+        description: Calculated VAT (MVA).
+      currency:
+        type: string
+        description: The price's currency.
+      orderTime:
+        type: datetime
+        description: Timestamp for when the order was validated.
+      returnAddress:
+        type: AddressWithPostalName
+        required: false
+        description: Return address for the order if one is set
+      packages:
+        minItems: 1
+        description: Packages in this validated shipment. The packages in the response will correspond to same order as it was in the request to make it easier for clients to do any mapping if needed.
+        type: ValidatedPackage[]
+  ValidatedPackage:
+    (hideRequired): true
+    displayName: Validated Package
+    description: A single, valid package in a valid shipment.
+    properties:
+      rfid:
+        type: boolean
+        description: Whether to [tracking with RFID](#tracking-with-rfid) was activated for the package.
+      recipientName:
+        type: string
+        description: Recipient's name.
+      streetAddress:
+        type: string
+        description: Recipient's email address.
+      postalCode:
+        type: string
+        description: Recipient's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      phoneNumber:
+        type: string
+        description: Recipient's phone number.
+      email:
+        type: string
+        description: Recipient's email address.
+      weight:
+        type: integer
+        description: Package weight in grams.
+      agreementNumber:
+        type: boolean
+        description: Whether the customer has an agreement price for this package.
+  OrderRequest:
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            enum: [ orders ]
+            description: JSON-API type.
+          attributes:
+            type: Order
+            description: Order properties.
+  SuccessfulOrderResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            description: JSON-API type.
+          id: string
+          attributes:
+            type: SuccessfulOrder
+            description: Order properties.
+  ValidatedOrderResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            pattern: "order"
+            description: JSON-API type.
+          attributes:
+            type: ValidatedOrder
+            description: Order properties.
+  ErrorResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      errors:
+        type: ErrorObject[]
+        description: List of errors.
+  ErrorObject:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      code:
+        type: string
+        description: Machine-readable description of error.
+      title:
+        type: string
+        description: Human-readable description of error.
+      source:
+        type: object
+        properties:
+          pointer:
+            type: string
+            description: A JSON pointer to the invalid field.
+  PackageWithNumbers:
+    displayName: Package Details
+    description: Package Details with OrderID
+    properties:
+      rfid:
+        type: boolean
+        description: Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.
+      recipientName:
+        type: string
+        description: Recipient name.
+      streetAddress:
+        type: string
+        description: Recipient's Street address.
+      postalCode:
+        type: string
+        description: A valid Norwegian postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      phoneNumber:
+        type: string
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number, including country code.
+        example: "+4700000000"
+      email:
+        type: string
+        description: Recipient's email address.
+      weight:
+        maximum: 2000
+        type: integer
+        description: Package weight in grams.
+      shipmentNumber:
+        type: string
+        description: The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.
+      packageNumber:
+        type: string
+        description: The package number for this package. This goes on the label.
+      priceType:
+        type: string
+        description: Whether the Price is Agreement or List
+        enum: [ AGREEMENT_PRICE,  LIST_PRICE]
+  OrderWithLabelResponse:
+    (hideRequired): true
+    displayName: Successful Order
+    description: A successfully label generation that contains links to labels.
+    properties:
+      reference:
+        type: string
+        description: A reference for the shipment that will be shown on the invoice.
+      senderName:
+        type: string
+        description: Sender's name.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      email:
+        type: string
+        description: Sender's email address for the order that was placed.
+      labelUri:
+        type: string
+        description: URL to PDF label(s) for packages ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label(s) for packages ordered with tracking.
+      orderTime:
+        type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
+      postalCode:
+        type: string
+        description: Sender's postal code.
+      postalPlace:
+        type: string
+        description: The city/place for the postal code.
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The API customer name for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
+      testIndicator:
+        type: boolean
+        description: Whether the placed order had the testIndicator flag set or not.
+      packages:
+        minItems: 1
+        description: Packages Number for the shipment.
+        type: PackageWithNumbers[]
+  SuccessfulLabelGenerationResponse:
+    (hideRequired): true
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            enum: [ labels ]
+            description: JSON-API type.
+          attributes:
+            type: OrderWithLabelResponse
+            description: Order properties.
+  LabelRequest:
+    (hideInDocumentation): true
+    type: object
+    properties:
+      data:
+        type: object
+        description: JSON-API data object.
+        properties:
+          type:
+            type: string
+            enum: [ labels ]
+            description: JSON-API type.
+          attributes:
+            type: CreateOrderRequest
+            description: Order properties.
+  CreateOrderRequest:
+    displayName: Create Order Request
+    description: It creates the Request for Label Generation.
+    properties:
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      senderName:
+        type: string
+        description: The sender's name.
+      senderEmail:
+        required: false
+        type: string
+        description: Sender's email address. Defaults to the user's email address.
+      postalCode:
+        type: string
+        description: Sender's postal code. Must be a valid Norwegian postal code.
+      streetAddress:
+        type: string
+        description: Recipient's email address.
+      reference:
+        required: false
+        description: A reference for the shipment that will be shown on the invoice.
+      testIndicator:
+        type: boolean
+        description: Whether the validated order had the testIndicator flag set or not.
+      packages:
+        minItems: 1
+        maxItems: 500
+        type: Package[]
+        description: The packages to send in this shipment. Response will have packages in same order as requested to make it easier for clients to do any mapping if needed.
+  LabelOrderRequest:
+      (hideInDocumentation): true
+      type: object
+      properties:
+        data:
+          type: object
+          description: JSON-API data object.
+          properties:
+            type:
+              type: string
+              enum: [ label_orders ]
+              description: JSON-API type.
+            attributes:
+              type: CreateLabelOrderRequest
+              description: Create Order properties.
+  CreateLabelOrderRequest:
+    displayName: Create Label Order Request
+    description: Create Label Order Request
+    properties:
+      customerNumber:
+        type: string
+        description: The API customer number.
+      packageNumbers:
+        minItems: 1
+        maxItems: 500
+        type: string[]
+        description: List of Package Numbers.
+  OrderWithIdAndEdiMessage:
+    displayName: Reponse of Create Order Request
+    description: Reponse of Create Order Request
+    properties:
+      id:
+        type: number
+        description: The ID of the order that was placed.
+      customerNumber:
+        type: string
+        description: The API customer number for the validated order.
+      customerName:
+        type: string
+        description: The API customer name for which the order was placed.
+      customerOrganizationNumber:
+        type: string
+        description: The organization number of the customer for which the order was placed.
+      senderName:
+        type: string
+        description: Sender's name.
+      streetAddress:
+        type: string
+        description: Sender's street address.
+      email:
+        type: string
+        description: Sender's email address for the order that was placed.
+      postalCode:
+        type: string
+        description: Sender's postal code.
+      reference:
+        type: string
+        description: A reference for the shipment that will be shown on the invoice.
+      labelUri:
+        type: string
+        description: URL to PDF label(s) for packages ordered without tracking.
+      rfidLabelUri:
+        type: string
+        description: URL to ZPL label(s) for packages ordered with tracking.
+      waybillUri:
+        type: string
+        description: URL to waybill PDF that has to be printed and sent with the shipment.
+      orderNumberReference:
+        type: string
+        description: The order number reference for the placed order. This is the number on the waybill.
+      priceWithoutVat:
+        type: number
+        description: Price of shipment without VAT (MVA).
+      priceWithVat:
+        type: number
+        description: Price of shipment with VAT (MVA).
+      vat:
+        type: number
+        description: How much of the price was VAT (MVA).
+      currency:
+        type: string
+        default: NOK
+        description: The currency for the price.
+      orderTime:
+        type: datetime
+        example: 2017-09-01T14:00:00.000Z
+        description: Timestamp for when the order was placed.
+      returnAddress:
+        type: AddressWithPostalName
+        required: false
+        description: Return address for the order if one is set
+      packages:
+        minItems: 1
+        description: Packages Number for the shipment.
+        type: PackageWithNumbers[]
+  SuccessfulLabelOrderResponse:
+     (hideRequired): true
+     (hideInDocumentation): true
+     type: object
+     properties:
+       data:
+         type: object
+         description: JSON-API data object.
+         properties:
+           type:
+             type: string
+             enum: [ order ]
+             description: JSON-API type.
+           id:
+             type: string
+             description: Order Id
+           attributes:
+             type: OrderWithIdAndEdiMessage
+             description: Label Order properties.
 
 documentation:
 - title: Introduction
   content: |
-    The Shipment API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a instruction or a booking by invoking a Web Service by posting XML/JSON over HTTP. 
+    The Shipment API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a instruction or a booking by invoking a Web Service by posting XML/JSON over HTTP.
 
     The Shipment API uses Shipping Guide as the source for price and availability (when supported in the Shipping Guide) for the different products. We advise clients of the Shipment API to use Shipping Guide API for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Shipment API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
@@ -957,17 +670,17 @@ documentation:
 
 - title: Authentication
   content: |
-    The Shipment API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+    The API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+
 
     | Header | Example | Comment |
     |:-------|:--------|:--------|
     | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
     | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. |
 
-    Those headers must be set for all endpoints documented below.
+    Those headers must be present for authenticating requests.
 
-/sendshipment/?shipmentId={createShipmentId}&packageIds={createPackageId}:
+/sendshipment/shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment
   description: |
         Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
@@ -986,966 +699,48 @@ documentation:
   description: |
       Request is used to either create, update or delete an instruction for Bring.
 
+
   post:
     description: Request is used to either create, update or delete an instruction for Bring.
-    queryParameters:
-        RequestVersion:
-            description: Request version to use
-            type: String
-            required: True
-            example: 1
-        RequestDate:
-            description: Date and time for when the request was created
-            type: dateTime
-            required: True
-            example: 2018-11-22T08:58:52
-        Shipment:
-            description: Structure for the shipment
-            type: sequence
-            required: False
-            example:
-        Shipment - updateIndicator:
-            description: Is this request an original, update or deletion. Valid values are Original, Update, Replace, Delete
-            type: String
-            required: True
-            example: Original
-        Shipment - shipmentType:
-            description: Type of shipment. Valid values are Instruction, Booking, Healthcheck
-            type: String
-            required: True
-            example: Instruction
-        Shipment - ShipmentHeaders:
-            description: Structure that handles information for the whole shipment
-            type: sequence
-            required: True
-            example:
-        Shipment - ShipmentHeaders - SendersReference:
-            description: Senders reference for the shipment
-            type: String
-            required: True
-            example: SOA-123222
-        Shipment - ShipmentHeaders - ReceiversReference:
-            description: Receivers reference for the shipment
-            type: String
-            required: False
-            example: SOA-123222
-        Shipment - ShipmentHeaders - NumberOfPackages:
-            description: Total number of packages for the whole shipment across all goodsitems.
-            type: String
-            required: True
-            example: 3
-        Shipment - ShipmentHeaders - AdditionalReference:
-            description: Additional references for the shipment as indicated by referenceType
-            type: sequence
-            required: False
-            example:
-        Shipment - ShipmentHeaders - AdditionalReference - ReferenceValue:
-            description: Extra reference
-            type: String
-            required: True
-            example: 4440/0189981/WEJ
-        Shipment - ShipmentHeaders - AdditionalReference - referenceType:
-            description: Referencetype. Valid values are DESPATCH_ADVICE_NUMBER, TRANSPORT_DOCUMENT_NUMBER, CUSTOMS_DECLARATION_NUMBER, ACCOUNT_NUMBER, PROJECT_NUMBER, SECONDARY_CUSTOMS_REFERENCE, TEMPORARY_IMPORTATION_DOCUMENT_NUMBER, SENDERS_REFERENCE, AIR_WAYBILL, BILL_OF_LADING, BOOKING_REFERENCE, ROAD_CONSIGNMENT_NOTE, SHIPMENT_REFERENCE, TRANSPORT_INSTRUCTION, GOODS_NUMBER
-            type: String
-            required: True
-            example: TRANSPORT_DOCUMENT_NUMBER
-        Shipment - ShipmentHeaders - FreeText:
-            description: Freetext elements
-            type: sequence
-            required: False
-            example:
-        Shipment - ShipmentHeaders - FreeText - Text:
-            description: Sequence of freetext
-            type: sequence
-            required: True
-            example:
-        Shipment - ShipmentHeaders - FreeText - Text - sequence:
-            description: Order of freetext elements
-            type: String
-            required: False
-            example: 0
-        Shipment - ShipmentHeaders - FreeText - Text - Value:
-            description: Actual freetext
-            type: String
-            required: True
-            example: Call the contact before delivering item.
-        Shipment - ShipmentHeaders - FreeText - usageCode:
-            description: Type of freetext. Valid values are PICKUP_INSTRUCTIONS, DELIVERY_INSTRUCTIONS, CARRIER_INSTRUCTIONS
-            type: String
-            required: True
-            example: PICKUP_INSTRUCTIONS
-        Shipment - ShipmentHeaders - GrossWeight:
-            description: GrossWeight for the whole shipment
-            type: sequence
-            required: False
-            example:
-        Shipment - ShipmentHeaders - GrossWeight - unitCode:
-            description: Unitcode for weight. Valid values are GRM, KGM
-            type: String
-            required: True
-            example: KGM
-        Shipment - ShipmentHeaders - GrossWeight - Value:
-            description: Weightvalue
-            type: Float
-            required: True
-            example: 2.33
-        Shipment - ShipmentHeaders - GrossVolume:
-            description: Grossvolume for the whole shipment
-            type: sequence
-            required: False
-            example:
-        Shipment - ShipmentHeaders - GrossVolume - unitCode:
-            description: Unitcode for volume measurement. Valid values are DMQ, MTQ
-            type: String
-            required: True
-            example: DMQ
-        Shipment - ShipmentHeaders - GrossVolume - Value:
-            description: Value of volume measurement
-            type: Float
-            required: True
-            example: 18.22
-        Shipment - ShipmentHeaders - Dimensions:
-            description: Dimensions required for the whole shipment
-            type: sequence
-            required: False
-            example:
-        Shipment - ShipmentHeaders - Dimensions - Height:
-            description: Height of package
-            type: sequence
-            required: True
-            example:
-        Shipment - ShipmentHeaders - Dimensions - Height - unitCode:
-            description: Unit for the length. Valid values are CMT, DMT, MTR
-            type: String
-            required: False
-            example: CMT
-        Shipment - ShipmentHeaders - Dimensions - Height - Value:
-            description: The length
-            type: Float
-            required: False
-            example: 1.22
-        Shipment - ShipmentHeaders - Dimensions - Length:
-            description: Length of package
-            type: sequence
-            required: True
-            example:
-        Shipment - ShipmentHeaders - Dimensions - Length - unitCode:
-            description: Unit for the length. Valid values are CMT, DMT, MTR
-            type: String
-            required: False
-            example: CMT
-        Shipment - ShipmentHeaders - Dimensions - Length - Value:
-            description: The length
-            type: Float
-            required: False
-            example: 1.22
-        Shipment - ShipmentHeaders - Dimensions - Width:
-            description: Width of package
-            type: sequence
-            required: True
-            example:
-        Shipment - ShipmentHeaders - Dimensions - Width - unitCode:
-            description: Unit for the length. Valid values are CMT, DMT, MTR
-            type: String
-            required: False
-            example: CMT
-        Shipment - ShipmentHeaders - Dimensions - Width - Value:
-            description: The length
-            type: Float
-            required: False
-            example: 1.22
-        Shipment - ShipmentHeaders - LoadingMetres:
-            description: How many meters of loading space required of a truck's length.
-            type: Float
-            required: False
-            example: 12
-        Shipment - ShipmentHeaders - PalletFootPrints:
-            description: How many palletfootprints are needed for the shipment
-            type: Integer
-            required: False
-            example: 3
-        Shipment - ShipmentHeaders - HazardPoints:
-            description: Sum of hazardpoints for the shipment
-            type: Integer
-            required: False
-            example: 22
-        Shipment - ShipmentHeaders - ExchangeableEquipment:
-            description: Equipment that can be reused, ie. pallets
-            type: sequence
-            required: False
-            example:
-        Shipment - ShipmentHeaders - ExchangeableEquipment - UnitType:
-            description: Type of exchangable equipment. Valid values are EFP
-            type: String
-            required: True
-            example: EFP
-        Shipment - ShipmentHeaders - ExchangeableEquipment - Value:
-            description: Quantity of exhangable equipments
-            type: Integer
-            required: True
-            example: 3
-        Shipment - ShipmentHeaders - shipmentId:
-            description: Id for the whole shipment, can be retrieved by the API.
-            type: String
-            required: False
-            example: 70438101412575352
-        Shipment - DateAndTimes:
-            description: Date and times for the message, repeatable structure. Several dates are required
-            type: sequence
-            required: True
-            example:
-        Shipment - DateAndTimes - subClass:
-            description: Type of datetime. Valid values are DocumentDate, PickupRequested, PickupEarliest, PickupLatest, DeliveryRequested, DeliveryEarliest, DeliveryLatest
-            type: String
-            required: True
-            example: DocumentDate
-        Shipment - DateAndTimes - DateTime:
-            description: Date and time
-            type: dateTime
-            required: True
-            example: 2018-11-22T08:58:52
-        Shipment - Sender:
-            description: Structure to hold sender information
-            type: sequence
-            required: True
-            example:
-        Shipment - Sender - partyId:
-            description: Identifier for the party
-            type: String
-            required: False
-            example: BEX
-        Shipment - Sender - subPartyId:
-            description: Further identification of the party
-            type: String
-            required: False
-            example: GLW
-        Shipment - Sender - Name:
-            description: Partyname
-            type: String
-            required: False
-            example: Bring
-        Shipment - Sender - Address:
-            description: Partyaddress
-            type: sequence
-            required: False
-            example:
-        Shipment - Sender - Address - AddressLine:
-            description: Address lines. The first line will be mapped to primary address line
-            type: sequence
-            required: True
-            example: Kong Oscars gate 12
-        Shipment - Sender - Address - PostalCode:
-            description: Postal code for address
-            type: String
-            required: True
-            example: 5122
-        Shipment - Sender - Address - City:
-            description: City for the postal code
-            type: String
-            required: True
-            example: Morvik
-        Shipment - Sender - Address - StateOrRegion:
-            description: State or region, not in use in the nordic countries
-            type: String
-            required: False
-            example: Washington DC
-        Shipment - Sender - Address - CountryCode:
-            description: Countrycode. Use valid country codes
-            type: String
-            required: True
-            example: NO
-        Shipment - Sender - ContactName:
-            description: ContactName for the party
-            type: String
-            required: False
-            example: Atle Thorstensen
-        Shipment - Sender - Phone:
-            description: Phone
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - Sender - MobilePhone:
-            description: MobilePhone
-            type: String
-            required: False
-            example: +47123456789
-        Shipment - Sender - Email:
-            description: Email
-            type: String
-            required: False
-            example: mail@mail.com
-        Shipment - Sender - Fax:
-            description: Fax
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - Sender - Reference:
-            description: References related to the party, can be used for accountnumber of pallet system in sweden for instance
-            type: sequence
-            required: False
-            example: SO-12345678
-        Shipment - Sender - Reference - ReferenceValue:
-            description: Extra reference
-            type: String
-            required: True
-            example: 4440/0189981/WEJ
-        Shipment - Sender - Reference - referenceType:
-            description: Referencetype. Valid values are DESPATCH_ADVICE_NUMBER, TRANSPORT_DOCUMENT_NUMBER, CUSTOMS_DECLARATION_NUMBER, ACCOUNT_NUMBER, PROJECT_NUMBER, SECONDARY_CUSTOMS_REFERENCE, TEMPORARY_IMPORTATION_DOCUMENT_NUMBER, SENDERS_REFERENCE, AIR_WAYBILL, BILL_OF_LADING, BOOKING_REFERENCE, ROAD_CONSIGNMENT_NOTE, SHIPMENT_REFERENCE, TRANSPORT_INSTRUCTION, GOODS_NUMBER
-            type: String
-            required: True
-            example: TRANSPORT_DOCUMENT_NUMBER
-        Shipment - Receiver:
-            description: Structure to hold receiver information
-            type: sequence
-            required: True
-            example:
-        Shipment - Receiver - partyId:
-            description: Identifier for the party
-            type: String
-            required: False
-            example: BEX
-        Shipment - Receiver - subPartyId:
-            description: Further identification of the party
-            type: String
-            required: False
-            example: GLW
-        Shipment - Receiver - Name:
-            description: Partyname
-            type: String
-            required: False
-            example: Bring
-        Shipment - Receiver - Address:
-            description: Partyaddress
-            type: sequence
-            required: False
-            example:
-        Shipment - Receiver - Address - AddressLine:
-            description: Address lines. The first line will be mapped to primary address line
-            type: sequence
-            required: True
-            example: Kong Oscars gate 12
-        Shipment - Receiver - Address - PostalCode:
-            description: Postal code for address
-            type: String
-            required: True
-            example: 5122
-        Shipment - Receiver - Address - City:
-            description: City for the postal code
-            type: String
-            required: True
-            example: Morvik
-        Shipment - Receiver - Address - StateOrRegion:
-            description: State or region, not in use in the nordic countries
-            type: String
-            required: False
-            example: Washington DC
-        Shipment - Receiver - Address - CountryCode:
-            description: Countrycode. Use valid country codes
-            type: String
-            required: True
-            example: NO
-        Shipment - Receiver - ContactName:
-            description: ContactName for the party
-            type: String
-            required: False
-            example: Atle Thorstensen
-        Shipment - Receiver - Phone:
-            description: Phone
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - Receiver - MobilePhone:
-            description: MobilePhone
-            type: String
-            required: False
-            example: +47123456789
-        Shipment - Receiver - Email:
-            description: Email
-            type: String
-            required: False
-            example: mail@mail.com
-        Shipment - Receiver - Fax:
-            description: Fax
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - Receiver - Reference:
-            description: References related to the party, can be used for accountnumber of pallet system in sweden for instance
-            type: sequence
-            required: False
-            example: SO-12345678
-        Shipment - Receiver - Reference - ReferenceValue:
-            description: Extra reference
-            type: String
-            required: True
-            example: 4440/0189981/WEJ
-        Shipment - Receiver - Reference - referenceType:
-            description: Referencetype. Valid values are DESPATCH_ADVICE_NUMBER, TRANSPORT_DOCUMENT_NUMBER, CUSTOMS_DECLARATION_NUMBER, ACCOUNT_NUMBER, PROJECT_NUMBER, SECONDARY_CUSTOMS_REFERENCE, TEMPORARY_IMPORTATION_DOCUMENT_NUMBER, SENDERS_REFERENCE, AIR_WAYBILL, BILL_OF_LADING, BOOKING_REFERENCE, ROAD_CONSIGNMENT_NOTE, SHIPMENT_REFERENCE, TRANSPORT_INSTRUCTION, GOODS_NUMBER
-            type: String
-            required: True
-            example: TRANSPORT_DOCUMENT_NUMBER
-        Shipment - AdditionalParty:
-            description: Additionalparties for the shipment, repeatable. Refer to detailed instructions
-            type: sequence
-            required: True
-            example:
-        Shipment - AdditionalParty - subClass:
-            description: Type of party. Valid values are DespatchParty, DeliveryParty, OrderingParty, FreightPayer, CashOnDeliveryPayee, GoodsReturnParty, NotifyParty, TransportCompany
-            type: String
-            required: True
-            example: DeliveryParty
-        Shipment - AdditionalParty - partyId:
-            description: Identifier for the party
-            type: String
-            required: True
-            example: BEX
-        Shipment - AdditionalParty - subPartyId:
-            description: Further identification for the party
-            type: String
-            required: False
-            example: GLW
-        Shipment - AdditionalParty - Name:
-            description: Partyname
-            type: String
-            required: False
-            example: Rogers antistatiske overledninger
-        Shipment - AdditionalParty - Address:
-            description: Partyaddress
-            type: sequence
-            required: False
-            example:
-        Shipment - AdditionalParty - Address - AddressLine:
-            description: Address lines. The first line will be mapped to primary address line
-            type: sequence
-            required: True
-            example: Kong Oscars gate 12
-        Shipment - AdditionalParty - Address - PostalCode:
-            description: Postal code for address
-            type: String
-            required: True
-            example: 5122
-        Shipment - AdditionalParty - Address - City:
-            description: City for the postal code
-            type: String
-            required: True
-            example: Morvik
-        Shipment - AdditionalParty - Address - StateOrRegion:
-            description: State or region, not in use in the nordic countries
-            type: String
-            required: False
-            example: Washington DC
-        Shipment - AdditionalParty - Address - CountryCode:
-            description: Countrycode. Use valid country codes
-            type: String
-            required: True
-            example: NO
-        Shipment - AdditionalParty - ContactName:
-            description: Party contactname
-            type: String
-            required: False
-            example: Ola Nordmann
-        Shipment - AdditionalParty - Phone:
-            description: Phone
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - AdditionalParty - MobilePhone:
-            description: MobilePhone
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - AdditionalParty - Email:
-            description: Email
-            type: String
-            required: False
-            example: mail@mail.com
-        Shipment - AdditionalParty - Fax:
-            description: Fax
-            type: String
-            required: False
-            example: +4712345678
-        Shipment - AdditionalParty - Reference:
-            description: Further references related to the party
-            type: sequence
-            required: False
-            example: SOA-121232332-AN
-        Shipment - AdditionalParty - Reference - ReferenceValue:
-            description: Extra reference
-            type: String
-            required: True
-            example: 4440/0189981/WEJ
-        Shipment - AdditionalParty - Reference - referenceType:
-            description: Referencetype. Valid values are DESPATCH_ADVICE_NUMBER, TRANSPORT_DOCUMENT_NUMBER, CUSTOMS_DECLARATION_NUMBER, ACCOUNT_NUMBER, PROJECT_NUMBER, SECONDARY_CUSTOMS_REFERENCE, TEMPORARY_IMPORTATION_DOCUMENT_NUMBER, SENDERS_REFERENCE, AIR_WAYBILL, BILL_OF_LADING, BOOKING_REFERENCE, ROAD_CONSIGNMENT_NOTE, SHIPMENT_REFERENCE, TRANSPORT_INSTRUCTION, GOODS_NUMBER
-            type: String
-            required: True
-            example: TRANSPORT_DOCUMENT_NUMBER
-        Shipment - ProductAndService:
-            description: Product and service codes in addition to value added service structures
-            type: sequence
-            required: True
-            example:
-        Shipment - ProductAndService - ProductCode:
-            description: Productcode for shipment, refer to documentation for valid productcodes for this service
-            type: String
-            required: True
-            example: COURIER_1H
-        Shipment - ProductAndService - AdditionalService:
-            description: Additional service codes. Refer to documentation for valid codes
-            type: sequence
-            required: False
-            example:
-        Shipment - ProductAndService - AdditionalService - AdditionalServiceCode:
-            description: The additional service code for the product. Refer to documentation for valid values
-            type: String
-            required: True
-            example: EVARSLING
-        Shipment - ProductAndService - AdditionalService - ServiceRequirements:
-            description: Some AdditionalServiceCodes / valueadded service might require extra information. Refer to the documentation for the specific code for further information. Example includes quantity for code
-            type: sequence
-            required: True
-            example: 02
-        Shipment - ProductAndService - TariffReference:
-            description: Additional information about the price of the cargo in connection with the service. Refer to documentation for codes.
-            type: String
-            required: False
-            example: GNCG
-        Shipment - ProductAndService - NatureOfCargo:
-            description: Indicates if the cargo is out of bound of general expected parameters, dangerous goods or out og gauge
-            type: String
-            required: False
-            example: 11
-        Shipment - DeliveryTerms:
-            description: Terms for delivery
-            type: sequence
-            required: True
-            example:
-        Shipment - DeliveryTerms - ConditionCode:
-            description: The actual terms for the chosen deliverytermstype
-            type: String
-            required: True
-            example: EXW
-        Shipment - DeliveryTerms - Location:
-            description: The location where the given deliveryterms (condition) applies (to or from given conditioncode.)
-            type: sequence
-            required: False
-            example:
-        Shipment - DeliveryTerms - Location - City:
-            description: City where the deliveryterms are valid to or from
-            type: String
-            required: True
-            example: Bergen
-        Shipment - DeliveryTerms - Location - CountryCode:
-            description: Country where the deliveryterms ar valid to or from
-            type: String
-            required: True
-            example: NO
-        Shipment - DeliveryTerms - termsType:
-            description: Terms valid for this shipment. Valid values are Incoterms, Freightterms, Combiterms, PrePaid, ThirdParty
-            type: String
-            required: True
-            example: Incoterms
-        Shipment - CashOnDelivery:
-            description: CashOnDelivery for the shipment
-            type: sequence
-            required: True
-            example:
-        Shipment - CashOnDelivery - TransactionIdentifier:
-            description: Senders identifier for the transaction
-            type: sequence
-            required: False
-            example:
-        Shipment - CashOnDelivery - TransactionIdentifier - identifierType:
-            description: Type of cash on delivery.. Valid values are PQ, SS
-            type: String
-            required: True
-            example: PQ
-        Shipment - CashOnDelivery - TransactionIdentifier - accountType:
-            description: Type of account to receive payment. Valid values are Bank, Bankgiro, Plus, Post, Iban, Other
-            type: String
-            required: True
-            example: Bank
-        Shipment - CashOnDelivery - TransactionIdentifier - Value:
-            description: The value to identify where the money should be sent
-            type: String
-            required: True
-            example: 1234.12.123456
-        Shipment - CashOnDelivery - Amount:
-            description: Amount expected on delivery
-            type: sequence
-            required: False
-            example: 12450
-        Shipment - CashOnDelivery - Amount - currencyCode:
-            description: Currencycode, valid currency codes allowed
-            type: String
-            required: False
-            example: NOK
-        Shipment - CashOnDelivery - ControlDigit:
-            description: Controldigit for incoming amount when there is specified a KID number (norwegian only)
-            type: Integer
-            required: False
-            example: 8
-        Shipment - CashOnDelivery - DocumentId:
-            description: Documentids for cashondelivery
-            type: sequence
-            required: False
-            example: SA-46789
-        Shipment - CashOnDelivery - MonetaryAccount:
-            description: Description of where money should be received
-            type: sequence
-            required: False
-            example:
-        Shipment - CashOnDelivery - MonetaryAccount - AccountNumber:
-            description: Account number to receive payment
-            type: sequence
-            required: True
-            example:
-        Shipment - CashOnDelivery - MonetaryAccount - AccountNumber - accountType:
-            description: Type of account to receive payment on delivery. Valid values are Bank, Bankgiro, Plus, Post, Iban, Other
-            type: String
-            required: True
-            example:
-        Shipment - CashOnDelivery - MonetaryAccount - AccountNumber - Value:
-            description: Actual account number
-            type: String
-            required: True
-            example: 4567.45.12345
-        Shipment - CashOnDelivery - MonetaryAccount - SwiftCode:
-            description: Swift code for international transfers
-            type: String
-            required: True
-            example: DNBANOKK
-        Shipment - CashOnDelivery - MonetaryAccount - BankName:
-            description: Bank where account is created
-            type: String
-            required: True
-            example: DNB
-        Shipment - CashOnDelivery - MonetaryAccount - AccountHolderName:
-            description: Name of the owner of the account
-            type: String
-            required: True
-            example: Ola Nordmann
-        Shipment - CashOnDelivery - codType:
-            description: Type of cash on delivery. Valid values are CashOnDelivery, PrePaid, CreditCard
-            type: String
-            required: True
-            example: CashOnDelivery
-        Shipment - GoodsItem:
-            description: Information about goods being shipped
-            type: sequence
-            required: True
-            example:
-        Shipment - GoodsItem - PackageTypeCode:
-            description: Types of cargo, packaging of cargo.
-            type: String
-            required: True
-            example: ???
-        Shipment - GoodsItem - GoodsDescription:
-            description: Description of goods being shipped
-            type: String
-            required: False
-            example: Contains socks
-        Shipment - GoodsItem - LoadCarrier:
-            description: Transport equipment (pallet, container etc)
-            type: String
-            required: False
-            example: EFP
-        Shipment - GoodsItem - SealId:
-            description: Item sealed for customs etc, number of the seal
-            type: String
-            required: False
-            example: 123456
-        Shipment - GoodsItem - Temperature:
-            description: Temperaturerequirements for goods being shipped
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Temperature - Transport:
-            description: Temperature requirements during transport
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Temperature - Transport - unitCode:
-            description: Unitcode for temperature measure. Valid values are CEL, FAH
-            type: String
-            required: True
-            example: CEL
-        Shipment - GoodsItem - Temperature - Transport - minimum:
-            description: Minimum allowed temperature
-            type: String
-            required: False
-            example: -8
-        Shipment - GoodsItem - Temperature - Transport - maximum:
-            description: Maximum allowed temperature
-            type: String
-            required: False
-            example: 4
-        Shipment - GoodsItem - Temperature - Transport - Value:
-            description: Specific temperature for transportation of the cargo.
-            type: Integer
-            required: True
-            example: 3
-        Shipment - GoodsItem - Temperature - Storage:
-            description: Temperature requirements for storage of goods.
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Temperature - Storage - unitCode:
-            description: Unitcode for temperature measure. Valid values are CEL, FAH
-            type: String
-            required: True
-            example: CEL
-        Shipment - GoodsItem - Temperature - Storage - minimum:
-            description: Minimum allowed temperature
-            type: String
-            required: False
-            example: -8
-        Shipment - GoodsItem - Temperature - Storage - maximum:
-            description: Maximum allowed temperature
-            type: String
-            required: False
-            example: 4
-        Shipment - GoodsItem - Temperature - Storage - Value:
-            description: Specific temperature for transportation of the cargo.
-            type: Integer
-            required: True
-            example: 3
-        Shipment - GoodsItem - Package:
-            description: List of packages being shipped
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Package - GrossWeight:
-            description: Gross weight for package
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Package - GrossWeight - unitCode:
-            description: Unitcode for weight. Valid values are GRM, KGM
-            type: String
-            required: True
-            example: KGM
-        Shipment - GoodsItem - Package - GrossWeight - Value:
-            description: Weightvalue
-            type: Float
-            required: True
-            example: 2.33
-        Shipment - GoodsItem - Package - GrossVolume:
-            description: Gross volume for package
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Package - GrossVolume - unitCode:
-            description: Unitcode for volume measurement. Valid values are DMQ, MTQ
-            type: String
-            required: True
-            example: DMQ
-        Shipment - GoodsItem - Package - GrossVolume - Value:
-            description: Value of volume measurement
-            type: Float
-            required: True
-            example: 18.22
-        Shipment - GoodsItem - Package - Dimensions:
-            description: Dimension of the package
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Package - Dimensions - Height:
-            description: Height of package
-            type: sequence
-            required: True
-            example:
-        Shipment - GoodsItem - Package - Dimensions - Height - unitCode:
-            description: Unit for the length. Valid values are CMT, DMT, MTR
-            type: String
-            required: False
-            example: CMT
-        Shipment - GoodsItem - Package - Dimensions - Height - Value:
-            description: The length
-            type: Float
-            required: False
-            example: 1.22
-        Shipment - GoodsItem - Package - Dimensions - Length:
-            description: Length of package
-            type: sequence
-            required: True
-            example:
-        Shipment - GoodsItem - Package - Dimensions - Length - unitCode:
-            description: Unit for the length. Valid values are CMT, DMT, MTR
-            type: String
-            required: False
-            example: CMT
-        Shipment - GoodsItem - Package - Dimensions - Length - Value:
-            description: The length
-            type: Float
-            required: False
-            example: 1.22
-        Shipment - GoodsItem - Package - Dimensions - Width:
-            description: Width of package
-            type: sequence
-            required: True
-            example:
-        Shipment - GoodsItem - Package - Dimensions - Width - unitCode:
-            description: Unit for the length. Valid values are CMT, DMT, MTR
-            type: String
-            required: False
-            example: CMT
-        Shipment - GoodsItem - Package - Dimensions - Width - Value:
-            description: The length
-            type: Float
-            required: False
-            example: 1.22
-        Shipment - GoodsItem - Package - Insurance:
-            description: Insuranceinformation for the package
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Package - Insurance - InsuranceValue:
-            description: The amount the package is insured fors
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - Package - Insurance - InsuranceValue - currencyCode:
-            description: Currencycode for insured amount
-            type: String
-            required: True
-            example: NOK
-        Shipment - GoodsItem - Package - Insurance - InsuranceValue - Value:
-            description: Amount the package is insured for.
-            type: Float
-            required: False
-            example: 100000
-        Shipment - GoodsItem - Package - Insurance - GoodsDescription:
-            description: Description of insured package
-            type: String
-            required: False
-            example: Gold
-        Shipment - GoodsItem - Package - Insurance - Email:
-            description: Email related to insuranceinformation
-            type: String
-            required: False
-            example: henvendelser@vesta.no
-        Shipment - GoodsItem - Package - packageId:
-            description: Package id, can be inserted by the API
-            type: String
-            required: False
-            example: 370438101412578910
-        Shipment - GoodsItem - DangerousGoods:
-            description: Information about dangerousgoods being shipped
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - DangerousGoods - UNDGInformation:
-            description: United nations dangerous goods infomrmation
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - DangerousGoods - UNDGInformation - HazardIdentifier:
-            description: United nations dangerous goods hazard identifier
-            type: String
-            required: False
-            example: 1.1D
-        Shipment - GoodsItem - DangerousGoods - UNDGInformation - FlaspointDescription:
-            description: Flashopint for dangerousgoods.
-            type: String
-            required: False
-            example: BLACK POWDER, granulated or in powderform
-        Shipment - GoodsItem - DangerousGoods - Flashpoint:
-            description: Flashpointinformation for dangerousgoods (when will the item become volatile?)
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - DangerousGoods - Flashpoint - unitCode:
-            description: Unitcode for flashpoint. Valid values are CEL, FAH
-            type: String
-            required: False
-            example: CEL
-        Shipment - GoodsItem - DangerousGoods - Flashpoint - Value:
-            description: Value when flashpoint occurs/ignites
-            type: Integer
-            required: False
-            example: 18
-        Shipment - GoodsItem - DangerousGoods - HazardClass:
-            description: Classification of hazard
-            type: String
-            required: False
-            example: 4.1
-        Shipment - GoodsItem - DangerousGoods - AdditionalHazard:
-            description: Additional codes for hazard
-            type: String
-            required: False
-            example: 2.3(8)
-        Shipment - GoodsItem - DangerousGoods - PackingGroup:
-            description: Packing danger level code, roman numeral between 1 and 3.
-            type: String
-            required: False
-            example: II
-        Shipment - GoodsItem - DangerousGoods - Measures:
-            description: Measures for dangerous goods
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - DangerousGoods - Measures - Measure:
-            description: Measurements for goods
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - DangerousGoods - Measures - Measure - unitCode:
-            description: Unitcode for measure
-            type: String
-            required: True
-            example: DMQ
-        Shipment - GoodsItem - DangerousGoods - Measures - Measure - Value:
-            description: Measurevalue
-            type: Float
-            required: True
-            example: 1.22
-        Shipment - GoodsItem - DangerousGoods - Measures - subClass:
-            description: Should be enum???
-            type: String
-            required: False
-            example: NetHazardWeight
-        Shipment - GoodsItem - DangerousGoods - TechnicalName:
-            description: Technical name of hazard
-            type: String
-            required: False
-            example: KALSIUMRESINAT, SINTRET
-        Shipment - GoodsItem - DangerousGoods - Restrictions:
-            description: Restrictions when carrying these harzardous goods
-            type: sequence
-            required: False
-            example:
-        Shipment - GoodsItem - DangerousGoods - Restrictions - restrictionType:
-            description: Type of restriction. Valid values are Tunnel
-            type: String
-            required: False
-            example: Tunnel
-        Shipment - GoodsItem - DangerousGoods - Restrictions - Value:
-            description: Freetext specification of restriction for given tunnel. One element for each UN number in the dangerousgoods sequence.
-            type: String
-            required: False
-            example: Ellingsøy- og Valderøytunnelen på riksveg 658 utenfor Ålesund. Her gjelder tunnelkategori C i tidsrommet kl. 0600–2400 hver dag.
-        Shipment - GoodsItem - DangerousGoods - HazardPoints:
-            description: Points for this hazard. Calculated from factor for dangerousgoods multiplied by amount in kg / dm3 for each material in cargo.
-            type: Integer
-            required: False
-            example: 10
-        Shipment - GoodsItem - DangerousGoods - regulationCode:
-            description: Regulationscodes for the hazardous goods.
-            type: String
-            required: False
-            example: ADR
-
+    headers:
+          Content-Type:
+            description: Specify request format (application/json, application/xml)
+            required: true
+            enum: [ application/json,application/xml ]
+          Accept:
+            description: Specify response format (application/json, application/xml)
+            required: true
+            enum: [ application/json,application/xml ]
     body:
-        application/xml:
-          example: !include examples/basic_example.xml
-        application/json:
-          example: !include examples/basic_example.json
+      application/xml:
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include examples/basic_example.xml
+        type:
+      application/json:
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include examples/basic_example.json
+        type:
     responses:
       200:
-        displayName: Success
         description: |
           Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
-
+        body:
+          application/xml:
+            type: CreateShipmentResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Shipment
+                value: !include examples/valid_shipment_response.xml
+          application/json:
+            type: CreateShipmentResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Shipment
+                value: !include examples/valid_shipment_response.json
       400:
         displayName: Error
         description: |
@@ -1970,8 +765,15 @@ documentation:
           application/json:
             example: !include examples/basic_example.json
 
-/sendbooking/?shipmentId={createShipmentId}&packageIds={createPackageId}:
+/sendbooking/shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment booking
+  description: |
+        Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
+
+        A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Refer to the documentation for [valid values](http://posap741/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
+
+        The structure and most of the content will be validated.
+
   uriParameters:
     createShipmentId:
       displayName: If "true" the API will assign a shipment ID for you and return it in the response.
@@ -1980,15 +782,33 @@ documentation:
       displayName: If "true" the API will assign all package IDs for you and return them in the response.
       type: boolean
   description: |
-      Request is used to either create, update or delete an booking for Bring.
+      Request is used to either create, update or delete an instruction for Bring.
+
+
   post:
-    description:
-     Request is used to either create, update or delete an booking for Bring.
+    description: Request is used to either create, update or delete an instruction for Bring.
+    headers:
+          Content-Type:
+            description: Specify request format (application/json, application/xml)
+            required: true
+            enum: [ application/json,application/xml ]
+          Accept:
+            description: Specify response format (application/json, application/xml)
+            required: true
+            enum: [ application/json,application/xml ]
     body:
-        application/xml:
-          example: !include examples/basic_example_booking.xml
-        application/json:
-          example: !include examples/basic_example_booking.json
+      application/xml:
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include examples/basic_example_booking.xml
+        type:
+      application/json:
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include examples/basic_example_booking.json
+        type:
     responses:
       200:
         displayName: Success
