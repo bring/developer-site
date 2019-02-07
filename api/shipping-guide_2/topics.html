@@ -96,6 +96,34 @@ layout: redesign
           Supported list of addtional services on products can be found <a href="/api/products/#additional-services">here</a>.
         </p>
       </section>
+      <section class="api__section">
+        <h2>Multiple packages(kolli) on rest endpoint</h2>
+        <p align="justify">
+          The package parameters supports postfixed indexes to differentiate different packages.
+          <p>
+          The supported parameters are:
+          <ul>
+            <li>width</li>
+            <li>height</li>
+            <li>length</li>
+            <li>weight</li>
+            <li>volumeindm3</li>
+            <li>volumespecial</li>
+            <li>nonstackable</li>
+            <li>numberofpallets</li>
+            <li>loadingmeter</li>
+          </ul>
+          </p>
+          <p>
+          To specify weight for two different packages or kolli
+          you can query like this: <code>weight0=200&weight1=250</code>
+          </p>
+          <p>
+          <strong>A parameter without an index is the same as the zero index</strong><br/>
+          Meaning <code>weight0=200</code> and <code>weight=200</code> is specifying weight for the same package.
+          </p>
+        </p>
+      </section>
 
       <section class="api__section" id="">
         {% include disqus.html %}
