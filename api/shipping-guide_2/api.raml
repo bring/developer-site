@@ -12,7 +12,7 @@ documentation:
       - Estimated delivery times
       - GUI information
 
-      The API returns the recommended way to present these shipping alternatives, meaning that the actual response can easily be shown in a web-shop checkout without any sorting or filtering and with human readable product texts.
+      The API returns the recommended way to present these shipping alternatives, meaning that the actual response can easily be shown in a web-shop checkout without any sorting or filtering and with human readable service texts.
 
       The Shipping Guide API 2.0 has both a REST and a SOAP interface. The REST interface only supports single consignments, while the SOAP interface can be used for multiple consignments.
 
@@ -20,7 +20,7 @@ documentation:
 
       * [Unified request and response model](/api/shipping-guide_2/#getting-started): Due to backward compatibility, existing SOAP API versions had too many ways of requesting to Shipping Guide could be always confusing for clients. This has been simplified in the new version with one unified way of requesting to Shipping Guide.
       * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#handle-api-errors): The new version of API gives ability to handle error in a much simpler way.
-      * [Ability to fetch agreement prices specific to a product on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple products and along with multiple customer number in a single REST request. [How?](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
+      * [Ability to fetch agreement prices specific to a service on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple services and along with multiple customer number in a single REST request. [How?](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery)
       *  Some improvements to our service offering are planned for 2018-19. More info about upcoming changes will follow to all our partners. Future services will be supported by this new API-version in addition to other improvements. Note that our old versions of API’s will not support future changes in our service offering.
 
       ### How to upgrade
@@ -28,7 +28,7 @@ documentation:
 
 - title: Getting started
   content: |
-      This guide will walk you through getting shipment alternatives for your first consignment using Shipping Guide API. In this example we will be calling the SOAP interface with a HTTP client and query for the product `SERVICEPAKKE` and `PA_DOREN` for two packages.
+      This guide will walk you through getting shipment alternatives for your first consignment using Shipping Guide API. In this example we will be calling the SOAP interface with a HTTP client and query for the service `SERVICEPAKKE` and `PA_DOREN` for two packages.
 
       ### Before you start
       Before you can begin using the new API you'll have to do the following:
@@ -56,7 +56,7 @@ documentation:
       Most SOAP libraries will do this for you.
 
       ### 4. Add the body to the request
-      In this request we will query prices and expected delivery time for the product `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
+      In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
       ```
       <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -273,9 +273,9 @@ documentation:
         Possible error codes can be found [here](https://api.bring.com/shippingguide/api/errors?clientUrl=developer.bring.com)
 
 
-      * An error object in the response that is on product level
+      * An error object in the response that is on service level
 
-        When we are not able to process one of the product requested, we will respond with a error on product level. Details of possible error codes are documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl) itself, making it easier for clients to parse it.
+        When we are not able to process one of the service requested, we will respond with a error on service level. Details of possible error codes are documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl) itself, making it easier for clients to parse it.
 
 - title: Request and response structure
   content: |
@@ -299,8 +299,8 @@ documentation:
   content: |
       To have better performance of the api
 
-      * Request can be limited to have only the products needed since the response time of some products can be slow as compared to others
-      * If the request is only to find the lead time / prices of different product, the flag for withExpectedDelivery / withPrices should be set to true and others can be set to false. In case of REST these are different endpoints.
+      * Request can be limited to have only the services needed since the response time of some services can be slow as compared to others
+      * If the request is only to find the lead time / prices of different service, the flag for withExpectedDelivery / withPrices should be set to true and others can be set to false. In case of REST these are different endpoints.
       * For net prices requests should include customer number and correct package details
       * Request can include limited number of consignments in each request for quick response.
       * New shipments request can be part of separate request
@@ -309,7 +309,7 @@ documentation:
 
 /v2/products:
   displayName: Get shipment prices and estimated delivery
-  description: Use this endpoint to get expected delivery, product categories and additional information.
+  description: Use this endpoint to get expected delivery, service categories and additional information.
   get:
     description: Get shipment prices
     headers:
@@ -333,7 +333,7 @@ documentation:
         description: Receiver postal code
         type: string
       product:
-        description: List of products requested. Multiple products can be requested in a single request. Requested product can also be specified with a customer number separated with delimiter (**:**). For example CARGO**:**CARGO-123456
+        description: List of services requested. Multiple services can be requested in a single request. Requested service can also be specified with a customer number separated with delimiter (**:**). For example CARGO**:**CARGO-123456
         type: string
       date:
         description: Shipping date
@@ -379,7 +379,7 @@ documentation:
         required: false
         default: false
       edi:
-        description: Tells if the parcel will be registered using EDI when being booked. It may affect price and which products are available
+        description: Tells if the parcel will be registered using EDI when being booked. It may affect price and which services are available
         type: boolean
         required: false
         default: true
@@ -395,12 +395,12 @@ documentation:
         required: false
         type: string
       customernumber:
-        description: Lets you specify which customer number to use in the request. If specified and product is not supplied with delimited customer number, then it will be applied on all request products
+        description: Lets you specify which customer number to use in the request. If specified and service is not supplied with delimited customer number, then it will be applied on all request services
         type: string
         example: CARGO-123456
         required: false
       language:
-        description: Language used for the product texts
+        description: Language used for the service texts
         type: string
         default: no
         required: false
@@ -456,9 +456,9 @@ documentation:
 
 /api/ws:
   displayName: Get shipment prices and estimated delivery
-  description: Use this endpoint to get expected delivery, product categories and additional information.
+  description: Use this endpoint to get expected delivery, service categories and additional information.
   post:
-    description: Use this endpoint to get expected delivery, product categories and additional information.
+    description: Use this endpoint to get expected delivery, service categories and additional information.
     headers:
       X-MyBring-API-Uid:
         description: Your Mybring login ID
