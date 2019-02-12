@@ -477,23 +477,23 @@ layout: redesign
           8 January 1st 2018 the new service MAIL has been introduced to replace the old services A-POST and B-POST. Requests using the old service codes A-POST and B-POST will be mapped to the new service code MAIL.
           </sup>
 
-          <h3 id="additional-services" class="anchored">Additional Services</h3>
+          <h3 id="additional-services" class="anchored">Value added Services</h3>
 
-          <p>The Shipping Guide supports the additional services listed in the table below.
+          <p>The Shipping Guide supports the value added services listed in the table below.
              The value in the column "additional service code" is used when accessing the service.
           </p>
           <p>
             The links are to examples using XML API. Have a look at the <a href="{{ base_url }}/shippingguide/api/ws/shippingguide-20.wsdl">WSDL</a> or <a href="{{ base_url }}/shippingguide/api/ws/shipping-guide-20.xsd">XSD</a>
-             for help to set these additional services in a SOAP request.
+             for help to set these value added services in a SOAP request.
           </p>
           <div class="information-box">
-            Some additional services get their own price in the response from the Shipping Guide, others are included (and change) the base package price.
+            Some value added services get their own price in the response from the Shipping Guide, others are included (and change) the base package price.
              See column below 'Affects base package price?'.
           </div>
 
 
           <div class="information-box">
-            Make sure you specify the correct additional services for a package when querying the Shipping Guide.
+            Make sure you specify the correct value added services for a package when querying the Shipping Guide.
             <br><br>
             Especially the "eVarsling" additional service for the Servicepakke service (recipient notification over SMS or E-Mail) will affect the
             base package price returned from the Shipping Guide, and should therefore be set according to what will be sent in the actual EDI message.
