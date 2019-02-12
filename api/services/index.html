@@ -1,5 +1,5 @@
 ---
-title: API Product List
+title: API Service List
 layout: redesign
 ---
 <div class="wrapper">
@@ -18,8 +18,8 @@ layout: redesign
       <article class="api">
 
         <section class="api__section" id="">
-          <h1 class="api__title">API Product List</h1>
-          <p>This page lists all the products available in the <a href="/api/shipping-guide_2/">Shipping Guide API</a> and <a href="/api/booking/">Booking API</a></p>
+          <h1 class="api__title">API Service List</h1>
+          <p>This page lists all the services available in the <a href="/api/shipping-guide_2/">Shipping Guide API</a> and <a href="/api/booking/">Booking API</a></p>
         </section>
 
         {% assign base_url = 'http://api.test.bring.com' %}
@@ -39,17 +39,17 @@ layout: redesign
         <section class="api__section" id="shipping-guide">
           <h2>Shipping Guide API</h2>
 
-          <p>The Shipping Guide offers a broad range of products by Bring. We will gradually increase the number of products and
+          <p>The Shipping Guide offers a broad range of services by Bring. We will gradually increase the number of services and
               functionality available in the service.</p>
 
-          <p>The table below shows currently available products and which information that is available. The links are to examples
+          <p>The table below shows currently available services and which information that is available. The links are to examples
               using XML API.</p>
 
           <table class="productlist">
           <thead>
           <tr>
-              <th>Product</th>
-              <th>Product code</th>
+              <th>Service</th>
+              <th>Service code</th>
               <th>List Price</th>
               <th>Agreement Price</th>
               <th>Expected Delivery</th>
@@ -459,19 +459,18 @@ layout: redesign
           </table>
 
           <sup>
-          1 Due to look-up in flight schedules, a request for this product has longer response time than for other
-              products.<br>
+          1 Due to look-up in flight schedules, a request for this service has longer response time than for other services.<br>
 
           2 <a href="https://www.bring.no/english/content/files/prices/parcels-and-cargo/fuel-surcharge-bring-parcels.pdf" target="_blank">Fuel surcharge</a> is not included in the price returned from the ShippingGuide and must be calculated / added manually.
             Bring Parcels is entitled to change this charge without notice to the customer. Any fuel surcharge applied will be detailed on the invoice.<br>
 
           3 For shipments to Denmark, PICKUP_PARCEL needs to be ordered with the “PICKUP_POINT” additional service to send as a low-cost delivery from Bring’s parcel shops or parcel lockers. Otherwise the shipment will be sent as a more expensive home delivery.<br>
 
-          4 Oil Express products can be shipped only in Norway and between certain postal codes.<br>
+          4 Oil Express services can be shipped only in Norway and between certain postal codes.<br>
 
-          5 Lead time given is from first Bring terminal to the terminal delivering the goods. Local cut-off times are not accounted for, so the client should adjust for these. These products are only available when accessed with a PARCELS_NORWAY customer number tied to an appropriate agreement.<br>
+          5 Lead time given is from first Bring terminal to the terminal delivering the goods. Local cut-off times are not accounted for, so the client should adjust for these. These services are only available when accessed with a PARCELS_NORWAY customer number tied to an appropriate agreement.<br>
 
-          6 Frigo products can be ordered only in Norway and requires a Frigo customer.<br>
+          6 Frigo services can be ordered only in Norway and requires a Frigo customer.<br>
 
           7 A customer number is required for ordering Pakke i postkassen services. There is a minimum fee of 150,- for each order.<br>
 
@@ -496,7 +495,7 @@ layout: redesign
           <div class="information-box">
             Make sure you specify the correct additional services for a package when querying the Shipping Guide.
             <br><br>
-            Especially the "eVarsling" additional service for the Servicepakke product (recipient notification over SMS or E-Mail) will affect the
+            Especially the "eVarsling" additional service for the Servicepakke service (recipient notification over SMS or E-Mail) will affect the
             base package price returned from the Shipping Guide, and should therefore be set according to what will be sent in the actual EDI message.
             <br><br>
             If eVarsling is not specified in the request, Fraktguiden will from 2013-01-01 add a fee for paper based recipient notification
@@ -581,9 +580,9 @@ layout: redesign
               </tbody>
           </table>
 
-          <h3 id="home-delivery">Home Delivery Product List</h3>
+          <h3 id="home-delivery">Home Delivery Service List</h3>
 
-          <table><thead><tr><th>productName</th><th>productCode</th></tr></thead><tbody><tr>
+          <table><thead><tr><th>Service name</th><th>Service code</th></tr></thead><tbody><tr>
           <td>Single Indoor</td>
           <td>SINGLE_INDOOR</td>
           </tr>
@@ -700,7 +699,7 @@ layout: redesign
         <section class="api__section" id="booking">
           <h2>Booking API</h2>
 
-          <p>Those are the various products available for each customer type.</p>
+          <p>Those are the various services available for each customer type.</p>
 
           <dl class="fancy-dl">
 

@@ -10,7 +10,7 @@ documentation:
 
       We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
 
-      Booking uses Shipping Guide as the source for price and availability for the different products. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide_2/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
+      Booking uses Shipping Guide as the source for price and availability for the different services. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide_2/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
 - title: Versioning strategy
   content: |
@@ -30,7 +30,7 @@ documentation:
 
     ![Authorized for booking](booking_authorization.png)
 
-    To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#list-customer-numbers) associated with your API user. The Customer Number API also links customer numbers with the products the customer number is valid for.
+    To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#list-customer-numbers) associated with your API user. The Customer Number API also links customer numbers with the services the customer number is valid for.
 
 - title: Making labels
   content: |
@@ -40,11 +40,11 @@ documentation:
 
 - title: Performance
   content: |
-    Different product groups have different response times in booking:
+    Different service groups have different response times in booking:
 
-    - Parcels and courier products
+    - Parcels and courier services
       - A booking will typically take < 2 seconds
-    - Express UPS products and Cargo
+    - Express UPS services and Cargo
       - A booking will typically take < 3 seconds
     - Express Nordic SameDay
       - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
@@ -52,13 +52,13 @@ documentation:
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
   description: |
-      The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-products, we use a UUID to identify users.
+      The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-services, we use a UUID to identify users.
 
-      The customer API will return for each specialist a list with the products that you can order through the booking API.
+      The customer API will return for each specialist a list with the services that you can order through the booking API.
 
       You can also get the API customer numbers from [this page in Mybring](https://www.mybring.com/useradmin/account/settings#customerApiKeyContainer).
 
-      | Specialist | Example products | Example customer number |
+      | Specialist | Example services | Example customer number |
       |:-----------|:-----------------|:------------------------|
       | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09` | `PARCELS_NORWAY-10001123123` |
       | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO-329511` |
@@ -68,17 +68,17 @@ documentation:
       | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
       | Frigo, Norway | `FRIGO` | `FRIGO-123456` |
 
-      [Check out this page](/api/products/#booking) to see the whole list of products for each customer type.
+      [Check out this page](/api/services/#booking) to see the whole list of services for each customer type.
 
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
-    description: List customer numbers and products
+    description: List customer numbers and services
     responses:
       200:
-        displayName: List of available customers and products
+        displayName: List of available customers and services
         body:
           application/json:
             example: !include examples/customers.json
@@ -92,9 +92,9 @@ documentation:
 
       #### Additional services
 
-      The following products have available additional services:
+      The following services have available additional services:
 
-      | Product | Additional services |
+      | Services | Value added services |
       |:--------|:--------------------|
       | SERVICEPAKKE | POSTOPPKRAV, EVARSLING, socialControl |
       | BPAKKE_DOR-DOR | EVARSLING, SIMPLE_DELIVERY, deliveryOption |
@@ -358,7 +358,7 @@ documentation:
 
       250:
         displayName: <strike>Recipient Notification. The old way of requesting additional services </strike>
-        description: The `recipientNotification` attribute/element must be set for all products that allow electronic notification, in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
+        description: The `recipientNotification` attribute/element must be set for all services that allow electronic notification, in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
         body:
           application/json:
             example: !include examples/recipientNotificationRequest.json
@@ -366,7 +366,7 @@ documentation:
             example: !include examples/recipientNotificationRequest.xml
       251:
         displayName: Recipient notification.
-        description: The `recipientNotification` attribute/element must be set for all products that allow electronic notification, in order for the recipient to receive electronic notification. This element must the recipient's mobile phone number and/or e-mail address.
+        description: The `recipientNotification` attribute/element must be set for all services that allow electronic notification, in order for the recipient to receive electronic notification. This element must the recipient's mobile phone number and/or e-mail address.
         body:
           application/json:
             example: !include examples/recipientNotificationRequestNew.json
@@ -376,7 +376,7 @@ documentation:
       252:
          displayName: <strike>Cash On Delivery. The old way of requesting additional services </strike>
          description: |
-           The `cashOnDelivery` element/attribute can be set for products that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
+           The `cashOnDelivery` element/attribute can be set for services that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
 
            `Amount` field only accepts numeric values without comma in it and with two decimal places.
          body:
@@ -388,7 +388,7 @@ documentation:
       253:
          displayName: Cash On Delivery
          description: |
-           The `cashOnDelivery` element/attribute can be set for products that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
+           The `cashOnDelivery` element/attribute can be set for services that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
 
            `Amount` field only accepts numeric values without comma in it and with two decimal places.
          body:
@@ -399,7 +399,7 @@ documentation:
       255:
         displayName: QuickPack Envelope
         description: |
-          The `quickPackEnvelope` element/attribute is of type boolean, and can be set for products that allow quickpack envelope shipment. We recommend using the weight and measurements shown in the example, for correct mapping.
+          The `quickPackEnvelope` element/attribute is of type boolean, and can be set for services that allow quickpack envelope shipment. We recommend using the weight and measurements shown in the example, for correct mapping.
         body:
           application/json:
             example: !include examples/quickPackEnvelopeNew.json
@@ -439,7 +439,7 @@ documentation:
       264:
         displayName: Flex Delivery
         description: |
-          The `flexDelivery` element/attribute can be set for products that allow flex delivery. This element must contain an instruction message for the driver.
+          The `flexDelivery` element/attribute can be set for services that allow flex delivery. This element must contain an instruction message for the driver.
         body:
           application/json:
             example: !include examples/flexDelivery.json
@@ -448,7 +448,7 @@ documentation:
       266:
         displayName: Select Pickup Point in Norway
         description: |
-          You can specify pickup point Id in request for `SERVICEPAKKE` and `PICKUP_PARCEL_BULK` products for delivery of parcels within Norway and to Norway from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
+          You can specify pickup point Id in request for `SERVICEPAKKE` and `PICKUP_PARCEL_BULK` services for delivery of parcels within Norway and to Norway from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
 
           The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
 
@@ -461,7 +461,7 @@ documentation:
       268:
         displayName: Select Pickup Point in Sweden
         description: |
-          You can specify pickup point Id in request for `PICKUP_PARCEL_BULK` products for delivery of parcels within Sweden and to Sweden from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
+          You can specify pickup point Id in request for `PICKUP_PARCEL_BULK` services for delivery of parcels within Sweden and to Sweden from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
 
           The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
 
@@ -474,7 +474,7 @@ documentation:
       270:
         displayName: Select Pickup Point in Denmark
         description: |
-          The products `PICKUP_PARCEL` and `PICKUP_PARCEL_BULK` support the `deliveryOption=PICKUP_POINT` for shipments within Denmark and to Denmark, respectively. The parcel will be delivered to the pickup point closest to the recipient address and the recipient will receive a notification when the parcel arrives. If you do not specify a delivery option for these products in Denmark, the package will be delivered to the door.
+          The services `PICKUP_PARCEL` and `PICKUP_PARCEL_BULK` support the `deliveryOption=PICKUP_POINT` for shipments within Denmark and to Denmark, respectively. The parcel will be delivered to the pickup point closest to the recipient address and the recipient will receive a notification when the parcel arrives. If you do not specify a delivery option for these services in Denmark, the package will be delivered to the door.
 
           You can also specify a pickup point id to get the package delivered at a specific pickup point. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points. Pickup point id and country code has to be specified under `pickupPoint` within `parties` as shown below.
 
@@ -489,7 +489,7 @@ documentation:
       272:
         displayName: Select Pickup Point in Finland
         description: |
-          You can specify pickup point Id in request for `PICKUP_PARCEL_BULK` products for delivery of parcels to Finland from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
+          You can specify pickup point Id in request for `PICKUP_PARCEL_BULK` services for delivery of parcels to Finland from other countries. Use [Pickup Point API](/api/pickup-point/) to get list of nearest pickup points.
 
           The parcel will be delivered to the pickup point specified in the request with SMS/Email notification. Pickup point delivery requires that the *recipient has email and/or phone number set*, so that he can receive notification when the package arrives at the pickup point.
 
@@ -504,7 +504,7 @@ documentation:
         description: |
           ### Express service for Oil Express
 
-          You can use Express service if you want to send your goods urgently (this service is *applicable only for Oil Express* product). In case of express delivery, goods are picked up as soon as possible and delivered to its destination.
+          You can use Express service if you want to send your goods urgently (this service is *applicable only for Oil Express* service). In case of express delivery, goods are picked up as soon as possible and delivered to its destination.
 
           For using Express service send `true` value in `express` as shown in below example.
         body:
@@ -514,7 +514,7 @@ documentation:
             example: !include examples/express.xml
       276:
         displayName: Delivery Indoors
-        description: The `deliveryIndoors` element/attribute can be set for products that allow delivery indoors. This element must contain an instruction message for the driver.
+        description: The `deliveryIndoors` element/attribute can be set for services that allow delivery indoors. This element must contain an instruction message for the driver.
         body:
           application/json:
             example: !include examples/deliveryIndoors.json
@@ -522,7 +522,7 @@ documentation:
             example: !include examples/deliveryIndoors.xml
       278:
         displayName: Temperature Zone
-        description: The `temperatureZone` element/attribute can be set for Frigo product for the goods which requires temperature controlled environment. This element allows either of 4 values `FROZEN`, `COOL`, `DRY` and `FISH`.
+        description: The `temperatureZone` element/attribute can be set for Frigo service for the goods which requires temperature controlled environment. This element allows either of 4 values `FROZEN`, `COOL`, `DRY` and `FISH`.
         body:
           application/json:
             example: !include examples/temperatureZone.json
@@ -530,7 +530,7 @@ documentation:
             example: !include examples/temperatureZone.xml
       280:
               displayName: Cargo International - Incoterms
-              description: The `incotermRule` element/attribute can be set for Cargo International product. This is a mandatory element while creating an order for Cargo International. API request will return error code i.e., `BOOK-INPUT-065` in case of no IncotermRule is provided in request. This element allows either of 13 values `DDP`, `DAP`, `FCA`, `FAS`, `FOB`, `CFR`, `CIF`, `CPT`, `CIP`, `DAT`, `DAF`, `DES` and `EXW`.
+              description: The `incotermRule` element/attribute can be set for Cargo International service. This is a mandatory element while creating an order for Cargo International. API request will return error code i.e., `BOOK-INPUT-065` in case of no IncotermRule is provided in request. This element allows either of 13 values `DDP`, `DAP`, `FCA`, `FAS`, `FOB`, `CFR`, `CIF`, `CPT`, `CIP`, `DAT`, `DAF`, `DES` and `EXW`.
               body:
                 application/json:
                   example: !include examples/incotermRule.json
@@ -555,7 +555,7 @@ documentation:
       286:
               displayName: Simple Delivery
               description: |
-                The `simpleDelivery` element/attribute can be set for products that allow simple delivery.
+                The `simpleDelivery` element/attribute can be set for services that allow simple delivery.
               body:
                 application/json:
                   example: !include examples/simpleDelivery.json
@@ -635,7 +635,7 @@ documentation:
     | CARGO                  | Norway (cargo)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
     | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
 
-    #### Pickup ordered by default with product CARGO_GROUPAGE from Bring Cargo
+    #### Pickup ordered by default with service CARGO_GROUPAGE from Bring Cargo
 
     A pickup order is necessary to get the goods collected for transportation by Bring Cargo but you don't have to worry about it when ordering with the API .
 
