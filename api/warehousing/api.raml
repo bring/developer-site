@@ -61,11 +61,21 @@ documentation:
   post:
     description: Send an order
     queryParameters:
+      CreateOrderRequest version:
+          description: Version of request, current 2.0.
+          type: string
+          required: true
+          example: 2.0
       CreateOrderRequest messageFunction:
-          description: Type of order. <br>"Order"<br>"OrderResponse"<br>"SalesOrder"<br>"NotifyTransport"<br>"PurchaseOrder"<br>"ArticleBalance"<br>"DespatchAdvice"<br>"ReceivingAdvice"<br>"PackageList"<br>"OrderReceipt"<br>"InventoryReport"<br>"InventoryReportAd"<br>"ItemData"
+          description: Type of order. <br>"Order"<br>"SalesOrder (Not in use)"<br>"PurchaseOrder"
           type: string
           required: true
           example: Order
+      CreateOrderRequest messageId:
+          description: Unique id for this message.
+          type: string
+          required: true
+          example: 3dcc8b71-2bf7-4574-813d-9295bd5db8c0
       MessageSender partyId:
           description: Customer Number which Bring has provided. It cannot be demo customer number. An 6 digits number.
           type: string
