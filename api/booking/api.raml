@@ -212,12 +212,11 @@ documentation:
             description: Specify address line 2. This parameter can be 35 character long.
             type: string
         customsDeclarationType:
-            description: Declaration for customs clarance usage
+            description: _This field is deprecated._ Declaration for customs clarance usage
             enum: [OTHER, REPAIR_OR_RETURN, DOCUMENTS, COMMERCIAL_SAMPLE, TEMPORARY_EXP, GIFT]
             example: COMMERCIAL_SAMPLE
-            required: true
         customsDeclarationText:
-            description: Describe good inside the package for custom clearance. This parameter can be maximum 35 character long.
+            description: _This field is deprecated._ Describe good inside the package for custom clearance. This parameter can be maximum 35 character long.
             type: string
             example: Sample for verification
         purchaseOrderNumber:
@@ -716,6 +715,3 @@ documentation:
 
   post:
     description: SOAP
-
-
-
