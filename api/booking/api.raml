@@ -49,6 +49,21 @@ documentation:
     - Express Nordic SameDay
       - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
 
+- title: Customs declaration
+  content: |
+    It is now possible to pass customs declaration information that will be sent electronically to the destination country. As of now, this is optional information.
+
+    In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
+    t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
+
+    | Quantity | Description of contents | Customs tariff code | Total content net weight (kg) | Total content value | Currency | Country of origin |
+    |:--------:|:-----------------------:|:-------------------:|:-----------------------------:|:-------------------:|:--------:|:-----------------:|
+    | `2` | `shampoo` | `33.05.1000` | `0.3` | `200` | `NOK` | `China`|
+    | `5` | `cotton t-shirts` | `61.09.1000` | `2.5` | `1000`| `NOK`| `Poland` |
+    | `1` | `wool jacket` | `61.04.3100` | `2` | `750` | `NOK`| `Germany` |
+
+    See examples in the _More Examples_ section below for an example of a request containing a customs declaration. In this example, the recipient and importer of the goods are two different parties.
+
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
   description: |
@@ -568,6 +583,15 @@ documentation:
                   example: !include examples/cargowithPallets.json
                 application/xml:
                   example: !include examples/cargoWithPallets.xml
+
+      290:
+              displayName: Customs declaration - with importer
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. In this element, `quantity` is the number of articles, `goodsDescription` is a description of the article, `customsArticleNumber` is the customs article number, `itemNetWeightInGrams` is the weight (in grams) of all the articles declared in this line, `tarriffLineAmount` is the value of all the articles declared on this line, `currency` is the currency used and `countryOfOrigin` is the country of origin of the articles. An importer party is also included in the request.
+              body:
+                application/json:
+                  example: !include examples/customsDeclarationWithImporter.json
+                application/xml:
+                  example: !include examples/customsDeclarationWithImporter.xml
 
 
 /errors{mediaTypeExtension}:
