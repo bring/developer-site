@@ -53,8 +53,7 @@
       },
       "product": {
         "id": "BUSINESS_PARCEL",
-        "customerNumber": "PARCELS_NORWAY-00094983111",
-        "customsDeclaration": null,
+        "customerNumber": "PARCELS_NORWAY-***********",
         "messageForRecipient": null,
         "ediCustomsDeclarations": [
           {

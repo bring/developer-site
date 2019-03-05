@@ -12,7 +12,7 @@
                     <city>OSLO</city>
                     <countryCode>NO</countryCode>
                     <reference>1234</reference>
-                    <additionalAddressInfo>Hentes pÃ¥ baksiden</additionalAddressInfo>
+                    <additionalAddressInfo>Hentes på baksiden</additionalAddressInfo>
                     <contact>
                         <name>Trond Nordmann</name>
                         <email>trond@normanntest.no</email>
@@ -52,7 +52,7 @@
             </parties>
             <product>
                 <id>BUSINESS_PARCEL</id>
-                <customerNumber>PARCELS_NORWAY-00094983111</customerNumber>
+                <customerNumber>PARCELS_NORWAY-***********</customerNumber>
                 <services>
                     <recipientNotification>
                         <email>sender@sender.com</email>
