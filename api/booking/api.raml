@@ -374,13 +374,14 @@ documentation:
         currency:
             description: The currency code used in an `ediCustomsDeclaration` line
             type: string
-            example: NOK
+            example: SEK
             required: true
         countryOfOrigin:
             description: The country code of origin of the articles in an `ediCustomsDeclaration` line
             type: string
-            example: NO
+            example: SE
             required: false
+
     body:
       application/json:
         example: !include examples/basicRequestNew.json
