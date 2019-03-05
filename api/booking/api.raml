@@ -51,7 +51,8 @@ documentation:
 
 - title: Customs declaration
   content: |
-    It is now possible to pass customs declaration information that will be sent electronically to the destination country. As of now, this is optional information.
+    It is now possible to pass customs declaration information that will be sent electronically to the destination country. As of now, sending customs declaration information is optional.
+    If sending customs declaration information, all elements are required. Tariff codes can be found [here](http://tolltariffen.toll.no/).
 
     In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
     t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
@@ -345,7 +346,37 @@ documentation:
         messageForRecipient:
             description: Specify message to recipient . This parameter can be maximum 35 character long.
             type: string
-
+        quantity:
+            description: The number of articles in an `ediCustomsDeclaration` line
+            type: integer
+            required: true
+        goodsDescription:
+            description: A description of the article in an `ediCustomsDeclaration` line
+            type: string
+            required: true
+        customsArticleNumber:
+            description: The customs article number in an `ediCustomsDeclaration` line
+            type: string
+            example: 33.05.1000
+            required: true
+        itemNetWeightInGrams:
+            description: The weight (in grams) of all the articles declared in an `ediCustomsDeclaration` line
+            type: integer
+            required: true
+        tarriffLineAmount:
+            description: The value of all the articles declared in an `ediCustomsDeclaration` line
+            type: double
+            required: true
+        currency:
+            description: The currency code used in an `ediCustomsDeclaration` line
+            type: string
+            example: NOK
+            required: true
+        countryOfOrigin:
+            description: The country code of origin of the articles in an `ediCustomsDeclaration` line
+            type: string
+            example: NO
+            required: true
     body:
       application/json:
         example: !include examples/basicRequestNew.json
@@ -578,7 +609,7 @@ documentation:
 
       290:
               displayName: Customs declaration - with importer
-              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. In this element, `quantity` is the number of articles, `goodsDescription` is a description of the article, `customsArticleNumber` is the customs article number, `itemNetWeightInGrams` is the weight (in grams) of all the articles declared in this line, `tarriffLineAmount` is the value of all the articles declared on this line, `currency` is the currency used and `countryOfOrigin` is the country of origin of the articles. An importer party is also included in the request.
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. An importer party is also included in the request.
               body:
                 application/json:
                   example: !include examples/customsDeclarationWithImporter.json
