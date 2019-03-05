@@ -49,6 +49,46 @@ documentation:
     - Express Nordic SameDay
       - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
 
+- title: Customs information
+  content: |
+    It is now possible to pass customs information when booking the following services from Norway -> abroad:
+
+    - Business Parcel
+    - PickUp Parcel
+
+    When included during booking, the customs information will be sent electronically from Bring to the destination country. As of now, sending customs information is optional. 
+    
+    <strong>Please note that this customs information will be mandatory to include for the mentioned bookings from 01st of June 2019.</strong>
+    
+    If sending customs information, the following elements are to be used:
+
+    - quantity (required)
+    - goodsDescription (required)
+    - customsArticleNumber (optional)
+    - itemNetWeightInGrams (required)
+    - tarriffLineAmount (required)
+    - currency (required)
+    - countryOfOrigin (optional)
+    
+    Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/). 
+    
+    #### Example
+    
+    In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
+    t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
+
+    | Quantity | Description of contents | Customs tariff code | Total content net weight (g) | Total content value | Currency | Country of origin |
+    |:--------:|:-----------------------:|:-------------------:|:----------------------------:|:-------------------:|:--------:|:-----------------:|
+    | `2` | `shampoo` | `33.05.1000` | `300` | `200` | `NOK` | `CH`|
+    | `5` | `cotton t-shirts` | `61.09.1000` | `2500` | `1000`| `NOK`| `PL` |
+    | `1` | `wool jacket` | `61.04.3100` | `2000` | `750` | `NOK`| `DE` |
+
+    Please note that the importer of the goods can be the same as the recipient, or the importer can be a separate party (if different from the recipient).
+
+    There are two examples in the _More Examples_ section below that show requests containing customs information.
+    In one of these examples, the recipient is the importing party, so it has an (optional) `vatNumber` added.
+    In the other example, there is a separate importing party. Now, the (still optional) `vatNumber` is specified for the importer.
+
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
   description: |
@@ -211,14 +251,6 @@ documentation:
         addressLine2:
             description: Specify address line 2. This parameter can be 35 character long.
             type: string
-        customsDeclarationType:
-            description: _This field is deprecated._ Declaration for customs clarance usage
-            enum: [OTHER, REPAIR_OR_RETURN, DOCUMENTS, COMMERCIAL_SAMPLE, TEMPORARY_EXP, GIFT]
-            example: COMMERCIAL_SAMPLE
-        customsDeclarationText:
-            description: _This field is deprecated._ Describe good inside the package for custom clearance. This parameter can be maximum 35 character long.
-            type: string
-            example: Sample for verification
         purchaseOrderNumber:
             type: string
             description: Specify when there is any purchase orders associated with the booking. This parameter can be maximum 35 character long.
@@ -338,6 +370,37 @@ documentation:
         messageForRecipient:
             description: Specify message to recipient . This parameter can be maximum 35 character long.
             type: string
+        quantity:
+            description: The number of articles in an `ediCustomsDeclaration` line
+            type: integer
+            required: true
+        goodsDescription:
+            description: A description of the article in an `ediCustomsDeclaration` line
+            type: string
+            required: true
+        customsArticleNumber:
+            description: The customs article number in an `ediCustomsDeclaration` line
+            type: string
+            example: 33.05.1000
+            required: false
+        itemNetWeightInGrams:
+            description: The weight (in grams) of all the articles declared in an `ediCustomsDeclaration` line
+            type: integer
+            required: true
+        tarriffLineAmount:
+            description: The value of all the articles declared in an `ediCustomsDeclaration` line
+            type: double
+            required: true
+        currency:
+            description: The currency code used in an `ediCustomsDeclaration` line
+            type: string
+            example: SEK
+            required: true
+        countryOfOrigin:
+            description: The country code of origin of the articles in an `ediCustomsDeclaration` line
+            type: string
+            example: SE
+            required: false
 
     body:
       application/json:
@@ -568,6 +631,24 @@ documentation:
                   example: !include examples/cargowithPallets.json
                 application/xml:
                   example: !include examples/cargoWithPallets.xml
+
+      290:
+              displayName: Customs declaration - with sender as the importing party
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. No importer party in the request.
+              body:
+                application/json:
+                  example: !include examples/customsDeclaration.json
+                application/xml:
+                  example: !include examples/customsDeclaration.xml
+
+      292:
+              displayName: Customs declaration - with importer
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. An importer party is also in the request.
+              body:
+                application/json:
+                  example: !include examples/customsDeclarationWithImporter.json
+                application/xml:
+                  example: !include examples/customsDeclarationWithImporter.xml
 
 
 /errors{mediaTypeExtension}:
