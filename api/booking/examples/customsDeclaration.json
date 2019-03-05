@@ -28,21 +28,6 @@
           "countryCode": "SE",
           "reference": "43242",
           "additionalAddressInfo": "Bruk ringeklokken",
-          "contact": {
-            "name": "Tore mottaker",
-            "email": "tore@mottakertest.no",
-            "phoneNumber": "+46700000000"
-          }
-        },
-        "importer": {
-          "name": "Tore Mottaker",
-          "addressLine": "Mottakerveien 14",
-          "addressLine2": "c/o Tina Mottaker",
-          "postalCode": "12000",
-          "city": "Stockholm",
-          "countryCode": "SE",
-          "reference": "43242",
-          "additionalAddressInfo": "Bruk ringeklokken",
           "vatNumber": "12345",
           "contact": {
             "name": "Tore mottaker",

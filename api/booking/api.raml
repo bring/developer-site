@@ -63,7 +63,11 @@ documentation:
     | `5` | `cotton t-shirts` | `61.09.1000` | `2500` | `1000`| `NOK`| `PL` |
     | `1` | `wool jacket` | `61.04.3100` | `2000` | `750` | `NOK`| `DE` |
 
-    See examples in the _More Examples_ section below for an example of a request containing a customs declaration. In this example, the recipient and importer of the goods are two different parties.
+    The importer of the goods can be the same as the recipient, or it can be a separate party (if different from the recipient).
+
+    There are two examples in the _More Examples_ section below that show requests containing a customs declaration.
+    In one of these examples, the recipient is the importing party, so it has an (optional) `vatNumber` added.
+    In the other example, there is a separate importing party. Now, the (still optional) `vatNumber` is specified for the importer.
 
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
@@ -358,7 +362,7 @@ documentation:
             description: The customs article number in an `ediCustomsDeclaration` line
             type: string
             example: 33.05.1000
-            required: true
+            required: false
         itemNetWeightInGrams:
             description: The weight (in grams) of all the articles declared in an `ediCustomsDeclaration` line
             type: integer
@@ -376,7 +380,7 @@ documentation:
             description: The country code of origin of the articles in an `ediCustomsDeclaration` line
             type: string
             example: NO
-            required: true
+            required: false
     body:
       application/json:
         example: !include examples/basicRequestNew.json
@@ -608,8 +612,17 @@ documentation:
                   example: !include examples/cargoWithPallets.xml
 
       290:
+              displayName: Customs declaration - with sender as the importing party
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. No importer party in the request.
+              body:
+                application/json:
+                  example: !include examples/customsDeclaration.json
+                application/xml:
+                  example: !include examples/customsDeclaration.xml
+
+      292:
               displayName: Customs declaration - with importer
-              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. An importer party is also included in the request.
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item. An importer party is also in the request.
               body:
                 application/json:
                   example: !include examples/customsDeclarationWithImporter.json

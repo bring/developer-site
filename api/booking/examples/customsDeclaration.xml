@@ -28,29 +28,14 @@
                     <countryCode>se</countryCode>
                     <reference>43242</reference>
                     <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
-                    <contact>
-                        <name>Tore Mottaker</name>
-                        <email>tore@mottakertest.no</email>
-                        <phoneNumber>+46700000000</phoneNumber>
-                    </contact>
-                </recipient>
-                <importer>
-                    <name>Tore Mottaker</name>
-                    <addressLine>Mottakerveien 14</addressLine>
-                    <addressLine2>c/o Tina Mottaker</addressLine2>
-                    <postalCode>12000</postalCode>
-                    <city>stockholm</city>
-                    <countryCode>se</countryCode>
-                    <reference>43242</reference>
-                    <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
                     <vatNumber>12345</vatNumber>
                     <contact>
                         <name>Tore Mottaker</name>
                         <email>tore@mottakertest.no</email>
                         <phoneNumber>+46700000000</phoneNumber>
                     </contact>
-                </importer>
-            </parties>
+                </recipient>
+              </parties>
             <product>
                 <id>BUSINESS_PARCEL</id>
                 <customerNumber>PARCELS_NORWAY-***********</customerNumber>
