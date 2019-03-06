@@ -260,7 +260,7 @@ documentation:
             example: 15.2
             required: true
         goodsDescription:
-            description: Describe what is inside the package. This parameter can be maximum 35 character long.
+            description: This can be used in three different elements: `package`(optional), `packageGroup`(optional), and `ediCustomsDeclaration`(required). It describes what is inside the package. This parameter can be maximum 35 characters long.
             type: string
         heightInCm:
             description: Specify height in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
@@ -373,10 +373,6 @@ documentation:
         quantity:
             description: The number of articles in an `ediCustomsDeclaration` line
             type: integer
-            required: true
-        goodsDescription:
-            description: A description of the article in an `ediCustomsDeclaration` line
-            type: string
             required: true
         customsArticleNumber:
             description: The customs article number in an `ediCustomsDeclaration` line
