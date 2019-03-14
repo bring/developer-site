@@ -238,7 +238,7 @@ documentation:
 
     #### Will I be able to see my previous Webhooks (active and inactive)?
     No.
-/api/v1/Webhooks:
+/api/v1/webhooks:
   displayName: Create Webhook
   description: |
     Create a new subscription for a Webhook
@@ -280,7 +280,7 @@ documentation:
       500:
         displayName: Internal Bring error
         description: If this happens, try again a bit later as it might be due to some internal mechanism not working
-/batch/api/v1/Webhooks:
+/batch/api/v1/webhooks:
   displayName: Create multiple Webhooks
   description: |
         Create a range of new Webhooks based on a list of any parcel or shipment.
@@ -325,7 +325,7 @@ documentation:
       500:
         displayName: Internal Bring error
         description: If this happens, try again a bit later as it might be due to some internal mechanism not working
-/api/v1/Webhooks/{Webhookid}:
+/api/v1/webhooks/{Webhookid}:
   displayName: Delete Webhook
   uriParameters:
     Webhookid:
@@ -358,7 +358,7 @@ documentation:
       404:
         displayName: Error
         description: Webhook not found (not registered?)
-/api/v1/Webhooks/:
+/api/v1/webhooks/:
   displayName: Get all Webhooks
   get:
     description: Get all your current registered and active Webhooks.
@@ -387,7 +387,7 @@ documentation:
       404:
         displayName: Error
         description: Webhook not found (not registered?)
-/api/v1/Webhooks/{WebhookId}:
+/api/v1/webhooks/{WebhookId}:
   displayName: Get single Webhook
   uriParameters:
     WebhookId:
@@ -421,7 +421,7 @@ documentation:
       404:
         displayName: Error
         description: Webhook not found (not registered?)
-/api/v1/Webhooks/{WebhookId}/test:
+/api/v1/webhooks/{WebhookId}/test:
   displayName: Test a push Webhook
   description: |
     This will trigger a Webhook to receive a dummy request to the registered Webhook.
