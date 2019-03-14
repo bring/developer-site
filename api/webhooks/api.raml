@@ -49,15 +49,15 @@ types:
       event_group:
         type: string
         required: true
-        description: Represents the group(s) that is part of this webhook
+        description: Represents the group(s) that is part of this Webhook
       expiry:
         type: datetime
         required: false
-        description: Populated on fetching existsing webhook
+        description: Populated on fetching existsing Webhook
       created:
         type: datetime
         required: false
-        description: Populated on fetching existsing webhook
+        description: Populated on fetching existsing Webhook
       configuration:
         type: Configuration
         required: true
@@ -100,101 +100,112 @@ types:
 documentation:
 - title: Introduction
   content: |
-    Webhooks in Bring allows you to subscribe to certain "event groups" that can happen on parcels and shipments. Whenever a event occurs in Bring for a subscribed parcel/shipment,
-    we'll send a HTTP POST to the callback URL as defined in the Webhook configuration.
 
-    Using webhooks is quite simple and allows for immediate feedback based on the event that were issued for the subscribed entity. Additionally, it allows integrations of customers to become simpler,
-    as no scheduled mechanism is required to be implemented. Just define an endpoint that accepts HTTP POST, and the event details will be sent there.
+    #### Webohook Definition
+    > A Webhook in web development is a method of augmenting or altering the behaviour of a web page, or web application, with custom callbacks.
+    > These callbacks may be maintained, modified, and managed by third-party users and developers who may not necessarily be affiliated with the originating website or application.
 
-    Quite awesome!
+    #### Webhooks in Bring
+    In the context of Bring, Webhooks allows you to subscribe to events that can occur on parcels and/or shipments.
+
+    In essence, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
+    we'll send a HTTP POST to your callback URL that were defined during the Webhook registration.
+
+    Using Webhooks is quite simple, and allows for immediate feedback based on the event that occured for the subscribed entity.
+    Additionally, it allows integrations of customers to become simpler, as no scheduled mechanism is required to be implemented.
+    You basically just define an endpoint that accepts HTTP POST, and the event details will be sent there - quite amazing 🙌
 - title: Authentication
   content: |
     In order to use the API, you will need to register with Mybring and create an API key. Whenever issuing a request, the following headers is required to be present.
 
-    | Header | Example | Comment |
+    | Header | Example | Comment | Required |
     |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies you |
+    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID | ✅ |
+    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd` | Mybring login's API key | ✅ |
+    | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies you | |
 
     **Note:** See the [getting started guide on authentication](/api/#authentication) if you want to know more about how to get started with authentication for APIs in Mybring.
 - title: API limitations
   content: |
     There is some known/deliberate limitations for the API:
 
-    | Resource | Description |
+    | Resource | Limitation description |
     |:--------|:---------|
     | All requests | The Webhook API allows a maximum of **50 concurrent requests** per user |
-    | Batch creation | Whilst creating requests for webhooks is a feature we encurage to use, its max amount of parcels / shipments is limited to **100 per request**. If you have more than 100 at a time, split to mulitple requests using the batch-API |
-    | Webhook testing | Triggering a request using the Test-api allows a maximum of **10 concurrent requests** per user
+    | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to **100 per request**. If you have more than 100 at the time, split to mulitple requests using the batch-API |
+    | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of **10 concurrent requests** per user |
 - title: Events
   content: |
-    When registering for a webhook you can choose between a range of different events that can send requests for.
-    When subscribing, it is a good idea to limit the amount of events to subscribe to. As we send an event on each of the events occurred - the amount of HTTP requests your server receives can grow. So, as a good practise, keep the list of event groups small.
+    When registering for a Webhook you can choose between a range of different event groups that can send requests for.
+    It is recommended to limit the amount of events to subscribe for. Bring will send an event on each of the events occurred which in result may send quite a few HTTP-requests to your server.
+    So, as a good practise, keep the list of event groups as small as possible.
 
-    Each of the events corresponds to a certain set of actions that can happen to the package/shipment you subscribe for. For instance, if you subscribe to `DELIVERED`, all internal Bring-events
+    Each of the event groups corresponds to a certain set of actions that can happen to the package/shipment you subscribe for. For instance, if you subscribe to `DELIVERED`, all internal Bring-events
     will trigger a request to your defined callback URL.
 
-    Our available events are:
+    Our available event groups are:
 
     | Name | Description |
     |:--------|:---------|
-    | TERMINAL | - |
-    | CUSTOMS | - |
-    | DELIVERED | - |
-    | DELIVERED_SENDER | - |
-    | ATTEMPTED_DELIVERY | - |
-    | DEVIATION | - |
-    | HANDED_IN | - |
-    | COLLECTED | - |
-    | INTERNATIONAL | - |
-    | IN_TRANSIT | - |
-    | DELIVERY_ORDERED | - |
-    | DELIVERY_CHANGED | - |
-    | DELIVERY_CANCELLED | - |
-    | TRANSPORT_TO_RECIPIENT | - |
-    | NOTIFICATION_SENT | - |
-    | PRE_NOTIFIED | - |
-    | READY_FOR_PICKUP | - |
-    | RETURN | - |
+    | TERMINAL | Currently located at terminal |
+    | CUSTOMS | Currently at customs |
+    | DELIVERED | Package is delivered to recipient |
+    | DELIVERED_SENDER | Package is delivered back to sender |
+    | ATTEMPTED_DELIVERY | Package is attempted delivered at recipient |
+    | DEVIATION | Some deviation in production have occured. Might be delayed |
+    | HANDED_IN | Package is handed in |
+    | COLLECTED | Package is collected by Bring |
+    | INTERNATIONAL | International package arrived |
+    | IN_TRANSIT | Package is currently in transit to customer |
+    | DELIVERY_ORDERED | Home delivery ordered |
+    | DELIVERY_CHANGED | Flex delivery ordered |
+    | DELIVERY_CANCELLED | Home delivery cancelled by recipient |
+    | TRANSPORT_TO_RECIPIENT |  |
+    | NOTIFICATION_SENT | Notification sent to the recipient |
+    | PRE_NOTIFIED | Package been registered with Bring (not picked up, only notification) |
+    | READY_FOR_PICKUP | Package is ready for pickup |
+    | RETURN | Package have been returned |
     | ARRIVED_DELIVERY | - |
     | ARRIVED_COLLECTION | - |
-    | READY_FROM_SENDER | - |
+    | READY_FROM_SENDER | Package loaded on to transport equipment by sender and will be picked up by Bring |
 
-    **Note:** As existing subscribed webhooks is locked for modifications, you will have to delete and recreate the subscription upon changes to the list of subscribed events.
+    **Note:** As existing subscribed Webhooks is locked for modifications, you will have to delete and recreate the subscription upon changes to the list of subscribed events.
 
     **Note:** Right now we do not support wildcard events (`*` or `ALL`).
 
 - title: Receiving Callbacks
   content: |
-    In order to receive callbacks from Bring, your callback URL must be accessible on the internet and able to receive requests from Bring.
-    Additionally, to minimize risk, you should also provide `https`-enabled endpoints and use some kind of authentication mechanism.
+    In order to receive requests from Bring, your callback URL must be accessible on the internet and able to receive requests from Bring IPs.
+    Additionally, to minimize risk, you should also provide HTTPS-enabled endpoints and use some kind of authentication mechanism.
+    For HTTPS, please do not use self-signed certificates, as requests may fail from Bring' side and you'll receive no requests.
 
-    For authentication, we recommand utilizing the header funcitonality provided by the webhook configuration.
+    If you need a simple authentication whilst receiving requests from Bring, we recommand utilizing the header funcitonality provided by the Webhook configuration.
 - title: Payload
   content: |
 
     #### Payload delivery headers
 
-    `HTTP POST` payloads that are delivered to your webhook's configured URL endpoint will contain several Bring specific headers::
+    `HTTP POST` payloads that are delivered to your Webhook's configured URL endpoint contains several Bring specific headers::
 
     | Header | Description |
     |:-------|:--------|
-    | `X-Bring-Application` | Identification of the application that sent the request to your endpoint |
+    | `X-Bring-Application` | Identifies the application that sent the request to your endpoint |
     | `X-bring-Correlation` | Correlation Id can be used whilst contacting Bring on error cases |
     | `X-bring-Version` | Indicates the version of application |
+    | `<your headers>` | Any headers that were specified in the Webhook configuration will also be appended |
 
     #### Example
 
     Requests issued from Bring to your endpoint will look similar to this:
 
     ```
-      POST /callback/webhook HTTP/1.1
+      POST /callback/Webhook HTTP/1.1
       host: localhost:80
       Accept: application/json
       User-Agent: Bringcast-Webhook/v1.0.34-SNAPSHOT
       X-Bring-Application: BMEC
       X-bring-Correlation: xA3n7
+      X-some-fancy-custom-header: with-some-value-that-I-expect
       Content-Type: application/json
       Content-Length: 188
 
@@ -211,7 +222,7 @@ documentation:
   content: |
 
     #### Can I have multiple Webhooks for the same parcel?
-    You can have several webhooks on the same parcel/shipment, as long as the event groups are different.
+    You can have several Webhooks on the same parcel and/or shipment, as long as the event groups are different.
 
     #### How many active Webhooks can I have at the same time?
     There is no limitation for the moment.
@@ -225,41 +236,41 @@ documentation:
     #### Can I get a history of events that were sent for a subscription?
     Not in this version. It may be available in the future.
 
-    #### Will I be able to see all my previous webhooks?
+    #### Will I be able to see my previous Webhooks (active and inactive)?
     No.
-/api/v1/webhooks:
-  displayName: Create webhook
+/api/v1/Webhooks:
+  displayName: Create Webhook
   description: |
-    Create a new subscription for a webhook
+    Create a new subscription for a Webhook
   post:
-    description: Register a new webhook subscription for a parcel or shipment
+    description: Register a new Webhook subscription for a parcel or shipment
     body:
       application/json:
         type: WebhookRequest
         examples:
           valid_request:
             displayName: Valid Request
-            value: !include examples/create-webhook-request.json
+            value: !include examples/create-Webhook-request.json
     responses:
       201:
-        description: Returns the registered webhook after creation request.
+        description: Returns the registered Webhook after creation request.
         body:
           application/json:
             type: Webhook
             examples:
-              reqister_webhook:
-                displayName: Registered webhook
-                value: !include examples/webhook-request.json
+              reqister_Webhook:
+                displayName: Registered Webhook
+                value: !include examples/Webhook-request.json
       400:
         displayName: Bad request
-        description: Unable to register webhook due to some bad request from the client side.
+        description: Unable to register Webhook due to some bad request from the client side.
         body:
           application/json:
             type: ErrorResponse
             examples:
-              invalid_webhook:
+              invalid_Webhook:
                 displayName: Invalid creation request
-                value: !include examples/create-webhook-invalid.json
+                value: !include examples/create-Webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers
@@ -269,42 +280,42 @@ documentation:
       500:
         displayName: Internal Bring error
         description: If this happens, try again a bit later as it might be due to some internal mechanism not working
-/batch/api/v1/webhooks:
-  displayName: Create multiple webhooks
+/batch/api/v1/Webhooks:
+  displayName: Create multiple Webhooks
   description: |
-        Create a range of new webhooks based on a list of any parcel or shipment.
+        Create a range of new Webhooks based on a list of any parcel or shipment.
         Webhooks lives for up to one month, or until the entity subscribed for is marked as "delivered by Bring".
   post:
-    description: Register a new webhook subscription for an array parcels and/or shipments
+    description: Register a new Webhook subscription for an array parcels and/or shipments
     body:
       application/json:
         type: WebhookBatchRequest
         examples:
           valid_request:
             displayName: Valid Request
-            value: !include examples/batch-create-webhook-request.json
+            value: !include examples/batch-create-Webhook-request.json
     responses:
       201:
         description: |
-          Returns the registered webhook after creation request.
+          Returns the registered Webhook after creation request.
         body:
           application/json:
             type: Webhook
             examples:
-              reqister_webhook:
-                displayName: Registered webhook
-                value: !include examples/batch-webhook-request.json
+              reqister_Webhook:
+                displayName: Registered Webhook
+                value: !include examples/batch-Webhook-request.json
       400:
         displayName: Bad request
         description: |
-          Unable to register webhook due to some bad request from the client side.
+          Unable to register Webhook due to some bad request from the client side.
         body:
           application/json:
             type: ErrorResponse
             examples:
-              invalid_webhook:
+              invalid_Webhook:
                 displayName: Invalid creation request
-                value: !include examples/create-webhook-invalid.json
+                value: !include examples/create-Webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers
@@ -314,18 +325,18 @@ documentation:
       500:
         displayName: Internal Bring error
         description: If this happens, try again a bit later as it might be due to some internal mechanism not working
-/api/v1/webhooks/{webhookid}:
-  displayName: Delete webhook
+/api/v1/Webhooks/{Webhookid}:
+  displayName: Delete Webhook
   uriParameters:
-    webhookid:
-      displayName: webhookId
+    Webhookid:
+      displayName: WebhookId
       type: string
-      description: This represents the specific identifier of the webhook
+      description: This represents the specific identifier of the Webhook
   delete:
-    description: Remove an existing subscribed webhook
+    description: Remove an existing subscribed Webhook
     queryParameters:
       includeWebhook:
-        description: If set to true, the deleted webhook will be returned
+        description: If set to true, the deleted Webhook will be returned
         type: boolean
         required: false
         example: true
@@ -335,9 +346,9 @@ documentation:
           application/json:
             type: Webhook
             examples:
-              get_webhook:
+              get_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/webhook-request.json
+                value: !include examples/Webhook-request.json
       204:
         displayName: Webhook successfully removed
         description: Webhook unregistered and removed. No content supplied in response
@@ -347,86 +358,86 @@ documentation:
       404:
         displayName: Error
         description: Webhook not found (not registered?)
-/api/v1/webhooks/:
-  displayName: Get all webhooks
+/api/v1/Webhooks/:
+  displayName: Get all Webhooks
   get:
-    description: Get all your current registered and active webhooks.
+    description: Get all your current registered and active Webhooks.
     responses:
       200:
         body:
           application/json:
             type: Webhook
             examples:
-              get_webhook:
+              get_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/webhook-request.json
+                value: !include examples/Webhook-request.json
       400:
         displayName: Bad request
-        description: Unable to register webhook due to some bad request from the client side.
+        description: Unable to register Webhook due to some bad request from the client side.
         body:
           application/json:
             type: ErrorResponse
             examples:
               invalid_request:
                 displayName: Invalid creation request
-                value: !include examples/create-webhook-invalid.json
+                value: !include examples/create-Webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers.
       404:
         displayName: Error
         description: Webhook not found (not registered?)
-/api/v1/webhooks/{webhookId}:
-  displayName: Get single webhook
+/api/v1/Webhooks/{WebhookId}:
+  displayName: Get single Webhook
   uriParameters:
-    webhookId:
-      displayName: webhookId
+    WebhookId:
+      displayName: WebhookId
       type: string
-      description: This represents the specific identifier of the webhook
+      description: This represents the specific identifier of the Webhook
   get:
-    description: Get the specification that belongs to a registered webhook
+    description: Get the specification that belongs to a registered Webhook
     responses:
       200:
         body:
           application/json:
             type: Webhook
             examples:
-              get_webhook:
+              get_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/webhook-request.json
+                value: !include examples/Webhook-request.json
       400:
         displayName: Bad request
-        description: Unable to register webhook due to some bad request from the client side.
+        description: Unable to register Webhook due to some bad request from the client side.
         body:
           application/json:
             type: ErrorResponse
             examples:
               invalid_request:
                 displayName: Invalid creation request
-                value: !include examples/create-webhook-invalid.json
+                value: !include examples/create-Webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers
       404:
         displayName: Error
         description: Webhook not found (not registered?)
-/api/v1/webhooks/{webhookId}/test:
-  displayName: Test a push webhook
+/api/v1/Webhooks/{WebhookId}/test:
+  displayName: Test a push Webhook
   description: |
-    This will trigger a webhook to receive a dummy request to the registered webhook.
+    This will trigger a Webhook to receive a dummy request to the registered Webhook.
 
     **Note**: There is no retry mechanism in place for this, so if a request fails for some reason, it will go on un-noticed.
   uriParameters:
-    webhookId:
-      displayName: webhookId
+    WebhookId:
+      displayName: WebhookId
       type: string
-      description: This represents the specific identifier of the webhook
+      description: This represents the specific identifier of the Webhook
   get:
-    description: Get all your current registered and active webhooks
+    description: Get all your current registered and active Webhooks
     responses:
       202:
         displayName: Accepted
-        description: The request have been registered, and a dummy-request will be sent to the registered webhook
+        description: The request have been registered, and a dummy-request will be sent to the registered Webhook
       401:
         displayName: Error
         description: Missing authentication headers
