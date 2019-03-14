@@ -71,7 +71,7 @@ layout: redesign
                 {% else %}
                   {% assign url_output = resource.absoluteUri %}
                 {% endif %}
-                <pre class="api__url">{{ url_output }}</pre>
+                <pre class="api__url">{{ method.method | upcase }} {{ url_output }}</pre>
 
                 {% assign has_other_uri_params_than_mediatype = false %}
                 {% if resource.uriParameters.size > 1 %}
