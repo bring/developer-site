@@ -2,7 +2,7 @@
 ---
 title: Tracking Webhook API
 version: v1
-baseUri: https://api.bring.com/notification
+baseUri: https://api.bring.com/events
 mediaType: application/json
 annotationTypes:
   hideInDocumentation: boolean
@@ -136,7 +136,7 @@ documentation:
     | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of **10 concurrent requests** per user |
 - title: Events
   content: |
-    When registering for a Webhook you can choose between a range of different event groups that can send requests for.
+    When registering for a Webhook you can choose between a range of different event groups that you can subscribe for.
     It is recommended to limit the amount of events to subscribe for. Bring will send an event on each of the events occurred which in result may send quite a few HTTP-requests to your server.
     So, as a good practise, keep the list of event groups as small as possible.
 
@@ -168,6 +168,8 @@ documentation:
     | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
     | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
     | `UNKNOWN` | Represents unknown / undefined events |
+
+    It is possible to subscribe to multiple event groups. These groups are separated with comma in an array. See the "Create Webhook" section below.
 
     **Note:** As existing subscribed Webhooks is locked for modifications, you will have to delete and recreate the subscription upon changes to the list of subscribed events.
 
@@ -227,17 +229,18 @@ documentation:
     #### How many active Webhooks can I have at the same time?
     There is no limitation for the moment.
 
-    #### What happens after `DELIVERED` is reached?
-    Your subscription will end.
-
     #### Expiration duration, can I define that?
     No.
 
     #### Can I get a history of events that were sent for a subscription?
     Not in this version. It may be available in the future.
 
-    #### Will I be able to see my previous Webhooks (active and inactive)?
+    #### Will I be able to see my previous/expired Webhooks (active and inactive)?
     No.
+
+    ### What happens if our endpoint is down and a callback is being sent?
+    We'll try issuing a request to your defined endpoint up to 3 (three) times with a delay on 30 minutes for the two first, then wait an hour for the last retry.
+    After this, callbacks will not be retried.
 /api/v1/webhooks:
   displayName: Create Webhook
   description: |
@@ -361,7 +364,7 @@ documentation:
 /api/v1/webhooks/:
   displayName: Get all Webhooks
   get:
-    description: Get all your current registered and active Webhooks.
+    description: Get all your current registered and active Webhooks. Pagination is currently not supported.
     responses:
       200:
         body:
@@ -370,7 +373,7 @@ documentation:
             examples:
               get_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/Webhook-request.json
+                value: !include examples/webhook-request-all.json
       400:
         displayName: Bad request
         description: Unable to register Webhook due to some bad request from the client side.
@@ -432,7 +435,7 @@ documentation:
       displayName: WebhookId
       type: string
       description: This represents the specific identifier of the Webhook
-  get:
+  post:
     description: Get all your current registered and active Webhooks
     responses:
       202:

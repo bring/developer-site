@@ -1,7 +1,6 @@
 {
   "id": "1234abc-abcd-1234-5678-abcd1234abcd",
   "authenticator": "1234abc-abcd-1234-5678-abcd1234abcd",
-  "events": null,
   "configuration": {
     "url": "http://localhost:8888/some/random/location",
     "content_type": "application/json",
