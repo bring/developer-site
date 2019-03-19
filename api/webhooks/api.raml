@@ -106,7 +106,7 @@ documentation:
     > These callbacks may be maintained, modified, and managed by third-party users and developers who may not necessarily be affiliated with the originating website or application.
 
     #### Webhooks in Bring
-    In the context of Bring, Webhooks allows you to subscribe to events that can occur on parcels and/or shipments.
+    In the context of Bring, Webhooks allows you to get notifications for the subscribed parcels and/or shipments.
 
     In essence, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
     we'll send a HTTP POST to your callback URL that were defined during the Webhook registration.
@@ -179,7 +179,7 @@ documentation:
     Additionally, to minimize risk, you should also provide HTTPS-enabled endpoints and use some kind of authentication mechanism.
     For HTTPS, please do not use self-signed certificates, as requests may fail from Bring' side and you'll receive no requests.
 
-    If you need a simple authentication whilst receiving requests from Bring, we recommand utilizing the header funcitonality provided by the Webhook configuration.
+    If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header funcitonality provided by the Webhook configuration.
 - title: Payload
   content: |
 
