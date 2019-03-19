@@ -1,5 +1,5 @@
 {
-  "references": ["TESTPACKAGEDELIVERED", "SHIPMENTNUMBER"],
+  "trackingIds": ["TESTPACKAGEDELIVERED", "SHIPMENTNUMBER"],
   "configuration": {
     "url": "http://localhost:8888/some/random/location",
     "content_type": "application/json",

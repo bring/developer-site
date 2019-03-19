@@ -1,5 +1,5 @@
 {
-  "reference": "TESTPACKAGEDELIVERED",
+  "trackingId": "TESTPACKAGEDELIVERED",
   "configuration": {
     "url": "http://localhost:8888/some/random/location",
     "content_type": "application/json",

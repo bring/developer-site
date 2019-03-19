@@ -1,6 +1,6 @@
 #%RAML 1.0
 ---
-title: Event Webhook
+title: Tracking Webhook API
 version: v1
 baseUri: https://api.bring.com/notification
 mediaType: application/json
@@ -11,7 +11,7 @@ types:
   WebhookRequest:
     type: object
     properties:
-      reference:
+      trackingId:
         type: string
         required: true
       event_groups:
@@ -23,7 +23,7 @@ types:
   WebhookBatchRequest:
       type: object
       properties:
-        references:
+        trackingIds:
           type: string[]
           required: true
         event_groups:
@@ -43,7 +43,7 @@ types:
         type: string
         required: false
         description: Represents your authentication identification
-      reference:
+      trackingId:
         type: string
         required: true
       event_groups:
@@ -145,29 +145,29 @@ documentation:
 
     Our available event groups are:
 
-    | Name | Description |
-    |:--------|:---------|
-    | TERMINAL | Currently located at terminal |
-    | CUSTOMS | Currently at customs |
-    | DELIVERED | Package is delivered to recipient |
-    | DELIVERED_SENDER | Package is delivered back to sender |
-    | ATTEMPTED_DELIVERY | Package is attempted delivered at recipient |
-    | DEVIATION | Some deviation in production have occured. Might be delayed |
-    | HANDED_IN | Package is handed in |
-    | COLLECTED | Package is collected by Bring |
-    | INTERNATIONAL | International package arrived |
-    | IN_TRANSIT | Package is currently in transit to customer |
-    | DELIVERY_ORDERED | Home delivery ordered |
-    | DELIVERY_CHANGED | Flex delivery ordered |
-    | DELIVERY_CANCELLED | Home delivery cancelled by recipient |
-    | TRANSPORT_TO_RECIPIENT |  |
-    | NOTIFICATION_SENT | Notification sent to the recipient |
-    | PRE_NOTIFIED | Package been registered with Bring (not picked up, only notification) |
-    | READY_FOR_PICKUP | Package is ready for pickup |
-    | RETURN | Package have been returned |
-    | ARRIVED_DELIVERY | - |
-    | ARRIVED_COLLECTION | - |
-    | READY_FROM_SENDER | Package loaded on to transport equipment by sender and will be picked up by Bring |
+    | Event | Description |
+    |:-------|:--------|
+    | `ARRIVED_DELIVERY` | Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading.  |
+    | `ARRIVED_COLLECTION` | Arrived for collection at pickup point |
+    | `ATTEMPTED_DELIVERY` | The package has been attempted delivered at the door. Depending on the service it will be tried again or sent to closest pickup point. |
+    | `CUSTOMS` | Package is in customs clearance. |
+    | `COLLECTED` | The parcel has been collected at pickup address. |
+    | `DELIVERED` | Package has been delivered. |
+    | `DELIVERED_SENDER` | Package has been returned to the sender |
+    | `DELIVERY_CANCELLED` | Home delivery has been canceled by the customer. |
+    | `DELIVERY_CHANGED` | Date for Home delivery has been changed by customer. |
+    | `DELIVERY_ORDERED` | Home delivery has been ordered |
+    | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |
+    | `HANDED_IN` | Package has been handed in to Bring. |
+    | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country.  |
+    | `IN_TRANSIT` | Package is in transit. |
+    | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
+    | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
+    | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
+    | `RETURN` | The package has been returned to sender.  |
+    | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
+    | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
+    | `UNKNOWN` | Represents unknown / undefined events |
 
     **Note:** As existing subscribed Webhooks is locked for modifications, you will have to delete and recreate the subscription upon changes to the list of subscribed events.
 
@@ -185,7 +185,7 @@ documentation:
 
     #### Payload delivery headers
 
-    `HTTP POST` payloads that are delivered to your Webhook's configured URL endpoint contains several Bring specific headers::
+    `HTTP POST` payloads that are delivered to your Webhook's configured URL endpoint contains several Bring specific headers:
 
     | Header | Description |
     |:-------|:--------|
@@ -212,7 +212,7 @@ documentation:
       {
         "status":"IN_TRANSIT",
         "id":"ad84cbca-2e89-43e0-a301-a8d5d7fe7804",
-        "consignment":"SHIPMENTNUMBER",",
+        "shipment":"SHIPMENTNUMBER",",
         "package":"TESTPACKAGEDELIVERED
         "created":"2019-03-16 14:58:48",
         "pushed":"2019-03-16 14:58:49"
