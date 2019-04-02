@@ -52,3 +52,14 @@ and then deploy as normal with
 
     b deploy [test|qa|production]
 
+Documentation profiles
+----------------------
+
+When building, two different profiles is defined. These are:
+
+1) `test` or `qa`
+    * Uses file: `_config.yml` 
+2) `production`
+    * Uses file: `_config_production.yml`
+
+As defined, production has it's own configuration, which essentially means that the build can differ from test and QA. This is useful if, for instance, some documentation is work-in-progress.

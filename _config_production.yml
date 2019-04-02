@@ -50,9 +50,6 @@ raml_10_map:
   api/tracking/api.raml:
     target: api/tracking/index.html
     sort_order: 40
-  api/webhooks/api.raml:
-    target: api/webhooks/index.html
-    sort_order: 41
 
 # Build settings
 gems:
