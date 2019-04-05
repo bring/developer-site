@@ -50,7 +50,7 @@
                         <quantity>2</quantity>
                         <goodsDescription>shampoo</goodsDescription>
                         <customsArticleNumber>33.05.1000</customsArticleNumber>
-                        <itemNetWeightInGrams>300</itemNetWeightInGrams>
+                        <itemNetWeightInKg>3.0</itemNetWeightInKg>
                         <tarriffLineAmount>200</tarriffLineAmount>
                         <currency>NOK</currency>
                         <countryOfOrigin>CH</countryOfOrigin>
@@ -59,7 +59,7 @@
                         <quantity>5</quantity>
                         <goodsDescription>cotton t-shirts</goodsDescription>
                         <customsArticleNumber>61.09.1000</customsArticleNumber>
-                        <itemNetWeightInGrams>2500</itemNetWeightInGrams>
+                        <itemNetWeightInKg>2.5</itemNetWeightInKg>
                         <tarriffLineAmount>1000</tarriffLineAmount>
                         <currency>NOK</currency>
                         <countryOfOrigin>PL</countryOfOrigin>
@@ -68,7 +68,7 @@
                         <quantity>1</quantity>
                         <goodsDescription>wool jacket</goodsDescription>
                         <customsArticleNumber>61.04.3100</customsArticleNumber>
-                        <itemNetWeightInGrams>2000</itemNetWeightInGrams>
+                        <itemNetWeightInKg>2.0</itemNetWeightInKg>
                         <tarriffLineAmount>750</tarriffLineAmount>
                         <currency>NOK</currency>
                         <countryOfOrigin>DE</countryOfOrigin>

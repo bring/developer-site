@@ -56,32 +56,32 @@ documentation:
     - Business Parcel
     - PickUp Parcel
 
-    When included during booking, the customs information will be sent electronically from Bring to the destination country. As of now, sending customs information is optional. 
-    
+    When included during booking, the customs information will be sent electronically from Bring to the destination country. As of now, sending customs information is optional.
+
     <strong>Please note that this customs information will be mandatory to include for the mentioned bookings from 01st of June 2019.</strong>
-    
+
     If sending customs information, the following elements are to be used:
 
     - quantity (required)
     - goodsDescription (required)
     - customsArticleNumber (optional)
-    - itemNetWeightInGrams (required)
+    - itemNetWeightInKg (required)
     - tarriffLineAmount (required)
     - currency (required)
     - countryOfOrigin (optional)
-    
-    Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/). 
-    
+
+    Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/).
+
     #### Example
-    
+
     In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
     t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
 
-    | Quantity | Description of contents | Customs tariff code | Total content net weight (g) | Total content value | Currency | Country of origin |
+    | Quantity | Description of contents | Customs tariff code | Total content net weight (kg) | Total content value | Currency | Country of origin |
     |:--------:|:-----------------------:|:-------------------:|:----------------------------:|:-------------------:|:--------:|:-----------------:|
-    | `2` | `shampoo` | `33.05.1000` | `300` | `200` | `NOK` | `CH`|
-    | `5` | `cotton t-shirts` | `61.09.1000` | `2500` | `1000`| `NOK`| `PL` |
-    | `1` | `wool jacket` | `61.04.3100` | `2000` | `750` | `NOK`| `DE` |
+    | `2` | `shampoo` | `33.05.1000` | `3.0` | `200` | `NOK` | `CH`|
+    | `5` | `cotton t-shirts` | `61.09.1000` | `2.5` | `1000`| `NOK`| `PL` |
+    | `1` | `wool jacket` | `61.04.3100` | `2.0` | `750` | `NOK`| `DE` |
 
     Please note that the importer of the goods can be the same as the recipient, or the importer can be a separate party (if different from the recipient).
 
@@ -260,7 +260,7 @@ documentation:
             example: 15.2
             required: true
         goodsDescription:
-            description: This can be used in three different elements: `package`(optional), `packageGroup`(optional), and `ediCustomsDeclaration`(required). It describes what is inside the package. This parameter can be maximum 35 characters long.
+            description: This can be used in three different elements; `package`(optional), `packageGroup`(optional), and `ediCustomsDeclaration`(required). It describes what is inside the package. This parameter can be maximum 35 characters long.
             type: string
         heightInCm:
             description: Specify height in cm. Dimension is optional when volumeInDm3 is specified in the request for cargo.
@@ -379,9 +379,9 @@ documentation:
             type: string
             example: 33.05.1000
             required: false
-        itemNetWeightInGrams:
-            description: The weight (in grams) of all the articles declared in an `ediCustomsDeclaration` line
-            type: integer
+        itemNetWeightInKg:
+            description: The weight (in kg) of all the articles declared in an `ediCustomsDeclaration` line
+            type: double
             required: true
         tarriffLineAmount:
             description: The value of all the articles declared in an `ediCustomsDeclaration` line
