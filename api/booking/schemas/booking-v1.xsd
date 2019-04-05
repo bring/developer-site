@@ -104,6 +104,7 @@
             <xs:element name="consignor" type="PartyRequestType" minOccurs="0"/>
             <xs:element name="consignee" type="PartyRequestType" minOccurs="0"/>
             <xs:element name="pickupPoint" type="PickupPointRequestType" minOccurs="0"/>
+            <xs:element name="importer" type="PartyRequestType" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
 
@@ -153,6 +154,14 @@
             <xs:element name="messageForRecipient" type="xs:string" minOccurs="0"/>
             <xs:element name="whoPaysInvoice" type="whoPaysInvoice" minOccurs="0"/>
             <xs:element name="incotermRule" type="incotermRule" minOccurs="0"/>
+            <xs:element name="ediCustomsDeclarations" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ediCustomsDeclaration" type="EDICustomsDeclarationRequestType" minOccurs="0"
+                                    maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
         </xs:all>
     </xs:complexType>
 
@@ -309,6 +318,17 @@
             <xs:element name="numberOfPackages" type="xs:int"/>
         </xs:all>
         <xs:attribute name="correlationId" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="EDICustomsDeclarationRequestType">
+        <xs:all>
+            <xs:element name="quantity" type="xs:int"/>
+            <xs:element name="goodsDescription" type="xs:string"/>
+            <xs:element name="customsArticleNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="itemNetWeightInKg" type="xs:double"/>
+            <xs:element name="tarriffLineAmount" type="xs:double"/>
+            <xs:element name="currency" type="xs:string"/>
+            <xs:element name="countryOfOrigin" type="xs:string" minOccurs="0"/>
+        </xs:all>
     </xs:complexType>
 
     <xs:complexType name="BookingResponseType">
