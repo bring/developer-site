@@ -46,7 +46,7 @@
               "quantity": 2,
               "goodsDescription": "shampoo",
               "customsArticleNumber": "33.05.1000",
-              "itemNetWeightInGrams": 300,
+              "itemNetWeightInKg": 3.0,
               "tarriffLineAmount": 200,
               "currency": "NOK",
               "countryOfOrigin": "CH"
@@ -55,7 +55,7 @@
               "quantity": 5,
               "goodsDescription": "cotton t-shirts",
               "customsArticleNumber": "61.09.1000",
-              "itemNetWeightInGrams": 2500,
+              "itemNetWeightInKg": 2.5,
               "tarriffLineAmount": 1000,
               "currency": "NOK",
               "countryOfOrigin": "PL"
@@ -64,7 +64,7 @@
               "quantity": 1,
               "goodsDescription": "wool jacket",
               "customsArticleNumber": "61.04.3100",
-              "itemNetWeightInGrams": 2000,
+              "itemNetWeightInKg": 2.0,
               "tarriffLineAmount": 750,
               "currency": "NOK",
               "countryOfOrigin": "DE"
