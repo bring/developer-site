@@ -6,6 +6,13 @@ baseUri: https://api.bring.com/booking/api
 documentation:
 - title: Introduction
   content: |
+      <div class="api__warning-box" align="justify">
+        <strong>Important! Mandatory changes in customs de for Business Parcel and Pickup Parcel from 01.06.2019</strong>
+        <br><br>
+        From June 1. 2019, it will become mandatory to report customs information when booking a Business Parcel or a Pickup Parcel. To accommodate this, we will replace the current customs element, <code>customsDeclaration</code> with a new element for customs declaration. The new element, <code>ediCustomsDeclarations</code> will allow for declaration of multiple customs lines per shipment. See <a href="#customs-information">Customs Information</a> below for more detailed information.
+        <br>
+      </div>
+
       The Bring Booking API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same backend as [Mybring Booking](https://www.mybring.com/booking/) and the same PDF labels.
 
       We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
