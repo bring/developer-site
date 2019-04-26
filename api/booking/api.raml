@@ -168,6 +168,8 @@ documentation:
 
       Where you before had to send each additional service as a tag under the services tag, the new way has a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
 
+       <strong>XML</strong>
+
       ```
        <additionalServices>
           <additionalService>
@@ -183,11 +185,25 @@ documentation:
        </additionalServices>
       ```
 
-       <strike>The old way of requesting additional servies:</strike>
-
+       <strong>JSON</strong>
 
       ```
+        "additionalServices": [
+                  {
+                    "id": "DANGEROUS_GOODS",
+                    "unNumber": "ABC"
+                  },
+                  {
+                    "id": "EVARSLING",
+                    "email": "recipient@recipient.com",
+                    "mobile": "97777777"
+                  }
+        ]
+      ```
 
+       <strike>The old way of requesting additional servies:</strike>
+
+      ```
         <services>
            <simpleDelivery>true</simpleDelivery>
            <flexDelivery>
