@@ -1,5 +1,5 @@
-Bring Developer
-===============
+developer.bring.com
+===================
 
 This repository contains the code behind https://developer.bring.com/
 
