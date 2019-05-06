@@ -145,6 +145,40 @@ documentation:
 
     For those who use the offline data, we recommend to get the updates automatically via Offline Data Web Service.
 
+    <strong>Example</strong>
+
+    ```
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:ns="http://www.bring.no/logistics/shippingguide/1.0">
+        <soapenv:Header/>
+        <soapenv:Body>
+            <ns:OfflineShippingGuideRequest>
+                <ns:UserInformation>
+                    <ns:ClientURL>OfflineTest</ns:ClientURL>
+                </ns:UserInformation>
+                <ns:OfflineRequestProperties>
+                    <ns:SchemaVersion>11</ns:SchemaVersion>
+                    <ns:Language>en</ns:Language>
+                    <ns:WithPrice>true</ns:WithPrice>
+                    <ns:WithExpectedDelivery>true</ns:WithExpectedDelivery>
+                    <ns:EDI>true</ns:EDI>
+                    <ns:PostingAtPostoffice>true</ns:PostingAtPostoffice>
+                    <ns:Trace>true</ns:Trace>
+                </ns:OfflineRequestProperties>
+                <ns:ProductIds>
+                    <ns:ProductId>SERVICEPAKKE</ns:ProductId>
+                </ns:ProductIds>
+                <ns:FromPostalCode>0273</ns:FromPostalCode>
+                <ns:ValidFromDate>
+                    <ns:Year>2019</ns:Year>
+                    <ns:Month>05</ns:Month>
+                    <ns:Day>06</ns:Day>
+                </ns:ValidFromDate>
+            </ns:OfflineShippingGuideRequest>
+        </soapenv:Body>
+    </soapenv:Envelope>
+    ```
+
     #### Useful XPaths when processing offline data
 
     Get Price Zone (returns an empty answer if toPostalCode is outside the coverage area for the chosen service):
