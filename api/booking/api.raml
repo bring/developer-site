@@ -370,7 +370,7 @@ documentation:
             type : string
             required: true
         countryCode:
-            description: Specify the country code. This parameter can be maximum 35 character long.
+            description: Specify the country code. This parameter must be 2 characters long.
             type: string
             example: NO
             required: true
@@ -391,7 +391,7 @@ documentation:
             description: Specify phone number.
             type: string
         messageForRecipient:
-            description: Specify message to recipient . This parameter can be maximum 35 character long.
+            description: Specify message to recipient. This parameter can be maximum 35 character long.
             type: string
         quantity:
             description: The number of articles in an `ediCustomsDeclaration` line
@@ -411,12 +411,12 @@ documentation:
             type: double
             required: true
         currency:
-            description: The currency code used in an `ediCustomsDeclaration` line
+            description: The currency code used in an `ediCustomsDeclaration` line. This parameter must be 3 characters long.
             type: string
             example: SEK
             required: true
         countryOfOrigin:
-            description: The country code of origin of the articles in an `ediCustomsDeclaration` line
+            description: The country code of origin of the articles in an `ediCustomsDeclaration` line. This parameter must be 2 characters long.
             type: string
             example: SE
             required: false
