@@ -53,11 +53,11 @@ types:
       expiry:
         type: datetime
         required: false
-        description: Populated on fetching existsing Webhook
+        description: TimeZone is set to UTC. Use this format to parse the instant; `yyyy-MM-dd'T'HH:mm:ssZ`
       created:
         type: datetime
         required: false
-        description: Populated on fetching existsing Webhook
+        description: TimeZone is set to UTC. Use this format to parse the instant; `yyyy-MM-dd'T'HH:mm:ssZ`
       configuration:
         type: Configuration
         required: true
@@ -143,7 +143,9 @@ documentation:
     Each of the event groups corresponds to a certain set of actions that can happen to the package/shipment you subscribe for. For instance, if you subscribe to `DELIVERED`, all internal Bring-events
     will trigger a request to your defined callback URL.
 
-    Our available event groups are:
+    #### Event groups
+
+    Default set of subscribeable event groups. Notice that this list is subject for change.
 
     | Event | Description |
     |:-------|:--------|
@@ -167,13 +169,18 @@ documentation:
     | `RETURN` | The package has been returned to sender.  |
     | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
     | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
-    | `UNKNOWN` | Represents unknown / undefined events |
 
-    It is possible to subscribe to multiple event groups. These groups are separated with comma in an array. See the "Create Webhook" section below.
+    #### Subscribing to multiple event groups
 
-    **Note:** As existing subscribed Webhooks is locked for modifications, you will have to delete and recreate the subscription upon changes to the list of subscribed events.
+    The Webhook API supports the possibility to subscribe to multiple event groups at the same time.
+    Doing so requires that groups are separated with comma and is defined as an array.
+    Example:
 
-    **Note:** Right now we do not support wildcard events (`*` or `ALL`).
+    ```
+    ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL', .., ..]
+    ```
+
+    Need more examples? See the "Create Webhook" section below.
 
 - title: Receiving Callbacks
   content: |
@@ -182,6 +189,8 @@ documentation:
     For HTTPS, please do not use self-signed certificates, as requests may fail from Bring' side and you'll receive no requests.
 
     If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header funcitonality provided by the Webhook configuration.
+
+    All received callbacks from Bring will be using UTC as its current timezone.
 - title: Payload
   content: |
 
@@ -216,20 +225,20 @@ documentation:
         "id":"ad84cbca-2e89-43e0-a301-a8d5d7fe7804",
         "shipment":"SHIPMENTNUMBER",",
         "package":"TESTPACKAGEDELIVERED
-        "created":"2019-03-16 14:58:48",
-        "pushed":"2019-03-16 14:58:49"
+        "created":"2019-03-16T14:58:48+0000",
+        "pushed":"2019-03-16T14:58:49+0000"
       }
     ```
 - title: Q & A
   content: |
 
     #### Can I have multiple Webhooks for the same parcel?
-    You can have several Webhooks on the same parcel and/or shipment, as long as the event groups are different.
+    You can register for multiple Webhooks on the same parcel/shipment, as long as the event groups are different for each registration.
 
-    #### How many active Webhooks can I have at the same time?
-    There is no limitation for the moment.
+    #### How many active Webhooks can I have simultaneously?
+    Currently there is no limitation.
 
-    #### Expiration duration, can I define that?
+    #### Is the expiration duration configurable?
     No.
 
     #### Can I get a history of events that were sent for a subscription?
@@ -238,15 +247,31 @@ documentation:
     #### Will I be able to see my previous/expired Webhooks (active and inactive)?
     No.
 
-    ### What happens if our endpoint is down and a callback is being sent?
-    We'll try issuing a request to your defined endpoint up to 3 (three) times with a delay on 30 minutes for the two first, then wait an hour for the last retry.
+    #### What happens if our endpoint is down and a callback is being sent?
+    We'll try issuing a request to your defined endpoint up to three - 3 - times with a delay on 30 minutes for the two first, then wait an hour for the last retry.
     After this, callbacks will not be retried.
+
+    #### Do you support wildcard events/event groups (e.g `*` or `ALL`)?
+    No.
+
+    #### Do you support modifying existing active webhooks?
+    No.
+
+    #### My shipment is not yet registered with Bring, will registering for Webhook work related to that tracking number?
+    Yes.
+
+    When you try to subscribe for a parcel that does not yet exist we will retry for up to two - 2 - days.
+    Eventually, if the package was not found with Bring within this limited time, we'll send you a notification on the callback URL you've configured that notifies this.
+
+    **Note**: Retry-timing is non-configurable.
+
 /api/v1/webhooks:
   displayName: Create Webhook
   description: |
-    Create a new subscription for a Webhook
+    Create a new subscription for a Webhook.
+    Webhooks lives for up to 30 days, or until the entity subscribed for is marked as "delivered by Bring".
   post:
-    description: Register a new Webhook subscription for a parcel or shipment
+    description: Register a new Webhook subscription for a parcel or shipment.
     body:
       application/json:
         type: WebhookRequest
@@ -290,7 +315,7 @@ documentation:
   displayName: Create multiple Webhooks
   description: |
         Create a range of new Webhooks based on a list of any parcel or shipment.
-        Webhooks lives for up to one month, or until the entity subscribed for is marked as "delivered by Bring".
+        Webhooks lives for up to 30 days, or until the entity subscribed for is marked as "delivered by Bring".
   post:
     description: Register a new Webhook subscription for an array parcels and/or shipments
     body:
