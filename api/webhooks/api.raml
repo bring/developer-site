@@ -170,6 +170,13 @@ documentation:
     | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
     | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
 
+    There is also a specific set of events that will be sent if something deviates from the normal event flow:
+
+    | Event | Description |
+    |:-------|:--------|
+    | `NO_REG` | Webhook not registered. This might be due to the parcel-/shipment-number not being found with Bring' systems and can trigger after up to two - 2 - days |
+    | `EXPIRED` | Webhook expired |
+
     #### Subscribing to multiple event groups
 
     The Webhook API supports the possibility to subscribe to multiple event groups at the same time.
@@ -190,7 +197,12 @@ documentation:
 
     If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header funcitonality provided by the Webhook configuration.
 
-    All received callbacks from Bring will be using UTC as its current timezone.
+    All received callbacks from Bring will be using **UTC** as its current timezone and is based on the following format (Java):
+
+    ```
+    "yyyy-MM-dd'T'HH:mm:ssZ"
+    ```
+
 - title: Payload
   content: |
 
@@ -260,8 +272,8 @@ documentation:
     #### My shipment is not yet registered with Bring, will registering for Webhook work related to that tracking number?
     Yes.
 
-    When you try to subscribe for a parcel that does not yet exist we will retry for up to two - 2 - days.
-    Eventually, if the package was not found with Bring within this limited time, we'll send you a notification on the callback URL you've configured that notifies this.
+    When you subscribe for a parcel that does not yet exist in Bring' systems, a retry mechanism will try for up to two - 2 - days to ensure that the Webhook will be registered when the parcel is found internally.
+    Eventually, if the package was not found with Bring within this timeframe - a notification will be sent on the callback URL configured for that Webhook which notifies this.
 
     **Note**: Retry-timing is non-configurable.
 
