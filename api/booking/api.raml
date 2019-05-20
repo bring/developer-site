@@ -420,6 +420,11 @@ documentation:
             type: string
             example: SE
             required: false
+        natureOfTransaction:
+            description: Specifies the purpose of transaction. This field is mandatory when sending customs information in the request.
+            type: string
+            enum: [SALE_OF_GOODS, RETURNED_GOODS, GIFT, COMMERCIAL_SAMPLE, DOCUMENTS, OTHER]
+            required: true
 
     body:
       application/json:

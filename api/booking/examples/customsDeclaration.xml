@@ -74,6 +74,7 @@
                         <countryOfOrigin>DE</countryOfOrigin>
                     </ediCustomsDeclaration>
                 </ediCustomsDeclarations>
+                <natureOfTransaction>GIFT</natureOfTransaction>
             </product>
             <purchaseOrder>
                 <purchaseOrderNumber>12345</purchaseOrderNumber>

@@ -84,7 +84,8 @@
               "currency": "NOK",
               "countryOfOrigin": "DE"
           }
-        ]
+        ],
+        "natureOfTransaction": "GIFT"
       },
       "purchaseOrder": null,
       "correlationId": "INTERNAL-123456",
