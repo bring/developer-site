@@ -7,7 +7,7 @@ documentation:
 - title: Introduction
   content: |
       <div class="api__warning-box" align="justify">
-        <strong>Important! Mandatory changes in customs de for Business Parcel and Pickup Parcel from 01.06.2019</strong>
+        <strong>Important! Mandatory changes in customs for Business Parcel and Pickup Parcel from 01.06.2019</strong>
         <br><br>
         From June 1. 2019, it will become mandatory to report customs information when booking a Business Parcel or a Pickup Parcel. To accommodate this, we will replace the current customs element, <code>customsDeclaration</code> with a new element for customs declaration. The new element, <code>ediCustomsDeclarations</code> will allow for declaration of multiple customs lines per shipment. See <a href="#customs-information">Customs Information</a> below for more detailed information.
         <br>
@@ -65,7 +65,7 @@ documentation:
 
     When included during booking, the customs information will be sent electronically from Bring to the destination country. As of now, sending customs information is optional.
 
-    <strong>Please note that this customs information will be mandatory to include for the mentioned bookings from 01st of June 2019.</strong>
+    <strong>Please note that customs information will be mandatory to be included for the mentioned bookings from 01st of June 2019.</strong>
 
     If sending customs information, the following elements are to be used:
 
@@ -76,6 +76,7 @@ documentation:
     - tarriffLineAmount (required)
     - currency (required)
     - countryOfOrigin (optional)
+    - natureOfTransaction (required)
 
     Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/).
 
@@ -90,11 +91,16 @@ documentation:
     | `5` | `cotton t-shirts` | `61.09.1000` | `2.5` | `1000`| `NOK`| `PL` |
     | `1` | `wool jacket` | `61.04.3100` | `2.0` | `750` | `NOK`| `DE` |
 
-    Please note that the importer of the goods can be the same as the recipient, or the importer can be a separate party (if different from the recipient).
+    <strong>Nature of Transaction</strong>: Gift or Sale of Goods or Returned Goods or Commercial Sample or Documents or Other
+
+    Sending `Importer` party in the request is not mandatory. But if there is no importer sent then system will consider recipient as importer.
+
+    Another additional field captured for customs is `vatNumber` for the parties. This is an optional field. If you are setting importer party then you can add `vatNumber` in it,
+    else you can set `vatNumber` in the existing recipient party.
 
     There are two examples in the _More Examples_ section below that show requests containing customs information.
-    In one of these examples, the recipient is the importing party, so it has an (optional) `vatNumber` added.
-    In the other example, there is a separate importing party. Now, the (still optional) `vatNumber` is specified for the importer.
+    * In one of these examples, importer not sent in request, hence the recipient is the importing party with (optional) `vatNumber`.
+    * In the other example, there is importer party set in the request with the (optional) `vatNumber`.
 
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
