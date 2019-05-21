@@ -141,13 +141,14 @@
             <xs:element name="ediCustomsDeclarations" minOccurs="0">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="ediCustomsDeclaration" type="EDICustomsDeclarationRequestType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="natureOfTransaction" type="NatureOfTransaction"/>
+                        <xs:element name="ediCustomsDeclaration" type="EDICustomsDeclarationRequestType" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="natureOfTransaction" type="NatureOfTransaction" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
+
     <xs:complexType name="ServicesRequestType">
         <xs:all>
             <xs:element name="recipientNotification" type="RecipientNotificationRequestType" minOccurs="0"/>
@@ -289,7 +290,7 @@
         <xs:attribute name="correlationId" type="xs:string"/>
     </xs:complexType>
     <xs:complexType name="EDICustomsDeclarationRequestType">
-        <xs:all>
+        <xs:sequence>
             <xs:element name="quantity" type="xs:int"/>
             <xs:element name="goodsDescription" type="xs:string"/>
             <xs:element name="customsArticleNumber" type="xs:string" minOccurs="0"/>
@@ -297,7 +298,7 @@
             <xs:element name="tarriffLineAmount" type="xs:double"/>
             <xs:element name="currency" type="xs:string"/>
             <xs:element name="countryOfOrigin" type="xs:string" minOccurs="0"/>
-        </xs:all>
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="BookingResponseType">
         <xs:sequence>
