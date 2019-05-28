@@ -56,8 +56,9 @@
         "id": "BUSINESS_PARCEL",
         "customerNumber": "PARCELS_NORWAY-***********",
         "messageForRecipient": null,
-        "ediCustomsDeclarations": [
-          {
+        "ediCustomsDeclarations": {
+          "ediCustomsDeclaration": [
+            {
               "quantity": 2,
               "goodsDescription": "shampoo",
               "customsArticleNumber": "33.05.1000",
@@ -65,8 +66,8 @@
               "tarriffLineAmount": 200,
               "currency": "NOK",
               "countryOfOrigin": "CH"
-          },
-          {
+            },
+            {
               "quantity": 5,
               "goodsDescription": "cotton t-shirts",
               "customsArticleNumber": "61.09.1000",
@@ -74,8 +75,8 @@
               "tarriffLineAmount": 1000,
               "currency": "NOK",
               "countryOfOrigin": "PL"
-          },
-          {
+            },
+            {
               "quantity": 1,
               "goodsDescription": "wool jacket",
               "customsArticleNumber": "61.04.3100",
@@ -83,9 +84,10 @@
               "tarriffLineAmount": 750,
               "currency": "NOK",
               "countryOfOrigin": "DE"
-          }
-        ],
-        "natureOfTransaction": "GIFT"
+            }
+          ],
+          "natureOfTransaction": "GIFT"
+        }
       },
       "purchaseOrder": null,
       "correlationId": "INTERNAL-123456",
