@@ -46,6 +46,7 @@
                     </recipientNotification>
                 </services>
                 <ediCustomsDeclarations>
+                    <natureOfTransaction>GIFT</natureOfTransaction>
                     <ediCustomsDeclaration>
                         <quantity>2</quantity>
                         <goodsDescription>shampoo</goodsDescription>
@@ -74,7 +75,6 @@
                         <countryOfOrigin>DE</countryOfOrigin>
                     </ediCustomsDeclaration>
                 </ediCustomsDeclarations>
-                <natureOfTransaction>GIFT</natureOfTransaction>
             </product>
             <purchaseOrder>
                 <purchaseOrderNumber>12345</purchaseOrderNumber>
