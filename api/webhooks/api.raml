@@ -283,7 +283,7 @@ documentation:
     Create a new subscription for a Webhook.
     Webhooks lives for up to 30 days, or until the entity subscribed for is marked as "delivered by Bring".
   post:
-    description: Register a new Webhook subscription for a parcel or shipment.
+    description: Register a new Webhook subscription for a parcel or shipment
     body:
       application/json:
         type: WebhookRequest
@@ -404,7 +404,7 @@ documentation:
 /api/v1/webhooks/:
   displayName: Get all Webhooks
   get:
-    description: Get all your current registered and active Webhooks. Pagination is currently not supported.
+    description: Get all your current registered and active Webhooks. Pagination is currently not supported
     responses:
       200:
         body:
@@ -476,7 +476,7 @@ documentation:
       type: string
       description: This represents the specific identifier of the Webhook
   post:
-    description: Get all your current registered and active Webhooks
+    description: Test the Webhook service with the provided Webhook identifier
     responses:
       202:
         displayName: Accepted
