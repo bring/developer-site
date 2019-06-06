@@ -62,15 +62,15 @@ There are a couple of things more that you need to do to get it working properly
 
 * Run the following commands if you are using maven :
 ```
-  $ jenv enable-plugins maven
+  $ jenv enable-plugin maven
 ```
 ```
-  $ jenv enable-plugins export
+  $ jenv enable-plugin export
 ```
 
-_**PS :**_ If you get errors stating that the command enable-plugins is not found, you must restart your terminal and things should work properly thereafter.
+_**PS :**_ If you get errors stating that the command enable-plugin is not found, you must restart your terminal and things should work properly thereafter.
 
-I had to run `jenv enable-plugins export` because my `jenv` was not able to control my `JAVA_HOME`. Also failing to run `jenv enable-plugins maven` will throw weird errors when trying to compile your project.
+I had to run `jenv enable-plugin export` because my `jenv` was not able to control my `JAVA_HOME`. Also failing to run `jenv enable-plugin maven` will throw weird errors when trying to compile your project.
 
 
 Now.. You are all set...
