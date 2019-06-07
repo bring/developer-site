@@ -106,13 +106,15 @@ types:
         type: string
         description: Recipient's street address.
       phoneNumber:
+        required: false
         type: string
         pattern: "\\+[0-9 ]+"
-        description: Recipient's phone number, including country code.
+        description: Recipient's phone number, including country code.  At least one of phoneNumber and email must be provided.
         example: "+4700000000"
       email:
+        required: false
         type: string
-        description: Recipient's email address.
+        description: Recipient's email address.  At least one of phoneNumber and email must be provided.
       bagOnDoor:
         type: boolean
         required: false
@@ -213,12 +215,15 @@ types:
         type: string
         description: The city/place for the postal code.
       phoneNumber:
+        required: false
         type: string
         pattern: "\\+[0-9 ]+"
-        description: Recipient's phone number.
+        description: Recipient's phone number, including country code.  At least one of phoneNumber and email must be provided.
+        example: "+4700000000"
       email:
+        required: false
         type: string
-        description: Recipient's email address.
+        description: Recipient's email address.  At least one of phoneNumber and email must be provided.
       weight:
         maximum: 2000
         type: integer
@@ -311,11 +316,15 @@ types:
         type: string
         description: The city/place for the postal code.
       phoneNumber:
+        required: false
         type: string
-        description: Recipient's phone number.
+        pattern: "\\+[0-9 ]+"
+        description: Recipient's phone number, including country code.  At least one of phoneNumber and email must be provided.
+        example: "+4700000000"
       email:
+        required: false
         type: string
-        description: Recipient's email address.
+        description: Recipient's email address.  At least one of phoneNumber and email must be provided.
       weight:
         type: integer
         description: Package weight in grams.
@@ -414,13 +423,15 @@ types:
         type: string
         description: The city/place for the postal code.
       phoneNumber:
+        required: false
         type: string
         pattern: "\\+[0-9 ]+"
-        description: Recipient's phone number, including country code.
+        description: Recipient's phone number, including country code.  At least one of phoneNumber and email must be provided.
         example: "+4700000000"
       email:
+        required: false
         type: string
-        description: Recipient's email address.
+        description: Recipient's email address.  At least one of phoneNumber and email must be provided.
       weight:
         maximum: 2000
         type: integer
