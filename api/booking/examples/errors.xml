@@ -406,6 +406,47 @@
       <message>Delivery indoor is available in Sweden and Denmark only.</message>
       <suffixable>false</suffixable>
     </errorType>
+
+    <errorType>
+      <code>BOOK_VALIDATION-008</code>
+      <message>Illegal argument.</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-009</code>
+      <message>Booking of this revised service is only supported using your main customer number. This customer number also needs to be converted to the agreements covering the revised service.</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-010</code>
+      <message>Booking of this service is not supported using this main customer number. You have to use the customer number belonging to the corresponding service type.</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-011</code>
+      <message>A valid recipient mobile number or email address is required for notification</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-012</code>
+      <message>A valid quantity, goods description, tarriff line amount or item net weight is required for customs declaration</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-013</code>
+      <message>Nature of transaction required for using customs declarations</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-014</code>
+      <message>Customs declarations are required for exporting this product from Norway</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>BOOK_VALIDATION-015</code>
+      <message>Total weight stated in the customs information exceeds the allowed max weight for this service</message>
+      <suffixable>false</suffixable>
+    </errorType>
     <errorType>
       <code>BOOK-INTERNAL-001</code>
       <message>An unexpected error occured</message>

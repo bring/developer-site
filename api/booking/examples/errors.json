@@ -406,6 +406,46 @@
       "suffixable": false
     },
     {
+      "code": "BOOK_VALIDATION-008",
+      "message": "Illegal argument.",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-009",
+      "message": "Booking of this revised service is only supported using your main customer number. This customer number also needs to be converted to the agreements covering the revised service.",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-010",
+      "message": "Booking of this service is not supported using this main customer number. You have to use the customer number belonging to the corresponding service type.",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-011",
+      "message": "A valid recipient mobile number or email address is required for notification",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-012",
+      "message": "A valid quantity, goods description, tarriff line amount or item net weight is required for customs declaration",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-013",
+      "message": "Nature of transaction required for using customs declarations",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-014",
+      "message": "Customs declarations are required for exporting this product from Norway",
+      "suffixable": false
+    },
+    {
+      "code": "BOOK_VALIDATION-015",
+      "message": "Total weight stated in the customs information exceeds the allowed max weight for this service",
+      "suffixable": false
+    },
+    {
       "code": "BOOK-INTERNAL-001",
       "message": "An unexpected error occured",
       "suffixable": false
