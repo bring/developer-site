@@ -404,25 +404,25 @@ documentation:
             type: integer
             required: true
         customsArticleNumber:
-            description: The customs article number in an `ediCustomsDeclaration` line. Format: max 10 characters.
+            description: The customs article number in an `ediCustomsDeclaration` line
             type: string
             example: 33.05.1000
             required: false
         itemNetWeightInKg:
-            description: The weight (in kg) of all the articles declared in an `ediCustomsDeclaration` line. Format: <nnn.nnn>.
+            description: The weight (in kg) of all the articles declared in an `ediCustomsDeclaration` line
             type: double
             required: true
         tarriffLineAmount:
-            description: The value of all the articles declared in an `ediCustomsDeclaration` line.
+            description: The value of all the articles declared in an `ediCustomsDeclaration` line
             type: double
             required: true
         currency:
-            description: The currency code used in an `ediCustomsDeclaration` line. Format: 3 characters.
+            description: The currency code used in an `ediCustomsDeclaration` line. This parameter must be 3 characters long.
             type: string
             example: SEK
             required: true
         countryOfOrigin:
-            description: The country code of origin of the articles in an `ediCustomsDeclaration` line. Format: 2 characters.
+            description: The country code of origin of the articles in an `ediCustomsDeclaration` line. This parameter must be 2 characters long.
             type: string
             example: SE
             required: false
