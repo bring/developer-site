@@ -92,7 +92,7 @@ documentation:
           required: true
           example: 22.01.2017 11:36:22
       OrderSet updateIndicator:
-          description: Type of order data. Original, Update or Deletion
+          description: Type of order data. Original, Update or Delete
           type: string
           required: true
           example: Original
@@ -160,7 +160,7 @@ documentation:
           description: Required when sending purchaseorder.Details of supplier. Must have Name, Street, City, CountryCode if used.
           required: false
       Party/subClass PerformingUnit partyId:
-          description: Warehouse id for order. Required if order to Warehousing system.<br><br>4033 = Stavanger<br>5500 = Haugesund<br>BERGER = Berger/Skedsmokorset<br>BS02 = Kongshavn<br>BS07 = Trollåsen<br>BS17 = Bergen<br>BS26 = Trondheim<br>BS34 = Tromsø<br>NCD = Lierstrand<br>AES = Ålesund
+          description: Warehouse id for order. Required if order to Warehousing system.<br><br>4033 = Stavanger (Norway)<br>5500 = Haugesund (Norway)<br>AES = Ålesund (Norway)<br>BERGER = Berger/Skedsmokorset (Norway)<br>BS02 = Kongshavn (Norway)<br>BS07 = Trollåsen (Norway)<br>BS17 = Bergen (Norway)<br>BS26 = Trondheim (Norway)<br>BS34 = Tromsø (Norway)<br>FI01 = Vantaa (Finland)<br>JKPG01 = Jönköping (Sweden)<br>NCD = Lierstrand (Norway)
           type: string
           required: true
           example: BERGER
