@@ -42,7 +42,6 @@
             "product": {
                 "id": "SERVICEPAKKE",
                 "customerNumber": "**********",
-                "customsDeclaration": null,
                 "messageForRecipient": null
             },
             "purchaseOrder": null,
