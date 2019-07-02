@@ -40,7 +40,6 @@
       "product": {
         "id": "SERVICEPAKKE",
         "customerNumber": "***********",
-        "customsDeclaration": null,
         "additionalServices": [
           {
             "id": "DANGEROUS_GOODS",
