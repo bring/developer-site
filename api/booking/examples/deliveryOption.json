@@ -42,7 +42,6 @@
                  "services": {
                     "deliveryOption": "TWO_DELIVERIES_THEN_PIB",
                  },
-                 "customsDeclaration": null,
                  "messageForRecipient": null
             },
             "purchaseOrder": null,

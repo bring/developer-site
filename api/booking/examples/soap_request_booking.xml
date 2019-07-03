@@ -83,10 +83,6 @@
             <tns:advisering/>
             <tns:simpleDelivery/>
           </tns:services>
-          <tns:customsDeclaration>
-            <tns:customsDeclarationType/>
-            <tns:customsDeclarationText/>
-          </tns:customsDeclaration>
         </tns:product>
         <tns:purchaseOrder/>
       </tns:consignment>
@@ -171,10 +167,6 @@
             <tns:advisering/>
             <tns:simpleDelivery/>
           </tns:services>
-          <tns:customsDeclaration>
-            <tns:customsDeclarationType/>
-            <tns:customsDeclarationText/>
-          </tns:customsDeclaration>
         </tns:product>
         <tns:purchaseOrder/>
       </tns:consignment>
@@ -259,10 +251,6 @@
             <tns:advisering/>
             <tns:simpleDelivery/>
           </tns:services>
-          <tns:customsDeclaration>
-            <tns:customsDeclarationType/>
-            <tns:customsDeclarationText/>
-          </tns:customsDeclaration>
         </tns:product>
         <tns:purchaseOrder/>
       </tns:consignment>
