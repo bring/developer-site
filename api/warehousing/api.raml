@@ -101,6 +101,11 @@ documentation:
           type: dateTime
           required: true
           example: 101010
+      Order/ExternalOrderType:
+          description: Optional for PurchaseOrder. Type of order.<br> Order types:<br> 220 = Standard order<br> 224 = Rush order<br> Or other agreed by Warehouse.<br>br>PurchaseOrder types:<br> R = Return order
+          type: dateTime
+          required: true
+          example: For Order : 220<br>For PurchaseOrder : R
       Order/Reference:
           description: Set of references.
           type: sequence
@@ -131,22 +136,22 @@ documentation:
           required: false
           example: DDP
       TransportService BasicServiceCode:
-          description: Transport service for shipment to customer. http://developer.bring.com/api/services/
+          description: Optional for PurchaseOrder. Transport service for shipment to customer. http://developer.bring.com/api/services/
           type: String
           required: true
           example: SERVICEPAKKE
       TransportService AdditionalService AdditionalServiceCode:
-          description: Transport services for shipment to customer. http://developer.bring.com/api/services/
+          description: Optional for PurchaseOrder. Transport services for shipment to customer. http://developer.bring.com/api/services/
           type: String
           required: false
           example: EVARSLING
       TransportLeg TransportLegType:
-          description: TransportLegType id. Default value 30.
+          description: Optional for PurchaseOrder. TransportLegType id. Default value 30.
           type: String
           required: false
           example: 30
       TransportLeg ModeOfTransport:
-          description: Type of transport. <br>1 = Sea<br>2 = Train<br>3 = Road<br>4 = Air.
+          description: Optional for PurchaseOrder. Type of transport. <br>1 = Sea<br>2 = Train<br>3 = Road<br>4 = Air.
           type: String
           required: false
           example: 3
