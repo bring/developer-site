@@ -98,13 +98,13 @@ documentation:
           example: Original
       Order/orderId:
           description: Ordernumber.
-          type: string
+          type: dateTime
           required: true
           example: 101010
       Order/ExternalOrderType:
           description: Optional for PurchaseOrder. Type of order.<br> Order types:<br> 220 = Standard order<br> 224 = Rush order<br> Or other agreed by Warehouse.<br>br>PurchaseOrder types:<br> R = Return order
-          type: string
-          required: false
+          type: dateTime
+          required: true
           example: For Order : 220<br>For PurchaseOrder : R
       Order/Reference:
           description: Set of references.
