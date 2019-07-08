@@ -6,6 +6,7 @@
     <year>2015</year>
     <month>10</month>
     <day>18</day>
+    <invoiceSource>AMPHORA_DOMESTIC</invoiceSource>
   </invoiceNumbers>
   <invoiceNumbers>
     <label>702926498 (10/8/2015)</label>
@@ -13,6 +14,7 @@
     <year>2015</year>
     <month>10</month>
     <day>8</day>
+    <invoiceSource>PARCEL_DOMESTIC</invoiceSource>
   </invoiceNumbers>
   <invoiceNumbers>
     <label>702916952 (10/1/2015)</label>
@@ -20,5 +22,6 @@
     <year>2015</year>
     <month>10</month>
     <day>1</day>
+    <invoiceSource>PARCEL_DOMESTIC</invoiceSource>
   </invoiceNumbers>
 </Invoice>
