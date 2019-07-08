@@ -231,6 +231,17 @@ documentation:
         description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
         type: string
         required: false
+    queryParameters:
+            fromDate:
+              description: Start date for fetching invoices in format dd.mm.yyyy.
+              type: string
+              required: false
+              example: 01.01.2019
+            toDate:
+              description: End date for fetching invoices in format dd.mm.yyyy.
+              type: string
+              required: false
+              example: 30.06.2019
     responses:
       200:
         displayName: Successful response
