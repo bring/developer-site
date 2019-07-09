@@ -108,7 +108,7 @@ layout: page
                 {% endcomment %}
                 {% if method[1].query_parameters.size > 0 %}
                   {% assign include_params = method[1].query_parameters %}
-                  {% include named_params.html title="Query parameter" params=include_params %}
+                  {% include named_params.html title="Query params" params=include_params %}
                 {% endif %}
 
                 {% comment %}

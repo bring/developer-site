@@ -216,7 +216,7 @@ documentation:
 /invoices/{customerOrGroupId}{mediaTypeExtension}:
   displayName: List invoice numbers
   description: |
-    Get the list of invoice numbers for a customer id or a customer group.
+    Get the list of invoice numbers for a customer id or a customer group. If both from and to date is not provided, it shows 65 days back data.
   uriParameters:
     customerOrGroupId:
       description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
@@ -233,12 +233,11 @@ documentation:
         required: false
     queryParameters:
             fromDate:
-              description: Start date for fetching invoices in format dd.mm.yyyy.
-              type: string
+              description: Start date for fetching invoices in format dd.mm.yyyy, takes 365 days back if only fromDate parameter missing.
               required: false
               example: 01.01.2019
             toDate:
-              description: End date for fetching invoices in format dd.mm.yyyy.
+              description: End date for fetching invoices in format dd.mm.yyyy, takes current date if only toDate parameter is missing.
               type: string
               required: false
               example: 30.06.2019
