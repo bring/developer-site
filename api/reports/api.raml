@@ -216,7 +216,7 @@ documentation:
 /invoices/{customerOrGroupId}{mediaTypeExtension}:
   displayName: List invoice numbers
   description: |
-    Get the list of invoice numbers for a customer id or a customer group.
+    Gets the list of invoice numbers for a customer id or a customer group. By default it shows last 65 days of invoices, with the possibilty to access 365 days data by providing from date and to date.
   uriParameters:
     customerOrGroupId:
       description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
@@ -231,6 +231,16 @@ documentation:
         description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
         type: string
         required: false
+    queryParameters:
+            fromDate:
+              description: Start date for fetching invoices in format dd.mm.yyyy.
+              required: false
+              example: 01.01.2019
+            toDate:
+              description: End date for fetching invoices in format dd.mm.yyyy.
+              type: string
+              required: false
+              example: 30.06.2019
     responses:
       200:
         displayName: Successful response
