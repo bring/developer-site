@@ -150,7 +150,7 @@ documentation:
           application/xml:
             example: !include examples/generate_report.xml
 
-/reports/{reportId}/status{mediaTypeExtension}:
+/report/{reportId}/status{mediaTypeExtension}:
   displayName: Check the status of a report
   description: |
     Since the generation of reports may take several minutes, we supply a status address to check the status of the report generation. The status page will display `NOT_DONE`, until the report is ready to be downloaded. When the report is ready, URLs to download the report will be in the response
@@ -187,7 +187,7 @@ documentation:
           application/xml+failed:
             example: !include examples/status_failed.xml
 
-/reports/{reportId}{mediaTypeExtension}:
+/report/{reportId}{mediaTypeExtension}:
   displayName: Get report
   description: |
     Returns the generated report.
