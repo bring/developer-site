@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css?{{site.time | date: '%s%N'}}" media="screen" />
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-
   </head>
 
   <body>
@@ -51,12 +50,12 @@
     </div>
   </footer>
 
-
   <script async src="{{ site.baseurl }}/js/time-elements.js"></script>
   <script async src="{{ site.baseurl }}/js/anchor.min.js" onload="window.anchors.options = { placement: 'left' }; window.anchors.add('.anchored')"></script>
   <script async src="{{ site.baseurl }}/js/highlight.pack.js" onload="window.hljs.initHighlightingOnLoad()"></script>
   <script async src="{{ site.baseurl }}/js/tabs.js" onload="window.tabs.init()"></script>
   <script async src="{{ site.baseurl }}/js/collapsible.js" onload="window.collapsible.init()"></script>
+  <script src="https://fjz3y8qwrp81.statuspage.io/embed/script.js"></script>
   {% if jekyll.environment == 'production' %}
   <!-- Google Tag Manager for Bring -->
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-THZNF2"
