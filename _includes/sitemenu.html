@@ -1,5 +1,5 @@
 
-      <nav class="sitemenu" data-sticky="true">
+      <nav class="sitemenu">
         <ul class="list-bare sitemenu__list">
           <li class="{% if page.url == '/api/introduction/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/introduction/">Why use our APIs?</a></h3>
@@ -14,7 +14,10 @@
             </ul>
             {% endif %}
           </li>
-          <li class="{% if page.url contains '/api/services/' %} active{% endif %}">
+          <li class="{% if page.url == '/ecommerce/' %} active{% endif %}">
+            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/ecommerce/">E-Commerce</a></h3>
+          </li>
+          <li class="sitemenu__separator {% if page.url contains '/api/services/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/services/">Service List</a></h3>
             {% if page.url contains '/api/services/' %}
             <ul class="list-bare sitemenu__sublist">
@@ -62,11 +65,5 @@
             {% endif %}
           </li>
         {% endfor %}
-          <li class="{% if page.url == '/edi/' %} active{% endif %}">
-            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/edi/">EDI</a></h3>
-          </li>
-          <li class="{% if page.url == '/ecommerce/' %} active{% endif %}">
-            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/ecommerce/">E-Commerce</a></h3>
-          </li>
         </ul>
       </nav>
