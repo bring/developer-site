@@ -20,7 +20,6 @@ _site
 .sass-cache
 _sass.build
 .jekyll-metadata
-.jekyll-cache
 _preview.site
 .bundle/
 _buildtmp/
