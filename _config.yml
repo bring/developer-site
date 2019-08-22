@@ -55,7 +55,7 @@ raml_10_map:
     sort_order: 41
 
 # Build settings
-gems:
+plugins:
 - jekyll-paginate
 - jekyll-archives
 
