@@ -422,6 +422,7 @@
             <xs:element ref="pickupAddress"/>
             <xs:element name="pickupDate" type="xs:date"/>
             <xs:element name="pickupIsReadyAtTime" type="xs:time" minOccurs="0"/>
+            <xs:element name="pickupTimeZone" type="xs:string" minOccurs="0"/>
             <xs:element ref="parcelsInformation" minOccurs="0"/>
             <xs:element name="countryCode" type="xs:string"/>
             <xs:element ref="cargoInformation" minOccurs="0"/>

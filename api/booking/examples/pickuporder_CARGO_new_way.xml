@@ -33,6 +33,9 @@
     <pickupIsReadyAtTime>
         12:28
     </pickupIsReadyAtTime>
+    <pickupTimeZone>
+        Europe/Oslo
+    </pickupTimeZone>
     <countryCode>
         NO
     </countryCode>

@@ -13,6 +13,7 @@
     },
     "pickupDate": "2015-12-03",
     "pickupIsReadyAtTime": "14:26",
+    "pickupTimeZone": "Europe/Oslo",
     "countryCode": "NO",
     "parcelsInformation": null,
     "cargoInformation": {

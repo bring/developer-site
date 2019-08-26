@@ -13,6 +13,7 @@
     },
     "pickupDate": "2015-12-03",
     "pickupIsReadyAtTime": null,
+    "pickupTimeZone": null,
     "countryCode": "NO",
     "parcelsInformation": {
         "numberOfPackages": 2,
