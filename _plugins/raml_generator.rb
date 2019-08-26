@@ -8,7 +8,7 @@ module Jekyll
   class Api08Page < Jekyll::Page
     attr_reader :sort_order
 
-    def initialize(site, raml_hash, output_file, sort_order)
+    def initialize(site, raml_hash, output_file, sort_order, hide_nav)
       @site = site
       @base = site.source
       @dir = File.dirname(output_file)
@@ -24,13 +24,14 @@ module Jekyll
       self.read_yaml(File.join(site.source, '_layouts'), 'api-0.8.html')
       self.data['title'] = raml_hash['title']
       self.data['api'] = raml_hash
+      self.data['hide_nav'] = hide_nav == true
     end
   end
 
   class Api10Page < Jekyll::Page
     attr_reader :sort_order
 
-    def initialize(site, raml_hash, output_file, sort_order)
+    def initialize(site, raml_hash, output_file, sort_order, hide_nav)
       @site = site
       @base = site.source
       @dir = File.dirname(output_file)
@@ -46,6 +47,7 @@ module Jekyll
       self.read_yaml(File.join(site.source, '_layouts'), 'api-1.0.html')
       self.data['title'] = raml_hash['title']
       self.data['api'] = raml_hash
+      self.data['hide_nav'] = hide_nav == true
     end
 
   end
@@ -62,12 +64,12 @@ module Jekyll
       site.config.fetch('raml_08_map', {}).each do |raml_file, raml_file_data|
         Jekyll.logger.info('RAML', "- convert #{raml_file} to #{raml_file_data['target']}")
         raml = raml_08_file_to_hash(raml_file)
-        unsorted_pages << Api08Page.new(site, raml, raml_file_data['target'], raml_file_data['sort_order'])
+        unsorted_pages << Api08Page.new(site, raml, raml_file_data['target'], raml_file_data['sort_order'], raml_file_data['hide_nav'])
       end
       site.config.fetch('raml_10_map', {}).each do |raml_file, raml_file_data|
         Jekyll.logger.info('RAML', "- convert #{raml_file} to #{raml_file_data['target']}")
         raml = raml_10_file_to_hash(raml_file)
-        unsorted_pages << Api10Page.new(site, raml, raml_file_data['target'], raml_file_data['sort_order'])
+        unsorted_pages << Api10Page.new(site, raml, raml_file_data['target'], raml_file_data['sort_order'], raml_file_data['hide_nav'])
       end
       site.pages.push(*(unsorted_pages.sort_by {|page| page.sort_order}))
     end

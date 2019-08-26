@@ -9,6 +9,7 @@ raml_08_map:
   api/shipping-guide/api.raml:
     target: api/shipping-guide/index.html
     sort_order: 11
+    hide_nav: true
   api/pickup-point/api.raml:
     target: api/pickup-point/index.html
     sort_order: 20

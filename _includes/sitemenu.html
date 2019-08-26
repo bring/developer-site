@@ -28,7 +28,7 @@
           </li>
         {% for api_page in site.pages %}
           {% unless api_page.api %}{% continue %}{% endunless %}
-
+          {% if api_page.hide_nav %}{% continue %}{% endif %}
 
           {% if page.url contains api_page.url %}
             {% assign active_page = true %}
