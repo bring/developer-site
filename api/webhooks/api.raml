@@ -1,6 +1,6 @@
 #%RAML 1.0
 ---
-title: Tracking Webhook API
+title: Event Cast API
 version: v1
 baseUri: https://api.bring.com/event-cast
 mediaType: application/json
@@ -101,14 +101,17 @@ documentation:
 - title: Introduction
   content: |
 
+    The Tracking API provides the opportunity to track shipments by reference, package or shipment number. If you are interested in when a shipment is picket up by the recipient
+    or some other event has happened, then it's better to be told when something happens instead of polling the current status.
+
+    The Event Cast API makes you subscribe to such events using Webhooks.
+
     #### Webohook Definition
     > A Webhook in web development is a method of augmenting or altering the behaviour of a web page, or web application, with custom callbacks.
     > These callbacks may be maintained, modified, and managed by third-party users and developers who may not necessarily be affiliated with the originating website or application.
 
     #### Webhooks in Bring
-    In the context of Bring, Webhooks allows you to get notifications for the subscribed parcels and/or shipments.
-
-    In essence, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
+    In the context of Bring, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
     we'll send a HTTP POST to your callback URL that were defined during the Webhook registration.
 
     Using Webhooks is quite simple, and allows for immediate feedback based on the event that occured for the subscribed entity.
@@ -195,7 +198,7 @@ documentation:
     Additionally, to minimize risk, you should also provide HTTPS-enabled endpoints and use some kind of authentication mechanism.
     For HTTPS, please do not use self-signed certificates, as requests may fail from Bring' side and you'll receive no requests.
 
-    If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header funcitonality provided by the Webhook configuration.
+    If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header functionality provided by the Webhook configuration.
 
     All received callbacks from Bring will be using **UTC** as its current timezone and is based on the following format (Java):
 
