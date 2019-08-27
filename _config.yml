@@ -51,8 +51,8 @@ raml_10_map:
   api/tracking/api.raml:
     target: api/tracking/index.html
     sort_order: 90
-  api/webhooks/api.raml:
-    target: api/webhooks/index.html
+  api/event-cast/api.raml:
+    target: api/event-cast/index.html
     sort_order: 100
 
 # Build settings
