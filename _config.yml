@@ -8,51 +8,52 @@ permalink: /blog/:title/
 raml_08_map:
   api/shipping-guide/api.raml:
     target: api/shipping-guide/index.html
-    sort_order: 10
+    sort_order: 11
+    hide_nav: true
   api/pickup-point/api.raml:
     target: api/pickup-point/index.html
     sort_order: 20
   api/booking/api.raml:
     target: api/booking/index.html
-    sort_order: 30
+    sort_order: 40
   api/reports/api.raml:
     target: api/reports/index.html
-    sort_order: 50
+    sort_order: 110
   api/invoice/api.raml:
     target: api/invoice/index.html
-    sort_order: 60
+    sort_order: 120
   api/postal-code/api.raml:
     target: api/postal-code/index.html
-    sort_order: 70
+    sort_order: 30
   api/easy-return-service/api.raml:
     target: api/easy-return-service/index.html
-    sort_order: 80
+    sort_order: 70
   api/order-management/api.raml:
     target: api/order-management/index.html
-    sort_order: 90
+    sort_order: 130
   api/warehousing/api.raml:
     target: api/warehousing/index.html
-    sort_order: 100
+    sort_order: 140
   api/modify-delivery/api.raml:
     target: api/modify-delivery/index.html
-    sort_order: 130
+    sort_order: 80
 
 raml_10_map:
   api/order/to-mailbox/api.raml:
     target: api/order/to-mailbox/index.html
-    sort_order: 110
+    sort_order: 60
   api/shipping-guide_2/api.raml:
     target: api/shipping-guide_2/index.html
-    sort_order: 1
+    sort_order: 10
   api/shipment/api.raml:
     target: api/shipment/index.html
-    sort_order: 120
+    sort_order: 50
   api/tracking/api.raml:
     target: api/tracking/index.html
-    sort_order: 40
+    sort_order: 90
   api/webhooks/api.raml:
     target: api/webhooks/index.html
-    sort_order: 41
+    sort_order: 100
 
 # Build settings
 plugins:
