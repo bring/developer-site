@@ -446,6 +446,11 @@
       "suffixable": false
     },
     {
+      "code": "BOOK_VALIDATION-016",
+      "message": "One or more additional services is not allowed for this customer",
+      "suffixable": false
+    },
+    {
       "code": "BOOK-INTERNAL-001",
       "message": "An unexpected error occured",
       "suffixable": false

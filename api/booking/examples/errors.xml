@@ -448,6 +448,11 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
+      <code>BOOK_VALIDATION-016</code>
+      <message>One or more additional services is not allowed for this customer</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
       <code>BOOK-INTERNAL-001</code>
       <message>An unexpected error occured</message>
       <suffixable>false</suffixable>
