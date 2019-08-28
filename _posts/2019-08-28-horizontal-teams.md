@@ -23,7 +23,7 @@ Horizontal teams operate in a more narrow layer of technology. In our case, we a
 
 **The full complexity of a web application UI is best understood by those submerged in the intricacies — our attention is the broader overview.**
 
-Vertical teams are experts on user functionality in their area. They are invested in fully understanding the different needs for all their users. That is a prerequisite for them to actually build the features required. They unearth layers of business logic in the code, and hunt down the history of it all through git logs. They read all the reported bugs, and they are on first-name terms with a myriad of edge cases. The vertical team is the keeper of the best understanding possible of their domain.
+Vertical teams are experts on user functionality in their area. They are invested in fully understanding the different needs for all their users. That is a prerequisite for them to actually build the features required. They unearth layers of business logic in the code, and hunt down the history of it all through git logs. They read all the reported bugs, and they are on first&#8209;name terms with a myriad of edge cases. The vertical team is the keeper of the best understanding possible of their domain.
 
 Horizontal teams are generalists with a big picture perspective. In our case, we strive to know the main features across all neighbouring web applications. We want to understand the most common needs of our typical users. We have a mandate to establish shared patterns, and to implement that standardisation to improve user experience.
 
