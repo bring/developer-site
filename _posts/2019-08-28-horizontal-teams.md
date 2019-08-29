@@ -13,7 +13,7 @@ Our frontend team hit the ground running one year ago. What have we learnt about
 
 ## Technology Specialists 🏊‍♀️
 
-**The deepest depths of the technology stack are best left to divers — we are the fast swimmers at the surface.**
+**The deepest depths of the technology stack are best left to divers — while we are the fast swimmers at the surface.**
 
 Vertical teams are responsible for every single moving part of applications they own. When building a logistic system for business customers, this covers everything from database to UI design and all layers between. Developers write CSS in the morning, and debug production issues in PostgreSQL after lunch. They handle a whole range of wildly varying technologies. Not every individual member needs to wield them all to the same extent (that’s what teams are for, working together!) But as a unit; the vertical team is full stack.
 
@@ -21,7 +21,7 @@ Horizontal teams operate in a more narrow layer of technology. In our case, we a
 
 ## Domain Generalists 🤹‍♂️
 
-**The full complexity of a web application UI is best understood by those submerged in the intricacies — our attention is the broader overview.**
+**The full complexity of a web application UI is best understood by those submerged in the intricacies — while our attention is the broader overview.**
 
 Vertical teams are experts on user functionality in their area. They are invested in fully understanding the different needs for all their users. That is a prerequisite for them to actually build the features required. They unearth layers of business logic in the code, and hunt down the history of it all through git logs. They read all the reported bugs, and they are on first&#8209;name terms with a myriad of edge cases. The vertical team is the keeper of the best understanding possible of their domain.
 
@@ -30,7 +30,7 @@ Horizontal teams are generalists with a big picture perspective. In our case, we
 
 ## Organisation Core 🤸‍♂️
 
-**Product teams perform the heaviest lifting in the code base — we aim for acrobatic transformations.**
+**Product teams perform the heaviest lifting in the code base — while we aim for acrobatic transformations.**
 
 Vertical teams are streamlined for effective development within defined boundaries. Team members collaborate with a product owner and team lead to form a cross-functional alliance. Work is rigged for new members to be productive executors from day one. They storm together to tackle monumental projects, and they will figure out how to solve impossible technical problems. The vertical team is self-sufficient; delivering substantial value as independently as possible.
 
