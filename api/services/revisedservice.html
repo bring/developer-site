@@ -1,0 +1,389 @@
+---
+title: Revised Services
+layout: redesign
+---
+<div class="wrapper">
+  <div class="layout layout--flush">
+    <div class="layout__item palm-one-whole desk-one-quarter">
+      {% comment %}
+      ----------------------------------------
+      --
+      -- Sidebar menu
+      --
+      ----------------------------------------
+      {% endcomment %}
+      {% include sitemenu.html %}
+      {% assign base_url = 'http://api.test.bring.com' %}
+
+      {% if jekyll.environment == 'test' %}
+      {% assign base_url = 'http://api.test.bring.com' %}
+      {% endif %}
+
+      {% if jekyll.environment == 'qa' %}
+      {% assign base_url = 'https://api.qa.bring.com' %}
+      {% endif %}
+
+      {% if jekyll.environment == 'production' %}
+      {% assign base_url = 'https://api.bring.com' %}
+      {% endif %}
+    </div><!----><div class="layout__item palm-one-whole desk-three-quarters">
+    <article class="api">
+      <section class="api__section">
+        <h1 class="api__title">Revised Services</h1>
+        Bring is revising the service portfolio. Some of our services have been given new service names, service codes and pricing models.<a href="https://www.bring.no/tjenester/forbedringer"> Read more </a>  about the changes <br/><br/>
+
+        Old services will be phased out. From a given date, you will be converted to services with new service names (revised services) in Booking and Shipping Guide, and you can no longer book old services. The revised services are booked using your company’s main customer number. <br/> <br/>
+
+        This table shows which old services are impacted by the conversion, and which new service name/code they are mapped to:<br/><br/>
+
+        <h3>Old vs Revised Service Mapping</h3>
+        <table>
+          <thead>
+          <tr>
+            <th style="text-align: left">Old Service name</th>
+            <th style="text-align: left">Old Service code</th>
+            <th style="text-align: left">New Service Name</th>
+            <th style="text-align: left">New Service Code</th>
+            <th style="text-align: left">Service Group</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr id="5800">
+            <td>Klimanøytral Servicepakke</td>
+            <td>SERVICEPAKKE</td>
+            <td>Pakke til hentested</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5800">
+              <code>5800</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+          <tr id="5600">
+            <td>På Døren</td>
+            <td>PA_DOREN</td>
+            <td>Pakke levert hjem</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5600">
+              <code>5600</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+          <tr id="5000">
+            <td>Bedriftspakke</td>
+            <td>BPAKKE_DOR-DOR</td>
+            <td>Pakke til bedrift</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000">
+              <code>5000</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+          <tr id="4850">
+            <td>Bedriftspakke ekspress over natten</td>
+            <td>EKSPRESS09</td>
+            <td>Ekspress neste dag</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=4850">
+              <code>4850</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+          <tr id="9300">
+            <td>Servicepakke returservice</td>
+            <td>SERVICEPAKKE_RETURSERVICE </td>
+            <td>Retur fra hentested</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=9300">
+              <code>9300</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+          <tr id="9000">
+            <td>Bedriftspakke returservice</td>
+            <td>BPAKKE_DOR-DOR_RETURSERVICE</td>
+            <td>Retur pakke fra bedrift</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=9000">
+              <code>9000</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+          <tr id="9600">
+            <td>Bedriftspakke ekspress over natten returservice </td>
+            <td>EKSPRESS09_RETURSERVICE</td>
+            <td>Returekspress</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=9600">
+              <code>9600</code>
+            </a>
+            </td>
+            <td>Parcels Norway</td>
+          </tr>
+
+          <tr id="5100">
+            <td>Stykkgods</td>
+            <td>CARGO_GROUPAGE</td>
+            <td>Stykkgods til bedrift</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5100">
+              <code>5100</code>
+            </a>
+            </td>
+            <td>Cargo Norway</td>
+          </tr>
+          <tr id="5300">
+            <td>Stykk- og partigods<sup>*</sup></td>
+            <td>CARGO </td>
+            <td>Stykkgods til bedrift  <br /> Partigods til bedrift </td>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5100">
+                <code>5100</code>
+              </a>
+              <br/> <br />
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5300">
+                <code>5300</code>
+              </a>
+            </td>
+            <td>Cargo Norway</td>
+          </tr>
+          <tr id="9100">
+            <td>Stykk- og partigods<sup>*</sup></td>
+            <td>CARGO</td>
+            <td>Retur stykkgods fra bedrift</td>
+            <td><a target="_blank"
+                   href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=9100">
+              <code>9100</code>
+            </a>
+            </td>
+            <td>Cargo Norway</td>
+          </tr>
+          </tbody>
+        </table>
+        <div style="font-size: .8rem">* There is a one-to-one mapping between the old and revised services (and thereby their respective booking flows) - except for the old service Groupage and Partload. This service had one common booking flow, but is split into two revised services/booking flows: Business Groupage and Business Partload. A separate booking flow has also been created for the revised service Return business groupage.</div>
+
+        <br />
+        <br />
+
+        <h3>Value Added Services</h3>
+
+        <p>Value Added Services for revised services needs to be  requested with revised additional service code</p>
+
+        <table>
+
+          <thead>
+          <tr>
+            <th style="text-align: left">
+              Additional Service Code
+            </th>
+            <th style="text-align: left">
+              Additional Service name
+            </th>
+            <th style="text-align: left">
+              Applies To
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=1142">
+                1142
+              </a>
+            </td>
+            <td>
+              Notification VAS
+            </td>
+            <td>
+              <a href="#5000">5000</a>, <a href="#4850">4850</a> , <a href="#5100">5100</a>, <a href="#5300">5300</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5800&amp;additionalservice=1000">
+                1000
+              </a>
+
+            </td>
+            <td>
+              Cash On Delivery (COD)
+            </td>
+            <td>
+              <a href="#5800">5800</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=2084">
+                2084
+              </a>
+            </td>
+            <td>
+              Electronic notification
+            </td>
+            <td>
+              <a href="#5800">5800</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=0041">
+                0041
+              </a>
+            </td>
+            <td>
+              Simplified delivery
+            </td>
+            <td>
+              <a href="#5000">5000</a>, <a href="#4850">4850</a> , <a href="#5100">5100</a>, <a href="#5300">5300</a> , <a href="#5600">5600</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=2141">
+                2141
+              </a>
+            </td>
+            <td>
+              Frost-free
+            </td>
+            <td>
+              <a href="#5000">5000</a>, <a href="#4850">4850</a> , <a href="#5100">5100</a>, <a href="#5300">5300</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=1133">
+                1133
+              </a>
+            </td>
+            <td>
+              Proof of identity required
+            </td>
+            <td>
+              <a href="#5000">5000</a>, <a href="#4850">4850</a> , <a href="#5800">5800</a>, <a href="#5600">5600</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=2045">
+                2045
+              </a>
+            </td>
+            <td>
+              Consignment stopped and returned
+            </td>
+            <td>
+              <a href="#5000">5000</a>, <a href="#4850">4850</a> , <a href="#5300">5300</a>, <a href="#5800">5800</a>, <a href="#5600">5600</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=1082">
+                1082
+              </a>
+            </td>
+            <td>
+              Social check
+            </td>
+            <td>
+              <a href="#5000">5000</a>, <a href="#4850">4850</a> , <a href="#5100">5100</a>, <a href="#5300">5300</a> , <a href="#5800">5800</a>, <a href="#5600">5600</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=2142">
+                2142
+              </a>
+            </td>
+            <td>
+              Special goods
+            </td>
+            <td>
+              <a href="#5100">5100</a>, <a href="#5300">5300</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5000&amp;additionalservice=0068">
+                0068
+              </a>
+            </td>
+            <td>
+              Optional insurance
+            </td>
+            <td>
+              <a href="#5000">5000</a> , <a href="#5800">5800</a>, <a href="#5600">5600</a>, <a href="#9000">9000</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=4850&amp;additionalservice=0015">
+                1062
+              </a>
+            </td>
+            <td>
+              Saturday delivery
+            </td>
+            <td>
+              <a href="#4850">4850</a>, <a href="#9600">9600</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5800&amp;additionalservice=2086">
+                2086
+              </a>
+            </td>
+            <td>
+              Notification by letter
+            </td>
+            <td>
+              <a href="#5800">5800</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a target="_blank"
+                 href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=5100&amp;additionalservice=1245">
+                1245
+              </a>
+            </td>
+            <td>
+              Dangerous goods
+            </td>
+            <td>
+              <a href="#5100">5100</a>, <a href="#5300">5300</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <section class="api__section" id="">
+        {% include disqus.html %}
+      </section>
+    </article>
+  </div>
+  </div>
+</div>
