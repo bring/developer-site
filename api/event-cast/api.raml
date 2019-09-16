@@ -257,7 +257,7 @@ documentation:
     No.
 
     #### Can I get a history of events that were sent for a subscription?
-    Not in this version. It may be available in the future.
+    Not in this version. It may be available in the future. Please note that you may use the [Tracking API](/api/tracking) if you'd like the entire list of events that has happened for a lifecycle related to a shipment.
 
     #### Will I be able to see my previous/expired Webhooks (active and inactive)?
     No.
@@ -293,7 +293,7 @@ documentation:
         examples:
           valid_request:
             displayName: Valid Request
-            value: !include examples/create-Webhook-request.json
+            value: !include examples/create-webhook-request.json
     responses:
       201:
         description: Returns the registered Webhook after creation request.
@@ -303,7 +303,7 @@ documentation:
             examples:
               reqister_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/Webhook-request.json
+                value: !include examples/webhook-request.json
       400:
         displayName: Bad request
         description: Unable to register Webhook due to some bad request from the client side.
@@ -313,7 +313,7 @@ documentation:
             examples:
               invalid_Webhook:
                 displayName: Invalid creation request
-                value: !include examples/create-Webhook-invalid.json
+                value: !include examples/create-webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers
@@ -339,7 +339,7 @@ documentation:
         examples:
           valid_request:
             displayName: Valid Request
-            value: !include examples/batch-create-Webhook-request.json
+            value: !include examples/batch-create-webhook-request.json
     responses:
       201:
         description: |
@@ -350,7 +350,7 @@ documentation:
             examples:
               reqister_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/batch-Webhook-request.json
+                value: !include examples/batch-webhook-request.json
       400:
         displayName: Bad request
         description: |
@@ -361,7 +361,7 @@ documentation:
             examples:
               invalid_Webhook:
                 displayName: Invalid creation request
-                value: !include examples/create-Webhook-invalid.json
+                value: !include examples/create-webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers
@@ -394,7 +394,7 @@ documentation:
             examples:
               get_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/Webhook-request.json
+                value: !include examples/webhook-request.json
       204:
         displayName: Webhook successfully removed
         description: Webhook unregistered and removed. No content supplied in response
@@ -426,7 +426,7 @@ documentation:
             examples:
               invalid_request:
                 displayName: Invalid creation request
-                value: !include examples/create-Webhook-invalid.json
+                value: !include examples/create-webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers.
@@ -450,7 +450,7 @@ documentation:
             examples:
               get_Webhook:
                 displayName: Registered Webhook
-                value: !include examples/Webhook-request.json
+                value: !include examples/webhook-request.json
       400:
         displayName: Bad request
         description: Unable to register Webhook due to some bad request from the client side.
@@ -460,7 +460,7 @@ documentation:
             examples:
               invalid_request:
                 displayName: Invalid creation request
-                value: !include examples/create-Webhook-invalid.json
+                value: !include examples/create-webhook-invalid.json
       401:
         displayName: Error
         description: Missing authentication headers
