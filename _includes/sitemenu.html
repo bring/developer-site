@@ -17,7 +17,7 @@
           <li class="{% if page.url == '/ecommerce/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/ecommerce/">E-Commerce</a></h3>
           </li>
-          <li class="sitemenu__separator {% if page.url contains '/api/services/' %} active{% endif %}">
+          <li class="{% if page.url contains '/api/services/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/services/">Service List</a></h3>
             {% if page.url contains '/api/services/' %}
             <ul class="list-bare sitemenu__sublist">
@@ -25,6 +25,9 @@
               <li><a href="{{ site.baseurl }}/api/services/#booking">Booking</a></li>
             </ul>
             {% endif %}
+          </li>
+          <li class="sitemenu__separator {% if page.url == '/revision-history/' %} active{% endif %}">
+            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/revision-history/">Revision History</a></h3>
           </li>
         {% for api_page in site.pages %}
           {% unless api_page.api %}{% continue %}{% endunless %}
