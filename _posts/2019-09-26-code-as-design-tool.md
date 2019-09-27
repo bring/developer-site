@@ -30,7 +30,7 @@ Despite all the modern software claiming to improve workflows and teamwork, they
 
 Within the gap, it’s my experience that designers feel like they lose control of what they make before it ends up in the hands of the users, and developers feel like they are just doing what they are told. Recognising that those people, together, are the most qualified at uncovering and solving problems and weaknesses in the services they make is the road to an increased feeling of responsibility and ownership. People care more about the things they can impact. And when they are invested, they build better interfaces. 
  
-We are way past talking about improving communication between designers and developers. The next step is to start turn designers into developers and increase the design competence of traditional developers. The reasons for keeping designers and developers apart are grounded neither in an excellent workflow nor in what’s best for the interface. As long as we’re trying to bridge the gap, we are contributing to its existence. The only way to get rid of it is to fill it. With code.
+We are way past talking about improving communication between designers and developers. The next step is to start turning designers into developers and increase the design competence of traditional developers. The reasons for keeping designers and developers apart are grounded neither in an excellent workflow nor in what’s best for the interface. As long as we’re trying to bridge the gap, we are contributing to its existence. The only way to get rid of it, is to fill it. With code.
  
 
 ## Design all the time
