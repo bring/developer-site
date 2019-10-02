@@ -10,6 +10,8 @@ author:
 ---
 ![Hybriding interfaces](/img/code-as-tool-cropbw.jpg "Hybriding interfaces")
 
+_Also published in Norwegian @ kode24.no: [Kode som overlegent designverktøy](https://www.kode24.no/guider/kode-som-overlegent-designverktoy/71649266)_
+
 Have you ever thought about the fact that the users are never really in direct contact with what designers make? User interfaces are built by developers who are experts on the users' environment, but the decisions are made elsewhere, by people that use entirely different tools. Sounds suboptimal, doesn’t it, keeping technical knowledge and user knowledge apart like this. And are those kinds of expertise really that clearly separated? Or are we seeing more and more people starting to cover both fields?
 
 What if I told you there exists a design tool that could not only solve this but also improve your workflow. It might sound like a standard sales pitch for a new sketch and prototype app, but we are, in fact, talking about code. When it comes to making UIs, it’s the only tool that’s good enough. 
@@ -44,7 +46,7 @@ When you free yourself from the idea that developers and designers can’t be th
 
 
 ## Police and translators
-The logistics tool we make has a frontend team that consists of people with various design and developer backgrounds. The details of how we came to be and how we work are beyond what I’m trying to tell here. But the short of it is that we make some rough sketches with the other teams, do some quick devtooling in the browser, and code the odd prototype using our logistics application’s design system. Most importantly, each and every team member writes (and deletes) thousands of lines of production code a year. Zero pixel-perfects are made – they don’t exist. Instead of acting as gatekeepers or police, we try to teach, assist, and together with the other teams, build their frontends.
+The logistics tool we make has a [frontend team](../frontend-hybrid-developers) that consists of people with various design and developer backgrounds. The details of how we came to be and [how we work](../horizontal-teams) are beyond what I’m trying to tell here. But the short of it is that we make some rough sketches with the other teams, do some quick devtooling in the browser, and code the odd prototype using our logistics application’s design system. Most importantly, each and every team member writes (and deletes) thousands of lines of production code a year. Zero pixel-perfects are made – they don’t exist. Instead of acting as gatekeepers or police, we try to teach, assist, and together with the other teams, build their frontends.
 
 Only you can find out what works for your organisation. The technology exists, the knowledge isn’t far away, but you need to create some wiggle room. This isn’t a clear cut thing where you can change some titles around and call it a day. 
 
