@@ -2,7 +2,7 @@
 layout: post
 disqus: false
 title: Code – the superior design tool
-date: 2019-10-02 06:55:00
+date: 2019-10-02 04:55:00
 category: code-and-design
 author:
     - HalvorSanden
