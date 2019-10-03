@@ -1,0 +1,37 @@
+<InvoiceResponse>
+  <InvoiceList>
+    <Invoice>
+      <customerNumber>20000037380</customerNumber>
+      <invoiceNumber>3080063724</invoiceNumber>
+      <invoiceDate>2019-01-14</invoiceDate>
+      <invoiceSource>SYSPED</invoiceSource>
+      <invoiceIssuer>BRING_CARGO_AS</invoiceIssuer>
+      <status>Closed</status>
+      <totalAmount>-3412.5</totalAmount>
+      <dueDate>2019-01-14</dueDate>
+      <type>Credit note</type>
+    </Invoice>
+    <Invoice>
+      <customerNumber>20000037380</customerNumber>
+      <invoiceNumber>3080063055</invoiceNumber>
+      <invoiceDate>2019-01-07</invoiceDate>
+      <invoiceSource>SYSPED</invoiceSource>
+      <invoiceIssuer>BRING_CARGO_AS</invoiceIssuer>
+      <status>Closed</status>
+      <totalAmount>-4641.25</totalAmount>
+      <dueDate>2019-01-07</dueDate>
+      <type>Credit note</type>
+    </Invoice>
+    <Invoice>
+      <customerNumber>20000037380</customerNumber>
+      <invoiceNumber>3080063064</invoiceNumber>
+      <invoiceDate>2019-01-07</invoiceDate>
+      <invoiceSource>SYSPED</invoiceSource>
+      <invoiceIssuer>BRING_CARGO_AS</invoiceIssuer>
+      <status>Closed</status>
+      <totalAmount>-2702.5</totalAmount>
+      <dueDate>2019-01-07</dueDate>
+      <type>Credit note</type>
+    </Invoice>
+  </InvoiceList>
+</InvoiceResponse>
