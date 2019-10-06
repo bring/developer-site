@@ -65,32 +65,32 @@ documentation:
         example: 30.06.2019
 
 
-/invoicearchive/api/invoices/{customerNumberUnique}.{extension}:
+/invoicearchive/api/invoices/{customerNumberUnique}{mediaTypeExtension}:
   displayName: List of all Invoices (NEW)
   description: |
-    Gets the list of invoice numbers for the given API customer number based on "fetchAll" indicator to decide invoices to be retrieved for all the cross reference in case of customer master number. By default it shows last 365 days of invoices, with the possibilty filtering by providing from date and to date.
+    Gets all the invoice numbers corresponding to primary customer and its cross references based on "fetchAll" indicator for the given API customer number. By default it shows last 365 days of invoices, with the possibilty filtering by providing from date and to date.
   uriParameters:
       customerNumberUnique:
         description: Unique API Customer Number for each customer.
         type: string
         required: true
       mediaTypeExtension:
-              enum: [ .json, .xml ]
-              description: Use .json to specify application/json or .xml to specify application/xml
+        enum: [ .json, .xml ]
+        description: Use .json to specify application/json or .xml to specify application/xml
 
   get:
     description: List invoice numbers
     queryParameters:
       fromDate:
-        description: Start date for fetching invoices in format dd.mm.yyyy.
+        description: Start date for fetching invoices in format mm.dd.yyyy.
         type: string
         required: false
         example: 01.01.2019
       toDate:
-        description: End date for fetching invoices in format dd.mm.yyyy.
+        description: End date for fetching invoices in format mm.dd.yyyy.
         type: string
         required: false
-        example: 30.06.2019
+        example: 01.30.2019
       fetchAll:
         description: Indicator to fetch all invoices including cross references in case of customer master number
         type: boolean
