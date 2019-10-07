@@ -16,7 +16,7 @@ So how can one handle this great wall of frustration?
 ## Coding is not the way
 ![Coding is not the way](/img/how-to-avoid-the-wall-of-frustration/Coding-is-not-the-way.png "Coding is not the way")
 
-I recently worked on a weird, little application called return.
+I recently worked on a weird and small application called return.
 Frequently used to generate return labels, but a no-mans land for developers as the code had not been cared for in the last 5 years.
 I dusted it off, but quickly realised that working with old jsp files, would not keep me at a safe distance from the wall.
 So I did what any young developer, who recently learnt a new skill would do:
@@ -30,7 +30,7 @@ Okay, so we’ve established that I lied. You can’t avoid the wall. It's solid
 
 **First advice:** Everyone needs a friend
 
-The key to success for the return project was that I created an alliance with another developer.  Someone who understood the part of the code I didn’t, wanted it to be a success and that was willing to prioritise. There’s no better padding than sharing the frustration with someone who is willing, and not afraid, to bump into the wall with you.
+The key to success for the return project was that I created an alliance with another developer.  Someone who wanted it to be a success, was willing to prioritise and understood the part of the code I didn’t. There’s no better padding than sharing the frustration with someone who is willing, and not afraid to bump into the wall with you.
 
 ## Point of good enough
 <img src="/img/how-to-avoid-the-wall-of-frustration/point-of-good-enough.png" height="400" alt="Image of sign saying good enough">
@@ -48,8 +48,7 @@ During this stage I was forced to accept that the application would never be ful
 Another benefit to working with others is that they have probably seen the wall before. They know what it feels like, and most likely have a different set of tools! Like something that lets you track all the error messages created by users, which blew my mind. I used to believe that deploying to production meant pressing a button, then waiting for customer service to come back with a list of all the bugs you missed in testing. Turns out there are loads of tools out there, as long as you know what to ask!
 
 **Third piece of advice:** Someone has faced the same issue and frustration before you. If you can’t find the answer online, maybe someone sitting next to you can give you a nudge in the right direction.
-(Or maybe you can find some tools in our text about metrics at mybring)
-https://developer.bring.com/blog/metrics-at-mybring/)
+(Or maybe you can find some tools in our text about [metrics at mybring](https://developer.bring.com/blog/metrics-at-mybring/))
 
 
 ## Rollback a step forward
