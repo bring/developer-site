@@ -68,7 +68,7 @@ documentation:
 /invoicearchive/api/invoices/{customerNumberUnique}{mediaTypeExtension}:
   displayName: List of all Invoices (NEW)
   description: |
-    Gets all the invoice numbers corresponding to primary customer and its cross references based on "fetchAll" indicator for the given API customer number. By default it shows last 365 days of invoices, with the possibilty filtering by providing from date and to date.
+    Gets the list of invoices corresponding to the given customer number and its cross references when "fetchAll" indicator is set to true. By default it shows last 65 days of invoices, with the possibilty to access for 365 days of invoice by providing "fromDate" and "toDate". This endpoint support Parcel Norway, Parcel International and Cargo customers.
   uriParameters:
       customerNumberUnique:
         description: Unique API Customer Number for each customer.
@@ -92,8 +92,8 @@ documentation:
         required: false
         example: 01.30.2019
       fetchAll:
-        description: Indicator to fetch all invoices including cross references in case of customer master number
+        description: To get invoices for primary customer master number including its cross references
         type: boolean
         required: false
-        default value: true
+        default value: false
         example: true or false
