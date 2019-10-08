@@ -33,7 +33,7 @@ Okay, so we’ve established that I lied. You can’t avoid the wall. It's solid
 The key to success for the return project was that I created an alliance with another developer.  Someone who wanted it to be a success, was willing to prioritise and understood the part of the code I didn’t. There’s no better padding than sharing the frustration with someone who is willing, and not afraid to bump into the wall with you.
 
 ## Point of good enough
-<img src="/img/how-to-avoid-the-wall-of-frustration/point-of-good-enough.png" height="400" alt="Image of sign saying good enough">
+<img src="/img/how-to-avoid-the-wall-of-frustration/point-of-good-enough.png" width="100%" style="max-width:33rem" alt="Image of sign saying good enough">
 
 Despite having help, I noticed an unfortunate pattern: For every task I completed, two new ones seemed to pop up. This made me feel incredibly overwhelmed, and the dream of the perfect release seemed far away.
 
@@ -52,7 +52,7 @@ Another benefit to working with others is that they have probably seen the wall 
 
 
 ## Rollback a step forward
-<img src="/img/how-to-avoid-the-wall-of-frustration/rollback-step-forward.png" height="400px" alt="A clock with an arrow sticking out of the outer ring">
+<img src="/img/how-to-avoid-the-wall-of-frustration/rollback-step-forward.png"  width="100%" style="max-width:33rem" alt="A clock with an arrow sticking out of the outer ring">
 
 The return application is like a satellite, floating around in space far away from all the safe and good architecture, that lets us release to users incrementally.
 Instead we had to release to everyone at the same time, which was especially fun considering that we had to roll back twice! The second time was luckily just a confusion, but the first time we discovered that there was an old user flow missing.
