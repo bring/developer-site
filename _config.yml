@@ -25,9 +25,6 @@ raml_08_map:
   api/postal-code/api.raml:
     target: api/postal-code/index.html
     sort_order: 30
-  api/easy-return-service/api.raml:
-    target: api/easy-return-service/index.html
-    sort_order: 70
   api/order-management/api.raml:
     target: api/order-management/index.html
     sort_order: 130
