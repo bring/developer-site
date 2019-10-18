@@ -1,0 +1,46 @@
+[
+  {
+    "customerNumber": "3674876",
+    "invoiceNumber": "1140028525",
+    "invoiceDate": "2019-02-08",
+    "invoiceSource": "NO002_LM_PE",
+    "invoiceIssuer": "POSTEN_NORGE_AS",
+    "status": "Closed",
+    "totalAmount": "5597.06",
+    "dueDate": "2019-02-20",
+    "type": "Invoice"
+  },
+  {
+    "customerNumber": "3674876",
+    "invoiceNumber": "1290040170",
+    "invoiceDate": "2019-01-31",
+    "invoiceSource": "OTHER",
+    "invoiceIssuer": "POSTEN_NORGE_AS",
+    "status": "Closed",
+    "totalAmount": "91.0",
+    "dueDate": "2019-02-13",
+    "type": "Invoice"
+  },
+  {
+    "customerNumber": "3674876",
+    "invoiceNumber": "1140019938",
+    "invoiceDate": "2019-01-31",
+    "invoiceSource": "NO002_LM_PE",
+    "invoiceIssuer": "POSTEN_NORGE_AS",
+    "status": "Closed",
+    "totalAmount": "5519.99",
+    "dueDate": "2019-02-13",
+    "type": "Invoice"
+  },
+  {
+    "customerNumber": "3674876",
+    "invoiceNumber": "1290025128",
+    "invoiceDate": "2019-01-22",
+    "invoiceSource": "OTHER",
+    "invoiceIssuer": "POSTEN_NORGE_AS",
+    "status": "Closed",
+    "totalAmount": "78.0",
+    "dueDate": "2019-02-01",
+    "type": "Invoice"
+  }
+]

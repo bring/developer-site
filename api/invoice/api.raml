@@ -37,13 +37,14 @@ documentation:
   get:
     description: Download pdf for invoice
 
-/reports/api/invoices/{customerOrGroupId}{mediaTypeExtension}:
+/invoicearchive/api/invoices/{customerNumberUnique}{mediaTypeExtension}:
   displayName: List of all Invoices
   description: |
-    Use the existing [Reports Api List invoice numbers](/api/reports/#list-invoice-numbers) for this feature. Gets the list of invoice numbers for a customer id or a customer group. By default it shows last 65 days of invoices, with the possibilty to access 365 days data by providing from date and to date.
+    Gets the list of invoices corresponding to the given customer number.
+    By default it shows last 65 days of invoices, with the possibilty to access last 365 days by providing "fromDate" and "toDate". This endpoint supports Parcel Domestic, Parcel International and Cargo customers.
   uriParameters:
-      customerOrGroupId:
-        description: Id for customer or customer group. Customer group id should have the prefix `GROUP_` e.g. GROUP_12345
+      customerNumberUnique:
+        description: Unique API Customer Number.
         type: string
         required: true
       mediaTypeExtension:
@@ -57,9 +58,9 @@ documentation:
         description: Start date for fetching invoices in format dd.mm.yyyy.
         type: string
         required: false
-        example: 01.01.2019
+        example: 15.01.2019
       toDate:
         description: End date for fetching invoices in format dd.mm.yyyy.
         type: string
         required: false
-        example: 30.06.2019
+        example: 25.01.2019
