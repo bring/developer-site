@@ -9,9 +9,9 @@ documentation:
       <div class="api__warning-box" align="justify">
         <strong>Important notice: Mailbox Packet API will be decomissioned on 13.01.2020</strong>
         <br><br>
-        A simplified and enhanced version of Mailbox Packet (Pakke i postkassen) will be launched on 13.01.2020. From the same date, the Mailbox Packet API will be decomissioned, and the revitalized Mailbox Packet service will be booked via <strong>Booking API</strong> like other Bring-services. If you don't already use the <strong>Booking API</strong>, we strongly recommend that you start setting up the integration now. 
+        A simplified and enhanced version of Mailbox parcel (Pakke i postkassen) will be launched on 13.01.2020. From the same date, the Mailbox Packet API will be decomissioned, and the revitalized Mailbox parcel service will be booked via <strong>Booking API</strong> like other Bring-services. If you don't already use the <strong>Booking API</strong>, we strongly recommend that you start setting up the integration now. 
         <br><br>
-        <strong>Detailed technical documentation on how to set up Mailbox Packet (Pakke i postkassen) in the Booking API will be made available on this site by 24.10.2019.</strong>
+        <strong>More information on how to book and test-book Mailbox parcel (Pakke i postkassen) through the Booking API can be found <a href="/api/booking/#mailbox-parcel-pakke-i-postkassen">here</a>.</strong>
       </div>
 
       The Bring Booking API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same backend as [Mybring Booking](https://www.mybring.com/booking/) and the same PDF labels.
@@ -58,6 +58,19 @@ documentation:
       - A booking will typically take < 3 seconds
     - Express Nordic SameDay
       - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
+
+- title: Mailbox parcel (Pakke i Postkassen)
+  content: |
+    From January 13. 2019, Mailbox parcel will be possible to book via the Booking API:
+
+    Until then, the service will be possible to test-book (i.e. no real booking will happen and charges will not occur) to verify the API integration. We recommend doing this, especially if this is the first time integrating with the Booking API.
+
+    To book, order one of the two service ids:
+
+    - 3570 (Mailbox parcel without tracking)
+    - 3584 (Mailbox parcel with tracking)
+    
+    For available value added services on these services, please see the overview below. There is also an example request for 3584 in "More examples" section below. When booking 3570, it is just a matter of changing the service code from 3584 to 3570.
 
 - title: Customs information
   content: |
@@ -116,7 +129,7 @@ documentation:
 
       | Specialist | Example services | Example customer number |
       |:-----------|:-----------------|:------------------------|
-      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09` | `PARCELS_NORWAY-10001123123` |
+      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09`, `3584` | `PARCELS_NORWAY-10001123123` |
       | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO-329511` |
       | Bring Cargo, International | `CARGO_INTERNATIONAL` | `CARGO-803739` |
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
@@ -166,6 +179,8 @@ documentation:
       | BUSINESS_HALFPALLET | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
       | BUSINESS_QUARTERPALLET | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
       | EXPRESS_NORDIC_0900 | FLEX_DELIVERY, EVARSLING, PHONENOTIFICATION, DELIVERY_INDOOR |
+      | 3570 | SIMPLE_DELIVERY |
+      | 3584 | SIMPLE_DELIVERY |
 
       See the "More examples" section below to see examples on how to use value added services.
 
@@ -682,6 +697,15 @@ documentation:
                   example: !include examples/customsDeclarationWithImporter.json
                 application/xml:
                   example: !include examples/customsDeclarationWithImporter.xml
+                  
+      294:
+              displayName: Mailbox parcel with tracking
+              description: Both recipient `phoneNumber` and `email` is mandatory
+              body:
+                application/json:
+                  example: !include examples/mailboxParcel.json
+                application/xml:
+                  example: !include examples/mailboxParcel.xml
 
 
 /errors{mediaTypeExtension}:
