@@ -61,13 +61,18 @@ documentation:
 
 - title: Mailbox Parcel (Pakke i Postkassen)
   content: |
-    From January 13. 2019, Mailbox Parcel will be possible to book via the Booking API.
+    From January 13. 2019, Mailbox Parcel is booked via the Booking API.
 
-    Until then, the service will be possible to test-book (i.e. no real booking will happen and charges will not occur) to verify the API integration. We recommend doing this, especially if this is the first time integrating with the Booking API.
+    Until then, the service will be possible to test-book (i.e. no real booking will happen and charges will not occur) to verify the API integration. We recommend doing this, especially if this is the first time integrating with the Booking API. Please note that it is possible to book Mailbox Parcel via Mybring's websolution if, for any reason, an integration with Booking API is not in place by January 13. 2019.
 
-    Booking a Mailbox Parcel will now be a single-step process with one booking per label. A link to the label will be returned in the response. No waybill will be generated.
+    #### What is new compared with today's Mailbox Parcel service?
+    
+    - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (as today's service, multi-kolli is not supported). Each parcel will be invoiced separately. A link to the label is returned in the response. 
+    - No waybill is generated, as each parcel is invoiced based on the weight registered at the terminal. The minimum price of 150,- per order is removed.
+    - When booking Mailbox Parcel in Booking API, the new API customer number is used. This is identical to your company's main customer number (without prefix PARCELS_NORWAY and without padded zeros if any).
+    - When booking Mailbox Parcel in Booking API, the service is defined by setting 3584 or 3570 in the product id. 
 
-    To book, order one of the two service ids:
+    To book, order one of the two product ids:
     
     ### 3584 (tracking with RFID)
     Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
