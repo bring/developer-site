@@ -59,18 +59,62 @@ documentation:
     - Express Nordic SameDay
       - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
 
-- title: Mailbox parcel (Pakke i Postkassen)
+- title: Mailbox Parcel (Pakke i Postkassen)
   content: |
-    From January 13. 2019, Mailbox parcel will be possible to book via the Booking API:
+    From January 13. 2019, Mailbox Parcel is booked via the Booking API.
 
-    Until then, the service will be possible to test-book (i.e. no real booking will happen and charges will not occur) to verify the API integration. We recommend doing this, especially if this is the first time integrating with the Booking API.
+    Until then, the service will be possible to test-book (i.e. no real booking will happen and charges will not occur) to verify the API integration. We recommend doing this, especially if this is the first time integrating with the Booking API. Please note that it is possible to book Mailbox Parcel via Mybring's websolution if, for any reason, an integration with Booking API is not in place by January 13. 2019.
 
-    To book, order one of the two service ids:
-
-    - 3570 (Mailbox parcel without tracking)
-    - 3584 (Mailbox parcel with tracking)
+    #### What is new compared with today's Mailbox Parcel service?
     
-    For available value added services on these services, please see the overview below. There is also an example request for 3584 in "More examples" section below. When booking 3570, it is just a matter of changing the service code from 3584 to 3570.
+    - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (as today's service, multi-kolli is not supported). Each parcel will be invoiced separately. A link to the label is returned in the response. 
+    - No waybill is generated, as each parcel is invoiced based on the weight registered at the terminal. The minimum price of 150,- per order is removed.
+    - When booking Mailbox Parcel in Booking API, the new API customer number is used. This is identical to your company's main customer number (without prefix PARCELS_NORWAY and without padded zeros if any).
+    - When booking Mailbox Parcel in Booking API, the service is defined by setting 3584 or 3570 in the product id. 
+
+    To book, order one of the two product ids:
+    
+    ### 3584 (tracking with RFID)
+    Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
+
+    #### How does tracking with RFID work?
+    Normally, we create PDF labels that can be printed on any printer.
+
+    If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
+
+    The labels will be ZPL code containing instructions for programming the passive RFID antenna in the printer's labels with package numbers.
+
+    In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
+
+    ##### Special hardware required
+    RFID-tagged labels require special printer hardware. Currently we support the following printers:
+
+    - Zebra R410
+    - Zebra 500R
+
+    ### 3570 (no tracking)
+    If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
+
+    ### Additional Service : Bag on door (Pose på døren)
+    A delivery alternative for Mailbox Parcels that cannot be delivered to the mailbox. 
+
+    Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may, against a surcharge of NOK 15 per shipment, choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point (surcharge of NOK 23 per shipment). This delivery option will have to be confirmed by the receiver upon booking in the sender's webshop. When the parcel is delivered as a bag on the door, the bar code is scanned and the recipient will receive an SMS/email. Note that if the parcel is delivered in the mailbox the additional fee will not occur.
+
+    #### Terms of delivery
+            
+    The sender must clearly inform the recipient about the criteria of Bag on door when displaying this service in the check out (e.g. via Shipping Guide API):
+      
+    - The distance from the mailbox to the recipient's door must not exceed 250 m 
+    - House no. must be clearly marked
+    - The door must be clearly marked with the recipient's name 
+    - Posten must have access to the recipient's door, even when the main entrance is locked, for instance when recipient live in an apartment. 
+      
+    Knowing these critera, the recipient must actively accept Bag on door as a delivery option.
+      
+    In cases where the criterias are not met, i.e. bad weather (risk of damage) or where for security reason the risk is considered too high to use Bag on door, the parcel will still be delivered to the recipient's pickup point for delivery.
+
+    ### Example request
+    There is an example request for 3584 in "More examples" section below. Booking 3570 is just a matter of changing the service code from 3584 to 3570.
 
 - title: Customs information
   content: |
@@ -700,7 +744,7 @@ documentation:
                   
       294:
               displayName: Mailbox parcel with tracking
-              description: Both recipient `phoneNumber` and `email` is mandatory
+              description: Recipient `phoneNumber` and/or recipient `email` is required
               body:
                 application/json:
                   example: !include examples/mailboxParcel.json
