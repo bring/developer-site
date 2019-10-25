@@ -38,7 +38,12 @@
           },
           "product": {
               "id": "3584",
-              "customerNumber": "*************"
+              "customerNumber": "*************",
+              "additionalServices": [
+                	{
+                		"id": "SIMPLE_DELIVERY"
+                	}
+                ]
           },
           "purchaseOrder": null,
           "correlationId": "INTERNAL-123456",
