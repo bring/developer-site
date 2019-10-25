@@ -36,6 +36,11 @@
       <product>
         <id>3584</id>
         <customerNumber>*************</customerNumber>
+        <additionalServices>
+      		<additionalService>
+      			<id>SIMPLE_DELIVERY</id>
+      		</additionalService>
+    	  </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">
