@@ -38,7 +38,7 @@
         <customerNumber>*************</customerNumber>
         <additionalServices>
       		<additionalService>
-      			<id>SIMPLE_DELIVERY</id>
+      			<id>1081</id>
       		</additionalService>
     	  </additionalServices>
       </product>
