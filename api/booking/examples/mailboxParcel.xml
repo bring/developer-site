@@ -32,6 +32,14 @@
             <phoneNumber>88888888</phoneNumber>
           </contact>
         </recipient>
+        <returnTo>
+          <name>ABC</name>
+          <addressLine>Alf Bjerckes vei 29</addressLine>
+          <addressLine2></addressLine2>
+          <postalCode>0582</postalCode>
+          <city>OSLO</city>
+          <countryCode>NO</countryCode>
+        </returnTo>
       </parties>
       <product>
         <id>3584</id>

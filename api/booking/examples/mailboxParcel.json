@@ -32,6 +32,14 @@
                         "phoneNumber": "+46700000000"
                     }
                 },
+                "returnTo": {
+                  "name": "ABC",
+                  "addressLine": "Alf Bjerckes vei 29",
+                  "addressLine2": "",
+                  "postalCode": "0582",
+                  "city": "OSLO",
+                  "countryCode": "NO"
+                },
                 "pickupPoint": null
             },
             "product": {
