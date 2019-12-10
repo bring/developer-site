@@ -206,7 +206,7 @@ documentation:
       | Application | URL example |
       |:-------|:--------|
       | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
-      | Logged-in tracking | https://www.mybring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
+      | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
 
       You can verify that your request were used correctly by certifying that the response contains an element based on the request type:
 
@@ -220,14 +220,14 @@ documentation:
 
 - title: Authentication
   content: |
-    If you are a Mybring user, you can authenticate requests to the Tracking API. Authenticated requests have the following benefits:
+    If you have a Mybring user, you can log in to the Tracking API. Authenticated requests have the following benefits:
 
     - More information about parcels:
       - Prices
       - Name
       - Address
-      - Signatures for proof of develiery
-    - Less strict rate limiting
+      - Signatures for proof of delivery
+    - Less strict rate limits
 
     See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
 
@@ -237,9 +237,9 @@ documentation:
     | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
     | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies where you're using the APIs. |
 
-    Those headers must be present for authenticating requests, and you have to use the endpoint
+    The above headers must be present whilst using our logged-in variant of the tracking api. Also, you will have to use the endpoint:
 
-        https://www.mybring.com/tracking/api/
+        https://api.bring.com/tracking/api/
 - title: JSON API
   content: |
       We follow the [JSON API](http://jsonapi.org/) specification with one
