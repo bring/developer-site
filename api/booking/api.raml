@@ -209,7 +209,7 @@ documentation:
       |:--------|:--------------------|
       | SERVICEPAKKE | POSTOPPKRAV, EVARSLING |
       | BPAKKE_DOR-DOR | EVARSLING, SIMPLE_DELIVERY, deliveryOption |
-      | PA_DOREN | EVARSLING, SIMPLE_DELIVERY |
+      | PA_DOREN | EVARSLING, SIMPLE_DELIVERY, deliveryOption |
       | EKSPRESS09 | EVARSLING, LORDAGSUTKJORING |
       | PICKUP_PARCEL | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, deliveryOption |
       | PICKUP_PARCEL_BULK | POSTOPPKRAV, FLEX_DELIVERY, EVARSLING, deliveryOption |
@@ -565,8 +565,6 @@ documentation:
 
           If a sender want their package delivered to the door, and it cannot be delivered (i.e. Business closed or recipient is not present), then you can now choose what will happen with your package.
 
-          If this option is not set, then the default behaviour is `TWO_DELIVERIES_THEN_RETURN`.
-
           If you want Bring to try deliver only once and/or deliver package to nearest PiB, then you must tell us by setting this option. These options cost extra money but the customer/sender will only be charged if the event happen.
 
           Example:
@@ -579,7 +577,6 @@ documentation:
 
           Possible options:
 
-          - Not set = `TWO_DELIVERIES_THEN_RETURN`
           - `ONE_DELIVERY_THEN_PIB`
           - `TWO_DELIVERIES_THEN_PIB`
           - `TWO_DELIVERIES_THEN_RETURN`
