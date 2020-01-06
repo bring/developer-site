@@ -39,6 +39,25 @@ documentation:
     5. Download report
     6. Get list of invoice numbers for given customer or group
 
+- title:
+  content: |
+    #### List of available invoice sources
+    For specified invoice report 4 different types of report can be returned depending on the invoice source. Those are
+
+    Cargo Domestic and Sea :
+      - AMPHORA_DOMESTIC
+      - AMPHORA_SEA
+
+    Cargo International and Sysped :
+      - AMPHORA_BCI
+      - SYSPED
+
+    Parcels :
+      - PARCEL_DOMESTIC
+
+    Frigo :
+      - TIMPEX
+
 - title: Authentication
   content: |
     The Reports API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
@@ -208,8 +227,11 @@ documentation:
     responses:
       200:
         displayName: Report
-        description: Examples show different statuses.
+        description: |
+          Examples show the MetaData included in successful(200) response for specified invoice report vs other reports.
         body:
+          application/xml+invoice:
+            example: !include examples/empty_invoice_report.xml
           application/xml:
             example: !include examples/empty_report.xml
 
