@@ -6,7 +6,7 @@ baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 documentation:
 - title: Introduction
   content: |
-      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). Response is available as either XML or JSON.
+      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
 
       A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers, etc.
 
