@@ -26,8 +26,11 @@
             </ul>
             {% endif %}
           </li>
-          <li class="sitemenu__separator {% if page.url == '/revision-history/' %} active{% endif %}">
+          <li class="{% if page.url == '/revision-history/' %} active{% endif %}">
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/revision-history/">Revision History</a></h3>
+          </li>
+          <li class="sitemenu__separator">
+            <h3 class="sitemenu__apititle epsilon u-mb0"><a href="https://status.bring.systems" target="_blank" rel="noopener noreferrer">API Status</a></h3>
           </li>
         {% for api_page in site.pages %}
           {% unless api_page.api %}{% continue %}{% endunless %}
