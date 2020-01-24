@@ -36,9 +36,6 @@ raml_08_map:
     sort_order: 80
 
 raml_10_map:
-  api/order/to-mailbox/api.raml:
-    target: api/order/to-mailbox/index.html
-    sort_order: 60
   api/shipping-guide_2/api.raml:
     target: api/shipping-guide_2/index.html
     sort_order: 10
