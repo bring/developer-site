@@ -6,13 +6,6 @@ baseUri: https://api.bring.com/booking/api
 documentation:
 - title: Introduction
   content: |
-      <div class="api__warning-box" align="justify">
-        <strong>Important notice: Mailbox Packet API will be decomissioned on 13.01.2020</strong>
-        <br><br>
-        A simplified and enhanced version of Mailbox parcel (Pakke i postkassen) will be launched on 13.01.2020. From the same date, the Mailbox Packet API will be decomissioned, and the revitalized Mailbox parcel service will be booked via <strong>Booking API</strong> like other Bring-services. If you don't already use the <strong>Booking API</strong>, we strongly recommend that you start setting up the integration now. 
-        <br><br>
-        <strong>More information on how to book and test-book Mailbox parcel (Pakke i postkassen) through the Booking API can be found <a href="/api/booking/#mailbox-parcel-pakke-i-postkassen">here</a>.</strong>
-      </div>
 
       The Bring Booking API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same backend as [Mybring Booking](https://www.mybring.com/booking/) and the same PDF labels.
 
@@ -61,14 +54,10 @@ documentation:
 
 - title: Mailbox Parcel (Pakke i Postkassen)
   content: |
-    From January 13. 2020, Mailbox Parcel is booked via the Booking API.
 
-    Until then, the service will be possible to test-book (i.e. no real booking will happen and charges will not occur) to verify the API integration. See the section on testing for how to do this (for 3570/3584, we actually force the `testIndicator` flag to `true` until 13.01.2020). We recommend testing the integration, especially if this is the first time integrating with the Booking API. Please note that it is possible to book Mailbox Parcel via Mybring's web solution if, for any reason, your integration with Booking API is not in place by January 13. 2020.
-
-    #### What is new compared with today's Mailbox Parcel service?
+    #### About Mailbox parcel
     
-    - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (as today's service, multi-kolli is not supported). Each parcel will be invoiced separately. A link to the label is returned in the response. 
-    - No waybill is generated, as each parcel is invoiced based on the weight registered at the terminal. The minimum price of 150,- per order is removed.
+    - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (multi-kolli is not supported). Each parcel is invoiced separately. A link to the label is returned in the response. 
     - When booking Mailbox Parcel in Booking API, the new API customer number is used. This is identical to your company's main customer number (without prefix PARCELS_NORWAY and without padded zeros if any).
     - When booking Mailbox Parcel in Booking API, the service is defined by setting 3584 or 3570 in the product id. 
 
