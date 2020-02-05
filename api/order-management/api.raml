@@ -6,31 +6,16 @@ baseUri: https://api.bring.com/po/api/v1
 documentation:
 - title: Introduction
   content: |
-    There are different customer types in Order Management and depending on what kind of customer you are setts the usage pattern for Order Management API.
+    Order management is an application that serves customers from different business areas to create, track and extract report on order (e.g. Purchase order, Sales order) level.
+    As a customer of Bring, one gets complete overview of status on order level throughout the lifecycle of an order. This can certainly help in achieving better planning and control at customer's end.
+
+    A typical usage pattern is that a customer creates order and lets all of its suppliers get the order and order details from Order Management. The suppliers will first check whether a customer is a Order Management customer before creating a packing list with transport information. All events and status changes will go back to the order owner.
 
     This is a step-by-step guide on how to use the API.
 
-    A typical usage pattern is for an purchase order customer that create purchase orders and lets all of his suppliers get the order from Order Management. The suppliers will check whether a customer is a Order Management customer. Follow up with creating a packing list with transport information. All events and status changes will go back to purchase order owner.
-
-    Order Management has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The XML/JSON interface is the core interface with complete functionality.
+    Order Management has rest interfaces (XML/JSON). Choose the option that fits your needs best (see table below).
 
     Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
-
-    ## SOAP
-
-    ### Versioning
-
-    Order Management makes an effort to always be backwards compatible regarding data format for requests and responses of the Web Service. To achieve this, a SchemaVersion element is used in the request, indicating which version the client is on and what data-format the client expects in the result.
-
-    We make an effort not to return new elements in the response when an old schema version is specified. When changes in the schema are made, the SchemaVersion is incremented by one. The new schema is used at the same endpoint URL as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
-
-    Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in the sense that elements are not renamed or deleted.
-
-    ### WSDL
-
-    [https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
-
-    [https://api.bring.com/po/api/ws/om-order-v1.wsdl](https://api.bring.com/po/api/ws/om-order-v1.wsdl)
 
     ## Error handling
 
@@ -55,7 +40,7 @@ documentation:
 /purchaseorderCustomer/{customerId}:
   displayName: Check if customer is valid for order management
   description: |
-      Check if a given customer number is an valid Order Management customer.
+      Check if a given customer number is allowed to use Order management functionalities.
   get:
     description:
      Check if customer is valid for order management
@@ -71,9 +56,9 @@ documentation:
             example: !include examples/verify_customer.json
 
 /omorder:
-  displayName: Send an order
+  displayName: Create an order
   description: |
-      Send an order to Order Management. There are different types of order supported in Order Management.
+      Customer create and send an order to Order Management. There are different types of order supported in Order Management.
 
        - Order/PurchaseOrder
             - Order Management can give your suppliers access to purchase orders so they can get info, confirm, accept and deliver on them.
@@ -237,11 +222,11 @@ documentation:
           Successfully created a order.
 
 /omorder/{customerId}/{orderId}:
-  displayName: List order information
+  displayName: Provide order information
   description: |
-      Get all information on a given order.
+      Get all information on a given order and customer. Order is unique in combination with customer number.
   get:
-    description: List order information
+    description: Provide order information
     responses:
       200:
         displayName: Success
@@ -254,11 +239,11 @@ documentation:
             example: !include examples/retrieve_order.json
 
 /items/{customerId}/{orderId}:
-  displayName: List order items
+  displayName: List order lines
   description: |
-      List all item lines on an order.
+      List all item lines that is ordered on an order.
   get:
-    description: List order items
+    description: List order lines
     responses:
       200:
         displayName: Success
@@ -271,11 +256,11 @@ documentation:
             example: !include examples/retrieve_orderitems.json
 
 /packaginglist/{customerId}/{orderId}:
-  displayName: List packaging list for order
+  displayName: Provide packaging list information for the order
   description: |
       List all packaging list information for this order. One order can have multiple packaging lists.
   get:
-    description: List packaging list for order
+    description: Provide packaging list information for the order
     responses:
       200:
         displayName: Success
@@ -303,11 +288,11 @@ documentation:
           Successfully added packaging list.
 
 /senderStatus/{customerId}/{orderId}:
-  displayName: Get sender status for order
+  displayName: Get status for order (delivered/locked)
   description: |
       Check sender status for an order. Open when not fully delivered or locked when fully delivered.
   get:
-    description: Get status for order
+    description: Get status for order (delivered/locked)
     responses:
       200:
         displayName: Success
@@ -321,7 +306,7 @@ documentation:
 /event:
   displayName: Create TMSEvents
   description: |
-      Create tracking events on shipments associated with orders in Order Management.
+      Create tracking events on transports associated with orders in Order Management.
   post:
     description: Create TMSEvents
     body:
