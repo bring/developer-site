@@ -27,20 +27,6 @@ documentation:
 
       As an additional note, While accessing the Pickup point API together with Shipping Guide API, the service list should be displayed even in the case that the request has been rate limited by the Pickup point API.
 
-      ### Steps for Authentication
-      Before you can begin using the pickuppoint API you'll have to do the following:
-         * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
-         * [Generate an API key](/api/#authentication) for your user
-
-      ### 1. Get your API key from Mybring
-      To make API requests you will need an API key. Click the link below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
-
-      <a href="https://www.mybring.com/useradmin/account/settings/api">Get API key</a>
-
-      ### 2. Add authentication headers
-      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
-
-
       #### High-volume users
 
       If you're a high-volume user of the Pickup Point API, please [contact us](mailto:developer@bring.com) to discuss your options.
@@ -72,6 +58,21 @@ documentation:
         - Type Posti      : Finland Posti Pickup Point
         - Type Noutopiste : Finland Pickup Point
         - Type LOCKER     : Finland Locker Pickup Point
+
+- title: Steps for Authentication
+  content: |
+
+      Before you can begin using the pickuppoint API you'll have to do the following:
+         * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
+         * [Generate an API key](/api/#authentication) for your user
+
+      ### 1. Get your API key from Mybring
+      To make API requests you will need an API key. Click the link below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
+
+      <a href="https://www.mybring.com/useradmin/account/settings/api">Get API key</a>
+
+      ### 2. Add authentication headers
+      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
 
 
 /{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
