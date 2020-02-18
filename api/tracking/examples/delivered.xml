@@ -80,7 +80,17 @@
             <Insignificant>false</Insignificant>
           </Event>
         </EventSet>
-        <AdditionalServicesSet/>
+        <AdditionalServicesSet>
+          <AdditionalService>
+            <Id>1091</Id>
+            <Description>eAdvising</Description>
+            <Amount/>
+            <CurrencyCode/>
+            <LongDescription>
+              Delivery advising will be sent via sms +4700000000 and/or e-mail
+            </LongDescription>
+          </AdditionalService>
+        </AdditionalServicesSet>
       </Package>
     </PackageSet>
     <IsPickupNoticeAvailable>false</IsPickupNoticeAvailable>

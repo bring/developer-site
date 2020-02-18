@@ -75,7 +75,16 @@
               "insignificant": false
             }
           ],
-          "additionalServiceSet": []
+          "additionalServiceSet": [
+            {
+              "id": "1091",
+              "description": "eAdvising",
+              "amount": "",
+              "currencyCode": "",
+              "longDescription": "Delivery advising will be sent via sms +4795244240 and/or e-mail"
+            }
+          ],
+          "requestedPackage": null
         }
       ],
       "senderReference": "",

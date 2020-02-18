@@ -57,7 +57,8 @@
               "insignificant": false
             }
           ],
-          "additionalServiceSet": []
+          "additionalServiceSet": [],
+          "requestedPackage": ""
         }
       ],
       "senderReference": "",
@@ -69,7 +70,15 @@
       "recipientCustomerType": "",
       "isPickupNoticeAvailable": false,
       "totalWeightInKgs": 16.5,
-      "totalVolumeInDm3": 45.2
+      "totalVolumeInDm3": 45.2,
+      "totalListPrice": "",
+      "totalContractPrice": "",
+      "listPricePackageCount": "",
+      "contractPricePackageCount": "",
+      "currencyCode": "",
+      "consignmentActionSet": [],
+      "senderLogo": ""
+
     }
   ]
 }

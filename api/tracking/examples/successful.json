@@ -20,6 +20,12 @@
           "volumeInDm3": 45.2,
           "weightInKgs": 16.5,
           "pickupCode": "AA11",
+          "listPrice": "",
+          "contractPrice": "127.33",
+          "currencyCode": "NOK",
+          "shelfNumber": "",
+          "dateOfEstimatedDelivery": "",
+          "dateOfDelivery": "",
           "dateOfReturn": "01.12.2011",
           "senderName": "POSTEN NORGE AS",
           "senderAddress": {
@@ -77,7 +83,23 @@
               "insignificant": false
             }
           ],
-          "additionalServiceSet": []
+          "additionalServiceSet": [
+            {
+              "id": "1000",
+              "description": "Cash On Delivery",
+              "amount": "3417.40",
+              "currencyCode": "NOK",
+              "longDescription": "NOK 3417.40 must be paid upon delivery"
+            },
+            {
+              "id": "1091",
+              "description": "eAdvising",
+              "amount": "",
+              "currencyCode": "",
+              "longDescription": "Delivery advising will be sent via sms +4799120056 and/or e-mail"
+            }
+          ],
+          "requestedPackage": null
         }
       ],
       "recipientHandlingAddress": {
@@ -106,7 +128,14 @@
       "recipientCustomerType": "",
       "isPickupNoticeAvailable": false,
       "totalWeightInKgs": 16.5,
-      "totalVolumeInDm3": 45.2
+      "totalVolumeInDm3": 45.2,
+      "totalListPrice": "",
+      "totalContractPrice": "127.33",
+      "listPricePackageCount": "",
+      "contractPricePackageCount": "",
+      "currencyCode": "NOK",
+      "consignmentActionSet": [],
+      "senderLogo": "/api/v1/customer/branding/logo/10001508059"
     }
   ]
 }
