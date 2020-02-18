@@ -24,8 +24,10 @@ types:
         type: Package[]
       recipientAddress:
         type: Address
+        required: false
       recipientHandlingAddress:
         type: Address
+        required: false
       senderReference:
         type: string
       senderCustomerNumber:
@@ -36,6 +38,7 @@ types:
         type: string
       senderAddress:
         type: Address
+        required: false
       senderCustomerType:
         type: string
       recipientCustomerNumber:
@@ -48,19 +51,31 @@ types:
         type: boolean
       consignmentActionSet:
         type: ConsignmentAction
+        required: false
+      senderLogo:
+        type: string
+        required: false
+      totalListPrice:
+        type: string
+        required: false
+      totalContractPrice:
+        type: string
+        required: false
+      listPricePackageCount:
+        type: string
+        required: false
+      contractPricePackageCount:
+        type: string
+        required: false
+      currencyCode:
+        type: string
+        required: false
       totalWeightInKgs:
         type: number
       totalVolumeInDm3:
         type: number
   ApiVersion:
     type: object
-  ConsignmentAction:
-    type: object
-    properties:
-      actionType:
-        type: string
-      actionURL:
-        type: string
   Package:
     type: object
     properties:
@@ -79,6 +94,7 @@ types:
         type: string
       productLink:
         type: string
+        required: false
       brand:
         type: string
       lengthInCm:
@@ -91,47 +107,77 @@ types:
         type: number
       weightInKgs:
         type: number
+      listPrice:
+        type: string
+        required: false
+      contractPrice:
+        type: string
+        required: false
+      currencyCode:
+        type: string
+        required: false
       pickupCode:
         type: string
+        required: false
+      shelfNumber:
+        type: string
+        required: false
       dateOfReturn:
         type: string
+        required: false
+      dateOfEstimatedDelivery:
+        type: string
+        required: false
+      dateOfDelivery:
+        type: string
+        required: false
       senderName:
         type: string
+        required: false
       senderAddress:
         type: Address
+        required: false
       recipientAddress:
         type: Address
+        required: false
       recipientHandlingAddress:
         type: Address
+        required: false
       eventSet:
         type: Event[]
       additionalServiceSet:
-        type: object[]
+        type: AdditionalService[]
+        required: false
+      requestPackage:
+        type: requestedPackageType
         required: false
   Event:
     type: object
     properties:
-      description: string
+      description:
+        type: string
       status:
         type: string
+      lmEventCode:
+        type: string
+        required: false
       recipientSignature:
-        type: NamedElement
+        type: recipientSignatureType
       unitId:
         type: string
+      unitInformationUrl:
+        type: string
+        required: false
       unitType:
         type: string
       postalCode:
         type: string
-        required: false
       city:
         type: string
-        required: false
       countryCode:
         type: string
-        required: false
       country:
         type: string
-        required: false
       dateIso:
         type: string
       displayDate:
@@ -142,25 +188,68 @@ types:
         type: boolean
       insignificant:
         type: boolean
+      gpsXCoordinate:
+        type: string
+        required: false
+      gpsYCoordinate:
+        type: string
+        required: false
+      gpsMapUrl:
+        type: string
+        required: false
   Address:
     type: object
     properties:
       addressLine1:
         type: string
-        required: false
       addressLine2:
         type: string
-        required: false
       postalCode:
         type: string
-        required: false
       city:
         type: string
-        required: false
       countryCode:
         type: string
-        required: false
       country:
+        type: string
+  requestedPackageType:
+      type: object
+      properties:
+        userEmail:
+          type: string
+        requestedPackageOn:
+          type: string
+        caseId:
+          type: string
+        hasBeenRequested:
+          type: string
+  AdditionalService:
+    type: object
+    properties:
+      id:
+        type: string
+      description:
+        type: string
+      amount:
+        type: string
+      currencyCode:
+        type: string
+      longDescription:
+        type: string
+        required: false
+  ConsignmentAction:
+    type: object
+    properties:
+      actionType:
+        type: string
+      actionURL:
+        type: string
+  recipientSignatureType:
+    type: object
+    properties:
+      name:
+        type: string
+      linkToImage:
         type: string
         required: false
   NamedElement:
