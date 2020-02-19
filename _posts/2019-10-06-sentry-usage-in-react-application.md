@@ -61,11 +61,18 @@ As a best practice, We created separate Javascript with below code and load only
 Initialize Sentry in the application in the beginning of the flow. 
 
 ```
-  Raven.config(dsnURL, 
-                      { release: VERSION, 
-                        environment: 'qa' or 'prod',
-                        tags: {commit: COMMIT_HASH, }
-                      }).install();
+    Sentry.init({
+      dsn: dsnURL,
+      release: VERSION,
+      environment: getEnvironment(),
+      ignoreErrors: sentryIgnorables, --Optional
+      blacklistUrls: sentryBlackListUrls --Optional
+    });
+    Sentry.configureScope(scope => {
+        scope.setTag('commit', COMMIT_HASH);
+        scope.setTag('type', type);
+      }
+    )
 ```
 
 You can find the unique DSN URL from the Project -> Settings -> Client Keys from the selected project. Or you can find Client Keys in search input.
@@ -91,7 +98,12 @@ Okay. We covered javascript exception in previous points. However, what are we g
 Sentry also has custom error handling. I used it for tracking api errors.
 
 ```
-  Sentry.captureException(err, {level: 'error',...})
+  Sentry.withScope(scope => {
+    scope.setLevel(level); --Optional
+    if (tags) Object.entries(tags).forEach(([key, value]) => scope.setTag(key, value)); -optional
+    Sentry.captureException({exception: exception});
+  });
+
 ```
 
 You can customize error name, level, add data, unique user data with your app, email, etc.
@@ -103,22 +115,27 @@ Let’s check the methods out:
 Sentry allows to insert level error in sentry dashboard. It has properties — (‘fatal’, ‘error’, ‘warning’, ‘info, ‘debug’, ‘critical’).
 
 ```
-  Raven.captureMessage(message, {level: 'warning',...});
-```
-
-Raven.setUserContext helps to save unique details about user session (id, customer Id, and etc).
-
-```
-  Raven.setUserContext({
-      email: 'email@example.com',
-      id: '123'
+  Sentry.withScope(scope => {
+    scope.setLevel(level); --Optional
+    Sentry.captureMessage(message);
   });
+
 ```
-setExtraContext allows to set any data that you need, for example, the store.
- 
+
+Sentry supports a concept called Breadcrumbs, which is a trail of events which happened prior to an issue.
+
 ```
-  Raven.setExtraContext({extra: 'extra detail'})
+Sentry.addBreadcrumb({message: message});
+
 ```
+
+
+Sentry.setUser helps to save unique details about user session (id, customer Id, and etc).
+
+```
+    Sentry.setUser({ id: <userId> })
+```
+setTag, setContext, setExtra methods allows to set any other data which would be useful for debugging.
 
 If you want to get user feedbacks about error, you should use function showReportDialog.
 
@@ -134,12 +151,12 @@ After the usage of Sentry in Tracking applications for quite some time which is 
 - Logging the following HTTP status ```400, 401, 404, 204``` from API errors in Sentry doesn't help much in high usage application. Created more noise in the Slack channel and high usage resulted application consume more memory in Sentry.io which would disturb monthly usage limit 
 - Before decide logging custom exception or message consider the frequency of backend errors and based on criticality and nature of the application
 - Log Internal Server Error(500) if you feel useful to detect the user experience
+- While initializing sentry. You can pass ``ignoreErrors`` option to ignore the known errors which cannot be fixed and ``blacklistUrls`` option to ignore external URLs which is out of application scope
 - Do not append the key identifiers such as consignment number, customer identifier or any other details in exception message which will prevent the grouping issues done by Sentry internally    
-- Instead you can use `Raven.setUserContext` or `setTagContent` methods or add additional info debugging in JSON format in `captureException` & `captureMessage` methods in optional parameter which would help in debug the issue or user info as mentioned in the above section
+- Instead use Sentry context methods or add additional info debugging in JSON format in `captureException` & `captureMessage` methods in optional parameter which would help in debug the issue or user info as mentioned in the above section
 - You can define log level while logging custom exception which helps to identify the criticality
 - Providing Git release details to Sentry gives us advantage to view source map whenever issue start occuring
-- React 16 has introduced `Error Boundaries ` which catches JavaScript errors anywhere in component tree, we can capture error details to Sentry, and display a fallback UI instead of the component tree that crashed. 
-
+- React 16 has introduced `Error Boundaries ` which catches JavaScript errors anywhere in component tree, we can capture error details to Sentry, and display a fallback UI instead of the component tree that crashed.   
 
 ## Conclusion
 
