@@ -19,8 +19,14 @@
           "heightInCm": 29,
           "volumeInDm3": 45.2,
           "weightInKgs": 16.5,
+          "listPrice": "",
+          "contractPrice": "",
+          "currencyCode": "",
           "pickupCode": "AA11",
+          "shelfNumber": "",
           "dateOfReturn": "01.12.2011",
+          "dateOfEstimatedDelivery": "",
+          "dateOfDelivery": "",
           "senderName": "POSTEN NORGE AS",
           "senderAddress": {
             "addressLine1": "",
@@ -30,20 +36,32 @@
             "countryCode": "",
             "country": ""
           },
+          "senderHandlingAddress": "",
+          "recipientName": "",
+          "recipientAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "0000",
+            "city": "City",
+            "countryCode": "NO",
+            "country": "Norway"
+          },
           "recipientHandlingAddress": {
             "addressLine1": "",
             "addressLine2": "",
-            "postalCode": "1407",
-            "city": "VINTERBRO",
-            "countryCode": "",
-            "country": ""
+            "postalCode": "0000",
+            "city": "City",
+            "countryCode": "NO",
+            "country": "Norway"
           },
           "eventSet": [
             {
               "description": "The shipment has arrived at pickup point.",
               "status": "READY_FOR_PICKUP",
+              "lmEventCode": "",
               "recipientSignature": {
-                "name": ""
+                "name": "",
+                "linkToImage": ""
               },
               "unitId": "122608",
               "unitInformationUrl": "https://api.bring.com/pickuppoint/api/pickuppoint/NO/id/122608.xml",
@@ -56,15 +74,21 @@
               "displayDate": "01.10.2010",
               "displayTime": "08:30",
               "consignmentEvent": false,
-              "insignificant": false
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
             },
             {
               "description": "The shipment has been handed in at terminal and forwarded.",
               "status": "IN_TRANSIT",
+              "lmEventCode": "",
               "recipientSignature": {
-                "name": ""
+                "name": "",
+                "linkToImage": ""
               },
               "unitId": "032850",
+              "unitInformationUrl": "",
               "unitType": "BRING",
               "postalCode": "0024",
               "city": "OSLO",
@@ -74,39 +98,60 @@
               "displayDate": "30.09.2010",
               "displayTime": "08:27",
               "consignmentEvent": false,
-              "insignificant": false
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
             }
           ],
-          "additionalServiceSet": []
+          "additionalServiceSet": [],
+          "requestedPackage": ""
         }
       ],
+      "recipientName": "",
+      "recipientAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "0000",
+        "city": "City",
+        "countryCode": "NO",
+        "country": ""
+      },
       "recipientHandlingAddress": {
         "addressLine1": "",
         "addressLine2": "",
-        "postalCode": "1407",
-        "city": "VINTERBRO",
-        "countryCode": "",
+        "postalCode": "0000",
+        "city": "City",
+        "countryCode": "NO",
         "country": ""
       },
       "senderReference": "",
       "senderCustomerNumber": "",
       "senderCustomerMasterNumber": "",
-      "senderName": "POSTEN NORGE AS",
+      "senderName": "Mr. Sender",
       "senderAddress": {
         "addressLine1": "",
         "addressLine2": "",
         "postalCode": "",
         "city": "",
-        "countryCode": "",
+        "countryCode": "NO",
         "country": ""
       },
+      "senderHandlingAddress": "",
       "senderCustomerType": "",
       "recipientCustomerNumber": "",
       "recipientCustomerMasterNumber": "",
       "recipientCustomerType": "",
-      "isPickupNoticeAvailable": false,
-      "totalWeightInKgs": 16.5,
-      "totalVolumeInDm3": 45.2
+      "totalListPrice": "",
+      "totalContractPrice": "",
+      "listPricePackageCount": "",
+      "contractPricePackageCount": "",
+      "currencyCode": "",
+      "consignmentActionSet": [],
+      "senderLogo": "",
+      "totalWeightInKgs": 4.4,
+      "totalVolumeInDm3": 12.4,
+      "isPickupNoticeAvailable": true
     }
   ]
 }
