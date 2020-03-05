@@ -114,46 +114,7 @@ documentation:
     responses:
       200:
         displayName: Successful response
-        description: |
-          The shipment is invoiced based on invoice source and issuer. Here are a list of supported invoice issuers that can be returned.
-
-          | Invoice issuer | Description |
-          |:-------|:--------|
-          | `BRING_CARGO_AS` | `Bring Cargo AS` |
-          | `BRING_LINEHAUL_AS` | `Bring Linehaul AS` |
-          | `BRING_FRIGO_AS` | `Bring Frigo AS` |
-          | `BRING_POLARBASE_AS` | `Bring Polarbase AS` |
-          | `BRING_WAREHOUSING_AS` | `Bring Warehousing AS` |
-          | `BRING_CARGO_INTERNATIONAL_NORGE_AS` | `Bring Cargo International Norge AS` |
-          | `BRING_TRANSPORTLØSNINGER_AS` | `Bring Transportløsninger AS` |
-          | `POSTEN_EIENDOM_ROBSRUD_AS` | `Posten Eiendom Robsrud AS` |
-          | `POSTEN_EIENDOM_ALNABRU_AS` | `Posten Eiendom Alnabru AS` |
-          | `POSTEN_EIENDOM_VESTFOLD_AS` | `Posten Eiendom Vestfold AS` |
-          | `POSTEN_EIENDOM_BERGEN_AS` | `Posten Eiendom Bergen AS` |
-          | `POSTEN_EIENDOM_AS` | `Posten Eiendom AS` |
-          | `POSTEN_EIENDOM_ALNABRU_UTVIKLING_AS` | `Posten Eiendom Alnabru Utvikling AS` |
-          | `POSTEN_EIENDOM_BODØ_AS` | `Posten Eiendom Bodø AS` |
-          | `POSTEN_EIENDOM_SVANHOLMEN_AS` | `Posten Eiendom Svanholmen AS` |
-          | `POSTEN_EIENDOM_MOLDE_AS` | `Posten Eiendom Molde AS` |
-          | `POSTEN_EIENDOM_TROMSØ_AS` | `Posten Eiendom Tromsø AS` |
-          | `POSTEN_EIENDOM_NARVIK_AS` | `Posten Eiendom Narvik AS` |
-          | `POSTEN_EIENDOM_STAVANGER_AS` | `Posten Eiendom Stavanger AS` |
-          | `POSTEN_EIENDOM_TRONDHEIM_AS` | `Posten Eiendom Trondheim AS` |
-          | `BRING_EIENDOM_HAUGESUND_AS` | `Bring Eiendom Haugesund AS` |
-          | `POSTEN_NORGE_AS` | `Posten Norge AS` |
-          | `POSTEN_NORGE_AS_FOR_CARGO_SEA` | `Posten Norge AS` |
-          | `OTHER` | `Other` |
-
-          Here are a list of invoice types that can be returned.
-
-          | Invoice Source |
-          |:-------|
-          | `INVOICE` |
-          | `CREDIT_NOTE` |
-          | `DEBIT_NOTE` |
-          | `DEPOSIT` |
-          | `OTHER` |
-
+        description:
         body:
           application/json:
             type: Invoices
