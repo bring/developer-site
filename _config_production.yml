@@ -19,9 +19,6 @@ raml_08_map:
   api/reports/api.raml:
     target: api/reports/index.html
     sort_order: 110
-  api/invoice/api.raml:
-    target: api/invoice/index.html
-    sort_order: 120
   api/postal-code/api.raml:
     target: api/postal-code/index.html
     sort_order: 30
@@ -48,6 +45,9 @@ raml_10_map:
   api/event-cast/api.raml:
     target: api/event-cast/index.html
     sort_order: 100
+  api/invoice/api.raml:
+    target: api/invoice/index.html
+    sort_order: 120
 
 # Build settings
 plugins:
