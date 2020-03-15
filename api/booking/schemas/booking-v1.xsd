@@ -457,6 +457,7 @@
             <xs:element name="earliestPickupDate" type="xs:dateTime"/>
             <xs:element name="latestPickupDate" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="url" type="xs:string" minOccurs="0"/>
+            <xs:element name="packageNumber" type="xs:string" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="PickupApiErrorResponseType">
