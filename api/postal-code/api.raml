@@ -99,16 +99,5 @@ documentation:
             example: !include examples/response.json
           application/xml:
             example: !include examples/response.xml
-      250:
-        displayName: Finding the location for postal codes with multiple locations
-        description: |
-          In some countries, such as for example Germany and France, postal codes are non-unique. This means that one postal code might have multiple city names. In these cases the integration APIs (json and xml) will have separate elements containing the list of cities
-
-          Example request: […&country=DE&pnr=99869](https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=insertYourClientUrlHere&country=DE&pnr=99869)
-        body:
-          application/json:
-            example: !include examples/multiple_locations.json
-          application/xml:
-            example: !include examples/multiple_locations.xml
 
 
