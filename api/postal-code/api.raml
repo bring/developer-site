@@ -1,18 +1,22 @@
 #%RAML 0.8
 ---
 title: Postal Code API
-baseUri: https://api.bring.com/shippingguide/api
+baseUri: https://api.bring.com/pickuppoint/api
 
 documentation:
 - title: Introduction
   content: |
+      <div class="api__warning-box" align="justify">
+        Integration with shipping guide for postal code lookup will soon be deprecated, we recommend switching to pickup point if you have not already done so.
+      </div>
+
       With the Postal Code API you can
 
       * validate a postal code
       * look up the city of a postal code
       * get the postal code type, e.g. normal or P.O. Box (for Norway)
 
-      The API has three interfaces: XML, JSON and HTML.
+      The API has two interfaces: XML and JSON.
 
       It is NOT possible to get data in batch or get list of valid postal codes for a given country at a regular interval.
 
@@ -49,37 +53,43 @@ documentation:
       | SPECIALNOSTREET | Special, e.g special postal codes for customers with old "serviceboks". |
       | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
 
-/postalCode{mediaTypeExtension}:
+- title: Steps for Authentication
+  content: |
+
+      Before you can begin using the postal code API you'll have to do the following:
+         * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
+         * [Generate an API key](/api/#authentication) for your user
+
+      ### 1. Get your API key from Mybring
+      To make API requests you will need an API key. Click the link below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
+
+      <a href="https://www.mybring.com/useradmin/account/settings/api">Get API key</a>
+
+      ### 2. Add authentication headers
+      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
+
+/postalCode/{countryCode}/getCityAndType/{postalCode}{mediaTypeExtension}:
   displayName: Lookup Postal Code
 
   uriParameters:
+    postalCode:
+      displayName: Postal code
+      type: string
+      required: true
+      example: 1337
+    countryCode:
+      displayName: Country
+      required: false
+      type: string
+      default: "NO"
+      example: SE
     mediaTypeExtension:
-      enum: [ .json, .xml, .html ]
-      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML.
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
   get:
     description: Lookup Postal Code
     queryParameters:
-      clientUrl:
-        displayName: Client URL
-        description: To use the API you must specify a client url parameter. The client url should be set to the url of the web shop or application the end user is ordering from. The client url can be sent as a url parameter, clientUrl, or as a header, `X-Bring-Client-URL`.
-        type: string
-        required: true
-        example: https://www.example.com/amazing-clothes/
-      pnr:
-        displayName: Postal code
-        type: string
-        required: true
-        example: 1337
-      country:
-        displayName: Country
-        required: false
-        type: string
-        default: "NO"
-        example: SE
-      callback:
-        displayName: JSONP callback function
-        type: string
-        example: callback
+
 
     responses:
       200:
@@ -89,12 +99,10 @@ documentation:
             example: !include examples/response.json
           application/xml:
             example: !include examples/response.xml
-          text/html:
-            example: !include examples/response.html
       250:
         displayName: Finding the location for postal codes with multiple locations
         description: |
-          In some countries, such as for example Germany and France, postal codes are non-unique. This means that one postal code might have multiple city names. In these cases the integration APIs (json and xml) will have separate elements containing the list of cities, while the ordinary html response element will remain blank.
+          In some countries, such as for example Germany and France, postal codes are non-unique. This means that one postal code might have multiple city names. In these cases the integration APIs (json and xml) will have separate elements containing the list of cities
 
           Example request: […&country=DE&pnr=99869](https://api.bring.com/shippingguide/api/postalCode.json?clientUrl=insertYourClientUrlHere&country=DE&pnr=99869)
         body:
