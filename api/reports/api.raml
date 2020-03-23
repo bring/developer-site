@@ -342,3 +342,33 @@ documentation:
                 description: The example below shows an list of invoices
                 value: !include examples/list_invoices.xml
 
+/overview/{apiCustomerNumber}/summary.{mediaTypeExtension}:
+  displayName: Sumamry of Report overview statistics
+  description: |
+    Gives total cost and volume of consignment from all the products for the given api customer number.
+  uriParameters:
+    apiCustomerNumber:
+      enum: [ Main customer number,
+              CARGO-xxxxx,
+              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,
+              EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
+      description: Unique API Customer Number.
+    mediaTypeExtension:
+      enum: [ .json ]
+      description: Use .json to specify application/json
+  get:
+    description: Gives reports overview statistics
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows overview summary
+                value: !include examples/overview_summary.json
+              successfulNordics:
+                displayName: Successful without cost details
+                description: The example below shows overview summary for parcel internationals customers which dont have economy details as of now.
+                value: !include examples/overview_summary_without_cost.json
