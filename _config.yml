@@ -16,9 +16,6 @@ raml_08_map:
   api/booking/api.raml:
     target: api/booking/index.html
     sort_order: 40
-  api/reports/api.raml:
-    target: api/reports/index.html
-    sort_order: 110
   api/postal-code/api.raml:
     target: api/postal-code/index.html
     sort_order: 30
@@ -42,6 +39,9 @@ raml_10_map:
   api/tracking/api.raml:
     target: api/tracking/index.html
     sort_order: 90
+  api/reports/api.raml:
+    target: api/reports/index.html
+    sort_order: 110
   api/event-cast/api.raml:
     target: api/event-cast/index.html
     sort_order: 100
