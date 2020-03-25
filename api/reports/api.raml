@@ -342,10 +342,10 @@ documentation:
                 description: The example below shows an list of invoices
                 value: !include examples/list_invoices.xml
 
-/overview/{apiCustomerNumber}/summary.{mediaTypeExtension}:
-  displayName: Sumamry of Report overview statistics
+/overview/{apiCustomerNumber}/summary{mediaTypeExtension}:
+  displayName: Reports overview statistics summary
   description: |
-    Gives total cost and volume of consignment from all the products for the given api customer number.
+    Gives total cost and volume of shipments from all the products for the given api customer number.
   uriParameters:
     apiCustomerNumber:
       enum: [ Main customer number,
