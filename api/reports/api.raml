@@ -2,6 +2,56 @@
 ---
 title: Reports API
 baseUri: https://www.mybring.com/reports/api
+types:
+  DashboardData:
+    type: object
+    properties:
+      kolliNumber:
+        type: string
+        required: true
+        description: Represents a package number
+      shipmentNumber:
+        type: string
+        required: true
+        description: Represents a shipment number
+      recipientName:
+        type: string
+        required: true
+        description: Represents a recipient name
+      lastStatus:
+        type: string
+        required: true
+        description: Represents the lastStatus
+      lastEvent:
+        type: string
+        required: false
+        description: Represents the lastEvent
+      senderReference:
+        type: string
+        required: false
+        description: Represents the senderReference
+      recipientMobileNumber:
+        type: string
+        required: false
+        description: Represents the recipient Mobile Number
+      productCode:
+        type: string
+        required: false
+        description: Represents the productCode
+      productName:
+        type: string
+        required: true
+        description: Represents the productName
+      countryCode:
+        type: string
+        required: true
+        enum: [ "DK", "FI","NO", "SE"]
+        description: Represents the country code
+      shipmentGroupType:
+        type: string
+        required: true
+        enum: [ "REMAINING_FOR_DELIVERY", "LOADED_TO_CAR", "ATTEMPTED_DELIVERY", "AT_PICKUP_POINT", "SUCCESSFULLY_DELIVERED"]
+        description: Represents the shipmentGroup by status
 
 documentation:
 - title: Introduction
@@ -372,3 +422,78 @@ documentation:
                 displayName: Successful without cost details
                 description: The example below shows overview summary for parcel internationals customers which dont have economy details as of now.
                 value: !include examples/overview_summary_without_cost.json
+
+/dashboard/{apiCustomerNumber}/count:
+  displayName: Provides count of shipments for key events
+  description: |
+    Gives count of shipment for key event/status for the given api customer number.
+  uriParameters:
+    apiCustomerNumber:
+      enum: [ Main customer number,
+              CARGO-xxxxx,
+              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,
+              EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
+      description: Unique API Customer Number.
+  get:
+    description: Provides count of shipments for key events
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      X-Bring-Client-URL:
+        description: A URL that sort of identifies where you're using the APIs.
+    queryParameters:
+      requestedForDate:
+        description: Date for which shipment count is required in format dd.mm.yyyy.
+        required: true
+        example: 24.03.2020
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows shipment count for key events
+                value: !include examples/dashboard_count.json
+
+
+/dashboard/{apiCustomerNumber}/dashboardRowData:
+  displayName: Provides count of shipments with details for key events.
+  description: |
+    Gives count of shipment for key event/status with details for the given api customer number.
+  uriParameters:
+    apiCustomerNumber:
+      enum: [ Main customer number,
+              CARGO-xxxxx,
+              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,
+              EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
+      description: Unique API Customer Number.
+  get:
+    description: Provides shipment counts with details for key events.
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      X-Bring-Client-URL:
+        description: A URL that sort of identifies where you're using the APIs.
+    queryParameters:
+      requestedForDate:
+        description: Date for which shipment details is required in format dd.mm.yyyy.
+        required: true
+        example: 24.03.2020
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            type: DashboardData
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows shipment count with details for the key events
+                value: !include examples/dashboard_row_details.json
+
