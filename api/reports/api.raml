@@ -398,11 +398,16 @@ documentation:
     Gives total cost and volume of shipments from all the products for the given api customer number.
   uriParameters:
     apiCustomerNumber:
+      description: |
+             Unique API Customer Number which needs to be decided based on below rules
+             <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
+             <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
+      type: string
+      required: true
       enum: [ Main customer number,
               CARGO-xxxxx,
-              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,
-              EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
-      description: Unique API Customer Number.
+              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx]
+      example: CARGO|12345, CARGO_INTERNATIONAL|12345, PARCEL|12345
     mediaTypeExtension:
       enum: [ .json ]
       description: Use .json to specify application/json
@@ -429,11 +434,16 @@ documentation:
     Gives count of shipment for key event/status for the given api customer number.
   uriParameters:
     apiCustomerNumber:
+      description: |
+             Unique API Customer Number which needs to be decided based on below rules
+             <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
+             <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
+      type: string
+      required: true
       enum: [ Main customer number,
               CARGO-xxxxx,
-              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,
-              EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
-      description: Unique API Customer Number.
+              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx]
+      example: CARGO|12345, CARGO_INTERNATIONAL|12345, PARCEL|12345
   get:
     description: Provides count of shipments for key events
     headers:
@@ -466,11 +476,16 @@ documentation:
     Gives count of shipment for key event/status with details for the given api customer number.
   uriParameters:
     apiCustomerNumber:
+      description: |
+             Unique API Customer Number which needs to be decided based on below rules
+             <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
+             <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
+      type: string
+      required: true
       enum: [ Main customer number,
               CARGO-xxxxx,
-              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,
-              EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
-      description: Unique API Customer Number.
+              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx]
+      example: CARGO|12345, CARGO_INTERNATIONAL|12345, PARCEL|12345
   get:
     description: Provides shipment counts with details for key events.
     headers:
