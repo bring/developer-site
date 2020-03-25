@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<PostalCodeQueryResponse>
-  <Response valid="true" postalCodeType="NORMAL">SANDVIKA</Response>
-</PostalCodeQueryResponse>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<postalCode>
+  <postalCode>
+    <city>SANDVIKA</city>
+    <postalcode>1337</postalcode>
+    <postalCodeType>NORMAL</postalCodeType>
+  </postalCode>
+</postalCode>
