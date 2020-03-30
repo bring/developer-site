@@ -395,11 +395,11 @@ documentation:
 /overview/{apiCustomerNumber}/summary{mediaTypeExtension}:
   displayName: Reports overview statistics summary
   description: |
-    Gives total cost and volume of shipments from all the products for the given api customer number.
+    Gives total cost and volume of shipments from Parcel, Cargo and  Parcel International service customers with reports with financial access.
   uriParameters:
     apiCustomerNumber:
       description: |
-             Unique API Customer Number which needs to be decided based on below rules
+             Unique API Customer Number of applicable service categories by considering below rules
              <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
              <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
       type: string
@@ -431,11 +431,11 @@ documentation:
 /dashboard/{apiCustomerNumber}/count:
   displayName: Provides count of shipments for key events
   description: |
-    Gives count of shipment for key event/status for the given api customer number.
+    Gives count of shipment for key event for Parcel, Cargo and  Parcel International service customers with reports access.
   uriParameters:
     apiCustomerNumber:
       description: |
-             Unique API Customer Number which needs to be decided based on below rules
+             Unique API Customer Number of applicable service categories by considering below rules
              <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
              <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
       type: string
@@ -473,11 +473,11 @@ documentation:
 /dashboard/{apiCustomerNumber}/dashboardRowData:
   displayName: Provides count of shipments with details for key events.
   description: |
-    Gives count of shipment for key event/status with details for the given api customer number.
+    Gives count of shipment for key event with details for Parcel, Cargo and  Parcel International service customers with reports access.
   uriParameters:
     apiCustomerNumber:
       description: |
-             Unique API Customer Number which needs to be decided based on below rules
+             Unique API Customer Number of applicable service categories by considering below rules
              <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
              <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
       type: string
