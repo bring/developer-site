@@ -52,6 +52,29 @@ documentation:
     - Express Nordic SameDay
       - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
 
+- title: QR Codes
+  content: |
+
+    It is now possible to request QR codes for certain products. An end user can bring the QR code to a PiB or a Post Office, scan the QR code, and have a label printed there.
+
+    To book, add the element `generateQrCodes` at the consignment level and set it to `true`. The response will contain one `qrCodeLink` per package. This is a URL to a PNG image of the QR code.
+    
+    The following services support QR codes:
+    - 9300
+    - SERVICEPAKKE_RETURSERVICE
+    - 9600
+    - EKSPRESS09_RETURSERVICE
+    - 9000
+    - BPAKKE_DOR-DOR_RETURSERVICE
+
+    Currently, the following post offices support QR code label printing:
+    Høyden, Tromsø, Asker, Stavanger, Sandnes, Bodø, Harstad. Elisenberg, Ski, Bergen sentrum, Molde, St. Olav plass, Stjørdal, Trondheim sentrum, Rodeløkka, Vika, Nydalen, Majorstua
+
+    The following selected PiBs support the same as a self service option:
+    Giæverbukta Tromsø, Extra Råholt, Plantasjen Tunejordet, Coop Obs Lagunen, Coop Obs Bryne, Extra Hillevåg, Extra Iseveien Borgenhaugen, Extra Tromsdalen, Bunnpris Heimdal, Meny Stoa, Extra Støver, Rema 1000 Metro Lørenskog, Obs City Nord Stormyra, Coop Obs Jessheim, Coop Prix Frankendalsveien Nanset, Coop Mega Berja, Kiwi Svolvær sentrum, Rema 1000 Olsrød Park Tolvsrød, Østerås Post i Butikk, Sandvika storsenter postpunkt, Volla Post i Butikk
+    
+    Eventually, all PiBs and post offices will support label printing based on QR code.
+    
 - title: Mailbox Parcel (Pakke i Postkassen)
   content: |
 
