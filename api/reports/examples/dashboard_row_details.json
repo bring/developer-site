@@ -8,12 +8,12 @@
   "groupedRows": {
     "REMAINING_FOR_DELIVERY": [
       {
-        "kolliNumber": "370434444668701",
-        "shipmentNumber": "7030066611644076",
-        "recipientName": "KARI-ANNE RØBERGSEN",
+        "kolliNumber": "PACKAGENUMBER",
+        "shipmentNumber": "SHIPMENTNUMBER",
+        "recipientName": "KARI RØBERGSEN",
         "lastStatus": "not calculated here, ask mybring",
         "lastEvent": null,
-        "recipientMobileNumber": "+4700994090",
+        "recipientMobileNumber": "+4700000000",
         "postalNumber": "9691",
         "senderReference": "",
         "productCode": "1202",
@@ -24,8 +24,8 @@
     ],
     "LOADED_TO_CAR": [
       {
-        "kolliNumber": "373400014742327166",
-        "shipmentNumber": "73400014194415441",
+        "kolliNumber": "PACKAGENUMBER",
+        "shipmentNumber": "SHIPMENTNUMBER",
         "recipientName": "LKS/Materiaalikeskus",
         "lastStatus": "not calculated here, ask mybring",
         "lastEvent": "3",
@@ -40,14 +40,14 @@
     ],
     "ATTEMPTED_DELIVERY": [
       {
-        "kolliNumber": "37043865566773191",
-        "shipmentNumber": "70300493083700119",
-        "recipientName": "PERNILLE NORDSTRØM",
+        "kolliNumber": "PACKAGENUMBER",
+        "shipmentNumber": "SHIPMENTNUMBER",
+        "recipientName": "PERNILLE",
         "lastStatus": "not calculated here, ask mybring",
         "lastEvent": "H",
         "recipientMobileNumber": "",
         "postalNumber": "2316",
-        "senderReference": "HB21100097                         ",
+        "senderReference": "HB21097                         ",
         "productCode": "1736",
         "productName": "Home Delivery Parcel",
         "countryCode": "NO",
@@ -56,14 +56,14 @@
     ],
     "AT_PICKUP_POINT": [
       {
-        "kolliNumber": "570438101639956234",
-        "shipmentNumber": "703493070025639",
-        "recipientName": "HANNE SANDBERG PRYTZ",
+        "kolliNumber": "PACKAGENUMBER",
+        "shipmentNumber": "SHIPMENTNUMBER",
+        "recipientName": "HANNE PRYTZ",
         "lastStatus": "not calculated here, ask mybring",
         "lastEvent": "Q",
         "recipientMobileNumber": "",
         "postalNumber": "9414",
-        "senderReference": "TB210118782",
+        "senderReference": "TB118782",
         "productCode": "1202",
         "productName": "Climate-neutral Service Parcel",
         "countryCode": "NO",
@@ -72,14 +72,14 @@
     ],
     "SUCCESSFULLY_DELIVERED": [
       {
-        "kolliNumber": "37043877776679233",
-        "shipmentNumber": "703004900999046",
+        "kolliNumber": "PACKAGENUMBER",
+        "shipmentNumber": "SHIPMENTNUMBER",
         "recipientName": "MATHEA SUNDE",
         "lastStatus": "not calculated here, ask mybring",
         "lastEvent": "I",
         "recipientMobileNumber": "",
         "postalNumber": "9711",
-        "senderReference": "BV21080806",
+        "senderReference": "BT2106",
         "productCode": "1202",
         "productName": "Climate-neutral Service Parcel",
         "countryCode": "NO",
