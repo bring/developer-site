@@ -399,15 +399,13 @@ documentation:
   uriParameters:
     apiCustomerNumber:
       description: |
-             Unique API Customer Number of applicable service categories by considering below rules
-             <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
-             <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
+             Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
+             <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br/>
       type: string
       required: true
-      enum: [ Main customer number,
-              CARGO-xxxxx,
-              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx]
-      example: CARGO|12345, CARGO_INTERNATIONAL|12345, PARCEL|12345
     mediaTypeExtension:
       enum: [ .json ]
       description: Use .json to specify application/json
@@ -435,15 +433,13 @@ documentation:
   uriParameters:
     apiCustomerNumber:
       description: |
-             Unique API Customer Number of applicable service categories by considering below rules
-             <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
-             <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
+             Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
+             <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br/>
       type: string
       required: true
-      enum: [ Main customer number,
-              CARGO-xxxxx,
-              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx]
-      example: CARGO|12345, CARGO_INTERNATIONAL|12345, PARCEL|12345
   get:
     description: Provides count of shipments for key events
     headers:
@@ -477,15 +473,13 @@ documentation:
   uriParameters:
     apiCustomerNumber:
       description: |
-             Unique API Customer Number of applicable service categories by considering below rules
-             <br/>* For Non Agreement Converted customer:  use the possible *"API customer number"*
-             <br />* For Agreement converted customer: *"```ServiceType|Main Customer Number```"*
+             Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
+             <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br/>
       type: string
       required: true
-      enum: [ Main customer number,
-              CARGO-xxxxx,
-              PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx]
-      example: CARGO|12345, CARGO_INTERNATIONAL|12345, PARCEL|12345
   get:
     description: Provides shipment counts with details for key events.
     headers:
