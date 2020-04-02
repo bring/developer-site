@@ -1,8 +1,57 @@
-#%RAML 0.8
+#%RAML 1.0
 ---
 title: Reports API
 baseUri: https://www.mybring.com/reports/api
-
+types:
+  DashboardData:
+    type: object
+    properties:
+      kolliNumber:
+        type: string
+        required: true
+        description: Represents a package number
+      shipmentNumber:
+        type: string
+        required: true
+        description: Represents a shipment number
+      recipientName:
+        type: string
+        required: true
+        description: Represents a recipient name
+      lastStatus:
+        type: string
+        required: true
+        description: Represents the lastStatus
+      lastEvent:
+        type: string
+        required: false
+        description: Represents the lastEvent
+      senderReference:
+        type: string
+        required: false
+        description: Represents the senderReference
+      recipientMobileNumber:
+        type: string
+        required: false
+        description: Represents the recipient Mobile Number
+      productCode:
+        type: string
+        required: false
+        description: Represents the productCode
+      productName:
+        type: string
+        required: true
+        description: Represents the productName
+      countryCode:
+        type: string
+        required: true
+        enum: [ "DK", "FI","NO", "SE"]
+        description: Represents the country code
+      shipmentGroupType:
+        type: string
+        required: true
+        enum: [ "REMAINING_FOR_DELIVERY", "LOADED_TO_CAR", "ATTEMPTED_DELIVERY", "AT_PICKUP_POINT", "SUCCESSFULLY_DELIVERED"]
+        description: Represents the shipmentGroup by status
 
 documentation:
 - title: Introduction
@@ -60,7 +109,21 @@ documentation:
 
 - title: Authentication
   content: |
-    The Reports API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+    The Reports API requires authentication for all its endpoints.
+
+    ### Before you start
+    Before you can begin using the new API you'll have to do the following:
+
+    * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
+    * [Generate an API key](/api/#authentication) for your user
+
+    ### Get your API key from Mybring
+    To make API requests you will need an API key. Click the link below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
+
+    <a href="https://www.mybring.com/useradmin/account/settings/api">Get API key</a>
+
+    ### Add authentication headers
+    A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
 
     | Header | Example | Comment |
     |:-------|:--------|:--------|
@@ -90,9 +153,19 @@ documentation:
         displayName: Successful response
         body:
           application/json:
-            example: !include examples/list_customers.json
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows list of available customers
+                value: !include examples/list_customers.json
           application/xml:
-            example: !include examples/list_customers.xml
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows list of available customers
+                value: !include examples/list_customers.xml
+
+
 
 /generate/{customerId}{mediaTypeExtension}:
   displayName: List available reports for a customer
@@ -118,9 +191,17 @@ documentation:
         displayName: Successful response
         body:
           application/json:
-            example: !include examples/list_reports.json
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows list of available reports
+                value: !include examples/list_reports.json
           application/xml:
-            example: !include examples/list_reports.xml
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows list of available reports
+                value: !include examples/list_reports.xml
 
 /generate/{customerId}/{reportTypeId}{mediaTypeExtension}:
   displayName: Generate a report
@@ -165,9 +246,17 @@ documentation:
             example: https://www.mybring.com/reports/api/report/db285042-6e8d-4563-94ca-eb1100706a73/status/
         body:
           application/json:
-            example: !include examples/generate_report.json
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows successful reports generation response with URL
+                value: !include examples/generate_report.json
           application/xml:
-            example: !include examples/generate_report.xml
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows successful reports generation response with URL
+                value: !include examples/generate_report.xml
 
 /report/{reportId}/status{mediaTypeExtension}:
   displayName: Check the status of a report
@@ -193,18 +282,34 @@ documentation:
         displayName: Report status
         description: Examples show different statuses.
         body:
-          application/json+notdone:
-            example: !include examples/status_not_done.json
-          application/json+done:
-            example: !include examples/status_done.json
-          application/json+failed:
-            example: !include examples/status_failed.json
-          application/xml+notdone:
-            example: !include examples/status_not_done.xml
-          application/xml+done:
-            example: !include examples/status_done.xml
-          application/xml+failed:
-            example: !include examples/status_failed.xml
+          application/json:
+            examples:
+              successful:
+                displayName: Report status done
+                description: The example below shows reports status done
+                value: !include examples/status_done.json
+              successful_notDone:
+                displayName: Report status not done
+                description: The example below shows reports generated status
+                value: !include examples/status_not_done.json
+              successful_failed:
+                displayName: Report status failed
+                description: The example below shows reports generation failed status
+                value: !include examples/status_failed.json
+          application/xml:
+            examples:
+              successful:
+                displayName: Report status done
+                description: The example below shows reports status not done
+                value: !include examples/status_done.xml
+              successful_notDone:
+                displayName: Report status not done
+                description: The example below shows reports generated status
+                value: !include examples/status_not_done.xml
+              successful_failed:
+                displayName: Report status failed
+                description: The example below shows reports generation failed status
+                value: !include examples/status_failed.xml
 
 /report/{reportId}{mediaTypeExtension}:
   displayName: Get report
@@ -230,10 +335,16 @@ documentation:
         description: |
           Examples show the MetaData included in successful(200) response for specified invoice report vs other reports.
         body:
-          application/xml+invoice:
-            example: !include examples/empty_invoice_report.xml
           application/xml:
-            example: !include examples/empty_report.xml
+            examples:
+              successful_invoice:
+                displayName: Successful with invoice details
+                description: The example below shows empty report with invoice details under metadata section of Report response
+                value: !include examples/empty_invoice_report.xml
+              successful:
+                displayName: Successful
+                description: The example below shows empty report without invoice details
+                value: !include examples/empty_report.xml
 
 /invoices/{customerOrGroupId}{mediaTypeExtension}:
   displayName: List invoice numbers
@@ -266,8 +377,132 @@ documentation:
     responses:
       200:
         displayName: Successful response
+        description:
         body:
           application/json:
-            example: !include examples/list_invoices.json
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows an list of invoices
+                value: !include examples/list_invoices.json
           application/xml:
-            example: !include examples/list_invoices.xml
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows an list of invoices
+                value: !include examples/list_invoices.xml
+
+/overview/{apiCustomerNumber}/summary{mediaTypeExtension}:
+  displayName: Reports overview statistics summary
+  description: |
+    Gives total cost and volume of shipments from Parcel, Cargo and  Parcel International service customers with reports with financial access.
+  uriParameters:
+    apiCustomerNumber:
+      description: |
+             Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
+             <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+      type: string
+      required: true
+    mediaTypeExtension:
+      enum: [ .json ]
+      description: Use .json to specify application/json
+  get:
+    description: Gives reports overview statistics
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows overview summary
+                value: !include examples/overview_summary.json
+              successfulNordics:
+                displayName: Successful without cost details
+                description: The example below shows overview summary for parcel internationals customers which dont have economy details as of now.
+                value: !include examples/overview_summary_without_cost.json
+
+/dashboard/{apiCustomerNumber}/count:
+  displayName: Provides count of shipments for key events
+  description: |
+    Gives count of shipment for key event for Parcel, Cargo and  Parcel International service customers with reports access.
+  uriParameters:
+    apiCustomerNumber:
+      description: |
+             Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
+             <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+      type: string
+      required: true
+  get:
+    description: Provides count of shipments for key events
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      X-Bring-Client-URL:
+        description: A URL that sort of identifies where you're using the APIs.
+    queryParameters:
+      requestedForDate:
+        description: Date for which shipment count is required in format dd.mm.yyyy.
+        required: true
+        example: 24.03.2020
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows shipment count for key events
+                value: !include examples/dashboard_count.json
+
+
+/dashboard/{apiCustomerNumber}/dashboardRowData:
+  displayName: Provides count of shipments with details for key events.
+  description: |
+    Gives count of shipment for key event with details for Parcel, Cargo and  Parcel International service customers with reports access.
+  uriParameters:
+    apiCustomerNumber:
+      description: |
+             Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
+             <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+      type: string
+      required: true
+  get:
+    description: Provides shipment counts with details for key events.
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+      X-MyBring-API-Key:
+        description: Your user's API key
+      X-Bring-Client-URL:
+        description: A URL that sort of identifies where you're using the APIs.
+    queryParameters:
+      requestedForDate:
+        description: Date for which shipment details is required in format dd.mm.yyyy.
+        required: true
+        example: 24.03.2020
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            type: DashboardData
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows shipment count with details for the key events
+                value: !include examples/dashboard_row_details.json
+
