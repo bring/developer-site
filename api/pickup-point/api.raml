@@ -4,6 +4,17 @@ title: Pickup Point API
 baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 
 documentation:
+
+    <div class="wrapper">
+      <div class="api__warning-box" align="justify">
+        <strong>Pickuppoint something xyz.. </strong>
+          <br><br>
+            something
+          <br><br>
+      </div>
+    {% include apiflock.html %}
+    </div>
+
 - title: Introduction
   content: |
       The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
