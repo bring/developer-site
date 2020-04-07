@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "raml-1-parser": "^1.1.56"
+    "raml-1-parser": "^1.1.65"
   }
 }
