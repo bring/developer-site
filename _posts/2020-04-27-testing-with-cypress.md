@@ -9,7 +9,7 @@ author:
 
 ---
 
-There are loads of tools aiming to help developers secure that their code works as expected. Cypess is one of these tools but stands out by being an end-to-end framework. This means that Cypress allows you to test that your application is performing the way you designed it, from start to finish. End-to-end testing is especially useful to test the features and the end user’s workflow. In React it also helps to ensure that dependencies and data is passed correctly between the different components.
+There are loads of tools aiming to help developers secure that their code works as expected. Cypress is one of these tools but stands out by being an end-to-end framework. This means that Cypress allows you to test that your application is performing the way you designed it, from start to finish. End-to-end testing is especially useful to test the features and the end user’s workflow. In React it also helps to ensure that dependencies and data is passed correctly between the different components.
 
 In short, Cypress.io is a tool for setting up, writing, running and debugging tests. It compiles all the tests to Javascript, runs in an instance of Chrome, and lets you see the state of your user-interface during different stages of interaction.
 
