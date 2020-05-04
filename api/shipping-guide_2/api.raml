@@ -83,6 +83,7 @@ documentation:
                         <ns:FromPostalCode>0015</ns:FromPostalCode>
                         <ns:ToCountryCode>NO</ns:ToCountryCode>
                         <ns:ToPostalCode>5518</ns:ToPostalCode>
+                        <ns:addressLine>Testsvingen 12</ns:addressLine>
                         <ns:ShippingDate>
                             <ns:Year>2016</ns:Year>
                             <ns:Month>10</ns:Month>
@@ -329,6 +330,11 @@ documentation:
       topostalcode:
         description: Receiver postal code
         type: string
+      addressLine:
+        description: Specify address. This parameter can be maximum 35 character long. It will be for Bedriftspakke and På døren only.
+        type: string
+        example: Testsvingen 12
+        required: false
       product:
         description: List of services requested. Multiple services can be requested in a single request. Requested service can also be specified with a customer number separated with delimiter (**:**). For example CARGO**:**CARGO-123456
         type: string
