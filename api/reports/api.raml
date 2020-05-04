@@ -350,6 +350,9 @@ documentation:
   displayName: List invoice numbers
   description: |
     Gets the list of invoice numbers for a customer id or a customer group. By default it shows last 65 days of invoices, with the possibilty to access 365 days data by providing from date and to date.
+
+
+    We support Main Customer Number and Parcel International Customer Number in this API. If you are willing to generate Specified Invoice report, please use mentioned customer number in "List available reports for a customer" endpoint to findout corresponding Report Type.
   uriParameters:
     customerOrGroupId:
       description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
