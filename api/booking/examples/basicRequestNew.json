@@ -3,7 +3,8 @@
   "schemaVersion": 1,
   "consignments": [
     {
-      "shippingDateTime": 1449216420000,
+      "shippingDateTime": 1588678607000,
+      "customerSpecifiedDeliveryDate": "2020-05-11",
       "parties": {
         "sender": {
           "name": "Ola Nordmann",

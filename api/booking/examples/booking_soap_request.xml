@@ -6,7 +6,8 @@
       <schemaVersion>1</schemaVersion>
       <consignments>
         <consignment correlationId="INTERNAL-123456">
-          <shippingDateTime>2015-07-07T21:31:33.007+02:00</shippingDateTime>
+          <shippingDateTime>2020-05-05T21:31:33.007+02:00</shippingDateTime>
+          <customerSpecifiedDeliveryDate>2020-05-11</customerSpecifiedDeliveryDate>
           <parties>
             <sender>
               <name>Ola Nordmann</name>

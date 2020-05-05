@@ -339,6 +339,11 @@ documentation:
             type: dateTime
             example: 2016-07-26T06:24:09 or 1469494449000 (milliseconds since 01.01.1970, for json req)
             required: true
+        customerSpecifiedDeliveryDate:
+            description: The date selected as preferred delivery date by customer. This field is only applicable for 'PA_DOREN' and '5600'
+            type: date
+            example: 2020-05-11 (yyyy-MM-dd)
+            required: false
         customerNumber:
             description: Specify API customer number. This parameter can be maximum 35 character long.
             type: string
@@ -900,7 +905,7 @@ documentation:
 
     - list customers
     - book shipments
-    - order pikcups
+    - order pickups
 
     #### WSDL
 
