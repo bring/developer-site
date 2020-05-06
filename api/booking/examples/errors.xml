@@ -533,6 +533,36 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
+      <code>CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-001</code>
+      <message>Customer specified delivery date must be in the future</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-002</code>
+      <message>Customer specified delivery date must have valid values and be in format yyyy-MM-dd</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-003</code>
+      <message>Customer specified delivery date can not be null</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-004</code>
+      <message>Customer specified delivery date is valid for Products: PA_DOREN or 5600</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-005</code>
+      <message>Customer specified delivery date is not available in expected/alternative delivery dates</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
+      <code>CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-006</code>
+      <message>Customer specified delivery date must be after Shipping date</message>
+      <suffixable>false</suffixable>
+    </errorType>
+    <errorType>
       <code>NETS_TRANSACTION_INPUT-001</code>
       <message>Missing Nets transaction request</message>
       <suffixable>false</suffixable>

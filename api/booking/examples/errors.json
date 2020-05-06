@@ -531,6 +531,36 @@
       "suffixable": false
     },
     {
+      "code": "CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-001",
+      "message": "Customer specified delivery date must be in the future",
+      "suffixable": false
+    },
+    {
+      "code": "CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-002",
+      "message": "Customer specified delivery date must have valid values and be in format yyyy-MM-dd",
+      "suffixable": false
+    },
+    {
+      "code": "CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-003",
+      "message": "Customer specified delivery date can not be null",
+      "suffixable": false
+    },
+    {
+      "code": "CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-004",
+      "message": "Customer specified delivery date is valid for Products: PA_DOREN or 5600",
+      "suffixable": false
+    },
+    {
+      "code": "CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-005",
+      "message": "Customer specified delivery date is not available in expected/alternative delivery dates",
+      "suffixable": false
+    },
+    {
+      "code": "CUSTOMER_SPECIFIED_DELIVERY_DATE-INPUT-006",
+      "message": "Customer specified delivery date must be after Shipping date",
+      "suffixable": false
+    },
+    {
       "code": "NETS_TRANSACTION_INPUT-001",
       "message": "Missing Nets transaction request",
       "suffixable": false
