@@ -1300,13 +1300,365 @@ layout: redesign
         </dl>
       </section>
 
-      <section class="api__section" id="">
+        <section class="api__section" id="b2bvas">
+          <h3>B2B Services</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>Vases</th>
+              <th>BUSINESS PARCEL<br>
+                <p class="alignDown">(BUSINESS_PARCEL)</p></th>
+              <th>BUSINESS PARCEL RETURN<br>
+                <p class="alignDown">(BUSINESS_PARCEL_RETURN)</p></th>
+              <th>BUSINESS PARCEL RETURN BULK<br>
+                <p class="alignDown">(BUSINESS_PARCEL_RETURN_BULK)</p></th>
+              <th>BUSINESS PARCEL BULK<br>
+                <p class="alignDown">(BUSINESS_PARCEL_BULK)</p></th>
+              <th>EXPRESS NORDIC 0900<br>
+                <p class="alignDown">(EXPRESS_NORDIC_0900)</p></th>
+              <th>EXPRESS NORDIC 0900 BULK<br>
+                <p class="alignDown">(EXPRESS_NORDIC_0900_BULK)</p></th>
+              <th>BUSINESS PALLET<br>
+                <p class="alignDown">(BUSINESS_PALLET)</p></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SENDER COUNTRIES</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>ALL</td>
+              <td>SE</td>
+              <td>ALL</td>
+              <td>ALL</td>
+            </tr>
+            <tr>
+              <td>DESTINATION</td>
+              <td>ALL</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DE, DK, EE, FI, FO, GB, IS, NL, NO, SE</td>
+              <td>SE</td>
+              <td>NO, SE</td>
+              <td>AT, AX, BE, CH, CZ, DE, DK, EE, ES, FI, FO, FR, GB, GL, GR, HU, IE, IS, IT, LT, LU, LV, NL, NO, PL,
+                PT, SE, SI, SK
+              </td>
+            </tr>
+            <tr>
+              <td>DOMESTIC ALLOWED IN</td>
+              <td>DK, FI, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>FI, SE</td>
+              <td>SE</td>
+              <td></td>
+              <td>DK, FI, SE</td>
+            </tr>
+            <tr>
+              <td>Cash on Delivery (POSTOPPKRAV)</td>
+              <td>FO, GL</td>
+              <td></td>
+              <td></td>
+              <td>FI, FO, IS</td>
+              <td></td>
+              <td>NO</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>eAdvising (EVARSLING)</td>
+              <td>DK, FI, NO, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, NO, SE</td>
+              <td>SE</td>
+              <td>NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Flex Delivery (FLEX_DELIVERY<sup>1</sup>)</td>
+              <td>DK, FI, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, NO, SE</td>
+              <td>SE</td>
+              <td>SE</td>
+              <td>DK, FI, SE</td>
+            </tr>
+            <tr>
+              <td>Delivery Indoors (DELIVERY_INDOORS<sup>2</sup>)</td>
+              <td>DK, SE, Domestic FI</td>
+              <td></td>
+              <td></td>
+              <td>DK, SE, Domestic FI</td>
+              <td>SE</td>
+              <td>SE</td>
+              <td>DK, FI, SE</td>
+            </tr>
+            <tr>
+              <td>Telephone Notification (PHONENOTIFICATION)</td>
+              <td>SE, Domestic FI</td>
+              <td></td>
+              <td></td>
+              <td>SE, Domestic FI</td>
+              <td>SE</td>
+              <td>SE</td>
+              <td>SE, Domestic FI</td>
+            </tr>
+            <tr>
+              <td>Insurance (INSURANCE)</td>
+              <td>ALL<sup>3</sup></td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DE, DK, EE, FI, FO, GB, IS, NL, NO, SE</td>
+              <td>SE</td>
+              <td>NO, SE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Label Free (1288)</td>
+              <td>ALL</td>
+              <td>ALL</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>ID Verification (1133)</td>
+              <td>DK, NO, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, NO, SE</td>
+              <td>SE</td>
+              <td>NO, SE</td>
+              <td>DK, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Signature Required (1280)</td>
+              <td>DK, NO, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, NO, SE</td>
+              <td>SE</td>
+              <td>NO, SE</td>
+              <td>DK, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Delivery Notification To Sender (1094)</td>
+              <td>DK, FI, NO, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, NO, SE</td>
+              <td>SE</td>
+              <td>NO, SE</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Individual Verification (1134)</td>
+              <td>DK, FI, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, SE</td>
+              <td>SE</td>
+              <td>SE</td>
+              <td>DK, FI, SE</td>
+            </tr>
+            <tr>
+              <td>2 Delivery Attempts (1179)</td>
+              <td>NO</td>
+              <td></td>
+              <td></td>
+              <td>NO</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+          <h3>B2C Services</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>Vases</th>
+              <th>PICKUP PARCEL<br>
+                <p class="alignDown">(PICKUP_PARCEL)</p></th>
+              <th>PICKUP PARCEL BULK<br>
+                <p class="alignDown">(PICKUP_PARCEL_BULK)</p></th>
+              <th>PICKUP PARCEL RETURN<br>
+                <p class="alignDown">(PICKUP_PARCEL_RETURN)</p></th>
+              <th>PICKUP PARCEL RETURN BULK<br>
+                <p class="alignDown">(PICKUP_PARCEL_RETURN_BULK)</p></th>
+              <th>HOME DELIVERY PARCEL<br>
+                <p class="alignDown">(HOME_DELIVERY_PARCEL)</p></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SENDER COUNTRIES</td>
+              <td>DK, FI, NO, SE</td>
+              <td>ALL</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>ALL</td>
+            </tr>
+            <tr>
+              <td>DESTINATION</td>
+              <td>ALL</td>
+              <td>DE, DK, EE, FI, FO, GB, IS, NL, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+            </tr>
+            <tr>
+              <td>DOMESTIC ALLOWED IN</td>
+              <td>DK, SE</td>
+              <td>SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, SE</td>
+            </tr>
+            <tr>
+              <td>Cash on Delivery (POSTOPPKRAV)</td>
+              <td>FO, GL</td>
+              <td>FI, FO, IS, NO</td>
+              <td></td>
+              <td></td>
+              <td>FI</td>
+            </tr>
+            <tr>
+              <td>eAdvising (EVARSLING)</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Flex Delivery (FLEX_DELIVERY<sup>4</sup>)</td>
+              <td>DK, SE</td>
+              <td>DK, SE</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Insurance (INSURANCE)</td>
+              <td>ALL<sup>5</sup></td>
+              <td>DE, DK, EE, FI, FO, GB, IS, NL, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+              <td>DK, FI, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Label Free (1288)</td>
+              <td>ALL</td>
+              <td></td>
+              <td>ALL</td>
+              <td></td>
+              <td>ALL</td>
+            </tr>
+            <tr>
+              <td>ID Verification (1133)</td>
+              <td></td>
+              <td>NO</td>
+              <td></td>
+              <td></td>
+              <td>DK, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Evening Delivery (EVE_DELIVERY)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>DK</td>
+            </tr>
+            <tr>
+              <td>Signature Required (1280)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>DK, NO, SE</td>
+            </tr>
+            <tr>
+              <td>Individual Verification (1134)</td>
+              <td>FI</td>
+              <td>FI, NO</td>
+              <td></td>
+              <td></td>
+              <td>DK, FI, NO, SE</td>
+            </tr>
+            </tbody>
+          </table>
+          <br><sup>1 Use Shipping Guide Code FLEXDELIVERY for FLEX_DELIVERY<br>2 Use Shipping Guide Code DELIVERYINDOOR
+          for DELIVERY_INDOORS<br>3 Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina
+          Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia,
+          Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria,
+          Sudan, Yemen, Zimbabwe.<br>4 Use Shipping Guide Code FLEXDELIVERY for FLEX_DELIVERY<br>5 Following Countries
+          are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic,
+          Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon,
+          Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe.</sup></section>
+        </section>
+             <section class="api__section" id="">
         {% include disqus.html %}
       </section>
 
     </article>
   </div>
   </div>
+  <style type="text/css">
+    #b2bvas  table {
+      border: 0.5px solid #f2f2f3;
+      border-spacing: 0px;
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    #b2bvas tr {
+      border: 0.5px solid #f2f2f3;
+      border-spacing: 0px;
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+    }
+    #b2bvas th {
+      border: 0.5px solid white;
+      border-spacing: 0px;
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+      background: #f2f2f3;
+      font-size: 11px;
+    }
+    #b2bvas td:nth-child(1) {
+      font-weight: bold;
+      border: 0.5px solid white;
+      border-spacing: 0px;
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+      background: #f2f2f3;
+      display: table-cell;
+      font-size: 11px;
+    }
+    #b2bvas td {
+      border: 0.5px solid #f2f2f3;
+      border-spacing: 0px;
+      -webkit-border-horizontal-spacing: 0px;
+      -webkit-border-vertical-spacing: 0px;
+      font-size: 10px;
+    }
+    .alignDown {
+      padding-top: 5px;
+      font-size: 7px;
+      text-align: center;
+      vertical-align: text-top;
+      display: block;
+      margin: auto;
+    }
+  </style>
   <script>
     function removeGaParam(anchor) {
       var href = anchor.getAttribute("href");
