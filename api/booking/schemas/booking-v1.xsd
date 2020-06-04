@@ -76,12 +76,13 @@
     <xs:complexType name="ConsignmentRequestType">
         <xs:sequence>
             <xs:element name="shippingDateTime" type="xs:dateTime"/>
-            <xs:element name="customerSpecifiedDeliveryDate" type="xs:date"/>
+            <xs:element name="customerSpecifiedDeliveryDate" type="xs:date" minOccurs="0"/>
             <xs:element name="parties" type="PartiesRequestType"/>
             <xs:element name="product" type="ProductRequestType"/>
             <xs:element name="purchaseOrder" type="PurchaseOrderRequestType" minOccurs="0"/>
             <xs:element name="packages" type="PackagesRequestType" minOccurs="0"/>
             <xs:element name="packageGroups" type="PackageGroupsRequestType" minOccurs="0"/>
+            <xs:element name="generateQrCodes" type="xs:boolean" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="correlationId" type="xs:string"/>
     </xs:complexType>
@@ -93,6 +94,7 @@
             <xs:element name="consignee" type="PartyRequestType" minOccurs="0"/>
             <xs:element name="pickupPoint" type="PickupPointRequestType" minOccurs="0"/>
             <xs:element name="importer" type="PartyRequestType" minOccurs="0"/>
+            <xs:element name="returnTo" type="PartyRequestType" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="PartyRequestType">
@@ -125,6 +127,7 @@
     <xs:complexType name="ProductRequestType">
         <xs:all>
             <xs:element name="id" type="xs:string"/>
+            <xs:element name="nonStandardCourierProductCode" type="xs:string" minOccurs="0"/>
             <xs:element name="customerNumber" type="xs:string"/>
             <xs:element name="services" type="ServicesRequestType" minOccurs="0"/>
             <xs:element name="additionalServices" minOccurs="0">
@@ -135,7 +138,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="customsDeclaration" type="CustomsDeclarationRequestType" minOccurs="0"/>
             <xs:element name="messageForRecipient" type="xs:string" minOccurs="0"/>
             <xs:element name="whoPaysInvoice" type="whoPaysInvoice" minOccurs="0"/>
             <xs:element name="incotermRule" type="incotermRule" minOccurs="0"/>
@@ -143,6 +145,7 @@
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="natureOfTransaction" type="NatureOfTransaction"/>
+                        <xs:element name="otherNatureOfTransactionDescription" type="xs:string"/>
                         <xs:element name="ediCustomsDeclaration" type="EDICustomsDeclarationRequestType" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
@@ -164,7 +167,6 @@
             <xs:element name="express" type="xs:string" minOccurs="0"/>
             <xs:element name="advisering" type="xs:string" minOccurs="0"/>
             <xs:element name="simpleDelivery" type="xs:string" minOccurs="0"/>
-            <xs:element name="temperatureZone" type="FrigoTemperatureZoneRequestType" minOccurs="0"/>
             <xs:element name="insurance" type="xs:string" minOccurs="0"/>
             <xs:element name="saturdayDelivery" type="xs:string" minOccurs="0"/>
             <xs:element name="letterNotification" type="xs:string" minOccurs="0"/>
@@ -235,12 +237,6 @@
             <xs:element name="tunnelRestrictionCode" type="xs:string" minOccurs="0"/>
             <xs:element name="safetyMarkCode" type="xs:string" minOccurs="0"/>
             <xs:element name="factor" type="xs:int" minOccurs="0"/>
-        </xs:all>
-    </xs:complexType>
-    <xs:complexType name="CustomsDeclarationRequestType">
-        <xs:all>
-            <xs:element name="customsDeclarationType" type="xs:string"/>
-            <xs:element name="customsDeclarationText" type="xs:string" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="PurchaseOrderRequestType">
@@ -363,6 +359,8 @@
     <xs:complexType name="PackageResponseType">
         <xs:sequence>
             <xs:element name="packageNumber" type="xs:string"/>
+            <xs:element name="labelFreeCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="qrCodeLink" type="xs:string" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="correlationId" type="xs:string"/>
     </xs:complexType>
@@ -495,14 +493,6 @@
             <xs:enumeration value="text"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="FrigoTemperatureZoneRequestType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="FROZEN"/>
-            <xs:enumeration value="COOL"/>
-            <xs:enumeration value="DRY"/>
-            <xs:enumeration value="FISH"/>
-        </xs:restriction>
-    </xs:simpleType>
     <xs:simpleType name="AdditionalServiceCodeType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="1000"/>
@@ -522,14 +512,6 @@
             <xs:enumeration value="NON_FREEZE"/>
             <xs:enumeration value="1142"/>
             <xs:enumeration value="PHONENOTIFICATION"/>
-            <xs:enumeration value="2401"/>
-            <xs:enumeration value="FRIGO_FROZEN"/>
-            <xs:enumeration value="2402"/>
-            <xs:enumeration value="FRIGO_COOL"/>
-            <xs:enumeration value="2404"/>
-            <xs:enumeration value="FRIGO_DRY"/>
-            <xs:enumeration value="2405"/>
-            <xs:enumeration value="FRIGO_FISK"/>
             <xs:enumeration value="1245"/>
             <xs:enumeration value="DANGEROUS_GOODS"/>
             <xs:enumeration value="OX_EXPRESS"/>

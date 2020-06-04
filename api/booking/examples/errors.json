@@ -311,26 +311,6 @@
       "suffixable": false
     },
     {
-      "code": "BOOK-INPUT-066",
-      "message": "Valid temperature zones are: frozen, cool, dry, fish",
-      "suffixable": false
-    },
-    {
-      "code": "BOOK-INPUT-067",
-      "message": "Option isStackable must be specified for Frigo HALF_PALLET",
-      "suffixable": false
-    },
-    {
-      "code": "BOOK-INPUT-068",
-      "message": "Package type must be specified for Frigo product.",
-      "suffixable": false
-    },
-    {
-      "code": "BOOK-INPUT-069",
-      "message": "Invalid package type for Frigo product. Available options: 'frigo_whole', 'frigo_half', 'frigo_import', 'frigo_bison', 'frigo_flower', 'frigo_single'",
-      "suffixable": false
-    },
-    {
       "code": "BOOK-INPUT-070",
       "message": "The product is not available",
       "suffixable": false

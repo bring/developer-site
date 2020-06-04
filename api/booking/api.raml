@@ -189,7 +189,6 @@ documentation:
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
       | Bring Express, Sweden | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
       | Oil Express, Norway | `OIL_EXPRESS` | `SYSPED_NORWAY-12345` |
-      | Frigo, Norway | `FRIGO` | `FRIGO-123456` |
 
       [Check out this page](/api/services/#booking) to see the whole list of services for each customer type.
 
@@ -676,14 +675,6 @@ documentation:
             example: !include examples/deliveryIndoors.json
           application/xml:
             example: !include examples/deliveryIndoors.xml
-      278:
-        displayName: Temperature Zone
-        description: The `temperatureZone` element/attribute can be set for Frigo service for the goods which requires temperature controlled environment. This element allows either of 4 values `FROZEN`, `COOL`, `DRY` and `FISH`.
-        body:
-          application/json:
-            example: !include examples/temperatureZone.json
-          application/xml:
-            example: !include examples/temperatureZone.xml
       280:
               displayName: Cargo International - Incoterms
               description: The `incotermRule` element/attribute can be set for Cargo International service. This is a mandatory element while creating an order for Cargo International. API request will return error code i.e., `BOOK-INPUT-065` in case of no IncotermRule is provided in request. This element allows either of 13 values `DDP`, `DAP`, `FCA`, `FAS`, `FOB`, `CFR`, `CIF`, `CPT`, `CIP`, `DAT`, `DAF`, `DES` and `EXW`.

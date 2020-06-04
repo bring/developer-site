@@ -312,26 +312,6 @@
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
-      <code>BOOK-INPUT-066</code>
-      <message>Valid temperature zones are: frozen, cool, dry, fish</message>
-      <suffixable>false</suffixable>
-    </errorType>
-    <errorType>
-      <code>BOOK-INPUT-067</code>
-      <message>Option isStackable must be specified for Frigo HALF_PALLET</message>
-      <suffixable>false</suffixable>
-    </errorType>
-    <errorType>
-      <code>BOOK-INPUT-068</code>
-      <message>Package type must be specified for Frigo product.</message>
-      <suffixable>false</suffixable>
-    </errorType>
-    <errorType>
-      <code>BOOK-INPUT-069</code>
-      <message>Invalid package type for Frigo product. Available options: 'frigo_whole', 'frigo_half', 'frigo_import', 'frigo_bison', 'frigo_flower', 'frigo_single'</message>
-      <suffixable>false</suffixable>
-    </errorType>
-    <errorType>
       <code>BOOK-INPUT-070</code>
       <message>The product is not available</message>
       <suffixable>false</suffixable>
