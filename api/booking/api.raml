@@ -774,6 +774,14 @@ documentation:
           application/xml:
             example: !include examples/parcelsWithoutmeasurements.xml
 
+      299:
+              displayName: Urban Home Delivery (3332) with Flex Delivery
+              description: Additional VAS is optional
+              body:
+                application/json:
+                  example: !include examples/3332.json
+                application/xml:
+                  example: !include examples/3332.xml
 
 
 /errors{mediaTypeExtension}:
@@ -841,7 +849,7 @@ documentation:
     | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark (parcel services) | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
 
     If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_NORWAY-*********** customer number, without prefix PARCELS_NORWAY- and any leading zeros.
-    
+
     #### Pickup is ordered by default with service CARGO_GROUPAGE from Bring Cargo
 
     A pickup order is necessary to get the goods collected for transportation by Bring Cargo but you don't have to worry about it when ordering with the API .
