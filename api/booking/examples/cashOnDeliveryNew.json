@@ -46,7 +46,7 @@
             "accountType": null,
             "amount": 1000,
             "currencyCode": "NOK",
-            "message": {
+            "codMessage": {
               "value": "A valid customer identification number",
               "type": "kid"
             }
