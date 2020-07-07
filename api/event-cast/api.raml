@@ -408,6 +408,13 @@ documentation:
   displayName: Get all Webhooks
   get:
     description: Get all your current registered and active Webhooks. Pagination is currently not supported
+    queryParameters:
+      limit:
+        description: This represents the limit which can be used to limit the number of latest webhooks returned. Max limit for this is 150 000.
+        type: string
+        required: false
+        default: 10000
+        example: 100
     responses:
       200:
         body:
