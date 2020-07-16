@@ -428,6 +428,11 @@ documentation:
         description: Number of alternative delivery dates to be suggested by API for request
         type: integer
         required: false
+      nonstandardcourierservice:
+        description: Specify service code for customize courier services in the request. It will be for NonStandard Courier only.
+        type: string
+        example: CDA
+        required: true
 
     responses:
       200:
