@@ -786,20 +786,20 @@ documentation:
 /pickupOrder:
   displayName: Order pickups
   description: |
-    The Pickup Order Api is for ordering a single pickup at a particular address.
+    The Pickup Order API is for ordering a single pickup at a particular address.
 
-    Parcels Norway, Parcels Sweden, Parcels Denmark and Cargo Customers with a Mybring user ID can use this service. Customer numbers in this API is the same as to booking API, obtained either through your Mybring profile or the customer number API.
+    Parcels Norway, Parcels Sweden, Parcels Denmark and Cargo customers with a Mybring user ID can use this service. Customer numbers in this API are the same as to the Booking API, obtained either through your Mybring profile or the customer number API.
 
-    <strong>We have added new tags for new way of requesting pickup . Both ways are still supported, but they can not be combined.</strong>
+    <strong>We have added new tags for new way of requesting pickup. Both ways are still supported, but they can not be combined.</strong>
 
     * All the new pickup services will be added supporting only the new way.
 
     * The old way will be decommissioned after some time.
 
-    Where  before you had to send different tags under the `pickupOrderRequest` tag for ordering different types of Pickup .
+    Where  before you had to send different tags under the `pickupOrderRequest` tag for ordering different types of pickup .
     Now the new way introduced two tags  `service` and `pickupDetails` under `pickupOrderRequest` tag , one to capture type of service you wanted to book and one to capture what will be picked up.
 
-    Example: Ordering pickup for Parcels in Norway
+    Example: Ordering pickup for parcel shipments in Norway
 
     The new way of requesting pickup
 
@@ -827,11 +827,13 @@ documentation:
 
     | Customer number prefix | Pickup in country | Required information element     |
     |:-----------------------|:------------------|:---------------------------------|
-    | PARCELS_NORWAY         | Norway (parcels)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
-    | CARGO                  | Norway (cargo)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
-    | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
+    | PARCELS_NORWAY         | Norway (parcel services)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
+    | CARGO                  | Norway (cargo services)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
+    | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark (parcel services) | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
 
-    #### Pickup ordered by default with service CARGO_GROUPAGE from Bring Cargo
+    If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_NORWAY-*********** customer number, without prefix PARCELS_NORWAY- and any leading zeros.
+    
+    #### Pickup is ordered by default with service CARGO_GROUPAGE from Bring Cargo
 
     A pickup order is necessary to get the goods collected for transportation by Bring Cargo but you don't have to worry about it when ordering with the API .
 
