@@ -251,7 +251,7 @@
     </xs:complexType>
     <xs:complexType name="PackageRequestType">
         <xs:all>
-            <xs:element name="weightInKg" type="xs:double"/>
+            <xs:element name="weightInKg" type="xs:double" minOccurs="0"/>
             <xs:element name="goodsDescription" type="xs:string" minOccurs="0"/>
             <xs:element name="volumeInDm3" type="xs:double" minOccurs="0"/>
             <xs:element name="dimensions" type="MeasurementsRequestType" minOccurs="0"/>
