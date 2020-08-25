@@ -307,7 +307,12 @@ documentation:
 
 /v2/products:
   displayName: Get shipment prices and estimated delivery
-  description: Use this endpoint to get expected delivery, service categories and additional information.
+  description: |
+      Use this endpoint to get expected delivery, service categories and additional information.
+
+      #### Measurements
+      For cargo services(5100, 5300, 9100, CARGO), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory
+
   get:
     description: Get shipment prices
     headers:
