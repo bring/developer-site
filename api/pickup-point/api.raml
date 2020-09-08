@@ -313,5 +313,25 @@ documentation:
         description: Country code of the requester. Only applicable for Norwegian pickup points.
         type: string
 
-
-
+/{countryCode}/postalCode/{postalCode}/default/{mediaTypeExtension}:
+  displayName: Default pickup point(s) for a postal code
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ "NO" ]
+    postalCode:
+      displayName: Postal code
+      type: string
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: List default pickup point(s) for a postal code
+    responses:
+      200:
+        displayName: Example response for postal code 1481
+        body:
+          application/json:
+            example: !include examples/default_pickup_point_by_postal_code.json
+          application/xml:
+            example: !include examples/default_pickup_point_by_postal_code.xml
