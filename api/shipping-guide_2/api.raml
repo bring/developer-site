@@ -438,6 +438,15 @@ documentation:
         type: string
         example: CDA
         required: true
+      estimateddeliverytime:
+        description: True if you want estimated delivery time of input pickup points. Also, 'withExpectedDelivery' flag should be set to True along with this. Eligible services are 5800 and SERVICEPAKKE.
+        type: boolean
+        required: false
+      pickuppoints:
+        description: If pickup points are specified then estimated delivery time will be added in the response for them, when 'estimateddeliverytime' flag is True. If it is not specified, then default pickup point(s) for receiver's postal code will be used. Eligible services are 5800 and SERVICEPAKKE. However we recommend to always specify pickup points for optimum results.
+        type: string
+        example: 171102,124518
+        required: false
 
     responses:
       200:
