@@ -1,4 +1,4 @@
-#%RAML 1.0
+#%RAML 0.8
 ---
 title: Shipping Guide API 2.0
 baseUri: https://api.bring.com/shippingguide
@@ -275,16 +275,6 @@ documentation:
 
         When we are not able to process one of the service requested, we will respond with a error on service level. Details of possible error codes are documented in [XSD](https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd) and [WDSL](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl) itself, making it easier for clients to parse it.
 
-- title: Request and response structure
-  content: |
-      If you request shipping alternatives via the API your request and response will have to comply with the following schemas:
-
-      #### SOAP
-
-      [https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd](https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd)
-
-      [https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl)
-
 - title: Versioning
   content: |
        The Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses. To achieve this, namespace schema versioning is used in the request for webservices, indicating which version the client is on and what data-format the client expects in the result. For REST, versioning is defined as part of endpoint itself.
@@ -477,14 +467,38 @@ documentation:
     description: Get estimated delivery time
 
 /api/ws:
-  displayName: Get shipment prices and estimated delivery
-  description: Use this endpoint to get expected delivery, service categories and additional information.
+  displayName: SOAP
+  description: |
+      The SOAP Body follows the same XML Schema Definition (XSD) as stated above.
+      #### Request and response structure
+        If you request shipping alternatives via the API your request and response will have to comply with the following schemas:
+
+        [https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd](https://api.bring.com/shippingguide/api/ws/shipping-guide-20.xsd)
+
+        [https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl)
+
+      #### Estimated delivery time
+        To get estimated delivery time of specified or default pickup point(s), new fields that are introduced are: WithEstimatedDeliveryTime, PickupPoints
+        - Please note that the parcel can usually be picked up between start and end time.
+        - Please ensure to have other flag WithExpectedDelivery to be true along with WithEstimatedDeliveryTime.
+        - For optimum result, always provide pickup point(s).
+        - CustomerNumber is mandatory to get estimated delivery time.
+        - Eligible services are 5800 and SERVICEPAKKE.
   post:
-    description: Use this endpoint to get expected delivery, service categories and additional information.
+    description: Use this endpoint to get same information as above REST API
     headers:
       X-MyBring-API-Uid:
         description: Your Mybring login ID
       X-MyBring-API-Key:
         description: Your user's API key
       Accept:
-        description: Specify request format (application/json, application/xml)
+        description: Specify request format (application/xml)
+    body:
+      application/xml:
+        example: !include examples/soap_estimated_delivery_time_request.xml
+    responses:
+          200:
+            displayName: Estimated delivery time successful response
+            body:
+              application/xml:
+                example: !include examples/soap_estimated_delivery_time_response_200.xml
