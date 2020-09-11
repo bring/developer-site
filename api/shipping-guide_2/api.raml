@@ -293,7 +293,26 @@ documentation:
       * Request can include limited number of consignments in each request for quick response.
       * New shipments request can be part of separate request
       
+- title: Estimated arrival time for parcels going to pickup points
+  content: |
+      For our domestic parcel services Klimanøytral Servicepakke (SERVICEPAKKE) and Pakke til hentested (5800), you can now get extended leadtime information - the estimated arrival time.  
+      
+      Earlier, we have just returned the expected delivery **date** when you request our Shipping Guide API to get leadtime for SERVICEPAKKE/5800. Now, based on a machine learning model gathering scanning data from all pickup points in Norway, we are also predicting the **arrival window** - i.e. when the parcel is expected to arrive at a specific pickup point on that specific date. To get the estimaterd arrival time for one or more pickup points, use the following new fields: WithEstimatedDeliveryTime, PickupPoints. Note: along with WithEstimatedDeliveryTime, make sure ensure the flag WithExpectedDelivery is also set to true, and remember that customerNumber must also be set.
+      
+      There are two ways of using the functionality for estimated arrival time for pickup points in our Shipping Guide API - with or without the Pickup Point API. 
+      
+      #### Estimated arrival time for specified pickup points (w/ Pickup Point API)
+      You specify which pickup points you want us to return estimated arrival time for by including the relevant pickup point IDs in the Shipping guide request. Based on that, we return the start and end time of the expected arrival time window for each pickup point ID you have specified in the request. For a best possible customer experience, we strongly recommend that you use the functionality in combination with the Pickup Point API.
 
+      #### Estimated arrival time for the end users default pickup point (w/o Pickup Point API)
+      In the absence of specified pickup point IDs, we take care of looking up the recipient`s default pickup point, based on it`s postal code. Based on that, we return the start and end time of the expected arrival time window for the recipient`s default pickup point. 
+      
+      ### How to present the time window data in your checkout?
+      We recomment to insert the start (X) and end (Y) time values into the following sentence:
+      
+      **Pakken kan vanligvis hentes mellom kl. X og Y / The parcel can usually be picked up between X and Y.** 
+      
+      Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will become available for pickup on at a specific pickup point on that specific date. Also note that CustomerNumber is mandatory to set in order to get estimated delivery time.
 
 /v2/products:
   displayName: Get shipment prices and estimated delivery
@@ -477,13 +496,6 @@ documentation:
 
         [https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl)
 
-      #### Estimated delivery time
-        To get estimated delivery time of specified or default pickup point(s), new fields that are introduced are: WithEstimatedDeliveryTime, PickupPoints
-        - Please note that the parcel can usually be picked up between start and end time.
-        - Please ensure to have other flag WithExpectedDelivery to be true along with WithEstimatedDeliveryTime.
-        - For optimum result, always provide pickup point(s).
-        - CustomerNumber is mandatory to get estimated delivery time.
-        - Eligible services are 5800 and SERVICEPAKKE.
   post:
     description: Use this endpoint to get same information as above REST API
     headers:
