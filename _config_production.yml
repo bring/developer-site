@@ -28,11 +28,11 @@ raml_08_map:
   api/modify-delivery/api.raml:
     target: api/modify-delivery/index.html
     sort_order: 80
-
-raml_10_map:
   api/shipping-guide_2/api.raml:
     target: api/shipping-guide_2/index.html
     sort_order: 10
+
+raml_10_map:
   api/shipment/api.raml:
     target: api/shipment/index.html
     sort_order: 50
