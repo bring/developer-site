@@ -331,10 +331,10 @@ documentation:
             type: dateTime
             example: 2016-07-26T06:24:09 or 1469494449000 (milliseconds since 01.01.1970,<br>for json req)
             required: true
-        customerSpecifiedDeliveryDate:
-            description: The date selected as preferred delivery date by customer. This field is only applicable for 'PA_DOREN' and '5600'
-            type: date
-            example: 2020-05-11 (yyyy-MM-dd)
+        customerSpecifiedDeliveryDateTime:
+            description: The date and time selected for preferred delivery by the customer. Note that for some services, the time part of this field will be ignored. This field is applicable for 'PA_DOREN', '5600', and 'OIL_EXPRESS'.
+            type: dateTime
+            example: 2020-05-11T11:12:13 (yyyy-MM-ddThh:mm:ss)
             required: false
         customerNumber:
             description: Specify API customer number. This parameter can be maximum 35 character long.
