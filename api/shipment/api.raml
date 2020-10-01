@@ -2,7 +2,7 @@
 ---
 title: Shipment API
 version: v1
-baseUri: https://api.bring.com/shipment
+baseUri: https://bapi.bring.com/shipment
 mediaType: application/json
 annotationTypes:
   hideInDocumentation: boolean
@@ -680,12 +680,12 @@ documentation:
 
     Those headers must be present for authenticating requests.
 
-/sendshipment/shipmentId={createShipmentId}&packageIds={createPackageId}:
+/sendshipment?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment
   description: |
         Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
 
-        A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Refer to the documentation for [valid values](https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
+        A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Please refer to this link for both [valid product codes/services and VASes](https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
 
         The structure and most of the content will be validated.
 
@@ -765,12 +765,12 @@ documentation:
           application/json:
             example: !include examples/basic_example.json
 
-/sendbooking/shipmentId={createShipmentId}&packageIds={createPackageId}:
+/sendbooking?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment booking
   description: |
         Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
 
-        A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Refer to the documentation for [valid values](https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
+        A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Please refer to this link for both [valid product codes/services and VASes](https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
 
         The structure and most of the content will be validated.
 
