@@ -38,11 +38,11 @@ types:
       id:
         type: string
         required: false
-        description: Represents an unique identifiaction
+        description: Represents an unique identifiaction. This value can be maximum 36 characters long
       authenticator:
         type: string
         required: false
-        description: Represents your authentication identification
+        description: Represents your authentication identification. This value can be maximum 40 characters long
       trackingId:
         type: string
         required: true
@@ -67,12 +67,15 @@ types:
       url:
         type: string
         required: true
+        description: This value can be maximum 250 characters long
       content_type:
         type: string
         required: false
+        description: This value can be maximum 40 characters long
       headers:
         type: ConfigurationHeader[]
         required: false
+        description: The combined length of all the keys and values of header can be maximum 1024 characters long(including the separators)
   ConfigurationHeader:
     type: object
     properties:
