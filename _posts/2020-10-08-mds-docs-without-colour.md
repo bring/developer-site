@@ -10,22 +10,20 @@ author:
 ---
 ![](/img/octopeach.jpg)
 
-What's the design system documentation without a dedicated page for colours?
-In our case, it's clearer and with fewer pallette detours.
+What's the design system documentation without a dedicated page for colours? In our case, it's clearer and with fewer palette detours.
 
 ## Elements first
 We are currently running processes to restructure the [Mybring design system docs](https://www.mybring.com/design-system/) and improving its navigation. My initial approach was to gather everything related in one place. Instead, we are splitting pages and deleting things to make smaller and simpler pieces. 
 
-For the colours, the need for gathering everything actually came from what we need when developing the design system, not when developing _with_ it. Then we're looking for elements and components instead. While we gathered all colours into one CSS file, we also deleted the colour documentation.
+For the colours, the need for gathering everything came more from what we need when developing the design system than when developing _with_ it. At which point we're looking for elements and components instead. While we put all colours into one CSS file, we also deleted the colour documentation.
 
-By switching from palettes to documenting colours as element properties, we don’t have to add rules to colours. It’s more efficient to say “these are the background types” and “this is the button for so and so” than saying “this is colour _n_, and it can be used as such and such, but not as such and such, except when the combination is like so”.
+By switching from palettes to documenting colours as element properties, we don’t have to add rules to colours. It’s more efficient to say “these are the background types” and “this is the button for so and so” than saying “this is colour _n_, it can be used as such and such, but not as such and such, except when the combination is like so”.
 
-If you need a background, that's what you look for. If you are implementing a button, you don't start off by looking at colours, you look for buttons and then you pick the right one. If you need to build a custom one, you do the same, and it will be based on related elements we already have, and not on a colour palette.
+If you need a background, that's what you look for. If you are implementing a button, you don't start off by looking at colours, you look for buttons and then you pick the right one. If you need to build a custom one, you do the same, and it will be based on related elements we already have, and not on a palette.
 
 Colours are not pieces of layout or interface, they are element properties. There are only a few possible colour choices one can make in Mybring. Therefore, our goal is that no colour can be used without making a decision about the element first.
 
 This doesn’t exclude having a dedicated colour page, and we might add it at some point, but as a mere index rather than a starting point.
-
 
 ## “Primary” means _default_
 In my early days in printing, some clients wanted posters or flyers with all bold text, they wanted everything to stand out. But when defaulting to bold, there was nothing left to stand out from, _normal_ had been demoted to supporting style.
