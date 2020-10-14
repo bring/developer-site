@@ -84,40 +84,10 @@ documentation:
 
     All these APIs are available in json and xml formats.
 
-- title: How to use
-  content: |
-    The Reports API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
-
-    The two first steps in the process is only necessary to find customer numbers and report types for the user. You can save these IDs, and perform the generation-step without verifying the IDs. The response may get added information, so implementation should ignore new elements added to the response.
-
-    1. Get customer IDs
-    2. Get list of available reports
-    3. Generate report
-    4. Check status of report
-    5. Download report
-    6. Get list of invoice numbers for given customer or group
-
-- title:
-  content: |
-    #### List of available invoice sources
-    For specified invoice report 4 different types of report can be returned depending on the invoice source. Those are
-
-    Cargo Domestic and Sea :
-      - AMPHORA_DOMESTIC
-      - AMPHORA_SEA
-
-    Cargo International and Sysped :
-      - AMPHORA_BCI
-      - SYSPED
-
-    Parcels :
-      - PARCEL_DOMESTIC
-
 - title: Authentication
   content: |
     The Reports API requires authentication for all its endpoints.
 
-    ### Before you start
     Before you can begin using the new API you'll have to do the following:
 
     * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
@@ -137,7 +107,34 @@ documentation:
     | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
     | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. | 
 
-    Those headers must be set for all endpoints documented below.
+    Those headers must be set for all endpoints.
+
+- title: How to use
+  content: |
+    The Reports API is a logged-in service and you need to get an API-key and authenticate before being able to use the API.
+
+    The two first steps in the process is only necessary to find customer numbers and report types for the user. You can save these IDs, and perform the generation-step without verifying the IDs. The response may get added information, so implementation should ignore new elements added to the response.
+
+    1. Get customer IDs
+    2. Get list of available reports
+    3. Generate report
+    4. Check status of report
+    5. Download report
+    6. Get list of invoice numbers for given customer or group
+
+    ### Available invoice sources
+    For specified invoice report 4 different types of report can be returned depending on the invoice source. Those are
+
+    Cargo Domestic and Sea :
+      - AMPHORA_DOMESTIC
+      - AMPHORA_SEA
+
+    Cargo International and Sysped :
+      - AMPHORA_BCI
+      - SYSPED
+
+    Parcels :
+      - PARCEL_DOMESTIC
 
 /generate{mediaTypeExtension}:
   displayName: List available customers
