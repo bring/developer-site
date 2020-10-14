@@ -263,6 +263,17 @@ types:
 documentation:
 - title: Introduction
   content: |
+      <div class="wrapper">
+        <div class="api__warning-box" align="justify">
+          <strong>The Tracking API changes from 01.01.2021 and 01.03.2021</strong>
+            <br><br>
+              We have done a recent change in Tracking, where if the user have specified the wanted delivery date, then that date is set in the field for the estimated delivery date as well, as there is no point having to set estimation date which is different from the configured wanted delivery date.
+            <br><br>
+              With reference to the change, the existing field "dateOfEstimatedDelivery" will have the correct information regarding delivery date and therefore, the field "dateOfDelivery" in the open as well as logged in Tracking API versions will be set to Blank from 01st Jan'2021 for backward compatibility and gradually be removed effective from date 01st Mar'2021.
+            <br><br>
+        </div>
+      </div>
+
       The Tracking API provides the opportunity to track shipments by reference, package or shipment number.
       It is an easy way to display details and the status of shipments.
       The information available in this API is the same that is publically available from the [Tracking web site](http://tracking.bring.com/).
