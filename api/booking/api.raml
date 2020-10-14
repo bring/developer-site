@@ -302,7 +302,9 @@ documentation:
 
       #### Measurements
 
-      For cargo services(5100, 5300, CARGO, 9100), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory
+      For cargo services(5100, 5300, CARGO, 9100), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory.
+
+      For home delivery services (DOUBLE_INDOOR, CURBSIDE, DOUBLE_INDOOR_EVENING, CURBSIDE_EVENING), Weight is mandatory and one of Volume / Dimensions are mandatory.
   post:
     description: Make a booking
     headers:
@@ -785,6 +787,22 @@ documentation:
                   example: !include examples/3332.json
                 application/xml:
                   example: !include examples/3332.xml
+      300:
+              displayName: Home Delivery (DOUBLE_INDOOR) for norway with Weight and Volume
+              description: Home Delivery services can be booked with Weight and either Volume / Dimensions
+              body:
+                application/json:
+                  example: !include examples/doubleIndoor_NO.json
+                application/xml:
+                  example: !include examples/doubleIndoor_NO.xml
+      301:
+              displayName: Home Delivery (CURBSIDE_EVENING) for sweden with Weight and Dimensions
+              description: Home Delivery services can be booked with Weight and either Volume / Dimensions
+              body:
+                application/json:
+                  example: !include examples/curbsideEvening_SE.json
+                application/xml:
+                  example: !include examples/curbsideEvening_SE.xml
 
 
 /errors{mediaTypeExtension}:
