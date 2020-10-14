@@ -252,7 +252,7 @@ layout: page
                   <div class="collapsible u-mb++">
                     <ul class="list-block list-block--small">
                     {% for response in method[1].responses %}
-                      {% unless response[1].status_code > 220 and response[1].status_code < 300 %}
+                      {% unless response[1].status_code > 220 and response[1].status_code < 302 %}
                         {% continue %}
                       {% endunless %}
                       {% assign example_id = response[1].display_name | append: response[1].status_code | slugify %}
