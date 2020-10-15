@@ -10,6 +10,7 @@ documentation:
       Below are the various modifications (which will be API calls) supported:
         - Stop shipment.
         - Change cash on deivery.
+        - Change Address
 
 
 - title: Authentication
@@ -70,3 +71,73 @@ documentation:
           application/json:
             example: !include examples/changecodresponse.json
 
+/modifications/{shipmentNumber}/address:
+  displayName: Change address of delivery
+
+  uriParameters:
+    shipmentNumber:
+      description: Shipment number to change address for .
+      type: string
+      required: true
+      example: 707262014721
+
+  post:
+    description: Change address of delivery .
+    body:
+      application/json:
+        example: !include examples/changeAddressRequest.json
+
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/changeAddressResponse.json
+
+
+/modifications/changeAddress/price/{shipmentNumber}/{currentPostalCode}/{newPostalCode}:
+  displayName: Get price for change address
+  description: Get the cost for changing address on a shipment.
+
+  uriParameters:
+    shipmentNumber:
+      description: Shipment number .
+      type: string
+      required: true
+      example: 707262014721
+    currentPostalCode:
+      description: Current postal code of recipient address.
+      type: string
+      required: true
+      example: 0021
+    newPostalCode:
+      description: New postal code to where shipment will be re-routed to .
+      type: string
+      required: true
+      example: 0484
+
+  get:
+    description: Get price for change address .
+    responses:
+      200:
+         body:
+           application/json:
+             example: !include examples/changeAddressCost.json
+
+/modifications/fetchChangeAddressData/{shipmentNumber}:
+  displayName: Current recipient address
+  description: Get the current recipient address on the shipment.
+
+  uriParameters:
+    shipmentNumber:
+      description: Shipment number to get current recipient address.
+      type: string
+      required: true
+      example: 707262014721
+
+  get:
+    description: Get current recipient address for shipment
+    responses:
+      200:
+         body:
+           application/json:
+             example: !include examples/changeAddressRecipientData.json
