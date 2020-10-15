@@ -15,13 +15,9 @@ documentation:
 
       This API has similarities with the Shipment API, but there are differences. Read more about the [differences between the Booking API and the Shipment API](/api/booking-shipment/).
 
-- title: Versioning strategy
+- title: Versioning
   content: |
       Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
-
-- title: Encoding
-  content: |
-    Booking endpoints will assume all requests are UTF-8 encoded
 
 - title: Authentication
   content: |
@@ -34,6 +30,10 @@ documentation:
     ![Authorized for booking](booking_authorization.png)
 
     To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#list-customer-numbers) associated with your API user. The Customer Number API also links customer numbers with the services the customer number is valid for.
+
+- title: Encoding
+  content: |
+    Booking endpoints will assume all requests are UTF-8 encoded
 
 - title: Making labels
   content: |
@@ -77,9 +77,6 @@ documentation:
     
 - title: Mailbox Parcel (Pakke i Postkassen)
   content: |
-
-    #### About Mailbox parcel
-    
     - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (multi-kolli is not supported). Each parcel is invoiced separately. A link to the label is returned in the response. 
     - When booking Mailbox Parcel in Booking API, the new API customer number is used. This is identical to your company's main customer number (without prefix PARCELS_NORWAY and without padded zeros if any).
     - When booking Mailbox Parcel in Booking API, the service is defined by setting 3584 or 3570 in the product id. 
@@ -89,16 +86,13 @@ documentation:
     ### 3570 (tracking with RFID)
     Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
 
-    #### How does tracking with RFID work?
-    Normally, we create PDF labels that can be printed on any printer.
-
-    If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
+    Normally, we create PDF labels that can be printed on any printer. If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
 
     The labels will be ZPL code containing instructions for programming the passive RFID antenna in the printer's labels with package numbers.
 
     In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
 
-    ##### Special hardware required
+    #### Special hardware required
     RFID-tagged labels require special printer hardware. Currently we support the following printers:
 
     - Zebra R410
@@ -107,7 +101,7 @@ documentation:
     ### 3584 (no tracking)
     If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
 
-    ### Additional Service : Bag on door (Pose på døren)
+    ### Additional Service: Bag on door (Pose på døren)
     A delivery alternative for Mailbox Parcels that cannot be delivered to the mailbox. 
 
     Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may, against a surcharge of NOK 15 per shipment, choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point (surcharge of NOK 23 per shipment). This delivery option will have to be confirmed by the receiver upon booking in the sender's webshop. When the parcel is delivered as a bag on the door, the bar code is scanned and the recipient will receive an SMS/email. Note that if the parcel is delivered in the mailbox the additional fee will not occur.
@@ -150,7 +144,7 @@ documentation:
 
     Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/).
 
-    #### Example
+    ### Example
 
     In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
     t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
@@ -302,7 +296,9 @@ documentation:
 
       #### Measurements
 
-      For cargo services(5100, 5300, CARGO, 9100), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory
+      For cargo services(5100, 5300, CARGO, 9100), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory.
+
+      For home delivery services (DOUBLE_INDOOR, CURBSIDE, DOUBLE_INDOOR_EVENING, CURBSIDE_EVENING), Weight is mandatory and one of Volume / Dimensions are mandatory.
   post:
     description: Make a booking
     headers:
@@ -785,6 +781,22 @@ documentation:
                   example: !include examples/3332.json
                 application/xml:
                   example: !include examples/3332.xml
+      300:
+              displayName: Home Delivery (DOUBLE_INDOOR) for norway with Weight and Volume
+              description: Home Delivery services can be booked with Weight and either Volume / Dimensions
+              body:
+                application/json:
+                  example: !include examples/doubleIndoor_NO.json
+                application/xml:
+                  example: !include examples/doubleIndoor_NO.xml
+      301:
+              displayName: Home Delivery (CURBSIDE_EVENING) for sweden with Weight and Dimensions
+              description: Home Delivery services can be booked with Weight and either Volume / Dimensions
+              body:
+                application/json:
+                  example: !include examples/curbsideEvening_SE.json
+                application/xml:
+                  example: !include examples/curbsideEvening_SE.xml
 
 
 /errors{mediaTypeExtension}:
