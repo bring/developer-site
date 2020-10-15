@@ -6,17 +6,15 @@ baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 documentation:
 - title: Introduction
   content: |
-      <div class="wrapper">
-        <div class="api__warning-box" align="justify">
-          <strong>The Pickup Point API becomes authenticated from 01.11.2020</strong>
-            <br><br>
-              Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
+      <div class="api__warning-box">
+        <strong>The Pickup Point API becomes authenticated from 01.11.2020</strong>
+          <br><br>
+            Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
 
-              To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.11.2020.
+            To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.11.2020.
 
-              We recommend making the <a href="/api/pickup-point/#steps-for-authentication">adjustment</a> already now, well in advance of summer vacations and peak season.
-            <br><br>
-        </div>
+            We recommend making the <a href="/api/pickup-point/#steps-for-authentication">adjustment</a> already now, well in advance of summer vacations and peak season.
+          <br><br>
       </div>
 
       The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
