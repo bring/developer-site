@@ -4,6 +4,10 @@
 *   Styling for narrow tabs.
 ------------------------------------------------------- */
 
+h4 + .codetabs {
+  margin-top: 1rem;
+}
+
 .codetabs {
   list-style-type: none;
   margin: 0;
