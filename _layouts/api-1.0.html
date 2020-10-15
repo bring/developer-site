@@ -17,15 +17,15 @@ layout: redesign
         </div><!--
      --><div class="layout__item palm-one-whole desk-three-quarters">
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
-            <section id="api-documentation" class="api__section">
             <h1 class="api__title">{{ page.api.title }}</h1>
+            <section id="api-documentation" class="api__section">
               {% for chapter in page.api.documentation %}
               <h2 class="anchored">{{ chapter.title }}</h2>
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
             <section class="api__section">
-              <h2 class="anchored">Overview of endpoints</h2>
+              <h2 class="anchored" id="overview-of-endpoints">Overview of endpoints</h2>
 
               <h3 class="delta">Base URL</h3>
               <pre>{{ page.api.baseUri }}</pre>
@@ -53,13 +53,13 @@ layout: redesign
               {% for method in resource.methods %}
               <section class="api__section">
 
-                <h1 class="large anchored" id="{{ resource.displayName | slugify }}">{{ resource.displayName }}</h1>
+                <h2 class="large anchored" id="{{ resource.displayName | slugify }}">{{ resource.displayName }}</h2>
 
                 {% if resource.description %}
                 {{ resource.description | markdownify }}
                 {% endif %}
 
-                <h2 class="delta">URL</h2>
+                <h3 class="delta">URL</h3>
                 {% if resource.uriParameters contains 'mediaTypeExtension' %}
                   {% assign url_output = '' %}
                   {% for extension in resource.uriParameters.mediaTypeExtension.enum %}
@@ -83,7 +83,7 @@ layout: redesign
                 {% if has_other_uri_params_than_mediatype
                     or method.headers.size > 0
                     or method.queryParameters.size > 0 %}
-                <h2 class="delta">Request params</h2>
+                <h3 class="delta">Request params</h3>
                 {% endif %}
 
                 {% comment %}
@@ -134,7 +134,7 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% if method.body %}
-                  <h2 class="delta">Request body</h2>
+                  <h3 class="delta">Request body</h3>
 
                   {% for bodyHash in method.body %}
                     {% assign requestBody = bodyHash[1] %}
@@ -196,11 +196,11 @@ layout: redesign
                 ----------------------------------------
                 {% endcomment %}
                 {% if method.responses %}
-                <h2 class="beta">Responses</h2>
+                <h3 class="beta">Responses</h3>
                 {% for responseHash in method.responses %}
                   {% assign response = responseHash[1] %}
                   {% assign response_id = resource.displayName | append: '-response-' | append: response.code | slugify %}
-                  <h3 class="delta anchored" id="{{ response_id }}">HTTP status code {{ response.code }}</h3>
+                  <h4 class="delta anchored" id="{{ response_id }}">HTTP status code {{ response.code }}</h4>
 
                   {% if response.description %}
                     {{ response.description | markdownify }}

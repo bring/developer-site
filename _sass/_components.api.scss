@@ -8,7 +8,36 @@
     border-right: 2px solid $background-grey;
     padding-top: $spacing;
     padding-bottom: $spacing * 2;
-}
+
+    p, li {
+      line-height: 1.35;
+    }
+
+    ul,
+    ol,
+    dd {
+      margin-left:1.25rem;
+    }
+
+    h2 {
+      font-size: 2.12rem;
+      font-weight: 600;
+      margin-top: 2.6rem;
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+      color: #222;
+    }
+
+    h3 {
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+    }
+
+    h4 {
+      font-size:1.25rem;
+      margin-bottom: 0.25rem;
+     }
+  }
 
 .api__section {
     margin-top: $spacing;
@@ -23,7 +52,8 @@
 }
 
 .api__title {
-    color: $color-branding;
+    font-weight: 400;
+    margin-left: 40px;
     @include media-query(lap-and-up) {
         font-size: 4em;
     }

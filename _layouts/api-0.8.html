@@ -2,15 +2,15 @@
 layout: page
 ---
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
-            <section id="api-documentation" class="api__section">
             <h1 class="api__title">{{ page.api.title }}</h1>
+            <section id="api-documentation" class="api__section">
               {% for chapter in page.api.documentation %}
               <h2 class="anchored">{{ chapter.title }}</h2>
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
             <section class="api__section">
-              <h2 class="anchored">Overview of endpoints</h2>
+              <h2 class="anchored" id="overview-of-endpoints">Overview of endpoints</h2>
 
               <h3 class="delta">Base URL</h3>
               <pre>{{ page.api.base_uri }}</pre>
@@ -38,13 +38,13 @@ layout: page
               {% for method in resource.methods %}
               <section class="api__section">
 
-                <h1 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h1>
+                <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
 
                 {% if resource.description %}
                 {{ resource.description | markdownify }}
                 {% endif %}
 
-                <h2 class="delta">URL</h2>
+                <h3 class="delta">URL</h3>
                 {% if resource.uri_parameters contains 'mediaTypeExtension' %}
                   {% assign url_output = '' %}
                   {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
@@ -69,7 +69,7 @@ layout: page
                     or method[1].headers.size > 0 
                     or method[1].query_parameters.size > 0
                     or method[1].field_desc.size > 0 %}
-                <h2 class="delta">Request params</h2>
+                <h3 class="delta">Request params</h3>
                 {% endif %}
 
                 {% comment %}
@@ -121,7 +121,7 @@ layout: page
                 {% endcomment %}
 
                 {% if method[1].field_desc.size > 0 %}
-                  <h2 class="delta">Request fields</h2>
+                  <h3 class="delta">Request fields</h3>
                   {% endif %}
                 {% if method[1].fielddesc.size > 0 %}
                 {% assign include_params = method[1].field_desc %}
@@ -137,7 +137,7 @@ layout: page
                 ----------------------------------------
                 {% endcomment %}
                 {% if method[1].bodies.size > 0 %}
-                  <h2 class="delta">Request body</h2>
+                  <h3 class="delta">Request body</h3>
                   {% comment %}
 
                   Tabs for JSON, XML, SOAP
@@ -181,7 +181,7 @@ layout: page
                 ----------------------------------------
                 {% endcomment %}
                 {% unless method[1].responses == empty %}
-                <h2>Response</h2>
+                <h3>Response</h3>
                 {% endunless %}
                 {% for response in method[1].responses %}
                   {% if response[1].status_code > 220 and response[1].status_code < 300 %}
@@ -196,7 +196,7 @@ layout: page
                     {% assign additional_examples = true %}
                     {% continue %}
                   {% endif %}
-                  <h3 class="delta">{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
+                  <h4 class="delta">{{ response[1].display_name }} ({{ response[1].status_code }})</h4>
                   {% if response[1].description %}
                     {{ response[1].description | markdownify }}
                   {% endif %}
@@ -247,7 +247,7 @@ layout: page
                 {% endfor %}
 
                 {% if additional_examples %}
-                  <h2>More examples</h2>
+                  <h3>More examples</h3>
 
                   <div class="collapsible u-mb++">
                     <ul class="list-block list-block--small">
