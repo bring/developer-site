@@ -23,7 +23,9 @@
 }
 
 .api__title {
-    color: $color-branding;
+    color: #444;
+    font-weight: 400;
+    margin-left: 40px;
     @include media-query(lap-and-up) {
         font-size: 4em;
     }
