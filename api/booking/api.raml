@@ -206,7 +206,7 @@ documentation:
   description: |
       This is the endpoint where you can book a shipment and get a printable label in return.
 
-      #### Value added services
+      ### Value added services
 
       The following services have available value added services:
 
@@ -224,12 +224,11 @@ documentation:
       <strong>We have added a new tag and by that a new way of requesting value added services. Both ways are still supported, but they can not be combined.</strong>
 
       * All the new value added services will be added supporting only the new way.
-
       * The old way will be decommissioned after some time.
 
       Where you before had to send each additional service as a tag under the services tag, the new way has a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
 
-       <strong>XML</strong>
+      #### XML
 
       ```
        <additionalServices>
@@ -246,7 +245,7 @@ documentation:
        </additionalServices>
       ```
 
-       <strong>JSON</strong>
+      #### JSON
 
       ```
         "additionalServices": [
@@ -276,7 +275,7 @@ documentation:
 
       ```
 
-      #### Error handling
+      ### Error handling
 
       If an error occurs, the following will be provided:
 
@@ -286,7 +285,7 @@ documentation:
 
       See the [error codes](#error-codes) below to get an overview of error codes and what they mean.
 
-      #### Testing
+      ### Testing
 
       This service will send actual production orders unless it is set to testing mode.
 
@@ -294,7 +293,7 @@ documentation:
 
       Note that the examples below use `testIndicator=true`, so remove this when implementing the Booking API in your production system.
 
-      #### Measurements
+      ### Measurements
 
       For cargo services(5100, 5300, CARGO, 9100), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory.
 
@@ -518,14 +517,6 @@ documentation:
           application/xml:
             example: !include examples/successfulResponse.xml
 
-      250:
-        displayName: <strike>Recipient Notification. The old way of requesting value added services </strike>
-        description: The `recipientNotification` attribute/element must be set for all services that allow electronic notification, in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
-        body:
-          application/json:
-            example: !include examples/recipientNotificationRequest.json
-          application/xml:
-            example: !include examples/recipientNotificationRequest.xml
       251:
         displayName: Recipient notification.
         description: The `recipientNotification` attribute/element must be set for all services that allow electronic notification, in order for the recipient to receive electronic notification. This element must the recipient's mobile phone number and/or e-mail address.
@@ -535,17 +526,14 @@ documentation:
           application/xml:
             example: !include examples/recipientNotificationRequestNew.xml
 
-      252:
-         displayName: <strike>Cash On Delivery. The old way of requesting value added services </strike>
-         description: |
-           The `cashOnDelivery` element/attribute can be set for services that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
-
-           `Amount` field only accepts numeric values without comma in it and with two decimal places.
-         body:
-           application/json:
-             example: !include examples/cashOnDelivery.json
-           application/xml:
-             example: !include examples/cashOnDelivery.xml
+      250:
+        displayName: <strike>Recipient Notification. The old way of requesting value added services </strike>
+        description: The `recipientNotification` attribute/element must be set for all services that allow electronic notification, in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
+        body:
+          application/json:
+            example: !include examples/recipientNotificationRequest.json
+          application/xml:
+            example: !include examples/recipientNotificationRequest.xml
 
       253:
          displayName: Cash On Delivery
@@ -558,6 +546,18 @@ documentation:
              example: !include examples/cashOnDeliveryNew.json
            application/xml:
              example: !include examples/cashOnDeliveryNew.xml
+      252:
+         displayName: <strike>Cash On Delivery. The old way of requesting value added services </strike>
+         description: |
+           The `cashOnDelivery` element/attribute can be set for services that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
+
+           `Amount` field only accepts numeric values without comma in it and with two decimal places.
+         body:
+           application/json:
+             example: !include examples/cashOnDelivery.json
+           application/xml:
+             example: !include examples/cashOnDelivery.xml
+
       255:
         displayName: QuickPack Envelope
         description: |
@@ -659,10 +659,8 @@ documentation:
           application/xml:
             example: !include examples/selectPickupPoint_FI.xml
       274:
-        displayName: Express
+        displayName: Express service for Oil Express
         description: |
-          ### Express service for Oil Express
-
           You can use Express service if you want to send your goods urgently (this service is *applicable only for Oil Express* service). In case of express delivery, goods are picked up as soon as possible and delivered to its destination.
 
           For using Express service send `true` value in `express` as shown in below example.
@@ -825,7 +823,6 @@ documentation:
     <strong>We have added new tags for new way of requesting pickup. Both ways are still supported, but they can not be combined.</strong>
 
     * All the new pickup services will be added supporting only the new way.
-
     * The old way will be decommissioned after some time.
 
     Where  before you had to send different tags under the `pickupOrderRequest` tag for ordering different types of pickup .
@@ -865,7 +862,7 @@ documentation:
 
     If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_NORWAY-*********** customer number, without prefix PARCELS_NORWAY- and any leading zeros.
 
-    #### Pickup is ordered by default with service CARGO_GROUPAGE from Bring Cargo
+    ### Pickup is ordered by default with service CARGO_GROUPAGE from Bring Cargo
 
     A pickup order is necessary to get the goods collected for transportation by Bring Cargo but you don't have to worry about it when ordering with the API .
 
@@ -887,6 +884,20 @@ documentation:
             example: !include examples/pickuporder_response.json
           application/xml:
             example: !include examples/pickuporder_response.xml
+      251:
+        displayName: Parcels Sweden request
+        body:
+          application/json:
+            example: !include examples/pickuporder_SE_new_way.json
+          application/xml:
+            example: !include examples/pickuporder_SE_new_way.xml
+      253:
+        displayName: Cargo request
+        body:
+          application/json:
+            example: !include examples/pickuporder_CARGO_new_way.json
+          application/xml:
+            example: !include examples/pickuporder_CARGO_new_way.xml
       250:
         displayName: <strike>Parcels Norway request (Old Way)</strike>
         body:
@@ -895,13 +906,6 @@ documentation:
           application/xml:
             example: !include examples/pickuporder_NO.xml
 
-      251:
-        displayName: Parcels Sweden request
-        body:
-          application/json:
-            example: !include examples/pickuporder_SE_new_way.json
-          application/xml:
-            example: !include examples/pickuporder_SE_new_way.xml
       252:
         displayName: <strike>Parcels Sweden request (Old Way)</strike>
         body:
@@ -909,13 +913,6 @@ documentation:
             example: !include examples/pickuporder_SE.json
           application/xml:
             example: !include examples/pickuporder_SE.xml
-      253:
-        displayName: Cargo request
-        body:
-          application/json:
-            example: !include examples/pickuporder_CARGO_new_way.json
-          application/xml:
-            example: !include examples/pickuporder_CARGO_new_way.xml
       254:
         displayName: <strike> Cargo request (Old Way)</strike>
         body:
@@ -936,11 +933,11 @@ documentation:
     - book shipments
     - order pickups
 
-    #### WSDL
+    ### WSDL
 
     [https://api.bring.com/booking/api/ws/booking-v1.wsdl](https://api.bring.com/booking/api/ws/booking-v1.wsdl)
 
-    #### XSD
+    ### XSD
 
     [https://api.bring.com/booking/api/schema/booking-v1.xsd](https://api.bring.com/booking/api/schema/booking-v1.xsd)
   post:
