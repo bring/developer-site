@@ -2,15 +2,15 @@
 layout: page
 ---
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
-            <section id="api-documentation" class="api__section">
             <h1 class="api__title">{{ page.api.title }}</h1>
+            <section id="api-documentation" class="api__section">
               {% for chapter in page.api.documentation %}
               <h2 class="anchored">{{ chapter.title }}</h2>
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
             <section class="api__section">
-              <h2 class="anchored">Overview of endpoints</h2>
+              <h2 class="anchored" id="overview-of-endpoints">Overview of endpoints</h2>
 
               <h3>Base URL</h3>
               <pre>{{ page.api.base_uri }}</pre>
@@ -38,7 +38,7 @@ layout: page
               {% for method in resource.methods %}
               <section class="api__section">
 
-                <h1 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h1>
+                <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
 
                 {% if resource.description %}
                 {{ resource.description | markdownify }}
@@ -69,6 +69,7 @@ layout: page
                     or method[1].headers.size > 0 
                     or method[1].query_parameters.size > 0
                     or method[1].field_desc.size > 0 %}
+
                 <h3>Request params</h3>
                 {% endif %}
 
@@ -121,6 +122,7 @@ layout: page
                 {% endcomment %}
 
                 {% if method[1].field_desc.size > 0 %}
+
                   <h3>Request fields</h3>
                   {% endif %}
                 {% if method[1].fielddesc.size > 0 %}
@@ -137,6 +139,7 @@ layout: page
                 ----------------------------------------
                 {% endcomment %}
                 {% if method[1].bodies.size > 0 %}
+
                   <h3>Request body</h3>
                   {% comment %}
 
@@ -181,7 +184,7 @@ layout: page
                 ----------------------------------------
                 {% endcomment %}
                 {% unless method[1].responses == empty %}
-                <h2>Response</h2>
+                <h3>Response</h3>
                 {% endunless %}
                 {% for response in method[1].responses %}
                   {% if response[1].status_code > 220 and response[1].status_code < 300 %}
@@ -196,6 +199,7 @@ layout: page
                     {% assign additional_examples = true %}
                     {% continue %}
                   {% endif %}
+
                   <h4>{{ response[1].display_name }} ({{ response[1].status_code }})</h4>
                   {% if response[1].description %}
                     {{ response[1].description | markdownify }}
@@ -247,7 +251,7 @@ layout: page
                 {% endfor %}
 
                 {% if additional_examples %}
-                  <h2>More examples</h2>
+                  <h3>More examples</h3>
 
                   <div class="collapsibles">
                     {% for response in method[1].responses %}

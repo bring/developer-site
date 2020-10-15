@@ -16,62 +16,59 @@ layout: redesign
     </div><!--
  --><div class="layout__item palm-one-whole desk-three-quarters">
     <article class="api">
-
-      <section class="api__section">
-        <h1 class="api__title">Let's talk about Shipping Guide</h1>
-      </section>
+      <h1 class="api__title">Let's talk about Shipping Guide</h1>
 
       <section class="api__section">
         <h2>No applicable services found</h2>
-        <p align="justify">When no services are applicable for the requested you've made an empty resultset is returned. Reasons can be that the shipment was too large or too small, or the requested shipment
+        <p>When no services are applicable for the requested you've made an empty resultset is returned. Reasons can be that the shipment was too large or too small, or the requested shipment
           was outside the coverage area of the requested services. Your code should handle these cases, i.e. an empty result, and should not fail because of this.</p>
-        <p align="justify">How can I fix this? You could e.g. use a Cargo product when you want to send large shipments, or you could request other services and see which ones that fits your need and find your service by using <a href="https://www.bring.no/english/sending">What would you like to send?</a>.
+        <p>How can I fix this? You could e.g. use a Cargo product when you want to send large shipments, or you could request other services and see which ones that fits your need and find your service by using <a href="https://www.bring.no/english/sending">What would you like to send?</a>.
         </p>
       </section>
 
       <section class="api__section">
         <h2>Trace messages</h2>
-        <p align="justify">Trace messages are meant as debug messages to the developer and are <strong>not intended to be parsed by the application</strong>. Parsing the trace messages may result in unexpected behaviour since they may change. The new Shipping Guide endpoint supports structured errors so it shouldn't be necessary to parse trace messages, but if you see the need feel free to contact us.</p>
+        <p>Trace messages are meant as debug messages to the developer and are <strong>not intended to be parsed by the application</strong>. Parsing the trace messages may result in unexpected behaviour since they may change. The new Shipping Guide endpoint supports structured errors so it shouldn't be necessary to parse trace messages, but if you see the need feel free to contact us.</p>
       </section>
 
       <section class="api__section">
         <h2>Volume, weight, dimensions and loading meter</h2>
-        <p align="justify">Shipping Guide use measurement of the package to calculate price of the Shipment. Shipping Guide accept measurements in <code>Volume</code>, <code>Weight </code>and <code>Dimensions(Length, Width and Height)</code>. Either <code>Volume</code> or <code>Weight</code> or <code>Dimensions</code> must be  present in the request.
+        <p>Shipping Guide use measurement of the package to calculate price of the Shipment. Shipping Guide accept measurements in <code>Volume</code>, <code>Weight </code>and <code>Dimensions(Length, Width and Height)</code>. Either <code>Volume</code> or <code>Weight</code> or <code>Dimensions</code> must be  present in the request.
           It is recommended to request Shipping Guide with accurate measurements to get most precise price. Apart from these measurements, <code>Loading meter </code> is a kind of measurement which can be sent in the  request for CARGO services to get more precise price information.</p>
       </section>
 
       <section class="api__section">
         <h2>Pre-registered - EDI</h2>
-        <p align="justify">It is possible to tell the Shipping Guide API that your parcel is registered using EDI when it is shipped, there is a parameter <code>edi</code> for that. Using this parameter may limit the available services and affect the price of others.</p>
+        <p>It is possible to tell the Shipping Guide API that your parcel is registered using EDI when it is shipped, there is a parameter <code>edi</code> for that. Using this parameter may limit the available services and affect the price of others.</p>
       </section>
 
       <section class="api__section">
         <h2>Holidays and Home Delivery</h2>
-        <p align="justify">There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter. The services will not take this into account.
+        <p>There is no home delivery on bank holidays. It can also happen that Bring will not do home delivery on certain days during Christmas or Easter. The services will not take this into account.
           This must be handled by clients. End-users should not get delivery dates for holidays.</p>
       </section>
 
       <section class="api__section">
         <h2>More than one customer number with JSON</h2>
-        <p align="justify">This is now possible with version 2.0. Now we can request for multiple services with multiple customer number in single REST request similar to that SOAP version.
+        <p>This is now possible with version 2.0. Now we can request for multiple services with multiple customer number in single REST request similar to that SOAP version.
           Way this has been made possible is to send product along with API customer number delimited with <i>:</i>. More details can be found <a href="/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery">here</a> </p>
       </section>
 
       <section class="api__section">
         <h2>Adjusting prices</h2>
-        <p align="justify">We do not support price adjustment in Shipping Guide 2.0. The pricing model is very simple now.
+        <p>We do not support price adjustment in Shipping Guide 2.0. The pricing model is very simple now.
           It should be very easy to do price adjustment at client side.</p>
       </section>
 
       <section class="api__section">
         <h2 class="anchored">Should I handle warnings?</h2>
-        <p align="justify">Ideally clients should not parse these warning codes for any logic as they are bound to change. These are supposed to be treated as informational data.
+        <p>Ideally clients should not parse these warning codes for any logic as they are bound to change. These are supposed to be treated as informational data.
           More info can be found <a href="/api/shipping-guide_2/upgrade-to-version-2/#introduced-warnings">here</a>.</p>
       </section>
 
       <section class="api__section">
         <h2>HTTP status codes in JSON interface</h2>
-        <p align="justify">
+        <p>
           The JSON interface uses <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP status codes</a> to indicate the success or failure of an API request.
         </p>
         <p>
@@ -92,13 +89,13 @@ layout: redesign
 
       <section class="api__section">
         <h2>Additional service XXX is not applicable for product YYY</h2>
-        <p align="justify">If a requested additional service is not supported on requested product, API will just ignore that additional service for price calculation and return info as a trace message.
+        <p>If a requested additional service is not supported on requested product, API will just ignore that additional service for price calculation and return info as a trace message.
           Supported list of value added services on services can be found <a href="/api/services/#additional-services">here</a>.
         </p>
       </section>
       <section class="api__section">
         <h2>Multiple packages(kolli) on rest endpoint</h2>
-        <p align="justify">
+        <p>
           The package parameters supports postfixed indexes to differentiate different packages.
           <p>
           The supported parameters are:
