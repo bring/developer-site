@@ -312,24 +312,16 @@ documentation:
 
 - title: Authentication
   content: |
-    If you have a Mybring user, you can log in to the Tracking API. Authenticated requests have the following benefits:
-
+    If you have a Mybring user, you can perform authenticated requests. They have the following benefits:
     - More information about parcels:
-      - Prices
+      - Price
       - Name
       - Address
       - Signatures for proof of delivery
     - Less strict rate limits
 
-    See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+    To make authenticated Tracking API requests, you will have to use the endpoint [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/) and you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-    | Header | Example | Comment |
-    |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies where you're using the APIs. |
-
-    The above headers must be present whilst using our logged-in variant of the tracking api. Also, you will have to use the endpoint: [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/)
 
 - title: Formats
   content: |
