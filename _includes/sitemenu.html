@@ -46,17 +46,11 @@
             <h3 class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></h3>
             {% if active_page %}
             <ul class="list-bare sitemenu__sublist">
-              <li><a href="{{ site.baseurl }}{{ api_page.url }}#api-documentation"><span data-hover="Documentation">Documentation</span></a></li>
-              {% if api_page.url == "/api/shipping-guide_2/" %}
-                <li><a href="{{ site.baseurl }}/api/shipping-guide_2/#getting-started"><span data-hover="Getting started">Getting started</span></a></li>
-                <li><a href="{{ site.baseurl }}/api/shipping-guide_2/#shipping-guide-topics"><span data-hover="Shipping Guide topics">Shipping Guide topics</span></a></li>
-                <li><a href="{{ site.baseurl }}/api/shipping-guide_2/#handle-api-errors"><span data-hover="Handle API Errors">Handle API Errors</span></a></li>
-                <li><a href="{{ site.baseurl }}/api/shipping-guide_2/#versioning"><span data-hover="Versioning">Versioning</span></a></li>
-                <li><a href="{{ site.baseurl }}/api/shipping-guide_2/#improve-performance"><span data-hover="Improve performance">Improve performance</span></a></li>
-                <li><a href="{{ site.baseurl }}/api/shipping-guide_2/#overview-of-endpoints"><span data-hover="Overview of endpoints">Overview of endpoints</span></a></li>
-                </ul>
-                 {% continue %}
-              {% endif %}
+              {% for item in api_page.api.documentation %}
+                  <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ item.title | slugify }}"><span data-hover="{{ item.title }}">{{ item.title }}</span></a></li>
+              {% endfor %}
+
+              <li><a href="{{ site.baseurl }}{{ api_page.url }}#overview-of-endpoints"><span data-hover="overview-of-endpoints">Overview of endpoints</span></a></li>
 
               {% if api_page.api.types %}
                 {% for resource in api_page.api.resources %}
@@ -64,7 +58,7 @@
                 {% endfor %}
               {% else %}
                 {% for resource in api_page.api.resources %}
-                  <li"><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
+                  <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
                 {% endfor %}
               {% endif %}
             </ul>
