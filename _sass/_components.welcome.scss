@@ -5,12 +5,36 @@
 *   Site intro and top boxes on the front page
 ------------------------------------------------------- */
 
-picture.megaheader img {
-    width: 100%;
+.intro {
+    padding: 6vmin 4vmin 6vmin;
+    background-color: $background-grey;
+
+    @include media-query(lap-and-up) {
+        padding: 12vmin 4vmin 8vmin;
+        background: url(/img/megaheader/picture-a.jpg);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+    }
+}
+
+.intro__tagline {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: $spacing;
+    margin: 0 auto;
+    max-width: 28ch;
+
+        @include media-query(lap-and-up) {
+            font-size: 2.4rem;
+            color: $white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
 }
 
 .welcome {
-    background-color: $background-grey;
+    background-color: #fafafa;
     padding: $spacing;
     margin-bottom: $spacing*2;
     text-align: center;
@@ -19,30 +43,6 @@ picture.megaheader img {
     }
 }
 
-.welcome__title {
-    font-size: $inuit-heading-size-2;
-    color: $color-branding;
-    margin-bottom: $spacing/2;
-
-        @include media-query(lap-and-up) {
-            color: $white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-            font-size: 5.2em;
-            margin-top: -180px;
-        }
-}
-
-.welcome__tagline {
-    font-size: $inuit-heading-size-5;
-    font-weight: normal;
-    margin-bottom: $spacing;
-
-        @include media-query(lap-and-up) {
-            font-size: $inuit-heading-size-4;
-            color: $white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    }
-}
 
 .welcome__item {
 
@@ -74,6 +74,8 @@ picture.megaheader img {
 }
 
 .welcome__link:hover {
+    background-color: $background-grey;
+    text-decoration: none;
     img {
         opacity: 0.8;
     }

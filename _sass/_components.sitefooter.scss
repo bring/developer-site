@@ -6,10 +6,9 @@
 
 
 .sitefooter {
-    background-color: $color-background-footer;
-    padding-top: $spacing *2;
+    background-color: #222;
+    padding: $spacing *2 0 0.5rem;
     color: #fff;
-    min-height: 200px;
     width: 100%;
     a {
         color: #fff;
@@ -23,10 +22,10 @@
     list-style-type: none;
     li {
         margin-right: 2em;
-        margin-bottom: 2em;
     }
 }
 
 .sitefooter-nav {
-    font-weight: bold;
+    margin-bottom: 2rem;
+    font-weight: 600
 }
