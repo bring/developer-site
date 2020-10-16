@@ -72,17 +72,17 @@ documentation:
             example: !include examples/changecodresponse.json
 
 /modifications/{shipmentNumber}/address:
-  displayName: Change address of delivery
+  displayName: Change recipient address of delivery.
 
   uriParameters:
     shipmentNumber:
-      description: Shipment number to change address for .
+      description: Shipment number to change address for.
       type: string
       required: true
       example: 707262014721
 
   post:
-    description: Change address of delivery .
+    description: Change recipient address of delivery.
     body:
       application/json:
         example: !include examples/changeAddressRequest.json
@@ -94,29 +94,29 @@ documentation:
             example: !include examples/changeAddressResponse.json
 
 
-/modifications/changeAddress/price/{shipmentNumber}/{currentPostalCode}/{newPostalCode}:
-  displayName: Get price for change address
+/modifications/changeAddress/price/{shipment}/{oldPostal}/{newPostal}:
+  displayName: Get price for change address.
   description: Get the cost for changing address on a shipment.
 
   uriParameters:
-    shipmentNumber:
-      description: Shipment number .
+    shipment:
+      description: Shipment number.
       type: string
       required: true
       example: 707262014721
-    currentPostalCode:
+    oldPostal:
       description: Current postal code of recipient address.
       type: string
       required: true
       example: 0021
-    newPostalCode:
-      description: New postal code to where shipment will be re-routed to .
+    newPostal:
+      description: New postal code to where shipment will be re-routed to.
       type: string
       required: true
       example: 0484
 
   get:
-    description: Get price for change address .
+    description: Get the cost for changing address on a shipment.
     responses:
       200:
          body:
@@ -135,9 +135,27 @@ documentation:
       example: 707262014721
 
   get:
-    description: Get current recipient address for shipment
+    description: Get current recipient address for shipment.
     responses:
       200:
          body:
            application/json:
              example: !include examples/changeAddressRecipientData.json
+
+/modifications/customer/{customerNumber}:
+  displayName: Get modifications history.
+  description: Get list of all the shipments for the customer number on which COD, STOP Delivery and Change address have been done.
+
+  uriParameters:
+    customerNumber:
+      description: Customer number.
+      type: string
+      required: true
+
+  get:
+    description: Get history for all the modifications done for a customer
+    responses:
+      200:
+         body:
+           application/json:
+             example: !include examples/changeAddressHistoryData.json
