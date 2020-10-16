@@ -6,17 +6,15 @@ baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 documentation:
 - title: Introduction
   content: |
-      <div class="wrapper">
-        <div class="api__warning-box" align="justify">
-          <strong>The Pickup Point API becomes authenticated from 01.11.2020</strong>
-            <br><br>
-              Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
+      <div class="api__warning-box">
+        <strong>The Pickup Point API becomes authenticated from 01.11.2020</strong>
+          <br><br>
+            Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
 
-              To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.11.2020.
+            To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.11.2020.
 
-              We recommend making the <a href="/api/pickup-point/#steps-for-authentication">adjustment</a> already now, well in advance of summer vacations and peak season.
-            <br><br>
-        </div>
+            We recommend making the <a href="/api/pickup-point/#steps-for-authentication">adjustment</a> already now, well in advance of summer vacations and peak season.
+          <br><br>
       </div>
 
       The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
@@ -73,19 +71,7 @@ documentation:
 
 - title: Authentication
   content: |
-
-      Before you can begin using the pickuppoint API you'll have to do the following:
-      * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
-      * [Generate an API key](/api/#authentication) for your user
-
-      ### Get your API key from Mybring
-      To make API requests you will need an API key. Click the link below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
-
-      <a href="https://www.mybring.com/useradmin/account/settings/api">Get API key</a>
-
-      ### Add authentication headers
-      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
-
+      The Pickup Point API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
 /{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
   displayName: Pickup points for postal code
