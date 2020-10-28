@@ -330,23 +330,30 @@ documentation:
     headers:
       X-MyBring-API-Uid:
         description: Your Mybring login ID
+        required: true
       X-MyBring-API-Key:
         description: Your user's API key
+        required: true
       Accept:
         description: Specify request format (application/json, application/xml)
+        required: true
     queryParameters:
       fromcountry:
         description: Sender country code
         type: string
+        required: true
       tocountry:
         description: Receiver country code
         type: string
+        required: true
       frompostalcode:
         description: Sender postal code
         type: string
+        required: true
       topostalcode:
         description: Receiver postal code
         type: string
+        required: true
       addressLine:
         description: Specify address. This parameter can be maximum 35 character long. It will be for Bedriftspakke and På døren only.
         type: string
