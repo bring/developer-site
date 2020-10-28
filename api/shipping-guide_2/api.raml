@@ -321,7 +321,9 @@ documentation:
       Use this endpoint to get expected delivery, service categories and additional information.
 
       ### Measurements
-      For cargo services(5100, 5300, 9100, CARGO), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory
+      For cargo services(5100, 5300, 9100, CARGO), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory.
+      
+      Note: The prices for our revised services depends on volumetric weight: 5000, 5100, 5300, 5600, 5800, 4850 plus return services 9000, 9100, 9300 og 9600.  For these services, dimensions (L/W/H) is needed to calculate the expected price correctly. Dimensions are also used to decide if handling fee or wpecialgoods fee will apply to the shipment. You might leave dimensions empty in your request, but be aware that returned prices might be incorrect. 
 
   get:
     description: Get shipment prices
