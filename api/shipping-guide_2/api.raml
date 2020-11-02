@@ -461,7 +461,7 @@ documentation:
         example: CDA
         required: true
       estimateddeliverytime:
-        description: True if you want estimated delivery time of input pickup points. Also, 'withExpectedDelivery' flag should be set to True along with this. Eligible services are 5800 and SERVICEPAKKE.
+        description: True if you want estimated delivery time of input pickup points. Eligible services are 5800 and SERVICEPAKKE.
         type: boolean
         required: false
       pickuppoints:
@@ -502,6 +502,8 @@ documentation:
   displayName: SOAP
   description: |
       The SOAP Body follows the same XML Schema Definition (XSD) as stated above.
+      #### Estimated delivery times
+        To get estimated delivery times in the response, set `WithExpectedDelivery` and `WithEstimatedDeliveryTime` to true in the request along with specifying `PickupPoints`
       ### Request and response structure
         If you request shipping alternatives via the API your request and response will have to comply with the following schemas:
 
