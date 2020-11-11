@@ -187,13 +187,13 @@ layout: page
                 <h3>Response</h3>
                 {% endunless %}
                 {% for response in method[1].responses %}
-                  {% if response[1].status_code > 220 and response[1].status_code < 300 %}
+                  {% if response[1].status_code > 220 and response[1].status_code < 302 %}
                     {% comment %}
                     This is a really neat hack to use fake response statuses to allow for
                     additional examples, since RAML 0.8 only allows one example. This will
                     be fixed in RAML 1.0 which has support for multiple examples.
 
-                    If a status code is between 220 and 300, don't list it here. Instead,
+                    If a status code is between 220 and 302, don't list it here. Instead,
                     loop responses after this section and list those as additional examples.
                     {% endcomment %}
                     {% assign additional_examples = true %}
