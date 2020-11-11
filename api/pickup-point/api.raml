@@ -31,20 +31,11 @@ documentation:
 
       ### Rate limiting
 
-      The Pickup point API has a rate limit, primarily considered on a per-user basis. Currently it limits API users to no more than 60 requests within a minute from a single IP address.
+      The Pickup point API had a rate limit, primarily considered on a per-user basis.
 
-      Once you go over the rate limit, you will receive a response with an HTTP response code of 429 (Too Many Requests). The body of the response will consist of the following fields:
+      Since the Pickup Point API became authenticated from 01.11.2020, it is mandatory to be authenticated.
 
-      - `code`: `429`
-      - `error_message`: `The maximum number of requests per minute has been exceeded.`
-
-      As an additional note, While accessing the Pickup point API together with Shipping Guide API, the service list should be displayed even in the case that the request has been rate limited by the Pickup point API.
-
-      #### High-volume users
-
-      If you're a high-volume user of the Pickup Point API, please [contact us](mailto:developer@bring.com) to discuss your options.
-
-      When contacting Bring support include a description of how you are using the Pickup Point API, also an estimate of current request volumes.
+      There will be no rate limiting once you authenticate yourself before calling Pickuppoint API.
 
       #### Distinct PickupPointType
 
