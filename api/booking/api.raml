@@ -122,7 +122,7 @@ documentation:
     ### Example request
     There is an example request for 3584 in "More examples" section below. Booking 3570 is just a matter of changing the service code from 3584 to 3570. If you want to specify a different return address on the label than your actual sender address, use the returnTo party tag. When the returnTo party tag is populated the input will replace your actual sender address on the top left corner of the label.
 
-- title: Customs information
+- title: Customs Export information
   content: |
     It is required to pass customs information when booking the following services from Norway -> abroad:
 
@@ -165,6 +165,44 @@ documentation:
     There are two examples in the _More Examples_ section below that show requests containing customs information.
     * In one of these examples, importer not sent in request, hence the recipient is the importing party with (optional) `vatNumber`.
     * In the other example, there is importer party set in the request with the (optional) `vatNumber`.
+
+- title: VOEC - Customs declaration for import shipments to Norway
+  content: |
+    With this concept the recipient can skip paying VAT when picking up the parcel on a pickup point in Norway. Instead, the web shop collects the VAT directly when the recipient is paying in the checkout.
+    In that way, the Norwegian tax authorities doesn't need to demand this from the recipients via pickup points, the web shops would do the customs clearance.
+
+    This feature is applicable for following services, when booking from abroad -> Norway:
+
+    - Pickup Parcel
+    - Pickup Parcel Bulk
+    - Home Delivery Parcel
+
+    To avail this functionality, the following elements must be sent in the booking request:
+
+    - quantity (required)
+    - goodsDescription (required)
+    - customsArticleNumber (required)
+    - itemNetWeightInKg (required)
+    - tariffLineAmount (required)
+    - currency (required)
+    - countryOfOrigin (optional)
+    - In addition to that, web shop's **vatOnEcommerce** must be added on shipment level .
+
+    However, if VOEC functionality is not needed, then its not mandatory to fill in above information.
+    Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/).
+
+    ### Example
+
+    In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
+    t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
+
+    | Quantity | Description of contents | Customs tariff code | Total content net weight (kg) | Total content value | Currency | Country of origin |
+    |:--------:|:-----------------------:|:-------------------:|:----------------------------:|:-------------------:|:--------:|:-----------------:|
+    | `2` | `shampoo` | `33.05.1000` | `3.0` | `200` | `NOK` | `CH`|
+    | `5` | `cotton t-shirts` | `61.09.1000` | `2.5` | `1000`| `NOK`| `PL` |
+    | `1` | `wool jacket` | `61.04.3100` | `2.0` | `750` | `NOK`| `DE` |
+
+    There is an example in the _More Examples_ section below that shows request containing customs information for import.
 
 /customers{mediaTypeExtension}:
   displayName: List customer numbers
@@ -495,6 +533,10 @@ documentation:
             type: string
             enum: [SALE_OF_GOODS, RETURNED_GOODS, GIFT, COMMERCIAL_SAMPLE, DOCUMENTS, OTHER]
             required: true
+        vatOnEcommerce:
+            description: VAT On Ecommerce ID used for customs import to Norway. This field is mandatory when sending customs import information in the request. It's must be 7 digits number.
+            type: integer
+            required: true
         nonStandardCourierProductCode:
             description: Specify the product code for customize courier services. This field is mandatory when request is for Non Standard Courier.
             type: string
@@ -737,6 +779,15 @@ documentation:
                 application/xml:
                   example: !include examples/customsDeclarationWithImporter.xml
                   
+      293:
+              displayName: VOEC - Customs Import declaration
+              description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item, along with vatOnEcommerce field.
+              body:
+                application/json:
+                  example: !include examples/customsImportDeclaration.json
+                application/xml:
+                  example: !include examples/customsImportDeclaration.xml
+
       294:
               displayName: Mailbox parcel
               description: Recipient `phoneNumber` and/or recipient `email` is required
