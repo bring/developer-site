@@ -16,9 +16,8 @@ layout: redesign
     </div><!--
  --><div class="layout__item palm-one-whole desk-three-quarters">
       <article class="api">
-
-        <section class="api__section" id="">
-          <h1 class="api__title">API Service List</h1>
+        <h1 class="api__title">API Service List</h1>
+        <section class="api__section" id="apiServiceList">
           <p>This page lists all the services available in the <a href="/api/shipping-guide_2/">Shipping Guide API</a> and <a href="/api/booking/">Booking API</a></p>
         </section>
 
@@ -1054,60 +1053,54 @@ layout: redesign
         </tr>
 
         <tr class="even">
-          <td>Indoor Light</td>
-          <td>INDOOR_LIGHT</td>
-          <td>No</td>
-        </tr>
-
-        <tr>
           <td>Single Indoor Express</td>
           <td>SINGLE_INDOOR_EXPRESS</td>
           <td>No</td>
         </tr>
 
-        <tr class="even">
+        <tr>
           <td>Double Indoor Express</td>
           <td>DOUBLE_INDOOR_EXPRESS</td>
           <td>No</td>
         </tr>
 
-        <tr>
+        <tr class="even">
           <td>Indoor Light Express</td>
           <td>INDOOR_LIGHT_EXPRESS</td>
           <td>No</td>
         </tr>
 
-        <tr class="even">
+        <tr>
           <td>Single Indoor Weekend</td>
           <td>SINGLE_INDOOR_WEEKEND</td>
           <td>No</td>
         </tr>
 
-        <tr>
+        <tr class="even">
           <td>Double Indoor Weekend</td>
           <td>DOUBLE_INDOOR_WEEKEND</td>
           <td>No</td>
         </tr>
 
-        <tr class="even">
+        <tr>
           <td>Indoor Light Weekend</td>
           <td>INDOOR_LIGHT_WEEKEND</td>
           <td>No</td>
         </tr>
 
-        <tr>
+        <tr class="even">
           <td>Single Indoor Weekend Express</td>
           <td>SINGLE_INDOOR_WEEKEND_EXPRESS</td>
           <td>No</td>
         </tr>
 
-        <tr class="even">
+        <tr>
           <td>Double Indoor Weekend Express</td>
           <td>DOUBLE_INDOOR_WEEKEND_EXPRESS</td>
           <td>No</td>
         </tr>
 
-        <tr>
+        <tr class="even">
           <td>Indoor Light Weekend Express</td>
           <td>INDOOR_LIGHT_WEEKEND_EXPRESS</td>
           <td>No</td>
@@ -1137,7 +1130,7 @@ layout: redesign
           <td>No</td>
         </tr>
 
-        <tr class="even">
+        <tr>
           <td>Return Home Delivery</td>
           <td>HOME_DELIVERY_RETURN</td>
           <td>Yes</td>
@@ -1149,7 +1142,7 @@ layout: redesign
            <td>Yes</td>
         </tr>
 
-        <tr class="even">
+        <tr>
           <td>Return Curbside</td>
           <td>RETURN_CURBSIDE</td>
           <td>Yes</td>
@@ -1162,6 +1155,33 @@ layout: redesign
           </tr>
 
         </tbody></table>
+          <h3>Package Type supported by Home Delivery Services</h3>
+          <table>
+            <thead><tr><th>Package Type</th><th>Package Type code</th><th>Booking API</th></tr></thead>
+            <tr>
+              <td>HD_EUR_PALLET</td>
+              <td>hd_eur</td>
+              <td>Yes</td>
+            </tr>
+
+            <tr class="even">
+              <td>HD_HALF_PALLET</td>
+              <td>hd_half</td>
+              <td>Yes</td>
+            </tr>
+
+            <tr>
+              <td>HD_QUARTER_PALLET</td>
+              <td>hd_quarter</td>
+              <td>Yes</td>
+            </tr>
+
+            <tr class="even">
+              <td>HD_SPECIAL_PALLET</td>
+              <td>hd_loose</td>
+              <td>Yes</td>
+            </tr>
+          </table>
 
       </section>
 
@@ -1431,7 +1451,7 @@ layout: redesign
               <td>Label Free (1288)</td>
               <td>ALL</td>
               <td>ALL</td>
-              <td></td>
+              <td>ALL</td>
               <td></td>
               <td></td>
               <td></td>
@@ -1568,7 +1588,7 @@ layout: redesign
               <td>ALL</td>
               <td></td>
               <td>ALL</td>
-              <td></td>
+              <td>ALL</td>
               <td>ALL</td>
             </tr>
             <tr>
@@ -1605,6 +1625,364 @@ layout: redesign
             </tr>
             </tbody>
           </table>
+          <h3>Home Delivery Services</h3>
+          <table>
+            <thead>
+            <tr>
+              <th>Vases</th>
+              <th>DOUBLE INDOOR<br><p class="alignDown">(DOUBLE_INDOOR)</p></th>
+              <th>DOUBLE INDOOR EVENING<br><p class="alignDown">(DOUBLE_INDOOR_EVENING)</p></th>
+              <th>CURBSIDE<br><p class="alignDown">(CURBSIDE)</p></th>
+              <th>CURBSIDE EVENING<br><p class="alignDown">(CURBSIDE_EVENING)</p></th>
+              <th> 3332<br><p class="alignDown">(_3332)</p></th>
+              <th>SINGLE INDOOR<br><p class="alignDown">(SINGLE_INDOOR)</p></th>
+              <th>CURBSIDE EXPRESS<br><p class="alignDown">(CURBSIDE_EXPRESS)</p></th>
+              <th>CURBSIDE WEEKEND<br><p class="alignDown">(CURBSIDE_WEEKEND)</p></th>
+              <th>CURBSIDE WEEKEND EXPRESS<br><p class="alignDown">(CURBSIDE_WEEKEND_EXPRESS)</p></th>
+              <th>SINGLE INDOOR EXPRESS<br><p class="alignDown">(SINGLE_INDOOR_EXPRESS)</p></th>
+              <th>DOUBLE INDOOR EXPRESS<br><p class="alignDown">(DOUBLE_INDOOR_EXPRESS)</p></th>
+              <th>INDOOR LIGHT EXPRESS<br><p class="alignDown">(INDOOR_LIGHT_EXPRESS)</p></th>
+              <th>SINGLE INDOOR WEEKEND<br><p class="alignDown">(SINGLE_INDOOR_WEEKEND)</p></th>
+              <th>DOUBLE INDOOR WEEKEND<br><p class="alignDown">(DOUBLE_INDOOR_WEEKEND)</p></th>
+              <th>INDOOR LIGHT WEEKEND<br><p class="alignDown">(INDOOR_LIGHT_WEEKEND)</p></th>
+              <th>SINGLE INDOOR WEEKEND EXPRESS<br><p class="alignDown">(SINGLE_INDOOR_WEEKEND_EXPRESS)</p></th>
+              <th>DOUBLE INDOOR WEEKEND EXPRESS<br><p class="alignDown">(DOUBLE_INDOOR_WEEKEND_EXPRESS)</p></th>
+              <th>INDOOR LIGHT WEEKEND EXPRESS<br><p class="alignDown">(INDOOR_LIGHT_WEEKEND_EXPRESS)</p></th>
+              <th>DOUBLE INDOOR NO<br><p class="alignDown">(DOUBLE_INDOOR_NO)</p></th>
+              <th>SINGLE INDOOR EVENING<br><p class="alignDown">(SINGLE_INDOOR_EVENING)</p></th>
+              <th>INDOOR LIGHT EVENING<br><p class="alignDown">(INDOOR_LIGHT_EVENING)</p></th>
+              <th>HOME DELIVERY RETURN<br><p class="alignDown">(HOME_DELIVERY_RETURN)</p></th>
+              <th>RETURN INDOOR<br><p class="alignDown">(RETURN_INDOOR)</p></th>
+              <th>RETURN CURBSIDE<br><p class="alignDown">(RETURN_CURBSIDE)</p></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SENDER COUNTRIES</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>ALL</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+            </tr>
+            <tr>
+              <td>DESTINATION</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+            </tr>
+            <tr>
+              <td>DOMESTIC ALLOWED IN</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>DK, NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+            </tr>
+            <tr>
+              <td>Flex Delivery (FLEX_DELIVERY<sup>6</sup>)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>ID Verification (1133)</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>SWAP (1122)</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>RECYCLE (1123)</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>UNWRAP (1139)</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>STANDARD_INSTALLATION (1124)</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>CUSTOM_INSTALLATION (1125)</td>
+              <td>NO, SE</td>
+              <td>NO, SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Signature Required (1280)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Individual Verification (1134)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>SE</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
           <br><sup>1 Use Shipping Guide Code FLEXDELIVERY for FLEX_DELIVERY<br>2 Use Shipping Guide Code DELIVERYINDOOR
           for DELIVERY_INDOORS<br>3 Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina
           Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia,
@@ -1614,7 +1992,7 @@ layout: redesign
           Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon,
           Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe.</sup></section>
         </section>
-             <section class="api__section" id="">
+             <section class="api__section" id="disgus">
         {% include disqus.html %}
       </section>
 

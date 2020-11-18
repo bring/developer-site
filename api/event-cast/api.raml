@@ -38,11 +38,11 @@ types:
       id:
         type: string
         required: false
-        description: Represents an unique identifiaction
+        description: Represents an unique identifiaction. This value can be maximum 36 characters long
       authenticator:
         type: string
         required: false
-        description: Represents your authentication identification
+        description: Represents your authentication identification. This value can be maximum 40 characters long
       trackingId:
         type: string
         required: true
@@ -67,12 +67,15 @@ types:
       url:
         type: string
         required: true
+        description: This value can be maximum 250 characters long
       content_type:
         type: string
         required: false
+        description: This value can be maximum 40 characters long
       headers:
         type: ConfigurationHeader[]
         required: false
+        description: The combined length of all the keys and values of header can be maximum 1024 characters long(including the separators)
   ConfigurationHeader:
     type: object
     properties:
@@ -106,28 +109,22 @@ documentation:
 
     The Event Cast API makes you subscribe to such events using Webhooks.
 
-    #### Webohook Definition
+    #### Webhook Definition
     > A Webhook in web development is a method of augmenting or altering the behaviour of a web page, or web application, with custom callbacks.
     > These callbacks may be maintained, modified, and managed by third-party users and developers who may not necessarily be affiliated with the originating website or application.
 
-    #### Webhooks in Bring
+    ### Webhooks in Bring
     In the context of Bring, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
     we'll send a HTTP POST to your callback URL that were defined during the Webhook registration.
 
     Using Webhooks is quite simple, and allows for immediate feedback based on the event that occured for the subscribed entity.
     Additionally, it allows integrations of customers to become simpler, as no scheduled mechanism is required to be implemented.
     You basically just define an endpoint that accepts HTTP POST, and the event details will be sent there - quite amazing 🙌
+
 - title: Authentication
   content: |
-    In order to use the API, you will need to register with Mybring and create an API key. Whenever issuing a request, the following headers is required to be present.
+    The Event Cast API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-    | Header | Example | Comment | Required |
-    |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID | ✅ |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd` | Mybring login's API key | ✅ |
-    | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies you | |
-
-    **Note:** See the [getting started guide on authentication](/api/#authentication) if you want to know more about how to get started with authentication for APIs in Mybring.
 - title: API limitations
   content: |
     There is some known/deliberate limitations for the API:
@@ -137,6 +134,7 @@ documentation:
     | All requests | The Webhook API allows a maximum of **50 concurrent requests** per user |
     | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to **100 per request**. If you have more than 100 at the time, split to mulitple requests using the batch-API |
     | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of **10 concurrent requests** per user |
+
 - title: Events
   content: |
     When registering for a Webhook you can choose between a range of different event groups that you can subscribe for.
@@ -146,13 +144,13 @@ documentation:
     Each of the event groups corresponds to a certain set of actions that can happen to the package/shipment you subscribe for. For instance, if you subscribe to `DELIVERED`, all internal Bring-events
     will trigger a request to your defined callback URL.
 
-    #### Event groups
+    ### Event groups
 
     Default set of subscribeable event groups. Notice that this list is subject for change.
 
     | Event | Description |
     |:-------|:--------|
-    | `ARRIVED_DELIVERY` | Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading.  |
+    | `ARRIVED_DELIVERY` | Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading. |
     | `ARRIVED_COLLECTION` | Arrived for collection at pickup point |
     | `ATTEMPTED_DELIVERY` | The package has been attempted delivered at the door. Depending on the service it will be tried again or sent to closest pickup point. |
     | `CUSTOMS` | Package is in customs clearance. |
@@ -164,12 +162,12 @@ documentation:
     | `DELIVERY_ORDERED` | Home delivery has been ordered |
     | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |
     | `HANDED_IN` | Package has been handed in to Bring. |
-    | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country.  |
+    | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country. |
     | `IN_TRANSIT` | Package is in transit. |
     | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
     | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
     | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
-    | `RETURN` | The package has been returned to sender.  |
+    | `RETURN` | The package has been returned to sender. |
     | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
     | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
 
@@ -209,7 +207,7 @@ documentation:
 - title: Payload
   content: |
 
-    #### Payload delivery headers
+    ### Payload delivery headers
 
     `HTTP POST` payloads that are delivered to your Webhook's configured URL endpoint contains several Bring specific headers:
 
@@ -220,7 +218,7 @@ documentation:
     | `X-bring-Version` | Indicates the version of application |
     | `<your headers>` | Any headers that were specified in the Webhook configuration will also be appended |
 
-    #### Example
+    ### Example
 
     Requests issued from Bring to your endpoint will look similar to this:
 
@@ -247,32 +245,32 @@ documentation:
 - title: Q & A
   content: |
 
-    #### Can I have multiple Webhooks for the same parcel?
+    **Can I have multiple Webhooks for the same parcel?**<br>
     You can register for multiple Webhooks on the same parcel/shipment, as long as the event groups are different for each registration.
 
-    #### How many active Webhooks can I have simultaneously?
+    **How many active Webhooks can I have simultaneously?**<br>
     Currently there is no limitation.
 
-    #### Is the expiration duration configurable?
+    **Is the expiration duration configurable?**<br>
     No.
 
-    #### Can I get a history of events that were sent for a subscription?
+    **Can I get a history of events that were sent for a subscription?**<br>
     Not in this version. It may be available in the future. Please note that you may use the [Tracking API](/api/tracking) if you'd like the entire list of events that has happened for a lifecycle related to a shipment.
 
-    #### Will I be able to see my previous/expired Webhooks (active and inactive)?
+    **Will I be able to see my previous/expired Webhooks (active and inactive)?**<br>
     No.
 
-    #### What happens if our endpoint is down and a callback is being sent?
+    **What happens if our endpoint is down and a callback is being sent?**<br>
     We'll try issuing a request to your defined endpoint up to three - 3 - times with a delay on 30 minutes for the two first, then wait an hour for the last retry.
     After this, callbacks will not be retried.
 
-    #### Do you support wildcard events/event groups (e.g `*` or `ALL`)?
+    **Do you support wildcard events/event groups (e.g `*` or `ALL`)?**<br>
     No.
 
-    #### Do you support modifying existing active webhooks?
+    **Do you support modifying existing active webhooks?**<br>
     No.
 
-    #### My shipment is not yet registered with Bring, will registering for Webhook work related to that tracking number?
+    **My shipment is not yet registered with Bring, will registering for Webhook work related to that tracking number?**<br>
     Yes.
 
     When you subscribe for a parcel that does not yet exist in Bring' systems, a retry mechanism will try for up to two - 2 - days to ensure that the Webhook will be registered when the parcel is found internally.

@@ -263,16 +263,19 @@ types:
 documentation:
 - title: Introduction
   content: |
+      <div class="api__warning-box">
+        <strong>The Tracking API changes from 01.01.2021 and 01.03.2021</strong>
+          <br><br>
+            We have done a recent change in Tracking, where if the user have specified the wanted delivery date, then that date is set in the field for the estimated delivery date as well, as there is no point having to set estimation date which is different from the configured wanted delivery date.
+          <br><br>
+            With reference to the change, the existing field "dateOfEstimatedDelivery" will have the correct information regarding delivery date and therefore, the field "dateOfDelivery" in the open as well as logged in Tracking API versions will be set to Blank from 01.Jan.2021 for backward compatibility and gradually be removed effective from date 01.Mar.2021.
+          <br><br>
+      </div>
+
       The Tracking API provides the opportunity to track shipments by reference, package or shipment number.
       It is an easy way to display details and the status of shipments.
       The information available in this API is the same that is publically available from the [Tracking web site](http://tracking.bring.com/).
 
-- title: Formats
-  content: |
-    The Tracking API generates the following formats:
-    - ```XML```
-    - ```JSON```
-    - ```JSONP```
 - title: Versioning
   content: |
     Latest Tracking API version: `v2`
@@ -309,26 +312,24 @@ documentation:
 
 - title: Authentication
   content: |
-    If you have a Mybring user, you can log in to the Tracking API. Authenticated requests have the following benefits:
-
+    If you have a Mybring user, you can perform authenticated requests. They have the following benefits:
     - More information about parcels:
-      - Prices
+      - Price
       - Name
       - Address
       - Signatures for proof of delivery
     - Less strict rate limits
 
-    See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
+    To make authenticated Tracking API requests, you will have to use the endpoint [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/) and you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-    | Header | Example | Comment |
-    |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/` | A URL that sort of identifies where you're using the APIs. |
 
-    The above headers must be present whilst using our logged-in variant of the tracking api. Also, you will have to use the endpoint:
+- title: Formats
+  content: |
+    The Tracking API generates the following formats:
+    - ```XML```
+    - ```JSON```
+    - ```JSONP```
 
-        https://api.bring.com/tracking/api/
 - title: JSON API
   content: |
       We follow the [JSON API](http://jsonapi.org/) specification with one
@@ -382,7 +383,7 @@ documentation:
 
           | Event | Description |
           |:-------|:--------|
-          | `ARRIVED_DELIVERY` | Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading.  |
+          | `ARRIVED_DELIVERY` | Arrived Delivery point - This is when a container arrives at recipients address, and can start unloading. |
           | `ARRIVED_COLLECTION` | Arrived for collection at pickup point |
           | `ATTEMPTED_DELIVERY` | The package has been attempted delivered at the door. Depending on the service it will be tried again or sent to closest pickup point. |
           | `CUSTOMS` | Package is in customs clearance. |
@@ -394,12 +395,12 @@ documentation:
           | `DELIVERY_ORDERED` | Home delivery has been ordered |
           | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |
           | `HANDED_IN` | Package has been handed in to Bring. |
-          | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country.  |
+          | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country. |
           | `IN_TRANSIT` | Package is in transit. |
           | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
           | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
           | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
-          | `RETURN` | The package has been returned to sender.  |
+          | `RETURN` | The package has been returned to sender. |
           | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
           | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
           | `UNKNOWN` | Represents unknown / undefined events |

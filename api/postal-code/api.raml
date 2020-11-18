@@ -6,7 +6,7 @@ baseUri: https://api.bring.com/pickuppoint/api
 documentation:
 - title: Introduction
   content: |
-      <div class="api__warning-box" align="justify">
+      <div class="api__warning-box">
         Integration with shipping guide for postal code lookup will soon be deprecated (Base url: https://api.bring.com/shippingguide/api). We recommend switching to pickup point if you have not already done so (Base url: https://api.bring.com/pickuppoint/api).
       </div>
 
@@ -19,6 +19,11 @@ documentation:
       The API has two interfaces: XML and JSON.
 
       It is NOT possible to get data in batch or get list of valid postal codes for a given country at a regular interval.
+
+- title: Authentication
+  content: |
+      The Postal Code API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+
 
 - title: Supported Countries
   content: |
@@ -52,21 +57,6 @@ documentation:
       | SPECIALCUSTOMER | Special, e.g special return postal codes for selected customers. |
       | SPECIALNOSTREET | Special, e.g special postal codes for customers with old "serviceboks". |
       | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
-
-- title: Steps for Authentication
-  content: |
-
-      Before you can begin using the postal code API you'll have to do the following:
-         * [Sign up for a Mybring account](https://www.mybring.com/signup/register/user) if you do not already have one. If you're already registered in Mybring, head to the [settings and API](https://www.mybring.com/useradmin/account/settings/api) page to get your API key.
-         * [Generate an API key](/api/#authentication) for your user
-
-      ### 1. Get your API key from Mybring
-      To make API requests you will need an API key. Click the link below, which sends you to your "Settings and API" page in Mybring profile administration. Scroll down to the "API key" section. Your generated API key which you will use to authenticate your requests can be found here.
-
-      <a href="https://www.mybring.com/useradmin/account/settings/api">Get API key</a>
-
-      ### 2. Add authentication headers
-      A description of the headers can be found in [Getting Started / Authentication](/api/#authentication).
 
 - title: Support CORS
   content: |

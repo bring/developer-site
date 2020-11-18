@@ -9,7 +9,6 @@
     background-color: $background-grey;
     padding-top: $spacing;
     padding-bottom: $spacing;
-    margin-top: $spacing;
 
     a {
         color: $color-text;
@@ -22,16 +21,13 @@
     }
     a:hover {
         background-color: rgba(0,0,0,0.1);
-    }
-
-    // this is the same as @include media-query(desk) + and min-height
-    @media screen and (min-width: 64em) and (min-height: 500px) {
-        margin-right: $spacing;
+        text-decoration: none;
     }
 }
 
 .sitemenu__apititle {
     a {
+        font-weight: bold;
         line-height: 1;
         padding-top: $spacing / 2;
         padding-bottom: $spacing / 2;

@@ -17,25 +17,17 @@ documentation:
 
     Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
 
-    ## Error handling
+- title: Authentication
+  content: |
+    The Order Management API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
+- title: Error handling
+  content: |
     When using the Order Management, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
 
     How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
 
     See [the list of error codes](#list-error-codes) for hints on how to implement error handling.
-
-- title: Authentication
-  content: |
-    The Order Management API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
-
-    | Header | Example | Comment |
-    |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-    | `X-Bring-Client-URL` | `https://example.com/ ` | A URL that sort of identifies where you're using the APIs. |
-
-    Those headers must be set for all endpoints documented below.
 
 /purchaseorderCustomer/{customerId}:
   displayName: Check if customer is valid for order management

@@ -1,6 +1,7 @@
 {
   "allowedModifications": [
-    "MODIFY_COD"
+    "MODIFY_COD",
+    "CHANGE_ADDRESS"
   ],
   "failureCauses": {
     "STOP_DELIVERY": [

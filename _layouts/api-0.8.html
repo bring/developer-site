@@ -2,17 +2,17 @@
 layout: page
 ---
           <article class="api {{ page.api.title | remove:'API' | slugify }}">
-            <section id="api-documentation" class="api__section">
             <h1 class="api__title">{{ page.api.title }}</h1>
+            <section id="api-documentation" class="api__section">
               {% for chapter in page.api.documentation %}
               <h2 class="anchored">{{ chapter.title }}</h2>
               {{ chapter.content | markdownify }}
               {% endfor %}
             </section>
             <section class="api__section">
-              <h2 class="anchored">Overview of endpoints</h2>
+              <h2 class="anchored" id="overview-of-endpoints">Overview of endpoints</h2>
 
-              <h3 class="delta">Base URL</h3>
+              <h3>Base URL</h3>
               <pre>{{ page.api.base_uri }}</pre>
 
               <table class="linked-rows table--cosy table--rows">
@@ -38,13 +38,13 @@ layout: page
               {% for method in resource.methods %}
               <section class="api__section">
 
-                <h1 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h1>
+                <h2 class="large anchored" id="{{ resource.display_name | slugify }}">{{ resource.display_name }}</h2>
 
                 {% if resource.description %}
                 {{ resource.description | markdownify }}
                 {% endif %}
 
-                <h2 class="delta">URL</h2>
+                <h3>URL</h3>
                 {% if resource.uri_parameters contains 'mediaTypeExtension' %}
                   {% assign url_output = '' %}
                   {% for extension in resource.uri_parameters.mediaTypeExtension.enum %}
@@ -69,7 +69,8 @@ layout: page
                     or method[1].headers.size > 0 
                     or method[1].query_parameters.size > 0
                     or method[1].field_desc.size > 0 %}
-                <h2 class="delta">Request params</h2>
+
+                <h3>Request params</h3>
                 {% endif %}
 
                 {% comment %}
@@ -121,7 +122,8 @@ layout: page
                 {% endcomment %}
 
                 {% if method[1].field_desc.size > 0 %}
-                  <h2 class="delta">Request fields</h2>
+
+                  <h3>Request fields</h3>
                   {% endif %}
                 {% if method[1].fielddesc.size > 0 %}
                 {% assign include_params = method[1].field_desc %}
@@ -137,7 +139,8 @@ layout: page
                 ----------------------------------------
                 {% endcomment %}
                 {% if method[1].bodies.size > 0 %}
-                  <h2 class="delta">Request body</h2>
+
+                  <h3>Request body</h3>
                   {% comment %}
 
                   Tabs for JSON, XML, SOAP
@@ -181,22 +184,23 @@ layout: page
                 ----------------------------------------
                 {% endcomment %}
                 {% unless method[1].responses == empty %}
-                <h2>Response</h2>
+                <h3>Response</h3>
                 {% endunless %}
                 {% for response in method[1].responses %}
-                  {% if response[1].status_code > 220 and response[1].status_code < 300 %}
+                  {% if response[1].status_code > 220 and response[1].status_code < 302 %}
                     {% comment %}
                     This is a really neat hack to use fake response statuses to allow for
                     additional examples, since RAML 0.8 only allows one example. This will
                     be fixed in RAML 1.0 which has support for multiple examples.
 
-                    If a status code is between 220 and 300, don't list it here. Instead,
+                    If a status code is between 220 and 302, don't list it here. Instead,
                     loop responses after this section and list those as additional examples.
                     {% endcomment %}
                     {% assign additional_examples = true %}
                     {% continue %}
                   {% endif %}
-                  <h3 class="delta">{{ response[1].display_name }} ({{ response[1].status_code }})</h3>
+
+                  <h4>{{ response[1].display_name }} ({{ response[1].status_code }})</h4>
                   {% if response[1].description %}
                     {{ response[1].description | markdownify }}
                   {% endif %}
@@ -247,17 +251,18 @@ layout: page
                 {% endfor %}
 
                 {% if additional_examples %}
-                  <h2>More examples</h2>
+                  <h3>More examples</h3>
 
-                  <div class="collapsible u-mb++">
-                    <ul class="list-block list-block--small">
+                  <div class="collapsibles">
                     {% for response in method[1].responses %}
-                      {% unless response[1].status_code > 220 and response[1].status_code < 300 %}
+                      {% unless response[1].status_code > 220 and response[1].status_code < 302 %}
                         {% continue %}
                       {% endunless %}
                       {% assign example_id = response[1].display_name | append: response[1].status_code | slugify %}
-                      <li>
-                        <a href="#" data-collapse="#{{ example_id }}" class="collapsible__toggler collapsible__toggler--collapsed">{{ response[1].display_name }}</a>
+                      <div class="collapsible">
+                        <a href="#" data-collapse="#{{ example_id }}" class="collapsible__toggler collapsible__toggler--collapsed"><svg class="collapsible__toggler__icon" width="16" height="16" viewBox="0 0 320 512">
+                          <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>
+                          <span>{{ response[1].display_name }}</span></a>
                         <div id="{{ example_id }}" class="collapsible__item collapsible__item--collapsed">
 
                         {% if response[1].description %}
@@ -290,9 +295,8 @@ layout: page
                           </div>
                         {% endif %} {% comment %} /if response.bodies.size > 0{% endcomment %}
                         </div>
-                      </li>
+                      </div>
                     {% endfor %}
-                    </ul>
                   </div>
                 {% endif %}
 

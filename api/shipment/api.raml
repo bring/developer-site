@@ -1193,15 +1193,7 @@ documentation:
 
 - title: Authentication
   content: |
-    The API requires authentication for all its endpoints. See the [getting started guide on authentication](/api/#authentication) if you're not sure what this means.
-
-
-    | Header | Example | Comment |
-    |:-------|:--------|:--------|
-    | `X-MyBring-API-Uid` | `john.doe@example.com` | Mybring login ID |
-    | `X-MyBring-API-Key` | `1234abc-abcd-1234-5678-abcd1234abcd ` | Mybring login's API key |
-
-    Those headers must be present for authenticating requests.
+    The Shipment API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
 /sendshipment?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment

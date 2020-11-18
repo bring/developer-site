@@ -3,17 +3,11 @@ layout: redesign
 ---
 
 
-    <picture class="megaheader">
-      <source srcset="{{ site.baseurl }}/img/megaheader/picture-a.jpg" media="(min-width: 1000px)">
-      <source srcset="{{ site.baseurl }}/img/megaheader/picture-b.jpg" media="(max-width: 1000px)">
-      <img src="{{ site.baseurl }}/img/megaheader/picture-b.jpg" srcset="{{ site.baseurl }}/img/megaheader/picture-b.jpg 1000w, {{ site.baseurl }}/img/megaheader/picture-a.jpg 2000w" alt="">
-    </picture>
+    <div class="intro">
+      <h2 class="intro__tagline">Tools to help you integrate services from Bring with your&nbsp;systems</h2>
+    </div>
     <div class="welcome">
-
       <div class="wrapper">
-
-          <h1 class="welcome__title">Bring Developer</h1>
-          <h2 class="welcome__tagline">Tools to help you integrate services from Bring with your&nbsp;systems.</h2>
           <ul class="layout welcome__list">
             <li class="layout__item palm-one-whole lap-and-up-one-third welcome__item">
               <a href="{{ site.baseurl }}/api/" class="welcome__link">
@@ -34,14 +28,15 @@ layout: redesign
     </div>
 
     <div class="wrapper">
-      <div class="api__warning-box" align="justify">
-        <strong>The Pickup Point API becomes authenticated from 01.11.2020</strong>
+      <div class="api__warning-box">
+        <strong>The Pickup Point API became authenticated from 01.11.2020</strong>
         <br><br>
-        Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
+        We have now started to limit the data in the responses for unauthenticated requests:
+            
+             - From 01.11.2020, coordinates and map links have been removed from all responses. 
+             - From 09.11.2020, only 1 pickup point will be returned in the responses for the postal code and location endpoints
 
-        To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.11.2020.
-
-        We recommend making the <a href="/api/pickup-point/#steps-for-authentication">adjustment</a> already now, well in advance of summer vacations and peak season.
+        We recommend making the <a href="/api/pickup-point/#steps-for-authentication">adjustment</a> as soon as possible to avoid any problems with your integration setup during peak.
         <br><br>
       </div>
     {% include apiflock.html %}
