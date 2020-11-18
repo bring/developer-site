@@ -656,6 +656,529 @@ types:
            attributes:
              type: OrderWithIdAndEdiMessage
              description: Label Order properties.
+  CreateShipmentRequest:
+    type: object
+    properties:
+      RequestVersion:
+        type: number
+        description: Version number for the request
+      RequestDate:
+        type: datetime
+        description: Request date
+      Shipment:
+        type: Shipment
+  Shipment:
+    type: object
+    properties:
+      updateIndicator:
+        type: string
+      shipmenttype:
+        type: string
+      ShipmentHeaders:
+        type: ShipmentHeaders
+      DateAndTimes:
+        type: DateAndTimes[]
+      Sender:
+        type: BasicPartyTYPE
+      Receiver:
+        type: BasicPartyTYPE
+      AdditionalParty:
+        type: PartyTYPE[]
+      ProductAndService:
+        type: ProductAndService
+      DeliveryTerms:
+        type: DeliveryTerms
+      CashOnDelivery:
+        type: CashOnDelivery
+      GoodsItem:
+        type: GoodsItem[]
+  ShipmentHeaders:
+    type: object
+    properties:
+      SendersReference:
+        type: string
+      ReceiversReference:
+        type: string
+      NumberOfPackages:
+        type: string
+      AdditionalReference:
+        type: ReferenceTYPE[]
+      FreeText:
+        type: FreeTextTYPE[]
+      GrossWeight:
+        type: ccWeight
+      GrossVolume:
+        type: ccVolume
+      Dimensions:
+        type: DimensionsTYPE
+      LoadingMetres:
+        type: number
+      PalletFootPrints:
+        type: integer
+      HazardPoints:
+        type: integer
+      ExchangableEquipment:
+        type: ExchangableEquipment
+      shipmentId:
+        type: string
+  DateAndTimes:
+    type: object
+    properties:
+      subClass:
+        type: string
+        description: Type of datetime
+        example: DocumentNumber
+      DateTime:
+        type: datetime
+        description: Date and Time
+        example: 2018-11-22T08:58:52
+  BasicPartyTYPE:
+    type: object
+    properties:
+      partyId:
+        type: string
+      subPartyId:
+        type: string
+      Name:
+        type: string
+      Address:
+        type: AddressTYPE
+      ContactName:
+        type: string
+      Phone:
+        type: string
+      MobilePhone:
+        type: string
+      Email:
+        type: string
+      Fax:
+        type: string
+      Reference:
+        type: ReferenceTYPE[]
+  PartyTYPE:
+      type: object
+      properties:
+        subClass:
+          type: string
+        partyId:
+          type: string
+        subPartyId:
+          type: string
+        Name:
+          type: string
+        Address:
+          type: AddressTYPE
+        ContactName:
+          type: string
+        Phone:
+          type: string
+        MobilePhone:
+          type: string
+        Email:
+          type: string
+        Fax:
+          type: string
+        Reference:
+          type: ReferenceTYPE[]
+  ProductAndService:
+    type: object
+    properties:
+      ProductCode:
+        type: string
+      AdditionalService:
+        type: AdditionalService[]
+      TariffReference:
+        type: string
+      NatureOfCargo:
+        type: string
+  DeliveryTerms:
+    type: object
+    properties:
+      ConditionCode:
+        type: string
+      Location:
+        type: DeliveryTermsLocation
+      termsType:
+        type: string
+        enum:
+        - Incoterms
+        - Freightterms
+        - Combiterms
+        - PrePaid
+        - ThirdParty
+  CashOnDelivery:
+    type: object
+    properties:
+      TransactionIdentifier:
+        type: CashOnDeliveryTransactionIdentifier
+      Amount:
+        type: ccAmount
+      ControlDigit:
+        type: integer
+      DocumentId:
+        type: string[]
+      MonetaryAccount:
+        type: CashOnDeliveryMonetaryAccount
+      codType:
+        type: string
+  GoodsItem:
+    type: object
+    properties:
+      PackageTypeCode:
+        type: string
+      GoodsDescription:
+        type: string
+      LoadCarrier:
+        type: string
+      SealId:
+        type: string
+      Temperature:
+        type: GoodsItemTemperature
+      Package:
+        type: Package[]
+      CustomsDetails:
+        type: CustomsDetails[]
+      DangerousGoods:
+        type: GoodsItemDangerousGoods[]
+      PackingDetails:
+        type: PackingDetails[]
+  ReferenceTYPE:
+    type: object
+    properties:
+      ReferenceValue:
+        type: string
+        description: Extra Reference
+        example: 4440/0189981/WEJ
+      referenceType:
+        type: string
+        description: ReferenceType
+        enum:
+        - DESPATCH_ADVICE_NUMBER (AAK)
+        - TRANSPORT_DOCUMENT_NUMBER (AAS)
+        - CUSTOMS_DECLARATION_NUMBER (ABT)
+        - ACCOUNT_NUMBER (ADE)
+        - PROJECT_NUMBER (AEP)
+        - SECONDARY_CUSTOMS_REFERENCE (AFM)
+        - TEMPORARY_IMPORTATION_DOCUMENT_NUMBER (AGM)
+        - SENDERS_REFERENCE (AGO)
+        - AIR_WAYBILL (AWB)
+        - BILL_OF_LADING (BM)
+        - BOOKING_REFERENCE (BN)
+        - ROAD_CONSIGNMENT_NOTE (CMR)
+        - SHIPMENT_REFERENCE (SRN)
+        - TRANSPORT_INSTRUCTION (TIN)
+        - GOODS_NUMBER (XC)
+        - MESSAGE_SENDERS_IDENTITY (MS - EDI Ident (UNB in EDIFACT))
+  FreeTextTYPE:
+    type: object
+    properties:
+      Text:
+        type: FreeTextTYPEText[]
+      usageCode:
+        type: string
+  ccWeight:
+    type: object
+    properties:
+      unitCode:
+        type: ccWeightUnitCode
+      Value:
+        type: number
+        description: Weight Value
+        example: 2.33
+  ccVolume:
+    type: object
+    properties:
+      unitCode:
+        type: ccVolumeUnitCode
+        description: Unitcode for volume measurement
+        example: DMQ
+      Value:
+        type: number
+        description: Value of the volume measurement
+        example: 18.22
+  DimensionsTYPE:
+    type: object
+    properties:
+      Height:
+        type: ccLength
+        description: Height of package
+      Length:
+        type: ccLength
+        description: Length of package
+      Width:
+        type: ccLength
+        description: Width of package
+  ExchangableEquipment:
+    type: object
+    properties:
+      UnitType:
+        type: ExchangableEquipmentUnitType
+        description: Type of exchangable equipment
+        example: EFP
+      Value:
+        type: number
+        description: Quantity of exchangable equipments
+        example: 3
+  AddressTYPE:
+    type: object
+    properties:
+      AddressLine:
+        type: string[]
+      PostalCode:
+        type: string
+      City:
+        type: string
+      StateOrRegion:
+        type: string
+      CountryCode:
+        type: string
+  AdditionalService:
+    type: object
+    properties:
+      AdditionalServiceCode:
+        type: string
+        description: The additional service code for the product
+        example: EVARSLING
+      ServiceRequirements:
+        type: string[]
+        description: Some AdditionalServiceCodes / valueadded service might require extra information
+  DeliveryTermsLocation:
+    type: object
+    properties:
+      City:
+        type: string
+      CountryCode:
+        type: string
+  CashOnDeliveryTransactionIdentifier:
+    type: object
+    properties:
+      identifierType:
+        type: CashOnDeliveryTransactionIdentifierType
+      accountType:
+        type: string
+      Value:
+        type: string
+  ccAmount:
+    type: object
+    properties:
+      currencyCode:
+        type: string
+        description: Currencycode, valid currency codes allowed
+        example: NOK
+  CashOnDeliveryMonetaryAccount:
+    type: object
+    properties:
+      AccountNumber:
+        type: CashOnDeliveryMonetaryAccountNumber
+      SwiftCode:
+        type: string
+      BankName:
+        type: string
+      AccountHolderName:
+        type: string
+  GoodsItemTemperature:
+    type: object
+    properties:
+      Transport:
+        type: ccTempMeasure
+      Storage:
+        type: ccTempMeasure
+  CustomsDetails:
+    type: object
+    properties:
+      Quantity:
+        type: number
+        format: float
+      CountryOfOrigin:
+        type: string
+      TariffLineAmount:
+        type: TariffLineAmount
+      CustomsArticleNumber:
+        type: string
+      GoodsDescription:
+        type: string
+      NetWeight:
+        type: number
+        format: float
+  GoodsItemDangerousGoods:
+    type: object
+    properties:
+      UNDGInformation:
+        type: DangerousGoodsUNDGInformation
+      Flashpoint:
+        type: DangerousGoodsFlashpoint
+      HazardClass:
+        type: string
+      AdditionalHazard:
+        type: string
+      PackingGroup:
+        type: string
+      Measures:
+        type: MeasuresTYPE[]
+      TechnicalName:
+        type: string
+      Restrictions:
+        type: DangerousGoodsRestrictions[]
+      HazardPoints:
+        type: integer
+      regulatonCode:
+        type: string
+  PackingDetails:
+    type: object
+    properties:
+      PositionNumber:
+        type: integer
+      ArticleNumber:
+        type: string
+      ArticleDescription:
+        type: string
+      ItemDelivered:
+        type: number
+        format: float
+      ArticlePrice:
+        type: ArticlePrice
+      ItemOrdered:
+        type: number
+        format: float
+      ItemBackOrder:
+        type: number
+        format: float
+      ItemUnity:
+        type: string
+  FreeTextTYPEText:
+    type: object
+    properties:
+      sequence:
+        type: string
+      Value:
+        type: string
+  ccWeightUnitCode:
+    type: string
+    enum:
+    - GRM
+    - KGM
+  ccVolumeUnitCode:
+    type: string
+    enum:
+    - DMQ
+    - MTQ
+  ccLength:
+    type: object
+    properties:
+      unitCode:
+        type: ccLengthUnitCode
+      Value:
+        type: number
+        format: float
+  ExchangableEquipmentUnitType:
+    type: string
+    enum:
+    - EFP
+  CashOnDeliveryTransactionIdentifierType:
+    type: string
+    enum:
+    - PQ
+    - SS
+  CashOnDeliveryMonetaryAccountNumber:
+    type: object
+    properties:
+      accountType:
+        type: CashOnDeliveryAccountType
+      Value:
+        type: string
+  ccTempMeasure:
+    type: object
+    properties:
+      unitCode:
+        type: ccTempMeasureUnitCode
+      minimum:
+        type: string
+      maximum:
+        type: string
+      Value:
+        type: integer
+  TariffLineAmount:
+    type: object
+    properties:
+      currencyCode:
+        type: string
+      Value:
+        type: number
+        format: float
+  DangerousGoodsUNDGInformation:
+    type: object
+    properties:
+      HazardIdentifier:
+        type: string
+      Flashpointdescription:
+        type: string
+  DangerousGoodsFlashpoint:
+    type: object
+    properties:
+      unitCode:
+        type: DangerousGoodsFlashpointUnitCode
+      Value:
+        type: integer
+  MeasuresTYPE:
+    type: object
+    properties:
+      Measure:
+        type: ccMeasure
+      subClass:
+        type: string
+  DangerousGoodsRestrictions:
+    type: object
+    properties:
+      restrictionType:
+        type: DangerousGoodsRestrictionType
+      Value:
+        type: string
+  ArticlePrice:
+    type: object
+    properties:
+      currencyCode:
+        type: string
+      Value:
+        type: number
+        format: float
+  ccLengthUnitCode:
+    type: string
+    enum:
+    - CMT
+    - DMT
+    - MTR
+  CashOnDeliveryAccountType:
+    type: string
+    enum:
+    - Bank
+    - Bankgiro
+    - Plus
+    - Post
+    - Iban
+    - Other
+  ccTempMeasureUnitCode:
+    type: string
+    enum:
+    - CEL
+    - FAH
+  DangerousGoodsFlashpointUnitCode:
+    type: string
+    enum:
+    - CEL
+    - FAH
+  ccMeasure:
+    type: object
+    properties:
+      unitCode:
+        type: string
+      Value:
+        type: number
+        format: float
+  DangerousGoodsRestrictionType:
+    type: string
+    enum:
+    - Tunnel
+  CreateShipmentResponse:
 
 documentation:
 - title: Introduction
@@ -689,6 +1212,9 @@ documentation:
 
         The structure and most of the content will be validated.
 
+#  description: |
+#      Request is used to either create, update or delete an instruction for Bring.
+
   uriParameters:
     createShipmentId:
       displayName: If "true" the API will assign a shipment ID for you and return it in the response.
@@ -696,9 +1222,6 @@ documentation:
     createPackageId:
       displayName: If "true" the API will assign all package IDs for you and return them in the response.
       type: boolean
-  description: |
-      Request is used to either create, update or delete an instruction for Bring.
-
 
   post:
     description: Request is used to either create, update or delete an instruction for Bring.
@@ -713,17 +1236,17 @@ documentation:
             enum: [ application/json,application/xml ]
     body:
       application/xml:
+        type: CreateShipmentRequest
         examples:
           valid_request:
             displayName: Valid Request
             value: !include examples/basic_example.xml
-        type:
       application/json:
+        type: CreateShipmentRequest
         examples:
           valid_request:
             displayName: Valid Request
             value: !include examples/basic_example.json
-        type:
     responses:
       200:
         description: |
@@ -733,13 +1256,13 @@ documentation:
             type: CreateShipmentResponse
             examples:
               valid_shipment:
-                displayName: Valid Shipment
+                displayName: Valid Shipment Response
                 value: !include examples/valid_shipment_response.xml
           application/json:
             type: CreateShipmentResponse
             examples:
               valid_shipment:
-                displayName: Valid Shipment
+                displayName: Valid Shipment Response
                 value: !include examples/valid_shipment_response.json
       400:
         displayName: Error
@@ -774,6 +1297,9 @@ documentation:
 
         The structure and most of the content will be validated.
 
+#  description: |
+#      Request is used to either create, update or delete an instruction for Bring.
+
   uriParameters:
     createShipmentId:
       displayName: If "true" the API will assign a shipment ID for you and return it in the response.
@@ -781,9 +1307,6 @@ documentation:
     createPackageId:
       displayName: If "true" the API will assign all package IDs for you and return them in the response.
       type: boolean
-  description: |
-      Request is used to either create, update or delete an instruction for Bring.
-
 
   post:
     description: Request is used to either create, update or delete an instruction for Bring.
