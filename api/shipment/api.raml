@@ -666,32 +666,32 @@ types:
         type: datetime
         description: Request date
       Shipment:
-        type: Shipment
+        type: object #Shipment
   Shipment:
     type: object
     properties:
       updateIndicator:
         type: string
-      shipmenttype:
+      shipmentType:
         type: string
       ShipmentHeaders:
-        type: ShipmentHeaders
+        type: object #ShipmentHeaders
       DateAndTimes:
-        type: DateAndTimes[]
+        type: object[] #DateAndTimes[]
       Sender:
-        type: BasicPartyTYPE
+        type: object #BasicPartyTYPE
       Receiver:
-        type: BasicPartyTYPE
+        type: object #BasicPartyTYPE
       AdditionalParty:
-        type: PartyTYPE[]
+        type: object[] #PartyTYPE[]
       ProductAndService:
-        type: ProductAndService
+        type: object #ProductAndService
       DeliveryTerms:
-        type: DeliveryTerms
+        type: object #DeliveryTerms
       CashOnDelivery:
-        type: CashOnDelivery
+        type: object #CashOnDelivery
       GoodsItem:
-        type: GoodsItem[]
+        type: object[] #GoodsItem[]
   ShipmentHeaders:
     type: object
     properties:
@@ -702,15 +702,15 @@ types:
       NumberOfPackages:
         type: string
       AdditionalReference:
-        type: ReferenceTYPE[]
+        type: object[] #ReferenceTYPE[]
       FreeText:
-        type: FreeTextTYPE[]
+        type: object[] #FreeTextTYPE[]
       GrossWeight:
-        type: ccWeight
+        type: object #ccWeight
       GrossVolume:
-        type: ccVolume
+        type: object #ccVolume
       Dimensions:
-        type: DimensionsTYPE
+        type: object #DimensionsTYPE
       LoadingMetres:
         type: number
       PalletFootPrints:
@@ -718,7 +718,7 @@ types:
       HazardPoints:
         type: integer
       ExchangableEquipment:
-        type: ExchangableEquipment
+        type: object #ExchangableEquipment
       shipmentId:
         type: string
   DateAndTimes:
@@ -732,7 +732,7 @@ types:
         type: datetime
         description: Date and Time
         example: 2018-11-22T08:58:52
-  BasicPartyTYPE:
+  Sender:
     type: object
     properties:
       partyId:
@@ -755,7 +755,30 @@ types:
         type: string
       Reference:
         type: ReferenceTYPE[]
-  PartyTYPE:
+  Receiver:
+    type: object
+    properties:
+      partyId:
+        type: string
+      subPartyId:
+        type: string
+      Name:
+        type: string
+      Address:
+        type: AddressTYPE
+      ContactName:
+        type: string
+      Phone:
+        type: string
+      MobilePhone:
+        type: string
+      Email:
+        type: string
+      Fax:
+        type: string
+      Reference:
+        type: ReferenceTYPE[]
+  AdditionalParty:
       type: object
       properties:
         subClass:
@@ -818,7 +841,7 @@ types:
       DocumentId:
         type: string[]
       MonetaryAccount:
-        type: CashOnDeliveryMonetaryAccount
+        type: object #CashOnDeliveryMonetaryAccount
       codType:
         type: string
   GoodsItem:
@@ -839,7 +862,7 @@ types:
       CustomsDetails:
         type: CustomsDetails[]
       DangerousGoods:
-        type: GoodsItemDangerousGoods[]
+        type: object[] #GoodsItemDangerousGoods[]
       PackingDetails:
         type: PackingDetails[]
   ReferenceTYPE:
@@ -868,7 +891,7 @@ types:
         - SHIPMENT_REFERENCE (SRN)
         - TRANSPORT_INSTRUCTION (TIN)
         - GOODS_NUMBER (XC)
-        - MESSAGE_SENDERS_IDENTITY (MS - EDI Ident (UNB in EDIFACT))
+        - MESSAGE_SENDERS_IDENTITY (MS)
   FreeTextTYPE:
     type: object
     properties:
@@ -953,7 +976,10 @@ types:
     type: object
     properties:
       identifierType:
-        type: CashOnDeliveryTransactionIdentifierType
+        type: string
+        enum:
+        - PQ
+        - SS
       accountType:
         type: string
       Value:
@@ -965,7 +991,7 @@ types:
         type: string
         description: Currencycode, valid currency codes allowed
         example: NOK
-  CashOnDeliveryMonetaryAccount:
+  MonetaryAccount:
     type: object
     properties:
       AccountNumber:
@@ -1000,7 +1026,7 @@ types:
       NetWeight:
         type: number
         format: float
-  GoodsItemDangerousGoods:
+  DangerousGoods:
     type: object
     properties:
       UNDGInformation:
@@ -1074,11 +1100,6 @@ types:
     type: string
     enum:
     - EFP
-  CashOnDeliveryTransactionIdentifierType:
-    type: string
-    enum:
-    - PQ
-    - SS
   CashOnDeliveryMonetaryAccountNumber:
     type: object
     properties:
@@ -1179,7 +1200,45 @@ types:
     enum:
     - Tunnel
   CreateShipmentResponse:
-
+    type: object
+    properties:
+      Status:
+        type: string
+        enum:
+        - OK
+        - OK_CONFIRMED
+        - ERROR
+        - VALIDATION_ERROR
+        - FORBIDDEN
+      StatusText:
+        type: string
+      Errors:
+        type: CreateShipmentResponseErrors[]
+      Identities:
+        type: CreateShipmentResponseIdentities[]
+      ProcessingID:
+        type: string
+      EndpointProcessingID:
+        type: string
+  CreateShipmentResponseErrors:
+    type: object
+    properties:
+      Error:
+        type: string
+        description: Error type
+        enum:
+        - VALIDATION
+        - SYSTEM
+        - BAD_REQUEST
+      ErrorText:
+        type: string
+  CreateShipmentResponseIdentities:
+    type: object
+    properties:
+      PackageId:
+        type: string[]
+      ShipmentId:
+        type: string
 documentation:
 - title: Introduction
   content: |
@@ -1218,23 +1277,23 @@ documentation:
   post:
     description: Request is used to either create, update or delete an instruction for Bring.
     headers:
-          Content-Type:
-            description: Specify request format (application/json, application/xml)
-            required: true
-            enum: [ application/json,application/xml ]
-          Accept:
-            description: Specify response format (application/json, application/xml)
-            required: true
-            enum: [ application/json,application/xml ]
+      Content-Type:
+        description: Specify request format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+      Accept:
+        description: Specify response format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
     body:
       application/xml:
-        type: CreateShipmentRequest
+        type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
         examples:
           valid_request:
             displayName: Valid Request
             value: !include examples/basic_example.xml
       application/json:
-        type: CreateShipmentRequest
+        type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
         examples:
           valid_request:
             displayName: Valid Request

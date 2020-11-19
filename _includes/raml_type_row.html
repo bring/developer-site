@@ -8,6 +8,7 @@
   <td>
     {% if is_custom_type %}
       <code>object</code>
+<!--      <code>{{ propType }}</code>-->
     {% else %}
       <code>{{ propType }}</code>
     {% endif %}
@@ -73,6 +74,7 @@
   </td>
 </tr>
 
+<!-- propType is never set to 'object' -->
 {% if propType == 'object' %}
   {% assign subPrefixPreAppend = prefix %}
   {% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
