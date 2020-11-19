@@ -1,0 +1,23 @@
+{
+  "name": "developer-site",
+  "version": "1.0.0",
+  "description": "Bring developer site",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo",
+    "start": "hugo server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bring/developer-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bring/developer-site/issues"
+  },
+  "homepage": "https://developer.bring.com",
+  "devDependencies": {
+    "hugo-bin": "^0.66.2"
+  }
+}

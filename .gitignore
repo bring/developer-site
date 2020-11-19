@@ -24,3 +24,5 @@ _sass.build
 _preview.site
 .bundle/
 _buildtmp/
+
+hugo/public/
