@@ -1,0 +1,5 @@
+{{ define "main" }}
+  <h1 class="mb0">{{ .Title }}</h1>
+  <p class="text-title">{{ $.Param "excerpt" }}</p>
+  {{ .Content }}
+{{ end }}

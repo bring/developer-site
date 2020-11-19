@@ -1,0 +1,7 @@
+baseURL = "https://developer.bring.com"
+languageCode = "en-us"
+title = "Bring Developer"
+pygmentsUseClasses=true
+pluralizelisttitles=false
+[params]
+  description = "Documentation for developers."
