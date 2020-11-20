@@ -161,12 +161,12 @@ layout: redesign
 
                     <div class="codetabs__content">
                       {% if requestBody.type %}
-                        {% for requestBodyType in requestBody.type %}
-                          {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
-                          <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
+                        {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
+                        <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
+                          {% for requestBodyType in requestBody.type %}
                             {% include raml_type.html types=page.api.types type=requestBodyType hide_header=true %}
-                          </div>
-                        {% endfor %}
+                          {% endfor %}
+                        </div>
                       {% endif %}
                       {% for example in requestBody.examples %}
                         {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}

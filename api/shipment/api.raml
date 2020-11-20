@@ -661,73 +661,138 @@ types:
     properties:
       RequestVersion:
         type: number
-        description: Version number for the request
+        description: Request version to use
+        example: 1
       RequestDate:
         type: datetime
-        description: Request date
+        description: Date and time for when the request was created
+        example: 2018-11-22T08:58:52
       Shipment:
         type: object #Shipment
+        description: Structure for the shipment
   Shipment:
     type: object
     properties:
       updateIndicator:
         type: string
+        enum:
+        - Original
+        - Update
+        - Replace
+        - Delete
+        description: Is this request an original, update or a deletion
+        example: Original
       shipmentType:
         type: string
+        enum:
+        - Instruction
+        - Booking
+        - Healthcheck
+        description: Type of shipment
+        example: Instruction
       ShipmentHeaders:
         type: object #ShipmentHeaders
+        description: Structure that handles information for the whole shipment
       DateAndTimes:
         type: object[] #DateAndTimes[]
+        description: Date and times for the message, repeatable structure. Several dates are required
       Sender:
         type: object #BasicPartyTYPE
+        description: Structure to hold sender information
       Receiver:
         type: object #BasicPartyTYPE
+        description: Structure to hold receiver information
       AdditionalParty:
         type: object[] #PartyTYPE[]
+        description: Additionalparties for the shipment, repeatable. Refer to detailed instructions
       ProductAndService:
         type: object #ProductAndService
+        description: Product and service codes in addition to value added service structures
       DeliveryTerms:
         type: object #DeliveryTerms
+        description: Terms of delivery
+        required: false
       CashOnDelivery:
         type: object #CashOnDelivery
+        description: Cash on delivery for the shipment
+        required: false
       GoodsItem:
         type: object[] #GoodsItem[]
+        description: Information about the goods being shipped
   ShipmentHeaders:
     type: object
     properties:
       SendersReference:
         type: string
+        description: Senders reference for the shipment
+        example: SOA-123222
       ReceiversReference:
         type: string
+        description: Receivers reference for the shipment
+        example: SOA-123222
+        required: false
       NumberOfPackages:
         type: string
+        description: Total number of packages for the whole shipment across all goodsitems.
+        example: "3"
       AdditionalReference:
         type: object[] #ReferenceTYPE[]
+        description: Additional references for the shipment as indicated by referenceType
+        required: false
       FreeText:
         type: object[] #FreeTextTYPE[]
+        description: Freetext elements
+        required: false
       GrossWeight:
         type: object #ccWeight
+        description: Gross weight for the whole shipment
+        required: false
       GrossVolume:
         type: object #ccVolume
+        description: Gross volume for the whole shipment
+        required: false
       Dimensions:
         type: object #DimensionsTYPE
+        description: Dimensions required for the whole shipment
+        required: false
       LoadingMetres:
         type: number
+        description: How many metres of loading space required of a truck's length
+        example: "12"
+        required: false
       PalletFootPrints:
         type: integer
+        description: How many pallet footprints are needed for the shipment
+        example: "3"
+        required: false
       HazardPoints:
         type: integer
+        description: Sum of hazard points for the shipment
+        example: "22"
+        required: false
       ExchangableEquipment:
         type: object #ExchangableEquipment
+        description: Equipment that can be reused, ie. pallets
+        required: false
       shipmentId:
         type: string
+        description: Id for the whole shipment, can be retrieved by the API
+        example: "70438101412575352"
   DateAndTimes:
     type: object
     properties:
       subClass:
         type: string
         description: Type of datetime
-        example: DocumentNumber
+        example: DocumentDate
+        enum:
+        - DocumentDate
+        - PickupRequested
+        - PickupEarliest
+        - PickupLatest
+        - DeliveryRequested
+        - DeliveryEarliest
+        - DeliveryLatest
       DateTime:
         type: datetime
         description: Date and Time
@@ -737,92 +802,217 @@ types:
     properties:
       partyId:
         type: string
+        description: Identifier for the party
+        example: BEX
+        required: false
       subPartyId:
         type: string
+        description: Further identification of the party
+        example: GLW
+        required: false
       Name:
         type: string
+        description: Party name
+        example: Bring
+        required: false
       Address:
         type: AddressTYPE
+        description: Party address
+        required: false
       ContactName:
         type: string
+        description: Contact name for the party
+        example: Atle Thorstensen
+        required: false
       Phone:
         type: string
+        description: Phone
+        example: "+4712345678"
+        required: false
       MobilePhone:
         type: string
+        description: Mobile phone
+        example: "+4712345678"
+        required: false
       Email:
         type: string
+        description: Email
+        example: mail@mail.com
+        required: false
       Fax:
         type: string
+        description: Fax
+        example: "+4712345678"
+        required: false
       Reference:
         type: ReferenceTYPE[]
+        description: Reference related to the party, can be used for account number of pallet system in Sweden for insatnce.
+        required: false
   Receiver:
     type: object
     properties:
       partyId:
         type: string
+        description: Identifier for the party
+        example: BEX
+        required: false
       subPartyId:
         type: string
+        description: Further identification of the party
+        example: GLW
+        required: false
       Name:
         type: string
+        description: Party name
+        example: Bring
+        required: false
       Address:
         type: AddressTYPE
+        description: Party address
+        required: false
       ContactName:
         type: string
+        description: Contact name for the party
+        example: Atle Thorstensen
+        required: false
       Phone:
         type: string
+        description: Phone
+        example: "+4712345678"
+        required: false
       MobilePhone:
         type: string
+        description: Mobile phone
+        example: "+4712345678"
+        required: false
       Email:
         type: string
+        description: Email
+        example: mail@mail.com
+        required: false
       Fax:
         type: string
+        description: Fax
+        example: "+4712345678"
+        required: false
       Reference:
         type: ReferenceTYPE[]
+        description: Reference related to the party, can be used for account number of pallet system in Sweden for insatnce.
+        required: false
   AdditionalParty:
       type: object
       properties:
         subClass:
           type: string
+          description: Type of Party
+          example: DeliveryParty
+          enum:
+          - DespatchParty
+          - DeliveryParty
+          - OrderingParty
+          - FreightPayer
+          - CashOnDeliveryPayee
+          - GoodsReturnParty
+          - NotifyParty
+          - TransportCompany
         partyId:
           type: string
+          description: Identifier for the party
+          example: BEX
         subPartyId:
           type: string
+          description: Further identification for the party
+          example: GLW
+          required: false
         Name:
           type: string
+          description: Party name
+          example: Rogers antistatiske overledninger
+          required: false
         Address:
           type: AddressTYPE
+          description: Party address
+          required: false
         ContactName:
           type: string
+          description: Party contact name
+          example: Ola Nordmann
+          required: false
         Phone:
           type: string
+          description: Phone
+          example: "+4712345678"
+          required: false
         MobilePhone:
           type: string
+          description: Mobile phone
+          example: "+4712345678"
+          required: false
         Email:
           type: string
+          description: Email
+          example: "mail@mail.com"
+          required: false
         Fax:
           type: string
+          description: Fax
+          example: "+4712345678"
+          required: false
         Reference:
           type: ReferenceTYPE[]
+          description: Futher references related to the party
+          example: "SOA-121232332-AN"
+          required: false
   ProductAndService:
     type: object
     properties:
       ProductCode:
         type: string
+        description: Productcode for shipment, refer to documentation for valid productcodes for this service
+        example: COURIER_1H
       AdditionalService:
         type: AdditionalService[]
+        description: Additional service codes
+        required: false
       TariffReference:
         type: string
+        description: Additional information about the price of the cargo in connection with the service
+        example: GNCG
+        enum:
+        - COOL_ABERRANT
+        - GENERAL_CARGO
+        - MINERAL_WATER
+        - CHILLED_0_4
+        - TIRES
+        - COOL_5_8
+        - FISH_0_4
+        - FROZEN_CARGO
+        - FROST_FREE_CARGO
+        - EARLY_DELIVERY
+        - LATE_DELIVERY
+        - SPECIAL_CARGO
+        - COOL_0_2
+        required: false
       NatureOfCargo:
         type: string
+        description: Indicates if the cargo is out of bound of general expected parameters, dangerous goods or out og gauge
+        example: "11"
+        required: false
   DeliveryTerms:
     type: object
     properties:
       ConditionCode:
         type: string
+        description: The actual terms for the chosen deliverytermstype
+        example: EXW
       Location:
         type: DeliveryTermsLocation
+        description: The location where the given deliveryterms (condition) applies (to or from given conditioncode.)
+        required: false
       termsType:
         type: string
+        description: Terms valid for this shipment
+        example: Incoterms
         enum:
         - Incoterms
         - Freightterms
@@ -834,37 +1024,75 @@ types:
     properties:
       TransactionIdentifier:
         type: CashOnDeliveryTransactionIdentifier
+        description: Senders identifier for the transaction
+        required: false
       Amount:
         type: ccAmount
+        description: Amount expected on delivery
+        example: "123450"
+        required: false
       ControlDigit:
         type: integer
+        description: Control digit for incoming amount when there is specified a KID number (norwegian only)
+        example: 8
+        required: false
       DocumentId:
         type: string[]
+        description: DocumentIds for Cash on Delivery
+        example: "SA-46789"
+        required: false
       MonetaryAccount:
         type: object #CashOnDeliveryMonetaryAccount
+        description: Description of where the money should be received
+        required: false
       codType:
         type: string
+        description: Type of cash on delivery
+        example: CashOnDelivery
+        enum:
+        - CashOnDelivery
+        - PrePaid
+        - CreditCard
   GoodsItem:
     type: object
     properties:
       PackageTypeCode:
         type: string
+        description: Types of cargo, packaging of cargo. Either use supported enumeration or UN/ECE Recommendation 21
       GoodsDescription:
         type: string
+        description: Description of goods being shipped
+        example: Contains socks
+        required: false
       LoadCarrier:
         type: string
+        description: Transport equipment (pallet, container etc)
+        example: EFP
+        required: false
       SealId:
         type: string
+        description: Item sealed for customs etc, number of the seal
+        example: "123456"
+        required: false
       Temperature:
         type: GoodsItemTemperature
+        description: Temperature requirements for goods being shipped
+        required: false
       Package:
         type: Package[]
+        description: List of packages being shipped
       CustomsDetails:
         type: CustomsDetails[]
+        description: List of Customs Details for goods being shipped
+        required: false
       DangerousGoods:
         type: object[] #GoodsItemDangerousGoods[]
+        description: Information about dangerousgoods being shipped
+        required: false
       PackingDetails:
         type: PackingDetails[]
+        description: List of Package Details for goods being shipped
+        required: false
   ReferenceTYPE:
     type: object
     properties:
@@ -875,6 +1103,7 @@ types:
       referenceType:
         type: string
         description: ReferenceType
+        example: TRANSPORT_DOCUMENT_NUMBER
         enum:
         - DESPATCH_ADVICE_NUMBER (AAK)
         - TRANSPORT_DOCUMENT_NUMBER (AAS)
@@ -897,13 +1126,25 @@ types:
     properties:
       Text:
         type: FreeTextTYPEText[]
+        description: Sequence of freetext
       usageCode:
         type: string
+        description: Typeof freetext
+        example: PICKUP_INSTRUCTIONS
+        enum:
+        - PICKUP_INSTRUCTIONS (SIC)
+        - DELIVERY_INSTRUCTIONS (DEL)
+        - CARRIER_INSTRUCTIONS (SIC)
   ccWeight:
     type: object
     properties:
       unitCode:
-        type: ccWeightUnitCode
+        type: string
+        description: Unitcode for weight
+        example: KGM
+        enum:
+        - GRM
+        - KGM
       Value:
         type: number
         description: Weight Value
@@ -912,9 +1153,12 @@ types:
     type: object
     properties:
       unitCode:
-        type: ccVolumeUnitCode
+        type: string
         description: Unitcode for volume measurement
         example: DMQ
+        enum:
+        - DMQ
+        - MTQ
       Value:
         type: number
         description: Value of the volume measurement
@@ -935,9 +1179,11 @@ types:
     type: object
     properties:
       UnitType:
-        type: ExchangableEquipmentUnitType
+        type: string
         description: Type of exchangable equipment
         example: EFP
+        enum:
+        - EFP
       Value:
         type: number
         description: Quantity of exchangable equipments
@@ -947,14 +1193,25 @@ types:
     properties:
       AddressLine:
         type: string[]
+        description: Address lines. The first line will be mapped to primary address line
+        example: "Kong Oscars gate 12", ""
       PostalCode:
         type: string
+        description: Postal code for address
+        example: "5122"
       City:
         type: string
+        description: City for the posatl code
+        example: Morvik
       StateOrRegion:
         type: string
+        description: State or region, not in use in the nordic countries
+        example: Washington DC
+        required: false
       CountryCode:
         type: string
+        description: Country code. Use valid country codes
+        example: NO
   AdditionalService:
     type: object
     properties:
@@ -970,20 +1227,37 @@ types:
     properties:
       City:
         type: string
+        description: City where the deliveryterms are valid to or from
+        example: Bergen
       CountryCode:
         type: string
+        description: Country where the deliveryterms ar valid to or from
+        example: NO
   CashOnDeliveryTransactionIdentifier:
     type: object
     properties:
       identifierType:
         type: string
+        description: Type of cash on delivery
+        example: PQ
         enum:
         - PQ
         - SS
       accountType:
         type: string
+        description: Typeof account to receive payment
+        example: Bank
+        enum:
+        - Bank
+        - Bankgiro
+        - Plus
+        - Post
+        - Iban
+        - Other
       Value:
         type: string
+        description: The value to identify where the money should be sent
+        example: "1234.12.123456"
   ccAmount:
     type: object
     properties:
@@ -996,209 +1270,308 @@ types:
     properties:
       AccountNumber:
         type: CashOnDeliveryMonetaryAccountNumber
+        description: Account number to receive payment
       SwiftCode:
         type: string
+        description: Swift code for international transfers
+        example: DNBANOKK
       BankName:
         type: string
+        description: Bank where account is created
+        example: DNB
       AccountHolderName:
         type: string
+        description: Name of the owner of the account
+        example: Ola Nordmann
   GoodsItemTemperature:
     type: object
     properties:
       Transport:
         type: ccTempMeasure
+        description: Temperature requirements during transport
       Storage:
         type: ccTempMeasure
+        description: Temperature requirements for storage of goods
   CustomsDetails:
     type: object
     properties:
       Quantity:
         type: number
+        description: Quantity of packages
+        required: false
         format: float
       CountryOfOrigin:
         type: string
+        description: Country of origin of the package
+        required: false
       TariffLineAmount:
         type: TariffLineAmount
+        description: Tariff Line Amount of the package
+        required: false
       CustomsArticleNumber:
         type: string
+        description: Customs Article Number of the package
+        required: false
       GoodsDescription:
         type: string
+        description: Goods Description of the package
+        required: false
       NetWeight:
         type: number
         format: float
+        description: Net weight of the package
+        required: false
   DangerousGoods:
     type: object
     properties:
       UNDGInformation:
         type: DangerousGoodsUNDGInformation
+        description: United nations dangerous goods information
+        require: false
       Flashpoint:
         type: DangerousGoodsFlashpoint
+        description: Flashpointinformation for dangerousgoods (when will the item become volatile?)
+        require: false
       HazardClass:
         type: string
+        description: Classification of hazard
+        example: "4.1"
+        required: false
       AdditionalHazard:
         type: string
+        description: Additional codes for hazard
+        example: "2.3(8)"
+        required: false
       PackingGroup:
         type: string
+        description: Packing danger level code, roman numeral between  1 and 3
+        example: II
+        required: false
       Measures:
         type: MeasuresTYPE[]
+        description: Measures for Dangerous Goods
+        required: false
       TechnicalName:
         type: string
+        description: Technical name of hazard
+        example: KALSIUMRESINAT, SINTRET
+        required: false
       Restrictions:
         type: DangerousGoodsRestrictions[]
+        description: Restrictions when carrying these hazardous goods
+        required: false
       HazardPoints:
         type: integer
+        description: Points for this hazard. Calculated from factor for dangerousgoods multiplied by amount in kg / dm3 for each material in cargo
+        example: 10
+        required: false
       regulatonCode:
         type: string
+        description: Regulation codes for the hazardous goods
+        example: ADR
+        required: false
   PackingDetails:
     type: object
     properties:
       PositionNumber:
         type: integer
+        description: Position number within Packing Details
+        required: false
       ArticleNumber:
         type: string
+        description: Articla details of Packing Details
+        required: false
       ArticleDescription:
         type: string
+        description: Artical description of Packing Details
+        required: false
       ItemDelivered:
         type: number
         format: float
+        description: Item Delivered within Packing Details
+        required: false
       ArticlePrice:
         type: ArticlePrice
+        description: Artical Price of the Packing Details
+        required: false
       ItemOrdered:
         type: number
         format: float
+        description: Item Ordered within the Packing Details
+        required: false
       ItemBackOrder:
         type: number
         format: float
+        description: Item Back Order within Packing Details
+        required: false
       ItemUnity:
         type: string
+        description: Item Unity within Packing Details
+        required: false
   FreeTextTYPEText:
     type: object
     properties:
       sequence:
         type: string
+        description: Order of freetext elements
+        example: "0"
+        required: false
       Value:
         type: string
-  ccWeightUnitCode:
-    type: string
-    enum:
-    - GRM
-    - KGM
-  ccVolumeUnitCode:
-    type: string
-    enum:
-    - DMQ
-    - MTQ
+        description: Actual freetext
+        example: Call the contact before delivering item
   ccLength:
     type: object
     properties:
       unitCode:
-        type: ccLengthUnitCode
+      type: string
+      description: Unit for the length
+      example: CMT
+      enum:
+      - CMT
+      - DMT
+      - MTR
+      required: false
       Value:
         type: number
         format: float
-  ExchangableEquipmentUnitType:
-    type: string
-    enum:
-    - EFP
+        description: The length
+        example: 1.22
+        required: false
   CashOnDeliveryMonetaryAccountNumber:
     type: object
     properties:
       accountType:
-        type: CashOnDeliveryAccountType
+        type: string
+        description: Type of account to receive payment on delivery
+        enum:
+        - Bank
+        - Bankgiro
+        - Plus
+        - Post
+        - Iban
+        - Other
       Value:
         type: string
+        description: Actual account number
+        example: "4567.45.12345"
   ccTempMeasure:
     type: object
     properties:
       unitCode:
-        type: ccTempMeasureUnitCode
+        type: string
+        description: Unit code for temperature measure
+        example: CEL
+        enum:
+        - CEL
+        - FAH
       minimum:
         type: string
+        description: Minimum allowed temperature
+        example: "-8"
+        required: false
       maximum:
         type: string
+        description: Maximum allowed temperature
+        example: "4"
+        required: false
       Value:
         type: integer
+        description: Specific temperature for transportation of the cargo
+        example: 3
   TariffLineAmount:
     type: object
     properties:
       currencyCode:
         type: string
+        description: Currency code of the tariff line
+        required: false
       Value:
         type: number
         format: float
+        description: Value of the tariff line
+        required: false
   DangerousGoodsUNDGInformation:
     type: object
     properties:
       HazardIdentifier:
         type: string
-      Flashpointdescription:
+        description: United nations dangerous goods hazard identifier
+        example: "1.1D"
+        required: false
+      FlashpointDescription:
         type: string
+        description: Flashpoint for dangerous goods
+        example: BLACK POWDER, granulated or in powderform
+        required: false
   DangerousGoodsFlashpoint:
     type: object
     properties:
       unitCode:
-        type: DangerousGoodsFlashpointUnitCode
+        type: string
+        description: Unit code for flashpoint
+        example: CEL
+        required: false
+        enum:
+        - CEL
+        - FAH
       Value:
         type: integer
+        description: Value when flashpoint occurs/ignites
+        example: 18
+        required: false
   MeasuresTYPE:
     type: object
     properties:
       Measure:
         type: ccMeasure
+        description: Measurements for goods
+        required: false
       subClass:
         type: string
+        example: NetHazardWeight
+        required: false
   DangerousGoodsRestrictions:
     type: object
     properties:
       restrictionType:
-        type: DangerousGoodsRestrictionType
+        type: string
+        description: Type of restriction
+        example: Tunnel
+        enum:
+        - Tunnel
+        required: false
       Value:
         type: string
+        description: Freetext specification of restriction for given tunnel. One element for each UN number in the dangerousgoods sequence
+        example: Ellingsøy- og Valderøytunnelen på riksveg 658 utenfor Ålesund. Her gjelder tunnelkategori C i tidsrommet kl. 0600–2400 hver dag
+        required: false
   ArticlePrice:
     type: object
     properties:
       currencyCode:
         type: string
+        description: Quantity of packages
+        required: false
       Value:
         type: number
         format: float
-  ccLengthUnitCode:
-    type: string
-    enum:
-    - CMT
-    - DMT
-    - MTR
-  CashOnDeliveryAccountType:
-    type: string
-    enum:
-    - Bank
-    - Bankgiro
-    - Plus
-    - Post
-    - Iban
-    - Other
-  ccTempMeasureUnitCode:
-    type: string
-    enum:
-    - CEL
-    - FAH
-  DangerousGoodsFlashpointUnitCode:
-    type: string
-    enum:
-    - CEL
-    - FAH
+        description: Value of packages
+        required: false
   ccMeasure:
     type: object
     properties:
       unitCode:
         type: string
+        description: Unit code for measure
+        example: DMQ
+        required: false
       Value:
         type: number
         format: float
-  DangerousGoodsRestrictionType:
-    type: string
-    enum:
-    - Tunnel
+        description: Measure value
+        example: 1.22
+        required: false
   CreateShipmentResponse:
     type: object
     properties:
@@ -1210,16 +1583,22 @@ types:
         - ERROR
         - VALIDATION_ERROR
         - FORBIDDEN
+        required: false
       StatusText:
         type: string
+        required: false
       Errors:
         type: CreateShipmentResponseErrors[]
+        required: false
       Identities:
         type: CreateShipmentResponseIdentities[]
+        required: false
       ProcessingID:
         type: string
+        required: false
       EndpointProcessingID:
         type: string
+        required: false
   CreateShipmentResponseErrors:
     type: object
     properties:
@@ -1230,8 +1609,10 @@ types:
         - VALIDATION
         - SYSTEM
         - BAD_REQUEST
+        required: false
       ErrorText:
         type: string
+        required: false
   CreateShipmentResponseIdentities:
     type: object
     properties:
