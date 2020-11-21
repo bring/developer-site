@@ -28,6 +28,7 @@
             <th>Type</th>
             <th>Description</th>
           </thead>
+          <tr><td>{{ include.type }}</td><td><td></td></tr>
           <tbody>
           {% for propHash in typeDefinition.properties %}
             {% assign prop = propHash[1] %}
