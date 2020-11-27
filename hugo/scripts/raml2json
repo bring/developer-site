@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+var raml = require("raml-1-parser");
+var fs = require("fs");
+const join = require("path").join;
+
+const filePath = join(__dirname, "../content/api/reports/api.raml");
+const fileOut = join(__dirname, "../content/api/reports/api.json");
+
+const raml_file = fs.readFileSync(filePath, "utf8");
+
+var api = raml.loadApiSync(filePath);
+var outPut = JSON.stringify(api.toJSON(), null, 2);
+console.log(outPut);
+fs.writeFileSync(fileOut, outPut, "utf-8");
