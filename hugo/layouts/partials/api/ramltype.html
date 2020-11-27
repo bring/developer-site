@@ -1,0 +1,107 @@
+{{ $showHeader := .showHeader }}
+{{ $type := "" }}
+{{ range .incDashType }}
+  {{ $type = . }}
+{{ end }}
+
+{{/* showRequired isnt tested yet */}}
+{{ $showRequired := true }}
+{{ range .incTypeDefs}}
+  {{ range . }}
+      {{ with .annotations }}
+        {{ with .annotations.hideInDocumentation }}
+          {{ with .annotations.hideInDocumentation.structuredValue }}
+            {{ $showRequired = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ range .incTypeDefs}}
+  {{ range . }}
+    {{ if (and (eq .name $type) $showRequired) }}
+      <article>
+        {{ if (eq $showHeader true) }}
+          <h4 class="anchored" id="type-{{ .name | urlize }}">{{ .displayName }}</h4>
+        {{ end }}
+
+        {{ $typeProps := .properties }}
+        {{ range first 1 .type }}
+          {{ if (eq . "object") }}
+          <table>
+            <thead>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </thead>
+            <tbody>
+              {{ range $typeProps }}
+                {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired ) }}
+              {{ end }}
+            </tbody>
+          </table>
+          {{ else }}
+            {{/* everything below and all the way down isnt tested yet */}}
+            {{ $desc := slice "Type: `" . "` " }}
+            {{ if (eq $showRequired false)}}
+            {{ else if $typeProps.required }}
+            {{ $desc = $desc | append "_Required._ "}}
+            {{ else }}
+            {{ $desc = $desc | append "_Optional._ "}}
+            {{ end }}
+
+            {{ if (eq $typeProps.displayName $typeProps.name)}}
+            {{ $desc = $desc | append $typeProps.displayName | append ". "}}
+            {{ end }}
+
+            {{ with $typeProps.description }}
+            {{ $desc = $desc | append $typeProps.description }}
+            {{ end }}
+
+            {{ range $desc }}
+            {{/* This has some formatting issues, possibly from html in markdown */}}
+              {{ . | markdownify }}
+            {{ end }}
+
+            {{ with $typeProps.enum }}
+            <br/>
+            Possible values:
+            <ul>
+              {{ range . }}
+                <li><code>{{ . }}</code></li>
+              {{ end }}}
+            </ul>
+            {{ end }}}
+
+            {{ with $typeProps.default }}
+              <br/>
+              Default value: <code>{{ . }}</code>
+            {{ end }}
+
+            {{ with $typeProps.pattern }}
+              <br/>
+              Pattern: <code>{{ . }}</code>
+            {{ end }}
+
+            {{ with $typeProps.minItems }}
+              <br/>
+              Minimum number of items: <code>{{ . }}</code>
+            {{ end }}
+
+            {{ with $typeProps.maxItems }}
+              <br/>
+              Maximum number of items: <code>{{ . }}</code>
+            {{ end }}
+
+            {{ with $typeProps.example }}
+              <br/>
+              Example: <code>{{ . }}</code>
+            {{ end }}
+
+          {{ end }}
+        {{ end }}
+      </article>
+    {{ end }}
+  {{ end }}
+{{ end }}

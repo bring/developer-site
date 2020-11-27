@@ -1,7 +1,23 @@
 baseURL = "https://developer.bring.com"
 languageCode = "en-us"
 title = "Bring Developer"
-pygmentsUseClasses=true
-pluralizelisttitles=false
+pygmentsUseClasses = true
+pluralizelisttitles = false
+
 [params]
-  description = "Documentation for developers."
+description = "Documentation for developers."
+ramlBuiltinTypes = [
+  "any",
+  "object",
+  "array",
+  "number",
+  "boolean",
+  "string",
+  "date-only",
+  "time-only",
+  "datetime-only",
+  "datetime",
+  "file",
+  "integer",
+  "nil"
+]
