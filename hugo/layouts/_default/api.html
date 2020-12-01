@@ -17,16 +17,14 @@
         {{ range .Site.Data.api }}
         {{/* this conditional ensures that only the right api doc shows up, it can probably be improved */}}
           {{ if (eq .title $pageTitle) }}
+          {{ $types := .types }}
             <article class="api {{ replace .title "API" "" | urlize }}">
               <h1 class="api__title">{{ .title }}</h1>
               <section id="api-documentation" class="api__section">
                 {{ with $content }}<div>{{ . }}</div>{{ end }}
-                {{ $types := .types }}
                 {{ range .documentation }}
-                  <div>
-                    <h3>{{ .title }}</h3>
-                    {{ .content | markdownify }}
-                  </div>
+                  <h2 class="anchored" id="{{.title | urlize }}">{{ .title }}</h2>
+                  {{ .content | markdownify }}
                 {{ end }}
               </section>
               <section class="api__section">
