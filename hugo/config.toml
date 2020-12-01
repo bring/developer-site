@@ -21,3 +21,7 @@ ramlBuiltinTypes = [
   "integer",
   "nil"
 ]
+apis = [
+  "content/api/reports/api.raml",
+  "content/api/invoice/api.raml"
+]

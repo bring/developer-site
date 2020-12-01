@@ -4,7 +4,8 @@
   "description": "Bring developer site",
   "main": "index.js",
   "scripts": {
-    "build": "hugo",
+    "build": "npm run raml && hugo",
+    "hbuild": "hugo",
     "start": "hugo server",
     "raml": "node scripts/raml2json"
   },
@@ -20,6 +21,7 @@
   "homepage": "https://developer.bring.com",
   "devDependencies": {
     "hugo-bin": "^0.66.2",
-    "raml-1-parser": "^1.1.67"
+    "raml-1-parser": "^1.1.67",
+    "toml": "^3.0.0"
   }
 }
