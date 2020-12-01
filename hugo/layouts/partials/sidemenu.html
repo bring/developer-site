@@ -1,69 +1,70 @@
+{{ $currentPage := . }}
+{{ $pageUrl := .URL }}
 
-      <nav class="sitemenu">
-        <ul class="list-bare sitemenu__list">
-           <li class="{% if page.url == '/api/introduction/' %} active{% endif %}">
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="{{ "/api/introduction/" | relURL }}">Why use our APIs?</a></span>
-          </li>
-          {{/*<li class="{% if page.url == '/api/' %} active{% endif %}">
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/">Getting Started</a></span>
-            {% if page.url == '/api/' %}
-            <ul class="list-bare sitemenu__sublist">
-              <li><a href="{{ site.baseurl }}/api/#introduction">Introduction</a></li>
-              <li><a href="{{ site.baseurl }}/api/#authentication">Authentication</a></li>
-              <li><a href="{{ site.baseurl }}/api/#formats">Formats</a></li>
-            </ul>
-            {% endif %}
-          </li>
-          <li class="{% if page.url == '/ecommerce/' %} active{% endif %}">
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/ecommerce/">E-Commerce</a></span>
-          </li>
-          <li class="{% if page.url contains '/api/services/' %} active{% endif %}">
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/services/">Service List</a></span>
-            {% if page.url contains '/api/services/' %}
-            <ul class="list-bare sitemenu__sublist">
-              <li><a href="{{ site.baseurl }}/api/services/#shipping-guide">Shipping Guide</a></li>
-              <li><a href="{{ site.baseurl }}/api/services/#booking">Booking</a></li>
-            </ul>
-            {% endif %}
-          </li>
-          <li class="{% if page.url == '/revision-history/' %} active{% endif %}">
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}/api/revision-history/">Revision History</a></span>
-          </li>
-          <li class="sitemenu__separator">
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="https://status.bring.systems" target="_blank" rel="noopener noreferrer">API Status</a></span>
-          </li>
-        {% for api_page in site.pages %}
-          {% unless api_page.api %}{% continue %}{% endunless %}
-          {% if api_page.hide_nav %}{% continue %}{% endif %}
-
-          {% if page.url contains api_page.url %}
-            {% assign active_page = true %}
-          {% else %}
-            {% assign active_page = false %}
-          {% endif %}
-          <li class="{% if active_page %} active{% endif %}">
-
-            <span class="sitemenu__apititle epsilon u-mb0"><a href="{{ site.baseurl }}{{ api_page.url }}">{{ api_page.api.title }}</a></span>
-            {% if active_page %}
-            <ul class="list-bare sitemenu__sublist">
-              {% for item in api_page.api.documentation %}
-                  <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ item.title | slugify }}"><span data-hover="{{ item.title }}">{{ item.title }}</span></a></li>
-              {% endfor %}
-
-              <li><a href="{{ site.baseurl }}{{ api_page.url }}#overview-of-endpoints"><span data-hover="overview-of-endpoints">Overview of endpoints</span></a></li>
-
-              {% if api_page.api.types %}
-                {% for resource in api_page.api.resources %}
-                  <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.displayName | slugify }}"><span data-hover="{{ resource.displayName }}">{{ resource.displayName }}</span></a></li>
-                {% endfor %}
-              {% else %}
-                {% for resource in api_page.api.resources %}
-                  <li><a href="{{ site.baseurl }}{{ api_page.url }}#{{ resource.display_name | slugify }}"><span data-hover="{{ resource.display_name }}">{{ resource.display_name }}</span></a></li>
-                {% endfor %}
-              {% endif %}
-            </ul>
-            {% endif %}
-          </li> 
-        {% endfor %}*/}}
+<nav class="sitemenu">
+  <ul class="list-bare sitemenu__list">
+  {{ range .Site.Menus.api }}
+    <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+      <span class="sitemenu__apititle epsilon u-mb0">
+        <a href="{{ .URL | relURL }}">{{ safeHTML .Name }}</a>
+      </span>
+      {{ if (eq .URL "/api/") }}
+        <ul class="list-bare sitemenu__sublist">
+          <li><a href="{{ "/api/#introduction" | relURL }}">Introduction</a></li>
+          <li><a href="{{ "/api/#authentication" | relURL }}">Authentication</a></li>
+          <li><a href="{{ "/api/#formats" | relURL }}">Formats</a></li>
         </ul>
-      </nav>
+      {{ end }}
+      {{ if (eq .URL "/api/services") }}
+        <ul class="list-bare sitemenu__sublist">
+          <li><a href="{{ "/api/services/#shipping-guide" | relURL }}">Shipping Guide</a></li>
+          <li><a href="{{ "/api/services/#booking" | relURL }}">Booking</a></li>
+        </ul>
+      {{ end }}
+    </li>
+  {{ end }}
+  <li class="sitemenu__separator">
+    <span class="sitemenu__apititle epsilon u-mb0"><a href="https://status.bring.systems" target="_blank" rel="noopener noreferrer">API Status</a></span>
+  </li>
+    {{ range .Site.Data.api }}
+      {{ $urlizedTitle := replace .title "API" "" | urlize }}
+      {{ $titleLink := print "api/" $urlizedTitle }}
+      {{ $lastUrlElement := index (last 1 (split (delimit (split $pageUrl "/") "," "") ",")) 0 }}
+      {{/* hide nav isn’t tested yet, exists only on shipping guide 1 */}}
+      {{ if not .hide_nav }}
+        <li class="{{ if eq $urlizedTitle $lastUrlElement }} active{{ end }}">
+          <span class="sitemenu__apititle epsilon u-mb0">
+            <a href="{{ $titleLink | relURL }}">{{ .title }}</a>
+          </span>
+
+          {{ if eq $urlizedTitle $lastUrlElement }}
+            <ul class="list-bare sitemenu__sublist">
+              {{ range .documentation }}
+                <li>
+                  <a href="#{{ .title | urlize }}">
+                    <span data-hover="{{ .title }}">{{ .title }}</span>
+                  </a>
+                </li>
+              {{ end }}
+
+              <li>
+                <a href="#overview-of-endpoints">
+                  <span data-hover="overview-of-endpoints">Overview of endpoints</span>
+                </a>
+              </li>
+
+              {{ range .resources }}
+                <li>
+                  <a href="#{{ .displayName | urlize }}">
+                    <span data-hover="{{ .displayName }}">{{ .displayName }}</span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</nav>
