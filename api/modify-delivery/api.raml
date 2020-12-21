@@ -19,6 +19,8 @@ documentation:
 
 /allowed-modification:
   displayName: Allowed modifications
+  description: It gives us the list of allowed modifications on a shipment along with failure causes.
+
   get:
     description: List of allowed modifications, along with failure causes.
     queryParameters:
@@ -35,7 +37,7 @@ documentation:
 
 /stop-shipment:
   displayName: Stop shipment
-
+  description: This will stop the shipment and send it back to the sender .
   post:
     description: Stop a shipment and return to sender.
     body:
@@ -50,6 +52,7 @@ documentation:
 
 /change-cod:
   displayName: Change cash on delivery
+  description: This is used the change the COD amount on the shipment .
 
   post:
     description: Change cash on delivery amount to be paid.
@@ -65,7 +68,7 @@ documentation:
 
 /modifications/{shipmentNumber}/address:
   displayName: Change recipient address of delivery.
-
+  description: This is used to change the recipient delivery address .
   uriParameters:
     shipmentNumber:
       description: Shipment number to change address for.
