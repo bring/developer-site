@@ -11,27 +11,27 @@ author:
 ---
 Going from an empty folder to a living React project can feel like a daunting task. As we pointed out in [our precursor](../your-frontend-your-config), if you have been overwhelmed at certain ejected configs or underwhelmed by zero-config tools, it’s time to learn how to set up pragmatic, powerful and customisable configs.
 
-For this, we will be using, but not explaining, Node, npm and a terminal. We will also reference CSS, JS and React, but in no way provide primers.
+For this, we will be using, but not explaining, Node, npm and the terminal. We will also reference CSS, JS and React, but in no way provide primers.
 
-This guide is split into three, the [first part](#setting-up) is a basic setup to process JSX files and make a JS bundle. [Part two](#css-processing) is adding CSS into the mix. [Part three](#additional-exercises) lists some tips to expand and figure things out on your own. We will provide files and folders with complete configs for part one and two. This way you don’t need to write your own app and you can reference the config files along the way.
+This guide is split into three, the [first part](#setting-up) is a basic setup for processing JSX files and make a JS bundle. [Part two](#css-processing) adds CSS into the mix. [Part three](#additional-exercises) lists some tips to expand and figure things out on your own. We will provide files and folders with complete configs for part one and two. This way you don’t need to write your own app and you can reference the config files along the way.
 
 ## Setting up
-Download the [files for part one](/img/webpacking/webpack-config-p1.7z). Make a separate folder for your project.
+Download and unzip the [files for part one](/img/webpacking/webpack-config-p1.7z). Make a separate folder for your project.
 
 ### Package.json
-We start off with package.json because it holds most of the project information like name, dependencies, scripts, version and some config.
+We are going to start off with package.json because it holds most of the project information like name, dependencies, scripts, version and some config.
 
 In our empty project folder, we make a package.json file by running `npm init`. We answer the questions and skip the irrelevant or unknown – all can be changed later as well, or you can reference the downloaded file.
 
 ### Structure
-We also need to have something to build and bundle. Copy the downloaded src folder into the same folder as your package.json.
+We also need to have something to build and bundle. Copy the downloaded `src` folder into the same folder as your package.json.
 
-Inside our src folder we have our components, index.html and index.js.
+Inside the `src` folder we have our components, index.html and index.js.
 
-In index.html, we have mounted the app in a div with an id set to “main”. Inside our index.js we pass the element to the `render()` function.
+In index.html, we have mounted the app in a div with an id set to `main`. Inside our index.js we pass the element to the `render()` function.
 
 ### Dependencies
-It’s usually nice to have a general idea of what every dependency does. We provide some context, but we recommend reading up on the linked documentation.
+It’s nice to get a general idea of what the different dependencies do. We provide some context and recommend reading up on the linked documentation.
 
 After install, you might notice a package-lock.json file and a node_modules folder. The former is the dependency tree. If you use Git, it should always be committed to ensure the same versions being used across potentially different environments. The latter contains the downloaded dependencies and should not be committed.
 
@@ -57,18 +57,18 @@ package.json
 }</code>
 </pre>
 
-The reason we are doing it this way, is to ensure you have the same dependency versions we have. Normally we use `npm i {list of dependencies}` to install, and add `-D` for developer dependencies. But that would have given us the newest version unless we specified the version number as well.
+The reason we are doing it this way, is to ensure you have the same dependency versions we have. Normally we use `npm i {list of dependencies}` to install, and add `-D` for developer dependencies. But that would have given us the newest version unless we specified the version number as well. Save updating for later.
 
 #### Developer dependencies
-These are dev dependencies, as indicated by their placement in package.json. This kind is used when building the project and they are not included in our finished bundle.
+These are dev dependencies, as indicated by their grouping in package.json. They are used when building the project and are not included in our finished bundle.
 
-[Webpack](https://webpack.js.org/) is the Webpack core, which we need in order to get the other Webpack modules and plugins to work. One of the reasons it seems so big is because there are potentially so many plugins and pieces. But the basic structure of Webpack is a core with plugins that you add as you need them with the config that you need. Defaults are great a lot of the time. This makes the core smaller and our projects smaller. It doesn’t affect the bundle size in itself, but it affects the build time and the dev experience.
+[Webpack](https://webpack.js.org/) is the Webpack core, which we need in order to get the other Webpack modules and plugins to work. One of the reasons it seems so big is because there are potentially so many plugins and pieces. But the basic structure of Webpack is a core with plugins that you add as you need them, with the config that you need. Defaults are great a lot of the time. This makes the core smaller and our projects smaller. It doesn’t affect the bundle size in itself, but it affects the build time and the dev experience.
 
 [Webpack CLI](https://webpack.js.org/api/cli/) is for using Webpack through the terminal, we use this in our scripts, which we will get back to.
 
-[Webpack Dev Server](https://webpack.js.org/configuration/dev-server/) is for running things locally – can be skipped if all you do is build and not run locally.
+[Webpack Dev Server](https://webpack.js.org/configuration/dev-server/) is for running things locally.
 
-The other dev dependencies are loaders and plugins that Webpack uses to process our code. We will return to those as they make more sense to explain in the config.
+The other dev dependencies are loaders and plugins that Webpack uses to process our code. We will explain them when we get to the config.
 
 #### Other dependencies
 [React](https://reactjs.org/) and [React DOM](https://reactjs.org/docs/react-dom.html) are for React. [React Router](https://reactrouter.com/) is for navigation, not required to work with React, but often used and part of our example files.
@@ -106,12 +106,14 @@ webpack.dev.js
 }</code>
 </pre>
 
-Target tells Webpack what environment we are running our app in. We normally don’t need to include it, but had to because of a bug in Webpack Dev Server 3 that stops hot reloading from working in some cases. It will be fixed in version 4. Normally `browserslist` is default if a config for it is found, if not it defaults to `web`.
+`target` tells Webpack what environment we are running our app in. We normally don’t need to include it, but had to because of a bug in Webpack Dev Server 3 that stops hot reloading from working in some cases. It will be fixed in version 4. Normally `browserslist` is default if a config for it is found, if not it defaults to `web`.
 
-Mode tells Webpack to output dev or production code. This influences things like minifying the code. Devtool sets the kind of source map we want, useful for debugging in the browser dev tools. Entry is given a path to the main js file. Resolve is basically how Webpack behaves when looking for files – our setting allows us to import .js and .jsx files without specifying the file type.
+`mode` tells Webpack to output dev or production code. This influences things like minifying the code. `devtool` sets the kind of source map we want, useful for debugging in the browser dev tools. `entry` is given a path to the main js file. `resolve` is basically how Webpack behaves when looking for files – our setting allows us to import .js and .jsx files in our components without the file type suffix:
+
+`import ComponentName from './ComponentFile'`
 
 ### Module
-Inside module, we give Webpack some rules for handling various file types.
+Inside `module`, we give Webpack some rules for handling various file types.
 
 That is done by setting up a test that takes a regexp for the file type, in our case we want to check for files ending containing `.js` and `.jsx`. The question mark indicates that the previous character is optional.
 
@@ -141,10 +143,10 @@ babel.config.js
 }</code>
 </pre>
 
-In our Webpack config, Webpack tells Babel Loader “here’s a selection of js and jsx, you know what to do”. Babel knows it should transform our code based on the settings we define, it looks into its config and finds a couple of presets. [Babel Preset Env](https://babeljs.io/docs/en/babel-preset-env) makes Babel read settings for your target environment, in our case web browsers. Which means it will also look for a [Browserslist](https://github.com/browserslist/browserslist) config, currently located in the same file informing Babel what it needs to support. And [Babel Preset React](https://babeljs.io/docs/en/babel-preset-react) makes Babel able to read JSX syntax so that Babel can make it into regular JS that browsers can read.
+In our Webpack config, Webpack tells Babel Loader “here’s a selection of js and jsx, you know what to do”. Babel knows it should transform our code based on the settings we define, it looks into its config and finds a couple of presets. [Babel Preset Env](https://babeljs.io/docs/en/babel-preset-env) makes Babel read settings for your target environment, in our case web browsers. Which means it will also look for a [Browserslist](https://github.com/browserslist/browserslist) config, currently located in the same file informing Babel what it needs to support. And [Babel Preset React](https://babeljs.io/docs/en/babel-preset-react) makes Babel able to read JSX syntax so that Babel can make it into regular JS browsers can read.
 
 ### Plugins
-In addition to loaders, we have plugins. The separation between the two can be a bit vague, and while plugins can also make files, it can also do other things, like ensuring live reloading of a dev environment. And that’s exactly what we want to do by importing the following two plugins at the top of our file. The reason we are importing Webpack into the Webpack configuration file is to be able to use one of its buil-ins as a plugin.
+In addition to loaders, we have plugins. The separation between the two can be a bit vague, and while plugins can also make files, it can also do other things, like ensuring live reloading of a dev environment. And that’s exactly what we want to do by importing the following two plugins at the top of our file. Including one that comes with Webpack.
 
 <pre class="highlight--b">
 webpack.dev.js
@@ -183,7 +185,7 @@ We use hot reloading, port 3000 and history API fallback. The last two means tha
 This should give a file similar to our complete dev config you downloaded at the beginning.
 
 ### Starting the application
-In order to run the project, we go back to package.json and add a script for that as well as one for building files for production. The scripts are really just command line shortcuts. They initiate Webpack and point to what config file it should use. Serve points to Webpack Dev Server.
+In order to run the project, we go back to package.json and add a script for that as well as one for building files for production. The scripts are really just command line shortcuts. They initiate Webpack and point to what config file it should use. `serve` points to Webpack Dev Server.
 
 <pre class="highlight--b">
 package.json
@@ -196,12 +198,12 @@ package.json
 Try running the project locally with `npm start` – open the link to the running app which appears in the terminal, it should be localhost:3000. You should see something like this:
 ![](/img/webpacking/webpackingp1.png)
 
-Don’t worry about the missing CSS, we will come back to that. Make some changes to your component and check if hot reloading works.
+Don’t worry about the missing CSS for now. Make some changes to your component and check if hot reloading works.
 
-If it fails to run, you have to troubleshoot. Check for typos or if you missed something in the config. If not, googling the error message usually provides some answers. 
+If it fails to run, you have to troubleshoot. Check for typos or if you missed something in the config. If not, googling the error message usually provides some answers.
 
 ### Production config
-For production, we can reuse a lot of what we’ve already done – in fact we need less config for that because we don’t need to run it locally.
+For production, we can reuse a lot of what we already have – in fact, we need less config because we don’t need to run it locally.
 
 <pre class="highlight--b">
 webpack.prod.js
@@ -228,19 +230,22 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      hash: true,
     }),
   ],
 }</code>
 </pre>
 
-Like with dev, we set the mode entry and resolve. We skip `target` because that was only needed for the hot reloading in our case.
+Like with dev, we set `mode`, `entry` and `resolve`. We skip `target` because that was only needed for the hot reloading in our case.
 
-We also use HTML Webpack Plugin here to actually create the index.html file. It adds the JS automatically, we don’t have to add script tags. We have to upload it to a server in order to run the application because we use history features that don’t work with file scheme URLs.
+We also use HTML Webpack Plugin here to create the actual index.html file. It adds the JS automatically; we don’t have to add script tags. The `hash` option adds a hash to the link that changes when the bundle changes.
 
-Try building the project. If it fails, and it’s not the components, then troubleshoot, fix and try again. Chances are others have had the same problem.
+Try building the project. We have to upload the output to a server in order to run the application because we use history features that don’t work with file scheme URLs.
+
+If it fails, and it’s not the components, then troubleshoot, fix and try again. Chances are others have had the same problem.
 
 ## CSS processing
-When we have a working setup and a grasp of how that works, it’s time to start adding to it. We are going to demonstrate a varied syntax, upping the complexity just a little bit. Perhaps a pattern in the config emerges as we proceed, one that will make it clearer how to extend it even further. 
+When we have a working setup and a grasp of how that works, it’s time to start building on top of it. We are going to demonstrate a varied syntax, upping the complexity just a little bit. Perhaps a pattern in the config emerges as we proceed, one that will make it clearer how to extend it even further.
 
 What’s better to add than the _BFF_ of HTML and JS; CSS. Download the [files for part two](/img/webpacking/webpack-config-p2.7z), and replace the src folder in your test project with the new one.
 
@@ -276,7 +281,7 @@ In combination with global scoped CSS:
 
 <code>className={`${css.parcelInfo} mb5r`}</code>
 
-In the WebpackInfo component, we only have globally scoped CSS – therefore, no need to import or reference classes in a special way here.
+In the WebpackInfo component, we only have globally scoped CSS; no need to import or reference classes in a special way here.
 
 ### Adding dependencies
 Just like with JS, we need loaders and processors, all of which are dev dependencies. Update the list of dev dependencies in your package.json and run `npm i` to install them. We will explain the new ones as we proceed with the config.
@@ -300,13 +305,13 @@ package.json
   "postcss-loader": "^4.1.0",
   "style-loader": "^2.0.0",
   "webpack": "^5.4.0",
- "webpack-cli": "^4.2.0",
+  "webpack-cli": "^4.2.0",
   "webpack-dev-server": "^3.11.0"
 },</code>
 </pre>
 
 ### Back to the known
-We can continue the config work by moving the Browserslist setting from our babel config to package.json. This will make it available to everything that needs it, not just Babel, but also the CSS processing we will be setting up. Remove the `targets` object from babel.config.js and add the following to package.json.
+We can continue the config work by moving the Browserslist setting from our Babel config to package.json. This will make it available to everything that needs it, both Babel and the CSS processing we will be setting up. Remove the `targets` object from babel.config.js and add the following to package.json.
 
 <pre class="highlight--b">
 package.json
@@ -360,9 +365,9 @@ We also have options, so we expand every loader into an object. We will demonstr
 #### CSS Loader
 [CSS Loader](https://webpack.js.org/loaders/css-loader/) enables the reading of our CSS code and processes it according to our settings. Since we have both local and global scope, we have added some options to it.
 
-Import Loaders tells how many loaders that precedes the CSS Loader. Inside the modules, we have mode, local ident name and export locals convention. Mode holds scope settings and the next two are options for the local scoped CSS.
+Import Loaders tells how many loaders that precedes the CSS Loader. Inside `modules`, we have `mode`, `localIdentName` and `exportLocalsConvention`. The first holds scope settings and the next two are options for the local scoped CSS.
 
-We need to add a conditional so that local and global CSS are handled accordingly. We make a function that takes the Resource Path, which is the path of the CSS files that are imported in our JS and JSX files. And we check if common.css is part of the Resource Path, which means the mode is global and it’s only read without any changes for now.
+We need to add a conditional that handle local and global CSS accordingly. We make a function that takes the `resourcePath`, which is the path of the CSS files that are imported in our JS and JSX files. And we check if common.css is part of the `resourcePath`, which means the mode is global and it’s only read without any changes for now.
 
 In any other case, the mode is local. For that CSS, the name of the class is changed to ensure scope. That is something we can control, and we say that it should take the component name, two underscores, class name, two underscores and a 4 character hash.
 
@@ -377,7 +382,7 @@ Class referenced in OtherInfo.jsx: `css.parcelInfo`
 Class name after processing: `otherInfo__parcelInfo__2i8y`
 
 #### PostCSS
-Lastly, we have [PostCSS Loader](https://webpack.js.org/loaders/postcss-loader/) which is for [PostCSS](https://postcss.org/) functionality. It has its own set of plugins which we configure in a separate file called postcss.config.js, similar to what we did with Babel.
+Lastly, we have [PostCSS Loader](https://webpack.js.org/loaders/postcss-loader/) which is for [PostCSS](https://postcss.org/) functionality. It has its own set of plugins configured in a separate file called postcss.config.js, similar to what we did with Babel.
 
 <pre class="highlight--b">
 postcss.config.js
@@ -391,17 +396,17 @@ postcss.config.js
 }</code>
 </pre>
 
-Since we use import in our CSS files, we need [a plugin handling import](https://github.com/postcss/postcss-import) does that and combines all imported files into one. 
+Since we use `import` in our CSS files, we need [a plugin handling import](https://github.com/postcss/postcss-import) and combines all imported files into one. 
 
-We also use CSS variables or custom properties as the technical term is. They are standard CSS, but of the more modern kind. Which means we have to support the users that can’t choose to switch from older browsers. [The plugin](https://github.com/MadLittleMods/postcss-css-variables) replaces the variable pointer with the actual value before bundling – that means we only use variables as a developer feature for now. But when we get to a point where this isn’t needed anymore, we can just remove that setting and dependency.
+We also use CSS variables, or custom properties as the technical term is. They are standard CSS, but of the more modern kind. Which means we have to support the users that can’t choose to switch from older browsers. [The plugin](https://github.com/MadLittleMods/postcss-css-variables) replaces the variable pointer with the actual value before bundling. Which means we only use variables as a developer feature in this project. But when we get to a point where this isn’t needed anymore, we can just remove that setting and dependency.
 
-The same goes for [Autoprefixer](https://github.com/postcss/autoprefixer) which prefixes based on the Browserslist config, which we share with Babel. This is mostly used for certain flexbox properties and some grid support, which we have none of right now, but it’s included for demo purposes.
+The same goes for [Autoprefixer](https://github.com/postcss/autoprefixer) which prefixes based on the Browserslist config. This is mostly used for certain flexbox properties and some grid support, which we have none of right now, but it’s so widely used that we included it for demo purposes.
 
 And [CSS Nano](https://cssnano.co/) minifies the CSS.
 
 All these can have their own settings, but we run with default most of the time.
 
-And now we can run the project again with `npm start` and open localhost:3000. You should see something like this:
+Finally, we can run the project again with `npm start` and open localhost:3000. You should see something like this:
 ![](/img/webpacking/webpackingp2.png)
 
 Try to change some of the CSS, even variables, to check the hot reloading.
@@ -463,14 +468,15 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      hash: true,
     }),
   ],
 }</code>
 </pre>
 
-If you compare the dev and prod configs now, you will also see that we have shortened the loader array syntax just a little bit.
+If you compare the dev and prod configs, you will also see that we have shortened the loader array syntax just a little bit.
 
-`npm run build` and check to see in our output folder that the CSS is in a separate file and not in the JS. Upload the app to a server to check if everything works.
+Run `npm run build` and check that the CSS is in a separate bundled file and not in the JS. Upload the app to a server if you want to check if everything works.
 
 The output name and folder is the same as for the JS, but that can be customised in the plugin’s settings if you need to.
 
@@ -478,11 +484,11 @@ The output name and folder is the same as for the JS, but that can be customised
 Hopefully, you will now have a better grasp of some central concepts and how the different parts work. If you want to build upon that base, we have a few pointers to what you can try and expand on which are relevant for many projects.
 
 ### Keeping things up-to-date
-In this tutorial we have not instructed you to install the dependencies one by one, but using the ones we have in the package.json file. This is to ensure you have the same version we have tested this on. And it means that there are updates to several of the dependencies.
+In this tutorial we have not instructed you to install the dependencies one by one, but using the ones we have in the package.json file. This is to ensure you have the same version we have tested this on. And it means that there are probably updates to several of the dependencies.
 
 Run `npx npm-check -u`
 
-The command will list all available updates and their kind, major, minor etc. This way you can select what to upgrade and go step-wise. For majors, it can be a good idea to update one at a time. Build and test it, and read changelogs when you encounter breaking changes.
+The command will list all available updates and their kind, major, minor etc. You can select what to upgrade and go step-wise. For majors, it can be a good idea to update one at a time. Build and test it, and read changelogs when you encounter breaking changes.
 
 If Webpack Dev Server has released version 4 by the time you’re reading this, the bug we mentioned requiring us to add the `target: 'web'` setting in our dev config is no longer needed. Try updating to the new version and remove the target option before checking if hot reloading still works.
 
