@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LoadCarrierEventRequest>
+  <LoadCarrierEvent xmlns="">
+    <LogicalLoadCarrierId>0703004312101400133838</LogicalLoadCarrierId>
+    <EventCode>Coupling</EventCode>
+    <TimeStamp>2020-12-28T09:26:00.0421975+01:00</TimeStamp>
+    <LocationId>032850</LocationId>
+    <PostalCode>0024</PostalCode>
+    <CountryCode>NO</CountryCode>
+    <CustomerNumber>00000000944</CustomerNumber>
+    <Consignments id="70438100746244552">
+      <PackageId>370438100746361762</PackageId>
+      <PackageId>370438100746361779</PackageId>
+      <PackageId>370438100746361786</PackageId>
+    </Consignments>
+    <Consignments id="70438100746244538">
+      <PackageId>370438100746361731</PackageId>
+    </Consignments>
+  </LoadCarrierEvent>
+</LoadCarrierEventRequest>
