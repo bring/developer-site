@@ -1,0 +1,34 @@
+{
+  "messageDetails": {
+    "messageSender": {
+      "partyId": "string",
+      "idType": "string"
+    },
+    "messageRecipient": {
+      "partyId": "string",
+      "idType": "string"
+    },
+    "messageDate": "string"
+  },
+  "statusChangeSet": {
+    "statusChange": {
+      "customerNumber": "string",
+      "masterCustomerNumber": "string",
+      "wmsOrderNumber": "string",
+      "customerOrderNumber": "string",
+      "orderType": "string",
+      "fromStatus": "string",
+      "toStatus": "string",
+      "dateAndTimes": {
+        "date": "string",
+        "time": "string",
+        "subClass": "string"
+      },
+      "logOnUser": "string",
+      "logOnKey": "string"
+    }
+  },
+  "version": "string",
+  "messageId": "string",
+  "xmlns": "string"
+}
