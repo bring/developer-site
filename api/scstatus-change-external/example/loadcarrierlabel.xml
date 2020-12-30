@@ -1,7 +1,0 @@
-<LoadCarrierRequest>
-  <CustomerNumber xmlns="">00000000944</CustomerNumber>
-  <Vendor xmlns="">test</Vendor>
-  <LocationId xmlns="">032850</LocationId>
-  <Priority xmlns="">2</Priority>
-  <LoadCarrierCount xmlns="">2</LoadCarrierCount>
-</LoadCarrierRequest>

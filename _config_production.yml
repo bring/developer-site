@@ -48,7 +48,7 @@ raml_10_map:
   api/invoice/api.raml:
     target: api/invoice/index.html
     sort_order: 120
-  api/scstatus-change-external/api.raml:
+  api/ssc-status-change-ext/api.raml:
     target: api/scstatus-change-external/index.html
     sort_order: 137
 

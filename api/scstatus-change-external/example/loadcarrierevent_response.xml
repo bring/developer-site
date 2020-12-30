@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<LoadCarrierEventResponse>
-  <Status>
-    <ProcessingId>string</ProcessingId>
-    <Status>OK</Status>
-    <StatusText>string</StatusText>
-  </Status>
-</LoadCarrierEventResponse>
