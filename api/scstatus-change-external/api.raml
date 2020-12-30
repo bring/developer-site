@@ -1,0 +1,375 @@
+#%RAML 1.0
+---
+title: SC External Status Change API
+version: v1
+baseUri: https://bapi.bring.com/scstatuschangeext
+mediaType: application/json
+annotationTypes:
+  hideInDocumentation: boolean
+  hideRequired: boolean
+types:
+  LoadCarrierEventRequest:
+    type: object
+    properties:
+      LoadCarrierEvent:
+        type: LoadCarrierEvent[]
+        description: Structure for the LoadCarrierEvent
+        required: false
+  LoadCarrierEvent:
+    type: object
+    properties:
+      LogicalLoadCarrierId:
+        type: string
+        description: BatchConsignmentId for the logical load carrier, ie the cage or pallet the packages are packed on.
+        example: "0703004312101400133838"
+        required: false
+      EventCode:
+        type: string
+        description: The event type for the event
+        example: Coupling
+        required: false
+        enum:
+        - Coupling
+      TimeStamp:
+        type: datetime
+        description: Timestamp, date and time
+        example: 2018-11-22T08:58:52
+        required: true
+      LocationId:
+        type: string
+        description: LocationId for where the event occurred
+        example: "032850"
+        required: true
+      PostalCode:
+        type: string
+        description: PostalCode for where the event occurred
+        example: "0024"
+        required: true
+      CountryCode:
+        type: string
+        description: CountryCode (ISO 3166-1 alpha-2  format) for country where the event occured
+        example: NO
+        required: true
+      CustomerNumber:
+        type: string
+        description: CustomerId for the consignor
+        example: "00102601945"
+        required: true
+      Consignments:
+        type: LoadCarrierEventConsignments[]
+        description: List of consignments and packages for the event
+  LoadCarrierEventConsignments:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Consignmentid for the packages in sublist
+        example: "70438100746244552"
+        required: false
+      PackageId:
+        type: string[]
+        description: List of packages for specified consignment
+        example: ["370438100746361762"]
+        required: false
+  LoadCarrierRequest:
+    type: object
+    properties:
+      CustomerNumber:
+        type: string
+        description: CustomerId for consignor
+        example: "00000000944"
+        required: false
+      Vendor:
+        type: string
+        required: false
+      LocationId:
+        type: string
+        description: LocationId for where the event occurred
+        example: "032850"
+        required: false
+      Priority:
+        type: integer
+        description: Priority for the request, valid values are 1, 2 and 3 where 1 is the highest priority
+        example: "1"
+        required: false
+      LoadCarrierCount:
+        type: integer
+        description: The count of the numbers of labels required
+        example: "12"
+  HttpResponseMessage:
+    type: object
+    properties:
+      Status:
+        type: object
+        required: false
+  LoadCarrierEventResponse:
+    type: object
+    properties:
+      Status:
+        type: ResponseStatusStructure
+        required: false
+  ResponseStatusStructure:
+    type: object
+    properties:
+      ProcessingId:
+        type: string
+        description: ProcessingId for the submission, used to track processing in Bring
+        example: 2bfda8c1-fdc4-424e-941e-349f70c72594
+        required: false
+      Status:
+        type: string
+        description: ProcessingId for the submission, used to track processing in Bring
+        example: OK
+        enum:
+        - OK
+        - ERROR
+        - TEMPORARY_ERROR
+        - VALIDATION_ERROR
+        required: false
+      StatusText:
+        type: string
+        description: Text description of submission, if Error / validation error it will contain a textual of description of why the message submission failed
+        example: OK
+        required: false
+  LoadCarrierResponse:
+    type: object
+    properties:
+      Destination:
+        type: LoadCarrierResponseDestination
+        description: Information about the destination
+        required: false
+      DepartureTerminal:
+        type: LoadCarrierTerminal
+        description: Information about the departure terminal
+        required: false
+      ArrivalTerminal:
+        type: LoadCarrierTerminal
+        description: Information about the arrival terminal
+        required: false
+      LoadCarriers:
+        type: LoadCarrierResponseLoadCarriers[]
+        description: List of something, repeatable segments
+        required: false
+      ShipmentSortLines:
+        type: LoadCarrierResponseShipmentSortLines
+        description: Sort information to put on the label
+        required: false
+  LoadCarrierResponseDestination:
+    type: object
+    properties:
+      Name:
+        type: string
+        description: Name of the destination
+        example: BERGEN?
+        required: false
+      Description:
+        type: string
+        description: Description of the destination
+        example: Behind the big dumpster in the back
+        required: false
+      PostalCode:
+        type: string
+        description: PostalCode of the destination
+        example: "5226"
+        required: false
+      id:
+        type: string
+        description: DestinationId
+        required: false
+  LoadCarrierTerminal:
+    type: object
+    properties:
+      Name:
+        type: string
+        description: Name of the Terminal
+        example: Stokke=
+        required: false
+      id:
+        type: string
+        description: Id of the Terminal
+        example: Stokke=
+        required: false
+  LoadCarrierResponseLoadCarriers:
+    type: object
+    properties:
+      id:
+        type: string
+        required: false
+  LoadCarrierResponseShipmentSortLines:
+    type: object
+    properties:
+      LabelLine1:
+        type: string
+        description: Line 1 for label
+        example: Text for label
+        required: false
+      LabelLine2:
+        type: string
+        description: Line 2 for label
+        example: Text for label
+        required: false
+      LabelLine3:
+        type: string
+        description: Line 3 for label
+        example: Text for label
+        required: false
+
+documentation:
+- title: Introduction
+  content: |
+      SC Status Change External API.
+
+- title: Authentication
+  content: |
+    The Load Carrier Label API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+
+/sendloadcarrierevent:
+  displayName: Send Load Carrier Event
+  description: |
+        Sends a Load Carrier Event
+
+        The structure and most of the content will be validated.
+  post:
+    description: Request is used to send a Load Carrier Event.
+    headers:
+      Content-Type:
+        description: Specify request format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+      Accept:
+        description: Specify response format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+    body:
+      application/xml:
+        type: LoadCarrierEventRequest
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include example/loadcarrierevent.xml
+      application/json:
+          type: LoadCarrierEventRequest
+          examples:
+            valid_request:
+              displayName: Valid Request
+              value: !include example/loadcarrierevent.json
+    responses:
+      200:
+        description: |
+          LCL Event received successfully
+        body:
+          application/xml:
+            type: LoadCarrierEventResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/loadcarrierevent_response.xml
+          application/json:
+            type: LoadCarrierEventResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/loadcarrierevent_response.json
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request
+
+      417:
+        displayName: Error
+        description: |
+          Missing authentication headers.
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination.
+
+/sendloadcarrierlabel:
+  displayName: Send Load Carrier Label
+  description: |
+        Sends a Load Carrier Label
+
+        The structure and most of the content will be validated.
+  post:
+    description: Request is used to send a Load Carrier Label.
+    headers:
+      Content-Type:
+        description: Specify request format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+      Accept:
+        description: Specify response format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+    body:
+      application/xml:
+        type: LoadCarrierRequest
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include example/loadcarrierlabel.xml
+      application/json:
+          type: LoadCarrierRequest
+          examples:
+            valid_request:
+              displayName: Valid Request
+              value: !include example/loadcarrierlabel.json
+    responses:
+      200:
+        description: |
+          LCL Event received successfully
+        body:
+          application/xml:
+            type: LoadCarrierResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/loadcarrierlabel_response.xml
+          application/json:
+            type: LoadCarrierResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/loadcarrierlabel_response.json
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request
+
+      417:
+        displayName: Error
+        description: |
+          Missing authentication headers.
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination.
+
+/getcoverageinformation:
+  displayName: Get Coverage information.
+  description: |
+        Retrieve full LoadCarrier coverage information.
+
+        The structure and most of the content will be validated.
+  get:
+    description: Request is used to get LoadCarrier coverage information.
+    headers:
+      Content-Type:
+        description: Specify request format (text/plain)
+        required: true
+        enum: [ text/plain ]
+    responses:
+      200:
+        description: |
+          Retrieve full LoadCarrier coverage information.
+        body:
+          examples:
+            valid_shipment:
+              displayName: Text Response
+              value: !include example/loadcarriercoverage_response.txt
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination.
