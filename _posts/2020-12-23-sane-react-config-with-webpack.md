@@ -13,7 +13,7 @@ Going from an empty folder to a living React project can feel like a daunting ta
 
 For this, we will be using, but not explaining, Node, npm and the terminal. We will also reference CSS, JS and React, but in no way provide primers.
 
-This guide is split into three, the [first part](#setting-up) is a basic setup for processing JSX files and make a JS bundle. [Part two](#css-processing) adds CSS into the mix. [Part three](#additional-exercises) lists some tips to expand and figure things out on your own. We will provide files and folders with complete configs for part one and two. This way you don’t need to write your own app and you can reference the config files along the way.
+This guide is split into three, the [first part](#setting-up) is a basic setup for processing JSX files and make a JS bundle. [Part two](#css-processing) adds CSS into the mix. [Part three](#additional-exercises) lists some tips to expand and figure things out on your own. We will provide files and folders with complete configs for part one and two.
 
 ## Setting up
 Download and unzip the [files for part one](/img/webpacking/webpack-config-p1.7z). Make a separate folder for your project.
@@ -21,17 +21,17 @@ Download and unzip the [files for part one](/img/webpacking/webpack-config-p1.7z
 ### Package.json
 We are going to start off with package.json because it holds most of the project information like name, dependencies, scripts, version and some config.
 
-In our empty project folder, we make a package.json file by running `npm init`. We answer the questions and skip the irrelevant or unknown – all can be changed later as well, or you can reference the downloaded file.
+In our empty project folder, we make a package.json file by running `npm init`. We answer the questions and skip the irrelevant or unknown – all can be changed later as well, or you use the downloaded file as reference.
 
 ### Structure
-We also need to have something to build and bundle. Copy the downloaded `src` folder into the same folder as your package.json.
+We also need to have something to build and bundle. Copy the downloaded src folder into the same folder as your package.json.
 
-Inside the `src` folder we have our components, index.html and index.js.
+Inside the src folder we have our components, index.html and index.js.
 
 In index.html, we have mounted the app in a div with an id set to `main`. Inside our index.js we pass the element to the `render()` function.
 
 ### Dependencies
-It’s nice to get a general idea of what the different dependencies do. We provide some context and recommend reading up on the linked documentation.
+Get a general idea of what the different dependencies do. We provide some context and recommend reading up on the linked documentation.
 
 After install, you might notice a package-lock.json file and a node_modules folder. The former is the dependency tree. If you use Git, it should always be committed to ensure the same versions being used across potentially different environments. The latter contains the downloaded dependencies and should not be committed.
 
@@ -57,7 +57,7 @@ package.json
 }</code>
 </pre>
 
-The reason we are doing it this way, is to ensure you have the same dependency versions we have. Normally we use `npm i {list of dependencies}` to install, and add `-D` for developer dependencies. But that would have given us the newest version unless we specified the version number as well. Save updating for later.
+The reason we are doing it this way, is to ensure you have the same dependency versions we have. Normally we use `npm i {list of dependencies}` to install, and add `-D` for developer dependencies. But that would have given us the newest version unless we specified the version number as well. Save any updating for later.
 
 #### Developer dependencies
 These are dev dependencies, as indicated by their grouping in package.json. They are used when building the project and are not included in our finished bundle.
@@ -106,7 +106,7 @@ webpack.dev.js
 }</code>
 </pre>
 
-`target` tells Webpack what environment we are running our app in. We normally don’t need to include it, but had to because of a bug in Webpack Dev Server 3 that stops hot reloading from working in some cases. It will be fixed in version 4. Normally `browserslist` is default if a config for it is found, if not it defaults to `web`.
+`target` tells Webpack what environment we are running our app in. We normally don’t need to include it, but had to because of a bug in Webpack Dev Server 3 that stops hot reloading from working in some cases. It will be fixed in version 4. Normally `browserslist` is default if such a config is found, if not it defaults to `web`.
 
 `mode` tells Webpack to output dev or production code. This influences things like minifying the code. `devtool` sets the kind of source map we want, useful for debugging in the browser dev tools. `entry` is given a path to the main js file. `resolve` is basically how Webpack behaves when looking for files – our setting allows us to import .js and .jsx files in our components without the file type suffix:
 
@@ -143,7 +143,9 @@ babel.config.js
 }</code>
 </pre>
 
-In our Webpack config, Webpack tells Babel Loader “here’s a selection of js and jsx, you know what to do”. Babel knows it should transform our code based on the settings we define, it looks into its config and finds a couple of presets. [Babel Preset Env](https://babeljs.io/docs/en/babel-preset-env) makes Babel read settings for your target environment, in our case web browsers. Which means it will also look for a [Browserslist](https://github.com/browserslist/browserslist) config, currently located in the same file informing Babel what it needs to support. And [Babel Preset React](https://babeljs.io/docs/en/babel-preset-react) makes Babel able to read JSX syntax so that Babel can make it into regular JS browsers can read.
+In our Webpack config, Webpack tells Babel Loader “here’s a selection of js and jsx, you know what to do”. Babel knows it should transform our code based on the settings we define, it looks into its own config and finds a couple of presets.
+
+[Babel Preset Env](https://babeljs.io/docs/en/babel-preset-env) makes Babel read settings for your target environment, in our case web browsers. Which means it will also look for a [Browserslist](https://github.com/browserslist/browserslist) config, currently located in the same file informing Babel what it needs to support. And [Babel Preset React](https://babeljs.io/docs/en/babel-preset-react) makes Babel able to read JSX syntax so that Babel can make it into regular JS browsers can read.
 
 ### Plugins
 In addition to loaders, we have plugins. The separation between the two can be a bit vague, and while plugins can also make files, it can also do other things, like ensuring live reloading of a dev environment. And that’s exactly what we want to do by importing the following two plugins at the top of our file. Including one that comes with Webpack.
@@ -195,7 +197,7 @@ package.json
 },</code>
 </pre>
 
-Try running the project locally with `npm start` – open the link to the running app which appears in the terminal, it should be localhost:3000. You should see something like this:
+Try running the project locally with `npm start` and open the link to the running app which appears in the terminal, it should be localhost:3000. You should see something like this:
 ![](/img/webpacking/webpackingp1.png)
 
 Don’t worry about the missing CSS for now. Make some changes to your component and check if hot reloading works.
@@ -203,7 +205,7 @@ Don’t worry about the missing CSS for now. Make some changes to your component
 If it fails to run, you have to troubleshoot. Check for typos or if you missed something in the config. If not, googling the error message usually provides some answers.
 
 ### Production config
-For production, we can reuse a lot of what we already have – in fact, we need less config because we don’t need to run it locally.
+For production, we can reuse a lot of what we already have – in fact, we need less config since we are not running production locally, only building it.
 
 <pre class="highlight--b">
 webpack.prod.js
@@ -256,20 +258,20 @@ For the output, we demonstrate how to bundle CSS in the JS in the dev config, an
 
 A separate file makes sense in most cases. But if your entire application exists within the JS and it’s not very big, there might not be much argument to have the CSS elsewhere.
 
-### Files and scope
+### Scopes and files
 We want to handle both global and local scope. Global CSS is regular CSS, it can be used anywhere and everywhere the classes are available because we output unaltered class names.
 
-Local scope is when the class names are processed in order to have them work only where they are referenced directly. This is often used where CSS files are component-specific, for instance when having one CSS file for each JSX file.
+Local scope is when the class names are processed in order to give them unique names. This is to have them work only where they are specifically referenced and to avoid conflicts with identical class names that are used elsewhere. We use this in component-specific CSS files, for instance where there’s one CSS file for each JSX file.
 
-The variables file has some values we will use in both local and global scope.
+The variables file has values we will use in both scopes.
 
-Globally, we have base and utility files that use the variables and a common CSS file that imports the other files in listing order, meaning that only files imported after the variable file can use the variables. It is also imported inside the index.js in order to have Webpack handle it.
+Globally, we have base and utility files that use the variables and a common CSS file that imports the other files in listing order. Meaning that only files imported after the variable file can use the variables. It is also imported inside the index.js in order to have Webpack handle it.
 
-We also have a locally scoped file that will have CSS that is only available to the components that import it. This too uses the variable file and needs to import it specifically because this local scoped file is unrelated to the common CSS.
+Locally, we have one file that will have CSS that is only available to the components that import it. This too uses the variable file and needs to import that because the local scoped file is unrelated to the imports happening in the global, common CSS.
 
-We add some classes in the components. OtherInfo has both locally scoped and global scoped. Which is a very common thing to do if you, for instance, have a set of general utility classes combined with more specific CSS.
+We have added some global classes in our components. In OtherInfo.jsx there is also local scope. A combination which is very common if you, for instance, have a set of general utility classes combined with more specific CSS.
 
-In OtherInfo.jsx we must import the related CSS file.
+In OtherInfo.jsx we achive this by importing the related CSS file:
 
 `import css from './OtherInfo.css'`
 
@@ -277,11 +279,9 @@ And reference the classes with curly brackets:
 
 <code>className={css.parcelInfo}</code>
 
-In combination with global scoped CSS:
+And combine it with a global scope class:
 
 <code>className={`${css.parcelInfo} mb5r`}</code>
-
-In the WebpackInfo component, we only have globally scoped CSS; no need to import or reference classes in a special way here.
 
 ### Adding dependencies
 Just like with JS, we need loaders and processors, all of which are dev dependencies. Update the list of dev dependencies in your package.json and run `npm i` to install them. We will explain the new ones as we proceed with the config.
@@ -498,7 +498,7 @@ It’s a constant task to keep dependencies up to date, and how you solve it per
 It’s possible to have multiple bundles in one config. Start by setting up [multiple entry points](https://webpack.js.org/concepts/entry-points/).
 
 ### Output files
-We’ve covered input but not [output](https://webpack.js.org/concepts/output/), which works by default but can also be configured to specific folders and bundle names.
+We’ve covered input but not [output](https://webpack.js.org/concepts/output/), which works by default but can also be configured to specific folders and bundle names. Especially useful with multiple bundles.
 
 And if you split your bundles or use lazy loading, then you can also set names for those chunks.
 

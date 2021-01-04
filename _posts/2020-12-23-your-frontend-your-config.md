@@ -29,9 +29,9 @@ Since we rarely get away without any custom config, we are already in the busine
 ### Where Create React App fails
 It’s completely understandable if you have felt regret or just become overwhelmed when ejecting Create React App. 
 
-An ejected Create React App is not a realistic example of what a config should look like. It’s a mess of folders, huge config files and scripts, dependencies you probably don’t use and thousands of lines of code that surpass a small application. When this is many people’s first meeting with a full Webpack config, it becomes off-putting. Of course, no one wants to learn how to make that! And it’s a really difficult starting point for learning.
+An ejected Create React App is not a realistic example of what a config should look like. It’s a mess of folders, huge config files and scripts, dependencies you probably don’t use and thousands of lines of code that surpass a small application. When this is many people’s first meeting with a full Webpack config, it becomes off-putting. Of course, no one wants to learn how to make that! It’s a really difficult starting point for learning how to configure a project.
 
-We end up avoiding it, becoming content as long as it works. And when we have to do something about it, we end up throwing things at the wall, having a hard time getting the full picture. We just want it to work again! Which leads us to look for quick solutions, maybe copying things blindly, seeing what sticks in the end. Adding to an already big config. We get it to work and hope for the best. But it doesn’t sit well with us.
+We end up avoiding it, becoming content as long as it works. And when we _have_ to do something about it, we end up throwing things at the wall, having a hard time getting the full picture. We just want it to work again! Which leads us to look for quick solutions, maybe copying things blindly, seeing what sticks in the end. Adding to an already big config. We get it to work and hope for the best. But it doesn’t sit well with us.
 
 It also reflects badly on Webpack which has gotten a reputation of being big, complex and difficult to understand. In most cases, it is what you make it. And that’s the good news, the tempting-looking configs we get from ready-mades, we can make that on our own.
 
@@ -48,7 +48,7 @@ Transparency doesn’t mean that every config should be identical, but that the 
 ### Dependencies you need
 If we use tools with dependencies we don’t need, who are we updating those unused dependencies for? 
 
-When we configure our own project, we only add what we need. And we don’t spend more time than necessary to keep our project up to date. Because we have direct access to our dependencies, we can choose which ones to update, and if something breaks, it’s easier to pinpoint the culprit.
+When we configure our own project, we only add what we need. And we don’t spend more time than necessary to keep our project up to date. Because we have direct access to our dependencies, we can choose which ones to update, and if something breaks, it’s easier to find the culprit.
 
 Less updating, faster troubleshooting and faster build times are what we get when we run only with things that we need. And for our users, the bundles _might_ be smaller.
 
@@ -58,15 +58,15 @@ Maybe you want to use Preact, Svelte or Vue. Or don’t want to use Webpack. The
 ## Cleaning up an ejected config
 Or how to get rid of 7000 lines from your app. 
 
-As stated, this isn’t a tutorial, but we will leave you with some directions if you have ejected and feel overwhelmed.
+This isn’t a tutorial but we will leave you with some directions if you have ejected and feel overwhelmed.
 
 Depending on what you’re comfortable with, you can copy your application without any config into a new folder and set it up from scratch. That’s probably the easiest way. If it’s the first time, you can try [our tutorial](../sane-react-config-with-webpack) first before repeating the steps with your own project.
 
 Or you can take the scenic route and start removing things.
 
-Get rid of all the dependencies you don’t use. It usually involves looking up a lot of dependencies, figuring out what they’re for, but that can be useful knowledge to have anyway. Running `npx npm-check` will list all dependencies and their status. If something shows up as not in use, it’s worth looking into if it can be removed. It’s not bulletproof but gives an indication. Additionally, you can search your code for any reference, if you are uncertain.
+Get rid of all the dependencies you don’t use. It usually involves looking up a lot of dependencies to figure out what they’re for, but that can be useful knowledge to have anyway. Running `npx npm-check` will list all dependencies and their status. If something shows up as not in use, it’s worth looking into if it can be removed. It’s not bulletproof but gives an indication. Additionally, you can search your code for any reference.
 
-If you try building after you have removed dependencies, it will probably fail because most of them are still referenced in the config. This too has to be cleaned up but, again, starting from scratch is probably easier.
+If you try building after you have removed dependencies, it will probably fail because most of them are still referenced in the config. This too has to be cleaned up. Again, starting from scratch is probably easier.
 
 You should also delete the scripts folder and add scripts for building and running to the package.json instead.
 
