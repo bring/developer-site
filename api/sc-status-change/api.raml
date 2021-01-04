@@ -1,0 +1,190 @@
+#%RAML 1.0
+---
+title: SC Status Change API
+version: v1
+baseUri: https://bapi.bring.com/scstatuschange
+mediaType: application/json
+annotationTypes:
+  hideInDocumentation: boolean
+  hideRequired: boolean
+types:
+  StatusChanges:
+    type: object
+    properties:
+      MessageDetais:
+        type: MessageDetails
+        required: false
+      StatusChangeSet:
+        type: StatusChangeSet
+        required: false
+      Version:
+        type: string
+        required: false
+      MessageId:
+        type: string
+        required: false
+      Xmls:
+        type: string
+        required: false
+  MessageDetails:
+    type: object
+    properties:
+      MessageSender:
+        type: MessageSender
+        required: false
+      MessageRecipient:
+        type: MessageRecipient
+        required: false
+      MessageDate:
+        type: string
+        required: false
+  MessageSender:
+    type: object
+    properties:
+      PartyId:
+        type: string
+        required: false
+      IdType:
+        type: string
+        required: false
+  MessageRecipient:
+    type: object
+    properties:
+      PartyId:
+        type: string
+        required: false
+      IdType:
+        type: string
+        required: false
+  StatusChangeSet:
+    type: object
+    properties:
+      StatusChange:
+        type: StatusChange
+        required: false
+  StatusChange:
+    type: object
+    properties:
+      CustomerNumber:
+        type: string
+        required: false
+      MasterCustomerNumber:
+        type: string
+        required: false
+      WSOrderNumber:
+        type: string
+        required: false
+      CustomerOrderNumber:
+        type: string
+        required: false
+      OrderType:
+        type: string
+        required: false
+      FromStatus:
+        type: string
+        required: false
+      ToStatus:
+        type: string
+        required: false
+      DateAndTimes:
+        type: datetime
+        required: false
+      LogOnUser:
+        type: string
+        required: false
+      LogOnKey:
+        type: string
+        required: false
+  HttpResponseMessage:
+    type: object
+    properties:
+      Status:
+        type: object
+        required: false
+  StatusChangesResponse:
+    type: object
+    properties:
+      Status:
+        type: string
+        enum:
+        - OK
+        - ERROR
+        - VALIDATION
+        required: false
+      Errors:
+        type: StatusChangesResponseErrors[]
+        required: false
+  StatusChangesResponseErrors:
+    type: object
+    properties:
+      Error:
+        type: string
+        required: false
+
+documentation:
+- title: Introduction
+  content: |
+      SupplyChain Status Change API.
+
+- title: Authentication
+  content: |
+    The SupplyChain Status Change API does not require authentication.
+
+/sendstatuschange:
+  displayName: Send Status Change
+  description: |
+        Sends a Status Change
+
+        The structure and most of the content will be validated.
+  post:
+    description: Request is used to send a Status Change.
+    headers:
+      Content-Type:
+        description: Specify request format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+      Accept:
+        description: Specify response format (application/json, application/xml)
+        required: true
+        enum: [ application/json,application/xml ]
+    body:
+      application/xml:
+        type: StatusChanges
+        examples:
+          valid_request:
+            displayName: Valid Request
+            value: !include example/statuschanges.xml
+      application/json:
+          type: StatusChanges
+          examples:
+            valid_request:
+              displayName: Valid Request
+              value: !include example/statuschanges.json
+    responses:
+      200:
+        description: |
+          StatusChange received succesfully
+        body:
+          application/xml:
+            type: StatusChangesResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/statuschanges_response.xml
+          application/json:
+            type: StatusChangesResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/statuschanges_response.json
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination, please retry request later.
+
+
