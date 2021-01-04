@@ -1,0 +1,7 @@
+{
+  "Status": {
+    "ProcessingId": "string",
+    "Status": "OK",
+    "StatusText": "string"
+  }
+}

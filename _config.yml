@@ -48,6 +48,9 @@ raml_10_map:
   api/invoice/api.raml:
     target: api/invoice/index.html
     sort_order: 120
+  api/load-carrier-label/api.raml:
+    target: api/load-carrier-label/index.html
+    sort_order: 135
 
 # Build settings
 plugins:

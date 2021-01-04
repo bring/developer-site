@@ -1,0 +1,29 @@
+<LoadCarrierResponse>
+  <destination>
+    <name>string</name>
+    <description>string</description>
+    <postalCode>string</postalCode>
+    <id>string</id>
+  </destination>
+  <departureTerminal>
+    <name>string</name>
+    <id>string</id>
+  </departureTerminal>
+  <arrivalTerminal>
+    <name>string</name>
+    <id>string</id>
+  </arrivalTerminal>
+  <loadCarriers>
+    <id>string</id>
+  </loadCarriers>
+  <shipmmentSortLines>
+    <labelLine1>string</labelLine1>
+    <labelLine2>string</labelLine2>
+    <labelLine3>string</labelLine3>
+  </shipmmentSortLines>
+  <status>
+    <processingId>string</processingId>
+    <status>oK</status>
+    <statusText>string</statusText>
+  </status>
+</LoadCarrierResponse>
