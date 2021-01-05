@@ -138,7 +138,7 @@
                   {{ end }}
 
                   {{/* For each endpoint: List all headers */}}
-                  {{ if $otherUriParamsMediaType }}
+                  {{ if $hasMethodHeaders }}
                     {{ partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "Header name") }}
                   {{ end }}
 
@@ -227,6 +227,7 @@
                             {{ $highlightLang = "html" }}
                           {{ end }}
 
+                          {{/* Should only show if there are more than one media type */}}
                           <p>
                             <b>Media type:</b> <code>{{ .name }}</code>
                           </p>
