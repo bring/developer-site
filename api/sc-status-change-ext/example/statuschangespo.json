@@ -1,0 +1,10 @@
+{
+  "webhookPurchaseOrdersId": 0,
+  "webhookEventId": 0,
+  "system": "string",
+  "timestamp": "2020-12-30T08:57:29.932Z",
+  "purchaseOrderId": 0,
+  "purchaseOrderNumber": "string",
+  "goodsOwnerId": 0,
+  "path": "string"
+}

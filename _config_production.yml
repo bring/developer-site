@@ -54,6 +54,9 @@ raml_10_map:
   api/sc-status-change/api.raml:
     target: api/sc-status-change/index.html
     sort_order: 136
+  api/ssc-status-change-ext/api.raml:
+    target: api/scstatus-change-external/index.html
+    sort_order: 137
 
 # Build settings
 plugins:
