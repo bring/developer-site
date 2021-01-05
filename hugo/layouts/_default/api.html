@@ -82,20 +82,22 @@
 
                   <pre class="api__url">{{ range .methods }}{{ .method | upper }}{{ end }} {{ delimit $urlOutput "<br>" }}</pre>
 
-                  {{/* first uri param is not mediaTypeExtension */}}
-                  {{ $uriParamNames := slice }}
-                  {{ range .uriParameters }}
-                    {{ $uriParamNames = $uriParamNames | append .name }}
-                  {{ end }}
-                  {{ $uriParamFirst := "" }}
-                  {{ range first 1 $uriParamNames }}
-                    {{ $uriParamFirst = . }}
-                  {{ end }}
+                  {{/* uri params exists and first one is not mediaTypeExtension */}}
                   {{ $otherUriParamsMediaType := false }}
-                  {{if gt (len .uriParameters) 1 }}
-                    {{ $otherUriParamsMediaType = true }}
-                  {{ else if (and (eq (len .uriParameters) 1) (not (in $uriParamFirst "mediaTypeExtension"))) }}
-                    {{ $otherUriParamsMediaType = true }}
+                  {{ with .uriParameters }}
+                    {{ $uriParamNames := slice }}
+                    {{ range . }}
+                      {{ $uriParamNames = $uriParamNames | append .name }}
+                    {{ end }}
+                    {{ $uriParamFirst := "" }}
+                    {{ range first 1 $uriParamNames }}
+                      {{ $uriParamFirst = . }}
+                    {{ end }}
+                    {{if gt (len .) 1 }}
+                      {{ $otherUriParamsMediaType = true }}
+                    {{ else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) }}
+                      {{ $otherUriParamsMediaType = true }}
+                    {{ end }}
                   {{ end }}
 
                   {{/* has method.headers */}}
