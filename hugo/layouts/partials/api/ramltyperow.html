@@ -1,5 +1,10 @@
+{{ $siteDataApiTypes := .siteDataApiTypes }}
 {{$showRequired := .showRequired }}
-{{/* {{ $prefix := (print "" .incPrefix) }} */}}
+
+{{ $prefix := slice }}
+{{ with .incPrefix }}
+  {{ $prefix = $prefix | append . }}
+{{ end }}
 
 {{ $propType := "" }}
 {{ range first 1 .incProp.type }}
@@ -9,8 +14,7 @@
 {{ $isCustomType := (not (in site.Params.ramlBuiltinTypes $propType)) }}
 
 <tr>
-  {{/* <td><code>{{ (print $prefix .name) }}</code></td> */}}
-  <td><code>{{ .incProp.name }}</code></td>
+  <td><code>{{ range $prefix }}{{ . | safeHTML }}{{ end }}{{ .incProp.name }}</code></td>
   <td><code>{{ cond (eq $isCustomType true) "object" $propType }}</code></td>
   <td>
     {{ $desc := slice }}
@@ -71,47 +75,24 @@
   </td>
 </tr>
 
-{{/* revisit the following part and the prefix stuff when getting to shipment api, it has nested properties in the create shipment request body, it’s basically for indenting the nested property names, which we probably can do better than with two nbspc
-{{ $subPrefix := "&nbsp;&nbsp;" }}
-{{ $subProp := "" }}
+{{ $subPrefix := $prefix | append "&nbsp;&nbsp;" }}
 {{ if (eq $propType "object") }}
-pepp
-{{ $subProp = .properties }}
-{{ partial "api/ramltyperow.html" (dict "context" . "incProp" $subProp "hideRequired" $hideRequired "incPrefix" $subPrefix ) }}
+  TYPE OBJECT NOT TESTED
+  {{ partial "api/ramltyperow.html" (dict "context" . "incProp" .properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
 {{ else if (eq $propType "array") }}
-
+  {{ range where .siteDataApiTypes .incProp.items "!=" nil }}
+    {{ range . }}
+      {{ range .properties }}
+        {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ else if $isCustomType }}
-not custom type
-{{ $subProp = .properties }}
-{{ partial "api/ramltyperow.html" (dict "context" . "incProp" $subProp "hideRequired" $hideRequired "incPrefix" $subPrefix ) }}
-{{ end }} */}}
-
-{{/*
-{% if propType == 'object' %}
-{% assign subPrefixPreAppend = prefix %}
-{% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
-{% for propHash in prop.properties %}
-  {% assign subProp = propHash[1] %}
-  {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
-{% endfor %}
-{% assign subPrefix = subPrefixPreAppend %}
-{% elsif propType == 'array' %}
-{% assign subPrefixPreAppend = prefix %}
-{% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
-{% assign subType = page.api.types | extract_type: prop.items %}
-{% for propHash in subType.properties %}
-  {% assign subProp = propHash[1] %}
-  {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
-{% endfor %}
-{% assign subPrefix = subPrefixPreAppend %}
-{% elsif is_custom_type %}
-{% assign subPrefixPreAppend = prefix %}
-{% assign subPrefix = prefix | append: '&nbsp;&nbsp;' %}
-{% assign subType = page.api.types | extract_type: propType %}
-{% for propHash in subType.properties %}
-  {% assign subProp = propHash[1] %}
-  {% include raml_type_row.html prop=subProp prefix=subPrefix hide_required=include.hide_required %}
-{% endfor %}
-{% assign subPrefix = subPrefixPreAppend %}
-{% endif %} */}}
-
+  {{ range where $siteDataApiTypes $propType "!=" nil }}
+    {{ range . }}
+      {{ range .properties }}
+        {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
