@@ -1,0 +1,7 @@
+<StatusChangesResponse>
+  <processingID>string</processingID>
+  <status>OK</status>
+  <errors>
+    <error>string</error>
+  </errors>
+</StatusChangesResponse>

@@ -51,6 +51,9 @@ raml_10_map:
   api/load-carrier-label/api.raml:
     target: api/load-carrier-label/index.html
     sort_order: 135
+  api/sc-status-change/api.raml:
+    target: api/sc-status-change/index.html
+    sort_order: 136
 
 # Build settings
 plugins:
