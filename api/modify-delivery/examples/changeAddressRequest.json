@@ -16,5 +16,5 @@
     "city": "CITY"
   },
   "shipmentNumber": "SHIPMENT_NUMBER",
-  "changeAddressFee": "206.25"
+  "changeAddressFee": "This is the cost for changing the address on delivery . The value can be fetched by calling the below service 'Get price for change address'."
 }

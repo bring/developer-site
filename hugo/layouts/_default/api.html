@@ -82,20 +82,22 @@
 
                   <pre class="api__url">{{ range .methods }}{{ .method | upper }}{{ end }} {{ delimit $urlOutput "<br>" }}</pre>
 
-                  {{/* first uri param is not mediaTypeExtension */}}
-                  {{ $uriParamNames := slice }}
-                  {{ range .uriParameters }}
-                    {{ $uriParamNames = $uriParamNames | append .name }}
-                  {{ end }}
-                  {{ $uriParamFirst := "" }}
-                  {{ range first 1 $uriParamNames }}
-                    {{ $uriParamFirst = . }}
-                  {{ end }}
+                  {{/* uri params exists and first one is not mediaTypeExtension */}}
                   {{ $otherUriParamsMediaType := false }}
-                  {{if gt (len .uriParameters) 1 }}
-                    {{ $otherUriParamsMediaType = true }}
-                  {{ else if (and (eq (len .uriParameters) 1) (not (in $uriParamFirst "mediaTypeExtension"))) }}
-                    {{ $otherUriParamsMediaType = true }}
+                  {{ with .uriParameters }}
+                    {{ $uriParamNames := slice }}
+                    {{ range . }}
+                      {{ $uriParamNames = $uriParamNames | append .name }}
+                    {{ end }}
+                    {{ $uriParamFirst := "" }}
+                    {{ range first 1 $uriParamNames }}
+                      {{ $uriParamFirst = . }}
+                    {{ end }}
+                    {{if gt (len .) 1 }}
+                      {{ $otherUriParamsMediaType = true }}
+                    {{ else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) }}
+                      {{ $otherUriParamsMediaType = true }}
+                    {{ end }}
                   {{ end }}
 
                   {{/* has method.headers */}}
@@ -136,7 +138,7 @@
                   {{ end }}
 
                   {{/* For each endpoint: List all headers */}}
-                  {{ if $otherUriParamsMediaType }}
+                  {{ if $hasMethodHeaders }}
                     {{ partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "Header name") }}
                   {{ end }}
 
@@ -149,59 +151,64 @@
                     {{/* For each endpoint: Request body */}}
                     {{ with .body }}
                       <h3>Request body</h3>
-                      Return to this when a body has been found
-                                  {{/* {% if method.body %}
-                                    <h3>Request body</h3>
-                                    {% for bodyHash in method.body %}
-                                      {% assign requestBody = bodyHash[1] %}
-                                      {% assign hljs_lang = requestBody.name | mediatype_highlight_lang  %}
 
-                                      {% if method.body.size > 1 %}
-                                      <p>
-                                        <strong>Media Type:</strong> <code>{{ requestBody.name }}</code>
-                                      </p>
-                                      {% endif %}
+                      {{ range . }}
+                        {{ $highlightLang := "" }}
+                        {{ if (eq .name "application/json") }}
+                          {{ $highlightLang = "json" }}
+                        {{ else if (or (eq .name "application/xml") (eq .name "application/soap")) }}
+                          {{ $highlightLang = "xml" }}
+                        {{ else if (eq .name "application/html") }}
+                          {{ $highlightLang = "html" }}
+                        {{ end }}
 
-                                      <ul class="codetabs" role="tablist">
-                                        {% if requestBody.type %}
-                                          {% assign requestBodyType = requestBody.type.first %}
-                                          {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
-                                          <li role="presentation" class="codetabs__item active"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Request format</a></li>
-                                        {% endif %}
-                                        {% for example in requestBody.examples %}
-                                          {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}
-                                          <li role="presentation" class="codetabs__item"><a href="#{{ tab_id }}" role="tab" aria-controls="{{ tab_id }}" class="codetabs__link" data-toggle="tab">Example: {{ example.displayName }}</a></li>
-                                        {% endfor %}
-                                      </ul>
+                        {{/* Should only show if there are more than one media type */}}
+                        <p>
+                          <b>Media type:</b> <code>{{ .name }}</code>
+                        </p>
 
-                                      <div class="codetabs__content">
-                                        {% if requestBody.type %}
-                                          {% assign requestBodyType = requestBody.type.first %}
-                                          {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-format' | slugify %}
-                                          <div role="tabpanel" class="codetabs__panel active" id="{{ tab_id }}">
-                                            {% include raml_type.html types=page.api.types type=requestBodyType hide_header=true %}
-                                          </div>
-                                        {% endif %}
-                                        {% for example in requestBody.examples %}
-                                          {% assign tab_id = resource.displayName | append: '-request-' | append: requestBody.name | append: '-example-' | append: forloop.index | slugify %}
-                                          <div role="tabpanel" class="codetabs__panel" id="{{ tab_id }}">
-                                            <div class="content">
-                                              {% if example.description %}
-                                              {{ example.description | markdownify }}
-                                              {% endif %}
-                                              {% if hljs_lang == 'xml' %}
-                                                <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
-                                              {% elsif hljs_lang == 'html' %}
-                                                <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value | xml_escape}}</code></pre>
-                                              {% elsif hljs_lang == 'json' %}
-                                                <pre class="highlight"><code class="{{ hljs_lang }}">{{ example.value }}</code></pre>
-                                              {% endif %}
-                                            </div>
-                                          </div>
-                                        {% endfor %}
-                                      </div>
-                                    {% endfor %}{% comment %} endfor bodyHash in method.body {% endcomment %}
-                                  {% endif %} */}}
+                        {{/* The tabs don’t work 100 % yet, probably a combination of missing templates/scripts */}}
+                        <ul class="codetabs" role="tablist">
+                          {{ $nameDash := replace .name "/" "-" }}
+                          {{ $tabID := (print $displayName "-request-" $nameDash "-format") | urlize }}
+                          {{ with .type }}
+                            <li role="presentation" class="codetabs__item active">
+                              <a href="#{{ $tabID }}" role="tab" aria-controls="{{ $tabID }}" class="codetabs__link" data-toggle="tab">Request format</a>
+                            </li>
+                          {{ end }}
+
+                          {{range $index, $examples := .examples }}
+                            {{ $tabID = (print $displayName "-request-" $nameDash "-example-" (add 1 $index) ) | urlize }}
+                            <li role="presentation" class="codetabs__item"><a href="#{{ $tabID }}" role="tab" aria-controls="{{ $tabID }}" class="codetabs__link" data-toggle="tab">Example: {{ .displayName }}</a></li>
+                          {{end}}
+                        </ul>
+
+                        <div class="codetabs__content">
+                          {{ with .type }}
+                            <div role="tabpanel" class="codetabs__panel active" id="{{ $tabID }}">
+                              {{ partial "api/ramltype.html" (dict "context" . "incTypeDefs" $types "incDashType" . "showHeader" false) }}
+                            </div>
+                          {{ end }}
+
+                          {{range $index, $examples := .examples }}
+                            {{ $tabID = (print $displayName "-request-" $nameDash "-example-" (add 1 $index) ) | urlize }}
+                            <div role="tabpanel" class="codetabs__panel" id="{{ $tabID }}">
+                              <div class="content">
+                                {{ with .description }}
+                                  {{ . | markdownify }}
+                                {{ end }}
+                                {{ if (eq $highlightLang "xml") }}
+                                  <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
+                                {{ else if (eq $highlightLang "html") }}
+                                  <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
+                                {{ else if (eq $highlightLang "json") }}
+                                  <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value }}</code></pre>
+                                {{ end }}
+                              </div>
+                            </div>
+                          {{end}}
+                        </div>
+                      {{ end }}
                     {{ end }}
 
                     {{/* For each endpoint: Response */}}
@@ -225,6 +232,7 @@
                             {{ $highlightLang = "html" }}
                           {{ end }}
 
+                          {{/* Should only show if there are more than one media type */}}
                           <p>
                             <b>Media type:</b> <code>{{ .name }}</code>
                           </p>

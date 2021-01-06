@@ -1,4 +1,6 @@
 {{ $showHeader := .showHeader }}
+{{ $siteDataApiTypes := .incTypeDefs }}
+
 {{ $type := "" }}
 {{ range .incDashType }}
   {{ $type = . }}
@@ -37,7 +39,7 @@
             </thead>
             <tbody>
               {{ range $typeProps }}
-                {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired ) }}
+                {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
               {{ end }}
             </tbody>
           </table>

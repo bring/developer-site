@@ -7,7 +7,7 @@ documentation:
 - title: Introduction
   content: |
       <div class="api__warning-box">
-        <strong>The Pickup Point API became authenticated from 01.11.2020</strong>
+        <strong>Final deadline for authenticating Pickup Point API requests - 15th of February 2021</strong>
           <br><br>
 
             We have now started to limit the data in the responses for unauthenticated requests:
@@ -15,7 +15,9 @@ documentation:
              - From 01.11.2020, coordinates and map links have been removed from all responses. 
              - From 09.11.2020, only 1 pickup point will be returned in the responses for the postal code and location endpoints
 
-            We recommend making the <a href="/api/pickup-point/#authentication">adjustment</a> as soon as possible to avoid any problems with your integration setup during peak.
+            From Monday 11th of January, we will start rate limiting the responses of the Pickup Point API. The rate limit (requests per minute) will be lowered week by week until the final deadline for authentication - 15th of February 2021. After this date, unauthenticated requests will not be accepted.
+            
+            We recommend making the <a href="/api/pickup-point/#authentication">adjustment</a> as soon as possible to avoid any problems with your integration setup.
           <br><br>
       </div>
 
