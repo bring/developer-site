@@ -1,0 +1,272 @@
+{
+  "RequestVersion": "1",
+  "RequestDate": "2018-11-21T10:34:25.4301835+01:00",
+  "Shipment": {
+    "updateIndicator": "Original",
+    "shipmentType": "Instruction",
+    "ShipmentHeaders": {
+      "SendersReference": "CUSTOMERS REFERENCE",
+      "NumberOfPackages": "2",
+      "AdditionalReference": [
+        {
+          "ReferenceValue": "4440/0189981/WEJ",
+          "referenceType": "TRANSPORT_DOCUMENT_NUMBER"
+        },
+        {
+          "ReferenceValue": "44057673",
+          "referenceType": "PROJECT_NUMBER"
+        }
+      ],
+      "FreeText": [
+        {
+          "Text": [
+            {
+              "Value": "My instructions for pickup"
+            }
+          ],
+          "usageCode": "PICKUP_INSTRUCTIONS"
+        },
+        {
+          "Text": [
+            {
+              "sequence": "0",
+              "Value": "31x20x3 7. etg. Skal hentes på resepsjon "
+            }
+          ],
+          "usageCode": "CARRIER_INSTRUCTIONS"
+        },
+        {
+          "Text": [
+            {
+              "sequence": "0",
+              "Value": "Skal leveres til resepsjon"
+            }
+          ],
+          "usageCode": "DELIVERY_INSTRUCTIONS"
+        }
+      ],
+      "GrossWeight": {
+        "unitCode": 1,
+        "Value": 112.0
+      },
+      "GrossVolume": {
+        "unitCode": 1,
+        "Value": 1.86
+      },
+      "LoadingMetres": 0.0,
+      "PalletFootPrints": 0.0,
+      "HazardPoints": 0.0,
+      "shipmentId": "73500012345678911"
+    },
+    "DateAndTimes": [
+      {
+        "subClass": "PickupEarliest",
+        "DateTime": "2018-11-21T14:34:25.4301835+01:00"
+      },
+      {
+        "subClass": "DeliveryEarliest",
+        "DateTime": "2018-11-21T18:34:25.4301835+01:00"
+      },
+      {
+        "subClass": "DeliveryLatest",
+        "DateTime": "2018-11-21T20:34:25.4301835+01:00"
+      },
+      {
+        "subClass": "DocumentDate",
+        "DateTime": "2018-11-21T10:34:25.4301835+01:00"
+      }
+    ],
+    "Sender": {
+      "partyId": "00096882527",
+      "Name": "Sender name",
+      "Address": {
+        "AddressLine": [
+          "MyStreet 123"
+        ],
+        "PostalCode": "5122",
+        "City": "My City",
+        "CountryCode": "NO"
+      },
+      "MobilePhone": "12345678",
+      "Email": "Sender@Sender.com"
+    },
+    "Receiver": {
+      "Name": "Receiver name",
+      "Address": {
+        "AddressLine": [
+          "MyStreet 123"
+        ],
+        "PostalCode": "5122",
+        "City": "Other City",
+        "CountryCode": "NO"
+      },
+      "MobilePhone": "87654321",
+      "Email": "Receiver@Receiver.com"
+    },
+    "AdditionalParty": [
+      {
+        "subClass": "TransportCompany",
+        "partyId": "BEX",
+        "subPartyId": "GLW"
+      }
+    ],
+    "ProductAndService": {
+      "ProductCode": "COURIER_1H",
+      "AdditionalService": [
+        {
+          "AdditionalServiceCode": "EVARSLING"
+        }
+      ]
+    },
+    "DeliveryTerms": {
+      "ConditionCode": "12",
+      "Location": {
+        "City": "Bergen",
+        "CountryCode": "NO"
+      },
+      "termsType": 0
+    },
+    "CashOnDelivery": {
+      "TransactionIdentifier": {
+        "identifierType": 1,
+        "accountType": "Unleaded",
+        "Value": "12444422"
+      },
+      "Amount": {
+        "currencyCode": "NOK"
+      },
+      "ControlDigit": 1233.0,
+      "DocumentId": [
+        "12223"
+      ],
+      "MonetaryAccount": {
+        "AccountNumber": {
+          "accountType": 0,
+          "channel": "Magic",
+          "Value": "12345.01.123654"
+        },
+        "SwiftCode": "DNBNOAK-123332",
+        "BankName": "DNB",
+        "AccountHolderName": "Name Nameson"
+      },
+      "codType": "12",
+      "codeListIdentifier": "12",
+      "codeListAgencyIdentifier": "agencyIdent",
+      "name": "Navn"
+    },
+    "GoodsItem": [
+      {
+        "PackageTypeCode": "code",
+        "GoodsDescription": "Socks",
+        "Temperature": {
+          "Transport": {
+            "unitCode": 0,
+            "minimum": "0",
+            "maximum": "5",
+            "Value": 2.0
+          },
+          "Storage": {
+            "unitCode": 0,
+            "minimum": "0",
+            "maximum": "5",
+            "Value": 2.0
+          }
+        },
+        "Package": [
+          {
+            "GrossWeight": {
+              "unitCode": 1,
+              "Value": 1.0
+            },
+            "GrossVolume": {
+              "unitCode": 0,
+              "Value": 22.0
+            },
+            "Dimensions": {
+              "Height": {
+                "unitCode": 2,
+                "Value": 22.0
+              },
+              "Length": {
+                "unitCode": 2,
+                "Value": 22.0
+              },
+              "Width": {
+                "unitCode": 2,
+                "Value": 22.0
+              }
+            },
+            "Insurance": {
+              "InsuranceValue": {
+                "currencyCode": "NOK",
+                "Value": 200000.0
+              },
+              "GoodsDescription": "Gullbarre",
+              "Email": "insurance@vesta.no"
+            },
+            "packageId": "373500123456789012"
+          },
+          {
+            "GrossWeight": {
+              "unitCode": 1,
+              "Value": 1.0
+            },
+            "GrossVolume": {
+              "unitCode": 0,
+              "Value": 22.0
+            },
+            "Dimensions": {
+              "Height": {
+                "unitCode": 2,
+                "Value": 22.0
+              },
+              "Length": {
+                "unitCode": 2,
+                "Value": 22.0
+              },
+              "Width": {
+                "unitCode": 2,
+                "Value": 22.0
+              }
+            },
+            "Insurance": {
+              "InsuranceValue": {
+                "currencyCode": "NOK",
+                "Value": 200000.0
+              },
+              "GoodsDescription": "Gullbarre",
+              "Email": "insurance@vesta.no"
+            },
+            "packageId": "37350012345678929"
+          }
+        ],
+        "DangerousGoods": {
+          "UNDGInformation": {
+            "HazardIdentifier": "1314"
+          },
+          "HazardClass": "4.1",
+          "AdditionalHazard": "2.3(8)",
+          "PackingGroup": "3",
+          "Measures": [
+            {
+              "Measure": {
+                "unitCode": "KGM",
+                "Value": 2.500
+              },
+              "subClass": "NetHazardWeight"
+            }
+          ],
+          "TechnicalName": "KALSIUMRESINAT, SINTRET",
+          "Restrictions": [
+            {
+              "restrictionType": 0,
+              "Value": "3(E)"
+            }
+          ],
+          "HazardPoints": 10.0,
+          "regulationCode": "ADR"
+        }
+      }
+    ]
+  }
+}

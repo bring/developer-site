@@ -1,0 +1,82 @@
+---
+title: Shipping Guide upgrade guide
+layout: redesign
+---
+<div class="wrapper">
+  <div class="layout layout--flush">
+    <div class="layout__item palm-one-whole desk-one-quarter">
+      {% comment %}
+      ----------------------------------------
+      --
+      -- Sidebar menu
+      --
+      ----------------------------------------
+      {% endcomment %}
+      {% include sitemenu.html %}
+    </div><!----><div class="layout__item palm-one-whole desk-three-quarters">
+      <article class="api">
+        <h1 class="api__title" style="font-size: 2rem">Reports API changes after conversion to new services</h1>
+        <section class="api__section">
+          <div style="margin-top: 1rem">
+            Bring is revising the service portfolio. Some of our services have been given new service names, service codes and pricing models. <a href="https://www.bring.no/tjenester/endringer">Read more</a> about the changes
+            <br/><br/>
+          Old services will be phased out. From a given date, your company will be converted to use revised services during Booking, and you can no longer book old services. All customers belongs to your company will be converted.
+          The revised services are booked using main customer number.
+
+          <br/><br/>
+          In Reports API , we have made changes to support Main Customer Number for some service types and for some service types new definitions are available.
+            <br/>
+            API users after conversion need to use appropriate customer number and definition combination to get the correct result set from the reports.
+          <br/><br/>
+            We recommend API users to execute <a href="/api/reports/#list-available-customers">List available customers</a> and <a href="/api/reports/#list-available-reports-for-a-customer">List available reports for a customer</a> to understand what parameters to be used for report execution.
+            <br/><br/>
+            Below Table is gives a snapshot view about what changes API users need to do for reports belongs different service type after conversion.
+            <br/><br/>
+            <table>
+              <thead>
+              <tr>
+                <th style="text-align: left">Service Type</th>
+                <th style="text-align: left">Customer Number to Use </th>
+                <th style="text-align: left">Report Definition to use</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Parcel Norway</td>
+                <td><div style="text-decoration: line-through;">API Customer Number</div> <div>Main Customer Number</div></td>
+                <td>Existing Definition</td>
+              </tr>
+              <tr>
+                <td>Parcel International</td>
+                <td>API Customer Number</td>
+                <td>Existing Definition</td>
+              </tr>
+              <tr>
+                <td>Cargo</td>
+                <td><div style="text-decoration: line-through;">API Customer Number</div> <div>Main Customer Number</div></td>
+                <td><div style="text-decoration: line-through;">Existing Definition</div> <div>New Definition</div></td>
+              </tr>
+              <tr>
+                <td>Oil Express</td>
+                <td><div style="text-decoration: line-through;">API Customer Number</div> <div>Main Customer Number</div></td>
+                <td>Existing Definition</td>
+              </tr>
+              <tr>
+                <td>Warehousing</td>
+                <td><div style="text-decoration: line-through;">API Customer Number</div> <div>Main Customer Number</div></td>
+                <td>Existing Definition</td>
+              </tr>
+              </tbody>
+            </table>
+            <div style="font-size: .8rem; font-style: italic">Example : Main Customer Number(20000012345) , API Customer Number(CARGO-12345 or PARCELS_SWEDEN-12345)</div>
+
+          </div>
+
+        </section>
+        <section class="api__section" id="">
+          {% include disqus.html %}
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
