@@ -3,7 +3,8 @@ languageCode = "en-us"
 title = "Bring Developer"
 pygmentsUseClasses = true
 pluralizelisttitles = false
-
+summaryLength = 60
+paginate = 2
 [params]
 description = "Documentation for developers."
 ramlBuiltinTypes = [
@@ -29,3 +30,6 @@ apis = [
   "content/api/tracking/api.raml",
   "content/api/pickup-point/api.raml"
 ]
+
+[taxonomies]
+tag = "tags"

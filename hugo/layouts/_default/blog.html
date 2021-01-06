@@ -1,0 +1,72 @@
+{{ define "main" }}
+    <div class="blog">
+      {{ range where .Paginator.Pages "Section" "blog" }}
+      <article class="blog__post">
+        <header class="blog__post__header">
+          <h2 class="blog__post__heading alpha"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          {{ partial "blog-meta.html" . }}
+        </header>
+        <div class="blog__post__content">
+          {{ with .Resources.ByType "image" }}
+            {{ range . }}
+              <img src="{{ .RelPermalink }}" alt="" />
+            {{ end }}
+          {{ end }}
+          <p>{{ .Summary }}</p>
+          <a href="{{ .Permalink }}">Read more ></a>
+        </div>
+      </article>
+      {{ end }}
+      {{/* {{ template "_internal/pagination.html" . }} */}}
+      {{ $paginator := .Paginator }}
+      <!-- If there's more than one page. -->
+      {{ if gt $paginator.TotalPages 1 }}
+      <div class="blog__paginator">
+        <ul class="layout">
+          <li>
+          {{ if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="blog__paginator__button">
+            ← Newer posts
+            </a>
+          {{ else }}
+            <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no newer posts">← Newer posts</span>
+          {{ end }}
+          </li>
+          <li>
+          <span class="blog__paginator__info">Page {{ $paginator.PageNumber }}/{{ $paginator.TotalPages }}</span>
+          </li>
+          <li>
+          {{ if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="blog__paginator__button">
+            Older posts →
+            </a>
+          {{ else }}
+            <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no older posts">Older posts →</span>
+          {{ end }}
+          </li>
+        </ul><!-- .pagination -->
+      </div>
+      {{ end }}
+      {{/* <div class="blog__paginator">
+        <ul class="layout">
+          <li class="layout__item palm-one-whole lap-and-up-one-third">
+          {{ .Paginator.HasPrev }}}
+          <a class="blog__paginator__button" href="{{ paginator.previous_page_path }}">← Newer posts</a>
+          {% else %}
+          <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no newer posts">← Newer posts</span>
+          {% endif %}
+          </li><!--
+          --><li class="layout__item layout--center palm-one-whole lap-and-up-one-third">
+          <span class="blog__paginator__info">Page {{ paginator.page }}/{{ paginator.total_pages }}</span>
+          </li><!--
+          --><li class="layout__item palm-one-whole lap-and-up-one-third">
+          {% if paginator.next_page %}
+          <a class="blog__paginator__button" href="{{ paginator.next_page_path }}">Older posts →</a>
+          {% else %}
+          <span class="blog__paginator__button blog__paginator__button--disabled" title="There are no older posts">Older posts →</span>
+          {% endif %}
+          </li>
+        </ul>
+      </div> */}}
+    </div>
+{{ end }}
