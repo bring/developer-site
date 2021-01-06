@@ -107,6 +107,15 @@
     margin: 2*$spacing 0;
 }
 
+.blog__paginator {
+    .layout {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        row-gap: 3rem;
+    }
+}
+
 .blog__paginator__info {
     color: $medium-grey;
 }
