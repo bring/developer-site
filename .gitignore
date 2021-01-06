@@ -26,3 +26,4 @@ _preview.site
 _buildtmp/
 
 hugo/public/
+hugo/data/
