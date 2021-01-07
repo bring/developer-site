@@ -8,7 +8,7 @@
         </header>
         <div class="blog__post__content">
           {{ with .Resources.ByType "image" }}
-            {{ range . }}
+            {{ range first 1 . }}
               <img src="{{ .RelPermalink }}" alt="" />
             {{ end }}
           {{ end }}
