@@ -5,6 +5,10 @@ pygmentsUseClasses = true
 pluralizelisttitles = false
 summaryLength = 60
 paginate = 10
+
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
 description = "Documentation for developers."
 ramlBuiltinTypes = [
