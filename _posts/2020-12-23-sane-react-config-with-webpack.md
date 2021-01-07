@@ -2,14 +2,14 @@
 layout: post
 disqus: false
 title: Sane React config with Webpack
-date: 2020-12-23 08:55:00
+date: 2020-12-23 08:54:59
 category: react
 author:
     - HalvorSanden
     - ChrisBoe
 
 ---
-Going from an empty folder to a living React project can feel like a daunting task. As we pointed out in [our precursor](../your-frontend-your-config), if you have been overwhelmed at certain ejected configs or underwhelmed by zero-config tools, it’s time to learn how to set up pragmatic, powerful and customisable configs.
+Going from an empty folder to a living React project can feel like a daunting task. As we pointed out in [our precursor](../your-frontend-your-config), if you have been overwhelmed by certain ejected configs or underwhelmed by zero-config tools, it’s time to learn how to set up pragmatic, powerful and customisable configs.
 
 For this, we will be using, but not explaining, Node, npm and the terminal. We will also reference CSS, JS and React, but in no way provide primers.
 
@@ -59,8 +59,8 @@ package.json
 
 The reason we are doing it this way, is to ensure you have the same dependency versions we have. Normally we use `npm i {list of dependencies}` to install, and add `-D` for developer dependencies. But that would have given us the newest version unless we specified the version number as well. Save any updating for later.
 
-#### Developer dependencies
-These are dev dependencies, as indicated by their grouping in package.json. They are used when building the project and are not included in our finished bundle.
+#### Development dependencies
+The devDependencies object contains dependencies that are used for development, building and bundling. They handle the code on its way to the bundle, or when running locally, but are not included in the bundle itself.
 
 [Webpack](https://webpack.js.org/) is the Webpack core, which we need in order to get the other Webpack modules and plugins to work. One of the reasons it seems so big is because there are potentially so many plugins and pieces. But the basic structure of Webpack is a core with plugins that you add as you need them, with the config that you need. Defaults are great a lot of the time. This makes the core smaller and our projects smaller. It doesn’t affect the bundle size in itself, but it affects the build time and the dev experience.
 
@@ -68,10 +68,12 @@ These are dev dependencies, as indicated by their grouping in package.json. They
 
 [Webpack Dev Server](https://webpack.js.org/configuration/dev-server/) is for running things locally.
 
-The other dev dependencies are loaders and plugins that Webpack uses to process our code. We will explain them when we get to the config.
+The remaining devDependencies are loaders and plugins that Webpack uses to process our code. We will explain them when we look at the config.
 
 #### Other dependencies
-[React](https://reactjs.org/) and [React DOM](https://reactjs.org/docs/react-dom.html) are for React. [React Router](https://reactrouter.com/) is for navigation, not required to work with React, but often used and part of our example files.
+The other type of dependencies are items that need to be part of the bundle. These are typically libraries and frameworks, maybe an icon pack or some external component. It can be helpful, although slightly simplified, to think of them as runtime dependencies.
+
+In this config, we only have [React](https://reactjs.org/) and [React DOM](https://reactjs.org/docs/react-dom.html), which are for React. And [React Router](https://reactrouter.com/) for navigation, it’s not required to work with React, but it’s part of many projects, and also ours.
 
 ## Configuring
 We need to make configuration files to configure Webpack, its loaders and plugins. This is also an area where you have a lot of potential options. To keep it simple, we use different files for development and production while trying to reuse what we can.
