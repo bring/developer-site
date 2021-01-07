@@ -4,7 +4,7 @@ title = "Bring Developer"
 pygmentsUseClasses = true
 pluralizelisttitles = false
 summaryLength = 60
-paginate = 2
+paginate = 10
 [params]
 description = "Documentation for developers."
 ramlBuiltinTypes = [
