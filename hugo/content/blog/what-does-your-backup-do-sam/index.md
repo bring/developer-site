@@ -2,13 +2,15 @@
 layout: post
 title: What does your backup do, Sam?
 publishDate: 2017-02-03 11:51:43 +01:00
-tags: [postgres]
+tags: 
+    - postgres
 authors:
     - AnshikaKoul
     - kaaveland
 ---
 
-<img src="https://i.kinja-img.com/gawker-media/image/upload/18mpenleoksq8jpg.jpg">
+![](images/18mpenleoksq8jpg.jpg)
+
 
 What does your backup do, Sam?
 ---
@@ -54,7 +56,7 @@ Being confident in our backups
 
 One of the things we've done in order to be confident in our ability to restore from backup, is to set up an automated job that creates a database instance from backup every day. This database will then connect as a standby to our current master and verify that it can start streaming replication. We throw away this database after it's been verified that the backup is good. It's a really nice feeling when the backup-test script posts on slack that it has successfully done a point-in-time-recovery of a backup:
 
-<img src="{{ site.baseurl }}/img/backup-test.png">
+![](images/backup-test.png)
 
 Making this backup-test script was a pretty simple job. It also serves as living documentation of how to do a recovery procedure. And since it's being run every day, we can be confident that the recovery procedure actually works, unlike some 3-year old recovery procedure documentation on a wiki. A nice side-effect of this is that we actually know how long it would take us to recover from backup.
 

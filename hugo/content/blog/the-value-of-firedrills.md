@@ -2,7 +2,8 @@
 layout: post
 title: The value of firedrills
 publishDate: 2017-01-27 13:51:43 +01:00
-tags: [postgres, IT]
+tags: 
+    - postgres
 authors:
     - AnshikaKoul
     - kaaveland
