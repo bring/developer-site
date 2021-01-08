@@ -147,12 +147,17 @@
                     {{ partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") }}
                   {{ end }}
 
+                  {{ $multiMethods := false }}
+                  {{ if gt (len .methods) 1 }}
+                    {{ $multiMethods = true }}
+                  {{ end }}
+
                   {{ range .methods }}
                     {{/* For each endpoint: Request body */}}
                     {{ with .body }}
                       <h3>Request body</h3>
                       {{ range . }}
-                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types ) }}
+                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMethods ) }}
                       {{ end }}
                     {{ end }}
 
@@ -166,7 +171,7 @@
                           {{ . | markdownify }}
                         {{ end }}
                         {{ range .body }}
-                          {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types ) }}
+                          {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMethods ) }}
                         {{ end }}
                       {{ end }}
                     {{ end }}

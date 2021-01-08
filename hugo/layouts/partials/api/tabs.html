@@ -1,6 +1,7 @@
 {{ $formatType := .formatType }}
 {{ $idType := .idTypeString }}
 {{ $types := .types }}
+{{ $multiMethods := .multiMethods }}
 
 {{ with .context }}
   {{ $highlightLang := "" }}
@@ -12,10 +13,11 @@
     {{ $highlightLang = "html" }}
   {{ end }}
 
-  {{/* Should only show if there are more than one media type */}}
-  <p>
-    <b>Media type:</b> <code>{{ .name }}</code>
-  </p>
+  {{ if $multiMethods }}
+    <p>
+      <b>Media type:</b> <code>{{ .name }}</code>
+    </p>
+  {{ end }}
 
   <ul class="codetabs" role="tablist">
     {{ $nameDash := replace .name "/" "-" }}
