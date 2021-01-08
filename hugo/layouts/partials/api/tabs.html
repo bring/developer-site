@@ -49,13 +49,9 @@
           {{ with .description }}
             {{ . | markdownify }}
           {{ end }}
-          {{ if (eq $highlightLang "xml") }}
-            <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
-          {{ else if (eq $highlightLang "html") }}
-            <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
-          {{ else if (eq $highlightLang "json") }}
-            <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value }}</code></pre>
-          {{ end }}
+
+          {{ highlight $examples.value $highlightLang "" }}
+
         </div>
       </div>
     {{end}}
