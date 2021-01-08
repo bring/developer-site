@@ -151,138 +151,27 @@
                     {{/* For each endpoint: Request body */}}
                     {{ with .body }}
                       <h3>Request body</h3>
-
                       {{ range . }}
-                        {{ $highlightLang := "" }}
-                        {{ if (eq .name "application/json") }}
-                          {{ $highlightLang = "json" }}
-                        {{ else if (or (eq .name "application/xml") (eq .name "application/soap")) }}
-                          {{ $highlightLang = "xml" }}
-                        {{ else if (eq .name "application/html") }}
-                          {{ $highlightLang = "html" }}
-                        {{ end }}
-
-                        {{/* Should only show if there are more than one media type */}}
-                        <p>
-                          <b>Media type:</b> <code>{{ .name }}</code>
-                        </p>
-
-                        
-                        <ul class="codetabs" role="tablist">
-                          {{ $nameDash := replace .name "/" "-" }}
-                          {{ $tabIDExample := "" }}
-                          {{ $tabIDFormat := "" }}
-                          {{ with .type }}
-                            {{ $tabIDFormat = (print $displayName "-request-" $nameDash "-format") | urlize }}
-                            <li role="presentation" class="codetabs__item active">
-                              <a href="#{{ $tabIDFormat }}" role="tab" aria-controls="{{ $tabIDFormat }}" class="codetabs__link" data-toggle="tab">Request format</a>
-                            </li>
-                          {{ end }}
-
-                          {{range $index, $examples := .examples }}
-                            {{ $tabIDExample = (print $displayName "-request-" $nameDash "-example-" (add 1 $index) ) | urlize }}
-                            <li role="presentation" class="codetabs__item"><a href="#{{ $tabIDExample }}" role="tab" aria-controls="{{ $tabIDExample }}" class="codetabs__link" data-toggle="tab">Example: {{ .displayName }}</a></li>
-                          {{end}}
-                        </ul>
-
-                        <div class="codetabs__content">
-                          {{ with .type }}
-                            <div role="tabpanel" class="codetabs__panel active" id="{{ $tabIDFormat }}">
-                              {{ partial "api/ramltype.html" (dict "context" . "incTypeDefs" $types "incDashType" . "showHeader" false) }}
-                            </div>
-                          {{ end }}
-
-                          {{range $index, $examples := .examples }}
-                            <div role="tabpanel" class="codetabs__panel" id="{{ $tabIDExample }}">
-                              <div class="content">
-                                {{ with .description }}
-                                  {{ . | markdownify }}
-                                {{ end }}
-                                {{ if (eq $highlightLang "xml") }}
-                                  <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
-                                {{ else if (eq $highlightLang "html") }}
-                                  <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
-                                {{ else if (eq $highlightLang "json") }}
-                                  <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value }}</code></pre>
-                                {{ end }}
-                              </div>
-                            </div>
-                          {{end}}
-                        </div>
+                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types ) }}
                       {{ end }}
                     {{ end }}
 
                     {{/* For each endpoint: Response */}}
                     {{ with .responses }}
                       <h3>Responses</h3>
-
                       {{ range . }}
                         {{ $responseID := (print $displayName "-response-" .code) | urlize }}
                         <h4 class="anchored" id="{{ $responseID }}">HTTP status code {{ .code }}</h4>
                         {{ with .description }}
                           {{ . | markdownify }}
                         {{ end }}
-
                         {{ range .body }}
-                          {{ $highlightLang := "" }}
-                          {{ if (eq .name "application/json") }}
-                            {{ $highlightLang = "json" }}
-                          {{ else if (or (eq .name "application/xml") (eq .name "application/soap")) }}
-                            {{ $highlightLang = "xml" }}
-                          {{ else if (eq .name "application/html") }}
-                            {{ $highlightLang = "html" }}
-                          {{ end }}
-
-                          {{/* Should only show if there are more than one media type */}}
-                          <p>
-                            <b>Media type:</b> <code>{{ .name }}</code>
-                          </p>
-
-                          {{/* The tabs doesn’t work 100 % yet, probably a combination of missing templates */}}
-                          <ul class="codetabs" role="tablist">
-                            {{ $nameDash := replace .name "/" "-" }}
-                            {{ $tabID := (print $responseID "-" $nameDash "-format") | urlize }}
-                            {{ with .type }}
-                              <li role="presentation" class="codetabs__item active">
-                                <a href="#{{ $tabID }}" role="tab" aria-controls="{{ $tabID }}" class="codetabs__link" data-toggle="tab">Response format</a>
-                              </li>
-                            {{ end }}
-
-                            {{range $index, $examples := .examples }}
-                              {{ $tabID = (print $responseID "-" $nameDash "-example-" (add 1 $index) ) | urlize }}
-                              <li role="presentation" class="codetabs__item"><a href="#{{ $tabID }}" role="tab" aria-controls="{{ $tabID }}" class="codetabs__link" data-toggle="tab">Example: {{ .displayName }}</a></li>
-                            {{end}}
-                          </ul>
-
-                          <div class="codetabs__content">
-                            {{ with .type }}
-                              <div role="tabpanel" class="codetabs__panel active" id="{{ $tabID }}">
-                                {{ partial "api/ramltype.html" (dict "context" . "incTypeDefs" $types "incDashType" . "showHeader" false) }}
-                              </div>
-                            {{ end }}
-
-                            {{range $index, $examples := .examples }}
-                              {{ $tabID = (print $responseID "-" $nameDash "-example-" (add 1 $index) ) | urlize }}
-                              <div role="tabpanel" class="codetabs__panel" id="{{ $tabID }}">
-                                <div class="content">
-                                  {{ with .description }}
-                                    {{ . | markdownify }}
-                                  {{ end }}
-                                  {{ if (eq $highlightLang "xml") }}
-                                    <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
-                                  {{ else if (eq $highlightLang "html") }}
-                                    <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value}}</code></pre>
-                                  {{ else if (eq $highlightLang "json") }}
-                                    <pre class="highlight"><code class="{{ $highlightLang }}">{{ $examples.value }}</code></pre>
-                                  {{ end }}
-                                </div>
-                              </div>
-                            {{end}}
-                          </div>
+                          {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types ) }}
                         {{ end }}
                       {{ end }}
                     {{ end }}
                   {{ end }}
+
                 </section>
               {{ end }}
             </article>
