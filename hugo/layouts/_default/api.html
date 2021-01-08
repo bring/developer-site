@@ -167,32 +167,33 @@
                           <b>Media type:</b> <code>{{ .name }}</code>
                         </p>
 
-                        {{/* The tabs don’t work 100 % yet, probably a combination of missing templates/scripts */}}
+                        
                         <ul class="codetabs" role="tablist">
                           {{ $nameDash := replace .name "/" "-" }}
-                          {{ $tabID := (print $displayName "-request-" $nameDash "-format") | urlize }}
+                          {{ $tabIDExample := "" }}
+                          {{ $tabIDFormat := "" }}
                           {{ with .type }}
+                            {{ $tabIDFormat = (print $displayName "-request-" $nameDash "-format") | urlize }}
                             <li role="presentation" class="codetabs__item active">
-                              <a href="#{{ $tabID }}" role="tab" aria-controls="{{ $tabID }}" class="codetabs__link" data-toggle="tab">Request format</a>
+                              <a href="#{{ $tabIDFormat }}" role="tab" aria-controls="{{ $tabIDFormat }}" class="codetabs__link" data-toggle="tab">Request format</a>
                             </li>
                           {{ end }}
 
                           {{range $index, $examples := .examples }}
-                            {{ $tabID = (print $displayName "-request-" $nameDash "-example-" (add 1 $index) ) | urlize }}
-                            <li role="presentation" class="codetabs__item"><a href="#{{ $tabID }}" role="tab" aria-controls="{{ $tabID }}" class="codetabs__link" data-toggle="tab">Example: {{ .displayName }}</a></li>
+                            {{ $tabIDExample = (print $displayName "-request-" $nameDash "-example-" (add 1 $index) ) | urlize }}
+                            <li role="presentation" class="codetabs__item"><a href="#{{ $tabIDExample }}" role="tab" aria-controls="{{ $tabIDExample }}" class="codetabs__link" data-toggle="tab">Example: {{ .displayName }}</a></li>
                           {{end}}
                         </ul>
 
                         <div class="codetabs__content">
                           {{ with .type }}
-                            <div role="tabpanel" class="codetabs__panel active" id="{{ $tabID }}">
+                            <div role="tabpanel" class="codetabs__panel active" id="{{ $tabIDFormat }}">
                               {{ partial "api/ramltype.html" (dict "context" . "incTypeDefs" $types "incDashType" . "showHeader" false) }}
                             </div>
                           {{ end }}
 
                           {{range $index, $examples := .examples }}
-                            {{ $tabID = (print $displayName "-request-" $nameDash "-example-" (add 1 $index) ) | urlize }}
-                            <div role="tabpanel" class="codetabs__panel" id="{{ $tabID }}">
+                            <div role="tabpanel" class="codetabs__panel" id="{{ $tabIDExample }}">
                               <div class="content">
                                 {{ with .description }}
                                   {{ . | markdownify }}
@@ -291,5 +292,29 @@
     </div>
   </div>
 </div>
+
+<script async src="{{ "/js/ZeroClipboard.min.js" | relURL }}" onload="initZeroClipBoard()"></script>
+<script>
+  function initZeroClipBoard() {
+
+    var qsa = function (selector) {
+      return Array.prototype.slice.call(document.querySelectorAll(selector));
+    }
+
+    qsa('pre.highlight').forEach(function(pre) {
+      var zeroClipboard = document.createElement('div');
+      zeroClipboard.className = 'zero-clipboard';
+      zeroClipboard.innerHTML = '<span class="zero-clipboard__btn" title="Copy to clipboard">Copy</span>';
+      pre.parentNode.insertBefore(zeroClipboard, pre);
+    });
+
+    var client = new ZeroClipboard(qsa('.zero-clipboard__btn'));
+    client.on('copy', function(event) {
+      var copyButton = event.target.parentNode;
+      var pre = copyButton.nextSibling;
+      client.setText(pre.textContent);
+    });
+  }
+</script>
 
 {{ end }}
