@@ -59,8 +59,11 @@
                 <section class="api__section">
                   <h2 class="large anchored" id="{{ $displayName | urlize }}">{{ $displayName }}</h2>
                   {{ with .description }}
-                  {{/* This has some formatting issues, possibly from html in markdown */}}
-                    {{ . | markdownify }}
+                    {{ if in (string .) "\n\n" }}
+                      {{ .| markdownify }}
+                    {{ else }}
+                      <p>{{ . | markdownify }}</p>
+                    {{ end }}
                   {{ end }}
 
                   <h3>URL</h3>
@@ -147,17 +150,17 @@
                     {{ partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") }}
                   {{ end }}
 
-                  {{ $multiMethods := false }}
-                  {{ if gt (len .methods) 1 }}
-                    {{ $multiMethods = true }}
-                  {{ end }}
-
                   {{ range .methods }}
+                  {{ $multiMediaTypes := false }}
+
                     {{/* For each endpoint: Request body */}}
                     {{ with .body }}
+                      {{ if gt (len .) 1 }}
+                        {{ $multiMediaTypes = true }}
+                      {{ end }}
                       <h3>Request body</h3>
                       {{ range . }}
-                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMethods ) }}
+                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) }}
                       {{ end }}
                     {{ end }}
 
@@ -168,10 +171,23 @@
                         {{ $responseID := (print $displayName "-response-" .code) | urlize }}
                         <h4 class="anchored" id="{{ $responseID }}">HTTP status code {{ .code }}</h4>
                         {{ with .description }}
-                          {{ . | markdownify }}
+                          {{ if in (string .) "\n\n" }}
+                            {{ . | markdownify }}
+                          {{ else }}
+                            <p>{{ . | markdownify }}</p>
+                          {{ end }}
                         {{ end }}
+
+                        {{ $resBodies := slice }}
                         {{ range .body }}
-                          {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMethods ) }}
+                          {{ $resBodies = $resBodies | append . }}
+                        {{ end }}
+
+                        {{ range .body }}
+                          {{ if gt (len $resBodies) 1 }}
+                            {{ $multiMediaTypes = true }}
+                          {{ end }}
+                          {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) }}
                         {{ end }}
                       {{ end }}
                     {{ end }}

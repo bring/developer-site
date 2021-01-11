@@ -375,9 +375,7 @@ pre {
   padding: 1.5ch;
   overflow: auto;
 }
-pre.highlight {
-  padding: 0;
-  border: 0;
+.highlight pre {
   max-height: 450px;
 }
 pre code {
