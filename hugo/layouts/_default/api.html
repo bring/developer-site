@@ -24,7 +24,11 @@
                 {{ with $content }}<div>{{ . }}</div>{{ end }}
                 {{ range .documentation }}
                   <h2 class="anchored" id="{{.title | urlize }}">{{ .title }}</h2>
-                  {{ .content | markdownify }}
+                  {{ if in (string .content) "\n\n" }}
+                      {{ .content | markdownify }}
+                    {{ else }}
+                      <p>{{ .content | markdownify }}</p>
+                    {{ end }}
                 {{ end }}
               </section>
               <section class="api__section">
