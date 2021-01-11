@@ -321,6 +321,10 @@ h6 {
   font-size: 0.9333333333rem;
   line-height: 1.4285714286;
 }
+table caption {
+  text-align: left;
+  font-weight: 600;
+}
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

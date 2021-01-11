@@ -32,7 +32,7 @@
 
                 <h3>Base URL</h3>
                 <pre>{{ .baseUri }}</pre>
-                <table class="linked-rows tablecosy tablerows">
+                <table>
                   <thead>
                     <th>Method</th>
                     <th>Endpoint</th>
@@ -47,7 +47,7 @@
                         <a href="#{{ .displayName | urlize }}">{{ .relativeUri | safeHTML }}</a>
                       </td>
                       <td>
-                        <a href="#{{ .displayName | urlize }}">{{ .displayName | safeHTML}}</a>
+                        <a href="#{{ .displayName | urlize }}">{{ range .methods }}{{ .description | safeHTML}}{{ end }}</a>
                       </td>
                     </tr>
                   {{ end }}
