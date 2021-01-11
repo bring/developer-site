@@ -1,5 +1,5 @@
 {{ $formatType := .formatType }}
-{{ $idType := .idTypeString }}
+{{ $idType := replace .idTypeString "." "" }}
 {{ $types := .types }}
 {{ $multiMethods := .multiMethods }}
 
@@ -39,18 +39,19 @@
   <div class="codetabs__content">
     {{ with .type }}
       <div role="tabpanel" class="codetabs__panel active" id="{{ $tabIDFormat }}">
-        {{ partial "api/ramltype.html" (dict "context" . "incTypeDefs" $types "incDashType" . "showHeader" false) }}
+        {{ partial "api/ramltype.html" (dict "incDashType" . "incTypeDefs" $types "showHeader" false) }}
       </div>
     {{ end }}
 
     {{range $index, $examples := .examples }}
+    {{ $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize }}
       <div role="tabpanel" class="codetabs__panel" id="{{ $tabIDExample }}">
         <div class="content">
           {{ with .description }}
             {{ . | markdownify }}
           {{ end }}
 
-          {{ highlight $examples.value $highlightLang "" }}
+          {{ highlight .value $highlightLang "" }}
 
         </div>
       </div>
