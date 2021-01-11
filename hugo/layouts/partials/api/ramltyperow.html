@@ -78,12 +78,12 @@
 {{ $subPrefix := $prefix | append "&nbsp;&nbsp;" }}
 {{ if (eq $propType "object") }}
   TYPE OBJECT NOT TESTED
-  {{ partial "api/ramltyperow.html" (dict "context" . "incProp" .properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+  {{ partial "api/ramltyperow.html" (dict "incProp" .properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
 {{ else if (eq $propType "array") }}
   {{ range where .siteDataApiTypes .incProp.items "!=" nil }}
     {{ range . }}
       {{ range .properties }}
-        {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+        {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
       {{ end }}
     {{ end }}
   {{ end }}
@@ -91,7 +91,7 @@
   {{ range where $siteDataApiTypes $propType "!=" nil }}
     {{ range . }}
       {{ range .properties }}
-        {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+        {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
       {{ end }}
     {{ end }}
   {{ end }}

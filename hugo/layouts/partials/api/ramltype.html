@@ -45,7 +45,7 @@
               </thead>
               <tbody>
                 {{ range $typeProps }}
-                  {{ partial "api/ramltyperow.html" (dict "context" . "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
+                  {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
                 {{ end }}
               </tbody>
             </table>
