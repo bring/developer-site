@@ -41,9 +41,10 @@ After install, you might notice a package-lock.json file and a node_modules fold
 
 Copy the two lists of dependencies into package.json and run `npm i` to install them.
 
-<pre class="highlight--b">
-package.json
-<code>"devDependencies": {
+<p class="filename">package.json</p>
+
+```json
+"devDependencies": {
   "@babel/core": "^7.12.10",
   "@babel/preset-env": "^7.12.11",
   "@babel/preset-react": "^7.12.10",
@@ -58,8 +59,8 @@ package.json
   "react-dom": "^17.0.1",
   "react-router": "^5.2.0",
   "react-router-dom": "^5.2.0"
-}</code>
-</pre>
+}
+```
 
 The reason we are doing it this way, is to ensure you have the same dependency versions we have. Normally we use `npm i {list of dependencies}` to install, and add `-D` for developer dependencies. But that would have given us the newest version unless we specified the version number as well. Save any updating for later.
 
@@ -89,9 +90,10 @@ We need to make configuration files to configure Webpack, its loaders and plugin
 
 We make a file called webpack.dev.js with some initial config.
 
-<pre class="highlight--b">
-webpack.dev.js
-<code>module.exports = {
+<p class="filename">webpack.dev.js</p>
+
+```js
+module.exports = {
   target: 'web',
 
   mode: 'development',
@@ -113,8 +115,8 @@ webpack.dev.js
       },
     ],
   },
-}</code>
-</pre>
+}
+```
 
 `target` tells Webpack what environment we are running our app in. We normally don’t need to include it, but had to because of a bug in Webpack Dev Server 3 that stops hot reloading from working in some cases. It will be fixed in version 4. Normally `browserslist` is default if such a config is found, if not it defaults to `web`.
 
@@ -136,9 +138,10 @@ We also need to help Webpack with file handling. Loaders make Webpack able to lo
 
 We have Babel Loader, which allows our other [Babel](https://babeljs.io/) packages to perform actions on relevant code. For this, we will make a new file called babel.config.js and add:
 
-<pre class="highlight--b">
-babel.config.js
-<code>module.exports = function (api) {
+<p class="filename">babel.config.js</p>
+
+```js
+module.exports = function (api) {
   api.cache(true)
 
   return {
@@ -152,8 +155,8 @@ babel.config.js
       '@babel/react',
     ],
   }
-}</code>
-</pre>
+}
+```
 
 In our Webpack config, Webpack tells Babel Loader “here’s a selection of js and jsx, you know what to do”. Babel knows it should transform our code based on the settings we define, it looks into its own config and finds a couple of presets.
 
@@ -163,23 +166,25 @@ In our Webpack config, Webpack tells Babel Loader “here’s a selection of js 
 
 In addition to loaders, we have plugins. The separation between the two can be a bit vague, and while plugins can also make files, it can also do other things, like ensuring live reloading of a dev environment. And that’s exactly what we want to do by importing the following two plugins at the top of our file. Including one that comes with Webpack.
 
-<pre class="highlight--b">
-webpack.dev.js
-<code>const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')</code>
-</pre>
+<p class="filename">webpack.dev.js</p>
+
+```js
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+```
 
 And initiating and configuring them by adding the following after the module object.
 
-<pre class="highlight--b">
-webpack.dev.js
-<code>plugins: [
+<p class="filename">webpack.dev.js</p>
+
+```js
+plugins: [
   new HtmlWebpackPlugin({
     template: './src/index.html',
   }),
   new webpack.HotModuleReplacementPlugin(),
-],</code>
-</pre>
+],
+```
 
 [HTML Webpack Plugin](https://webpack.js.org/plugins/html-webpack-plugin/) creates HTML files, usually the index file. It adds the script tag that links to our JS bundle, and has a lot of other possibilities as well. It can be rendered based on a template file, as we have done, or directly from the config. Even though we don’t open the index.html file, it’s what loads when we run the app.
 
@@ -187,14 +192,15 @@ webpack.dev.js
 
 The last point for our dev config is the dev server which we add after the plugins.
 
-<pre class="highlight--b">
-webpack.dev.js
-<code>devServer: {
+<p class="filename">webpack.dev.js</p>
+
+```js
+devServer: {
   hot: true,
   port: 3000,
   historyApiFallback: true,
-},</code>
-</pre>
+},
+```
 
 We use hot reloading, port 3000 and history API fallback. The last two means that any URL on that port redirects to our index.html file, and any 404 response redirects to the index page.
 
@@ -204,13 +210,14 @@ This should give a file similar to our complete dev config you downloaded at the
 
 In order to run the project, we go back to package.json and add a script for that as well as one for building files for production. The scripts are really just command line shortcuts. They initiate Webpack and point to what config file it should use. `serve` points to Webpack Dev Server.
 
-<pre class="highlight--b">
-package.json
-<code>"scripts": {
+<p class="filename">package.json</p>
+
+```json
+"scripts": {
   "start": "webpack serve --config webpack.dev.js",
   "build": "webpack --config webpack.prod.js"
-},</code>
-</pre>
+},
+```
 
 Try running the project locally with `npm start` and open the link to the running app which appears in the terminal, it should be localhost:3000. You should see something like this:
 ![](images/webpackingp1.png)
@@ -223,9 +230,10 @@ If it fails to run, you have to troubleshoot. Check for typos or if you missed s
 
 For production, we can reuse a lot of what we already have – in fact, we need less config since we are not running production locally, only building it.
 
-<pre class="highlight--b">
-webpack.prod.js
-<code>const HtmlWebpackPlugin = require('html-webpack-plugin')
+<p class="filename">webpack.prod.js</p>
+
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -251,8 +259,8 @@ module.exports = {
       hash: true,
     }),
   ],
-}</code>
-</pre>
+}
+```
 
 Like with dev, we set `mode`, `entry` and `resolve`. We skip `target` because that was only needed for the hot reloading in our case.
 
@@ -306,9 +314,10 @@ And combine it with a global scope class:
 
 Just like with JS, we need loaders and processors, all of which are dev dependencies. Update the list of dev dependencies in your package.json and run `npm i` to install them. We will explain the new ones as we proceed with the config.
 
-<pre class="highlight--b">
-package.json
-<code>"devDependencies": {
+<p class="filename">package.json</p>
+
+```json
+"devDependencies": {
   "@babel/core": "^7.12.3",
   "@babel/preset-env": "^7.12.1",
   "@babel/preset-react": "^7.12.5",
@@ -327,28 +336,30 @@ package.json
   "webpack": "^5.4.0",
   "webpack-cli": "^4.2.0",
   "webpack-dev-server": "^3.11.0"
-},</code>
-</pre>
+},
+```
 
 ### Back to the known
 
 We can continue the config work by moving the Browserslist setting from our Babel config to package.json. This will make it available to everything that needs it, both Babel and the CSS processing we will be setting up. Remove the `targets` object from babel.config.js and add the following to package.json.
 
-<pre class="highlight--b">
-package.json
-<code>"browserslist": [
+<p class="filename">package.json</p>
+
+```json
+"browserslist": [
   "> .2%",
   "ie 11"
-],</code>
-</pre>
+],
+```
 
 ### Development config
 
 Returning to webpack.dev.js we add the following inside `rules` after the object handling JSX files with Babel.
 
-<pre class="highlight--b">
-webpack.dev.js
-<code>{
+<p class="filename">webpack.dev.js</p>
+
+```js
+{
   test: /\.css$/,
   use: [
     {
@@ -374,8 +385,8 @@ webpack.dev.js
       loader: 'postcss-loader',
     },
   ],
-},</code>
-</pre>
+},
+```
 
 This tests to see if we have some CSS files the same way we did with JS and JSX. And because we are going to add more than one loader for the CSS, we create an array called `use`. We could do the same for the JS loader, but this way we don’t write more config than necessary. At the same time, we also want to show some variations on how to write things, which you might run into when reading different documentations.
 
@@ -409,17 +420,18 @@ Class name after processing: `otherInfo__parcelInfo__2i8y`
 
 Lastly, we have [PostCSS Loader](https://webpack.js.org/loaders/postcss-loader/) which is for [PostCSS](https://postcss.org/) functionality. It has its own set of plugins configured in a separate file called postcss.config.js, similar to what we did with Babel.
 
-<pre class="highlight--b">
-postcss.config.js
-<code>module.exports = {
+<p class="filename">postcss.config.js</p>
+
+```js
+module.exports = {
   plugins: {
     'postcss-import': {},
     'postcss-css-variables': {},
     autoprefixer: {},
     cssnano: {},
   },
-}</code>
-</pre>
+}
+```
 
 Since we use `import` in our CSS files, we need [a plugin handling import](https://github.com/postcss/postcss-import) and combines all imported files into one.
 
@@ -444,9 +456,10 @@ For that, we need to add [Mini CSS Extract Plugin](https://github.com/webpack-co
 
 That gives us the following complete production config.
 
-<pre class="highlight--b">
-webpack.prod.js
-<code>const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+<p class="filename">webpack.prod.js</p>
+
+```js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -497,8 +510,8 @@ module.exports = {
       hash: true,
     }),
   ],
-}</code>
-</pre>
+}
+```
 
 If you compare the dev and prod configs, you will also see that we have shortened the loader array syntax just a little bit.
 

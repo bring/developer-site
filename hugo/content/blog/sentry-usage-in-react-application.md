@@ -55,25 +55,25 @@ Configure your application. Sentry has a useful wizard that helps you understand
 First of all, we should install npm package in your project.
 
 ```
-  npm i @sentry/browser
+npm i @sentry/browser
 ```
 
 As a best practice, We created separate Javascript with below code and load only in the environment which we feel required.
 Initialize Sentry in the application in the beginning of the flow. 
 
-```
-    Sentry.init({
-      dsn: dsnURL,
-      release: VERSION,
-      environment: getEnvironment(),
-      ignoreErrors: sentryIgnorables, --Optional
-      blacklistUrls: sentryBlackListUrls --Optional
-    });
-    Sentry.configureScope(scope => {
-        scope.setTag('commit', COMMIT_HASH);
-        scope.setTag('type', type);
-      }
-    )
+```js
+Sentry.init({
+  dsn: dsnURL,
+  release: VERSION,
+  environment: getEnvironment(),
+  ignoreErrors: sentryIgnorables, --Optional
+  blacklistUrls: sentryBlackListUrls --Optional
+});
+Sentry.configureScope(scope => {
+    scope.setTag('commit', COMMIT_HASH);
+    scope.setTag('type', type);
+  }
+)
 ```
 
 You can find the unique DSN URL from the Project -> Settings -> Client Keys from the selected project. Or you can find Client Keys in search input.
@@ -98,13 +98,12 @@ The Messages look bad. Of course, we have seen error messages, not understanding
 Okay. We covered javascript exception in previous points. However, what are we going to do with XHR errors?
 Sentry also has custom error handling. I used it for tracking api errors.
 
-```
-  Sentry.withScope(scope => {
-    scope.setLevel(level); --Optional
-    if (tags) Object.entries(tags).forEach(([key, value]) => scope.setTag(key, value)); -optional
-    Sentry.captureException({exception: exception});
-  });
-
+```js
+Sentry.withScope(scope => {
+  scope.setLevel(level); --Optional
+  if (tags) Object.entries(tags).forEach(([key, value]) => scope.setTag(key, value)); -optional
+  Sentry.captureException({exception: exception});
+});
 ```
 
 You can customize error name, level, add data, unique user data with your app, email, etc.
@@ -115,33 +114,31 @@ Let’s check the methods out:
 
 Sentry allows to insert level error in sentry dashboard. It has properties — (‘fatal’, ‘error’, ‘warning’, ‘info, ‘debug’, ‘critical’).
 
-```
-  Sentry.withScope(scope => {
-    scope.setLevel(level); --Optional
-    Sentry.captureMessage(message);
-  });
-
+```js
+Sentry.withScope(scope => {
+  scope.setLevel(level); --Optional
+  Sentry.captureMessage(message);
+});
 ```
 
 Sentry supports a concept called Breadcrumbs, which is a trail of events which happened prior to an issue.
 
-```
+```js
 Sentry.addBreadcrumb({message: message});
-
 ```
 
 
 Sentry.setUser helps to save unique details about user session (id, customer Id, and etc).
 
-```
-    Sentry.setUser({ id: <userId> })
+```js
+Sentry.setUser({ id: <userId> })
 ```
 setTag, setContext, setExtra methods allows to set any other data which would be useful for debugging.
 
 If you want to get user feedbacks about error, you should use function showReportDialog.
 
-```
-  Sentry.showReportDialog();
+```js
+Sentry.showReportDialog();
 ```
 
 ## When and what to log in Sentry

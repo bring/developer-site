@@ -36,5 +36,8 @@
   "browserslist": [
     "ie 11",
     "> .2%"
-  ]
+  ],
+  "dependencies": {
+    "postcss-import": "^14.0.0"
+  }
 }
