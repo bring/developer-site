@@ -36,9 +36,9 @@ Form validation is a good example of what Cypress helped us test in the “Retur
 
 All the tests start with a "describe", followed by "it", with a description of one specific test. These methods come from the assertion library Mocha, which is built into Cypress, along with the assertion library Chai. 
 
-```
+```js
 describe(’Addressform input validation', () => {
-it('Name input show error when empty after blur', () => {
+  it('Name input show error when empty after blur', () => {
 })}
 ```
 
@@ -47,20 +47,20 @@ The test content itself can be split into 3 steps:
 ### 1. Visiting a page
 Cypress tests your page or application in runtime, so the first thing you need to do is go to the page you want to test. 
 This can be done with
-```
+```js
 cy.visit(“your-url”)
 ```
 either in the test or a BeforeEach/Before function if you want to navigate to the site before every test. A baseUrl can also be defined in the cypress config. 
 
 ### 2. Find elements to test on
 There are several ways to find a specific DOM element. You can either find it by class name, Id or by defining a data attribute. In “Retur” we used a data attribute called "data-testid” to avoid using Ids for pure testing purposes. 
-```
+```js
 cy.get("[data-testid=nameInputField]")
 ```
 
 ### 3. Interacting with elements
 Once you’ve found the DOM Element you can chain the cy.get function, with different interactions like click, type, blur etc. Interactions are dependent on what type of DOM element you found. In our scenario, we fetched an Input field and wanted to focus and then blur the field.
-```
+```js
 cy.get("[data-testid=nameInputField]")
 .focus()
 .blur()
@@ -69,7 +69,7 @@ cy.get("[data-testid=nameInputField]")
 ### 4. Assertions
 Last essential part of a test is the assertion, which decides if the test passes or fails. Cypress uses Chai assertions, along with Sinon and jQuery extensions. 
 To use these assertions you pass it in the .should function along with the expected value. 
-```
+```js
 .should("have.class", "nameOfClass")
 .should("be.visible")
 ```
@@ -77,15 +77,15 @@ To use these assertions you pass it in the .should function along with the expec
 The example above is what we used to check whatever a class was set on an element, and if an element was visible. 
 
 With all these steps put together we would in our retur scenario end up with a test looking like this:
-```
+```js
 describe("Addressform input validation", () => {
-    it("Name input show error when empty after blur", () => {
-        cy.get("[data-testid=nameInputField]")
-        .focus()
-        .blur()
-        .should("have.class", "hw-input--error")
-        .siblings(".hw-error").should("be.visible")
-    })
+  it("Name input show error when empty after blur", () => {
+      cy.get("[data-testid=nameInputField]")
+      .focus()
+      .blur()
+      .should("have.class", "hw-input--error")
+      .siblings(".hw-error").should("be.visible")
+  })
 })
 ```
 `.siblings` is a shorthand for searching other DOM elements on the same “level”.

@@ -21,7 +21,7 @@ We use slack as the common communication tools and wanted alerts from grafana to
 
 So we moved towards another possible simplest solution, grafana also provides ability to get alerts posted on a webhook with a predefined payload which looks something like this.
 
-```
+```json
 {
   "title": "My alert",
   "ruleId": 1,
@@ -38,7 +38,6 @@ So we moved towards another possible simplest solution, grafana also provides ab
     }
   ]
 }
-
 ```
 
 So it was as simple as creating a web hook in one of our custom monitoring application,  parsing above payload and post it to slack, via a home grown library which can post to slack. The advantage of using web hook is that it lets you do any custom processing that you might need to do when an alert rule triggers an alert.

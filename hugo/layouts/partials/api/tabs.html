@@ -1,0 +1,59 @@
+{{ $formatType := .formatType }}
+{{ $idType := .idTypeString }}
+{{ $types := .types }}
+{{ $multiMethods := .multiMethods }}
+
+{{ with .context }}
+  {{ $highlightLang := "" }}
+  {{ if (eq .name "application/json") }}
+    {{ $highlightLang = "json" }}
+  {{ else if (or (eq .name "application/xml") (eq .name "application/soap")) }}
+    {{ $highlightLang = "xml" }}
+  {{ else if (eq .name "application/html") }}
+    {{ $highlightLang = "html" }}
+  {{ end }}
+
+  {{ if $multiMethods }}
+    <p>
+      <b>Media type:</b> <code>{{ .name }}</code>
+    </p>
+  {{ end }}
+
+  <ul class="codetabs" role="tablist">
+    {{ $nameDash := replace .name "/" "-" }}
+    {{ $tabIDFormat := "" }}
+    {{ $tabIDExample := "" }}
+    {{ with .type }}
+      {{ $tabIDFormat = (print $idType $nameDash "-format") | urlize }}
+      <li role="presentation" class="codetabs__item active">
+        <a href="#{{ $tabIDFormat }}" role="tab" aria-controls="{{ $tabIDFormat }}" class="codetabs__link" data-toggle="tab">{{ $formatType }} format</a>
+      </li>
+    {{ end }}
+
+    {{range $index, $examples := .examples }}
+      {{ $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize }}
+      <li role="presentation" class="codetabs__item"><a href="#{{ $tabIDExample }}" role="tab" aria-controls="{{ $tabIDExample }}" class="codetabs__link" data-toggle="tab">Example: {{ .displayName }}</a></li>
+    {{end}}
+  </ul>
+
+  <div class="codetabs__content">
+    {{ with .type }}
+      <div role="tabpanel" class="codetabs__panel active" id="{{ $tabIDFormat }}">
+        {{ partial "api/ramltype.html" (dict "context" . "incTypeDefs" $types "incDashType" . "showHeader" false) }}
+      </div>
+    {{ end }}
+
+    {{range $index, $examples := .examples }}
+      <div role="tabpanel" class="codetabs__panel" id="{{ $tabIDExample }}">
+        <div class="content">
+          {{ with .description }}
+            {{ . | markdownify }}
+          {{ end }}
+
+          {{ highlight $examples.value $highlightLang "" }}
+
+        </div>
+      </div>
+    {{end}}
+  </div>
+{{ end }}

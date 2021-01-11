@@ -1,10 +1,17 @@
 baseURL = "https://developer.bring.com"
 languageCode = "en-us"
 title = "Bring Developer"
-pygmentsUseClasses = true
 pluralizelisttitles = false
+pygmentsUseClasses = true
 summaryLength = 60
 paginate = 10
+
+[markup.highlight]
+guessSyntax = true
+
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
 description = "Documentation for developers."
 ramlBuiltinTypes = [

@@ -27,3 +27,4 @@ _buildtmp/
 
 hugo/public/
 hugo/data/
+hugo/static/css

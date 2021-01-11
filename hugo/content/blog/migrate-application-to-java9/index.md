@@ -34,46 +34,46 @@ To ensure we don't end up in trouble during migration, as a preperation we upgra
 - Since we use jetty, it had to be upgraded to version `9.4.9.v20180320` as versions below `9.4.6`don't support java9.
 - A new java9 profile activated by usage of jdk9, which looked something like this
 
-```
+```xml
 <profile>
-            <id>java-9</id>
-            <activation>
-                <jdk>9</jdk>
-            </activation>
-            <properties>
-                <maven.compiler.source>9</maven.compiler.source>
-                <maven.compiler.target>9</maven.compiler.target>
-            </properties>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.5.1</version>
-                        <configuration>
-                            <compilerArgs>
-                                <arg>--add-modules java.xml.bind</arg>
-                                <arg>--add-modules java.xml.ws</arg>
-                            </compilerArgs>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${surefireplugin.version}</version>
-                        <configuration>
-                            <argLine>
-                                --add-modules java.xml.bind, java.xml.ws
-                            </argLine>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+<id>java-9</id>
+<activation>
+    <jdk>9</jdk>
+</activation>
+<properties>
+    <maven.compiler.source>9</maven.compiler.source>
+    <maven.compiler.target>9</maven.compiler.target>
+</properties>
+<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.5.1</version>
+            <configuration>
+                <compilerArgs>
+                    <arg>--add-modules java.xml.bind</arg>
+                    <arg>--add-modules java.xml.ws</arg>
+                </compilerArgs>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefireplugin.version}</version>
+            <configuration>
+                <argLine>
+                    --add-modules java.xml.bind, java.xml.ws
+                </argLine>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+</profile>
 ```
 
 - Had to add dependencies to `jaxb2-maven-plugin` to make it work and generate pojos:
 
-```
+```xml
 <dependency>
     <groupId>javax.activation</groupId>
     <artifactId>javax.activation-api</artifactId>
@@ -94,7 +94,7 @@ The new approach was.... use maven dependencies to import all required dependenc
 - Jetty version upgrade to `9.4.9`
 - Added dependencies to application POM:
 
-```
+```xml
 <dependency>
     <groupId>javax.xml.bind</groupId>
     <artifactId>jaxb-api</artifactId>
@@ -172,7 +172,7 @@ There was a bet inplace amongst two of the other teams on who would be able to m
 
 The puppet and build config were given to one guy to install java10 on our servers and make it avaialble for configurations at runtime. Another guy was given charge of making changes to the application and adding libraries required to make the application compatible with java10. In the end we sailed through this migration with ease. The major change made was in the application itself to add libraries required for missing classes. they were : 
 
-```
+```xml
 <dependencies>
     <dependency>
         <groupId>org.ow2.asm</groupId>
