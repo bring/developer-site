@@ -363,6 +363,9 @@ code,
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 13px;
 }
+td code {
+  white-space: normal;
+}
 pre {
   border-left: 3px solid hsl(0, 0%, 86%);
   background-color: hsl(0, 0%, 97%);
