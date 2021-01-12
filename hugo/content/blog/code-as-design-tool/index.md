@@ -7,6 +7,7 @@ tags:
     - code-and-design
 authors:
     - HalvorSanden
+heroImage: code-as-tool-cropbw.jpg
 
 ---
 ![Hybriding interfaces](code-as-tool-cropbw.jpg "Hybriding interfaces")

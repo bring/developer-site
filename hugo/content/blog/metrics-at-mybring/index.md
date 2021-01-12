@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: images/many_graphs.png
 ---
 
 ![](images/many_graphs.png)

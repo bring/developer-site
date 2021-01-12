@@ -7,8 +7,7 @@ tags:
     - code-and-design
 authors:
     - HalvorSanden
-resources:
-    - src: zombie-css.jpg
+heroImage: zombie-css.jpg
 
 ---
 ![Cascading zombie](zombie-css.jpg "Cascading zombie")

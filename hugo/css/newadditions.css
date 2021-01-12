@@ -43,3 +43,7 @@ td > p, td > ul {
 .tr {
   text-align: right;
 }
+
+.mbm {
+  margin-bottom: 1rem;
+}

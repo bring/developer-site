@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: b-script-usage.png
 ---
 
 ![](b-script-usage.png)

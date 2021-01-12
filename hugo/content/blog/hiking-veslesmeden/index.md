@@ -7,8 +7,7 @@ tags:
     - webteam
 authors:
     - endremm
-resources:
-    - src: images/veslesmeden-01.jpg
+heroImage: images/veslesmeden-01.jpg
 
 ---
 ![](images/veslesmeden-01.jpg)

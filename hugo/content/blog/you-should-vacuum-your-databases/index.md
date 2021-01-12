@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: robot_vacuum.png
 ---
 
 ![](robot_vacuum.png)

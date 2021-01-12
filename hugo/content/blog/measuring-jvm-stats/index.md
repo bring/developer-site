@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: jvm_memory_usage.png
 ---
 
 ![](jvm_memory_usage.png)

@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: data-pools-efficiency-accuracy-exchanges.jpg
 ---
 
 ![](data-pools-efficiency-accuracy-exchanges.jpg)

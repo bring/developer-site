@@ -9,6 +9,7 @@ authors:
     - ElisabethIrgens
     - HalvorSanden
     - HeleneJuterud
+heroImage: images/01team.png
 
 ---
 ![Frontend team](images/01team.png "Frontend team")

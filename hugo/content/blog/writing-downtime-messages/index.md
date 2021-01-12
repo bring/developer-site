@@ -7,6 +7,7 @@ tags:
     - UX
 authors:
     - HalvorSanden
+heroImage: writing-downtime-messages.jpg
 
 ---
 ![Roadie in the Rain](writing-downtime-messages.jpg "Roadie in the Rain")

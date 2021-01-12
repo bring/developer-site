@@ -5,8 +5,10 @@ title: Design system docs without colour
 publishDate: 2020-10-08 08:55:00
 tags: 
     - code-and-design
+    - test
 authors:
     - HalvorSanden
+heroImage: octopeach.jpg
 ---
 
 What's the design system documentation without a dedicated page for colours? In our case, it's clearer and with fewer palette detours.

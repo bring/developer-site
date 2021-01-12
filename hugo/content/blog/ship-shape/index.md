@@ -9,6 +9,7 @@ authors:
     - jonasac
     - anirbansingharoy
     - pankajagrawal16
+heroImage: images/shipping-guide.png
 
 ---
 ![Shipping Guide 2.0](images/shipping-guide.png)

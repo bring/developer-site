@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: images/18mpenleoksq8jpg.jpg
 ---
 
 ![](images/18mpenleoksq8jpg.jpg)

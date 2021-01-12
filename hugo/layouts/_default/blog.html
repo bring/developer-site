@@ -7,9 +7,9 @@
           {{ partial "blog-meta.html" . }}
         </header>
         <div class="blog__post__content">
-          {{ with .Resources.ByType "image" }}
+          {{ with .Resources.Match (print .Params.heroImage) }}
             {{ range first 1 . }}
-              <img src="{{ .RelPermalink }}" alt="" />
+              <img class="mbm" src="{{ .RelPermalink }}" alt="" />
             {{ end }}
           {{ end }}
           <p>{{ .Summary | plainify | htmlUnescape }}</p>

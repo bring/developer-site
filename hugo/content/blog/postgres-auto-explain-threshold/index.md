@@ -7,6 +7,7 @@ tags:
 authors:
     - AnshikaKoul
     - kaaveland
+heroImage: explain_analyze.jpg
 ---
 
 ![](explain_analyze.jpg)
