@@ -185,6 +185,9 @@
                         {{ $resBodies := slice }}
                         {{ range .body }}
                           {{ $resBodies = $resBodies | append . }}
+                        {{ end }}
+
+                        {{ range .body }}
                           {{ if gt (len $resBodies) 1 }}
                             {{ $multiMediaTypes = true }}
                           {{ end }}
