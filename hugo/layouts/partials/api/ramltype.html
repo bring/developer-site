@@ -1,5 +1,6 @@
 {{ $showHeader := .showHeader }}
 {{ $siteDataApiTypes := .incTypeDefs }}
+{{ $incDashType := .incDashType }}
 
 {{ $showType := false }}
 {{ if (gt (len .incDashType) 1) }}
@@ -9,62 +10,57 @@
 {{ range .incDashType }}
   {{ $type := . }}
 
-  {{/* showRequired isnt tested yet */}}
-  {{ $showRequired := true }}
   {{ range $siteDataApiTypes}}
     {{ range . }}
-        {{ with .annotations }}
-          {{ with .annotations.hideInDocumentation }}
-            {{ with .annotations.hideInDocumentation.structuredValue }}
-              {{ $showRequired = false }}
-            {{ end }}
+      {{/* showRequired isnt tested yet, might not need that level of nesting */}}
+      {{ $showRequired := true }}
+      {{ with .annotations }}
+        {{ with .annotations.hideInDocumentation }}
+          {{ with .annotations.hideInDocumentation.structuredValue }}
+            {{ $showRequired = false }}
           {{ end }}
         {{ end }}
-    {{ end }}
-  {{ end }}
-
-  {{ range $siteDataApiTypes}}
-    {{ range . }}
-      {{ if (and (eq .name $type) $showRequired) }}
+      {{ end }}
+      {{ if in .name $type }}
         <article>
           {{ if (eq $showHeader true) }}
             <h4 class="anchored" id="type-{{ .name | urlize }}">{{ .displayName }}</h4>
           {{ end }}
-
-          {{ $typeProps := .properties }}
+          {{ $propTypes := .properties }}
           {{ range .type }}
             {{ if (eq . "object") }}
-            <table>
-              {{ with $showType }}
-              <caption>{{ $type }}</caption>
-              {{ end }}
-              <thead>
-                <th>Field</th>
-                <th>Type</th>
-                <th>Description</th>
-              </thead>
-              <tbody>
-                {{ range $typeProps }}
-                  {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
+              <table>
+                {{ with $showType }}
+                <caption>{{ $type }}</caption>
                 {{ end }}
-              </tbody>
-            </table>
+                <thead>
+                  <th>Field</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </thead>
+                <tbody>
+                  {{ range $propTypes }}
+                    {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
+                  {{ end }}
+                </tbody>
+              </table>
+
             {{ else }}
               {{/* everything below and all the way down isnt tested yet */}}
               {{ $desc := slice "Type: `" . "` " }}
               {{ if (eq $showRequired false)}}
-              {{ else if $typeProps.required }}
+              {{ else if $propTypes.required }}
               {{ $desc = $desc | append "_Required._ "}}
               {{ else }}
               {{ $desc = $desc | append "_Optional._ "}}
               {{ end }}
 
-              {{ if (eq $typeProps.displayName $typeProps.name)}}
-              {{ $desc = $desc | append $typeProps.displayName | append ". "}}
+              {{ if (eq $propTypes.displayName $propTypes.name)}}
+              {{ $desc = $desc | append $propTypes.displayName | append ". "}}
               {{ end }}
 
-              {{ with $typeProps.description }}
-              {{ $desc = $desc | append $typeProps.description }}
+              {{ with $propTypes.description }}
+              {{ $desc = $desc | append $propTypes.description }}
               {{ end }}
 
               {{ range $desc }}
@@ -72,7 +68,7 @@
                 {{ . | markdownify }}
               {{ end }}
 
-              {{ with $typeProps.enum }}
+              {{ with $propTypes.enum }}
               <br/>
               Possible values:
               <ul>
@@ -82,34 +78,34 @@
               </ul>
               {{ end }}}
 
-              {{ with $typeProps.default }}
+              {{ with $propTypes.default }}
                 <br/>
                 Default value: <code>{{ . }}</code>
               {{ end }}
 
-              {{ with $typeProps.pattern }}
+              {{ with $propTypes.pattern }}
                 <br/>
                 Pattern: <code>{{ . }}</code>
               {{ end }}
 
-              {{ with $typeProps.minItems }}
+              {{ with $propTypes.minItems }}
                 <br/>
                 Minimum number of items: <code>{{ . }}</code>
               {{ end }}
 
-              {{ with $typeProps.maxItems }}
+              {{ with $propTypes.maxItems }}
                 <br/>
                 Maximum number of items: <code>{{ . }}</code>
               {{ end }}
 
-              {{ with $typeProps.example }}
+              {{ with $propTypes.example }}
                 <br/>
                 Example: <code>{{ . }}</code>
               {{ end }}
 
             {{ end }}
           {{ end }}
-        </article>
+        </article> 
       {{ end }}
     {{ end }}
   {{ end }}
