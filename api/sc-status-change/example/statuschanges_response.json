@@ -1,0 +1,9 @@
+{
+  "processingID": "string",
+  "status": "OK",
+  "errors": [
+    {
+      "error": "string"
+    }
+  ]
+}

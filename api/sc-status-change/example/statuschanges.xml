@@ -1,0 +1,35 @@
+<StatusChanges>
+  <messageDetails>
+    <messageSender>
+      <partyId>string</partyId>
+      <idType>string</idType>
+    </messageSender>
+    <messageRecipient>
+      <partyId>string</partyId>
+      <idType>string</idType>
+    </messageRecipient>
+    <messageDate>string</messageDate>
+  </messageDetails>
+  <statusChangeSet>
+    <statusChange>
+      <customerNumber>string</customerNumber>
+      <masterCustomerNumber>string</masterCustomerNumber>
+      <wmsOrderNumber>string</wmsOrderNumber>
+      <customerOrderNumber>string</customerOrderNumber>
+      <orderType>string</orderType>
+      <fromStatus>string</fromStatus>
+      <toStatus>string</toStatus>
+      <dateAndTimes>
+        <date>string</date>
+        <time>string</time>
+        <subClass>string</subClass>
+      </dateAndTimes>
+      <logOnUser>string</logOnUser>
+      <logOnKey>string</logOnKey>
+    </statusChange>
+  </statusChangeSet>
+  <version>string</version>
+  <messageId>string</messageId>
+  <xmlns>string</xmlns>
+</StatusChanges>
+

@@ -1,0 +1,5 @@
+{
+  "status": "string",
+  "processingID": "string",
+  "message": "string"
+}
