@@ -77,11 +77,10 @@
 
 {{ $subPrefix := $prefix | append "&nbsp;&nbsp;" }}
 {{ if (eq $propType "object") }}
-  {{/* This creates some issues for Shipment API */}}
-  TYPE OBJECT
-  {{ .incProp }}
-  {{/* .incProp.properties doesn’t seem to exists. */}}
-  {{/* {{ partial "api/ramltyperow.html" (dict "incProp" .incProp.properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }} */}}
+  {{/* This isn’t tested / .incProp.properties doesn’t seem to exists. */}}
+  {{ range .incProp.properties }}
+    {{ partial "api/ramltyperow.html" (dict "incProp" .incProp.properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+  {{ end }}
 {{ else if (eq $propType "array") }}
   {{ range where .siteDataApiTypes .incProp.items "!=" nil }}
     {{ range . }}

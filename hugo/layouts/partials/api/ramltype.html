@@ -21,7 +21,8 @@
           {{ end }}
         {{ end }}
       {{ end }}
-      {{ if in .name $type }}
+      {{ if eq .name $type }}
+        {{ $name := .name }}
         <article>
           {{ if (eq $showHeader true) }}
             <h4 class="anchored" id="type-{{ .name | urlize }}">{{ .displayName }}</h4>
@@ -31,7 +32,7 @@
             {{ if (eq . "object") }}
               <table>
                 {{ with $showType }}
-                <caption>{{ $type }}</caption>
+                <caption>{{ $name }}</caption>
                 {{ end }}
                 <thead>
                   <th>Field</th>
