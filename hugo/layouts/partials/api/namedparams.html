@@ -1,4 +1,3 @@
-
 <table class="api__params">
   <thead>
     <th>{{ .title }}</th>
@@ -6,56 +5,56 @@
     <th>Description</th>
   </thead>
   {{ range where .includeParams ".name" "ne" "mediaTypeExtension" }}
-  <tr>
-    <td><code>{{ .name }}</code></td>
-    <td><code>{{ delimit .type " " }}</code></td>
-    <td>
-    {{ $desc := slice }}
+    <tr>
+      <td><code>{{ .name }}</code></td>
+      <td><code>{{ delimit .type " " }}</code></td>
+      <td>
+        {{ $desc := slice }}
 
-    {{ if (eq .hideRequired true) }}
-      {{ $desc = $desc | append "" }}
-    {{ else if (eq .required true) }}
-      {{ $desc = $desc | append "<small>_Required._</small> "}}
-    {{ else }}
-      {{ $desc = $desc | append "<small>_Optional._</small> "}}
-    {{ end }}
-
-    {{ if (ne .name .displayName)}}
-      {{ $desc = $desc | append (print .displayName ". ") }}
-    {{ end }}
-    {{ with .description }}
-      {{ $desc = $desc | append . }}
-    {{ end }}
-
-    {{ range $desc }}
-    {{/* This has some formatting issues, possibly from html in markdown */}}
-      {{ . | markdownify }}
-    {{ end }}
-
-    {{ with .enum }}
-      Possible values:
-      <ul>
-        {{ range . }}
-        <li><code>{{ . }}</code></li>
+        {{ if (eq .hideRequired true) }}
+          {{ $desc = $desc | append "" }}
+          {{ else if (eq .required true) }}
+          {{ $desc = $desc | append "<small>_Required._</small> " }}
+          {{ else }}
+          {{ $desc = $desc | append "<small>_Optional._</small> " }}
         {{ end }}
-      </ul>
-    {{ end }}
 
-    {{ with .default }}
-      <br/>
-      Default value: <code>{{ . }}</code>
-    {{ end }}
+        {{ if (ne .name .displayName) }}
+          {{ $desc = $desc | append (print .displayName ". ") }}
+        {{ end }}
+        {{ with .description }}
+          {{ $desc = $desc | append . }}
+        {{ end }}
 
-    {{ with .pattern }}
-      <br/>
-      Pattern: <code>{{ . }}</code>
-    {{ end }}
+        {{ range $desc }}
+          {{/* This has some formatting issues, possibly from html in markdown */}}
+          {{ . | markdownify }}
+        {{ end }}
 
-    {{ with .example }}
-      <br/>
-      Example: <code>{{ . }}</code>
-    {{ end }}
-    </td>
-  </tr>
-  {{end}}
+        {{ with .enum }}
+          Possible values:
+          <ul>
+            {{ range . }}
+              <li><code>{{ . }}</code></li>
+            {{ end }}
+          </ul>
+        {{ end }}
+
+        {{ with .default }}
+          <br />
+          Default value: <code>{{ . }}</code>
+        {{ end }}
+
+        {{ with .pattern }}
+          <br />
+          Pattern: <code>{{ . }}</code>
+        {{ end }}
+
+        {{ with .example }}
+          <br />
+          Example: <code>{{ . }}</code>
+        {{ end }}
+      </td>
+    </tr>
+  {{ end }}
 </table>

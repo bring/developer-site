@@ -26,7 +26,7 @@
     &nbsp;
     <div class="list-inline">
       {{- range $index, $tags := (.GetTerms "tags") -}}
-      {{- $comma := ", " -}}
+        {{- $comma := ", " -}}
         {{- if $index -}}{{- $comma -}}{{- end -}}
         <a href="{{ .Permalink }}">
           {{- .LinkTitle -}}

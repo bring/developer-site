@@ -10,7 +10,7 @@
 {{ range .incDashType }}
   {{ $type := . }}
 
-  {{ range $siteDataApiTypes}}
+  {{ range $siteDataApiTypes }}
     {{ range . }}
       {{/* showRequired isnt tested yet, might not need that level of nesting */}}
       {{ $showRequired := true }}
@@ -25,14 +25,18 @@
         {{ $name := .name }}
         <article>
           {{ if (eq $showHeader true) }}
-            <h4 class="anchored" id="type-{{ .name | urlize }}">{{ .displayName }}</h4>
+            <h4 class="anchored" id="type-{{ .name | urlize }}">
+              {{ .displayName }}
+            </h4>
           {{ end }}
           {{ $propTypes := .properties }}
           {{ range .type }}
             {{ if (eq . "object") }}
               <table>
                 {{ with $showType }}
-                <caption>{{ $name }}</caption>
+                  <caption>
+                    {{ $name }}
+                  </caption>
                 {{ end }}
                 <thead>
                   <th>Field</th>
@@ -46,67 +50,66 @@
                 </tbody>
               </table>
 
-            {{ else }}
+              {{ else }}
               {{/* everything below and all the way down isnt tested yet */}}
               {{ $desc := slice "Type: `" . "` " }}
-              {{ if (eq $showRequired false)}}
-              {{ else if $propTypes.required }}
-              {{ $desc = $desc | append "_Required._ "}}
-              {{ else }}
-              {{ $desc = $desc | append "_Optional._ "}}
+              {{ if (eq $showRequired false) }}
+                {{ else if $propTypes.required }}
+                {{ $desc = $desc | append "_Required._ " }}
+                {{ else }}
+                {{ $desc = $desc | append "_Optional._ " }}
               {{ end }}
 
-              {{ if (eq $propTypes.displayName $propTypes.name)}}
-              {{ $desc = $desc | append $propTypes.displayName | append ". "}}
+              {{ if (eq $propTypes.displayName $propTypes.name) }}
+                {{ $desc = $desc | append $propTypes.displayName | append ". " }}
               {{ end }}
 
               {{ with $propTypes.description }}
-              {{ $desc = $desc | append $propTypes.description }}
+                {{ $desc = $desc | append $propTypes.description }}
               {{ end }}
 
               {{ range $desc }}
-              {{/* This has some formatting issues, possibly from html in markdown */}}
+                {{/* This has some formatting issues, possibly from html in markdown */}}
                 {{ . | markdownify }}
               {{ end }}
 
               {{ with $propTypes.enum }}
-              <br/>
-              Possible values:
-              <ul>
-                {{ range . }}
-                  <li><code>{{ . }}</code></li>
-                {{ end }}}
-              </ul>
-              {{ end }}}
+                <br />
+                Possible values:
+                <ul>
+                  {{ range . }}
+                    <li><code>{{ . }}</code></li> {{ end }}
+                  }
+                </ul> {{ end }}
+              }
 
               {{ with $propTypes.default }}
-                <br/>
+                <br />
                 Default value: <code>{{ . }}</code>
               {{ end }}
 
               {{ with $propTypes.pattern }}
-                <br/>
+                <br />
                 Pattern: <code>{{ . }}</code>
               {{ end }}
 
               {{ with $propTypes.minItems }}
-                <br/>
+                <br />
                 Minimum number of items: <code>{{ . }}</code>
               {{ end }}
 
               {{ with $propTypes.maxItems }}
-                <br/>
+                <br />
                 Maximum number of items: <code>{{ . }}</code>
               {{ end }}
 
               {{ with $propTypes.example }}
-                <br/>
+                <br />
                 Example: <code>{{ . }}</code>
               {{ end }}
-
             {{ end }}
           {{ end }}
-        </article> 
+        </article>
       {{ end }}
     {{ end }}
   {{ end }}

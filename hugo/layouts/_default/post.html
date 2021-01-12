@@ -1,15 +1,17 @@
 {{ define "main" }}
-<div class="blog">
-  <article class="blog__post">
-    <header class="blog__post__header u-mb+">
-    <a href="{{ "/blog/" | relURL }}">&lt; Back to blog</a>
-    <h2 class="u-mt blog__post__heading alpha"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ partial "blog-meta.html" . }}
-    </header>
-    <div class="blog__post__content u-mb++">
-      {{ .Content }}
-    </div>
-    <a href="{{ "/blog/" | relURL }}">&lt; Back to blog</a>
-  </article>
-</div>
+  <div class="blog">
+    <article class="blog__post">
+      <header class="blog__post__header u-mb+">
+        <a href="{{ "/blog/" | relURL }}">&lt; Back to blog</a>
+        <h2 class="u-mt blog__post__heading alpha">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h2>
+        {{ partial "blog-meta.html" . }}
+      </header>
+      <div class="blog__post__content u-mb++">
+        {{ .Content }}
+      </div>
+      <a href="{{ "/blog/" | relURL }}">&lt; Back to blog</a>
+    </article>
+  </div>
 {{ end }}

@@ -3,29 +3,46 @@
 
 <nav class="sitemenu">
   <ul class="list-bare sitemenu__list">
-  {{ range .Site.Menus.api }}
-    <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
-      <span class="sitemenu__apititle epsilon u-mb0">
-        <a href="{{ .URL | relURL }}">{{ safeHTML .Name }}</a>
-      </span>
-      {{ if (eq .URL "/api/") }}
-        <ul class="list-bare sitemenu__sublist">
-          <li><a href="{{ "/api/#introduction" | relURL }}">Introduction</a></li>
-          <li><a href="{{ "/api/#authentication" | relURL }}">Authentication</a></li>
-          <li><a href="{{ "/api/#formats" | relURL }}">Formats</a></li>
-        </ul>
-      {{ end }}
-      {{ if (eq .URL "/api/services") }}
-        <ul class="list-bare sitemenu__sublist">
-          <li><a href="{{ "/api/services/#shipping-guide" | relURL }}">Shipping Guide</a></li>
-          <li><a href="{{ "/api/services/#booking" | relURL }}">Booking</a></li>
-        </ul>
-      {{ end }}
+    {{ range .Site.Menus.api }}
+      <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+        <span class="sitemenu__apititle epsilon u-mb0">
+          <a href="{{ .URL | relURL }}">{{ safeHTML .Name }}</a>
+        </span>
+        {{ if (eq .URL "/api/") }}
+          <ul class="list-bare sitemenu__sublist">
+            <li>
+              <a href="{{ "/api/#introduction" | relURL }}">Introduction</a>
+            </li>
+            <li>
+              <a href="{{ "/api/#authentication" | relURL }}">Authentication</a>
+            </li>
+            <li><a href="{{ "/api/#formats" | relURL }}">Formats</a></li>
+          </ul>
+        {{ end }}
+        {{ if (eq .URL "/api/services") }}
+          <ul class="list-bare sitemenu__sublist">
+            <li>
+              <a href="{{ "/api/services/#shipping-guide" | relURL }}"
+                >Shipping Guide</a
+              >
+            </li>
+            <li>
+              <a href="{{ "/api/services/#booking" | relURL }}">Booking</a>
+            </li>
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+    <li class="sitemenu__separator">
+      <span class="sitemenu__apititle epsilon u-mb0"
+        ><a
+          href="https://status.bring.systems"
+          target="_blank"
+          rel="noopener noreferrer"
+          >API Status</a
+        ></span
+      >
     </li>
-  {{ end }}
-  <li class="sitemenu__separator">
-    <span class="sitemenu__apititle epsilon u-mb0"><a href="https://status.bring.systems" target="_blank" rel="noopener noreferrer">API Status</a></span>
-  </li>
     {{ range .Site.Data.api }}
       {{ $urlizedTitle := replace .title "API" "" | urlize }}
       {{ $titleLink := print "api/" $urlizedTitle }}
@@ -49,20 +66,23 @@
 
               <li>
                 <a href="#overview-of-endpoints">
-                  <span data-hover="overview-of-endpoints">Overview of endpoints</span>
+                  <span data-hover="overview-of-endpoints"
+                    >Overview of endpoints</span
+                  >
                 </a>
               </li>
 
               {{ range .resources }}
                 <li>
                   <a href="#{{ .displayName | urlize }}">
-                    <span data-hover="{{ .displayName }}">{{ .displayName }}</span>
+                    <span data-hover="{{ .displayName }}"
+                      >{{ .displayName }}</span
+                    >
                   </a>
                 </li>
               {{ end }}
             </ul>
           {{ end }}
-
         </li>
       {{ end }}
     {{ end }}
