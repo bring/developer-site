@@ -87,7 +87,7 @@
                     {{ $urlOutput = $urlOutput | append $absUri }}
                   {{ end }}
 
-                  <pre class="api__url">{{ range .methods }}{{ .method | upper }}{{ end }} {{ delimit $urlOutput "<br>" }}</pre>
+                  <pre class="api__url">{{ range .methods }}{{ .method | upper }}<br>{{ end }}{{ delimit $urlOutput "<br>" }}</pre>
 
                   {{/* uri params exists and first one is not mediaTypeExtension */}}
                   {{ $otherUriParamsMediaType := false }}
