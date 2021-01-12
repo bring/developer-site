@@ -47,3 +47,26 @@ td > p, td > ul {
 .mbm {
   margin-bottom: 1rem;
 }
+
+.flexgrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gaps {
+  gap: 0.5rem;
+}
+
+.blog-meta-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  fill: #b2b2b2;
+}
+
+.blog-meta-icon a:hover {
+  fill: #414141;
+}
