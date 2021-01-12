@@ -1,0 +1,183 @@
+#%RAML 1.0
+---
+title: SC Status Change Ext API
+version: v1
+baseUri: https://bapi.bring.com/scstatuschangeext
+mediaType: application/json
+annotationTypes:
+  hideInDocumentation: boolean
+  hideRequired: boolean
+types:
+  COStatusChange:
+    type: object
+    properties:
+      webhookOrdersId:
+        type: integer
+        required: false
+      webhookEventId:
+        type: integer
+        required: false
+      system:
+        type: string
+        required: false
+      timestamp:
+        type: datetime
+        required: false
+      orderId:
+        type: integer
+        required: false
+      orderNumber:
+        type: string
+        required: false
+      goodsOwnerId:
+        type: integer
+        required: false
+      path:
+        type: string
+        required: false
+  POStatusChange:
+    type: object
+    properties:
+      webhookPurchaseOrdersId:
+        type: integer
+        required: false
+      webhookEventId:
+        type: integer
+        required: false
+      system:
+        type: string
+        required: false
+      timestamp:
+        type: datetime
+        required: false
+      purchaseOrderId:
+        type: integer
+        required: false
+      purchaseOrderNumber:
+        type: string
+        required: false
+      goodsOwnerId:
+        type: integer
+        required: false
+      path:
+        type: string
+        required: false
+  HttpResponseMessage:
+    type: object
+    properties:
+      Status:
+        type: object
+        required: false
+  StatusChangeResponse:
+    type: object
+    properties:
+      Status:
+        type: string
+        required: false
+      ProcessingId:
+        type: string
+        required: false
+      Message:
+        type: string
+        required: false
+
+documentation:
+- title: Introduction
+  content: |
+      SupplyChain Status Change External API.
+
+- title: Authentication
+  content: |
+    The SupplyChain Status Change External API does not require authentication.
+
+/sendstatuschangeco:
+  displayName: Send Status Change Customer Order
+  description: |
+        Sends a Status Change for a Customer Order
+
+        The structure and most of the content will be validated.
+  post:
+    description: Request is used to send a Status Change for a Customer Order.
+    headers:
+      Content-Type:
+        description: Specify request format (application/json)
+        required: true
+        enum: [ application/json ]
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    body:
+      application/json:
+          type: COStatusChange
+          examples:
+            valid_request:
+              displayName: Valid Request
+              value: !include example/statuschangesco.json
+    responses:
+      200:
+        description: |
+          StatusChange received succesfully
+        body:
+          application/json:
+            type: StatusChangeResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/statuschangesco_response.json
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination, please retry request later.
+
+/sendstatuschangepo:
+  displayName: Send Status Change Purchase Order
+  description: |
+        Sends a Status Change for a Purchase Order
+
+        The structure and most of the content will be validated.
+  post:
+    description: Request is used to send a Status Change for a Purchase Order.
+    headers:
+      Content-Type:
+        description: Specify request format (application/json)
+        required: true
+        enum: [ application/json ]
+      Accept:
+        description: Specify response format (application/json)
+        required: true
+        enum: [ application/json ]
+    body:
+      application/json:
+          type: POStatusChange
+          examples:
+            valid_request:
+              displayName: Valid Request
+              value: !include example/statuschangespo.json
+    responses:
+      200:
+        description: |
+          StatusChange received succesfully
+        body:
+          application/json:
+            type: StatusChangeResponse
+            examples:
+              valid_shipment:
+                displayName: Valid Response
+                value: !include example/statuschangespo_response.json
+      400:
+        displayName: Error
+        description: |
+          Error in validation of request or error in data structure of request
+
+      500:
+        displayName: Error
+        description: |
+          Unknown error. Error sending data to destination, please retry request later.
+
+
