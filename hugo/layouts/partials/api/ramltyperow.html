@@ -1,0 +1,104 @@
+{{ $siteDataApiTypes := .siteDataApiTypes }}
+{{ $showRequired := .showRequired }}
+
+{{ $prefix := slice }}
+{{ with .incPrefix }}
+  {{ $prefix = $prefix | append . }}
+{{ end }}
+
+{{ $propType := "" }}
+{{ range first 1 .incProp.type }}
+  {{ $propType = . }}
+{{ end }}
+
+{{ $isCustomType := (not (in site.Params.ramlBuiltinTypes $propType)) }}
+
+<tr>
+  <td>
+    <code
+      >{{ range $prefix }}{{ . | safeHTML }}{{ end }}{{ .incProp.name }}</code
+    >
+  </td>
+  <td><code>{{ cond (eq $isCustomType true) "object" $propType }}</code></td>
+  <td>
+    {{ $desc := slice }}
+    {{ if (eq $showRequired false) }}
+      {{ $desc = $desc | append "" }}
+      {{ else if .incProp.required }}
+      {{ $desc = $desc | append "_Required._ " }}
+      {{ else }}
+      {{ $desc = $desc | append "_Optional._ " }}
+    {{ end }}
+
+    {{ if (ne .incProp.displayName .incProp.name) }}
+      {{ $desc = $desc | append .incProp.displayName | append ". " }}
+    {{ end }}
+
+    {{ with .incProp.description }}
+      {{ $desc = $desc | append . }}
+    {{ end }}
+
+    {{ range $desc }}
+      {{ . | markdownify }}
+    {{ end }}
+
+    {{ with .incProp.enum }}
+      <br />
+      Possible values:
+      <ul>
+        {{ range . }}
+          <li><code>{{ . }}</code></li>
+        {{ end }}
+      </ul>
+    {{ end }}
+
+    {{ with .incProp.default }}
+      <br />
+      Default value: <code>{{ . }}</code>
+    {{ end }}
+
+    {{ with .incProp.pattern }}
+      <br />
+      Pattern: <code>{{ . }}</code>
+    {{ end }}
+
+    {{ with .incProp.minItems }}
+      <br />
+      Minimum number of items: <code>{{ . }}</code>
+    {{ end }}
+
+    {{ with .incProp.maxItems }}
+      <br />
+      Maximum number of items: <code>{{ . }}</code>
+    {{ end }}
+
+    {{ with .incProp.example }}
+      <br />
+      Example: <code>{{ . }}</code>
+    {{ end }}
+  </td>
+</tr>
+
+{{ $subPrefix := $prefix | append "&nbsp;&nbsp;" }}
+{{ if (eq $propType "object") }}
+  {{/* This isn’t tested / .incProp.properties doesn’t seem to exists. */}}
+  {{ range .incProp.properties }}
+    {{ partial "api/ramltyperow.html" (dict "incProp" .incProp.properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+  {{ end }}
+  {{ else if (eq $propType "array") }}
+  {{ range where .siteDataApiTypes .incProp.items "!=" nil }}
+    {{ range . }}
+      {{ range .properties }}
+        {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ else if $isCustomType }}
+  {{ range where $siteDataApiTypes $propType "!=" nil }}
+    {{ range . }}
+      {{ range .properties }}
+        {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

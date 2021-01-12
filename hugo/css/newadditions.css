@@ -1,0 +1,72 @@
+/* filename is temporary */
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table caption {
+  text-align: left;
+  font-weight: 600;
+}
+
+thead {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+tr {
+  vertical-align: top;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+thead tr {
+  vertical-align: bottom;
+  border-bottom: 2px solid hsl(0, 0%, 90%);
+}
+
+th,
+td {
+  padding: 0.5em 1.4em 0.4em 0.4em;
+}
+
+td:last-of-type,
+thead th:last-of-type {
+  padding-right: 0.4em;
+}
+
+td > p, td > ul {
+  margin-bottom: 0;
+}
+
+.tr {
+  text-align: right;
+}
+
+.mbm {
+  margin-bottom: 1rem;
+}
+
+.flexgrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gaps {
+  gap: 0.5rem;
+}
+
+.blog-meta-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  fill: #b2b2b2;
+}
+
+.blog-meta-icon a:hover {
+  fill: #414141;
+}

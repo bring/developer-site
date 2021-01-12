@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <h1 class="mbl fwn">{{ .Title }}</h1>
+
+  <section class="bt bw2 b--gray4 pts mbxl">
+    <h1 class="mb0">{{ .Title }}</h1>
+    <p class="text-title">{{ $.Param "excerpt" }}</p>
+    {{ .Content }}
+  </section>
+{{ end }}

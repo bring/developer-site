@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+const raml = require("raml-1-parser");
+const fs = require("fs");
+const toml = require("toml");
+const join = require("path").join;
+
+const configFile = join(__dirname, "../config.toml");
+const config = toml.parse(fs.readFileSync(configFile, "utf-8"));
+const filePaths = config.params.apis;
+
+const fileOut = join(__dirname, "../data/api.json");
+
+let apiArray = [];
+
+filePaths.forEach((filePath, i) => {
+  const regEx = /content\/api\/(\S*)\/api.raml/;
+  const pathRegEx = filePath.match(regEx);
+  let apiObjectName = pathRegEx[1];
+  if (apiObjectName.includes("-")) {
+    apiObjectName = apiObjectName.replace("-", "");
+  }
+  const apiFile = join(__dirname, "../" + filePath);
+  const api = raml.loadApiSync(apiFile);
+  let apiObject;
+  if (i == 0) {
+    apiObject =
+      '{\n"' + apiObjectName + '": ' + JSON.stringify(api.toJSON(), null, 2);
+  } else if (i == filePaths.length - 1) {
+    apiObject =
+      '\n"' +
+      apiObjectName +
+      '": ' +
+      JSON.stringify(api.toJSON(), null, 2) +
+      "\n}";
+  } else {
+    apiObject =
+      '\n"' + apiObjectName + '": ' + JSON.stringify(api.toJSON(), null, 2);
+  }
+  apiArray.push(apiObject);
+});
+
+fs.writeFileSync(fileOut, apiArray, "utf-8");

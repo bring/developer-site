@@ -1,0 +1,116 @@
+{{ $showHeader := .showHeader }}
+{{ $siteDataApiTypes := .incTypeDefs }}
+{{ $incDashType := .incDashType }}
+
+{{ $showType := false }}
+{{ if (gt (len .incDashType) 1) }}
+  {{ $showType = true }}
+{{ end }}
+
+{{ range .incDashType }}
+  {{ $type := . }}
+
+  {{ range $siteDataApiTypes }}
+    {{ range . }}
+      {{/* showRequired isnt tested yet, might not need that level of nesting */}}
+      {{ $showRequired := true }}
+      {{ with .annotations }}
+        {{ with .annotations.hideInDocumentation }}
+          {{ with .annotations.hideInDocumentation.structuredValue }}
+            {{ $showRequired = false }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if eq .name $type }}
+        {{ $name := .name }}
+        <article>
+          {{ if (eq $showHeader true) }}
+            <h4 class="anchored" id="type-{{ .name | urlize }}">
+              {{ .displayName }}
+            </h4>
+          {{ end }}
+          {{ $propTypes := .properties }}
+          {{ range .type }}
+            {{ if (eq . "object") }}
+              <table>
+                {{ with $showType }}
+                  <caption>
+                    {{ $name }}
+                  </caption>
+                {{ end }}
+                <thead>
+                  <th>Field</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </thead>
+                <tbody>
+                  {{ range $propTypes }}
+                    {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
+                  {{ end }}
+                </tbody>
+              </table>
+
+              {{ else }}
+              {{/* everything below and all the way down isnt tested yet */}}
+              {{ $desc := slice "Type: `" . "` " }}
+              {{ if (eq $showRequired false) }}
+                {{ else if $propTypes.required }}
+                {{ $desc = $desc | append "_Required._ " }}
+                {{ else }}
+                {{ $desc = $desc | append "_Optional._ " }}
+              {{ end }}
+
+              {{ if (eq $propTypes.displayName $propTypes.name) }}
+                {{ $desc = $desc | append $propTypes.displayName | append ". " }}
+              {{ end }}
+
+              {{ with $propTypes.description }}
+                {{ $desc = $desc | append $propTypes.description }}
+              {{ end }}
+
+              {{ range $desc }}
+                {{/* This has some formatting issues, possibly from html in markdown */}}
+                {{ . | markdownify }}
+              {{ end }}
+
+              {{ with $propTypes.enum }}
+                <br />
+                Possible values:
+                <ul>
+                  {{ range . }}
+                    <li><code>{{ . }}</code></li> {{ end }}
+                  }
+                </ul> {{ end }}
+              }
+
+              {{ with $propTypes.default }}
+                <br />
+                Default value: <code>{{ . }}</code>
+              {{ end }}
+
+              {{ with $propTypes.pattern }}
+                <br />
+                Pattern: <code>{{ . }}</code>
+              {{ end }}
+
+              {{ with $propTypes.minItems }}
+                <br />
+                Minimum number of items: <code>{{ . }}</code>
+              {{ end }}
+
+              {{ with $propTypes.maxItems }}
+                <br />
+                Maximum number of items: <code>{{ . }}</code>
+              {{ end }}
+
+              {{ with $propTypes.example }}
+                <br />
+                Example: <code>{{ . }}</code>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </article>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,316 @@
+#%RAML 0.8
+---
+title: Pickup Point API
+baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
+
+documentation:
+- title: Introduction
+  content: |
+      <div class="api__warning-box">
+        <strong>The Pickup Point API became authenticated from 01.11.2020</strong>
+          <br><br>
+
+            We have now started to limit the data in the responses for unauthenticated requests:
+            
+             - From 01.11.2020, coordinates and map links have been removed from all responses. 
+             - From 09.11.2020, only 1 pickup point will be returned in the responses for the postal code and location endpoints
+
+            We recommend making the <a href="/api/pickup-point/#authentication">adjustment</a> as soon as possible to avoid any problems with your integration setup during peak.
+          <br><br>
+      </div>
+
+      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
+
+      A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers, etc.
+
+      It is important to note, there are two sets of addresses in the response, postbox(address, postalCode) and visiting address(visitingAddress,visitingPostalCode).Postbox address is required to get a package produced correctly, use this AS RECIPIENT address on label. Visiting address is more appropriate for user interface (Street address of the PIB).
+      
+      ### Filtering results
+
+      In addition to postal code or location, one or more optional parameters can be added to the request, adding additional restrictions to the pickup points being returned. One such parameter is `searchForText=<texts>`, resulting in a response where all pickup points have at least a partial match with the search string given in `<texts>`. This can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table or see additional examples for more information.
+
+      ### Rate limiting
+
+      The Pickup point API had a rate limit, primarily considered on a per-user basis.
+
+      Since the Pickup Point API became authenticated from 01.11.2020, it is mandatory to be authenticated.
+
+      There will be no rate limiting once you authenticate yourself before calling Pickuppoint API.
+
+      #### Distinct PickupPointType
+
+      Norway :
+        - Type 4  : Post i Butikk
+        - Type 19 : Posten pakkeutlevering
+        - Type 21 : Postkontor
+        - Type 27 : Pakkeautomat
+        - Type 32 : Postpunkt, egendrevet
+        - Type 33 : Postpunkt
+        - Type 37 : Pakkeboks
+
+
+      Sweden :
+        - Type 34 : Manned
+
+      Denmark :
+        - Type 85 : Manned
+        - Type 86 : Locker
+
+      Finland :
+        - Type SmartPOST  : Finland Smart Post Pickup
+        - Type Posti      : Finland Posti Pickup Point
+        - Type Noutopiste : Finland Pickup Point
+        - Type LOCKER     : Finland Locker Pickup Point
+
+- title: Authentication
+  content: |
+      The Pickup Point API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+
+/{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
+  displayName: Pickup points for postal code
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ "NO", "DK", "SE", "FI" ]
+    postalCode:
+      displayName: Postal code
+      type: string
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json, .xml to get application/xml or .html to get HTML.
+  get:
+    description: List pickup points for postal code
+    queryParameters:
+      searchForText:
+        displayName: Text filter
+        type: string
+      openingHoursSearchType:
+        displayName: Filter using opening hours
+        enum: [ ALL_WEEKDAYS, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
+      openOnOrBefore:
+        description: Format `HHmm`. Return only pickup points that are open on or before the specified time.
+        type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
+      openOnOrAfter:
+        description: Format `HHmm`. Return only pickup points that are open on or after the specified time.
+        type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
+      pickupPointType:
+        displayName: Pickup-point type
+        description: Currently available for Swedish, Finnish and Danish pickup point request only.
+        enum: [ manned, locker ]
+      numberOfResponses:
+        description: Return the specified number of pickup points instead of the default. Try this param to get more pickup points, if a desired pickup point is missing in the response.
+        type: integer
+        default: 10
+      street:
+        description: Searches for the nearest pickup points to the given street. Use this param to get more accurate result.
+        type: string
+      streetNumber:
+        description: Searches for the nearest pickup points to the given street number.Use this param to get more accurate result.
+        type: string
+      callback:
+        description: JSONP callback function name.
+        type: string
+      requestCountryCode:
+        description: Country code of the requester. Only applicable for Norwegian pickup points.
+        type: string
+    responses:
+      200:
+        displayName: Example response for NO/postalCode/1407
+        body:
+          application/json:
+            example: !include examples/by_postal_code.json
+          application/xml:
+            example: !include examples/by_postal_code.xml
+      250:
+        displayName: Using postal code and street address
+        description: |
+          Sometimes (especially in Denmark) it's a good idea to also specify the address when searching for pickup points, to get more accurate results.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/DK/postalCode/2000.json?street=Smallegade&streetNumber=3), we look for pickup points in Smallegade 3, 2000 Frederiksberg.          
+        body:
+          application/json:
+            example: !include examples/filter_address.json
+          application/xml:
+            example: !include examples/filter_address.xml
+      251:
+        displayName: Find pickup points containing a specific string
+        description: |
+          If you want to return only the pickup points matching a specific string, you may use the `searchForText` query param. The given text can be the name of the pickup point, its address, city, county, municipality or location. Partial matches are also allowed.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?searchForText=KIWI), we look for pickup points near NO/1407 cotaining "Kiwi".
+        body:
+          application/json:
+            example: !include examples/filter_search.json
+          application/xml:
+            example: !include examples/filter_search.xml
+      252:
+        displayName: Find pickup points open on specific days
+        description: |
+          If you want to return only the pickup points open on specified days, you may use the `openingHoursSearchType=<day>` query param. `<day>` be:
+
+          - `ALL_WEEKDAYS` (default)
+          - `MONDAY`
+          - `TUESDAY`
+          - `WEDNESDAY`
+          - `THURSDAY`
+          - `FRIDAY`
+          - `SATURDAY`
+          - `SUNDAY`
+
+          If you want you can also add `openOnOrBefore` and / or `openOnOrAfter`, to limit the search even more.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openingHoursSearchType=SUNDAY), we look for pickup points near NO/1407 that are open Sundays.
+        body:
+          application/json:
+            example: !include examples/filter_days.json
+          application/xml:
+            example: !include examples/filter_days.xml
+      253:
+        displayName: Find pickup points open at specific hours
+        description: |
+          If you want to return only the pickup points open on specific hours, you may use the `openOnOrBefore=<time>` and/or `openOnOrAfter=<time>` query params.
+
+          The format of `<time>` is `HHmm`.
+
+          In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openOnOrBefore=0800), we look for pickup points near NO/1407 open on or before 08:00.
+        body:
+          application/json:
+            example: !include examples/filter_hours.json
+          application/xml:
+            example: !include examples/filter_hours.xml
+
+/{countryCode}/location/{latitude},{longitude}{mediaTypeExtension}:
+  displayName: Pickup points for location
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ "NO", "DK", "SE", "FI" ]
+    latitude:
+      displayName: Latitude
+      description: Geographic coordinate specifying the north-south position.
+      type: string
+    longitude:
+      displayName: Longitude
+      description: Geographic coordinate specifying the east-west position.
+      type: string
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml. 
+  get:
+    description: List pickup points closest to location
+    queryParameters:
+      searchForText:
+        displayName: Text filter
+        type: string
+      openingHoursSearchType:
+        displayName: Filter using opening hours
+        enum: [ ALL_WEEKDAYS, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY ]
+      openOnOrBefore:
+        description: Format `HHmm`. Return only pickup points that are open on or before the specified time.
+        type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
+      openOnOrAfter:
+        description: Format `HHmm`. Return only pickup points that are open on or after the specified time.
+        type: string
+        pattern: ^([01][0-9]|2[0-3])[0-5][0-9]$
+      pickupPointType:
+        displayName: Pickup-point type
+        description: Currently available for Swedish, Finnish and Danish pickup point request only.
+        enum: [ manned, locker ]
+      numberOfResponses:
+        description: Return the specified number of pickup points instead of the default.
+        type: integer
+        default: 10
+      street:
+        description: Searches for the nearest pickup points to the given street.
+        type: string
+      streetNumber:
+        description: Searches for the nearest pickup points to the given street number.
+        type: string
+      callback:
+        description: JSONP callback function name.
+        type: string
+      requestCountryCode:
+        description: Country code of the requester. Only applicable for Norwegian pickup points.
+        type: string
+    responses:
+      200:
+        displayName: Example response for location/60.395226,5.321725
+        body:
+          application/json:
+            example: !include examples/by_coordinates.json
+          application/xml:
+            example: !include examples/by_coordinates.xml
+
+/{countryCode}/id/{id}{mediaTypeExtension}:
+  displayName: A specific pickup point
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ "NO", DK, SE, FI ]
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: Look up a specific pickup point
+    queryParameters:
+      callback:
+        displayName: JSONP support
+        description: Callback function name.
+        type: string
+      requestCountryCode:
+        description: Country code of the requester. Only applicable for Norwegian pickup points.
+        type: string
+    responses:
+      200:
+        displayName: Example response for id/121110
+        body:
+          application/json:
+            example: !include examples/by_id.json
+          application/xml:
+            example: !include examples/by_id.xml
+
+/{countryCode}/all{mediaTypeExtension}:
+  displayName: All pickup points in a country
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ "NO", DK, SE, FI ]
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: All pickup points in a country
+    queryParameters:
+      callback:
+        displayName: JSONP support
+        description: Callback function name.
+        type: string
+      requestCountryCode:
+        description: Country code of the requester. Only applicable for Norwegian pickup points.
+        type: string
+
+/{countryCode}/postalCode/{postalCode}/default/{mediaTypeExtension}:
+  displayName: Default pickup point(s) for a postal code
+  uriParameters:
+    countryCode:
+      displayName: Country
+      enum: [ "NO" ]
+    postalCode:
+      displayName: Postal code
+      type: string
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: List default pickup point(s) for a postal code
+    responses:
+      200:
+        displayName: Example response for postal code 1481
+        body:
+          application/json:
+            example: !include examples/default_pickup_point_by_postal_code.json
+          application/xml:
+            example: !include examples/default_pickup_point_by_postal_code.xml
