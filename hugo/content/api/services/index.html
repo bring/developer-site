@@ -2,18 +2,21 @@
 title: API Service List
 layout: api
 notanapi: true
+menu:
+  api:
+    title: Service List
 ---
 <div class="wrapper">
   <div class="layout layout--flush">
     <div class="layout__item palm-one-whole desk-one-quarter">
-      {% comment %}
+      <!-- {% comment %}
       ----------------------------------------
       --
       -- Sidebar menu
       --
       ----------------------------------------
       {% endcomment %}
-      {% include sitemenu.html %}
+      {% include sitemenu.html %} -->
     </div><!--
  --><div class="layout__item palm-one-whole desk-three-quarters">
       <article class="api">
@@ -21,7 +24,7 @@ notanapi: true
         <section class="api__section" id="apiServiceList">
           <p>This page lists all the services available in the <a href="/api/shipping-guide_2/">Shipping Guide API</a> and <a href="/api/booking/">Booking API</a></p>
         </section>
-
+<!-- 
         {% assign base_url = 'http://api.test.bring.com' %}
 
         {% if jekyll.environment == 'test' %}
@@ -34,7 +37,7 @@ notanapi: true
 
         {% if jekyll.environment == 'production' %}
           {% assign base_url = 'https://api.bring.com' %}
-        {% endif %}
+        {% endif %} -->
 
         <section class="api__section" id="shipping-guide">
           <h2>Shipping Guide API</h2>
