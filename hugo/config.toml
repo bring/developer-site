@@ -30,6 +30,7 @@ ramlBuiltinTypes = [
   "nil"
 ]
 apis = [
+  "content/api/order-management/api.raml",
   "content/api/postal-code/api.raml",
   "content/api/modify-delivery/api.raml",
   "content/api/event-cast/api.raml",
