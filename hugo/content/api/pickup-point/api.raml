@@ -1,4 +1,4 @@
-#%RAML 0.8
+#%RAML 1.0
 ---
 title: Pickup Point API
 baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
@@ -6,19 +6,6 @@ baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 documentation:
 - title: Introduction
   content: |
-      <div class="api__warning-box">
-        <strong>The Pickup Point API became authenticated from 01.11.2020</strong>
-          <br><br>
-
-            We have now started to limit the data in the responses for unauthenticated requests:
-            
-             - From 01.11.2020, coordinates and map links have been removed from all responses. 
-             - From 09.11.2020, only 1 pickup point will be returned in the responses for the postal code and location endpoints
-
-            We recommend making the <a href="/api/pickup-point/#authentication">adjustment</a> as soon as possible to avoid any problems with your integration setup during peak.
-          <br><br>
-      </div>
-
       The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
 
       A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers, etc.
@@ -120,9 +107,15 @@ documentation:
         displayName: Example response for NO/postalCode/1407
         body:
           application/json:
-            example: !include examples/by_postal_code.json
+            examples:
+              successful:
+                displayName: Response for NO/postalCode/1407
+                value: !include examples/by_postal_code.json
           application/xml:
-            example: !include examples/by_postal_code.xml
+            examples:
+              successful:
+                displayName: Response for NO/postalCode/1407
+                value: !include examples/by_postal_code.xml
       250:
         displayName: Using postal code and street address
         description: |
@@ -131,9 +124,15 @@ documentation:
           In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/DK/postalCode/2000.json?street=Smallegade&streetNumber=3), we look for pickup points in Smallegade 3, 2000 Frederiksberg.          
         body:
           application/json:
-            example: !include examples/filter_address.json
+            examples:
+              code_street:
+                displayName: Postal code and street address
+                value: !include examples/filter_address.json
           application/xml:
-            example: !include examples/filter_address.xml
+            examples:
+              code_street:
+                displayName: Postal code and street address
+                value: !include examples/filter_address.xml
       251:
         displayName: Find pickup points containing a specific string
         description: |
@@ -142,9 +141,15 @@ documentation:
           In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?searchForText=KIWI), we look for pickup points near NO/1407 cotaining "Kiwi".
         body:
           application/json:
-            example: !include examples/filter_search.json
+            examples:
+              specific_string:
+                displayName: Find pickup points containing a specific string
+                value: !include examples/filter_search.json
           application/xml:
-            example: !include examples/filter_search.xml
+            examples:
+              specific_string:
+                displayName: Find pickup points containing a specific string
+                value: !include examples/filter_search.xml
       252:
         displayName: Find pickup points open on specific days
         description: |
@@ -164,9 +169,15 @@ documentation:
           In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openingHoursSearchType=SUNDAY), we look for pickup points near NO/1407 that are open Sundays.
         body:
           application/json:
-            example: !include examples/filter_days.json
+            examples:
+              specific_days:
+                displayName: Find pickup points containing a specific string
+                value: !include examples/filter_days.json
           application/xml:
-            example: !include examples/filter_days.xml
+            examples:
+              specific_days:
+                displayName: Find pickup points containing a specific string
+                value: !include examples/filter_days.xml
       253:
         displayName: Find pickup points open at specific hours
         description: |
@@ -177,9 +188,15 @@ documentation:
           In [this example](https://api.bring.com/pickuppoint/api/pickuppoint/NO/postalCode/1407.json?openOnOrBefore=0800), we look for pickup points near NO/1407 open on or before 08:00.
         body:
           application/json:
-            example: !include examples/filter_hours.json
+            examples:
+              specific_hours:
+                displayName: Find pickup points open at specific hours
+                value: !include examples/filter_hours.json
           application/xml:
-            example: !include examples/filter_hours.xml
+            examples:
+              specific_hours:
+                displayName: Find pickup points open at specific hours
+                value: !include examples/filter_hours.xml
 
 /{countryCode}/location/{latitude},{longitude}{mediaTypeExtension}:
   displayName: Pickup points for location
@@ -240,9 +257,15 @@ documentation:
         displayName: Example response for location/60.395226,5.321725
         body:
           application/json:
-            example: !include examples/by_coordinates.json
+            examples:
+              successful:
+                displayName: Response for location/60.395226,5.321725
+                value: !include examples/by_coordinates.json
           application/xml:
-            example: !include examples/by_coordinates.xml
+            examples:
+              successful:
+                displayName: Response for location/60.395226,5.321725
+                value: !include examples/by_coordinates.xml
 
 /{countryCode}/id/{id}{mediaTypeExtension}:
   displayName: A specific pickup point
@@ -268,9 +291,15 @@ documentation:
         displayName: Example response for id/121110
         body:
           application/json:
-            example: !include examples/by_id.json
+            examples:
+              successful:
+                displayName: Response for id/121110
+                value: !include examples/by_id.json
           application/xml:
-            example: !include examples/by_id.xml
+            examples:
+              successful:
+                displayName: Response for id/121110
+                value: !include examples/by_id.xml
 
 /{countryCode}/all{mediaTypeExtension}:
   displayName: All pickup points in a country
@@ -311,6 +340,12 @@ documentation:
         displayName: Example response for postal code 1481
         body:
           application/json:
-            example: !include examples/default_pickup_point_by_postal_code.json
+            examples:
+              successful:
+                displayName: Response for postal code 1481
+                value: !include examples/default_pickup_point_by_postal_code.json
           application/xml:
-            example: !include examples/default_pickup_point_by_postal_code.xml
+            examples:
+              successful:
+                displayName: Response for postal code 1481
+                value: !include examples/default_pickup_point_by_postal_code.xml
