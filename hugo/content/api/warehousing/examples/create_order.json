@@ -1,0 +1,133 @@
+{
+  "messageFunction": "Order",
+  "MessageDetails": {
+    "MessageSender": {
+      "partyId": "999999"
+    },
+    "MessageDate": {
+      "value": "2019-01-02"
+    }
+  },
+  "SupplyStructure": {
+    "OrderSet": [{
+      "updateIndicator": "Original",
+      "Order": {
+        "Reference": [{
+          "ReferenceNo": "10000-2",
+          "Text": "Additional reference number",
+          "referenceType": "ACD"
+        }],
+        "DateAndTimes": [
+          {
+            "Date": "2019-01-02",
+            "Time": "23:00:00",
+            "subClass": "DocumentDate"
+          },
+          {
+            "Date": "2019-01-06",
+            "Time": "23:00:00",
+            "subClass": "DeliveryDateRequested"
+          }
+        ],
+        "orderId": "10000-2"
+      },
+      "TransportService": {
+        "BasicServiceCode": {
+          "value": "SERVICEPAKKE"
+        }
+      },
+      "Party": [{
+        "subClass": "DeliveryParty",
+        "partyId": "32628",
+        "Name": "Customer 1",
+        "Address": [{
+          "PostalCode": "0181",
+          "City": "Oslo",
+          "StateOrRegion": "",
+          "CountryCode": {
+            "value": "NO"
+          },
+          "Street": "Torggata 5",
+          "AddressLine": [null],
+          "subClass": "PhysicalAddress"
+        }],
+        "Contact": [{
+          "CellPhoneNo": "99999999",
+          "EMailAddress": "contact@mottaker.no"
+        }]
+      },
+        {
+          "subClass": "OrderingParty",
+          "partyId": "32628",
+          "Name": "Customer 1",
+          "Address": [{
+            "PostalCode": "4391",
+            "City": "SANDNES",
+            "StateOrRegion": "SANDNES",
+            "CountryCode": {
+              "value": "NO"
+            },
+            "Street": "Postboks 1126",
+            "AddressLine": [""],
+            "subClass": "PostalAddress"
+          }],
+          "Contact": [{
+            "EMailAddress": "torggata@kitchn.no"
+          }],
+          "VATNo": "XXXXXXXXX"
+        },
+        {
+          "subClass": "Supplier",
+          "partyId": "999999",
+          "Name": "Warehousecustomer",
+          "Address": [{
+            "PostalCode": "0257",
+            "City": "Oslo",
+            "StateOrRegion": "Oslo",
+            "CountryCode": {
+              "value": "NO"
+            },
+            "Street": "Skovveien 6",
+            "AddressLine": [""],
+            "subClass": "PhysicalAddress"
+          }],
+          "VATNo": "XXXXXXXXX"
+        },
+        {
+          "subClass": "PerformingUnit",
+          "Name": "BERGER"
+        }],
+      "OrderLineSet": [{
+        "OrderItem": [{
+          "articleLineId": 1,
+          "ArticleId": [{
+            "value": "478015",
+            "codeListAgencyIdentifier": "CustomerItemNo"
+          }],
+          "ArticleQuantity": {
+            "value": 1,
+            "unitCode": "STK"
+          },
+          "Description": [{
+            "Text": [{
+              "value": "Article Text"
+            }],
+            "usageCode": "AAA"
+          }],
+          "ArticleMonetaryAmounts": {
+            "UnitPrice": {
+              "value": 120,
+              "currencyIdentificationCode": "NOK"
+            }
+          },
+          "ItemTotals": {
+            "GrossWeight": {
+              "unitCode": "GRM",
+              "value": 106
+            }
+          }
+        }]
+      }]
+    }]
+  }
+}
