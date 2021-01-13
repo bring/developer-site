@@ -7,8 +7,8 @@
     <div class="layout layout--flush">
       <div class="layout__item palm-one-whole desk-one-quarter">
         {{ partial "sidemenu.html" . }}
-      </div
-      ><div class="layout__item palm-one-whole desk-three-quarters">
+      </div>
+      <div class="layout__item palm-one-whole desk-three-quarters">
         {{ if (eq $notAnApi true) }}
           <article class="api">
             {{ $content }}
@@ -50,10 +50,8 @@
                       <tr>
                         <td>
                           <a href="#{{ .displayName | urlize }}"
-                            >{{ range .methods }}
-                              {{ .method | upper }}{{ end }}
-                            </a
-                          >
+                            >{{ range .methods }} {{ .method | upper }}{{ end }}
+                          </a>
                         </td>
                         <td>
                           <a href="#{{ .displayName | urlize }}"
@@ -64,8 +62,8 @@
                           <a href="#{{ .displayName | urlize }}"
                             >{{ range .methods }}
                               {{ .description | safeHTML }}{{ end }}
-                            </a
-                          >
+
+                          </a>
                         </td>
                       </tr>
                     {{ end }}
