@@ -3,12 +3,27 @@
 
 <nav class="sitemenu">
   <ul class="list-bare sitemenu__list">
-    {{ range .Site.Menus.api }}
-      <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+    {{ $len := (len .Site.Menus.api) }}
+    {{ range $index, $element := .Site.Menus.api }}
+      {{ $lastElement := "" }}
+      {{ if eq (add $index 1) $len }}
+        {{ $lastElement = "sitemenu__separator" }}
+      {{ end }}
+      <li
+        class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
+      >
         <span class="sitemenu__apititle epsilon u-mb0">
-          <a href="{{ .URL | relURL }}">{{ safeHTML .Name }}</a>
+          {{ $target := "" }}
+          {{ with .Params.blank }} {{ $target = . }} {{ end }}
+          <a href="{{ .URL | relURL }}" {{ $target | safeHTMLAttr }}
+            >{{ safeHTML .Title }}</a
+          >
         </span>
-        {{ if (eq .URL "/api/") }}
+        {{ $currentActive := "" }}
+        {{ if $currentPage.IsMenuCurrent .Menu . }}
+          {{ $currentActive = replace .URL "/" "" }}
+        {{ end }}
+        {{ if (eq $currentActive "api") }}
           <ul class="list-bare sitemenu__sublist">
             <li>
               <a href="{{ "/api/#introduction" | relURL }}">Introduction</a>
@@ -19,7 +34,7 @@
             <li><a href="{{ "/api/#formats" | relURL }}">Formats</a></li>
           </ul>
         {{ end }}
-        {{ if (eq .URL "/api/services") }}
+        {{ if (eq $currentActive "apiservices") }}
           <ul class="list-bare sitemenu__sublist">
             <li>
               <a href="{{ "/api/services/#shipping-guide" | relURL }}"
@@ -33,16 +48,6 @@
         {{ end }}
       </li>
     {{ end }}
-    <li class="sitemenu__separator">
-      <span class="sitemenu__apititle epsilon u-mb0"
-        ><a
-          href="https://status.bring.systems"
-          target="_blank"
-          rel="noopener noreferrer"
-          >API Status</a
-        ></span
-      >
-    </li>
     {{ range .Site.Data.api }}
       {{ $urlizedTitle := replace .title "API" "" | urlize }}
       {{ $titleLink := print "api/" $urlizedTitle }}

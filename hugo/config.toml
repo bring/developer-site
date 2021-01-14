@@ -48,3 +48,12 @@ apis = [
 
 [taxonomies]
 tag = "tags"
+
+[menu]
+
+  [[menu.api]]
+    title = "API Status"
+    url = "https://status.bring.systems"
+    weight = 1000
+    [menu.api.params]
+      blank = "target=\"_blank\" rel=\"noopener noreferrer\""
