@@ -662,6 +662,7 @@ ul.codetabs {
   position: relative;
   border-top-width: 3px;
   border-top-style: solid;
+  max-width: initial;
 }
 .codetabs__item:not(.active) {
   border-top-color: #f2f2f2;
