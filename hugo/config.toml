@@ -5,6 +5,7 @@ pluralizelisttitles = false
 pygmentsUseClasses = true
 summaryLength = 60
 paginate = 10
+ignorefiles = [ "css/main.js" ]
 
 [markup.highlight]
 guessSyntax = true
@@ -30,6 +31,13 @@ ramlBuiltinTypes = [
   "nil"
 ]
 apis = [
+  "content/api/booking/api.raml",
+  "content/api/shipping-guide/api.raml",
+  "content/api/shipping-guide_2/api.raml",
+  "content/api/warehousing/api.raml",
+  "content/api/order-management/api.raml",
+  "content/api/postal-code/api.raml",
+  "content/api/modify-delivery/api.raml",
   "content/api/event-cast/api.raml",
   "content/api/invoice/api.raml",
   "content/api/reports/api.raml",
