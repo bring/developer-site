@@ -1,0 +1,220 @@
+---
+title: API documentation
+layout: api
+menu:
+  api:
+    title: Getting started
+---
+      <article class="api">
+        <h1 class="api__title">Getting started</h1>
+        <section class="api__section">
+
+          <h2 class="anchored">Introduction</h2>
+
+          <p>
+            Bring provides a collection of APIs to facilitate integration with your systems. If you're running a webshop, or any software dealing with shipments from Nordic countries, using Bring APIs can add value to your business and to your customers:
+          </p>
+
+          <ul>
+            <li>Let the customer choose between alternative shipping methods upon checkout with the <a href="{{ site.baseurl }}/api/shipping-guide_2/">Shipping Guide API</a></li>
+            <li>Show your customers the current status of their shipment with the <a href="{{ site.baseurl }}/api/tracking/">Tracking API</a></li>
+            <li>Book a shipment through the <a href="{{ site.baseurl }}/api/booking/">Booking API</a></li>
+            <li>Generate and download reports with the <a href="{{ site.baseurl }}/api/reports">Reports API</a></li>
+          </ul>
+
+          <h3>API status</h3>
+
+          <p>
+            We continuously monitor our APIs with health checks. We use that for active monitoring and to measure our uptime. As a customer, you find our realtime and historical status at <a href="https://status.bring.systems" target="_blank" rel="noopener noreferrer">our status page</a>.
+          </p>
+        </section>
+
+        <section class="api__section" id="">
+          <h2 class="anchored">Authentication</h2>
+
+          <p>
+            APIs for
+            <a href="{{ site.baseurl }}/api/shipping-guide_2/">Shipping Guide</a>,
+            <a href="{{ site.baseurl }}/api/pickup-point/">Pickup Point</a>,
+            <a href="{{ site.baseurl }}/api/postal-code/">Postal Code</a>,
+            <a href="{{ site.baseurl }}/api/booking/">Booking</a>,
+            <a href="{{ site.baseurl }}/api/shipment/">Shipment</a>,
+            <a href="{{ site.baseurl }}/api/modify-delivery/">Modify Delivery</a>,
+            <a href="{{ site.baseurl }}/api/event-cast/">Event Cast</a>,
+            <a href="{{ site.baseurl }}/api/reports/">Reports</a> and
+            <a href="{{ site.baseurl }}/api/invoice/">Invoice</a>
+            require authentication, while
+            <a href="{{ site.baseurl }}/api/tracking/">Tracking</a>
+            has extra features when authenticated.
+          </p>
+
+          <p>
+            We currently use custom headers for authenticating:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Header</th>
+                <th>Example</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>X-MyBring-API-Uid</code></td>
+                <td><code>john.doe@example.com</code></td>
+                <td>Mybring login ID</td>
+              </tr>
+              <tr>
+                <td><code>X-MyBring-API-Key</code></td>
+                <td><code>1234abc-abcd-1234-5678-abcd1234abcd</code></td>
+                <td>Your user's API key</td>
+              </tr>
+              <tr>
+                <td><code>X-Bring-Client-URL</code></td>
+                <td><code>https://example.com/</code></td>
+                <td>A URL that sort of identifies where you're using the APIs.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Getting an API key</h3>
+          <p>
+            To get an API key, you must be <a href="https://www.mybring.com/">registered in Mybring</a> and have an invoice agreement with Bring. 
+          </p>
+          <p>
+            As a registered Mybring user, head to <a href="https://www.mybring.com/useradmin/account/settings/api">settings and API</a> to generate and get the API key for your user.
+          </p>
+        </section>
+
+        <section class="api__section" id="">
+          <h2 class="anchored" id="formats">JSON, XML, SOAP</h2>
+
+          <p>Our APIs support a mix of formats:</p>
+
+          <table class="apitable">
+            <thead>
+              <tr>
+                <th>API</th>
+                <th class="apitable__togglecell">JSON</th>
+                <th class="apitable__togglecell">XML</th>
+                <th class="apitable__togglecell">SOAP</th>
+                <th class="apitable__togglecell">Requires authentication</th>
+                <th class="apitable__togglecell">Extra features when authenticated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/shipping-guide_2/">Shipping Guide</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/pickup-point/">Pickup Point</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/postal-code/">Postal Code</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/booking/">Booking</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/shipment/">Shipment</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/easy-return-service/">Easy Return Service</a></td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/modify-delivery/">Modify Delivery</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/tracking/">Tracking</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/event-cast/">Event Cast</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/reports/">Reports</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/invoice/">Invoice</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/order-management/">Order Management</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+              <tr>
+                <td><a class="nowrap" href="{{ site.baseurl }}/api/warehousing/">Warehousing</a></td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">✓</td>
+                <td class="apitable__togglecell">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="api__section">
+          {% include disqus.html %}
+        </section>
+
+      </article>
