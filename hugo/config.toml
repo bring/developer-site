@@ -5,6 +5,7 @@ pluralizelisttitles = false
 pygmentsUseClasses = true
 summaryLength = 60
 paginate = 10
+ignorefiles = [ "css/main.js" ]
 
 [markup.highlight]
 guessSyntax = true
