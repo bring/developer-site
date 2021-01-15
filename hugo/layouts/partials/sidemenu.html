@@ -48,18 +48,18 @@
         {{ end }}
       </li>
     {{ end }}
-    {{ range .Site.Data.api }}
-      {{ $urlizedTitle := replace .title "API" "" | urlize }}
-      {{ $titleLink := print "api/" $urlizedTitle }}
-      {{ $lastUrlElement := index (last 1 (split (delimit (split $pageUrl "/") "," "") ",")) 0 }}
-      {{/* hide nav isn’t tested yet, exists only on shipping guide 1 */}}
-      {{ if not .hide_nav }}
-        <li class="{{ if eq $urlizedTitle $lastUrlElement }} active{{ end }}">
-          <span class="sitemenu__apititle epsilon u-mb0">
-            <a href="{{ $titleLink | relURL }}">{{ .title }}</a>
-          </span>
 
-          {{ if eq $urlizedTitle $lastUrlElement }}
+    {{ $apiData := .Site.Data.api }}
+    {{ range .Site.Menus.apidocs }}
+      {{ $identifier := .Identifier }}
+      <li>
+        <span class="sitemenu__apititle epsilon u-mb0">
+          <a href="{{ .URL }}">{{ .Title }}</a>
+        </span>
+        {{ $currentMenu := .Menu }}
+        {{ $currentMenuItem := . }}
+        {{ with (index $apiData $identifier) }}
+          {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}
             <ul class="list-bare sitemenu__sublist">
               {{ range .documentation }}
                 <li>
@@ -88,8 +88,8 @@
               {{ end }}
             </ul>
           {{ end }}
-        </li>
-      {{ end }}
+        {{ end }}
+      </li>
     {{ end }}
   </ul>
 </nav>
