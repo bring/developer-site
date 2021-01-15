@@ -78,9 +78,11 @@
                 Possible values:
                 <ul>
                   {{ range . }}
-                    <li><code>{{ . }}</code></li> {{ end }}
+                    <li><code>{{ . }}</code></li>
+                  {{ end }}
                   }
-                </ul> {{ end }}
+                </ul>
+              {{ end }}
               }
 
               {{ with $propTypes.default }}

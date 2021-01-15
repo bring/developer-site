@@ -5,7 +5,7 @@ pluralizelisttitles = false
 pygmentsUseClasses = true
 summaryLength = 60
 paginate = 10
-ignorefiles = [ "css/main.js" ]
+ignorefiles = ["css/main.js"]
 
 [markup.highlight]
 guessSyntax = true
@@ -48,3 +48,13 @@ apis = [
 
 [taxonomies]
 tag = "tags"
+
+[menu]
+
+[[menu.api]]
+title = "API Status"
+url = "https://status.bring.systems"
+weight = 1000
+
+[menu.api.params]
+blank = "target=\"_blank\" rel=\"noopener noreferrer\""
