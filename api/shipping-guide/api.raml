@@ -222,13 +222,13 @@ documentation:
       date:
         displayName: Shipping date
         description: Specifies which date the parcel will be delivered to Bring (within the time limit), and is used to calculate the delivery date. Date is specified in ISO format, `YYYY-MM-DD`.
-        type: date
+        type: string
         example: 2015-11-18
       time:
         displayName: Shipping time
         description: Shipping time may be specified. Note that Bring's courier services are the only one affected by this parameter. Time is specified in ISO format, `HH:mm`.
-        type: date
-        example: 12:30
+        type: string
+        example: '12:30'
       clientUrl:
         displayName: Client URL
         description: To use the Shipping Guide you must specify a client url parameter. The client url should be set to the url of the web shop or application the end user is ordering from. The client url can be sent as a url parameter, clientUrl, or as a header, `X-Bring-Client-URL`.
