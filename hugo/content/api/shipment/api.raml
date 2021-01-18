@@ -1716,9 +1716,15 @@ documentation:
         description: Sample request to book a Bring Express Courier shipment.
         body:
           application/xml:
-            example: !include examples/basic_example.xml
+            examples: 
+              basic_example:
+                displayName: Bring Express Courier
+                value: !include examples/basic_example.xml
           application/json:
-            example: !include examples/basic_example.json
+            examples: 
+              basic_example:
+                displayName: Bring Express Courier
+                value: !include examples/basic_example.json
 
 /sendbooking?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment booking
