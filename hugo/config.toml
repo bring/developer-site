@@ -13,6 +13,9 @@ guessSyntax = true
 [markup.goldmark.renderer]
 unsafe = true
 
+[markup.goldmark.extensions]
+linkify = false
+
 [params]
 description = "Documentation for developers."
 ramlBuiltinTypes = [
