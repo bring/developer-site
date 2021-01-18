@@ -61,8 +61,8 @@
                         <td>
                           <a href="#{{ .displayName | urlize }}"
                             >{{ range .methods }}
-                              {{ .description | safeHTML }}{{ end }}
-
+                              {{ .description | safeHTML }}
+                            {{ end }}
                           </a>
                         </td>
                       </tr>
@@ -157,7 +157,7 @@
                       {{ $uriParameters = $uriParameters | append . }}
                     {{ end }}
                     {{ if $otherUriParamsMediaType }}
-                      {{ partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI parameters" ) }}
+                      {{ partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) }}
                     {{ end }}
 
                     {{/* For each endpoint: List all headers */}}
@@ -187,29 +187,83 @@
                       {{/* For each endpoint: Response */}}
                       {{ with .responses }}
                         <h3>Responses</h3>
-                        {{ range . }}
+                        {{ range $key, $response := . }}
                           {{ $responseID := (print $displayName "-response-" .code) | urlize }}
-                          <h4 class="anchored" id="{{ $responseID }}">
-                            HTTP status code {{ .code }}
-                          </h4>
-                          {{ with .description }}
-                            {{ if in (string .) "\n\n" }}
-                              {{ . | markdownify }}
-                              {{ else }}
-                              <p>{{ . | markdownify }}</p>
-                            {{ end }}
-                          {{ end }}
-
+                          {{ $exampleID := (print $displayName "-" .code) | urlize }}
+                          {{ $responseCode := .code }}
                           {{ $resBodies := slice }}
                           {{ range .body }}
                             {{ $resBodies = $resBodies | append . }}
                           {{ end }}
-
-                          {{ range .body }}
-                            {{ if gt (len $resBodies) 1 }}
-                              {{ $multiMediaTypes = true }}
+                          {{/* Collapsed additional examples in Booking API */}}
+                          {{ if and (gt $key 220) (lt $key 302) }}
+                            {{ $body := .body }}
+                            {{ $description := .description }}
+                            {{ $oneBody := "" }}
+                            {{ range $index, $body := .body }}
+                              {{ $oneBody = $index }}
                             {{ end }}
-                            {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) }}
+                            {{ with (index .body $oneBody).examples }}
+                              {{ range first 1 . }}
+                                <div
+                                  class="collapsible"
+                                  class="anchored"
+                                  id="{{ $responseID }}"
+                                >
+                                  <a
+                                    href="#"
+                                    data-collapse="#{{ $exampleID }}"
+                                    class="collapsible__toggler collapsible__toggler--collapsed"
+                                    ><svg
+                                      class="collapsible__toggler__icon"
+                                      width="16"
+                                      height="16"
+                                      viewBox="0 0 320 512"
+                                    >
+                                      <path
+                                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                                      ></path>
+                                    </svg>
+                                    <span>{{ .displayName }}</span>
+                                  </a>
+                                  <div
+                                    id="{{ $exampleID }}"
+                                    class="collapsible__item collapsible__item--collapsed"
+                                  >
+                                    {{ with $description }}
+                                      {{ if in (string .) "\n\n" }}
+                                        {{ . | markdownify }}
+                                        {{ else }}
+                                        <p>{{ . | markdownify }}</p>
+                                      {{ end }}
+                                      {{ range $body }}
+                                        {{ if gt (len $resBodies) 1 }}
+                                          {{ $multiMediaTypes = true }}
+                                        {{ end }}
+                                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) }}
+                                      {{ end }}
+                                    {{ end }}
+                                  </div>
+                                </div>
+                              {{ end }}
+                            {{ end }}
+                            {{ else }}
+                            <h4 class="anchored" id="{{ $responseID }}">
+                              HTTP status code {{ $responseCode }}
+                            </h4>
+                            {{ with .description }}
+                              {{ if in (string .) "\n\n" }}
+                                {{ . | markdownify }}
+                                {{ else }}
+                                <p>{{ . | markdownify }}</p>
+                              {{ end }}
+                            {{ end }}
+                            {{ range .body }}
+                              {{ if gt (len $resBodies) 1 }}
+                                {{ $multiMediaTypes = true }}
+                              {{ end }}
+                              {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) }}
+                            {{ end }}
                           {{ end }}
                         {{ end }}
                       {{ end }}
