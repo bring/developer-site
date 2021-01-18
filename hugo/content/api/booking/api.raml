@@ -1117,38 +1117,23 @@ documentation:
               success:
                 displayName: Successful pickup order
                 value: !include examples/pickuporder_response.json
-          application/xml:
-            examples:
-              success:
-                displayName: Successful pickup order
-                value: !include examples/pickuporder_response.xml
-      251:
-        displayName: Parcels Sweden request
-        body:
-          application/json:
-            examples:
               pickuporder_SE:
                 displayName: Parcels Sweden request
                 value: !include examples/pickuporder_SE_new_way.json
-          application/xml:
-            examples:
-              pickuporder_SE:
-                displayName: Parcels Sweden request
-                value: !include examples/pickuporder_SE_new_way.xml
-      253:
-        displayName: Cargo request
-        body:
-          application/json:
-            examples:
               pickuporder_CARGO:
                 displayName: Cargo request
                 value: !include examples/pickuporder_CARGO_new_way.json
           application/xml:
             examples:
+              success:
+                displayName: Successful pickup order
+                value: !include examples/pickuporder_response.xml
+              pickuporder_SE:
+                displayName: Parcels Sweden request
+                value: !include examples/pickuporder_SE_new_way.xml
               pickuporder_CARGO:
                 displayName: Cargo request
                 value: !include examples/pickuporder_CARGO_new_way.xml
-
 
 /ws:
   displayName: SOAP
