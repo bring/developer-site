@@ -78,3 +78,18 @@ td > ul {
   font-weight: 500;
   color: #666;
 }
+
+/* stuff for services table */
+.b2bvas table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+.b2bvas th {
+  background: hsl(0, 0%, 97%);
+}
+.alignDown {
+  font-size: 75%;
+  font-weight: 500;
+}
