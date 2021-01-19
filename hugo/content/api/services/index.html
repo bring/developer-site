@@ -11,25 +11,13 @@ weight: 4
 <h1 class="api__title">API Service List</h1>
 <section class="api__section" id="apiServiceList">
   <p>
-    This page lists all the services available in the
-    <a href="/api/shipping-guide_2/">Shipping Guide API</a> and
+    All the services available in the
+    <a href="/api/shipping-guide_2/">Shipping Guide API 2.0</a> and
     <a href="/api/booking/">Booking API</a>
   </p>
 </section>
-<!-- 
-{% assign base_url = 'http://api.test.bring.com' %}
 
-{% if jekyll.environment == 'test' %}
-  {% assign base_url = 'http://api.test.bring.com' %}
-{% endif %}
 
-{% if jekyll.environment == 'qa' %}
-  {% assign base_url = 'https://api.qa.bring.com' %}
-{% endif %}
-
-{% if jekyll.environment == 'production' %}
-  {% assign base_url = 'https://api.bring.com' %}
-{% endif %} -->
 
 <section class="api__section" id="shipping-guide">
   <h2 id="shipping-guide-api">Shipping Guide API</h2>
@@ -69,9 +57,9 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE" >}}"
           >
-            <code>SERVICEPAKKE<br /></code>
+            <code>SERVICEPAKKE</code>
           </a>
         </td>
         <td>Parcels Norway</td>
@@ -79,7 +67,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE" >}}"
           >
             Yes
           </a>
@@ -89,7 +77,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE" >}}"
           >
             Yes
           </a>
@@ -102,7 +90,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN" >}}"
           >
             <code>PA_DOREN</code></a
           >
@@ -112,7 +100,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN" >}}"
             >Yes</a
           >
         </td>
@@ -121,7 +109,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN" >}}"
             >Yes</a
           >
         </td>
@@ -157,7 +145,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR" >}}"
           >
             <code>BPAKKE_DOR-DOR</code></a
           >
@@ -167,7 +155,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR" >}}"
           >
             Yes</a
           >
@@ -177,7 +165,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR" >}}"
           >
             Yes</a
           >
@@ -195,7 +183,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09" >}}"
           >
             <code>EKSPRESS09</code></a
           >
@@ -205,7 +193,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09" >}}"
           >
             Yes</a
           >
@@ -215,7 +203,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09" >}}"
           >
             Yes</a
           >
@@ -227,7 +215,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE" >}}"
             ><code>CARGO_GROUPAGE </code></a
           >
         </td>
@@ -236,7 +224,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE" >}}"
             >Yes</a
           >
         </td>
@@ -245,7 +233,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE" >}}"
             >Yes</a
           >
         </td>
@@ -260,7 +248,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO" >}}"
             ><code>CARGO</code></a
           >
         </td>
@@ -269,7 +257,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO" >}}"
             >Yes</a
           >
         </td>
@@ -278,7 +266,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO" >}}"
             >Yes</a
           >
         </td>
@@ -290,7 +278,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL" >}}"
           >
             <code>MAIL</code></a
           >
@@ -300,7 +288,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL" >}}"
             >Yes</a
           >
         </td>
@@ -309,7 +297,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL" >}}"
             >Yes
           </a>
         </td>
@@ -321,7 +309,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL" >}}"
           >
             <code>PICKUP_PARCEL</code>
           </a>
@@ -331,7 +319,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL" >}}"
           >
             Yes
           </a>
@@ -341,7 +329,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL" >}}"
           >
             Yes
           </a>
@@ -364,9 +352,9 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}"
           >
-            <code>HOME_DELIVERY_PARCEL<br /></code>
+            <code>HOME_DELIVERY_PARCEL</code>
           </a>
         </td>
         <td>Parcels Nordic</td>
@@ -374,7 +362,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}"
           >
             Yes
           </a>
@@ -384,7 +372,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}"
           >
             Yes
           </a>
@@ -396,9 +384,9 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL" >}}"
           >
-            <code>BUSINESS_PARCEL<br /></code>
+            <code>BUSINESS_PARCEL</code>
           </a>
         </td>
         <td>Parcels Nordic</td>
@@ -406,7 +394,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL" >}}"
           >
             Yes
           </a>
@@ -416,7 +404,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}"
           >
             Yes
           </a>
@@ -440,9 +428,9 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900" >}}"
           >
-            <code>EXPRESS_NORDIC_0900<br /></code>
+            <code>EXPRESS_NORDIC_0900</code>
           </a>
         </td>
         <td>Parcels Nordic</td>
@@ -450,7 +438,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900" >}}"
           >
             Yes
           </a>
@@ -460,7 +448,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900" >}}"
           >
             Yes
           </a>
@@ -483,7 +471,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET" >}}"
           >
             <code>BUSINESS_PALLET</code>
           </a>
@@ -493,7 +481,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET" >}}"
             >Yes</a
           >
         </td>
@@ -502,7 +490,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET" >}}"
             >Yes</a
           >
         </td>
@@ -514,7 +502,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET" >}}"
           >
             <code>BUSINESS_HALFPALLET</code>
           </a>
@@ -524,7 +512,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET" >}}"
             >Yes</a
           >
         </td>
@@ -533,7 +521,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET" >}}"
             >Yes</a
           >
         </td>
@@ -544,7 +532,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET" >}}"
           >
             <code>BUSINESS_QUARTERPALLET</code>
           </a>
@@ -554,7 +542,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET" >}}"
             >Yes</a
           >
         </td>
@@ -563,7 +551,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET" >}}"
             >Yes</a
           >
         </td>
@@ -574,7 +562,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP" >}}"
             ><code>COURIER_VIP</code></a
           >
         </td>
@@ -583,7 +571,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP" >}}"
             >Yes</a
           >
         </td>
@@ -592,7 +580,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP" >}}"
             >Yes</a
           >
         </td>
@@ -604,7 +592,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H" >}}"
             ><code>COURIER_1H</code></a
           >
         </td>
@@ -613,7 +601,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H" >}}"
             >Yes</a
           >
         </td>
@@ -622,7 +610,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H" >}}"
             >Yes</a
           >
         </td>
@@ -634,7 +622,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H" >}}"
             ><code>COURIER_2H</code></a
           >
         </td>
@@ -643,7 +631,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H" >}}"
             >Yes</a
           >
         </td>
@@ -652,7 +640,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H" >}}"
             >Yes</a
           >
         </td>
@@ -664,7 +652,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H" >}}"
             ><code>COURIER_4H</code></a
           >
         </td>
@@ -673,7 +661,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H" >}}"
             >Yes</a
           >
         </td>
@@ -682,7 +670,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H" >}}"
             >Yes</a
           >
         </td>
@@ -694,7 +682,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H" >}}"
             ><code>COURIER_6H</code></a
           >
         </td>
@@ -703,7 +691,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H" >}}"
             >Yes</a
           >
         </td>
@@ -712,7 +700,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H" >}}"
             >Yes</a
           >
         </td>
@@ -724,7 +712,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP" >}}"
             ><code>COURIER_BICYCLE_VIP</code></a
           >
         </td>
@@ -733,7 +721,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP" >}}"
             >Yes</a
           >
         </td>
@@ -742,7 +730,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP" >}}"
             >Yes</a
           >
         </td>
@@ -753,7 +741,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}"
             ><code>COURIER_BICYCLE_1H</code></a
           >
         </td>
@@ -762,7 +750,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}"
             >Yes</a
           >
         </td>
@@ -771,7 +759,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}"
             >Yes</a
           >
         </td>
@@ -783,7 +771,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H" >}}"
             ><code>COURIER_BICYCLE_2H</code></a
           >
         </td>
@@ -792,7 +780,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H" >}}"
             >Yes</a
           >
         </td>
@@ -801,7 +789,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H" >}}"
             >Yes</a
           >
         </td>
@@ -813,7 +801,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_4H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_4H" >}}"
             ><code>COURIER_BICYCLE_4H</code></a
           >
         </td>
@@ -822,7 +810,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}"
             >Yes</a
           >
         </td>
@@ -831,7 +819,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}"
             >Yes</a
           >
         </td>
@@ -843,7 +831,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H" >}}"
             ><code>COURIER_BICYCLE_6H</code></a
           >
         </td>
@@ -852,7 +840,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H" >}}"
             >Yes</a
           >
         </td>
@@ -861,7 +849,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H" >}}"
             >Yes</a
           >
         </td>
@@ -873,7 +861,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE" >}}"
             ><code>COURIER_LONG_DISTANCE</code></a
           >
         </td>
@@ -882,7 +870,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE" >}}"
             >Yes</a
           >
         </td>
@@ -891,7 +879,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE" >}}"
             >Yes</a
           >
         </td>
@@ -912,7 +900,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY" >}}"
           >
             <code>EXPRESS_NORDIC_SAME_DAY</code>
           </a>
@@ -922,7 +910,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY" >}}"
             >Yes</a
           >
         </td>
@@ -931,7 +919,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY" >}}"
             >Yes</a
           >
         </td>
@@ -943,7 +931,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900" >}}"
           >
             <code>EXPRESS_INTERNATIONAL_0900</code>
           </a>
@@ -953,7 +941,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900" >}}"
             >Yes</a
           >
         </td>
@@ -962,7 +950,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900" >}}"
             >Yes</a
           >
         </td>
@@ -974,7 +962,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200" >}}"
           >
             <code>EXPRESS_INTERNATIONAL_1200</code></a
           >
@@ -984,7 +972,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200" >}}"
             >Yes</a
           >
         </td>
@@ -993,7 +981,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200" >}}"
             >Yes</a
           >
         </td>
@@ -1005,7 +993,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL" >}}"
           >
             <code>EXPRESS_INTERNATIONAL</code>
           </a>
@@ -1015,7 +1003,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL" >}}"
           >
             Yes
           </a>
@@ -1025,7 +1013,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL" >}}"
           >
             Yes
           </a>
@@ -1037,7 +1025,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY" >}}"
           >
             <code>EXPRESS_ECONOMY</code></a
           >
@@ -1047,7 +1035,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY" >}}"
           >
             Yes
           </a>
@@ -1057,7 +1045,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY" >}}"
             >Yes</a
           >
         </td>
@@ -1077,7 +1065,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL" >}}"
             ><code>CARGO_INTERNATIONAL</code></a
           >
         </td>
@@ -1086,7 +1074,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL" >}}"
             ><code>Yes</code></a
           >
         </td>
@@ -1095,7 +1083,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL" >}}"
             ><code>Yes</code></a
           >
         </td>
@@ -1135,7 +1123,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE" >}}"
           >
             <code>BPAKKE_DOR-DOR_RETURSERVICE</code>
           </a>
@@ -1145,7 +1133,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE" >}}"
           >
             Yes
           </a>
@@ -1155,7 +1143,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE" >}}"
           >
             Yes
           </a>
@@ -1172,7 +1160,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE" >}}"
           >
             <code>EKSPRESS09_RETURSERVICE</code>
           </a>
@@ -1182,7 +1170,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE" >}}"
           >
             Yes
           </a>
@@ -1192,7 +1180,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE" >}}"
           >
             Yes
           </a>
@@ -1208,7 +1196,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE" >}}"
           >
             <code>SERVICEPAKKE_RETURSERVICE</code>
           </a>
@@ -1218,7 +1206,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE" >}}"
           >
             Yes
           </a>
@@ -1228,7 +1216,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE" >}}"
           >
             Yes
           </a>
@@ -1250,7 +1238,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL_RETURN"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL_RETURN" >}}"
           >
             <code>PICKUP_PARCEL_RETURN</code>
           </a>
@@ -1262,7 +1250,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL_RETURN"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL_RETURN" >}}"
           >
             Yes
           </a>
@@ -1285,7 +1273,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL_RETURN"
+            href="{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL_RETURN" >}}"
           >
             <code>BUSINESS_PARCEL_RETURN</code>
           </a>
@@ -1297,7 +1285,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL_RETURN"
+            href="{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL_RETURN" >}}"
           >
             Yes
           </a>
@@ -1349,9 +1337,9 @@ weight: 4
   </p>
   <p>
     The links are to examples using XML API. Have a look at the
-    <a href="{{ base_url }}/shippingguide/api/ws/shippingguide-20.wsdl">WSDL</a>
+    <a href="{{< baseapiurl au="/shippingguide/api/ws/shippingguide-20.wsdl" >}}">WSDL</a>
     or
-    <a href="{{ base_url }}/shippingguide/api/ws/shipping-guide-20.xsd">XSD</a>
+    <a href="{{< baseapiurl au="/shippingguide/api/ws/shipping-guide-20.xsd" >}}">XSD</a>
     for help to set these value added services in a SOAP request.
   </p>
   <div class="information-box">
@@ -1389,7 +1377,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=EVARSLING"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=EVARSLING" >}}"
             >EVARSLING</a
           >
         </td>
@@ -1403,7 +1391,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=POSTOPPKRAV"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=POSTOPPKRAV" >}}"
             >POSTOPPKRAV</a
           >
         </td>
@@ -1417,7 +1405,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?date=2300-12-14&amp;weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09&amp;additionalservice=LORDAGSUTKJORING"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?date=2300-12-14&amp;weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09&amp;additionalservice=LORDAGSUTKJORING" >}}"
             >LORDAGSUTKJORING</a
           >
         </td>
@@ -1431,7 +1419,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;length=10&amp;width=10&amp;height=10&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=EXPRESS_INTERNATIONAL&amp;additionalservice=ENVELOPE"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;length=10&amp;width=10&amp;height=10&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=EXPRESS_INTERNATIONAL&amp;additionalservice=ENVELOPE" >}}"
             >ENVELOPE</a
           >
         </td>
@@ -1448,7 +1436,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=0150&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE&amp;additionalservice=ADVISERING"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=0150&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE&amp;additionalservice=ADVISERING" >}}"
             >ADVISERING</a
           >
         </td>
@@ -1462,7 +1450,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=1500&amp;length=60&amp;width=60&amp;height=60&amp;frompostalcode=2000&amp;topostalcode=2000&amp;fromcountry=DK&amp;tocountry=DK&amp;product=PICKUP_PARCEL&amp;additionalservice=PICKUP_POINT"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;length=60&amp;width=60&amp;height=60&amp;frompostalcode=2000&amp;topostalcode=2000&amp;fromcountry=DK&amp;tocountry=DK&amp;product=PICKUP_PARCEL&amp;additionalservice=PICKUP_POINT" >}}"
             >PICKUP_POINT</a
           >
         </td>
@@ -1476,7 +1464,7 @@ weight: 4
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="{{ base_url }}/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=1166&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO&amp;additionalservice=EVE_DELIVERY"
+            href="{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=1166&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO&amp;additionalservice=EVE_DELIVERY" >}}"
             >EVE_DELIVERY</a
           >
         </td>
