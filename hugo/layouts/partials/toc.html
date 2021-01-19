@@ -1,5 +1,5 @@
-{{/* ignore empty links with + */}}
-{{- $headers := findRE "<h[2-4].*?>(.|\n])+?</h[2-4]>" .context.Content -}}
+{{/* require id tag */}}
+{{- $headers := findRE "<h[2-4].* id=\"([^\"]\\S*?)\">(.|\n])+?<\\/h[2-4]>" .context.Content -}}
 {{ .context.Scratch.Set "last_level" 1 }}
 
 {{/* at least one header to link to */}}
