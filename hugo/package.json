@@ -30,6 +30,7 @@
     "mini-css-extract-plugin": "^1.3.3",
     "postcss": "^8.2.3",
     "postcss-loader": "^4.1.0",
+    "postcss-import": "^14.0.0",
     "raml-1-parser": "^1.1.67",
     "toml": "^3.0.0",
     "webpack": "^5.12.0",
@@ -38,8 +39,5 @@
   "browserslist": [
     "ie 11",
     "> .2%"
-  ],
-  "dependencies": {
-    "postcss-import": "^14.0.0"
-  }
+  ]
 }
