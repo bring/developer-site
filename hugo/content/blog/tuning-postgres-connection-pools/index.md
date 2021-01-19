@@ -42,7 +42,7 @@ from states group by datname, client_addr, stat;
 
 The idea being that if an application has lots of connections that have been idle for more than 60 seconds, it's probably safe to reduce its connection pool size. We collect this data using [telegraf](https://github.com/influxdata/telegraf) and visualize it into a [grafana](https://github.com/grafana/grafana) dashboard, an example graph is shown below:
 
-<img src="{{ site.baseurl }}/img/connection_usage.png">
+<img src="connection_usage.png">
 
 We haven't done much with this data yet, but we are seeing significant numbers of idle connections, so we know that we can improve matters.
 

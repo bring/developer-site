@@ -34,6 +34,6 @@ Some of the commonly used scripts are :
 - b show - Shows any section of an applications deployment configuration
 - b build-status - Jenkins uses it to notify on github if a branch has build successfully
 
-<img src="{{ site.baseurl }}/img/b-self-test.png" />
+![](b-self-test.png)
 
 Altogether we have over 100 different b-scripts registered across all our repositories. We make sure to instrument them, so we can check how well they are working, and we will definitely write about a few of them in more detail in our future blog posts.

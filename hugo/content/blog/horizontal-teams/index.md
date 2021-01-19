@@ -18,7 +18,7 @@ Our frontend team hit the ground running one year ago. What have we learnt about
 
 Vertical teams are responsible for every single moving part of applications they own. When building a logistic system for business customers, this covers everything from database to UI design and all layers between. Developers write CSS in the morning, and debug production issues in PostgreSQL after lunch. They handle a whole range of wildly varying technologies. Not every individual member needs to wield them all to the same extent (that’s what teams are for, working together!) But as a unit; the vertical team is full stack.
 
-Horizontal teams operate in a more narrow layer of technology. In our case, we are the UI specialists. [The frontend hybrids]({{ site.baseurl }}/blog/frontend-hybrid-developers/) are connoisseurs of semantic HTML and enthusiastic about [CSS architecture]({{ site.baseurl }}/blog/zombie-css/). We enjoy [whiteboard sessions]({{ site.baseurl }}/blog/ui-tips/) to solve UX problems, [writing UI copy]({{ site.baseurl }}/blog/writing-downtime-messages/), and are fans of JavaScript. We are experts of digital design in the browser, and our deliverables are pull requests to production code.
+Horizontal teams operate in a more narrow layer of technology. In our case, we are the UI specialists. [The frontend hybrids](/blog/frontend-hybrid-developers/) are connoisseurs of semantic HTML and enthusiastic about [CSS architecture](/blog/zombie-css/). We enjoy [whiteboard sessions](/blog/ui-tips/) to solve UX problems, [writing UI copy](/blog/writing-downtime-messages/), and are fans of JavaScript. We are experts of digital design in the browser, and our deliverables are pull requests to production code.
 
 ## Domain Generalists 🤹‍♂️
 
@@ -41,7 +41,8 @@ Horizontal teams are tools for radical change. In our case, we have redefined ho
 
 Teams can be organised in many ways, other organisations will use these words to mean something else. But as a smart reader, you understand we are describing _our context_ and what our experience has taught us works here for us.
 
-| **Vertical teams** | **Horizontal teams** |
+| Vertical teams | Horizontal teams |
+| --- | --- |
 | Technology Generalists 🐟 | Technology Specialists 🏊‍♀️ |
 | Domain Specialists 🕵️‍♀️ | Domain Generalist 🤹‍♀️ |
 | Unit Strength 🏋️‍♀️ | Organisation Core 🤸‍♀️ |
