@@ -3,6 +3,8 @@
 table {
   text-align: left;
   border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
 }
 
 table caption {
@@ -81,8 +83,6 @@ td > ul {
 
 /* stuff for services table */
 .b2bvas table {
-  display: block;
-  overflow-x: auto;
   white-space: nowrap;
   font-size: 0.75rem;
 }
@@ -154,4 +154,30 @@ td > ul {
   font-weight: 700;
   color: orange;
   font-size: 0.7em;
+}
+
+.pagewmenu {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.pagewmenu__menu {
+  flex: 1 1 23%;
+  max-width: 18rem;
+}
+
+.pagewmenu__page {
+  flex: 1 1 auto;
+  max-width: calc(77% - 2rem);
+}
+
+@media screen and (max-width: 50em) {
+  .pagewmenu__menu {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .pagewmenu__page {
+    max-width: 100%;
+  }
 }

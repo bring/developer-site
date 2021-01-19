@@ -4,12 +4,12 @@
   {{ $notAnApi := $.Param "notanapi" }}
 
   <div class="wrapper">
-    <div class="layout layout--flush">
-      <div class="layout__item palm-one-whole desk-one-quarter">
-        {{ partial "sidemenu.html" . }}
+    <div class="pagewmenu">
+      <div class="pagewmenu__menu">
+        {{- partial "sidemenu.html" . -}}
       </div>
-      <div class="layout__item palm-one-whole desk-three-quarters">
-        {{ if (eq $notAnApi true) }}
+      <div class="pagewmenu__page">
+        {{- if (eq $notAnApi true) -}}
           <article class="api">
             {{ $content }}
           </article>
