@@ -105,7 +105,7 @@ td > ul {
 }
 
 .siteheader__title {
-  padding: 0.6rem 0.6rem 1rem;
+  padding: 0.6rem 1rem 1rem;
   display: flex;
   align-items: flex-end;
   flex-flow: row wrap;
@@ -132,6 +132,13 @@ td > ul {
   margin-bottom: 0.25rem;
 }
 
+.tagline__env {
+  margin-left: 0.4rem;
+  font-weight: 700;
+  color: orange;
+  font-size: 0.7em;
+}
+
 .siteheader__nav {
   align-self: flex-end;
   font-size: 1.25rem;
@@ -150,10 +157,13 @@ td > ul {
   color: white;
 }
 
-.tagline__env {
-  font-weight: 700;
-  color: orange;
-  font-size: 0.7em;
+.flexcol {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex1 {
+  flex: 1 1 auto;
 }
 
 .pagewmenu {
