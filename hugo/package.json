@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "buildcss": "webpack && rm static/css/main.js",
-    "build": "npm run buildcss && npm run raml && hugo",
-    "hbuild": "hugo",
-    "start": "hugo server",
-    "raml": "node scripts/raml2json"
+    "buildraml": "node scripts/raml2json",
+    "build": "npm run buildcss && npm run buildraml",
+    "start": "HUGO_ENV=dev hugo server",
+    "buildtest": "npm run build && HUGO_ENV=test hugo",
+    "buildqa": "npm run build && HUGO_ENV=qa hugo",
+    "buildprod": "npm run build && HUGO_ENV=production hugo"
   },
   "repository": {
     "type": "git",
