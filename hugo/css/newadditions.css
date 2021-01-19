@@ -36,7 +36,8 @@ thead th:last-of-type {
   padding-right: 0.4em;
 }
 
-td > p, td > ul {
+td > p,
+td > ul {
   margin-bottom: 0;
 }
 
@@ -69,4 +70,26 @@ td > p, td > ul {
 
 .blog-meta-icon a:hover {
   fill: #414141;
+}
+
+.extext {
+  font-size: 85%;
+  margin-left: -0.4em;
+  font-weight: 500;
+  color: #666;
+}
+
+/* stuff for services table */
+.b2bvas table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+.b2bvas th {
+  background: hsl(0, 0%, 97%);
+}
+.alignDown {
+  font-size: 75%;
+  font-weight: 500;
 }

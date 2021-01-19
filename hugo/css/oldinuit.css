@@ -726,14 +726,13 @@ ul.codetabs {
   visibility: hidden;
 }
 .fancy-dl dt {
-  background-color: #414141;
-  color: #fff;
-  font-weight: bold;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-weight: 700;
+  background-color: #e6e6e6;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  padding-left: 0.6rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0.4rem;
 }
 .sitefooter {
   background-color: #222;

@@ -1673,12 +1673,20 @@ documentation:
           valid_request:
             displayName: Valid Request
             value: !include examples/basic_example.xml
+          express_courier:
+            displayName: Bring Express Courier
+            value: !include examples/basic_example.xml
+            description: Sample request to book a Bring Express Courier shipment.
       application/json:
         type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
         examples:
           valid_request:
             displayName: Valid Request
             value: !include examples/basic_example.json
+          express_courier:
+            displayName: Bring Express Courier
+            value: !include examples/basic_example.json
+            description: Sample request to book a Bring Express Courier shipment.
     responses:
       200:
         description: |
@@ -1710,15 +1718,6 @@ documentation:
         displayName: Error
         description: |
           Unknown error. Error sending data to destination.
-
-      250:
-        displayName: Bring Express Courier
-        description: Sample request to book a Bring Express Courier shipment.
-        body:
-          application/xml:
-            example: !include examples/basic_example.xml
-          application/json:
-            example: !include examples/basic_example.json
 
 /sendbooking?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment booking

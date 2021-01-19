@@ -592,24 +592,6 @@ documentation:
                 displayName: Recipient notification
                 value: !include examples/recipientNotificationRequestNew.xml
 
-      250:
-        displayName: <strike>Recipient Notification. The old way of requesting value added services </strike>
-        description: |
-          _This is the old way of requesting value added services._
-          
-          The `recipientNotification` attribute/element must be set for all services that allow electronic notification, in order for the recipient to receive electronic notification. This element must contain the recipient's mobile phone number and/or e-mail address.
-        body:
-          application/json:
-            examples:
-              recipientNotificationOld:
-                displayName: Recipient notification (deprecated)
-                value: !include examples/recipientNotificationRequest.json
-          application/xml:
-            examples:
-              recipientNotificationOld:
-                displayName: Recipient notification (deprecated)
-                value: !include examples/recipientNotificationRequest.xml
-
       253:
         displayName: Cash On Delivery
         description: |
@@ -627,26 +609,6 @@ documentation:
               cashOnDelivery:
                 displayName: Cash On Delivery
                 value: !include examples/cashOnDeliveryNew.xml
-
-      252:
-        displayName: <strike>Cash On Delivery. The old way of requesting value added services </strike>
-        description: |
-          _This is the old way of requesting value added services._
-
-          The `cashOnDelivery` element/attribute can be set for services that allow cash on delivery. This element must contain the account number, the amount, the currency code and a `kid`, which is a customer identification number.
-
-          `Amount` field only accepts numeric values without comma in it and with two decimal places.
-        body:
-          application/json:
-            examples:
-              cashOnDeliveryOld:
-                displayName: Cash On Delivery (deprecated)
-                value: !include examples/cashOnDelivery.json
-          application/xml:
-            examples:
-              cashOnDeliveryOld:
-                displayName: Cash On Delivery (deprecated)
-                value: !include examples/cashOnDelivery.xml
 
       255:
         displayName: QuickPack Envelope
@@ -1155,78 +1117,23 @@ documentation:
               success:
                 displayName: Successful pickup order
                 value: !include examples/pickuporder_response.json
-          application/xml:
-            examples:
-              success:
-                displayName: Successful pickup order
-                value: !include examples/pickuporder_response.xml
-      251:
-        displayName: Parcels Sweden request
-        body:
-          application/json:
-            examples:
               pickuporder_SE:
                 displayName: Parcels Sweden request
                 value: !include examples/pickuporder_SE_new_way.json
-          application/xml:
-            examples:
-              pickuporder_SE:
-                displayName: Parcels Sweden request
-                value: !include examples/pickuporder_SE_new_way.xml
-      253:
-        displayName: Cargo request
-        body:
-          application/json:
-            examples:
               pickuporder_CARGO:
                 displayName: Cargo request
                 value: !include examples/pickuporder_CARGO_new_way.json
           application/xml:
             examples:
+              success:
+                displayName: Successful pickup order
+                value: !include examples/pickuporder_response.xml
+              pickuporder_SE:
+                displayName: Parcels Sweden request
+                value: !include examples/pickuporder_SE_new_way.xml
               pickuporder_CARGO:
                 displayName: Cargo request
                 value: !include examples/pickuporder_CARGO_new_way.xml
-      250:
-        displayName: <strike>Parcels Norway request (Old Way)</strike>
-        body:
-          application/json:
-            examples:
-              pickuporder_NO_old:
-                displayName: Parcels Norway request (deprecated)
-                value: !include examples/pickuporder_NO.json
-          application/xml:
-            examples:
-              pickuporder_NO_old:
-                displayName: Parcels Norway request (deprecated)
-                value: !include examples/pickuporder_NO.xml
-
-      252:
-        displayName: <strike>Parcels Sweden request (Old Way)</strike>
-        body:
-          application/json:
-            examples:
-              pickuporder_SE_old:
-                displayName: Parcels Sweden request (deprecated)
-                value: !include examples/pickuporder_SE.json
-          application/xml:
-            examples:
-              pickuporder_SE_old:
-                displayName: Parcels Sweden request (deprecated)
-                value: !include examples/pickuporder_SE.xml
-      254:
-        displayName: <strike> Cargo request (Old Way)</strike>
-        body:
-          application/json:
-            examples:
-              pickuporder_CARGO_old:
-                displayName: Cargo request (deprecated)
-                value: !include examples/pickuporder_CARGO.json
-          application/xml:
-            examples:
-              pickuporder_CARGO_old:
-                displayName: Cargo request (deprecated)
-                value: !include examples/pickuporder_CARGO.xml
-
 
 /ws:
   displayName: SOAP

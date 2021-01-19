@@ -61,7 +61,7 @@
           aria-controls="{{ $tabIDExample }}"
           class="codetabs__link"
           data-toggle="tab"
-          >Example: {{ .displayName }}</a
+          ><span class="extext">Example:</span> {{ .displayName }}</a
         >
       </li>
     {{ end }}
@@ -93,7 +93,11 @@
       >
         <div class="content">
           {{ with .description }}
-            {{ . | markdownify }}
+            {{ if in (string .) "\n\n" }}
+              {{ .| markdownify }}
+              {{ else }}
+              <p>{{ . | markdownify }}</p>
+            {{ end }}
           {{ end }}
           {{ highlight .value $highlightLang "" }}
         </div>
