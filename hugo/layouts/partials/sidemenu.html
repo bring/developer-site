@@ -1,7 +1,7 @@
 {{ $currentPage := . }}
 {{ $pageUrl := .URL }}
 {{ $currentSection := .Section }}
-{{ $noSubmenu := $.Param "nosubmenu" }}
+{{ $hideSubmenu := $.Param "hidesubmenu" }}
 
 <nav class="sitemenu">
   <ul class="list-bare sitemenu__list">
@@ -22,7 +22,7 @@
               >{{ safeHTML .Title }}</a
             >
           </span>
-          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $noSubmenu) }}
+          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) }}
             {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
           {{ end }}
         </li>
@@ -81,7 +81,7 @@
               >{{ safeHTML .Title }}</a
             >
           </span>
-          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $noSubmenu) }}
+          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) }}
             {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
           {{ end }}
         </li>
