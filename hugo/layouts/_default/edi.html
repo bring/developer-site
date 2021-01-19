@@ -1,15 +1,12 @@
-{{ define "main" }}
-  {{ $pageTitle := .Title }}
-  {{ $content := .Content }}
-
+{{- define "main" -}}
   <div class="wrapper">
-    <div class="layout layout--flush">
-      <div class="layout__item palm-one-whole desk-one-quarter">
-        {{ partial "sidemenu.html" . }}
+    <div class="pagewmenu">
+      <div class="pagewmenu__menu">
+        {{- partial "sidemenu.html" . -}}
       </div>
-      <div class="layout__item palm-one-whole desk-three-quarters">
+      <div class="pagewmenu__page">
         <article class="api">
-          {{ $content }}
+          {{ .Content }}
         </article>
       </div>
     </div>

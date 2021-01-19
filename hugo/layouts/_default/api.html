@@ -1,6 +1,4 @@
 {{- define "main" -}}
-  {{- $pageTitle := .Title -}}
-  {{- $content := .Content -}}
   {{- $notAnApi := $.Param "notanapi" -}}
 
   <div class="wrapper">
@@ -11,17 +9,17 @@
       <div class="pagewmenu__page">
         {{- if (eq $notAnApi true) -}}
           <article class="api">
-            {{- $content -}}
+            {{- .Content -}}
           </article>
           {{- else -}}
           {{- range .Site.Data.api -}}
             {{/* this conditional ensures that only the right api doc shows up, it can probably be improved */}}
-            {{- if (eq .title $pageTitle) -}}
+            {{- if (eq .title $.Title) -}}
               {{- $types := .types -}}
               <article class="api {{ replace .title "API" "" | urlize }}">
                 <h1 class="api__title">{{ .title }}</h1>
                 <section id="api-documentation" class="api__section">
-                  {{- with $content -}}<div>{{ . }}</div>{{ end -}}
+                  {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
                   {{- range .documentation -}}
                     <h2 class="anchored" id="{{ .title | urlize }}">
                       {{- .title -}}
