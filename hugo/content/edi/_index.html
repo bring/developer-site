@@ -1,0 +1,363 @@
+---
+title: EDI
+layout: edi
+menu:
+  edi:
+    identifier: "index"
+    title: "EDI"
+    url: "/edi"
+weight: 1
+---
+
+<article class="api">
+  <h1 class="api__title">EDI</h1>
+  <section class="api__section">
+    <p>
+      EDI (Electronic Data Interchange) in Bring and Posten started in the 90’s.
+      EDI Guidelines based on different versions of EDIFACT and API have been
+      published since then, IFTMIN S93A, D97A and API. Today’s version is based
+      on the D04A standards.
+    </p>
+    <p>
+      Bring and Posten still support some early versions, however they will not
+      be updated with changes. We strongly suggest all our clients to use IFTMIN
+      D04A (or API).
+    </p>
+  </section>
+
+  <section class="api__section">
+    <h2 class="anchored">Transport Instruction for IFTMIN D04A</h2>
+    <p>
+      This document is our guideline for freight-messages based on EDIFACT /
+      IFTMIN D04A. The overview and detailed guideline include all Bring
+      services, value added services and surcharges with codes for setting up
+      correct EDI-messages.
+    </p>
+    <h3>General Documentation</h3>
+    <ul>
+      <li>
+        <a href="{{ site.baseurl }}/files/IG_BIG14_1_5_2017-08-09.pdf"
+          >Main Specification — IFTMIN D04A BIG14</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Appendix1_LocationsV1_2018.pdf"
+          >Appendix 1 — Locations</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Appendix2_1-8-19-V1.pdf"
+          >Appendix 2 — Available Services</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Revisjon_Appendix2A_1-8-19_v1.pdf"
+          >Appendix 2A - Instructions for Service Implementation (Norwegian)</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/BIG14_Appendix_5.pdf"
+          >Appendix 5 — Document type</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/BIG14_Appendix_6.pdf"
+          >Appendix 6 — HUB-information</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Appendix_G_20210112.pdf"
+          >Mailbox-Packet</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/BIG23 Package Types_ver 1.0.xls"
+          >Package Type Codes and Descriptions – BIG 23</a
+        >
+      </li>
+    </ul>
+    <h3>Bring Parcel AB Specific Documentation</h3>
+    <ul>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/BPI_Bring_Parcels_AB_subset BIG14_1_6.pdf"
+          >Subset for Bring Parcel AB (International Packages) IFTMIN BIG14</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/Appendix_A_release_by_2020-04-01_UHD.pdf"
+          >Appendix A — Bring Parcels services from DK, FI, NO, SE and Europe</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/BIG14_BCAP_service_codes.pdf"
+          >Additional Information — Service Code 0010 and 0011 to Denmark
+          (BIG14) 1.3</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Service_Code_1095_(BIG14)_1.0.pdf"
+          >Service Code 1095 (Collect at store) for Bring Parcel AB</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Appendix_F.pdf">
+          Appendix F (Special information to Finland)</a
+        >
+      </li>
+    </ul>
+
+    <p>
+      Please download our EDIFACT-messages for use in supporting a more
+      efficient information flow for your company. Messages is typically
+      delivered to an SFTP- or FTP-account and may also be sent using SMTP.
+    </p>
+  </section>
+
+  <section class="api__section">
+    <h2 class="anchored">Warehouse Management</h2>
+    <p>
+      Documents for an Warehousing customer to create an order in warehousing
+      system that will go to the correct warehouse for picking, packing and
+      sending. Customers can get several messages back for status on orders,
+      inventory and warehousing receiving of goods. Inbound and outbound
+      messages are based on GS1 xml Standard V3.1
+    </p>
+    <p>
+      Please ask our integration consultants if you have specific needs or for
+      more detailed information.
+    </p>
+    <h3>Inbound - To Warehousing</h3>
+    <ul>
+      <li>
+        <a href="{{ site.baseurl }}/files/CustomerOrder_GS1_BMB_3_1_20.pdf"
+          >Customer order</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/DespatchAdvice-inbound_GS1_BMB_3_1_5.pdf"
+          >DespatchAdvice inbound</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/ItemDataNotification_GS1_BMB_3_1_6.pdf"
+          >ItemDataNotification</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/WarehousingOperationsNotification-GS1-BMS-31-2.pdf"
+          >WarehousingOperationsNotification</a
+        >
+      </li>
+    </ul>
+    <h3>Outbound - From Warehousing</h3>
+    <ul>
+      <li>
+        <a href="{{ site.baseurl }}/files/OrderResponse_GS1_BMS_3_1_2.pdf"
+          >Order response</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/DespatchAdvice-outbound_GS1_BMB_3_1_6.pdf"
+          >DespatchAdvice outbound</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/InventoryReport_GS1_BMB_3_1_3.pdf"
+          >Inventory report</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/InventoryReportAdjustments_GS1_BMB_3_1_3.pdf"
+          >Inventory adjustments report</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/ReceivingAdvice_GS1_BMB_3_1_3.pdf"
+          >Customer receiving advice</a
+        >
+      </li>
+    </ul>
+  </section>
+
+  <section class="api__section">
+    <h2 class="anchored">Other Implementation Guides</h2>
+    <h3>Download Documentation</h3>
+    <ul>
+      <li>
+        <a href="{{ site.baseurl }}/files/fortolling.pdf">Customer Handling</a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/efaktura.xml"
+          >XML format for eInvoice E2B</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/dangerous_goods_specification_BIG14_v1.pdf"
+          >Dangerous Goods Specification (BIG14)</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/dangerous_goods_specification_BIG01_v1.pdf"
+          >Dangerous Goods Specification (BIG01)</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/bfs_bring_frigo_se_subset_big14_0.pdf"
+          >Subset for Bring Frigo Sverige IFTMIN BIG14</a
+        >
+      </li>
+    </ul>
+  </section>
+
+  <section class="api__section">
+    <h2 class="anchored">Status Messages (IFTSTA)</h2>
+    <p>
+      Status Messages are available for all our Transport Services, common
+      examples being:
+    </p>
+    <ul>
+      <li>Picked Up or Received</li>
+      <li>Arrived at a Terminal</li>
+      <li>Loaded onto a Distribution Vehicle</li>
+      <li>
+        Delivered or Attempted Delivery/Item Returned (Action Codes+Reason for
+        Action)
+      </li>
+    </ul>
+    <p>
+      A full list of Status- ,Action- and Reason Codes are available on request.
+      Please ask our integration consultants if you have specific needs for more
+      detailed Status Information.
+    </p>
+    <h3>Download Documentation</h3>
+    <ul>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/BIG07_IFTSTA_Event_and_Delivery_Report_2_0.pdf"
+          >Bring standard IFTSTA (BIG07)</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/statuskoder_D94A.pdf"
+          >Bring Parcels AB</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Code_list_IFTSTA_(BIG07-2)_v.1.6.xlsx"
+          >Code List IFTSTA BIG07-2</a
+        >
+      </li>
+    </ul>
+  </section>
+
+  <section class="api__section">
+    <h2 class="anchored">Transport Label Specifications</h2>
+    <h3>Download Documentation</h3>
+    <ul>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/Labelspecifications_for_Bring_v_4_991.pdf"
+          >Bring Parcels Norway, Bring Cargo Norway, Bring Cargo Domestic Sweden
+          and Bring Cargo International</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/Bring_Parcels_Label_Description_20200401.pdf"
+          >Bring Parcels Sweden</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Appendix_E_20200201.pdf"
+          >Bring Parcels Sweden Label description</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Etikettspesifikasjon_REK_v2_0.pdf"
+          >Bring Mail (Posten) – Label Specification for REK</a
+        >
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/files/Logo_Bring_etikett.zip"
+          >Logo for Labels</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/Label_specification_Bring_Frigo_Norge_v3_0.pdf"
+          >Transport label specification for Temperature Regulated Goods</a
+        >
+      </li>
+      <li>
+        <a
+          href="{{ site.baseurl }}/files/Label_specification_for_mailbox_package_2_5.pdf"
+          >Label specification for Mailbox-Packet</a
+        >
+      </li>
+    </ul>
+  </section>
+
+  <section class="api__section">
+    <h2 class="anchored">Suppliers of EDI-solutions/TA System Vendors</h2>
+    <p>
+      An “out-of-the-box” EDI-application from a TA-vendor will support the
+      ordering of our domestic and international Parcel-services with related
+      value-added services. Each of the vendors below will be able to provide a
+      detailed list of the services available in their clients.
+    </p>
+
+    <ul class="list-bare">
+      <li class="u-mb-">
+        <a href="http://www.axiafrakt.no" class="epsilon">AxiaFrakt</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.centiro.com" class="epsilon">Centiro</a>
+      </li>
+      <li class="u-mb-">
+        <a href="https://www.descartes.com/" class="epsilon">Descartes</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.consignor.no/" class="epsilon">Consignor</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.edipost.no" class="epsilon">EDIPost.no</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.eseco.se" class="epsilon">Eseco</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.logistra.no/" class="epsilon">Logistra</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.logtrade.se" class="epsilon">LogTrade</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.metapack.com" class="epsilon">Metapack</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.proteria.no" class="epsilon">ProTeria</a>
+      </li>
+      <li class="u-mb-">
+        <a href="https://www.intercomp.se" class="epsilon">Protrans</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.pulsen.se" class="epsilon">Pulsen</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.transportnett.no" class="epsilon">Transportnett</a>
+      </li>
+      <li class="u-mb-">
+        <a href="http://www.unifaun.com" class="epsilon">Unifaun</a>
+      </li>
+    </ul>
+  </section>
+</article>
