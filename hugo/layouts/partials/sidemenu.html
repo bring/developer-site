@@ -81,7 +81,9 @@
               >{{ safeHTML .Title }}</a
             >
           </span>
-          {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
+          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $noSubmenu) }}
+            {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
+          {{ end }}
         </li>
       {{ end }}
     {{ end }}
