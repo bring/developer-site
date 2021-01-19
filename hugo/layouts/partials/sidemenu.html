@@ -1,95 +1,89 @@
 {{ $currentPage := . }}
 {{ $pageUrl := .URL }}
+{{ $currentSection := .Section }}
+{{ $noSubmenu := $.Param "nosubmenu" }}
 
 <nav class="sitemenu">
   <ul class="list-bare sitemenu__list">
-    {{ $len := (len .Site.Menus.api) }}
-    {{ range $index, $element := .Site.Menus.api }}
-      {{ $lastElement := "" }}
-      {{ if eq (add $index 1) $len }}
-        {{ $lastElement = "sitemenu__separator" }}
+    {{ if eq .Section "api" }}
+      {{ $len := (len .Site.Menus.api) }}
+      {{ range $index, $element := .Site.Menus.api }}
+        {{ $lastElement := "" }}
+        {{ if eq (add $index 1) $len }}
+          {{ $lastElement = "sitemenu__separator" }}
+        {{ end }}
+        <li
+          class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
+        >
+          <span class="sitemenu__apititle epsilon u-mb0">
+            {{ $target := "" }}
+            {{ with .Params.blank }} {{ $target = . }} {{ end }}
+            <a href="{{ .URL | relURL }}" {{ $target | safeHTMLAttr }}
+              >{{ safeHTML .Title }}</a
+            >
+          </span>
+          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $noSubmenu) }}
+            {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
+          {{ end }}
+        </li>
       {{ end }}
-      <li
-        class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
-      >
-        <span class="sitemenu__apititle epsilon u-mb0">
-          {{ $target := "" }}
-          {{ with .Params.blank }} {{ $target = . }} {{ end }}
-          <a href="{{ .URL | relURL }}" {{ $target | safeHTMLAttr }}
-            >{{ safeHTML .Title }}</a
-          >
-        </span>
-        {{ $currentActive := "" }}
-        {{ if $currentPage.IsMenuCurrent .Menu . }}
-          {{ $currentActive = replace .URL "/" "" }}
-        {{ end }}
-        {{ if (eq $currentActive "api") }}
-          <ul class="list-bare sitemenu__sublist">
-            <li>
-              <a href="{{ "/api/#introduction" | relURL }}">Introduction</a>
-            </li>
-            <li>
-              <a href="{{ "/api/#authentication" | relURL }}">Authentication</a>
-            </li>
-            <li><a href="{{ "/api/#formats" | relURL }}">Formats</a></li>
-          </ul>
-        {{ end }}
-        {{ if (eq $currentActive "apiservices") }}
-          <ul class="list-bare sitemenu__sublist">
-            <li>
-              <a href="{{ "/api/services/#shipping-guide" | relURL }}"
-                >Shipping Guide</a
-              >
-            </li>
-            <li>
-              <a href="{{ "/api/services/#booking" | relURL }}">Booking</a>
-            </li>
-          </ul>
-        {{ end }}
-      </li>
-    {{ end }}
 
-    {{ $apiData := .Site.Data.api }}
-    {{ range .Site.Menus.apidocs }}
-      {{ $identifier := .Identifier }}
-      <li>
-        <span class="sitemenu__apititle epsilon u-mb0">
-          <a href="{{ .URL }}">{{ .Title }}</a>
-        </span>
-        {{ $currentMenu := .Menu }}
-        {{ $currentMenuItem := . }}
-        {{ with (index $apiData $identifier) }}
-          {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}
-            <ul class="list-bare sitemenu__sublist">
-              {{ range .documentation }}
+      {{ $apiData := .Site.Data.api }}
+      {{ range .Site.Menus.apidocs }}
+        {{ $identifier := .Identifier }}
+        <li>
+          <span class="sitemenu__apititle epsilon u-mb0">
+            <a href="{{ .URL }}">{{ .Title }}</a>
+          </span>
+          {{ $currentMenu := .Menu }}
+          {{ $currentMenuItem := . }}
+          {{ with (index $apiData $identifier) }}
+            {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}
+              <ul class="list-bare sitemenu__sublist">
+                {{ range .documentation }}
+                  <li>
+                    <a href="#{{ .title | urlize }}">
+                      <span data-hover="{{ .title }}">{{ .title }}</span>
+                    </a>
+                  </li>
+                {{ end }}
+
                 <li>
-                  <a href="#{{ .title | urlize }}">
-                    <span data-hover="{{ .title }}">{{ .title }}</span>
-                  </a>
-                </li>
-              {{ end }}
-
-              <li>
-                <a href="#overview-of-endpoints">
-                  <span data-hover="overview-of-endpoints"
-                    >Overview of endpoints</span
-                  >
-                </a>
-              </li>
-
-              {{ range .resources }}
-                <li>
-                  <a href="#{{ .displayName | urlize }}">
-                    <span data-hover="{{ .displayName }}"
-                      >{{ .displayName }}</span
+                  <a href="#overview-of-endpoints">
+                    <span data-hover="overview-of-endpoints"
+                      >Overview of endpoints</span
                     >
                   </a>
                 </li>
-              {{ end }}
-            </ul>
+
+                {{ range .resources }}
+                  <li>
+                    <a href="#{{ .displayName | urlize }}">
+                      <span data-hover="{{ .displayName }}"
+                        >{{ .displayName }}</span
+                      >
+                    </a>
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
           {{ end }}
-        {{ end }}
-      </li>
+        </li>
+      {{ end }}
+    {{ end }}
+    {{ if eq .Section "edi" }}
+      {{ range .Site.Menus.edi }}
+        <li>
+          <span class="sitemenu__apititle epsilon u-mb0">
+            {{ $target := "" }}
+            {{ with .Params.blank }} {{ $target = . }} {{ end }}
+            <a href="{{ .URL | relURL }}" {{ $target | safeHTMLAttr }}
+              >{{ safeHTML .Title }}</a
+            >
+          </span>
+          {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
+        </li>
+      {{ end }}
     {{ end }}
   </ul>
 </nav>
