@@ -756,33 +756,6 @@ ul.codetabs {
   margin-bottom: 2rem;
   font-weight: 600;
 }
-.siteheader {
-  background-color: #222;
-}
-.siteheader__title {
-  padding: 0.6rem 0.6rem 1rem;
-  display: flex;
-  align-items: flex-end;
-  flex-flow: row wrap;
-  max-width: 19.4rem;
-}
-.siteheader__title:hover,
-.siteheader__title:focus {
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.08);
-}
-.siteheader__logo {
-  width: 8rem;
-  height: auto;
-  margin-right: 0.8rem;
-}
-.siteheader__tagline {
-  color: #fff;
-  font-weight: normal;
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
-  font-size: 1.3rem;
-  margin-bottom: 0.25rem;
-}
 .intro {
   padding: 6vmin 4vmin 6vmin;
   background-color: #f2f2f3;
