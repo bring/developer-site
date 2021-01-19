@@ -1,0 +1,25 @@
+{{/* ignore empty links with + */}}
+{{- $headers := findRE "<h[2-4].*?>(.|\n])+?</h[2-4]>" .context.Content -}}
+{{ .context.Scratch.Set "last_level" 1 }}
+
+{{/* at least one header to link to */}}
+{{- $has_headers := ge (len $headers) 1 -}}
+{{- if $has_headers -}}
+  <ul class="list-bare sitemenu__sublist">
+    {{- range $headers -}}
+      {{- $header := . -}}
+      {{- $base := ($.Page.File.LogicalName) -}}
+      {{- $anchorId := ($header | plainify | htmlUnescape | anchorize) -}}
+      {{- $href := delimit (slice $base $anchorId) "#" | string -}}
+      {{- range findRE (printf "[2-%s]" $.numberOfHeadings) . 1 -}}
+        {{- $next_heading := (int .) -}}
+        <li>
+          <a href="{{ relref $.context.Page $href }}"
+            >{{- $header | plainify | htmlUnescape -}}</a
+          >
+        </li>
+        {{ $.context.Scratch.Set "last_level" $next_heading }}
+      {{- end -}}
+    {{- end -}}
+  </ul>
+{{- end -}}
