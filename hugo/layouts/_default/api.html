@@ -10,6 +10,7 @@
         {{- if (eq $notAnApi true) -}}
           <article class="api">
             {{- .Content -}}
+            {{- partial "comments" (dict "permalink" $.Permalink "comments" ($.Param "comments") ) -}}
           </article>
           {{- else -}}
           {{- range .Site.Data.api -}}
@@ -268,6 +269,7 @@
                     {{- end -}}
                   </section>
                 {{- end -}}
+                {{- partial "comments" (dict "permalink" $.Permalink "comments" ($.Param "comments") ) -}}
               </article>
             {{- end -}}
           {{- end -}}
