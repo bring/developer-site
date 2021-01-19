@@ -1,5 +1,5 @@
 <div class="blog">
-  {{ range where .Paginator.Pages "Section" "blog" }}
+  {{- range where .Paginator.Pages "Section" "blog" -}}
     <article class="blog__post">
       <header class="blog__post__header">
         <h2 class="blog__post__heading alpha">
@@ -8,32 +8,32 @@
         {{ partial "blog-meta.html" . }}
       </header>
       <div class="blog__post__content">
-        {{ with .Resources.Match (print .Params.heroImage) }}
-          {{ range first 1 . }}
+        {{- with .Resources.Match (print .Params.heroImage) -}}
+          {{- range first 1 . -}}
             <img class="mbm" src="{{ .RelPermalink }}" alt="" />
-          {{ end }}
-        {{ end }}
+          {{- end -}}
+        {{- end -}}
         <p>{{ .Summary | plainify | htmlUnescape }}</p>
         <a href="{{ .Permalink }}">Read more ></a>
       </div>
     </article>
-  {{ end }}
-  {{ $paginator := .Paginator }}
-  {{ if gt $paginator.TotalPages 1 }}
+  {{- end -}}
+  {{- $paginator := .Paginator -}}
+  {{- if gt $paginator.TotalPages 1 -}}
     <div class="blog__paginator">
       <ul class="layout">
         <li>
-          {{ if $paginator.HasPrev }}
+          {{- if $paginator.HasPrev -}}
             <a href="{{ $paginator.Prev.URL }}" class="blog__paginator__button">
               ← Newer posts
             </a>
-            {{ else }}
+            {{- else -}}
             <span
               class="blog__paginator__button blog__paginator__button--disabled"
               title="There are no newer posts"
               >← Newer posts</span
             >
-          {{ end }}
+          {{- end -}}
         </li>
         <li>
           <span class="blog__paginator__info"
@@ -41,19 +41,19 @@
           >
         </li>
         <li>
-          {{ if $paginator.HasNext }}
+          {{- if $paginator.HasNext -}}
             <a href="{{ $paginator.Next.URL }}" class="blog__paginator__button">
               Older posts →
             </a>
-            {{ else }}
+            {{- else -}}
             <span
               class="blog__paginator__button blog__paginator__button--disabled"
               title="There are no older posts"
               >Older posts →</span
             >
-          {{ end }}
+          {{- end -}}
         </li>
       </ul>
     </div>
-  {{ end }}
+  {{- end -}}
 </div>

@@ -4,57 +4,57 @@
     <th>Type</th>
     <th>Description</th>
   </thead>
-  {{ range where .includeParams ".name" "ne" "mediaTypeExtension" }}
+  {{- range where .includeParams ".name" "ne" "mediaTypeExtension" -}}
     <tr>
       <td><code>{{ .name }}</code></td>
       <td><code>{{ delimit .type " " }}</code></td>
       <td>
-        {{ $desc := slice }}
+        {{- $desc := slice -}}
 
-        {{ if (eq .hideRequired true) }}
-          {{ $desc = $desc | append "" }}
-          {{ else if (eq .required true) }}
-          {{ $desc = $desc | append "<small>_Required._</small> " }}
-          {{ else }}
-          {{ $desc = $desc | append "<small>_Optional._</small> " }}
-        {{ end }}
+        {{- if (eq .hideRequired true) -}}
+          {{- $desc = $desc | append "" -}}
+          {{- else if (eq .required true) -}}
+          {{- $desc = $desc | append "<small>_Required._</small> " -}}
+          {{- else -}}
+          {{- $desc = $desc | append "<small>_Optional._</small> " -}}
+        {{- end -}}
 
-        {{ if (ne .name .displayName) }}
-          {{ $desc = $desc | append (print .displayName ". ") }}
-        {{ end }}
-        {{ with .description }}
-          {{ $desc = $desc | append . }}
-        {{ end }}
+        {{- if (ne .name .displayName) -}}
+          {{- $desc = $desc | append (print .displayName ". ") -}}
+        {{- end -}}
+        {{- with .description -}}
+          {{- $desc = $desc | append . -}}
+        {{- end -}}
 
-        {{ range $desc }}
+        {{- range $desc -}}
           {{/* This has some formatting issues, possibly from html in markdown */}}
           {{ . | markdownify }}
-        {{ end }}
+        {{- end -}}
 
-        {{ with .enum }}
+        {{- with .enum -}}
           Possible values:
           <ul>
-            {{ range . }}
+            {{- range . -}}
               <li><code>{{ . }}</code></li>
-            {{ end }}
+            {{- end -}}
           </ul>
-        {{ end }}
+        {{- end -}}
 
-        {{ with .default }}
+        {{- with .default -}}
           <br />
           Default value: <code>{{ . }}</code>
-        {{ end }}
+        {{- end -}}
 
-        {{ with .pattern }}
+        {{- with .pattern -}}
           <br />
           Pattern: <code>{{ . }}</code>
-        {{ end }}
+        {{- end -}}
 
-        {{ with .example }}
+        {{- with .example -}}
           <br />
           Example: <code>{{ . }}</code>
-        {{ end }}
+        {{- end -}}
       </td>
     </tr>
-  {{ end }}
+  {{- end -}}
 </table>

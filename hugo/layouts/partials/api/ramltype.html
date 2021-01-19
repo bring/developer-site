@@ -1,118 +1,118 @@
-{{ $showHeader := .showHeader }}
-{{ $siteDataApiTypes := .incTypeDefs }}
-{{ $incDashType := .incDashType }}
+{{- $showHeader := .showHeader -}}
+{{- $siteDataApiTypes := .incTypeDefs -}}
+{{- $incDashType := .incDashType -}}
 
-{{ $showType := false }}
-{{ if (gt (len .incDashType) 1) }}
-  {{ $showType = true }}
-{{ end }}
+{{- $showType := false -}}
+{{- if (gt (len .incDashType) 1) -}}
+  {{- $showType = true -}}
+{{- end -}}
 
-{{ range .incDashType }}
-  {{ $type := . }}
+{{- range .incDashType -}}
+  {{- $type := . -}}
 
-  {{ range $siteDataApiTypes }}
-    {{ range . }}
+  {{- range $siteDataApiTypes -}}
+    {{- range . -}}
       {{/* showRequired isnt tested yet, might not need that level of nesting */}}
-      {{ $showRequired := true }}
-      {{ with .annotations }}
-        {{ with .annotations.hideInDocumentation }}
-          {{ with .annotations.hideInDocumentation.structuredValue }}
-            {{ $showRequired = false }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-      {{ if eq .name $type }}
-        {{ $name := .name }}
+      {{- $showRequired := true -}}
+      {{- with .annotations -}}
+        {{- with .annotations.hideInDocumentation -}}
+          {{- with .annotations.hideInDocumentation.structuredValue -}}
+            {{- $showRequired = false -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if eq .name $type -}}
+        {{- $name := .name -}}
         <article>
-          {{ if (eq $showHeader true) }}
+          {{- if (eq $showHeader true) -}}
             <h4 class="anchored" id="type-{{ .name | urlize }}">
               {{ .displayName }}
             </h4>
-          {{ end }}
-          {{ $propTypes := .properties }}
-          {{ range .type }}
-            {{ if (eq . "object") }}
+          {{- end -}}
+          {{- $propTypes := .properties -}}
+          {{- range .type -}}
+            {{- if (eq . "object") -}}
               <table>
-                {{ with $showType }}
+                {{- with $showType -}}
                   <caption>
-                    {{ $name }}
+                    {{- $name -}}
                   </caption>
-                {{ end }}
+                {{- end -}}
                 <thead>
                   <th>Field</th>
                   <th>Type</th>
                   <th>Description</th>
                 </thead>
                 <tbody>
-                  {{ range $propTypes }}
-                    {{ partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) }}
-                  {{ end }}
+                  {{- range $propTypes -}}
+                    {{- partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) -}}
+                  {{- end -}}
                 </tbody>
               </table>
 
-              {{ else }}
+              {{- else -}}
               {{/* everything below and all the way down isnt tested yet */}}
-              {{ $desc := slice "Type: `" . "` " }}
-              {{ if (eq $showRequired false) }}
-                {{ else if $propTypes.required }}
-                {{ $desc = $desc | append "_Required._ " }}
-                {{ else }}
-                {{ $desc = $desc | append "_Optional._ " }}
-              {{ end }}
+              {{- $desc := slice "Type: `" . "` " -}}
+              {{- if (eq $showRequired false) -}}
+                {{- else if $propTypes.required -}}
+                {{- $desc = $desc | append "_Required._ " -}}
+                {{- else -}}
+                {{- $desc = $desc | append "_Optional._ " -}}
+              {{- end -}}
 
-              {{ if (eq $propTypes.displayName $propTypes.name) }}
-                {{ $desc = $desc | append $propTypes.displayName | append ". " }}
-              {{ end }}
+              {{- if (eq $propTypes.displayName $propTypes.name) -}}
+                {{- $desc = $desc | append $propTypes.displayName | append ". " -}}
+              {{- end -}}
 
-              {{ with $propTypes.description }}
-                {{ $desc = $desc | append $propTypes.description }}
-              {{ end }}
+              {{- with $propTypes.description -}}
+                {{- $desc = $desc | append $propTypes.description -}}
+              {{- end -}}
 
-              {{ range $desc }}
+              {{- range $desc -}}
                 {{/* This has some formatting issues, possibly from html in markdown */}}
                 {{ . | markdownify }}
-              {{ end }}
+              {{- end -}}
 
-              {{ with $propTypes.enum }}
+              {{- with $propTypes.enum -}}
                 <br />
                 Possible values:
                 <ul>
-                  {{ range . }}
+                  {{- range . -}}
                     <li><code>{{ . }}</code></li>
-                  {{ end }}
+                  {{- end -}}
                   }
                 </ul>
-              {{ end }}
+              {{- end -}}
               }
 
-              {{ with $propTypes.default }}
+              {{- with $propTypes.default -}}
                 <br />
                 Default value: <code>{{ . }}</code>
-              {{ end }}
+              {{- end -}}
 
-              {{ with $propTypes.pattern }}
+              {{- with $propTypes.pattern -}}
                 <br />
                 Pattern: <code>{{ . }}</code>
-              {{ end }}
+              {{- end -}}
 
-              {{ with $propTypes.minItems }}
+              {{- with $propTypes.minItems -}}
                 <br />
                 Minimum number of items: <code>{{ . }}</code>
-              {{ end }}
+              {{- end -}}
 
-              {{ with $propTypes.maxItems }}
+              {{- with $propTypes.maxItems -}}
                 <br />
                 Maximum number of items: <code>{{ . }}</code>
-              {{ end }}
+              {{- end -}}
 
-              {{ with $propTypes.example }}
+              {{- with $propTypes.example -}}
                 <br />
                 Example: <code>{{ . }}</code>
-              {{ end }}
-            {{ end }}
-          {{ end }}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
         </article>
-      {{ end }}
-    {{ end }}
-  {{ end }}
-{{ end }}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

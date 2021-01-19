@@ -1,7 +1,7 @@
-{{ define "main" }}
-  {{ $pageTitle := .Title }}
-  {{ $content := .Content }}
-  {{ $notAnApi := $.Param "notanapi" }}
+{{- define "main" -}}
+  {{- $pageTitle := .Title -}}
+  {{- $content := .Content -}}
+  {{- $notAnApi := $.Param "notanapi" -}}
 
   <div class="wrapper">
     <div class="pagewmenu">
@@ -11,27 +11,27 @@
       <div class="pagewmenu__page">
         {{- if (eq $notAnApi true) -}}
           <article class="api">
-            {{ $content }}
+            {{- $content -}}
           </article>
-          {{ else }}
-          {{ range .Site.Data.api }}
+          {{- else -}}
+          {{- range .Site.Data.api -}}
             {{/* this conditional ensures that only the right api doc shows up, it can probably be improved */}}
-            {{ if (eq .title $pageTitle) }}
-              {{ $types := .types }}
+            {{- if (eq .title $pageTitle) -}}
+              {{- $types := .types -}}
               <article class="api {{ replace .title "API" "" | urlize }}">
                 <h1 class="api__title">{{ .title }}</h1>
                 <section id="api-documentation" class="api__section">
-                  {{ with $content }}<div>{{ . }}</div>{{ end }}
-                  {{ range .documentation }}
+                  {{- with $content -}}<div>{{ . }}</div>{{ end -}}
+                  {{- range .documentation -}}
                     <h2 class="anchored" id="{{ .title | urlize }}">
-                      {{ .title }}
+                      {{- .title -}}
                     </h2>
-                    {{ if in (string .content) "\n\n" }}
-                      {{ .content | markdownify }}
-                      {{ else }}
+                    {{- if in (string .content) "\n\n" -}}
+                      {{- .content | markdownify -}}
+                      {{- else -}}
                       <p>{{ .content | markdownify }}</p>
-                    {{ end }}
-                  {{ end }}
+                    {{- end -}}
+                  {{- end -}}
                 </section>
                 <section class="api__section">
                   <h2 class="anchored" id="overview-of-endpoints">
@@ -46,7 +46,7 @@
                       <th>Endpoint</th>
                       <th>Usage</th>
                     </thead>
-                    {{ range .resources }}
+                    {{- range .resources -}}
                       <tr>
                         <td>
                           <a href="#{{ .displayName | urlize }}"
@@ -60,151 +60,151 @@
                         </td>
                         <td>
                           <a href="#{{ .displayName | urlize }}"
-                            >{{ range .methods }}
-                              {{ .description | safeHTML }}
-                            {{ end }}
+                            >{{- range .methods -}}
+                              {{- .description | safeHTML -}}
+                            {{- end -}}
                           </a>
                         </td>
                       </tr>
-                    {{ end }}
+                    {{- end -}}
                   </table>
                 </section>
 
-                {{ range .resources }}
-                  {{ $displayName := .displayName }}
+                {{- range .resources -}}
+                  {{- $displayName := .displayName -}}
                   <section class="api__section">
                     <h2 class="large anchored" id="{{ $displayName | urlize }}">
-                      {{ $displayName }}
+                      {{- $displayName -}}
                     </h2>
-                    {{ with .description }}
-                      {{ if in (string .) "\n\n" }}
+                    {{- with .description -}}
+                      {{- if in (string .) "\n\n" -}}
                         {{ .| markdownify }}
-                        {{ else }}
+                        {{- else -}}
                         <p>{{ . | markdownify }}</p>
-                      {{ end }}
-                    {{ end }}
+                      {{- end -}}
+                    {{- end -}}
 
                     <h3>URL</h3>
-                    {{ $urlOutput := slice }}
-                    {{ $absUri := .absoluteUri }}
-                    {{ $hasExtension := false }}
-                    {{ with .uriParameters.mediaTypeExtension }}
-                      {{ $hasExtension = true }}
-                    {{ end }}
+                    {{- $urlOutput := slice -}}
+                    {{- $absUri := .absoluteUri -}}
+                    {{- $hasExtension := false -}}
+                    {{- with .uriParameters.mediaTypeExtension -}}
+                      {{- $hasExtension = true -}}
+                    {{- end -}}
 
-                    {{ if $hasExtension }}
-                      {{ range .uriParameters.mediaTypeExtension.enum }}
-                        {{ $urlWithExtension := replace $absUri "{mediaTypeExtension}" . }}
-                        {{ $urlOutput = $urlOutput | append $urlWithExtension }}
-                      {{ end }}
-                      {{ else }}
-                      {{ $urlOutput = $urlOutput | append $absUri }}
-                    {{ end }}
+                    {{- if $hasExtension -}}
+                      {{- range .uriParameters.mediaTypeExtension.enum -}}
+                        {{- $urlWithExtension := replace $absUri "{mediaTypeExtension}" . -}}
+                        {{- $urlOutput = $urlOutput | append $urlWithExtension -}}
+                      {{- end -}}
+                      {{- else -}}
+                      {{- $urlOutput = $urlOutput | append $absUri -}}
+                    {{- end -}}
 
                     <pre
                       class="api__url"
                     >{{ range .methods }}{{ .method | upper }}<br>{{ end }}{{ delimit $urlOutput "<br>" }}</pre>
 
                     {{/* uri params exists and first one is not mediaTypeExtension */}}
-                    {{ $otherUriParamsMediaType := false }}
-                    {{ with .uriParameters }}
-                      {{ $uriParamNames := slice }}
-                      {{ range . }}
-                        {{ $uriParamNames = $uriParamNames | append .name }}
-                      {{ end }}
-                      {{ $uriParamFirst := "" }}
-                      {{ range first 1 $uriParamNames }}
-                        {{ $uriParamFirst = . }}
-                      {{ end }}
-                      {{ if gt (len .) 1 }}
-                        {{ $otherUriParamsMediaType = true }}
-                        {{ else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) }}
-                        {{ $otherUriParamsMediaType = true }}
-                      {{ end }}
-                    {{ end }}
+                    {{- $otherUriParamsMediaType := false -}}
+                    {{- with .uriParameters -}}
+                      {{- $uriParamNames := slice -}}
+                      {{- range . -}}
+                        {{- $uriParamNames = $uriParamNames | append .name -}}
+                      {{- end -}}
+                      {{- $uriParamFirst := "" -}}
+                      {{- range first 1 $uriParamNames -}}
+                        {{- $uriParamFirst = . -}}
+                      {{- end -}}
+                      {{- if gt (len .) 1 -}}
+                        {{- $otherUriParamsMediaType = true -}}
+                        {{- else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) -}}
+                        {{- $otherUriParamsMediaType = true -}}
+                      {{- end -}}
+                    {{- end -}}
 
                     {{/* has method.headers */}}
-                    {{ $hasMethodHeaders := false }}
-                    {{ $methodHeaders := slice }}
-                    {{ range .methods }}
-                      {{ range .headers }}
-                        {{ $methodHeaders = $methodHeaders | append . }}
-                        {{ if gt (len $methodHeaders) 0 }}
-                          {{ $hasMethodHeaders = true }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
+                    {{- $hasMethodHeaders := false -}}
+                    {{- $methodHeaders := slice -}}
+                    {{- range .methods -}}
+                      {{- range .headers -}}
+                        {{- $methodHeaders = $methodHeaders | append . -}}
+                        {{- if gt (len $methodHeaders) 0 -}}
+                          {{- $hasMethodHeaders = true -}}
+                        {{- end -}}
+                      {{- end -}}
+                    {{- end -}}
 
                     {{/* has method.queryParameters */}}
-                    {{ $hasMethodQueryParams := false }}
-                    {{ $methodQueryParams := slice }}
-                    {{ range .methods }}
-                      {{ range .queryParameters }}
-                        {{ $methodQueryParams = $methodQueryParams | append . }}
-                        {{ if gt (len $methodQueryParams) 0 }}
-                          {{ $hasMethodQueryParams = true }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
+                    {{- $hasMethodQueryParams := false -}}
+                    {{- $methodQueryParams := slice -}}
+                    {{- range .methods -}}
+                      {{- range .queryParameters -}}
+                        {{- $methodQueryParams = $methodQueryParams | append . -}}
+                        {{- if gt (len $methodQueryParams) 0 -}}
+                          {{- $hasMethodQueryParams = true -}}
+                        {{- end -}}
+                      {{- end -}}
+                    {{- end -}}
 
-                    {{ if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) }}
+                    {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
                       <h3>Request params</h3>
-                    {{ end }}
+                    {{- end -}}
 
                     {{/* For each endpoint: List all URI parameters */}}
-                    {{ $uriParameters := slice }}
-                    {{ range .uriParameters }}
-                      {{ $uriParameters = $uriParameters | append . }}
-                    {{ end }}
-                    {{ if $otherUriParamsMediaType }}
-                      {{ partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) }}
-                    {{ end }}
+                    {{- $uriParameters := slice -}}
+                    {{- range .uriParameters -}}
+                      {{- $uriParameters = $uriParameters | append . -}}
+                    {{- end -}}
+                    {{- if $otherUriParamsMediaType -}}
+                      {{- partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) -}}
+                    {{- end -}}
 
                     {{/* For each endpoint: List all headers */}}
-                    {{ if $hasMethodHeaders }}
-                      {{ partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "Header name") }}
-                    {{ end }}
+                    {{- if $hasMethodHeaders -}}
+                      {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "Header name") -}}
+                    {{- end -}}
 
                     {{/* For each endpoint: List all query parameters */}}
-                    {{ if $hasMethodQueryParams }}
-                      {{ partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") }}
-                    {{ end }}
+                    {{- if $hasMethodQueryParams -}}
+                      {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") -}}
+                    {{- end -}}
 
-                    {{ range .methods }}
-                      {{ $multiMediaTypes := false }}
+                    {{- range .methods -}}
+                      {{- $multiMediaTypes := false -}}
 
                       {{/* For each endpoint: Request body */}}
-                      {{ with .body }}
-                        {{ if gt (len .) 1 }}
-                          {{ $multiMediaTypes = true }}
-                        {{ end }}
+                      {{- with .body -}}
+                        {{- if gt (len .) 1 -}}
+                          {{- $multiMediaTypes = true -}}
+                        {{- end -}}
                         <h3>Request body</h3>
-                        {{ range . }}
-                          {{ partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) }}
-                        {{ end }}
-                      {{ end }}
+                        {{- range . -}}
+                          {{- partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                        {{- end -}}
+                      {{- end -}}
 
                       {{/* For each endpoint: Response */}}
-                      {{ with .responses }}
+                      {{- with .responses -}}
                         <h3>Responses</h3>
-                        {{ range $key, $response := . }}
-                          {{ $responseID := (print $displayName "-response-" .code) | urlize }}
-                          {{ $exampleID := (print $displayName "-" .code) | urlize }}
-                          {{ $responseCode := .code }}
-                          {{ $resBodies := slice }}
-                          {{ range .body }}
-                            {{ $resBodies = $resBodies | append . }}
-                          {{ end }}
+                        {{- range $key, $response := . -}}
+                          {{- $responseID := (print $displayName "-response-" .code) | urlize -}}
+                          {{- $exampleID := (print $displayName "-" .code) | urlize -}}
+                          {{- $responseCode := .code -}}
+                          {{- $resBodies := slice -}}
+                          {{- range .body -}}
+                            {{- $resBodies = $resBodies | append . -}}
+                          {{- end -}}
                           {{/* Collapsed additional examples in Booking API */}}
-                          {{ if and (gt $key 220) (lt $key 302) }}
-                            {{ $body := .body }}
-                            {{ $description := .description }}
-                            {{ $oneBody := "" }}
-                            {{ range $index, $body := .body }}
-                              {{ $oneBody = $index }}
-                            {{ end }}
-                            {{ with (index .body $oneBody).examples }}
-                              {{ range first 1 . }}
+                          {{- if and (gt $key 220) (lt $key 302) -}}
+                            {{- $body := .body -}}
+                            {{- $description := .description -}}
+                            {{- $oneBody := "" -}}
+                            {{- range $index, $body := .body -}}
+                              {{- $oneBody = $index -}}
+                            {{- end -}}
+                            {{- with (index .body $oneBody).examples -}}
+                              {{- range first 1 . -}}
                                 <div
                                   class="collapsible"
                                   class="anchored"
@@ -230,51 +230,51 @@
                                     id="{{ $exampleID }}"
                                     class="collapsible__item collapsible__item--collapsed"
                                   >
-                                    {{ with $description }}
-                                      {{ if in (string .) "\n\n" }}
+                                    {{- with $description -}}
+                                      {{- if in (string .) "\n\n" -}}
                                         {{ . | markdownify }}
-                                        {{ else }}
+                                        {{- else -}}
                                         <p>{{ . | markdownify }}</p>
-                                      {{ end }}
-                                      {{ range $body }}
-                                        {{ if gt (len $resBodies) 1 }}
-                                          {{ $multiMediaTypes = true }}
-                                        {{ end }}
-                                        {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) }}
-                                      {{ end }}
-                                    {{ end }}
+                                      {{- end -}}
+                                      {{- range $body -}}
+                                        {{- if gt (len $resBodies) 1 -}}
+                                          {{- $multiMediaTypes = true -}}
+                                        {{- end -}}
+                                        {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                                      {{- end -}}
+                                    {{- end -}}
                                   </div>
                                 </div>
-                              {{ end }}
-                            {{ end }}
-                            {{ else }}
+                              {{- end -}}
+                            {{- end -}}
+                            {{- else -}}
                             <h4 class="anchored" id="{{ $responseID }}">
                               HTTP status code {{ $responseCode }}
                             </h4>
-                            {{ with .description }}
-                              {{ if in (string .) "\n\n" }}
+                            {{- with .description -}}
+                              {{- if in (string .) "\n\n" -}}
                                 {{ . | markdownify }}
-                                {{ else }}
+                                {{- else -}}
                                 <p>{{ . | markdownify }}</p>
-                              {{ end }}
-                            {{ end }}
-                            {{ range .body }}
-                              {{ if gt (len $resBodies) 1 }}
-                                {{ $multiMediaTypes = true }}
-                              {{ end }}
-                              {{ partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) }}
-                            {{ end }}
-                          {{ end }}
-                        {{ end }}
-                      {{ end }}
-                    {{ end }}
+                              {{- end -}}
+                            {{- end -}}
+                            {{- range .body -}}
+                              {{- if gt (len $resBodies) 1 -}}
+                                {{- $multiMediaTypes = true -}}
+                              {{- end -}}
+                              {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                            {{- end -}}
+                          {{- end -}}
+                        {{- end -}}
+                      {{- end -}}
+                    {{- end -}}
                   </section>
-                {{ end }}
+                {{- end -}}
               </article>
-            {{ end }}
-          {{ end }}
-        {{ end }}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
       </div>
     </div>
   </div>
-{{ end }}
+{{- end -}}
