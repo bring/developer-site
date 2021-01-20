@@ -8,20 +8,31 @@ Our developer site uses Node, [Hugo](https://gohugo.io/) and
 [RAML 1.0](https://raml.org/). Hugo is a static site generator, and RAML
 is a a YAML-based modeling language for APIs.
 
-There is currently no CSS processing in place. We are just using a copy of the old CSS. This will change.
+We use CSS with some light post processing.
+
+We use Disqus for comments. Disabled by default, it can be activated in the api section using "comments: true".
 
 ## Adding a new API
 Make a new folder in `content/api`, the folder name will be the url slug.
-Use RAML 1.0 for you documentation file
-Make a index.html file containing the following frontmatter
+Use RAML 1.0 for you documentation file.
+Make a index.html file containing the following frontmatter:
 ```
 ---
-title: {Name of API}
+title: {Name of API, similar to the name in the raml file}
 layout: api
+comments: true (optional)
+menu:
+  apidocs:
+    identifier: "{foldername}"
+    title: "{Name of API}"
+    url: "/api/{foldername}"
+weight: {menu position}
 ---
+
+If you have an alert, it can be added below the frontmatter, here, instead of inside the raml file.
 ```
 
-Open config.toml and add the new raml path to the `apis` array
+Open config.toml and add the new raml file path to the `apis` array
 
 ## Adding a new article/blog post
 If you only have text, make a new .md file in `content/blog`
@@ -33,12 +44,12 @@ Make an index.md file.
 Add your other files to the folder, you can make subfolders if it helps you organise the content.
 
 ### Frontmatter and content
-Add the following frontmatter to your article file.
+Add the following frontmatter to your article file. It supports multi authors and multi tags.
 ```
 ---
 title: {Article title}
 layout: post
-publishDate: YYYY-MM-DD HH:MM:SS +01:00
+publishDate: {YYYY-MM-DD HH:MM:SS} +01:00
 authors:
   - {githubname}
   - …
@@ -51,22 +62,26 @@ tags:
 Then add your content below that.
 Files are linked relative to your .md file
 
-### Excerpt/summary/read more
-The excerpts on the list page is auto generated form the first 60 words in your article. It’s possible to add a manual cutoff and an image.
+### Excerpt/summary/read more/image
+The excerpts on the list page is auto generated form the first 60 words in your article. It’s possible to manually set the cutoff and add an image.
 
 Add `<!--more-->` where you want the cutoff to happen.
 
-If you want an image in your excerpt, add the following to the frontmatter:
+To add an image in your excerpt, add the following to the frontmatter:
 ```
 resources:
   - src: {filename.jpg}
 ```
 
 ## Updating, building and running
-Run `npm run build` to build. This generates a JSON based on the raml files, which Hugo then reads and outputs static HTML from. The other files are also built.
+`npm run build` builds CSS and JSON based in the raml files. Hugo needs this in order to run locally.
 
-Run `npm start` to run locally. The non-api pages will update instantly. But when you make changes to the api files, you have to build again to generate a new JSON file.
-We are working on a more streamlined way of doing this.
+Run `npm start` to run locally. The non-api pages will update instantly. But when you make changes to the api files or CSS, you have to run `npm run build`again to generate new files for that.
+We are working on a more automated solution for doing this.
+
+`npm run buildtest` builds the entire site for test env
+`npm run buildqa` builds the entire site for qa env
+`npm run buildprod` builds the entire site for production env
 
 ### Release and deploy
 
