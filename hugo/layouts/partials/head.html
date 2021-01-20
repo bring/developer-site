@@ -6,5 +6,5 @@
     type="text/css"
     href="{{ "css/main.css?ts=" | relURL }}{{ now.Unix }}"
   />
-  <title>{{ with .Title }}{{ . }} – {{ end }}{{ .Site.Title }}</title>
+  <title>{{ with .Title }}{{ if not ( eq . $.Site.Title) }}{{ . }} – {{ end }}{{ end }}{{ .Site.Title }}</title>
 </head>
