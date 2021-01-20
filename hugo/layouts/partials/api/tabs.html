@@ -1,38 +1,38 @@
-{{ $formatType := .formatType }}
-{{ $idType := replace .idTypeString "." "" }}
-{{ $types := .types }}
-{{ $multiMethods := .multiMethods }}
+{{- $formatType := .formatType -}}
+{{- $idType := replace .idTypeString "." "" -}}
+{{- $types := .types -}}
+{{- $multiMethods := .multiMethods -}}
 
-{{ with .context }}
-  {{ $highlightLang := "" }}
-  {{ if (eq .name "application/json") }}
-    {{ $highlightLang = "json" }}
-    {{ else if (or (eq .name "application/xml") (eq .name "application/soap")) }}
-    {{ $highlightLang = "xml" }}
-    {{ else if (eq .name "application/html") }}
-    {{ $highlightLang = "html" }}
-  {{ end }}
+{{- with .context -}}
+  {{- $highlightLang := "" -}}
+  {{- if (eq .name "application/json") -}}
+    {{- $highlightLang = "json" -}}
+    {{- else if (or (eq .name "application/xml") (eq .name "application/soap")) -}}
+    {{- $highlightLang = "xml" -}}
+    {{- else if (eq .name "application/html") -}}
+    {{- $highlightLang = "html" -}}
+  {{- end -}}
 
-  {{ if $multiMethods }}
+  {{- if $multiMethods -}}
     <p><b>Media type:</b> <code>{{ .name }}</code></p>
-  {{ end }}
+  {{- end -}}
 
   <ul class="codetabs" role="tablist">
-    {{ $nameDash := replace .name "/" "-" }}
-    {{ $tabIDFormat := "" }}
-    {{ $tabIDExample := "" }}
-    {{ $showResponse := false }}
-    {{ with .type }}
+    {{- $nameDash := replace .name "/" "-" -}}
+    {{- $tabIDFormat := "" -}}
+    {{- $tabIDExample := "" -}}
+    {{- $showResponse := false -}}
+    {{- with .type -}}
       {{/* this can maybe be improved by making a variable with the context that can be reused in the codetab */}}
-      {{ $type := "" }}
-      {{ range . }}
-        {{ $type = . }}
-      {{ end }}
-      {{ range $types }}
-        {{ range . }}
-          {{ if (eq .name $type) }}
-            {{ $showResponse = true }}
-            {{ $tabIDFormat = (print $idType $nameDash "-format") | urlize }}
+      {{- $type := "" -}}
+      {{- range . -}}
+        {{- $type = . -}}
+      {{- end -}}
+      {{- range $types -}}
+        {{- range . -}}
+          {{- if (eq .name $type) -}}
+            {{- $showResponse = true -}}
+            {{- $tabIDFormat = (print $idType $nameDash "-format") | urlize -}}
             <li role="presentation" class="codetabs__item active">
               <a
                 href="#{{ $tabIDFormat }}"
@@ -43,17 +43,17 @@
                 >{{ $formatType }} format</a
               >
             </li>
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
 
-    {{ range $index, $examples := .examples }}
-      {{ $firstActive := "" }}
-      {{ if (and (eq $index 0) (not $showResponse)) }}
-        {{ $firstActive = " active" }}
-      {{ end }}
-      {{ $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize }}
+    {{- range $index, $examples := .examples -}}
+      {{- $firstActive := "" -}}
+      {{- if (and (eq $index 0) (not $showResponse)) -}}
+        {{- $firstActive = " active" -}}
+      {{- end -}}
+      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize -}}
       <li role="presentation" class="codetabs__item{{ $firstActive }}">
         <a
           href="#{{ $tabIDExample }}"
@@ -64,12 +64,12 @@
           ><span class="extext">Example:</span> {{ .displayName }}</a
         >
       </li>
-    {{ end }}
+    {{- end -}}
   </ul>
 
   <div class="codetabs__content">
-    {{ if $showResponse }}
-      {{ with .type }}
+    {{- if $showResponse -}}
+      {{- with .type -}}
         <div
           role="tabpanel"
           class="codetabs__panel active"
@@ -77,31 +77,31 @@
         >
           {{ partial "api/ramltype.html" (dict "incDashType" . "incTypeDefs" $types "showHeader" false) }}
         </div>
-      {{ end }}
-    {{ end }}
+      {{- end -}}
+    {{- end -}}
 
-    {{ range $index, $examples := .examples }}
-      {{ $firstActive := "" }}
-      {{ if (and (eq $index 0) (not $showResponse)) }}
-        {{ $firstActive = " active" }}
-      {{ end }}
-      {{ $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize }}
+    {{- range $index, $examples := .examples -}}
+      {{- $firstActive := "" -}}
+      {{- if (and (eq $index 0) (not $showResponse)) -}}
+        {{- $firstActive = " active" -}}
+      {{- end -}}
+      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize -}}
       <div
         role="tabpanel"
         class="codetabs__panel {{ $firstActive }}"
         id="{{ $tabIDExample }}"
       >
         <div class="content">
-          {{ with .description }}
-            {{ if in (string .) "\n\n" }}
+          {{- with .description -}}
+            {{- if in (string .) "\n\n" -}}
               {{ .| markdownify }}
-              {{ else }}
+              {{- else -}}
               <p>{{ . | markdownify }}</p>
-            {{ end }}
-          {{ end }}
+            {{- end -}}
+          {{- end -}}
           {{ highlight .value $highlightLang "" }}
         </div>
       </div>
-    {{ end }}
+    {{- end -}}
   </div>
-{{ end }}
+{{- end -}}

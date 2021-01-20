@@ -3,6 +3,8 @@
 table {
   text-align: left;
   border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
 }
 
 table caption {
@@ -81,8 +83,6 @@ td > ul {
 
 /* stuff for services table */
 .b2bvas table {
-  display: block;
-  overflow-x: auto;
   white-space: nowrap;
   font-size: 0.75rem;
 }
@@ -92,4 +92,102 @@ td > ul {
 .alignDown {
   font-size: 75%;
   font-weight: 500;
+}
+
+.siteheader {
+  background-color: #222;
+}
+
+.headerwmenu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.siteheader__title {
+  padding: 0.6rem 1rem 1rem;
+  display: flex;
+  align-items: flex-end;
+  flex-flow: row wrap;
+  flex: 0 1 auto;
+}
+
+.siteheader__title:hover,
+.siteheader__title:focus {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.siteheader__logo {
+  width: 8rem;
+  height: auto;
+  margin-right: 0.8rem;
+}
+
+.siteheader__tagline {
+  color: #fff;
+  font-weight: normal;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.tagline__env {
+  margin-left: 0.4rem;
+  font-weight: 700;
+  color: orange;
+  font-size: 0.7em;
+}
+
+.siteheader__nav {
+  align-self: flex-end;
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  padding-bottom: 0.8rem;
+}
+
+.siteheader__nav li {
+  margin-right: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.siteheader__nav a,
+.siteheader__nav a:hover,
+.siteheader__nav a:focus {
+  color: white;
+}
+
+.flexcol {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex1 {
+  flex: 1 1 auto;
+}
+
+.pagewmenu {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.pagewmenu__menu {
+  flex: 1 1 23%;
+  max-width: 18rem;
+}
+
+.pagewmenu__page {
+  flex: 1 1 auto;
+  max-width: calc(77% - 2rem);
+}
+
+@media screen and (max-width: 50em) {
+  .pagewmenu__menu {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .pagewmenu__page {
+    max-width: 100%;
+  }
 }

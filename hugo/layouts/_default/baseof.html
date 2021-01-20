@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   {{ partial "head.html" . }}
-  <body>
+  <body class="flexcol">
     {{ partial "header.html" . }}
     {{ block "main" . }} {{ end }}
     {{ partial "footer.html" . }}
-    {{ partial "scripts.html" . }}
+    {{- partial "scripts.html" . -}}
   </body>
 </html>

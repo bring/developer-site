@@ -1,7 +1,7 @@
-{{ partial "icons.svg" }}
+{{- partial "icons.svg" -}}
 <div class="flexgrid gaps mbm">
   <div class="flexgrid gaps">
-    {{ range $.Param "authors" }}
+    {{- range $.Param "authors" -}}
       <a href="https://github.com/{{ . }}">
         <img
           alt="👤"
@@ -12,7 +12,7 @@
         />
         <span>{{ . }}</span>
       </a>
-    {{ end }}
+    {{- end -}}
   </div>
   <div class="flexgrid">
     <svg class="blog-meta-icon"><use xlink:href="#calendar" /></svg>

@@ -1,52 +1,52 @@
-{{ $currentPage := . }}
-{{ $pageUrl := .URL }}
-{{ $currentSection := .Section }}
-{{ $hideSubmenu := $.Param "hidesubmenu" }}
+{{- $currentPage := . -}}
+{{- $pageUrl := .URL -}}
+{{- $currentSection := .Section -}}
+{{- $hideSubmenu := $.Param "hidesubmenu" -}}
 
 <nav class="sitemenu">
   <ul class="list-bare sitemenu__list">
-    {{ if eq .Section "api" }}
-      {{ $len := (len .Site.Menus.api) }}
-      {{ range $index, $element := .Site.Menus.api }}
-        {{ $lastElement := "" }}
-        {{ if eq (add $index 1) $len }}
-          {{ $lastElement = "sitemenu__separator" }}
-        {{ end }}
+    {{- if eq .Section "api" -}}
+      {{- $len := (len .Site.Menus.api) -}}
+      {{- range $index, $element := .Site.Menus.api -}}
+        {{- $lastElement := "" -}}
+        {{- if eq (add $index 1) $len -}}
+          {{- $lastElement = "sitemenu__separator" -}}
+        {{- end -}}
         <li
           class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
         >
           <span class="sitemenu__apititle epsilon u-mb0">
-            {{ $target := "" }}
-            {{ with .Params.blank }} {{ $target = . }} {{ end }}
+            {{- $target := "" -}}
+            {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
             <a href="{{ .URL | relURL }}" {{ $target | safeHTMLAttr }}
               >{{ safeHTML .Title }}</a
             >
           </span>
-          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) }}
-            {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
-          {{ end }}
+          {{- if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) -}}
+            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
+          {{- end -}}
         </li>
-      {{ end }}
+      {{- end -}}
 
-      {{ $apiData := .Site.Data.api }}
-      {{ range .Site.Menus.apidocs }}
-        {{ $identifier := .Identifier }}
+      {{- $apiData := .Site.Data.api -}}
+      {{- range .Site.Menus.apidocs -}}
+        {{- $identifier := .Identifier -}}
         <li>
           <span class="sitemenu__apititle epsilon u-mb0">
             <a href="{{ .URL }}">{{ .Title }}</a>
           </span>
-          {{ $currentMenu := .Menu }}
-          {{ $currentMenuItem := . }}
-          {{ with (index $apiData $identifier) }}
-            {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}
+          {{- $currentMenu := .Menu -}}
+          {{- $currentMenuItem := . -}}
+          {{- with (index $apiData $identifier) -}}
+            {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
               <ul class="list-bare sitemenu__sublist">
-                {{ range .documentation }}
+                {{- range .documentation -}}
                   <li>
                     <a href="#{{ .title | urlize }}">
                       <span data-hover="{{ .title }}">{{ .title }}</span>
                     </a>
                   </li>
-                {{ end }}
+                {{- end -}}
 
                 <li>
                   <a href="#overview-of-endpoints">
@@ -56,7 +56,7 @@
                   </a>
                 </li>
 
-                {{ range .resources }}
+                {{- range .resources -}}
                   <li>
                     <a href="#{{ .displayName | urlize }}">
                       <span data-hover="{{ .displayName }}"
@@ -64,28 +64,28 @@
                       >
                     </a>
                   </li>
-                {{ end }}
+                {{- end -}}
               </ul>
-            {{ end }}
-          {{ end }}
+            {{- end -}}
+          {{- end -}}
         </li>
-      {{ end }}
-    {{ end }}
-    {{ if eq .Section "edi" }}
-      {{ range .Site.Menus.edi }}
+      {{- end -}}
+    {{- end -}}
+    {{- if eq .Section "edi" -}}
+      {{- range .Site.Menus.edi -}}
         <li>
           <span class="sitemenu__apititle epsilon u-mb0">
-            {{ $target := "" }}
-            {{ with .Params.blank }} {{ $target = . }} {{ end }}
-            <a href="{{ .URL | relURL }}" {{ $target | safeHTMLAttr }}
+            {{- $target := "" -}}
+            {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
+            <a href="{{ .URL | relURL }}" {{- $target | safeHTMLAttr -}}
               >{{ safeHTML .Title }}</a
             >
           </span>
-          {{ if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) }}
-            {{ partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) }}
-          {{ end }}
+          {{- if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) -}}
+            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
+          {{- end -}}
         </li>
-      {{ end }}
-    {{ end }}
+      {{- end -}}
+    {{- end -}}
   </ul>
 </nav>
