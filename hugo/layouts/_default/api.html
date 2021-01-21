@@ -10,7 +10,11 @@
         {{- if (eq $notAnApi true) -}}
           <article class="api">
             {{- .Content -}}
-            {{- partial "comments" (dict "permalink" $.Permalink "comments" ($.Param "comments") ) -}}
+            {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+              <section class="api__section">
+                {{ template "_internal/disqus.html" $ }}
+              </section>
+            {{ end }}
           </article>
           {{- else -}}
           {{- range .Site.Data.api -}}
@@ -269,7 +273,11 @@
                     {{- end -}}
                   </section>
                 {{- end -}}
-                {{- partial "comments" (dict "permalink" $.Permalink "comments" ($.Param "comments") ) -}}
+                {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+                  <section class="api__section">
+                    {{ template "_internal/disqus.html" $ }}
+                  </section>
+                {{- end -}}
               </article>
             {{- end -}}
           {{- end -}}
