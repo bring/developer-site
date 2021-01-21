@@ -4,81 +4,79 @@ layout: api
 notanapi: true
 ---
 
-<article class="api">
-  <h1 class="api__title">Booking API vs Shipment API</h1>
-  <section class="api__section">
-    <h2 class="anchored">Similarities and differences</h2>
+<h1 class="api__title">Booking API vs Shipment API</h1>
+<section class="api__section">
+  <h2 class="anchored">Similarities and differences</h2>
 
-    <p>
-      Bring provides two different APIs for creating bookings, the
-      <a href="/api/booking/">Booking API</a> and the
-      <a href="/api/shipment/">Shipment API</a>. These APIs have similarities,
-      but there are also differences.
-    </p>
-    <p>
-      In overall you can think of the Shipment API as an API corresponding to
-      EDI. It supports a complete portfolio of services and value added
-      services. You will not get labels created, and it does not use strict
-      input validation. Orders are created much in the same way as with EDI, and
-      you will not get them fully integrated in Mybring.
-    </p>
-    <p>
-      The Booking API is a part of Mybring, so the API support is closely
-      connected to the booking functionality you find in the web interface. The
-      API supports standard services, as in Mybring, and you have the same set
-      of input validation as on web. Labels will be created, and you will find
-      the API orders in order history; together with the web orders.
-    </p>
-  </section>
+  <p>
+    Bring provides two different APIs for creating bookings, the
+    <a href="/api/booking/">Booking API</a> and the
+    <a href="/api/shipment/">Shipment API</a>. These APIs have similarities, but
+    there are also differences.
+  </p>
+  <p>
+    In overall you can think of the Shipment API as an API corresponding to EDI.
+    It supports a complete portfolio of services and value added services. You
+    will not get labels created, and it does not use strict input validation.
+    Orders are created much in the same way as with EDI, and you will not get
+    them fully integrated in Mybring.
+  </p>
+  <p>
+    The Booking API is a part of Mybring, so the API support is closely
+    connected to the booking functionality you find in the web interface. The
+    API supports standard services, as in Mybring, and you have the same set of
+    input validation as on web. Labels will be created, and you will find the
+    API orders in order history; together with the web orders.
+  </p>
+</section>
 
-  <section class="api__section">
-    <h2 class="anchored">Supported features</h2>
+<section class="api__section">
+  <h2 class="anchored">Supported features</h2>
 
-    <table class="apitable">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Booking API</th>
-          <th>Shipment API</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Standard services</td>
-          <td class="apitable__togglecell">✓</td>
-          <td class="apitable__togglecell">✓</td>
-        </tr>
-        <tr>
-          <td>Non standard services</td>
-          <td class="apitable__togglecell">—</td>
-          <td class="apitable__togglecell">✓</td>
-        </tr>
-        <tr>
-          <td>Validation</td>
-          <td class="apitable__togglecell">High</td>
-          <td class="apitable__togglecell">Low</td>
-        </tr>
-        <tr>
-          <td>Label creation</td>
-          <td class="apitable__togglecell">✓</td>
-          <td class="apitable__togglecell">—</td>
-        </tr>
-        <tr>
-          <td>Price calculation</td>
-          <td class="apitable__togglecell">✓</td>
-          <td class="apitable__togglecell">—</td>
-        </tr>
-        <tr>
-          <td>Full Mybring integration</td>
-          <td class="apitable__togglecell">✓</td>
-          <td class="apitable__togglecell">—</td>
-        </tr>
-        <tr>
-          <td>Format</td>
-          <td class="apitable__togglecell">JSON, XML, SOAP</td>
-          <td class="apitable__togglecell">JSON, XML</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-</article>
+  <table class="apitable">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Booking API</th>
+        <th>Shipment API</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Standard services</td>
+        <td class="apitable__togglecell">✓</td>
+        <td class="apitable__togglecell">✓</td>
+      </tr>
+      <tr>
+        <td>Non standard services</td>
+        <td class="apitable__togglecell">—</td>
+        <td class="apitable__togglecell">✓</td>
+      </tr>
+      <tr>
+        <td>Validation</td>
+        <td class="apitable__togglecell">High</td>
+        <td class="apitable__togglecell">Low</td>
+      </tr>
+      <tr>
+        <td>Label creation</td>
+        <td class="apitable__togglecell">✓</td>
+        <td class="apitable__togglecell">—</td>
+      </tr>
+      <tr>
+        <td>Price calculation</td>
+        <td class="apitable__togglecell">✓</td>
+        <td class="apitable__togglecell">—</td>
+      </tr>
+      <tr>
+        <td>Full Mybring integration</td>
+        <td class="apitable__togglecell">✓</td>
+        <td class="apitable__togglecell">—</td>
+      </tr>
+      <tr>
+        <td>Format</td>
+        <td class="apitable__togglecell">JSON, XML, SOAP</td>
+        <td class="apitable__togglecell">JSON, XML</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
