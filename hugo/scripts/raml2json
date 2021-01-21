@@ -5,11 +5,15 @@ const fs = require("fs");
 const toml = require("toml");
 const join = require("path").join;
 
+const outdir = join(__dirname, "../data");
 const configFile = join(__dirname, "../config.toml");
 const config = toml.parse(fs.readFileSync(configFile, "utf-8"));
 const filePaths = config.params.apis;
 
-const fileOut = join(__dirname, "../data/api.json");
+if (!fs.existsSync(outdir)) {
+  fs.mkdirSync(outdir);
+}
+const fileOut = join(outdir, "/api.json");
 
 let apiArray = [];
 
