@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Design system docs without colour
 publishDate: 2020-10-08 08:55:00
 tags: 

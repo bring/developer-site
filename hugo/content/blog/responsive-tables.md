@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Principle for responsive tables
 publishDate: 2020-02-27 06:35:00
 tags: 

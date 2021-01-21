@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Code – the superior design tool
 publishDate: 2019-10-02 04:55:00
 tags: 

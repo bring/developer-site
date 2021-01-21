@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Experience with Frontend Error Tracking Using Sentry.io In React Apps
 publishDate: 2019-10-06 11:00:00
 tags: 

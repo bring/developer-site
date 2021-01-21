@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: How to avoid the wall of frustation
 publishDate: 2019-10-07 10:55:00
 tags: 

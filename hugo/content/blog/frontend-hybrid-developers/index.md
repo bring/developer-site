@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Mutant developers? No, frontend hybrids!
 publishDate: 2019-07-30 08:26:00
 tags: 
