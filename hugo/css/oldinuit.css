@@ -612,24 +612,29 @@ blockquote {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.active {
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
+}
 .sitemenu a {
   color: #414141;
   display: block;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 3.3333333333px;
+  padding: 4px 20px 5px;
   transition: background 0.1s ease 0s;
 }
+.sitemenu a:focus,
 .sitemenu a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
-.sitemenu__apititle a {
-  font-weight: bold;
-  line-height: 1;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.active .sitemenu__apititle {
+  padding-left: 17px;
+}
+a.sitemenu__apititle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
 }
 .sitemenu__separator {
   border-bottom: 1px solid #b2b2b2;
@@ -638,7 +643,13 @@ blockquote {
 }
 .sitemenu__sublist {
   line-height: 1.3;
-  margin-bottom: 20px;
+  padding-left: 0.7em;
+  padding-right: 1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+.sitemenu__sublist a {
+  border-radius: 2px;
 }
 .apitable__togglecell {
   text-align: center;

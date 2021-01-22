@@ -1,10 +1,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="expires" content="{{ now.Unix }}" />
+  {{ with .Summary }}
+    <meta name="description" content="{{ . | plainify | htmlUnescape }}" />
+  {{ end }}
+  <title>
+    {{- with .Title -}}{{ if not ( eq . $.Site.Title) }}{{ . }} –
+    {{ end }}{{- end -}}{{ .Site.Title }}
+  </title>
   <link
     rel="stylesheet"
     type="text/css"
     href="{{ "css/main.css?ts=" | relURL }}{{ now.Unix }}"
   />
-  <title>{{ with .Title }}{{ if not ( eq . $.Site.Title) }}{{ . }} – {{ end }}{{ end }}{{ .Site.Title }}</title>
+  <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="{{ "favicon.ico" | relURL }}"
+  />
+  <link rel="canonical" href="{{ .Permalink }}" />
 </head>
