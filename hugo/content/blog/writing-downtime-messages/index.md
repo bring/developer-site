@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Writing messages for unexpected downtime
 publishDate: 2019-04-29 10:36:00 +01:00
 tags: 

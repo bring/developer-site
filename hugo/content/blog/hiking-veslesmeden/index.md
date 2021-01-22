@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Team building - Hiking to Veslesmeden
 publishDate: 2019-09-18 09:30:00
 tags: 

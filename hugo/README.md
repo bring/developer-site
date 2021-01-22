@@ -20,13 +20,13 @@ Make a index.html file containing the following frontmatter:
 ---
 title: {Name of API, similar to the name in the raml file}
 layout: api
-comments: true (optional)
 menu:
   apidocs:
     identifier: "{foldername}"
     title: "{Name of API}"
     url: "/api/{foldername}"
 weight: {menu position}
+disqus_identifier: api-{foldername} (optional, if you want comments)
 ---
 
 If you have an alert, it can be added below the frontmatter, here, instead of inside the raml file.

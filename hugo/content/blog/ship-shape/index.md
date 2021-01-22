@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: true
 title: Shipshape Shipping Guide
 publishDate: 2018-09-05 16:00:00 +01:00
 tags: 

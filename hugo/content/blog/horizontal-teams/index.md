@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Horizontal Teams To Strengthen Vertical Structures
 publishDate: 2019-08-28 11:00:00
 tags: 

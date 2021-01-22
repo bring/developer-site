@@ -1,6 +1,5 @@
 ---
 layout: post
-disqus: false
 title: Zombie CSS, dependency cravings
 publishDate: 2019-08-19 06:56:00
 tags: 
