@@ -4,7 +4,7 @@
   "description": "Bring developer site",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf _site",
+    "clean": "rm -rf ../_site",
     "buildcss": "webpack && rm static/css/main.js",
     "buildraml": "node scripts/raml2json",
     "build": "npm run buildcss && npm run buildraml",
