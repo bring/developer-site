@@ -1,8 +1,8 @@
 javaBuildReleaseDeploy {
     appName = 'developer-site'
     slackChannel = '#deploy'
-    buildCommand = "cd hugo && npm i && npm run buildprod"
-    releaseCommand = "cd hugo && npm i && npm run buildprod"
+    buildCommand = 'cd hugo && npm i && npm run buildprod'
+    releaseCommand = 'cd hugo && npm i && npm run buildprod && git tag -a `date +%s%N` -m "Tagging"'
     deployTestCommand = 'b deploy test'
     deployQaCommand  = 'b deploy qa'
     // deployProdCommand  = 'b deploy production --skip-notification'
