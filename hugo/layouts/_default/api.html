@@ -50,25 +50,23 @@
                       <th>Usage</th>
                     </thead>
                     {{- range .resources -}}
-                      <tr>
-                        <td>
-                          <a href="#{{ .displayName | urlize }}"
-                            >{{ range .methods }} {{ .method | upper }}{{ end }}
-                          </a>
-                        </td>
-                        <td>
-                          <a href="#{{ .displayName | urlize }}"
-                            >{{ .relativeUri | safeHTML }}</a
-                          >
-                        </td>
-                        <td>
-                          <a href="#{{ .displayName | urlize }}"
-                            >{{- range .methods -}}
+                      {{ $resDisplayName := .displayName | urlize }}
+                      {{ $resRelUri := .relativeUri | safeHTML }}
+                      {{- range .methods -}}
+                        <tr>
+                          <td>
+                            {{- .method | upper -}}
+                          </td>
+                          <td>
+                            {{- $resRelUri -}}
+                          </td>
+                          <td>
+                            <a href="#{{ $resDisplayName }}">
                               {{- .description | safeHTML -}}
-                            {{- end -}}
-                          </a>
-                        </td>
-                      </tr>
+                            </a>
+                          </td>
+                        </tr>
+                      {{- end -}}
                     {{- end -}}
                   </table>
                 </section>
