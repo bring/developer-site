@@ -10,8 +10,8 @@
     "build": "npm run buildcss && npm run buildraml",
     "start": "HUGO_ENV=dev hugo server",
     "buildtest": "npm run clean && npm run build && HUGO_ENV=test hugo",
-    "buildqa": "npm run clean npm run build && HUGO_ENV=qa hugo",
-    "buildprod": "npm run clean npm run build && HUGO_ENV=production hugo"
+    "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
+    "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo"
   },
   "repository": {
     "type": "git",
