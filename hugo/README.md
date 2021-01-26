@@ -1,16 +1,13 @@
-## This is a WIP readme for the upcoming Hugo version
-Don’t work on API-files inside the hugo folder. They are temporary and for testing purposes. They will be overwritten when it’s time to switch over.
-The build and deploy scripts do not include/work for Hugo yet.
-
 # developer.bring.com
 
-Our developer site uses Node, [Hugo](https://gohugo.io/) and
-[RAML 1.0](https://raml.org/). Hugo is a static site generator, and RAML
-is a a YAML-based modeling language for APIs.
+The Bring Developer site uses [Hugo](https://gohugo.io/) and
+[RAML 1.0](https://raml.org/). Hugo is the world’s fastest static site generator*, and RAML
+is a a YAML-based modeling language for APIs. We use CSS with some light post processing.
 
-We use CSS with some light post processing.
+_* The entire dev site normally generates in between one to three seconds. In a typical run, ~0.005 ms is the raml to json conversion (37 000 lines), ~250 ms is Hugo generating the site (105 pages, 400 files) and ~1000 ms is the CSS processing._
 
-We use Disqus for comments. Disabled by default, it can be activated in the api section using "comments: true".
+## Revamped dev site 2021
+The site is being improved throughout 2021, the first step was to get rid of Ruby and Jekyll in favour of Hugo, Node and Webpack. We currently operate with generated parts of the old CSS mixed with some new, temporary, code.
 
 ## Adding a new API
 Make a new folder in `content/api`, the folder name will be the url slug.
@@ -45,6 +42,7 @@ Add your other files to the folder, you can make subfolders if it helps you orga
 
 ### Frontmatter and content
 Add the following frontmatter to your article file. It supports multi authors and multi tags.
+
 ```
 ---
 title: {Article title}
@@ -62,29 +60,43 @@ tags:
 Then add your content below that.
 Files are linked relative to your .md file
 
-### Excerpt/summary/read more/image
+### Excerpt and image
 The excerpts on the list page is auto generated form the first 60 words in your article. It’s possible to manually set the cutoff and add an image.
 
 Add `<!--more-->` where you want the cutoff to happen.
 
-To add an image in your excerpt, add the following to the frontmatter:
+To add an image in your excerpt, add the file to your post’s folder and the following to the frontmatter:
 ```
 resources:
   - src: {filename.jpg}
 ```
 
-## Updating, building and running
-`npm run build` builds CSS and JSON based in the raml files. Hugo needs this in order to run locally.
+## Syntax highlighting
+To get syntax highlighting in Markdown, you can specify the programming language of the code example after the opening fence.
 
-Run `npm start` to run locally. The non-api pages will update instantly. But when you make changes to the api files or CSS, you have to run `npm run build`again to generate new files for that.
-We are working on a more automated solution for doing this.
+~~~
+```html
+<form>
+  <fieldset>
+    <legend>Recipient</legend>
+    …
+  </fieldset>
+</form>
+```
+~~~
+
+## Building, running and updating
+`npm run build` builds CSS and JSON based in the raml files. Hugo needs this in order to run.
+
+Run `npm start` to run locally. The non-api pages will update instantly. But when you make changes to the api files or CSS, you have to run `npm run build` again to generate new files for that.
+We are working on a more automated solution for this.
 
 `npm run buildtest` builds the entire site for test env
 `npm run buildqa` builds the entire site for qa env
 `npm run buildprod` builds the entire site for production env
 
-### Release and deploy
+## Deploy and release
 
 Deploy to test or QA using b deploy {test|qa}
 
-Merging a PR to master will automatically build and deploy to test, QA and production.
+Merging a PR to master generates a production build and automatically deploys it to test, QA and production.
