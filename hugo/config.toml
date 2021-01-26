@@ -1,5 +1,5 @@
 baseURL = "https://developer.bring.com"
-publishDir = "_site"
+publishDir = "../_site"
 languageCode = "en-us"
 title = "Bring Developer"
 pluralizelisttitles = false
