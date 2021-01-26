@@ -302,7 +302,7 @@ documentation:
       ]
       ```
 
-       <strike>The old way of requesting additional servies:</strike>
+       The old way of requesting additional servies:
 
       ```
       <services>
@@ -1020,12 +1020,13 @@ documentation:
 /errors{mediaTypeExtension}:
   displayName: Error codes
   description: |
-    Programming is hard. Something will always go wrong. See below for the current enumeration of error codes. A value of "true" for the attribute "suffixable" means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT" if the error is for the recipient party data.
+    The current enumeration of error codes. A value of "true" for the attribute "suffixable" means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT" if the error is for the recipient party data.
   uriParameters:
     mediaTypeExtension:
       enum: [ .json, .xml ]
       description: Use .json to specify application/json or .xml to specify application/xml
   get:
+    description: Error codes
     body:
       application/json:
         examples:
@@ -1066,7 +1067,7 @@ documentation:
              <numberOfPallets>1</numberOfPallets>
      </pickupDetails>
     ```
-    <strike>The old way of requesting pickup </strike>
+    The old way of requesting pickup:
 
     ```
      <parcelsInformation>
@@ -1154,7 +1155,7 @@ documentation:
 
     [https://api.bring.com/booking/api/schema/booking-v1.xsd](https://api.bring.com/booking/api/schema/booking-v1.xsd)
   post:
-    description: Use this endpoint to get expected delivery, service categories and additional information.
+    description: Get expected delivery, service categories and additional information.
     headers:
       Content-Type:
         description: Specify request format text/xml;charset=UTF-8

@@ -131,9 +131,9 @@ documentation:
 
     | Resource | Limitation description |
     |:--------|:---------|
-    | All requests | The Webhook API allows a maximum of **50 concurrent requests** per user |
-    | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to **100 per request**. If you have more than 100 at the time, split to mulitple requests using the batch-API |
-    | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of **10 concurrent requests** per user |
+    | All requests | The Webhook API allows a maximum of _50 concurrent requests_ per user |
+    | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to _100 per request_. If you have more than 100 at the time, split to mulitple requests using the batch-API |
+    | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of _10 concurrent requests_ per user |
 
 - title: Events
   content: |
@@ -198,7 +198,7 @@ documentation:
 
     If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header functionality provided by the Webhook configuration.
 
-    All received callbacks from Bring will be using **UTC** as its current timezone and is based on the following format (Java):
+    All received callbacks from Bring will be using UTC as its current timezone and is based on the following format (Java):
 
     ```
     "yyyy-MM-dd'T'HH:mm:ssZ"

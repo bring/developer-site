@@ -612,9 +612,6 @@ blockquote {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.active {
-  border-left: 3px solid rgba(0, 0, 0, 0.1);
-}
 .sitemenu a {
   color: #414141;
   display: block;
@@ -625,6 +622,9 @@ blockquote {
 .sitemenu a:hover {
   background-color: rgba(0, 0, 0, 0.1);
   text-decoration: none;
+}
+.sitemenu .active {
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
 }
 .active .sitemenu__apititle {
   padding-left: 17px;

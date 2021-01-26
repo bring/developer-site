@@ -326,8 +326,10 @@ documentation:
       
       Note: The prices for our revised services depends on volumetric weight: 5000, 5100, 5300, 5600, 5800, 4850 plus return services 9000, 9100, 9300 or 9600. For these services, dimensions (L/W/H) is needed to calculate the expected price correctly. Dimensions are also used to decide if handling fee or specialgoods fee will apply to the shipment. You might leave dimensions empty in your request, but be aware that returned prices might be incorrect.
 
+      The Post endpoint is in Beta stage.
+
   get:
-    description: Get shipment prices
+    description: Get shipment prices and leadtime
     headers:
       X-MyBring-API-Uid:
         description: Your Mybring login ID
@@ -355,7 +357,7 @@ documentation:
         description: Receiver postal code
         type: string
         required: true
-      addressLine:
+      addressline:
         description: Specify address. This parameter can be maximum 35 character long. It will be for Bedriftspakke and På døren only.
         type: string
         example: Testsvingen 12
@@ -365,13 +367,13 @@ documentation:
         type: string
       date:
         description: Shipping date
-        type: date
+        type: string
         example: 2018-11-18
         required: false
       time:
         description: Shipping time
-        type: date
-        example: 12:30
+        type: string
+        example: "12:30"
         required: false
       weight:
         description: Package weight in grams
@@ -481,6 +483,32 @@ documentation:
         displayName: Unauthorized
         description: |
           A failed response when the request is unauthenticated
+  post:
+    description: Get shipment prices and leadtime
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Your user's API key
+        required: true
+      Content-Type:
+        description: application/json
+        required: true
+    body:
+      application/json:
+        examples:
+          restEstimatedDeliveryReq:
+            displayName: Estimated delivery time request
+            value: !include examples/rest_estimated_delivery_time_request.json
+    responses:
+      200:
+        body:
+          application/json:
+            examples:
+              restEstimateDeliveryRes:
+                displayName: Estimated delivery time successful response
+                value: !include examples/rest_estimated_delivery_time_response_200.json
 
 /v2/products/price:
   displayName: Get shipment prices
