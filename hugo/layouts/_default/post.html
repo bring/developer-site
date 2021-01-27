@@ -4,7 +4,7 @@
       <header class="blog__post__header u-mb+">
         <a href="{{ "/blog/" | relURL }}">&lt; Back to blog</a>
         <h2 class="u-mt blog__post__heading alpha">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
         {{ partial "blog-meta.html" . }}
       </header>
