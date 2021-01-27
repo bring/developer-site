@@ -1,9 +1,0 @@
-<CreateShipmentResponse xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://api.bring.com/CreateShipment">
-  <Status>OK_CONFIRMED</Status>
-  <StatusText>Order created</StatusText>
-  <Identities ShipmentId="70438103433199319">
-    <PackageId>370438103696190758</PackageId>
-  </Identities>
-  <ProcessingID>fc3f2481-759e-43a3-a6ae-eb10a2fd183a</ProcessingID>
-  <EndpointProcessingID>c7167ab6-8e35-46c6-8aff-75087eed9e97</EndpointProcessingID>
-</CreateShipmentResponse>

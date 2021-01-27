@@ -1,65 +1,102 @@
-developer.bring.com
-===================
+# developer.bring.com
 
-This repository contains the code behind https://developer.bring.com/
+The Bring Developer site uses [Hugo](https://gohugo.io/) and
+[RAML 1.0](https://raml.org/). Hugo is the world’s fastest static site generator*, and RAML
+is a a YAML-based modeling language for APIs. We use CSS with some light post processing.
 
-Our developer site is based on [Jekyll](https://jekyllrb.com/) and
-[RAML](https://raml.org/). Jekyll is a static site generator, and  RAML
-is a a YAML-based modeling language for APIs. We also use the lovely
-[inuitcss](https://github.com/inuitcss/getting-started) CSS framework.
+_* The entire dev site normally generates in between one to three seconds. In a typical run, ~0.005 ms is the raml to json conversion (37 000 lines), ~250 ms is Hugo generating the site (105 pages, 400 files) and ~1000 ms is the CSS processing._
 
-We currently use RAML 0.8 and [ePages' RAML parser gem](https://github.com/ePages-de/raml_parser)
-to parse the RAML files, and have a  [custom Jekyll plugin](_plugins/raml_generator.rb)
-for converting the  RAML files to HTML files.
+## Revamped dev site 2021
+The site is being improved throughout 2021, the first step was to get rid of Ruby and Jekyll in favour of Hugo, Node and Webpack. We currently operate with generated parts of the old CSS mixed with some new, temporary, code.
 
-The plugin reads a RAML->HTML map from [config](_config.yml) and outputs
-HTML files accordingly. RAML 0.8 has a couple of quirks, for example it
-doesn't have support for multiple examples, resulting in
-[neat hacks](_layouts/api.html#L185-L192) here and there to string the
-page together. We're hoping to migrate to the newly launched RAML 1.0
-spec soon.
+## Adding a new API
+Make a new folder in `content/api`, the folder name will be the url slug.
+Use RAML 1.0 for you documentation file.
+Make a index.html file containing the following frontmatter:
+```
+---
+title: {Name of API, similar to the name in the raml file}
+layout: api
+menu:
+  apidocs:
+    identifier: "{foldername}"
+    title: "{Name of API}"
+    url: "/api/{foldername}"
+weight: {menu position}
+disqus_identifier: api-{foldername} (optional, if you want comments)
+---
 
+If you have an alert, it can be added below the frontmatter, here, instead of inside the raml file.
+```
 
-Run locally
------------
+Open config.toml and add the new raml file path to the `apis` array
 
-Jekyll can serve the site locally and auto-watch for changes:
+## Adding a new article/blog post
+If you only have text, make a new .md file in `content/blog`
+Use the article title or something close to it as filename, make sure to use dashes instead of spaces. This will be the url slug.
 
-    brew install node
-    bundle install
-    bundle exec rake serve
-    
-    # or if you want to run for a specific environment:
-    bundle exec rake serve[<env>] # test, qa, or production
-    
-This will clean the build, install necessary SASS dependencies
-and launch the site at http://127.0.0.1:4000/
+If you have images or other files, make a new folder in `content/blog`
+Use the article title or something close to it as foldername, make sure to use dashes instead of spaces. This will be the url slug.
+Make an index.md file.
+Add your other files to the folder, you can make subfolders if it helps you organise the content.
 
+### Frontmatter and content
+Add the following frontmatter to your article file. It supports multi authors and multi tags.
 
-Release and deploy
-------------------
+```
+---
+title: {Article title}
+layout: post
+publishDate: {YYYY-MM-DD HH:MM:SS} +01:00
+authors:
+  - {githubname}
+  - …
+tags:
+  - {tag}
+  - …
+---
+```
 
-Merging will automatically build and deploy to test, QA and production. 💥
+Then add your content below that.
+Files are linked relative to your .md file
 
-You can still build it (populate the `_site` dir) manually by running
+### Excerpt and image
+The excerpts on the list page is auto generated form the first 60 words in your article. It’s possible to manually set the cutoff and add an image.
 
-    bundle exec rake build
-    
-    # or if you want to build for a specific environment:
-    bundle exec rake build [<env>] # test, qa, or production
+Add `<!--more-->` where you want the cutoff to happen.
 
-and then deploy as normal with 
+To add an image in your excerpt, add the file to your post’s folder and the following to the frontmatter:
+```
+resources:
+  - src: {filename.jpg}
+```
 
-    b deploy [test|qa|production]
+## Syntax highlighting
+To get syntax highlighting in Markdown, you can specify the programming language of the code example after the opening fence.
 
-Documentation profiles
-----------------------
+~~~
+```html
+<form>
+  <fieldset>
+    <legend>Recipient</legend>
+    …
+  </fieldset>
+</form>
+```
+~~~
 
-When building, two different profiles is defined. These are:
+## Building, running and updating
+`npm run build` builds CSS and JSON based in the raml files. Hugo needs this in order to run.
 
-1) `test` or `qa`
-    * Uses file: `_config.yml` 
-2) `production`
-    * Uses file: `_config_production.yml`
+Run `npm start` to run locally. The non-api pages will update instantly. But when you make changes to the api files or CSS, you have to run `npm run build` again to generate new files for that.
+We are working on a more automated solution for this.
 
-As defined, production has it's own configuration, which essentially means that the build can differ from test and QA. This is useful if, for instance, some documentation is work-in-progress.
+`npm run buildtest` builds the entire site for test env
+`npm run buildqa` builds the entire site for qa env
+`npm run buildprod` builds the entire site for production env
+
+## Deploy and release
+
+Deploy to test or QA using b deploy {test|qa}
+
+Merging a PR to master generates a production build and automatically deploys it to test, QA and production.
