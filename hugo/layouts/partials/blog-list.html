@@ -3,7 +3,7 @@
     <article class="blog__post">
       <header class="blog__post__header">
         <h2 class="blog__post__heading alpha">
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
         {{ partial "blog-meta.html" . }}
       </header>
@@ -14,7 +14,7 @@
           {{- end -}}
         {{- end -}}
         <p>{{ .Summary | plainify | htmlUnescape }}</p>
-        <a href="{{ .Permalink }}">Read more ></a>
+        <a href="{{ .RelPermalink }}">Read more ></a>
       </div>
     </article>
   {{- end -}}

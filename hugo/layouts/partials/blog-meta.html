@@ -28,7 +28,7 @@
       {{- range $index, $tags := (.GetTerms "tags") -}}
         {{- $comma := ", " -}}
         {{- if $index -}}{{- $comma -}}{{- end -}}
-        <a href="{{ .Permalink }}">
+        <a href="{{ .RelPermalink }}">
           {{- .LinkTitle -}}
         </a>
       {{- end -}}
