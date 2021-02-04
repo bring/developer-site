@@ -65,7 +65,7 @@ documentation:
     content: |
       The Invoice API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-/invoicearchive/api/invoices/{apiCustomerNumber}{mediaTypeExtension}:
+/api/invoices/{apiCustomerNumber}{mediaTypeExtension}:
   displayName: List of all Invoices
   description: Gets the list of invoices corresponding to the given customer number.
                By default it shows last 65 days of invoices, with the possibilty to access last 365 days by providing "fromDate" and "toDate".
@@ -117,7 +117,7 @@ documentation:
                 description: The example below shows an list of invoices
                 value: !include example/list_invoices.xml
 
-/invoicearchive/pdf/{apiCustomerNumber}/{invoiceNumber}.pdf:
+/pdf/{apiCustomerNumber}/{invoiceNumber}.pdf:
   displayName: Invoice PDF download endpoint
   description: This link is used to download the invoice pdf for the customers by providing API customer number and invoice number in URI params.
   uriParameters:
