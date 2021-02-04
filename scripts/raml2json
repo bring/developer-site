@@ -46,5 +46,5 @@ filePaths.forEach((filePath, i) => {
   apiArray.push(apiObject);
 });
 
-fs.writeFileSync(fileOut, apiArray, "utf-8");
+fs.writeFileSync(fileOut, apiArray.toString(), "utf-8");
 console.info("JSON generated in: %dms", hrend[1] / 1000000);
