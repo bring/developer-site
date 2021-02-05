@@ -1,10 +1,12 @@
 # developer.bring.com
 
-The Bring Developer site uses [Hugo](https://gohugo.io/) and
-[RAML 1.0](https://raml.org/). Hugo is the world’s fastest static site generator*, and RAML
-is a a YAML-based modeling language for APIs. We use CSS with some light post processing.
+## Issues
+If you have issues or questions regarding the API, please post in the respective API’s comments and help section. The issue tracker is for the site itself, as reflected in the template.
 
-_* The entire dev site normally generates in between one to three seconds. In a typical run, ~0.005 ms is the raml to json conversion (37 000 lines), ~250 ms is Hugo generating the site (105 pages, 400 files) and ~1000 ms is the CSS processing._
+## Tech
+The Bring Developer site uses [Hugo](https://gohugo.io/) and
+[RAML 1.0](https://raml.org/). Hugo is the world’s fastest static site generator, and RAML
+is a a YAML-based modeling language for APIs. We use CSS with some light post processing.
 
 ## Revamped dev site 2021
 The site is being improved throughout 2021, the first step was to get rid of Ruby and Jekyll in favour of Hugo, Node and Webpack. We currently operate with generated parts of the old CSS mixed with some new, temporary, code.
