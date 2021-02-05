@@ -327,13 +327,15 @@ documentation:
       #### How to present the time window data in your checkout
       We recommend to insert the start (X) and end (Y) time values into the following sentence:
 
-      **Pakken ankommer vanligvis mellom kl. X og Y / The parcel usually arrives between X and Y.**
+      * **NO:** Pakken ankommer vanligvis mellom kl. X og Y
+      * **EN:** The parcel usually arrives between X and Y
 
       Together with the expected delivery date, we recommend the following implementation:
 
-      **Forventet levert XX.XX.20XX. Pakken ankommer vanligvis mellom kl. X og Y / Expected delivered XX.XX.20XX. The parcel usually arrives between X and Y.**
+      * **NO:** Forventet levert XX.XX.20XX. Pakken ankommer vanligvis mellom kl. X og Y
+      * **EN:** Expected delivered XX.XX.20XX. The parcel usually arrives between X and Y
 
-      Event though the API response schema supports minute granularity for start and end time, the minute value will always be set to 0. It is therefore sufficient to parse hours only.
+      Even though the API response schema supports minute granularity for start and end time, the minute value will always be set to 0. It is therefore sufficient to parse hours only.
 
       Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will arrive at the recipient address. Also note that CustomerNumber is mandatory to set in order to get estimated delivery time.
 
@@ -359,11 +361,13 @@ documentation:
       #### How to present the time window data in your checkout
       We recommend to insert the start (X) and end (Y) time values into the following sentence:
       
-      **Pakken ankommer vanligvis mellom kl. X og Y / The parcel usually arrives between X and Y.**
+      * **NO:** Pakken ankommer vanligvis mellom kl. X og Y
+      * **EN:** The parcel usually arrives between X and Y
       
       Together with the expected delivery date, we recommend the following implementation:
       
-      **Forventet levert XX.XX.20XX. Pakken ankommer vanligvis mellom kl. X og Y / Expected delivered XX.XX.20XX. The parcel usually arrives between X and Y.**
+      * **NO:** Forventet levert XX.XX.20XX. Pakken ankommer vanligvis mellom kl. X og Y
+      * **EN:** Expected delivered XX.XX.20XX. The parcel usually arrives between X and Y
       
       Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will become available for pickup at a specific pickup point on that specific date. Also note that CustomerNumber is mandatory to set in order to get estimated delivery time.
 
