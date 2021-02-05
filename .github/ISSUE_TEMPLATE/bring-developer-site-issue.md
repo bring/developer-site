@@ -3,12 +3,13 @@ name: Bring developer site issue
 about: Site bugs and feedback
 title: ''
 labels: ''
-assignees: ''
+assignees: halvorsanden
 
 ---
 
 NOTE: For API related bugs and questions, use the comments section on the respective API.
 
-Where on the site does the issue appear:
+### Location of issue (url and section)
 
-What happens and what did you expect should happen:
+
+### Issue description
