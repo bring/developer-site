@@ -81,35 +81,6 @@ documentation:
                 displayName: Change cash on delivery
                 value: !include examples/changecodresponse.json
 
-/modifications/{shipmentNumber}/address:
-  displayName: Change recipient address of delivery
-  description: This is used to change the recipient delivery address.
-  uriParameters:
-    shipmentNumber:
-      description: Shipment number to change address for.
-      type: string
-      required: true
-      example: "707262014721"
-
-  post:
-    description: Change recipient address of delivery.
-    body:
-      application/json:
-        examples:
-          change_recipient:
-            displayName: Change recipient address
-            value: !include examples/changeAddressRequest.json
-
-    responses:
-      200:
-        body:
-          application/json:
-            examples:
-              change_recipient:
-                displayName: Change recipient address
-                value: !include examples/changeAddressResponse.json
-
-
 /modifications/changeAddress/price/{shipment}/{oldPostal}/{newPostal}:
   displayName: Get price for change address
   description: Get the cost for changing address on a shipment.
@@ -141,6 +112,34 @@ documentation:
               change_cost:
                 displayName: Price for address change
                 value: !include examples/changeAddressCost.json
+
+/modifications/{shipmentNumber}/address:
+  displayName: Change recipient address of delivery
+  description: This is used to change the recipient delivery address.
+  uriParameters:
+    shipmentNumber:
+      description: Shipment number to change address for.
+      type: string
+      required: true
+      example: "707262014721"
+
+  post:
+    description: Change recipient address of delivery.
+    body:
+      application/json:
+        examples:
+          change_recipient:
+            displayName: Change recipient address
+            value: !include examples/changeAddressRequest.json
+
+    responses:
+      200:
+        body:
+          application/json:
+            examples:
+              change_recipient:
+                displayName: Change recipient address
+                value: !include examples/changeAddressResponse.json
 
 /modifications/fetchChangeAddressData/{shipmentNumber}:
   displayName: Current recipient address
