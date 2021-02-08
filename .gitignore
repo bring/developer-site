@@ -4,3 +4,5 @@ _site
 data/
 static/css
 .idea
+.jekyll-metadata
+.sass-cache/
