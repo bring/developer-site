@@ -1,10 +1,5 @@
-code {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
 .chroma {
-    max-height: 450px;
+    max-height: 30rem;
 }
 
 .filename {
@@ -16,5 +11,5 @@ code,
 .filename {
   white-space: pre;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
-  font-size: 13px;
+  font-size: 0.82rem;
 }

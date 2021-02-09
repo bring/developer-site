@@ -28,17 +28,16 @@ p, li {
 }
 
 kbd,
-pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
 pre {
-  border-left: 3px solid hsl(0, 0%, 86%);
+  border-left: 2px solid hsl(0, 0%, 86%);
   background-color: hsl(0, 0%, 97%);
   font-family: Monaco, Consolas, "Lucida Console", monospace;
-  font-size: 13px;
+  font-size: 0.82rem;
   padding: 1.5ch;
   overflow: auto;
 }
