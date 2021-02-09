@@ -294,7 +294,7 @@ documentation:
 
       Earlier, we have just returned the expected delivery **date** when you request our Shipping Guide API to get leadtime for BPAKKE_DOR-DOR/5000. Now, based on a machine learning model gathering scanning data from deliveries made in Norway, we are also predicting the **arrival window** - i.e. when the parcel is expected to arrive at the recipient address. If you are aldready presenting expected delivery date in your checkout, we strongly recommend that you consider increasing the value by also including the predicted arrival window.
 
-      The estimated arrival window is returned automatically as long as the WithExpectedDelivery flag is set to true and customerNumber is set. If we for some reason are unable to predict the arrival window, the expected delivery date will still be returned.
+      The estimated arrival window is returned automatically as long as the WithExpectedDelivery flag is set to true. If we for some reason are unable to predict the arrival window, the expected delivery date will still be returned.
 
       The arrival window is returned as time slots in the API response:
 
@@ -337,7 +337,7 @@ documentation:
 
       Even though the API response schema supports minute granularity for start and end time, the minute value will always be set to 0. It is therefore sufficient to parse hours only.
 
-      Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will arrive at the recipient address. Also note that CustomerNumber is mandatory to set in order to get estimated delivery time.
+      Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will arrive at the recipient address.
 
       ### Parcels going to pickup points
       For the services Klimanøytral Servicepakke (SERVICEPAKKE) and Pakke til hentested (5800), you can now get extended leadtime information - the estimated arrival time for one or more pickup points.
