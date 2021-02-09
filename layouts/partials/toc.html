@@ -5,7 +5,7 @@
 {{/* at least one header to link to */}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
-  <ul class="list-bare sitemenu__sublist">
+  <ul class="dev-sidemenu__sublist">
     {{- range $headers -}}
       {{- $header := . -}}
       {{- $base := ($.Page.File.LogicalName) -}}

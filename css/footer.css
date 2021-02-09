@@ -1,0 +1,26 @@
+.sitefooter {
+    background-color: #222;
+    padding: 40px 0 .5rem;
+    color: #fff;
+    width: 100%;
+}
+
+.sitefooter-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sitefooter-links li {
+    margin-right: 2em;
+    display: inline-block;
+}
+
+.sitefooter a {
+    color: #fff;
+}
+
+.sitefooter-nav {
+    margin-bottom: 2rem;
+    font-weight: 600;
+}

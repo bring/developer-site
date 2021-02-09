@@ -1,0 +1,19 @@
+.dev-link--box {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border: 3px solid #f2f2f3;
+  text-align: center;
+  padding: 1rem;
+  color: #444444;
+}
+
+.dev-link--box:hover {
+  border: 3px solid #dbdbdb;
+  text-decoration: none;
+}
+
+.dev-link--background:hover {
+  background-color: #f2f2f3;
+  text-decoration: none;
+}

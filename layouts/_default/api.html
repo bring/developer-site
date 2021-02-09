@@ -1,17 +1,17 @@
 {{- define "main" -}}
   {{- $notAnApi := $.Param "notanapi" -}}
 
-  <div class="wrapper flex1">
-    <div class="pagewmenu">
-      <div class="pagewmenu__menu">
+  <div class="dev-container flex-auto">
+    <div class="dev-pagewmenu">
+      <div class="dev-pagewmenu__menu">
         {{- partial "sidemenu.html" . -}}
       </div>
-      <div class="pagewmenu__page">
+      <div class="dev-pagewmenu__page">
         {{- if (eq $notAnApi true) -}}
-          <article class="api">
+          <article class="dev-documentation">
             {{- .Content -}}
             {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-              <section class="api__section">
+              <section class="dev-documentation__section">
                 {{ template "_internal/disqus.html" $ }}
               </section>
             {{ end }}
@@ -21,9 +21,9 @@
             {{/* this conditional ensures that only the right api doc shows up, it can probably be improved */}}
             {{- if (eq .title $.Title) -}}
               {{- $types := .types -}}
-              <article class="api {{ replace .title "API" "" | urlize }}">
-                <h1 class="api__title">{{ .title }}</h1>
-                <section id="api-documentation" class="api__section">
+              <article class="dev-documentation {{ replace .title "API" "" | urlize }}">
+                <h1>{{ .title }}</h1>
+                <section id="api-documentation" class="dev-documentation__section">
                   {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
                   {{- range .documentation -}}
                     <h2 class="anchored" id="{{ .title | urlize }}">
@@ -36,7 +36,7 @@
                     {{- end -}}
                   {{- end -}}
                 </section>
-                <section class="api__section">
+                <section class="dev-documentation__section">
                   <h2 class="anchored" id="overview-of-endpoints">
                     Overview of endpoints
                   </h2>
@@ -74,7 +74,7 @@
                 {{- range .resources -}}
                   {{- $resources := . -}}
                   {{- $displayName := .displayName -}}
-                  <section class="api__section">
+                  <section class="dev-documentation__section">
                     <h2 class="large anchored" id="{{ $displayName | urlize }}">
                       {{- $displayName -}}
                     </h2>
@@ -204,16 +204,16 @@
                             {{- with (index .body $oneBody).examples -}}
                               {{- range first 1 . -}}
                                 <div
-                                  class="collapsible"
+                                  class="dev-collapsible"
                                   class="anchored"
                                   id="{{ $responseID }}"
                                 >
                                   <a
                                     href="#"
                                     data-collapse="#{{ $exampleID }}"
-                                    class="collapsible__toggler collapsible__toggler--collapsed"
+                                    class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
                                     ><svg
-                                      class="collapsible__toggler__icon"
+                                      class="dev-collapsible__toggler__icon"
                                       width="16"
                                       height="16"
                                       viewBox="0 0 320 512"
@@ -226,7 +226,7 @@
                                   </a>
                                   <div
                                     id="{{ $exampleID }}"
-                                    class="collapsible__item collapsible__item--collapsed"
+                                    class="dev-collapsible__item dev-collapsible__item--collapsed"
                                   >
                                     {{- with $description -}}
                                       {{- if in (string .) "\n\n" -}}
@@ -269,7 +269,7 @@
                   </section>
                 {{- end -}}
                 {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-                  <section class="api__section">
+                  <section class="dev-documentation__section">
                     {{ template "_internal/disqus.html" $ }}
                   </section>
                 {{- end -}}

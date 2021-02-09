@@ -3,61 +3,49 @@ title: Bring Developer
 layout: frontpage
 ---
 
-  <div class="intro">
-    <h2 class="intro__tagline">
-      Tools to help you integrate services from Bring with your&nbsp;systems
-    </h2>
-  </div>
-  <div class="welcome">
-    <div class="wrapper">
-      <ul class="layout welcome__list">
-        <li
-          class="layout__item palm-one-whole lap-and-up-one-third welcome__item"
-        >
-          <a href="/api/" class="welcome__link">
-            <img src="img/illustration02.svg" alt="" />
-            <h2>API documentation</h2>
-            <p class="u-mb0">
-              Developing an e-commerce site? Or&nbsp;software dealing with
-              shipments from Nordic countries? Then you may want to use Bring
-              APIs.
-            </p>
-          </a>
-        </li>
-        <li
-          class="layout__item palm-one-whole lap-and-up-one-third welcome__item"
-        >
-          <a href="/edi/" class="welcome__link">
-            <img src="img/illustration03.svg" alt="" />
-            <h2>EDI documentation</h2>
-            <p class="u-mb0">
-              If you're an EDI vendor, this is where you will find our
-              implementation guides.
-            </p>
-          </a>
-        </li>
-      </ul>
+<div class="dev-intro">
+  <h2 class="dev-intro__tagline">
+    Tools to help you integrate services from Bring with your&nbsp;systems
+  </h2>
+</div>
+
+<div class="bg-gray1 mbl tc">
+  <div class="dev-container flex justify-cc">
+    <div class="flexgrid flexgrid--gutters-l maxw48r mtl">
+      <div class="flexgrid__item w100p w50p-l flex justify-cc">
+        <a href="/api/" class="db base maxw24r dev-link--background">
+          <img src="img/illustration02.svg" alt="" class="maxw12r" />
+          <h2 class="text-heading">API documentation</h2>
+          <p class="">
+            Developing an e-commerce site? Or&nbsp;software dealing with
+            shipments from Nordic countries? Then you may want to use Bring
+            APIs.
+          </p>
+        </a>
+      </div>
+      <div class="flexgrid__item w100p w50p-l flex justify-cc">
+        <a href="/edi/" class="db base maxw24r dev-link--background">
+          <img src="img/illustration03.svg" alt="" class="maxw12r" />
+          <h2 class="text-heading">EDI documentation</h2>
+          <p class="">
+            If you're an EDI vendor, this is where you will find our
+            implementation guides.
+          </p>
+        </a>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="wrapper">
-    <div class="api__warning-box">
-      <strong
+<div class="dev-container">
+  <div class="mbl">
+    <div class="message--warn pam">
+      <strong class="mrs"
         >Final deadline for authenticating Pickup Point API requests - 15th of
         February 2021</strong
       >
-      <br /><br />
-      We have now started to limit the data in the responses for unauthenticated
-      requests: - From 01.11.2020, coordinates and map links have been removed
-      from all responses. - From 09.11.2020, only 1 pickup point will be
-      returned in the responses for the postal code and location endpoints From
-      Monday 11th of January, we will start rate limiting the responses of the
-      Pickup Point API. The rate limit (requests per minute) will be lowered
-      week by week until the final deadline for authentication - 15th of
-      February 2021. After this date, unauthenticated requests will not be
-      accepted. We recommend making the
-      <a href="api/#authentication">adjustment</a> as
-      soon as possible to avoid any problems with your integration setup.
-      <br /><br />
+      We have now started to <a href="api/pickup-point">limit the data</a> in
+      the responses for unauthenticated requests
     </div>
   </div>
+</div>

@@ -9,8 +9,8 @@ menu:
 weight: 4
 ---
 
-<h1 class="api__title">API Service List</h1>
-<section class="api__section" id="apiServiceList">
+<h1 class="mbl">API Service List</h1>
+<section class="dev-documentation__section" id="apiServiceList">
   <p>
     All the services available in the
     <a href="/api/shipping-guide_2/">Shipping Guide API 2.0</a> and
@@ -20,8 +20,8 @@ weight: 4
 
 
 
-<section class="api__section" id="shipping-guide">
-  <h2 id="shipping-guide-api">Shipping Guide API</h2>
+<section class="dev-documentation__section" id="shipping-guide">
+  <h2  id="shipping-guide-api">Shipping Guide API</h2>
 
   <p>
     The Shipping Guide offers a broad range of services by Bring. We will
@@ -34,7 +34,7 @@ weight: 4
     that is available. The links are to examples using XML API.
   </p>
 
-  <h4>Outgoing Services</h4>
+  <h3>Outgoing Services</h3>
 
   <table class="productlist">
     <thead>
@@ -1101,7 +1101,7 @@ weight: 4
     </tbody>
   </table>
 
-  <h4>Return Services</h4>
+  <h3>Return Services</h3>
   <table class="productlist">
     <thead>
       <tr>
@@ -1305,7 +1305,7 @@ weight: 4
     </tbody>
   </table>
 
-  <sup>
+  <p class="text-note">
     1 From January 1st 2018 the new product code MAIL replaced the old services
     A-POST and B-POST. Requests using the old service codes A-POST and B-POST
     will be mapped to the new product code MAIL.<br />
@@ -1327,9 +1327,9 @@ weight: 4
     7 A return agreement is required to order PickUp Parcel Return, Pickup
     Parcel Return Bulk, Business Parcel Return and Business Parcel Return Bulk
     <br />
-  </sup>
+  </p>
 
-  <h3 id="additional-services" class="anchored">Value added Services</h3>
+  <h3 id="additional-services" class="anchored ">Value added Services</h3>
 
   <p>
     The Shipping Guide supports the value added services listed in the table
@@ -1343,13 +1343,13 @@ weight: 4
     <a href="{{< baseapiurl au="/shippingguide/api/ws/shipping-guide-20.xsd" >}}">XSD</a>
     for help to set these value added services in a SOAP request.
   </p>
-  <div class="information-box">
+  <p>
     Some value added services get their own price in the response from the
     Shipping Guide, others are included (and change) the base package price. See
     column below 'Affects base package price?'.
-  </div>
+  </p>
 
-  <div class="information-box">
+  <p class="mbl measure">
     Make sure you specify the correct value added services for a package when
     querying the Shipping Guide.
     <br /><br />
@@ -1361,7 +1361,7 @@ weight: 4
     If eVarsling is not specified in the request, Fraktguiden will from
     2013-01-01 add a fee for paper based recipient notification to the base
     package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
-  </div>
+  </p>
 
   <table class="productlist">
     <thead>
@@ -1508,7 +1508,7 @@ weight: 4
     </tbody>
   </table>
 
-  <h3 id="home-delivery">Home Delivery Service List</h3>
+  <h3 id="home-delivery" >Home Delivery Service List</h3>
 
   <table>
     <thead>
@@ -1699,8 +1699,8 @@ weight: 4
   </table>
 </section>
 
-<section class="api__section" id="booking">
-  <h2 id="booking-api">Booking API</h2>
+<section class="dev-documentation__section" id="booking">
+  <h2  id="booking-api">Booking API</h2>
 
   <p>Those are the various services available for each customer type.</p>
 
@@ -1836,7 +1836,7 @@ weight: 4
   </dl>
 </section>
 
-<section class="api__section b2bvas">
+<section class="dev-documentation__section dev-b2bvas">
   <h3>B2B Services</h3>
   <table>
     <thead>
@@ -1844,31 +1844,31 @@ weight: 4
         <th>Vases</th>
         <th>
           BUSINESS PARCEL<br />
-          <span class="alignDown">(BUSINESS_PARCEL)</span>
+          <span class="dev-b2bvas__subheader">(BUSINESS_PARCEL)</span>
         </th>
         <th>
           BUSINESS PARCEL RETURN<br />
-          <span class="alignDown">(BUSINESS_PARCEL_RETURN)</span>
+          <span class="dev-b2bvas__subheader">(BUSINESS_PARCEL_RETURN)</span>
         </th>
         <th>
           BUSINESS PARCEL RETURN BULK<br />
-          <span class="alignDown">(BUSINESS_PARCEL_RETURN_BULK)</span>
+          <span class="dev-b2bvas__subheader">(BUSINESS_PARCEL_RETURN_BULK)</span>
         </th>
         <th>
           BUSINESS PARCEL BULK<br />
-          <span class="alignDown">(BUSINESS_PARCEL_BULK)</span>
+          <span class="dev-b2bvas__subheader">(BUSINESS_PARCEL_BULK)</span>
         </th>
         <th>
           EXPRESS NORDIC 0900<br />
-          <span class="alignDown">(EXPRESS_NORDIC_0900)</span>
+          <span class="dev-b2bvas__subheader">(EXPRESS_NORDIC_0900)</span>
         </th>
         <th>
           EXPRESS NORDIC 0900 BULK<br />
-          <span class="alignDown">(EXPRESS_NORDIC_0900_BULK)</span>
+          <span class="dev-b2bvas__subheader">(EXPRESS_NORDIC_0900_BULK)</span>
         </th>
         <th>
           BUSINESS PALLET<br />
-          <span class="alignDown">(BUSINESS_PALLET)</span>
+          <span class="dev-b2bvas__subheader">(BUSINESS_PALLET)</span>
         </th>
       </tr>
     </thead>
@@ -2035,23 +2035,23 @@ weight: 4
         <th>Vases</th>
         <th>
           PICKUP PARCEL<br />
-          <span class="alignDown">(PICKUP_PARCEL)</span>
+          <span class="dev-b2bvas__subheader">(PICKUP_PARCEL)</span>
         </th>
         <th>
           PICKUP PARCEL BULK<br />
-          <span class="alignDown">(PICKUP_PARCEL_BULK)</span>
+          <span class="dev-b2bvas__subheader">(PICKUP_PARCEL_BULK)</span>
         </th>
         <th>
           PICKUP PARCEL RETURN<br />
-          <span class="alignDown">(PICKUP_PARCEL_RETURN)</span>
+          <span class="dev-b2bvas__subheader">(PICKUP_PARCEL_RETURN)</span>
         </th>
         <th>
           PICKUP PARCEL RETURN BULK<br />
-          <span class="alignDown">(PICKUP_PARCEL_RETURN_BULK)</span>
+          <span class="dev-b2bvas__subheader">(PICKUP_PARCEL_RETURN_BULK)</span>
         </th>
         <th>
           HOME DELIVERY PARCEL<br />
-          <span class="alignDown">(HOME_DELIVERY_PARCEL)</span>
+          <span class="dev-b2bvas__subheader">(HOME_DELIVERY_PARCEL)</span>
         </th>
       </tr>
     </thead>
@@ -2161,99 +2161,99 @@ weight: 4
         <th>Vases</th>
         <th>
           DOUBLE INDOOR<br />
-          <span class="alignDown">(DOUBLE_INDOOR)</span>
+          <span class="dev-b2bvas__subheader">(DOUBLE_INDOOR)</span>
         </th>
         <th>
           DOUBLE INDOOR EVENING<br />
-          <span class="alignDown">(DOUBLE_INDOOR_EVENING)</span>
+          <span class="dev-b2bvas__subheader">(DOUBLE_INDOOR_EVENING)</span>
         </th>
         <th>
           CURBSIDE<br />
-          <span class="alignDown">(CURBSIDE)</span>
+          <span class="dev-b2bvas__subheader">(CURBSIDE)</span>
         </th>
         <th>
           CURBSIDE EVENING<br />
-          <span class="alignDown">(CURBSIDE_EVENING)</span>
+          <span class="dev-b2bvas__subheader">(CURBSIDE_EVENING)</span>
         </th>
         <th>
           3332<br />
-          <span class="alignDown">(_3332)</span>
+          <span class="dev-b2bvas__subheader">(_3332)</span>
         </th>
         <th>
           SINGLE INDOOR<br />
-          <span class="alignDown">(SINGLE_INDOOR)</span>
+          <span class="dev-b2bvas__subheader">(SINGLE_INDOOR)</span>
         </th>
         <th>
           CURBSIDE EXPRESS<br />
-          <span class="alignDown">(CURBSIDE_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(CURBSIDE_EXPRESS)</span>
         </th>
         <th>
           CURBSIDE WEEKEND<br />
-          <span class="alignDown">(CURBSIDE_WEEKEND)</span>
+          <span class="dev-b2bvas__subheader">(CURBSIDE_WEEKEND)</span>
         </th>
         <th>
           CURBSIDE WEEKEND EXPRESS<br />
-          <span class="alignDown">(CURBSIDE_WEEKEND_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(CURBSIDE_WEEKEND_EXPRESS)</span>
         </th>
         <th>
           SINGLE INDOOR EXPRESS<br />
-          <span class="alignDown">(SINGLE_INDOOR_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(SINGLE_INDOOR_EXPRESS)</span>
         </th>
         <th>
           DOUBLE INDOOR EXPRESS<br />
-          <span class="alignDown">(DOUBLE_INDOOR_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(DOUBLE_INDOOR_EXPRESS)</span>
         </th>
         <th>
           INDOOR LIGHT EXPRESS<br />
-          <span class="alignDown">(INDOOR_LIGHT_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(INDOOR_LIGHT_EXPRESS)</span>
         </th>
         <th>
           SINGLE INDOOR WEEKEND<br />
-          <span class="alignDown">(SINGLE_INDOOR_WEEKEND)</span>
+          <span class="dev-b2bvas__subheader">(SINGLE_INDOOR_WEEKEND)</span>
         </th>
         <th>
           DOUBLE INDOOR WEEKEND<br />
-          <span class="alignDown">(DOUBLE_INDOOR_WEEKEND)</span>
+          <span class="dev-b2bvas__subheader">(DOUBLE_INDOOR_WEEKEND)</span>
         </th>
         <th>
           INDOOR LIGHT WEEKEND<br />
-          <span class="alignDown">(INDOOR_LIGHT_WEEKEND)</span>
+          <span class="dev-b2bvas__subheader">(INDOOR_LIGHT_WEEKEND)</span>
         </th>
         <th>
           SINGLE INDOOR WEEKEND EXPRESS<br />
-          <span class="alignDown">(SINGLE_INDOOR_WEEKEND_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(SINGLE_INDOOR_WEEKEND_EXPRESS)</span>
         </th>
         <th>
           DOUBLE INDOOR WEEKEND EXPRESS<br />
-          <span class="alignDown">(DOUBLE_INDOOR_WEEKEND_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(DOUBLE_INDOOR_WEEKEND_EXPRESS)</span>
         </th>
         <th>
           INDOOR LIGHT WEEKEND EXPRESS<br />
-          <span class="alignDown">(INDOOR_LIGHT_WEEKEND_EXPRESS)</span>
+          <span class="dev-b2bvas__subheader">(INDOOR_LIGHT_WEEKEND_EXPRESS)</span>
         </th>
         <th>
           DOUBLE INDOOR NO<br />
-          <span class="alignDown">(DOUBLE_INDOOR_NO)</span>
+          <span class="dev-b2bvas__subheader">(DOUBLE_INDOOR_NO)</span>
         </th>
         <th>
           SINGLE INDOOR EVENING<br />
-          <span class="alignDown">(SINGLE_INDOOR_EVENING)</span>
+          <span class="dev-b2bvas__subheader">(SINGLE_INDOOR_EVENING)</span>
         </th>
         <th>
           INDOOR LIGHT EVENING<br />
-          <span class="alignDown">(INDOOR_LIGHT_EVENING)</span>
+          <span class="dev-b2bvas__subheader">(INDOOR_LIGHT_EVENING)</span>
         </th>
         <th>
           HOME DELIVERY RETURN<br />
-          <span class="alignDown">(HOME_DELIVERY_RETURN)</span>
+          <span class="dev-b2bvas__subheader">(HOME_DELIVERY_RETURN)</span>
         </th>
         <th>
           RETURN INDOOR<br />
-          <span class="alignDown">(RETURN_INDOOR)</span>
+          <span class="dev-b2bvas__subheader">(RETURN_INDOOR)</span>
         </th>
         <th>
           RETURN CURBSIDE<br />
-          <span class="alignDown">(RETURN_CURBSIDE)</span>
+          <span class="dev-b2bvas__subheader">(RETURN_CURBSIDE)</span>
         </th>
       </tr>
     </thead>
@@ -2584,7 +2584,7 @@ weight: 4
       </tr>
     </tbody>
   </table>
-  <br /><sup
+  <br /><sup class="mbl db"
     >1 Use Shipping Guide Code FLEXDELIVERY for FLEX_DELIVERY<br />2 Use
     Shipping Guide Code DELIVERYINDOOR for DELIVERY_INDOORS<br />3 Following
     Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina

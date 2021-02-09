@@ -1,0 +1,70 @@
+table {
+  text-align: left;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+table caption {
+  text-align: left;
+  font-weight: 600;
+}
+
+thead {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+tr {
+  vertical-align: top;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+thead tr {
+  vertical-align: bottom;
+  border-bottom: 2px solid hsl(0, 0%, 90%);
+}
+
+th,
+td {
+  padding: 0.5em 1.4em 0.4em 0.4em;
+}
+
+td:last-of-type,
+thead th:last-of-type {
+  padding-right: 0.4em;
+}
+
+td > p,
+td > ul {
+  margin-bottom: 0;
+}
+
+.tr {
+  text-align: right;
+}
+
+.dev-feature-table > tbody > tr > td:first-child {
+  width: 18rem;
+}
+
+.dev-b2bvas table {
+  white-space: nowrap;
+  font-size: 0.75rem;
+}
+.dev-b2bvas th {
+  background: hsl(0, 0%, 97%);
+}
+
+.dev-b2bvas__subheader {
+  font-size: 75%;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 50em) {
+  .dev-feature-table > tbody > tr > td:first-child {
+    width: 10rem;
+  }
+}

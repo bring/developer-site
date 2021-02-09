@@ -1,13 +1,13 @@
-<div class="blog">
+<div class="dev-blog">
   {{- range where .Paginator.Pages "Section" "blog" -}}
-    <article class="blog__post">
-      <header class="blog__post__header">
-        <h2 class="blog__post__heading alpha">
+    <article class="dev-blog__post">
+      <header class="dev-blog__post__header">
+        <h2 class="dev-blog__post__heading alpha">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
         {{ partial "blog-meta.html" . }}
       </header>
-      <div class="blog__post__content">
+      <div class="dev-blog__post__content">
         {{- with .Resources.Match (print .Params.heroImage) -}}
           {{- range first 1 . -}}
             <img class="mbm" src="{{ .RelPermalink }}" alt="" />
@@ -20,34 +20,34 @@
   {{- end -}}
   {{- $paginator := .Paginator -}}
   {{- if gt $paginator.TotalPages 1 -}}
-    <div class="blog__paginator">
+    <div class="dev-blog__paginator">
       <ul class="layout">
         <li>
           {{- if $paginator.HasPrev -}}
-            <a href="{{ $paginator.Prev.URL }}" class="blog__paginator__button">
+            <a href="{{ $paginator.Prev.URL }}" class="dev-blog__paginator__button">
               ← Newer posts
             </a>
             {{- else -}}
             <span
-              class="blog__paginator__button blog__paginator__button--disabled"
+              class="dev-blog__paginator__button blog__paginator__button--disabled"
               title="There are no newer posts"
               >← Newer posts</span
             >
           {{- end -}}
         </li>
         <li>
-          <span class="blog__paginator__info"
+          <span class="dev-blog__paginator__info"
             >Page {{ $paginator.PageNumber }}/{{ $paginator.TotalPages }}</span
           >
         </li>
         <li>
           {{- if $paginator.HasNext -}}
-            <a href="{{ $paginator.Next.URL }}" class="blog__paginator__button">
+            <a href="{{ $paginator.Next.URL }}" class="dev-blog__paginator__button">
               Older posts →
             </a>
             {{- else -}}
             <span
-              class="blog__paginator__button blog__paginator__button--disabled"
+              class="dev-blog__paginator__button blog__paginator__button--disabled"
               title="There are no older posts"
               >Older posts →</span
             >

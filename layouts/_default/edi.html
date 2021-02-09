@@ -1,14 +1,14 @@
 {{- define "main" -}}
-  <div class="wrapper flex1">
-    <div class="pagewmenu">
-      <div class="pagewmenu__menu">
+  <div class="dev-container flex1">
+    <div class="dev-pagewmenu">
+      <div class="dev-pagewmenu__menu">
         {{- partial "sidemenu.html" . -}}
       </div>
-      <div class="pagewmenu__page">
-        <article class="api">
+      <div class="dev-pagewmenu__page">
+        <article class="dev-documentation">
           {{ .Content }}
           {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-            <section class="api__section">
+            <section class="dev-documentation__section">
               {{ template "_internal/disqus.html" $ }}
             </section>
           {{- end -}}

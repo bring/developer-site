@@ -1,0 +1,52 @@
+.dev-sidemenu {
+  background-color: #f2f2f3;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.dev-sidemenu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dev-sidemenu .active {
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.dev-sidemenu__separator {
+  border-bottom: 1px solid #b2b2b2;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.dev-sidemenu__apititle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+.dev-sidemenu a {
+  color: #414141;
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: background 0.1s ease 0s;
+}
+
+.dev-sidemenu__sublist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.3;
+  padding-left: 0.7em;
+  padding-right: 1em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.dev-sidemenu__sublist a {
+  padding: 0.25rem 1rem;
+}

@@ -1,11 +1,11 @@
 {{- partial "icons.svg" -}}
-<div class="flexgrid gaps mbm">
-  <div class="flexgrid gaps">
+<div class="dev-blog__post__meta flexgrid gaps mbm">
+  <div class="dev-blog__post__meta-item flexgrid gaps">
     {{- range $.Param "authors" -}}
       <a href="https://github.com/{{ . }}">
         <img
           alt="👤"
-          class="blog-meta-icon"
+          class="dev-blog-meta-icon"
           src="https://avatars.githubusercontent.com/{{ . }}?s=48"
           width="24"
           height="24"
@@ -14,15 +14,15 @@
       </a>
     {{- end -}}
   </div>
-  <div class="flexgrid">
-    <svg class="blog-meta-icon"><use xlink:href="#calendar" /></svg>
+  <div class="dev-blog__post__meta-item flexgrid align-ic">
+    <svg class="icon"><use xlink:href="#calendar" /></svg>
     <time
       datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
       >&nbsp;{{ .PublishDate.Format "Jan 2, 2006" }}</time
     >
   </div>
-  <div class="flexgrid">
-    <svg class="blog-meta-icon"><use xlink:href="#tag" /></svg>
+  <div class="dev-blog__post__meta-item flexgrid align-ic">
+    <svg class="icon"><use xlink:href="#tag" /></svg>
     &nbsp;
     <div class="list-inline">
       {{- range $index, $tags := (.GetTerms "tags") -}}
