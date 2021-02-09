@@ -3,14 +3,14 @@
 {{- $currentSection := .Section -}}
 {{- $hideSubmenu := $.Param "hidesubmenu" -}}
 
-<nav class="sitemenu">
-  <ul class="list-bare sitemenu__list">
+<nav class="dev-sidemenu">
+  <ul class="dev-sidemenu__list">
     {{- if eq .Section "api" -}}
       {{- $len := (len .Site.Menus.api) -}}
       {{- range $index, $element := .Site.Menus.api -}}
         {{- $lastElement := "" -}}
         {{- if eq (add $index 1) $len -}}
-          {{- $lastElement = "sitemenu__separator" -}}
+          {{- $lastElement = "dev-sidemenu__separator" -}}
         {{- end -}}
         <li
           class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
@@ -20,7 +20,7 @@
           <a
             href="{{ .URL | relURL }}"
             {{ $target | safeHTMLAttr }}
-            class="sitemenu__apititle"
+            class="dev-sidemenu__apititle"
             >{{ safeHTML .Title }}</a
           >
           {{- if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) -}}
@@ -33,12 +33,12 @@
       {{- range .Site.Menus.apidocs -}}
         {{- $identifier := .Identifier -}}
         <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
-          <a href="{{ .URL }}" class="sitemenu__apititle">{{ .Title }}</a>
+          <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
           {{- $currentMenu := .Menu -}}
           {{- $currentMenuItem := . -}}
           {{- with (index $apiData $identifier) -}}
             {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
-              <ul class="list-bare sitemenu__sublist">
+              <ul class="dev-sidemenu__sublist">
                 {{- range .documentation -}}
                   <li>
                     <a href="#{{ .title | urlize }}">
@@ -77,7 +77,7 @@
           {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
           <a
             href="{{ .URL | relURL }}"
-            class="sitemenu__apititle"
+            class="dev-sidemenu__apititle"
             {{ $target | safeHTMLAttr }}
             >{{ safeHTML .Title }}</a
           >
