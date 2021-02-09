@@ -61,3 +61,18 @@ ul {
   margin-left: 2rem;
   margin-bottom: 2rem;
 }
+@media screen and (max-width: 50em) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+  
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
+
