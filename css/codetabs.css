@@ -1,0 +1,44 @@
+h4 + .dev-codetabs {
+    margin-top: 1rem;
+  }
+  ul.dev-codetabs {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 0.6rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+  }
+  .dev-codetabs__item {
+    position: relative;
+    border-top-width: 3px;
+    border-top-style: solid;
+    max-width: initial;
+  }
+  .dev-codetabs__item:not(.active) {
+    border-top-color: #f2f2f2;
+    background-color: #f2f2f2;
+    top: 0;
+  }
+  .dev-codetabs__item.active {
+    border-top-color: #7bc144;
+    border-left: 1px solid hsl(0, 0%, 85%);
+    border-right: 1px solid hsl(0, 0%, 85%);
+    top: 1px;
+    background-color: #fff;
+  }
+  .dev-codetabs__link {
+    display: inline-block;
+    padding: 0.7rem 1.6rem 0.6rem;
+    color: #414141;
+  }
+  .dev-codetabs__content {
+    padding-top: 1.2rem;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid hsl(0, 0%, 85%);
+  }
+  .dev-codetabs__panel:not(.active) {
+    display: none;
+  }

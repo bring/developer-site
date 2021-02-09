@@ -1,0 +1,34 @@
+.dev-collapsible {
+    margin-bottom: 0.5rem;
+  }
+  .dev-collapsible__toggler {
+    background-color: #f2f2f2;
+    color: #414141;
+    font-weight: bold;
+    display: block;
+    padding: 0.75rem 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  .dev-collapsible__toggler:hover {
+    background-color: #e6e6e6;
+  }
+  .dev-collapsible__toggler__icon {
+    margin-right: 0.25rem;
+    width: 1rem;
+    fill: #888;
+    transition: transform 0.2s ease 0s;
+  }
+  .dev-collapsible__toggler--expanded .dev-collapsible__toggler__icon {
+    transform: rotate(90deg);
+  }
+  .dev-collapsible__toggler:hover::after {
+    color: #fff;
+  }
+  .dev-collapsible__item {
+    padding: 10px;
+  }
+  .dev-collapsible__item--collapsed {
+    display: none;
+    visibility: hidden;
+  }

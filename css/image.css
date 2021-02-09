@@ -1,0 +1,13 @@
+.dev-breakout {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+  .dev-breakout {
+    max-width: none;
+    margin-left: -280px;
+    margin-right: -280px;
+  }
+}

@@ -1,0 +1,25 @@
+.dev-pagewmenu {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.dev-pagewmenu__menu {
+  flex: 1 1 23%;
+  max-width: 18rem;
+}
+
+.dev-pagewmenu__page {
+  flex: 1 1 auto;
+  max-width: calc(77% - 2rem);
+}
+
+@media screen and (max-width: 50em) {
+  .dev-pagewmenu__menu {
+    flex: 1 1 auto;
+    max-width: 100%;
+  }
+
+  .dev-pagewmenu__page {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+.dev-documentation {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.dev-documentation__title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  padding-left: 4rem;
+}
+
+.dev-documentation__heading {
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+.dev-documentation__subheading {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.dev-documentation__section {
+  margin-bottom: 2rem;
+  padding: 0 0 4rem 4rem;
+  border-width: 3px;
+  border-color: #ddd;
+  border-bottom-style: solid;
+}
+
+.dev-documentation__section:last-of-type {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 50em) {
+  .dev-documentation__title {
+    padding-left: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .dev-documentation__section {
+    padding: 0 0 1rem 1rem;
+  }
+
+  .dev-documentation__section:last-of-type {
+    padding-bottom: 1rem;
+  }
+}
