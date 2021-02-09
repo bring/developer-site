@@ -3,18 +3,18 @@
   padding-bottom: 1rem;
 }
 
-.dev-documentation__title {
+.dev-documentation h1 {
   font-size: 3.5rem;
   font-weight: 400;
   padding-left: 4rem;
 }
 
-.dev-documentation__heading {
+.dev-documentation h2 {
     font-size: 2.3rem;
     font-weight: 400;
 }
 
-.dev-documentation__subheading {
+.dev-documentation h3 {
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -32,16 +32,16 @@
 }
 
 @media screen and (max-width: 50em) {
-  .dev-documentation__title {
+  .dev-documentation h1 {
     padding-left: 1rem;
     font-size: 2rem;
   }
 
-  .dev-documentation__heading {
+  .dev-documentation h2 {
     font-size: 1.5rem;
   }
 
-  .dev-documentation__subheading {
+  .dev-documentation h3 {
     font-size: 1rem;
   }
 

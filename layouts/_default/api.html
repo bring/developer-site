@@ -22,11 +22,11 @@
             {{- if (eq .title $.Title) -}}
               {{- $types := .types -}}
               <article class="dev-documentation {{ replace .title "API" "" | urlize }}">
-                <h1 class="dev-documentation__title">{{ .title }}</h1>
+                <h1>{{ .title }}</h1>
                 <section id="api-documentation" class="dev-documentation__section">
                   {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
                   {{- range .documentation -}}
-                    <h2 class="dev-documentation__heading anchored" id="{{ .title | urlize }}">
+                    <h2 class="anchored" id="{{ .title | urlize }}">
                       {{- .title -}}
                     </h2>
                     {{- if in (string .content) "\n\n" -}}
@@ -37,11 +37,11 @@
                   {{- end -}}
                 </section>
                 <section class="dev-documentation__section">
-                  <h2 class="dev-documentation__heading anchored" id="overview-of-endpoints">
+                  <h2 class="anchored" id="overview-of-endpoints">
                     Overview of endpoints
                   </h2>
 
-                  <h3 class="dev-documentation__subheading">Base URL</h3>
+                  <h3>Base URL</h3>
                   <pre>{{ .baseUri }}</pre>
                   <table>
                     <thead>
@@ -75,7 +75,7 @@
                   {{- $resources := . -}}
                   {{- $displayName := .displayName -}}
                   <section class="dev-documentation__section">
-                    <h2 class="dev-documentation__heading large anchored" id="{{ $displayName | urlize }}">
+                    <h2 class="large anchored" id="{{ $displayName | urlize }}">
                       {{- $displayName -}}
                     </h2>
                     {{- with .description -}}
@@ -87,7 +87,7 @@
                     {{- end -}}
 
                     {{- range .methods -}}
-                      <h3 class="dev-documentation__subheading">URL</h3>
+                      <h3>URL</h3>
                       {{- $urlOutput := slice -}}
                       {{- $absUri := $resources.absoluteUri -}}
                       {{- $hasExtension := false -}}
@@ -147,7 +147,7 @@
                       {{- end -}}
 
                       {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
-                        <h3 class="dev-documentation__subheading">Request params</h3>
+                        <h3>Request params</h3>
                       {{- end -}}
 
                       {{/* For each endpoint: List all URI parameters */}}
@@ -184,7 +184,7 @@
 
                       {{/* For each endpoint: Response */}}
                       {{- with .responses -}}
-                        <h3 class="dev-documentation__subheading">Responses</h3>
+                        <h3>Responses</h3>
                         {{- range $key, $response := . -}}
                           {{- $responseID := (print $displayName "-response-" .code) | urlize -}}
                           {{- $exampleID := (print $displayName "-" .code) | urlize -}}
