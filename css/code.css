@@ -14,7 +14,7 @@ code {
 
 code,
 .filename {
-  white-space: nowrap;
+  white-space: pre;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 13px;
 }
