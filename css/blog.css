@@ -1,18 +1,18 @@
 .dev-blog {
-  margin: 40px auto;
+  margin: 2.5rem auto;
   max-width: 666px;
-  padding: 0 10px;
+  padding: 0 1rem;
 }
 .dev-blog__post {
-  margin: 20px 0 40px 0;
-  padding-bottom: 40px;
+  margin: 1.5rem 0 2.5rem 0;
+  padding-bottom: 2rem;
   border-bottom: 2px solid #eee;
 }
 .dev-blog__post:last-child {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 .dev-blog__archive {
-  margin: 20px 0;
+  margin: 1rem 0;
   min-height: 555px;
 }
 
@@ -68,7 +68,7 @@
   margin-bottom: 0;
 }
 .dev-blog__post__footer {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 .dev-blog__post__readmore {
   color: #b2b2b2;
@@ -79,7 +79,7 @@
 }
 .dev-blog__paginator {
   text-align: center;
-  margin: 40px 0;
+  margin: 2.5rem 0;
 }
 .dev-blog__paginator .layout {
   display: flex;
