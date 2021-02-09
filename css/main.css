@@ -1,15 +1,17 @@
+/* Base */
 @import "./base.css";
 @import "./container.css";
 @import "./page.css";
-@import "./table.css";
-@import "./syntax.css";
-
-
 @import "./siteheader.css";
+@import "./footer.css";
+
+
+/* Components */
 @import "./link.css";
 @import "./codetabs.css";
 @import "./code.css";
-@import "./footer.css";
+@import "./table.css";
+@import "./syntax.css";
 @import "./sidemenu.css";
 @import "./intro.css";
 @import "./documentation.css";
