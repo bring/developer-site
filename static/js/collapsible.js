@@ -1,9 +1,9 @@
 (function() {
 
-  var CLS_TOGGLER_COLLAPSED = 'collapsible__toggler--collapsed';
-  var CLS_TOGGLER_EXPANDED = 'collapsible__toggler--expanded';
-  var CLS_TARGET_COLLAPSED = 'collapsible__item--collapsed';
-  var CLS_TARGET_EXPANDED = 'collapsible__item--expanded';
+  var CLS_TOGGLER_COLLAPSED = 'dev-collapsible__toggler--collapsed';
+  var CLS_TOGGLER_EXPANDED = 'dev-collapsible__toggler--expanded';
+  var CLS_TARGET_COLLAPSED = 'dev-collapsible__item--collapsed';
+  var CLS_TARGET_EXPANDED = 'dev-collapsible__item--expanded';
 
   var Collapsible = function(element) {
     this.toggler = element;
