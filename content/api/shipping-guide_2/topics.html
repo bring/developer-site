@@ -4,9 +4,9 @@ layout: api
 notanapi: true
 ---
 
-<h1 class="api__title">Let's talk about Shipping Guide</h1>
+<h1 class="dev-documentation__title mbl">Let's talk about Shipping Guide</h1>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>No applicable services found</h2>
   <p>
     When no services are applicable for the requested you've made an empty
@@ -25,7 +25,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Trace messages</h2>
   <p>
     Trace messages are meant as debug messages to the developer and are
@@ -37,7 +37,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Volume, weight, dimensions and loading meter</h2>
   <p>
     Shipping Guide use measurement of the package to calculate price of the
@@ -52,7 +52,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Pre-registered - EDI</h2>
   <p>
     It is possible to tell the Shipping Guide API that your parcel is registered
@@ -62,7 +62,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Holidays and Home Delivery</h2>
   <p>
     There is no home delivery on bank holidays. It can also happen that Bring
@@ -72,7 +72,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>More than one customer number with JSON</h2>
   <p>
     This is now possible with version 2.0. Now we can request for multiple
@@ -85,7 +85,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Adjusting prices</h2>
   <p>
     We do not support price adjustment in Shipping Guide 2.0. The pricing model
@@ -94,7 +94,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2 class="anchored">Should I handle warnings?</h2>
   <p>
     Ideally clients should not parse these warning codes for any logic as they
@@ -106,7 +106,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>HTTP status codes in JSON interface</h2>
   <p>
     The JSON interface uses
@@ -116,7 +116,7 @@ notanapi: true
     to indicate the success or failure of an API request.
   </p>
   <p>Here are some codes with added context :</p>
-  <ul>
+  <ul class="list--bullets">
     <li>
       400 - Bad Request. If request parameters are bad, or any of the mandatory
       request parameters is missing.
@@ -131,7 +131,7 @@ notanapi: true
   </ul>
 </section>
 
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Additional service XXX is not applicable for product YYY</h2>
   <p>
     If a requested additional service is not supported on requested product, API
@@ -140,7 +140,7 @@ notanapi: true
     can be found <a href="/api/services/#additional-services">here</a>.
   </p>
 </section>
-<section class="api__section">
+<section class="dev-documentation__section">
   <h2>Multiple packages (kolli) on rest endpoint</h2>
   <p>
     The package parameters supports postfixed indexes to differentiate different
