@@ -17,7 +17,7 @@
     <p><b>Media type:</b> <code>{{ .name }}</code></p>
   {{- end -}}
 
-  <ul class="codetabs" role="tablist">
+  <ul class="dev-codetabs" role="tablist">
     {{- $nameDash := replace .name "/" "-" -}}
     {{- $tabIDFormat := "" -}}
     {{- $tabIDExample := "" -}}
@@ -33,12 +33,12 @@
           {{- if (eq .name $type) -}}
             {{- $showResponse = true -}}
             {{- $tabIDFormat = (print $idType $nameDash "-format") | urlize -}}
-            <li role="presentation" class="codetabs__item active">
+            <li role="presentation" class="dev-codetabs__item active">
               <a
                 href="#{{ $tabIDFormat }}"
                 role="tab"
                 aria-controls="{{ $tabIDFormat }}"
-                class="codetabs__link"
+                class="dev-codetabs__link"
                 data-toggle="tab"
                 >{{ $formatType }} format</a
               >
@@ -54,25 +54,25 @@
         {{- $firstActive = " active" -}}
       {{- end -}}
       {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize -}}
-      <li role="presentation" class="codetabs__item{{ $firstActive }}">
+      <li role="presentation" class="dev-codetabs__item{{ $firstActive }}">
         <a
           href="#{{ $tabIDExample }}"
           role="tab"
           aria-controls="{{ $tabIDExample }}"
-          class="codetabs__link"
+          class="dev-codetabs__link"
           data-toggle="tab"
-          ><span class="extext">Example:</span> {{ .displayName }}</a
+          ><span class="dev-extext">Example:</span> {{ .displayName }}</a
         >
       </li>
     {{- end -}}
   </ul>
 
-  <div class="codetabs__content">
+  <div class="dev-codetabs__content">
     {{- if $showResponse -}}
       {{- with .type -}}
         <div
           role="tabpanel"
-          class="codetabs__panel active"
+          class="dev-codetabs__panel active"
           id="{{ $tabIDFormat }}"
         >
           {{ partial "api/ramltype.html" (dict "incDashType" . "incTypeDefs" $types "showHeader" false) }}
@@ -88,7 +88,7 @@
       {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize -}}
       <div
         role="tabpanel"
-        class="codetabs__panel {{ $firstActive }}"
+        class="dev-codetabs__panel {{ $firstActive }}"
         id="{{ $tabIDExample }}"
       >
         <div class="content">
