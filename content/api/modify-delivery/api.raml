@@ -17,6 +17,17 @@ documentation:
   content: |
     The Modify Delivery API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
+- title: Criteria
+  content: |
+    To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events must not be registered on the shipment:
+      - Damaged
+      - Deviation
+      - Returned
+      - Delivered
+      - Lost
+      - Partly delivered
+      - Stopped
+
 /allowed-modification:
   displayName: Allowed modifications
   description: It gives us the list of allowed modifications on a shipment along with failure causes.
@@ -40,7 +51,21 @@ documentation:
 
 /stop-shipment:
   displayName: Stop shipment
-  description: This will stop the shipment and send it back to the sender.
+  description: |
+    This will stop the shipment and send it back to the sender.
+
+    Stop delivery is available for the following products:
+       - 1000
+       - 1002
+       - 1202
+       - 1736
+       - 1988
+       - 3500
+       - 4850
+       - 5000
+       - 5600
+       - 5800
+
   post:
     description: Stop a shipment and return to sender.
     body:
@@ -61,7 +86,17 @@ documentation:
 
 /change-cod:
   displayName: Change cash on delivery
-  description: This is used the change the COD amount on the shipment.
+  description: |
+    This is used the change the COD amount on the shipment.
+
+    A COD registered on the parcel is required. Additionally, the parcel must be one of the following products:
+      - 1000
+      - 1002
+      - 1202
+      - 1736
+      - 1988
+      - 3500
+      - 5800
 
   post:
     description: Change cash on delivery amount to be paid.
@@ -83,7 +118,27 @@ documentation:
 
 /modifications/changeAddress/price/{shipment}/{oldPostal}/{newPostal}:
   displayName: Get price for change address
-  description: Get the cost for changing address on a shipment.
+  description: |
+    Get the cost for changing address on a shipment.
+
+    Change address is applicable for the following products:
+      - 1000
+      - 1202
+      - 1736
+      - 1988
+      - 5000
+      - 5600
+      - 5800
+
+    The following events cannot be registered on the shipment:
+      - Transport to recipient
+      - Partly delivered due to damage
+      - Home delivery
+
+    Must not have any of the following VAS associated with the parcel:
+     - 0010
+     - 1158
+     - 1159
 
   uriParameters:
     shipment:
