@@ -373,6 +373,26 @@ documentation:
       
       Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will become available for pickup at a specific pickup point on that specific date. Also note that CustomerNumber is mandatory to set in order to get estimated delivery time.
 
+- title: Get unique expected delivery dates
+  content: |
+      Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**. When using this parameter, the same delivery date might be returned several times (as several shipping dates might correspond to the same delivery date). To only get the unique alternative delivery dates use following field:
+      * SOAP: withUniqueAlternateDeliveryDates
+      ```xml
+      <withUniqueAlternateDeliveryDates>true</withUniqueAlternateDeliveryDates>
+      <numberOfAlternativeDeliveryDates>2</numberOfAlternativeDeliveryDates>
+      ```
+      * REST GET: uniqueAlternateDeliveryDates
+      ```json
+      uniqueAlternateDeliveryDates=true&numberofdeliverydates=2
+      ```
+      * REST POST: withUniqueAlternateDeliveryDates
+      ```json
+      "withUniqueAlternateDeliveryDates": true,
+      "numberOfAlternativeDeliveryDates": 2
+      ```
+
+      Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value.
+
 - title: Shipping Guide topics
   content: |
       If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
@@ -523,6 +543,10 @@ documentation:
         required: true
       estimateddeliverytime:
         description: True if you want estimated delivery time of input pickup points. Eligible services are 5800 and SERVICEPAKKE.
+        type: boolean
+        required: false
+      uniqueAlternateDeliveryDates:
+        description: True if you want unique expected delivery dates when requested with 'numberofdeliverydates'.
         type: boolean
         required: false
       pickuppoints:
