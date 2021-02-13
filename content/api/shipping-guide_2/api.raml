@@ -289,6 +289,8 @@ documentation:
       * Klimanøytral Servicepakke (SERVICEPAKKE)
       * Pakke til hentested (5800)
 
+      Note: setting the **actual shipping date** in the Shipping Guide request is a prerequisite for getting the correct estimate back from the machine learning model, as the leadtime is always calculated from the day the parcel is handed in to Bring. In absence for a shipping date set by the user, the Shipping Guide API will default to "now".    
+
       ### Parcels delivered to companies
       For the services Bedriftspakke (BPAKKE_DOR-DOR) and Pakke til bedrift (5000), you can from **February 15th 2021** get extended leadtime information - the estimated arrival time.
 
