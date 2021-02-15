@@ -1,5 +1,5 @@
 .dev-siteheader {
-  background-color: #222;
+  background-color: hsl(152, 100%, 9%);
 }
 
 .dev-siteheader__title {
@@ -53,8 +53,10 @@
   display: inline-block;
 }
 
-.dev-siteheader__nav a,
+.dev-siteheader__nav a {
+  color: white
+}
 .dev-siteheader__nav a:hover,
 .dev-siteheader__nav a:focus {
-  color: white;
+  color: hsl(75, 53%, 70.5%);
 }
