@@ -3,7 +3,7 @@
 }
 
 .dev-siteheader__title {
-  padding: 0.6rem 1rem 1rem;
+  padding: 0.8rem 1rem 1.2rem;
   display: flex;
   align-items: flex-end;
   flex-flow: row wrap;
@@ -27,7 +27,7 @@
   font-weight: normal;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 1.3rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.05rem;
 }
 
 .dev-tagline__env {
