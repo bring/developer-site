@@ -1,5 +1,5 @@
 .dev-documentation {
-  padding-top: 2rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
 }
 
@@ -9,10 +9,10 @@
 }
 
 .dev-documentation__section {
-  margin-bottom: 2rem;
-  padding: 0 0 4rem 4rem;
-  border-width: 3px;
-  border-color: #ddd;
+  margin-bottom: 3rem;
+  padding: 0 2rem 3rem 4rem;
+  border-width: 2px;
+  border-color: hsl(0, 0%, 86%);
   border-bottom-style: solid;
 }
 
@@ -26,7 +26,7 @@
   }
 
   .dev-documentation__section {
-    padding: 0 0 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
   }
 
   .dev-documentation__section:last-of-type {
