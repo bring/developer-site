@@ -4,19 +4,8 @@
 }
 
 .dev-documentation h1 {
-  font-size: 3.5rem;
-  font-weight: 400;
   padding-left: 4rem;
-}
-
-.dev-documentation h2 {
-    font-size: 2.3rem;
-    font-weight: 400;
-}
-
-.dev-documentation h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+  margin-bottom: 0.6em;
 }
 
 .dev-documentation__section {
@@ -34,15 +23,6 @@
 @media screen and (max-width: 50em) {
   .dev-documentation h1 {
     padding-left: 1rem;
-    font-size: 2rem;
-  }
-
-  .dev-documentation h2 {
-    font-size: 1.5rem;
-  }
-
-  .dev-documentation h3 {
-    font-size: 1rem;
   }
 
   .dev-documentation__section {
