@@ -1,6 +1,7 @@
 .sitefooter {
   background-color: hsl(152, 100%, 9%);
   padding: 0.5rem 4vmin;
+  margin-top: auto;
   color: #fff;
 }
 

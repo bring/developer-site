@@ -1,8 +1,8 @@
 .dev-pagelayout {
-  display: grid;
+  display: flex;
+  flex-flow: column nowrap;
   min-height: 100vh;
   max-height: max-content;
-  grid-template-rows: max-content 1fr max-content;
 }
 
 .dev-pagewmenu {

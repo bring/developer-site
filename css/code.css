@@ -16,6 +16,7 @@ code,
 }
 
 p code {
+  white-space: normal;
   background-color: hsl(0, 0%, 93.5%);
   padding: 0.1em 0.2em;
   border-radius: 2px;
