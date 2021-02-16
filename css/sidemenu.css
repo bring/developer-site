@@ -54,5 +54,6 @@
 }
 
 .dev-sidemenu__sublist a {
-  padding: 0.3rem 0.8rem 0.35rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.35rem;
 }
