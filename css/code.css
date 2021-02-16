@@ -4,12 +4,19 @@
 
 .filename {
   margin-bottom: 0.3em;
-  color: hsl(0, 0%, 45%);
+  color: hsl(0, 0%, 53.5%);
 }
 
 code,
 .filename {
   white-space: pre;
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', 'Courier New',
+  Courier, monospace;
   font-size: 0.82rem;
+}
+
+p code {
+  background-color: hsl(0, 0%, 93.5%);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
 }
