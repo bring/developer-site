@@ -10,10 +10,10 @@
       {{- range $index, $element := .Site.Menus.api -}}
         {{- $lastElement := "" -}}
         {{- if eq (add $index 1) $len -}}
-          {{- $lastElement = "dev-sidemenu__separator" -}}
+          {{- $lastElement = "dev-sidemenu__separator pbm mbm" -}}
         {{- end -}}
         <li
-          class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
+          class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
         >
           {{- $target := "" -}}
           {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
@@ -32,7 +32,7 @@
       {{- $apiData := .Site.Data.api -}}
       {{- range .Site.Menus.apidocs -}}
         {{- $identifier := .Identifier -}}
-        <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+        <li class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
           <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
           {{- $currentMenu := .Menu -}}
           {{- $currentMenuItem := . -}}
@@ -72,7 +72,7 @@
     {{- end -}}
     {{- if eq .Section "edi" -}}
       {{- range .Site.Menus.edi -}}
-        <li class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+        <li class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
           {{- $target := "" -}}
           {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
           <a
