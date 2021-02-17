@@ -43,7 +43,7 @@
     {{- end -}}
 
     {{- with .incProp.enum -}}
-      <br />
+      <br>
       Possible values:
       <ul>
         {{- range . -}}
@@ -53,27 +53,27 @@
     {{- end -}}
 
     {{- with .incProp.default -}}
-      <br />
+      <br>
       Default value: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.pattern -}}
-      <br />
+      <br>
       Pattern: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.minItems -}}
-      <br />
+      <br>
       Minimum number of items: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.maxItems -}}
-      <br />
+      <br>
       Maximum number of items: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.example -}}
-      <br />
+      <br>
       Example: <code>{{ . }}</code>
     {{- end -}}
   </td>
