@@ -31,7 +31,7 @@
     {{- end -}}
 
     {{- if (ne .incProp.displayName .incProp.name) -}}
-      {{- $desc = $desc | append .incProp.displayName | append ". " -}}
+      {{- $desc = $desc | append (print .incProp.displayName ". ") -}}
     {{- end -}}
 
     {{- with .incProp.description -}}

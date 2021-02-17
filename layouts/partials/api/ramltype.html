@@ -61,7 +61,7 @@
               {{- end -}}
 
               {{- if (eq $propTypes.displayName $propTypes.name) -}}
-                {{- $desc = $desc | append $propTypes.displayName | append ". " -}}
+                {{- $desc = $desc | append (print $propTypes.displayName ". ") -}}
               {{- end -}}
 
               {{- with $propTypes.description -}}
