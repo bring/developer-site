@@ -7,6 +7,12 @@ table {
   line-height: 1.4;
 }
 
+@media screen and (max-width: 62.5em) {
+  table {
+    font-size: 0.9rem;
+  }
+}
+
 caption {
   text-align: left;
   font-size: 1.17rem;
