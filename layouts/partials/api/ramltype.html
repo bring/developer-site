@@ -55,9 +55,9 @@
               {{- $desc := slice "Type: `" . "` " -}}
               {{- if (eq $showRequired false) -}}
                 {{- else if $propTypes.required -}}
-                {{- $desc = $desc | append "_Required._ " -}}
+                {{- $desc = $desc | append "<span class='dev-param dev-param--req'>Required</span> " -}}
                 {{- else -}}
-                {{- $desc = $desc | append "_Optional._ " -}}
+                {{- $desc = $desc | append "<span class='dev-param'>Optional</span> " -}}
               {{- end -}}
 
               {{- if (eq $propTypes.displayName $propTypes.name) -}}
