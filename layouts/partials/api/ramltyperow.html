@@ -25,13 +25,13 @@
     {{- if (eq $showRequired false) -}}
       {{- $desc = $desc | append "" -}}
       {{- else if .incProp.required -}}
-      {{- $desc = $desc | append "_Required._ " -}}
+      {{- $desc = $desc | append "<span class='dev-param dev-param--req mrxs'>Required</span> " -}}
       {{- else -}}
-      {{- $desc = $desc | append "_Optional._ " -}}
+      {{- $desc = $desc | append "<span class='dev-param mrxs'>Optional</span> " -}}
     {{- end -}}
 
     {{- if (ne .incProp.displayName .incProp.name) -}}
-      {{- $desc = $desc | append .incProp.displayName | append ". " -}}
+      {{- $desc = $desc | append (print .incProp.displayName ". ") -}}
     {{- end -}}
 
     {{- with .incProp.description -}}
@@ -43,7 +43,7 @@
     {{- end -}}
 
     {{- with .incProp.enum -}}
-      <br />
+      <br>
       Possible values:
       <ul>
         {{- range . -}}
@@ -53,27 +53,27 @@
     {{- end -}}
 
     {{- with .incProp.default -}}
-      <br />
+      <br>
       Default value: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.pattern -}}
-      <br />
+      <br>
       Pattern: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.minItems -}}
-      <br />
+      <br>
       Minimum number of items: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.maxItems -}}
-      <br />
+      <br>
       Maximum number of items: <code>{{ . }}</code>
     {{- end -}}
 
     {{- with .incProp.example -}}
-      <br />
+      <br>
       Example: <code>{{ . }}</code>
     {{- end -}}
   </td>

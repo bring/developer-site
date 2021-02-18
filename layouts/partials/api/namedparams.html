@@ -1,4 +1,4 @@
-<table class="api__params">
+<table>
   <thead>
     <th>{{ .title }}</th>
     <th>Type</th>
@@ -10,13 +10,12 @@
       <td><code>{{ delimit .type " " }}</code></td>
       <td>
         {{- $desc := slice -}}
-
         {{- if (eq .hideRequired true) -}}
           {{- $desc = $desc | append "" -}}
           {{- else if (eq .required true) -}}
-          {{- $desc = $desc | append "<small>_Required._</small> " -}}
+          {{- $desc = $desc | append "<span class='dev-param dev-param--req'>Required</span> " -}}
           {{- else -}}
-          {{- $desc = $desc | append "<small>_Optional._</small> " -}}
+          {{- $desc = $desc | append "<span class='dev-param'>Optional</span> " -}}
         {{- end -}}
 
         {{- if (ne .name .displayName) -}}
@@ -32,6 +31,7 @@
         {{- end -}}
 
         {{- with .enum -}}
+          <br>
           Possible values:
           <ul>
             {{- range . -}}
@@ -41,17 +41,17 @@
         {{- end -}}
 
         {{- with .default -}}
-          <br />
+          <br>
           Default value: <code>{{ . }}</code>
         {{- end -}}
 
         {{- with .pattern -}}
-          <br />
+          <br>
           Pattern: <code>{{ . }}</code>
         {{- end -}}
 
         {{- with .example -}}
-          <br />
+          <br>
           Example: <code>{{ . }}</code>
         {{- end -}}
       </td>

@@ -4,17 +4,18 @@ table {
   display: block;
   overflow-x: auto;
   margin-bottom: 2rem;
+  line-height: 1.4;
 }
 
-table caption {
+@media screen and (max-width: 62.5em) {
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+caption {
   text-align: left;
-  font-weight: 600;
-}
-
-thead {
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 1.17rem;
 }
 
 tr {
@@ -24,12 +25,13 @@ tr {
 
 thead tr {
   vertical-align: bottom;
-  border-bottom: 2px solid hsl(0, 0%, 90%);
+  border-bottom: 2px solid hsl(0, 0%, 86%);
+  padding: 0.7em 1.4em 0.3em 0.4em;
 }
 
 th,
 td {
-  padding: 0.5em 1.4em 0.4em 0.4em;
+  padding: 0.7em 1.4em 0.6em 0.4em;
 }
 
 td:last-of-type,
@@ -37,9 +39,27 @@ thead th:last-of-type {
   padding-right: 0.4em;
 }
 
+thead th {
+  padding: 0.7em 1.4em 0.3em 0.4em;
+  font-weight: 600;
+}
+
 td > p,
 td > ul {
   margin-bottom: 0;
+}
+
+.dev-param {
+  background-color: hsl(0, 0%, 95%);
+  padding: 0.1em 0.25em;
+  color:hsl(0, 0%, 26.5%);
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+
+.dev-param--req {
+  background-color: hsl(3, 27.5%, 95%);
+  color: hsl(3, 23%, 35%);
 }
 
 .tr {

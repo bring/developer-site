@@ -55,13 +55,13 @@
               {{- $desc := slice "Type: `" . "` " -}}
               {{- if (eq $showRequired false) -}}
                 {{- else if $propTypes.required -}}
-                {{- $desc = $desc | append "_Required._ " -}}
+                {{- $desc = $desc | append "<span class='dev-param dev-param--req'>Required</span> " -}}
                 {{- else -}}
-                {{- $desc = $desc | append "_Optional._ " -}}
+                {{- $desc = $desc | append "<span class='dev-param'>Optional</span> " -}}
               {{- end -}}
 
               {{- if (eq $propTypes.displayName $propTypes.name) -}}
-                {{- $desc = $desc | append $propTypes.displayName | append ". " -}}
+                {{- $desc = $desc | append (print $propTypes.displayName ". ") -}}
               {{- end -}}
 
               {{- with $propTypes.description -}}
@@ -74,7 +74,7 @@
               {{- end -}}
 
               {{- with $propTypes.enum -}}
-                <br />
+                <br>
                 Possible values:
                 <ul>
                   {{- range . -}}
@@ -86,27 +86,27 @@
               }
 
               {{- with $propTypes.default -}}
-                <br />
+                <br>
                 Default value: <code>{{ . }}</code>
               {{- end -}}
 
               {{- with $propTypes.pattern -}}
-                <br />
+                <br>
                 Pattern: <code>{{ . }}</code>
               {{- end -}}
 
               {{- with $propTypes.minItems -}}
-                <br />
+                <br>
                 Minimum number of items: <code>{{ . }}</code>
               {{- end -}}
 
               {{- with $propTypes.maxItems -}}
-                <br />
+                <br>
                 Maximum number of items: <code>{{ . }}</code>
               {{- end -}}
 
               {{- with $propTypes.example -}}
-                <br />
+                <br>
                 Example: <code>{{ . }}</code>
               {{- end -}}
             {{- end -}}

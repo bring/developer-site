@@ -15,8 +15,12 @@ code,
   font-size: 0.82rem;
 }
 
+td code,
 p code {
   white-space: normal;
+}
+
+p code {
   background-color: hsl(0, 0%, 93.5%);
   padding: 0.1em 0.2em;
   border-radius: 2px;

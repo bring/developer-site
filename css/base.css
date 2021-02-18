@@ -18,6 +18,7 @@ h2 {
   font-weight: 400;
 }
 
+blockquote + h2,
 table + h2,
 ol + h2,
 ul + h2,
@@ -35,6 +36,7 @@ h3 {
   font-weight: 600;
 }
 
+blockquote + h3,
 table + h3,
 ol + h3,
 ul + h3,
@@ -72,9 +74,12 @@ pre {
 
 blockquote {
   border-left: 2px solid hsl(0, 0%, 86%);
-  color: hsl(0, 0%, 53.5%);
-  padding: 0 1.5ch;
+  color: hsl(0, 0%, 40%);
+  padding: 0 1ch;
   font-style: italic;
+  margin: 0.5em 0 1em;
+  max-width: 54ch;
+
 }
 
 img {
