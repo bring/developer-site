@@ -42,11 +42,11 @@
                   {{- end -}}
                 </section>
                 <section class="dev-documentation__section">
-                  <h2 class="anchored" id="overview-of-endpoints">
+                  <h2 class="anchored mbm" id="overview-of-endpoints">
                     Overview of endpoints
                   </h2>
 
-                  <h3>Base URL</h3>
+                  <h3 class="dn">Base URL</h3>
                   <pre>{{ .baseUri }}</pre>
                   <table>
                     <thead>
@@ -80,7 +80,7 @@
                   {{- $resources := . -}}
                   {{- $displayName := .displayName -}}
                   <section class="dev-documentation__section">
-                    <h2 class="large anchored" id="{{ $displayName | urlize }}">
+                    <h2 class="anchored mbm" id="{{ $displayName | urlize }}">
                       {{- $displayName -}}
                     </h2>
                     {{- with .description -}}
@@ -92,7 +92,7 @@
                     {{- end -}}
 
                     {{- range .methods -}}
-                      <h3>URL</h3>
+                      <h3 class="dn">URL</h3>
                       {{- $urlOutput := slice -}}
                       {{- $absUri := $resources.absoluteUri -}}
                       {{- $hasExtension := false -}}
@@ -152,7 +152,7 @@
                       {{- end -}}
 
                       {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
-                        <h3>Request params</h3>
+                        <h3>Request parameters</h3>
                       {{- end -}}
 
                       {{/* For each endpoint: List all URI parameters */}}
