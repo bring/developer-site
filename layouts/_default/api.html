@@ -109,9 +109,10 @@
                         {{- $urlOutput = $urlOutput | append $absUri -}}
                       {{- end -}}
 
-                      <pre
-                        class="api__url"
-                      >{{ .method | upper }}<br>{{ delimit $urlOutput "<br>" }}</pre>
+                      <pre class="flex align-ic">
+                        <span class="mrs phs pvxs bg-gray4">{{ .method | upper }}</span>
+                        <span>{{ delimit $urlOutput "<br>" }}</span>
+                      </pre>
 
                       {{/* uri params exists and first one is not mediaTypeExtension */}}
                       {{- $otherUriParamsMediaType := false -}}
