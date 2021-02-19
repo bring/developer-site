@@ -17,9 +17,9 @@ documentation:
   content: |
     The Modify Delivery API requires authentication. To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-- title: Criteria
+- title: Common Criteria
   content: |
-    To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events must not be registered on the shipment:
+    To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events cannot be registered on the shipment:
       - Damaged
       - Deviation
       - Returned
@@ -27,6 +27,93 @@ documentation:
       - Lost
       - Partly delivered
       - Stopped
+
+- title: Service overview
+  content: |
+   <table style = "width 100%">
+     <thead>
+      <tr>
+        <th style="text-align: left">Service</th>
+        <th style="text-align: left">Service code</th>
+        <th style="text-align: left">Stop shipment</th>
+        <th style="text-align: left">Change COD</th>
+        <th style="text-align: left">Change Address</th>
+      </tr>
+     </thead>
+     <tbody>
+       <tr>
+          <td>Bedriftspakke Dør - Dør Innland</td>
+          <td>1000</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Bedriftspakke ekspress over natten</td>
+          <td>1002</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+       </tr>
+       <tr>
+          <td>Klimanøytral Servicepakke</td>
+          <td>1202</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>På Døren</td>
+          <td>1736</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Konv Bedriftspakke Flerkolli</td>
+          <td>1988</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Bedriftspakke Standard</td>
+          <td>3500</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+       </tr>
+       <tr>
+          <td>Ekspress neste dag</td>
+          <td>4850</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+       </tr>
+       <tr>
+          <td>Pakke til bedrift</td>
+          <td>5000</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Pakke levert hjem</td>
+          <td>5600</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Pakke til hentested</td>
+          <td>5800</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+
+     </tbody>
+   </table>
 
 /allowed-modification:
   displayName: Allowed modifications
@@ -54,18 +141,6 @@ documentation:
   description: |
     This will stop the shipment and send it back to the sender.
 
-    Stop delivery is available for the following products:
-       - 1000
-       - 1002
-       - 1202
-       - 1736
-       - 1988
-       - 3500
-       - 4850
-       - 5000
-       - 5600
-       - 5800
-
   post:
     description: Stop a shipment and return to sender.
     body:
@@ -89,14 +164,8 @@ documentation:
   description: |
     This is used the change the COD amount on the shipment.
 
-    A COD registered on the parcel is required. Additionally, the parcel must be one of the following products:
-      - 1000
-      - 1002
-      - 1202
-      - 1736
-      - 1988
-      - 3500
-      - 5800
+    ### Criteria
+    The shipment must have "Betaling ved utlevering (COD)" with VAS-Code 1000 registered.
 
   post:
     description: Change cash on delivery amount to be paid.
@@ -120,25 +189,6 @@ documentation:
   displayName: Get price for change address
   description: |
     Get the cost for changing address on a shipment.
-
-    Change address is applicable for the following products:
-      - 1000
-      - 1202
-      - 1736
-      - 1988
-      - 5000
-      - 5600
-      - 5800
-
-    The following events cannot be registered on the shipment:
-      - Transport to recipient
-      - Partly delivered due to damage
-      - Home delivery
-
-    Must not have any of the following VAS associated with the parcel:
-     - 0010
-     - 1158
-     - 1159
 
   uriParameters:
     shipment:
@@ -170,7 +220,20 @@ documentation:
 
 /modifications/{shipmentNumber}/address:
   displayName: Change recipient address of delivery
-  description: This is used to change the recipient delivery address.
+  description: |
+   This is used to change the recipient delivery address.
+
+   ### Criteria
+
+   The following events cannot be registered on the shipment:
+    - Transport to recipient
+    - Partly delivered due to damage
+    - Home delivery
+
+   The shipment must not have any of the following VAS registered:
+    - Alternativt utleveringssted (0010)
+    - Mottakerbestilt hjemlevering (1158, 1159)
+
   uriParameters:
     shipmentNumber:
       description: Shipment number to change address for.
