@@ -47,17 +47,17 @@
         {{- end -}}
       </li>
 
-      {{ range $paginator.Pagers }}
-        {{ $active := "" }}
-        {{ if eq . $paginator }}
-          {{ $active = "pagination__btn--active" }}
-        {{ end }}
+      {{- range $paginator.Pagers -}}
+        {{- $active := "" -}}
+        {{- if eq . $paginator -}}
+          {{- $active = "pagination__btn--active" -}}
+        {{- end -}}
         <li class="pagination__element">
           <a href="{{ .URL }}" class="pagination__btn {{ $active }}"
             >{{ .PageNumber }}</a
           >
         </li>
-      {{ end }}
+      {{- end -}}
 
       {{- if $paginator.HasNext -}}
         <a
