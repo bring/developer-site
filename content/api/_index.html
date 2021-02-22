@@ -1,80 +1,105 @@
 ---
-title: API documentation
+title: Getting started with Bring APIs
 layout: api
 notanapi: true
 menu:
   api:
-    title: Getting Started
-weight: 2
+    title: Getting started
+weight: 1
 disqus_identifier: https-developer-bring-com-api
 ---
 
-<h1 class="mbl">Getting started</h1>
+<h1>Getting started</h1>
 <section class="dev-documentation__section">
-  <h2 class="anchored " id="introduction">Introduction</h2>
-
-  <p>
-    Bring provides a collection of APIs to facilitate integration with your
-    systems. If you're running a webshop, or any software dealing with shipments
-    from Nordic countries, using Bring APIs can add value to your business and
-    to your customers:
-  </p>
-
-  <ul>
-    <li>
-      Let the customer choose between alternative shipping methods upon checkout
-      with the
-      <a href="./shipping-guide_2/">Shipping Guide API</a>
-    </li>
-    <li>
-      Show your customers the current status of their shipment with the
-      <a href="./tracking/">Tracking API</a>
-    </li>
-    <li>
-      Book a shipment through the
-      <a href="./booking/">Booking API</a>
-    </li>
-    <li>
-      Generate and download reports with the
-      <a href="./reports">Reports API</a>
-    </li>
-  </ul>
-
-  <h3>API status</h3>
-
-  <p>
-    We continuously monitor our APIs with health checks. We use that for active
-    monitoring and to measure our uptime. As a customer, you find our realtime
-    and historical status at
-    <a
-      href="https://status.bring.systems"
-      target="_blank"
-      rel="noopener noreferrer"
-      >our status page</a
-    >.
-  </p>
-</section>
-
-<section class="dev-documentation__section" id="">
   <h2 class="anchored " id="authentication">Authentication</h2>
 
+  <p>You need an API key to integrate with the Bring APIs.</p>
   <p>
-    APIs for
-    <a href="./shipping-guide_2/">Shipping Guide</a>,
-    <a href="./pickup-point/">Pickup Point</a>,
-    <a href="./postal-code/">Postal Code</a>,
-    <a href="./booking/">Booking</a>,
-    <a href="./shipment/">Shipment</a>,
-    <a href="./modify-delivery/">Modify Delivery</a>,
-    <a href="./event-cast/">Event Cast</a>,
-    <a href="./reports/">Reports</a> and
-    <a href="./invoice/">Invoice</a>
-    require authentication, while
-    <a href="./tracking/">Tracking</a>
-    has extra features when authenticated.
+    The key is unique to your user and is used in the authentication headers.
+    All our APIs require authentication except for some basic functionality in
+    the <a href="./tracking/#authentication">Tracking API</a>.
   </p>
 
-  <p>We currently use custom headers for authenticating:</p>
+  <h3>Get an API key</h3>
+  <div class="flex mbl">
+    <div class="w100p maxw16r mrl">
+      <h4 class="fwn mbxs">1. Sign up</h4>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+        class="bra2px mbs db"
+        clip-rule="evenodd"
+        viewBox="0 0 402 466"
+      >
+        <path fill="#eff5e5" d="M0 18.43h401.21v447H.01z" />
+        <path fill="#00643a" d="M0 0h401.21v36.87H.01z" />
+        <path
+          fill="#fff"
+          d="M323.58 271.63H77.64v33h245.94v-33zM193.51 195.8H77.64v33h115.87v-33zm130.07 0H207.71v33h115.87v-33zm0-71.64H77.64v33h245.94v-33z"
+        />
+        <path
+          fill="#c4dda2"
+          d="M81.68 262.13h71a5.5 5.5 0 000-11h-71a5.5 5.5 0 000 11zm130.07-75.82h53.9a5.5 5.5 0 100-11h-53.9a5.5 5.5 0 000 11zm-130.07 0h53.9a5.5 5.5 0 000-11h-53.9a5.5 5.5 0 000 11zm0-71.65h100.2a5.5 5.5 0 100-11H81.67a5.5 5.5 0 000 11z"
+        />
+        <path
+          fill="#7ac144"
+          d="M322.62 342.09a4.95 4.95 0 00-4.95-4.95h-96.94a4.95 4.95 0 00-4.95 4.95v23.1a4.95 4.95 0 004.95 4.95h96.94a4.95 4.95 0 004.95-4.95v-23.1z"
+        />
+      </svg>
+      <p>
+        If you don’t already have a user,
+        <a href="https://www.mybring.com/signup/register/user"
+          >register a new one in Mybring</a
+        >.
+      </p>
+    </div>
+    <div class="w100p maxw16r">
+      <h4 class="fwn mbxs">2. Generate key</h4>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+        class="bra2px mbs db"
+        clip-rule="evenodd"
+        viewBox="0 0 402 466"
+      >
+        <path fill="#f1f7e9" d="M0 18.43h401.21v447H.01z" />
+        <path fill="#00643a" d="M0 0h401.22v36.87H0z" />
+        <path fill="#d0e4b4" d="M307.35 36.87h81.8v57.14h-81.8z" />
+        <path fill="#fff" d="M77.64 188.34h245.94v55H77.64z" />
+        <path
+          fill="#c4dda2"
+          d="M225.63 223.45h26.18a7.5 7.5 0 000-15h-26.18a7.5 7.5 0 000 15zm-126.26 0h101.24a7.5 7.5 0 000-15H99.37a7.5 7.5 0 000 15zm175.55 0h28.3a7.5 7.5 0 000-15h-28.3a7.5 7.5 0 000 15z"
+        />
+        <path
+          fill="#7ac144"
+          d="M184.48 139.56a4.95 4.95 0 00-4.95-4.95H82.6a4.95 4.95 0 00-4.95 4.95v23.1a4.95 4.95 0 004.95 4.95h96.94a4.95 4.95 0 004.95-4.95v-23.1z"
+        />
+        <path
+          fill="#00643a"
+          fill-rule="nonzero"
+          d="M348.24 64.5a8.33 8.33 0 100-16.66 8.33 8.33 0 000 16.66zm5.71 2.38h-.61a11.72 11.72 0 01-5.1 1.2c-1.83 0-3.54-.45-5.1-1.2h-.61a8.57 8.57 0 00-8.58 8.57v2.15c0 1.97 1.6 3.57 3.58 3.57h21.42c1.98 0 3.58-1.6 3.58-3.57v-2.15a8.57 8.57 0 00-8.58-8.57z"
+        />
+        <path
+          fill="#fff"
+          fill-rule="nonzero"
+          d="M347.65 27.42l-6.76-6.77a.84.84 0 010-1.18l.79-.8a.84.84 0 011.18 0l5.38 5.37 5.4-5.36a.84.84 0 011.17 0l.8.79c.32.32.32.85 0 1.18l-6.77 6.77a.84.84 0 01-1.19 0z"
+        />
+      </svg>
+      <p>
+        Head to
+        <a href="https://www.mybring.com/useradmin/account/settings/api"
+          >the API page</a
+        >
+        in your user profile and generate the API key.
+      </p>
+    </div>
+  </div>
+
+  <h3>Authentication headers</h3>
 
   <table>
     <thead>
@@ -93,192 +118,42 @@ disqus_identifier: https-developer-bring-com-api
       <tr>
         <td><code>X-MyBring-API-Key</code></td>
         <td><code>1234abc-abcd-1234-5678-abcd1234abcd</code></td>
-        <td>Your user's API key</td>
+        <td>Your user’s API key</td>
       </tr>
       <tr>
         <td><code>X-Bring-Client-URL</code></td>
         <td><code>https://example.com/</code></td>
-        <td>A URL that sort of identifies where you're using the APIs.</td>
+        <td>A URL identifying where you’re using the APIs</td>
       </tr>
     </tbody>
   </table>
-
-  <h3>Getting an API key</h3>
-  <p>
-    To get an API key, you must be
-    <a href="https://www.mybring.com/signup/register/user">registered in Mybring</a>.
-  <br>
-    As a registered Mybring user, head to
-    <a href="https://www.mybring.com/useradmin/account/settings/api"
-      >settings and API</a
-    >
-    to generate and get the API key for your user.
-  </p>
 </section>
 
 <section class="dev-documentation__section" id="">
-  <h2 class="anchored " id="json-xml-soap">JSON, XML, SOAP</h2>
+  <h2 class="anchored " id="api-status">Status and support</h2>
+  <p>
+    We continuously monitor our APIs with health checks to measure uptime.
+    Real-time and historical status can be found at
+    <a
+      href="https://status.bring.systems"
+      target="_blank"
+      rel="noopener noreferrer"
+      >our status page</a
+    >.
+  </p>
+  <p>
+    If you have trouble or questions regarding the different APIs, we actively
+    use the comment sections on the respective API docs.
+  </p>
+</section>
 
-  <p>Our APIs support a mix of formats:</p>
-
-  <table class="apitable">
-    <thead>
-      <tr>
-        <th>API</th>
-        <th class="apitable__togglecell">JSON</th>
-        <th class="apitable__togglecell">XML</th>
-        <th class="apitable__togglecell">SOAP</th>
-        <th class="apitable__togglecell">Requires authentication</th>
-        <th class="apitable__togglecell">Extra features when authenticated</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <a class="nowrap" href="./shipping-guide_2/"
-            >Shipping Guide</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./pickup-point/"
-            >Pickup Point</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./postal-code/"
-            >Postal Code</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./booking/">Booking</a>
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./shipment/">Shipment</a>
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./easy-return-service/"
-            >Easy Return Service</a
-          >
-        </td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./modify-delivery/"
-            >Modify Delivery</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./tracking/">Tracking</a>
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./event-cast/"
-            >Event Cast</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./reports/">Reports</a>
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./invoice/">Invoice</a>
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./order-management/"
-            >Order Management</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-      <tr>
-        <td>
-          <a class="nowrap" href="./warehousing/"
-            >Warehousing</a
-          >
-        </td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">✓</td>
-        <td class="apitable__togglecell">—</td>
-      </tr>
-    </tbody>
-  </table>
+<section class="dev-documentation__section">
+  <h2 class="anchored " id="formats">Formats</h2>
+  <p>
+    All our APIs support JSON and XML.
+    <a class="nowrap" href="./shipping-guide_2/">Shipping Guide</a>,
+    <a class="nowrap" href="./booking/">Booking</a>,
+    <a class="nowrap" href="./order-management/">Order Management</a> and
+    <a class="nowrap" href="./warehousing/">Warehousing</a> also support SOAP.
+  </p>
 </section>
