@@ -1,4 +1,10 @@
 <div class="dev-blog phl flex flex-wrap">
+  {{- with .Title -}}
+    <div class="mbm">
+      <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+    </div>
+    <h1 class="w100p mbm">{{ . }}</h1>
+  {{- end -}}
   {{- range where .Paginator.Pages "Section" "blog" -}}
     <article class="dev-blog__post bg-gray2 bra2px mrxs mbxs">
       <header>
