@@ -1,20 +1,22 @@
-<div class="dev-blog">
+<div class="dev-blog phl flex flex-wrap">
   {{- range where .Paginator.Pages "Section" "blog" -}}
-    <article class="dev-blog__post">
-      <header class="dev-blog__post__header">
-        <h2 class="dev-blog__post__heading alpha">
+    <article class="dev-blog__post bg-gray2 bra2px mrxs mbxs">
+      <header>
+        <h2 class="dev-blog__heading mbm">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
-        {{ partial "blog-meta.html" . }}
+        <div class="text-note">
+          {{ partial "blog-meta.html" . }}
+        </div>
       </header>
-      <div class="dev-blog__post__content">
+      <div>
         {{- with .Resources.Match (print .Params.heroImage) -}}
           {{- range first 1 . -}}
             <img class="mbm" src="{{ .RelPermalink }}" alt="" />
           {{- end -}}
         {{- end -}}
         <p>{{ .Summary | plainify | htmlUnescape }}</p>
-        <a href="{{ .RelPermalink }}">Read more ></a>
+        <a href="{{ .RelPermalink }}">Read more &rarr;</a>
       </div>
     </article>
   {{- end -}}

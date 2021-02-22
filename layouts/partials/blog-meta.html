@@ -1,37 +1,49 @@
-{{- partial "icons.svg" -}}
-<div class="dev-blog__post__meta flexgrid gaps mbm">
-  <div class="dev-blog__post__meta-item flexgrid gaps">
+<div class="mbs">
+  <div class="dev-blog__meta-item flex flex-wrap gaps mbxs">
     {{- range $.Param "authors" -}}
       <a href="https://github.com/{{ . }}">
         <img
-          alt="👤"
-          class="dev-blog-meta-icon"
+          alt=""
+          class="dev-blog__meta-icon"
           src="https://avatars.githubusercontent.com/{{ . }}?s=48"
-          width="24"
-          height="24"
+          width="16"
+          height="16"
         />
         <span>{{ . }}</span>
       </a>
     {{- end -}}
   </div>
-  <div class="dev-blog__post__meta-item flexgrid align-ic">
-    <svg class="icon"><use xlink:href="#calendar" /></svg>
-    <time
-      datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-      >&nbsp;{{ .PublishDate.Format "Jan 2, 2006" }}</time
-    >
-  </div>
-  <div class="dev-blog__post__meta-item flexgrid align-ic">
-    <svg class="icon"><use xlink:href="#tag" /></svg>
-    &nbsp;
-    <div class="list-inline">
-      {{- range $index, $tags := (.GetTerms "tags") -}}
-        {{- $comma := ", " -}}
-        {{- if $index -}}{{- $comma -}}{{- end -}}
-        <a href="{{ .RelPermalink }}">
-          {{- .LinkTitle -}}
-        </a>
-      {{- end -}}
+  <div class="flex flex-wrap">
+    <div class="dev-blog__meta-item flex align-ic mrs">
+      <span
+        data-mybicon="mybicon-calendar"
+        data-mybicon-class="dev-blog__meta-icon"
+      ></span>
+      <time
+        datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+        >&nbsp;{{ .PublishDate.Format "Jan 2, 2006" }}</time
+      >
+    </div>
+    <div class="dev-blog__meta-item flexgrid align-ic">
+      <svg
+        class="dev-blog__meta-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M0 252.12V48A48 48 0 0148 0h204.12a48 48 0 0133.94 14.06l211.88 211.88a48 48 0 010 67.88L293.82 497.94a48 48 0 01-67.88 0L14.06 286.06A48 48 0 010 252.12zM112 64a48 48 0 100 96 48 48 0 000-96z"
+        />
+      </svg>
+      &nbsp;
+      <div class="list-inline">
+        {{- range $index, $tags := (.GetTerms "tags") -}}
+          {{- $comma := ", " -}}
+          {{- if $index -}}{{- $comma -}}{{- end -}}
+          <a href="{{ .RelPermalink }}">
+            {{- .LinkTitle -}}
+          </a>
+        {{- end -}}
+      </div>
     </div>
   </div>
 </div>
