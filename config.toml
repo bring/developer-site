@@ -5,7 +5,7 @@ title = "Bring Developer"
 pluralizelisttitles = false
 pygmentsUseClasses = true
 summaryLength = 60
-paginate = 10
+paginate = 12
 ignorefiles = ["css/main.js"]
 disqusShortname = "bringdev"
 
