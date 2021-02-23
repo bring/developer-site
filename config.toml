@@ -57,7 +57,7 @@ tag = "tags"
 [menu]
 
 [[menu.api]]
-title = "API Status"
+title = "API status"
 url = "https://status.bring.systems"
 weight = 1000
 
