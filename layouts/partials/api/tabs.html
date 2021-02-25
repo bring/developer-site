@@ -14,7 +14,7 @@
   {{- end -}}
 
   {{- if $multiMethods -}}
-    <p><b>Media type:</b> <code>{{ .name }}</code></p>
+    <p>Media type: <code>{{ .name }}</code></p>
   {{- end -}}
 
   <ul class="dev-codetabs" role="tablist">
@@ -38,7 +38,7 @@
                 href="#{{ $tabIDFormat }}"
                 role="tab"
                 aria-controls="{{ $tabIDFormat }}"
-                class="dev-codetabs__link"
+                class="dev-codetabs__link format"
                 data-toggle="tab"
                 >{{ $formatType }} format</a
               >
@@ -61,7 +61,7 @@
           aria-controls="{{ $tabIDExample }}"
           class="dev-codetabs__link"
           data-toggle="tab"
-          ><span class="dev-extext">Example:</span> {{ .displayName }}</a
+          ><span class="dev-codetabs__textex">Example:</span> {{ .displayName }}</a
         >
       </li>
     {{- end -}}
@@ -91,7 +91,7 @@
         class="dev-codetabs__panel {{ $firstActive }}"
         id="{{ $tabIDExample }}"
       >
-        <div class="content">
+        <div>
           {{- with .description -}}
             {{- if in (string .) "\n\n" -}}
               {{ .| markdownify }}

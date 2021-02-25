@@ -88,3 +88,7 @@ td > ul {
     width: 10rem;
   }
 }
+
+.fancy-dl dt {
+  margin-top: 1rem;
+}
