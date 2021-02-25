@@ -1,51 +1,62 @@
 h4 + .dev-codetabs {
   margin-top: 1rem;
 }
+
 ul.dev-codetabs {
+  max-width: 100%;
   list-style-type: none;
-  margin: 0;
-  margin-left: 0.6rem;
+  margin: 1rem 0 0;
   display: flex;
   flex-flow: row wrap;
   gap: 0.25rem;
 }
+
 .dev-codetabs__item {
-  position: relative;
-  border-top-width: 3px;
-  border-top-style: solid;
-  max-width: initial;
-}
-.dev-codetabs__item:not(.active) {
-  border-top-color: hsl(0, 0%, 95%);
   background-color: hsl(0, 0%, 95%);
-  top: 0;
+  border-radius: 2px;
+  border-bottom: 2px solid hsl(0, 0%, 95%);;
 }
+
+.dev-codetabs__item:focus,
+.dev-codetabs__item:hover {
+  background-color: hsl(86, 40%, 96%);
+  border-bottom-color: hsl(86, 40%, 96%);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+}
+
+.dev-codetabs__item .format {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+
 .dev-codetabs__item.active {
-  border-top-color: #7bc144;
-  border-left: 1px solid hsl(0, 0%, 86%);
-  border-right: 1px solid hsl(0, 0%, 86%);
-  top: 1px;
-  background-color: #fff;
+  background-color: hsl(86, 40%, 94%);
+  border-bottom-color: hsl(155, 100%, 19.6%);
+  box-shadow: none;
 }
+
+.dev-codetabs__item.active a {
+  cursor: default;
+}
+
 .dev-codetabs__link {
-  display: inline-block;
-  padding: 0.7rem 1.6rem 0.6rem;
+  display: flex;
+  padding: 0.5rem 1rem 0.3rem;
   color: #414141;
+  flex-flow: column nowrap;
 }
+
 .dev-codetabs__content {
-  padding-top: 1.2rem;
-  padding-right: 1.2rem;
-  padding-left: 1.2rem;
-  margin-bottom: 2rem;
-  border: 1px solid hsl(0, 0%, 86%);
+  margin-top: 1.25rem;
+  margin-bottom: 3rem;
 }
+
 .dev-codetabs__panel:not(.active) {
   display: none;
 }
 
-.dev-extext {
-  font-size: 85%;
-  margin-left: -0.4em;
-  font-weight: 500;
+.dev-codetabs__textex {
+  font-size: 0.83rem;
+  line-height: 1;
   color: hsl(0, 0%, 40%);
 }
