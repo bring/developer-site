@@ -19,17 +19,18 @@ documentation:
 
 - title: Common Criteria
   content: |
-    To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events cannot be registered on the shipment:
+    To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events should not be present on the shipment:
       - Damaged
       - Deviation
       - Returned
       - Delivered
       - Lost
       - Partly delivered
-      - Stopped
+      - Stop Shipment
 
 - title: Service overview
   content: |
+   The table shows currently supported services and the corresponding usage for modifiy delivery APIs.
    <table style = "width 100%">
      <thead>
       <tr>
@@ -162,7 +163,7 @@ documentation:
 /change-cod:
   displayName: Change cash on delivery
   description: |
-    This is used the change the COD amount on the shipment.
+    This is used to change the COD amount on the shipment.
 
     ### Criteria
     The shipment must have "Betaling ved utlevering (COD)" with VAS-Code 1000 registered.
@@ -188,7 +189,8 @@ documentation:
 /modifications/changeAddress/price/{shipment}/{oldPostal}/{newPostal}:
   displayName: Get price for change address
   description: |
-    Get the cost for changing address on a shipment.
+    Get the cost for changing address on a shipment. Currently the price for changing address is a fixed amount. It will
+    give exactly the same amount as in the example below.
 
   uriParameters:
     shipment:
@@ -225,10 +227,10 @@ documentation:
 
    ### Criteria
 
-   The following events cannot be registered on the shipment:
-    - Transport to recipient
+   The following events should not be present on the shipment:
+    - Loaded for Delivery
     - Partly delivered due to damage
-    - Home delivery
+    - Home delivery ordered by recipient
 
    The shipment must not have any of the following VAS registered:
     - Alternativt utleveringssted (0010)
