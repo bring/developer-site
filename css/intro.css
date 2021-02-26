@@ -20,7 +20,7 @@
 @media screen and (max-width: 50em) {
   .dev-intro {
     padding: 6vmin 4vmin 6vmin;
-    background-color: #f2f2f3;
+    background-color: var(--gray-95);
   }
 
   .dev-intro__tagline {

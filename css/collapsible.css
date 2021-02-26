@@ -2,8 +2,8 @@
     margin-bottom: 0.5rem;
   }
   .dev-collapsible__toggler {
-    background-color: #f2f2f2;
-    color: #414141;
+    background-color: var(--gray-95);
+    color: var(--gray-26);
     font-weight: bold;
     display: block;
     padding: 0.75rem 0.5rem;
@@ -11,13 +11,13 @@
     align-items: center;
   }
   .dev-collapsible__toggler:hover {
-    background-color: #e6e6e6;
+    background-color: var(--gray-90);
   }
   .dev-collapsible__toggler__icon {
     margin-right: 0.25rem;
     width: 1rem;
-    fill: #888;
-    transition: transform 0.2s ease 0s;
+    fill: var(--gray-60);
+    transition: transform 0.15s ease-out;
   }
   .dev-collapsible__toggler--expanded .dev-collapsible__toggler__icon {
     transform: rotate(90deg);

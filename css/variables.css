@@ -1,0 +1,16 @@
+:root {
+--gray-95: hsl(0, 0%, 95%); /* #f2f2f2 */
+--gray-90: hsl(0, 0%, 90%);
+--gray-86: hsl(0, 0%, 86%);
+--gray-60: hsl(0, 0%, 60%); /* #999999 */
+--gray-40: hsl(0, 0%, 40%); /* #666666 */
+--gray-26: hsl(0, 0%, 26.5%); /* #444444 */
+--gray-13: hsl(0, 0%, 13%); /* #222222 */
+
+--green-light: hsl(75, 53%, 70.5%); /* #c8dc8c */
+--green-lighter: hsl(86, 47%, 94%); /* #f1f7e9 */
+--green-lighter-hover: hsl(86, 40%, 96%);
+--green-lighter-active: hsl(86, 40%, 92%);
+--green-dark: hsl(155, 100%, 19.6%); /* #00643a */
+--green-darker: hsl(152, 100%, 9%);
+}
