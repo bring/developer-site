@@ -4,7 +4,7 @@
 
 .filename {
   margin-bottom: 0.3em;
-  color: hsl(0, 0%, 53.5%);
+  color: var(--gray-40);
 }
 
 code,
@@ -21,7 +21,7 @@ p code {
 }
 
 p code {
-  background-color: hsl(0, 0%, 93.5%);
+  background-color: var(--gray-90);
   padding: 0.1em 0.2em;
   border-radius: 2px;
 }

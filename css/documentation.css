@@ -12,7 +12,7 @@
   margin-bottom: 3rem;
   padding: 0 2rem 3rem 4rem;
   border-width: 2px;
-  border-color: hsl(0, 0%, 86%);
+  border-color: var(--gray-86);
   border-bottom-style: solid;
 }
 

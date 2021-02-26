@@ -1,5 +1,5 @@
 .dev-siteheader {
-  background-color: hsl(152, 100%, 9%);
+  background-color: var(--green-darker);
 }
 
 .dev-siteheader__title {
@@ -58,5 +58,5 @@
 }
 .dev-siteheader__nav a:hover,
 .dev-siteheader__nav a:focus {
-  color: hsl(75, 53%, 70.5%);
+  color: var(--green-light);
 }

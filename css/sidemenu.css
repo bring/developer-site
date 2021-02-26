@@ -1,5 +1,5 @@
 .dev-sidemenu {
-  background-color: hsl(0, 0%, 95%);
+  background-color: var(--gray-95);
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -21,7 +21,7 @@
 }
 
 .dev-sidemenu__separator {
-  border-bottom: 1px solid hsl(0, 0%, 86%);
+  border-bottom: 1px solid var(--gray-86);
 }
 
 .dev-sidemenu__apititle {
@@ -32,18 +32,18 @@
 }
 
 .dev-sidemenu a {
-  color: #414141;
+  color: var(--gray-26);
   display: block;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
-  transition: background-color 0.15s ease-out;
+  transition: background-color var(--easeout-15);
   border-radius: 2px;
 }
 
 .dev-sidemenu a:hover,
 .dev-sidemenu a:focus {
   background-color: rgba(0, 0, 0, 0.08);
-  color: #222;
+  color: var(--gray-13);
 }
 
 .dev-sidemenu__sublist {
@@ -56,4 +56,16 @@
 .dev-sidemenu__sublist a {
   padding-top: 0.3rem;
   padding-bottom: 0.35rem;
+}
+
+.dev-sidemenu__icon {
+  fill: currentColor;
+  color: hsla(0, 0%, 100%, 0);
+  transition: color var(--easeout-15);
+  width: 0.83em;
+}
+
+.dev-sidemenu a:hover .dev-sidemenu__icon,
+.dev-sidemenu a:focus .dev-sidemenu__icon {
+  color: hsla(0, 0%, 40%, 1);
 }

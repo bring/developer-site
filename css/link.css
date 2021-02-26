@@ -2,18 +2,18 @@
   display: flex;
   flex-flow: column;
   align-items: center;
-  border: 3px solid #f2f2f3;
+  border: 3px solid var(--gray-95);
   text-align: center;
   padding: 1rem;
-  color: #444444;
+  color: var(--gray-26);
 }
 
 .dev-link--box:hover {
-  border: 3px solid #dbdbdb;
+  border: 3px solid var(--gray-86);
   text-decoration: none;
 }
 
 .dev-link--background:hover {
-  background-color: #f2f2f3;
+  background-color: var(--gray-95);
   text-decoration: none;
 }
