@@ -76,7 +76,7 @@ samp {
 }
 
 pre {
-  background-color: hsl(0, 0%, 97%);
+  background-color: var(--gray-95);
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 0.82rem;
   padding: 0.75rem;
@@ -84,8 +84,8 @@ pre {
 }
 
 blockquote {
-  border-left: 2px solid hsl(0, 0%, 86%);
-  color: hsl(0, 0%, 40%);
+  border-left: 2px solid var(--gray-86);
+  color: var(--gray-40);
   padding: 0 1ch;
   font-style: italic;
   margin: 0.5em 0 1em;

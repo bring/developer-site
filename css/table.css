@@ -20,12 +20,12 @@ caption {
 
 tr {
   vertical-align: top;
-  border-bottom: 1px solid hsl(0, 0%, 90%);
+  border-bottom: 1px solid var(--gray-90);
 }
 
 thead tr {
   vertical-align: bottom;
-  border-bottom: 2px solid hsl(0, 0%, 86%);
+  border-bottom: 2px solid var(--gray-86);
   padding: 0.7em 1.4em 0.3em 0.4em;
 }
 
@@ -50,9 +50,9 @@ td > ul {
 }
 
 .dev-param {
-  background-color: hsl(0, 0%, 95%);
+  background-color: var(--gray-95);
   padding: 0.1em 0.25em;
-  color:hsl(0, 0%, 26.5%);
+  color:var(--gray-26);
   font-size: 0.9em;
   border-radius: 2px;
 }
@@ -74,8 +74,9 @@ td > ul {
   white-space: nowrap;
   font-size: 0.75rem;
 }
+
 .dev-b2bvas th {
-  background: hsl(0, 0%, 97%);
+  background: var(--gray-95);
 }
 
 .dev-b2bvas__subheader {

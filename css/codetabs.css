@@ -12,15 +12,16 @@ ul.dev-codetabs {
 }
 
 .dev-codetabs__item {
-  background-color: hsl(0, 0%, 95%);
+  background-color: var(--gray-95);
   border-radius: 2px;
-  border-bottom: 2px solid hsl(0, 0%, 95%);;
+  border-bottom: 2px solid var(--gray-95);
+  transition: background-color, box-shadow var(--easeout-15);
 }
 
 .dev-codetabs__item:focus,
 .dev-codetabs__item:hover {
-  background-color: hsl(86, 40%, 96%);
-  border-bottom-color: hsl(86, 40%, 96%);
+  background-color: var(--green-lighter-hover);
+  border-bottom-color: var(--green-lighter-hover);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 }
 
@@ -30,8 +31,8 @@ ul.dev-codetabs {
 }
 
 .dev-codetabs__item.active {
-  background-color: hsl(86, 40%, 94%);
-  border-bottom-color: hsl(155, 100%, 19.6%);
+  background-color: var(--green-lighter);
+  border-bottom-color: var(--green-dark);
   box-shadow: none;
 }
 
@@ -42,7 +43,7 @@ ul.dev-codetabs {
 .dev-codetabs__link {
   display: flex;
   padding: 0.5rem 1rem 0.3rem;
-  color: #414141;
+  color: var(--gray-26);
   flex-flow: column nowrap;
 }
 
@@ -58,5 +59,5 @@ ul.dev-codetabs {
 .dev-codetabs__textex {
   font-size: 0.83rem;
   line-height: 1;
-  color: hsl(0, 0%, 40%);
+  color: var(--gray-40);
 }

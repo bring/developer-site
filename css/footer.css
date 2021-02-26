@@ -1,5 +1,5 @@
 .sitefooter {
-  background-color: hsl(152, 100%, 9%);
+  background-color: var(--green-darker);
   padding: 0.5rem 4vmin;
   margin-top: auto;
   color: #fff;
@@ -9,7 +9,7 @@
   padding: 2rem 0;
   display: flex;
   flex-flow: row wrap;
-  border-bottom: 1px solid hsl(155, 100%, 19.6%);
+  border-bottom: 1px solid var(--green-dark);
   margin-bottom: 0.5rem;
 }
 
@@ -30,12 +30,12 @@
 }
 
 .sitefooter a {
-  color: hsl(86, 47%, 94%);
+  color: var(--green-lighter);
   text-decoration: underline;
 }
 
 .sitefooter a:hover {
-  color: hsl(75, 53%, 70.5%);
+  color: var(--green-light);
   text-decoration: underline;
 }
 
