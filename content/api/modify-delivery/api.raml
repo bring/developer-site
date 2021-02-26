@@ -17,6 +17,105 @@ documentation:
   content: |
     To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
+- title: Common Criteria
+  content: |
+    To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events should not be present on the shipment:
+      - Damaged
+      - Deviation
+      - Returned
+      - Delivered
+      - Lost
+      - Partly delivered
+      - Stop Shipment
+
+- title: Service overview
+  content: |
+   The table shows currently supported services and the corresponding usage for modifiy delivery APIs.
+   <table style = "width 100%">
+     <thead>
+      <tr>
+        <th style="text-align: left">Service</th>
+        <th style="text-align: left">Service code</th>
+        <th style="text-align: left">Stop shipment</th>
+        <th style="text-align: left">Change COD</th>
+        <th style="text-align: left">Change Address</th>
+      </tr>
+     </thead>
+     <tbody>
+       <tr>
+          <td>Bedriftspakke Dør - Dør Innland</td>
+          <td>1000</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Bedriftspakke ekspress over natten</td>
+          <td>1002</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+       </tr>
+       <tr>
+          <td>Klimanøytral Servicepakke</td>
+          <td>1202</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>På Døren</td>
+          <td>1736</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Konv Bedriftspakke Flerkolli</td>
+          <td>1988</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Bedriftspakke Standard</td>
+          <td>3500</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>No</td>
+       </tr>
+       <tr>
+          <td>Ekspress neste dag</td>
+          <td>4850</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+       </tr>
+       <tr>
+          <td>Pakke til bedrift</td>
+          <td>5000</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Pakke levert hjem</td>
+          <td>5600</td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>Yes</td>
+       </tr>
+       <tr>
+          <td>Pakke til hentested</td>
+          <td>5800</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Yes</td>
+       </tr>
+
+     </tbody>
+   </table>
+
 /allowed-modification:
   displayName: Allowed modifications
   description: It gives us the list of allowed modifications on a shipment along with failure causes.
@@ -40,7 +139,9 @@ documentation:
 
 /stop-shipment:
   displayName: Stop shipment
-  description: This will stop the shipment and send it back to the sender.
+  description: |
+    This will stop the shipment and send it back to the sender.
+
   post:
     description: Stop a shipment and return to sender.
     body:
@@ -61,7 +162,11 @@ documentation:
 
 /change-cod:
   displayName: Change cash on delivery
-  description: This is used the change the COD amount on the shipment.
+  description: |
+    This is used to change the COD amount on the shipment.
+
+    ### Criteria
+    The shipment must have "Betaling ved utlevering (COD)" with VAS-Code 1000 registered.
 
   post:
     description: Change cash on delivery amount to be paid.
@@ -81,38 +186,11 @@ documentation:
                 displayName: Change cash on delivery
                 value: !include examples/changecodresponse.json
 
-/modifications/{shipmentNumber}/address:
-  displayName: Change recipient address of delivery
-  description: This is used to change the recipient delivery address.
-  uriParameters:
-    shipmentNumber:
-      description: Shipment number to change address for.
-      type: string
-      required: true
-      example: "707262014721"
-
-  post:
-    description: Change recipient address of delivery.
-    body:
-      application/json:
-        examples:
-          change_recipient:
-            displayName: Change recipient address
-            value: !include examples/changeAddressRequest.json
-
-    responses:
-      200:
-        body:
-          application/json:
-            examples:
-              change_recipient:
-                displayName: Change recipient address
-                value: !include examples/changeAddressResponse.json
-
-
 /modifications/changeAddress/price/{shipment}/{oldPostal}/{newPostal}:
   displayName: Get price for change address
-  description: Get the cost for changing address on a shipment.
+  description: |
+    Get the cost for changing address on a shipment. Currently the price for changing address is a fixed amount. It will
+    give exactly the same amount as in the example below.
 
   uriParameters:
     shipment:
@@ -141,6 +219,47 @@ documentation:
               change_cost:
                 displayName: Price for address change
                 value: !include examples/changeAddressCost.json
+
+/modifications/{shipmentNumber}/address:
+  displayName: Change recipient address of delivery
+  description: |
+   This is used to change the recipient delivery address.
+
+   ### Criteria
+
+   The following events should not be present on the shipment:
+    - Loaded for Delivery
+    - Partly delivered due to damage
+    - Home delivery ordered by recipient
+
+   The shipment must not have any of the following VAS registered:
+    - Alternativt utleveringssted (0010)
+    - Mottakerbestilt hjemlevering (1158, 1159)
+
+  uriParameters:
+    shipmentNumber:
+      description: Shipment number to change address for.
+      type: string
+      required: true
+      example: "707262014721"
+
+  post:
+    description: Change recipient address of delivery.
+    body:
+      application/json:
+        examples:
+          change_recipient:
+            displayName: Change recipient address
+            value: !include examples/changeAddressRequest.json
+
+    responses:
+      200:
+        body:
+          application/json:
+            examples:
+              change_recipient:
+                displayName: Change recipient address
+                value: !include examples/changeAddressResponse.json
 
 /modifications/fetchChangeAddressData/{shipmentNumber}:
   displayName: Current recipient address
