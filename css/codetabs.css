@@ -14,7 +14,8 @@ ul.dev-codetabs {
 .dev-codetabs__item {
   background-color: var(--gray-95);
   border-radius: 2px;
-  border-bottom: 2px solid var(--gray-95);;
+  border-bottom: 2px solid var(--gray-95);
+  transition: background-color, box-shadow var(--easeout-15);
 }
 
 .dev-codetabs__item:focus,

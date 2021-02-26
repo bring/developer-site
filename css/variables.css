@@ -13,4 +13,6 @@
 --green-lighter-active: hsl(86, 40%, 92%);
 --green-dark: hsl(155, 100%, 19.6%); /* #00643a */
 --green-darker: hsl(152, 100%, 9%);
+
+--easeout-15: 0.15s ease-out;
 }

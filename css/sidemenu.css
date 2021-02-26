@@ -36,7 +36,7 @@
   display: block;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
-  transition: background-color 0.15s ease-out;
+  transition: background-color var(--easeout-15);
   border-radius: 2px;
 }
 
@@ -61,7 +61,7 @@
 .dev-sidemenu__icon {
   fill: currentColor;
   color: hsla(0, 0%, 100%, 0);
-  transition: color 0.15s ease-out;
+  transition: color var(--easeout-15);
   width: 0.83em;
 }
 
