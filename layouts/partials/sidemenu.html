@@ -16,13 +16,18 @@
           class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }} {{ $lastElement }}"
         >
           {{- $target := "" -}}
-          {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
+          {{- $iconEx := "" -}}
+          {{- with .Params.blank -}}
+            {{- $target = . -}}
+            {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+          {{- end -}}
           <a
             href="{{ .URL | relURL }}"
             {{ $target | safeHTMLAttr }}
             class="dev-sidemenu__apititle"
-            >{{ safeHTML .Title }}</a
           >
+            {{ safeHTML .Title }}{{ safeHTML $iconEx }}
+          </a>
           {{- if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) -}}
             {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
           {{- end -}}
