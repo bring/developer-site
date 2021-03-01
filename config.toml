@@ -59,7 +59,37 @@ tag = "tags"
 [[menu.api]]
 title = "API status"
 url = "https://status.bring.systems"
-weight = 1000
+weight = 100
 
 [menu.api.params]
 blank = "target=\"_blank\" rel=\"noopener noreferrer\""
+
+[[menu.apidocs]]
+identifier = "checkout"
+title = "Checkout"
+weight = 1
+
+[[menu.apidocs]]
+identifier = "book"
+title = "Booking"
+weight = 2
+
+[[menu.apidocs]]
+identifier = "track"
+title = "Tracking"
+weight = 3
+
+[[menu.apidocs]]
+identifier = "warehouse"
+title = "Warehousing"
+weight = 4
+
+[[menu.apidocs]]
+identifier = "rni"
+title = "Reports and invoices"
+weight = 5
+
+[[menu.apidocs]]
+identifier = "om"
+title = "Order management"
+weight = 6
