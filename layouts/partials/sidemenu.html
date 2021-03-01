@@ -3,9 +3,10 @@
 {{- $currentSection := .Section -}}
 {{- $hideSubmenu := $.Param "hidesubmenu" -}}
 
-<nav class="dev-sidemenu">
-  <ul class="dev-sidemenu__list">
-    {{- if eq .Section "api" -}}
+<nav class="dev-sidemenu" aria-label="Section">
+
+  {{- if eq .Section "api" -}}
+    <ul class="dev-sidemenu__list">
       {{- $len := (len .Site.Menus.api) -}}
       {{- range $index, $element := .Site.Menus.api -}}
         {{- $lastElement := "" -}}
@@ -33,49 +34,97 @@
           {{- end -}}
         </li>
       {{- end -}}
+    </ul>
+    {{- $apiData := .Site.Data.api -}}
+    {{- range .Site.Menus.apidocs -}}
+      {{- if .HasChildren -}}
+        <h2 class="dev-sidemenu__title text-note ttu">{{ .Title }}</h2>
+        <ul class="dev-sidemenu__list">
+          {{ range .Children }}
+            {{- $identifier := .Identifier -}}
+            <li class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+              <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
+              {{- $currentMenu := .Menu -}}
+              {{- $currentMenuItem := . -}}
+              {{- with (index $apiData $identifier) -}}
+                {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
+                  <ul class="dev-sidemenu__sublist">
+                    {{- range .documentation -}}
+                      <li>
+                        <a href="#{{ .title | urlize }}">
+                          <span data-hover="{{ .title }}">{{ .title }}</span>
+                        </a>
+                      </li>
+                    {{- end -}}
 
-      {{- $apiData := .Site.Data.api -}}
-      {{- range .Site.Menus.apidocs -}}
-        {{- $identifier := .Identifier -}}
-        <li class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
-          <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
-          {{- $currentMenu := .Menu -}}
-          {{- $currentMenuItem := . -}}
-          {{- with (index $apiData $identifier) -}}
-            {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
-              <ul class="dev-sidemenu__sublist">
-                {{- range .documentation -}}
-                  <li>
-                    <a href="#{{ .title | urlize }}">
-                      <span data-hover="{{ .title }}">{{ .title }}</span>
-                    </a>
-                  </li>
+                    <li>
+                      <a href="#overview-of-endpoints">
+                        <span data-hover="overview-of-endpoints"
+                          >Overview of endpoints</span
+                        >
+                      </a>
+                    </li>
+
+                    {{- range .resources -}}
+                      <li>
+                        <a href="#{{ .displayName | urlize }}">
+                          <span data-hover="{{ .displayName }}"
+                            >{{ .displayName }}</span
+                          >
+                        </a>
+                      </li>
+                    {{- end -}}
+                  </ul>
                 {{- end -}}
+              {{- end -}}
+            </li>
+          {{- end -}}
+        </ul>
+      {{- else -}}
+        <ul class="dev-sidemenu__list">
+          {{- $identifier := .Identifier -}}
+          <li class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
+            <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
+            {{- $currentMenu := .Menu -}}
+            {{- $currentMenuItem := . -}}
+            {{- with (index $apiData $identifier) -}}
+              {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
+                <ul class="dev-sidemenu__sublist">
+                  {{- range .documentation -}}
+                    <li>
+                      <a href="#{{ .title | urlize }}">
+                        <span data-hover="{{ .title }}">{{ .title }}</span>
+                      </a>
+                    </li>
+                  {{- end -}}
 
-                <li>
-                  <a href="#overview-of-endpoints">
-                    <span data-hover="overview-of-endpoints"
-                      >Overview of endpoints</span
-                    >
-                  </a>
-                </li>
-
-                {{- range .resources -}}
                   <li>
-                    <a href="#{{ .displayName | urlize }}">
-                      <span data-hover="{{ .displayName }}"
-                        >{{ .displayName }}</span
+                    <a href="#overview-of-endpoints">
+                      <span data-hover="overview-of-endpoints"
+                        >Overview of endpoints</span
                       >
                     </a>
                   </li>
-                {{- end -}}
-              </ul>
+
+                  {{- range .resources -}}
+                    <li>
+                      <a href="#{{ .displayName | urlize }}">
+                        <span data-hover="{{ .displayName }}"
+                          >{{ .displayName }}</span
+                        >
+                      </a>
+                    </li>
+                  {{- end -}}
+                </ul>
+              {{- end -}}
             {{- end -}}
-          {{- end -}}
-        </li>
+          </li>
+        </ul>
       {{- end -}}
     {{- end -}}
-    {{- if eq .Section "edi" -}}
+  {{- end -}}
+  {{- if eq .Section "edi" -}}
+    <ul class="dev-sidemenu__list">
       {{- range .Site.Menus.edi -}}
         <li class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">
           {{- $target := "" -}}
@@ -91,6 +140,6 @@
           {{- end -}}
         </li>
       {{- end -}}
-    {{- end -}}
-  </ul>
+    </ul>
+  {{- end -}}
 </nav>

@@ -4,8 +4,14 @@
   padding-bottom: 1rem;
 }
 
+.dev-sidemenu__title {
+  font-weight: 500;
+  color: var(--green-dark);
+  margin: 1rem 0 0.15em 1em;
+}
+
 .dev-sidemenu__list {
-  margin: 0;
+  margin: 0 0 1.6rem;
   padding: 0;
   list-style: none;
 }
@@ -50,7 +56,7 @@
   list-style: none;
   line-height: 1.3;
   padding: 0 0.6rem;
-  margin: 0 0 1.2rem;
+  margin: 0 0 0.8rem;
 }
 
 .dev-sidemenu__sublist a {
