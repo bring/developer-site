@@ -21,17 +21,18 @@ title: {Name of API, similar to the name in the raml file}
 layout: api
 menu:
   apidocs:
-    identifier: "{foldername}"
-    title: "{Name of API}"
-    url: "/api/{foldername}"
-weight: {menu position}
+    identifier: {foldername}
+    title: {Name of API}
+    url: /api/{foldername}
+    parent: {parent, see config.toml}
+weight: {menu position prefixed by parent}
 disqus_identifier: api-{foldername} (optional, if you want comments)
 ---
 
 If you have an alert, it can be added below the frontmatter, here, instead of inside the raml file.
 ```
 
-Open config.toml and add the new raml file path to the `apis` array
+Open config.toml and add the new raml file path to the `apis` array.
 
 ## Adding a new article/blog post
 If you only have text, make a new .md file in `content/blog`
