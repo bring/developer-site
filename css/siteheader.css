@@ -38,13 +38,16 @@
 }
 
 .dev-siteheader__nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   align-self: flex-end;
   font-size: 1.25rem;
   margin-left: 1rem;
   padding-bottom: 0.8rem;
+}
+
+.dev-siteheader__nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .dev-siteheader__nav li {

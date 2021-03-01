@@ -34,13 +34,15 @@
         {{- end -}}
       </span>
     </a>
-    <ul class="dev-siteheader__nav">
-      <li><a href="{{ "/api/" | relURL }}">API docs</a></li>
-      <li><a href="{{ "/edi/" | relURL }}">EDI docs</a></li>
-      <li>
-        <a href="{{ "/blog/" | relURL }}">Blog</a>
-      </li>
-      <li><a href="{{ "/jobs/" | relURL }}">Jobs</a></li>
-    </ul>
+    <nav class="dev-siteheader__nav" aria-label="Main">
+      <ul>
+        <li><a href="{{ "/api/" | relURL }}">API docs</a></li>
+        <li><a href="{{ "/edi/" | relURL }}">EDI docs</a></li>
+        <li>
+          <a href="{{ "/blog/" | relURL }}">Blog</a>
+        </li>
+        <li><a href="{{ "/jobs/" | relURL }}">Jobs</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
