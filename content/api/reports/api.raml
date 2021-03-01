@@ -323,10 +323,14 @@ documentation:
 /invoices/{customerOrGroupId}{mediaTypeExtension}:
   displayName: List invoice numbers
   description: |
+    ** DEPRECATED **
+    This endpoint will be removed in a future version of the API.
+    Use the Invoice API instead:
+    [Invoice API / List of all Invoices](/api/invoice/#list-of-all-invoices)
+
     Gets the list of invoice numbers for a customer id or a customer group. By default it shows last 65 days of invoices, with the possibilty to access 365 days data by providing from date and to date.
 
-
-    We support Main Customer Number and Parcel International Customer Number in this API. If you want to generate Specified Invoice report, please use mentioned customer number in "List available reports for a customer" endpoint to findout corresponding Report Type.
+    This endpoint support Main Customer Number only.
   uriParameters:
     customerOrGroupId:
       description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
