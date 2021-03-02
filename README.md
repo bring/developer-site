@@ -89,6 +89,8 @@ To get syntax highlighting in Markdown, you can specify the programming language
 ~~~
 
 ## Building, running and updating
+`npm install` installs the needed dependencies.
+
 `npm run build` builds CSS and JSON based in the raml files. Hugo needs this in order to run.
 
 Run `npm start` to run locally. The non-api pages will update instantly. But when you make changes to the api files or CSS, you have to run `npm run build` again to generate new files for that.
