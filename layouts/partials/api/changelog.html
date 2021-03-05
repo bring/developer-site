@@ -1,0 +1,14 @@
+<h1>{{ .Title }}</h1>
+<section class="dev-documentation__section">
+  <p class="text-heading">Important changes and updates for our APIs</p>
+  {{- range .Pages -}}
+    <time
+      class="text-heading db gray"
+      datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+      >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
+    >
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+    <hr class="maxw48r ml0 mbl" />
+  {{- end -}}
+</section>

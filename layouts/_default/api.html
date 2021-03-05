@@ -10,6 +10,9 @@
         {{- if (eq $notAnApi true) -}}
           <article class="dev-documentation">
             {{- .Content -}}
+            {{- if (in .CurrentSection "revision-history") -}}
+              {{- partial "api/changelog.html" . -}}
+            {{- end -}}
             {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
               <section class="dev-documentation__section">
                 {{ template "_internal/disqus.html" $ }}
