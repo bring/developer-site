@@ -1,5 +1,9 @@
 {{- define "main" -}}
   {{- $notAnApi := $.Param "notanapi" -}}
+  {{- $maxwidth := "maxw64r" -}}
+  {{- if (eq ($.Param "widelayout") true) -}}
+    {{- $maxwidth = "" -}}
+  {{- end -}}
 
   <div class="dev-container">
     <div class="dev-pagewmenu">
@@ -8,7 +12,7 @@
       </div>
       <div class="dev-pagewmenu__page">
         {{- if (eq $notAnApi true) -}}
-          <article class="dev-documentation">
+          <article class="dev-documentation w100p {{ $maxwidth }}">
             {{- .Content -}}
             {{- if (in .CurrentSection "revision-history") -}}
               {{- partial "api/changelog.html" . -}}

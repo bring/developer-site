@@ -16,8 +16,9 @@
 }
 
 .dev-pagewmenu__page {
-  flex: 1 1 auto;
-  max-width: calc(77% - 2rem);
+  flex: 1 1 76%;
+  max-width: 82rem;
+  padding-left: 2rem;
 }
 
 @media screen and (max-width: 50em) {
@@ -28,5 +29,6 @@
 
   .dev-pagewmenu__page {
     max-width: 100%;
+    padding-left: 0;
   }
 }
