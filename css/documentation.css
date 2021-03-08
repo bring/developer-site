@@ -4,13 +4,13 @@
 }
 
 .dev-documentation h1 {
-  padding-left: 4rem;
+  padding-left: 2rem;
   margin-bottom: 0.6em;
 }
 
 .dev-documentation__section {
   margin-bottom: 3rem;
-  padding: 0 2rem 3rem 4rem;
+  padding: 0 2rem 3rem 2rem;
   border-width: 2px;
   border-color: var(--gray-86);
   border-bottom-style: solid;

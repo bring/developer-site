@@ -5,7 +5,7 @@
         {{- partial "sidemenu.html" . -}}
       </div>
       <div class="dev-pagewmenu__page">
-        <article class="dev-documentation">
+        <article class="dev-documentation maxw64r">
           {{ .Content }}
           {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
             <section class="dev-documentation__section">

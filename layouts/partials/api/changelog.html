@@ -1,0 +1,15 @@
+<h1>{{ .Title }}</h1>
+<section class="dev-documentation__section">
+  <p class="text-heading mbl">Important API changes and updates</p>
+  {{- range .Pages -}}
+    <div class="flex flex-dir-row-rev align-ic justify-cfe flex-wrap-reverse">
+      <h2 class="text-heading fwb mb0">{{ .Title }}</h2>
+      <time
+        class="fwb text-heading mrs"
+        datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+        >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
+      >
+    </div>
+    {{ .Content }}
+  {{- end -}}
+</section>
