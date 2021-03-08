@@ -1,7 +1,6 @@
 {{- $currentPage := . -}}
 {{- $pageUrl := .URL -}}
 {{- $currentSection := .Section -}}
-{{- $hideSubmenu := $.Param "hidesubmenu" -}}
 
 <nav class="dev-sidemenu" aria-label="Section">
 
@@ -29,7 +28,7 @@
           >
             {{ safeHTML .Title }}{{ safeHTML $iconEx }}
           </a>
-          {{- if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) -}}
+          {{- if $currentPage.IsMenuCurrent .Menu . -}}
             {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
           {{- end -}}
         </li>
@@ -135,7 +134,7 @@
             {{ $target | safeHTMLAttr }}
             >{{ safeHTML .Title }}</a
           >
-          {{- if and ($currentPage.IsMenuCurrent .Menu .) (not $hideSubmenu) -}}
+          {{- if $currentPage.IsMenuCurrent .Menu . -}}
             {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
           {{- end -}}
         </li>
