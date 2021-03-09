@@ -29,6 +29,10 @@ thead tr {
   padding: 0.7em 1.4em 0.3em 0.4em;
 }
 
+.bg-green1 tr {
+  border-color:var(--gray-80);
+}
+
 th,
 td {
   padding: 0.7em 1.4em 0.6em 0.4em;
@@ -41,12 +45,19 @@ thead th:last-of-type {
 
 thead th {
   padding: 0.7em 1.4em 0.3em 0.4em;
+}
+
+th {
   font-weight: 600;
 }
 
 td > p,
 td > ul {
   margin-bottom: 0;
+}
+
+.bg-green1 td code {
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .dev-param {
