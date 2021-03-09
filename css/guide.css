@@ -1,0 +1,25 @@
+.dev-guide-l {
+  flex: 2 1 30rem;
+}
+
+.dev-guide-m {
+  flex: 1 1 16rem;
+}
+
+.dev-guide-s {
+  flex: 1 1 10rem;
+}
+
+.dev-guide-l,
+.dev-guide-m,
+.dev-guide-s {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 50em) {
+  .dev-guide-l,
+  .dev-guide-m,
+  .dev-guide-s {
+    margin-right: 1.5rem;
+  }
+}
