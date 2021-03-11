@@ -19,6 +19,9 @@
                 <span class="db text-title mts">{{ . }}</span>
               {{- end -}}
             </h1>
+            {{- if or (isset .Params "services") (isset .Params "examples") -}}
+              {{- partial "api/guide.html" . -}}
+            {{- end -}}
             {{- .Content -}}
             {{- if (in .CurrentSection "revision-history") -}}
               {{- partial "api/changelog.html" . -}}
