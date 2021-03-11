@@ -19,6 +19,25 @@ The site is being improved throughout 2021, the first step was to get rid of
 Ruby and Jekyll in favour of Hugo, Node and Webpack. We currently operate with
 generated parts of the old CSS mixed with some new, temporary, code.
 
+## Adding an important message to the frontpage
+
+Important messages are added as list items in the frontmatter of the frontpage
+\_index.html file. It supports HTML tags. You are encouraged to link to the
+relevant API where more information can be found and not put the entire message
+on the frontpage. There is support for multiple messages:
+
+```
+important:
+  - Important changes to <a href="api/tracking">Tracking API</a> from 01.01.2021
+    and 01.03.2021 regarding specified delivery date.
+  - <strong class="mrs">Final deadline for authenticating Pickup Point API requests - February 15.
+    2021<strong> We have now started to <a href="api/pickup-point">limit the data</a> in the responses
+    for unauthenticated requests
+```
+
+Also keep in mind that the four latest items in the changelog are featured on
+the frontpage.
+
 ## Adding a new API
 
 Make a new folder in `content/api`, the folder name will be the url slug. Use
