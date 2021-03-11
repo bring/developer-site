@@ -1,34 +1,27 @@
-.dev-intro {
-  padding: 12vmin 4vmin 8vmin;
-  background: url(/img/megaheader/picture-a.jpg);
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: cover;
+.dev-intro-padv {
+  padding-top: 6vmin;
+  padding-bottom: 4vmin;
 }
 
-.dev-intro__tagline {
-  font-size: 2.4rem;
-  color: #fff;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-  font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 20px;
-  margin: 0 auto;
-  max-width: 28ch;
+.dev-intro-padh {
+  padding-left: 4vmin;
+  padding-right: 4vmin;
 }
 
-@media screen and (max-width: 50em) {
-  .dev-intro {
-    padding: 6vmin 4vmin 6vmin;
-    background-color: var(--gray-95);
-  }
+.dev-intro-l {
+  flex: 1 1 40rem;
+  max-width: 50rem;
+}
 
-  .dev-intro__tagline {
-    font-size: 1.6rem;
-    font-weight: 600;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    margin: 0 auto;
-    max-width: 28ch;
+.dev-intro-m {
+  flex: 1 1 20rem;
+  max-width: 30rem;
+}
+
+@media screen and (min-width: 50em) {
+  .dev-intro-l,
+  .dev-intro-m {
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 }

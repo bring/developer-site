@@ -1,19 +1,15 @@
 .dev-link--box {
   display: flex;
   flex-flow: column;
-  align-items: center;
-  border: 3px solid var(--gray-95);
-  text-align: center;
   padding: 1rem;
+  background-color: var(--green-lighter);
   color: var(--gray-26);
+  transition: background-color, box-shadow var(--easeout-15);
+  flex: 1 1 20rem;
 }
 
 .dev-link--box:hover {
-  border: 3px solid var(--gray-86);
+  background-color: var(--green-lighter-hover);
   text-decoration: none;
-}
-
-.dev-link--background:hover {
-  background-color: var(--gray-95);
-  text-decoration: none;
+  box-shadow: var(--shadow);
 }
