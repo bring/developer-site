@@ -1,7 +1,7 @@
 .DS*
 node_modules/
 _site
-data/
+api.json
 static/css
 .idea
 .jekyll-metadata
