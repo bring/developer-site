@@ -13,6 +13,12 @@
       <div class="dev-pagewmenu__page">
         {{- if (eq $notAnApi true) -}}
           <article class="dev-documentation w100p {{ $maxwidth }}">
+            <h1>
+              {{- .Title -}}
+              {{- with .Params.titlesub -}}
+                <span class="db text-title mts">{{ . }}</span>
+              {{- end -}}
+            </h1>
             {{- .Content -}}
             {{- if (in .CurrentSection "revision-history") -}}
               {{- partial "api/changelog.html" . -}}
