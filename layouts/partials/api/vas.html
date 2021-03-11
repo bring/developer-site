@@ -1,0 +1,9 @@
+{{- $desc := .descEn -}}
+{{- if and .descNo .descEn -}}
+  {{- $desc = print .descNo "<span class='db text-note'>" .descEn "</span>" -}}
+{{- else if not .descEn -}}
+  {{ $desc = .descNo }}
+{{- end -}}
+
+<td>{{ .code }}</td>
+<td>{{ $desc | markdownify }}</td>

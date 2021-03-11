@@ -1,0 +1,87 @@
+{{- $vasData := .Site.Data.vas -}}
+{{- $serviceData := .Site.Data.service -}}
+
+<section class="dev-documentation__section">
+  <h2>Service codes</h2>
+  <div class="flex flex-wrap align-ifs">
+    {{- if isset .Params "services" -}}
+      <div class="dev-guide-l">
+        <table>
+          <thead>
+            <tr>
+              <th rowspan="2">Service name</th>
+              <th rowspan="2">When to use</th>
+              <th rowspan="2">Service group</th>
+              <th rowspan="2" class="minw10r">Size limit</th>
+              <th rowspan="2">Service code</th>
+              <th rowspan="2">API&nbsp;ID</th>
+              <th colspan="2">Value&nbsp;added&nbsp;services</th>
+            </tr>
+            <tr>
+              <th class="ptxs">Code</th>
+              <th class="ptxs">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{- $rowSpan := 1 -}}
+            {{- range .Params.services -}}
+              {{- $service := index $serviceData . -}}
+              {{- if gt (len $service.vas) 0 -}}
+                {{- $rowSpan = (len $service.vas) -}}
+              {{- end -}}
+              <tr>
+                <th scope="row" rowspan="{{ $rowSpan }}">
+                  {{- $serviceName := $service.nameEn -}}
+                  {{- if and $service.nameNo $service.nameEn -}}
+                    {{- $serviceName = print $service.nameNo "<span class='db text-note fwn'>" $service.nameEn "</span>" -}}
+                    {{- else if not $service.nameEn -}}
+                    {{ $serviceName = $service.nameNo }}
+                  {{- end -}}
+                  {{ $serviceName | markdownify }}
+                </th>
+                <td rowspan="{{ $rowSpan }}">{{ $service.usage }}</td>
+                <td rowspan="{{ $rowSpan }}">{{ $service.serviceGroup }}</td>
+                <td rowspan="{{ $rowSpan }}">
+                  {{ $service.weightLimit }}<br />{{ $service.sizeLimit }}
+                </td>
+                <td rowspan="{{ $rowSpan }}">{{ $service.code }}</td>
+                <td rowspan="{{ $rowSpan }}">
+                  <code>{{ $service.apiId }}</code>
+                </td>
+                {{- if gt (len $service.vas) 0 -}}
+                  {{- range first 1 $service.vas -}}
+                    {{- partial "api/vas.html" (index $vasData .) -}}
+                  {{- end -}}
+                  {{- else -}}
+                  <td rowspan="{{ $rowSpan }}" colspan="2"></td>
+                {{- end -}}
+              </tr>
+              {{- range after 1 $service.vas -}}
+                <tr>
+                  {{- partial "api/vas.html" (index $vasData .) -}}
+                </tr>
+              {{- end -}}
+            {{- end -}}
+          </tbody>
+        </table>
+
+        {{- if in .Params.services "3570" -}}
+          <p class="text-note">
+            * Tracking with RFID adds additional scanning points for tracking
+            (require RFID printer)
+          </p>
+        {{- end -}}
+      </div>
+    {{- end -}}
+    {{- if isset .Params "examples" -}}
+      <div class="dev-guide-s bg-green1 pal">
+        <h3>Technical examples</h3>
+        <ul>
+          {{- range .Params.examples -}}
+            <li>{{ . | markdownify }}</li>
+          {{- end -}}
+        </ul>
+      </div>
+    {{- end -}}
+  </div>
+</section>
