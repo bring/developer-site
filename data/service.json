@@ -1,0 +1,34 @@
+{
+  "3584": {
+    "code": "3584",
+    "apiId": "3584",
+    "nameNo": "Pakke i postkassen",
+    "nameEn": "Mailbox parcel",
+    "usage": "If you do not have an RFID printer",
+    "serviceGroup": "Parcels Norway",
+    "weightLimit": "5 kg",
+    "sizeLimit": "245 cm long/ length + width + depth: 90 cm",
+    "vas": ["1081"]
+  },
+  "3570": {
+    "code": "3570",
+    "apiId": "3570",
+    "nameNo": "Pakke i postkassen med RFID*",
+    "nameEn": "Mailbox parcel with RFID",
+    "usage": "If you have an RFID printer",
+    "serviceGroup": "Parcels Norway",
+    "weightLimit": "5 kg",
+    "sizeLimit": "45 cm long/ length + width + depth: 90 cm",
+    "vas": ["1081"]
+  },
+  "HOME_DELIVERY_PARCEL": {
+    "code": "",
+    "apiId": "HOME_DELIVERY_PARCEL",
+    "nameNo": "",
+    "nameEn": "Home Delivery Parcel",
+    "serviceGroup": "Parcel Nordic",
+    "weightLimit": "35 kg",
+    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "vas": []
+  }
+}

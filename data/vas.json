@@ -1,0 +1,20 @@
+{
+  "1081": {
+    "code": "1081",
+    "descNo": "Pose på dør",
+    "descEn": "Simplified delivery",
+    "explanation": ""
+  },
+  "0041": {
+    "code": "0041",
+    "descNo": "",
+    "descEn":"Simplified delivery",
+    "explanation": "Package will be left outside the delivery address. The recipient is notified when the package is delivered outside"
+  },
+  "1133": {
+    "code": "1133",
+    "descNo": "",
+    "descEn": "Proof of identity required",
+    "explanation": "Recipient is required to provide a valid ID to receive the shipment. Note that it is not required that it is the same person as on the label"
+  }
+}
