@@ -146,7 +146,7 @@ examples:
 `services` takes an array of api id codes and populates a table with the
 associated services and VAS-es. The services are sourced from
 data/service.json, which in turn has an array of associated VAS-codes that the
-template sources from data/vas.json
+template sources from data/vas.json. The services appear in the same order as the array.
 
 `examples` is an array of links to examples in the relevant API documentation –
 this solution is intended to be improved into fetching the actual examples.
