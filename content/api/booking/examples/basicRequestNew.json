@@ -4,7 +4,7 @@
   "consignments": [
     {
       "shippingDateTime": 1588678607000,
-      "customerSpecifiedDeliveryDate": "2020-05-11",
+      "customerSpecifiedDeliveryDateTime": "2020-05-11",
       "parties": {
         "sender": {
           "name": "Ola Nordmann",
@@ -39,7 +39,7 @@
         "pickupPoint": null
       },
       "product": {
-        "id": "SERVICEPAKKE",
+        "id": "PA_DOREN",
         "customerNumber": "***********",
         "additionalServices": [
           {
