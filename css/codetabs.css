@@ -22,7 +22,7 @@ ul.dev-codetabs {
 .dev-codetabs__item:hover {
   background-color: var(--green-lighter-hover);
   border-bottom-color: var(--green-lighter-hover);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: var(--shadow);
 }
 
 .dev-codetabs__item .format {

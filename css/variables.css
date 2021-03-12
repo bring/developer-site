@@ -14,5 +14,7 @@
 --green-dark: hsl(155, 100%, 19.6%); /* #00643a */
 --green-darker: hsl(152, 100%, 9%);
 
+--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
+
 --easeout-15: 0.15s ease-out;
 }
