@@ -7,7 +7,7 @@
       <consignments>
         <consignment correlationId="INTERNAL-123456">
           <shippingDateTime>2020-05-05T21:31:33.007+02:00</shippingDateTime>
-          <customerSpecifiedDeliveryDate>2020-05-11</customerSpecifiedDeliveryDate>
+          <customerSpecifiedDeliveryDateTime>2020-05-11</customerSpecifiedDeliveryDateTime>
           <parties>
             <sender>
               <name>Ola Nordmann</name>
@@ -40,7 +40,7 @@
             </recipient>
           </parties>
           <product>
-            <id>SERVICEPAKKE</id>
+            <id>PA_DOREN</id>
             <customerNumber>*************</customerNumber>
             <additionalServices>
               <additionalService>
