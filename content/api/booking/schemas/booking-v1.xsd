@@ -76,7 +76,7 @@
     <xs:complexType name="ConsignmentRequestType">
         <xs:sequence>
             <xs:element name="shippingDateTime" type="xs:dateTime"/>
-            <xs:element name="customerSpecifiedDeliveryDateTime" type="xs:date" minOccurs="0"/>
+            <xs:element name="customerSpecifiedDeliveryDateTime" type="xs:dateTime" minOccurs="0"/>
             <xs:element name="parties" type="PartiesRequestType"/>
             <xs:element name="product" type="ProductRequestType"/>
             <xs:element name="purchaseOrder" type="PurchaseOrderRequestType" minOccurs="0"/>
