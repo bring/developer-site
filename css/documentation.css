@@ -1,52 +1,29 @@
 .dev-docslayout {
   display: flex;
+  flex-flow: row wrap;
   max-height: max-content;
   height: 100vh;
 }
 
-.dev-docs__menu {
-  width: 23%;
-  overflow-y: auto;
-  position: fixed;
-  top: 4.4rem;
-  bottom: 0;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .dev-docs__page {
-  margin-left: 23%;
-  padding-top: 4.4rem;
-  flex: 1 2 auto;
   display: flex;
   flex-flow: column nowrap;
+  max-width: 100%;
 }
-
-/* @media screen and (max-width: 64em) {
-  .dev-docs__menu {
-    max-width: 100%;
-  }
-
-  .dev-docs__page {
-    max-width: 100%;
-    padding-left: 0;
-  }
-} */
 
 .dev-docscontent {
   padding-top: 3rem;
   padding-bottom: 1rem;
-  padding-left: 2rem;
 }
 
 .dev-docscontent h1 {
-  padding-left: 2rem;
+  padding-left: 6vw;
   margin-bottom: 0.6em;
 }
 
 .dev-docscontent__section {
   margin-bottom: 3rem;
-  padding: 0 2rem 3rem 2rem;
+  padding: 0 6vw 1rem;
   border-width: 2px;
   border-color: var(--gray-86);
   border-bottom-style: solid;
@@ -56,16 +33,33 @@
   border-bottom: none;
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (min-width: 64em) {
+  .dev-docs__menu {
+    width: 23%;
+    overflow-y: auto;
+    position: fixed;
+    top: 4.4rem;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .dev-docs__page {
+    margin-left: 23%;
+    padding-top: 4.4rem;
+    flex: 1 2 auto;
+    max-width: 76%;
+  }
+
+  .dev-docscontent {
+    padding-left: 2rem;
+  }
+
   .dev-docscontent h1 {
-    padding-left: 1rem;
+    padding-left: 2rem;
   }
 
   .dev-docscontent__section {
-    padding: 0 1rem 1rem 1rem;
-  }
-
-  .dev-docscontent__section:last-of-type {
-    padding-bottom: 1rem;
+    padding: 0 2rem 3rem 2rem;
   }
 }

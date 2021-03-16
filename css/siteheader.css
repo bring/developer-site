@@ -1,10 +1,13 @@
 .dev-siteheader {
   background-color: var(--green-darker);
+  flex: 1 0 100%;
 }
 
-.dev-docslayout .dev-siteheader {
-  position: fixed;
-  width: 100%;
+@media screen and (min-width: 64em) {
+  .dev-docslayout .dev-siteheader {
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .dev-siteheader__title {
