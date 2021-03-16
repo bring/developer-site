@@ -3,10 +3,10 @@
   {{- if (eq .title $.Title) -}}
     {{- $types := .types -}}
     <article
-      class="dev-documentation w100p maxw64r {{ replace .title "API" "" | urlize }}"
+      class="dev-docscontent w100p maxw64r {{ replace .title "API" "" | urlize }}"
     >
       <h1>{{ .title }}</h1>
-      <section id="api-documentation" class="dev-documentation__section">
+      <section id="api-documentation" class="dev-docscontent__section">
         {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
         {{- range .documentation -}}
           <h2 class="anchored" id="{{ .title | urlize }}">
@@ -19,7 +19,7 @@
           {{- end -}}
         {{- end -}}
       </section>
-      <section class="dev-documentation__section">
+      <section class="dev-docscontent__section">
         <h2 class="anchored mbm" id="overview-of-endpoints">
           Overview of endpoints
         </h2>
@@ -57,7 +57,7 @@
       {{- range .resources -}}
         {{- $resources := . -}}
         {{- $displayName := .displayName -}}
-        <section class="dev-documentation__section">
+        <section class="dev-docscontent__section">
           <h2 class="anchored mbm" id="{{ $displayName | urlize }}">
             {{- $displayName -}}
           </h2>
@@ -253,7 +253,7 @@
         </section>
       {{- end -}}
       {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-        <section class="dev-documentation__section">
+        <section class="dev-docscontent__section">
           {{ template "_internal/disqus.html" $ }}
         </section>
       {{- end -}}

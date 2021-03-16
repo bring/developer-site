@@ -2,6 +2,8 @@
   background-color: var(--gray-95);
   padding-top: 1rem;
   padding-bottom: 1rem;
+  width: 18rem;
+  align-self: flex-start;
 }
 
 .dev-sidemenu__title {

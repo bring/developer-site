@@ -1,14 +1,50 @@
-.dev-documentation {
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+.dev-docslayout {
+  display: flex;
+  max-height: max-content;
+  height: 100vh;
 }
 
-.dev-documentation h1 {
+.dev-docs__menu {
+  width: 23%;
+  overflow-y: auto;
+  position: fixed;
+  top: 4.4rem;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dev-docs__page {
+  margin-left: 23%;
+  padding-top: 4.4rem;
+  flex: 1 2 auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* @media screen and (max-width: 64em) {
+  .dev-docs__menu {
+    max-width: 100%;
+  }
+
+  .dev-docs__page {
+    max-width: 100%;
+    padding-left: 0;
+  }
+} */
+
+.dev-docscontent {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.dev-docscontent h1 {
   padding-left: 2rem;
   margin-bottom: 0.6em;
 }
 
-.dev-documentation__section {
+.dev-docscontent__section {
   margin-bottom: 3rem;
   padding: 0 2rem 3rem 2rem;
   border-width: 2px;
@@ -16,20 +52,20 @@
   border-bottom-style: solid;
 }
 
-.dev-documentation__section:last-of-type {
+.dev-docscontent__section:last-of-type {
   border-bottom: none;
 }
 
 @media screen and (max-width: 50em) {
-  .dev-documentation h1 {
+  .dev-docscontent h1 {
     padding-left: 1rem;
   }
 
-  .dev-documentation__section {
+  .dev-docscontent__section {
     padding: 0 1rem 1rem 1rem;
   }
 
-  .dev-documentation__section:last-of-type {
+  .dev-docscontent__section:last-of-type {
     padding-bottom: 1rem;
   }
 }
