@@ -145,7 +145,7 @@
 
             {{/* For each endpoint: List all headers */}}
             {{- if $hasMethodHeaders -}}
-              {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "Header name") -}}
+              {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "HTTP header") -}}
             {{- end -}}
 
             {{/* For each endpoint: List all query parameters */}}
