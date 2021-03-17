@@ -5,9 +5,10 @@
     {{- $maxwidth = "" -}}
   {{- end -}}
 
-  <div class="dev-docs__menu">
+  <div class="dev-docs__menu" data-drawer data-drawer-event>
     {{- partial "sidemenu.html" . -}}
   </div>
+  {{- partial "drawmenu.html" . -}}
   <div class="dev-docs__page">
     {{- if (eq $notAnApi true) -}}
       <article class="dev-docscontent w100p {{ $maxwidth }}">
@@ -31,6 +32,7 @@
       {{- partial "api/docs.html" . -}}
     {{- end -}}
     {{ partial "footer.html" . }}
+    <div class="dev-obfuscator" data-drawer data-drawer-event></div>
   </div>
 
 {{- end -}}

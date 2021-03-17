@@ -1,5 +1,4 @@
 .dev-sidemenu {
-  background-color: var(--gray-95);
   padding-top: 1rem;
   padding-bottom: 1rem;
   width: 18rem;
@@ -9,23 +8,22 @@
 .dev-sidemenu__title {
   font-weight: 500;
   color: var(--green-dark);
-  margin: 1rem 0 0.15em 1em;
+  margin: 1rem 0 0.15em 1.6rem;
 }
 
 .dev-sidemenu__list {
-  margin: 0 0 1.6rem;
+  margin: 0 0 1.6rem 0.9em;
   padding: 0;
   list-style: none;
 }
 
 .dev-sidemenu__level1 {
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
+  margin-right: 1rem;
 }
 
 .dev-sidemenu__level1.active {
   border-left: 3px solid rgba(0, 0, 0, 0.08);
-  padding-left: calc(0.8rem - 3px);
+  padding-left: 0;
 }
 
 .dev-sidemenu__separator {
@@ -37,6 +35,10 @@
   line-height: 1.15;
   padding-top: 0.5em;
   padding-bottom: 0.55em;
+}
+
+.active .dev-sidemenu__apititle {
+  margin-left: -3px;
 }
 
 .dev-sidemenu a {

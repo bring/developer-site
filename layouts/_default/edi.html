@@ -1,8 +1,9 @@
 {{- define "main" -}}
 
-  <div class="dev-docs__menu">
+  <div class="dev-docs__menu" data-drawer>
     {{- partial "sidemenu.html" . -}}
   </div>
+  {{- partial "drawmenu.html" . -}}
   <div class="dev-docs__page">
     <article class="dev-docscontent maxw64r">
       {{ .Content }}
@@ -13,6 +14,7 @@
       {{- end -}}
     </article>
     {{ partial "footer.html" . }}
+    <div class="dev-obfuscator" data-drawer data-drawer-event></div>
   </div>
 
 {{- end -}}

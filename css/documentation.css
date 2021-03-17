@@ -2,7 +2,15 @@
   display: flex;
   flex-flow: row wrap;
   max-height: max-content;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.anchored:target::before {
+  content: "";
+  display: block;
+  height: 6.5rem;
+  margin: -6.5rem 0 0;
 }
 
 .dev-docs__page {
@@ -33,22 +41,43 @@
   border-bottom: none;
 }
 
+.dev-docs__menu {
+  background-color: var(--gray-95);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  transition: var(--easeout-15);
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 64em) {
+  .dev-docs__menu {
+    flex: 0 1 18rem;
+    z-index: 15;
+    min-height: 100%;
+    transform: translateX(-19rem);
+  }
+
+  .dev-docs__menu.drawn {
+    transform: translateX(0);
+    box-shadow: var(--shadow);
+  }
+}
+
 @media screen and (min-width: 64em) {
   .dev-docs__menu {
     width: 23%;
-    overflow-y: auto;
-    position: fixed;
     top: 4.4rem;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-end;
   }
 
   .dev-docs__page {
     margin-left: 23%;
     padding-top: 4.4rem;
-    flex: 1 2 auto;
-    max-width: 76%;
+    flex: 1 2 77%;
+    max-width: 77%;
   }
 
   .dev-docscontent {
