@@ -30,7 +30,7 @@
             {{- end -}}
           </div>
         {{- end -}}
-        <h2 class="mtm mbs text-title">API changelog</h2>
+        <h2 class="mbs">API changelog</h2>
         {{- range where .Site.Pages "Section" "api" -}}
           {{- if (in .CurrentSection "revision-history") -}}
             {{- range first 4 .Pages -}}
