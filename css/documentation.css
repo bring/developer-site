@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.anchored:target::before {
+.dev-anchored:target::before {
   content: "";
   display: block;
   height: 6.5rem;
