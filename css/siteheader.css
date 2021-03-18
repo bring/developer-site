@@ -1,9 +1,17 @@
 .dev-siteheader {
   background-color: var(--green-darker);
+  flex: 1 0 100%;
+}
+
+@media screen and (min-width: 64em) {
+  .dev-docslayout .dev-siteheader {
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .dev-siteheader__title {
-  padding: 0.8rem 1rem 1.2rem;
+  padding: 0.6rem 1rem 1rem;
   display: flex;
   align-items: flex-end;
   flex-flow: row wrap;
@@ -17,16 +25,17 @@
 }
 
 .dev-siteheader__logo {
-  width: 8rem;
+  width: 7rem;
   height: auto;
-  margin-right: 0.8rem;
+  max-height: 2.8rem; /* had to specify this for IE11 */
+  margin-right: 0.6rem;
 }
 
 .dev-siteheader__tagline {
   color: #fff;
   font-weight: normal;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
-  font-size: 1.3rem;
+  font-size: 1.17rem;
   margin-bottom: 0.05rem;
 }
 
@@ -41,7 +50,7 @@
   align-self: flex-end;
   font-size: 1.25rem;
   margin-left: 1rem;
-  padding-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
 }
 
 .dev-siteheader__nav ul {
@@ -57,8 +66,9 @@
 }
 
 .dev-siteheader__nav a {
-  color: white
+  color: white;
 }
+
 .dev-siteheader__nav a:hover,
 .dev-siteheader__nav a:focus {
   color: var(--green-light);

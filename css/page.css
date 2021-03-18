@@ -5,30 +5,11 @@
   max-height: max-content;
 }
 
-.dev-pagewmenu {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.dev-pagewmenu__menu {
-  flex: 1 1 23%;
-  max-width: 18rem;
-}
-
-.dev-pagewmenu__page {
-  flex: 1 1 76%;
-  max-width: 82rem;
-  padding-left: 2rem;
-}
-
-@media screen and (max-width: 50em) {
-  .dev-pagewmenu__menu {
-    flex: 1 1 auto;
-    max-width: 100%;
-  }
-
-  .dev-pagewmenu__page {
-    max-width: 100%;
-    padding-left: 0;
-  }
+.dev-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 100rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

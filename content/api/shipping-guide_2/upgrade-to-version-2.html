@@ -4,7 +4,7 @@ layout: api
 notanapi: true
 ---
 
-<section class="dev-documentation__section">
+<section class="dev-docscontent__section">
   <p>
     This is a short summary of the differences between version 1.xx and 2.0 of
     the Shipping Guide API and will help you migrate to version 2.0 of the API.
@@ -19,7 +19,7 @@ notanapi: true
     the future.
   </p>
 </section>
-<section class="dev-documentation__section">
+<section class="dev-docscontent__section">
   <h2>SOAP and JSON interface</h2>
   <h3>Changes</h3>
   <h4>Authentication is mandatory</h4>
@@ -36,7 +36,7 @@ notanapi: true
     <a href="/api/#authentication">Getting Started / Authentication page.</a>
   </p>
 
-  <h4 class="anchored">Restructured error response</h4>
+  <h4 class="dev-anchored">Restructured error response</h4>
   <p>
     In version 1 of the Shipping Guide API client and server error responses are
     mainly a HTML document describing what went wrong, but in some cases trace
@@ -48,7 +48,7 @@ notanapi: true
     >
   </p>
 
-  <h4 class="anchored">Introduced warnings</h4>
+  <h4 class="dev-anchored">Introduced warnings</h4>
   <p>
     We have also introduced warnings on product level in Shipping guide
     response. Warnings are send out when Shipping guide is able to validate the
@@ -63,14 +63,14 @@ notanapi: true
     as well.
   </p>
 
-  <h4 class="anchored">Trace messages are disabled by default for SOAP</h4>
+  <h4 class="dev-anchored">Trace messages are disabled by default for SOAP</h4>
   <p>
     Trace messages are now disabled by default and will not be send out in
     response. If in case you explicitly need trace messages then it has to be
     passed explicitly in request.
   </p>
 
-  <h4 class="anchored">Query params for REST endpoint</h4>
+  <h4 class="dev-anchored">Query params for REST endpoint</h4>
   <p>
     Some of the query params of
     <a href="/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery"
@@ -81,7 +81,7 @@ notanapi: true
   </p>
 </section>
 
-<section class="dev-documentation__section">
+<section class="dev-docscontent__section">
   <h2>SOAP interface</h2>
   <h3>Removed in Request</h3>
   <h4>Request properties</h4>
@@ -211,7 +211,7 @@ notanapi: true
     kindly refer the schema Shipping Guide 2.0
   </p>
 </section>
-<section class="dev-documentation__section">
+<section class="dev-docscontent__section">
   <h2>JSON interface</h2>
 
   <p>

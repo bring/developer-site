@@ -1,4 +1,5 @@
 :root {
+--gray-98: hsl(0, 0%, 98%); /* #fafafa */
 --gray-95: hsl(0, 0%, 95%); /* #f2f2f2 */
 --gray-90: hsl(0, 0%, 90%);
 --gray-86: hsl(0, 0%, 86%);
@@ -13,6 +14,8 @@
 --green-lighter-active: hsl(86, 40%, 92%);
 --green-dark: hsl(155, 100%, 19.6%); /* #00643a */
 --green-darker: hsl(152, 100%, 9%);
+
+--yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
 
 --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 

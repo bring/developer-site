@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   {{ partial "head.html" . }}
-  <body class="dev-pagelayout">
-    {{ partial "header.html" . }}
-    {{ block "main" . }} {{ end }}
-    {{ partial "footer.html" . }}
-    {{- partial "scripts.html" . -}}
-  </body>
+  {{- if (or (in .Section "api" ) (in .Section "edi")) -}}
+    <body class="dev-docslayout">
+      {{ partial "header.html" . }}
+      {{ block "main" . }} {{ end }}
+    </body>
+  {{- else -}}
+    <body class="dev-pagelayout">
+      {{ partial "header.html" . }}
+      {{ block "main" . }} {{ end }}
+      {{ partial "footer.html" . }}
+    </body>
+  {{- end -}}
+  {{- partial "scripts.html" . -}}
 </html>

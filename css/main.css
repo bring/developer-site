@@ -1,7 +1,6 @@
 /* Base */
 @import "./variables.css";
 @import "./base.css";
-@import "./container.css";
 @import "./page.css";
 @import "./siteheader.css";
 @import "./footer.css";
@@ -16,7 +15,7 @@
 @import "./sidemenu.css";
 @import "./intro.css";
 @import "./documentation.css";
+@import "./drawmenu.css";
 @import "./collapsible.css";
 @import "./blog.css";
-@import "./image.css";
 @import "./icon.css";

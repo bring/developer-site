@@ -3,13 +3,13 @@
   {{- if (eq .title $.Title) -}}
     {{- $types := .types -}}
     <article
-      class="dev-documentation w100p maxw64r {{ replace .title "API" "" | urlize }}"
+      class="dev-docscontent w100p maxw64r {{ replace .title "API" "" | urlize }}"
     >
       <h1>{{ .title }}</h1>
-      <section id="api-documentation" class="dev-documentation__section">
+      <section id="api-documentation" class="dev-docscontent__section">
         {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
         {{- range .documentation -}}
-          <h2 class="anchored" id="{{ .title | urlize }}">
+          <h2 class="dev-anchored" id="{{ .title | urlize }}">
             {{- .title -}}
           </h2>
           {{- if in (string .content) "\n\n" -}}
@@ -19,8 +19,8 @@
           {{- end -}}
         {{- end -}}
       </section>
-      <section class="dev-documentation__section">
-        <h2 class="anchored mbm" id="overview-of-endpoints">
+      <section class="dev-docscontent__section">
+        <h2 class="dev-anchored mbm" id="overview-of-endpoints">
           Overview of endpoints
         </h2>
 
@@ -57,8 +57,8 @@
       {{- range .resources -}}
         {{- $resources := . -}}
         {{- $displayName := .displayName -}}
-        <section class="dev-documentation__section">
-          <h2 class="anchored mbm" id="{{ $displayName | urlize }}">
+        <section class="dev-docscontent__section">
+          <h2 class="dev-anchored mbm" id="{{ $displayName | urlize }}">
             {{- $displayName -}}
           </h2>
           {{- with .description -}}
@@ -189,7 +189,7 @@
                     {{- range first 1 . -}}
                       <div
                         class="dev-collapsible"
-                        class="anchored"
+                        class="dev-anchored"
                         id="{{ $responseID }}"
                       >
                         <a
@@ -230,7 +230,7 @@
                     {{- end -}}
                   {{- end -}}
                   {{- else -}}
-                  <h4 class="anchored" id="{{ $responseID }}">
+                  <h4 class="dev-anchored" id="{{ $responseID }}">
                     HTTP status code {{ $responseCode }}
                   </h4>
                   {{- with .description -}}
@@ -253,7 +253,7 @@
         </section>
       {{- end -}}
       {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-        <section class="dev-documentation__section">
+        <section class="dev-docscontent__section">
           {{ template "_internal/disqus.html" $ }}
         </section>
       {{- end -}}
