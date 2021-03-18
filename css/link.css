@@ -1,7 +1,7 @@
 .dev-link--box {
   display: flex;
   flex-flow: column;
-  padding: 1rem;
+  padding: 1rem 1.2rem 0.8rem 1.2rem;
   background-color: var(--green-lighter);
   color: var(--gray-26);
   transition: background-color, box-shadow var(--easeout-15);
