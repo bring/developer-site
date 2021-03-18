@@ -262,12 +262,7 @@ documentation:
 
       See the "More examples" section below to see examples on how to use value added services.
 
-      <strong>We have added a new tag and by that a new way of requesting value added services. Both ways are still supported, but they can not be combined.</strong>
-
-      * All the new value added services will be added supporting only the new way.
-      * The old way will be decommissioned after some time.
-
-      Where you before had to send each additional service as a tag under the services tag, the new way has a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
+      You have to send a list of additionalService tags under the additionalServices tag, where the id element identify the additonal service to request.
 
       #### XML
 
@@ -300,19 +295,6 @@ documentation:
           "mobile": "97777777"
         }
       ]
-      ```
-
-       The old way of requesting additional servies:
-
-      ```
-      <services>
-          <simpleDelivery>true</simpleDelivery>
-          <flexDelivery>
-            <message>
-                Legg pakken i garasjen.
-            </message>
-          </flexDelivery>
-      </services>
       ```
 
       ### Error handling
