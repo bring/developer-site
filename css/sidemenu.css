@@ -59,7 +59,7 @@
 .dev-sidemenu__sublist {
   list-style: none;
   line-height: 1.3;
-  padding: 0 0.6rem;
+  padding: 0 0.6rem 0 calc(0.6rem - 3px);
   margin: 0 0 0.8rem;
 }
 
