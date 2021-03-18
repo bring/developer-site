@@ -1,6 +1,55 @@
 {{ define "main" }}
-  {{- .Content -}}
-  <div class="dev-container mbl">
-    {{- partial "apiflock.html" . -}}
+  <div class="dev-intro-padv dev-intro-padh mbxl bg-green1">
+    <div class="dev-container">
+      <div class="dev-intro-l">
+        <h1 class="mbm">{{ .Params.hero }}</h1>
+        <p class="maxw32r text-heading">
+          {{ .Params.start }}
+        </p>
+        <a class="btn btn--green text-heading" href="/api/">
+          Get started &RightArrow;</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="dev-intro-padh">
+    <div class="dev-container flex flex-wrap mbxl">
+      <div class="dev-intro-l mbxl">
+        {{- .Content -}}
+      </div>
+
+      <div class="dev-intro-m">
+        {{- with .Params.important -}}
+          <div class="mbxl">
+            {{- range . -}}
+              <div class="mbxs">
+                <div class="message--warn pam">
+                  {{ . | markdownify }}
+                </div>
+              </div>
+            {{- end -}}
+          </div>
+        {{- end -}}
+        <h2 class="mtm mbs text-title">API changelog</h2>
+        {{- range where .Site.Pages "Section" "api" -}}
+          {{- if (in .CurrentSection "revision-history") -}}
+            {{- range first 4 .Pages -}}
+              <h3 class="text-basic">
+                <time
+                  datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                  >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
+                >: {{ .Title }}
+              </h3>
+              {{ .Content }}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+        <div class="w100p mtl">
+          <a href="./api/revision-history">View all changes &RightArrow;</a
+          ><br />
+          <a href="./api/revision-history/index.xml">Subscribe via RSS</a>
+        </div>
+      </div>
+    </div>
   </div>
 {{ end }}
