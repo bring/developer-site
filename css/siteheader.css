@@ -27,6 +27,7 @@
 .dev-siteheader__logo {
   width: 7rem;
   height: auto;
+  max-height: 2.8rem; /* had to specify this for IE11 */
   margin-right: 0.6rem;
 }
 
