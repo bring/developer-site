@@ -69,6 +69,11 @@ ul {
   max-width: 68ch;
 }
 
+_:-ms-fullscreen,
+:root p, :root ul {
+  max-width: 106ch;
+}
+
 kbd,
 samp {
   font-family: monospace, monospace;
@@ -114,5 +119,5 @@ ol {
 }
 
 .icon-ui--green-dark {
-  fill: var(--green-dark)
+  fill: var(--green-dark);
 }
