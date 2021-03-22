@@ -35,7 +35,7 @@
     "postcss-loader": "^5.2.0",
     "raml-1-parser": "^1.1.67",
     "toml": "^3.0.0",
-    "webpack": "^5.26.3",
+    "webpack": "^5.27.1",
     "webpack-cli": "^4.5.0"
   },
   "browserslist": [
