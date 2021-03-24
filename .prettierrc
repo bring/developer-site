@@ -2,7 +2,7 @@
     "proseWrap": "always",
     "overrides": [
         {
-          "files": ["*.html"],
+          "files": ["layouts/**/*.html"],
           "options": {
             "parser": "go-template"
           }
