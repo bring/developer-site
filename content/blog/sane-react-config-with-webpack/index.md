@@ -444,7 +444,7 @@ And [CSS Nano](https://cssnano.co/) minifies the CSS.
 All these can have their own settings, but we run with default most of the time.
 
 Finally, we can run the project again with `npm start` and open localhost:3000. You should see something like this:
-![](/img/webpacking/webpackingp2.png)
+![](images/webpackingp2.png)
 
 Try to change some of the CSS, even variables, to check the hot reloading.
 

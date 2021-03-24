@@ -10,7 +10,7 @@ authors:
 ---
 
 
-It has been more than a year we started using [Sentry.io](https://sentry.io) to idenitfy the user experience and UI failures one year ago. I thought of sharing What have we learnt about it so far and our experience with it.
+It has been more than a year we started using [Sentry.io](https://sentry.io) to identify the user experience and UI failures one year ago. I thought of sharing What have we learnt about it so far and our experience with it.
 ## 📄 Intro  🏊‍♀️
 - Why do you need Sentry?
 - Sign In and create a project
@@ -83,7 +83,7 @@ Also, define the additional parameters such as release version environment, and 
 ## First error tracking
 
 In your react application, We need to create an error. We should create a button that calls console.log with 'user.emailId' variable. 
-After this action, we have to get an error message: “Uncaught TypeError (Cannot read property ‘xxx’ of undefined)” due to the lack of user object. You also can use javascript throw exception.
+After this action, we have to get an error message: “Uncaught TypeError (Cannot read property ‘xxx’ of undefined)” due to the lack of user object. You also can use JavaScript throw exception.
 
 After integrating this button in the application, you should test it in a browser.
 
@@ -94,7 +94,7 @@ The Messages look bad. Of course, we have seen error messages, not understanding
 
 ## Use Sentry with API Endpoint
 
-Okay. We covered javascript exception in previous points. However, what are we going to do with XHR errors?
+Okay. We covered JavaScript exception in previous points. However, what are we going to do with XHR errors?
 Sentry also has custom error handling. I used it for tracking api errors.
 
 ```js
@@ -152,7 +152,7 @@ After the usage of Sentry in Tracking applications for quite some time which is 
 - Do not append the key identifiers such as consignment number, customer identifier or any other details in exception message which will prevent the grouping issues done by Sentry internally    
 - Instead use Sentry context methods or add additional info debugging in JSON format in `captureException` & `captureMessage` methods in optional parameter which would help in debug the issue or user info as mentioned in the above section
 - You can define log level while logging custom exception which helps to identify the criticality
-- Providing Git release details to Sentry gives us advantage to view source map whenever issue start occuring
+- Providing Git release details to Sentry gives us advantage to view source map whenever issue start occurring
 - React 16 has introduced `Error Boundaries ` which catches JavaScript errors anywhere in component tree, we can capture error details to Sentry, and display a fallback UI instead of the component tree that crashed.   
 
 ## Conclusion
@@ -160,7 +160,7 @@ After the usage of Sentry in Tracking applications for quite some time which is 
 Overall I feel Sentry.io is useful to understand the frontend failure but we need to use effectively by considering some of the above points to make best use of it.
 
 URLs:
-- [Sentry Documentation](https://docs.sentry.io/error-reporting/quickstart/?platform=javascript)
+- [Sentry Documentation](https://docs.sentry.io/error-reporting/quickstart/?platform=JavaScript)
 - [Sentry Integrations](https://sentry.io/integrations/)
  
 

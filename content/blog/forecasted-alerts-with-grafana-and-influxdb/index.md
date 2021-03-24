@@ -19,7 +19,7 @@ The cases where the X% full thresholds really don't work well for disks are:
 
 One approach that might work better for these cases, is to attempt to forecast disk usage. The basic idea is to use time as a threshold, instead of a usage percent. Said differently, &ldquo;alert me at least 24 hours before the disk fills up&rdquo; instead of &ldquo;alert me when the disk is 90% full&rdquo;. Hopefully, the process that is filling up the disk can be fixed before it creates a big problem.
 
-We've previously written about <a href="grafana.org">Grafana</a> gaining an alerting engine. Combined with <a href="https://www.influxdata.com/time-series-platform/telegraf/">telegraf</a> and <a href="https://www.influxdata.com/time-series-platform/influxdb/">InfluxDB</a> we have gained the ability to make some pretty clever alerts, and forecasting is one of the things that is much easier now than it would have been otherwise.
+We've previously written about <a href="https://grafana.org">Grafana</a> gaining an alerting engine. Combined with <a href="https://www.influxdata.com/time-series-platform/telegraf/">telegraf</a> and <a href="https://www.influxdata.com/time-series-platform/influxdb/">InfluxDB</a> we have gained the ability to make some pretty clever alerts, and forecasting is one of the things that is much easier now than it would have been otherwise.
 
 With the default setup for the telegraf disk plugin, the following query can be used to get the time series for disk usage into Grafana:
 

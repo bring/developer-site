@@ -116,7 +116,7 @@ documentation:
     In the context of Bring, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
     we'll send a HTTP POST to your callback URL that were defined during the Webhook registration.
 
-    Using Webhooks is quite simple, and allows for immediate feedback based on the event that occured for the subscribed entity.
+    Using Webhooks is quite simple, and allows for immediate feedback based on the event that occurred for the subscribed entity.
     Additionally, it allows integrations of customers to become simpler, as no scheduled mechanism is required to be implemented.
     You basically just define an endpoint that accepts HTTP POST, and the event details will be sent there - quite amazing 🙌
 
@@ -131,7 +131,7 @@ documentation:
     | Resource | Limitation description |
     |:--------|:---------|
     | All requests | The Webhook API allows a maximum of _50 concurrent requests_ per user |
-    | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to _100 per request_. If you have more than 100 at the time, split to mulitple requests using the batch-API |
+    | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to _100 per request_. If you have more than 100 at the time, split to multiple requests using the batch-API |
     | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of _10 concurrent requests_ per user |
 
 - title: Events
@@ -156,7 +156,7 @@ documentation:
     | `COLLECTED` | The parcel has been collected at pickup address. |
     | `DELIVERED` | Package has been delivered. |
     | `DELIVERED_SENDER` | Package has been returned to the sender |
-    | `DELIVERY_CANCELLED` | Home delivery has been canceled by the customer. |
+    | `DELIVERY_CANCELLED` | Home delivery has been cancelled by the customer. |
     | `DELIVERY_CHANGED` | Date for Home delivery has been changed by customer. |
     | `DELIVERY_ORDERED` | Home delivery has been ordered |
     | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |

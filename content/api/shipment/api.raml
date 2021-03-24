@@ -960,7 +960,7 @@ types:
           required: false
         Reference:
           type: ReferenceTYPE[]
-          description: Futher references related to the party
+          description: Further references related to the party
           example: "SOA-121232332-AN"
           required: false
   ProductAndService:
@@ -1033,7 +1033,7 @@ types:
         required: false
       ControlDigit:
         type: integer
-        description: Control digit for incoming amount when there is specified a KID number (norwegian only)
+        description: Control digit for incoming amount when there is specified a KID number (Norwegian only)
         example: 8
         required: false
       DocumentId:
@@ -1627,7 +1627,7 @@ documentation:
 
     The Shipment API uses Shipping Guide as the source for price and availability (when supported in the Shipping Guide) for the different products. We advise clients of the Shipment API to use Shipping Guide API for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Shipment API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
 
-    We are continually rolling out support for more of Posten / Brings products and aim to support all available products in this API withing a short time. In addition to the documentation on this pages feel free to check out our [swagger page](https://bapiqa.bring.com/Shipment/swagger) for this API.
+    We are continually rolling out support for more of Posten / Brings products and aim to support all available products in this API within a short time. In addition to the documentation on this pages feel free to check out our [swagger page](https://bapiqa.bring.com/Shipment/swagger) for this API.
 
     This API has similarities with the Booking API, but there are differences. Read more about the [differences between the Booking API and the Shipment API](/api/booking-shipment/).
 
@@ -1638,7 +1638,7 @@ documentation:
 /sendshipment?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment
   description: |
-        Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
+        Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input will have packageid 1 in returned array).
 
         A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Please refer to this link for both [valid product codes/services and VASes](https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
 
@@ -1690,7 +1690,7 @@ documentation:
     responses:
       200:
         description: |
-          Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
+          Returns a confirmation of successful delivery and package IDs / shipment IDs if requested.
         body:
           application/xml:
             type: CreateShipmentResponse
@@ -1722,7 +1722,7 @@ documentation:
 /sendbooking?shipmentId={createShipmentId}&packageIds={createPackageId}:
   displayName: Create shipment booking
   description: |
-        Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input wil have packageid 1 in returned array).
+        Sends a shipment consisting of one consignment, that must include at least one package (transportunit), from one sender to one receiver. The shipment might include additional information in regards to cash on delivery, dangerousgoods etc. If requested through the query parameteres the service will create shipmentid (for the whole shipment) in addition to package ids. The packageids will be returned in the order of the packages (ie. package 1 in the input will have packageid 1 in returned array).
 
         A valid combination of an additional party, with party type TransportCompany and a valid partyId and optionally subPartyId, and service is required. In addition there might be several valueadded services that can be added. Please refer to this link for both [valid product codes/services and VASes](https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML).
 
@@ -1767,7 +1767,7 @@ documentation:
       200:
         displayName: Success
         description: |
-          Returns a confirmation of successfull delivery and package IDs / shipment IDs if requested.
+          Returns a confirmation of successful delivery and package IDs / shipment IDs if requested.
 
       400:
         displayName: Error

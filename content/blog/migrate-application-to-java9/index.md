@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Our journey through java9 module hell..... and then to java10
+title: Our journey through java9 module hell… and then to java10
 publishDate: 2018-04-24 09:09:43 +01:00
 tags: 
     - migration
@@ -8,28 +8,28 @@ authors:
     - achintsatsangi
 ---
 
-We run many micro-services based on java, j2ee technologies and usually try to keep up with all the updates coming in on a day to day basis in the technologies so when java9 was announced we thought that "Hmmm.... thats new". It was the first java release that wasn't backward compatible, came with a declaration that it will surely break all our environments and would need time and effort to solve it. We took it as a challenge and thought that we will sail through it easy, but trust me we were wrong.
+We run many micro-services based on java, j2ee technologies and usually try to keep up with all the updates coming in on a day to day basis in the technologies so when java9 was announced we thought that "Hmmm… that’s new". It was the first java release that wasn't backward compatible, came with a declaration that it will surely break all our environments and would need time and effort to solve it. We took it as a challenge and thought that we will sail through it easy, but trust me we were wrong.
 
 Background
 ---
 
 Java9 was release on 21 September 2017, and we were already delayed by half a year to start moving our applications to use it. It was kind off surprising as we have always been moving along with the updates and have always used the latest JVM. We were about to know why.
 
-Java9 comes with a modular approach which allows reducing the JVM size and ability to specify what you need instead of providing all that people usually need. This change would help making the JVM smaller in size as each aplication can pick what they need instead of the whole lot and in the world of Docker, cloud it makes a lot of sense it will reduce the JVM size to as small as 30-40 MB only.
+Java9 comes with a modular approach which allows reducing the JVM size and ability to specify what you need instead of providing all that people usually need. This change would help making the JVM smaller in size as each application can pick what they need instead of the whole lot and in the world of Docker, cloud it makes a lot of sense it will reduce the JVM size to as small as 30-40 MB only.
 
-So that was the good part, the bad part of the same approach is it adds complexities to the migration process to java9 as you have to specify each and every module you require during compile time, test execution, automation tests, build environment, run time or any other way of running your application.          
+So that was the good part, the bad part of the same approach is it adds complexities to the migration process to java9 as you have to specify each and every module you require during compile time, test execution, automation tests, build environment, run time or any other way of running your application.
 
-This was our third attempt at trying to migrate our application to java9 as in the previous attempts we faced roadblocks along the way like ratpack libs not supporting java9 and others. So we started after watching a very nice presentaion `To JAR Hell And Back - A Live Migration to the Java 9 Module System - Nicolai Parlog` where he discussed how they were able to migrated a java based web application (mostly REST services) to java9
+This was our third attempt at trying to migrate our application to java9 as in the previous attempts we faced roadblocks along the way like ratpack libs not supporting java9 and others. So we started after watching a very nice presentation `To JAR Hell And Back - A Live Migration to the Java 9 Module System - Nicolai Parlog` where he discussed how they were able to migrated a java based web application (mostly REST services) to java9
 
 [![To JAR Hell And Back - A Live Migration to the Java 9 Module System - Nicolai Parlog](To-jar-hell-and-back.jpg)](https://vimeo.com/233801793)
 
 The approach suggested in the presentation is as follows:
 
-1. Make seperate profile for java9 so that application can still be built over java8
+1. Make separate profile for java9 so that application can still be built over java8
 2. Add `--add-modules`, `--patch-modules` as per need to your maven compiler command arguments to solve any ClassNotFoundException's, NoClassDefinitionFoundException's. (Sounds easy, but these are the toughest nut to crack, which module or jar is needed to get access to the particular class... Maybe naming the methods and classes is still the toughest part.... so lets place it at second) 
 3. Add the same to run your application with `java -jar` command and viola the application is migrated.
 
-To ensure we don't end up in trouble during migration, as a preperation we upgraded all our dependcies upto the highest version possible hoping that the latest versions will be more compatible with java9 and will reduce our troubles. We were pretty confident about the approach and started with one of the smallest applications to avoid any unforeseen problems. After putting concious efforts for 3 days, we were able to successfully build our application, execute tests and run it locally with java9. It required the following:   
+To ensure we don't end up in trouble during migration, as a preparation we upgraded all our dependcies up to the highest version possible hoping that the latest versions will be more compatible with java9 and will reduce our troubles. We were pretty confident about the approach and started with one of the smallest applications to avoid any unforeseen problems. After putting conscious efforts for 3 days, we were able to successfully build our application, execute tests and run it locally with java9. It required the following:   
 
 - Since we use jetty, it had to be upgraded to version `9.4.9.v20180320` as versions below `9.4.6`don't support java9.
 - A new java9 profile activated by usage of jdk9, which looked something like this
@@ -131,9 +131,9 @@ PS : JSTL libs are required at run time and not compile time for JSP rendering
 
 - Had to add dependencies to `jaxb2-maven-plugin` to make it work and generate pojos as earlier
 
-Since everything is in maven dependencies itself, there is no need to make seperate profiles for different java versions. This approach made it possible to keep all our changes local with in the application and keep our build and deployment scripts as is.
+Since everything is in maven dependencies itself, there is no need to make separate profiles for different java versions. This approach made it possible to keep all our changes local with in the application and keep our build and deployment scripts as is.
 
-The following section covers the changes required in our continous build server (jenkins) and puppet configurations to make the application build and run with java9.
+The following section covers the changes required in our continuous build server (jenkins) and puppet configurations to make the application build and run with java9.
 
 Installing java9 on our servers with puppet
 ---
@@ -153,7 +153,7 @@ exec { "Download JDK 9":
   }
 ```
     
-After running above puppet configuration on all servers we have our java9 jdk installed and available and applications can be moved to use that environment. On the build server we had to manually confgure java9 as a build environment using the global configuration. 
+After running above puppet configuration on all servers we have our java9 jdk installed and available and applications can be moved to use that environment. On the build server we had to manually configure java9 as a build environment using the global configuration. 
 Since we used jdk8 as default jdk for building our applications we had to make it configurable and override the same with java9 for particular applications.. following code snippet shows how the same was achieved:
 
 ```
@@ -170,7 +170,7 @@ Migration to Java 10
 ---
 There was a bet inplace amongst two of the other teams on who would be able to migrate there application to java10 before the other. Even though we were not part of those teams and were not in the race, we were already a few steps ahead of others as we were already on java9 while others were using java8. So we decided to take part and do the whole thing over a conference video call with all the team members taking part.
 
-The puppet and build config were given to one guy to install java10 on our servers and make it avaialble for configurations at runtime. Another guy was given charge of making changes to the application and adding libraries required to make the application compatible with java10. In the end we sailed through this migration with ease. The major change made was in the application itself to add libraries required for missing classes. they were : 
+The puppet and build config were given to one guy to install java10 on our servers and make it available for configurations at runtime. Another guy was given charge of making changes to the application and adding libraries required to make the application compatible with java10. In the end we sailed through this migration with ease. The major change made was in the application itself to add libraries required for missing classes. they were : 
 
 ```xml
 <dependencies>
