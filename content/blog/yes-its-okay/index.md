@@ -18,7 +18,7 @@ Inspired by this most excellent idea and their list — we wrote our own.
 
 ![](images/itsokayto1.jpg)
 
-### It’s okay to…
+## It’s okay to…
 
 * say “I don’t understand”
 * never have heard about something
@@ -67,7 +67,5 @@ Inspired by this most excellent idea and their list — we wrote our own.
 * bring sweets or cake to the office
 
 ![](images/itsokayto2.jpg)
-
----
 
 [^1]: Except if there is a fire alarm, then please absolutely use the stairs.
