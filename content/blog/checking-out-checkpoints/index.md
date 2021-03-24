@@ -34,7 +34,7 @@ Timings of the slow inserts coincided with spiky checkpoints and we also observe
 
 You can read more about shared buffer cache [here](https://2ndquadrant.com/media/pdfs/talks/InsideBufferCache.pdf). A short summary is that everything postgres reads from disk has to be read into a shared buffer. If the shared buffer has been modified it is said to be dirty. Before reading into a dirty shared buffer it has to be cleaned, which is accomplished by flushing it to disk. This can be done by a client connection if there are no clean shared buffers available, or it can be done by the checkpointer or the bgwriter. It is preferable that the bgwriter does this rather than the clients, because no user is ever waiting on the bgwriter.
 
-With the default settings the bgwriter will run upto 5 times in a second and is allowed to flush upto 100 pages each time it runs, with one page being 8192 bytes this means it can flush upto 4MB per second. In our database, this was dwarfed by the amount of flushing done by client connections. So, we doubled the frequency of the runs and doubled the max amount of pages to clean per run which allows the bgwriter to flush 16MB per second.
+With the default settings the bgwriter will run up to 5 times in a second and is allowed to flush up to 100 pages each time it runs, with one page being 8192 bytes this means it can flush up to 4MB per second. In our database, this was dwarfed by the amount of flushing done by client connections. So, we doubled the frequency of the runs and doubled the max amount of pages to clean per run which allows the bgwriter to flush 16MB per second.
 
 ![](images/bgwriter-tuned-stats.png)
 

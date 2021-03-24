@@ -55,7 +55,7 @@ Upon digging in further we found that:
 
 ![](images/heap_dump_c3p0.png)
 
-Futher on analysing the application logs, which looked something like this:
+Further on analysing the application logs, which looked something like this:
 
 ```
 WARN  [c.ThreadPoolAsynchronousRunner] [user:] - com.mchange.v2.async.ThreadPoolAsynchronousRunner$DeadlockDetector@15046d35 -- APPARENT DEADLOCK!!! Creating emergency threads for unassigned pending tasks!

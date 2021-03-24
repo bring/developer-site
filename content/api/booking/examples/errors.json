@@ -432,7 +432,7 @@
     },
     {
       "code": "BOOK-INTERNAL-001",
-      "message": "An unexpected error occured",
+      "message": "An unexpected error occurred",
       "suffixable": false
     },
     {
@@ -442,7 +442,7 @@
     },
     {
       "code": "PICKUP-INTERNAL-001",
-      "message": "An unexpected error occured",
+      "message": "An unexpected error occurred",
       "suffixable": false
     },
     {

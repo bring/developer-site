@@ -434,7 +434,7 @@
     </errorType>
     <errorType>
       <code>BOOK-INTERNAL-001</code>
-      <message>An unexpected error occured</message>
+      <message>An unexpected error occurred</message>
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
@@ -444,7 +444,7 @@
     </errorType>
     <errorType>
       <code>PICKUP-INTERNAL-001</code>
-      <message>An unexpected error occured</message>
+      <message>An unexpected error occurred</message>
       <suffixable>false</suffixable>
     </errorType>
     <errorType>
