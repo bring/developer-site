@@ -5,7 +5,7 @@ publishDate: 2019-10-07 10:55:00
 tags: 
     - code-and-design
 authors:
-    - HeleneJuterud
+    - HeleneKassandra
 
 ---
 Regardless of how enthusiastic you are laying the first bricks of a project, at some point you’ll realise that the stack of bricks, look suspiciously like a wall, or something different than originally pictured.

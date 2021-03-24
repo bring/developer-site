@@ -7,7 +7,7 @@ tags:
 authors:
     - ElisabethIrgens
     - HalvorSanden
-    - HeleneJuterud
+    - HeleneKassandra
 heroImage: images/01team.png
 
 ---
