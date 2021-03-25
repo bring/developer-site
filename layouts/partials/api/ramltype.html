@@ -23,7 +23,7 @@
       {{- end -}}
       {{- if eq .name $type -}}
         {{- $name := .name -}}
-        <article>
+        <div>
           {{- if (eq $showHeader true) -}}
             <h4 class="dev-anchored" id="type-{{ .name | urlize }}">
               {{ .displayName }}
@@ -111,7 +111,7 @@
               {{- end -}}
             {{- end -}}
           {{- end -}}
-        </article>
+            </div>
       {{- end -}}
     {{- end -}}
   {{- end -}}

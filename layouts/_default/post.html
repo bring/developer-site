@@ -1,21 +1,23 @@
 {{- define "main" -}}
   <div class="maxw48r w100p m-auto mvl phl">
-    <article>
-      <header class="mbl">
-        <div class="mbm">
-          <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+    <div class="mbm">
+      <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+    </div>
+    <main>
+      <article>
+        <header class="mbl">
+          <h1 class="dev-blog__heading">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h1>
+          {{ partial "blog-meta.html" . }}
+        </header>
+        <div class="mbxl">
+          {{ .Content }}
         </div>
-        <h1 class="dev-blog__heading">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h1>
-        {{ partial "blog-meta.html" . }}
-      </header>
-      <div class="mbxl">
-        {{ .Content }}
-      </div>
-      <div class="mbm">
-        <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
-      </div>
-    </article>
+      </article>
+    </main>
+    <div class="mbm">
+      <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+    </div>
   </div>
 {{- end -}}
