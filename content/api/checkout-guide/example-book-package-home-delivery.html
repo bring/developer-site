@@ -1,0 +1,112 @@
+---
+title: Book Pakke til hentested
+titlesub:
+layout: api
+widelayout: true
+notanapi: true
+menu:
+  api:
+    parent: guide-home-delivery
+---
+
+<section class="dev-documentation__section">
+  <h2 class="mbm">Pakke i postkassen in checkout</h2>
+  <div class="dev-guide-l">
+    <div class="bg-green1 pal pbm mbxs">
+      <h3>Create request</h3>
+      <p>
+        This example ... forklar hva eksempelet viser. Add example with selected
+        delivery date and hensetting
+      </p>
+      <div class="maxw64r">
+        <!-- prettier-ignore -->
+        {{< highlight js >}}{
+    "schemaVersion": 1,
+    "consignments": [
+      {
+        "shippingDateTime": "2021-01-20T15:00:00",
+        "parties": {
+          "sender": {
+            "name": "Ola Nordmann",
+            "addressLine": "Testsvingen 12",
+            "addressLine2": null,
+            "postalCode": "0263",
+            "city": "OSLO",
+            "countryCode": "NO",
+            "reference": "1234",
+            "additionalAddressInfo": "Hentes på baksiden etter klokken to",
+            "contact": {
+              "name": "Trond Nordmann",
+              "email": "trond@nordmanntest.no",
+              "phoneNumber": "99999999"
+            }
+          },
+          "recipient": {
+            "name": "Tore Mottaker",
+            "addressLine": "Mottakerveien 14",
+            "addressLine2": "c/o Tina Mottaker",
+            "postalCode": "0659",
+            "city": "OSLO",
+            "countryCode": "NO",
+            "reference": "43242",
+            "additionalAddressInfo": "Sett igjen utenfor",
+            "contact": {
+              "name": "Tore mottaker",
+              "email": "tore@mottakertest.no",
+              "phoneNumber": "+46700000000"
+            }
+          },
+          "pickupPoint": null
+        },
+        "product": {
+          "id": "PA_DOREN",
+          "customerNumber": "PARCELS_NORWAY-***********",
+          "messageForRecipient": null
+        },
+        "purchaseOrder": null,
+        "correlationId": "INTERNAL-123456",
+        "packages": [
+          {
+            "weightInKg": 1.1,
+            "goodsDescription": "Testing equipment",
+            "dimensions": {
+              "heightInCm": 13,
+              "widthInCm": 23,
+              "lengthInCm": 10
+            },
+            "containerId": null,
+            "packageType": null,
+            "numberOfItems": null,
+            "correlationId": "PACKAGE-123"
+          }
+        ]
+      }
+    ],
+    "testIndicator": true
+  }{{< /highlight >}}
+      </div>
+    </div>
+    <div class="bg-green1 pal pbm mbxs">
+      <h3>Submit the request</h3>
+      <p>Post your request to https://api.bring.com/booking/api/booking</p>
+    </div>
+    <div class="bg-green1 pal pbm mbxs">
+      <h3>Service response</h3>
+      <p>Legg til service response example</p>
+    </div>
+    <div class="bg-green1 pal pbm mbxs">
+      <h3>A label is generated</h3>
+      <p>
+        The Booking API generates and sends all necessary EDI messages to carry
+        out the shipment. A URL to a PDF label is returned in responses. This
+        label must be printed and be attached to the shipment. A URL that points
+        to tracking information is also returned.
+      </p>
+      <p>
+        A GET request to the label URL will result in a HTTP 302 redirect to the
+        concrete storage facility (e.g. redirect to Amazon S3). Ensure that your
+        client follows these redirects.
+      </p>
+    </div>
+  </div>
+</section>
