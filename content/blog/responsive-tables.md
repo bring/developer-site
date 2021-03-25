@@ -26,7 +26,7 @@ It implies that tables are not layout. Yet, by striving for responsive tables, w
 The mantra also means that there are use cases where the `<table>` element _is_ the best and perhaps only solution. An interpretation which might have snuffed out some of the nested `<div>`-based tables and libraries that make data near-impossible to copy and paste or make sense of using assistive tech. Not too different from showing your text as images.
 
 ### Scaling and scrolling
-If you manage to scale down and rearrange a table without change or loss of meaning, then go for it. That can usually be done with [data-attributes and CSS](https://codepen.io/hwsanden/pen/1c8fe97dbdb17cbf176bae10023b9274) or by making a separate [description list component](https://inclusive-components.design/data-tables/). This is usually unproblematic for smaller tables that are part of articles or a larger interface.
+If you manage to scale down and rearrange a table without change or loss of meaning, then go for it. That can usually be done with [data-attributes and CSS](https://codepen.io/hwsanden/pen/oNXzpqd) or by making a separate [description list component](https://inclusive-components.design/data-tables/). This is usually unproblematic for smaller tables that are part of articles or a larger interface.
 
 Scaling like that is not a viable option for table-heavy interfaces with maybe ten to twenty columns and twenty to hundred rows with sorting and filtering. In such cases, overflow and scroll is your friend. But make sure it can be tabbed to when overflowing, and that only the table is scrolling horizontally, not the entire page.
 

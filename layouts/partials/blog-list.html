@@ -1,4 +1,4 @@
-<div class="dev-blog phl flex flex-wrap">
+<main class="dev-blog phl flex flex-wrap">
   {{- with .Title -}}
     <div class="mbm">
       <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
@@ -28,64 +28,66 @@
   {{- end -}}
   {{- $paginator := .Paginator -}}
   {{- if gt $paginator.TotalPages 1 -}}
-    <ul class="pagination w100p maxw100p m-auto tc mvl">
-      <li class="pagination__element">
-        {{- if $paginator.HasPrev -}}
+    <nav class="w100p" aria-label="Pagination">
+      <ul class="pagination mvl w100p maxw100p tc">
+        <li class="pagination__element">
+          {{- if $paginator.HasPrev -}}
+            <a
+              href="{{ $paginator.Prev.URL }}"
+              title="Newer posts"
+              class="pagination__btn"
+            >
+              <span
+                data-mybicon="mybicon-arrow-left"
+                data-mybicon-class="icon-ui"
+              ></span>
+            </a>
+            {{- else -}}
+            <span
+              class="pagination__btn pagination__btn--deactivated"
+              title="There are no newer posts"
+              ><span
+                data-mybicon="mybicon-arrow-left"
+                data-mybicon-class="icon-ui"
+              ></span
+            ></span>
+          {{- end -}}
+        </li>
+
+        {{- range $paginator.Pagers -}}
+          {{- $active := "" -}}
+          {{- if eq . $paginator -}}
+            {{- $active = "pagination__btn--active" -}}
+          {{- end -}}
+          <li class="pagination__element">
+            <a href="{{ .URL }}" class="pagination__btn {{ $active }}"
+              >{{ .PageNumber }}</a
+            >
+          </li>
+        {{- end -}}
+
+        {{- if $paginator.HasNext -}}
           <a
-            href="{{ $paginator.Prev.URL }}"
-            title="Newer posts"
+            href="{{ $paginator.Next.URL }}"
+            title="Older posts"
             class="pagination__btn"
           >
             <span
-              data-mybicon="mybicon-arrow-left"
+              data-mybicon="mybicon-arrow-right"
               data-mybicon-class="icon-ui"
             ></span>
           </a>
           {{- else -}}
           <span
             class="pagination__btn pagination__btn--deactivated"
-            title="There are no newer posts"
+            title="There are no older posts"
             ><span
-              data-mybicon="mybicon-arrow-left"
+              data-mybicon="mybicon-arrow-right"
               data-mybicon-class="icon-ui"
             ></span
           ></span>
         {{- end -}}
-      </li>
-
-      {{- range $paginator.Pagers -}}
-        {{- $active := "" -}}
-        {{- if eq . $paginator -}}
-          {{- $active = "pagination__btn--active" -}}
-        {{- end -}}
-        <li class="pagination__element">
-          <a href="{{ .URL }}" class="pagination__btn {{ $active }}"
-            >{{ .PageNumber }}</a
-          >
-        </li>
-      {{- end -}}
-
-      {{- if $paginator.HasNext -}}
-        <a
-          href="{{ $paginator.Next.URL }}"
-          title="Older posts"
-          class="pagination__btn"
-        >
-          <span
-            data-mybicon="mybicon-arrow-right"
-            data-mybicon-class="icon-ui"
-          ></span>
-        </a>
-        {{- else -}}
-        <span
-          class="pagination__btn pagination__btn--deactivated"
-          title="There are no older posts"
-          ><span
-            data-mybicon="mybicon-arrow-right"
-            data-mybicon-class="icon-ui"
-          ></span
-        ></span>
-      {{- end -}}
-    </ul>
+      </ul>
+    </nav>
   {{- end -}}
-</div>
+  </main>

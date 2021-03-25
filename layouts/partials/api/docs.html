@@ -2,261 +2,263 @@
   {{/* ensure that only the right api doc shows up, conditional can probably be improved */}}
   {{- if (eq .title $.Title) -}}
     {{- $types := .types -}}
-    <article
+    <main
       class="dev-docscontent w100p maxw64r {{ replace .title "API" "" | urlize }}"
     >
-      <h1>{{ .title }}</h1>
-      <section id="api-documentation" class="dev-docscontent__section">
-        {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
-        {{- range .documentation -}}
-          <h2 class="dev-anchored" id="{{ .title | urlize }}">
-            {{- .title -}}
-          </h2>
-          {{- if in (string .content) "\n\n" -}}
-            {{- .content | markdownify -}}
-            {{- else -}}
-            <p>{{ .content | markdownify }}</p>
+      <article>
+        <h1>{{ .title }}</h1>
+        <section id="api-documentation" class="dev-docscontent__section">
+          {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
+          {{- range .documentation -}}
+            <h2 class="dev-anchored" id="{{ .title | urlize }}">
+              {{- .title -}}
+            </h2>
+            {{- if in (string .content) "\n\n" -}}
+              {{- .content | markdownify -}}
+              {{- else -}}
+              <p>{{ .content | markdownify }}</p>
+            {{- end -}}
           {{- end -}}
-        {{- end -}}
-      </section>
-      <section class="dev-docscontent__section">
-        <h2 class="dev-anchored mbm" id="overview-of-endpoints">
-          Overview of endpoints
-        </h2>
+        </section>
+        <section class="dev-docscontent__section">
+          <h2 class="dev-anchored mbm" id="overview-of-endpoints">
+            Overview of endpoints
+          </h2>
 
-        <h3 class="dn">Base URL</h3>
-        <pre>{{ .baseUri }}</pre>
-        <table>
-          <thead>
-            <th>Method</th>
-            <th>Endpoint</th>
-            <th>Usage</th>
-          </thead>
-          {{- range .resources -}}
-            {{ $resDisplayName := .displayName | urlize }}
-            {{ $resRelUri := .relativeUri | safeHTML }}
+          <h3 class="dn">Base URL</h3>
+          <pre>{{ .baseUri }}</pre>
+          <table>
+            <thead>
+              <th>Method</th>
+              <th>Endpoint</th>
+              <th>Usage</th>
+            </thead>
+            {{- range .resources -}}
+              {{ $resDisplayName := .displayName | urlize }}
+              {{ $resRelUri := .relativeUri | safeHTML }}
+              {{- range .methods -}}
+                <tr>
+                  <td>
+                    {{- .method | upper -}}
+                  </td>
+                  <td>
+                    {{- $resRelUri -}}
+                  </td>
+                  <td>
+                    <a href="#{{ $resDisplayName }}">
+                      {{- .description | safeHTML -}}
+                    </a>
+                  </td>
+                </tr>
+              {{- end -}}
+            {{- end -}}
+          </table>
+        </section>
+
+        {{- range .resources -}}
+          {{- $resources := . -}}
+          {{- $displayName := .displayName -}}
+          <section class="dev-docscontent__section">
+            <h2 class="dev-anchored mbm" id="{{ $displayName | urlize }}">
+              {{- $displayName -}}
+            </h2>
+            {{- with .description -}}
+              {{- if in (string .) "\n\n" -}}
+                {{ .| markdownify }}
+                {{- else -}}
+                <p>{{ . | markdownify }}</p>
+              {{- end -}}
+            {{- end -}}
+
             {{- range .methods -}}
-              <tr>
-                <td>
-                  {{- .method | upper -}}
-                </td>
-                <td>
-                  {{- $resRelUri -}}
-                </td>
-                <td>
-                  <a href="#{{ $resDisplayName }}">
-                    {{- .description | safeHTML -}}
-                  </a>
-                </td>
-              </tr>
-            {{- end -}}
-          {{- end -}}
-        </table>
-      </section>
-
-      {{- range .resources -}}
-        {{- $resources := . -}}
-        {{- $displayName := .displayName -}}
-        <section class="dev-docscontent__section">
-          <h2 class="dev-anchored mbm" id="{{ $displayName | urlize }}">
-            {{- $displayName -}}
-          </h2>
-          {{- with .description -}}
-            {{- if in (string .) "\n\n" -}}
-              {{ .| markdownify }}
-              {{- else -}}
-              <p>{{ . | markdownify }}</p>
-            {{- end -}}
-          {{- end -}}
-
-          {{- range .methods -}}
-            <h3 class="dn">URL</h3>
-            {{- $urlOutput := slice -}}
-            {{- $absUri := $resources.absoluteUri -}}
-            {{- $hasExtension := false -}}
-            {{- with $resources.uriParameters.mediaTypeExtension -}}
-              {{- $hasExtension = true -}}
-            {{- end -}}
-
-            {{- if $hasExtension -}}
-              {{- range $resources.uriParameters.mediaTypeExtension.enum -}}
-                {{- $urlWithExtension := replace $absUri "{mediaTypeExtension}" . -}}
-                {{- $urlOutput = $urlOutput | append $urlWithExtension -}}
+              <h3 class="dn">URL</h3>
+              {{- $urlOutput := slice -}}
+              {{- $absUri := $resources.absoluteUri -}}
+              {{- $hasExtension := false -}}
+              {{- with $resources.uriParameters.mediaTypeExtension -}}
+                {{- $hasExtension = true -}}
               {{- end -}}
-              {{- else -}}
-              {{- $urlOutput = $urlOutput | append $absUri -}}
-            {{- end -}}
 
-            <pre class="flex align-ic">
-                        <span class="mrs phs pvxs bg-gray4">{{ .method | upper }}</span>
-                        <span>{{ delimit $urlOutput "<br>" }}</span>
-                      </pre>
-
-            {{/* uri params exists and first one is not mediaTypeExtension */}}
-            {{- $otherUriParamsMediaType := false -}}
-            {{- with $resources.uriParameters -}}
-              {{- $uriParamNames := slice -}}
-              {{- range . -}}
-                {{- $uriParamNames = $uriParamNames | append .name -}}
-              {{- end -}}
-              {{- $uriParamFirst := "" -}}
-              {{- range first 1 $uriParamNames -}}
-                {{- $uriParamFirst = . -}}
-              {{- end -}}
-              {{- if gt (len .) 1 -}}
-                {{- $otherUriParamsMediaType = true -}}
-                {{- else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) -}}
-                {{- $otherUriParamsMediaType = true -}}
-              {{- end -}}
-            {{- end -}}
-
-            {{/* has method.headers */}}
-            {{- $hasMethodHeaders := false -}}
-            {{- $methodHeaders := slice -}}
-            {{- range .headers -}}
-              {{- $methodHeaders = $methodHeaders | append . -}}
-              {{- if gt (len $methodHeaders) 0 -}}
-                {{- $hasMethodHeaders = true -}}
-              {{- end -}}
-            {{- end -}}
-
-            {{/* has method.queryParameters */}}
-            {{- $hasMethodQueryParams := false -}}
-            {{- $methodQueryParams := slice -}}
-            {{- range .queryParameters -}}
-              {{- $methodQueryParams = $methodQueryParams | append . -}}
-              {{- if gt (len $methodQueryParams) 0 -}}
-                {{- $hasMethodQueryParams = true -}}
-              {{- end -}}
-            {{- end -}}
-
-            {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
-              <h3>Request parameters</h3>
-            {{- end -}}
-
-            {{/* For each endpoint: List all URI parameters */}}
-            {{- $uriParameters := slice -}}
-            {{- range $resources.uriParameters -}}
-              {{- $uriParameters = $uriParameters | append . -}}
-            {{- end -}}
-            {{- if $otherUriParamsMediaType -}}
-              {{- partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) -}}
-            {{- end -}}
-
-            {{/* For each endpoint: List all headers */}}
-            {{- if $hasMethodHeaders -}}
-              {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "HTTP header") -}}
-            {{- end -}}
-
-            {{/* For each endpoint: List all query parameters */}}
-            {{- if $hasMethodQueryParams -}}
-              {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") -}}
-            {{- end -}}
-
-            {{- $multiMediaTypes := false -}}
-
-            {{/* For each endpoint: Request body */}}
-            {{- with .body -}}
-              {{- if gt (len .) 1 -}}
-                {{- $multiMediaTypes = true -}}
-              {{- end -}}
-              <h3>Request body</h3>
-              {{- range . -}}
-                {{- partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) -}}
-              {{- end -}}
-            {{- end -}}
-
-            {{/* For each endpoint: Response */}}
-            {{- with .responses -}}
-              <h3>Responses</h3>
-              {{- range $key, $response := . -}}
-                {{- $responseID := (print $displayName "-response-" .code) | urlize -}}
-                {{- $exampleID := (print $displayName "-" .code) | urlize -}}
-                {{- $responseCode := .code -}}
-                {{- $resBodies := slice -}}
-                {{- range .body -}}
-                  {{- $resBodies = $resBodies | append . -}}
+              {{- if $hasExtension -}}
+                {{- range $resources.uriParameters.mediaTypeExtension.enum -}}
+                  {{- $urlWithExtension := replace $absUri "{mediaTypeExtension}" . -}}
+                  {{- $urlOutput = $urlOutput | append $urlWithExtension -}}
                 {{- end -}}
-                {{/* Collapsed additional examples in Booking API */}}
-                {{- if and (gt $key 220) (lt $key 302) -}}
-                  {{- $body := .body -}}
-                  {{- $description := .description -}}
-                  {{- $oneBody := "" -}}
-                  {{- range $index, $body := .body -}}
-                    {{- $oneBody = $index -}}
-                  {{- end -}}
-                  {{- with (index .body $oneBody).examples -}}
-                    {{- range first 1 . -}}
-                      <div
-                        class="dev-collapsible"
-                        class="dev-anchored"
-                        id="{{ $responseID }}"
-                      >
-                        <a
-                          href="#"
-                          data-collapse="#{{ $exampleID }}"
-                          class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
-                          ><svg
-                            class="dev-collapsible__toggler__icon"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 320 512"
-                          >
-                            <path
-                              d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                            ></path>
-                          </svg>
-                          <span>{{ .displayName }}</span>
-                        </a>
-                        <div
-                          id="{{ $exampleID }}"
-                          class="dev-collapsible__item dev-collapsible__item--collapsed"
-                        >
-                          {{- with $description -}}
-                            {{- if in (string .) "\n\n" -}}
-                              {{ . | markdownify }}
-                              {{- else -}}
-                              <p>{{ . | markdownify }}</p>
-                            {{- end -}}
-                            {{- range $body -}}
-                              {{- if gt (len $resBodies) 1 -}}
-                                {{- $multiMediaTypes = true -}}
-                              {{- end -}}
-                              {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
-                            {{- end -}}
-                          {{- end -}}
-                        </div>
-                      </div>
-                    {{- end -}}
-                  {{- end -}}
-                  {{- else -}}
-                  <h4 class="dev-anchored" id="{{ $responseID }}">
-                    HTTP status code {{ $responseCode }}
-                  </h4>
-                  {{- with .description -}}
-                    {{- if in (string .) "\n\n" -}}
-                      {{ . | markdownify }}
-                      {{- else -}}
-                      <p>{{ . | markdownify }}</p>
-                    {{- end -}}
-                  {{- end -}}
+                {{- else -}}
+                {{- $urlOutput = $urlOutput | append $absUri -}}
+              {{- end -}}
+
+              <pre class="flex align-ic">
+                          <span class="mrs phs pvxs bg-gray4">{{ .method | upper }}</span>
+                          <span>{{ delimit $urlOutput "<br>" }}</span>
+                        </pre>
+
+              {{/* uri params exists and first one is not mediaTypeExtension */}}
+              {{- $otherUriParamsMediaType := false -}}
+              {{- with $resources.uriParameters -}}
+                {{- $uriParamNames := slice -}}
+                {{- range . -}}
+                  {{- $uriParamNames = $uriParamNames | append .name -}}
+                {{- end -}}
+                {{- $uriParamFirst := "" -}}
+                {{- range first 1 $uriParamNames -}}
+                  {{- $uriParamFirst = . -}}
+                {{- end -}}
+                {{- if gt (len .) 1 -}}
+                  {{- $otherUriParamsMediaType = true -}}
+                  {{- else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) -}}
+                  {{- $otherUriParamsMediaType = true -}}
+                {{- end -}}
+              {{- end -}}
+
+              {{/* has method.headers */}}
+              {{- $hasMethodHeaders := false -}}
+              {{- $methodHeaders := slice -}}
+              {{- range .headers -}}
+                {{- $methodHeaders = $methodHeaders | append . -}}
+                {{- if gt (len $methodHeaders) 0 -}}
+                  {{- $hasMethodHeaders = true -}}
+                {{- end -}}
+              {{- end -}}
+
+              {{/* has method.queryParameters */}}
+              {{- $hasMethodQueryParams := false -}}
+              {{- $methodQueryParams := slice -}}
+              {{- range .queryParameters -}}
+                {{- $methodQueryParams = $methodQueryParams | append . -}}
+                {{- if gt (len $methodQueryParams) 0 -}}
+                  {{- $hasMethodQueryParams = true -}}
+                {{- end -}}
+              {{- end -}}
+
+              {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
+                <h3>Request parameters</h3>
+              {{- end -}}
+
+              {{/* For each endpoint: List all URI parameters */}}
+              {{- $uriParameters := slice -}}
+              {{- range $resources.uriParameters -}}
+                {{- $uriParameters = $uriParameters | append . -}}
+              {{- end -}}
+              {{- if $otherUriParamsMediaType -}}
+                {{- partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) -}}
+              {{- end -}}
+
+              {{/* For each endpoint: List all headers */}}
+              {{- if $hasMethodHeaders -}}
+                {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "HTTP header") -}}
+              {{- end -}}
+
+              {{/* For each endpoint: List all query parameters */}}
+              {{- if $hasMethodQueryParams -}}
+                {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") -}}
+              {{- end -}}
+
+              {{- $multiMediaTypes := false -}}
+
+              {{/* For each endpoint: Request body */}}
+              {{- with .body -}}
+                {{- if gt (len .) 1 -}}
+                  {{- $multiMediaTypes = true -}}
+                {{- end -}}
+                <h3>Request body</h3>
+                {{- range . -}}
+                  {{- partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                {{- end -}}
+              {{- end -}}
+
+              {{/* For each endpoint: Response */}}
+              {{- with .responses -}}
+                <h3>Responses</h3>
+                {{- range $key, $response := . -}}
+                  {{- $responseID := (print $displayName "-response-" .code) | urlize -}}
+                  {{- $exampleID := (print $displayName "-" .code) | urlize -}}
+                  {{- $responseCode := .code -}}
+                  {{- $resBodies := slice -}}
                   {{- range .body -}}
-                    {{- if gt (len $resBodies) 1 -}}
-                      {{- $multiMediaTypes = true -}}
+                    {{- $resBodies = $resBodies | append . -}}
+                  {{- end -}}
+                  {{/* Collapsed additional examples in Booking API */}}
+                  {{- if and (gt $key 220) (lt $key 302) -}}
+                    {{- $body := .body -}}
+                    {{- $description := .description -}}
+                    {{- $oneBody := "" -}}
+                    {{- range $index, $body := .body -}}
+                      {{- $oneBody = $index -}}
                     {{- end -}}
-                    {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                    {{- with (index .body $oneBody).examples -}}
+                      {{- range first 1 . -}}
+                        <div
+                          class="dev-collapsible"
+                          class="dev-anchored"
+                          id="{{ $responseID }}"
+                        >
+                          <a
+                            href="#"
+                            data-collapse="#{{ $exampleID }}"
+                            class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                            ><svg
+                              class="dev-collapsible__toggler__icon"
+                              width="16"
+                              height="16"
+                              viewBox="0 0 320 512"
+                            >
+                              <path
+                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                              ></path>
+                            </svg>
+                            <span>{{ .displayName }}</span>
+                          </a>
+                          <div
+                            id="{{ $exampleID }}"
+                            class="dev-collapsible__item dev-collapsible__item--collapsed"
+                          >
+                            {{- with $description -}}
+                              {{- if in (string .) "\n\n" -}}
+                                {{ . | markdownify }}
+                                {{- else -}}
+                                <p>{{ . | markdownify }}</p>
+                              {{- end -}}
+                              {{- range $body -}}
+                                {{- if gt (len $resBodies) 1 -}}
+                                  {{- $multiMediaTypes = true -}}
+                                {{- end -}}
+                                {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                              {{- end -}}
+                            {{- end -}}
+                          </div>
+                        </div>
+                      {{- end -}}
+                    {{- end -}}
+                    {{- else -}}
+                    <h4 class="dev-anchored" id="{{ $responseID }}">
+                      HTTP status code {{ $responseCode }}
+                    </h4>
+                    {{- with .description -}}
+                      {{- if in (string .) "\n\n" -}}
+                        {{ . | markdownify }}
+                        {{- else -}}
+                        <p>{{ . | markdownify }}</p>
+                      {{- end -}}
+                    {{- end -}}
+                    {{- range .body -}}
+                      {{- if gt (len $resBodies) 1 -}}
+                        {{- $multiMediaTypes = true -}}
+                      {{- end -}}
+                      {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                    {{- end -}}
                   {{- end -}}
                 {{- end -}}
               {{- end -}}
             {{- end -}}
-          {{- end -}}
-        </section>
-      {{- end -}}
-      {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-        <section class="dev-docscontent__section">
-          {{ template "_internal/disqus.html" $ }}
-        </section>
-      {{- end -}}
-    </article>
+          </section>
+        {{- end -}}
+        {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+          <section class="dev-docscontent__section">
+            {{ template "_internal/disqus.html" $ }}
+          </section>
+        {{- end -}}
+      </article>
+    </main>
   {{- end -}}
 {{- end -}}
