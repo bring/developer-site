@@ -1,11 +1,11 @@
 {
-    "proseWrap": "always",
-    "overrides": [
-        {
-          "files": ["layouts/**/*.html"],
-          "options": {
-            "parser": "go-template"
-          }
-        }
-      ]
-  }
+  "proseWrap": "always",
+  "overrides": [
+    {
+      "files": ["layouts/**/*.html"],
+      "options": {
+        "parser": "go-template"
+      }
+    }
+  ]
+}
