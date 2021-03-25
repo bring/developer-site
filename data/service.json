@@ -124,7 +124,7 @@
     "serviceGroup": "Parcels Nordic",
     "weightLimit": "20 kg",
     "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
-    "vas": []
+    "vas": [""]
   },
   "PICKUP_PARCEL_BULK": {
     "code": "",
