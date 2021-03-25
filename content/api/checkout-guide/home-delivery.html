@@ -110,11 +110,15 @@ examples:
           customer does not choose a date that is impossible to deliver at.
         </p>
         <p>
-          Provide [<code>withUniqueAlternateDeliveryDates: true</code>] in the
-          request body to retreive alternative delivery dates. We recommend
-          setting <code>[numberOfAlternativeDeliveryDates]</code> to 5.
+          Use the following parameters to retrieve alternative delivery dates
+          for home delivery in Shipping Guide:
         </p>
-        <p>
+        <div class="maxw40r">
+          <!-- prettier-ignore -->
+          {{< highlight json >}}"withUniqueAlternateDeliveryDates": true,
+"numberOfAlternativeDeliveryDates": 5 // recommended value {{< /highlight >}}
+        </div>
+        <p class="mtl">
           Note that if the package is delivered too late to Bring, or an invalid
           date is requested, the recipient will get a notification that the
           package can not be delivered at their ordered date, and that it will
