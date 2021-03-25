@@ -4,12 +4,12 @@
   "description": "Bring developer site",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf _site",
-    "buildcss": "webpack && rm static/css/main.js",
+    "clean": "rimraf _site",
+    "buildcss": "webpack && rimraf static/css/main.js",
     "buildraml": "node scripts/raml2json",
     "build": "npm run buildcss && npm run buildraml",
-    "start": "HUGO_ENV=dev hugo server",
-    "buildtest": "npm run clean && npm run build && HUGO_ENV=test hugo",
+    "start": "cross-env HUGO_ENV=dev hugo server",
+    "buildtest": "npm run clean && npm run build && cross-env HUGO_ENV=test hugo",
     "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
     "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo"
   },
@@ -25,6 +25,7 @@
   "homepage": "https://developer.bring.com",
   "devDependencies": {
     "autoprefixer": "^10.2.4",
+    "cross-env": "^7.0.3",
     "css-loader": "^5.1.0",
     "cssnano": "^4.1.10",
     "hugo-bin": "^0.69.0",
@@ -34,6 +35,7 @@
     "postcss-import": "^14.0.0",
     "postcss-loader": "^5.0.0",
     "raml-1-parser": "^1.1.67",
+    "rimraf": "^3.0.2",
     "toml": "^3.0.0",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0"
