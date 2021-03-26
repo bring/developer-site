@@ -1,0 +1,188 @@
+---
+title: Pakke til hentested
+titlesub: Pickup parcel
+layout: api
+widelayout: true
+notanapi: true
+menu:
+  api:
+    parent: guide-checkout
+    identifier: guide-pickup
+    title: Pakke til hentested
+weight: 3
+services:
+  - SERVICEPAKKE
+  - 5800
+  - PICKUP_PARCEL
+  - PICKUP_PARCEL_BULK
+examples:
+  - <a href="/api/checkout-guide/example-get-delivery-option/">Get delivery
+    options with prices and lead time</a>
+  - <a href="/api/checkout-guide/example-book-package-pickup-parcel">Book Pakke
+    til hentested</a>
+---
+
+<section class="dev-documentation__section">
+  <h2 class="mbm">Pakke til hentested i chekout</h2>
+  <div class="flex flex-wrap">
+    <div class="dev-guide-m">
+      <img
+        src="../assets/pickup_point.png"
+        alt="illustration of all element of to pickup point"
+        class="mbm maxw24r"
+      />
+      <img
+        src="../assets/pickup_point_opened.png"
+        alt="illustration of open dornw for pickup points"
+        class="mbm maxw24r"
+      />
+    </div>
+
+    <div class="dev-guide-l">
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>1 Delivery option Pakke til hentested</h3>
+        <p>
+          With more than 1 700 pickup point locations across Norway, and an
+          increasing number of package boxes being placed around the country (3
+          000 will be in service by the end 2021), your customer have a wide
+          choice in where to pick up their package. It is a flexible and safe
+          delivery method.
+        </p>
+        <p>
+          We recommend using [<code>displayName</code>] from the shipping guide
+          as the delivery option title.
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>2 Estimated delivery</h3>
+        <p>
+          Estimated delivery is the combination of your internal lead time and
+          Posten / Bring lead time. For delivery to pickup point, estimated time
+          is available in addition to the estimated date.
+        </p>
+        <p>
+          You have some options for presentation depending on your shipping
+          routines. For more detailed information, see Implement estimated
+          delivery
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <td>Case</td>
+              <th>Norwegian text in checkout</th>
+              <th>English text in checkout</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>If internal lead time is firm</td>
+              <td>
+                Kan hentes på <code>expectedDeliveryDate</code> etter
+                <code>deliveryEndTime</code>
+              </td>
+              <td>
+                Can be picked up on <code>expectedDeliveryDate</code> after
+                <code>deliveryEndTime</code>
+              </td>
+            </tr>
+            <tr>
+              <td>If internal lead time is variable</td>
+              <td>
+                Kan hentes om [min. internal lead time +
+                <code>workingDays</code>] - [max. internal lead time +
+                <code>workingDays</code>] dager
+              </td>
+              <td>
+                Can be picked up in [min. internal lead time +
+                <code>workingDays</code>] - [max. internal leadtime +
+                <code>workingDays</code>] days
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>3 Description text</h3>
+        <p>
+          A short line that give more information about the delivery method. The
+          most useful information for the end user is the name of the default
+          pickup location.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+              <th>Norwegian text in checkout</th>
+              <th>English text in checkout</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Description text</th>
+              <td>
+                Til
+                <code>pickupPointName</code>
+              </td>
+              <td>To <code>pickupPointName</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>4 Choose pickup location</h3>
+        <p>
+          If user select package to pickup point, best practice is to expand and
+          show a drop down list for pickup points. See illustration of open
+          dropdown for pickup points; The drop down should display 5-7 nearest
+          pickup points. An additional best practice is to allow the user to
+          search based on a postal code, as some users might want to pick up
+          their package in a different location than near their home.
+        </p>
+        <b>Package box </b>
+        <p>
+          If user choose package box (Type 37), let the user know that they need
+          Posten app, and if the package is too big it will go to nearest pickup
+          point. Package box can be identified by PickupPointType = Type 37
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+              <th>Norwegian text in checkout</th>
+              <th>English text in checkout</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Drop down description</th>
+              <td>Velg hentested</td>
+              <td>Bag on door if the mailbox is too small</td>
+            </tr>
+            <tr>
+              <th scope="row">Drop down</th>
+              <td><code>name</code> <code>visitingAddress</code></td>
+              <td><code>name</code> <code>visitingAddress</code></td>
+            </tr>
+            <tr>
+              <th scope="row">Help text</th>
+              <td>Bruksenhetsnummer (hvis du bor i leilighet)</td>
+              <td>Apartment</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>5 Map</h3>
+        <p>
+          Showing a map is optional, but it may help the user see where the
+          nearest pickup point is.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
