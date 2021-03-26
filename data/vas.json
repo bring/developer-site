@@ -11,6 +11,12 @@
     "descEn": "",
     "explanation": ""
   },
+  "1063": {
+    "code": "1063",
+    "descNo": "",
+    "descEn": "",
+    "explanation": "ID-kontrakt kunden ønsker at mottaker skal signere en avtale ved henting"
+  },
   "1066": {
     "code": "1066",
     "descNo": "Postoppkrav med EDI",
