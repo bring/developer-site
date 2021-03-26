@@ -50,7 +50,7 @@
                 </td>
                 {{- if gt (len $service.vas) 0 -}}
                   {{- range first 1 $service.vas -}}
-                    {{- partial "api/vas.html" (index $vasData .) -}}
+                    {{- partial "api/vas.html" (dict "vas" (index $vasData .)) -}}
                   {{- end -}}
                   {{- else -}}
                   <td rowspan="{{ $rowSpan }}" colspan="2"></td>
@@ -58,7 +58,7 @@
               </tr>
               {{- range after 1 $service.vas -}}
                 <tr>
-                  {{- partial "api/vas.html" (index $vasData .) -}}
+                  {{- partial "api/vas.html" (dict "vas" (index $vasData .) "padding" "ptxs") -}}
                 </tr>
               {{- end -}}
             {{- end -}}
