@@ -9,6 +9,8 @@
         {{- if eq (add $index 1) $len -}}
           {{- $lastElement = "dev-sidemenu__separator pbm mbm" -}}
         {{- end -}}
+        {{/*  Temporarily hide the checkout guide menu  */}}
+        {{ if not (eq .Identifier "guide-checkout") }}
         <li
           class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( $currentPage.HasMenuCurrent .Menu .)) }}active{{ end }} {{ $lastElement }}"
         >
@@ -38,6 +40,7 @@
             {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
           {{- end -}}
         </li>
+        {{ end }}
       {{- end -}}
     </ul>
     {{- $apiData := .Site.Data.api -}}

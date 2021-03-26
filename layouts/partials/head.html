@@ -1,6 +1,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {{- with .Params.hidden -}}
+    <meta name="robots" content="noindex, nofollow">
+  {{- end -}}
   <meta http-equiv="expires" content="{{ now.Unix }}" />
   {{ with .Summary }}
     <meta name="description" content="{{ . | plainify | htmlUnescape }}" />
