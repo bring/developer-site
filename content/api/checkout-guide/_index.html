@@ -1,0 +1,186 @@
+---
+title: Shipping in checkout
+layout: api
+widelayout: true
+notanapi: true
+menu:
+  api:
+    identifier: guide-checkout
+    title: Checkout guide
+weight: 2
+hidden: true
+---
+
+<section class="dev-docscontent__section flex flex-wrap align-ifs">
+  <div class="dev-guide-l">
+    <p class="text-heading">
+      To provide your customers with the best possible shopping experience in
+      your e-commerce store, we recommend displaying relevant delivery
+      information at checkout. Based on user research and testing, we have
+      developed a best practice for presenting the most common B2C delivery
+      methods in a webshop checkout. Our recommended e-commerce delivery
+      services are:
+    </p>
+
+    <ul>
+      <li>Package to mailbox</li>
+      <li>Home delivery</li>
+      <li>parcel to Pickup Point.</li>
+    </ul>
+
+    <p>
+      By offering these delivery options with additional services, your customer
+      are able to select the delivery method best suited their needs. The best
+      practice examples can be populated by using the
+      <a href="../shipping-guide_2">Shipping Guide 2.0</a> and
+      <a href="../pickup-point">Pickup Point</a> APIs.
+    </p>
+
+    <iframe
+      class="ba mb-border w100p"
+      allowtransparency="true"
+      src="https://www.figma.com/embed?embed_host=confluence&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FGWjlyqs5kOvt1788s4zwbB%2FBest-Practice-checkout%3Fnode-id%3D2339%253A403%26viewport%3D10356%252C6975%252C0.8964606523513794%26scaling%3Dscale-down"
+      allow="encrypted-media"
+      webkitallowfullscreen=""
+      mozallowfullscreen=""
+      allowfullscreen=""
+      data-hasbody="false"
+      data-macro-name="widget"
+      width=""
+      height="800"
+      frameborder="0"
+    >
+    </iframe>
+  </div>
+
+  <div class="dev-guide-m bg-green1 pal">
+    <h2>Checkout shipping widget</h2>
+    <p>
+      Get our three shipping services into checkout fast and easy without using
+      our APIs.
+    </p>
+    <img src="assets/checkout_shipping_widget.png" alt="" class="mbl maxw10r" />
+    <h3>How do I get the widgets?</h3>
+    <p>
+      Log into Widget configurator. Here you can fill out your store settings
+      and create widgets. To get widgets into your web shop, add the
+      configuration and script tag that is generated from creating widgets to
+      your web page (detailed description follows when you create widget).
+    </p>
+  </div>
+</section>
+
+<section class="dev-docscontent__section">
+  <h2 class="mbm">Display basic information</h2>
+  <div class="flex flex-wrap">
+    <div class="dev-guide-m">
+      <img src="assets/generell_info.png" alt="" class="ba mb-border mbm maxw24r" />
+
+      <p>
+        The illustration show Package to mailbox, but all delivery options
+        should have the same basic information
+      </p>
+
+      <div class="pal bg-green1">
+        <h3>Technical documentation</h3>
+
+        See request example in
+        <a href="../shipping-guide_2">Shipping Guide 2.0</a> for services,
+        prices and estimated delivery information
+      </div>
+    </div>
+
+    <div class="dev-guide-l">
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>1 Postal code</h3>
+        <p>
+          To get more precise estimated time of arrival and relevant pick up
+          locations, customer needs to fill out postal code. If you use our API
+          you will get validation and postal place for the field.
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>2 Street address</h3>
+        <p>
+          Some postal areas are split into several delivery zones, which impacts
+          the delivery estimates. If the additional service for home delivery
+          should work properly, customer need to fill out their street address.
+          The delivery options should have an overlay to prompt user to fill out
+          postal code and street address. This will be removed when both is
+          provided.
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>3 Radio button with Delivery option title</h3>
+        <p>We suggest these titles:</p>
+        <ul>
+          <li>"I Postkassen" (To mailbox).</li>
+          <li>"Levert hjem" (Delivered home)</li>
+          <li>"Til hentested/pakkeboks" (To pickup point / package box)</li>
+        </ul>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>4 Price</h3>
+        <p>
+          Offer fixed shipping price on all delivery options. Subsidized or free
+          freight is one of the most powerful tool for increasing conversion.
+          Subsidize all shipping methods equally so that the customer can pick
+          the shipping method that best fits their needs, without price
+          incentives overweighing a particular shipping method.
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>5 Tracking (sporing)</h3>
+        <p>
+          Customers prefer to track their package. Mark the all delivery options
+          that have tracking with a tracking label.
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>6 Description text</h3>
+        <p>
+          A short line that give more information about the delivery method.
+          Each delivery method have their own recommended text depending on
+          additional services you offer. The illustration show an example when
+          all additional services are offered.
+        </p>
+        <p>See each service to get more details.</p>
+        <p>
+          Pakke i postkassen<br />
+          Pakke til hentested<br />
+          Pakke levert hjem
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>7 Logo</h3>
+        <p>
+          Customer prefer to know what transporter the web shop use. Use the
+          Posten logo for B2C shops and Bring logo for B2B shops.
+        </p>
+      </div>
+
+      <div class="bg-green1 pal pbm mbxs">
+        <h3>8 Estimated time of arrival</h3>
+        <p>
+          Let your customers know when their package will arrive, and you are
+          relieving them of one of the biggest pains of online shopping.
+          Therefore, it is best practice to always show an estimate for when the
+          customer can expect their package. How it should be displayed depends
+          if address is known, the delivery option and additional services you
+          offer. See each service to get more details.
+        </p>
+        <p>Tips for implementing ETA</p>
+        <p>
+          Pakke i postkassen<br />
+          Pakke til hentested <br />Pakke levert hjem
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

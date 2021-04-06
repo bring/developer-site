@@ -111,6 +111,46 @@ resources:
   - src: {filename.jpg}
 ```
 
+## Working with guides
+
+There are some frontmatter options intended for, but not exclusive to, the guide
+pages. The main reason is to feature a service table at the top. A typical
+example:
+
+```
+---
+title: Pakke i postkassen
+titlesub: Mailbox parcel
+layout: api
+widelayout: true
+notanapi: true
+menu:
+  api:
+    parent: guide-checkout
+    identifier: guide-mailbox
+    title: Pakke i postkassen
+weight: 1
+services:
+  - 3584
+  - 3570
+examples:
+  - <a href="#">Get delivery options with prices and lead time)</a>
+  - <a href="#">Book Pakke i postkassen</a>
+---
+```
+
+`titlesub` is intended for dual language use
+
+`widelayout` is intended for two column layouts
+
+`services` takes an array of api id codes and populates a table with the
+associated services and VAS-es. The services are sourced from
+data/service.json, which in turn has an array of associated VAS-codes that the
+template sources from data/vas.json. The services appear in the same order as the array.
+
+`examples` is an array of links to examples in the relevant API documentation –
+this solution is intended to be improved into fetching the actual examples.
+
 ## Syntax highlighting
 
 To get syntax highlighting in Markdown, you can specify the programming language

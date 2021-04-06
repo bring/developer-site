@@ -1,0 +1,140 @@
+{
+  "3570": {
+    "code": "3570",
+    "apiId": "3570",
+    "nameNo": "Pakke i postkassen med RFID*",
+    "nameEn": "Mailbox parcel with RFID",
+    "usage": "If you have an RFID printer",
+    "serviceGroup": "Parcels Norway",
+    "weightLimit": "5 kg",
+    "sizeLimit": "45 cm long/ length + width + depth: 90 cm",
+    "vas": [
+      "1081"
+    ]
+  },
+  "3584": {
+    "code": "3584",
+    "apiId": "3584",
+    "nameNo": "Pakke i postkassen",
+    "nameEn": "Mailbox parcel",
+    "usage": "If you do not have an RFID printer",
+    "serviceGroup": "Parcels Norway",
+    "weightLimit": "5 kg",
+    "sizeLimit": "245 cm long/ length + width + depth: 90 cm",
+    "vas": [
+      "1081"
+    ]
+  },
+  "5600": {
+    "code": "5600",
+    "apiId": "5600",
+    "nameNo": "Pakke levert hjem",
+    "nameEn": "Home Delivery",
+    "serviceGroup": "Parcel Norway",
+    "weightLimit": "35 kg",
+    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "vas": [
+      "0041",
+      "1133",
+      "1134",
+      "1063",
+      "1082",
+      "1283",
+      "1179",
+      "1229",
+      "1083",
+      "1280"
+    ]
+  },
+  "5800": {
+    "code": "5800",
+    "apiId": "5800",
+    "nameNo": "Pakke til hentested",
+    "nameEn": "Pickup Parcel",
+    "serviceGroup": "Parcels Norway",
+    "weightLimit": "35 kg",
+    "sizeLimit": "240 cm long/ length + width + depth: 360 cm",
+    "vas": [
+      "1036",
+      "1000",
+      "1063",
+      "1220",
+      "1133",
+      "1134",
+      "1082",
+      "1229",
+      "1083",
+      "0068",
+      "2086"
+    ]
+  },
+  "PA_DOREN": {
+    "code": "1736",
+    "apiId": "PA_DOREN",
+    "nameNo": "Pakke på døren",
+    "nameEn": "Home Delivery",
+    "serviceGroup": "Parcel Norway",
+    "weightLimit": "35 kg",
+    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "vas": [
+      "1081",
+      "1133",
+      "1134",
+      "1082",
+      "1283",
+      "1179",
+      "1229",
+      "1083",
+      "1280"
+    ]
+  },
+  "HOME_DELIVERY_PARCEL": {
+    "code": "",
+    "apiId": "HOME_DELIVERY_PARCEL",
+    "nameNo": "",
+    "nameEn": "Home Delivery Parcel",
+    "serviceGroup": "Parcel Nordic",
+    "weightLimit": "35 kg",
+    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "vas": []
+  },
+  "SERVICEPAKKE": {
+    "code": "1202",
+    "apiId": "SERVICEPAKKE",
+    "nameNo": "Klimanøytral Servicepakke",
+    "nameEn": "Climate neutral service parcel",
+    "serviceGroup": "Parcels Norway",
+    "weightLimit": "35 kg",
+    "sizeLimit": "240 cm long/ length + width + depth: 360 cm",
+    "vas": [
+      "1091",
+      "1036",
+      "2000",
+      "1133",
+      "1134",
+      "1082",
+      "1229",
+      "1083"
+    ]
+  },
+  "PICKUP_PARCEL": {
+    "code": "",
+    "apiId": "PICKUP_PARCEL",
+    "nameNo": "",
+    "nameEn": "Pickup Parcel",
+    "serviceGroup": "Parcels Nordic",
+    "weightLimit": "20 kg",
+    "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
+    "vas": [""]
+  },
+  "PICKUP_PARCEL_BULK": {
+    "code": "",
+    "apiId": "PICKUP_PARCEL_BULK",
+    "nameNo": "",
+    "nameEn": "PickUp Parcel Bulk",
+    "serviceGroup": "Parcels Nordic",
+    "weightLimit": "20 kg",
+    "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
+    "vas": []
+  }
+}

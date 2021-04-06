@@ -1,0 +1,116 @@
+{
+  "1000": {
+    "code": "1000",
+    "descNo": "Betaling ved utlevering (COD)",
+    "descEn": "Cash On Delivery (COD)",
+    "explanation": ""
+  },
+  "1036": {
+    "code": "1036",
+    "descNo": "Valgfritt hentested",
+    "descEn": "",
+    "explanation": ""
+  },
+  "1063": {
+    "code": "1063",
+    "descNo": "",
+    "descEn": "",
+    "explanation": "ID-kontrakt kunden ønsker at mottaker skal signere en avtale ved henting"
+  },
+  "1066": {
+    "code": "1066",
+    "descNo": "Postoppkrav med EDI",
+    "descEn": "Cash On Delivery (COD)",
+    "explanation": ""
+  },
+  "1081": {
+    "code": "1081",
+    "descNo": "Pose på dør",
+    "descEn": "Simplified delivery",
+    "explanation": "If the user ticks off and then agrees to terms, the mail carrier can leave packages that do not fit in the mailbox in a bag left at the door, instead of sending it to the nearest pickup point"
+  },
+  "1082": {
+    "code": "1082",
+    "descNo": "Sosial kontroll",
+    "descEn": "Social control",
+    "explanation": ""
+  },
+  "1083": {
+    "code": "1083",
+    "descNo": "Termo",
+    "descEn": "Thermo",
+    "explanation": ""
+  },
+  "1091": {
+    "code": "1091",
+    "descNo": "E-varsling",
+    "descEn": "Recipient notification over SMS or E-Mail",
+    "explanation": ""
+  },
+  "1133": {
+    "code": "1133",
+    "descNo": "Legitimasjonsplikt",
+    "descEn": "Proof of identity required",
+    "explanation": "Recipient is required to provide a valid ID to receive the shipment. Note that it is not required that it is the same person as on the label"
+  },
+  "1134": {
+    "code": "1134",
+    "descNo": "Personlig utlevering",
+    "descEn": "Personal delivery",
+    "explanation": ""
+  },
+  "1179": {
+    "code": "1179",
+    "descNo": "To utkjøringsforsøk, så hentested",
+    "descEn": "Two delivery attempts, then to pickup point",
+    "explanation": ""
+  },
+  "1220": {
+    "code": "1220",
+    "descNo": "Sending stoppet og returnert",
+    "descEn": "Consignment stopped and returned",
+    "explanation": ""
+  },
+  "1229": {
+    "code": "1229",
+    "descNo": "Alderskontroll",
+    "descEn": "Age control",
+    "explanation": ""
+  },
+  "1280": {
+    "code": "1280",
+    "descNo": "",
+    "descEn": "Reservation against simplified delivery",
+    "explanation": ""
+  },
+  "1283": {
+    "code": "1283",
+    "descNo": "To utkjøringsforsøk, så retur",
+    "descEn": "Two delivery attempts, then return to sender",
+    "explanation": ""
+  },
+  "2084": {
+    "code": "2084",
+    "descNo": "Elektronisk varsling",
+    "descEn": "Electronic notification",
+    "explanation": ""
+  },
+  "2086": {
+    "code": "2086",
+    "descNo": "Varsling per brev",
+    "descEn": "Notification by letter",
+    "explanation": ""
+  },
+  "0041": {
+    "code": "0041",
+    "descNo": "Forenklet utlevering",
+    "descEn": "Simplified delivery",
+    "explanation": "Package will be left outside the delivery address. The recipient is notified when the package is delivered outside"
+  },
+  "0068": {
+    "code": "0068",
+    "descNo": "Tilleggsforsikring",
+    "descEn": "Optional insurance",
+    "explanation": ""
+  }
+}

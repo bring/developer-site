@@ -1,0 +1,11 @@
+{{ $vas := .vas }}
+
+{{- $desc := $vas.descEn -}}
+{{- if and $vas.descNo $vas.descEn -}}
+  {{- $desc = print $vas.descNo "<span class='db text-note'>" $vas.descEn "</span>" -}}
+{{- else if not $vas.descEn -}}
+  {{ $desc = $vas.descNo }}
+{{- end -}}
+
+<td class="{{.padding}}">{{ $vas.code }}</td>
+<td class="{{.padding}}">{{ $desc | markdownify }}</td>
