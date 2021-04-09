@@ -254,7 +254,7 @@
           </section>
         {{- end -}}
         {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-          <section class="dev-docscontent__section">
+          <section id="api-support" class="dev-docscontent__section">
             {{ template "_internal/disqus.html" $ }}
           </section>
         {{- end -}}

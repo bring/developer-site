@@ -86,6 +86,13 @@
                         </a>
                       </li>
                     {{- end -}}
+                    {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+                      <li>
+                        <a href="#api-support">
+                          API support
+                        </a>
+                      </li>
+                    {{- end -}}
                   </ul>
                 {{- end -}}
               {{- end -}}
