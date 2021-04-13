@@ -2,6 +2,7 @@
   background-color: var(--green-darker);
   flex: 1 0 100%;
   min-height: 4.4rem;
+  z-index: 20;
 }
 
 @media screen and (min-width: 64em) {

@@ -16,6 +16,11 @@
   max-width: 100%;
 }
 
+.sticky-6r {
+  position: sticky;
+  top: 6rem;
+}
+
 @media screen and (min-width: 50em) {
   .dev-guide-l,
   .dev-guide-m,
