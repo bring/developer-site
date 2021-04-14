@@ -1,21 +1,15 @@
 {
   "1000": {
     "code": "1000",
-    "descNo": "Betaling ved utlevering (COD)",
+    "descNo": "Postoppkrav",
     "descEn": "Cash On Delivery (COD)",
     "explanation": ""
   },
   "1036": {
     "code": "1036",
     "descNo": "Valgfritt hentested",
-    "descEn": "",
+    "descEn": "Optional pickup point",
     "explanation": ""
-  },
-  "1063": {
-    "code": "1063",
-    "descNo": "",
-    "descEn": "",
-    "explanation": "ID-kontrakt kunden ønsker at mottaker skal signere en avtale ved henting"
   },
   "1066": {
     "code": "1066",
@@ -23,7 +17,13 @@
     "descEn": "Cash On Delivery (COD)",
     "explanation": ""
   },
-  "1081": {
+  "1081home": {
+    "code": "1081",
+    "descNo": "Forenklet utlevering",
+    "descEn": "Simplified delivery",
+    "explanation": "If the user ticks off and then agrees to terms, the mail carrier can leave packages that do not fit in the mailbox in a bag left at the door, instead of sending it to the nearest pickup point"
+  },
+  "1081pip": {
     "code": "1081",
     "descNo": "Pose på dør",
     "descEn": "Simplified delivery",
@@ -44,31 +44,25 @@
   "1091": {
     "code": "1091",
     "descNo": "E-varsling",
-    "descEn": "Recipient notification over SMS or E-Mail",
+    "descEn": "Recipient notification over SMS or email",
     "explanation": ""
   },
   "1133": {
     "code": "1133",
     "descNo": "Legitimasjonsplikt",
-    "descEn": "Proof of identity required",
+    "descEn": "ID verification",
     "explanation": "Recipient is required to provide a valid ID to receive the shipment. Note that it is not required that it is the same person as on the label"
   },
   "1134": {
     "code": "1134",
     "descNo": "Personlig utlevering",
-    "descEn": "Personal delivery",
+    "descEn": "Individual verification",
     "explanation": ""
   },
   "1179": {
     "code": "1179",
     "descNo": "To utkjøringsforsøk, så hentested",
     "descEn": "Two delivery attempts, then to pickup point",
-    "explanation": ""
-  },
-  "1220": {
-    "code": "1220",
-    "descNo": "Sending stoppet og returnert",
-    "descEn": "Consignment stopped and returned",
     "explanation": ""
   },
   "1229": {

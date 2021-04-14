@@ -8,9 +8,7 @@
     "serviceGroup": "Parcels Norway",
     "weightLimit": "5 kg",
     "sizeLimit": "45 cm long/ length + width + depth: 90 cm",
-    "vas": [
-      "1081"
-    ]
+    "vas": ["1081pip"]
   },
   "3584": {
     "code": "3584",
@@ -21,9 +19,7 @@
     "serviceGroup": "Parcels Norway",
     "weightLimit": "5 kg",
     "sizeLimit": "245 cm long/ length + width + depth: 90 cm",
-    "vas": [
-      "1081"
-    ]
+    "vas": ["1081pip"]
   },
   "5600": {
     "code": "5600",
@@ -37,11 +33,10 @@
       "0041",
       "1133",
       "1134",
-      "1063",
       "1082",
+      "1229",
       "1283",
       "1179",
-      "1229",
       "1083",
       "1280"
     ]
@@ -57,15 +52,13 @@
     "vas": [
       "1036",
       "1000",
-      "1063",
-      "1220",
       "1133",
       "1134",
       "1082",
       "1229",
-      "1083",
       "0068",
-      "2086"
+      "2086",
+      "1083"
     ]
   },
   "PA_DOREN": {
@@ -77,13 +70,13 @@
     "weightLimit": "35 kg",
     "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
     "vas": [
-      "1081",
+      "1081home",
       "1133",
       "1134",
       "1082",
+      "1229",
       "1283",
       "1179",
-      "1229",
       "1083",
       "1280"
     ]
@@ -96,7 +89,7 @@
     "serviceGroup": "Parcel Nordic",
     "weightLimit": "35 kg",
     "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
-    "vas": []
+    "vas": ["1091", "1081home", "1133", "1134", "0068", "1280"]
   },
   "SERVICEPAKKE": {
     "code": "1202",
@@ -106,16 +99,7 @@
     "serviceGroup": "Parcels Norway",
     "weightLimit": "35 kg",
     "sizeLimit": "240 cm long/ length + width + depth: 360 cm",
-    "vas": [
-      "1091",
-      "1036",
-      "2000",
-      "1133",
-      "1134",
-      "1082",
-      "1229",
-      "1083"
-    ]
+    "vas": ["1091", "1036", "1000", "1133", "1134", "1082", "1229", "1083"]
   },
   "PICKUP_PARCEL": {
     "code": "",
@@ -125,7 +109,7 @@
     "serviceGroup": "Parcels Nordic",
     "weightLimit": "20 kg",
     "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
-    "vas": [""]
+    "vas": ["1091", "1000", "0068"]
   },
   "PICKUP_PARCEL_BULK": {
     "code": "",
@@ -135,6 +119,6 @@
     "serviceGroup": "Parcels Nordic",
     "weightLimit": "20 kg",
     "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
-    "vas": []
+    "vas": ["1091", "1000", "1133", "0068"]
   }
 }
