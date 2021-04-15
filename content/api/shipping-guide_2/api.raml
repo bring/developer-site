@@ -378,10 +378,10 @@ documentation:
 - title: Get unique expected delivery dates
   content: |
       Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**. When using this parameter, the same delivery date might be returned several times (as several shipping dates might correspond to the same delivery date). To only get the unique alternative delivery dates use following field:
-      * SOAP: withUniqueAlternateDeliveryDates
+      * SOAP: WithUniqueAlternateDeliveryDates
       ```xml
-      <withUniqueAlternateDeliveryDates>true</withUniqueAlternateDeliveryDates>
-      <numberOfAlternativeDeliveryDates>2</numberOfAlternativeDeliveryDates>
+      <WithUniqueAlternateDeliveryDates>true</WithUniqueAlternateDeliveryDates>
+      <NumberOfAlternativeDeliveryDates>2</NumberOfAlternativeDeliveryDates>
       ```
       * REST GET: uniqueAlternateDeliveryDates
       ```json
