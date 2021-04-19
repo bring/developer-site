@@ -128,6 +128,9 @@ types:
       dateOfEstimatedDelivery:
         type: string
         required: false
+      estimatedTimeSpanOfDelivery:
+        type: EtaMlTimeSpan
+        required: false
       dateOfDelivery:
         type: string
         required: false
@@ -256,6 +259,15 @@ types:
     type: object
     properties:
       name:
+        type: string
+        required: false
+  EtaMlTimeSpan:
+    type: object
+    properties:
+      startTime:
+        type: string
+        required: false
+      endTime:
         type: string
         required: false
 
@@ -429,6 +441,10 @@ documentation:
                 displayName: Package delivered to customer
                 description: The example below is showing a package that has been delivered to the reciepient.
                 value: !include examples/delivered.json
+              estimatedTimeOfArrival:
+                displayName: Package with estimated time of arrival.
+                description: The example below is showing a package with estimated arrival time window of delivery.
+                value: !include examples/successfulWithEta.json
           application/xml:
             type: Consignment
             examples:
@@ -456,3 +472,7 @@ documentation:
                 displayName: Package delivered to customer
                 description: The example below is showing a package that has been delivered to the reciepient.
                 value: !include examples/delivered.xml
+              estimatedTimeOfArrival:
+                displayName: Package with estimated time of arrival.
+                description: The example below is showing a package with estimated arrival time window of delivery.
+                value: !include examples/successfulWithEta.xml
