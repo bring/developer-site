@@ -15,8 +15,7 @@ notanapi: true
     between upgrades.
   </p>
   <p>
-    The older 1.xx versions will become deprecated and shut down some time in
-    the future.
+    The older 1.xx versions are deprecated and will be shut down on july 1st, 2021.
   </p>
 </section>
 <section class="dev-docscontent__section">
@@ -70,7 +69,16 @@ notanapi: true
     passed explicitly in request.
   </p>
 
-  <h4 class="dev-anchored">Query params for REST endpoint</h4>
+
+  <h4 class="dev-anchored">REST POST</h4>
+  <p>
+    There's now a
+    <a href="/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery"
+    >REST POST</a
+    > endpoint, which is comparable to the SOAP endpoint, but based on JSON. We recommend this over the GET endpoint.
+  </p>
+
+  <h4 class="dev-anchored">Query params for REST GET endpoint</h4>
   <p>
     Some of the query params of
     <a href="/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery"
