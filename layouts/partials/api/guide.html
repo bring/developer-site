@@ -24,8 +24,14 @@
         {{- $rowSpan := 1 -}}
         {{- range .Params.services -}}
           {{- $service := index $serviceData . -}}
-          {{- if gt (len $service.vas) 0 -}}
-            {{- $rowSpan = (len $service.vas) -}}
+          {{- $verifiedVas := slice -}}
+          {{- range $service.vas -}}
+            {{- if index $vasData . -}}
+              {{- $verifiedVas = $verifiedVas | append . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- if gt (len $verifiedVas) 1 -}}
+            {{- $rowSpan = (len $verifiedVas) -}}
           {{- end -}}
           <tr>
             <th scope="row" rowspan="{{ $rowSpan }}">
@@ -46,15 +52,15 @@
             <td rowspan="{{ $rowSpan }}">
               <code>{{ $service.apiId }}</code>
             </td>
-            {{- if gt (len $service.vas) 0 -}}
-              {{- range first 1 $service.vas -}}
+            {{- if gt (len $verifiedVas) 0 -}}
+              {{- range first 1 $verifiedVas -}}
                 {{- partial "api/vas.html" (dict "vas" (index $vasData .)) -}}
               {{- end -}}
               {{- else -}}
               <td rowspan="{{ $rowSpan }}" colspan="2"></td>
             {{- end -}}
           </tr>
-          {{- range after 1 $service.vas -}}
+          {{- range after 1 $verifiedVas -}}
             <tr>
               {{- partial "api/vas.html" (dict "vas" (index $vasData .) "padding" "ptxs") -}}
             </tr>
