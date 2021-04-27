@@ -80,7 +80,7 @@
       <h3>Technical examples</h3>
       <ul>
         {{- range .Params.examples -}}
-          <li>{{ . | markdownify }}</li>
+          <li><a href="/api/checkout-guide/example/{{ .slug }}">{{ .title }}</a></li>
         {{- end -}}
       </ul>
     </div>
