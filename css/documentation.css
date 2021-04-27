@@ -69,15 +69,15 @@
 
 @media screen and (min-width: 64em) {
   .dev-docs__menu {
-    width: 23%;
+    width: 21%;
     top: 4.4rem;
   }
 
   .dev-docs__page {
-    margin-left: 23%;
+    margin-left: 21%;
     padding-top: 4.4rem;
-    flex: 1 2 77%;
-    max-width: 77%;
+    flex: 1 2 79%;
+    max-width: 79%;
   }
 
   .dev-docscontent {
