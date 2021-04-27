@@ -1,6 +1,6 @@
 {{- define "main" -}}
   {{- $notAnApi := $.Param "notanapi" -}}
-  {{- $maxwidth := "maxw64r" -}}
+  {{- $maxwidth := "maxw80r" -}}
   {{- if (eq ($.Param "widelayout") true) -}}
     {{- $maxwidth = "maxw108r" -}}
   {{- end -}}
