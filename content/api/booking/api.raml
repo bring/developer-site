@@ -470,8 +470,9 @@ documentation:
             description: Specify shipper or consignee reference. This parameter can be maximum 35 character long.
             type: string
         additionalAddressInfo:
-            description: Pickup instruction and delivery instruction. This parameter can be maximum 35 character long.
+            description: Pickup instruction and delivery instruction for use on labels (and waybills) for the OIL_EXPRESS, CARGO (Norway and international), QUICKPACK, COURIER, SERVICEPAKKE services. This parameter can be maximum 35 character long.
             type: string
+            required: false
         vatNumber:
             description: Specify organisation number. This parameter can be maximum 30 character long.
             type: string
