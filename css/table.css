@@ -56,8 +56,9 @@ td > ul {
   margin-bottom: 0;
 }
 
-.bg-green1 td code {
-  background-color: rgba(0, 0, 0, 0.08);
+td.indentcell {
+  padding: 0;
+  width: 1rem;
 }
 
 .dev-param {
