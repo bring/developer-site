@@ -18,7 +18,7 @@
     "usage": "If you do not have an RFID printer",
     "serviceGroup": "Parcels Norway",
     "weightLimit": "5 kg",
-    "sizeLimit": "245 cm long/ length + width + depth: 90 cm",
+    "sizeLimit": "45 cm long/ length + width + depth: 90 cm",
     "vas": ["1081pip"]
   },
   "5600": {
