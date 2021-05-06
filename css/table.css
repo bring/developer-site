@@ -56,6 +56,11 @@ td > ul {
   margin-bottom: 0;
 }
 
+td.indentcell {
+  padding: 0;
+  width: 1rem;
+}
+
 .bg-green1 td code {
   background-color: rgba(0, 0, 0, 0.08);
 }

@@ -1,0 +1,106 @@
+{{- $apiData := .Site.Data.api -}}
+{{- $apiDoc := "" -}}
+{{- range .Params.apidoc -}}
+  {{- $apiDoc = . -}}
+{{- end -}}
+{{- $method := .Params.methodobj -}}
+{{- $api := index $apiData $apiDoc -}}
+<section class="dev-docscontent__section">
+  {{- range .Params.apiresource -}}
+    {{- $apiResource := index $api.resources (int .) -}}
+    {{- $resDisplayName := $apiResource.displayName | urlize -}}
+    {{- $resRelUri := $apiResource.relativeUri | safeHTML -}}
+    {{- $method = index $apiResource.methods (int $method) -}}
+    {{- $displayName := $apiResource.displayName -}}
+    {{- with $apiResource.description -}}
+      {{- if in (string .) "\n\n" -}}
+        {{- .| markdownify -}}
+      {{- else -}}
+        <p>{{ . | markdownify }}</p>
+      {{- end -}}
+    {{- end -}}
+
+    {{- $urlOutput := slice -}}
+    {{- $absUri := $apiResource.absoluteUri -}}
+    {{- $hasExtension := false -}}
+    {{- with $apiResource.uriParameters.mediaTypeExtension -}}
+      {{- $hasExtension = true -}}
+    {{- end -}}
+
+    {{- if $hasExtension -}}
+      {{- range $apiResource.uriParameters.mediaTypeExtension.enum -}}
+        {{- $urlWithExtension := replace $absUri "{mediaTypeExtension}" . -}}
+        {{- $urlOutput = $urlOutput | append $urlWithExtension -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $urlOutput = $urlOutput | append $absUri -}}
+    {{- end -}}
+
+    <pre class="flex align-ic">
+      <span class="mrs phs pvxs bg-gray4">{{ $method.method | upper }}</span>
+      <span>{{ delimit $urlOutput "<br>" }}</span>
+    </pre>
+
+    {{/* uri params exists and first one is not mediaTypeExtension */}}
+    {{- $otherUriParamsMediaType := false -}}
+    {{- with $apiResource.uriParameters -}}
+      {{- $uriParamNames := slice -}}
+      {{- range . -}}
+        {{- $uriParamNames = $uriParamNames | append .name -}}
+      {{- end -}}
+      {{- $uriParamFirst := "" -}}
+      {{- range first 1 $uriParamNames -}}
+        {{- $uriParamFirst = . -}}
+      {{- end -}}
+      {{- if gt (len .) 1 -}}
+        {{- $otherUriParamsMediaType = true -}}
+        {{- else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) -}}
+        {{- $otherUriParamsMediaType = true -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{/* has method.headers */}}
+    {{- $hasMethodHeaders := false -}}
+    {{- $methodHeaders := slice -}}
+    {{- range $method.headers -}}
+      {{- $methodHeaders = $methodHeaders | append . -}}
+      {{- if gt (len $methodHeaders) 0 -}}
+        {{- $hasMethodHeaders = true -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{/* has method.queryParameters */}}
+    {{- $hasMethodQueryParams := false -}}
+    {{- $methodQueryParams := slice -}}
+    {{- range $method.queryParameters -}}
+      {{- $methodQueryParams = $methodQueryParams | append . -}}
+      {{- if gt (len $methodQueryParams) 0 -}}
+        {{- $hasMethodQueryParams = true -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
+      <h2>Request parameters</h2>
+    {{- end -}}
+
+    {{/* For each endpoint: List all URI parameters */}}
+    {{- $uriParameters := slice -}}
+    {{- range $apiResource.uriParameters -}}
+      {{- $uriParameters = $uriParameters | append . -}}
+    {{- end -}}
+    {{- if $otherUriParamsMediaType -}}
+      {{- partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) -}}
+    {{- end -}}
+
+    {{/* For each endpoint: List all headers */}}
+    {{- if $hasMethodHeaders -}}
+      {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "HTTP header") -}}
+    {{- end -}}
+
+    {{/* For each endpoint: List all query parameters */}}
+    {{- if $hasMethodQueryParams -}}
+      {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") -}}
+    {{- end -}}
+
+  {{- end -}}
+</section>
