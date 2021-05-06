@@ -6,8 +6,9 @@
     "nameEn": "Mailbox parcel with RFID",
     "usage": "If you have an RFID printer",
     "serviceGroup": "Parcels Norway",
-    "weightLimit": "5 kg",
-    "sizeLimit": "45 cm long/ length + width + depth: 90 cm",
+    "maxWeight": "5 kg",
+    "maxSize": "45 cm long",
+    "maxLWH": "L+W+H: 90 cm",
     "vas": ["1081pip"]
   },
   "3584": {
@@ -17,8 +18,9 @@
     "nameEn": "Mailbox parcel",
     "usage": "If you do not have an RFID printer",
     "serviceGroup": "Parcels Norway",
-    "weightLimit": "5 kg",
-    "sizeLimit": "245 cm long/ length + width + depth: 90 cm",
+    "maxWeight": "5 kg",
+    "maxSize": "45 cm long",
+    "maxLWH": "L+W+H: 90 cm",
     "vas": ["1081pip"]
   },
   "5600": {
@@ -27,8 +29,9 @@
     "nameNo": "Pakke levert hjem",
     "nameEn": "Home Delivery",
     "serviceGroup": "Parcel Norway",
-    "weightLimit": "35 kg",
-    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "maxWeight": "35 kg",
+    "maxSize": "200 cm long",
+    "maxLWH": "L+W+H: 300 cm",
     "vas": [
       "0041",
       "1133",
@@ -47,8 +50,9 @@
     "nameNo": "Pakke til hentested",
     "nameEn": "Pickup Parcel",
     "serviceGroup": "Parcels Norway",
-    "weightLimit": "35 kg",
-    "sizeLimit": "240 cm long/ length + width + depth: 360 cm",
+    "maxWeight": "35 kg",
+    "maxSize": "240 cm long",
+    "maxLWH": "L+W+H: 360 cm",
     "vas": [
       "1036",
       "1000",
@@ -67,8 +71,9 @@
     "nameNo": "Pakke på døren",
     "nameEn": "Home Delivery",
     "serviceGroup": "Parcel Norway",
-    "weightLimit": "35 kg",
-    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "maxWeight": "35 kg",
+    "maxSize": "200 cm long",
+    "maxLWH": "L+W+H: 300 cm",
     "vas": [
       "1081home",
       "1133",
@@ -87,8 +92,9 @@
     "nameNo": "",
     "nameEn": "Home Delivery Parcel",
     "serviceGroup": "Parcel Nordic",
-    "weightLimit": "35 kg",
-    "sizeLimit": "200 cm long/ length + width + hight: 300 cm",
+    "maxWeight": "35 kg",
+    "maxSize": "200 cm long",
+    "maxLWH": "L+W+H: 300 cm",
     "vas": ["1091", "1081home", "1133", "1134", "0068", "1280"]
   },
   "SERVICEPAKKE": {
@@ -97,8 +103,9 @@
     "nameNo": "Klimanøytral Servicepakke",
     "nameEn": "Climate neutral service parcel",
     "serviceGroup": "Parcels Norway",
-    "weightLimit": "35 kg",
-    "sizeLimit": "240 cm long/ length + width + depth: 360 cm",
+    "maxWeight": "35 kg",
+    "maxSize": "240 cm long",
+    "maxLWH": "L+W+H: 360 cm",
     "vas": ["1091", "1036", "1000", "1133", "1134", "1082", "1229", "1083"]
   },
   "PICKUP_PARCEL": {
@@ -107,8 +114,9 @@
     "nameNo": "",
     "nameEn": "Pickup Parcel",
     "serviceGroup": "Parcels Nordic",
-    "weightLimit": "20 kg",
-    "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
+    "maxWeight": "20 kg",
+    "maxSize": "150 cm long",
+    "maxLWH": "L+W+H: 300 cm",
     "vas": ["1091", "1000", "0068"]
   },
   "PICKUP_PARCEL_BULK": {
@@ -117,8 +125,9 @@
     "nameNo": "",
     "nameEn": "PickUp Parcel Bulk",
     "serviceGroup": "Parcels Nordic",
-    "weightLimit": "20 kg",
-    "sizeLimit": "150 cm long/ length + width + depth: 300 cm",
+    "maxWeight": "20 kg",
+    "maxSize": "150 cm long",
+    "maxLWH": "L+W+H: 300 cm",
     "vas": ["1091", "1000", "1133", "0068"]
   }
 }

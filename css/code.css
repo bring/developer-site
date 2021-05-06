@@ -25,3 +25,7 @@ p code {
   padding: 0.1em 0.2em;
   border-radius: 2px;
 }
+
+.bg-green1 code {
+  background-color: rgba(0, 0, 0, 0.08);
+}

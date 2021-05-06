@@ -61,10 +61,6 @@ td.indentcell {
   width: 1rem;
 }
 
-.bg-green1 td code {
-  background-color: rgba(0, 0, 0, 0.08);
-}
-
 .dev-param {
   background-color: var(--gray-95);
   padding: 0.1em 0.25em;
