@@ -453,20 +453,24 @@ documentation:
         required: true
     queryParameters:
       fromcountry:
-        description: Sender country code
+        description: Sender country code in valid ISO Alpha-2 format.
         type: string
+        example: NO
         required: true
       tocountry:
-        description: Receiver country code
+        description: Receiver country code in valid ISO Alpha-2 format.
         type: string
+        example: NO
         required: true
       frompostalcode:
-        description: Sender postal code
+        description: Sender country code in valid ISO Alpha-2 format.
         type: string
+        example: NO
         required: true
       topostalcode:
-        description: Receiver postal code
+        description: Receiver country code in valid ISO Alpha-2 format.
         type: string
+        example: NO
         required: true
       addressline:
         description: Specify address. This parameter can be maximum 35 character long. It will be for Bedriftspakke and På døren only.
@@ -474,7 +478,7 @@ documentation:
         example: Testsvingen 12
         required: false
       product:
-        description: List of services requested. Multiple services can be requested in a single request. Requested service can also be specified with a customer number separated with delimiter (**:**). For example CARGO**:**CARGO-123456
+        description: List of services requested. Multiple services can be requested in a single request. Requested service can also be specified with a customer number separated with **:** (colon) as delimiter. For example CARGO:CARGO-123456
         type: string
       date:
         description: Shipping date
@@ -536,7 +540,7 @@ documentation:
         required: false
         type: string
       customernumber:
-        description: Lets you specify which customer number to use in the request. If specified and service is not supplied with delimited customer number, then it will be applied on all request services
+        description: Lets you specify which customer number to use in the request. If specified and service is not supplied with delimited customer number, then it will be applied on all request services. Required if `estimateddeliverytime` is set to true.
         type: string
         example: CARGO-123456
         required: false
@@ -576,11 +580,11 @@ documentation:
         type: boolean
         required: false
       uniqueAlternateDeliveryDates:
-        description: True if you want unique expected delivery dates when requested with 'numberofdeliverydates'.
+        description: True if you want unique expected delivery dates when requested with `numberofdeliverydates`.
         type: boolean
         required: false
       pickuppoints:
-        description: If pickup points are specified then estimated delivery time will be added in the response for them, when 'estimateddeliverytime' flag is True. If it is not specified, then default pickup point(s) for receiver's postal code will be used. Eligible services are 5800 and SERVICEPAKKE. However we recommend to always specify pickup points for optimum results.
+        description: If pickup points are specified then estimated delivery time will be added in the response for them, when `estimateddeliverytime'` flag is True. If it is not specified, then default pickup point(s) for receiver's postal code will be used. Eligible services are 5800 and SERVICEPAKKE. However we recommend to always specify pickup points for optimum results.
         type: string
         example: "171102,124518"
         required: false
