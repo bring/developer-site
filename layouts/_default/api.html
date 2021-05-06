@@ -22,6 +22,12 @@
           {{- if or (isset .Params "services") (isset .Params "examples") -}}
             {{- partial "api/guide.html" . -}}
           {{- end -}}
+          {{- if and (isset .Params "apidoc") (isset .Params "apiresources") -}}
+            {{- partial "api/guideapi.html" . -}}
+          {{- end -}}
+          {{- if and (isset .Params "apidoc") (isset .Params "apiresource") -}}
+            {{- partial "api/guideapiresource.html" . -}}
+          {{- end -}}
           {{- .Content -}}
           {{- if (in .CurrentSection "revision-history") -}}
             {{- partial "api/changelog.html" . -}}
