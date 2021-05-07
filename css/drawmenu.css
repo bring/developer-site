@@ -1,6 +1,6 @@
 .dev-drawmenu {
   display: none;
-  flex: 1 0 100%;
+  flex: 0 0 auto;
   padding-left: 6vw;
   padding-right: 6vw;
   position: sticky;
