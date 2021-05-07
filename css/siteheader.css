@@ -1,8 +1,8 @@
 .dev-siteheader {
   background-color: var(--green-darker);
-  flex: 1 0 100%;
+  flex: 0 0 auto;
   min-height: 4.4rem;
-  z-index: 20;
+  z-index: 10;
 }
 
 @media screen and (min-width: 64em) {
