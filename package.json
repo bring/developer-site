@@ -31,7 +31,7 @@
     "hugo-bin": "^0.70.0",
     "mini-css-extract-plugin": "^1.4.0",
     "postcss": "^8.2.9",
-    "postcss-css-variables": "^0.17.0",
+    "postcss-css-variables": "^0.18.0",
     "postcss-import": "^14.0.1",
     "postcss-loader": "^5.2.0",
     "raml-1-parser": "^1.1.67",
