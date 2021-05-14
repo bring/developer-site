@@ -31,27 +31,23 @@
           {{- end -}}
           {{- $propTypes := .properties -}}
 
-          {{/* Find the max number of colspans */}}
-          {{ $propLevels := slice }}
           {{- range .type -}}
             {{- if (eq . "object") -}}
+              {{/* Find the max number of colspans */}}
+              {{ $propLevels := slice }}
               {{- range $propTypes -}}
                 {{ $colLevel := 0 }}
-                {{- $propLevels = $propLevels | append (partial "api/ramltypecolspan.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes)) -}}
+                {{- $propLevels = $propLevels | append (partial "api/typemaxcols.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes)) -}}
               {{ end }}
-            {{- end -}}
-          {{- end -}}
-          {{ $propLevelString := delimit $propLevels "" }}
-          {{ $propLevelNumbers := findRE "[\\d]" $propLevelString }}
-          {{ $maxCols := 0 }}
-          {{ range $propLevelNumbers }}
-            {{ if gt . $maxCols }}
-              {{ $maxCols = . }}
-            {{ end }}
-          {{ end }}
+              {{ $propLevelString := delimit $propLevels "" }}
+              {{ $propLevelNumbers := findRE "[\\d]" $propLevelString }}
+              {{ $maxCols := 0 }}
+              {{ range $propLevelNumbers }}
+                {{ if gt . $maxCols }}
+                  {{ $maxCols = . }}
+                {{ end }}
+              {{ end }}
 
-          {{- range .type -}}
-            {{- if (eq . "object") -}}
               <table>
                 {{- with $showType -}}
                   <caption>
@@ -66,7 +62,7 @@
                 <tbody>
                   {{- range $propTypes -}}
                   {{ $colLevel := 0 }}
-                    {{- partial "api/ramltyperow.html" (dict "incProp" . "colLevel" $colLevel "maxCols" $maxCols "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) -}}
+                    {{- partial "api/typerow.html" (dict "incProp" . "colLevel" $colLevel "maxCols" $maxCols "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) -}}
                   {{- end -}}
                 </tbody>
               </table>

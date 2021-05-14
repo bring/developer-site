@@ -84,13 +84,13 @@
 {{- if (eq $propType "object") -}}
   {{/* This isn’t tested / .incProp.properties doesn’t seem to exists. */}}
   {{- range .incProp.properties -}}
-    {{- partial "api/ramltyperow.html" (dict "incProp" .incProp.properties "maxCols" $maxCols "colLevel" "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
+    {{- partial "api/typerow.html" (dict "incProp" .incProp.properties "maxCols" $maxCols "colLevel" "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
   {{- end -}}
   {{- else if (eq $propType "array") -}}
   {{- range where $siteDataApiTypes .incProp.items "!=" nil -}}
     {{- range . -}}
       {{- range .properties -}}
-        {{- partial "api/ramltyperow.html" (dict "incProp" . "maxCols" $maxCols "colLevel" $colLevel "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
+        {{- partial "api/typerow.html" (dict "incProp" . "maxCols" $maxCols "colLevel" $colLevel "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -98,7 +98,7 @@
   {{- range where $siteDataApiTypes $propType "!=" nil -}}
     {{- range . -}}
       {{- range .properties -}}
-        {{- partial "api/ramltyperow.html" (dict "incProp" . "maxCols" $maxCols "colLevel" $colLevel "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
+        {{- partial "api/typerow.html" (dict "incProp" . "maxCols" $maxCols "colLevel" $colLevel "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}

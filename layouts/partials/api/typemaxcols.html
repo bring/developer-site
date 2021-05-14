@@ -16,13 +16,13 @@
 {{- if (eq $propType "object") -}}
   {{/* This isn’t tested / .incProp.properties doesn’t seem to exists. */}}
   {{- range .incProp.properties -}}
-    {{- partial "api/ramltyperow.html" (dict "incProp" .incProp.properties "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes) -}}
+    {{- partial "api/typemaxcols.html" (dict "incProp" .incProp.properties "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes) -}}
   {{- end -}}
   {{- else if (eq $propType "array") -}}
   {{- range where $siteDataApiTypes .incProp.items "!=" nil -}}
     {{- range . -}}
       {{- range .properties -}}
-      {{- partial "api/ramltypecolspan.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes) -}}
+      {{- partial "api/typemaxcols.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -30,7 +30,7 @@
   {{- range where $siteDataApiTypes $propType "!=" nil -}}
     {{- range . -}}
       {{- range .properties -}}
-      {{- partial "api/ramltypecolspan.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes) -}}
+      {{- partial "api/typemaxcols.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
