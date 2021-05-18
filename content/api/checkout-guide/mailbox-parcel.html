@@ -19,10 +19,10 @@ examples:
   - slug: book-mailbox-parcel
     title: Book Pakke i postkassen
 apis:
-- slug: shipping-guide_2
-  title: List services
-- slug: booking
-  title: List customer numbers and order shipments
+  - slug: shipping-guide_2
+    title: List services
+  - slug: booking
+    title: List customer numbers and order shipments
 hidden: true
 ---
 
@@ -30,22 +30,25 @@ hidden: true
   <h2 class="mbm">Pakke i postkassen in checkout</h2>
   <div class="flex flex-wrap flex-dir-row-rev">
     <figure class="dev-guide-m">
-      <img src="../assets/til_postkassen.png" alt="" class="mbm maxw24r sticky-6r" />
+      <img
+        src="../assets/til_postkassen.png"
+        alt=""
+        class="mbm maxw24r sticky-6r"
+      />
     </figure>
 
     <div class="dev-guide-l">
       <div class="bg-green1 pal pbm mbxs">
         <h3>1 Delivery option Pakke i Postkassen</h3>
         <p>
-          Pakke i postkassen is recommended default shipping option for small,
-          lower value shipments, as it is the preferred delivery method for
-          recipients for these kind of items.
+          Pakke i postkassen is the recommended default shipping option for
+          small, lower value shipments, as it is the preferred delivery method
+          for recipients for these kind of items.
         </p>
         <p>
-          Mailbox parcel are slower than pickup point and home delivery, are
-          uninsured and do not support ID control, age / social control, cooling
-          or other special services. For deliveries needing these extra
-          services, use Home Delivery or Pickup Point.
+          Mailbox Parcel is slower than Pickup Parcel and Home Delivery. It is
+          uninsured and does not support ID control, age / social control,
+          cooling or other additional services. For deliveries requiring such services, use Home Delivery or Pickup Parcel.
         </p>
 
         <table>
@@ -58,7 +61,7 @@ hidden: true
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Delivery option name</th>
+              <th scope="row">Delivery option label</th>
               <td>[<code>displayName</code>] ex: I postkassen</td>
               <td>To mailbox</td>
             </tr>
@@ -111,7 +114,7 @@ hidden: true
       <div class="bg-green1 pal pbm mbxs">
         <h3>3 Description text</h3>
         <p>
-          A short line that give more information about the delivery method.
+          A short line providing more information about the delivery method.
         </p>
 
         <table>
@@ -138,29 +141,29 @@ hidden: true
       <div class="bg-green1 pal pbm mbxs">
         <h3>4 Pose på dør</h3>
         <p>
-          As mailboxes vary in sizes, the maximum size of Package to Mailbox
-          will not fit in every mailbox. To accommodate this, it is recommended
-          to provide an option in checkout for the Delivery to doorstep extra
-          service, as a fallback solution.
+          As mailboxes vary in sizes, the maximum size of Mailbox Parcel will
+          not fit in every mailbox. To accommodate this, it is recommended to
+          provide an option in checkout for the additional service Delivery to
+          doorstep, as a fallback solution.
         </p>
         <p>
           If the user ticks off and then agrees to terms, the mail carrier can
-          leave packages that do not fit in the mailbox in a bag left at the
-          door, instead of sending it to the nearest pickup point. When the mail
-          carrier activates bag on door, the delivery will be given an
-          additional charge. However, this is still cheaper and faster than
-          re-routing to pick up location.
+          leave packages that do not fit in the mailbox in a bag at the door,
+          instead of sending it to the nearest pickup point. When the mail
+          carrier activates bag on door, an additional charge will be added to
+          the delivery. However, this is still cheaper and faster than
+          re-routing to the pickup point.
         </p>
 
         <p>
-          Delivery to doorstep should also include a free textfield to provide
-          an apartment number or description, to help the mail carrier make sure
-          the package is left in a bag at the correct door.
+          Delivery to doorstep should also include a textarea to provide an
+          apartment number or description helping the mail carrier make sure the
+          package is left in a bag at the correct door.
         </p>
         <h4>Add the property unit number on the label</h4>
 
         <p>
-          Adding the property unit number to the label will help ensuring that
+          Adding the property unit number to the label will help ensure that
           the package will be delivered as a bag on door. We recommend adding
           this information to the label, either in the second address line, or
           in the additional information section (additionalAdressInfo).
@@ -176,12 +179,12 @@ hidden: true
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Extra service name</th>
+              <th scope="row">Checkbox label</th>
               <td>Pose på døren om det ikke er plass i postkassen</td>
               <td>Bag on door if the mailbox is too small</td>
             </tr>
             <tr>
-              <th scope="row">Information box on checkbox</th>
+              <th scope="row">Checkbox help text</th>
               <td>
                 <span class="fwb db mbs">Når du velger pose på dør …</span>
                 <span class="db mbs"
@@ -189,34 +192,33 @@ hidden: true
                   Husnummer må komme tydelig frem, og døren må være merket med
                   navn.</span
                 >
-                Om Posten ikke har tilgang til døren, eller det er andre årsaker
-                til at pose på dør ikke er mulig (vær, føre, for stor pakke for
-                pose etc.), blir pakken levert til nærmeste hentested.
+                Dersom du bor i leilighet, legg inn informasjon om ditt
+                bruksenhetsnummer/etasjenummer. Om Posten ikke har tilgang til
+                døren, blir pakken levert til ditt nærmeste hentested.
               </td>
               <td>
                 <span class="fwb db mbs">If you choose bag on door …</span>
                 <span class="db mbs"
-                  >… it cannot be more than 250 m from mailbox to door. House
-                  number must be visible, and the door must be marked with
-                  name.</span
+                  >… it cannot be more than 250 m from mailbox to door. A house
+                  number and name sign must be visible.</span
                 >
-                If Posten do not have access to the door, or by other reasons
-                bag on door is not possible (weather, to big parcel for Bag
-                etc.), is the parcel delivered to nearest pickup point.
+                If you live in an apartment, include the apartment number/floor.
+                If Posten does not have access to the door, the parcel will be
+                delivered to nearest pickup point.
               </td>
             </tr>
             <tr>
-              <th scope="row">Label text field</th>
-              <td>Bruksenhetsnummer (hvis du bor i leilighet)</td>
-              <td>Apartment</td>
+              <th scope="row">Text input label</th>
+              <td>Bruksenhetsnummer eller etasje (hvis du bor i leilighet)</td>
+              <td>Apartment or floor</td>
             </tr>
             <tr>
-              <th scope="row">Placeholder text field</th>
+              <th scope="row">Text input placeholder</th>
               <td>eks. H0301</td>
-              <td>eks. H0301</td>
+              <td>example: H0301</td>
             </tr>
             <tr>
-              <th scope="row">Information box text field</th>
+              <th scope="row">Text input help text</th>
               <td>
                 <span class="fwb db mbs">Bruksenhetsnummer …</span>
                 <span class="db mbs"
