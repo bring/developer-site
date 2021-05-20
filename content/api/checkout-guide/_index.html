@@ -21,14 +21,14 @@ hidden: true
       services are:
     </p>
 
-    <ul>
-      <li>Package to mailbox</li>
-      <li>Home delivery</li>
-      <li>parcel to Pickup Point.</li>
+    <ul class="text-heading">
+      <li><a href='{{< relref "mailbox-parcel" >}}'>Mailbox parcel</a></li>
+      <li><a href='{{< relref "home-delivery" >}}'>Home delivery</a></li>
+      <li><a href='{{< relref "pickup-parcel" >}}'>Pickup parcel</a></li>
     </ul>
 
     <p>
-      By offering these delivery options with additional services, your customer
+      By offering these delivery options with additional services, your customers
       are able to select the delivery method best suited their needs. The best
       practice examples can be populated by using the
       <a href="../shipping-guide_2">Shipping Guide 2.0</a> and
@@ -36,7 +36,7 @@ hidden: true
     </p>
 
     <iframe
-      class="ba mb-border w100p"
+      class="ba mb-border w100p mtl"
       allowtransparency="true"
       src="https://www.figma.com/embed?embed_host=confluence&amp;url=https%3A%2F%2Fwww.figma.com%2Fproto%2FGWjlyqs5kOvt1788s4zwbB%2FBest-Practice-checkout%3Fnode-id%3D2339%253A403%26viewport%3D10356%252C6975%252C0.8964606523513794%26scaling%3Dscale-down"
       allow="encrypted-media"
@@ -55,16 +55,20 @@ hidden: true
   <div class="dev-guide-m bg-green1 pal">
     <h2>Checkout shipping widget</h2>
     <p>
+      We are currently developing a checkout shipping widget for our customers.
       Get our three shipping services into checkout fast and easy without using
       our APIs.
     </p>
     <img src="assets/checkout_shipping_widget.png" alt="" class="mbl maxw10r" />
     <h3>How do I get the widgets?</h3>
     <p>
-      Log into Widget configurator. Here you can fill out your store settings
-      and create widgets. To get widgets into your web shop, add the
-      configuration and script tag that is generated from creating widgets to
-      your web page (detailed description follows when you create widget).
+      When the widgets are ready, you log in to the Widget Designer Configurator
+      where you can fill out your store settings and create widgets.
+    </p>
+    <p>
+      To get widgets into your webshop, add the configuration and script tag
+      that gets generated when creating widgets to your web page (detailed
+      description follows when you create widget).
     </p>
   </div>
 </section>
@@ -99,21 +103,21 @@ hidden: true
       <div class="bg-green1 pal pbm mbxs">
         <h3>1 Postal code</h3>
         <p>
-          To get more precise estimated time of arrival and relevant pick up
-          locations, customer needs to fill out postal code. If you use our API
-          you will get validation and postal place for the field.
+          To get a more precise estimated time of arrival and relevant pickup
+          locations, customers need to enter postal code. If you use our API,
+          you will get validation and city for the field.
         </p>
       </div>
 
       <div class="bg-green1 pal pbm mbxs">
         <h3>2 Street address</h3>
         <p>
-          Some postal areas are split into several delivery zones, which impacts
-          the delivery estimates. If the additional service for home delivery
-          should work properly, customer need to fill out their street address.
-          The delivery options should have an overlay to prompt user to fill out
-          postal code and street address. This will be removed when both is
-          provided.
+          Some postal areas are split into multiple delivery zones, which
+          impacts the delivery estimates. For the services Home Delivery and
+          Optional Pickup Point to work properly, customers must enter their
+          street address. The delivery options should have an overlay prompting
+          the users to enter postal code and street address. This will be
+          removed when both are provided.
         </p>
       </div>
 
@@ -130,11 +134,12 @@ hidden: true
       <div class="bg-green1 pal pbm mbxs">
         <h3>4 Price</h3>
         <p>
-          Offer fixed shipping price on all delivery options. Subsidized or free
-          freight is one of the most powerful tool for increasing conversion.
-          Subsidize all shipping methods equally so that the customer can pick
-          the shipping method that best fits their needs, without price
-          incentives overweighing a particular shipping method.
+          We recommend offering a fixed shipping price on all delivery options
+          in your store. Subsidized or free freight is one of the most powerful
+          tools for increasing conversion. Subsidize all shipping methods
+          equally so that the customers can pick the shipping method that best
+          fits their needs, without price incentives outweighing a particular
+          shipping method.
         </p>
       </div>
 
@@ -149,23 +154,23 @@ hidden: true
       <div class="bg-green1 pal pbm mbxs">
         <h3>6 Description text</h3>
         <p>
-          A short line that give more information about the delivery method.
-          Each delivery method have their own recommended text depending on
-          additional services you offer. The illustration show an example when
-          all additional services are offered.
+          A short line providing more information about the delivery method.
+          Each delivery method has its own recommended text depending on the
+          additional services you offer. The illustration shows an example of
+          when all additional services are offered.
         </p>
         <p>See each service to get more details.</p>
         <p>
-          Pakke i postkassen<br />
-          Pakke til hentested<br />
-          Pakke levert hjem
+          <a href='{{< relref "mailbox-parcel" >}}'>Pakke i postkassen</a><br />
+          <a href='{{< relref "pickup-parcel" >}}'>Pakke til hentested</a><br />
+          <a href='{{< relref "home-delivery" >}}'>Pakke levert hjem</a>
         </p>
       </div>
 
       <div class="bg-green1 pal pbm mbxs">
         <h3>7 Logo</h3>
         <p>
-          Customer prefer to know what transporter the web shop use. Use the
+          Customers prefer to know what transporter the webshop uses. Use the
           Posten logo for B2C shops and Bring logo for B2B shops.
         </p>
       </div>
@@ -177,13 +182,14 @@ hidden: true
           relieving them of one of the biggest pains of online shopping.
           Therefore, it is best practice to always show an estimate for when the
           customer can expect their package. How it should be displayed depends
-          if address is known, the delivery option and additional services you
-          offer. See each service to get more details.
+          on if the address is known, the delivery option and the additional
+          services you offer. See each service to get more details.
         </p>
         <p>Tips for implementing ETA</p>
         <p>
-          Pakke i postkassen<br />
-          Pakke til hentested <br />Pakke levert hjem
+          <a href='{{< relref "mailbox-parcel" >}}'>Pakke i postkassen</a><br />
+          <a href='{{< relref "pickup-parcel" >}}'>Pakke til hentested</a><br />
+          <a href='{{< relref "home-delivery" >}}'>Pakke levert hjem</a>
         </p>
       </div>
     </div>

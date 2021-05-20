@@ -3,7 +3,7 @@
 ## Issues
 
 If you have issues or questions regarding the API, please post in the respective
-API’s comments and help section. The issue tracker is for the site itself, as
+API’s comments and support section. The issue tracker is for the site itself, as
 reflected in the template.
 
 ## Tech

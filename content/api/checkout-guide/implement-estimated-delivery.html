@@ -97,14 +97,14 @@ hidden: true
             response.
           </p>
 
-          <div class="maxw40r">
-            <!-- prettier-ignore -->
-            {{< highlight json >}}"warnings": [
+<!-- prettier-ignore -->
+{{< highlight json >}}
+"warnings": [
   { 
     "code": "ADDRESS_NOT_MATCHED",
     "description": "Recipient address can't be matched. Expected leadtime has been calculated based on postal code only, and might therefore be incorrect."
-  }{{< /highlight >}}
-          </div>
+  }
+{{< /highlight >}}
 
           <p>
             If this code is received, the estimate is the default for the postal
@@ -120,7 +120,7 @@ hidden: true
           <p>
             When you have uncertain lead times, it is recommended to show the
             estimated delivery day as a range. In this example, the internal
-            lead time might be 0 - 1 days. The min and max values of internal
+            lead time might be 0–1 days. The min and max values of internal
             lead time should be added to Bring's
             <code>workingDays</code> variable from Shipping Guide.
           </p>
@@ -168,11 +168,13 @@ hidden: true
             for home delivery in Shipping Guide:
           </p>
 
-          <div class="maxw40r">
-            <!-- prettier-ignore -->
-            {{< highlight json >}}"withUniqueAlternateDeliveryDates": true, //removes duplicate alternatives
-"numberOfAlternativeDeliveryDates": 5 // recommended max value to display {{< /highlight >}}
-          </div>
+
+<!-- prettier-ignore -->
+{{< highlight json >}}
+"withUniqueAlternateDeliveryDates": true, //removes duplicate alternatives
+"numberOfAlternativeDeliveryDates": 5 // recommended max value to display
+{{< /highlight >}}
+
         </div>
       </div>
     </div>
