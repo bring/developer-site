@@ -1,61 +1,62 @@
 ---
-title: Implement estimated delivery
+title: Implementing estimated delivery date
 titlesub:
 layout: api
+widelayout: true
 notanapi: true
 menu:
   api:
     parent: guide-checkout
     identifier: implement-estimated-delivery
-    title: Implement estimated delivery
+    title: Implementing estimated delivery date
 weight: 4
 hidden: true
 ---
 
 <section class="dev-docscontent__section">
-  <div>
-    <h2 class="mbm">Configuration of internal lead time and cut-off time</h2>
-    <div class="flex flex-wrap flex-dir-row-rev">
-      <div class="dev-guide-m">
-        <img
-          src="../assets/leadtime.png"
-          alt="Internal leadtime"
-          class="mbm maxw24r sticky-6r"
-        />
-      </div>
-      <div class="dev-guide-l">
-        <div class="bg-green1 pal pbm mbxs">
-          <h3>1 Minimum and maximum lead time</h3>
-          <p>
-            To properly use the ETA from Posten / Bring, you need to account for
-            your internal lead time. While we recommend having as precise ETA as
-            possible, we understand that sometimes, a range is needed to account
-            for uncertainties or large volumes.
-          </p>
-          <p>
-            A value 0 in both variables would mean that as long as the order is
-            placed before the cut-off time, it will be handed over to Bring
-            today, and you can provide the user an exact estimate.
-          </p>
-          <p>
-            If the min and max lead time are different values, you should
-            provide the user with a range instead of an exact date. Note that
-            users generally read a range estimate as the worst estimate.
-          </p>
-          <p>
-            For exact date, use the <code>expectedDeliveryDate</code> response,
-            for a range, use <code>workingDays</code>
-          </p>
-        </div>
+  <div class="mbxl">
+    <p class="text-heading">
+      By showing an estimated time of delivery, you are answering one of the
+      most common questions customers shopping online are asking: when will my
+      order arrive?
+    </p>
+    <p class="text-heading">
+      There are a few things you need to bear in mind when setting this up:
+    </p>
 
+    <div class="message--warn maxw40r pam mvl">
+      Your internal lead time is vital for a correct estimated delivery time
+    </div>
+
+    <div class="bg-green1 pal pbm mbxs maxw48r">
+      <p>
+        To use the lead times you receive from our APIs, you need to account for
+        your own lead times as well and add them to the query as the shipping
+        <code>date</code> and <code>time</code>.
+      </p>
+      <p>
+        If you do not provide the date and time for shipment handover to Bring
+        when querying the Shipping Guide API, the response will assume the query
+        time stamp is the shipment handover. E.g.: <code>date</code> = current
+        date and <code>time</code> = current time stamp - the result will be an
+        overly optimistic ETA in checkout.
+      </p>
+      <p>
+        Calculate your your shipping date and time <em>before</em> querying
+        Shipping Guide.
+      </p>
+    </div>
+
+    <div class="dev-guide-l flex flex-wrap align-ifs">
+      <div class="maxw48r flex-1">
         <div class="bg-green1 pal pbm mbxs">
-          <h3>2 Cut-off time</h3>
+          <h3>1&nbsp;Order&nbsp;placed&nbsp;before cut-off time</h3>
           <p>
-            To increase precision for end users, we suggest implementing a
-            cut-off time. The cut-off time is the latest time a customer can
-            order, and expect the order to be handled within the specified lead
-            time. Orders placed after the cut-off will have an additional day
-            added to the delivery estimate.
+            In the first case, the query to shipping guide will use today as
+            shipping <code>date</code>, and 21:00 or blank as shipping
+            <code>time</code>. A typical Bring lead time for packages to larger
+            cities is one day, and the end user will be shown "tomorrow" as
+            their delivery estimate.
           </p>
           <p>
             Cut-off time can also be shown to the end user, both for providing
@@ -63,11 +64,74 @@ hidden: true
             from ordering now, instead of later.
           </p>
         </div>
+
+        <div class="bg-green1 pal pbm mbxs">
+          <h3>2 Order placed after cut-off time</h3>
+          <p>
+            In the second example, the same webshop gets an order at 19:00.
+            Orders placed after 17:00 will not be packed in time for the pickup
+            the same day. They do not need to be prioritised in the warehouse,
+            and will be picked the next day. An additional day is added to the
+            webshop lead time.
+          </p>
+          <p>
+            In this case, the query will set <code>date</code> = tomorrow’s
+            date. With the same Bring distribution lead time, the end user will
+            be shown "2 days" as their delivery estimate.
+          </p>
+        </div>
       </div>
+      <figure class="sticky-6r pal flex flex-wrap w100p maxw64r">
+        <figcaption class="maxw32r text-note mbm">
+          The examples below show a webshop with default 4 hours lead time from
+          order placement in the webshop, which would be a warehouse lead time
+          of "0 days". The last Bring pickup is at 21:00. As such, cut-off is
+          set to 17:00, as orders placed before that time will leave the
+          warehouse the same day.
+        </figcaption>
+        <div class="ofx-auto flex-auto">
+          <img
+            src="../assets/eta-flow-before.png"
+            alt="Estimated time of arrival"
+            class="w-auto maxw48r mbm"
+          />
+          <img
+            src="../assets/eta-flow-after.png"
+            alt="Estimated time of arrival"
+            class="w-auto maxw48r mbm"
+          />
+        </div>
+      </figure>
+    </div>
+
+    <div class="bg-green1 pal pbm mbxs maxw48r">
+      <h3>Internal lead time as min-max values</h3>
+      <p>
+        While we recommend having as precise estimated delivery time as
+        possible, we understand that sometimes, a range is needed to account for
+        uncertainties or large volumes. By configuring internal lead time from
+        minimum to maximum, you get this flexibility.
+      </p>
+      <ul>
+        <li>
+          If the value for both minimum and maximum lead time
+          <em>is equal</em>, (e.g.: 0–0 days) you are able to present an
+          <em>exact estimated delivery date</em> in checkout.
+        </li>
+        <li>
+          If the value for minimum and maximum lead time
+          <em>differ</em> (e.g.: 1–2 days), you should provide the user with
+          <em>a range instead of exact date</em>.
+        </li>
+      </ul>
+      <p>
+        For exact date, use the <code>expectedDeliveryDate</code> response from
+        shipping guide, for a range, use <code>workingDays</code>.
+      </p>
     </div>
   </div>
-  <div class="mtxl">
-    <h2 class="mbm">Examples of different ways to show ETA</h2>
+  <div>
+    <h2 class="mbm">Examples of different ways to show ETA in checkout</h2>
     <div class="flex flex-wrap flex-dir-row-rev">
       <figure class="dev-guide-m">
         <img
@@ -77,14 +141,14 @@ hidden: true
         />
       </figure>
 
-      <div class="dev-guide-l">
+      <div class="dev-guide-m">
         <div class="bg-green1 pal pbm mbxs">
-          <h3>1 Ask the user for their address and area code</h3>
+          <h3>1 Ask the user for their address and postal code</h3>
           <p>
-            Some area codes are split into several delivery zones to keep costs
-            down, which impacts lead time. The general rule is that population
-            hubs will have more frequent delivery than the rest of the area
-            code.
+            Some postal codes are split into several delivery zones, which
+            impacts lead time for parcel to mailbox and home delivery. The
+            general rule is that population hubs will have more frequent
+            delivery than the rest of the postal code.
           </p>
           <p>
             Because of this, we recommend that you query our APIs with both
@@ -96,16 +160,16 @@ hidden: true
             will then receive the following warning in the shipping guide
             response.
           </p>
-
-<!-- prettier-ignore -->
-{{< highlight json >}}
+          <div class="maxw44r">
+            <!-- prettier-ignore -->
+            {{< highlight json >}}
 "warnings": [
   { 
     "code": "ADDRESS_NOT_MATCHED",
     "description": "Recipient address can't be matched. Expected leadtime has been calculated based on postal code only, and might therefore be incorrect."
   }
 {{< /highlight >}}
-
+          </div>
           <p>
             If this code is received, the estimate is the default for the postal
             code, which can be used for showing an estimated delivery time, but
@@ -116,22 +180,26 @@ hidden: true
         </div>
 
         <div class="bg-green1 pal pbm mbxs">
-          <h3>2 Show an estimated delivery as a range</h3>
+          <h3>2 Show estimated delivery time as a range</h3>
           <p>
             When you have uncertain lead times, it is recommended to show the
-            estimated delivery day as a range. In this example, the internal
-            lead time might be 0–1 days. The min and max values of internal
-            lead time should be added to Bring's
+            estimated delivery day as a range (see "Configure internal minimum
+            and maximum lead time" above).
+          </p>
+          <p>
+            In this example, the internal lead time might be 0–1 days. The min
+            and max values of internal lead time should be added to Bring’s
             <code>workingDays</code> variable from Shipping Guide.
           </p>
         </div>
         <div class="bg-green1 pal pbm mbxs">
           <h3>3 Estimated time (hh:mm) package will be ready for pickup</h3>
           <p>
-            For the Pickup Parcel service, you can show additional details about
-            the estimated delivery time. Based on machine learning, shipping
-            guide provides the time of day when the package will be ready for
-            pickup.
+            For the Pickup Parcel service, in addition to showing estimated
+            <em>day of arrival</em>, you can show the estimated
+            <em>time</em> when the parcel will be ready for pickup at the pickup
+            point location. This service is based on machine learning and is
+            kept continually updated.
           </p>
           <p>
             Use the <code>estimateddeliverytime</code> query parameter to get
@@ -140,41 +208,39 @@ hidden: true
         </div>
         <div class="bg-green1 pal pbm mbxs">
           <h3>
-            4 Showing estimated time for services, with selectable delivery date
+            4 Showing estimated delivery time for services, with selectable date
           </h3>
           <p>
-            Home delivery has the option to order a specific date of delivery.
-            For these kind of services, you can show a "from" value for the
-            estimated time, to give users a hint that they may select other
+            Home delivery has the option to order
+            <em>a specific date of delivery</em>. For these kind of services,
+            you may show a <code>from</code> value for the estimated time in the
+            service description, to give users a hint that they may select other
             options when exploring the shipping method.
           </p>
         </div>
         <div class="bg-green1 pal pbm mbxs">
-          <h3>5 Displaying the alternative delivery dates</h3>
+          <h3>5 Displaying alternative delivery dates</h3>
           <p>
             A table or drop down are good ways to allow users to select the
             delivery date that fits their needs the best. You should also show
-            the delivery window to make the package journey transparent for the
-            customer.
+            the delivery time window to make the package journey transparent for
+            the customer.
           </p>
           <p>
-            Our suggestion is to have a max of five alternate delivery dates, to
-            not overload the user with choices. Pricing the options differently
-            can help offsetting any extra costs for expedite handling in your
-            warehouse.
+            We recommend presenting five possible delivery dates in the
+            checkout. Pricing the options differently may help offsetting any
+            extra costs for expedite handling in your warehouse.
           </p>
           <p>
-            Use the following parameters to retrieve alternative delivery dates
-            for home delivery in Shipping Guide:
+            Use the following parameters to retrieve the recommended delivery
+            dates for home delivery in Shipping Guide API:
           </p>
 
-
-<!-- prettier-ignore -->
-{{< highlight json >}}
+          <!-- prettier-ignore -->
+          {{< highlight json >}}
 "withUniqueAlternateDeliveryDates": true, //removes duplicate alternatives
 "numberOfAlternativeDeliveryDates": 5 // recommended max value to display
 {{< /highlight >}}
-
         </div>
       </div>
     </div>
