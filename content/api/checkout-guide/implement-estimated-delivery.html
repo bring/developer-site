@@ -47,10 +47,10 @@ hidden: true
       </p>
     </div>
 
-    <div class="dev-guide-l flex flex-wrap align-ifs">
+    <div class="dev-guide-l flex flex-wrap-reverse">
       <div class="maxw48r flex-1">
         <div class="bg-green1 pal pbm mbxs">
-          <h3>1&nbsp;Order&nbsp;placed&nbsp;before cut-off time</h3>
+          <h3>1&nbsp;Order&nbsp;placed before cut-off time</h3>
           <p>
             In the first case, the query to shipping guide will use today as
             shipping <code>date</code>, and 21:00 or blank as shipping
@@ -68,7 +68,7 @@ hidden: true
         <div class="bg-green1 pal pbm mbxs">
           <h3>2 Order placed after cut-off time</h3>
           <p>
-            In the second example, the same webshop gets an order at 19:00.
+            In the second example, the same webshop gets an order at 19:17.
             Orders placed after 17:00 will not be packed in time for the pickup
             the same day. They do not need to be prioritised in the warehouse,
             and will be picked the next day. An additional day is added to the
@@ -81,27 +81,80 @@ hidden: true
           </p>
         </div>
       </div>
-      <figure class="sticky-6r pal flex flex-wrap w100p maxw64r">
-        <figcaption class="maxw32r text-note mbm">
-          The examples below show a webshop with default 4 hours lead time from
-          order placement in the webshop, which would be a warehouse lead time
-          of "0 days". The last Bring pickup is at 21:00. As such, cut-off is
-          set to 17:00, as orders placed before that time will leave the
-          warehouse the same day.
-        </figcaption>
-        <div class="ofx-auto flex-auto">
-          <img
-            src="../assets/eta-flow-before.png"
-            alt="Estimated time of arrival"
-            class="w-auto maxw48r mbm"
-          />
-          <img
-            src="../assets/eta-flow-after.png"
-            alt="Estimated time of arrival"
-            class="w-auto maxw48r mbm"
-          />
-        </div>
-      </figure>
+      <div>
+        <figure class="sticky-6r pvl phm ofx-auto">
+          <div class="text-note tc lh-tight mbl">
+            <div class="dev-eta mbl">
+              <div class="dev-eta1__number fwb text-title pas">1</div>
+              <div class="dev-eta1__order bg-green1 pas mbs">
+                <div class="fwb">Order placed</div>
+                14:32
+              </div>
+              <div class="dev-eta1__slice"></div>
+              <div class="dev-eta1__cutoff">
+                <div class="fwb">Cut-off</div>
+                17:00
+              </div>
+              <div class="dev-eta1__whlead bg-green1 pas mbs">
+                <div class="fwb">Warehouse lead time</div>
+                <div>4 hours from order placement</div>
+              </div>
+              <div class="dev-eta1__slice2"></div>
+              <div class="dev-eta1__pickup">
+                <div class="fwb">Bring pickup</div>
+                21:00
+              </div>
+              <div class="dev-eta1__bring pas mbs">
+                <div class="fwb">Bring distribution lead time</div>
+                <div>1 day from goods collected</div>
+              </div>
+              <div class="dev-eta1__eta tl fwb text-basic pas ptm">
+                =&nbsp;ETA 1&nbsp;day
+              </div>
+
+              <div class="dev-eta2__number fwb text-title pas">2</div>
+              <div class="dev-eta2__nothing bg-gray2 mbs"></div>
+              <div class="dev-eta2__slice"></div>
+              <div class="dev-eta2__cutoff">
+                <div class="fwb">Cut-off</div>
+                17:00
+              </div>
+              <div class="dev-eta2__order bg-green1 pas mbs">
+                <div class="fwb">Order placed</div>
+                <div>19:17</div>
+              </div>
+              <div class="dev-eta2__whlead bg-green1 pas mbs"></div>
+              <div class="dev-eta2__slice2"></div>
+              <div class="dev-eta2__pickup">
+                <div class="fwb">Bring pickup</div>
+                21:00
+              </div>
+              <div class="dev-eta2__whlead2 bg-green1 pvs pl0 prs mbs">
+                <div class="fwb">Warehouse lead time</div>
+                <div>4 hours from order placement</div>
+              </div>
+              <div class="dev-eta2__slice3"></div>
+              <div class="dev-eta2__pickup2">
+                <div class="fwb">Bring pickup</div>
+                21:00
+              </div>
+              <div class="dev-eta2__bring pas mbs">
+                <div class="fwb">Bring distribution lead time</div>
+                <div>1 day from goods collected</div>
+              </div>
+              <div class="dev-eta2__eta tl fwb text-basic pas ptm">
+                =&nbsp;ETA 2&nbsp;days
+              </div>
+            </div>
+          </div>
+          <figcaption class="maxw48r text-note mls">
+            A webshop with a default lead time of 4 hours from order placement
+            has a warehouse lead time of 0 days. This means that orders placed
+            before cut-off at 17:00 will leave the warehouse on the same day
+            with the last Bring pickup at 21:00.
+          </figcaption>
+        </figure>
+      </div>
     </div>
 
     <div class="bg-green1 pal pbm mbxs maxw48r">
