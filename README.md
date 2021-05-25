@@ -15,9 +15,7 @@ with some light post processing.
 
 ## Revamped dev site 2021
 
-The site is being improved throughout 2021, the first step was to get rid of
-Ruby and Jekyll in favour of Hugo, Node and Webpack. We currently operate with
-generated parts of the old CSS mixed with some new, temporary, code.
+The site is being improved throughout 2021. Ruby and Jekyll has been replaced with Hugo and Webpack. Structure, content and features are being worked on iteratively.
 
 ## Adding an important message to the frontpage
 
