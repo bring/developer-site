@@ -30,8 +30,24 @@
             </h4>
           {{- end -}}
           {{- $propTypes := .properties -}}
+
           {{- range .type -}}
             {{- if (eq . "object") -}}
+              {{/* Find the max number of colspans */}}
+              {{ $propLevels := slice }}
+              {{- range $propTypes -}}
+                {{ $colLevel := 0 }}
+                {{- $propLevels = $propLevels | append (partial "api/typemaxcols.html" (dict "incProp" . "colLevel" $colLevel "siteDataApiTypes" $siteDataApiTypes)) -}}
+              {{ end }}
+              {{ $propLevelString := delimit $propLevels "" }}
+              {{ $propLevelNumbers := findRE "[\\d]" $propLevelString }}
+              {{ $maxCols := 0 }}
+              {{ range $propLevelNumbers }}
+                {{ if gt . $maxCols }}
+                  {{ $maxCols = . }}
+                {{ end }}
+              {{ end }}
+
               <table>
                 {{- with $showType -}}
                   <caption>
@@ -39,13 +55,14 @@
                   </caption>
                 {{- end -}}
                 <thead>
-                  <th>Field</th>
+                  <th {{ if (gt $maxCols 1) }} colspan='{{ $maxCols }}' {{ end }}>Field</th>
                   <th>Type</th>
                   <th>Description</th>
                 </thead>
                 <tbody>
                   {{- range $propTypes -}}
-                    {{- partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) -}}
+                  {{ $colLevel := 0 }}
+                    {{- partial "api/typerow.html" (dict "incProp" . "colLevel" $colLevel "maxCols" $maxCols "showRequired" $showRequired "siteDataApiTypes" $siteDataApiTypes ) -}}
                   {{- end -}}
                 </tbody>
               </table>

@@ -75,7 +75,7 @@
           class="dev-codetabs__panel active"
           id="{{ $tabIDFormat }}"
         >
-          {{ partial "api/ramltype.html" (dict "incDashType" . "incTypeDefs" $types "showHeader" false) }}
+          {{ partial "api/type.html" (dict "incDashType" . "incTypeDefs" $types "showHeader" false) }}
         </div>
       {{- end -}}
     {{- end -}}

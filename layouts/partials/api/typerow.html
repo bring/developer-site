@@ -1,3 +1,5 @@
+{{- $colLevel := add .colLevel 1 -}}
+{{- $maxCols := .maxCols -}}
 {{- $siteDataApiTypes := .siteDataApiTypes -}}
 {{- $showRequired := .showRequired -}}
 
@@ -14,11 +16,8 @@
 {{- $isCustomType := (not (in site.Params.ramlBuiltinTypes $propType)) -}}
 
 <tr>
-  <td>
-    <code
-      >{{ range $prefix }}{{ . | safeHTML }}{{ end }}{{ .incProp.name }}</code
-    >
-  </td>
+  {{ range $prefix }}{{ . | safeHTML }}{{ end }}
+  <td {{ if (gt $maxCols 1) }} colspan='{{ $maxCols }}' {{ end }}><code>{{ .incProp.name }}</code></td>
   <td><code>{{ cond (eq $isCustomType true) "object" $propType }}</code></td>
   <td>
     {{- $desc := slice -}}
@@ -79,17 +78,19 @@
   </td>
 </tr>
 
-{{- $subPrefix := $prefix | append "&nbsp;&nbsp;" -}}
+{{ $maxCols = sub (int $maxCols) 1 }}
+{{- $subPrefix := $prefix | append (print "<td class='indentcell bg-gray" $colLevel "'></td>") -}}
+
 {{- if (eq $propType "object") -}}
   {{/* This isn’t tested / .incProp.properties doesn’t seem to exists. */}}
   {{- range .incProp.properties -}}
-    {{- partial "api/ramltyperow.html" (dict "incProp" .incProp.properties "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
+    {{- partial "api/typerow.html" (dict "incProp" .incProp.properties "maxCols" $maxCols "colLevel" "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
   {{- end -}}
   {{- else if (eq $propType "array") -}}
-  {{- range where .siteDataApiTypes .incProp.items "!=" nil -}}
+  {{- range where $siteDataApiTypes .incProp.items "!=" nil -}}
     {{- range . -}}
       {{- range .properties -}}
-        {{- partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
+        {{- partial "api/typerow.html" (dict "incProp" . "maxCols" $maxCols "colLevel" $colLevel "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -97,7 +98,7 @@
   {{- range where $siteDataApiTypes $propType "!=" nil -}}
     {{- range . -}}
       {{- range .properties -}}
-        {{- partial "api/ramltyperow.html" (dict "incProp" . "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
+        {{- partial "api/typerow.html" (dict "incProp" . "maxCols" $maxCols "colLevel" $colLevel "showRequired" $showRequired "incPrefix" $subPrefix "siteDataApiTypes" $siteDataApiTypes ) -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}

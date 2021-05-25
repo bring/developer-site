@@ -30,7 +30,11 @@ hidden: true
 <section class="dev-docscontent__section">
   <div class="flex flex-wrap flex-dir-row-rev">
     <figure class="dev-guide-m">
-      <img src="../assets/home_delivery.png" alt="" class="mbm maxw24r sticky-6r" />
+      <img
+        src="../assets/home_delivery.png"
+        alt=""
+        class="mbm maxw24r sticky-6r"
+      />
     </figure>
 
     <div class="dev-guide-l">
@@ -39,23 +43,22 @@ hidden: true
         <p>
           Home delivery is one of the most convenient delivery methods for
           consumers, allowing them to get the product right on their doorstep.
-          Posten goes a step further than some competitors, and is delivered to
-          the doorstep even in apartment buildings.
+          Posten goes a step further than some competitors by delivering to the
+          doorstep even in apartment buildings.
         </p>
         <p>
-          Items up to 35kg can be delivered with the service. It is especially
-          recommended for delivery of products that are either heavy, expensive
-          or time sensitive for the consumer.
+          Items up to 35 kg can be delivered using the service. It is especially
+          recommended for products that are either heavy, expensive or
+          time-sensitive for the consumer.
         </p>
         <p>
           Insured, quick and delivered personally to recipients, it is a
-          flexible and safe delivery method for both the sender and the
-          recipient.
+          flexible and safe delivery method for both sender and recipient.
         </p>
 
         <p>
           We recommend using [<code>displayName</code>] from the shipping guide
-          as the delivery option title.
+          as the delivery option label.
         </p>
       </div>
 
@@ -120,11 +123,13 @@ hidden: true
           Use the following parameters to retrieve alternative delivery dates
           for home delivery in Shipping Guide:
         </p>
-        <div class="maxw40r">
-          <!-- prettier-ignore -->
-          {{< highlight json >}}"withUniqueAlternateDeliveryDates": true,
-"numberOfAlternativeDeliveryDates": 5 // recommended value {{< /highlight >}}
-        </div>
+
+<!-- prettier-ignore -->
+{{< highlight json >}}
+"withUniqueAlternateDeliveryDates": true,
+"numberOfAlternativeDeliveryDates": 5 // recommended value
+{{< /highlight >}}
+
         <p class="mtl">
           Note that if the package is delivered too late to Bring, or an invalid
           date is requested, the recipient will get a notification that the
@@ -166,9 +171,9 @@ hidden: true
       <div class="bg-green1 pal pbm mbxs">
         <h3>5 Hensetting (simplified delivery)</h3>
         <p>
-          The customer can tick off that the package is left outside or inside.
-          If they choose outside they can fill out a description to the
-          deliverer.
+          The customer can choose to have the package left outside or inside. If
+          they choose outside, they can enter a description for the delivery
+          person.
         </p>
 
         <table>
@@ -181,19 +186,19 @@ hidden: true
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Extra service name</th>
+              <th scope="row">Checkbox label</th>
               <td>Sett igjen pakken</td>
               <td>Leave package outside</td>
             </tr>
 
             <tr>
-              <th scope="row">Label text field</th>
+              <th scope="row">Text input label</th>
               <td>Beskrivelse til budet</td>
               <td>Apartment</td>
             </tr>
 
             <tr>
-              <th scope="row">Information box on checkbox</th>
+              <th scope="row">Text input help text</th>
               <td>
                 <span class="fwb db mbs"
                   >Når du velger at pakken settes igjen ...</span
@@ -219,13 +224,13 @@ hidden: true
             </tr>
 
             <tr>
-              <th scope="row">Placeholder text field</th>
+              <th scope="row">Text area placeholder</th>
               <td>eks. på dørmatta</td>
-              <td>ex. on the doormat</td>
+              <td>example: on the doormat</td>
             </tr>
 
             <tr>
-              <th scope="row">Information box text field</th>
+              <th scope="row">Text area help text</th>
               <td>
                 <span class="fwb db mbs"
                   >Beskriv gjerne hvor pakken skal settes ...</span

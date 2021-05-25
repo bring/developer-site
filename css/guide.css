@@ -28,3 +28,126 @@
     margin-right: 1.5rem;
   }
 }
+
+.dev-eta1__slice,
+.dev-eta1__slice2,
+.dev-eta2__slice,
+.dev-eta2__slice2,
+.dev-eta2__slice3 {
+  background-color: hsl(155, 100%, 19.6%);
+}
+
+.dev-eta {
+  color: black;
+  display: grid;
+  grid-template:
+    [eta1_1_start] "eta1_number eta1_order eta1_order eta1_slice eta1_whlead eta1_whlead eta1_whlead eta1_slice2 eta1_bring eta1_bring eta1_bring eta1_bring eta1_bring eta1_eta eta1_eta" auto [eta1_1_end]
+    [eta_1_2_start] ". . eta1_cutoff eta1_cutoff eta1_cutoff . eta1_pickup eta1_pickup eta1_pickup . . . . . ." 4rem [eta_1_2_end]
+    [eta2_1_start] "eta2_number eta2_nothing eta2_nothing eta2_slice eta2_order eta2_order eta2_whlead eta2_slice2 eta2_whlead2 eta2_whlead2 eta2_whlead2 eta2_slice3 eta2_bring eta2_bring eta2_eta" auto [eta2_1_end]
+    [eta_2_2_start] ". . eta2_cutoff eta2_cutoff eta2_cutoff . eta2_pickup eta2_pickup eta2_pickup . eta2_pickup2 eta2_pickup2 eta2_pickup2 . ." auto [eta_2_2_end]
+    / minmax(min-content, 2rem) minmax(min-content, 5rem) minmax(
+      min-content,
+      2rem
+    ) 2px minmax(min-content, 2rem) 6rem minmax(min-content, 2rem) 2px minmax(
+      min-content,
+      3rem
+    ) minmax(min-content, 4rem) minmax(min-content, 3rem) 2px minmax(
+      min-content,
+      3rem
+    ) minmax(min-content, 10rem) minmax(2rem, max-content);
+  column-gap: 0.3rem;
+}
+
+.dev-eta1__number {
+  grid-area: eta1_number;
+  color: hsl(155, 100%, 19.6%);
+}
+
+.dev-eta1__order {
+  grid-area: eta1_order;
+}
+
+.dev-eta1__slice {
+  grid-area: eta1_slice;
+}
+
+.dev-eta1__slice2 {
+  grid-area: eta1_slice2;
+}
+
+.dev-eta1__cutoff {
+  grid-area: eta1_cutoff;
+}
+
+.dev-eta1__whlead {
+  grid-area: eta1_whlead;
+}
+
+.dev-eta1__pickup {
+  grid-area: eta1_pickup;
+}
+
+.dev-eta1__bring {
+  grid-area: eta1_bring;
+  background-color: hsl(75, 53%, 70.5%);
+}
+
+.dev-eta1__eta {
+  grid-area: eta1_eta;
+}
+
+.dev-eta2__number {
+  grid-area: eta2_number;
+  color: hsl(155, 100%, 19.6%);
+}
+
+.dev-eta2__nothing {
+  grid-area: eta2_nothing;
+}
+
+.dev-eta2__order {
+  grid-area: eta2_order;
+}
+
+.dev-eta2__slice {
+  grid-area: eta2_slice;
+}
+
+.dev-eta2__slice2 {
+  grid-area: eta2_slice2;
+}
+
+.dev-eta2__slice3 {
+  grid-area: eta2_slice3;
+}
+
+.dev-eta2__cutoff {
+  grid-area: eta2_cutoff;
+}
+
+.dev-eta2__whlead {
+  grid-area: eta2_whlead;
+  margin-right: -0.25rem;
+}
+
+.dev-eta2__whlead2 {
+  grid-area: eta2_whlead2;
+  margin-left: -0.25rem;
+}
+
+.dev-eta2__pickup {
+  grid-area: eta2_pickup;
+}
+
+.dev-eta2__pickup2 {
+  grid-area: eta2_pickup2;
+}
+
+.dev-eta2__bring {
+  grid-area: eta2_bring;
+  background-color: hsl(75, 53%, 70.5%);
+}
+
+.dev-eta2__eta {
+  grid-area: eta2_eta;
+}
