@@ -3,10 +3,11 @@ updates:
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
+    day: wednesday
     time: "12:00"
     timezone: Etc/GMT+2
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 12
   ignore:
   - dependency-name: webpack
     versions:
