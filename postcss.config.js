@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     "postcss-import": {},
     "postcss-css-variables": {},
-    autoprefixer: {},
+    autoprefixer: { grid: "autoplace" },
     cssnano: {},
   },
 };
