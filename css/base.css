@@ -43,7 +43,7 @@ code + h3,
 .highlight + h3,
 pre + h3,
 p + h3 {
-  margin-top: 1.8rem;
+  margin-top: 2rem;
 }
 
 h4 {
@@ -61,7 +61,7 @@ code + h4,
 .highlight + h4,
 pre + h4,
 p + h4 {
-  margin-top: 1.8rem;
+  margin-top: 1.4rem;
 }
 
 p,
