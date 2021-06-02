@@ -27,7 +27,7 @@
     "autoprefixer": "^10.2.4",
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.6",
-    "cssnano": "^5.0.4",
+    "cssnano": "^5.0.5",
     "hugo-bin": "^0.71.1",
     "mini-css-extract-plugin": "^1.6.0",
     "postcss": "^8.3.0",
