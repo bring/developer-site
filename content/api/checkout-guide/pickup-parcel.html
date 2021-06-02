@@ -31,7 +31,7 @@ hidden: true
 ---
 
 <section class="dev-docscontent__section">
-  <h2 class="mbm">Pakke til hentested i chekout</h2>
+  <h2 class="mbm">Pakke til hentested in checkout</h2>
   <div class="flex flex-wrap flex-dir-row-rev">
     <div class="dev-guide-m">
       <figure class="sticky-6r">
@@ -145,20 +145,28 @@ hidden: true
       </div>
 
       <div class="bg-green1 pal pbm mbxs">
-        <h3>4 Choose pickup point</h3>
+        <h3>4 Choose pickup location</h3>
         <p>
-          If the user selects Pickup point parcel, the best practice is to expand and
-          show a drop down list for pickup points. See the illustration of the
-          dropdown for pickup points, it should display 5–7 closest
-          pickup points. An additional best practice is to allow the user to
-          search based on a postal code, as some users might want to pick up
-          their package in a different location than near their home.
+          If the user selects Pickup point parcel, the best practice is to
+          expand and show a drop down list for pickup points. See the
+          illustration of the dropdown for pickup points, it should display 5–7
+          closest pickup points. An additional best practice is to allow the
+          user to search based on a postal code, as some users might want to
+          pick up their package in a different location than near their home.
         </p>
-        <b>Package box </b>
+        <h4>Query with area code <em>and</em> street address</h4>
+        <p>
+          We recommend querying the pickup point API with both area code and
+          full street address to ensure that the returned pickup locations are
+          the most relevant for the end user. A query with only area code will
+          get pickup locations based on the geographic center point of the area.
+        </p>
+        <h4>Package box</h4>
         <p>
           If the user choose package box (Type 37), let them know that they need
-          the Posten app, and if the package is too big it will go to nearest pickup
-          point. Package box can be identified by PickupPointType = Type 37
+          the Posten app, and if the package is too big it will go to nearest
+          pickup point. Package box can be identified by
+          <code>PickupPointType</code> = Type 37
         </p>
         <table>
           <thead>
@@ -176,8 +184,8 @@ hidden: true
             </tr>
             <tr>
               <th scope="row">Dropdown</th>
-              <td><code>name</code> <code>visitingAddress</code></td>
-              <td><code>name</code> <code>visitingAddress</code></td>
+              <td><code>name</code><br /><code>visitingAddress</code></td>
+              <td><code>name</code><br /><code>visitingAddress</code></td>
             </tr>
           </tbody>
         </table>
