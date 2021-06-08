@@ -72,7 +72,7 @@ documentation:
                This endpoint supports Parcel Domestic, Parcel International and Cargo customers.
   uriParameters:
     apiCustomerNumber:
-      enum: [ Main customer number, PARCELS_NORWAY_INTERNATIONAL-xxxxx,PARCELS_SWEDEN-xxxxx,PARCELS_DENMARK-xxxxx,PARCELS_FINLAND-xxxxx,EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
+      enum: [ Main customer number, EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
       description: Unique API Customer Number.
     mediaTypeExtension:
       enum: [ .json, .xml ]
@@ -122,7 +122,8 @@ documentation:
   description: This link is used to download the invoice pdf for the customers by providing API customer number and invoice number in URI params.
   uriParameters:
     apiCustomerNumber:
-      description: Unique API Customer Number for each customer.
+      enum: [ Main customer number, EXPRESS_SWEDEN-xxxxx,EXPRESS_NORWAY-xxxxx,EXPRESS_DENMARK-xxxxx,EXPRESS_FINLAND-xxxxx]
+      description: Unique API Customer Number.
     invoiceNumber:
       description: Invoice number of the particular invoice to be downloaded.
   get:
