@@ -2,7 +2,7 @@
 title: Get delivery options with prices and lead time
 titlesub:
 layout: api
-widelayout: true
+widelayout: false
 notanapi: true
 menu:
   api:
@@ -15,18 +15,17 @@ hidden: true
 <section class="dev-docscontent__section">
   <div class="dev-guide-l">
     <div class="bg-green1 pal pbm mbxs">
-      <h3>Create request</h3>
+      <h3>Request</h3>
       <p>
-        This example includes Pakke i postkassen, Til hentested and Levert hjem
-        with price and lead time on each service, and alternative delivery dates
-        for home delivery. stemmer dette? The example request below will return
-        all information needed to present a basic best practice checkout to the
-        end user.
+        The request will return information needed to present a basic best
+        practice checkout to the end user. This includes Pakke i postkassen
+        (Mailbox parcel), Pakke til hentested (Pickup parcel) and Pakke levert
+        hjem (Home delivery) with price and lead time on each service, and
+        alternative delivery dates for home delivery.
       </p>
 
-      <div class="maxw64r">
-        <!-- prettier-ignore -->
-        {{< highlight js >}}https://api.bring.com/shippingguide/v2/products?fromcountry=NO&tocountry=NO&frompostalcode=0469&topostalcode=6050&product=5800&product=5600&product=3584&weight=500&addressLine=Ladeberget 2&numberofdeliverydates=3&withUniqueAlternateDeliveryDates=true
+<!-- prettier-ignore -->
+{{< highlight js >}}https://api.bring.com/shippingguide/v2/products?fromcountry=NO&tocountry=NO&frompostalcode=0469&topostalcode=6050&product=5800&product=5600&product=3584&weight=500&addressLine=Ladeberget 2&numberofdeliverydates=3&withUniqueAlternateDeliveryDates=true
  
 var params = {
   fromcountry: 'NO',
@@ -41,24 +40,20 @@ var params = {
   numberofdeliverydates: 3, // only needed to provides alternative delivery dates for home delivery
   withUniqueAlternateDeliveryDates: true // alternate delivery days for home delivery should be unique
 }{{< /highlight >}}
-      </div>
     </div>
+
     <div class="bg-green1 pal pbm mbxs">
       <h3>Submit the request</h3>
       <p>Post your request to</p>
-
-      <div class="maxw64r">
-        <!-- prettier-ignore -->
-        {{< highlight js >}}https://api.bring.com/shippingguide/v2/products{{< /highlight >}}
-      </div>
+<!-- prettier-ignore -->
+{{< highlight text >}}https://api.bring.com/shippingguide/v2/products{{< /highlight >}}
     </div>
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Service response</h3>
-      <p>Post your request to</p>
 
-      <div class="maxw64r">
-        <!-- prettier-ignore -->
-        {{< highlight js >}}{
+    <div class="bg-green1 pal pbm mbxs">
+      <h3>Response</h3>
+<!-- prettier-ignore -->
+{{< highlight js >}}
+{
   "traceMessages": [],
   "consignments": [
       {
@@ -372,8 +367,8 @@ var params = {
       }
   ],
   "uniqueId": "586b30d6-d440-4c35-bbc1-de6eca68152b"
-}{{< /highlight >}}
-      </div>
+}
+{{< /highlight >}}
     </div>
   </div>
 </section>
