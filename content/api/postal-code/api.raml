@@ -96,3 +96,41 @@ documentation:
               successful:
                 displayName: Successful
                 value: !include examples/response.xml
+
+/postalCode/{countryCode}/getCitiesAndTypes/{postalCode}{mediaTypeExtension}:
+  displayName: Lookup Postal Code having Multiple Cities
+
+  uriParameters:
+    postalCode:
+      displayName: Postal code
+      type: string
+      required: true
+      example: 01156
+    countryCode:
+      displayName: Country
+      required: true
+      type: string
+      default: "NO"
+      example: DE
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: Lookup Postal Code having Multiple Cities
+    queryParameters:
+
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForMultipleCities.json
+          application/xml:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForMultipleCities.xml
