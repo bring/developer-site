@@ -13,9 +13,9 @@
         {{- if (eq .hideRequired true) -}}
           {{- $desc = $desc | append "" -}}
           {{- else if (eq .required true) -}}
-          {{- $desc = $desc | append "<span class='dev-param dev-param--req'>Required</span> " -}}
+          {{- $desc = $desc | append "<span class='mb-badge mb-badge--red'>Required</span> " -}}
           {{- else -}}
-          {{- $desc = $desc | append "<span class='dev-param'>Optional</span> " -}}
+          {{- $desc = $desc | append "<span class='mb-badge'>Optional</span> " -}}
         {{- end -}}
 
         {{- if (ne .name .displayName) -}}
