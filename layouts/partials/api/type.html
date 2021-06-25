@@ -72,9 +72,9 @@
               {{- $desc := slice "Type: `" . "` " -}}
               {{- if (eq $showRequired false) -}}
                 {{- else if $propTypes.required -}}
-                {{- $desc = $desc | append "<span class='dev-param dev-param--req'>Required</span> " -}}
+                {{- $desc = $desc | append "<span class='mb-badge mb-badge--red'>Required</span> " -}}
                 {{- else -}}
-                {{- $desc = $desc | append "<span class='dev-param'>Optional</span> " -}}
+                {{- $desc = $desc | append "<span class='mb-badge'>Optional</span> " -}}
               {{- end -}}
 
               {{- if (eq $propTypes.displayName $propTypes.name) -}}

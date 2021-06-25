@@ -61,19 +61,6 @@ td.indentcell {
   width: 1rem;
 }
 
-.dev-param {
-  background-color: var(--gray-95);
-  padding: 0.1em 0.25em;
-  color:var(--gray-26);
-  font-size: 0.9em;
-  border-radius: 2px;
-}
-
-.dev-param--req {
-  background-color: hsl(3, 27.5%, 95%);
-  color: hsl(3, 23%, 35%);
-}
-
 .tr {
   text-align: right;
 }
