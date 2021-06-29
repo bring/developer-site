@@ -1,0 +1,186 @@
+---
+title: Testing Bring APIs
+layout: api
+notanapi: true
+menu:
+  api:
+    title: API testing
+weight: 2
+---
+
+<section class="dev-docscontent__section">
+  <h2>Resources</h2>
+
+  <h3>Customer number</h3>
+  <p>
+    While all our APIs require
+    <a href='{{< relref "api" >}}#authentication'>user authentication</a>, even
+    for testing, only some require a
+    <a href='{{< relref "api" >}}#api-customer-number'>customer number</a>. If
+    you’re currently not a Bring customer or your customer number doesn’t hold
+    data to give sufficient test responses, you can use test numbers.
+  </p>
+
+  <h4>Test customer numbers</h4>
+  <p class="mbxs">
+    These will only return dummy data and not create any actual bookings.
+  </p>
+  <ul>
+    <li>Parcel Norway services: 00000000002</li>
+    <li>Parcel Nordic services: 000003</li>
+    <li>Cargo Norway services: 0-50000030</li>
+  </ul>
+  <div class="mbl flex flex-wrap">
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "booking" >}}'
+      >Booking API</a
+    >
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "shipping-guide_2" >}}'
+      >Shipping Guide API 2.0</a
+    >
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "reports" >}}'
+      >Reports API</a
+    >
+    <a class="btn-link--dark btn-link--tag" href='{{< relref "invoice" >}}'
+      >Invoice API</a
+    >
+  </div>
+
+  <h3>Test indicator</h3>
+  <p>
+    To test transactional APIs using an actual customer number but without
+    creating actual bookings or getting invoiced, you must set the
+    <code>testIndicator</code> flag to <i>true</i>.
+  </p>
+  <div class="mbl flexgrid">
+    <a
+      class="flexgrid__item btn-link--dark btn-link--tag"
+      href='{{< relref "booking" >}}'
+      >Booking API</a
+    >
+  </div>
+
+  <h3>Phone numbers</h3>
+  <p class="mbxs">
+    Make sure the phone numbers you use in your testing are dummies. Actual
+    phone numbers can still trigger alerts even when used with test customer
+    numbers or <code>testIndicator</code>. You can use the numbers below or find
+    one of the many fake number sites online.
+  </p>
+  <div class="flex flex-wrap">
+    <dl class="mrl">
+      <dt>Norway</dt>
+      <dd>+4712345678</dd>
+      <dd>+4791234567</dd>
+    </dl>
+    <dl class="mrl">
+      <dt>Sweden</dt>
+      <dd>+46012345678</dd>
+      <dd>+46081234567</dd>
+    </dl>
+    <dl class="mrl">
+      <dt>Denmark</dt>
+      <dd>+4218123456</dd>
+      <dd>+4218234567</dd>
+    </dl>
+  </div>
+  <div class="mbl flex flex-wrap">
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "booking" >}}'
+      >Booking API</a
+    >
+  </div>
+
+  <h3>Tracking numbers</h3>
+  <p class="mbxs">
+    Use these as test tracking numbers to get different responses in the
+    Tracking API or to make <code>WebhookId</code>s in Event Cast API. An
+    authorised request with a tracking number belonging to an actual shipment
+    will return more detailed results.
+  </p>
+  <ul>
+    <li>TESTPACKAGEATPICKUPPOINT</li>
+    <li>TESTPACKAGEEDI</li>
+    <li>TESTPACKAGELOADEDFORDELIVERY</li>
+    <li>TESTPACKAGEDELIVERED</li>
+  </ul>
+  <div class="mbl flex flex-wrap">
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "event-cast" >}}'
+      >Event Cast API</a
+    >
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "tracking" >}}'
+      >Tracking API</a
+    >
+  </div>
+
+  <h3>Postal codes</h3>
+  <p class="mbxs">
+    Whenever postal codes are required, use something valid and test more than
+    the first that comes to mind. You can use the
+    <a href='{{< relref "postal-code" >}}'>Postal Code API</a> to look up more
+    codes and cities.
+  </p>
+  <div class="flex flex-wrap">
+    <dl class="mrl">
+      <dt>Norway</dt>
+      <dd>0951<span class="text-note mlxs"> Oslo</span></dd>
+      <dd>4050<span class="text-note mlxs"> Sola</span></dd>
+      <dd>5004<span class="text-note mlxs"> Bergen</span></dd>
+      <dd>9600<span class="text-note mlxs"> Hammerfest</span></dd>
+      <dd>
+        <a href="https://www.bring.no/tjenester/adressetjenester/postnummer"
+          >Norwegian postal codes</a
+        >
+      </dd>
+    </dl>
+    <dl class="mrl">
+      <dt>Sweden</dt>
+      <dd>10012<span class="text-note mlxs"> Stockholm</span></dd>
+      <dd>43954<span class="text-note mlxs"> Åsa</span></dd>
+      <dd>68301<span class="text-note mlxs"> Hagfors</span></dd>
+      <dd>83752<span class="text-note mlxs"> Åre</span></dd>
+    </dl>
+    <dl class="mrl">
+      <dt>Denmark</dt>
+      <dd>0900<span class="text-note mlxs"> København C</span></dd>
+      <dd>2990<span class="text-note mlxs"> Nivå</span></dd>
+      <dd>5883<span class="text-note mlxs"> Oure</span></dd>
+      <dd>8799<span class="text-note mlxs"> Tunø</span></dd>
+    </dl>
+  </div>
+  <div class="mbl flex flex-wrap">
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "booking" >}}'
+      >Booking API</a
+    >
+    <a
+      class="btn-link--dark btn-link--tag mrxs mbxs"
+      href='{{< relref "shipping-guide_2" >}}'
+      >Shipping Guide API 2.0</a
+    >
+  </div>
+
+  <h3>Shipping Guide Demo</h3>
+  <p>
+    It’s possible to test the Shipping Guide API 2.0 using our
+    <a href="https://developer.bring.com/shipping-guide/demo"
+      >Shipping Guide Demo</a
+    >
+    site. It doesn’t require authentication in itself, but some services need
+    a customer number in order to return a response. If you have a Mybring user
+    with a customer number, you can
+    <a href="https://www.mybring.com/shipping-guide/demo">log in</a> to get
+    responses dependent on that.
+  </p>
+</section>
