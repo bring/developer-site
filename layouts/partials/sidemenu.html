@@ -9,51 +9,56 @@
         {{- if eq (add $index 1) $len -}}
           {{- $lastElement = "dev-sidemenu__separator pbm mbm" -}}
         {{- end -}}
-        {{/*  Temporarily hide the checkout guide menu unless the user is on those pages */}}
-        {{ if or (not (eq .Identifier "guide-checkout")) (eq $currentPage.Params.hidden true) }}
-        <li
-          class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( $currentPage.HasMenuCurrent .Menu .)) }}active{{ end }} {{ $lastElement }}"
-        >
-          {{- $target := "" -}}
-          {{- $iconEx := "" -}}
-          {{- with .Params.blank -}}
-            {{- $target = . -}}
-            {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
-          {{- end -}}
-          <a
-            href="{{ .URL | relURL }}"
-            {{ $target | safeHTMLAttr }}
-            class="dev-sidemenu__apititle"
-          >
-            {{ safeHTML .Title }}{{ safeHTML $iconEx }}
-          </a>
 
-          {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
-            <ul class="dev-sidemenu__sublist">
-              {{- range .Children -}}
-                <li>
-                  <a href="{{ .URL }}">{{ .Title }}</a>
-                  {{- if and (eq $currentPage .Page) (or (isset $.Params "examples") (isset $.Params "apis")) -}}
-                    <ul class="dev-sidemenu__sublist text-note">
-                      {{- range $.Params.examples -}}
-                        <li>
-                          <a href="/api/checkout-guide-norway/example/{{ .slug }}">{{ .title }}</a>
-                        </li>
-                      {{- end -}}
-                      {{- range $.Params.apis -}}
-                        <li>
-                          <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
-                        </li>
-                      {{- end -}}
-                    </ul>
-                  {{- end -}}
-                </li>
-              {{- end -}}
-            </ul>
-          {{- else if $currentPage.IsMenuCurrent .Menu . -}}
-            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
-          {{- end -}}
-        </li>
+        {{- $hidePage := false -}}
+        {{- with .Page -}}
+          {{- $hidePage = .Params.hidden -}}
+        {{- end -}}
+
+        {{ if (ne $hidePage true) }}
+          <li
+            class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( $currentPage.HasMenuCurrent .Menu .)) }}active{{ end }} {{ $lastElement }}"
+          >
+            {{- $target := "" -}}
+            {{- $iconEx := "" -}}
+            {{- with .Params.blank -}}
+              {{- $target = . -}}
+              {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+            {{- end -}}
+            <a
+              href="{{ .URL | relURL }}"
+              {{ $target | safeHTMLAttr }}
+              class="dev-sidemenu__apititle"
+            >
+              {{ safeHTML .Title }}{{ safeHTML $iconEx }}
+            </a>
+
+            {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
+              <ul class="dev-sidemenu__sublist">
+                {{- range .Children -}}
+                  <li>
+                    <a href="{{ .URL }}">{{ .Title }}</a>
+                    {{- if and (eq $currentPage .Page) (or (isset $.Params "examples") (isset $.Params "apis")) -}}
+                      <ul class="dev-sidemenu__sublist text-note">
+                        {{- range $.Params.examples -}}
+                          <li>
+                            <a href="/api/checkout-guide-norway/example/{{ .slug }}">{{ .title }}</a>
+                          </li>
+                        {{- end -}}
+                        {{- range $.Params.apis -}}
+                          <li>
+                            <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
+                          </li>
+                        {{- end -}}
+                      </ul>
+                    {{- end -}}
+                  </li>
+                {{- end -}}
+              </ul>
+            {{- else if $currentPage.IsMenuCurrent .Menu . -}}
+              {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
+            {{- end -}}
+          </li>
         {{ end }}
       {{- end -}}
     </ul>
