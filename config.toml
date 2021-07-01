@@ -37,7 +37,6 @@ ramlBuiltinTypes = [
 ]
 apis = [
   "content/api/booking/api.raml",
-  "content/api/shipping-guide/api.raml",
   "content/api/shipping-guide_2/api.raml",
   "content/api/warehousing/api.raml",
   "content/api/order-management/api.raml",
