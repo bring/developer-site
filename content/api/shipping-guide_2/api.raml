@@ -16,27 +16,8 @@ documentation:
 
       The Shipping Guide API 2.0 has both a REST/JSON and a SOAP interface. The REST/GET interface only supports single consignments, while the SOAP and the REST/POST interfaces can be used for multiple consignments.
 
-      **NOTE**:
-       - **Any new users created post launch date 28-may-2020 attempting to request agreement prices by using old versions of Shipping Guide API, will be provided with an error message referring to the latest version.**
-       
-       - **Any Shipping Guide requests for old phase 1 services without customer number specified, will return the corresponding revised service after 01.10.2020.**
-
 - title: Versioning
   content: |
-      ### Upgrade from previous version
-
-      Shipping Guide API 2.0 is a replacement for the original API that is now deprecated. If needed, can you you still read the [documentation for the old version of the Shipping Guide API](/api/shipping-guide/).
-
-      Now that Shipping Guide API 2.0 is out you might be wondering how to upgrade to it. The [Upgrade to version 2.0](/api/shipping-guide_2/upgrade-to-version-2) will help you on your way to version 2.0 of the Shipping Guide API.
-
-      ### Benefits of Shipping Guide API 2.0
-
-      * Unified request and response model: Due to backwards compatibility, existing SOAP API versions had too many ways of requesting to Shipping Guide. This has been simplified in the new version with one unified way of requesting to Shipping Guide.
-      * [Better error handling for both SOAP and REST](/api/shipping-guide_2/#error-handling): The new version of API gives the ability to handle errors in a much simpler way.
-      * [Ability to fetch agreement prices specific to a service on REST](/api/shipping-guide_2/#get-shipment-prices-and-estimated-delivery): Now you can specify multiple services and multiple customer numbers in a single REST request.
-      *  More info about upcoming changes will follow to all our partners. Future services will be supported by this new API-version in addition to other improvements. Note that our old versions of APIs will not support future changes in our service offering.
-
-      ### Versioning strategy
       The Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses. To achieve this, namespace schema versioning is used in the request for webservices, indicating which version the client is on and what data-format the client expects in the result. For REST, versioning is defined as part of endpoint itself.
 
       **Important**: All clients must accept **new (unknown) elements** in the response. E.g. unknown elements should be ignored. Also, **new error codes and warning codes** could be added as well. The client framework used by client must not crash when **unknown elements or new code values** are are encountered.
