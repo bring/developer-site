@@ -30,6 +30,10 @@
   margin-bottom: 0.6em;
 }
 
+.dev-docscontent a {
+  text-decoration: underline;
+}
+
 .dev-docscontent__section {
   margin-bottom: 3rem;
   padding: 0 6vw 1rem;
