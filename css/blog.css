@@ -62,3 +62,7 @@
   top: -2px;
   fill: var(--gray-60);
 }
+
+.dev-blog__content a {
+  text-decoration: underline;
+}
