@@ -53,7 +53,7 @@ th {
 
 td > p,
 td > ul {
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
 }
 
 td.indentcell {
