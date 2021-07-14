@@ -22,7 +22,7 @@
           {{- end -}}
         {{- end -}}
         <p>{{ .Summary | plainify | htmlUnescape }}</p>
-        <a href="{{ .RelPermalink }}" title="Read more about {{ .Title }}">Read more &rarr;</a>
+        <a href="{{ .RelPermalink }}" title="Read {{ .Title }}">Read {{ .Title }} &rarr;</a>
       </div>
     </article>
   {{- end -}}
