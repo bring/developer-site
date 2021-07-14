@@ -9,7 +9,7 @@ authors:
     - kaaveland
 ---
 
-<img class="mbm" src="https://appel.nasa.gov/wp-content/uploads/2012/05/HMA-4-1024x768.jpg">
+<img class="mbm" alt="" src="https://appel.nasa.gov/wp-content/uploads/2012/05/HMA-4-1024x768.jpg">
 
 In January 2016, we set up a postgres cluster at bring. While doing the initial configuration, we designed what we thought was a pretty decent backup architecture and we set up streaming replication to a hot standby. While configuring the cluster, we made sure to verify our ability to recover from backup, as well as our ability to fail over from the master server to the standby server. This gives us redundancy in case of outages or patching, and it gives us recoverability in case of data corruption, or so we thought. We documented the procedures and all was well. At this point our postgres installation was on 9.4, and we upgraded that to 9.5 to get some new features before we really started using it.
 
