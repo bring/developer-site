@@ -92,14 +92,13 @@ blockquote {
   border-left: 2px solid var(--gray-86);
   color: var(--gray-40);
   padding: 0 1ch;
-  font-style: italic;
   margin: 0.5em 0 1em;
   max-width: 54ch;
+  font-size: 0.9rem;
 }
 
 img {
   width: 100%;
-  font-style: italic;
   vertical-align: middle;
 }
 
