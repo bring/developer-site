@@ -43,7 +43,7 @@ We now know for sure that our problem with setting up the former master as a sta
 
 In our case, we were on timeline 3 when we started. Because of the botched exercise in November, we also had a timeline 4, but it wasn't in use anywhere. So when we promoted the standby, we created timeline 5 which started at the same WAL segment number as timeline 3 ended on.
 
-You can learn even more about timelines, WAL and postgres standby setup in [this talk](https://www.youtube.com/watch?v=mlQ90MntJwM&list=PLWW0CjV-TafZo4lBWuzw7OYJY7Y4SW76B&index=17) and [this talk](https://www.youtube.com/watch?v=J4KzjHTx2WE) by Heikki Linakangas, the author of `pg_rewind` (note: these are kind of scary).
+You can learn even more about timelines, WAL and postgres standby setup in the talk [Warm standby done right](https://www.youtube.com/watch?v=mlQ90MntJwM&list=PLWW0CjV-TafZo4lBWuzw7OYJY7Y4SW76B&index=17) and the talk [pg_rewind - resynchronizing servers after failover](https://www.youtube.com/watch?v=J4KzjHTx2WE) by Heikki Linakangas, the author of `pg_rewind` (note: these are kind of scary).
 
 After the firedrill, we made sure to keep WAL segments around for 7 days. We obviously documented `recovery_target_timeline`. We also set up testing of our backups, so that their viability for backup recovery can be automatically tested every day. We ran a few firedrills after this one, and those have worked out fine and we're now pretty sure that we have a much better understanding of how WAL works.
 

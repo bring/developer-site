@@ -35,6 +35,7 @@
             </thead>
             {{- range .resources -}}
               {{ $resDisplayName := .displayName | urlize }}
+              {{ $displayName := .displayName }}
               {{ $resRelUri := .relativeUri | safeHTML }}
               {{- range .methods -}}
                 <tr>
@@ -45,7 +46,7 @@
                     {{- $resRelUri -}}
                   </td>
                   <td>
-                    <a href="#{{ $resDisplayName }}">
+                    <a href="#{{ $resDisplayName }}" title="{{- $displayName -}}">
                       {{- .description | safeHTML -}}
                     </a>
                   </td>
