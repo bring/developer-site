@@ -10,7 +10,7 @@ documentation:
       Below are the various modifications (which will be API calls) supported:
         - Stop shipment.
         - Change cash on deivery.
-        - Change Address
+        - Change Address  
 
 
 - title: Authentication
@@ -165,7 +165,7 @@ documentation:
   description: |
     This is used to change the COD amount on the shipment.
 
-    ### Criteria
+    ### Criteria {#change-cod-criteria}
     The shipment must have "Betaling ved utlevering (COD)" with VAS-Code 1000 registered.
 
   post:
@@ -225,7 +225,7 @@ documentation:
   description: |
    This is used to change the recipient delivery address.
 
-   ### Criteria
+   ### Criteria {#change-recipient-address-of-delivery-criteria}
 
    The following events should not be present on the shipment:
     - Loaded for Delivery
