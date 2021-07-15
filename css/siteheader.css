@@ -75,3 +75,18 @@
 .dev-siteheader__nav a:focus {
   color: var(--green-light);
 }
+
+.skip-to-content-link {
+  background-color: hsl(0, 0%, 95%);
+  left: 50%;
+  padding: 0.5rem;
+  position: absolute;
+  top: -100%;
+  text-decoration: underline;
+  transition: top 0.3s;
+}
+
+.skip-to-content-link:focus {
+  top: 0%;
+  box-shadow: 0 0 0 4px #c8dc8c;
+}

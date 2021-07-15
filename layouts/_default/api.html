@@ -11,7 +11,7 @@
   {{- partial "drawmenu.html" . -}}
   <div class="dev-docs__page">
     {{- if (eq $notAnApi true) -}}
-      <main class="dev-docscontent w100p {{ $maxwidth }}">
+      <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
         <article>
           <h1>
             {{- .Title -}}
