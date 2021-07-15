@@ -66,3 +66,11 @@
 .dev-blog__content a {
   text-decoration: underline;
 }
+
+.footnotes .footnote-jump {
+  text-decoration: none;
+}
+
+.footnotes li {
+  margin-bottom: 0.5rem;
+}
