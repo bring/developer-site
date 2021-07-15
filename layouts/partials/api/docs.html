@@ -2,7 +2,8 @@
   {{/* ensure that only the right api doc shows up, conditional can probably be improved */}}
   {{- if (eq .title $.Title) -}}
     {{- $types := .types -}}
-    <main
+    <main 
+      id="main"
       class="dev-docscontent w100p maxw64r {{ replace .title "API" "" | urlize }}"
     >
       <article>
