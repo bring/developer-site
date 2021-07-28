@@ -1,0 +1,9 @@
+<ConsignmentSet xmlns="http://www.bring.no/sporing/2.0">
+  <ApiVersion>2</ApiVersion>
+  <Consignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TraceStatusType">
+    <System>TooBusyPakker_TooBusyPakker</System>
+    <Code>503</Code>
+    <Error>Server too busy/ Temporarily blocked due to too many invalid requests
+    </Error>
+  </Consignment>
+</ConsignmentSet>
