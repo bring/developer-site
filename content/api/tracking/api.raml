@@ -425,6 +425,18 @@ documentation:
                 displayName: Unsuccessful request
                 description: Returned upon no search responses being returned for the request itself
                 value: !include examples/unsuccessful.json
+              badRequest:
+                displayName: Bad request
+                description: Returned when query requested is invalid
+                value: !include examples/bad_request.json
+              serviceUnavailable:
+                displayName: Service unavailable
+                description: Returned when there are too many requests on server
+                value: !include examples/service_unavailable.json
+              unspeciified:
+                displayName: Technical Erroor
+                description: Returned when there is some technical error
+                value: !include examples/unspecified.json
               notification_received:
                 displayName: Unreceived package, with notification regarding EDI
                 description: The example below is showing a package that have been EDI notified, but is not received by Bring.
@@ -456,6 +468,18 @@ documentation:
                 displayName: Unsuccessful request
                 description: Returned upon no search responses being returned for the request itself
                 value: !include examples/unsuccessful.xml
+              badRequest:
+                displayName: Bad request
+                description: Returned when query requested is invalid
+                value: !include examples/bad_request.xml
+              serviceUnavailable:
+                displayName: Service unavailable
+                description: Returned when there are too many requests on server
+                value: !include examples/service_unavailable.xml
+              unspeciified:
+                displayName: Technical Erroor
+                description: Returned when there is some technical error
+                value: !include examples/unspecified.xml
               notification_received:
                 displayName: Unreceived package, with notification regarding EDI
                 description: The example below is showing a package that have been EDI notified, but is not received by Bring.
