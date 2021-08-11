@@ -199,7 +199,7 @@ documentation:
 
     There is an example in the _More Examples_ section below that shows request containing customs information for import.
 
-/customers{mediaTypeExtension}:
+/customers:
   displayName: List customer numbers
   description: |
       The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-services, we use a UUID to identify users.
@@ -217,12 +217,10 @@ documentation:
 
       [List of services for each customer type](/api/services/#booking)
 
-  uriParameters:
-    mediaTypeExtension:
-      enum: [ .json, .xml ]
-      description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: List customer numbers and services
+    headers:
+      Accept: application/json or application/xml
     responses:
       200:
         displayName: List of available customers and services
@@ -1001,16 +999,14 @@ documentation:
                 value: !include examples/curbsideEvening_SE.xml
 
 
-/errors{mediaTypeExtension}:
+/errors:
   displayName: Error codes
   description: |
     The current enumeration of error codes. A value of "true" for the attribute "suffixable" means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT" if the error is for the recipient party data.
-  uriParameters:
-    mediaTypeExtension:
-      enum: [ .json, .xml ]
-      description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: Error codes
+    headers:
+      Accept: application/json or application/xml
     body:
       application/json:
         examples:
