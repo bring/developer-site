@@ -11,7 +11,7 @@ documentation:
       * validate a postal code
       * look up the city of a postal code
       * get the postal code type, e.g. normal or P.O. Box (for Norway)
-      * list all valid postal codes for supported countries (see list below)
+      * list all valid postal codes for supported countries (Norway, Sweden, Denmark and Finland)
 
       The API has two interfaces: XML and JSON.
 
@@ -135,7 +135,7 @@ documentation:
                 value: !include examples/responseForMultipleCities.xml
 
 /postalCode/{countryCode}/getAllValidPostalCodes{mediaTypeExtension}:
-  displayName: Lookup all postal codes for supported country
+  displayName: Lookup all postal codes for Norway, Sweden, Denmark or Finland
 
   uriParameters:
     countryCode:
@@ -148,7 +148,7 @@ documentation:
       enum: [ .json, .xml ]
       description: Use .json to get application/json or .xml to get application/xml.
   get:
-    description: Lookup all postal codes for supported country
+    description: Lookup all postal codes for Norway, Sweden, Denmark or Finland
     queryParameters:
 
     responses:
@@ -167,7 +167,7 @@ documentation:
                 value: !include examples/responseForPostalCodes.xml
 
 /postalCode/{countryCode}/allValidPostalCodesDetails{mediaTypeExtension}:
-  displayName: Lookup all postal codes with details for supported country
+  displayName: Lookup all postal codes with details for Norway, Sweden, Denmark or Finland
 
   uriParameters:
     countryCode:
@@ -180,7 +180,7 @@ documentation:
       enum: [ .json, .xml ]
       description: Use .json to get application/json or .xml to get application/xml.
   get:
-    description: Lookup all postal codes with details for supported country
+    description: Lookup all postal codes with details for Norway, Sweden, Denmark or Finland
     queryParameters:
 
     responses:
