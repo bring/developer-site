@@ -1,6 +1,6 @@
 {{/* require id tag */}}
-{{- $headers := findRE "<h[2-4].* id=\"([^\"]\\S*?)\">(.|\n])+?<\\/h[2-4]>" .context.Content -}}
-{{ .context.Scratch.Set "last_level" 1 }}
+{{- $headers := findRE (printf "<h[2-%s].* id=\"([^\"]\\S*?)\">(.|\n])+?</h[2-%s]>" $.numberOfHeadings $.numberOfHeadings) .context.Content -}}
+{{ $.context.Scratch.Set "last_level" 1 }}
 
 {{/* at least one header to link to */}}
 {{- $has_headers := ge (len $headers) 1 -}}
@@ -13,8 +13,9 @@
       {{- $href := delimit (slice $base $anchorId) "#" | string -}}
       {{- range findRE (printf "[2-%s]" $.numberOfHeadings) . 1 -}}
         {{- $next_heading := (int .) -}}
+        {{- $level := (printf "lvl%s" .) -}}
         <li>
-          <a href="{{ relref $.context.Page $href }}"
+          <a class="{{$level}}" href="{{ relref $.context.Page $href }}"
             >{{- $header | plainify | htmlUnescape -}}</a
           >
         </li>
