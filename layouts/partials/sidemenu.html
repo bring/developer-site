@@ -56,7 +56,7 @@
                 {{- end -}}
               </ul>
             {{- else if $currentPage.IsMenuCurrent .Menu . -}}
-              {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
+              {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
             {{- end -}}
           </li>
         {{ end }}
@@ -178,7 +178,7 @@
             >{{ safeHTML .Title }}</a
           >
           {{- if $currentPage.IsMenuCurrent .Menu . -}}
-            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
+            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
           {{- end -}}
         </li>
       {{- end -}}

@@ -18,21 +18,21 @@ weight: 3
   </p>
 </section>
 
-<section class="dev-docscontent__section" id="shipping-guide">
-  <h2 class="dev-anchored" id="shipping-guide-api">Shipping Guide API</h2>
+<section class="dev-docscontent__section" id="api-services">
 
+  <h2 class="dev-anchored" id="services">Services</h2>
   <p>
-    The Shipping Guide offers a broad range of services by Bring. We will
-    gradually increase the number of available services and functionality.
+    The Booking and Shipping Guide API supports the services listed in the tables
+    below. The value within parantheses () in the column "Service code" is used when
+    accessing the service.
+  </p>
+  <p>
+    Note that some services are revised, where some of our services have been given
+    new service names, service codes and pricing models. Read more about revised
+    services <a href="/api/services/revisedservice">here</a>
   </p>
 
-  <p>
-    The tables show currently available services and information. The links are
-    to XML examples.
-  </p>
-
-  <h3>Outgoing Services</h3>
-
+  <h3 class="dev-anchored" id="outgoing-services">Outgoing Services</h3>
   <table class="productlist">
     <thead>
       <tr>
@@ -1098,7 +1098,7 @@ weight: 3
     </tbody>
   </table>
 
-  <h3>Return Services</h3>
+  <h3 class="dev-anchored" id="return-services">Return Services</h3>
   <table class="productlist">
     <thead>
       <tr>
@@ -1339,288 +1339,7 @@ weight: 3
     </li>
   </ol>
 
-  <h3 id="additional-services" class="dev-anchored">Value added Services</h3>
-
-  <p>
-    The Shipping Guide supports the value added services listed in the table
-    below. The value in the column "additional service code" is used when
-    accessing the service.
-  </p>
-  <p>
-    The links are to examples using XML API. Have a look at the
-    <a
-      href='{{< baseapiurl au="/shippingguide/api/ws/shippingguide-20.wsdl" >}}'
-      >WSDL</a
-    >
-    or
-    <a
-      href='{{< baseapiurl au="/shippingguide/api/ws/shipping-guide-20.xsd" >}}'
-      >XSD</a
-    >
-    for help to set these value added services in a SOAP request.
-  </p>
-  <p>
-    Some value added services get their own price in the response from the
-    Shipping Guide, others are included (and change) the base package price. See
-    column below 'Affects base package price?'.
-  </p>
-
-  <p class="mbl measure">
-    Make sure you specify the correct value added services for a package when
-    querying the Shipping Guide.
-    <br /><br />
-    Especially the "eVarsling" additional service for the Servicepakke service
-    (recipient notification over SMS or E-Mail) will affect the base package
-    price returned from the Shipping Guide, and should therefore be set
-    according to what will be sent in the actual EDI message.
-    <br /><br />
-    If eVarsling is not specified in the request, Fraktguiden will from
-    2013-01-01 add a fee for paper based recipient notification to the base
-    package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
-  </p>
-
-  <table class="productlist">
-    <thead>
-      <tr>
-        <th>Additional Service Code</th>
-        <th>Additional Service</th>
-        <th>Applies to</th>
-        <th>Affects base package price?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=EVARSLING" >}}'
-            >EVARSLING</a
-          >
-        </td>
-        <td>Recipient notification over SMS or E-Mail</td>
-        <td>BPAKKE_DOR-DOR, SERVICEPAKKE, EKSPRESS09</td>
-        <td>Yes, causes lower base package price from 2013-01-01</td>
-      </tr>
-
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE&amp;additionalservice=POSTOPPKRAV" >}}'
-            >POSTOPPKRAV</a
-          >
-        </td>
-        <td>Cash on Delivery</td>
-        <td>BPAKKE_DOR-DOR, SERVICEPAKKE, PA_DOREN, EKSPRESS09</td>
-        <td>No, is a stand-alone price</td>
-      </tr>
-
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?date=2300-12-14&amp;weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09&amp;additionalservice=LORDAGSUTKJORING" >}}'
-            >LORDAGSUTKJORING</a
-          >
-        </td>
-        <td>Delivery on Saturdays</td>
-        <td>EKSPRESS09</td>
-        <td>No, is a stand-alone price</td>
-      </tr>
-
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;length=10&amp;width=10&amp;height=10&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=EXPRESS_INTERNATIONAL&amp;additionalservice=ENVELOPE" >}}'
-            >ENVELOPE</a
-          >
-        </td>
-        <td>Express Envelope</td>
-        <td>
-          EXPRESS_INTERNATIONAL_0900, EXPRESS_INTERNATIONAL_1200,
-          EXPRESS_INTERNATIONAL
-        </td>
-        <td>Yes, causes lower base package price</td>
-      </tr>
-
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=0150&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE&amp;additionalservice=ADVISERING" >}}'
-            >ADVISERING</a
-          >
-        </td>
-        <td>Bring contacts recipient</td>
-        <td>CARGO_GROUPAGE</td>
-        <td>No, is a stand-alone price</td>
-      </tr>
-
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;length=60&amp;width=60&amp;height=60&amp;frompostalcode=2000&amp;topostalcode=2000&amp;fromcountry=DK&amp;tocountry=DK&amp;product=PICKUP_PARCEL&amp;additionalservice=PICKUP_POINT" >}}'
-            >PICKUP_POINT</a
-          >
-        </td>
-        <td>Delivery to pickup point</td>
-        <td>PICKUP_PARCEL, PICKUP_PARCEL_BULK</td>
-        <td>Yes, causes lower base package price</td>
-      </tr>
-
-      <tr>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=150000&amp;length=100&amp;width=100&amp;height=100&amp;frompostalcode=1166&amp;topostalcode=0484&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO&amp;additionalservice=EVE_DELIVERY" >}}'
-            >EVE_DELIVERY</a
-          >
-        </td>
-        <td>Evening delivery</td>
-        <td>CARGO, CARGO_GROUPAGE</td>
-        <td>No, is a stand-alone price</td>
-      </tr>
-
-      <tr>
-        <td>1081</td>
-        <td>Simplified delivery</td>
-        <td>3584, 3570</td>
-        <td>No</td>
-      </tr>
-
-      <tr>
-        <td>FLEX_DELIVERY</td>
-        <td>Flex delivery</td>
-        <td>3332</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>1280</td>
-        <td>Signature Required/td></td>
-        <td>3332</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>1133</td>
-        <td>ID Verification</td>
-        <td>3332</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>1134</td>
-        <td>Individual Verification/td></td>
-        <td>3332</td>
-        <td>No</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 id="home-delivery">Home Delivery Service List</h3>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Service name</th>
-        <th>Service code</th>
-        <th>Booking API</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Single Indoor</td>
-        <td>SINGLE_INDOOR</td>
-        <td>No</td>
-      </tr>
-
-      <tr>
-        <td>Curbside</td>
-        <td>CURBSIDE</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Curbside Evening</td>
-        <td>CURBSIDE_EVENING</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Double Indoor</td>
-        <td>DOUBLE_INDOOR</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Return Home Delivery</td>
-        <td>HOME_DELIVERY_RETURN</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Return Indoor</td>
-        <td>RETURN_INDOOR</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Return Curbside</td>
-        <td>RETURN_CURBSIDE</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Urban Home Delivery</td>
-        <td>3332</td>
-        <td>Yes</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Package Type supported by Home Delivery Services</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Package Type</th>
-        <th>Package Type code</th>
-        <th>Booking API</th>
-      </tr>
-    </thead>
-    <tr>
-      <td>HD_EUR_PALLET</td>
-      <td>hd_eur</td>
-      <td>Yes</td>
-    </tr>
-
-    <tr>
-      <td>HD_HALF_PALLET</td>
-      <td>hd_half</td>
-      <td>Yes</td>
-    </tr>
-
-    <tr>
-      <td>HD_QUARTER_PALLET</td>
-      <td>hd_quarter</td>
-      <td>Yes</td>
-    </tr>
-
-    <tr>
-      <td>HD_SPECIAL_PALLET</td>
-      <td>hd_loose</td>
-      <td>Yes</td>
-    </tr>
-  </table>
-</section>
-
-<section class="dev-docscontent__section" id="booking">
-  <h2 class="dev-anchored" id="booking-api">Booking API</h2>
+  <h3 class="dev-anchored" id="available-services-in-booking-api">Available services in Booking API</h3>
 
   <p>The various services available for each customer type.</p>
 
@@ -1754,10 +1473,49 @@ weight: 3
     <dt>Bring Oil Express, Norway</dt>
     <dd><code>OIL_EXPRESS</code></dd>
   </dl>
+
 </section>
 
-<section class="dev-docscontent__section dev-b2bvas">
-  <h3>Parcel Norway domestic</h3>
+<section class="dev-docscontent__section" id="vas">
+  <h2 class="dev-anchored" id="value-added-services">Value added services</h2>
+  <p>
+    The Booking and Shipping Guide API supports the value added services listed in the tables
+    below. The value within parantheses () in the column "Additional services" is used when
+    accessing the service.
+  </p>
+  <p>
+    The links are to examples using XML API. Have a look at the
+    <a
+      href='{{< baseapiurl au="/shippingguide/api/ws/shippingguide-20.wsdl" >}}'
+    >WSDL</a
+    >
+    or
+    <a
+      href='{{< baseapiurl au="/shippingguide/api/ws/shipping-guide-20.xsd" >}}'
+    >XSD</a
+    >
+    for help to set these value added services in a SOAP request.
+  </p>
+  <p>
+    Some value added services get their own price in the response from the
+    Shipping Guide, others are included (and change) the base package price. See
+    column below 'Affects base package price?'.
+  </p>
+
+  <p class="mbl measure">
+    Make sure you specify the correct value added services for a package when
+    querying the Shipping Guide.
+    <br /><br />
+    Especially the "eVarsling" additional service for the Servicepakke service
+    (recipient notification over SMS or E-Mail) will affect the base package
+    price returned from the Shipping Guide, and should therefore be set
+    according to what will be sent in the actual EDI message.
+    <br /><br />
+    If eVarsling is not specified in the request, Fraktguiden will from
+    2013-01-01 add a fee for paper based recipient notification to the base
+    package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
+  </p>
+  <h3 class="dev-anchored" id="parcel-norway-domestic">Parcel Norway domestic</h3>
   <table>
     <thead>
     <tr>
@@ -1909,7 +1667,7 @@ weight: 3
     </tbody>
   </table>
 
-  <h3>B2B Services</h3>
+  <h3 class="dev-anchored" id="parcel-sweden-denmark-finland---b2b">Parcel Sweden, Denmark, Finland - B2B</h3>
   <table>
     <thead>
     <tr>
@@ -2096,7 +1854,7 @@ weight: 3
     </tbody>
   </table>
 
-  <h3>B2C Services</h3>
+  <h3 class="dev-anchored" id="parcel-sweden-denmark-finland---b2c">Parcel Sweden, Denmark, Finland - B2C</h3>
   <table>
     <thead>
     <tr>
@@ -2223,195 +1981,291 @@ weight: 3
     </tbody>
   </table>
 
-  <h3>Home Delivery Services</h3>
-  <table>
-    <thead>
-    <tr>
-      <th>Additional services</th><th>DOUBLE INDOOR<br><p class="dev-b2bvas__subheader">(DOUBLE_INDOOR)</p></th>
-      <th>CURBSIDE<br><p class="dev-b2bvas__subheader">(CURBSIDE)</p></th>
-      <th>CURBSIDE EVENING<br><p class="dev-b2bvas__subheader">(CURBSIDE_EVENING)</p></th>
-      <th>3332<br><p class="dev-b2bvas__subheader">(3332)</p></th>
-      <th>SINGLE INDOOR<br><p class="dev-b2bvas__subheader">(SINGLE_INDOOR)</p></th>
-      <th>HOME DELIVERY RETURN<br><p class="dev-b2bvas__subheader">(HOME_DELIVERY_RETURN)</p></th>
-      <th>RETURN INDOOR<br><p class="dev-b2bvas__subheader">(RETURN_INDOOR)</p></th>
-      <th>RETURN CURBSIDE<br><p class="dev-b2bvas__subheader">(RETURN_CURBSIDE)</p></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>SENDER COUNTRIES</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>ALL</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>NO, SE</td>
-    </tr>
-    <tr>
-      <td>DESTINATION</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>DK, SE</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>NO, SE</td>
-    </tr>
-    <tr>
-      <td>DOMESTIC ALLOWED IN</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>DK, SE</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>NO, SE</td>
-    </tr>
-    <tr>
-      <td>Flex delivery (FLEX_DELIVERY<sup>2</sup>)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td>DK, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>ID verification (1133)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>DK, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>SWAP (SWAP)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td></td>
-      <td></td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>RECYCLE (RECYCLE)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td></td>
-      <td></td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>UNWRAP (UNWRAP)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>STANDARD_INSTALLATION (STANDARD_INSTALLATION)</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>CUSTOM_INSTALLATION (CUSTOM_INSTALLATION)</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Signature Required (1280)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td>NO, SE</td>
-      <td>DK, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Individual Verification (1134)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td>DK, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Carry service oversize (1140)</td>
-      <td>DK, NO, SE</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Installation Mechanical (1141)</td>
-      <td>DK, NO, SE</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    </tbody>
-  </table>
+  <h3 class="dev-anchored" id="cargo-norway-domestic">Cargo Norway domestic/h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Additional services</th>
+        <th>Business groupage<br><p class="dev-b2bvas__subheader">(5100)</p></th>
+        <th>Business partload<br><p class="dev-b2bvas__subheader">(5300)</p></th>
+        <th>Business pallet<sup>7</sup><br><p class="dev-b2bvas__subheader">(5400)</p></th>
+        <th>Return business groupage<br><p class="dev-b2bvas__subheader">(9100)</p></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>DOMESTIC ALLOWED IN</td>
+        <td>NO</td>
+        <td>NO</td>
+        <td>NO</td>
+        <td>NO</td>
+      </tr>
+      <tr>
+        <td>Telephone notification (PHONENOTIFICATION)</td>
+        <td>X</td>
+        <td></td>
+        <td>X</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Frost free (NON_FREEZE)</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Simplified delivery (SIMPLIFIED_DELIVERY)</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Dangerous goods (DANGEROUS_GOODS)</td>
+        <td>X</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Special goods (2142)</td>
+        <td>X</td>
+        <td>X</td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
 
-  <ol class="text-note maxw48r">
-    <li>
-      EVARSLING is not available when sending PICKUP_PARCEL from NORWAY to the other Nordic countries. It is available for all the other sender/recipient combinations.
-    </li>
-    <li>
-      Use Shipping Guide Code FLEXDELIVERY for FLEX_DELIVERY
-    </li>
-    <li>
-      Use Shipping Guide Code DELIVERYINDOOR for DELIVERY_INDOORS
-    </li>
-    <li>
-      Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe.
-    </li>
-    <li>
-      Label free is just available for sender country Denmark and Sweden. Applies to all mentioned services when sending from Denmark. Applies to Pickup Parcel, Pickup Parcel Return and Pickup Parcel Return Bulk when sending from Sweden
-    </li>
-  </ol>
+    <h3 class="dev-anchored" id="home-delivery-services">Home delivery services</h3>
+    <table>
+      <thead>
+      <tr>
+        <th>Additional services</th><th>DOUBLE INDOOR<br><p class="dev-b2bvas__subheader">(DOUBLE_INDOOR)</p></th>
+        <th>CURBSIDE<br><p class="dev-b2bvas__subheader">(CURBSIDE)</p></th>
+        <th>CURBSIDE EVENING<br><p class="dev-b2bvas__subheader">(CURBSIDE_EVENING)</p></th>
+        <th>3332<br><p class="dev-b2bvas__subheader">(3332)</p></th>
+        <th>SINGLE INDOOR<sup>6</sup><br><p class="dev-b2bvas__subheader">(SINGLE_INDOOR)</p></th>
+        <th>HOME DELIVERY RETURN<br><p class="dev-b2bvas__subheader">(HOME_DELIVERY_RETURN)</p></th>
+        <th>RETURN INDOOR<br><p class="dev-b2bvas__subheader">(RETURN_INDOOR)</p></th>
+        <th>RETURN CURBSIDE<br><p class="dev-b2bvas__subheader">(RETURN_CURBSIDE)</p></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>SENDER COUNTRIES</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>ALL</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>NO, SE</td>
+      </tr>
+      <tr>
+        <td>DESTINATION</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>DK, SE</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>NO, SE</td>
+      </tr>
+      <tr>
+        <td>DOMESTIC ALLOWED IN</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>DK, SE</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>NO, SE</td>
+      </tr>
+      <tr>
+        <td>Flex delivery (FLEX_DELIVERY<sup>2</sup>)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td>DK, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>ID verification (1133)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>DK, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>SWAP (SWAP)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td></td>
+        <td></td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>RECYCLE (RECYCLE)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td></td>
+        <td></td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>UNWRAP (UNWRAP)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>STANDARD_INSTALLATION (STANDARD_INSTALLATION)</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>CUSTOM_INSTALLATION (CUSTOM_INSTALLATION)</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Signature Required (1280)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td>NO, SE</td>
+        <td>DK, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Individual Verification (1134)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td>DK, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Carry service oversize (1140)</td>
+        <td>DK, NO, SE</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Installation Mechanical (1141)</td>
+        <td>DK, NO, SE</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h4>Package Type supported by Home Delivery services</h4>
+    <table>
+      <thead>
+      <tr>
+        <th>Package Type</th>
+        <th>Package Type code</th>
+        <th>Booking API</th>
+      </tr>
+      </thead>
+      <tr>
+        <td>HD_EUR_PALLET</td>
+        <td>hd_eur</td>
+        <td>Yes</td>
+      </tr>
+
+      <tr>
+        <td>HD_HALF_PALLET</td>
+        <td>hd_half</td>
+        <td>Yes</td>
+      </tr>
+
+      <tr>
+        <td>HD_QUARTER_PALLET</td>
+        <td>hd_quarter</td>
+        <td>Yes</td>
+      </tr>
+
+      <tr>
+        <td>HD_SPECIAL_PALLET</td>
+        <td>hd_loose</td>
+        <td>Yes</td>
+      </tr>
+    </table>
+    <ol class="text-note maxw48r">
+      <li>
+        EVARSLING is not available when sending PICKUP_PARCEL from NORWAY to the other Nordic countries. It is available for all the other sender/recipient combinations.
+      </li>
+      <li>
+        Use Shipping Guide Code FLEXDELIVERY for FLEX_DELIVERY
+      </li>
+      <li>
+        Use Shipping Guide Code DELIVERYINDOOR for DELIVERY_INDOORS
+      </li>
+      <li>
+        Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe.
+      </li>
+      <li>
+        Label free is just available for sender country Denmark and Sweden. Applies to all mentioned services when sending from Denmark. Applies to Pickup Parcel, Pickup Parcel Return and Pickup Parcel Return Bulk when sending from Sweden
+      </li>
+      <li>
+        SINGLE INDOOR is not supported by the Booking API
+      </li>
+      <li>
+        Business pallet requires an agreement and setup in Mybring to be available for booking.
+      </li>
+    </ol>
 </section>
 
 <script>
