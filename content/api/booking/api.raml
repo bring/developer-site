@@ -160,6 +160,11 @@ documentation:
     * In one of these examples, importer not sent in request, hence the recipient is the importing party with (optional) `vatNumber`.
     * In the other example, there is importer party set in the request with the (optional) `vatNumber`.
 
+    ### IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
+
+    By using the `iossNumber` element of `ediCustomsDeclarations`, one can specify an IOSS number for exports from Norway to EU countries. Only applicable when `natureOfTransaction` is of type `SALE_OF_GOODS`.
+    Note that this can not be combined with a `reference` field on the `senders` party. More info on [IOSS](https://www.bring.no/tjenester/toll/ioss).
+
 - title: VOEC - Customs declaration for import shipments to Norway
   content: |
     With this concept the recipient can skip paying VAT when picking up the parcel on a pickup point in Norway. Instead, the web shop collects the VAT directly when the recipient is paying in the checkout.
@@ -521,6 +526,10 @@ documentation:
             description: VAT On Ecommerce ID used for customs import to Norway. This field is mandatory when sending customs import information in the request. It must be 7 digits number.
             type: integer
             required: true
+        iossNumber:
+            description: Import One-Stop Shop (IOSS) number used for customs export from Norway to EU. This field is optional when customs export information in the request. It must be on the form `IMxxxxxxxxxx` (10 digits). Only valid when `natureOfTransaction` is of type `SALE_OF_GOODS`. Note that this field cannot be combined with a `reference` field on the sender party.
+            type: string
+            required: false
         nonStandardCourierProductCode:
             description: Specify the product code for customize courier services. This field is mandatory when request is for Non Standard Courier.
             type: string
