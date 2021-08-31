@@ -70,7 +70,36 @@ documentation:
     Currently, 240 selected pickup points support label printing based on scanning of QR-code. [Overview of pickup points](https://www.bring.no/tjenester/retur/qr-kode-innleveringssteder)
   
     Eventually, all PiBs and Post offices will support label printing based on QR-code.
-    
+
+- title: Return Product
+  content: |
+
+   It is possible to book return shipments along with outgoing shipments in single booking.
+
+   The following outgoing and return service combinations are supported:
+
+   | Outgoing services |  Return services |
+   | -------------- | -------------- |
+   | `3570, 3584`       | `9650` |
+   | `4850, 5000, 5600, 5800`   | `9000, 9300, 9600` |
+   | `BEDRIFTSPAKKE, SERVICEPAKKE, EKSPRESS09, PA_DOREN`  | `BEDRIFTSPAKKE_RETUR, EKSPRESS09_RETUR, SERVICEPAKKE_RETUR` |
+
+   #### XML
+
+   ```xml
+      <returnProduct>
+       <id>9650</id>
+      </returnProduct>
+   ```
+
+   #### JSON
+
+   ```json
+      "returnProduct": {
+          "id": "9650",
+      }
+   ```
+
 - title: Mailbox Parcel (Pakke i Postkassen)
   content: |
     - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (multi-kolli is not supported). Each parcel is invoiced separately. A link to the label is returned in the response. 
@@ -525,9 +554,13 @@ documentation:
             description: Specify the product code for customize courier services. This field is mandatory when request is for Non Standard Courier.
             type: string
             example: CDA
-            required: true
+            required: false
         generateQrCodes:
             description: Specify whether QR codes is wanted in addition to the regular label for certain services. See the [qr-codes section](#qr-codes) for more on this.
+            type: boolean
+            required: false
+        returnProduct:
+            description: Specify the return shipment which should be generated along with outgoing shipment. See the [return product section](#return-product) for more on this.
             type: boolean
             required: false
 
