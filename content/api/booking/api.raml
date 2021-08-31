@@ -55,7 +55,7 @@ documentation:
 - title: QR Codes
   content: |
 
-    It is now possible to request QR codes for certain products. An end user can bring the QR code to a PiB or a Post Office, scan the QR code, and have a label printed there.
+    For Parcel Norway domestic return services, it is possible to request QR codes. An end user can bring the QR code to a PiB or a Post Office, scan the QR code, and have a label printed there.
 
     To book, add the element `generateQrCodes` at the consignment level and set it to `true`. The response will contain one `qrCodeLink` per package. This is a URL to a PNG image of the QR code.
     
@@ -71,10 +71,14 @@ documentation:
   
     Eventually, all PiBs and Post offices will support label printing based on QR-code.
 
-- title: Return Product
+- title: Free return of parcel(s)
   content: |
 
-   It is possible to book return shipments along with outgoing shipments in single booking.
+   For Parcel Norway domestic services, it is possible to book the return shipment at the same time as the outgoing shipment. By setting the element `returnProduct` and specifying the return service, you will both get the regular label and the return label in the response. 
+   
+   We recommend to include the return label in the outgoing shipment, so that the return label can easily be used if your customer wants to return the shipment to you. 
+   
+   You will be invoiced for the return only if your customer uses it.
 
    The following outgoing and return service combinations are supported:
 
@@ -560,7 +564,7 @@ documentation:
             type: boolean
             required: false
         returnProduct:
-            description: Specify the return shipment which should be generated along with outgoing shipment. See the [return product section](#return-product) for more on this.
+            description: Specify the return service which should be used to generate a return shipment along with outgoing shipment. See the [return product section](#return-product) for more on this.
             type: boolean
             required: false
 
