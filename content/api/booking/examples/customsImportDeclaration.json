@@ -36,7 +36,7 @@
         }
       },
       "product": {
-        "id": "HOME_DELIVERY_PARCEL",
+        "id": "BUSINESS_PARCEL",
         "customerNumber": "PARCELS_NORWAY_INTERNATIONAL-***********",
         "messageForRecipient": null,
         "ediCustomsDeclarations": {
