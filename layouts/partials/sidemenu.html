@@ -17,7 +17,7 @@
 
         {{ if (ne $hidePage true) }}
           <li
-            class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( $currentPage.HasMenuCurrent .Menu .)) }}active{{ end }} {{ $lastElement }}"
+            class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
           >
             {{- $target := "" -}}
             {{- $iconEx := "" -}}
