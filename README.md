@@ -184,6 +184,11 @@ production env
 ## Deploy and release
 
 Deploy to test or QA using b deploy {test|qa}
+QA: http://developer.qa.bring.com/
+test: http://developer.test.bring.com/
 
 Merging a PR to master generates a production build and automatically deploys it
 to test, QA and production.
+
+The application is available on the following URL:
+https://developer.bring.com/
