@@ -1,25 +1,27 @@
 {{/* require id tag */}}
 {{- $headers := findRE (printf "<h[2-%s].* id=\"([^\"]\\S*?)\">(.|\n])+?</h[2-%s]>" $.numberOfHeadings $.numberOfHeadings) .context.Content -}}
-{{ $.context.Scratch.Set "last_level" 1 }}
 
 {{/* at least one header to link to */}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
   <ul class="dev-sidemenu__sublist">
-    {{- range $headers -}}
-      {{- $header := . -}}
+    {{- range $index, $header := $headers -}}
+      {{ $nextIndex := add $index 1 }}
+      {{ $nextHeader := index $headers $nextIndex }}
       {{- $base := ($.Page.File.LogicalName) -}}
       {{- $anchorId := ($header | plainify | htmlUnescape | anchorize) -}}
       {{- $href := delimit (slice $base $anchorId) "#" | string -}}
-      {{- range findRE (printf "[2-%s]" $.numberOfHeadings) . 1 -}}
-        {{- $next_heading := (int .) -}}
-        {{- $level := (printf "lvl%s" .) -}}
-        <li>
-          <a class="{{$level}}" href="{{ relref $.context.Page $href }}"
-            >{{- $header | plainify | htmlUnescape -}}</a
-          >
-        </li>
-        {{ $.context.Scratch.Set "last_level" $next_heading }}
+
+      <li>
+        <a href="{{ relref $.context.Page $href }}">{{- $header | plainify | htmlUnescape -}}</a>
+        {{- if (and (in $nextHeader "</h3>") (in $header "</h2>")) -}}
+          <ul class="dev-sidemenu__sublist text-note">
+        {{- else -}}
+          </li>
+        {{- end -}}
+
+      {{- if (and (or (in $nextHeader "</h2>") (not $nextHeader)) (in $header "</h3>")) -}}
+        </ul>
       {{- end -}}
     {{- end -}}
   </ul>
