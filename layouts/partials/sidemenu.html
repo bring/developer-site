@@ -80,7 +80,7 @@
               {{- with (index $apiData $identifier) -}}
                 {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
                   <ul class="dev-sidemenu__sublist">
-                    {{- range .documentation -}}
+                    {{- range $.Params.documentation -}}
                       <li>
                         <a href="#{{ .title | urlize }}">
                           <span data-hover="{{ .title }}">{{ .title }}</span>

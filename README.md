@@ -39,9 +39,9 @@ the frontpage.
 ## Adding a new API
 
 Make a new folder in `content/api`, the folder name will be the url slug. Use
-RAML 1.0 for you documentation file. Make a index.html file containing the
-following frontmatter:
+RAML 1.0 for you documentation file. Make a index.md file with YAML frontmatter at the top. Place the api introduction and other text documentation in the YAML frontmatter as markdown.
 
+### Frontmatter example
 ```
 ---
 title: {Name of API, similar to the name in the raml file}
@@ -54,9 +54,14 @@ menu:
     parent: {parent, see config.toml}
 weight: {menu position prefixed by parent}
 disqus_identifier: api-{foldername} (optional, if you want comments)
+
+documentation:
+  - title: {Title of section}
+    content: |
+      {Content as markdown}
 ---
 
-If you have an alert, it can be added below the frontmatter, here, instead of inside the raml file.
+If you have an alert, it can be added below the frontmatter. This will be placed right below the page title. You can use HTML inside markdown, but not markdown inside HTML.
 ```
 
 Open config.toml and add the new raml file path to the `apis` array.
