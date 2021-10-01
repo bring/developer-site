@@ -10,7 +10,7 @@
         <h1>{{ .title }}</h1>
         <section id="api-documentation" class="dev-docscontent__section">
           {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
-          {{- range .documentation -}}
+          {{- range $.Params.documentation -}}
             <h2 class="dev-anchored" id="{{ .title | urlize }}">
               {{- .title -}}
             </h2>
