@@ -723,6 +723,21 @@ baseUri: https://api.bring.com/booking/api
                 displayName: Mailbox parcel
                 value: !include examples/mailboxParcel.xml
 
+      295:
+        displayName: LQ - Limited Quantities (0003) with gross weight
+        description: The LQ VAS gross weight is specified in grams
+        body:
+          application/json:
+            examples:
+              businessParcel_with_lq_gross_weight:
+                displayName: Business Parcel with 0003 VAS and LQ gross weight
+                value: !include examples/businessParcel_with_lq_gross_weight.json
+          application/xml:
+            examples:
+              businessParcel_with_lq_gross_weight:
+                displayName: Business Parcel with 0003 VAS and LQ gross weight
+                value: !include examples/businessParcel_with_lq_gross_weight.xml
+
       296:
         displayName: Mailbox parcel with Return Parcel and 1073 VAS
         description: Return Parcel  `Id` is required and Additional VAS is optional

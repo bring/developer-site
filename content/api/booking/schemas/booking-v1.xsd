@@ -237,6 +237,7 @@
             <xs:element name="tunnelRestrictionCode" type="xs:string" minOccurs="0"/>
             <xs:element name="safetyMarkCode" type="xs:string" minOccurs="0"/>
             <xs:element name="factor" type="xs:int" minOccurs="0"/>
+            <xs:element name="limitedQuantitiesGrossWeight" type="xs:int" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="PurchaseOrderRequestType">
@@ -519,6 +520,7 @@
             <xs:enumeration value="DELIVERY_INDOOR"/>
             <xs:enumeration value="FLEX_DELIVERY"/>
             <xs:enumeration value="ENVELOPE"/>
+            <xs:enumeration value="0003"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="whoPaysInvoice">
