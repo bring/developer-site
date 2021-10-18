@@ -37,7 +37,7 @@
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "toml": "^3.0.0",
-    "webpack": "^5.55.1",
+    "webpack": "^5.58.2",
     "webpack-cli": "^4.8.0"
   },
   "browserslist": [
