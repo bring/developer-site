@@ -1,5 +1,6 @@
 .chroma {
-    max-height: 36rem;
+  max-width: 64rem;
+  max-height: 36rem;
 }
 
 .filename {
@@ -10,8 +11,8 @@
 code,
 .filename {
   white-space: pre;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', 'Courier New',
-  Courier, monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "Courier New",
+    Courier, monospace;
   font-size: 0.82rem;
 }
 

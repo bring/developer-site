@@ -46,6 +46,24 @@
   border-bottom: none;
 }
 
+.dev-docscontent__wrap {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row-reverse;
+  column-gap: 3rem;
+  row-gap: 2rem;
+}
+
+.dev-docscontent__side {
+  flex: 1 1 18rem;
+  max-width: 64rem;
+}
+
+.dev-docscontent__main {
+  flex: 1 1 28rem;
+  overflow: auto;
+}
+
 .dev-docs__menu {
   background-color: var(--gray-95);
   display: flex;

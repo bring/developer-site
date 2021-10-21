@@ -15,7 +15,9 @@ with some light post processing.
 
 ## Revamped dev site 2021
 
-The site is being improved throughout 2021. Ruby and Jekyll has been replaced with Hugo and Webpack. Structure, content and features are being worked on iteratively.
+The site is being improved throughout 2021. Ruby and Jekyll has been replaced
+with Hugo and Webpack. Structure, content and features are being worked on
+iteratively.
 
 ## Adding an important message to the frontpage
 
@@ -39,9 +41,12 @@ the frontpage.
 ## Adding a new API
 
 Make a new folder in `content/api`, the folder name will be the url slug. Use
-RAML 1.0 for you documentation file. Make a index.md file with YAML frontmatter at the top. Place the api introduction and other text documentation in the YAML frontmatter as markdown.
+RAML 1.0 for you documentation file. Make a index.md file with YAML frontmatter
+at the top. Place the api introduction and other text documentation in the YAML
+frontmatter.
 
 ### Frontmatter example
+
 ```
 ---
 title: {Name of API, similar to the name in the raml file}
@@ -55,13 +60,19 @@ menu:
 weight: {menu position prefixed by parent}
 disqus_identifier: api-{foldername} (optional, if you want comments)
 
+# Add alerts or important messages and they appear to the side or above of the main content
+important:
+  - type: [info, warn, error]
+    title: {Title of message, optional}
+    message: |
+      {Content, multiline possible}
+
+# Add intros and documentation to appear before the endpoint listing
 documentation:
   - title: {Title of section}
     content: |
       {Content as markdown}
 ---
-
-If you have an alert, it can be added below the frontmatter. This will be placed right below the page title. You can use HTML inside markdown, but not markdown inside HTML.
 ```
 
 Open config.toml and add the new raml file path to the `apis` array.
@@ -147,9 +158,9 @@ examples:
 `widelayout` is intended for two column layouts
 
 `services` takes an array of api id codes and populates a table with the
-associated services and VAS-es. The services are sourced from
-data/service.json, which in turn has an array of associated VAS-codes that the
-template sources from data/vas.json. The services appear in the same order as the array.
+associated services and VAS-es. The services are sourced from data/service.json,
+which in turn has an array of associated VAS-codes that the template sources
+from data/vas.json. The services appear in the same order as the array.
 
 `examples` is an array of links to examples in the relevant API documentation –
 this solution is intended to be improved into fetching the actual examples.
@@ -188,12 +199,10 @@ production env
 
 ## Deploy and release
 
-Deploy to test or QA using b deploy {test|qa}
-QA: http://developer.qa.bring.com/
+Deploy to test or QA using b deploy {test|qa} QA: http://developer.qa.bring.com/
 test: http://developer.test.bring.com/
 
 Merging a PR to master generates a production build and automatically deploys it
 to test, QA and production.
 
-The application is available on the following URL:
-https://developer.bring.com/
+The application is available on the following URL: https://developer.bring.com/
