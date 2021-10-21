@@ -8,5 +8,11 @@
             "route": "/shipping-guide/offline",
             "redirect": "https://www.mybring.com/shipping-guide/offline"
         }
-    ]
+    ],
+
+    "responseOverrides": {
+        "404": {
+            "rewrite": "/404.html"
+        }
+    }
 }
