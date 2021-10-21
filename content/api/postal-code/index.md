@@ -10,6 +10,11 @@ menu:
     parent: checkout
 weight: 13
 
+important:
+  - type: warn
+    message: |
+      Integration with shipping guide for postal code lookup is deprecated (Base url: https://api.bring.com/shippingguide/api). We recommend switching to pickup point if you have not already done so (Base url: https://api.bring.com/pickuppoint/api).
+
 documentation:
   - title: Introduction
     content: |
@@ -67,7 +72,3 @@ documentation:
     content: |
       CORS headers will be added to response only for authenticated requests.
 ---
-
-<div class="message--warn maxw48r pam mbl">
-  Integration with shipping guide for postal code lookup is deprecated (Base url: https://api.bring.com/shippingguide/api). We recommend switching to pickup point if you have not already done so (Base url: https://api.bring.com/pickuppoint/api).
-</div>
