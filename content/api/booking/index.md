@@ -158,13 +158,15 @@ documentation:
       There is an example request for 3584 in "More examples" section below. Booking 3570 is just a matter of changing the service code from 3584 to 3570. If you want to specify a different return address on the label than your actual sender address, use the returnTo party tag. When the returnTo party tag is populated the input will replace your actual sender address on the top left corner of the label.
 
   - title: Customs Export information
-    content: |
+    content: |     
       It is required to pass customs information when booking the following services from Norway -> abroad:
 
       - Business Parcel
       - PickUp Parcel
 
-      When included during booking, the customs information will be sent electronically from Bring to the destination country.
+      Sending customs information as part of a booking request only applies to the aforementioned products.
+
+      When included during booking, the customs information will be sent electronically from Bring to the destination country. 
 
       If sending customs information, the following elements are to be used:
 
