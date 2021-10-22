@@ -4,24 +4,38 @@
     {{- $types := .types -}}
     <main 
       id="main"
-      class="dev-docscontent w100p maxw64r {{ replace .title "API" "" | urlize }}"
+      class="dev-docscontent w100p maxw80r {{ replace .title "API" "" | urlize }}"
     >
       <article>
         <h1>{{ .title }}</h1>
-        <section id="api-documentation" class="dev-docscontent__section">
-          {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
-          {{- range $.Params.documentation -}}
-            <h2 class="dev-anchored" id="{{ .title | urlize }}">
-              {{- .title -}}
-            </h2>
-            {{- if in (string .content) "\n\n" -}}
-              {{- .content | markdownify -}}
-              {{- else -}}
-              <p>{{ .content | markdownify }}</p>
-            {{- end -}}
+        <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
+          {{- with $.Params.important -}}
+            <div class="dev-docscontent__side">
+              {{- range . -}}
+                <div class="message--{{ .type }} pam mbs">
+                  {{- with .title -}}
+                    <strong class="db mbxs">{{ . }}</strong>
+                  {{- end -}}
+                  {{ .message | markdownify }}
+                </div>
+              {{- end -}}
+            </div>
           {{- end -}}
+          <div class="dev-docscontent__main">
+            {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
+            {{- range $.Params.documentation -}}
+              <h2 class="dev-anchored" id="{{ .title | urlize }}">
+                {{- .title -}}
+              </h2>
+              {{- if in (string .content) "\n\n" -}}
+                {{- .content | markdownify -}}
+                {{- else -}}
+                <p>{{ .content | markdownify }}</p>
+              {{- end -}}
+            {{- end -}}
+          </div>
         </section>
-        <section class="dev-docscontent__section">
+        <section class="dev-docscontent__section maxw64r">
           <h2 class="dev-anchored mbm" id="overview-of-endpoints">
             Overview of endpoints
           </h2>
@@ -60,7 +74,7 @@
         {{- range .resources -}}
           {{- $resources := . -}}
           {{- $displayName := .displayName -}}
-          <section class="dev-docscontent__section">
+          <section class="dev-docscontent__section maxw64r">
             <h2 class="dev-anchored mbm" id="{{ $displayName | urlize }}">
               {{- $displayName -}}
             </h2>
@@ -256,7 +270,7 @@
           </section>
         {{- end -}}
         {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-          <section id="api-support" class="dev-docscontent__section">
+          <section id="api-support" class="dev-docscontent__section maxw64r">
             {{ template "_internal/disqus.html" $ }}
           </section>
         {{- end -}}

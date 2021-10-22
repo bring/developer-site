@@ -10,6 +10,20 @@ menu:
     parent: rni
 weight: 51
 
+important:
+  - type: warn
+    title:
+      The Preliminary freight calculation report for Parcel Norway customer was
+      disabled from 21.06.2021
+    message:
+      The Preliminary freight calculation report for Parcel Norway customers fetched using API id PARCELS-CURRENT_CALCULATED_SHIPPING today was disabled from 21.06.2021. Historical data will be available for one year. You will find the same information in Detailed freight calculation report using API id PARCELS-ECONOMY_AND_STATISTICS instead.
+  - type: info
+    title: API changes after your company is converted to use new services
+    message: |
+      Bring is revising the service portfolio. Some of our services have been given new service names, service codes and pricing models.
+
+      If you are existing user of Reports API, you will need to make some changes in the API after your company is converted to use new services. Please read for <a href="/api/reports/agreement_conversion">details</a>
+
 documentation:
   - title: Introduction
     content: |
@@ -63,20 +77,3 @@ documentation:
       #### Parcels
         - PARCEL_DOMESTIC
 ---
-
-<div class="message--warn maxw48r pam mbl">
-  <strong>The Preliminary freight calculation report for Parcel Norway customer was disabled from 21.06.2021</strong>
-  <br /><br />
-  The Preliminary freight calculation report for Parcel Norway customers fetched using API id PARCELS-CURRENT_CALCULATED_SHIPPING today,
-  was disabled from 21.06.2021. Historical data will be available for one year.
-  You will find the same information in Detailed freight calculation report using API id PARCELS-ECONOMY_AND_STATISTICS instead.
-  <br /><br />
-  <strong>API changes after your company is converted to use new services</strong>
-  <br /><br />
-  Bring is revising the service portfolio. Some of our services have been given
-  new service names, service codes and pricing models.
-  <br /><br />
-  If you are existing user of Reports API, you will need to make some changes in
-  the API after your company is converted to use new services. Please read for
-  <a href="/api/reports/agreement_conversion">details</a>
-</div>

@@ -10,6 +10,19 @@ menu:
     parent: checkout
 weight: 12
 
+important:
+  - type: info
+    title: Max parcel dimensions for Pakkeboks pickup points
+    message: |
+      Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points can now be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. JSON field:
+      <code>
+      "maxParcelDimensions": {
+        "length": 44.5,
+        "width": 50.5,
+        "height": 60.0
+      }
+      </code>
+
 documentation:
   - title: Introduction
     content: |
@@ -55,17 +68,3 @@ documentation:
     content: |
       To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 ---
-
-<div class="message--info maxw48r pam mbl">
-  <h2 class="text-heading fw600">Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points</h2>
-  <p>We're now returning max parcel dimensions for Pakkeboks pickup points.
-  This can be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout due to exceeding the max parcel locker size.
-  The field looks like this (JSON):</p>
-  <code>
-    "maxParcelDimensions": {
-      "length": 44.5,
-      "width": 50.5,
-      "height": 60.0
-  }
-  </code>
-</div>
