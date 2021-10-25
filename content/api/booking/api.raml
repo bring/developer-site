@@ -149,7 +149,7 @@ baseUri: https://api.bring.com/booking/api
             example: 2016-07-26T06:24:09 or 1469494449000 (milliseconds since 01.01.1970, for json req)
             required: true
         customerSpecifiedDeliveryDateTime:
-            description: The date and time selected for preferred delivery by the customer. Note that for some services, the time part of this field will be ignored. This field is applicable for 'PA_DOREN', '5600', and 'OIL_EXPRESS'.
+            description: The date and time selected for preferred delivery by the customer. Note that for some services, the time part of this field will be ignored. This field is applicable for 'PA_DOREN', '5600', and 'OIL_EXPRESS'. For 'PA_DOREN' and '5600' the date cannot cannot be set to more than current date + 10 days.
             type: dateTime
             example: 2020-05-11T11:12:13 (yyyy-MM-ddThh:mm:ss)
             required: false

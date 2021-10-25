@@ -390,7 +390,7 @@ documentation:
       "numberOfAlternativeDeliveryDates": 2
       ```
 
-      Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value.
+      Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value. The maximum number of alternative delivery days that can be requested is 9.
 
   - title: Shipping Guide topics
     content: |
