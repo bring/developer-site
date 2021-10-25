@@ -10,6 +10,12 @@ menu:
     parent: warehouse
 weight: 41
 
+important:
+  - type: warn
+    message: |
+      **Please note:** Our Warehousing APIs are changing. Please contact our sales department <a
+      href="mailto:bwsalg@bring.com">bwsalg@bring.com</a> for a correct documentation version
+
 documentation:
   - title: Introduction
     content: |
