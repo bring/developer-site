@@ -85,7 +85,7 @@ baseUri: https://api.bring.com/shippingguide
         description: List of services requested. Multiple services can be requested in a single request. Requested service can also be specified with a customer number separated with **:** (colon) as delimiter. For example CARGO:CARGO-123456
         type: string
       date:
-        description: Shipping date. For service 5600 and PA_DOREN, this date cannot be set to more than current date + 10 days.
+        description: Shipping date. For service 5600 and PA_DOREN, this date cannot be set to more than current date + 10 days if numberOfAlternativeDeliveryDates > 0.
         type: string
         example: 2018-11-18
         required: false
@@ -170,7 +170,7 @@ baseUri: https://api.bring.com/shippingguide
         description: Payer type. Possible values are SENDER, RECEIVER or THIRD_PARTY
         type: string
         required: false
-      numberofdeliverydates:
+      numberOfAlternativeDeliveryDates:
         description: Number of alternative delivery dates to be suggested by API for request. Maximum number is 9.
         type: integer
         required: false
