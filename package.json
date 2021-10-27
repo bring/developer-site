@@ -29,7 +29,7 @@
     "css-loader": "^6.4.0",
     "cssnano": "^5.0.8",
     "hugo-bin": "^0.76.1",
-    "mini-css-extract-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^2.4.3",
     "postcss": "^8.3.9",
     "postcss-css-variables": "^0.18.0",
     "postcss-import": "^14.0.2",
