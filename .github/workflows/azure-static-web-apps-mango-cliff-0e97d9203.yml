@@ -19,7 +19,8 @@ jobs:
         with:
           submodules: true
       - name: Build and Deploy
-        id: buildanddeploy
+        id: deploystaging
+        if: github.ref == 'refs/head/master'
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
@@ -28,6 +29,17 @@ jobs:
           app_location: "."
           output_location: "_site"
           app_build_command: 'npm run buildprod'
+      - name: Build and Deploy
+        id: deploymaster
+        if: github.ref != 'refs/head/master'
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "."
+          output_location: "_site"
+          app_build_command: 'npm run buildqa'
       - name: notify slack failure
         if: github.event_name == 'push' && failure()
         env:
