@@ -19,6 +19,27 @@ The site is being improved throughout 2021. Ruby and Jekyll has been replaced
 with Hugo and Webpack. Structure, content and features are being worked on
 iteratively.
 
+## Publish an item in API updates
+
+Revision history and Changelog has been renamed to _API updates_ to better
+reflect that it covers past, current and upcoming changes.
+
+New items are added with publish date as the file name `yyyy-mm-dd.md` in the
+`conten/api/revision-history` folder with the following frontmatter:
+
+```
+---
+title: {Should at least contain the name of the API}
+publishDate: yyyy-mm-dd
+layout: api
+---
+```
+
+If the publish date is set in the future, either the branch must be merged or a
+build must be triggered at or after that point in time. In most cases, publish
+date is the same as change date, but if the message is about an upcoming change,
+the change date should be mentioned in the body text.
+
 ## Adding an important message to the frontpage
 
 Important messages are added as list items in the frontmatter of the frontpage
@@ -35,7 +56,7 @@ important:
     for unauthenticated requests
 ```
 
-Also keep in mind that the four latest items in the changelog are featured on
+Also keep in mind that the four latest items in the API updates are featured on
 the frontpage.
 
 ## Adding a new API

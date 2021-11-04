@@ -76,6 +76,10 @@
   overflow-y: auto;
 }
 
+.changelog-small {
+  flex: 1 1 24rem;
+}
+
 @media screen and (max-width: 64em) {
   .dev-docs__menu {
     flex: 1 0 100%;
