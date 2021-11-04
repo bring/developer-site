@@ -9,7 +9,6 @@
     "buildraml": "node scripts/raml2json",
     "build": "npm run buildcss && npm run buildraml",
     "start": "cross-env HUGO_ENV=dev hugo server",
-    "buildtest": "npm run clean && npm run build && cross-env HUGO_ENV=test hugo",
     "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
     "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo"
   },

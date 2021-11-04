@@ -197,12 +197,13 @@ solution for this.
 the entire site for qa env `npm run buildprod` builds the entire site for
 production env
 
-## Deploy and release
+## Deploy
 
-Deploy to test or QA using b deploy {test|qa} QA: http://developer.qa.bring.com/
-test: http://developer.test.bring.com/
+This application is deployed as a azure static web app.
 
-Merging a PR to master generates a production build and automatically deploys it
-to test, QA and production.
+When you create a pr a comment is made on the pr with a url to a custom staging site where you
+can watch what the final deployed site will look like. When you merge the pr to master, it will also be deployed
+to production.
 
-The application is available on the following URL: https://developer.bring.com/
+To work locally you can either build the site and open it in a browser, or you 
+can use azures [tooling](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)
