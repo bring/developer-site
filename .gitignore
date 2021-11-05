@@ -3,6 +3,4 @@ node_modules/
 _site
 api.json
 static/css
-.idea
-.jekyll-metadata
-.sass-cache/
+.hugo_build.lock
