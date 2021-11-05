@@ -28,6 +28,7 @@ jobs:
           app_location: "."
           output_location: "_site"
           app_build_command: 'npm run buildprod'
+      - run: echo ${{github.ref}} 
       - name: notify slack failure
         if: github.event_name == 'push' && failure()
         env:
