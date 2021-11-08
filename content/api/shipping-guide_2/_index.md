@@ -392,6 +392,22 @@ documentation:
 
       Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value. The maximum number of alternative delivery days that can be requested is 9.
 
+  - title: Get Customer specified lead time
+    content: |
+      Prioritized Customers can get customer specific leadtime in the response for PIP services 3570, 3584, can use the **customerNumber**
+      * SOAP: customerNumber
+      ```xml
+      <CustomerNumber>2001001000</CustomerNumber>
+      ```
+      * REST GET: customerNumber
+      ```json
+      customerNumber=2001001000
+      ```
+      * REST POST: 2001001000
+      ```json
+      "customerNumber": "2001001000",
+      ```
+
   - title: Shipping Guide topics
     content: |
       If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
