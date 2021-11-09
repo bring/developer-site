@@ -392,9 +392,9 @@ documentation:
 
       Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value. The maximum number of alternative delivery days that can be requested is 9.
 
-  - title: Get Customer specified lead time
+  - title: Get customer specified leadtimes for Mailbox Parcel (Pakke i postkassen)
     content: |
-      Prioritized Customers can get customer specific leadtime in the response for PIP services 3570, 3584, can use the **customerNumber**
+      Prioritized customers can get their customer specific leadtimes in the response for the outgoing Mailbox Parcel services (3570 and 3584). This is easily done by making sure the **customerNumber** is always set in the requst.
       * SOAP: customerNumber
       ```xml
       <CustomerNumber>2001001000</CustomerNumber>
