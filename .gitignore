@@ -4,3 +4,5 @@ _site
 api.json
 static/css
 .hugo_build.lock
+.idea
+.sass-cache
