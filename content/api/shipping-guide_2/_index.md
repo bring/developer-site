@@ -392,6 +392,22 @@ documentation:
 
       Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value. The maximum number of alternative delivery days that can be requested is 9.
 
+  - title: Get customer specified leadtimes for Mailbox Parcel (Pakke i postkassen)
+    content: |
+      Prioritized customers can get their customer specific leadtimes in the response for the outgoing Mailbox Parcel services (3570 and 3584). This is easily done by making sure the **customerNumber** is always set in the requst.
+      * SOAP: customerNumber
+      ```xml
+      <CustomerNumber>2001001000</CustomerNumber>
+      ```
+      * REST GET: customerNumber
+      ```json
+      customerNumber=2001001000
+      ```
+      * REST POST: 2001001000
+      ```json
+      "customerNumber": "2001001000",
+      ```
+
   - title: Shipping Guide topics
     content: |
       If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
