@@ -33,6 +33,9 @@
                 "amountWithVAT": "182.19"
               },
               "currencyCode": "NOK"
+            },
+            "zones": {
+              "totalZoneCount": 1
             }
           },
           "expectedDelivery": {
