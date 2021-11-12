@@ -27,6 +27,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.8173039679042,10.7775279242113</googleMapsLink>
         <distanceInKm>13.3</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>10</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.81730397&amp;destlong=10.77752792</routeMapsLink>
@@ -57,6 +59,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.8189378024545,10.8151015661993</googleMapsLink>
         <distanceInKm>13.9</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>12</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.8189378&amp;destlong=10.81510157</routeMapsLink>
@@ -87,6 +91,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.8331565642226,10.8070272660392</googleMapsLink>
         <distanceInKm>16.5</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>14</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.83315656&amp;destlong=10.80702727</routeMapsLink>
@@ -117,6 +123,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.8727135602853,10.8116607872204</googleMapsLink>
         <distanceInKm>20.5</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>17</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.87271356&amp;destlong=10.81166079</routeMapsLink>
@@ -147,6 +155,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.7422015971235,10.6030636763032</googleMapsLink>
         <distanceInKm>16.0</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>18</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.7422016&amp;destlong=10.60306368</routeMapsLink>
@@ -177,6 +187,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.8756841069463,10.8432289904845</googleMapsLink>
         <distanceInKm>21.7</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>18</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.87568411&amp;destlong=10.84322899</routeMapsLink>
@@ -208,6 +220,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.9142629700931,10.7530223331183</googleMapsLink>
         <distanceInKm>26.3</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>21</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.91426297&amp;destlong=10.75302233</routeMapsLink>
@@ -239,6 +253,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.9217255633106,10.7571895808732</googleMapsLink>
         <distanceInKm>27.5</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>22</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>21</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.92172556&amp;destlong=10.75718958</routeMapsLink>
@@ -269,6 +285,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.7465229936355,10.3902642159026</googleMapsLink>
         <distanceInKm>34.6</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>28</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.74652299&amp;destlong=10.39026422</routeMapsLink>
@@ -300,6 +318,8 @@
         <googleMapsLink>http://maps.google.com/maps?f=q&amp;hl=en&amp;geocode=&amp;q=59.78662174705,10.4361791262038</googleMapsLink>
         <distanceInKm>38.4</distanceInKm>
         <distanceType>DRIVING_DISTANCE</distanceType>
+        <durationInMinutes>35</durationInMinutes>
+        <durationType>DRIVING_TIME</durationType>
         <type>4</type>
         <additionalServiceCode>1036</additionalServiceCode>
         <routeMapsLink>https://api.bring.com/pickuppoint/map/route?origlat=59.734866&amp;origlong=10.75588&amp;destlat=59.78662175&amp;destlong=10.43617913</routeMapsLink>
