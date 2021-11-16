@@ -17,10 +17,12 @@ code,
 }
 
 td code,
+li code,
 p code {
   white-space: normal;
 }
 
+li code:not(table code),
 p code {
   background-color: var(--gray-90);
   padding: 0.1em 0.2em;
