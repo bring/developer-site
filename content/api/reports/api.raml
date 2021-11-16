@@ -241,10 +241,15 @@ types:
       type: string
       required: true
     mediaTypeExtension:
-      enum: [ .xls, .xml ]
-      description: Use .xls to get Excel file or .xml to get XML file.
+      enum: [ .xlsx, .xml ]
+      description: Use .xlsx to get Excel file or .xml to get XML file.
   get:
     description: Get report
+    queryParameters:
+      compress:
+        description: Get the XML report as a compressed ZIP archive.
+        type: boolean
+        required: false
     headers:
       Accept-Language:
         description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
