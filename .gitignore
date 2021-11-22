@@ -3,5 +3,7 @@ node_modules/
 _site
 api.json
 static/css
+static/js/search.js
+static/js/search.js.LICENSE.txt
 .hugo_build.lock
 .idea

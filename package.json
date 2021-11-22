@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site",
-    "buildcss": "webpack && rimraf static/css/main.js",
+    "buildassets": "webpack && rimraf static/css/main.js",
     "buildraml": "node scripts/raml2json",
-    "build": "npm run buildcss && npm run buildraml",
+    "build": "npm run buildassets && npm run buildraml",
     "start": "cross-env HUGO_ENV=dev hugo server",
     "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
-    "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo"
+    "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo",
+    "algolia": "atomic-algolia"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,13 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.0",
+    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "cssnano": "^5.0.9",
@@ -42,5 +49,12 @@
   "browserslist": [
     "ie 11",
     "> .2%"
-  ]
+  ],
+  "dependencies": {
+    "algoliasearch": "^4.11.0",
+    "react": "^17.0.2",
+    "react-autosuggest": "^10.1.0",
+    "react-dom": "^17.0.2",
+    "react-instantsearch-dom": "^6.8.1"
+  }
 }
