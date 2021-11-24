@@ -26,7 +26,8 @@
     <language>{{.}}</language>
     {{- end -}}
     {{- if not $latestPage.PublishDate.IsZero -}}
-    <pubDate>{{ $latestPage.PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 +0100</pubDate>
+    <pubDate>{{ $latestPage.PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 -0500</pubDate>
+    <lastBuildDate>{{ $latestPage.PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 -0500</lastBuildDate>
     {{- end -}}
     {{- with .Site.Author.email -}}
     <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>
