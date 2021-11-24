@@ -1,5 +1,9 @@
+{{- $footClass := "" -}}
+{{- if (and (not (in .Section "api")) (not (in .Section "edi"))) -}}
+  {{- $footClass = "dev-container" -}}
+{{- end -}}
 <footer class="sitefooter">
-  <div class="dev-container">
+  <div class="{{ $footClass }}">
     {{- if (and (not (in .Section "api")) (not (in .Section "edi"))) -}}
       <div class="sitefooter__wrapper">
         <a
