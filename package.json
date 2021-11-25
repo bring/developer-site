@@ -26,9 +26,9 @@
     "autoprefixer": "^10.4.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
-    "cssnano": "^5.0.9",
-    "hugo-bin": "^0.77.0",
-    "mini-css-extract-plugin": "^2.4.4",
+    "cssnano": "^5.0.11",
+    "hugo-bin": "^0.77.4",
+    "mini-css-extract-plugin": "^2.4.5",
     "postcss": "^8.3.11",
     "postcss-css-variables": "^0.18.0",
     "postcss-import": "^14.0.2",
@@ -36,7 +36,7 @@
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "toml": "^3.0.0",
-    "webpack": "^5.61.0",
+    "webpack": "^5.64.3",
     "webpack-cli": "^4.9.1"
   },
   "browserslist": [
