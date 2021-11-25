@@ -454,6 +454,48 @@ documentation:
       * For net prices requests should include customer number and correct package details
       * Request can include limited number of consignments in each request for quick response.
       * New shipments request can be part of separate request
+                                             
+
+  - title: Shipment environmental data
+    content: |
+      For the following Norwegian domestic and Nordic services it is now possible to get the share of electric and fossil free transportation used during last mile transport leg of shipment:
+      * På døren (PA_DOREN/5600)
+      * Pakke i postkassen med RFID (3570)
+      * Pakke i postkassen (3584)
+      * Business Parcel (0330)
+      * Business Parcel Bulk (0332)
+      * Pickup Parcel (0340)
+      * Pickup Parcel Bulk (0342)
+      * Home Delivery Parcel (0349)
+
+      To get the environmental data, use the following new fields:
+      * SOAP: WithEnvironmentalData
+      ```xml
+      <WithEnvironmentalData>true</WithEnvironmentalData>
+      ```
+      * REST GET: environmentaldata
+      ```text
+      environmentaldata=true
+      ```
+      * REST POST: withEnvironmentalData
+      ```json
+      "withEnvironmentalData": true
+      ```
+    
+      The data returned contains a list of transport legs (FIRST_MILE, LINE_HAUL and LAST_MILE), and the %-share of electric and fossil free transportation used during that leg. If no data is available a **NO_ENVIRONMENTAL_DATA** warning is returned.
+      ```xml
+      <ns2:EnvironmentalData>
+            <ns2:TransportLeg>
+                <ns2:TransportLegType>LAST_MILE</ns2:TransportLegType>
+                <ns2:Electric>1.0</ns2:Electric>
+                <ns2:FossilFree>1.0</ns2:FossilFree>
+            </ns2:TransportLeg>
+      </ns2:EnvironmentalData>
+      ```  
+      In the example above, 1.0 == 100%. If 40% of the transport leg was carried out by electric vehicle, the value would be 0.4. An electric share will always be reflected as fossil free, but the opposite is not true. If transport leg is carried out with a bio-diesel vehicle alone, the fossil free share would be 1.0, but the electric share would be 0. A transport leg can also be handled by both electric and fossil free vehicles, e.g. 40% electric + 10% fossil free would result in 0.4 (electric) and 0.5 (fossil free - 0.4 + 0.1).
+
+      **NOTE**: The API currently only supports envrionmental data for the LAST_MILE leg
+
 
   - title: Estimated arrival time for domestic parcels and cargo
     content: |
