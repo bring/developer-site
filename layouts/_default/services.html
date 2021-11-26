@@ -18,24 +18,48 @@
         {{- end -}}
       </h1>
       <section class="dev-docscontent__section">
-      {{- .Content -}}
-        <div class="flex flex-wrap align-ife mbxl">
-          <button class="btn mrl">Show all services</button>
-          <button class="btn mrs">Filter by type</button>
-          <button class="btn mrs">Filter by family</button>
-          <button class="btn mrl">Filter by customer number type</button>
-          <div>
-            <label class="form__label" for="servicefilter">
-            Service name, service code or request code
-            </label>
-            <div class="flex mrxl">
-              <input id="servicefilter" type="text" class="form__control mrxs maxw24r"/>
-              <button class="btn mrxl">Filter</button>
-            </div>
-          </div>
-          <button class="btn">Download complete spreadsheet</button>
+        {{- .Content -}}
+        <div class="flex flex-wrap align-ic mbl">
+          <h2 class="mrl">Shipping Guide and Booking APIs</h2>
+          <a href="#" class="btn-link--dark">Download spreadsheet</a>
         </div>
-        <table>
+        <div class="flex flex-wrap align-ifs mbs">
+          <div class="bg-gray2 pal pbm rad-a2px">
+            <div class="flex flex-wrap align-ifs">
+              <div class="mrl">
+                <p class="form__label">Filter by</p>
+                <div class="btngroup">
+                  <button class="btn btn--white" data-filterbtn="type">Service type</button>
+                  <button class="btn btn--white" data-filterbtn="family">Service family</button>
+                  <button class="btn btn--white" data-filterbtn="cntype">Customer number type</button>
+                </div>
+                <div id="filtersets">
+
+                  {{- $.Scratch.Add "type" slice -}}
+                  {{- $.Scratch.Add "family" slice -}}
+                  {{- $.Scratch.Add "cnType" slice -}}
+                  {{- range .Site.Data.services -}}
+                    {{- $.Scratch.Add "type" .Type }}
+                    {{- $.Scratch.Add "family" .ServiceFamily }}
+                    {{- $.Scratch.Add "cnType" .CustomerNumberType }}
+                  {{- end -}}
+
+                  {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
+                  {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
+                  {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
+
+                </div>
+            </div>
+              <label class="form__label mrxl" for="servicefilter">
+              Service name, service code or request code
+              <input id="servicefilter" type="text" class="form__control mrxs w100p maxw32r"/>
+              </label>
+              <button class="btn-link--dark" id="clearfilters">Clear filters</button>
+            </div>
+
+          </div>
+        </div>
+        <table id="servicetable">
           <thead>
             <tr>
               <th rowspan="2">Service</th>
@@ -60,13 +84,13 @@
           {{- range .Site.Data.services -}}
             <tr>
               <th scope="row" class="lh-tight">
-                {{ .ServiceName }}<br>
-                <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn">{{ .Type }}</span><br>{{ end }}
-                {{ if ne .serviceFamily "-" }}Family: <span class="fwn">{{ .ServiceFamily }}</span>{{ end }}
+                <span data-filter="name">{{ .ServiceName }}</span><br>
+                <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>{{ end }}
+                {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
               </th>
-              <td>{{ .CustomerNumberType }}</span></td>
-              <td>{{ .ServiceCode }}</td>
-              <td class="ofw-anywhere"><code>{{ .RequestCode }}</code></td>
+              <td data-filer="cntype">{{ .CustomerNumberType }}</span></td>
+              <td data-filter="servcode">{{ .ServiceCode }}</td>
+              <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
               <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
                 data-mybicon="mybicon-check"
                 data-mybicon-class="icon-ui--green-dark mrs"
@@ -117,7 +141,7 @@
       </section>
     </article>
   </main>
+  {{ partial "footer.html" . }}
   <div class="dev-obfuscator" data-drawer data-drawer-event></div>
 </div>
-{{ partial "footer.html" . }}
 {{- end -}}

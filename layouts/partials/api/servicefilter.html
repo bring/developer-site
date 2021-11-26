@@ -1,0 +1,9 @@
+{{ $filter := .filter }}
+<fieldset class="flex-dir-col mbm mlm" id="{{ $filter }}" hidden>
+  {{- range uniq .scratcher }}
+  {{ if and (ne . "-") (ne . "") }}
+    <label class="mrm">
+    <input type="checkbox" value="{{ . }}" data-check data-filter="{{ $filter }}"/> {{ . }}</label>
+    {{ end }}
+  {{- end -}}
+</fieldset>
