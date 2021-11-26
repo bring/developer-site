@@ -25,8 +25,16 @@ tr {
 
 thead tr {
   vertical-align: bottom;
-  border-bottom: 2px solid var(--gray-86);
+  border-bottom: 1px solid var(--gray-86);
   padding: 0.7em 1.4em 0.3em 0.4em;
+}
+
+thead tr:last-of-type {
+  border-bottom-width: 2px;
+}
+
+thead tr + tr th {
+  padding-top: 0.25em;
 }
 
 .bg-green1 tr {
