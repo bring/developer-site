@@ -120,13 +120,3 @@ ol {
 .icon-ui--green-dark {
   fill: var(--green-dark);
 }
-
-.btn-link--tag {
-  color: hsl(212, 100%, 43%);
-  font-size: 0.9em;
-}
-
-.btn-link--tag:hover,
-.btn-link--tag:focus {
-  background-color: hsl(0, 0%, 90%);
-}
