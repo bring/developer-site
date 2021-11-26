@@ -30,7 +30,8 @@
   margin-bottom: 0.6em;
 }
 
-.dev-docscontent a {
+.dev-docscontent p > a:not(.btn-link--dark),
+.dev-docscontent li > a:not(.dev-codetabs__link) {
   text-decoration: underline;
 }
 
