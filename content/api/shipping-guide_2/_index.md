@@ -148,6 +148,9 @@ documentation:
                                       <ns2:SortOrder>11</ns2:SortOrder>
                                       <ns2:MainDisplayCategory>Pakke</ns2:MainDisplayCategory>
                                       <ns2:SubDisplayCategory>Til private</ns2:SubDisplayCategory>
+                                      <ns2:Trackable>false</ns2:Trackable>
+                                      <ns2:Logo>BRING</ns2:Logo>
+                                      <ns2:LogoUrl>https://www.mybring.com/shipping-guide/assets/img/Bring_logo.svg</ns2:LogoUrl>
                                       <ns2:DisplayName>Klimanøytral Servicepakke</ns2:DisplayName>
                                       <ns2:ProductName>Klimanøytral Servicepakke</ns2:ProductName>
                                       <ns2:DescriptionText>Pakken kan spores og utleveres på ditt lokale hentested.</ns2:DescriptionText>
@@ -190,6 +193,9 @@ documentation:
                                       <ns2:SortOrder>41</ns2:SortOrder>
                                       <ns2:MainDisplayCategory>Pakke</ns2:MainDisplayCategory>
                                       <ns2:SubDisplayCategory>Til private</ns2:SubDisplayCategory>
+                                      <ns2:Trackable>false</ns2:Trackable>
+                                      <ns2:Logo>BRING</ns2:Logo>
+                                      <ns2:LogoUrl>https://www.mybring.com/shipping-guide/assets/img/Bring_logo.svg</ns2:LogoUrl>    
                                       <ns2:DisplayName>På Døren</ns2:DisplayName>
                                       <ns2:ProductName>På Døren</ns2:ProductName>
                                       <ns2:DescriptionText>Pakken kan spores og leveres hjem til deg mellom kl. 17-21. Sjåføren ringer 30-60 min før ankomst.</ns2:DescriptionText>
