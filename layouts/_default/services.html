@@ -88,7 +88,7 @@
                 <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>{{ end }}
                 {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
               </th>
-              <td data-filer="cntype">{{ .CustomerNumberType }}</span></td>
+              <td data-filter="cntype">{{ .CustomerNumberType }}</span></td>
               <td data-filter="servcode">{{ .ServiceCode }}</td>
               <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
               <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
@@ -138,114 +138,7 @@
           </tbody>
         </table>
         <button class="btn btn--white mbxl">Show all services</button>
-        <script>
-          const rows = document.querySelectorAll('#servicetable tbody tr')
-          const filterInput = document.querySelector('#servicefilter')
-          const filterBtns = document.querySelectorAll('[data-filterbtn]')
-          const filterSets = document.querySelectorAll('#filtersets fieldset')
-          const filterChecks = document.querySelectorAll('[data-check]')
-          const clearBtn = document.querySelector('#clearfilters')
-
-          function clearFilters() {
-            const activeBtn = document.querySelector('[data-filterbtn].active')
-            if (activeBtn) {
-              activeBtn.classList.remove('active')
-            }
-            filterSets.forEach((set) => {
-              set.hidden = true
-              set.classList.remove('flex')
-            })
-            filterChecks.forEach((filterCheck) => {
-              filterCheck.checked = false
-            })
-            rows.forEach((row) => {
-              row.hidden = false
-            })
-            filterInput.disabled = false
-            filterInput.value = ""
-          }
-
-          clearBtn.addEventListener('click', function() {
-            clearFilters()
-          })
-
-          filterInput.addEventListener('keyup', function(e) {
-            const query = event.target.value.toLowerCase()
-            rows.forEach((row) => {
-              if (
-                row.querySelector('[data-filter="name"]').textContent.toLowerCase().includes(query) 
-                || row.querySelector('[data-filter="servcode"]').textContent.toLowerCase().includes(query) 
-                || row.querySelector('[data-filter="reqcode"]').textContent.toLowerCase().includes(query)
-              ) {
-                row.hidden = false
-              } else {
-                row.hidden = true
-              }
-            })
-          })
-
-          filterBtns.forEach((filterBtn) => {
-            filterBtn.addEventListener('click', function(e){
-              const filterType = e.target.dataset.filterbtn
-
-              if (e.target.classList.contains('active')) {
-                clearFilters()
-                return
-              }
-
-              clearFilters()
-              e.target.classList.add('active')
-              filterInput.disabled = true
-
-              filterSets.forEach((set) => {
-                if (set.id === filterType) {
-                  if (set.hidden === false) {
-                    set.hidden = true
-                    set.classList.remove('flex')
-                  } else {
-                    set.hidden = false
-                    set.classList.add('flex')
-                  }
-                } else {
-                    set.hidden = true
-                    set.classList.remove('flex')
-                }
-              })
-            })
-          })
-
-          // when a check is clicked
-          // take all the checked within the fieldset and show all that matches
-          // hide everything else
-          // unless nothing is checked, then show everything
-
-          filterChecks.forEach((filterCheck) => {
-            filterCheck.addEventListener('click', function(e) {
-              const query = e.target.value.toLowerCase()
-              const filterType = e.target.dataset.filter
-              const dataFilter = '[data-filter="' + filterType + '"]'
-
-              rows.forEach((row) => {
-                if (row.querySelector(dataFilter).textContent.toLowerCase().includes(query)) {
-                  if (e.target.checked === true) {
-                    row.hidden = false
-                  } else {
-                    row.hidden = true
-                  }
-                } else {
-                  row.hidden = true
-                }
-              })
-
-              // rows.forEach((row) => {
-              //   if (row.querySelector(dataFilter).textContent.toLowerCase().includes(query)) {
-              //     row.hidden = false
-              //   } else {
-              //     row.hidden = true
-              //   }
-              // })
-            })
-          })
+        <script async src="{{ "/js/servicefiltering.js" | relURL }}">
         </script>
       </section>
     </article>
