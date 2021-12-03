@@ -459,17 +459,20 @@ documentation:
 
   - title: Shipment environmental data
     content: |
-      For the following Norwegian domestic and Nordic services it is now possible to get the share of electric and fossil free transportation used during last mile transport leg of shipment:
-      * På døren (PA_DOREN/5600)
+      For the following Norwegian domestic and Nordic parcel services it is now possible to get data on whether electric and fossil free transportation is used during last mile transport leg of shipment:
+
       * Pakke i postkassen med RFID (3570)
       * Pakke i postkassen (3584)
+      * Pakke levert hjem (5600)
+      * På døren (PA_DOREN)
+      * Pakke til bedrift (5000)
+      * Bedriftspakke (BPAKKE_DOR-DOR)
       * Business Parcel (0330)
       * Business Parcel Bulk (0332)
       * Pickup Parcel (0340)
       * Pickup Parcel Bulk (0342)
       * Home Delivery Parcel (0349)
-      * Pakke til bedrift (5000)
-      * Bedriftspakke (BPAKKE_DOR-DOR)
+
 
       To get the environmental data, use the following new fields:
       * SOAP: WithEnvironmentalData
@@ -497,7 +500,7 @@ documentation:
       ```  
       If the transport leg was carried out by electric vehicle, both `electric`and `fossilFree` will be true. If transport leg is carried out with a bio-diesel vehicle alone, `fossilFree` will be `true`, but `electric` will be `false`.
 
-      **NOTE**: The API currently only supports envrionmental data for the `LAST_MILE` leg
+      **NOTE**: The API currently only supports environmental data for the `LAST_MILE` leg.
 
 
   - title: Estimated arrival time for domestic parcels and cargo
