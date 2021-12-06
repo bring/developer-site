@@ -502,7 +502,7 @@ documentation:
             </ns2:TransportLeg>
       </ns2:EnvironmentalData>
       ```  
-      If the transport leg is carried out by electric vehicle, `electric` will contain the percentage share of electric vehicle usage where `1.0 == 100%`. If transport leg is carried out with a mix of bio-diesel and electric vehicles, `fossilFree` will still be `true` if percentages sums up to `1.0`. `electric` and `bio` will contain the percentage share carried out with corresponding vehicles.
+      If the transport leg is carried out by electric vehicle, `electric` will contain the percentage share of electric vehicle usage where `1.0 == 100%`. If transport leg is carried out with a mix of bio-diesel and electric vehicles, `fossilFree` will still be `true` if percentages sums up to `1.0`. `electric` and `bio` will contain the usage percentage share of corresponding vehicles.
 
       **NOTE**: The API currently only supports environmental data for the `LAST_MILE` leg.
 
