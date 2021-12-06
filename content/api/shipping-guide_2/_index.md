@@ -71,6 +71,7 @@ documentation:
       | `WithEstimatedDeliveryTime` | `withEstimatedDeliveryTime` | `estimateddeliverytime` | Extended lead time information, including predicted arrival time at pickup point. Only supported for a limited set of [services](#estimated-arrival-time-for-domestic-parcels-and-cargo). Default `false` |
       | `NumberOfAlternativeDeliveryDates` | `numberOfAlternativeDeliveryDates` | `numberofdeliverydates` | Number of alternative delivery dates to be suggested. Default `0`, maximum `9` |
       | `WithUniqueAlternateDeliveryDates` | `withUniqueAlternateDeliveryDates` | `uniquealternatedeliverydates` | Return [unique alternative delivery dates](#get-unique-expected-delivery-dates). Default `false` |
+      | `WithEnvironmentalData`| `withEnvironmentalData`| `environmentaldata`| Return [environmental data](#shipment-environmental-data) about fossil free and electric transportation used on different transport legs |
       | `Language` | `language` | `language` | Language in which human readable message should be returned. Supported languages are `NO`, `DK`, `SE` and `EN` |
       | `EDI` | `edi` | N/A | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
       | `PostingAtPostoffice` | `postingAtPostoffice` | `postingatpostoffice` | Will the parcel be delivered at a post office when shipped. Default `false` |
@@ -454,6 +455,57 @@ documentation:
       * For net prices requests should include customer number and correct package details
       * Request can include limited number of consignments in each request for quick response.
       * New shipments request can be part of separate request
+                                             
+
+  - title: Shipment environmental data
+    content: |
+      For the following Norwegian domestic and Nordic parcel services it is now possible to get data on whether fossil free (electric and/or bio) transportation is used during last mile transport leg of shipment:
+
+      * Pakke i postkassen med RFID (3570)
+      * Pakke i postkassen (3584)
+      * Pakke levert hjem (5600)
+      * På døren (PA_DOREN)
+      * Pakke til bedrift (5000)
+      * Bedriftspakke (BPAKKE_DOR-DOR)
+      * Business Parcel (0330)
+      * Business Parcel Bulk (0332)
+      * Pickup Parcel (0340)
+      * Pickup Parcel Bulk (0342)
+      * Home Delivery Parcel (0349)
+
+
+      To get the environmental data, use the following new fields:
+      * SOAP: WithEnvironmentalData
+      ```xml
+      <WithEnvironmentalData>true</WithEnvironmentalData>
+      ```
+      * REST GET: environmentaldata
+      ```text
+      environmentaldata=true
+      ```
+      * REST POST: withEnvironmentalData
+      ```json
+      "withEnvironmentalData": true
+      ```
+    
+      The data returned contains a list of transport legs (FIRST_MILE, LINE_HAUL and LAST_MILE), and whether the leg is carried out with fossil free transportation. If environmental data is requested for a non-supported service, or no data is  currently available (temporary error) a **NO_ENVIRONMENTAL_DATA** warning is returned.
+      ```xml
+      <ns2:EnvironmentalData>
+            <ns2:TransportLeg>
+                <ns2:TransportLegType>LAST_MILE</ns2:TransportLegType>               
+                <ns2:FossilFree>true</ns2:FossilFree>
+                <ns2:Description>Pakken leveres fossilfritt til din adresse</ns2:Description>
+                <ns2:Details>
+                    <ns2:Electric>0.6</ns2:Electric>
+                    <ns2:Bio>0.4</ns2:Bio>
+                </ns2:Details>
+            </ns2:TransportLeg>
+      </ns2:EnvironmentalData>
+      ```  
+      If the transport leg is carried out by electric vehicle, `electric` will contain the percentage share of electric vehicle usage where `1.0 == 100%`. If transport leg is carried out with a mix of bio-diesel and electric vehicles, `fossilFree` will still be `true` if percentages sums up to `1.0`. `electric` and `bio` will contain the usage percentage share of corresponding vehicles.
+
+      **NOTE**: The API currently only supports environmental data for the `LAST_MILE` leg.
+
 
   - title: Estimated arrival time for domestic parcels and cargo
     content: |
