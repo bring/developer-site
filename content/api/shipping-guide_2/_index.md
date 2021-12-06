@@ -488,13 +488,16 @@ documentation:
       "withEnvironmentalData": true
       ```
     
-      The data returned contains a list of transport legs (FIRST_MILE, LINE_HAUL and LAST_MILE), and whether the leg is carried out with electric or fossil free transportation. If no data is available a **NO_ENVIRONMENTAL_DATA** warning is returned.
+      The data returned contains a list of transport legs (FIRST_MILE, LINE_HAUL and LAST_MILE), and whether the leg is carried out fossil free transportation. If no data is available a **NO_ENVIRONMENTAL_DATA** warning is returned.
       ```xml
       <ns2:EnvironmentalData>
             <ns2:TransportLeg>
-                <ns2:TransportLegType>LAST_MILE</ns2:TransportLegType>
-                <ns2:Electric>true</ns2:Electric>
+                <ns2:TransportLegType>LAST_MILE</ns2:TransportLegType>               
                 <ns2:FossilFree>true</ns2:FossilFree>
+                <ns2:Description>Forsendelsen leveres fossilfritt til din adresse</ns2:Description>
+                <ns2:Details>
+                    <ns2:Electric>true</ns2:Electric>
+                </ns2:Details>
             </ns2:TransportLeg>
       </ns2:EnvironmentalData>
       ```  
