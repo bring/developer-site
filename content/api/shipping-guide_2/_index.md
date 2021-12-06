@@ -496,12 +496,13 @@ documentation:
                 <ns2:FossilFree>true</ns2:FossilFree>
                 <ns2:Description>Forsendelsen leveres fossilfritt til din adresse</ns2:Description>
                 <ns2:Details>
-                    <ns2:Electric>true</ns2:Electric>
+                    <ns2:Electric>0.6</ns2:Electric>
+                    <ns2:Bio>0.4</ns2:Bio>
                 </ns2:Details>
             </ns2:TransportLeg>
       </ns2:EnvironmentalData>
       ```  
-      If the transport leg was carried out by electric vehicle, both `electric`and `fossilFree` will be true. If transport leg is carried out with a bio-diesel vehicle alone, `fossilFree` will be `true`, but `electric` will be `false`.
+      If the transport leg was carried out by electric vehicle, both `electric` will contain the  percentage share carried out by electric vehicles where `1 == 100%`. If transport leg is carried out with a mix of bio-diesel and electric vehicles, `fossilFree` will still be `true`. `electric` and `bio` will contain the percentage share carried out with corresponding vehicles.
 
       **NOTE**: The API currently only supports environmental data for the `LAST_MILE` leg.
 
