@@ -100,6 +100,9 @@
           </Event>
         </EventSet>
         <AdditionalServicesSet/>
+        <pickupUnitId>122950</pickupUnitId>
+        <pickupUnitName>Spar Dokka</pickupUnitName>
+        <pickupUnitURL>https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950</pickupUnitURL>
       </Package>
     </PackageSet>
     <IsPickupNoticeAvailable>false</IsPickupNoticeAvailable>

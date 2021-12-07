@@ -99,7 +99,10 @@
               "longDescription": "Delivery advising will be sent via sms +4712345678 and/or e-mail"
             }
           ],
-          "requestedPackage": null
+          "requestedPackage": null,
+          "pickupUnitId": "122950",
+          "pickupUnitName": "Spar Dokka",
+          "pickupUnitURL": "https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950"
         }
       ],
       "recipientHandlingAddress": {
