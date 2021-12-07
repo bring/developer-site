@@ -154,13 +154,13 @@ types:
       requestPackage:
         type: requestedPackageType
         required: false
-      pickupUnitId:
+      expectedPickupUnitId:
         type: string
         required: false
-      pickupUnitName:
+      expectedPickupUnitName:
         type: string
         required: false
-      pickupUnitURL:
+      expectedPickupUnitURL:
         type: string
         required: false
   Event:
@@ -397,6 +397,10 @@ types:
                 displayName: Package with estimated time of arrival.
                 description: The example below is showing a package with estimated arrival time window of delivery.
                 value: !include examples/successfulWithEta.json
+              expectedPickupPoint:
+                displayName: Package with expected pickup point details.
+                description: The example below is showing a package with expected pickup point details.
+                value: !include examples/successfulWithExpectedPupDetails.json
           application/xml:
             type: Consignment
             examples:

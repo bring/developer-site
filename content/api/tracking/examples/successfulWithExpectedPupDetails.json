@@ -1,0 +1,283 @@
+{
+  "apiVersion": "2",
+  "consignmentSet": [
+    {
+      "consignmentId": "SHIPMENTNUMBER",
+      "previousConsignmentId": "",
+      "packageSet": [
+        {
+          "statusDescription": "",
+          "descriptions": [],
+          "packageNumber": "TESTPARCELWITHEXPUP",
+          "previousPackageNumber": "",
+          "productName": "Pick-up parcel",
+          "productCode": "5800",
+          "productLink": "http://www.bring.no/english/shortcuts/5800",
+          "brand": "POSTEN",
+          "lengthInCm": 31,
+          "widthInCm": 30,
+          "heightInCm": 11,
+          "volumeInDm3": 10.2,
+          "weightInKgs": 0.8,
+          "listPrice": null,
+          "contractPrice": null,
+          "currencyCode": null,
+          "pickupCode": null,
+          "shelfNumber": null,
+          "dateOfReturn": null,
+          "dateOfEstimatedDelivery": null,
+          "estimatedTimeSpanOfDelivery": {
+            "startTime": "11:00",
+            "endTime": "15:00"
+          },
+          "dateOfDelivery": null,
+          "senderName": "POSTEN NORGE AS",
+          "senderAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "",
+            "city": "",
+            "countryCode": "",
+            "country": ""
+          },
+          "senderHandlingAddress": null,
+          "recipientName": null,
+          "recipientAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "2870",
+            "city": "DOKKA",
+            "countryCode": "NO",
+            "country": "Norway"
+          },
+          "recipientHandlingAddress": {
+            "addressLine1": "",
+            "addressLine2": "",
+            "postalCode": "2870",
+            "city": "DOKKA",
+            "countryCode": "NO",
+            "country": "Norway"
+          },
+          "recipientMobileNumber": null,
+          "recipientEmailAddress": null,
+          "eventSet": [
+            {
+              "description": "The shipment has been sorted.",
+              "status": "IN_TRANSIT",
+              "lmEventCode": "W",
+              "lmCauseCode": "",
+              "lmMeasureCode": "",
+              "recipientSignature": {
+                "name": "",
+                "linkToImage": null
+              },
+              "unitId": "032823",
+              "unitInformationUrl": null,
+              "unitType": "BRING",
+              "postalCode": "2309",
+              "city": "HAMAR",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2021-12-03T21:16:55+01:00",
+              "displayDate": "03.12.2021",
+              "displayTime": "21:16",
+              "consignmentEvent": false,
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
+            },
+            {
+              "description": "Testing",
+              "status": "IN_TRANSIT",
+              "lmEventCode": "G",
+              "lmCauseCode": "",
+              "lmMeasureCode": "",
+              "recipientSignature": {
+                "name": "",
+                "linkToImage": null
+              },
+              "unitId": "032823",
+              "unitInformationUrl": null,
+              "unitType": "BRING",
+              "postalCode": "2323",
+              "city": "INGEBERG",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2021-12-03T21:11:04+01:00",
+              "displayDate": "03.12.2021",
+              "displayTime": "21:11",
+              "consignmentEvent": false,
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
+            },
+            {
+              "description": "The shipment is in transit.",
+              "status": "IN_TRANSIT",
+              "lmEventCode": "KO",
+              "lmCauseCode": "",
+              "lmMeasureCode": "",
+              "recipientSignature": {
+                "name": "",
+                "linkToImage": null
+              },
+              "unitId": "101337",
+              "unitInformationUrl": null,
+              "unitType": "BRING",
+              "postalCode": "7093",
+              "city": "TILLER",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2021-12-02T17:42:25+01:00",
+              "displayDate": "02.12.2021",
+              "displayTime": "17:42",
+              "consignmentEvent": false,
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
+            },
+            {
+              "description": "The shipment has been sorted.",
+              "status": "IN_TRANSIT",
+              "lmEventCode": "W",
+              "lmCauseCode": "",
+              "lmMeasureCode": "",
+              "recipientSignature": {
+                "name": "",
+                "linkToImage": null
+              },
+              "unitId": "032845",
+              "unitInformationUrl": null,
+              "unitType": "BRING",
+              "postalCode": "7093",
+              "city": "TILLER",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2021-12-01T20:38:17+01:00",
+              "displayDate": "01.12.2021",
+              "displayTime": "20:38",
+              "consignmentEvent": false,
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
+            },
+            {
+              "description": "The shipment has been handed in at terminal and forwarded.",
+              "status": "IN_TRANSIT",
+              "lmEventCode": "R",
+              "lmCauseCode": "",
+              "lmMeasureCode": "",
+              "recipientSignature": {
+                "name": "",
+                "linkToImage": null
+              },
+              "unitId": "032845",
+              "unitInformationUrl": null,
+              "unitType": "BRING",
+              "postalCode": "7093",
+              "city": "TILLER",
+              "countryCode": "NO",
+              "country": "Norway",
+              "dateIso": "2021-12-01T20:03:19+01:00",
+              "displayDate": "01.12.2021",
+              "displayTime": "20:03",
+              "consignmentEvent": false,
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
+            },
+            {
+              "description": "No shipment has been received yet, only notification of the shipment.",
+              "status": "PRE_NOTIFIED",
+              "lmEventCode": "T",
+              "lmCauseCode": "",
+              "lmMeasureCode": "",
+              "recipientSignature": {
+                "name": "",
+                "linkToImage": null
+              },
+              "unitId": "904030",
+              "unitInformationUrl": null,
+              "unitType": "BRING",
+              "postalCode": "",
+              "city": "",
+              "countryCode": "",
+              "country": "",
+              "dateIso": "2021-12-01T17:57:06+01:00",
+              "displayDate": "01.12.2021",
+              "displayTime": "17:57",
+              "consignmentEvent": false,
+              "insignificant": false,
+              "gpsXCoordinate": "",
+              "gpsYCoordinate": "",
+              "gpsMapUrl": ""
+            }
+          ],
+          "additionalServiceSet": [
+            {
+              "id": "1036",
+              "description": "Optional PickUp Point",
+              "amount": "",
+              "currencyCode": "",
+              "longDescription": "The shipment will be delivered to requested PickUp Point"
+            }
+          ],
+          "requestedPackage": null,
+          "thirdPartyMobileNumber": "",
+          "pickupUnitId": "122950",
+          "pickupUnitName": "Spar Dokka",
+          "pickupUnitURL": "https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950"
+        }
+      ],
+      "recipientName": null,
+      "recipientAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "2870",
+        "city": "DOKKA",
+        "countryCode": "NO",
+        "country": "Norway"
+      },
+      "recipientHandlingAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "2870",
+        "city": "DOKKA",
+        "countryCode": "NO",
+        "country": "Norway"
+      },
+      "senderReference": "",
+      "senderCustomerNumber": "",
+      "senderCustomerMasterNumber": "",
+      "senderName": "POSTEN NORGE AS",
+      "senderAddress": {
+        "addressLine1": "",
+        "addressLine2": "",
+        "postalCode": "7038",
+        "city": "",
+        "countryCode": "",
+        "country": ""
+      },
+      "senderHandlingAddress": null,
+      "senderCustomerType": "",
+      "recipientCustomerNumber": "",
+      "recipientCustomerMasterNumber": "",
+      "recipientCustomerType": "",
+      "totalListPrice": null,
+      "totalContractPrice": null,
+      "listPricePackageCount": null,
+      "contractPricePackageCount": null,
+      "currencyCode": null,
+      "consignmentActionSet": [],
+      "senderLogo": "",
+      "totalWeightInKgs": 0.8,
+      "totalVolumeInDm3": 10.2,
+      "isPickupNoticeAvailable": false
+    }
+  ]
+}
