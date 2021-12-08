@@ -235,9 +235,9 @@ This XML file does not appear to have any style information associated with it. 
           </AdditionalService>
         </AdditionalServicesSet>
         <ThirdPartyMobileNumber/>
-        <pickupUnitId>122950</pickupUnitId>
-        <pickupUnitName>Spar Dokka</pickupUnitName>
-        <pickupUnitURL>https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950</pickupUnitURL>
+        <expectedPickupUnitId>122950</expectedPickupUnitId>
+        <expectedPickupUnitName>Spar Dokka</expectedPickupUnitName>
+        <expectedPickupUnitURL>https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950</expectedPickupUnitURL>
       </Package>
     </PackageSet>
     <IsPickupNoticeAvailable>false</IsPickupNoticeAvailable>

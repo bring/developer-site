@@ -229,9 +229,9 @@
           ],
           "requestedPackage": null,
           "thirdPartyMobileNumber": "",
-          "pickupUnitId": "122950",
-          "pickupUnitName": "Spar Dokka",
-          "pickupUnitURL": "https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950"
+          "expectedPickupUnitId": "122950",
+          "expectedPickupUnitName": "Spar Dokka",
+          "expectedPickupUnitURL": "https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950"
         }
       ],
       "recipientName": null,
