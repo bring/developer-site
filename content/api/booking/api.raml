@@ -275,7 +275,7 @@ baseUri: https://api.bring.com/booking/api
             description: Specify shipper or consignee reference. This parameter can be maximum 35 character long.
             type: string
         additionalAddressInfo:
-            description: Pickup instruction and delivery instruction for use on labels (and waybills) for the OIL_EXPRESS, CARGO (Norway and international), EXPRESS_INTERNATIONAL, COURIER and BUSINESS_PARCEL services. This parameter can be maximum 70 character long.
+            description: Pickup instruction and delivery instruction for use on labels (and waybills) for the OIL_EXPRESS, CARGO (Norway and international), EXPRESS_INTERNATIONAL, COURIER services. In addition, BUSINESS_PARCEL (5000) and EXPRESS_NEXT_DAY (4850) under the PARCEL_NORWAY service family support this field. This parameter can be maximum 70 character long.
             type: string
             required: false
         vatNumber:
