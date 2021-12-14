@@ -10,41 +10,45 @@ menu:
     parent: book
 weight: 23
 
-documentation:
-  - title: Introduction
-    content: |
-      The modify delivery api is used to modify a shipment currently on its way.
-      Below are the various modifications (which will be API calls) supported:
-        - Stop shipment.
-        - Change cash on deivery.
-        - Change Address
+introduction:
+  The Modify Delivery API can be used to modify shipments that currently are on
+  their way to the recipient. Shipments can either be stopped and returned to
+  the sender, or they can be rerouted to a new delivery address. It is also
+  possible to change the cash on delivery amount. At the moment, Parcel Norway
+  domestic services (with the exception of Pakke i postkassen and return
+  services) are supported.
 
+information:
   - title: Authentication
     content: |
       To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-  - title: Common Criteria
+  - title: Formats
     content: |
-      To successfully modify a delivery, the shipment must have both sender and recipient address located in Norway. Additionally, any of the following events should not be present on the shipment:
+      REST XML/JSON over HTTP.
+
+documentation:
+  - title: Common criteria
+    content: |
+      The shipment must have both sender and recipient address located in Norway. Additionally, any of the following events should not already be present on the shipment:
         - Damaged
         - Deviation
         - Returned
         - Delivered
         - Lost
         - Partly delivered
-        - Stop Shipment
+        - Stop shipment
 
-  - title: Service overview
+  - title: Supported services
     content: |
-      The table shows currently supported services and the corresponding usage for modify delivery APIs.
-      <table style = "width 100%">
+      <table>
         <thead>
          <tr>
-           <th style="text-align: left">Service</th>
-           <th style="text-align: left">Service code</th>
-           <th style="text-align: left">Stop shipment</th>
-           <th style="text-align: left">Change COD</th>
-           <th style="text-align: left">Change Address</th>
+           <th>Service</th>
+           <th>Service code</th>
+           <th>Stop shipment</th>
+           <th>Change COD</th>
+           <th>Change Address</th>
          </tr>
         </thead>
         <tbody>
@@ -118,7 +122,6 @@ documentation:
              <td>Yes</td>
              <td>Yes</td>
           </tr>
-
         </tbody>
       </table>
 ---
