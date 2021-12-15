@@ -102,11 +102,11 @@ td.indentcell {
 }
 
 .cutoff-overlay {
-  margin-top: -14rem;
-  padding-top: 6rem;
+  height: 10rem;
+  margin-top: -12rem;
+  padding-top: 5rem;
   position: relative;
   z-index: 2;
-  height: 14rem;
   background: rgb(255, 255, 255);
   background: linear-gradient(
     0deg,
