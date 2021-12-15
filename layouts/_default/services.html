@@ -17,131 +17,135 @@
           <span class="db text-title mts">{{ . }}</span>
         {{- end -}}
       </h1>
+      {{ range .Params.tables }}
       <section class="dev-docscontent__section">
         <div class="flex flex-wrap align-ic mbl">
-          <h2 class="dev-anchored mrl" id="sg-and-booking" >Shipping Guide and Booking APIs</h2>
-          <a href="#" class="btn-link--dark">Download spreadsheet</a>
+          <h2 class="dev-anchored mrl" id="{{ .title|urlize }}" >{{ .title }}</h2>
+          <a href="#samefile" class="btn-link--dark">Download spreadsheet</a>
         </div>
-        <div class="flex flex-wrap align-ifs mbs">
-          <div class="bg-gray2 pal pbm rad-a2px">
-            <div class="flex flex-wrap align-ifs">
-              <div class="mrl">
-                <p class="form__label">Filter by</p>
-                <div class="btngroup">
-                  <button class="btn btn--white" data-filterbtn="type">Service type</button>
-                  <button class="btn btn--white" data-filterbtn="family">Service family</button>
-                  <button class="btn btn--white" data-filterbtn="cntype">Customer number type</button>
-                </div>
-                <div id="filtersets">
+        {{ if in .title "Booking" }}
+          <div class="flex flex-wrap align-ifs mbs">
+            <div class="bg-gray2 pal pbm rad-a2px">
+              <div class="flex flex-wrap align-ifs">
+                <div class="mrl">
+                  <p class="form__label">Filter by</p>
+                  <div class="btngroup">
+                    <button class="btn btn--white" data-filterbtn="type">Service type</button>
+                    <button class="btn btn--white" data-filterbtn="family">Service family</button>
+                    <button class="btn btn--white" data-filterbtn="cntype">Customer number type</button>
+                  </div>
+                  <div id="filtersets">
 
-                  {{- $.Scratch.Add "type" slice -}}
-                  {{- $.Scratch.Add "family" slice -}}
-                  {{- $.Scratch.Add "cnType" slice -}}
-                  {{- range .Site.Data.services -}}
-                    {{- $.Scratch.Add "type" .Type }}
-                    {{- $.Scratch.Add "family" .ServiceFamily }}
-                    {{- $.Scratch.Add "cnType" .CustomerNumberType }}
-                  {{- end -}}
+                    {{- $.Scratch.Add "type" slice -}}
+                    {{- $.Scratch.Add "family" slice -}}
+                    {{- $.Scratch.Add "cnType" slice -}}
+                    {{- range .Site.Data.services -}}
+                      {{- $.Scratch.Add "type" .Type }}
+                      {{- $.Scratch.Add "family" .ServiceFamily }}
+                      {{- $.Scratch.Add "cnType" .CustomerNumberType }}
+                    {{- end -}}
 
-                  {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
-                  {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
-                  {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
 
-                </div>
+                  </div>
+              </div>
+                <label class="form__label mrxl" for="servicefilter">
+                Service name, service code or request code
+                <input id="servicefilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                </label>
+                <button class="btn-link--dark" id="clearfilters">Clear filters</button>
+              </div>
+
             </div>
-              <label class="form__label mrxl" for="servicefilter">
-              Service name, service code or request code
-              <input id="servicefilter" type="text" class="form__control mrxs w100p maxw32r"/>
-              </label>
-              <button class="btn-link--dark" id="clearfilters">Clear filters</button>
-            </div>
-
           </div>
-        </div>
-        <table id="servicetable">
-          <thead>
-            <tr>
-              <th rowspan="2">Service</th>
-              <th rowspan="2">Customer number type</th>
-              <th colspan="2">Codes</th>
-              <th rowspan="2">Return</th>
-              <th rowspan="2">APIs</th>
-              <th rowspan="2">Required setup</th>
-              <th rowspan="2">Prices</th>
-              <th rowspan="2">Lead time</th>
-              <th colspan="3">Countries</th>
-            </tr>
-            <tr>
-              <th>Service</th>
-              <th>Request</th>
-              <th>Sender</th>
-              <th>Destination</th>
-              <th>Domestic</th>
-            </tr>
-          </thead>
-          <tbody>
-          {{- range .Site.Data.services -}}
-            <tr>
-              <th scope="row" class="lh-tight">
-                <span data-filter="name">{{ .ServiceName }}</span><br>
-                <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>{{ end }}
-                {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
-              </th>
-              <td data-filter="cntype">{{ .CustomerNumberType }}</span></td>
-              <td data-filter="servcode">{{ .ServiceCode }}</td>
-              <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
-              <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
-                data-mybicon="mybicon-check"
-                data-mybicon-class="icon-ui--green-dark mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
-                data-mybicon-title="Yes"
-              ></span>{{else}}
-              <span
-                data-mybicon="mybicon-cross"
-                data-mybicon-class="icon-ui--lightgray mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
-                data-mybicon-title="No"
-              ></span>
-              {{ end }}</td>
-              <td>
-                {{if eq .Booking "Yes"}}<span class="mb-badge mrs">Booking</span><br>{{ end }}
-                {{ if eq .ShippingGuide "Yes" }}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{ end }}
-              </td>
-              <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
-              <td>
-                {{ if eq .ListPrice "Yes" }}<span class="mb-badge mrs">List</span><br>{{end}}
-                {{ if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{end}}
-              </td>
-              <td class="mb-table__cell--icon tc">{{ if eq .LeadTime "Yes" }}<span
-                data-mybicon="mybicon-check"
-                data-mybicon-class="icon-ui--green-dark mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
-                data-mybicon-title="Yes"
-              ></span>{{else}}
-              <span
-                data-mybicon="mybicon-cross"
-                data-mybicon-class="icon-ui--lightgray mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
-                data-mybicon-title="No"
-              ></span>
-              {{ end }}</td>
-              <td class="maxw16r">{{ if ne .SenderCountries "-" }}{{ .SenderCountries }}{{ end }}</td>
-              <td class="maxw16r">{{ if ne .Destination "-" }}{{ .Destination }}{{ end }}</td>
-              <td class="maxw16r">{{ if ne .DomesticAllowed "-" }}{{ .DomesticAllowed }}{{ end }}</td>
-              {{- end -}}
-            </tr>
-          </tbody>
-        </table>
-        <div class="cutoff-overlay" id="cutoff">
-          <button class="btn btn--gray w100p">Show all services</button>
-        </div>
-        <script async src="{{ "/js/servicefiltering.js" | relURL }}">
-        </script>
+          <table id="servicetable">
+            <thead>
+              <tr>
+                <th rowspan="2">Service</th>
+                <th rowspan="2">Customer number type</th>
+                <th colspan="2">Codes</th>
+                <th rowspan="2">Return</th>
+                <th rowspan="2">APIs</th>
+                <th rowspan="2">Required setup</th>
+                <th rowspan="2">Prices</th>
+                <th rowspan="2">Lead time</th>
+                <th colspan="3">Countries</th>
+              </tr>
+              <tr>
+                <th>Service</th>
+                <th>Request</th>
+                <th>Sender</th>
+                <th>Destination</th>
+                <th>Domestic</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{- range index $.Site.Data .data -}}
+              <tr>
+                <th scope="row" class="lh-tight">
+                  <span data-filter="name">{{ .ServiceName }}</span><br>
+                  <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>{{ end }}
+                  {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
+                </th>
+                <td data-filter="cntype">{{ .CustomerNumberType }}</span></td>
+                <td data-filter="servcode">{{ .ServiceCode }}</td>
+                <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
+                <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
+                  data-mybicon="mybicon-check"
+                  data-mybicon-class="icon-ui--green-dark mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="Yes"
+                ></span>{{else}}
+                <span
+                  data-mybicon="mybicon-cross"
+                  data-mybicon-class="icon-ui--lightgray mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="No"
+                ></span>
+                {{ end }}</td>
+                <td>
+                  {{if eq .Booking "Yes"}}<span class="mb-badge mrs">Booking</span><br>{{ end }}
+                  {{ if eq .ShippingGuide "Yes" }}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{ end }}
+                </td>
+                <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
+                <td>
+                  {{ if eq .ListPrice "Yes" }}<span class="mb-badge mrs">List</span><br>{{end}}
+                  {{ if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{end}}
+                </td>
+                <td class="mb-table__cell--icon tc">{{ if eq .LeadTime "Yes" }}<span
+                  data-mybicon="mybicon-check"
+                  data-mybicon-class="icon-ui--green-dark mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="Yes"
+                ></span>{{else}}
+                <span
+                  data-mybicon="mybicon-cross"
+                  data-mybicon-class="icon-ui--lightgray mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="No"
+                ></span>
+                {{ end }}</td>
+                <td class="maxw16r">{{ if ne .SenderCountries "-" }}{{ .SenderCountries }}{{ end }}</td>
+                <td class="maxw16r">{{ if ne .Destination "-" }}{{ .Destination }}{{ end }}</td>
+                <td class="maxw16r">{{ if ne .DomesticAllowed "-" }}{{ .DomesticAllowed }}{{ end }}</td>
+                {{- end -}}
+              </tr>
+            </tbody>
+          </table>
+          <div class="cutoff-overlay" id="cutoff">
+            <button class="btn btn--gray w100p">Show all services</button>
+          </div>
+          <script async src="{{ "/js/servicefiltering.js" | relURL }}">
+          </script>
+        {{ end }}
       </section>
+      {{ end }}
       {{- .Content -}}
     </article>
   </main>

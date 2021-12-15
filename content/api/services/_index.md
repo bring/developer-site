@@ -7,4 +7,7 @@ menu:
   api:
     title: Service portfolio
 weight: 3
+tables:
+  - title: Booking and Shipping Guide
+    data: services-bsg
 ---
