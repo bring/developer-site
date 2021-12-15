@@ -18,9 +18,8 @@
         {{- end -}}
       </h1>
       <section class="dev-docscontent__section">
-        {{- .Content -}}
         <div class="flex flex-wrap align-ic mbl">
-          <h2 class="mrl">Shipping Guide and Booking APIs</h2>
+          <h2 class="dev-anchored mrl" id="sg-and-booking" >Shipping Guide and Booking APIs</h2>
           <a href="#" class="btn-link--dark">Download spreadsheet</a>
         </div>
         <div class="flex flex-wrap align-ifs mbs">
@@ -137,10 +136,13 @@
             </tr>
           </tbody>
         </table>
-        <button class="btn btn--white mbxl">Show all services</button>
+        <div class="cutoff-overlay" id="cutoff">
+          <button class="btn btn--green">Show all services</button>
+        </div>
         <script async src="{{ "/js/servicefiltering.js" | relURL }}">
         </script>
       </section>
+      {{- .Content -}}
     </article>
   </main>
   {{ partial "footer.html" . }}

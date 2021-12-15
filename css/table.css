@@ -100,3 +100,17 @@ td.indentcell {
 .fancy-dl dt {
   margin-top: 1rem;
 }
+
+.cutoff-overlay {
+  margin-top: -14rem;
+  padding-top: 6rem;
+  position: relative;
+  z-index: 2;
+  height: 14rem;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}

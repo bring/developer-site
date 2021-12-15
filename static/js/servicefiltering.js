@@ -4,8 +4,11 @@ const filterBtns = document.querySelectorAll("[data-filterbtn]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
 const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
+const cutoff = document.querySelector("#cutoff")
+const cutoffBtn = cutoff.querySelector("button")
 
 function clearFilters() {
+  hideCutoffs()
   const activeBtn = document.querySelector("[data-filterbtn].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -28,8 +31,27 @@ clearBtn.addEventListener("click", function () {
   clearFilters()
 })
 
+cutoffBtn.addEventListener("click", function () {
+  clearFilters()
+})
+
+// Initial cutoff
+function tableCutoff() {
+  rows.forEach((row, i) => {
+    if (i > 7) {
+      row.hidden = true
+    }
+  })
+}
+
+// Hide cutoff elements
+function hideCutoffs() {
+  cutoff.hidden = true
+}
+
 // Input filter
 filterInput.addEventListener("keyup", function (e) {
+  hideCutoffs()
   const query = event.target.value.toLowerCase()
   rows.forEach((row) => {
     if (
@@ -123,4 +145,8 @@ filterBtns.forEach((filterBtn) => {
       })
     })
   })
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+  tableCutoff()
 })
