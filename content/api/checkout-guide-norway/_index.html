@@ -36,7 +36,17 @@ aliases:
       <a href="../shipping-guide_2">Shipping Guide</a> and
       <a href="../pickup-point">Pickup Point</a> APIs.
     </p>
-    <div id="posten-checkout-widget"></div>
+    <div
+      id="widget-container"
+      hidden
+      class="flex-wrap-reverse bg-gray1 rad-a2px pam mtl"
+    >
+      <div id="posten-checkout-widget" class="mrm flex-auto maxw32r"></div>
+      <p class="mbm maxw24r text-heading mtm">
+        Use the best practice shipping checkout as a guide when implementing
+        services
+      </p>
+    </div>
   </div>
 </section>
 
@@ -164,9 +174,20 @@ aliases:
     </div>
   </div>
 </section>
-<script async src="https://qa-widget.postenlabs.no/assets/CheckoutWidget.js"></script>
+<script
+  async
+  src="https://qa-widget.postenlabs.no/assets/CheckoutWidget.js"
+></script>
 <script>
   window.addEventListener("load", function () {
-    window.PostenWidget ? window.PostenWidget.mountWithMockData() : null;
+    const wCont = document.querySelector("#widget-container");
+
+    function showWidget() {
+      wCont.classList.add("flex");
+      wCont.hidden = false;
+      window.PostenWidget.mountWithMockData();
+    }
+
+    window.PostenWidget ? showWidget() : null;
   });
 </script>
