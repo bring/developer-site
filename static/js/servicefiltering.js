@@ -146,6 +146,19 @@ filterBtns.forEach((filterBtn) => {
   })
 })
 
+// Toggle help
+var helpBtn = document.querySelector("#help-country")
+var helpTxt = document.querySelector("#info-country")
+function toggleHelp() {
+  if (helpTxt.hidden == true) {
+    helpTxt.hidden = false
+  } else {
+    helpTxt.hidden = true
+  }
+}
+
+helpBtn.addEventListener("click", toggleHelp)
+
 document.addEventListener("DOMContentLoaded", function () {
   tableCutoff()
 })
