@@ -20,7 +20,9 @@
       {{ range .Params.tables }}
       <section class="dev-docscontent__section">
         <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
-        <a href="#samefile" class="btn-link--dark mvm">Download spreadsheet</a>
+        <p class="mtm mbl">
+          <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+        </p>
         {{ if in .title "Booking" }}
           <div class="flex flex-wrap align-ifs mbs">
             <div class="bg-gray2 pal pbm rad-a2px">
