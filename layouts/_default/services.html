@@ -19,10 +19,8 @@
       </h1>
       {{ range .Params.tables }}
       <section class="dev-docscontent__section">
-        <div class="flex flex-wrap align-ic mbl">
-          <h2 class="dev-anchored mrl" id="{{ .title|urlize }}" >{{ .title }}</h2>
-          <a href="#samefile" class="btn-link--dark">Download spreadsheet</a>
-        </div>
+        <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
+        <a href="#samefile" class="btn-link--dark mvm">Download spreadsheet</a>
         {{ if in .title "Booking" }}
           <div class="flex flex-wrap align-ifs mbs">
             <div class="bg-gray2 pal pbm rad-a2px">

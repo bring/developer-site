@@ -1,14 +1,23 @@
+{{- $base := ($.Page.File.LogicalName) -}}
+{{ $paramHeaders := .context.Params.tables }}
+
 {{/* require id tag */}}
 {{- $headers := findRE (printf "<h[2-%s].* id=\"([^\"]\\S*?)\">(.|\n])+?</h[2-%s]>" $.numberOfHeadings $.numberOfHeadings) .context.Content -}}
-
-{{/* at least one header to link to */}}
 {{- $has_headers := ge (len $headers) 1 -}}
-{{- if $has_headers -}}
+
+{{/* must have table params or at least one header to link to */}}
+{{- if or $has_headers $paramHeaders -}}
   <ul class="dev-sidemenu__sublist">
+    {{- range $paramHeaders -}}
+    {{ $anchorId := .title|anchorize }}
+    {{- $href := delimit (slice $base $anchorId) "#" | string -}}
+    <li>
+    <a href="{{ $href }}">{{ .title }}</a>
+    </li>
+    {{- end -}}
     {{- range $index, $header := $headers -}}
       {{ $nextIndex := add $index 1 }}
       {{ $nextHeader := index $headers $nextIndex }}
-      {{- $base := ($.Page.File.LogicalName) -}}
       {{- $anchorId := ($header | plainify | htmlUnescape | anchorize) -}}
       {{- $href := delimit (slice $base $anchorId) "#" | string -}}
 
