@@ -37,7 +37,7 @@
                     {{- $.Scratch.Add "type" slice -}}
                     {{- $.Scratch.Add "family" slice -}}
                     {{- $.Scratch.Add "cnType" slice -}}
-                    {{- range .Site.Data.services -}}
+                    {{- range index $.Site.Data .data -}}
                       {{- $.Scratch.Add "type" .Type }}
                       {{- $.Scratch.Add "family" .ServiceFamily }}
                       {{- $.Scratch.Add "cnType" .CustomerNumberType }}

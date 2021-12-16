@@ -134,7 +134,6 @@ filterBtns.forEach((filterBtn) => {
                 const rTc = row
                   .querySelector(dataFilter)
                   .textContent.toLowerCase()
-                console.log(show, rTc)
                 if (rTc.includes(show)) {
                   row.hidden = false
                 }
