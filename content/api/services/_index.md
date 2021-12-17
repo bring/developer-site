@@ -216,13 +216,14 @@ tables:
   <table class="mbxl">
     <thead>
     <tr>
-      <th>Additional services</th><th>BUSINESS PARCEL<span class="db text-note fwn">(BUSINESS_PARCEL)</span></th>
-      <th>BUSINESS PARCEL RETURN<span class="db text-note fwn">(BUSINESS_PARCEL_RETURN)</span><th>
-      <th>BUSINESS PARCEL RETURN BULK<span class="db text-note fwn">(BUSINESS_PARCEL_RETURN_BULK)</span><th>
-      <th>BUSINESS PARCEL BULK<span class="db text-note fwn">(BUSINESS_PARCEL_BULK)</span><th>
-      <th>EXPRESS NORDIC 0900<span class="db text-note fwn">(EXPRESS_NORDIC_0900)</span><th>
-      <th>EXPRESS NORDIC 0900 BULK<span class="db text-note fwn">(EXPRESS_NORDIC_0900_BULK)</span><th>
-      <th>BUSINESS PALLET<span class="db text-note fwn">(BUSINESS_PALLET)</span><th>
+      <th>Additional services</th>
+      <th>BUSINESS PARCEL<span class="db text-note fwn">(BUSINESS_PARCEL)</span></th>
+      <th>BUSINESS PARCEL RETURN<span class="db text-note fwn">(BUSINESS_PARCEL_RETURN)</span></th>
+      <th>BUSINESS PARCEL RETURN BULK<span class="db text-note fwn">(BUSINESS_PARCEL_RETURN_BULK)</span></th>
+      <th>BUSINESS PARCEL BULK<span class="db text-note fwn">(BUSINESS_PARCEL_BULK)</span></th>
+      <th>EXPRESS NORDIC 0900<span class="db text-note fwn">(EXPRESS_NORDIC_0900)</span></th>
+      <th>EXPRESS NORDIC 0900 BULK<span class="db text-note fwn">(EXPRESS_NORDIC_0900_BULK)</span></th>
+      <th>BUSINESS PALLET<span class="db text-note fwn">(BUSINESS_PALLET)</span></th>
     </tr>
     </thead>
     <tbody>
