@@ -151,6 +151,60 @@
           <script async src="{{ "/js/servicefiltering.js" | relURL }}">
           </script>
         {{ end }}
+
+        {{ if in .title "Reports" }}
+          <table id="services-ir">
+            <thead>
+              <tr>
+                <th>Service family</th>
+                <th>Customer number type</th>
+                <th>APIs</th>
+                <th>Report type</th>
+                <th>Reports name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{- $looper := 0 -}}
+              {{- $fam := "" -}}
+              {{- range index $.Site.Data .data -}}
+                {{- if ne $fam .ServiceFamily -}}
+                  {{- $looper = 0 -}}
+                {{- end -}}
+                {{- $looper = add $looper 1 -}}
+                {{- $.Scratch.SetInMap "famLooper" .ServiceFamily $looper }}
+                {{- $fam = .ServiceFamily -}}
+              {{- end -}}
+              {{- range index $.Site.Data .data -}}
+                {{- if ne $fam .ServiceFamily -}}
+                  <tr>
+                    <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
+                        {{- .ServiceFamily -}}
+                    </th>
+                    <td rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}'>
+                      {{- .CustomerNumberType -}}
+                    </td>
+                    <td>
+                      {{ if eq .Reports "Yes" }}<span class="mb-badge mrs">Reports</span>{{ end }}
+                      {{ if eq .Invoice "Yes" }}<span class="mb-badge ws-nowrap">Invoice</span>{{ end }}
+                    </td>
+                    <td>{{ .ReportType }}</td>
+                    <td>{{ .ReportsName }}</td>
+                  </tr>
+                {{- else -}}
+                    <tr>
+                      <td>
+                        {{ if eq .Reports "Yes"}}<span class="mb-badge mrs">Reports</span>{{ end }}
+                        {{ if eq .Invoice "Yes" }}<span class="mb-badge ws-nowrap">Invoice</span>{{ end }}
+                      </td>
+                      <td>{{ .ReportType }}</td>
+                      <td>{{ .ReportsName }}</td>
+                    </tr>
+                {{- end -}}
+                {{- $fam = .ServiceFamily -}}
+              {{- end -}}
+            </tbody>
+          </table>
+        {{- end -}}
       </section>
       {{ end }}
       {{- .Content -}}
