@@ -10,40 +10,23 @@ menu:
     parent: track
 weight: 32
 
-documentation:
-  - title: Introduction
-    content: |
+introduction: |
+  The Event Cast API can be used to subscribe to tracking events for a given shipment using webhooks. Event notifications are automatically pushed to the subscriber as they happen, which makes it unnecessary to repeatedly poll statuses calling the Tracking API. You define an endpoint that accepts HTTP POST, and whenever an event is registered for a subscribed shipment, we send it to the URL.
 
-      The Tracking API provides the opportunity to track shipments by reference, package or shipment number. If you are interested in when a shipment is picket up by the recipient
-      or some other event has happened, then it's better to be told when something happens instead of polling the current status.
-
-      The Event Cast API makes you subscribe to such events using Webhooks.
-
-      > A Webhook in web development is a method of augmenting or altering the behaviour of a web page, or web application, with custom callbacks.
-      > These callbacks may be maintained, modified, and managed by third-party users and developers who may not necessarily be affiliated with the originating website or application.
-
-      ### Webhooks in Bring
-      In the context of Bring, this means that whenever an event is registered in Bring for a subscribed parcel and/or shipment,
-      we'll send a HTTP POST to your callback URL that were defined during the Webhook registration.
-
-      Using Webhooks is quite simple, and allows for immediate feedback based on the event that occurred for the subscribed entity.
-      Additionally, it allows integrations of customers to become simpler, as no scheduled mechanism is required to be implemented.
-      You basically just define an endpoint that accepts HTTP POST, and the event details will be sent there - quite amazing 🙌
-
+information:
   - title: Authentication
     content: |
       To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-  - title: API limitations
+  - title: Limitations
     content: |
-      There is some known/deliberate limitations for the API:
+      The API allows a maximum of _50 concurrent requests_ per user. The maximum amount of shipments that can be batch created is limited to _100 per request_. The test endpoint allows a maximum of _10 concurrent requests_ per user.
 
-      | Resource | Limitation description |
-      |:--------|:---------|
-      | All requests | The Webhook API allows a maximum of _50 concurrent requests_ per user |
-      | Batch creation | Whilst creating requests for Webhooks is a feature we encurage to use, its maximum amount of parcels and/or shipments is limited to _100 per request_. If you have more than 100 at the time, split to multiple requests using the batch-API |
-      | Webhook testing | The `/api/v1/Webhooks/{WebhookId}/test`-api allows a maximum of _10 concurrent requests_ per user |
+  - title: Formats
+    content: |
+      REST XML/JSON over HTTP.
 
+documentation:
   - title: Events
     content: |
       When registering for a Webhook you can choose between a range of different event groups that you can subscribe for.

@@ -10,24 +10,19 @@ menu:
     parent: om
 weight: 61
 
-documentation:
-  - title: Introduction
-    content: |
-      Order management is an application that serves customers from different business areas to create, track and extract report on order (e.g. Purchase order, Sales order) level.
-      As a customer of Bring, one gets complete overview of status on order level throughout the lifecycle of an order. This can certainly help in achieving better planning and control at customer's end.
+introduction: |
+  Order Management is a solution that lets integrated customers, their suppliers and Bring exchange order level information across the life cycle of customers’ orders. The Order Management API can be used by customers to send a copy of their purchase and sales orders to the solution. Suppliers can use the API to fetch order details, and to create packaging lists with transport details. Bring collects, structures and enriches the order information with transport and event details, and makes it available to the customer.
 
-      A typical usage pattern is that a customer creates order and lets all of its suppliers get the order and order details from Order Management. The suppliers will first check whether a customer is a Order Management customer before creating a packing list with transport information. All events and status changes will go back to the order owner.
-
-      This is a step-by-step guide on how to use the API.
-
-      Order Management has rest interfaces (XML/JSON). Choose the option that fits your needs best (see table below).
-
-      Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
-
+information:
   - title: Authentication
     content: |
       To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
+  - title: Formats
+    content: |
+      REST XML/JSON over HTTP. This API doesn't support JSON for all methods yet. Look in the example section to see which are supported.
+
+documentation:
   - title: Error handling
     content: |
       When using the Order Management, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
