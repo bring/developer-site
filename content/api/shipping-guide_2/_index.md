@@ -13,7 +13,7 @@ aliases:
   - shipping-guide
 
 introduction: |
-  The Shipping Guide API provides available services for a given combination of sender and recipient locations, including estimated delivery times and prices. It also returns logo and human readable service descriptions that can be shown in your checkout. Available services are based on your agreement with Bring (i.e. the customer numbers attached to your user).
+  The Shipping Guide API provides available services for a given combination of sender and recipient locations, including estimated delivery times, prices and environmental data. It also returns logo and human readable service descriptions that can be shown in your checkout. Available services are based on your agreement with Bring (i.e. the customer numbers attached to your user).
 
 information:
   - title: Authentication
