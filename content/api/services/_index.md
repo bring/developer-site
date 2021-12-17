@@ -10,4 +10,6 @@ weight: 3
 tables:
   - title: Booking and Shipping Guide
     data: services-bsg
+  - title: Reports and Invoice
+    data: services-ri
 ---
