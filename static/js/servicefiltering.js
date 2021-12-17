@@ -56,7 +56,7 @@ function tableCutoffBsg() {
 
 function tableCutoffRi() {
   riRows.forEach((row, i) => {
-    if (i > 10) {
+    if (i > 12) {
       row.hidden = true
     }
   })
