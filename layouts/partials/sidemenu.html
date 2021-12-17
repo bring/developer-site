@@ -81,11 +81,13 @@
                 {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
                   <ul class="dev-sidemenu__sublist">
                     {{- range $.Params.documentation -}}
-                      <li>
-                        <a href="#{{ .title | urlize }}">
-                          <span data-hover="{{ .title }}">{{ .title }}</span>
-                        </a>
-                      </li>
+                      {{- with .title -}}
+                        <li>
+                          <a href="#{{ . | urlize }}">
+                            <span data-hover="{{ . }}">{{ . }}</span>
+                          </a>
+                        </li>
+                        {{- end -}}
                     {{- end -}}
 
                     <li>

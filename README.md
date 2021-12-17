@@ -83,12 +83,20 @@ disqus_identifier: api-{foldername} (optional, if you want comments)
 
 # Add alerts or important messages and they appear to the side or above of the main content
 important:
-  - type: [info, warn, error]
+  - type: {info, warn or error}
     title: {Title of message, optional}
     message: |
-      {Content, multiline possible}
+      {Content as markdown}
 
-# Add intros and documentation to appear before the endpoint listing
+# Add intro, information and documentation to appear before the endpoint listing
+introduction: |
+  {Optimally one paragraph about the API and what it does, so the user can figure out if it’s the right one to cover their needs}
+
+information:
+  - title: {Authentication, formats, rate limiting and other information that is somewhat similar across the various APIs}
+    content |
+      {Content as markdown}
+
 documentation:
   - title: {Title of section}
     content: |
@@ -222,9 +230,10 @@ production env
 
 This application is deployed as a azure static web app.
 
-When you create a pr a comment is made on the pr with a url to a custom staging site where you
-can watch what the final deployed site will look like. When you merge the pr to master, it will also be deployed
-to production.
+When you create a pr a comment is made on the pr with a url to a custom staging
+site where you can watch what the final deployed site will look like. When you
+merge the pr to master, it will also be deployed to production.
 
-To work locally you can either build the site and open it in a browser, or you 
-can use azures [tooling](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)
+To work locally you can either build the site and open it in a browser, or you
+can use azures
+[tooling](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)

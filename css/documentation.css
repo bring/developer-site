@@ -51,18 +51,42 @@
   display: flex;
   flex-flow: row wrap;
   flex-direction: row-reverse;
+  justify-content: flex-end;
   column-gap: 3rem;
   row-gap: 2rem;
 }
 
 .dev-docscontent__side {
-  flex: 1 1 18rem;
+  flex: 1 1 24rem;
   max-width: 64rem;
 }
 
 .dev-docscontent__main {
-  flex: 1 1 28rem;
+  flex: 2 1 32rem;
   overflow: auto;
+}
+
+.dev-docscontent__info {
+  max-width: 68ch;
+}
+
+.dev-docscontent__info summary {
+  font-size: 1.25rem;
+}
+
+.dev-docscontent__info details p {
+  padding: 0 1rem 1rem;
+  margin-bottom: 0;
+}
+
+summary {
+  padding-left: 0.25em;
+  padding-bottom: .05em;
+  border-radius: 2px;
+}
+
+summary:hover {
+  background-color: hsla(0, 100%, 0%, 0.04);
 }
 
 .dev-docs__menu {

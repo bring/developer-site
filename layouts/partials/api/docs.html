@@ -4,7 +4,7 @@
     {{- $types := .types -}}
     <main 
       id="main"
-      class="dev-docscontent w100p maxw80r {{ replace .title "API" "" | urlize }}"
+      class="dev-docscontent w100p maxw96r {{ replace .title "API" "" | urlize }}"
     >
       <article>
         <h1>{{ .title }}</h1>
@@ -12,7 +12,7 @@
           {{- with $.Params.important -}}
             <div class="dev-docscontent__side">
               {{- range . -}}
-                <div class="message--{{ .type }} pam mbs">
+                <div class="message--{{ .type }} pal mbs">
                   {{- with .title -}}
                     <strong class="db mbxs">{{ . }}</strong>
                   {{- end -}}
@@ -21,15 +21,43 @@
               {{- end -}}
             </div>
           {{- end -}}
-          <div class="dev-docscontent__main">
-            {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
+          <div class="dev-docscontent__main maxw64r">
+            {{- with $.Params.introduction -}}
+              {{- if in (string .) "\n\n" -}}
+              <div class="text-heading fw600">
+                {{- . | markdownify -}}
+              </div>
+              {{- else -}}
+                <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
+              {{- end -}}
+            {{ end -}}
+            {{- with $.Params.information -}}
+              <div class="dev-docscontent__info mvl">
+                {{- range . -}}
+                  <details class="bg-green1 rad-a2px mbxs">
+                    {{- with .title }}
+                      <summary class="pas plm">
+                        {{- . -}}
+                      </summary>
+                    {{- end -}}
+                    {{- if in (string .content) "\n\n" -}}
+                      {{- .content | markdownify -}}
+                    {{- else -}}
+                      <p>{{ .content | markdownify }}</p>
+                    {{- end -}}
+                  </details>
+                {{- end -}}
+              </div>
+            {{- end -}}
             {{- range $.Params.documentation -}}
-              <h2 class="dev-anchored" id="{{ .title | urlize }}">
-                {{- .title -}}
-              </h2>
+              {{- with .title }}
+                <h2 class="dev-anchored" id="{{ . | urlize }}">
+                  {{- . -}}
+                </h2>
+              {{- end -}}
               {{- if in (string .content) "\n\n" -}}
                 {{- .content | markdownify -}}
-                {{- else -}}
+              {{- else -}}
                 <p>{{ .content | markdownify }}</p>
               {{- end -}}
             {{- end -}}

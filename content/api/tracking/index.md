@@ -18,18 +18,28 @@ important:
 
       With reference to the change, the existing field "dateOfEstimatedDelivery" will have the correct information regarding delivery date and therefore, the field "dateOfDelivery" in the open as well as logged in Tracking API versions will be set to Blank from 01.Jan.2021 for backward compatibility and gradually be removed effective from date 01.Mar.2021.
 
-documentation:
-  - title: Introduction
-    content: |
-      The Tracking API provides the opportunity to track shipments by reference, package or shipment number.
-      It is an easy way to display details and the status of shipments.
-      The information available in this API is the same that is publically available from the [Tracking web site](http://tracking.bring.com/).
+introduction: |
+  The Tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to get shipment details and events and make them available for customers. The information available in this API is the same that is publicly available from the [Tracking website](http://tracking.bring.com/).
 
+information:
+  - title: Authentication
+    content: |
+      By using authenticated requests you can get more information such as price, name, address and signatures for proof of delivery. The rate limits are also less strict.
+
+      To make authenticated Tracking API requests, use the endpoint [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/). You also need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+
+  - title: Formats
+    content: |
+      REST XML/JSON/JSONP over HTTP. We follow the [JSON API specification](http://jsonapi.org/) with one
+      exception: we allow media type to be specified as `application/json`
+      instead of `application/vnd.api+json`.
+
+documentation:
   - title: Versioning
     content: |
       Latest Tracking API version: `v2`
 
-      We encourage you to use the latest version of our API all time.  Of course, we keep the previous version for some time so that you will get enough time to convert your application. This API supports versioning by two means.
+      We encourage you to always use the latest version of our API. We keep the previous version for some time so that you will get enough time to convert your application. This API supports versioning by two means.
 
       ### Select version by request-header
       Use the normal URL but add the following request-header:
@@ -51,40 +61,16 @@ documentation:
       | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
       | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
 
-      You can verify that your request were used correctly by certifying that the response contains an element based on the request type:
-
-      | URI request | Response type | Example |
-      |:-------|:--------|:--------|
-      | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
-      | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
-
       #### Example request
       ```
       curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
       ```
 
-  - title: Authentication
-    content: |
-      If you have a Mybring user, you can perform authenticated requests. They have the following benefits:
-      - More information about parcels:
-        - Price
-        - Name
-        - Address
-        - Signatures for proof of delivery
-      - Less strict rate limits
+      ### Verification
+      You can verify that your request was used correctly by certifying that the response contains an element based on the request type:
 
-      To make authenticated Tracking API requests, you will have to use the endpoint [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/). You also need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
-
-  - title: Formats
-    content: |
-      The Tracking API generates the following formats:
-      - XML
-      - JSON
-      - JSONP
-
-  - title: JSON API
-    content: |
-      We follow the [JSON API specification](http://jsonapi.org/) with one
-      exception: we allow media type to be specified as `application/json`
-      instead of `application/vnd.api+json`.
+      | URI request | Response type | Example |
+      |:-------|:--------|:--------|
+      | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
+      | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
 ---
