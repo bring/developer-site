@@ -1,1482 +1,19 @@
 ---
-title: API service list
-layout: api
+title: API service portfolio
+layout: services
 widelayout: true
-notanapi: true
-disqus_identifier: https-developer-bring-com-api-services
 menu:
   api:
-    title: Service list
+    title: Service portfolio
 weight: 3
+tables:
+  - title: Booking and Shipping Guide
+    data: services-bsg
+  - title: Reports and Invoice
+    data: services-ri
 ---
 
-<section class="dev-docscontent__section" id="apiServiceList">
-  <p>
-    All the services available in the
-    <a href="/api/shipping-guide_2">Shipping Guide API</a> and
-    <a href="/api/booking">Booking API</a>
-  </p>
-</section>
-
-<section class="dev-docscontent__section" id="api-services">
-
-  <h2 class="dev-anchored" id="services">Services</h2>
-  <p>
-    The Booking and Shipping Guide API supports the services listed in the tables
-    below. The value within parantheses () in the column "Service code" is used when
-    accessing the service.
-  </p>
-  <p>
-    Note that some services are revised, where some of our services have been given
-    new service names, service codes and pricing models. Read more about revised
-    services <a href="/api/services/revisedservice">here</a>
-  </p>
-
-  <h3 class="dev-anchored" id="outgoing-services">Outgoing services</h3>
-  <table class="productlist">
-    <thead>
-      <tr>
-        <th style="text-align: left">Service</th>
-        <th style="text-align: left">Service code</th>
-        <th style="text-align: left">Service Group</th>
-        <th style="text-align: left">List Price</th>
-        <th style="text-align: left">Agreement Price</th>
-        <th style="text-align: left">Expected Delivery</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Klimanøytral Servicepakke (<a href="/api/services/revisedservice"
-            >Revised</a
-          >)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE" >}}'
-          >
-            <code>SERVICEPAKKE</code>
-          </a>
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>På Døren (<a href="/api/services/revisedservice">Revised</a>)</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN" >}}'
-          >
-            <code>PA_DOREN</code></a
-          >
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=PA_DOREN" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Pakke i postkassen</td>
-        <td>
-          <span style="font-size: 0.9rem"> 3584 </span>
-        </td>
-        <td>Parcels Norway</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Pakke i postkassen med RFID</td>
-        <td>
-          <span style="font-size: 0.9rem">3570</span>
-        </td>
-        <td>Parcels Norway</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>
-          Bedriftspakke (<a href="/api/services/revisedservice">Revised</a>)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR" >}}'
-          >
-            <code>BPAKKE_DOR-DOR</code></a
-          >
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR" >}}'
-          >
-            Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR" >}}'
-          >
-            Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          Bedriftspakke ekspress over natten (<a
-            href="/api/services/revisedservice"
-            >Revised</a
-          >)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09" >}}'
-          >
-            <code>EKSPRESS09</code></a
-          >
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09" >}}'
-          >
-            Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09" >}}'
-          >
-            Yes</a
-          >
-        </td>
-      </tr>
-      <tr>
-        <td>Stykkgods (<a href="/api/services/revisedservice">Revised</a>)</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE" >}}'
-            ><code>CARGO_GROUPAGE </code></a
-          >
-        </td>
-        <td>Cargo Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO_GROUPAGE" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          Stykk- og partigods (<a href="/api/services/revisedservice">Revised</a
-          >)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO" >}}'
-            ><code>CARGO</code></a
-          >
-        </td>
-        <td>Cargo Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=CARGO" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Post<sup>1</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL" >}}'
-          >
-            <code>MAIL</code></a
-          >
-        </td>
-        <td>Mail</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=MAIL" >}}'
-            >Yes
-          </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>PickUp Parcel <sup>2</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL" >}}'
-          >
-            <code>PICKUP_PARCEL</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>PickUp Parcel Bulk<sup>3</sup></td>
-        <td>
-          <code>PICKUP_PARCEL_BULK</code>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>N/A</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Home Delivery Parcel</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}'
-          >
-            <code>HOME_DELIVERY_PARCEL</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Business Parcel</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL" >}}'
-          >
-            <code>BUSINESS_PARCEL</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=HOME_DELIVERY_PARCEL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>Business Parcel Bulk<sup>3</sup></td>
-        <td>
-          <code>BUSINESS_PARCEL_BULK</code>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>N/A</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Express Nordic 09:00</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900" >}}'
-          >
-            <code>EXPRESS_NORDIC_0900</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=EXPRESS_NORDIC_0900" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-
-      <tr>
-        <td>Express Nordic 09:00 Bulk<sup>3</sup></td>
-        <td>
-          <code>EXPRESS_NORDIC_0900_BULK</code>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>N/A</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td>Business Pallet</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET" >}}'
-          >
-            <code>BUSINESS_PALLET</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_PALLET" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Business Pallet (1/2 pall) <sup>4</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET" >}}'
-          >
-            <code>BUSINESS_HALFPALLET</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_HALFPALLET" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-      <tr>
-        <td>Business Pallet (1/4 pall) <sup>4</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET" >}}'
-          >
-            <code>BUSINESS_QUARTERPALLET</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=BUSINESS_QUARTERPALLET" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-      <tr>
-        <td>Courier VIP</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP" >}}'
-            ><code>COURIER_VIP</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_VIP" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Courier 1h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H" >}}'
-            ><code>COURIER_1H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_1H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Courier 2h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H" >}}'
-            ><code>COURIER_2H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_2H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Courier 4h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H" >}}'
-            ><code>COURIER_4H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_4H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Courier 6h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H" >}}'
-            ><code>COURIER_6H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_6H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Bicycle Courier VIP</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP" >}}'
-            ><code>COURIER_BICYCLE_VIP</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_VIP" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-      <tr>
-        <td>Bicycle Courier 1h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}'
-            ><code>COURIER_BICYCLE_1H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Bicycle Courier 2h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H" >}}'
-            ><code>COURIER_BICYCLE_2H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_2H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Bicycle Courier 4h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_4H" >}}'
-            ><code>COURIER_BICYCLE_4H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_1H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Bicycle Courier 6h</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H" >}}'
-            ><code>COURIER_BICYCLE_6H</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_BICYCLE_6H" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Courier Long Distance</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE" >}}'
-            ><code>COURIER_LONG_DISTANCE</code></a
-          >
-        </td>
-        <td>Courier</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11346&amp;topostalcode=11743&amp;fromcountry=SE&amp;tocountry=SE&amp;product=COURIER_LONG_DISTANCE" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Non Standard Courier</td>
-        <td><span style="font-size: 0.9rem">NON_STANDARD_COURIER</span></td>
-        <td>Courier</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>No</td>
-      </tr>
-
-      <tr>
-        <td>Express Same Day <sup>5</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY" >}}'
-          >
-            <code>EXPRESS_NORDIC_SAME_DAY</code>
-          </a>
-        </td>
-        <td>Express</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_NORDIC_SAME_DAY" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Express International 09:00</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900" >}}'
-          >
-            <code>EXPRESS_INTERNATIONAL_0900</code>
-          </a>
-        </td>
-        <td>Express</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_0900" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Express International 12:00</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200" >}}'
-          >
-            <code>EXPRESS_INTERNATIONAL_1200</code></a
-          >
-        </td>
-        <td>Express</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200" >}}'
-            >Yes</a
-          >
-        </td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=2003&amp;topostalcode=11446&amp;fromcountry=NO&amp;tocountry=SE&amp;product=EXPRESS_INTERNATIONAL_1200" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Express International</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL" >}}'
-          >
-            <code>EXPRESS_INTERNATIONAL</code>
-          </a>
-        </td>
-        <td>Express</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_INTERNATIONAL" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Express Economy</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY" >}}'
-          >
-            <code>EXPRESS_ECONOMY</code></a
-          >
-        </td>
-        <td>Express</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=11446&amp;topostalcode=1407&amp;fromcountry=SE&amp;tocountry=NO&amp;product=EXPRESS_ECONOMY" >}}'
-            >Yes</a
-          >
-        </td>
-      </tr>
-      <tr>
-        <td>Home Delivery <sup>6</sup></td>
-        <td><a href="#home-delivery">List of Codes</a></td>
-        <td>Home Delivery</td>
-        <td>No</td>
-        <td>No</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Cargo International</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL" >}}'
-            ><code>CARGO_INTERNATIONAL</code></a
-          >
-        </td>
-        <td>Cargo International</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL" >}}'
-            ><code>Yes</code></a
-          >
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=44000&amp;frompostalcode=0150&amp;topostalcode=80339&amp;fromcountry=NO&amp;tocountry=DE&amp;product=CARGO_INTERNATIONAL" >}}'
-            ><code>Yes</code></a
-          >
-        </td>
-      </tr>
-
-      <tr>
-        <td>Oljeekspressen</td>
-        <td><code>OIL_EXPRESS</code></td>
-        <td>Oil Express</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3 class="dev-anchored" id="return-services">Return services</h3>
-  <table class="productlist">
-    <thead>
-      <tr>
-        <th style="text-align: left">Service</th>
-        <th style="text-align: left">Service code</th>
-        <th style="text-align: left">Service Group</th>
-        <th style="text-align: left">List Price</th>
-        <th style="text-align: left">Agreement Price</th>
-        <th style="text-align: left">Expected Delivery</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          Bedriftspakke returservice (<a href="/api/services/revisedservice"
-            >Revised</a
-          >)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE" >}}'
-          >
-            <code>BPAKKE_DOR-DOR_RETURSERVICE</code>
-          </a>
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=BPAKKE_DOR-DOR_RETURSERVICE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Bedriftspakke ekspress over natten returservice (<a
-            href="/api/services/revisedservice"
-            >Revised</a
-          >)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE" >}}'
-          >
-            <code>EKSPRESS09_RETURSERVICE</code>
-          </a>
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=EKSPRESS09_RETURSERVICE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Servicepakke returservice (<a href="/api/services/revisedservice"
-            >Revised</a
-          >)
-        </td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE" >}}'
-          >
-            <code>SERVICEPAKKE_RETURSERVICE</code>
-          </a>
-        </td>
-        <td>Parcels Norway</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/price.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-        <td>Yes</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;frompostalcode=7600&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=NO&amp;product=SERVICEPAKKE_RETURSERVICE" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Retur pakke i postkassen</td>
-        <td>
-          <span style="font-size: 0.9rem"> 9650 </span>
-        </td>
-        <td>Parcels Norway</td>
-        <td>Yes</td>
-        <td>Yes</td>
-        <td>Yes</td>
-      </tr>
-      <tr>
-        <td>PickUp Parcel Return <sup>7</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL_RETURN" >}}'
-          >
-            <code>PICKUP_PARCEL_RETURN</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>No</td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=PICKUP_PARCEL_RETURN" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>PickUp Parcel Return Bulk <sup>7</sup></td>
-        <td>
-          <code>PICKUP_PARCEL_RETURN_BULK</code>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>N/A</td>
-        <td>No</td>
-        <td>Yes</td>
-      </tr>
-
-      <tr>
-        <td>Business Parcel Return<sup>7</sup></td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL_RETURN" >}}'
-          >
-            <code>BUSINESS_PARCEL_RETURN</code>
-          </a>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>No</td>
-        <td>No</td>
-        <td>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href='{{< baseapiurl au="/shippingguide/v2/products/expectedDelivery.xml?weight=1500&amp;volumeindm3=100&amp;frompostalcode=1068&amp;topostalcode=1407&amp;fromcountry=NO&amp;tocountry=DK&amp;product=BUSINESS_PARCEL_RETURN" >}}'
-          >
-            Yes
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td>Business Parcel Return Bulk <sup>7</sup></td>
-        <td>
-          <code>BUSINESS_PARCEL_RETURN_BULK</code>
-        </td>
-        <td>Parcels Nordic</td>
-        <td>N/A</td>
-        <td>No</td>
-        <td>Yes</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <ol class="text-note maxw48r">
-    <li>
-      From January 1st 2018 the new product code MAIL replaced the old
-      services A-POST and B-POST. Requests using the old service codes A-POST
-      and B-POST will be mapped to the new product code MAIL.
-    </li>
-    <li>
-      For shipments to Denmark, PickUp Parcel must be ordered with the
-      additional service PICKUP_POINT in order to be sent as a low-cost delivery
-      using Bring’s parcel shops or parcel lockers. Otherwise the shipment will
-      be sent as a more expensive home delivery.
-    </li>
-    <li>
-      A bulk agreement is required to order Pickup Parcel Bulk, Business
-      Parcel Bulk and Express Nordic 09:00 Bulk.
-    </li>
-    <li>
-      From 24th of July 2018 CARRYON_BUSINESS_HALFPALLET and
-      CARRYON_BUSINESS_QUARTERPALLET were renamed to BUSINESS_HALFPALLET and
-      BUSINESS_QUARTERPALLET. Requests using the old service code will be mapped
-      to the corresponding new service code.
-    </li>
-    <li>
-      Due to look-up in flight schedules, a request for Express Same Day has
-      longer response time than for other services.
-    </li>
-    <li>
-      Lead time is calculated from the first terminal to the terminal
-      delivering the goods. Local cut-off times are not taken into account, and
-      should therefore be adjusted for.
-    </li>
-    <li>
-      A return agreement is required to order PickUp Parcel Return, Pickup
-      Parcel Return Bulk, Business Parcel Return and Business Parcel Return Bulk
-    </li>
-  </ol>
-
-  <h3 class="dev-anchored" id="available-services-in-booking-api">Available services in Booking API</h3>
-
-  <p>The various services available for each customer type.</p>
-
-  <dl class="fancy-dl">
-    <dt>Bring Parcels, Norway</dt>
-    <dd><code>BPAKKE_DOR-DOR</code></dd>
-    <dd><code>BPAKKE_DOR-DOR_RETURSERVICE</code></dd>
-    <dd><code>BUSINESS_PARCEL</code></dd>
-    <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-    <dd><code>BUSINESS_PALLET</code></dd>
-    <dd><code>BUSINESS_HALFPALLET</code></dd>
-    <dd><code>BUSINESS_QUARTERPALLET</code></dd>
-    <dd><code>EKSPRESS09</code></dd>
-    <dd><code>EKSPRESS09_RETURSERVICE</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
-    <dd><code>HOME_DELIVERY_PARCEL</code></dd>
-    <dd><code>PA_DOREN</code></dd>
-    <dd><code>PICKUP_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL_BULK</code></dd>
-    <dd><code>SERVICEPAKKE</code></dd>
-    <dd><code>SERVICEPAKKE_RETURSERVICE</code></dd>
-
-    <dt>Bring International Parcels</dt>
-    <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-    <dd><code>BUSINESS_PALLET</code></dd>
-    <dd><code>BUSINESS_HALFPALLET</code></dd>
-    <dd><code>BUSINESS_QUARTERPALLET</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
-    <dd><code>HOME_DELIVERY_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL_BULK</code></dd>
-
-    <dt>Bring Parcels, Denmark</dt>
-    <dd><code>BUSINESS_PARCEL</code></dd>
-    <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-    <dd><code>BUSINESS_PALLET</code></dd>
-    <dd><code>BUSINESS_HALFPALLET</code></dd>
-    <dd><code>BUSINESS_QUARTERPALLET</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
-    <dd><code>HOME_DELIVERY_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL_BULK</code></dd>
-
-    <dt>Bring Parcels, Sweden</dt>
-    <dd><code>BUSINESS_PARCEL</code></dd>
-    <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-    <dd><code>BUSINESS_PALLET</code></dd>
-    <dd><code>BUSINESS_HALFPALLET</code></dd>
-    <dd><code>BUSINESS_QUARTERPALLET</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
-    <dd><code>HOME_DELIVERY_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL_BULK</code></dd>
-    <dd><code>3332</code></dd>
-
-    <dt>Bring Parcels, Finland</dt>
-    <dd><code>BUSINESS_PARCEL</code></dd>
-    <dd><code>BUSINESS_PARCEL_BULK</code></dd>
-    <dd><code>BUSINESS_PALLET</code></dd>
-    <dd><code>BUSINESS_HALFPALLET</code></dd>
-    <dd><code>BUSINESS_QUARTERPALLET</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900</code></dd>
-    <dd><code>EXPRESS_NORDIC_0900_BULK</code></dd>
-    <dd><code>HOME_DELIVERY_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL</code></dd>
-    <dd><code>PICKUP_PARCEL_BULK</code></dd>
-
-    <dt>Bring Cargo, Norway</dt>
-    <dd><code>CARGO</code></dd>
-    <dd><code>CARGO_GROUPAGE</code></dd>
-
-    <dt>Bring Cargo International</dt>
-    <dd><code>CARGO_INTERNATIONAL</code></dd>
-
-    <dt>Bring Express, Norway</dt>
-    <dd><code>COURIER_1H</code></dd>
-    <dd><code>COURIER_2H</code></dd>
-    <dd><code>COURIER_4H</code></dd>
-    <dd><code>COURIER_BICYCLE_1H</code></dd>
-    <dd><code>COURIER_BICYCLE_2H</code></dd>
-    <dd><code>COURIER_BICYCLE_4H</code></dd>
-    <dd><code>COURIER_BICYCLE_VIP</code></dd>
-    <dd><code>COURIER_LONG_DISTANCE</code></dd>
-    <dd><code>COURIER_VIP</code></dd>
-    <dd><code>NON_STANDARD_COURIER</code></dd>
-    <dd><code>EXPRESS_ECONOMY</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL_0900</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL_1200</code></dd>
-    <dd><code>EXPRESS_NORDIC_SAME_DAY</code></dd>
-
-    <dt>Bring Express, Denmark</dt>
-    <dd><code>COURIER_1H</code></dd>
-    <dd><code>COURIER_2H</code></dd>
-    <dd><code>COURIER_4H</code></dd>
-    <dd><code>COURIER_6H</code></dd>
-    <dd><code>COURIER_BICYCLE_1H</code></dd>
-    <dd><code>COURIER_BICYCLE_2H</code></dd>
-    <dd><code>COURIER_BICYCLE_4H</code></dd>
-    <dd><code>COURIER_BICYCLE_VIP</code></dd>
-    <dd><code>COURIER_LONG_DISTANCE</code></dd>
-    <dd><code>COURIER_VIP</code></dd>
-    <dd><code>NON_STANDARD_COURIER</code></dd>
-    <dd><code>EXPRESS_ECONOMY</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL_0900</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL_1200</code></dd>
-    <dd><code>EXPRESS_NORDIC_SAME_DAY</code></dd>
-
-    <dt>Bring Express, Sweden</dt>
-    <dd><code>COURIER_1H</code></dd>
-    <dd><code>COURIER_2H</code></dd>
-    <dd><code>COURIER_4H</code></dd>
-    <dd><code>COURIER_6H</code></dd>
-    <dd><code>COURIER_BICYCLE_1H</code></dd>
-    <dd><code>COURIER_BICYCLE_2H</code></dd>
-    <dd><code>COURIER_BICYCLE_4H</code></dd>
-    <dd><code>COURIER_BICYCLE_VIP</code></dd>
-    <dd><code>COURIER_LONG_DISTANCE</code></dd>
-    <dd><code>COURIER_VIP</code></dd>
-    <dd><code>NON_STANDARD_COURIER</code></dd>
-    <dd><code>EXPRESS_ECONOMY</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL_0900</code></dd>
-    <dd><code>EXPRESS_INTERNATIONAL_1200</code></dd>
-    <dd><code>EXPRESS_NORDIC_SAME_DAY</code></dd>
-
-    <dt>Bring Oil Express, Norway</dt>
-    <dd><code>OIL_EXPRESS</code></dd>
-  </dl>
-
-</section>
-
-<section class="dev-docscontent__section" id="vas">
+<section id="vas">
   <h2 class="dev-anchored" id="value-added-services">Value added services</h2>
   <p>
     The Booking and Shipping Guide API supports the value added services listed in the tables
@@ -1501,8 +38,7 @@ weight: 3
     Shipping Guide, others are included (and change) the base package price. See
     column below 'Affects base package price?'.
   </p>
-
-  <p class="mbl measure">
+  <p class="mbxl">
     Make sure you specify the correct value added services for a package when
     querying the Shipping Guide.
     <br /><br />
@@ -1516,21 +52,21 @@ weight: 3
     package price for Servicepakke. As of 2013-01-01 the fee is NOK 4,-
   </p>
   <h3 class="dev-anchored" id="parcel-norway-domestic">Parcel Norway domestic</h3>
-  <table>
+  <table class="mbxl">
     <thead>
     <tr>
       <th>Additional services</th>
-      <th>Business parcel<br><p class="dev-b2bvas__subheader">(5000)</p></th>
-      <th>Home delivery parcel<br><p class="dev-b2bvas__subheader">(5600)</p></th>
-      <th>Pick-up parcel<br><p class="dev-b2bvas__subheader">(5800)</p></th>
-      <th>Express next day<br><p class="dev-b2bvas__subheader">(4850)</p></th>
-      <th>Mailbox parcel with RFID<br><p class="dev-b2bvas__subheader">(3570)</p></th>
-      <th>Mailbox parcel<br><p class="dev-b2bvas__subheader">(3584)</p></th>
+      <th>Business parcel<span class="db text-note fwn">(5000)</span></th>
+      <th>Home delivery parcel<span class="db text-note fwn">(5600)</span></th>
+      <th>Pick-up parcel<span class="db text-note fwn">(5800)</span></th>
+      <th>Express next day<span class="db text-note fwn">(4850)</span></th>
+      <th>Mailbox parcel with RFID<span class="db text-note fwn">(3570)</span></th>
+      <th>Mailbox parcel<span class="db text-note fwn">(3584)</span></th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>DOMESTIC ALLOWED IN</td>
+      <th scope="row">DOMESTIC ALLOWED IN</th>
       <td>NO</td>
       <td>NO</td>
       <td>NO</td>
@@ -1539,7 +75,7 @@ weight: 3
       <td>NO</td>
     </tr>
     <tr>
-      <td>Cash on delivery (POSTOPPKRAV)</td>
+      <th scope="row">Cash on delivery <span class="fwn">(POSTOPPKRAV)</span></th>
       <td></td>
       <td></td>
       <td>X</td>
@@ -1548,7 +84,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>eAdvising (EVARSLING<sup>1</sup>)</td>
+      <th scope="row">eAdvising <span class="fwn">(EVARSLING<sup>1</sup>)</span></th>
       <td></td>
       <td></td>
       <td>X</td>
@@ -1557,7 +93,7 @@ weight: 3
       <td>X</td>
     </tr>
     <tr>
-      <td>Notification by letter (LETTER_NOTIFICATION)</td>
+      <th scope="row">Notification by letter <span class="fwn">(LETTER_NOTIFICATION)</span></th>
       <td></td>
       <td></td>
       <td>X</td>
@@ -1566,7 +102,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Saturday delivery (LORDAGSUTKJORING)</td>
+      <th scope="row">Saturday delivery <span class="fwn">(LORDAGSUTKJORING)</span></th>
       <td></td>
       <td></td>
       <td></td>
@@ -1575,7 +111,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Simplified delivery (SIMPLIFIED_DELIVERY)</td>
+      <th scope="row">Simplified delivery <span class="fwn">(SIMPLIFIED_DELIVERY)</span></th>
       <td>X</td>
       <td>X</td>
       <td></td>
@@ -1584,7 +120,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>ID verification (1133)</td>
+      <th scope="row">ID verification <span class="fwn">(1133)</span></th>
       <td></td>
       <td>X</td>
       <td>X</td>
@@ -1593,7 +129,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Optional pickup point (VALGFRITT_POSTKONTOR)</td>
+      <th scope="row">Optional pickup point <span class="fwn">(VALGFRITT_POSTKONTOR)</span></th>
       <td></td>
       <td></td>
       <td>X</td>
@@ -1602,7 +138,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Individual Verification (1134)</td>
+      <th scope="row">Individual Verification <span class="fwn">(1134)</span></th>
       <td></td>
       <td>X</td>
       <td>X</td>
@@ -1611,7 +147,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Two delivery attempts (1179)</td>
+      <th scope="row">Two delivery attempts <span class="fwn">(1179)</span></th>
       <td>X</td>
       <td>X</td>
       <td></td>
@@ -1620,7 +156,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>One delivery attempt, then pickup point (1178)</td>
+      <th scope="row">One delivery attempt, then pickup point <span class="fwn">(1178)</span></th>
       <td>X</td>
       <td>X</td>
       <td></td>
@@ -1629,7 +165,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Two delivery attempts, then pickup point (1283)</td>
+      <th scope="row">Two delivery attempts, then pickup point <span class="fwn">(1283)</span></th>
       <td>X</td>
       <td>X</td>
       <td></td>
@@ -1638,7 +174,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Bag on door (1081)</td>
+      <th scope="row">Bag on door <span class="fwn">(1081)</span></th>
       <td></td>
       <td></td>
       <td></td>
@@ -1647,7 +183,7 @@ weight: 3
       <td>X</td>
     </tr>
     <tr>
-      <td>Temperature controlled transport (1083)</td>
+      <th scope="row">Temperature controlled transport <span class="fwn">(1083)</span></th>
       <td></td>
       <td></td>
       <td></td>
@@ -1656,7 +192,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Social control (SOSIAL_KONTROLL)</td>
+      <th scope="row">Social control <span class="fwn">(SOSIAL_KONTROLL)</span></th>
       <td></td>
       <td></td>
       <td>X</td>
@@ -1665,7 +201,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Same day delivery (2012<sup>7</sup>)</td>
+      <th scope="row">Same day delivery <span class="fwn">(2012<sup>7</sup>)</span></th>
       <td></td>
       <td>X</td>
       <td></td>
@@ -1677,21 +213,22 @@ weight: 3
   </table>
 
   <h3 class="dev-anchored" id="parcel-sweden-denmark-finland---b2b">Parcel Sweden, Denmark, Finland - B2B</h3>
-  <table>
+  <table class="mbxl">
     <thead>
     <tr>
-      <th>Additional services</th><th>BUSINESS PARCEL<br><p class="dev-b2bvas__subheader">(BUSINESS_PARCEL)</p></th>
-      <th>BUSINESS PARCEL RETURN<br><p class="dev-b2bvas__subheader">(BUSINESS_PARCEL_RETURN)</p></th>
-      <th>BUSINESS PARCEL RETURN BULK<br><p class="dev-b2bvas__subheader">(BUSINESS_PARCEL_RETURN_BULK)</p></th>
-      <th>BUSINESS PARCEL BULK<br><p class="dev-b2bvas__subheader">(BUSINESS_PARCEL_BULK)</p></th>
-      <th>EXPRESS NORDIC 0900<br><p class="dev-b2bvas__subheader">(EXPRESS_NORDIC_0900)</p></th>
-      <th>EXPRESS NORDIC 0900 BULK<br><p class="dev-b2bvas__subheader">(EXPRESS_NORDIC_0900_BULK)</p></th>
-      <th>BUSINESS PALLET<br><p class="dev-b2bvas__subheader">(BUSINESS_PALLET)</p></th>
+      <th>Additional services</th>
+      <th>BUSINESS PARCEL<span class="db text-note fwn">(BUSINESS_PARCEL)</span></th>
+      <th>BUSINESS PARCEL RETURN<span class="db text-note fwn">(BUSINESS_PARCEL_RETURN)</span></th>
+      <th>BUSINESS PARCEL RETURN BULK<span class="db text-note fwn">(BUSINESS_PARCEL_RETURN_BULK)</span></th>
+      <th>BUSINESS PARCEL BULK<span class="db text-note fwn">(BUSINESS_PARCEL_BULK)</span></th>
+      <th>EXPRESS NORDIC 0900<span class="db text-note fwn">(EXPRESS_NORDIC_0900)</span></th>
+      <th>EXPRESS NORDIC 0900 BULK<span class="db text-note fwn">(EXPRESS_NORDIC_0900_BULK)</span></th>
+      <th>BUSINESS PALLET<span class="db text-note fwn">(BUSINESS_PALLET)</span></th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>SENDER COUNTRIES</td>
+      <th scope="row">SENDER COUNTRIES</th>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1701,7 +238,7 @@ weight: 3
       <td>ALL</td>
     </tr>
     <tr>
-      <td>DESTINATION</td>
+      <th scope="row">DESTINATION</th>
       <td>ALL</td>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1711,7 +248,7 @@ weight: 3
       <td>AT, AX, BE, CH, CZ, DE, DK, EE, ES, FI, FO, FR, GB, GL, GR, HU, IE, IS, IT, LT, LU, LV, NL, NO, PL, PT, SE, SI, SK</td>
     </tr>
     <tr>
-      <td>DOMESTIC ALLOWED IN</td>
+      <th scope="row">DOMESTIC ALLOWED IN</th>
       <td>DK, FI, SE</td>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1721,7 +258,7 @@ weight: 3
       <td>DK, FI, SE</td>
     </tr>
     <tr>
-      <td>Cash on delivery (POSTOPPKRAV)</td>
+      <th scope="row">Cash on delivery <span class="fwn">(POSTOPPKRAV)</span></th>
       <td>FO, GL</td>
       <td></td>
       <td></td>
@@ -1731,7 +268,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>eAdvising (EVARSLING<sup>1</sup>)</td>
+      <th scope="row">eAdvising <span class="fwn">(EVARSLING<sup>1</sup>)</span></th>
       <td>DK, FI, NO, SE</td>
       <td></td>
       <td></td>
@@ -1741,7 +278,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>Flex delivery (FLEX_DELIVERY<sup>2</sup>)</td>
+      <th scope="row">Flex delivery <span class="fwn">(FLEX_DELIVERY<sup>2</sup>)</span></th>
       <td>DK, FI, SE</td>
       <td></td>
       <td></td>
@@ -1751,7 +288,7 @@ weight: 3
       <td>DK, FI, SE</td>
     </tr>
     <tr>
-      <td>Delivery indoors (DELIVERY_INDOORS<sup>3</sup>)</td>
+      <th scope="row">Delivery indoors <span class="fwn">(DELIVERY_INDOORS<sup>3</sup>)</span></th>
       <td>DK, SE, Domestic FI</td>
       <td></td>
       <td></td>
@@ -1761,7 +298,7 @@ weight: 3
       <td>DK, FI, SE</td>
     </tr>
     <tr>
-      <td>Telephone notification (PHONENOTIFICATION)</td>
+      <th scope="row">Telephone notification <span class="fwn">(PHONENOTIFICATION)</span></th>
       <td>SE, Domestic FI</td>
       <td></td>
       <td></td>
@@ -1771,7 +308,7 @@ weight: 3
       <td>SE, Domestic FI</td>
     </tr>
     <tr>
-      <td>Insurance (INSURANCE)</td>
+      <th scope="row">Insurance <span class="fwn">(INSURANCE)</span></th>
       <td>ALL<sup>4</sup></td>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1781,7 +318,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Label Free (1288<sup>5</sup>)</td>
+      <th scope="row">Label Free <span class="fwn">(1288<sup>5</sup>)</span></th>
       <td>ALL</td>
       <td>ALL</td>
       <td>ALL</td>
@@ -1791,7 +328,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>ID verification (1133)</td>
+      <th scope="row">ID verification <span class="fwn">(1133)</span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td></td>
@@ -1801,7 +338,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>Signature Required (1280)</td>
+      <th scope="row">Signature Required <span class="fwn">(1280)</span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td></td>
@@ -1811,7 +348,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>Delivery Notification To Sender (1094)</td>
+      <th scope="row">Delivery Notification To Sender <span class="fwn">(1094)</span></th>
       <td>DK, FI, NO, SE</td>
       <td></td>
       <td></td>
@@ -1821,7 +358,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>Individual Verification (1134)</td>
+      <th scope="row">Individual Verification <span class="fwn">(1134)</span></th>
       <td>DK, FI, SE</td>
       <td></td>
       <td></td>
@@ -1831,7 +368,7 @@ weight: 3
       <td>DK, FI, SE</td>
     </tr>
     <tr>
-      <td>Two delivery attempts (1179)</td>
+      <th scope="row">Two delivery attempts <span class="fwn">(1179)</span></th>
       <td>NO</td>
       <td></td>
       <td></td>
@@ -1841,7 +378,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Limited quantities (0003<sup>6</sup>)</td>
+      <th scope="row">Limited quantities <span class="fwn">(0003<sup>6</sup>)</span></th>
       <td>AX, DK, FI, FO, GL, IS, NO, SE</td>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1854,19 +391,20 @@ weight: 3
   </table>
 
   <h3 class="dev-anchored" id="parcel-sweden-denmark-finland---b2c">Parcel Sweden, Denmark, Finland - B2C</h3>
-  <table>
+  <table class="mbxl">
     <thead>
     <tr>
-      <th>Additional services</th><th>PICKUP PARCEL<br><p class="dev-b2bvas__subheader">(PICKUP_PARCEL)</p></th>
-      <th>PICKUP PARCEL BULK<br><p class="dev-b2bvas__subheader">(PICKUP_PARCEL_BULK)</p></th>
-      <th>PICKUP PARCEL RETURN<br><p class="dev-b2bvas__subheader">(PICKUP_PARCEL_RETURN)</p></th>
-      <th>PICKUP PARCEL RETURN BULK<br><p class="dev-b2bvas__subheader">(PICKUP_PARCEL_RETURN_BULK)</p></th>
-      <th>HOME DELIVERY PARCEL<br><p class="dev-b2bvas__subheader">(HOME_DELIVERY_PARCEL)</p></th>
+      <th>Additional services</th>
+      <th>PICKUP PARCEL<span class="db text-note fwn">(PICKUP_PARCEL)</span></th>
+      <th>PICKUP PARCEL BULK<span class="db text-note fwn">(PICKUP_PARCEL_BULK)</span></th>
+      <th>PICKUP PARCEL RETURN<span class="db text-note fwn">(PICKUP_PARCEL_RETURN)</span></th>
+      <th>PICKUP PARCEL RETURN BULK<span class="db text-note fwn">(PICKUP_PARCEL_RETURN_BULK)</span></th>
+      <th>HOME DELIVERY PARCEL<span class="db text-note fwn">(HOME_DELIVERY_PARCEL)</span></th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>SENDER COUNTRIES</td>
+      <th scope="row">SENDER COUNTRIES</th>
       <td>DK, FI, NO, SE</td>
       <td>ALL</td>
       <td>DK, FI, NO, SE</td>
@@ -1874,7 +412,7 @@ weight: 3
       <td>ALL</td>
     </tr>
     <tr>
-      <td>DESTINATION</td>
+      <th scope="row">DESTINATION</th>
       <td>ALL</td>
       <td>DE, DK, EE, FI, FO, GB, IS, NL, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1882,7 +420,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>DOMESTIC ALLOWED IN</td>
+      <th scope="row">DOMESTIC ALLOWED IN</th>
       <td>DK, SE</td>
       <td>SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1890,7 +428,7 @@ weight: 3
       <td>DK, SE</td>
     </tr>
     <tr>
-      <td>Cash on delivery (POSTOPPKRAV)</td>
+      <th scope="row">Cash on delivery <span class="fwn">(POSTOPPKRAV)</span></th>
       <td>FO, GL</td>
       <td>FI, FO, IS, NO</td>
       <td></td>
@@ -1898,7 +436,7 @@ weight: 3
       <td>FI</td>
     </tr>
     <tr>
-      <td>eAdvising (EVARSLING<sup>1</sup>)</td>
+      <th scope="row">eAdvising <span class="fwn">(EVARSLING<sup>1</sup>)</span></th>
       <td>DK, FI, NO, SE</td>
       <td>DK, FI, NO, SE</td>
       <td></td>
@@ -1906,7 +444,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>Flex delivery (FLEX_DELIVERY<sup>2</sup>)</td>
+      <th scope="row">Flex delivery <span class="fwn">(FLEX_DELIVERY<sup>2</sup>)</span></th>
       <td></td>
       <td></td>
       <td></td>
@@ -1914,7 +452,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>Insurance (INSURANCE)</td>
+      <th scope="row">Insurance <span class="fwn">(INSURANCE)</span></th>
       <td>ALL<sup>4</sup></td>
       <td>DE, DK, EE, FI, FO, GB, IS, NL, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1922,7 +460,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>Label Free (1288<sup>5</sup>)</td>
+      <th scope="row">Label Free <span class="fwn">(1288<sup>5</sup>)</span></th>
       <td>ALL</td>
       <td></td>
       <td>ALL</td>
@@ -1930,7 +468,7 @@ weight: 3
       <td>ALL</td>
     </tr>
     <tr>
-      <td>ID verification (1133)</td>
+      <th scope="row">ID verification <span class="fwn">(1133)</span></th>
       <td></td>
       <td>NO</td>
       <td></td>
@@ -1938,7 +476,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>Evening Delivery (EVE_DELIVERY)</td>
+      <th scope="row">Evening Delivery <span class="fwn">(EVE_DELIVERY)</span></th>
       <td></td>
       <td></td>
       <td></td>
@@ -1946,7 +484,7 @@ weight: 3
       <td>DK</td>
     </tr>
     <tr>
-      <td>Signature Required (1280)</td>
+      <th scope="row">Signature Required <span class="fwn">(1280)</span></th>
       <td></td>
       <td></td>
       <td></td>
@@ -1954,7 +492,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>Individual Verification (1134)</td>
+      <th scope="row">Individual Verification <span class="fwn">(1134)</span></th>
       <td>FI</td>
       <td>FI, NO</td>
       <td></td>
@@ -1962,7 +500,7 @@ weight: 3
       <td>DK, FI, NO, SE</td>
     </tr>
     <tr>
-      <td>Limited quantities (0003<sup>6</sup>)</td>
+      <th scope="row">Limited quantities <span class="fwn">(0003<sup>6</sup>)</span></th>
       <td>AX, DK, FI, FO, GL, IS, NO, SE</td>
       <td>DK, FI, FO, IS, NO, SE</td>
       <td>DK, FI, NO, SE</td>
@@ -1973,54 +511,54 @@ weight: 3
   </table>
 
   <h3 class="dev-anchored" id="cargo-norway-domestic">Cargo Norway domestic</h3>
-  <table>
+  <table class="mbxl">
     <thead>
     <tr>
       <th>Additional services</th>
-      <th>Business groupage<br><p class="dev-b2bvas__subheader">(5100)</p></th>
-      <th>Business partload<br><p class="dev-b2bvas__subheader">(5300)</p></th>
-      <th>Business pallet<sup>9</sup><br><p class="dev-b2bvas__subheader">(5400)</p></th>
-      <th>Return business groupage<br><p class="dev-b2bvas__subheader">(9100)</p></th>
+      <th>Business groupage<span class="db text-note fwn">(5100)</span></th>
+      <th>Business partload<span class="db text-note fwn">(5300)</span></th>
+      <th>Business pallet<sup>9</sup><span class="db text-note fwn">(5400)</span></th>
+      <th>Return business groupage<span class="db text-note fwn">(9100)</span></th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>DOMESTIC ALLOWED IN</td>
+      <th scope="row">DOMESTIC ALLOWED IN</th>
       <td>NO</td>
       <td>NO</td>
       <td>NO</td>
       <td>NO</td>
     </tr>
     <tr>
-      <td>Telephone notification (PHONENOTIFICATION)</td>
+      <th scope="row">Telephone notification <span class="fwn">(PHONENOTIFICATION)</span></th>
       <td>X</td>
       <td></td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Simplified delivery (SIMPLIFIED_DELIVERY)</td>
+      <th scope="row">Simplified delivery <span class="fwn">(SIMPLIFIED_DELIVERY)</span></th>
       <td>X</td>
       <td>X</td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Frost free (NON_FREEZE)</td>
+      <th scope="row">Frost free <span class="fwn">(NON_FREEZE)</span></th>
       <td>X</td>
       <td>X</td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Dangerous goods (DANGEROUS_GOODS)</td>
+      <th scope="row">Dangerous goods <span class="fwn">(DANGEROUS_GOODS)</span></th>
       <td>X</td>
       <td>X</td>
       <td>X</td>
       <td></td>
     </tr>
     <tr>
-      <td>Special goods (2142)</td>
+      <th scope="row">Special goods <span class="fwn">(2142)</span></th>
       <td>X</td>
       <td>X</td>
       <td></td>
@@ -2033,19 +571,20 @@ weight: 3
   <table>
     <thead>
     <tr>
-      <th>Additional services</th><th>Home Delivery Indoor<br><p class="dev-b2bvas__subheader">(DOUBLE_INDOOR)</p></th>
-      <th>Home Delivery Curbside<br><p class="dev-b2bvas__subheader">(CURBSIDE)</p></th>
-      <th>Home Delivery Curbside Evening<br><p class="dev-b2bvas__subheader">(CURBSIDE_EVENING)</p></th>
-      <th>Urban Home Delivery<br><p class="dev-b2bvas__subheader">(3332)</p></th>
-      <th>SINGLE INDOOR<sup>8</sup><br><p class="dev-b2bvas__subheader">(SINGLE_INDOOR)</p></th>
-      <th>Home Delivery Return<br><p class="dev-b2bvas__subheader">(HOME_DELIVERY_RETURN)</p></th>
-      <th>Indoor Return<br><p class="dev-b2bvas__subheader">(RETURN_INDOOR)</p></th>
-      <th>Curbside Return<br><p class="dev-b2bvas__subheader">(RETURN_CURBSIDE)</p></th>
+      <th>Additional services</th>
+      <th>Home Delivery Indoor<span class="db text-note fwn">(DOUBLE_INDOOR)</span></th>
+      <th>Home Delivery Curbside<span class="db text-note fwn">(CURBSIDE)</span></th>
+      <th>Home Delivery Curbside Evening<span class="db text-note fwn">(CURBSIDE_EVENING)</span></th>
+      <th>Urban Home Delivery<span class="db text-note fwn">(3332)</span></th>
+      <th>SINGLE INDOOR<sup>8</sup><span class="db text-note fwn">(SINGLE_INDOOR)</span></th>
+      <th>Home Delivery Return<span class="db text-note fwn">(HOME_DELIVERY_RETURN)</span></th>
+      <th>Indoor Return<span class="db text-note fwn">(RETURN_INDOOR)</span></th>
+      <th>Curbside Return<span class="db text-note fwn">(RETURN_CURBSIDE)</span></th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>SENDER COUNTRIES</td>
+      <th scope="row">SENDER COUNTRIES</th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2056,7 +595,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>DESTINATION</td>
+      <th scope="row">DESTINATION</th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2067,7 +606,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>DOMESTIC ALLOWED IN</td>
+      <th scope="row">DOMESTIC ALLOWED IN</th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2078,7 +617,7 @@ weight: 3
       <td>DK, NO, SE</td>
     </tr>
     <tr>
-      <td>Flex delivery (FLEX_DELIVERY<sup>2</sup>)</td>
+      <th scope="row">Flex delivery <span class="fwn">(FLEX_DELIVERY<sup>2</sup>)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td></td>
@@ -2089,7 +628,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>ID verification (1133)</td>
+      <th scope="row">ID verification <span class="fwn">(1133)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2100,7 +639,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>SWAP (SWAP)</td>
+      <th scope="row">SWAP <span class="fwn">(SWAP)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2111,7 +650,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>RECYCLE (RECYCLE)</td>
+      <th scope="row">RECYCLE <span class="fwn">(RECYCLE)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2122,7 +661,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>UNWRAP (UNWRAP)</td>
+      <th scope="row">UNWRAP <span class="fwn">(UNWRAP)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td></td>
@@ -2133,7 +672,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>STANDARD_INSTALLATION (STANDARD_INSTALLATION)</td>
+      <th scope="row">STANDARD_INSTALLATION <span class="fwn">(STANDARD_INSTALLATION)<span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td>DK, NO, SE</td>
@@ -2144,7 +683,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>CUSTOM_INSTALLATION (CUSTOM_INSTALLATION)</td>
+      <th scope="row">CUSTOM_INSTALLATION <span class="fwn">(CUSTOM_INSTALLATION)<span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td>DK, NO, SE</td>
@@ -2155,7 +694,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Signature Required (1280)</td>
+      <th scope="row">Signature Required <span class="fwn">(1280)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2166,7 +705,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Individual Verification (1134)</td>
+      <th scope="row">Individual Verification <span class="fwn">(1134)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td></td>
@@ -2177,7 +716,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Social control (SOSIAL_KONTROLL)</td>
+      <th scope="row">Social control <span class="fwn">(SOSIAL_KONTROLL)</span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
@@ -2188,7 +727,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Carry service oversize (1140)</td>
+      <th scope="row">Carry service oversize <span class="fwn">(1140)<span></th>
       <td>DK, NO, SE</td>
       <td>DK, NO, SE</td>
       <td></td>
@@ -2199,7 +738,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Installation TV (1127)</td>
+      <th scope="row">Installation TV <span class="fwn">(1127)<span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td>DK, NO, SE</td>
@@ -2210,7 +749,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Installation Electronics (1128)</td>
+      <th scope="row">Installation Electronics <span class="fwn">(1128)<span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td>DK, NO, SE</td>
@@ -2221,7 +760,7 @@ weight: 3
       <td></td>
     </tr>
     <tr>
-      <td>Installation Mechanical (1141)</td>
+      <th scope="row">Installation Mechanical <span class="fwn">(1141)<span></th>
       <td>DK, NO, SE</td>
       <td></td>
       <td>DK, NO, SE</td>
@@ -2243,31 +782,31 @@ weight: 3
       <th>Booking API</th>
     </tr>
     </thead>
-    <tr>
-      <td>HD_EUR_PALLET</td>
-      <td>hd_eur</td>
-      <td>Yes</td>
-    </tr>
-
-    <tr>
-      <td>HD_HALF_PALLET</td>
-      <td>hd_half</td>
-      <td>Yes</td>
-    </tr>
-
-    <tr>
-      <td>HD_QUARTER_PALLET</td>
-      <td>hd_quarter</td>
-      <td>Yes</td>
-    </tr>
-
-    <tr>
-      <td>HD_SPECIAL_PALLET</td>
-      <td>hd_loose</td>
-      <td>Yes</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td>HD_EUR_PALLET</td>
+        <td>hd_eur</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>HD_HALF_PALLET</td>
+        <td>hd_half</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>HD_QUARTER_PALLET</td>
+        <td>hd_quarter</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>HD_SPECIAL_PALLET</td>
+        <td>hd_loose</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
   </table>
-  <ol class="text-note maxw48r">
+
+  <ol class="text-note maxw48r mtxl">
     <li>
       EVARSLING is not available when sending PICKUP_PARCEL from NORWAY to the other Nordic countries. It is available for all the other sender/recipient combinations.
     </li>
@@ -2296,33 +835,5 @@ weight: 3
       Business pallet requires an agreement and setup in Mybring to be available for booking.
     </li>
   </ol>
+
 </section>
-
-<script>
-  function removeGaParam(anchor) {
-    var href = anchor.getAttribute("href");
-    var start = href.lastIndexOf("&_ga");
-    if (start != -1) {
-      var withoutga = href.slice(0, start);
-      anchor.setAttribute("href", withoutga);
-    }
-  }
-
-  function removeGoogleAnalyticsParams(anchors) {
-    for (var j = 0; j < anchors.length; ++j) {
-      var anchor = anchors[j];
-      anchor.onclick = function () {
-        removeGaParam(this);
-      };
-    }
-  }
-  window.onload = function () {
-    var lists = document.getElementsByClassName("productlist");
-
-    for (var i = 0; i < lists.length; ++i) {
-      var list = lists[i];
-      var anchors = list.getElementsByTagName("a");
-      removeGoogleAnalyticsParams(anchors);
-    }
-  };
-</script>
