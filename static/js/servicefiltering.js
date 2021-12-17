@@ -1,14 +1,17 @@
-const rows = document.querySelectorAll("#servicetable tbody tr")
+const bsgRows = document.querySelectorAll("#services-bsg tbody tr")
+const riRows = document.querySelectorAll("#services-ri tbody tr")
 const filterInput = document.querySelector("#servicefilter")
 const filterBtns = document.querySelectorAll("[data-filterbtn]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
 const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
-const cutoff = document.querySelector("#cutoff")
-const cutoffBtn = cutoff.querySelector("button")
+const cutoffBsg = document.querySelector("#cutoff-bsg")
+const cutoffBsgBtn = cutoffBsg.querySelector("button")
+const cutoffRi = document.querySelector("#cutoff-ri")
+const cutoffRiBtn = cutoffRi.querySelector("button")
 
 function clearFilters() {
-  hideCutoffs()
+  hideCutoffsBsg()
   const activeBtn = document.querySelector("[data-filterbtn].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -20,7 +23,7 @@ function clearFilters() {
   filterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
-  rows.forEach((row) => {
+  bsgRows.forEach((row) => {
     row.hidden = false
   })
   filterInput.disabled = false
@@ -31,29 +34,44 @@ clearBtn.addEventListener("click", function () {
   clearFilters()
 })
 
-cutoffBtn.addEventListener("click", function () {
+cutoffBsgBtn.addEventListener("click", function () {
   clearFilters()
 })
 
+cutoffRiBtn.addEventListener("click", function () {
+  cutoffRi.hidden = true
+  riRows.forEach((row) => {
+    row.hidden = false
+  })
+})
+
 // Initial cutoff
-function tableCutoff() {
-  rows.forEach((row, i) => {
+function tableCutoffBsg() {
+  bsgRows.forEach((row, i) => {
     if (i > 7) {
       row.hidden = true
     }
   })
 }
 
+function tableCutoffRi() {
+  riRows.forEach((row, i) => {
+    if (i > 10) {
+      row.hidden = true
+    }
+  })
+}
+
 // Hide cutoff elements
-function hideCutoffs() {
-  cutoff.hidden = true
+function hideCutoffsBsg() {
+  cutoffBsg.hidden = true
 }
 
 // Input filter
 filterInput.addEventListener("keyup", function (e) {
-  hideCutoffs()
+  hideCutoffsBsg()
   const query = event.target.value.toLowerCase()
-  rows.forEach((row) => {
+  bsgRows.forEach((row) => {
     if (
       row
         .querySelector('[data-filter="name"]')
@@ -123,11 +141,11 @@ filterBtns.forEach((filterBtn) => {
         })
 
         if (showAll) {
-          rows.forEach((row) => {
+          bsgRows.forEach((row) => {
             row.hidden = false
           })
         } else {
-          rows.forEach((row) => {
+          bsgRows.forEach((row) => {
             row.hidden = true
             showChecked.forEach((show) => {
               if (row.querySelector(dataFilter)) {
@@ -160,5 +178,6 @@ function toggleHelp() {
 helpBtn.addEventListener("click", toggleHelp)
 
 document.addEventListener("DOMContentLoaded", function () {
-  tableCutoff()
+  tableCutoffBsg()
+  tableCutoffRi()
 })

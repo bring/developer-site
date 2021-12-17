@@ -60,7 +60,7 @@
 
             </div>
           </div>
-          <table id="servicetable">
+          <table id="services-bsg">
             <thead>
               <tr>
                 <th rowspan="2">Service</th>
@@ -115,7 +115,7 @@
                 ></span>
                 {{ end }}</td>
                 <td>
-                  {{if eq .Booking "Yes"}}<span class="mb-badge mrs">Booking</span><br>{{ end }}
+                  {{if eq .Booking "Yes"}}<span class="mb-badge">Booking</span><br>{{ end }}
                   {{ if eq .ShippingGuide "Yes" }}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{ end }}
                 </td>
                 <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
@@ -145,11 +145,9 @@
               </tr>
             </tbody>
           </table>
-          <div class="cutoff-overlay" id="cutoff">
+          <div class="cutoff-overlay" id="cutoff-bsg">
             <button class="btn btn--white w100p maxw32r">Show all services</button>
           </div>
-          <script async src="{{ "/js/servicefiltering.js" | relURL }}">
-          </script>
         {{ end }}
 
         {{ if in .title "Reports" }}
@@ -204,9 +202,14 @@
               {{- end -}}
             </tbody>
           </table>
+          <div class="cutoff-overlay" id="cutoff-ri">
+            <button class="btn btn--white w100p maxw32r">Show all services</button>
+          </div>
         {{- end -}}
       </section>
-      {{ end }}
+      <script async src="{{ "/js/servicefiltering.js" | relURL }}">
+      </script>
+      {{- end -}}
       {{- .Content -}}
     </article>
   </main>
