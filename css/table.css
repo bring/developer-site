@@ -77,20 +77,6 @@ td.indentcell {
   width: 18rem;
 }
 
-.dev-b2bvas table {
-  white-space: nowrap;
-  font-size: 0.75rem;
-}
-
-.dev-b2bvas th {
-  background: var(--gray-95);
-}
-
-.dev-b2bvas__subheader {
-  font-size: 75%;
-  font-weight: 500;
-}
-
 @media screen and (max-width: 50em) {
   .dev-feature-table > tbody > tr > td:first-child {
     width: 10rem;
