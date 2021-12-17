@@ -1,4 +1,4 @@
-{{/*  Is split because it reads some content and some data sourced, an be simplified when VAS-es are data sourced */}}
+{{/* Is split because it reads some content and some data source, can be simplified when VAS-es are data sourced */}}
 {{- $base := ($.Page.File.LogicalName) -}}
 {{ $paramHeaders := .context.Params.tables }}
 
@@ -9,12 +9,14 @@
 {{/* must have table params or at least one header to link to */}}
 {{- if or $has_headers $paramHeaders -}}
   <ul class="dev-sidemenu__sublist">
-    {{- range first 1 $paramHeaders -}}
-      {{- $anchorId := .title|anchorize -}}
-      {{- $href := delimit (slice $base $anchorId) "#" | string -}}
-      <li>
-        <a href="{{ $href }}">{{ .title }}</a>
-      </li>
+    {{- with $paramHeaders }}
+      {{- range first 1 . -}}
+        {{- $anchorId := .title|anchorize -}}
+        {{- $href := delimit (slice $base $anchorId) "#" | string -}}
+        <li>
+          <a href="{{ $href }}">{{ .title }}</a>
+        </li>
+      {{- end -}}
     {{- end -}}
 
     {{- range $index, $header := $headers -}}
@@ -35,13 +37,14 @@
         </ul>
       {{- end -}}
     {{- end -}}
-
-    {{- range last 1 $paramHeaders -}}
-      {{- $anchorId := .title|anchorize -}}
-      {{- $href := delimit (slice $base $anchorId) "#" | string -}}
-      <li>
-        <a href="{{ $href }}">{{ .title }}</a>
-      </li>
+    {{- with $paramHeaders }}
+      {{- range last 1 . -}}
+        {{- $anchorId := .title|anchorize -}}
+        {{- $href := delimit (slice $base $anchorId) "#" | string -}}
+        <li>
+          <a href="{{ $href }}">{{ .title }}</a>
+        </li>
+      {{- end -}}
     {{- end -}}
   </ul>
 {{- end -}}
