@@ -1,5 +1,4 @@
 const bsgRows = document.querySelectorAll("#services-bsg tbody tr")
-const riRows = document.querySelectorAll("#services-ri tbody tr")
 const filterInput = document.querySelector("#servicefilter")
 const filterBtns = document.querySelectorAll("[data-filterbtn]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
@@ -7,8 +6,6 @@ const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
 const cutoffBsg = document.querySelector("#cutoff-bsg")
 const cutoffBsgBtn = cutoffBsg.querySelector("button")
-const cutoffRi = document.querySelector("#cutoff-ri")
-const cutoffRiBtn = cutoffRi.querySelector("button")
 
 function clearFilters() {
   hideCutoffsBsg()
@@ -49,14 +46,6 @@ cutoffRiBtn.addEventListener("click", function () {
 function tableCutoffBsg() {
   bsgRows.forEach((row, i) => {
     if (i > 7) {
-      row.hidden = true
-    }
-  })
-}
-
-function tableCutoffRi() {
-  riRows.forEach((row, i) => {
-    if (i > 12) {
       row.hidden = true
     }
   })
@@ -179,5 +168,4 @@ helpBtn.addEventListener("click", toggleHelp)
 
 document.addEventListener("DOMContentLoaded", function () {
   tableCutoffBsg()
-  tableCutoffRi()
 })

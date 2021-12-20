@@ -148,6 +148,7 @@
           <div class="cutoff-overlay" id="cutoff-bsg">
             <button class="btn btn--white w100p maxw32r">Show all services</button>
           </div>
+          <script async src="{{ "/js/servicefiltering.js" | relURL }}"></script>
 
         {{/*  Content = VAS; placing it here until it’s data sourced etc. */}}
         {{- $.Content -}}
@@ -155,6 +156,46 @@
         {{ end }}
 
         {{ if in .title "Reports" }}
+
+          <div class="flex flex-wrap align-ifs mbs">
+            <div class="bg-gray2 pal pbm rad-a2px">
+              <div class="flex flex-wrap align-ifs">
+                <div class="mrl">
+                  <p class="form__label">Filter by</p>
+                  <div class="btngroup">
+                    <button class="btn btn--white" data-filterbtnri="family">Service family</button>
+                    <button class="btn btn--white" data-filterbtnri="api">API</button>
+                    <button class="btn btn--white" data-filterbtnri="reptype">Report type</button>
+                  </div>
+                  <div id="filtersets-ri">
+
+                    {{- $.Scratch.Add "riFamily" slice -}}
+                    {{- $.Scratch.Add "riApi" slice -}}
+                    {{- $.Scratch.Add "riRepType" slice -}}
+                    {{- range index $.Site.Data .data -}}
+                      {{- $.Scratch.Add "riFamily" .ServiceFamily }}
+                      {{- $.Scratch.Add "riReptype" .ReportType }}
+                    {{- end -}}
+
+                    {{- $.Scratch.Add "riApi" "Invoice" }}
+                    {{- $.Scratch.Add "riApi" "Reports" }}
+
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riFamily") "filter" "riFamily" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riApi") "filter" "riApi" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riRepType") "filter" "riRepType" ) -}}
+
+                  </div>
+              </div>
+                <label class="form__label mrxl" for="servicefilter-ri">
+                Reports name
+                <input id="servicefilter-ri" type="text" class="form__control mrxs w100p maxw32r"/>
+                </label>
+                <button class="btn-link--dark" id="clearfilters-ri">Clear filters</button>
+              </div>
+
+            </div>
+          </div>
+
           <table id="services-ri">
             <thead>
               <tr>
@@ -201,7 +242,11 @@
                 {{- else -}}
                   {{- $thisApi = "Invoice" -}}
                 {{- end -}}
-                <tr>
+                <tr
+                  data-family={{.ServiceFamily}}
+                  data-cntype={{ .CustomerNumberType }}
+                  data-api={{ $thisApi }}
+                >
                   {{- if ne $fam .ServiceFamily -}}
                     <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
                         {{- .ServiceFamily -}}
@@ -216,12 +261,12 @@
                   {{- end -}}
                   {{- if eq .Reports "Yes" -}}
                     {{- if ne $thisApi $prevApi -}}
-                      <td rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}'><span class="mb-badge mrs">{{ $thisApi }}</span></td>
+                      <td data-badge rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}'><span class="mb-badge mrs">{{ $thisApi }}</span></td>
                       {{- $prevApi = $thisApi -}}
                     {{- end -}}
                   {{- end -}}
                   <td>{{ if .ReportType }}{{ .ReportType }}{{else}}-{{ end }}</td>
-                  <td>{{ if .ReportsName }}{{ .ReportsName }}{{else}}-{{ end }}</td>
+                  <td data-filter="rep-name">{{ if .ReportsName }}{{ .ReportsName }}{{else}}-{{ end }}</td>
                 </tr>
                 {{- $fam = .ServiceFamily -}}
               {{- end -}}
@@ -232,8 +277,7 @@
           </div>
         {{- end -}}
       </section>
-      <script async src="{{ "/js/servicefiltering.js" | relURL }}">
-      </script>
+      <script async src="{{ "/js/servicefiltering-ri.js" | relURL }}"></script>
       {{- end -}}
     </article>
   </main>
