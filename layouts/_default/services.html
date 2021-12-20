@@ -160,48 +160,69 @@
               <tr>
                 <th>Service family</th>
                 <th>Customer number type</th>
-                <th>APIs</th>
+                <th>API</th>
                 <th>Report type</th>
                 <th>Reports name</th>
               </tr>
             </thead>
             <tbody>
               {{- $looper := 0 -}}
+              {{- $apiLooper := 1 -}}
               {{- $fam := "" -}}
+              {{- $thisApi := "" -}}
+              {{- $prevApi := "" }}
+
               {{- range index $.Site.Data .data -}}
+                {{- $prevApi = $thisApi -}}
+
                 {{- if ne $fam .ServiceFamily -}}
                   {{- $looper = 0 -}}
+                  {{- $apiLooper = 1 -}}
+                  {{- $prevApi = "" -}}
                 {{- end -}}
                 {{- $looper = add $looper 1 -}}
-                {{- $.Scratch.SetInMap "famLooper" .ServiceFamily $looper }}
+                {{- $.Scratch.SetInMap "famLooper" .ServiceFamily $looper -}}
                 {{- $fam = .ServiceFamily -}}
+
+                {{- if eq .Reports "Yes" -}}
+                  {{- $thisApi = "Reports" -}}
+                {{- else -}}
+                  {{- $thisApi = "Invoice" -}}
+                {{- end -}}
+                {{- if eq $thisApi $prevApi -}}
+                  {{- $apiLooper = add $apiLooper 1 -}}
+                {{- end -}}
+                {{- $.Scratch.SetInMap "repLooper" .ServiceFamily $apiLooper -}}
               {{- end -}}
+
               {{- range index $.Site.Data .data -}}
-                {{- if ne $fam .ServiceFamily -}}
-                  <tr>
+                {{- if eq .Reports "Yes" -}}
+                  {{- $thisApi = "Reports" -}}
+                {{- else -}}
+                  {{- $thisApi = "Invoice" -}}
+                {{- end -}}
+                <tr>
+                  {{- if ne $fam .ServiceFamily -}}
                     <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
                         {{- .ServiceFamily -}}
                     </th>
                     <td rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}'>
                       {{- .CustomerNumberType -}}
                     </td>
-                    <td>
-                      {{ if eq .Reports "Yes" }}<span class="mb-badge mrs">Reports</span>{{ end }}
-                      {{ if eq .Invoice "Yes" }}<span class="mb-badge ws-nowrap">Invoice</span>{{ end }}
-                    </td>
-                    <td>{{ .ReportType }}</td>
-                    <td>{{ .ReportsName }}</td>
-                  </tr>
-                {{- else -}}
-                    <tr>
-                      <td>
-                        {{ if eq .Reports "Yes"}}<span class="mb-badge mrs">Reports</span>{{ end }}
-                        {{ if eq .Invoice "Yes" }}<span class="mb-badge ws-nowrap">Invoice</span>{{ end }}
-                      </td>
-                      <td>{{ .ReportType }}</td>
-                      <td>{{ .ReportsName }}</td>
-                    </tr>
-                {{- end -}}
+                  {{- end -}}
+                  {{- if eq .Invoice "Yes" -}}
+                    <td><span class="mb-badge ws-nowrap">{{ $thisApi }}</span></td>
+                    {{- $prevApi = $thisApi -}}
+                  {{- end -}}
+                  {{- if eq .Reports "Yes" -}}
+                    {{- if ne $thisApi $prevApi -}}
+                      <td rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}'><span class="mb-badge mrs">{{ $thisApi }}</span></td>
+                      {{- $prevApi = $thisApi -}}
+                    {{- end -}}
+                  {{- end -}}
+                  <td>{{ if .ReportType }}{{ .ReportType }}{{else}}-{{ end }}</td>
+                  <td>{{ if .ReportsName }}{{ .ReportsName }}{{else}}-{{ end }}</td>
+                </tr>
                 {{- $fam = .ServiceFamily -}}
               {{- end -}}
             </tbody>
