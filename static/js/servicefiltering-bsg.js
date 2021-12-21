@@ -35,13 +35,6 @@ cutoffBsgBtn.addEventListener("click", function () {
   clearFilters()
 })
 
-cutoffRiBtn.addEventListener("click", function () {
-  cutoffRi.hidden = true
-  riRows.forEach((row) => {
-    row.hidden = false
-  })
-})
-
 // Initial cutoff
 function tableCutoffBsg() {
   bsgRows.forEach((row, i) => {
