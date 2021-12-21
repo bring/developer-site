@@ -10,6 +10,7 @@ const cutoffRiBtn = cutoffRi.querySelector("button")
 
 function clearFiltersRi() {
   hideCutoffsRi()
+  hideBadges(false)
   const activeBtn = document.querySelector("[data-filterbtnri].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -58,6 +59,13 @@ function removeJsIns() {
   })
 }
 
+// Hide API badges
+function hideBadges(bool) {
+  apiBadges.forEach((badge) => {
+    badge.hidden = bool
+  })
+}
+
 // Input filter
 riFilterInput.addEventListener("keyup", function (e) {
   hideCutoffsRi()
@@ -68,9 +76,7 @@ riFilterInput.addEventListener("keyup", function (e) {
 
   riRows.forEach((row) => {
     if (len) {
-      apiBadges.forEach((badge) => {
-        badge.hidden = true
-      })
+      hideBadges(true)
       if (
         row
           .querySelector('[data-filter="rep-name"]')
@@ -96,9 +102,7 @@ riFilterInput.addEventListener("keyup", function (e) {
         row.hidden = true
       }
     } else {
-      apiBadges.forEach((badge) => {
-        badge.hidden = false
-      })
+      hideBadges(false)
       row.hidden = false
     }
   })
@@ -153,40 +157,57 @@ riFilterBtns.forEach((filterBtn) => {
         removeJsIns()
         if (showAllRows) {
           riRows.forEach((row) => {
-            apiBadges.forEach((badge) => {
-              badge.hidden = false
-            })
+            hideBadges(false)
             row.hidden = false
           })
         } else {
+          hideBadges(true)
+          let prevFamily = ""
+          let group = 0
+          let count = 1
           riRows.forEach((row) => {
             row.hidden = true
             showChecked.forEach((show) => {
+              // if row visible / match
               if (row.dataset[filterType].toLowerCase().includes(show)) {
                 row.hidden = false
-                if (filterType != "rifamily" || filterType != "riapi") {
-                  if (filterType != "riapi") {
-                    apiBadges.forEach((badge) => {
-                      badge.hidden = true
-                    })
-                    row.insertAdjacentHTML(
-                      "afterbegin",
-                      '<td data-jsins><span class="mb-badge mrs">' +
-                        row.dataset.riapi +
-                        "</span></td>"
-                    )
-                  }
+                if (row.dataset.rifamily != prevFamily) {
+                  group++
+                  count = 1
                   row.insertAdjacentHTML(
                     "afterbegin",
-                    "<td data-jsins>" + row.dataset.cntype + "</td>"
+                    '<td data-jsins="' +
+                      group +
+                      '" rowspan="1"><span class="mb-badge mrs">' +
+                      row.dataset.riapi +
+                      "</span></td>"
                   )
                   row.insertAdjacentHTML(
                     "afterbegin",
-                    '<th data-jsins scope="row">' +
+                    '<td data-jsins="' +
+                      group +
+                      '" rowspan="1">' +
+                      row.dataset.cntype +
+                      "</td>"
+                  )
+                  row.insertAdjacentHTML(
+                    "afterbegin",
+                    '<th data-jsins="' +
+                      group +
+                      '" scope="row" rowspan="1">' +
                       row.dataset.rifamily +
                       "</th>"
                   )
+                } else {
+                  count++
+                  const groups = document.querySelectorAll(
+                    '[data-jsins="' + group + '"]'
+                  )
+                  groups.forEach((groupId) => {
+                    groupId.rowSpan = count
+                  })
                 }
+                prevFamily = row.dataset.rifamily
               }
             })
           })
