@@ -62,7 +62,7 @@
         </div>
 
         <div class="flex-auto flex-wrap" id="allVas">
-          {{- range $index, $vas := .Site.Data.valueaddedservices -}}
+          {{- range $index, $vas := (sort .Site.Data.valueaddedservices "vasName") -}}
             <div class="vas__item bg-green1 pam mbxs mrxs dev-collapsible">
               <div>
                 <a
