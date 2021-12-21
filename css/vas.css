@@ -1,0 +1,16 @@
+#allVas {
+    max-width: 80rem;
+}
+
+.vasfilter {
+    max-height: 30rem;
+}
+
+.vas__item--hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.vas__item--maxw58r {
+    max-width: 58rem;
+}

@@ -1,0 +1,174 @@
+{{- define "main" -}}
+{{- $maxwidth := "maxw80r" -}}
+{{- if (eq ($.Param "widelayout") true) -}}
+{{- $maxwidth = "" -}}
+{{- end -}}
+
+<div class="dev-docs__menu" data-drawer data-drawer-event>
+  {{- partial "sidemenu.html" . -}}
+</div>
+{{- partial "drawmenu.html" . -}}
+<div class="dev-docs__page">
+  <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
+    <article>
+      <h1>
+        {{- .Title -}}
+        {{- with .Params.titlesub -}}
+        <span class="db text-title mts">{{ . }}</span>
+        {{- end -}}
+      </h1>
+      <section class="dev-docscontent__section">
+        {{- .Content -}}
+        <div class="flex flex-wrap align-ic mbl">
+          <h2 class="mrl">Shipping Guide and Booking APIs</h2>
+          <a href="#" class="btn-link--dark">Download spreadsheet</a>
+        </div>
+        <div class="flex flex-wrap align-ifs mbs">
+          <div class="bg-gray2 pal pbm rad-a2px">
+            <div class="flex flex-wrap align-ifs">
+              <label class="form__label mrxl" for="vasfilter">
+                VAS name, booking code or shipping guide code
+                <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+              </label>
+              <div class="mrl">
+                <p class="form__label">Filter by</p>
+                <div class="btngroup">
+                  <button class="btn btn--white" data-filterbtn="service">Service</button>
+                  <button class="btn btn--white" data-filterbtn="type">Service type</button>
+                  <button class="btn btn--white" data-filterbtn="family">Service family</button>
+                </div>
+              </div>
+              <button class="btn-link--dark" id="clearfilters">Clear filters</button>
+            </div>
+            <div id="filtersets">
+
+              {{- $.Scratch.Add "type" slice -}}
+              {{- $.Scratch.Add "family" slice -}}
+              {{- $.Scratch.Add "service" slice -}}
+              {{- range .Site.Data.valueaddedservices -}}
+              {{- range .supportedServices -}}
+              {{- $.Scratch.Add "type" (dict "name" .serviceType "value" .serviceType) -}}
+              {{- $.Scratch.Add "family" (dict "name" .serviceFamily "value" .serviceFamily) -}}
+              {{- $.Scratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
+              {{- end -}}
+              {{- end -}}
+
+              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "service") "filter" "service" ) -}}
+
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-auto flex-wrap" id="allVas">
+          {{- range $index, $vas := .Site.Data.valueaddedservices -}}
+            <div class="vas__item bg-green1 pam mbxs mrxs dev-collapsible">
+              <div>
+                <a
+                  href="#"
+                  data-collapse="#vas__item{{ $index }}"
+                  class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                  style="background: transparent; padding: 0;"
+                >
+                  <svg
+                    class="dev-collapsible__toggler__icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                    ></path>
+                  </svg>
+                  <h3 data-filter="name">{{ $vas.vasName }}</h3>
+                </a>
+              </div>
+              <div class="flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
+                <div class="w16r">
+                  <div class="mtm">
+                    <span class="text-note fwb">API codes</span>
+                    <dl class="bl b--gray4 pls mts">
+                      <div>
+                        <span class="text-note">Booking: <span class="fwn mb-badge paxs"><code data-filter="bookcode">{{ $vas.bookingCode }}</code></span></span>
+                      </div>
+                      <div>
+                        <span class="text-note">Shipping Guide: <span class="fwn mb-badge paxs"><code data-filter="sgcode">{{ $vas.fraktguideCode }}</code></span></span>
+                      </div>
+                    </dl>
+                  </div>
+                  {{ if ($vas.incompatibleVases) }}
+                  <div class="mtm">
+                    <span class="text-note fwb">Incompatible with</span>
+                    <dl class="bl b--gray4 pls mts">
+                      {{- range $vas.incompatibleVases -}}
+                      <div>
+                        <span class="text-note">{{ . }}</span>
+                      </div>
+                      {{- end -}}
+                    </dl>
+                  </div>
+                  {{ end }}
+                </div>
+                <div class="vas__item--maxw58r mlm">
+                  <div class="text-basic pvm">
+                    {{ $vas.description }}
+                  </div>
+                  <div class="rad-a2px mts dev-collapsible">
+                    <a
+                      href="#"
+                      data-collapse="#vascountry{{ $index }}"
+                      class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                      style="background: transparent"
+                    ><svg
+                      class="dev-collapsible__toggler__icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 320 512"
+                    >
+                      <path
+                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                      ></path>
+                    </svg>
+                      <h4>Supported services & countries</h4>
+                    </a>
+                    <table class="vascountry dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}" style="background: white">
+                      <thead>
+                      <tr class="vascountryrow">
+                        <th>Service</th>
+                        <th>Sender</th>
+                        <th>Destination</th>
+                        <th>Domestic</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      {{- range .supportedServices -}}
+                      <tr class="vascountryrow">
+                        <td class="maxw16r">{{ .serviceName }} (<span class="mb-badge paxs"><code>{{ .serviceCode }}</code></span>)</td>
+                        <td data-filter="type" hidden>{{ .serviceType }}</td>
+                        <td data-filter="family" hidden>{{ .serviceFamily }}</td>
+                        <td data-filter="service" hidden>{{ .serviceCode }}</td>
+                        <td class="w16r">{{ if ne .senderCountries "-" }}{{ .senderCountries }}{{ end }}</td>
+                        <td class="w16r">{{ if ne .destinations "-" }}{{ .destinations }}{{ end }}</td>
+                        <td class="w12r">{{ if ne .domesticAllowedIn "-" }}{{ .domesticAllowedIn }}{{ end }}</td>
+                        {{- end -}}
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{- end -}}
+        </div>
+        
+        <button class="btn btn--white mtxl" id="showAll">Show all VAS</button>
+        <script async src="{{ "/js/vasfiltering.js" | relURL }}">
+        </script>
+      </section>
+    </article>
+  </main>
+  {{ partial "footer.html" . }}
+  <div class="dev-obfuscator" data-drawer data-drawer-event></div>
+</div>
+{{- end -}}
