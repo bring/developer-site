@@ -163,9 +163,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-filterbtnri="family">Service family</button>
-                    <button class="btn btn--white" data-filterbtnri="api">API</button>
-                    <button class="btn btn--white" data-filterbtnri="reptype">Report type</button>
+                    <button class="btn btn--white" data-filterbtnri="riFamily">Service family</button>
+                    <button class="btn btn--white" data-filterbtnri="riApi">API</button>
+                    <button class="btn btn--white" data-filterbtnri="riRepType">Report type</button>
                   </div>
                   <div id="filtersets-ri">
 
@@ -174,9 +174,8 @@
                     {{- $.Scratch.Add "riRepType" slice -}}
                     {{- range index $.Site.Data .data -}}
                       {{- $.Scratch.Add "riFamily" .ServiceFamily }}
-                      {{- $.Scratch.Add "riReptype" .ReportType }}
+                      {{- $.Scratch.Add "riRepType" .ReportType }}
                     {{- end -}}
-
                     {{- $.Scratch.Add "riApi" "Invoice" }}
                     {{- $.Scratch.Add "riApi" "Reports" }}
 
@@ -243,9 +242,10 @@
                   {{- $thisApi = "Invoice" -}}
                 {{- end -}}
                 <tr
-                  data-family={{.ServiceFamily}}
+                  data-riFamily={{.ServiceFamily}}
                   data-cntype={{ .CustomerNumberType }}
-                  data-api={{ $thisApi }}
+                  data-riApi={{ $thisApi }}
+                  data-riRepType={{ .ReportType }}
                 >
                   {{- if ne $fam .ServiceFamily -}}
                     <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
