@@ -50,16 +50,21 @@ function hideCutoffsRi() {
   cutoffRi.hidden = true
 }
 
-// Input filter
-riFilterInput.addEventListener("keyup", function (e) {
-  hideCutoffsRi()
-  const query = event.target.value.toLowerCase()
-  const len = query.length >= 1
+// Remove js inserted cells
+function removeJsIns() {
   const jsInserts = document.querySelectorAll("[data-jsins]")
-
   jsInserts.forEach((insert) => {
     insert.remove()
   })
+}
+
+// Input filter
+riFilterInput.addEventListener("keyup", function (e) {
+  hideCutoffsRi()
+  const query = e.target.value.toLowerCase()
+  const len = query.length >= 1
+
+  removeJsIns()
 
   riRows.forEach((row) => {
     if (len) {
@@ -76,7 +81,7 @@ riFilterInput.addEventListener("keyup", function (e) {
         row.insertAdjacentHTML(
           "afterbegin",
           '<td data-jsins><span class="mb-badge mrs">' +
-            row.dataset.api +
+            row.dataset.riapi +
             "</span></td>"
         )
         row.insertAdjacentHTML(
@@ -85,7 +90,7 @@ riFilterInput.addEventListener("keyup", function (e) {
         )
         row.insertAdjacentHTML(
           "afterbegin",
-          '<th data-jsins scope="row">' + row.dataset.family + "</th>"
+          '<th data-jsins scope="row">' + row.dataset.rifamily + "</th>"
         )
       } else {
         row.hidden = true
@@ -103,12 +108,12 @@ riFilterInput.addEventListener("keyup", function (e) {
 riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterType = e.target.dataset.filterbtnri
+    removeJsIns()
 
     if (e.target.classList.contains("active")) {
       clearFiltersRi()
       return
     }
-
     clearFiltersRi()
     e.target.classList.add("active")
     riFilterInput.disabled = true
@@ -128,26 +133,29 @@ riFilterBtns.forEach((filterBtn) => {
       }
     })
 
-    const groupChecks = document.querySelectorAll(
+    const groupChecksRi = document.querySelectorAll(
       'input[data-filter="' + filterType + '"]'
     )
 
-    groupChecks.forEach((groupCheck) => {
+    groupChecksRi.forEach((groupCheck) => {
       groupCheck.addEventListener("click", function (e) {
         const filterType = e.target.dataset.filter.toLowerCase()
-        const dataFilter = '[data-filter="' + filterType + '"]'
 
-        let showAll = true
+        let showAllRows = true
         let showChecked = []
-        groupChecks.forEach((groupCheck, i) => {
+        groupChecksRi.forEach((groupCheck, i) => {
           if (groupCheck.checked === true) {
-            showAll = false
+            showAllRows = false
             showChecked[i] = groupCheck.value.toLowerCase()
           }
         })
 
-        if (showAll) {
+        removeJsIns()
+        if (showAllRows) {
           riRows.forEach((row) => {
+            apiBadges.forEach((badge) => {
+              badge.hidden = false
+            })
             row.hidden = false
           })
         } else {
@@ -156,6 +164,29 @@ riFilterBtns.forEach((filterBtn) => {
             showChecked.forEach((show) => {
               if (row.dataset[filterType].toLowerCase().includes(show)) {
                 row.hidden = false
+                if (filterType != "rifamily" || filterType != "riapi") {
+                  if (filterType != "riapi") {
+                    apiBadges.forEach((badge) => {
+                      badge.hidden = true
+                    })
+                    row.insertAdjacentHTML(
+                      "afterbegin",
+                      '<td data-jsins><span class="mb-badge mrs">' +
+                        row.dataset.riapi +
+                        "</span></td>"
+                    )
+                  }
+                  row.insertAdjacentHTML(
+                    "afterbegin",
+                    "<td data-jsins>" + row.dataset.cntype + "</td>"
+                  )
+                  row.insertAdjacentHTML(
+                    "afterbegin",
+                    '<th data-jsins scope="row">' +
+                      row.dataset.rifamily +
+                      "</th>"
+                  )
+                }
               }
             })
           })
