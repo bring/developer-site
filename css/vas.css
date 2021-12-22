@@ -13,4 +13,5 @@
 
 .vas__item--maxw58r {
     max-width: 58rem;
+    flex-grow: 100;
 }
