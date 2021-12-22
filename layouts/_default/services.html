@@ -248,20 +248,20 @@
                   data-riRepType={{ .ReportType }}
                 >
                   {{- if ne $fam .ServiceFamily -}}
-                    <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
+                    <th data-originalel scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
                         {{- .ServiceFamily -}}
                     </th>
-                    <td rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}'>
+                    <td data-originalel rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}'>
                       {{- .CustomerNumberType -}}
                     </td>
                   {{- end -}}
                   {{- if eq .Invoice "Yes" -}}
-                    <td><span class="mb-badge ws-nowrap">{{ $thisApi }}</span></td>
+                    <td data-originalel><span class="mb-badge">{{ $thisApi }}</span></td>
                     {{- $prevApi = $thisApi -}}
                   {{- end -}}
                   {{- if eq .Reports "Yes" -}}
                     {{- if ne $thisApi $prevApi -}}
-                      <td data-badge rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}'><span class="mb-badge mrs">{{ $thisApi }}</span></td>
+                      <td data-originalel rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}'><span class="mb-badge">{{ $thisApi }}</span></td>
                       {{- $prevApi = $thisApi -}}
                     {{- end -}}
                   {{- end -}}

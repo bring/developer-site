@@ -4,13 +4,13 @@ const riFilterBtns = document.querySelectorAll("[data-filterbtnri]")
 const riFilterSets = document.querySelectorAll("#filtersets-ri fieldset")
 const riFilterChecks = document.querySelectorAll("[data-check]")
 const clearBtnRi = document.querySelector("#clearfilters-ri")
-const apiBadges = document.querySelectorAll("[data-badge]")
+const originalEls = document.querySelectorAll("[data-originalel]")
 const cutoffRi = document.querySelector("#cutoff-ri")
 const cutoffRiBtn = cutoffRi.querySelector("button")
 
 function clearFiltersRi() {
   hideCutoffsRi()
-  hideBadges(false)
+  hideOriginalEls(false)
   const activeBtn = document.querySelector("[data-filterbtnri].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -60,9 +60,9 @@ function removeJsIns() {
 }
 
 // Hide API badges
-function hideBadges(bool) {
-  apiBadges.forEach((badge) => {
-    badge.hidden = bool
+function hideOriginalEls(bool) {
+  originalEls.forEach((ogEl) => {
+    ogEl.hidden = bool
   })
 }
 
@@ -76,7 +76,7 @@ riFilterInput.addEventListener("keyup", function (e) {
 
   riRows.forEach((row) => {
     if (len) {
-      hideBadges(true)
+      hideOriginalEls(true)
       if (
         row
           .querySelector('[data-filter="rep-name"]')
@@ -86,7 +86,7 @@ riFilterInput.addEventListener("keyup", function (e) {
         row.hidden = false
         row.insertAdjacentHTML(
           "afterbegin",
-          '<td data-jsins><span class="mb-badge mrs">' +
+          '<td data-jsins><span class="mb-badge">' +
             row.dataset.riapi +
             "</span></td>"
         )
@@ -96,13 +96,15 @@ riFilterInput.addEventListener("keyup", function (e) {
         )
         row.insertAdjacentHTML(
           "afterbegin",
-          '<th data-jsins scope="row">' + row.dataset.rifamily + "</th>"
+          '<th data-jsins scope="row" class="maxw20r">' +
+            row.dataset.rifamily +
+            "</th>"
         )
       } else {
         row.hidden = true
       }
     } else {
-      hideBadges(false)
+      hideOriginalEls(false)
       row.hidden = false
     }
   })
@@ -157,31 +159,56 @@ riFilterBtns.forEach((filterBtn) => {
         removeJsIns()
         if (showAllRows) {
           riRows.forEach((row) => {
-            hideBadges(false)
+            hideOriginalEls(false)
             row.hidden = false
           })
         } else {
-          hideBadges(true)
+          hideOriginalEls(true)
           let prevFamily = ""
           let group = 0
           let count = 1
+          let prevApi = ""
+          let api = 0
+          let apiCount = 1
           riRows.forEach((row) => {
             row.hidden = true
             showChecked.forEach((show) => {
-              // if row visible / match
               if (row.dataset[filterType].toLowerCase().includes(show)) {
                 row.hidden = false
                 if (row.dataset.rifamily != prevFamily) {
                   group++
-                  count = 1
+                }
+
+                if (
+                  row.dataset.riapi != prevApi ||
+                  row.dataset.rifamily != prevFamily
+                ) {
+                  prevApi = ""
+                  api++
+                  apiCount = 1
+
                   row.insertAdjacentHTML(
                     "afterbegin",
                     '<td data-jsins="' +
                       group +
-                      '" rowspan="1"><span class="mb-badge mrs">' +
+                      api +
+                      '" rowspan="1"><span class="mb-badge">' +
                       row.dataset.riapi +
                       "</span></td>"
                   )
+                } else {
+                  apiCount++
+                  const apis = document.querySelectorAll(
+                    '[data-jsins="' + group + api + '"]'
+                  )
+                  apis.forEach((apiId) => {
+                    apiId.rowSpan = apiCount
+                  })
+                }
+
+                if (row.dataset.rifamily != prevFamily) {
+                  count = 1
+
                   row.insertAdjacentHTML(
                     "afterbegin",
                     '<td data-jsins="' +
@@ -194,7 +221,7 @@ riFilterBtns.forEach((filterBtn) => {
                     "afterbegin",
                     '<th data-jsins="' +
                       group +
-                      '" scope="row" rowspan="1">' +
+                      '" scope="row" rowspan="1" class="maxw20r">' +
                       row.dataset.rifamily +
                       "</th>"
                   )
@@ -207,6 +234,9 @@ riFilterBtns.forEach((filterBtn) => {
                     groupId.rowSpan = count
                   })
                 }
+
+                prevApi = row.dataset.riapi
+
                 prevFamily = row.dataset.rifamily
               }
             })
