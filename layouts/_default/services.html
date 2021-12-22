@@ -163,25 +163,25 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-filterbtnri="riFamily">Service family</button>
-                    <button class="btn btn--white" data-filterbtnri="riApi">API</button>
-                    <button class="btn btn--white" data-filterbtnri="riRepType">Report type</button>
+                    <button class="btn btn--white" data-rifilterbtn="rifamily">Service family</button>
+                    <button class="btn btn--white" data-rifilterbtn="riapi">API</button>
+                    <button class="btn btn--white" data-rifilterbtn="rireptype">Report type</button>
                   </div>
-                  <div id="filtersets-ri">
+                  <div id="ri-filtersets">
 
-                    {{- $.Scratch.Add "riFamily" slice -}}
-                    {{- $.Scratch.Add "riApi" slice -}}
-                    {{- $.Scratch.Add "riRepType" slice -}}
+                    {{- $.Scratch.Add "rifamily" slice -}}
+                    {{- $.Scratch.Add "riapi" slice -}}
+                    {{- $.Scratch.Add "rireptype" slice -}}
                     {{- range index $.Site.Data .data -}}
-                      {{- $.Scratch.Add "riFamily" .ServiceFamily }}
-                      {{- $.Scratch.Add "riRepType" .ReportType }}
+                      {{- $.Scratch.Add "rifamily" .ServiceFamily }}
+                      {{- $.Scratch.Add "rireptype" .ReportType }}
                     {{- end -}}
-                    {{- $.Scratch.Add "riApi" "Invoice" }}
-                    {{- $.Scratch.Add "riApi" "Reports" }}
+                    {{- $.Scratch.Add "riapi" "Invoice" }}
+                    {{- $.Scratch.Add "riapi" "Reports" }}
 
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riFamily") "filter" "riFamily" ) -}}
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riApi") "filter" "riApi" ) -}}
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riRepType") "filter" "riRepType" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rifamily") "filter" "rifamily" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riapi") "filter" "riapi" ) -}}
+                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
 
                   </div>
               </div>
@@ -189,7 +189,7 @@
                 Reports name
                 <input id="servicefilter-ri" type="text" class="form__control mrxs w100p maxw32r"/>
                 </label>
-                <button class="btn-link--dark" id="clearfilters-ri">Clear filters</button>
+                <button class="btn-link--dark" id="ri-clearfilters">Clear filters</button>
               </div>
 
             </div>
@@ -242,10 +242,11 @@
                   {{- $thisApi = "Invoice" -}}
                 {{- end -}}
                 <tr
-                  data-riFamily={{.ServiceFamily}}
-                  data-cntype={{ .CustomerNumberType }}
-                  data-riApi={{ $thisApi }}
-                  data-riRepType={{ .ReportType }}
+                  data-rifamily="{{.ServiceFamily}}"
+                  data-cntype="{{ .CustomerNumberType }}"
+                  data-riapi="{{ $thisApi }}"
+                  data-rireptype="{{ .ReportType }}"
+                  data-rirepname="{{ .ReportsName }}"
                 >
                   {{- if ne $fam .ServiceFamily -}}
                     <th data-originalel scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
@@ -272,7 +273,7 @@
               {{- end -}}
             </tbody>
           </table>
-          <div class="cutoff-overlay" id="cutoff-ri">
+          <div class="cutoff-overlay" id="ri-cutoff">
             <button class="btn btn--white w100p maxw32r">Show all service families</button>
           </div>
         {{- end -}}

@@ -1,17 +1,49 @@
 const riRows = document.querySelectorAll("#services-ri tbody tr")
 const riFilterInput = document.querySelector("#servicefilter-ri")
-const riFilterBtns = document.querySelectorAll("[data-filterbtnri]")
-const riFilterSets = document.querySelectorAll("#filtersets-ri fieldset")
+const riFilterBtns = document.querySelectorAll("[data-rifilterbtn]")
+const riFilterSets = document.querySelectorAll("#ri-filtersets fieldset")
 const riFilterChecks = document.querySelectorAll("[data-check]")
-const clearBtnRi = document.querySelector("#clearfilters-ri")
+const riClearBtn = document.querySelector("#ri-clearfilters")
 const originalEls = document.querySelectorAll("[data-originalel]")
-const cutoffRi = document.querySelector("#cutoff-ri")
-const cutoffRiBtn = cutoffRi.querySelector("button")
+const riCutoff = document.querySelector("#ri-cutoff")
+const riCutoffBtn = riCutoff.querySelector("button")
 
-function clearFiltersRi() {
-  hideCutoffsRi()
-  hideOriginalEls(false)
-  const activeBtn = document.querySelector("[data-filterbtnri].active")
+// Initial cutoff
+function riTableCutoff() {
+  riRows.forEach((row, i) => {
+    if (i > 12) {
+      row.hidden = true
+    }
+  })
+}
+
+// Remove inserted cells
+function removeInsCells() {
+  const inserts = document.querySelectorAll("[data-ins]")
+  inserts.forEach((insert) => {
+    insert.remove()
+  })
+}
+
+// Hide cutoff elements
+function riHideCutoffs() {
+  riCutoff.hidden = true
+}
+
+// Hide original elements for restoration later
+function hideOriginals(bool) {
+  console.log("ska gjemmast")
+  originalEls.forEach((ogEl) => {
+    ogEl.hidden = bool
+  })
+}
+
+// Clear all filters
+function riClearFilters() {
+  riHideCutoffs()
+  removeInsCells()
+  hideOriginals(false)
+  const activeBtn = document.querySelector("[data-rifilterbtn].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -29,103 +61,132 @@ function clearFiltersRi() {
   riFilterInput.value = ""
 }
 
-cutoffRiBtn.addEventListener("click", function () {
-  clearFiltersRi()
+riCutoffBtn.addEventListener("click", function () {
+  riClearFilters()
 })
 
-clearBtnRi.addEventListener("click", function () {
-  clearFiltersRi()
+riClearBtn.addEventListener("click", function () {
+  riClearFilters()
 })
 
-// Initial cutoff
-function tableCutoffRi() {
-  riRows.forEach((row, i) => {
-    if (i > 12) {
+// Render result
+function renderResult(showAllRows, queries, filterKey) {
+  removeInsCells()
+  if (showAllRows) {
+    riRows.forEach((row) => {
+      hideOriginals(false)
+      row.hidden = false
+    })
+  } else {
+    hideOriginals(true)
+    let prevFamily = ""
+    let groupId = 0
+    let count = 1
+    let prevApi = ""
+    let apiId = 0
+    let apiCount = 1
+    riRows.forEach((row) => {
       row.hidden = true
-    }
-  })
-}
+      queries.forEach((query) => {
+        if (row.dataset[filterKey].toLowerCase().includes(query)) {
+          row.hidden = false
+          if (row.dataset.rifamily != prevFamily) {
+            groupId++
+          }
 
-// Hide cutoff elements
-function hideCutoffsRi() {
-  cutoffRi.hidden = true
-}
+          if (
+            row.dataset.riapi != prevApi ||
+            row.dataset.rifamily != prevFamily
+          ) {
+            prevApi = ""
+            apiId++
+            apiCount = 1
+            row.insertAdjacentHTML(
+              "afterbegin",
+              '<td data-ins="' +
+                groupId +
+                apiId +
+                '" rowspan="1"><span class="mb-badge">' +
+                row.dataset.riapi +
+                "</span></td>"
+            )
+          } else {
+            apiCount++
+            const apis = document.querySelectorAll(
+              '[data-ins="' + groupId + apiId + '"]'
+            )
+            apis.forEach((api) => {
+              api.rowSpan = apiCount
+            })
+          }
 
-// Remove js inserted cells
-function removeJsIns() {
-  const jsInserts = document.querySelectorAll("[data-jsins]")
-  jsInserts.forEach((insert) => {
-    insert.remove()
-  })
-}
+          if (row.dataset.rifamily != prevFamily) {
+            count = 1
+            row.insertAdjacentHTML(
+              "afterbegin",
+              '<td data-ins="' +
+                groupId +
+                '" rowspan="1">' +
+                row.dataset.cntype +
+                "</td>"
+            )
+            row.insertAdjacentHTML(
+              "afterbegin",
+              '<th data-ins="' +
+                groupId +
+                '" scope="row" rowspan="1" class="maxw20r">' +
+                row.dataset.rifamily +
+                "</th>"
+            )
+          } else {
+            count++
+            const groups = document.querySelectorAll(
+              '[data-ins="' + groupId + '"]'
+            )
+            groups.forEach((group) => {
+              group.rowSpan = count
+            })
+          }
 
-// Hide API badges
-function hideOriginalEls(bool) {
-  originalEls.forEach((ogEl) => {
-    ogEl.hidden = bool
-  })
+          prevApi = row.dataset.riapi
+          prevFamily = row.dataset.rifamily
+        }
+      })
+    })
+  }
 }
 
 // Input filter
 riFilterInput.addEventListener("keyup", function (e) {
-  hideCutoffsRi()
+  riHideCutoffs()
   const query = e.target.value.toLowerCase()
-  const len = query.length >= 1
+  const notEmpty = query.length >= 1
+  const filterKey = "rirepname"
+  let showAllRows = true
+  let queries = [""]
+  if (notEmpty) {
+    showAllRows = false
+    queries = [query]
+  }
 
-  removeJsIns()
-
-  riRows.forEach((row) => {
-    if (len) {
-      hideOriginalEls(true)
-      if (
-        row
-          .querySelector('[data-filter="rep-name"]')
-          .textContent.toLowerCase()
-          .includes(query)
-      ) {
-        row.hidden = false
-        row.insertAdjacentHTML(
-          "afterbegin",
-          '<td data-jsins><span class="mb-badge">' +
-            row.dataset.riapi +
-            "</span></td>"
-        )
-        row.insertAdjacentHTML(
-          "afterbegin",
-          "<td data-jsins>" + row.dataset.cntype + "</td>"
-        )
-        row.insertAdjacentHTML(
-          "afterbegin",
-          '<th data-jsins scope="row" class="maxw20r">' +
-            row.dataset.rifamily +
-            "</th>"
-        )
-      } else {
-        row.hidden = true
-      }
-    } else {
-      hideOriginalEls(false)
-      row.hidden = false
-    }
-  })
+  removeInsCells()
+  renderResult(showAllRows, queries, filterKey)
 })
 
 // Group filters
 riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
-    const filterType = e.target.dataset.filterbtnri
-    removeJsIns()
-
+    const filterKey = e.target.dataset.rifilterbtn
+    removeInsCells()
+    riClearFilters()
     if (e.target.classList.contains("active")) {
-      clearFiltersRi()
       return
     }
-    clearFiltersRi()
+
     e.target.classList.add("active")
     riFilterInput.disabled = true
-
     riFilterSets.forEach((set) => {
-      if (set.id === filterType) {
+      if (set.id === filterKey) {
         if (set.hidden === false) {
           set.hidden = true
           set.classList.remove("flex")
@@ -139,114 +200,29 @@ riFilterBtns.forEach((filterBtn) => {
       }
     })
 
-    const groupChecksRi = document.querySelectorAll(
-      'input[data-filter="' + filterType + '"]'
+    const riGroupChecks = document.querySelectorAll(
+      'input[data-filter="' + filterKey + '"]'
     )
 
-    groupChecksRi.forEach((groupCheck) => {
+    riGroupChecks.forEach((groupCheck) => {
       groupCheck.addEventListener("click", function (e) {
-        const filterType = e.target.dataset.filter.toLowerCase()
+        const filterKey = e.target.dataset.filter
 
         let showAllRows = true
-        let showChecked = []
-        groupChecksRi.forEach((groupCheck, i) => {
+        let queries = []
+        riGroupChecks.forEach((groupCheck, i) => {
           if (groupCheck.checked === true) {
             showAllRows = false
-            showChecked[i] = groupCheck.value.toLowerCase()
+            queries[i] = groupCheck.value.toLowerCase()
           }
         })
 
-        removeJsIns()
-        if (showAllRows) {
-          riRows.forEach((row) => {
-            hideOriginalEls(false)
-            row.hidden = false
-          })
-        } else {
-          hideOriginalEls(true)
-          let prevFamily = ""
-          let group = 0
-          let count = 1
-          let prevApi = ""
-          let api = 0
-          let apiCount = 1
-          riRows.forEach((row) => {
-            row.hidden = true
-            showChecked.forEach((show) => {
-              if (row.dataset[filterType].toLowerCase().includes(show)) {
-                row.hidden = false
-                if (row.dataset.rifamily != prevFamily) {
-                  group++
-                }
-
-                if (
-                  row.dataset.riapi != prevApi ||
-                  row.dataset.rifamily != prevFamily
-                ) {
-                  prevApi = ""
-                  api++
-                  apiCount = 1
-
-                  row.insertAdjacentHTML(
-                    "afterbegin",
-                    '<td data-jsins="' +
-                      group +
-                      api +
-                      '" rowspan="1"><span class="mb-badge">' +
-                      row.dataset.riapi +
-                      "</span></td>"
-                  )
-                } else {
-                  apiCount++
-                  const apis = document.querySelectorAll(
-                    '[data-jsins="' + group + api + '"]'
-                  )
-                  apis.forEach((apiId) => {
-                    apiId.rowSpan = apiCount
-                  })
-                }
-
-                if (row.dataset.rifamily != prevFamily) {
-                  count = 1
-
-                  row.insertAdjacentHTML(
-                    "afterbegin",
-                    '<td data-jsins="' +
-                      group +
-                      '" rowspan="1">' +
-                      row.dataset.cntype +
-                      "</td>"
-                  )
-                  row.insertAdjacentHTML(
-                    "afterbegin",
-                    '<th data-jsins="' +
-                      group +
-                      '" scope="row" rowspan="1" class="maxw20r">' +
-                      row.dataset.rifamily +
-                      "</th>"
-                  )
-                } else {
-                  count++
-                  const groups = document.querySelectorAll(
-                    '[data-jsins="' + group + '"]'
-                  )
-                  groups.forEach((groupId) => {
-                    groupId.rowSpan = count
-                  })
-                }
-
-                prevApi = row.dataset.riapi
-
-                prevFamily = row.dataset.rifamily
-              }
-            })
-          })
-        }
+        renderResult(showAllRows, queries, filterKey)
       })
     })
   })
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  tableCutoffRi()
+  riTableCutoff()
 })
