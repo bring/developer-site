@@ -6,6 +6,7 @@ const filterSets = document.querySelectorAll("#filtersets fieldset")
 const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
 const showAll = document.querySelector("#showAll")
+const tabFormatLinks = document.querySelectorAll(".vas__item .dev-codetabs__link")
 
 function clearFilters() {
   const activeBtn = document.querySelector("[data-filterbtn].active")
