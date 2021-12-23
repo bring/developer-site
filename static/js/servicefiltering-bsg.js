@@ -1,4 +1,5 @@
-const bsgRows = document.querySelectorAll("#services-bsg tbody tr")
+const bsgTable = document.querySelector("#services-bsg")
+const bsgRows = bsgTable.querySelectorAll("tbody tr")
 const filterInput = document.querySelector("#servicefilter")
 const filterBtns = document.querySelectorAll("[data-filterbtn]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
@@ -7,9 +8,33 @@ const clearBtn = document.querySelector("#clearfilters")
 const cutoffBsg = document.querySelector("#cutoff-bsg")
 const cutoffBsgBtn = cutoffBsg.querySelector("button")
 
+// Show empty results
+function bsgEmptyCheck() {
+  const noMatch = document.querySelector("#nomatch-bsg")
+  let insMessage = true
+  if (noMatch) {
+    noMatch.remove()
+    bsgTable.classList.remove("dn")
+  }
+  bsgRows.forEach((row) => {
+    if (row.hidden === false) {
+      insMessage = false
+      return
+    }
+  })
+  if (insMessage) {
+    bsgTable.classList.add("dn")
+    bsgTable.insertAdjacentHTML(
+      "afterend",
+      '<div id="nomatch-bsg" class="message--info pam maxw24r">No matches</div>'
+    )
+  }
+}
+
 function clearFilters() {
   hideCutoffsBsg()
   const activeBtn = document.querySelector("[data-filterbtn].active")
+
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -25,6 +50,8 @@ function clearFilters() {
   })
   filterInput.disabled = false
   filterInput.value = ""
+
+  bsgEmptyCheck()
 }
 
 clearBtn.addEventListener("click", function () {
@@ -73,6 +100,8 @@ filterInput.addEventListener("keyup", function (e) {
       row.hidden = true
     }
   })
+
+  bsgEmptyCheck()
 })
 
 // Group filters

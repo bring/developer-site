@@ -1,4 +1,5 @@
-const riRows = document.querySelectorAll("#services-ri tbody tr")
+const riTable = document.querySelector("#services-ri")
+const riRows = riTable.querySelectorAll("tbody tr")
 const riFilterInput = document.querySelector("#servicefilter-ri")
 const riFilterBtns = document.querySelectorAll("[data-rifilterbtn]")
 const riFilterSets = document.querySelectorAll("#ri-filtersets fieldset")
@@ -17,6 +18,29 @@ function riTableCutoff() {
   })
 }
 
+// Show empty results
+function riEmptyCheck() {
+  const noMatch = document.querySelector("#nomatch-ri")
+  let insMessage = true
+  if (noMatch) {
+    noMatch.remove()
+    riTable.classList.remove("dn")
+  }
+  riRows.forEach((row) => {
+    if (row.hidden === false) {
+      insMessage = false
+      return
+    }
+  })
+  if (insMessage) {
+    riTable.classList.add("dn")
+    riTable.insertAdjacentHTML(
+      "afterend",
+      '<div id="nomatch-ri" class="message--info pam maxw24r">No matches</div>'
+    )
+  }
+}
+
 // Remove inserted cells
 function removeInsCells() {
   const inserts = document.querySelectorAll("[data-ins]")
@@ -32,7 +56,6 @@ function riHideCutoffs() {
 
 // Hide original elements for restoration later
 function hideOriginals(bool) {
-  console.log("ska gjemmast")
   originalEls.forEach((ogEl) => {
     ogEl.hidden = bool
   })
@@ -44,6 +67,7 @@ function riClearFilters() {
   removeInsCells()
   hideOriginals(false)
   const activeBtn = document.querySelector("[data-rifilterbtn].active")
+
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -59,6 +83,8 @@ function riClearFilters() {
   })
   riFilterInput.disabled = false
   riFilterInput.value = ""
+
+  riEmptyCheck()
 }
 
 riCutoffBtn.addEventListener("click", function () {
@@ -171,6 +197,7 @@ riFilterInput.addEventListener("keyup", function (e) {
 
   removeInsCells()
   renderResult(showAllRows, queries, filterKey)
+  riEmptyCheck()
 })
 
 // Group filters
