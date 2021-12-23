@@ -186,7 +186,7 @@ function renderResult(showAllRows, queries, filterKey) {
 riFilterInput.addEventListener("keyup", function (e) {
   riHideCutoffs()
   const query = e.target.value.toLowerCase()
-  const notEmpty = query.length >= 1
+  const notEmpty = query.length >= 1 && query !== "-"
   const filterKey = "rirepname"
   let showAllRows = true
   let queries = [""]
