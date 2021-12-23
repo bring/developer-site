@@ -205,10 +205,13 @@ riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterKey = e.target.dataset.rifilterbtn
     removeInsCells()
-    riClearFilters()
+
     if (e.target.classList.contains("active")) {
+      riClearFilters()
       return
     }
+
+    riClearFilters()
 
     e.target.classList.add("active")
     riFilterInput.disabled = true
