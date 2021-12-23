@@ -67,6 +67,7 @@ function bsgClearFilters() {
   bsgFilterInput.value = ""
 
   bsgEmptyCheck()
+  bsgClearBtn.classList.add("dn")
 }
 
 bsgClearBtn.addEventListener("click", function () {
@@ -80,7 +81,14 @@ bsgCutoffBtn.addEventListener("click", function () {
 // Input filter
 bsgFilterInput.addEventListener("keyup", function (e) {
   bsgHideCutoffs()
-  const query = event.target.value.toLowerCase()
+  const query = e.target.value.toLowerCase()
+  const notEmpty = query.length >= 1
+  if (notEmpty) {
+    bsgClearBtn.classList.remove("dn")
+  } else {
+    bsgClearBtn.classList.add("dn")
+  }
+
   bsgRows.forEach((row) => {
     if (
       row
@@ -114,6 +122,7 @@ bsgFilterBtns.forEach((filterBtn) => {
       return
     }
     bsgClearFilters()
+    bsgClearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
     bsgFilterInput.disabled = true

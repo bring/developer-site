@@ -24,9 +24,9 @@
           <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
         </p>
         {{ if in .title "Booking" }}
-          <div class="flex flex-wrap align-ifs mbs">
-            <div class="bg-gray2 pal pbm rad-a2px">
-              <div class="flex flex-wrap align-ifs">
+          <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
+            <div class="mrl">
+              <div class="flex flex-wrap-reverse align-ifs">
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
@@ -34,31 +34,27 @@
                     <button class="btn btn--white" data-bsgfilterbtn="family">Service family</button>
                     <button class="btn btn--white" data-bsgfilterbtn="cntype">Customer number type</button>
                   </div>
-                  <div id="bsg-filtersets">
-
-                    {{- $.Scratch.Add "type" slice -}}
-                    {{- $.Scratch.Add "family" slice -}}
-                    {{- $.Scratch.Add "cnType" slice -}}
-                    {{- range index $.Site.Data .data -}}
-                      {{- $.Scratch.Add "type" .Type }}
-                      {{- $.Scratch.Add "family" .ServiceFamily }}
-                      {{- $.Scratch.Add "cnType" .CustomerNumberType }}
-                    {{- end -}}
-
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
-
-                  </div>
-              </div>
-                <label class="form__label mrxl" for="bsg-textfilter">
-                Service name, service code or request code
-                <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                </div>
+                <label class="form__label" for="bsg-textfilter">
+                  Service name, service code or request code
+                  <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
                 </label>
-                <button class="btn-link--dark" id="bsg-clearfilters">Clear filters</button>
               </div>
-
+              <div id="bsg-filtersets">
+                {{- $.Scratch.Add "type" slice -}}
+                {{- $.Scratch.Add "family" slice -}}
+                {{- $.Scratch.Add "cnType" slice -}}
+                {{- range index $.Site.Data .data -}}
+                  {{- $.Scratch.Add "type" .Type }}
+                  {{- $.Scratch.Add "family" .ServiceFamily }}
+                  {{- $.Scratch.Add "cnType" .CustomerNumberType }}
+                {{- end -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
+              </div>
             </div>
+            <button id="bsg-clearfilters" class="btn-link--dark mtl mrl dn">Clear filters</button>
           </div>
           <table id="services-bsg">
             <thead>
@@ -156,10 +152,9 @@
         {{ end }}
 
         {{ if in .title "Reports" }}
-
-          <div class="flex flex-wrap align-ifs mbs">
-            <div class="bg-gray2 pal pbm rad-a2px">
-              <div class="flex flex-wrap align-ifs">
+          <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
+            <div class="mrl">
+              <div class="flex flex-wrap-reverse align-ifs">
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
@@ -167,34 +162,29 @@
                     <button class="btn btn--white" data-rifilterbtn="riapi">API</button>
                     <button class="btn btn--white" data-rifilterbtn="rireptype">Report type</button>
                   </div>
-                  <div id="ri-filtersets">
-
-                    {{- $.Scratch.Add "rifamily" slice -}}
-                    {{- $.Scratch.Add "riapi" slice -}}
-                    {{- $.Scratch.Add "rireptype" slice -}}
-                    {{- range index $.Site.Data .data -}}
-                      {{- $.Scratch.Add "rifamily" .ServiceFamily }}
-                      {{- $.Scratch.Add "rireptype" .ReportType }}
-                    {{- end -}}
-                    {{- $.Scratch.Add "riapi" "Invoice" }}
-                    {{- $.Scratch.Add "riapi" "Reports" }}
-
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rifamily") "filter" "rifamily" ) -}}
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riapi") "filter" "riapi" ) -}}
-                    {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
-
-                  </div>
-              </div>
-                <label class="form__label mrxl" for="ri-textfilter">
-                Reports name
-                <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                </div>
+                <label class="form__label" for="ri-textfilter">
+                  Reports name
+                  <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
                 </label>
-                <button class="btn-link--dark" id="ri-clearfilters">Clear filters</button>
               </div>
-
+              <div id="ri-filtersets">
+                {{- $.Scratch.Add "rifamily" slice -}}
+                {{- $.Scratch.Add "riapi" slice -}}
+                {{- $.Scratch.Add "rireptype" slice -}}
+                {{- range index $.Site.Data .data -}}
+                  {{- $.Scratch.Add "rifamily" .ServiceFamily }}
+                  {{- $.Scratch.Add "rireptype" .ReportType }}
+                {{- end -}}
+                {{- $.Scratch.Add "riapi" "Invoice" }}
+                {{- $.Scratch.Add "riapi" "Reports" }}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rifamily") "filter" "rifamily" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riapi") "filter" "riapi" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
+              </div>
             </div>
+            <button id="ri-clearfilters" class="btn-link--dark mtl mrl dn">Clear filters</button>
           </div>
-
           <table id="services-ri">
             <thead>
               <tr>

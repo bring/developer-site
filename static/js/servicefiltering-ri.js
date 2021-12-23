@@ -85,6 +85,7 @@ function riClearFilters() {
   riFilterInput.value = ""
 
   riEmptyCheck()
+  riClearBtn.classList.add("dn")
 }
 
 riCutoffBtn.addEventListener("click", function () {
@@ -191,8 +192,11 @@ riFilterInput.addEventListener("keyup", function (e) {
   let showAllRows = true
   let queries = [""]
   if (notEmpty) {
+    riClearBtn.classList.remove("dn")
     showAllRows = false
     queries = [query]
+  } else {
+    riClearBtn.classList.add("dn")
   }
 
   removeInsCells()
@@ -210,6 +214,7 @@ riFilterBtns.forEach((filterBtn) => {
       return
     }
     riClearFilters()
+    riClearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
     riFilterInput.disabled = true
