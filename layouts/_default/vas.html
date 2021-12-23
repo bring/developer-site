@@ -118,6 +118,11 @@
                   <div class="text-basic pvm">
                     {{ $vas.description }}
                   </div>
+                  {{ if gt (len .vasFootNotes) 0 }}
+                  {{- range .vasFootNotes -}}
+                  <div class="text-basic pvm">{{ . }}</div>
+                  {{- end -}}
+                  {{ end }}
                   <div class="rad-a2px mts dev-collapsible">
                     <a
                       href="#"
@@ -136,29 +141,38 @@
                     </svg>
                       <h4>Supported services & countries</h4>
                     </a>
-                    <table class="vascountry dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}" style="background: white">
-                      <thead>
-                      <tr class="vascountryrow">
-                        <th>Service</th>
-                        <th>Sender</th>
-                        <th>Destination</th>
-                        <th>Domestic</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      {{- range .supportedServices -}}
-                      <tr class="vascountryrow">
-                        <td class="maxw16r">{{ .serviceName }} (<span class="mb-badge paxs"><code>{{ .serviceCode }}</code></span>)</td>
-                        <td data-filter="type" hidden>{{ .serviceType }}</td>
-                        <td data-filter="family" hidden>{{ .serviceFamily }}</td>
-                        <td data-filter="service" hidden>{{ .serviceCode }}</td>
-                        <td class="w16r">{{ if ne .senderCountries "-" }}{{ .senderCountries }}{{ end }}</td>
-                        <td class="w16r">{{ if ne .destinations "-" }}{{ .destinations }}{{ end }}</td>
-                        <td class="w12r">{{ if ne .domesticAllowedIn "-" }}{{ .domesticAllowedIn }}{{ end }}</td>
-                        {{- end -}}
-                      </tr>
-                      </tbody>
-                    </table>
+                    <div class="dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}" style="background: white">
+                      <table class="vascountry">
+                        <thead>
+                        <tr class="vascountryrow">
+                          <th>Service</th>
+                          <th>Sender</th>
+                          <th>Destination</th>
+                          <th>Domestic</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{- range .supportedServices -}}
+                        <tr class="vascountryrow">
+                          <td class="maxw16r">{{ .serviceName }} (<span class="mb-badge paxs"><code>{{ .serviceCode }}</code></span>)</td>
+                          <td data-filter="type" hidden>{{ .serviceType }}</td>
+                          <td data-filter="family" hidden>{{ .serviceFamily }}</td>
+                          <td data-filter="service" hidden>{{ .serviceCode }}</td>
+                          <td class="w16r">{{ if ne .senderCountries "-" }}{{ .senderCountries | safeHTML }}{{ end }}</td>
+                          <td class="w16r">{{ if ne .destinations "-" }}{{ .destinations | safeHTML }}{{ end }}</td>
+                          <td class="w12r">{{ if ne .domesticAllowedIn "-" }}{{ .domesticAllowedIn | safeHTML }}{{ end }}</td>
+                          {{- end -}}
+                        </tr>
+                        </tbody>
+                      </table>
+                      {{if gt (len .serviceAndCountryFootNotes) 0 }}
+                      <ol class="text-note maxw48r">
+                      {{- range .serviceAndCountryFootNotes -}}
+                        <li>{{ . }}</li>
+                      {{- end -}}
+                      </ol>
+                      {{ end }}
+                    </div>
                   </div>
                   <div>
                     {{- range $examples -}}
