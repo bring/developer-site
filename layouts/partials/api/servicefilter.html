@@ -3,7 +3,7 @@
   {{- range uniq .scratcher }}
   {{ if and (ne . "-") (ne . "") }}
     <label class="mrm">
-    <input type="checkbox" value="{{ . }}" data-check data-filter="{{ $filter }}"/> {{ . }}</label>
+    <input type="checkbox" value="{{ . }}" class="checkitem" data-filter="{{ $filter }}"/> {{ . }}</label>
     {{ end }}
   {{- end -}}
 </fieldset>

@@ -30,11 +30,11 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-filterbtn="type">Service type</button>
-                    <button class="btn btn--white" data-filterbtn="family">Service family</button>
-                    <button class="btn btn--white" data-filterbtn="cntype">Customer number type</button>
+                    <button class="btn btn--white" data-bsgfilterbtn="type">Service type</button>
+                    <button class="btn btn--white" data-bsgfilterbtn="family">Service family</button>
+                    <button class="btn btn--white" data-bsgfilterbtn="cntype">Customer number type</button>
                   </div>
-                  <div id="filtersets">
+                  <div id="bsg-filtersets">
 
                     {{- $.Scratch.Add "type" slice -}}
                     {{- $.Scratch.Add "family" slice -}}
@@ -51,11 +51,11 @@
 
                   </div>
               </div>
-                <label class="form__label mrxl" for="servicefilter">
+                <label class="form__label mrxl" for="bsg-textfilter">
                 Service name, service code or request code
-                <input id="servicefilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
                 </label>
-                <button class="btn-link--dark" id="clearfilters">Clear filters</button>
+                <button class="btn-link--dark" id="bsg-clearfilters">Clear filters</button>
               </div>
 
             </div>
@@ -145,7 +145,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="cutoff-overlay" id="cutoff-bsg">
+          <div class="cutoff-overlay" id="bsg-cutoff">
             <button class="btn btn--white w100p maxw32r">Show all services</button>
           </div>
           <script async src="{{ "/js/servicefiltering-bsg.js" | relURL }}"></script>
@@ -185,9 +185,9 @@
 
                   </div>
               </div>
-                <label class="form__label mrxl" for="servicefilter-ri">
+                <label class="form__label mrxl" for="ri-textfilter">
                 Reports name
-                <input id="servicefilter-ri" type="text" class="form__control mrxs w100p maxw32r"/>
+                <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
                 </label>
                 <button class="btn-link--dark" id="ri-clearfilters">Clear filters</button>
               </div>
@@ -249,20 +249,20 @@
                   data-rirepname="{{ .ReportsName }}"
                 >
                   {{- if ne $fam .ServiceFamily -}}
-                    <th data-originalel scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="maxw20r">
+                    <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="originalel maxw20r">
                         {{- .ServiceFamily -}}
                     </th>
-                    <td data-originalel rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}'>
+                    <td rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="originalel">
                       {{- .CustomerNumberType -}}
                     </td>
                   {{- end -}}
                   {{- if eq .Invoice "Yes" -}}
-                    <td data-originalel><span class="mb-badge">{{ $thisApi }}</span></td>
+                    <td class="originalel"><span class="mb-badge">{{ $thisApi }}</span></td>
                     {{- $prevApi = $thisApi -}}
                   {{- end -}}
                   {{- if eq .Reports "Yes" -}}
                     {{- if ne $thisApi $prevApi -}}
-                      <td data-originalel rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}'><span class="mb-badge">{{ $thisApi }}</span></td>
+                      <td rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}' class="originalel"><span class="mb-badge">{{ $thisApi }}</span></td>
                       {{- $prevApi = $thisApi -}}
                     {{- end -}}
                   {{- end -}}

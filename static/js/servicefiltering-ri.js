@@ -1,11 +1,11 @@
 const riTable = document.querySelector("#services-ri")
 const riRows = riTable.querySelectorAll("tbody tr")
-const riFilterInput = document.querySelector("#servicefilter-ri")
+const riFilterInput = document.querySelector("#ri-textfilter")
 const riFilterBtns = document.querySelectorAll("[data-rifilterbtn]")
 const riFilterSets = document.querySelectorAll("#ri-filtersets fieldset")
-const riFilterChecks = document.querySelectorAll("[data-check]")
+const riFilterChecks = document.querySelectorAll(".checkitem")
 const riClearBtn = document.querySelector("#ri-clearfilters")
-const originalEls = document.querySelectorAll("[data-originalel]")
+const originalEls = document.querySelectorAll(".originalel")
 const riCutoff = document.querySelector("#ri-cutoff")
 const riCutoffBtn = riCutoff.querySelector("button")
 
@@ -20,7 +20,7 @@ function riTableCutoff() {
 
 // Show empty results
 function riEmptyCheck() {
-  const noMatch = document.querySelector("#nomatch-ri")
+  const noMatch = document.querySelector("#ri-nomatch")
   let insMessage = true
   if (noMatch) {
     noMatch.remove()
@@ -36,7 +36,7 @@ function riEmptyCheck() {
     riTable.classList.add("dn")
     riTable.insertAdjacentHTML(
       "afterend",
-      '<div id="nomatch-ri" class="message--info pam maxw24r">No matches</div>'
+      '<div id="ri-nomatch" class="message--info pam maxw24r">No matches</div>'
     )
   }
 }
@@ -205,12 +205,10 @@ riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterKey = e.target.dataset.rifilterbtn
     removeInsCells()
-
     if (e.target.classList.contains("active")) {
       riClearFilters()
       return
     }
-
     riClearFilters()
 
     e.target.classList.add("active")

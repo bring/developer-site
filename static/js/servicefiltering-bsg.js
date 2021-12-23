@@ -1,16 +1,30 @@
 const bsgTable = document.querySelector("#services-bsg")
 const bsgRows = bsgTable.querySelectorAll("tbody tr")
-const filterInput = document.querySelector("#servicefilter")
-const filterBtns = document.querySelectorAll("[data-filterbtn]")
-const filterSets = document.querySelectorAll("#filtersets fieldset")
-const filterChecks = document.querySelectorAll("[data-check]")
-const clearBtn = document.querySelector("#clearfilters")
-const cutoffBsg = document.querySelector("#cutoff-bsg")
-const cutoffBsgBtn = cutoffBsg.querySelector("button")
+const bsgFilterInput = document.querySelector("#bsg-textfilter")
+const bsgFilterBtns = document.querySelectorAll("[data-bsgfilterbtn]")
+const bsgFilterSets = document.querySelectorAll("#bsg-filtersets fieldset")
+const bsgFilterChecks = document.querySelectorAll(".checkitem")
+const bsgClearBtn = document.querySelector("#bsg-clearfilters")
+const bsgCutoff = document.querySelector("#bsg-cutoff")
+const bsgCutoffBtn = bsgCutoff.querySelector("button")
+
+// Initial cutoff
+function bsgTableCutoff() {
+  bsgRows.forEach((row, i) => {
+    if (i > 7) {
+      row.hidden = true
+    }
+  })
+}
+
+// Hide cutoff elements
+function bsgHideCutoffs() {
+  bsgCutoff.hidden = true
+}
 
 // Show empty results
 function bsgEmptyCheck() {
-  const noMatch = document.querySelector("#nomatch-bsg")
+  const noMatch = document.querySelector("#bsg-nomatch")
   let insMessage = true
   if (noMatch) {
     noMatch.remove()
@@ -26,59 +40,46 @@ function bsgEmptyCheck() {
     bsgTable.classList.add("dn")
     bsgTable.insertAdjacentHTML(
       "afterend",
-      '<div id="nomatch-bsg" class="message--info pam maxw24r">No matches</div>'
+      '<div id="bsg-nomatch" class="message--info pam maxw24r">No matches</div>'
     )
   }
 }
 
-function clearFilters() {
-  hideCutoffsBsg()
-  const activeBtn = document.querySelector("[data-filterbtn].active")
+// Clear all filters
+function bsgClearFilters() {
+  bsgHideCutoffs()
+  const activeBtn = document.querySelector("[data-bsgfilterbtn].active")
 
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
-  filterSets.forEach((set) => {
+  bsgFilterSets.forEach((set) => {
     set.hidden = true
     set.classList.remove("flex")
   })
-  filterChecks.forEach((filterCheck) => {
+  bsgFilterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
   bsgRows.forEach((row) => {
     row.hidden = false
   })
-  filterInput.disabled = false
-  filterInput.value = ""
+  bsgFilterInput.disabled = false
+  bsgFilterInput.value = ""
 
   bsgEmptyCheck()
 }
 
-clearBtn.addEventListener("click", function () {
-  clearFilters()
+bsgClearBtn.addEventListener("click", function () {
+  bsgClearFilters()
 })
 
-cutoffBsgBtn.addEventListener("click", function () {
-  clearFilters()
+bsgCutoffBtn.addEventListener("click", function () {
+  bsgClearFilters()
 })
-
-// Initial cutoff
-function tableCutoffBsg() {
-  bsgRows.forEach((row, i) => {
-    if (i > 7) {
-      row.hidden = true
-    }
-  })
-}
-
-// Hide cutoff elements
-function hideCutoffsBsg() {
-  cutoffBsg.hidden = true
-}
 
 // Input filter
-filterInput.addEventListener("keyup", function (e) {
-  hideCutoffsBsg()
+bsgFilterInput.addEventListener("keyup", function (e) {
+  bsgHideCutoffs()
   const query = event.target.value.toLowerCase()
   bsgRows.forEach((row) => {
     if (
@@ -105,21 +106,20 @@ filterInput.addEventListener("keyup", function (e) {
 })
 
 // Group filters
-filterBtns.forEach((filterBtn) => {
+bsgFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
-    const filterType = e.target.dataset.filterbtn
-
+    const filterVal = e.target.dataset.bsgfilterbtn
     if (e.target.classList.contains("active")) {
-      clearFilters()
+      bsgClearFilters()
       return
     }
+    bsgClearFilters()
 
-    clearFilters()
     e.target.classList.add("active")
-    filterInput.disabled = true
+    bsgFilterInput.disabled = true
 
-    filterSets.forEach((set) => {
-      if (set.id === filterType) {
+    bsgFilterSets.forEach((set) => {
+      if (set.id === filterVal) {
         if (set.hidden === false) {
           set.hidden = true
           set.classList.remove("flex")
@@ -134,13 +134,13 @@ filterBtns.forEach((filterBtn) => {
     })
 
     const groupChecks = document.querySelectorAll(
-      'input[data-filter="' + filterType + '"]'
+      'input[data-filter="' + filterVal + '"]'
     )
 
     groupChecks.forEach((groupCheck) => {
       groupCheck.addEventListener("click", function (e) {
-        const filterType = e.target.dataset.filter
-        const dataFilter = '[data-filter="' + filterType + '"]'
+        const filterKey = e.target.dataset.filter
+        const dataFilter = '[data-filter="' + filterKey + '"]'
 
         let showAll = true
         let showChecked = []
@@ -189,5 +189,5 @@ function toggleHelp() {
 helpBtn.addEventListener("click", toggleHelp)
 
 document.addEventListener("DOMContentLoaded", function () {
-  tableCutoffBsg()
+  bsgTableCutoff()
 })
