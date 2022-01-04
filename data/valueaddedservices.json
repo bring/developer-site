@@ -4,7 +4,7 @@
   "shippingGuideCode" : "POSTOPPKRAV",
   "shippingGuideNpbCode" : "1000",
   "bookingCode" : "1000",
-  "incompatibleVases" : [ "BOX_DELIVERY", "Simplified delivery" ],
+  "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business parcel",
     "serviceType" : "B2B",
@@ -1040,7 +1040,7 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
+    "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1217,15 +1217,6 @@
   "bookingCode" : "SWAP",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home Delivery curbside evening",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceCode" : "CURBSIDE_EVENING",
-    "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Home Delivery indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -1249,6 +1240,15 @@
     "serviceFamily" : "Home Delivery services",
     "serviceCode" : "HOME_DELIVERY_RETURN",
     "productionCode" : "2778",
+    "domesticAllowedIn" : "DK, NO, SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Home Delivery curbside evening",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceCode" : "CURBSIDE_EVENING",
+    "productionCode" : "3457",
     "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -1263,15 +1263,6 @@
   "bookingCode" : "RECYCLE",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home Delivery curbside evening",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceCode" : "CURBSIDE_EVENING",
-    "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Home Delivery indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -1295,6 +1286,15 @@
     "serviceFamily" : "Home Delivery services",
     "serviceCode" : "HOME_DELIVERY_RETURN",
     "productionCode" : "2778",
+    "domesticAllowedIn" : "DK, NO, SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Home Delivery curbside evening",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceCode" : "CURBSIDE_EVENING",
+    "productionCode" : "3457",
     "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -1337,15 +1337,6 @@
   "bookingCode" : "STANDARD_INSTALLATION",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home Delivery curbside evening",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceCode" : "CURBSIDE_EVENING",
-    "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Home Delivery indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -1360,6 +1351,15 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
+    "domesticAllowedIn" : "DK, NO, SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Home Delivery curbside evening",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceCode" : "CURBSIDE_EVENING",
+    "productionCode" : "3457",
     "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -1374,15 +1374,6 @@
   "bookingCode" : "CUSTOM_INSTALLATION",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home Delivery curbside evening",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceCode" : "CURBSIDE_EVENING",
-    "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Home Delivery indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -1397,6 +1388,15 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
+    "domesticAllowedIn" : "DK, NO, SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Home Delivery curbside evening",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceCode" : "CURBSIDE_EVENING",
+    "productionCode" : "3457",
     "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -1561,7 +1561,7 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
+    "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2170,6 +2170,15 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
+    "serviceName" : "Home Delivery curbside evening",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceCode" : "CURBSIDE_EVENING",
+    "productionCode" : "3457",
+    "domesticAllowedIn" : "DK, NO, SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -2178,15 +2187,6 @@
     "domesticAllowedIn" : "DK, SE",
     "senderCountries" : "ALL",
     "destinations" : "DK, SE"
-  }, {
-    "serviceName" : "Home Delivery curbside evening",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceCode" : "CURBSIDE_EVENING",
-    "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
@@ -2249,7 +2249,7 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
+    "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2286,7 +2286,7 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
+    "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2323,7 +2323,7 @@
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "NO, SE",
+    "domesticAllowedIn" : "DK, NO, SE",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
