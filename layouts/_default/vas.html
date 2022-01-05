@@ -85,7 +85,7 @@
                   <h3 class="dev-anchored" id="{{ $vas.vasName }}" data-filter="name">{{ $vas.vasName }}</h3>
                 </a>
               </div>
-              <div class="flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
+              <div class="plm bg-white mts flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
                 <div class="w16r">
                   <div class="mtm">
                     <span class="text-note fwb">API codes</span>
@@ -125,7 +125,7 @@
                   <div class="text-basic pvm">{{ . }}</div>
                   {{- end -}}
                   {{ end }}
-                  <div class="rad-a2px mts dev-collapsible">
+                  <div class="rad-a2px">
                     <a
                       href="#"
                       data-collapse="#vascountry{{ $index }}"
@@ -179,7 +179,7 @@
                   <div>
                     {{- range $examples -}}
                     {{- range where .vas "id" $vas.bookingCode -}}
-                    <div class="rad-a2px mts dev-collapsible">
+                    <div class="rad-a2px">
                       <a
                         href="#"
                         data-collapse="#example{{ $vas.bookingCode }}"
