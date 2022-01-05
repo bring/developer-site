@@ -23,7 +23,7 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
     "cssnano": "^5.0.12",
