@@ -185,8 +185,8 @@ bsgFilterBtns.forEach((filterBtn) => {
 })
 
 // Toggle help
-var helpBtn = document.querySelector("#help-country")
-var helpTxt = document.querySelector("#info-country")
+const helpBtn = document.querySelector("#help-country")
+const helpTxt = document.querySelector("#info-country")
 function toggleHelp() {
   if (helpTxt.hidden == true) {
     helpTxt.hidden = false
