@@ -585,6 +585,35 @@ documentation:
       #### Estimated arrival time for the end users default pickup point(s) (w/o Pickup Point API)
       In the absence of specified pickup point IDs, we take care of looking up the recipient´s default pickup point(s), based on its postal code. Based on that, we return the start and end time of the expected arrival time window for the recipient´s default pickup point(s).
       In this case, we will also provide the name of the default pickup point(s). To use the API this way, just omit the `PickupPoints/pickuppoints` element from the example at the page bottom. Please note that in some cases, the recipient´s postal code may have several default pickup points.
+      
+      For arrival times at pickup points, the `ExpectedDelivery` response element normally used for lead time information is **not** returned. In stead a list of `EstimatedDeliveryTimes` is available:  
+
+      ```xml
+      <ns2:EstimatedDeliveryTimes>
+        <ns2:EstimatedDeliveryTime>
+          <ns2:PickupPointId>121532</ns2:PickupPointId>
+          <ns2:PickupPointName>Extra Vestby</ns2:PickupPointName>
+          <ns2:DeliveryStartTime>13:00</ns2:DeliveryStartTime>
+          <ns2:DeliveryEndTime>16:00</ns2:DeliveryEndTime>
+          <ns2:FormattedExpectedDeliveryDate>05.01.2022</ns2:FormattedExpectedDeliveryDate>
+          <ns2:ShippingDate>04.01.2022</ns2:ShippingDate>
+          <ns2:WorkingDays>1</ns2:WorkingDays>
+        </ns2:EstimatedDeliveryTime>
+        <ns2:EstimatedDeliveryTime>
+          <ns2:PickupPointId>121532</ns2:PickupPointId>
+          <ns2:PickupPointName>Extra Vestby</ns2:PickupPointName>
+          <ns2:DeliveryStartTime>13:00</ns2:DeliveryStartTime>
+          <ns2:DeliveryEndTime>16:00</ns2:DeliveryEndTime>
+          <ns2:FormattedExpectedDeliveryDate>06.01.2022</ns2:FormattedExpectedDeliveryDate>
+          <ns2:ShippingDate>05.01.2022</ns2:ShippingDate>
+          <ns2:WorkingDays>1</ns2:WorkingDays>
+        </ns2:EstimatedDeliveryTime>
+      </ns2:EstimatedDeliveryTimes>
+      ```
+      
+      Each item in the list represents an expected delivery time at a specific pickup point. If multiple pickup points are specified in the request, a delivery time for each pickup point is available in the list. If combined with the **NumberOfAlternativeDeliveryDates** request parameter, the list will contain the requested number of delivery dates for each requested pickup point. 
+  
+      **NOTE:** The delivery time might be different for each returned delivery date.
 
       #### How to present the time window data in your checkout
       We recommend to insert the start (X) and end (Y) time values into the following sentence:
