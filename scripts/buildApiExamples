@@ -34,7 +34,7 @@ filePaths.forEach((examplesPath, i) => {
       let examplesFiles = fs.readdirSync(examplesPath + dir);
       console.log(examplesPath + dir)
       examplesFiles.forEach((file, idx) => {
-        const fileRegEx = /(\S*).(json|xml)/
+        const fileRegEx = /(\S*).(json|xml|html)/
         const matches = file.match(fileRegEx);
         if (matches && matches.length > 0) {
           let exampleId = matches[1];
