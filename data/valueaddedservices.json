@@ -6,7 +6,7 @@
   "bookingCode" : "1000",
   "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -15,7 +15,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "FO, GL"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -23,15 +23,6 @@
     "domesticAllowedIn" : "FI",
     "senderCountries" : "ALL",
     "destinations" : "FI, FO, IS"
-  }, {
-    "serviceName" : "Servicepakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "SERVICEPAKKE",
-    "productionCode" : "1202",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
   }, {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "",
@@ -51,7 +42,7 @@
     "senderCountries" : "DK, FI, SE",
     "destinations" : "FO, GL"
   }, {
-    "serviceName" : "PickUp Parcel bulk",
+    "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_BULK",
@@ -69,7 +60,7 @@
     "senderCountries" : "ALL",
     "destinations" : "FI"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -77,15 +68,6 @@
     "domesticAllowedIn" : "-",
     "senderCountries" : "ALL",
     "destinations" : "NO"
-  }, {
-    "serviceName" : "Norgespakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "NORGESPAKKE",
-    "productionCode" : "3067",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
   }, {
     "serviceName" : "Mail",
     "serviceType" : "",
@@ -106,7 +88,7 @@
   "bookingCode" : "EVARSLING",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -115,7 +97,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -133,7 +115,7 @@
     "senderCountries" : "DK, FI, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "PickUp Parcel bulk",
+    "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_BULK",
@@ -151,7 +133,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -160,7 +142,7 @@
     "senderCountries" : "ALL",
     "destinations" : "NO, SE"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -169,7 +151,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -178,7 +160,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -196,7 +178,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel",
+    "serviceName" : "Pakke i postkassen",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "3584",
@@ -205,20 +187,11 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel with RFID",
+    "serviceName" : "Pakke i postkassen med RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "3570",
     "productionCode" : "3570",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Servicepakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "SERVICEPAKKE",
-    "productionCode" : "1202",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -228,42 +201,6 @@
     "serviceFamily" : "Parcel Norway domestic",
     "serviceCode" : "5800",
     "productionCode" : "5800",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Norgespakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "NORGESPAKKE",
-    "productionCode" : "3067",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business Parcel Express Overnight",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09",
-    "productionCode" : "1002",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Bedriftspakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "BPAKKE_DOR-DOR",
-    "productionCode" : "1000",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -297,7 +234,7 @@
   "bookingCode" : "FLEX_DELIVERY",
   "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Limited quantities" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -306,7 +243,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -324,7 +261,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -333,7 +270,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -342,7 +279,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -351,7 +288,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -387,7 +324,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -406,7 +343,7 @@
   "bookingCode" : "DELIVERY_INDOOR",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -415,7 +352,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -424,7 +361,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -442,7 +379,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -451,7 +388,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -460,7 +397,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -479,7 +416,7 @@
   "bookingCode" : "PHONENOTIFICATION",
   "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -488,7 +425,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -506,7 +443,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -515,7 +452,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
-    "serviceName" : "Business groupage",
+    "serviceName" : "Stykkgods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5100",
@@ -524,7 +461,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business pallet",
+    "serviceName" : "Pall til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5400",
@@ -533,7 +470,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -542,7 +479,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -551,7 +488,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -570,16 +507,7 @@
   "bookingCode" : "1062",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business Parcel Express Overnight",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09",
-    "productionCode" : "1002",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Express next day",
+    "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "4850",
@@ -588,16 +516,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business Parcel Express Overnight Return Service",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09_RETURSERVICE",
-    "productionCode" : "1224",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Return express",
+    "serviceName" : "Returekspress",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "9600",
@@ -616,16 +535,7 @@
   "bookingCode" : "0041",
   "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification" ],
   "supportedServices" : [ {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
@@ -634,16 +544,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Bedriftspakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "BPAKKE_DOR-DOR",
-    "productionCode" : "1000",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5000",
@@ -652,25 +553,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "3050",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "CARGO",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business partload",
+    "serviceName" : "Partigods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5300",
@@ -679,7 +562,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business groupage",
+    "serviceName" : "Stykkgods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5100",
@@ -688,7 +571,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business pallet",
+    "serviceName" : "Pall til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5400",
@@ -707,25 +590,7 @@
   "bookingCode" : "NON_FREEZE",
   "incompatibleVases" : [ "Simplified delivery", "Special goods" ],
   "supportedServices" : [ {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "3050",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "CARGO",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business partload",
+    "serviceName" : "Partigods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5300",
@@ -734,7 +599,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business groupage",
+    "serviceName" : "Stykkgods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5100",
@@ -743,7 +608,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business pallet",
+    "serviceName" : "Pall til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5400",
@@ -771,25 +636,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "3050",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "CARGO",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business partload",
+    "serviceName" : "Partigods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5300",
@@ -798,7 +645,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business groupage",
+    "serviceName" : "Stykkgods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5100",
@@ -807,7 +654,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business pallet",
+    "serviceName" : "Pall til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5400",
@@ -816,7 +663,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "International Rail & Road",
+    "serviceName" : "Cargo International",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway international",
     "serviceCode" : "CARGO_INTERNATIONAL",
@@ -835,7 +682,7 @@
   "bookingCode" : "INSURANCE",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -844,7 +691,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "ALL<sup>1</sup>"
   }, {
-    "serviceName" : "BUSINESS PARCEL RETURN",
+    "serviceName" : "Business Parcel Return",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -853,7 +700,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -862,7 +709,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DE, DK, EE, FI, FO, GB, IS, NL, NO, SE"
   }, {
-    "serviceName" : "BUSINESS PARCEL RETURN BULK",
+    "serviceName" : "Business Parcel Return Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
@@ -880,7 +727,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -898,7 +745,7 @@
     "senderCountries" : "DK, FI, SE",
     "destinations" : "ALL<sup>1</sup>"
   }, {
-    "serviceName" : "PICKUP PARCEL RETURN",
+    "serviceName" : "PickUp Parcel Return",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -907,7 +754,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "PICKUP PARCEL RETURN BULK",
+    "serviceName" : "PickUp Parcel Return Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -916,7 +763,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "PickUp Parcel bulk",
+    "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_BULK",
@@ -944,7 +791,7 @@
   "bookingCode" : "1288",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -962,7 +809,7 @@
     "senderCountries" : "DK",
     "destinations" : "ALL"
   }, {
-    "serviceName" : "BUSINESS PARCEL RETURN",
+    "serviceName" : "Business Parcel Return",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -971,7 +818,7 @@
     "senderCountries" : "DK",
     "destinations" : "ALL"
   }, {
-    "serviceName" : "BUSINESS PARCEL RETURN BULK",
+    "serviceName" : "Business Parcel Return Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
@@ -989,7 +836,7 @@
     "senderCountries" : "DK, SE",
     "destinations" : "ALL"
   }, {
-    "serviceName" : "PICKUP PARCEL RETURN",
+    "serviceName" : "PickUp Parcel Return",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -998,7 +845,7 @@
     "senderCountries" : "DK, SE",
     "destinations" : "ALL"
   }, {
-    "serviceName" : "PICKUP PARCEL RETURN BULK",
+    "serviceName" : "PickUp Parcel Return Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -1026,7 +873,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -1035,7 +882,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -1044,7 +891,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -1053,7 +900,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -1062,7 +909,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -1080,7 +927,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -1089,7 +936,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -1098,7 +945,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -1107,7 +954,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "PickUp Parcel bulk",
+    "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_BULK",
@@ -1125,15 +972,6 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "Servicepakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "SERVICEPAKKE",
-    "productionCode" : "1202",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "",
     "serviceFamily" : "Parcel Norway domestic",
@@ -1143,16 +981,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
@@ -1170,16 +999,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, SE"
   }, {
-    "serviceName" : "Business Parcel Express Overnight",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09",
-    "productionCode" : "1002",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Express next day",
+    "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "4850",
@@ -1226,7 +1046,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -1235,7 +1055,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery return",
+    "serviceName" : "Home Delivery Return",
     "serviceType" : "C2B",
     "serviceFamily" : "Home Delivery services",
     "serviceCode" : "HOME_DELIVERY_RETURN",
@@ -1244,7 +1064,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -1272,7 +1092,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -1281,7 +1101,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery return",
+    "serviceName" : "Home Delivery Return",
     "serviceType" : "C2B",
     "serviceFamily" : "Home Delivery services",
     "serviceCode" : "HOME_DELIVERY_RETURN",
@@ -1290,7 +1110,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -1318,7 +1138,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -1346,7 +1166,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery Indoor",
+    "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
@@ -1355,7 +1175,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -1383,7 +1203,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery Indoor",
+    "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
@@ -1392,7 +1212,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -1411,15 +1231,6 @@
   "bookingCode" : "SELECT_PICKUP_POINT",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Servicepakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "SERVICEPAKKE",
-    "productionCode" : "1202",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "",
     "serviceFamily" : "Parcel Norway domestic",
@@ -1429,16 +1240,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business Parcel Express Overnight",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09",
-    "productionCode" : "1002",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Express next day",
+    "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "4850",
@@ -1457,7 +1259,7 @@
   "bookingCode" : "1280",
   "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -1466,7 +1268,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -1475,7 +1277,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -1493,7 +1295,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -1502,7 +1304,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -1511,7 +1313,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, NO, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -1547,7 +1349,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -1556,7 +1358,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -1575,7 +1377,7 @@
   "bookingCode" : "1094",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -1584,7 +1386,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -1593,7 +1395,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -1611,7 +1413,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -1620,7 +1422,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -1629,7 +1431,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -1648,7 +1450,7 @@
   "bookingCode" : "1134",
   "incompatibleVases" : [ "Simplified delivery", "ID verification" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -1657,7 +1459,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -1666,7 +1468,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "Express Nordic 09:00 bulk",
+    "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -1684,7 +1486,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -1693,7 +1495,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "BUSINESS HALFPALLET",
+    "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_HALFPALLET",
@@ -1702,7 +1504,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, SE"
   }, {
-    "serviceName" : "BUSINESS QUARTERPALLET",
+    "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
     "serviceFamily" : "",
     "serviceCode" : "BUSINESS_QUARTERPALLET",
@@ -1720,7 +1522,7 @@
     "senderCountries" : "DK, FI, SE",
     "destinations" : "FI"
   }, {
-    "serviceName" : "PickUp Parcel bulk",
+    "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_BULK",
@@ -1738,15 +1540,6 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Servicepakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "SERVICEPAKKE",
-    "productionCode" : "1202",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "",
     "serviceFamily" : "Parcel Norway domestic",
@@ -1756,16 +1549,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
@@ -1792,7 +1576,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -1811,7 +1595,7 @@
   "bookingCode" : "1179",
   "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts, then pickup point" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -1820,7 +1604,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "NO"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -1829,16 +1613,7 @@
     "senderCountries" : "ALL",
     "destinations" : "NO"
   }, {
-    "serviceName" : "Bedriftspakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "BPAKKE_DOR-DOR",
-    "productionCode" : "1000",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5000",
@@ -1847,16 +1622,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
@@ -1875,16 +1641,7 @@
   "bookingCode" : "1178",
   "incompatibleVases" : [ "Two delivery attempts", "Two delivery attempts, then pickup point" ],
   "supportedServices" : [ {
-    "serviceName" : "Bedriftspakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "BPAKKE_DOR-DOR",
-    "productionCode" : "1000",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5000",
@@ -1893,16 +1650,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
@@ -1921,16 +1669,7 @@
   "bookingCode" : "1283",
   "incompatibleVases" : [ "Two delivery attempts", "One delivery attempt, then pickup point" ],
   "supportedServices" : [ {
-    "serviceName" : "Bedriftspakke",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "BPAKKE_DOR-DOR",
-    "productionCode" : "1000",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5000",
@@ -1939,16 +1678,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
@@ -1966,25 +1696,7 @@
   "shippingGuideNpbCode" : "ADVISERING",
   "bookingCode" : "ADVISERING",
   "incompatibleVases" : [ "Simplified delivery" ],
-  "supportedServices" : [ {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "3050",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "CARGO",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  } ],
+  "supportedServices" : [ ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
 }, {
@@ -1995,7 +1707,7 @@
   "bookingCode" : "2142",
   "incompatibleVases" : [ "Frost free" ],
   "supportedServices" : [ {
-    "serviceName" : "Business groupage",
+    "serviceName" : "Stykkgods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5100",
@@ -2004,29 +1716,11 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Business partload",
+    "serviceName" : "Partigods til bedrift",
     "serviceType" : "",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceCode" : "5300",
     "productionCode" : "5300",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "3050",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Groupage and Partload",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "CARGO",
-    "productionCode" : "CARGO",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2060,7 +1754,7 @@
   "bookingCode" : "1081",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Mailbox parcel with RFID",
+    "serviceName" : "Pakke i postkassen med RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "3570",
@@ -2069,7 +1763,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel",
+    "serviceName" : "Pakke i postkassen",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "3584",
@@ -2088,25 +1782,7 @@
   "bookingCode" : "1083",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business Parcel Express Overnight",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09",
-    "productionCode" : "1002",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Business Parcel Express Overnight Return Service",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09_RETURSERVICE",
-    "productionCode" : "1224",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Express next day",
+    "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "4850",
@@ -2115,7 +1791,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Return express",
+    "serviceName" : "Returekspress",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "9600",
@@ -2152,7 +1828,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -2161,7 +1837,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery Indoor",
+    "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
@@ -2170,7 +1846,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -2207,7 +1883,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside",
+    "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE",
@@ -2235,7 +1911,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery Indoor",
+    "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
@@ -2244,7 +1920,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -2272,7 +1948,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery Indoor",
+    "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
@@ -2281,7 +1957,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -2309,7 +1985,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery Indoor",
+    "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "SINGLE_INDOOR",
@@ -2318,7 +1994,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home Delivery curbside evening",
+    "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "CURBSIDE_EVENING",
@@ -2337,16 +2013,7 @@
   "bookingCode" : "1342",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Business Parcel Express Overnight Return Service",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "EKSPRESS09_RETURSERVICE",
-    "productionCode" : "1224",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Return express",
+    "serviceName" : "Returekspress",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "9600",
@@ -2365,20 +2032,11 @@
   "bookingCode" : "2012",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "5600",
     "productionCode" : "5600",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "På døren",
-    "serviceType" : "",
-    "serviceFamily" : "",
-    "serviceCode" : "PA_DOREN",
-    "productionCode" : "1736",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2393,7 +2051,7 @@
   "bookingCode" : "0003",
   "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Business parcel",
+    "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL",
@@ -2402,7 +2060,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
   }, {
-    "serviceName" : "BUSINESS PARCEL RETURN",
+    "serviceName" : "Business Parcel Return",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -2411,7 +2069,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "BUSINESS PARCEL RETURN BULK",
+    "serviceName" : "Business Parcel Return Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
@@ -2420,7 +2078,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "PICKUP PARCEL RETURN",
+    "serviceName" : "PickUp Parcel Return",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -2429,7 +2087,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "PICKUP PARCEL RETURN BULK",
+    "serviceName" : "PickUp Parcel Return Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -2438,7 +2096,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "DK, FI, NO, SE"
   }, {
-    "serviceName" : "Business parcel bulk",
+    "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PARCEL_BULK",
@@ -2447,7 +2105,7 @@
     "senderCountries" : "ALL",
     "destinations" : "DK, FI, FO, IS, NO, SE"
   }, {
-    "serviceName" : "BUSINESS PALLET",
+    "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "BUSINESS_PALLET",
@@ -2465,7 +2123,7 @@
     "senderCountries" : "DK, FI, NO, SE",
     "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
   }, {
-    "serviceName" : "PickUp Parcel bulk",
+    "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceCode" : "PICKUP_PARCEL_BULK",

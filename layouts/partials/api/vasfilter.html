@@ -4,7 +4,7 @@
     {{- range  sort (uniq .scratcher) "name" }}
     {{ if and (ne .name "-") (ne .name "") }}
     <div>
-      <label class="mrm maxw16r">
+      <label class="mrm {{ if gt (len (uniq .scratcher)) 10 }}maxw16r{{ end }}">
         <input type="checkbox" value="{{ .value }}" data-check data-filter="{{ $filter }}"/> {{ .name }}
       </label>
     </div>
