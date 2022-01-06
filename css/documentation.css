@@ -143,3 +143,17 @@ summary:hover {
     padding: 0 2rem 3rem 2rem;
   }
 }
+
+.btn-link--help {
+  background: none;
+  padding: 0;
+  vertical-align: text-bottom;
+}
+
+.btn-link--help:hover {
+  background: none;
+}
+
+.btn-link--help:hover svg {
+  color: #777;
+}

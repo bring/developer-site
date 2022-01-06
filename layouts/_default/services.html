@@ -1,0 +1,278 @@
+{{- define "main" -}}
+{{- $maxwidth := "maxw80r" -}}
+{{- if (eq ($.Param "widelayout") true) -}}
+  {{- $maxwidth = "" -}}
+{{- end -}}
+
+<div class="dev-docs__menu" data-drawer data-drawer-event>
+  {{- partial "sidemenu.html" . -}}
+</div>
+{{- partial "drawmenu.html" . -}}
+<div class="dev-docs__page">
+  <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
+    <article>
+      <h1>
+        {{- .Title -}}
+        {{- with .Params.titlesub -}}
+          <span class="db text-title mts">{{ . }}</span>
+        {{- end -}}
+      </h1>
+      {{ range .Params.tables }}
+      <section class="dev-docscontent__section">
+        <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
+        <p class="mtm mbl">
+          <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+        </p>
+        {{ if in .title "Booking" }}
+          <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
+            <div class="mrl">
+              <div class="flex flex-wrap-reverse align-ifs">
+                <div class="mrl">
+                  <p class="form__label">Filter by</p>
+                  <div class="btngroup">
+                    <button class="btn btn--white" data-bsgfilterbtn="type">Service type</button>
+                    <button class="btn btn--white" data-bsgfilterbtn="family">Service family</button>
+                    <button class="btn btn--white" data-bsgfilterbtn="cntype">Customer number type</button>
+                  </div>
+                </div>
+                <label class="form__label" for="bsg-textfilter">
+                  Service name, service code or request code
+                  <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                </label>
+              </div>
+              <div id="bsg-filtersets">
+                {{- $.Scratch.Add "type" slice -}}
+                {{- $.Scratch.Add "family" slice -}}
+                {{- $.Scratch.Add "cnType" slice -}}
+                {{- range index $.Site.Data .data -}}
+                  {{- $.Scratch.Add "type" .Type }}
+                  {{- $.Scratch.Add "family" .ServiceFamily }}
+                  {{- $.Scratch.Add "cnType" .CustomerNumberType }}
+                {{- end -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "type") "filter" "type" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "family") "filter" "family" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
+              </div>
+            </div>
+            <button id="bsg-clearfilters" class="btn-link--dark mtl mrl dn">Clear filters</button>
+          </div>
+          <table id="services-bsg">
+            <thead>
+              <tr>
+                <th rowspan="2">Service</th>
+                <th rowspan="2">Customer number type</th>
+                <th colspan="2">Codes</th>
+                <th rowspan="2">Return</th>
+                <th rowspan="2">APIs</th>
+                <th rowspan="2">Required setup</th>
+                <th rowspan="2">Prices</th>
+                <th rowspan="2">Lead time</th>
+                <th colspan="3">Countries
+                  <button type="button" class="dib btn-link btn-link--help" id="help-country" title="Show info">
+                      <span data-mybicon="mybicon-help" data-mybicon-class="icon-ui"></span>
+                  </button>
+                  <div id="info-country" class="message--info pvxs phs lh-tight text-note fwn maxw24r" hidden>
+                  The same country in sender and destination columns does not equal domestic, only cross-border.
+                  </div>
+                </th>
+              </tr>
+              <tr>
+                <th>Service</th>
+                <th>Request</th>
+                <th>Sender</th>
+                <th>Destination</th>
+                <th>Domestic</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{- range index $.Site.Data .data -}}
+              <tr>
+                <th scope="row" class="lh-tight">
+                  <span data-filter="name">{{ .ServiceName }}</span><br>
+                  <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>{{ end }}
+                  {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
+                </th>
+                <td data-filter="cntype">{{ .CustomerNumberType }}</span></td>
+                <td data-filter="servcode">{{ .ServiceCode }}</td>
+                <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
+                <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
+                  data-mybicon="mybicon-check"
+                  data-mybicon-class="icon-ui--green-dark mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="Yes"
+                ></span>{{else}}
+                <span
+                  data-mybicon="mybicon-cross"
+                  data-mybicon-class="icon-ui--lightgray mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="No"
+                ></span>
+                {{ end }}</td>
+                <td>
+                  {{if eq .Booking "Yes"}}<span class="mb-badge">Booking</span><br>{{ end }}
+                  {{ if eq .ShippingGuide "Yes" }}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{ end }}
+                </td>
+                <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
+                <td>
+                  {{ if eq .ListPrice "Yes" }}<span class="mb-badge mrs">List</span><br>{{end}}
+                  {{ if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{end}}
+                </td>
+                <td class="mb-table__cell--icon tc">{{ if eq .LeadTime "Yes" }}<span
+                  data-mybicon="mybicon-check"
+                  data-mybicon-class="icon-ui--green-dark mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="Yes"
+                ></span>{{else}}
+                <span
+                  data-mybicon="mybicon-cross"
+                  data-mybicon-class="icon-ui--lightgray mrs"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                  data-mybicon-title="No"
+                ></span>
+                {{ end }}</td>
+                <td class="maxw16r">{{ if ne .SenderCountries "-" }}{{ .SenderCountries }}{{ end }}</td>
+                <td class="maxw16r">{{ if ne .Destination "-" }}{{ .Destination }}{{ end }}</td>
+                <td class="maxw16r">{{ if ne .DomesticAllowed "-" }}{{ .DomesticAllowed }}{{ end }}</td>
+                {{- end -}}
+              </tr>
+            </tbody>
+          </table>
+          <div class="cutoff-overlay" id="bsg-cutoff">
+            <button class="btn btn--white w100p maxw32r">Show all services</button>
+          </div>
+          <script async src="{{ "/js/servicefiltering-bsg.js" | relURL }}"></script>
+
+        {{/*  Content = VAS; placing it here until it’s data sourced etc. */}}
+        {{- $.Content -}}
+
+        {{ end }}
+
+        {{ if in .title "Reports" }}
+          <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
+            <div class="mrl">
+              <div class="flex flex-wrap-reverse align-ifs">
+                <div class="mrl">
+                  <p class="form__label">Filter by</p>
+                  <div class="btngroup">
+                    <button class="btn btn--white" data-rifilterbtn="rifamily">Service family</button>
+                    <button class="btn btn--white" data-rifilterbtn="riapi">API</button>
+                    <button class="btn btn--white" data-rifilterbtn="rireptype">Report type</button>
+                  </div>
+                </div>
+                <label class="form__label" for="ri-textfilter">
+                  Reports name
+                  <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                </label>
+              </div>
+              <div id="ri-filtersets">
+                {{- $.Scratch.Add "rifamily" slice -}}
+                {{- $.Scratch.Add "riapi" slice -}}
+                {{- $.Scratch.Add "rireptype" slice -}}
+                {{- range index $.Site.Data .data -}}
+                  {{- $.Scratch.Add "rifamily" .ServiceFamily }}
+                  {{- $.Scratch.Add "rireptype" .ReportType }}
+                {{- end -}}
+                {{- $.Scratch.Add "riapi" "Invoice" }}
+                {{- $.Scratch.Add "riapi" "Reports" }}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rifamily") "filter" "rifamily" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "riapi") "filter" "riapi" ) -}}
+                {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
+              </div>
+            </div>
+            <button id="ri-clearfilters" class="btn-link--dark mtl mrl dn">Clear filters</button>
+          </div>
+          <table id="services-ri">
+            <thead>
+              <tr>
+                <th>Service family</th>
+                <th>Customer number type</th>
+                <th>API</th>
+                <th>Report type</th>
+                <th>Reports name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{- $looper := 0 -}}
+              {{- $apiLooper := 1 -}}
+              {{- $fam := "" -}}
+              {{- $thisApi := "" -}}
+              {{- $prevApi := "" }}
+
+              {{- range index $.Site.Data .data -}}
+                {{- $prevApi = $thisApi -}}
+
+                {{- if ne $fam .ServiceFamily -}}
+                  {{- $looper = 0 -}}
+                  {{- $apiLooper = 1 -}}
+                  {{- $prevApi = "" -}}
+                {{- end -}}
+                {{- $looper = add $looper 1 -}}
+                {{- $.Scratch.SetInMap "famLooper" .ServiceFamily $looper -}}
+                {{- $fam = .ServiceFamily -}}
+
+                {{- if eq .Reports "Yes" -}}
+                  {{- $thisApi = "Reports" -}}
+                {{- else -}}
+                  {{- $thisApi = "Invoice" -}}
+                {{- end -}}
+                {{- if eq $thisApi $prevApi -}}
+                  {{- $apiLooper = add $apiLooper 1 -}}
+                {{- end -}}
+                {{- $.Scratch.SetInMap "repLooper" .ServiceFamily $apiLooper -}}
+              {{- end -}}
+
+              {{- range index $.Site.Data .data -}}
+                {{- if eq .Reports "Yes" -}}
+                  {{- $thisApi = "Reports" -}}
+                {{- else -}}
+                  {{- $thisApi = "Invoice" -}}
+                {{- end -}}
+                <tr
+                  data-rifamily="{{.ServiceFamily}}"
+                  data-cntype="{{ .CustomerNumberType }}"
+                  data-riapi="{{ $thisApi }}"
+                  data-rireptype="{{ .ReportType }}"
+                  data-rirepname="{{ .ReportsName }}"
+                >
+                  {{- if ne $fam .ServiceFamily -}}
+                    <th scope="row" rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="originalel maxw20r">
+                        {{- .ServiceFamily -}}
+                    </th>
+                    <td rowspan='{{ index ($.Scratch.Get "famLooper") .ServiceFamily }}' class="originalel">
+                      {{- .CustomerNumberType -}}
+                    </td>
+                  {{- end -}}
+                  {{- if eq .Invoice "Yes" -}}
+                    <td class="originalel"><span class="mb-badge">{{ $thisApi }}</span></td>
+                    {{- $prevApi = $thisApi -}}
+                  {{- end -}}
+                  {{- if eq .Reports "Yes" -}}
+                    {{- if ne $thisApi $prevApi -}}
+                      <td rowspan='{{ index ($.Scratch.Get "repLooper") .ServiceFamily }}' class="originalel"><span class="mb-badge">{{ $thisApi }}</span></td>
+                      {{- $prevApi = $thisApi -}}
+                    {{- end -}}
+                  {{- end -}}
+                  <td>{{ if .ReportType }}{{ .ReportType }}{{else}}-{{ end }}</td>
+                  <td data-filter="rep-name">{{ if .ReportsName }}{{ .ReportsName }}{{else}}-{{ end }}</td>
+                </tr>
+                {{- $fam = .ServiceFamily -}}
+              {{- end -}}
+            </tbody>
+          </table>
+          <div class="cutoff-overlay" id="ri-cutoff">
+            <button class="btn btn--white w100p maxw32r">Show all service families</button>
+          </div>
+        {{- end -}}
+      </section>
+      <script async src="{{ "/js/servicefiltering-ri.js" | relURL }}"></script>
+      {{- end -}}
+    </article>
+  </main>
+  {{ partial "footer.html" . }}
+  <div class="dev-obfuscator" data-drawer data-drawer-event></div>
+</div>
+{{- end -}}
