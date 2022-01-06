@@ -236,7 +236,7 @@
   {
     "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "CustomerNumberType": "Parcel Sweden, Denmark, Finland",
-    "ServiceName": "Mailbox Parcel",
+    "ServiceName": "Home Delivery Mailbox",
     "ServiceCode": "0345",
     "RequestCode": "0345",
     "Type": "B2C",
@@ -524,7 +524,7 @@
   {
     "ServiceFamily": "Home Delivery",
     "CustomerNumberType": "Parcel Norway domestic",
-    "ServiceName": "Single Indoor",
+    "ServiceName": "Home Delivery Single Indoor",
     "ServiceCode": 3150,
     "RequestCode": "SINGLE_INDOOR*",
     "Type": "B2C",
@@ -542,7 +542,7 @@
   {
     "ServiceFamily": "Home Delivery",
     "CustomerNumberType": "Parcel Norway domestic",
-    "ServiceName": "Double Indoor",
+    "ServiceName": "Home Delivery Indoor",
     "ServiceCode": 2870,
     "RequestCode": "DOUBLE_INDOOR",
     "Type": "B2C",
@@ -560,7 +560,7 @@
   {
     "ServiceFamily": "Home Delivery",
     "CustomerNumberType": "Parcel Norway domestic",
-    "ServiceName": "Curbside",
+    "ServiceName": "Home Delivery Curbside",
     "ServiceCode": 3123,
     "RequestCode": "CURBSIDE",
     "Type": "B2C",
@@ -578,7 +578,7 @@
   {
     "ServiceFamily": "Home Delivery",
     "CustomerNumberType": "Parcel Norway domestic",
-    "ServiceName": "Curbside Evening",
+    "ServiceName": "Home Delivery Curbside Evening",
     "ServiceCode": 3457,
     "RequestCode": "CURBSIDE_EVENING",
     "Type": "B2C",
@@ -632,7 +632,7 @@
   {
     "ServiceFamily": "Home Delivery",
     "CustomerNumberType": "Parcel Norway domestic",
-    "ServiceName": "Return Indoor",
+    "ServiceName": "Indoor Return",
     "ServiceCode": 3578,
     "RequestCode": "RETURN_INDOOR",
     "Type": "C2B",
@@ -650,7 +650,7 @@
   {
     "ServiceFamily": "Home Delivery",
     "CustomerNumberType": "Parcel Norway domestic",
-    "ServiceName": "Return Curbside",
+    "ServiceName": "Curbside Return",
     "ServiceCode": 3577,
     "RequestCode": "RETURN_CURBSIDE",
     "Type": "C2B",
