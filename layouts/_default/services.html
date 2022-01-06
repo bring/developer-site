@@ -20,10 +20,10 @@
       {{ range .Params.tables }}
       <section class="dev-docscontent__section">
         <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
-        <p class="mtm mbl">
-          <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
-        </p>
         {{ if in .title "Booking" }}
+          <p class="mtm mbl">
+            <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+          </p>
           <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
             <div class="mrl">
               <div class="flex flex-wrap-reverse align-ifs">
@@ -90,9 +90,10 @@
                 <th scope="row" class="lh-tight">
                   <span data-filter="name">{{ .ServiceName }}</span><br>
                   <span class="text-note">{{ if ne .Type "-" }}Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>{{ end }}
-                  {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
+                    {{ if ne .serviceFamily "-" }}Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>{{ end }}
+                  </span>
                 </th>
-                <td data-filter="cntype">{{ .CustomerNumberType }}</span></td>
+                <td data-filter="cntype">{{ .CustomerNumberType }}</td>
                 <td data-filter="servcode">{{ .ServiceCode }}</td>
                 <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
                 <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
@@ -144,12 +145,226 @@
           <div class="cutoff-overlay" id="bsg-cutoff">
             <button class="btn btn--white w100p maxw32r">Show all services</button>
           </div>
-          <script async src="{{ "/js/servicefiltering-bsg.js" | relURL }}"></script>
-
-        {{/*  Content = VAS; placing it here until it’s data sourced etc. */}}
-        {{- $.Content -}}
-
+          <script async src='{{ "/js/servicefiltering-bsg.js" | relURL }}'></script>
         {{ end }}
+
+        {{ if in .title "Value" }}
+          <div class="mbs">
+            <div class="flex flex-wrap align-ifs bg-gray1 pal pbm rad-a2px pr0">
+              <label class="form__label mrxl" for="vasfilter">
+                VAS name, booking code or shipping guide code
+                <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+              </label>
+              <div class="mrl">
+                <p class="form__label">Filter by</p>
+                <div class="btngroup">
+                  <button class="btn btn--white" data-filterbtn="service">Service</button>
+                  <button class="btn btn--white" data-filterbtn="type">Service type</button>
+                  <button class="btn btn--white" data-filterbtn="family">Service family</button>
+                </div>
+              </div>
+              <button class="btn-link--dark" id="clearfilters">Clear filters</button>
+            </div>
+            <div id="filtersets" class="bg-gray1 plm">
+
+              {{- $.Scratch.Add "servicetype" slice -}}
+              {{- $.Scratch.Add "servicefamily" slice -}}
+              {{- $.Scratch.Add "service" slice -}}
+              {{- range $.Site.Data.services_vas -}}
+              {{- range .supportedServices -}}
+              {{- $.Scratch.Add "servicetype" (dict "name" .serviceType "value" .serviceType) -}}
+              {{- $.Scratch.Add "servicefamily" (dict "name" .serviceFamily "value" .serviceFamily) -}}
+              {{- $.Scratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
+              {{- end -}}
+              {{- end -}}
+
+              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "servicetype") "filter" "type" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "servicefamily") "filter" "family" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "service") "filter" "service" ) -}}
+
+            </div>
+          </div>
+
+          <div class="flex-auto flex-wrap" id="allVas">
+            {{- range $index, $vas := (sort $.Site.Data.services_vas "vasName") -}}
+            <div class="vas__item bg-gray2 pam mbxs mrxs dev-collapsible">
+              <div>
+                <a
+                  href="#"
+                  data-collapse="#vas__item{{ $index }}"
+                  class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                  style="background: transparent; padding: 0;"
+                >
+                  <svg
+                    class="dev-collapsible__toggler__icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 320 512"
+                  >
+                    <path
+                      d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                    ></path>
+                  </svg>
+                  <h3 class="dev-anchored plm" id="{{ $vas.vasName }}" data-filter="name">{{ $vas.vasName }}</h3>
+                </a>
+              </div>
+              <div class="plm bg-white mts flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
+                <div class="w16r">
+                  <div class="mtm">
+                    <span class="text-note fwb">API codes</span>
+                    <dl class="bl b--gray4 pls mts">
+                      <div>
+                        <span class="text-note">Booking: <span class="fwn mb-badge paxs"><code data-filter="bookcode">{{ $vas.bookingCode }}</code></span></span>
+                      </div>
+                      <div>
+                        <span class="text-note">Shipping Guide: <span class="fwn mb-badge paxs"><code data-filter="sgcode">{{ $vas.shippingGuideNpbCode }}</code></span></span>
+                      </div>
+                      {{ if ne $vas.shippingGuideCode $vas.shippingGuideNpbCode }}
+                      <div>
+                        <span class="text-note">Shipping Guide (<span class="fsi">legacy</span>): <span class="fwn mb-badge paxs"><code data-filter="sgcode">{{ $vas.shippingGuideCode }}</code></span></span>
+                      </div>
+                      {{ end }}
+                    </dl>
+                  </div>
+                  {{ if ($vas.incompatibleVases) }}
+                  <div class="mtm">
+                    <span class="text-note fwb">Incompatible with</span>
+                    <dl class="bl b--gray4 pls mts">
+                      {{- range $vas.incompatibleVases -}}
+                      <div>
+                        <a  href="/api/services/#{{ . }}"><span class="text-note">{{ . }}</span></a>
+                      </div>
+                      {{- end -}}
+                    </dl>
+                  </div>
+                  {{ end }}
+                </div>
+                <div class="vas__item--maxw66r mlm">
+                  <div class="text-basic pvm">
+                    {{ $vas.description }}
+                  </div>
+                  {{ if gt (len .vasFootNotes) 0 }}
+                  {{- range .vasFootNotes -}}
+                  <div class="text-basic pvm">{{ . }}</div>
+                  {{- end -}}
+                  {{ end }}
+                  <div class="rad-a2px">
+                    <a
+                      href="#"
+                      data-collapse="#vascountry{{ $index }}"
+                      class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                      style="background: transparent"
+                    ><svg
+                      class="dev-collapsible__toggler__icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 320 512"
+                    >
+                      <path
+                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                      ></path>
+                    </svg>
+                      <h4>Supported services & countries</h4>
+                    </a>
+                    <div class="dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}" style="background: white">
+                      <table class="vascountry">
+                        <thead>
+                        <tr class="vascountryrow">
+                          <th>Service</th>
+                          <th>Sender</th>
+                          <th>Destination</th>
+                          <th>Domestic</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{- range .supportedServices -}}
+                        <tr class="vascountryrow">
+                          <td class="maxw16r">{{ .serviceName }} (<span class="mb-badge paxs"><code>{{ .serviceCode }}</code></span>)</td>
+                          <td data-filter="type" hidden>{{ .serviceType }}</td>
+                          <td data-filter="family" hidden>{{ .serviceFamily }}</td>
+                          <td data-filter="service" hidden>{{ .serviceCode }}</td>
+                          <td class="w16r">{{ if ne .senderCountries "-" }}{{ .senderCountries | safeHTML }}{{ end }}</td>
+                          <td class="w16r">{{ if ne .destinations "-" }}{{ .destinations | safeHTML }}{{ end }}</td>
+                          <td class="w12r">{{ if ne .domesticAllowedIn "-" }}{{ .domesticAllowedIn | safeHTML }}{{ end }}</td>
+                          {{- end -}}
+                        </tr>
+                        </tbody>
+                      </table>
+                      {{if gt (len .serviceAndCountryFootNotes) 0 }}
+                      <ol class="text-note maxw48r">
+                        {{- range .serviceAndCountryFootNotes -}}
+                        <li>{{ . }}</li>
+                        {{- end -}}
+                      </ol>
+                      {{ end }}
+                    </div>
+                  </div>
+                  <div>
+                    {{- range where $.Site.Data.examples "api" "booking" -}}
+                    {{- range where .vas "id" $vas.bookingCode -}}
+                    <div class="rad-a2px">
+                      <a
+                        href="#"
+                        data-collapse="#example{{ $vas.bookingCode }}"
+                        class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                        style="background: transparent"
+                      ><svg
+                        class="dev-collapsible__toggler__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 320 512"
+                      >
+                        <path
+                          d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                        ></path>
+                      </svg>
+                        <h4>Booking API request examples</h4>
+                      </a>
+                      <div class="dev-collapsible__item--collapsed pas pt0" id="example{{ $vas.bookingCode }}">
+                        {{ if (.html) }}
+                        <div class="pam">
+                          {{ .html | safeHTML }}
+                        </div>
+                        {{ end }}
+                        <nav aria-label="local">
+                          <ul class="dev-codetabs flex flex-dir-row" role="tablist">
+                            {{ if (.json) }}
+                            <li role="presentation" class="dev-codetabs__item active">
+                              <a class="dev-codetabs__link" href="#" data-toggle="tab" data-target="#example_json_{{ $vas.bookingCode }}">application/json</a>
+                            </li>
+                            {{ end }}
+                            {{ if (.xml) }}
+                            <li role="presentation" class="dev-codetabs__item">
+                              <a class="dev-codetabs__link" href="#" data-toggle="tab" data-target="#example_xml_{{ $vas.bookingCode }}">application/xml</a>
+                            </li>
+                            {{ end }}
+                          </ul>
+                        </nav>
+                        <div>
+                          {{ if (.json) }}
+                          <div class="dev-codetabs__content dev-codetabs__panel active" id="example_json_{{ $vas.bookingCode }}">
+                            {{ highlight .json "json" "" }}
+                          </div>
+                          {{ end }}
+                          {{ if (.xml) }}
+                          <div class="dev-codetabs__content dev-codetabs__panel {{ if not .json }}active{{ end }}" id="example_xml_{{ $vas.bookingCode }}">
+                            {{ highlight .xml "xml" "" }}
+                          </div>
+                          {{ end }}
+                        </div>
+                      </div>
+                    </div>
+                    {{- end -}}
+                    {{- end -}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{- end -}}
+          </div>
+
+          <button class="btn btn--white mtxl" id="showAll">Show all VAS</button>
+        {{- end -}}
 
         {{ if in .title "Reports" }}
           <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
@@ -268,8 +483,9 @@
           </div>
         {{- end -}}
       </section>
-      <script async src="{{ "/js/servicefiltering-ri.js" | relURL }}"></script>
       {{- end -}}
+      <script async src='{{ "/js/servicefiltering-ri.js" | relURL }}'></script>
+      <script async src='{{ "/js/vasfiltering.js" | relURL }}'></script>
     </article>
   </main>
   {{ partial "footer.html" . }}

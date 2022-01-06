@@ -1,44 +1,11 @@
-{{/* Is split because it reads some content and some data source, can be simplified when VAS-es are data sourced */}}
 {{- $base := ($.Page.File.LogicalName) -}}
 {{ $paramHeaders := .context.Params.tables }}
 
-{{/* require id tag */}}
-{{- $headers := findRE (printf "<h[2-%s].* id=\"([^\"]\\S*?)\">(.|\n])+?</h[2-%s]>" $.numberOfHeadings $.numberOfHeadings) .context.Content -}}
-{{- $has_headers := ge (len $headers) 1 -}}
-
 {{/* must have table params or at least one header to link to */}}
-{{- if or $has_headers $paramHeaders -}}
+{{- if or $paramHeaders -}}
   <ul class="dev-sidemenu__sublist">
     {{- with $paramHeaders }}
-      {{- range first 1 . -}}
-        {{- $anchorId := .title|anchorize -}}
-        {{- $href := delimit (slice $base $anchorId) "#" | string -}}
-        <li>
-          <a href="{{ $href }}">{{ .title }}</a>
-        </li>
-      {{- end -}}
-    {{- end -}}
-
-    {{- range $index, $header := $headers -}}
-      {{ $nextIndex := add $index 1 }}
-      {{ $nextHeader := index $headers $nextIndex }}
-      {{- $anchorId := ($header | plainify | htmlUnescape | anchorize) -}}
-      {{- $href := delimit (slice $base $anchorId) "#" | string -}}
-
-      <li>
-        <a href="{{ relref $.context.Page $href }}">{{- $header | plainify | htmlUnescape -}}</a>
-        {{- if (and (in $nextHeader "</h3>") (in $header "</h2>")) -}}
-          <ul class="dev-sidemenu__sublist text-note">
-        {{- else -}}
-          </li>
-        {{- end -}}
-
-      {{- if (and (or (in $nextHeader "</h2>") (not $nextHeader)) (in $header "</h3>")) -}}
-        </ul>
-      {{- end -}}
-    {{- end -}}
-    {{- with $paramHeaders }}
-      {{- range last 1 . -}}
+      {{- range . -}}
         {{- $anchorId := .title|anchorize -}}
         {{- $href := delimit (slice $base $anchorId) "#" | string -}}
         <li>

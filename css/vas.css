@@ -1,11 +1,3 @@
-#allVas {
-    max-width: 80rem;
-}
-
-#allVas .dev-anchored {
-    padding-left: 1rem;
-}
-
 .vasfilter {
     max-height: 30rem;
 }
@@ -15,7 +7,7 @@
     visibility: hidden;
 }
 
-.vas__item--maxw58r {
-    max-width: 58rem;
+.vas__item--maxw66r {
+    max-width: 66rem;
     flex-grow: 100;
 }
