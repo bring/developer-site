@@ -1,0 +1,14 @@
+{{ $filter := .filter }}
+<fieldset class="flex-dir-col mbm mlm bg-white pam bshadow" id="{{ $filter }}" hidden>
+  <div {{ if gt (len (uniq .scratcher)) 10 }} class="flex flex-wrap flex-dir-col vasfilter justify-cse" {{ end }}>
+    {{- range .scratcher }}
+    {{ if and (ne .name "-") (ne .name "") }}
+    <div>
+      <label class="mrm {{ if gt (len (uniq .scratcher)) 10 }}maxw16r{{ end }}">
+        <input type="checkbox" value="{{ .value }}" data-check data-filter="{{ $filter }}"/> {{ .name }}
+      </label>
+    </div>
+    {{ end }}
+    {{- end -}}
+  </div>
+</fieldset>
