@@ -1849,16 +1849,6 @@
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
 }, {
-  "vasName" : "Telephone notification",
-  "description" : "Telephone notification entails that we agree on time of delivery with the recipient in advance. This additional service must always be booked if the recipient stays at a private or unattended address. Otherwise optionally available.  We contact the recipient the day before delivery to agree on the delivery time, and the driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.",
-  "shippingGuideCode" : "ADVISERING",
-  "shippingGuideNpbCode" : "ADVISERING",
-  "bookingCode" : "ADVISERING",
-  "incompatibleVases" : [ "Simplified delivery" ],
-  "supportedServices" : [ ],
-  "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
-}, {
   "vasName" : "Special goods",
   "description" : "One or more order lines have a weight or size beyond standard which means that transport is considered special goods.  ",
   "shippingGuideCode" : "2142",
