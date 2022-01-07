@@ -56,6 +56,9 @@ showAll.addEventListener("click", () => {
 // Input filter
 vasInput.addEventListener("keyup", function (e) {
   vasHideCutoffs()
+  rows.forEach((row) => {
+    row.hidden = false
+  })
   const query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
