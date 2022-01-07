@@ -36,7 +36,7 @@
                   </div>
                 </div>
                 <label class="form__label" for="bsg-textfilter">
-                  Service name, service code or request code
+                  Service name, service code or API request code
                   <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
                 </label>
               </div>
@@ -78,7 +78,7 @@
               </tr>
               <tr>
                 <th>Service</th>
-                <th>Request</th>
+                <th>API Request</th>
                 <th>Sender</th>
                 <th>Destination</th>
                 <th>Domestic</th>
@@ -149,12 +149,11 @@
         {{ end }}
 
         {{ if in .title "Value" }}
+          <p class="mtm mbl">
+            Information applies to revised services only. Services without any supported value added services are not part of the table.
+          </p>
           <div class="mbs">
             <div class="flex flex-wrap align-ifs bg-gray1 pal pbm rad-a2px pr0">
-              <label class="form__label mrxl" for="vasfilter">
-                VAS name, booking code or shipping guide code
-                <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-              </label>
               <div class="mrl">
                 <p class="form__label">Filter by</p>
                 <div class="btngroup">
@@ -163,9 +162,13 @@
                   <button class="btn btn--white" data-filterbtn="family">Service family</button>
                 </div>
               </div>
-              <button class="btn-link--dark" id="clearfilters">Clear filters</button>
+              <label class="form__label mrxl" for="vasfilter">
+                VAS name, booking or shipping guide API request code
+                <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+              </label>
+              <button class="btn-link--dark mtl mlr dn" id="clearfilters">Clear filters</button>
             </div>
-            <div id="filtersets" class="bg-gray1 plm">
+            <div id="filtersets" class="bg-gray1 plm pbm">
 
               {{- $.Scratch.Add "servicetype" slice -}}
               {{- $.Scratch.Add "servicefamily" slice -}}
@@ -211,7 +214,7 @@
               <div class="plm bg-white mts flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
                 <div class="w16r">
                   <div class="mtm">
-                    <span class="text-note fwb">API codes</span>
+                    <span class="text-note fwb">API request codes</span>
                     <dl class="bl b--gray4 pls mts">
                       <div>
                         <span class="text-note">Booking: <span class="fwn mb-badge paxs"><code data-filter="bookcode">{{ $vas.bookingCode }}</code></span></span>
@@ -362,8 +365,10 @@
             </div>
             {{- end -}}
           </div>
-
-          <button class="btn btn--white mtxl" id="showAll">Show all VAS</button>
+          <div class="cutoff-overlay" id="vas-cutoff">
+            <button class="btn btn--white mtxl" id="showAll">Show all VAS</button>
+          </div>
+          <script async src='{{ "/js/servicefiltering-vas.js" | relURL }}'></script>
         {{- end -}}
 
         {{ if in .title "Reports" }}
@@ -481,11 +486,10 @@
           <div class="cutoff-overlay" id="ri-cutoff">
             <button class="btn btn--white w100p maxw32r">Show all service families</button>
           </div>
+          <script async src='{{ "/js/servicefiltering-ri.js" | relURL }}'></script>
         {{- end -}}
       </section>
       {{- end -}}
-      <script async src='{{ "/js/servicefiltering-ri.js" | relURL }}'></script>
-      <script async src='{{ "/js/vasfiltering.js" | relURL }}'></script>
     </article>
   </main>
   {{ partial "footer.html" . }}

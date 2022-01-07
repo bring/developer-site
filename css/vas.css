@@ -11,3 +11,8 @@
     max-width: 66rem;
     flex-grow: 100;
 }
+
+#vas-cutoff.cutoff-overlay {
+    height: 14rem;
+    padding-top: 3rem;
+}

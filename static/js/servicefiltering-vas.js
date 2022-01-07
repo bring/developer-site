@@ -5,10 +5,23 @@ const filterBtns = document.querySelectorAll("[data-filterbtn]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
 const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
+const vasCutoff = document.querySelector("#vas-cutoff")
 const showAll = document.querySelector("#showAll")
-const tabFormatLinks = document.querySelectorAll(".vas__item .dev-codetabs__link")
+
+function vasTableCutoff() {
+  rows.forEach((row, i) => {
+    if (i > 7) {
+      row.hidden = true
+    }
+  })
+}
+
+function vasHideCutoffs() {
+  vasCutoff.hidden = true
+}
 
 function clearFilters() {
+  vasHideCutoffs()
   const activeBtn = document.querySelector("[data-filterbtn].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -21,12 +34,15 @@ function clearFilters() {
     filterCheck.checked = false
   })
   rows.forEach((row) => {
+    row.hidden = false
     row.classList.remove("vas__item--hidden")
   })
   serviceCountryRows.forEach((row) => {
     row.hidden = false
   })
   vasInput.value = ""
+
+  clearBtn.classList.add("dn")
 }
 
 clearBtn.addEventListener("click", function () {
@@ -39,7 +55,15 @@ showAll.addEventListener("click", () => {
 
 // Input filter
 vasInput.addEventListener("keyup", function (e) {
+  vasHideCutoffs()
   const query = e.target.value.toLowerCase()
+  const notEmpty = query.length >= 1
+  if (notEmpty) {
+    clearBtn.classList.remove("dn")
+  } else {
+    clearBtn.classList.add("dn")
+  }
+
   rows.forEach((row) => {
     if (
       row
@@ -74,6 +98,7 @@ filterBtns.forEach((filterBtn) => {
 
     clearFilters()
     e.target.classList.add("active")
+    clearBtn.classList.remove("dn")
 
     filterSets.forEach((set) => {
       if (set.id === filterType) {
@@ -118,7 +143,7 @@ filterBtns.forEach((filterBtn) => {
         } else {
           rows.forEach((row) => {
             showChecked.forEach((show) => {
-              if (!row.querySelector(".vascountry tbody")?.textContent?.toLowerCase()?.includes(show)) {
+              if (![...row.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
                 row.classList.add("vas__item--hidden")
               } else {
                 row.classList.remove("vas__item--hidden")
@@ -132,7 +157,6 @@ filterBtns.forEach((filterBtn) => {
                 const rTc = row
                   .querySelector(dataFilter)
                   .textContent.toLowerCase()
-                console.log(show, rTc)
                 if (rTc === show) {
                   row.hidden = false
                 }
@@ -143,4 +167,8 @@ filterBtns.forEach((filterBtn) => {
       })
     })
   })
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+  vasTableCutoff()
 })
