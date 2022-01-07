@@ -176,14 +176,14 @@
               {{- range $.Site.Data.services_vas -}}
               {{- range .supportedServices -}}
               {{- $.Scratch.Add "servicetype" (dict "name" .serviceType "value" .serviceType) -}}
-              {{- $.Scratch.Add "servicefamily" (dict "name" .serviceFamily "value" .serviceFamily) -}}
+              {{- $.Scratch.Add "servicefamily" (dict "name" .serviceFamily "value" .serviceFamily "sortOrder" .serviceFamilySortOrder) -}}
               {{- $.Scratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
               {{- end -}}
               {{- end -}}
 
-              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "servicetype") "filter" "type" ) -}}
-              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "servicefamily") "filter" "family" ) -}}
-              {{- partial "api/vasfilter.html" (dict "scratcher" ($.Scratch.Get "service") "filter" "service" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "servicetype")) "name") "filter" "type" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "servicefamily")) "sortOrder") "filter" "family" ) -}}
+              {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "service")) "name") "filter" "service" ) -}}
 
             </div>
           </div>
