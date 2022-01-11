@@ -13,7 +13,7 @@
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
     "domesticAllowedIn" : "-",
-    "senderCountries" : "DK, FI, NO, SE",
+    "senderCountries" : "NO, SE, DK, FI",
     "destinations" : "FO, GL"
   }, {
     "serviceName" : "Business Parcel Bulk",
@@ -43,7 +43,7 @@
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
     "domesticAllowedIn" : "-",
-    "senderCountries" : "DK, FI, SE",
+    "senderCountries" : "SE, DK, FI",
     "destinations" : "FO, GL"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
@@ -54,7 +54,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "-",
     "senderCountries" : "ALL",
-    "destinations" : "FI, FO, IS, NO"
+    "destinations" : "NO, FI, FO, IS"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -102,9 +102,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -112,9 +112,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel",
     "serviceType" : "B2C",
@@ -122,9 +122,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, FI, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
@@ -134,7 +134,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -142,9 +142,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -162,9 +162,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -172,9 +172,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -182,9 +182,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00",
     "serviceType" : "B2B",
@@ -262,9 +262,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, SE"
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -272,9 +272,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -282,9 +282,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -302,9 +302,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -312,9 +312,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -322,9 +322,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00",
     "serviceType" : "B2B",
@@ -342,9 +342,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "3332",
     "productionCode" : "3332",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, SE"
+    "destinations" : "SE, DK"
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -352,7 +352,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -362,7 +362,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -382,9 +382,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, SE"
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "SE, DK"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -392,9 +392,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, SE"
+    "destinations" : "SE, DK"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -422,9 +422,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -432,9 +432,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -442,9 +442,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
@@ -462,8 +462,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
+    "domesticAllowedIn" : "SE, FI",
+    "senderCountries" : "NO, SE, DK, FI",
     "destinations" : "SE"
   }, {
     "serviceName" : "Business Parcel Bulk",
@@ -472,7 +472,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
@@ -522,7 +522,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
@@ -532,7 +532,7 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
@@ -542,7 +542,7 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
     "destinations" : "SE"
   } ],
@@ -733,8 +733,8 @@
     "serviceCode" : "CARGO_INTERNATIONAL",
     "productionCode" : "3050",
     "domesticAllowedIn" : "-",
-    "senderCountries" : "AT, BE, BG, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, NO, PL, PT, RO, SE, SI, SK",
-    "destinations" : "AT, BE, BG, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, NO, PL, PT, RO, SE, SI, SK"
+    "senderCountries" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK",
+    "destinations" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
@@ -752,8 +752,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
     "destinations" : "ALL<sup>1</sup>"
   }, {
     "serviceName" : "Business Parcel Return",
@@ -762,9 +762,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
     "productionCode" : "0331",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -772,9 +772,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DE, DK, EE, FI, FO, GB, IS, NL, NO, SE"
+    "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
     "serviceName" : "Business Parcel Return Bulk",
     "serviceType" : "B2B",
@@ -782,9 +782,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
     "productionCode" : "0333",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00",
     "serviceType" : "B2B",
@@ -812,8 +812,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK, FI",
     "destinations" : "ALL<sup>1</sup>"
   }, {
     "serviceName" : "PickUp Parcel Return",
@@ -822,9 +822,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
     "productionCode" : "0341",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
     "serviceType" : "B2C",
@@ -832,9 +832,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
     "productionCode" : "0343",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
@@ -844,7 +844,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "ALL",
-    "destinations" : "DE, DK, EE, FI, FO, GB, IS, NL, NO, SE"
+    "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -852,9 +852,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ "Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe." ],
   "vasFootNotes" : [ ]
@@ -912,8 +912,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
     "destinations" : "ALL"
   }, {
     "serviceName" : "PickUp Parcel Return",
@@ -922,8 +922,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
     "productionCode" : "0341",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
     "destinations" : "ALL"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
@@ -932,8 +932,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
     "productionCode" : "0343",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
     "destinations" : "ALL"
   } ],
   "serviceAndCountryFootNotes" : [ ],
@@ -952,7 +952,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -962,7 +962,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -972,7 +972,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -982,9 +982,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, NO, SE"
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -994,7 +994,7 @@
     "productionCode" : "0332",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -1022,9 +1022,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -1032,9 +1032,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -1042,9 +1042,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
@@ -1062,9 +1062,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "",
@@ -1092,9 +1092,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "3332",
     "productionCode" : "3332",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, SE"
+    "destinations" : "SE, DK"
   }, {
     "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
@@ -1142,7 +1142,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1152,7 +1152,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1162,7 +1162,7 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "HOME_DELIVERY_RETURN",
     "productionCode" : "2778",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1172,7 +1172,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1192,7 +1192,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1202,7 +1202,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1212,7 +1212,7 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "HOME_DELIVERY_RETURN",
     "productionCode" : "2778",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1222,7 +1222,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1242,7 +1242,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1252,7 +1252,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1272,7 +1272,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1282,7 +1282,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1292,7 +1292,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1312,7 +1312,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1322,7 +1322,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1332,7 +1332,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1382,9 +1382,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, NO, SE"
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -1394,7 +1394,7 @@
     "productionCode" : "0332",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -1422,9 +1422,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -1432,9 +1432,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -1442,9 +1442,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -1452,9 +1452,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, NO, SE"
+    "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
@@ -1462,9 +1462,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "3332",
     "productionCode" : "3332",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, SE"
+    "destinations" : "SE, DK"
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1472,7 +1472,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1482,7 +1482,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1492,7 +1492,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1512,9 +1512,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -1522,9 +1522,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -1552,9 +1552,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -1562,9 +1562,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -1572,9 +1572,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
@@ -1592,9 +1592,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, SE"
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -1602,9 +1602,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00 Bulk",
     "serviceType" : "B2B",
@@ -1632,9 +1632,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -1642,9 +1642,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -1652,9 +1652,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, SE"
+    "destinations" : "SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel",
     "serviceType" : "B2C",
@@ -1663,7 +1663,7 @@
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
     "domesticAllowedIn" : "-",
-    "senderCountries" : "DK, FI, SE",
+    "senderCountries" : "SE, DK, FI",
     "destinations" : "FI"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
@@ -1674,7 +1674,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "-",
     "senderCountries" : "ALL",
-    "destinations" : "FI, NO"
+    "destinations" : "NO, FI"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -1682,9 +1682,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "",
@@ -1712,9 +1712,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "3332",
     "productionCode" : "3332",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, SE"
+    "destinations" : "SE, DK"
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1722,7 +1722,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -1732,7 +1732,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1753,7 +1753,7 @@
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
     "domesticAllowedIn" : "-",
-    "senderCountries" : "DK, FI, NO, SE",
+    "senderCountries" : "NO, SE, DK, FI",
     "destinations" : "NO"
   }, {
     "serviceName" : "Business Parcel Bulk",
@@ -1992,7 +1992,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2002,7 +2002,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2012,7 +2012,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2022,7 +2022,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2032,9 +2032,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "3332",
     "productionCode" : "3332",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, SE"
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "Social control requires an agreement in Mybring to be available for booking." ]
@@ -2052,7 +2052,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2062,7 +2062,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2082,7 +2082,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2092,7 +2092,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2102,7 +2102,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2122,7 +2122,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2132,7 +2132,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2142,7 +2142,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2162,7 +2162,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2172,7 +2172,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
@@ -2182,7 +2182,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
-    "domesticAllowedIn" : "DK, NO, SE",
+    "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2272,9 +2272,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI, AX, FO, GL, IS"
   }, {
     "serviceName" : "Business Parcel Return",
     "serviceType" : "B2B",
@@ -2282,9 +2282,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
     "productionCode" : "0331",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Return Bulk",
     "serviceType" : "B2B",
@@ -2292,9 +2292,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
     "productionCode" : "0333",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return",
     "serviceType" : "B2C",
@@ -2302,9 +2302,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
     "productionCode" : "0341",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
     "serviceType" : "B2C",
@@ -2312,9 +2312,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
     "productionCode" : "0343",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -2322,9 +2322,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, FO, IS, NO, SE"
+    "destinations" : "NO, SE, DK, FI, FO, IS"
   }, {
     "serviceName" : "Business Pallet",
     "serviceType" : "B2B",
@@ -2332,9 +2332,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
+    "destinations" : "NO, SE, DK, FI, AX, FO, GL, IS"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "",
@@ -2342,9 +2342,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_HALFPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
+    "destinations" : "NO, SE, DK, FI, AX, FO, GL, IS"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "",
@@ -2352,9 +2352,9 @@
     "serviceFamilySortOrder" : 99,
     "serviceCode" : "BUSINESS_QUARTERPALLET",
     "productionCode" : "0336",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
+    "destinations" : "NO, SE, DK, FI, AX, FO, GL, IS"
   }, {
     "serviceName" : "PickUp Parcel",
     "serviceType" : "B2C",
@@ -2362,9 +2362,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "AX, DK, FI, FO, GL, IS, NO, SE"
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI, AX, FO, GL, IS"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
@@ -2374,7 +2374,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, FO, IS, NO, SE"
+    "destinations" : "NO, SE, DK, FI, FO, IS"
   }, {
     "serviceName" : "Home Delivery Parcel",
     "serviceType" : "B2C",
@@ -2382,9 +2382,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, FI, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "When shipping from Finland to Sweden, Denmark, Norway, Faroe Islands, Greenland, Iceland or Åland, or from any country to Finland, Faroe Islands, Greenland, Iceland or Åland, the shipment will be transported by boat. In such cases the gross weight of Limited quantities must be provided. The document Multimodal Dangerous Goods Form must also be completed correctly and sent to Bring’s booking department before transportation begins" ]
@@ -2402,8 +2402,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK, FI, SE",
-    "senderCountries" : "DK, FI, NO, SE",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
     "destinations" : "ALL"
   }, {
     "serviceName" : "Business Parcel Bulk",
@@ -2412,9 +2412,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "FI, SE",
+    "domesticAllowedIn" : "SE, FI",
     "senderCountries" : "ALL",
-    "destinations" : "DE, DK, EE, FI, FO, GB, IS, NL, NO, SE"
+    "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
     "serviceName" : "Business Parcel Return",
     "serviceType" : "B2B",
@@ -2422,9 +2422,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
     "productionCode" : "0331",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Return Bulk",
     "serviceType" : "B2B",
@@ -2432,9 +2432,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
     "productionCode" : "0333",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return",
     "serviceType" : "B2C",
@@ -2442,9 +2442,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
     "productionCode" : "0341",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
     "serviceType" : "B2C",
@@ -2452,9 +2452,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
     "productionCode" : "0343",
-    "domesticAllowedIn" : "DK, FI, NO, SE",
-    "senderCountries" : "DK, FI, NO, SE",
-    "destinations" : "DK, FI, NO, SE"
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel",
     "serviceType" : "B2C",
@@ -2462,8 +2462,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
-    "domesticAllowedIn" : "DK, SE",
-    "senderCountries" : "DK, FI, NO, SE",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "NO, SE, DK, FI",
     "destinations" : "ALL"
   }, {
     "serviceName" : "PickUp Parcel Bulk",
@@ -2474,7 +2474,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "ALL",
-    "destinations" : "DE, DK, EE, FI, FO, GB, IS, NL, NO, SE"
+    "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
     "serviceName" : "Express Nordic 09:00",
     "serviceType" : "B2B",
@@ -2502,9 +2502,9 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK, SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
-    "destinations" : "DK, FI, NO, SE"
+    "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
