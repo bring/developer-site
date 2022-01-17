@@ -64,6 +64,29 @@ p + h4 {
   margin-top: 1.4rem;
 }
 
+h5 {
+  font-size: 0.9rem;
+  line-height: 1.35;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.15em;
+}
+
+blockquote + h5,
+table + h5,
+ol + h5,
+ul + h5,
+code + h5,
+.highlight + h5,
+pre + h5,
+p + h5 {
+  margin-top: 1.4rem;
+}
+
+h4 + h5 {
+  margin-top: 0.5em;
+}
+
 p,
 ul {
   max-width: 68ch;
