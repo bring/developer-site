@@ -11,25 +11,40 @@ weight: 2
 <section class="dev-docscontent__section">
   <h2>Resources</h2>
 
-  <h3>Customer number</h3>
+  <h3>Test customer numbers</h3>
   <p>
     While all our APIs require
     <a href='{{< relref "api" >}}#authentication'>user authentication</a>, even
     for testing, only some require a
     <a href='{{< relref "api" >}}#api-customer-number'>customer number</a>. If
     you’re currently not a Bring customer or your customer number doesn’t hold
-    data to give sufficient test responses, you can use test numbers.
+    data to give sufficient test responses, you can use test numbers. These will
+    only return dummy data and not create any actual bookings.
   </p>
-
-  <h4>Test customer numbers</h4>
-  <p class="mbxs">
-    These will only return dummy data and not create any actual bookings.
+  <p>
+    Contact
+    <a href="mailto:integrasjon.norge@bring.com">integrasjon.norge@bring.com</a
+    >, state the customer you want access to and that you need financial rights
+    as well. Financial rights are required to get pricing information when using
+    <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API 2.0</a>.
   </p>
-  <ul>
-    <li>Parcel Norway services: PARCELS_NORWAY-00000000005</li>
-    <li>Parcel Nordic services: PARCELS_SWEDEN-000006</li>
-    <li>Cargo Norway services: Available soon</li>
-  </ul>
+<div class="bg-gray1 phl pvm mbm">
+  <h4>Customers</h4>
+  <h5>Parcel Norway services</h5>
+  <p>
+    Customer: PARCELS_NORWAY-00000000005<br />
+    Use <code>5</code> as the customer number in the request. Example:
+    <code>"customerNumber": "5"</code>
+  </p>
+  <h5>Parcel Nordic services</h5>
+  <p>
+    Customer: PARCELS_SWEDEN-000006.<br />
+    Use <code>6</code> as the customer number in the request. Example:
+    <code>"customerNumber": "6"</code>
+  </p>
+  <h5>Cargo Norway services</h5>
+  <p>Available soon</p>
+</div>
   <div class="mbl flex flex-wrap">
     <a class="btn-link--dark mrxs mbxs" href='{{< relref "booking" >}}'
       >Booking API</a
