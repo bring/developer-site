@@ -21,30 +21,39 @@ weight: 2
     data to give sufficient test responses, you can use test numbers. These will
     only return dummy data and not create any actual bookings.
   </p>
-  <p>
-    Contact
-    <a href="mailto:integrasjon.norge@bring.com">integrasjon.norge@bring.com</a
-    >, state the customer you want access to and that you need financial rights
-    as well. Financial rights are required to get pricing information when using
-    <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API 2.0</a>.
-  </p>
-<div class="bg-gray1 phl pvm mbm">
-  <h4>Customers</h4>
-  <h5>Parcel Norway services</h5>
-  <p>
-    Customer: PARCELS_NORWAY-00000000005<br />
-    Use <code>5</code> as the customer number in the request. Example:
-    <code>"customerNumber": "5"</code>
-  </p>
-  <h5>Parcel Nordic services</h5>
-  <p>
-    Customer: PARCELS_SWEDEN-000006.<br />
-    Use <code>6</code> as the customer number in the request. Example:
-    <code>"customerNumber": "6"</code>
-  </p>
-  <h5>Cargo Norway services</h5>
-  <p>Available soon</p>
-</div>
+
+  <div class="bg-gray1 phl pvm mbm">
+    <p>
+      Contact
+      <a href="mailto:integrasjon.norge@bring.com"
+        >integrasjon.norge@bring.com</a
+      >, state the customer you want access to and that you need financial
+      rights as well. Financial rights are required to get pricing information
+      when using
+      <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API 2.0</a>.
+    </p>
+
+    <dl>
+      <dt>Parcel Norway services</dt>
+      <dd>Customer: PARCELS_NORWAY-00000000005</dd>
+      <dd>
+        Use <code>5</code> as the customer number in the request. Example:
+        <code>"customerNumber": "5"</code>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Parcel Nordic services</dt>
+      <dd>Customer: PARCELS_SWEDEN-000006.</dd>
+      <dd>
+        Use <code>6</code> as the customer number in the request. Example:
+        <code>"customerNumber": "6"</code>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Cargo Norway services</dt>
+      <dd>Available soon</dd>
+    </dl>
+  </div>
   <div class="mbl flex flex-wrap">
     <a class="btn-link--dark mrxs mbxs" href='{{< relref "booking" >}}'
       >Booking API</a
