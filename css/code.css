@@ -23,6 +23,7 @@ p code {
 }
 
 li code:not(table code),
+dl code,
 p code {
   background-color: var(--gray-90);
   padding: 0.1em 0.2em;
