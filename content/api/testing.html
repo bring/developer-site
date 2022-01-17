@@ -67,13 +67,13 @@ weight: 2
   </div>
 
   <h3>Phone numbers</h3>
-  <p class="mbxs">
+  <p>
     Make sure the phone numbers you use in your testing are dummies. Actual
     phone numbers can still trigger alerts even when used with test customer
     numbers or <code>testIndicator</code>. You can use the numbers below or find
     one of the many fake number sites online.
   </p>
-  <div class="flex flex-wrap">
+  <div class="bg-gray1 phl pvm mbm flex flex-wrap">
     <dl class="mrl">
       <dt>Norway</dt>
       <dd>+4712345678</dd>
@@ -97,18 +97,20 @@ weight: 2
   </div>
 
   <h3>Tracking numbers</h3>
-  <p class="mbxs">
+  <p>
     Use these as test tracking numbers to get different responses in the
     Tracking API or to make <code>WebhookId</code>s in Event Cast API. An
     authorised request with a tracking number belonging to an actual shipment
     will return more detailed results.
   </p>
+  <div class="bg-gray1 phl pvm mbm">
   <ul>
     <li>TESTPACKAGEATPICKUPPOINT</li>
     <li>TESTPACKAGEEDI</li>
     <li>TESTPACKAGELOADEDFORDELIVERY</li>
     <li>TESTPACKAGEDELIVERED</li>
   </ul>
+</div>
   <div class="mbl flex flex-wrap">
     <a class="btn-link--dark mrxs mbxs" href='{{< relref "event-cast" >}}'
       >Event Cast API</a
@@ -119,13 +121,13 @@ weight: 2
   </div>
 
   <h3>Postal codes</h3>
-  <p class="mbxs">
+  <p>
     Whenever postal codes are required, use something valid and test more than
     the first that comes to mind. You can use the
     <a href='{{< relref "postal-code" >}}'>Postal Code API</a> to look up more
     codes and cities.
   </p>
-  <div class="flex flex-wrap">
+  <div class="bg-gray1 phl pvm mbm flex flex-wrap">
     <dl class="mrl">
       <dt>Norway</dt>
       <dd>0951<span class="text-note mlxs"> Oslo</span></dd>
