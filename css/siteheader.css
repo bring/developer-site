@@ -39,6 +39,14 @@
   font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 1.17rem;
   margin-bottom: 0.05rem;
+  display:flex;
+  align-items: center;
+}
+
+.dev-tagline-svg {
+  padding:0.6rem 0 0 1rem;
+  border-left:1px solid var(--green-dark);
+  fill: currentColor;
 }
 
 .dev-tagline__env {
@@ -75,7 +83,14 @@
 .dev-siteheader__nav a:focus {
   color: var(--green-light);
 }
-
+.dev-siteheader__nav .mybring-login {
+  display: flex;
+  align-items: center;
+}
+.dev-siteheader__nav .mybring-login svg {
+  fill:currentColor;
+  margin-left:0.5rem;
+}
 .skip-to-content-link {
   background-color: hsl(0, 0%, 95%);
   left: 50%;
