@@ -6,30 +6,56 @@ menu:
   api:
     title: API testing
 weight: 2
+disqus_identifier: https-developer-bring-com-api-testing
 ---
 
 <section class="dev-docscontent__section">
   <h2>Resources</h2>
 
-  <h3>Customer number</h3>
+  <h3>Test customer numbers</h3>
   <p>
     While all our APIs require
     <a href='{{< relref "api" >}}#authentication'>user authentication</a>, even
     for testing, only some require a
     <a href='{{< relref "api" >}}#api-customer-number'>customer number</a>. If
     you’re currently not a Bring customer or your customer number doesn’t hold
-    data to give sufficient test responses, you can use test numbers.
+    data to give sufficient test responses, you can use test numbers. These will
+    only return dummy data and not create any actual bookings.
   </p>
 
-  <h4>Test customer numbers</h4>
-  <p class="mbxs">
-    These will only return dummy data and not create any actual bookings.
-  </p>
-  <ul>
-    <li>Parcel Norway services: PARCELS_NORWAY-00000000005</li>
-    <li>Parcel Nordic services: PARCELS_SWEDEN-000006</li>
-    <li>Cargo Norway services: Available soon</li>
-  </ul>
+  <div class="bg-gray1 phl pvm mbm">
+    <p>
+      For users in Norway, contact
+      <a href="mailto:integrasjon.norge@bring.com"
+        >integrasjon.norge@bring.com</a
+      >; for other countries, contact
+      <a href="mailto:edi@bring.com">edi@bring.com</a>. State which test customer you
+      want access to and that you need financial rights as well. Financial
+      rights are required to get pricing information when using
+      <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API 2.0</a>.
+    </p>
+
+    <dl>
+      <dt>Parcel Norway services</dt>
+      <dd>Customer: PARCELS_NORWAY-00000000005</dd>
+      <dd>
+        Use <code>5</code> as the customer number in the request. Example:
+        <code>"customerNumber": "5"</code>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Parcel Nordic services</dt>
+      <dd>Customer: PARCELS_SWEDEN-000006.</dd>
+      <dd>
+        Use <code>6</code> as the customer number in the request. Example:
+        <code>"customerNumber": "6"</code>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Cargo Norway services</dt>
+      <dd>Available soon</dd>
+    </dl>
+  </div>
   <div class="mbl flex flex-wrap">
     <a class="btn-link--dark mrxs mbxs" href='{{< relref "booking" >}}'
       >Booking API</a
@@ -52,13 +78,13 @@ weight: 2
   </div>
 
   <h3>Phone numbers</h3>
-  <p class="mbxs">
+  <p>
     Make sure the phone numbers you use in your testing are dummies. Actual
     phone numbers can still trigger alerts even when used with test customer
     numbers or <code>testIndicator</code>. You can use the numbers below or find
     one of the many fake number sites online.
   </p>
-  <div class="flex flex-wrap">
+  <div class="bg-gray1 phl pvm mbm flex flex-wrap">
     <dl class="mrl">
       <dt>Norway</dt>
       <dd>+4712345678</dd>
@@ -82,18 +108,20 @@ weight: 2
   </div>
 
   <h3>Tracking numbers</h3>
-  <p class="mbxs">
+  <p>
     Use these as test tracking numbers to get different responses in the
     Tracking API or to make <code>WebhookId</code>s in Event Cast API. An
     authorised request with a tracking number belonging to an actual shipment
     will return more detailed results.
   </p>
-  <ul>
-    <li>TESTPACKAGEATPICKUPPOINT</li>
-    <li>TESTPACKAGEEDI</li>
-    <li>TESTPACKAGELOADEDFORDELIVERY</li>
-    <li>TESTPACKAGEDELIVERED</li>
-  </ul>
+  <div class="bg-gray1 phl pvm mbm">
+    <ul>
+      <li>TESTPACKAGEATPICKUPPOINT</li>
+      <li>TESTPACKAGEEDI</li>
+      <li>TESTPACKAGELOADEDFORDELIVERY</li>
+      <li>TESTPACKAGEDELIVERED</li>
+    </ul>
+  </div>
   <div class="mbl flex flex-wrap">
     <a class="btn-link--dark mrxs mbxs" href='{{< relref "event-cast" >}}'
       >Event Cast API</a
@@ -104,13 +132,13 @@ weight: 2
   </div>
 
   <h3>Postal codes</h3>
-  <p class="mbxs">
+  <p>
     Whenever postal codes are required, use something valid and test more than
     the first that comes to mind. You can use the
     <a href='{{< relref "postal-code" >}}'>Postal Code API</a> to look up more
     codes and cities.
   </p>
-  <div class="flex flex-wrap">
+  <div class="bg-gray1 phl pvm mbm flex flex-wrap">
     <dl class="mrl">
       <dt>Norway</dt>
       <dd>0951<span class="text-note mlxs"> Oslo</span></dd>
