@@ -8,7 +8,7 @@
 .dev-sidemenu__title {
   font-weight: 500;
   color: var(--green-dark);
-  margin: 1rem 0 0.15em 1.6rem;
+  margin: 1rem 0 0.15em 1.7rem;
 }
 
 .dev-sidemenu__list {
@@ -44,8 +44,8 @@
 .dev-sidemenu a {
   color: var(--gray-26);
   display: block;
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
   transition: background-color var(--easeout-15);
   border-radius: 2px;
 }
