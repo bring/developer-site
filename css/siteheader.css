@@ -83,7 +83,14 @@
 .dev-siteheader__nav a:focus {
   color: var(--green-light);
 }
-
+.dev-siteheader__nav .mybring-login {
+  display: flex;
+  align-items: center;
+}
+.dev-siteheader__nav .mybring-login svg {
+  fill:currentColor;
+  margin-left:0.5rem;
+}
 .skip-to-content-link {
   background-color: hsl(0, 0%, 95%);
   left: 50%;
