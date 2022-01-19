@@ -212,28 +212,31 @@
               <div class="mhxs mbxs phm pbm bg-white flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
                 <div class="w16r">
                   <div class="mtm">
-                    <span class="text-note fwb">API request codes</span>
-                    <dl class="bl b--gray4 pls mts">
+                    <span class="text-note fw600">API request codes</span>
+                    <dl class="text-note bl mb-border pls mtxs">
                       <div>
-                        <span class="text-note">Booking: <span class="fwn mb-badge paxs"><code data-filter="bookcode">{{ $vas.bookingCode }}</code></span></span>
+                        <dt class="fwn di mrxs">Booking:</dt>
+                        <dd class="di"><code data-filter="bookcode">{{ $vas.bookingCode }}</code></dd>
                       </div>
                       <div>
-                        <span class="text-note">Shipping Guide: <span class="fwn mb-badge paxs"><code data-filter="sgcode">{{ $vas.shippingGuideNpbCode }}</code></span></span>
+                        <dt class="fwn di mrxs">Shipping Guide:</dt>
+                        <dd class="di"><code data-filter="sgcode">{{ $vas.shippingGuideNpbCode }}</code></dd>
                       </div>
                       {{ if ne $vas.shippingGuideCode $vas.shippingGuideNpbCode }}
                       <div>
-                        <span class="text-note">Shipping Guide (<span class="fsi">legacy</span>): <span class="fwn mb-badge paxs"><code data-filter="sgcode">{{ $vas.shippingGuideCode }}</code></span></span>
+                        <dt class="fwn di mrxs">Shipping Guide (<span class="fsi">legacy</span>):</dt>
+                        <dd class="di"><code data-filter="sgcode">{{ $vas.shippingGuideCode }}</code></dd>
                       </div>
                       {{ end }}
                     </dl>
                   </div>
                   {{ if ($vas.incompatibleVases) }}
                   <div class="mtm">
-                    <span class="text-note fwb">Incompatible with</span>
-                    <dl class="bl b--gray4 pls mts">
+                    <span class="text-note fw“600">Incompatible with</span>
+                    <dl class="bl mb-border pls mtxs">
                       {{- range $vas.incompatibleVases -}}
                       <div>
-                        <a href="#{{ . }}"><span class="text-note">{{ . }}</span></a>
+                        <a href="#{{ . | anchorize }}"><span class="text-note">{{ . }}</span></a>
                       </div>
                       {{- end -}}
                     </dl>
