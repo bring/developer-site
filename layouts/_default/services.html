@@ -249,12 +249,10 @@
                   <div class="text-basic pvm">{{ . }}</div>
                   {{- end -}}
                   {{ end }}
-                  <div class="rad-a2px">
-                    <a
-                      href="#"
+                  <div>
+                    <button
                       data-collapse="#vascountry{{ $index }}"
-                      class="dev-collapsible__toggler dev-collapsible__toggler--collapsed pa0"
-                      style="background: transparent"
+                      class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
                     ><svg
                       class="dev-collapsible__toggler__icon"
                       width="16"
@@ -265,8 +263,8 @@
                         d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
                       ></path>
                     </svg>
-                      <h5 class="mts">Supported services & countries</h5>
-                    </a>
+                      <span>Supported services & countries</span>
+                    </button>
                     <div class="dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}" style="background: white">
                       <table class="vascountry">
                         <thead>
@@ -303,12 +301,10 @@
                   <div>
                     {{- range where $.Site.Data.examples "api" "booking" -}}
                     {{- range where .vas "id" $vas.bookingCode -}}
-                    <div class="rad-a2px">
-                      <a
-                        href="#"
+                    <div>
+                      <button
                         data-collapse="#example{{ $vas.bookingCode }}"
-                        class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
-                        style="background: transparent"
+                        class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
                       ><svg
                         class="dev-collapsible__toggler__icon"
                         width="16"
@@ -319,8 +315,8 @@
                           d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
                         ></path>
                       </svg>
-                        <h5 class="mts">Booking API request examples</h5>
-                      </a>
+                        <span>Booking API request examples</span>
+                    </button>
                       <div class="dev-collapsible__item--collapsed pas pt0" id="example{{ $vas.bookingCode }}">
                         {{ if (.html) }}
                         <div class="pam">
