@@ -11,7 +11,7 @@ const bsgCutoffBtn = bsgCutoff.querySelector("button")
 // Initial cutoff
 function bsgTableCutoff() {
   bsgRows.forEach((row, i) => {
-    if (i > 7) {
+    if (i > 5) {
       row.hidden = true
     }
   })
