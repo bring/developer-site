@@ -2,6 +2,11 @@
     max-height: 24rem;
 }
 
+.pv\.75r {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
 .vas__item .dev-collapsible__toggler {
     padding: 0;
 }

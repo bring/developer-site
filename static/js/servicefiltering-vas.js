@@ -10,7 +10,7 @@ const showAll = document.querySelector("#showAll")
 
 function vasTableCutoff() {
   rows.forEach((row, i) => {
-    if (i > 12) {
+    if (i > 10) {
       row.hidden = true
     }
   })
