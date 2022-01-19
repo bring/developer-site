@@ -16,9 +16,12 @@
     visibility: hidden;
 }
 
-.vas__item--maxw66r {
-    max-width: 66rem;
-    flex-grow: 100;
+.vas-item__codes {
+    flex: 1 1 10rem;
+}
+
+.vas-item__tables {
+    flex: 15 1 30rem;
 }
 
 #vas-cutoff.cutoff-overlay {

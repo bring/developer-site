@@ -209,8 +209,8 @@
                   <span data-filter="name">{{ $vas.vasName }}</span>
                 </button>
               </div>
-              <div class="mhxs mbxs phm pbm bg-white flex dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
-                <div class="w16r">
+              <div class="mhxs mbxs phm pbm bg-white flex flex-wrap dev-collapsible__item--collapsed" id="vas__item{{ $index }}">
+                <div class="vas-item__codes mrm">
                   <div class="mtm">
                     <span class="text-note fw600">API request codes</span>
                     <dl class="text-note bl mb-border pls mtxs">
@@ -232,7 +232,7 @@
                   </div>
                   {{ if ($vas.incompatibleVases) }}
                   <div class="mtm">
-                    <span class="text-note fw“600">Incompatible with</span>
+                    <span class="text-note fw600">Incompatible with</span>
                     <dl class="bl mb-border pls mtxs">
                       {{- range $vas.incompatibleVases -}}
                       <div>
@@ -243,16 +243,16 @@
                   </div>
                   {{ end }}
                 </div>
-                <div class="vas__item--maxw66r mlm">
-                  <div class="text-basic pvm">
+                <div class="vas-item__tables ptm">
+                  <p>
                     {{ $vas.description }}
-                  </div>
+                  </p>
                   {{ if gt (len .vasFootNotes) 0 }}
                   {{- range .vasFootNotes -}}
-                  <div class="text-basic pvm">{{ . }}</div>
+                  <p>{{ . }}</p>
                   {{- end -}}
                   {{ end }}
-                  <div>
+                  <div class="mbs">
                     <button
                       data-collapse="#vascountry{{ $index }}"
                       class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
@@ -268,7 +268,7 @@
                     </svg>
                       <span>Supported services & countries</span>
                     </button>
-                    <div class="dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}" style="background: white">
+                    <div class="dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}">
                       <table class="vascountry">
                         <thead>
                         <tr class="vascountryrow">
@@ -301,10 +301,9 @@
                       {{ end }}
                     </div>
                   </div>
-                  <div>
-                    {{- range where $.Site.Data.examples "api" "booking" -}}
+                  {{- range where $.Site.Data.examples "api" "booking" -}}
                     {{- range where .vas "id" $vas.bookingCode -}}
-                    <div>
+                    <div class="mbs">
                       <button
                         data-collapse="#example{{ $vas.bookingCode }}"
                         class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
@@ -355,8 +354,7 @@
                       </div>
                     </div>
                     {{- end -}}
-                    {{- end -}}
-                  </div>
+                  {{- end -}}
                 </div>
               </div>
             </div>
