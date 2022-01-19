@@ -191,7 +191,7 @@
           <div class="flex flex-dir-col" id="allVas">
             {{- range $index, $vas := (sort $.Site.Data.services_vas "vasName") -}}
             <div class="vas__item bg-gray2 mbxs dev-collapsible">
-              <div class="dev-anchored" id="{{ $vas.vasName | urlize }}">
+              <div class="dev-anchored" id="{{ $vas.vasName|anchorize }}">
                 <button
                   data-collapse="#vas__item{{ $index }}"
                   class="btn-link fw600 pas w100p dev-collapsible__toggler--collapsed justify-cfs"
