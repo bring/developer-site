@@ -2,7 +2,7 @@
 
 <nav class="dev-sidemenu" aria-label="Section">
   {{- if eq .Section "api" -}}
-    <ul class="dev-sidemenu__list">
+    <ul class="dev-sidemenu__list" data-drawer-event>
       {{- $len := (len .Site.Menus.api) -}}
       {{- range $index, $element := .Site.Menus.api -}}
         {{- $lastElement := "" -}}
@@ -79,7 +79,7 @@
           </svg>
           <h4>{{ .Title }}</h4>
         </a>
-        <ul class="dev-sidemenu__list dev-collapsible__item--{{$collapseBtn}}" id="service-btn{{add $index 1}}">
+        <ul class="dev-sidemenu__list dev-collapsible__item--{{$collapseBtn}}" id="service-btn{{add $index 1}}" data-drawer-event>
           {{ range .Children }}
             {{- $identifier := .Identifier -}}
             <li
