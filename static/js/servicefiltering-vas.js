@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
     vasHideCutoffs()
     setTimeout(function() {
       scrollToVasTarget(cleanAnchorTag)
-    },100)
+    },200)
   } else {
     vasTableCutoff()
   }
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
       setTimeout(function() {
         scrollToVasTarget(anchorParent)
-      },100)
+      },200)
     })
   })
 
