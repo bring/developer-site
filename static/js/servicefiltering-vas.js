@@ -20,6 +20,10 @@ function vasHideCutoffs() {
   vasCutoff.hidden = true
 }
 
+function vasShowCutoffs() {
+  vasCutoff.hidden = false
+}
+
 function clearFilters() {
   vasHideCutoffs()
   const activeBtn = document.querySelector("[data-filterbtn].active")
@@ -172,6 +176,53 @@ filterBtns.forEach((filterBtn) => {
   })
 })
 
+function scrollToVasTarget(targetElement){
+  const element = document.getElementById(targetElement);
+  const headerOffset = document.querySelector('.dev-siteheader').offsetHeight + 20;
+  const elementPosition = element.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+  const vasBtnParent = document.getElementById(targetElement).parentElement
+    
+  const vasBtnToggler = vasBtnParent.querySelector('.dev-collapsible__toggler')
+  vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
+  vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
+
+  const vasItemContent = vasBtnParent.querySelector('.dev-collapsible__item--collapsed')
+  vasItemContent.classList.remove('dev-collapsible__item--collapsed')
+  vasItemContent.classList.add('dev-collapsible__item--expanded')
+
+  window.scrollTo({
+       top: offsetPosition,
+       behavior: "smooth"
+  })
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  vasTableCutoff()
+  const anchorTag = window.location.hash
+  
+  if(anchorTag) {
+    const cleanHashTag = anchorTag.replace(/#/,'')
+    const cleanAnchorTag = cleanHashTag.replace(/%20/g, ' ')
+
+    vasHideCutoffs()
+    setTimeout(function() {
+      scrollToVasTarget(cleanAnchorTag)
+    },100)
+  } else {
+    vasTableCutoff()
+    vasShowCutoffs()
+  }
+
+  const anchors = document.querySelectorAll('.anchorjs-link')
+  anchors.forEach(anchor => {
+    anchor.addEventListener('click', function() {
+      const anchorId = this.getAttribute('href')
+      const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
+      setTimeout(function() {
+        scrollToVasTarget(anchorParent)
+      },100)
+    })
+  })
+  
 })

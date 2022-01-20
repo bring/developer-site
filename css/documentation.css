@@ -6,12 +6,12 @@
   height: 100%;
 }
 
-.dev-anchored:target::before {
+/*.dev-anchored:target::before {
   content: "";
   display: block;
   height: 6.5rem;
   margin: -6.5rem 0 0;
-}
+}*/
 
 .dev-docs__page {
   display: flex;
