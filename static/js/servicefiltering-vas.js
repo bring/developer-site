@@ -20,10 +20,6 @@ function vasHideCutoffs() {
   vasCutoff.hidden = true
 }
 
-function vasShowCutoffs() {
-  vasCutoff.hidden = false
-}
-
 function clearFilters() {
   vasHideCutoffs()
   const activeBtn = document.querySelector("[data-filterbtn].active")
@@ -211,7 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },100)
   } else {
     vasTableCutoff()
-    vasShowCutoffs()
   }
 
   const anchors = document.querySelectorAll('.anchorjs-link')
@@ -224,5 +219,5 @@ document.addEventListener("DOMContentLoaded", function () {
       },100)
     })
   })
-  
+
 })
