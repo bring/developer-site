@@ -1,5 +1,10 @@
 .vasfilter {
-    max-height: 30rem;
+    max-height: 24rem;
+}
+
+.pv\.75r {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
 }
 
 .vas__item .dev-collapsible__toggler {
@@ -11,9 +16,12 @@
     visibility: hidden;
 }
 
-.vas__item--maxw66r {
-    max-width: 66rem;
-    flex-grow: 100;
+.vas__codes {
+    flex: 1 1 10rem;
+}
+
+.vas__docs {
+    flex: 15 1 30rem;
 }
 
 #vas-cutoff.cutoff-overlay {
