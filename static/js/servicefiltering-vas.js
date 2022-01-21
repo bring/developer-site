@@ -198,8 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const anchorTag = window.location.hash
   
   if(anchorTag) {
-    const cleanHashTag = anchorTag.replace(/#/,'')
-    const cleanAnchorTag = cleanHashTag.replace(/%20/g, ' ')
+    const cleanAnchorTag = anchorTag.replace(/#/,'')
 
     vasHideCutoffs()
     //Delay added for Chrome so window.scrollTo event will be triggered
