@@ -172,6 +172,52 @@ filterBtns.forEach((filterBtn) => {
   })
 })
 
+function scrollToVasTarget(targetElement){
+  const element = document.getElementById(targetElement)
+  const headerOffset = document.querySelector('[data-siteheader]').offsetHeight + 20
+  const elementPosition = element.getBoundingClientRect().top
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+  const vasBtnParent = element.parentElement
+    
+  const vasBtnToggler = vasBtnParent.querySelector('[data-collapse]')
+  vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
+  vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
+
+  const vasItemContent = vasBtnParent.querySelector('[data-vas-element]')
+  vasItemContent.classList.remove('dev-collapsible__item--collapsed')
+  vasItemContent.classList.add('dev-collapsible__item--expanded')
+
+  window.scrollTo({
+       top: offsetPosition,
+       behavior: "smooth"
+  })
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-  vasTableCutoff()
+  const anchorTag = window.location.hash
+  
+  if(anchorTag) {
+    const cleanAnchorTag = anchorTag.replace(/#/,'')
+
+    vasHideCutoffs()
+    //Delay added for Chrome so window.scrollTo event will be triggered
+    setTimeout(function() {
+      scrollToVasTarget(cleanAnchorTag)
+    },100)
+  } else {
+    vasTableCutoff()
+  }
+
+  const anchors = document.querySelectorAll('.anchorjs-link')
+  anchors.forEach(anchor => {
+    anchor.addEventListener('click', function() {
+      const anchorId = this.getAttribute('href')
+      const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
+      setTimeout(function() {
+        scrollToVasTarget(anchorParent)
+      },100)
+    })
+  })
+
 })
