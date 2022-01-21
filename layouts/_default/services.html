@@ -22,7 +22,14 @@
         <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
         {{ if in .title "Booking" }}
           <p class="mtm mbl">
-            <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+            <a href='{{ "/services/service_portfolio.xlsx" | relURL }}' class="btn-link--dark mrm di">
+            <span
+              data-mybicon="mybicon-download_file"
+              data-mybicon-class="icon-ui mrxs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+            ></span>Download spreadsheet</a>
+            Information applies to revised services only.
           </p>
           <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
             <div class="mrl">
@@ -358,7 +365,14 @@
 
         {{ if in .title "Reports" }}
           <p class="mtm mbl">
-            <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+            <a href='{{ "/services/service_portfolio.xlsx" | relURL }}' class="btn-link--dark mrm di">
+              <span
+                data-mybicon="mybicon-download_file"
+                data-mybicon-class="icon-ui mrxs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+              ></span>Download spreadsheet</a>
+              Information applies to revised services only.
           </p>
           <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
             <div class="mrl">
