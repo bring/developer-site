@@ -16,6 +16,18 @@ important:
       **Please note:** Our Warehousing APIs are changing. Please contact our sales department <a
       href="mailto:bwsalg@bring.com">bwsalg@bring.com</a> for a correct documentation version
 
+introduction: |
+  The Warehousing API is used to submit order and article information to Bring's warehouses. Users are also able to extract detailed order information from our warehouse while the orders are being processed. Further, the API provides information about articles in stock, with methods for retrieving information about single items or configurable list of items.
+
+information:
+  - title: Authentication
+    content: |
+      To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+
+  - title: Formats
+    content: |
+      REST XML/JSON and SOAP over HTTP. This API doesn't support JSON for all methods yet. Look in the example section to see which are supported.
+
 documentation:
   - title: Introduction
     content: |
@@ -32,10 +44,6 @@ documentation:
       We make an effort not to return new elements in the response when an old schema version is specified. When changes in the schema are made, the SchemaVersion is incremented by one. The new schema is used at the same endpoint URL as before and uses the same namespace for its XML elements. A TraceMessage element (info message) in the response is added to inform the client that its schema should be updated. Old schema versions might in the future be unsupported.
 
       Regarding the XML API (not Web Services), an XML Schema is not used at all. Therefore, clients of the XML API are expected to handle new elements that appear. Nevertheless, the response will be backwards compatible in the sense that elements are not renamed or deleted.
-
-  - title: Authentication
-    content: |
-      To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
   - title: SOAP
     content: |
