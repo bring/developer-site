@@ -20,7 +20,8 @@
     fill: var(--gray-60);
     transition: transform var(--easeout-15);
   }
-  .dev-collapsible__toggler--expanded .dev-collapsible__toggler__icon {
+  .dev-collapsible__toggler--expanded .dev-collapsible__toggler__icon, 
+  .active .dev-collapsible__toggler__icon {
     transform: rotate(90deg);
   }
   .dev-collapsible__toggler:hover::after {

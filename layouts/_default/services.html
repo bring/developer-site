@@ -30,9 +30,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-bsgfilterbtn="type">Service type</button>
-                    <button class="btn btn--white" data-bsgfilterbtn="family">Service family</button>
-                    <button class="btn btn--white" data-bsgfilterbtn="cntype">Customer number type</button>
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-bsgfilterbtn='type'" "btnText" "Service type") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-bsgfilterbtn='family'" "btnText" "Service family") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-bsgfilterbtn='cntype'" "btnText" "Customer number type") -}}
                   </div>
                 </div>
                 <label class="form__label" for="bsg-textfilter">
@@ -157,9 +157,9 @@
               <div class="mrl">
                 <p class="form__label">Filter by</p>
                 <div class="btngroup">
-                  <button class="btn btn--white" data-filterbtn="service">Service</button>
-                  <button class="btn btn--white" data-filterbtn="type">Service type</button>
-                  <button class="btn btn--white" data-filterbtn="family">Service family</button>
+                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='service'" "btnText" "Service") -}}
+                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='type'" "btnText" "Service type") -}}
+                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='family'" "btnText" "Service family") -}}
                 </div>
               </div>
               <label class="form__label mrxl" for="vasfilter">
@@ -366,9 +366,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-rifilterbtn="rifamily">Service family</button>
-                    <button class="btn btn--white" data-rifilterbtn="riapi">API</button>
-                    <button class="btn btn--white" data-rifilterbtn="rireptype">Report type</button>
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='rifamily'" "btnText" "Service family") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='riapi'" "btnText" "API") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='rireptype'" "btnText" "Report type") -}}
                   </div>
                 </div>
                 <label class="form__label" for="ri-textfilter">
