@@ -174,7 +174,7 @@ filterBtns.forEach((filterBtn) => {
 
 function scrollToVasTarget(targetElement){
   const element = document.getElementById(targetElement)
-  const headerOffset = document.querySelector('.dev-siteheader').offsetHeight + 20
+  const headerOffset = document.querySelector('[data-siteheader]').offsetHeight + 20
   const elementPosition = element.getBoundingClientRect().top
   const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
@@ -184,7 +184,7 @@ function scrollToVasTarget(targetElement){
   vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
   vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
 
-  const vasItemContent = vasBtnParent.querySelector('.dev-collapsible__item--collapsed')
+  const vasItemContent = vasBtnParent.querySelector('[data-vas-element]')
   vasItemContent.classList.remove('dev-collapsible__item--collapsed')
   vasItemContent.classList.add('dev-collapsible__item--expanded')
 
