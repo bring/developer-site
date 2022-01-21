@@ -173,14 +173,14 @@ filterBtns.forEach((filterBtn) => {
 })
 
 function scrollToVasTarget(targetElement){
-  const element = document.getElementById(targetElement);
-  const headerOffset = document.querySelector('.dev-siteheader').offsetHeight + 20;
-  const elementPosition = element.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  const element = document.getElementById(targetElement)
+  const headerOffset = document.querySelector('.dev-siteheader').offsetHeight + 20
+  const elementPosition = element.getBoundingClientRect().top
+  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-  const vasBtnParent = document.getElementById(targetElement).parentElement
+  const vasBtnParent = element.parentElement
     
-  const vasBtnToggler = vasBtnParent.querySelector('.dev-collapsible__toggler')
+  const vasBtnToggler = vasBtnParent.querySelector('[data-collapse]')
   vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
   vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
 
@@ -202,9 +202,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const cleanAnchorTag = cleanHashTag.replace(/%20/g, ' ')
 
     vasHideCutoffs()
+    //Delay added for Chrome so window.scrollTo event will be triggered
     setTimeout(function() {
       scrollToVasTarget(cleanAnchorTag)
-    },200)
+    },100)
   } else {
     vasTableCutoff()
   }
@@ -216,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
       setTimeout(function() {
         scrollToVasTarget(anchorParent)
-      },200)
+      },100)
     })
   })
 
