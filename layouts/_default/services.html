@@ -22,7 +22,14 @@
         <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
         {{ if in .title "Booking" }}
           <p class="mtm mbl">
-            <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+            <a href='{{ "/services/service_portfolio.xlsx" | relURL }}' class="btn-link--dark mrm di">
+            <span
+              data-mybicon="mybicon-download_file"
+              data-mybicon-class="icon-ui mrxs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+            ></span>Download spreadsheet</a>
+            Information applies to revised services only.
           </p>
           <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
             <div class="mrl">
@@ -30,9 +37,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-bsgfilterbtn="type">Service type</button>
-                    <button class="btn btn--white" data-bsgfilterbtn="family">Service family</button>
-                    <button class="btn btn--white" data-bsgfilterbtn="cntype">Customer number type</button>
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-bsgfilterbtn='type'" "btnText" "Service type") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-bsgfilterbtn='family'" "btnText" "Service family") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-bsgfilterbtn='cntype'" "btnText" "Customer number type") -}}
                   </div>
                 </div>
                 <label class="form__label" for="bsg-textfilter">
@@ -157,9 +164,9 @@
               <div class="mrl">
                 <p class="form__label">Filter by</p>
                 <div class="btngroup">
-                  <button class="btn btn--white" data-filterbtn="service">Service</button>
-                  <button class="btn btn--white" data-filterbtn="type">Service type</button>
-                  <button class="btn btn--white" data-filterbtn="family">Service family</button>
+                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='service'" "btnText" "Service") -}}
+                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='type'" "btnText" "Service type") -}}
+                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='family'" "btnText" "Service family") -}}
                 </div>
               </div>
               <label class="form__label mrxl" for="vasfilter">
@@ -196,16 +203,12 @@
                   data-collapse="#vas__item{{ $index }}"
                   class="btn-link fw600 pv.75r phs w100p dev-collapsible__toggler--collapsed justify-cfs"
                 >
-                  <svg
-                    class="dev-collapsible__toggler__icon"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 320 512"
-                  >
-                    <path
-                      d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                    ></path>
-                  </svg>
+                  <span
+                    data-mybicon="mybicon-arrow-right"
+                    data-mybicon-class="dev-collapsible__toggler__icon"
+                    data-mybicon-width="16"
+                    data-mybicon-height="16"
+                  ></span>
                   <span data-filter="name">{{ $vas.vasName }}</span>
                 </button>
               </div>
@@ -256,16 +259,13 @@
                     <button
                       data-collapse="#vascountry{{ $index }}"
                       class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
-                    ><svg
-                      class="dev-collapsible__toggler__icon"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 320 512"
                     >
-                      <path
-                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                      ></path>
-                    </svg>
+                      <span
+                        data-mybicon="mybicon-arrow-right"
+                        data-mybicon-class="dev-collapsible__toggler__icon"
+                        data-mybicon-width="16"
+                        data-mybicon-height="16"
+                      ></span>
                       <span>Supported services & countries</span>
                     </button>
                     <div class="dev-collapsible__item--collapsed pas" id="vascountry{{ $index }}">
@@ -307,16 +307,13 @@
                       <button
                         data-collapse="#example{{ $vas.bookingCode }}"
                         class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
-                      ><svg
-                        class="dev-collapsible__toggler__icon"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 320 512"
                       >
-                        <path
-                          d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                        ></path>
-                      </svg>
+                        <span
+                          data-mybicon="mybicon-arrow-right"
+                          data-mybicon-class="dev-collapsible__toggler__icon"
+                          data-mybicon-width="16"
+                          data-mybicon-height="16"
+                        ></span>
                         <span>Booking API request examples</span>
                     </button>
                       <div class="dev-collapsible__item--collapsed pas pt0" id="example{{ $vas.bookingCode }}">
@@ -368,7 +365,14 @@
 
         {{ if in .title "Reports" }}
           <p class="mtm mbl">
-            <a href="/services/service_portfolio.xlsx" class="btn-link--dark mrm di">Download spreadsheet</a>Information applies to revised services only.
+            <a href='{{ "/services/service_portfolio.xlsx" | relURL }}' class="btn-link--dark mrm di">
+              <span
+                data-mybicon="mybicon-download_file"
+                data-mybicon-class="icon-ui mrxs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+              ></span>Download spreadsheet</a>
+              Information applies to revised services only.
           </p>
           <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
             <div class="mrl">
@@ -376,9 +380,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    <button class="btn btn--white" data-rifilterbtn="rifamily">Service family</button>
-                    <button class="btn btn--white" data-rifilterbtn="riapi">API</button>
-                    <button class="btn btn--white" data-rifilterbtn="rireptype">Report type</button>
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='rifamily'" "btnText" "Service family") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='riapi'" "btnText" "API") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='rireptype'" "btnText" "Report type") -}}
                   </div>
                 </div>
                 <label class="form__label" for="ri-textfilter">

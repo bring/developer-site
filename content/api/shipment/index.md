@@ -10,24 +10,30 @@ menu:
     parent: book
 weight: 22
 
-documentation:
-  - title: Introduction
-    content: |
-      The Shipment API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a instruction or a booking by invoking a Web Service by posting XML/JSON over HTTP.
+introduction: |
+  The Shipment API is used to book shipments and send transport instructions to Bring. For customers using EDIFACT today, switching to the Shipment API is a good alternative when implementing new automated order solutions. The API supports the majority of services in Bring's service portfolio and offers options to both create, update and delete bookings and instructions. You may use your own SSCC-compliant labels and your own shipment number series. Using the API requires a good knowledge of Bring's service portfolio and logistics value chain as the level of content validation is low [compared to the Booking API](/api/booking-shipment/).
 
-      The Shipment API uses Shipping Guide as the source for price and availability (when supported in the Shipping Guide) for the different products. We advise clients of the Shipment API to use Shipping Guide API for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Shipment API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
-
-      We are continually rolling out support for more of Posten / Brings products and aim to support all available products in this API within a short time. In addition to the documentation on this pages feel free to check out our [swagger page](https://bapiqa.bring.com/Shipment/swagger) for this API.
-
-      This API has similarities with the Booking API, but there are differences. Read more about the [differences between the Booking API and the Shipment API](/api/booking-shipment/).
-
+information:
   - title: Authentication
     content: |
       To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-  - title: ShipmentAPI Instructions
+  - title: Formats
     content: |
-      A submission to ShipmentAPI must have a ShipmentType of one of the following
+      REST XML/JSON over HTTP.
+
+documentation:
+  - title:
+    content: |
+      In addition to the documentation on this pages feel free to check out our [swagger page](https://bapiqa.bring.com/Shipment/swagger) for this API.
+
+  - title: Checking prices and availability
+    content: |
+      The Shipment API uses Shipping Guide as the source for price and availability (when supported in the Shipping Guide) for the different products. We advise clients of the Shipment API to use [Shipping Guide API](/api/shipping-guide_2/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Shipment API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
+
+  - title: Shipment API Instructions
+    content: |
+      A submission to Shipment API must have a ShipmentType of one of the following
       - [Instruction](/api/shipment/#create-shipment)
       - [Booking](/api/shipment/#create-shipment-booking)
       - Healthcheck
@@ -38,7 +44,7 @@ documentation:
 
   - title: Unit Codes
     content: |
-      A number of different unit codes are used throughout ShipmentAPI. Many of which are listed in the layouts below but the definative list is displayed here for ease of reference.
+      A number of different unit codes are used throughout Shipment API. Many of which are listed in the layouts below but the definative list is displayed here for ease of reference.
       #### Cash On Delivery Account Type
       - Bank
       - Bankgiro
