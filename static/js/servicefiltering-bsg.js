@@ -113,10 +113,10 @@ bsgFilterInput.addEventListener("keyup", function (e) {
   bsgEmptyCheck()
 })
 
-// Group filters
+// Set filters
 bsgFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
-    const filterVal = e.target.dataset.bsgfilterbtn
+    const currentFilterSet = e.target.dataset.bsgfilterbtn
     if (e.target.classList.contains("active")) {
       bsgClearFilters()
       return
@@ -128,7 +128,7 @@ bsgFilterBtns.forEach((filterBtn) => {
     bsgFilterInput.disabled = true
 
     bsgFilterSets.forEach((set) => {
-      if (set.id === filterVal) {
+      if (set.id === currentFilterSet) {
         if (set.hidden === false) {
           set.hidden = true
           set.classList.remove("flex")
@@ -142,21 +142,21 @@ bsgFilterBtns.forEach((filterBtn) => {
       }
     })
 
-    const groupChecks = document.querySelectorAll(
-      'input[data-filter="' + filterVal + '"]'
+    const bsgSetChecks = document.querySelectorAll(
+      'input[data-filter="' + currentFilterSet + '"]'
     )
 
-    groupChecks.forEach((groupCheck) => {
-      groupCheck.addEventListener("click", function (e) {
+    bsgSetChecks.forEach((setCheck) => {
+      setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
         const dataFilter = '[data-filter="' + filterKey + '"]'
 
         let showAll = true
         let showChecked = []
-        groupChecks.forEach((groupCheck, i) => {
-          if (groupCheck.checked === true) {
+        bsgSetChecks.forEach((setCheck, i) => {
+          if (setCheck.checked === true) {
             showAll = false
-            showChecked[i] = groupCheck.value.toLowerCase()
+            showChecked[i] = setCheck.value.toLowerCase()
           }
         })
 
@@ -167,12 +167,12 @@ bsgFilterBtns.forEach((filterBtn) => {
         } else {
           bsgRows.forEach((row) => {
             row.hidden = true
-            showChecked.forEach((show) => {
+            showChecked.forEach((currentFilter) => {
               if (row.querySelector(dataFilter)) {
-                const rTc = row
+                const currentRowData = row
                   .querySelector(dataFilter)
                   .textContent.toLowerCase()
-                if (rTc.includes(show)) {
+                if (currentRowData.includes(currentFilter)) {
                   row.hidden = false
                 }
               }
