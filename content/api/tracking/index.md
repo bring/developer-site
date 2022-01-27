@@ -9,14 +9,28 @@ menu:
     title: Tracking API
     url: /api/tracking
 weight: 31
-
+ 
 important:
+  - type: warn
+    title: Update deprecated Tracking URLs - 27.01.2022
+    message: |
+     We have done some technical cleanup in regard to moving Tracking backend to Azure, specifically routing cleanups. For all domains (se, dk, com), please update the tracking link to the following format.
+     
+     **Old format:**  
+     https://tracking.bring.{domain}/tracking.html?q=12345
+
+     **New format:**  
+     https://tracking.bring.{domain}/tracking/12345
+
+     **New format .no domain:**  
+     https://sporing.bring.no/sporing/12345
+
   - type: warn
     title: The Tracking API changes from 01.01.2021 and 01.03.2021
     message: |
-      We have done a recent change in Tracking, where if the user have specified the wanted delivery date, then that date is set in the field for the estimated delivery date as well, as there is no point having to set estimation date which is different from the configured wanted delivery date.
-
-      With reference to the change, the existing field "dateOfEstimatedDelivery" will have the correct information regarding delivery date and therefore, the field "dateOfDelivery" in the open as well as logged in Tracking API versions will be set to Blank from 01.Jan.2021 for backward compatibility and gradually be removed effective from date 01.Mar.2021.
+     We have done a recent change in Tracking, where if the user have specified the wanted delivery date, then that date is set in the field for the estimated delivery date as well, as there is no point having to set estimation date which is different from the configured wanted delivery date.
+     
+     With reference to the change, the existing field "dateOfEstimatedDelivery" will have the correct information regarding delivery date and therefore, the field "dateOfDelivery" in the open as well as logged in Tracking API versions will be set to Blank from 01.Jan.2021 for backward compatibility and gradually be removed effective from date 01.Mar.2021.
 
 introduction: |
   The Tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to get shipment details and events and make them available for customers. The information available in this API is the same that is publicly available from the [Tracking website](http://tracking.bring.com/).
