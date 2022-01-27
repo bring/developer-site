@@ -107,7 +107,7 @@ function renderResult(showAllRows, queries, filterKey) {
   } else {
     hideOriginals(true)
     let prevFamily = ""
-    let groupId = 0
+    let setId = 0
     let count = 1
     let prevApi = ""
     let apiId = 0
@@ -118,7 +118,7 @@ function renderResult(showAllRows, queries, filterKey) {
         if (row.dataset[filterKey].toLowerCase().includes(query)) {
           row.hidden = false
           if (row.dataset.rifamily != prevFamily) {
-            groupId++
+            setId++
           }
 
           if (
@@ -131,7 +131,7 @@ function renderResult(showAllRows, queries, filterKey) {
             row.insertAdjacentHTML(
               "afterbegin",
               '<td data-ins="' +
-                groupId +
+                setId +
                 apiId +
                 '" rowspan="1"><span class="mb-badge">' +
                 row.dataset.riapi +
@@ -140,7 +140,7 @@ function renderResult(showAllRows, queries, filterKey) {
           } else {
             apiCount++
             const apis = document.querySelectorAll(
-              '[data-ins="' + groupId + apiId + '"]'
+              '[data-ins="' + setId + apiId + '"]'
             )
             apis.forEach((api) => {
               api.rowSpan = apiCount
@@ -152,7 +152,7 @@ function renderResult(showAllRows, queries, filterKey) {
             row.insertAdjacentHTML(
               "afterbegin",
               '<td data-ins="' +
-                groupId +
+                setId +
                 '" rowspan="1">' +
                 row.dataset.cntype +
                 "</td>"
@@ -160,18 +160,18 @@ function renderResult(showAllRows, queries, filterKey) {
             row.insertAdjacentHTML(
               "afterbegin",
               '<th data-ins="' +
-                groupId +
+                setId +
                 '" scope="row" rowspan="1" class="maxw20r">' +
                 row.dataset.rifamily +
                 "</th>"
             )
           } else {
             count++
-            const groups = document.querySelectorAll(
-              '[data-ins="' + groupId + '"]'
+            const sets = document.querySelectorAll(
+              '[data-ins="' + setId + '"]'
             )
-            groups.forEach((group) => {
-              group.rowSpan = count
+            sets.forEach((set) => {
+              set.rowSpan = count
             })
           }
 
@@ -204,7 +204,7 @@ riFilterInput.addEventListener("keyup", function (e) {
   riEmptyCheck()
 })
 
-// Group filters
+// Set filters
 riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterKey = e.target.dataset.rifilterbtn
@@ -233,20 +233,20 @@ riFilterBtns.forEach((filterBtn) => {
       }
     })
 
-    const riGroupChecks = document.querySelectorAll(
+    const riSetChecks = document.querySelectorAll(
       'input[data-filter="' + filterKey + '"]'
     )
 
-    riGroupChecks.forEach((groupCheck) => {
-      groupCheck.addEventListener("click", function (e) {
+    riSetChecks.forEach((setCheck) => {
+      setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
 
         let showAllRows = true
         let queries = []
-        riGroupChecks.forEach((groupCheck, i) => {
-          if (groupCheck.checked === true) {
+        riSetChecks.forEach((setCheck, i) => {
+          if (setCheck.checked === true) {
             showAllRows = false
-            queries[i] = groupCheck.value.toLowerCase()
+            queries[i] = setCheck.value.toLowerCase()
           }
         })
 
