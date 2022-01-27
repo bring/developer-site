@@ -128,7 +128,12 @@ bsgFilterInput.addEventListener("keyup", function (e) {
   bsgEmptyCheck()
 })
 
-// Set filters
+// Create object for storing active filters
+let allFilters = {}
+bsgFilterSets.forEach((set) => {
+  allFilters[set.id] = []
+})
+
 bsgFilterBtns.forEach((filterBtn) => {
   // Toggle filterset
   filterBtn.addEventListener("click", function (e) {
