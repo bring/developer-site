@@ -45,11 +45,9 @@ function bsgEmptyCheck() {
   }
 }
 
-// Clear all filters
-function bsgClearFilters() {
-  bsgHideCutoffs()
+// Close filter
+function bsgCloseFilter() {
   const activeBtn = document.querySelector("[data-bsgfilterbtn].active")
-
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -57,6 +55,22 @@ function bsgClearFilters() {
     set.hidden = true
     set.classList.remove("flex")
   })
+
+  let clearFilters = true
+  bsgFilterChecks.forEach((filterCheck) => {
+    if (filterCheck.checked == true) {
+      clearFilters = false
+    }
+  })
+  if (clearFilters) {
+    bsgClearFilters()
+  }
+}
+
+// Clear all filters
+function bsgClearFilters() {
+  bsgHideCutoffs()
+
   bsgFilterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
@@ -71,6 +85,7 @@ function bsgClearFilters() {
 }
 
 bsgClearBtn.addEventListener("click", function () {
+  bsgCloseFilter()
   bsgClearFilters()
 })
 
@@ -115,13 +130,14 @@ bsgFilterInput.addEventListener("keyup", function (e) {
 
 // Set filters
 bsgFilterBtns.forEach((filterBtn) => {
+  // Toggle filterset
   filterBtn.addEventListener("click", function (e) {
     const currentFilterSet = e.target.dataset.bsgfilterbtn
     if (e.target.classList.contains("active")) {
-      bsgClearFilters()
+      bsgCloseFilter()
       return
     }
-    bsgClearFilters()
+    bsgCloseFilter()
     bsgClearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
