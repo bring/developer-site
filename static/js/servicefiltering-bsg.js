@@ -163,43 +163,62 @@ bsgFilterBtns.forEach((filterBtn) => {
       }
     })
 
+    // Register check clicks from open set
     const bsgSetChecks = document.querySelectorAll(
       'input[data-filter="' + currentFilterSet + '"]'
     )
-
     bsgSetChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
-        const dataFilter = '[data-filter="' + filterKey + '"]'
 
-        let showAll = true
-        let showChecked = []
-        bsgSetChecks.forEach((setCheck, i) => {
+        // Store active filters
+        allFilters[filterKey] = []
+        bsgSetChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
-            showAll = false
-            showChecked[i] = setCheck.value.toLowerCase()
+            allFilters[filterKey].push(setCheck.value.toLowerCase())
           }
         })
 
-        if (showAll) {
+        let activeFilterSets = 0
+        for (let activeFilter in allFilters) {
+          if (allFilters[activeFilter].length > 0) {
+            activeFilterSets++
+          }
+        }
+
+        // Toggle table rows
+        if (activeFilterSets <= 0) {
           bsgRows.forEach((row) => {
             row.hidden = false
           })
         } else {
           bsgRows.forEach((row) => {
             row.hidden = true
-            showChecked.forEach((currentFilter) => {
-              if (row.querySelector(dataFilter)) {
-                const currentRowData = row
-                  .querySelector(dataFilter)
-                  .textContent.toLowerCase()
-                if (currentRowData.includes(currentFilter)) {
-                  row.hidden = false
-                }
+
+            // Check if row data macthes at least one active filter in each active filterset
+            let matches = 0
+            for (const activeFilter in allFilters) {
+              if (allFilters[activeFilter].length > 0) {
+                const currentFilters = allFilters[activeFilter]
+                const rowDataAtt = '[data-filter="' + activeFilter + '"]'
+                currentFilters.forEach((currentFilter) => {
+                  if (row.querySelector(rowDataAtt)) {
+                    const currentRowData = row
+                      .querySelector(rowDataAtt)
+                      .textContent.toLowerCase()
+                    if (currentRowData === currentFilter) {
+                      matches++
+                    }
+                  }
+                })
               }
-            })
+            }
+            if (matches === activeFilterSets) {
+              row.hidden = false
+            }
           })
         }
+        bsgEmptyCheck()
       })
     })
   })
