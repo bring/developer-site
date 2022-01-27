@@ -12,9 +12,9 @@ weight: 31
  
 important:
   - type: warn
-    title: Update deprecated Tracking URLs
+    title: Update deprecated Tracking URLs - 27.01.2022
     message: |
-     We have done some technical cleanup with regards to moving Tracking backend to Azure, specifically routing cleanups. For all domains (se, dk, com), please update the tracking link to the following format.
+     We have done some technical cleanup in regard to moving Tracking backend to Azure, specifically routing cleanups. For all domains (se, dk, com), please update the tracking link to the following format.
      
      **Old format:**  
      https://tracking.bring.{domain}/tracking.html?q=12345
@@ -22,7 +22,7 @@ important:
      **New format:**  
      https://tracking.bring.{domain}/tracking/12345
 
-     **New format no-domain:**  
+     **New format .no domain:**  
      https://sporing.bring.no/sporing/12345
 
   - type: warn
