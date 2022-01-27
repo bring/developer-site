@@ -89,7 +89,7 @@ vasInput.addEventListener("keyup", function (e) {
   })
 })
 
-// Group filters
+// Set filters
 filterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterType = e.target.dataset.filterbtn
@@ -118,21 +118,21 @@ filterBtns.forEach((filterBtn) => {
       }
     })
 
-    const groupChecks = document.querySelectorAll(
+    const vasSetChecks = document.querySelectorAll(
       'input[data-filter="' + filterType + '"]'
     )
 
-    groupChecks.forEach((groupCheck) => {
-      groupCheck.addEventListener("click", function (e) {
+    vasSetChecks.forEach((setCheck) => {
+      setCheck.addEventListener("click", function (e) {
         const filterType = e.target.dataset.filter
         const dataFilter = '[data-filter="' + filterType + '"]'
 
         let showAll = true
         let showChecked = []
-        groupChecks.forEach((groupCheck, i) => {
-          if (groupCheck.checked === true) {
+        vasSetChecks.forEach((setCheck, i) => {
+          if (setCheck.checked === true) {
             showAll = false
-            showChecked[i] = groupCheck.value.toLowerCase()
+            showChecked[i] = setCheck.value.toLowerCase()
           }
         })
 
@@ -155,12 +155,12 @@ filterBtns.forEach((filterBtn) => {
           })
           serviceCountryRows.forEach((row) => {
             row.hidden = true
-            showChecked.forEach((show) => {
+            showChecked.forEach((currentFilter) => {
               if (row.querySelector(dataFilter)) {
-                const rTc = row
+                const currentRowData = row
                   .querySelector(dataFilter)
                   .textContent.toLowerCase()
-                if (rTc === show) {
+                if (currentRowData === currentFilter) {
                   row.hidden = false
                 }
               }
