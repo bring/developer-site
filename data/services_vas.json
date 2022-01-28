@@ -1339,36 +1339,6 @@
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ]
 }, {
-  "vasName" : "Optional pickup point",
-  "description" : "Select the pickup point chosen by the recipient in the webshop.  When you want to offer the recipient to choose in which post office, Post in Shop or other type of pickup point to pick up the parcel. The pickup point is chosen by the recipient when ordering in the webshop. This additional service is free of charge.",
-  "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
-  "shippingGuideNpbCode" : "1036",
-  "bookingCode" : "SELECT_PICKUP_POINT",
-  "incompatibleVases" : [ ],
-  "supportedServices" : [ {
-    "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
-    "serviceFamily" : "Parcel Norway domestic",
-    "serviceFamilySortOrder" : 1,
-    "serviceCode" : "5800",
-    "productionCode" : "5800",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Ekspress neste dag",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "4850",
-    "productionCode" : "4850",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  } ],
-  "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
-}, {
   "vasName" : "Signature required",
   "description" : "The recipient must sign to receive the shipment.  ",
   "shippingGuideCode" : "1280",
