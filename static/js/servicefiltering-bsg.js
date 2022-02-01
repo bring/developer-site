@@ -5,8 +5,10 @@ const bsgFilterBtns = document.querySelectorAll("[data-bsgfilterbtn]")
 const bsgFilterSets = document.querySelectorAll("#bsg-filtersets fieldset")
 const bsgFilterChecks = document.querySelectorAll(".checkitem")
 const bsgClearBtn = document.querySelector("#bsg-clearfilters")
+const bsgFilterCombo = document.querySelector("#bsg-filtercombo")
 const bsgCutoff = document.querySelector("#bsg-cutoff")
 const bsgCutoffBtn = bsgCutoff.querySelector("button")
+let allFilters
 
 // Initial cutoff
 function bsgTableCutoff() {
@@ -81,6 +83,8 @@ function bsgClearFilters() {
   bsgFilterInput.value = ""
 
   bsgEmptyCheck()
+  allFilters = {}
+  bsgFilterCombo.innerHTML = ""
   bsgClearBtn.classList.add("dn")
 }
 
@@ -128,8 +132,64 @@ bsgFilterInput.addEventListener("keyup", function (e) {
   bsgEmptyCheck()
 })
 
+// Render combofilter overview
+function comboFilter(allFilters) {
+  bsgFilterCombo.innerHTML = ""
+  for (let activeFilter in allFilters) {
+    if (allFilters[activeFilter].length > 0) {
+      const filterTitle = document.querySelector(
+        '[data-bsgfilterbtn="' + activeFilter + '"]'
+      ).textContent
+      let appliedFilter =
+        '<button type="button" data-bsgtitle="' +
+        activeFilter +
+        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+        filterTitle +
+        '</button><div class="pls" data-bsgsubgroup="'+ activeFilter +'">'
+      allFilters[activeFilter].forEach((filter) => {
+        appliedFilter =
+          appliedFilter +
+          '<button type="button"' +
+          'data-bsgtype="' +
+          activeFilter +
+          '" data-bsgtitle="' +
+          filter +
+          '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          filter +
+          '</button>'
+      })
+      appliedFilter = appliedFilter + "</div>"
+      bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
+      window.loadMybringIcons()
+    }
+  }
+}
+
+// Remove filter via combo overview
+bsgFilterCombo.addEventListener("click", function (e) {
+  if (e.target.dataset.bsgtitle) {
+    const uncheckEls = document.querySelectorAll(
+      'button[data-bsgtype="' + e.target.dataset.bsgtitle + '"]'
+    )
+    uncheckEls.forEach((uncheckEl) => {
+      uncheckEl.click()
+    })
+  }
+
+  if (e.target.dataset.bsgtype) {
+    const uncheckEl = document.querySelector(
+      'input[data-filter="' +
+        e.target.dataset.bsgtype +
+        '"][value="' +
+        e.target.dataset.bsgtitle +
+        '"'
+    )
+    uncheckEl.click()
+  }
+})
+
 // Create object for storing active filters
-let allFilters = {}
+allFilters = {}
 bsgFilterSets.forEach((set) => {
   allFilters[set.id] = []
 })
@@ -175,7 +235,7 @@ bsgFilterBtns.forEach((filterBtn) => {
         allFilters[filterKey] = []
         bsgSetChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
-            allFilters[filterKey].push(setCheck.value.toLowerCase())
+            allFilters[filterKey].push(setCheck.value)
           }
         })
 
@@ -185,6 +245,8 @@ bsgFilterBtns.forEach((filterBtn) => {
             activeFilterSets++
           }
         }
+
+        comboFilter(allFilters)
 
         // Toggle table rows
         if (activeFilterSets <= 0) {
@@ -206,7 +268,7 @@ bsgFilterBtns.forEach((filterBtn) => {
                     const currentRowData = row
                       .querySelector(rowDataAtt)
                       .textContent.toLowerCase()
-                    if (currentRowData === currentFilter) {
+                    if (currentRowData === currentFilter.toLowerCase()) {
                       matches++
                     }
                   }

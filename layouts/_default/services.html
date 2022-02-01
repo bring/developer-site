@@ -61,7 +61,10 @@
                 {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "cnType") "filter" "cntype" ) -}}
               </div>
             </div>
-            <button id="bsg-clearfilters" class="btn-link--dark mtl mrl dn">Clear filters</button>
+            <div>
+              <button type="button" id="bsg-clearfilters" class="btn-link--dark mtl mrl dn">Clear filters</button>
+              <div id="bsg-filtercombo" class="mtm mrm"></div>
+            </div>
           </div>
           <table id="services-bsg">
             <thead>
