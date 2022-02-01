@@ -1,5 +1,5 @@
 {{ $filter := .filter }}
-<fieldset class="flex-dir-col mbm mhm bg-white pam bshadow" id="{{ $filter }}" hidden>
+<fieldset class="flex-dir-col mbm bg-white pam bshadow" id="{{ $filter }}" hidden>
   <div {{ if gt (len (uniq .scratcher)) 10 }} class="flex flex-wrap flex-dir-col vasfilter" {{ end }}>
     {{- range .scratcher }}
     {{ if and (ne .name "-") (ne .name "") }}

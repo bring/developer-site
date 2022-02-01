@@ -1,7 +1,17 @@
 .vasfilter {
-    max-height: 24rem;
+    display:grid;
+    grid-template-columns: auto auto auto;
 }
-
+@media only screen and (max-width:1200px) {
+    .vasfilter {
+        grid-template-columns: auto auto;
+    }
+}
+@media only screen and (max-width:700px) {
+    .vasfilter {
+        grid-template-columns: auto;
+    }
+}
 .pv\.75r {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
