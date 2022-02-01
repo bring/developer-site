@@ -160,38 +160,42 @@
             Information applies to revised services only. Services without any supported value added services are not part of the table.
           </p>
           <div class="mbs">
-            <div class="flex flex-wrap align-ifs bg-gray1 pal pbm rad-a2px pr0">
+            <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
               <div class="mrl">
-                <p class="form__label">Filter by</p>
-                <div class="btngroup">
-                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='service'" "btnText" "Service") -}}
-                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='type'" "btnText" "Service type") -}}
-                  {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='family'" "btnText" "Service family") -}}
+                <div class="flex flex-wrap-reverse align-ifs justify-csb">
+                  <div class="mrl">
+                    <p class="form__label">Filter by</p>
+                    <div class="btngroup">
+                      {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='service'" "btnText" "Service") -}}
+                      {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='type'" "btnText" "Service type") -}}
+                      {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='family'" "btnText" "Service family") -}}
+                    </div>
+                  </div>
+                  <label class="form__label mrxl" for="vasfilter">
+                    VAS name, booking or shipping guide API request code
+                    <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+                  </label>
+                </div>
+                <div id="filtersets">
+
+                  {{- $.Scratch.Add "servicetype" slice -}}
+                  {{- $.Scratch.Add "servicefamily" slice -}}
+                  {{- $.Scratch.Add "service" slice -}}
+                  {{- range $.Site.Data.services_vas -}}
+                  {{- range .supportedServices -}}
+                  {{- $.Scratch.Add "servicetype" (dict "name" .serviceType "value" .serviceType) -}}
+                  {{- $.Scratch.Add "servicefamily" (dict "name" .serviceFamily "value" .serviceFamily "sortOrder" .serviceFamilySortOrder) -}}
+                  {{- $.Scratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
+                  {{- end -}}
+                  {{- end -}}
+
+                  {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "servicetype")) "name") "filter" "type" ) -}}
+                  {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "servicefamily")) "sortOrder") "filter" "family" ) -}}
+                  {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "service")) "name") "filter" "service" ) -}}
+
                 </div>
               </div>
-              <label class="form__label mrxl" for="vasfilter">
-                VAS name, booking or shipping guide API request code
-                <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-              </label>
               <button class="btn-link--dark mtl mlr dn" id="clearfilters">Clear filters</button>
-            </div>
-            <div id="filtersets" class="bg-gray1 phm pbm">
-
-              {{- $.Scratch.Add "servicetype" slice -}}
-              {{- $.Scratch.Add "servicefamily" slice -}}
-              {{- $.Scratch.Add "service" slice -}}
-              {{- range $.Site.Data.services_vas -}}
-              {{- range .supportedServices -}}
-              {{- $.Scratch.Add "servicetype" (dict "name" .serviceType "value" .serviceType) -}}
-              {{- $.Scratch.Add "servicefamily" (dict "name" .serviceFamily "value" .serviceFamily "sortOrder" .serviceFamilySortOrder) -}}
-              {{- $.Scratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
-              {{- end -}}
-              {{- end -}}
-
-              {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "servicetype")) "name") "filter" "type" ) -}}
-              {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "servicefamily")) "sortOrder") "filter" "family" ) -}}
-              {{- partial "api/vasfilter.html" (dict "scratcher" (sort (uniq ($.Scratch.Get "service")) "name") "filter" "service" ) -}}
-
             </div>
           </div>
 

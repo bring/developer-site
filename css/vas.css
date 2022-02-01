@@ -1,7 +1,7 @@
 .vasfilter {
-    max-height: 24rem;
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
-
 .pv\.75r {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
