@@ -263,7 +263,7 @@ bsgFilterBtns.forEach((filterBtn) => {
           bsgRows.forEach((row) => {
             row.hidden = true
 
-            // Check if row data macthes at least one active filter in each active filterset
+            // Check if row data matches at least one active filter in each active filterset
             let matches = 0
             for (const activeFilter in allFilters) {
               if (allFilters[activeFilter].length > 0) {
