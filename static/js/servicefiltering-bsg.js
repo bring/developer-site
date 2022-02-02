@@ -145,7 +145,7 @@ function comboFilter(allFilters) {
         activeFilter +
         '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
         filterTitle +
-        '</button><div class="pls" data-bsgsubgroup="'+ activeFilter +'">'
+        "</button>"
       allFilters[activeFilter].forEach((filter) => {
         appliedFilter =
           appliedFilter +
@@ -154,37 +154,42 @@ function comboFilter(allFilters) {
           activeFilter +
           '" data-bsgtitle="' +
           filter +
-          '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          '" class="btn-link btn-link--filter mls"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
           filter +
-          '</button>'
+          "</button>"
       })
-      appliedFilter = appliedFilter + "</div>"
       bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
       window.loadMybringIcons()
     }
   }
 }
 
-// Remove filter via combo overview
+function toggleCheckbox(box) {
+  const checkEl = document.querySelector(
+    'input[data-filter="' +
+      box.dataset.bsgtype +
+      '"][value="' +
+      box.dataset.bsgtitle +
+      '"'
+  )
+  checkEl.click()
+}
+
+// Remove filters via combo overview
 bsgFilterCombo.addEventListener("click", function (e) {
-  if (e.target.dataset.bsgtitle) {
-    const uncheckEls = document.querySelectorAll(
+  // Delete all
+  if (e.target.dataset.bsgtitle && !e.target.dataset.bsgtype) {
+    let subButtons = document.querySelectorAll(
       'button[data-bsgtype="' + e.target.dataset.bsgtitle + '"]'
     )
-    uncheckEls.forEach((uncheckEl) => {
-      uncheckEl.click()
+    subButtons.forEach((subButton) => {
+      toggleCheckbox(subButton)
     })
   }
 
-  if (e.target.dataset.bsgtype) {
-    const uncheckEl = document.querySelector(
-      'input[data-filter="' +
-        e.target.dataset.bsgtype +
-        '"][value="' +
-        e.target.dataset.bsgtitle +
-        '"'
-    )
-    uncheckEl.click()
+  // Delete one
+  if (e.target.dataset.bsgtype && e.target.dataset.bsgtitle) {
+    toggleCheckbox(e.target)
   }
 })
 
