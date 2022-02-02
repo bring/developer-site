@@ -145,7 +145,7 @@ function comboFilter(allFilters) {
         activeFilter +
         '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
         filterTitle +
-        "</button>"
+        '</button><div class="plm flex flex-wrap">'
       allFilters[activeFilter].forEach((filter) => {
         appliedFilter =
           appliedFilter +
@@ -154,10 +154,11 @@ function comboFilter(allFilters) {
           activeFilter +
           '" data-bsgtitle="' +
           filter +
-          '" class="btn-link btn-link--filter mls"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
           filter +
           "</button>"
       })
+      appliedFilter = appliedFilter + "</div>"
       bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
       window.loadMybringIcons()
     }

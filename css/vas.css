@@ -29,6 +29,11 @@
     padding-top: 6rem;
 }
 
+.btn-link--filter {
+    text-align: left;
+    white-space: normal;
+}
+
 .btn-link--filter svg {
     fill: var(--gray-80);
     transition: fill var(--easeout-15);
