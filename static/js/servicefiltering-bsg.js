@@ -5,8 +5,10 @@ const bsgFilterBtns = document.querySelectorAll("[data-bsgfilterbtn]")
 const bsgFilterSets = document.querySelectorAll("#bsg-filtersets fieldset")
 const bsgFilterChecks = document.querySelectorAll(".checkitem")
 const bsgClearBtn = document.querySelector("#bsg-clearfilters")
+const bsgFilterCombo = document.querySelector("#bsg-filtercombo")
 const bsgCutoff = document.querySelector("#bsg-cutoff")
 const bsgCutoffBtn = bsgCutoff.querySelector("button")
+let allFilters
 
 // Initial cutoff
 function bsgTableCutoff() {
@@ -45,11 +47,9 @@ function bsgEmptyCheck() {
   }
 }
 
-// Clear all filters
-function bsgClearFilters() {
-  bsgHideCutoffs()
+// Close filter
+function bsgCloseFilter() {
   const activeBtn = document.querySelector("[data-bsgfilterbtn].active")
-
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -57,6 +57,22 @@ function bsgClearFilters() {
     set.hidden = true
     set.classList.remove("flex")
   })
+
+  let clearFilters = true
+  bsgFilterChecks.forEach((filterCheck) => {
+    if (filterCheck.checked == true) {
+      clearFilters = false
+    }
+  })
+  if (clearFilters) {
+    bsgClearFilters()
+  }
+}
+
+// Clear all filters
+function bsgClearFilters() {
+  bsgHideCutoffs()
+
   bsgFilterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
@@ -67,10 +83,13 @@ function bsgClearFilters() {
   bsgFilterInput.value = ""
 
   bsgEmptyCheck()
+  allFilters = {}
+  bsgFilterCombo.innerHTML = ""
   bsgClearBtn.classList.add("dn")
 }
 
 bsgClearBtn.addEventListener("click", function () {
+  bsgCloseFilter()
   bsgClearFilters()
 })
 
@@ -113,15 +132,83 @@ bsgFilterInput.addEventListener("keyup", function (e) {
   bsgEmptyCheck()
 })
 
-// Set filters
+// Render combofilter overview
+function comboFilter(allFilters) {
+  bsgFilterCombo.innerHTML = ""
+  for (let activeFilter in allFilters) {
+    if (allFilters[activeFilter].length > 0) {
+      const filterTitle = document.querySelector(
+        '[data-bsgfilterbtn="' + activeFilter + '"]'
+      ).textContent
+      let appliedFilter =
+        '<button type="button" data-bsgtitle="' +
+        activeFilter +
+        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+        filterTitle +
+        '</button><div class="plm flex flex-wrap">'
+      allFilters[activeFilter].forEach((filter) => {
+        appliedFilter =
+          appliedFilter +
+          '<button type="button"' +
+          'data-bsgtype="' +
+          activeFilter +
+          '" data-bsgtitle="' +
+          filter +
+          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          filter +
+          "</button>"
+      })
+      appliedFilter = appliedFilter + "</div>"
+      bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
+      window.loadMybringIcons()
+    }
+  }
+}
+
+function toggleCheckbox(box) {
+  const checkEl = document.querySelector(
+    'input[data-filter="' +
+      box.dataset.bsgtype +
+      '"][value="' +
+      box.dataset.bsgtitle +
+      '"'
+  )
+  checkEl.click()
+}
+
+// Remove filters via combo overview
+bsgFilterCombo.addEventListener("click", function (e) {
+  // Delete all
+  if (e.target.dataset.bsgtitle && !e.target.dataset.bsgtype) {
+    let subButtons = document.querySelectorAll(
+      'button[data-bsgtype="' + e.target.dataset.bsgtitle + '"]'
+    )
+    subButtons.forEach((subButton) => {
+      toggleCheckbox(subButton)
+    })
+  }
+
+  // Delete one
+  if (e.target.dataset.bsgtype && e.target.dataset.bsgtitle) {
+    toggleCheckbox(e.target)
+  }
+})
+
+// Create object for storing active filters
+allFilters = {}
+bsgFilterSets.forEach((set) => {
+  allFilters[set.id] = []
+})
+
 bsgFilterBtns.forEach((filterBtn) => {
+  // Toggle filterset
   filterBtn.addEventListener("click", function (e) {
     const currentFilterSet = e.target.dataset.bsgfilterbtn
     if (e.target.classList.contains("active")) {
-      bsgClearFilters()
+      bsgCloseFilter()
       return
     }
-    bsgClearFilters()
+    bsgCloseFilter()
     bsgClearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
@@ -142,43 +229,64 @@ bsgFilterBtns.forEach((filterBtn) => {
       }
     })
 
+    // Register check clicks from open set
     const bsgSetChecks = document.querySelectorAll(
       'input[data-filter="' + currentFilterSet + '"]'
     )
-
     bsgSetChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
-        const dataFilter = '[data-filter="' + filterKey + '"]'
 
-        let showAll = true
-        let showChecked = []
-        bsgSetChecks.forEach((setCheck, i) => {
+        // Store active filters
+        allFilters[filterKey] = []
+        bsgSetChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
-            showAll = false
-            showChecked[i] = setCheck.value.toLowerCase()
+            allFilters[filterKey].push(setCheck.value)
           }
         })
 
-        if (showAll) {
+        let activeFilterSets = 0
+        for (let activeFilter in allFilters) {
+          if (allFilters[activeFilter].length > 0) {
+            activeFilterSets++
+          }
+        }
+
+        comboFilter(allFilters)
+
+        // Toggle table rows
+        if (activeFilterSets <= 0) {
           bsgRows.forEach((row) => {
             row.hidden = false
           })
         } else {
           bsgRows.forEach((row) => {
             row.hidden = true
-            showChecked.forEach((currentFilter) => {
-              if (row.querySelector(dataFilter)) {
-                const currentRowData = row
-                  .querySelector(dataFilter)
-                  .textContent.toLowerCase()
-                if (currentRowData.includes(currentFilter)) {
-                  row.hidden = false
-                }
+
+            // Check if row data matches at least one active filter in each active filterset
+            let matches = 0
+            for (const activeFilter in allFilters) {
+              if (allFilters[activeFilter].length > 0) {
+                const currentFilters = allFilters[activeFilter]
+                const rowDataAtt = '[data-filter="' + activeFilter + '"]'
+                currentFilters.forEach((currentFilter) => {
+                  if (row.querySelector(rowDataAtt)) {
+                    const currentRowData = row
+                      .querySelector(rowDataAtt)
+                      .textContent.toLowerCase()
+                    if (currentRowData === currentFilter.toLowerCase()) {
+                      matches++
+                    }
+                  }
+                })
               }
-            })
+            }
+            if (matches === activeFilterSets) {
+              row.hidden = false
+            }
           })
         }
+        bsgEmptyCheck()
       })
     })
   })

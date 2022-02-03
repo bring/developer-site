@@ -28,3 +28,18 @@
     height: 14rem;
     padding-top: 6rem;
 }
+
+.btn-link--filter {
+    text-align: left;
+    white-space: normal;
+}
+
+.btn-link--filter svg {
+    fill: var(--gray-80);
+    transition: fill var(--easeout-15);
+}
+
+.btn-link--filter:hover svg,
+.btn-link--filter:focus-visible svg {
+    fill: var(--gray-40);
+}
