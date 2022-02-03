@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf _site",
-    "buildcss": "webpack && rimraf static/css/main.js",
+    "bundle": "webpack --mode production && rimraf static/css/main.js",
     "buildraml": "node scripts/raml2json",
     "buildexamples": "node scripts/buildApiExamples",
-    "build": "npm run buildcss && npm run buildraml && npm run buildexamples",
-    "start": "cross-env HUGO_ENV=dev hugo server",
+    "build": "npm run bundle && npm run buildraml && npm run buildexamples",
     "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
-    "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo"
+    "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo",
+    "start": "cross-env HUGO_ENV=dev hugo server",
+    "bundlewatch": "webpack watch --mode development"
   },
   "repository": {
     "type": "git",
