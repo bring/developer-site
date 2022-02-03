@@ -6,3 +6,4 @@ examples.json
 static/css
 .hugo_build.lock
 .idea
+static/js/servicefiltering.js
