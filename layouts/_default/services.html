@@ -198,7 +198,7 @@
 
                 </div>
               </div>
-              <button class="btn-link--dark mtl mlr dn" id="clearfilters">Clear all filters</button>
+              <button type="button" class="btn-link--dark mtl mlr dn" id="clearfilters">Clear all filters</button>
             </div>
           </div>
 
@@ -207,6 +207,7 @@
             <div class="vas__item bg-gray2 mbxs dev-collapsible">
               <div class="dev-anchored" id="{{ $vas.vasName|anchorize }}">
                 <button
+                  type="button"
                   data-collapse="#vas__item{{ $index }}"
                   class="btn-link fw600 pv.75r phs w100p dev-collapsible__toggler--collapsed justify-cfs"
                 >
@@ -264,6 +265,7 @@
                   {{ end }}
                   <div class="mbs">
                     <button
+                      type="button"
                       data-collapse="#vascountry{{ $index }}"
                       class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
                     >
@@ -312,6 +314,7 @@
                     {{- range where .vas "id" $vas.bookingCode -}}
                     <div class="mbs">
                       <button
+                        type="button"
                         data-collapse="#example{{ $vas.bookingCode }}"
                         class="btn-link text-note fw600 dev-collapsible__toggler--collapsed"
                       >
@@ -365,7 +368,7 @@
             {{- end -}}
           </div>
           <div class="cutoff-overlay" id="vas-cutoff">
-            <button class="btn btn--white w100p maxw32r" id="showAll">Show all VAS</button>
+            <button type="button" class="btn btn--white w100p maxw32r" id="showAll">Show all VAS</button>
           </div>
           <script async src='{{ "/js/servicefiltering-vas.js" | relURL }}'></script>
         {{- end -}}
@@ -493,7 +496,7 @@
             </tbody>
           </table>
           <div class="cutoff-overlay" id="ri-cutoff">
-            <button class="btn btn--white w100p maxw32r">Show all service families</button>
+            <button type="button" class="btn btn--white w100p maxw32r">Show all service families</button>
           </div>
           <script async src='{{ "/js/servicefiltering-ri.js" | relURL }}'></script>
         {{- end -}}
