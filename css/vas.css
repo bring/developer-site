@@ -1,45 +1,45 @@
 .vasfilter {
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
 .pv\.75r {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .vas__item .dev-collapsible__toggler {
-    padding: 0;
+  padding: 0;
 }
 
 .vas__item--hidden {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
 .vas__codes {
-    flex: 1 1 10rem;
+  flex: 1 1 10rem;
 }
 
 .vas__docs {
-    flex: 15 1 30rem;
+  flex: 15 1 30rem;
 }
 
 #vas-cutoff.cutoff-overlay {
-    height: 14rem;
-    padding-top: 6rem;
+  height: 14rem;
+  padding-top: 6rem;
 }
 
 .btn-link--filter {
-    text-align: left;
-    white-space: normal;
+  text-align: left;
+  white-space: normal;
 }
 
 .btn-link--filter svg {
-    fill: var(--gray-80);
-    transition: fill var(--easeout-15);
+  fill: var(--gray-80);
+  transition: fill var(--easeout-15);
 }
 
 .btn-link--filter:hover svg,
 .btn-link--filter:focus-visible svg {
-    fill: var(--gray-40);
+  fill: var(--gray-40);
 }
