@@ -155,7 +155,6 @@
           <div class="cutoff-overlay" id="bsg-cutoff">
             <button type="button" class="btn btn--white w100p maxw32r">Show all services</button>
           </div>
-          <script async src='{{ "/js/servicefiltering-bsg.js" | relURL }}'></script>
         {{ end }}
 
         {{ if in .title "Value" }}
@@ -370,7 +369,6 @@
           <div class="cutoff-overlay" id="vas-cutoff">
             <button type="button" class="btn btn--white w100p maxw32r" id="showAll">Show all VAS</button>
           </div>
-          <script async src='{{ "/js/servicefiltering-vas.js" | relURL }}'></script>
         {{- end -}}
 
         {{ if in .title "Reports" }}
@@ -498,12 +496,12 @@
           <div class="cutoff-overlay" id="ri-cutoff">
             <button type="button" class="btn btn--white w100p maxw32r">Show all service families</button>
           </div>
-          <script async src='{{ "/js/servicefiltering-ri.js" | relURL }}'></script>
+          {{- end -}}
+        </section>
         {{- end -}}
-      </section>
-      {{- end -}}
-    </article>
-  </main>
+      </article>
+    </main>
+    <script async src='{{ "/js/servicefiltering.js" | relURL }}'></script>
   {{ partial "footer.html" . }}
   <div class="dev-obfuscator" data-drawer data-drawer-event></div>
 </div>

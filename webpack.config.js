@@ -1,9 +1,26 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
-  mode: "production",
-  entry: { main: "./css/main.css" },
+  entry: {
+    "js/servicefiltering": "./js/servicefiltering.js",
+    "css/main": "./css/main.css",
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+    ],
+  },
 
   module: {
     rules: [
@@ -19,13 +36,8 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, "./static/css"),
-    // filename: "[name].css",
+    path: path.join(__dirname, "./static/"),
   },
 
-  plugins: [
-    new MiniCssExtractPlugin({
-
-    }),
-  ],
-};
+  plugins: [new MiniCssExtractPlugin({})],
+}
