@@ -79,5 +79,4 @@ documentation:
 swagger:
   - title: Swagger API Documentation
     url: https://api.qa.bring.com/pickuppoint/openapi.json
-oas: https://api.qa.bring.com/pickuppoint/openapi.json
 ---
