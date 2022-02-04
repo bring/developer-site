@@ -12,6 +12,10 @@ weight: 31
  
 important:
   - type: warn
+    title: Removed pickup code from open tracking - 04.02.2022
+    message: |
+     As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Logged in Tracking API will still contain the pickup code.
+  - type: warn
     title: Update deprecated Tracking URLs - 27.01.2022
     message: |
      We have done some technical cleanup in regard to moving Tracking backend to Azure, specifically routing cleanups. For all domains (se, dk, com), please update the tracking link to the following format.
