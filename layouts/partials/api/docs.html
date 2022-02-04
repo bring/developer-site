@@ -4,7 +4,7 @@
     {{- $types := .types -}}
     <main 
       id="main"
-      class="dev-docscontent w100p maxw96r {{ replace .title "API" "" | urlize }}"
+      class="dev-docscontent w100p {{ replace .title "API" "" | urlize }}"
     >
       <article>
         <h1>{{ .title }}</h1>
@@ -30,7 +30,7 @@
               {{- else -}}
                 <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
               {{- end -}}
-            {{ end -}}
+            {{- end -}}
             {{- with $.Params.information -}}
               <div class="dev-docscontent__info mvl">
                 {{- range . -}}
@@ -63,6 +63,11 @@
             {{- end -}}
           </div>
         </section>
+        {{- range $.Params.swagger -}}
+          {{- with .url -}}
+            <redoc spec-url="{{ . }}"></redoc>
+          {{- end -}}
+        {{- end -}}
         <section class="dev-docscontent__section maxw64r">
           <h2 class="dev-anchored mbm" id="overview-of-endpoints">
             Overview of endpoints

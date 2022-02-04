@@ -74,4 +74,8 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point
+
+swagger:
+  - title: Swagger API Documentation
+    url: https://api.qa.bring.com/pickuppoint/openapi.json
 ---

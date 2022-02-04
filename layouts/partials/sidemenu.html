@@ -1,6 +1,14 @@
 {{- $currentPage := . -}}
 
 <nav class="dev-sidemenu" aria-label="Section">
+  <div class="flex justify-cfe phm">
+    <button class="btn-link" title="Close">
+      <span
+        data-mybicon="mybicon-cross"
+        data-mybicon-class="icon-ui"
+      ></span>
+    </button>
+  </div>
   {{- if eq .Section "api" -}}
     <ul class="dev-sidemenu__list">
       {{- $len := (len .Site.Menus.api) -}}
