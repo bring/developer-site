@@ -27,7 +27,7 @@
     "destinations" : "FI, FO, IS"
   }, {
     "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
+    "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5800",
@@ -198,8 +198,8 @@
   }, {
     "serviceName" : "Pakke i postkassen",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "3584",
     "productionCode" : "3584",
     "domesticAllowedIn" : "NO",
@@ -208,8 +208,8 @@
   }, {
     "serviceName" : "Pakke i postkassen med RFID",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "3570",
     "productionCode" : "3570",
     "domesticAllowedIn" : "NO",
@@ -217,7 +217,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
+    "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5800",
@@ -237,7 +237,7 @@
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
+    "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5800",
@@ -338,8 +338,8 @@
   }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "3332",
     "productionCode" : "3332",
     "domesticAllowedIn" : "SE, DK",
@@ -348,8 +348,8 @@
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -358,8 +358,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -497,7 +497,7 @@
     "destinations" : "SE"
   }, {
     "serviceName" : "Stykkgods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5100",
@@ -507,7 +507,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pall til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5400",
@@ -558,8 +558,8 @@
   "supportedServices" : [ {
     "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "4850",
     "productionCode" : "4850",
     "domesticAllowedIn" : "NO",
@@ -568,8 +568,8 @@
   }, {
     "serviceName" : "Returekspress",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "9600",
     "productionCode" : "9600",
     "domesticAllowedIn" : "NO",
@@ -588,8 +588,8 @@
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -598,8 +598,8 @@
   }, {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
     "domesticAllowedIn" : "NO",
@@ -607,7 +607,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Partigods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5300",
@@ -617,7 +617,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Stykkgods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5100",
@@ -627,7 +627,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pall til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5400",
@@ -647,7 +647,7 @@
   "incompatibleVases" : [ "Simplified delivery", "Special goods" ],
   "supportedServices" : [ {
     "serviceName" : "Partigods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5300",
@@ -657,7 +657,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Stykkgods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5100",
@@ -667,7 +667,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pall til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5400",
@@ -687,7 +687,7 @@
   "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Oljeekspressen",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
     "serviceCode" : "OIL_EXPRESS",
@@ -697,7 +697,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Partigods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5300",
@@ -707,7 +707,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Stykkgods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5100",
@@ -717,7 +717,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pall til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5400",
@@ -727,7 +727,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Cargo International",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway international",
     "serviceFamilySortOrder" : 6,
     "serviceCode" : "CARGO_INTERNATIONAL",
@@ -757,7 +757,7 @@
     "destinations" : "ALL<sup>1</sup>"
   }, {
     "serviceName" : "Business Parcel Return",
-    "serviceType" : "B2B",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -817,7 +817,7 @@
     "destinations" : "ALL<sup>1</sup>"
   }, {
     "serviceName" : "PickUp Parcel Return",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -827,7 +827,7 @@
     "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -887,7 +887,7 @@
     "destinations" : "ALL"
   }, {
     "serviceName" : "Business Parcel Return",
-    "serviceType" : "B2B",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -917,7 +917,7 @@
     "destinations" : "ALL"
   }, {
     "serviceName" : "PickUp Parcel Return",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -927,7 +927,7 @@
     "destinations" : "ALL"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -948,8 +948,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -958,8 +958,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -968,8 +968,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1067,7 +1067,7 @@
     "destinations" : "NO, SE, DK"
   }, {
     "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
+    "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5800",
@@ -1078,8 +1078,8 @@
   }, {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -1088,8 +1088,8 @@
   }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "3332",
     "productionCode" : "3332",
     "domesticAllowedIn" : "SE, DK",
@@ -1098,8 +1098,8 @@
   }, {
     "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "4850",
     "productionCode" : "4850",
     "domesticAllowedIn" : "NO",
@@ -1138,8 +1138,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1148,8 +1148,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1168,8 +1168,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1188,8 +1188,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1198,8 +1198,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1218,8 +1218,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1238,8 +1238,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1248,8 +1248,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1268,8 +1268,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1278,8 +1278,8 @@
   }, {
     "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1288,8 +1288,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1308,8 +1308,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1318,8 +1318,8 @@
   }, {
     "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1328,8 +1328,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1428,8 +1428,8 @@
   }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "3332",
     "productionCode" : "3332",
     "domesticAllowedIn" : "SE, DK",
@@ -1438,8 +1438,8 @@
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1448,8 +1448,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1458,8 +1458,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1657,7 +1657,7 @@
     "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
+    "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5800",
@@ -1668,8 +1668,8 @@
   }, {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -1678,8 +1678,8 @@
   }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "3332",
     "productionCode" : "3332",
     "domesticAllowedIn" : "SE, DK",
@@ -1688,8 +1688,8 @@
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1698,8 +1698,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1738,8 +1738,8 @@
   }, {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
     "domesticAllowedIn" : "NO",
@@ -1748,8 +1748,8 @@
   }, {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -1768,8 +1768,8 @@
   "supportedServices" : [ {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
     "domesticAllowedIn" : "NO",
@@ -1778,8 +1778,8 @@
   }, {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -1798,8 +1798,8 @@
   "supportedServices" : [ {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
     "domesticAllowedIn" : "NO",
@@ -1808,8 +1808,8 @@
   }, {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -1827,7 +1827,7 @@
   "incompatibleVases" : [ "Frost free" ],
   "supportedServices" : [ {
     "serviceName" : "Stykkgods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5100",
@@ -1837,7 +1837,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Partigods til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5300",
@@ -1857,7 +1857,7 @@
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Oljeekspressen",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
     "serviceCode" : "OIL_EXPRESS",
@@ -1878,8 +1878,8 @@
   "supportedServices" : [ {
     "serviceName" : "Pakke i postkassen med RFID",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "3570",
     "productionCode" : "3570",
     "domesticAllowedIn" : "NO",
@@ -1888,8 +1888,8 @@
   }, {
     "serviceName" : "Pakke i postkassen",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "3584",
     "productionCode" : "3584",
     "domesticAllowedIn" : "NO",
@@ -1908,8 +1908,8 @@
   "supportedServices" : [ {
     "serviceName" : "Ekspress neste dag",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "4850",
     "productionCode" : "4850",
     "domesticAllowedIn" : "NO",
@@ -1918,8 +1918,8 @@
   }, {
     "serviceName" : "Returekspress",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "9600",
     "productionCode" : "9600",
     "domesticAllowedIn" : "NO",
@@ -1928,8 +1928,8 @@
   }, {
     "serviceName" : "Retur pakke fra bedrift",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "9000",
     "productionCode" : "9000",
     "domesticAllowedIn" : "NO",
@@ -1948,8 +1948,8 @@
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -1957,7 +1957,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pakke til hentested",
-    "serviceType" : "",
+    "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5800",
@@ -1968,8 +1968,8 @@
   }, {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1978,8 +1978,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1988,8 +1988,8 @@
   }, {
     "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -1998,8 +1998,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2008,8 +2008,8 @@
   }, {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "3332",
     "productionCode" : "3332",
     "domesticAllowedIn" : "SE, DK",
@@ -2028,8 +2028,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2038,8 +2038,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2058,8 +2058,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2068,8 +2068,8 @@
   }, {
     "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2078,8 +2078,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2098,8 +2098,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2108,8 +2108,8 @@
   }, {
     "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2118,8 +2118,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2138,8 +2138,8 @@
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "DOUBLE_INDOOR",
     "productionCode" : "2870",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2148,8 +2148,8 @@
   }, {
     "serviceName" : "Home Delivery Single Indoor",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "SINGLE_INDOOR",
     "productionCode" : "3150",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2158,8 +2158,8 @@
   }, {
     "serviceName" : "Home Delivery Curbside Evening",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
@@ -2187,7 +2187,7 @@
     "destinations" : "-"
   }, {
     "serviceName" : "Pall til bedrift",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5400",
@@ -2208,8 +2208,8 @@
   "supportedServices" : [ {
     "serviceName" : "Returekspress",
     "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "9600",
     "productionCode" : "9600",
     "domesticAllowedIn" : "NO",
@@ -2228,8 +2228,8 @@
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5600",
     "productionCode" : "5600",
     "domesticAllowedIn" : "NO",
@@ -2257,7 +2257,7 @@
     "destinations" : "NO, SE, DK, FI, AX, FO, GL, IS"
   }, {
     "serviceName" : "Business Parcel Return",
-    "serviceType" : "B2B",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -2277,7 +2277,7 @@
     "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -2287,7 +2287,7 @@
     "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -2397,7 +2397,7 @@
     "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
     "serviceName" : "Business Parcel Return",
-    "serviceType" : "B2B",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_RETURN",
@@ -2417,7 +2417,7 @@
     "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN",
@@ -2427,7 +2427,7 @@
     "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel Return Bulk",
-    "serviceType" : "B2C",
+    "serviceType" : "C2B",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -2497,7 +2497,7 @@
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Oljeekspressen",
-    "serviceType" : "",
+    "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
     "serviceCode" : "OIL_EXPRESS",
