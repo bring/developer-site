@@ -7,6 +7,35 @@ The Bring Developer site uses [Hugo](https://gohugo.io/) and
 generator, and RAML is a a YAML-based modeling language for APIs. We use CSS
 with some light post processing and JS that is bundled using Webpack.
 
+## Build, run and deploy
+
+`npm install` installs the dependencies.
+
+`npm run build` builds CSS, JS and JSON. Hugo needs this in order to run.
+
+`npm start` runs Hugo locally. Pages update instantly on change. With two
+exceptions:
+
+1. If you are working on the RAML files, you have to run `npm run buildraml` to
+   generate new JSON files with the changes.
+2. If you are working on the JS or CSS, run `npm run bundlewatch` to have
+   Webpack update the bundled files on change.
+
+Hugo watches for changes to those generated files, no need to stop and restart
+under normal circumstances.
+
+### Deploy
+
+This application is deployed as an Azure static web app.
+
+When you create a PR, a comment is made with a URL to a custom staging site
+where you can test what the final deployed site will be like. When you merge the
+PR to master, it will also be deployed to production.
+
+To work locally you can either build the site and open it in a browser, or you
+can use Azure’s
+[tooling](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)
+
 ## Revamped dev site 2021/2022
 
 Structure, content and features are being worked on iteratively throughout 2021
@@ -202,35 +231,6 @@ of the code example after the opening fence.
 </form>
 ```
 ````
-
-## Building, running and updating
-
-`npm install` installs the needed dependencies.
-
-`npm run build` builds CSS, JS and JSON. Hugo needs this in order to run.
-
-`npm start` runs Hugo locally. Pages update instantly on change. With two
-exceptions:
-
-1. If you are working on the RAML files, you have to run `npm run buildraml` to
-   generate new JSON files with the changes.
-2. If you are working on the JS or CSS, run `npm run bundlewatch` to have
-   Webpack update the bundled files on change.
-
-Hugo watches for changes to those generated files, no need to stop and restart
-under normal circumstances.
-
-## Deploy
-
-This application is deployed as an Azure static web app.
-
-When you create a PR, a comment is made with a URL to a custom staging site
-where you can test what the final deployed site will be like. When you merge the
-PR to master, it will also be deployed to production.
-
-To work locally you can either build the site and open it in a browser, or you
-can use Azure’s
-[tooling](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)
 
 ## Issues
 
