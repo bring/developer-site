@@ -8,7 +8,7 @@ menu:
     title: Postal Code API
     url: /api/postal-code
     parent: checkout
-weight: 13
+weight: 14
 
 important:
   - type: warn
