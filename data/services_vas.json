@@ -77,7 +77,7 @@
     "destinations" : "NO"
   }, {
     "serviceName" : "Mail",
-    "serviceType" : "",
+    "serviceType" : "B2X",
     "serviceFamily" : "Mail",
     "serviceFamilySortOrder" : 8,
     "serviceCode" : "MAIL",
@@ -87,7 +87,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "eAdvising",
   "description" : "Digital notification by SMS and/or e-mail.  ",
@@ -227,7 +228,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Notification by letter",
   "description" : "The recipient is notified by letter instead of electronic notification  ",
@@ -247,7 +249,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Flex delivery",
   "description" : "Bring leaves the shipment at the recipient`s address without the recipient being there to accept it.  This service entails that the sender accepts the associated risk with regard to liability and surrenders the right to compensation from Bring in the event of damage and loss.",
@@ -367,7 +370,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Delivery indoors",
   "description" : "The shipment is carried to a designated place behind the recipient´s door.  ",
@@ -447,7 +451,8 @@
     "destinations" : "SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Telephone notification",
   "description" : "Telephone notification entails that we against a surcharge agree on time of delivery with the recipient in advance. This additional service must always be booked if the recipient stays at a private or unattended address. Otherwise optionally available.  We contact the recipient the day before delivery to agree on the delivery time, and the driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.",
@@ -547,7 +552,8 @@
     "destinations" : "SE"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Saturday delivery",
   "description" : "For those who would like to get the shipment delivered already on Saturday between 10:00-16:00.  ",
@@ -577,7 +583,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Simplified delivery",
   "description" : "Bring leaves the shipment at the recipient's address without the recipient being there to accept it.  This additional service entails that the sender accepts the associated risk with regard to liability and surrenders the right to compensation from Bring in the event of damage and loss. The shipment is registered as delivered so that it can be tracked. The GPS coordinates are registered as the delivery address.",
@@ -637,7 +644,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Frost free",
   "description" : "If the shipment cannot handle frost, you can book the additional service Frost free. You are guaranteed that the load carrier will maintain a temperature above 0 degrees Celsius during the winter (from October to March).  ",
@@ -677,7 +685,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Dangerous goods",
   "description" : "To send dangerous goods we need to know what type of goods you are sending. You can search for either ADR number or type of goods for example \"nitro\".  After finishing the order, print one label and waybill in four copies. Pin together the waybills and attach them and the label on the goods. If you wish to send goods in categories that you cannot find on our pages, such as explosives or radioactive substances, call Customer Service (Bookings) on 04045 for assistance.",
@@ -737,7 +746,8 @@
     "destinations" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Cargo insurance",
   "description" : "Cargo insurance is an insurance for parcel services that covers the value of goods up to 100,000 DKK / SEK / NOK or 10,000 EUR if the shipment is damaged or lost. The compensation is based on the shipment`s real value, and there is no deductible.  ",
@@ -857,7 +867,8 @@
     "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ "Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe." ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Label free",
   "description" : "Label free makes provides the ability to send parcels without a label, and is useful for senders who do not have access to a printer.  A unique code in the format BRING-1234-5678 is sent to the sender by e-mail after the booking is completed. This code, as well as the recipient`s name and address, is written on the parcel before it is handed in.",
@@ -937,7 +948,8 @@
     "destinations" : "ALL"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "ID verification",
   "description" : "ID is checked upon delivery. Any person (other than the recipient) can receive the shipment, but must legitimize before receiving it.  ",
@@ -1107,7 +1119,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Evening delivery",
   "description" : "No description available",
@@ -1127,7 +1140,8 @@
     "destinations" : "DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Swap",
   "description" : "Delivery of a new product and return of existing product take place at the same time.  Example: the delivery of a new dishwasher occurs at the same time as Bring takes the existing dishwasher in return.",
@@ -1177,7 +1191,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Recycle white goods",
   "description" : "Bring takes the existing product to recycle.  Example: Bring returns an existing dishwasher at the delivery of a new dishwasher and recycles the old machine.",
@@ -1227,7 +1242,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Unwrapping",
   "description" : "Bring removes the packaging from the delivered goods, such as plastic, cardboard and styrofoam, and recycles it.  ",
@@ -1257,7 +1273,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Standard installation",
   "description" : "Simple installation, e.g. fridge, freezer etc.  ",
@@ -1297,7 +1314,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Customized installation",
   "description" : "Required certified competence, e.g. washing machine, dish washer etc.  ",
@@ -1337,7 +1355,80 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
+}, {
+  "vasName" : "Optional pickup point (domestic Norway)",
+  "description" : "Select the pickup point chosen by the recipient in the webshop.  When you want to offer the recipient to choose in which post office, Post in Shop or other type of pickup point to pick up the parcel. The pickup point is chosen by the recipient when ordering in the webshop. This additional service is free of charge.",
+  "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
+  "shippingGuideNpbCode" : "1036",
+  "bookingCode" : "SELECT_PICKUP_POINT",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Pakke til hentested",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5800",
+    "productionCode" : "5800",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Ekspress neste dag",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "4850",
+    "productionCode" : "4850",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Pakke til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5000",
+    "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
+}, {
+  "vasName" : "Optional pickup point (Nordics)",
+  "description" : "Select the pickup point chosen by the recipient in the webshop.  When you want to offer the recipient to choose in which post office, Post in Shop or other type of pickup point to pick up the parcel. The pickup point is chosen by the recipient when ordering in the webshop. This additional service is free of charge.",
+  "shippingGuideCode" : "SELECT_PICKUP_POINT_NORDICS",
+  "shippingGuideNpbCode" : "SELECT_PICKUP_POINT_NORDICS",
+  "bookingCode" : "SELECT_PICKUP_POINT_NORDICS",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "PickUp Parcel Bulk",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "PICKUP_PARCEL_BULK",
+    "productionCode" : "0342",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "SE, DK, FI"
+  }, {
+    "serviceName" : "PickUp Parcel",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "PICKUP_PARCEL",
+    "productionCode" : "0340",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "ALL",
+    "destinations" : "SE, DK"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "fakeVas" : true
 }, {
   "vasName" : "Signature required",
   "description" : "The recipient must sign to receive the shipment.  ",
@@ -1467,7 +1558,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Delivery notification to sender",
   "description" : "Digital notification to sender by SMS and/or e-mail when the shipment has been delivered to the recipient.  ",
@@ -1547,7 +1639,8 @@
     "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Individual verification",
   "description" : "Only the specified recipient can receive the shipment by showing identification. Use of authorization is not possible.  ",
@@ -1707,7 +1800,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Two delivery attempts",
   "description" : "This additional service involves an extra delivery attempt the following working day.  ",
@@ -1757,7 +1851,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "One delivery attempt, then pickup point",
   "description" : "One delivery attempt is made before shipment is handed over to closest pickup point.  ",
@@ -1787,7 +1882,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Two delivery attempts, then pickup point",
   "description" : "Two delivery attempts are made before shipment is handed over to closest pickup point.  ",
@@ -1817,7 +1913,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Special goods",
   "description" : "One or more order lines have a weight or size beyond standard which means that transport is considered special goods.  ",
@@ -1847,7 +1944,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Express",
   "description" : "Some destinations offer even faster delivery at an additional cost. Contact your local Bring office for more information.  ",
@@ -1867,7 +1965,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Bag on door",
   "description" : "Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may, against a surcharge, choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point.  It’s recommended that this delivery option is actively confirmed by the receiver upon booking in the sender’s webshop. When the parcel is delivered as a bag on the door, the bar code is scanned and the recipient will receive an SMS/email. Note that if the parcel is delivered in the mailbox the additional fee will not occur.",
@@ -1897,7 +1996,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Temperature controlled transport",
   "description" : "For those who need to send goods between 08-25 degrees. The shipment must be packed in such a way that it can withstand exposure to cold for up to 2 hours.  ",
@@ -1937,7 +2037,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Social control",
   "description" : "Verification of ID (age) and the recipient´s condition on delivery of products requiring this, such as alcohol.  ",
@@ -2017,7 +2118,8 @@
     "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ "Social control requires an agreement in Mybring to be available for booking." ]
+  "vasFootNotes" : [ "Social control requires an agreement in Mybring to be available for booking." ],
+  "fakeVas" : false
 }, {
   "vasName" : "Carry service oversize",
   "description" : "No description available",
@@ -2047,7 +2149,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "TV installation",
   "description" : "No description available",
@@ -2087,7 +2190,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Electronic installation",
   "description" : "No description available",
@@ -2127,7 +2231,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Mechanical installation",
   "description" : "No description available",
@@ -2167,7 +2272,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Pickup",
   "description" : "No description available",
@@ -2197,7 +2303,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Packaging included",
   "description" : "Packaging and label are handed out when handing in the return shipment at a Post in shop. To receive this, the QR code (generated upon completion of booking) must be shown to the cashier.  ",
@@ -2217,7 +2324,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Same day delivery",
   "description" : "The shipment will be delivered same day as long as the selected postal codes are within coverage for this additional service, and booking is made within today`s cutoff time.  ",
@@ -2237,7 +2345,8 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ "Same day delivery requires an agreement in Mybring to be available for booking." ]
+  "vasFootNotes" : [ "Same day delivery requires an agreement in Mybring to be available for booking." ],
+  "fakeVas" : false
 }, {
   "vasName" : "Limited quantities",
   "description" : "Limited quantities enables transportation of parcels containing dangerous goods in limited quantities (LQ). It is the sender`s responsibility to follow current regulations at all times.  ",
@@ -2367,7 +2476,8 @@
     "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ "When shipping from Finland to Sweden, Denmark, Norway, Faroe Islands, Greenland, Iceland or Åland, or from any country to Finland, Faroe Islands, Greenland, Iceland or Åland, the shipment will be transported by boat. In such cases the gross weight of Limited quantities must be provided. The document Multimodal Dangerous Goods Form must also be completed correctly and sent to Bring’s booking department before transportation begins" ]
+  "vasFootNotes" : [ "When shipping from Finland to Sweden, Denmark, Norway, Faroe Islands, Greenland, Iceland or Åland, or from any country to Finland, Faroe Islands, Greenland, Iceland or Åland, the shipment will be transported by boat. In such cases the gross weight of Limited quantities must be provided. The document Multimodal Dangerous Goods Form must also be completed correctly and sent to Bring’s booking department before transportation begins" ],
+  "fakeVas" : false
 }, {
   "vasName" : "Nordic special goods",
   "description" : "No description available",
@@ -2487,7 +2597,8 @@
     "destinations" : "NO, SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : false
 }, {
   "vasName" : "Ønsket leveringstid",
   "description" : "When this service is added and a delivery time is requested, Bring will attempt to deliver at this time.  Note that Bring cannot guarantee the requested delivery time.",
@@ -2507,5 +2618,6 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ]
+  "vasFootNotes" : [ ],
+  "fakeVas" : true
 } ]

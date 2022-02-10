@@ -223,6 +223,13 @@
                 <div class="vas__codes mrm">
                   <div class="mtm">
                     <span class="text-note fw600">API request codes</span>
+                    {{ if ($vas.fakeVas) }}
+                    <div>
+                      <p class="text-note bl mb-border pls mtxs fwn di mrxs">
+                        Not applicable
+                      </p>
+                    </div>
+                    {{ else }}
                     <dl class="text-note bl mb-border pls mtxs">
                       <div>
                         <dt class="fwn di mrxs">Booking:</dt>
@@ -232,13 +239,8 @@
                         <dt class="fwn di mrxs">Shipping Guide:</dt>
                         <dd class="di"><code data-filter="sgcode">{{ $vas.shippingGuideNpbCode }}</code></dd>
                       </div>
-                      {{ if ne $vas.shippingGuideCode $vas.shippingGuideNpbCode }}
-                      <div>
-                        <dt class="fwn di mrxs">Shipping Guide (<span class="fsi">legacy</span>):</dt>
-                        <dd class="di"><code data-filter="sgcode">{{ $vas.shippingGuideCode }}</code></dd>
-                      </div>
-                      {{ end }}
                     </dl>
+                    {{ end }}
                   </div>
                   {{ if ($vas.incompatibleVases) }}
                   <div class="mtm">
