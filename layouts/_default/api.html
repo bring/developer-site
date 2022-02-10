@@ -1,5 +1,5 @@
 {{- define "main" -}}
-{{- $oasApi := $.Param "oasapi" -}}
+  {{- $oasApi := $.Param "oasapi" -}}
   {{- $notAnApi := $.Param "notanapi" -}}
   {{- $maxwidth := "maxw80r" -}}
   {{- if (eq ($.Param "widelayout") true) -}}
@@ -101,6 +101,61 @@
                   {{- end -}}
                 {{- end -}}
               </div>
+            </section>
+            <section>
+              {{ $oasData := getJSON  $.Params.oas }}
+              {{ with $oasData }}
+                {{ $schemas := .components }}
+                {{ range $path, $_ := .paths }}
+                  {{ range $type, $_ := . }}
+                    <h2>{{ .summary }}</h2>
+                    <p><span class="mb-badge ttu mrs">{{ $type }}</span> {{ $path }}</p>
+                    <p class="text-heading">{{ .description }}</p>
+
+                    {{- partial "api/params.html" (dict "parameters" .parameters) -}}
+
+                    <p class="text-title">Responses</p>
+                    {{ range $response, $_ := .responses }}
+                      <h3>{{ $response }} {{ .description }}</h3>
+
+                      {{ range $application, $_ := .content }}
+                        
+                      <h4>Response schema</h4>
+                      <strong>{{ $application }}</strong><br>
+                        {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
+                        {{ range $key, $_ := .schema }}
+                          {{ if reflect.IsMap . }}
+                            {{ range . }}
+                              {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                            {{ end }}
+                          {{ else }}
+                            {{ if eq $key "$ref" }}
+                              {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                            {{ else }}
+                              {{ . }}
+                            {{ end }}<br>
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                    
+                    <h3>Response examples</h3>
+                    {{ range $response, $_ := .responses }}
+                      <button class="btn">{{ $response }}</button>
+                    {{ end }}
+                    {{ range $response, $_ := .responses }}
+                      <div id="{{ $response }}">
+                        <pre><code>
+{
+  Create a scratch that can be reused?
+}
+                      </code></pre>
+                      </div>
+                    {{ end }}
+                    <hr>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
             </section>
             {{- range $.Params.swagger -}}
               {{- with .url -}}

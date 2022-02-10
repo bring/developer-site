@@ -1,0 +1,64 @@
+{{ $schemas := .schemas }}
+{{ $schemaPath := path.Split .ctx }}
+{{ $schemaRef := $schemaPath.File }}
+
+{{ range $schemas }}
+  <div class="mbl">
+    {{ $responseSchema := index . $schemaRef }}
+    {{ range $key, $_ := $responseSchema }}
+
+      {{ if reflect.IsMap . }}
+        {{ $key }}
+        <div class="mlm mbs">
+
+          {{ range $param, $_ := . }}
+            <strong>{{ $param }}</strong>
+            <div class="mlm mbs">
+              {{ if reflect.IsMap . }}
+                {{ range $i, $_ := . }}
+                  {{ if reflect.IsMap . }}
+                    <div class="mlm mbs">
+                      {{ range $j, $_ := . }}
+                        {{ if eq $j "$ref" }}
+                          {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                        {{ else }}
+                          {{ . }}
+                        {{ end }}<br>
+                      {{ end }}
+                    </div>
+                  {{ else if reflect.IsSlice . }}
+                    Enum:
+                    <p class="mlm">
+                      {{ range . }}
+                        <code>{{ . }}</code><br>
+                      {{ end }}
+                    </p>
+                  {{ else }}
+                    {{ if eq $i "$ref" }}
+                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                    {{ else }}
+                      {{ . }}
+                    {{ end }}<br>
+                  {{ end }}
+                {{ end }}
+              {{ else }}
+                {{ . }}<br>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+
+      {{ else if reflect.IsSlice . }}
+        {{ $key }}:
+        <div class="mlm">
+          {{ range . }}
+              - {{ . }} <br>
+            {{ end }}
+        </div>
+
+      {{ else }}
+        {{ $key }}: {{ . }}<br>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
