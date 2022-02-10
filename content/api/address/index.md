@@ -31,4 +31,5 @@ information:
 swagger:
   - title: OAS
     url: https://api.qa.bring.com/address/api-docs/
+oas: https://api.qa.bring.com/address/api-docs/
 ---

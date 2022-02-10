@@ -1,0 +1,10 @@
+{{ range .parameters }}
+  <p>{{ .name }}
+    {{ if eq .required true }}
+      <span class="error">Required</span>
+    {{ end }}<br>
+    {{ .in }}<br>
+    {{ .description }}
+
+  </p>
+{{ end }}
