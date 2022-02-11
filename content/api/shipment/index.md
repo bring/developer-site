@@ -20,7 +20,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP.
+      REST XML/JSON over HTTP. ShipmentAPI endpoints will assume all requests are ISO-8859-1 encoded.
 
 documentation:
   - title:
@@ -156,6 +156,7 @@ documentation:
       - CH02
       #### Transport Company
       - BCI
+      - BCIOXP
       - BCN
       - BCS
       - BDD
