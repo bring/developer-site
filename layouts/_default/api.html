@@ -102,14 +102,14 @@
                 {{- end -}}
               </div>
             </section>
-            <section>
+            <section class="dev-docscontent__section">
               {{ $oasData := getJSON  $.Params.oas }}
               {{ with $oasData }}
                 {{ $schemas := .components }}
                 {{ range $path, $_ := .paths }}
                   {{ range $type, $_ := . }}
                     <h2>{{ .summary }}</h2>
-                    <p><span class="mb-badge ttu mrs">{{ $type }}</span> {{ $path }}</p>
+                    <p><span class="mb-badge mb-badge--green ttu mrs paxs">{{ $type }}</span> {{ $path }}</p>
                     <p class="text-heading">{{ .description }}</p>
 
                     {{- partial "api/params.html" (dict "parameters" .parameters) -}}

@@ -1,10 +1,15 @@
+{{ $paramsHeader := "" }}
+
 {{ range .parameters }}
+  {{ if ne $paramsHeader .in }}
+    {{ $paramsHeader = .in }}
+    <h4 class="ttu mb-border bb mbs pbxs"> {{ $paramsHeader }} parameters</h4>
+  {{ end }}
+  
   <p>{{ .name }}
     {{ if eq .required true }}
-      <span class="error">Required</span>
+      <span class="mb-badge mb-badge--red paxs">Required</span>
     {{ end }}<br>
-    {{ .in }}<br>
     {{ .description }}
-
   </p>
 {{ end }}
