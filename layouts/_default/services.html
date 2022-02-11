@@ -223,15 +223,7 @@
                 <div class="vas__codes mrm">
                   <div class="mtm">
                     <span class="text-note fw600">API request codes</span>
-                    {{ if ($vas.notOrderableViaVasCodes) }}
-                    <div>
-                      <p class="text-note bl mb-border pls mtxs fwn di mrxs">
-                        See API request examples
-                      </p>
-                      <code data-filter="bookcode" hidden>{{ $vas.bookingCode }}</code>
-                      <code data-filter="sgcode" hidden>{{ $vas.shippingGuideNpbCode }}</code>
-                    </div>
-                    {{ else }}
+                    {{ if ($vas.orderedViaVasCodes) }}
                     <dl class="text-note bl mb-border pls mtxs">
                       <div>
                         <dt class="fwn di mrxs">Booking:</dt>
@@ -242,6 +234,14 @@
                         <dd class="di"><code data-filter="sgcode">{{ $vas.shippingGuideNpbCode }}</code></dd>
                       </div>
                     </dl>
+                    {{ else }}
+                    <div>
+                      <p class="text-note bl mb-border pls mtxs fwn di mrxs">
+                        See API request examples
+                      </p>
+                      <code data-filter="bookcode" hidden>{{ $vas.bookingCode }}</code>
+                      <code data-filter="sgcode" hidden>{{ $vas.shippingGuideNpbCode }}</code>
+                    </div>
                     {{ end }}
                   </div>
                   {{ if ($vas.incompatibleVases) }}
