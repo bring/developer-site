@@ -1,7 +1,6 @@
 ---
 title: Address API
 layout: api
-oasapi: true
 disqus_identifier: https-developer-bring-com-api-address
 menu:
   apidocs:
@@ -28,8 +27,5 @@ information:
       REST XML/JSON over HTTP and SOAP over HTTP.
       Booking endpoints will assume all requests are UTF-8 encoded.
 
-swagger:
-  - title: OAS
-    url: https://api.qa.bring.com/address/api-docs/
 oas: https://api.qa.bring.com/address/api-docs/
 ---

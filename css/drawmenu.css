@@ -1,7 +1,8 @@
 .dev-drawmenu {
+  display: none;
   flex: 0 0 auto;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: 6vw;
+  padding-right: 6vw;
   position: sticky;
   top: 0;
   background-color: hsla(0, 0%, 100%, 0.9);
@@ -9,12 +10,18 @@
   z-index: 5;
 }
 
-.dev-obfuscator.drawn {
-  display: block;
-  background-color: hsla(0, 0%, 0%, 0.55);
-  visibility: visible;
-  pointer-events: auto;
-  opacity: 1;
+@media screen and (max-width: 64em) {
+  .dev-drawmenu {
+    display: initial;
+  }
+
+  .dev-obfuscator.drawn {
+    display: block;
+    background-color: hsla(0, 0%, 0%, 0.55);
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+  }
 }
 
 .dev-obfuscator {

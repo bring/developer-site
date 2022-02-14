@@ -21,13 +21,13 @@
 }
 
 .dev-docscontent {
-  padding:1rem 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .dev-docscontent h1 {
-  padding-left: 2rem;
-  margin:0 auto 0.6em;
-  max-width: 80rem;
+  padding-left: 6vw;
+  margin-bottom: 0.6em;
 }
 
 .dev-docscontent p > a:not(.btn-link--dark),
@@ -37,9 +37,7 @@
 
 .dev-docscontent__section {
   margin-bottom: 3rem;
-  padding: 0 2rem 3rem;
-  max-width:80rem;
-  margin:20px auto;
+  padding: 0 6vw 1rem;
   border-width: 2px;
   border-color: var(--gray-86);
   border-bottom-style: solid;
@@ -81,24 +79,6 @@
   margin-bottom: 0;
 }
 
-.redoc-wrap .menu-content {
-  max-width:320px;
-  width:100%;
-  top: 80px !important;
-  height: calc(100vh - 80px) !important;
-  z-index:4;
-}
-.redoc-wrap .api-info h1 {
-  padding:unset !important;
-  margin:0 0 0.5rem;
-}
-.redoc-wrap .api-content > div {
-  padding:90px 0 40px;
-}
-.redoc-wrap .api-content > div:first-child {
-  padding:20px 0 0;
-}
-
 summary {
   padding-left: 0.25em;
   padding-bottom: .05em;
@@ -116,19 +96,48 @@ summary:hover {
   align-items: stretch;
   position: fixed;
   bottom: 0;
-  width: 300px;
-  top: 4.5rem;
+  top: 0;
   transition: var(--easeout-15);
-  flex: 1 0 100%;
-  z-index: 20;
-  min-height: calc(100% - 4.5rem);
-  transform: translateX(-100%);
   overflow-y: auto;
 }
 
-.dev-docs__menu.drawn {
-  transform: translateX(0);
-  box-shadow: var(--shadow);
+@media screen and (max-width: 64em) {
+  .dev-docs__menu {
+    flex: 1 0 100%;
+    z-index: 20;
+    min-height: 100%;
+    transform: translateX(-19rem);
+  }
+
+  .dev-docs__menu.drawn {
+    transform: translateX(0);
+    box-shadow: var(--shadow);
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .dev-docs__menu {
+    width: 21%;
+    top: 4.4rem;
+  }
+
+  .dev-docs__page {
+    margin-left: 21%;
+    padding-top: 4.4rem;
+    max-width: 79%;
+  }
+
+  .dev-docscontent {
+    padding-left: 2rem;
+  }
+
+  .dev-docscontent h1 {
+    padding-left: 2rem;
+  }
+
+  .dev-docscontent__section {
+    padding: 0 2rem 3rem 2rem;
+  }
 }
 
 .changelog-small {

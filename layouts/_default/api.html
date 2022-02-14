@@ -1,5 +1,4 @@
 {{- define "main" -}}
-  {{- $oasApi := $.Param "oasapi" -}}
   {{- $notAnApi := $.Param "notanapi" -}}
   {{- $maxwidth := "maxw80r" -}}
   {{- if (eq ($.Param "widelayout") true) -}}
@@ -40,7 +39,7 @@
           {{ end }}
           </article>
         </main>
-      {{- else if (eq $oasApi true) -}}
+      {{- else if isset $.Params "oas" -}}
         <main 
         id="main"
         class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}"
@@ -103,7 +102,7 @@
               </div>
             </section>
             <section class="dev-docscontent__section">
-              {{ $oasData := getJSON  $.Params.oas }}
+              {{ $oasData := getJSON $.Params.oas }}
               {{ with $oasData }}
                 {{ $schemas := .components }}
                 {{ range $path, $_ := .paths }}
@@ -157,11 +156,6 @@
                 {{ end }}
               {{ end }}
             </section>
-            {{- range $.Params.swagger -}}
-              {{- with .url -}}
-                <redoc spec-url="{{ . }}"></redoc>
-              {{- end -}}
-            {{- end -}}
           </article>
         </main>
       {{- else -}}

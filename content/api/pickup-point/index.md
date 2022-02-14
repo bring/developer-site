@@ -1,7 +1,6 @@
 ---
 title: Pickup Point API
 layout: api
-oasapi: true
 disqus_identifier: https-developer-bring-com-api-pickup-point
 menu:
   apidocs:
@@ -76,8 +75,5 @@ documentation:
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point
 
-swagger:
-  - title: Swagger API Documentation
-    url: https://api.qa.bring.com/pickuppoint/openapi.json
 oas: https://api.qa.bring.com/pickuppoint/openapi.json
 ---

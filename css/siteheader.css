@@ -2,8 +2,14 @@
   background-color: var(--green-darker);
   flex: 0 0 auto;
   min-height: 4.4rem;
-  width:100%;
   z-index: 10;
+}
+
+@media screen and (min-width: 64em) {
+  .dev-docslayout .dev-siteheader {
+    position: fixed;
+    width: 100%;
+  }
 }
 
 .dev-siteheader__title {
