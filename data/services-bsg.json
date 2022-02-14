@@ -70,7 +70,7 @@
     "ListPrice": "Yes",
     "AgreementPrice": "Yes",
     "LeadTime": "Yes",
-    "EnvironmentalData": "-",
+    "EnvironmentalData": "NO",
     "SenderCountries": "-",
     "Destination": "-",
     "DomesticAllowed": "NO"
