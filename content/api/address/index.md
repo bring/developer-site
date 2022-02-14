@@ -1,4 +1,5 @@
 ---
+hidden: true
 title: Address API
 layout: api
 disqus_identifier: https-developer-bring-com-api-address
