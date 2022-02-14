@@ -8,56 +8,70 @@
     {{ range $key, $_ := $responseSchema }}
 
       {{ if reflect.IsMap . }}
-        {{ $key }}
-        <div class="mlm mbs">
-
+        <!--{{ $key }}-->
+        <div class="mbm flex flex-dir-col mb-border bb">
           {{ range $param, $_ := . }}
-            <strong>{{ $param }}</strong>
-            <div class="mlm mbs">
-              {{ if reflect.IsMap . }}
-                {{ range $i, $_ := . }}
+            <div class="flex w100p">
+              <div class="flex-1">
+                <strong>{{ $param }}</strong>
+              </div>
+              <div class="flex-1">
+                <div class="mbm flex flex-dir-col">
                   {{ if reflect.IsMap . }}
-                    <div class="mlm mbs">
-                      {{ range $j, $_ := . }}
-                        {{ if eq $j "$ref" }}
-                          {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                    {{ range $i, $_ := . }}
+                      <div class="mbm flex">
+                        {{ if reflect.IsMap . }}
+                            {{ range $j, $_ := . }}
+                              {{ if eq $j "$ref" }}
+                                {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                              {{ end }}
+                            {{ end }}
+                        {{ else if reflect.IsSlice . }}
+                          Enum:
+                          <p class="mlm">
+                            {{ range . }}
+                              <code>{{ . }}</code><br>
+                            {{ end }}
+                          </p>
                         {{ else }}
-                          {{ . }}
-                        {{ end }}<br>
-                      {{ end }}
-                    </div>
-                  {{ else if reflect.IsSlice . }}
-                    Enum:
-                    <p class="mlm">
-                      {{ range . }}
-                        <code>{{ . }}</code><br>
-                      {{ end }}
-                    </p>
+                          {{ if eq $i "$ref" }}
+                            {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                          {{ else }}
+                            {{ . }}
+                          {{ end }}
+                        {{ end }}
+                      </div>
+                    {{ end }}
                   {{ else }}
-                    {{ if eq $i "$ref" }}
-                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
-                    {{ else }}
-                      {{ . }}
-                    {{ end }}<br>
+                    {{ . }}<br>
                   {{ end }}
-                {{ end }}
-              {{ else }}
-                {{ . }}<br>
-              {{ end }}
+                </div>
+              </div>
             </div>
           {{ end }}
         </div>
 
       {{ else if reflect.IsSlice . }}
-        {{ $key }}:
-        <div class="mlm">
-          {{ range . }}
+        <div class="flex">
+          <div class="flex-1">
+            {{ $key }}
+          </div>
+          <div class="flex-1">
+            {{ range . }}
               - {{ . }} <br>
             {{ end }}
+          </div>
         </div>
 
       {{ else }}
-        {{ $key }}: {{ . }}<br>
+      <div class="flex">
+        <div class="flex-1">
+          {{ $key }}
+        </div>
+        <div class="flex-1">
+          {{ . }}
+        </div>
+      </div>
       {{ end }}
     {{ end }}
   </div>
