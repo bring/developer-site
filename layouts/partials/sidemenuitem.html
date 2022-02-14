@@ -1,0 +1,50 @@
+{{- $currentPage := .currentPage -}}
+{{- $currentMenuItem := .ctx -}}
+{{- $currentMenu := .menu -}}
+
+<li
+class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}active{{ end }}"
+>
+  <a href="{{ .url }}" class="dev-sidemenu__apititle"
+    >{{ .pageTitle }}</a
+  >
+  {{- with (index .apiData .identifier) -}}
+    {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
+      <ul class="dev-sidemenu__sublist">
+        {{- range $currentPage.Params.documentation -}}
+          {{- with .title -}}
+            <li>
+              <a href="#{{ . | urlize }}">
+                <span data-hover="{{ . }}">{{ . }}</span>
+              </a>
+            </li>
+            {{- end -}}
+        {{- end -}}
+        <li>
+          <a href="#overview-of-endpoints">
+            <span data-hover="overview-of-endpoints"
+              >Overview of endpoints</span
+            >
+          </a>
+        </li>
+
+        {{- range .resources -}}
+          <li>
+            <a href="#{{ .displayName | urlize }}">
+              <span data-hover="{{ .displayName }}"
+                >{{ .displayName }}</span
+              >
+            </a>
+          </li>
+        {{- end -}}
+        {{- if and (eq (getenv "HUGO_ENV") "production") (isset $currentPage.Params "disqus_identifier") -}}
+          <li>
+            <a href="#api-support">
+              API support
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    {{- end -}}
+  {{- end -}}
+</li>

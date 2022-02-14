@@ -1,0 +1,78 @@
+{{ $schemas := .schemas }}
+{{ $schemaPath := path.Split .ctx }}
+{{ $schemaRef := $schemaPath.File }}
+
+{{ range $schemas }}
+  <div class="mbl">
+    {{ $responseSchema := index . $schemaRef }}
+    {{ range $key, $_ := $responseSchema }}
+
+      {{ if reflect.IsMap . }}
+        <!--{{ $key }}-->
+        <div class="mbm flex flex-dir-col mb-border bb">
+          {{ range $param, $_ := . }}
+            <div class="flex w100p">
+              <div class="flex-1">
+                <strong>{{ $param }}</strong>
+              </div>
+              <div class="flex-1">
+                <div class="mbm flex flex-dir-col">
+                  {{ if reflect.IsMap . }}
+                    {{ range $i, $_ := . }}
+                      <div class="mbm flex">
+                        {{ if reflect.IsMap . }}
+                            {{ range $j, $_ := . }}
+                              {{ if eq $j "$ref" }}
+                                {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                              {{ end }}
+                            {{ end }}
+                        {{ else if reflect.IsSlice . }}
+                          Enum:
+                          <p class="mlm">
+                            {{ range . }}
+                              <code>{{ . }}</code><br>
+                            {{ end }}
+                          </p>
+                        {{ else }}
+                          {{ if eq $i "$ref" }}
+                            {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                          {{ else }}
+                            {{ . }}
+                          {{ end }}
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                  {{ else }}
+                    {{ . }}<br>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </div>
+
+      {{ else if reflect.IsSlice . }}
+        <div class="flex">
+          <div class="flex-1">
+            {{ $key }}
+          </div>
+          <div class="flex-1">
+            {{ range . }}
+              - {{ . }} <br>
+            {{ end }}
+          </div>
+        </div>
+
+      {{ else }}
+      <div class="flex">
+        <div class="flex-1">
+          {{ $key }}
+        </div>
+        <div class="flex-1">
+          {{ . }}
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

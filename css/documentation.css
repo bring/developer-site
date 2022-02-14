@@ -101,10 +101,6 @@ summary:hover {
   overflow-y: auto;
 }
 
-.changelog-small {
-  flex: 1 1 24rem;
-}
-
 @media screen and (max-width: 64em) {
   .dev-docs__menu {
     flex: 1 0 100%;
@@ -142,6 +138,10 @@ summary:hover {
   .dev-docscontent__section {
     padding: 0 2rem 3rem 2rem;
   }
+}
+
+.changelog-small {
+  flex: 1 1 24rem;
 }
 
 .btn-link--help {

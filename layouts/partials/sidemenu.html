@@ -68,56 +68,21 @@
         <h2 class="dev-sidemenu__title text-note ttu">{{ .Title }}</h2>
         <ul class="dev-sidemenu__list">
           {{ range .Children }}
-            {{- $identifier := .Identifier -}}
-            <li
-              class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}"
-            >
-              <a href="{{ .URL }}" class="dev-sidemenu__apititle"
-                >{{ .Title }}</a
-              >
-              {{- $currentMenu := .Menu -}}
-              {{- $currentMenuItem := . -}}
-              {{- with (index $apiData $identifier) -}}
-                {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
-                  <ul class="dev-sidemenu__sublist">
-                    {{- range $.Params.documentation -}}
-                      {{- with .title -}}
-                        <li>
-                          <a href="#{{ . | urlize }}">
-                            <span data-hover="{{ . }}">{{ . }}</span>
-                          </a>
-                        </li>
-                        {{- end -}}
-                    {{- end -}}
+            {{- $hidePage := false -}}
+            {{- with .Page -}}
+              {{- $hidePage = .Params.hidden -}}
+            {{- end -}}
 
-                    <li>
-                      <a href="#overview-of-endpoints">
-                        <span data-hover="overview-of-endpoints"
-                          >Overview of endpoints</span
-                        >
-                      </a>
-                    </li>
+            {{/* Render menu without hidden pages in production */}}
+            {{- if and (ne $hidePage true) (eq (getenv "HUGO_ENV") "production") -}}
+              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
+            {{- end -}}
 
-                    {{- range .resources -}}
-                      <li>
-                        <a href="#{{ .displayName | urlize }}">
-                          <span data-hover="{{ .displayName }}"
-                            >{{ .displayName }}</span
-                          >
-                        </a>
-                      </li>
-                    {{- end -}}
-                    {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-                      <li>
-                        <a href="#api-support">
-                          API support
-                        </a>
-                      </li>
-                    {{- end -}}
-                  </ul>
-                {{- end -}}
-              {{- end -}}
-            </li>
+            {{/* Render menu with hidden pages in dev and staging */}}
+            {{- if (ne (getenv "HUGO_ENV") "production") -}}
+              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
+            {{- end -}}
+
           {{- end -}}
         </ul>
         {{- else -}}

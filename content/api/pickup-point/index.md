@@ -74,4 +74,6 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point
+
+oas: https://api.qa.bring.com/pickuppoint/openapi.json
 ---

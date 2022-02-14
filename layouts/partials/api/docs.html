@@ -30,7 +30,7 @@
               {{- else -}}
                 <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
               {{- end -}}
-            {{ end -}}
+            {{- end -}}
             {{- with $.Params.information -}}
               <div class="dev-docscontent__info mvl">
                 {{- range . -}}
