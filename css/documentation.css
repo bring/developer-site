@@ -157,3 +157,12 @@ summary:hover {
 .btn-link--help:hover svg {
   color: #777;
 }
+
+.bg-red-light {
+  background: var(--red-light);
+}
+
+.flex-basis-20 {
+  flex-basis:20rem;
+}
+

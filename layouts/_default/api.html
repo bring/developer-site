@@ -40,10 +40,7 @@
           </article>
         </main>
       {{- else if and (isset $.Params "oas") (ne (getenv "HUGO_ENV") "production") -}}
-        <main 
-        id="main"
-        class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}"
-        >
+        <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
           <article>
             <h1>{{ .Title }}</h1>
             <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
@@ -101,74 +98,83 @@
                 {{- end -}}
               </div>
             </section>
-            <section class="dev-docscontent__section maxw64r">
+            <section class="dev-docscontent__section maxw96r">
               {{ $oasData := getJSON $.Params.oas }}
               {{ with $oasData }}
                 {{ $schemas := .components }}
                 {{ range $path, $_ := .paths }}
-                  {{ range $type, $_ := . }}
-                    <h2>{{ .summary }}</h2>
-                    <p><span class="mb-badge mb-badge--green ttu mrs paxs">{{ $type }}</span> {{ $path }}</p>
-                    <p class="text-heading">{{ .description }}</p>
+                  <div class="flex flex-wrap mbm ptm">
+                    <div class="flex-1 flex-basis-20 pas">
+                      {{ range $type, $_ := . }}
+                        <h2>{{ .summary }}</h2>
+                        <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
+                        <p class="text-heading">{{ .description }}</p>
 
-                    {{- partial "api/params.html" (dict "parameters" .parameters) -}}
+                        {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
-                    <p class="text-title">Responses</p>
-                    {{ $responseCodeColor := "" }}
-                    {{ range $response, $_ := .responses }}
-                      {{ if or (eq $response "200") (eq $response "204") }}
-                        {{ $responseCodeColor = "btn--green" }}
-                      {{ else if or (eq $response "400") (eq $response "500") }}
-                        {{ $responseCodeColor = "btn--danger" }}
-                      {{ end }}
-
-                      <button class="btn {{$responseCodeColor}} w100p tl">
-                        <span data-mybicon="mybicon-arrow-right" data-mybicon-class="icon-ui mls v-mid"></span> 
-                        <span class="v-mid">{{ $response }} {{ .description }}</span>
-                      </button>
-                      
-                      <h4>Response schema: 
-                        <select class="paxs">
-                          {{ range $applicationType, $_ := .content }}
-                            <option value="{{ $applicationType }}"> {{ $applicationType }}</option>
+                        <p class="text-title">Responses</p>
+                        
+                        {{ $responseCodeColor := "" }}
+                        {{ $successCodes := "200 204" }}
+                        {{ $errorCodes := "400 404 500" }}
+                        {{ range $response, $_ := .responses }}
+                          {{ if in $successCodes $response }}
+                            {{ $responseCodeColor = "bg-green1" }}
+                          {{ else if in $errorCodes $response }}
+                            {{ $responseCodeColor = "bg-red-light" }}
                           {{ end }}
-                        </select>
-                      </h4>
 
-                      {{ range $application, $_ := .content }}
-                        <strong>TODO: {{$application}}</strong>
-                        {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
-                        {{ range $key, $_ := .schema }}
-                          {{ if reflect.IsMap . }}
-                            {{ range . }}
-                              {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
-                            {{ end }}
-                          {{ else }}
-                            {{ if eq $key "$ref" }}
-                              {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
-                            {{ else }}
-                              {{ . }}
-                            {{ end }}
-                          {{ end }}
+                          <details class="{{$responseCodeColor}} mbm mb-border ba">
+                            <summary class="pam">{{ $response }} {{ .description }}</summary>
+                          
+                            <div class="bg-gray1 pam mb-border bt">
+                              <h4>Response schema: 
+                                <select class="paxs">
+                                  {{ range $applicationType, $_ := .content }}
+                                    <option value="{{ $applicationType }}"> {{ $applicationType }}</option>
+                                  {{ end }}
+                                </select>
+                              </h4>
+
+                              {{ range $application, $_ := .content }}
+                                <strong>TODO: {{$application}}</strong>
+                                {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
+                                {{ range $key, $_ := .schema }}
+                                  {{ if reflect.IsMap . }}
+                                    {{ range . }}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                    {{ end }}
+                                  {{ else }}
+                                    {{ if eq $key "$ref" }}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                    {{ else }}
+                                      {{ . }}
+                                    {{ end }}
+                                  {{ end }}
+                                {{ end }}
+                              {{ end }}
+                            </div>
+                          </details>
+                        {{ end }}
+                      </div>
+                      <div class="flex-1 pas">
+                        <h3>Response examples</h3>
+                        {{ range $response, $_ := .responses }}
+                          <button class="btn">{{ $response }}</button>
+                        {{ end }}
+                        {{ range $response, $_ := .responses }}
+                          <div id="{{ $response }}">
+                            <pre class="chroma"><code>
+{
+Create a scratch that can be reused?
+}
+                            </code></pre>
+                          </div>
                         {{ end }}
                       {{ end }}
-                    {{ end }}
-                    
-                    <h3>Response examples</h3>
-                    {{ range $response, $_ := .responses }}
-                      <button class="btn">{{ $response }}</button>
-                    {{ end }}
-                    {{ range $response, $_ := .responses }}
-                      <div id="{{ $response }}">
-                        <pre><code>
-{
-  Create a scratch that can be reused?
-}
-                      </code></pre>
-                      </div>
-                    {{ end }}
-                    <hr>
-                  {{ end }}
+                    </div>
+                  </div>
+                  <hr>
                 {{ end }}
               {{ end }}
             </section>
