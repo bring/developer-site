@@ -45,6 +45,7 @@ documentation:
       * FO - Faroe Islands
       * GL - Greenland
       * IS - Iceland
+      * SJ - Svalbard and Jan Mayen
 
       The service uses [GeoNames](http://www.geonames.org/) as source for most countries except Norway.
 
@@ -52,7 +53,7 @@ documentation:
 
       For countries that have multiple results (cities) for a given postal code, a list of cities will be returned. See example below.
 
-      ### Postal Code type for Norway
+      ### Postal Code type for Norway (including Svalbard and Jan Mayen)
 
       For Norway, you also get information about the postal code type. This is set in the `postalCodeType` in the response:
 
