@@ -166,3 +166,22 @@ summary:hover {
   flex-basis:20rem;
 }
 
+.response summary {
+  border:1px solid transparent;
+}
+.response.success-code summary {
+  background:var(--green-lighter);
+  color:var(--green-dark);
+}
+.response.success-code summary:focus {
+  border:1px solid var(--green-dark);
+  outline:none;
+}
+.response.error-code summary {
+  background:var(--red-light);
+  color:var(--red-dark);
+}
+.response.error-code summary:focus {
+  border:1px solid var(--red-dark);
+  outline:none;
+}

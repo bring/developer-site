@@ -18,7 +18,8 @@
 
 --yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
 
---red-light: hsl(0, 100%, 95%); /* ffe6e6 */
+--red-light: hsl(0, 70%, 97%); /* #fdf2f2 */
+--red-dark: hsl(0, 100%, 35%); /* #b30000 */
 
 --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 
