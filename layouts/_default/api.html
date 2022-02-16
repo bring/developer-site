@@ -134,7 +134,8 @@
                                 <select class="paxs schema-type-select">
                                   {{ $selected := "selected" }}
                                   {{ range $applicationType, $_ := .content }}
-                                    <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected}}>   {{ $applicationType }}
+                                    <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                      {{ $applicationType }}
                                     </option>
                                     {{$selected = ""}}
                                   {{ end }}
