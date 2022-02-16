@@ -80,7 +80,7 @@ baseUri: https://api.bring.com/pickuppoint/api
                 value: !include examples/responseForMultipleCities.xml
 
 /postalCode/{countryCode}/getAllValidPostalCodes{mediaTypeExtension}:
-  displayName: Lookup all postal codes for Norway, Sweden, Denmark or Finland
+  displayName: Lookup all postal codes for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
 
   uriParameters:
     countryCode:
@@ -93,7 +93,7 @@ baseUri: https://api.bring.com/pickuppoint/api
       enum: [ .json, .xml ]
       description: Use .json to get application/json or .xml to get application/xml.
   get:
-    description: Lookup all postal codes for Norway, Sweden, Denmark or Finland
+    description: Lookup all postal codes for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
     queryParameters:
 
     responses:
@@ -112,7 +112,7 @@ baseUri: https://api.bring.com/pickuppoint/api
                 value: !include examples/responseForPostalCodes.xml
 
 /postalCode/{countryCode}/allValidPostalCodesDetails{mediaTypeExtension}:
-  displayName: Lookup all postal codes with details for Norway, Sweden, Denmark or Finland
+  displayName: Lookup all postal codes with details for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
 
   uriParameters:
     countryCode:
@@ -125,7 +125,7 @@ baseUri: https://api.bring.com/pickuppoint/api
       enum: [ .json, .xml ]
       description: Use .json to get application/json or .xml to get application/xml.
   get:
-    description: Lookup all postal codes with details for Norway, Sweden, Denmark or Finland
+    description: Lookup all postal codes with details for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
     queryParameters:
 
     responses:
