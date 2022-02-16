@@ -145,13 +145,17 @@ filterBtns.forEach((filterBtn) => {
           })
         } else {
           rows.forEach((row) => {
+            let affectedRows = 0;
             showChecked.forEach((show) => {
-              if (![...row.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
-                row.classList.add("vas__item--hidden")
-              } else {
-                row.classList.remove("vas__item--hidden")
+              if ([...row.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
+                affectedRows++;
               }
             })
+            if(affectedRows == 0) {
+              row.classList.add("vas__item--hidden")
+            } else {
+              row.classList.remove("vas__item--hidden")
+            }
           })
           serviceCountryRows.forEach((row) => {
             row.hidden = true
