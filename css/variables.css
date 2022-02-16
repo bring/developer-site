@@ -15,11 +15,13 @@
 --green-lighter-active: hsl(86, 40%, 92%);
 --green-dark: hsl(155, 100%, 19.6%); /* #00643a */
 --green-darker: hsl(152, 100%, 9%);
+--green-dark-hover: hsl(86, 40%, 92%);
 
 --yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
 
 --red-light: hsl(0, 70%, 97%); /* #fdf2f2 */
---red-dark: hsl(0, 100%, 35%); /* #b30000 */
+--red-dark: hsl(0, 55%, 96%); /* #faeded */
+--red-darker: hsl(0, 100%, 35%); /* #b30000 */
 
 --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
 

@@ -166,22 +166,33 @@ summary:hover {
   flex-basis:20rem;
 }
 
-.response summary {
+.response {
   border:1px solid transparent;
+  transition:all 0.2s ease-in-out;
 }
-.response.success-code summary {
+.response.default {
+  background:var(--gray-95);
+}
+.response.success-code {
   background:var(--green-lighter);
   color:var(--green-dark);
 }
-.response.success-code summary:focus {
-  border:1px solid var(--green-dark);
-  outline:none;
-}
-.response.error-code summary {
+.response.error-code {
   background:var(--red-light);
-  color:var(--red-dark);
+  color:var(--red-darker);
 }
-.response.error-code summary:focus {
-  border:1px solid var(--red-dark);
+.response.success-code:focus,
+.response.error-code:focus,
+.response.default:focus {
+  border:1px solid;
   outline:none;
+}
+.response.success-code:hover {
+  background:var(--green-dark-hover);
+}
+.response.error-code:hover {
+  background:var(--red-dark);
+}
+.response.default:hover {
+  background:var(--gray-90);
 }

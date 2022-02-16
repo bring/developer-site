@@ -121,26 +121,27 @@
                         {{ $errorCodes := "400 404 500" }}
                         {{ range $response, $_ := .responses }}
                           {{ if in $successCodes $response }}
-                            {{ $responseCodeColor = "response success-code" }}
+                            {{ $responseCodeColor = "response success-code bg-green1" }}
                           {{ else if in $errorCodes $response }}
                             {{ $responseCodeColor = "response error-code" }}
+                          {{ else }}
+                            {{ $responseCodeColor = "response default" }}
                           {{ end }}
 
-                          <details class="{{$responseCodeColor}} mbs">
-                            <summary class="pas">{{ $response }} {{ .description }}</summary>
+                          <details class="mbs">
+                            <summary class="{{$responseCodeColor}} pas">{{ $response }} {{ .description }}</summary>
                           
                             <div class="bg-gray1 pam">
-                              <p class="mbm">Response schema: 
-                                <select class="paxs schema-type-select">
-                                  {{ $selected := "selected" }}
-                                  {{ range $applicationType, $_ := .content }}
-                                    <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
-                                      {{ $applicationType }}
-                                    </option>
-                                    {{$selected = ""}}
-                                  {{ end }}
-                                </select>
-                              </p>
+                              <label class="form__label">Response schema:</label>
+                              <select class="form__control wauto maxw100p paxs schema-type-select">
+                                {{ $selected := "selected" }}
+                                {{ range $applicationType, $_ := .content }}
+                                  <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                    {{ $applicationType }}
+                                  </option>
+                                  {{$selected = ""}}
+                                {{ end }}
+                              </select>
 
                               {{ range $application, $_ := .content }}
                                 <div class="schema-type-container pam mb-border ba bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
@@ -207,16 +208,16 @@ Create a scratch that can be reused?
           }
 
           function showSelectedSchemaOption(sel) {
-              let opt;
-              for ( let i = 0, len = sel.options.length; i < len; i++ ) {
-                  opt = sel.options[i];
-                  if ( opt.selected === true ) {
-                      const schemaType = opt.value
-                      const schemaTypeContainer = document.querySelector('[data-schematype-id="'+schemaType+'"]')
-                      schemaTypeContainer.classList.remove('dn')
-                      return schemaType
-                  }
+            let opt;
+            for ( let i = 0; i < sel.options.length; i++ ) {
+              opt = sel.options[i];
+              if ( opt.selected === true ) {
+                  const schemaType = opt.value
+                  const schemaTypeContainer = document.querySelector('[data-schematype-id="'+schemaType+'"]')
+                  schemaTypeContainer.classList.remove('dn')
+                  return schemaType
               }
+            }
           }
 
           function showInitialSchemaType() {
