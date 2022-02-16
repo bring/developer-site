@@ -1,0 +1,99 @@
+{{- $schemas := .schemas -}}
+{{- $schemaPath := path.Split .ctx -}}
+{{- $schemaRef := $schemaPath.File -}}
+{{- $level := add .level 1 -}}
+{{- $prevLevel := .level -}}
+{{- $ind := .ind -}}
+{{- $iLen := 0 }}
+
+{{- range $schemas -}}
+    {{- $responseSchema := index . $schemaRef -}}
+    {{- range $key, $_ := $responseSchema -}}
+
+      {{- if reflect.IsMap . -}}
+            {{- $iLen = add (len .) 1 -}}
+            {{/* {{ len . }} */}}
+          {{- range $param, $_ := . -}}
+            {{ if ne $param "name" }}
+              {{$level}} {{ $prevLevel }} {{ $ind }}
+              {{ if ne $level $prevLevel }}
+              {
+              {{ end }}
+              {{- /* KEY  */ -}}
+                  "{{ $param }}": 
+                  {{- if reflect.IsMap . -}}
+                    {{- $ind = add $ind 1 -}}
+                    {{- range $i, $_ := . -}}
+                      {{- if or (not (reflect.IsMap .)) (not (reflect.IsSlice .)) -}}
+                        {{- if eq $i "type" -}}
+{{ if eq . "array" }}
+  [
+{{- else -}}
+                            {{- /* TYPE "{{- . -}}" */ -}}
+                          {{- end -}}
+                        {{- end -}}
+                      {{- end -}}
+                    {{- end -}}
+                  {{/* {{- else -}}
+                   NAME {{- . -}}<br> */}}
+                  {{- end -}}
+
+                  {{- if reflect.IsMap . -}}
+                    {{- range $i, $_ := . -}}
+                        {{- if reflect.IsMap . -}}
+                            {{- range $j, $_ := . -}}
+                              {{- if eq $j "$ref" -}}
+                                {{- partial "api/response.html" (dict "ctx" . "schemas" $schemas "level" $level "ind" $ind) -}}
+                              {{- end -}}
+                            {{- end -}}
+                        {{- else if reflect.IsSlice . -}}
+                          {{/* Enum:
+                            {{- range . -}}
+                              <code>{{- . -}}</code><br>
+                            {{- end -}} */}}
+                        {{- else -}}
+                          {{- if eq $i "$ref" -}}
+                            {{- partial "api/response.html" (dict "ctx" . "schemas" $schemas "level" $level "ind" $ind) -}}
+                          {{- else if eq $i "type" -}}
+{{ if eq . "array" }}
+  ]
+{{- else -}}
+                              {{- /* TYPE  */ -}}
+                              "{{- . -}}"
+                            {{- if ne $iLen $ind -}},{{- end -}}
+                          {{- end -}}
+                          {{- end -}}
+                        {{- end -}}
+                    {{- end -}}
+                  {{/* {{- else -}}
+                   NAME {{- . -}}<br> */}}
+                  {{- end -}}
+
+            {{- end -}}
+            {{- $prevLevel = $level -}}
+          {{- end -}}
+
+      {{- else if reflect.IsSlice . -}}
+        {{/* <div class="flex">
+          <div class="flex-1">
+            {{- $key -}}
+          </div>
+          <div class="flex-1">
+            {{- range . -}}
+              - {{- . -}} <br>
+            {{- end -}}
+          </div>
+        </div> */}}
+
+      {{- else -}}
+      {{/* <div class="flex">
+        <div class="flex-1">
+          {{- $key -}}
+        </div>
+        <div class="flex-1">
+         description {{- . -}}
+        </div>
+      </div> */}}
+      {{- end -}}
+    {{- end -}}
+{{- end -}}
