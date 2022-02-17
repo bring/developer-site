@@ -150,11 +150,11 @@
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
                                     {{ range . }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false) -}}
                                     {{ end }}
                                   {{ else }}
                                     {{ if eq $key "$ref" }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false ) -}}
                                     {{ else }}
                                       {{ . }}
                                     {{ end }}

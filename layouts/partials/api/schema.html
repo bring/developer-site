@@ -1,73 +1,84 @@
 {{ $schemas := .schemas }}
 {{ $schemaPath := path.Split .ctx }}
 {{ $schemaRef := $schemaPath.File }}
+{{ $nested := .nested }}
 
 {{ range $schemas }}
-  <div class="flex flex-dir-col">
     {{ $responseSchema := index . $schemaRef }}
     {{ range $key, $_ := $responseSchema }}
       {{ if reflect.IsMap . }}
-        <!--{{ $key }}-->
-          {{ range $param, $_ := . }}
+        {{ range $param, $_ := . }}
+          {{ if eq $nested true }}
             <div class="flex">
-              <div class="flex-1 pbs pts mb-border bb">
-                <strong>{{ $param }}</strong>
-              </div>
-              <div class="flex-1 pbs pts mb-border bb">
-                <div class="flex flex-dir-col">
-                  {{ if reflect.IsMap . }}
-                    {{ range $i, $_ := . }}
-                        {{ if reflect.IsMap . }}
-                            {{ range $j, $_ := . }}
-                              {{ if eq $j "$ref" }}
-                                {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
-                              {{ end }}
-                            {{ end }}
-                        {{ else if reflect.IsSlice . }}
-                          Enum:
-                          <p class="mlm">
-                            {{ range . }}
-                              <code>{{ . }}</code><br>
-                            {{ end }}
-                          </p>
-                        {{ else }}
-                          {{ if eq $i "$ref" }}
-                            {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
-                          {{ else }}
-                            {{ . }}
-                          {{ end }}
-                        {{ end }}
-                    {{ end }}
-                  {{ else }}
-                    {{ . }}<br>
-                  {{ end }}
-                </div>
-              </div>
-            </div>
+          {{ else }}
+            <dl>
           {{ end }}
+            <dt class="mb-border bb">
+              {{ $param }}
+            </dt>
+            <dd class="flex-1 mb-border bb">
+              {{ if eq $nested false }}
+                <dl>
+              {{ end }}
+              {{ if reflect.IsMap . }}
+                {{ range $i, $_ := . }}
+                  {{ if reflect.IsMap . }}
+                    {{ range $j, $_ := . }}
+                      {{ if eq $j "$ref" }}
+                        {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
+                      {{ end }}
+                    {{ end }}
+                  {{ else if reflect.IsSlice . }}
+                    Enum:
+                    <div>
+                      {{ range . }}
+                        <code>{{ . }}</code><br>
+                      {{ end }}
+                    </div>
+                  {{ else }}
+                    {{ if eq $i "$ref" }}
+                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
+                    {{ else }}
+                      {{ . }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ else }}
+                {{ . }}<br>
+              {{ end }}
+              {{ if eq $nested false }}
+                </dl>
+              {{ end }}
+            </dd>
+          {{ if eq $nested true }}
+            </div>
+          {{ else }}
+            </dl>
+          {{ end }}
+        {{ end }}
 
       {{ else if reflect.IsSlice . }}
         <div class="flex">
-          <div class="flex-1 pbs pts mb-border bb">
-            <strong>{{ $key }}</strong>
-          </div>
-          <div class="flex-1 pbs pts mb-border bb">
+          <dt class="flex-1 mb-border bb">
+            {{ $key }}
+          </dt>
+          <dd class="flex-1 mb-border bb">
             {{ range . }}
               - {{ . }} <br>
             {{ end }}
-          </div>
+          </dd>
         </div>
 
       {{ else }}
       <div class="flex">
-        <div class="flex-1 pbs pts mb-border bb">
-          <strong>{{ $key }}</strong>
-        </div>
-        <div class="flex-1 pbs pts mb-border bb">
+        <dt class="flex-1 mb-border bb">
+          {{ $key }}
+        </dt>
+        <dd class="flex-1 mb-border bb">
           {{ . }}
-        </div>
+        </dd>
       </div>
       {{ end }}
     {{ end }}
-  </div>
+
 {{ end }}
