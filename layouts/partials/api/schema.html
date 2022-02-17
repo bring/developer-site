@@ -3,23 +3,20 @@
 {{ $schemaRef := $schemaPath.File }}
 
 {{ range $schemas }}
-  <div class="mbl">
+  <div class="flex flex-dir-col">
     {{ $responseSchema := index . $schemaRef }}
     {{ range $key, $_ := $responseSchema }}
-
       {{ if reflect.IsMap . }}
         <!--{{ $key }}-->
-        <div class="mbm flex flex-dir-col mb-border bb">
           {{ range $param, $_ := . }}
-            <div class="flex w100p">
-              <div class="flex-1">
+            <div class="flex">
+              <div class="flex-1 pbs pts mb-border bb">
                 <strong>{{ $param }}</strong>
               </div>
-              <div class="flex-1">
-                <div class="mbm flex flex-dir-col">
+              <div class="flex-1 pbs pts mb-border bb">
+                <div class="flex flex-dir-col">
                   {{ if reflect.IsMap . }}
                     {{ range $i, $_ := . }}
-                      <div class="mbm flex">
                         {{ if reflect.IsMap . }}
                             {{ range $j, $_ := . }}
                               {{ if eq $j "$ref" }}
@@ -40,7 +37,6 @@
                             {{ . }}
                           {{ end }}
                         {{ end }}
-                      </div>
                     {{ end }}
                   {{ else }}
                     {{ . }}<br>
@@ -49,14 +45,13 @@
               </div>
             </div>
           {{ end }}
-        </div>
 
       {{ else if reflect.IsSlice . }}
         <div class="flex">
-          <div class="flex-1">
-            {{ $key }}
+          <div class="flex-1 pbs pts mb-border bb">
+            <strong>{{ $key }}</strong>
           </div>
-          <div class="flex-1">
+          <div class="flex-1 pbs pts mb-border bb">
             {{ range . }}
               - {{ . }} <br>
             {{ end }}
@@ -65,10 +60,10 @@
 
       {{ else }}
       <div class="flex">
-        <div class="flex-1">
-          {{ $key }}
+        <div class="flex-1 pbs pts mb-border bb">
+          <strong>{{ $key }}</strong>
         </div>
-        <div class="flex-1">
+        <div class="flex-1 pbs pts mb-border bb">
           {{ . }}
         </div>
       </div>
