@@ -12,7 +12,7 @@ menu:
 weight: 13
 
 introduction: |
-The Address API is used for validating and querying addresses, as well as getting suggestions in scenarios where the complete address is not known. It currently supports Norwegian addresses (street, place and postal place addresses). Addresses validated by this API are guaranteed to be valid and it is therefore recommended to validate addresses that are used as input to Booking and Checkout related APIs.
+  The Address API is used for validating and querying addresses, as well as getting suggestions in scenarios where the complete address is not known. It currently supports Norwegian addresses (street, place and postal place addresses). Addresses validated by this API are guaranteed to be valid and it is therefore recommended to validate addresses that are used as input to Booking and Checkout related APIs.
 
 
 information:
