@@ -2,53 +2,81 @@
 {{ $schemaPath := path.Split .ctx }}
 {{ $schemaRef := $schemaPath.File }}
 {{ $nested := .nested }}
+{{ $required := "" }}
 
 {{ range $schemas }}
     {{ $responseSchema := index . $schemaRef }}
     {{ range $key, $_ := $responseSchema }}
       {{ if reflect.IsMap . }}
+        
+        {{ $type := "" }} 
         {{ range $param, $_ := . }}
-          {{ if eq $nested true }}
-            <div class="flex">
-          {{ else }}
-            <dl>
-          {{ end }}
-            <dt class="mb-border bb">
-              {{ $param }}
-            </dt>
-            <dd class="flex-1 mb-border bb">
-              {{ if eq $nested false }}
-                <dl>
+          {{ if reflect.IsMap $_ }}
+            {{ range $k, $v := . }}
+              {{ if eq $v "array"}}
+                {{ $type = $v }}
               {{ end }}
-              {{ if reflect.IsMap . }}
-                {{ range $i, $_ := . }}
-                  {{ if reflect.IsMap . }}
-                    {{ range $j, $_ := . }}
-                      {{ if eq $j "$ref" }}
-                        {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
-                      {{ end }}
-                    {{ end }}
-                  {{ else if reflect.IsSlice . }}
-                    Enum:
-                    <div>
-                      {{ range . }}
-                        <code>{{ . }}</code><br>
-                      {{ end }}
-                    </div>
-                  {{ else }}
-                    {{ if eq $i "$ref" }}
+            {{ end }}
+          {{ end }}
+
+          {{ if eq $nested true }}
+            <div>
+              <dl class="desc-list mb-border bb">
+                <dt>
+                  {{ $param }} 
+                </dt>
+          {{ else }}
+            {{ if eq $type "array" }}
+              <dl>
+                <dt>
+                  <dl class="desc-list bg-gray2 pam">
+                    <dt>{{ $param }} </dt>
+                    <dd><span class="error">Type: {{ $type }}</span></dd>
+                </dt>
+            {{ else }}
+              <dl class="desc-list mb-border bb">
+                <dt>
+                  {{ $param }} 
+                </dt>
+            {{ end }}
+            
+          {{ end }}
+            
+            <dd>
+            {{ if eq $nested false }}
+              <dl class="desc-list">
+            {{ end }}
+            {{ if reflect.IsMap . }}
+              {{ range $i, $_ := . }}
+                {{ if reflect.IsMap . }}
+                  {{ range $j, $_ := . }}
+                    {{ if eq $j "$ref" }}
                       {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
-                    {{ else }}
-                      {{ . }}
+                    {{ end }}
+                  {{ end }}
+                {{ else if reflect.IsSlice . }}
+                  Enum:
+                  <div>
+                    {{ range . }}
+                      <code>{{ . }}</code><br>
+                    {{ end }}
+                  </div>
+                {{ else }}
+                  {{ $typeClass := "" }}
+                  {{ if eq $i "$ref" }}
+                    {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
+                  {{ else }}
+                    {{ if eq . "int32" "integer" "string" "boolean" }}
+                      {{ $typeClass = "mb-badge" }}
+                      <div><span class="{{$typeClass}}">{{ . }}</span></div>
                     {{ end }}
                   {{ end }}
                 {{ end }}
-              {{ else }}
-                {{ . }}<br>
               {{ end }}
-              {{ if eq $nested false }}
-                </dl>
-              {{ end }}
+            {{ end }}
+            {{ if eq $nested false }}
+              </dl>
+            {{ end }}
             </dd>
           {{ if eq $nested true }}
             </div>
@@ -58,26 +86,28 @@
         {{ end }}
 
       {{ else if reflect.IsSlice . }}
-        <div class="flex">
-          <dt class="flex-1 mb-border bb">
+      <div class="error mtm">SLICE</div>
+        <dl class="desc-list mb-border bb">
+          <dt>
             {{ $key }}
           </dt>
-          <dd class="flex-1 mb-border bb">
+          <dd>
             {{ range . }}
               - {{ . }} <br>
             {{ end }}
           </dd>
-        </div>
+        </dl>
 
       {{ else }}
-      <div class="flex">
-        <dt class="flex-1 mb-border bb">
+      <div class="error mtm">DEFAULT</div>
+      <dl class="desc-list mb-border bb">
+        <dt>
           {{ $key }}
         </dt>
-        <dd class="flex-1 mb-border bb">
-          {{ . }}
+        <dd>
+          {{ . }} <br>
         </dd>
-      </div>
+      </dl>
       {{ end }}
     {{ end }}
 

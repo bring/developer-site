@@ -11,7 +11,7 @@
     "build": "npm run bundle && npm run buildraml && npm run buildexamples",
     "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
     "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo",
-    "start": "cross-env HUGO_ENV=dev hugo server",
+    "start": "cross-env HUGO_ENV=dev hugo server --ignoreCache",
     "bundlewatch": "webpack watch --mode development"
   },
   "repository": {

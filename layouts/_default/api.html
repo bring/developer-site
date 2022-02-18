@@ -103,85 +103,82 @@
               {{ with $oasData }}
                 {{ $schemas := .components }}
                 {{ range $path, $_ := .paths }}
-                {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
-                <strong>Endpoint ID: {{$endpointId}}</strong>
+                  {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
+                  <span class="gray text-note">ID: {{$endpointId}}</span>
                   <div class="flex flex-wrap mbm ptm">
+                  {{ range $type, $_ := . }}
                     <div class="flex-1 flex-basis-20 pas">
-                      {{ range $type, $_ := . }}
-                        <h2>{{ .summary }}</h2>
-                        <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
-                        <p class="text-heading">{{ .description }}</p>
+                      
+                      <h2>{{ .summary }}</h2>
+                      <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
+                      <p class="text-heading">{{ .description }}</p>
 
-                        {{- partial "api/params.html" (dict "parameters" .parameters) -}}
+                      {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
-                        <p class="text-title">Responses</p>
+                      <p class="text-title">Responses</p>
+                      
+                      {{ $responseCodeColor := "" }}
+                      {{ $successCodes := "200 204" }}
+                      {{ $errorCodes := "400 404 429 500" }}
+                      {{ range $response, $_ := .responses }}
+                        {{ if in $successCodes $response }}
+                          {{ $responseCodeColor = "response success-code bg-green1" }}
+                        {{ else if in $errorCodes $response }}
+                          {{ $responseCodeColor = "response error-code" }}
+                        {{ else }}
+                          {{ $responseCodeColor = "response default" }}
+                        {{ end }}
+
+                        <details class="mbs">
+                          <summary class="{{$responseCodeColor}} pas">{{ $response }} {{ .description }}</summary>
                         
-                        {{ $responseCodeColor := "" }}
-                        {{ $successCodes := "200 204" }}
-                        {{ $errorCodes := "400 404 500" }}
-                        {{ range $response, $_ := .responses }}
-                          {{ if in $successCodes $response }}
-                            {{ $responseCodeColor = "response success-code bg-green1" }}
-                          {{ else if in $errorCodes $response }}
-                            {{ $responseCodeColor = "response error-code" }}
-                          {{ else }}
-                            {{ $responseCodeColor = "response default" }}
-                          {{ end }}
-
-                          <details class="mbs">
-                            <summary class="{{$responseCodeColor}} pas">{{ $response }} {{ .description }}</summary>
-                          
-                            <div class="bg-gray1 pam">
-                              <label class="form__label">Response schema:</label>
-                              <select class="form__control wauto maxw100p paxs schema-type-select">
-                                {{ $selected := "selected" }}
-                                {{ range $applicationType, $_ := .content }}
-                                  <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
-                                    {{ $applicationType }}
-                                  </option>
-                                  {{$selected = ""}}
-                                {{ end }}
-                              </select>
-
-                              {{ range $application, $_ := .content }}
-                                <div class="schema-type-container pam mb-border ba bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
-                                {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
-                                <h4>Response schema: {{$application}}</h4>
-                                {{ range $key, $_ := .schema }}
-                                  {{ if reflect.IsMap . }}
-                                    {{ range . }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false) -}}
-                                    {{ end }}
-                                  {{ else }}
-                                    {{ if eq $key "$ref" }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false ) -}}
-                                    {{ else }}
-                                      {{ . }}
-                                    {{ end }}
-                                  {{ end }}
-                                {{ end }}
-                                </div>
+                          <div class="bg-gray1 pam">
+                            <label class="form__label">Response schema:</label>
+                            <select class="form__control wauto maxw100p paxs schema-type-select">
+                              {{ $selected := "selected" }}
+                              {{ range $applicationType, $_ := .content }}
+                                <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                  {{ $applicationType }}
+                                </option>
+                                {{$selected = ""}}
                               {{ end }}
-                            </div>
-                          </details>
-                        {{ end }}
-                      </div>
-                      <div class="flex-1 pas">
-                        <h3>Response examples</h3>
-                        {{ range $response, $_ := .responses }}
-                          <button class="btn">{{ $response }}</button>
-                        {{ end }}
-                        {{ range $response, $_ := .responses }}
-                          <div id="{{ $response }}">
-                            <pre class="chroma"><code>
+                            </select>
+
+                            {{ range $application, $_ := .content }}
+                              <div class="schema-type-container pam mb-border ba bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                              {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
+                              <h4>Response schema: {{$application}}</h4>
+                              {{ range $key, $_ := .schema }}
+                                {{ if reflect.IsMap . }}
+                                  {{ range . }}
+                                    {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false) -}}
+                                  {{ end }}
+                                {{ else if eq $key "$ref" }}
+                                  {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false ) -}}
+                                {{ end }}
+                              {{ end }}
+                              </div>
+                            {{ end }}
+                          </div>
+                        </details>
+                      {{ end }}
+                    </div>
+                    <div class="flex-1 pas">
+                      <h3>Response examples</h3>
+                      {{ range $response, $_ := .responses }}
+                        <button class="btn">{{ $response }}</button>
+                      {{ end }}
+                      {{ range $response, $_ := .responses }}
+                        <div id="{{ $response }}">
+                          <pre class="chroma"><code>
 {
 Create a scratch that can be reused?
 }
-                            </code></pre>
-                          </div>
-                        {{ end }}
+                          </code></pre>
+                        </div>
                       {{ end }}
                     </div>
+                  {{ end }}
                   </div>
                   <hr>
                 {{ end }}

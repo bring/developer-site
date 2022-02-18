@@ -196,3 +196,10 @@ summary:hover {
 .response.default:hover {
   background:var(--gray-90);
 }
+
+.desc-list dt,
+.desc-list dd {
+  width:49%;
+  display:inline-block;
+  vertical-align: top;
+}
