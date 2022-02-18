@@ -2,7 +2,7 @@
   <schemaVersion>1</schemaVersion>
   <consignments>
     <consignment correlationId="INTERNAL-123456">
-      <shippingDateTime>2015-12-22T20:04:33.131+01:00</shippingDateTime>
+      <shippingDateTime>2015-11-17T10:06:08.541+01:00</shippingDateTime>
       <parties>
         <sender>
           <name>Ola Nordmann</name>
@@ -22,9 +22,9 @@
           <name>Tore Mottaker</name>
           <addressLine>Mottakerveien 14</addressLine>
           <addressLine2>c/o Tina Mottaker</addressLine2>
-          <postalCode>10005</postalCode>
-          <city>STOCKHOLM</city>
-          <countryCode>SE</countryCode>
+          <postalCode>0659</postalCode>
+          <city>OSLO</city>
+          <countryCode>NO</countryCode>
           <reference>43242</reference>
           <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
           <contact>
@@ -35,14 +35,11 @@
         </recipient>
       </parties>
       <product>
-        <id>BUSINESS_PARCEL</id>
-        <customerNumber>**************</customerNumber>
+        <id>9650</id>
+        <customerNumber>*************</customerNumber>
         <additionalServices>
           <additionalService>
-            <id>DELIVERY_INDOOR</id>
-            <message>Legg pakken i garasjen.</message>
-            <email>sender@sender.com</email>
-            <mobile>777777</mobile>
+            <id>1073</id>
           </additionalService>
         </additionalServices>
       </product>

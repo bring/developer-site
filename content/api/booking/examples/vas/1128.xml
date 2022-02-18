@@ -2,47 +2,45 @@
   <schemaVersion>1</schemaVersion>
   <consignments>
     <consignment correlationId="INTERNAL-123456">
-      <shippingDateTime>2015-12-22T20:04:33.131+01:00</shippingDateTime>
+      <shippingDateTime>2021-10-03T21:31:33.007+02:00</shippingDateTime>
       <parties>
         <sender>
           <name>Ola Nordmann</name>
           <addressLine>Testsvingen 12</addressLine>
-          <postalCode>0263</postalCode>
-          <city>OSLO</city>
-          <countryCode>NO</countryCode>
+          <postalCode>10005</postalCode>
+          <city>STOCKHOLM</city>
+          <countryCode>SE</countryCode>
           <reference>1234</reference>
           <additionalAddressInfo>Hentes på baksiden etter klokken to</additionalAddressInfo>
           <contact>
-            <name>Trond Nordmann</name>
-            <email>trond@nordmanntest.no</email>
-            <phoneNumber>99999999</phoneNumber>
+            <name>Tore mottaker</name>
+            <email>tore@mottakertest.no</email>
+            <phoneNumber>+46700000000</phoneNumber>
           </contact>
         </sender>
         <recipient>
           <name>Tore Mottaker</name>
           <addressLine>Mottakerveien 14</addressLine>
           <addressLine2>c/o Tina Mottaker</addressLine2>
-          <postalCode>10005</postalCode>
-          <city>STOCKHOLM</city>
+          <postalCode>65601</postalCode>
+          <city>Karlstad</city>
           <countryCode>SE</countryCode>
           <reference>43242</reference>
           <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
           <contact>
             <name>Tore mottaker</name>
             <email>tore@mottakertest.no</email>
-            <phoneNumber>+46700000000</phoneNumber>
+            <phoneNumber>+46720000000</phoneNumber>
           </contact>
         </recipient>
       </parties>
       <product>
-        <id>BUSINESS_PARCEL</id>
-        <customerNumber>**************</customerNumber>
+        <id>DOUBLE_INDOOR</id>
+        <customerNumber>PARCELS_NORWAY-00094983111</customerNumber>
         <additionalServices>
           <additionalService>
-            <id>DELIVERY_INDOOR</id>
-            <message>Legg pakken i garasjen.</message>
-            <email>sender@sender.com</email>
-            <mobile>777777</mobile>
+            <id>1128</id>
+            <numberOfItems>1</numberOfItems>
           </additionalService>
         </additionalServices>
       </product>

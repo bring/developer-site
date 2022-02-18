@@ -1,0 +1,80 @@
+{
+  "bookingRequest": {
+    "-xmlns": "http://www.bring.no/booking/",
+    "-testIndicator": "true",
+    "schemaVersion": "1",
+    "consignments": {
+      "consignment": {
+        "-correlationId": "INTERNAL-123456",
+        "shippingDateTime": 1470414939000,
+        "parties": {
+          "sender": {
+            "name": "Ola Nordmann",
+            "addressLine": "Testsvingen 12",
+            "addressLine2": "Testsvingen 12",
+            "postalCode": "2600",
+            "city": "GLOSTRUP",
+            "countryCode": "dk",
+            "reference": "1234",
+            "additionalAddressInfo": "Hentes på baksiden etter klokken to",
+            "contact": {
+              "name": "Trond Nordmann",
+              "email": "trond@normanntest.no",
+              "phoneNumber": "99999999"
+            }
+          },
+          "recipient": {
+            "name": "Tore Mottaker",
+            "addressLine": "Mottakerveien 14",
+            "addressLine2": "c/o Tina Mottaker",
+            "postalCode": "65601",
+            "city": "KARLSTAD",
+            "countryCode": "SE",
+            "reference": "43242",
+            "additionalAddressInfo": "Bruk ringeklokken",
+            "contact": {
+              "name": "Tore Mottaker",
+              "email": "tore@mottakertest.no",
+              "phoneNumber": "+46720000000"
+            }
+          }
+        },
+        "product": {
+          "id": "BUSINESS_PARCEL",
+          "customerNumber": "*********",
+          "additionalServices": [
+            {
+              "id": "INSURANCE"
+            }
+          ],
+          "ediCustomsDeclarations": {
+            "ediCustomsDeclaration": [
+              {
+                "quantity": 1,
+                "goodsDescription": "hair spray",
+                "itemNetWeightInKg": 1.0,
+                "tarriffLineAmount": 200,
+                "currency": "NOK",
+                "countryOfOrigin": "DK"
+              }
+            ],
+            "otherNatureOfTransactionDescription": "testing",
+            "natureOfTransaction": "OTHER"
+          }
+        },
+        "packages": {
+          "package": {
+            "-correlationId": "PACKAGE-123",
+            "weightInKg": "1.1",
+            "goodsDescription": "Testing equipment",
+            "dimensions": {
+              "heightInCm": "13",
+              "widthInCm": "23",
+              "lengthInCm": "10"
+            }
+          }
+        }
+      }
+    }
+  }
+}
