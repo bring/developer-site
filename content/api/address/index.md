@@ -12,7 +12,8 @@ menu:
 weight: 13
 
 introduction: |
-  The Address API
+  The Address API is used for validating and querying addresses, as well as getting suggestions in scenarios when the complete address is not known. It currently only supports Norwegian addresses. It supports street, place and postal place addresses. Addresses validated by this API is guaranteed to valid when used with the other checkout APIs (Booking, Shipping guide, Pickup point and Postal code). It is therefore recommended to validate addresses before using them in a booking request.
+
 
 information:
   - title: Authentication
@@ -21,12 +22,11 @@ information:
 
   - title: Rate limiting
     content: |
-      Clients exceeding 18 requests per second will be throttled, and the response will contain http status code 429. If you have a use case requiring rates above the limit, please contact developer-booking@bring.com for assistance.
+      Clients exceeding 40 requests per second will be throttled, and the response will contain http status code 429. If you have a use case requiring rates above the limit, please contact developer-booking@bring.com for assistance.
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP and SOAP over HTTP.
-      Booking endpoints will assume all requests are UTF-8 encoded.
+      REST XML/JSON over HTTP.
 
 oas: https://api.qa.bring.com/address/api-docs/
 ---
