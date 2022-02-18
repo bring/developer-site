@@ -173,11 +173,34 @@
                         {{ end }}
                         {{ range $response, $_ := .responses }}
                           <div id="{{ $response }}">
-                            <pre class="chroma"><code>
-{
-Create a scratch that can be reused?
-}
-                            </code></pre>
+                            {{ range $application, $_ := .content }}
+                              <div>
+                                {{ $application }}
+                                {{ range $key, $_ := .schema }}
+
+                                  {{ if in $application "application/json" }}
+                                    {{- if reflect.IsMap . -}}
+                                      {{- range . -}}
+                                        {{- . -}}
+                                      {{- end -}}
+                                    {{- else -}}
+                                      {{- if eq $key "$ref" -}}
+                                      {{- with partial "api/response.html" (dict "ctx" . "schemas" $schemas "level" 0 "ind" 0) -}}
+                                      {{ $codeExample := print "{\n" . "\n}" }}
+                                      {{ highlight $codeExample "json" "tabWidth=2" }}
+                                      {{ end }}
+                                      {{- else -}}
+                                      Not ref not map
+                                        {{- . -}}
+                                      {{- end -}}
+                                    {{ end }}
+                                  {{ end }}
+
+                                {{ end }}
+
+                          </div>
+                          {{ end }}
+
                           </div>
                         {{ end }}
                       {{ end }}
