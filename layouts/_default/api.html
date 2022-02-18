@@ -39,7 +39,7 @@
           {{ end }}
           </article>
         </main>
-      {{- else if and (isset $.Params "oas") (ne (getenv "HUGO_ENV") "production") -}}
+      {{- else if and (isset $.Params "oas") (or (eq (getenv "HUGO_ENV") "dev") (eq .Title "Address API" )) -}}
         <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
           <article>
             <h1>{{ .Title }}</h1>
@@ -103,8 +103,10 @@
               {{ with $oasData }}
                 {{ $schemas := .components }}
                 {{ range $path, $_ := .paths }}
+              
                   {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
                   <span class="gray text-note">ID: {{$endpointId}}</span>
+            
                   <div class="flex flex-wrap mbm ptm">
                   {{ range $type, $_ := . }}
                     <div class="flex-1 flex-basis-20 pas">

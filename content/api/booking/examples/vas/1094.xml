@@ -1,50 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
   <schemaVersion>1</schemaVersion>
   <consignments>
     <consignment correlationId="INTERNAL-123456">
-      <shippingDateTime>2015-12-22T20:04:33.131+01:00</shippingDateTime>
+      <shippingDateTime>2019-10-22T12:30:00.000+02:00</shippingDateTime>
       <parties>
         <sender>
           <name>Ola Nordmann</name>
           <addressLine>Testsvingen 12</addressLine>
-          <postalCode>0263</postalCode>
-          <city>OSLO</city>
-          <countryCode>NO</countryCode>
+          <postalCode>10005</postalCode>
+          <city>STOCKHOLM</city>
+          <countryCode>SE</countryCode>
           <reference>1234</reference>
           <additionalAddressInfo>Hentes på baksiden etter klokken to</additionalAddressInfo>
           <contact>
-            <name>Trond Nordmann</name>
-            <email>trond@nordmanntest.no</email>
-            <phoneNumber>99999999</phoneNumber>
+            <name>Tore mottaker</name>
+            <email>tore@mottakertest.no</email>
+            <phoneNumber>+46700000000</phoneNumber>
           </contact>
         </sender>
         <recipient>
           <name>Tore Mottaker</name>
           <addressLine>Mottakerveien 14</addressLine>
           <addressLine2>c/o Tina Mottaker</addressLine2>
-          <postalCode>10005</postalCode>
-          <city>STOCKHOLM</city>
+          <postalCode>65601</postalCode>
+          <city>Karlstad</city>
           <countryCode>SE</countryCode>
           <reference>43242</reference>
           <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
           <contact>
             <name>Tore mottaker</name>
             <email>tore@mottakertest.no</email>
-            <phoneNumber>+46700000000</phoneNumber>
+            <phoneNumber>+46720000000</phoneNumber>
           </contact>
         </recipient>
+        <returnTo>
+          <name>ABC</name>
+          <addressLine>Alf Bjerckes vei 29</addressLine>
+          <addressLine2></addressLine2>
+          <postalCode>0582</postalCode>
+          <city>OSLO</city>
+          <countryCode>NO</countryCode>
+        </returnTo>
       </parties>
       <product>
         <id>BUSINESS_PARCEL</id>
-        <customerNumber>**************</customerNumber>
+        <customerNumber>*************</customerNumber>
         <additionalServices>
-          <additionalService>
-            <id>DELIVERY_INDOOR</id>
-            <message>Legg pakken i garasjen.</message>
-            <email>sender@sender.com</email>
-            <mobile>777777</mobile>
-          </additionalService>
-        </additionalServices>
+      		<additionalService>
+      			<id>1094</id>
+      		</additionalService>
+    	  </additionalServices>
       </product>
       <packages>
         <package correlationId="PACKAGE-123">

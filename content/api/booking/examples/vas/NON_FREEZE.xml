@@ -33,19 +33,11 @@
                 </recipient>
             </parties>
             <product>
-                <id>CARGO_GROUPAGE</id>
+                <id>5300</id>
                 <customerNumber>********</customerNumber>
                 <additionalServices>
                   <additionalService>
-                  <id>DANGEROUS_GOODS</id>
-                  <weightInGrams>500000</weightInGrams>
-                  <containerId>1236</containerId>
-                  <unNumber>1560</unNumber>
-                  <commodity>ARSENTRIKLORID</commodity>
-                  <packingGroup>I</packingGroup>
-                  <dangerClass>1</dangerClass>
-                  <tunnelRestrictionCode></tunnelRestrictionCode>
-                  <safetyMarkCode>6.1</safetyMarkCode>
+                    <id>NON_FREEZE</id>
                   </additionalService>
                 </additionalServices>
             </product>
