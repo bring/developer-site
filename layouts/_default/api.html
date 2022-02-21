@@ -103,11 +103,11 @@
               {{ with $oasData }}
                 {{ $components := .components }}
                 {{ range $path, $_ := .paths }}
-                {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
-                <span class="gray text-note">ID: {{$endpointId}}</span>
-                  <div class="flex flex-wrap mbxl ptm mb-border bb">
-                    {{ range $type, $_ := . }}
+                  {{ range $type, $_ := . }}
+                    {{ $endpointId := .summary | anchorize }}
+                    <div id="{{ $endpointId }}" class="flex flex-wrap mbxl ptm mb-border bb">
                       <div class="flex-1 flex-basis-20">
+                        <span class="gray text-note">ID: {{$endpointId}}</span>
                         <h2>{{ .summary }}</h2>
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
@@ -167,10 +167,10 @@
                         {{ end }}
                       </div>
                       <div class="flex-1 pas">
-                        {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses ) -}}
+                        {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
                       </div>
-                    {{ end }}
                   </div>
+                    {{ end }}
                 {{ end }}
               {{ end }}
             </section>
@@ -212,6 +212,25 @@
           }
 
           showInitialSchemaType();
+        </script>
+        <script>
+          const responseExBtns = document.querySelectorAll("[data-response-exbtn]")
+          responseExBtns.forEach(btn => {
+            btn.addEventListener("click", function (e) {
+              const resIdBtn = e.target.dataset.responseExbtn
+              const resId = e.target.name
+              const responseSection = document.querySelector('#' + resId)
+              const exampleContainers = responseSection.querySelectorAll("[data-response-exctr]")
+
+              exampleContainers.forEach( container => {
+                if (container.dataset.responseExctr === resIdBtn) {
+                  container.hidden = false
+                } else {
+                  container.hidden = true
+                }
+              })
+            })
+          })
         </script>
       {{- else -}}
       {{- partial "api/docs.html" . -}}

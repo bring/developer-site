@@ -1,16 +1,24 @@
 {{ $response := .response }}
 {{ $components := .components }}
+{{ $endpointId := .endpointId }}
 
 <h3>Response examples</h3>
-{{ range $response, $_ := .responses }}
-  <button class="btn">{{ $response }}</button>
-{{ end }}
 {{ $codeExample := "" }}
+{{ $resInd := 0 }}
+<fieldset>
+  {{ range $response, $_ := .responses }}
+    {{ $responseId := print $endpointId "-" $response }}
+    <label class="form__radio mrm"><input type="radio" name="{{ $endpointId}}" data-response-exbtn="{{ $responseId }}" {{if eq $resInd 0 }}checked{{ end }}>{{ $response }}</label>
+    {{ $resInd = add $resInd 1 }}
+  {{ end }}
+</fieldset>
+{{ $resInd = 0 }}
 {{ range $response, $_ := .responses }}
-  <div id="{{ $response }}">
+  {{ $responseId := print $endpointId "-" $response }}
+  <div data-response-exctr="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
     {{ range $application, $_ := .content }}
-      {{ $response }} {{ $application }}
-      
+      {{/* {{ $response }} {{ $application }} */}}
+
       {{ if in $application "json" }}
 
         {{ if isset . "examples" }}
@@ -65,4 +73,5 @@
       {{ end }}
     {{ end }}
   </div>
+  {{ $resInd = add $resInd 1 }}
 {{ end }}
