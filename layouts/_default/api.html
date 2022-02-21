@@ -101,13 +101,13 @@
             <section class="dev-docscontent__section maxw96r">
               {{ $oasData := getJSON $.Params.oas }}
               {{ with $oasData }}
-                {{ $schemas := .components }}
+                {{ $components := .components }}
                 {{ range $path, $_ := .paths }}
                 {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
                 <span class="gray text-note">ID: {{$endpointId}}</span>
-                  <div class="flex flex-wrap mbm ptm">
-                    <div class="flex-1 flex-basis-20 pas">
-                      {{ range $type, $_ := . }}
+                  <div class="flex flex-wrap mbxl ptm mb-border bb">
+                    {{ range $type, $_ := . }}
+                      <div class="flex-1 flex-basis-20">
                         <h2>{{ .summary }}</h2>
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
@@ -115,7 +115,7 @@
                         {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
                         <p class="text-title">Responses</p>
-                        
+
                         {{ $responseCodeColor := "" }}
                         {{ $successCodes := "200 204" }}
                         {{ $errorCodes := "400 404 500" }}
@@ -150,11 +150,11 @@
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
                                     {{ range . }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
                                     {{ end }}
                                   {{ else }}
                                     {{ if eq $key "$ref" }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
                                     {{ else }}
                                       {{ . }}
                                     {{ end }}
@@ -167,46 +167,10 @@
                         {{ end }}
                       </div>
                       <div class="flex-1 pas">
-                        <h3>Response examples</h3>
-                        {{ range $response, $_ := .responses }}
-                          <button class="btn">{{ $response }}</button>
-                        {{ end }}
-                        {{ range $response, $_ := .responses }}
-                          <div id="{{ $response }}">
-                            {{ range $application, $_ := .content }}
-                              <div>
-                                {{ $application }}
-                                {{ range $key, $_ := .schema }}
-
-                                  {{ if in $application "application/json" }}
-                                    {{- if reflect.IsMap . -}}
-                                      {{- range . -}}
-                                        {{- . -}}
-                                      {{- end -}}
-                                    {{- else -}}
-                                      {{- if eq $key "$ref" -}}
-                                      {{- with partial "api/response.html" (dict "ctx" . "schemas" $schemas "level" 0 "ind" 0) -}}
-                                      {{ $codeExample := print "{\n" . "\n}" }}
-                                      {{ highlight $codeExample "json" "tabWidth=2" }}
-                                      {{ end }}
-                                      {{- else -}}
-                                      Not ref not map
-                                        {{- . -}}
-                                      {{- end -}}
-                                    {{ end }}
-                                  {{ end }}
-
-                                {{ end }}
-
-                          </div>
-                          {{ end }}
-
-                          </div>
-                        {{ end }}
-                      {{ end }}
-                    </div>
+                        {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses ) -}}
+                      </div>
+                    {{ end }}
                   </div>
-                  <hr>
                 {{ end }}
               {{ end }}
             </section>

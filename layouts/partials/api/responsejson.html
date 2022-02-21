@@ -1,0 +1,106 @@
+{{- $components := .components -}}
+{{- $schemaPath := path.Split .ctx -}}
+{{- $schemaRef := $schemaPath.File -}}
+{{- $level := add .level 1 -}}
+{{- $prevLevel := .level -}}
+{{- $ind := .ind -}}
+{{- $iLen := 0 -}}
+{{- $codeExample := dict -}}
+{{/*  {{ $.Scratch.Add "codex" }}  */}}
+
+{{- range $components -}}
+  {{- $responseSchema := index . $schemaRef -}}
+  {{- range $key, $_ := $responseSchema -}}
+    {{- $scratches := newScratch -}}
+
+    {{- if reflect.IsMap . -}}
+      {{- $iLen = add (len .) 1 -}}
+      {{/* {{- len . -}} */}}
+      {{- range $param, $_ := . -}}
+        {{- if ne $param "name" -}}
+          {{- /* {{$level}} {{- $prevLevel -}} {{- $ind -}} */ -}}
+          {{- if ne $level $prevLevel -}}
+
+          {{- end -}}
+          {{- /* KEY  */ -}}
+          {{- if lt $level 2 -}}
+            {{- $codeExample = $codeExample | append $param -}}
+          {{- end -}}
+          {{/* "{{- $param -}}":  */}}
+
+          {{- if reflect.IsMap . -}}
+            {{- $ind = add $ind 1 -}}
+            {{- range $i, $_ := . -}}
+              {{- if or (not (reflect.IsMap .)) (not (reflect.IsSlice .)) -}}
+                {{- if eq $i "type" -}}
+                  {{- if eq . "array" -}}
+                    {{/*  {{- $codeExample = $codeExample | append "[" -}}  */}}
+                  {{- else -}}
+                    {{- $kvPair := print "\"" $param "\": \"" . "\"" -}}
+                    {{- $scratches.SetInMap $schemaRef $param $kvPair -}}
+                    {{- /* TYPE "{{- . -}}" */ -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+
+          {{/* {{- else -}}
+            NAME {{- . -}}<br> */}}
+          {{- end -}}
+
+          {{- if reflect.IsMap . -}}
+            {{- range $i, $_ := . -}}
+
+              {{- if reflect.IsMap . -}}
+                {{- range $j, $_ := . -}}
+                  {{- if eq $j "$ref" -}}
+                    {{- with partial "api/response.html" (dict "ctx" . "components" $components "level" $level "ind" $ind) -}}
+                      {{- $codeExample = $codeExample | append . -}}
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+
+              {{- else if reflect.IsSlice . -}}
+                {{/* Enum:
+                {{- range . -}}
+                  <code>{{- . -}}</code><br>
+                {{- end -}} */}}
+
+              {{- else -}}
+                {{- if eq $i "$ref" -}}
+                  {{- with partial "api/response.html" (dict "ctx" . "components" $components "level" $level "ind" $ind) -}}
+                    {{- $codeExample = $codeExample | append . -}}
+                  {{- end -}}
+                {{- else if eq $i "type" -}}
+                  {{- if eq . "array" -}}
+                    {{/*  {{- $codeExample = $codeExample | append "]" -}}  */}}
+                  {{- else -}}
+                    {{- /* TYPE  */ -}}
+                    {{- /* "{{- . -}}" */ -}}
+                    {{- /* {{- if ne $iLen $ind -}},{{- end -}} */ -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{/* {{- else -}}
+            NAME {{- . -}}<br> */}}
+          {{- end -}}
+        {{- end -}}
+        {{- $prevLevel = $level -}}
+      {{- end -}}
+    {{- else if reflect.IsSlice . -}}
+  {{- else -}}
+  {{- end -}}
+  {{- if gt (len $scratches.Values) 0 -}}
+    {{- $codeExample = $codeExample | append "{" -}}
+  {{- end -}}
+  {{- range $scratches.Values -}}
+    {{- $codeExample = $codeExample | append . -}}
+  {{- end -}}
+  {{- if gt (len $scratches.Values) 0 -}}
+    {{- $codeExample = $codeExample | append "}" -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{- return $codeExample -}}

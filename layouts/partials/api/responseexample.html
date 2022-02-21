@@ -1,0 +1,68 @@
+{{ $response := .response }}
+{{ $components := .components }}
+
+<h3>Response examples</h3>
+{{ range $response, $_ := .responses }}
+  <button class="btn">{{ $response }}</button>
+{{ end }}
+{{ $codeExample := "" }}
+{{ range $response, $_ := .responses }}
+  <div id="{{ $response }}">
+    {{ range $application, $_ := .content }}
+      {{ $response }} {{ $application }}
+      
+      {{ if in $application "json" }}
+
+        {{ if isset . "examples" }}
+
+          {{/* If response code corresponds to example */}}
+          {{ range index $components.examples $response }}
+            {{ $codeExample = . | jsonify (dict "indent" "  ") }}
+            {{ highlight $codeExample "json" }}
+          
+          {{/* If application type contains examples object */}}
+          {{ else }}
+            {{/* if there is only one object */}}
+            {{ range .examples }}
+              {{ range . }}
+                {{ $exPath := path.Split . }}
+                {{ $exPath.File }}
+                {{ range index $components.examples $exPath.File }}
+                  {{ $codeExample = . | jsonify (dict "indent" "  ") }}
+                  {{ highlight $codeExample "json" }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+            <br>
+            {{/* TODO: if there are more than one object/example */}}
+          {{ end }}
+
+        {{/* If application type only contains schema */}}
+        {{ else if isset . "schemas" }}
+          {{ range $key, $_ := .schema }}
+            {{- if reflect.IsMap . -}}
+              {{- range . -}}
+                {{- . -}}
+              {{- end -}}
+            {{- else -}}
+              {{- if eq $key "$ref" -}}
+                {{ range $components.examples }}
+                    {{ .value }}
+                {{ end }}
+                {{- with partial "api/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
+                  {{ $codeExample = print . | jsonify (dict "indent" "  ") }}
+                  {{ highlight $codeExample "json" "tabWidth=2" }}
+                {{ end }}
+              {{- else -}}
+                Not ref not map
+                {{- . -}}
+              {{- end -}}
+            {{ end }}
+          {{ else }}
+            No samples
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
