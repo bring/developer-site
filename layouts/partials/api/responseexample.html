@@ -8,14 +8,14 @@
 <fieldset>
   {{ range $response, $_ := .responses }}
     {{ $responseId := print $endpointId "-" $response }}
-    <label class="form__radio mrm"><input type="radio" name="{{ $endpointId}}" data-response-exbtn="{{ $responseId }}" {{if eq $resInd 0 }}checked{{ end }}>{{ $response }}</label>
+    <label class="form__radio mrm"><input type="radio" name="{{ $endpointId}}" data-response-ex="{{ $responseId }}" {{if eq $resInd 0 }}checked{{ end }}>{{ $response }}</label>
     {{ $resInd = add $resInd 1 }}
   {{ end }}
 </fieldset>
 {{ $resInd = 0 }}
 {{ range $response, $_ := .responses }}
   {{ $responseId := print $endpointId "-" $response }}
-  <div data-response-exctr="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
+  <div data-response-ex="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
     {{ range $application, $_ := .content }}
       {{/* {{ $response }} {{ $application }} */}}
 
@@ -31,15 +31,31 @@
           {{/* If application type contains examples object */}}
           {{ else }}
             {{/* if there is only one object */}}
+            {{ if gt (len .examples) 1 }}
+              <select class="form__control w100p" data-response-subex>
+                {{ range .examples }}
+                    {{ range . }}
+                      {{ $exPath := path.Split . }}
+                      {{ $exId := print $responseId "-" $exPath.File }}
+                      <option value="{{ $exId }}">{{ $exPath.File }}</option>
+                    {{ end }}
+                {{ end }}
+              </select>
+            {{ end }}
+              {{ $exInd := 0 }}
+
             {{ range .examples }}
               {{ range . }}
                 {{ $exPath := path.Split . }}
-                {{ $exPath.File }}
-                {{ range index $components.examples $exPath.File }}
-                  {{ $codeExample = . | jsonify (dict "indent" "  ") }}
-                  {{ highlight $codeExample "json" }}
-                {{ end }}
+                {{ $exId := print $responseId "-" $exPath.File }}
+                <div data-response-subex="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                  {{ range index $components.examples $exPath.File }}
+                    {{ $codeExample = . | jsonify (dict "indent" "  ") }}
+                    {{ highlight $codeExample "json" }}
+                  {{ end }}
+                </div>
               {{ end }}
+              {{ $exInd = add $exInd 1 }}
             {{ end }}
             <br>
             {{/* TODO: if there are more than one object/example */}}

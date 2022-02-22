@@ -214,21 +214,38 @@
           showInitialSchemaType();
         </script>
         <script>
-          const responseExBtns = document.querySelectorAll("[data-response-exbtn]")
+          function switchExample(containerArr, id) {
+            containerArr.forEach(container => {
+              if (container.dataset.responseEx === id) {
+                container.hidden = false
+              } else {
+                container.hidden = true
+              }
+            })
+          }
+
+          const responseExBtns = document.querySelectorAll("input[data-response-ex]")
           responseExBtns.forEach(btn => {
             btn.addEventListener("click", function (e) {
-              const resIdBtn = e.target.dataset.responseExbtn
-              const resId = e.target.name
+              const element = e.target
+              const resIdBtn = element.dataset.responseEx
+              const resId = element.name
               const responseSection = document.querySelector('#' + resId)
-              const exampleContainers = responseSection.querySelectorAll("[data-response-exctr]")
+              const exampleContainers = responseSection.querySelectorAll("div[data-response-ex]")
 
-              exampleContainers.forEach( container => {
-                if (container.dataset.responseExctr === resIdBtn) {
-                  container.hidden = false
-                } else {
-                  container.hidden = true
-                }
-              })
+              switchExample(exampleContainers, resIdBtn)
+            })
+          })
+
+          const responseExSelects = document.querySelectorAll("select[data-response-subex]")
+          responseExSelects.forEach(select => {
+            select.addEventListener("change", function (e) {
+              const element = e.target
+              const exId = element.value
+              const responseSection = element.parentNode
+              const exampleSubContainers = responseSection.querySelectorAll("div[data-response-subex]")
+
+              switchExample(exampleSubContainers, exId)
             })
           })
         </script>
