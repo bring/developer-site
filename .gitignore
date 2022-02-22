@@ -7,3 +7,4 @@ static/css
 .hugo_build.lock
 .idea
 static/js/servicefiltering.js
+static/js/api.js

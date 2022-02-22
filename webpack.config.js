@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 module.exports = {
   entry: {
     "js/servicefiltering": "./js/servicefiltering.js",
+    "js/api": "./js/api.js",
     "css/main": "./css/main.css",
   },
 
