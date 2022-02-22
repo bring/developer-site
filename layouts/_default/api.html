@@ -112,13 +112,13 @@
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
 
-                        {{- partial "api/params.html" (dict "parameters" .parameters) -}}
+                      {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
                         <p class="text-title">Responses</p>
 
                         {{ $responseCodeColor := "" }}
                         {{ $successCodes := "200 204" }}
-                        {{ $errorCodes := "400 404 500" }}
+                        {{ $errorCodes := "400 404 429 500" }}
                         {{ range $response, $_ := .responses }}
                           {{ if in $successCodes $response }}
                             {{ $responseCodeColor = "response success-code bg-green1" }}
@@ -150,26 +150,21 @@
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
                                     {{ range . }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
                                     {{ end }}
-                                  {{ else }}
-                                    {{ if eq $key "$ref" }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
-                                    {{ else }}
-                                      {{ . }}
-                                    {{ end }}
+                                  {{ else if eq $key "$ref" }}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
                                   {{ end }}
                                 {{ end }}
                                 </div>
                               {{ end }}
-                            </div>
                           </details>
                         {{ end }}
                       </div>
                       <div class="flex-1 pas">
                         {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
                       </div>
-                  </div>
+                    </div>
                     {{ end }}
                 {{ end }}
               {{ end }}
