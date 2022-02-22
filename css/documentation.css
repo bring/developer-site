@@ -197,6 +197,9 @@ summary:hover {
   background:var(--gray-90);
 }
 
+.schema-type-select {
+  height:auto;
+}
 .desc-list {
   margin-bottom:0;
 }
