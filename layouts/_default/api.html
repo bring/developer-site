@@ -209,9 +209,9 @@
           showInitialSchemaType();
         </script>
         <script>
-          function switchExample(containerArr, id) {
+          function switchExample(containerArr, dataAtt, id) {
             containerArr.forEach(container => {
-              if (container.dataset.responseEx === id) {
+              if (container.dataset[dataAtt] === id) {
                 container.hidden = false
               } else {
                 container.hidden = true
@@ -228,7 +228,7 @@
               const responseSection = document.querySelector('#' + resId)
               const exampleContainers = responseSection.querySelectorAll("div[data-response-ex]")
 
-              switchExample(exampleContainers, resIdBtn)
+              switchExample(exampleContainers, "responseEx", resIdBtn)
             })
           })
 
@@ -240,7 +240,7 @@
               const responseSection = element.parentNode
               const exampleSubContainers = responseSection.querySelectorAll("div[data-response-subex]")
 
-              switchExample(exampleSubContainers, exId)
+              switchExample(exampleSubContainers, "responseSubex", exId)
             })
           })
         </script>
