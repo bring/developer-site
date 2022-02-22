@@ -101,13 +101,13 @@
             <section class="dev-docscontent__section maxw96r">
               {{ $oasData := getJSON $.Params.oas }}
               {{ with $oasData }}
-                {{ $schemas := .components }}
+                {{ $components := .components }}
                 {{ range $path, $_ := .paths }}
-                {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
-                <span class="gray text-note">ID: {{$endpointId}}</span>
-                  <div class="flex flex-wrap mbm ptm">
-                    <div class="flex-1 flex-basis-20 pas">
-                      {{ range $type, $_ := . }}
+                  {{ range $type, $_ := . }}
+                    {{ $endpointId := .summary | anchorize }}
+                    <div id="{{ $endpointId }}" class="flex flex-wrap mbxl ptm mb-border bb">
+                      <div class="flex-1 flex-basis-20">
+                        <span class="gray text-note">ID: {{$endpointId}}</span>
                         <h2>{{ .summary }}</h2>
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
@@ -115,7 +115,7 @@
                         {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
                         <p class="text-title">Responses</p>
-                        
+
                         {{ $responseCodeColor := "" }}
                         {{ $successCodes := "200 204" }}
                         {{ $errorCodes := "400 404 500" }}
@@ -150,11 +150,11 @@
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
                                     {{ range . }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
                                     {{ end }}
                                   {{ else }}
                                     {{ if eq $key "$ref" }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
                                     {{ else }}
                                       {{ . }}
                                     {{ end }}
@@ -167,23 +167,10 @@
                         {{ end }}
                       </div>
                       <div class="flex-1 pas">
-                        <h3>Response examples</h3>
-                        {{ range $response, $_ := .responses }}
-                          <button class="btn">{{ $response }}</button>
-                        {{ end }}
-                        {{ range $response, $_ := .responses }}
-                          <div id="{{ $response }}">
-                            <pre class="chroma"><code>
-{
-Create a scratch that can be reused?
-}
-                            </code></pre>
-                          </div>
-                        {{ end }}
-                      {{ end }}
-                    </div>
+                        {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                      </div>
                   </div>
-                  <hr>
+                    {{ end }}
                 {{ end }}
               {{ end }}
             </section>
@@ -225,6 +212,42 @@ Create a scratch that can be reused?
           }
 
           showInitialSchemaType();
+        </script>
+        <script>
+          function switchExample(containerArr, id) {
+            containerArr.forEach(container => {
+              if (container.dataset.responseEx === id) {
+                container.hidden = false
+              } else {
+                container.hidden = true
+              }
+            })
+          }
+
+          const responseExBtns = document.querySelectorAll("input[data-response-ex]")
+          responseExBtns.forEach(btn => {
+            btn.addEventListener("click", function (e) {
+              const element = e.target
+              const resIdBtn = element.dataset.responseEx
+              const resId = element.name
+              const responseSection = document.querySelector('#' + resId)
+              const exampleContainers = responseSection.querySelectorAll("div[data-response-ex]")
+
+              switchExample(exampleContainers, resIdBtn)
+            })
+          })
+
+          const responseExSelects = document.querySelectorAll("select[data-response-subex]")
+          responseExSelects.forEach(select => {
+            select.addEventListener("change", function (e) {
+              const element = e.target
+              const exId = element.value
+              const responseSection = element.parentNode
+              const exampleSubContainers = responseSection.querySelectorAll("div[data-response-subex]")
+
+              switchExample(exampleSubContainers, exId)
+            })
+          })
         </script>
       {{- else -}}
       {{- partial "api/docs.html" . -}}
