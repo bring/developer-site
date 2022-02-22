@@ -197,6 +197,9 @@ summary:hover {
   background:var(--gray-90);
 }
 
+.desc-list {
+  margin-bottom:0;
+}
 .desc-list dt,
 .desc-list dd {
   width:49%;

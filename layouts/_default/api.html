@@ -103,12 +103,11 @@
               {{ with $oasData }}
                 {{ $schemas := .components }}
                 {{ range $path, $_ := .paths }}
-                  {{ $endpointId := delimit (shuffle (seq 1 9)) "" }}
-                  <span class="gray text-note">ID: {{$endpointId}}</span>
                   <div class="flex flex-wrap mbm ptm">
                   {{ range $type, $_ := . }}
+                    {{ $endpointId := .summary | anchorize }}
+
                     <div class="flex-1 flex-basis-20 pas">
-                      
                       <h2>{{ .summary }}</h2>
                       <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                       <p class="text-heading">{{ .description }}</p>
@@ -128,7 +127,7 @@
                         {{ else }}
                           {{ $responseCodeColor = "response default" }}
                         {{ end }}
-
+                        {{ $responseId := print $endpointId "-" $response }}
                         <details class="mbs">
                           <summary class="{{$responseCodeColor}} pas">{{ $response }} {{ .description }}</summary>
                         
@@ -137,7 +136,7 @@
                             <select class="form__control wauto maxw100p paxs schema-type-select">
                               {{ $selected := "selected" }}
                               {{ range $applicationType, $_ := .content }}
-                                <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                <option value='{{$responseId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
                                   {{ $applicationType }}
                                 </option>
                                 {{$selected = ""}}
@@ -145,16 +144,16 @@
                             </select>
 
                             {{ range $application, $_ := .content }}
-                              <div class="schema-type-container pam mb-border ba bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                              <div class="schema-type-container pam mb-border ba bg-white dn" data-schematype-id='{{$responseId}}-{{$application}}'>
                               {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
                               <h4>Response schema: {{$application}}</h4>
                               {{ range $key, $_ := .schema }}
                                 {{ if reflect.IsMap . }}
                                   {{ range . }}
-                                    {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false) -}}
+                                    {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false "responseId" $responseId) -}}
                                   {{ end }}
                                 {{ else if eq $key "$ref" }}
-                                  {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false ) -}}
+                                  {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false "responseId" $responseId) -}}
                                 {{ end }}
                               {{ end }}
                               </div>
