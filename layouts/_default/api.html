@@ -161,7 +161,7 @@
                           </details>
                         {{ end }}
                       </div>
-                      <div class="flex-1 pas">
+                      <div>
                         {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
                       </div>
                     </div>
@@ -237,7 +237,7 @@
             select.addEventListener("change", function (e) {
               const element = e.target
               const exId = element.value
-              const responseSection = element.parentNode
+              const responseSection = element.closest("div[data-response-ex]")
               const exampleSubContainers = responseSection.querySelectorAll("div[data-response-subex]")
 
               switchExample(exampleSubContainers, "responseSubex", exId)
