@@ -1126,7 +1126,7 @@
   "description" : "No description available",
   "shippingGuideCode" : "EVE_DELIVERY",
   "shippingGuideNpbCode" : "0015",
-  "bookingCode" : "EVENING_DELIVERY",
+  "bookingCode" : "EVE_DELIVERY",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Parcel",
