@@ -105,10 +105,9 @@
                 {{ range $path, $_ := .paths }}
                   {{ range $type, $_ := . }}
                     {{ $endpointId := .summary | anchorize }}
-                    <div id="{{ $endpointId }}" class="flex flex-wrap mbxl ptm mb-border bb">
-                      <div class="flex-1 flex-basis-20">
-                        <span class="gray text-note">ID: {{$endpointId}}</span>
-                        <h2>{{ .summary }}</h2>
+                    <h2 id="{{ $endpointId }}">{{ .summary }}</h2>
+                    <div class="flex flex-wrap mbxl ptm pbxl mb-border bb gapm">
+                      <div class="param-response-area">
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
 
@@ -161,7 +160,7 @@
                           </details>
                         {{ end }}
                       </div>
-                      <div>
+                      <div class="example-area">
                         {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
                       </div>
                     </div>
@@ -225,7 +224,7 @@
               const element = e.target
               const resIdBtn = element.dataset.responseEx
               const resId = element.name
-              const responseSection = document.querySelector('#' + resId)
+              const responseSection = document.getElementById(resId).nextElementSibling
               const exampleContainers = responseSection.querySelectorAll("div[data-response-ex]")
 
               switchExample(exampleContainers, "responseEx", resIdBtn)
