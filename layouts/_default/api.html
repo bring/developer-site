@@ -118,7 +118,7 @@
 
                         {{ $responseCodeColor := "" }}
                         {{ $successCodes := "200 204" }}
-                        {{ $errorCodes := "400 404 500" }}
+                        {{ $errorCodes := "400 404 429 500" }}
                         {{ range $response, $_ := .responses }}
                           {{ if in $successCodes $response }}
                             {{ $responseCodeColor = "response success-code bg-green1" }}
@@ -150,20 +150,14 @@
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
                                     {{ range . }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
                                     {{ end }}
-                                  {{ else }}
-                                    {{ if eq $key "$ref" }}
-                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components) -}}
-                                    {{ else }}
-                                      {{ . }}
-                                    {{ end }}
+                                  {{ else if eq $key "$ref" }}
+                                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
                                   {{ end }}
-                                {{ else if eq $key "$ref" }}
-                                  {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" false "responseId" $responseId) -}}
                                 {{ end }}
+                                </div>
                               {{ end }}
-                            </div>
                           </details>
                         {{ end }}
                       </div>

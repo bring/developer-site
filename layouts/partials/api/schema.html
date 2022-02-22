@@ -1,7 +1,7 @@
 {{ $schemas := .schemas }}
 {{ $schemaPath := path.Split .ctx }}
 {{ $schemaRef := $schemaPath.File }}
-{{ $responseId := .responseId }}
+{{ $endpointId := .endpointId }}
 {{ $nested := .nested }}
 
 
@@ -31,7 +31,7 @@
                 </dt>
           {{ else if or (eq $type "array") (eq $type "object") }}
             <dl>
-              <dt id='{{$responseId}}-{{$param}}'>
+              <dt id='{{$endpointId}}-{{$param}}'>
                 <dl class="desc-list bg-gray2 pam mbm">
                   <dt>{{ $param }}</dt>
                   <dd><span class="error">Type: {{ $type }}</span></dd>
@@ -47,7 +47,7 @@
             {{ end }}
           {{ end }}
 
-          <dd data-id='{{$responseId}}-{{$param}}'>
+          <dd data-id='{{$endpointId}}-{{$param}}'>
             {{ if eq $nested false }}
               <dl class="desc-list">
             {{ end }}
