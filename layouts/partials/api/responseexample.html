@@ -5,89 +5,92 @@
 <h3>Response examples</h3>
 {{ $codeExample := "" }}
 {{ $resInd := 0 }}
-<fieldset>
+<div class="bg-gray3 rad-t2px mts sticky-6r">
+  <fieldset class="pam pbs">
+    {{ range $response, $_ := .responses }}
+      {{ $responseId := print $endpointId "-" $response }}
+      <label class="form__radio mrm"><input type="radio" name="{{ $endpointId}}" data-response-ex="{{ $responseId }}" {{if eq $resInd 0 }}checked{{ end }}>{{ $response }}</label>
+      {{ $resInd = add $resInd 1 }}
+    {{ end }}
+  </fieldset>
+  {{ $resInd = 0 }}
   {{ range $response, $_ := .responses }}
     {{ $responseId := print $endpointId "-" $response }}
-    <label class="form__radio mrm"><input type="radio" name="{{ $endpointId}}" data-response-ex="{{ $responseId }}" {{if eq $resInd 0 }}checked{{ end }}>{{ $response }}</label>
-    {{ $resInd = add $resInd 1 }}
-  {{ end }}
-</fieldset>
-{{ $resInd = 0 }}
-{{ range $response, $_ := .responses }}
-  {{ $responseId := print $endpointId "-" $response }}
-  <div data-response-ex="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
-    {{ range $application, $_ := .content }}
-      {{/* {{ $response }} {{ $application }} */}}
+    <div data-response-ex="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
+      {{ range $application, $_ := .content }}
+        {{/* {{ $response }} {{ $application }} */}}
 
-      {{ if in $application "json" }}
+        {{ if in $application "json" }}
 
-        {{ if isset . "examples" }}
+          {{ if isset . "examples" }}
 
-          {{/* If response code corresponds to example */}}
-          {{ range index $components.examples $response }}
-            {{ $codeExample = . | jsonify (dict "indent" "  ") }}
-            {{ highlight $codeExample "json" }}
-          
-          {{/* If application type contains examples object */}}
-          {{ else }}
-            {{/* if there is only one object */}}
-            {{ if gt (len .examples) 1 }}
-              <select class="form__control w100p" data-response-subex>
-                {{ range .examples }}
-                    {{ range . }}
-                      {{ $exPath := path.Split . }}
-                      {{ $exId := print $responseId "-" $exPath.File }}
-                      <option value="{{ $exId }}">{{ $exPath.File }}</option>
-                    {{ end }}
-                {{ end }}
-              </select>
-            {{ end }}
-              {{ $exInd := 0 }}
-
-            {{ range .examples }}
-              {{ range . }}
-                {{ $exPath := path.Split . }}
-                {{ $exId := print $responseId "-" $exPath.File }}
-                <div data-response-subex="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                  {{ range index $components.examples $exPath.File }}
-                    {{ $codeExample = . | jsonify (dict "indent" "  ") }}
-                    {{ highlight $codeExample "json" }}
+            {{/* If response code corresponds to example */}}
+            {{ range index $components.examples $response }}
+              {{ $codeExample = . | jsonify (dict "indent" "  ") }}
+              {{ highlight $codeExample "json" }}
+            
+            {{/* If application type contains examples object */}}
+            {{ else }}
+              {{/* if there is only one object */}}
+              {{ if gt (len .examples) 1 }}
+              <div class="phm pvm bg-gray4">
+                <select class="form__control w100p mb0" data-response-subex>
+                  {{ range .examples }}
+                      {{ range . }}
+                        {{ $exPath := path.Split . }}
+                        {{ $exId := print $responseId "-" $exPath.File }}
+                        <option value="{{ $exId }}">{{ $exPath.File }}</option>
+                      {{ end }}
                   {{ end }}
-                </div>
+                </select>
+              </div>
               {{ end }}
-              {{ $exInd = add $exInd 1 }}
-            {{ end }}
-            <br>
-            {{/* TODO: if there are more than one object/example */}}
-          {{ end }}
+                {{ $exInd := 0 }}
 
-        {{/* If application type only contains schema */}}
-        {{ else if isset . "schemas" }}
-          {{ range $key, $_ := .schema }}
-            {{- if reflect.IsMap . -}}
-              {{- range . -}}
-                {{- . -}}
-              {{- end -}}
-            {{- else -}}
-              {{- if eq $key "$ref" -}}
-                {{ range $components.examples }}
-                    {{ .value }}
+              {{ range .examples }}
+                {{ range . }}
+                  {{ $exPath := path.Split . }}
+                  {{ $exId := print $responseId "-" $exPath.File }}
+                  <div data-response-subex="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                    {{ range index $components.examples $exPath.File }}
+                      {{ $codeExample = . | jsonify (dict "indent" "  ") }}
+                      {{ highlight $codeExample "json" }}
+                    {{ end }}
+                  </div>
                 {{ end }}
-                {{- with partial "api/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
-                  {{ $codeExample = print . | jsonify (dict "indent" "  ") }}
-                  {{ highlight $codeExample "json" "tabWidth=2" }}
-                {{ end }}
-              {{- else -}}
-                Not ref not map
-                {{- . -}}
-              {{- end -}}
+                {{ $exInd = add $exInd 1 }}
+              {{ end }}
+              {{/* TODO: if there are more than one object/example */}}
             {{ end }}
-          {{ else }}
-            No samples
+
+          {{/* If application type only contains schema */}}
+          {{ else if isset . "schemas" }}
+            {{ range $key, $_ := .schema }}
+              {{- if reflect.IsMap . -}}
+                {{- range . -}}
+                  {{- . -}}
+                {{- end -}}
+              {{- else -}}
+                {{- if eq $key "$ref" -}}
+                  {{ range $components.examples }}
+                      {{ .value }}
+                  {{ end }}
+                  {{- with partial "api/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
+                    {{ $codeExample = print . | jsonify (dict "indent" "  ") }}
+                    {{ highlight $codeExample "json" "tabWidth=2" }}
+                  {{ end }}
+                {{- else -}}
+                  Not ref not map
+                  {{- . -}}
+                {{- end -}}
+              {{ end }}
+            {{ else }}
+              No samples
+            {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}
-    {{ end }}
-  </div>
-  {{ $resInd = add $resInd 1 }}
-{{ end }}
+    </div>
+    {{ $resInd = add $resInd 1 }}
+  {{ end }}
+</div>
