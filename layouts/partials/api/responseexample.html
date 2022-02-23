@@ -6,13 +6,21 @@
 {{ $codeExample := "" }}
 {{ $resInd := 0 }}
 <div class="bg-gray3 rad-t2px mts sticky-6r">
-  <fieldset class="pam pbs">
+  <div class="pam flex flex-wrap">
     {{ range $response, $_ := .responses }}
+      {{ $responseColor := "" }}
+      {{ if and (ge $response 200) (lt $response 300) }}
+        {{ $responseColor = "txt-success" }}
+      {{ else if ge $response 300 }}
+        {{ $responseColor = "txt-error" }}
+      {{ end }}
       {{ $responseId := print $endpointId "-" $response }}
-      <label class="form__radio mrm"><input type="radio" name="{{ $endpointId}}" data-response-ex="{{ $responseId }}" {{if eq $resInd 0 }}checked{{ end }}>{{ $response }}</label>
+      <button type="button" name="{{ $endpointId }}" data-response-ex="{{ $responseId }}" class="btn-link--dark mrs {{ $responseColor }} {{if eq $resInd 0 }}active{{ end }}">
+        {{ $response }}
+      </button>
       {{ $resInd = add $resInd 1 }}
     {{ end }}
-  </fieldset>
+  </div>
   {{ $resInd = 0 }}
   {{ range $response, $_ := .responses }}
     {{ $responseId := print $endpointId "-" $response }}
@@ -34,13 +42,13 @@
               {{/* if there is only one object */}}
               {{ if gt (len .examples) 1 }}
               <div class="phm pvm bg-gray4">
-                <select class="form__control w100p mb0" data-response-subex>
-                  {{ range .examples }}
-                      {{ range . }}
-                        {{ $exPath := path.Split . }}
-                        {{ $exId := print $responseId "-" $exPath.File }}
-                        <option value="{{ $exId }}">{{ $exPath.File }}</option>
-                      {{ end }}
+                <select class="form__control w100p mb0" name="{{ $responseId }}" data-response-subex>
+                  {{ range $name, $_ := .examples }}
+                    {{ range . }}
+                      {{ $exPath := path.Split . }}
+                      {{ $exId := print $responseId "-" $exPath.File }}
+                      <option value="{{ $exId }}">{{ $name }}</option>
+                    {{ end }}
                   {{ end }}
                 </select>
               </div>
