@@ -213,6 +213,14 @@ summary:hover {
   vertical-align: top;
 }
 
+.txt-success {
+  color:var(--green-dark);
+}
+
+.txt-error {
+  color:var(--red-darker);
+}
+
 /* Gap utility, will implement in MDS after IE11 retire */
 .gapm {
   gap: 2rem;

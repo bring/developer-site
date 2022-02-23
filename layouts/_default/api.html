@@ -218,14 +218,20 @@
             })
           }
 
-          const responseExBtns = document.querySelectorAll("input[data-response-ex]")
+          const responseExBtns = document.querySelectorAll("button[data-response-ex]")
           responseExBtns.forEach(btn => {
             btn.addEventListener("click", function (e) {
               const element = e.target
+
+              if (element.classList.contains("active")) { return }
+
               const resIdBtn = element.dataset.responseEx
-              const resId = element.name
-              const responseSection = document.getElementById(resId).nextElementSibling
+              const endpointId = element.name
+              const responseSection = document.getElementById(endpointId).nextElementSibling
               const exampleContainers = responseSection.querySelectorAll("div[data-response-ex]")
+              const activeBtn = document.querySelector('button[name="' + endpointId + '"].active')
+              activeBtn.classList.remove("active")
+              element.classList.add("active")
 
               switchExample(exampleContainers, "responseEx", resIdBtn)
             })
