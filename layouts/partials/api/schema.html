@@ -1,42 +1,56 @@
-{{ $schemas := .schemas }}
-{{ $schemaPath := path.Split .ctx }}
-{{ $schemaRef := $schemaPath.File }}
-{{ $endpointId := .endpointId }}
-{{ $nested := .nested }}
+{{- $schemas := .schemas -}}
+{{- $schemaPath := path.Split .ctx -}}
+{{- $schemaRef := $schemaPath.File -}}
+{{- $endpointId := .endpointId -}}
+{{- $nested := .nested -}}
+{{- $displayClass := "" -}}
+{{- $required := slice -}}
+{{- $requiredParam := "" -}}
 
+{{- range $schemas -}}
+    {{- $responseSchema := index . $schemaRef -}}
 
-{{ range $schemas }}
-    {{ $responseSchema := index . $schemaRef }}
-    
-    {{ range $key, $_ := $responseSchema }}
-      {{ if reflect.IsMap . }}
-        {{ range $param, $_ := . }}
+    {{- range $key, $value := $responseSchema -}}
+      {{if eq $key "required" -}}
+        {{- $required = $value -}}
+      {{- end -}}
+    {{- end -}}
 
-          {{ $type := "" }}
-          {{ $displayClass := "" }}
-
-          {{ if reflect.IsMap $_ }}
-            {{ range $k, $v := . }}
-              {{ if eq $v "array" }}
-                {{ $type = $v }}
-                {{ $displayClass = "dn plm mlm mb-border bl" }}
-              {{ else if eq $k "$ref" }}
-                {{ $type = "object" }}
-                {{ $displayClass = "dn plm mlm mb-border bl" }}
-              {{ end }}
-            {{ end }}
-          {{ end }}
+    {{- range $key, $value := $responseSchema -}}
+      {{- if reflect.IsMap . -}}
+        {{- range $param, $_ := . -}}
           
-          {{ if eq $nested true }}
+          {{- range $required -}}
+            {{- if eq . $param -}}
+              {{- $requiredParam = . -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- $type := "" -}}
+
+          {{- if reflect.IsMap $_ -}}
+            {{- range $k, $v := . -}}
+              {{- if eq $v "array" -}}
+                {{- $type = $v -}}
+                {{- $displayClass = "dn plm mlm mb-border bl" -}}
+              {{- else if eq $k "$ref" -}}
+                {{- $type = "object" -}}
+                {{- $displayClass = "dn plm mlm mb-border bl" -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- if and (eq $nested true) (reflect.IsMap $_) -}}
           <div>
             <dl class="desc-list flex mb-border bb pbm ptm">
               <dt>
-                {{ $param }}
+                {{- $param -}}
+                {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
               </dt>
-          {{ else if or (eq $type "array") (eq $type "object") }}
+          {{- else if or (eq $type "array") (eq $type "object") -}}
             <dl class="mbs">
-              <dt id='{{$endpointId}}-{{$param}}' class="param-toggle-btn">
-                <dl class="desc-list flex bg-gray2 pas mbs">
+              <dt id='{{$endpointId}}-{{$param}}' class="param-toggle-btn mbs">
+                <dl class="desc-list flex bg-gray2 pas">
                   <dt>
                     <span
                       data-mybicon="mybicon-arrow-right"
@@ -44,86 +58,63 @@
                       data-mybicon-width="16"
                       data-mybicon-height="16">
                     </span> 
-                    <span class="dib v-mid">{{ $param }}</span>
+                    <span class="dib v-top">{{- $param -}}
+                    {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
+                    </span>
                   </dt>
-                  <dd class="pll"><code>{{ $type }}</code></dd>
-                  {{ $type = "" }}
+                  <dd class="pll"><code>{{- $type -}}</code></dd>
                 </dl>
               </dt>
-          {{ else }}
-            {{if reflect.IsMap $_ }}
+          {{- else -}}
+            {{if reflect.IsMap $_ -}}
             <dl class="desc-list flex mb-border bb pbm ptm">
               <dt>
-                {{ $param }}
+                {{- $param -}}
+                {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
               </dt>
-            {{ end }}
-          {{ end }}
+            {{- end -}}
+          {{- end -}}
 
-          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="{{$displayClass}} mts">
-            {{ if eq $nested false }}
+          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="{{$displayClass}}">
+            {{- if eq $nested false -}}
               <dl class="desc-list">
-            {{ end }}
-            {{ if reflect.IsMap . }}
-              {{ range $i, $_ := . }}
-                {{ if reflect.IsMap . }}
-                  {{ range $j, $_ := . }}
-                    {{ if eq $j "$ref" }}
-                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
-                    {{ end }}
-                  {{ end }}
-                {{ else if reflect.IsSlice . }}
+            {{- end -}}
+            {{- if reflect.IsMap . -}}
+              {{- range $i, $_ := . -}}
+                {{- if reflect.IsMap . -}}
+                  {{- range $j, $_ := . -}}
+                    {{- if eq $j "$ref" -}}
+                      {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true) -}}
+                    {{- end -}}
+                  {{- end -}}
+                {{- else if reflect.IsSlice . -}}
                   Enum:
                   <div>
-                    {{ range . }}
-                      <code>{{ . }}</code><br>
-                    {{ end }}
+                    {{- range . -}}
+                      <code>{{- . -}}</code><br>
+                    {{- end -}}
                   </div>
-                {{ else }}
-                  {{ if eq $i "$ref" }}
-                    {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true ) -}}
-                  {{ else if eq . "int32" "integer" "string" "boolean" }}
-                    <div><span class="mb-badge">{{ . }}</span></div>
-                  {{ else if eq $i "description" }}
-                    <div>{{.}}</div>
-                  {{ end }}
-                {{ end }}
-              {{ end }}
-            {{ end }}
-            {{ if eq $nested false }}
+                {{- else -}}
+                  {{- if eq $i "$ref" -}}
+                    {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true) -}}
+                  {{- else if eq . "int32" "integer" "string" "boolean" -}}
+                    <div><span class="mb-badge">{{- . -}}</span></div>
+                  {{- else if eq $i "description" -}}
+                    <div>{{- . -}}</div>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+            {{- if eq $nested false -}}
               </dl>
-            {{ end }}
+            {{- end -}}
             </dd>
-          {{ if eq $nested true }}
+          {{- if and (eq $nested true) (reflect.IsMap $_) -}}
             </div>
-          {{ else }}
+          {{- else -}}
             </dl>
-          {{ end }}
-        {{ end }}
-
-      {{ else if reflect.IsSlice . }}
-      <div class="error mtm">SLICE</div>
-        <dl class="desc-list mb-border bb pbm ptm">
-          <dt>
-            {{ $key }}
-          </dt>
-          <dd>
-            {{ range . }}
-              - {{ . }} <br>
-            {{ end }}
-          </dd>
-        </dl>
-
-      {{/* else */}}
-      <!--<div class="error mtm">DEFAULT</div>
-      <dl class="desc-list mb-border bb">
-        <dt>
-          {{ $key }}ØØØØ
-        </dt>
-        <dd>
-          {{ . }} <br>
-        </dd>
-      </dl>-->
-      {{ end }}
-      
-    {{ end }}
-{{ end }}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+{{- end -}}

@@ -214,3 +214,6 @@ summary:hover {
   transform:rotate(90deg);
   transition:all 0.2s ease-in-out;
 }
+.param-required {
+  color:var(--red-darker);
+}
