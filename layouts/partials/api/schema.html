@@ -13,41 +13,53 @@
         {{ range $param, $_ := . }}
 
           {{ $type := "" }}
+          {{ $displayClass := "" }}
+
           {{ if reflect.IsMap $_ }}
             {{ range $k, $v := . }}
               {{ if eq $v "array" }}
                 {{ $type = $v }}
+                {{ $displayClass = "dn plm mlm mb-border bl" }}
               {{ else if eq $k "$ref" }}
                 {{ $type = "object" }}
+                {{ $displayClass = "dn plm mlm mb-border bl" }}
               {{ end }}
             {{ end }}
           {{ end }}
           
           {{ if eq $nested true }}
           <div>
-              <dl class="desc-list mb-border bb pbm ptm">
-                <dt>
-                  {{ $param }}
-                </dt>
+            <dl class="desc-list flex mb-border bb pbm ptm">
+              <dt>
+                {{ $param }}
+              </dt>
           {{ else if or (eq $type "array") (eq $type "object") }}
-            <dl>
-              <dt id='{{$endpointId}}-{{$param}}'>
-                <dl class="desc-list bg-gray2 pam mbm">
-                  <dt>{{ $param }}</dt>
-                  <dd><span class="error">Type: {{ $type }}</span></dd>
+            <dl class="mbs">
+              <dt id='{{$endpointId}}-{{$param}}' class="param-toggle-btn">
+                <dl class="desc-list flex bg-gray2 pas mbs">
+                  <dt>
+                    <span
+                      data-mybicon="mybicon-arrow-right"
+                      data-mybicon-class="icon-ui param-toggle-icon dib v-mid mrxs"
+                      data-mybicon-width="16"
+                      data-mybicon-height="16">
+                    </span> 
+                    <span class="dib v-mid">{{ $param }}</span>
+                  </dt>
+                  <dd class="pll"><code>{{ $type }}</code></dd>
                   {{ $type = "" }}
                 </dl>
               </dt>
           {{ else }}
             {{if reflect.IsMap $_ }}
-            <dl class="desc-list mb-border bb pbm ptm">
+            <dl class="desc-list flex mb-border bb pbm ptm">
               <dt>
                 {{ $param }}
               </dt>
             {{ end }}
           {{ end }}
 
-          <dd data-id='{{$endpointId}}-{{$param}}'>
+          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="{{$displayClass}} mts">
             {{ if eq $nested false }}
               <dl class="desc-list">
             {{ end }}

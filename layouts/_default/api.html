@@ -243,6 +243,19 @@
             })
           })
         </script>
+        <script type="text/javascript">
+          const paramToggleBtn = document.querySelectorAll('.param-toggle-btn')
+
+          paramToggleBtn.forEach(btn => {
+            btn.addEventListener('click', function() {
+              const paramToggleBtnId = this.id
+              const paramSubLevel = document.querySelector('[data-sublevel-id="'+paramToggleBtnId+'"]')
+              const paramToggleIcon = this.querySelector('.param-toggle-icon')
+              paramSubLevel.classList.toggle('dn')
+              paramToggleIcon.classList.toggle('rotate-icon-90')
+            })
+          })
+        </script>
       {{- else -}}
       {{- partial "api/docs.html" . -}}
     {{- end -}}
