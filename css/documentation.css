@@ -203,14 +203,25 @@ summary:hover {
   background:var(--gray-90);
 }
 
+.schema-type-select {
+  height:auto;
+}
 .desc-list {
   margin-bottom:0;
 }
 .desc-list dt,
 .desc-list dd {
-  width:49%;
-  display:inline-block;
-  vertical-align: top;
+  width:50%;
+}
+.param-toggle-icon {
+  transition:all 0.2s ease-in-out;
+}
+.rotate-icon-90 {
+  transform:rotate(90deg);
+  transition:all 0.2s ease-in-out;
+}
+.param-required {
+  color:var(--red-darker);
 }
 
 .txt-success {
@@ -225,3 +236,4 @@ summary:hover {
 .gapm {
   gap: 2rem;
 }
+

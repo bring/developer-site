@@ -131,8 +131,8 @@
                             <summary class="{{$responseCodeColor}} pas">{{ $response }} {{ .description }}</summary>
                           
                             <div class="bg-gray1 pam">
-                              <label class="form__label">Response schema:</label>
-                              <select class="form__control wauto maxw100p paxs schema-type-select">
+                              <label class="form__label text-basic dib" for="{{$endpointId}}">Response schema:</label>
+                              <select id="{{$endpointId}}" class="form__control wauto maxw100p paxs dib schema-type-select">
                                 {{ $selected := "selected" }}
                                 {{ range $applicationType, $_ := .content }}
                                   <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
@@ -145,7 +145,6 @@
                               {{ range $application, $_ := .content }}
                                 <div class="schema-type-container pam mb-border ba bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
                                 {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
-                                <h4>Response schema: {{$application}}</h4>
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
                                     {{ range . }}
@@ -246,6 +245,19 @@
               const exampleSubContainers = responseSection.querySelectorAll("div[data-response-subex]")
 
               switchExample(exampleSubContainers, "responseSubex", exId)
+            })
+          })
+        </script>
+        <script type="text/javascript">
+          const paramToggleBtn = document.querySelectorAll('.param-toggle-btn')
+
+          paramToggleBtn.forEach(btn => {
+            btn.addEventListener('click', function() {
+              const paramToggleBtnId = this.id
+              const paramSubLevel = document.querySelector('[data-sublevel-id="'+paramToggleBtnId+'"]')
+              const paramToggleIcon = this.querySelector('.param-toggle-icon')
+              paramSubLevel.classList.toggle('dn')
+              paramToggleIcon.classList.toggle('rotate-icon-90')
             })
           })
         </script>
