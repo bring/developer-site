@@ -105,10 +105,9 @@
                 {{ range $path, $_ := .paths }}
                   {{ range $type, $_ := . }}
                     {{ $endpointId := .summary | anchorize }}
-                    <div id="{{ $endpointId }}" class="flex flex-wrap mbxl ptm mb-border bb">
-                      <div class="flex-1 flex-basis-20">
-                        <span class="gray text-note">ID: {{$endpointId}}</span>
-                        <h2>{{ .summary }}</h2>
+                    <h2 id="{{ $endpointId }}">{{ .summary }}</h2>
+                    <div class="flex flex-wrap mbxl ptm pbxl mb-border bb gapm">
+                      <div class="param-response-area">
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
 
@@ -160,7 +159,7 @@
                           </details>
                         {{ end }}
                       </div>
-                      <div class="flex-1 pas">
+                      <div class="example-area">
                         {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
                       </div>
                     </div>
@@ -208,9 +207,9 @@
           showInitialSchemaType();
         </script>
         <script>
-          function switchExample(containerArr, id) {
+          function switchExample(containerArr, dataAtt, id) {
             containerArr.forEach(container => {
-              if (container.dataset.responseEx === id) {
+              if (container.dataset[dataAtt] === id) {
                 container.hidden = false
               } else {
                 container.hidden = true
@@ -224,10 +223,10 @@
               const element = e.target
               const resIdBtn = element.dataset.responseEx
               const resId = element.name
-              const responseSection = document.querySelector('#' + resId)
+              const responseSection = document.getElementById(resId).nextElementSibling
               const exampleContainers = responseSection.querySelectorAll("div[data-response-ex]")
 
-              switchExample(exampleContainers, resIdBtn)
+              switchExample(exampleContainers, "responseEx", resIdBtn)
             })
           })
 
@@ -236,10 +235,10 @@
             select.addEventListener("change", function (e) {
               const element = e.target
               const exId = element.value
-              const responseSection = element.parentNode
+              const responseSection = element.closest("div[data-response-ex]")
               const exampleSubContainers = responseSection.querySelectorAll("div[data-response-subex]")
 
-              switchExample(exampleSubContainers, exId)
+              switchExample(exampleSubContainers, "responseSubex", exId)
             })
           })
         </script>

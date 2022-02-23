@@ -162,8 +162,14 @@ summary:hover {
   background: var(--red-light);
 }
 
-.flex-basis-20 {
-  flex-basis:20rem;
+.param-response-area {
+  flex: 1 1 30rem;
+}
+
+.example-area {
+  flex: 1 1 20rem;
+  max-width: 64rem;
+  width: 38%;
 }
 
 .response {
@@ -217,3 +223,9 @@ summary:hover {
 .param-required {
   color:var(--red-darker);
 }
+
+/* Gap utility, will implement in MDS after IE11 retire */
+.gapm {
+  gap: 2rem;
+}
+
