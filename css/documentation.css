@@ -206,12 +206,17 @@ summary:hover {
 .schema-type-select {
   height:auto;
 }
-.desc-list {
-  margin-bottom:0;
+
+.desc-list > div {
+  gap: 0.25rem;
 }
-.desc-list dt,
+
+.desc-list dt {
+  flex: 1 1 10rem;
+}
+
 .desc-list dd {
-  width:50%;
+  flex: 2 1 12rem;
 }
 .param-toggle-icon {
   transition:all 0.2s ease-in-out;
