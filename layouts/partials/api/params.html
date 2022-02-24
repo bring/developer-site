@@ -12,7 +12,8 @@
   {{ end }}
   
   <div class="flex mbm">
-    <div class="flex-1">{{ .name }}
+    <div class="flex-1">
+      <code>{{ .name }}</code>
       {{ if eq .required true }}
         <span class="mb-badge mb-badge--red paxs">Required</span>
       {{ end }}
