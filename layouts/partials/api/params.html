@@ -49,7 +49,6 @@
       {{ end }}
 
       {{ if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) }}
-        <div class="mbs">
           <div class="text-note">
             {{ if gt (len $enum) 1 }}
               Enum:
@@ -60,14 +59,11 @@
           {{ range $enum }}
             <code class="mbxs db maxwmaxc">{{.}}</code>
           {{ end }}
-        </div>
       {{ end }}
 
       {{ if gt (len $example) 0 }}
-        <div class="ptxs mbs">
           <div class="text-note">Example:</div>
-          <code>{{$example}}</code>
-        </div>
+          <code class="mbxs db maxwmaxc">{{$example}}</code>
       {{ end }}
 
       <div class="text-note gray">
