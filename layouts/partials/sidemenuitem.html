@@ -1,6 +1,10 @@
 {{- $currentPage := .currentPage -}}
 {{- $currentMenuItem := .ctx -}}
 {{- $currentMenu := .menu -}}
+{{- $oasData := "" -}}
+{{- with .oasData -}}
+  {{- $oasData = getJSON . -}}
+{{- end -}}
 
 <li
 class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}active{{ end }}"
@@ -20,7 +24,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- end -}}
       {{- end -}}
 
-      {{- with (index .apiData .identifier) -}}
+      {{- with or (index .apiData .identifier) $oasData -}}
         <li>
           <a href="#overview-of-endpoints">
             <span data-hover="overview-of-endpoints"
@@ -28,7 +32,9 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
             >
           </a>
         </li>
+      {{- end -}}
 
+      {{- with (index .apiData .identifier) -}}
         {{- range .resources -}}
           <li>
             <a href="#{{ .displayName | urlize }}">
@@ -37,6 +43,20 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
               >
             </a>
           </li>
+        {{- end -}}
+      {{- end -}}
+
+      {{- with $oasData -}}
+        {{- range .paths -}}
+          {{- range . -}}
+            <li>
+              <a href="#{{ .summary | anchorize }}">
+                <span data-hover="{{ .summary }}"
+                  >{{ .summary }}</span
+                >
+              </a>
+            </li>
+          {{- end -}}
         {{- end -}}
       {{- end -}}
 

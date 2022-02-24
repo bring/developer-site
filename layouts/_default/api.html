@@ -105,7 +105,7 @@
                 {{ range $path, $_ := .paths }}
                   {{ range $type, $_ := . }}
                     {{ $endpointId := .summary | anchorize }}
-                    <h2 id="{{ $endpointId }}">{{ .summary }}</h2>
+                    <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
                     <div class="flex flex-wrap mbxl ptm pbxl mb-border bb gapm">
                       <div class="param-response-area">
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
