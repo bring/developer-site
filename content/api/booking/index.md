@@ -63,7 +63,7 @@ documentation:
 
   - title: Generating QR Codes
     content: |
-      For Parcel Norway domestic return services, it is possible to request QR codes. An end user can bring the QR code to a PiB or a Post Office, scan the QR code, and have a label printed there.
+      For Parcel Norway domestic return services, it is possible to request QR codes. An end user can bring the QR code to any PiB or a Post Office in Norway, scan the QR code, and have a label printed there.
 
       To book, add the element `generateQrCodes` at the consignment level and set it to `true`. The response will contain one `qrCodeLink` per package. This is a URL to a PNG image of the QR code.
 
@@ -75,9 +75,6 @@ documentation:
       - 9000
       - BPAKKE_DOR-DOR_RETURSERVICE
 
-      Currently, 240 selected pickup points support label printing based on scanning of QR-code. [Overview of pickup points](https://www.bring.no/tjenester/retur/qr-kode-innleveringssteder)
-
-      Eventually, all PiBs and Post offices will support label printing based on QR-code.
 
   - title: Free return of parcel(s)
     content: |
