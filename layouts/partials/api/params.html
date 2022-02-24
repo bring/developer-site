@@ -1,19 +1,69 @@
 {{ $paramsHeader := "" }}
+{{ $name := "" }}
 
 {{ range .parameters }}
+  {{ $example := "" }}
+  {{ $enum := slice }}
+  {{ $type := "any" }}
+
   {{ if ne $paramsHeader .in }}
     {{ $paramsHeader = .in }}
-    <h4 class="ttu mb-border bb mbs pbxs mtl"> {{ $paramsHeader }} parameters</h4>
+    <h4 class="ttu mb-border bb mbs pbxs mts"> {{ $paramsHeader }} parameters</h4>
   {{ end }}
   
-  <div class="flex mbm">
-    <div class="flex-1">{{ .name }}
+  <dl class="desc-list flex">
+    <dt class="fwn">
+      <code class="bg-white">{{ .name }}</code>
       {{ if eq .required true }}
         <span class="mb-badge mb-badge--red paxs">Required</span>
       {{ end }}
-    </div>
-    <div class="flex-1">
+    </dt>
+    <dd>
       {{ .description }}
-    </div>
-  </div>
+      {{ range $key,$value := . }}
+        {{ if eq $key "name" }}
+          {{ $name = $value }}
+        {{ end }}
+
+        {{ if reflect.IsMap . }}
+          {{ if eq $key "schema" }}
+            {{ range $k,$v := $value }}
+              {{ if eq $k "type" }}
+                {{ $type = $v }}
+              {{ end }}
+              {{ if eq $k "enum" }}
+                {{ $enum = $v }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else if eq $key "example" }}
+          {{ $example = delimit (slice $name $value) "=" }}
+        {{ end }}
+      {{ end }}
+
+      {{ if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) }}
+        <div class="ptxs mbs">
+          {{ if gt (len $enum) 1 }}
+            <div class="text-note mb0">Enum:</div>
+          {{ else }}
+            <div class="text-note mb0">Value:</div>
+          {{ end }}
+          {{ range $enum }}
+            <code class="mbxs db maxwmaxc">{{.}}</code>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ if gt (len $example) 0 }}
+        <div class="ptxs mbs">
+          <div class="text-note mb0">Example:</div>
+          <code>{{$example}}</code>
+        </div>
+      {{ end }}
+
+      <div class="mbm">
+        <span class="mb-badge">{{$type}}</span>
+      </div>
+    </dd>
+  </dl>
 {{ end }}
