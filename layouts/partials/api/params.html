@@ -1,6 +1,11 @@
 {{ $paramsHeader := "" }}
+{{ $name := "" }}
 
 {{ range .parameters }}
+  {{ $example := "" }}
+  {{ $enum := slice }}
+  {{ $type := "any" }}
+
   {{ if ne $paramsHeader .in }}
     {{ $paramsHeader = .in }}
     <h4 class="ttu mb-border bb mbs pbxs mtl"> {{ $paramsHeader }} parameters</h4>
@@ -14,6 +19,50 @@
     </div>
     <div class="flex-1">
       {{ .description }}
+      {{ range $key,$value := . }}
+        {{ if eq $key "name" }}
+          {{ $name = $value }}
+        {{ end }}
+
+        {{ if reflect.IsMap . }}
+          {{ if eq $key "schema" }}
+            {{ range $k,$v := $value }}
+              {{ if eq $k "type" }}
+                {{ $type = $v }}
+              {{ end }}
+              {{ if eq $k "enum" }}
+                {{ $enum = $v }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        {{ else if eq $key "example" }}
+          {{ $example = delimit (slice $name $value) "=" }}
+        {{ end }}
+      {{ end }}
+
+      {{ if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) }}
+        <div class="ptxs mbs">
+          {{ if gt (len $enum) 1 }}
+            <p class="text-note mb0">Enum:</p>
+          {{ else }}
+            <p class="text-note mb0">Value:</p>
+          {{ end }}
+          {{ range $enum }}
+            <code class="paxs bg-gray3 mbxs db maxwmaxc">{{.}}</code>
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ if gt (len $example) 0 }}
+        <div class="ptxs mbs">
+          <p class="text-note mb0">Example:</p>
+          <code class="paxs bg-gray3">{{$example}}</code>
+        </div>
+      {{ end }}
+
+      <div>
+        <span class="mb-badge">{{$type}}</span>
+      </div>
     </div>
   </div>
 {{ end }}
