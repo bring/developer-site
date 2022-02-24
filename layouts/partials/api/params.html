@@ -8,17 +8,17 @@
 
   {{ if ne $paramsHeader .in }}
     {{ $paramsHeader = .in }}
-    <h4 class="ttu mb-border bb mbs pbxs mtl"> {{ $paramsHeader }} parameters</h4>
+    <h4 class="ttu mb-border bb mbs pbxs mts"> {{ $paramsHeader }} parameters</h4>
   {{ end }}
   
-  <div class="flex mbm">
-    <div class="flex-1">
-      <code>{{ .name }}</code>
+  <dl class="desc-list flex">
+    <dt>
+      <code class="bg-white">{{ .name }}</code>
       {{ if eq .required true }}
-        <span class="mb-badge mb-badge--red paxs">Required</span>
+        <span class="mb-badge mb-badge--red paxs fwn">Required</span>
       {{ end }}
-    </div>
-    <div class="flex-1">
+    </dt>
+    <dd>
       {{ .description }}
       {{ range $key,$value := . }}
         {{ if eq $key "name" }}
@@ -49,7 +49,7 @@
             <p class="text-note mb0">Value:</p>
           {{ end }}
           {{ range $enum }}
-            <code class="paxs bg-gray3 mbxs db maxwmaxc">{{.}}</code>
+            <code class="mbxs db maxwmaxc">{{.}}</code>
           {{ end }}
         </div>
       {{ end }}
@@ -57,13 +57,13 @@
       {{ if gt (len $example) 0 }}
         <div class="ptxs mbs">
           <p class="text-note mb0">Example:</p>
-          <code class="paxs bg-gray3">{{$example}}</code>
+          <code>{{$example}}</code>
         </div>
       {{ end }}
 
-      <div>
+      <div class="mbm">
         <span class="mb-badge">{{$type}}</span>
       </div>
-    </div>
-  </div>
+    </dd>
+  </dl>
 {{ end }}
