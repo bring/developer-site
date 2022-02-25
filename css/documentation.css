@@ -217,7 +217,7 @@ summary:hover {
 }
 
 .desc-list dt code {
-  background: white;
+  background: transparent;
 }
 
 .desc-list dd {
