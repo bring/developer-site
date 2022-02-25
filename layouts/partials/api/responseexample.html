@@ -8,24 +8,27 @@
 <div class="bg-gray3 rad-t2px mts sticky-6r">
   <div class="pam flex flex-wrap">
     {{ range $response, $_ := .responses }}
-      {{ $responseColor := "" }}
-      {{ if and (ge $response 200) (lt $response 300) }}
-        {{ $responseColor = "txt-success" }}
-      {{ else if ge $response 300 }}
-        {{ $responseColor = "txt-error" }}
+      {{ with .content }}
+        {{ $responseColor := "" }}
+        {{ if and (ge $response 200) (lt $response 300) }}
+          {{ $responseColor = "txt-success" }}
+        {{ else if ge $response 300 }}
+          {{ $responseColor = "txt-error" }}
+        {{ end }}
+        {{ $responseId := print $endpointId "-" $response }}
+        <button type="button" name="{{ $endpointId }}" data-response-ex="{{ $responseId }}" class="btn-link--dark mrs {{ $responseColor }} {{if eq $resInd 0 }}active{{ end }}">
+          {{ $response }}
+        </button>
+        {{ $resInd = add $resInd 1 }}
       {{ end }}
-      {{ $responseId := print $endpointId "-" $response }}
-      <button type="button" name="{{ $endpointId }}" data-response-ex="{{ $responseId }}" class="btn-link--dark mrs {{ $responseColor }} {{if eq $resInd 0 }}active{{ end }}">
-        {{ $response }}
-      </button>
-      {{ $resInd = add $resInd 1 }}
     {{ end }}
   </div>
   {{ $resInd = 0 }}
   {{ range $response, $_ := .responses }}
+  {{ with .content }}
     {{ $responseId := print $endpointId "-" $response }}
     <div data-response-ex="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
-      {{ range $application, $_ := .content }}
+      {{ range $application, $_ := . }}
         {{/* {{ $response }} {{ $application }} */}}
 
         {{ if in $application "json" }}
@@ -100,5 +103,6 @@
       {{ end }}
     </div>
     {{ $resInd = add $resInd 1 }}
+  {{ end }}
   {{ end }}
 </div>
