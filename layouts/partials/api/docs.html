@@ -64,17 +64,17 @@
           </div>
         </section>
         <section class="dev-docscontent__section maxw64r">
-          <h2 class="dev-anchored mbm" id="overview-of-endpoints">
-            Overview of endpoints
+          <h2 class="dev-anchored mbm" id="endpoints">
+            Endpoints
           </h2>
 
           <h3 class="dn">Base URL</h3>
           <pre>{{ .baseUri }}</pre>
           <table>
             <thead>
+              <th>Usage</th>
               <th>Method</th>
               <th>Endpoint</th>
-              <th>Usage</th>
             </thead>
             {{- range .resources -}}
               {{ $resDisplayName := .displayName | urlize }}
@@ -83,15 +83,15 @@
               {{- range .methods -}}
                 <tr>
                   <td>
-                    {{- .method | upper -}}
-                  </td>
-                  <td>
-                    {{- $resRelUri -}}
-                  </td>
-                  <td>
                     <a href="#{{ $resDisplayName }}" title="{{- $displayName -}}">
                       {{- .description | safeHTML -}}
                     </a>
+                  </td>
+                  <td>
+                    {{- .method | upper -}}
+                  </td>
+                  <td>
+                    <code>{{- $resRelUri -}}</code>
                   </td>
                 </tr>
               {{- end -}}

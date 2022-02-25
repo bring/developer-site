@@ -24,8 +24,8 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
 
       {{- with or (index .apiData .identifier) $oasData -}}
         <li>
-          <a href="#overview-of-endpoints">
-            <span data-hover="overview-of-endpoints">Overview of endpoints</span>
+          <a href="#endpoints">
+            <span data-hover="endpoints">Endpoints</span>
           </a>
         </li>
       {{- end -}}
