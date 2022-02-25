@@ -7,7 +7,7 @@
 {{ end }}
 {{ $paramArr = uniq $paramArr }}
 
-<h3>Request</h3>
+<h3 class="mbm">Request</h3>
 {{ range $paramArr }}
   {{ $paramType := . }}
   <h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ $paramType }}</span> parameters</h4>
