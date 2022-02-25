@@ -109,9 +109,9 @@
                   {{ range $type, $_ := . }}
                     {{ $endpointId := .summary | anchorize }}
                     <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
-                    <div class="flex flex-wrap mbxl ptm pbxl mb-border bb gapm">
+                    <div class="flex flex-wrap mbxl pbxl mb-border bb gapm">
                       <div class="param-response-area">
-                        <div class="flex align-ic mbs">
+                        <div class="flex align-ic mbm mts">
                           <span class="mb-badge mb-badge--green text-note ttu mrs pas">{{ $type }}</span>
                           <span class="flex-auto">
                             <pre class="flex align-ic pas mb0">
@@ -119,12 +119,11 @@
                             </pre>
                           </span>
                         </div>
-                        <p class="text-heading">{{ .description }}</p>
+                        <p class="mbl text-heading">{{ .description }}</p>
 
                         {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
-                        <h3>Responses</h3>
-
+                        <h3 class="mbm">Responses</h3>
                         {{ $responseCodeColor := "" }}
                         {{ $successCodes := "200 204" }}
                         {{ $errorCodes := "400 404 429 500" }}

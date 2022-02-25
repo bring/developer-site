@@ -1,38 +1,35 @@
-{{ $oasData := . }}
-{{ with $oasData }}
-  {{ $components := .components }}
-  <section class="dev-docscontent__section maxw64r">
-    <h2 class="dev-anchored mbm" id="overview-of-endpoints">
-    Overview of endpoints
+{{- with . -}}
+  <section class="dev-docscontent__section maxw96r">
+    <h2 class="dev-anchored mbm" id="endpoints">
+    Endpoints
     </h2>
     {{ range .servers }}
-    <pre>{{ .url }}</pre>
+      <pre class="maxw40r">{{ .url }}</pre>
     {{ end }}
 
     <table class="maxw96r">
       <thead>
+        <th>Usage</th>
         <th>Method</th>
         <th>Endpoint</th>
-        <th>Usage</th>
       </thead>
       {{ range $path, $_ := .paths }}
           {{ range $method, $_ := . }}
-          {{ $summary := .summary }}
           <tr>
+            <td>
+              <a href="#{{ .summary | anchorize }}" title="{{- .summary -}}">
+                  {{- .summary -}}
+              </a>
+            </td>
             <td>
               {{- $method | upper -}}
             </td>
             <td>
-              {{- $path -}}
-            </td>
-            <td>
-              <a href="#{{ $summary | anchorize }}" title="{{- $summary -}}">
-                  {{- $summary -}}
-              </a>
+              <code>{{ $path }}</code>
             </td>
           </tr>
           {{ end }}
       {{ end }}
     </table>
   </section>
-{{ end }}
+{{- end -}}
