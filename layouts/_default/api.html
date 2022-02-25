@@ -124,16 +124,12 @@
                         {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
                         <h3 class="mbm">Responses</h3>
-                        {{ $responseCodeColor := "" }}
-                        {{ $successCodes := "200 204" }}
-                        {{ $errorCodes := "400 404 429 500" }}
                         {{ range $response, $_ := .responses }}
-                          {{ if in $successCodes $response }}
-                            {{ $responseCodeColor = "response success-code bg-green1" }}
-                          {{ else if in $errorCodes $response }}
-                            {{ $responseCodeColor = "response error-code" }}
-                          {{ else }}
-                            {{ $responseCodeColor = "response default" }}
+                          {{ $responseColor := "response" }}
+                          {{ if and (ge $response 200) (lt $response 300) }}
+                            {{ $responseColor = "response success-code" }}
+                          {{ else if ge $response 300 }}
+                            {{ $responseColor = "response error-code" }}
                           {{ end }}
 
                           <details class="mbs">

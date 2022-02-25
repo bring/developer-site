@@ -158,10 +158,6 @@ summary:hover {
   color: #777;
 }
 
-.bg-red-light {
-  background: var(--red-light);
-}
-
 .param-response-area {
   flex: 1 1 30rem;
 }
@@ -173,34 +169,40 @@ summary:hover {
 }
 
 .response {
-  border:1px solid transparent;
-  transition:all 0.2s ease-in-out;
+  transition: background var(--easeout-15);
+  background: var(--gray-95);
 }
-.response.default {
-  background:var(--gray-95);
+
+div.response {
+  padding-left: 1.4em;
 }
+
 .response.success-code {
-  background:var(--green-lighter);
-  color:var(--green-dark);
+  background: var(--green-lighter);
+  color: var(--green-dark);
 }
+
 .response.error-code {
-  background:var(--red-light);
-  color:var(--red-darker);
+  background: var(--red-lighter);
+  color: var(--red-dark);
 }
-.response.success-code:focus,
-.response.error-code:focus,
-.response.default:focus {
-  border:1px solid;
-  outline:none;
+
+summary.success-code:focus,
+summary.error-code:focus,
+summary.default:focus {
+  outline: 1px solid;
 }
-.response.success-code:hover {
-  background:var(--green-dark-hover);
+
+summary.response:hover {
+  background: var(--gray-90);
 }
-.response.error-code:hover {
-  background:var(--red-dark);
+
+summary.success-code:hover {
+  background: hsl(86, 40%, 90%);
 }
-.response.default:hover {
-  background:var(--gray-90);
+
+summary.error-code:hover {
+  background: var(--red-lighter-hover);
 }
 
 .schema-type-select {
@@ -224,27 +226,28 @@ summary:hover {
   flex: 2 1 12rem;
   font-weight: 400;
 }
+
 .param-toggle-icon {
-  transition:all 0.2s ease-in-out;
+  transition: all var(--easeout-15);
 }
+
 .rotate-icon-90 {
-  transform:rotate(90deg);
-  transition:all 0.2s ease-in-out;
+  transform: rotate(90deg);
 }
+
 .param-required {
-  color:var(--red-darker);
+  color: var(--red-dark);
 }
 
 .txt-success {
-  color:var(--green-dark);
+  color: var(--green-dark);
 }
 
 .txt-error {
-  color:var(--red-darker);
+  color: var(--red-dark);
 }
 
 /* Gap utility, will implement in MDS after IE11 retire */
 .gapm {
   gap: 2rem;
 }
-
