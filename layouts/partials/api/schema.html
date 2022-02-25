@@ -78,6 +78,12 @@
                 <code>{{- $param -}}</code>
                 {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
               </dt>
+              {{- if .description -}}
+                <dd>
+                  {{ .description }}
+                  <div class="gray text-note">{{ .type }}</div>
+                </dd>
+              {{- end -}}
             {{- end -}}
           {{- end -}}
 
