@@ -62,6 +62,7 @@
                   <div data-response-subex="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
                     {{ range index $components.examples $exPath.File }}
                       {{ $codeExample = . | jsonify (dict "indent" "  ") }}
+                      {{ $codeExample = replace $codeExample "\\u0026" "&" }}
                       {{ highlight $codeExample "json" }}
                     {{ end }}
                   </div>
