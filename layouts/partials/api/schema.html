@@ -50,16 +50,21 @@
           {{- else if or (eq $type "array") (eq $type "object") -}}
             <dl class="desc-list mb-border bb bw1 mbs pbs">
               <div class="flex align-ifs">
-                <dt id='{{$endpointId}}-{{$param}}' class="param-toggle-btn flex align-ic">
-                  <span
-                    data-mybicon="mybicon-arrow-right"
-                    data-mybicon-class="icon-ui param-toggle-icon mrxs"
-                    data-mybicon-width="16"
-                    data-mybicon-height="16">
-                  </span>
-                  <span><code>{{- $param -}}</code>
-                  {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
-                  </span>
+                <dt id='{{$endpointId}}-{{$param}}' class="param-toggle-btn">
+                  <button class="btn-link">
+                    <span
+                      data-mybicon="mybicon-arrow-right"
+                      data-mybicon-class="icon-ui param-toggle-icon"
+                      data-mybicon-width="16"
+                      data-mybicon-height="16">
+                    </span>
+                    <code>{{- $param -}}</code>
+                  </button>
+                  {{- if eq $param $requiredParam -}}
+                    <div class="plm mls">
+                    {{ partial "api/required.html" }}
+                    </div>
+                  {{- end -}}
                 </dt>
                 <dd>
                   {{ .description }}
@@ -69,7 +74,7 @@
           {{- else -}}
             {{if reflect.IsMap $_ -}}
             <dl class="desc-list flex mb-border bb bw1 mbs pbs">
-              <dt class="plm">
+              <dt class="plm mlxs">
                 <code>{{- $param -}}</code>
                 {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
               </dt>
