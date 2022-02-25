@@ -1,19 +1,19 @@
 {{ $parameters := .parameters }}
 {{ $name := "" }}
 
-{{ $parameterTypes := slice }}
+{{ $paramArr := slice }}
 {{ range .parameters }}
-  {{ $parameterTypes = $parameterTypes | append .in }}
+  {{ $paramArr = $paramArr | append .in }}
 {{ end }}
-{{ $parameterTypes = uniq $parameterTypes }}
+{{ $paramArr = uniq $paramArr }}
 
 <h3>Request</h3>
-{{ range $parameterTypes }}
-  {{ $paramsHeader := . }}
-  <h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ $paramsHeader }}</span> parameters</h4>
+{{ range $paramArr }}
+  {{ $paramType := . }}
+  <h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ $paramType }}</span> parameters</h4>
   <dl class="desc-list mbl">
   {{ range $parameters }}
-    {{ if eq .in $paramsHeader }}
+    {{ if eq .in $paramType }}
       {{ $example := "" }}
       {{ $enum := slice }}
       {{ $type := "any" }}
