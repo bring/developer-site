@@ -319,7 +319,6 @@ riFilterInput.addEventListener("keyup", function (e) {
 riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterKey = e.target.dataset.rifilterbtn
-    removeInsCells()
     if (e.target.classList.contains("active")) {
       riCloseFilter()
       return
