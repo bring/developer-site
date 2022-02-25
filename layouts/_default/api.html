@@ -98,8 +98,11 @@
                 {{- end -}}
               </div>
             </section>
+
+            {{ $oasData := getJSON $.Params.oas }}
+            {{- partial "api/endpoints.html" $oasData -}}
+            
             <section class="dev-docscontent__section maxw96r">
-              {{ $oasData := getJSON $.Params.oas }}
               {{ with $oasData }}
                 {{ $components := .components }}
                 {{ range $path, $_ := .paths }}
@@ -111,7 +114,7 @@
                         <p><span class="mb-badge mb-badge--green ttu mrs pas">{{ $type }}</span> {{ $path }}</p>
                         <p class="text-heading">{{ .description }}</p>
 
-                      {{- partial "api/params.html" (dict "parameters" .parameters) -}}
+                        {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
                         <p class="text-title">Responses</p>
 
