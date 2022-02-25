@@ -74,13 +74,19 @@
             {{- end -}}
 
             {{/* Render menu without hidden pages in production */}}
-            {{- if and (ne $hidePage true) (eq (getenv "HUGO_ENV") "production") -}}
+            {{- if and (isset $.Params "oas") (ne $hidePage true) (eq (getenv "HUGO_ENV") "production") (ne .Title "Pickup Point API") -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+            {{- else if and (ne $hidePage true) (eq (getenv "HUGO_ENV") "production") -}}
               {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
             {{- end -}}
 
             {{/* Render menu with hidden pages in dev and staging */}}
             {{- if (ne (getenv "HUGO_ENV") "production") -}}
-              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
+              {{- if and (isset $.Params "oas") -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+              {{- else -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
+              {{- end -}}
             {{- end -}}
 
           {{- end -}}
