@@ -213,10 +213,16 @@ summary:hover {
 
 .desc-list dt {
   flex: 1 1 10rem;
+  font-weight: 400;
+}
+
+.desc-list dt code {
+  background: transparent;
 }
 
 .desc-list dd {
   flex: 2 1 12rem;
+  font-weight: 400;
 }
 .param-toggle-icon {
   transition:all 0.2s ease-in-out;
