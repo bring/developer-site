@@ -9,9 +9,7 @@
 <li
 class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}active{{ end }}"
 >
-  <a href="{{ .url }}" class="dev-sidemenu__apititle"
-    >{{ .pageTitle }}</a
-  >
+  <a href="{{ .url }}" class="dev-sidemenu__apititle">{{ .pageTitle }}</a>
   {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
     <ul class="dev-sidemenu__sublist">
       {{- range $currentPage.Params.documentation -}}
@@ -27,9 +25,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- with or (index .apiData .identifier) $oasData -}}
         <li>
           <a href="#overview-of-endpoints">
-            <span data-hover="overview-of-endpoints"
-              >Overview of endpoints</span
-            >
+            <span data-hover="overview-of-endpoints">Overview of endpoints</span>
           </a>
         </li>
       {{- end -}}
@@ -38,9 +34,9 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- range .resources -}}
           <li>
             <a href="#{{ .displayName | urlize }}">
-              <span data-hover="{{ .displayName }}"
-                >{{ .displayName }}</span
-              >
+              <span data-hover="{{ .displayName }}">
+                {{- .displayName -}}
+              </span>
             </a>
           </li>
         {{- end -}}
@@ -51,9 +47,9 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
           {{- range . -}}
             <li>
               <a href="#{{ .summary | anchorize }}">
-                <span data-hover="{{ .summary }}"
-                  >{{ .summary }}</span
-                >
+                <span data-hover="{{ .summary }}">
+                  {{- .summary -}}
+                </span>
               </a>
             </li>
           {{- end -}}
