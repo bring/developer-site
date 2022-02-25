@@ -111,10 +111,14 @@
                     <h2 id="{{ $endpointId }}">{{ .summary }}</h2>
                     <div class="flex flex-wrap mbxl ptm pbxl mb-border bb gapm">
                       <div class="param-response-area">
-                        <pre class="flex align-ic pas">
-                          <span class="bg-green1 mb-border ba ttu mrs phs pvxs">{{ $type }}</span>
-                          <span>{{ $path }}</span>
-                        </pre>
+                        <div class="flex align-ic mbs">
+                          <span class="mb-badge mb-badge--green text-note ttu mrs pas">{{ $type }}</span>
+                          <span class="flex-auto">
+                            <pre class="flex align-ic pas mb0">
+                              <span>{{ $path }}</span>
+                            </pre>
+                          </span>
+                        </div>
                         <p class="text-heading">{{ .description }}</p>
 
                         {{- partial "api/params.html" (dict "parameters" .parameters) -}}
