@@ -1,5 +1,4 @@
 ---
-hidden: true
 title: Address API
 layout: api
 disqus_identifier: https-developer-bring-com-api-address
@@ -28,5 +27,5 @@ information:
     content: |
       REST XML/JSON over HTTP.
 
-oas: https://api.qa.bring.com/address/api-docs/
+oas: https://api-new.bring.com/address/api-docs/
 ---
