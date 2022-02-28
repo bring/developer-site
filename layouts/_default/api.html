@@ -124,26 +124,24 @@
                         {{- partial "api/params.html" (dict "parameters" .parameters) -}}
 
                         <h3 class="mbm">Responses</h3>
-                        {{ $responseCodeColor := "" }}
-                        {{ $successCodes := "200 204" }}
-                        {{ $errorCodes := "400 404 429 500" }}
                         {{ range $response, $_ := .responses }}
-                          {{ if in $successCodes $response }}
-                            {{ $responseCodeColor = "response success-code bg-green1" }}
-                          {{ else if in $errorCodes $response }}
-                            {{ $responseCodeColor = "response error-code" }}
-                          {{ else }}
-                            {{ $responseCodeColor = "response default" }}
+                          {{ $responseColor := "response" }}
+                          {{ if and (ge $response 200) (lt $response 300) }}
+                            {{ $responseColor = "response success-code" }}
+                          {{ else if ge $response 300 }}
+                            {{ $responseColor = "response error-code" }}
                           {{ end }}
 
+                          {{ $description := .description }}
+                          {{ with .content }}
                           <details class="mbs">
-                            <summary class="{{$responseCodeColor}} pas">{{ $response }} {{ .description }}</summary>
+                            <summary class="{{ $responseColor }} pas">{{ $response }} {{ $description }}</summary>
                           
                             <div class="bg-gray1 pam">
                               <label class="form__label text-basic dib" for="{{$endpointId}}">Response schema:</label>
                               <select id="{{$endpointId}}" class="form__control wauto maxw100p paxs dib schema-type-select">
                                 {{ $selected := "selected" }}
-                                {{ range $applicationType, $_ := .content }}
+                                {{ range $applicationType, $_ := . }}
                                   <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
                                     {{ $applicationType }}
                                   </option>
@@ -151,7 +149,7 @@
                                 {{ end }}
                               </select>
 
-                              {{ range $application, $_ := .content }}
+                              {{ range $application, $_ := . }}
                                 <div class="schema-type-container pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
                                 {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
                                 {{ range $key, $_ := .schema }}
@@ -166,6 +164,9 @@
                                 </div>
                               {{ end }}
                           </details>
+                          {{ else }}
+                            <div class="{{ $responseColor }} pas mbs">{{ $response }} {{ $description }}</div>
+                          {{ end }}
                         {{ end }}
                       </div>
                       <div class="example-area">
