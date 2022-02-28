@@ -12,6 +12,8 @@ weight: 13
 
 introduction: |
   The Address API is used for validating and querying addresses, as well as getting suggestions in scenarios where the complete address is not known. It currently supports Norwegian addresses (street, place and postal place addresses). Addresses validated by this API are guaranteed to be valid and it is therefore recommended to validate addresses that are used as input to Booking and Checkout related APIs.
+  
+  NOTE: Because of upcoming [infrastructure and DNS changes](/api/dns-api-bring-com) this API will not be available on `api.bring.com` before April 4th. Until then you can access the API via `api-new.bring.com`. `api-new.bring.com` will be removed 4th of July, so you will have to switch to `api.bring.com` before that.
 
 
 information:
