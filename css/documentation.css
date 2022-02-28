@@ -158,6 +158,11 @@ summary:hover {
   color: #777;
 }
 
+.oas-endpoints div:last-of-type {
+  border: none;
+  margin-bottom: 0;
+}
+
 .param-response-area {
   flex: 1 1 30rem;
 }
