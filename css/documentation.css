@@ -158,7 +158,7 @@ summary:hover {
   color: #777;
 }
 
-.oas-endpoints div:last-of-type {
+.oas-endpoints > div:last-of-type {
   border: none;
   margin-bottom: 0;
 }
