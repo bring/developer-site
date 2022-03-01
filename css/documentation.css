@@ -232,6 +232,12 @@ summary.error-code:hover {
   font-weight: 400;
 }
 
+.param-toggle-btn {
+  box-sizing:border-box;
+  width:100%;
+  justify-content:flex-start;
+}
+
 .param-toggle-icon {
   transition: all var(--easeout-15);
 }
