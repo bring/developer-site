@@ -36,25 +36,24 @@
           {{- end -}}
 
           {{- if and (eq $nested true) (reflect.IsMap .) -}}
-            <div>
-              <dl class="desc-list flex mb-border bb bw1 mbs pbs">
+              <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
                 <dt class="pls">
                   <code>{{- $param -}}</code>
                   {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
                 </dt>
-                <dd>
+                <dd class="pls">
                   {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
                 </dd>
 
           {{- else if $typeArrObj -}}
             {{ $isParent = true }}
-            <dl class="desc-list mb-border bb bw1 mbs pbs">
-              <div class="flex align-ifs">
+            <div class="mbs mb-border bb bw1">
+              <div class="flex flex-wrap align-ifs pbs">
                 <dt>
                   <button id="{{$endpointId}}-{{$param}}" class="btn-link param-collapsed-btn param-toggle-btn">
                     <span
                       data-mybicon="mybicon-arrow-right"
-                      data-mybicon-class="icon-ui param-toggle-icon"
+                      data-mybicon-class="icon-ui mrxs param-toggle-icon"
                       data-mybicon-width="16"
                       data-mybicon-height="16">
                     </span>
@@ -66,7 +65,7 @@
                     </div>
                   {{- end -}}
                 </dt>
-                <dd>
+                <dd class="ptxs pls">
                   {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
                 </dd>
               </div>
@@ -74,19 +73,20 @@
           {{- else -}}
             {{ $isParent = false }}
             {{if reflect.IsMap $_ -}}
-            <dl class="desc-list flex mb-border bb bw1 mbs pbs">
-              <dt class="plm mlxs">
-                <code>{{- $param -}}</code>
-                {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
+            <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
+              <dt>
+                <code class="mls">{{- $param -}}</code>
+                {{if eq $param $requiredParam}}<div class="mls">{{- partial "api/required.html" -}}</div>{{- end -}}
               </dt>
-              <dd>
+              <dd class="pls">
                 {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
               </dd>
+            </div>
             {{- end -}}
           {{- end -}}
 
         {{- if $isParent -}}
-          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="pls mls mb-border bl bw1 dn">
+          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="schema__sublist mb-border dn">
             {{- if eq $nested false -}}
               <dl class="desc-list mbm pts">
             {{- end -}}
@@ -109,13 +109,12 @@
               </dl>
             {{- end -}}
           </dd>
+        </div>
         {{- end -}}
 
-          {{- if and (eq $nested true) (reflect.IsMap $_) -}}
-            </div>
-          {{- else -}}
-            </dl>
-          {{- end -}}
+        {{- if and (eq $nested true) (reflect.IsMap $_) -}}
+          </div>
+        {{- end -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
