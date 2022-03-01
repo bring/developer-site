@@ -232,7 +232,7 @@ summary.error-code:hover {
   font-weight: 400;
 }
 
-.param-toggle-btn {
+.param-collapsed-btn {
   box-sizing:border-box;
   width:100%;
   justify-content:flex-start;

@@ -51,7 +51,7 @@
             <dl class="desc-list mb-border bb bw1 mbs pbs">
               <div class="flex align-ifs">
                 <dt>
-                  <button id="{{$endpointId}}-{{$param}}" class="btn-link param-toggle-btn">
+                  <button id="{{$endpointId}}-{{$param}}" class="btn-link param-collapsed-btn param-toggle-btn">
                     <span
                       data-mybicon="mybicon-arrow-right"
                       data-mybicon-class="icon-ui param-toggle-icon"
@@ -66,7 +66,7 @@
                     </div>
                   {{- end -}}
                 </dt>
-                <dd class="paxs plm">
+                <dd>
                   {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
                 </dd>
               </div>
