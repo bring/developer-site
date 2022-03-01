@@ -234,10 +234,6 @@ summary.error-code:hover {
   padding: 0;
 }
 
-.desc-list dd code {
-  overflow-wrap: anywhere;
-}
-
 .desc-list dd {
   flex: 2 1 14rem;
   font-weight: 400;
