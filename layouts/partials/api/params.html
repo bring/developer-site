@@ -18,35 +18,33 @@
       {{ $enum := slice }}
       {{ $type := "any" }}
 
+      {{ range $key, $value := . }}
+      {{ if eq $key "name" }}
+        {{ $name = $value }}
+      {{ else if eq $key "schema" }}
+        {{ with .type }}
+          {{ $type = . }}
+        {{ end }}
+        {{ with .enum }}
+          {{ $enum = . }}
+        {{ end }}
+      {{ else if eq $key "example" }}
+        {{ $example = delimit (slice $name $value) "=" }}
+      {{ end }}
+    {{ end }}
+
   <div class="flex flex-wrap mb-border bb bw1 pvs">
-    <dt class="plxs">
+    <dt class="pls">
       <code>{{ .name }}</code>
       {{ if eq .required true }}
         <br><span class="mb-badge mb-badge--red">Required</span>
       {{ end }}
     </dt>
-    <dd class="plxs">
+    <dd class="pls">
       {{ .description }}
-      {{ range $key,$value := . }}
-        {{ if eq $key "name" }}
-          {{ $name = $value }}
-        {{ end }}
-
-        {{ if reflect.IsMap . }}
-          {{ if eq $key "schema" }}
-            {{ range $k,$v := $value }}
-              {{ if eq $k "type" }}
-                {{ $type = $v }}
-              {{ end }}
-              {{ if eq $k "enum" }}
-                {{ $enum = $v }}
-              {{ end }}
-            {{ end }}
-          {{ end }}
-        {{ else if eq $key "example" }}
-          {{ $example = delimit (slice $name $value) "=" }}
-        {{ end }}
-      {{ end }}
+      <div class="text-note gray">
+        {{ $type }}
+      </div>
 
       {{ if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) }}
           <div class="text-note">
@@ -65,10 +63,6 @@
           <div class="text-note">Example:</div>
           <code class="mbxs db maxwmaxc">{{$example}}</code>
       {{ end }}
-
-      <div class="text-note gray">
-        {{$type}}
-      </div>
     </dd>
   </div>
     {{ end }}
