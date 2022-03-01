@@ -1,0 +1,30 @@
+{{ $isParent := .isParent }}
+
+{{ with .ctx }}
+  {{- with .description -}}
+    {{ . }}
+  {{- end -}}
+  {{- $format := "" -}}
+  {{- with .format -}}
+    {{- $format = print " <" . ">" -}}
+  {{- end -}}
+  <div class="gray text-note">
+    {{- with .type -}}
+      {{ . }}{{ $format }}
+    {{- else -}}
+      {{- if $isParent -}}
+        object
+      {{- else -}}
+        any
+      {{- end -}}
+    {{- end -}}
+  </div>
+  {{- with .enum -}}
+    <div>
+      <span class="text-note">Enum:</span>
+      {{- range . -}}
+        <br><code>{{- . -}}</code>
+      {{- end -}}
+    </div>
+  {{- end -}}
+{{- end -}}

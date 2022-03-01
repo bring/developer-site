@@ -3,7 +3,6 @@
 {{- $schemaRef := $schemaPath.File -}}
 {{- $endpointId := .endpointId -}}
 {{- $nested := .nested -}}
-{{- $displayClass := "" -}}
 {{- $required := slice -}}
 {{- $requiredParam := "" -}}
 
@@ -11,13 +10,14 @@
     {{- $responseSchema := index . $schemaRef -}}
 
     {{- range $key, $value := $responseSchema -}}
-      {{if eq $key "required" -}}
+      {{- if eq $key "required" -}}
         {{- $required = $value -}}
       {{- end -}}
     {{- end -}}
 
     {{- range $key, $value := $responseSchema -}}
       {{- if reflect.IsMap . -}}
+        {{- $isParent := false -}}
         {{- range $param, $_ := . -}}
           
           {{- range $required -}}
@@ -26,28 +26,28 @@
             {{- end -}}
           {{- end -}}
 
-          {{- $type := "" -}}
-
-          {{- if reflect.IsMap $_ -}}
+          {{- $typeArrObj := false -}}
+          {{- if reflect.IsMap . -}}
             {{- range $k, $v := . -}}
-              {{- if eq $v "array" -}}
-                {{- $type = $v -}}
-                {{- $displayClass = "dn pls mls mb-border bl bw1" -}}
-              {{- else if eq $k "$ref" -}}
-                {{- $type = "object" -}}
-                {{- $displayClass = "dn pls mls mb-border bl bw1" -}}
+              {{- if or (eq $v "array") (eq $k "$ref") -}}
+                {{- $typeArrObj = true -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}
 
-          {{- if and (eq $nested true) (reflect.IsMap $_) -}}
-          <div>
-            <dl class="desc-list flex mb-border bb bw1 mbs pbs">
-              <dt class="pls">
-                <code>{{- $param -}}</code>
-                {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
-              </dt>
-          {{- else if or (eq $type "array") (eq $type "object") -}}
+          {{- if and (eq $nested true) (reflect.IsMap .) -}}
+            <div>
+              <dl class="desc-list flex mb-border bb bw1 mbs pbs">
+                <dt class="pls">
+                  <code>{{- $param -}}</code>
+                  {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
+                </dt>
+                <dd>
+                  {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
+                </dd>
+
+          {{- else if $typeArrObj -}}
+            {{ $isParent = true }}
             <dl class="desc-list mb-border bb bw1 mbs pbs">
               <div class="flex align-ifs">
                 <dt id='{{$endpointId}}-{{$param}}' class="param-toggle-btn">
@@ -67,27 +67,26 @@
                   {{- end -}}
                 </dt>
                 <dd>
-                  {{ .description }}
-                  <div class="gray text-note">{{ $type }}</div>
+                  {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
                 </dd>
               </div>
+
           {{- else -}}
+            {{ $isParent = false }}
             {{if reflect.IsMap $_ -}}
             <dl class="desc-list flex mb-border bb bw1 mbs pbs">
               <dt class="plm mlxs">
                 <code>{{- $param -}}</code>
                 {{if eq $param $requiredParam}}{{- partial "api/required.html" -}}{{- end -}}
               </dt>
-              {{- if .description -}}
-                <dd>
-                  {{ .description }}
-                  <div class="gray text-note">{{ .type }}</div>
-                </dd>
-              {{- end -}}
+              <dd>
+                {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
+              </dd>
             {{- end -}}
           {{- end -}}
 
-          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="{{$displayClass}}">
+        {{- if $isParent -}}
+          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="pls mls mb-border bl bw1 dn">
             {{- if eq $nested false -}}
               <dl class="desc-list mbm pts">
             {{- end -}}
@@ -99,20 +98,9 @@
                       {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true) -}}
                     {{- end -}}
                   {{- end -}}
-                {{- else if reflect.IsSlice . -}}
-                  Enum:
-                  <div>
-                    {{- range . -}}
-                      <code>{{- . -}}</code><br>
-                    {{- end -}}
-                  </div>
                 {{- else -}}
                   {{- if eq $i "$ref" -}}
                     {{- partial "api/schema.html" (dict "ctx" . "schemas" $schemas "nested" true) -}}
-                  {{- else if eq . "int32" "integer" "string" "boolean" -}}
-                    <div class="text-note gray">{{- . -}}</div>
-                  {{- else if and (eq $i "description") (eq $nested true) -}}
-                    <div>{{- . -}}</div>
                   {{- end -}}
                 {{- end -}}
               {{- end -}}
@@ -121,6 +109,8 @@
               </dl>
             {{- end -}}
           </dd>
+        {{- end -}}
+
           {{- if and (eq $nested true) (reflect.IsMap $_) -}}
             </div>
           {{- else -}}
