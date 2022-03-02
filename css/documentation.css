@@ -214,21 +214,28 @@ summary.error-code:hover {
   height:auto;
 }
 
+.schema__sublist {
+  border-left-style: dashed;
+  border-width: 1px;
+  margin: 0 0.75rem;
+}
+
 .desc-list > div {
   gap: 0.25rem;
 }
 
 .desc-list dt {
-  flex: 1 1 10rem;
+  flex: 1 1 8rem;
   font-weight: 400;
 }
 
 .desc-list dt code {
   background: transparent;
+  padding: 0;
 }
 
 .desc-list dd {
-  flex: 2 1 12rem;
+  flex: 2 1 14rem;
   font-weight: 400;
 }
 

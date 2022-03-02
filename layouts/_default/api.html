@@ -150,7 +150,7 @@
                               </select>
 
                               {{ range $application, $_ := . }}
-                                <div class="schema-type-container pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                                <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
                                 {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
                                 {{ range $key, $_ := .schema }}
                                   {{ if reflect.IsMap . }}
@@ -161,8 +161,9 @@
                                       {{- partial "api/schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
                                   {{ end }}
                                 {{ end }}
-                                </div>
+                                </dl>
                               {{ end }}
+                              </div>
                           </details>
                           {{ else }}
                             <div class="{{ $responseColor }} pas mbs">{{ $response }} {{ $description }}</div>
