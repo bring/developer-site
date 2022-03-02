@@ -78,7 +78,7 @@
                 <code class="mls">{{- $param -}}</code>
                 {{if eq $param $requiredParam}}<div class="mls">{{- partial "api/required.html" -}}</div>{{- end -}}
               </dt>
-              <dd class="pls">
+              <dd class="pls minw0">
                 {{- partial "api/schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
               </dd>
             </div>

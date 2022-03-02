@@ -269,3 +269,12 @@ summary.error-code:hover {
 .gapm {
   gap: 2rem;
 }
+
+.minw0 {
+  min-width:0;
+}
+
+.wrap-text {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
