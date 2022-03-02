@@ -30,7 +30,7 @@
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.6.0",
-    "cssnano": "^5.0.17",
+    "cssnano": "^5.1.0",
     "hugo-bin": "^0.80.2",
     "mini-css-extract-plugin": "^2.5.3",
     "postcss": "^8.4.6",
