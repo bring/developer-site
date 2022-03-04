@@ -35,7 +35,7 @@
 
   <div class="flex flex-wrap mb-border bb bw1 pvs">
     <dt class="pls">
-      <code>{{ .name }}</code>
+      <code>{{ replace .name "MyBring" "Mybring" }}</code>
       {{ if eq .required true }}
         <br><span class="mb-badge mb-badge--red">Required</span>
       {{ end }}
