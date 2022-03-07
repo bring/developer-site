@@ -117,12 +117,29 @@ documentation:
       - SENDERS_REFERENCE
       - AIR_WAYBILL
       - BILL_OF_LADIN
-      - BOOKING_REFERENC
+      - BOOKING_REFERENCE
       - ROAD_CONSIGNMENT_NOTE
       - SHIPMENT_REFERENCE
       - TRANSPORT_INSTRUCTION
-      - GOODS_NUMBE
+      - GOODS_NUMBER
       - MESSAGE_SENDERS_IDENTITY
+      - AAK
+      - AAS
+      - ABT
+      - ADE
+      - AEP
+      - AFM
+      - AGM
+      - AGO
+      - AWB
+      - BM
+      - BN
+      - CMR
+      - SRN
+      - TIN
+      - XC
+      - MS
+      - AFB
       #### Shipment Type
       - Instruction
       - Booking

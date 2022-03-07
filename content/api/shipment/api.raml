@@ -661,7 +661,7 @@ types:
       RequestDate:
         type: datetime
         description: Date and time for when the request was created
-        example: 2018-11-22T08:58:52
+        example: 2018-11-22T08:58:52Z
       Shipment:
         type: object #Shipment
         description: Structure for the shipment
@@ -694,6 +694,7 @@ types:
       Sender:
         type: object #BasicPartyTYPE
         description: Structure to hold sender information
+        required: false
       Receiver:
         type: object #BasicPartyTYPE
         description: Structure to hold receiver information
@@ -703,6 +704,9 @@ types:
       ProductAndService:
         type: object #ProductAndService
         description: Product and service codes in addition to value added service structures
+      CustomsClearance:
+        type: object #CustomsClearance
+        description: Customs Clearance Information
       DeliveryTerms:
         type: object #DeliveryTerms
         description: Terms of delivery
@@ -753,17 +757,17 @@ types:
       LoadingMetres:
         type: number
         description: How many metres of loading space required of a truck's length
-        example: "12"
+        example: 12
         required: false
       PalletFootPrints:
         type: integer
         description: How many pallet footprints are needed for the shipment
-        example: "3"
+        example: 3
         required: false
       HazardPoints:
         type: integer
         description: Sum of hazard points for the shipment
-        example: "22"
+        example: 22
         required: false
       ExchangableEquipment:
         type: object #ExchangableEquipment
@@ -791,7 +795,7 @@ types:
       DateTime:
         type: datetime
         description: Date and Time (for non DocumentDate, date cannot be in the past)
-        example: 2018-11-22T08:58:52
+        example: 2018-11-22T08:58:52Z
   Sender:
     type: object
     properties:
@@ -799,7 +803,7 @@ types:
         type: string
         description: Identifier for the party (compulsory if Receiver partyId and additionalParty of 'FreightPayer' not specified).
         example: BEX
-        required: false
+        required: true
       subPartyId:
         type: string
         description: Further identification of the party
@@ -956,7 +960,6 @@ types:
         Reference:
           type: ReferenceTYPE[]
           description: Further references related to the party
-          example: "SOA-121232332-AN"
           required: false
   ProductAndService:
     type: object
@@ -972,7 +975,7 @@ types:
       TariffReference:
         type: string
         description: Additional information about the price of the cargo in connection with the service
-        example: GNCG
+        example: GENERAL_CARGO
         enum:
         - COOL_ABERRANT
         - GENERAL_CARGO
@@ -992,6 +995,84 @@ types:
         type: string
         description: Indicates if the cargo is out of bound of general expected parameters, dangerous goods or out of gauge
         example: "11"
+        required: false
+  CustomsClearance:
+    type: object
+    properties:
+      status:
+        type: string
+        description: (attribute) status of customs clearance
+        example: Import
+        required: false
+      function:
+        type: string
+        description: (attribute) Function descriptor
+        example: Final
+        required: false
+      lineMerge:
+        type: string
+        description: (attribute) Line merge value
+        example: Yes
+        required: false
+      TransactionType:
+        type: string
+        description: Type of transaction
+        required: false
+      Location:
+        type: Location
+        description: Location definition
+        required: false
+      Utility:
+        type: Utility
+        description: Utility Definition
+        required: false
+  Location:
+    type: object
+    properties:
+      subClass:
+        type: string
+        description: (attribute) Location sub class
+        example: BorderPAssing
+        required: false
+      locationId:
+        type: string
+        description: (attribute) Id of location
+        example: NO123456
+        required: false
+      idType:
+        type: string
+        description: (attribute) Type of id
+        example: "157"
+        required: false
+      LocationName:
+        type: string
+        description: Name of Location
+        example: OSL Gardemoen
+        required: false
+  Utility:
+    type: object
+    properties:
+      usageCode:
+        type: string
+        description: (attribute) Usage of Utility
+        example: BorderPassing
+        required: false
+      UtilityValue:
+        type: UtilityValue[]
+        required: false
+  UtilityValue:
+    type: object
+    properties:
+      utilityValueType:
+        type: string
+        description: (attribute)
+        required: false
+      utilityValueCode:
+        type: string
+        description: (attribute)
+        required: false
+      UtilityText:
+        type: string
         required: false
   DeliveryTerms:
     type: object
@@ -1024,7 +1105,6 @@ types:
       Amount:
         type: ccAmount
         description: Amount expected on delivery
-        example: "123450"
         required: false
       ControlDigit:
         type: integer
@@ -1034,7 +1114,7 @@ types:
       DocumentId:
         type: string[]
         description: DocumentIds for Cash on Delivery
-        example: "SA-46789"
+        example: ["SA-46789"]
         required: false
       MonetaryAccount:
         type: object #CashOnDeliveryMonetaryAccount
@@ -1101,7 +1181,7 @@ types:
         example: TRANSPORT_DOCUMENT_NUMBER
         enum:
         - DESPATCH_ADVICE_NUMBER (AAK)
-        - TRANSPORT_DOCUMENT_NUMBER (AAS)
+        - TRANSPORT_DOCUMENT_NUMBER
         - CUSTOMS_DECLARATION_NUMBER (ABT)
         - ACCOUNT_NUMBER (ADE)
         - PROJECT_NUMBER (AEP)
@@ -1127,7 +1207,7 @@ types:
         description: Typeof freetext
         example: PICKUP_INSTRUCTIONS
         enum:
-        - PICKUP_INSTRUCTIONS (SIC)
+        - PICKUP_INSTRUCTIONS
         - DELIVERY_INSTRUCTIONS (DEL)
         - CARRIER_INSTRUCTIONS (SIC)
   ccWeight:
@@ -1193,7 +1273,7 @@ types:
       Value:
         type: string
         description: Amount the package is insureed for
-        example: 10000
+        example: "10000"
   ExchangableEquipment:
     type: object
     properties:
@@ -1284,6 +1364,11 @@ types:
         type: string
         description: Currencycode, valid currency codes allowed
         example: NOK
+      Value:
+        type: string
+        description: The Amount
+        example: "123.456"
+        required: false
   MonetaryAccount:
     type: object
     properties:
@@ -1314,14 +1399,17 @@ types:
   CustomsDetails:
     type: object
     properties:
-      Quantity:
-        type: number
+      QuantityOtherUnit:
+        type: string
         description: Quantity of packages
         required: false
-        format: float
       CountryOfOrigin:
         type: string
         description: Country of origin of the package
+        required: false
+      TradePreference:
+        type: ccTradePreference
+        description: Trade preference data for the package
         required: false
       TariffLineAmount:
         type: TariffLineAmount
@@ -1336,10 +1424,25 @@ types:
         description: Goods Description of the package
         required: false
       NetWeight:
-        type: number
-        format: float
+        type: ccWeight
         description: Net weight of the package
         required: false
+      GrossWeight:
+        type: ccWeight
+        description: Gross weight of the package
+        required: false
+  ccTradePreference:
+    type: object
+    properties:
+      tradeIndicator:
+        type: string
+        description: (attribute) Trade indicator
+        example: Preference
+        required: false
+      Value:
+        type: string
+        description: Trade Preference value
+        example: "3"
   DangerousGoods:
     type: object
     properties:
@@ -1443,14 +1546,14 @@ types:
     type: object
     properties:
       unitCode:
-      type: string
-      description: Unit for the length
-      example: CMT
-      enum:
-      - CMT
-      - DMT
-      - MTR
-      required: false
+        type: string
+        description: Unit for the length
+        example: CMT
+        enum:
+        - CMT
+        - DMT
+        - MTR
+        required: false
       Value:
         type: number
         format: float
@@ -1704,7 +1807,7 @@ types:
         enum: [ application/json,application/xml ]
     body:
       application/xml:
-        type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
+        type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, CustomsClearance, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
         examples:
           valid_request:
             displayName: Valid Request
@@ -1714,7 +1817,7 @@ types:
             value: !include examples/basic_example.xml
             description: Sample request to book a Bring Express Courier shipment.
       application/json:
-        type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
+        type: [CreateShipmentRequest, Shipment, ShipmentHeaders, DateAndTimes, Sender, Receiver, AdditionalParty, ProductAndService, CustomsClearance, DeliveryTerms, CashOnDelivery, GoodsItem, MonetaryAccount, DangerousGoods]
         examples:
           valid_request:
             displayName: Valid Request
