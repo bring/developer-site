@@ -171,7 +171,9 @@
                         {{ end }}
                       </div>
                       <div class="example-area">
-                        {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                        {{- if $components.examples -}}
+                          {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                        {{- end -}}
                       </div>
                     </div>
                     {{ end }}
