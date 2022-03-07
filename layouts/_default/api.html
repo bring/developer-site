@@ -112,7 +112,7 @@
                     <div class="flex flex-wrap mbxl pbxl mb-border bb gapm">
                       <div class="param-response-area">
                         <div class="flex align-ic mbm mts">
-                          <span class="mb-badge mb-badge--green text-note ttu mrs pas">{{ $type }}</span>
+                          {{- partial "api/endpoint-type" (dict "type" $type) -}}
                           <span class="flex-auto">
                             <pre class="flex align-ic pas mb0 wrap-text">
                               <span>{{ $path }}</span>
@@ -135,7 +135,7 @@
                           {{ $description := .description }}
                           {{ with .content }}
                           <details class="mbs">
-                            <summary class="{{ $responseColor }} pas">{{ $response }} {{ $description }}</summary>
+                            <summary class="{{ $responseColor }} pas"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
                           
                             <div class="bg-gray1 pam">
                               <label class="form__label text-basic dib" for="{{$endpointId}}">Response schema:</label>
@@ -166,12 +166,14 @@
                               </div>
                           </details>
                           {{ else }}
-                            <div class="{{ $responseColor }} pas mbs">{{ $response }} {{ $description }}</div>
+                            <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
                           {{ end }}
                         {{ end }}
                       </div>
                       <div class="example-area">
-                        {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                        {{- if $components.examples -}}
+                          {{- partial "api/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                        {{- end -}}
                       </div>
                     </div>
                     {{ end }}

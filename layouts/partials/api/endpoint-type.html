@@ -1,0 +1,11 @@
+{{- $class := "" -}}
+
+{{- if eq .type "get" -}}
+  {{- $class = "mb-badge--green" -}}
+{{- else if eq .type "post" -}}
+  {{- $class = "mb-badge--blue" -}}
+{{- else if eq .type "delete" -}}
+  {{- $class = "mb-badge--red" -}}
+{{- end -}}
+
+<span class="mb-badge {{ $class }} text-note ttu mrs pas">{{ .type }}</span>
