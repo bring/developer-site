@@ -37,11 +37,11 @@
         "pickupPoint": null
       },
       "product": {
-        "id": "9600",
+        "id": "9650",
         "customerNumber": "*************",
         "additionalServices": [
           {
-            "id": "1083"
+            "id": "1073"
           }
         ],
         "messageForRecipient": null
