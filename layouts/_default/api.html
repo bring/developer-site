@@ -112,7 +112,7 @@
                     <div class="flex flex-wrap mbxl pbxl mb-border bb gapm">
                       <div class="param-response-area">
                         <div class="flex align-ic mbm mts">
-                          <span class="mb-badge mb-badge--green text-note ttu mrs pas">{{ $type }}</span>
+                          {{- partial "api/endpoint-type" (dict "type" $type) -}}
                           <span class="flex-auto">
                             <pre class="flex align-ic pas mb0 wrap-text">
                               <span>{{ $path }}</span>
