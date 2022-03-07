@@ -135,7 +135,7 @@
                           {{ $description := .description }}
                           {{ with .content }}
                           <details class="mbs">
-                            <summary class="{{ $responseColor }} pas">{{ $response }} {{ $description }}</summary>
+                            <summary class="{{ $responseColor }} pas"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
                           
                             <div class="bg-gray1 pam">
                               <label class="form__label text-basic dib" for="{{$endpointId}}">Response schema:</label>
@@ -166,7 +166,7 @@
                               </div>
                           </details>
                           {{ else }}
-                            <div class="{{ $responseColor }} pas mbs">{{ $response }} {{ $description }}</div>
+                            <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
                           {{ end }}
                         {{ end }}
                       </div>
