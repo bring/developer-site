@@ -27,7 +27,7 @@
   {{ range $response, $_ := .responses }}
   {{ with .content }}
     {{ $responseId := print $endpointId "-" $response }}
-    <div data-response-ex="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
+    <div class="relative" data-response-ex="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
       {{ range $application, $_ := . }}
         {{/* {{ $response }} {{ $application }} */}}
 
@@ -39,7 +39,15 @@
             {{ range index $components.examples $response }}
               {{ $codeExample = . | jsonify (dict "indent" "  ") }}
               {{ highlight $codeExample "json" }}
-            
+              <button class="btn-link btn-link--copy flex align-ic absolute copy-btn">
+                <span
+                  data-mybicon="mybicon-copy"
+                  data-mybicon-class="icon-ui--s icon-ui--lightgray mrxs"
+                  data-mybicon-width="18"
+                  data-mybicon-height="18"
+                ></span>
+                <span class="copy-btn-label">Copy</span>
+              </button>
             {{/* If application type contains examples object */}}
             {{ else }}
               {{/* if there is only one object */}}
@@ -62,12 +70,21 @@
                 {{ range . }}
                   {{ $exPath := path.Split . }}
                   {{ $exId := print $responseId "-" $exPath.File }}
-                  <div data-response-subex="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                  <div class="relative" data-response-subex="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
                     {{ range index $components.examples $exPath.File }}
                       {{ $codeExample = . | jsonify (dict "indent" "  ") }}
                       {{ $codeExample = replace $codeExample "\\u0026" "&" }}
                       {{ highlight $codeExample "json" }}
                     {{ end }}
+                    <button class="btn-link btn-link--copy flex align-ic absolute copy-btn">
+                      <span
+                        data-mybicon="mybicon-copy"
+                        data-mybicon-class="icon-ui--s icon-ui--lightgray mrxs"
+                        data-mybicon-width="18"
+                        data-mybicon-height="18"
+                      ></span>
+                      <span class="copy-btn-label">Copy</span>
+                    </button>
                   </div>
                 {{ end }}
                 {{ $exInd = add $exInd 1 }}

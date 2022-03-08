@@ -158,6 +158,20 @@ summary:hover {
   color: #777;
 }
 
+.btn-link--copy {
+  top:.25rem;
+  right:.25rem;
+  background-color: hsl(200, 17%, 30%);
+  color: hsl(0, 0%, 85%);
+}
+.btn-link--copy:hover {
+  background-color: hsl(199, 17%, 36%);
+  color: hsl(0, 0%, 100%);
+}
+.btn-link--copy:hover svg {
+  color: hsl(0, 0%, 100%);
+}
+
 .oas-endpoints > div:last-of-type {
   border: none;
   margin-bottom: 0;

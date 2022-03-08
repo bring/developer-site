@@ -107,3 +107,32 @@ responseExSelects.forEach((select) => {
     switchExample(exampleSubContainers, "responseSubex", exId)
   })
 })
+
+// Copy button
+if('clipboard' in navigator) {
+  var copyButtons = document.querySelectorAll('.copy-btn')
+
+  if(copyButtons){
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', copyCode)
+    })
+
+    function copyCode() {
+      const copyBtn = this
+      const responseExampleParent = copyBtn.parentNode
+      const responseExample = responseExampleParent.querySelector('code').innerText
+
+      navigator.clipboard.writeText(responseExample)
+      .then(setCopiedBtnText)
+
+      function setCopiedBtnText() {
+        copyBtn.querySelector('.copy-btn-label').innerText = "Copied"
+        setTimeout(resetCopyBtnText,3000)
+      }
+
+      function resetCopyBtnText() {
+        copyBtn.querySelector('.copy-btn-label').innerText = "Copy"
+      }
+    }
+  }
+}
