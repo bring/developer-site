@@ -17,7 +17,7 @@
         {{- end -}}
         {{- $responseId := print $endpointId "-" $response -}}
         <button type="button" name="{{$endpointId}}" data-response-ex="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}">
-          {{- $response -}}
+          {{ $response }}
         </button>
         {{- $resInd = add $resInd 1 -}}
       {{- end -}}
@@ -45,7 +45,7 @@
                     {{- range . -}}
                       {{- $exPath := path.Split . -}}
                       {{- $exId := print $responseId "-" $exPath.File -}}
-                      <option value="{{$exId}}">{{- $name -}}</option>
+                      <option value="{{$exId}}">{{ $name }}</option>
                     {{- end -}}
                   {{- end -}}
                 </select>
