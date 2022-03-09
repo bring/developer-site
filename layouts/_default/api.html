@@ -36,7 +36,7 @@
             <section class="dev-docscontent__section">
               {{ template "_internal/disqus.html" $ }}
             </section>
-          {{ end }}
+          {{- end -}}
           </article>
         </main>
       {{- else if and (isset $.Params "oas") (or (eq (getenv "HUGO_ENV") "dev") (eq .Title "Address API" )) -}}
@@ -99,15 +99,15 @@
               </div>
             </section>
 
-            {{ $oasData := getJSON $.Params.oas }}
+            {{- $oasData := getJSON $.Params.oas -}}
             {{- partial "api/oas/endpoints.html" $oasData -}}
             
             <section class="dev-docscontent__section oas-endpoints maxw96r">
-              {{ with $oasData }}
-                {{ $components := .components }}
-                {{ range $path, $_ := .paths }}
-                  {{ range $type, $_ := . }}
-                    {{ $endpointId := .summary | anchorize }}
+              {{- with $oasData -}}
+                {{- $components := .components -}}
+                {{- range $path, $_ := .paths -}}
+                  {{- range $type, $_ := . -}}
+                    {{- $endpointId := .summary | anchorize -}}
                     <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
                     <div class="flex flex-wrap mbxl pbxl mb-border bb gapm">
                       <div class="param-response-area">
@@ -124,51 +124,51 @@
                         {{- partial "api/oas/request-params.html" (dict "parameters" .parameters) -}}
 
                         <h3 class="mbm">Responses</h3>
-                        {{ range $response, $_ := .responses }}
-                          {{ $responseColor := "response" }}
-                          {{ if and (ge $response 200) (lt $response 300) }}
-                            {{ $responseColor = "response success-code" }}
-                          {{ else if ge $response 300 }}
-                            {{ $responseColor = "response error-code" }}
-                          {{ end }}
+                        {{- range $response, $_ := .responses -}}
+                          {{- $responseColor := "response" -}}
+                          {{- if and (ge $response 200) (lt $response 300) -}}
+                            {{- $responseColor = "response success-code" -}}
+                          {{- else if ge $response 300 -}}
+                            {{- $responseColor = "response error-code" -}}
+                          {{- end -}}
 
-                          {{ $description := .description }}
-                          {{ with .content }}
+                          {{- $description := .description -}}
+                          {{- with .content -}}
                           <details class="mbs">
                             <summary class="{{ $responseColor }} pas"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
                           
                             <div class="bg-gray1 pam">
                               <label class="form__label text-basic dib" for="{{$endpointId}}">Response schema:</label>
                               <select id="{{$endpointId}}" class="form__control wauto maxw100p paxs dib schema-type-select">
-                                {{ $selected := "selected" }}
-                                {{ range $applicationType, $_ := . }}
+                                {{- $selected := "selected" -}}
+                                {{- range $applicationType, $_ := . -}}
                                   <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
                                     {{ $applicationType }}
                                   </option>
                                   {{$selected = ""}}
-                                {{ end }}
+                                {{- end -}}
                               </select>
 
-                              {{ range $application, $_ := . }}
+                              {{- range $application, $_ := . -}}
                                 <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
                                 {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
-                                {{ range $key, $_ := .schema }}
-                                  {{ if reflect.IsMap . }}
-                                    {{ range . }}
+                                {{- range $key, $_ := .schema -}}
+                                  {{- if reflect.IsMap . -}}
+                                    {{- range . -}}
                                       {{- partial "api/oas/response-schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
-                                    {{ end }}
-                                  {{ else if eq $key "$ref" }}
+                                    {{- end -}}
+                                  {{- else if eq $key "$ref" -}}
                                       {{- partial "api/oas/response-schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
-                                  {{ end }}
-                                {{ end }}
+                                  {{- end -}}
+                                {{- end -}}
                                 </dl>
-                              {{ end }}
+                              {{- end -}}
                               </div>
                           </details>
-                          {{ else }}
+                          {{- else -}}
                             <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
-                          {{ end }}
-                        {{ end }}
+                          {{- end -}}
+                        {{- end -}}
                       </div>
                       <div class="example-area">
                         {{- if $components.examples -}}
@@ -176,13 +176,13 @@
                         {{- end -}}
                       </div>
                     </div>
-                    {{ end }}
-                {{ end }}
-              {{ end }}
+                    {{- end -}}
+                {{- end -}}
+              {{- end -}}
             </section>
             {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
               <section id="api-support" class="dev-docscontent__section maxw64r">
-                {{ template "_internal/disqus.html" $ }}
+                {{- template "_internal/disqus.html" $ -}}
               </section>
             {{- end -}}
           </article>
@@ -191,7 +191,7 @@
       {{- else -}}
       {{- partial "api/docs.html" . -}}
     {{- end -}}
-    {{ partial "footer.html" . }}
+    {{- partial "footer.html" . -}}
     <div class="dev-obfuscator" data-drawer data-drawer-event></div>
   </div>
 {{- end -}}
