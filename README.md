@@ -83,16 +83,18 @@ the frontpage.
 
 ## Adding a new API
 
-Make a new folder in `content/api`, the folder name will be the url slug. Use
-RAML 1.0 for you documentation file. Make a index.md file with YAML frontmatter
-at the top. Place the api introduction and other text documentation in the YAML
-frontmatter.
+New APIs should use the Open API Specification (OAS 3).
 
-### Frontmatter example
+Make a new folder in `content/api`, the folder name will be the url slug. Make
+an index.md file with YAML frontmatter at the top (see example). Place the api
+introduction and other text documentation you might have in the frontmatter
+along with the link to the OAS JSON in an `oas` key.
+
+### YAML frontmatter example
 
 ```
 ---
-title: {Name of API, similar to the name in the raml file}
+title: {Name of API}
 layout: api
 menu:
   apidocs:
@@ -100,7 +102,7 @@ menu:
     title: {Name of API}
     url: /api/{foldername}
     parent: {parent, see config.toml}
-weight: {menu position prefixed by parent}
+weight: {menu position prefixed by parent value}
 disqus_identifier: api-{foldername} (optional, if you want comments)
 
 # Add alerts or important messages and they appear to the side or above of the main content
@@ -119,14 +121,16 @@ information:
     content |
       {Content as markdown}
 
+# In case you want to add content that is not in the OAS JSON file
 documentation:
   - title: {Title of section}
     content: |
       {Content as markdown}
+
+# OAS file link with endpoints, examples etc.
+oas: {Link to OAS JSON, typically outputted by Swagger}
 ---
 ```
-
-Open config.toml and add the new raml file path to the `apis` array.
 
 ## Service portfolio data sources
 
