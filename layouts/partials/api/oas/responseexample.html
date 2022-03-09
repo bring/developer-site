@@ -39,15 +39,7 @@
             {{ range index $components.examples $response }}
               {{ $codeExample = . | jsonify (dict "indent" "  ") }}
               {{ highlight $codeExample "json" }}
-              <button class="btn-link btn-link--copy flex align-ic absolute copy-btn">
-                <span
-                  data-mybicon="mybicon-copy"
-                  data-mybicon-class="icon-ui--s icon-ui--lightgray mrxs"
-                  data-mybicon-width="18"
-                  data-mybicon-height="18"
-                ></span>
-                <span class="copy-btn-label">Copy</span>
-              </button>
+              {{- partial "api/oas/copy-btn.html" -}}
             {{/* If application type contains examples object */}}
             {{ else }}
               {{/* if there is only one object */}}
@@ -76,15 +68,7 @@
                       {{ $codeExample = replace $codeExample "\\u0026" "&" }}
                       {{ highlight $codeExample "json" }}
                     {{ end }}
-                    <button class="btn-link btn-link--copy flex align-ic absolute copy-btn">
-                      <span
-                        data-mybicon="mybicon-copy"
-                        data-mybicon-class="icon-ui--s icon-ui--lightgray mrxs"
-                        data-mybicon-width="18"
-                        data-mybicon-height="18"
-                      ></span>
-                      <span class="copy-btn-label">Copy</span>
-                    </button>
+                    {{- partial "api/oas/copy-btn.html" -}}
                   </div>
                 {{ end }}
                 {{ $exInd = add $exInd 1 }}
@@ -104,7 +88,7 @@
                   {{ range $components.examples }}
                       {{ .value }}
                   {{ end }}
-                  {{- with partial "api/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
+                  {{- with partial "api/oas/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
                     {{ $codeExample = print . | jsonify (dict "indent" "  ") }}
                     {{ highlight $codeExample "json" "tabWidth=2" }}
                   {{ end }}
