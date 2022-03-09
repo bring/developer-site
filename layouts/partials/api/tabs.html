@@ -91,7 +91,7 @@
         class="dev-codetabs__panel {{ $firstActive }}"
         id="{{ $tabIDExample }}"
       >
-        <div>
+        <div class="relative">
           {{- with .description -}}
             {{- if in (string .) "\n\n" -}}
               {{ .| markdownify }}
@@ -100,6 +100,17 @@
             {{- end -}}
           {{- end -}}
           {{ highlight .value $highlightLang "" }}
+          {{- if eq $formatType "Request" -}}
+          <button class="btn-link btn-link--copy flex align-ic absolute copy-btn">
+            <span
+              data-mybicon="mybicon-copy"
+              data-mybicon-class="icon-ui--s icon-ui--lightgray mrxs"
+              data-mybicon-width="18"
+              data-mybicon-height="18"
+            ></span>
+            <span class="copy-btn-label">Copy</span>
+          </button>
+          {{- end -}}
         </div>
       </div>
     {{- end -}}
