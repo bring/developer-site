@@ -43,3 +43,14 @@
 .btn-link--filter:focus-visible svg {
   fill: var(--gray-40);
 }
+
+.select-icon {
+  fill: var(--gray-60);
+  transition: background var(--easeout-15), fill var(--easeout-15);
+  border-radius: 2px;
+}
+
+.active .select-icon {
+  fill: var(--gray-40);
+  background: var(--gray-60)
+}

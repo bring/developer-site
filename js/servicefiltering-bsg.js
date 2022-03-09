@@ -1,7 +1,8 @@
 const bsgTable = document.querySelector("#services-bsg")
 const bsgRows = bsgTable.querySelectorAll("tbody tr")
 const bsgFilterInput = document.querySelector("#bsg-textfilter")
-const bsgFilterBtns = document.querySelectorAll("[data-bsgfilterbtn]")
+const bsgFilterBtns = document.querySelectorAll("[data-bsg-filterbtn]")
+const bsgFilterSetBtns = document.querySelectorAll("[data-bsg-filterset]")
 const bsgFilterSets = document.querySelectorAll("#bsg-filtersets fieldset")
 const bsgFilterChecks = document.querySelectorAll(".checkitem")
 const bsgClearBtn = document.querySelector("#bsg-clearfilters")
@@ -49,24 +50,16 @@ function bsgEmptyCheck() {
 
 // Close filter
 function bsgCloseFilter() {
-  const activeBtn = document.querySelector("[data-bsgfilterbtn].active")
-  if (activeBtn) {
-    activeBtn.classList.remove("active")
+  const activeSet = document.querySelector("[data-bsg-filterset].active")
+  if (activeSet) {
+    activeSet.classList.remove("active")
   }
   bsgFilterSets.forEach((set) => {
     set.hidden = true
     set.classList.remove("flex")
   })
 
-  let clearFilters = true
-  bsgFilterChecks.forEach((filterCheck) => {
-    if (filterCheck.checked == true) {
-      clearFilters = false
-    }
-  })
-  if (clearFilters) {
-    bsgClearFilters()
-  }
+  toggleRows()
 }
 
 // Clear all filters
@@ -78,6 +71,9 @@ function bsgClearFilters() {
   })
   bsgRows.forEach((row) => {
     row.hidden = false
+  })
+  bsgFilterBtns.forEach((filterBtn) => {
+    filterBtn.classList.remove("active")
   })
   bsgFilterInput.disabled = false
   bsgFilterInput.value = ""
@@ -133,26 +129,34 @@ bsgFilterInput.addEventListener("keyup", function (e) {
 })
 
 // Render combofilter overview
-function comboFilter(allFilters) {
+function makeComboOverview(allFilters) {
   bsgFilterCombo.innerHTML = ""
+
+  function appliedBtn(active, title) {
+    return (
+      '<button type="button" data-bsg-title="' +
+      active +
+      '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+      title +
+      "</button>"
+    )
+  }
+
   for (let activeFilter in allFilters) {
     if (allFilters[activeFilter].length > 0) {
       const filterTitle = document.querySelector(
-        '[data-bsgfilterbtn="' + activeFilter + '"]'
+        '[data-bsg-filterset="' + activeFilter + '"]'
       ).textContent
       let appliedFilter =
-        '<button type="button" data-bsgtitle="' +
-        activeFilter +
-        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
-        filterTitle +
-        '</button><div class="plm flex flex-wrap">'
+        appliedBtn(activeFilter, filterTitle) +
+        '<div class="plm flex flex-wrap">'
       allFilters[activeFilter].forEach((filter) => {
         appliedFilter =
           appliedFilter +
           '<button type="button"' +
-          'data-bsgtype="' +
+          'data-bsg-type="' +
           activeFilter +
-          '" data-bsgtitle="' +
+          '" data-bsg-title="' +
           filter +
           '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
           filter +
@@ -160,17 +164,23 @@ function comboFilter(allFilters) {
       })
       appliedFilter = appliedFilter + "</div>"
       bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
-      window.loadMybringIcons()
+    } else if (allFilters[activeFilter] === true) {
+      const filterTitle = document.querySelector(
+        '[data-bsg-filterbtn="' + activeFilter + '"]'
+      ).textContent
+      let appliedFilter = appliedBtn(activeFilter, filterTitle)
+      bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
     }
+    window.loadMybringIcons()
   }
 }
 
 function toggleCheckbox(box) {
   const checkEl = document.querySelector(
     'input[data-filter="' +
-      box.dataset.bsgtype +
+      box.dataset.bsgType +
       '"][value="' +
-      box.dataset.bsgtitle +
+      box.dataset.bsgTitle +
       '"'
   )
   checkEl.click()
@@ -178,18 +188,26 @@ function toggleCheckbox(box) {
 
 // Remove filters via combo overview
 bsgFilterCombo.addEventListener("click", function (e) {
-  // Delete all
-  if (e.target.dataset.bsgtitle && !e.target.dataset.bsgtype) {
+  if (e.target.dataset.bsgTitle && !e.target.dataset.bsgType) {
+    // Sets
     let subButtons = document.querySelectorAll(
-      'button[data-bsgtype="' + e.target.dataset.bsgtitle + '"]'
+      'button[data-bsg-type="' + e.target.dataset.bsgTitle + '"]'
     )
     subButtons.forEach((subButton) => {
       toggleCheckbox(subButton)
     })
+
+    // Single button filters
+    const checkEl = document.querySelector(
+      'button[data-bsg-filterbtn="' + e.target.dataset.bsgTitle + '"]'
+    )
+    if (checkEl) {
+      checkEl.click()
+    }
   }
 
-  // Delete one
-  if (e.target.dataset.bsgtype && e.target.dataset.bsgtitle) {
+  // Single subfilters
+  if (e.target.dataset.bsgType && e.target.dataset.bsgTitle) {
     toggleCheckbox(e.target)
   }
 })
@@ -200,10 +218,113 @@ bsgFilterSets.forEach((set) => {
   allFilters[set.id] = []
 })
 
+function toggleRows() {
+  let activeFilterSets = 0
+  for (let activeFilter in allFilters) {
+    if (
+      allFilters[activeFilter].length > 0 ||
+      allFilters[activeFilter] === true
+    ) {
+      activeFilterSets++
+      bsgFilterInput.disabled = true
+      bsgFilterInput.value = ""
+    }
+  }
+
+  // Clear all filtering if sets are closed and none are active
+  let fbActive = false
+  let fsActive = false
+  bsgFilterBtns.forEach((btn) => {
+    if (btn.classList.contains("active")) {
+      fbActive = true
+      return
+    }
+  })
+  bsgFilterSetBtns.forEach((btn) => {
+    if (btn.classList.contains("active")) {
+      fsActive = true
+      return
+    }
+  })
+  if (!fbActive && !fsActive && activeFilterSets <= 0) {
+    bsgClearFilters()
+    return
+  }
+
+  // Toggle table rows
+  if (activeFilterSets <= 0) {
+    bsgRows.forEach((row) => {
+      row.hidden = false
+    })
+  } else {
+    bsgRows.forEach((row) => {
+      row.hidden = true
+
+      // Check if row data matches at least one active filter in each active set
+      let matches = 0
+      for (const activeFilter in allFilters) {
+        if (
+          allFilters[activeFilter].length > 0 ||
+          allFilters[activeFilter] === true
+        ) {
+          const currentFilters = allFilters[activeFilter]
+          const rowDataAtt = '[data-filter="' + activeFilter + '"]'
+          if (typeof currentFilters === "object") {
+            currentFilters.forEach((currentFilter) => {
+              if (row.querySelector(rowDataAtt)) {
+                const currentRowData = row
+                  .querySelector(rowDataAtt)
+                  .textContent.toLowerCase()
+                if (currentRowData === currentFilter.toLowerCase()) {
+                  matches++
+                }
+              }
+            })
+          } else {
+            if (row.querySelector(rowDataAtt)) {
+              const currentRowData = row
+                .querySelector(rowDataAtt)
+                .textContent.toLowerCase()
+                .trim()
+              if (currentRowData === "yes") {
+                matches++
+              }
+            }
+          }
+        }
+      }
+      if (matches === activeFilterSets) {
+        row.hidden = false
+      }
+    })
+  }
+}
+
+// Single button filters
 bsgFilterBtns.forEach((filterBtn) => {
+  filterBtn.addEventListener("click", function () {
+    const activeFilter = this.dataset.bsgFilterbtn
+    if (this.classList.contains("active")) {
+      this.classList.remove("active")
+      allFilters[activeFilter] = false
+    } else {
+      this.classList.add("active")
+      allFilters[activeFilter] = true
+      bsgClearBtn.classList.remove("dn")
+      bsgHideCutoffs()
+    }
+
+    makeComboOverview(allFilters)
+    toggleRows()
+    bsgEmptyCheck()
+  })
+})
+
+// Filtersets
+bsgFilterSetBtns.forEach((filterBtn) => {
   // Toggle filterset
   filterBtn.addEventListener("click", function (e) {
-    const currentFilterSet = e.target.dataset.bsgfilterbtn
+    const currentFilterSet = e.target.dataset.bsgFilterset
     if (e.target.classList.contains("active")) {
       bsgCloseFilter()
       return
@@ -245,47 +366,8 @@ bsgFilterBtns.forEach((filterBtn) => {
           }
         })
 
-        let activeFilterSets = 0
-        for (let activeFilter in allFilters) {
-          if (allFilters[activeFilter].length > 0) {
-            activeFilterSets++
-          }
-        }
-
-        comboFilter(allFilters)
-
-        // Toggle table rows
-        if (activeFilterSets <= 0) {
-          bsgRows.forEach((row) => {
-            row.hidden = false
-          })
-        } else {
-          bsgRows.forEach((row) => {
-            row.hidden = true
-
-            // Check if row data matches at least one active filter in each active filterset
-            let matches = 0
-            for (const activeFilter in allFilters) {
-              if (allFilters[activeFilter].length > 0) {
-                const currentFilters = allFilters[activeFilter]
-                const rowDataAtt = '[data-filter="' + activeFilter + '"]'
-                currentFilters.forEach((currentFilter) => {
-                  if (row.querySelector(rowDataAtt)) {
-                    const currentRowData = row
-                      .querySelector(rowDataAtt)
-                      .textContent.toLowerCase()
-                    if (currentRowData === currentFilter.toLowerCase()) {
-                      matches++
-                    }
-                  }
-                })
-              }
-            }
-            if (matches === activeFilterSets) {
-              row.hidden = false
-            }
-          })
-        }
+        makeComboOverview(allFilters)
+        toggleRows()
         bsgEmptyCheck()
       })
     })
