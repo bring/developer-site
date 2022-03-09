@@ -159,8 +159,8 @@ summary:hover {
 }
 
 .btn-link--copy {
-  top:.25rem;
-  right:.25rem;
+  top:.5rem;
+  right:1.2rem;
   background-color: hsl(200, 17%, 30%);
   color: hsl(0, 0%, 85%);
 }
