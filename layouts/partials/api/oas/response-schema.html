@@ -39,7 +39,9 @@
               <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
                 <dt class="pls">
                   <code>{{- $param -}}</code>
-                  {{if eq $param $requiredParam}}{{- partial "api/oas/required.html" -}}{{- end -}}
+                  {{- if eq $param $requiredParam -}}
+                    {{- partial "api/oas/required.html" -}}
+                  {{- end -}}
                 </dt>
                 <dd class="pls">
                   {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
@@ -53,7 +55,7 @@
                   {{- partial "api/oas/param-toggle-btn.html" ( dict "endpointId" $endpointId "param" $param ) -}}
                   {{- if eq $param $requiredParam -}}
                     <div class="plm mls">
-                    {{ partial "api/oas/required.html" }}
+                    {{- partial "api/oas/required.html" -}}
                     </div>
                   {{- end -}}
                 </dt>
@@ -63,12 +65,14 @@
               </div>
 
           {{- else -}}
-            {{ $isParent = false }}
-            {{if reflect.IsMap $_ -}}
+            {{- $isParent = false -}}
+            {{- if reflect.IsMap $_ -}}
             <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
               <dt>
                 <code class="mls">{{- $param -}}</code>
-                {{if eq $param $requiredParam}}<div class="mls">{{- partial "api/oas/required.html" -}}</div>{{- end -}}
+                {{- if eq $param $requiredParam}}
+                  <div class="mls">{{- partial "api/oas/required.html" -}}</div>
+                {{- end -}}
               </dt>
               <dd class="pls minw0">
                 {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}

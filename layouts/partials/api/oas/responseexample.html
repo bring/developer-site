@@ -17,7 +17,7 @@
         {{- end -}}
         {{- $responseId := print $endpointId "-" $response -}}
         <button type="button" name="{{$endpointId}}" data-response-ex="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}">
-          {{- $response -}}
+          {{ $response }}
         </button>
         {{- $resInd = add $resInd 1 -}}
       {{- end -}}
