@@ -155,10 +155,10 @@
                                 {{- range $key, $_ := .schema -}}
                                   {{- if reflect.IsMap . -}}
                                     {{- range . -}}
-                                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
+                                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
                                     {{- end -}}
                                   {{- else if eq $key "$ref" -}}
-                                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "schemas" $components "nested" false "endpointId" $endpointId) -}}
+                                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
                                   {{- end -}}
                                 {{- end -}}
                                 </dl>

@@ -1,4 +1,4 @@
-{{- $schemas := .schemas -}}
+{{- $components := .components -}}
 {{- $schemaPath := path.Split .ctx -}}
 {{- $schemaRef := $schemaPath.File -}}
 {{- $endpointId := .endpointId -}}
@@ -6,7 +6,7 @@
 {{- $required := slice -}}
 {{- $requiredParam := "" -}}
 
-{{- range $schemas -}}
+{{- range $components -}}
     {{- $responseSchema := index . $schemaRef -}}
 
     {{- range $key, $value := $responseSchema -}}
@@ -91,12 +91,12 @@
                 {{- if reflect.IsMap . -}}
                   {{- range $j, $_ := . -}}
                     {{- if eq $j "$ref" -}}
-                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "schemas" $schemas "nested" true) -}}
+                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true) -}}
                     {{- end -}}
                   {{- end -}}
                 {{- else -}}
                   {{- if eq $i "$ref" -}}
-                    {{- partial "api/oas/response-schema.html" (dict "ctx" . "schemas" $schemas "nested" true) -}}
+                    {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true) -}}
                   {{- end -}}
                 {{- end -}}
               {{- end -}}
