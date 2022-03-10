@@ -1,13 +1,14 @@
-{{- $schemas := .schemas -}}
+{{- $components := .components -}}
 {{- $schemaPath := path.Split .ctx -}}
 {{- $schemaRef := $schemaPath.File -}}
 {{- $level := add .level 1 -}}
 {{- $prevLevel := .level -}}
 {{- $ind := .ind -}}
 {{- $iLen := 0 -}}
-{{- $codeExample := "" -}}
+{{- $codeExample := dict -}}
+{{/*  {{ $.Scratch.Add "codex" }}  */}}
 
-{{- range $schemas -}}
+{{- range $components -}}
   {{- $responseSchema := index . $schemaRef -}}
   {{- range $key, $_ := $responseSchema -}}
     {{- $scratches := newScratch -}}
@@ -23,7 +24,7 @@
           {{- end -}}
           {{- /* KEY  */ -}}
           {{- if lt $level 2 -}}
-            {{- $codeExample = print $codeExample "\"" $param "\": " $level $prevLevel $iLen  -}}
+            {{- $codeExample = $codeExample | append $param -}}
           {{- end -}}
           {{/* "{{- $param -}}":  */}}
 
@@ -33,7 +34,7 @@
               {{- if or (not (reflect.IsMap .)) (not (reflect.IsSlice .)) -}}
                 {{- if eq $i "type" -}}
                   {{- if eq . "array" -}}
-                    {{- $codeExample = print $codeExample "[\n" -}}
+                    {{/*  {{- $codeExample = $codeExample | append "[" -}}  */}}
                   {{- else -}}
                     {{- $kvPair := print "\"" $param "\": \"" . "\"" -}}
                     {{- $scratches.SetInMap $schemaRef $param $kvPair -}}
@@ -53,8 +54,8 @@
               {{- if reflect.IsMap . -}}
                 {{- range $j, $_ := . -}}
                   {{- if eq $j "$ref" -}}
-                    {{- with partial "api/response.html" (dict "ctx" . "schemas" $schemas "level" $level "ind" $ind) -}}
-                      {{- $codeExample = print $codeExample . -}}
+                    {{- with partial "api/oas/response.html" (dict "ctx" . "components" $components "level" $level "ind" $ind) -}}
+                      {{- $codeExample = $codeExample | append . -}}
                     {{- end -}}
                   {{- end -}}
                 {{- end -}}
@@ -67,12 +68,12 @@
 
               {{- else -}}
                 {{- if eq $i "$ref" -}}
-                  {{- with partial "api/response.html" (dict "ctx" . "schemas" $schemas "level" $level "ind" $ind) -}}
-                    {{- $codeExample = print $codeExample . -}}
+                  {{- with partial "api/oas/response.html" (dict "ctx" . "components" $components "level" $level "ind" $ind) -}}
+                    {{- $codeExample = $codeExample | append . -}}
                   {{- end -}}
                 {{- else if eq $i "type" -}}
                   {{- if eq . "array" -}}
-                    {{- $codeExample = print $codeExample "]\n" -}}
+                    {{/*  {{- $codeExample = $codeExample | append "]" -}}  */}}
                   {{- else -}}
                     {{- /* TYPE  */ -}}
                     {{- /* "{{- . -}}" */ -}}
@@ -91,13 +92,13 @@
   {{- else -}}
   {{- end -}}
   {{- if gt (len $scratches.Values) 0 -}}
-    {{- $codeExample = print $codeExample "{\n" -}}
+    {{- $codeExample = $codeExample | append "{" -}}
   {{- end -}}
   {{- range $scratches.Values -}}
-    {{- $codeExample = print $codeExample "  " (delimit . ", \n  ") -}}
+    {{- $codeExample = $codeExample | append . -}}
   {{- end -}}
   {{- if gt (len $scratches.Values) 0 -}}
-    {{- $codeExample = print $codeExample "\n}" -}}
+    {{- $codeExample = $codeExample | append "}" -}}
   {{- end -}}
 {{- end -}}
 {{- end -}}

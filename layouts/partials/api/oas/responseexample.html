@@ -1,0 +1,106 @@
+{{- $response := .response -}}
+{{- $components := .components -}}
+{{- $endpointId := .endpointId -}}
+
+<h3>Response examples</h3>
+{{- $codeExample := "" -}}
+{{- $resInd := 0 -}}
+<div class="bg-gray3 rad-t2px mts sticky-6r">
+  <div class="pam flex flex-wrap">
+    {{- range $response, $_ := .responses -}}
+      {{- with .content -}}
+        {{- $responseColor := "" -}}
+        {{- if and (ge $response 200) (lt $response 300) -}}
+          {{- $responseColor = "txt-success" -}}
+        {{- else if ge $response 300 -}}
+          {{- $responseColor = "txt-error" -}}
+        {{- end -}}
+        {{- $responseId := print $endpointId "-" $response -}}
+        <button type="button" name="{{$endpointId}}" data-response-ex="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}">
+          {{ $response }}
+        </button>
+        {{- $resInd = add $resInd 1 -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+  {{- $resInd = 0 -}}
+  {{- range $response, $_ := .responses -}}
+    {{- with .content -}}
+      {{- $responseId := print $endpointId "-" $response -}}
+      <div class="relative" data-response-ex="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
+      {{- range $application, $_ := . -}}
+        {{- if in $application "json" -}}
+          {{/* If application type contains examples object */}}
+          {{- if isset . "examples" -}}
+            {{- range index $components.examples $response -}}
+              {{- $codeExample = . | jsonify (dict "indent" "  ") -}}
+              {{- highlight $codeExample "json" -}}
+              {{- partial "api/oas/copy-btn.html" -}}
+            {{- else -}}
+              {{/* if there is only one object */}}
+              {{- if gt (len .examples) 1 -}}
+              <div class="phm pvm bg-gray4">
+                <select class="form__control w100p mb0" name="{{$responseId}}" data-response-subex>
+                  {{- range $name, $_ := .examples -}}
+                    {{- range . -}}
+                      {{- $exPath := path.Split . -}}
+                      {{- $exId := print $responseId "-" $exPath.File -}}
+                      <option value="{{$exId}}">{{$name}}</option>
+                    {{- end -}}
+                  {{- end -}}
+                </select>
+              </div>
+              {{- end -}}
+              
+              {{- $exInd := 0 -}}
+
+              {{- range .examples -}}
+                {{- range . -}}
+                  {{- $exPath := path.Split . -}}
+                  {{- $exId := print $responseId "-" $exPath.File -}}
+                  <div class="relative" data-response-subex="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
+                    {{- range index $components.examples $exPath.File -}}
+                      {{- $codeExample = . | jsonify (dict "indent" "  ") -}}
+                      {{- $codeExample = replace $codeExample "\\u0026" "&" -}}
+                      {{- highlight $codeExample "json" -}}
+                    {{- end -}}
+                    {{- partial "api/oas/copy-btn.html" -}}
+                  </div>
+                {{- end -}}
+                {{- $exInd = add $exInd 1 -}}
+              {{- end -}}
+              {{/* TODO: if there are more than one object/example */}}
+            {{- end -}}
+
+          {{/* If application type only contains schema */}}
+          {{- else if isset . "schemas" -}}
+            {{- range $key, $_ := .schema -}}
+              {{- if reflect.IsMap . -}}
+                {{- range . -}}
+                  {{- . -}}
+                {{- end -}}
+              {{- else -}}
+                {{- if eq $key "$ref" -}}
+                  {{- range $components.examples -}}
+                      {{- .value -}}
+                  {{- end -}}
+                  {{- with partial "api/oas/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
+                    {{- $codeExample = print . | jsonify (dict "indent" "  ") -}}
+                    {{- highlight $codeExample "json" "tabWidth=2" -}}
+                  {{- end -}}
+                {{- else -}}
+                  Not ref not map
+                  {{- . -}}
+                {{- end -}}
+              {{- end -}}
+            {{- else -}}
+              No samples
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      </div>
+      {{- $resInd = add $resInd 1 -}}
+    {{- end -}}
+  {{- end -}}
+</div>
