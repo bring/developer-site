@@ -17,11 +17,10 @@
       {{ $example := "" }}
       {{ $enum := slice }}
       {{ $type := "any" }}
+      {{ $name := .name }}
 
-      {{ range $key, $value := . }}
-      {{ if eq $key "name" }}
-        {{ $name = $value }}
-      {{ else if eq $key "schema" }}
+      {{ range $key, $value := .}}
+      {{ if eq $key "schema" }}
         {{ with .type }}
           {{ $type = . }}
         {{ end }}
