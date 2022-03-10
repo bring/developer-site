@@ -558,7 +558,7 @@
     "RequestCode": "SINGLE_INDOOR",
     "Type": "B2C",
     "Return": "-",
-    "Booking": "Yes",
+    "Booking": "-",
     "RequiredSetup": "Customer setup",
     "ShippingGuide": "Yes",
     "ListPrice": "-",
