@@ -202,7 +202,6 @@ function renderResult(allFilters, showAllRows, filterKey) {
     // Always iterate in the same order
     const setOrder = ["rifamily", "riapi", "rireptype"]
 
-    console.log("helaftens")
     riRows.forEach((row) => {
       let setInd = 0
       let hideRow = true
@@ -236,6 +235,8 @@ function renderResult(allFilters, showAllRows, filterKey) {
         }
       })
 
+      // Insert additional cells
+      if (row.hidden === false) {
 
       //  queries.forEach((query) => {
         //  if (row.dataset[filterKey].toLowerCase().includes(query)) {
@@ -320,6 +321,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
           // }
         // })
       //}
+      }
     })
   }
 }
