@@ -83,7 +83,6 @@ function riCloseFilter() {
   if (clearFilters) {
     riClearFilters()
   }
-
 }
 
 // Clear all filters
@@ -113,6 +112,7 @@ riCutoffBtn.addEventListener("click", function () {
 })
 
 riClearBtn.addEventListener("click", function () {
+  riCloseFilter()
   riClearFilters()
 })
 
