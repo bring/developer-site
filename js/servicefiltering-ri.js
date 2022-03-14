@@ -385,14 +385,19 @@ riFilterBtns.forEach((filterBtn) => {
         const filterKey = e.target.dataset.filter
 
         // Store active filters
-        let showAllRows = true
         allFilters[filterKey] = []
         riSetChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
             allFilters[filterKey].push(setCheck.value)
-            showAllRows = false
           }
         })
+
+        let showAllRows = true
+        for (const [k, _] of Object.entries(allFilters)) {
+          if (allFilters[k].length > 0) {
+            showAllRows = false
+          }
+        }
 
         comboFilter(allFilters)
         renderResult(allFilters, showAllRows, filterKey)
