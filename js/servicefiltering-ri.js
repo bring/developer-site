@@ -206,6 +206,14 @@ function renderResult(allFilters, showAllRows, filterKey) {
       let setInd = 0
       let hideRow = true
 
+      if (filterKey === "rirepname") {
+        const query = allFilters
+        row.hidden = true
+        if (row.dataset[filterKey].toLowerCase().includes(query)) {
+            row.hidden = false
+        }
+
+      } else {
       setOrder.forEach((setName) => {
         const filterSet = allFilters[setName]
         if (filterSet) {
@@ -234,30 +242,10 @@ function renderResult(allFilters, showAllRows, filterKey) {
           setInd = setInd + 1
         }
       })
+    }
 
       // Insert additional cells
       if (row.hidden === false) {
-
-      //  queries.forEach((query) => {
-        //  if (row.dataset[filterKey].toLowerCase().includes(query)) {
-        //    row.hidden = false
-
-        //  riFilterSets.forEach((set) => {
-        //    if (allFilters[set.id] && set.id != filterKey) {
-        //      console.log(set.id)
-        //      allFilters[set.id].forEach((filtersetValue => {
-        //        if (row.dataset[set.id].includes(filtersetValue)) {
-        //          row.hidden = false
-        //        } else {
-        //          row.hidden = true
-        //        }
-        //      }
-        //    ))
-        //    }
-        //  })
-
-
-
             if (row.dataset.rifamily != prevFamily) {
               setId++
             }
@@ -318,33 +306,26 @@ function renderResult(allFilters, showAllRows, filterKey) {
 
             prevApi = row.dataset.riapi
             prevFamily = row.dataset.rifamily
-          // }
-        // })
-      //}
       }
     })
   }
 }
 
-// TODO: FIX this again, queries don’t work anymore
 // Input filter
 riFilterInput.addEventListener("keyup", function (e) {
   riHideCutoffs()
-  const query = e.target.value.toLowerCase()
+  let query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1 && query !== "-"
   const filterKey = "rirepname"
   let showAllRows = true
-  let queries = [""]
   if (notEmpty) {
     riClearBtn.classList.remove("dn")
     showAllRows = false
-    queries = [query]
   } else {
     riClearBtn.classList.add("dn")
   }
 
-  removeInsCells()
-  renderResult(showAllRows, queries, filterKey)
+  renderResult(query, showAllRows, filterKey)
   riEmptyCheck()
 })
 
