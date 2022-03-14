@@ -1,7 +1,6 @@
 const bsgTable = document.querySelector("#services-bsg")
 const bsgRows = bsgTable.querySelectorAll("tbody tr")
 const bsgFilterInput = document.querySelector("#bsg-textfilter")
-const bsgFilterBtns = document.querySelectorAll("[data-bsg-filterbtn]")
 const bsgFilterSetBtns = document.querySelectorAll("[data-bsg-filterset]")
 const bsgFilterSets = document.querySelectorAll("#bsg-filtersets fieldset")
 const bsgFilterChecks = document.querySelectorAll(".checkitem")
@@ -71,9 +70,6 @@ function bsgClearFilters() {
   })
   bsgRows.forEach((row) => {
     row.hidden = false
-  })
-  bsgFilterBtns.forEach((filterBtn) => {
-    filterBtn.classList.remove("active")
   })
   bsgFilterInput.disabled = false
   bsgFilterInput.value = ""
@@ -164,12 +160,6 @@ function makeComboOverview(allFilters) {
       })
       appliedFilter = appliedFilter + "</div>"
       bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
-    } else if (allFilters[activeFilter] === true) {
-      const filterTitle = document.querySelector(
-        '[data-bsg-filterbtn="' + activeFilter + '"]'
-      ).textContent
-      let appliedFilter = appliedBtn(activeFilter, filterTitle)
-      bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
     }
     window.loadMybringIcons()
   }
@@ -196,14 +186,6 @@ bsgFilterCombo.addEventListener("click", function (e) {
     subButtons.forEach((subButton) => {
       toggleCheckbox(subButton)
     })
-
-    // Single button filters
-    const checkEl = document.querySelector(
-      'button[data-bsg-filterbtn="' + e.target.dataset.bsgTitle + '"]'
-    )
-    if (checkEl) {
-      checkEl.click()
-    }
   }
 
   // Single subfilters
@@ -221,10 +203,7 @@ bsgFilterSets.forEach((set) => {
 function toggleRows() {
   let activeFilterSets = 0
   for (let activeFilter in allFilters) {
-    if (
-      allFilters[activeFilter].length > 0 ||
-      allFilters[activeFilter] === true
-    ) {
+    if (allFilters[activeFilter].length > 0) {
       activeFilterSets++
       bsgFilterInput.disabled = true
       bsgFilterInput.value = ""
@@ -232,21 +211,14 @@ function toggleRows() {
   }
 
   // Clear all filtering if sets are closed and none are active
-  let fbActive = false
   let fsActive = false
-  bsgFilterBtns.forEach((btn) => {
-    if (btn.classList.contains("active")) {
-      fbActive = true
-      return
-    }
-  })
   bsgFilterSetBtns.forEach((btn) => {
     if (btn.classList.contains("active")) {
       fsActive = true
       return
     }
   })
-  if (!fbActive && !fsActive && activeFilterSets <= 0) {
+  if (!fsActive && activeFilterSets <= 0) {
     bsgClearFilters()
     return
   }
@@ -263,34 +235,19 @@ function toggleRows() {
       // Check if row data matches at least one active filter in each active set
       let matches = 0
       for (const activeFilter in allFilters) {
-        if (
-          allFilters[activeFilter].length > 0 ||
-          allFilters[activeFilter] === true
-        ) {
+        if (allFilters[activeFilter].length > 0) {
           const currentFilters = allFilters[activeFilter]
           const rowDataAtt = '[data-filter="' + activeFilter + '"]'
-          if (typeof currentFilters === "object") {
-            currentFilters.forEach((currentFilter) => {
-              if (row.querySelector(rowDataAtt)) {
-                const currentRowData = row
-                  .querySelector(rowDataAtt)
-                  .textContent.toLowerCase()
-                if (currentRowData === currentFilter.toLowerCase()) {
-                  matches++
-                }
-              }
-            })
-          } else {
+          currentFilters.forEach((currentFilter) => {
             if (row.querySelector(rowDataAtt)) {
               const currentRowData = row
                 .querySelector(rowDataAtt)
                 .textContent.toLowerCase()
-                .trim()
-              if (currentRowData === "yes") {
+              if (currentRowData === currentFilter.toLowerCase()) {
                 matches++
               }
             }
-          }
+          })
         }
       }
       if (matches === activeFilterSets) {
@@ -299,26 +256,6 @@ function toggleRows() {
     })
   }
 }
-
-// Single button filters
-bsgFilterBtns.forEach((filterBtn) => {
-  filterBtn.addEventListener("click", function () {
-    const activeFilter = this.dataset.bsgFilterbtn
-    if (this.classList.contains("active")) {
-      this.classList.remove("active")
-      allFilters[activeFilter] = false
-    } else {
-      this.classList.add("active")
-      allFilters[activeFilter] = true
-      bsgClearBtn.classList.remove("dn")
-      bsgHideCutoffs()
-    }
-
-    makeComboOverview(allFilters)
-    toggleRows()
-    bsgEmptyCheck()
-  })
-})
 
 // Filtersets
 bsgFilterSetBtns.forEach((filterBtn) => {
