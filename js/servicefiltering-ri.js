@@ -184,9 +184,9 @@ function toggleCheckbox(box) {
 }
 
 // Render result
-function renderResult(activeFilterSets, allFilters, showAllRows, queries, filterKey) {
+function renderResult(allFilters, showAllRows, filterKey) {
   removeInsCells()
-  if (/*activeFilterSets <= 0 ||*/ showAllRows) {
+  if (showAllRows) {
     riRows.forEach((row) => {
       hideOriginals(false)
       row.hidden = false
@@ -199,33 +199,63 @@ function renderResult(activeFilterSets, allFilters, showAllRows, queries, filter
     let prevApi = ""
     let apiId = 0
     let apiCount = 1
-    riRows.forEach((row) => {
-      row.hidden = true
+    // Always iterate in the same order
+    const setOrder = ["rifamily", "riapi", "rireptype"]
 
-      /*
-      // Check if row data matches at least one active filter in each active filterset
-      let matches = 0
-      for (const activeFilter in allFilters) {
-        if (allFilters[activeFilter].length > 0) {
-          const currentFilters = allFilters[activeFilter]
-          const rowDataAtt = '[data-filter="' + activeFilter + '"]'
-          currentFilters.forEach((currentFilter) => {
-            if (row.querySelector(rowDataAtt)) {
-              const currentRowData = row
-                .querySelector(rowDataAtt)
-                .textContent.toLowerCase()
-              if (currentRowData === currentFilter.toLowerCase()) {
-                matches++
-              }
-            }
-          })
-        }
-      }
-      if (matches === activeFilterSets) {
-      */
-        queries.forEach((query) => {
-          if (row.dataset[filterKey].toLowerCase().includes(query)) {
+    console.log("helaftens")
+    riRows.forEach((row) => {
+      let setInd = 0
+      let hideRow = true
+
+      setOrder.forEach((setName) => {
+        const filterSet = allFilters[setName]
+        if (filterSet) {
+
+          // Show all rows before applying filters
+          if (setInd === 0 ) {
             row.hidden = false
+          }
+
+          if (row.hidden === false ) {
+            let alreadyVisible = false
+            filterSet.forEach((filter => {
+              // Avoid re-checking already visible rows
+              if (!alreadyVisible) {
+                if (row.dataset[setName] === filter) {
+                  hideRow = false
+                  alreadyVisible = true
+                }
+                else {
+                  hideRow = true
+                }
+              }
+            }))
+          }
+          row.hidden = hideRow
+          setInd = setInd + 1
+        }
+      })
+
+
+      //  queries.forEach((query) => {
+        //  if (row.dataset[filterKey].toLowerCase().includes(query)) {
+        //    row.hidden = false
+
+        //  riFilterSets.forEach((set) => {
+        //    if (allFilters[set.id] && set.id != filterKey) {
+        //      console.log(set.id)
+        //      allFilters[set.id].forEach((filtersetValue => {
+        //        if (row.dataset[set.id].includes(filtersetValue)) {
+        //          row.hidden = false
+        //        } else {
+        //          row.hidden = true
+        //        }
+        //      }
+        //    ))
+        //    }
+        //  })
+
+
 
             if (row.dataset.rifamily != prevFamily) {
               setId++
@@ -287,13 +317,14 @@ function renderResult(activeFilterSets, allFilters, showAllRows, queries, filter
 
             prevApi = row.dataset.riapi
             prevFamily = row.dataset.rifamily
-          }
-        })
+          // }
+        // })
       //}
     })
   }
 }
 
+// TODO: FIX this again, queries don’t work anymore
 // Input filter
 riFilterInput.addEventListener("keyup", function (e) {
   riHideCutoffs()
@@ -352,33 +383,17 @@ riFilterBtns.forEach((filterBtn) => {
         const filterKey = e.target.dataset.filter
 
         // Store active filters
+        let showAllRows = true
         allFilters[filterKey] = []
         riSetChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
             allFilters[filterKey].push(setCheck.value)
+            showAllRows = false
           }
         })
-
-        let activeFilterSets = 0
-        for (let activeFilter in allFilters) {
-          if (allFilters[activeFilter].length > 0) {
-            activeFilterSets++
-          }
-        }
 
         comboFilter(allFilters)
-
-        let showAllRows = true
-        let queries = []
-        riSetChecks.forEach((setCheck, i) => {
-          if (setCheck.checked === true) {
-            showAllRows = false
-            queries[i] = setCheck.value.toLowerCase()
-          }
-        })
-
-        renderResult(activeFilterSets, allFilters, showAllRows, queries, filterKey)
-
+        renderResult(allFilters, showAllRows, filterKey)
         riEmptyCheck()
       })
     })
