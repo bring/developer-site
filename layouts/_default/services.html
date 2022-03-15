@@ -40,10 +40,6 @@
                     {{- partial "filterbtn" (dict "dataAtt" "data-bsg-filterset='type'" "btnText" "Service type") -}}
                     {{- partial "filterbtn" (dict "dataAtt" "data-bsg-filterset='family'" "btnText" "Service family") -}}
                     {{- partial "filterbtn" (dict "dataAtt" "data-bsg-filterset='cntype'" "btnText" "Customer number type") -}}
-                    <button type="button" class="btn btn--white flex align-ic" data-bsg-filterbtn="return">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" class="select-icon mrxs"><path d="M384 32c35.3 0 64 28.65 64 64v320c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64V96a64 64 0 0 1 64-64h320zm0 48H64a16 16 0 0 0-16 16v320c0 8.8 7.16 16 16 16h320c8.8 0 16-7.2 16-16V96c0-8.84-7.2-16-16-16z"/></svg>
-                      Return services
-                    </button>
                   </div>
                 </div>
                 <label class="form__label" for="bsg-textfilter">
@@ -111,7 +107,7 @@
                 <td data-filter="cntype">{{ .CustomerNumberType }}</td>
                 <td data-filter="servcode">{{ .ServiceCode }}</td>
                 <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
-                <td data-filter="return" class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
+                <td class="mb-table__cell--icon tc">{{ if eq .Return "Yes" }}<span
                   data-mybicon="mybicon-check"
                   data-mybicon-class="icon-ui--green-dark mrs"
                   data-mybicon-width="16"
