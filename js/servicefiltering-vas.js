@@ -183,14 +183,18 @@ function scrollToVasTarget(targetElement){
   const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
   const vasBtnParent = element.parentElement
-    
+
   const vasBtnToggler = vasBtnParent.querySelector('[data-collapse]')
-  vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
-  vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
+  if (vasBtnToggler) {
+    vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
+    vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
+  }
 
   const vasItemContent = vasBtnParent.querySelector('[data-vas-element]')
-  vasItemContent.classList.remove('dev-collapsible__item--collapsed')
-  vasItemContent.classList.add('dev-collapsible__item--expanded')
+  if (vasItemContent) {
+    vasItemContent.classList.remove('dev-collapsible__item--collapsed')
+    vasItemContent.classList.add('dev-collapsible__item--expanded')
+  }
 
   window.scrollTo({
        top: offsetPosition,
