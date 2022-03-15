@@ -16,7 +16,7 @@
           {{- $responseColor = "txt-error" -}}
         {{- end -}}
         {{- $responseId := print $endpointId "-" $response -}}
-        <button type="button" name="{{$endpointId}}" data-response-ex="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}">
+        <button type="button" name="{{$endpointId}}" data-response-ex="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}" aria-label="Response code {{$response}}">
           {{ $response }}
         </button>
         {{- $resInd = add $resInd 1 -}}
@@ -40,7 +40,7 @@
               {{/* if there is only one object */}}
               {{- if gt (len .examples) 1 -}}
               <div class="phm pvm bg-gray4">
-                <select class="form__control w100p mb0" name="{{$responseId}}" data-response-subex>
+                <select class="form__control w100p mb0" name="{{$responseId}}" data-response-subex aria-label="Response code {{$response}} example">
                   {{- range $name, $_ := .examples -}}
                     {{- range . -}}
                       {{- $exPath := path.Split . -}}
