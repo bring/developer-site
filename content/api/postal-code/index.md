@@ -47,7 +47,7 @@ documentation:
       * IS - Iceland
       * SJ - Svalbard and Jan Mayen
 
-      The service uses [GeoNames](http://www.geonames.org/) as source for most countries except Norway.
+      The service uses [GeoNames](http://www.geonames.org/) as source for most countries except Norway, Sweden, Finland.
 
       For unsupported countries (countries not in the list above), all postal codes will be marked as valid with no city name returned. In these cases it is recommended to prompt the user to input the city name themselves.
 
