@@ -5,9 +5,11 @@ const riFilterBtns = document.querySelectorAll("[data-rifilterbtn]")
 const riFilterSets = document.querySelectorAll("#ri-filtersets fieldset")
 const riFilterChecks = document.querySelectorAll(".checkitem")
 const riClearBtn = document.querySelector("#ri-clearfilters")
+const riFilterCombo = document.querySelector("#ri-filtercombo")
 const originalEls = document.querySelectorAll(".originalel")
 const riCutoff = document.querySelector("#ri-cutoff")
 const riCutoffBtn = riCutoff.querySelector("button")
+let allFilters
 
 // Initial cutoff
 function riTableCutoff() {
@@ -61,11 +63,7 @@ function hideOriginals(bool) {
   })
 }
 
-// Clear all filters
-function riClearFilters() {
-  riHideCutoffs()
-  removeInsCells()
-  hideOriginals(false)
+function riCloseFilter() {
   const activeBtn = document.querySelector("[data-rifilterbtn].active")
 
   if (activeBtn) {
@@ -75,6 +73,24 @@ function riClearFilters() {
     set.hidden = true
     set.classList.remove("flex")
   })
+
+  let clearFilters = true
+  riFilterChecks.forEach((filterCheck) => {
+    if (filterCheck.checked == true) {
+      clearFilters = false
+    }
+  })
+  if (clearFilters) {
+    riClearFilters()
+  }
+}
+
+// Clear all filters
+function riClearFilters() {
+  riHideCutoffs()
+  removeInsCells()
+  hideOriginals(false)
+
   riFilterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
@@ -85,19 +101,90 @@ function riClearFilters() {
   riFilterInput.value = ""
 
   riEmptyCheck()
+  allFilters = {}
+  riFilterCombo.innerHTML = ""
   riClearBtn.classList.add("dn")
 }
 
 riCutoffBtn.addEventListener("click", function () {
+  riCloseFilter()
   riClearFilters()
 })
 
 riClearBtn.addEventListener("click", function () {
+  riCloseFilter()
   riClearFilters()
 })
 
+// Remove filters via combo overview
+riFilterCombo.addEventListener("click", function (e) {
+  // Delete all
+  if (e.target.dataset.rititle && !e.target.dataset.ritype) {
+    let subButtons = document.querySelectorAll(
+      'button[data-ritype="' + e.target.dataset.rititle + '"]'
+    )
+    subButtons.forEach((subButton) => {
+      toggleCheckbox(subButton)
+    })
+  }
+
+  // Delete one
+  if (e.target.dataset.ritype && e.target.dataset.rititle) {
+    toggleCheckbox(e.target)
+  }
+})
+
+allFilters = {}
+riFilterSets.forEach((set) => {
+  allFilters[set.id] = []
+})
+
+// Render combofilter overview
+function comboFilter(allFilters) {
+  riFilterCombo.innerHTML = ""
+  for (let activeFilter in allFilters) {
+    if (allFilters[activeFilter].length > 0) {
+      const filterTitle = document.querySelector(
+        '[data-rifilterbtn="' + activeFilter + '"]'
+      ).textContent
+      let appliedFilter =
+        '<button type="button" data-rititle="' +
+        activeFilter +
+        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+        filterTitle +
+        '</button><div class="plm flex flex-wrap">'
+      allFilters[activeFilter].forEach((filter) => {
+        appliedFilter =
+          appliedFilter +
+          '<button type="button"' +
+          'data-ritype="' +
+          activeFilter +
+          '" data-rititle="' +
+          filter +
+          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          filter +
+          "</button>"
+      })
+      appliedFilter = appliedFilter + "</div>"
+      riFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
+      window.loadMybringIcons()
+    }
+  }
+}
+
+function toggleCheckbox(box) {
+  const checkEl = document.querySelector(
+    'input[data-filter="' +
+      box.dataset.ritype +
+      '"][value="' +
+      box.dataset.rititle +
+      '"'
+  )
+  checkEl.click()
+}
+
 // Render result
-function renderResult(showAllRows, queries, filterKey) {
+function renderResult(allFilters, showAllRows, filterKey) {
   removeInsCells()
   if (showAllRows) {
     riRows.forEach((row) => {
@@ -112,73 +199,114 @@ function renderResult(showAllRows, queries, filterKey) {
     let prevApi = ""
     let apiId = 0
     let apiCount = 1
+    // Always iterate in the same order
+    const setOrder = ["rifamily", "riapi", "rireptype"]
+
     riRows.forEach((row) => {
-      row.hidden = true
-      queries.forEach((query) => {
+      let setInd = 0
+      let hideRow = true
+
+      if (filterKey === "rirepname") {
+        const query = allFilters
+        row.hidden = true
         if (row.dataset[filterKey].toLowerCase().includes(query)) {
-          row.hidden = false
-          if (row.dataset.rifamily != prevFamily) {
-            setId++
+            row.hidden = false
+        }
+
+      } else {
+      setOrder.forEach((setName) => {
+        const filterSet = allFilters[setName]
+        if (filterSet) {
+
+          // Show all rows before applying filters
+          if (setInd === 0 ) {
+            row.hidden = false
           }
 
-          if (
-            row.dataset.riapi != prevApi ||
-            row.dataset.rifamily != prevFamily
-          ) {
-            prevApi = ""
-            apiId++
-            apiCount = 1
-            row.insertAdjacentHTML(
-              "afterbegin",
-              '<td data-ins="' +
-                setId +
-                apiId +
-                '" rowspan="1"><span class="mb-badge">' +
-                row.dataset.riapi +
-                "</span></td>"
-            )
-          } else {
-            apiCount++
-            const apis = document.querySelectorAll(
-              '[data-ins="' + setId + apiId + '"]'
-            )
-            apis.forEach((api) => {
-              api.rowSpan = apiCount
-            })
+          if (row.hidden === false ) {
+            let alreadyVisible = false
+            filterSet.forEach((filter => {
+              // Avoid re-checking already visible rows
+              if (!alreadyVisible) {
+                if (row.dataset[setName] === filter) {
+                  hideRow = false
+                  alreadyVisible = true
+                }
+                else {
+                  hideRow = true
+                }
+              }
+            }))
           }
-
-          if (row.dataset.rifamily != prevFamily) {
-            count = 1
-            row.insertAdjacentHTML(
-              "afterbegin",
-              '<td data-ins="' +
-                setId +
-                '" rowspan="1">' +
-                row.dataset.cntype +
-                "</td>"
-            )
-            row.insertAdjacentHTML(
-              "afterbegin",
-              '<th data-ins="' +
-                setId +
-                '" scope="row" rowspan="1" class="maxw20r">' +
-                row.dataset.rifamily +
-                "</th>"
-            )
-          } else {
-            count++
-            const sets = document.querySelectorAll(
-              '[data-ins="' + setId + '"]'
-            )
-            sets.forEach((set) => {
-              set.rowSpan = count
-            })
-          }
-
-          prevApi = row.dataset.riapi
-          prevFamily = row.dataset.rifamily
+          row.hidden = hideRow
+          setInd = setInd + 1
         }
       })
+    }
+
+      // Insert additional cells
+      if (row.hidden === false) {
+            if (row.dataset.rifamily != prevFamily) {
+              setId++
+            }
+
+            if (
+              row.dataset.riapi != prevApi ||
+              row.dataset.rifamily != prevFamily
+            ) {
+              prevApi = ""
+              apiId++
+              apiCount = 1
+              row.insertAdjacentHTML(
+                "afterbegin",
+                '<td data-ins="' +
+                  setId +
+                  apiId +
+                  '" rowspan="1"><span class="mb-badge">' +
+                  row.dataset.riapi +
+                  "</span></td>"
+              )
+            } else {
+              apiCount++
+              const apis = document.querySelectorAll(
+                '[data-ins="' + setId + apiId + '"]'
+              )
+              apis.forEach((api) => {
+                api.rowSpan = apiCount
+              })
+            }
+
+            if (row.dataset.rifamily != prevFamily) {
+              count = 1
+              row.insertAdjacentHTML(
+                "afterbegin",
+                '<td data-ins="' +
+                  setId +
+                  '" rowspan="1">' +
+                  row.dataset.cntype +
+                  "</td>"
+              )
+              row.insertAdjacentHTML(
+                "afterbegin",
+                '<th data-ins="' +
+                  setId +
+                  '" scope="row" rowspan="1" class="maxw20r">' +
+                  row.dataset.rifamily +
+                  "</th>"
+              )
+            } else {
+              count++
+              const sets = document.querySelectorAll(
+                '[data-ins="' + setId + '"]'
+              )
+              sets.forEach((set) => {
+                set.rowSpan = count
+              })
+            }
+
+            prevApi = row.dataset.riapi
+            prevFamily = row.dataset.rifamily
+      }
     })
   }
 }
@@ -186,21 +314,18 @@ function renderResult(showAllRows, queries, filterKey) {
 // Input filter
 riFilterInput.addEventListener("keyup", function (e) {
   riHideCutoffs()
-  const query = e.target.value.toLowerCase()
+  let query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1 && query !== "-"
   const filterKey = "rirepname"
   let showAllRows = true
-  let queries = [""]
   if (notEmpty) {
     riClearBtn.classList.remove("dn")
     showAllRows = false
-    queries = [query]
   } else {
     riClearBtn.classList.add("dn")
   }
 
-  removeInsCells()
-  renderResult(showAllRows, queries, filterKey)
+  renderResult(query, showAllRows, filterKey)
   riEmptyCheck()
 })
 
@@ -208,12 +333,11 @@ riFilterInput.addEventListener("keyup", function (e) {
 riFilterBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterKey = e.target.dataset.rifilterbtn
-    removeInsCells()
     if (e.target.classList.contains("active")) {
-      riClearFilters()
+      riCloseFilter()
       return
     }
-    riClearFilters()
+    riCloseFilter()
     riClearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
@@ -241,16 +365,24 @@ riFilterBtns.forEach((filterBtn) => {
       setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
 
-        let showAllRows = true
-        let queries = []
-        riSetChecks.forEach((setCheck, i) => {
+        // Store active filters
+        allFilters[filterKey] = []
+        riSetChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
-            showAllRows = false
-            queries[i] = setCheck.value.toLowerCase()
+            allFilters[filterKey].push(setCheck.value)
           }
         })
 
-        renderResult(showAllRows, queries, filterKey)
+        let showAllRows = true
+        for (const [k, _] of Object.entries(allFilters)) {
+          if (allFilters[k].length > 0) {
+            showAllRows = false
+          }
+        }
+
+        comboFilter(allFilters)
+        renderResult(allFilters, showAllRows, filterKey)
+        riEmptyCheck()
       })
     })
   })

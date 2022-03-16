@@ -433,7 +433,10 @@
                 {{- partial "api/servicefilter.html" (dict "scratcher" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
               </div>
             </div>
-            <button type="button" id="ri-clearfilters" class="btn-link--dark mtl mrl dn">Clear all filters</button>
+            <div class="maxw100p">
+              <div id="ri-filtercombo" class="mtm mrm text-note"></div>
+              <button type="button" id="ri-clearfilters" class="btn-link--dark mtl mrl dn">Clear all filters</button>
+            </div>
           </div>
           <table id="services-ri">
             <thead>
