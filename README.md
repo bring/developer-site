@@ -141,10 +141,9 @@ To update information in the tables (except Reports and Invoice):
 1. Clone and make the necessary changes in said repo
 2. Generate new files from the main function in
    [ServiceVasMappingJsonGenerator.kt](https://github.com/bring/mybring-service-country-vas-common/blob/master/src/jvmMain/kotlin/com/mybring/devsite/ServiceVasMappingJsonGenerator.kt)
-3. Copy the data or JSON files into the `data` folder in this repo, format them
-   to match the original files
-4. Open the generated xlsx file, copy the sheet into the
-   `static/services/service_portfolio.xlsx` file in this repo
+3. Verify the changes in the JSON files in this repo’s `data` folder
+4. Open the generated xlsx file, replace the relevant sheet in the
+   `static/services/service_portfolio.xlsx` file in this repo.
 
 ## Adding a new article/blog post
 
