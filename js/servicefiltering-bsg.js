@@ -1,4 +1,4 @@
-import { cutoffRows, hideCutoffs } from "./servicefiltering-common"
+import { cutoffRows, hideCutoffs, checkNoMatches } from "./servicefiltering-common"
 
 const table = document.querySelector("#services-bsg")
 const rows = table.querySelectorAll("tbody tr")
@@ -11,28 +11,6 @@ const filterCombo = document.querySelector("#bsg-filtercombo")
 const cutoff = document.querySelector("#bsg-cutoff")
 const cutoffBtn = cutoff.querySelector("button")
 let allFilters
-
-function checkNoMatches() {
-  const noMatch = document.querySelector("#bsg-nomatch")
-  let insMessage = true
-  if (noMatch) {
-    noMatch.remove()
-    table.classList.remove("dn")
-  }
-  rows.forEach((row) => {
-    if (row.hidden === false) {
-      insMessage = false
-      return
-    }
-  })
-  if (insMessage) {
-    table.classList.add("dn")
-    table.insertAdjacentHTML(
-      "afterend",
-      '<div id="bsg-nomatch" class="message--info pam maxw24r">No matches</div>'
-    )
-  }
-}
 
 function closeFilterSet() {
   const activeSet = document.querySelector("[data-bsg-filterset].active")
@@ -59,7 +37,7 @@ function clearAllFilters() {
   filterInput.disabled = false
   filterInput.value = ""
 
-  checkNoMatches()
+  checkNoMatches("bsg", table, rows)
   allFilters = {}
   filterCombo.innerHTML = ""
   clearBtn.classList.add("dn")
@@ -106,7 +84,7 @@ filterInput.addEventListener("keyup", function (e) {
     }
   })
 
-  checkNoMatches()
+  checkNoMatches("bsg", table, rows)
 })
 
 function makeComboOverview(allFilters) {
@@ -289,7 +267,7 @@ filterSetBtns.forEach((filterBtn) => {
 
         makeComboOverview(allFilters)
         toggleRows()
-        checkNoMatches()
+        checkNoMatches("bsg", table, rows)
       })
     })
   })

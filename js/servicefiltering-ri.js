@@ -11,28 +11,6 @@ const cutoff = document.querySelector("#ri-cutoff")
 const cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
-function checkNoMatches() {
-  const noMatch = document.querySelector("#ri-nomatch")
-  let insMessage = true
-  if (noMatch) {
-    noMatch.remove()
-    table.classList.remove("dn")
-  }
-  rows.forEach((row) => {
-    if (row.hidden === false) {
-      insMessage = false
-      return
-    }
-  })
-  if (insMessage) {
-    table.classList.add("dn")
-    table.insertAdjacentHTML(
-      "afterend",
-      '<div id="ri-nomatch" class="message--info pam maxw24r">No matches</div>'
-    )
-  }
-}
-
 function removeInsCells() {
   const inserts = document.querySelectorAll("[data-ins]")
   inserts.forEach((insert) => {
@@ -82,7 +60,7 @@ function clearAllFilters() {
   filterInput.disabled = false
   filterInput.value = ""
 
-  checkNoMatches()
+  checkNoMatches("ri", table, rows)
   allFilters = {}
   filterCombo.innerHTML = ""
   clearBtn.classList.add("dn")
@@ -362,7 +340,7 @@ filterSetBtns.forEach((filterBtn) => {
 
         makeComboOverview(allFilters)
         renderResult(allFilters, showAllRows, filterKey)
-        checkNoMatches()
+        checkNoMatches("ri", table, rows)
       })
     })
   })
