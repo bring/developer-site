@@ -1,4 +1,4 @@
-import { cutoffRows, hideCutoffs } from "./servicefiltering-common"
+import { cutoffRows, hideCutoffs, checkNoMatches } from "./servicefiltering-common"
 
 const container = document.querySelector("#allVas")
 const items = container.querySelectorAll(".vas__item")
@@ -33,6 +33,7 @@ function clearAllFilters() {
   })
   filterInput.value = ""
 
+  checkNoMatches("vas", container, items)
   clearBtn.classList.add("dn")
 }
 
@@ -161,6 +162,7 @@ filterSetBtns.forEach((filterBtn) => {
             })
           })
         }
+        checkNoMatches("vas", container, items)
       })
     })
   })
