@@ -11,18 +11,6 @@ const cutoff = document.querySelector("#ri-cutoff")
 const cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
-function cutoffRows() {
-  rows.forEach((row, i) => {
-    if (i > 12) {
-      row.hidden = true
-    }
-  })
-}
-
-function hideCutoffs() {
-  cutoff.hidden = true
-}
-
 function checkNoMatches() {
   const noMatch = document.querySelector("#ri-nomatch")
   let insMessage = true
@@ -81,7 +69,7 @@ function closeFilterSet() {
 }
 
 function clearAllFilters() {
-  hideCutoffs()
+  hideCutoffs(cutoff)
   removeInsCells()
   hideOriginals(false)
 
@@ -305,7 +293,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
 
 // Input filter
 filterInput.addEventListener("keyup", function (e) {
-  hideCutoffs()
+  hideCutoffs(cutoff)
   let query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1 && query !== "-"
   const filterKey = "rirepname"
@@ -381,5 +369,5 @@ filterSetBtns.forEach((filterBtn) => {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  cutoffRows()
+  cutoffRows(rows,12)
 })

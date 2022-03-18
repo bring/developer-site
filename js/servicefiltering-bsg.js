@@ -1,3 +1,5 @@
+import { cutoffRows, hideCutoffs } from "./servicefiltering-common"
+
 const table = document.querySelector("#services-bsg")
 const rows = table.querySelectorAll("tbody tr")
 const filterInput = document.querySelector("#bsg-textfilter")
@@ -9,18 +11,6 @@ const filterCombo = document.querySelector("#bsg-filtercombo")
 const cutoff = document.querySelector("#bsg-cutoff")
 const cutoffBtn = cutoff.querySelector("button")
 let allFilters
-
-function cutoffRows() {
-  rows.forEach((row, i) => {
-    if (i > 5) {
-      row.hidden = true
-    }
-  })
-}
-
-function hideCutoffs() {
-  cutoff.hidden = true
-}
 
 function checkNoMatches() {
   const noMatch = document.querySelector("#bsg-nomatch")
@@ -58,7 +48,7 @@ function closeFilterSet() {
 }
 
 function clearAllFilters() {
-  hideCutoffs()
+  hideCutoffs(cutoff)
 
   filterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
@@ -86,7 +76,7 @@ cutoffBtn.addEventListener("click", function () {
 
 // Input filter
 filterInput.addEventListener("keyup", function (e) {
-  hideCutoffs()
+  hideCutoffs(cutoff)
   const query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
@@ -319,5 +309,5 @@ function toggleHelp() {
 helpBtn.addEventListener("click", toggleHelp)
 
 document.addEventListener("DOMContentLoaded", function () {
-  cutoffRows()
+  cutoffRows(rows, 5)
 })

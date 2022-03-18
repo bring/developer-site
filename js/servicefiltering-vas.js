@@ -1,3 +1,5 @@
+import { cutoffRows, hideCutoffs } from "./servicefiltering-common"
+
 const rows = document.querySelectorAll("#allVas .vas__item")
 const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
 const filterInput = document.querySelector("#vasfilter")
@@ -8,20 +10,8 @@ const clearBtn = document.querySelector("#clearfilters")
 const cutoff = document.querySelector("#vas-cutoff")
 const showAll = document.querySelector("#showAll")
 
-function cutoffRows() {
-  rows.forEach((row, i) => {
-    if (i > 10) {
-      row.hidden = true
-    }
-  })
-}
-
-function hideCutoffs() {
-  cutoff.hidden = true
-}
-
 function clearAllFilters() {
-  hideCutoffs()
+  hideCutoffs(cutoff)
   const activeBtn = document.querySelector("[data-filterbtn].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -55,7 +45,7 @@ showAll.addEventListener("click", () => {
 
 // Input filter
 filterInput.addEventListener("keyup", function (e) {
-  hideCutoffs()
+  hideCutoffs(cutoff)
   rows.forEach((row) => {
     row.hidden = false
   })
@@ -208,13 +198,13 @@ document.addEventListener("DOMContentLoaded", function () {
   if(anchorTag) {
     const cleanAnchorTag = anchorTag.replace(/#/,'')
 
-    hideCutoffs()
+    hideCutoffs(cutoff)
     //Delay added for Chrome so window.scrollTo event will be triggered
     setTimeout(function() {
       scrollToTarget(cleanAnchorTag)
     },100)
   } else {
-    cutoffRows()
+    cutoffRows(rows, 10)
   }
 
   const anchors = document.querySelectorAll('.anchorjs-link')
