@@ -11,12 +11,16 @@ const cutoff = document.querySelector("#ri-cutoff")
 const cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
-function cutoffTable() {
+function cutoffRows() {
   rows.forEach((row, i) => {
     if (i > 12) {
       row.hidden = true
     }
   })
+}
+
+function hideCutoffs() {
+  cutoff.hidden = true
 }
 
 function checkNoMatches() {
@@ -46,10 +50,6 @@ function removeInsCells() {
   inserts.forEach((insert) => {
     insert.remove()
   })
-}
-
-function hideCutoffs() {
-  cutoff.hidden = true
 }
 
 function hideOriginals(bool) {
@@ -381,5 +381,5 @@ filterSetBtns.forEach((filterBtn) => {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  cutoffTable()
+  cutoffRows()
 })

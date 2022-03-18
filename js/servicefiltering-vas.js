@@ -8,7 +8,7 @@ const clearBtn = document.querySelector("#clearfilters")
 const cutoff = document.querySelector("#vas-cutoff")
 const showAll = document.querySelector("#showAll")
 
-function cutoffTable() {
+function cutoffRows() {
   rows.forEach((row, i) => {
     if (i > 10) {
       row.hidden = true
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollToTarget(cleanAnchorTag)
     },100)
   } else {
-    cutoffTable()
+    cutoffRows()
   }
 
   const anchors = document.querySelectorAll('.anchorjs-link')

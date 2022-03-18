@@ -10,7 +10,7 @@ const cutoff = document.querySelector("#bsg-cutoff")
 const cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
-function cutoffTable() {
+function cutoffRows() {
   rows.forEach((row, i) => {
     if (i > 5) {
       row.hidden = true
@@ -22,7 +22,6 @@ function hideCutoffs() {
   cutoff.hidden = true
 }
 
-// Show empty results
 function checkNoMatches() {
   const noMatch = document.querySelector("#bsg-nomatch")
   let insMessage = true
@@ -320,5 +319,5 @@ function toggleHelp() {
 helpBtn.addEventListener("click", toggleHelp)
 
 document.addEventListener("DOMContentLoaded", function () {
-  cutoffTable()
+  cutoffRows()
 })
