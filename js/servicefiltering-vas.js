@@ -1,6 +1,7 @@
 import { cutoffRows, hideCutoffs } from "./servicefiltering-common"
 
-const rows = document.querySelectorAll("#allVas .vas__item")
+const container = document.querySelector("#allVas")
+const items = container.querySelectorAll(".vas__item")
 const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
 const filterInput = document.querySelector("#vasfilter")
 const filterSetBtns = document.querySelectorAll("[data-filterbtn]")
@@ -23,9 +24,9 @@ function clearAllFilters() {
   filterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
-  rows.forEach((row) => {
-    row.hidden = false
-    row.classList.remove("vas__item--hidden")
+  items.forEach((item) => {
+    item.hidden = false
+    item.hidden = false
   })
   serviceCountryRows.forEach((row) => {
     row.hidden = false
@@ -46,9 +47,6 @@ showAll.addEventListener("click", () => {
 // Input filter
 filterInput.addEventListener("keyup", function (e) {
   hideCutoffs(cutoff)
-  rows.forEach((row) => {
-    row.hidden = false
-  })
   const query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
@@ -57,26 +55,28 @@ filterInput.addEventListener("keyup", function (e) {
     clearBtn.classList.add("dn")
   }
 
-  rows.forEach((row) => {
+  items.forEach((item) => {
     if (
-      row
+      item
         .querySelector('[data-filter="name"]')
         ?.textContent?.toLowerCase()
         ?.includes(query) ||
-      row
+      item
         .querySelector('[data-filter="sgcode"]')
         ?.textContent?.toLowerCase()
         ?.includes(query) ||
-      row
+      item
         .querySelector('[data-filter="bookcode"]')
         ?.textContent?.toLowerCase()
         ?.includes(query)
     ) {
-      row.classList.remove("vas__item--hidden")
+      item.hidden = false
     } else {
-      row.classList.add("vas__item--hidden")
+      item.hidden = true
     }
   })
+
+  checkNoMatches("vas", container, items)
 })
 
 // Set filters
@@ -127,24 +127,24 @@ filterSetBtns.forEach((filterBtn) => {
         })
 
         if (showAll) {
-          rows.forEach((row) => {
-            row.classList.remove("vas__item--hidden")
+          items.forEach((item) => {
+            item.hidden = false
           })
           serviceCountryRows.forEach((row) => {
             row.hidden = false
           })
         } else {
-          rows.forEach((row) => {
+          items.forEach((item) => {
             let affectedRows = 0;
             showChecked.forEach((show) => {
-              if ([...row.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
+              if ([...item.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
                 affectedRows++;
               }
             })
             if(affectedRows == 0) {
-              row.classList.add("vas__item--hidden")
+              item.hidden = true
             } else {
-              row.classList.remove("vas__item--hidden")
+              item.hidden = false
             }
           })
           serviceCountryRows.forEach((row) => {
@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollToTarget(cleanAnchorTag)
     },100)
   } else {
-    cutoffRows(rows, 10)
+    cutoffRows(items, 10)
   }
 
   const anchors = document.querySelectorAll('.anchorjs-link')
