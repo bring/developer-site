@@ -1,4 +1,4 @@
-import { cutoffRows, hideCutoffs, checkNoMatches } from "./servicefiltering-common"
+import { cutoffRows, hideCutoffs, checkNoMatches, toggleSets } from "./servicefiltering-common"
 
 const table = document.querySelector("#services-bsg")
 const rows = table.querySelectorAll("tbody tr")
@@ -219,9 +219,8 @@ function toggleRows() {
   }
 }
 
-// Filtersets
+// Set filters
 filterSetBtns.forEach((filterBtn) => {
-  // Toggle filterset
   filterBtn.addEventListener("click", function (e) {
     const currentFilterSet = e.target.dataset.bsgFilterset
     if (e.target.classList.contains("active")) {
@@ -234,32 +233,18 @@ filterSetBtns.forEach((filterBtn) => {
     e.target.classList.add("active")
     filterInput.disabled = true
 
-    filterSets.forEach((set) => {
-      if (set.id === currentFilterSet) {
-        if (set.hidden === false) {
-          set.hidden = true
-          set.classList.remove("flex")
-        } else {
-          set.hidden = false
-          set.classList.add("flex")
-        }
-      } else {
-        set.hidden = true
-        set.classList.remove("flex")
-      }
-    })
+    toggleSets(filterSets, currentFilterSet)
 
-    // Register check clicks from open set
-    const bsgSetChecks = document.querySelectorAll(
+    const setChecks = document.querySelectorAll(
       'input[data-filter="' + currentFilterSet + '"]'
     )
-    bsgSetChecks.forEach((setCheck) => {
+    setChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
 
         // Store active filters
         allFilters[filterKey] = []
-        bsgSetChecks.forEach((setCheck) => {
+        setChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
             allFilters[filterKey].push(setCheck.value)
           }

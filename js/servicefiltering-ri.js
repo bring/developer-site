@@ -1,7 +1,9 @@
+import { cutoffRows, hideCutoffs, checkNoMatches, toggleSets } from "./servicefiltering-common"
+
 const table = document.querySelector("#services-ri")
 const rows = table.querySelectorAll("tbody tr")
 const filterInput = document.querySelector("#ri-textfilter")
-const filterSetBtns = document.querySelectorAll("[data-rifilterbtn]")
+const filterSetBtns = document.querySelectorAll("[data-ri-filterset]")
 const filterSets = document.querySelectorAll("#ri-filtersets fieldset")
 const filterChecks = document.querySelectorAll(".checkitem")
 const clearBtn = document.querySelector("#ri-clearfilters")
@@ -25,10 +27,10 @@ function hideOriginals(bool) {
 }
 
 function closeFilterSet() {
-  const activeBtn = document.querySelector("[data-rifilterbtn].active")
+  const activeSet = document.querySelector("[data-ri-filterset].active")
 
-  if (activeBtn) {
-    activeBtn.classList.remove("active")
+  if (activeSet) {
+    activeSet.classList.remove("active")
   }
   filterSets.forEach((set) => {
     set.hidden = true
@@ -104,7 +106,7 @@ function makeComboOverview(allFilters) {
   for (let activeFilter in allFilters) {
     if (allFilters[activeFilter].length > 0) {
       const filterTitle = document.querySelector(
-        '[data-rifilterbtn="' + activeFilter + '"]'
+        '[data-ri-filterset="' + activeFilter + '"]'
       ).textContent
       let appliedFilter =
         '<button type="button" data-rititle="' +
@@ -284,13 +286,13 @@ filterInput.addEventListener("keyup", function (e) {
   }
 
   renderResult(query, showAllRows, filterKey)
-  checkNoMatches()
+  checkNoMatches("ri", table, rows)
 })
 
 // Set filters
 filterSetBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
-    const filterKey = e.target.dataset.rifilterbtn
+    const currentFilterSet = e.target.dataset.riFilterset
     if (e.target.classList.contains("active")) {
       closeFilterSet()
       return
@@ -300,32 +302,19 @@ filterSetBtns.forEach((filterBtn) => {
 
     e.target.classList.add("active")
     filterInput.disabled = true
-    filterSets.forEach((set) => {
-      if (set.id === filterKey) {
-        if (set.hidden === false) {
-          set.hidden = true
-          set.classList.remove("flex")
-        } else {
-          set.hidden = false
-          set.classList.add("flex")
-        }
-      } else {
-        set.hidden = true
-        set.classList.remove("flex")
-      }
-    })
 
-    const riSetChecks = document.querySelectorAll(
-      'input[data-filter="' + filterKey + '"]'
+    toggleSets(filterSets, currentFilterSet)
+
+    const setChecks = document.querySelectorAll(
+      'input[data-filter="' + currentFilterSet + '"]'
     )
-
-    riSetChecks.forEach((setCheck) => {
+    setChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
 
         // Store active filters
         allFilters[filterKey] = []
-        riSetChecks.forEach((setCheck) => {
+        setChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
             allFilters[filterKey].push(setCheck.value)
           }

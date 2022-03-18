@@ -1,10 +1,10 @@
-import { cutoffRows, hideCutoffs, checkNoMatches } from "./servicefiltering-common"
+import { cutoffRows, hideCutoffs, checkNoMatches, toggleSets } from "./servicefiltering-common"
 
-const container = document.querySelector("#allVas")
-const items = container.querySelectorAll(".vas__item")
+const container = document.querySelector("#all-vas")
+const items = container.querySelectorAll("[data-vas-element]")
 const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
 const filterInput = document.querySelector("#vasfilter")
-const filterSetBtns = document.querySelectorAll("[data-filterbtn]")
+const filterSetBtns = document.querySelectorAll("[data-vas-filterset]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
 const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
@@ -13,7 +13,7 @@ const showAll = document.querySelector("#showAll")
 
 function clearAllFilters() {
   hideCutoffs(cutoff)
-  const activeBtn = document.querySelector("[data-filterbtn].active")
+  const activeBtn = document.querySelector("[data-vas-filterset].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -83,8 +83,7 @@ filterInput.addEventListener("keyup", function (e) {
 // Set filters
 filterSetBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
-    const filterType = e.target.dataset.filterbtn
-
+    const currentFilterSet = e.target.dataset.vasFilterset
     if (e.target.classList.contains("active")) {
       clearAllFilters()
       return
@@ -94,33 +93,20 @@ filterSetBtns.forEach((filterBtn) => {
     e.target.classList.add("active")
     clearBtn.classList.remove("dn")
 
-    filterSets.forEach((set) => {
-      if (set.id === filterType) {
-        if (set.hidden === false) {
-          set.hidden = true
-          set.classList.remove("flex")
-        } else {
-          set.hidden = false
-          set.classList.add("flex")
-        }
-      } else {
-        set.hidden = true
-        set.classList.remove("flex")
-      }
-    })
+    toggleSets(filterSets, currentFilterSet)
 
-    const vasSetChecks = document.querySelectorAll(
-      'input[data-filter="' + filterType + '"]'
+    const setChecks = document.querySelectorAll(
+      'input[data-filter="' + currentFilterSet + '"]'
     )
 
-    vasSetChecks.forEach((setCheck) => {
+    setChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterType = e.target.dataset.filter
         const dataFilter = '[data-filter="' + filterType + '"]'
 
         let showAll = true
         let showChecked = []
-        vasSetChecks.forEach((setCheck, i) => {
+        setChecks.forEach((setCheck, i) => {
           if (setCheck.checked === true) {
             showAll = false
             showChecked[i] = setCheck.value.toLowerCase()

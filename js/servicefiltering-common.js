@@ -34,3 +34,20 @@ export function checkNoMatches(type, parent, children) {
     )
   }
 }
+
+export function toggleSets(filterSets, currentFilterSet) {
+  filterSets.forEach((set) => {
+    if (set.id === currentFilterSet) {
+      if (set.hidden === false) {
+        set.hidden = true
+        set.classList.remove("flex")
+      } else {
+        set.hidden = false
+        set.classList.add("flex")
+      }
+    } else {
+      set.hidden = true
+      set.classList.remove("flex")
+    }
+  })
+}
