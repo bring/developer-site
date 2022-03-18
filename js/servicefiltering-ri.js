@@ -1,49 +1,46 @@
-const riTable = document.querySelector("#services-ri")
-const riRows = riTable.querySelectorAll("tbody tr")
-const riFilterInput = document.querySelector("#ri-textfilter")
-const riFilterBtns = document.querySelectorAll("[data-rifilterbtn]")
-const riFilterSets = document.querySelectorAll("#ri-filtersets fieldset")
-const riFilterChecks = document.querySelectorAll(".checkitem")
-const riClearBtn = document.querySelector("#ri-clearfilters")
-const riFilterCombo = document.querySelector("#ri-filtercombo")
+const table = document.querySelector("#services-ri")
+const rows = table.querySelectorAll("tbody tr")
+const filterInput = document.querySelector("#ri-textfilter")
+const filterSetBtns = document.querySelectorAll("[data-rifilterbtn]")
+const filterSets = document.querySelectorAll("#ri-filtersets fieldset")
+const filterChecks = document.querySelectorAll(".checkitem")
+const clearBtn = document.querySelector("#ri-clearfilters")
+const filterCombo = document.querySelector("#ri-filtercombo")
 const originalEls = document.querySelectorAll(".originalel")
-const riCutoff = document.querySelector("#ri-cutoff")
-const riCutoffBtn = riCutoff.querySelector("button")
+const cutoff = document.querySelector("#ri-cutoff")
+const cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
-// Initial cutoff
-function riTableCutoff() {
-  riRows.forEach((row, i) => {
+function cutoffTable() {
+  rows.forEach((row, i) => {
     if (i > 12) {
       row.hidden = true
     }
   })
 }
 
-// Show empty results
-function riEmptyCheck() {
+function checkNoMatches() {
   const noMatch = document.querySelector("#ri-nomatch")
   let insMessage = true
   if (noMatch) {
     noMatch.remove()
-    riTable.classList.remove("dn")
+    table.classList.remove("dn")
   }
-  riRows.forEach((row) => {
+  rows.forEach((row) => {
     if (row.hidden === false) {
       insMessage = false
       return
     }
   })
   if (insMessage) {
-    riTable.classList.add("dn")
-    riTable.insertAdjacentHTML(
+    table.classList.add("dn")
+    table.insertAdjacentHTML(
       "afterend",
       '<div id="ri-nomatch" class="message--info pam maxw24r">No matches</div>'
     )
   }
 }
 
-// Remove inserted cells
 function removeInsCells() {
   const inserts = document.querySelectorAll("[data-ins]")
   inserts.forEach((insert) => {
@@ -51,73 +48,70 @@ function removeInsCells() {
   })
 }
 
-// Hide cutoff elements
-function riHideCutoffs() {
-  riCutoff.hidden = true
+function hideCutoffs() {
+  cutoff.hidden = true
 }
 
-// Hide original elements for restoration later
 function hideOriginals(bool) {
   originalEls.forEach((ogEl) => {
     ogEl.hidden = bool
   })
 }
 
-function riCloseFilter() {
+function closeFilterSet() {
   const activeBtn = document.querySelector("[data-rifilterbtn].active")
 
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
-  riFilterSets.forEach((set) => {
+  filterSets.forEach((set) => {
     set.hidden = true
     set.classList.remove("flex")
   })
 
   let clearFilters = true
-  riFilterChecks.forEach((filterCheck) => {
+  filterChecks.forEach((filterCheck) => {
     if (filterCheck.checked == true) {
       clearFilters = false
     }
   })
   if (clearFilters) {
-    riClearFilters()
+    clearAllFilters()
   }
 }
 
-// Clear all filters
-function riClearFilters() {
-  riHideCutoffs()
+function clearAllFilters() {
+  hideCutoffs()
   removeInsCells()
   hideOriginals(false)
 
-  riFilterChecks.forEach((filterCheck) => {
+  filterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
-  riRows.forEach((row) => {
+  rows.forEach((row) => {
     row.hidden = false
   })
-  riFilterInput.disabled = false
-  riFilterInput.value = ""
+  filterInput.disabled = false
+  filterInput.value = ""
 
-  riEmptyCheck()
+  checkNoMatches()
   allFilters = {}
-  riFilterCombo.innerHTML = ""
-  riClearBtn.classList.add("dn")
+  filterCombo.innerHTML = ""
+  clearBtn.classList.add("dn")
 }
 
-riCutoffBtn.addEventListener("click", function () {
-  riCloseFilter()
-  riClearFilters()
+cutoffBtn.addEventListener("click", function () {
+  closeFilterSet()
+  clearAllFilters()
 })
 
-riClearBtn.addEventListener("click", function () {
-  riCloseFilter()
-  riClearFilters()
+clearBtn.addEventListener("click", function () {
+  closeFilterSet()
+  clearAllFilters()
 })
 
 // Remove filters via combo overview
-riFilterCombo.addEventListener("click", function (e) {
+filterCombo.addEventListener("click", function (e) {
   // Delete all
   if (e.target.dataset.rititle && !e.target.dataset.ritype) {
     let subButtons = document.querySelectorAll(
@@ -135,13 +129,12 @@ riFilterCombo.addEventListener("click", function (e) {
 })
 
 allFilters = {}
-riFilterSets.forEach((set) => {
+filterSets.forEach((set) => {
   allFilters[set.id] = []
 })
 
-// Render combofilter overview
-function comboFilter(allFilters) {
-  riFilterCombo.innerHTML = ""
+function makeComboOverview(allFilters) {
+  filterCombo.innerHTML = ""
   for (let activeFilter in allFilters) {
     if (allFilters[activeFilter].length > 0) {
       const filterTitle = document.querySelector(
@@ -166,7 +159,7 @@ function comboFilter(allFilters) {
           "</button>"
       })
       appliedFilter = appliedFilter + "</div>"
-      riFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
+      filterCombo.insertAdjacentHTML("beforeend", appliedFilter)
       window.loadMybringIcons()
     }
   }
@@ -183,11 +176,10 @@ function toggleCheckbox(box) {
   checkEl.click()
 }
 
-// Render result
 function renderResult(allFilters, showAllRows, filterKey) {
   removeInsCells()
   if (showAllRows) {
-    riRows.forEach((row) => {
+    rows.forEach((row) => {
       hideOriginals(false)
       row.hidden = false
     })
@@ -195,14 +187,14 @@ function renderResult(allFilters, showAllRows, filterKey) {
     hideOriginals(true)
     let prevFamily = ""
     let setId = 0
-    let count = 1
+    let rowspan = 1
     let prevApi = ""
     let apiId = 0
     let apiCount = 1
     // Always iterate in the same order
     const setOrder = ["rifamily", "riapi", "rireptype"]
 
-    riRows.forEach((row) => {
+    rows.forEach((row) => {
       let setInd = 0
       let hideRow = true
 
@@ -277,7 +269,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
             }
 
             if (row.dataset.rifamily != prevFamily) {
-              count = 1
+              rowspan = 1
               row.insertAdjacentHTML(
                 "afterbegin",
                 '<td data-ins="' +
@@ -295,12 +287,12 @@ function renderResult(allFilters, showAllRows, filterKey) {
                   "</th>"
               )
             } else {
-              count++
+              rowspan++
               const sets = document.querySelectorAll(
                 '[data-ins="' + setId + '"]'
               )
               sets.forEach((set) => {
-                set.rowSpan = count
+                set.rowSpan = rowspan
               })
             }
 
@@ -312,37 +304,37 @@ function renderResult(allFilters, showAllRows, filterKey) {
 }
 
 // Input filter
-riFilterInput.addEventListener("keyup", function (e) {
-  riHideCutoffs()
+filterInput.addEventListener("keyup", function (e) {
+  hideCutoffs()
   let query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1 && query !== "-"
   const filterKey = "rirepname"
   let showAllRows = true
   if (notEmpty) {
-    riClearBtn.classList.remove("dn")
+    clearBtn.classList.remove("dn")
     showAllRows = false
   } else {
-    riClearBtn.classList.add("dn")
+    clearBtn.classList.add("dn")
   }
 
   renderResult(query, showAllRows, filterKey)
-  riEmptyCheck()
+  checkNoMatches()
 })
 
 // Set filters
-riFilterBtns.forEach((filterBtn) => {
+filterSetBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterKey = e.target.dataset.rifilterbtn
     if (e.target.classList.contains("active")) {
-      riCloseFilter()
+      closeFilterSet()
       return
     }
-    riCloseFilter()
-    riClearBtn.classList.remove("dn")
+    closeFilterSet()
+    clearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
-    riFilterInput.disabled = true
-    riFilterSets.forEach((set) => {
+    filterInput.disabled = true
+    filterSets.forEach((set) => {
       if (set.id === filterKey) {
         if (set.hidden === false) {
           set.hidden = true
@@ -380,14 +372,14 @@ riFilterBtns.forEach((filterBtn) => {
           }
         }
 
-        comboFilter(allFilters)
+        makeComboOverview(allFilters)
         renderResult(allFilters, showAllRows, filterKey)
-        riEmptyCheck()
+        checkNoMatches()
       })
     })
   })
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  riTableCutoff()
+  cutoffTable()
 })
