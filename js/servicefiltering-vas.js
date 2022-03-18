@@ -1,14 +1,14 @@
 const rows = document.querySelectorAll("#allVas .vas__item")
 const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
-const vasInput = document.querySelector("#vasfilter")
-const filterBtns = document.querySelectorAll("[data-filterbtn]")
+const filterInput = document.querySelector("#vasfilter")
+const filterSetBtns = document.querySelectorAll("[data-filterbtn]")
 const filterSets = document.querySelectorAll("#filtersets fieldset")
 const filterChecks = document.querySelectorAll("[data-check]")
 const clearBtn = document.querySelector("#clearfilters")
-const vasCutoff = document.querySelector("#vas-cutoff")
+const cutoff = document.querySelector("#vas-cutoff")
 const showAll = document.querySelector("#showAll")
 
-function vasTableCutoff() {
+function cutoffTable() {
   rows.forEach((row, i) => {
     if (i > 10) {
       row.hidden = true
@@ -16,12 +16,12 @@ function vasTableCutoff() {
   })
 }
 
-function vasHideCutoffs() {
-  vasCutoff.hidden = true
+function hideCutoffs() {
+  cutoff.hidden = true
 }
 
-function clearFilters() {
-  vasHideCutoffs()
+function clearAllFilters() {
+  hideCutoffs()
   const activeBtn = document.querySelector("[data-filterbtn].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
@@ -40,22 +40,22 @@ function clearFilters() {
   serviceCountryRows.forEach((row) => {
     row.hidden = false
   })
-  vasInput.value = ""
+  filterInput.value = ""
 
   clearBtn.classList.add("dn")
 }
 
 clearBtn.addEventListener("click", function () {
-  clearFilters()
+  clearAllFilters()
 })
 
 showAll.addEventListener("click", () => {
-  clearFilters()
+  clearAllFilters()
 })
 
 // Input filter
-vasInput.addEventListener("keyup", function (e) {
-  vasHideCutoffs()
+filterInput.addEventListener("keyup", function (e) {
+  hideCutoffs()
   rows.forEach((row) => {
     row.hidden = false
   })
@@ -90,16 +90,16 @@ vasInput.addEventListener("keyup", function (e) {
 })
 
 // Set filters
-filterBtns.forEach((filterBtn) => {
+filterSetBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const filterType = e.target.dataset.filterbtn
 
     if (e.target.classList.contains("active")) {
-      clearFilters()
+      clearAllFilters()
       return
     }
 
-    clearFilters()
+    clearAllFilters()
     e.target.classList.add("active")
     clearBtn.classList.remove("dn")
 
@@ -176,7 +176,7 @@ filterBtns.forEach((filterBtn) => {
   })
 })
 
-function scrollToVasTarget(targetElement){
+function scrollToTarget(targetElement){
   const element = document.getElementById(targetElement)
   const headerOffset = document.querySelector('[data-siteheader]').offsetHeight + 20
   const elementPosition = element.getBoundingClientRect().top
@@ -208,13 +208,13 @@ document.addEventListener("DOMContentLoaded", function () {
   if(anchorTag) {
     const cleanAnchorTag = anchorTag.replace(/#/,'')
 
-    vasHideCutoffs()
+    hideCutoffs()
     //Delay added for Chrome so window.scrollTo event will be triggered
     setTimeout(function() {
-      scrollToVasTarget(cleanAnchorTag)
+      scrollToTarget(cleanAnchorTag)
     },100)
   } else {
-    vasTableCutoff()
+    cutoffTable()
   }
 
   const anchors = document.querySelectorAll('.anchorjs-link')
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const anchorId = this.getAttribute('href')
       const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
       setTimeout(function() {
-        scrollToVasTarget(anchorParent)
+        scrollToTarget(anchorParent)
       },100)
     })
   })
