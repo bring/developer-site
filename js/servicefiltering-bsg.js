@@ -58,9 +58,9 @@ cutoffBtn.addEventListener("click", function () {
 })
 
 // Input filter
-filterInput.addEventListener("keyup", function (e) {
+filterInput.addEventListener("keyup", function () {
   hideCutoffs(cutoff)
-  const query = e.target.value.toLowerCase()
+  const query = this.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
     clearBtn.classList.remove("dn")
@@ -99,7 +99,7 @@ function makeComboOverview(allFilters) {
     return (
       '<button type="button" data-bsg-title="' +
       active +
-      '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+      '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
       title +
       "</button>"
     )
@@ -121,7 +121,7 @@ function makeComboOverview(allFilters) {
           activeFilter +
           '" data-bsg-title="' +
           filter +
-          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
           filter +
           "</button>"
       })
@@ -145,10 +145,11 @@ function toggleCheckbox(box) {
 
 // Remove filters via combo overview
 filterCombo.addEventListener("click", function (e) {
-  if (e.target.dataset.bsgTitle && !e.target.dataset.bsgType) {
+  const clicked = e.target
+  if (clicked.dataset.bsgTitle && !clicked.dataset.bsgType) {
     // Sets
     let subButtons = document.querySelectorAll(
-      'button[data-bsg-type="' + e.target.dataset.bsgTitle + '"]'
+      'button[data-bsg-type="' + clicked.dataset.bsgTitle + '"]'
     )
     subButtons.forEach((subButton) => {
       toggleCheckbox(subButton)
@@ -156,8 +157,8 @@ filterCombo.addEventListener("click", function (e) {
   }
 
   // Single subfilters
-  if (e.target.dataset.bsgType && e.target.dataset.bsgTitle) {
-    toggleCheckbox(e.target)
+  if (clicked.dataset.bsgType && clicked.dataset.bsgTitle) {
+    toggleCheckbox(clicked)
   }
 })
 
@@ -226,16 +227,16 @@ function toggleRows() {
 
 // Set filters
 filterSetBtns.forEach((filterBtn) => {
-  filterBtn.addEventListener("click", function (e) {
-    const currentFilterSet = e.target.dataset.bsgFilterset
-    if (e.target.classList.contains("active")) {
+  filterBtn.addEventListener("click", function () {
+    const currentFilterSet = this.dataset.bsgFilterset
+    if (this.classList.contains("active")) {
       closeFilterSet()
       return
     }
     closeFilterSet()
     clearBtn.classList.remove("dn")
 
-    e.target.classList.add("active")
+    this.classList.add("active")
     filterInput.disabled = true
 
     toggleSets(filterSets, currentFilterSet)
@@ -244,8 +245,8 @@ filterSetBtns.forEach((filterBtn) => {
       'input[data-filter="' + currentFilterSet + '"]'
     )
     setChecks.forEach((setCheck) => {
-      setCheck.addEventListener("click", function (e) {
-        const filterKey = e.target.dataset.filter
+      setCheck.addEventListener("click", function () {
+        const filterKey = this.dataset.filter
 
         // Store active filters
         allFilters[filterKey] = []

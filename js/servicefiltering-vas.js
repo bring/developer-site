@@ -51,9 +51,9 @@ showAll.addEventListener("click", () => {
 })
 
 // Input filter
-filterInput.addEventListener("keyup", function (e) {
+filterInput.addEventListener("keyup", function () {
   hideCutoffs(cutoff)
-  const query = e.target.value.toLowerCase()
+  const query = this.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
     clearBtn.classList.remove("dn")
@@ -87,15 +87,15 @@ filterInput.addEventListener("keyup", function (e) {
 
 // Set filters
 filterSetBtns.forEach((filterBtn) => {
-  filterBtn.addEventListener("click", function (e) {
-    const currentFilterSet = e.target.dataset.vasFilterset
-    if (e.target.classList.contains("active")) {
+  filterBtn.addEventListener("click", function () {
+    const currentFilterSet = this.dataset.vasFilterset
+    if (this.classList.contains("active")) {
       clearAllFilters()
       return
     }
 
     clearAllFilters()
-    e.target.classList.add("active")
+    this.classList.add("active")
     clearBtn.classList.remove("dn")
 
     toggleSets(filterSets, currentFilterSet)
@@ -105,8 +105,8 @@ filterSetBtns.forEach((filterBtn) => {
     )
 
     setChecks.forEach((setCheck) => {
-      setCheck.addEventListener("click", function (e) {
-        const filterType = e.target.dataset.filter
+      setCheck.addEventListener("click", function () {
+        const filterType = this.dataset.filter
         const dataFilter = '[data-filter="' + filterType + '"]'
 
         let showAll = true
