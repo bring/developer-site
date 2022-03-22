@@ -41,7 +41,7 @@
         "customerNumber": "*************",
         "additionalServices": [
           {
-            "id": "POSTOPPKRAV",
+            "id": "1000",
             "accountNumber": "12345678903",
             "accountType": null,
             "amount": 1000,
