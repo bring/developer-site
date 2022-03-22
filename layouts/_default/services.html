@@ -184,9 +184,9 @@
                   <div class="mrl">
                     <p class="form__label">Filter by</p>
                     <div class="btngroup">
-                      {{- partial "filterbtn.html" (dict "dataAtt" "data-vas-filterset='service'" "btnText" "Service") -}}
-                      {{- partial "filterbtn.html" (dict "dataAtt" "data-vas-filterset='type'" "btnText" "Service type") -}}
-                      {{- partial "filterbtn.html" (dict "dataAtt" "data-vas-filterset='family'" "btnText" "Service family") -}}
+                      {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='service'" "btnText" "Service") -}}
+                      {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='type'" "btnText" "Service type") -}}
+                      {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='family'" "btnText" "Service family") -}}
                     </div>
                   </div>
                   <label class="form__label mrxl" for="vasfilter">
@@ -408,9 +408,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    {{- partial "filterbtn.html" (dict "dataAtt" "data-ri-filterset='rifamily'" "btnText" "Service family") -}}
-                    {{- partial "filterbtn.html" (dict "dataAtt" "data-ri-filterset='riapi'" "btnText" "API") -}}
-                    {{- partial "filterbtn.html" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
+                    {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rifamily'" "btnText" "Service family") -}}
+                    {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='riapi'" "btnText" "API") -}}
+                    {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
                   </div>
                 </div>
                 <label class="form__label" for="ri-textfilter">
