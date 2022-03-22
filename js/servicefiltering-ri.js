@@ -85,19 +85,20 @@ clearBtn.addEventListener("click", function () {
 
 // Remove filters via combo overview
 filterCombo.addEventListener("click", function (e) {
-  // Delete all
-  if (e.target.dataset.rititle && !e.target.dataset.ritype) {
+  const clicked = e.target
+  if (clicked.dataset.rititle && !clicked.dataset.ritype) {
+    // Sets
     let subButtons = document.querySelectorAll(
-      'button[data-ritype="' + e.target.dataset.rititle + '"]'
+      'button[data-ritype="' + clicked.dataset.rititle + '"]'
     )
     subButtons.forEach((subButton) => {
       toggleCheckbox(subButton)
     })
   }
 
-  // Delete one
-  if (e.target.dataset.ritype && e.target.dataset.rititle) {
-    toggleCheckbox(e.target)
+  // Single subfilters
+  if (clicked.dataset.ritype && clicked.dataset.rititle) {
+    toggleCheckbox(clicked)
   }
 })
 
@@ -116,7 +117,7 @@ function makeComboOverview(allFilters) {
       let appliedFilter =
         '<button type="button" data-rititle="' +
         activeFilter +
-        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
         filterTitle +
         '</button><div class="plm flex flex-wrap">'
       allFilters[activeFilter].forEach((filter) => {
@@ -127,7 +128,7 @@ function makeComboOverview(allFilters) {
           activeFilter +
           '" data-rititle="' +
           filter +
-          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+          '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
           filter +
           "</button>"
       })
@@ -272,9 +273,9 @@ function renderResult(allFilters, showAllRows, filterKey) {
 }
 
 // Input filter
-filterInput.addEventListener("keyup", function (e) {
+filterInput.addEventListener("keyup", function () {
   hideCutoffs(cutoff)
-  let query = e.target.value.toLowerCase()
+  const query = this.value.toLowerCase()
   const notEmpty = query.length >= 1 && query !== "-"
   const filterKey = "rirepname"
   let showAllRows = true
@@ -291,16 +292,16 @@ filterInput.addEventListener("keyup", function (e) {
 
 // Set filters
 filterSetBtns.forEach((filterBtn) => {
-  filterBtn.addEventListener("click", function (e) {
-    const currentFilterSet = e.target.dataset.riFilterset
-    if (e.target.classList.contains("active")) {
+  filterBtn.addEventListener("click", function () {
+    const currentFilterSet = this.dataset.riFilterset
+    if (this.classList.contains("active")) {
       closeFilterSet()
       return
     }
     closeFilterSet()
     clearBtn.classList.remove("dn")
 
-    e.target.classList.add("active")
+    this.classList.add("active")
     filterInput.disabled = true
 
     toggleSets(filterSets, currentFilterSet)
@@ -309,8 +310,8 @@ filterSetBtns.forEach((filterBtn) => {
       'input[data-filter="' + currentFilterSet + '"]'
     )
     setChecks.forEach((setCheck) => {
-      setCheck.addEventListener("click", function (e) {
-        const filterKey = e.target.dataset.filter
+      setCheck.addEventListener("click", function () {
+        const filterKey = this.dataset.filter
 
         // Store active filters
         allFilters[filterKey] = []
