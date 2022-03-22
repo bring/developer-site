@@ -1,0 +1,119 @@
+{{- partial "services/spreadsheetinfo" -}}
+<div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
+  <div class="mrl">
+    <div class="flex flex-wrap-reverse align-ifs">
+      <div class="mrl">
+        <p class="form__label">Filter by</p>
+        <div class="btngroup">
+          {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rifamily'" "btnText" "Service family") -}}
+          {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='riapi'" "btnText" "API") -}}
+          {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
+        </div>
+      </div>
+      <label class="form__label" for="ri-textfilter">
+        Reports name
+        <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+      </label>
+    </div>
+    <div id="ri-filtersets">
+      {{- $filterScratch := newScratch -}}
+      {{- $filterScratch.Add "rifamily" slice -}}
+      {{- $filterScratch.Add "riapi" slice -}}
+      {{- $filterScratch.Add "rireptype" slice -}}
+      {{- range .data -}}
+        {{- $filterScratch.Add "rifamily" .ServiceFamily }}
+        {{- $filterScratch.Add "rireptype" .ReportType }}
+      {{- end -}}
+      {{- $filterScratch.Add "riapi" "Invoice" }}
+      {{- $filterScratch.Add "riapi" "Reports" }}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rifamily") "filter" "rifamily" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "riapi") "filter" "riapi" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rireptype") "filter" "rireptype" ) -}}
+    </div>
+  </div>
+  <div class="maxw100p">
+    <div id="ri-filtercombo" class="mtm mrm text-note"></div>
+    <button type="button" id="ri-clearfilters" class="btn-link--dark mtl mrl dn">Clear all filters</button>
+  </div>
+</div>
+<table id="services-ri">
+  <thead>
+    <tr>
+      <th>Service family</th>
+      <th>Customer number type</th>
+      <th>API</th>
+      <th>Report type</th>
+      <th>Reports name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- $looper := 0 -}}
+    {{- $apiLooper := 1 -}}
+    {{- $fam := "" -}}
+    {{- $thisApi := "" -}}
+    {{- $prevApi := "" }}
+
+    {{- range .data -}}
+      {{- $prevApi = $thisApi -}}
+
+      {{- if ne $fam .ServiceFamily -}}
+        {{- $looper = 0 -}}
+        {{- $apiLooper = 1 -}}
+        {{- $prevApi = "" -}}
+      {{- end -}}
+      {{- $looper = add $looper 1 -}}
+      {{- $filterScratch.SetInMap "famLooper" .ServiceFamily $looper -}}
+      {{- $fam = .ServiceFamily -}}
+
+      {{- if eq .Reports "Yes" -}}
+        {{- $thisApi = "Reports" -}}
+      {{- else -}}
+        {{- $thisApi = "Invoice" -}}
+      {{- end -}}
+      {{- if eq $thisApi $prevApi -}}
+        {{- $apiLooper = add $apiLooper 1 -}}
+      {{- end -}}
+      {{- $filterScratch.SetInMap "repLooper" .ServiceFamily $apiLooper -}}
+    {{- end -}}
+
+    {{- range .data -}}
+      {{- if eq .Reports "Yes" -}}
+        {{- $thisApi = "Reports" -}}
+      {{- else -}}
+        {{- $thisApi = "Invoice" -}}
+      {{- end -}}
+      <tr
+        data-ri-family="{{.ServiceFamily}}"
+        data-cntype="{{ .CustomerNumberType }}"
+        data-ri-api="{{ $thisApi }}"
+        data-ri-reptype="{{ .ReportType }}"
+        data-ri-repname="{{ .ReportsName }}"
+      >
+        {{- if ne $fam .ServiceFamily -}}
+          <th scope="row" rowspan='{{ index ($filterScratch.Get "famLooper") .ServiceFamily }}' class="originalel maxw20r">
+              {{- .ServiceFamily -}}
+          </th>
+          <td rowspan='{{ index ($filterScratch.Get "famLooper") .ServiceFamily }}' class="originalel">
+            {{- .CustomerNumberType -}}
+          </td>
+        {{- end -}}
+        {{- if eq .Invoice "Yes" -}}
+          <td class="originalel"><span class="mb-badge">{{ $thisApi }}</span></td>
+          {{- $prevApi = $thisApi -}}
+        {{- end -}}
+        {{- if eq .Reports "Yes" -}}
+          {{- if ne $thisApi $prevApi -}}
+            <td rowspan='{{ index ($filterScratch.Get "repLooper") .ServiceFamily }}' class="originalel"><span class="mb-badge">{{ $thisApi }}</span></td>
+            {{- $prevApi = $thisApi -}}
+          {{- end -}}
+        {{- end -}}
+        <td>{{ if .ReportType }}{{ .ReportType }}{{else}}-{{ end }}</td>
+        <td data-filter="rep-name">{{ if .ReportsName }}{{ .ReportsName }}{{else}}-{{ end }}</td>
+      </tr>
+      {{- $fam = .ServiceFamily -}}
+    {{- end -}}
+  </tbody>
+</table>
+<div class="cutoff-overlay" id="ri-cutoff">
+  <button type="button" class="btn btn--white w100p maxw32r">Show all service families</button>
+</div>
