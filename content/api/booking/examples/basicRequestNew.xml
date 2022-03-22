@@ -37,18 +37,13 @@
         </recipient>
       </parties>
       <product>
-        <id>PA_DOREN</id>
-        <customerNumber>*************</customerNumber>
+        <id>5600</id>
+        <customerNumber>5</customerNumber>
         <additionalServices>
           <additionalService>
             <id>EVARSLING</id>
             <email>sender@sender.com</email>
             <mobile>12345</mobile>
-          </additionalService>
-          <additionalService>
-            <id>DANGEROUS_GOODS</id>
-            <mobile>777777</mobile>
-            <unNumber>ABC</unNumber>
           </additionalService>
         </additionalServices>
       </product>

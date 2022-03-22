@@ -41,7 +41,7 @@
             },
             "product": {
                 "id": "PICKUP_PARCEL",
-                "customerNumber": "**************",
+                "customerNumber": "6",
                 "messageForRecipient": null
             },
             "purchaseOrder": null,

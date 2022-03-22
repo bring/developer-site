@@ -12,8 +12,8 @@ baseUri: https://api.bring.com/booking/api
 
       | Specialist | Example services | Example customer number |
       |:-----------|:-----------------|:------------------------|
-      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09`, `3584` | `PARCELS_NORWAY-10001123123` |
-      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO-329511` |
+      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09`, `3584` | `5` |
+      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `7` |
       | Bring Cargo, International | `CARGO_INTERNATIONAL` | `CARGO-803739` |
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
       | Bring Express, Sweden | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
@@ -156,7 +156,7 @@ baseUri: https://api.bring.com/booking/api
         customerNumber:
             description: Specify API customer number. This parameter can be maximum 35 character long.
             type: string
-            example: PARCELS_NORWAY-*********
+            example: PARCELS_NORWAY-*********, 6
             required: true
         addressLine:
             description: Specify address. This parameter can be maximum 35 character long.
@@ -892,11 +892,11 @@ baseUri: https://api.bring.com/booking/api
 
     | Customer number prefix | Pickup in country | Required information element     |
     |:-----------------------|:------------------|:---------------------------------|
-    | PARCELS_NORWAY         | Norway (parcel services)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
-    | CARGO                  | Norway (cargo services)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
-    | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark (parcel services) | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
+    | None, PARCELS_NORWAY         | Norway (parcel services)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
+    | None, CARGO                  | Norway (cargo services)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
+    | None, PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark (parcel services) | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
 
-    If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_NORWAY-*********** customer number, without prefix PARCELS_NORWAY- and any leading zeros.
+    If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway and Nordics is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_xx-*********** customer number, without prefix PARCELS_xx- and any leading zeros.
 
     ### Pickup is ordered by default with service CARGO_GROUPAGE from Bring Cargo
 

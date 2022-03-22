@@ -1,51 +1,129 @@
 {
   "customers": [
     {
-      "name": "Testkunde (*******)",
-      "customerNumber": "***********",
+      "name": "Demo Parcel Nordic Converted Customer (00000000006)",
+      "customerNumber": "6",
       "countryCode": "NO",
       "products": [
-        "SERVICEPAKKE",
-        "EKSPRESS09",
-        "BEDRIFTSPAKKE",
-        "BPAKKE_DOR-DOR",
-        "PA_DOREN",
-        "BPAKKE_DOR-DOR_RETURSERVICE",
-        "EKSPRESS09_RETURSERVICE",
-        "SERVICEPAKKE_RETURSERVICE",
-        "MINIPAKKE",
-        "BUSINESS_PARCEL",
-        "PICKUP_PARCEL",
-        "BUSINESS_PALLET",
         "BUSINESS_HALFPALLET",
-        "BUSINESS_QUARTERPALLET",
+        "BUSINESS_PALLET",
+        "BUSINESS_PARCEL",
         "BUSINESS_PARCEL_BULK",
+        "BUSINESS_QUARTERPALLET",
+        "EXPRESS_NORDIC_0900",
         "EXPRESS_NORDIC_0900_BULK",
-        "PICKUP_PARCEL_BULK",
         "HOME_DELIVERY_PARCEL",
-        "HOME_DELIVERY_MAILBOX"
+        "PICKUP_PARCEL",
+        "PICKUP_PARCEL_BULK"
       ]
     },
     {
-      "name": "Testkund (TEST-112)",
-      "customerNumber": "***************",
+      "name": "Demo Parcel Nordic Converted Customer (000006)",
+      "customerNumber": "6",
+      "countryCode": "DK",
+      "products": [
+        "BUSINESS_HALFPALLET",
+        "BUSINESS_PALLET",
+        "BUSINESS_PARCEL",
+        "BUSINESS_PARCEL_BULK",
+        "BUSINESS_QUARTERPALLET",
+        "EXPRESS_NORDIC_0900",
+        "EXPRESS_NORDIC_0900_BULK",
+        "HOME_DELIVERY_PARCEL",
+        "PICKUP_PARCEL",
+        "PICKUP_PARCEL_BULK"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (000006)",
+      "customerNumber": "6",
+      "countryCode": "FI",
+      "products": [
+        "BUSINESS_HALFPALLET",
+        "BUSINESS_PALLET",
+        "BUSINESS_PARCEL",
+        "BUSINESS_PARCEL_BULK",
+        "BUSINESS_QUARTERPALLET",
+        "EXPRESS_NORDIC_0900",
+        "EXPRESS_NORDIC_0900_BULK",
+        "HOME_DELIVERY_PARCEL",
+        "PICKUP_PARCEL",
+        "PICKUP_PARCEL_BULK"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (000006)",
+      "customerNumber": "6",
+      "countryCode": "NO",
+      "products": [
+        "BUSINESS_HALFPALLET",
+        "BUSINESS_PALLET",
+        "BUSINESS_PARCEL",
+        "BUSINESS_PARCEL_BULK",
+        "BUSINESS_QUARTERPALLET",
+        "EXPRESS_NORDIC_0900",
+        "EXPRESS_NORDIC_0900_BULK",
+        "HOME_DELIVERY_PARCEL",
+        "PICKUP_PARCEL",
+        "PICKUP_PARCEL_BULK"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (000006)",
+      "customerNumber": "6",
       "countryCode": "SE",
       "products": [
-        "COURIER_VIP",
-        "COURIER_1H",
-        "COURIER_2H",
-        "COURIER_4H",
-        "COURIER_6H",
-        "COURIER_LONG_DISTANCE",
-        "COURIER_BICYCLE_VIP",
-        "COURIER_BICYCLE_1H",
-        "COURIER_BICYCLE_2H",
-        "COURIER_BICYCLE_4H",
-        "EXPRESS_NORDIC_SAME_DAY",
-        "EXPRESS_INTERNATIONAL_0900",
-        "EXPRESS_INTERNATIONAL_1200",
-        "EXPRESS_INTERNATIONAL",
-        "EXPRESS_ECONOMY"
+        "BUSINESS_HALFPALLET",
+        "BUSINESS_PALLET",
+        "BUSINESS_PARCEL",
+        "BUSINESS_PARCEL_BULK",
+        "BUSINESS_QUARTERPALLET",
+        "EXPRESS_NORDIC_0900",
+        "EXPRESS_NORDIC_0900_BULK",
+        "HOME_DELIVERY_PARCEL",
+        "PICKUP_PARCEL",
+        "PICKUP_PARCEL_BULK"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (6)",
+      "customerNumber": "6",
+      "countryCode": "DK",
+      "products": [
+        "0345"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (6)",
+      "customerNumber": "6",
+      "countryCode": "FI",
+      "products": [
+        "0345"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (6)",
+      "customerNumber": "6",
+      "countryCode": "NO",
+      "products": [
+        "3570",
+        "3584",
+        "4850",
+        "5000",
+        "5600",
+        "5800",
+        "9000",
+        "9300",
+        "9600",
+        "9650"
+      ]
+    },
+    {
+      "name": "Demo Parcel Nordic Converted Customer (6)",
+      "customerNumber": "6",
+      "countryCode": "SE",
+      "products": [
+        "0345"
       ]
     }
   ]

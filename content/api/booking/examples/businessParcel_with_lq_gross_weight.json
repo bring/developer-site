@@ -41,7 +41,7 @@
         },
         "product": {
           "id": "BUSINESS_PARCEL",
-          "customerNumber": "*********",
+          "customerNumber": "6",
           "additionalServices": [
             {
               "id": "0003",

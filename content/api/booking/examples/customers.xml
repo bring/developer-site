@@ -1,52 +1,88 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <customersResponse xmlns="http://www.bring.no/booking/">
   <customers>
     <customer>
-      <name>Testkunde (00012341234)</name>
-      <customerNumber>**************</customerNumber>
-      <countryCode>NO</countryCode>
+      <name>Demo Parcel Nordic Converted Customer (6)</name>
+      <customerNumber>6</customerNumber>
+      <countryCode>DK</countryCode>
       <products>
-        <product>SERVICEPAKKE</product>
-        <product>EKSPRESS09</product>
-        <product>BEDRIFTSPAKKE</product>
-        <product>BPAKKE_DOR-DOR</product>
-        <product>PA_DOREN</product>
-        <product>BPAKKE_DOR-DOR_RETURSERVICE</product>
-        <product>EKSPRESS09_RETURSERVICE</product>
-        <product>SERVICEPAKKE_RETURSERVICE</product>
-        <product>MINIPAKKE</product>
-        <product>BUSINESS_PARCEL</product>
-        <product>PICKUP_PARCEL</product>
-        <product>BUSINESS_PALLET</product>
+        <product>0345</product>
         <product>BUSINESS_HALFPALLET</product>
-        <product>BUSINESS_QUARTERPALLET</product>
+        <product>BUSINESS_PALLET</product>
+        <product>BUSINESS_PARCEL</product>
         <product>BUSINESS_PARCEL_BULK</product>
+        <product>BUSINESS_QUARTERPALLET</product>
+        <product>EXPRESS_NORDIC_0900</product>
         <product>EXPRESS_NORDIC_0900_BULK</product>
-        <product>PICKUP_PARCEL_BULK</product>
         <product>HOME_DELIVERY_PARCEL</product>
-        <product>HOME_DELIVERY_MAILBOX</product>
+        <product>PICKUP_PARCEL</product>
+        <product>PICKUP_PARCEL_BULK</product>
       </products>
     </customer>
     <customer>
-      <name>Testkund (TEST-112)</name>
-      <customerNumber>***************</customerNumber>
+      <name>Demo Parcel Nordic Converted Customer (6)</name>
+      <customerNumber>6</customerNumber>
+      <countryCode>FI</countryCode>
+      <products>
+        <product>0345</product>
+        <product>BUSINESS_HALFPALLET</product>
+        <product>BUSINESS_PALLET</product>
+        <product>BUSINESS_PARCEL</product>
+        <product>BUSINESS_PARCEL_BULK</product>
+        <product>BUSINESS_QUARTERPALLET</product>
+        <product>EXPRESS_NORDIC_0900</product>
+        <product>EXPRESS_NORDIC_0900_BULK</product>
+        <product>HOME_DELIVERY_PARCEL</product>
+        <product>PICKUP_PARCEL</product>
+        <product>PICKUP_PARCEL_BULK</product>
+      </products>
+    </customer>
+    <customer>
+      <name>Demo Parcel Nordic Converted Customer (6)</name>
+      <customerNumber>6</customerNumber>
+      <countryCode>NO</countryCode>
+      <products>
+        <product>3570</product>
+        <product>3584</product>
+        <product>4850</product>
+        <product>5000</product>
+        <product>5100</product>
+        <product>5300</product>
+        <product>5400</product>
+        <product>5600</product>
+        <product>5800</product>
+        <product>9000</product>
+        <product>9100</product>
+        <product>9300</product>
+        <product>9600</product>
+        <product>9650</product>
+        <product>BUSINESS_HALFPALLET</product>
+        <product>BUSINESS_PALLET</product>
+        <product>BUSINESS_PARCEL</product>
+        <product>BUSINESS_PARCEL_BULK</product>
+        <product>BUSINESS_QUARTERPALLET</product>
+        <product>EXPRESS_NORDIC_0900</product>
+        <product>EXPRESS_NORDIC_0900_BULK</product>
+        <product>HOME_DELIVERY_PARCEL</product>
+        <product>PICKUP_PARCEL</product>
+        <product>PICKUP_PARCEL_BULK</product>
+      </products>
+    </customer>
+    <customer>
+      <name>Demo Parcel Nordic Converted Customer (6)</name>
+      <customerNumber>6</customerNumber>
       <countryCode>SE</countryCode>
       <products>
-        <product>COURIER_VIP</product>
-        <product>COURIER_1H</product>
-        <product>COURIER_2H</product>
-        <product>COURIER_4H</product>
-        <product>COURIER_6H</product>
-        <product>COURIER_LONG_DISTANCE</product>
-        <product>COURIER_BICYCLE_VIP</product>
-        <product>COURIER_BICYCLE_1H</product>
-        <product>COURIER_BICYCLE_2H</product>
-        <product>COURIER_BICYCLE_4H</product>
-        <product>EXPRESS_NORDIC_SAME_DAY</product>
-        <product>EXPRESS_INTERNATIONAL_0900</product>
-        <product>EXPRESS_INTERNATIONAL_1200</product>
-        <product>EXPRESS_INTERNATIONAL</product>
-        <product>EXPRESS_ECONOMY</product>
+        <product>0345</product>
+        <product>BUSINESS_HALFPALLET</product>
+        <product>BUSINESS_PALLET</product>
+        <product>BUSINESS_PARCEL</product>
+        <product>BUSINESS_PARCEL_BULK</product>
+        <product>BUSINESS_QUARTERPALLET</product>
+        <product>EXPRESS_NORDIC_0900</product>
+        <product>EXPRESS_NORDIC_0900_BULK</product>
+        <product>HOME_DELIVERY_PARCEL</product>
+        <product>PICKUP_PARCEL</product>
+        <product>PICKUP_PARCEL_BULK</product>
       </products>
     </customer>
   </customers>
