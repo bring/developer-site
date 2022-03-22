@@ -1,4 +1,9 @@
-import { cutoffRows, hideCutoffs, checkNoMatches, toggleSets } from "./servicefiltering-common"
+import {
+  cutoffRows,
+  hideCutoffs,
+  checkNoMatches,
+  toggleSets,
+} from "./servicefiltering-common"
 
 const table = document.querySelector("#services-ri")
 const rows = table.querySelectorAll("tbody tr")
@@ -170,102 +175,97 @@ function renderResult(allFilters, showAllRows, filterKey) {
         const query = allFilters
         row.hidden = true
         if (row.dataset[filterKey].toLowerCase().includes(query)) {
-            row.hidden = false
+          row.hidden = false
         }
-
       } else {
-      setOrder.forEach((setName) => {
-        const filterSet = allFilters[setName]
-        if (filterSet) {
+        setOrder.forEach((setName) => {
+          const filterSet = allFilters[setName]
+          if (filterSet) {
+            // Show all rows before applying filters
+            if (setInd === 0) {
+              row.hidden = false
+            }
 
-          // Show all rows before applying filters
-          if (setInd === 0 ) {
-            row.hidden = false
-          }
-
-          if (row.hidden === false ) {
-            let alreadyVisible = false
-            filterSet.forEach((filter => {
-              // Avoid re-checking already visible rows
-              if (!alreadyVisible) {
-                if (row.dataset[setName] === filter) {
-                  hideRow = false
-                  alreadyVisible = true
+            if (row.hidden === false) {
+              let alreadyVisible = false
+              filterSet.forEach((filter) => {
+                // Avoid re-checking already visible rows
+                if (!alreadyVisible) {
+                  if (row.dataset[setName] === filter) {
+                    hideRow = false
+                    alreadyVisible = true
+                  } else {
+                    hideRow = true
+                  }
                 }
-                else {
-                  hideRow = true
-                }
-              }
-            }))
+              })
+            }
+            row.hidden = hideRow
+            setInd = setInd + 1
           }
-          row.hidden = hideRow
-          setInd = setInd + 1
-        }
-      })
-    }
+        })
+      }
 
       // Insert additional cells
       if (row.hidden === false) {
-            if (row.dataset.rifamily != prevFamily) {
-              setId++
-            }
+        if (row.dataset.rifamily != prevFamily) {
+          setId++
+        }
 
-            if (
-              row.dataset.riapi != prevApi ||
-              row.dataset.rifamily != prevFamily
-            ) {
-              prevApi = ""
-              apiId++
-              apiCount = 1
-              row.insertAdjacentHTML(
-                "afterbegin",
-                '<td data-ins="' +
-                  setId +
-                  apiId +
-                  '" rowspan="1"><span class="mb-badge">' +
-                  row.dataset.riapi +
-                  "</span></td>"
-              )
-            } else {
-              apiCount++
-              const apis = document.querySelectorAll(
-                '[data-ins="' + setId + apiId + '"]'
-              )
-              apis.forEach((api) => {
-                api.rowSpan = apiCount
-              })
-            }
+        if (
+          row.dataset.riapi != prevApi ||
+          row.dataset.rifamily != prevFamily
+        ) {
+          prevApi = ""
+          apiId++
+          apiCount = 1
+          row.insertAdjacentHTML(
+            "afterbegin",
+            '<td data-ins="' +
+              setId +
+              apiId +
+              '" rowspan="1"><span class="mb-badge">' +
+              row.dataset.riapi +
+              "</span></td>"
+          )
+        } else {
+          apiCount++
+          const apis = document.querySelectorAll(
+            '[data-ins="' + setId + apiId + '"]'
+          )
+          apis.forEach((api) => {
+            api.rowSpan = apiCount
+          })
+        }
 
-            if (row.dataset.rifamily != prevFamily) {
-              rowspan = 1
-              row.insertAdjacentHTML(
-                "afterbegin",
-                '<td data-ins="' +
-                  setId +
-                  '" rowspan="1">' +
-                  row.dataset.cntype +
-                  "</td>"
-              )
-              row.insertAdjacentHTML(
-                "afterbegin",
-                '<th data-ins="' +
-                  setId +
-                  '" scope="row" rowspan="1" class="maxw20r">' +
-                  row.dataset.rifamily +
-                  "</th>"
-              )
-            } else {
-              rowspan++
-              const sets = document.querySelectorAll(
-                '[data-ins="' + setId + '"]'
-              )
-              sets.forEach((set) => {
-                set.rowSpan = rowspan
-              })
-            }
+        if (row.dataset.rifamily != prevFamily) {
+          rowspan = 1
+          row.insertAdjacentHTML(
+            "afterbegin",
+            '<td data-ins="' +
+              setId +
+              '" rowspan="1">' +
+              row.dataset.cntype +
+              "</td>"
+          )
+          row.insertAdjacentHTML(
+            "afterbegin",
+            '<th data-ins="' +
+              setId +
+              '" scope="row" rowspan="1" class="maxw20r">' +
+              row.dataset.rifamily +
+              "</th>"
+          )
+        } else {
+          rowspan++
+          const sets = document.querySelectorAll('[data-ins="' + setId + '"]')
+          sets.forEach((set) => {
+            set.rowSpan = rowspan
+          })
+        }
 
-            prevApi = row.dataset.riapi
-            prevFamily = row.dataset.rifamily
+        prevApi = row.dataset.riapi
+        prevFamily = row.dataset.rifamily
       }
     })
   }
@@ -336,5 +336,5 @@ filterSetBtns.forEach((filterBtn) => {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-  cutoffRows(rows,12)
+  cutoffRows(rows, 12)
 })

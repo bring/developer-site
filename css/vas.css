@@ -7,10 +7,6 @@
   padding-bottom: 0.75rem;
 }
 
-.vas-item .dev-collapsible__toggler {
-  padding: 0;
-}
-
 .vas__codes {
   flex: 1 1 10rem;
 }

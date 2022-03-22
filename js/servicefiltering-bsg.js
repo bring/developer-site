@@ -1,4 +1,9 @@
-import { cutoffRows, hideCutoffs, checkNoMatches, toggleSets } from "./servicefiltering-common"
+import {
+  cutoffRows,
+  hideCutoffs,
+  checkNoMatches,
+  toggleSets,
+} from "./servicefiltering-common"
 
 const table = document.querySelector("#services-bsg")
 const rows = table.querySelectorAll("tbody tr")
@@ -67,16 +72,16 @@ filterInput.addEventListener("keyup", function (e) {
     if (
       row
         .querySelector('[data-filter="name"]')
-        .textContent.toLowerCase()
-        .includes(query) ||
+        ?.textContent?.toLowerCase()
+        ?.includes(query) ||
       row
         .querySelector('[data-filter="servcode"]')
-        .textContent.toLowerCase()
-        .includes(query) ||
+        ?.textContent?.toLowerCase()
+        ?.includes(query) ||
       row
         .querySelector('[data-filter="reqcode"]')
-        .textContent.toLowerCase()
-        .includes(query)
+        ?.textContent?.toLowerCase()
+        ?.includes(query)
     ) {
       row.hidden = false
     } else {

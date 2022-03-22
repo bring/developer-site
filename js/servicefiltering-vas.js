@@ -1,7 +1,12 @@
-import { cutoffRows, hideCutoffs, checkNoMatches, toggleSets } from "./servicefiltering-common"
+import {
+  cutoffRows,
+  hideCutoffs,
+  checkNoMatches,
+  toggleSets,
+} from "./servicefiltering-common"
 
 const container = document.querySelector("#all-vas")
-const items = container.querySelectorAll("[data-vas-element]")
+const items = container.querySelectorAll(".vas-item")
 const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
 const filterInput = document.querySelector("#vasfilter")
 const filterSetBtns = document.querySelectorAll("[data-vas-filterset]")
@@ -122,13 +127,19 @@ filterSetBtns.forEach((filterBtn) => {
           })
         } else {
           items.forEach((item) => {
-            let affectedRows = 0;
+            let affectedRows = 0
             showChecked.forEach((show) => {
-              if ([...item.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
-                affectedRows++;
+              if (
+                [
+                  ...item.querySelectorAll(
+                    ".vascountry tbody tr " + dataFilter
+                  ),
+                ]?.some((r) => r.textContent?.toLowerCase() === show)
+              ) {
+                affectedRows++
               }
             })
-            if(affectedRows == 0) {
+            if (affectedRows == 0) {
               item.hidden = true
             } else {
               item.hidden = false
@@ -154,56 +165,58 @@ filterSetBtns.forEach((filterBtn) => {
   })
 })
 
-function scrollToTarget(targetElement){
+function scrollToTarget(targetElement) {
   const element = document.getElementById(targetElement)
-  const headerOffset = document.querySelector('[data-siteheader]').offsetHeight + 20
+  const headerOffset =
+    document.querySelector("[data-siteheader]").offsetHeight + 20
   const elementPosition = element.getBoundingClientRect().top
   const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
   const vasBtnParent = element.parentElement
 
-  const vasBtnToggler = vasBtnParent.querySelector('[data-collapse]')
+  const vasBtnToggler = vasBtnParent.querySelector("[data-collapse]")
   if (vasBtnToggler) {
-    vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
-    vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
+    vasBtnToggler.classList.remove("dev-collapsible__toggler--collapsed")
+    vasBtnToggler.classList.add("dev-collapsible__toggler--expanded")
   }
 
-  const vasItemContent = vasBtnParent.querySelector('[data-vas-element]')
+  const vasItemContent = vasBtnParent.querySelector("[data-vas-element]")
   if (vasItemContent) {
-    vasItemContent.classList.remove('dev-collapsible__item--collapsed')
-    vasItemContent.classList.add('dev-collapsible__item--expanded')
+    vasItemContent.classList.remove("dev-collapsible__item--collapsed")
+    vasItemContent.classList.add("dev-collapsible__item--expanded")
   }
 
   window.scrollTo({
-       top: offsetPosition,
-       behavior: "smooth"
+    top: offsetPosition,
+    behavior: "smooth",
   })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const anchorTag = window.location.hash
-  
-  if(anchorTag) {
-    const cleanAnchorTag = anchorTag.replace(/#/,'')
+
+  if (anchorTag) {
+    const cleanAnchorTag = anchorTag.replace(/#/, "")
 
     hideCutoffs(cutoff)
     //Delay added for Chrome so window.scrollTo event will be triggered
-    setTimeout(function() {
+    setTimeout(function () {
       scrollToTarget(cleanAnchorTag)
-    },100)
+    }, 100)
   } else {
     cutoffRows(items, 10)
   }
 
-  const anchors = document.querySelectorAll('.anchorjs-link')
-  anchors.forEach(anchor => {
-    anchor.addEventListener('click', function() {
-      const anchorId = this.getAttribute('href')
-      const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
-      setTimeout(function() {
+  const anchors = document.querySelectorAll(".anchorjs-link")
+  anchors.forEach((anchor) => {
+    anchor.addEventListener("click", function () {
+      const anchorId = this.getAttribute("href")
+      const anchorParent = document
+        .getElementById(anchorId.replace(/#/, ""))
+        .getAttribute("id")
+      setTimeout(function () {
         scrollToTarget(anchorParent)
-      },100)
+      }, 100)
     })
   })
-
 })
