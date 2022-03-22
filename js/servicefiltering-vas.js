@@ -5,16 +5,16 @@ import {
   toggleSets,
 } from "./servicefiltering-common"
 
-const container = document.querySelector("#all-vas")
-const items = container.querySelectorAll(".vas-item")
-const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
-const filterInput = document.querySelector("#vasfilter")
-const filterSetBtns = document.querySelectorAll("[data-vas-filterset]")
-const filterSets = document.querySelectorAll("#filtersets fieldset")
-const filterChecks = document.querySelectorAll("[data-check]")
-const clearBtn = document.querySelector("#clearfilters")
-const cutoff = document.querySelector("#vas-cutoff")
-const showAll = document.querySelector("#showAll")
+const container = document.querySelector("#all-vas"),
+  items = container.querySelectorAll(".vas-item"),
+  serviceCountryRows = document.querySelectorAll(".vascountry tbody tr"),
+  filterInput = document.querySelector("#vasfilter"),
+  filterSetBtns = document.querySelectorAll("[data-vas-filterset]"),
+  filterSets = document.querySelectorAll("#filtersets fieldset"),
+  filterChecks = document.querySelectorAll("[data-check]"),
+  clearBtn = document.querySelector("#clearfilters"),
+  cutoff = document.querySelector("#vas-cutoff"),
+  showAll = document.querySelector("#showAll")
 
 function clearAllFilters() {
   hideCutoffs(cutoff)
@@ -166,21 +166,20 @@ filterSetBtns.forEach((filterBtn) => {
 })
 
 function scrollToTarget(targetElement) {
-  const element = document.getElementById(targetElement)
-  const headerOffset =
-    document.querySelector("[data-siteheader]").offsetHeight + 20
-  const elementPosition = element.getBoundingClientRect().top
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+  const element = document.getElementById(targetElement),
+    headerOffset =
+      document.querySelector("[data-siteheader]").offsetHeight + 20,
+    elementPosition = element.getBoundingClientRect().top,
+    offsetPosition = elementPosition + window.pageYOffset - headerOffset,
+    vasBtnParent = element.parentElement,
+    vasBtnToggler = vasBtnParent.querySelector("[data-collapse]"),
+    vasItemContent = vasBtnParent.querySelector("[data-vas-element]")
 
-  const vasBtnParent = element.parentElement
-
-  const vasBtnToggler = vasBtnParent.querySelector("[data-collapse]")
   if (vasBtnToggler) {
     vasBtnToggler.classList.remove("dev-collapsible__toggler--collapsed")
     vasBtnToggler.classList.add("dev-collapsible__toggler--expanded")
   }
 
-  const vasItemContent = vasBtnParent.querySelector("[data-vas-element]")
   if (vasItemContent) {
     vasItemContent.classList.remove("dev-collapsible__item--collapsed")
     vasItemContent.classList.add("dev-collapsible__item--expanded")

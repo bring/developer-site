@@ -5,17 +5,17 @@ import {
   toggleSets,
 } from "./servicefiltering-common"
 
-const table = document.querySelector("#services-ri")
-const rows = table.querySelectorAll("tbody tr")
-const filterInput = document.querySelector("#ri-textfilter")
-const filterSetBtns = document.querySelectorAll("[data-ri-filterset]")
-const filterSets = document.querySelectorAll("#ri-filtersets fieldset")
-const filterChecks = document.querySelectorAll(".checkitem")
-const clearBtn = document.querySelector("#ri-clearfilters")
-const filterCombo = document.querySelector("#ri-filtercombo")
-const originalEls = document.querySelectorAll(".originalel")
-const cutoff = document.querySelector("#ri-cutoff")
-const cutoffBtn = cutoff.querySelector("button")
+const table = document.querySelector("#services-ri"),
+  rows = table.querySelectorAll("tbody tr"),
+  filterInput = document.querySelector("#ri-textfilter"),
+  filterSetBtns = document.querySelectorAll("[data-ri-filterset]"),
+  filterSets = document.querySelectorAll("#ri-filtersets fieldset"),
+  filterChecks = document.querySelectorAll(".checkitem"),
+  clearBtn = document.querySelector("#ri-clearfilters"),
+  filterCombo = document.querySelector("#ri-filtercombo"),
+  originalEls = document.querySelectorAll(".originalel"),
+  cutoff = document.querySelector("#ri-cutoff"),
+  cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
 function removeInsCells() {
@@ -158,12 +158,12 @@ function renderResult(allFilters, showAllRows, filterKey) {
     })
   } else {
     hideOriginals(true)
-    let prevFamily = ""
-    let setId = 0
-    let rowspan = 1
-    let prevApi = ""
-    let apiId = 0
-    let apiCount = 1
+    let prevFamily = "",
+      setId = 0,
+      rowspan = 1,
+      prevApi = "",
+      apiId = 0,
+      apiCount = 1
     // Always iterate in the same order
     const setOrder = ["rifamily", "riapi", "rireptype"]
 

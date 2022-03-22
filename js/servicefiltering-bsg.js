@@ -5,16 +5,16 @@ import {
   toggleSets,
 } from "./servicefiltering-common"
 
-const table = document.querySelector("#services-bsg")
-const rows = table.querySelectorAll("tbody tr")
-const filterInput = document.querySelector("#bsg-textfilter")
-const filterSetBtns = document.querySelectorAll("[data-bsg-filterset]")
-const filterSets = document.querySelectorAll("#bsg-filtersets fieldset")
-const filterChecks = document.querySelectorAll(".checkitem")
-const clearBtn = document.querySelector("#bsg-clearfilters")
-const filterCombo = document.querySelector("#bsg-filtercombo")
-const cutoff = document.querySelector("#bsg-cutoff")
-const cutoffBtn = cutoff.querySelector("button")
+const table = document.querySelector("#services-bsg"),
+  rows = table.querySelectorAll("tbody tr"),
+  filterInput = document.querySelector("#bsg-textfilter"),
+  filterSetBtns = document.querySelectorAll("[data-bsg-filterset]"),
+  filterSets = document.querySelectorAll("#bsg-filtersets fieldset"),
+  filterChecks = document.querySelectorAll(".checkitem"),
+  clearBtn = document.querySelector("#bsg-clearfilters"),
+  filterCombo = document.querySelector("#bsg-filtercombo"),
+  cutoff = document.querySelector("#bsg-cutoff"),
+  cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
 function closeFilterSet() {
