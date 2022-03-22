@@ -184,9 +184,9 @@
                   <div class="mrl">
                     <p class="form__label">Filter by</p>
                     <div class="btngroup">
-                      {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='service'" "btnText" "Service") -}}
-                      {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='type'" "btnText" "Service type") -}}
-                      {{- partial "filterbtn.html" (dict "dataAtt" "data-filterbtn='family'" "btnText" "Service family") -}}
+                      {{- partial "filterbtn.html" (dict "dataAtt" "data-vas-filterset='service'" "btnText" "Service") -}}
+                      {{- partial "filterbtn.html" (dict "dataAtt" "data-vas-filterset='type'" "btnText" "Service type") -}}
+                      {{- partial "filterbtn.html" (dict "dataAtt" "data-vas-filterset='family'" "btnText" "Service family") -}}
                     </div>
                   </div>
                   <label class="form__label mrxl" for="vasfilter">
@@ -217,13 +217,13 @@
             </div>
           </div>
 
-          <div class="flex flex-dir-col" id="allVas">
+          <div class="flex flex-dir-col" id="all-vas">
             {{- range $index, $vas := (sort $.Site.Data.services_vas "vasName") -}}
-            <div class="vas__item bg-gray2 mbxs dev-collapsible">
+            <div class="vas-item bg-gray2 mbxs dev-collapsible">
               <div class="dev-anchored" id="{{ $vas.vasName|anchorize }}">
                 <button
                   type="button"
-                  data-collapse="#vas__item{{ $index }}"
+                  data-collapse="#vas-item{{ $index }}"
                   class="btn-link fw600 pv.75r phs w100p dev-collapsible__toggler--collapsed justify-cfs"
                 >
                   <span
@@ -235,7 +235,7 @@
                   <span data-filter="name">{{ $vas.vasName }}</span>
                 </button>
               </div>
-              <div class="mhxs mbxs phm pbm bg-white flex flex-wrap dev-collapsible__item--collapsed" id="vas__item{{ $index }}" data-vas-element>
+              <div class="mhxs mbxs phm pbm bg-white flex flex-wrap dev-collapsible__item--collapsed" id="vas-item{{ $index }}" data-vas-element>
                 <div class="vas__codes mrm">
                   <div class="mtm">
                     <span class="text-note fw600">API request codes</span>
@@ -408,9 +408,9 @@
                 <div class="mrl">
                   <p class="form__label">Filter by</p>
                   <div class="btngroup">
-                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='rifamily'" "btnText" "Service family") -}}
-                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='riapi'" "btnText" "API") -}}
-                    {{- partial "filterbtn.html" (dict "dataAtt" "data-rifilterbtn='rireptype'" "btnText" "Report type") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-ri-filterset='rifamily'" "btnText" "Service family") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-ri-filterset='riapi'" "btnText" "API") -}}
+                    {{- partial "filterbtn.html" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
                   </div>
                 </div>
                 <label class="form__label" for="ri-textfilter">

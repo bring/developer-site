@@ -1,59 +1,28 @@
-const bsgTable = document.querySelector("#services-bsg")
-const bsgRows = bsgTable.querySelectorAll("tbody tr")
-const bsgFilterInput = document.querySelector("#bsg-textfilter")
-const bsgFilterSetBtns = document.querySelectorAll("[data-bsg-filterset]")
-const bsgFilterSets = document.querySelectorAll("#bsg-filtersets fieldset")
-const bsgFilterChecks = document.querySelectorAll(".checkitem")
-const bsgClearBtn = document.querySelector("#bsg-clearfilters")
-const bsgFilterCombo = document.querySelector("#bsg-filtercombo")
-const bsgCutoff = document.querySelector("#bsg-cutoff")
-const bsgCutoffBtn = bsgCutoff.querySelector("button")
+import {
+  cutoffRows,
+  hideCutoffs,
+  checkNoMatches,
+  toggleSets,
+} from "./servicefiltering-common"
+
+const table = document.querySelector("#services-bsg"),
+  rows = table.querySelectorAll("tbody tr"),
+  filterInput = document.querySelector("#bsg-textfilter"),
+  filterSetBtns = document.querySelectorAll("[data-bsg-filterset]"),
+  filterSets = document.querySelectorAll("#bsg-filtersets fieldset"),
+  filterChecks = document.querySelectorAll(".checkitem"),
+  clearBtn = document.querySelector("#bsg-clearfilters"),
+  filterCombo = document.querySelector("#bsg-filtercombo"),
+  cutoff = document.querySelector("#bsg-cutoff"),
+  cutoffBtn = cutoff.querySelector("button")
 let allFilters
 
-// Initial cutoff
-function bsgTableCutoff() {
-  bsgRows.forEach((row, i) => {
-    if (i > 5) {
-      row.hidden = true
-    }
-  })
-}
-
-// Hide cutoff elements
-function bsgHideCutoffs() {
-  bsgCutoff.hidden = true
-}
-
-// Show empty results
-function bsgEmptyCheck() {
-  const noMatch = document.querySelector("#bsg-nomatch")
-  let insMessage = true
-  if (noMatch) {
-    noMatch.remove()
-    bsgTable.classList.remove("dn")
-  }
-  bsgRows.forEach((row) => {
-    if (row.hidden === false) {
-      insMessage = false
-      return
-    }
-  })
-  if (insMessage) {
-    bsgTable.classList.add("dn")
-    bsgTable.insertAdjacentHTML(
-      "afterend",
-      '<div id="bsg-nomatch" class="message--info pam maxw24r">No matches</div>'
-    )
-  }
-}
-
-// Close filter
-function bsgCloseFilter() {
+function closeFilterSet() {
   const activeSet = document.querySelector("[data-bsg-filterset].active")
   if (activeSet) {
     activeSet.classList.remove("active")
   }
-  bsgFilterSets.forEach((set) => {
+  filterSets.forEach((set) => {
     set.hidden = true
     set.classList.remove("flex")
   })
@@ -61,59 +30,58 @@ function bsgCloseFilter() {
   toggleRows()
 }
 
-// Clear all filters
-function bsgClearFilters() {
-  bsgHideCutoffs()
+function clearAllFilters() {
+  hideCutoffs(cutoff)
 
-  bsgFilterChecks.forEach((filterCheck) => {
+  filterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
-  bsgRows.forEach((row) => {
+  rows.forEach((row) => {
     row.hidden = false
   })
-  bsgFilterInput.disabled = false
-  bsgFilterInput.value = ""
+  filterInput.disabled = false
+  filterInput.value = ""
 
-  bsgEmptyCheck()
+  checkNoMatches("bsg", table, rows)
   allFilters = {}
-  bsgFilterCombo.innerHTML = ""
-  bsgClearBtn.classList.add("dn")
+  filterCombo.innerHTML = ""
+  clearBtn.classList.add("dn")
 }
 
-bsgClearBtn.addEventListener("click", function () {
-  bsgCloseFilter()
-  bsgClearFilters()
+clearBtn.addEventListener("click", function () {
+  closeFilterSet()
+  clearAllFilters()
 })
 
-bsgCutoffBtn.addEventListener("click", function () {
-  bsgClearFilters()
+cutoffBtn.addEventListener("click", function () {
+  clearAllFilters()
 })
 
 // Input filter
-bsgFilterInput.addEventListener("keyup", function (e) {
-  bsgHideCutoffs()
+filterInput.addEventListener("keyup", function (e) {
+  hideCutoffs(cutoff)
   const query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
-    bsgClearBtn.classList.remove("dn")
+    clearBtn.classList.remove("dn")
   } else {
-    bsgClearBtn.classList.add("dn")
+    clearBtn.classList.add("dn")
   }
 
-  bsgRows.forEach((row) => {
+  rows.forEach((row) => {
     if (
       row
         .querySelector('[data-filter="name"]')
-        .textContent.toLowerCase()
-        .includes(query) ||
+        ?.textContent?.toLowerCase()
+        ?.includes(query) ||
       row
         .querySelector('[data-filter="servcode"]')
-        .textContent.toLowerCase()
-        .includes(query) ||
+        ?.textContent?.toLowerCase()
+        ?.includes(query) ||
       row
         .querySelector('[data-filter="reqcode"]')
-        .textContent.toLowerCase()
-        .includes(query)
+        ?.textContent?.toLowerCase()
+        ?.includes(query)
     ) {
       row.hidden = false
     } else {
@@ -121,12 +89,11 @@ bsgFilterInput.addEventListener("keyup", function (e) {
     }
   })
 
-  bsgEmptyCheck()
+  checkNoMatches("bsg", table, rows)
 })
 
-// Render combofilter overview
 function makeComboOverview(allFilters) {
-  bsgFilterCombo.innerHTML = ""
+  filterCombo.innerHTML = ""
 
   function appliedBtn(active, title) {
     return (
@@ -159,7 +126,7 @@ function makeComboOverview(allFilters) {
           "</button>"
       })
       appliedFilter = appliedFilter + "</div>"
-      bsgFilterCombo.insertAdjacentHTML("beforeend", appliedFilter)
+      filterCombo.insertAdjacentHTML("beforeend", appliedFilter)
     }
     window.loadMybringIcons()
   }
@@ -177,7 +144,7 @@ function toggleCheckbox(box) {
 }
 
 // Remove filters via combo overview
-bsgFilterCombo.addEventListener("click", function (e) {
+filterCombo.addEventListener("click", function (e) {
   if (e.target.dataset.bsgTitle && !e.target.dataset.bsgType) {
     // Sets
     let subButtons = document.querySelectorAll(
@@ -196,7 +163,7 @@ bsgFilterCombo.addEventListener("click", function (e) {
 
 // Create object for storing active filters
 allFilters = {}
-bsgFilterSets.forEach((set) => {
+filterSets.forEach((set) => {
   allFilters[set.id] = []
 })
 
@@ -205,31 +172,31 @@ function toggleRows() {
   for (let activeFilter in allFilters) {
     if (allFilters[activeFilter].length > 0) {
       activeFilterSets++
-      bsgFilterInput.disabled = true
-      bsgFilterInput.value = ""
+      filterInput.disabled = true
+      filterInput.value = ""
     }
   }
 
   // Clear all filtering if sets are closed and none are active
   let fsActive = false
-  bsgFilterSetBtns.forEach((btn) => {
+  filterSetBtns.forEach((btn) => {
     if (btn.classList.contains("active")) {
       fsActive = true
       return
     }
   })
   if (!fsActive && activeFilterSets <= 0) {
-    bsgClearFilters()
+    clearAllFilters()
     return
   }
 
   // Toggle table rows
   if (activeFilterSets <= 0) {
-    bsgRows.forEach((row) => {
+    rows.forEach((row) => {
       row.hidden = false
     })
   } else {
-    bsgRows.forEach((row) => {
+    rows.forEach((row) => {
       row.hidden = true
 
       // Check if row data matches at least one active filter in each active set
@@ -257,47 +224,32 @@ function toggleRows() {
   }
 }
 
-// Filtersets
-bsgFilterSetBtns.forEach((filterBtn) => {
-  // Toggle filterset
+// Set filters
+filterSetBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
     const currentFilterSet = e.target.dataset.bsgFilterset
     if (e.target.classList.contains("active")) {
-      bsgCloseFilter()
+      closeFilterSet()
       return
     }
-    bsgCloseFilter()
-    bsgClearBtn.classList.remove("dn")
+    closeFilterSet()
+    clearBtn.classList.remove("dn")
 
     e.target.classList.add("active")
-    bsgFilterInput.disabled = true
+    filterInput.disabled = true
 
-    bsgFilterSets.forEach((set) => {
-      if (set.id === currentFilterSet) {
-        if (set.hidden === false) {
-          set.hidden = true
-          set.classList.remove("flex")
-        } else {
-          set.hidden = false
-          set.classList.add("flex")
-        }
-      } else {
-        set.hidden = true
-        set.classList.remove("flex")
-      }
-    })
+    toggleSets(filterSets, currentFilterSet)
 
-    // Register check clicks from open set
-    const bsgSetChecks = document.querySelectorAll(
+    const setChecks = document.querySelectorAll(
       'input[data-filter="' + currentFilterSet + '"]'
     )
-    bsgSetChecks.forEach((setCheck) => {
+    setChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterKey = e.target.dataset.filter
 
         // Store active filters
         allFilters[filterKey] = []
-        bsgSetChecks.forEach((setCheck) => {
+        setChecks.forEach((setCheck) => {
           if (setCheck.checked === true) {
             allFilters[filterKey].push(setCheck.value)
           }
@@ -305,7 +257,7 @@ bsgFilterSetBtns.forEach((filterBtn) => {
 
         makeComboOverview(allFilters)
         toggleRows()
-        bsgEmptyCheck()
+        checkNoMatches("bsg", table, rows)
       })
     })
   })
@@ -325,5 +277,5 @@ function toggleHelp() {
 helpBtn.addEventListener("click", toggleHelp)
 
 document.addEventListener("DOMContentLoaded", function () {
-  bsgTableCutoff()
+  cutoffRows(rows, 5)
 })

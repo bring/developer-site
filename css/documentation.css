@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.dev-anchored:not(#allVas *):target::before {
+.dev-anchored:not(#all-vas *):target::before {
   content: "";
   display: block;
   height: 6.5rem;

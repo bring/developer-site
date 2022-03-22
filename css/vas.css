@@ -7,15 +7,6 @@
   padding-bottom: 0.75rem;
 }
 
-.vas__item .dev-collapsible__toggler {
-  padding: 0;
-}
-
-.vas__item--hidden {
-  display: none;
-  visibility: hidden;
-}
-
 .vas__codes {
   flex: 1 1 10rem;
 }

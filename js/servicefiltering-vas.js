@@ -1,28 +1,24 @@
-const rows = document.querySelectorAll("#allVas .vas__item")
-const serviceCountryRows = document.querySelectorAll(".vascountry tbody tr")
-const vasInput = document.querySelector("#vasfilter")
-const filterBtns = document.querySelectorAll("[data-filterbtn]")
-const filterSets = document.querySelectorAll("#filtersets fieldset")
-const filterChecks = document.querySelectorAll("[data-check]")
-const clearBtn = document.querySelector("#clearfilters")
-const vasCutoff = document.querySelector("#vas-cutoff")
-const showAll = document.querySelector("#showAll")
+import {
+  cutoffRows,
+  hideCutoffs,
+  checkNoMatches,
+  toggleSets,
+} from "./servicefiltering-common"
 
-function vasTableCutoff() {
-  rows.forEach((row, i) => {
-    if (i > 10) {
-      row.hidden = true
-    }
-  })
-}
+const container = document.querySelector("#all-vas"),
+  items = container.querySelectorAll(".vas-item"),
+  serviceCountryRows = document.querySelectorAll(".vascountry tbody tr"),
+  filterInput = document.querySelector("#vasfilter"),
+  filterSetBtns = document.querySelectorAll("[data-vas-filterset]"),
+  filterSets = document.querySelectorAll("#filtersets fieldset"),
+  filterChecks = document.querySelectorAll("[data-check]"),
+  clearBtn = document.querySelector("#clearfilters"),
+  cutoff = document.querySelector("#vas-cutoff"),
+  showAll = document.querySelector("#showAll")
 
-function vasHideCutoffs() {
-  vasCutoff.hidden = true
-}
-
-function clearFilters() {
-  vasHideCutoffs()
-  const activeBtn = document.querySelector("[data-filterbtn].active")
+function clearAllFilters() {
+  hideCutoffs(cutoff)
+  const activeBtn = document.querySelector("[data-vas-filterset].active")
   if (activeBtn) {
     activeBtn.classList.remove("active")
   }
@@ -33,32 +29,30 @@ function clearFilters() {
   filterChecks.forEach((filterCheck) => {
     filterCheck.checked = false
   })
-  rows.forEach((row) => {
-    row.hidden = false
-    row.classList.remove("vas__item--hidden")
+  items.forEach((item) => {
+    item.hidden = false
+    item.hidden = false
   })
   serviceCountryRows.forEach((row) => {
     row.hidden = false
   })
-  vasInput.value = ""
+  filterInput.value = ""
 
+  checkNoMatches("vas", container, items)
   clearBtn.classList.add("dn")
 }
 
 clearBtn.addEventListener("click", function () {
-  clearFilters()
+  clearAllFilters()
 })
 
 showAll.addEventListener("click", () => {
-  clearFilters()
+  clearAllFilters()
 })
 
 // Input filter
-vasInput.addEventListener("keyup", function (e) {
-  vasHideCutoffs()
-  rows.forEach((row) => {
-    row.hidden = false
-  })
+filterInput.addEventListener("keyup", function (e) {
+  hideCutoffs(cutoff)
   const query = e.target.value.toLowerCase()
   const notEmpty = query.length >= 1
   if (notEmpty) {
@@ -67,69 +61,57 @@ vasInput.addEventListener("keyup", function (e) {
     clearBtn.classList.add("dn")
   }
 
-  rows.forEach((row) => {
+  items.forEach((item) => {
     if (
-      row
+      item
         .querySelector('[data-filter="name"]')
         ?.textContent?.toLowerCase()
         ?.includes(query) ||
-      row
+      item
         .querySelector('[data-filter="sgcode"]')
         ?.textContent?.toLowerCase()
         ?.includes(query) ||
-      row
+      item
         .querySelector('[data-filter="bookcode"]')
         ?.textContent?.toLowerCase()
         ?.includes(query)
     ) {
-      row.classList.remove("vas__item--hidden")
+      item.hidden = false
     } else {
-      row.classList.add("vas__item--hidden")
+      item.hidden = true
     }
   })
+
+  checkNoMatches("vas", container, items)
 })
 
 // Set filters
-filterBtns.forEach((filterBtn) => {
+filterSetBtns.forEach((filterBtn) => {
   filterBtn.addEventListener("click", function (e) {
-    const filterType = e.target.dataset.filterbtn
-
+    const currentFilterSet = e.target.dataset.vasFilterset
     if (e.target.classList.contains("active")) {
-      clearFilters()
+      clearAllFilters()
       return
     }
 
-    clearFilters()
+    clearAllFilters()
     e.target.classList.add("active")
     clearBtn.classList.remove("dn")
 
-    filterSets.forEach((set) => {
-      if (set.id === filterType) {
-        if (set.hidden === false) {
-          set.hidden = true
-          set.classList.remove("flex")
-        } else {
-          set.hidden = false
-          set.classList.add("flex")
-        }
-      } else {
-        set.hidden = true
-        set.classList.remove("flex")
-      }
-    })
+    toggleSets(filterSets, currentFilterSet)
 
-    const vasSetChecks = document.querySelectorAll(
-      'input[data-filter="' + filterType + '"]'
+    const setChecks = document.querySelectorAll(
+      'input[data-filter="' + currentFilterSet + '"]'
     )
 
-    vasSetChecks.forEach((setCheck) => {
+    setChecks.forEach((setCheck) => {
       setCheck.addEventListener("click", function (e) {
         const filterType = e.target.dataset.filter
         const dataFilter = '[data-filter="' + filterType + '"]'
 
         let showAll = true
         let showChecked = []
-        vasSetChecks.forEach((setCheck, i) => {
+        setChecks.forEach((setCheck, i) => {
           if (setCheck.checked === true) {
             showAll = false
             showChecked[i] = setCheck.value.toLowerCase()
@@ -137,24 +119,30 @@ filterBtns.forEach((filterBtn) => {
         })
 
         if (showAll) {
-          rows.forEach((row) => {
-            row.classList.remove("vas__item--hidden")
+          items.forEach((item) => {
+            item.hidden = false
           })
           serviceCountryRows.forEach((row) => {
             row.hidden = false
           })
         } else {
-          rows.forEach((row) => {
-            let affectedRows = 0;
+          items.forEach((item) => {
+            let affectedRows = 0
             showChecked.forEach((show) => {
-              if ([...row.querySelectorAll(".vascountry tbody tr " + dataFilter)]?.some(r => r.textContent?.toLowerCase() === show)) {
-                affectedRows++;
+              if (
+                [
+                  ...item.querySelectorAll(
+                    ".vascountry tbody tr " + dataFilter
+                  ),
+                ]?.some((r) => r.textContent?.toLowerCase() === show)
+              ) {
+                affectedRows++
               }
             })
-            if(affectedRows == 0) {
-              row.classList.add("vas__item--hidden")
+            if (affectedRows == 0) {
+              item.hidden = true
             } else {
-              row.classList.remove("vas__item--hidden")
+              item.hidden = false
             }
           })
           serviceCountryRows.forEach((row) => {
@@ -171,61 +159,63 @@ filterBtns.forEach((filterBtn) => {
             })
           })
         }
+        checkNoMatches("vas", container, items)
       })
     })
   })
 })
 
-function scrollToVasTarget(targetElement){
-  const element = document.getElementById(targetElement)
-  const headerOffset = document.querySelector('[data-siteheader]').offsetHeight + 20
-  const elementPosition = element.getBoundingClientRect().top
-  const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+function scrollToTarget(targetElement) {
+  const element = document.getElementById(targetElement),
+    headerOffset =
+      document.querySelector("[data-siteheader]").offsetHeight + 20,
+    elementPosition = element.getBoundingClientRect().top,
+    offsetPosition = elementPosition + window.pageYOffset - headerOffset,
+    vasBtnParent = element.parentElement,
+    vasBtnToggler = vasBtnParent.querySelector("[data-collapse]"),
+    vasItemContent = vasBtnParent.querySelector("[data-vas-element]")
 
-  const vasBtnParent = element.parentElement
-
-  const vasBtnToggler = vasBtnParent.querySelector('[data-collapse]')
   if (vasBtnToggler) {
-    vasBtnToggler.classList.remove('dev-collapsible__toggler--collapsed')
-    vasBtnToggler.classList.add('dev-collapsible__toggler--expanded')
+    vasBtnToggler.classList.remove("dev-collapsible__toggler--collapsed")
+    vasBtnToggler.classList.add("dev-collapsible__toggler--expanded")
   }
 
-  const vasItemContent = vasBtnParent.querySelector('[data-vas-element]')
   if (vasItemContent) {
-    vasItemContent.classList.remove('dev-collapsible__item--collapsed')
-    vasItemContent.classList.add('dev-collapsible__item--expanded')
+    vasItemContent.classList.remove("dev-collapsible__item--collapsed")
+    vasItemContent.classList.add("dev-collapsible__item--expanded")
   }
 
   window.scrollTo({
-       top: offsetPosition,
-       behavior: "smooth"
+    top: offsetPosition,
+    behavior: "smooth",
   })
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   const anchorTag = window.location.hash
-  
-  if(anchorTag) {
-    const cleanAnchorTag = anchorTag.replace(/#/,'')
 
-    vasHideCutoffs()
+  if (anchorTag) {
+    const cleanAnchorTag = anchorTag.replace(/#/, "")
+
+    hideCutoffs(cutoff)
     //Delay added for Chrome so window.scrollTo event will be triggered
-    setTimeout(function() {
-      scrollToVasTarget(cleanAnchorTag)
-    },100)
+    setTimeout(function () {
+      scrollToTarget(cleanAnchorTag)
+    }, 100)
   } else {
-    vasTableCutoff()
+    cutoffRows(items, 10)
   }
 
-  const anchors = document.querySelectorAll('.anchorjs-link')
-  anchors.forEach(anchor => {
-    anchor.addEventListener('click', function() {
-      const anchorId = this.getAttribute('href')
-      const anchorParent = document.getElementById(anchorId.replace(/#/,'')).getAttribute('id')
-      setTimeout(function() {
-        scrollToVasTarget(anchorParent)
-      },100)
+  const anchors = document.querySelectorAll(".anchorjs-link")
+  anchors.forEach((anchor) => {
+    anchor.addEventListener("click", function () {
+      const anchorId = this.getAttribute("href")
+      const anchorParent = document
+        .getElementById(anchorId.replace(/#/, ""))
+        .getAttribute("id")
+      setTimeout(function () {
+        scrollToTarget(anchorParent)
+      }, 100)
     })
   })
-
 })
