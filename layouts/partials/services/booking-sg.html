@@ -1,0 +1,159 @@
+{{- partial "services/spreadsheetinfo" -}}
+<div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 rad-a2px">
+  <div class="mrl">
+    <div class="flex flex-wrap-reverse align-ifs">
+      <div class="mrl">
+        <p class="form__label">Filter by</p>
+        <div class="btngroup">
+          {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='type'" "btnText" "Service type") -}}
+          {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='family'" "btnText" "Service family") -}}
+          {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='cntype'" "btnText" "Customer number type") -}}
+        </div>
+      </div>
+      <label class="form__label" for="bsg-textfilter">
+        Service name, service code or API request code
+        <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+      </label>
+    </div>
+    <div id="bsg-filtersets">
+      {{- $filterScratch := newScratch -}}
+      {{- $filterScratch.Add "type" slice -}}
+      {{- $filterScratch.Add "family" slice -}}
+      {{- $filterScratch.Add "cnType" slice -}}
+      {{- range .data -}}
+        {{- $filterScratch.Add "type" .Type -}}
+        {{- $filterScratch.Add "family" .ServiceFamily -}}
+        {{- $filterScratch.Add "cnType" .CustomerNumberType -}}
+      {{- end -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "type") "filter" "type" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "family") "filter" "family" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "cnType") "filter" "cntype" ) -}}
+    </div>
+  </div>
+  <div class="maxw100p">
+    <div id="bsg-filtercombo" class="mtm mrm text-note"></div>
+    <button type="button" id="bsg-clearfilters" class="btn-link--dark mtl mrl dn">Clear all filters</button>
+  </div>
+</div>
+<table id="services-bsg">
+  <thead>
+    <tr>
+      <th rowspan="2">Service</th>
+      <th rowspan="2">Customer number type</th>
+      <th colspan="2">Codes</th>
+      <th rowspan="2">Return</th>
+      <th rowspan="2">APIs</th>
+      <th rowspan="2">Required setup</th>
+      <th rowspan="2">Prices</th>
+      <th rowspan="2">Lead time</th>
+      <th rowspan="2">Environmental data</th>
+      <th colspan="3">Countries
+        <button type="button" class="dib btn-link btn-link--help" id="help-country" title="Show info">
+          <span data-mybicon="mybicon-help" data-mybicon-class="icon-ui"></span>
+        </button>
+        <div id="info-country" class="message--info pvxs phs lh-tight text-note fwn maxw24r" hidden>
+          The same country in sender and destination columns does not equal domestic, only cross-border.
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <th>Service</th>
+      <th>API Request</th>
+      <th>Sender</th>
+      <th>Destination</th>
+      <th>Domestic</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range .data -}}
+      <tr>
+        <th scope="row" class="lh-tight">
+          <span data-filter="name">{{ .ServiceName }}</span><br>
+          <span class="text-note">
+            {{- if ne .Type "-" -}}
+              Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>
+            {{- end -}}
+            {{- if ne .serviceFamily "-" -}}
+              Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>
+            {{- end -}}
+          </span>
+        </th>
+        <td data-filter="cntype">{{ .CustomerNumberType }}</td>
+        <td data-filter="servcode">{{ .ServiceCode }}</td>
+        <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
+        <td class="mb-table__cell--icon tc">
+          {{- if eq .Return "Yes" -}}
+            <span
+              data-mybicon="mybicon-check"
+              data-mybicon-class="icon-ui--green-dark mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+              data-mybicon-title="Yes"
+            ></span>
+          {{- else -}}
+            <span
+              data-mybicon="mybicon-cross"
+              data-mybicon-class="icon-ui--lightgray mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+              data-mybicon-title="No"
+            ></span>
+        {{- end -}}
+        </td>
+        <td>
+          {{- if eq .Booking "Yes" -}}<span class="mb-badge">Booking</span><br>{{- end -}}
+          {{- if eq .ShippingGuide "Yes" -}}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{- end -}}
+        </td>
+        <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
+        <td>
+          {{- if eq .ListPrice "Yes" -}}<span class="mb-badge mrs">List</span><br>{{- end -}}
+          {{- if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{- end -}}
+        </td>
+        <td class="mb-table__cell--icon tc">
+          {{- if eq .LeadTime "Yes" -}}
+            <span
+              data-mybicon="mybicon-check"
+              data-mybicon-class="icon-ui--green-dark mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+              data-mybicon-title="Yes"
+            ></span>
+          {{- else -}}
+            <span
+              data-mybicon="mybicon-cross"
+              data-mybicon-class="icon-ui--lightgray mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+              data-mybicon-title="No"
+            ></span>
+          {{- end -}}
+        </td>
+        <td class="mb-table__cell--icon tc">
+          {{- if ne .EnvironmentalData "-" -}}
+            <span
+              data-mybicon="mybicon-check"
+              data-mybicon-class="icon-ui--green-dark mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+              data-mybicon-title="Yes: {{.EnvironmentalData}}"
+            ></span>
+          {{- else -}}
+            <span
+              data-mybicon="mybicon-cross"
+              data-mybicon-class="icon-ui--lightgray mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16"
+              data-mybicon-title="No"
+            ></span>
+          {{- end -}}
+        </td>
+        <td class="maxw16r">{{ if ne .SenderCountries "-" }}{{ .SenderCountries }}{{ end }}</td>
+        <td class="maxw16r">{{ if ne .Destination "-" }}{{ .Destination }}{{ end }}</td>
+        <td class="maxw16r">{{ if ne .DomesticAllowed "-" }}{{ .DomesticAllowed }}{{ end }}</td>
+      </tr>
+    {{- end -}}
+  </tbody>
+</table>
+<div class="cutoff-overlay" id="bsg-cutoff">
+  <button type="button" class="btn btn--white w100p maxw32r">Show all services</button>
+</div>
