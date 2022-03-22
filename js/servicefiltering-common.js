@@ -12,7 +12,6 @@ export function hideCutoffs(cutoff) {
 
 export function checkNoMatches(type, parent, children) {
   const noMatch = document.querySelector("#" + type + "-nomatch")
-  console.log(noMatch)
   let insMessage = true
   if (noMatch) {
     noMatch.remove()
