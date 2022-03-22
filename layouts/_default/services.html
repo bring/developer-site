@@ -270,9 +270,9 @@
                 {{- end -}}
                 {{- $.Scratch.Add "riapi" "Invoice" }}
                 {{- $.Scratch.Add "riapi" "Reports" }}
-                {{- partial "services/servicefilter" (dict "scratcher" ($.Scratch.Get "rifamily") "filter" "rifamily" ) -}}
-                {{- partial "services/servicefilter" (dict "scratcher" ($.Scratch.Get "riapi") "filter" "riapi" ) -}}
-                {{- partial "services/servicefilter" (dict "scratcher" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
+                {{- partial "services/servicefilter" (dict "filterScratch" ($.Scratch.Get "rifamily") "filter" "rifamily" ) -}}
+                {{- partial "services/servicefilter" (dict "filterScratch" ($.Scratch.Get "riapi") "filter" "riapi" ) -}}
+                {{- partial "services/servicefilter" (dict "filterScratch" ($.Scratch.Get "rireptype") "filter" "rireptype" ) -}}
               </div>
             </div>
             <div class="maxw100p">
