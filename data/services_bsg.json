@@ -180,7 +180,7 @@
   "DomesticAllowed" : "NO"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "PickUp Parcel",
   "ServiceCode" : "0340",
   "RequestCode" : "PICKUP_PARCEL",
@@ -198,7 +198,7 @@
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "PickUp Parcel Bulk",
   "ServiceCode" : "0342",
   "RequestCode" : "PICKUP_PARCEL_BULK",
@@ -216,7 +216,7 @@
   "DomesticAllowed" : "SE"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Parcel",
   "ServiceCode" : "0349",
   "RequestCode" : "HOME_DELIVERY_PARCEL",
@@ -234,7 +234,7 @@
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Mailbox",
   "ServiceCode" : "0345",
   "RequestCode" : "0345",
@@ -252,7 +252,7 @@
   "DomesticAllowed" : "SE"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Parcel",
   "ServiceCode" : "0330",
   "RequestCode" : "BUSINESS_PARCEL",
@@ -270,7 +270,7 @@
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Parcel Bulk",
   "ServiceCode" : "0332",
   "RequestCode" : "BUSINESS_PARCEL_BULK",
@@ -288,7 +288,7 @@
   "DomesticAllowed" : "SE, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Express Nordic 09:00",
   "ServiceCode" : "0335",
   "RequestCode" : "EXPRESS_NORDIC_0900",
@@ -306,7 +306,7 @@
   "DomesticAllowed" : "SE"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Express Nordic 09:00 Bulk",
   "ServiceCode" : "0334",
   "RequestCode" : "EXPRESS_NORDIC_0900_BULK",
@@ -324,7 +324,7 @@
   "DomesticAllowed" : "-"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Pallet",
   "ServiceCode" : "0336",
   "RequestCode" : "BUSINESS_PALLET",
@@ -342,7 +342,7 @@
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Pallet (1/2 pallet)",
   "ServiceCode" : "0336",
   "RequestCode" : "BUSINESS_HALFPALLET",
@@ -360,7 +360,7 @@
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Pallet (1/4 pallet)",
   "ServiceCode" : "0336",
   "RequestCode" : "BUSINESS_QUARTERPALLET",
@@ -378,7 +378,7 @@
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "PickUp Parcel Return",
   "ServiceCode" : "0341",
   "RequestCode" : "PICKUP_PARCEL_RETURN",
@@ -396,7 +396,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "PickUp Parcel Return Bulk",
   "ServiceCode" : "0343",
   "RequestCode" : "PICKUP_PARCEL_RETURN_BULK",
@@ -414,7 +414,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Parcel Return",
   "ServiceCode" : "0331",
   "RequestCode" : "BUSINESS_PARCEL_RETURN",
@@ -432,7 +432,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-  "CustomerNumberType" : "Parcel Sweden, Denmark, Finland",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Business Parcel Return Bulk",
   "ServiceCode" : "0333",
   "RequestCode" : "BUSINESS_PARCEL_RETURN_BULK",

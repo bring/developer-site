@@ -1,6 +1,6 @@
 [ {
   "vasName" : "Cash on delivery",
-  "description" : "If you want to sell something and send it, COD (cash on delivery) is a safe solution for both you and the buyer. We will charge the buyer before the reciever gets the package and transfer it to your account.  If you want to specifiy the transaction to your bank you can specify a payment reference.",
+  "description" : "If you want to sell something and send it, COD (cash on delivery) is a safe solution for both you and the buyer. We will charge the buyer before the reciever gets the package and transfer it to your account.  If you want to specify the transaction to your bank you can specify a payment reference.",
   "shippingGuideCode" : "POSTOPPKRAV",
   "shippingGuideNpbCode" : "1000",
   "bookingCode" : "1000",
