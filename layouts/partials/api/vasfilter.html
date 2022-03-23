@@ -1,6 +1,6 @@
 {{ $filter := .filter }}
 <fieldset class="flex-dir-col mbm bg-white pam bshadow" id="{{ $filter }}" hidden>
-  <div {{ if gt (len (uniq .scratcher)) 10 }} class="vasfilter" {{ end }}>
+  <div {{ if gt (len (uniq .scratcher)) 10 }} class="filtercols" {{ end }}>
     {{- range .scratcher }}
     {{ if and (ne .name "-") (ne .name "") }}
     <div>
