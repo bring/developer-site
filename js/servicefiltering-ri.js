@@ -86,10 +86,10 @@ clearBtn.addEventListener("click", function () {
 // Remove filters via combo overview
 filterCombo.addEventListener("click", function (e) {
   const clicked = e.target
-  if (clicked.dataset.rititle && !clicked.dataset.ritype) {
+  if (clicked.dataset.riTitle && !clicked.dataset.riType) {
     // Sets
     let subButtons = document.querySelectorAll(
-      'button[data-ritype="' + clicked.dataset.rititle + '"]'
+      'button[data-ri-type="' + clicked.dataset.riTitle + '"]'
     )
     subButtons.forEach((subButton) => {
       toggleCheckbox(subButton)
@@ -97,7 +97,7 @@ filterCombo.addEventListener("click", function (e) {
   }
 
   // Single subfilters
-  if (clicked.dataset.ritype && clicked.dataset.rititle) {
+  if (clicked.dataset.riType && clicked.dataset.riTitle) {
     toggleCheckbox(clicked)
   }
 })
@@ -115,7 +115,7 @@ function makeComboOverview(allFilters) {
         '[data-ri-filterset="' + activeFilter + '"]'
       ).textContent
       let appliedFilter =
-        '<button type="button" data-rititle="' +
+        '<button type="button" data-ri-title="' +
         activeFilter +
         '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
         filterTitle +
@@ -124,9 +124,9 @@ function makeComboOverview(allFilters) {
         appliedFilter =
           appliedFilter +
           '<button type="button"' +
-          'data-ritype="' +
+          'data-ri-type="' +
           activeFilter +
-          '" data-rititle="' +
+          '" data-ri-title="' +
           filter +
           '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
           filter +
@@ -142,9 +142,9 @@ function makeComboOverview(allFilters) {
 function toggleCheckbox(box) {
   const checkEl = document.querySelector(
     'input[data-filter="' +
-      box.dataset.ritype +
+      box.dataset.riType +
       '"][value="' +
-      box.dataset.rititle +
+      box.dataset.riTitle +
       '"'
   )
   checkEl.click()
@@ -166,13 +166,12 @@ function renderResult(allFilters, showAllRows, filterKey) {
       apiId = 0,
       apiCount = 1
     // Always iterate in the same order
-    const setOrder = ["rifamily", "riapi", "rireptype"]
+    const setOrder = ["riFamily", "riApi", "riReptype"]
 
     rows.forEach((row) => {
       let setInd = 0
       let hideRow = true
-
-      if (filterKey === "rirepname") {
+      if (filterKey === "riRepname") {
         const query = allFilters
         row.hidden = true
         if (row.dataset[filterKey].toLowerCase().includes(query)) {
@@ -180,7 +179,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
         }
       } else {
         setOrder.forEach((setName) => {
-          const filterSet = allFilters[setName]
+          const filterSet = allFilters[setName.toLowerCase()]
           if (filterSet) {
             // Show all rows before applying filters
             if (setInd === 0) {
@@ -209,13 +208,13 @@ function renderResult(allFilters, showAllRows, filterKey) {
 
       // Insert additional cells
       if (row.hidden === false) {
-        if (row.dataset.rifamily != prevFamily) {
+        if (row.dataset.riFamily != prevFamily) {
           setId++
         }
 
         if (
-          row.dataset.riapi != prevApi ||
-          row.dataset.rifamily != prevFamily
+          row.dataset.riApi != prevApi ||
+          row.dataset.riFamily != prevFamily
         ) {
           prevApi = ""
           apiId++
@@ -226,7 +225,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
               setId +
               apiId +
               '" rowspan="1"><span class="mb-badge">' +
-              row.dataset.riapi +
+              row.dataset.riApi +
               "</span></td>"
           )
         } else {
@@ -239,7 +238,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
           })
         }
 
-        if (row.dataset.rifamily != prevFamily) {
+        if (row.dataset.riFamily != prevFamily) {
           rowspan = 1
           row.insertAdjacentHTML(
             "afterbegin",
@@ -254,7 +253,7 @@ function renderResult(allFilters, showAllRows, filterKey) {
             '<th data-ins="' +
               setId +
               '" scope="row" rowspan="1" class="maxw20r">' +
-              row.dataset.rifamily +
+              row.dataset.riFamily +
               "</th>"
           )
         } else {
@@ -265,8 +264,8 @@ function renderResult(allFilters, showAllRows, filterKey) {
           })
         }
 
-        prevApi = row.dataset.riapi
-        prevFamily = row.dataset.rifamily
+        prevApi = row.dataset.riApi
+        prevFamily = row.dataset.riFamily
       }
     })
   }
@@ -277,7 +276,7 @@ filterInput.addEventListener("keyup", function () {
   hideCutoffs(cutoff)
   const query = this.value.toLowerCase()
   const notEmpty = query.length >= 1 && query !== "-"
-  const filterKey = "rirepname"
+  const filterKey = "riRepname"
   let showAllRows = true
   if (notEmpty) {
     clearBtn.classList.remove("dn")
