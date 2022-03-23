@@ -1,0 +1,14 @@
+{{- $filter := .filter -}}
+<fieldset class="flex-dir-col mbm bg-white pam bshadow" id="{{ $filter }}" hidden>
+  <div {{ if gt (len (uniq .filterScratch)) 10 }} class="filtercols" {{ end }}>
+    {{- range .filterScratch -}}
+      {{- if and (ne .name "-") (ne .name "") -}}
+      <div>
+        <label>
+          <input type="checkbox" value="{{ .value }}" data-check data-filter="{{ $filter }}"/> {{ .name }}
+        </label>
+      </div>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</fieldset>
