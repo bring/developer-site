@@ -153,6 +153,10 @@ baseUri: https://api.bring.com/booking/api
             type: dateTime
             example: 2020-05-11T11:12:13 (yyyy-MM-ddThh:mm:ss)
             required: false
+        packages:
+          description: A list of the packages included in the consignment. Limited to 50 packages.
+          required: true
+          type: object
         customerNumber:
             description: Specify API customer number. This parameter can be maximum 35 character long.
             type: string
