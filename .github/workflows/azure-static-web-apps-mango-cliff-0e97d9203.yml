@@ -31,14 +31,14 @@ jobs:
           app_build_command: 'npm run buildprod'
       - run: echo ${{github.ref}} 
       - name: notify slack failure
-        if: github.event_name == 'push' && failure()
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && failure()
         env:
           SLACK_MESSAGE: '{"channel": "#deploy", "text", ":build_failed: Failed to deploy developer-site <${{ steps.get_self_url.outputs.link }}|Check details>"}'
         run: |
           curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
 
       - name: notify slack success
-        if: github.event_name == 'push' && success()
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && success()
         env:
           SLACK_MESSAGE: '{"channel": "#deploy", "text": ":build_succeed: Deployed developer site"}'
         run: |
