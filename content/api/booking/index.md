@@ -12,7 +12,7 @@ weight: 21
 
 important:
 - type: warn
-  title: Changes in Booking API due to new invoicing system
+  title: Changes in Booking API due to new invoicing system from April 1st, 2022
   message: |
     - Booking of Bring Parcels services (parcels in Sweden, Denmark, Finland and cross border parcels to/from Norway) done via the Booking API must be done using main customer number. This applies to both outgoing services and return services, as well as pickups in Sweden and Denmark. You must change to your new API main customer number for such bookings. Your API main customer number is identical to your company's main customer number. [Your API customer numbers](https://www.mybring.com/useradmin/account/settings/api).
   
