@@ -9,11 +9,6 @@ on:
     branches:
       - master
   workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Environment to deploy to'
-        type: environment
-        required: true
 
 jobs:
   build_and_deploy_job:
