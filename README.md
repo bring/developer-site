@@ -1,11 +1,15 @@
 # developer.bring.com
 
+Structure, content and features are being worked on iteratively throughout 2021
+and 2022.
+
 ## Tech
 
-The Bring Developer site uses [Hugo](https://gohugo.io/) and
-[RAML 1.0](https://raml.org/). Hugo is the world’s fastest static site
-generator, and RAML is a a YAML-based modeling language for APIs. We use CSS
-with some light post processing and JS that is bundled using Webpack.
+The Bring Developer site uses [Hugo](https://gohugo.io/),
+[OAS](https://www.openapis.org/) and [RAML 1.0](https://raml.org/). Hugo is the
+world’s fastest static site generator. For the API endpoint documentation,
+generated OAS JSON is replacing manually written RAML. We use CSS with some
+light post processing and JS that is bundled with Webpack.
 
 ## Build, run and deploy
 
@@ -17,7 +21,7 @@ with some light post processing and JS that is bundled using Webpack.
 exceptions:
 
 1. If you are working on the RAML files, you have to run `npm run buildraml` to
-   generate new JSON files with the changes.
+   recompile a JSON file with the changes.
 2. If you are working on the JS or CSS, run `npm run bundlewatch` to have
    Webpack update the bundled files on change.
 
@@ -32,14 +36,14 @@ When you create a PR, a comment is made with a URL to a custom staging site
 where you can test what the final deployed site will be like. When you merge the
 PR to master, it will also be deployed to production.
 
-To work locally you can either build the site and open it in a browser, or you
-can use Azure’s
-[tooling](https://docs.microsoft.com/en-us/azure/static-web-apps/local-development)
+### Without commit or PR
 
-## Revamped dev site 2021/2022
-
-Structure, content and features are being worked on iteratively throughout 2021
-and 2022.
+Updates to external data sources, such as the OAS API JSON files, means there is
+nothing to commit and no PR. You can manually trigger a new build and deploy by
+running the workflow in
+[Actions](https://github.com/bring/developer-site/actions/workflows/azure-static-web-apps-mango-cliff-0e97d9203.yml)
+or via your terminal
+`gh workflow run azure-static-web-apps-mango-cliff-0e97d9203.yml`.
 
 ## Publish an item in API updates
 
