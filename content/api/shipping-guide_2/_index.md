@@ -520,6 +520,8 @@ documentation:
       * Stykkgods til bedrift (5100)
       * Stykkgods (CARGO)
       * Pall til bedrift (5400)
+      * På Døren (1736) (currently only for pilot customers)
+      * Pakke levert hjem (5600) (currently only for pilot customers)
 
       Note: setting the **actual shipping date** in the Shipping Guide request is a prerequisite for getting the correct estimate back from the machine learning model, as the leadtime is always calculated from the day the parcel is handed in to Bring. In absence for a shipping date set by the user, the Shipping Guide API will default to "now".    
 
