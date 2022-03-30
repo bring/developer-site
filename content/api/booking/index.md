@@ -10,6 +10,14 @@ menu:
     parent: book
 weight: 21
 
+important:
+- type: warn
+  title: Changes in Booking API due to new invoicing system from April 1st, 2022
+  message: |
+    - Booking of Bring Parcels services (parcels in Sweden, Denmark, Finland and cross border parcels to/from Norway) done via the Booking API must be done using main customer number. This applies to both outgoing services and return services, as well as pickups in Sweden and Denmark. You must change to your new API main customer number for such bookings. Your API main customer number is identical to your company's main customer number. [Your API customer numbers](https://www.mybring.com/useradmin/account/settings/api).
+  
+    - Your old API customer number will continue to work during a transition period. However, we recommend that you [change the API customer number being used for bookings of mentioned services](https://developer.bring.com/api/services/) as soon as possible to avoid any problems later.
+
 introduction: |
   The Booking API is used to book shipments and supports more than 60 different services as well as a variety of additional services. Each shipment is booked individually, and shipment number, tracking link, EDI-prenotification, label and other transport documents are created as part of the transaction. Additionally, it's possible to book pickups. The API can also provide a list of supported services and countries based on your agreement with Bring (i.e. the customer numbers attached to your user). The Booking API has similarities with the Shipment API, but there are [differences](/api/booking-shipment/).
 

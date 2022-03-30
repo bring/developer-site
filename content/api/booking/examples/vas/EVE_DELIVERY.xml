@@ -36,7 +36,7 @@
       </parties>
       <product>
         <id>HOME_DELIVERY_PARCEL</id>
-        <customerNumber>PARCELS_NORWAY-00094983111</customerNumber>
+        <customerNumber>*********</customerNumber>
         <additionalServices>
           <additionalService>
             <id>EVE_DELIVERY</id>

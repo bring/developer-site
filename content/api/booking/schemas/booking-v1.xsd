@@ -536,6 +536,7 @@
             <xs:enumeration value="1133"/>
             <xs:enumeration value="1134"/>
             <xs:enumeration value="1139"/>
+            <xs:enumeration value="1140"/>
             <xs:enumeration value="1141"/>
             <xs:enumeration value="1280"/>
             <xs:enumeration value="1288"/>

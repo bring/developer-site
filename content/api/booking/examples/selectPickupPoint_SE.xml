@@ -93,7 +93,7 @@
                     PICKUP_PARCEL
                 </id>
                 <customerNumber>
-                   *******************
+                    6
                 </customerNumber>
             </product>
             <packages>

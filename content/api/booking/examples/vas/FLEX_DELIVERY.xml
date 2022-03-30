@@ -1,92 +1,42 @@
 <bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
-    <schemaVersion>
-        1
-    </schemaVersion>
+    <schemaVersion>1</schemaVersion>
     <consignments>
         <consignment correlationId="INTERNAL-123456">
-            <shippingDateTime>
-                2015-11-17T10:06:08.571+01:00
-            </shippingDateTime>
+            <shippingDateTime>2015-11-17T10:06:08.571+01:00</shippingDateTime>
             <parties>
                 <sender>
-                    <name>
-                        Ola Nordmann
-                    </name>
-                    <addressLine>
-                        Testsvingen 12
-                    </addressLine>
-                    <postalCode>
-                        0263
-                    </postalCode>
-                    <city>
-                        OSLO
-                    </city>
-                    <countryCode>
-                        NO
-                    </countryCode>
-                    <reference>
-                        1234
-                    </reference>
-                    <additionalAddressInfo>
-                        Hentes på baksiden etter klokken to
-                    </additionalAddressInfo>
+                    <name>Ola Nordmann</name>
+                    <addressLine>Testsvingen 12</addressLine>
+                    <postalCode>0263</postalCode>
+                    <city>OSLO</city>
+                    <countryCode>NO</countryCode>
+                    <reference>1234</reference>
+                    <additionalAddressInfo>Hentes på baksiden etter klokken to</additionalAddressInfo>
                     <contact>
-                        <name>
-                            Trond Nordmann
-                        </name>
-                        <email>
-                            trond@nordmanntest.no
-                        </email>
-                        <phoneNumber>
-                            99999999
-                        </phoneNumber>
+                        <name>Trond Nordmann</name>
+                        <email>trond@nordmanntest.no</email>
+                        <phoneNumber>99999999</phoneNumber>
                     </contact>
                 </sender>
                 <recipient>
-                    <name>
-                        Tore Mottaker
-                    </name>
-                    <addressLine>
-                        Mottakerveien 14
-                    </addressLine>
-                    <addressLine2>
-                        c/o Tina Mottaker
-                    </addressLine2>
-                    <postalCode>
-                        0659
-                    </postalCode>
-                    <city>
-                        OSLO
-                    </city>
-                    <countryCode>
-                        NO
-                    </countryCode>
-                    <reference>
-                        43242
-                    </reference>
-                    <additionalAddressInfo>
-                        Bruk ringeklokken
-                    </additionalAddressInfo>
+                    <name>Tore Mottaker</name>
+                    <addressLine>Mottakerveien 14</addressLine>
+                    <addressLine2>c/o Tina Mottaker</addressLine2>
+                    <postalCode>0659</postalCode>
+                    <city>OSLO</city>
+                    <countryCode>NO</countryCode>
+                    <reference>43242</reference>
+                    <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
                     <contact>
-                        <name>
-                            Tore mottaker
-                        </name>
-                        <email>
-                            tore@mottakertest.no
-                        </email>
-                        <phoneNumber>
-                            +46700000000
-                        </phoneNumber>
+                        <name>Tore mottaker</name>
+                        <email>tore@mottakertest.no</email>
+                        <phoneNumber>+46700000000</phoneNumber>
                     </contact>
                 </recipient>
             </parties>
           <product>
-            <id>
-              BUSINESS_PARCEL
-            </id>
-            <customerNumber>
-              ************
-            </customerNumber>
+            <id>BUSINESS_PARCEL</id>
+            <customerNumber>************</customerNumber>
             <additionalServices>
               <additionalService>
                 <id>FLEX_DELIVERY</id>
@@ -96,22 +46,12 @@
           </product>
             <packages>
                 <package correlationId="PACKAGE-123">
-                    <weightInKg>
-                        1.1
-                    </weightInKg>
-                    <goodsDescription>
-                        Testing equipment
-                    </goodsDescription>
+                    <weightInKg>1.1</weightInKg>
+                    <goodsDescription>Testing equipment</goodsDescription>
                     <dimensions>
-                        <heightInCm>
-                            13
-                        </heightInCm>
-                        <widthInCm>
-                            23
-                        </widthInCm>
-                        <lengthInCm>
-                            10
-                        </lengthInCm>
+                        <heightInCm>13</heightInCm>
+                        <widthInCm>23</widthInCm>
+                        <lengthInCm>10</lengthInCm>
                     </dimensions>
                 </package>
             </packages>

@@ -35,11 +35,11 @@
         </recipient>
       </parties>
       <product>
-        <id>BUSINESS_PARCEL</id>
-        <customerNumber>PARCELS_NORWAY-00094983111</customerNumber>
+        <id>DOUBLE_INDOOR</id>
+        <customerNumber>*********</customerNumber>
         <additionalServices>
           <additionalService>
-            <id>INSURANCE</id>
+            <id>1140</id>
           </additionalService>
         </additionalServices>
       </product>
