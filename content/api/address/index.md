@@ -27,7 +27,9 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP.
+      REST XML/JSON over HTTP. 
+
+      Returned format is controlled by the `Accept` header. Supported values are `application/json` and `application/xml`. Default returned format is JSON.
 
 oas: https://api-new.bring.com/address/api-docs/
 ---

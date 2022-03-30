@@ -43,7 +43,11 @@
             {{- $enum = . -}}
           {{- end -}}
         {{- else if eq $key "example" -}}
-          {{- $example = delimit (slice $name $value) "=" -}}
+          {{- if eq $paramType "path" -}}
+            {{- $example = delimit (slice "" $value) "" -}}
+          {{- else -}}
+            {{- $example = delimit (slice $name $value) "=" -}}
+          {{- end -}}
         {{- else if eq $key "examples" -}}
           {{- $examples = $value -}}
         {{- end -}}
@@ -85,7 +89,13 @@
             {{- range $key, $value := $examples -}}
               <p class="text-note fwb mb0">{{$key}}</p>
               <p class="text-note mb0">{{$value.description}}</p>
-              <code class="mbxs db maxwmaxc">{{- delimit (slice $name $value.value) "=" -}}</code>
+              <code class="mbxs db maxwmaxc">
+                {{- if eq $paramType "path" -}}
+                  {{- delimit (slice "" $value.value) "" -}}
+                {{- else -}}
+                  {{- delimit (slice $name $value.value) "=" -}}
+                {{- end -}}
+              </code>
             {{- end -}}
           {{- end -}}
         </dd>
