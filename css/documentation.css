@@ -81,7 +81,7 @@
 
 summary {
   padding-left: 0.25em;
-  padding-bottom: .05em;
+  padding-bottom: 0.05em;
   border-radius: 2px;
 }
 
@@ -159,8 +159,8 @@ summary:hover {
 }
 
 .btn-link--copy {
-  top:.5rem;
-  right:1.2rem;
+  top: 0.5rem;
+  right: 1.2rem;
   background-color: hsl(200, 17%, 30%);
   color: hsl(0, 0%, 85%);
 }
@@ -229,7 +229,7 @@ summary.error-code:hover {
 }
 
 .schema-type-select {
-  height:auto;
+  height: auto;
 }
 
 .schema__sublist {
@@ -258,9 +258,9 @@ summary.error-code:hover {
 }
 
 .param-collapsed-btn {
-  box-sizing:border-box;
-  width:100%;
-  justify-content:flex-start;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .param-toggle-icon {
@@ -289,7 +289,7 @@ summary.error-code:hover {
 }
 
 .minw0 {
-  min-width:0;
+  min-width: 0;
 }
 
 .wrap-text {
