@@ -11,6 +11,14 @@ world’s fastest static site generator. For the API endpoint documentation,
 generated OAS JSON is replacing manually written RAML. We use CSS with some
 light post processing and JS that is bundled with Webpack.
 
+## Writing documentation for people
+
+Keep in mind that users are more likely to be looking for use cases than
+parameters and values. In a parameter-heavy table, it might make sense to list
+the values and explain them like a dictionary. But on higher levels, such as in
+endpoint lists and how-to guides, it’s often better to lead with the use case
+and then provide the parameter.
+
 ## Build, run and deploy
 
 `npm install` installs the dependencies.
@@ -125,7 +133,7 @@ information:
     content |
       {Content as markdown}
 
-# In case you want to add content that is not in the OAS JSON file
+# Additional documentation. Organise it into technical info and how-to info. The former works as a continuation of the previous section. The latter as guides for the user leading into the endpoint section.
 documentation:
   - title: {Title of section}
     content: |
