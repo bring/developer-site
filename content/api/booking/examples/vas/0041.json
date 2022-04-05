@@ -41,7 +41,8 @@
         "customerNumber": "*************",
         "additionalServices": [
           {
-            "id": "0041"
+            "id": "0041",
+            "message" : "Leave the package in the garage"
           }
         ],
         "messageForRecipient": null
