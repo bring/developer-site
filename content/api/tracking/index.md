@@ -91,4 +91,6 @@ documentation:
       |:-------|:--------|:--------|
       | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
       | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
+
+oas: https://tracking.qa.bring.com/api-docs/
 ---

@@ -172,7 +172,23 @@
                       </div>
                       <div class="example-area">
                         {{- if $components.examples -}}
-                          {{- partial "api/oas/responseexample.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                          {{- partial "api/oas/responseexample-components.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                        {{- else -}}
+                          {{- $hasExamples := false -}}
+                          {{- range .responses -}}
+                            {{- range . -}}
+                              {{- if reflect.IsMap . -}}
+                                {{- range . -}}
+                                  {{- if isset . "examples" -}}
+                                    {{- $hasExamples = true -}}
+                                  {{- end -}}
+                                {{- end -}}
+                              {{- end -}}
+                            {{- end -}}
+                          {{- end -}}
+                          {{- if $hasExamples -}}
+                            {{- partial "api/oas/responseexample.html" (dict "responses" .responses "endpointId" $endpointId) -}}
+                          {{- end -}}
                         {{- end -}}
                       </div>
                     </div>
