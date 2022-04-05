@@ -144,20 +144,6 @@ summary:hover {
   flex: 1 1 24rem;
 }
 
-.btn-link--help {
-  background: none;
-  padding: 0;
-  vertical-align: text-bottom;
-}
-
-.btn-link--help:hover {
-  background: none;
-}
-
-.btn-link--help:hover svg {
-  color: #777;
-}
-
 .btn-link--copy {
   top: 0.5rem;
   right: 1.2rem;
