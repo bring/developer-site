@@ -20,6 +20,7 @@
 
 --yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
 
+--red: hsl(3, 77.5%, 51.5%); /* #e32d22 */
 --red-lighter: hsl(3, 77.5%, 97%);
 --red-lighter-hover: hsl(3, 77.5%, 95%);
 --red-dark: hsl(0, 100%, 30%); /* #980000 */
