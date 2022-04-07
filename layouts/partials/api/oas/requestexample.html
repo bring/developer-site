@@ -1,14 +1,14 @@
 {{- $hasExamples := false -}}
-  {{- range .requestBody -}}
-    {{- if reflect.IsMap . -}}
-      {{- range . -}}
-        {{- if isset . "examples" -}}
-          {{- $hasExamples = true -}}
-        {{- end -}}
+{{- range .requestBody -}}
+  {{- if reflect.IsMap . -}}
+    {{- range . -}}
+      {{- if isset . "examples" -}}
+        {{- $hasExamples = true -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
-  {{- if $hasExamples -}}
+{{- end -}}
+{{- if $hasExamples -}}
   {{- $endpointId := .endpointId -}}
 
   <h3>Request example</h3>
