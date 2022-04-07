@@ -25,9 +25,11 @@
     {{- with .Site.LanguageCode -}}
     <language>{{.}}</language>
     {{- end -}}
+    {{- with $latestPage -}}
     {{- if not $latestPage.PublishDate.IsZero -}}
-    <pubDate>{{ $latestPage.PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 -0500</pubDate>
-    <lastBuildDate>{{ $latestPage.PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 -0500</lastBuildDate>
+    <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 -0500</pubDate>
+    <lastBuildDate>{{ .PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 -0500</lastBuildDate>
+    {{- end -}}
     {{- end -}}
     {{- with .Site.Author.email -}}
     <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>
