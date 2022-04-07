@@ -66,7 +66,8 @@ function switchExample(containerArr, dataAtt, id) {
   })
 }
 
-const responseExBtns = document.querySelectorAll("button[data-response-ex]")
+//Response code buttons
+const responseExBtns = document.querySelectorAll("button[data-example]")
 responseExBtns.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     const element = e.target
@@ -75,36 +76,30 @@ responseExBtns.forEach((btn) => {
       return
     }
 
-    const resIdBtn = element.dataset.responseEx
+    const resIdBtn = element.dataset.example
     const endpointId = element.name
-    const responseSection =
-      document.getElementById(endpointId).nextElementSibling
-    const exampleContainers = responseSection.querySelectorAll(
-      "div[data-response-ex]"
-    )
-    const activeBtn = document.querySelector(
-      'button[name="' + endpointId + '"].active'
-    )
+    const responseSection = document.getElementById(endpointId)
+    const exampleContainers = responseSection.querySelectorAll("div[data-example]")
+    const activeBtn = document.querySelector('button[name="' + endpointId + '"].active')
     activeBtn.classList.remove("active")
     element.classList.add("active")
 
-    switchExample(exampleContainers, "responseEx", resIdBtn)
+    switchExample(exampleContainers, "example", resIdBtn)
   })
 })
 
-const responseExSelects = document.querySelectorAll(
-  "select[data-response-subex]"
+//Request and response examples
+const exampleSelects = document.querySelectorAll(
+  "select[data-example-sub]"
 )
-responseExSelects.forEach((select) => {
+exampleSelects.forEach((select) => {
   select.addEventListener("change", function (e) {
     const element = e.target
     const exId = element.value
-    const responseSection = element.closest("div[data-response-ex]")
-    const exampleSubContainers = responseSection.querySelectorAll(
-      "div[data-response-subex]"
-    )
+    const responseSection = element.closest("div[data-example]")
+    const exampleSubContainers = responseSection.querySelectorAll("div[data-example-sub]")
 
-    switchExample(exampleSubContainers, "responseSubex", exId)
+    switchExample(exampleSubContainers, "exampleSub", exId)
   })
 })
 
@@ -119,10 +114,10 @@ if('clipboard' in navigator) {
 
     function copyCode() {
       const copyBtn = this
-      const responseExampleParent = copyBtn.parentNode
-      const responseExample = responseExampleParent.querySelector('code').innerText
+      const exampleParent = copyBtn.parentNode
+      const example = exampleParent.querySelector('code').innerText
 
-      navigator.clipboard.writeText(responseExample)
+      navigator.clipboard.writeText(example)
       .then(setCopiedBtnText)
 
       function setCopiedBtnText() {
