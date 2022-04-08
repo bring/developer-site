@@ -133,7 +133,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_BULK",
     "productionCode" : "0342",
-    "domesticAllowedIn" : "SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI"
   }, {
@@ -591,7 +591,7 @@
   "shippingGuideCode" : "SIMPLIFIED_DELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification" ],
+  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
@@ -852,7 +852,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_BULK",
     "productionCode" : "0342",
-    "domesticAllowedIn" : "SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
@@ -2451,7 +2451,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_BULK",
     "productionCode" : "0342",
-    "domesticAllowedIn" : "SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI, FO, IS"
   }, {
@@ -2552,7 +2552,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_BULK",
     "productionCode" : "0342",
-    "domesticAllowedIn" : "SE",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL"
   }, {
@@ -2641,4 +2641,55 @@
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : false
+}, {
+  "vasName" : "Driver notifies consignee",
+  "description" : "No description available",
+  "shippingGuideCode" : "1149",
+  "shippingGuideNpbCode" : "1149",
+  "bookingCode" : "1149",
+  "incompatibleVases" : [ "Simplified delivery" ],
+  "supportedServices" : [ {
+    "serviceName" : "Pakke til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5000",
+    "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Stykkgods til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway domestic",
+    "serviceFamilySortOrder" : 3,
+    "serviceCode" : "5100",
+    "productionCode" : "5100",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Partigods til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway domestic",
+    "serviceFamilySortOrder" : 3,
+    "serviceCode" : "5300",
+    "productionCode" : "5300",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Pall til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway domestic",
+    "serviceFamilySortOrder" : 3,
+    "serviceCode" : "5400",
+    "productionCode" : "5400",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
 } ]
