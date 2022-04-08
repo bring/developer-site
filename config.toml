@@ -72,6 +72,15 @@ title = "Checkout"
 weight = 1
 
 [[menu.apidocs]]
+parent = "checkout"
+title = "Checkout request builder"
+url = "https://www.mybring.com/shipping-guide/integration/checkout"
+weight = 15
+
+[menu.apidocs.params]
+blank = "target=\"_blank\" rel=\"noopener noreferrer\""
+
+[[menu.apidocs]]
 identifier = "book"
 title = "Booking"
 weight = 2
