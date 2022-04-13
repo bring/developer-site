@@ -147,7 +147,7 @@ types:
     description: Generate a report
     queryParameters:
       parameterName:
-        description: The different report types have different params. The params are doucmented in the list of available reports, for example `fromDate` and `toDate`.
+        description: The different report types have different params. The params are documented in the list of available reports, for example `fromDate` and `toDate`.
         type: string
         required: true
     headers:
@@ -335,9 +335,9 @@ types:
       description: |
              Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
              <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
-             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCEL_INTERNATIONAL|Main customer number<br>
              <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
-             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCEL_INTERNATIONAL|Main customer number<br>
       type: string
       required: true
     mediaTypeExtension:
@@ -369,9 +369,9 @@ types:
       description: |
              Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
              <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
-             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCEL_INTERNATIONAL|Main customer number<br>
              <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
-             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCEL_INTERNATIONAL|Main customer number<br>
       type: string
       required: true
   get:
@@ -409,9 +409,9 @@ types:
       description: |
              Unique API Customer Number from *Parcel, Cargo and  Parcel International* service by considering below rules<br>
              <br>**For Non Agreement Converted customer:**  use the possible *"API customer number"*<br>Possible values:
-             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br> - Main customer number<br> -CARGO-xxxxx<br> - PARCEL_INTERNATIONAL|Main customer number<br>
              <br>**For Agreement converted customer:** *"```ServiceType|Main Customer Number```"*<br>Possible values:
-             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCELS_NORWAY_INTERNATIONAL-xxxxx<br> - PARCELS_SWEDEN-xxxxx<br> - PARCELS_DENMARK-xxxxx<br> - PARCELS_FINLAND-xxxxx<br>
+             <br> - CARGO|Main customer number<br> - PARCEL|Main customer number<br> - PARCEL_INTERNATIONAL|Main customer number<br>
       type: string
       required: true
   get:
