@@ -40,7 +40,7 @@
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "toml": "^3.0.0",
-    "webpack": "^5.70.0",
+    "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
