@@ -1,0 +1,498 @@
+[
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "",
+    "ReportsName": ""
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Pre-notification provided"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Received by Bring"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Out for delivery to recipient today"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Not collected at pickup point"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Delivered to recipient"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Last status"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Delivery quality"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Customer errors"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Missing pre-notification"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Probable delays"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Attempted deliveries"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Returned, to sender"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Preliminary freight calculation"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Detailed freight calculation"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Freight costs, summarized by service"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Freight costs, summarized by article"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Specified invoice"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Environment",
+    "ReportsName": "Emissions pr consignment"
+  },
+  {
+    "ServiceFamily": "Parcels Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Environment",
+    "ReportsName": "Emissions pr month"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "",
+    "ReportsName": ""
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Pre-notification provided"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Received by Bring"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Out for delivery to recipient today"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Not collected at pickup point"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Delivered to recipient"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Last status"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Customer errors"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Address quality"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Delivery quality"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Returned, to sender"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Missing pre-notification"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Attempted deliveries"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Detailed freight calculation"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Freight costs, summarized by article"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Specified invoice"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Environment",
+    "ReportsName": "Emissions pr consignment"
+  },
+  {
+    "ServiceFamily": "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Environment",
+    "ReportsName": "Emissions pr month"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "",
+    "ReportsName": ""
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Pre-notification provided"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Received by Bring"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Placed in terminal storage"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Loaded on distribution vehicle"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Delivered to recipient"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Delivery quality"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Quality and deviation",
+    "ReportsName": "Attempted deliveries"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Preliminary freight calculation"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Delivered to recipient with price"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Adjusted measurement/weight"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Freight costs, summarized by weight interval"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Freight costs, summarized by weight interval"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Specified invoice"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Environment",
+    "ReportsName": "Emissions pr consignment"
+  },
+  {
+    "ServiceFamily": "Cargo Norway domestic",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Environment",
+    "ReportsName": "Emissions pr month"
+  },
+  {
+    "ServiceFamily": "Warehousing",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "-",
+    "ReportsName": "-"
+  },
+  {
+    "ServiceFamily": "Courier and Express",
+    "CustomerNumberType": "Courier and Express",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "-",
+    "ReportsName": "-"
+  },
+  {
+    "ServiceFamily": "Cargo Norway international",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "",
+    "ReportsName": ""
+  },
+  {
+    "ServiceFamily": "Cargo Norway international",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Specified invoice"
+  },
+  {
+    "ServiceFamily": "Supply Base Logistics",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "Yes",
+    "Reports": "",
+    "ReportType": "",
+    "ReportsName": ""
+  },
+  {
+    "ServiceFamily": "Supply Base Logistics",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Pre-notification provided"
+  },
+  {
+    "ServiceFamily": "Supply Base Logistics",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Status",
+    "ReportsName": "Received by Bring"
+  },
+  {
+    "ServiceFamily": "Supply Base Logistics",
+    "CustomerNumberType": "Main customer number",
+    "Invoice": "",
+    "Reports": "Yes",
+    "ReportType": "Economy",
+    "ReportsName": "Specified invoice"
+  }
+]

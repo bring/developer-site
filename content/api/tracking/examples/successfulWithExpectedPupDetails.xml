@@ -1,0 +1,245 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<ConsignmentSet xmlns="http://www.bring.no/sporing/2.0">
+  <ApiVersion>2</ApiVersion>
+  <Consignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="packageCargoConsignmentType" consignmentId="SHIPMENTNUMBER" previousConsignmentId="">
+    <TotalWeight unitCode="kg">0.8</TotalWeight>
+    <TotalVolume unitCode="dm3">10.2</TotalVolume>
+    <SenderReference></SenderReference>
+    <SenderCustomerNumber/>
+    <SenderCustomerMasterNumber/>
+    <SenderName>POSTEN NORGE AS</SenderName>
+    <SenderAddress>
+      <AddressLine1/>
+      <AddressLine2/>
+      <PostalCode>7038</PostalCode>
+      <City/>
+      <CountryCode/>
+      <Country/>
+    </SenderAddress>
+    <SenderCustomerType/>
+    <SenderLogo/>
+    <RecipientCustomerNumber/>
+    <RecipientCustomerMasterNumber/>
+    <RecipientCustomerType/>
+    <RecipientAddress>
+      <AddressLine1/>
+      <AddressLine2/>
+      <PostalCode>2870</PostalCode>
+      <City>DOKKA</City>
+      <CountryCode>NO</CountryCode>
+      <Country>Norway</Country>
+    </RecipientAddress>
+    <RecipientHandlingAddress>
+      <AddressLine1/>
+      <AddressLine2/>
+      <PostalCode>2870</PostalCode>
+      <City>DOKKA</City>
+      <CountryCode>NO</CountryCode>
+      <Country>Norway</Country>
+    </RecipientHandlingAddress>
+    <PackageSet>
+      <Package packageId="TESTPARCELWITHEXPUP" previousPackageId="">
+        <StatusDescription/>
+        <Descriptions/>
+        <ProductName>Pick-up parcel</ProductName>
+        <ProductCode>5800</ProductCode>
+        <ProductLink>http://www.bring.no/english/shortcuts/5800</ProductLink>
+        <Brand>POSTEN</Brand>
+        <Weight unitCode="kg">0.8</Weight>
+        <Length unitCode="cm">31</Length>
+        <Width unitCode="cm">30</Width>
+        <Height unitCode="cm">11</Height>
+        <Volume unitCode="dm3">10.2</Volume>
+        <EstimatedTimeSpanOfDelivery>
+          <startTime>11:00</startTime>
+          <endTime>15:00</endTime>
+        </EstimatedTimeSpanOfDelivery>
+        <SenderName>POSTEN NORGE AS</SenderName>
+        <SenderAddress>
+          <AddressLine1/>
+          <AddressLine2/>
+          <PostalCode/>
+          <City/>
+          <CountryCode/>
+          <Country/>
+        </SenderAddress>
+        <RecipientAddress>
+          <AddressLine1/>
+          <AddressLine2/>
+          <PostalCode>2870</PostalCode>
+          <City>DOKKA</City>
+          <CountryCode>NO</CountryCode>
+          <Country>Norway</Country>
+        </RecipientAddress>
+        <RecipientHandlingAddress>
+          <AddressLine1/>
+          <AddressLine2/>
+          <PostalCode>2870</PostalCode>
+          <City>DOKKA</City>
+          <CountryCode>NO</CountryCode>
+          <Country>Norway</Country>
+        </RecipientHandlingAddress>
+        <EventSet>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has been sorted.</Description>
+            <Status>IN_TRANSIT</Status>
+            <LmEventCode>W</LmEventCode>
+            <lmCauseCode/>
+            <lmMeasureCode/>
+            <RecipientSignature>
+              <Name/>
+            </RecipientSignature>
+            <UnitId>032823</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>2309</PostalCode>
+            <City>HAMAR</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2021-12-03T21:16:55.000+01:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>03.12.2021</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>21.16</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+            <GpsXCoordinate/>
+            <GpsYCoordinate/>
+            <GpsMapUrl/>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>Testing</Description>
+            <Status>IN_TRANSIT</Status>
+            <LmEventCode>G</LmEventCode>
+            <lmCauseCode/>
+            <lmMeasureCode/>
+            <RecipientSignature>
+              <Name/>
+            </RecipientSignature>
+            <UnitId>032823</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>2323</PostalCode>
+            <City>INGEBERG</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2021-12-03T21:11:04.000+01:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>03.12.2021</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>21.11</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+            <GpsXCoordinate/>
+            <GpsYCoordinate/>
+            <GpsMapUrl/>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment is in transit.</Description>
+            <Status>IN_TRANSIT</Status>
+            <LmEventCode>KO</LmEventCode>
+            <lmCauseCode/>
+            <lmMeasureCode/>
+            <RecipientSignature>
+              <Name/>
+            </RecipientSignature>
+            <UnitId>101337</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>7093</PostalCode>
+            <City>TILLER</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2021-12-02T17:42:25.000+01:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>02.12.2021</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>17.42</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+            <GpsXCoordinate/>
+            <GpsYCoordinate/>
+            <GpsMapUrl/>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has been sorted.</Description>
+            <Status>IN_TRANSIT</Status>
+            <LmEventCode>W</LmEventCode>
+            <lmCauseCode/>
+            <lmMeasureCode/>
+            <RecipientSignature>
+              <Name/>
+            </RecipientSignature>
+            <UnitId>032845</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>7093</PostalCode>
+            <City>TILLER</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2021-12-01T20:38:17.000+01:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>01.12.2021</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>20.38</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+            <GpsXCoordinate/>
+            <GpsYCoordinate/>
+            <GpsMapUrl/>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>The shipment has been handed in at terminal and forwarded.</Description>
+            <Status>IN_TRANSIT</Status>
+            <LmEventCode>R</LmEventCode>
+            <lmCauseCode/>
+            <lmMeasureCode/>
+            <RecipientSignature>
+              <Name/>
+            </RecipientSignature>
+            <UnitId>032845</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode>7093</PostalCode>
+            <City>TILLER</City>
+            <CountryCode>NO</CountryCode>
+            <Country>Norway</Country>
+            <OccuredAtIsoDateTime>2021-12-01T20:03:19.000+01:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>01.12.2021</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>20.03</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+            <GpsXCoordinate/>
+            <GpsYCoordinate/>
+            <GpsMapUrl/>
+          </Event>
+          <Event xsi:type="packageCargoEventType">
+            <Description>No shipment has been received yet, only notification of the shipment.</Description>
+            <Status>PRE_NOTIFIED</Status>
+            <LmEventCode>T</LmEventCode>
+            <lmCauseCode/>
+            <lmMeasureCode/>
+            <RecipientSignature>
+              <Name/>
+            </RecipientSignature>
+            <UnitId>904030</UnitId>
+            <UnitType>BRING</UnitType>
+            <PostalCode/>
+            <City/>
+            <CountryCode/>
+            <Country/>
+            <OccuredAtIsoDateTime>2021-12-01T17:57:06.000+01:00</OccuredAtIsoDateTime>
+            <OccuredAtDisplayDate>01.12.2021</OccuredAtDisplayDate>
+            <OccuredAtDisplayTime>17.57</OccuredAtDisplayTime>
+            <ConsignmentEvent>false</ConsignmentEvent>
+            <Insignificant>false</Insignificant>
+            <GpsXCoordinate/>
+            <GpsYCoordinate/>
+            <GpsMapUrl/>
+          </Event>
+        </EventSet>
+        <AdditionalServicesSet>
+          <AdditionalService>
+            <Id>1036</Id>
+            <Description>Optional PickUp Point</Description>
+            <Amount/>
+            <CurrencyCode/>
+            <LongDescription>The shipment will be delivered to requested PickUp Point</LongDescription>
+          </AdditionalService>
+        </AdditionalServicesSet>
+        <ThirdPartyMobileNumber/>
+        <expectedPickupUnitId>122950</expectedPickupUnitId>
+        <expectedPickupUnitName>Spar Dokka</expectedPickupUnitName>
+        <expectedPickupUnitURL>https://www.posten.no/kundeservice/postkontor-info?enhetsnr=122950</expectedPickupUnitURL>
+      </Package>
+    </PackageSet>
+    <IsPickupNoticeAvailable>false</IsPickupNoticeAvailable>
+  </Consignment>
+</ConsignmentSet>

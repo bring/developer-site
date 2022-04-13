@@ -51,7 +51,7 @@ It's a very diligent script! 11 441 of the deploys were done by our build server
 
 ![steps](images/steps.svg)
 
-We've climbed exactly<sup><a href="#estimation" id="estimation-ref">1</a></sup> 301337 steps the last 365 days! That probably means we've climbed Everest, right?
+We've climbed exactly<sup><a href="#fn1" id="ref1" role="doc-noteref">1</a></sup> 301337 steps the last 365 days! That probably means we've climbed Everest, right?
 
 What do our users do?
 ---
@@ -74,4 +74,10 @@ The business applications that most of us work on have users with older browsers
 
 <hr>
 
-<sup id="estimation"><a href="#estimation-ref">1</a></sup> Strictly speaking, at least, not exactly. Who's counting? There at least 200 working days in the year and at least 5 people take the stairs after lunch every day. On average we work on at least the 15th floor and there are at least 20 steps to go up one floor. So that's at least 300 000 steps!
+<ol class="footnotes" role="doc-endnotes">
+  <li id="fn1" role="doc-endnote">
+    Strictly speaking, at least, not exactly. Who's counting? There at least 200 working days in the year and at least 5 people take the stairs after lunch every day. On average we work on at least the 15th floor and there are at least 20 steps to go up one floor. So that's at least 300 000 steps! 
+    <a class="footnote-jump btn-link di" href="#ref1" title="Jump back to footnote 1 in the text">&#8617;</a>
+  </li>
+</ol>
+

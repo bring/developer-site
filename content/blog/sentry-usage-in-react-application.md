@@ -160,7 +160,7 @@ After the usage of Sentry in Tracking applications for quite some time which is 
 Overall I feel Sentry.io is useful to understand the frontend failure but we need to use effectively by considering some of the above points to make best use of it.
 
 URLs:
-- [Sentry Documentation](https://docs.sentry.io/error-reporting/quickstart/?platform=JavaScript)
+- [Sentry Documentation](https://docs.sentry.io/platforms/javascript/)
 - [Sentry Integrations](https://sentry.io/integrations/)
  
 

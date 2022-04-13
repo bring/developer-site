@@ -1,24 +1,16 @@
-{{/* require id tag */}}
-{{- $headers := findRE "<h[2-4].* id=\"([^\"]\\S*?)\">(.|\n])+?<\\/h[2-4]>" .context.Content -}}
-{{ .context.Scratch.Set "last_level" 1 }}
+{{- $base := ($.Page.File.LogicalName) -}}
+{{ $paramHeaders := .context.Params.tables }}
 
-{{/* at least one header to link to */}}
-{{- $has_headers := ge (len $headers) 1 -}}
-{{- if $has_headers -}}
+{{/* must have table params or at least one header to link to */}}
+{{- if or $paramHeaders -}}
   <ul class="dev-sidemenu__sublist">
-    {{- range $headers -}}
-      {{- $header := . -}}
-      {{- $base := ($.Page.File.LogicalName) -}}
-      {{- $anchorId := ($header | plainify | htmlUnescape | anchorize) -}}
-      {{- $href := delimit (slice $base $anchorId) "#" | string -}}
-      {{- range findRE (printf "[2-%s]" $.numberOfHeadings) . 1 -}}
-        {{- $next_heading := (int .) -}}
+    {{- with $paramHeaders }}
+      {{- range . -}}
+        {{- $anchorId := .title|anchorize -}}
+        {{- $href := delimit (slice $base $anchorId) "#" | string -}}
         <li>
-          <a href="{{ relref $.context.Page $href }}"
-            >{{- $header | plainify | htmlUnescape -}}</a
-          >
+          <a href="{{ $href }}">{{ .title }}</a>
         </li>
-        {{ $.context.Scratch.Set "last_level" $next_heading }}
       {{- end -}}
     {{- end -}}
   </ul>

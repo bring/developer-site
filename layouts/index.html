@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <main>
+  <main id="main">
     <div class="dev-intro-padv dev-intro-padh mbxl bg-green1">
       <div class="dev-container">
         <div class="dev-intro-l">
@@ -15,7 +15,7 @@
     </div>
     <div class="dev-intro-padh">
       <div class="dev-container flex flex-wrap mbxl">
-        <div class="dev-intro-l mbxl">
+        <div class="dev-intro-l">
           {{- .Content -}}
         </div>
 
@@ -31,24 +31,26 @@
               {{- end -}}
             </div>
           {{- end -}}
-          <h2 class="mbs">API changelog</h2>
-          {{- range where .Site.Pages "Section" "api" -}}
-            {{- if (in .CurrentSection "revision-history") -}}
-              {{- range first 4 .Pages -}}
-                <h3 class="text-basic">
-                  <time
-                    datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-                    >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
-                  >: {{ .Title }}
-                </h3>
-                {{ .Content }}
+          <div class="mbxl">
+            <h2 class="mbs">API updates</h2>
+            {{- range where .Site.Pages "Section" "api" -}}
+              {{- if (in .CurrentSection "revision-history") -}}
+                {{- range first 4 .Pages -}}
+                  <h3 class="text-basic">
+                    <time
+                      datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                      >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
+                    >: {{ .Title }}
+                  </h3>
+                  {{ .Content }}
+                {{- end -}}
               {{- end -}}
             {{- end -}}
-          {{- end -}}
-          <div class="w100p mtl">
-            <a class="text-heading" href="./api/revision-history">View all changes &RightArrow;</a
-            ><br />
-            <a href="./api/revision-history/index.xml">Subscribe via RSS</a>
+            <div class="w100p mtl">
+              <a class="text-heading" href="./api/revision-history/">Show all updates &RightArrow;</a
+              ><br />
+              <a href="./api/revision-history/index.xml">Subscribe via RSS</a>
+            </div>
           </div>
         </div>
       </div>

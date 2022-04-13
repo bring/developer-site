@@ -6,23 +6,16 @@ start:
   Developing an e-commerce site? Or dealing with logistics software in the
   Nordic countries? Find out how to integrate with Bring’s API platform.
 important:
-  - <strong class="mrs">The Preliminary freight calculation report for Parcel
-    Norway customers will be disabled from 21.06.2021.</strong> <br> <a
-    href="api/reports">Read more about the changes</a>
-  - <strong class="mrs">Shipping Guide API 1.0 will be decommissioned on
-    01.07.2021</strong> <br> If you haven’t upgraded to <a
-    href="api/shipping-guide_2">Shipping Guide 2.0</a> yet, we strongly
-    recommend to do that as soon as possible. We will progressively rate limit
-    incoming 1.0 requests towards this final deadline.
+  - Bring's applications and infrastructure are going through bigger changes, as part of modernizing our infrastructure. One of these changes, is update of our  load balancing component, and that will affect services running on <code>api.bring.com</code>. <br> <a href="api/dns-api-bring-com">Read more about the upcoming DNS change</a>
 ---
 
 <h2 class="mbs">Explore our APIs</h2>
 <div class="flex flex-wrap mbxl">
   <a
     href='{{< relref "api/shipping-guide_2" >}}'
-    class="dev-link--box rad-a2px mrxs mbxs"
+    class="mb-card flex flex-dir-col flex-1-1-20r pam mrxs mbxs"
   >
-    <div class="flex align-ic green-dark">
+    <div class="flex align-ic mlxs">
       <span
         data-mybicon="mybicon-list"
         data-mybicon-class="icon-ui--green-dark mrs"
@@ -31,17 +24,17 @@ important:
       ></span>
       <h3 class="mlxs fwn">Shipping Guide API</h3>
     </div>
-    <p class="pll">
-      Look up available services, delivery times and prices, and use our
-      recommended service descriptions in your checkout.
+    <p class="mhxs pll">
+      Look up available services, delivery times, prices and environmental data,
+      and use our recommended service descriptions in your checkout.
     </p>
   </a>
 
   <a
     href='{{< relref "api/booking" >}}'
-    class="dev-link--box rad-a2px mrxs mbxs"
+    class="mb-card flex flex-dir-col flex-1-1-20r pam mrxs mbxs"
   >
-    <div class="flex align-ic">
+    <div class="flex align-ic mlxs">
       <span
         data-mybicon="mybicon-box"
         data-mybicon-class="icon-ui--green-dark mrs"
@@ -50,16 +43,16 @@ important:
       ></span>
       <h3 class="mlxs fwn">Booking API</h3>
     </div>
-    <p class="pll">
-      Create shipments and generate labels and other transport documents.
+    <p class="mhxs pll">
+      Create shipments and generate shipment number, tracking link, EDI-prenotification, label and other transport documents. Order pickups.
     </p>
   </a>
 
   <a
     href='{{< relref "api/pickup-point" >}}'
-    class="dev-link--box rad-a2px mrxs mbxs"
+    class="mb-card flex flex-dir-col flex-1-1-20r pam mrxs mbxs"
   >
-    <div class="flex align-ic">
+    <div class="flex align-ic mlxs">
       <span
         data-mybicon="mybicon-location"
         data-mybicon-class="icon-ui--green-dark mrs"
@@ -68,13 +61,13 @@ important:
       ></span>
       <h3 class="mlxs fwn">Pickup Point API</h3>
     </div>
-    <p class="pll">
+    <p class="mhxs pll">
       Let your customers choose their preferred pickup point in your checkout.
     </p>
   </a>
 
-  <a href='{{< relref "tracking" >}}' class="dev-link--box rad-a2px mrxs mbxs">
-    <div class="flex align-ic">
+  <a href='{{< relref "tracking" >}}' class="mb-card flex flex-dir-col flex-1-1-20r pam mrxs mbxs">
+    <div class="flex align-ic mlxs">
       <span
         data-mybicon="mybicon-search"
         data-mybicon-class="icon-ui--green-dark mrs"
@@ -83,17 +76,14 @@ important:
       ></span>
       <h3 class="mlxs fwn">Tracking API</h3>
     </div>
-    <p class="pll">
+    <p class="mhxs pll">
       Look up tracking events of your shipments, and make them available to your
       customers.
     </p>
   </a>
 
-  <a
-    href='{{< relref "event-cast" >}}'
-    class="dev-link--box rad-a2px mrxs mbxs"
-  >
-    <div class="flex align-ic">
+  <a href='{{< relref "event-cast" >}}' class="mb-card flex flex-dir-col flex-1-1-20r pam mrxs mbxs">
+    <div class="flex align-ic mlxs">
       <span
         data-mybicon="mybicon-alert"
         data-mybicon-class="icon-ui--green-dark mrs"
@@ -102,14 +92,14 @@ important:
       ></span>
       <h3 class="mlxs fwn">Event Cast API</h3>
     </div>
-    <p class="pll">
+    <p class="mhxs pll">
       Subscribe to tracking events through webhooks, and get notified
       proactively.
     </p>
   </a>
 
-  <a href='{{< relref "reports" >}}' class="dev-link--box rad-a2px mrxs mbxs">
-    <div class="flex align-ic">
+  <a href='{{< relref "reports" >}}' class="mb-card flex flex-dir-col flex-1-1-20r pam mrxs mbxs">
+    <div class="flex align-ic mlxs">
       <span
         data-mybicon="mybicon-chart-bar"
         data-mybicon-class="icon-ui--green-dark mrs"
@@ -118,7 +108,7 @@ important:
       ></span>
       <h3 class="mlxs fwn">Reports API</h3>
     </div>
-    <p class="pll">
+    <p class="mhxs pll">
       Generate status, quality and deviation, economy and environment reports to
       analyse your logistics with Bring.
     </p>
@@ -129,12 +119,26 @@ important:
   </div>
 </div>
 
-<h2>EDI documentation</h2>
-<p>
-  Guidelines and specifications for vendors of TA/EDI solutions and customers
-  with first-party EDI solutions, including transport instructions for
-  integrations based on EDIFACT (IFTMIN D04A) standards.
-</p>
-<a href='{{< relref "edi" >}}' class="text-heading"
-  >EDI documentation &RightArrow;</a
->
+<div class="flex flex-wrap">
+  <div class="flex-1-1-20r mrl mbxl">
+    <h2>Checkout guide Norway</h2>
+    <p>
+      Recommendations and guide, based on user research and testing, to get the
+      most out of our checkout related APIs in Norwegian B2C e-commerce sites.
+    </p>
+    <a href='{{< relref "checkout-guide-norway" >}}' class="text-heading"
+      >Checkout guide &RightArrow;</a
+    >
+  </div>
+  <div class="flex-1-1-20r mbxl">
+    <h2>EDI documentation</h2>
+    <p>
+      Guidelines and specifications for vendors of TA/EDI solutions and
+      customers with first-party EDI solutions, including transport instructions
+      for integrations based on EDIFACT (IFTMIN D04A) standards.
+    </p>
+    <a href='{{< relref "edi" >}}' class="text-heading"
+      >EDI documentation &RightArrow;</a
+    >
+  </div>
+</div>

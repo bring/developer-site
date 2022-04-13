@@ -24,9 +24,9 @@
     {{- if (eq $showRequired false) -}}
       {{- $desc = $desc | append "" -}}
       {{- else if .incProp.required -}}
-      {{- $desc = $desc | append "<span class='dev-param dev-param--req mrxs'>Required</span> " -}}
+      {{- $desc = $desc | append "<span class='mb-badge mb-badge--red mrxs'>Required</span> " -}}
       {{- else -}}
-      {{- $desc = $desc | append "<span class='dev-param mrxs'>Optional</span> " -}}
+      {{- $desc = $desc | append "<span class='mb-badge mrxs'>Optional</span> " -}}
     {{- end -}}
 
     {{- if (ne .incProp.displayName .incProp.name) -}}

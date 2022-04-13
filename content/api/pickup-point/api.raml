@@ -3,47 +3,6 @@
 title: Pickup Point API
 baseUri: https://api.bring.com/pickuppoint/api/pickuppoint
 
-documentation:
-- title: Introduction
-  content: |
-      The Pickup point API provides a list of locations for package pickup. Based on a specified postal code or a geographical location, the 10 nearest pickup points are returned, sorted by driving time by car(source: Google). In instances where google is unable to retrieve driving times from a location to a pickup point(e.g. location on mainland and pickup point on an island), these pickup points will be sorted by aerial distance and placed last in the list. Response is available as either XML or JSON.
-
-      A pickup point is defined as any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers, etc.
-
-      It is important to note, there are two sets of addresses in the response, postbox (address, postalCode) and visiting address (visitingAddress, visitingPostalCode). Postbox address is required to get a package produced correctly, use this AS RECIPIENT address on label. Visiting address is more appropriate for user interface (Street address of the PIB).
-      
-      ### Filtering results
-
-      In addition to postal code or location, one or more optional parameters can be added to the request, adding additional restrictions to the pickup points being returned. One such parameter is `searchForText=<texts>`, resulting in a response where all pickup points have at least a partial match with the search string given in `<texts>`. This can be the name of the pickup point, its address, city, county, municipality or location. Go to the reference table or see additional examples for more information.
-
-      #### Distinct PickupPointType
-
-      Norway :
-        - Type 4  : Post i Butikk (manned)
-        - Type 19 : Posten pakkeutlevering (manned)
-        - Type 21 : Postkontor (manned)
-        - Type 32 : Postpunkt (manned)
-        - Type 37 : Pakkeboks (unmanned)
-
-
-      Sweden :
-        - Type 34 : Manned
-        - Type 38 : Locker
-
-      Denmark :
-        - Type 85 : Manned
-        - Type 86 : Locker
-
-      Finland :
-        - Type SmartPOST  : Finland Smart Post Pickup
-        - Type Posti      : Finland Posti Pickup Point
-        - Type Noutopiste : Finland Pickup Point
-        - Type LOCKER     : Finland Locker Pickup Point
-
-- title: Authentication
-  content: |
-      To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
-
 /{countryCode}/postalCode/{postalCode}{mediaTypeExtension}:
   displayName: Pickup points for postal code
   uriParameters:
@@ -313,7 +272,7 @@ documentation:
         description: Country code of the requester. Only applicable for Norwegian pickup points.
         type: string
 
-/{countryCode}/postalCode/{postalCode}/default/{mediaTypeExtension}:
+/{countryCode}/postalCode/{postalCode}/default{mediaTypeExtension}:
   displayName: Default pickup point(s) for a postal code
   uriParameters:
     countryCode:

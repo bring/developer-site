@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
+    <schemaVersion>1</schemaVersion>
+    <consignments>
+        <consignment correlationId="123456">
+            <shippingDateTime>2016-08-05T06:24:09</shippingDateTime>
+            <parties>
+                <sender>
+                    <name>Ola Danske</name>
+                    <addressLine>Testsvingen 12</addressLine>
+                    <postalCode>4010</postalCode>
+                    <city>Fredriksberg</city>
+                    <countryCode>NO</countryCode>
+                    <additionalAddressInfo>Some pickup info</additionalAddressInfo>
+                    <contact>
+                        <name>Trond Nordmann</name>
+                        <email>trond@normanntest.no</email>
+                        <phoneNumber>99999999</phoneNumber>
+                    </contact>
+                </sender>
+                <recipient>
+                    <name>Tore Recipient</name>
+                    <addressLine>Mottakerveien 14</addressLine>
+                    <addressLine2>c/o Tina Recipient</addressLine2>
+                    <postalCode>5954</postalCode>
+                    <city>Glostrup</city>
+                    <countryCode>NO</countryCode>
+                    <contact>
+                        <name>Tore Recipient</name>
+                        <email>tore@mottakertest.no</email>
+                        <phoneNumber>88888888</phoneNumber>
+                    </contact>
+                </recipient>
+            </parties>
+            <product>
+                <id>5300</id>
+                <customerNumber>********</customerNumber>
+                <additionalServices>
+                  <additionalService>
+                    <id>NON_FREEZE</id>
+                  </additionalService>
+                </additionalServices>
+            </product>
+            <packages>
+                <package correlationId="123">
+                    <weightInKg>50</weightInKg>
+                    <dimensions>
+                        <heightInCm>200</heightInCm>
+                        <widthInCm>100</widthInCm>
+                        <lengthInCm>100</lengthInCm>
+                    </dimensions>
+                </package>
+            </packages>
+        </consignment>
+    </consignments>
+</bookingRequest>

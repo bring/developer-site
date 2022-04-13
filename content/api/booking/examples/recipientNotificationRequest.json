@@ -12,7 +12,7 @@
           "city": "OSLO",
           "countryCode": "NO",
           "reference": "1234",
-          "additionalAddressInfo": "Hentes p\u00e5 baksiden etter klokken to",
+          "additionalAddressInfo": "Hentes på baksiden etter klokken to",
           "contact": {
             "name": "Trond Nordmann",
             "email": "trond@nordmanntest.no",

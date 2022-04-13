@@ -1,0 +1,68 @@
+{
+  "bookingRequest": {
+    "-xmlns": "http://www.bring.no/booking/",
+    "-testIndicator": "true",
+    "schemaVersion": "1",
+    "consignments": {
+      "consignment": {
+        "-correlationId": "123456",
+        "shippingDateTime": 1470358449000,
+        "parties": {
+          "sender": {
+            "name": "Ola Danske",
+            "addressLine": "Testsvingen 12",
+            "postalCode": "4010",
+            "city": "Fredriksberg",
+            "countryCode": "NO",
+            "additionalAddressInfo": "Some pickup info",
+            "contact": {
+              "name": "Trond Nordmann",
+              "email": "trond@normanntest.no",
+              "phoneNumber": "99999999"
+            }
+          },
+          "recipient": {
+            "name": "Tore Recipient",
+            "addressLine": "Mottakerveien 14",
+            "addressLine2": "c/o Tina Recipient",
+            "postalCode": "5954",
+            "city": "Glostrup",
+            "countryCode": "NO",
+            "contact": {
+              "name": "Tore Recipient",
+              "email": "tore@mottakertest.no",
+              "phoneNumber": "88888888"
+            }
+          }
+        },
+        "product": {
+          "id": "CARGO_GROUPAGE",
+          "customerNumber": "***********",
+          "additionalServices": [
+            {
+              "id": "DANGEROUS_GOODS",
+              "containerId": "1236",
+              "weightInGrams": "500000",
+              "unNumber": "1560",
+              "commodity": "ARSENTRIKLORID",
+              "packingGroup": "I",
+              "dangerClass": "1",
+              "safetyMarkCode": "6.1"
+            }
+          ]
+        },
+        "packages": {
+          "package": {
+            "-correlationId": "123",
+            "weightInKg": "50",
+            "dimensions": {
+              "heightInCm": "200",
+              "widthInCm": "100",
+              "lengthInCm": "100"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -84,7 +84,7 @@
         <id>
           BUSINESS_PARCEL
         </id>
-        <customerNumber>**************</customerNumber>
+        <customerNumber>6</customerNumber>
         <additionalServices>
           <additionalService>
             <id>DELIVERY_INDOOR</id>

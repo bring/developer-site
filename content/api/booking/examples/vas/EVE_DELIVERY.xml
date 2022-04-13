@@ -1,0 +1,59 @@
+<bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
+  <schemaVersion>1</schemaVersion>
+  <consignments>
+    <consignment correlationId="INTERNAL-123456">
+      <shippingDateTime>2021-10-03T21:31:33.007+02:00</shippingDateTime>
+      <parties>
+        <sender>
+          <name>Ola Nordmann</name>
+          <addressLine>Testsvingen 12</addressLine>
+          <postalCode>2600</postalCode>
+          <city>GLOSTRUP</city>
+          <countryCode>dk</countryCode>
+          <reference>1234</reference>
+          <additionalAddressInfo>Hentes på baksiden etter klokken to</additionalAddressInfo>
+          <contact>
+            <name>Trond Nordmann</name>
+            <email>trond@nordmanntest.no</email>
+            <phoneNumber>99999999</phoneNumber>
+          </contact>
+        </sender>
+        <recipient>
+          <name>Tore Mottaker</name>
+          <addressLine>Mottakerveien 14</addressLine>
+          <addressLine2>c/o Tina Mottaker</addressLine2>
+          <postalCode>2600</postalCode>
+          <city>GLOSTRUP</city>
+          <countryCode>dk</countryCode>
+          <reference>43242</reference>
+          <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
+          <contact>
+            <name>Trond Nordmann</name>
+            <email>trond@nordmanntest.no</email>
+            <phoneNumber>99999999</phoneNumber>
+          </contact>
+        </recipient>
+      </parties>
+      <product>
+        <id>HOME_DELIVERY_PARCEL</id>
+        <customerNumber>*********</customerNumber>
+        <additionalServices>
+          <additionalService>
+            <id>EVE_DELIVERY</id>
+          </additionalService>
+        </additionalServices>
+      </product>
+      <packages>
+        <package correlationId="PACKAGE-123">
+          <weightInKg>1.1</weightInKg>
+          <goodsDescription>Testing equipment</goodsDescription>
+          <dimensions>
+            <heightInCm>13</heightInCm>
+            <widthInCm>23</widthInCm>
+            <lengthInCm>10</lengthInCm>
+          </dimensions>
+        </package>
+      </packages>
+    </consignment>
+  </consignments>
+</bookingRequest>

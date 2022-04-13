@@ -76,12 +76,12 @@ Below are some interesting stats across some of the many releases of Shipping Gu
 
 ### Odeurs
 
-Cause who likes to work in a smelly environment?[^1]
+Cause who likes to work in a smelly environment?<sup><a href="#fn1" id="ref1" role="doc-noteref">1</a></sup>
 ![Code smells](images/code_smells.png)
 
 ### Cyclomatic & Cognitive complexity
 
-Cause who likes to work on code they cannot comprehend?[^2]
+Cause who likes to work on code they cannot comprehend?<sup><a href="#fn2" id="ref2" role="doc-noteref">2</a></sup>
 ![Cognitive complexity](images/cognitive_complexity.png)
 
 ### Lines of code
@@ -91,7 +91,7 @@ Cause less is more!
 
 ### Technical debt
 
-Cause the power of compounding is not always beneficial [^3]
+Cause the power of compounding is not always beneficial<sup><a href="#fn3" id="ref3" role="doc-noteref">3</a></sup>
 ![Technical debt](images/technical_debt.png)
 
 ### Vulnerabilities
@@ -99,7 +99,19 @@ Cause the power of compounding is not always beneficial [^3]
 Cause security!
 ![Vulnerabilities](images/vulnerabilities.png)
 
+<hr>
 
-[^1]: <a href="https://en.wikipedia.org/wiki/Code_smell">https://en.wikipedia.org/wiki/Code_smell</a>
-[^2]: <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">https://en.wikipedia.org/wiki/Cyclomatic_complexity</a>
-[^3]: <a href="https://en.wikipedia.org/wiki/Technical_debt">https://en.wikipedia.org/wiki/Technical_debt</a>
+<ol class="footnotes" role="doc-endnotes">
+  <li id="fn1" role="doc-endnote">
+    <a href="https://en.wikipedia.org/wiki/Code_smell">https://en.wikipedia.org/wiki/Code_smell</a> 
+    <a class="footnote-jump btn-link di" href="#ref1" title="Jump back to footnote 1 in the text">&#8617;</a>
+  </li>
+  <li id="fn2" role="doc-endnote">
+    <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">https://en.wikipedia.org/wiki/Cyclomatic_complexity</a> 
+    <a class="footnote-jump btn-link di" href="#ref2" title="Jump back to footnote 2 in the text">&#8617;</a>
+  </li>
+  <li id="fn3" role="doc-endnote">
+    <a href="https://en.wikipedia.org/wiki/Technical_debt">https://en.wikipedia.org/wiki/Technical_debt</a>
+    <a class="footnote-jump btn-link di" href="#ref3" title="Jump back to footnote 3 in the text">&#8617;</a>
+  </li>
+</ol>

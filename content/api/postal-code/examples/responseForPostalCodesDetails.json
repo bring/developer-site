@@ -1,0 +1,44 @@
+{
+  "postalCode": [
+    {
+      "city": "OSLO",
+      "postalcode": "0001",
+      "postalCodeType": "PO_BOX"
+    },
+    {
+      "city": "OSLO",
+      "postalcode": "0010",
+      "postalCodeType": "NORMAL"
+    },
+    {
+      "city": "OSLO",
+      "postalcode": "0015",
+      "postalCodeType": "NORMAL"
+    },
+    {
+      "city": "OSLO",
+      "postalcode": "0018",
+      "postalCodeType": "NORMAL"
+    },
+    {
+      "city": "OSLO",
+      "postalcode": "0021",
+      "postalCodeType": "PO_BOX"
+    },
+    {
+      "city": "OSLO",
+      "postalcode": "0024",
+      "postalCodeType": "PO_BOX"
+    },
+    {
+      "city": "OSLO",
+      "postalcode": "0026",
+      "postalCodeType": "NORMAL"
+    },
+    {
+      "city": "DRAMMEN",
+      "postalcode": "3000",
+      "postalCodeType": "SPECIAL_CUSTOMER"
+    }
+  ]
+}

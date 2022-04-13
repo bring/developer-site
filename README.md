@@ -1,21 +1,78 @@
 # developer.bring.com
 
-## Issues
-
-If you have issues or questions regarding the API, please post in the respective
-API’s comments and support section. The issue tracker is for the site itself, as
-reflected in the template.
+Structure, content and features are being worked on iteratively throughout 2021
+and 2022.
 
 ## Tech
 
-The Bring Developer site uses [Hugo](https://gohugo.io/) and
-[RAML 1.0](https://raml.org/). Hugo is the world’s fastest static site
-generator, and RAML is a a YAML-based modeling language for APIs. We use CSS
-with some light post processing.
+The Bring Developer site uses [Hugo](https://gohugo.io/),
+[OAS](https://www.openapis.org/) and [RAML 1.0](https://raml.org/). Hugo is the
+world’s fastest static site generator. For the API endpoint documentation,
+generated OAS JSON is replacing manually written RAML. We use CSS with some
+light post processing and JS that is bundled with Webpack.
 
-## Revamped dev site 2021
+## Writing documentation for people
 
-The site is being improved throughout 2021. Ruby and Jekyll has been replaced with Hugo and Webpack. Structure, content and features are being worked on iteratively.
+Keep in mind that users are more likely to be looking for use cases than
+parameters and values. In a parameter-heavy table, it might make sense to list
+the values and explain them like a dictionary. But on higher levels, such as in
+endpoint lists and how-to guides, it’s often better to lead with the use case
+and then provide the parameter.
+
+## Build, run and deploy
+
+`npm install` installs the dependencies.
+
+`npm run build` builds CSS, JS and JSON. Hugo needs this in order to run.
+
+`npm start` runs Hugo locally. Pages update instantly on change. With two
+exceptions:
+
+1. If you are working on the RAML files, you have to run `npm run buildraml` to
+   recompile a JSON file with the changes.
+2. If you are working on the JS or CSS, run `npm run bundlewatch` to have
+   Webpack update the bundled files on change.
+
+Hugo watches for changes to those generated files, no need to stop and restart
+under normal circumstances.
+
+### Deploy
+
+This application is deployed as an Azure static web app.
+
+When you create a PR, a comment is made with a URL to a custom staging site
+where you can test what the final deployed site will be like. When you merge the
+PR to master, it will also be deployed to production.
+
+### Without commit or PR
+
+Updates to external data sources, such as the OAS API JSON files, means there is
+nothing to commit and no PR. You can manually trigger a new build and deploy by
+running the workflow in
+[Actions](https://github.com/bring/developer-site/actions/workflows/azure-static-web-apps-mango-cliff-0e97d9203.yml)
+or via your terminal
+`gh workflow run azure-static-web-apps-mango-cliff-0e97d9203.yml`.
+
+## Publish an item in API updates
+
+Revision history and Changelog has been renamed to _API updates_ to better
+reflect that it covers past, current and upcoming changes.
+
+New items are added with publish date as the file name `yyyy-mm-dd.md` in the
+`conten/api/revision-history` folder with the following frontmatter:
+
+```
+---
+title: {Should at least contain the name of the API}
+publishDate: yyyy-mm-dd
+layout: api
+---
+```
+
+If the publish date is set in the future, either the branch must be merged or a
+build must be triggered at or after that point in time. In most cases, publish
+date is the same as change date, but if the message is about an upcoming change,
+the change date should be mentioned in the body text.
 
 ## Adding an important message to the frontpage
 
@@ -33,18 +90,23 @@ important:
     for unauthenticated requests
 ```
 
-Also keep in mind that the four latest items in the changelog are featured on
+Also keep in mind that the four latest items in the API updates are featured on
 the frontpage.
 
 ## Adding a new API
 
-Make a new folder in `content/api`, the folder name will be the url slug. Use
-RAML 1.0 for you documentation file. Make a index.html file containing the
-following frontmatter:
+New APIs should use the Open API Specification (OAS 3).
+
+Make a new folder in `content/api`, the folder name will be the url slug. Make
+an index.md file with YAML frontmatter at the top (see example). Place the api
+introduction and other text documentation you might have in the frontmatter
+along with the link to the OAS JSON in an `oas` key.
+
+### YAML frontmatter example
 
 ```
 ---
-title: {Name of API, similar to the name in the raml file}
+title: {Name of API}
 layout: api
 menu:
   apidocs:
@@ -52,14 +114,48 @@ menu:
     title: {Name of API}
     url: /api/{foldername}
     parent: {parent, see config.toml}
-weight: {menu position prefixed by parent}
+weight: {menu position prefixed by parent value}
 disqus_identifier: api-{foldername} (optional, if you want comments)
----
 
-If you have an alert, it can be added below the frontmatter, here, instead of inside the raml file.
+# Add alerts or important messages and they appear to the side or above of the main content
+important:
+  - type: {info, warn or error}
+    title: {Title of message, optional}
+    message: |
+      {Content as markdown}
+
+# Add intro, information and documentation to appear before the endpoint listing
+introduction: |
+  {Optimally one paragraph about the API and what it does, so the user can figure out if it’s the right one to cover their needs}
+
+information:
+  - title: {Authentication, formats, rate limiting and other information that is somewhat similar across the various APIs}
+    content |
+      {Content as markdown}
+
+# Additional documentation. Organise it into technical info and how-to info. The former works as a continuation of the previous section. The latter as guides for the user leading into the endpoint section.
+documentation:
+  - title: {Title of section}
+    content: |
+      {Content as markdown}
+
+# OAS file link with endpoints, examples etc.
+oas: {Link to OAS JSON, typically outputted by Swagger}
+---
 ```
 
-Open config.toml and add the new raml file path to the `apis` array.
+## Service portfolio data sources
+
+The Service portfolio is made with files generated by
+[Mybring Service Country VAS Common](https://github.com/bring/mybring-service-country-vas-common/).
+To update information in the tables (except Reports and Invoice):
+
+1. Clone and make the necessary changes in said repo
+2. Generate new files from the main function in
+   [ServiceVasMappingJsonGenerator.kt](https://github.com/bring/mybring-service-country-vas-common/blob/master/src/jvmMain/kotlin/com/mybring/devsite/ServiceVasMappingJsonGenerator.kt)
+3. Verify the changes in the JSON files in this repo’s `data` folder
+4. Open the generated xlsx file, replace the relevant sheet in the
+   `static/services/service_portfolio.xlsx` file in this repo.
 
 ## Adding a new article/blog post
 
@@ -142,9 +238,9 @@ examples:
 `widelayout` is intended for two column layouts
 
 `services` takes an array of api id codes and populates a table with the
-associated services and VAS-es. The services are sourced from
-data/service.json, which in turn has an array of associated VAS-codes that the
-template sources from data/vas.json. The services appear in the same order as the array.
+associated services and VAS-es. The services are sourced from data/service.json,
+which in turn has an array of associated VAS-codes that the template sources
+from data/vas.json. The services appear in the same order as the array.
 
 `examples` is an array of links to examples in the relevant API documentation –
 this solution is intended to be improved into fetching the actual examples.
@@ -165,25 +261,8 @@ of the code example after the opening fence.
 ```
 ````
 
-## Building, running and updating
+## Issues
 
-`npm install` installs the needed dependencies.
-
-`npm run build` builds CSS and JSON based in the raml files. Hugo needs this in
-order to run.
-
-Run `npm start` to run locally. The non-api pages will update instantly. But
-when you make changes to the api files or CSS, you have to run `npm run build`
-again to generate new files for that. We are working on a more automated
-solution for this.
-
-`npm run buildtest` builds the entire site for test env `npm run buildqa` builds
-the entire site for qa env `npm run buildprod` builds the entire site for
-production env
-
-## Deploy and release
-
-Deploy to test or QA using b deploy {test|qa}
-
-Merging a PR to master generates a production build and automatically deploys it
-to test, QA and production.
+If you have issues or questions regarding the API, please post in the respective
+API’s comments and support section. The issue tracker is for the site itself, as
+reflected in the template.

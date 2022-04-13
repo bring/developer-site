@@ -2,52 +2,96 @@
   {{/* ensure that only the right api doc shows up, conditional can probably be improved */}}
   {{- if (eq .title $.Title) -}}
     {{- $types := .types -}}
-    <main
-      class="dev-docscontent w100p maxw64r {{ replace .title "API" "" | urlize }}"
+    <main 
+      id="main"
+      class="dev-docscontent w100p maxw96r {{ replace .title "API" "" | urlize }}"
     >
       <article>
         <h1>{{ .title }}</h1>
-        <section id="api-documentation" class="dev-docscontent__section">
-          {{- with $.Content -}}<div>{{ . }}</div>{{ end -}}
-          {{- range .documentation -}}
-            <h2 class="dev-anchored" id="{{ .title | urlize }}">
-              {{- .title -}}
-            </h2>
-            {{- if in (string .content) "\n\n" -}}
-              {{- .content | markdownify -}}
-              {{- else -}}
-              <p>{{ .content | markdownify }}</p>
-            {{- end -}}
+        <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
+          {{- with $.Params.important -}}
+            <div class="dev-docscontent__side">
+              {{- range . -}}
+                <div class="message--{{ .type }} pal mbs">
+                  {{- with .title -}}
+                    <strong class="db mbxs">{{ . }}</strong>
+                  {{- end -}}
+                  {{ .message | markdownify }}
+                </div>
+              {{- end -}}
+            </div>
           {{- end -}}
+          <div class="dev-docscontent__main maxw64r">
+            {{- with $.Params.introduction -}}
+              {{- if in (string .) "\n\n" -}}
+              <div class="text-heading fw600">
+                {{- . | markdownify -}}
+              </div>
+              {{- else -}}
+                <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
+              {{- end -}}
+            {{- end -}}
+            {{- with $.Params.information -}}
+              <div class="dev-docscontent__info mvl">
+                {{- range . -}}
+                  <details class="bg-green1 rad-a2px mbxs">
+                    {{- with .title }}
+                      <summary class="pas plm">
+                        {{- . -}}
+                      </summary>
+                    {{- end -}}
+                    {{- if in (string .content) "\n\n" -}}
+                      {{- .content | markdownify -}}
+                    {{- else -}}
+                      <p>{{ .content | markdownify }}</p>
+                    {{- end -}}
+                  </details>
+                {{- end -}}
+              </div>
+            {{- end -}}
+            {{- range $.Params.documentation -}}
+              {{- with .title }}
+                <h2 class="dev-anchored" id="{{ . | urlize }}">
+                  {{- . -}}
+                </h2>
+              {{- end -}}
+              {{- if in (string .content) "\n\n" -}}
+                {{- .content | markdownify -}}
+              {{- else -}}
+                <p>{{ .content | markdownify }}</p>
+              {{- end -}}
+            {{- end -}}
+          </div>
         </section>
-        <section class="dev-docscontent__section">
-          <h2 class="dev-anchored mbm" id="overview-of-endpoints">
-            Overview of endpoints
+        <section class="dev-docscontent__section maxw64r">
+          <h2 class="dev-anchored mbm" id="endpoints">
+            Endpoints
           </h2>
 
           <h3 class="dn">Base URL</h3>
           <pre>{{ .baseUri }}</pre>
           <table>
             <thead>
+              <th>Usage</th>
               <th>Method</th>
               <th>Endpoint</th>
-              <th>Usage</th>
             </thead>
             {{- range .resources -}}
               {{ $resDisplayName := .displayName | urlize }}
+              {{ $displayName := .displayName }}
               {{ $resRelUri := .relativeUri | safeHTML }}
               {{- range .methods -}}
                 <tr>
                   <td>
+                    <a href="#{{ $resDisplayName }}" title="{{- $displayName -}}">
+                      {{- .description | safeHTML -}}
+                    </a>
+                  </td>
+                  <td>
                     {{- .method | upper -}}
                   </td>
                   <td>
-                    {{- $resRelUri -}}
-                  </td>
-                  <td>
-                    <a href="#{{ $resDisplayName }}">
-                      {{- .description | safeHTML -}}
-                    </a>
+                    <code>{{- $resRelUri -}}</code>
                   </td>
                 </tr>
               {{- end -}}
@@ -58,7 +102,7 @@
         {{- range .resources -}}
           {{- $resources := . -}}
           {{- $displayName := .displayName -}}
-          <section class="dev-docscontent__section">
+          <section class="dev-docscontent__section maxw64r">
             <h2 class="dev-anchored mbm" id="{{ $displayName | urlize }}">
               {{- $displayName -}}
             </h2>
@@ -197,16 +241,13 @@
                             href="#"
                             data-collapse="#{{ $exampleID }}"
                             class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
-                            ><svg
-                              class="dev-collapsible__toggler__icon"
-                              width="16"
-                              height="16"
-                              viewBox="0 0 320 512"
                             >
-                              <path
-                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
-                              ></path>
-                            </svg>
+                            <span
+                              data-mybicon="mybicon-arrow-right"
+                              data-mybicon-class="dev-collapsible__toggler__icon"
+                              data-mybicon-width="16"
+                              data-mybicon-height="16"
+                            ></span>
                             <span>{{ .displayName }}</span>
                           </a>
                           <div
@@ -254,7 +295,7 @@
           </section>
         {{- end -}}
         {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-          <section id="api-support" class="dev-docscontent__section">
+          <section id="api-support" class="dev-docscontent__section maxw64r">
             {{ template "_internal/disqus.html" $ }}
           </section>
         {{- end -}}
@@ -262,3 +303,34 @@
     </main>
   {{- end -}}
 {{- end -}}
+
+<script type="text/javascript">
+// Copy button
+if('clipboard' in navigator) {
+  var copyButtons = document.querySelectorAll('.copy-btn')
+
+  if(copyButtons){
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', copyCode)
+    })
+
+    function copyCode() {
+      const copyBtn = this
+      const responseExampleParent = copyBtn.parentNode
+      const responseExample = responseExampleParent.querySelector('code').innerText
+
+      navigator.clipboard.writeText(responseExample)
+      .then(setCopiedBtnText)
+
+      function setCopiedBtnText() {
+        copyBtn.querySelector('.copy-btn-label').innerText = "Copied"
+        setTimeout(resetCopyBtnText,3000)
+      }
+
+      function resetCopyBtnText() {
+        copyBtn.querySelector('.copy-btn-label').innerText = "Copy"
+      }
+    }
+  }
+}
+</script>

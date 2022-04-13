@@ -5,9 +5,9 @@
         "consignmentNumber": "70438101268018539",
         "productSpecificData": null,
         "links": {
-          "labels": "https://www.mybring.com/booking/labels/2968466?auth-token=5cf1dcee-4f01-4c9a-9870-3ba6d9ba050b",
+          "labels": "https://api.bring.com/labels/id/6d8c4323-87cd-47e8-aa0d-75f8f0b5b4cb.pdf",
           "waybill": null,
-          "tracking": "http://sporing.bring.no/sporing.html?q=70438101268018539"
+          "tracking": "https://sporing.bring.no/sporing.html?q=70438101268018539"
         },
         "dateAndTimes": {
           "earliestPickup": null,

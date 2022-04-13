@@ -3,203 +3,7 @@
 title: Booking API
 baseUri: https://api.bring.com/booking/api
 
-documentation:
-- title: Introduction
-  content: |
-
-      The Bring Booking API is a logged-in service that lets Mybring users (customers of Mybring) programatically create a booking by invoking a Web Service over SOAP or by posting XML/JSON over HTTP. The API uses the same backend as [Mybring Booking](https://www.mybring.com/booking/) and the same PDF labels.
-
-      We support two types of integration with the Booking API. XML/JSON over HTTP and SOAP (over HTTP).
-
-      Booking uses Shipping Guide as the source for price and availability for the different services. We advise clients of the Booking API to use [Shipping Guide API](/api/shipping-guide_2/) for getting the list price and checking availability before sending a booking request. Note that invoice payment is the only available payment option for the Booking API. This means that the Mybring user ID used in the booking request must have access to the customer number specified as payer of the booking.
-
-      This API has similarities with the Shipment API, but there are differences. Read more about the [differences between the Booking API and the Shipment API](/api/booking-shipment/).
-
-- title: Versioning
-  content: |
-      Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
-
-- title: Authentication
-  content: |
-    To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
-
-- title: Authorization
-  content: |
-    In addition to authentication, you need to be authorized with the _booking_ right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):
-
-    ![Authorized for booking](booking_authorization.png)
-
-    To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#list-customer-numbers) associated with your API user. The Customer Number API also links customer numbers with the services the customer number is valid for.
-
-- title: Encoding
-  content: |
-    Booking endpoints will assume all requests are UTF-8 encoded
-
-- title: Making labels
-  content: |
-    The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF label is returned in responses. This label must be printed and be attached to the shipment. A URL that points to tracking information is also returned.
-
-    A GET request to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to Amazon S3). Ensure that your client follows these redirects.
-
-- title: Performance
-  content: |
-    Different service groups have different response times in booking:
-
-    - Parcels and courier services
-      - A booking will typically take < 2 seconds
-    - Express UPS services and Cargo
-      - A booking will typically take < 3 seconds
-    - Express Nordic SameDay
-      - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
-
-- title: QR Codes
-  content: |
-
-    It is now possible to request QR codes for certain products. An end user can bring the QR code to a PiB or a Post Office, scan the QR code, and have a label printed there.
-
-    To book, add the element `generateQrCodes` at the consignment level and set it to `true`. The response will contain one `qrCodeLink` per package. This is a URL to a PNG image of the QR code.
-    
-    The following services support QR codes:
-    - 9300
-    - SERVICEPAKKE_RETURSERVICE
-    - 9600
-    - EKSPRESS09_RETURSERVICE
-    - 9000
-    - BPAKKE_DOR-DOR_RETURSERVICE
-
-    Currently, 240 selected pickup points support label printing based on scanning of QR-code. [Overview of pickup points](https://www.bring.no/tjenester/retur/qr-kode-innleveringssteder)
-  
-    Eventually, all PiBs and Post offices will support label printing based on QR-code.
-    
-- title: Mailbox Parcel (Pakke i Postkassen)
-  content: |
-    - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (multi-kolli is not supported). Each parcel is invoiced separately. A link to the label is returned in the response. 
-    - When booking Mailbox Parcel in Booking API, the new API customer number is used. This is identical to your company's main customer number (without prefix PARCELS_NORWAY and without padded zeros if any).
-    - When booking Mailbox Parcel in Booking API, the service is defined by setting 3584 or 3570 in the product id. 
-
-    To book, order one of the two product ids:
-    
-    ### 3570 (tracking with RFID)
-    Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
-
-    Normally, we create PDF labels that can be printed on any printer. If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
-
-    The labels will be ZPL code containing instructions for programming the passive RFID antenna in the printer's labels with package numbers.
-
-    In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
-
-    #### Special hardware required
-    RFID-tagged labels require special printer hardware. Currently we support the following printers:
-
-    - Zebra R410
-    - Zebra 500R
-
-    ### 3584 (no tracking)
-    If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
-
-    ### Additional Service: Bag on door (Pose på døren)
-    A delivery alternative for Mailbox Parcels that cannot be delivered to the mailbox. 
-
-    Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may, against a surcharge, choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point. It's recommended that this delivery option is actively confirmed by the receiver upon booking in the sender's webshop. When the parcel is delivered as a bag on the door, the bar code is scanned and the recipient will receive an SMS/email. Note that if the parcel is delivered in the mailbox the additional fee will not occur.
-
-    #### Terms of delivery
-            
-    The sender must clearly inform the recipient about the criteria of Bag on door when displaying this service in the check out (e.g. via Shipping Guide API):
-      
-    - The distance from the mailbox to the recipient's door must not exceed 250 m 
-    - House no. must be clearly marked
-    - The door must be clearly marked with the recipient's name 
-    - Posten must have access to the recipient's door, even when the main entrance is locked, for instance when recipient live in an apartment. 
-      
-    In cases where the criteria are not met, i.e. bad weather (risk of damage) or where for security reason the risk is considered too high to use Bag on door, the parcel will still be delivered to the recipient's pickup point for delivery.
-
-    ### Example request
-    There is an example request for 3584 in "More examples" section below. Booking 3570 is just a matter of changing the service code from 3584 to 3570. If you want to specify a different return address on the label than your actual sender address, use the returnTo party tag. When the returnTo party tag is populated the input will replace your actual sender address on the top left corner of the label.
-
-- title: Customs Export information
-  content: |
-    It is required to pass customs information when booking the following services from Norway -> abroad:
-
-    - Business Parcel
-    - PickUp Parcel
-
-    When included during booking, the customs information will be sent electronically from Bring to the destination country.
-
-    If sending customs information, the following elements are to be used:
-
-    - quantity (required)
-    - goodsDescription (required)
-    - customsArticleNumber (optional)
-    - itemNetWeightInKg (required)
-    - tarriffLineAmount (required)
-    - currency (required)
-    - countryOfOrigin (optional)
-    - natureOfTransaction (required)
-
-    Please refer to the _Request params_ section below for more details about the elements. [Customs tariff codes (tolltariffnummer)](http://tolltariffen.toll.no/).
-
-    ### Example
-
-    In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
-    t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
-
-    | Quantity | Description of contents | Customs tariff code | Total content net weight (kg) | Total content value | Currency | Country of origin |
-    | -------: | ----------------------- | ------------------- | ----------------------------: | ------------------: | -------- | ----------------- |
-    | `2` | `shampoo` | `33.05.1000` | `3.0` | `200` | `NOK` | `CH`|
-    | `5` | `cotton t-shirts` | `61.09.1000` | `2.5` | `1000`| `NOK`| `PL` |
-    | `1` | `wool jacket` | `61.04.3100` | `2.0` | `750` | `NOK`| `DE` |
-
-    <strong>Nature of Transaction</strong>: Gift or Sale of Goods or Returned Goods or Commercial Sample or Documents or Other
-
-    Sending `Importer` party in the request is not mandatory. But if there is no importer sent then system will consider recipient as importer.
-
-    Another additional field captured for customs is `vatNumber` for the parties. This is an optional field. If you are setting importer party then you can add `vatNumber` in it,
-    else you can set `vatNumber` in the existing recipient party.
-
-    There are two examples in the _More Examples_ section below that show requests containing customs information.
-    * In one of these examples, importer not sent in request, hence the recipient is the importing party with (optional) `vatNumber`.
-    * In the other example, there is importer party set in the request with the (optional) `vatNumber`.
-
-- title: VOEC - Customs declaration for import shipments to Norway
-  content: |
-    With this concept the recipient can skip paying VAT when picking up the parcel on a pickup point in Norway. Instead, the web shop collects the VAT directly when the recipient is paying in the checkout.
-    In that way, the Norwegian tax authorities doesn't need to demand this from the recipients via pickup points, the web shops would do the customs clearance.
-
-    This feature is applicable for following services, when booking from abroad -> Norway:
-
-    - Pickup Parcel
-    - Pickup Parcel Bulk
-    - Home Delivery Parcel
-
-    To avail this functionality, the following elements must be sent in the booking request:
-
-    - quantity (required)
-    - goodsDescription (required)
-    - customsArticleNumber (required)
-    - itemNetWeightInKg (required)
-    - tariffLineAmount (required)
-    - currency (required)
-    - countryOfOrigin (optional)
-    - natureOfTransaction (optional). If specified, must be SALE_OF_GOODS. In case not specified, system would treat it as SALE_OF_GOODS.
-    - In addition to that, web shop's **vatOnEcommerce** must be added on shipment level .
-
-    However, if VOEC functionality is not needed, then its not mandatory to fill in above information.
-    Please refer to the _Request params_ section below for more details about the elements. Customs tariff codes (tolltariffnummer) can be found [here](http://tolltariffen.toll.no/).
-
-    ### Example
-
-    In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
-    t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
-
-    | Quantity | Description of contents | Customs tariff code | Total content net weight (kg) | Total content value | Currency | Country of origin |
-    | -------: | ----------------------- | ------------------- | ----------------------------: | ------------------: | -------- | ----------------- |
-    | `2` | `shampoo` | `33.05.1000` | `3.0` | `200` | `NOK` | `CH`|
-    | `5` | `cotton t-shirts` | `61.09.1000` | `2.5` | `1000`| `NOK`| `PL` |
-    | `1` | `wool jacket` | `61.04.3100` | `2.0` | `750` | `NOK`| `DE` |
-
-    There is an example in the _More Examples_ section below that shows request containing customs information for import.
-
-/customers{mediaTypeExtension}:
+/customers:
   displayName: List customer numbers
   description: |
       The customer numbers are prefixed with the specialist, followed by the number. For Courier and Bring Express-services, we use a UUID to identify users.
@@ -208,8 +12,8 @@ documentation:
 
       | Specialist | Example services | Example customer number |
       |:-----------|:-----------------|:------------------------|
-      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09`, `3584` | `PARCELS_NORWAY-10001123123` |
-      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `CARGO-329511` |
+      | Bring Parcels, Norway | `BPAKKE_DOR-DOR`, `PA_DOREN`, `EKSPRESS09`, `3584` | `5` |
+      | Bring Cargo, Norway | `CARGO_GROUPAGE` | `7` |
       | Bring Cargo, International | `CARGO_INTERNATIONAL` | `CARGO-803739` |
       | Bring Express, Norway | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_NORWAY-2caedf20-27da-012f-3858-58b0357c4f66` |
       | Bring Express, Sweden | `COURIER_4H`, `EXPRESS_NORDIC_SAME_DAY`, `EXPRESS_INTERNATIONAL` | `EXPRESS_SWEDEN-406077f0-27da-012f-3859-58b0357c4f66` |
@@ -217,12 +21,10 @@ documentation:
 
       [List of services for each customer type](/api/services/#booking)
 
-  uriParameters:
-    mediaTypeExtension:
-      enum: [ .json, .xml ]
-      description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: List customer numbers and services
+    headers:
+      Accept: application/json or application/xml
     responses:
       200:
         displayName: List of available customers and services
@@ -309,6 +111,8 @@ documentation:
 
       To use the test mode, you need to set the `testIndicator` flag to `true` on the root node.
 
+      **Note that this test mode exists only for development purposes, not production use. It is rate limited, and may therefore affect your performance if used in production.**
+
       Note that the examples below use `testIndicator=true`, so remove this when implementing the Booking API in your production system.
 
       ### Measurements
@@ -345,14 +149,18 @@ documentation:
             example: 2016-07-26T06:24:09 or 1469494449000 (milliseconds since 01.01.1970, for json req)
             required: true
         customerSpecifiedDeliveryDateTime:
-            description: The date and time selected for preferred delivery by the customer. Note that for some services, the time part of this field will be ignored. This field is applicable for 'PA_DOREN', '5600', and 'OIL_EXPRESS'.
+            description: The date and time selected for preferred delivery by the customer. Note that for some services, the time part of this field will be ignored. This field is applicable for 'PA_DOREN', '5600', and 'OIL_EXPRESS'. For 'PA_DOREN' and '5600' the date cannot cannot be set to more than current date + 10 days.
             type: dateTime
             example: 2020-05-11T11:12:13 (yyyy-MM-ddThh:mm:ss)
             required: false
+        packages:
+          description: A list of the packages included in the consignment. Limited to 50 packages.
+          required: true
+          type: object
         customerNumber:
             description: Specify API customer number. This parameter can be maximum 35 character long.
             type: string
-            example: PARCELS_NORWAY-*********
+            example: PARCELS_NORWAY-*********, 6
             required: true
         addressLine:
             description: Specify address. This parameter can be maximum 35 character long.
@@ -362,6 +170,11 @@ documentation:
         addressLine2:
             description: Specify address line 2. This parameter can be 35 character long.
             type: string
+        contact:
+            description: Specify contact details - name, email and phoneNumber in the child tags.
+            type: string
+            example: check the example request to see how contact block is build
+            required: false
         purchaseOrderNumber:
             type: string
             description: Specify when there is any purchase orders associated with the booking. This parameter can be maximum 35 character long.
@@ -466,14 +279,14 @@ documentation:
             description: Specify shipper or consignee reference. This parameter can be maximum 35 character long.
             type: string
         additionalAddressInfo:
-            description: Pickup instruction and delivery instruction for use on labels (and waybills) for the OIL_EXPRESS, CARGO (Norway and international), QUICKPACK, COURIER, SERVICEPAKKE services. This parameter can be maximum 35 character long.
+            description: Pickup instruction and delivery instruction for use on labels (and any waybills) for the Norwegian parcel services Pakke til bedrift (5000) and Ekspress neste dag (4850), as well as Cargo Norway domestic-services (all), Cargo International, Oil Express and Courier & Express services (all). This parameter can be maximum 70 character long.
             type: string
             required: false
         vatNumber:
             description: Specify organisation number. This parameter can be maximum 30 character long.
             type: string
         email:
-            description: Specify e-mail address if you want booking confirmation e-mail to be sent. Can be applied to sender's e-mail (outgoing services) and sender's e-mail/recipient's e-mail (return services) . This parameter can be maximum 35 character long.
+            description: Specify e-mail address if you want booking confirmation e-mail to be sent. Can be applied to sender's e-mail (outgoing services) and sender's e-mail/recipient's e-mail (return services) . This parameter can be maximum 60 character long.
             type: string
             pattern: ^((\w*_)?(p|m|)\d*(\.\d|)|(\w*_)?(p|m)\d*(\.\d|)p)$
         phoneNumber:
@@ -518,13 +331,21 @@ documentation:
             description: VAT On Ecommerce ID used for customs import to Norway. This field is mandatory when sending customs import information in the request. It must be 7 digits number.
             type: integer
             required: true
+        iossNumber:
+            description: Import One-Stop Shop (IOSS) number used for customs export from Norway to EU. This field is optional when customs export information in the request. It must be on the form `IMxxxxxxxxxx` (10 digits). Only valid when `natureOfTransaction` is of type `SALE_OF_GOODS`. Note that this field cannot be combined with a `reference` field on the sender party.
+            type: string
+            required: false
         nonStandardCourierProductCode:
             description: Specify the product code for customize courier services. This field is mandatory when request is for Non Standard Courier.
             type: string
             example: CDA
-            required: true
+            required: false
         generateQrCodes:
             description: Specify whether QR codes is wanted in addition to the regular label for certain services. See the [qr-codes section](#qr-codes) for more on this.
+            type: boolean
+            required: false
+        returnProduct:
+            description: Specify the return service which should be used to generate a return shipment along with outgoing shipment. See the [return product section](#return-product) for more on this.
             type: boolean
             required: false
 
@@ -906,6 +727,21 @@ documentation:
                 displayName: Mailbox parcel
                 value: !include examples/mailboxParcel.xml
 
+      295:
+        displayName: LQ - Limited Quantities (0003) with gross weight
+        description: The LQ VAS gross weight is specified in grams
+        body:
+          application/json:
+            examples:
+              businessParcel_with_lq_gross_weight:
+                displayName: Business Parcel with 0003 VAS and LQ gross weight
+                value: !include examples/businessParcel_with_lq_gross_weight.json
+          application/xml:
+            examples:
+              businessParcel_with_lq_gross_weight:
+                displayName: Business Parcel with 0003 VAS and LQ gross weight
+                value: !include examples/businessParcel_with_lq_gross_weight.xml
+
       296:
         displayName: Mailbox parcel with Return Parcel and 1073 VAS
         description: Return Parcel  `Id` is required and Additional VAS is optional
@@ -996,16 +832,14 @@ documentation:
                 value: !include examples/curbsideEvening_SE.xml
 
 
-/errors{mediaTypeExtension}:
+/errors:
   displayName: Error codes
   description: |
     The current enumeration of error codes. A value of "true" for the attribute "suffixable" means that the error code is suffixed with "-SENDER" if the error is for the sending party data and "-RECIPIENT" if the error is for the recipient party data.
-  uriParameters:
-    mediaTypeExtension:
-      enum: [ .json, .xml ]
-      description: Use .json to specify application/json or .xml to specify application/xml
   get:
     description: Error codes
+    headers:
+      Accept: application/json or application/xml
     body:
       application/json:
         examples:
@@ -1062,11 +896,11 @@ documentation:
 
     | Customer number prefix | Pickup in country | Required information element     |
     |:-----------------------|:------------------|:---------------------------------|
-    | PARCELS_NORWAY         | Norway (parcel services)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
-    | CARGO                  | Norway (cargo services)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
-    | PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark (parcel services) | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
+    | None, PARCELS_NORWAY         | Norway (parcel services)  |  `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>`  <strike>parcelsInformation </strike>|
+    | None, CARGO                  | Norway (cargo services)    | `<service>CARGO</service>` & `<pickupDetails></pickupDetails>` <strike>cargoInformation </strike>|
+    | None, PARCELS_SWEDEN, PARCELS_DENMARK | Sweden, Denmark (parcel services) | `<service>PARCEL</service>` & `<pickupDetails></pickupDetails>` <strike>parcelsInternationalInformation </strike>|
 
-    If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_NORWAY-*********** customer number, without prefix PARCELS_NORWAY- and any leading zeros.
+    If your company has been converted to services with new service names (revised services) in Booking and Shipping Guide, pickup of parcels and/or cargo in Norway and Nordics is done using your company's new API customer number - i.e your company’s main customer number. You company's main customer number equals your PARCELS_xx-*********** customer number, without prefix PARCELS_xx- and any leading zeros.
 
     ### Pickup is ordered by default with service CARGO_GROUPAGE from Bring Cargo
 

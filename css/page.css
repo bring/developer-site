@@ -17,3 +17,7 @@
 .maxw108r {
   max-width: 108rem;
 }
+
+.jobs a {
+  text-decoration: underline;
+}

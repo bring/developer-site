@@ -1,0 +1,60 @@
+<bookingRequest xmlns="http://www.bring.no/booking/" testIndicator="true">
+  <schemaVersion>1</schemaVersion>
+  <consignments>
+    <consignment correlationId="INTERNAL-123456">
+      <shippingDateTime>2021-10-03T21:31:33.007+02:00</shippingDateTime>
+      <parties>
+        <sender>
+          <name>Ola Nordmann</name>
+          <addressLine>Testsvingen 12</addressLine>
+          <postalCode>10005</postalCode>
+          <city>STOCKHOLM</city>
+          <countryCode>SE</countryCode>
+          <reference>1234</reference>
+          <additionalAddressInfo>Hentes på baksiden etter klokken to</additionalAddressInfo>
+          <contact>
+            <name>Tore mottaker</name>
+            <email>tore@mottakertest.no</email>
+            <phoneNumber>+46700000000</phoneNumber>
+          </contact>
+        </sender>
+        <recipient>
+          <name>Tore Mottaker</name>
+          <addressLine>Mottakerveien 14</addressLine>
+          <addressLine2>c/o Tina Mottaker</addressLine2>
+          <postalCode>65601</postalCode>
+          <city>Karlstad</city>
+          <countryCode>SE</countryCode>
+          <reference>43242</reference>
+          <additionalAddressInfo>Bruk ringeklokken</additionalAddressInfo>
+          <contact>
+            <name>Tore mottaker</name>
+            <email>tore@mottakertest.no</email>
+            <phoneNumber>+46720000000</phoneNumber>
+          </contact>
+        </recipient>
+      </parties>
+      <product>
+        <id>DOUBLE_INDOOR</id>
+        <customerNumber>PARCELS_NORWAY-00094983111</customerNumber>
+        <additionalServices>
+          <additionalService>
+            <id>1127</id>
+            <numberOfItems>1</numberOfItems>
+          </additionalService>
+        </additionalServices>
+      </product>
+      <packages>
+        <package correlationId="PACKAGE-123">
+          <weightInKg>1.1</weightInKg>
+          <goodsDescription>Testing equipment</goodsDescription>
+          <dimensions>
+            <heightInCm>13</heightInCm>
+            <widthInCm>23</widthInCm>
+            <lengthInCm>10</lengthInCm>
+          </dimensions>
+        </package>
+      </packages>
+    </consignment>
+  </consignments>
+</bookingRequest>

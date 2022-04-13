@@ -6,7 +6,7 @@
   height: 100%;
 }
 
-.dev-anchored:target::before {
+.dev-anchored:not(#all-vas *):target::before {
   content: "";
   display: block;
   height: 6.5rem;
@@ -30,6 +30,11 @@
   margin-bottom: 0.6em;
 }
 
+.dev-docscontent p > a:not(.btn-link--dark),
+.dev-docscontent li > a:not(.dev-codetabs__link) {
+  text-decoration: underline;
+}
+
 .dev-docscontent__section {
   margin-bottom: 3rem;
   padding: 0 6vw 1rem;
@@ -40,6 +45,48 @@
 
 .dev-docscontent__section:last-of-type {
   border-bottom: none;
+}
+
+.dev-docscontent__wrap {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  column-gap: 3rem;
+  row-gap: 2rem;
+}
+
+.dev-docscontent__side {
+  flex: 1 1 24rem;
+  max-width: 64rem;
+}
+
+.dev-docscontent__main {
+  flex: 2 1 32rem;
+  overflow: auto;
+}
+
+.dev-docscontent__info {
+  max-width: 68ch;
+}
+
+.dev-docscontent__info summary {
+  font-size: 1.25rem;
+}
+
+.dev-docscontent__info details p {
+  padding: 0 1rem 1rem;
+  margin-bottom: 0;
+}
+
+summary {
+  padding-left: 0.25em;
+  padding-bottom: 0.05em;
+  border-radius: 2px;
+}
+
+summary:hover {
+  background-color: hsla(0, 100%, 0%, 0.04);
 }
 
 .dev-docs__menu {
@@ -91,4 +138,147 @@
   .dev-docscontent__section {
     padding: 0 2rem 3rem 2rem;
   }
+}
+
+.changelog-small {
+  flex: 1 1 24rem;
+}
+
+.btn-link--copy {
+  top: 0.5rem;
+  right: 1.2rem;
+  background-color: hsl(200, 17%, 30%);
+  color: hsl(0, 0%, 85%);
+}
+
+.btn-link--copy:hover,
+.btn-link--copy:focus-visible {
+  background-color: hsl(199, 17%, 36%);
+  color: hsl(0, 0%, 100%);
+}
+
+.btn-link--copy:hover svg,
+.btn-link--copy:focus-visible svg {
+  color: hsl(0, 0%, 100%);
+}
+
+.oas-endpoints > div:last-of-type {
+  border: none;
+  margin-bottom: 0;
+}
+
+.param-response-area {
+  flex: 1 1 30rem;
+}
+
+.example-area {
+  flex: 1 1 20rem;
+  max-width: 64rem;
+  width: 38%;
+}
+
+.response {
+  transition: background var(--easeout-15);
+  background: var(--gray-95);
+}
+
+div.response {
+  padding-left: 1.4em;
+}
+
+.response.success-code {
+  background: var(--green-lighter);
+  color: var(--green-dark);
+}
+
+.response.error-code {
+  background: var(--red-lighter);
+  color: var(--red-dark);
+}
+
+summary.success-code:focus,
+summary.error-code:focus,
+summary.default:focus {
+  outline: 1px solid;
+}
+
+summary.response:hover {
+  background: var(--gray-90);
+}
+
+summary.success-code:hover {
+  background: hsl(86, 40%, 90%);
+}
+
+summary.error-code:hover {
+  background: var(--red-lighter-hover);
+}
+
+.schema-type-select {
+  height: auto;
+}
+
+.schema__sublist {
+  border-left-style: dashed;
+  border-width: 1px;
+  margin: 0 0.75rem;
+}
+
+.desc-list > div {
+  gap: 0.25rem;
+}
+
+.desc-list dt {
+  flex: 1 1 8rem;
+  font-weight: 400;
+}
+
+.desc-list dt code {
+  background: transparent;
+  padding: 0;
+}
+
+.desc-list dd {
+  flex: 2 1 14rem;
+  font-weight: 400;
+}
+
+.param-collapsed-btn {
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.param-toggle-icon {
+  transition: all var(--easeout-15);
+}
+
+.rotate-icon-90 {
+  transform: rotate(90deg);
+}
+
+.param-required {
+  color: var(--red-dark);
+}
+
+.txt-success {
+  color: var(--green-dark);
+}
+
+.txt-error {
+  color: var(--red-dark);
+}
+
+/* Gap utility, will implement in MDS after IE11 retire */
+.gapm {
+  gap: 2rem;
+}
+
+.minw0 {
+  min-width: 0;
+}
+
+.wrap-text {
+  overflow-wrap: anywhere;
+  white-space: normal;
 }

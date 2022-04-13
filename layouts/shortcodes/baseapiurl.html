@@ -1,8 +1,6 @@
 {{ $baseApiUrl := "http://api.test.bring.com" }}
 
-{{ if eq (getenv "HUGO_ENV") "test" }}
-  {{ $baseApiUrl = "http://api.test.bring.com" }}
-{{ else if eq (getenv "HUGO_ENV") "qa" }}
+{{ if eq (getenv "HUGO_ENV") "qa" }}
   {{ $baseApiUrl = "http://api.qa.bring.com" }}
 {{ else if eq (getenv "HUGO_ENV") "production" }}
   {{ $baseApiUrl = "https://api.bring.com" }}

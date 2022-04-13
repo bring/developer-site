@@ -1,0 +1,75 @@
+{{- $hasExamples := false -}}
+{{- range .responses -}}
+  {{- range . -}}
+    {{- if reflect.IsMap . -}}
+      {{- range . -}}
+        {{- if isset . "examples" -}}
+          {{- $hasExamples = true -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if $hasExamples -}}
+  {{- $response := .response -}}
+  {{- $endpointId := .endpointId -}}
+
+  <h3>Response examples</h3>
+  {{- $codeExample := "" -}}
+  {{- $resInd := 0 -}}
+  <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
+    <div class="pam flex flex-wrap">
+      {{- range $response, $_ := .responses -}}
+        {{- with .content -}}
+          {{- $responseColor := "" -}}
+          {{- if and (ge $response 200) (lt $response 300) -}}
+            {{- $responseColor = "txt-success" -}}
+          {{- else if ge $response 300 -}}
+            {{- $responseColor = "txt-error" -}}
+          {{- end -}}
+          {{- $responseId := print $endpointId "-" $response -}}
+          <button type="button" name="{{$endpointId}}-response" data-example="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}" aria-label="Response code {{$response}}">
+            {{ $response }}
+          </button>
+          {{- $resInd = add $resInd 1 -}}
+        {{- end -}}
+      {{- end -}}
+    </div>
+    {{- $resInd = 0 -}}
+    {{- range $response, $_ := .responses -}}
+      {{- with .content -}}
+        {{- $responseId := print $endpointId "-" $response -}}
+        <div class="relative" data-example="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
+          {{- range $application, $_ := . -}}
+            {{- if in $application "json" -}}
+              {{/* If application type contains examples object */}}
+              {{- if isset . "examples" -}}
+                {{- if gt (len .examples) 1 -}}
+                  <div class="phm pvm bg-gray4">
+                    <select class="form__control w100p mb0" name="{{$responseId}}" data-example-sub aria-label="Response code {{$response}} example">
+                      {{- range $name, $_ := .examples -}}
+                        {{- $exId := print $responseId "-" $name -}}
+                        <option value="{{$exId}}">{{$name}}</option>
+                      {{- end -}}
+                    </select>
+                  </div>
+                {{- end -}}
+                {{- $exInd := 0 -}}
+                {{- range $name,$_ := .examples -}}
+                  {{- $exId := print $responseId "-" $name -}}
+                  <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
+                    {{- $codeExample = .value | jsonify (dict "indent" "  ") -}}
+                    {{- highlight $codeExample "json" -}}
+                    {{- partial "api/oas/copy-btn.html" -}}
+                  </div>
+                  {{- $exInd = add $exInd 1 -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        </div>
+        {{- $resInd = add $resInd 1 -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

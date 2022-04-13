@@ -25,6 +25,7 @@
         {{- $resDisplayName := $apiResource.displayName | urlize -}}
         {{- $resRelUri := $apiResource.relativeUri | safeHTML -}}
         {{- range $apiResource.methods -}}
+        {{- $urlStr := print $.Params.apiurl "/" .method "-" $resDisplayName -}}
           <tr>
             <td>
               {{- .method | upper -}}
@@ -33,14 +34,14 @@
               {{- $resRelUri -}}
             </td>
             <td>
-              <a href="{{.method}}-{{ $resDisplayName }}">
+              <a href='{{ $urlStr }}'>
                 {{- .description | safeHTML -}}
               </a>
             </td>
           </tr>
         {{- end -}}
       {{- end -}}
-    <tbody>
+    </tbody>
   </table>
 </section>
 

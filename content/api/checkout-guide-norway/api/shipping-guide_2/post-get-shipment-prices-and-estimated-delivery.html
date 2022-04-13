@@ -2,7 +2,6 @@
 title: "POST: Get shipment prices and leadtime"
 layout: api
 notanapi: true
-hidden: true
 apidoc:
   - shippingguide_2
 apiresource:
@@ -29,7 +28,7 @@ methodobj: 0
           <code>array</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> A list of
+          <span class="mb-badge mb-badge--red mrxs">Required</span> A list of
           consignment objects
         </td>
       </tr>
@@ -42,7 +41,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>
@@ -54,7 +53,7 @@ methodobj: 0
           <code>array</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> List of
+          <span class="mb-badge mb-badge--red mrxs">Required</span> List of
           products to include in response
         </td>
       </tr>
@@ -68,7 +67,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Product
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Product
           id. You can list available products with the /customers endpoint.
           <br />Example: <code>BPAKKE_DOR-DOR</code>
         </td>
@@ -83,7 +82,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Lets you specify which
+          <span class="mb-badge mrxs">Optional</span> Lets you specify which
           customer number to use in the request. If specified and service is not
           supplied with delimited customer number, then it will be applied on
           all request services <br />Required if
@@ -100,7 +99,7 @@ methodobj: 0
           <code>array</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> List of
+          <span class="mb-badge mb-badge--red mrxs">Required</span> List of
           package specific information.
         </td>
       </tr>
@@ -114,7 +113,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Package length in cm
+          <span class="mb-badge mrxs">Optional</span> Package length in cm
         </td>
       </tr>
       <tr>
@@ -127,7 +126,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Package height in cm
+          <span class="mb-badge mrxs">Optional</span> Package height in cm
         </td>
       </tr>
       <tr>
@@ -140,7 +139,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Package width in cm
+          <span class="mb-badge mrxs">Optional</span> Package width in cm
         </td>
       </tr>
       <tr>
@@ -154,7 +153,7 @@ methodobj: 0
         </td>
         <td>
           <span style="color: rgb(65, 65, 65)"
-            ><span class="dev-param dev-param--req mrxs">Required</span> Package
+            ><span class="mb-badge mb-badge--red mrxs">Required</span> Package
             weight in grams</span
           >
         </td>
@@ -169,7 +168,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Package volume in dm3
+          <span class="mb-badge mrxs">Optional</span> Package volume in dm3
         </td>
       </tr>
       <tr>
@@ -182,7 +181,7 @@ methodobj: 0
           <code>integer</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>
@@ -194,7 +193,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Sender
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Sender
           country code in valid ISO Alpha-2 format. <br />Example:
           <code>NO</code>
         </td>
@@ -208,7 +207,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Receiver
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Receiver
           country code in valid ISO Alpha-2 format. <br />Example:
           <code>NO</code>
         </td>
@@ -222,7 +221,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Sender
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Sender
           postal code in valid ISO Alpha-2 format. <br />Example:
           <code>NO</code>
         </td>
@@ -236,7 +235,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Receiver
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Receiver
           postal code in valid ISO Alpha-2 format. <br />Example:
           <code>NO</code>
         </td>
@@ -250,7 +249,7 @@ methodobj: 0
           <code>array</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> List of value added
+          <span class="mb-badge mrxs">Optional</span> List of value added
           services. Multiple value added services can be requested by repeating
           this parameter.
         </td>
@@ -263,7 +262,7 @@ methodobj: 0
         <td>
           <code>object</code>
         </td>
-        <td><span class="dev-param mrxs">Optional</span> Shipping date</td>
+        <td><span class="mb-badge mrxs">Optional</span> Shipping date</td>
       </tr>
       <tr>
         <td class="bg-gray1 indentcell"></td>
@@ -275,7 +274,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Example:
+          <span class="mb-badge mrxs">Optional</span> Example:
           <code>2021</code>
         </td>
       </tr>
@@ -289,7 +288,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Example: <code>01</code>
+          <span class="mb-badge mrxs">Optional</span> Example: <code>01</code>
         </td>
       </tr>
       <tr>
@@ -302,7 +301,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Example: <code>29</code>
+          <span class="mb-badge mrxs">Optional</span> Example: <code>29</code>
         </td>
       </tr>
       <tr>
@@ -315,7 +314,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Example: <code>06</code>
+          <span class="mb-badge mrxs">Optional</span> Example: <code>06</code>
         </td>
       </tr>
       <tr>
@@ -328,7 +327,7 @@ methodobj: 0
           <code>string</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Example: <code>54</code>
+          <span class="mb-badge mrxs">Optional</span> Example: <code>54</code>
         </td>
       </tr>
       <tr>
@@ -339,7 +338,7 @@ methodobj: 0
           <code>boolean</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>
@@ -373,7 +372,7 @@ methodobj: 0
           <code>boolean</code>
         </td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Tells if the parcel will
+          <span class="mb-badge mrxs">Optional</span> Tells if the parcel will
           be registered using EDI when being booked. It may affect price and
           which services are available
         </td>
@@ -386,7 +385,7 @@ methodobj: 0
           <code>boolean</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
     </tbody>
@@ -412,7 +411,7 @@ methodobj: 0
           <code>Array</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>
@@ -466,7 +465,7 @@ methodobj: 0
           <code>String</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>
@@ -491,7 +490,7 @@ methodobj: 0
           <code>String</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>
@@ -741,7 +740,7 @@ methodobj: 0
           <code>String</code>
         </td>
         <td>
-          <span style="color: rgb(255, 0, 0)">Missing documentation</span>
+
         </td>
       </tr>
       <tr>

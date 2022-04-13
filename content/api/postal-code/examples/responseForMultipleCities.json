@@ -1,0 +1,54 @@
+{
+  "postalCode": [
+    {
+      "city": "Dresden",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Ockerwitz",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Altfranken",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Gompitz",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Unkersdorf",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Pennrich",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Roitzsch",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Zöllmen",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    },
+    {
+      "city": "Dresden Gompitz, Steinbach",
+      "postalcode": "01156",
+      "postalCodeType": "UNKNOWN"
+    }
+  ]
+}

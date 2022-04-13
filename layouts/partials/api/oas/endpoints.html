@@ -1,0 +1,35 @@
+{{- with . -}}
+  <section class="dev-docscontent__section maxw96r">
+    <h2 class="dev-anchored mbm" id="endpoints">
+    Endpoints
+    </h2>
+    {{ range .servers }}
+      <pre class="maxw40r">{{ .url }}</pre>
+    {{ end }}
+
+    <table class="maxw96r">
+      <thead>
+        <th>Usage</th>
+        <th>Method</th>
+        <th>Endpoint</th>
+      </thead>
+      {{ range $path, $_ := .paths }}
+          {{ range $method, $_ := . }}
+          <tr>
+            <td>
+              <a href="#{{ .summary | anchorize }}" title="{{- .summary -}}">
+                  {{- .summary -}}
+              </a>
+            </td>
+            <td>
+              {{- $method | upper -}}
+            </td>
+            <td>
+              <code>{{ $path }}</code>
+            </td>
+          </tr>
+          {{ end }}
+      {{ end }}
+    </table>
+  </section>
+{{- end -}}

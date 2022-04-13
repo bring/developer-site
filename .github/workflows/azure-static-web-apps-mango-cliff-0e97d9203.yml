@@ -1,0 +1,57 @@
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - name: Build and Deploy
+        id: deploystaging
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: "upload"
+          app_location: "."
+          output_location: "_site"
+          app_build_command: 'npm run buildprod'
+      - run: echo ${{github.ref}} 
+      - name: notify slack failure
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && failure()
+        env:
+          SLACK_MESSAGE: '{"channel": "#deploy", "text", ":build_failed: Failed to deploy developer-site <${{ steps.get_self_url.outputs.link }}|Check details>"}'
+        run: |
+          curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
+
+      - name: notify slack success
+        if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && success()
+        env:
+          SLACK_MESSAGE: '{"channel": "#deploy", "text": ":build_succeed: Deployed developer site"}'
+        run: |
+          curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: "close"

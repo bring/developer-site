@@ -237,6 +237,8 @@
             <xs:element name="tunnelRestrictionCode" type="xs:string" minOccurs="0"/>
             <xs:element name="safetyMarkCode" type="xs:string" minOccurs="0"/>
             <xs:element name="factor" type="xs:int" minOccurs="0"/>
+            <xs:element name="limitedQuantitiesGrossWeight" type="xs:int" minOccurs="0"/>
+            <xs:element name="numberOfItems" type="xs:int" minOccurs="0"/>
         </xs:all>
     </xs:complexType>
     <xs:complexType name="PurchaseOrderRequestType">
@@ -519,6 +521,27 @@
             <xs:enumeration value="DELIVERY_INDOOR"/>
             <xs:enumeration value="FLEX_DELIVERY"/>
             <xs:enumeration value="ENVELOPE"/>
+            <xs:enumeration value="SOSIAL_KONTROLL"/>
+            <xs:enumeration value="0003"/>
+            <xs:enumeration value="1073"/>
+            <xs:enumeration value="1081"/>
+            <xs:enumeration value="1083"/>
+            <xs:enumeration value="1094"/>
+            <xs:enumeration value="1122"/>
+            <xs:enumeration value="1123"/>
+            <xs:enumeration value="1124"/>
+            <xs:enumeration value="1125"/>
+            <xs:enumeration value="1127"/>
+            <xs:enumeration value="1128"/>
+            <xs:enumeration value="1133"/>
+            <xs:enumeration value="1134"/>
+            <xs:enumeration value="1139"/>
+            <xs:enumeration value="1140"/>
+            <xs:enumeration value="1141"/>
+            <xs:enumeration value="1280"/>
+            <xs:enumeration value="1288"/>
+            <xs:enumeration value="1342"/>
+            <xs:enumeration value="2012"/>
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="whoPaysInvoice">

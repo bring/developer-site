@@ -5,11 +5,11 @@
       <confirmation>
         <consignmentNumber>70438101268018539</consignmentNumber>
         <links>
-          <labels>https://www.mybring.com/booking/labels/2968466?auth-token=5cf1dcee-4f01-4c9a-9870-3ba6d9ba050b</labels>
-          <tracking>http://sporing.bring.no/sporing.html?q=70438101268018539</tracking>
+          <labels>https://api.bring.com/labels/id/6d8c4323-87cd-47e8-aa0d-75f8f0b5b4cb.pdf</labels>
+          <tracking>https://sporing.bring.no/sporing.html?q=70438101268018539</tracking>
         </links>
         <dateAndTimes>
-          <expectedDelivery>2015-07-07T21:33:10.900+02:00</expectedDelivery>
+          <expectedDelivery>2020-05-13T21:33:10.900+02:00</expectedDelivery>
         </dateAndTimes>
         <packages>
           <package correlationId="PACKAGE-123">

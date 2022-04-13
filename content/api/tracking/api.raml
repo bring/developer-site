@@ -154,6 +154,15 @@ types:
       requestPackage:
         type: requestedPackageType
         required: false
+      expectedPickupUnitId:
+        type: string
+        required: false
+      expectedPickupUnitName:
+        type: string
+        required: false
+      expectedPickupUnitURL:
+        type: string
+        required: false
   Event:
     type: object
     properties:
@@ -271,79 +280,6 @@ types:
         type: string
         required: false
 
-
-documentation:
-- title: Introduction
-  content: |
-      The Tracking API provides the opportunity to track shipments by reference, package or shipment number.
-      It is an easy way to display details and the status of shipments.
-      The information available in this API is the same that is publically available from the [Tracking web site](http://tracking.bring.com/).
-
-- title: Versioning
-  content: |
-    Latest Tracking API version: `v2`
-
-    We encourage you to use the latest version of our API all time.  Of course, we keep the previous version for some time so that you will get enough time to convert your application. This API supports versioning by two means.
-
-    ### Select version by request-header
-    Use the normal URL but add the following request-header:
-
-    | Header | Example |
-    |:-------|:--------|
-    | `api-version` | `2` |
-
-    #### Example request
-    ```
-    curl -H "api-version: 2" https://tracking.bring.com/api/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
-    ```
-
-    ### Select version by URL
-    Use the normal URL, but add **```{v1, v2}```** to the URL. Example:
-
-    | Application | URL example |
-    |:-------|:--------|
-    | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
-    | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
-
-    You can verify that your request were used correctly by certifying that the response contains an element based on the request type:
-
-    | URI request | Response type | Example |
-    |:-------|:--------|:--------|
-    | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
-    | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
-
-    #### Example request
-    ```
-    curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
-    ```
-
-- title: Authentication
-  content: |
-    If you have a Mybring user, you can perform authenticated requests. They have the following benefits:
-    - More information about parcels:
-      - Price
-      - Name
-      - Address
-      - Signatures for proof of delivery
-    - Less strict rate limits
-
-    To make authenticated Tracking API requests, you will have to use the endpoint [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/). You also need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
-
-
-- title: Formats
-  content: |
-    The Tracking API generates the following formats:
-    - ```XML```
-    - ```JSON```
-    - ```JSONP```
-
-- title: JSON API
-  content: |
-      We follow the [JSON API](http://jsonapi.org/) specification with one
-      exception: we allow media type to be specified as `application/json`
-      instead of `application/vnd.api+json`.
-
-
 /{version}/tracking{mediaTypeExtension}:
   displayName: Tracking endpoint
   description: Get information about an existing shipment based on a tracking number, shipment number or reference.
@@ -376,6 +312,10 @@ documentation:
         example: "12345678901"
       callback:
         description: JSONP callback function name
+        type: string
+        required: false
+      lang:
+        description: Choose one of the following languages (en, no, sv, dk) to display information in respectively english, norwegian, swedish or danish
         type: string
         required: false
     responses:
@@ -425,6 +365,18 @@ documentation:
                 displayName: Unsuccessful request
                 description: Returned upon no search responses being returned for the request itself
                 value: !include examples/unsuccessful.json
+              badRequest:
+                displayName: Bad request
+                description: Returned when query requested is invalid
+                value: !include examples/bad_request.json
+              serviceUnavailable:
+                displayName: Service unavailable
+                description: Returned when there are too many requests on server
+                value: !include examples/service_unavailable.json
+              unspeciified:
+                displayName: Technical Erroor
+                description: Returned when there is some technical error
+                value: !include examples/unspecified.json
               notification_received:
                 displayName: Unreceived package, with notification regarding EDI
                 description: The example below is showing a package that have been EDI notified, but is not received by Bring.
@@ -445,6 +397,10 @@ documentation:
                 displayName: Package with estimated time of arrival.
                 description: The example below is showing a package with estimated arrival time window of delivery.
                 value: !include examples/successfulWithEta.json
+              expectedPickupPoint:
+                displayName: Package with expected pickup point details.
+                description: The example below is showing a package with expected pickup point details.
+                value: !include examples/successfulWithExpectedPupDetails.json
           application/xml:
             type: Consignment
             examples:
@@ -456,6 +412,18 @@ documentation:
                 displayName: Unsuccessful request
                 description: Returned upon no search responses being returned for the request itself
                 value: !include examples/unsuccessful.xml
+              badRequest:
+                displayName: Bad request
+                description: Returned when query requested is invalid
+                value: !include examples/bad_request.xml
+              serviceUnavailable:
+                displayName: Service unavailable
+                description: Returned when there are too many requests on server
+                value: !include examples/service_unavailable.xml
+              unspeciified:
+                displayName: Technical Erroor
+                description: Returned when there is some technical error
+                value: !include examples/unspecified.xml
               notification_received:
                 displayName: Unreceived package, with notification regarding EDI
                 description: The example below is showing a package that have been EDI notified, but is not received by Bring.
@@ -476,3 +444,7 @@ documentation:
                 displayName: Package with estimated time of arrival.
                 description: The example below is showing a package with estimated arrival time window of delivery.
                 value: !include examples/successfulWithEta.xml
+              expectedPickupPoint:
+                displayName: Package with expected pickup point details.
+                description: The example below is showing a package with expected pickup point details.
+                value: !include examples/successfulWithExpectedPupDetails.xml

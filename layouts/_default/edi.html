@@ -5,7 +5,7 @@
   </div>
   {{- partial "drawmenu.html" . -}}
   <div class="dev-docs__page">
-    <main>
+    <main id="main">
       <article class="dev-docscontent maxw64r">
         {{ .Content }}
         {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}

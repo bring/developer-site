@@ -23,7 +23,8 @@ apis:
     title: List services
   - slug: booking
     title: List customer numbers and order shipments
-hidden: true
+aliases:
+  - ../checkout-guide/mailbox-parcel
 ---
 
 <section class="dev-docscontent__section">
@@ -31,9 +32,9 @@ hidden: true
   <div class="flex flex-wrap flex-dir-row-rev">
     <figure class="dev-guide-m">
       <img
-        src="../assets/til_postkassen.png"
-        alt=""
-        class="mbm maxw24r sticky-6r"
+        src="../assets/mailbox_parcel.png"
+        alt="All elements for Mailbox parcel"
+        class="bshadow rad-a2px mbm pas maxw24r sticky-6r"
       />
     </figure>
 
@@ -180,13 +181,13 @@ hidden: true
           <tbody>
             <tr>
               <th scope="row">Checkbox label</th>
-              <td>Pose på døren om det ikke er plass i postkassen</td>
-              <td>Bag on door if the mailbox is too small</td>
+              <td>Sett pakken ved døren min om det ikke er plass i postkassen</td>
+              <td>Leave parcel by the door if the mailbox is too small</td>
             </tr>
             <tr>
               <th scope="row">Checkbox help text</th>
               <td>
-                <span class="fwb db mbs">Når du velger pose på dør …</span>
+                <span class="fwb db mbs">Når du velger å få pakken satt igjen …</span>
                 <span class="db mbs"
                   >… kan det ikke være mer enn 250 m fra postkasse til dør.
                   Husnummer må komme tydelig frem, og døren må være merket med
@@ -197,7 +198,7 @@ hidden: true
                 døren, blir pakken levert til ditt nærmeste hentested.
               </td>
               <td>
-                <span class="fwb db mbs">If you choose bag on door …</span>
+                <span class="fwb db mbs">If you want to have the parcel left by the door …</span>
                 <span class="db mbs"
                   >… it cannot be more than 250 m from mailbox to door. A house
                   number and name sign must be visible.</span

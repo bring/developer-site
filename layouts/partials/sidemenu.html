@@ -9,51 +9,56 @@
         {{- if eq (add $index 1) $len -}}
           {{- $lastElement = "dev-sidemenu__separator pbm mbm" -}}
         {{- end -}}
-        {{/*  Temporarily hide the checkout guide menu unless the user is on those pages */}}
-        {{ if or (not (eq .Identifier "guide-checkout")) (eq $currentPage.Params.hidden true) }}
-        <li
-          class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( $currentPage.HasMenuCurrent .Menu .)) }}active{{ end }} {{ $lastElement }}"
-        >
-          {{- $target := "" -}}
-          {{- $iconEx := "" -}}
-          {{- with .Params.blank -}}
-            {{- $target = . -}}
-            {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
-          {{- end -}}
-          <a
-            href="{{ .URL | relURL }}"
-            {{ $target | safeHTMLAttr }}
-            class="dev-sidemenu__apititle"
-          >
-            {{ safeHTML .Title }}{{ safeHTML $iconEx }}
-          </a>
 
-          {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
-            <ul class="dev-sidemenu__sublist">
-              {{- range .Children -}}
-                <li>
-                  <a href="{{ .URL }}">{{ .Title }}</a>
-                  {{- if and (eq $currentPage .Page) (or (isset $.Params "examples") (isset $.Params "apis")) -}}
-                    <ul class="dev-sidemenu__sublist text-note">
-                      {{- range $.Params.examples -}}
-                        <li>
-                          <a href="/api/checkout-guide-norway/example/{{ .slug }}">{{ .title }}</a>
-                        </li>
-                      {{- end -}}
-                      {{- range $.Params.apis -}}
-                        <li>
-                          <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
-                        </li>
-                      {{- end -}}
-                    </ul>
-                  {{- end -}}
-                </li>
-              {{- end -}}
-            </ul>
-          {{- else if $currentPage.IsMenuCurrent .Menu . -}}
-            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
-          {{- end -}}
-        </li>
+        {{- $hidePage := false -}}
+        {{- with .Page -}}
+          {{- $hidePage = .Params.hidden -}}
+        {{- end -}}
+
+        {{ if (ne $hidePage true) }}
+          <li
+            class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
+          >
+            {{- $target := "" -}}
+            {{- $iconEx := "" -}}
+            {{- with .Params.blank -}}
+              {{- $target = . -}}
+              {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+            {{- end -}}
+            <a
+              href="{{ .URL | relURL }}"
+              {{ $target | safeHTMLAttr }}
+              class="dev-sidemenu__apititle"
+            >
+              {{ safeHTML .Title }}{{ safeHTML $iconEx }}
+            </a>
+
+            {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
+              <ul class="dev-sidemenu__sublist">
+                {{- range .Children -}}
+                  <li>
+                    <a href="{{ .URL }}">{{ .Title }}</a>
+                    {{- if and (eq $currentPage .Page) (or (isset $.Params "examples") (isset $.Params "apis")) -}}
+                      <ul class="dev-sidemenu__sublist text-note">
+                        {{- range $.Params.examples -}}
+                          <li>
+                            <a href="/api/checkout-guide-norway/example/{{ .slug }}">{{ .title }}</a>
+                          </li>
+                        {{- end -}}
+                        {{- range $.Params.apis -}}
+                          <li>
+                            <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
+                          </li>
+                        {{- end -}}
+                      </ul>
+                    {{- end -}}
+                  </li>
+                {{- end -}}
+              </ul>
+            {{- else if $currentPage.IsMenuCurrent .Menu . -}}
+              {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
+            {{- end -}}
+          </li>
         {{ end }}
       {{- end -}}
     </ul>
@@ -63,54 +68,27 @@
         <h2 class="dev-sidemenu__title text-note ttu">{{ .Title }}</h2>
         <ul class="dev-sidemenu__list">
           {{ range .Children }}
-            {{- $identifier := .Identifier -}}
-            <li
-              class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}"
-            >
-              <a href="{{ .URL }}" class="dev-sidemenu__apititle"
-                >{{ .Title }}</a
-              >
-              {{- $currentMenu := .Menu -}}
-              {{- $currentMenuItem := . -}}
-              {{- with (index $apiData $identifier) -}}
-                {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
-                  <ul class="dev-sidemenu__sublist">
-                    {{- range .documentation -}}
-                      <li>
-                        <a href="#{{ .title | urlize }}">
-                          <span data-hover="{{ .title }}">{{ .title }}</span>
-                        </a>
-                      </li>
-                    {{- end -}}
+            {{- $hidePage := false -}}
+            {{- with .Page -}}
+              {{- $hidePage = .Params.hidden -}}
+            {{- end -}}
 
-                    <li>
-                      <a href="#overview-of-endpoints">
-                        <span data-hover="overview-of-endpoints"
-                          >Overview of endpoints</span
-                        >
-                      </a>
-                    </li>
+            {{/* Render menu without hidden pages in production */}}
+            {{- if and (isset $.Params "oas") (ne $hidePage true) (eq (getenv "HUGO_ENV") "production") (ne .Title "Pickup Point API") (ne .Title "Tracking API") -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+            {{- else if and (ne $hidePage true) (eq (getenv "HUGO_ENV") "production") -}}
+              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
+            {{- end -}}
 
-                    {{- range .resources -}}
-                      <li>
-                        <a href="#{{ .displayName | urlize }}">
-                          <span data-hover="{{ .displayName }}"
-                            >{{ .displayName }}</span
-                          >
-                        </a>
-                      </li>
-                    {{- end -}}
-                    {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-                      <li>
-                        <a href="#api-support">
-                          API support
-                        </a>
-                      </li>
-                    {{- end -}}
-                  </ul>
-                {{- end -}}
+            {{/* Render menu with hidden pages in dev and staging */}}
+            {{- if (ne (getenv "HUGO_ENV") "production") -}}
+              {{- if and (isset $.Params "oas") -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+              {{- else -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
               {{- end -}}
-            </li>
+            {{- end -}}
+
           {{- end -}}
         </ul>
         {{- else -}}
@@ -134,9 +112,9 @@
                   {{- end -}}
 
                   <li>
-                    <a href="#overview-of-endpoints">
-                      <span data-hover="overview-of-endpoints"
-                        >Overview of endpoints</span
+                    <a href="#endpoints">
+                      <span data-hover="endpoints"
+                        >Endpoints</span
                       >
                     </a>
                   </li>
@@ -173,7 +151,7 @@
             >{{ safeHTML .Title }}</a
           >
           {{- if $currentPage.IsMenuCurrent .Menu . -}}
-            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "2" ) -}}
+            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
           {{- end -}}
         </li>
       {{- end -}}

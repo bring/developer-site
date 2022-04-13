@@ -1,4 +1,4 @@
-<main class="dev-blog phl flex flex-wrap">
+<main id="main" class="dev-blog phl flex flex-wrap">
   {{- with .Title -}}
     <div class="mbm">
       <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
@@ -22,7 +22,7 @@
           {{- end -}}
         {{- end -}}
         <p>{{ .Summary | plainify | htmlUnescape }}</p>
-        <a href="{{ .RelPermalink }}">Read more &rarr;</a>
+        <a href="{{ .RelPermalink }}" title="Read {{ .Title }}">Read {{ .Title }} &rarr;</a>
       </div>
     </article>
   {{- end -}}

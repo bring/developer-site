@@ -4,7 +4,7 @@ table {
   display: block;
   overflow-x: auto;
   margin-bottom: 2rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 62.5em) {
@@ -25,8 +25,16 @@ tr {
 
 thead tr {
   vertical-align: bottom;
-  border-bottom: 2px solid var(--gray-86);
+  border-bottom: 1px solid var(--gray-86);
   padding: 0.7em 1.4em 0.3em 0.4em;
+}
+
+thead tr:last-of-type {
+  border-bottom-width: 2px;
+}
+
+thead tr + tr th {
+  padding-top: 0.25em;
 }
 
 .bg-green1 tr {
@@ -53,25 +61,12 @@ th {
 
 td > p,
 td > ul {
-  margin-bottom: 0;
+  margin-bottom: 0.25rem;
 }
 
 td.indentcell {
   padding: 0;
   width: 1rem;
-}
-
-.dev-param {
-  background-color: var(--gray-95);
-  padding: 0.1em 0.25em;
-  color:var(--gray-26);
-  font-size: 0.9em;
-  border-radius: 2px;
-}
-
-.dev-param--req {
-  background-color: hsl(3, 27.5%, 95%);
-  color: hsl(3, 23%, 35%);
 }
 
 .tr {
@@ -82,20 +77,6 @@ td.indentcell {
   width: 18rem;
 }
 
-.dev-b2bvas table {
-  white-space: nowrap;
-  font-size: 0.75rem;
-}
-
-.dev-b2bvas th {
-  background: var(--gray-95);
-}
-
-.dev-b2bvas__subheader {
-  font-size: 75%;
-  font-weight: 500;
-}
-
 @media screen and (max-width: 50em) {
   .dev-feature-table > tbody > tr > td:first-child {
     width: 10rem;
@@ -104,4 +85,18 @@ td.indentcell {
 
 .fancy-dl dt {
   margin-top: 1rem;
+}
+
+.cutoff-overlay {
+  height: 10rem;
+  margin-top: -12rem;
+  padding-top: 5rem;
+  position: relative;
+  z-index: 2;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }

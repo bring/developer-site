@@ -1,0 +1,53 @@
+{{- $hasExamples := false -}}
+{{- range .requestBody -}}
+  {{- if reflect.IsMap . -}}
+    {{- range . -}}
+      {{- if isset . "examples" -}}
+        {{- $hasExamples = true -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if $hasExamples -}}
+  {{- $endpointId := .endpointId -}}
+
+  <h3>Request example</h3>
+  {{- $codeExample := "" -}}
+  <div class="bg-gray3 rad-t2px mts">
+      {{- with .requestBody -}}
+        <div class="relative" data-example="{{$endpointId}}">
+          {{- range $application, $_ := .content -}}
+            {{- if in $application "json" -}}
+              {{/* If application type contains examples object */}}
+              {{- if isset . "examples" -}}
+                {{- if gt (len .examples) 1 -}}
+                  <div class="phm pvm bg-gray4">
+                    <select class="form__control w100p mb0" name="{{$endpointId}}" data-example-sub aria-label="{{$endpointId}} request example">
+                      {{- range $name, $_ := .examples -}}
+                        {{- $exId := print $name | anchorize -}}
+                        <option value="{{$exId}}">{{$name}}</option>
+                      {{- end -}}
+                    </select>
+                  </div>
+                {{ else }}
+                  {{- range $name, $_ := .examples -}}
+                    {{ if $name }}
+                      <h5 class="mb0 pvs phm">{{$name}}</h5>
+                    {{ end }}
+                  {{ end }}
+                {{- end -}}
+                {{- range $name,$_ := .examples -}}
+                  {{- $exId := print $name | anchorize -}}
+                  <div class="relative" data-example-sub="{{$exId}}">
+                    {{- $codeExample = .value | jsonify (dict "indent" "  ") -}}
+                    {{- highlight $codeExample "json" -}}
+                    {{- partial "api/oas/copy-btn.html" -}}
+                  </div>
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
+  </div>
+{{- end -}}

@@ -1,0 +1,72 @@
+#!/usr/bin/env node
+
+const fs = require("fs");
+const toml = require("toml");
+const join = require("path").join;
+const hrstart = process.hrtime();
+const hrend = process.hrtime(hrstart);
+
+const outdir = join(__dirname, "../data");
+const configFile = join(__dirname, "../config.toml");
+const config = toml.parse(fs.readFileSync(configFile, "utf-8"));
+const filePaths = config.params.examples;
+
+if (!fs.existsSync(outdir)) {
+  fs.mkdirSync(outdir);
+}
+const fileOut = join(outdir, "/examples.json");
+
+let examplesArray = [];
+
+filePaths.forEach((examplesPath, i) => {
+  const regEx = /content\/api\/(\S*)\/examples\//;
+  const pathRegEx = examplesPath.match(regEx);
+  let apiName = pathRegEx[1];
+  if (apiName.includes("-")) {
+    apiName = apiName.replace("-", "");
+  }
+
+  let examplesDirs = fs.readdirSync(examplesPath);
+  let allExamples = [];
+
+  examplesDirs.forEach((dir) => {
+    if (fs.lstatSync(examplesPath + dir).isDirectory()) {
+      let examplesFiles = fs.readdirSync(examplesPath + dir);
+      console.log(examplesPath + dir)
+      examplesFiles.forEach((file, idx) => {
+        const fileRegEx = /(\S*).(json|xml|html)/
+        const matches = file.match(fileRegEx);
+        if (matches && matches.length > 0) {
+          let exampleId = matches[1];
+          let exampleType = matches[2];
+
+          let exampleObject = {
+            id: exampleId
+          };
+          let existing = allExamples.find(it => it.id === exampleId);
+          let content = fs.readFileSync(examplesPath + dir + "/" + file, "utf-8");
+
+          allExamples.map(ex => allExamples.find(ex2 => ex.id === ex2.id))
+
+          if (existing) {
+            let i = allExamples.indexOf(existing);
+            existing[exampleType] = content;
+            allExamples[i] = existing;
+          } else {
+            exampleObject[exampleType] = content;
+            allExamples.push(exampleObject);
+          }
+        }
+      });
+
+      let apiExamples = {
+        api: apiName
+      };
+      apiExamples[dir] = allExamples;
+      examplesArray.push(apiExamples);
+    }
+  });
+});
+
+fs.writeFileSync(fileOut, JSON.stringify(examplesArray, null, 2), "utf-8");
+console.info("JSON generated in: %dms", hrend[1] / 1000000);

@@ -1,9 +1,11 @@
 {{- define "main" -}}
   <div class="maxw48r w100p m-auto mvl phl">
     <div class="mbm">
-      <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+      <nav>
+        <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+      </nav>
     </div>
-    <main>
+    <main id="main">
       <article>
         <header class="mbl">
           <h1 class="dev-blog__heading">
@@ -11,13 +13,15 @@
           </h1>
           {{ partial "blog-meta.html" . }}
         </header>
-        <div class="mbxl">
+        <div class="dev-blog__content mbxl">
           {{ .Content }}
         </div>
       </article>
     </main>
     <div class="mbm">
-      <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+      <nav>
+        <a href="{{ "/blog/" | relURL }}">&larr; Back to blog</a>
+      </nav>
     </div>
   </div>
 {{- end -}}

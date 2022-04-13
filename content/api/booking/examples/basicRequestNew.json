@@ -39,13 +39,9 @@
         "pickupPoint": null
       },
       "product": {
-        "id": "PA_DOREN",
-        "customerNumber": "***********",
+        "id": "5600",
+        "customerNumber": "5",
         "additionalServices": [
-          {
-            "id": "DANGEROUS_GOODS",
-            "unNumber": "ABC"
-          },
           {
             "id": "EVARSLING",
             "email": "recipient@recipient.com",

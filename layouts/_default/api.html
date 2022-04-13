@@ -11,7 +11,7 @@
   {{- partial "drawmenu.html" . -}}
   <div class="dev-docs__page">
     {{- if (eq $notAnApi true) -}}
-      <main class="dev-docscontent w100p {{ $maxwidth }}">
+      <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
         <article>
           <h1>
             {{- .Title -}}
@@ -36,14 +36,167 @@
             <section class="dev-docscontent__section">
               {{ template "_internal/disqus.html" $ }}
             </section>
-          {{ end }}
+          {{- end -}}
           </article>
         </main>
+      {{- else if and (isset $.Params "oas") (or (eq (getenv "HUGO_ENV") "dev") (eq .Title "Address API" )) -}}
+        <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
+          <article>
+            <h1>{{ .Title }}</h1>
+            <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
+              {{- with $.Params.important -}}
+                <div class="dev-docscontent__side">
+                  {{- range . -}}
+                    <div class="message--{{ .type }} pal mbs">
+                      {{- with .title -}}
+                        <strong class="db mbxs">{{ . }}</strong>
+                      {{- end -}}
+                      {{ .message | markdownify }}
+                    </div>
+                  {{- end -}}
+                </div>
+              {{- end -}}
+              <div class="dev-docscontent__main maxw64r">
+                {{- with $.Params.introduction -}}
+                  {{- if in (string .) "\n\n" -}}
+                  <div class="text-heading fw600">
+                    {{- . | markdownify -}}
+                  </div>
+                  {{- else -}}
+                    <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
+                  {{- end -}}
+                {{- end -}}
+                {{- with $.Params.information -}}
+                  <div class="dev-docscontent__info mvl">
+                    {{- range . -}}
+                      <details class="bg-green1 rad-a2px mbxs">
+                        {{- with .title }}
+                          <summary class="pas plm" aria-label="{{.}} details dropdown">
+                            {{- . -}}
+                          </summary>
+                        {{- end -}}
+                        {{- if in (string .content) "\n\n" -}}
+                          {{- .content | markdownify -}}
+                        {{- else -}}
+                          <p>{{ .content | markdownify }}</p>
+                        {{- end -}}
+                      </details>
+                    {{- end -}}
+                  </div>
+                {{- end -}}
+                {{- range $.Params.documentation -}}
+                  {{- with .title }}
+                    <h2 class="dev-anchored" id="{{ . | urlize }}">
+                      {{- . -}}
+                    </h2>
+                  {{- end -}}
+                  {{- if in (string .content) "\n\n" -}}
+                    {{- .content | markdownify -}}
+                  {{- else -}}
+                    <p>{{ .content | markdownify }}</p>
+                  {{- end -}}
+                {{- end -}}
+              </div>
+            </section>
+
+            {{- $oasData := getJSON $.Params.oas -}}
+            {{- partial "api/oas/endpoints.html" $oasData -}}
+            
+            <section class="dev-docscontent__section oas-endpoints maxw96r">
+              {{- with $oasData -}}
+                {{- $components := .components -}}
+                {{- range $path, $_ := .paths -}}
+                  {{- range $type, $_ := . -}}
+                    {{- $endpointId := .summary | anchorize -}}
+                    <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
+                    <div class="flex flex-wrap mbxl pbxl mb-border bb gapm">
+                      <div class="param-response-area">
+                        <div class="flex align-ic mbm mts">
+                          {{- partial "api/oas/endpoint-type" (dict "type" $type) -}}
+                          <span class="flex-auto">
+                            <pre class="flex align-ic pas mb0 wrap-text">
+                              <span>{{ $path }}</span>
+                            </pre>
+                          </span>
+                        </div>
+                        <p class="mbl text-heading">{{ .description }}</p>
+
+                        {{- partial "api/oas/request-params.html" (dict "parameters" .parameters) -}}
+
+                        <h3 class="mbm">Responses</h3>
+                        {{- range $response, $_ := .responses -}}
+                          {{- $responseColor := "response" -}}
+                          {{- if and (ge $response 200) (lt $response 300) -}}
+                            {{- $responseColor = "response success-code" -}}
+                          {{- else if ge $response 300 -}}
+                            {{- $responseColor = "response error-code" -}}
+                          {{- end -}}
+
+                          {{- $description := .description -}}
+                          {{- with .content -}}
+                          <details class="mbs">
+                            <summary class="{{ $responseColor }} pas" aria-label="Response {{$response}} {{$description}} details dropdown"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
+                          
+                            <div class="bg-gray1 pam">
+                              <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Response schema:</label>
+                              <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select">
+                                {{- $selected := "selected" -}}
+                                {{- range $applicationType, $_ := . -}}
+                                  <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                    {{ $applicationType }}
+                                  </option>
+                                  {{$selected = ""}}
+                                {{- end -}}
+                              </select>
+
+                              {{- range $application, $_ := . -}}
+                                <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                                {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
+                                {{- range $key, $_ := .schema -}}
+                                  {{- if reflect.IsMap . -}}
+                                    {{- range . -}}
+                                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
+                                    {{- end -}}
+                                  {{- else if eq $key "$ref" -}}
+                                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
+                                  {{- end -}}
+                                {{- end -}}
+                                </dl>
+                              {{- end -}}
+                              </div>
+                          </details>
+                          {{- else -}}
+                            <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
+                          {{- end -}}
+                        {{- end -}}
+                      </div>
+                      <div class="example-area">
+                        {{- if .requestBody -}}
+                          {{- partial "api/oas/requestexample.html" (dict "requestBody" .requestBody "endpointId" $endpointId) -}}
+                        {{- end -}}
+                        {{- if $components.examples -}}
+                          {{- partial "api/oas/responseexample-components.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                        {{- else -}}
+                          {{- partial "api/oas/responseexample.html" (dict "responses" .responses "endpointId" $endpointId) -}}
+                        {{- end -}}
+                      </div>
+                    </div>
+                    {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            </section>
+            {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+              <section id="api-support" class="dev-docscontent__section maxw64r">
+                {{- template "_internal/disqus.html" $ -}}
+              </section>
+            {{- end -}}
+          </article>
+        </main>
+        <script async src='{{ "/js/api.js" | relURL }}'></script>
       {{- else -}}
       {{- partial "api/docs.html" . -}}
     {{- end -}}
-    {{ partial "footer.html" . }}
+    {{- partial "footer.html" . -}}
     <div class="dev-obfuscator" data-drawer data-drawer-event></div>
   </div>
-
 {{- end -}}

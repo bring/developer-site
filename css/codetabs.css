@@ -40,11 +40,12 @@ ul.dev-codetabs {
   cursor: default;
 }
 
-.dev-codetabs__link {
+a.dev-codetabs__link  {
   display: flex;
   padding: 0.5rem 1rem 0.3rem;
   color: var(--gray-26);
   flex-flow: column nowrap;
+  text-decoration: none;
 }
 
 .dev-codetabs__content {

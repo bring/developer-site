@@ -1,0 +1,16 @@
+{
+  "shipments": [
+    {
+      "apiVersion": "2",
+      "consignmentSet": [
+        {
+          "error": {
+            "system": "TooBusyPakker_TooBusyPakker",
+            "code": 503,
+            "message": "Server too busy/ Temporarily blocked due to too many invalid requests"
+          }
+        }
+      ]
+    }
+  ]
+}

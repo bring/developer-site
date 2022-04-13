@@ -1,141 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
 <CreateShipmentRequest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://api.bring.com/CreateShipment">
-	<RequestVersion xmlns="">1</RequestVersion>
-	<RequestDate xmlns="">2018-11-21T10:35:16.2573224+01:00</RequestDate>
-	<Shipment updateIndicator="Original" shipmentType="Instruction" xmlns="">
-		<ShipmentHeaders shipmentId="73500012345678911">
-			<SendersReference>CUSTOMERS REFERENCE</SendersReference>
-			<NumberOfPackages>2</NumberOfPackages>
-			<AdditionalReference referenceType="TRANSPORT_DOCUMENT_NUMBER">
-				<ReferenceValue>4440/0189981/WEJ</ReferenceValue>
-			</AdditionalReference>
-			<AdditionalReference referenceType="PROJECT_NUMBER">
-				<ReferenceValue>44057673</ReferenceValue>
-			</AdditionalReference>
-			<FreeText usageCode="PICKUP_INSTRUCTIONS">
-				<Text>My instructions for pickup</Text>
-			</FreeText>
-			<FreeText usageCode="CARRIER_INSTRUCTIONS">
-				<Text sequence="0">31x20x3 7. etg. Skal hentes på resepsjon </Text>
-			</FreeText>
-			<FreeText usageCode="DELIVERY_INSTRUCTIONS">
-				<Text sequence="0">Skal leveres til resepsjon</Text>
-			</FreeText>
-			<GrossWeight unitCode="KGM">112</GrossWeight>
-			<GrossVolume unitCode="MTQ">1.86</GrossVolume>
-			<LoadingMetres>0</LoadingMetres>
-			<PalletFootPrints>0</PalletFootPrints>
-			<HazardPoints>0</HazardPoints>
-		</ShipmentHeaders>
-		<DateAndTimes subClass="PickupEarliest">
-			<DateTime>2018-11-21T14:35:16.2573224+01:00</DateTime>
-		</DateAndTimes>
-		<DateAndTimes subClass="DeliveryEarliest">
-			<DateTime>2018-11-21T18:35:16.2573224+01:00</DateTime>
-		</DateAndTimes>
-		<DateAndTimes subClass="DeliveryLatest">
-			<DateTime>2018-11-21T20:35:16.2573224+01:00</DateTime>
-		</DateAndTimes>
-		<DateAndTimes subClass="DocumentDate">
-			<DateTime>2018-11-21T10:35:16.2573224+01:00</DateTime>
-		</DateAndTimes>
-		<Sender partyId="00096882527">
-			<Name>Sender name</Name>
-			<Address>
-				<AddressLine>MyStreet 123</AddressLine>
-				<PostalCode>5122</PostalCode>
-				<City>My City</City>
-				<CountryCode>NO</CountryCode>
-			</Address>
-			<MobilePhone>12345678</MobilePhone>
-			<Email>Sender@Sender.com</Email>
-		</Sender>
-		<Receiver>
-			<Name>Receiver name</Name>
-			<Address>
-				<AddressLine>MyStreet 123</AddressLine>
-				<PostalCode>5122</PostalCode>
-				<City>Other City</City>
-				<CountryCode>NO</CountryCode>
-			</Address>
-			<MobilePhone>87654321</MobilePhone>
-			<Email>Receiver@Receiver.com</Email>
-		</Receiver>
-		<AdditionalParty subClass="TransportCompany" partyId="BEX" subPartyId="GLW" />
-		<ProductAndService>
-			<ProductCode>COURIER_1H</ProductCode>
-			<AdditionalService>
-				<AdditionalServiceCode>EVARSLING</AdditionalServiceCode>
-			</AdditionalService>
-		</ProductAndService>
-		<DeliveryTerms termsType="Incoterms">
-			<ConditionCode>12</ConditionCode>
-			<Location>
-				<City>Bergen</City>
-				<CountryCode>NO</CountryCode>
-			</Location>
-		</DeliveryTerms>
-		<CashOnDelivery codType="12" codeListIdentifier="12" codeListAgencyIdentifier="agencyIdent" name="Navn">
-			<TransactionIdentifier identifierType="SS" accountType="Unleaded">12444422</TransactionIdentifier>
-			<Amount currencyCode="NOK" />
-			<ControlDigit>1233</ControlDigit>
-			<DocumentId>12223</DocumentId>
-			<MonetaryAccount>
-				<AccountNumber accountType="Bank" channel="Magic">12345.01.123654</AccountNumber>
-				<SwiftCode>DNBNOAK-123332</SwiftCode>
-				<BankName>DNB</BankName>
-				<AccountHolderName>Name Nameson</AccountHolderName>
-			</MonetaryAccount>
-		</CashOnDelivery>
-		<GoodsItem>
-			<PackageTypeCode>code</PackageTypeCode>
-			<GoodsDescription>Socks</GoodsDescription>
-			<Temperature>
-				<Transport unitCode="CEL" minimum="0" maximum="5">2</Transport>
-				<Storage unitCode="CEL" minimum="0" maximum="5">2</Storage>
-			</Temperature>
-			<Package packageId="373500123456789012">
-				<GrossWeight unitCode="KGM">1</GrossWeight>
-				<GrossVolume unitCode="DMQ">22</GrossVolume>
-				<Dimensions>
-					<Height unitCode="MTR">22</Height>
-					<Length unitCode="MTR">22</Length>
-					<Width unitCode="MTR">22</Width>
-				</Dimensions>
-				<Insurance>
-					<InsuranceValue currencyCode="NOK">200000</InsuranceValue>
-					<GoodsDescription>Gullbarre</GoodsDescription>
-					<Email>insurance@vesta.no</Email>
-				</Insurance>
-			</Package>
-			<Package packageId="37350012345678929">
-				<GrossWeight unitCode="KGM">1</GrossWeight>
-				<GrossVolume unitCode="DMQ">22</GrossVolume>
-				<Dimensions>
-					<Height unitCode="MTR">22</Height>
-					<Length unitCode="MTR">22</Length>
-					<Width unitCode="MTR">22</Width>
-				</Dimensions>
-				<Insurance>
-					<InsuranceValue currencyCode="NOK">200000</InsuranceValue>
-					<GoodsDescription>Gullbarre</GoodsDescription>
-					<Email>insurance@vesta.no</Email>
-				</Insurance>
-			</Package>
-			<DangerousGoods regulationCode="ADR">
-				<UNDGInformation>
-					<HazardIdentifier>1314</HazardIdentifier>
-				</UNDGInformation>
-				<HazardClass>4.1</HazardClass>
-				<AdditionalHazard>2.3(8)</AdditionalHazard>
-				<PackingGroup>3</PackingGroup>
-				<Measures subClass="NetHazardWeight">
-					<Measure unitCode="KGM">2.500</Measure>
-				</Measures>
-				<TechnicalName>KALSIUMRESINAT, SINTRET</TechnicalName>
-				<Restrictions restrictionType="Tunnel">3(E)</Restrictions>
-				<HazardPoints>10</HazardPoints>
-			</DangerousGoods>
-		</GoodsItem>
-	</Shipment>
+  <RequestVersion xmlns="">1</RequestVersion>
+  <RequestDate xmlns="">2021-04-20T10:55:07</RequestDate>
+  <Shipment updateIndicator="Original" shipmentType="Instruction" xmlns="">
+    <ShipmentHeaders shipmentId="70722150702977990">
+      <SendersReference>1878959</SendersReference>
+      <NumberOfPackages>1</NumberOfPackages>
+      <GrossWeight unitCode="KGM">1</GrossWeight>
+      <LoadingMetres>0</LoadingMetres>
+      <PalletFootPrints>0</PalletFootPrints>
+      <HazardPoints>0</HazardPoints>
+    </ShipmentHeaders>
+    <DateAndTimes subClass="DocumentDate">
+      <DateTime>2022-04-20T10:55:07</DateTime>
+    </DateAndTimes>
+    <DateAndTimes subClass="DeliveryEarliest">
+      <DateTime>2022-04-20T16:00:00</DateTime>
+    </DateAndTimes>
+    <DateAndTimes subClass="DeliveryLatest">
+      <DateTime>2022-04-20T21:00:00</DateTime>
+    </DateAndTimes>
+    <DateAndTimes subClass="PickupEarliest">
+      <DateTime>2022-04-20T14:00:00</DateTime>
+    </DateAndTimes>
+    <DateAndTimes subClass="PickupLatest">
+      <DateTime>2022-04-20T18:00:00</DateTime>
+    </DateAndTimes>
+    <Sender partyId="28371">
+      <Name>Mester Grønn Oasen Senter Bergen</Name>
+      <Address>
+        <AddressLine>Folke Bernadottes vei 52</AddressLine>
+        <PostalCode>5147</PostalCode>
+        <City>FYLLINGSDALEN</City>
+        <CountryCode>NO</CountryCode>
+      </Address>
+      <Phone>+4732229724</Phone>
+    </Sender>
+    <Receiver>
+      <Name>Trine Elisabeth Rud Riera</Name>
+      <Address>
+        <AddressLine>Ture Nermans vei 107</AddressLine>
+        <PostalCode>5143</PostalCode>
+        <City>FYLLINGSDALEN</City>
+        <CountryCode>NO</CountryCode>
+      </Address>
+      <MobilePhone>98071041</MobilePhone>
+    </Receiver>
+    <AdditionalParty subClass="GoodsReturnParty">
+      <Name>Ola Nordmann</Name>
+      <Address>
+        <PostalCode>1065</PostalCode>
+        <City>OSLO</City>
+        <CountryCode>NO</CountryCode>
+        <AddressLine>Storgatan 1</AddressLine>
+      </Address>
+      <MobilePhone>4712345678</MobilePhone>
+      <Email>ola.nordmann@someemail.com</Email>
+      <ContactName>Ola Nordmann</ContactName>
+    </AdditionalParty>
+    <AdditionalParty subClass="TransportCompany" partyId="BEX" subPartyId="GLW" />
+    <ProductAndService>
+      <ProductCode>3270</ProductCode>
+    </ProductAndService>
+    <GoodsItem>
+      <PackageTypeCode>PK</PackageTypeCode>
+      <GoodsDescription>Kittens in a sack</GoodsDescription>
+      <Package packageId="370722150758796447">
+        <GrossWeight unitCode="KGM">1</GrossWeight>
+      </Package>
+    </GoodsItem>
+  </Shipment>
 </CreateShipmentRequest>

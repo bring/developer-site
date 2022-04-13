@@ -2,7 +2,6 @@
 title: Book shipments
 layout: api
 notanapi: true
-hidden: true
 ---
 
 <section class="dev-docscontent__section">
@@ -30,7 +29,7 @@ hidden: true
         </td>
         <td><code>boolean</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> It is true
+          <span class="mb-badge mb-badge--red mrxs">Required</span> It is true
           for test orders.
         </td>
       </tr>
@@ -40,7 +39,7 @@ hidden: true
         </td>
         <td><code>integer</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Currently,
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Currently,
           it is 1
         </td>
       </tr>
@@ -50,7 +49,7 @@ hidden: true
         </td>
         <td><code>array</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> A list of
+          <span class="mb-badge mb-badge--red mrxs">Required</span> A list of
           consignment objects
         </td>
       </tr>
@@ -59,7 +58,7 @@ hidden: true
         <td colspan="5"><code>shippingDateTime</code></td>
         <td><code>dateTime</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>
+          <span class="mb-badge mb-badge--red mrxs">Required</span>
           The date and time when an order is ready to be transported. The label
           generated against a booking will be valid for 52 weeks when Bring
           receives the request for an order.
@@ -73,7 +72,7 @@ hidden: true
         <td colspan="5"><code>customerSpecifiedDeliveryDateTime</code></td>
         <td><code>dateTime</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           The date and time selected for preferred delivery by the customer.
           Note that for some services, the time part of this field will be
           ignored. This field is applicable for ‘PA_DOREN’ ‘OIL_EXPRESS’.
@@ -84,7 +83,7 @@ hidden: true
         <td colspan="5"><code>parties</code></td>
         <td><code>object</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>
+          <span class="mb-badge mb-badge--red mrxs">Required</span>
           List of parties: sender, recipient, returnTo, pickupPoint and importer
         </td>
       </tr>
@@ -94,7 +93,7 @@ hidden: true
         <td colspan="4"><code>name</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Specify
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Specify
           name of sender or receiver<br />Example:<code> Ola Nordmann</code>
         </td>
       </tr>
@@ -104,7 +103,7 @@ hidden: true
         <td colspan="4"><code>addressLine</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> Specify
+          <span class="mb-badge mb-badge--red mrxs">Required</span> Specify
           address. This parameter can be maximum 35 character long.<br />Example:
           <code>Testsvingen 12</code>
         </td>
@@ -115,7 +114,7 @@ hidden: true
         <td colspan="4"><code>addressLine2</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify address line 2. This parameter can be 35 character long.
         </td>
       </tr>
@@ -125,7 +124,7 @@ hidden: true
         <td colspan="4"><code>postalCode</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>
+          <span class="mb-badge mb-badge--red mrxs">Required</span>
           Specify the postal code. This parameter can be maximum 35 character
           long.
         </td>
@@ -136,7 +135,7 @@ hidden: true
         <td colspan="4"><code>city</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>
+          <span class="mb-badge mb-badge--red mrxs">Required</span>
           Specify the city. This parameter can be maximum 35 character long.
         </td>
       </tr>
@@ -146,7 +145,7 @@ hidden: true
         <td colspan="4"><code>countryCode</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>
+          <span class="mb-badge mb-badge--red mrxs">Required</span>
           Specify the country code. This parameter must be 2 characters long.
         </td>
       </tr>
@@ -156,7 +155,7 @@ hidden: true
         <td colspan="4"><code>reference</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify shipper or consignee reference. This parameter can be maximum
           35 character long.
         </td>
@@ -167,7 +166,7 @@ hidden: true
         <td colspan="4"><code>additionalAddressInfo</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Pickup instruction and delivery instruction. This parameter can be
           maximum 35 character long.
         </td>
@@ -178,7 +177,7 @@ hidden: true
         <td colspan="4"><code>vatNumber</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify organisation number. This parameter can be maximum 30
           character long.
         </td>
@@ -189,7 +188,7 @@ hidden: true
         <td colspan="4"><code>contact</code></td>
         <td><code>object</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Specify contact
+          <span class="mb-badge mrxs">Optional</span> Specify contact
           information
         </td>
       </tr>
@@ -200,7 +199,7 @@ hidden: true
         <td colspan="3"><code>name</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Name of sender or
+          <span class="mb-badge mrxs">Optional</span> Name of sender or
           receiver
         </td>
       </tr>
@@ -211,7 +210,7 @@ hidden: true
         <td colspan="3"><code>phoneNumber</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Specify phone number.
+          <span class="mb-badge mrxs">Optional</span> Specify phone number.
           <br />Note: Sender Phone number is a mandatory field for all outgoing
           services. Exceptions to this rule are 3584, 3570 and all the return
           services in Mybring.
@@ -224,7 +223,7 @@ hidden: true
         <td colspan="3"><code>email</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Specify e-mail address if
+          <span class="mb-badge mrxs">Optional</span> Specify e-mail address if
           you want booking confirmation e-mail to be sent. Can be applied to
           sender’s e-mail (outgoing services) and sender’s e-mail/recipient’s
           e-mail (return services). This parameter can be maximum 35 character
@@ -238,7 +237,7 @@ hidden: true
         <td colspan="4"><code>id</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs"
+          <span class="mb-badge mb-badge--red mrxs"
             >Required for Pickup point</span
           >
           Pickup point id. Use
@@ -256,7 +255,7 @@ hidden: true
         <td colspan="4"><code>countryCode</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs"
+          <span class="mb-badge mb-badge--red mrxs"
             >Required for Pickup point</span
           >
           Specify the country code. This parameter must be 2 characters long.<br />
@@ -268,7 +267,7 @@ hidden: true
         <td colspan="5"><code>product</code></td>
         <td><code>object</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span> List of
+          <span class="mb-badge mb-badge--red mrxs">Required</span> List of
           service related information
         </td>
       </tr>
@@ -278,7 +277,7 @@ hidden: true
         <td colspan="4"><code>id</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>
+          <span class="mb-badge mb-badge--red mrxs">Required</span>
           Product id. You can list available products with the /customers
           endpoint.
           <br />
@@ -291,7 +290,7 @@ hidden: true
         <td colspan="4"><code>customerNumber</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param dev-param--req mrxs">Required</span>Specify API
+          <span class="mb-badge mb-badge--red mrxs">Required</span>Specify API
           customer number. This parameter can be maximum 35 character long.
         </td>
       </tr>
@@ -300,7 +299,7 @@ hidden: true
         <td colspan="5"><code>correlationId</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify something to correlate packages which belong to same order
         </td>
       </tr>
@@ -309,7 +308,7 @@ hidden: true
         <td colspan="5"><code>packages</code></td>
         <td><code>array</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> List of package specific
+          <span class="mb-badge mrxs">Optional</span> List of package specific
           information.
         </td>
       </tr>
@@ -319,7 +318,7 @@ hidden: true
         <td colspan="4"><code>weightInKg</code></td>
         <td><code>double</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> Specify weight in
+          <span class="mb-badge mrxs">Optional</span> Specify weight in
           kilograms<br />
           Example: <code>15.2</code>
         </td>
@@ -330,7 +329,7 @@ hidden: true
         <td colspan="4"><code>volumeInDm3</code></td>
         <td><code>decimal</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify volume in cubic decimeter. This is optional when dimension is
           specified in the request for cargo.
         </td>
@@ -341,7 +340,7 @@ hidden: true
         <td colspan="4"><code>dimensions</code></td>
         <td><code>object</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> List of package dimension
+          <span class="mb-badge mrxs">Optional</span> List of package dimension
           properties
         </td>
       </tr>
@@ -352,7 +351,7 @@ hidden: true
         <td colspan="3"><code>heightInCm</code></td>
         <td><code>integer</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify height in cm. Dimension is optional when volumeInDm3 is
           specified in the request for cargo.
           <br />
@@ -366,7 +365,7 @@ hidden: true
         <td colspan="3"><code>widthInCm</code></td>
         <td><code>integer</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify width in cm. Dimension is optional when volumeInDm3 is
           specified in the request for cargo.
           <br />
@@ -380,7 +379,7 @@ hidden: true
         <td colspan="3"><code>lengthInCm</code></td>
         <td><code>integer</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify length in cm. Dimension is optional when volumeInDm3 is
           specified in the request for cargo.
           <br />
@@ -393,7 +392,7 @@ hidden: true
         <td colspan="4"><code>generateQrCodes</code></td>
         <td><code>boolean</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           Specify whether QR codes is wanted in addition to the regular label
           for certain services. See the
           <a href="https://developer.bring.com/api/booking/#qr-codes"
@@ -408,7 +407,7 @@ hidden: true
         <td colspan="4"><code>additionalServices</code></td>
         <td><code>array</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span> List of value added
+          <span class="mb-badge mrxs">Optional</span> List of value added
           services
         </td>
       </tr>
@@ -419,7 +418,7 @@ hidden: true
         <td colspan="3"><code>id</code></td>
         <td><code>string</code></td>
         <td>
-          <span class="dev-param mrxs">Optional</span>
+          <span class="mb-badge mrxs">Optional</span>
           The ID of the
           <a href="/pages/viewpage.action?pageId=4948579"
             >value added service</a

@@ -1,0 +1,106 @@
+{{- $parameters := .parameters -}}
+{{- $name := "" -}}
+{{- $paramArr := slice -}}
+{{- range .parameters -}}
+  {{- $paramArr = $paramArr | append .in -}}
+{{- end -}}
+{{- $paramArr = uniq $paramArr -}}
+
+<h3 class="mbm">Request</h3>
+{{- range $paramArr -}}
+  {{- $paramType := . -}}
+  <h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ $paramType }}</span> parameters</h4>
+  <dl class="desc-list mbl">
+  {{ range $parameters }}
+    {{ if eq .in $paramType }}
+      {{ $example := "" }}
+      {{ $examples := slice }}
+      {{ $enum := slice }}
+      {{ $type := "any" }}
+      {{ $name := .name }}
+
+      {{ range $key, $value := .}}
+      {{ if eq $key "schema" }}
+        {{ with .type }}
+          {{ $type = . }}
+        {{ end }}
+        {{ with .enum }}
+          {{ $enum = . }}
+        {{ end }}
+      {{ else if eq $key "example" }}
+        {{ $example = delimit (slice $name $value) "=" }}
+      {{ end }}
+    {{ end }}
+
+      {{- range $key, $value := . -}}
+        {{- if eq $key "name" -}}
+          {{- $name = $value -}}
+        {{- else if eq $key "schema" -}}
+          {{- with .type -}}
+            {{- $type = . -}}
+          {{- end -}}
+          {{- with .enum -}}
+            {{- $enum = . -}}
+          {{- end -}}
+        {{- else if eq $key "example" -}}
+          {{- if eq $paramType "path" -}}
+            {{- $example = delimit (slice "" $value) "" -}}
+          {{- else -}}
+            {{- $example = delimit (slice $name $value) "=" -}}
+          {{- end -}}
+        {{- else if eq $key "examples" -}}
+          {{- $examples = $value -}}
+        {{- end -}}
+      {{- end -}}
+
+      <div class="flex flex-wrap mb-border bb bw1 pvs">
+        <dt class="pls">
+          <code>{{- replace .name "MyBring" "Mybring" -}}</code>
+          {{- if eq .required true -}}
+            <br><span class="mb-badge mb-badge--red">Required</span>
+          {{- end -}}
+        </dt>
+        <dd class="pls">
+          {{- .description -}}
+          <div class="text-note gray">
+            {{- $type -}}
+          </div>
+
+          {{- if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) -}}
+              <div class="text-note">
+                {{- if gt (len $enum) 1 -}}
+                  Enum:
+                {{- else -}}
+                  Value:
+                {{- end -}}
+              </div>
+              {{- range $enum -}}
+                <code class="mbxs db maxwmaxc">{{.}}</code>
+              {{- end -}}
+          {{- end -}}
+
+          {{- if gt (len $example) 0 -}}
+              <div class="text-note">Example:</div>
+              <code class="mbxs db maxwmaxc">{{$example}}</code>
+          {{- end -}}
+
+          {{- if gt (len $examples) 0 -}}
+            <div class="text-note">Examples:</div>
+            {{- range $key, $value := $examples -}}
+              <p class="text-note fwb mb0">{{$key}}</p>
+              <p class="text-note mb0">{{$value.description}}</p>
+              <code class="mbxs db maxwmaxc">
+                {{- if eq $paramType "path" -}}
+                  {{- delimit (slice "" $value.value) "" -}}
+                {{- else -}}
+                  {{- delimit (slice $name $value.value) "=" -}}
+                {{- end -}}
+              </code>
+            {{- end -}}
+          {{- end -}}
+        </dd>
+      </div>
+    {{- end -}}
+  {{- end -}}
+  </dl>
+{{- end -}}

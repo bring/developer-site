@@ -2,7 +2,9 @@
 node_modules/
 _site
 api.json
+examples.json
 static/css
+.hugo_build.lock
 .idea
-.jekyll-metadata
-.sass-cache/
+static/js/servicefiltering.js
+static/js/api.js

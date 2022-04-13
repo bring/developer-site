@@ -5,17 +5,16 @@
 @import "./siteheader.css";
 @import "./footer.css";
 
-
 /* Components */
-@import "./link.css";
-@import "./codetabs.css";
+@import "./frontpage.css";
 @import "./code.css";
 @import "./table.css";
 @import "./syntax.css";
 @import "./sidemenu.css";
-@import "./intro.css";
 @import "./documentation.css";
+@import "./codetabs.css";
 @import "./drawmenu.css";
 @import "./collapsible.css";
 @import "./blog.css";
 @import "./guide.css";
+@import "./services.css";

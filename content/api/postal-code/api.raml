@@ -3,62 +3,6 @@
 title: Postal Code API
 baseUri: https://api.bring.com/pickuppoint/api
 
-documentation:
-- title: Introduction
-  content: |
-      With the Postal Code API you can
-
-      * validate a postal code
-      * look up the city of a postal code
-      * get the postal code type, e.g. normal or P.O. Box (for Norway)
-
-      The API has two interfaces: XML and JSON.
-
-      It is NOT possible to get data in batch or get list of valid postal codes for a given country at a regular interval.
-
-- title: Authentication
-  content: |
-      To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
-
-
-- title: Supported Countries
-  content: |
-      The following countries are supported:
-
-      * NO - Norway
-      * DK - Denmark
-      * SE - Sweden
-      * FI - Finland
-      * NL - Netherlands
-      * DE - Germany
-      * US - United States
-      * BE - Belgium
-      * FO - Faroe Islands
-      * GL - Greenland
-
-      The service uses [GeoNames](http://www.geonames.org/) as source for most countries except Norway.
-
-      For unsupported countries (countries not in the list above), all postal codes will be marked as valid with no city name returned. In these cases it is recommended to prompt the user to input the city name themselves.
-
-      For countries that have multiple results (cities) for a given postal code, a list of cities will be returned. See example below.
-
-      ### Postal Code type for Norway
-
-      For Norway, you also get information about the postal code type. This is set in the `postalCodeType` in the response:
-
-      | `postalCodeType` | Description |
-      |:-----------------|:------------|
-      | NORMAL | Normal postal code suitable for delivering packages. Contains street addresses or mix of street and other postal code types. |
-      | POBOX | Postal code contains only P.O. Box addresses. Only certain Bring services can be delivered to these addresses (see the [Shipping Guide](/api/shipping-guide_2/)). |
-      | SPECIALCUSTOMER | Special, e.g special return postal codes for selected customers. |
-      | SPECIALNOSTREET | Special, e.g special postal codes for customers with old "serviceboks". |
-      | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
-
-- title: Support CORS
-  content: |
-
-      CORS headers will be added to response only for authenticated requests.
-
 /postalCode/{countryCode}/getCityAndType/{postalCode}{mediaTypeExtension}:
   displayName: Lookup Postal Code
 
@@ -96,3 +40,105 @@ documentation:
               successful:
                 displayName: Successful
                 value: !include examples/response.xml
+
+/postalCode/{countryCode}/getCitiesAndTypes/{postalCode}{mediaTypeExtension}:
+  displayName: Lookup Postal Code having Multiple Cities
+
+  uriParameters:
+    postalCode:
+      displayName: Postal code
+      type: string
+      required: true
+      example: '01156'
+    countryCode:
+      displayName: Country
+      required: true
+      type: string
+      default: "NO"
+      example: DE
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: Lookup Postal Code having Multiple Cities
+    queryParameters:
+
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForMultipleCities.json
+          application/xml:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForMultipleCities.xml
+
+/postalCode/{countryCode}/getAllValidPostalCodes{mediaTypeExtension}:
+  displayName: Lookup all postal codes for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
+
+  uriParameters:
+    countryCode:
+      displayName: Country
+      required: true
+      type: string
+      default: "NO"
+      example: DE
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: Lookup all postal codes for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
+    queryParameters:
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForPostalCodes.json
+          application/xml:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForPostalCodes.xml
+
+/postalCode/{countryCode}/allValidPostalCodesDetails{mediaTypeExtension}:
+  displayName: Lookup all postal codes with details for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
+
+  uriParameters:
+    countryCode:
+      displayName: Country
+      required: true
+      type: string
+      default: "NO"
+      example: DE
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to get application/json or .xml to get application/xml.
+  get:
+    description: Lookup all postal codes with details for Norway, Sweden, Denmark, Finland or Svalbard and Jan Mayen
+    queryParameters:
+
+    responses:
+      200:
+        displayName: Successful response
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForPostalCodesDetails.json
+          application/xml:
+            examples:
+              successful:
+                displayName: Successful
+                value: !include examples/responseForPostalCodesDetails.xml

@@ -72,6 +72,9 @@
                     </ns2:AdditionalService>
                   </ns2:AdditionalServicePrices>
                 </ns2:NetPrice>
+                <ns2:Zones>
+                  <ns2:TotalZoneCount>1</ns2:TotalZoneCount>
+                </ns2:Zones>
               </ns2:Price>
               <ns2:ExpectedDelivery>
                 <ns2:WorkingDays>1</ns2:WorkingDays>

@@ -1,0 +1,36 @@
+.filtercols {
+  columns: auto 13em;
+}
+
+.pv\.75r {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.vas__codes {
+  flex: 1 1 10rem;
+}
+
+.vas__docs {
+  flex: 15 1 30rem;
+}
+
+#vas-cutoff.cutoff-overlay {
+  height: 14rem;
+  padding-top: 6rem;
+}
+
+.btn-link--filter {
+  text-align: left;
+  white-space: normal;
+}
+
+.btn-link--filter svg {
+  fill: var(--gray-80);
+  transition: fill var(--easeout-15);
+}
+
+.btn-link--filter:hover svg,
+.btn-link--filter:focus-visible svg {
+  fill: var(--gray-40);
+}

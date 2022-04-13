@@ -1,0 +1,40 @@
+{{- define "main" -}}
+{{- $maxwidth := "maxw80r" -}}
+{{- if (eq ($.Param "widelayout") true) -}}
+  {{- $maxwidth = "" -}}
+{{- end -}}
+
+<div class="dev-docs__menu" data-drawer data-drawer-event>
+  {{- partial "sidemenu.html" . -}}
+</div>
+{{- partial "drawmenu.html" . -}}
+<div class="dev-docs__page">
+  <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
+    <article>
+      <h1>
+        {{- .Title -}}
+        {{- with .Params.titlesub -}}
+          <span class="db text-title mts">{{ . }}</span>
+        {{- end -}}
+      </h1>
+      {{- range .Params.tables -}}
+        <section class="dev-docscontent__section">
+          <h2 class="dev-anchored mrl" id="{{ .title|anchorize }}" >{{ .title }}</h2>
+          {{- if in .title "Booking" -}}
+            {{- partial "services/booking-sg" (dict "data" (index $.Site.Data .data)) -}}
+          {{- end -}}
+          {{- if in .title "Value" -}}
+            {{- partial "services/vas" (dict "data" (index $.Site.Data .data) "examples" $.Site.Data.examples) -}}
+          {{- end -}}
+          {{- if in .title "Reports" -}}
+            {{- partial "services/reports-invoice" (dict "data" (index $.Site.Data .data)) -}}
+          {{- end -}}
+        </section>
+      {{- end -}}
+    </article>
+  </main>
+  <script async src='{{ "/js/servicefiltering.js" | relURL }}'></script>
+  {{- partial "footer.html" . -}}
+  <div class="dev-obfuscator" data-drawer data-drawer-event></div>
+</div>
+{{- end -}}

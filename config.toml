@@ -37,7 +37,6 @@ ramlBuiltinTypes = [
 ]
 apis = [
   "content/api/booking/api.raml",
-  "content/api/shipping-guide/api.raml",
   "content/api/shipping-guide_2/api.raml",
   "content/api/warehousing/api.raml",
   "content/api/order-management/api.raml",
@@ -50,6 +49,9 @@ apis = [
   "content/api/tracking/api.raml",
   "content/api/pickup-point/api.raml"
 ]
+examples = [
+  "content/api/booking/examples/"
+]
 
 [taxonomies]
 tag = "tags"
@@ -57,7 +59,7 @@ tag = "tags"
 [menu]
 
 [[menu.api]]
-title = "API status"
+title = "API operational status"
 url = "https://status.bring.systems"
 weight = 100
 
@@ -68,6 +70,15 @@ blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 identifier = "checkout"
 title = "Checkout"
 weight = 1
+
+[[menu.apidocs]]
+parent = "checkout"
+title = "Checkout request builder"
+url = "https://www.mybring.com/shipping-guide/integration/checkout"
+weight = 15
+
+[menu.apidocs.params]
+blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 
 [[menu.apidocs]]
 identifier = "book"

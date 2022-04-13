@@ -54,7 +54,7 @@ Inspired by this most excellent idea and their list — we wrote our own.
 * not read everything on slack
 * have your lunch break in the canteen
 * start lunch train slackbots
-* never take the stairs [^1]
+* never take the stairs <sup><a href="#fn1" id="ref1" role="doc-noteref">1</a></sup>
 * prefer to enjoy lunch in solitude
 * share your ideas (out loud! or in writing!)
 * say no if you are busy
@@ -68,4 +68,11 @@ Inspired by this most excellent idea and their list — we wrote our own.
 
 ![](images/itsokayto2.jpg)
 
-[^1]: Except if there is a fire alarm, then please absolutely use the stairs.
+<hr>
+
+<ol class="footnotes" role="doc-endnotes">
+  <li id="fn1" role="doc-endnote">
+    Except if there is a fire alarm, then please absolutely use the stairs. 
+    <a class="footnote-jump btn-link di" href="#ref1" title="Jump back to footnote 1 in the text">&#8617;</a>
+  </li>
+</ol>

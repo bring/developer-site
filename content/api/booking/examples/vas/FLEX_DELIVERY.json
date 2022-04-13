@@ -1,0 +1,70 @@
+{
+    "schemaVersion": 1,
+    "consignments": [
+        {
+            "shippingDateTime": 1447751818783,
+            "parties": {
+                "sender": {
+                    "name": "Ola Nordmann",
+                    "addressLine": "Testsvingen 12",
+                    "addressLine2": null,
+                    "postalCode": "0263",
+                    "city": "OSLO",
+                    "countryCode": "NO",
+                    "reference": "1234",
+                    "additionalAddressInfo": "Hentes på baksiden etter klokken to",
+                    "contact": {
+                        "name": "Trond Nordmann",
+                        "email": "trond@nordmanntest.no",
+                        "phoneNumber": "99999999"
+                    }
+                },
+                "recipient": {
+                    "name": "Tore Mottaker",
+                    "addressLine": "Mottakerveien 14",
+                    "addressLine2": "c/o Tina Mottaker",
+                    "postalCode": "0659",
+                    "city": "OSLO",
+                    "countryCode": "NO",
+                    "reference": "43242",
+                    "additionalAddressInfo": "Bruk ringeklokken",
+                    "contact": {
+                        "name": "Tore mottaker",
+                        "email": "tore@mottakertest.no",
+                        "phoneNumber": "+46700000000"
+                    }
+                },
+                "pickupPoint": null
+            },
+            "product": {
+                "id": "BUSINESS_PARCEL",
+                "customerNumber": "*************",
+                "additionalServices": [
+                  {
+                    "id": "FLEX_DELIVERY",
+                    "message" : "Legg pakken i garasje"
+                  }
+                ],
+                "messageForRecipient": null
+            },
+            "purchaseOrder": null,
+            "correlationId": "INTERNAL-123456",
+            "packages": [
+                {
+                    "weightInKg": 1.1,
+                    "goodsDescription": "Testing equipment",
+                    "dimensions": {
+                        "heightInCm": 13,
+                        "widthInCm": 23,
+                        "lengthInCm": 10
+                    },
+                    "containerId": null,
+                    "packageType": null,
+                    "numberOfItems": null,
+                    "correlationId": "PACKAGE-123"
+                }
+            ]
+        }
+    ],
+    "testIndicator": true
+}
