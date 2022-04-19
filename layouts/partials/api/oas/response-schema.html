@@ -5,6 +5,10 @@
 {{- $nested := .nested -}}
 {{- $required := slice -}}
 {{- $requiredParam := "" -}}
+{{- $parentCount := 1 -}}
+{{- if .parentCount -}}
+  {{- $parentCount = .parentCount -}}
+{{- end -}}
 
 {{- range $components -}}
     {{- $responseSchema := index . $schemaRef -}}
@@ -19,22 +23,24 @@
       {{- if reflect.IsMap . -}}
         {{- $isParent := false -}}
         {{- range $param, $_ := . -}}
-          
           {{- range $required -}}
             {{- if eq . $param -}}
               {{- $requiredParam = . -}}
             {{- end -}}
           {{- end -}}
-
           {{- $typeArrObj := false -}}
           {{- if reflect.IsMap . -}}
             {{- range $k, $v := . -}}
-              {{- if or (eq $v "array") (eq $k "$ref") -}}
+              {{- if or (eq $v "array") (eq $v "object") (eq $k "$ref") -}}
                 {{- $typeArrObj = true -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}
-
+          
+          {{- if or (isset . "items") (isset . "properties") -}}
+            {{- $nested = false -}}
+          {{- end -}}
+          
           {{- if and (eq $nested true) (reflect.IsMap .) -}}
               <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
                 <dt class="pls">
@@ -48,11 +54,11 @@
                 </dd>
 
           {{- else if $typeArrObj -}}
-            {{ $isParent = true }}
+            {{- $isParent = true -}}
             <div class="mbs mb-border bb bw1">
               <div class="flex flex-wrap align-ifs pbs">
                 <dt>
-                  {{- partial "api/oas/param-toggle-btn.html" ( dict "endpointId" $endpointId "param" $param ) -}}
+                  {{- partial "api/oas/param-toggle-btn.html" ( dict "endpointId" $endpointId "param" $param "parentCount" $parentCount ) -}}
                   {{- if eq $param $requiredParam -}}
                     <div class="plm mls">
                     {{- partial "api/oas/required.html" -}}
@@ -82,22 +88,29 @@
           {{- end -}}
 
         {{- if $isParent -}}
-          <dd data-sublevel-id='{{$endpointId}}-{{$param}}' class="schema__sublist mb-border dn">
+          <dd data-sublevel-id="{{$endpointId}}-{{$param}}-{{$parentCount}}" class="schema__sublist mb-border dn">
             {{- if eq $nested false -}}
               <dl class="desc-list mbm pts">
             {{- end -}}
             {{- if reflect.IsMap . -}}
               {{- range $i, $_ := . -}}
                 {{- if reflect.IsMap . -}}
-                  {{- range $j, $_ := . -}}
-                    {{- if eq $j "$ref" -}}
-                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true) -}}
+                  {{- range $k,$v := . -}}
+                    {{- if eq $k "$ref" -}}
+                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true "endpointId" $endpointId "parentCount" $parentCount) -}}
+                    {{- else if reflect.IsMap . -}}
+                      <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
+                        <dt>
+                          <code class="mls">{{- $k -}}</code>
+                        </dt>
+                        <dd class="pls minw0">
+                          {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" false ) -}}
+                        </dd>
+                      </div>
                     {{- end -}}
                   {{- end -}}
-                {{- else -}}
-                  {{- if eq $i "$ref" -}}
-                    {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true) -}}
-                  {{- end -}}
+                {{- else if eq $i "$ref" -}}
+                  {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true "endpointId" $endpointId "parentCount" $parentCount) -}}
                 {{- end -}}
               {{- end -}}
             {{- end -}}
@@ -106,8 +119,8 @@
             {{- end -}}
           </dd>
         </div>
+        {{- $parentCount = add $parentCount 1 -}}
         {{- end -}}
-
         {{- if and (eq $nested true) (reflect.IsMap $_) -}}
           </div>
         {{- end -}}
