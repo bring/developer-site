@@ -107,7 +107,9 @@
             <div class="text-note">Examples:</div>
             {{- range $key, $value := $examples -}}
               <p class="text-note fwb mb0">{{$key}}</p>
-              <p class="text-note mb0">{{$value.description}}</p>
+              {{- if ne $key $value.description -}}
+                <p class="text-note mb0">{{$value.description}}</p>
+              {{- end -}}
               <code class="mbxs db maxwmaxc">
                 {{- if eq $paramType "path" -}}
                   {{- delimit (slice "" $value.value) "" -}}
