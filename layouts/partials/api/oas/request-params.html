@@ -18,6 +18,7 @@
       {{ $enum := slice }}
       {{ $type := "any" }}
       {{ $name := .name }}
+      {{ $default := "" }}
 
       {{ range $key, $value := .}}
       {{ if eq $key "schema" }}
@@ -41,6 +42,9 @@
           {{- end -}}
           {{- with .enum -}}
             {{- $enum = . -}}
+          {{- end -}}
+          {{- with .default -}}
+            {{- $default = . -}}
           {{- end -}}
         {{- else if eq $key "example" -}}
           {{- if eq $paramType "path" -}}
@@ -77,6 +81,11 @@
               {{- range $enum -}}
                 <code class="mbxs db maxwmaxc">{{.}}</code>
               {{- end -}}
+          {{- end -}}
+
+          {{- if gt (len $default) 0 -}}
+              <div class="text-note">Default:</div>
+              <code class="mbxs db maxwmaxc">"{{$default}}"</code>
           {{- end -}}
 
           {{- if gt (len $example) 0 -}}
