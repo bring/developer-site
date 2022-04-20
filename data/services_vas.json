@@ -2612,7 +2612,7 @@
   "orderedViaVasCodes" : false
 }, {
   "vasName" : "Optional delivery day",
-  "description" : "No description available",
+  "description" : "The shipment will be delivered on the date selected by the recipient.  ",
   "shippingGuideCode" : "PREFERRED_DELIVERY_DAY",
   "shippingGuideNpbCode" : "PREFERRED_DELIVERY_DAY",
   "bookingCode" : "PREFERRED_DELIVERY_DAY",
