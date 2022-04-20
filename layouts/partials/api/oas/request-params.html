@@ -19,6 +19,7 @@
       {{ $type := "any" }}
       {{ $name := .name }}
       {{ $default := "" }}
+      {{ $description := "" }}
 
       {{ range $key, $value := .}}
       {{ if eq $key "schema" }}
@@ -27,6 +28,12 @@
         {{ end }}
         {{ with .enum }}
           {{ $enum = . }}
+        {{ end }}
+        {{ with .example }}
+          {{ $example = . }}
+        {{ end }}
+        {{ with .description }}
+          {{ $description = . }}
         {{ end }}
       {{ else if eq $key "example" }}
         {{ $example = delimit (slice $name $value) "=" }}
@@ -66,6 +73,9 @@
         </dt>
         <dd class="pls">
           {{- .description -}}
+          {{- if gt (len $description) 0 -}}
+              <p class="text-note mb0">{{$description}}</p>
+          {{- end -}}
           <div class="text-note gray">
             {{- $type -}}
           </div>
