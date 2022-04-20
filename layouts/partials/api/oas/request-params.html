@@ -18,6 +18,8 @@
       {{ $enum := slice }}
       {{ $type := "any" }}
       {{ $name := .name }}
+      {{ $default := "" }}
+      {{ $description := "" }}
 
       {{ range $key, $value := .}}
       {{ if eq $key "schema" }}
@@ -26,6 +28,12 @@
         {{ end }}
         {{ with .enum }}
           {{ $enum = . }}
+        {{ end }}
+        {{ with .example }}
+          {{ $example = . }}
+        {{ end }}
+        {{ with .description }}
+          {{ $description = . }}
         {{ end }}
       {{ else if eq $key "example" }}
         {{ $example = delimit (slice $name $value) "=" }}
@@ -41,6 +49,9 @@
           {{- end -}}
           {{- with .enum -}}
             {{- $enum = . -}}
+          {{- end -}}
+          {{- with .default -}}
+            {{- $default = . -}}
           {{- end -}}
         {{- else if eq $key "example" -}}
           {{- if eq $paramType "path" -}}
@@ -62,6 +73,9 @@
         </dt>
         <dd class="pls">
           {{- .description -}}
+          {{- if gt (len $description) 0 -}}
+              <p class="text-note mb0">{{$description}}</p>
+          {{- end -}}
           <div class="text-note gray">
             {{- $type -}}
           </div>
@@ -79,6 +93,11 @@
               {{- end -}}
           {{- end -}}
 
+          {{- if gt (len $default) 0 -}}
+              <div class="text-note">Default:</div>
+              <code class="mbxs db maxwmaxc">"{{$default}}"</code>
+          {{- end -}}
+
           {{- if gt (len $example) 0 -}}
               <div class="text-note">Example:</div>
               <code class="mbxs db maxwmaxc">{{$example}}</code>
@@ -88,7 +107,9 @@
             <div class="text-note">Examples:</div>
             {{- range $key, $value := $examples -}}
               <p class="text-note fwb mb0">{{$key}}</p>
-              <p class="text-note mb0">{{$value.description}}</p>
+              {{- if ne $key $value.description -}}
+                <p class="text-note mb0">{{$value.description}}</p>
+              {{- end -}}
               <code class="mbxs db maxwmaxc">
                 {{- if eq $paramType "path" -}}
                   {{- delimit (slice "" $value.value) "" -}}
