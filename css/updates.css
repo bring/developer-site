@@ -35,4 +35,6 @@ div.mce_inline_error {
 
 .brandingLogo {
   display: none;
+  width: 0;
+  height: 0;
 }
