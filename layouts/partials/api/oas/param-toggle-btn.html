@@ -1,8 +1,8 @@
 {{- $endpointId := .endpointId -}}
 {{- $param := .param -}}
-{{- $parentCount := .parentCount -}}
+{{- $uniqueId := .uniqueId -}}
 
-<button id="{{$endpointId}}-{{$param}}-{{$parentCount}}" class="btn-link param-collapsed-btn param-toggle-btn">
+<button id="{{$endpointId}}-{{$param}}-{{$uniqueId}}" class="btn-link param-collapsed-btn param-toggle-btn">
   <span
     data-mybicon="mybicon-arrow-right"
     data-mybicon-class="icon-ui mrxs param-toggle-icon"
