@@ -2643,7 +2643,7 @@
   "orderedViaVasCodes" : false
 }, {
   "vasName" : "Driver notifies consignee",
-  "description" : "No description available",
+  "description" : "The driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.  ",
   "shippingGuideCode" : "1149",
   "shippingGuideNpbCode" : "1149",
   "bookingCode" : "1149",
