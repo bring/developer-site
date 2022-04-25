@@ -68,6 +68,11 @@
   padding-bottom: 0.35rem;
 }
 
+.dev-sidemenu__sublist a.active {
+  background-color: rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+}
+
 .dev-sidemenu__icon {
   fill: currentColor;
   color: hsla(0, 0%, 100%, 0);
