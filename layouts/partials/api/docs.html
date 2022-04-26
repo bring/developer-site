@@ -355,18 +355,18 @@ if(anchoredTitles.length > 0) {
   function observeFunc(entries) {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
-        listItems.forEach(item => {
-          item.classList.remove("active")
-        })
         let listItem = document.querySelector('[data-list-item="'+entry.target.id+'"]')
         if(listItem) {
+          listItems.forEach(item => {
+            item.classList.remove("active")
+          })
           listItem.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
           listItem.classList.add('active')
         }
       }
     })
   }
-  
+
   listItems.forEach(li => {
     li.addEventListener('click', function() {
       setTimeout(function() {
