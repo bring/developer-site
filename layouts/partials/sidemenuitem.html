@@ -23,7 +23,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- range $currentPage.Params.documentation -}}
         {{- with .title -}}
           <li>
-            <a href="#{{ . | urlize }}" data-list-item="{{ . | urlize }}">
+            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
               <span data-hover="{{ . }}">{{ . }}</span>
             </a>
           </li>
@@ -41,7 +41,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- with (index .apiData .identifier) -}}
         {{- range .resources -}}
           <li>
-            <a href="#{{ .displayName | urlize }}" data-list-item="{{ .displayName | urlize }}">
+            <a href="#{{ .displayName | anchorize }}" data-list-item="{{ .displayName | anchorize }}">
               <span data-hover="{{ .displayName }}">
                 {{- .displayName -}}
               </span>
