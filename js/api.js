@@ -135,7 +135,7 @@ if('clipboard' in navigator) {
 //Show in left menu which endpoint is in viewport
 const anchoredTitles = document.querySelectorAll('.dev-anchored')
 
-if(anchoredTitles) {
+if(anchoredTitles.length > 0) {
   const listItems = document.querySelectorAll('[data-list-item]')
 
   let observerOptions = {
@@ -158,6 +158,7 @@ if(anchoredTitles) {
         })
         let listItem = document.querySelector('[data-list-item="'+entry.target.id+'"]')
         if(listItem) {
+          listItem.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
           listItem.classList.add('active')
         }
       }

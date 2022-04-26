@@ -22,9 +22,8 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
     <ul class="dev-sidemenu__sublist">
       {{- range $currentPage.Params.documentation -}}
         {{- with .title -}}
-          {{- $itemId := . | anchorize -}}
           <li>
-            <a href="#{{ . | urlize }}" data-list-item="{{$itemId}}">
+            <a href="#{{ . | urlize }}" data-list-item="{{ . | urlize }}">
               <span data-hover="{{ . }}">{{ . }}</span>
             </a>
           </li>
@@ -41,9 +40,8 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
 
       {{- with (index .apiData .identifier) -}}
         {{- range .resources -}}
-          {{- $itemId := .displayName | anchorize -}}
           <li>
-            <a href="#{{ .displayName | urlize }}" data-list-item="{{$itemId}}">
+            <a href="#{{ .displayName | urlize }}" data-list-item="{{ .displayName | urlize }}">
               <span data-hover="{{ .displayName }}">
                 {{- .displayName -}}
               </span>
@@ -55,9 +53,8 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- with $oasData -}}
         {{- range .paths -}}
           {{- range . -}}
-            {{- $itemId := .summary | anchorize -}}
             <li>
-              <a href="#{{ .summary | anchorize }}" data-list-item="{{$itemId}}">
+              <a href="#{{ .summary | anchorize }}" data-list-item="{{ .summary | anchorize }}">
                 <span data-hover="{{ .summary }}">
                   {{- .summary -}}
                 </span>
