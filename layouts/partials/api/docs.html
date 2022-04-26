@@ -51,7 +51,7 @@
             {{- end -}}
             {{- range $.Params.documentation -}}
               {{- with .title }}
-                <h2 class="dev-anchored" id="{{ . | urlize }}">
+                <h2 class="dev-anchored" id="{{ . | anchorize }}">
                   {{- . -}}
                 </h2>
               {{- end -}}
@@ -103,7 +103,7 @@
           {{- $resources := . -}}
           {{- $displayName := .displayName -}}
           <section class="dev-docscontent__section maxw64r">
-            <h2 class="dev-anchored mbm" id="{{ $displayName | urlize }}">
+            <h2 class="dev-anchored mbm" id="{{ $displayName | anchorize }}">
               {{- $displayName -}}
             </h2>
             {{- with .description -}}
@@ -215,8 +215,8 @@
               {{- with .responses -}}
                 <h3>Responses</h3>
                 {{- range $key, $response := . -}}
-                  {{- $responseID := (print $displayName "-response-" .code) | urlize -}}
-                  {{- $exampleID := (print $displayName "-" .code) | urlize -}}
+                  {{- $responseID := (print $displayName "-response-" .code) | anchorize -}}
+                  {{- $exampleID := (print $displayName "-" .code) | anchorize -}}
                   {{- $responseCode := .code -}}
                   {{- $resBodies := slice -}}
                   {{- range .body -}}
