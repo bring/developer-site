@@ -131,4 +131,3 @@ if('clipboard' in navigator) {
     }
   }
 }
-
