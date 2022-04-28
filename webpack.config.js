@@ -6,7 +6,7 @@ module.exports = {
     "js/servicefiltering": "./js/servicefiltering.js",
     "js/api": "./js/api.js",
     "js/scrollmarker": "./js/scrollmarker.js",
-    "css/main": "./css/main.css",
+    "css/main": "./css/main.css"
   },
 
   module: {
