@@ -693,7 +693,7 @@
   "shippingGuideCode" : "DANGEROUS_GOODS",
   "shippingGuideNpbCode" : "1245",
   "bookingCode" : "DANGEROUS_GOODS",
-  "incompatibleVases" : [ "Simplified delivery" ],
+  "incompatibleVases" : [ "Simplified delivery", "Desktop delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Oljeekspressen",
     "serviceType" : "B2B",
@@ -1911,7 +1911,7 @@
   "shippingGuideCode" : "2142",
   "shippingGuideNpbCode" : "2142",
   "bookingCode" : "2142",
-  "incompatibleVases" : [ "Frost free" ],
+  "incompatibleVases" : [ "Frost free", "Desktop delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Stykkgods til bedrift",
     "serviceType" : "B2B",
@@ -2685,6 +2685,37 @@
     "serviceFamilySortOrder" : 3,
     "serviceCode" : "5400",
     "productionCode" : "5400",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Desktop delivery",
+  "description" : "Value added service when the customer has additional requirements to the delivery, for example delivery behind locked door, delivery to office, etc. This service requires a service agreement that is accepted by operations.  ",
+  "shippingGuideCode" : "1163",
+  "shippingGuideNpbCode" : "1163",
+  "bookingCode" : "1163",
+  "incompatibleVases" : [ "Dangerous goods", "Special goods" ],
+  "supportedServices" : [ {
+    "serviceName" : "Stykkgods til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway domestic",
+    "serviceFamilySortOrder" : 3,
+    "serviceCode" : "5100",
+    "productionCode" : "5100",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Partigods til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway domestic",
+    "serviceFamilySortOrder" : 3,
+    "serviceCode" : "5300",
+    "productionCode" : "5300",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
