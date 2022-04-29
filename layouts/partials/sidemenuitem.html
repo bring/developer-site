@@ -23,7 +23,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- range $currentPage.Params.documentation -}}
         {{- with .title -}}
           <li>
-            <a href="#{{ . | urlize }}">
+            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
               <span data-hover="{{ . }}">{{ . }}</span>
             </a>
           </li>
@@ -32,7 +32,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
 
       {{- with or (index .apiData .identifier) $oasData -}}
         <li>
-          <a href="#endpoints">
+          <a href="#endpoints" data-list-item="endpoints">
             <span data-hover="endpoints">Endpoints</span>
           </a>
         </li>
@@ -41,7 +41,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- with (index .apiData .identifier) -}}
         {{- range .resources -}}
           <li>
-            <a href="#{{ .displayName | urlize }}">
+            <a href="#{{ .displayName | anchorize }}" data-list-item="{{ .displayName | anchorize }}">
               <span data-hover="{{ .displayName }}">
                 {{- .displayName -}}
               </span>
@@ -54,7 +54,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- range .paths -}}
           {{- range . -}}
             <li>
-              <a href="#{{ .summary | anchorize }}">
+              <a href="#{{ .summary | anchorize }}" data-list-item="{{ .summary | anchorize }}">
                 <span data-hover="{{ .summary }}">
                   {{- .summary -}}
                 </span>
