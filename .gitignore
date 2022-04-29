@@ -8,3 +8,4 @@ static/css
 .idea
 static/js/servicefiltering.js
 static/js/api.js
+static/js/scrollmarker.js
