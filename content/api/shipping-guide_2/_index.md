@@ -510,6 +510,13 @@ documentation:
 
       **NOTE**: the API returns values based on what is, in a normal situation, expected for the postal code in question. In case of car maintenance or other extraordinaty situations, we can not guarantee a fossil free delivery.
 
+      Environmental logo is also returned in the GuiInformation  for mentioned services when also including ```<WithGuiInformation>true</WithGuiInformation>``` in the request
+      ```xml
+      <ns2:GuiInformation>
+           <ns2:EnvironmentalLogoUrl>https://www.mybring.com/shipping-guide/assets/img/Environment_logo.svg</ns2:EnvironmentalLogoUrl>
+      </ns2:GuiInformation>
+      ```
+
   - title: Estimated arrival time for domestic parcels and cargo
     content: |
       For the following Norwegian domestic parcel and cargo services you can now get extended leadtime information - the estimated arrival time.
