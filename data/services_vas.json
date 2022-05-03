@@ -1363,7 +1363,7 @@
   "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
   "shippingGuideNpbCode" : "1036",
   "bookingCode" : "SELECT_PICKUP_POINT",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts, then pickup point" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "B2C",
@@ -1381,6 +1381,16 @@
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "4850",
     "productionCode" : "4850",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Pakke til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5000",
+    "productionCode" : "5000",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
