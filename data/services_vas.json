@@ -1808,7 +1808,7 @@
   "shippingGuideCode" : "1179",
   "shippingGuideNpbCode" : "1179",
   "bookingCode" : "1179",
-  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts, then pickup point" ],
+  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts, then pickup point", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -1859,7 +1859,7 @@
   "shippingGuideCode" : "1178",
   "shippingGuideNpbCode" : "1178",
   "bookingCode" : "1178",
-  "incompatibleVases" : [ "Two delivery attempts", "Two delivery attempts, then pickup point" ],
+  "incompatibleVases" : [ "Two delivery attempts", "Two delivery attempts, then pickup point", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
@@ -1890,7 +1890,7 @@
   "shippingGuideCode" : "1283",
   "shippingGuideNpbCode" : "1283",
   "bookingCode" : "1283",
-  "incompatibleVases" : [ "Two delivery attempts", "One delivery attempt, then pickup point" ],
+  "incompatibleVases" : [ "Two delivery attempts", "One delivery attempt, then pickup point", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
@@ -2714,7 +2714,7 @@
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Remove pallets",
-  "description" : "No description available",
+  "description" : "Bring removes the goods from the pallet(s) and returns the pallets and plastic.  ",
   "shippingGuideCode" : "2221",
   "shippingGuideNpbCode" : "2221",
   "bookingCode" : "2221",
