@@ -109,7 +109,7 @@
     "Invoice": "",
     "Reports": "Yes",
     "ReportType": "Economy",
-    "ReportsName": "Preliminary freight calculation"
+    "ReportsName": "Complete status including freight cost"
   },
   {
     "ServiceFamily": "Parcels Norway domestic",
