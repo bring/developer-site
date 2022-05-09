@@ -119,7 +119,7 @@
                             </pre>
                           </span>
                         </div>
-                        <p class="mbl text-heading">{{ .description }}</p>
+                        <p class="mbl text-heading">{{ .description | safeHTML }}</p>
 
                         {{- partial "api/oas/request-params.html" (dict "parameters" .parameters) -}}
 
