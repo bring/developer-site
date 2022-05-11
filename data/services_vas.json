@@ -2733,4 +2733,25 @@
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Electronic notification to a third party",
+  "description" : "A third party (the customer's customer) is notified by text message, email or tracking app that the consignment is on the way/available for pickup/being delivered. The first item in a consignment triggers the notification. If the consignment is a split delivery and all of the items cannot be delivered within 24 hours of each other, a new notification will be sent when the remaining packages are delivered. A tracking link accompanies the notification.  ",
+  "shippingGuideCode" : "1095",
+  "shippingGuideNpbCode" : "1095",
+  "bookingCode" : "1095",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Pakke til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5000",
+    "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
 } ]
