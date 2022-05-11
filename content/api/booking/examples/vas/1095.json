@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "consignments": [
+    {
+      "shippingDateTime": 1650224717000,
+      "parties": {
+        "sender": {
+          "name": "Ola Nordmann",
+          "addressLine": "Testsvingen 12",
+          "addressLine2": null,
+          "postalCode": "0263",
+          "city": "OSLO",
+          "countryCode": "NO",
+          "reference": "1234",
+          "additionalAddressInfo": "Pick it up after 14:00",
+          "contact": {
+            "name": "Trond Nordmann",
+            "email": "trond@nordmanntest.no",
+            "phoneNumber": "99999999"
+          }
+        },
+        "recipient": {
+          "name": "Tore Mottaker",
+          "addressLine": "Mottakerveien 14",
+          "addressLine2": "c/o Tina Mottaker",
+          "postalCode": "0659",
+          "city": "OSLO",
+          "countryCode": "NO",
+          "reference": "43242",
+          "additionalAddressInfo": "Ring the doorbell",
+          "contact": {
+            "name": "Tore mottaker",
+            "email": "tore@mottakertest.no",
+            "phoneNumber": "99999998"
+          }
+        }
+      },
+      "product": {
+        "id": "5000",
+        "customerNumber": "*************",
+        "additionalServices": [
+          {
+            "id": "1095",
+            "email": "thirdparty@notify.no",
+            "mobile": "99999777"
+          }
+        ],
+        "messageForRecipient": null
+      },
+      "purchaseOrder": null,
+      "correlationId": "INTERNAL-123456",
+      "packages": [
+        {
+          "weightInKg": 1.1,
+          "goodsDescription": "Testing equipment",
+          "dimensions": {
+            "heightInCm": 13,
+            "widthInCm": 23,
+            "lengthInCm": 10
+          },
+          "containerId": null,
+          "packageType": null,
+          "numberOfItems": null,
+          "correlationId": "PACKAGE-123"
+        }
+      ]
+    }
+  ],
+  "testIndicator": true
+}
