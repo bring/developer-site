@@ -86,5 +86,5 @@ documentation:
       | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
 
 
-oas: https://tracking.qa.bring.com/api-docs/
+# oas: https://tracking.qa.bring.com/api-docs/
 ---
