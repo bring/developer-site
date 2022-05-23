@@ -6,7 +6,8 @@
 {{- $codeExample := "" -}}
 {{- $resInd := 0 -}}
 <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
-  <div class="pam flex flex-wrap">
+  <div class="pam flex flex-wrap" role="tablist">
+    {{- $ariaSelected := true -}}
     {{- range $response, $_ := .responses -}}
       {{- with .content -}}
         {{- $responseColor := "" -}}
@@ -16,9 +17,17 @@
           {{- $responseColor = "txt-error" -}}
         {{- end -}}
         {{- $responseId := print $endpointId "-" $response -}}
-        <button type="button" name="{{$endpointId}}-response" data-example="{{$responseId}}" class="btn-link--dark mrs {{$responseColor}} {{if eq $resInd 0 }}active{{end}}" aria-label="Response code {{$response}}">
+        <button type="button"
+                name="{{$endpointId}}-response"
+                data-example="{{$responseId}}"
+                class="btn-link--dark mrs {{$responseColor}}"
+                aria-label="Response code {{$response}}"
+                aria-selected="{{$ariaSelected}}"
+                role="tab"
+                id="{{$responseId}}">
           {{ $response }}
         </button>
+        {{- $ariaSelected = false -}}
         {{- $resInd = add $resInd 1 -}}
       {{- end -}}
     {{- end -}}
@@ -27,7 +36,7 @@
   {{- range $response, $_ := .responses -}}
     {{- with .content -}}
       {{- $responseId := print $endpointId "-" $response -}}
-      <div class="relative" data-example="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
+      <div class="relative" data-example="{{$responseId}}" role="tabpanel" aria-labelledby="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
       {{- range $application, $_ := . -}}
         {{- if in $application "json" -}}
           {{/* If application type contains examples object */}}

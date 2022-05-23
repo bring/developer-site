@@ -72,7 +72,7 @@ responseExBtns.forEach((btn) => {
   btn.addEventListener("click", function (e) {
     const element = e.target
 
-    if (element.classList.contains("active")) {
+    if (element.getAttribute('aria-selected') === 'true') {
       return
     }
 
@@ -80,9 +80,9 @@ responseExBtns.forEach((btn) => {
     const endpointId = element.name
     const responseSection = document.getElementById(endpointId)
     const exampleContainers = responseSection.querySelectorAll("div[data-example]")
-    const activeBtn = document.querySelector('button[name="' + endpointId + '"].active')
-    activeBtn.classList.remove("active")
-    element.classList.add("active")
+    const activeBtn = document.querySelector('button[name="' + endpointId + '"][aria-selected="true"]')
+    activeBtn.setAttribute("aria-selected", false)
+    element.setAttribute("aria-selected", true)
 
     switchExample(exampleContainers, "example", resIdBtn)
   })
