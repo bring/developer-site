@@ -177,10 +177,6 @@ summary:hover {
   width: 38%;
 }
 
-button[aria-selected="true"] {
-  background-color: hsla(0, 0%, 0%, 0.12);
-}
-
 .response {
   transition: background var(--easeout-15);
   background: var(--gray-95);
