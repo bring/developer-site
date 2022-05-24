@@ -7,7 +7,6 @@
 {{- $resInd := 0 -}}
 <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
   {{- partial "api/oas/responsecode-btns.html" (dict "responses" .responses "endpointId" $endpointId) -}}
-  {{- $resInd = 0 -}}
   {{- range $response, $_ := .responses -}}
     {{- with .content -}}
       {{- $responseId := print $endpointId "-" $response -}}
