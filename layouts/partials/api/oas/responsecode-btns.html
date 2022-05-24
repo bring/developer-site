@@ -1,0 +1,29 @@
+{{- $endpointId := .endpointId -}}
+{{- $responses := .responses -}}
+
+<div class="pam flex flex-wrap" role="tablist">
+  {{- $ariaSelected := true -}}
+  {{- range $response, $_ := $responses -}}
+    {{- with .content -}}
+      {{- $responseColor := "" -}}
+      {{- if and (ge $response 200) (lt $response 300) -}}
+        {{- $responseColor = "txt-success" -}}
+      {{- else if ge $response 300 -}}
+        {{- $responseColor = "txt-error" -}}
+      {{- end -}}
+      {{- $responseId := print $endpointId "-" $response -}}
+      <button 
+        type="button" 
+        name="{{$endpointId}}-response" 
+        data-example="{{$responseId}}" 
+        class="btn-link--dark mrs {{$responseColor}}" 
+        aria-label="Response code {{$response}}"
+        aria-selected="{{$ariaSelected}}"
+        role="tab"
+        id="{{$responseId}}">
+        {{ $response }}
+      </button>
+      {{- $ariaSelected = false -}}
+    {{- end -}}
+  {{- end -}}
+</div>

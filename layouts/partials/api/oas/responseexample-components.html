@@ -6,33 +6,7 @@
 {{- $codeExample := "" -}}
 {{- $resInd := 0 -}}
 <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
-  <div class="pam flex flex-wrap" role="tablist">
-    {{- $ariaSelected := true -}}
-    {{- range $response, $_ := .responses -}}
-      {{- with .content -}}
-        {{- $responseColor := "" -}}
-        {{- if and (ge $response 200) (lt $response 300) -}}
-          {{- $responseColor = "txt-success" -}}
-        {{- else if ge $response 300 -}}
-          {{- $responseColor = "txt-error" -}}
-        {{- end -}}
-        {{- $responseId := print $endpointId "-" $response -}}
-        <button type="button"
-                name="{{$endpointId}}-response"
-                data-example="{{$responseId}}"
-                class="btn-link--dark mrs {{$responseColor}}"
-                aria-label="Response code {{$response}}"
-                aria-selected="{{$ariaSelected}}"
-                role="tab"
-                id="{{$responseId}}">
-          {{ $response }}
-        </button>
-        {{- $ariaSelected = false -}}
-        {{- $resInd = add $resInd 1 -}}
-      {{- end -}}
-    {{- end -}}
-  </div>
-  {{- $resInd = 0 -}}
+  {{- partial "api/oas/responsecode-btns.html" (dict "responses" .responses "endpointId" $endpointId) -}}
   {{- range $response, $_ := .responses -}}
     {{- with .content -}}
       {{- $responseId := print $endpointId "-" $response -}}
@@ -78,32 +52,6 @@
                 {{- end -}}
                 {{- $exInd = add $exInd 1 -}}
               {{- end -}}
-              {{/* TODO: if there are more than one object/example */}}
-            {{- end -}}
-
-          {{/* If application type only contains schema */}}
-          {{- else if isset . "schemas" -}}
-            {{- range $key, $_ := .schema -}}
-              {{- if reflect.IsMap . -}}
-                {{- range . -}}
-                  {{- . -}}
-                {{- end -}}
-              {{- else -}}
-                {{- if eq $key "$ref" -}}
-                  {{- range $components.examples -}}
-                      {{- .value -}}
-                  {{- end -}}
-                  {{- with partial "api/oas/responsejson.html" (dict "ctx" . "components" $components "level" 0 "ind" 0) -}}
-                    {{- $codeExample = print . | jsonify (dict "indent" "  ") -}}
-                    {{- highlight $codeExample "json" "tabWidth=2" -}}
-                  {{- end -}}
-                {{- else -}}
-                  Not ref not map
-                  {{- . -}}
-                {{- end -}}
-              {{- end -}}
-            {{- else -}}
-              No samples
             {{- end -}}
           {{- end -}}
         {{- end -}}
