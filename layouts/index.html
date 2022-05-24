@@ -35,7 +35,7 @@
             <h2 class="mbs">API updates</h2>
             {{- range where .Site.Pages "Section" "api" -}}
               {{- if (in .CurrentSection "revision-history") -}}
-                {{- range first 4 .Pages -}}
+                {{- range first 3 .Pages -}}
                   <h3 class="text-basic">
                     <time
                       datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
@@ -49,8 +49,10 @@
             <div class="w100p mtm mbl">
               <a class="text-heading" href="./api/revision-history/">Show all updates &RightArrow;</a>
             </div>
-            <h3 class="text-basic">Subscribe</h3>
-            {{- partial "subscribe.html" -}}
+            <div class="bg-gray2 pal rad-a2px">
+              <h3>Subscribe to updates</h3>
+              {{- partial "subscribe.html" -}}
+            </div>
           </div>
         </div>
       </div>
