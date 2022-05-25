@@ -36,7 +36,7 @@
     "postcss": "^8.4.13",
     "postcss-css-variables": "^0.18.0",
     "postcss-import": "^14.1.0",
-    "postcss-loader": "^6.2.1",
+    "postcss-loader": "^7.0.0",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "toml": "^3.0.0",
