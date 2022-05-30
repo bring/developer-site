@@ -125,65 +125,67 @@
                           {{- partial "api/oas/request-params.html" (dict "parameters" .) -}}
                         {{- end -}}
 
-                        <h3 class="mbm">Responses</h3>
-                        {{- range $response, $_ := .responses -}}
-                          {{- $responseColor := "response" -}}
-                          {{- if and (ge $response 200) (lt $response 300) -}}
-                            {{- $responseColor = "response success-code" -}}
-                          {{- else if ge $response 300 -}}
-                            {{- $responseColor = "response error-code" -}}
-                          {{- end -}}
+                        {{- with .responses -}}
+                          <h3 class="mbm">Responses</h3>
+                          {{- range $response, $_ := . -}}
+                            {{- $responseColor := "response" -}}
+                            {{- if and (ge $response 200) (lt $response 300) -}}
+                              {{- $responseColor = "response success-code" -}}
+                            {{- else if ge $response 300 -}}
+                              {{- $responseColor = "response error-code" -}}
+                            {{- end -}}
 
-                          {{- $description := .description -}}
+                            {{- $description := .description -}}
 
-                          {{ $hasSchema := false }}
-                          {{- with .content -}}
-                            {{- range . -}}
-                              {{/*  since go template doesn’t have loop breaks  */}}
-                              {{- if not $hasSchema -}}
-                                {{- with .schema -}}
-                                  {{- $hasSchema = true -}}
+                            {{ $hasSchema := false }}
+                            {{- with .content -}}
+                              {{- range . -}}
+                                {{/*  since go template doesn’t have loop breaks  */}}
+                                {{- if not $hasSchema -}}
+                                  {{- with .schema -}}
+                                    {{- $hasSchema = true -}}
+                                  {{- end -}}
                                 {{- end -}}
                               {{- end -}}
                             {{- end -}}
-                          {{- end -}}
 
-                          {{- if $hasSchema -}}
-                            {{- with .content -}}
-                            <details class="mbs">
-                              <summary class="{{ $responseColor }} pas" aria-label="Response {{$response}} {{$description}} details dropdown"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
+                            {{- if $hasSchema -}}
+                              {{- with .content -}}
+                              <details class="mbs">
+                                <summary class="{{ $responseColor }} pas" aria-label="Response {{$response}} {{$description}} details dropdown"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
 
-                              <div class="bg-gray1 pam">
-                                <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Response schema:</label>
-                                <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select">
-                                  {{- $selected := "selected" -}}
-                                  {{- range $applicationType, $_ := . -}}
-                                    <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
-                                      {{ $applicationType }}
-                                    </option>
-                                    {{$selected = ""}}
-                                  {{- end -}}
-                                </select>
-
-                                {{- range $application, $_ := . -}}
-                                  <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
-                                  {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
-                                  {{- range $key, $_ := .schema -}}
-                                    {{- if reflect.IsMap . -}}
-                                      {{- range . -}}
-                                        {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
-                                      {{- end -}}
-                                    {{- else if eq $key "$ref" -}}
-                                        {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
+                                <div class="bg-gray1 pam">
+                                  <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Response schema:</label>
+                                  <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select">
+                                    {{- $selected := "selected" -}}
+                                    {{- range $applicationType, $_ := . -}}
+                                      <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                        {{ $applicationType }}
+                                      </option>
+                                      {{$selected = ""}}
                                     {{- end -}}
+                                  </select>
+
+                                  {{- range $application, $_ := . -}}
+                                    <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                                    {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
+                                    {{- range $key, $_ := .schema -}}
+                                      {{- if reflect.IsMap . -}}
+                                        {{- range . -}}
+                                          {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
+                                        {{- end -}}
+                                      {{- else if eq $key "$ref" -}}
+                                          {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
+                                      {{- end -}}
+                                    {{- end -}}
+                                    </dl>
                                   {{- end -}}
-                                  </dl>
-                                {{- end -}}
-                                </div>
-                            </details>
+                                  </div>
+                              </details>
+                              {{- end -}}
+                            {{- else -}}
+                              <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
                             {{- end -}}
-                          {{- else -}}
-                            <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
                           {{- end -}}
                         {{- end -}}
                       </div>
