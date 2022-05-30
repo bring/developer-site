@@ -121,7 +121,9 @@
                         </div>
                         <p class="mbl text-heading">{{ .description | safeHTML }}</p>
 
-                        {{- partial "api/oas/request-params.html" (dict "parameters" .parameters) -}}
+                        {{- with .parameters -}}
+                          {{- partial "api/oas/request-params.html" (dict "parameters" .) -}}
+                        {{- end -}}
 
                         <h3 class="mbm">Responses</h3>
                         {{- range $response, $_ := .responses -}}
