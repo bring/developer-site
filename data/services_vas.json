@@ -1147,7 +1147,7 @@
   "description" : "Delivery of a new product and return of existing product take place at the same time.  Example: the delivery of a new dishwasher occurs at the same time as Bring takes the existing dishwasher in return.",
   "shippingGuideCode" : "SWAP",
   "shippingGuideNpbCode" : "SWAP",
-  "bookingCode" : "SWAP",
+  "bookingCode" : "1122",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
@@ -1198,7 +1198,7 @@
   "description" : "Bring takes the existing product to recycle.  Example: Bring returns an existing dishwasher at the delivery of a new dishwasher and recycles the old machine.",
   "shippingGuideCode" : "RECYCLE",
   "shippingGuideNpbCode" : "RECYCLE",
-  "bookingCode" : "RECYCLE",
+  "bookingCode" : "1123",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
@@ -1249,7 +1249,7 @@
   "description" : "Bring removes the packaging from the delivered goods, such as plastic, cardboard and styrofoam, and recycles it.  ",
   "shippingGuideCode" : "UNWRAP",
   "shippingGuideNpbCode" : "UNWRAP",
-  "bookingCode" : "UNWRAP",
+  "bookingCode" : "1139",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
@@ -1280,7 +1280,7 @@
   "description" : "Simple installation, e.g. fridge, freezer etc.  ",
   "shippingGuideCode" : "STANDARD_INSTALLATION",
   "shippingGuideNpbCode" : "STANDARD_INSTALLATION",
-  "bookingCode" : "STANDARD_INSTALLATION",
+  "bookingCode" : "1124",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
@@ -1321,7 +1321,7 @@
   "description" : "Required certified competence, e.g. washing machine, dish washer etc.  ",
   "shippingGuideCode" : "CUSTOM_INSTALLATION",
   "shippingGuideNpbCode" : "CUSTOM_INSTALLATION",
-  "bookingCode" : "CUSTOM_INSTALLATION",
+  "bookingCode" : "1125",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
