@@ -31,7 +31,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.7",
-    "hugo-bin": "^0.86.0",
+    "hugo-bin": "^0.88.1",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.13",
     "postcss-css-variables": "^0.18.0",
