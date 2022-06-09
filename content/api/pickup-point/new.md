@@ -1,14 +1,7 @@
 ---
 title: Pickup Point API
 layout: api
-disqus_identifier: https-developer-bring-com-api-pickup-point
-menu:
-  apidocs:
-    identifier: pickuppoint
-    title: Pickup Point API
-    url: /api/pickup-point
-    parent: checkout
-weight: 12
+hidden: true
 
 important:
   - type: info
@@ -74,4 +67,6 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point
+
+oas: https://api.qa.bring.com/pickuppoint/openapi.json
 ---
