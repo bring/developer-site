@@ -30,24 +30,12 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- end -}}
       {{- end -}}
 
-      {{- with or (index .apiData .identifier) $oasData -}}
+      {{- with or (and (.apiData) (index .apiData .identifier)) $oasData -}}
         <li>
           <a href="#endpoints" data-list-item="endpoints">
             <span data-hover="endpoints">Endpoints</span>
           </a>
         </li>
-      {{- end -}}
-
-      {{- with (index .apiData .identifier) -}}
-        {{- range .resources -}}
-          <li>
-            <a href="#{{ .displayName | anchorize }}" data-list-item="{{ .displayName | anchorize }}">
-              <span data-hover="{{ .displayName }}">
-                {{- .displayName -}}
-              </span>
-            </a>
-          </li>
-        {{- end -}}
       {{- end -}}
 
       {{- with $oasData -}}
@@ -61,6 +49,18 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
               </a>
             </li>
           {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- with (and (.apiData) (index .apiData .identifier)) -}}
+        {{- range .resources -}}
+          <li>
+            <a href="#{{ .displayName | anchorize }}" data-list-item="{{ .displayName | anchorize }}">
+              <span data-hover="{{ .displayName }}">
+                {{- .displayName -}}
+              </span>
+            </a>
+          </li>
         {{- end -}}
       {{- end -}}
 

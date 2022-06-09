@@ -1,14 +1,7 @@
 ---
 title: Pickup Point API
 layout: api
-disqus_identifier: https-developer-bring-com-api-pickup-point
-menu:
-  apidocs:
-    identifier: pickuppoint
-    title: Pickup Point API
-    url: /api/pickup-point
-    parent: checkout
-weight: 12
+hidden: true
 
 important:
   - type: info
