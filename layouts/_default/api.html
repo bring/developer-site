@@ -39,7 +39,7 @@
           {{- end -}}
           </article>
         </main>
-      {{- else if and (isset $.Params "oas") (or (eq (getenv "HUGO_ENV") "dev") (eq .Title "Address API" ) (eq .Title "Tracking API" ) (eq .Title "Modify Delivery API")) -}}
+      {{- else if and (isset $.Params "oas") (or (eq (getenv "HUGO_ENV") "dev") (eq .Title "Address API" ) (eq .Title "Tracking API" ) (eq .Title "Modify Delivery API") (eq .Title "Booking API")) -}}
         <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
           <article>
             <h1>{{ .Title }}</h1>
