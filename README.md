@@ -3,6 +3,25 @@
 Structure, content and features are being worked on iteratively throughout 2021
 and 2022.
 
+If you want to work on your new OAS documentation while keeping the current one
+running, do the following:
+
+- Rename and commit the API’s `index.md` file to `_index.md`, this allows for
+  subpages and it keeps the file history intact.
+- Duplicate the file and name it `new.md`
+- Remove `disqus`, `menu` and `weight` objects. This will prevent conflicts with
+  the currently published page.
+- Add `hidden: true` instead. This will hide the new page in the menu and from
+  search engines.
+- Commit and make PR – the new page will be available at `{current-url}/new`
+
+If you don’t need duplication, just add `oas: {url to json}` to the current
+`index.md` file
+
+Remember to clean up your old docs, the
+[PR for Modify Delivery API](https://github.com/bring/developer-site/pull/1184/files)
+is a good example.
+
 ## Tech
 
 The Bring Developer site uses [Hugo](https://gohugo.io/),
