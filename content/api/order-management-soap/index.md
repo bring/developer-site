@@ -4,9 +4,9 @@ layout: api
 disqus_identifier: https-developer-bring-com-api-order-management-soap
 menu:
   apidocs:
-    identifier: order-management-soap
+    identifier: ordermanagement-soap
     title: Order Management Soap
-    url: /api/ws
+    url: /api/order-management-soap
     parent: om
 weight: 62
 
@@ -28,4 +28,5 @@ documentation:
       When using the Order Management, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
 
       How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
+
 ---
