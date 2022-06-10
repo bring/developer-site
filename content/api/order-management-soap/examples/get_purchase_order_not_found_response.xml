@@ -1,0 +1,18 @@
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <GetPurchaseOrderResponse
+      xmlns="http://api.bring.com/po">
+      <ResponseProperties>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2022-06-09T15:32:47.956+02:00</DateAndTimes>
+        <Error>
+          <Code>PO_STATE_001</Code>
+          <Description>Order not found</Description>
+        </Error>
+      </ResponseProperties>
+    </GetPurchaseOrderResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

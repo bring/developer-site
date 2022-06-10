@@ -1,0 +1,15 @@
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <CreatePackagingListResponse
+      xmlns="http://api.bring.com/po">
+      <ResponseProperties>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2022-06-09T16:54:10.452+02:00</DateAndTimes>
+      </ResponseProperties>
+      <Status>OK</Status>
+    </CreatePackagingListResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

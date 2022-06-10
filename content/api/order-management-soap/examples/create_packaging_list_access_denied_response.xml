@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <CreatePackagingListResponse
+      xmlns="http://api.bring.com/po">
+      <ResponseProperties>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2022-06-09T17:25:01.455+02:00</DateAndTimes>
+        <Error>
+          <Code>PO_STATE_004</Code>
+          <Description>Access is denied</Description>
+        </Error>
+      </ResponseProperties>
+      <Status>FAILED</Status>
+    </CreatePackagingListResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

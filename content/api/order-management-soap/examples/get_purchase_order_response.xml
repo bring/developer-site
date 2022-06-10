@@ -1,0 +1,122 @@
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <GetPurchaseOrderResponse
+      xmlns="http://api.bring.com/po">
+      <ResponseProperties>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2022-06-09T15:28:46.725+02:00</DateAndTimes>
+      </ResponseProperties>
+      <PurchaseOrderSet updateIndicator="Original">
+        <PurchaseOrder orderId="4504104664">
+          <SenderStatus>OPEN</SenderStatus>
+          <OrderStatus>EDIIMPORTED</OrderStatus>
+          <Reference>
+            <ReferenceNo>897392479234</ReferenceNo>
+            <ReferenceType>ZZZ</ReferenceType>
+            <Text>Mutually defined reference number</Text>
+          </Reference>
+          <Reference>
+            <ReferenceNo>ReferenceNo</ReferenceNo>
+            <ReferenceType>ON</ReferenceType>
+            <Text>Buyers order number</Text>
+          </Reference>
+          <DateAndTimes subClass="DocumentDate">2022-06-01T07:19:10.684+02:00</DateAndTimes>
+          <TermsOfDelivery>
+            <TODConditionCode>FCA</TODConditionCode>
+            <TODConditionCodeList>Incoterms</TODConditionCodeList>
+            <TODLocation/>
+          </TermsOfDelivery>
+        </PurchaseOrder>
+        <TransportLeg>
+          <TransportLeg>20</TransportLeg>
+          <ModeOfTransport>3</ModeOfTransport>
+          <MeansOfTransport/>
+          <Location locationId="1234" subClass="StartLocation">
+            <LocationName>DRAMMEN</LocationName>
+            <CountryCode>NO</CountryCode>
+          </Location>
+          <Location locationId="0123" subClass="EndLocation">
+            <LocationName>STAVANGER</LocationName>
+            <CountryCode>NO</CountryCode>
+          </Location>
+        </TransportLeg>
+        <Party idType="" partyId="1100" subClass="DeliveryParty">
+          <Name>Party Name</Name>
+          <VATNo/>
+          <Address subClass="PostalAddress">
+            <StateOrRegion/>
+          </Address>
+          <Address subClass="PhysicalAddress">
+            <PostalCode>1234</PostalCode>
+            <City>Oslo</City>
+            <StateOrRegion/>
+            <CountryCode>NO</CountryCode>
+            <AddressLine>Address line</AddressLine>
+            <Street>Street</Street>
+          </Address>
+          <Contact>
+            <ContactName>Contact name</ContactName>
+            <PhoneNo>1234567</PhoneNo>
+            <TelefaxNo>7654321</TelefaxNo>
+          </Contact>
+          <PlantId>1000</PlantId>
+        </Party>
+        <Party idType="" partyId="1000" subClass="OrderingParty">
+          <Name>Ordering party name</Name>
+          <VATNo/>
+          <Address subClass="PostalAddress">
+            <StateOrRegion/>
+          </Address>
+          <Address subClass="PhysicalAddress">
+            <PostalCode>1234</PostalCode>
+            <City>STAVANGER</City>
+            <StateOrRegion/>
+            <CountryCode>NO</CountryCode>
+            <AddressLine>Address line</AddressLine>
+          </Address>
+          <Contact>
+            <ContactName>Contact name</ContactName>
+            <Mail>Email address</Mail>
+          </Contact>
+          <PlantId>1000</PlantId>
+        </Party>
+        <Party idType="" partyId="LEV-0000000000" subClass="Supplier">
+          <Name>Supplier Name</Name>
+          <VATNo>91234567</VATNo>
+          <Address subClass="PostalAddress">
+            <StateOrRegion/>
+          </Address>
+          <Address subClass="PhysicalAddress">
+            <PostalCode>1234</PostalCode>
+            <City>DRAMMEN</City>
+            <StateOrRegion/>
+            <CountryCode>NO</CountryCode>
+            <AddressLine>Address line</AddressLine>
+          </Address>
+          <Contact>
+            <Mail>Email address</Mail>
+          </Contact>
+          <PlantId/>
+        </Party>
+        <OrderLineSet>
+          <OrderItem articleLineId="10">
+            <ArticleQuantity>1</ArticleQuantity>
+            <RemainingArticleQuantity>1</RemainingArticleQuantity>
+            <Description>
+              <Text>Description text</Text>
+              <Usage/>
+            </Description>
+            <DateAndTimes subClass="DeliveryDateRequested">2022-12-31T12:00:00+01:00</DateAndTimes>
+            <ArticleMonetaryAmounts>
+              <UnitPrice currencyIdentificationCode="">0.00</UnitPrice>
+            </ArticleMonetaryAmounts>
+          </OrderItem>
+        </OrderLineSet>
+        <DateAndTimes subClass="DocumentDate">2022-06-15T12:00:00+02:00</DateAndTimes>
+      </PurchaseOrderSet>
+    </GetPurchaseOrderResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

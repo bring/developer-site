@@ -1,0 +1,49 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:po="http://api.bring.com/po">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <po:CreateTransportOrderRequest>
+      <po:RequestProperties>
+        <po:SchemaVersion>?</po:SchemaVersion>
+        <po:Locale>?</po:Locale>
+        <po:DateAndTimes subClass="?">?</po:DateAndTimes>
+      </po:RequestProperties>
+      <po:CustomerNo>?</po:CustomerNo>
+      <po:PurchaseOrderNo>?</po:PurchaseOrderNo>
+      <po:TransportOrder>
+        <po:ConsignmentId>?</po:ConsignmentId>
+        <!--Optional:-->
+        <po:PackageId>?</po:PackageId>
+        <!--Zero or more repetitions:-->
+        <po:PackingListSet orderLineId="?">
+          <!--Zero or more repetitions:-->
+          <po:PackingListItem articleLineId="?">
+            <po:ArticleQuantity>?</po:ArticleQuantity>
+            <!--Optional:-->
+            <po:ArticleNumber>?</po:ArticleNumber>
+            <!--Optional:-->
+            <po:ArticleVendorNumber>?</po:ArticleVendorNumber>
+          </po:PackingListItem>
+        </po:PackingListSet>
+        <!--Zero or more repetitions:-->
+        <po:PackingListAdditionalSet>
+          <!--Zero or more repetitions:-->
+          <po:PackingListAdditionalItem>
+            <po:ArticleId>?</po:ArticleId>
+            <po:ArticleQuantity>?</po:ArticleQuantity>
+            <!--Optional:-->
+            <po:Description>
+              <po:Text>?</po:Text>
+              <po:Usage>?</po:Usage>
+            </po:Description>
+            <!--Optional:-->
+            <po:DateAndTimes subClass="?">?</po:DateAndTimes>
+            <!--Optional:-->
+            <po:ArticleMonetaryAmounts>
+              <po:UnitPrice currencyIdentificationCode="?">?</po:UnitPrice>
+            </po:ArticleMonetaryAmounts>
+          </po:PackingListAdditionalItem>
+        </po:PackingListAdditionalSet>
+      </po:TransportOrder>
+    </po:CreateTransportOrderRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
