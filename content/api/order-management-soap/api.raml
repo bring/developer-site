@@ -1,6 +1,6 @@
 #%RAML 1.0
 ---
-title: Order Management SOAP
+title: Order Management API (SOAP)
 baseUri: https://api.bring.com/po
 
 /api/ws:
@@ -15,12 +15,12 @@ baseUri: https://api.bring.com/po
     ### Soap Body Request Parameters
     | SOAP name | Type | Description | example |
     | -------------- | --------------  | -------------- | -------------- |
-    | `SchemaVersion` | String | Schema Version | 1 |
-    | `Locale` | String | Locale | no, en |
-    | `DateAndTimes` | String | Timestamp | 2022-05-25T13:32:40.149+02:00 |
-    | `DateAndTimes subClass` | String | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
-    | `CustomerNo` | String | Customer number | 1823-2314, 7628173 |
-    | `PurchaseOrderNo` | String | PurchaseOrder Number | 231323432 |
+    | `SchemaVersion` | `string` | Schema Version | 1 |
+    | `Locale` | `string` | Locale | no, en |
+    | `DateAndTimes` | `string` | Timestamp | 2022-05-25T13:32:40.149+02:00 |
+    | `DateAndTimes subClass` | `string` | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
+    | `CustomerNo` | `string` | Customer number | 1823-2314, 7628173 |
+    | `PurchaseOrderNo` | `string` | PurchaseOrder Number | 231323432 |
 
 
   post:
@@ -74,23 +74,23 @@ baseUri: https://api.bring.com/po
     ### Soap Body Request Parameters
     | SOAP name | Type | Description | example |
     | -------------- | --------------  | -------------- | -------------- |
-    | `SchemaVersion` | String | Schema Version | 1 |
-    | `Locale` | String | Locale | no, en |
-    | `DateAndTimes` | String | Timestamp | 2022-05-25T13:32:40.149+02:00 |
-    | `DateAndTimes subClass` | String | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
-    | `CustomerNo` | String | Customer number | 1823-2314, 7628173 |
-    | `PurchaseOrderNo` | String | Purchase order number | 231323432 |
-    | `ConsignmentId` | String | Consignment id | 739283472918723728 |
-    | `PackageId` | String | Package id | 46782991834 |
-    | `orderLineId` | String | Order line id | 1 |
-    | `articleLineId` | String | Article line id | 10 |
-    | `ArticleQuantity` | String | Article quantity | 10 |
-    | `ArticleNumber` | String | Article number | 7123 |
-    | `ArticleVendorNumber` | String | Article vendor number | 4688273 |
-    | `ArticleId` | String | Article id | 646929334 |
-    | `ArticleQuantity` | String | Article quantity | 10 |
-    | `UnitPrice` | String | Unit price | 5382 |
-    | `currencyIdentificationCode` | String | Currency identification code | NOK, USD |
+    | `SchemaVersion` | `string` | Schema Version | 1 |
+    | `Locale` | `string` | Locale | no, en |
+    | `DateAndTimes` | `string` | Timestamp | 2022-05-25T13:32:40.149+02:00 |
+    | `DateAndTimes subClass` | `string` | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
+    | `CustomerNo` | `string` | Customer number | 1823-2314, 7628173 |
+    | `PurchaseOrderNo` | `string` | Purchase order number | 231323432 |
+    | `ConsignmentId` | `string` | Consignment id | 739283472918723728 |
+    | `PackageId` | `string` | Package id | 46782991834 |
+    | `orderLineId` | `string` | Order line id | 1 |
+    | `articleLineId` | `string` | Article line id | 10 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `ArticleNumber` | `string` | Article number | 7123 |
+    | `ArticleVendorNumber` | `string` | Article vendor number | 4688273 |
+    | `ArticleId` | `string` | Article id | 646929334 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `UnitPrice` | `string` | Unit price | 5382 |
+    | `currencyIdentificationCode` | `string` | Currency identification code | NOK, USD |
 
 
   post:
@@ -144,23 +144,23 @@ baseUri: https://api.bring.com/po
     ### Soap Body Request Parameters
     | SOAP name | Type | Description | example |
     | -------------- | --------------  | -------------- | -------------- |
-    | `SchemaVersion` | String | Schema Version | 1 |
-    | `Locale` | String | Locale | no, en |
-    | `DateAndTimes` | String | Timestamp | 2022-05-25T13:32:40.149+02:00 |
-    | `DateAndTimes subClass` | String | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
-    | `CustomerNo` | String | Customer number | 1823-2314, 7628173 |
-    | `PurchaseOrderNo` | String | Purchase order number | 231323432 |
-    | `ConsignmentId` | String | Consignment id | 739283472918723728 |
-    | `PackageId` | String | Package id | 46782991834 |
-    | `orderLineId` | String | Order line id | 1 |
-    | `articleLineId` | String | Article line id | 10 |
-    | `ArticleQuantity` | String | Article quantity | 10 |
-    | `ArticleNumber` | String | Article number | 7123 |
-    | `ArticleVendorNumber` | String | Article vendor number | 4688273 |
-    | `ArticleId` | String | Article Id | 646929334 |
-    | `ArticleQuantity` | String | Article quantity | 10 |
-    | `UnitPrice` | String | Unit price | 5382 |
-    | `currencyIdentificationCode` | String | Currency identification code | NOK, USD |
+    | `SchemaVersion` | `string` | Schema Version | 1 |
+    | `Locale` | `string` | Locale | no, en |
+    | `DateAndTimes` | `string` | Timestamp | 2022-05-25T13:32:40.149+02:00 |
+    | `DateAndTimes subClass` | `string` | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
+    | `CustomerNo` | `string` | Customer number | 1823-2314, 7628173 |
+    | `PurchaseOrderNo` | `string` | Purchase order number | 231323432 |
+    | `ConsignmentId` | `string` | Consignment id | 739283472918723728 |
+    | `PackageId` | `string` | Package id | 46782991834 |
+    | `orderLineId` | `string` | Order line id | 1 |
+    | `articleLineId` | `string` | Article line id | 10 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `ArticleNumber` | `string` | Article number | 7123 |
+    | `ArticleVendorNumber` | `string` | Article vendor number | 4688273 |
+    | `ArticleId` | `string` | Article Id | 646929334 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `UnitPrice` | `string` | Unit price | 5382 |
+    | `currencyIdentificationCode` | `string` | Currency identification code | NOK, USD |
 
 
   post:
