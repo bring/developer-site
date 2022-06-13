@@ -1,11 +1,11 @@
 ---
-title: Order Management API
+title: Order Management API (REST)
 layout: api
 disqus_identifier: https-developer-bring-com-api-order-management
 menu:
   apidocs:
     identifier: ordermanagement
-    title: Order Management API
+    title: Order Management API (REST)
     url: /api/order-management
     parent: om
 weight: 61

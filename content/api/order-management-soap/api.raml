@@ -1,6 +1,6 @@
 #%RAML 1.0
 ---
-title: Order Management SOAP
+title: Order Management API (SOAP)
 baseUri: https://api.bring.com/po
 
 /api/ws:
@@ -11,14 +11,26 @@ baseUri: https://api.bring.com/po
     ### WSDL
 
     [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+    
+    ### Soap Body Request Parameters
+    | SOAP name | Type | Description | example |
+    | -------------- | --------------  | -------------- | -------------- |
+    | `SchemaVersion` | `string` | Schema Version | 1 |
+    | `Locale` | `string` | Locale | no, en |
+    | `DateAndTimes` | `string` | Timestamp | 2022-05-25T13:32:40.149+02:00 |
+    | `DateAndTimes subClass` | `string` | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
+    | `CustomerNo` | `string` | Customer number | 1823-2314, 7628173 |
+    | `PurchaseOrderNo` | `string` | PurchaseOrder Number | 231323432 |
+
+
   post:
     description: Soap endpoint to get Purchase Order
     headers:
       X-MyBring-API-Uid:
-        description: Your Mybring login ID
+        description: Mybring login ID
         required: true
       X-MyBring-API-Key:
-        description: Your user's API key
+        description: Mybring user's API key
         required: true
       Content-Type:
         description: Specify request format text/xml;charset=UTF-8
@@ -58,14 +70,37 @@ baseUri: https://api.bring.com/po
     ### WSDL
 
     [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+    
+    ### Soap Body Request Parameters
+    | SOAP name | Type | Description | example |
+    | -------------- | --------------  | -------------- | -------------- |
+    | `SchemaVersion` | `string` | Schema Version | 1 |
+    | `Locale` | `string` | Locale | no, en |
+    | `DateAndTimes` | `string` | Timestamp | 2022-05-25T13:32:40.149+02:00 |
+    | `DateAndTimes subClass` | `string` | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
+    | `CustomerNo` | `string` | Customer number | 1823-2314, 7628173 |
+    | `PurchaseOrderNo` | `string` | Purchase order number | 231323432 |
+    | `ConsignmentId` | `string` | Consignment id | 739283472918723728 |
+    | `PackageId` | `string` | Package id | 46782991834 |
+    | `orderLineId` | `string` | Order line id | 1 |
+    | `articleLineId` | `string` | Article line id | 10 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `ArticleNumber` | `string` | Article number | 7123 |
+    | `ArticleVendorNumber` | `string` | Article vendor number | 4688273 |
+    | `ArticleId` | `string` | Article id | 646929334 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `UnitPrice` | `string` | Unit price | 5382 |
+    | `currencyIdentificationCode` | `string` | Currency identification code | NOK, USD |
+
+
   post:
     description: Soap endpoint to Create Packaging List
     headers:
       X-MyBring-API-Uid:
-        description: Your Mybring login ID
+        description: Mybring login ID
         required: true
       X-MyBring-API-Key:
-        description: Your user's API key
+        description: Mybring user's API key
         required: true
       Content-Type:
         description: Specify request format text/xml;charset=UTF-8
@@ -105,14 +140,37 @@ baseUri: https://api.bring.com/po
     ### WSDL
     
     [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+    
+    ### Soap Body Request Parameters
+    | SOAP name | Type | Description | example |
+    | -------------- | --------------  | -------------- | -------------- |
+    | `SchemaVersion` | `string` | Schema Version | 1 |
+    | `Locale` | `string` | Locale | no, en |
+    | `DateAndTimes` | `string` | Timestamp | 2022-05-25T13:32:40.149+02:00 |
+    | `DateAndTimes subClass` | `string` | DateAndTimes sub class | RequestDate, DocumentDate, ResponseDate, DeliveryDateRequested, DepartureDateRequested, AcceptedDate, ActualTimeOfDeparture, EstimatedTimeOfDeparture, ActualTimeOfArrival, EstimatedTimeOfArrival, ActualTimeOfDelivery, EstimatedTimeOfDelivery, ActualTimeOfPickup, EstimatedTimeOfPickup, PickupDateActual, BookedDate, PreBookedDate, CargoReadyDate, ApprovedForTransportDate, SupplierConfirmedReadyDate, AgentBookingReceivedDate, ExpirationDate, FinishedDate, ReceivedDate, ShippersBookingDate, FollowUpDate, DeliveryDateEstimated |
+    | `CustomerNo` | `string` | Customer number | 1823-2314, 7628173 |
+    | `PurchaseOrderNo` | `string` | Purchase order number | 231323432 |
+    | `ConsignmentId` | `string` | Consignment id | 739283472918723728 |
+    | `PackageId` | `string` | Package id | 46782991834 |
+    | `orderLineId` | `string` | Order line id | 1 |
+    | `articleLineId` | `string` | Article line id | 10 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `ArticleNumber` | `string` | Article number | 7123 |
+    | `ArticleVendorNumber` | `string` | Article vendor number | 4688273 |
+    | `ArticleId` | `string` | Article Id | 646929334 |
+    | `ArticleQuantity` | `string` | Article quantity | 10 |
+    | `UnitPrice` | `string` | Unit price | 5382 |
+    | `currencyIdentificationCode` | `string` | Currency identification code | NOK, USD |
+
+
   post:
     description: Soap endpoint to Create Transport Order
     headers:
       X-MyBring-API-Uid:
-        description: Your Mybring login ID
+        description: Mybring login ID
         required: true
       X-MyBring-API-Key:
-        description: Your user's API key
+        description: Mybring user's API key
         required: true
       Content-Type:
         description: Specify request format text/xml;charset=UTF-8
