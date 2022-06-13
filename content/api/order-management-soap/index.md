@@ -5,7 +5,7 @@ disqus_identifier: https-developer-bring-com-api-order-management-soap
 menu:
   apidocs:
     identifier: ordermanagement-soap
-    title: Order Management Soap
+    title: Order Management API-SOAP
     url: /api/order-management-soap
     parent: om
 weight: 62
