@@ -1,0 +1,146 @@
+#%RAML 1.0
+---
+title: Order Management SOAP
+baseUri: https://api.bring.com/po
+
+/api/ws:
+  displayName: Get Purchase Order
+  description: |
+    Soap endpoint to get Purchase Order 
+    
+    ### WSDL
+
+    [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+  post:
+    description: Soap endpoint to get Purchase Order
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Your user's API key
+        required: true
+      Content-Type:
+        description: Specify request format text/xml;charset=UTF-8
+    body:
+      application/xml:
+        examples:
+          get_purchase_order_request:
+            displayName:  Get purchase order request
+            value: !include examples/get_purchase_order_request.xml
+    responses:
+          200:
+            displayName: Get Purchase Order Responses
+            body:
+              application/xml:
+                examples:
+                  get_purchase_order_ok_response:
+                    displayName: Get purchase order ok response
+                    value: !include examples/get_purchase_order_response.xml
+                  get_purchase_order_not_found_response:
+                    displayName: Get purchase order not found response
+                    value: !include examples/get_purchase_order_not_found_response.xml
+                  get_purchase_order_access_denied_response:
+                    displayName: Get purchase order access denied response
+                    value: !include examples/get_purchase_order_access_denied_response.xml
+                  get_purchase_order_invalid_order_response:
+                    displayName: Get purchase order invalid order response
+                    value: !include examples/get_purchase_order_invalid_order_response.xml
+                  get_purchase_order_invalid_customer_number_response:
+                    displayName: Get purchase order invalid customer number response
+                    value: !include examples/get_purchase_order_invalid_customer_number_response.xml
+
+/api/ws:
+  displayName: Create Packaging List
+  description: |
+    Soap endpoint to Create Packaging List
+
+    ### WSDL
+
+    [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+  post:
+    description: Soap endpoint to Create Packaging List
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Your user's API key
+        required: true
+      Content-Type:
+        description: Specify request format text/xml;charset=UTF-8
+    body:
+      application/xml:
+        examples:
+          create_packaging_list_request:
+            displayName:  Create packaging list request
+            value: !include examples/create_packaging_list_request.xml
+    responses:
+          200:
+            displayName: Create packaging list
+            body:
+              application/xml:
+                examples:
+                  create_packaging_list_ok_response:
+                    displayName: Create packaging list ok response
+                    value: !include examples/create_packaging_list_response.xml
+                  create_packaging_list_order_not_found_response:
+                    displayName: Create packaging list order not found response
+                    value: !include examples/create_packaging_list_order_not_found_response.xml
+                  create_packaging_list_access_denied_response:
+                    displayName: Create packaging list access denied response
+                    value: !include examples/create_packaging_list_access_denied_response.xml
+                  create_packaging_list_missing_consignment_id_response:
+                    displayName: Create packaging list missing consignment id response
+                    value: !include examples/create_packaging_list_missing_consignment_id_response.xml
+                  create_packaging_list_invalid_customer_id_response:
+                    displayName: Create packaging list invalid customer id response
+                    value: !include examples/create_packaging_list_invalid_customer_id_response.xml
+
+/api/ws:
+  displayName: Create Transport Order
+  description: |
+    Soap endpoint to Create Transport Order
+    
+    ### WSDL
+    
+    [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+  post:
+    description: Soap endpoint to Create Transport Order
+    headers:
+      X-MyBring-API-Uid:
+        description: Your Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Your user's API key
+        required: true
+      Content-Type:
+        description: Specify request format text/xml;charset=UTF-8
+    body:
+      application/xml:
+        examples:
+          create_transport_order_request:
+            displayName:  Create transport order request
+            value: !include examples/create_transport_order_request.xml
+    responses:
+          200:
+            displayName: Create transport order
+            body:
+              application/xml:
+                examples:
+                  create_transport_order_ok_response:
+                    displayName: Create transport order ok response
+                    value: !include examples/create_transport_order_response.xml
+                  create_transport_order_not_found_response:
+                    displayName: Create transport order not found response
+                    value: !include examples/create_transport_order_not_found_response.xml
+                  create_transport_order_access_denied_response:
+                    displayName: Create transport order access denied response
+                    value: !include examples/create_transport_order_access_denied_response.xml
+                  create_transport_order_missing_consignment_id_response:
+                    displayName: Create transport order missing consignment id response
+                    value: !include examples/create_transport_order_missing_consignment_id_response.xml
+                  create_transport_order_invalid_customer_id_response:
+                    displayName: Create transport order invalid customer id response
+                    value: !include examples/create_transport_order_invalid_customer_id_response.xml
+---

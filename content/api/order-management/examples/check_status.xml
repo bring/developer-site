@@ -1,8 +1,0 @@
-<GetSenderStatusResponse xmlns="http://api.bring.com/po">
-    <ResponseProperties>
-        <SchemaVersion>1</SchemaVersion>
-        <Locale>en</Locale>
-        <DateAndTimes subClass="ResponseDate">2017-06-02T23:00:32.972+02:00</DateAndTimes>
-    </ResponseProperties>
-    <SenderStatus>OPEN</SenderStatus>
-</GetSenderStatusResponse>

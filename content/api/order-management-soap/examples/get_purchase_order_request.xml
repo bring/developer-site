@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:po="http://api.bring.com/po">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <po:GetPurchaseOrderRequest>
+      <po:RequestProperties>
+        <po:SchemaVersion>1</po:SchemaVersion>
+        <po:Locale>no</po:Locale>
+        <po:DateAndTimes subClass="ResponseDate">2022-05-25T13:32:40.149+02:00</po:DateAndTimes>
+      </po:RequestProperties>
+      <po:CustomerNo>Customer Number</po:CustomerNo>
+      <po:PurchaseOrderNo>Purchase order number</po:PurchaseOrderNo>
+    </po:GetPurchaseOrderRequest>
+  </soapenv:Body>
+</soapenv:Envelope>

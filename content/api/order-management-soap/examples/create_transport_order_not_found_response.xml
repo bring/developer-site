@@ -1,0 +1,19 @@
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Header/>
+  <SOAP-ENV:Body>
+    <CreateTransportOrderResponse
+      xmlns="http://api.bring.com/po">
+      <ResponseProperties>
+        <SchemaVersion>1</SchemaVersion>
+        <Locale>en</Locale>
+        <DateAndTimes subClass="ResponseDate">2022-06-10T09:19:20.890+02:00</DateAndTimes>
+        <Error>
+          <Code>PO_INPUT_010</Code>
+          <Description>Order not found. You can not have orderlines to a non-existing order. Found at OrderLineId  and ArticleLineId </Description>
+        </Error>
+      </ResponseProperties>
+      <Status>FAILED</Status>
+    </CreateTransportOrderResponse>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
