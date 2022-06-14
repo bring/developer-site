@@ -20,5 +20,5 @@ information:
       REST XML/JSON over HTTP and SOAP over HTTP.
       Booking endpoints will assume all requests are UTF-8 encoded.
 
-oas: https://www.qa.mybring.com/booking/v3/api-docs
+oas: https://www.qa.mybring.com/booking-api/v3/api-docs
 ---
