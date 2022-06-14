@@ -45,7 +45,7 @@
     "webpack-dev-server": "^4.9.2"
   },
   "browserslist": [
-    "ie 11",
-    "> .2%"
+    "> .2%",
+    "not ie > 0"
   ]
 }
