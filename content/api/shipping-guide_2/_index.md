@@ -76,19 +76,19 @@ documentation:
       ### 2. Add the body to the request
       There are several ways you can control the output of your request. The following elements controls what the API will calculate.
 
-      | SOAP name | REST (POST) name | REST (GET) name |  Description |
+      | SOAP name | REST (POST) name |  Description |
       | -------------- | -------------- | -------------- | -------------- |
-      | `WithPrice` | `withPrice` | N/A | Controls whether prices should be calculated. Default `true` |
-      | `WithExpectedDelivery` | `withExpectedDelivery` | N/A | Controls whether lead times should be calculated. Default `true` |
-      | `WithGuiInformation` | `withGuiInformation` | N/A | Return detailed information about requested service. Default `true` |
-      | `WithEstimatedDeliveryTime` | `withEstimatedDeliveryTime` | `estimateddeliverytime` | Extended lead time information, including predicted arrival time at pickup point. Only supported for a limited set of [services](#estimated-arrival-time-for-domestic-parcels-and-cargo). Default `false` |
-      | `NumberOfAlternativeDeliveryDates` | `numberOfAlternativeDeliveryDates` | `numberofdeliverydates` | Number of alternative delivery dates to be suggested. Default `0`, maximum `9` |
-      | `WithUniqueAlternateDeliveryDates` | `withUniqueAlternateDeliveryDates` | `uniquealternatedeliverydates` | Return [unique alternative delivery dates](#get-unique-expected-delivery-dates). Default `false` |
-      | `WithEnvironmentalData`| `withEnvironmentalData`| `environmentaldata`| Return [environmental data](#shipment-environmental-data) about fossil free and electric transportation used on different transport legs |
-      | `Language` | `language` | `language` | Language in which human readable message should be returned. Supported languages are `NO`, `DK`, `SE` and `EN` |
-      | `EDI` | `edi` | N/A | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
-      | `PostingAtPostoffice` | `postingAtPostoffice` | `postingatpostoffice` | Will the parcel be delivered at a post office when shipped. Default `false` |
-      | `Trace` | `trace` | N/A | Shohuld trace messages should be returned or not. Refer TraceType description in response. Default `false` |
+      | `WithPrice` | `withPrice` | Controls whether prices should be calculated. Default `true` |
+      | `WithExpectedDelivery` | `withExpectedDelivery` | Controls whether lead times should be calculated. Default `true` |
+      | `WithGuiInformation` | `withGuiInformation` | Return detailed information about requested service. Default `true` |
+      | `WithEstimatedDeliveryTime` | `withEstimatedDeliveryTime` | Extended lead time information, including predicted arrival time at pickup point. Only supported for a limited set of [services](#estimated-arrival-time-for-domestic-parcels-and-cargo). Default `false` |
+      | `NumberOfAlternativeDeliveryDates` | `numberOfAlternativeDeliveryDates` | Number of alternative delivery dates to be suggested. Default `0`, maximum `9` |
+      | `WithUniqueAlternateDeliveryDates` | `withUniqueAlternateDeliveryDates` | Return [unique alternative delivery dates](#get-unique-expected-delivery-dates). Default `false` |
+      | `WithEnvironmentalData`| `withEnvironmentalData`| Return [environmental data](#shipment-environmental-data) about fossil free and electric transportation used on different transport legs |
+      | `Language` | `language` | Language in which human readable message should be returned. Supported languages are `NO`, `DK`, `SE` and `EN` |
+      | `EDI` | `edi` | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
+      | `PostingAtPostoffice` | `postingAtPostoffice` | Will the parcel be delivered at a post office when shipped. Default `false` |
+      | `Trace` | `trace` | Shohuld trace messages should be returned or not. Refer TraceType description in response. Default `false` |
 
       In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
@@ -653,10 +653,6 @@ documentation:
       <WithUniqueAlternateDeliveryDates>true</WithUniqueAlternateDeliveryDates>
       <NumberOfAlternativeDeliveryDates>2</NumberOfAlternativeDeliveryDates>
       ```
-      * REST GET: uniqueAlternateDeliveryDates
-      ```json
-      uniqueAlternateDeliveryDates=true&numberofdeliverydates=2
-      ```
       * REST POST: withUniqueAlternateDeliveryDates
       ```json
       "withUniqueAlternateDeliveryDates": true,
@@ -672,10 +668,6 @@ documentation:
       * SOAP: customerNumber
       ```xml
       <CustomerNumber>2001001000</CustomerNumber>
-      ```
-      * REST GET: customerNumber
-      ```json
-      customerNumber=2001001000
       ```
       * REST POST: 2001001000
       ```json
