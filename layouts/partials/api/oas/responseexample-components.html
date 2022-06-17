@@ -58,7 +58,7 @@
                     <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
                       {{- range index $components.examples $exPath.File -}}
                         {{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" -}}
-                        {{- $xmlExamplePart := partial "api/oas/responsexml.html" (dict "ctx" .) -}}
+                        {{- $xmlExamplePart := partial "api/oas/responsexml.html" (dict "ctx" . "indent" "" "root" true) -}}
                         {{- $xmlExample = printf "%s%s" $xmlExample $xmlExamplePart -}}
                         {{- highlight $xmlExample "xml" -}}
                       {{- end -}}
