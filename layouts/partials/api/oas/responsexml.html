@@ -1,0 +1,42 @@
+{{ $xmlExample := "" }}
+
+{{ range $key, $val := .ctx }}
+  {{ if reflect.IsMap . }}
+    {{ $xmlObject := println (printf "<%s>" $key) }}
+    {{ $xmlObjectPart := partial "api/oas/responsexml.html" (dict "ctx" . "indent" 1) }}
+    {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
+    {{ $xmlObject = println (printf "%s</%s>" $xmlObject $key) }}
+    {{ $xmlExample = printf "%s%s" $xmlExample $xmlObject }}
+
+  {{ else if reflect.IsSlice . }}
+    {{ $xmlArray := "" }}
+    {{ if eq (len .) 0 }}
+      {{ $xmlArray = printf "%s<%s>" $xmlArray $key }}
+      {{ $xmlArray = printf "%s%s" $xmlArray "EMPTY" }}
+      {{ $xmlArray = println (printf "%s</%s>" $xmlArray $key) }}
+    {{ else }}
+      {{ range . }}
+        {{ if reflect.IsMap . }}
+          {{ $xmlArray = println (printf "%s<%s>" $xmlArray $key) }}
+          {{ $xmlArrayPart := partial "api/oas/responsexml.html" (dict "ctx" . "indent" 1) }}
+          {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart }}
+          {{ $xmlArray = println (printf "%s</%s>" $xmlArray $key) }}
+        {{ else }}
+          {{ $xmlArray = printf "%s<%s>" $xmlArray $key }}
+          {{ $xmlArray = printf "%s%s" $xmlArray (string .) }}
+          {{ $xmlArray = println (printf "%s</%s>" $xmlArray $key) }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ $xmlExample = printf "%s%s" $xmlExample $xmlArray }}
+
+  {{ else }}
+    {{ $xmlLine := printf "<%s>" $key }}
+    {{ $xmlLine = printf "%s%s" $xmlLine (string $val) }}
+    {{ $xmlLine = printf "%s</%s>" $xmlLine $key }}
+    {{ $xmlExample = println (printf "%s%s" $xmlExample $xmlLine) }}
+
+  {{ end }}
+{{ end }}
+
+{{ return $xmlExample }}

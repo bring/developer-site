@@ -47,13 +47,21 @@
                   {{- if eq $k "$ref" -}}
                     {{- $exPath := path.Split . -}}
                     {{- $exId := print $responseId "-" $exPath.File -}}
-                    <div class="relative" data-example-sub="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                    <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
                       {{- range index $components.examples $exPath.File -}}
                         {{- $codeExample = . | jsonify (dict "indent" "  ") -}}
                         {{- $codeExample = replace $codeExample "\\u0026" "&" -}}
                         {{- highlight $codeExample "json" -}}
                       {{- end -}}
                       {{- partial "api/oas/copy-btn.html" -}}
+                    </div>
+                    <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
+                      {{- range index $components.examples $exPath.File -}}
+                        {{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" -}}
+                        {{- $xmlExamplePart := partial "api/oas/responsexml.html" (dict "ctx" .) -}}
+                        {{- $xmlExample = printf "%s%s" $xmlExample $xmlExamplePart -}}
+                        {{- highlight $xmlExample "xml" -}}
+                      {{- end -}}
                     </div>
                     {{- $exInd = add $exInd 1 -}}
                   {{- end -}}
