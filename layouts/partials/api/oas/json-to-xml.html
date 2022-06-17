@@ -8,7 +8,7 @@
 {{ range $key, $val := .ctx }}
   {{ if reflect.IsMap . }}
     {{ $xmlObject := println (printf "%s<%s>" $indent $key) }}
-    {{ $xmlObjectPart := partial "api/oas/responsexml.html" (dict "ctx" . "indent" $indent) }}
+    {{ $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "ctx" . "indent" $indent) }}
     {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
     {{ $xmlObject = println (printf "%s%s</%s>" $xmlObject $indent $key) }}
     {{ $xmlExample = printf "%s%s" $xmlExample $xmlObject }}
@@ -22,7 +22,7 @@
       {{ range . }}
         {{ if reflect.IsMap . }}
           {{ $xmlArray = println (printf "%s%s<%s>" $xmlArray $indent $key) }}
-          {{ $xmlArrayPart := partial "api/oas/responsexml.html" (dict "ctx" . "indent" $indent) }}
+          {{ $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "ctx" . "indent" $indent) }}
           {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart }}
           {{ $xmlArray = println (printf "%s%s</%s>" $xmlArray $indent $key) }}
         {{ else }}

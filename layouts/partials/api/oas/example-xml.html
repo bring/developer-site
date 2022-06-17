@@ -1,0 +1,4 @@
+{{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" -}}
+{{- $xmlExamplePart := partial "api/oas/json-to-xml.html" (dict "ctx" . "indent" "" "root" true) -}}
+{{- $xmlExample = printf "%s%s" $xmlExample $xmlExamplePart -}}
+{{- highlight $xmlExample "xml" -}}

@@ -3,7 +3,6 @@
 {{- $endpointId := .endpointId -}}
 
 <h3>Response examples</h3>
-{{- $codeExample := "" -}}
 {{- $resInd := 0 -}}
 <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
   {{- partial "api/oas/responsecode-btns.html" (dict "responses" .responses "endpointId" $endpointId) -}}
@@ -16,11 +15,10 @@
           {{/* If application type contains examples object */}}
           {{- if isset . "examples" -}}
             {{- range index $components.examples $response -}}
-              {{- $codeExample = . | jsonify (dict "indent" "  ") -}}
-              {{- highlight $codeExample "json" -}}
-              {{- partial "api/oas/copy-btn.html" -}}
+              {{- partial "api/oas/example-json.html" . -}}
+              {{- partial "api/oas/example-xml.html" . -}}
             {{- else -}}
-              {{/* if there is only one object */}}
+              {{/* if more than one object */}}
               {{- if gt (len .examples) 1 -}}
               <div class="phm pvm bg-gray4">
                 <select class="form__control w100p mb0" name="{{$responseId}}" data-example-sub aria-label="Response code {{$response}} example">
@@ -39,7 +37,7 @@
                 </select>
               </div>
               {{- end -}}
-              
+
               {{- $exInd := 0 -}}
 
               {{- range .examples -}}
@@ -49,18 +47,12 @@
                     {{- $exId := print $responseId "-" $exPath.File -}}
                     <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
                       {{- range index $components.examples $exPath.File -}}
-                        {{- $codeExample = . | jsonify (dict "indent" "  ") -}}
-                        {{- $codeExample = replace $codeExample "\\u0026" "&" -}}
-                        {{- highlight $codeExample "json" -}}
+                        {{- partial "api/oas/example-json.html" . -}}
                       {{- end -}}
-                      {{- partial "api/oas/copy-btn.html" -}}
                     </div>
                     <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
                       {{- range index $components.examples $exPath.File -}}
-                        {{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" -}}
-                        {{- $xmlExamplePart := partial "api/oas/responsexml.html" (dict "ctx" . "indent" "" "root" true) -}}
-                        {{- $xmlExample = printf "%s%s" $xmlExample $xmlExamplePart -}}
-                        {{- highlight $xmlExample "xml" -}}
+                        {{- partial "api/oas/example-xml.html" . -}}
                       {{- end -}}
                     </div>
                     {{- $exInd = add $exInd 1 -}}

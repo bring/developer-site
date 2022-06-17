@@ -15,7 +15,6 @@
   {{- $endpointId := .endpointId -}}
 
   <h3>Response examples</h3>
-  {{- $codeExample := "" -}}
   {{- $resInd := 0 -}}
   <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
     {{- partial "api/oas/responsecode-btns.html" (dict "responses" .responses "endpointId" $endpointId) -}}
@@ -40,16 +39,19 @@
                     </select>
                   </div>
                 {{- end -}}
+
                 {{- $exInd := 0 -}}
+
                 {{- range $name, $val := .examples -}}
                   {{- with $val.description -}}
                     {{- $name = . -}}
                   {{- end -}}
                   {{- $exId := print $responseId "-" $name -}}
-                  <div class="relative" data-example-sub="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                    {{- $codeExample = .value | jsonify (dict "indent" "  ") -}}
-                    {{- highlight $codeExample "json" -}}
-                    {{- partial "api/oas/copy-btn.html" -}}
+                  <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
+                    {{- partial "api/oas/example-json.html" .value -}}
+                  </div>
+                  <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
+                    {{- partial "api/oas/example-xml.html" .value -}}
                   </div>
                   {{- $exInd = add $exInd 1 -}}
                 {{- end -}}
