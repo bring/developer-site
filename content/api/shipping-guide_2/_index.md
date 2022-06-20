@@ -481,10 +481,6 @@ documentation:
       ```xml
       <WithEnvironmentalData>true</WithEnvironmentalData>
       ```
-      * REST GET: environmentaldata
-      ```text
-      environmentaldata=true
-      ```
       * REST POST: withEnvironmentalData
       ```json
       "withEnvironmentalData": true
