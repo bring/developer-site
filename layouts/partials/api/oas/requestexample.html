@@ -26,7 +26,7 @@
 
           {{ if gt $showFormatMenu 1 }}
             <div class="mhm ptm">
-              <select class="form__control w100p mb0 pas schema-type-select" name="formats" data-example-sub aria-label="Select format">
+              <select class="form__control w100p mb0 pas hauto" name="formats" data-example-sub aria-label="Select format">
                 {{ range $application, $_ := . }}
                     <option value="{{$application}}">{{$application}}</option>
                 {{ end }}
@@ -45,7 +45,7 @@
             {{- if isset . "examples" -}}
               {{- if gt (len .examples) 1 -}}
                 <div class="mhm ptm">
-                  <select class="form__control w100p mb0 pas schema-type-select" name="{{$format}}-{{$endpointId}}" data-example-sub aria-label="{{$endpointId}} {{$format}} request example">
+                  <select class="form__control w100p mb0 pas hauto" name="{{$format}}-{{$endpointId}}" data-example-sub aria-label="{{$endpointId}} {{$format}} request example">
                     {{- range $name, $_ := .examples -}}
                       {{- $exId := print $name | anchorize -}}
                       <option value="{{$exId}}">{{$name}}</option>

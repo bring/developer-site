@@ -19,7 +19,7 @@
         {{ end }}
         {{ if gt $showFormatMenu 1 }}
           <div class="mhm ptm">
-            <select class="form__control w100p mb0 pas schema-type-select" name="formats" data-example-sub aria-label="Select format">
+            <select class="form__control w100p mb0 pas hauto" name="formats" data-example-sub aria-label="Select format">
               {{ range $application, $_ := . }}
                 <option value="{{$application}}">{{$application}}</option>
               {{ end }}
@@ -39,12 +39,14 @@
             {{- if isset . "examples" -}}
               {{/* Loop over the examples using the response refs as index */}}
               {{- range index $components.examples $response -}}
-                {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                <div class="relative mtm">
+                  {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                </div>
               {{- else -}}
                 {{/* make select if more than one example */}}
                 {{- if gt (len .examples) 1 -}}
                   <div class="mhm ptm">
-                    <select class="form__control w100p mb0 pas schema-type-select" name="{{$format}}-{{$responseId}}" data-example-sub aria-label="Response code {{$response}} {{$format}} example">
+                    <select class="form__control w100p mb0 pas hauto" name="{{$format}}-{{$responseId}}" data-example-sub aria-label="Response code {{$response}} {{$format}} example">
                       {{- range $name, $val := .examples -}}
                         {{- with $val.description -}}
                           {{- $name = . -}}
