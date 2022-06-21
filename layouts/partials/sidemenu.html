@@ -46,9 +46,15 @@
                           </li>
                         {{- end -}}
                         {{- range $.Params.apis -}}
-                          <li>
-                            <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
-                          </li>
+                          {{ if eq "pickup-point" .slug }}
+                            <li>
+                              <a href="/api/{{ .slug }}">{{ .title }}</a>
+                            </li>
+                          {{ else }}
+                            <li>
+                              <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
+                            </li>
+                          {{ end }}
                         {{- end -}}
                       </ul>
                     {{- end -}}
