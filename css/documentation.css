@@ -269,11 +269,6 @@ summary.error-code:hover {
   color: var(--red-dark);
 }
 
-/* Gap utility, will implement in MDS after IE11 retire */
-.gapm {
-  gap: 2rem;
-}
-
 .minw0 {
   min-width: 0;
 }

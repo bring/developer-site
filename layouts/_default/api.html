@@ -109,7 +109,7 @@
                   {{- range $type, $_ := . -}}
                     {{- $endpointId := .summary | anchorize -}}
                     <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
-                    <div class="flex flex-wrap mbxl pbxl mb-border bb gapm">
+                    <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
                       <div class="param-response-area">
                         <div class="flex align-ic mbm mts">
                           {{- partial "api/oas/endpoint-type" (dict "type" $type) -}}
