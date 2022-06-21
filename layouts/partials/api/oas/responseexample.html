@@ -21,14 +21,37 @@
     {{- range $response, $_ := .responses -}}
       {{- with .content -}}
         {{- $responseId := print $endpointId "-" $response -}}
-        <div class="relative" data-example="{{$responseId}}" role="tabpanel" aria-labelledby="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
+        <div class="relative bg-gray4 example-wrap" data-example="{{$responseId}}" role="tabpanel" aria-labelledby="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
+
+          {{ $showFormatMenu := 0 }}
+          {{ range $application, $_ := . }}
+            {{ if or (in $application "json") (in $application "xml") }}
+              {{ $showFormatMenu = add $showFormatMenu 1 }}
+            {{ end }}
+          {{ end }}
+          {{ if gt $showFormatMenu 1 }}
+            <div class="phm ptm">
+              <select class="form__control w100p mb0 pas schema-type-select" name="formats" data-example-sub aria-label="Select format">
+                {{ range $application, $_ := . }}
+                    <option value="{{$application}}">{{$application}}</option>
+                {{ end }}
+              </select>
+            </div>
+          {{ end }}
+
           {{- range $application, $_ := . -}}
+            {{- $format := "" -}}
             {{- if in $application "json" -}}
-              {{/* If application type contains examples object */}}
+              {{- $format = "json" -}}
+            {{- else if in $application "xml" -}}
+              {{- $format = printf "xml" -}}
+            {{- end -}}
+
+            {{- if or (in $application "json") (in $application "xml") -}}
               {{- if isset . "examples" -}}
                 {{- if gt (len .examples) 1 -}}
-                  <div class="phm pvm bg-gray4">
-                    <select class="form__control w100p mb0" name="{{$responseId}}" data-example-sub aria-label="Response code {{$response}} example">
+                  <div class="phm ptm">
+                    <select class="form__control w100p mb0 pas schema-type-select" name="{{$responseId}}-{{$format}}" data-example-sub aria-label="Response code {{$response}} {{$format}} example">
                       {{- range $name, $val := .examples -}}
                         {{- with $val.description -}}
                           {{- $name = . -}}
@@ -47,14 +70,12 @@
                     {{- $name = . -}}
                   {{- end -}}
                   {{- $exId := print $responseId "-" $name -}}
-                  <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
-                    {{- partial "api/oas/example-json.html" .value -}}
-                  </div>
-                  <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
-                    {{- partial "api/oas/example-xml.html" .value -}}
+                  <div class="relative mtm" data-example-sub="{{$exId}}" data-format="{{$application}}" {{if ne $exInd 0}}hidden{{end}}>
+                    {{- partial (printf "api/oas/example-%s.html" $format) . -}}
                   </div>
                   {{- $exInd = add $exInd 1 -}}
                 {{- end -}}
+
               {{- end -}}
             {{- end -}}
           {{- end -}}
