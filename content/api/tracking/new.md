@@ -5,6 +5,10 @@ hidden: true
  
 important:
   - type: warn
+    title: Deprecating v1 version of Tracking API - 01.08.2022
+    message: |
+     Starting 1 August 2022, we will be deprecating the v1 version of Tracking API. It is not a breaking change. In the new version you will have access to many more fields.
+  - type: warn
     title: Removed pickup code from open tracking - 04.02.2022
     message: |
      As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Logged in Tracking API will still contain the pickup code.
