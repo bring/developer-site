@@ -12,6 +12,10 @@ weight: 31
  
 important:
   - type: warn
+    title: Deprecating v1 version of Tracking API - 01.08.2022
+    message: |
+     Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2.
+  - type: warn
     title: Removed pickup code from open tracking - 04.02.2022
     message: |
      As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Logged in Tracking API will still contain the pickup code.
@@ -72,7 +76,7 @@ documentation:
       ```
 
       ### Select version by URL
-      Use the normal URL, but add `{v1, v2}` to the URL. Example:
+      Use the normal URL, but add `{v2}` to the URL. Example:
 
       | Application | URL example |
       |:-------|:--------|
