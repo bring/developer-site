@@ -69,7 +69,7 @@ documentation:
       ```
 
       ### Select version by URL
-      Use the normal URL, but add `{v1, v2}` to the URL. Example:
+      Use the normal URL, but add `{v2}` to the URL. Example:
 
       | Application | URL example |
       |:-------|:--------|
