@@ -12,6 +12,10 @@ weight: 31
  
 important:
   - type: warn
+    title: Removed event statuses from open tracking - 22.06.2022
+    message: |
+     The event statuses ARRIVED_COLLECTION and ARRIVED_DELIVERY have been removed from the Tracking API.
+  - type: warn
     title: Removed pickup code from open tracking - 04.02.2022
     message: |
      As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Logged in Tracking API will still contain the pickup code.
