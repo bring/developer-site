@@ -14,7 +14,12 @@ important:
   - type: warn
     title: Deprecating v1 version of Tracking API - 01.08.2022
     message: |
-     Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2.
+     Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2. 
+     It is not a breaking change. In the new version you will have access to many more fields.
+  - type: warn
+    title: Removed event statuses from open tracking - 22.06.2022
+    message: |
+     The event statuses ARRIVED_COLLECTION and ARRIVED_DELIVERY are not valid anymore, and therefore have been removed from the Tracking API.
   - type: warn
     title: Removed pickup code from open tracking - 04.02.2022
     message: |
