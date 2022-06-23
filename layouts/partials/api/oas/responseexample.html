@@ -30,17 +30,23 @@
                 {{- if gt (len .examples) 1 -}}
                   <div class="phm pvm bg-gray4">
                     <select class="form__control w100p mb0" name="{{$responseId}}" data-example-sub aria-label="Response code {{$response}} example">
-                      {{- range $name, $_ := .examples -}}
+                      {{- range $name, $val := .examples -}}
+                        {{- with $val.description -}}
+                          {{- $name = . -}}
+                        {{- end -}}
                         {{- $exId := print $responseId "-" $name -}}
-                        <option value="{{$exId}}">{{$name}}</option>
+                        <option value="{{ $exId }}">{{ $name }}</option>
                       {{- end -}}
                     </select>
                   </div>
                 {{- end -}}
                 {{- $exInd := 0 -}}
-                {{- range $name,$_ := .examples -}}
+                {{- range $name, $val := .examples -}}
+                  {{- with $val.description -}}
+                    {{- $name = . -}}
+                  {{- end -}}
                   {{- $exId := print $responseId "-" $name -}}
-                  <div class="relative" data-example-sub="{{$exId}}" {{if ne $exInd 0}}hidden{{end}}>
+                  <div class="relative" data-example-sub="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
                     {{- $codeExample = .value | jsonify (dict "indent" "  ") -}}
                     {{- highlight $codeExample "json" -}}
                     {{- partial "api/oas/copy-btn.html" -}}
