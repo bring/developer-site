@@ -85,6 +85,31 @@ documentation:
       ```
       curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
       ```
+    
+      ###  Events Description
+      A parcel has a number of events connected to it during its travel. Here are a list of current event statuses that can be returned.
+
+       | Event | Description |
+       |:-------|:--------|
+       | `ATTEMPTED_DELIVERY` | The package has been attempted delivered at the door. Depending on the service it will be tried again or sent to closest pickup point. |
+       | `CUSTOMS` | Package is in customs clearance. |
+       | `COLLECTED` | The parcel has been collected at pickup address. |
+       | `DELIVERED` | Package has been delivered. |
+       | `DELIVERED_SENDER` | Package has been returned to the sender |
+       | `DELIVERY_CANCELLED` | Home delivery has been cancelled by the customer. |
+       | `DELIVERY_CHANGED` | Date for Home delivery has been changed by customer. |
+       | `DELIVERY_ORDERED` | Home delivery has been ordered |
+       | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |
+       | `HANDED_IN` | Package has been handed in to Bring. |
+       | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country. |
+       | `IN_TRANSIT` | Package is in transit. |
+       | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
+       | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
+       | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
+       | `RETURN` | The package has been returned to sender. |
+       | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
+       | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
+       | `UNKNOWN` | Represents unknown / undefined events |
 
       ### Verification
       You can verify that your request was used correctly by certifying that the response contains an element based on the request type:
