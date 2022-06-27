@@ -11,7 +11,7 @@ menu:
 weight: 62
 
 introduction: |
-  Order Management is a solution that lets integrated customers, their suppliers and Bring exchange order level information across the life cycle of customers’ orders. The Order Management SOAP can be used by customers to send a copy of their purchase and sales orders to the solution. Suppliers can use the SOAP to fetch order details, and to create packaging lists with transport details. Bring collects, structures and enriches the order information with transport and event details, and makes it available to the customer.
+  Order Management is a solution that lets integrated customers, their suppliers and Bring exchange order level information across the life cycle of customers' orders. Suppliers can use the API to fetch order details, and to create packaging lists with transport details. Bring collects, structures and enriches the order information with transport and event details, and makes it available to the customer.
 
 information:
   - title: Authentication
