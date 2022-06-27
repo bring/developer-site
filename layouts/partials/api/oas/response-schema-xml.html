@@ -1,0 +1,109 @@
+{{- $schemaObj := .schemaObj -}}
+{{- $name := .name -}}
+{{- $required := .required -}}
+{{- $components := .components -}}
+{{- $endpointId := .endpointId -}}
+{{- $uniqueId := "" -}}
+{{- $recLevel := add .recLevel 1 -}}
+
+{{/*  If there’s a ref, pass the destination data again  */}}
+{{- $isRef := "false" -}}
+{{- range $key, $_ := $schemaObj -}}
+{{- if eq $key "$ref" -}}
+  {{- $isRef = true -}}
+    {{- $schemaPath := path.Split . -}}
+    {{- $schema := index $components.schemas $schemaPath.File -}}
+    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*  If object or array, render and pass properties or items again  */}}
+{{- if or (eq $schemaObj.type "object") (eq $schemaObj.type "array") -}}
+  {{- with $schemaObj.xml.name -}}
+    {{- $name = . -}}
+  {{- end -}}
+  {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
+  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
+  <div class="mb-border bb bw1 mbs">
+    <div class="flex flex-wrap align-ifs pbs">
+      <dt>
+        {{- if or ($schemaObj.properties) ($schemaObj.items) -}}
+          {{- partial "api/oas/param-toggle-btn-xml.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+        {{- else -}}
+          <code class="mls">{{ $name }}</code>
+        {{- end -}}
+        {{- if $required -}}
+          <div class="plm mls lh-solid param-required text-note">Required</div>
+        {{- end -}}
+      </dt>
+      <dd class="ptxs pls">
+        {{- with $schemaObj.description -}}
+          {{ . }}
+        {{- end -}}
+        <div class="gray text-note">
+          {{- $schemaObj.type -}}
+          {{- if $schemaObj.xml.wrapped -}}
+            {{- print " wrapped" -}}
+          {{- end -}}
+        </div>
+      </dd>
+    </div>
+    {{/*  object  */}}
+    {{- with $schemaObj.properties -}}
+      <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+        <dl class="pls">
+          {{- range $key, $_ := . -}}
+            {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+          {{- end -}}
+        </dl>
+      </dd>
+    {{- end -}}
+    {{/*  array  */}}
+    {{- with $schemaObj.items -}}
+      <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+        <dl class="pls">
+          {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" "" "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+        </dl>
+      </dd>
+    {{- end -}}
+  </div>
+
+{{/*  If neither obj, arr or ref, render the item */}}
+{{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) -}}
+  {{- with $schemaObj.xml.name -}}
+    {{- $name = . -}}
+  {{- end -}}
+  <div class="mb-border bb bw1 mbs pbs pls">
+    <div class="flex flex-wrap align-ifs">
+      <dt>
+        <code>{{ $name }}</code>
+        {{- if $required -}}
+          <div class="lh-tight param-required text-note">Required</div>
+        {{- end -}}
+      </dt>
+      <dd class="pls">
+        {{- with $schemaObj.description -}}
+          {{ . }}
+        {{- end -}}
+        <div class="gray text-note">
+          {{- $schemaObj.type -}}
+          {{- with $schemaObj.format -}}
+            {{- printf " <%s>" . -}}
+          {{- end -}}
+          {{- if $schemaObj.xml.attribute -}}
+            {{- print " attribute" -}}
+          {{- end -}}
+        </div>
+        {{- with $schemaObj.enum -}}
+        <div>
+          <span class="text-note">Enum:</span>
+          {{- range . -}}
+            <br><code class="wrap-text">{{ . }}</code>
+          {{- end -}}
+        </div>
+        {{- end -}}
+      </dd>
+    </div>
+  </div>
+{{- end -}}

@@ -167,21 +167,32 @@
                                   </select>
 
                                   {{- range $application, $_ := . -}}
-                                    <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
-                                    {{/*  Finding the schemarefs and using those in the partial to recursively output the schema data  */}}
-                                    {{- range $key, $_ := .schema -}}
-                                      {{- if reflect.IsMap . -}}
-                                        {{- range . -}}
-                                          {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
-                                        {{- end -}}
-                                      {{- else if eq $key "$ref" -}}
-                                          {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId) -}}
-                                      {{- end -}}
+                                    {{- $format := "" -}}
+                                    {{- if in $application "json" -}}
+                                      {{- $format = "json" -}}
+                                    {{- else if in $application "xml" -}}
+                                      {{- $format = printf "xml" -}}
                                     {{- end -}}
+
+                                    <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                                      {{/*  TODO: pass the entire .schema in for non-XML as well  */}}
+                                      {{- if eq "xml" $format -}}
+                                        {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
+                                      {{- else -}}
+                                        {{- range $key, $_ := .schema -}}
+                                          {{- if reflect.IsMap . -}}
+                                            {{- range . -}}
+                                              {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId "application" $application) -}}
+                                            {{- end -}}
+                                          {{- else if eq $key "$ref" -}}
+                                            {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId "application" $application) -}}
+                                          {{- end -}}
+                                        {{- end -}}
+                                      {{- end -}}
                                     </dl>
                                   {{- end -}}
                                   </div>
-                              </details>
+                                </details>
                               {{- end -}}
                             {{- else -}}
                               <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
