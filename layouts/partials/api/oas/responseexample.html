@@ -64,14 +64,18 @@
                 {{- end -}}
 
                 {{- $exInd := 0 -}}
-
+                {{- $schema := .schema -}}
                 {{- range $name, $val := .examples -}}
                   {{- with $val.description -}}
                     {{- $name = . -}}
                   {{- end -}}
                   {{- $exId := print $responseId "-" $name -}}
                   <div class="relative mtm" data-example-sub="{{$exId}}" data-format="{{$application}}" {{if ne $exInd 0}}hidden{{end}}>
-                    {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                  {{- if eq $format "xml" -}}
+                    {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "exampleObj" . ) -}}
+                  {{- else -}}
+                    {{- partial "api/oas/example-json.html" (dict "ctx" . "schemas" .) -}}
+                  {{- end -}}
                   </div>
                   {{- $exInd = add $exInd 1 -}}
                 {{- end -}}

@@ -11,21 +11,21 @@
       {{- $responseId := print $endpointId "-" $response -}}
       <div class="relative bg-gray4 example-wrap" data-example="{{$responseId}}" role="tabpanel" aria-labelledby="{{$responseId}}" {{if ne $resInd 0}}hidden{{end}}>
 
-        {{ $showFormatMenu := 0 }}
-        {{ range $application, $_ := . }}
-          {{ if or (in $application "json") (in $application "xml") }}
-            {{ $showFormatMenu = add $showFormatMenu 1 }}
-          {{ end }}
-        {{ end }}
-        {{ if gt $showFormatMenu 1 }}
+        {{- $showFormatMenu := 0 -}}
+        {{- range $application, $_ := . -}}
+          {{- if or (in $application "json") (in $application "xml") -}}
+            {{- $showFormatMenu = add $showFormatMenu 1 -}}
+          {{- end -}}
+        {{- end -}}
+        {{- if gt $showFormatMenu 1 -}}
           <div class="mhm ptm">
             <select class="form__control w100p mb0 pas hauto" name="formats" data-example-sub aria-label="Select format">
-              {{ range $application, $_ := . }}
-                <option value="{{$application}}">{{$application}}</option>
-              {{ end }}
+              {{- range $application, $_ := . -}}
+                <option value="{{$application}}">{{ $application }}</option>
+              {{- end -}}
             </select>
           </div>
-        {{ end }}
+        {{- end -}}
 
         {{- range $application, $_ := . -}}
           {{- $format := "" -}}
@@ -36,11 +36,16 @@
           {{- end -}}
 
           {{- if or (in $application "json") (in $application "xml") -}}
+          {{- $schema := .schema -}}
             {{- if isset . "examples" -}}
               {{/* Loop over the examples using the response refs as index */}}
               {{- range index $components.examples $response -}}
                 <div class="relative mtm">
-                  {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                  {{- if eq $format "xml" -}}
+                    {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
+                  {{- else -}}
+                    {{- partial "api/oas/example-json.html" (dict "ctx" . "schemas" $components.schemas) -}}
+                  {{- end -}}
                 </div>
               {{- else -}}
                 {{/* make select if more than one example */}}
@@ -73,7 +78,11 @@
 
                       <div class="relative mtm" data-example-sub="{{$exId}}" data-format="{{$application}}" {{if ne $exInd 0}}hidden{{end}}>
                         {{- range index $components.examples $exPath.File -}}
-                          {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                          {{- if eq $format "xml" -}}
+                            {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
+                          {{- else -}}
+                            {{- partial "api/oas/example-json.html" (dict "key" $exPath.File "ctx" . "schemas" $components.schemas) . -}}
+                          {{- end -}}
                         {{- end -}}
                       </div>
 

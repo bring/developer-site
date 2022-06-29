@@ -1,46 +1,102 @@
-{{ $xmlExample := "" }}
-{{ $indentSize := "  " }}
-{{ with .root }}
-  {{ $indentSize = "" }}
-{{ end }}
-{{ $indent := printf "%s%s" .indent $indentSize }}
+{{/*  Works similar to the schema template but $exampleObj is added to the mix to get values and numbers  */}}
+{{- $schemaObj := .schemaObj -}}
+{{- $exampleObj := .exampleObj -}}
+{{- $name := .name -}}
+{{- $objName := .name -}}
+{{- $required := .required -}}
+{{- $components := .components -}}
 
-{{ range $key, $val := .ctx }}
-  {{ if reflect.IsMap . }}
-    {{ $xmlObject := println (printf "%s<%s>" $indent $key) }}
-    {{ $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "ctx" . "indent" $indent) }}
-    {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
-    {{ $xmlObject = println (printf "%s%s</%s>" $xmlObject $indent $key) }}
-    {{ $xmlExample = printf "%s%s" $xmlExample $xmlObject }}
+{{- $XML := "" -}}
+{{- $indentSize := "  " -}}
+{{- with .wrapped -}}
+  {{- $indentSize = "     " -}}
+{{- end -}}
+{{- $indent := printf "%s%s" .indent $indentSize -}}
 
-  {{ else if reflect.IsSlice . }}
-    {{ $xmlArray := "" }}
-    {{ if eq (len .) 0 }}
-      {{ $xmlArray = printf "%s%s<%s>" $indent $xmlArray $key }}
-      {{ $xmlArray = println (printf "%s</%s>" $xmlArray $key) }}
-    {{ else }}
-      {{ range . }}
-        {{ if reflect.IsMap . }}
-          {{ $xmlArray = println (printf "%s%s<%s>" $xmlArray $indent $key) }}
-          {{ $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "ctx" . "indent" $indent) }}
-          {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart }}
-          {{ $xmlArray = println (printf "%s%s</%s>" $xmlArray $indent $key) }}
-        {{ else }}
-          {{ $xmlArray = printf "%s%s<%s>" $xmlArray $indent $key }}
-          {{ $xmlArray = printf "%s%s" $xmlArray (string .) }}
-          {{ $xmlArray = println (printf "%s</%s>" $xmlArray $key) }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-    {{ $xmlExample = printf "%s%s" $xmlExample $xmlArray }}
+{{/*  If there’s a ref, pass the destination data again  */}}
+{{- $isRef := "false" -}}
+{{- range $key, $_ := $schemaObj -}}
+  {{- if eq $key "$ref" -}}
+    {{- $isRef = true -}}
+    {{- $schemaPath := path.Split . -}}
+    {{- $schema := index $components.schemas $schemaPath.File -}}
+    {{- range $keys, $values := $exampleObj -}}
+      {{- if eq (lower $objName) (lower $keys) -}}
+        {{- $exampleObj = . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $xmlRef := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "exampleObj" $exampleObj "indent" "") -}}
+    {{- $XML = printf "%s%s" $XML $xmlRef -}}
+  {{- end -}}
+{{- end -}}
 
-  {{ else }}
-    {{ $xmlLine := printf "%s<%s>" $indent $key }}
-    {{ $xmlLine = printf "%s%s" $xmlLine (string $val) }}
-    {{ $xmlLine = printf "%s</%s>" $xmlLine $key }}
-    {{ $xmlExample = println (printf "%s%s" $xmlExample $xmlLine) }}
+{{/*  If object or array, render and pass properties or items again  */}}
+{{- if or (eq $schemaObj.type "object") (eq $schemaObj.type "array") -}}
+  {{- $xmlObject := $indent -}}
+  {{- with $schemaObj.xml.name -}}
+    {{- $name = . -}}
+  {{- end -}}
+  {{- if lt (len $objName) 1 -}}
+    {{- $xmlObject = "Missing root, can’t generate example" -}}
+  {{- else -}}
+    {{- $xmlObject = printf "%s<%s" $xmlObject $name -}}
+    {{/*  in case it’s an object with children as attributes  */}}
+    {{- range $schemaKey, $schemaVal := $schemaObj.properties -}}
+      {{- range $exampleKey, $exampleVal := $exampleObj -}}
+        {{- if eq (lower $schemaKey) (lower $exampleKey) -}}
+          {{- with $schemaVal.xml.attribute -}}
+            {{- with $schemaVal.xml.name -}}
+              {{- $exampleKey = . -}}
+            {{- end -}}
+            {{- $attribute := printf " %s=\"%s\"" $exampleKey (string $exampleVal) -}}
+            {{- $xmlObject = printf "%s%s" $xmlObject $attribute -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $xmlObject = println (printf "%s>" $xmlObject) -}}
 
-  {{ end }}
-{{ end }}
+    {{/*  object  */}}
+    {{- with $schemaObj.properties -}}
 
-{{ return $xmlExample }}
+      {{- range $key, $val := . -}}
+        {{- $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "indent" $indent) -}}
+        {{- with $xmlObjectPart -}}
+          {{- $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{/*  array  */}}
+    {{/*  loop exampleobject and pass the it further in since arrays are wrapped  */}}
+    {{- with $schemaObj.items -}}
+      {{- $xmlArray := "" -}}
+      {{- range $key, $_ := $exampleObj -}}
+        {{- if eq $objName $key -}}
+          {{- range . -}}
+            {{- $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "indent" $indent) -}}
+            {{- $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $xmlObject = printf "%s%s" $xmlObject $xmlArray -}}
+    {{- end -}}
+
+    {{- $xmlObject = println (printf "%s%s</%s>" $xmlObject $indent $name) -}}
+  {{- end -}}
+  {{- $XML = printf "%s%s" $XML $xmlObject -}}
+
+{{/*  If neither obj, arr, ref nor attribute, render the item */}}
+{{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) (not $schemaObj.xml.attribute) -}}
+  {{ $xmlLine := $indent }}
+  {{- $value := index $exampleObj $name -}}
+  {{- with $value -}}
+    {{- with $schemaObj.xml.name -}}
+      {{- $name = . -}}
+    {{- end -}}
+    {{- $xmlLine = printf "%s<%s>%s</%s>" $xmlLine $name (string $value) $name -}}
+    {{- $XML = println (printf "%s%s" $XML $xmlLine) -}}
+  {{- end -}}
+{{- end -}}
+
+{{ return $XML }}
