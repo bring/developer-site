@@ -63,7 +63,7 @@
               {{- range $name,$_ := .examples -}}
                 {{- $exId := print $name | anchorize -}}
                 <div class="relative" data-example-sub="{{$exId}}" data-format="{{$application}}">
-                  {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                  {{- partial (printf "api/oas/example-%s.html" $format) (dict "ctx" . "schemas" .) -}}
                   {{- partial "api/oas/copy-btn.html" -}}
                 </div>
               {{- end -}}

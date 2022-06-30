@@ -1,6 +1,6 @@
 {{ if reflect.IsMap . }} {{/*  defense against WIP examples  */}}
-  {{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" -}}
-  {{- $XML := partial "api/oas/json-to-xml.html" (dict "schemaObj" .schemaObj "name" .name "components" .components "exampleObj" .exampleObj "indent" "" ) -}}
+  {{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" -}}
+  {{- $XML := partial "api/oas/json-to-xml.html" (dict "schemaObj" .schemaObj "name" .name "components" .components "exampleObj" .exampleObj "lev" -1 ) -}}
   {{- $xmlExample = printf "%s%s" $xmlExample $XML -}}
   {{- highlight $xmlExample "xml" -}}
 {{ end }}

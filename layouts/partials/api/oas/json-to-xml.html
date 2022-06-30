@@ -6,17 +6,16 @@
 {{- $required := .required -}}
 {{- $components := .components -}}
 
+{{- $lev := add .lev 1 -}}
+{{- $indentChar := "  " -}}
+{{- $indent := strings.Repeat $lev $indentChar -}}
 {{- $XML := "" -}}
-{{- $indentSize := "  " -}}
-{{- with .wrapped -}}
-  {{- $indentSize = "     " -}}
-{{- end -}}
-{{- $indent := printf "%s%s" .indent $indentSize -}}
 
 {{/*  If there’s a ref, pass the destination data again  */}}
 {{- $isRef := "false" -}}
 {{- range $key, $_ := $schemaObj -}}
   {{- if eq $key "$ref" -}}
+    {{- $lev = sub $lev 1 -}}
     {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
@@ -25,7 +24,7 @@
         {{- $exampleObj = . -}}
       {{- end -}}
     {{- end -}}
-    {{- $xmlRef := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "exampleObj" $exampleObj "indent" "") -}}
+    {{- $xmlRef := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "exampleObj" $exampleObj "lev" $lev) -}}
     {{- $XML = printf "%s%s" $XML $xmlRef -}}
   {{- end -}}
 {{- end -}}
@@ -37,7 +36,7 @@
     {{- $name = . -}}
   {{- end -}}
   {{- if lt (len $objName) 1 -}}
-    {{- $xmlObject = "Missing root, can’t generate example" -}}
+    {{- $xmlObject = "<!-- Example cannot be generated; root element name is undefined -->" -}}
   {{- else -}}
     {{- $xmlObject = printf "%s<%s" $xmlObject $name -}}
     {{/*  in case it’s an object with children as attributes  */}}
@@ -60,7 +59,7 @@
     {{- with $schemaObj.properties -}}
 
       {{- range $key, $val := . -}}
-        {{- $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "indent" $indent) -}}
+        {{- $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "lev" $lev) -}}
         {{- with $xmlObjectPart -}}
           {{- $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart -}}
         {{- end -}}
@@ -74,7 +73,7 @@
       {{- range $key, $_ := $exampleObj -}}
         {{- if eq $objName $key -}}
           {{- range . -}}
-            {{- $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "indent" $indent) -}}
+            {{- $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "lev" $lev) -}}
             {{- $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart -}}
           {{- end -}}
         {{- end -}}
@@ -88,7 +87,7 @@
 
 {{/*  If neither obj, arr, ref nor attribute, render the item */}}
 {{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) (not $schemaObj.xml.attribute) -}}
-  {{ $xmlLine := $indent }}
+  {{- $xmlLine := $indent -}}
   {{- $value := index $exampleObj $name -}}
   {{- with $value -}}
     {{- with $schemaObj.xml.name -}}
