@@ -1,6 +1,15 @@
-{{ if reflect.IsMap . }} {{/*  defense against WIP examples  */}}
-  {{- $xmlExample := println "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" -}}
-  {{- $XML := partial "api/oas/json-to-xml.html" (dict "schemaObj" .schemaObj "name" .name "components" .components "exampleObj" .exampleObj "lev" -1 ) -}}
-  {{- $xmlExample = printf "%s%s" $xmlExample $XML -}}
-  {{- highlight $xmlExample "xml" -}}
-{{ end }}
+{{- if reflect.IsMap . -}}
+  {{- $XML := "" -}}
+
+  {{/*  If the complete example is a string  */}}
+  {{- $type := printf "%T" .exampleObj -}}
+  {{- if eq $type "string" -}}
+    {{- $XML = .exampleObj -}}
+  {{- else -}}
+    {{- $xmlOpen := println "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" -}}
+    {{- $xmlExample := partial "api/oas/json-to-xml.html" (dict "schemaObj" .schemaObj "name" .name "components" .components "exampleObj" .exampleObj "lev" -1 ) -}}
+    {{- $XML = printf "%s%s" $xmlOpen $xmlExample -}}
+  {{- end -}}
+
+  {{- highlight $XML "xml" -}}
+{{- end -}}
