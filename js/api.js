@@ -88,6 +88,43 @@ responseExBtns.forEach((btn) => {
   })
 })
 
+// Format type selects
+const formatSelects = document.querySelectorAll('select[name="formats"]')
+formatSelects.forEach((select) => {
+  select.addEventListener("change", function (e){
+    const element = e.target
+    const formatId = element.value
+
+    let exampleGroup
+    const parentId = element.dataset.subOf
+    const parentElement = document.querySelector('div[data-example="' + parentId + '"')
+    const exampleArr = parentElement.querySelectorAll('div[data-type]')
+    exampleArr.forEach((example) => {
+      if (example.dataset.type === formatId) {
+        exampleGroup = example
+        example.hidden = false
+      } else {
+        example.hidden = true
+      }
+    })
+
+    // If multiple examples
+    const subSelect = exampleGroup.querySelector('select[data-example-sub]')
+    if (subSelect) {
+      const subExampleArr = exampleGroup.querySelectorAll('div[data-example-sub]')
+      subExampleArr.forEach((subExample) => {
+        if (subExample.dataset.exampleSub === subSelect.value) {
+          subExample.hidden = false
+        } else {
+          subExample.hidden = true
+        }
+      })
+
+    }
+
+  })
+})
+
 //Request and response examples
 const exampleSelects = document.querySelectorAll(
   "select[data-example-sub]"

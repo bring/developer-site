@@ -4,13 +4,13 @@
   {{- with .description -}}
     {{ . }}
   {{- end -}}
-  {{- $format := "" -}}
+  {{- $typeFormat := "" -}}
   {{- with .format -}}
-    {{- $format = print " <" . ">" -}}
+    {{- $typeFormat = print " <" . ">" -}}
   {{- end -}}
   <div class="gray text-note">
     {{- with .type -}}
-      {{ . }}{{ $format }}
+      {{ . }}{{ $typeFormat }}
     {{- else -}}
       {{- if $isParent -}}
         object
