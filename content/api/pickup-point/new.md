@@ -3,19 +3,6 @@ title: Pickup Point API
 layout: api
 hidden: true
 
-important:
-  - type: info
-    title: Max parcel dimensions for Pakkeboks pickup points
-    message: |
-      Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points can now be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. JSON field:
-      <code>
-      "maxParcelDimensions": {
-        "length": 44.5,
-        "width": 50.5,
-        "height": 60.0
-      }
-      </code>
-
 introduction: |
   The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: Google). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance. For precise results, we strongly recommend to use the end customer's complete address when using the API.
 
@@ -32,11 +19,23 @@ information:
     content: |
       REST XML/JSON over HTTP.
 
-documentation:
+guides:
+  - title: Max parcel dimensions for Pakkeboks pickup points
+    content: |
+      Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points can now be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. JSON field:
+      ```json
+        "maxParcelDimensions": {
+          "length": 44.5,
+          "width": 50.5,
+          "height": 60.0
+        }
+      ```
+
   - title: Filtering results
     content: |
       The list of pickup points can be narrowed down by using `searchForText=<texts>`, where the pickup points will have at least a partial match with the search string given in `<texts>`. This can be the name of the pickup point, its address, city, county, municipality or location. See the examples for more information.
 
+documentation:
   - title: Postbox and visiting address
     content: |
       There are two sets of addresses in the response, postbox (`address` and `postalCode`) and visiting address (`visitingAddress` and `visitingPostalCode`). Postbox address is required to get a package produced correctly, use this AS RECIPIENT address on label. Visiting address is more appropriate for user interface (Street address of the PIB).
