@@ -151,20 +151,31 @@
 
                             {{- if $hasSchema -}}
                               {{- with .content -}}
+                              {{- $multiSchema := false -}}
+                              {{- if gt (len .) 1 -}}
+                                {{- $multiSchema = true -}}
+                              {{- end -}}
                               <details class="mbs">
                                 <summary class="{{ $responseColor }} pas" aria-label="Response {{$response}} {{$description}} details dropdown"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
 
                                 <div class="bg-gray1 pam">
-                                  <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Response schema:</label>
-                                  <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select">
-                                    {{- $selected := "selected" -}}
+                                  <h4>Schema</h4>
+                                  {{- if $multiSchema -}}
+                                    <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Media type:</label>
+                                    <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select hauto">
+                                      {{- $selected := "selected" -}}
+                                      {{- range $applicationType, $_ := . -}}
+                                        <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                          {{ $applicationType }}
+                                        </option>
+                                        {{- $selected = "" -}}
+                                      {{- end -}}
+                                    </select>
+                                  {{- else -}}
                                     {{- range $applicationType, $_ := . -}}
-                                      <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
-                                        {{ $applicationType }}
-                                      </option>
-                                      {{$selected = ""}}
+                                      <p>Media type: {{ $applicationType }}</p>
                                     {{- end -}}
-                                  </select>
+                                  {{- end -}}
 
                                   {{- range $application, $_ := . -}}
                                     {{- $format := "" -}}
@@ -174,7 +185,7 @@
                                       {{- $format = printf "xml" -}}
                                     {{- end -}}
 
-                                    <dl class="schema-type-container desc-list pam bshadow bg-white dn" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                                    <dl class="schema-type-container desc-list pam bshadow bg-white {{ if $multiSchema }}dn{{ end }}" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
                                       {{/*  TODO: pass the entire .schema in for non-XML as well  */}}
                                       {{- if eq "xml" $format -}}
                                         {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
