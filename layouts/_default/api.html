@@ -96,6 +96,24 @@
                     <p>{{ .content | markdownify }}</p>
                   {{- end -}}
                 {{- end -}}
+                {{- with $.Params.guides -}}
+                  <div class="mvl owls">
+                    {{- range . -}}
+                      <div class="bg-gray1 pam rad-a2px bshadow">
+                        {{- with .title }}
+                          <h2 class="dev-anchored" id="{{ . | urlize }}">
+                            {{- . -}}
+                          </h2>
+                        {{- end -}}
+                        {{- if in (string .content) "\n\n" -}}
+                          {{- .content | markdownify -}}
+                        {{- else -}}
+                          <p>{{ .content | markdownify }}</p>
+                        {{- end -}}
+                      </div>
+                    {{- end -}}
+                  </div>
+                {{- end -}}
               </div>
             </section>
 
