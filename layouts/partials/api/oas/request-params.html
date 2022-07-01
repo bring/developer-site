@@ -74,39 +74,45 @@
         <dd class="pls">
           {{- .description -}}
           {{- if gt (len $description) 0 -}}
-              <p class="text-note mb0">{{$description}}</p>
+            <p class="mb0">{{$description}}</p>
           {{- end -}}
-          <div class="text-note gray">
+          <div class="gray">
             {{- $type -}}
           </div>
 
           {{- if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) -}}
-              <div class="text-note">
-                {{- if gt (len $enum) 1 -}}
-                  Enum:
-                {{- else -}}
-                  Value:
-                {{- end -}}
-              </div>
-              {{- range $enum -}}
-                <code class="mbxs db maxwmaxc">{{.}}</code>
+            <div class="fw600 mtxs">
+              {{- if gt (len $enum) 1 -}}
+                Enum
+              {{- else -}}
+                Value
               {{- end -}}
+            </div>
+            {{- range $enum -}}
+              <code class="mbxs db maxwmaxc">{{.}}</code>
+            {{- end -}}
           {{- end -}}
 
           {{- if gt (len $default) 0 -}}
-              <div class="text-note">Default:</div>
-              <code class="mbxs db maxwmaxc">"{{$default}}"</code>
+            <div class="fw600 mtxs">Default</div>
+            <code class="mbxs db maxwmaxc">"{{$default}}"</code>
           {{- end -}}
 
           {{- if gt (len $example) 0 -}}
-              <div class="text-note">Example:</div>
-              <code class="mbxs db maxwmaxc">{{$example}}</code>
+            <div class="fw600 mtxs">Example</div>
+            <code class="mbxs db maxwmaxc">{{$example}}</code>
           {{- end -}}
 
           {{- if gt (len $examples) 0 -}}
-            <div class="text-note">Examples:</div>
+            <div class="fw600 mtxs">
+              {{- if gt (len $examples) 1 -}}
+                Examples
+              {{- else -}}
+                Example
+              {{- end -}}
+            </div>
             {{- range $key, $value := $examples -}}
-              <p class="text-note fwb mb0">{{$key}}</p>
+              <p class="text-note mb0">{{$key}}</p>
               {{- if ne $key $value.description -}}
                 <p class="text-note mb0">{{$value.description}}</p>
               {{- end -}}
