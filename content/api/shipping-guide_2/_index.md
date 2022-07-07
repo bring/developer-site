@@ -10,7 +10,6 @@ menu:
     parent: checkout
 weight: 11
 aliases:
-  - shipping-guide
 
 important:
   - type: warn
@@ -542,6 +541,11 @@ documentation:
       * Pall til bedrift (5400)
       * På Døren (1736) (currently only for pilot customers)
       * Pakke levert hjem (5600) (currently only for pilot customers)
+      * Business Parcel (0330) (only for domestic Sweden)
+      * Business Parcel Bulk (0332) (only for domestic Sweden)
+      * Pickup Parcel (0340) (only for domestic Sweden)
+      * Pickup Parcel Bulk (0342) (only for domestic Sweden)
+    
 
       Note: setting the **actual shipping date** in the Shipping Guide request is a prerequisite for getting the correct estimate back from the machine learning model, as the leadtime is always calculated from the day the parcel is handed in to Bring. In absence for a shipping date set by the user, the Shipping Guide API will default to "now".    
 
