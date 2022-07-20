@@ -13,8 +13,23 @@ aliases:
   - checkout-guide-norway/api/pickup-point/
 
 introduction: |
-  The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: Google). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance. For precise results, we strongly recommend to use the end customer’s complete address (not only their postal code) when using the API.
+  The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: Google). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance.
 
+guides:
+- title: Smart pickup point usage
+  content: |
+    For precise results, we strongly recommend to use the end customer’s complete address (not only their postal code) when using the API.
+
+- title: Max parcel dimensions for Pakkeboks pickup points
+  content: |
+    Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points can now be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. JSON field:
+    ```json
+      "maxParcelDimensions": {
+        "length": 44.5,
+        "width": 50.5,
+        "height": 60.0
+      }
+    ```
 information:
   - title: Authentication
     content: |
@@ -27,18 +42,6 @@ information:
   - title: Formats
     content: |
       REST XML/JSON over HTTP.
-
-guides:
-  - title: Max parcel dimensions for Pakkeboks pickup points
-    content: |
-      Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points can now be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. JSON field:
-      ```json
-        "maxParcelDimensions": {
-          "length": 44.5,
-          "width": 50.5,
-          "height": 60.0
-        }
-      ```
 
 documentation:
   - title: Filtering results
@@ -75,6 +78,5 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point **_(These lockers are placed inside buildings only accessible to the residents and workers in the building)_**
-
 oas: https://api.qa.bring.com/pickuppoint/openapi.json
 ---
