@@ -72,26 +72,41 @@ running the workflow in
 or via your terminal
 `gh workflow run azure-static-web-apps-mango-cliff-0e97d9203.yml`.
 
-## Publish an item in API updates
+## Publish an API update message
 
-Revision history and Changelog has been renamed to _API updates_ to better
-reflect that it covers past, current and upcoming changes.
+Revision history and Changelog is called _API updates_ to reflect that it covers
+past, current and upcoming changes. New messages are automatically emailed to
+users who subscribe.
 
-New items are added with publish date as the file name `yyyy-mm-dd.md` in the
+New messages are added with publish date as the file name `yyyy-mm-dd.md` in the
 `conten/api/revision-history` folder with the following frontmatter:
 
 ```
 ---
-title: {Should at least contain the name of the API}
+title: {API name}
 publishDate: yyyy-mm-dd
 layout: api
 ---
 ```
 
-If the publish date is set in the future, either the branch must be merged or a
-build must be triggered at or after that point in time. In most cases, publish
-date is the same as change date, but if the message is about an upcoming change,
-the change date should be mentioned in the body text.
+In most cases, publish date is the same as the date of the change, but if the
+message is about an upcoming change, the change date should be mentioned in the
+body text.
+
+### Tips for writing an API update message
+
+- Get the names right. ("Pickup Point API", not "PickuppointAPI". "Mybring" not
+  "MyBring".)
+- Use complete service names ("Pakke i Postkassen" instead of "PiP").
+- Avoid using internal names, too technical jargon and uncommon abbreviations
+  ("XML" is ok, "PuP" is not).
+- Domain specific content like service code lists and code examples are fine.
+- Be clear about which users/customers are affected.
+- Describe what action users must take (if any).
+- Put yourself in the shoes of the user; is there anything that they might
+  misunderstand, have questions about or otherwise start worrying about?
+- Check typos and facts.
+- Try keeping it short.
 
 ## Adding an important message to the frontpage
 

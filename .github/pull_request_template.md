@@ -1,0 +1,1 @@
+- [ ] [API update message](https://github.com/bring/developer-site#tips-for-writing-an-api-update-message) (changelog entry) has been reviewed by Mybring Frontend.
