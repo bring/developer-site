@@ -49,9 +49,9 @@ documentation:
     content: |
       ### WSDL
 
-      [https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+      [https://api.bring.com/warehousing/api/ws/purchaseorder-v1.wsdl](https://api.bring.com/warehousing/api/ws/purchaseorder-v1.wsdl)
 
-      [https://api.bring.com/po/api/ws/om-order-v1.wsdl](https://api.bring.com/po/api/ws/om-order-v1.wsdl)
+      [https://api.bring.com/warehousing/api/ws/om-order-v1.wsdl](https://api.bring.com/warehousing/api/ws/om-order-v1.wsdl)
 
   - title: Error handling
     content: |
