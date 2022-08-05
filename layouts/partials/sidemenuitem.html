@@ -40,9 +40,11 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
 
       {{- with $oasData -}}
         {{- range .paths -}}
-          {{- range . -}}
+          {{- range $k, $v := . -}}
+            {{- $method := $k -}}
+            {{- $endpointId := (print .summary "-" $method | anchorize) -}}
             <li>
-              <a href="#{{ .summary | anchorize }}" data-list-item="{{ .summary | anchorize }}">
+              <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
                 <span data-hover="{{ .summary }}">
                   {{- .summary -}}
                 </span>
@@ -54,8 +56,15 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
 
       {{- with (and (.apiData) (index .apiData .identifier)) -}}
         {{- range .resources -}}
+          {{- $method := "" -}}
+          {{- range .methods -}}
+            {{- with .method -}}
+              {{- $method = . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $endpointId := (print .displayName "-" $method | anchorize) -}}
           <li>
-            <a href="#{{ .displayName | anchorize }}" data-list-item="{{ .displayName | anchorize }}">
+            <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
               <span data-hover="{{ .displayName }}">
                 {{- .displayName -}}
               </span>
