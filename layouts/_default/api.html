@@ -125,7 +125,7 @@
                 {{- $components := .components -}}
                 {{- range $path, $_ := .paths -}}
                   {{- range $type, $_ := . -}}
-                    {{- $endpointId := .summary | anchorize -}}
+                    {{- $endpointId := (print .summary "-" $type | anchorize ) -}}
                     <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
                     <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
                       <div class="param-response-area">

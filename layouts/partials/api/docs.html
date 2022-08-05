@@ -102,13 +102,20 @@
         {{- range .resources -}}
           {{- $resources := . -}}
           {{- $displayName := .displayName -}}
+          {{- $method := "" -}}
+          {{- range .methods -}}
+            {{- with .method -}}
+              {{- $method = . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $endpointId := (print $displayName "-" $method | anchorize) -}}
           <section class="dev-docscontent__section maxw64r">
-            <h2 class="dev-anchored mbm" id="{{ $displayName | anchorize }}">
+            <h2 class="dev-anchored mbm" id="{{ $endpointId }}">
               {{- $displayName -}}
             </h2>
             {{- with .description -}}
               {{- if in (string .) "\n\n" -}}
-                {{ .| markdownify }}
+                {{ . | markdownify }}
                 {{- else -}}
                 <p>{{ . | markdownify }}</p>
               {{- end -}}
