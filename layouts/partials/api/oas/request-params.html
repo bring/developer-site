@@ -2,7 +2,9 @@
 {{- $name := "" -}}
 {{- $paramArr := slice -}}
 {{- range .parameters -}}
-  {{- $paramArr = $paramArr | append .in -}}
+  {{- with .in -}}
+    {{- $paramArr = $paramArr | append . -}}
+  {{- end -}}
 {{- end -}}
 {{- $paramArr = uniq $paramArr -}}
 

@@ -1,128 +1,189 @@
+{{- $schemaObj := .schemaObj -}}
+{{- $name := .name -}}
 {{- $components := .components -}}
-{{- $schemaPath := path.Split .ctx -}}
-{{- $responseObject := index $components.schemas $schemaPath.File -}}
+{{- $required := .required -}}
 {{- $endpointId := .endpointId -}}
-{{- $nested := .nested -}}
-{{- $required := slice -}}
-{{- $requiredParam := "" -}}
 {{- $uniqueId := "" -}}
+{{- $recLevel := add .recLevel 1 -}}
 
-    {{- range $key, $value := $responseObject -}}
-      {{- if eq $key "required" -}}
-        {{- $required = $value -}}
+{{/*  If there’s a ref, pass the destination data again  */}}
+{{- $isRef := "false" -}}
+{{- range $key, $_ := $schemaObj -}}
+  {{- if eq $key "$ref" -}}
+    {{- $isRef = true -}}
+    {{- $schemaPath := path.Split . -}}
+    {{- $schema := index $components.schemas $schemaPath.File -}}
+    {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel) -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*  If object and first level, skip  */}}
+{{- if and (eq $schemaObj.type "object") (lt $recLevel 3) -}}
+  {{- with $schemaObj.properties -}}
+    {{- range $key, $_ := . -}}
+      {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+    {{- end -}}
+  {{- end -}}
+
+{{/*  If object, render and pass properties  */}}
+{{- else if eq $schemaObj.type "object" -}}
+  {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
+  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
+  <div class="mb-border bb bw1 mbs">
+    <div class="flex flex-wrap align-ifs pbs">
+      <dt>
+        {{- if or ($schemaObj.properties) -}}
+          {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+        {{- else -}}
+          <code class="mls">{{ $name }}</code>
+        {{- end -}}
+        {{- if $required -}}
+          <div class="plm mls lh-solid param-required text-note">Required</div>
+        {{- end -}}
+      </dt>
+      <dd class="ptxs pls">
+        {{- with $schemaObj.description -}}
+          {{ . }}
+        {{- end -}}
+        <div class="gray text-note">
+          {{- $schemaObj.type -}}
+        </div>
+      </dd>
+    </div>
+
+    {{- with $schemaObj.properties -}}
+      <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+        <dl class="pls">
+          {{- range $key, $_ := . -}}
+            {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+          {{- end -}}
+        </dl>
+      </dd>
+    {{- end -}}
+  </div>
+
+{{/*  If array, render and pass items  */}}
+{{- else if eq $schemaObj.type "array" -}}
+  {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
+  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
+
+  {{/*  If items have children or ref has properties  */}}
+  {{- $hasChildren := false -}}
+  {{- with $schemaObj.items -}}
+    {{- $hasChildren = true -}}
+    {{- range $key, $_ := . -}}
+      {{- if or (eq $key "type") (eq $key "format") -}}
+        {{- $hasChildren = false -}}
+      {{- end -}}
+      {{- if eq $key "$ref" -}}
+        {{- $hasChildren = false -}}
+        {{- $schemaPath := path.Split . -}}
+        {{- $schema := index $components.schemas $schemaPath.File -}}
+        {{- with $schema.properties -}}
+          {{- $hasChildren = true -}}
+        {{- end -}}
       {{- end -}}
     {{- end -}}
+  {{- end -}}
 
-    {{- range $key, $value := $responseObject -}}
-      {{- if reflect.IsMap . -}}
-        {{- $isParent := false -}}
-        {{- range $param, $_ := . -}}
+  <div class="mb-border bb bw1 mbs">
+    <div class="flex flex-wrap align-ifs pbs">
+      <dt>
+        {{- if $hasChildren -}}
+          {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+        {{- else -}}
+          <code class="mls">{{ $name }}</code>
+        {{- end -}}
+        {{- if $required -}}
+          <div class="plm mls lh-solid param-required text-note">Required</div>
+        {{- end -}}
+      </dt>
+      <dd class="ptxs pls">
+        {{- with $schemaObj.description -}}
+          {{ . }}
+        {{- end -}}
 
-          {{- range $required -}}
-            {{- if eq . $param -}}
-              {{- $requiredParam = . -}}
-            {{- end -}}
-          {{- end -}}
-
-          {{- $typeArrObj := false -}}
-          {{- if reflect.IsMap . -}}
-            {{- range $k, $v := . -}}
-              {{- if or (eq $v "array") (eq $v "object") (eq $k "$ref") -}}
-                {{- $typeArrObj = true -}}
+        {{/*  See what it’s an array of */}}
+        {{- $schemaType := $schemaObj.type -}}
+        {{- $schemaFormat := "" -}}
+        {{- with $schemaObj.items -}}
+          {{- range $key, $_ := . -}}
+            {{- if eq $key "$ref" -}}
+              {{- $schemaPath := path.Split . -}}
+              {{- $schema := index $components.schemas $schemaPath.File -}}
+              {{- with $schema.type -}}
+                {{- $schemaType = printf "array of %ss" . -}}
+              {{- end -}}
+            {{- else -}}
+              {{- if eq $key "format" -}}
+                {{- $schemaFormat = printf " <%s>" . -}}
+              {{- end -}}
+              {{- if eq $key "type" -}}
+                {{- $schemaType = printf "array of %ss%s" . $schemaFormat -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}
+        {{- end -}}
+        <div class="gray text-note">
+          {{- $schemaType -}}
+        </div>
+      </dd>
+    </div>
 
-          {{- if reflect.IsMap . -}}
-            {{- if or (isset . "items") (isset . "properties") -}}
-              {{- $nested = false -}}
-            {{- end -}}
-          {{- end -}}
-          
-          {{- if and (eq $nested true) (reflect.IsMap .) -}}
-            <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
-              <dt class="pls">
-                <code>{{- $param -}}</code>
-                {{- if eq $param $requiredParam -}}
-                  {{- partial "api/oas/required.html" -}}
-                {{- end -}}
-              </dt>
-              <dd class="pls">
-                {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
-              </dd>
-
-          {{- else if $typeArrObj -}}
-            {{- $isParent = true -}}
-            {{- $generateId := delimit (shuffle (split (md5 $param) "" )) "" -}}
-            {{- $uniqueId = slicestr $generateId 0 15 -}}
-            <div class="mbs mb-border bb bw1">
-              <div class="flex flex-wrap align-ifs pbs">
-                <dt>
-                  {{- partial "api/oas/param-toggle-btn.html" ( dict "endpointId" $endpointId "param" $param "uniqueId" $uniqueId ) -}}
-                  {{- if eq $param $requiredParam -}}
-                    <div class="plm mls">
-                    {{- partial "api/oas/required.html" -}}
-                    </div>
-                  {{- end -}}
-                </dt>
-                <dd class="ptxs pls">
-                  {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
-                </dd>
-              </div>
-
-          {{- else -}}
-            {{- $isParent = false -}}
-            {{- if reflect.IsMap $_ -}}
-            <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
-              <dt>
-                <code class="mls">{{- $param -}}</code>
-                {{- if eq $param $requiredParam}}
-                  <div class="mls">{{- partial "api/oas/required.html" -}}</div>
-                {{- end -}}
-              </dt>
-              <dd class="pls minw0">
-                {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" $isParent ) -}}
-              </dd>
-            </div>
-            {{- end -}}
-          {{- end -}}
-
-        {{- if $isParent -}}
-          <dd data-sublevel-id="{{$endpointId}}-{{$param}}-{{$uniqueId}}" class="schema__sublist mb-border dn">
-            {{- if eq $nested false -}}
-              <dl class="desc-list mbm pts">
-            {{- end -}}
-            {{- if reflect.IsMap . -}}
-              {{- range $i, $_ := . -}}
-                {{- if reflect.IsMap . -}}
-                  {{- range $k,$v := . -}}
-                    {{- if eq $k "$ref" -}}
-                      {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true "endpointId" $endpointId) -}}
-                    {{- else if reflect.IsMap . -}}
-                      <div class="flex flex-wrap mb-border bb bw1 mbs pbs">
-                        <dt>
-                          <code class="mls">{{- $k -}}</code>
-                        </dt>
-                        <dd class="pls minw0">
-                          {{- partial "api/oas/response-schema-dd" ( dict "ctx" . "isParent" false ) -}}
-                        </dd>
-                      </div>
-                    {{- end -}}
-                  {{- end -}}
-                {{- else if eq $i "$ref" -}}
-                  {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" true "endpointId" $endpointId) -}}
-                {{- end -}}
+    {{- with $schemaObj.items -}}
+      <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+        <dl class="pls">
+          {{- $isItemRef := false -}}
+          {{- range $key, $_ := . -}}
+            {{- if eq $key "$ref" -}}
+              {{- $isItemRef = true -}}
+              {{- $schemaPath := path.Split . -}}
+              {{- $schema := index $components.schemas $schemaPath.File -}}
+              {{- $items := $schema.properties -}}
+              {{- range $key, $_ := $items -}}
+                {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
               {{- end -}}
             {{- end -}}
-            {{- if eq $nested false -}}
-              </dl>
-            {{- end -}}
-          </dd>
+          {{- end -}}
+          {{- if not $isItemRef -}}
+            {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" "" "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+          {{- end -}}
+        </dl>
+      </dd>
+    {{- end -}}
+  </div>
+
+{{/*  If neither obj, arr or ref, render the item */}}
+{{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) -}}
+  <div class="mb-border bb bw1 mbs pbs pls">
+    <div class="flex flex-wrap align-ifs">
+      <dt>
+        <code>{{ $name }}</code>
+        {{- if $required -}}
+          <div class="lh-tight param-required text-note">Required</div>
+        {{- end -}}
+      </dt>
+      <dd class="pls">
+        {{- with $schemaObj.description -}}
+          {{ . }}
+        {{- end -}}
+        <div class="gray text-note">
+          {{- $schemaObj.type -}}
+          {{- with $schemaObj.format -}}
+            {{- printf " <%s>" . -}}
+          {{- end -}}
+        </div>
+        {{- with $schemaObj.enum -}}
+        <div>
+          <span class="text-note fw600">Enum</span>
+          {{- range . -}}
+            <br><code class="wrap-text">{{ . }}</code>
+          {{- end -}}
         </div>
         {{- end -}}
-        {{- if and (eq $nested true) (reflect.IsMap $_) -}}
-          </div>
-        {{- end -}}
-        {{- end -}}
-      {{- end -}}
-    {{- end -}}
+      </dd>
+    </div>
+  </div>
+{{- end -}}

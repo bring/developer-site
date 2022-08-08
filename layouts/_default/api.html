@@ -208,15 +208,7 @@
                                       {{- if eq "xml" $format -}}
                                         {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
                                       {{- else -}}
-                                        {{- range $key, $_ := .schema -}}
-                                          {{- if reflect.IsMap . -}}
-                                            {{- range . -}}
-                                              {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId "application" $application) -}}
-                                            {{- end -}}
-                                          {{- else if eq $key "$ref" -}}
-                                            {{- partial "api/oas/response-schema.html" (dict "ctx" . "components" $components "nested" false "endpointId" $endpointId "application" $application) -}}
-                                          {{- end -}}
-                                        {{- end -}}
+                                      {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
                                       {{- end -}}
                                     </dl>
                                   {{- end -}}

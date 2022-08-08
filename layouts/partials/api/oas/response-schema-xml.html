@@ -13,7 +13,7 @@
   {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel) -}}
   {{- end -}}
 {{- end -}}
 
