@@ -24,7 +24,6 @@
 {{- range $key, $_ := $schemaObj -}}
 {{- if eq $key "$ref" -}}
   {{- $isRef = true -}}
-  {{/*  {{ . }}  */}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
     {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
@@ -108,7 +107,7 @@
           {{- range $key, $_ := . -}}
             {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "data" "oneOfInd" $oneOfInd) -}}
             {{- $oneOfInd = add $oneOfInd 1 -}}
-            {{- end -}}
+          {{- end -}}
         </dd>
       {{- end -}}
       {{/*  array  */}}
