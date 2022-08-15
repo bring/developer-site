@@ -2,18 +2,32 @@
 {{- $name := .name -}}
 {{- $required := .required -}}
 {{- $components := .components -}}
+{{- $responseCode := .responseCode -}}
 {{- $endpointId := .endpointId -}}
 {{- $uniqueId := "" -}}
 {{- $recLevel := add .recLevel 1 -}}
+{{ $isOneOf := "" }}
+{{- with .isOneOf }}
+  {{- $isOneOf = . -}}
+{{- end -}}
+{{- $parent := "" -}}
+{{- with .parent -}}
+  {{- $parent = . -}}
+{{- end -}}
+{{- $oneOfInd := 0 -}}
+{{- with .oneOfInd -}}
+  {{- $oneOfInd = . -}}
+{{- end -}}
 
 {{/*  If there’s a ref, pass the destination data again  */}}
 {{- $isRef := "false" -}}
 {{- range $key, $_ := $schemaObj -}}
 {{- if eq $key "$ref" -}}
   {{- $isRef = true -}}
+  {{/*  {{ . }}  */}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel) -}}
+    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
   {{- end -}}
 {{- end -}}
 
@@ -22,52 +36,91 @@
   {{- with $schemaObj.xml.name -}}
     {{- $name = . -}}
   {{- end -}}
+  {{- $levelName := printf "%s-%s-%s" $endpointId (anchorize $name) $responseCode -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
   {{- $uniqueId = slicestr $generateId 0 15 -}}
-  {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
-  <div class="mb-border bb bw1 mbs">
-    <div class="flex flex-wrap align-ifs pbs">
-      <dt>
-        {{- if or ($schemaObj.properties) ($schemaObj.items) -}}
-          {{- partial "api/oas/param-toggle-btn-xml.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
-        {{- else -}}
-          <code class="mls">{{ $name }}</code>
-        {{- end -}}
-        {{- if $required -}}
-          <div class="plm mls lh-solid param-required text-note">Required</div>
-        {{- end -}}
-      </dt>
-      <dd class="ptxs pls">
-        {{- with $schemaObj.description -}}
-          {{ . }}
-        {{- end -}}
-        <div class="gray text-note">
-          {{- $schemaObj.type -}}
-          {{- if $schemaObj.xml.wrapped -}}
-            {{- print " wrapped" -}}
-          {{- end -}}
-        </div>
-      </dd>
+  {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
+  
+  {{/*  Render oneOf radio inputs  */}}
+  {{- if eq $isOneOf "radio" -}}
+    <div>
+      <input id="{{ $levelName }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-xml-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelName }}"><code>{{ $name }}</code></label>
     </div>
-    {{/*  object  */}}
+  {{/*  Loop oneOf data  */}}
+  {{- else if eq $isOneOf "data" -}}
     {{- with $schemaObj.properties -}}
-      <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
-        <dl class="pls">
-          {{- range $key, $_ := . -}}
-            {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+      <dl id="tab-{{ $responseCode }}-xml-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" role="tabpanel" aria-labelledby="{{ $levelName }}">
+        {{- range $key, $_ := . -}}
+          {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+        {{- end -}}
+      </dl>
+    {{- end -}}
+  {{ else }}
+    <div class="mb-border bb bw1 mbs">
+      <div class="flex flex-wrap align-ifs pbs">
+        <dt>
+          {{- if or ($schemaObj.properties) ($schemaObj.oneOf) ($schemaObj.items) -}}
+            {{- partial "api/oas/param-toggle-btn-xml.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+          {{- else -}}
+            <code class="mls">{{ $name }}</code>
           {{- end -}}
-        </dl>
-      </dd>
-    {{- end -}}
-    {{/*  array  */}}
-    {{- with $schemaObj.items -}}
-      <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
-        <dl class="pls">
-          {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" "" "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
-        </dl>
-      </dd>
-    {{- end -}}
-  </div>
+          {{- if $required -}}
+            <div class="plm mls lh-solid param-required text-note">Required</div>
+          {{- end -}}
+        </dt>
+        <dd class="ptxs pls">
+          {{- with $schemaObj.description -}}
+            {{ . }}
+          {{- end -}}
+          <div class="gray text-note">
+            {{- $schemaObj.type -}}
+            {{- if $schemaObj.xml.wrapped -}}
+              {{- print " wrapped" -}}
+            {{- end -}}
+          </div>
+        </dd>
+      </div>
+      {{/*  object  */}}
+      {{- with $schemaObj.properties -}}
+        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+          <dl class="pls">
+            {{- range $key, $_ := . -}}
+              {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+            {{- end -}}
+          </dl>
+        </dd>
+      {{- end -}}
+      {{/*  oneOf object  */}}
+      {{- with $schemaObj.oneOf -}}
+        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+          <form>
+            <fieldset class="mlxs mbs pls pbs">
+              <legend class="fw600 pts mbxs">oneOf</legend>
+              <div class="flex flex-wrap gcm" role="tabpanel">
+                {{- range $key, $_ := . -}}
+                  {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
+                  {{- $oneOfInd = add $oneOfInd 1 -}}
+                {{- end -}}
+              </div>
+            </fieldset>
+          </form>
+          {{- $oneOfInd = 0 -}}
+          {{- range $key, $_ := . -}}
+            {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "data" "oneOfInd" $oneOfInd) -}}
+            {{- $oneOfInd = add $oneOfInd 1 -}}
+            {{- end -}}
+        </dd>
+      {{- end -}}
+      {{/*  array  */}}
+      {{- with $schemaObj.items -}}
+        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+          <dl class="pls">
+            {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" "" "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+          </dl>
+        </dd>
+      {{- end -}}
+    </div>
+  {{ end }}
 
 {{/*  If neither obj, arr or ref, render the item */}}
 {{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) -}}
