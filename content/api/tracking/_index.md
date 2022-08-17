@@ -23,7 +23,7 @@ important:
   - type: warn
     title: Removed pickup code from open tracking - 04.02.2022
     message: |
-     As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Logged in Tracking API will still contain the pickup code.
+     As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Mybring users will continue to see pickup code on their shipments. You can also see pickup code on your shipments via Posten App.
   - type: warn
     title: Update deprecated Tracking URLs - 27.01.2022
     message: |
