@@ -77,13 +77,13 @@
               <th>Endpoint</th>
             </thead>
             {{- range .resources -}}
-              {{ $resDisplayName := .displayName | urlize }}
               {{ $displayName := .displayName }}
               {{ $resRelUri := .relativeUri | safeHTML }}
               {{- range .methods -}}
+                {{- $endpointId := (print $displayName "-" .method | anchorize) -}}
                 <tr>
                   <td>
-                    <a href="#{{ $resDisplayName }}" title="{{- $displayName -}}">
+                    <a href="#{{ $endpointId }}" title="{{- $displayName -}}">
                       {{- .description | safeHTML -}}
                     </a>
                   </td>

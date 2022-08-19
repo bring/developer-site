@@ -15,9 +15,10 @@
       </thead>
       {{ range $path, $_ := .paths }}
           {{ range $method, $_ := . }}
+          {{- $endpointId := (print .summary "-" $method | anchorize) -}}
           <tr>
             <td>
-              <a href="#{{print .summary `-` $method | anchorize }}" title="{{- .summary -}}">
+              <a href="#{{ $endpointId }}" title="{{- .summary -}}">
                   {{- .summary -}}
               </a>
             </td>

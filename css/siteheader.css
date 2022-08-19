@@ -105,3 +105,13 @@
   top: 0%;
   box-shadow: 0 0 0 4px #c8dc8c;
 }
+
+.theme-switch-container {
+  background: var(--green-dark);
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+
+.theme-switch:hover {
+  color: var(--green-86);
+}
