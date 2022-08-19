@@ -56,9 +56,13 @@
         </fieldset>
       </form>
       {{- $oneOfInd = 0 -}}
-      {{- range $key, $_ := . -}}
-        {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" $required "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
-        {{- $oneOfInd = add $oneOfInd 1 -}}
+      {{- range . -}}
+        {{- range . -}}
+          {{- $schemaPath := path.Split . -}}
+          {{- $schema := index $components.schemas $schemaPath.File -}}
+          {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
+          {{- $oneOfInd = add $oneOfInd 1 -}}
+        {{- end -}}
       {{- end -}}
     {{ end }} 
 
@@ -72,7 +76,7 @@
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $oneOf "radio" -}}
     <div>
-      <input id="{{ $levelName }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-json-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelName }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-json-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
     {{/*  Loop oneOf data  */}}
   {{- else if eq $oneOf "data" -}}

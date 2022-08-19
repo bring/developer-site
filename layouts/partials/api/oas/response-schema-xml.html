@@ -43,7 +43,7 @@
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $isOneOf "radio" -}}
     <div>
-      <input id="{{ $levelName }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-xml-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelName }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-xml-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
   {{/*  Loop oneOf data  */}}
   {{- else if eq $isOneOf "data" -}}
