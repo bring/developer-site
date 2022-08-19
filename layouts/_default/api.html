@@ -207,7 +207,7 @@
                                       {{- if eq "xml" $format -}}
                                         {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
                                       {{- else -}}
-                                      {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
+                                        {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
                                       {{- end -}}
                                     </dl>
                                   {{- end -}}
