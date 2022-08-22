@@ -8,6 +8,7 @@ summaryLength = 60
 paginate = 12
 ignorefiles = ["css/main.js"]
 disqusShortname = "bringdev"
+timeout = "60s"
 
 [markup.highlight]
 guessSyntax = true
