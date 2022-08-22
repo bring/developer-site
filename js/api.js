@@ -55,6 +55,30 @@ paramToggleBtn.forEach((btn) => {
   })
 })
 
+// oneOf
+function setOneOf(radio) {
+  const radioVal = radio.value,
+    closest = radio.closest("dd"),
+    oneOfArr = Array.from(closest.children)
+
+  radio.setAttribute("checked", "")
+  oneOfArr.forEach((child) => {
+    if (child.tagName === "DL") {
+      child.classList.add("dn")
+      if (child.dataset.ofOne === radioVal) {
+        child.classList.remove("dn")
+      }
+    }
+  })
+}
+
+const oneOfRadioArr = document.querySelectorAll("input[data-one-of]")
+oneOfRadioArr.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    setOneOf(radio)
+  })
+})
+
 // Examples
 function switchExample(containerArr, dataAtt, id) {
   containerArr.forEach((container) => {
@@ -168,3 +192,14 @@ if('clipboard' in navigator) {
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  // set oneOf selection if reload/backward/forward navigation
+  oneOfRadioArr.forEach((radio) => {
+    if (radio.checked) {
+      setOneOf(radio)
+    } else {
+      radio.removeAttribute("checked")
+    }
+  })
+})

@@ -204,11 +204,10 @@
                                     {{- end -}}
 
                                     <dl class="schema-type-container desc-list pam bshadow bg-white {{ if $multiSchema }}dn{{ end }}" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
-                                      {{/*  TODO: pass the entire .schema in for non-XML as well  */}}
                                       {{- if eq "xml" $format -}}
-                                        {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
+                                        {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
                                       {{- else -}}
-                                      {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
+                                        {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
                                       {{- end -}}
                                     </dl>
                                   {{- end -}}
