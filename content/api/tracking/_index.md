@@ -11,6 +11,10 @@ menu:
 weight: 31
  
 important:
+  - type: info
+    title: New field damagedBarcodeImages - 24.08.2022
+    message: |
+     We have added a new field for damaged barcode images, this field will be present on events with event code 5A.
   - type: warn
     title: Deprecating v1 version of Tracking API - 01.08.2022
     message: |
