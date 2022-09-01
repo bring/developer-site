@@ -1,0 +1,420 @@
+<main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
+  <article>
+    <h1>{{ .Title }}</h1>
+    <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
+      {{- with $.Params.important -}}
+        <div class="dev-docscontent__side">
+          {{- range . -}}
+            <div class="message--{{ .type }} pal mbs">
+              {{- with .title -}}
+                <strong class="db mbxs">{{ . }}</strong>
+              {{- end -}}
+              {{ .message | markdownify }}
+            </div>
+          {{- end -}}
+        </div>
+      {{- end -}}
+      <div class="dev-docscontent__main maxw64r">
+        {{- with $.Params.introduction -}}
+          {{- if in (string .) "\n\n" -}}
+          <div class="text-heading fw600">
+            {{- . | markdownify -}}
+          </div>
+          {{- else -}}
+            <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
+          {{- end -}}
+        {{- end -}}
+        {{- with $.Params.information -}}
+          <div class="dev-docscontent__info mvl">
+            {{- range . -}}
+              <details class="bg-green1 rad-a2px mbxs">
+                {{- with .title }}
+                  <summary class="pas plm" aria-label="{{.}} details dropdown">
+                    {{- . -}}
+                  </summary>
+                {{- end -}}
+                {{- if in (string .content) "\n\n" -}}
+                  {{- .content | markdownify -}}
+                {{- else -}}
+                  <p>{{ .content | markdownify }}</p>
+                {{- end -}}
+              </details>
+            {{- end -}}
+          </div>
+        {{- end -}}
+        {{- range $.Params.documentation -}}
+          {{- with .title }}
+            <h2 class="dev-anchored" id="{{ . | urlize }}">
+              {{- . -}}
+            </h2>
+          {{- end -}}
+          {{- if in (string .content) "\n\n" -}}
+            {{- .content | markdownify -}}
+          {{- else -}}
+            <p>{{ .content | markdownify }}</p>
+          {{- end -}}
+        {{- end -}}
+        {{- with $.Params.guides -}}
+          <div class="mvl owls">
+            {{- range . -}}
+              <div class="bg-gray1 pam rad-a2px bshadow">
+                {{- with .title }}
+                  <h2 class="dev-anchored" id="{{ . | urlize }}">
+                    {{- . -}}
+                  </h2>
+                {{- end -}}
+                {{- if in (string .content) "\n\n" -}}
+                  {{- .content | markdownify -}}
+                {{- else -}}
+                  <p>{{ .content | markdownify }}</p>
+                {{- end -}}
+              </div>
+            {{- end -}}
+          </div>
+        {{- end -}}
+      </div>
+    </section>
+
+    {{- $oasData := getJSON $.Params.oas -}}
+    {{- $ramlData := .Site.Data.api -}}
+    {{- $soapEndpoints := slice -}}
+    {{- $soapUri := "" -}}
+    {{ range $ramlData }}
+      {{- if (in .title $.Title) -}}
+        {{- $soapEndpoints = .resources -}}
+        {{- $soapUri = .baseUri -}}
+      {{- end -}}
+    {{- end -}}
+    {{- partial "api/oas/endpoints.html" (dict "oas" $oasData "soapArr" $soapEndpoints "soapUri" $soapUri) -}}
+    
+    <section class="dev-docscontent__section oas-endpoints maxw96r">
+      {{- with $oasData -}}
+        {{- $components := .components -}}
+        {{- range $path, $_ := .paths -}}
+          {{- range $type, $_ := . -}}
+            {{- $endpointId := (print .summary "-" $type | anchorize ) -}}
+            <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
+            <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
+              <div class="param-response-area">
+                <div class="flex align-ic mbm mts">
+                  {{- partial "api/oas/endpoint-type" (dict "type" $type) -}}
+                  <span class="flex-auto">
+                    <pre class="flex align-ic pas mb0 wrap-text">
+                      <span>{{ $path }}</span>
+                    </pre>
+                  </span>
+                </div>
+                <p class="mbl text-heading">{{ .description | safeHTML }}</p>
+
+                {{- with .parameters -}}
+                  {{- partial "api/oas/request-params.html" (dict "parameters" .) -}}
+                {{- end -}}
+
+                {{- with .responses -}}
+                  <h3 class="mbm">Responses</h3>
+                  {{- range $response, $_ := . -}}
+                    {{- $responseColor := "response" -}}
+                    {{- if and (ge $response 200) (lt $response 300) -}}
+                      {{- $responseColor = "response success-code" -}}
+                    {{- else if ge $response 300 -}}
+                      {{- $responseColor = "response error-code" -}}
+                    {{- end -}}
+
+                    {{- $description := .description -}}
+
+                    {{ $hasSchema := false }}
+                    {{- with .content -}}
+                      {{- range . -}}
+                        {{/*  since go template doesn’t have loop breaks  */}}
+                        {{- if not $hasSchema -}}
+                          {{- with .schema -}}
+                            {{- $hasSchema = true -}}
+                          {{- end -}}
+                        {{- end -}}
+                      {{- end -}}
+                    {{- end -}}
+
+                    {{- if $hasSchema -}}
+                      {{- with .content -}}
+                      {{- $multiSchema := false -}}
+                      {{- if gt (len .) 1 -}}
+                        {{- $multiSchema = true -}}
+                      {{- end -}}
+                      <details class="mbs">
+                        <summary class="{{ $responseColor }} pas" aria-label="Response {{$response}} {{$description}} details dropdown"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
+
+                        <div class="bg-gray1 pam">
+                          <h4>Schema</h4>
+                          {{- if $multiSchema -}}
+                            <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Media type:</label>
+                            <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select hauto">
+                              {{- $selected := "selected" -}}
+                              {{- range $applicationType, $_ := . -}}
+                                <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                  {{ $applicationType }}
+                                </option>
+                                {{- $selected = "" -}}
+                              {{- end -}}
+                            </select>
+                          {{- else -}}
+                            {{- range $applicationType, $_ := . -}}
+                              <p>Media type: {{ $applicationType }}</p>
+                            {{- end -}}
+                          {{- end -}}
+
+                          {{- range $application, $_ := . -}}
+                            {{- $format := "" -}}
+                            {{- if in $application "json" -}}
+                              {{- $format = "json" -}}
+                            {{- else if in $application "xml" -}}
+                              {{- $format = printf "xml" -}}
+                            {{- end -}}
+
+                            <dl class="schema-type-container desc-list pam bshadow bg-white {{ if $multiSchema }}dn{{ end }}" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                              {{- if eq "xml" $format -}}
+                                {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
+                              {{- else -}}
+                                {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
+                              {{- end -}}
+                            </dl>
+                          {{- end -}}
+                          </div>
+                        </details>
+                      {{- end -}}
+                    {{- else -}}
+                      <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
+                    {{- end -}}
+                  {{- end -}}
+                {{- end -}}
+              </div>
+              <div class="example-area">
+                {{- if .requestBody -}}
+                  {{- partial "api/oas/requestexample.html" (dict "requestBody" .requestBody "endpointId" $endpointId) -}}
+                {{- end -}}
+                {{- if $components.examples -}}
+                  {{- partial "api/oas/responseexample-components.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
+                {{- else -}}
+                  {{- partial "api/oas/responseexample.html" (dict "responses" .responses "endpointId" $endpointId) -}}
+                {{- end -}}
+              </div>
+            </div>
+            {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    </section>
+
+    {{ range $ramlData }}
+    {{- if (in .title $.Title) -}}
+    {{- $types := .types -}}
+    {{- range .resources -}}
+    {{- $resources := . -}}
+    {{- $displayName := .displayName -}}
+    {{- $method := "" -}}
+    {{- range .methods -}}
+      {{- with .method -}}
+        {{- $method = . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $endpointId := (printf "soap-%s-%s" $displayName $method) | anchorize -}}
+    <section class="dev-docscontent__section maxw64r">
+      <h2 class="dev-anchored mbm" id="{{ $endpointId }}">
+        {{- $displayName -}}
+      </h2>
+      {{- with .description -}}
+        {{- if in (string .) "\n\n" -}}
+          {{ . | markdownify }}
+          {{- else -}}
+          <p>{{ . | markdownify }}</p>
+        {{- end -}}
+      {{- end -}}
+
+      {{- range .methods -}}
+        <h3 class="dn">URL</h3>
+        {{- $urlOutput := slice -}}
+        {{- $absUri := $resources.absoluteUri -}}
+        {{- $hasExtension := false -}}
+        {{- with $resources.uriParameters.mediaTypeExtension -}}
+          {{- $hasExtension = true -}}
+        {{- end -}}
+
+        {{- if $hasExtension -}}
+          {{- range $resources.uriParameters.mediaTypeExtension.enum -}}
+            {{- $urlWithExtension := replace $absUri "{mediaTypeExtension}" . -}}
+            {{- $urlOutput = $urlOutput | append $urlWithExtension -}}
+          {{- end -}}
+          {{- else -}}
+          {{- $urlOutput = $urlOutput | append $absUri -}}
+        {{- end -}}
+
+        <pre class="flex align-ic">
+                    <span class="mrs phs pvxs bg-gray4">{{ .method | upper }}</span>
+                    <span>{{ delimit $urlOutput "<br>" }}</span>
+                  </pre>
+
+        {{/* uri params exists and first one is not mediaTypeExtension */}}
+        {{- $otherUriParamsMediaType := false -}}
+        {{- with $resources.uriParameters -}}
+          {{- $uriParamNames := slice -}}
+          {{- range . -}}
+            {{- $uriParamNames = $uriParamNames | append .name -}}
+          {{- end -}}
+          {{- $uriParamFirst := "" -}}
+          {{- range first 1 $uriParamNames -}}
+            {{- $uriParamFirst = . -}}
+          {{- end -}}
+          {{- if gt (len .) 1 -}}
+            {{- $otherUriParamsMediaType = true -}}
+            {{- else if (and (eq (len .) 1) (not (in $uriParamFirst "mediaTypeExtension"))) -}}
+            {{- $otherUriParamsMediaType = true -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{/* has method.headers */}}
+        {{- $hasMethodHeaders := false -}}
+        {{- $methodHeaders := slice -}}
+        {{- range .headers -}}
+          {{- $methodHeaders = $methodHeaders | append . -}}
+          {{- if gt (len $methodHeaders) 0 -}}
+            {{- $hasMethodHeaders = true -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{/* has method.queryParameters */}}
+        {{- $hasMethodQueryParams := false -}}
+        {{- $methodQueryParams := slice -}}
+        {{- range .queryParameters -}}
+          {{- $methodQueryParams = $methodQueryParams | append . -}}
+          {{- if gt (len $methodQueryParams) 0 -}}
+            {{- $hasMethodQueryParams = true -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- if (or ($otherUriParamsMediaType) ($hasMethodHeaders) ($hasMethodQueryParams)) -}}
+          <h3>Request parameters</h3>
+        {{- end -}}
+
+        {{/* For each endpoint: List all URI parameters */}}
+        {{- $uriParameters := slice -}}
+        {{- range $resources.uriParameters -}}
+          {{- $uriParameters = $uriParameters | append . -}}
+        {{- end -}}
+        {{- if $otherUriParamsMediaType -}}
+          {{- partial "api/namedparams.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) -}}
+        {{- end -}}
+
+        {{/* For each endpoint: List all headers */}}
+        {{- if $hasMethodHeaders -}}
+          {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodHeaders "title" "HTTP header") -}}
+        {{- end -}}
+
+        {{/* For each endpoint: List all query parameters */}}
+        {{- if $hasMethodQueryParams -}}
+          {{- partial "api/namedparams.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") -}}
+        {{- end -}}
+
+        {{- $multiMediaTypes := false -}}
+
+        {{/* For each endpoint: Request body */}}
+        {{- with .body -}}
+          {{- if gt (len .) 1 -}}
+            {{- $multiMediaTypes = true -}}
+          {{- end -}}
+          <h3>Request body</h3>
+          {{- range . -}}
+            {{- partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{/* For each endpoint: Response */}}
+        {{- with .responses -}}
+          <h3>Responses</h3>
+          {{- range $key, $response := . -}}
+            {{- $responseID := (print $displayName "-response-" .code) | anchorize -}}
+            {{- $exampleID := (print $displayName "-" .code) | anchorize -}}
+            {{- $responseCode := .code -}}
+            {{- $resBodies := slice -}}
+            {{- range .body -}}
+              {{- $resBodies = $resBodies | append . -}}
+            {{- end -}}
+            {{/* Collapsed additional examples in Booking API */}}
+            {{- if and (gt $key 220) (lt $key 302) -}}
+              {{- $body := .body -}}
+              {{- $description := .description -}}
+              {{- $oneBody := "" -}}
+              {{- range $index, $body := .body -}}
+                {{- $oneBody = $index -}}
+              {{- end -}}
+              {{- with (index .body $oneBody).examples -}}
+                {{- range first 1 . -}}
+                  <div
+                    class="dev-collapsible"
+                    class="dev-anchored"
+                    id="{{ $responseID }}"
+                  >
+                    <a
+                      href="#"
+                      data-collapse="#{{ $exampleID }}"
+                      class="dev-collapsible__toggler dev-collapsible__toggler--collapsed"
+                      >
+                      <span
+                        data-mybicon="mybicon-arrow-right"
+                        data-mybicon-class="dev-collapsible__toggler__icon"
+                        data-mybicon-width="16"
+                        data-mybicon-height="16"
+                      ></span>
+                      <span>{{ .displayName }}</span>
+                    </a>
+                    <div
+                      id="{{ $exampleID }}"
+                      class="dev-collapsible__item dev-collapsible__item--collapsed"
+                    >
+                      {{- with $description -}}
+                        {{- if in (string .) "\n\n" -}}
+                          {{ . | markdownify }}
+                          {{- else -}}
+                          <p>{{ . | markdownify }}</p>
+                        {{- end -}}
+                        {{- range $body -}}
+                          {{- if gt (len $resBodies) 1 -}}
+                            {{- $multiMediaTypes = true -}}
+                          {{- end -}}
+                          {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                        {{- end -}}
+                      {{- end -}}
+                    </div>
+                  </div>
+                {{- end -}}
+              {{- end -}}
+              {{- else -}}
+              <h4 class="dev-anchored" id="{{ $responseID }}">
+                HTTP status code {{ $responseCode }}
+              </h4>
+              {{- with .description -}}
+                {{- if in (string .) "\n\n" -}}
+                  {{ . | markdownify }}
+                  {{- else -}}
+                  <p>{{ . | markdownify }}</p>
+                {{- end -}}
+              {{- end -}}
+              {{- range .body -}}
+                {{- if gt (len $resBodies) 1 -}}
+                  {{- $multiMediaTypes = true -}}
+                {{- end -}}
+                {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    </section>
+  {{- end -}}
+  {{- end -}}
+  {{ end }}
+
+    {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+      <section id="api-support" class="dev-docscontent__section maxw64r">
+        {{- template "_internal/disqus.html" $ -}}
+      </section>
+    {{- end -}}
+  </article>
+</main>
