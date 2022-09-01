@@ -70,7 +70,7 @@ documentation:
 
       #### Example request
       ```
-      curl -H "api-version: 2" https://tracking.bring.com/api/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
+      curl -H "api-version: 2" https://tracking.bring.com/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
 
       ### Select version by URL
@@ -78,12 +78,12 @@ documentation:
 
       | Application | URL example |
       |:-------|:--------|
-      | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
-      | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
+      | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
+      | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
 
       #### Example request
       ```
-      curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
+      curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
     
       ###  Events Description
