@@ -55,6 +55,14 @@
 
           <section class="dev-docscontent__section oas-endpoints maxw96r">
             {{- with $oasData -}}
+              {{ $baseUrl := "" }}
+              {{- range .servers -}}
+                {{- $baseUrl = .url -}}
+                {{- $last := substr $baseUrl -1 -}}
+                {{- if eq $last "/" -}}
+                  {{- $baseUrl = substr $baseUrl 0 -1 -}}
+                {{- end -}}
+              {{- end -}}
               {{- $components := .components -}}
               {{- range $path, $_ := .paths -}}
                 {{- range $type, $_ := . -}}
@@ -62,11 +70,11 @@
                   <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
                   <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
                     <div class="param-response-area">
-                      <div class="flex align-ic mbm mts">
+                      <div class="flex align-ic mbl mts">
                         {{- partial "api/oas/endpoint-type" (dict "type" $type) -}}
                         <span class="flex-auto">
                           <pre class="flex align-ic pas mb0 wrap-text">
-                            <span>{{ $path }}</span>
+                            <span>{{ $baseUrl }}{{ $path }}</span>
                           </pre>
                         </span>
                       </div>

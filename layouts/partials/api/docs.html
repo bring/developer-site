@@ -113,16 +113,13 @@
             <h2 class="dev-anchored mbm" id="{{ $endpointId }}">
               {{- $displayName -}}
             </h2>
+
+            {{ $description := "" }}
             {{- with .description -}}
-              {{- if in (string .) "\n\n" -}}
-                {{ . | markdownify }}
-                {{- else -}}
-                <p>{{ . | markdownify }}</p>
-              {{- end -}}
+              {{ $description = . }}
             {{- end -}}
 
             {{- range .methods -}}
-              <h3 class="dn">URL</h3>
               {{- $urlOutput := slice -}}
               {{- $absUri := $resources.absoluteUri -}}
               {{- $hasExtension := false -}}
@@ -139,10 +136,22 @@
                 {{- $urlOutput = $urlOutput | append $absUri -}}
               {{- end -}}
 
-              <pre class="flex align-ic">
-                          <span class="mrs phs pvxs bg-gray4">{{ .method | upper }}</span>
-                          <span>{{ delimit $urlOutput "<br>" }}</span>
-                        </pre>
+              <div class="flex align-ic mbl mts">
+                {{- partial "api/oas/endpoint-type" (dict "type" .method) -}}
+                <span class="flex-auto">
+                  <pre class="flex align-ic pas mb0 wrap-text">
+                    <span>{{ delimit $urlOutput "<br>" }}</span>
+                  </pre>
+                </span>
+              </div>
+
+              {{- with $description -}}
+                {{- if in (string .) "\n\n" -}}
+                  {{ . | markdownify }}
+                  {{- else -}}
+                  <p>{{ . | markdownify }}</p>
+                {{- end -}}
+              {{- end -}}
 
               {{/* uri params exists and first one is not mediaTypeExtension */}}
               {{- $otherUriParamsMediaType := false -}}
