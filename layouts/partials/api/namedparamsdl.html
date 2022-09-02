@@ -1,0 +1,62 @@
+<h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ .title }}</span> parameters</h4>
+<dl class="desc-list mbl">
+  {{- range where .includeParams ".name" "ne" "mediaTypeExtension" -}}
+    <div class="flex flex-wrap mb-border bb bw1 pvs">
+      <dt class="pls">
+        <code>{{- replace .name "MyBring" "Mybring" -}}</code>
+        {{- if eq .required true -}}
+          <br><span class='mb-badge mb-badge--red'>Required</span>
+        {{- end -}}
+      </dt>
+      <dd class="pls">
+        {{- with .description -}}
+          {{- . -}}
+        {{- end -}}
+        <div class="gray">
+          {{ delimit .type " " }}
+        </div>
+
+        {{- $desc := slice -}}
+
+        {{- if (ne .name .displayName) -}}
+          {{- $desc = $desc | append (print .displayName ". ") -}}
+        {{- end -}}
+        {{- range $desc -}}
+          {{/* This has some formatting issues, possibly from html in markdown */}}
+          {{ . | markdownify }}
+        {{- end -}}
+
+        {{- with .enum -}}
+          <dl>
+            <dt class="fw600 mtxs">Possible values:</dt>
+            {{- range . -}}
+              <dd class="mbxs db maxwmaxc"><code>{{ . }}</code></dd>
+            {{- end -}}
+          </dl>
+        {{- end -}}
+
+        {{- with .default -}}
+          <div class="fw600 mtxs">Default value</div>
+          <code class="mbxs db maxwmaxc">{{ . }}</code>
+        {{- end -}}
+
+        {{- with .pattern -}}
+          <div class="fw600 mtxs">Pattern</div>
+          <code class="mbxs db maxwmaxc">{{ . }}</code>
+        {{- end -}}
+
+        {{- with .example -}}
+          <div class="fw600 mtxs">Example</div>
+          {{- $type := printf "%T" . -}}
+          {{- if eq $type "[]interface {}" -}}
+            {{- range . -}}
+              <code class="mbxs db maxwmaxc">{{ . }}</code>
+            {{- end -}}
+          {{- else -}}
+            <code class="mbxs db maxwmaxc">{{ . }}</code>
+          {{- end -}}
+        {{- end -}}
+      </dd>
+    </div>
+  {{- end -}}
+</dl>
