@@ -17,7 +17,7 @@
           {{ range $method, $_ := . }}
           <tr>
             <td>
-              <a href="#{{ .summary | anchorize }}" title="{{- .summary -}}">
+              <a href="#{{print .summary `-` $method | anchorize }}" title="{{- .summary -}}">
                   {{- .summary -}}
               </a>
             </td>

@@ -16,9 +16,16 @@ introduction: |
   The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: Google). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance.
 
 guides:
-- title: Smart pickup point usage
+- title: ❗Tip - Always provide an address
   content: |
-    For precise results, we strongly recommend to use the end customer’s complete address (not only their postal code) when using the API.
+    For the most accurate results when querying for pickup points close to a postal code, we **STRONGLY** recommend providing the recipient's address when using the API. This is achieved by adding the following query parameters to the request:
+    - `street`
+    - `streetNumber`
+  
+    **Example**
+    ```
+    /api/pickuppoint/{countryCode}/postalCode/{postalCode}?street=dronningens gate&streetNumber=10
+    ```
 
 - title: Max parcel dimensions for Pakkeboks pickup points
   content: |
