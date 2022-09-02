@@ -46,7 +46,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- range .paths -}}
           {{- range $k, $v := . -}}
             {{- $method := $k -}}
-            {{- $endpointId := (printf "%s-%s" .displayName $method) | anchorize -}}
+            {{- $endpointId := (printf "%s-%s" .summary $method) | anchorize -}}
             <li>
               <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
                 <span data-hover="{{ .summary }}">
