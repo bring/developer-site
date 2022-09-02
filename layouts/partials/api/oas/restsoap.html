@@ -344,32 +344,20 @@
 
                 </div>
                 <div class="example-area">
-                  {{- $multiMediaTypes := false -}}
                   {{/* For each endpoint: Request body */}}
                   {{- with .body -}}
-                    {{- if gt (len .) 1 -}}
-                      {{- $multiMediaTypes = true -}}
-                    {{- end -}}
-                    <h3>Request body</h3>
+                    <h3>Request example</h3>
                     {{- range . -}}
-                      {{- partial "api/tabs.html" (dict "context" . "formatType" "Request" "idTypeString" (print $displayName "-request-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                      {{- partial "api/tabssoap.html" (dict "context" . "idTypeString" (print $displayName "-request-") "types" $types ) -}}
                     {{- end -}}
                   {{- end -}}
 
                   {{/* For each endpoint: Response */}}
                   {{- with .responses -}}
-                    <h3>Responses</h3>
-                    {{- range $key, $response := . -}}
-                      {{- $responseID := (print $displayName "-response-" .code) | anchorize -}}
-                      {{- $exampleID := (print $displayName "-" .code) | anchorize -}}
-                      {{- $responseCode := .code -}}
-                      {{- $resBodies := slice -}}
-                      {{- range .body -}}
-                        {{- $resBodies = $resBodies | append . -}}
-                      {{- end -}}
-                      <h4 class="dev-anchored" id="{{ $responseID }}">
-                        HTTP status code {{ $responseCode }}
-                      </h4>
+                    <h3>Response examples</h3>
+                    <p class="fw600 mb0">200</p>
+                    {{- range . -}}
+                      {{- $code := .code -}}
                       {{- with .description -}}
                         {{- if in (string .) "\n\n" -}}
                           {{ . | markdownify }}
@@ -378,10 +366,7 @@
                         {{- end -}}
                       {{- end -}}
                       {{- range .body -}}
-                        {{- if gt (len $resBodies) 1 -}}
-                          {{- $multiMediaTypes = true -}}
-                        {{- end -}}
-                        {{- partial "api/tabs.html" (dict "context" . "formatType" "Response" "idTypeString" (print $responseID "-") "types" $types "multiMethods" $multiMediaTypes ) -}}
+                        {{- partial "api/tabssoap.html" (dict "context" . "endpointName" $displayName "code" $code "types" $types ) -}}
                       {{- end -}}
                     {{- end -}}
                   {{- end -}}

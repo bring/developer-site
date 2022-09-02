@@ -42,6 +42,8 @@
 
     {{- else if in .Title "Order Management" -}}
       {{- partial "api/oas/restsoap.html" . -}}
+      <script async src='{{ "/js/api.js" | relURL }}'></script>
+      <script async src='{{ "/js/scrollmarker.js" | relURL }}'></script>
 
     {{- else if isset $.Params "oas" -}}
       <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">

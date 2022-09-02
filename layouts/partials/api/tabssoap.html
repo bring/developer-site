@@ -1,0 +1,57 @@
+{{- $endpointId := (printf "%s-%s" .endpointName .code) | anchorize -}}
+{{ $endpointName := .endpointName }}
+
+{{- $types := .types -}}
+{{- with .context -}}
+  {{- $format := "" -}}
+  {{- if (eq .name "application/json") -}}
+    {{- $format = "json" -}}
+    {{- else if (or (eq .name "application/xml") (eq .name "application/soap")) -}}
+    {{- $format = "xml" -}}
+    {{- else if (eq .name "application/html") -}}
+    {{- $format = "html" -}}
+  {{- end -}}
+  {{- $formatFull := replace .name "/" "" -}}
+  {{- $exId := "" -}}
+  {{- $showResponse := false -}}
+
+  <div class="bg-gray3 rad-t2px mts">
+    <div class="relative bg-gray4 example-wrap" data-example="{{ print $endpointId $formatFull }}">
+      {{ if gt (len .examples) 1 }}
+        <div class="mhm pvm">
+          <select class="form__control w100p mb0 pas hauto" name="{{$formatFull}}-{{$endpointId}}" data-example-sub aria-label="{{ $endpointName }} {{ $format }} request example">
+            {{- range $index, $_ := .examples -}}
+              {{- $exId = (printf "%s-%s-%s" $endpointId .displayName (add 1 $index)) | anchorize -}}
+              <option value="{{ $exId }}">{{ .displayName }}</option>
+            {{- end -}}
+          </select>
+        </div>
+      {{ end }}
+
+      {{- $exInd := 0 -}}
+      {{- range $index, $_ := .examples -}}
+        {{- $exId = (printf "%s-%s-%s" $endpointId .displayName (add 1 $index)) | anchorize -}}
+        <div class="relative" data-example-sub="{{ $exId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+            {{- with .description -}}
+              {{- if in (string .) "\n\n" -}}
+                {{ .| markdownify }}
+                {{- else -}}
+                <p>{{ . | markdownify }}</p>
+              {{- end -}}
+            {{- end -}}
+            {{ highlight .value $format "" }}
+            <button class="btn-link btn-link--copy flex align-ic absolute copy-btn">
+              <span
+                data-mybicon="mybicon-copy"
+                data-mybicon-class="icon-ui--s icon-ui--lightgray mrxs"
+                data-mybicon-width="18"
+                data-mybicon-height="18"
+              ></span>
+              <span class="copy-btn-label">Copy</span>
+            </button>
+        </div>
+        {{- $exInd = add $exInd 1 -}}
+      {{- end -}}
+    </div>
+  </div>
+{{- end -}}
