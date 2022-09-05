@@ -3,6 +3,29 @@
   background-color: var(--green-darkest);
   color: var(--green-86);
 
+  /*Brighter link color for better contrast*/
+  & a:not(
+    .btn,
+    .btn-link--dark,
+    .mb-card,
+    .sitefooter a,
+    .dev-siteheader__nav a,
+    .dev-sidemenu a,
+    a.dev-codetabs__link) {
+      color: var(--blue-light);
+  }
+
+  & a:not(
+    .btn,
+    .btn-link--dark,
+    .mb-card,
+    .sitefooter a,
+    .dev-siteheader__nav a,
+    .dev-sidemenu a,
+    a.dev-codetabs__link):hover {
+      color: var(--blue);
+  }
+
   & .color-theme-icon {
     color: var(--green-26);
   }
@@ -29,7 +52,8 @@
   }
 
   & .message--warn {
-    color: var(--green-26);
+    background-color: var(--yellow-dark);
+    border-color: var(--yellow-darker);
   }
 
   & input,
@@ -111,7 +135,7 @@
   }
 
   & .param-required {
-    color: var(--red);
+    color: var(--red-light);
   }
 
   & .param-toggle-btn:hover {
@@ -150,7 +174,7 @@
 
   & .mb-badge--red {
     background-color: var(--green-18);
-    color: var(--red);
+    color: var(--red-light);
   }
 
   /* Side menu */
@@ -169,11 +193,11 @@
 
   /* Response codes */
   & .response {
-    background: var(--green-22);
+    background: var(--green-18);
   }
 
   & .response:hover {
-    background: var(--green-18);
+    background: var(--green-16);
   }
 
   & .response.success-code {

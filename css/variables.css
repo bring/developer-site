@@ -28,6 +28,8 @@
 --green-16: hsl(150, 3%, 16%);
 
 --yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
+--yellow-dark: hsl(48, 38%, 15%);
+--yellow-darker: hsl(41, 38%,35%);
 
 --red: hsl(3, 77.5%, 51.5%); /* #e32d22 */
 --red-light: hsl(3, 77.5%, 65%);
