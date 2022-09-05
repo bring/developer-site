@@ -33,14 +33,8 @@
   & .dev-docs__menu,
   & .bg-gray1,
   & .bg-gray2,
-  & .bg-gray3,
-  & .bg-gray4,
-  & .message--info {
+  & .bg-gray4 {
     background-color: var(--green-16);
-  }
-
-  & .dev-drawmenu {
-    background-color: var(--green-darkest);
   }
 
   & .bg-gray3 {
@@ -51,9 +45,17 @@
     background-color: var(--green-18);
   }
 
+  & .dev-drawmenu {
+    background-color: var(--green-darkest);
+  }
+
+  & .message--info {
+    background-color: var(--green-22);
+  }
+
   & .message--warn {
-    background-color: var(--yellow-dark);
-    border-color: var(--yellow-darker);
+    background-color: var(--yellow-darker);
+    border-color: var(--yellow-dark);
   }
 
   & input,
@@ -160,6 +162,10 @@
   & .mb-badge {
     background-color: var(--green-22);
     color: var(--green-86);
+  }
+
+  & .desc-list dt code {
+    background: transparent;
   }
 
   & .mb-badge--green {
