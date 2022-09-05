@@ -76,7 +76,11 @@
 
   & .mb-card {
     background-color: var(--green-22);
-    border-color: var(--green-22);
+    border-color: transparent;
+  }
+
+  & .mb-card:hover {
+    background-color: var(--green-18);
   }
 
   & .mb-card svg {
@@ -125,6 +129,12 @@
 
   & .btn-link--dark.txt-success:hover {
     color: var(--green);
+  }
+
+  & .btn--green, .btn--green:link, .btn--green:visited {
+    background-color: var(--green);
+    border-color: var(--green-16);
+    color: var(--gray-13);
   }
 
   & .dev-sidemenu a,
