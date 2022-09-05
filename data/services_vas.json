@@ -591,7 +591,7 @@
   "shippingGuideCode" : "SIMPLIFIED_DELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee" ],
+  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee", "Signature required" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
@@ -1189,6 +1189,26 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Urban Home Delivery",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "3332",
+    "productionCode" : "3332",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1435,7 +1455,7 @@
   "shippingGuideCode" : "1280",
   "shippingGuideNpbCode" : "1280",
   "bookingCode" : "1280",
-  "incompatibleVases" : [ "Flex delivery" ],
+  "incompatibleVases" : [ "Flex delivery", "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
