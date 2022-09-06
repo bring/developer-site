@@ -18,14 +18,14 @@
 --green-lighter-active: hsl(86, 40%, 92%);
 --green-dark: hsl(155, 100%, 19.6%); /* #00643a */
 --green-darker: hsl(152, 100%, 9%);
---green-darkest: hsl(152, 10%, 10%);
---green-86: hsl(150, 3%, 86%);
---green-60: hsl(150, 3%, 60%);
---green-40: hsl(150, 3%, 40%);
---green-26: hsl(150, 3%, 26%);
---green-22: hsl(150, 3%, 22%);
---green-18: hsl(150, 3%, 18%);
---green-16: hsl(150, 3%, 16%);
+--green-darkest: hsl(152, 15%, 10%);
+--green-86: hsl(150, 7%, 86%);
+--green-60: hsl(150, 7%, 60%);
+--green-40: hsl(150, 7%, 40%);
+--green-26: hsl(150, 7%, 26%);
+--green-22: hsl(150, 7%, 22%);
+--green-18: hsl(150, 7%, 18%);
+--green-16: hsl(150, 7%, 16%);
 
 --yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
 --yellow-dark: hsl(41, 38%,35%);
