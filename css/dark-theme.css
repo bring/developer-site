@@ -30,6 +30,14 @@
     color: var(--green-26);
   }
 
+  & .dev-eta {
+    color: var(--green-86);
+    & .dev-eta1__bring,
+    & .dev-eta2__bring {
+      color: var(--gray-13)
+    }
+  }
+
   & .dev-docs__menu,
   & .bg-gray1,
   & .bg-gray2,
