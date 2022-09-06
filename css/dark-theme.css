@@ -34,7 +34,7 @@
   & .bg-gray1,
   & .bg-gray2,
   & .bg-gray4 {
-    background-color: var(--green-16);
+    background-color: var(--green-15);
   }
 
   & .bg-gray3 {
@@ -71,7 +71,7 @@
   & tr,
   & .mb-border,
   & .dev-sidemenu__separator {
-    border-color: var(--green-40);
+    border-color: var(--gray-40);
   }
 
   & .mb-card {
@@ -87,6 +87,10 @@
 
   & .cutoff-overlay {
     background: linear-gradient(0deg,var(--green-darkest) 50%,hsla(0,0%,100%,0));
+  }
+
+  & .gray {
+    color: var(--gray-60);
   }
 
   /* Buttons */
@@ -106,12 +110,16 @@
     color: var(--green-60);
   }
 
+  & .btn-link:hover {
+    background-color: var(--green-18);
+  }
+
   & .btn-link--dark {
     &.active,
     &:active,
     &[aria-selected=true],
     &:hover {
-      background-color: var(--green-16);
+      background-color: var(--green-15);
     }
 
     &.txt-error {
@@ -131,8 +139,11 @@
 
   & input[type="submit"] {
     background-color: var(--green);
-    border-color: var(--green-16);
+    border-color: var(--green-15);
     color: var(--gray-13);
+    &:hover {
+      background-color: var(--green-hover);
+    }
   }
 
   & .dev-sidemenu a,
@@ -144,11 +155,21 @@
     color: var(--green-86);
   }
 
+  & .dev-sidemenu a {
+    &:focus,
+    &:hover {
+      background-color: hsla(150,20%,80%, 0.1);
+    }
+  }
+
+  & .dev-docscontent__info summary {
+    &:hover {
+      background-color: var(--green-15);
+    }
+  }
+
   & .param-required {
     color: var(--red-light);
-    &:hover {
-      background-color: var(--green-18);
-    }
   }
 
   & .dev-collapsible__toggler {
@@ -191,7 +212,7 @@
 
   /* Side menu */
   & .dev-sidemenu__title {
-    color: var(--green);
+    color: var(--green-light);
   }
 
   & .dev-sidemenu__level1.active {
@@ -207,7 +228,7 @@
   & .response {
     background: var(--green-18);
     &:hover {
-      background: var(--green-16);
+      background: var(--green-15);
     }
     &.success-code {
       color: var(--green);

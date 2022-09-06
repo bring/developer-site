@@ -12,6 +12,7 @@
 --gray-13: hsl(0, 0%, 13%); /* #222222 */
 
 --green: hsl(93.5, 50%, 51%); /* #7bc144 */
+--green-hover: hsl(93, 56%, 57%);
 --green-light: hsl(75, 53%, 70.5%); /* #c8dc8c */
 --green-lighter: hsl(86, 47%, 94%); /* #f1f7e9 */
 --green-lighter-hover: hsl(86, 40%, 96%);
@@ -25,11 +26,11 @@
 --green-26: hsl(150, 7%, 26%);
 --green-22: hsl(150, 7%, 22%);
 --green-18: hsl(150, 7%, 18%);
---green-16: hsl(150, 7%, 16%);
+--green-15: hsl(150, 7%, 15%);
 
 --yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
---yellow-dark: hsl(41, 38%,35%);
---yellow-darker: hsl(48, 38%, 15%);
+--yellow-dark: hsl(41, 50%,45%);
+--yellow-darker: hsl(48, 40%, 20%);
 
 --red: hsl(3, 77.5%, 51.5%); /* #e32d22 */
 --red-light: hsl(3, 77.5%, 65%);
