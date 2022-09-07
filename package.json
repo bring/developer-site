@@ -25,7 +25,7 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-env": "^7.19.0",
     "autoprefixer": "^10.4.7",
     "babel-loader": "^8.2.5",
     "cross-env": "^7.0.3",
