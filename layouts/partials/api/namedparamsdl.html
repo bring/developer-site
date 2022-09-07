@@ -9,52 +9,33 @@
         {{- end -}}
       </dt>
       <dd class="pls">
-        {{- with .description -}}
-          {{- . -}}
-        {{- end -}}
-        <div class="gray">
-          {{ delimit .type " " }}
-        </div>
-
-        {{- $desc := slice -}}
-
-        {{- if (ne .name .displayName) -}}
-          {{- $desc = $desc | append (print .displayName ". ") -}}
-        {{- end -}}
-        {{- range $desc -}}
-          {{ . | markdownify }}
-        {{- end -}}
-
-        {{- with .enum -}}
-          <dl>
-            <dt class="mtxs"><span class="fw600">Enum</span></dt>
-            {{- range . -}}
-              <dd class="mbxs db maxwmaxc"><code>{{ . }}</code></dd>
-            {{- end -}}
-          </dl>
-        {{- end -}}
-
-        {{- with .default -}}
-          <div class="fw600 mtxs">Default value</div>
-          <code class="mbxs db maxwmaxc">{{ . }}</code>
-        {{- end -}}
-
-        {{- with .pattern -}}
-          <div class="fw600 mtxs">Pattern</div>
-          <code class="mbxs db maxwmaxc">{{ . }}</code>
-        {{- end -}}
-
-        {{- with .example -}}
-          <div class="fw600 mtxs">Example</div>
-          {{- $type := printf "%T" . -}}
-          {{- if eq $type "[]interface {}" -}}
-            {{- range . -}}
-              <code class="mbxs db maxwmaxc">{{ . }}</code>
-            {{- end -}}
-          {{- else -}}
-            <code class="mbxs db maxwmaxc">{{ . }}</code>
+        <dl>
+          {{- with .description -}}
+            <dt class="screen-reader-text">Description</dt>
+            <dd>{{- . -}}</dd>
           {{- end -}}
-        {{- end -}}
+          <dt class="screen-reader-text">Type</dt>
+          <dd class="gray">{{ delimit .type " " }}</dd>
+
+          {{- with .enum -}}
+              <dt><span class="fw600">Enum</span></dt>
+              {{- range . -}}
+                <dd><code>{{ . }}</code></dd>
+              {{- end -}}
+          {{- end -}}
+
+          {{- with .example -}}
+            <dt><span class="fw600">Example</span></dt>
+            {{- $type := printf "%T" . -}}
+            {{- if eq $type "[]interface {}" -}}
+              {{- range . -}}
+                <dd><code>{{ . }}</code></dd>
+              {{- end -}}
+            {{- else -}}
+              <dd><code>{{ . }}</code></dd>
+            {{- end -}}
+          {{- end -}}
+        </dl>
       </dd>
     </div>
   {{- end -}}

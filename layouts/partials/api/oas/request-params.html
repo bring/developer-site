@@ -74,59 +74,74 @@
           {{- end -}}
         </dt>
         <dd class="pls">
-          {{- .description -}}
-          {{- if gt (len $description) 0 -}}
-            <p class="mb0">{{$description}}</p>
-          {{- end -}}
-          <div class="gray">
-            {{- $type -}}
-          </div>
-
-          {{- if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) -}}
-            <div class="fw600 mtxs">
-              {{- if gt (len $enum) 1 -}}
-                Enum
-              {{- else -}}
-                Value
-              {{- end -}}
-            </div>
-            {{- range $enum -}}
-              <code class="mbxs db maxwmaxc">{{.}}</code>
+          <dl>
+            {{- with .description -}}
+              <dt class="screen-reader-text">Description</dt>
+              <dd>{{- . -}}</dd>
             {{- end -}}
-          {{- end -}}
+            <dt class="screen-reader-text">Type</dt>
+            <dd class="gray">{{ $type }}</dd>
 
-          {{- if gt (len $default) 0 -}}
-            <div class="fw600 mtxs">Default</div>
-            <code class="mbxs db maxwmaxc">{{$default}}</code>
-          {{- end -}}
-
-          {{- if gt (len $example) 0 -}}
-            <div class="fw600 mtxs">Example</div>
-            <code class="mbxs db maxwmaxc">{{$example}}</code>
-          {{- end -}}
-
-          {{- if gt (len $examples) 0 -}}
-            <div class="fw600 mtxs">
-              {{- if gt (len $examples) 1 -}}
-                Examples
-              {{- else -}}
-                Example
-              {{- end -}}
-            </div>
-            {{- range $key, $value := $examples -}}
-              <p class="text-note mb0">{{$key}}</p>
-              {{- if ne $key $value.description -}}
-                <p class="text-note mb0">{{$value.description}}</p>
-              {{- end -}}
-              <code class="mbxs db maxwmaxc">
-                {{- if eq $paramType "path" -}}
-                  {{- delimit (slice "" $value.value) "" -}}
-                {{- else -}}
-                  {{- delimit (slice $name $value.value) "=" -}}
+            {{- if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) -}}
+              <div class="mbxs">
+                <dt><span class="fw600">
+                  {{- if gt (len $enum) 1 -}}
+                    Enum
+                  {{- else -}}
+                    Value
+                  {{- end -}}
+                </span></dt>
+                {{- range $enum -}}
+                  <dd><code>{{ . }}</code></dd>
                 {{- end -}}
-              </code>
+              </div>
             {{- end -}}
-          {{- end -}}
+
+            {{- if gt (len $default) 0 -}}
+              <div class="mbxs">
+                <dt><span class="fw600">Default</span></dt>
+                <dd><code>{{ $default }}</code></dd>
+              </div>
+            {{- end -}}
+
+            {{- if gt (len $example) 0 -}}
+              <div class="mbxs">
+                <dt><span class="fw600">Example</span></dt>
+                <dd><code class="mbxs db maxwmaxc">{{ $example }}</code></dd>
+              </div>
+            {{- end -}}
+
+            {{- if gt (len $examples) 0 -}}
+              <dt><span class="fw600">
+                {{- if gt (len $examples) 1 -}}
+                  Examples
+                {{- else -}}
+                  Example
+                {{- end -}}
+              </span></dt>
+              <dd>
+                <dl class="owlxs">
+                  {{- range $key, $value := $examples -}}
+                    <div>
+                      <dt class="text-note mb0">{{ $key }}</dt>
+                      <dd>
+                        {{- if ne $key $value.description -}}
+                          <span class="db text-note mb0">{{ $value.description }}</span>
+                        {{- end -}}
+                        <code>
+                          {{- if eq $paramType "path" -}}
+                            {{- delimit (slice "" $value.value) "" -}}
+                          {{- else -}}
+                            {{- delimit (slice $name $value.value) "=" -}}
+                          {{- end -}}
+                        </code>
+                      </dd>
+                    </div>
+                  {{- end -}}
+                </dl>
+              </dd>
+            {{- end -}}
+          </dl>
         </dd>
       </div>
     {{- end -}}
