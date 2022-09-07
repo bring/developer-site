@@ -1,10 +1,6 @@
 {{- $soapArr := "" -}}
-{{- $soapUri := "" -}}
 {{- with .soapArr -}}
   {{- $soapArr = . -}}
-{{- end -}}
-{{- with .soapUri -}}
-  {{- $soapUri = . -}}
 {{- end -}}
 
 {{- with .oas -}}
@@ -12,12 +8,16 @@
     <h2 class="dev-anchored mbm" id="endpoints">
     Endpoints
     </h2>
-    {{- range .servers -}}
-      <pre class="maxw40r">{{ with $soapArr }}REST: {{ end }}{{ .url }}</pre>
-    {{- end -}}
-    {{- with $soapArr -}}
-        <pre class="maxw40r">SOAP: {{ $soapUri }}</pre>
-    {{- end -}}
+    <div class="flex align-ic mbl mts">
+      <span class="mb-badge text-note mrxs pas">Base URL</span>
+      <span class="flex-auto maxw40r">
+        <pre class="flex align-ic pas mb0 wrap-text">
+          {{- range .servers -}}
+            <span>{{ replace .url "qa." "" }}</span>
+          {{- end -}}
+        </pre>
+      </span>
+    </div>
 
     <table class="maxw96r">
       <thead>

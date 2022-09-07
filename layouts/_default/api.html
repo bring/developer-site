@@ -57,7 +57,7 @@
             {{- with $oasData -}}
               {{ $baseUrl := "" }}
               {{- range .servers -}}
-                {{- $baseUrl = .url -}}
+                {{- $baseUrl = replace .url "qa." "" -}}
                 {{- $last := substr $baseUrl -1 -}}
                 {{- if eq $last "/" -}}
                   {{- $baseUrl = substr $baseUrl 0 -1 -}}
