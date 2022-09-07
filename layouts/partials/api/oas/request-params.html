@@ -13,34 +13,30 @@
   {{- $paramType := . -}}
   <h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ $paramType }}</span> parameters</h4>
   <dl class="desc-list mbl">
-  {{ range $parameters }}
-    {{ if eq .in $paramType }}
-      {{ $example := "" }}
-      {{ $examples := slice }}
-      {{ $enum := slice }}
-      {{ $type := "any" }}
-      {{ $name := .name }}
-      {{ $default := "" }}
-      {{ $description := "" }}
+  {{- range $parameters -}}
+    {{- if eq .in $paramType -}}
+      {{- $example := "" -}}
+      {{- $examples := slice -}}
+      {{- $enum := slice -}}
+      {{- $type := "any" -}}
+      {{- $name := .name -}}
+      {{- $default := "" -}}
 
-      {{ range $key, $value := .}}
-      {{ if eq $key "schema" }}
-        {{ with .type }}
-          {{ $type = . }}
-        {{ end }}
-        {{ with .enum }}
-          {{ $enum = . }}
-        {{ end }}
-        {{ with .example }}
-          {{ $example = . }}
-        {{ end }}
-        {{ with .description }}
-          {{ $description = . }}
-        {{ end }}
-      {{ else if eq $key "example" }}
-        {{ $example = delimit (slice $name $value) "=" }}
-      {{ end }}
-    {{ end }}
+      {{- range $key, $value := . -}}
+        {{- if eq $key "schema" -}}
+          {{- with .type -}}
+            {{- $type = . -}}
+          {{- end -}}
+          {{- with .enum -}}
+            {{- $enum = . -}}
+          {{- end -}}
+          {{- with .example -}}
+            {{- $example = . -}}
+          {{- end -}}
+        {{- else if eq $key "example" -}}
+          {{- $example = delimit (slice $name $value) "=" -}}
+        {{- end -}}
+      {{- end -}}
 
       {{- range $key, $value := . -}}
         {{- if eq $key "name" -}}
