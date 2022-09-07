@@ -42,12 +42,12 @@ baseUri: https://api.bring.com/po
             description: Timestamp
             required: false
             type: string
-            example: 2022-05-25T13:32:40.149+02:00
+            example: '2022-05-25T13:32:40.149+02:00'
           DateAndTimes subClass:
             description: DateAndTimes sub class
             required: false
             type: string
-            example: 
+            enum:
               - RequestDate
               - DocumentDate
               - ResponseDate
@@ -80,8 +80,8 @@ baseUri: https://api.bring.com/po
             required: false
             type: string
             example: 
-              - 1823-2314
-              - 7628173
+              - '1823-2314'
+              - '7628173'
           PurchaseOrderNo:
             description: PurchaseOrder Number
             required: false
@@ -137,27 +137,27 @@ baseUri: https://api.bring.com/po
       application/xml:
         properties:
           SchemaVersion:
-            type: string
-            required: false
             description: Schema Version
+            required: false
+            type: string
             example: 1
           Locale:
-            type: string
-            required: false
             description: Locale
+            required: false
+            type: string
             example: 
               - no
               - en
           DateAndTimes:
-            type: string
-            required: false
             description: Timestamp
+            required: false
+            type: string
             example: '2022-05-25T13:32:40.149+02:00'
           DateAndTimes subClass:
-            type: string
-            required: false
             description: DateAndTimes sub class
-            example:
+            required: false
+            type: string
+            enum:
               - RequestDate
               - DocumentDate
               - ResponseDate
@@ -186,71 +186,71 @@ baseUri: https://api.bring.com/po
               - FollowUpDate
               - DeliveryDateEstimated
           CustomerNo:
-            type: string
-            required: false
             description: Customer number
+            required: false
+            type: string
             example: 
               - '1823-2314'
               - '7628173'
           PurchaseOrderNo:
-            type: string
-            required: false
             description: Purchase order number 
+            required: false
+            type: string
             example: '231323432'
           ConsignmentId:
-            type: string
-            required: false
             description: Consignment id 
+            required: false
+            type: string
             example: '739283472918723728'
           PackageId:
-            type: string
-            required: false
             description: Package id 
+            required: false
+            type: string
             example: '46782991834'
           orderLineId:
-            type: string
-            required: false
             description: Order line id 
+            required: false
+            type: string
             example: 1
           articleLineId:
-            type: string
-            required: false
             description: Article line id 
+            required: false
+            type: string
             example: 10
           ArticleQuantity:
-            type: string
-            required: false
             description: Article quantity 
+            required: false
+            type: string
             example: 10
           ArticleNumber:
-            type: string
-            required: false
             description: Article number 
+            required: false
+            type: string
             example: 7123
           ArticleVendorNumber:
-            type: string
-            required: false
             description: Article vendor number 
+            required: false
+            type: string
             example: '4688273'
           ArticleId:
-            type: string
-            required: false
             description: Article id 
+            required: false
+            type: string
             example: '646929334'
           ArticleQuantity:
-            type: string
-            required: false
             description: Article quantity 
+            required: false
+            type: string
             example: 10
           UnitPrice:
-            type: string
-            required: false
             description: Unit price 
+            required: false
+            type: string
             example: '5382'
           currencyIdentificationCode:
-            type: string
-            required: false
             description: Currency identification code 
+            required: false
+            type: string
             example: 
               - NOK
               - USD
@@ -304,27 +304,27 @@ baseUri: https://api.bring.com/po
       application/xml:
         properties:
           SchemaVersion:
-            type: string
-            required: false
             description: Schema Version
+            required: false
+            type: string
             example: 1
           Locale:
-            type: string
-            required: false
             description: Locale
+            required: false
+            type: string
             example:
               - no
               - en
           DateAndTimes:
-            type: string
-            required: false
             description: Timestamp
+            required: false
+            type: string
             example: '2022-05-25T13:32:40.149+02:00'
           DateAndTimes subClass:
-            type: string
-            required: false
             description: DateAndTimes sub class
-            example:
+            required: false
+            type: string
+            enum:
               - RequestDate
               - DocumentDate
               - ResponseDate
@@ -353,71 +353,71 @@ baseUri: https://api.bring.com/po
               - FollowUpDate
               - DeliveryDateEstimated
           CustomerNo:
-            type: string
-            required: false
             description: Customer number
+            required: false
+            type: string
             example:
               - '1823-2314'
               - '7628173'
           PurchaseOrderNo:
-            type: string
-            required: false
             description: Purchase order number
+            required: false
+            type: string
             example: '231323432'
           ConsignmentId:
-            type: string
-            required: false
             description: Consignment id
+            required: false
+            type: string
             example: '739283472918723728'
           PackageId:
-            type: string
-            required: false
             description: Package id
+            required: false
+            type: string
             example: '46782991834'
           orderLineId:
-            type: string
-            required: false
             description: Order line id
+            required: false
+            type: string
             example: 1
           articleLineId:
-            type: string
-            required: false
             description: Article line id
+            required: false
+            type: string
             example: 10
           ArticleQuantity:
-            type: string
-            required: false
             description: Article quantity
+            required: false
+            type: string
             example: 10
           ArticleNumber:
-            type: string
-            required: false
             description: Article number
+            required: false
+            type: string
             example: 7123
           ArticleVendorNumber:
-            type: string
-            required: false
             description: Article vendor number
+            required: false
+            type: string
             example: '4688273'
           ArticleId:
-            type: string
-            required: false
             description: Article Id
+            required: false
+            type: string
             example: '646929334'
           ArticleQuantity:
-            type: string
-            required: false
             description: Article quantity
+            required: false
+            type: string
             example: 10
           UnitPrice:
-            type: string
-            required: false
             description: Unit price
+            required: false
+            type: string
             example: 5382
           currencyIdentificationCode:
-            type: string
-            required: false
             description: Currency identification code
+            required: false
+            type: string
             example: 
               - NOK
               - USD

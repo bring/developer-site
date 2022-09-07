@@ -22,13 +22,12 @@
           {{- $desc = $desc | append (print .displayName ". ") -}}
         {{- end -}}
         {{- range $desc -}}
-          {{/* This has some formatting issues, possibly from html in markdown */}}
           {{ . | markdownify }}
         {{- end -}}
 
         {{- with .enum -}}
           <dl>
-            <dt class="fw600 mtxs">Possible values:</dt>
+            <dt class="mtxs"><span class="fw600">Enum</span></dt>
             {{- range . -}}
               <dd class="mbxs db maxwmaxc"><code>{{ . }}</code></dd>
             {{- end -}}
