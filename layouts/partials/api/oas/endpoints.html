@@ -32,6 +32,7 @@
       {{- $pathsLen := len .paths -}}
       {{- range $path, $_ := .paths -}}
         {{- range $method, $_ := . -}}
+          {{- $endpointAnchor := (printf "%s-%s" .summary $method) | anchorize -}}
           <tr>
             {{- with $soapArr -}}
               {{- if eq $restInd 0 -}}
@@ -40,7 +41,7 @@
               {{- $restInd = add $restInd 1 -}}
             {{- end -}}
             <td>
-              <a href="#{{ $endpointId }}" title="{{- .summary -}}">
+              <a href="#{{ $endpointAnchor }}" title="{{ .summary }}">
                   {{- .summary -}}
               </a>
             </td>
@@ -74,7 +75,7 @@
               {{- end -}}
               {{- $soapInd = add $soapInd 1 -}}
               <td>
-                <a href="#{{ $endpointAnchor }}" title="{{- $displayName -}}">
+                <a href="#{{ $endpointAnchor }}" title="{{ $displayName }}">
                     {{- .description -}}
                 </a>
               </td>
