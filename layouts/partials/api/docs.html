@@ -40,11 +40,13 @@
                         {{- . -}}
                       </summary>
                     {{- end -}}
-                    {{- if in (string .content) "\n\n" -}}
-                      {{- .content | markdownify -}}
-                    {{- else -}}
-                      <p>{{ .content | markdownify }}</p>
-                    {{- end -}}
+                    <div class="pam">
+                      {{- if in (string .content) "\n\n" -}}
+                        {{- .content | markdownify -}}
+                      {{- else -}}
+                        <p>{{ .content | markdownify }}</p>
+                      {{- end -}}
+                    </div>
                   </details>
                 {{- end -}}
               </div>

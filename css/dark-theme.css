@@ -30,6 +30,10 @@
     color: var(--green-26);
   }
 
+  & .light-icon {
+    color: var(--green-86);
+  }
+
   & .dev-eta {
     color: var(--green-86);
     & .dev-eta1__bring,
