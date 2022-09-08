@@ -34,14 +34,12 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- end -}}
       {{- end -}}
 
-      {{- range $currentPage.Params.guides -}}
-        {{- with .heading -}}
-          <li>
-            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
-              <span data-hover="{{ . }}">{{ . }}</span>
-            </a>
-          </li>
-        {{- end -}}
+      {{- with $currentPage.Params.guides -}}
+        <li>
+          <a href="#tips-and-guides" data-list-item="tips-and-guides">
+            <span data-hover="Tips and guides">Tips and guides</span>
+          </a>
+        </li>
       {{- end -}}
 
       {{- with or (and (.apiData) (index .apiData .identifier)) $oasData -}}
