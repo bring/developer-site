@@ -5,6 +5,10 @@
 {{- with .oasData -}}
   {{- $oasData = getJSON . -}}
 {{- end -}}
+{{- $prefix := "" -}}
+{{- with .prefix -}}
+  {{- $prefix = . -}}
+{{- end -}}
 
 {{- $target := "" -}}
 {{- $iconEx := "" -}}
@@ -42,7 +46,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- range .paths -}}
           {{- range $k, $v := . -}}
             {{- $method := $k -}}
-            {{- $endpointId := (print .summary "-" $method | anchorize) -}}
+            {{- $endpointId := (printf "%s-%s" .summary $method) | anchorize -}}
             <li>
               <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
                 <span data-hover="{{ .summary }}">
@@ -62,7 +66,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
               {{- $method = . -}}
             {{- end -}}
           {{- end -}}
-          {{- $endpointId := (print .displayName "-" $method | anchorize) -}}
+          {{- $endpointId := (printf "%s-%s-%s" $prefix .displayName $method) | anchorize -}}
           <li>
             <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
               <span data-hover="{{ .displayName }}">

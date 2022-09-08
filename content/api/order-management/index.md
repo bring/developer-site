@@ -1,11 +1,11 @@
 ---
-title: Order Management API (REST)
+title: Order Management API
 layout: api
 disqus_identifier: https-developer-bring-com-api-order-management
 menu:
   apidocs:
     identifier: ordermanagement
-    title: Order Management API (REST)
+    title: Order Management API
     url: /api/order-management
     parent: om
 weight: 61
@@ -20,7 +20,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP. This API doesn't support JSON for all methods yet. Look in the example section to see which are supported.
+      REST XML/JSON over HTTP and SOAP TEXT/XML over HTTP. This API doesn't support JSON for all methods yet. Look in the example section to see which are supported.
 
 documentation:
   - title: Error handling

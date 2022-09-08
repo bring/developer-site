@@ -252,12 +252,12 @@
           {{- end -}}
         </div>
         {{- with $schemaObj.enum -}}
-        <div>
-          <span class="text-note fw600">Enum</span>
-          {{- range . -}}
-            <br><code class="wrap-text">{{ . }}</code>
-          {{- end -}}
-        </div>
+          <dl>
+            <dt><span class="text-note fw600">Enum</span></dt>
+            {{- range . -}}
+              <dd><code class="wrap-text">{{ . }}</code></dd>
+            {{- end -}}
+          </dl>
         {{- end -}}
       </dd>
     </div>

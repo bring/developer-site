@@ -1,0 +1,42 @@
+<h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ .title }}</span> parameters</h4>
+<dl class="desc-list mbl">
+  {{- range where .includeParams ".name" "ne" "mediaTypeExtension" -}}
+    <div class="flex flex-wrap mb-border bb bw1 pvs">
+      <dt class="pls">
+        <code>{{- replace .name "MyBring" "Mybring" -}}</code>
+        {{- if eq .required true -}}
+          <br><span class='mb-badge mb-badge--red'>Required</span>
+        {{- end -}}
+      </dt>
+      <dd class="pls">
+        <dl>
+          {{- with .description -}}
+            <dt class="screen-reader-text">Description</dt>
+            <dd>{{- . -}}</dd>
+          {{- end -}}
+          <dt class="screen-reader-text">Type</dt>
+          <dd class="gray">{{ delimit .type " " }}</dd>
+
+          {{- with .enum -}}
+              <dt><span class="fw600">Enum</span></dt>
+              {{- range . -}}
+                <dd><code>{{ . }}</code></dd>
+              {{- end -}}
+          {{- end -}}
+
+          {{- with .example -}}
+            <dt><span class="fw600">Example</span></dt>
+            {{- $type := printf "%T" . -}}
+            {{- if eq $type "[]interface {}" -}}
+              {{- range . -}}
+                <dd><code>{{ . }}</code></dd>
+              {{- end -}}
+            {{- else -}}
+              <dd><code>{{ . }}</code></dd>
+            {{- end -}}
+          {{- end -}}
+        </dl>
+      </dd>
+    </div>
+  {{- end -}}
+</dl>
