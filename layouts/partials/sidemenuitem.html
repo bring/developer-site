@@ -34,6 +34,16 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- end -}}
       {{- end -}}
 
+      {{- range $currentPage.Params.guides -}}
+        {{- with .heading -}}
+          <li>
+            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
+              <span data-hover="{{ . }}">{{ . }}</span>
+            </a>
+          </li>
+        {{- end -}}
+      {{- end -}}
+
       {{- with or (and (.apiData) (index .apiData .identifier)) $oasData -}}
         <li>
           <a href="#endpoints" data-list-item="endpoints">
