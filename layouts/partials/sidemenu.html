@@ -71,7 +71,7 @@
     {{- $apiData := .Site.Data.api -}}
     {{- range .Site.Menus.apidocs -}}
       {{- if .HasChildren -}}
-        <h2 class="dev-sidemenu__title text-note ttu">{{ .Title }}</h2>
+        <h2 class="dev-sidemenu__title ttu">{{ .Title }}</h2>
         <ul class="dev-sidemenu__list">
           {{ range .Children }}
             {{- $hidePage := false -}}
