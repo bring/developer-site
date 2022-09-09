@@ -35,7 +35,7 @@
     "mini-css-extract-plugin": "^2.6.1",
     "postcss": "^8.4.16",
     "postcss-css-variables": "^0.18.0",
-    "postcss-import": "^14.1.0",
+    "postcss-import": "^15.0.0",
     "postcss-loader": "^7.0.1",
     "postcss-nesting": "^10.1.10",
     "raml-1-parser": "^1.1.67",
