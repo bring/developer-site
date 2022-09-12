@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     "js/servicefiltering": "./js/servicefiltering.js",
     "js/api": "./js/api.js",
+    "js/algolia": "./js/search/algolia.jsx",
     "js/scrollmarker": "./js/scrollmarker.js",
     "css/main": "./css/main.css",
   },
@@ -12,20 +13,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ["@babel/preset-react", "@babel/preset-env"],
           },
         },
       },
-    ],
-  },
-
-  module: {
-    rules: [
       {
         test: /\.css$/,
         use: [

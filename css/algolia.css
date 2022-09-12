@@ -1,0 +1,101 @@
+.algolia-icon {
+  fill: hsla(0, 0%, 100%, 0.3);
+  flex: 0 0 1.5rem;
+  margin-right: 0.25rem;
+}
+
+.algolia-input {
+  flex: 0 1 24rem;
+}
+
+.react-autosuggest__container {
+  position: relative;
+}
+
+.react-autosuggest__input {
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  line-height: 1.5;
+  background: none;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  border: 1px solid hsla(0, 0%, 100%, 0.25);
+  border-radius: 2px;
+  margin-right: 0.25rem;
+  color: #fff;
+}
+
+.react-autosuggest__input:focus {
+  outline: 0;
+  border: 1px solid hsl(155, 100%, 19.6%);
+  box-shadow: 0 0 0 0.15em rgba(0, 100, 58, 0.5);
+}
+
+.react-autosuggest__input--open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+  width: 100%;
+  color: #222;
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  top: 43px;
+  z-index: 2;
+  font-weight: 400;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  padding: 0;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.hitlink {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding: 0.5rem 0.5rem 0.6rem 1rem;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.hitlink__extra {
+  color: #757575;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+.ais-Highlight-highlighted {
+  background-color: hsl(41, 98%, 65%);
+}
+
+.algo-logo {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.algo-logo svg {
+  height: 1.1rem;
+}

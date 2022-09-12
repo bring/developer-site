@@ -1,0 +1,59 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range .Site.RegularPages -}}
+  {{- if (and
+           (not .Draft)
+           (not .IsHome)
+           (not .Params.hidden)
+           (not .Params.private)
+           (not (in .RelPermalink "/jobs/"))
+           (not (in .RelPermalink "/revision-history/"))
+           (not (in .RelPermalink "/blog/"))) -}}
+
+    {{- $.Scratch.Set "documentation" "" -}}
+    {{- range .Params.documentation -}}
+      {{- $.Scratch.Add "documentation" " " -}}
+      {{- with .title -}}
+        {{- $.Scratch.Add "documentation" . -}}
+      {{- end -}}
+      {{- $.Scratch.Add "documentation" " " -}}
+      {{- with .content -}}
+        {{- $.Scratch.Add "documentation" (. | markdownify | plainify) -}}
+      {{- end -}}
+    {{- end -}}
+
+    {{- $introduction := "" -}}
+    {{- with .Params.introduction -}}
+      {{- $introduction = . -}}
+    {{- end -}}
+
+    {{- $api := dict -}}
+    {{- with .Params.oas -}}
+      {{- $oasdata := getJSON . -}}
+      {{- $api = $oasdata.components -}}
+    {{- end -}}
+
+    {{- $parent := "" -}}
+    {{- with .Params.menu -}}
+      {{- $parentName := .apidocs.parent -}}
+      {{- range $.Site.Menus.apidocs -}}
+        {{- if (eq $parentName .Identifier) -}}
+          {{- $parent = .Title -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    
+    {{- $.Scratch.Add "index" 
+      (dict
+        "objectID" .File.UniqueID
+        "permalink" .Permalink
+        "relpermalink" .RelPermalink
+        "title" .Title
+        "section" (.Section | upper)
+        "parent" $parent
+        "introduction" $introduction
+        "api" $api
+        "documentation" ($.Scratch.Get "documentation")
+        "content" .Plain) -}}
+  {{- end -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

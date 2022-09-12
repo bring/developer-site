@@ -103,3 +103,16 @@ weight = 5
 identifier = "om"
 title = "Order management"
 weight = 6
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.Algolia]
+vars = ["title","menu"]
+params = ["excerpt"]
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]

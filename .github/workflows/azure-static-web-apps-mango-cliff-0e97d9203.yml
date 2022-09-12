@@ -43,6 +43,9 @@ jobs:
           SLACK_MESSAGE: '{"channel": "#deploy", "text": ":build_succeed: Deployed developer site"}'
         run: |
           curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
+      
+      - name: update algolia search index
+        run: npm run algolia
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'

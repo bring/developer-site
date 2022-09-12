@@ -1,6 +1,7 @@
-<script async src="{{ "/js/anchor.min.js" | relURL }}" onload="window.anchors.options = { placement: 'left', visible: 'hover' }; window.anchors.add('.dev-anchored')"></script>
-<script async src="{{ "/js/tabs.js" | relURL }}" onload="window.tabs.init()"></script>
-<script async src="{{ "/js/collapsible.js" | relURL }}" onload="window.collapsible.init()"></script>
-<script async src="{{ "/js/drawer.js" | relURL }}"></script>
+<script async src="{{ "/js/anchor.min.js?" | relURL }}{{ now.Unix }}" onload="window.anchors.options = { placement: 'left', visible: 'hover' }; window.anchors.add('.dev-anchored')"></script>
+<script async src="{{ "/js/tabs.js?" | relURL }}{{ now.Unix }}" onload="window.tabs.init()"></script>
+<script async src="{{ "/js/collapsible.js?" | relURL }}{{ now.Unix }}" onload="window.collapsible.init()"></script>
+<script async src="{{ "/js/drawer.js?" | relURL }}{{ now.Unix }}"></script>
+<script async src="{{ "/js/algolia.js?" | relURL }}{{ now.Unix }}"></script>
 <script src="https://fjz3y8qwrp81.statuspage.io/embed/script.js"></script>
 {{- partial "tagman.html" . -}}
