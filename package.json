@@ -14,8 +14,8 @@
     "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo",
     "start": "cross-env HUGO_ENV=dev hugo server --ignoreCache",
     "bundlewatch": "webpack watch --mode development",
-    "algolia": "atomic-algolia",
-    "qalgolia": "ALGOLIA_INDEX_NAME=devsite_qa atomic-algolia"
+    "algolia": "ALGOLIA_INDEX_NAME=devsite_prod ALGOLIA_APP_ID=PWK5X2R2GD ALGOLIA_INDEX_FILE=_site/algolia.json atomic-algolia",
+    "qalgolia": "ALGOLIA_INDEX_NAME=devsite_qa ALGOLIA_APP_ID=PWK5X2R2GD ALGOLIA_INDEX_FILE=_site/algolia.json atomic-algolia"
   },
   "repository": {
     "type": "git",
