@@ -1190,16 +1190,6 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Urban Home Delivery",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Home Delivery",
-    "serviceFamilySortOrder" : 4,
-    "serviceCode" : "3332",
-    "productionCode" : "3332",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Indoor Return",
     "serviceType" : "B2C return",
     "serviceFamily" : "Home Delivery",
@@ -1207,6 +1197,16 @@
     "serviceCode" : "RETURN_INDOOR",
     "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Urban Home Delivery",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "3332",
+    "productionCode" : "3332",
+    "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1257,6 +1257,26 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Curbside Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_CURBSIDE",
+    "productionCode" : "3577",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -1332,6 +1352,16 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1370,6 +1400,16 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2177,6 +2217,26 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Curbside Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_CURBSIDE",
+    "productionCode" : "3577",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2215,6 +2275,16 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2297,6 +2367,16 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
