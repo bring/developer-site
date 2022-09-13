@@ -37,5 +37,10 @@ module.exports = {
     path: path.join(__dirname, "./static/"),
   },
 
-  plugins: [new MiniCssExtractPlugin({})],
+  plugins: [
+    new MiniCssExtractPlugin({}),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    })
+  ],
 }
