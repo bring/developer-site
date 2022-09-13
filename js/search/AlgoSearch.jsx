@@ -9,7 +9,7 @@ const searchClient = algoliasearch(
 )
 
 const AlgoSearch = () => (
-  <InstantSearch searchClient={searchClient} indexName={process.env.NODE_ENV == "production" ? "devsite_prod" : "devsite_qa"}>
+  <InstantSearch searchClient={searchClient} indexName={process.env.ALGOLIA_INDEX || "devsite_qa"}>
     <Result />
   </InstantSearch>
 )
