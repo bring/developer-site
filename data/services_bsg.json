@@ -1042,4 +1042,22 @@
   "SenderCountries" : "-",
   "Destination" : "-",
   "DomesticAllowed" : "-"
-} ]
+}, {
+  "ServiceFamily" : "Letter",
+  "CustomerNumberType" : "",
+  "ServiceName" : "Sporbar brevpakke bedrift",
+  "ServiceCode" : "3630",
+  "RequestCode" : "3630",
+  "Type" : "B2X",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "-",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "Yes",
+  "AgreementPrice" : "-",
+  "LeadTime" : "-",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "-",
+  "Destination" : "AT, AU, BE, BG, CA, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IS, IE, IT, LT, LU, LV, MT, NL, NZ, PL, PT, RO, SE, SI, SK",
+  "DomesticAllowed" : "-"
+}]
