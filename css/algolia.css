@@ -55,6 +55,11 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
+html[data-theme=dark] .react-autosuggest__suggestions-container--open {
+  background-color: var(--green-15);
+  color: var(--green-86);
+}
+
 .react-autosuggest__suggestions-list {
   margin: 0;
   padding: 0;
@@ -68,6 +73,9 @@
 .react-autosuggest__suggestion--highlighted {
   background-color: rgba(0, 0, 0, 0.08);
 }
+html[data-theme=dark] .react-autosuggest__suggestion--highlighted {
+  background-color: var(--green-18);
+}
 
 .hitlink {
   display: flex;
@@ -75,6 +83,9 @@
   align-items: flex-start;
   padding: 0.5rem 0.5rem 0.6rem 1rem;
   border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+html[data-theme=dark] .hitlink {
+  border-bottom-color: var(--green-darkest);
 }
 
 .hitlink__extra {
