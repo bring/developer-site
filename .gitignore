@@ -9,3 +9,5 @@ static/css
 static/js/servicefiltering.js
 static/js/api.js
 static/js/scrollmarker.js
+static/js/algolia.js
+.env
