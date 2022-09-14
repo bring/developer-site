@@ -1057,7 +1057,7 @@
   "AgreementPrice" : "-",
   "LeadTime" : "-",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
+  "SenderCountries" : "NO",
   "Destination" : "AT, AU, BE, BG, CA, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IS, IE, IT, LT, LU, LV, MT, NL, NZ, PL, PT, RO, SE, SI, SK",
   "DomesticAllowed" : "-"
 }]
