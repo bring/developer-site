@@ -110,7 +110,6 @@
   }
 
   /* Buttons */
-  & .btn-link,
   & .btn--white,
   & .btn--white:link,
   & .btn--white:visited,
@@ -200,10 +199,14 @@
   & dl code,
   & li code:not(table code),
   & p code,
-  & pre,
-  & .bg-white,
   & .mb-badge {
     background-color: var(--green-22);
+    color: var(--green-86);
+  }
+
+  & pre,
+  & .bg-white {
+    background-color: var(--green-18);
     color: var(--green-86);
   }
 
