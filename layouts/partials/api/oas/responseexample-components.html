@@ -87,6 +87,7 @@
                           {{- else -}}
                             {{- partial "api/oas/example-json.html" (dict "key" $examplePath.File "ctx" . "schemas" $components.schemas) . -}}
                           {{- end -}}
+                          {{- partial "api/oas/copy-btn.html" -}}
                         </div>
                       {{- end -}}
                       {{- $exInd = add $exInd 1 -}}
