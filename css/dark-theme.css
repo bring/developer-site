@@ -38,7 +38,7 @@
     color: var(--green-86);
     & .dev-eta1__bring,
     & .dev-eta2__bring {
-      color: var(--gray-13)
+      color: var(--gray-13);
     }
   }
 
@@ -49,11 +49,9 @@
     background-color: var(--green-15);
   }
 
-  & .bg-gray3 {
-    background-color: var(--green-18);
-  }
-
-  & .bg-green1 {
+  & .bg-gray3,
+  & .bg-green1,
+  & .bg-red1 {
     background-color: var(--green-18);
   }
 
@@ -98,7 +96,11 @@
   }
 
   & .cutoff-overlay {
-    background: linear-gradient(0deg,var(--green-darkest) 50%,hsla(0,0%,100%,0));
+    background: linear-gradient(
+      0deg,
+      var(--green-darkest) 50%,
+      hsla(0, 0%, 100%, 0)
+    );
   }
 
   & .gray {
@@ -106,7 +108,6 @@
   }
 
   /* Buttons */
-  & .btn-link,
   & .btn--white,
   & .btn--white:link,
   & .btn--white:visited,
@@ -123,13 +124,13 @@
   }
 
   & .btn-link:hover {
-    background-color: var(--green-18);
+    background-color: var(--green-22);
   }
 
   & .btn-link--dark {
     &.active,
     &:active,
-    &[aria-selected=true],
+    &[aria-selected="true"],
     &:hover {
       background-color: var(--green-15);
     }
@@ -170,7 +171,7 @@
   & .dev-sidemenu a {
     &:focus,
     &:hover {
-      background-color: hsla(150,20%,80%, 0.1);
+      background-color: hsla(150, 20%, 80%, 0.1);
     }
   }
 
@@ -196,10 +197,14 @@
   & dl code,
   & li code:not(table code),
   & p code,
-  & pre,
-  & .bg-white,
   & .mb-badge {
     background-color: var(--green-22);
+    color: var(--green-86);
+  }
+
+  & pre,
+  & .bg-white {
+    background-color: var(--green-18);
     color: var(--green-86);
   }
 
@@ -238,15 +243,52 @@
 
   /* Response codes */
   & .response {
-    background: var(--green-18);
-    &:hover {
-      background: var(--green-15);
+    background-color: var(--green-15);
+
+    &.green-dark {
+      color: var(--green-light);
     }
-    &.success-code {
-      color: var(--green);
+
+    &.red-dark {
+      color: var(--red-light);
     }
-  
-    &.error-code {
+  }
+
+  & .mb-disclosure {
+    & > summary {
+      &:hover,
+      &:focus-visible {
+        background-color: var(--green-18);
+      }
+    }
+
+    &.bg-gray1,
+    &.bg-green1,
+    &.bg-red1 {
+      & > summary {
+        background-color: var(--green-15);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--green-18);
+        }
+      }
+
+      &[open] > summary {
+        background-color: var(--green-18);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--green-22);
+        }
+      }
+    }
+
+    & .green-dark {
+      color: var(--green-light);
+    }
+
+    & .red-dark {
       color: var(--red-light);
     }
   }

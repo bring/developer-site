@@ -23,11 +23,16 @@
       {{- end -}}
     {{- end -}}
     {{- with $.Params.information -}}
-      <div class="dev-docscontent__info mvl">
+      <div class="dev-docscontent__info mvl owlxs">
         {{- range . -}}
-          <details class="bg-green1 rad-a2px mbxs">
+          <details class="mb-disclosure mb-disclosure--arrow bg-green1">
             {{- with .title }}
-              <summary class="pas plm">
+              <summary class="text-heading">
+                <span
+                  data-mybicon="mybicon-arrow-right"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                ></span>
                 {{- . -}}
               </summary>
             {{- end -}}

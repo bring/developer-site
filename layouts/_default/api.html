@@ -87,11 +87,14 @@
                       {{- with .responses -}}
                         <h3 class="mbm">Responses</h3>
                         {{- range $response, $_ := . -}}
-                          {{- $responseColor := "response" -}}
+                          {{- $responseColorBg := "bg-gray1" -}}
+                          {{- $responseColorTxt := "" -}}
                           {{- if and (ge $response 200) (lt $response 300) -}}
-                            {{- $responseColor = "response success-code" -}}
+                            {{- $responseColorBg = "bg-green1" -}}
+                            {{- $responseColorTxt = "green-dark" -}}
                           {{- else if ge $response 300 -}}
-                            {{- $responseColor = "response error-code" -}}
+                            {{- $responseColorBg = "bg-red1" -}}
+                            {{- $responseColorTxt = "red-dark" -}}
                           {{- end -}}
 
                           {{- $description := .description -}}
@@ -114,9 +117,15 @@
                             {{- if gt (len .) 1 -}}
                               {{- $multiSchema = true -}}
                             {{- end -}}
-                            <details class="mbs">
-                              <summary class="{{ $responseColor }} pas" aria-label="Response {{$response}} {{$description}} details dropdown"><span class="fw600">{{ $response }}</span> {{ $description }}</summary>
-
+                            <details class="mb-disclosure mb-disclosure--arrow {{ $responseColorBg }} mbxs">
+                              <summary class="{{ $responseColorTxt }}" aria-label="Disclose response {{$response}} {{$description}} details">
+                                <span
+                                data-mybicon="mybicon-arrow-right"
+                                data-mybicon-width="16"
+                                data-mybicon-height="16"
+                                ></span>
+                                <span class="fw600">{{ $response }}</span> {{ $description }}
+                              </summary>
                               <div class="bg-gray1 pam">
                                 <h4>Schema</h4>
                                 {{- if $multiSchema -}}
@@ -156,7 +165,7 @@
                               </details>
                             {{- end -}}
                           {{- else -}}
-                            <div class="{{ $responseColor }} pas mbs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
+                            <div class="{{ $responseColorBg }} {{ $responseColorTxt }} response mbxs"><span class="fw600">{{ $response }}</span> {{ $description }}</div>
                           {{- end -}}
                         {{- end -}}
                       {{- end -}}
