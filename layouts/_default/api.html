@@ -121,13 +121,12 @@
                                 <h4>Schema</h4>
                                 {{- if $multiSchema -}}
                                   <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Media type:</label>
-                                  <select id="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib schema-type-select hauto">
-                                    {{- $selected := "selected" -}}
+                                  <select id="{{$endpointId}}-{{$response}}" data-sub-of="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib hauto" name="formats">
                                     {{- range $applicationType, $_ := . -}}
-                                      <option value='schemaType-{{$response}}-{{$endpointId}}-{{$applicationType}}' {{$selected | safeHTMLAttr}}>
+                                      {{- $typeClean := lower (anchorize $applicationType) -}}
+                                      <option value='{{$typeClean}}'>
                                         {{ $applicationType }}
                                       </option>
-                                      {{- $selected = "" -}}
                                     {{- end -}}
                                   </select>
                                 {{- else -}}
@@ -138,13 +137,16 @@
 
                                 {{- range $application, $_ := . -}}
                                   {{- $format := "" -}}
-                                  {{- if in $application "json" -}}
-                                    {{- $format = "json" -}}
+                                  {{- $typeClean := "" -}}
+                                  {{- if or (in $application "json") (in $application "javascript") -}}
+                                    {{- $format = printf "json" -}}
+                                    {{- $typeClean = lower (anchorize $application) -}}
                                   {{- else if in $application "xml" -}}
                                     {{- $format = printf "xml" -}}
+                                    {{- $typeClean = lower (anchorize $application) -}}
                                   {{- end -}}
 
-                                  <dl class="schema-type-container desc-list pam bshadow bg-white {{ if $multiSchema }}dn{{ end }}" data-schematype-id='schemaType-{{$response}}-{{$endpointId}}-{{$application}}'>
+                                  <dl class="schema-type-container desc-list pam bshadow bg-white" data-type="{{$typeClean}}">
                                     {{- if eq "xml" $format -}}
                                       {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
                                     {{- else -}}

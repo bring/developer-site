@@ -1,46 +1,4 @@
-// Responses
-const schemaTypeSelect = document.querySelectorAll(".schema-type-select")
-schemaTypeSelect.forEach(changeType)
-
-function changeType(type) {
-  type.addEventListener("change", function () {
-    const selectedOption = this.value
-    const schemaTypeParent = document.querySelector(
-      '[data-schematype-id="' + selectedOption + '"]'
-    ).parentNode
-    const schemaTypes = schemaTypeParent.querySelectorAll(
-      ".schema-type-container"
-    )
-
-    schemaTypes.forEach((schema) => {
-      schema.classList.add("dn")
-    })
-
-    showSelectedSchemaOption(this)
-  })
-}
-
-function showSelectedSchemaOption(sel) {
-  let opt
-  for (let i = 0; i < sel.options.length; i++) {
-    opt = sel.options[i]
-    if (opt.selected === true) {
-      const schemaType = opt.value
-      const schemaTypeContainer = document.querySelector(
-        '[data-schematype-id="' + schemaType + '"]'
-      )
-      schemaTypeContainer.classList.remove("dn")
-      return schemaType
-    }
-  }
-}
-
-function showInitialSchemaType() {
-  schemaTypeSelect.forEach(showSelectedSchemaOption)
-}
-
-showInitialSchemaType()
-
+//Param toggle buttons
 const paramToggleBtn = document.querySelectorAll(".param-toggle-btn")
 
 paramToggleBtn.forEach((btn) => {
@@ -112,27 +70,81 @@ responseExBtns.forEach((btn) => {
   })
 })
 
-// Format type selects
+// Data format selects
 const formatSelects = document.querySelectorAll('select[name="formats"]')
-formatSelects.forEach((select) => {
-  select.addEventListener("change", function (e){
-    const element = e.target
-    const formatId = element.value
+const dataTypes = document.querySelectorAll('[data-type]')
 
-    let exampleGroup
-    const parentId = element.dataset.subOf
-    const parentElement = document.querySelector('div[data-example="' + parentId + '"')
-    const exampleArr = parentElement.querySelectorAll('div[data-type]')
-    exampleArr.forEach((example) => {
-      if (example.dataset.type === formatId) {
-        exampleGroup = example
-        example.hidden = false
+const setSelectFormat = (e) => {
+  const storedFormat = localStorage.getItem("dataFormat")
+  let format = e.value;
+
+  formatSelects.forEach((f) => {
+    for(let i = 0; i < f.options.length; i++) {
+      //Set the format from local storage (if stored), with fallback to json or xml if something else
+      if(storedFormat && (storedFormat.includes("json") || storedFormat.includes("xml"))) {
+        format = storedFormat
+      } else if(f.options[i].value === storedFormat) {
+        format = storedFormat
+      }
+      //Set the selected option based on format
+      if(f.options[i].value === format) {
+        f.options[i].selected = true
       } else {
-        example.hidden = true
+        f.options[i].selected = false
+        //Fallback for json or xml if format don't entirely match with option values
+        if(format.includes("json") && f.options[i].value.includes("json") || format.includes("xml") && f.options[i].value.includes("xml")) {
+            f.options[i].selected = true
+        }
+      }
+    }
+  })
+  
+  dataTypes.forEach((dataType) => {
+    //Display response parameters and examples based on format
+    if(dataType.dataset.type === format) {
+      dataType.hidden = false
+    } else {
+      dataType.hidden = true
+      //Fallback for json or xml if format don't entirely match with example data-type
+      if(format.includes("json") && dataType.dataset.type.includes("json") || format.includes("xml") && dataType.dataset.type.includes("xml")) {
+        dataType.hidden = false
+      }
+    }
+  })
+
+  //Display chosen sub-example independently of chosen format
+  const exampleWrapper = e.closest("div[data-example]")
+
+  if(exampleWrapper) {
+    const exampleTypes = exampleWrapper.querySelectorAll("div[data-type]")
+    exampleTypes.forEach((type) => {
+      const selectSub = type.querySelector("select[data-example-sub]")
+      if(selectSub) {
+        const examplesSub = type.querySelectorAll("div[data-example-sub]")
+        switchExample(examplesSub, "exampleSub", selectSub.value)
       }
     })
+  }
+}
+
+//Set the format on page load
+formatSelects.forEach(setSelectFormat)
+
+formatSelects.forEach((select) => {
+  select.addEventListener("change", function(e) {
+    localStorage.setItem("dataFormat",e.target.value)
+    setSelectFormat(select)
 
     // If multiple examples
+    /*let exampleGroup
+
+    formatTypes.forEach((example) => {
+      if (example.dataset.type === e.target.value) {
+        console.log(example)
+        exampleGroup = example
+      }
+    })
+    
     const subSelect = exampleGroup.querySelector('select[data-example-sub]')
     if (subSelect) {
       const subExampleArr = exampleGroup.querySelectorAll('div[data-example-sub]')
@@ -143,9 +155,7 @@ formatSelects.forEach((select) => {
           subExample.hidden = true
         }
       })
-
-    }
-
+    }*/
   })
 })
 
