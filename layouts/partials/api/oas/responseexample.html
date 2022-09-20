@@ -77,6 +77,7 @@
                     {{- else -}}
                       {{- partial "api/oas/example-json.html" (dict "ctx" . "schemas" .) -}}
                     {{- end -}}
+                    {{- partial "api/oas/copy-btn.html" -}}
                     </div>
                     {{- $exInd = add $exInd 1 -}}
                   {{- end -}}
