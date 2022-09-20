@@ -49,11 +49,9 @@
     background-color: var(--green-15);
   }
 
-  & .bg-gray3 {
-    background-color: var(--green-18);
-  }
-
-  & .bg-green1 {
+  & .bg-gray3,
+  & .bg-green1,
+  & .bg-red1 {
     background-color: var(--green-18);
   }
 
