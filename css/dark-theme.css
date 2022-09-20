@@ -38,7 +38,7 @@
     color: var(--green-86);
     & .dev-eta1__bring,
     & .dev-eta2__bring {
-      color: var(--gray-13)
+      color: var(--gray-13);
     }
   }
 
@@ -98,7 +98,11 @@
   }
 
   & .cutoff-overlay {
-    background: linear-gradient(0deg,var(--green-darkest) 50%,hsla(0,0%,100%,0));
+    background: linear-gradient(
+      0deg,
+      var(--green-darkest) 50%,
+      hsla(0, 0%, 100%, 0)
+    );
   }
 
   & .gray {
@@ -123,13 +127,13 @@
   }
 
   & .btn-link:hover {
-    background-color: var(--green-18);
+    background-color: var(--green-22);
   }
 
   & .btn-link--dark {
     &.active,
     &:active,
-    &[aria-selected=true],
+    &[aria-selected="true"],
     &:hover {
       background-color: var(--green-15);
     }
@@ -170,7 +174,7 @@
   & .dev-sidemenu a {
     &:focus,
     &:hover {
-      background-color: hsla(150,20%,80%, 0.1);
+      background-color: hsla(150, 20%, 80%, 0.1);
     }
   }
 
