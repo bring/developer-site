@@ -245,15 +245,52 @@
 
   /* Response codes */
   & .response {
-    background: var(--green-18);
-    &:hover {
-      background: var(--green-15);
+    background-color: var(--green-15);
+
+    &.green-dark {
+      color: var(--green-light);
     }
-    &.success-code {
-      color: var(--green);
+
+    &.red-dark {
+      color: var(--red-light);
     }
-  
-    &.error-code {
+  }
+
+  & .mb-disclosure {
+    & > summary {
+      &:hover,
+      &:focus-visible {
+        background-color: var(--green-18);
+      }
+    }
+
+    &.bg-gray1,
+    &.bg-green1,
+    &.bg-red1 {
+      & > summary {
+        background-color: var(--green-15);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--green-18);
+        }
+      }
+
+      &[open] > summary {
+        background-color: var(--green-18);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--green-22);
+        }
+      }
+    }
+
+    & .green-dark {
+      color: var(--green-light);
+    }
+
+    & .red-dark {
       color: var(--red-light);
     }
   }
