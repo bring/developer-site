@@ -89,12 +89,11 @@ const setSelectFormat = (e) => {
       //Set the selected option based on format
       if(f.options[i].value === format) {
         f.options[i].selected = true
+      } else if((format.includes("json") && f.options[i].value.includes("json")) || (format.includes("xml") && f.options[i].value.includes("xml"))) {
+        //Fallback for json or xml if format don't entirely match with option values
+        f.options[i].selected = true
       } else {
         f.options[i].selected = false
-        //Fallback for json or xml if format don't entirely match with option values
-        if(format.includes("json") && f.options[i].value.includes("json") || format.includes("xml") && f.options[i].value.includes("xml")) {
-            f.options[i].selected = true
-        }
       }
     }
   })
@@ -103,12 +102,11 @@ const setSelectFormat = (e) => {
     //Display response parameters and examples based on format
     if(dataType.dataset.type === format) {
       dataType.hidden = false
+    } else if((format.includes("json") && dataType.dataset.type.includes("json")) || (format.includes("xml") && dataType.dataset.type.includes("xml"))) {
+      //Fallback for json or xml if format don't entirely match with example data-type
+      dataType.hidden = false
     } else {
       dataType.hidden = true
-      //Fallback for json or xml if format don't entirely match with example data-type
-      if(format.includes("json") && dataType.dataset.type.includes("json") || format.includes("xml") && dataType.dataset.type.includes("xml")) {
-        dataType.hidden = false
-      }
     }
   })
 
