@@ -92,6 +92,9 @@ const setSelectFormat = (e) => {
       } else if((format.includes("json") && f.options[i].value.includes("json")) || (format.includes("xml") && f.options[i].value.includes("xml"))) {
         //Fallback for json or xml if format don't entirely match with option values
         f.options[i].selected = true
+      } else if((format.includes("javascript") && !f.value.includes("javascript"))) {
+        //Select none if javascript option is not present
+        f.selectedIndex = -1
       } else {
         f.options[i].selected = false
       }
