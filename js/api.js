@@ -134,28 +134,6 @@ formatSelects.forEach((select) => {
   select.addEventListener("change", function(e) {
     localStorage.setItem("dataFormat",e.target.value)
     setSelectFormat(select)
-
-    // If multiple examples
-    /*let exampleGroup
-
-    formatTypes.forEach((example) => {
-      if (example.dataset.type === e.target.value) {
-        console.log(example)
-        exampleGroup = example
-      }
-    })
-    
-    const subSelect = exampleGroup.querySelector('select[data-example-sub]')
-    if (subSelect) {
-      const subExampleArr = exampleGroup.querySelectorAll('div[data-example-sub]')
-      subExampleArr.forEach((subExample) => {
-        if (subExample.dataset.exampleSub === subSelect.value) {
-          subExample.hidden = false
-        } else {
-          subExample.hidden = true
-        }
-      })
-    }*/
   })
 })
 
