@@ -1,12 +1,24 @@
-{{ range sort $.Site.Data.manifest "file" "desc" }}
-  {{- if (in .file ".js") -}}
-    {{- if (in .file "legacy") -}}
-      <script nomodule src="{{ print "/assets/" .file | relURL }}"></script>
-    {{- else -}}
-      <script type="module" src="{{ print "/assets/" .file | relURL }}"></script>
-    {{ end }}
-  {{- end -}}
-{{ end }}
+{{- if $.Site.IsServer -}}
+  <script type="module">
+    import RefreshRuntime from "http://localhost:5173/@react-refresh"
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
+  <script type="module" src="http://localhost:5173/js/main.js"></script>
+{{- else -}}
+  {{- $jsManifest := getJSON "static/assets/manifest.json" -}}
+  {{ range sort $jsManifest "file" "desc" }}
+    {{- if (in .file ".js") -}}
+      {{- if (in .file "legacy") -}}
+        <script nomodule src="{{ print "/assets/" .file | relURL }}"></script>
+      {{- else -}}
+        <script type="module" src="{{ print "/assets/" .file | relURL }}"></script>
+      {{ end }}
+    {{- end -}}
+  {{ end }}
+{{- end -}}
 
 <script src="https://fjz3y8qwrp81.statuspage.io/embed/script.js"></script>
 {{- partial "tagman.html" . -}}

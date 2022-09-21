@@ -13,7 +13,9 @@
     "buildqa": "npm run clean && npm run build && HUGO_ENV=qa hugo",
     "justhugo": "HUGO_ENV=qa hugo",
     "buildprod": "npm run clean && npm run build && HUGO_ENV=production hugo",
-    "start": "cross-env HUGO_ENV=dev hugo server --ignoreCache",
+    "start": "concurrently --kill-others npm:start-*",
+    "start-vite": "vite",
+    "start-hugo": "cross-env HUGO_ENV=dev hugo server --ignoreCache",
     "algolia": "ALGOLIA_INDEX_NAME=devsite_prod ALGOLIA_APP_ID=PWK5X2R2GD ALGOLIA_INDEX_FILE=_site/algolia.json atomic-algolia",
     "qalgolia": "ALGOLIA_INDEX_NAME=devsite_qa ALGOLIA_APP_ID=PWK5X2R2GD ALGOLIA_INDEX_FILE=_site/algolia.json atomic-algolia"
   },
@@ -36,6 +38,7 @@
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.8",
     "babel-loader": "^8.2.5",
+    "concurrently": "^7.4.0",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.13",
     "hugo-bin": "^0.89.0",

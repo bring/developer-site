@@ -17,14 +17,23 @@
     type="text/css"
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
   />
-  {{- range $.Site.Data.manifest -}}
-    {{ if (in .file ".css") }}
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="{{ print "/assets/" .file | relURL }}"
-      />
-    {{ end }}
+  {{- if $.Site.IsServer -}}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://localhost:5173/css/main.css"
+    />
+  {{- else -}}
+    {{- $jsManifest := getJSON "static/assets/manifest.json" -}}
+    {{- range $jsManifest -}}
+      {{ if (in .file ".css") }}
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="{{ print "/assets/" .file | relURL }}"
+        />
+      {{ end }}
+    {{- end -}}
   {{- end -}}
   <link
     rel="shortcut icon"
