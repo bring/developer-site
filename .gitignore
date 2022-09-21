@@ -7,6 +7,4 @@ examples.json
 .idea
 .env
 .sass-cache
-data/manifest.json
 static/assets
-data/manifest.json
