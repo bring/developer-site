@@ -28,7 +28,7 @@ The Bring Developer site uses [Hugo](https://gohugo.io/),
 [OAS](https://www.openapis.org/) and [RAML 1.0](https://raml.org/). Hugo is the
 world’s fastest static site generator. For the API endpoint documentation,
 generated OAS JSON is replacing manually written RAML. We use CSS with some
-light post processing and JS that is bundled with Webpack.
+light post processing and JS that is bundled with Vite.
 
 ## Writing documentation for people
 
@@ -44,13 +44,9 @@ and then provide the parameter.
 
 `npm run build` builds CSS, JS and JSON. Hugo needs this in order to run.
 
-`npm start` runs Hugo locally. Pages update instantly on change. With two
-exceptions:
-
-1. If you are working on the RAML files, you have to run `npm run buildraml` to
-   recompile a JSON file with the changes.
-2. If you are working on the JS or CSS, run `npm run bundlewatch` to have
-   Webpack update the bundled files on change.
+`npm start` runs Hugo locally. Pages update instantly on change, with one
+exception: if you are working on the RAML files, you have to run `npm run buildraml`
+to recompile a JSON file with the changes.
 
 Hugo watches for changes to those generated files, no need to stop and restart
 under normal circumstances.

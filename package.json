@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "rimraf _site && rimraf static/assets && rimraf data/manifest.json",
     "bundle": "vite build",
-    "bundlewatch": "vite build --watch",
     "buildraml": "node scripts/raml2json",
     "buildexamples": "node scripts/buildApiExamples",
     "build": "npm run bundle && npm run buildraml && npm run buildexamples",
