@@ -1,7 +1,12 @@
-<script async src="{{ "/js/anchor.min.js?" | relURL }}{{ now.Unix }}" onload="window.anchors.options = { placement: 'left', visible: 'hover' }; window.anchors.add('.dev-anchored')"></script>
-<script async src="{{ "/js/tabs.js?" | relURL }}{{ now.Unix }}" onload="window.tabs.init()"></script>
-<script async src="{{ "/js/collapsible.js?" | relURL }}{{ now.Unix }}" onload="window.collapsible.init()"></script>
-<script async src="{{ "/js/drawer.js?" | relURL }}{{ now.Unix }}"></script>
-<script async src="{{ "/js/algolia.js?" | relURL }}{{ now.Unix }}"></script>
+{{ range sort $.Site.Data.manifest "file" "desc" }}
+  {{- if (in .file ".js") -}}
+    {{- if (in .file "legacy") -}}
+      <script nomodule src="{{ print "/assets/" .file | relURL }}"></script>
+    {{- else -}}
+      <script type="module" src="{{ print "/assets/" .file | relURL }}"></script>
+    {{ end }}
+  {{- end -}}
+{{ end }}
+
 <script src="https://fjz3y8qwrp81.statuspage.io/embed/script.js"></script>
 {{- partial "tagman.html" . -}}

@@ -3,11 +3,10 @@ node_modules/
 _site
 api.json
 examples.json
-static/css
 .hugo_build.lock
 .idea
-static/js/servicefiltering.js
-static/js/api.js
-static/js/scrollmarker.js
-static/js/algolia.js
 .env
+.sass-cache
+data/manifest.json
+static/assets
+data/manifest.json
