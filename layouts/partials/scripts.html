@@ -1,7 +1,18 @@
-<script async src="{{ "/js/anchor.min.js?" | relURL }}{{ now.Unix }}" onload="window.anchors.options = { placement: 'left', visible: 'hover' }; window.anchors.add('.dev-anchored')"></script>
-<script async src="{{ "/js/tabs.js?" | relURL }}{{ now.Unix }}" onload="window.tabs.init()"></script>
-<script async src="{{ "/js/collapsible.js?" | relURL }}{{ now.Unix }}" onload="window.collapsible.init()"></script>
-<script async src="{{ "/js/drawer.js?" | relURL }}{{ now.Unix }}"></script>
-<script async src="{{ "/js/algolia.js?" | relURL }}{{ now.Unix }}"></script>
+{{ if $.Site.IsServer }}
+  <script type="module">
+    import RefreshRuntime from "http://localhost:5173/@react-refresh"
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
+  <script type="module" src="http://localhost:5173/js/main.js"></script>
+{{ else }}
+  {{- $jsManifest := getJSON "static/assets/manifest.json" -}}
+  <script nomodule src="{{ print "/assets/" (index $jsManifest "vite/legacy-polyfills-legacy" "file") | relURL }}"></script>
+  <script nomodule src="{{ print "/assets/" (index $jsManifest "js/main-legacy.js" "file") | relURL }}"></script>
+  <script type="module" src="{{ print "/assets/" (index $jsManifest "js/main.js" "file") | relURL }}"></script>
+{{ end }}
+
 <script src="https://fjz3y8qwrp81.statuspage.io/embed/script.js"></script>
 {{- partial "tagman.html" . -}}

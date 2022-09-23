@@ -5,13 +5,14 @@
     <body class="dev-docslayout">
       {{ partial "header.html" . }}
       {{ block "main" . }} {{ end }}
+      {{- partial "scripts.html" . -}}
     </body>
   {{- else -}}
     <body class="dev-pagelayout">
       {{ partial "header.html" . }}
       {{ block "main" . }} {{ end }}
       {{ partial "footer.html" . }}
+      {{- partial "scripts.html" . -}}
     </body>
   {{- end -}}
-  {{- partial "scripts.html" . -}}
 </html>

@@ -17,11 +17,14 @@
     type="text/css"
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
   />
-  <link
-    rel="stylesheet"
-    type="text/css"
-    href="{{ "css/main.css?ts=" | relURL }}{{ now.Unix }}"
-  />
+  {{ if not $.Site.IsServer }}
+    {{- $jsManifest := getJSON "static/assets/manifest.json" -}}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{- print "/assets/" (index $jsManifest "js/main.css" "file") | relURL -}}"
+    />
+  {{ end }}
   <link
     rel="shortcut icon"
     type="image/x-icon"
