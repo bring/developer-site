@@ -38,7 +38,6 @@
     "cssnano": "^5.1.13",
     "hugo-bin": "^0.91.1",
     "postcss": "^8.4.16",
-    "postcss-css-variables": "^0.18.0",
     "postcss-import": "^15.0.0",
     "postcss-nesting": "^10.2.0",
     "raml-1-parser": "^1.1.67",

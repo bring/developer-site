@@ -23,7 +23,7 @@
     .dev-siteheader__nav a,
     .dev-sidemenu a,
     a.dev-codetabs__link):hover {
-      color: var(--blue);
+      color: var(--blue-link);
   }
 
   & .color-theme-icon {
@@ -219,7 +219,7 @@
 
   & .mb-badge--blue {
     background-color: var(--blue-lighter);
-    color: var(--blue);
+    color: var(--blue-link);
   }
 
   & .mb-badge--red {
