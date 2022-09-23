@@ -40,7 +40,7 @@
     "concurrently": "^7.4.0",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.13",
-    "hugo-bin": "^0.89.0",
+    "hugo-bin": "^0.91.1",
     "postcss": "^8.4.16",
     "postcss-css-variables": "^0.18.0",
     "postcss-import": "^15.0.0",
