@@ -1,25 +1,6 @@
 /* Subset of variables from Mybring design system */
 
 :root {
---gray-98: hsl(0, 0%, 98%); /* #fafafa */
---gray-95: hsl(0, 0%, 95%); /* #f2f2f2 */
---gray-90: hsl(0, 0%, 90%);
---gray-86: hsl(0, 0%, 86%);
---gray-80: hsl(0, 0%, 80%); /* #cccccc */
---gray-60: hsl(0, 0%, 60%); /* #999999 */
---gray-40: hsl(0, 0%, 40%); /* #666666 */
---gray-26: hsl(0, 0%, 26.5%); /* #444444 */
---gray-13: hsl(0, 0%, 13%); /* #222222 */
-
---green: hsl(93.5, 50%, 51%); /* #7bc144 */
---green-hover: hsl(93, 56%, 57%);
---green-light: hsl(75, 53%, 70.5%); /* #c8dc8c */
---green-lighter: hsl(86, 47%, 94%); /* #f1f7e9 */
---green-lighter-hover: hsl(86, 40%, 96%);
---green-lighter-active: hsl(86, 40%, 92%);
---green-dark: hsl(155, 100%, 19.6%); /* #00643a */
---green-darker: hsl(152, 100%, 9%);
---green-darkest: hsl(152, 15%, 10%);
 --green-86: hsl(152, 5%, 86%);
 --green-60: hsl(152, 5%, 60%);
 --green-40: hsl(152, 6%, 40%);
@@ -28,22 +9,13 @@
 --green-18: hsl(152, 8%, 18%);
 --green-15: hsl(152, 8%, 15%);
 
---yellow: hsl(41, 98%, 58.5%); /* #fdbb2f */
---yellow-dark: hsl(41, 58%,55%);
+--green-darkest: hsl(152, 15%, 10%);
+
 --yellow-darker: hsl(48, 40%, 20%);
 
---red: hsl(3, 77.5%, 51.5%); /* #e32d22 */
---red-light: hsl(3, 77.5%, 65%);
---red-lighter: hsl(3, 77.5%, 96%);
 --red-lighter-hover: hsl(3, 77.5%, 93%);
 --red-lighter-active: hsl(3, 77.5%, 91%);
---red-dark: hsl(0, 100%, 30%); /* #980000 */
 
---blue: hsl(212, 100%, 43%);
 --blue-light: hsl(211, 100%, 64%);
 --blue-lighter: hsl(211, 83%, 84%);
-
---shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.14);
-
---easeout-15: 0.15s ease-out;
 }
