@@ -9,7 +9,7 @@ const searchClient = algoliasearch(
 )
 
 const AlgoSearch = () => (
-  <InstantSearch searchClient={searchClient} indexName={import.meta.env.ALGOLIA_INDEX || "devsite_qa"}>
+  <InstantSearch searchClient={searchClient} indexName={__ALGOLIA_INDEX__}>
     <Result />
   </InstantSearch>
 )
