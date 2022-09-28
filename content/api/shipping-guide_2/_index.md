@@ -688,9 +688,32 @@ documentation:
       ```
       * REST POST: 2001001000
       ```json
-      "customerNumber": "2001001000",
+       "customerNumber": "2001001000",
       ```
-
+  - title:
+      Sameday delivery (VAS 2012) details for 5600/ Pa Doren(1736)
+    content: |
+      The Same day delivery VAS (2012) allows shipments to be delivered same or next-day, depending on when the shipment is booked. By default, SG API returns the full service coverage area for Same day delivery.
+      The `sortingAreas` parameter allows the web shop to reduce the delivery area to the area they currently choose to provide the service.
+      `routeInformation` contains information about the sorting area for a specific parcel. Intended use is to aid pre-sorting of same day parcels.
+       * SOAP: customerNumber
+       ```xml
+       <AdditionalServices>
+         <Id>2012</Id>
+         <LeadTimeFromCustomerInMinutes>30</LeadTimeFromCustomerInMinutes> 
+         <SortingAreas>
+           <Area>100</Area> 
+        </SortingAreas>
+       </AdditionalServices>  
+       ```
+       * REST POST: 
+       ```json
+        {
+         "id": "1012",
+         "LeadTimeFromCustomerInMinutes": 30,
+         "SortingAreas": ["100"] 
+        }
+       ```
   - title: Shipping Guide topics
     content: |
       If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)
