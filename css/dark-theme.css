@@ -111,11 +111,14 @@
   & .btn--white,
   & .btn--white:link,
   & .btn--white:visited,
-  & .btn-link--filter,
   & .btn-link--dark {
     background-color: var(--green-22);
     color: var(--green-86);
     border-color: var(--green-40);
+  }
+
+  & .btn-link {
+    color: var(--green-86);
   }
 
   & .btn-link svg,
