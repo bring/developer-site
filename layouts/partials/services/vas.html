@@ -52,9 +52,9 @@
         ></span>
         <span data-filter="name">{{ .vasName }}</span>
       </summary>
-      <div class="mhxs mbxs phm pbm flex flex-wrap" id="vas-item{{ $index }}" data-vas-element>
+      <div class="pam flex flex-wrap" id="vas-item{{ $index }}" data-vas-element>
         <div class="vas__codes mrm">
-          <div class="mtm">
+          <div>
             <span class="text-note fw600">API request codes</span>
             {{- if .orderedViaVasCodes -}}
               <dl class="text-note bl mb-border pls mtxs">
@@ -78,7 +78,7 @@
             {{- end -}}
           </div>
           {{- if .incompatibleVases -}}
-            <div class="mtm">
+            <div>
               <span class="text-note fw600">Incompatible with</span>
               <dl class="bl mb-border pls mtxs">
                 {{- range .incompatibleVases -}}
@@ -90,7 +90,7 @@
             </div>
           {{- end -}}
         </div>
-        <div class="vas__docs ptm">
+        <div class="vas__docs">
           <p>{{ .description }}</p>
           {{- if gt (len .vasFootNotes) 0 -}}
             {{- range .vasFootNotes -}}
