@@ -111,6 +111,7 @@
   & .btn--white,
   & .btn--white:link,
   & .btn--white:visited,
+  & .btn-link--filter,
   & .btn-link--dark {
     background-color: var(--green-22);
     color: var(--green-86);
