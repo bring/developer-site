@@ -17,6 +17,6 @@ weight: 5
     Implementation guide is available with the configuration of the widget on mybring.
   </p>
   <p><a href="https://www.mybring.com/shipping-guide/widgets/ps">Configure your widget (requires you to log in)</a></p>
-  <img src="product-page-widget.png" alt="Product page widget image"/>
+  <img src="/api/product-page-widget/product-page-widget.png" alt="Product page widget image"/>
 </section>
 </main>
