@@ -139,6 +139,11 @@
     background-color: var(--green-22);
   }
 
+  & .btn--white:hover,
+  & .btn--white.active {
+    background-color: var(--green-18);
+  }
+
   & .btn-link--dark {
     &.active,
     &:active,
