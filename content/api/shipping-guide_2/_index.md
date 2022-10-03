@@ -701,10 +701,10 @@ documentation:
       ```
 
   - title:
-    2012 VAS for Same day delivery for products 5600 and 1706
+      Sorting area for Same day delivery (2012)
     content: |
-    If you are sending a request for same day delivery using 2012 VAS, then two additional parameters need to be added in the request alongside the VAS.They are **leadTimeFromCustomerInMinutes** which will be the lead time in minutes and **sortingAreas** which will represent the area codes in sorted order.
-    * SOAP: 
+      The Same day delivery VAS (2012) allows shipments to be delivered same- or next-day, depending on when the shipment is booked. By default, SG API returns the full service coverage area for Same day delivery. The "sortingAreas" parameter allows the web shop to reduce the delivery area to the area they currently choose to provide the service."routeInformation" contains information about the sorting area for a specific parcel. Intended use is to aid pre-sorting of same day parcels.
+      * SOAP: 
       ```xml
       <ns:AdditionalService>
         <ns:Id>EVARSLING</ns:Id>
@@ -717,14 +717,14 @@ documentation:
         </ns:SortingAreas>
       </ns:AdditionalService>
       ```
-    * REST POST: 
+      * REST POST: 
       ```json
-        {
-         "id": "EVARSLING",
-         "leadTimeFromCustomerInMinutes": 30,
-         "sortingAreas": ["100","400","500","600"]
-        }
-      ```    
+       {
+        "id": "EVARSLING",
+        "leadTimeFromCustomerInMinutes": 30,
+        "sortingAreas": ["100","400","500","600"]
+       }
+       ```    
       
   - title: Shipping Guide topics
     content: |
