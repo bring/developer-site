@@ -131,10 +131,10 @@ documentation:
                                 <ns:Id>EVARSLING</ns:Id>
                                 <ns:LeadTimeFromCustomerInMinutes>30</ns:LeadTimeFromCustomerInMinutes>
                                 <ns:SortingAreas>
-                                    <ns:String>100</ns:String>
-                                    <ns:String>400</ns:String>
-                                    <ns:String>500</ns:String>
-                                    <ns:String>600</ns:String>
+                                    <ns:Area>100</ns:Area>
+                                    <ns:Area>400</ns:Area>
+                                    <ns:Area>500</ns:Area>
+                                    <ns:Area>600</ns:Area>
                                 </ns:SortingAreas>
                             </ns:AdditionalService>
                             <ns:AdditionalService>
@@ -710,10 +710,10 @@ documentation:
         <ns:Id>EVARSLING</ns:Id>
         <ns:LeadTimeFromCustomerInMinutes>30</ns:LeadTimeFromCustomerInMinutes>
         <ns:SortingAreas>
-            <ns:String>100</ns:String>
-            <ns:String>400</ns:String>
-            <ns:String>500</ns:String>
-            <ns:String>600</ns:String>
+            <ns:Area>100</ns:Area>
+            <ns:Area>400</ns:Area>
+            <ns:Area>500</ns:Area>
+            <ns:Area>600</ns:Area>
         </ns:SortingAreas>
       </ns:AdditionalService>
       ```
