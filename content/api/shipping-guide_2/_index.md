@@ -719,13 +719,11 @@ documentation:
       ```
     * REST POST: 
       ```json
-      "additionalServices": [
         {
          "id": "EVARSLING",
          "leadTimeFromCustomerInMinutes": 30,
          "sortingAreas": ["100","400","500","600"]
         }
-      ]
       ```    
       
   - title: Shipping Guide topics
