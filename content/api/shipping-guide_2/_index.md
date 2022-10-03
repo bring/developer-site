@@ -131,9 +131,10 @@ documentation:
                                 <ns:Id>EVARSLING</ns:Id>
                                 <ns:LeadTimeFromCustomerInMinutes>30</ns:LeadTimeFromCustomerInMinutes>
                                 <ns:SortingAreas>
-                                    <ns:String>1000</ns:String>
-                                    <ns:String>2000</ns:String>
-                                    <ns:String>3000</ns:String>
+                                    <ns:String>100</ns:String>
+                                    <ns:String>400</ns:String>
+                                    <ns:String>500</ns:String>
+                                    <ns:String>600</ns:String>
                                 </ns:SortingAreas>
                             </ns:AdditionalService>
                             <ns:AdditionalService>
@@ -227,7 +228,7 @@ documentation:
               {
                 "id": "EVARSLING",
                 "leadTimeFromCustomerInMinutes": 30,
-                "sortingAreas": ["1000","2000","3000","4000"]
+                "sortingAreas": ["100","400","500","600"]
               },
               {
                 "id": "POSTOPPKRAV"
@@ -699,6 +700,34 @@ documentation:
       "customerNumber": "2001001000",
       ```
 
+  - title:
+    2012 VAS for Same day delivery for products 5600 and 1706
+    content: |
+    If you are sending a request for same day delivery using 2012 VAS, then two additional parameters need to be added in the request alongside the VAS.They are **leadTimeFromCustomerInMinutes** which will be the lead time in minutes and **sortingAreas** which will represent the area codes in sorted order.
+    * SOAP: 
+      ```xml
+      <ns:AdditionalService>
+        <ns:Id>EVARSLING</ns:Id>
+        <ns:LeadTimeFromCustomerInMinutes>30</ns:LeadTimeFromCustomerInMinutes>
+        <ns:SortingAreas>
+            <ns:String>100</ns:String>
+            <ns:String>400</ns:String>
+            <ns:String>500</ns:String>
+            <ns:String>600</ns:String>
+        </ns:SortingAreas>
+      </ns:AdditionalService>
+      ```
+    * REST POST: 
+      ```json
+      "additionalServices": [
+        {
+         "id": "EVARSLING",
+         "leadTimeFromCustomerInMinutes": 30,
+         "sortingAreas": ["100","400","500","600"]
+        }
+      ]
+      ```    
+      
   - title: Shipping Guide topics
     content: |
       If you want to know more about corner cases/topics/etc, then [Let's talk about Shipping Guide](/api/shipping-guide_2/topics)

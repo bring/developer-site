@@ -1,12 +1,5 @@
 <additionalServices>
   <additionalService>
     <id>2012</id>
-    <leadTimeFromCustomerInMinutes>30</leadTimeFromCustomerInMinutes>
-    <sortingAreas>
-      <String>1000</String>>
-      <String>2000</String>>
-      <String>3000</String>>
-      <String>4000</String>>
-    </sortingAreas>
   </additionalService>
 </additionalServices>
