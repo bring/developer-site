@@ -107,6 +107,14 @@
     color: var(--gray-60);
   }
 
+  & #services-bsg .icon-ui--green-dark {
+    fill: var(--green);
+  }
+
+  & #services-bsg .icon-ui--lightgray {
+    fill: var(--gray-40);
+  }
+
   /* Buttons */
   & .btn--white,
   & .btn--white:link,
@@ -117,6 +125,10 @@
     border-color: var(--green-40);
   }
 
+  & .btn-link {
+    color: var(--green-86);
+  }
+
   & .btn-link svg,
   & .btn--white svg,
   & .btn-link--dark svg {
@@ -125,6 +137,11 @@
 
   & .btn-link:hover {
     background-color: var(--green-22);
+  }
+
+  & .btn--white:hover,
+  & .btn--white.active {
+    background-color: var(--green-18);
   }
 
   & .btn-link--dark {

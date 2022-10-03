@@ -41,27 +41,20 @@
   </div>
 </div>
 
-<div class="flex flex-dir-col" id="all-vas">
+<div class="flex flex-dir-col gas" id="all-vas">
   {{- range $index, $vas := (sort .data "vasName") -}}
-    <div class="vas-item bg-gray2 mbxs dev-collapsible">
-      <div class="dev-anchored" id="{{ .vasName|anchorize }}">
-        <button
-          type="button"
-          data-collapse="#vas-item{{ $index }}"
-          class="btn-link fw600 pv.75r phs w100p dev-collapsible__toggler--collapsed justify-cfs"
-        >
-          <span
-            data-mybicon="mybicon-arrow-right"
-            data-mybicon-class="dev-collapsible__toggler__icon"
-            data-mybicon-width="16"
-            data-mybicon-height="16"
-          ></span>
-          <span data-filter="name">{{ .vasName }}</span>
-        </button>
-      </div>
-      <div class="mhxs mbxs phm pbm bg-white flex flex-wrap dev-collapsible__item--collapsed" id="vas-item{{ $index }}" data-vas-element>
+    <details class="mb-disclosure mb-disclosure--arrow bg-gray1 vas-item">
+      <summary class="dev-anchored" id="{{ .vasName|anchorize }}">
+        <span
+          data-mybicon="mybicon-arrow-right"
+          data-mybicon-width="16"
+          data-mybicon-height="16"
+        ></span>
+        <span data-filter="name">{{ .vasName }}</span>
+      </summary>
+      <div class="pam flex flex-wrap" id="vas-item{{ $index }}" data-vas-element>
         <div class="vas__codes mrm">
-          <div class="mtm">
+          <div>
             <span class="text-note fw600">API request codes</span>
             {{- if .orderedViaVasCodes -}}
               <dl class="text-note bl mb-border pls mtxs">
@@ -85,7 +78,7 @@
             {{- end -}}
           </div>
           {{- if .incompatibleVases -}}
-            <div class="mtm">
+            <div>
               <span class="text-note fw600">Incompatible with</span>
               <dl class="bl mb-border pls mtxs">
                 {{- range .incompatibleVases -}}
@@ -97,7 +90,7 @@
             </div>
           {{- end -}}
         </div>
-        <div class="vas__docs ptm">
+        <div class="vas__docs">
           <p>{{ .description }}</p>
           {{- if gt (len .vasFootNotes) 0 -}}
             {{- range .vasFootNotes -}}
@@ -205,7 +198,7 @@
           {{- end -}}
         </div>
       </div>
-    </div>
+    </details>
   {{- end -}}
 </div>
 <div class="cutoff-overlay" id="vas-cutoff">

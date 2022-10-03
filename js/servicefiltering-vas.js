@@ -172,19 +172,9 @@ if (container) {
         document.querySelector("[data-siteheader]").offsetHeight + 20,
       elementPosition = element.getBoundingClientRect().top,
       offsetPosition = elementPosition + window.pageYOffset - headerOffset,
-      vasBtnParent = element.parentElement,
-      vasBtnToggler = vasBtnParent.querySelector("[data-collapse]"),
-      vasItemContent = vasBtnParent.querySelector("[data-vas-element]")
-  
-    if (vasBtnToggler) {
-      vasBtnToggler.classList.remove("dev-collapsible__toggler--collapsed")
-      vasBtnToggler.classList.add("dev-collapsible__toggler--expanded")
-    }
-  
-    if (vasItemContent) {
-      vasItemContent.classList.remove("dev-collapsible__item--collapsed")
-      vasItemContent.classList.add("dev-collapsible__item--expanded")
-    }
+      vasBtnParent = element.parentElement
+      
+      vasBtnParent.setAttribute('open','')
   
     window.scrollTo({
       top: offsetPosition,
