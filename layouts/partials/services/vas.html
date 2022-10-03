@@ -10,9 +10,9 @@
         <div class="mrl">
           <p class="form__label">Filter by</p>
           <div class="btngroup">
-            {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='service'" "btnText" "Service") -}}
-            {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='type'" "btnText" "Service type") -}}
-            {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='family'" "btnText" "Service family") -}}
+            {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-service'" "btnText" "Service") -}}
+            {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-type'" "btnText" "Service type") -}}
+            {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-family'" "btnText" "Service family") -}}
           </div>
         </div>
         <label class="form__label mrxl" for="vasfilter">
@@ -32,9 +32,9 @@
             {{- $filterScratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
           {{- end -}}
         {{- end -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicetype")) "name") "filter" "type" ) -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicefamily")) "sortOrder") "filter" "family" ) -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "service")) "name") "filter" "service" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicetype")) "name") "filter" "vas-type" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicefamily")) "sortOrder") "filter" "vas-family" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "service")) "name") "filter" "vas-service" ) -}}
       </div>
     </div>
     <button type="button" class="btn-link--dark mtl mlr dn" id="clearfilters">Clear all filters</button>
@@ -125,9 +125,9 @@
                   {{- range .supportedServices -}}
                     <tr class="vascountryrow">
                       <td class="">{{ .serviceName }} (<code class="bg-gray3">{{ .serviceCode }}</code>)</td>
-                      <td data-filter="type" hidden>{{ .serviceType }}</td>
-                      <td data-filter="family" hidden>{{ .serviceFamily }}</td>
-                      <td data-filter="service" hidden>{{ .serviceCode }}</td>
+                      <td data-filter="vas-type" hidden>{{ .serviceType }}</td>
+                      <td data-filter="vas-family" hidden>{{ .serviceFamily }}</td>
+                      <td data-filter="vas-service" hidden>{{ .serviceCode }}</td>
                       <td class="">{{ if ne .senderCountries "-" }}{{ .senderCountries | safeHTML }}{{ end }}</td>
                       <td class="">{{ if ne .destinations "-" }}{{ .destinations | safeHTML }}{{ end }}</td>
                       <td class="">{{ if ne .domesticAllowedIn "-" }}{{ .domesticAllowedIn | safeHTML }}{{ end }}</td>
