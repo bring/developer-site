@@ -704,26 +704,30 @@ documentation:
       Sorting area for Same day delivery (2012)
     content: |
       The Same day delivery VAS (2012) allows shipments to be delivered same- or next-day, depending on when the shipment is booked. By default, SG API returns the full service coverage area for Same day delivery. The "sortingAreas" parameter allows the web shop to reduce the delivery area to the area they currently choose to provide the service."routeInformation" contains information about the sorting area for a specific parcel. Intended use is to aid pre-sorting of same day parcels.
-      * SOAP: 
+      * SOAP:
       ```xml
-      <ns:AdditionalService>
-        <ns:Id>EVARSLING</ns:Id>
-        <ns:LeadTimeFromCustomerInMinutes>30</ns:LeadTimeFromCustomerInMinutes>
-        <ns:SortingAreas>
-            <ns:Area>100</ns:Area>
-            <ns:Area>400</ns:Area>
-            <ns:Area>500</ns:Area>
-            <ns:Area>600</ns:Area>
-        </ns:SortingAreas>
-      </ns:AdditionalService>
+      <ns:AdditionalServices>
+            <ns:AdditionalService>
+                  <ns:Id>2012</ns:Id>
+                  <ns:LeadTimeFromCustomerInMinutes>120</ns:LeadTimeFromCustomerInMinutes>
+                   <ns:SortingAreas>
+                        <ns:Area>100</ns:Area>
+                        <ns:Area>300</ns:Area>
+                        <ns:Area>500</ns:Area>
+                        <ns:Area>600</ns:Area>
+                   </ns:SortingAreas>
+            </ns:AdditionalService>
+      </ns:AdditionalServices>
       ```
       * REST POST: 
       ```json
+     "additionalServices": [
        {
-        "id": "EVARSLING",
+        "id": "2012",
         "leadTimeFromCustomerInMinutes": 30,
-        "sortingAreas": ["100","400","500","600"]
-       }
+        "SortingAreas": ["100","400","500","600"]
+       }  
+      ]
        ```    
       
   - title: Shipping Guide topics
