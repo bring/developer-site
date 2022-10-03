@@ -129,6 +129,12 @@ documentation:
                         <ns:AdditionalServices>
                             <ns:AdditionalService>
                                 <ns:Id>EVARSLING</ns:Id>
+                                <ns:LeadTimeFromCustomerInMinutes>30</ns:LeadTimeFromCustomerInMinutes>
+                                <ns:SortingAreas>
+                                    <ns:String>1000</ns:String>
+                                    <ns:String>2000</ns:String>
+                                    <ns:String>3000</ns:String>
+                                </ns:SortingAreas>
                             </ns:AdditionalService>
                             <ns:AdditionalService>
                                 <ns:Id>POSTOPPKRAV</ns:Id>
@@ -219,7 +225,9 @@ documentation:
             ],
             "additionalServices": [
               {
-                "id": "EVARSLING"
+                "id": "EVARSLING",
+                "leadTimeFromCustomerInMinutes": 30,
+                "sortingAreas": ["1000","2000","3000","4000"]
               },
               {
                 "id": "POSTOPPKRAV"

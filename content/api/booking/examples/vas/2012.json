@@ -1,5 +1,7 @@
 "additionalServices": [
   {
-    "id": "2012"
+    "id": "2012",
+    "leadTimeFromCustomerInMinutes": 30,
+    "sortingAreas": ["1000","2000","3000","4000"]
   }
 ]
