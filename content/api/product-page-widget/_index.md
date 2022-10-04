@@ -2,10 +2,6 @@
 title: Product page widget
 layout: api
 notanapi: true
-menu:
-  api:
-    identifier: product-page-widget
-    url: /api/product-page-widget
 weight: 5
 ---
 
