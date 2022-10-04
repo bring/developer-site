@@ -111,7 +111,7 @@
       </div>
 
       {{- with $schemaObj.properties -}}
-        <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+        <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
               {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
@@ -195,7 +195,7 @@
     </div>
 
     {{- with $schemaObj.items -}}
-      <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" data-sublevel-id="{{ $levelId }}">
+      <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
         {{- $isItemRef := false -}}
         {{- $isItemOneOfRef := false -}}
         {{/*  Check for oneOf  */}}
