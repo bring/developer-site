@@ -3,11 +3,13 @@ const paramToggleBtn = document.querySelectorAll(".param-toggle-btn")
 
 paramToggleBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
-    const paramToggleBtnId = this.id
-    const paramSubLevel = document.querySelector(
-      '[data-sublevel-id="' + paramToggleBtnId + '"]'
-    )
+    const paramToggleBtnId = this.getAttribute('aria-controls')
+    const paramSubLevel = document.getElementById(paramToggleBtnId)
     const paramToggleIcon = this.querySelector(".param-toggle-icon")
+    let paramToggleBtnState = this.getAttribute('aria-expanded')
+    paramToggleBtnState = paramToggleBtnState === 'true' ? false : true
+
+    this.setAttribute('aria-expanded', paramToggleBtnState)
     paramSubLevel.classList.toggle("dn")
     paramToggleIcon.classList.toggle("rotate-icon-90")
   })
