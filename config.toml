@@ -80,6 +80,13 @@ weight = 15
 blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 
 [[menu.apidocs]]
+parent = "checkout"
+identifier = "product-page-widget"
+title = "Product page widget"
+url = "/api/product-page-widget"
+weight = 16
+
+[[menu.apidocs]]
 identifier = "book"
 title = "Booking"
 weight = 2
