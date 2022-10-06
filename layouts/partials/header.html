@@ -38,27 +38,34 @@
           {{- end -}}
         </span>
       </a>
-      <div class="flex align-ic gas mhm color-theme-container">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" class="icon-ui white color-theme-icon">
-          <path d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64V448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/>
-        </svg>
-        <div class="flex align-ic theme-switch-container">
+      <div class="flex align-ic gas mhm color-theme-container relative">
+        <button
+          class="btn-link btn--transparent phs text-note white themes-btn"
+          id="themesBtn"
+          aria-label="Choose color mode"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" class="icon-ui white color-theme-icon mrs pointev-none">
+            <path d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64V448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/>
+          </svg>
+          <span class="pointev-none">Auto</span>
+        </button>
+        <div class="paxs theme-switch-container w100p dn">
           <button
-            class="btn-link btn--transparent phs text-note white theme-switch"
+            class="btn-link btn--transparent phs text-note white theme-switch w100p"
             aria-label="Auto color mode"
             data-color-theme="auto"
           >
             Auto
           </button>
           <button
-            class="btn-link btn--transparent phs text-note white theme-switch"
+            class="btn-link btn--transparent phs text-note white theme-switch w100p"
             aria-label="Light color mode"
             data-color-theme="light"
           >
             Light
           </button>
           <button
-            class="btn-link btn--transparent phs text-note white theme-switch"
+            class="btn-link btn--transparent phs text-note white theme-switch w100p"
             aria-label="Dark color mode"
             data-color-theme="dark"
           >
@@ -91,9 +98,22 @@
     </nav>
     <script type="text/javascript">
       const htmlContainer = document.documentElement;
+      const themesBtn = document.querySelector("#themesBtn");
+      const themesBtnText = themesBtn.querySelector("span");
+      const themeSwitchContainer = document.querySelector(".theme-switch-container");
       const themeSwitch = document.querySelectorAll(".theme-switch");
       const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
       const storedTheme = localStorage.getItem("theme");
+
+      themesBtn.addEventListener("click", (e) => {
+        themeSwitchContainer.classList.toggle("dn");
+      });
+
+      htmlContainer.addEventListener("click", (e) => {
+        if(e.target !== themeSwitchContainer && e.target !== themesBtn) {
+          themeSwitchContainer.classList.add("dn");
+        }
+      });
 
       const darkOption = "dark";
       const lightOption = "light";
@@ -107,20 +127,12 @@
       //Get theme from local storage, if stored
       if (storedTheme === "dark") {
         htmlContainer.dataset.theme = darkOption;
-        for(let i = 0; i < themeSwitch.length; i++) {
-          if(themeSwitch[i].dataset.colorTheme === darkOption) {
-            themeSwitch[i].classList.add("active");
-          }
-        }
+        themesBtnText.innerText = "Dark";
       } else if (storedTheme === "light") {
         htmlContainer.dataset.theme = lightOption;
-        for(let i = 0; i < themeSwitch.length; i++) {
-          if(themeSwitch[i].dataset.colorTheme === lightOption) {
-            themeSwitch[i].classList.add("active");
-          }
-        }
+        themesBtnText.innerText = "Light";
       } else {
-        themeSwitch[0].classList.add("active");
+        themesBtnText.innerText = "Auto";
       }
       
       //Set the data-theme on click
@@ -128,13 +140,9 @@
 
       function changeColorTheme(btn) {
         btn.addEventListener("click", (e) => {
-          for(let i = 0; i < themeSwitch.length; i++) {
-            themeSwitch[i].classList.remove("active");
-          }
-          btn.classList.add("active");
-
           let selectedTheme = e.target.dataset.colorTheme;
           if (selectedTheme === "auto") {
+            themesBtnText.innerText = "Auto";
             //Reset based on OS settings and remove stored theme
             if (prefersDarkScheme.matches) {
               htmlContainer.dataset.theme = darkOption;
@@ -143,10 +151,12 @@
             }
             localStorage.removeItem("theme", selectedTheme);
           } else if (selectedTheme === darkOption) {
+            themesBtnText.innerText = "Dark";
             //Set data-theme and store the chosen theme in local storage
             htmlContainer.dataset.theme = darkOption;
             localStorage.setItem("theme", selectedTheme);
           } else if (selectedTheme === lightOption) {
+            themesBtnText.innerText = "Light";
             //Set data-theme and store the chosen theme in local storage
             htmlContainer.dataset.theme = lightOption;
             localStorage.setItem("theme", selectedTheme);
