@@ -14,7 +14,7 @@ important:
   - type: info
     title: See both list price and contract price - 29.09.2022
     message: |
-      From the 29.09.2022 you will be able to see both the list price and the contract price if you have financial rights.
+      Starting from 29.09.2022, Mybring users with financial rights can see both the list and contact price.
   - type: info
     title: New field damagedBarcodeImages - 24.08.2022
     message: |
