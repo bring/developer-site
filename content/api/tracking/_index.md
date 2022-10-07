@@ -12,6 +12,10 @@ weight: 31
  
 important:
   - type: info
+    title: See both list price and contract price - 29.09.2022
+    message: |
+      Starting from 29.09.2022, Mybring users with financial rights can see both the list and contact price.
+  - type: info
     title: New field damagedBarcodeImages - 24.08.2022
     message: |
      We have added a new field for damaged barcode images in Mybring Tracking for Super Users or the sender of the parcel. This field will be present on events with event code 5A and cause AN. The link might contain more than one image. 
