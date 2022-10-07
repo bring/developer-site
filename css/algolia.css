@@ -1,11 +1,15 @@
 .algolia-icon {
   fill: hsla(0, 0%, 100%, 0.3);
   flex: 0 0 1.5rem;
-  margin-right: 0.25rem;
+  position:absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .algolia-input {
-  flex: 0 1 24rem;
+  flex: 1;
 }
 
 .react-autosuggest__container {
@@ -15,7 +19,7 @@
 .react-autosuggest__input {
   display: block;
   width: 100%;
-  padding: 0.5em;
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
   line-height: 1.5;
   background: none;
   background-color: hsla(0, 0%, 100%, 0.1);
