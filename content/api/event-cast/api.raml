@@ -104,7 +104,7 @@ types:
   displayName: Create Webhook
   description: |
     Create a new subscription for a Webhook.
-    Webhooks live for up to 30 days.
+    Webhooks live for up to 30 days. Only parcel or shipment numbers can be subscribed.
   post:
     description: Register a new Webhook subscription for a parcel or shipment
     body:
@@ -149,7 +149,7 @@ types:
 /batch/api/v1/webhooks:
   displayName: Create multiple Webhooks
   description: |
-        Create a range of new Webhooks based on a list of any parcel or shipment.
+        Create a range of new Webhooks based on a list of only parcel or shipment numbers.
         Webhooks live for up to 30 days.
   post:
     description: Register a new Webhook subscription for an array parcels and/or shipments
