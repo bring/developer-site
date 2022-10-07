@@ -157,6 +157,17 @@
 }
 
 @media only screen and (max-width: 39em) {
+  .dev-siteheader__logo {
+    width: 6rem;
+    margin-right: 0.4rem;
+  }
+  .dev-siteheader__tagline {
+    width: 8rem;
+  }
+  .dev-tagline-svg {
+    padding: 0.9rem 0 0 0.8rem;
+  }
+
   .dev-siteheader__title {
     order: 1;
   }
