@@ -1,0 +1,4 @@
+<ns0:PostbackResponse xmlns:ns0=http://interchange.bring.com/SupplyChain.Response>
+    <Message>success</Message>
+    <RequestID>SomeUniqueIdForReference</RequestID>
+ </ns0:PostbackResponse>

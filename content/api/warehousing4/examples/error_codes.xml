@@ -1,0 +1,118 @@
+<ErrorList xmlns="http://api.bring.com/po">
+    <errorTypes>
+        <Code>PO_INPUT_001</Code>
+        <Description>Must provide valid customer ID</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_002</Code>
+        <Description>Must provide valid purchase order</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_003</Code>
+        <Description>Must provide valid schema version. See developer.bring.com for latest schema version</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_004</Code>
+        <Description>Request properties must contain valid datetime</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_005</Code>
+        <Description>Request properties must contain valid locale</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_006</Code>
+        <Description>Request properties must be present</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_007</Code>
+        <Description>Consignment ID is required</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_008</Code>
+        <Description>Must provide valid EventType. See xsd for list of valid types.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_009</Code>
+        <Description>Must provide valid ISO timestamp for event</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_010</Code>
+        <Description>Purchase order not found. You can not have orderlines to a non-existing purchase order.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_011</Code>
+        <Description>Negative quantity not allowed.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_012</Code>
+        <Description>Item on transport order does not exist on purchase order. OrderLineId and ArticleLineId must match purchase order.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_013</Code>
+        <Description>Shipping container ID is required</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_014</Code>
+        <Description>A valid container type required for the shipping container and the content</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_015</Code>
+        <Description>Content for shipping container is required</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INOUT_016</Code>
+        <Description>Content in shipping container requires either consignment ID or shipping container ID</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_017</Code>
+        <Description>The request contained invalid content.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_018</Code>
+        <Description>The request contains input that is not supported.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_019</Code>
+        <Description>Some required parameters are missing.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_020</Code>
+        <Description>Must provide valid transport order</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_021</Code>
+        <Description>Article number is required</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_022</Code>
+        <Description>Article number is required</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_023</Code>
+        <Description>Content for article balance is required</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_INPUT_024</Code>
+        <Description>Attempted to create/insert a purchase order that already existed. Maybe wrong updateIndicator</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_STATE_001</Code>
+        <Description>Purchase order not found</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_STATE_002</Code>
+        <Description>You must log in to use this endpoint. See developer.bring.com for details about login with HTTP-headers.</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_STATE_003</Code>
+        <Description>Order items for requested purchase order not found</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_STATE_004</Code>
+        <Description>Access is denied to read this purchaseorder</Description>
+    </errorTypes>
+    <errorTypes>
+        <Code>PO_STATE_005</Code>
+        <Description>Transport order not found</Description>
+    </errorTypes>
+</ErrorList>

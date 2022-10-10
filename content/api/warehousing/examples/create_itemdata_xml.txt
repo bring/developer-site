@@ -1,0 +1,45 @@
+<CreateItemDataRequest version="5.0" definedBy="BIG" domain="SupplyChain" collaboration="Order" messageFunction="ItemData" profile="bringXML" language="" messageId="String" updateIndicator="" testIndicator="" xmlns="http://api.bring.com/mb">
+  <MessageDetails>
+    <MessageSender partyId="String" idType="ZZ" />
+    <MessageRecipient partyId="7080003388100" idType="14" />
+    <MessageDate>2022-08-14T09:20:47</MessageDate>
+  </MessageDetails>
+  <PerformingUnit Name="String">String</PerformingUnit>
+  <SupplyStructure>
+    <ArticleInformationSet>
+      <ArticleInformation articleLineId="String">
+        <ArticleNumber codeListIdentifier="String">String</ArticleNumber>
+        <ArticleNumber codeListIdentifier="String">String</ArticleNumber>
+        <Description usageCode="String">
+          <Text>String</Text>
+        </Description>
+        <Utility usageCode="String" codeListIdentifier="String" />
+        <Utility usageCode="String" codeListIdentifier="String" />
+        <ArticleQuantity codeListIdentifier="String">10</ArticleQuantity>
+        <ArticleQuantity codeListIdentifier="String">10</ArticleQuantity>
+        <ArticleUnitCode codeListIdentifier="String">String</ArticleUnitCode>
+        <ArticleUnitCode codeListIdentifier="String">String</ArticleUnitCode>
+        <ArticleName>String</ArticleName>
+        <ArticleVariantIdentifier>String</ArticleVariantIdentifier>
+        <ArticleCountryOfOrigin>String</ArticleCountryOfOrigin>
+        <ArticleWeightAndDimension>
+          <Depth unitCode="String">10</Depth>
+          <Height unitCode="String">10</Height>
+          <NetWeight unitCode="String">10</NetWeight>
+          <Width unitCode="String">10</Width>
+          <GrossWeight unitCode="String">10</GrossWeight>
+        </ArticleWeightAndDimension>
+        <FreeText usageCode="String">
+          <Text>String</Text>
+        </FreeText>
+        <Reference referenceType="String">
+          <ReferenceNo>String</ReferenceNo>
+        </Reference>
+        <Reference referenceType="String">
+          <ReferenceNo>String</ReferenceNo>
+        </Reference>
+        <ArticleGroup>String</ArticleGroup>
+      </ArticleInformation>
+    </ArticleInformationSet>
+  </SupplyStructure>
+</CreateItemDataRequest>

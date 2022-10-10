@@ -1,0 +1,86 @@
+{
+  "version": "5.0",
+  "definedBy": "BIG",
+  "domain": "SupplyChain",
+  "collaboration": "Order",
+  "messageFunction": "Order",
+  "profile": "bringXML",
+  "language": "",
+  "messageId": "String",
+  "updateIndicator": "",
+  "testIndicator": "",
+  "MessageDetails": {
+    "MessageSender": {
+      "partyId": "String",
+      "idType": "ZZ"
+    },
+    "MessageRecipient": {
+      "partyId": "7080003388100",
+      "idType": "14"
+    },
+    "MessageDate": {
+      "Value": "2022-08-14T09:20:47"
+    }
+  },
+  "SupplyStructure": {
+    "ArticleInformationSet": {
+      "ArticleInformation": {
+        "articleLineId": "String",
+        "ArticleNumber": [{
+          "codeListIdentifier": "String",
+          "Value": "String"
+        }],
+        "Description": {
+          "usageString": "String",
+          "Text": "String"
+        },
+        "Utility": [{
+          "codeListIdentifier": "String",
+          "Value": "String"
+        }],
+        "ArticleQuantity": [{
+          "codeListIdentifier": "String",
+          "Value": "String"
+        }],
+        "ArticleUnitCode": [{
+          "codeListIdentifier": "String",
+          "Value": "String"
+        }],
+        "ArticleName": "String",
+        "ArticleVariantIdentifier": "String",
+        "ArticleCountryOfOrigin": "String",
+        "ArticleWeightAndDimension": {
+          "Depth": {
+            "unitCode": "String",
+            "Value": 10
+          },
+          "Height": {
+            "unitCode": "String",
+            "Value": 10
+          },
+          "NetWeight": {
+            "unitCode": "String",
+            "Value": 10
+          },
+          "Width": {
+            "unitCode": "String",
+            "Value": 10
+          },
+          "GrossWeight": {
+            "unitCode": "String",
+            "Value": 10
+          }
+        },
+        "FreeText": {
+          "usageCode": "String",
+          "Text": "String"
+        },
+        "Reference": [{
+          "referenceType": "String",
+          "ReferenceNo": "String"
+        }],
+        "ArticleGroup": "String"
+      }
+    }
+  }
+}
