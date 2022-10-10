@@ -78,5 +78,5 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point **_(These lockers are placed inside buildings only accessible to the residents and workers in the building)_**
-#oas: https://api.qa.bring.com/pickuppoint/openapi.json
+oas: https://api.qa.bring.com/pickuppoint/openapi.json
 ---

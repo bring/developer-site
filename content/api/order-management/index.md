@@ -29,5 +29,5 @@ documentation:
 
       How you handle errors depends on the nature of your application, but one strategy for handling such situations is by providing a failover if the shipping guide responds with an error or does not respond at all (timeout).
 
-#oas: https://www.qa.mybring.com/po/v2/api-docs
+oas: https://www.qa.mybring.com/po/v2/api-docs
 ---
