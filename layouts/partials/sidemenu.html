@@ -71,7 +71,7 @@
     {{- $apiData := .Site.Data.api -}}
     {{- range .Site.Menus.apidocs -}}
       {{- if .HasChildren -}}
-        <h2 class="dev-sidemenu__title text-note ttu">{{ .Title }}</h2>
+        <h2 class="dev-sidemenu__title ttu">{{ .Title }}</h2>
         <ul class="dev-sidemenu__list">
           {{ range .Children }}
             {{- $hidePage := false -}}
@@ -79,10 +79,12 @@
               {{- $hidePage = .Params.hidden -}}
             {{- end -}}
 
-            {{- if isset $.Params "oas" -}}
+            {{- if in .Title "Order Management" -}}
+              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
+            {{- else if isset $.Params "oas" -}}
               {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
             {{- else -}}
-              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "apiData" $apiData "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL) -}}
+              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
             {{- end -}}
 
           {{- end -}}

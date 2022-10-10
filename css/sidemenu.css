@@ -9,6 +9,7 @@
   font-weight: 500;
   color: var(--green-dark);
   margin: 1rem 0 0.15em 1.6rem;
+  font-size: 0.9rem;
 }
 
 .dev-sidemenu__list {

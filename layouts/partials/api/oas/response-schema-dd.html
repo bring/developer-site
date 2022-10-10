@@ -20,11 +20,11 @@
     {{- end -}}
   </div>
   {{- with .enum -}}
-    <div>
-      <span class="text-note fw600">Enum</span>
+    <dl>
+      <dt><span class="text-note fw600">Enum</span></dt>
       {{- range . -}}
-        <br><code class="wrap-text">{{- . -}}</code>
+        <dd><code class="wrap-text">{{ . }}</code></dd>
       {{- end -}}
-    </div>
+    </dl>
   {{- end -}}
 {{- end -}}

@@ -44,7 +44,7 @@
 
             {{- if isset . "examples" -}}
               {{- if gt (len .examples) 1 -}}
-                <div class="mhm ptm">
+                <div class="mhm pvm">
                   <select class="form__control w100p mb0 pas hauto" name="{{$format}}-{{$endpointId}}" data-example-sub aria-label="{{$endpointId}} {{$format}} request example">
                     {{- range $name, $_ := .examples -}}
                       {{- $exId := print $name | anchorize -}}
@@ -60,12 +60,14 @@
                   {{ end }}
                 {{ end }}  */}}
               {{- end -}}
+              {{- $exInd := 0 -}}
               {{- range $name,$_ := .examples -}}
                 {{- $exId := print $name | anchorize -}}
-                <div class="relative" data-example-sub="{{$exId}}" data-format="{{$application}}">
+                <div class="relative" data-example-sub="{{$exId}}" data-format="{{$application}}" {{ if ne $exInd 0 }}hidden{{ end }}>
                   {{- partial (printf "api/oas/example-%s.html" $format) (dict "ctx" . "schemas" .) -}}
                   {{- partial "api/oas/copy-btn.html" -}}
                 </div>
+                {{- $exInd = add $exInd 1 -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}

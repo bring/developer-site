@@ -1,0 +1,66 @@
+<h1>{{ .Title }}</h1>
+<section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
+  {{- with $.Params.important -}}
+    <div class="dev-docscontent__side">
+      {{- range . -}}
+        <div class="message--{{ .type }} pal mbs">
+          {{- with .title -}}
+            <strong class="db mbxs">{{ . }}</strong>
+          {{- end -}}
+          {{ .message | markdownify }}
+        </div>
+      {{- end -}}
+    </div>
+  {{- end -}}
+  <div class="dev-docscontent__main maxw64r">
+    {{- with $.Params.introduction -}}
+      {{- if in (string .) "\n\n" -}}
+      <div class="text-heading fw600">
+        {{- . | markdownify -}}
+      </div>
+      {{- else -}}
+        <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
+      {{- end -}}
+    {{- end -}}
+    {{- with $.Params.information -}}
+      <div class="dev-docscontent__info mvl owlxs">
+        {{- range . -}}
+          <details class="mb-disclosure mb-disclosure--arrow bg-green1">
+            {{- with .title }}
+              <summary class="text-heading">
+                <span
+                  data-mybicon="mybicon-arrow-right"
+                  data-mybicon-width="16"
+                  data-mybicon-height="16"
+                ></span>
+                {{- . -}}
+              </summary>
+            {{- end -}}
+            <div class="pam">
+              {{- if in (string .content) "\n\n" -}}
+                {{- .content | markdownify -}}
+              {{- else -}}
+                <p>{{ .content | markdownify }}</p>
+              {{- end -}}
+            </div>
+          </details>
+        {{- end -}}
+      </div>
+    {{- end -}}
+    {{- range $.Params.documentation -}}
+      {{- with .title }}
+        <h2 class="dev-anchored" id="{{ . | urlize }}">
+          {{- . -}}
+        </h2>
+      {{- end -}}
+      {{- if in (string .content) "\n\n" -}}
+        {{- .content | markdownify -}}
+      {{- else -}}
+        <p>{{ .content | markdownify }}</p>
+      {{- end -}}
+    {{- end -}}
+    {{- with $.Params.guides -}}
+      {{- partial "api/oas/tips-and-guides.html" . -}}
+    {{- end -}}
+  </div>
+</section>

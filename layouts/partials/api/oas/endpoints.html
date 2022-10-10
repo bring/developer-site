@@ -1,23 +1,47 @@
-{{- with . -}}
+{{- $soapArr := "" -}}
+{{- with .soapArr -}}
+  {{- $soapArr = . -}}
+{{- end -}}
+
+{{- with .oas -}}
   <section class="dev-docscontent__section maxw96r">
     <h2 class="dev-anchored mbm" id="endpoints">
     Endpoints
     </h2>
-    {{ range .servers }}
-      <pre class="maxw40r">{{ .url }}</pre>
-    {{ end }}
+    <div class="flex align-ic mbl mts">
+      <span class="mb-badge text-note mrxs pas">Base URL</span>
+      <span class="flex-auto maxw40r">
+        <pre class="flex align-ic pas mb0 wrap-text">
+          {{- range .servers -}}
+            <span>{{ replace .url "qa." "" }}</span>
+          {{- end -}}
+        </pre>
+      </span>
+    </div>
 
     <table class="maxw96r">
       <thead>
+        {{- with $soapArr -}}
+          <th>Type</th>
+        {{- end -}}
         <th>Usage</th>
         <th>Method</th>
         <th>Endpoint</th>
       </thead>
-      {{ range $path, $_ := .paths }}
-          {{ range $method, $_ := . }}
+      {{- $restInd := 0 -}}
+      {{- $pathsLen := len .paths -}}
+      {{- range $path, $_ := .paths -}}
+        {{- range $method, $_ := . -}}
+          {{- $endpointAnchor := (printf "%s-%s" .summary $method) | anchorize -}}
           <tr>
+            {{- with $soapArr -}}
+              {{- if eq $restInd 0 -}}
+                <th scope="row" rowspan="{{ $pathsLen }}">REST</th>
+              {{- end -}}
+              {{- $restInd = add $restInd 1 -}}
+            {{- end -}}
             <td>
-              <a href="#{{ .summary | anchorize }}" title="{{- .summary -}}">
+              <a href="#{{ $endpointAnchor }}" title="{{ .summary }}">
                   {{- .summary -}}
               </a>
             </td>
@@ -28,8 +52,43 @@
               <code>{{ $path }}</code>
             </td>
           </tr>
-          {{ end }}
-      {{ end }}
+        {{- end -}}
+      {{- end -}}
+
+      {{- with $soapArr -}}
+        {{- $soapInd := 0 -}}
+        {{- $soapLen := len . -}}
+        {{- range . -}}
+          {{- $path := .relativeUri | safeHTML -}}
+          {{- $displayName := .displayName -}}
+          {{- $method := "" -}}
+          {{- range .methods -}}
+            {{- with .method -}}
+              {{- $method = . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $endpointAnchor := (printf "soap-%s-%s" $displayName $method) | anchorize -}}
+          {{- range .methods -}}
+            <tr>
+              {{- if eq $soapInd 0 -}}
+                <th scope="row" rowspan="{{ $soapLen }}">SOAP</th>
+              {{- end -}}
+              {{- $soapInd = add $soapInd 1 -}}
+              <td>
+                <a href="#{{ $endpointAnchor }}" title="{{ $displayName }}">
+                    {{- .description -}}
+                </a>
+              </td>
+              <td>
+                {{- .method | upper -}}
+              </td>
+              <td>
+                <code>{{ $path }}</code>
+              </td>
+            </tr>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
     </table>
   </section>
 {{- end -}}

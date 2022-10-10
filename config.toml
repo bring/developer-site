@@ -8,6 +8,7 @@ summaryLength = 60
 paginate = 12
 ignorefiles = ["css/main.js"]
 disqusShortname = "bringdev"
+timeout = "60s"
 
 [markup.highlight]
 guessSyntax = true
@@ -42,6 +43,7 @@ apis = [
   "content/api/warehousing3/api.raml",
   "content/api/warehousing4/api.raml",
   "content/api/order-management-soap/api.raml",
+  "content/api/order-management/api.raml",
   "content/api/postal-code/api.raml",
   "content/api/event-cast/api.raml",
   "content/api/invoice/api.raml",
@@ -81,6 +83,13 @@ weight = 15
 blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 
 [[menu.apidocs]]
+parent = "checkout"
+identifier = "product-page-widget"
+title = "Product page widget"
+url = "/api/product-page-widget"
+weight = 16
+
+[[menu.apidocs]]
 identifier = "book"
 title = "Booking"
 weight = 2
@@ -104,3 +113,16 @@ weight = 5
 identifier = "om"
 title = "Order management"
 weight = 6
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.Algolia]
+vars = ["title","menu"]
+params = ["excerpt"]
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]

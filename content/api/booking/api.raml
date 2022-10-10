@@ -327,10 +327,6 @@ baseUri: https://api.bring.com/booking/api
             type: string
             enum: [SALE_OF_GOODS, RETURNED_GOODS, GIFT, COMMERCIAL_SAMPLE, DOCUMENTS, OTHER]
             required: true
-        vatOnEcommerce:
-            description: VAT On Ecommerce ID used for customs import to Norway. This field is mandatory when sending customs import information in the request. It must be 7 digits number.
-            type: integer
-            required: true
         iossNumber:
             description: Import One-Stop Shop (IOSS) number used for customs export from Norway to EU. This field is optional when customs export information in the request. It must be on the form `IMxxxxxxxxxx` (10 digits). Only valid when `natureOfTransaction` is of type `SALE_OF_GOODS`. Note that this field cannot be combined with a `reference` field on the sender party.
             type: string
@@ -696,21 +692,6 @@ baseUri: https://api.bring.com/booking/api
               customsDeclarationWithImporter:
                 displayName: Customs declaration - with importer
                 value: !include examples/customsDeclarationWithImporter.xml
-
-      293:
-        displayName: VOEC - Customs Import declaration
-        description: The `ediCustomsDeclarations` element needs one `ediCustomsDeclaration` line per declared item, along with vatOnEcommerce field.
-        body:
-          application/json:
-            examples:
-              customsImportDeclaration:
-                displayName: VOEC - Customs Import declaration
-                value: !include examples/customsImportDeclaration.json
-          application/xml:
-            examples:
-              customsImportDeclaration:
-                displayName: VOEC - Customs Import declaration
-                value: !include examples/customsImportDeclaration.xml
 
       294:
         displayName: Mailbox parcel

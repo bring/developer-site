@@ -11,6 +11,14 @@ menu:
 weight: 31
  
 important:
+  - type: info
+    title: See both list price and contract price - 29.09.2022
+    message: |
+      Starting from 29.09.2022, Mybring users with financial rights can see both the list and contact price.
+  - type: info
+    title: New field damagedBarcodeImages - 24.08.2022
+    message: |
+     We have added a new field for damaged barcode images in Mybring Tracking for Super Users or the sender of the parcel. This field will be present on events with event code 5A and cause AN. The link might contain more than one image. 
   - type: warn
     title: Deprecating v1 version of Tracking API - 01.08.2022
     message: |
@@ -23,7 +31,7 @@ important:
   - type: warn
     title: Removed pickup code from open tracking - 04.02.2022
     message: |
-     As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Logged in Tracking API will still contain the pickup code.
+     As an increased security measure, as of Feb. 4th 2022 we will hide the pickup code from open Tracking API. Mybring users will continue to see pickup code on their shipments. You can also see pickup code on your shipments via Posten App.
   - type: warn
     title: Update deprecated Tracking URLs - 27.01.2022
     message: |
@@ -77,7 +85,7 @@ documentation:
 
       #### Example request
       ```
-      curl -H "api-version: 2" https://tracking.bring.com/api/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
+      curl -H "api-version: 2" https://tracking.bring.com/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
 
       ### Select version by URL
@@ -85,12 +93,12 @@ documentation:
 
       | Application | URL example |
       |:-------|:--------|
-      | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
-      | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT |
+      | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
+      | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
 
       #### Example request
       ```
-      curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGE-AT-PICKUPPOINT
+      curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
 
       ### Verification

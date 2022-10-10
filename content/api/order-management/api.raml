@@ -1,0 +1,449 @@
+#%RAML 1.0
+---
+title: Order Management API (SOAP)
+baseUri: https://api.bring.com/po
+
+/api/ws:
+  displayName: Get Purchase Order
+  description: |
+    Get Purchase Order 
+    
+    ### WSDL
+
+    [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+
+  post:
+    description: Get Purchase Order
+    headers:
+      X-MyBring-API-Uid:
+        description: Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Mybring user's API key
+        required: true
+      Content-Type:
+        description: Specify request format text/xml;charset=UTF-8
+    body:
+      application/xml:
+        properties:
+          SchemaVersion:
+            description: Schema Version
+            required: false
+            type: string
+            example: 1
+          Locale:
+            description: Locale
+            required: false
+            type: string
+            example:
+              - no
+              - en
+          DateAndTimes:
+            description: Timestamp
+            required: false
+            type: string
+            example: '2022-05-25T13:32:40.149+02:00'
+          DateAndTimes subClass:
+            description: DateAndTimes sub class
+            required: false
+            type: string
+            enum:
+              - RequestDate
+              - DocumentDate
+              - ResponseDate
+              - DeliveryDateRequested
+              - DepartureDateRequested
+              - AcceptedDate
+              - ActualTimeOfDeparture
+              - EstimatedTimeOfDeparture
+              - ActualTimeOfArrival
+              - EstimatedTimeOfArrival
+              - ActualTimeOfDelivery
+              - EstimatedTimeOfDelivery
+              - ActualTimeOfPickup
+              - EstimatedTimeOfPickup
+              - PickupDateActual
+              - BookedDate
+              - PreBookedDate
+              - CargoReadyDate
+              - ApprovedForTransportDate
+              - SupplierConfirmedReadyDate
+              - AgentBookingReceivedDate
+              - ExpirationDate
+              - FinishedDate
+              - ReceivedDate
+              - ShippersBookingDate
+              - FollowUpDate
+              - DeliveryDateEstimated
+          CustomerNo: 
+            description: Customer number
+            required: false
+            type: string
+            example: 
+              - '1823-2314'
+              - '7628173'
+          PurchaseOrderNo:
+            description: PurchaseOrder Number
+            required: false
+            type: string
+            example: '231323432'
+        examples:
+          get_purchase_order_request:
+            displayName:  Get purchase order request
+            value: !include examples/get_purchase_order_request.xml
+    responses:
+          200:
+            displayName: Get Purchase Order Responses
+            body:
+              application/xml:
+                examples:
+                  get_purchase_order_ok_response:
+                    displayName: Get purchase order ok response
+                    value: !include examples/get_purchase_order_response.xml
+                  get_purchase_order_not_found_response:
+                    displayName: Get purchase order not found response
+                    value: !include examples/get_purchase_order_not_found_response.xml
+                  get_purchase_order_access_denied_response:
+                    displayName: Get purchase order access denied response
+                    value: !include examples/get_purchase_order_access_denied_response.xml
+                  get_purchase_order_invalid_order_response:
+                    displayName: Get purchase order invalid order response
+                    value: !include examples/get_purchase_order_invalid_order_response.xml
+                  get_purchase_order_invalid_customer_number_response:
+                    displayName: Get purchase order invalid customer number response
+                    value: !include examples/get_purchase_order_invalid_customer_number_response.xml
+
+/api/ws:
+  displayName: Create Packaging List
+  description: |
+    Create Packaging List
+
+    ### WSDL
+
+    [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+
+  post:
+    description: Create Packaging List
+    headers:
+      X-MyBring-API-Uid:
+        description: Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Mybring user's API key
+        required: true
+      Content-Type:
+        description: Specify request format text/xml;charset=UTF-8
+    body:
+      application/xml:
+        properties:
+          SchemaVersion:
+            description: Schema Version
+            required: false
+            type: string
+            example: 1
+          Locale:
+            description: Locale
+            required: false
+            type: string
+            example: 
+              - no
+              - en
+          DateAndTimes:
+            description: Timestamp
+            required: false
+            type: string
+            example: '2022-05-25T13:32:40.149+02:00'
+          DateAndTimes subClass:
+            description: DateAndTimes sub class
+            required: false
+            type: string
+            enum:
+              - RequestDate
+              - DocumentDate
+              - ResponseDate
+              - DeliveryDateRequested
+              - DepartureDateRequested
+              - AcceptedDate
+              - ActualTimeOfDeparture
+              - EstimatedTimeOfDeparture
+              - ActualTimeOfArrival
+              - EstimatedTimeOfArrival
+              - ActualTimeOfDelivery
+              - EstimatedTimeOfDelivery
+              - ActualTimeOfPickup
+              - EstimatedTimeOfPickup
+              - PickupDateActual
+              - BookedDate
+              - PreBookedDate
+              - CargoReadyDate
+              - ApprovedForTransportDate
+              - SupplierConfirmedReadyDate
+              - AgentBookingReceivedDate
+              - ExpirationDate
+              - FinishedDate
+              - ReceivedDate
+              - ShippersBookingDate
+              - FollowUpDate
+              - DeliveryDateEstimated
+          CustomerNo:
+            description: Customer number
+            required: false
+            type: string
+            example: 
+              - '1823-2314'
+              - '7628173'
+          PurchaseOrderNo:
+            description: Purchase order number 
+            required: false
+            type: string
+            example: '231323432'
+          ConsignmentId:
+            description: Consignment id 
+            required: false
+            type: string
+            example: '739283472918723728'
+          PackageId:
+            description: Package id 
+            required: false
+            type: string
+            example: '46782991834'
+          orderLineId:
+            description: Order line id 
+            required: false
+            type: string
+            example: 1
+          articleLineId:
+            description: Article line id 
+            required: false
+            type: string
+            example: 10
+          ArticleQuantity:
+            description: Article quantity 
+            required: false
+            type: string
+            example: 10
+          ArticleNumber:
+            description: Article number 
+            required: false
+            type: string
+            example: 7123
+          ArticleVendorNumber:
+            description: Article vendor number 
+            required: false
+            type: string
+            example: '4688273'
+          ArticleId:
+            description: Article id 
+            required: false
+            type: string
+            example: '646929334'
+          ArticleQuantity:
+            description: Article quantity 
+            required: false
+            type: string
+            example: 10
+          UnitPrice:
+            description: Unit price 
+            required: false
+            type: string
+            example: '5382'
+          currencyIdentificationCode:
+            description: Currency identification code 
+            required: false
+            type: string
+            example: 
+              - NOK
+              - USD
+        examples:
+          create_packaging_list_request:
+            displayName:  Create packaging list request
+            value: !include examples/create_packaging_list_request.xml
+    responses:
+          200:
+            displayName: Create packaging list
+            body:
+              application/xml:
+                examples:
+                  create_packaging_list_ok_response:
+                    displayName: Create packaging list ok response
+                    value: !include examples/create_packaging_list_response.xml
+                  create_packaging_list_order_not_found_response:
+                    displayName: Create packaging list order not found response
+                    value: !include examples/create_packaging_list_order_not_found_response.xml
+                  create_packaging_list_access_denied_response:
+                    displayName: Create packaging list access denied response
+                    value: !include examples/create_packaging_list_access_denied_response.xml
+                  create_packaging_list_missing_consignment_id_response:
+                    displayName: Create packaging list missing consignment id response
+                    value: !include examples/create_packaging_list_missing_consignment_id_response.xml
+                  create_packaging_list_invalid_customer_id_response:
+                    displayName: Create packaging list invalid customer id response
+                    value: !include examples/create_packaging_list_invalid_customer_id_response.xml
+
+/api/ws:
+  displayName: Create Transport Order
+  description: |
+    Create Transport Order
+
+    ### WSDL
+
+    [ https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl ](https://api.bring.com/po/api/ws/purchaseorder-v1.wsdl)
+
+  post:
+    description: Create Transport Order
+    headers:
+      X-MyBring-API-Uid:
+        description: Mybring login ID
+        required: true
+      X-MyBring-API-Key:
+        description: Mybring user's API key
+        required: true
+      Content-Type:
+        description: Specify request format text/xml;charset=UTF-8
+    body:
+      application/xml:
+        properties:
+          SchemaVersion:
+            description: Schema Version
+            required: false
+            type: string
+            example: 1
+          Locale:
+            description: Locale
+            required: false
+            type: string
+            example:
+              - no
+              - en
+          DateAndTimes:
+            description: Timestamp
+            required: false
+            type: string
+            example: '2022-05-25T13:32:40.149+02:00'
+          DateAndTimes subClass:
+            description: DateAndTimes sub class
+            required: false
+            type: string
+            enum:
+              - RequestDate
+              - DocumentDate
+              - ResponseDate
+              - DeliveryDateRequested
+              - DepartureDateRequested
+              - AcceptedDate
+              - ActualTimeOfDeparture
+              - EstimatedTimeOfDeparture
+              - ActualTimeOfArrival
+              - EstimatedTimeOfArrival
+              - ActualTimeOfDelivery
+              - EstimatedTimeOfDelivery
+              - ActualTimeOfPickup
+              - EstimatedTimeOfPickup
+              - PickupDateActual
+              - BookedDate
+              - PreBookedDate
+              - CargoReadyDate
+              - ApprovedForTransportDate
+              - SupplierConfirmedReadyDate
+              - AgentBookingReceivedDate
+              - ExpirationDate
+              - FinishedDate
+              - ReceivedDate
+              - ShippersBookingDate
+              - FollowUpDate
+              - DeliveryDateEstimated
+          CustomerNo:
+            description: Customer number
+            required: false
+            type: string
+            example:
+              - '1823-2314'
+              - '7628173'
+          PurchaseOrderNo:
+            description: Purchase order number
+            required: false
+            type: string
+            example: '231323432'
+          ConsignmentId:
+            description: Consignment id
+            required: false
+            type: string
+            example: '739283472918723728'
+          PackageId:
+            description: Package id
+            required: false
+            type: string
+            example: '46782991834'
+          orderLineId:
+            description: Order line id
+            required: false
+            type: string
+            example: 1
+          articleLineId:
+            description: Article line id
+            required: false
+            type: string
+            example: 10
+          ArticleQuantity:
+            description: Article quantity
+            required: false
+            type: string
+            example: 10
+          ArticleNumber:
+            description: Article number
+            required: false
+            type: string
+            example: 7123
+          ArticleVendorNumber:
+            description: Article vendor number
+            required: false
+            type: string
+            example: '4688273'
+          ArticleId:
+            description: Article Id
+            required: false
+            type: string
+            example: '646929334'
+          ArticleQuantity:
+            description: Article quantity
+            required: false
+            type: string
+            example: 10
+          UnitPrice:
+            description: Unit price
+            required: false
+            type: string
+            example: 5382
+          currencyIdentificationCode:
+            description: Currency identification code
+            required: false
+            type: string
+            example: 
+              - NOK
+              - USD
+        examples:
+          create_transport_order_request:
+            displayName:  Create transport order request
+            value: !include examples/create_transport_order_request.xml
+    responses:
+          200:
+            displayName: Create transport order
+            body:
+              application/xml:
+                examples:
+                  create_transport_order_ok_response:
+                    displayName: Create transport order ok response
+                    value: !include examples/create_transport_order_response.xml
+                  create_transport_order_not_found_response:
+                    displayName: Create transport order not found response
+                    value: !include examples/create_transport_order_not_found_response.xml
+                  create_transport_order_access_denied_response:
+                    displayName: Create transport order access denied response
+                    value: !include examples/create_transport_order_access_denied_response.xml
+                  create_transport_order_missing_consignment_id_response:
+                    displayName: Create transport order missing consignment id response
+                    value: !include examples/create_transport_order_missing_consignment_id_response.xml
+                  create_transport_order_invalid_customer_id_response:
+                    displayName: Create transport order invalid customer id response
+                    value: !include examples/create_transport_order_invalid_customer_id_response.xml
+---

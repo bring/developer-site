@@ -1,0 +1,327 @@
+/* Base */
+:root[data-theme='dark'] {
+  background-color: var(--green-darkest);
+  color: var(--green-86);
+
+  /*Brighter link color for better contrast*/
+  & a:not(
+    .btn,
+    .btn-link--dark,
+    .mb-card,
+    .sitefooter a,
+    .dev-siteheader__nav a,
+    .dev-sidemenu a,
+    a.dev-codetabs__link) {
+      color: var(--blue-light);
+  }
+
+  & a:not(
+    .btn,
+    .btn-link--dark,
+    .mb-card,
+    .sitefooter a,
+    .dev-siteheader__nav a,
+    .dev-sidemenu a,
+    a.dev-codetabs__link):hover {
+      color: var(--blue-link);
+  }
+
+  & .color-theme-icon {
+    color: var(--green-26);
+  }
+
+  & .light-icon {
+    color: var(--green-86);
+  }
+
+  & .dev-eta {
+    color: var(--green-86);
+    & .dev-eta1__bring,
+    & .dev-eta2__bring {
+      color: var(--gray-13);
+    }
+  }
+
+  & .dev-docs__menu,
+  & .bg-gray1,
+  & .bg-gray2,
+  & .bg-gray4 {
+    background-color: var(--green-15);
+  }
+
+  & .bg-gray3,
+  & .bg-green1,
+  & .bg-red1 {
+    background-color: var(--green-18);
+  }
+
+  & .dev-drawmenu {
+    background-color: var(--green-darkest);
+  }
+
+  & .message--info {
+    background-color: var(--green-22);
+  }
+
+  & .message--warn {
+    background-color: var(--yellow-darker);
+    border-color: var(--yellow-dark);
+  }
+
+  & input,
+  & optgroup,
+  & select,
+  & textarea {
+    background-color: var(--green-26);
+    color: var(--green-86);
+    border-color: var(--green-40);
+  }
+
+  & .dev-docscontent__section,
+  & tr,
+  & .mb-border,
+  & .dev-sidemenu__separator {
+    border-color: var(--gray-40);
+  }
+
+  & .mb-card {
+    background-color: var(--green-22);
+    border-color: transparent;
+    &:hover {
+      background-color: var(--green-18);
+    }
+    & svg {
+      fill: var(--green);
+    }
+  }
+
+  & .cutoff-overlay {
+    background: linear-gradient(
+      0deg,
+      var(--green-darkest) 50%,
+      hsla(0, 0%, 100%, 0)
+    );
+  }
+
+  & .gray {
+    color: var(--gray-60);
+  }
+
+  & #services-bsg .icon-ui--green-dark {
+    fill: var(--green);
+  }
+
+  & #services-bsg .icon-ui--lightgray {
+    fill: var(--gray-40);
+  }
+
+  /* Buttons */
+  & .btn--white,
+  & .btn--white:link,
+  & .btn--white:visited,
+  & .btn-link--dark {
+    background-color: var(--green-22);
+    color: var(--green-86);
+    border-color: var(--green-40);
+  }
+
+  & .btn-link {
+    color: var(--green-86);
+  }
+
+  & .btn-link svg,
+  & .btn--white svg,
+  & .btn-link--dark svg {
+    color: var(--green-60);
+  }
+
+  & .btn-link:hover {
+    background-color: var(--green-22);
+  }
+
+  & .btn--white:hover,
+  & .btn--white.active {
+    background-color: var(--green-18);
+  }
+
+  & .btn-link--dark {
+    &.active,
+    &:active,
+    &[aria-selected="true"],
+    &:hover {
+      background-color: var(--green-15);
+    }
+
+    &.txt-error {
+      color: var(--red-light);
+      &:hover {
+        color: var(--red-dark);
+      }
+    }
+
+    &.txt-success {
+      color: var(--green-light);
+      &:hover {
+        color: var(--green);
+      }
+    }
+  }
+
+  & input[type="submit"] {
+    background-color: var(--green);
+    border-color: var(--green-15);
+    color: var(--gray-13);
+    &:hover {
+      background-color: var(--green-hover);
+    }
+  }
+
+  & .dev-sidemenu a,
+  & .param-toggle-icon,
+  & .form__label,
+  & .dev-docscontent__info summary,
+  & .dev-docscontent__info details p,
+  & .mb-card {
+    color: var(--green-86);
+  }
+
+  & .dev-sidemenu a {
+    &:focus,
+    &:hover {
+      background-color: hsla(150, 20%, 80%, 0.1);
+    }
+  }
+
+  & .dev-docscontent__info summary {
+    &:hover {
+      background-color: var(--green-15);
+    }
+  }
+
+  & .param-required {
+    color: var(--red-light);
+  }
+
+  & .dev-collapsible__toggler {
+    background-color: var(--green-22);
+    color: var(--green-86);
+    &:hover {
+      background-color: var(--green-26);
+    }
+  }
+
+  /* Code and badges */
+  & dl code,
+  & li code:not(table code),
+  & p code,
+  & .mb-badge {
+    background-color: var(--green-22);
+    color: var(--green-86);
+  }
+
+  & pre,
+  & .bg-white {
+    background-color: var(--green-18);
+    color: var(--green-86);
+  }
+
+  & .desc-list dt code {
+    background: transparent;
+  }
+
+  & .mb-badge--green {
+    background-color: var(--green-light);
+    color: var(--green-dark);
+  }
+
+  & .mb-badge--blue {
+    background-color: var(--blue-lighter);
+    color: var(--blue-link);
+  }
+
+  & .mb-badge--red {
+    background-color: var(--green-18);
+    color: var(--red-light);
+  }
+
+  /* Side menu */
+  & .dev-sidemenu__title {
+    color: var(--green-light);
+  }
+
+  & .dev-sidemenu__level1.active {
+    border-color: var(--green-dark);
+  }
+
+  & .dev-sidemenu__sublist a:hover,
+  & .dev-sidemenu__sublist a.active {
+    background-color: var(--green-22);
+  }
+
+  /* Response codes */
+  & .response {
+    background-color: var(--green-15);
+
+    &.green-dark {
+      color: var(--green-light);
+    }
+
+    &.red-dark {
+      color: var(--red-light);
+    }
+  }
+
+  & .mb-disclosure {
+    & > summary {
+      &:hover,
+      &:focus-visible {
+        background-color: var(--green-18);
+      }
+    }
+
+    &.bg-gray1,
+    &.bg-green1,
+    &.bg-red1 {
+      & > summary {
+        background-color: var(--green-15);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--green-18);
+        }
+      }
+
+      &[open] > summary {
+        background-color: var(--green-18);
+
+        &:hover,
+        &:focus-visible {
+          background-color: var(--green-22);
+        }
+      }
+    }
+
+    & .green-dark {
+      color: var(--green-light);
+    }
+
+    & .red-dark {
+      color: var(--red-light);
+    }
+  }
+
+  /* Code tabs */
+  & .dev-codetabs__item {
+    background-color: var(--green-26);
+    border-color: var(--green-60);
+    color: var(--green-86);
+    &.active {
+      background-color: var(--green-18);
+      border-color: var(--green);
+    }
+  }
+
+  & .dev-codetabs__link {
+    color: var(--green-86);
+  }
+}

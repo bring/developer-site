@@ -591,7 +591,7 @@
   "shippingGuideCode" : "SIMPLIFIED_DELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee" ],
+  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee", "Signature required" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
@@ -1189,6 +1189,26 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Urban Home Delivery",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "3332",
+    "productionCode" : "3332",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1237,6 +1257,26 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Curbside Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_CURBSIDE",
+    "productionCode" : "3577",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -1312,6 +1352,16 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1353,6 +1403,16 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1363,7 +1423,7 @@
   "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
   "shippingGuideNpbCode" : "1036",
   "bookingCode" : "SELECT_PICKUP_POINT",
-  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts, then pickup point" ],
+  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts then return" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "B2C",
@@ -1435,7 +1495,7 @@
   "shippingGuideCode" : "1280",
   "shippingGuideNpbCode" : "1280",
   "bookingCode" : "1280",
-  "incompatibleVases" : [ "Flex delivery" ],
+  "incompatibleVases" : [ "Flex delivery", "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -1554,6 +1614,16 @@
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
     "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Pakke levert hjem",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5600",
+    "productionCode" : "5600",
+    "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1808,7 +1878,7 @@
   "shippingGuideCode" : "1179",
   "shippingGuideNpbCode" : "1179",
   "bookingCode" : "1179",
-  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts, then pickup point", "Optional pickup point (domestic Norway)" ],
+  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts then return", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -1859,7 +1929,7 @@
   "shippingGuideCode" : "1178",
   "shippingGuideNpbCode" : "1178",
   "bookingCode" : "1178",
-  "incompatibleVases" : [ "Two delivery attempts", "Two delivery attempts, then pickup point", "Optional pickup point (domestic Norway)" ],
+  "incompatibleVases" : [ "Two delivery attempts", "Two delivery attempts then return", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til bedrift",
     "serviceType" : "B2B",
@@ -1885,8 +1955,8 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : false
 }, {
-  "vasName" : "Two delivery attempts, then pickup point",
-  "description" : "Two delivery attempts are made before shipment is handed over to closest pickup point.  ",
+  "vasName" : "Two delivery attempts then return",
+  "description" : "Two delivery attempts are made before shipment is sent in return.  ",
   "shippingGuideCode" : "1283",
   "shippingGuideNpbCode" : "1283",
   "bookingCode" : "1283",
@@ -2147,6 +2217,26 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Curbside Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_CURBSIDE",
+    "productionCode" : "3577",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2185,6 +2275,16 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2267,6 +2367,16 @@
     "serviceFamilySortOrder" : 4,
     "serviceCode" : "CURBSIDE_EVENING",
     "productionCode" : "3457",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2750,6 +2860,47 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Fixed seven-day length of stay",
+  "description" : "Blocks the possibility for the recipient to extend pickup deadline from 7 days to 14 days. Hides the delivery choice \"extend deadline\" in recipient interfaces.  ",
+  "shippingGuideCode" : "1371",
+  "shippingGuideNpbCode" : "1371",
+  "bookingCode" : "1371",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Pakke til hentested",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5800",
+    "productionCode" : "5800",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "PickUp Parcel",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "PICKUP_PARCEL",
+    "productionCode" : "0340",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "PickUp Parcel Bulk",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "PICKUP_PARCEL_BULK",
+    "productionCode" : "0342",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],

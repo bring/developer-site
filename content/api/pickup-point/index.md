@@ -16,13 +16,20 @@ introduction: |
   The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: Google). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance.
 
 guides:
-- title: Smart pickup point usage
+- title: Always provide an address
   content: |
-    For precise results, we strongly recommend to use the end customer’s complete address (not only their postal code) when using the API.
-
+    For the most accurate results when querying for pickup points close to a postal code, we **STRONGLY** recommend providing the recipient's address when using the API. This is achieved by adding the following query parameters to the request:
+    - `street`
+    - `streetNumber`
+  
+    **Example**
+    ```
+    /api/pickuppoint/{countryCode}/postalCode/{postalCode}?street=dronningens gate&streetNumber=10
+    ```
 - title: Max parcel dimensions for Pakkeboks pickup points
   content: |
     Max parcel dimensions for Pakkeboks (parcel lockers in Norway) pickup points can now be used to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. JSON field:
+    
     ```json
       "maxParcelDimensions": {
         "length": 44.5,
@@ -37,7 +44,7 @@ information:
 
   - title: Rate limiting
     content: |
-      Clients exceeding 60 requests per second will be throttled, and the response will contain http status code 429. If you have a use case requiring rates above the limit, please contact developer-booking@bring.com for assistance.
+      Clients exceeding 27 requests per second will be throttled, and the response will contain http status code 429. If you have a use case requiring rates above the limit, please contact developer-booking@bring.com for assistance.
 
   - title: Formats
     content: |
@@ -78,5 +85,5 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point **_(These lockers are placed inside buildings only accessible to the residents and workers in the building)_**
-oas: https://api.qa.bring.com/pickuppoint/openapi.json
+oas: https://api.qa.bring.com/pickuppoint/openapi
 ---

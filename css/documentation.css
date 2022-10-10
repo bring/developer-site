@@ -70,25 +70,6 @@
   max-width: 68ch;
 }
 
-.dev-docscontent__info summary {
-  font-size: 1.25rem;
-}
-
-.dev-docscontent__info details p {
-  padding: 0 1rem 1rem;
-  margin-bottom: 0;
-}
-
-summary {
-  padding-left: 0.25em;
-  padding-bottom: 0.05em;
-  border-radius: 2px;
-}
-
-summary:hover {
-  background-color: hsla(0, 100%, 0%, 0.04);
-}
-
 .dev-docs__menu {
   background-color: var(--gray-95);
   display: flex;
@@ -177,41 +158,27 @@ summary:hover {
   width: 38%;
 }
 
-.response {
-  transition: background var(--easeout-15);
-  background: var(--gray-95);
-}
-
 div.response {
-  padding-left: 1.4em;
+  padding: 0.5rem 0.5rem 0.5rem 1.8em;
 }
 
-.response.success-code {
-  background: var(--green-lighter);
-  color: var(--green-dark);
-}
-
-.response.error-code {
+.bg-red1 {
   background: var(--red-lighter);
+}
+
+.red-dark {
   color: var(--red-dark);
 }
 
-summary.success-code:focus,
-summary.error-code:focus,
-summary.default:focus {
-  outline: 1px solid;
+.mb-disclosure.bg-red1 > summary:hover,
+.mb-disclosure.bg-red1 > summary:focus-visible,
+.mb-disclosure.bg-red1[open] > summary {
+  background-color: var(--red-lighter-hover);
 }
 
-summary.response:hover {
-  background: var(--gray-90);
-}
-
-summary.success-code:hover {
-  background: hsl(86, 40%, 90%);
-}
-
-summary.error-code:hover {
-  background: var(--red-lighter-hover);
+.mb-disclosure.bg-red1[open] > summary:hover,
+.mb-disclosure.bg-red1[open] > summary:focus-visible {
+  background-color: var(--red-lighter-active);
 }
 
 .hauto {
@@ -229,7 +196,7 @@ summary.error-code:hover {
 }
 
 .desc-list dt {
-  flex: 1 1 8rem;
+  flex: 1 1 12rem;
   font-weight: 400;
 }
 

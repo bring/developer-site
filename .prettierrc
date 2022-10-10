@@ -1,6 +1,7 @@
 {
   "proseWrap": "always",
   "semi": false,
+  "trailingComma": "none",
   "overrides": [
     {
       "files": ["layouts/**/*.html"],

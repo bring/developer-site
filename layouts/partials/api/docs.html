@@ -32,19 +32,26 @@
               {{- end -}}
             {{- end -}}
             {{- with $.Params.information -}}
-              <div class="dev-docscontent__info mvl">
+              <div class="dev-docscontent__info mvl owlxs">
                 {{- range . -}}
-                  <details class="bg-green1 rad-a2px mbxs">
+                  <details class="mb-disclosure mb-disclosure--arrow bg-green1">
                     {{- with .title }}
-                      <summary class="pas plm">
+                      <summary class="text-heading">
+                        <span
+                          data-mybicon="mybicon-arrow-right"
+                          data-mybicon-width="16"
+                          data-mybicon-height="16"
+                        ></span>
                         {{- . -}}
                       </summary>
                     {{- end -}}
-                    {{- if in (string .content) "\n\n" -}}
-                      {{- .content | markdownify -}}
-                    {{- else -}}
-                      <p>{{ .content | markdownify }}</p>
-                    {{- end -}}
+                    <div class="pam">
+                      {{- if in (string .content) "\n\n" -}}
+                        {{- .content | markdownify -}}
+                      {{- else -}}
+                        <p>{{ .content | markdownify }}</p>
+                      {{- end -}}
+                    </div>
                   </details>
                 {{- end -}}
               </div>
@@ -77,13 +84,13 @@
               <th>Endpoint</th>
             </thead>
             {{- range .resources -}}
-              {{ $resDisplayName := .displayName | urlize }}
               {{ $displayName := .displayName }}
               {{ $resRelUri := .relativeUri | safeHTML }}
               {{- range .methods -}}
+                {{- $endpointId := (print $displayName "-" .method | anchorize) -}}
                 <tr>
                   <td>
-                    <a href="#{{ $resDisplayName }}" title="{{- $displayName -}}">
+                    <a href="#{{ $endpointId }}" title="{{- $displayName -}}">
                       {{- .description | safeHTML -}}
                     </a>
                   </td>
@@ -102,20 +109,24 @@
         {{- range .resources -}}
           {{- $resources := . -}}
           {{- $displayName := .displayName -}}
+          {{- $method := "" -}}
+          {{- range .methods -}}
+            {{- with .method -}}
+              {{- $method = . -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $endpointId := (print $displayName "-" $method | anchorize) -}}
           <section class="dev-docscontent__section maxw64r">
-            <h2 class="dev-anchored mbm" id="{{ $displayName | anchorize }}">
+            <h2 class="dev-anchored mbm" id="{{ $endpointId }}">
               {{- $displayName -}}
             </h2>
+
+            {{ $description := "" }}
             {{- with .description -}}
-              {{- if in (string .) "\n\n" -}}
-                {{ .| markdownify }}
-                {{- else -}}
-                <p>{{ . | markdownify }}</p>
-              {{- end -}}
+              {{ $description = . }}
             {{- end -}}
 
             {{- range .methods -}}
-              <h3 class="dn">URL</h3>
               {{- $urlOutput := slice -}}
               {{- $absUri := $resources.absoluteUri -}}
               {{- $hasExtension := false -}}
@@ -132,10 +143,22 @@
                 {{- $urlOutput = $urlOutput | append $absUri -}}
               {{- end -}}
 
-              <pre class="flex align-ic">
-                          <span class="mrs phs pvxs bg-gray4">{{ .method | upper }}</span>
-                          <span>{{ delimit $urlOutput "<br>" }}</span>
-                        </pre>
+              <div class="flex align-ic mbl mts">
+                {{- partial "api/oas/endpoint-type" (dict "type" .method) -}}
+                <span class="flex-auto">
+                  <pre class="flex align-ic pas mb0 wrap-text">
+                    <span>{{ delimit $urlOutput "<br>" }}</span>
+                  </pre>
+                </span>
+              </div>
+
+              {{- with $description -}}
+                {{- if in (string .) "\n\n" -}}
+                  {{ . | markdownify }}
+                  {{- else -}}
+                  <p>{{ . | markdownify }}</p>
+                {{- end -}}
+              {{- end -}}
 
               {{/* uri params exists and first one is not mediaTypeExtension */}}
               {{- $otherUriParamsMediaType := false -}}
@@ -334,5 +357,3 @@ if('clipboard' in navigator) {
   }
 }
 </script>
-
-<script async src='{{ "/js/scrollmarker.js" | relURL }}'></script>
