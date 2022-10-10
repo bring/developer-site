@@ -43,13 +43,15 @@
           class="btn-link btn--transparent phs white themes-btn"
           id="themesBtn"
           aria-label="Choose color mode"
+          aria-expanded="false"
+          aria-controls="themeSwitchContainer"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" class="icon-ui white color-theme-icon mrs pointev-none">
             <path d="M512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64V448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/>
           </svg>
           <span class="pointev-none">Auto</span>
         </button>
-        <div class="paxs rad-a2px bg-gray1 bshadow--dark theme-switch-container w100p dn">
+        <div class="paxs rad-a2px bg-gray1 bshadow--dark theme-switch-container w100p dn" id="themeSwitchContainer">
           <button
             class="btn-link btn--transparent phs text-note theme-switch w100p"
             aria-label="Auto color mode"
@@ -106,11 +108,16 @@
       const storedTheme = localStorage.getItem("theme");
 
       themesBtn.addEventListener("click", (e) => {
+        let expandedState = e.target.getAttribute("aria-expanded");
+        expandedState = expandedState === "true" ? false : true;
+        e.target.setAttribute("aria-expanded", expandedState);
+
         themeSwitchContainer.classList.toggle("dn");
       });
 
       htmlContainer.addEventListener("click", (e) => {
         if(e.target !== themeSwitchContainer && e.target !== themesBtn) {
+          themesBtn.setAttribute("aria-expanded", false);
           themeSwitchContainer.classList.add("dn");
         }
       });
