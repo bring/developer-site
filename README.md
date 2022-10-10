@@ -186,54 +186,6 @@ oas: {Link to OAS JSON, typically outputted by Swagger}
 4. Open the generated xlsx file, replace the relevant sheet in
    `static/services/services_booking_shippingguide.xlsx` in the dev-site repo.
 
-## Adding a new article/blog post
-
-If you only have text, make a new .md file in `content/blog` Use the article
-title or something close to it as filename, make sure to use dashes instead of
-spaces. This will be the url slug.
-
-If you have images or other files, make a new folder in `content/blog` Use the
-article title or something close to it as foldername, make sure to use dashes
-instead of spaces. This will be the url slug. Make an index.md file. Add your
-other files to the folder, you can make subfolders if it helps you organise the
-content.
-
-### Frontmatter and content
-
-Add the following frontmatter to your article file. It supports multi authors
-and multi tags.
-
-```
----
-title: {Article title}
-layout: post
-publishDate: {YYYY-MM-DD HH:MM:SS} +01:00
-authors:
-  - {githubname}
-  - …
-tags:
-  - {tag}
-  - …
----
-```
-
-Then add your content below that. Files are linked relative to your .md file
-
-### Excerpt and image
-
-The excerpts on the list page is auto generated form the first 60 words in your
-article. It’s possible to manually set the cutoff and add an image.
-
-Add `<!--more-->` where you want the cutoff to happen.
-
-To add an image in your excerpt, add the file to your post’s folder and the
-following to the frontmatter:
-
-```
-resources:
-  - src: {filename.jpg}
-```
-
 ## Working with guides
 
 There are some frontmatter options intended for, but not exclusive to, the guide
