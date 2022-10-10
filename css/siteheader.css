@@ -108,25 +108,22 @@
 }
 
 .color-theme-container {
-  margin: 0 1rem;
+  margin: 0 1rem 0 auto;
 }
 
 .theme-switch-container {
-  background: var(--green-40);
   position:absolute;
   top:100%;
   right:0;
 }
 
-.themes-btn:hover,
-.theme-switch:hover {
+.themes-btn:hover {
   color: var(--green-86);
 }
 
 .dev-siteheader__search {
   flex: 1;
   padding: 0.5rem 1.5rem;
-  margin-left: auto;
   align-self: center;
   display: flex;
   flex-flow: row nowrap;
@@ -166,21 +163,5 @@
   }
   .dev-tagline-svg {
     padding: 0.9rem 0 0 0.8rem;
-  }
-
-  .dev-siteheader__title {
-    order: 1;
-  }
-
-  .color-theme-container {
-    order: 2;
-  }
-
-  .dev-siteheader__search {
-    order: 3;
-  }
-
-  .dev-siteheader__nav {
-    order: 4;
   }
 }

@@ -22,7 +22,7 @@
   padding: 0.5rem 0.5rem 0.5rem 2.5rem;
   line-height: 1.5;
   background: none;
-  background-color: hsla(0, 0%, 100%, 0.1);
+  background-color: hsla(0, 0%, 100%, 0.1) !important;
   border: 1px solid hsla(0, 0%, 100%, 0.25);
   border-radius: 2px;
   margin-right: 0.25rem;
