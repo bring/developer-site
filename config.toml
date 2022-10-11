@@ -51,8 +51,7 @@ apis = [
   "content/api/tracking/api.raml",
 ]
 examples = [
-  "content/api/booking/examples/",
-  "content/api/warehousing/examples/"
+  "content/api/booking/examples/"
 ]
 
 [taxonomies]
