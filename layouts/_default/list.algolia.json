@@ -56,4 +56,49 @@
         "content" .Plain) -}}
   {{- end -}}
 {{- end -}}
+
+{{- $.Scratch.Add "servicesPortfolio" slice -}}
+{{- range $.Site.Data.service -}}
+  {{- $.Scratch.Add "servicesPortfolio" 
+    (dict
+      "code" .code
+      "apiId" .apiId
+      "nameNo" .nameNo
+      "nameEn" .nameEn
+      "serviceGroup" .serviceGroup) -}}
+{{- end -}}
+{{- range $.Site.Data.services_bsg -}}
+  {{- $.Scratch.Add "servicesPortfolio" 
+    (dict
+      "ServiceFamily" .ServiceFamily
+      "ServiceName" .ServiceName
+      "ServiceCode" .ServiceCode
+      "RequestCode" .RequestCode) -}}
+{{- end -}}
+{{- range $.Site.Data.services_ri -}}
+  {{- $.Scratch.Add "servicesPortfolio" 
+    (dict
+      "ServiceFamily" .ServiceFamily
+      "ReportsName" .ReportsName) -}}
+{{- end -}}
+{{- range $.Site.Data.services_vas -}}
+  {{- $.Scratch.Add "servicesPortfolio" 
+    (dict
+      "vasName" .vasName
+      "description" .description
+      "shippingGuideCode" .shippingGuideCode
+      "shippingGuideNpbCode" .shippingGuideNpbCode
+      "bookingCode" .bookingCode) -}}
+{{- end -}}
+{{- with .Site.GetPage "/api/services" -}}
+  {{- $.Scratch.Add "index"
+    (dict
+      "objectID" .File.UniqueID
+      "permalink" .Permalink
+      "relpermalink" .RelPermalink
+      "title" .Title
+      "section" (.Section | upper)
+      "services" ($.Scratch.Get "servicesPortfolio")) -}}
+{{- end -}}
+
 {{- $.Scratch.Get "index" | jsonify -}}
