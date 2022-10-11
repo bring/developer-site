@@ -35,7 +35,7 @@
           <CodAmount>10</CodAmount>
         </COD>
         <TermsOfPayment otherDesc="String">
-          <TOPConditionCode>String</TOPConditionCode>
+              <TOPConditionCode>String</TOPConditionCode>
         </TermsOfPayment>
         <PriorityCode>String</PriorityCode>
       </Order>

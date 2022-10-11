@@ -40,6 +40,8 @@ apis = [
   "content/api/booking/api.raml",
   "content/api/shipping-guide_2/api.raml",
   "content/api/warehousing/api.raml",
+  "content/api/warehousing3/api.raml",
+  "content/api/warehousing4/api.raml",
   "content/api/order-management/api.raml",
   "content/api/postal-code/api.raml",
   "content/api/event-cast/api.raml",

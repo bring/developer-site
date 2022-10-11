@@ -1,0 +1,115 @@
+#%RAML 1.0
+---
+title: Pull order/article
+baseUri: https://api.bring.com/po/api/v1
+
+/order/{customerId}/{orderId}:
+  displayName: Get order information
+  description: Get all information on a given order.
+  get:
+    description: Get order information
+    responses:
+      200:
+        displayName: Success
+        description: Complete order information including order items.
+        body:
+          application/xml:
+            examples:
+              retrieve_order (xml):
+                displayName: Response (XML)
+                value: !include examples/retrieve_order.xml
+              retrieve_order (json):
+                displayName: Response (JSON)
+                value: !include examples/retrieve_order.json
+
+/items/{customerId}/{orderId}:
+  displayName: List order items
+  description: List all item lines on an order.
+  get:
+    description: List order items
+    responses:
+      200:
+        displayName: Success
+        description: List of order items.
+        body:
+          application/xml:
+            examples:
+              retrieve_orderitems (xml):
+                displayName: Response (XML)
+                value: !include examples/retrieve_orderitems.xml
+              retrieve_orderitems (json):
+                displayName: Response (JSON)
+                value: !include examples/retrieve_orderitems.json
+
+/articlebalance/{customerId}:
+  displayName: Get stock balance and info for all articles
+  get:
+    description: Get stock balance and info for all articles
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            examples:
+              retrieve_articlebalance_all (xml):
+                displayName: Response (XML)
+                value: !include examples/retrieve_articlebalance_all.xml
+              retrieve_articlebalance_all (json):
+                displayName: Response (JSON)
+                value: !include examples/retrieve_articlebalance_all.json
+
+/articlebalance/{customerId}/{articleNo}:
+  displayName: Get stock balance and info for one article
+  get:
+    description: Get stock balance and info for one article
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            examples:
+              retrieve_articlebalance (xml):
+                displayName: Response (XML)
+                value: !include examples/retrieve_articlebalance_one.xml
+              retrieve_articlebalance (json):
+                displayName: Response (JSON)
+                value: !include examples/retrieve_articlebalance_one.json
+
+/articlebalance/info/{customerId}/{articleSearchString}:
+  displayName: Get stock balance and info for all articles matching search string
+  get:
+    description: Get stock balance and info for all articles matching search string
+    responses:
+      200:
+        displayName: Success
+        description: |
+        body:
+          application/xml:
+            examples:
+              retrieve_articlebalance_search (xml):
+                displayName: Response (XML)
+                value: !include examples/retrieve_articlebalance_search.xml
+              retrieve_articlebalance_search (json):
+                displayName: Response (JSON)
+                value: !include examples/retrieve_articlebalance_search.json
+
+/errorCodes:
+  displayName: List error codes
+  get:
+    description: List error codes
+    responses:
+      200:
+        displayName: Success
+        description: |
+          Dynamic list of error codes used in the solution.
+        body:
+          application/xml:
+            examples:
+              error_codes (xml):
+                displayName: Error codes (XML)
+                value: !include examples/error_codes.xml
+              error_codes (json):
+                displayName: Error codes (JSON)
+                value: !include examples/error_codes.json

@@ -1,133 +1,286 @@
 {
+  "version": "5.0",
+  "definedBy": "BIG",
+  "domain": "SupplyChain",
+  "collaboration": "Order",
   "messageFunction": "Order",
+  "profile": "bringXML",
+  "language": "",
+  "messageId": "String",
+  "updateIndicator": "",
+  "testIndicator": "",
   "MessageDetails": {
     "MessageSender": {
-      "partyId": "999999"
+      "partyId": "String",
+      "idType": "ZZ"
+    },
+    "MessageRecipient": {
+      "partyId": "7080003388100",
+      "idType": "14"
     },
     "MessageDate": {
-      "value": "2019-01-02"
+      "Value": "2022-08-14T09:20:47"
     }
   },
   "SupplyStructure": {
-    "OrderSet": [{
-      "updateIndicator": "Original",
-      "Order": {
-        "Reference": [{
-          "ReferenceNo": "10000-2",
-          "Text": "Additional reference number",
-          "referenceType": "ACD"
-        }],
-        "DateAndTimes": [
+    "OrderSet": [
+      {
+        "updateIndicator": "String",
+        "Order": {
+          "orderId": "String",
+          "ExternalOrderType": "String",
+          "Reference": [
+            {
+              "referenceType": "String",
+              "ReferenceNo": "String"
+            },
+            {
+              "referenceType": "String",
+              "ReferenceNo": "String"
+            }
+          ],
+          "DateAndTimes": [
+            {
+              "subClass": "String",
+              "Date": "2022-08-14",
+              "Time": "09:20:00"
+            },
+            {
+              "subClass": "String",
+              "Date": "2022-08-14",
+              "Time": "09:20:00"
+            }
+          ],
+          "TermsOfDelivery": [
+            {
+              "TODConditionCode": {
+                "Value": "String"
+              }
+            }
+          ],
+          "FreeText": [
+            {
+              "UsageCode": "String",
+              "Text": [
+                {
+                  "Value": "String"
+                }
+              ]
+            },
+            {
+              "UsageCode": "String",
+              "Text": [
+                {
+                  "Value": "String"
+                }
+              ]
+            }
+          ],
+          "COD": {
+            "CodAmount": "10"
+          },
+          "TermsOfPayment": {
+            "otherDesc": "String",
+            "TOPConditionCode":  "String"
+          },
+          "PriorityCode": "String"
+        },
+        "TransportService": {
+          "BasicServiceCode": {
+            "Value": "String"
+          },
+          "AdditionalService": [
+            {
+              "AdditionalServiceCode": {
+                "Value": "String"
+              }
+            },
+            {
+              "AdditionalServiceCode": {
+                "Value": "String"
+              }
+            }
+          ]
+        },
+        "Party": [
           {
-            "Date": "2019-01-02",
-            "Time": "23:00:00",
-            "subClass": "DocumentDate"
+            "subClass": "String",
+            "partyId": "String",
+            "subPartyId": "String",
+            "Name": "String",
+            "Address": [
+              {
+                "subClass": "PhysicalAddress",
+                "PostalCode": "String",
+                "City": "String",
+                "CountryCode": {
+                  "Value": "String"
+                },
+                "Street": "String",
+                "AddressLine": [
+                  "String"
+                ]
+              }
+            ],
+            "Contact": [
+              {
+                "PhoneNo": "String",
+                "CellPhoneNo": "String",
+                "EMailAddress": "String",
+                "ContactName": "String"
+              }
+            ]
           },
           {
-            "Date": "2019-01-06",
-            "Time": "23:00:00",
-            "subClass": "DeliveryDateRequested"
+            "subClass": "String",
+            "partyId": "String",
+            "subPartyId": "String",
+            "Name": "String",
+            "Address": [
+              {
+                "subClass": "PhysicalAddress",
+                "PostalCode": "String",
+                "City": "String",
+                "CountryCode": {
+                  "Value": "String"
+                },
+                "Street": "String",
+                "AddressLine": [
+                  "String"
+                ]
+              }
+            ],
+            "Contact": [
+              {
+                "PhoneNo": "String",
+                "CellPhoneNo": "String",
+                "EMailAddress": "String",
+                "ContactName": "String"
+              }
+            ]
+          },
+          {
+            "subClass": "PerformingUnit",
+            "partyId": "String",
+            "Name": "String"
           }
         ],
-        "orderId": "10000-2"
-      },
-      "TransportService": {
-        "BasicServiceCode": {
-          "value": "SERVICEPAKKE"
-        }
-      },
-      "Party": [{
-        "subClass": "DeliveryParty",
-        "partyId": "32628",
-        "Name": "Customer 1",
-        "Address": [{
-          "PostalCode": "0181",
-          "City": "Oslo",
-          "StateOrRegion": "",
-          "CountryCode": {
-            "value": "NO"
-          },
-          "Street": "Torggata 5",
-          "AddressLine": [null],
-          "subClass": "PhysicalAddress"
-        }],
-        "Contact": [{
-          "CellPhoneNo": "99999999",
-          "EMailAddress": "contact@mottaker.no"
-        }]
-      },
-        {
-          "subClass": "OrderingParty",
-          "partyId": "32628",
-          "Name": "Customer 1",
-          "Address": [{
-            "PostalCode": "4391",
-            "City": "SANDNES",
-            "StateOrRegion": "SANDNES",
-            "CountryCode": {
-              "value": "NO"
-            },
-            "Street": "Postboks 1126",
-            "AddressLine": [""],
-            "subClass": "PostalAddress"
-          }],
-          "Contact": [{
-            "EMailAddress": "torggata@kitchn.no"
-          }],
-          "VATNo": "XXXXXXXXX"
-        },
-        {
-          "subClass": "Supplier",
-          "partyId": "999999",
-          "Name": "Warehousecustomer",
-          "Address": [{
-            "PostalCode": "0257",
-            "City": "Oslo",
-            "StateOrRegion": "Oslo",
-            "CountryCode": {
-              "value": "NO"
-            },
-            "Street": "Skovveien 6",
-            "AddressLine": [""],
-            "subClass": "PhysicalAddress"
-          }],
-          "VATNo": "XXXXXXXXX"
-        },
-        {
-          "subClass": "PerformingUnit",
-          "Name": "BERGER"
-        }],
-      "OrderLineSet": [{
-        "OrderItem": [{
-          "articleLineId": 1,
-          "ArticleId": [{
-            "value": "478015",
-            "codeListAgencyIdentifier": "CustomerItemNo"
-          }],
-          "ArticleQuantity": {
-            "value": 1,
-            "unitCode": "STK"
-          },
-          "Description": [{
-            "Text": [{
-              "value": "Article Text"
-            }],
-            "usageCode": "AAA"
-          }],
-          "ArticleMonetaryAmounts": {
-            "UnitPrice": {
-              "value": 120,
-              "currencyIdentificationCode": "NOK"
-            }
-          },
-          "ItemTotals": {
-            "GrossWeight": {
-              "unitCode": "GRM",
-              "value": 106
-            }
+        "OrderLineSet": [
+          {
+            "OrderItem": [
+              {
+                "articleLineId": "String",
+                "ArticleId": [
+                  {
+                    "codeListIdentifier": "String",
+                    "Value": "String"
+                  },
+                  {
+                    "codeListIdentifier": "String",
+                    "Value": "String"
+                  }
+                ],
+                "ArticleQuantity": {
+                  "unitCode": "String",
+                  "Value": "10"
+                },
+                "ArticleReference": [
+                  {
+                    "referenceType": "String",
+                    "ReferenceNo": "String"
+                  },
+                  {
+                    "referenceType": "String",
+                    "ReferenceNo": "String"
+                  }
+                ],
+                "Description": [
+                  {
+                    "usageCode": "String",
+                    "Text": [
+                      {
+                        "Value": "String"
+                      }
+                    ]
+                  },
+                  {
+                    "usageCode": "String",
+                    "Text": [
+                      {
+                        "Value": "String"
+                      }
+                    ]
+                  }
+                ],
+                "DateAndTimes": [
+                  {
+                    "subClass": "String",
+                    "Date": "2022-08-14",
+                    "Time": "09:20:00"
+                  },
+                  {
+                    "subClass": "String",
+                    "Date": "2022-08-14",
+                    "Time": "09:20:00"
+                  }
+                ],
+                "ArticleMonetaryAmounts": {
+                  "UnitPrice": {
+                    "currencyIdentificationCode": "String",
+                    "Value": "10"
+                  }
+                },
+                "Utility": [
+                  {
+                    "usageCode": "String",
+                    "codeListIdentifier": "String"
+                  },
+                  {
+                    "usageCode": "String",
+                    "codeListIdentifier": "String"
+                  }
+                ],
+                "ArticleStatus": "String",
+                "ArticleSerialNos": {
+                  "ArticleSerialNo": "String"
+                },
+                "ArticleBatchNo": "String",
+                "FreeText": [
+                  {
+                    "UsageCode": "String",
+                    "Text": [
+                      {
+                        "Value": "String"
+                      }
+                    ]
+                  },
+                  {
+                    "UsageCode": "String",
+                    "Text": [
+                      {
+                        "Value": "String"
+                      }
+                    ]
+                  }
+                ],
+                "ArticleName": "String"
+              }
+            ],
+            "PalletInfo": [
+              {
+                "EPDCode": "String",
+                "PalletQuantity": "10"
+              }
+            ]
           }
-        }]
-      }]
-    }]
+        ],
+        "CustomsClearance": {
+          "FreightChargeAmount": {
+            "Value": "10"
+          },
+          "FreightChargeCarrier": "String"
+        }
+      }
+    ]
   }
 }

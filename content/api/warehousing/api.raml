@@ -1,336 +1,1217 @@
 #%RAML 1.0
 ---
-title: Warehousing API
-baseUri: https://api.bring.com/warehousing/api/v1
+title: Send order/article
+baseUri: https://bapi.bring.com/wh/api/v1
+#types:
+#  CreateOrderReq:
+#    type: object
+#    description: Create Order Req
+#    properties:
+#      CreateOrderRequest:
+#        type: CreateOrderRequest
+#        required: true
+#        description: Create Order Request
+#  CreateOrderRequest:
+#    type: object
+#    description: Send Order
+#    properties:
+#      01 version:
+#        type: string
+#        required: true
+#        description: (attribute) Version of Request<br><br>Default value&#58;<br><ul><li>5.0</li></ul>
+#      02 definedBy:
+#        type: string
+#        required: true
+#        description: (attribute) Defined By<br><br>Default value&#58;<br><ul><li>BIG</li></ul>
+#      03 domain:
+#        type: string
+#        required: true
+#        description: (attribute) Domain<br><br>Default value&#58;<br><ul><li>SupplyChain</li></ul>
+#      04 collaboration:
+#        type: string
+#        required: true
+#        description: (attribute) Collaboration<br><br>Default value&#58;<br><ul><li>Order</li></ul>
+#      05 messageFunction:
+#        type: string
+#        required: true
+#        description: (attribute) Type of order<br><br>Example&#58;<br>For salesorder/customer order = &quot;Order&quot;<br>For purchaseOrder = &quot;PurchaseOrder&quot;
+#      06 Profile:
+#        type: string
+#        required: true
+#        description: (attribute) Profile<br><br>Default value&#58;<br><ul><li>BringXML</li></ul>
+#      07 messageId:
+#        type: string
+#        required: true
+#        description: (attribute) Unique id for this message<br><br>Example&#58;<br>3dcc8b71-2bf7-4574-813d-9295bd5db8c0
+#      08 updateIndicator:
+#        type: string
+#        required: false
+#        description: (attribute) Update Indicator<br><br>Example&#58;<br>updateIndicator=&quot;Deletion&quot;
+#      09 testIndicator:
+#        type: string
+#        required: false
+#        description: (attribute) Whether this is a test message<br><br>Example&#58;<br>testIndicator=&quot;NO&quot;
+#      10 MessageDetails:
+#        type: MessageDetailsTYPE
+#        required: true
+#        description: Details of the Message
+#      11 SupplyStructure:
+#        type: SupplyStructure
+#        required: true
+#        description: Supply Structure
+#  MessageDetailsTYPE:
+#    type: object
+#    description: Message Details
+#    properties:
+#      MessageDate:
+#        type: datetime
+#        required: true
+#        description: The date on which the message was sent<br><br>Example&#58;<br>&lt;MessageDate&gt;2021-02-12T13:38:08&lt;/MessageDate&gt;
+#      MessageRecipient:
+#        type: MessageRecipient
+#        description: Message Recipient
+#      MessageSender:
+#        type: MessageSender
+#        description: Message Sender
+#  MessageRecipient:
+#    type: object
+#    properties:
+#      1 partyId:
+#        type: string
+#        required: true
+#        description: (attribute) Receiving Bring System. A GLN number for Warehousing.<br><br>Default value&#58;<br>&lt;MessageRecipient <b>partyId=&quot;7080003388100&quot;</b> idType=&quot;14&quot; /&gt;
+#      2 idType:
+#        type: string
+#        required: false
+#        description: partyId type<br><br>Possible values&#58;<br><ul><li><b>14</b> - EAN International</li><li><b>30</b> - ISO 6523&#58; Organization identification</li><li><b>ZZ</b> - Mutually defined</li></ul><br>Example&#58;<br>&lt;MessageSender partyId=&quot;20001234567&quot; <b>idType=&quot;14&quot;</b> /&gt;
+#  MessageSender:
+#    type: object
+#    properties:
+#      1 partyId:
+#        type: string
+#        required: true
+#        description: (attribute) Customer number (6 or 11 digits) provided by Bring<br><br>Example&#58;<br>&lt;MessageSender <b>partyId=&quot;20001234567&quot;</b> idType=&quot;14&quot; /&gt;
+#      2 idType:
+#        type: string
+#        required: false
+#        description: (attribute) partyId type<br><br>Possible values&#58;<br><ul><li><b>14</b> - EAN International</li><li><b>30</b> - ISO 6523&#58; Organization identification</li><li><b>ZZ</b> - Mutually defined</li></ul><br>Example&#58;<br>&lt;MessageSender partyId=&quot;20001234567&quot; <b>idType=&quot;14&quot;</b> /&gt;
+#  SupplyStructure:
+#    type: object
+#    properties:
+#      ORDERSET:
+#        type: ORDERSET
+#        required: true
+#        description: Order Set
+#  ORDERSET:
+#    type: object
+#    properties:
+#      1 updateIndicator:
+#        type: string
+#        required: true
+#        description: (attribute) Update Indicator<br><br>Possible values&#58;<br><ul><li><b>Original</b></li><li><b>Update</b></li><li><b>Delete</b></li></ul>
+#      2 ORDER:
+#        type: ORDER
+#        required: true
+#        description: Order
+#      3 TransportService:
+#        type: TransportService
+#        required: true
+#        description: Transport service for shipment to customer.<br><br>Example&#58;<br>&lt;TransportService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;BasicServiceCode&gt;Servicepakke&lt;/BasicServiceCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;EVARSLING&lt;/AdditionalServiceCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;PickUpPoint&lt;/AdditionalServiceCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;TariffReference&gt;TariffReference_0&lt;/TariffReference&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;NatureOfCargo&gt;NatureOfCargo_0&lt;/NatureOfCargo&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Priority&gt;Priority_0&lt;/Priority&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Utility usageCode=&quot;&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Value sequence=&quot;&quot; valueType=&quot;&quot; valueCode=&quot;&quot;&gt;Value_0&lt;/Value&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Utility&gt;<br>&lt;/TransportService&gt;
+#      4 Party:
+#        type: Party
+#        required: true
+#        description: Party<br><br>An order consists of several Parties&#59; a supplier, a sender, a receiver, etc.<br>The subClass code defines each type of party.<br>Must have Name, Street, City, CountryCode<br><br>Example&#58;<br>&lt;Party subClass=&quot;OrderingParty&quot; partyId=&quot;11223&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name&gt;Testcompany&lt;/Name&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Address subClass=&quot;PhysicalAddress&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;PostalCode&gt;0123&lt;/PostalCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;City&gt;OSLO&lt;/City&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CountryCode&gt;NO&lt;/CountryCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Street&gt;Teststreet 2&lt;/Street&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Address&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Contact&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CellPhoneNo&gt;99010100&lt;/CellPhoneNo&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;EMailAddress&gt;john.doe@posten.no&lt;/EMailAddress&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ContactName&gt;John Doe&lt;/ContactName&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Contact&gt;<br>&lt;/Party&gt;
+#      5 OrderLineSet:
+#        type: OrderLineSet
+#        required: true
+#        description: Order Line Set
+#      6 CustomsClearance:
+#        type: CustomsClearance
+#        required: false
+#        description: Customs Clearance
+#  ORDER:
+#    type: object
+#    properties:
+#      a orderId:
+#        type: string
+#        required: true
+#        description: (attribute) Unique ID for this order<br><br>Example&#58;<br>&lt;Order <b>orderId=&quot;123456&quot;</b> /&gt;
+#      b ExternalOrderType:
+#        type: string
+#        required: false
+#        description: Type of Order<br><br><b>Example CustomerOrder(CO)&#58;</b><br><ul><li><b>220</b> - Standard Order</li><li><b>224</b> - Rush Order</li><li><b>237</b> - Special Order (used for crosslocking)</li></ul>Or other agreed by Warehousing<br><br>e.g.<br>&#60;OrderSet updateIndicator=&#34;Original&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;Order orderId=&#34;123456&#34;&#62;<br>&#60;ExternalOrderType&#62;<b>220</b>&#60;/ExternalOrderType&#62;<br><br><b>Example PurchaseOrder(PO)&#58;</b><br><ul><li><b>R</b> - Return order</li></ul><br>e.g.<br>&#60;OrderSet updateIndicator=&#34;Original&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;Order orderId=&#34;123456&#34;&#62;<br>&#60;ExternalOrderType><b>R</b>&#60;/ExternalOrderType&#62;
+#      c Reference:
+#        type: Reference[]
+#        description: Order Reference.<br><b>The first 3 referenceTypes are required&#58;</b><br><ul><li><b>ACD</b> - Additional reference number. Used for Bring WH clients ordernumber</li><li><b>CU</b> - Consignor&#39;s reference number. Reference number assigned by a consignor to a particular shipment for his own purposes or for those of the consignee.<br><br>Used for &#34;V&#229;r.ref/our reference&#34;.<br>Varies on PO and CO.<br>For PO &#34;sellers ref&#34; = supplier to the WH<br>For CO &#34;sellers ref&#34; = Bring WH client selling items to their customer.<br><br></li><li><b>ON</b> - Order number (purchase)/Buyer&#34;s reference.<br>Reference number assigned by the buyer to an order.<br>Used for &#34;Deres ref/your/their reference&#34;</li></ul><br>Example&#58;<br>&#60;Reference referenceType=&#34;<b>ACD</b>&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;ReferenceNo&#62;1234&#60;/ReferenceNo&#62;<br>&#60;/Reference&#62;<br><br>&#60;Reference referenceType=&#34;<b>CU</b>&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;ReferenceNo&#62;12345&#60;/ReferenceNo&#62;<br>&#60;/Reference&#62;<br><br>&#60;Reference referenceType=&#34;<b>ON</b>&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;ReferenceNo&#62;123456&#60;/ReferenceNo&#62;<br>&#60;/Reference&#62;<br><br><b>The following referenceTypes are optional&#58;</b><br><br><ul><li><b>SS</b> - Sellers reference number.<br>Reference number assigned to a transaction by the seller.</li><li><b>COI</b> - Your reference. Takes precedence over ON.</li></ul><br>You can find more general information on referenceTypes <a href="https://www.stylusstudio.com/edifact/D04A/1153.htm">here</a><br><br>Example&#58;<br>&#60;Reference referenceType=&#34;<b>SS</b>&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;ReferenceNo&#62;1234&#60;/ReferenceNo&#62;<br>&#60;/Reference&#62;
+#      d DateAndTimes:
+#        type: ReferenceDateAndTimes
+#        description: Date and time of the order. <br><br>There are many different options for date and time, but the most frequently used subClasses are&#58;<br><ul><li><b>DocumentDate</b> The date on which the order is booked.</li><li><b>DeliveryDateRequested</b> The date on which the order is requested to be delivered</li><li><b>ExpirationDate</b></li></ul><br>Example&#58;<br>&#60;DateAndTimes subClass=&#34;DocumentDate&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;Date&#62;2021-02-12&#60;/Date&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;Time&#62;13:29:45&#60;/Time&#62;<br>&#60;/DateAndTimes&#62;<br><br>&#60;DateAndTimes subClass=&#34;DeliveryDateRequested&#34;&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;Date&#62;2021-02-15&#60;/Date&#62;<br>&nbsp;&nbsp;&nbsp;&nbsp;&#60;Time&#62;00:00:00&#60;/Time&#62;<br>&#60;/DateAndTimes&#62;
+#      e TermsOfDelivery:
+#        type: TermsOfDelivery
+#        required: false
+#        description: The regulations are used to clarify the distribution of obligations between seller and buyer when shipping goods / Incoterms<br><br>Example&#58;<br>&lt;TermsOfDelivery&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;TODConditionCode&gt;DDP&lt;/TODConditionCode&gt;<br>&lt;/TermsOfDelivery&gt;
+#      f FreeText:
+#        type: OrderFreeText
+#        description: Reference on an order.<br>Used for information to the WH or for the delivery of the order, seperated by usagecode.<br><br>Possible values&#58;<br><ul><li><b>DEL</b> - Information to WH</li><li><b>DIN</b> - Message to carrier</li><li><b>ZZZ</b> - Message to recipient.  Mutually defined reference number</li><li><b>ON</b> - Notes in M4N</li></ul><br>Example&#58;<br>&lt;FreeText usageCode=&quot;DEL&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;Send this order together with order XXX&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;DIN&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;delivery instruction&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;ZZZ&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;123456&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;ON&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;ABCDEF&lt;/Text&gt;<br>&lt;/FreeText&gt;
+#      g COD:
+#        type: COD
+#        required: false
+#        description: If goods are to be paid on delivery.<br><br>Example&#58;<br>&lt;COD&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AccountNo idType=&quot;idType_0&quot;&gt;AccountNo_0&lt;/AccountNo&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;CodAmount&gt;10&lt;/CodAmount&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ControlDigit&gt;10&lt;/ControlDigit&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Kid&gt;Kid_0&lt;/Kid&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Message&gt;Message_0&lt;/Message&gt;<br>&lt;/COD&gt;
+#      h TermsOfPayment:
+#        type: TermsOfPayment
+#        required: false
+#        description: Payment for the order.<br><br>Example&#58;<br>&lt;TermsOfPayment otherDesc=&quot;Vipps&quot;&gt;Vipps&lt; /TermsOfPayment&gt;
+#      i PriorityCode:
+#        type: string
+#        required: false
+#        description: If the order should have a priority you can add value here.<br>If no value is added the default value is set to &quot;Normal&quot;.<br><br>M4N Values:<br><ul><li><b>X</b> - Express</li></ul><br>Example&#58;<br>&lt;PriorityCode&gt;<b>X</b>&lt;/PriorityCode&gt;
+#  Reference:
+#    type: object
+#    properties:
+#      c.1 referenceType:
+#        type: string
+#        required: true
+#        description: (attribute) Type of reference used in order
+#      c.2 ReferenceNo:
+#        type: string
+#        required: true
+#        description: Reference Number
+#  ReferenceDateAndTimes:
+#    type: object
+#    properties:
+#      d.1 subClass:
+#        type: string
+#        required: true
+#        description: (attribute) subClass.<br><br>The most frequently used subclasses are&#58;<br><ul><li><b>ExpirationDate</b></li></ul>
+#      d.2 Date:
+#        type: string
+#        required: true
+#        description: Date
+#      d.3 Time:
+#        type: string
+#        required: true
+#        description: Time
+#  OrderItemDateAndTimes:
+#    type: object
+#    properties:
+#      d.1 subClass:
+#        type: string
+#        required: true
+#        description: (attribute) subClass.<br><br>The most frequently used subclasses are&#58;<br><ul><li><b>ExpirationDate</b></li><li><b>ProductionDate</b></li></ul>
+#      d.2 Date:
+#        type: string
+#        required: true
+#        description: Date
+#      d.3 Time:
+#        type: string
+#        required: true
+#        description: Time
+#  TermsOfDelivery:
+#    type: object
+#    properties:
+#      e.1 TODConditionCode:
+#        type: string
+#        required: false
+#        description: Terms of Delivery Condition Code.<br><br>Possible values&#58;<br><ul><li><b>DDP</b> - (Delivery Duty Paid)</li><li><b>DDU</b> - (Delivery Duty Unpaid)</li></ul>
+#  OrderFreeText:
+#    type: object
+#    properties:
+#      f.1 usageCode:
+#        type: string
+#        required: false
+#        description: (attribute) Usage Code
+#      f.2 Text:
+#        type: string
+#        required: false
+#        description: Text
+#  LineFreeText:
+#    type: object
+#    properties:
+#      1 usageCode:
+#        type: string
+#        required: false
+#        description: (attribute) Usage Code<br><br>Possible values&#58;<br><ul><li><b>ACB</b> - Notes</li><li><b>LIN</b> - LINEREFERENCE</li></ul>
+#      2 Text:
+#        type: string
+#        required: false
+#        description: Text
+#  COD:
+#    type: object
+#    properties:
+#      g.1 CODAmount:
+#        type: number
+#        format: float
+#        required: false
+#        description: COD Amount
+#  AccountNo:
+#    type: object
+#    properties:
+#      a idType:
+#        type: string
+#        required: false
+#        description: (attribute) id Type
+#      b Value:
+#        type: string
+#        required: false
+#        description: Account Number
+#  TermsOfPayment:
+#    type: object
+#    properties:
+#      h.1 otherDesc:
+#        type: string
+#        required: false
+#        description: (attribute) Other Description.<br><br>Possible values&#58;<br><ul><li><b>Vipps</b></li><li><b>Invoice</b></li></ul>
+#      h.2 Value:
+#        type: string
+#        required: false
+#        description: Terms of Payment Value
+#  TransportService:
+#    type: object
+#    properties:
+#      3.1 BasicServiceCode:
+#        type: string
+#        required: true
+#        description: Basic Service Code<br><br>Required for a Customer order.<br>Optional for PurchaseOrder.<br><br>You will find information on all outgoing Services for Posten Norge and Bring <a href=&quot;https://developer.bring.com/api/services/&quot;>here</a><br><br>Example&#58;<br>&lt;BasicServiceCode&gt;Servicepakke&lt;/BasicServiceCode&gt;
+#      3.2 AdditionalService:
+#        type: AdditionalService[]
+#        required: true
+#        description: Additional Service<br><br>If Recipient notification is over SMS or E-Mail, a value must be added for either email and/or cellphone number within Contact in Party [subClass=&quot;Buyer&quot;]<br><br>You will find information on all outgoing Services for Posten Norge and Bring <a href=&quot;https://developer.bring.com/api/services/&quot;>here</a><br><br>And more information about PickUpPoint (PuP) <a href=&quot;https://developer.bring.com/api/pickup-point/&quot;>here</a>.<br><br>Example&#58;<br>&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;EVARSLING&lt;/AdditionalServiceCode&gt;<br>&lt;/AdditionalService&gt;<br>&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;PickUpPoint&lt;/AdditionalServiceCode&gt;<br>&lt;/AdditionalService&gt;
+#      3.3 TariffReference:
+#        type: string
+#        required: false
+#        description: Tariff Reference
+#      3.4 NatureOfCargo:
+#        type: string
+#        required: false
+#        description: Nature of Cargo
+#      3.5 Priority:
+#        type: string
+#        required: false
+#        description: Priority
+#      3.6 Utility:
+#        type: ServiceUtility
+#        required: false
+#        description: Utility
+#  AdditionalService:
+#    type: object
+#    properties:
+#      3.2.a AdditionalServiceCode:
+#        type: string
+#        required: true
+#        description: Additional Service Code
+#  ServiceUtility:
+#    type: object
+#    properties:
+#      3.6.a usageCode:
+#        type: string
+#        required: false
+#        description: (attribute) usage Code
+#      3.6.b Value:
+#        type: ServiceUtilityValue
+#        required: false
+#        description: Utility Value
+#  ServiceUtilityValue:
+#    type: object
+#    properties:
+#      a Sequence:
+#        type: string
+#        required: false
+#        description: (attribute) Sequence
+#      b valueType:
+#        type: string
+#        required: false
+#        description: (attribute) value Type
+#      c Value:
+#        type: string
+#        required: false
+#        description: Service Utility Value
+#  Party:
+#    type: object
+#    properties:
+#      4.a subClass:
+#        type: string
+#        required: true
+#        description: (attribute) Defines the type of Party.<br><br>Possible values&#58;<br><br><u>Details on Supplier/Sender/Receiver</u> (required)<br><ul><li><b>OrderingParty</b> - Details of Sender</li><li><b>DeliveryParty</b> - Details of recipient</li><li><b>Supplier</b> - Details of supplier<br>For a PO, the supplier is the one providing the goods to the WH.<br>For a SO, the supplier is you/Bring WH customer.<br>(Optional for SO)</li><li><b>Buyer</b> - Details of buyer<br>Optional</li><li><b>Seller</b> - Details of seller.<br>Optional</li></ul><br><u>WareHouse ID/Location</u> (required)<br><ul><li><b>PerformingUnit</b></li></ul><br><u>Information on Transport Company</u> (optional)<br><ul><li><b>TransportCompany</b></li></ul>
+#      4.b partyId:
+#        type: string
+#        required: true
+#        description: (attribute) Party id for the <b>subClass</b>.<br><br>Possible values&#58;<br><br><u>Supplier/Sender/Receiver</u><br><ul><li><i><b>provided by user</b></i></li></ul>Example&#58;<br>&lt;Party subClass=&quot;OrderingParty&quot; <b>partyId=&quot;112233&quot;</b> /&gt;<br><br><u>Warehouse ID/Location</u><br><ul><li><b>105075</b> - Bergen</li><li><b>780132</b> - Berger/Skedsmokorset</li><li><b>105091</b> - Drammen</li><li><b>780448</b> - Fredrikstad</li><li><b>780446</b> - Haugesund</li><li><b>780429</b> - KongShavn</li><li><b>105090</b> - Troll&#229;sen</li><li><b>780135</b> - Trondheim</li></ul>Example&#58;<br>&lt;Party subClass=&quot;PerformingUnit&quot; <b>partyId=&quot;780132&quot;</b> /&gt;<br><br><u>Transport Company</u><br><ul><li><b>Bring</b></li></ul>Example&#58;<br>&lt;Party subClass=&quot;TransportCompany&quot; <b>partyId=&quot;Bring&quot;</b> /&gt;
+#      4.c subPartId:
+#        type: string
+#        required: false
+#        description: (attribute) The value of the actual Pick up point site.<br><br>Example&#58;<br>&lt;Party subClass=&quot;DeliveryParty&quot; partyId=&quot;123456&quot; <b>subPartyId=&quot;109847&quot;</b>&gt;
+#      4.d Name:
+#        type: string
+#        required: true
+#        description: Name of the Supplier/Sender/Receiver<br><br>Example&#58;<br>&lt;Name&gt;TestCompany&lt;/Name&gt;
+#      4.e Address:
+#        type: Address
+#        required: true
+#        description: Address of the Supplier/Sender/Receiver<br><br>Example&#58;<br>&lt;Address subClass=&quot;PhysicalAddress&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;PostalCode&gt;0123&lt;/PostalCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;City&gt;OSLO&lt;/City&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;CountryCode&gt;NO&lt;/CountryCode&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Street&gt;Teststreet 2&lt;/Street&gt;<br>&lt;/Address&gt;
+#      4.f Contact:
+#        type: Contact
+#        description: <span style="color:#7b3838;background-color:#f6efef;font-size:.9em">/ Optional</span> depending upon subClass. Details of contact<br><br>Must be provided if using &quot;EVARSLING&quot; within TransportService of AdditionalService [subClass=&quot;AdditionalServiceCode&quot;]<br><br>Must have Name, Cellphone and emailAddress.<br><br>Example&#58;<br>&lt;Contact&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;CellPhoneNo&gt;99010100&lt;/CellPhoneNo&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;EMailAddress&gt;john.doe@posten.no&lt;/EMailAddress&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ContactName&gt;John Doe&lt;/ContactName&gt;<br>&lt;/Contact&gt;
+#  Address:
+#    type: object
+#    properties:
+#      4.e.1 subClass:
+#        type: string
+#        required: true
+#        description: (attribute)
+#      4.e.2 PostalCode:
+#        type: string
+#        required: true
+#        description: Postal Code
+#      4.e.3 City:
+#        type: string
+#        required: true
+#        description: City
+#      4.e.4 Countycode:
+#        type: string
+#        required: true
+#        description: Country code
+#      4.e.5 Street:
+#        type: string
+#        required: true
+#        description: Street
+#  Contact:
+#    type: object
+#    properties:
+#      1 CellPhoneNo:
+#        type: string
+#        required: true
+#        description: Cell Phone Number
+#      2 EMailAddress:
+#        type: string
+#        required: true
+#        description: Email Address
+#      3 ContactName:
+#        type: string
+#        required: true
+#        description: Contact name
+#  OrderLineSet:
+#    type: object
+#    properties:
+#      5.a OrderItem:
+#        type: OrderItem
+#        required: true
+#        description: Details of the order lines.<br><br>Example&#58;<br>&lt;OrderLineSet&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;OrderItem articleLineId=&quot;1&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ArticleId codeListIdentifier=&quot;EAN&quot;&gt;123456&lt;/ArticleId&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ArticleId codeListIdentifier=&quot;CustomerItemNo&quot;&gt;7020-180&lt;/ArticleId&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ArticleQuantity unitCode=&quot;&quot;&gt;1000&lt;/ArticleQuantity&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Description usageCode=&quot;AAA&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;White, electric table fan&lt;/Text&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Description&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ArticleStatus/&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ArticleBatchNo&gt;123456&lt;/ArticleBatchNo&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ArticleName&gt;Electric Fan 18cm&lt;/ArticleName&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/OrderItem&gt;<br>&lt;/OrderLineSet&gt;
+#      5.b PalletInfo:
+#        type: PalletInfo
+#        required: false
+#        description: Pallet Info
+#  OrderItem:
+#    type: object
+#    properties:
+#      5.a.01 articleLineID:
+#        type: string
+#        required: true
+#        description: (attribute) Unique line id for this order line.<br>A counter that identifies each orderline.<br>Can be either&#58;<br><ul><li>&quot;1&quot; or &quot;10&quot; = First line</li><li>&quot;2&quot; or &quot;20&quot; = Second line.</li></ul><br>Example&#58;<br>&lt;OrderItem <b>articleLineId=&quot;1&quot;</b>&gt;
+#      5.a.02 ArticleId:
+#        type: ArticleId[]
+#        required: true
+#        description: Article number.
+#      5.a.03 ArticleQuantity:
+#        type: ArticleQuantity
+#        required: true
+#        description: Quantity Ordered
+#      5.a.04 ArticleReference:
+#        type: ArticleReference
+#        required: false
+#        description: Article Reference
+#      5.a.05 Description:
+#        type: Description
+#        required: true
+#        description: Article Description<br><br>Example&#58;<br>&lt;Description usageCode=&quot;AAA&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;White, electric table fan&lt;/Text&gt;<br>&lt;/Description&gt;
+#      5.a.06 DateAndTimes:
+#        type: OrderItemDateAndTimes
+#        required: false
+#        description: Date and Time at the Orderline level. There are many different options for date and time.<br><br>Example&#58;<br>&lt;DateAndTimes subClass=&quot;ExpirationDate&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Date&gt;2028-02-07&lt;/Date&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Time&gt;00:00:00&lt;/Time&gt;<br>&lt;/DateAndTimes&gt;
+#      5.a.07 ArticleMonetaryAmounts:
+#        type: ArticleMonetaryAmounts
+#        required: false
+#        description: Article unit sales price and currency
+#      5.a.08 Utility:
+#        type: Utility
+#        required: false
+#        description: Utility
+#      5.a.09 ArticleStatus:
+#        type: string
+#        required: false
+#        description: Article Status
+#      5.a.10 ArticleSerialNos:
+#        type: ArticleSerialNo[]
+#        required: false
+#        description: Serial numbers for the article
+#      5.a.11 ArticleBatchNo:
+#        type: string
+#        required: false
+#        description: Batch number connected to the article.<br><br>Example&#58;<br>&lt;ArticleBatchNo&gt;123456&lt;/ArticleBatchNo&gt;
+#      5.a.12 FreeText:
+#        type: LineFreeText
+#        required: false
+#        description: Used for additional information<br><br>Example&#58;<br>&lt;FreeText usageCode=&quot;LIN&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;0002292492&lt;/Text&gt;<br>&lt;/FreeText&gt;
+#      5.a.13 ArticleName:
+#        type: string
+#        required: false
+#        description: Article Name<br><br>Example&#58;<br>&lt;ArticleName&gt;Electric Fan 18cm&lt;/ArticleName&gt;
+#  ArticleId:
+#    type: object
+#    properties:
+#      1 codeListIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) Sets type of Article number/id<br><br>Possible values&#58;<br><ul><li><i><b>CustomerItemNo</b> - (default) Your article number/id</i></li><li><b>VendorItemNo</b> - Supplier article number/id</li><li><b>EAN</b> - EAN article number<br><br>Example&#58;<br>&lt;ArticleId <b>codeListIdentifier=&quot;CustomerItemNo&quot;</b>&gt;7020-180&lt;/ArticleId&gt;<br>&lt;ArticleId <b>codeListIdentifier=&quot;EAN&quot;</b>&gt;123456&lt;/ArticleId&gt;
+#      2 Value:
+#        type: string
+#        required: true
+#        description: Article Id value
+#  ArticleQuantity:
+#    type: object
+#    properties:
+#      1 unitCode:
+#        type: string
+#        required: true
+#        description: (attribute) Unit Code for quantity ordered.<br><br>Possible values&#58;<br><ul><li><b>STK</b> - Norwegian</li><li><b>PCE</b> - English</li><li><b>KGM</b> - Kilogram</li></ul><br>Example&#58;<br>&lt;ArticleQuantity <b>unitCode=&quot;STK&quot;</b>&gt;2.0&lt;/ArticleQuantity>
+#      2 Value:
+#        type: number
+#        format: float
+#        description: Article Quantity
+#  ArticleReference:
+#    type: object
+#    properties:
+#      1 referenceType:
+#        type: string
+#        required: false
+#        description: (attribute) Type of references used in orderline.<br><br>Possible values&#58;<br><ul><li><b>LI</b> - LINEREFERENCE1</li><li><b>PE</b> - PLANT</li><li><b>OP</b> - RESERVEDORDERID</li><li><b>AEP</b> - PROJECTNUMBER</li></ul><br>Example&#58;<br>&lt;ArticleReference <b>referenceType=&quot;LI&quot;</b>&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ReferenceNo&gt;123456&lt;/ReferenceNo&gt;<br>&lt;/ArticleReference&gt;
+#      2 ReferenceNo:
+#        type: string
+#        required: false
+#        description: Reference No<br><br>Example&#58;<br>&lt;ArticleReference referenceType=&quot;LI&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;<b>&lt;ReferenceNo&gt;123456&lt;/ReferenceNo&gt;</b><br>&lt;/ArticleReference&gt;
+#  Description:
+#    type: object
+#    properties:
+#      1 usageCode:
+#        type: string
+#        required: true
+#        description: (attribute) Article Description Type.<br><br>Possible values&#58;<br><ul><li><b>AAA</b> - if description is used</li></ul>
+#      2 Text:
+#        type: string
+#        required: true
+#        description: Description
+#  ArticleMonetaryAmounts:
+#    type: object
+#    properties:
+#      1 UnitPrice:
+#        type: UnitPrice
+#        required: false
+#        description: Unit Price
+#  UnitPrice:
+#    type: object
+#    properties:
+#      1.1 currencyIdentificationCode:
+#        type: string
+#        required: false
+#        description: (attribute) Currency Identification Code<br><br>Example&#58;<br>&quot;UnitPrice <b>currencyIdentificationCode=&quot;NOK&quot;</b>&gt;230.30&lt;/UnitPrice&gt;
+#      1.2 Value:
+#        type: number
+#        format: float
+#        required: false
+#        description: Unit Price Value
+#  Utility:
+#    type: object
+#    properties:
+#      1 usageCode:
+#        type: string
+#        required: false
+#        description: (attribute) usage Code
+#      2 codeListIdentifier:
+#        type: string
+#        required: false
+#        description: (attribute) code List Identifier.<br><br>Possible values&#58;<br><ul><li><b>DaysExpire</b> - MINSHELFLIFE</li><li><b>CustomStorage</b> - ERPCode</li><li><b>ClientStorage</b> - ERPCode</li><li><b>AAQ</b> - SHIPPINGCONTAINER</li></ul><br>Example&#58;<br>&lt;Utility usageCode=&quot;N&quot; <b>codeListIdentifier=&quot;CustomStorage&quot;</b> /&gt;
+#      3 Value:
+#        type: string
+#        required: false
+#        description: Utility value
+#  ArticleSerialNo:
+#    type: object
+#    properties:
+#      ArticleSerialNo:
+#        type: string
+#        required: false
+#        description: Article Serial No<br><br>Example&#58;<br>&lt;ArticleSerialNos&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;<b>ArticleSerialNo&gt;123&lt;/ArticleSerialNo&gt;</b><br>&lt;/ArticleSerialNos&gt;
+#  PalletInfo:
+#    type: object
+#    properties:
+#      5.b.1 EPDCode:
+#        type: string
+#        required: false
+#        description: EPD Code<br><br>Example&#58;<br>&lt;EPDCode&gt;1234&lt;/EPDCode&gt;
+#      5.b.2 PalletQuantity:
+#        type: string
+#        required: false
+#        description: Pallet Quantity<br><br>Example&#58;<br>&lt;PalletQuantity&gt;10&lt;/PalletQuantity&gt;
+#  CustomsClearance:
+#    type: object
+#    properties:
+#      6.a FreightChargeAmount:
+#        type: FreightChargeAmount
+#        required: false
+#        description: Freight cost
+#      6.b FreightChargeCarrier:
+#        type: string
+#        required: false
+#        description: Customs Carrier<br><br>Example&#58;&lt;FreightChargeCarrier&gt;&lt;/FreightChargeCarrier&gt;
+#  FreightChargeAmount:
+#    type: object
+#    properties:
+#      6.a.1 currencyIdentificationCode:
+#        type: string
+#        required: false
+#        description: (attribute) Currency Identification Code<br><br>Example&#58;<br>&lt;FreightChargeAmount <b>currencyIdentificationCode=&quot;NOK&quot;</b>&gt;230.30&lt;/FreightChargeAmount&gt;
+#      6.a.2 Value:
+#        type: number
+#        format: float
+#        required: false
+#        description: Value of the Freight Charge Amount
+#  CreateItemDataReq:
+#    type: object
+#    description: Create Item Data Req
+#    properties:
+#      CreateItemDataRequest:
+#        type: CreateItemDataRequest
+#        required: true
+#        description: Create Item Data Request
+#  CreateItemDataRequest:
+#    type: object
+#    description: Send Item Data
+#    properties:
+#      01 version:
+#        type: string
+#        required: true
+#        description: (attribute) Version of Request<br><br>Default value&#58;<br><ul><li>5.0</li></ul>
+#      02 definedBy:
+#        type: string
+#        required: true
+#        description: (attribute) Defined By<br><br>Default value&#58;<br><ul><li>BIG</li></ul>
+#      03 domain:
+#        type: string
+#        required: true
+#        description: (attribute) Domain<br><br>Default value&#58;<br><ul><li>SupplyChain</li></ul>
+#      04 collaboration:
+#        type: string
+#        required: true
+#        description: (attribute) Collaboration<br><br>Default value&#58;<br><ul><li>Order</li></ul>
+#      05 messageFunction:
+#        type: string
+#        required: true
+#        description: (attribute) Type of order<br><br>Example&#58;<br>For salesorder/customer order = &quot;Order&quot;<br>For purchaseOrder = &quot;PurchaseOrder&quot;
+#      06 profile:
+#        type: string
+#        required: true
+#        description: (attribute) Profile<br><br>Default value&#58;<br><ul><li>BringXML</li></ul>
+#      07 language:
+#        type: string
+#        required: true
+#        description: (attribute) Unique id for this message<br><br>Example&#58;<br>3dcc8b71-2bf7-4574-813d-9295bd5db8c0
+#      08 messageId:
+#        type: string
+#        required: true
+#        description: (attribute) Unique id for this message<br><br>Example&#58;<br>3dcc8b71-2bf7-4574-813d-9295bd5db8c0
+#      09 updateIndicator:
+#        type: string
+#        required: false
+#        description: (attribute) Update Indicator<br><br>Example&#58;<br>updateIndicator=&quot;Deletion&quot;
+#      10 testIndicator:
+#        type: string
+#        required: false
+#        description: (attribute) Whether this is a test message<br><br>Example&#58;<br>testIndicator=&quot;NO&quot;
+#      11 MessageDetails:
+#        type: MessageDetailsTYPE
+#        required: true
+#        description: Details of the Message
+#      12 PerformingUnit:
+#        type: PerformingUnit
+#        required: true
+#        description: Performing Unit
+#      13 SupplyStructure:
+#        type: ItemDataSupplyStructure
+#        required: true
+#        description: Supply Structure
+#  PerformingUnit:
+#    type: object
+#    description: Performing Unit
+#    properties:
+#      Name:
+#        type: string
+#        required: true
+#        description: (attribute) Performing Unit Name
+#      Value:
+#        type: string
+#        required: true
+#        description: Performing Unit Value
+#  ItemDataSupplyStructure:
+#    type: object
+#    description: Supply Structure
+#    properties:
+#      ArticleInformationSet:
+#        type: ArticleInformationSetType[]
+#        required: true
+#        description: Article Information Set Array
+#  ArticleInformationSetType:
+#    type: object
+#    description: Article Information Type Array
+#    properties:
+#      ArticleInformation:
+#        type: ArticleInformationType[]
+#        required: true
+#        description: Article Information Array
+#  ArticleInformationType:
+#    type: object
+#    description: Article Information
+#    properties:
+#      articleLineId:
+#        type: string
+#        required: true
+#        description: (attribute) Article Line Id
+#      ArticleNumber:
+#        type: ccUsageCode[]
+#        required: true
+#        description: Article Number
+#      ArticlePhysicalBalanceQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Physical Balance Quantity
+#      ArticleAllocatedBalanceQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Allocated Balance Quantity
+#      ArticleInOrderBalanceQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: In Order Balance Quantity
+#      ArticleFreeBalanceQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Free Balance Quantity
+#      ArticleAdjustedQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Adjusted Balance Quantity
+#      ArticleCountedQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Counted Balance Quantity
+#      Description:
+#        type: FreeTextType[]
+#        required: true
+#        description: Description
+#      DateAndTimes:
+#        type: IsoDateAndTimesTYPE[]
+#        required: true
+#        description: Description
+#      Utility:
+#        type: FreeTextType[]
+#        required: true
+#        description: Description
+#      ArticleQuantity:
+#        type: ccUsageCode
+#        required: true
+#        description: Description
+#      ArticleUnitCode:
+#        type: ccUsageCode[]
+#        required: true
+#        description: Description
+#      ArticleName:
+#        type: string
+#        required: true
+#        description: Description
+#      ArticleStatus:
+#        type: string
+#        required: true
+#        description: Description
+#      ArticleSerialNos:
+#        type: ArticleSerialNosTYPE[]
+#        required: true
+#        description: Description
+#      ArticleBatchNo:
+#        type: string
+#        required: true
+#        description: Description
+#      ArticleUNno:
+#        type: string
+#        required: true
+#        description: Description
+#      ArticleVariantIdentifier:
+#        type: string
+#        required: true
+#        description: Description
+#      ArticleCountryOfOrigin:
+#        type: string
+#        required: true
+#        description: Description
+#      ArticleWeightAndDimension:
+#        type: ArticleWeightAndDimensionTYPE
+#        required: true
+#        description: Description
+#      FreeText:
+#        type: FreeTextType[]
+#        required: true
+#        description: Description
+#      Reference:
+#        type: ReferenceTYPE[]
+#        required: true
+#        description: Description
+#      ArticleTotals:
+#        type: ControlTotalsTYPE
+#        required: true
+#        description: Description
+#      ArticleBatches:
+#        type: ArticleBatchTYPE
+#        required: true
+#        description: Description
+#      ArticleGroup:
+#        type: string
+#        required: true
+#        description: Description
+#  ArticleSerialNosTYPE:
+#    type: object
+#    description: Article Serial Nos TYPE
+#    properties:
+#      ArticleSerialNo:
+#        type: string
+#        required: true
+#        description: Article Serial No
+#  ArticleWeightAndDimensionTYPE:
+#    type: object
+#    description: Article Weight And Dimension TYPE
+#    properties:
+#      Depth:
+#        type: ccMeasure
+#        required: true
+#        description: Depth
+#      Height:
+#        type: ccMeasure
+#        required: true
+#        description: Height
+#      NetWeight:
+#        type: ccMeasure
+#        required: true
+#        description: NetWeight
+#      Width:
+#        type: ccMeasure
+#        required: true
+#        description: Width
+#      GrossWeight:
+#        type: ccMeasure
+#        required: true
+#        description: Gross Weight
+#  ccMeasure:
+#    type: object
+#    description: Measure
+#    properties:
+#      unitCode:
+#        type: string
+#        required: true
+#        description: (attribute) Unit Code
+#      Value:
+#        type: number
+#        format: float
+#        required: true
+#        description: Measure Value
+#  ReferenceTYPE:
+#    type: object
+#    description: Reference TYPE
+#    properties:
+#      referenceType:
+#        type: string
+#        required: true
+#        description: (attribute) Reference Type
+#      codeListIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) Code List Identifier
+#      codeListAgencyIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) Code List Agency Identifier
+#      name:
+#        type: string
+#        required: true
+#        description: (attribute) Name
+#      ReferenceNo:
+#        type: string
+#        required: true
+#        description: Reference No
+#      Text:
+#        type: string
+#        required: true
+#        description: Reference Text
+#      ReferenceDate:
+#        type: IsoDateAndTimesTYPE
+#        required: true
+#        description: Reference Date
+#  FreeTextType:
+#    type: object
+#    description: Free Text
+#    properties:
+#      usageCode:
+#        type: string
+#        required: true
+#        description: (attribute) Usage Code
+#      codeListIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) Code List Identifier
+#      codeListAgencyIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) Code List Agency Identifier
+#      name:
+#        type: string
+#        required: true
+#        description: (attribute) Name
+#      Text:
+#        type: FreeTextTypeText[]
+#        required: true
+#        description: Free Text Type Text
+#      LanguageCode:
+#        type: string #ccCode
+#        required: true
+#        description: Language Code
+#  FreeTextTypeText:
+#    type: object
+#    description: Free Text Type Text
+#    properties:
+#      sequence:
+#        type: string
+#        required: true
+#        description: (attribute) Sequence
+#      code:
+#        type: string
+#        required: true
+#        description: (attribute) Code
+#      Value:
+#        type: string
+#        required: true
+#        description: Free Text Value
+#  ccUsageCode:
+#    type: object
+#    description: Usage Code
+#    properties:
+#      usageCode:
+#        type: string
+#        required: true
+#        description: (attribute) Usage Code
+#      codeListIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) List Identifier
+#      codeListAgencyIdentifier:
+#        type: string
+#        required: true
+#        description: (attribute) List Agency Identifier
+#      name:
+#        type: string
+#        required: true
+#        description: (attribute) Name
+#      Value:
+#        type: string
+#        required: true
+#        description: Usage Code Value
+#  ccItemQuantity:
+#    type: object
+#    description: Item Quantity
+#    properties:
+#      unitCode:
+#        type: string
+#        required: true
+#        description: (attribute) Unit Code
+#      Value:
+#        type: number
+#        format: float
+#        required: true
+#        description: Item Quantity Value
+#  ControlTotalsTYPE:
+#    type: object
+#    description: Control Totals TYPE
+#    properties:
+#      NumberOfPackages:
+#        type: ccQuantity
+#        required: true
+#        description: Number of Packages
+#      GrossWeight:
+#        type: ccMeasure
+#        required: true
+#        description: Gross Weight
+#      GrossVolume:
+#        type: ccMeasure
+#        required: true
+#        description: Gross Volume
+#      LoadingMetres:
+#        type: ccMeasure
+#        required: true
+#        description: Loading Metres
+#      PalletFootPrints:
+#        type: ccMeasure
+#        required: true
+#        description: Pallet Footprints
+#      Measures:
+#        type: MeasuresTYPE[]
+#        required: true
+#        description: Measures Array
+#  ccQuantity:
+#    type: object
+#    description: Quantity
+#    properties:
+#      unitCode:
+#        type: string
+#        required: true
+#        description: (attribute) UNit Code
+#      Value:
+#        type: number
+#        format: int32
+#        required: true
+#        description: Quantity Value
+#  MeasuresTYPE:
+#    type: object
+#    description: Measures TYPE
+#    properties:
+#      subClass:
+#        type: string
+#        required: true
+#        description: (attribute) Sub Class
+#      MeasureEntity:
+#        type: MeasuresTYPEMeasureEntity
+#        required: true
+#        description: Measure Entity
+#      Measure:
+#        type: ccQuantity
+#        required: true
+#        description: Measure
+#  MeasuresTYPEMeasureEntity:
+#    type: object
+#    description: Measures TYPE Measure Entity
+#    properties:
+#      attributeCode:
+#        type: string
+#        required: true
+#        description: (attribute) Attribute Code
+#  ArticleBatchTYPE:
+#    type: object
+#    description: Article Batch TYPE
+#    properties:
+#      ArticleBatch:
+#        type: BatchTYPE[]
+#        required: true
+#        description: Article Bach Array
+#  BatchTYPE:
+#    type: object
+#    description: Batch TYPE
+#    properties:
+#      BatchNo:
+#        type: string
+#        required: true
+#        description: Batch No
+#      WarehouseId:
+#        type: string
+#        required: true
+#        description: Warehouse Id
+#      WarehouseArea:
+#        type: string
+#        required: true
+#        description: Warehouse Area
+#      WarehouseLocation:
+#        type: string
+#        required: true
+#        description: Warehouse Location
+#      ParcelNumber:
+#        type: string
+#        required: true
+#        description: Parcel Number
+#      DateAndTimes:
+#        type: IsoDateAndTimesTYPE[]
+#        required: true
+#        description: Date And Times
+#      DeliveredQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Delivered Quantity
+#      ExpectedQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Expected Quantity
+#      ReceivedQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Received Quantity
+#      PhysicalBalanceQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Physical Balance Quantity
+#      AllocatedBalanceQuantity:
+#        type: ccItemQuantity
+#        required: true
+#        description: Allocated Balance Quantity
+#      NetWeight:
+#        type: ccMeasure
+#        required: true
+#        description: Net Weight
+#      Locked:
+#        type: string
+#        required: true
+#        description: Locked
+#      ArticleSerialNos:
+#        type: ArticleSerialNosTYPE[]
+#        required: true
+#        description: Article Serial Nos
+#      SSCCNo:
+#        type: string
+#        required: true
+#        description: SSCC No
+#      BatchStatus:
+#        type: string
+#        required: true
+#        description: Batch Status
+#  IsoDateAndTimesTYPE:
+#    type: object
+#    description: Date and Times
+#    properties:
 
-/omorder:
-  displayName: Send an order
-  description: |
-      Send an order to Warehousing system. There are different types of order supported in Warehousing system.
 
-       - Order / SalesOrder (as an pickorder for Warehousing)
-            - Warehousing functionality sends it to Warhousing system for picking and delivery.
-       - PurchaseOrder (as an receiving order for Warehousing)
-            - Warehousing functionality sends it to Warhousing system for receiving orderinfo.
+#/order:
+#  displayName: Send an Order
+#  post:
+#    description: Send an order
+#    headers:
+#      Content-Type:
+#        description: Specify request format (application/json, application/xml)
+#        required: true
+#        enum: [ application/json,application/xml ]
+#      Accept:
+#        description: Specify response format (application/json, application/xml)
+#        required: true
+#        enum: [ application/json,application/xml ]
+#    body:
+#      application/xml:
+#        type: CreateOrderReq
+##        type: [Header, MessageDetails, Order, Party, OrderItem, PalletInfo, CustomsClearence]
+#        examples:
+#          create_order:
+#            displayName: Send an order
+#            value: !include examples/create_order.xml
+#      application/xml:
+#        type: CreateOrderReq
+#        examples:
+#          create_order (xml):
+#            displayName: Send an order (xml)
+#            value: !include examples/create_order.xml
+#          create_order (json):
+#            displayName: Send an order (json)
+#            value: !include examples/create_order.json
+#    responses:
+#      200:
+#        displayName: Success
+#        description: |
+#          Successfully created an order.
+#        body:
+#          application/xml:
+#            type: SendAnOrderResponse
+#            examples:
+#              valid_order:
+#                displayName: Valid Order Response
+#                value: !include examples/valid_shipment_response.xml
+#          application/json:
+#            type: SendAnOrderResponse
+#            examples:
+#              valid_shipment:
+#                displayName: Valid Order Response
+#                value: !include examples/valid_shipment_response.json
+#      400:
+#        displayName: Error
+#        description: |
+#          Error in validation of request or error in data structure of request.
+#
+#      417:
+#        displayName: Error
+#        description: |
+#          Missing authentication headers.
+#
+#      500:
+#        displayName: Error
+#        description: |
+#          Unknown error. Error sending data to destination.
 
-  post:
-    description: Send an order
-    queryParameters:
-      CreateOrderRequest version:
-          description: Version of request, current 2.0.
-          type: string
-          required: true
-          example: "2.0"
-      CreateOrderRequest messageFunction:
-          description: Type of order. <br>"Order"<br>"SalesOrder (Not in use)"<br>"PurchaseOrder"
-          type: string
-          required: true
-          example: Order
-      CreateOrderRequest messageId:
-          description: Unique id for this message.
-          type: string
-          required: true
-          example: 3dcc8b71-2bf7-4574-813d-9295bd5db8c0
-      MessageSender partyId:
-          description: Customer Number which Bring has provided. It cannot be demo customer number. An 6 digits number.
-          type: string
-          required: true
-          example: 999999
-      MessageRecipient partyId:
-          description: Receiving Bring system. Constant value. An GLN number for Warehousing. Always use 7080003388100.
-          type: string
-          required: true
-          example: "7080003388100"
-      MessageDate:
-          description: The date on which message is sent.
-          type: dateTime
-          required: true
-          example: 22.01.2017 11:36:22
-      OrderSet updateIndicator:
-          description: Type of order data. Original, Update or Delete
-          type: string
-          required: true
-          example: Original
-      Order/orderId:
-          description: Ordernumber.
-          type: string
-          required: true
-          example: 101010
-      Order/ExternalOrderType:
-          description: Type of order.<br><br> Order types<br> 220 = Standard order<br> 224 = Rush order<br> Or other agreed by Warehouse.<br><br>PurchaseOrder types<br> R = Return order<br> S = Sampakk
-          type: string
-          required: false
-          example: "For Order: 220 / For PurchaseOrder: R"
-      Order/Reference:
-          description: Set of references.
-          type: sequence
-          required: false
-      Order/Reference referenceType:
-          description: Type of reference coded. https://www.stylusstudio.com/edifact/D04A/1153.htm <br>ACD = Additional reference number<br>CU = Sellers reference<br>ON = Buyers reference
-          type: String
-          required: true
-          example: CU
-      Order/Reference ReferenceNo:
-          description: Reference.
-          type: String
-          required: true
-          example: 10003455TT
-      Order/DateAndTimes Date & Time with subClass DocumentDate:
-          description: The date on which order is booked.
-          type: dateTime
-          required: true
-          example: Date 22.01.2017 Time 11:36:22
-      Order/DateAndTimes Date & Time with subClass DeliveryDateRequested:
-          description: The date on which order is requested delivered.
-          type: dateTime
-          required: true
-          example: Date 22.01.2017 Time 11:36:22
-      Order/TermsOfDelivery TODConditionCode:
-          description: Ordernumber.
-          type: dateTime
-          required: false
-          example: DDP
-      TransportService BasicServiceCode:
-          description: Optional for PurchaseOrder. Transport service for shipment to customer. https://developer.bring.com/api/services/
-          type: String
-          required: true
-          example: SERVICEPAKKE
-      TransportService AdditionalService AdditionalServiceCode:
-          description: Optional for PurchaseOrder. Transport services for shipment to customer. https://developer.bring.com/api/services/
-          type: String
-          required: false
-          example: EVARSLING
-      TransportLeg TransportLegType:
-          description: Optional for PurchaseOrder. TransportLegType id. Default value 30.
-          type: String
-          required: false
-          example: 30
-      TransportLeg ModeOfTransport:
-          description: Optional for PurchaseOrder. Type of transport. <br>1 = Sea<br>2 = Train<br>3 = Road<br>4 = Air.
-          type: String
-          required: false
-          example: 3
-      Party/subClass OrderingParty:
-          description: Details of sender. Must have Name, Street, City, CountryCode.
-          required: true
-      Party/subClass DeliveryParty:
-          description: Details of recipient. Must have Name, Street, City, CountryCode.
-          required: true
-      Party/subClass Supplier:
-          description: Required when sending purchaseorder.Details of supplier. Must have Name, Street, City, CountryCode if used.
-          required: false
-      Party/subClass PerformingUnit partyId:
-          description: Warehouse id for order. Required if order to Warehousing system.<br><br>4033 = Stavanger (Norway)<br>5500 = Haugesund (Norway)<br>AES = Ålesund (Norway)<br>BERGER = Berger/Skedsmokorset (Norway)<br>BS02 = Kongshavn (Norway)<br>BS07 = Trollåsen (Norway)<br>BS17 = Bergen (Norway)<br>BS26 = Trondheim (Norway)<br>BS34 = Tromsø (Norway)<br>FI01 = Vantaa (Finland)<br>JKPG01 = Jönköping (Sweden)<br>NCD = Lierstrand (Norway)
-          type: string
-          required: true
-          example: BERGER
-      OrderLineSet:
-          description: Set of order items.
-          type: sequence
-          required: true
-      OrderItem/articleLineId:
-          description: Unique line id for this order line. Counter that identify orderline.
-          type: integer
-          required: true
-          example: (10) First line / (20) Second line
-      OrderItem/ArticleId codeListAgencyIdentifier:
-          description: Sets type of ArticleId. <br>"CustomerItemNo" = Your article number/id<br>"VendorItemNo" = Supplier article number/id<br>"EAN" = EAN article id<br>If not used ArticleId default is CustomerItemNo.
-          type: string
-          required: true
-          example: CustomerItemNo
-      OrderItem/ArticleId:
-          description: Article number or id.
-          type: sequence
-          required: true
-          example: 123-4000
-      OrderItem/ArticleQuantity unitCode:
-          description: Unit code for quantity ordered.
-          type: string
-          required: true
-          example: STK
-      OrderItem/ArticleQuantity:
-          description: Quantity ordered.
-          type: float
-          required: true
-          example: "2.0"
-      OrderItem/Description usageCode:
-          description: Article description type. If description used set to AAA.
-          type: string
-          required: false
-          example: AAA
-      OrderItem/Description:
-          description: Article description.
-          type: string
-          required: false
-          example: Spear parts with all parts
-      OrderItem/ArticleMonetaryAmounts:
-          description: Article unit sales price.
-          type: float
-          required: false
-          example: "230.30"
-      OrderItem/ArticleName:
-          description: Article name.
-          type: string
-          required: false
-          example: Spear parts
+#/itemdata:
+#  displayName: Post item data
+#  description: |
+#      Post item data.
+#  post:
+#    description: Post item data
+#    headers:
+#      Content-Type:
+#        description: Specify request format (application/xml, application/json)
+#        required: true
+#        enum: [ application/xml,application/json ]
+#      Accept:
+#        description: Specify response format (application/xml, application/json)
+#        required: true
+#        enum: [ application/xml,application/json ]
+#    body:
+#      application/xml:
+#        type: CreateItemDataReq
+#        examples:
+#          create_order (xml):
+#            displayName: Send item data (xml)
+#            value: !include examples/create_itemdata.xml
+#          create_order (json):
+#            displayName: Send item data (json)
+#            value: !include examples/create_itemdata.json
+#    responses:
+#      200:
+#        displayName: Success
+#        description: |
+#          Complete Item Data.
+#        body:
+#          application/xml:
+#            examples:
+#              retrieve_order (xml):
+#                displayName: Post itemdata (xml)
+#                value: !include examples/create_itemdata_response.xml
+#              retrieve_order (json):
+#                displayName: Post itemdata (json)
+#                value: !include examples/create_itemdata_response.json
+#      400:
+#        displayName: Error
+#        description: |
+#          Error in validation of request or error in data structure of request.
+#
+#      417:
+#        displayName: Error
+#        description: |
+#          Missing authentication headers.
+#
+#      500:
+#        displayName: Error
+#        description: |
+#          Unknown error. Error sending data to destination.
 
 
-    body:
-        application/xml:
-          examples:
-            create_order:
-              displayName: Send an order
-              value: !include examples/create_order.xml
-        application/json:
-          examples:
-            create_order:
-              displayName: Send an order
-              value: !include examples/create_order.json
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Successfully created an order.
-
-/omorder/{customerId}/{orderId}:
-  displayName: List order information
-  description: |
-      Get all information on a given order.
-  get:
-    description: List order information
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Complete order information including order items.
-        body:
-          application/xml:
-            examples:
-              retrieve_order:
-                displayName: List order information
-                value: !include examples/retrieve_order.xml
-          application/json:
-            examples:
-              retrieve_order:
-                displayName: List order information
-                value: !include examples/retrieve_order.json
-
-/items/{customerId}/{orderId}:
-  displayName: List order items
-  description: |
-      List all item lines on an order.
-  get:
-    description: List order items
-    responses:
-      200:
-        displayName: Success
-        description: |
-          List of order items.
-        body:
-          application/xml:
-            examples:
-              retrieve_orderitems:
-                displayName: List order items
-                value: !include examples/retrieve_orderitems.xml
-          application/json:
-            examples:
-              retrieve_orderitems:
-                displayName: List order items
-                value: !include examples/retrieve_orderitems.json
-
-/articlebalance:
-  displayName: Create or update article balance list
-  post:
-    description: Create or update article balance list
-    body:
-      application/xml:
-        examples:
-          create_articlebalance:
-            displayName: Create or update article balance list
-            value: !include examples/create_articlebalance.xml
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Successfully created balance list
-
-/articlebalance/{customerId}:
-  displayName: Get stock balance and info for all articles
-  get:
-    description: Get stock balance and info for all articles
-    responses:
-      200:
-        displayName: Success
-        description: |
-        body:
-          application/xml:
-            examples:
-              retrieve_articlebalance_all:
-                displayName: Stock balance and info for all articles
-                value: !include examples/retrieve_articlebalance_all.xml
-          application/json:
-            examples:
-              retrieve_articlebalance_all:
-                displayName: Stock balance and info for all articles
-                value: !include examples/retrieve_articlebalance_all.json
-
-/articlebalance/{customerId}/{articleNo}:
-  displayName: Get stock balance and info for one article
-  get:
-    description: Get stock balance and info for one article
-    responses:
-      200:
-        displayName: Success
-        description: |
-        body:
-          application/xml:
-            examples:
-              retrieve_articlebalance:
-                displayName: Stock balance and info for one article
-                value: !include examples/retrieve_articlebalance_one.xml
-          application/json:
-            examples:
-              retrieve_articlebalance:
-                displayName: Stock balance and info for one article
-                value: !include examples/retrieve_articlebalance_one.json
-
-/articlebalance/info/{customerId}/{articleSearchString}:
-  displayName: Get stock balance and info for all articles matching search string
-  get:
-    description: Get stock balance and info for all articles matching search string
-    responses:
-      200:
-        displayName: Success
-        description: |
-        body:
-          application/xml:
-            examples:
-              retrieve_articlebalance_search:
-                displayName: Stock balance and info for search hits
-                value: !include examples/retrieve_articlebalance_search.xml
-          application/json:
-            examples:
-              retrieve_articlebalance_search:
-                displayName: Stock balance and info for search hits
-                value: !include examples/retrieve_articlebalance_search.json
-
-/errorCodes:
-  displayName: List error codes
-  get:
-    description: List error codes
-    responses:
-      200:
-        displayName: Success
-        description: |
-          Dynamic list of error codes used in the solution.
-        body:
-          application/xml:
-            examples:
-              error_codes:
-                displayName: Error codes
-                value: !include examples/error_codes.xml
-          application/json:
-            examples:
-              error_codes:
-                displayName: Error codes
-                value: !include examples/error_codes.json
+#/errorCodes:
+#  displayName: List error codes
+#  get:
+#    description: List error codes
+#    responses:
+#      200:
+#        displayName: Success
+#        description: |
+#          Dynamic list of error codes used in the solution.
+#        body:
+#          application/xml:
+#            examples:
+#              error_codes (xml):
+#                displayName: Error codes (xml)
+#                value: !include examples/error_codes.xml
+#              error_codes (json):
+#                displayName: Error codes (json)
+#                value: !include examples/error_codes.json
