@@ -56,4 +56,16 @@
         "content" .Plain) -}}
   {{- end -}}
 {{- end -}}
+
+{{- with .Site.GetPage "/api/services" -}}
+  {{- $.Scratch.Add "index"
+    (dict
+      "objectID" .File.UniqueID
+      "permalink" .Permalink
+      "relpermalink" .RelPermalink
+      "title" .Title
+      "section" (.Section | upper)
+      "api" $.Site.Data.service) -}}
+{{- end -}}
+
 {{- $.Scratch.Get "index" | jsonify -}}
