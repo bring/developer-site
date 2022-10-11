@@ -66,9 +66,9 @@
       "title" .Title
       "section" (.Section | upper)
       "services" $.Site.Data.service
-      "services_bsg" $.Site.Data.serices_bsg
-      "services_ri" $.Site.Data.serices_ri
-      "services_vas" $.Site.Data.serices_vas) -}}
+      "services_bsg" $.Site.Data.services_bsg
+      "services_ri" $.Site.Data.services_ri
+      "services_vas" $.Site.Data.services_vas) -}}
 {{- end -}}
 
 {{- $.Scratch.Get "index" | jsonify -}}
