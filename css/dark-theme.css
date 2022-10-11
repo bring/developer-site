@@ -167,6 +167,11 @@
     }
   }
 
+  & .btn-link--copy {
+    background-color: hsl(200, 17%, 30%);;
+    color: hsl(0, 0%, 85%);
+  }
+
   & input[type="submit"] {
     background-color: var(--green);
     border-color: var(--green-15);

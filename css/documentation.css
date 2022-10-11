@@ -128,8 +128,12 @@
 .btn-link--copy {
   top: 0.5rem;
   right: 1.2rem;
-  background-color: hsl(200, 17%, 30%);
-  color: hsl(0, 0%, 85%);
+  background-color: var(--gray-90);
+  color: hsl(200, 17%, 30%);
+}
+
+.btn-link--copy svg {
+  color: hsl(200, 17%, 30%);
 }
 
 .btn-link--copy:hover,
