@@ -10,6 +10,9 @@
         }
     ],
 
+    "globalHeaders": {
+        "X-Frame-Options": "SAME-ORIGIN"
+    },
     "responseOverrides": {
         "404": {
             "rewrite": "/404.html"
