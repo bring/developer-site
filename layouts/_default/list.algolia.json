@@ -65,7 +65,10 @@
       "relpermalink" .RelPermalink
       "title" .Title
       "section" (.Section | upper)
-      "api" $.Site.Data.service) -}}
+      "services" $.Site.Data.service
+      "services_bsg" $.Site.Data.serices_bsg
+      "services_ri" $.Site.Data.serices_ri
+      "services_vas" $.Site.Data.serices_vas) -}}
 {{- end -}}
 
 {{- $.Scratch.Get "index" | jsonify -}}
