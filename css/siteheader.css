@@ -18,6 +18,7 @@
   align-items: flex-end;
   flex-flow: row wrap;
   flex: 0 1 auto;
+  margin-right: 2rem;
 }
 
 .dev-siteheader__title:hover,
@@ -60,7 +61,7 @@
   display:flex;
   align-items: center;
   font-size: 1.25rem;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 
 .dev-siteheader__nav ul {
@@ -118,6 +119,7 @@
 }
 
 .themes-btn:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
   color: var(--green-86);
 }
 
@@ -151,6 +153,9 @@
   .dev-siteheader__search {
     flex: 1;
     max-width: 100%;
+  }
+  .dev-siteheader__title {
+    margin-right: 0;
   }
 }
 
