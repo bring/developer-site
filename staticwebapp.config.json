@@ -11,7 +11,7 @@
     ],
 
     "globalHeaders": {
-        "X-Frame-Options": "DENY"
+        "X-Frame-Options": "SAME-ORIGIN"
     },
     "responseOverrides": {
         "404": {
