@@ -44,7 +44,7 @@ jobs:
       - name: notify slack failure
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && failure()
         env:
-          SLACK_MESSAGE: '{"channel": "#deploy", "text", ":build_failed: Failed to deploy developer-site <${{ steps.get_self_url.outputs.link }}|Check details>"}'
+          SLACK_MESSAGE: '{"channel": "#deploy", "text", ":build_failed: <!subteam^S041J3HU7PU> Failed to deploy developer-site <${{ steps.get_self_url.outputs.link }}|Check details>"}'
         run: |
           curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
 
