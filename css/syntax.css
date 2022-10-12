@@ -16,7 +16,7 @@
 /* KeywordReserved */ .chroma .kr { color: hsl(222, 67%, 35%); font-weight: bold }
 /* KeywordType */ .chroma .kt { color: hsl(264, 77%, 41%); font-weight: bold }
 /* Name */ .chroma .n {  }
-/* NameAttribute */ .chroma .na { color: hsl(0, 47%, 45%); font-style: italic }
+/* NameAttribute */ .chroma .na { color: hsl(0, 47%, 45%); }
 /* NameBuiltin */ .chroma .nb { color: hsl(264, 77%, 41%); font-weight: bold }
 /* NameBuiltinPseudo */ .chroma .bp {  }
 /* NameClass */ .chroma .nc { text-decoration: underline }
