@@ -44,7 +44,7 @@ jobs:
       - name: test slack notification to different channel
         if: github.event_name == 'pull_request'
         env:
-          SLACK_MESSAGE: '{"channel": "#mybring-experience-appstatis", "text", "Developer site slack test"}'
+          SLACK_MESSAGE: '{"channel": "#mybring-experience-appstatus", "text", "Developer site slack test"}'
         run: |
           curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
 
