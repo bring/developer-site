@@ -45,8 +45,8 @@ and then provide the parameter.
 `npm run build` builds CSS, JS and JSON. Hugo needs this in order to run.
 
 `npm start` runs Hugo locally. Pages update instantly on change, with one
-exception: if you are working on the RAML files, you have to run `npm run buildraml`
-to recompile a JSON file with the changes.
+exception: if you are working on the RAML files, you have to run
+`npm run buildraml` to recompile a JSON file with the changes.
 
 Hugo watches for changes to those generated files, no need to stop and restart
 under normal circumstances.
