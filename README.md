@@ -1,4 +1,4 @@
-# developer.bring.com!!!
+# developer.bring.com
 
 Structure, content and features are being worked on iteratively throughout 2021
 and 2022.
