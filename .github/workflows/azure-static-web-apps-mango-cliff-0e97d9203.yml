@@ -40,6 +40,13 @@ jobs:
       - name: update algolia search index for qa
         if: github.ref != 'refs/heads/master'
         run: npm run qalgolia
+      
+      - name: test slack notification to different channel
+        if: github.event_name == 'pull_request'
+        env:
+          SLACK_MESSAGE: '{"channel": "#mybring-experience-appstatis", "text", "Developer site slack test"}'
+        run: |
+          curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
 
       - name: notify slack failure
         if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && failure()
