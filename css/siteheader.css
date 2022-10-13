@@ -133,7 +133,6 @@
   min-width: 14rem;
   max-width: 28rem;
   position:relative;
-  margin-right: auto;
 }
 
 @media only screen and (max-width: 76em) {
@@ -145,7 +144,7 @@
 
 @media only screen and (max-width: 64em) {
   .dev-siteheader__nav {
-    margin-left: 1.5rem;
+    margin-left: 1.6rem;
   }
 }
 
@@ -154,12 +153,12 @@
     flex: 1;
     max-width: 100%;
   }
-  .dev-siteheader__title {
-    margin-right: 0;
-  }
 }
 
 @media only screen and (max-width: 39em) {
+  .dev-siteheader__title {
+    margin-right: 0;
+  }
   .dev-siteheader__logo {
     width: 6rem;
     margin-right: 0.4rem;
