@@ -48,8 +48,8 @@
           {{- with .enum -}}
             {{- $enum = . -}}
           {{- end -}}
-          {{- with .default -}}
-            {{- $default = . -}}
+          {{- if or .default (eq .default false) -}}
+            {{- $default = printf "%v" .default -}}
           {{- end -}}
         {{- else if eq $key "example" -}}
           {{- if eq $paramType "path" -}}
