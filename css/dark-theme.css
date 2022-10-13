@@ -185,10 +185,11 @@
     color: var(--green-86);
   }
 
-  & .dev-sidemenu a {
+  & .dev-sidemenu a,
+  & .theme-switch {
     &:focus,
     &:hover {
-      background-color: hsla(150, 20%, 80%, 0.1);
+      background-color: hsla(150, 20%, 80%, 0.1) !important;
     }
   }
 
