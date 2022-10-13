@@ -1,7 +1,14 @@
 ---
 title: Tracking API
 layout: api
-hidden: true
+disqus_identifier: https-developer-bring-com-api-tracking
+menu:
+  apidocs:
+    parent: track
+    identifier: tracking
+    title: Tracking API
+    url: /api/tracking
+weight: 31
  
 important:
   - type: warn
@@ -121,4 +128,5 @@ documentation:
 
 
 oas: https://tracking.bring.com/api-docs/
+
 ---

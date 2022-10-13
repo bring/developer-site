@@ -48,7 +48,6 @@ apis = [
   "content/api/invoice/api.raml",
   "content/api/reports/api.raml",
   "content/api/shipment/api.raml",
-  "content/api/tracking/api.raml",
 ]
 examples = [
   "content/api/booking/examples/",

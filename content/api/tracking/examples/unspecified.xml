@@ -1,8 +1,0 @@
-<ConsignmentSet xmlns="http://www.bring.no/sporing/2.0">
-  <ApiVersion>2</ApiVersion>
-  <Consignment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TraceStatusType">
-    <System>ExternalErrorPakker</System>
-    <Code>500</Code>
-    <Error>Error getting track & trace information</Error>
-  </Consignment>
-</ConsignmentSet>
