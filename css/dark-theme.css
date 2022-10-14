@@ -167,6 +167,10 @@
     }
   }
 
+  & .btn-link--copy {
+    background-color: var(--green-26);
+  }
+
   & input[type="submit"] {
     background-color: var(--green);
     border-color: var(--green-15);

@@ -128,19 +128,6 @@
 .btn-link--copy {
   top: 0.5rem;
   right: 1.2rem;
-  background-color: hsl(200, 17%, 30%);
-  color: hsl(0, 0%, 85%);
-}
-
-.btn-link--copy:hover,
-.btn-link--copy:focus-visible {
-  background-color: hsl(199, 17%, 36%);
-  color: hsl(0, 0%, 100%);
-}
-
-.btn-link--copy:hover svg,
-.btn-link--copy:focus-visible svg {
-  color: hsl(0, 0%, 100%);
 }
 
 .oas-endpoints > div:last-of-type {

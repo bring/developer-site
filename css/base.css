@@ -82,7 +82,7 @@ samp {
 
 pre {
   background-color: var(--gray-95);
-  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  font-family: Consolas, SF Mono, Menlo, 'Andale Mono', 'Ubuntu Mono', 'Courier New', Courier, monospace;
   font-size: 0.82rem;
   padding: 0.75rem;
   overflow: auto;
