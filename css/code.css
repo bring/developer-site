@@ -11,8 +11,6 @@
 code,
 .filename {
   white-space: pre;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", "Courier New",
-    Courier, monospace;
   font-size: 0.82rem;
 }
 
