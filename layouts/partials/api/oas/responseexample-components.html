@@ -80,15 +80,19 @@
                     {{- if eq $k "$ref" -}}
                       {{- $examplePath := path.Split . -}}
                       {{- $exampleId := lower (printf "%s-%s" $responseId $examplePath.File) -}}
-                      {{- range index $components.examples $examplePath.File -}}
-                        <div class="relative mtm" data-example-sub="{{$exampleId}}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                          {{- if eq $format "xml" -}}
-                            {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
-                          {{- else -}}
-                            {{- partial "api/oas/example-json.html" (dict "key" $examplePath.File "ctx" . "schemas" $components.schemas) . -}}
-                          {{- end -}}
-                          {{- partial "api/oas/copy-btn.html" -}}
-                        </div>
+                      {{- range $k, $_ := index $components.examples $examplePath.File -}}
+                        {{- if eq $k "description" -}}
+                          <p class="mlm">{{ . }}</p>
+                        {{- else -}}
+                          <div class="relative mtm" data-example-sub="{{$exampleId}}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                            {{- if eq $format "xml" -}}
+                              {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
+                            {{- else -}}
+                              {{- partial "api/oas/example-json.html" (dict "key" $examplePath.File "ctx" . "schemas" $components.schemas) . -}}
+                            {{- end -}}
+                            {{- partial "api/oas/copy-btn.html" -}}
+                          </div>
+                        {{- end -}}
                       {{- end -}}
                       {{- $exInd = add $exInd 1 -}}
                     {{- end -}}
