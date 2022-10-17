@@ -50,7 +50,7 @@
           data-mybicon-width="16"
           data-mybicon-height="16"
         ></span>
-        <span data-filter="name">{{ .vasName }}</span>
+        <span data-filter="name">{{ .vasName }}{{ if .vasNameNorwegian }} - ({{ .vasNameNorwegian }}){{ end }}</span>
       </summary>
       <div class="pam flex flex-wrap" id="vas-item{{ $index }}" data-vas-element>
         <div class="vas__codes mrm">
