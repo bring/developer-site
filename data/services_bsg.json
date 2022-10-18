@@ -194,7 +194,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "SE, DK",
   "SenderCountries" : "NO, SE, DK, FI",
-  "Destination" : "ALL",
+  "Destination" : "NO, SE, DK, FI, AD, AE, AF, AG, AI, AL, AM, AN, AO, AQ, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ, BR, BS, BT, BV, BW, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CU, CV, CW, CX, CY, CZ, DE, DJ, DM, DO, DZ, EC, EE, EG, EH, ER, ES, ET, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GS, GT, GU, GW, GY, HK, HM, HN, HR, HT, HU, ID, IE, IL, IM, IN, IO, IQ, IR, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN, KP, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MC, MD, ME, MF, MG, MH, MK, ML, MM, MN, MO, MP, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NF, NG, NI, NL, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PN, PR, PS, PT, PW, PY, QA, RE, RO, RS, RW, SA, SB, SC, SD, SG, SH, SI, SJ, SK, SL, SM, SN, SO, SR, SS, ST, SV, SX, SY, SZ, TC, TD, TF, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, TW, TZ, UA, UG, UM, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, XK, YE, YT, ZA, ZM, ZW",
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -266,7 +266,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "NO, SE, DK",
   "SenderCountries" : "NO, SE, DK, FI",
-  "Destination" : "ALL",
+  "Destination" : "NO, SE, DK, FI, AD, AE, AF, AG, AI, AL, AM, AN, AO, AQ, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ, BR, BS, BT, BV, BW, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CU, CV, CW, CX, CY, CZ, DE, DJ, DM, DO, DZ, EC, EE, EG, EH, ER, ES, ET, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GS, GT, GU, GW, GY, HK, HM, HN, HR, HT, HU, ID, IE, IL, IM, IN, IO, IQ, IR, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN, KP, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MC, MD, ME, MF, MG, MH, MK, ML, MM, MN, MO, MP, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NF, NG, NI, NL, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PN, PR, PS, PT, PW, PY, QA, RE, RO, RS, RW, SA, SB, SC, SD, SG, SH, SI, SJ, SK, SL, SM, SN, SO, SR, SS, ST, SV, SX, SY, SZ, TC, TD, TF, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, TW, TZ, UA, UG, UM, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, XK, YE, YT, ZA, ZM, ZW",
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -487,6 +487,24 @@
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
+  "ServiceName" : "Før 7",
+  "ServiceCode" : "5200",
+  "RequestCode" : "5200",
+  "Type" : "B2B",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "Customer setup",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "Yes",
+  "AgreementPrice" : "Yes",
+  "LeadTime" : "Yes",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "-",
+  "Destination" : "-",
+  "DomesticAllowed" : "NO"
+}, {
+  "ServiceFamily" : "Cargo Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Partigods til bedrift",
   "ServiceCode" : "5300",
   "RequestCode" : "5300",
@@ -535,8 +553,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
@@ -553,8 +571,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
@@ -571,8 +589,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
@@ -589,8 +607,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
@@ -625,8 +643,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
@@ -643,8 +661,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
@@ -661,8 +679,8 @@
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
+  "SenderCountries" : "NO, SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
@@ -1042,22 +1060,4 @@
   "SenderCountries" : "-",
   "Destination" : "-",
   "DomesticAllowed" : "-"
-}, {
-  "ServiceFamily" : "Letter",
-  "CustomerNumberType" : "",
-  "ServiceName" : "Sporbar brevpakke bedrift",
-  "ServiceCode" : "3630",
-  "RequestCode" : "3630",
-  "Type" : "B2X",
-  "Return" : "-",
-  "Booking" : "Yes",
-  "RequiredSetup" : "-",
-  "ShippingGuide" : "Yes",
-  "ListPrice" : "Yes",
-  "AgreementPrice" : "-",
-  "LeadTime" : "-",
-  "EnvironmentalData" : "-",
-  "SenderCountries" : "NO",
-  "Destination" : "AT, AU, BE, BG, CA, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IS, IE, IT, LT, LU, LV, MT, NL, NZ, PL, PT, RO, SE, SI, SK",
-  "DomesticAllowed" : "-"
-}]
+} ]
