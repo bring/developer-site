@@ -82,7 +82,7 @@
     border-color: var(--gray-40);
   }
 
-  & .flex-1-1-20r {
+  & .start__col {
     & svg {
       fill: var(--green);
     }
