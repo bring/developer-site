@@ -89,7 +89,7 @@ documentation:
 
       #### Example request
       ```
-      curl -v https://api.bring.com/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+      curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
     
       ###  Events Description
@@ -126,6 +126,6 @@ documentation:
       | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
 
 
-oas: https://api.bring.com/api-docs/
+oas: https://api.bring.com/tracking/api-docs/
 
 ---
