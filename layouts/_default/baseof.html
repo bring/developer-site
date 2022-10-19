@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   {{ partial "head.html" . }}
-    <body class="dev-docslayout">
-      {{ partial "header.html" . }}
-      <div class="dev-docs__menu" data-drawer data-drawer-event>
-        {{- partial "sidemenu.html" . -}}
-      </div>
-      {{- partial "drawmenu.html" . -}}
-      <div class="dev-docs__page">
-        {{ block "main" . }} {{ end }}
-        <div class="dev-obfuscator" data-drawer data-drawer-event></div>
-        {{ partial "footer.html" . }}
-      </div>
-      {{- partial "scripts.html" . -}}
-    </body>
+  <body class="dev-docslayout">
+    {{ partial "header.html" . }}
+    <div class="dev-docs__menu" data-drawer data-drawer-event>
+      {{- partial "sidemenu.html" . -}}
+    </div>
+    {{- partial "drawmenu.html" . -}}
+    <div class="dev-docs__page">
+      {{ block "main" . }} {{ end }}
+      <div class="dev-obfuscator" data-drawer data-drawer-event></div>
+      {{ partial "footer.html" . }}
+    </div>
+    {{- partial "scripts.html" . -}}
+  </body>
 </html>
