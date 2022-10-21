@@ -21,8 +21,8 @@
 @media screen and (min-width: 50em) {
   .dev-intro-l,
   .dev-intro-m {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 
