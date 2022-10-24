@@ -5,30 +5,6 @@
   color: #fff;
 }
 
-.sitefooter__wrapper {
-  padding: 2rem 0;
-  display: flex;
-  flex-flow: row wrap;
-  border-bottom: 1px solid var(--green-dark);
-  margin-bottom: 0.5rem;
-}
-
-.sitefooter__logo {
-  width: 9rem;
-  height: auto;
-  margin-right: 3rem;
-  margin-bottom: 1rem;
-}
-
-.sitefooter__nav {
-  margin-right: 2rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  min-width: 8rem;
-}
-
 .sitefooter a {
   color: var(--green-lighter);
   text-decoration: underline;
