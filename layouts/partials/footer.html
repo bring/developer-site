@@ -1,5 +1,5 @@
 <footer class="sitefooter">
-    <div class="sitefooter__terms">
+    <div class="sitefooter__terms pvs">
       <span class="mrm"
         >&copy;
         <script type="text/javascript">
@@ -7,16 +7,14 @@
         </script>
         Posten Norge AS
       </span>
-      <a class="mrm" href="http://www.bring.com/privacy-policy"
-        >Privacy policy</a
-      >
-      <a class="mrm" href="http://www.bring.com/use-of-cookies">Cookies</a>
-      <p class="mrm mb0">Download&nbsp;
-        <a href="{{ "/General_Terms_and_Conditions_for_Self_Service_Solutions.pdf" | relURL }}">
+      <div>
+        <a class="mrm" href="http://www.bring.com/privacy-policy">Privacy policy</a>
+        <a class="mrm" href="http://www.bring.com/use-of-cookies">Cookies</a>
+        <a class="mrm" href="{{ "/General_Terms_and_Conditions_for_Self_Service_Solutions.pdf" | relURL }}">
           General Terms and Conditions for Self Service Solutions
         </a>
-      </p>
-      <a href="{{ "/subcontractors/" | relURL }}">Subcontractors</a>
+        <a href="{{ "/subcontractors/" | relURL }}">Subcontractors</a>
+      </div>
     </div>
 </footer>
 <script defer src="https://www.mybring.com/design-system/js/iconsystem-vanilla.js?ts={{ now.Unix }}"></script>
