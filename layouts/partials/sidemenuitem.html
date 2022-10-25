@@ -43,11 +43,13 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
       {{- end -}}
 
       {{- with or (and (.apiData) (index .apiData .identifier)) $oasData -}}
-        <li>
-          <a href="#endpoints" data-list-item="endpoints">
-            <span data-hover="endpoints">Endpoints</span>
-          </a>
-        </li>
+        {{- with or .resources .paths -}}
+          <li>
+            <a href="#endpoints" data-list-item="endpoints">
+              <span data-hover="endpoints">Endpoints</span>
+            </a>
+          </li>
+        {{- end -}}
       {{- end -}}
 
       {{- with $oasData -}}
