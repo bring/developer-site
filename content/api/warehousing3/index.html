@@ -28,20 +28,17 @@ information:
 documentation:
   - title: Order Information
     content: |
-      In order to obtain information about an order/get the receipt for an order, you have two choices:
+      In order to obtain information about an order/get the receipt for an order, you have two options:
       <head>
         <link rel="stylesheet" href="warehousing.css">
         <script src="listcollapse.js" type="text/javascript" language="javascript1.2"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       </head>
       <body>
-        <p></p>
         <ul>
-          <li>You can obtain data from Mybring.</li>
-          <table class="codeBox"><tr><td class="dark">GET</td><td><a href="https://developer.bring.com/api/warehousing/#list-order-information">https://developer.bring.com/api/warehousing/#list-order-information</a></td></tr></table>
-          </ul>
+          <li>You can <a href='{{< relref "warehousing4" >}}#endpoints'>obtain data from Mybring</a>.</li>
           <li>We can push data to you if you set up a webservice on your side</li>
-        </ul><br>
+        </ul>
         <p>You should use a REST web service which needs to be secured through https.</p>
         <p>After you have set up your web service, you must send the information about the URL and its authentication to us, so that we can set up a link from our side.</p>
         <p>The data sent from Bring will be in GS1 3.3 format.

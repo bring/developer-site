@@ -41,12 +41,6 @@ ul.maketree li.last {
     display: inline-block;
     margin-left: 350px;
 }
-.req {
-    color: #7b3838;
-    background-color: #f6efef;
-    font-size: .9em;
-    width: 80px;
-}
 .reqtd {
     display: inline-block;
     width: 80px;
