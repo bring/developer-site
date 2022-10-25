@@ -10,12 +10,12 @@
 
 .dev-intro-l {
   flex: 1 1 40rem;
-  max-width: 50rem;
+  max-width: 58rem;
 }
 
 .dev-intro-m {
   flex: 1 1 20rem;
-  max-width: 30rem;
+  max-width: 36rem;
 }
 
 @media screen and (min-width: 50em) {
