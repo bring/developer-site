@@ -10,22 +10,22 @@
 
 .dev-intro-l {
   flex: 1 1 40rem;
-  max-width: 50rem;
+  max-width: 58rem;
 }
 
 .dev-intro-m {
   flex: 1 1 20rem;
-  max-width: 30rem;
+  max-width: 36rem;
 }
 
 @media screen and (min-width: 50em) {
   .dev-intro-l,
   .dev-intro-m {
-    margin-right: 3rem;
-    margin-left: 3rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 
-.flex-1-1-20r {
+.start__col {
   flex: 1 1 20rem;
 }

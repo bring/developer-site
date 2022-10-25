@@ -1,7 +1,7 @@
 {{- $currentPage := . -}}
 
 <nav class="dev-sidemenu" aria-label="Section">
-  {{- if eq .Section "api" -}}
+  {{- if or (eq .Section "api") (.IsHome) -}}
     <ul class="dev-sidemenu__list">
       {{- $len := (len .Site.Menus.api) -}}
       {{- range $index, $element := .Site.Menus.api -}}

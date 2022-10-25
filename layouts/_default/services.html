@@ -3,12 +3,6 @@
 {{- if (eq ($.Param "widelayout") true) -}}
   {{- $maxwidth = "" -}}
 {{- end -}}
-
-<div class="dev-docs__menu" data-drawer data-drawer-event>
-  {{- partial "sidemenu.html" . -}}
-</div>
-{{- partial "drawmenu.html" . -}}
-<div class="dev-docs__page">
   <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
     <article>
       <h1>
@@ -33,7 +27,4 @@
       {{- end -}}
     </article>
   </main>
-  {{- partial "footer.html" . -}}
-  <div class="dev-obfuscator" data-drawer data-drawer-event></div>
-</div>
 {{- end -}}

@@ -7,7 +7,6 @@
   & a:not(
     .btn,
     .btn-link--dark,
-    .mb-card,
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
@@ -18,7 +17,6 @@
   & a:not(
     .btn,
     .btn-link--dark,
-    .mb-card,
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
@@ -84,12 +82,7 @@
     border-color: var(--gray-40);
   }
 
-  & .mb-card {
-    background-color: var(--green-22);
-    border-color: transparent;
-    &:hover {
-      background-color: var(--green-18);
-    }
+  & .start__col {
     & svg {
       fill: var(--green);
     }
@@ -184,8 +177,7 @@
   & .param-toggle-icon,
   & .form__label,
   & .dev-docscontent__info summary,
-  & .dev-docscontent__info details p,
-  & .mb-card {
+  & .dev-docscontent__info details p {
     color: var(--green-86);
   }
 

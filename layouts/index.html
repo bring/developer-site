@@ -33,21 +33,25 @@
           {{- end -}}
           <div class="mbxl">
             <h2 class="mbs">API updates</h2>
-            {{- range where .Site.Pages "Section" "api" -}}
-              {{- if (in .CurrentSection "revision-history") -}}
-                {{- range first 3 .Pages -}}
-                  <h3 class="text-basic">
-                    <time
-                      datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-                      >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
-                    >: {{ .Title }}
-                  </h3>
-                  {{ .Content }}
+            <div class="owls mbl rad-a2px">
+              {{- range where .Site.Pages "Section" "api" -}}
+                {{- if (in .CurrentSection "revision-history") -}}
+                  {{- range first 3 .Pages -}}
+                    <div class="bg-gray1 bshadow pal rad-a2px">
+                      <h3 class="text-basic">
+                        <time
+                          datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                          >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
+                        >: {{ .Title }}
+                      </h3>
+                      {{ .Content }}
+                    </div>
+                  {{- end -}}
                 {{- end -}}
               {{- end -}}
-            {{- end -}}
-            <div class="w100p mtm mbl">
-              <a class="text-heading" href="./api/revision-history/">Show all updates &RightArrow;</a>
+              <div class="w100p">
+                <a class="text-heading" href="./api/revision-history/">Show all updates &RightArrow;</a>
+              </div>
             </div>
             <div class="bg-gray2 pal rad-a2px">
               <h3>Subscribe to updates</h3>
