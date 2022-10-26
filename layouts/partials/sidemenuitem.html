@@ -7,7 +7,7 @@
 {{- end -}}
 {{- $prefix := "" -}}
 {{- with .prefix -}}
-  {{- $prefix = . -}}
+  {{- $prefix = (print . "-") -}}
 {{- end -}}
 
 {{- $target := "" -}}
@@ -76,7 +76,7 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
               {{- $method = . -}}
             {{- end -}}
           {{- end -}}
-          {{- $endpointId := (printf "%s-%s-%s" $prefix .displayName $method) | anchorize -}}
+          {{- $endpointId := (print $prefix .displayName "-" $method) | anchorize -}}
           <li>
             <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
               <span data-hover="{{ .displayName }}">
