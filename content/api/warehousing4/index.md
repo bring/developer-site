@@ -10,6 +10,9 @@ menu:
     parent: warehouse
 weight: 3
 
+introduction:
+      You are able to extract detailed order information from our warehouse while the orders are being processed. Further, the API provides information about articles in stock, with methods for retrieving information about single items or configurable list of items.
+
 information:
   - title: Authentication
     content: |
@@ -17,17 +20,9 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON and SOAP over HTTP. This API doesn't support JSON for all methods yet. Look in the example section to see which are supported.
+      REST XML/JSON and SOAP over HTTP. Warehousing API has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The XML/JSON interface is the core interface with complete functionality. Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
 
 documentation:
-  - title: Introduction
-    content: |
-      You are able to extract detailed order information from our warehouse while the orders are being processed. Further, the API provides information about articles in stock, with methods for retrieving information about single items or configurable list of items.
-
-      Warehousing API has several interfaces (SOAP and XML/JSON). Choose the option that fits your needs best (see table below). The XML/JSON interface is the core interface with complete functionality.
-
-      Please note that this API currently doesn't support json on all of its methods yet. Look in the example section to see which are supported.
-
   - title: Error handling
     content: |
       When using the Warehousing API, errors or service unavailability can occur, although we do our utmost to prevent any downtime. Thus it is important to use timeouts and other error handling techniques when making requests to the service.
