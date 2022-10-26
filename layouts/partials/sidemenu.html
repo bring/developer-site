@@ -38,26 +38,6 @@
                 {{- range .Children -}}
                   <li>
                     <a href="{{ .URL }}">{{ .Title }}</a>
-                    {{- if and (eq $currentPage .Page) (or (isset $.Params "examples") (isset $.Params "apis")) -}}
-                      <ul class="dev-sidemenu__sublist text-note">
-                        {{- range $.Params.examples -}}
-                          <li>
-                            <a href="/api/checkout-guide-norway/example/{{ .slug }}">{{ .title }}</a>
-                          </li>
-                        {{- end -}}
-                        {{- range $.Params.apis -}}
-                          {{ if eq "pickup-point" .slug }}
-                            <li>
-                              <a href="/api/{{ .slug }}">{{ .title }}</a>
-                            </li>
-                          {{ else }}
-                            <li>
-                              <a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a>
-                            </li>
-                          {{ end }}
-                        {{- end -}}
-                      </ul>
-                    {{- end -}}
                   </li>
                 {{- end -}}
               </ul>
