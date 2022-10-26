@@ -1,24 +1,8 @@
----
-title: Book Pakke levert hjem
-titlesub: Home Delivery booking example
-layout: api
-widelayout: false
-notanapi: true
-menu:
-  api:
-    parent: guide-home-delivery
-aliases:
-  - ../../checkout-guide/example/book-home-delivery
----
-
-<section class="dev-docscontent__section">
-  <div class="dev-guide-l">
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Request</h3>
-      <p>
-        Pakke levert hjem (5600) med Forenklet utlevering (0041), valgfri leveringsdag og fri retur av&nbsp;pakken.
-        <span class="db text-note">Home Delivery with Flex delivery, customer specified delivery time and free return of parcel.</span>
-      </p>
+<h3>Request</h3>
+<p>
+  Pakke levert hjem (5600) med Forenklet utlevering (0041), valgfri leveringsdag og fri retur av&nbsp;pakken.
+  <span class="db text-note">Home Delivery with Flex delivery, customer specified delivery time and free return of parcel.</span>
+</p>
 
 <!-- prettier-ignore -->
 {{< highlight js >}}{
@@ -88,28 +72,24 @@ aliases:
   "testIndicator": false
 }
 {{< /highlight >}}
-    </div>
 
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Submit the request</h3>
-      <p>Post your request to</p>
+<h3>Submit the request</h3>
+<p>Post your request to</p>
 <!-- prettier-ignore -->
 {{< highlight text >}}https://api.bring.com/booking/api/booking{{< /highlight >}}
-    </div>
 
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Response</h3>
-      <p>
-        The Booking API generates and sends all necessary EDI messages to carry
-        out the shipment. A URL to a PDF label is returned in the response. The
-        label must be printed and be attached to the shipment. A URL for the
-        tracking information is also returned.
-      </p>
-      <p>
-        A GET request to the label URL will result in a HTTP 302 redirect to the
-        concrete storage facility (e.g. redirect to Amazon S3). Ensure that your
-        client follows these redirects.
-      </p>
+<h3>Response</h3>
+<p>
+  The Booking API generates and sends all necessary EDI messages to carry
+  out the shipment. A URL to a PDF label is returned in the response. The
+  label must be printed and be attached to the shipment. A URL for the
+  tracking information is also returned.
+</p>
+<p>
+  A GET request to the label URL will result in a HTTP 302 redirect to the
+  concrete storage facility (e.g. redirect to Amazon S3). Ensure that your
+  client follows these redirects.
+</p>
 
 <!-- prettier-ignore -->
 {{< highlight js >}}
@@ -144,6 +124,3 @@ aliases:
   ]
 }
 {{< /highlight >}}
-    </div>
-  </div>
-</section>
