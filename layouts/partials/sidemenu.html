@@ -1,13 +1,14 @@
 {{- $currentPage := . -}}
+{{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
 
 <nav class="dev-sidemenu" aria-label="Section">
   {{- if or (eq .Section "api") (.IsHome) -}}
-    <ul class="dev-sidemenu__list">
+    <ul class="dev-sidemenu__list dev-sidemenu__separator">
       {{- $len := (len .Site.Menus.api) -}}
       {{- range $index, $element := .Site.Menus.api -}}
         {{- $lastElement := "" -}}
         {{- if eq (add $index 1) $len -}}
-          {{- $lastElement = "dev-sidemenu__separator pbm mbm" -}}
+          {{- $lastElement = "mbm" -}}
         {{- end -}}
 
         {{- $hidePage := false -}}
@@ -23,7 +24,7 @@
             {{- $iconEx := "" -}}
             {{- with .Params.blank -}}
               {{- $target = . -}}
-              {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+              {{- $iconEx = $iconExHtml -}}
             {{- end -}}
             <a
               href="{{ .URL | relURL }}"
@@ -36,13 +37,19 @@
             {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
               <ul class="dev-sidemenu__sublist">
                 {{- range .Children -}}
+                  {{- with .Params.blank -}}
+                    {{- $target = . -}}
+                    {{- $iconEx = $iconExHtml -}}
+                  {{- end -}}
                   <li>
-                    <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">{{ .Title }}</a>
+                    <a href="{{ .URL }}" {{ $target | safeHTMLAttr }} class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">{{ .Title }} {{ safeHTML $iconEx }}</a>
                       {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
                         <ul class="dev-sidemenu__sublist text-note">
                           {{- range .Children -}}
                             <li>
-                              <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">{{ .Title }}</a>
+                              <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent .Menu . }}active {{ end }}">
+                                {{ .Title }}
+                              </a>
                             </li>
                           {{- end -}}
                         </ul>

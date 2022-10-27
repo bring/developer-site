@@ -64,6 +64,12 @@ title = "API operational status"
 url = "https://status.bring.systems"
 weight = 100
 
+[[menu.api]]
+title = "Checkout request builder"
+url = "https://www.mybring.com/shipping-guide/integration/checkout"
+parent = "ecommerce-solutions"
+weight = 100
+
 [menu.api.params]
 blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 
@@ -71,15 +77,6 @@ blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 identifier = "checkout"
 title = "Checkout"
 weight = 1
-
-[[menu.apidocs]]
-parent = "checkout"
-title = "Checkout request builder"
-url = "https://www.mybring.com/shipping-guide/integration/checkout"
-weight = 15
-
-[menu.apidocs.params]
-blank = "target=\"_blank\" rel=\"noopener noreferrer\""
 
 [[menu.apidocs]]
 parent = "checkout"
