@@ -29,22 +29,22 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^2.2.0",
-    "@vitejs/plugin-react": "^2.1.0",
+    "@vitejs/plugin-legacy": "^2.3.0",
+    "@vitejs/plugin-react": "^2.2.0",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.12",
-    "concurrently": "^7.4.0",
+    "concurrently": "^7.5.0",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.13",
     "hugo-bin": "^0.92.3",
-    "postcss": "^8.4.17",
+    "postcss": "^8.4.18",
     "postcss-import": "^15.0.0",
     "postcss-nesting": "^10.2.0",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "terser": "^5.15.1",
     "toml": "^3.0.0",
-    "vite": "^3.1.7"
+    "vite": "^3.2.0"
   },
   "browserslist": [
     "> .2%",
@@ -56,6 +56,6 @@
     "react": "^18.2.0",
     "react-autosuggest": "^10.1.0",
     "react-dom": "^18.2.0",
-    "react-instantsearch-dom": "^6.36.0"
+    "react-instantsearch-dom": "^6.38.0"
   }
 }
