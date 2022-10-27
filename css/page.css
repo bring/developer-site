@@ -19,3 +19,7 @@
 .jobs a {
   text-decoration: underline;
 }
+
+.ecom-entrance {
+  flex: 1 1 14rem;
+}
