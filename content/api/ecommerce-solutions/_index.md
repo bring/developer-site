@@ -7,6 +7,6 @@ menu:
     identifier: ecommerce-solutions
     title: Ecommerce Solutions
     url: ecommerce-solutions
-weight: 5
+weight: 4
 aliases:
 ---
