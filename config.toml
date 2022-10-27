@@ -79,13 +79,6 @@ title = "Checkout"
 weight = 1
 
 [[menu.apidocs]]
-parent = "checkout"
-identifier = "product-page-widget"
-title = "Product page widget"
-url = "/api/product-page-widget"
-weight = 16
-
-[[menu.apidocs]]
 identifier = "book"
 title = "Booking"
 weight = 2
