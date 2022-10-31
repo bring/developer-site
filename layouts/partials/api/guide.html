@@ -99,7 +99,7 @@
               ></span>{{ .title }}
             </summary>
             <div class="pam pts">
-              {{- $exampleFile := (printf "%s%s%s" "api/ecommerce-solutions/checkout-guide-norway/example/" .slug ".html") -}}
+              {{- $exampleFile := (printf "%s%s%s" "api/e-commerce-solutions/checkout-guide-norway/example/" .slug ".html") -}}
               {{- readFile $exampleFile | markdownify -}}
             </div>
           </details>

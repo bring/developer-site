@@ -67,7 +67,7 @@ weight = 100
 [[menu.api]]
 title = "Checkout request builder"
 url = "https://www.mybring.com/shipping-guide/integration/checkout"
-parent = "ecommerce-solutions"
+parent = "e-commerce-solutions"
 weight = 100
 
 [menu.api.params]
