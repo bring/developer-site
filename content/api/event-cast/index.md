@@ -167,4 +167,6 @@ documentation:
       Eventually, if the package was not found with Bring within this timeframe - a notification will be sent on the callback URL configured for that Webhook which notifies this.
 
       **Note**: Retry-timing is non-configurable.
+
+oas: https://api.qa.bring.com/event-cast/api-docs
 ---
