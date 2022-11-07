@@ -1,29 +1,19 @@
----
-title: Get delivery options with prices and lead time
-titlesub:
-layout: api
-widelayout: false
-notanapi: true
-menu:
-  api:
-    parent: guide-home-delivery
-    identifier: example-get-delivery-option
-    title: Get delivery options with prices and lead time
-aliases:
-  - ../../checkout-guide/example/get-delivery-option
----
+<h3>Endpoint</h3>
+<div class="flex align-ifs mbm mts paxs bg-white">
+  <span class="mb-badge mb-badge--blue text-note mrxs pas">POST</span>
+  <span class="flex-auto maxw40r">
+    <pre class="flex align-ic pas mb0 wrap-text"><span>https://api.bring.com/shippingguide/v2/products</span></pre>
+  </span>
+</div>
 
-<section class="dev-docscontent__section">
-  <div class="dev-guide-l">
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Request</h3>
-      <p>
-        The request will return information needed to present a basic best
-        practice checkout to the end user. This includes Pakke i postkassen
-        (Mailbox parcel), Pakke til hentested (Pickup parcel) and Pakke levert
-        hjem (Home delivery) with price and lead time on each service, and
-        alternative delivery dates for home delivery.
-      </p>
+<h3>Request</h3>
+<p>
+  The request will return information needed to present a basic best
+  practice checkout to the end user. This includes Pakke i postkassen
+  (Mailbox parcel), Pakke til hentested (Pickup parcel) and Pakke levert
+  hjem (Home delivery) with price and lead time on each service, and
+  alternative delivery dates for home delivery.
+</p>
 
 <!-- prettier-ignore -->
 {{< highlight js >}}https://api.bring.com/shippingguide/v2/products?fromcountry=NO&tocountry=NO&frompostalcode=0469&topostalcode=6050&product=5800&product=5600&product=3584&weight=500&addressLine=Ladeberget 2&numberofdeliverydates=3&withUniqueAlternateDeliveryDates=true
@@ -41,17 +31,8 @@ var params = {
   numberofdeliverydates: 3, // only needed to provides alternative delivery dates for home delivery
   withUniqueAlternateDeliveryDates: true // alternate delivery days for home delivery should be unique
 }{{< /highlight >}}
-    </div>
 
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Submit the request</h3>
-      <p>Post your request to</p>
-<!-- prettier-ignore -->
-{{< highlight text >}}https://api.bring.com/shippingguide/v2/products{{< /highlight >}}
-    </div>
-
-    <div class="bg-green1 pal pbm mbxs">
-      <h3>Response</h3>
+<h3>Response</h3>
 <!-- prettier-ignore -->
 {{< highlight js >}}
 {
@@ -370,6 +351,3 @@ var params = {
   "uniqueId": "586b30d6-d440-4c35-bbc1-de6eca68152b"
 }
 {{< /highlight >}}
-    </div>
-  </div>
-</section>

@@ -86,24 +86,32 @@
       </p>
     {{- end -}}
   {{- end -}}
-  {{- if or (isset .Params "examples") (isset .Params "apis") -}}
-    <div class="bg-green1 pal maxw40r">
     {{- if isset .Params "examples" -}}
-      <h3>Examples</h3>
-      <ul>
+      <div class="dev-docscontent__info mvl owlxs">
+        <h3>Examples</h3>
         {{- range .Params.examples -}}
-          <li><a href="/api/checkout-guide-norway/example/{{ .slug }}">{{ .title }}</a></li>
+          <details class="mb-disclosure mb-disclosure--arrow bg-gray2">
+            <summary>
+              <span
+                data-mybicon="mybicon-arrow-right"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+              ></span>{{ .title }}
+            </summary>
+            <div class="pam pts">
+              {{- $exampleFile := (printf "%s%s%s" "api/e-commerce-solutions/checkout-guide-norway/example/" .slug ".html") -}}
+              {{- readFile $exampleFile | markdownify -}}
+            </div>
+          </details>
         {{- end -}}
-      </ul>
-      {{ end }}
-      {{- if isset .Params "apis" -}}
+      </div>
+    {{- end -}}
+    {{- if isset .Params "apis" -}}
       <h3>Relevant API documentation</h3>
       <ul>
         {{- range .Params.apis -}}
-          <li><a href="/api/checkout-guide-norway/api/{{ .slug }}">{{ .title }}</a></li>
+          <li><a href="/api/{{ .slug }}">{{ .title }}</a></li>
         {{- end -}}
       </ul>
-      {{ end }}
-    </div>
-  {{- end -}}
+    {{ end }}
 </section>

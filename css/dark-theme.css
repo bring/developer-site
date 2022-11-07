@@ -10,7 +10,9 @@
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
-    a.dev-codetabs__link) {
+    a.dev-codetabs__link,
+    .start__col,
+    .ecom-entrance) {
       color: var(--blue-light);
   }
 
@@ -20,7 +22,9 @@
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
-    a.dev-codetabs__link):hover {
+    a.dev-codetabs__link,
+    .start__col,
+    .ecom-entrance):hover {
       color: var(--blue-link);
   }
 
@@ -83,6 +87,7 @@
   }
 
   & .start__col {
+    color: inherit;
     & svg {
       fill: var(--green);
     }
@@ -106,6 +111,13 @@
 
   & #services-bsg .icon-ui--lightgray {
     fill: var(--gray-40);
+  }
+
+  & .ecom-entrance {
+    color:inherit;
+    & svg {
+      fill: var(--green);
+    }
   }
 
   /* Buttons */
