@@ -1,0 +1,48 @@
+---
+title: Bring environmental info
+layout: api
+notanapi: true
+menu:
+  api:
+    parent: e-commerce-solutions
+    identifier: bring-env
+    title: Bring environmental info
+weight: 2
+---
+
+<section class="dev-docscontent__section">
+  <p class="text-heading">
+    A web component where you can easily present the environmental information
+    from Bring in your e-commerce. The information can be displayed directly by adding
+    the script served by us and the custom html element provided below. Optionally a modal
+    window can be triggered where the information will be displayed instead.
+  </p>
+
+  <button class="btn btn--green mbl" data-bring-env-open>Show environmental info</button>
+
+  <bring-env modal="true"></bring-env>
+  <script type="module" src="/assets/bring-env/main.js" defer></script>
+
+  <h2 class="text-title">Implementation:</h2>
+
+  <p class="mbs">Include the script with <code>type="module"</code>.</p>
+  <pre class="wrap-text maxw40r">
+    &lt;script type="module" src="https://developer.bring.com/assets/bring-env/main.js" defer&gt;&lt;/script&gt;
+  </pre>
+
+  <p class="mbs">Add the custom element <code>bring-env</code>.</p>
+  <pre class="wrap-text maxw40r mbl">
+    &lt;bring-env&gt;&lt;/bring-env&gt;
+  </pre>
+
+  <h2 class="text-title">As modal window (optional):</h2>
+  <p class="mbs">To treat it as a modal window, add the data attribute <code>modal="true"</code> on the custom element.</p>
+  <pre class="wrap-text maxw40r">
+    &lt;bring-env modal="true"&gt;&lt;/bring-env&gt;
+  </pre>
+
+  <p class="mbs">For triggering the modal to open, add the data attribute <code>data-bring-env-open</code> on an element.</p>
+  <pre class="wrap-text maxw40r">
+    &lt;button data-bring-env-open&gt;Open modal&lt;/button&gt;
+  </pre>
+</section>

@@ -6,18 +6,18 @@ export default function bringEnvStyle(isModal) {
 
     h1, h2 {
       font-family: 'PSBold';
-      font-size: 3rem;
+      font-size: 2rem;
       line-height: 1.4;
       color: #00643A;
-      margin: 0 0 2rem;
+      margin: 0 0 1rem;
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     p, li, a {
-      font-size: 1.4rem;
+      font-size: 1rem;
       line-height: 1.6;
       color: rgba(0, 47, 25, 0.8);
     }
@@ -29,15 +29,6 @@ export default function bringEnvStyle(isModal) {
 
     a:hover {
       color: inherit;
-    }
-
-    @media only screen and (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
     }
 
     .bring-env {
@@ -62,7 +53,7 @@ export default function bringEnvStyle(isModal) {
         position: fixed;
         height: 100vh;
         width: 100vw;
-        background: hsla(0,0%,50%,0.5);
+        background: hsla(0,0%,10%,0.5);
         top: 0;
         left: 0;
         z-index:5000;
@@ -156,7 +147,7 @@ export default function bringEnvStyle(isModal) {
     }
     
     .bring-env-image .image {
-      width: 76%;
+      width: 60%;
       display: block;
     }
 
