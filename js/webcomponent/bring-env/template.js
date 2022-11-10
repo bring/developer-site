@@ -8,7 +8,7 @@ import {train} from "./svgs/train.js";
 import {uploadingTruck} from "./svgs/uploading-truck.js";
 
 export default function bringEnvTemplate(isModal) {
-  return `<div class="bring-env">
+  return `<div class="bring-env" ${isModal ? 'role="dialog" aria-labelledby="modalTitle"' : ''}>
     <div class="bring-env-wrapper">
       <div class="bring-env-header">
         ${postenLogo}
@@ -21,7 +21,7 @@ export default function bringEnvTemplate(isModal) {
       <div class="bring-env-content">
         <section>
           <div class="bring-env-text">
-            <h1>Hva er klimakompensert frakt</h1>
+            <h1 id="modalTitle">Hva er klimakompensert frakt</h1>
             <p>Når du velger levering med Posten, vil Posten jevne ut klimagassutslippene ved kjøp av kvoter. Det vil si at utslippet som frakten medfører blir minsket med samme mengde et annet sted i verden. Gjennom vår partner Cemasys handler vi kvoter i Clean Development Mechanism markedet, som er en del av Kyoto-avtalen.</p>
           </div>
         </section>

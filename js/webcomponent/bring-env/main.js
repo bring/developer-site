@@ -57,4 +57,4 @@ class BringEnv extends HTMLElement {
   }
 }
 
-customElements.define("bring-env", BringEnv);
+customElements.define("bring-environmental-info", BringEnv);
