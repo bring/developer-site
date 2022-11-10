@@ -11,7 +11,7 @@ export default function bringEnvStyle(isModal) {
       font-family: 'PSBold';
       font-size: 2.2rem;
       line-height: 1.6;
-      color: #980000;
+      color: #4a1011;
       margin: 0 0 1rem;
     }
 
@@ -197,12 +197,6 @@ export default function bringEnvStyle(isModal) {
       font-family: 'PSMedium';
       font-weight: normal;
     }
-
-    .bring-env-cards .bring-env-card .bring-env-card-heading h3 {
-      font-family: 'PSBold';
-      font-size: 2rem;
-      color: #000;
-    }
     
     .bring-env-bottom {
       text-align:center;
@@ -211,7 +205,7 @@ export default function bringEnvStyle(isModal) {
 
     .bring-env-bottom svg {
       max-width: 15rem;
-      margin: 1rem 0;
+      margin: 3rem 0;
     }
   </style>`;
 }

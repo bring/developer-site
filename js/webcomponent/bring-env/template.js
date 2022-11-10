@@ -22,79 +22,57 @@ export default function bringEnvTemplate(isModal) {
         <section>
           <div class="bring-env-text">
             <h1>Hva er klimakompensert frakt</h1>
-            <p>Når du velger levering med Posten, vil vi jevne ut klimagassutslippene ved kjøp av kvoter. Det vil si at utslippet som frakten medfører blir minsket med samme mengde et annet sted i verden. I kassen er det miljøvennlige alternativet markert i grønt med &laquo;miljøvennlig&raquo;. Slik kan du gjøre et grønnere valg.</p>
+            <p>Når du velger levering med Posten, vil Posten jevne ut klimagassutslippene ved kjøp av kvoter. Det vil si at utslippet som frakten medfører blir minsket med samme mengde et annet sted i verden. Gjennom vår partner Cemasys handler vi kvoter i Clean Development Mechanism markedet, som er en del av Kyoto-avtalen.</p>
           </div>
         </section>
         <section>
           <div class="bring-env-text">
-            <h2>Hva gjør Posten / Bring</h2>
+            <h2>Hva gjør Posten og Bring</h2>
             <p>I Posten og Bring jobber vi aktivt og målrettet hver dag for å redusere våre klimautslipp, slik at vi kan frakte dine pakker med så lave utslipp som mulig.</p>
           </div>
           <div class="bring-env-cards">
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${greenTruck}
-                <h3>900</h3>
-              </div>
-              <p>Vi har idag <strong>900</strong> elektriske vare- og lastebiler</p>
+              ${greenTruck}
+              <p>Vi har <strong>900</strong> elektriske vare- og lastebiler.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${bicycleDelivery}
-                <h3>700</h3>
-              </div>
-              <p>Vi har idag ca. <strong>700</strong> elektriske mopeder, sykler og traller</p>
+              ${bicycleDelivery}
+              <p>Vi har ca. <strong>700</strong> elektriske mopeder, sykler og traller.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${smallCar}
-                <h3>600</h3>
-              </div>
-              <p>Vi har satt en stopp for bestilling av fossilfrie varebiler, og rundt <strong>600</strong> nye elektriske varebiler er bestilt.</p>
+              ${smallCar}
+              <p>Vi har satt en stopp for bestilling av fossile varebiler, og rundt <strong>600</strong> nye elektriske varebiler er bestilt.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${greenTruck}
-                <h3>65 / 70</h3>
-              </div>
-              <p>Vi har idag <strong>65</strong> elektriske lastebiler og <strong>70</strong> biogassdrevne lastebiler under levering.</p>
+              ${greenTruck}
+              <p>Vi har <strong>65</strong> elektriske lastebiler og <strong>70</strong> biogassdrevne lastebiler under levering.</p>
             </div>
           </div>
         </section>
         <section>
           <div class="bring-env-text">
             <h2>Mål</h2>
-            <p>Målet er å oppnå et nettonullutslipp i 2050, som er i tråd med Parisavtalen (2030). Her er noen av de tiltakene som vi har gjennomført og skal gjennomføre:</p>
+            <p>Målet er å oppnå et netto nullutslipp i 2050, som er i tråd med Parisavtalen. Her er noen av de tiltakene som vi har gjennomført og skal gjennomføre:</p>
           </div>
           <div class="bring-env-cards">
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${flyingPackages}
-              </div>
-              <p>I dag har vi utslippsfri postdistribusjon i <strong>49</strong> byer, og har et mål om <strong>40</strong> nordiske byer til med fossilfri distribusjon av pakker med varebil.</p>
+              ${flyingPackages}
+              <p>Vi har utslippsfri postdistribusjon i <strong>49</strong> byer, og har et mål om <strong>40</strong> nordiske byer til med fossilfri distribusjon av pakker med varebil.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${uploadingTruck}
-              </div>
+              ${uploadingTruck}
               <p>Vi optimaliserer kontinuerlig kjøreruter og øker fyllingsgrad av biler.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${greenLeaf}
-              </div>
-              <p>Vi etablerer solceller og ladeinfrastruktur på våre terminaler.</p>
+              ${greenLeaf}
+              <p>Vi installerer solcellepaneler og ladeinfrastruktur på våre terminaler.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${smallCar}
-              </div>
+              ${smallCar}
               <p>Vi etablerer sentrumsnære lokasjoner for å kunne ta i bruk elektriske kjøretøy.</p>
             </div>
             <div class="bring-env-card">
-              <div class="bring-env-card-heading">
-                ${train}
-              </div>
+              ${train}
               <p>Vi er en av nordens største brukere av tog.</p>
             </div>
             <div class="bring-env-bottom">
