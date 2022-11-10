@@ -38,7 +38,8 @@ export default function bringEnvStyle(isModal) {
       width: 100vw;
       position: fixed;
       top: 0;
-      left: 0;`
+      left: 0;
+      z-index: 5000;`
       : 'display:flex;'}
       justify-content: center;
       align-items: center;
@@ -56,7 +57,7 @@ export default function bringEnvStyle(isModal) {
         background: hsla(0,0%,10%,0.5);
         top: 0;
         left: 0;
-        z-index:5000;
+        z-index:5001;
       }`
     : ''}
 
@@ -72,7 +73,7 @@ export default function bringEnvStyle(isModal) {
       max-height: 80vh;
       overflow: hidden;
       box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-      z-index: 5001;`
+      z-index: 5002;`
       : 'width: 100%;'}
     }
 
