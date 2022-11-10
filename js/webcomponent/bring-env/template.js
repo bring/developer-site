@@ -1,6 +1,11 @@
 import {postenLogo} from "./svgs/posten-logo.js";
-import {compPackages} from "./svgs/comp-packages.js";
-import {compGirl} from "./svgs/comp-girl.js";
+import {flyingPackages} from "./svgs/flying-packages.js";
+import {bicycleDelivery} from "./svgs/bicycle-delivery.js";
+import {greenLeaf} from "./svgs/green-leaf.js";
+import {greenTruck} from "./svgs/green-truck.js";
+import {smallCar} from "./svgs/small-car.js";
+import {train} from "./svgs/train.js";
+import {uploadingTruck} from "./svgs/uploading-truck.js";
 
 export default function bringEnvTemplate(isModal) {
   return `<div class="bring-env">
@@ -15,31 +20,87 @@ export default function bringEnvTemplate(isModal) {
       </div>
       <div class="content">
         <section>
-          <div class="bring-env-image">
-            ${compPackages}
-          </div>
           <div class="bring-env-text">
-            <h1>Hva er klimakompensert frakt?</h1>
-            <p>Ved at du velger levering med Posten/Bring så vil vi sørge for at klimagassutslipp, som frakten medfører, jevnes ut ved at vi kjøper kvoter. Det vil si at utslippet blir minsket med samme mengde et annet sted i verden. I kassen er det miljøvennlige alternativet markert i grønt med «miljøvennlig». Slik kan du gjøre et grønnere valg.
-            Posten og Bring jobber aktivt hver dag for å redusere våre klimautslipp, slik at vi kan frakte dine pakker med så lave utslipp som mulig. Konsernet har per i dag ca. 900 elektriske vare- og lastebiler, i tillegg til ca. 700 elektriske mopeder, sykler og traller. Vi har satt stopp for bestilling av fossile varebiler, og rundt 600 nye elektriske varebiler er bestilt.
-            Målet er å oppnå et nettonullutslipp i 2050, som er i tråd med Parisavtalen (2030).
+            <h1>Hva er klimakompensert frakt</h1>
+            <p>Når du velger levering med Posten, vil vi jevne ut klimagassutslippene ved kjøp av kvoter. Det vil si at utslippet som frakten medfører blir minsket med samme mengde et annet sted i verden. I kassen er det miljøvennlige alternativet markert i grønt med &laquo;miljøvennlig&raquo;. Slik kan du gjøre et grønnere valg.</p>
           </div>
         </section>
         <section>
           <div class="bring-env-text">
-            <h2>Hva betyr det?</h2>
-            <p>Her er noen av de tiltakene som vi har og skal gjennomføre:</p>
-            <ul>
-              <li>49 byer med utslippsfri postdistribusjon, mål om 40 nordiske byer med fossilfri distribusjon av pakker med varebil</li>
-              <li>65 elektriske lastebiler og 70 biogassdrevne lastebiler er under levering</li>
-              <li>Kontinuerlig optimalisering av ruter og økt fyllingsgrad av biler</li>
-              <li>Etablering av solceller og ladeinfrastruktur ved våre terminaler</li>
-              <li>Etablering av sentrumsnære lokasjoner for å kunne ta i bruk elektriske kjøretøy</li>
-              <li>En av Nordens største brukere av tog</li>
-            </ul>
+            <h2>Hva gjør Posten / Bring</h2>
+            <p>I Posten og Bring jobber vi aktivt og målrettet hver dag for å redusere våre klimautslipp, slik at vi kan frakte dine pakker med så lave utslipp som mulig.</p>
           </div>
-          <div class="bring-env-image">
-            ${compGirl}
+          <div class="bring-env-cards">
+            <div class="card">
+              <div class="card-heading">
+                ${greenTruck}
+                <h3>900</h3>
+              </div>
+              <p>Vi har idag <strong>900</strong> elektriske vare- og lastebiler</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${bicycleDelivery}
+                <h3>700</h3>
+              </div>
+              <p>Vi har idag ca. <strong>700</strong> elektriske mopeder, sykler og traller</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${smallCar}
+                <h3>600</h3>
+              </div>
+              <p>Vi har satt en stopp for bestilling av fossilfrie varebiler, og rundt <strong>600</strong> nye elektriske varebiler er bestilt.</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${greenTruck}
+                <h3>65 / 70</h3>
+              </div>
+              <p>Vi har idag <strong>65</strong> elektriske lastebiler og <strong>70</strong> biogassdrevne lastebiler under levering.</p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="bring-env-text">
+            <h2>Mål</h2>
+            <p>Målet er å oppnå et nettonullutslipp i 2050, som er i tråd med Parisavtalen (2030). Her er noen av de tiltakene som vi har gjennomført og skal gjennomføre:</p>
+          </div>
+          <div class="bring-env-cards">
+            <div class="card">
+              <div class="card-heading">
+                ${flyingPackages}
+              </div>
+              <p>I dag har vi utslippsfri postdistribusjon i <strong>49</strong> byer, og har et mål om <strong>40</strong> nordiske byer til med fossilfri distribusjon av pakker med varebil.</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${uploadingTruck}
+              </div>
+              <p>Vi optimaliserer kontinuerlig kjøreruter og øker fyllingsgrad av biler.</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${greenLeaf}
+              </div>
+              <p>Vi etablerer solceller og ladeinfrastruktur på våre terminaler.</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${smallCar}
+              </div>
+              <p>Vi etablerer sentrumsnære lokasjoner for å kunne ta i bruk elektriske kjøretøy.</p>
+            </div>
+            <div class="card">
+              <div class="card-heading">
+                ${train}
+              </div>
+              <p>Vi er en av nordens største brukere av tog.</p>
+            </div>
+            <div class="bring-env-bottom">
+              ${flyingPackages}
+              <p>Les mer på <a href="https://www.postennorge.no/baerekraft" target="_blank">postennorge.no/baerekraft</a></p>
+            </div>
           </div>
         </section>
       </div>

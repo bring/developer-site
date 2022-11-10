@@ -1,34 +1,34 @@
 export default function bringEnvStyle(isModal) {
   return `<style>
     * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
       font-family: 'PSRegular';
     }
 
     h1, h2 {
       font-family: 'PSBold';
-      font-size: 2rem;
-      line-height: 1.4;
-      color: #00643A;
+      font-size: 2.2rem;
+      line-height: 1.6;
+      color: #980000;
       margin: 0 0 1rem;
     }
 
-    h2 {
-      font-size: 1.5rem;
-    }
-
     p, li, a {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.6;
-      color: rgba(0, 47, 25, 0.8);
+      color: #000;
     }
 
     a {
-      color: #0066db;
+      color: #000;
       text-decoration: none;
+      border-bottom: 1px solid #e32d22;
     }
 
     a:hover {
-      color: inherit;
+      color: #e32d22;
     }
 
     .bring-env {
@@ -61,16 +61,15 @@ export default function bringEnvStyle(isModal) {
     : ''}
 
     .wrapper {
-      background: #F1F7E9;
       padding: 0;
-      box-sizing: border-box;
       position: relative;
       ${isModal ?
-      `border-radius: 3px;
-      width: 40rem;
-      max-width: 100%;
-      height: 40rem;
-      max-height: 100vh;
+      `background: #ffffff;
+      border-radius: 3px;
+      width: 50rem;
+      max-width: 94vw;
+      height: 100%;
+      max-height: 80vh;
       overflow: hidden;
       box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 12%);
       z-index: 5001;`
@@ -80,8 +79,10 @@ export default function bringEnvStyle(isModal) {
     .bring-env-header {
       height: 5rem;
       display: flex;
-      padding: 0 2rem;
       align-items: center;
+      ${isModal ?
+        `padding: 0 2rem;`
+      : 'padding: 0;'}
     }
 
     .header-logo {
@@ -131,34 +132,76 @@ export default function bringEnvStyle(isModal) {
 
     section {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
       width:100%;
-      padding: 0 2rem 2rem;
+      ${isModal ?
+        `padding: 0 4rem;`
+      : 'padding: 0;'}
     }
 
-    .bring-env-image {
-      display: flex;
-      flex: 1 1 30rem;
-      max-width: 40rem;
-      justify-content: center;
-      margin: 3rem 0;
-    }
-    
-    .bring-env-image .image {
-      width: 60%;
-      display: block;
-    }
+    ${isModal ? `
+      section:last-child {
+        margin-bottom: 4rem;
+      }`
+    : ''}
 
     .bring-env-text {
-      flex: 0 1 40rem;
-      max-width: 40rem;
+      width: 100%;
+      max-width: 46rem;
     }
 
     .bring-env-text ul {
       padding: 0;
       margin-left: 1.3rem;
+    }
+
+    .bring-env-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 45rem;
+      margin-top: 1rem;
+    }
+
+    .bring-env-cards .card {
+      background: #fff5f0;
+      border-radius: 3px;
+      padding: 2rem;
+      flex: 1 1 15rem;
+      display:flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .bring-env-cards .card svg {
+      height: 3rem;
+      display: block;
+      margin: auto;
+    }
+
+    .bring-env-cards .card p {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .bring-env-cards .card p strong {
+      font-family: 'PSMedium';
+      font-weight: normal;
+    }
+
+    .bring-env-cards .card .card-heading h3 {
+      font-family: 'PSBold';
+      font-size: 2rem;
+    }
+    
+    .bring-env-bottom {
+      text-align:center;
+      width:100%;
+    }
+
+    .bring-env-bottom svg {
+      max-width: 15rem;
+      margin: 1rem 0;
     }
   </style>`;
 }
