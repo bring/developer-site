@@ -49,7 +49,7 @@ export default function bringEnvStyle(isModal) {
     }
 
     ${isModal ?
-    `.backdrop {
+    `.bring-env-backdrop {
         position: fixed;
         height: 100vh;
         width: 100vw;
@@ -60,7 +60,7 @@ export default function bringEnvStyle(isModal) {
       }`
     : ''}
 
-    .wrapper {
+    .bring-env-wrapper {
       padding: 0;
       position: relative;
       ${isModal ?
@@ -85,7 +85,7 @@ export default function bringEnvStyle(isModal) {
       : 'padding: 0;'}
     }
 
-    .header-logo {
+    .bring-env-header-logo {
       width: 125px;
     }
     
@@ -117,7 +117,7 @@ export default function bringEnvStyle(isModal) {
       fill: hsl(0, 0%, 20%);
     }
 
-    .content {
+    .bring-env-content {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -130,7 +130,7 @@ export default function bringEnvStyle(isModal) {
       : ''}
     }
 
-    section {
+    .bring-env section {
       display: flex;
       flex-direction: column;
       width:100%;
@@ -139,8 +139,16 @@ export default function bringEnvStyle(isModal) {
       : 'padding: 0;'}
     }
 
+    ${isModal ?
+      `@media only screen and (max-width: 38em) {
+        .bring-env section {
+          padding: 0 2rem;
+        }
+      }`
+    : ''}
+
     ${isModal ? `
-      section:last-child {
+      .bring-env section:last-child {
         margin-bottom: 4rem;
       }`
     : ''}
@@ -159,11 +167,11 @@ export default function bringEnvStyle(isModal) {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      max-width: 45rem;
+      max-width: 46rem;
       margin-top: 1rem;
     }
 
-    .bring-env-cards .card {
+    .bring-env-cards .bring-env-card {
       background: #fff5f0;
       border-radius: 3px;
       padding: 2rem;
@@ -173,25 +181,27 @@ export default function bringEnvStyle(isModal) {
       text-align: center;
     }
 
-    .bring-env-cards .card svg {
-      height: 3rem;
+    .bring-env-cards .bring-env-card svg {
+      max-height: 3rem;
       display: block;
-      margin: auto;
+      margin: 0 0 0.5rem;
+      width:100%;
     }
 
-    .bring-env-cards .card p {
+    .bring-env-cards .bring-env-card p {
       font-size: 1rem;
       margin-top: 1rem;
     }
 
-    .bring-env-cards .card p strong {
+    .bring-env-cards .bring-env-card p strong {
       font-family: 'PSMedium';
       font-weight: normal;
     }
 
-    .bring-env-cards .card .card-heading h3 {
+    .bring-env-cards .bring-env-card .bring-env-card-heading h3 {
       font-family: 'PSBold';
       font-size: 2rem;
+      color: #000;
     }
     
     .bring-env-bottom {

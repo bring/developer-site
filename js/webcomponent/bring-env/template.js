@@ -9,7 +9,7 @@ import {uploadingTruck} from "./svgs/uploading-truck.js";
 
 export default function bringEnvTemplate(isModal) {
   return `<div class="bring-env">
-    <div class="wrapper">
+    <div class="bring-env-wrapper">
       <div class="bring-env-header">
         ${postenLogo}
         ${isModal ? `<div class="close-modal"><button class="close-modal-btn" aria-label="Close modal" data-close-modal>
@@ -18,7 +18,7 @@ export default function bringEnvTemplate(isModal) {
           </button>
         </div>` : ''}
       </div>
-      <div class="content">
+      <div class="bring-env-content">
         <section>
           <div class="bring-env-text">
             <h1>Hva er klimakompensert frakt</h1>
@@ -31,29 +31,29 @@ export default function bringEnvTemplate(isModal) {
             <p>I Posten og Bring jobber vi aktivt og målrettet hver dag for å redusere våre klimautslipp, slik at vi kan frakte dine pakker med så lave utslipp som mulig.</p>
           </div>
           <div class="bring-env-cards">
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${greenTruck}
                 <h3>900</h3>
               </div>
               <p>Vi har idag <strong>900</strong> elektriske vare- og lastebiler</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${bicycleDelivery}
                 <h3>700</h3>
               </div>
               <p>Vi har idag ca. <strong>700</strong> elektriske mopeder, sykler og traller</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${smallCar}
                 <h3>600</h3>
               </div>
               <p>Vi har satt en stopp for bestilling av fossilfrie varebiler, og rundt <strong>600</strong> nye elektriske varebiler er bestilt.</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${greenTruck}
                 <h3>65 / 70</h3>
               </div>
@@ -67,32 +67,32 @@ export default function bringEnvTemplate(isModal) {
             <p>Målet er å oppnå et nettonullutslipp i 2050, som er i tråd med Parisavtalen (2030). Her er noen av de tiltakene som vi har gjennomført og skal gjennomføre:</p>
           </div>
           <div class="bring-env-cards">
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${flyingPackages}
               </div>
               <p>I dag har vi utslippsfri postdistribusjon i <strong>49</strong> byer, og har et mål om <strong>40</strong> nordiske byer til med fossilfri distribusjon av pakker med varebil.</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${uploadingTruck}
               </div>
               <p>Vi optimaliserer kontinuerlig kjøreruter og øker fyllingsgrad av biler.</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${greenLeaf}
               </div>
               <p>Vi etablerer solceller og ladeinfrastruktur på våre terminaler.</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${smallCar}
               </div>
               <p>Vi etablerer sentrumsnære lokasjoner for å kunne ta i bruk elektriske kjøretøy.</p>
             </div>
-            <div class="card">
-              <div class="card-heading">
+            <div class="bring-env-card">
+              <div class="bring-env-card-heading">
                 ${train}
               </div>
               <p>Vi er en av nordens største brukere av tog.</p>
@@ -105,6 +105,6 @@ export default function bringEnvTemplate(isModal) {
         </section>
       </div>
     </div>
-    ${isModal ? '<div class="backdrop" data-close-modal></div>' : ''}
+    ${isModal ? '<div class="bring-env-backdrop" data-close-modal></div>' : ''}
   </div>`;
 }
