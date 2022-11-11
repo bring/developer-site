@@ -49,18 +49,6 @@ export default function bringEnvStyle(isModal) {
       display: flex;
     }
 
-    ${isModal ?
-    `.bring-env-backdrop {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        background: hsla(0,0%,10%,0.5);
-        top: 0;
-        left: 0;
-        z-index:5001;
-      }`
-    : ''}
-
     .bring-env-wrapper {
       padding: 0;
       position: relative;
@@ -141,14 +129,22 @@ export default function bringEnvStyle(isModal) {
     }
 
     ${isModal ?
-      `@media only screen and (max-width: 38em) {
+      `.bring-env-backdrop {
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background: hsla(0,0%,10%,0.5);
+        top: 0;
+        left: 0;
+        z-index:5001;
+      }
+
+      @media only screen and (max-width: 38em) {
         .bring-env section {
           padding: 0 2rem;
         }
-      }`
-    : ''}
+      }
 
-    ${isModal ? `
       .bring-env section:last-child {
         margin-bottom: 4rem;
       }`
