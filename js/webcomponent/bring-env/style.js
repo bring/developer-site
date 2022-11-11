@@ -10,7 +10,7 @@ export default function bringEnvStyle(isModal) {
     h1, h2 {
       font-family: 'PSBold';
       font-size: 2.2rem;
-      line-height: 1.6;
+      line-height: 1.4;
       color: #4a1011;
       margin: 0 0 1rem;
     }
@@ -55,7 +55,7 @@ export default function bringEnvStyle(isModal) {
       ${isModal ?
       `background: #ffffff;
       border-radius: 3px;
-      width: 50rem;
+      width: 46rem;
       max-width: 94vw;
       height: 100%;
       max-height: 80vh;
@@ -108,10 +108,7 @@ export default function bringEnvStyle(isModal) {
 
     .bring-env-content {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      width: 100%;
+      flex-direction: column;
       gap: 2rem;
       ${isModal ?
       `height: calc(100% - 5rem);
@@ -120,9 +117,8 @@ export default function bringEnvStyle(isModal) {
     }
 
     .bring-env section {
-      display: flex;
-      flex-direction: column;
       width:100%;
+      max-width: 46rem;
       ${isModal ?
         `padding: 0 4rem;`
       : 'padding: 0;'}
@@ -150,11 +146,6 @@ export default function bringEnvStyle(isModal) {
       }`
     : ''}
 
-    .bring-env-text {
-      width: 100%;
-      max-width: 46rem;
-    }
-
     .bring-env-text ul {
       padding: 0;
       margin-left: 1.3rem;
@@ -164,7 +155,6 @@ export default function bringEnvStyle(isModal) {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      max-width: 46rem;
       margin-top: 1rem;
     }
 
@@ -173,8 +163,6 @@ export default function bringEnvStyle(isModal) {
       border-radius: 3px;
       padding: 2rem;
       flex: 1 1 15rem;
-      display:flex;
-      flex-direction: column;
       text-align: center;
     }
 
