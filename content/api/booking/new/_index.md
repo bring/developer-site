@@ -21,6 +21,18 @@ information:
       Booking endpoints will assume all requests are UTF-8 encoded.
 
 documentation:
+  - title: Content
+    content:  |
+      <h4 class="dev-anchored">
+        <a href="./new/rfid">RFID labels for Mailbox Parcel (3570)</a>
+      </h4>
+      <br/>
+
+      <h4 class="dev-anchored">
+        <a href="./new/qr">Generating QR Codes</a>
+      </h4>
+      <br/>
+   
   - title: Versioning
     content: |
       Each request has a `schemaVersion` element indicating which release of the schema is being used in the request and expected schema format in the response. Important: All clients must accept new (unknown) elements in the response. E.g. unknown elements should be ignored. The client framework used by client must thus not crash when unknown elements are encountered. Note that this requirement excludes the (old, but still widely used) Apache Axis 1.x Web Service client framework.
@@ -29,7 +41,7 @@ documentation:
     content: |
       In addition to [authentication](#authentication), you need to be authorized with the _booking_ right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):
 
-      ![Authorized for booking](booking_authorization.png)
+      ![Authorized for booking](./booking_authorization.png)
 
       To perform a booking, you must specify which customer number to use. For your convenience, there is an [API for getting the customer numbers](#list-customer-numbers) associated with your API user. The Customer Number API also links customer numbers with the services the customer number is valid for.
 
@@ -53,22 +65,7 @@ documentation:
       The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF label is returned in responses. This label must be printed and be attached to the shipment. A URL that points to tracking information is also returned.
 
       A GET request to the label URL will result in a HTTP 302 redirect to the concrete storage facility (e.g. redirect to Amazon S3). Ensure that your client follows these redirects.
-
-  - title: Generating QR Codes
-    content: |
-      For Parcel Norway domestic return services, it is possible to request QR codes. An end user can bring the QR code to any PiB or a Post Office in Norway, scan the QR code, and have a label printed there.
-
-      To book, add the element `generateQrCodes` at the consignment level and set it to `true`. The response will contain one `qrCodeLink` per package. This is a URL to a PNG image of the QR code.
-
-      The following services support QR codes:
-      - 9300
-      - SERVICEPAKKE_RETURSERVICE
-      - 9600
-      - EKSPRESS09_RETURSERVICE
-      - 9000
-      - BPAKKE_DOR-DOR_RETURSERVICE
-
-
+  
   - title: Free return of parcel(s)
     content: |
       For Parcel Norway domestic services, it is possible to book the return shipment at the same time as the outgoing shipment. By setting the element `returnProduct` and specifying the return service, you will both get the regular label and the return label in the response. 
@@ -100,51 +97,6 @@ documentation:
           "id": "9650",
       }
       ```
-
-  - title: Mailbox Parcel (Pakke i Postkassen)
-    content: |
-      - Booking Mailbox Parcel in Booking API is a single-step process with one label per booking (multi-kolli is not supported). Each parcel is invoiced separately. A link to the label is returned in the response. 
-      - When booking Mailbox Parcel in Booking API, the new API customer number is used. This is identical to your company's main customer number (without prefix PARCELS_NORWAY and without padded zeros if any).
-      - When booking Mailbox Parcel in Booking API, the service is defined by setting 3584 or 3570 in the product id. 
-
-      To book, order one of the two product ids:
-
-      ### 3570 (tracking with RFID)
-      Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
-
-      Normally, we create PDF labels that can be printed on any printer. If you opt for tracking, we create ZPL labels instead. ZPL stands for [Zebra Programming Language (ZPL)](https://en.wikipedia.org/wiki/Zebra_(programming_language)).
-
-      The labels will be ZPL code containing instructions for programming the passive RFID antenna in the printer's labels with package numbers.
-
-      In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
-
-      #### Special hardware required
-      RFID-tagged labels require special printer hardware. Currently we support the following printers:
-
-      - Zebra R410
-      - Zebra 500R
-
-      ### 3584 (no tracking)
-      If you don't have a supported printer, you cannot order shipments with tracking. In this case, we will create normal PDF labels that can be printed using any printer.
-
-      ### Additional Service: Bag on door (Pose på døren)
-      A delivery alternative for Mailbox Parcels that cannot be delivered to the mailbox. 
-
-      Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may, against a surcharge, choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point. It's recommended that this delivery option is actively confirmed by the receiver upon booking in the sender's webshop. When the parcel is delivered as a bag on the door, the bar code is scanned and the recipient will receive an SMS/email. Note that if the parcel is delivered in the mailbox the additional fee will not occur.
-
-      #### Terms of delivery
-              
-      The sender must clearly inform the recipient about the criteria of Bag on door when displaying this service in the check out (e.g. via Shipping Guide API):
-        
-      - The distance from the mailbox to the recipient's door must not exceed 250 m 
-      - House no. must be clearly marked
-      - The door must be clearly marked with the recipient's name 
-      - Posten must have access to the recipient's door, even when the main entrance is locked, for instance when recipient live in an apartment. 
-        
-      In cases where the criteria are not met, i.e. bad weather (risk of damage) or where for security reason the risk is considered too high to use Bag on door, the parcel will still be delivered to the recipient's pickup point for delivery.
-
-      ### Example request
-      There is an example request for 3584 in "More examples" section below. Booking 3570 is just a matter of changing the service code from 3584 to 3570. If you want to specify a different return address on the label than your actual sender address, use the returnTo party tag. When the returnTo party tag is populated the input will replace your actual sender address on the top left corner of the label.
 
   - title: Customs Export information
     content: |     
