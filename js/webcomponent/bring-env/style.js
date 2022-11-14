@@ -86,19 +86,18 @@ export default function bringEnvStyle(isModal) {
     }
 
     .close-modal-btn {
-      background: hsl(0, 0%, 95%);
+      background: none;
       -webkit-appearance: none;
       appearance: none;
-      border: 1px solid hsl(0, 0%, 75%);
+      border: none;
       border-radius: 2px;
       padding: 0.3rem;
-      text-align: center;
       transition: 0.15s ease-out;
       margin: 0;
     }
 
     .close-modal-btn:hover {
-      background: hsl(0, 0%, 90%);
+      background: hsl(0, 0%, 92%);
     }
 
     .close-modal-btn svg {
