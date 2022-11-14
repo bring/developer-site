@@ -46,6 +46,28 @@ class BringEnv extends HTMLElement {
         });
       });
     }
+
+    //Make some animation
+    const cards = this.shadowRoot.querySelectorAll('.bring-env-card');
+
+    let observerOptions = {
+      threshold: 0.4
+    }
+
+    const observer = new IntersectionObserver(observeCards,observerOptions);
+
+    cards.forEach((el) => {
+      observer.observe(el);
+    })
+
+    function observeCards(cards) {
+      cards.forEach(card => {
+        if(card.isIntersecting) {
+          let svg = card.target.querySelector('svg');
+          svg.classList.add('visible');
+        }
+      })
+    }
   }
 
   open() {

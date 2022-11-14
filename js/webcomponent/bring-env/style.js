@@ -155,7 +155,7 @@ export default function bringEnvStyle(isModal) {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1rem;
+      margin: 2rem 0;
     }
 
     .bring-env-cards .bring-env-card {
@@ -164,6 +164,7 @@ export default function bringEnvStyle(isModal) {
       padding: 2rem;
       flex: 1 1 15rem;
       text-align: center;
+      overflow: hidden;
     }
 
     .bring-env-cards .bring-env-card svg {
@@ -171,6 +172,13 @@ export default function bringEnvStyle(isModal) {
       display: block;
       margin: 0 0 0.5rem;
       width:100%;
+      transform: translateX(-100%);
+    }
+
+    .bring-env-cards .bring-env-card svg.visible {
+      transform: translateX(0);
+      transition: all 0.5s;
+      transition-timing-function: cubic-bezier(0.1, 0.7);
     }
 
     .bring-env-cards .bring-env-card p {
