@@ -1,5 +1,7 @@
 ## Customs Export information
 
+[Back](../new)
+
 It is required to pass customs information when booking the following services from Norway -> abroad:
 
 - Business Parcel
@@ -48,3 +50,5 @@ There are two examples in the _More Examples_ section below that show requests c
 
 By using the `iossNumber` element of `ediCustomsDeclarations`, one can specify an IOSS number for exports from Norway to EU countries. Only applicable when `natureOfTransaction` is of type `SALE_OF_GOODS`.
 Note that this can not be combined with a `reference` field on the `senders` party. More info on [IOSS](https://www.bring.no/tjenester/toll/ioss).
+
+[Back](../new)

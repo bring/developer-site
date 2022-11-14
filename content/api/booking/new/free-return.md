@@ -1,5 +1,7 @@
 ## Free return of parcel(s)
 
+[Back](../new)
+
 For Parcel Norway domestic services, it is possible to book the return shipment at the same time as the outgoing
 shipment. By setting the element `returnProduct` and specifying the return service, you will both get the regular label
 and the return label in the response.
@@ -31,3 +33,5 @@ The following outgoing and return service combinations are supported:
      "id": "9650",
  }
  ```
+
+[Back](../new)
