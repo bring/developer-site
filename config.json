@@ -34,7 +34,7 @@
         "url": "https://www.mybring.com/shipping-guide/integration/checkout",
         "weight": 2,
         "params": {
-          "blank": "target=\"_blank\" rel=\"noopener noreferrer\""
+          "blank": true
         }
       },
       {
@@ -43,7 +43,7 @@
         "url": "https://status.bring.systems",
         "weight": 7,
         "params": {
-          "blank": "target=\"_blank\" rel=\"noopener noreferrer\""
+          "blank": true
         }
       }
     ],

@@ -22,8 +22,8 @@
           >
             {{- $target := "" -}}
             {{- $iconEx := "" -}}
-            {{- with .Params.blank -}}
-              {{- $target = . -}}
+            {{- if .Params.blank -}}
+              {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
               {{- $iconEx = $iconExHtml -}}
             {{- end -}}
             <a
@@ -39,8 +39,8 @@
                 {{- range .Children -}}
                   {{- $target := "" -}}
                   {{- $iconEx := "" -}}
-                  {{- with .Params.blank -}}
-                    {{- $target = . -}}
+                  {{- if .Params.blank -}}
+                    {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
                     {{- $iconEx = $iconExHtml -}}
                   {{- end -}}
                   <li>
@@ -139,7 +139,7 @@
           class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}"
         >
           {{- $target := "" -}}
-          {{- with .Params.blank -}} {{- $target = . -}} {{- end -}}
+          {{- if .Params.blank -}} {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}} {{- end -}}
           <a
             href="{{ .URL | relURL }}"
             class="dev-sidemenu__apititle"
