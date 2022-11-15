@@ -143,7 +143,7 @@ menu:
     identifier: {foldername}
     title: {Name of API}
     url: /api/{foldername}
-    parent: {parent, see config.toml}
+    parent: {parent, see config.json}
 weight: {menu position prefixed by parent value}
 disqus_identifier: api-{foldername} (optional, if you want comments)
 

@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
 const fs = require("fs");
-const toml = require("toml");
 const join = require("path").join;
 const hrstart = process.hrtime();
 const hrend = process.hrtime(hrstart);
 
 const outdir = join(__dirname, "../data");
-const configFile = join(__dirname, "../config.toml");
-const config = toml.parse(fs.readFileSync(configFile, "utf-8"));
+const config = require(join(__dirname, "../config.json"));
 const filePaths = config.params.examples;
 
 if (!fs.existsSync(outdir)) {

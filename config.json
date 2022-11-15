@@ -1,0 +1,144 @@
+{
+  "baseURL": "https://developer.bring.com",
+  "disqusShortname": "bringdev",
+  "ignorefiles": [
+    "css/main.js"
+  ],
+  "languageCode": "en-us",
+  "paginate": 12,
+  "pluralizelisttitles": false,
+  "publishDir": "_site",
+  "pygmentsUseClasses": true,
+  "summaryLength": 60,
+  "timeout": "60s",
+  "title": "Bring Developer",
+  "markup": {
+    "goldmark": {
+      "extensions": {
+        "linkify": false
+      },
+      "renderer": {
+        "unsafe": true
+      }
+    },
+    "highlight": {
+      "guessSyntax": true
+    }
+  },
+  "menu": {
+    "api": [
+      {
+        "identifier": "checkout-request-builder",
+        "parent": "e-commerce-solutions",
+        "title": "Checkout request builder",
+        "url": "https://www.mybring.com/shipping-guide/integration/checkout",
+        "weight": 2,
+        "params": {
+          "blank": "target=\"_blank\" rel=\"noopener noreferrer\""
+        }
+      },
+      {
+        "identifier": "api-operational-status",
+        "title": "API operational status",
+        "url": "https://status.bring.systems",
+        "weight": 7,
+        "params": {
+          "blank": "target=\"_blank\" rel=\"noopener noreferrer\""
+        }
+      }
+    ],
+    "apidocs": [
+      {
+        "identifier": "checkout",
+        "title": "Checkout",
+        "weight": 1
+      },
+      {
+        "identifier": "book",
+        "title": "Booking",
+        "weight": 2
+      },
+      {
+        "identifier": "track",
+        "title": "Tracking",
+        "weight": 3
+      },
+      {
+        "identifier": "warehouse",
+        "title": "Warehousing",
+        "weight": 4
+      },
+      {
+        "identifier": "rni",
+        "title": "Reports and invoices",
+        "weight": 5
+      },
+      {
+        "identifier": "om",
+        "title": "Order management",
+        "weight": 6
+      }
+    ]
+  },
+  "outputFormats": {
+    "Algolia": {
+      "baseName": "algolia",
+      "isPlainText": true,
+      "mediaType": "application/json",
+      "notAlternative": true
+    }
+  },
+  "outputs": {
+    "home": [
+      "HTML",
+      "RSS",
+      "Algolia"
+    ]
+  },
+  "params": {
+    "apis": [
+      "content/api/booking/api.raml",
+      "content/api/shipping-guide_2/api.raml",
+      "content/api/warehousing/api.raml",
+      "content/api/warehousing3/api.raml",
+      "content/api/warehousing4/api.raml",
+      "content/api/order-management/api.raml",
+      "content/api/postal-code/api.raml",
+      "content/api/invoice/api.raml",
+      "content/api/reports/api.raml",
+      "content/api/shipment/api.raml"
+    ],
+    "description": "Documentation for developers.",
+    "examples": [
+      "content/api/booking/examples/",
+      "content/api/warehousing/examples/"
+    ],
+    "ramlBuiltinTypes": [
+      "any",
+      "object",
+      "array",
+      "number",
+      "boolean",
+      "string",
+      "date-only",
+      "time-only",
+      "datetime-only",
+      "datetime",
+      "file",
+      "integer",
+      "nil"
+    ],
+    "Algolia": {
+      "params": [
+        "excerpt"
+      ],
+      "vars": [
+        "title",
+        "menu"
+      ]
+    }
+  },
+  "taxonomies": {
+    "tag": "tags"
+  }
+}
