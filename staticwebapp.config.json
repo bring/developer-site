@@ -7,6 +7,12 @@
         {
             "route": "/shipping-guide/offline",
             "redirect": "https://www.mybring.com/shipping-guide/offline"
+        },
+        {
+            "route": "/assets/bring-env/main.js",
+            "headers": {
+              "Access-Control-Allow-Origin": "*"
+            }
         }
     ],
 

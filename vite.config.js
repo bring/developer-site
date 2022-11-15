@@ -11,8 +11,16 @@ export default defineConfig({
     outDir: "./static/assets",
     assetsDir: ".",
     rollupOptions: {
-      input: "./js/main.js",
-    },
+      input: {
+        main: "./js/main.js",
+        "bring-env/main": "./js/webcomponent/bring-env/main.js"
+      },
+      output: {
+        entryFileNames: asset => {
+          return asset.name.includes("bring-env") ? "[name].js" : "[name].[hash].js"
+        }
+      }
+    }
   },
   plugins: [legacy(), react()],
 })
