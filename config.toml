@@ -59,15 +59,20 @@ tag = "tags"
 [menu]
 
 [[menu.api]]
-title = "API operational status"
-url = "https://status.bring.systems"
-weight = 100
-
-[[menu.api]]
+identifier = "checkout-request-builder"
 title = "Checkout request builder"
 url = "https://www.mybring.com/shipping-guide/integration/checkout"
 parent = "e-commerce-solutions"
-weight = 100
+weight = 2
+
+[menu.api.params]
+blank = "target=\"_blank\" rel=\"noopener noreferrer\""
+
+[[menu.api]]
+identifier = "api-operational-status"
+title = "API operational status"
+url = "https://status.bring.systems"
+weight = 7
 
 [menu.api.params]
 blank = "target=\"_blank\" rel=\"noopener noreferrer\""
