@@ -1,0 +1,12 @@
+{{- $format := "" -}}
+{{- $typeClean := "" -}}
+
+{{- if or (in .application "json") (in .application "javascript") -}}
+  {{- $format = printf "json" -}}
+  {{- $typeClean = lower (anchorize .application) -}}
+{{- else if in .application "xml" -}}
+  {{- $format = printf "xml" -}}
+  {{- $typeClean = lower (anchorize .application) -}}
+{{- end -}}
+
+{{ return dict "format" $format "typeClean" $typeClean }}
