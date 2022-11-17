@@ -4,7 +4,7 @@
 
 <h3>Response examples</h3>
 {{- $resInd := 0 -}}
-<div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
+<div class="bg-gray3 rad-t2px mts sticky-6r" id="{{ $endpointId }}-response">
   {{- partial "api/oas/responsecode-btns.html" (dict "responses" .responses "endpointId" $endpointId) -}}
   {{- range $response, $_ := .responses -}}
     {{- with .content -}}
@@ -12,14 +12,14 @@
       {{- if gt (len .) 1 -}}
         {{- $multiTypes = true -}}
       {{- end }}
-
       {{- $responseId := print $endpointId "-" $response -}}
+
       <div class="relative bg-gray4 example-wrap" data-example="{{ $responseId }}" role="tabpanel" aria-labelledby="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
 
         {{/*  Make select if types > 1  */}}
         {{- if $multiTypes -}}
           <div class="mhm pvm">
-            <select data-sub-of="{{ $responseId }}" class="form__control w100p mb0 pas hauto" name="formats" aria-label="Select format">
+            <select data-sub-of="{{ $responseId }}" class="form__control w100p mb0 pas hauto" name="formats" aria-label="Select response format">
               {{- range $mediaType, $_ := . -}}
                 {{- $typeClean := lower (anchorize $mediaType) -}}
                 <option value="{{ $typeClean }}">{{ $mediaType }}</option>
@@ -36,8 +36,8 @@
           {{- if in $mediaType "xml" -}}
             {{- $format = printf "xml" -}}
           {{- end -}}
-
           {{- $schema := .schema -}}
+
           {{- if isset . "examples" -}}
             <div class="" data-type="{{ $mediaType }}" {{ if ne $exFormatInd 0 }}hidden{{ end }}>
               {{/*  Make singular examples that are referenced using the response code in the components  */}}
