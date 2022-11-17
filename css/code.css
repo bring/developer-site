@@ -32,6 +32,7 @@ p code {
   background-color: rgba(0, 0, 0, 0.08);
 }
 
+.schema__sublist label > code,
 .chroma > code {
   background-color: transparent;
 }
