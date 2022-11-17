@@ -42,6 +42,7 @@
                 <p class="mbl text-heading">{{ .description | safeHTML }}</p>
 
                 {{- with .parameters -}}
+                  <h3 class="mbm">Request</h3>
                   {{- partial "api/oas/request-params.html" (dict "parameters" .) -}}
                 {{- end -}}
 
@@ -57,20 +58,8 @@
                       {{- $responseColorBg = "bg-red1" -}}
                       {{- $responseColorTxt = "red-dark" -}}
                     {{- end -}}
-
                     {{- $description := .description -}}
-
-                    {{ $hasSchema := false }}
-                    {{- with .content -}}
-                      {{- range . -}}
-                        {{/*  since go template doesn’t have loop breaks  */}}
-                        {{- if not $hasSchema -}}
-                          {{- with .schema -}}
-                            {{- $hasSchema = true -}}
-                          {{- end -}}
-                        {{- end -}}
-                      {{- end -}}
-                    {{- end -}}
+                    {{- $hasSchema := partial "api/oas/has-schema.html" . -}}
 
                     {{- if $hasSchema -}}
                       {{- with .content -}}
@@ -268,7 +257,7 @@
                     {{- $uriParameters = $uriParameters | append . -}}
                   {{- end -}}
                   {{- if $otherUriParamsMediaType -}}
-                    {{- partial "api/namedparamsdl.html" (dict "context" . "includeParams" $uriParameters "title" "URI param" ) -}}
+                    {{- partial "api/namedparamsdl.html" (dict "context" . "includeParams" $uriParameters "title" "URI" ) -}}
                   {{- end -}}
 
                   {{/* For each endpoint: List all header params */}}
@@ -278,7 +267,7 @@
 
                   {{/* For each endpoint: List all query params */}}
                   {{- if $hasMethodQueryParams -}}
-                    {{- partial "api/namedparamsdl.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query param") -}}
+                    {{- partial "api/namedparamsdl.html" (dict "context" . "includeParams" $methodQueryParams "title" "Query") -}}
                   {{- end -}}
 
                   {{/* For each endpoint: List XML request body params */}}
