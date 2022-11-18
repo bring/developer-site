@@ -72,8 +72,59 @@
                     </div>
                     <p class="mbl text-heading">{{ .description | safeHTML }}</p>
 
+                    {{- with or .parameters .requestBody -}}
+                      <h3 class="mbm">Request</h3>
+                    {{- end -}}
+
                     {{- with .parameters -}}
                       {{- partial "api/oas/request-params.html" (dict "parameters" .) -}}
+                    {{- end -}}
+
+                    {{- with .requestBody -}}
+                      {{- $hasSchema := partial "api/oas/has-schema.html" . -}}
+
+                      {{- if $hasSchema -}}
+                        {{- with .content -}}
+                          {{- $multiSchema := false -}}
+                          {{- if gt (len .) 1 -}}
+                            {{- $multiSchema = true -}}
+                          {{- end -}}
+                          <div class="mb-border bb flex flex-wrap mbm pbxs align-ib gcm">
+                            <h4 class="fw600 mb0">Body schema</h4>
+                            {{- if $multiSchema -}}
+                            <div class="flex flex-wrap align-ib gcxs">
+                              <label class="form__label text-basic" for="{{ $endpointId }}-reqschema">Media type:</label>
+                              <select id="{{ $endpointId }}-reqschema" data-sub-of="{{ $endpointId }}-reqschema" class="form__control wauto maxw100p paxs hauto mb0" name="formats">
+                                {{- range $applicationType, $_ := . -}}
+                                  {{- $typeClean := lower (anchorize $applicationType) -}}
+                                  <option value="{{ $typeClean }}">
+                                    {{ $applicationType }}
+                                  </option>
+                                {{- end -}}
+                              </select>
+                            </div>
+                            {{- else -}}
+                              {{- range $applicationType, $_ := . -}}
+                                <p class="mb0 text-note">Media type: {{ $applicationType }}</p>
+                              {{- end -}}
+                            {{- end -}}
+                          </div>
+
+                          {{- range $application, $_ := . -}}
+                            {{- $fTC := partial "api/oas/format-type-clean.html" (dict "application" $application) -}}
+                            {{- $format := $fTC.format -}}
+                            {{- $typeClean := $fTC.typeClean -}}
+
+                            <dl class="schema-type-container desc-list mbl" data-type="{{ $typeClean }}">
+                              {{- if eq "xml" $format -}}
+                                {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
+                              {{- else -}}
+                                {{- partial "api/oas/request-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
+                              {{- end -}}
+                            </dl>
+                          {{- end -}}
+                        {{- end -}}
+                      {{- end -}}
                     {{- end -}}
 
                     {{- with .responses -}}
@@ -88,73 +139,55 @@
                           {{- $responseColorBg = "bg-red1" -}}
                           {{- $responseColorTxt = "red-dark" -}}
                         {{- end -}}
-
                         {{- $description := .description -}}
-
-                        {{ $hasSchema := false }}
-                        {{- with .content -}}
-                          {{- range . -}}
-                            {{/*  since go template doesn’t have loop breaks  */}}
-                            {{- if not $hasSchema -}}
-                              {{- with .schema -}}
-                                {{- $hasSchema = true -}}
-                              {{- end -}}
-                            {{- end -}}
-                          {{- end -}}
-                        {{- end -}}
+                        {{- $hasSchema := partial "api/oas/has-schema.html" . -}}
 
                         {{- if $hasSchema -}}
                           {{- with .content -}}
-                          {{- $multiSchema := false -}}
-                          {{- if gt (len .) 1 -}}
-                            {{- $multiSchema = true -}}
-                          {{- end -}}
-                          <details class="mb-disclosure mb-disclosure--arrow {{ $responseColorBg }} mbxs">
-                            <summary class="{{ $responseColorTxt }}" aria-label="Disclose response {{$response}} {{$description}} details">
-                              <span
-                              data-mybicon="mybicon-arrow-right"
-                              data-mybicon-width="16"
-                              data-mybicon-height="16"
-                              ></span>
-                              <span class="fw600">{{ $response }}</span> {{ $description }}
-                            </summary>
-                            <div class="bg-gray1 pam">
-                              <h4>Schema</h4>
-                              {{- if $multiSchema -}}
-                                <label class="form__label text-basic dib" for="{{$endpointId}}-{{$response}}">Media type:</label>
-                                <select id="{{$endpointId}}-{{$response}}" data-sub-of="{{$endpointId}}-{{$response}}" class="form__control wauto maxw100p paxs dib hauto" name="formats">
+                            {{- $multiSchema := false -}}
+                            {{- if gt (len .) 1 -}}
+                              {{- $multiSchema = true -}}
+                            {{- end -}}
+                            <details class="mb-disclosure mb-disclosure--arrow {{ $responseColorBg }} mbxs">
+                              <summary class="{{ $responseColorTxt }}" aria-label="Disclose response {{ $response }} {{ $description }} details">
+                                <span
+                                data-mybicon="mybicon-arrow-right"
+                                data-mybicon-width="16"
+                                data-mybicon-height="16"
+                                ></span>
+                                <span class="fw600">{{ $response }}</span> {{ $description }}
+                              </summary>
+                              <div class="bg-gray1 pam">
+                                <h4 class="fw600">Schema</h4>
+                                {{- if $multiSchema -}}
+                                  <label class="form__label text-basic dib" for="{{ $endpointId }}-{{ $response }}">Media type:</label>
+                                  <select id="{{$endpointId}}-{{$response}}" data-sub-of="{{ $endpointId }}-{{ $response }}" class="form__control wauto maxw100p paxs dib hauto" name="formats">
+                                    {{- range $applicationType, $_ := . -}}
+                                      {{- $typeClean := lower (anchorize $applicationType) -}}
+                                      <option value="{{ $typeClean }}">
+                                        {{ $applicationType }}
+                                      </option>
+                                    {{- end -}}
+                                  </select>
+                                {{- else -}}
                                   {{- range $applicationType, $_ := . -}}
-                                    {{- $typeClean := lower (anchorize $applicationType) -}}
-                                    <option value='{{$typeClean}}'>
-                                      {{ $applicationType }}
-                                    </option>
+                                    <p>Media type: {{ $applicationType }}</p>
                                   {{- end -}}
-                                </select>
-                              {{- else -}}
-                                {{- range $applicationType, $_ := . -}}
-                                  <p>Media type: {{ $applicationType }}</p>
-                                {{- end -}}
-                              {{- end -}}
-
-                              {{- range $application, $_ := . -}}
-                                {{- $format := "" -}}
-                                {{- $typeClean := "" -}}
-                                {{- if or (in $application "json") (in $application "javascript") -}}
-                                  {{- $format = printf "json" -}}
-                                  {{- $typeClean = lower (anchorize $application) -}}
-                                {{- else if in $application "xml" -}}
-                                  {{- $format = printf "xml" -}}
-                                  {{- $typeClean = lower (anchorize $application) -}}
                                 {{- end -}}
 
-                                <dl class="schema-type-container desc-list pam bshadow bg-white" data-type="{{$typeClean}}">
-                                  {{- if eq "xml" $format -}}
-                                    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
-                                  {{- else -}}
-                                    {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
-                                  {{- end -}}
-                                </dl>
-                              {{- end -}}
+                                {{- range $application, $_ := . -}}
+                                  {{- $fTC := partial "api/oas/format-type-clean.html" (dict "application" $application) -}}
+                                  {{- $format := $fTC.format -}}
+                                  {{- $typeClean := $fTC.typeClean -}}
+
+                                  <dl class="schema-type-container desc-list pam bshadow bg-white" data-type="{{ $typeClean }}">
+                                    {{- if eq "xml" $format -}}
+                                      {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
+                                    {{- else -}}
+                                      {{- partial "api/oas/response-schema.html" (dict "schemaObj" .schema "name" "" "components" $components "responseCode" $response "endpointId" $endpointId "recLevel" 0) -}}
+                                    {{- end -}}
+                                  </dl>
+                                {{- end -}}
                               </div>
                             </details>
                           {{- end -}}

@@ -1,0 +1,13 @@
+{{ $hasSchema := false }}
+{{ with .content }}
+  {{ range . }}
+    {{/*  since go template doesn’t have loop breaks  */}}
+    {{ if not $hasSchema }}
+      {{ with .schema }}
+        {{ $hasSchema = true }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $hasSchema}}
