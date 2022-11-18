@@ -115,7 +115,7 @@
                             {{- $format := $fTC.format -}}
                             {{- $typeClean := $fTC.typeClean -}}
 
-                            <dl class="schema-type-container desc-list" data-type="{{ $typeClean }}">
+                            <dl class="schema-type-container desc-list mbl" data-type="{{ $typeClean }}">
                               {{- if eq "xml" $format -}}
                                 {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
                               {{- else -}}
