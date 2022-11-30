@@ -99,8 +99,16 @@
       {{ with $schemaObj.xml.name }}
         {{ $name = . }}
       {{ end }}
-      {{ $xmlLine = printf "%s<%s>%s</%s>" $xmlLine $name (string $value) $name }}
-      {{ $XML = println (printf "%s%s" $XML $xmlLine) }}
+      {{ if reflect.IsSlice $value }}
+        {{ range $value }}
+          {{ $value = . }}
+          {{ $xmlLine = printf "%s<%s>%s</%s>" $indent $name (string $value) $name  }}
+          {{ $XML = println (printf "%s%s" $XML $xmlLine) }}
+        {{ end }}
+      {{ else }}
+        {{ $xmlLine = printf "%s<%s>%s</%s>" $xmlLine $name (string $value) $name }}
+        {{ $XML = println (printf "%s%s" $XML $xmlLine) }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
