@@ -780,7 +780,7 @@
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Cargo insurance",
-  "vasNameNorwegian" : "Postoppkrav",
+  "vasNameNorwegian" : "Cargo insurance",
   "description" : "Cargo insurance is an insurance for parcel services that covers the value of goods up to 100,000 DKK / SEK / NOK or 10,000 EUR if the shipment is damaged or lost. The compensation is based on the shipment`s real value, and there is no deductible.  ",
   "shippingGuideCode" : "INSURANCE",
   "shippingGuideNpbCode" : "0068",

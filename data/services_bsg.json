@@ -194,7 +194,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "SE, DK",
   "SenderCountries" : "NO, SE, DK, FI",
-  "Destination" : "ALL",
+  "Destination" : "ALL COUNTRIES EXCEPT RUSSIA & BELARUS",
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -248,7 +248,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "NO, SE, DK",
   "SenderCountries" : "NO, SE, DK, FI",
-  "Destination" : "ALL",
+  "Destination" : "ALL COUNTRIES EXCEPT RUSSIA & BELARUS",
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -454,6 +454,24 @@
   "ServiceName" : "Pall til bedrift",
   "ServiceCode" : "5400",
   "RequestCode" : "5400",
+  "Type" : "B2B",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "Customer setup",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "Yes",
+  "AgreementPrice" : "Yes",
+  "LeadTime" : "Yes",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "-",
+  "Destination" : "-",
+  "DomesticAllowed" : "NO"
+}, {
+  "ServiceFamily" : "Cargo Norway domestic",
+  "CustomerNumberType" : "Main customer number",
+  "ServiceName" : "Før 7",
+  "ServiceCode" : "5200",
+  "RequestCode" : "5200",
   "Type" : "B2B",
   "Return" : "-",
   "Booking" : "Yes",
@@ -1025,12 +1043,12 @@
   "Destination" : "-",
   "DomesticAllowed" : "-"
 }, {
-  "ServiceFamily" : "Letter",
+  "ServiceFamily" : "Mail",
   "CustomerNumberType" : "",
-  "ServiceName" : "Sporbar brevpakke bedrift",
+  "ServiceName" : "Sporbar brevpakke til bedrift",
   "ServiceCode" : "3630",
   "RequestCode" : "3630",
-  "Type" : "B2X",
+  "Type" : "B2B",
   "Return" : "-",
   "Booking" : "Yes",
   "RequiredSetup" : "-",
@@ -1040,6 +1058,6 @@
   "LeadTime" : "-",
   "EnvironmentalData" : "-",
   "SenderCountries" : "NO",
-  "Destination" : "AT, AU, BE, BG, CA, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IS, IE, IT, LT, LU, LV, MT, NL, NZ, PL, PT, RO, SE, SI, SK",
+  "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, LT, LU, LV, NL, PL, SI, SK",
   "DomesticAllowed" : "-"
-}]
+} ]
