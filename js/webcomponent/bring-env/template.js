@@ -53,7 +53,7 @@ export default function bringEnvTemplate(isModal) {
             </div>
           </div>
           <div class="bring-env-text">
-            <p>Når vi ikke har mulighet til å levere med miljøvennlig transportmiddel kjøper Posten og Bring klimakvoter. Disse kvotene handles i <a href="https://www.regjeringen.no/globalassets/upload/md/2012/nyheter/mer_om_cdm.pdf" target="_blank">Den grønne utviklingsmekanismen markedet (CMD)</a>, som er en del av <a href="https://www.fn.no/om-fn/avtaler/miljoe-og-klima/kyotoprotokollen" target="_blank">Kyoto avtalen</a>.</p>
+            <p>Når vi ikke har mulighet til å levere med miljøvennlig transportmiddel kjøper Posten og Bring klimakvoter. Disse kvotene handles i <a href="https://www.regjeringen.no/globalassets/upload/md/2012/nyheter/mer_om_cdm.pdf" target="_blank">Den grønne utviklingsmekanismen (CDM)</a> markedet, som er en del av <a href="https://www.fn.no/om-fn/avtaler/miljoe-og-klima/kyotoprotokollen" target="_blank">Kyoto avtalen</a>.</p>
           </div>
         </section>
         <section>
