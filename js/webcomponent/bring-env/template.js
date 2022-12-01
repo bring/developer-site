@@ -53,13 +53,13 @@ export default function bringEnvTemplate(isModal) {
             </div>
           </div>
           <div class="bring-env-text">
-            <p>Når vi ikke har mulighet til å levere med miljøvennlig transportmiddel kjøper Posten og Bring klimakvoter. Disse kvotene handles i <a href="https://www.regjeringen.no/globalassets/upload/md/2012/nyheter/mer_om_cdm.pdf" target="_blank">Den grønne utviklingsmekanismen (CDM)</a> markedet, som er en del av <a href="https://www.fn.no/om-fn/avtaler/miljoe-og-klima/kyotoprotokollen" target="_blank">Kyoto avtalen</a>.</p>
+            <p>Når vi ikke har mulighet til å levere med miljøvennlig transportmiddel kjøper Posten og Bring klimakvoter. Disse kvotene handles i <a href="https://www.regjeringen.no/globalassets/upload/md/2012/nyheter/mer_om_cdm.pdf" target="_blank" rel="noopener noreferrer">Den grønne utviklingsmekanismen (CDM)</a> markedet, som er en del av <a href="https://www.fn.no/om-fn/avtaler/miljoe-og-klima/kyotoprotokollen" target="_blank" rel="noopener noreferrer">Kyoto avtalen</a>.</p>
           </div>
         </section>
         <section>
           <div class="bring-env-text">
             <h2>Mål</h2>
-            <p>Målet er å oppnå et netto nullutslipp i 2050, som er i tråd med <a href="https://www.fn.no/om-fn/avtaler/miljoe-og-klima/parisavtalen" target="_blank">Parisavtalen</a>. Her er noen av de tiltakene vi har gjennomført og skal gjennomføre:</p>
+            <p>Målet er å oppnå et netto nullutslipp i 2050, som er i tråd med <a href="https://www.fn.no/om-fn/avtaler/miljoe-og-klima/parisavtalen" target="_blank" rel="noopener noreferrer">Parisavtalen</a>. Her er noen av de tiltakene vi har gjennomført og skal gjennomføre:</p>
           </div>
           <div class="bring-env-cards">
             <div class="bring-env-card">
@@ -80,7 +80,7 @@ export default function bringEnvTemplate(isModal) {
             </div>
             <div class="bring-env-bottom">
               ${flyingPackages}
-              <p>Les mer: <a href="https://www.postennorge.no/baerekraft" target="_blank">postennorge.no/baerekraft</a></p>
+              <p>Les mer: <a href="https://www.postennorge.no/baerekraft" target="_blank" rel="noopener noreferrer">postennorge.no/baerekraft</a></p>
             </div>
           </div>
         </section>
