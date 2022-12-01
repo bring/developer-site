@@ -36,7 +36,7 @@
     "concurrently": "^7.5.0",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.14",
-    "hugo-bin": "^0.93.0",
+    "hugo-bin": "^0.95.0",
     "postcss": "^8.4.19",
     "postcss-import": "^15.0.0",
     "postcss-nesting": "^10.2.0",
