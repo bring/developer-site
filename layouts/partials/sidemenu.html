@@ -76,15 +76,15 @@
             {{- with .Page -}}
               {{- $hidePage = .Params.hidden -}}
             {{- end -}}
-
-            {{- if in .Title "Order Management" -}}
-              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
-            {{- else if isset $.Params "oas" -}}
-              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
-            {{- else -}}
-              {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
+            {{- if or (eq $currentPage.Params.hidden true) (ne $hidePage true) -}}
+              {{- if in .Title "Order Management" -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
+              {{- else if isset $.Params "oas" -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+              {{- else -}}
+                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
+              {{- end -}}
             {{- end -}}
-
           {{- end -}}
         </ul>
         {{- else -}}
