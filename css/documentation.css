@@ -35,6 +35,10 @@
   text-decoration: underline;
 }
 
+.dev-docscontent__backnav {
+  padding: 0 6vw 2rem;
+}
+
 .dev-docscontent__section {
   margin-bottom: 3rem;
   padding: 0 6vw 1rem;
@@ -114,6 +118,10 @@
 
   .dev-docscontent h1 {
     padding-left: 2rem;
+  }
+
+  .dev-docscontent__backnav {
+    padding: 0 2rem 2rem 2rem;
   }
 
   .dev-docscontent__section {

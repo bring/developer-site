@@ -47,6 +47,20 @@
         {{- end -}}
       </div>
     {{- end -}}
+    {{- with $.Params.subpages -}}
+      {{- with .title }}
+        <h2 class="dev-anchored" id="{{ . | urlize }}">
+          {{- . -}}
+        </h2>
+      {{- end -}}
+      {{- range $.Menus -}}
+        <ul>
+          {{- range .Children -}}
+            <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+          {{- end -}}
+        </ul>
+      {{- end -}}
+    {{- end -}}
     {{- range $.Params.documentation -}}
       {{- with .title }}
         <h2 class="dev-anchored" id="{{ . | urlize }}">

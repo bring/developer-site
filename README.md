@@ -174,6 +174,30 @@ oas: {Link to OAS JSON, typically outputted by Swagger}
 ---
 ```
 
+## Adding subpages to an API
+
+If the API documentation has many special topics and much text content before the endpoint listing, it can be a good idea to split the topics into subpages. This can be enabled by renaming the index file to _index and making a folder for the subpages. Navigation and listing on the main page is solved automatially by adding the following to the frontmatter of the index page:
+
+```
+subpages:
+  title: Special topics {this will be the title in the main api page and in the sidemenu}
+```
+
+And to the subpages’ frontmatter:
+```
+---
+title: {title that appears at the top of the page}
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: {unique id, for instance apifolder+pagename}
+    title: {title that appears in the sidemenu, usually the same as the page title}
+    parent: {parent’s identifier value, usually the api folder name}
+weight: {menu position within the subpage structure}
+---
+```
+
 ## Updating Booking & SG and VAS tables
 
 1. Clone and make changes in

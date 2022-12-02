@@ -16,14 +16,121 @@
   {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
   {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
 {{- end -}}
-{{ .Params }}
 
 <li
-class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}active{{ end }}"
+  class="dev-sidemenu__level1 {{ if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) }}active{{ end }}"
 >
-  <a href="{{ .url }}" class="dev-sidemenu__apititle" {{ $target | safeHTMLAttr }}>{{ .pageTitle }}{{ safeHTML $iconEx }}</a>
-  {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
+  <a
+    href="{{ .url }}"
+    class="dev-sidemenu__apititle"
+    {{ $target | safeHTMLAttr }}
+    >{{ .pageTitle }}{{ safeHTML $iconEx }}</a
+  >
+  {{- if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) -}}
     <ul class="dev-sidemenu__sublist">
+
+      {{/*  Generate submenu when on subpage TODO: reuse existing code  */}}
+      {{- with $currentPage.Params.subpages -}}
+        {{- with .title -}}
+          <li>
+            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
+              <span data-hover="{{ . }}">{{ . }}</span>
+            </a>
+          </li>
+        {{- end -}}
+      {{- end -}}
+
+      {{- $currentParent := .Parent -}}
+      {{- $currentId := "" -}}
+      {{- range $currentMenuItem.Children -}}
+        {{- $currentParent = .Parent -}}
+      {{- end -}}
+      {{- range $currentPage.Menus -}}
+        {{- $currentId = .Identifier -}}
+      {{- end -}}
+
+      {{- if ne $currentParent $currentId -}}
+        {{- with $currentPage.Parent.Params.subpages -}}
+          {{- with .title -}} 
+            <li>
+              <a
+                href="../#{{ . | anchorize }}"
+                data-list-item="{{ . | anchorize }}"
+              >
+                <span data-hover="{{ . }}">{{ . }}</span>
+              </a>
+            </li>
+          {{- end -}}
+
+          <ul class="dev-sidemenu__sublist text-note">
+            {{- range $currentMenuItem.Children -}}
+              <li><a href="{{ .URL }}" class="{{ if eq .Identifier $currentId }} active {{ end }}">{{ .Title }}</a></li>
+            {{- end -}}
+          </ul>
+
+          {{- range $currentPage.Parent.Params.documentation -}}
+            {{- with .title -}}
+              <li>
+                <a
+                  href="../#{{ . | anchorize }}"
+                  data-list-item="{{ . | anchorize }}"
+                >
+                  <span data-hover="{{ . }}">{{ . }}</span>
+                </a>
+              </li>
+            {{- end -}}
+          {{- end -}}
+
+          {{- with $currentPage.Parent.Params.guides -}}
+            <li>
+              <a href="../#tips-and-guides" data-list-item="tips-and-guides">
+                <span data-hover="Tips and guides">Tips and guides</span>
+              </a>
+            </li>
+          {{- end -}}
+
+          {{ $oasData := "" }}
+          {{- with $currentPage.Parent.Params.oas -}}
+            {{- $oasData = getJSON . -}}
+          {{ end }}
+
+          {{ with $oasData }}
+            {{- with .paths -}}
+              <li>
+                <a href="../#endpoints" data-list-item="endpoints">
+                  <span data-hover="endpoints">Endpoints</span>
+                </a>
+              </li>
+
+              {{- range . -}}
+                {{- range $k, $v := . -}}
+                  {{- $method := $k -}}
+                  {{- with .summary -}}
+                    {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
+                    <li>
+                      <a
+                        href="../#{{ $endpointId }}"
+                        data-list-item="{{ $endpointId }}"
+                      >
+                        <span data-hover="{{ . }}">
+                          {{- . -}}
+                        </span>
+                      </a>
+                    </li>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          {{- end -}}
+
+          {{- if and (eq (getenv "HUGO_ENV") "production") (isset $currentPage.Params "disqus_identifier") -}}
+            <li>
+              <a href="../#api-support"> API support </a>
+            </li>
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+
       {{- range $currentPage.Params.documentation -}}
         {{- with .title -}}
           <li>
@@ -56,14 +163,16 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
         {{- range .paths -}}
           {{- range $k, $v := . -}}
             {{- $method := $k -}}
-            {{- $endpointId := (printf "%s-%s" .summary $method) | anchorize -}}
-            <li>
-              <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
-                <span data-hover="{{ .summary }}">
-                  {{- .summary -}}
-                </span>
-              </a>
-            </li>
+            {{- with .summary -}}
+              {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
+              <li>
+                <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
+                  <span data-hover="{{ . }}">
+                    {{- . -}}
+                  </span>
+                </a>
+              </li>
+            {{- end -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -89,12 +198,9 @@ class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent $currentMenu $curre
 
       {{- if and (eq (getenv "HUGO_ENV") "production") (isset $currentPage.Params "disqus_identifier") -}}
         <li>
-          <a href="#api-support">
-            API support
-          </a>
+          <a href="#api-support"> API support </a>
         </li>
       {{- end -}}
-
     </ul>
   {{- end -}}
 </li>
