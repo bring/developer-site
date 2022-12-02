@@ -16,7 +16,6 @@
   {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
   {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
 {{- end -}}
-{{ .Params }}
 
 <li
   class="dev-sidemenu__level1 {{ if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) }}active{{ end }}"
@@ -164,14 +163,16 @@
         {{- range .paths -}}
           {{- range $k, $v := . -}}
             {{- $method := $k -}}
-            {{- $endpointId := (printf "%s-%s" .summary $method) | anchorize -}}
-            <li>
-              <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
-                <span data-hover="{{ .summary }}">
-                  {{- .summary -}}
-                </span>
-              </a>
-            </li>
+            {{- with .summary -}}
+              {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
+              <li>
+                <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
+                  <span data-hover="{{ . }}">
+                    {{- . -}}
+                  </span>
+                </a>
+              </li>
+            {{- end -}}
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -197,12 +198,9 @@
 
       {{- if and (eq (getenv "HUGO_ENV") "production") (isset $currentPage.Params "disqus_identifier") -}}
         <li>
-          <a href="#api-support">
-            API support
-          </a>
+          <a href="#api-support"> API support </a>
         </li>
       {{- end -}}
-
     </ul>
   {{- end -}}
 </li>
