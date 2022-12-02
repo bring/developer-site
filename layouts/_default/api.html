@@ -28,7 +28,17 @@
         {{- if and (isset .Params "apidoc") (isset .Params "apiresource") -}}
           {{- partial "api/guideapiresource.html" . -}}
         {{- end -}}
-        {{- .Content -}}
+
+        {{ with .Content }}
+          {{- if in (string .) "dev-docscontent__section" -}}
+            {{- . -}}
+          {{- else -}}
+            <section class="dev-docscontent__section">
+              {{- . -}}
+            </section>
+          {{- end -}}
+        {{ end }}
+
         {{- if (in .CurrentSection "revision-history") -}}
           {{- partial "api/changelog.html" . -}}
         {{- end -}}
