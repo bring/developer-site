@@ -1,6 +1,15 @@
-## Performance
-
-[Back](../new)
+---
+title: Performance
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookingperformance
+    title: Performance
+    parent: bookingnew
+weight: 3
+hidden: true
+---
 
 Different service groups have different response times in booking:
 
@@ -10,5 +19,3 @@ Different service groups have different response times in booking:
     - A booking will typically take < 3 seconds
   - Express Nordic SameDay
     - A booking will typically take < 10 seconds (query in flight schedules). We are working on improving the response times for QuickPack SameDay, making popular city-pairs much faster.
-
-[Back](../new)

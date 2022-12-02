@@ -1,6 +1,15 @@
-## RFID labels for Mailbox Parcel (3570)
-
-[Back](../new)
+---
+title: RFID labels for Mailbox Parcel (3570)
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookingrfid
+    title: RFID labels for Mailbox Parcel (3570)
+    parent: bookingnew
+weight: 6
+hidden: true
+---
 
 Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
 
@@ -15,5 +24,3 @@ RFID-tagged labels require special printer hardware. Currently we support the fo
 
 - Zebra R410
 - Zebra 500R
-  
-[Back](../new)
