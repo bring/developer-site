@@ -176,7 +176,7 @@ oas: {Link to OAS JSON, typically outputted by Swagger}
 
 ## Adding subpages to an API
 
-If the API documentation has many special topics and much text content before the endpoint listing, it can be a good idea to split the topics into subpages. This can be enabled by renaming the index file to _index and making a folder for the subpages. Navigation and listing on the main page is solved automatially by adding the following to the frontmatter of the index page:
+If the API documentation has many special topics and much text content before the endpoint listing, it can be a good idea to split the topics into subpages. This can be enabled by renaming the `index` file to `_index`. Listing on the main page and navigation is solved automatially by adding the following to the frontmatter of the index page:
 
 ```
 subpages:
