@@ -82,7 +82,6 @@ documentation:
       | `WithGuiInformation` | `withGuiInformation` | Return detailed information about requested service. Default `true` |
       | `WithEstimatedDeliveryTime` | `withEstimatedDeliveryTime` | Extended lead time information, including predicted arrival time at pickup point. Only supported for a limited set of [services](#estimated-arrival-time-for-domestic-parcels-and-cargo). Default `false` |
       | `NumberOfAlternativeDeliveryDates` | `numberOfAlternativeDeliveryDates` | Number of alternative delivery dates to be suggested. Default `0`, maximum `9` |
-      | `WithUniqueAlternateDeliveryDates` | `withUniqueAlternateDeliveryDates` | Return [unique alternative delivery dates](#get-unique-expected-delivery-dates). Default `false` |
       | `WithEnvironmentalData`| `withEnvironmentalData`| Return [environmental data](#shipment-environmental-data) about fossil free and electric transportation used on different transport legs |
       | `Language` | `language` | Language in which human readable message should be returned. Supported languages are `NO`, `DK`, `SE` and `EN` |
       | `EDI` | `edi` | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
@@ -170,7 +169,6 @@ documentation:
         "withExpectedDelivery": false,
         "withGuiInformation": true,
         "numberOfAlternativeDeliveryDates": 0,
-        "withUniqueAlternateDeliveryDates": false,
         "edi": true,
         "postingAtPostOffice": true,
         "trace": true,
@@ -665,18 +663,16 @@ documentation:
   - title: Get unique expected delivery dates
     content: |
       Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**. When using this parameter, the same delivery date might be returned several times (as several shipping dates might correspond to the same delivery date). To only get the unique alternative delivery dates use following field:
-      * SOAP: WithUniqueAlternateDeliveryDates
+      * SOAP: 
       ```xml
-      <WithUniqueAlternateDeliveryDates>true</WithUniqueAlternateDeliveryDates>
       <NumberOfAlternativeDeliveryDates>2</NumberOfAlternativeDeliveryDates>
       ```
-      * REST POST: withUniqueAlternateDeliveryDates
+      * REST POST: 
       ```json
-      "withUniqueAlternateDeliveryDates": true,
       "numberOfAlternativeDeliveryDates": 2
       ```
 
-      Note: along with withUniqueAlternateDeliveryDates, make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value. The maximum number of alternative delivery days that can be requested is 9.
+      Note: make sure the **numberOfAlternativeDeliveryDates** is also set to some positive value. The maximum number of alternative delivery days that can be requested is 9.
 
   - title:
       Get customer specified leadtimes for Mailbox Parcel (Pakke i postkassen)

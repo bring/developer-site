@@ -16,7 +16,7 @@
 </p>
 
 <!-- prettier-ignore -->
-{{< highlight js >}}https://api.bring.com/shippingguide/v2/products?fromcountry=NO&tocountry=NO&frompostalcode=0469&topostalcode=6050&product=5800&product=5600&product=3584&weight=500&addressLine=Ladeberget 2&numberofdeliverydates=3&withUniqueAlternateDeliveryDates=true
+{{< highlight js >}}https://api.bring.com/shippingguide/v2/products?fromcountry=NO&tocountry=NO&frompostalcode=0469&topostalcode=6050&product=5800&product=5600&product=3584&weight=500&addressLine=Ladeberget 2&numberofdeliverydates=3
  
 var params = {
   fromcountry: 'NO',
@@ -28,8 +28,7 @@ var params = {
   product: '3584',
   weight: 500,
   adressLine: 'Ladeberget 2', // recommended for best ETA response
-  numberofdeliverydates: 3, // only needed to provides alternative delivery dates for home delivery
-  withUniqueAlternateDeliveryDates: true // alternate delivery days for home delivery should be unique
+  numberofdeliverydates: 3 // only needed to provides alternative delivery dates for home delivery
 }{{< /highlight >}}
 
 <h3>Response</h3>
