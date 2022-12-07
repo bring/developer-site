@@ -42,7 +42,7 @@
     "postcss-nesting": "^10.2.0",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
-    "terser": "^5.15.1",
+    "terser": "^5.16.1",
     "vite": "^3.2.3"
   },
   "browserslist": [
