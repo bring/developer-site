@@ -1,3 +1,16 @@
+---
+title: Customs Export information
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookingcustoms
+    title: Customs Export information
+    parent: bookingnew
+weight: 9
+hidden: true
+---
+
 ## Customs Export information
 
 It is required to pass customs information when booking the following services from Norway -> abroad:

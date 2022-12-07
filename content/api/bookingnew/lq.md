@@ -1,4 +1,15 @@
-## LQ - Limited quantities (of dangerous goods)
+---
+title: LQ - Limited quantities (of dangerous goods)
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookinglq
+    title: LQ - Limited quantities (of dangerous goods)
+    parent: bookingnew
+weight: 10
+hidden: true
+---
 
 When booking Nordic parcel services it is possible to specify that a shipment contains limited quantities of dangerous goods, by adding the `0003` additional service.
 The LQ gross weight is optional unless the shipment is transported by boat, as specified in the table below:

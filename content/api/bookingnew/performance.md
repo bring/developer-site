@@ -1,4 +1,15 @@
-## Performance
+---
+title: Performance
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookingperformance
+    title: Performance
+    parent: bookingnew
+weight: 3
+hidden: true
+---
 
 Different service groups have different response times in booking:
 

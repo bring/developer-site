@@ -1,6 +1,13 @@
 ---
 title: Booking API
 layout: api
+menu:
+  apidocs:
+    identifier: bookingnew
+    title: Booking API
+    url: /api/bookingnew
+    parent: book
+weight: 20
 hidden: true
 
 introduction: |
@@ -20,60 +27,8 @@ information:
       REST XML/JSON over HTTP and SOAP over HTTP.
       Booking endpoints will assume all requests are UTF-8 encoded.
 
-documentation:
-  - title: Content
-    content:  |
-      
-      <h4 class="dev-anchored">
-        <a href="./new/versioning">Versioning</a>
-      </h4>
-      <br/>
+subpages:
+  title: Special topics
 
-      <h4 class="dev-anchored">
-        <a href="./new/authorization">Authorization</a>
-      </h4>
-      <br/> 
-
-      <h4 class="dev-anchored">
-        <a href="./new/performance">Performance</a>
-      </h4>
-      <br/>
-      
-      <h4 class="dev-anchored">
-        <a href="./new/price-availability">Checking prices and availability</a>
-      </h4>
-      <br/>
-
-      <h4 class="dev-anchored">
-        <a href="./new/labels">Making labels</a>
-      </h4>
-      <br/> 
-
-      <h4 class="dev-anchored">
-        <a href="./new/rfid">RFID labels for Mailbox Parcel (3570)</a>
-      </h4>
-      <br/>
-
-      <h4 class="dev-anchored">
-        <a href="./new/qr">Generating QR Codes</a>
-      </h4>
-      <br/>
-
-      <h4 class="dev-anchored">
-        <a href="./new/free-return">Free return of parcel(s)</a>
-      </h4>
-      <br/>
-
-      <h4 class="dev-anchored">
-        <a href="./new/customs">Customs Export information</a>
-      </h4>
-      <br/>
-
-      <h4 class="dev-anchored">
-        <a href="./new/lq">LQ - Limited quantities (of dangerous goods)</a>
-      </h4>
-      <br/>
-
-     
 oas: https://www.qa.mybring.com/booking-api/v3/api-docs
 ---

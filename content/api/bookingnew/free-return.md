@@ -1,4 +1,15 @@
-## Free return of parcel(s)
+---
+title: Free return of parcels
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookingfreereturn
+    title: Free return of parcels
+    parent: bookingnew
+weight: 8
+hidden: true
+---
 
 For Parcel Norway domestic services, it is possible to book the return shipment at the same time as the outgoing
 shipment. By setting the element `returnProduct` and specifying the return service, you will both get the regular label
