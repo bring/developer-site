@@ -9,7 +9,7 @@
     <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
       {{- with $.Parent.Params.subpages -}}
         <div class="dev-docscontent__backnav">
-          <a href="{{ $.Parent.Permalink }}">&larr; Back to {{ $.Parent.Title }}</a>
+          <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
         </div>
       {{- end -}}
       <article>
@@ -50,7 +50,7 @@
       </article>
       {{- with $.Parent.Params.subpages -}}
         <div class="dev-docscontent__backnav">
-          <a href="{{ $.Parent.Permalink }}">&larr; Back to {{ $.Parent.Title }}</a>
+          <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
         </div>
       {{- end -}}
     </main>
