@@ -77,7 +77,7 @@ documentation:
 
       #### Example request
       ```
-      curl -H "api-version: 2" https://api.bring.com/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+      curl -H "api-version: 2" https://api.bring.com/tracking/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
 
       ### Select version by URL

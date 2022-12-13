@@ -670,6 +670,16 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Før 07:00 til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway domestic",
+    "serviceFamilySortOrder" : 3,
+    "serviceCode" : "5200",
+    "productionCode" : "5200",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
