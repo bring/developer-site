@@ -53,7 +53,7 @@ information:
     content: |
       By using authenticated requests you can get more information such as price, name, address and signatures for proof of delivery. The rate limits are also less strict.
 
-      To make authenticated Tracking API requests, use the endpoint [https://api.bring.com/tracking/api/](https://api.bring.com/tracking/api/). You also need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+      To make authenticated Tracking API requests: You will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
   - title: Formats
     content: |
@@ -77,7 +77,7 @@ documentation:
 
       #### Example request
       ```
-      curl -H "api-version: 2" https://tracking.bring.com/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+      curl -H "api-version: 2" https://api.bring.com/tracking/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
 
       ### Select version by URL
@@ -85,12 +85,11 @@ documentation:
 
       | Application | URL example |
       |:-------|:--------|
-      | Open tracking | https://tracking.bring.com/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
-      | Logged-in tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
+      | Tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
 
       #### Example request
       ```
-      curl -v https://tracking.bring.com/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+      curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
       ```
     
       ###  Events Description
@@ -127,6 +126,6 @@ documentation:
       | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
 
 
-oas: https://tracking.bring.com/api-docs/
+oas: https://api.bring.com/tracking/api-docs/
 
 ---

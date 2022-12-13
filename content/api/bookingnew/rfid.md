@@ -1,4 +1,15 @@
-## RFID labels for Mailbox Parcel (3570)
+---
+title: RFID labels for Mailbox Parcel (3570)
+layout: api
+notanapi: true
+menu:
+  apidocs:
+    identifier: bookingrfid
+    title: RFID labels for Mailbox Parcel (3570)
+    parent: bookingnew
+weight: 6
+hidden: true
+---
 
 Mailbox Parcel shipments can optionally be ordered with tracking using RFID.
 
