@@ -1,77 +1,122 @@
-{{- $hasExamples := false -}}
-{{- range .requestBody -}}
-  {{- if reflect.IsMap . -}}
-    {{- range . -}}
-      {{- if isset . "examples" -}}
-        {{- $hasExamples = true -}}
-      {{- end -}}
-    {{- end -}}
+{{- $mediaTypes := .ctx -}}
+{{- $endpointId := .endpointId -}}
+{{- $components := .components -}}
+
+{{/*  Check if there are multiple types  */}}
+{{- $multiTypes := false -}}
+{{- if gt (len $mediaTypes) 1 -}}
+  {{- $multiTypes = true -}}
+{{- end }}
+
+{{/*  Check if there are any examples  */}}
+{{- $reqExamples := false -}}
+{{- range $mediaTypes -}}
+  {{- with .examples -}}
+    {{- $reqExamples = true -}}
   {{- end -}}
 {{- end -}}
-{{- if $hasExamples -}}
-  {{- $endpointId := .endpointId -}}
 
-  <h3>Request example</h3>
-  {{- $codeExample := "" -}}
-  <div class="bg-gray3 rad-t2px mts">
-      {{- with .requestBody -}}
-        <div class="relative bg-gray4 example-wrap" data-example="{{$endpointId}}">
+{{- $requestId := print $endpointId "-req" -}}
 
-          {{ $showFormatMenu := 0 }}
-          {{ range $application, $_ := . }}
-            {{ if or (in $application "json") (in $application "xml") }}
-              {{ $showFormatMenu = add $showFormatMenu 1 }}
-            {{ end }}
-          {{ end }}
+{{- if $reqExamples -}}
+  <h3>Request examples</h3>
+  <div class="bg-gray3 rad-t2px mts" id="{{ $endpointId }}-request">
+    <div class="relative bg-gray4 example-wrap" data-example="{{ $endpointId }}">
 
-          {{ if gt $showFormatMenu 1 }}
-            <div class="mhm ptm">
-              <select class="form__control w100p mb0 pas hauto" name="formats" data-example-sub aria-label="Select format">
-                {{ range $application, $_ := . }}
-                    <option value="{{$application}}">{{$application}}</option>
-                {{ end }}
-              </select>
-            </div>
-          {{ end }}
-
-          {{- range $application, $_ := .content -}}
-            {{- $format := "" -}}
-            {{- if in $application "json" -}}
-              {{- $format = "json" -}}
-            {{- else if in $application "xml" -}}
-              {{- $format = printf "xml" -}}
+      {{/*  Make select if media types > 1  */}}
+      {{- if $multiTypes -}}
+        <div class="mhm pvm">
+          <select data-sub-of="{{ $requestId }}" class="form__control w100p mb0 pas hauto" name="formats" aria-label="Select request format">
+            {{- range $mediaType, $_ := $mediaTypes -}}
+              {{- $typeClean := lower (anchorize $mediaType) -}}
+              <option value="{{ $typeClean }}">{{ $mediaType }}</option>
             {{- end -}}
-
-            {{- if isset . "examples" -}}
-              {{- if gt (len .examples) 1 -}}
-                <div class="mhm pvm">
-                  <select class="form__control w100p mb0 pas hauto" name="{{$format}}-{{$endpointId}}" data-example-sub aria-label="{{$endpointId}} {{$format}} request example">
-                    {{- range $name, $_ := .examples -}}
-                      {{- $exId := print $name | anchorize -}}
-                      <option value="{{$exId}}">{{$name}}</option>
-                    {{- end -}}
-                  </select>
-                </div>
-              {{ else }}
-                {{/*  Hiding title until we have a better view of the different variations  */}}
-                {{/*  {{- range $name, $_ := .examples -}}
-                  {{ if $name }}
-                    <h4 class="mb0 phm pvm fw600 bg-gray3">{{$name}}</h4>
-                  {{ end }}
-                {{ end }}  */}}
-              {{- end -}}
-              {{- $exInd := 0 -}}
-              {{- range $name,$_ := .examples -}}
-                {{- $exId := print $name | anchorize -}}
-                <div class="relative" data-example-sub="{{$exId}}" data-format="{{$application}}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                  {{- partial (printf "api/oas/example-%s.html" $format) (dict "ctx" . "schemas" .) -}}
-                  {{- partial "api/oas/copy-btn.html" -}}
-                </div>
-                {{- $exInd = add $exInd 1 -}}
-              {{- end -}}
-            {{- end -}}
-          {{- end -}}
+          </select>
         </div>
       {{- end -}}
+
+      {{/*  Loop the media types again generating each one’s examples  */}}
+      {{- $exFormatInd := 0 -}}
+      {{- range $mediaType, $_ := $mediaTypes -}}
+        {{- $mediaType = $mediaType | anchorize -}}
+        {{- $format := "json" -}}
+        {{- if in $mediaType "xml" -}}
+          {{- $format = printf "xml" -}}
+        {{- end -}}
+        {{- $schema := .schema -}}
+
+        {{- with .examples -}}
+          <div class="" data-type="{{ $mediaType }}" {{ if ne $exFormatInd 0 }}hidden{{ end }}>
+            {{/*  Make select if the request has multiple examples  */}}
+            {{- $multiExamples := false -}}
+            {{- if gt (len .) 1 -}}
+              {{- $multiExamples = true -}}
+            {{- end -}}
+            {{- if $multiExamples -}}
+              <div class="mhm {{ if not $multiTypes }}ptm{{ end }}">
+                <select class="form__control w100p pas hauto" name="{{ $mediaType }}-{{ $requestId }}" data-example-sub aria-label="Request examples {{ $format }}">
+                  {{- range $name, $obj := . -}}
+                    {{ $exampleId := "" }}
+                    {{- with $obj.description -}}
+                      {{- $name = . -}}
+                    {{- end -}}
+                    {{- range $k, $_ := $obj -}}
+                      {{/*  Support both ref components and not ref  */}}
+                      {{- if eq $k "$ref" -}}
+                        {{- $examplePath := path.Split . -}}
+                        {{- $exampleId = (printf "%s-%s" $requestId $examplePath.File) | anchorize -}}
+                      {{- else -}}
+                        {{- $exampleId = (printf "%s-%s" $requestId $name) | anchorize -}}
+                      {{- end -}}
+                    {{- end -}}
+                    <option value="{{ $exampleId }}">{{ $name }}</option>
+                  {{- end -}}
+                </select>
+              </div>
+            {{- end -}}
+
+            {{/*  Make the actual examples  */}}
+            {{- $exInd := 0 -}}
+            {{- range $name, $_ := . -}}
+              {{- range $k, $_ := . -}}
+                {{/*  Examples that are in Components  */}}
+                {{- if eq $k "$ref" -}}
+                  {{- $examplePath := path.Split . -}}
+                  {{- $exampleId := (printf "%s-%s" $requestId $examplePath.File) | anchorize -}}
+                  {{- range $k, $_ := index $components.examples $examplePath.File -}}
+                    {{- if and (eq $k "description") (not $multiExamples) (ne (. | lower) "example") -}}
+                      <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
+                    {{- else if eq $k "value" -}}
+                      <div class="relative" data-example-sub="{{ $exampleId }}" data-format="{{ $mediaType }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                        {{- if eq $format "xml" -}}
+                          {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
+                        {{- else -}}
+                          {{- partial "api/oas/example-json.html" . -}}
+                        {{- end -}}
+                        {{- partial "api/oas/copy-btn.html" -}}
+                      </div>
+                    {{- end -}}
+                  {{- end -}}
+                  {{- $exInd = add $exInd 1 -}}
+                {{/*  Examples that are direct descendants  */}}
+                {{- else -}}
+                  {{- $exampleId := (printf "%s-%s" $requestId $name) | anchorize -}}
+                  {{- if and (eq $k "description") (not $multiExamples) (ne (. | lower) "example") -}}
+                    <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
+                  {{- else if eq $k "value" -}}
+                    <div class="relative" data-example-sub="{{ $exampleId }}" data-format="{{ $mediaType }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                      {{/*  This only suppport string for xml examples, look at the $ref version if it’s necessary to add obj support  */}}
+                      {{- partial (printf "api/oas/example-%s.html" $format) . -}}
+                      {{- partial "api/oas/copy-btn.html" -}}
+                    </div>
+                    {{- $exInd = add $exInd 1 -}}
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
+          </div>
+        {{- end -}}
+      {{- end -}}
+    </div>
   </div>
 {{- end -}}
