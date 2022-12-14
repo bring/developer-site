@@ -38,7 +38,7 @@ documentation:
 
       ### Event groups
 
-      Default set of subscribeable event groups. Notice that this list is subject for change.
+      Default set of subscribable event groups. Notice that this list is subject for change.
 
       | Event | Description |
       |:-------|:--------|
