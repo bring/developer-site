@@ -218,12 +218,8 @@
                     {{- end -}}
                   </div>
                   <div class="example-area">
-                    {{- if .requestBody -}}
-                      {{- if $components.examples -}}
-                        {{- partial "api/oas/requestexample-components.html" (dict "components" $components "requestBody" .requestBody "endpointId" $endpointId) -}}
-                      {{- else -}}
-                        {{- partial "api/oas/requestexample.html" (dict "requestBody" .requestBody "endpointId" $endpointId) -}}
-                      {{- end -}}
+                    {{- with .requestBody.content -}}
+                      {{- partial "api/oas/requestexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                     {{- end -}}
                     {{- if $components.examples -}}
                       {{- partial "api/oas/responseexample-components.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
