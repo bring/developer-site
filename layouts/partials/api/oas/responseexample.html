@@ -65,7 +65,7 @@
             {{- $schema := .schema -}}
 
             {{- with .examples -}}
-              <div data-type="{{ $mediaType }}" {{ if ne $exFormatInd 0 }}hidden{{ end }}>
+              <div {{ if $multiTypes }}data-type="{{ $mediaType }}"{{ end }} {{ if ne $exFormatInd 0 }}hidden{{ end }}>
                 {{/*  Make select if the response has multiple examples  */}}
                 {{- $multiExamples := false -}}
                 {{- if gt (len .) 1 -}}
