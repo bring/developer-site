@@ -221,10 +221,8 @@
                     {{- with .requestBody.content -}}
                       {{- partial "api/oas/requestexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                     {{- end -}}
-                    {{- if $components.examples -}}
-                      {{- partial "api/oas/responseexample-components.html" (dict "components" $components "responses" .responses "endpointId" $endpointId) -}}
-                    {{- else -}}
-                      {{- partial "api/oas/responseexample.html" (dict "responses" .responses "endpointId" $endpointId) -}}
+                    {{ with .responses }}
+                      {{- partial "api/oas/responseexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                     {{- end -}}
                   </div>
                 </div>
