@@ -1,32 +1,46 @@
-{{- $hasExamples := false -}}
-{{- range .responses -}}
-  {{- range . -}}
-    {{- if reflect.IsMap . -}}
-      {{- range . -}}
-        {{- if isset . "examples" -}}
-          {{- $hasExamples = true -}}
-        {{- end -}}
+{{- $responseCodes := .ctx -}}
+{{- $endpointId := .endpointId -}}
+{{- $components := .components -}}
+{{- $resCodes := false -}}
+{{- $resExamples := false -}}
+
+{{/*  Check if there are multiple responseCodes  */}}
+{{- if gt (len $responseCodes) 0 -}}
+  {{- $resCodes = true -}}
+{{- end }}
+
+{{/*  If we don’t know if there are examples, check if they exist – since there is no break in go template  */}}
+{{- range $responseCodes -}}
+  {{- if not $resExamples -}}
+    {{- range .content -}}
+      {{- with .examples -}}
+        {{- $resExamples = true -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-{{- if $hasExamples -}}
-  {{- $response := .response -}}
-  {{- $endpointId := .endpointId -}}
 
+{{- if $resExamples -}}
   <h3>Response examples</h3>
-  {{- $resInd := 0 -}}
   <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
-    {{- partial "api/oas/responsecode-btns.html" (dict "responses" .responses "endpointId" $endpointId) -}}
-    {{- range $response, $_ := .responses -}}
-      {{- with .content -}}
-        {{- $multiTypes := false -}}
-        {{- if gt (len .) 1 -}}
-          {{- $multiTypes = true -}}
-        {{- end -}}
+    {{/*  Generate responsetype menu  */}}
+    {{- if $resCodes -}}
+      {{- partial "api/oas/responsecode-btns.html" (dict "responses" $responseCodes "endpointId" $endpointId) -}}
+    {{- end -}}
 
+    {{/*  Generate responsetype content  */}}
+    {{- $multiTypes := false -}}
+    {{- $resInd := 0 -}}
+    {{- range $response, $_ := $responseCodes -}}
+      {{- with .content -}}
         {{- $responseId := print $endpointId "-" $response -}}
         <div class="relative bg-gray4 example-wrap" data-example="{{ $responseId }}" role="tabpanel" aria-labelledby="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
+
+          {{/*  Check if there are multiple types within response  */}}
+          {{- $mediaTypes := . -}}
+          {{- if gt (len $mediaTypes) 1 -}}
+            {{- $multiTypes = true -}}
+          {{- end -}}
 
           {{/*  Make select if types > 1  */}}
           {{- if $multiTypes -}}
@@ -40,54 +54,98 @@
             </div>
           {{- end -}}
 
-          {{/*  Make examples according to number of types  */}}
-          {{ $exFormatInd := 0 }}
-          {{- range $mediaType, $_ := . -}}
-            {{ $mediaType = lower (anchorize $mediaType) }}
+          {{/*  Loop the media types again generating each one’s examples  */}}
+          {{- $exFormatInd := 0 -}}
+          {{- range $mediaType, $_ := $mediaTypes -}}
+            {{- $mediaType = $mediaType | anchorize -}}
             {{- $format := "json" -}}
             {{- if in $mediaType "xml" -}}
               {{- $format = printf "xml" -}}
             {{- end -}}
+            {{- $schema := .schema -}}
 
-              {{- $schema := .schema -}}
-              {{- if isset . "examples" -}}
-                <div data-type="{{ $mediaType }}" {{ if ne $exFormatInd 0 }}hidden{{ end }}>
-                  {{/*  make select if the response has multiple examples  */}}
-                  {{- if gt (len .examples) 1 -}}
-                    <div class="mhm {{ if not $multiTypes }}ptm{{ end }}">
-                      <select class="form__control w100p mb0 pas hauto" name="{{ $mediaType }}-{{ $responseId }}" data-example-sub aria-label="Response code {{ $response }} {{ $format }} example">
-                        {{- range $name, $obj := .examples -}}
-                          {{- $exampleId := lower (printf "%s-%s" $responseId $name) -}}
-                          {{- with $obj.description -}}
-                            {{- $name = . -}}
-                          {{- end -}}
-                          <option value="{{ $exampleId }}">{{ $name }}</option>
+            {{- with .examples -}}
+              <div data-type="{{ $mediaType }}" {{ if ne $exFormatInd 0 }}hidden{{ end }}>
+                {{/*  Make select if the response has multiple examples  */}}
+                {{- $multiExamples := false -}}
+                {{- if gt (len .) 1 -}}
+                  {{- $multiExamples = true -}}
+                {{- end -}}
+
+                {{- if $multiExamples -}}
+                  <div class="mhm {{ if not $multiTypes }}ptm{{ end }}">
+                    <select class="form__control w100p pas hauto" name="{{ $mediaType }}-{{ $responseId }}" data-example-sub aria-label="Response code {{ $response }} examples {{ $format }}">
+                      {{- range $name, $obj := . -}}
+
+                        {{- $hasRef := false -}}
+                        {{- if isset . "$ref" -}}
+                          {{- $hasRef = true -}}
                         {{- end -}}
-                      </select>
-                    </div>
-                  {{- end -}}
 
-                  {{- $exInd := 0 -}}
+                        {{- $exampleId := "" -}}
+                        {{- with $obj.description -}}
+                          {{- $name = . -}}
+                        {{- end -}}
 
-                  {{- range $name, $_ := .examples -}}
-                    {{- $exampleId := lower (printf "%s-%s" $responseId $name) -}}
-                    <div class="relative mtm" data-example-sub="{{ $exampleId }}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                    {{- if eq $format "xml" -}}
-                      {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "exampleObj" . ) -}}
-                    {{- else -}}
-                      {{- partial "api/oas/example-json.html" (dict "ctx" . "schemas" .) -}}
+                        {{- range $k, $_ := $obj -}}
+                          {{/*  Support both ref components and not ref  */}}
+                          {{- if eq $k "$ref" -}}
+                            {{- $examplePath := path.Split . -}}
+                            {{- $exampleId = (printf "%s-%s" $responseId $examplePath.File) | anchorize -}}
+                          {{- else if not $hasRef -}}
+                            {{- $exampleId = (printf "%s-%s" $responseId $name) | anchorize -}}
+                          {{- end -}}
+                        {{- end -}}
+                        <option value="{{ $exampleId }}">{{ $name }}</option>
+                      {{- end -}}
+                    </select>
+                  </div>
+                {{- end -}}
+
+                {{/*  Make the actual examples  */}}
+                {{- $exInd := 0 -}}
+                {{- range $name, $exampleObject := . -}}
+                  {{- $exampleId := (printf "%s-%s" $responseId $name) | anchorize -}}
+
+                  {{/*  Get possible $ref example object  */}}
+                  {{- if isset . "$ref" -}}
+                    {{/*  Range for $ref since we can’t dot notate properties beginning with $  */}}
+                    {{- range $k, $_ := $exampleObject -}}
+                      {{- if eq $k "$ref" -}}
+                        {{- $examplePath := path.Split . -}}
+                        {{- $exampleId = (printf "%s-%s" $responseId $examplePath.File) | anchorize -}}
+                        {{- $exampleObject = index $components.examples $examplePath.File -}}
+                      {{- end -}}
                     {{- end -}}
-                    {{- partial "api/oas/copy-btn.html" -}}
-                    </div>
-                    {{- $exInd = add $exInd 1 -}}
                   {{- end -}}
-                </div>
-              {{- end -}}
+
+                  {{- if not $multiExamples -}}
+                    {{- with $exampleObject.description -}}
+                      {{- if and (ne (. | lower) "example") (ne (. | lower) "response") -}}
+                        <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
+                      {{- end -}}
+                    {{- end -}}
+                  {{- end -}}
+                  {{- with $exampleObject.value -}}
+                    <div class="relative" data-example-sub="{{ $exampleId }}" data-format="{{ $mediaType }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                      {{- if eq $format "xml" -}}
+                        {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
+                      {{- else -}}
+                        {{- partial "api/oas/example-json.html" . -}}
+                      {{- end -}}
+                      {{- partial "api/oas/copy-btn.html" -}}
+                    </div>
+                  {{- end -}}
+                  {{- $exInd = add $exInd 1 -}}
+                {{- end -}}
+              </div>
+            {{- end -}}
             {{ $exFormatInd = add $exFormatInd 1 }}
           {{- end -}}
         </div>
-        {{- $resInd = add $resInd 1 -}}
+        {{ $exFormatInd = add $exFormatInd 1 }}
       {{- end -}}
+      {{- $resInd = add $resInd 1 -}}
     {{- end -}}
   </div>
 {{- end -}}
