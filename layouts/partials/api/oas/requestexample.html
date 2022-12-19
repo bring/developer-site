@@ -46,26 +46,34 @@
         {{- $schema := .schema -}}
 
         {{- with .examples -}}
-          <div class="" data-type="{{ $mediaType }}" {{ if ne $exFormatInd 0 }}hidden{{ end }}>
+          <div class="" {{ if $multiTypes }}data-type="{{ $mediaType }}"{{ end }} {{ if ne $exFormatInd 0 }}hidden{{ end }}>
             {{/*  Make select if the request has multiple examples  */}}
             {{- $multiExamples := false -}}
             {{- if gt (len .) 1 -}}
               {{- $multiExamples = true -}}
             {{- end -}}
+
             {{- if $multiExamples -}}
               <div class="mhm {{ if not $multiTypes }}ptm{{ end }}">
                 <select class="form__control w100p pas hauto" name="{{ $mediaType }}-{{ $requestId }}" data-example-sub aria-label="Request examples {{ $format }}">
                   {{- range $name, $obj := . -}}
-                    {{ $exampleId := "" }}
+
+                    {{- $hasRef := false -}}
+                    {{- if isset . "$ref" -}}
+                      {{- $hasRef = true -}}
+                    {{- end -}}
+
+                    {{- $exampleId := "" -}}
                     {{- with $obj.description -}}
                       {{- $name = . -}}
                     {{- end -}}
+
                     {{- range $k, $_ := $obj -}}
                       {{/*  Support both ref components and not ref  */}}
                       {{- if eq $k "$ref" -}}
                         {{- $examplePath := path.Split . -}}
                         {{- $exampleId = (printf "%s-%s" $requestId $examplePath.File) | anchorize -}}
-                      {{- else -}}
+                      {{- else if not $hasRef -}}
                         {{- $exampleId = (printf "%s-%s" $requestId $name) | anchorize -}}
                       {{- end -}}
                     {{- end -}}
@@ -77,42 +85,39 @@
 
             {{/*  Make the actual examples  */}}
             {{- $exInd := 0 -}}
-            {{- range $name, $_ := . -}}
-              {{- range $k, $_ := . -}}
-                {{/*  Examples that are in Components  */}}
-                {{- if eq $k "$ref" -}}
-                  {{- $examplePath := path.Split . -}}
-                  {{- $exampleId := (printf "%s-%s" $requestId $examplePath.File) | anchorize -}}
-                  {{- range $k, $_ := index $components.examples $examplePath.File -}}
-                    {{- if and (eq $k "description") (not $multiExamples) (ne (. | lower) "example") -}}
-                      <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
-                    {{- else if eq $k "value" -}}
-                      <div class="relative" data-example-sub="{{ $exampleId }}" data-format="{{ $mediaType }}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                        {{- if eq $format "xml" -}}
-                          {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
-                        {{- else -}}
-                          {{- partial "api/oas/example-json.html" . -}}
-                        {{- end -}}
-                        {{- partial "api/oas/copy-btn.html" -}}
-                      </div>
-                    {{- end -}}
-                  {{- end -}}
-                  {{- $exInd = add $exInd 1 -}}
-                {{/*  Examples that are direct descendants  */}}
-                {{- else -}}
-                  {{- $exampleId := (printf "%s-%s" $requestId $name) | anchorize -}}
-                  {{- if and (eq $k "description") (not $multiExamples) (ne (. | lower) "example") -}}
-                    <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
-                  {{- else if eq $k "value" -}}
-                    <div class="relative" data-example-sub="{{ $exampleId }}" data-format="{{ $mediaType }}" {{ if ne $exInd 0 }}hidden{{ end }}>
-                      {{/*  This only suppport string for xml examples, look at the $ref version if it’s necessary to add obj support  */}}
-                      {{- partial (printf "api/oas/example-%s.html" $format) . -}}
-                      {{- partial "api/oas/copy-btn.html" -}}
-                    </div>
-                    {{- $exInd = add $exInd 1 -}}
+            {{- range $name, $exampleObject := . -}}
+              {{- $exampleId := (printf "%s-%s" $requestId $name) | anchorize -}}
+
+              {{/*  Get possible $ref example object  */}}
+              {{- if isset . "$ref" -}}
+                {{/*  Range for $ref since we can’t dot notate properties beginning with $  */}}
+                {{- range $k, $_ := $exampleObject -}}
+                  {{- if eq $k "$ref" -}}
+                    {{- $examplePath := path.Split . -}}
+                    {{- $exampleId = (printf "%s-%s" $requestId $examplePath.File) | anchorize -}}
+                    {{- $exampleObject = index $components.examples $examplePath.File -}}
                   {{- end -}}
                 {{- end -}}
               {{- end -}}
+
+              {{- if not $multiExamples -}}
+                {{- with $exampleObject.description -}}
+                  {{- if and (ne (. | lower) "example") (ne (. | lower) "request") -}}
+                    <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
+                  {{- end -}}
+                {{- end -}}
+              {{- end -}}
+              {{- with $exampleObject.value -}}
+                <div class="relative" data-example-sub="{{ $exampleId }}" data-format="{{ $mediaType }}" {{ if ne $exInd 0 }}hidden{{ end }}>
+                  {{- if eq $format "xml" -}}
+                    {{- partial "api/oas/example-xml.html" (dict "schemaObj" $schema "name" "" "components" $components "exampleObj" . ) -}}
+                  {{- else -}}
+                    {{- partial "api/oas/example-json.html" . -}}
+                  {{- end -}}
+                  {{- partial "api/oas/copy-btn.html" -}}
+                </div>
+              {{- end -}}
+              {{- $exInd = add $exInd 1 -}}
             {{- end -}}
           </div>
         {{- end -}}
