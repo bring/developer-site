@@ -153,6 +153,10 @@
   width: 38%;
 }
 
+.example-area > div {
+  margin-bottom: clamp(1.2rem, calc(1rem + 1.2vw), 3rem);
+}
+
 div.response {
   padding: 0.5rem 0.5rem 0.5rem 1.8em;
 }

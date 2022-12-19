@@ -221,7 +221,7 @@
                     {{- with .requestBody.content -}}
                       {{- partial "api/oas/requestexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                     {{- end -}}
-                    {{ with .responses }}
+                    {{- with .responses -}}
                       {{- partial "api/oas/responseexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                     {{- end -}}
                   </div>

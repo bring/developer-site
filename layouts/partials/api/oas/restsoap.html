@@ -124,7 +124,7 @@
                 {{- with .requestBody.content -}}
                   {{- partial "api/oas/requestexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                 {{- end -}}
-                {{ with .responses }}
+                {{- with .responses -}}
                   {{- partial "api/oas/responseexample.html" (dict "ctx" . "endpointId" $endpointId "components" $components) -}}
                 {{- end -}}
               </div>
@@ -286,20 +286,45 @@
                   {{/* For each endpoint: Response */}}
                   {{- with .responses -}}
                     <h3>Response examples</h3>
-                    <p class="fw600 mb0">200</p>
-                    {{- range . -}}
-                      {{- $code := .code -}}
-                      {{- with .description -}}
-                        {{- if in (string .) "\n\n" -}}
-                          {{ . | markdownify }}
-                        {{- else -}}
-                          <p>{{ . | markdownify }}</p>
+                    <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
+                      <div class="pam flex flex-wrap" role="tablist">
+                        {{- $ariaSelected := true -}}
+                        {{- range $response, $_ := . -}}
+                          {{- $responseColor := "" -}}
+                          {{- if and (ge $response 200) (lt $response 300) -}}
+                            {{- $responseColor = "txt-success" -}}
+                          {{- else if ge $response 300 -}}
+                            {{- $responseColor = "txt-error" -}}
+                          {{- end -}}
+                          {{- $responseId := print $endpointId "-" $response -}}
+                          <button
+                            type="button"
+                            name="{{$endpointId}}-response"
+                            data-example="{{$responseId}}"
+                            class="btn-link--dark mrs {{$responseColor}}"
+                            aria-label="Response code {{$response}}"
+                            aria-selected="{{$ariaSelected}}"
+                            role="tab"
+                            id="{{$responseId}}">
+                            {{ $response }}
+                          </button>
+                          {{- $ariaSelected = false -}}
+                        {{- end -}}
+                      </div>
+                      {{- range . -}}
+                        {{- $code := .code -}}
+                        {{- with .description -}}
+                          {{- if in (string .) "\n\n" -}}
+                            {{ . | markdownify }}
+                          {{- else -}}
+                            <p>{{ . | markdownify }}</p>
+                          {{- end -}}
+                        {{- end -}}
+                        {{- range .body -}}
+                          {{- partial "api/tabssoap.html" (dict "context" . "endpointName" $displayName "code" $code "types" $types ) -}}
                         {{- end -}}
                       {{- end -}}
-                      {{- range .body -}}
-                        {{- partial "api/tabssoap.html" (dict "context" . "endpointName" $displayName "code" $code "types" $types ) -}}
-                      {{- end -}}
-                    {{- end -}}
+                    </div>
                   {{- end -}}
                 </div>
               {{- end -}}
