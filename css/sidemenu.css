@@ -1,8 +1,12 @@
 .dev-sidemenu {
-  padding-top: 1rem;
+  padding-top: 3rem;
   padding-bottom: 1rem;
   width: 18rem;
   align-self: flex-start;
+}
+
+.dev-sidemenu--front {
+  padding-top: 6vmin;
 }
 
 .dev-sidemenu__title {

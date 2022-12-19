@@ -1,7 +1,7 @@
 {{- $currentPage := . -}}
 {{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
 
-<nav class="dev-sidemenu" aria-label="Section">
+<nav class="dev-sidemenu {{ if .IsHome }}dev-sidemenu--front{{ end }}" aria-label="Section">
   {{- if or (eq .Section "api") (.IsHome) -}}
     <ul class="dev-sidemenu__list dev-sidemenu__separator">
       {{- $len := (len .Site.Menus.api) -}}
