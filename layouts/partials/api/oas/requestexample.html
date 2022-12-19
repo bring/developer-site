@@ -103,7 +103,7 @@
               {{- if not $multiExamples -}}
                 {{- with $exampleObject.description -}}
                   {{- if and (ne (. | lower) "example") (ne (. | lower) "request") -}}
-                    <h4 class="mb0 phm pvm fw600 bg-gray3">{{ . }}</h4>
+                    <h4 class="mb0 phm pvs fw600 text-note ttu bg-gray4">{{ . }}</h4>
                   {{- end -}}
                 {{- end -}}
               {{- end -}}
