@@ -4,6 +4,10 @@
   {{- if (eq ($.Param "widelayout") true) -}}
     {{- $maxwidth = "maxw108r" -}}
   {{- end -}}
+  {{- $identifier := "" -}}
+  {{- range .Menus -}}
+    {{- $identifier = .Identifier -}}
+  {{- end -}}
 
   {{- if (eq $notAnApi true) -}}
     <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
@@ -55,26 +59,28 @@
       {{- end -}}
     </main>
 
-  {{- else if in .Title "Order Management" -}}
-    {{- partial "api/oas/restsoap.html" . -}}
   {{- else if isset $.Params "oas" -}}
-    <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
-      <article>
-        {{- partial "api/oas/section-intro.html" . -}}
-
-        {{- $oasData := getJSON $.Params.oas -}}
-        {{- with $oasData -}}
-          {{- partial "api/oas/endpoints-table.html" (dict "oas" .) -}}
-          {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths) -}}
-        {{- end -}}
-        {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-          <section id="api-support" class="dev-docscontent__section maxw64r">
-            {{- template "_internal/disqus.html" $ -}}
-          </section>
-        {{- end -}}
-      </article>
-    </main>
+    {{- if or (eq $identifier "ordermanagement") (eq $identifier "shippingguide_2") -}}
+      {{- partial "api/oas/restsoap.html" . -}}
+    {{- else -}}
+      <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
+        <article>
+          {{- partial "api/oas/section-intro.html" . -}}
+          {{- $oasData := getJSON $.Params.oas -}}
+          {{- with $oasData -}}
+            {{- partial "api/oas/endpoints-table.html" (dict "oas" .) -}}
+            {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths) -}}
+          {{- end -}}
+          {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
+            <section id="api-support" class="dev-docscontent__section maxw64r">
+              {{- template "_internal/disqus.html" $ -}}
+            </section>
+          {{- end -}}
+        </article>
+      </main>
+    {{- end -}}
   {{- else -}}
+
     {{- partial "api/docs.html" . -}}
   {{- end -}}
 {{- end -}}
