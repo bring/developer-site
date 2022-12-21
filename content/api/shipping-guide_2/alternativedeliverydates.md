@@ -10,7 +10,7 @@ menu:
 weight: 8
 hidden: true
 ---
-Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**. When using this parameter, the same delivery date might be returned several times (as several shipping dates might correspond to the same delivery date). To only get the unique alternative delivery dates use following field:
+Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**:
 * SOAP: 
 ```xml
  <NumberOfAlternativeDeliveryDates>2</NumberOfAlternativeDeliveryDates>
