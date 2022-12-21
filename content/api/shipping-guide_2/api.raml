@@ -3,43 +3,6 @@
 title: Shipping Guide API
 baseUri: https://api.bring.com/shippingguide
 
-/v2/products:
-  displayName: Get shipment prices and estimated delivery
-  description: |
-      Use this endpoint to get expected delivery, service categories and additional information.
-
-      ### Measurements
-      For cargo services(5100, 5300, 9100, CARGO), Weight is mandatory and one of the Volume / Load Meter / Dimensions / Number of Pallets is mandatory.
-      
-      Note: The prices for our revised services depends on volumetric weight: 5000, 5100, 5300, 5600, 5800, 4850 plus return services 9000, 9100, 9300 or 9600. For these services, dimensions (L/W/H) is needed to calculate the expected price correctly. Dimensions are also used to decide if handling fee or specialgoods fee will apply to the shipment. You might leave dimensions empty in your request, but be aware that returned prices might be incorrect.
-
-  post:
-    description: Get shipment prices and leadtime
-    headers:
-      X-MyBring-API-Uid:
-        description: Your Mybring login ID
-        required: true
-      X-MyBring-API-Key:
-        description: Your user's API key
-        required: true
-      Content-Type:
-        description: application/json
-        required: true
-    body:
-      application/json:
-        examples:
-          restEstimatedDeliveryReq:
-            displayName: Estimated delivery time request
-            value: !include examples/rest_estimated_delivery_time_request.json
-    responses:
-      200:
-        body:
-          application/json:
-            examples:
-              restEstimateDeliveryRes:
-                displayName: Estimated delivery time successful response
-                value: !include examples/rest_estimated_delivery_time_response_200.json
-
 /api/ws:
   displayName: SOAP
   description: |
@@ -54,7 +17,7 @@ baseUri: https://api.bring.com/shippingguide
         [https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl](https://api.bring.com/shippingguide/api/ws/shippingguide-20.wsdl)
 
   post:
-    description: Use this endpoint to get same information as above REST API
+    description: Fetch shipping details
     headers:
       X-MyBring-API-Uid:
         description: Your Mybring login ID
