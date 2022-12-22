@@ -8,8 +8,6 @@
 <section class="dev-docscontent__section">
   {{- range .Params.apiresource -}}
     {{- $apiResource := index $api.resources (int .) -}}
-    {{- $resDisplayName := $apiResource.displayName | urlize -}}
-    {{- $resRelUri := $apiResource.relativeUri | safeHTML -}}
     {{- $method = index $apiResource.methods (int $method) -}}
     {{- $displayName := $apiResource.displayName -}}
     {{- with $apiResource.description -}}

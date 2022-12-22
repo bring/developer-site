@@ -1,8 +1,5 @@
 # developer.bring.com
 
-Structure, content and features are being worked on iteratively throughout 2021
-and 2022.
-
 If you want to work on your new OAS documentation while keeping the current one
 running, do the following:
 
@@ -20,7 +17,8 @@ If you don’t need duplication, just add `oas: {url to json}` to the current
 
 Remember to clean up your old docs, the
 [PR for Modify Delivery API](https://github.com/bring/developer-site/pull/1184/files)
-is a good example.
+is a good example. We have since changed the config to JSON, but the process is
+the same.
 
 ## Tech
 
@@ -176,7 +174,11 @@ oas: {Link to OAS JSON, typically outputted by Swagger}
 
 ## Adding subpages to an API
 
-If the API documentation has many special topics and much text content before the endpoint listing, it can be a good idea to split the topics into subpages. This can be enabled by renaming the `index` file to `_index`. Listing on the main page and navigation is solved automatially by adding the following to the frontmatter of the index page:
+If the API documentation has many special topics and much text content before
+the endpoint listing, it can be a good idea to split the topics into subpages.
+This can be enabled by renaming the `index` file to `_index`. Listing on the
+main page and navigation is solved automatially by adding the following to the
+frontmatter of the index page:
 
 ```
 subpages:
@@ -184,6 +186,7 @@ subpages:
 ```
 
 And to the subpages’ frontmatter:
+
 ```
 ---
 title: {title that appears at the top of the page}
