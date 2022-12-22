@@ -43,7 +43,7 @@ documentation:
           <tbody>
             <tr><td><a href="#send-an-order">Send an Order</a></td><td>POST</td><td>/order</td></tr>
             <tr><td><a href="#post-item-data">Post item data</a></td><td>POST</td><td>/itemdata</td></tr>
-            <tr><td><a href="#list-error-codes">List error codes</a></td><td>GET</td><td>/errorCodes</td></tr>
+            <tr><td><a href="#list-error-codes-get">List error codes</a></td><td>GET</td><td>/errorCodes</td></tr>
           </tbody>
         </table>
 
@@ -320,7 +320,7 @@ documentation:
                             <ul>
                               <li>
                                 <table>
-                                  <tr><td class="descParent"><br>Used for information to the WH or for the delivery of the order, seperated by usagecode.<br><br>Possible values&#58;<br>&bull;<b>DEL</b> - Information to WH<br>&bull;<b>DIN</b> - Message to carrier<br>&bull;<b>ZZZ</b> - Message to recipient.  Mutually defined reference number<br>&bull;<b>ON</b> - Notes in M4N<br><br>Example&#58;<br>&lt;FreeText usageCode=&quot;DEL&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;Send this order together with order XXX&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;DIN&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;delivery instruction&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;ZZZ&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;123456&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;ON&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;ABCDEF&lt;/Text&gt;<br>&lt;/FreeText&gt;</td></tr>
+                                  <tr><td class="descParent"><br>Used for information to the WH or for the delivery of the order, separated by usagecode.<br><br>Possible values&#58;<br>&bull;<b>DEL</b> - Information to WH<br>&bull;<b>DIN</b> - Message to carrier<br>&bull;<b>ZZZ</b> - Message to recipient.  Mutually defined reference number<br>&bull;<b>ON</b> - Notes in M4N<br><br>Example&#58;<br>&lt;FreeText usageCode=&quot;DEL&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;Send this order together with order XXX&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;DIN&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;delivery instruction&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;ZZZ&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;123456&lt;/Text&gt;<br>&lt;/FreeText&gt;<br><br>&lt;FreeText usageCode=&quot;ON&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Text&gt;ABCDEF&lt;/Text&gt;<br>&lt;/FreeText&gt;</td></tr>
                                 </table>
                               </li>
                               <li>
@@ -431,7 +431,7 @@ documentation:
                             <ul>
                               <li>
                                 <table>
-                                  <tr><td class="descParent"><br>If Recipient notification is over SMS or E-Mail, a value must be added for either email and/or cellphone number within Contact in Party [subClass=&quot;Buyer&quot;]<br><br>You will find information on all outgoing Services for Posten Norge and Bring <a href=&quot;https://developer.bring.com/api/services/&quot;>here</a><br><br>And more information about PickUpPoint (PuP) <a href=&quot;https://developer.bring.com/api/pickup-point/&quot;>here</a>.<br><br>Example&#58;<br>&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;EVARSLING&lt;/AdditionalServiceCode&gt;<br>&lt;/AdditionalService&gt;<br>&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;PickUpPoint&lt;/AdditionalServiceCode&gt;<br>&lt;/AdditionalService&gt;</td></tr>
+                                  <tr><td class="descParent"><br>If Recipient notification is over SMS or E-Mail, a value must be added for either email and/or cellphone number within Contact in Party [subClass=&quot;Buyer&quot;]<br><br>You will find information on all outgoing Services for Posten Norge and Bring in <a href="https://developer.bring.com/api/services/">the service portfolio</a><br><br>And more information about Pickup Point (PuP) on the <a href="https://developer.bring.com/api/pickup-point/">Pickup Point API page</a>.<br><br>Example&#58;<br>&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;EVARSLING&lt;/AdditionalServiceCode&gt;<br>&lt;/AdditionalService&gt;<br>&lt;AdditionalService&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;AdditionalServiceCode&gt;PickUpPoint&lt;/AdditionalServiceCode&gt;<br>&lt;/AdditionalService&gt;</td></tr>
                                 </table>
                               </li>
                               <li><a href="#createOrder1"></a><span class="name">PriorityCode</span><span class="type">string</span><span class="mb-badge">Optional</span><span class="desc">Priority Code.</span>

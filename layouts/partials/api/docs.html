@@ -4,7 +4,7 @@
     {{- $types := .types -}}
     <main 
       id="main"
-      class="dev-docscontent w100p maxw96r {{ replace .title "API" "" | urlize }}"
+      class="dev-docscontent w100p maxw96r {{ replace .title "API" "" | anchorize }}"
     >
       <article>
         <h1>{{ .title }}</h1>

@@ -10,6 +10,8 @@ menu:
     parent: checkout
 weight: 11
 aliases:
+  - shipping-guide
+  - shippingguideapi.html
 
 important:
   - type: warn

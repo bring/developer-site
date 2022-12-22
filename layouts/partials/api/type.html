@@ -25,7 +25,7 @@
         {{- $name := .name -}}
         <div>
           {{- if (eq $showHeader true) -}}
-            <h4 class="dev-anchored" id="type-{{ .name | urlize }}">
+            <h4 class="dev-anchored" id="type-{{ .name | anchorize }}">
               {{ .displayName }}
             </h4>
           {{- end -}}

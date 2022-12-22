@@ -32,7 +32,7 @@
         {{- range . -}}
           {{- if (eq .name $type) -}}
             {{- $showResponse = true -}}
-            {{- $tabIDFormat = (print $idType $nameDash "-format") | urlize -}}
+            {{- $tabIDFormat = (print $idType $nameDash "-format") | anchorize -}}
             <li role="presentation" class="dev-codetabs__item active">
               <a
                 href="#{{ $tabIDFormat }}"
@@ -53,7 +53,7 @@
       {{- if (and (eq $index 0) (not $showResponse)) -}}
         {{- $firstActive = " active" -}}
       {{- end -}}
-      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize -}}
+      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | anchorize -}}
       <li role="presentation" class="dev-codetabs__item{{ $firstActive }}">
         <a
           href="#{{ $tabIDExample }}"
@@ -85,7 +85,7 @@
       {{- if (and (eq $index 0) (not $showResponse)) -}}
         {{- $firstActive = " active" -}}
       {{- end -}}
-      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | urlize -}}
+      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | anchorize -}}
       <div
         role="tabpanel"
         class="dev-codetabs__panel {{ $firstActive }}"
