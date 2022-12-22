@@ -5,9 +5,20 @@
     <meta name="robots" content="noindex, nofollow">
   {{- end -}}
   <meta http-equiv="expires" content="{{ now.Unix }}" />
-  {{ with .Summary }}
-    <meta name="description" content="{{ . | plainify | htmlUnescape }}" />
-  {{ end }}
+  {{- $description := "" -}}
+  {{- with .Summary -}}
+    {{- $description = . -}}
+  {{- end -}}
+  {{- with .Params.introduction -}}
+    {{- $description = . -}}
+  {{- end -}}
+  {{- if gt (len $description) 1 -}}
+    {{- $description := $description | plainify | htmlUnescape -}}
+    {{- if gt (len $description) 155 -}}
+      {{- $description = printf "%s…" (slicestr $description 0 155) -}}
+    {{- end -}}
+    <meta name="description" content="{{ $description }}" />
+  {{- end -}}
   <title>
     {{- with .Title -}}{{ if not ( eq . $.Site.Title) }}{{ . }} –
     {{ end }}{{- end -}}{{ .Site.Title }}
