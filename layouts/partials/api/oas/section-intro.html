@@ -49,7 +49,7 @@
     {{- end -}}
     {{- with $.Params.subpages -}}
       {{- with .title }}
-        <h2 class="dev-anchored" id="{{ . | urlize }}">
+        <h2 class="dev-anchored" id="{{ . | anchorize }}">
           {{- . -}}
         </h2>
       {{- end -}}
@@ -63,7 +63,7 @@
     {{- end -}}
     {{- range $.Params.documentation -}}
       {{- with .title }}
-        <h2 class="dev-anchored" id="{{ . | urlize }}">
+        <h2 class="dev-anchored" id="{{ . | anchorize }}">
           {{- . -}}
         </h2>
       {{- end -}}

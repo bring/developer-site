@@ -22,7 +22,7 @@ important:
     message: |
       Bring is revising the service portfolio. Some of our services have been given new service names, service codes and pricing models.
 
-      If you are existing user of Reports API, you will need to make some changes in the API after your company is converted to use new services. Please read for <a href="/api/reports/agreement_conversion">details</a>
+      If you are an existing user of Reports API, you will need to make some <a href="/api/reports/agreement_conversion">changes after your company is converted</a> to use new services.
 
 introduction: |
   The Reports API can be used as a tool for analyzing your logistics with Bring. The API lets you generate reports within the categories _status_, _quality and deviation_, _economy_ and _environment_. Supported report formats are XML and Excel.

@@ -1,4 +1,4 @@
-<main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | urlize }}">
+<main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | anchorize }}">
   <article>
     {{- partial "api/oas/section-intro.html" . -}}
 
