@@ -19,6 +19,9 @@
       },
       "renderer": {
         "unsafe": true
+      },
+      "parser": {
+        "autoHeadingID": false
       }
     },
     "highlight": {
