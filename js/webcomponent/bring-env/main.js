@@ -31,18 +31,24 @@ class BringEnv extends HTMLElement {
 
     this.shadowRoot.innerHTML = `${style} ${template}`;
     
+    const openModalBtn = document.querySelector('[data-bring-env-open]');
+
     if(isModal) {
-      const openModalBtn = document.querySelector('[data-bring-env-open]');
       if(openModalBtn) {
         openModalBtn.addEventListener('click', () => {
-          this.open();
+          open();
         });
       }
 
       const closeModalAttr = this.shadowRoot.querySelectorAll('[data-close-modal]');
       closeModalAttr.forEach((closeModal) => {
         closeModal.addEventListener('click', () => {
-          this.close();
+          close();
+        });
+        closeModal.addEventListener('keydown', (e) => {
+          if (e.keyCode == 27) {
+            close();
+          }
         });
       });
     }
@@ -68,14 +74,19 @@ class BringEnv extends HTMLElement {
         }
       })
     }
-  }
 
-  open() {
-    this.shadowRoot.querySelector('.bring-env').classList.add('open');
-  }
+    const open = () => {
+      this.shadowRoot.querySelector('.bring-env').classList.add('open');
+      const closeModalBtn = this.shadowRoot.querySelector('.close-modal-btn');
+      if(closeModalBtn) {
+        closeModalBtn.focus();
+      }
+    }
 
-  close() {
-    this.shadowRoot.querySelector('.bring-env').classList.remove('open');
+    const close = () => {
+      this.shadowRoot.querySelector('.bring-env').classList.remove('open');
+      openModalBtn.focus();
+    }
   }
 }
 

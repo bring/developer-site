@@ -8,7 +8,7 @@ import {train} from "./svgs/train.js";
 import {uploadingTruck} from "./svgs/uploading-truck.js";
 
 export default function bringEnvTemplate(isModal) {
-  return `<div class="bring-env" ${isModal ? 'role="dialog" aria-labelledby="modalTitle"' : ''}>
+  return `<div class="bring-env" ${isModal ? 'role="dialog" aria-modal="true" aria-labelledby="modalTitle"' : ''}>
     <div class="bring-env-wrapper">
       <div class="bring-env-header">
         ${postenLogo}
