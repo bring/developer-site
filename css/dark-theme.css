@@ -12,7 +12,8 @@
     .dev-sidemenu a,
     a.dev-codetabs__link,
     .start__col,
-    .ecom-entrance) {
+    .ecom-entrance,
+    .skip-to-content-link) {
       color: var(--blue-light);
   }
 
