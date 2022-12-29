@@ -42,7 +42,7 @@
         <button
           class="btn-link phs white themes-btn"
           id="themesBtn"
-          aria-label="Choose color mode"
+          aria-label="Auto color mode"
           aria-expanded="false"
           aria-controls="themeSwitchContainer"
         >
@@ -54,21 +54,18 @@
         <div class="paxs rad-a2px bg-gray1 bshadow--dark theme-switch-container w100p dn" id="themeSwitchContainer">
           <button
             class="btn-link btn--transparent phs theme-switch w100p"
-            aria-label="Auto color mode"
             data-color-theme="auto"
           >
             Auto
           </button>
           <button
             class="btn-link btn--transparent phs theme-switch w100p"
-            aria-label="Light color mode"
             data-color-theme="light"
           >
             Light
           </button>
           <button
             class="btn-link btn--transparent phs theme-switch w100p"
-            aria-label="Dark color mode"
             data-color-theme="dark"
           >
             Dark
@@ -135,9 +132,11 @@
       if (storedTheme === "dark") {
         htmlContainer.dataset.theme = darkOption;
         themesBtnText.innerText = "Dark";
+        themesBtn.setAttribute("aria-label","Dark color mode");
       } else if (storedTheme === "light") {
         htmlContainer.dataset.theme = lightOption;
         themesBtnText.innerText = "Light";
+        themesBtn.setAttribute("aria-label","Light color mode");
       }
       
       //Set the data-theme on click
@@ -155,16 +154,19 @@
               htmlContainer.removeAttribute("data-theme");
             }
             localStorage.removeItem("theme", selectedTheme);
+            themesBtn.setAttribute("aria-label","Auto color mode");
           } else if (selectedTheme === darkOption) {
             themesBtnText.innerText = e.target.innerText;
             //Set data-theme and store the chosen theme in local storage
             htmlContainer.dataset.theme = darkOption;
             localStorage.setItem("theme", selectedTheme);
+            themesBtn.setAttribute("aria-label","Dark color mode");
           } else if (selectedTheme === lightOption) {
             themesBtnText.innerText = e.target.innerText;
             //Set data-theme and store the chosen theme in local storage
             htmlContainer.dataset.theme = lightOption;
             localStorage.setItem("theme", selectedTheme);
+            themesBtn.setAttribute("aria-label","Light color mode");
           }
         });
       }
