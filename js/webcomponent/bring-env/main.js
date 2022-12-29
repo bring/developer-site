@@ -45,11 +45,12 @@ class BringEnv extends HTMLElement {
         closeModal.addEventListener('click', () => {
           close();
         });
-        closeModal.addEventListener('keydown', (e) => {
-          if (e.keyCode == 27) {
-            close();
-          }
-        });
+      });
+
+      this.shadowRoot.addEventListener('keydown', (e) => {
+        if (e.keyCode == 27) {
+          close();
+        }
       });
     }
 
