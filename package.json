@@ -43,7 +43,7 @@
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "terser": "^5.16.1",
-    "vite": "^4.0.0"
+    "vite": "^4.0.3"
   },
   "browserslist": [
     "> .2%",
