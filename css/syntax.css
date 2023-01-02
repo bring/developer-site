@@ -67,8 +67,8 @@
 /* CommentMultiline */ .chroma .cm { color: hsl(40, 36%, 37%); font-style: italic }
 /* CommentSingle */ .chroma .c1 { color: hsl(40, 36%, 37%); font-style: italic }
 /* CommentSpecial */ .chroma .cs { color: hsl(40, 36%, 37%); font-weight: bold; font-style: italic }
-/* CommentPreproc */ .chroma .cp { color: hsl(83, 40%, 35%) }
-/* CommentPreprocFile */ .chroma .cpf { color: hsl(83, 40%, 35%) }
+/* CommentPreproc */ .chroma .cp { color: hsl(83, 40%, 30%) }
+/* CommentPreprocFile */ .chroma .cpf { color: hsl(83, 40%, 30%) }
 /* Generic */ .chroma .g {  }
 /* GenericDeleted */ .chroma .gd { background-color: hsl(0, 100%, 90%) }
 /* GenericEmph */ .chroma .ge { font-style: italic }
