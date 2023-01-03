@@ -75,6 +75,7 @@
                 {{- if $multiExamples -}}
                   <div class="mhm {{ if not $multiTypes }}ptm{{ end }}">
                     <select class="form__control w100p pas hauto" name="{{ $mediaType }}-{{ $responseId }}" data-example-sub aria-label="Response code {{ $response }} examples {{ $format }}">
+                      {{- $exInd := 0 -}}
                       {{- range $name, $obj := . -}}
 
                         {{- $hasRef := false -}}
@@ -91,12 +92,13 @@
                           {{/*  Support both ref components and not ref  */}}
                           {{- if eq $k "$ref" -}}
                             {{- $examplePath := path.Split . -}}
-                            {{- $exampleId = (printf "%s-%s" $responseId $examplePath.File) | anchorize -}}
+                            {{- $exampleId = (printf "%s-%s-%s" $responseId $examplePath.File (string $exInd)) | anchorize -}}
                           {{- else if not $hasRef -}}
                             {{- $exampleId = (printf "%s-%s" $responseId $name) | anchorize -}}
                           {{- end -}}
                         {{- end -}}
                         <option value="{{ $exampleId }}">{{ $name }}</option>
+                        {{- $exInd = add $exInd 1 -}}
                       {{- end -}}
                     </select>
                   </div>
@@ -105,7 +107,7 @@
                 {{/*  Make the actual examples  */}}
                 {{- $exInd := 0 -}}
                 {{- range $name, $exampleObject := . -}}
-                  {{- $exampleId := (printf "%s-%s" $responseId $name) | anchorize -}}
+                  {{- $exampleId := (printf "%s-%s-%s" $responseId $name (string $exInd)) | anchorize -}}
 
                   {{/*  Get possible $ref example object  */}}
                   {{- if isset . "$ref" -}}
@@ -113,7 +115,7 @@
                     {{- range $k, $_ := $exampleObject -}}
                       {{- if eq $k "$ref" -}}
                         {{- $examplePath := path.Split . -}}
-                        {{- $exampleId = (printf "%s-%s" $responseId $examplePath.File) | anchorize -}}
+                        {{- $exampleId = (printf "%s-%s-%s" $responseId $name (string $exInd)) | anchorize -}}
                         {{- $exampleObject = index $components.examples $examplePath.File -}}
                       {{- end -}}
                     {{- end -}}
