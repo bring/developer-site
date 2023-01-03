@@ -52,14 +52,6 @@ information:
       REST XML/JSON over HTTP.
 
 documentation:
-  - title: Filtering results
-    content: |
-      The list of pickup points can be narrowed down by using `searchForText=<texts>`, where the pickup points will have at least a partial match with the search string given in `<texts>`. This can be the name of the pickup point, its address, city, county, municipality or location. See the examples for more information.
-
-  - title: Postbox and visiting address
-    content: |
-      There are two sets of addresses in the response, postbox (`address` and `postalCode`) and visiting address (`visitingAddress` and `visitingPostalCode`). Postbox address is required to get a package produced correctly, use this AS RECIPIENT address on label. Visiting address is more appropriate for user interface (Street address of the PIB).
-
   - title: Pickup point types
     content: |
       A pickup point is any location delivering shipments on behalf of Bring and Posten, such as post offices, selected grocery stores, lockers.
@@ -86,5 +78,9 @@ documentation:
         - Type Posti: Finland Posti Pickup Point
         - Type Noutopiste: Finland Pickup Point
         - Type LOCKER: Finland Locker Pickup Point **_(These lockers are placed inside buildings only accessible to the residents and workers in the building)_**
+
+subpages:
+  title: Special topics
+
 oas: https://api.qa.bring.com/pickuppoint/openapi
 ---
