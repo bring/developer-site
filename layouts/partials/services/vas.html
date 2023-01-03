@@ -32,9 +32,9 @@
             {{- $filterScratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
           {{- end -}}
         {{- end -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicetype")) "name") "filter" "vas-type" ) -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicefamily")) "sortOrder") "filter" "vas-family" ) -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "service")) "name") "filter" "vas-service" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicetype")) "name") "filter" "vas-type" "legendText" "Service types" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicefamily")) "sortOrder") "filter" "vas-family" "legendText" "Service families" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "service")) "name") "filter" "vas-service" "legendText" "Services" ) -}}
       </div>
     </div>
     <button type="button" class="btn-link--dark mtl mlr dn" id="clearfilters">Clear all filters</button>

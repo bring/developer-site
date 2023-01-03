@@ -26,9 +26,9 @@
       {{- end -}}
       {{- $filterScratch.Add "riapi" "Invoice" }}
       {{- $filterScratch.Add "riapi" "Reports" }}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rifamily") "filter" "rifamily" ) -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "riapi") "filter" "riapi" ) -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rireptype") "filter" "rireptype" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rifamily") "filter" "rifamily" "legendText" "Service families" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "riapi") "filter" "riapi" "legendText" "APIs" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rireptype") "filter" "rireptype" "legendText" "Report types" ) -}}
     </div>
   </div>
   <div class="maxw100p">

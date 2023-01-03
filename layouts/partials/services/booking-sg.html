@@ -25,9 +25,9 @@
         {{- $filterScratch.Add "family" .ServiceFamily -}}
         {{- $filterScratch.Add "cnType" .CustomerNumberType -}}
       {{- end -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "type") "filter" "type" ) -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "family") "filter" "family" ) -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "cnType") "filter" "cntype" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "type") "filter" "type" "legendText" "Service types" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "family") "filter" "family" "legendText" "Service families" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "cnType") "filter" "cntype" "legendText" "Customer number types" ) -}}
     </div>
   </div>
   <div class="maxw100p">
