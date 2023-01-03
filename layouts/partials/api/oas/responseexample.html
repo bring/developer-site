@@ -34,7 +34,7 @@
     {{- range $response, $_ := $responseCodes -}}
       {{- with .content -}}
         {{- $responseId := print $endpointId "-" $response -}}
-        <div class="relative bg-gray4 example-wrap" data-example="{{ $responseId }}" role="tabpanel" aria-labelledby="{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
+        <div class="relative bg-gray4 example-wrap" data-example="{{ $responseId }}" role="tabpanel" aria-labelledby="tabctrl-{{ $responseId }}" {{ if ne $resInd 0 }}hidden{{ end }}>
 
           {{/*  Check if there are multiple types within response  */}}
           {{- $mediaTypes := . -}}
