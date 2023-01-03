@@ -89,12 +89,12 @@
                         {{- end -}}
 
                         {{- range $k, $_ := $obj -}}
-                          {{/*  Support both ref components and not ref  */}}
+                          {{/*  Support both components and not  */}}
                           {{- if eq $k "$ref" -}}
                             {{- $examplePath := path.Split . -}}
                             {{- $exampleId = (printf "%s-%s-%s" $responseId $examplePath.File (string $exInd)) | anchorize -}}
                           {{- else if not $hasRef -}}
-                            {{- $exampleId = (printf "%s-%s" $responseId $name) | anchorize -}}
+                            {{- $exampleId = (printf "%s-%s-%s" $responseId $name (string $exInd)) | anchorize -}}
                           {{- end -}}
                         {{- end -}}
                         <option value="{{ $exampleId }}">{{ $name }}</option>
@@ -115,7 +115,7 @@
                     {{- range $k, $_ := $exampleObject -}}
                       {{- if eq $k "$ref" -}}
                         {{- $examplePath := path.Split . -}}
-                        {{- $exampleId = (printf "%s-%s-%s" $responseId $name (string $exInd)) | anchorize -}}
+                        {{- $exampleId = (printf "%s-%s-%s" $responseId $examplePath.File (string $exInd)) | anchorize -}}
                         {{- $exampleObject = index $components.examples $examplePath.File -}}
                       {{- end -}}
                     {{- end -}}
