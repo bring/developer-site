@@ -82,5 +82,5 @@ documentation:
 subpages:
   title: Special topics
 
-oas: https://api.qa.bring.com/pickuppoint/openapi
+oas: https://api.bring.com/pickuppoint/openapi
 ---
