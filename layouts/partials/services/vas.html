@@ -80,13 +80,11 @@
           {{- if .incompatibleVases -}}
             <div>
               <span class="text-note fw600">Incompatible with</span>
-              <dl class="bl mb-border pls mtxs">
+              <div class="bl mb-border pls mtxs">
                 {{- range .incompatibleVases -}}
-                  <div>
-                    <a href="#{{ . | anchorize }}"><span class="text-note">{{ . }}</span></a>
-                  </div>
+                  <a href="#{{ . | anchorize }}" class="db text-note">{{ . }}</a>
                 {{- end -}}
-              </dl>
+              </div>
             </div>
           {{- end -}}
         </div>
