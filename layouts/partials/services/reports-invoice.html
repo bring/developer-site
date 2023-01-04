@@ -10,10 +10,12 @@
           {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
         </div>
       </div>
-      <label class="form__label" for="ri-textfilter">
-        Reports name
+      <div>
+        <label class="form__label" for="ri-textfilter">
+          Reports name
+        </label>
         <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-      </label>
+      </div>
     </div>
     <div id="ri-filtersets">
       {{- $filterScratch := newScratch -}}
@@ -26,9 +28,9 @@
       {{- end -}}
       {{- $filterScratch.Add "riapi" "Invoice" }}
       {{- $filterScratch.Add "riapi" "Reports" }}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rifamily") "filter" "rifamily" ) -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "riapi") "filter" "riapi" ) -}}
-      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rireptype") "filter" "rireptype" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rifamily") "filter" "rifamily" "legendText" "Service families" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "riapi") "filter" "riapi" "legendText" "APIs" ) -}}
+      {{- partial "services/servicefilter" (dict "filterScratch" ($filterScratch.Get "rireptype") "filter" "rireptype" "legendText" "Report types" ) -}}
     </div>
   </div>
   <div class="maxw100p">

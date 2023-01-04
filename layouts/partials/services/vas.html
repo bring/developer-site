@@ -15,10 +15,12 @@
             {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-family'" "btnText" "Service family") -}}
           </div>
         </div>
-        <label class="form__label mrxl" for="vasfilter">
-          VAS name, booking or shipping guide API request code
+        <div>
+          <label class="form__label mrxl" for="vasfilter">
+            VAS name, booking or shipping guide API request code
+          </label>
           <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-        </label>
+        </div>
       </div>
       <div id="filtersets">
         {{- $filterScratch := newScratch -}}
@@ -32,9 +34,9 @@
             {{- $filterScratch.Add "service" (dict "name" .serviceName "value" .serviceCode) -}}
           {{- end -}}
         {{- end -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicetype")) "name") "filter" "vas-type" ) -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicefamily")) "sortOrder") "filter" "vas-family" ) -}}
-        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "service")) "name") "filter" "vas-service" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicetype")) "name") "filter" "vas-type" "legendText" "Service types" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "servicefamily")) "sortOrder") "filter" "vas-family" "legendText" "Service families" ) -}}
+        {{- partial "services/vasfilter" (dict "filterScratch" (sort (uniq ($filterScratch.Get "service")) "name") "filter" "vas-service" "legendText" "Services" ) -}}
       </div>
     </div>
     <button type="button" class="btn-link--dark mtl mlr dn" id="clearfilters">Clear all filters</button>
@@ -80,13 +82,11 @@
           {{- if .incompatibleVases -}}
             <div>
               <span class="text-note fw600">Incompatible with</span>
-              <dl class="bl mb-border pls mtxs">
+              <div class="bl mb-border pls mtxs">
                 {{- range .incompatibleVases -}}
-                  <div>
-                    <a href="#{{ . | anchorize }}"><span class="text-note">{{ . }}</span></a>
-                  </div>
+                  <a href="#{{ . | anchorize }}" class="db text-note">{{ . }}</a>
                 {{- end -}}
-              </dl>
+              </div>
             </div>
           {{- end -}}
         </div>

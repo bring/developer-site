@@ -31,27 +31,27 @@
     <nav class="w100p" aria-label="Pagination">
       <ul class="pagination mvl w100p maxw100p tc">
         <li class="pagination__element">
-          {{- if $paginator.HasPrev -}}
-            <a
-              href="{{ $paginator.Prev.URL }}"
-              title="Newer posts"
-              class="pagination__btn"
-            >
-              <span
-                data-mybicon="mybicon-arrow-left"
-                data-mybicon-class="icon-ui"
-              ></span>
-            </a>
-            {{- else -}}
+        {{- if $paginator.HasPrev -}}
+          <a
+            href="{{ $paginator.Prev.URL }}"
+            title="Newer posts"
+            class="pagination__btn"
+          >
             <span
-              class="pagination__btn pagination__btn--deactivated"
-              title="There are no newer posts"
-              ><span
-                data-mybicon="mybicon-arrow-left"
-                data-mybicon-class="icon-ui"
-              ></span
+              data-mybicon="mybicon-arrow-left"
+              data-mybicon-class="icon-ui"
             ></span>
-          {{- end -}}
+          </a>
+        {{- else -}}
+          <span
+            class="pagination__btn pagination__btn--deactivated"
+            title="There are no newer posts"
+            ><span
+              data-mybicon="mybicon-arrow-left"
+              data-mybicon-class="icon-ui"
+            ></span
+          ></span>
+        {{- end -}}
         </li>
 
         {{- range $paginator.Pagers -}}
@@ -66,6 +66,7 @@
           </li>
         {{- end -}}
 
+        <li class="pagination__element">
         {{- if $paginator.HasNext -}}
           <a
             href="{{ $paginator.Next.URL }}"
@@ -77,7 +78,7 @@
               data-mybicon-class="icon-ui"
             ></span>
           </a>
-          {{- else -}}
+        {{- else -}}
           <span
             class="pagination__btn pagination__btn--deactivated"
             title="There are no older posts"
@@ -87,6 +88,7 @@
             ></span
           ></span>
         {{- end -}}
+        </li>
       </ul>
     </nav>
   {{- end -}}

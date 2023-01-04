@@ -1,5 +1,6 @@
 {{- $filter := .filter -}}
 <fieldset class="flex-dir-col mbm bg-white pam bshadow" id="{{ $filter }}" hidden>
+  <legend class="screen-reader-text">{{- .legendText -}}</legend>
   <div {{ if gt (len (uniq .filterScratch)) 10 }} class="filtercols" {{ end }}>
     {{- range .filterScratch -}}
       {{- if and (ne .name "-") (ne .name "") -}}
