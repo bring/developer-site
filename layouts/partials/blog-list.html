@@ -30,31 +30,29 @@
   {{- if gt $paginator.TotalPages 1 -}}
     <nav class="w100p" aria-label="Pagination">
       <ul class="pagination mvl w100p maxw100p tc">
+        <li class="pagination__element">
         {{- if $paginator.HasPrev -}}
-          <li class="pagination__element">
-            <a
-              href="{{ $paginator.Prev.URL }}"
-              title="Newer posts"
-              class="pagination__btn"
-            >
-              <span
-                data-mybicon="mybicon-arrow-left"
-                data-mybicon-class="icon-ui"
-              ></span>
-            </a>
-          </li>
-          {{- else -}}
-          <li class="pagination__element">
+          <a
+            href="{{ $paginator.Prev.URL }}"
+            title="Newer posts"
+            class="pagination__btn"
+          >
             <span
-              class="pagination__btn pagination__btn--deactivated"
-              title="There are no newer posts"
-              ><span
-                data-mybicon="mybicon-arrow-left"
-                data-mybicon-class="icon-ui"
-              ></span
+              data-mybicon="mybicon-arrow-left"
+              data-mybicon-class="icon-ui"
             ></span>
-          </li>
+          </a>
+        {{- else -}}
+          <span
+            class="pagination__btn pagination__btn--deactivated"
+            title="There are no newer posts"
+            ><span
+              data-mybicon="mybicon-arrow-left"
+              data-mybicon-class="icon-ui"
+            ></span
+          ></span>
         {{- end -}}
+        </li>
 
         {{- range $paginator.Pagers -}}
           {{- $active := "" -}}
@@ -68,31 +66,29 @@
           </li>
         {{- end -}}
 
+        <li class="pagination__element">
         {{- if $paginator.HasNext -}}
-          <li class="pagination__element">
-            <a
-              href="{{ $paginator.Next.URL }}"
-              title="Older posts"
-              class="pagination__btn"
-            >
-              <span
-                data-mybicon="mybicon-arrow-right"
-                data-mybicon-class="icon-ui"
-              ></span>
-            </a>
-          </li>
-          {{- else -}}
-          <li class="pagination__element">
+          <a
+            href="{{ $paginator.Next.URL }}"
+            title="Older posts"
+            class="pagination__btn"
+          >
             <span
-              class="pagination__btn pagination__btn--deactivated"
-              title="There are no older posts"
-              ><span
-                data-mybicon="mybicon-arrow-right"
-                data-mybicon-class="icon-ui"
-              ></span
+              data-mybicon="mybicon-arrow-right"
+              data-mybicon-class="icon-ui"
             ></span>
-          </li>
+          </a>
+        {{- else -}}
+          <span
+            class="pagination__btn pagination__btn--deactivated"
+            title="There are no older posts"
+            ><span
+              data-mybicon="mybicon-arrow-right"
+              data-mybicon-class="icon-ui"
+            ></span
+          ></span>
         {{- end -}}
+        </li>
       </ul>
     </nav>
   {{- end -}}
