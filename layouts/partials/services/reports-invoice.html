@@ -10,10 +10,12 @@
           {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
         </div>
       </div>
-      <label class="form__label" for="ri-textfilter">
-        Reports name
-      </label>
-      <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+      <div>
+        <label class="form__label" for="ri-textfilter">
+          Reports name
+        </label>
+        <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+      </div>
     </div>
     <div id="ri-filtersets">
       {{- $filterScratch := newScratch -}}

@@ -10,10 +10,12 @@
           {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='cntype'" "btnText" "Customer number type") -}}
         </div>
       </div>
-      <label class="form__label" for="bsg-textfilter">
-        Service name, service code or API request code
-      </label>
-      <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+      <div>
+        <label class="form__label" for="bsg-textfilter">
+          Service name, service code or API request code
+        </label>
+        <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
+      </div>
     </div>
     <div id="bsg-filtersets">
       {{- $filterScratch := newScratch -}}
