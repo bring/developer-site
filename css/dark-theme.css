@@ -121,6 +121,11 @@
     }
   }
 
+  & .dev-blog__meta-item,
+  & .filename {
+    color: var(--green-80);
+  }
+
   /* Buttons */
   & .btn--white,
   & .btn--white:link,
