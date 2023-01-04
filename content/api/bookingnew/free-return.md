@@ -42,3 +42,36 @@ The following outgoing and return service combinations are supported:
      "id": "9650",
  }
  ```
+
+### Request examples
+#### Mailbox Parcel with Free return of parcel and Pickup from mailbox VAS
+
+#### XML
+```xml
+<product>
+  <id>3584</id>
+</product>
+<returnProduct>
+  <id>9650</id>
+  <additionalServices>
+    <additionalService>
+      <id>1073</id>
+    </additionalService>
+  </additionalServices>
+</returnProduct>
+```
+
+#### JSON
+```json
+"product": {
+  "id": "3584"
+},
+"returnProduct": {
+  "id": "9650",
+  "additionalServices": [
+    {
+      "id": "1073"
+    }
+  ]
+}
+```
