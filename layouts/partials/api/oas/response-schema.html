@@ -77,13 +77,13 @@
   {{- if eq $oneOf "radio" -}}
     {{- $levelId = printf "%s-%s" $levelName "oneof" -}}
     <div>
-      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-json-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of aria-controls="{{ $responseCode }}-json-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
     {{/*  Loop oneOf data  */}}
   {{- else if eq $oneOf "data" -}}
     {{- $levelId = printf "%s-%s" $levelName "oneof" -}}
     {{- with $schemaObj.properties -}}
-      <dl id="tab-{{ $responseCode }}-json-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" role="tabpanel" aria-labelledby="{{ $levelId }}">
+      <dl id="{{ $responseCode }}-json-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" aria-label="{{ $name }}">
         {{- range $key, $_ := . -}}
           {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
