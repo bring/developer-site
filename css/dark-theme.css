@@ -166,7 +166,7 @@
     &.txt-error {
       color: var(--red-light);
       &:hover {
-        color: var(--red-dark);
+        color: var(--red);
       }
     }
 
