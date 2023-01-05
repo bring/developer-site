@@ -31,28 +31,38 @@ const Result = (props) => {
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </span>
       {hit.introduction && (
-        <span className="hitlink__extra text-note" title={hit.introduction}>{hit.introduction}</span>
+        <span className="hitlink__extra text-note" title={hit.introduction}>
+          {hit.introduction}
+        </span>
       )}
     </a>
   )
 
   const inputProps = {
-    placeholder: "Search the docs",
     onChange,
     value,
+    id: "autosuggestneedslabel"
   }
 
   return (
-    <AutoSuggest
-      renderSuggestionsContainer={renderSuggestionsContainer}
-      suggestions={props.hits}
-      onSuggestionsFetchRequested={onFetch}
-      onSuggestionsClearRequested={onClear}
-      renderSuggestion={renderSuggestion}
-      inputProps={inputProps}
-      getSuggestionValue={() => value}
-      onSuggestionSelected={onNavigate}
-    />
+    <>
+      <label
+        htmlFor="autosuggestneedslabel"
+        class="form__label white screen-reader-text"
+      >
+        Search the documentation
+      </label>
+      <AutoSuggest
+        renderSuggestionsContainer={renderSuggestionsContainer}
+        suggestions={props.hits}
+        onSuggestionsFetchRequested={onFetch}
+        onSuggestionsClearRequested={onClear}
+        renderSuggestion={renderSuggestion}
+        inputProps={inputProps}
+        getSuggestionValue={() => value}
+        onSuggestionSelected={onNavigate}
+      />
+    </>
   )
 }
 
