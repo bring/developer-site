@@ -209,36 +209,6 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke i postkassen",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Norway domestic",
-    "serviceFamilySortOrder" : 1,
-    "serviceCode" : "3584",
-    "productionCode" : "3584",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Pakke i postkassen med RFID",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Norway domestic",
-    "serviceFamilySortOrder" : 1,
-    "serviceCode" : "3570",
-    "productionCode" : "3570",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Pakke til hentested",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Norway domestic",
-    "serviceFamilySortOrder" : 1,
-    "serviceCode" : "5800",
-    "productionCode" : "5800",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Norgespakke",
     "serviceType" : "C2C",
     "serviceFamily" : "",
