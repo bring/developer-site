@@ -42,13 +42,15 @@
   
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $isOneOf "radio" -}}
+    {{- $levelId = printf "%s-%s" $levelName "oneof-xml" -}}
     <div>
-      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-{{ $responseCode }}-xml-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of aria-controls="{{ $responseCode }}-xml-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
   {{/*  Loop oneOf data  */}}
   {{- else if eq $isOneOf "data" -}}
+    {{- $levelId = printf "%s-%s" $levelName "oneof-xml" -}}
     {{- with $schemaObj.properties -}}
-      <dl id="tab-{{ $responseCode }}-xml-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" role="tabpanel" aria-labelledby="{{ $levelName }}">
+      <dl id="{{ $responseCode }}-xml-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" aria-label="{{ $name }}">
         {{- range $key, $_ := . -}}
           {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}

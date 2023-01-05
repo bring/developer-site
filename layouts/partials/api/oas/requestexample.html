@@ -55,7 +55,7 @@
 
             {{- if $multiExamples -}}
               <div class="mhm {{ if not $multiTypes }}ptm{{ end }}">
-                <select class="form__control w100p pas hauto" name="{{ $mediaType }}-{{ $requestId }}" data-example-sub aria-label="Request examples {{ $format }}">
+                <select class="form__control w100p pas hauto" name="{{ $mediaType }}-{{ $requestId }}" data-example-sub aria-label="{{ $format }} request example">
                   {{- $exInd := 0 -}}
                   {{- range $name, $obj := . -}}
 

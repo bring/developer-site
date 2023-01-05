@@ -235,6 +235,10 @@ div.response {
   color: var(--red-dark);
 }
 
+.txt-success[aria-selected="true"] {
+  color: var(--green-darker);
+}
+
 .minw0 {
   min-width: 0;
 }
