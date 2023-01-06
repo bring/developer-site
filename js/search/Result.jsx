@@ -48,7 +48,7 @@ const Result = (props) => {
     <>
       <label
         htmlFor="autosuggestneedslabel"
-        class="form__label white screen-reader-text"
+        className="form__label white screen-reader-text"
       >
         Search the documentation
       </label>
