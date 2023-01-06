@@ -15,7 +15,7 @@ paramToggleBtn.forEach((btn) => {
   })
 })
 
-// oneOf
+// oneOf and allOf
 function setOneOf(radio) {
   const radioVal = radio.value,
     closest = radio.closest("dd"),
@@ -36,6 +36,13 @@ const oneOfRadioArr = document.querySelectorAll("input[data-one-of]")
 oneOfRadioArr.forEach((radio) => {
   radio.addEventListener("change", function () {
     setOneOf(radio)
+  })
+})
+
+const allOfSelectArr = document.querySelectorAll("select[data-one-of]")
+allOfSelectArr.forEach((select) => {
+  select.addEventListener("change", function () {
+    setOneOf(select)
   })
 })
 

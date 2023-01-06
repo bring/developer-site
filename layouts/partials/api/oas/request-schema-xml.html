@@ -5,17 +5,21 @@
 {{- $endpointId := .endpointId -}}
 {{- $uniqueId := "" -}}
 {{- $recLevel := add .recLevel 1 -}}
-{{- $isOneOf := "" -}}
-{{- with .isOneOf }}
-  {{- $isOneOf = . -}}
+{{- $isOf := "" -}}
+{{- with .isOf -}}
+  {{- $isOf = . -}}
 {{- end -}}
 {{- $parent := "" -}}
 {{- with .parent -}}
   {{- $parent = . -}}
 {{- end -}}
-{{- $oneOfInd := 0 -}}
-{{- with .oneOfInd -}}
-  {{- $oneOfInd = . -}}
+{{- $ofInd := 0 -}}
+{{- with .ofInd -}}
+  {{- $ofInd = . -}}
+{{- end -}}
+{{- $isFirstLevelOf := false -}}
+{{- if and (eq $recLevel 1) (or ($schemaObj.oneOf) ($schemaObj.allOf)) -}}
+  {{- $isFirstLevelOf = true -}}
 {{- end -}}
 
 {{/*  If there’s a ref, pass the destination data again  */}}
@@ -25,7 +29,7 @@
   {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd) -}}
   {{- end -}}
 {{- end -}}
 
@@ -38,26 +42,33 @@
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
   {{- $uniqueId = slicestr $generateId 0 15 -}}
   {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
-  
+
   {{/*  Render oneOf radio inputs  */}}
-  {{- if eq $isOneOf "radio" -}}
+  {{- if eq $isOf "radio" -}}
     <div>
-      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of role="tab" aria-controls="tab-xml-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of aria-controls="xml-{{ $name | anchorize }}" {{ if eq $ofInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
-  {{/*  Loop oneOf data  */}}
-  {{- else if eq $isOneOf "data" -}}
+
+  {{/*  Render allOf select options  */}}
+  {{- else if eq $isOf "select" -}}
+    <option value="{{ $levelName }}" {{ if eq $ofInd 0 }}selected{{ end }}>{{ $name }}</option>
+
+    {{/*  Loop oneOf data  */}}
+  {{- else if in $isOf "Data" -}}
     {{- with $schemaObj.properties -}}
-      <dl id="tab-xml-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" role="tabpanel" aria-labelledby="{{ $levelName }}">
+      <dl id="xml-{{ $name | anchorize }}" class="pls {{ if ne $ofInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" {{ if in $isOf "one" }}aria-label="{{ $name }}"{{ end }}>
         {{- range $key, $_ := . -}}
           {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
       </dl>
     {{- end -}}
-  {{ else }}
-    <div class="mb-border bb bw1 mbs">
-      <div class="flex flex-wrap align-ifs pbs">
+  {{- else -}}
+    <div class="{{ if not $isFirstLevelOf }}mb-border bb bw1{{ end }} mbs">
+      <div class="flex flex-wrap align-ifs pbs {{ if $isFirstLevelOf }}screen-reader-text{{ end }}">
         <dt>
-          {{- if or ($schemaObj.properties) ($schemaObj.oneOf) ($schemaObj.items) -}}
+          {{- if $isFirstLevelOf -}}
+            Schema selector
+          {{- else if or ($schemaObj.properties) ($schemaObj.oneOf) ($schemaObj.allOf) ($schemaObj.items) -}}
             {{- partial "api/oas/param-toggle-btn-xml.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
           {{- else -}}
             <code class="mls">{{ $name }}</code>
@@ -90,22 +101,41 @@
       {{- end -}}
       {{/*  oneOf object  */}}
       {{- with $schemaObj.oneOf -}}
-        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
+        <dd class="{{ if gt $recLevel 2 }}schema__sublist mb-border dn{{ end }}" id="{{ $levelId }}">
           <form>
             <fieldset class="mlxs mbs pls pbs">
-              <legend class="fw600 pts mbxs">oneOf</legend>
-              <div class="flex flex-wrap gcm" role="tabpanel">
+              <legend class="fw600 pts mbxs">Schema (oneOf)</legend>
+              <div class="flex flex-wrap gcm">
                 {{- range $key, $_ := . -}}
-                  {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
-                  {{- $oneOfInd = add $oneOfInd 1 -}}
+                  {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "radio" "parent" $name "ofInd" $ofInd) -}}
+                  {{- $ofInd = add $ofInd 1 -}}
                 {{- end -}}
               </div>
             </fieldset>
           </form>
-          {{- $oneOfInd = 0 -}}
+          {{- $ofInd = 0 -}}
           {{- range $key, $_ := . -}}
-            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "data" "oneOfInd" $oneOfInd) -}}
-            {{- $oneOfInd = add $oneOfInd 1 -}}
+            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
+            {{- $ofInd = add $ofInd 1 -}}
+          {{- end -}}
+        </dd>
+      {{- end -}}
+      {{/*  allOf object  */}}
+      {{- with $schemaObj.allOf -}}
+        <dd class="{{ if gt $recLevel 2 }}schema__sublist mb-border dn{{ end }}" id="{{ $levelId }}">
+          <div class="mlxs mbs pls pbs">
+              <label class="form__label" for="{{ $levelName }}">Schema (allOf)</label>
+              <select class="form__control wauto maxw100p" id="{{ $levelName }}" data-one-of>
+                {{- range $key, $_ := . -}}
+                  {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "select" "parent" $name "ofInd" $ofInd) -}}
+                  {{- $ofInd = add $ofInd 1 -}}
+                {{- end -}}
+              </select>
+            </div>
+          {{- $ofInd = 0 -}}
+          {{- range $key, $_ := . -}}
+            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
+            {{- $ofInd = add $ofInd 1 -}}
           {{- end -}}
         </dd>
       {{- end -}}
@@ -118,7 +148,7 @@
         </dd>
       {{- end -}}
     </div>
-  {{ end }}
+  {{- end -}}
 
 {{/*  If neither obj, arr or ref, render the item */}}
 {{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) -}}
