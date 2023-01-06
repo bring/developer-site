@@ -42,8 +42,8 @@
     {{- with $schemaObj.oneOf -}}
       <form>
         <fieldset class="mlxs mbs pls pbs">
-          <legend class="fw600 pts mbxs">oneOf</legend>
-          <div class="flex flex-wrap gcm" role="tabpanel">
+          <legend class="fw600 pts mbxs">Schema (oneOf)</legend>
+          <div class="flex flex-wrap gcm">
             {{- range . -}}
               {{- range . -}}
                 {{- $schemaPath := path.Split . -}}

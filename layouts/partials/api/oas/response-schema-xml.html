@@ -96,8 +96,8 @@
         <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
           <form>
             <fieldset class="mlxs mbs pls pbs">
-              <legend class="fw600 pts mbxs">oneOf</legend>
-              <div class="flex flex-wrap gcm" role="tabpanel">
+              <legend class="fw600 pts mbxs">Schema (oneOf)</legend>
+              <div class="flex flex-wrap gcm">
                 {{- range $key, $_ := . -}}
                   {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
                   {{- $oneOfInd = add $oneOfInd 1 -}}
