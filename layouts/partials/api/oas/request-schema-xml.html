@@ -63,6 +63,7 @@
       </dl>
     {{- end -}}
   {{- else -}}
+    {{/*  Render first level isOf without visible dt  */}}
     <div class="{{ if not $isFirstLevelOf }}mb-border bb bw1{{ end }} mbs">
       <div class="flex flex-wrap align-ifs pbs {{ if $isFirstLevelOf }}screen-reader-text{{ end }}">
         <dt>
