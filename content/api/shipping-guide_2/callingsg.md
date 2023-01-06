@@ -12,21 +12,21 @@ hidden: true
 ---
 This guide will walk you through getting shipment alternatives for your first consignment. We will be calling the SOAP interface with a HTTP client and query for the service `SERVICEPAKKE` and `PA_DOREN` for two packages.
 
-### 1. Add additional headers
+## 1. Add additional headers
 
-#### SOAP
+### SOAP
 Since we're using the SOAP (1.1) interface we'll have to add the following header:
 
 - `Content-type: text/xml`
 
 Most SOAP libraries will do this for you.
 
-#### REST
+### REST
 For the REST `POST` interfaces:
 
   `Content-type: application/json`
 
-### 2. Add the body to the request
+## 2. Add the body to the request
 There are several ways you can control the output of your request. The following elements controls what the API will calculate.
 
 | SOAP name | REST (POST) name |  Description |
@@ -44,7 +44,7 @@ There are several ways you can control the output of your request. The following
 
 In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
-#### SOAP
+### SOAP
 
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -114,7 +114,7 @@ In this request we will query prices and expected delivery time for the service 
 </soapenv:Envelope>
 ``` 
 
-#### REST (POST)
+### REST (POST)
 
 ```json
 {  
@@ -182,9 +182,9 @@ In this request we will query prices and expected delivery time for the service 
 }
 ```
 
-### 3. Submit the request
+## 3. Submit the request
 
-#### SOAP
+### SOAP
 Post your request to
 
 ```
@@ -296,7 +296,7 @@ The response may have changed since it was documented but you will get a respons
 
 If you want to know more about the fields you can have a look at the XSD linked from the section [Request and response structure](/api/shipping-guide_2/#request-and-response-structure)
 
-#### REST
+### REST
 Post your request to 
 
 ```

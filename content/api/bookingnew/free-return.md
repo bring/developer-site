@@ -23,11 +23,12 @@ The following outgoing and return service combinations are supported:
 
 | Outgoing services |  Return services |
 | -------------- | -------------- |
- | `3570, 3584`       | `9650` |
- | `4850, 5000, 5600, 5800`   | `9000, 9300, 9600` |
- | `BEDRIFTSPAKKE, SERVICEPAKKE, EKSPRESS09, PA_DOREN`  | `BPAKKE_DOR-DOR_RETURSERVICE, EKSPRESS09_RETURSERVICE, SERVICEPAKKE_RETURSERVICE` |
+| `3570, 3584`       | `9650` |
+| `4850, 5000, 5600, 5800`   | `9000, 9300, 9600` |
+| `BEDRIFTSPAKKE, SERVICEPAKKE, EKSPRESS09, PA_DOREN`  | `BPAKKE_DOR-DOR_RETURSERVICE, EKSPRESS09_RETURSERVICE, SERVICEPAKKE_RETURSERVICE` |
 
- #### XML
+## Formats
+### XML
 
  ```xml
  <returnProduct>
@@ -35,7 +36,7 @@ The following outgoing and return service combinations are supported:
  </returnProduct>
 ```
 
- #### JSON
+ ### JSON
 
  ```json
  "returnProduct": {
@@ -43,8 +44,8 @@ The following outgoing and return service combinations are supported:
  }
  ```
 
-### Request examples
-#### Mailbox Parcel with Free return of parcel and Pickup from mailbox VAS
+## Request examples
+### Mailbox Parcel with Free return of parcel and Pickup from mailbox VAS
 
 #### XML
 ```xml

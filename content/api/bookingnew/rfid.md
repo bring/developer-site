@@ -19,7 +19,7 @@ When ordering the service 3570, the labels will be ZPL code containing instructi
 
 In addition to the RFID programming instructions, the ZPL code contains instructions for rendering the rest of the label (addresses, icons, barcode, etc.).
 
-#### Special hardware required
+## Special hardware required
 RFID-tagged labels require special printer hardware. Currently we support the following printers:
 
 - Zebra R410

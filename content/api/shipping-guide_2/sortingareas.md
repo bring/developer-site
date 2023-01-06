@@ -11,7 +11,8 @@ weight: 10
 hidden: true
 ---
 The Same day delivery VAS (2012) allows shipments to be delivered same- or next-day, depending on when the shipment is booked. By default, SG API returns the full service coverage area for Same day delivery. The "sortingAreas" parameter allows the web shop to reduce the delivery area to the area they currently choose to provide the service."routeInformation" contains information about the sorting area for a specific parcel. Intended use is to aid pre-sorting of same day parcels.
-### Area Code
+
+## Area Code
 | Area name        | Area code | 
 |:-----------------|:------------|
 | `Oslo CS 12` | `100` |
@@ -23,7 +24,7 @@ The Same day delivery VAS (2012) allows shipments to be delivered same- or next-
 | `Bergen H2`| `500`|
 | `Trondheim` | `700` |
 
-* SOAP: VAS - 2012
+### SOAP: VAS - 2012
 ```xml
 <ns:AdditionalServices>
       <ns:AdditionalService>
@@ -39,7 +40,7 @@ The Same day delivery VAS (2012) allows shipments to be delivered same- or next-
 </ns:AdditionalServices>
 ```
 
-* REST POST:  VAS - 2012
+### REST POST:  VAS - 2012
 ```json
  {
   "id": "2012",

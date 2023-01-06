@@ -10,7 +10,8 @@ menu:
 weight: 13
 hidden: true
 ---
-### No applicable services found
+
+## No applicable services found
 
 When no services are applicable for the requested you've made an empty
 resultset is returned. Reasons can be that the shipment was too large or too
@@ -22,7 +23,7 @@ How can I fix this? You could e.g. use a Cargo product when you want to send
 large shipments, or you could request other services and see which ones that
 fits your need and find your service by using [What would you like to send?](https://www.bring.no/english/sending)
 
-### Additional service XXX is not applicable for product YYY
+## Additional service XXX is not applicable for product YYY
 
 If a requested additional service is not supported on requested product, API
 will just ignore that additional service for price calculation and return
