@@ -15,18 +15,18 @@ paramToggleBtn.forEach((btn) => {
   })
 })
 
-// oneOf
-function setOneOf(radio) {
-  const radioVal = radio.value,
-    closest = radio.closest("dd"),
-    oneOfArr = Array.from(closest.children)
+// oneOf and allOf
+function showSelectedSchema(ofElement) {
+  const elementVal = ofElement.value,
+    closest = ofElement.closest("dd"),
+    ofArr = Array.from(closest.children)
 
-  radio.setAttribute("checked", "")
-  oneOfArr.forEach((child) => {
-    if (child.tagName === "DL") {
-      child.classList.add("dn")
-      if (child.dataset.ofOne === radioVal) {
-        child.classList.remove("dn")
+  ofElement.setAttribute("checked", "")
+  ofArr.forEach((ofChild) => {
+    if (ofChild.tagName === "DL") {
+      ofChild.classList.add("dn")
+      if (ofChild.dataset.ofOne === elementVal) {
+        ofChild.classList.remove("dn")
       }
     }
   })
@@ -35,7 +35,14 @@ function setOneOf(radio) {
 const oneOfRadioArr = document.querySelectorAll("input[data-one-of]")
 oneOfRadioArr.forEach((radio) => {
   radio.addEventListener("change", function () {
-    setOneOf(radio)
+    showSelectedSchema(radio)
+  })
+})
+
+const allOfSelectArr = document.querySelectorAll("select[data-one-of]")
+allOfSelectArr.forEach((select) => {
+  select.addEventListener("change", function () {
+    showSelectedSchema(select)
   })
 })
 
@@ -188,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // set oneOf selection if reload/backward/forward navigation
   oneOfRadioArr.forEach((radio) => {
     if (radio.checked) {
-      setOneOf(radio)
+      showSelectedSchema(radio)
     } else {
       radio.removeAttribute("checked")
     }
