@@ -75,7 +75,7 @@
                         {{- $examplePath := path.Split . -}}
                         {{- $exampleId = (printf "%s-%s-%s" $requestId $examplePath.File (string $exInd)) | anchorize -}}
                       {{- else if not $hasRef -}}
-                        {{- $exampleId = (printf "%s-%s" $requestId $name (string $exInd)) | anchorize -}}
+                        {{- $exampleId = (printf "%s-%s-%s" $requestId $name (string $exInd)) | anchorize -}}
                       {{- end -}}
                     {{- end -}}
                     <option value="{{ $exampleId }}">{{ $name }}</option>
