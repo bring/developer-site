@@ -83,7 +83,7 @@
       </div>
       {{/*  object  */}}
       {{- with $schemaObj.properties -}}
-        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
+        <dd class="schema__sublist {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
               {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
@@ -93,7 +93,7 @@
       {{- end -}}
       {{/*  oneOf object  */}}
       {{- with $schemaObj.oneOf -}}
-        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
+        <dd class="schema__sublist {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
           <form>
             <fieldset class="mlxs mbs pls pbs">
               <legend class="fw600 pts mbxs">Schema (oneOf)</legend>
@@ -114,7 +114,7 @@
       {{- end -}}
       {{/*  array  */}}
       {{- with $schemaObj.items -}}
-        <dd class="schema__sublist mb-border {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
+        <dd class="schema__sublist {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" "" "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
           </dl>

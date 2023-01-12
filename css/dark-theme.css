@@ -83,7 +83,8 @@
   & .dev-docscontent__section,
   & tr,
   & .mb-border,
-  & .dev-sidemenu__separator {
+  & .dev-sidemenu__separator,
+  & .schema__sublist {
     border-color: var(--gray-40);
   }
 
