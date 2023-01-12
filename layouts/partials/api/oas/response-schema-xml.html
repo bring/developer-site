@@ -71,7 +71,7 @@
         </dt>
         <dd class="ptxs pls">
           {{- with $schemaObj.description -}}
-            {{ . }}
+            {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
           {{- end -}}
           <div class="gray text-note">
             {{- $schemaObj.type -}}
@@ -138,7 +138,7 @@
       </dt>
       <dd class="pls">
         {{- with $schemaObj.description -}}
-          {{ . }}
+          {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
         {{- end -}}
         <div class="gray text-note">
           {{- $schemaObj.type -}}
