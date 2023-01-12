@@ -104,7 +104,7 @@
         </dt>
         <dd class="ptxs pls">
           {{- with $schemaObj.description -}}
-            {{ . }}
+            {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
           {{- end -}}
           <div class="gray text-note">
             {{- $schemaObj.type -}}
@@ -113,7 +113,7 @@
       </div>
 
       {{- with $schemaObj.properties -}}
-        <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
+        <dd class="schema__sublist {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
               {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
@@ -166,7 +166,7 @@
       </dt>
       <dd class="ptxs pls">
         {{- with $schemaObj.description -}}
-          {{ . }}
+          {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
         {{- end -}}
 
         {{/*  See what it’s an array of */}}
@@ -197,7 +197,7 @@
     </div>
 
     {{- with $schemaObj.items -}}
-      <dd class="schema__sublist mb-border {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
+      <dd class="schema__sublist {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
         {{- $isItemRef := false -}}
         {{- $isItemOneOfRef := false -}}
         {{/*  Check for oneOf  */}}
@@ -245,7 +245,7 @@
       </dt>
       <dd class="pls">
         {{- with $schemaObj.description -}}
-          {{ . }}
+          {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
         {{- end -}}
         <div class="gray text-note">
           {{- $schemaObj.type -}}
