@@ -65,7 +65,7 @@
         <dt class="pls">
           <code>{{- replace .name "MyBring" "Mybring" -}}</code>
           {{- if eq .required true -}}
-            <br><span class="mb-badge mb-badge--red">Required</span>
+            <div class="param-required text-note">Required</div>
           {{- end -}}
         </dt>
         <dd class="pls">
@@ -75,11 +75,11 @@
               <dd>{{- . -}}</dd>
             {{- end -}}
             <dt class="screen-reader-text">Type</dt>
-            <dd class="gray">{{ $type }}</dd>
+            <dd class="gray text-note">{{ $type }}</dd>
 
             {{- if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) -}}
               <div class="mbxs">
-                <dt><span class="fw600">
+                <dt><span class="fw600 text-note">
                   {{- if gt (len $enum) 1 -}}
                     Enum
                   {{- else -}}
@@ -94,20 +94,20 @@
 
             {{- if gt (len $default) 0 -}}
               <div class="mbxs">
-                <dt><span class="fw600">Default</span></dt>
+                <dt><span class="fw600 text-note">Default</span></dt>
                 <dd><code>{{ $default }}</code></dd>
               </div>
             {{- end -}}
 
             {{- if gt (len $example) 0 -}}
               <div class="mbxs">
-                <dt><span class="fw600">Example</span></dt>
+                <dt><span class="fw600 text-note">Example</span></dt>
                 <dd><code class="mbxs db maxwmaxc">{{ $example }}</code></dd>
               </div>
             {{- end -}}
 
             {{- if gt (len $examples) 0 -}}
-              <dt><span class="fw600">
+              <dt><span class="fw600 text-note">
                 {{- if gt (len $examples) 1 -}}
                   Examples
                 {{- else -}}
