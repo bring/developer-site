@@ -1,9 +1,0 @@
-<button title="Toggle {{ .name }} parameters" class="btn-link param-collapsed-btn param-toggle-btn" aria-expanded="{{ if lt .recLevel 3 }}true{{ else }}false{{ end }}" aria-controls="{{ .levelId }}">
-  <span
-    data-mybicon="mybicon-arrow-right"
-    data-mybicon-class="icon-ui mrxs param-toggle-icon {{if lt .recLevel 3}}rotate-icon-90{{end}}"
-    data-mybicon-width="16"
-    data-mybicon-height="16">
-  </span>
-  <code>{{ .name }}</code>
-</button>
