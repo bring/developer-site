@@ -211,11 +211,11 @@ The response may have changed since it was documented but you will get a respons
                                 <ns2:Trackable>false</ns2:Trackable>
                                 <ns2:Logo>BRING</ns2:Logo>
                                 <ns2:LogoUrl>https://www.mybring.com/shipping-guide/assets/img/Bring_logo.svg</ns2:LogoUrl>
-                                <ns2:DisplayName>Klimanøytral Servicepakke</ns2:DisplayName>
-                                <ns2:ProductName>Klimanøytral Servicepakke</ns2:ProductName>
+                                <ns2:DisplayName>Servicepakke</ns2:DisplayName>
+                                <ns2:ProductName>Servicepakke</ns2:ProductName>
                                 <ns2:DescriptionText>Pakken kan spores og utleveres på ditt lokale hentested.</ns2:DescriptionText>
-                                <ns2:HelpText>Klimanøytral Servicepakke leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.</ns2:HelpText>
-                                <ns2:ShortName>Klimanøytral Servicepakke</ns2:ShortName>
+                                <ns2:HelpText>Servicepakke leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.</ns2:HelpText>
+                                <ns2:ShortName>Servicepakke</ns2:ShortName>
                                 <ns2:ProductURL>http://www.bring.no/sende/pakker/private-i-norge/hentes-pa-posten</ns2:ProductURL>
                                 <ns2:DeliveryType>Hentested</ns2:DeliveryType>
                                 <ns2:MaxWeightInKgs>35</ns2:MaxWeightInKgs>
@@ -322,10 +322,10 @@ The response may have changed since it was documented but you will get a respons
                   "logo": "BRING",
                   "logoUrl": "https://www.qa.mybring.com/shipping-guide/assets/img/Bring_logo.svg",
                   "displayName": "Til hentested",
-                  "productName": "Klimanøytral Servicepakke",
+                  "productName": "Servicepakke",
                   "descriptionText": "Pakken kan spores og utleveres på ditt lokale hentested.",
-                  "helpText": "Klimanøytral Servicepakke leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.",
-                  "shortName": "Klimanøytral Servicepakke",
+                  "helpText": "Servicepakke leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.",
+                  "shortName": "Servicepakke",
                   "productURL": "http://www.bring.no/sende/pakker/private-i-norge/hentes-pa-posten",
                   "deliveryType": "Hentested",
                   "maxWeightInKgs": "35"

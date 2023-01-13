@@ -67,7 +67,7 @@ documentation:
              <td>No</td>
           </tr>
           <tr>
-             <td>Klimanøytral Servicepakke</td>
+             <td>Servicepakke</td>
              <td>1202</td>
              <td>Yes</td>
              <td>Yes</td>

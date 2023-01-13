@@ -13,7 +13,7 @@ hidden: true
 For the following Norwegian domestic parcel and cargo services you can now get extended leadtime information - the estimated arrival time.
 * Bedriftspakke (BPAKKE_DOR-DOR)
 * Pakke til bedrift (5000)
-* Klimanøytral Servicepakke (SERVICEPAKKE)
+* Servicepakke (SERVICEPAKKE)
 * Pakke til hentested (5800)
 * Stykkgods til bedrift (5100)
 * Stykkgods (CARGO)
@@ -79,7 +79,7 @@ Even though the API response schema supports minute granularity for start and en
 Note that Bring cannot guarantee the arrival time for a specific parcel. The estimated arrival time indicates when, based on historical scanning data, the parcel normally will arrive at the recipient address.
 
 ## Parcels going to pickup points
-For the services Klimanøytral Servicepakke (SERVICEPAKKE) and Pakke til hentested (5800), you can now get extended leadtime information - the estimated arrival time for one or more pickup points.
+For the services Servicepakke (SERVICEPAKKE) and Pakke til hentested (5800), you can now get extended leadtime information - the estimated arrival time for one or more pickup points.
 
 Earlier, we have just returned the expected delivery **date** when you request our Shipping Guide API to get leadtime for SERVICEPAKKE/5800. Now, based on a machine learning model gathering scanning data from all pickup points in Norway, we are also predicting the **arrival window** - i.e. when the parcel is expected to arrive at a specific pickup point on that specific date. If you are already showing expected delivery date in your checkout, we strongly recomment that you consider increasing the value by also including the predicted arrival window.
 
