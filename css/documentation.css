@@ -252,3 +252,10 @@ div.response {
 .example-wrap :first-child {
   margin-top: 0;
 }
+
+.schematype-select {
+  padding: 0.25rem;
+  height: auto;
+  margin-bottom: 0;
+  flex: 1 1 8rem;
+}

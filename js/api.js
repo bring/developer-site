@@ -15,6 +15,50 @@ paramToggleBtn.forEach((btn) => {
   })
 })
 
+// Show toggle all on pageload if there’s more than one toggle button in schema
+function showToggleAll() {
+  const schemaContainerArr = document.querySelectorAll('.schemacontainer')
+  if (schemaContainerArr) {
+    schemaContainerArr.forEach((schemaContainer) => {
+      const schemaToggles = schemaContainer.querySelectorAll(
+        '.param-toggle-btn'
+      )
+      if (schemaToggles.length > 1) {
+        const toggleAllContainer = schemaContainer.previousElementSibling,
+          toggleAllPair = toggleAllContainer.querySelectorAll(
+            'button[data-toggle-all]'
+          )
+        toggleAllPair.forEach((toggleAllBtn) => {
+          toggleAllBtn.classList.remove('dn')
+        })
+      }
+    })
+  }
+}
+
+// Toggle all within a schema
+const toggleAllArr = document.querySelectorAll('button[data-toggle-all]')
+
+toggleAllArr.forEach((toggleAllBtn) => {
+  toggleAllBtn.addEventListener('click', function () {
+    const toggleType = toggleAllBtn.dataset.toggleAll,
+      closestDiv = toggleAllBtn.closest('div'),
+      closestSchema = closestDiv.nextElementSibling,
+      toggleBtnArr = closestSchema.querySelectorAll('.param-toggle-btn')
+
+    let expand = 'false'
+    if (toggleType === 'collapse') {
+      expand = 'true'
+    }
+
+    toggleBtnArr.forEach((toggleBtn) => {
+      if (toggleBtn.getAttribute('aria-expanded') === expand) {
+        toggleBtn.click()
+      }
+    })
+  })
+})
+
 // oneOf and allOf
 function showSelectedSchema(ofElement) {
   const elementVal = ofElement.value,
@@ -192,6 +236,7 @@ if('clipboard' in navigator) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  showToggleAll()
   // set oneOf selection if reload/backward/forward navigation
   oneOfRadioArr.forEach((radio) => {
     if (radio.checked) {
