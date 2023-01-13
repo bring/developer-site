@@ -106,7 +106,6 @@
       "content/api/warehousing3/api.raml",
       "content/api/warehousing4/api.raml",
       "content/api/order-management/api.raml",
-      "content/api/postal-code/api.raml",
       "content/api/invoice/api.raml",
       "content/api/reports/api.raml",
       "content/api/shipment/api.raml"
