@@ -15,9 +15,10 @@ paramToggleBtn.forEach((btn) => {
   })
 })
 
+// Firefox fallback because it lacks of support for css has()
 // Show toggle all on pageload if there’s more than one toggle button in schema
 function showToggleAll() {
-  const schemaContainerArr = document.querySelectorAll('.schemacontainer')
+  const schemaContainerArr = document.querySelectorAll('.schema__container')
   if (schemaContainerArr) {
     schemaContainerArr.forEach((schemaContainer) => {
       const schemaToggles = schemaContainer.querySelectorAll(

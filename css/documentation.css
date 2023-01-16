@@ -259,3 +259,8 @@ div.response {
   margin-bottom: 0;
   flex: 1 1 8rem;
 }
+
+.schema__header:has(+ .schema__container .param-toggle-btn)
+  button[data-toggle-all] {
+  display: flex;
+}

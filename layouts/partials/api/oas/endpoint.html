@@ -41,7 +41,7 @@
                 {{- if gt (len .) 1 -}}
                   {{- $multiSchema = true -}}
                 {{- end -}}
-                <div class="mb-border bb flex align-ib gas mbm pbxs">
+                <div class="mb-border bb flex align-ib gas mbm pbxs schema__header">
                   <div class="flex flex-wrap align-ib gcm grs mr-auto">
                     <h4 class="fw600 mb0">Body schema</h4>
                     {{- if $multiSchema -}}
@@ -73,7 +73,7 @@
                     data-toggle-all="collapse"
                     aria-label="Collapse all body schema levels">Collapse all</button>
                 </div>
-                <div class="schemacontainer">
+                <div class="schema__container">
                   {{- range $application, $_ := . -}}
                     {{- $fTC := partial "api/oas/format-type-clean.html" (dict "application" $application) -}}
                     {{- $format := $fTC.format -}}
@@ -123,7 +123,7 @@
                       <span class="fw600">{{ $response }}</span> {{ $description }}
                     </summary>
                     <div class="bg-gray1 pam">
-                      <div class="flex align-ib gas mbs">
+                      <div class="flex align-ib gas mbs schema__header">
                         <div class="flex flex-wrap align-ib gcm grs mr-auto">
                           <h4 class="fw600">Schema</h4>
                           {{- if $multiSchema -}}
@@ -155,7 +155,7 @@
                           data-toggle-all="collapse"
                           aria-label="Collapse all code {{ $response }} schema levels">Collapse all</button>
                       </div>
-                      <div class="schemacontainer">
+                      <div class="schema__container">
                         {{- range $application, $_ := . -}}
                           {{- $fTC := partial "api/oas/format-type-clean.html" (dict "application" $application) -}}
                           {{- $format := $fTC.format -}}
