@@ -47,7 +47,7 @@
                     {{- if $multiSchema -}}
                     <div class="flex flex-wrap align-ib gcxs">
                       <label class="form__label text-basic" for="{{ $endpointId }}-reqschema">Media type:</label>
-                      <select id="{{ $endpointId }}-reqschema" data-sub-of="{{ $endpointId }}-reqschema" class="form__control schematype-select" name="formats">
+                      <select id="{{ $endpointId }}-reqschema" data-sub-of="{{ $endpointId }}-reqschema" class="form__control schematype__select" name="formats">
                         {{- range $applicationType, $_ := . -}}
                           {{- $typeClean := lower (anchorize $applicationType) -}}
                           <option value="{{ $typeClean }}">
@@ -129,7 +129,7 @@
                           {{- if $multiSchema -}}
                             <div class="flex flex-wrap align-ib gcxs">
                               <label class="form__label text-basic" for="{{ $endpointId }}-{{ $response }}">Media type:</label>
-                              <select id="{{$endpointId}}-{{$response}}" data-sub-of="{{ $endpointId }}-{{ $response }}" class="form__control schematype-select" name="formats">
+                              <select id="{{$endpointId}}-{{$response}}" data-sub-of="{{ $endpointId }}-{{ $response }}" class="form__control schematype__select" name="formats">
                                 {{- range $applicationType, $_ := . -}}
                                   {{- $typeClean := lower (anchorize $applicationType) -}}
                                   <option value="{{ $typeClean }}">
