@@ -15,17 +15,17 @@
             <dd>{{- . -}}</dd>
           {{- end -}}
           <dt class="screen-reader-text">Type</dt>
-          <dd class="gray">{{ delimit .type " " }}</dd>
+          <dd class="gray text-note">{{ delimit .type " " }}</dd>
 
           {{- with .enum -}}
-              <dt><span class="fw600">Enum</span></dt>
+              <dt><span class="text-note fw600">Enum</span></dt>
               {{- range . -}}
                 <dd><code>{{ . }}</code></dd>
               {{- end -}}
           {{- end -}}
 
           {{- with .example -}}
-            <dt><span class="fw600">Example</span></dt>
+            <dt><span class="text-note fw600">Example</span></dt>
             {{- $type := printf "%T" . -}}
             {{- if eq $type "[]interface {}" -}}
               {{- range . -}}

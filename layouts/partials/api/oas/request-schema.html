@@ -75,7 +75,7 @@
           {{- if $isFirstLevelOf -}}
             Schema selector
           {{- else if or ($schemaObj.properties) ($schemaObj.oneOf) ($schemaObj.allOf) ($schemaObj.items) -}}
-            {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+            {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel "threshold" 2) -}}
           {{- else -}}
             <code class="mls">{{ $name }}</code>
           {{- end -}}
@@ -197,7 +197,7 @@
     <div class="flex flex-wrap align-ifs pbs">
       <dt>
         {{- if $hasChildren -}}
-          {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+          {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel "threshold" 2) -}}
         {{- else -}}
           <code class="mls">{{ $name }}</code>
         {{- end -}}

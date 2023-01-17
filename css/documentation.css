@@ -252,3 +252,15 @@ div.response {
 .example-wrap :first-child {
   margin-top: 0;
 }
+
+.schematype__select {
+  padding: 0.25rem;
+  height: auto;
+  margin-bottom: 0;
+  flex: 1 1 8rem;
+}
+
+.schema__header:has(+ .schema__container .param-toggle-btn)
+  button[data-toggle-all] {
+  display: flex;
+}
