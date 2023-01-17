@@ -61,7 +61,7 @@
       <div class="flex flex-wrap align-ifs pbs">
         <dt>
           {{- if or ($schemaObj.properties) ($schemaObj.oneOf) ($schemaObj.items) -}}
-            {{- partial "api/oas/param-toggle-btn-xml.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel) -}}
+            {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel "threshold" 3) -}}
           {{- else -}}
             <code class="mls">{{ $name }}</code>
           {{- end -}}
