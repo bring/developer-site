@@ -90,32 +90,29 @@
   let someSelected = false;
 
   const validateCheckboxes = (e) => {
+    // If second radio selected, validate if some checkboxes are checked
     if(apiAreaRadios[1].checked) {
       apiAreaCheckboxes.forEach((checkbox) => {
         if(checkbox.checked) {
           someSelected = true;
         }
       });
-      // If second radion selected, validate if some checkboxes are checked
       if(someSelected === false) {
         e.preventDefault();
       }
     }
   }
 
+  // Toggle visibility of checkboxes based on radio checked
   apiAreaRadios.forEach((radio) => {
-    // Toggle visibility of checkboxes based on radio checked
     radio.addEventListener('change', (e) => {
       if(e.target.checked && e.target.id === "mce-APIAREA-1") {
-        // If second radio selected, show checkboxes and validate if any checkboxes are checked
         apiAreas.classList.remove('hidden');
         signupSubmitBtn.addEventListener('click', validateCheckboxes);
       } else {
-        // If switching back to "All", uncheck all checkboxes
         apiAreaCheckboxes.forEach((checkbox) => {
           checkbox.checked = false;
         });
-        // If first radio selected, hide the checkboxes and remove validation from click event
         apiAreas.classList.add('hidden');
         signupSubmitBtn.removeEventListener('click', validateCheckboxes);
       }
