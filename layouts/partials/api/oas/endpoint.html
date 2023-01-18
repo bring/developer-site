@@ -74,12 +74,15 @@
                     aria-label="Collapse all body schema levels">Collapse all</button>
                 </div>
                 <div class="schema__container">
+                  {{- $multiTypes := false -}}
+                  {{- if gt (len .) 1 -}}
+                    {{- $multiTypes = true -}}
+                  {{- end -}}
                   {{- range $application, $_ := . -}}
                     {{- $fTC := partial "api/oas/format-type-clean.html" (dict "application" $application) -}}
                     {{- $format := $fTC.format -}}
                     {{- $typeClean := $fTC.typeClean -}}
-
-                    <dl class="schema-type-container desc-list mbl" data-type="{{ $typeClean }}">
+                    <dl class="schema-type-container desc-list mbl" {{ if $multiTypes }}data-type="{{ $typeClean }}"{{ end }}>
                       {{- if eq "xml" $format -}}
                         {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" .schema "name" "" "components" $components "endpointId" $endpointId "recLevel" 0) -}}
                       {{- else -}}
