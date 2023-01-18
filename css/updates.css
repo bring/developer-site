@@ -34,3 +34,12 @@ div.mce_inline_error {
   width: 0;
   height: 0;
 }
+
+.api-area-checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.api-area-checkboxes.hidden {
+  display: none;
+}

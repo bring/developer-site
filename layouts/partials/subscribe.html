@@ -2,6 +2,48 @@
 <div id="mc_embed_signup">
   <form action="https://bring.us5.list-manage.com/subscribe/post?u=f6b9d5de1a234124c14558d51&amp;id=8b45ecec29" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
+      <div class="mc-field-group flex flex-dir-col">
+        <fieldset class="flex flex-dir-col">
+          <legend>API areas</legend>
+          <label class="form__radio">
+            <input type="radio" value="All" name="APIAREA" id="mce-APIAREA-0" data-api-area checked>
+            All
+          </label>
+          <label class="form__radio">
+            <input type="radio" value="Select API area" name="APIAREA" id="mce-APIAREA-1" data-api-area>
+            Select API area
+          </label>
+        </fieldset>
+        <fieldset class="flex flex-dir-col">
+          <legend class="screen-reader-text">Select one of the API areas</legend>
+          <div class="api-area-checkboxes hidden">
+            <label class="form_check">
+              <input type="checkbox" value="1" name="group[383557][1]" id="mce-group[383557]-383557-0">
+              Checkout
+            </label>
+            <label class="form_check">
+              <input type="checkbox" value="2" name="group[383557][2]" id="mce-group[383557]-383557-1">
+              Booking
+            </label>
+            <label class="form_check">
+              <input type="checkbox" value="4" name="group[383557][4]" id="mce-group[383557]-383557-2">
+              Tracking
+            </label>
+            <label class="form_check">
+              <input type="checkbox" value="8" name="group[383557][8]" id="mce-group[383557]-383557-3">
+              Warehousing
+            </label>
+            <label class="form_check">
+              <input type="checkbox" value="16" name="group[383557][16]" id="mce-group[383557]-383557-4">
+              Reports and invoices
+            </label>
+            <label class="form_check">
+              <input type="checkbox" value="32" name="group[383557][32]" id="mce-group[383557]-383557-5">
+              Order management
+            </label>
+          </div>
+        </fieldset>
+      </div>
       <div class="mc-field-group">
         <label for="mce-EMAIL" class="form__label">Email address
         </label>
@@ -39,5 +81,51 @@
     </div>
   </form>
 </div>
+<script type="text/javascript">
+  const signupForm = document.getElementById('mc-embedded-subscribe-form');
+  const apiAreaRadios = document.querySelectorAll('[data-api-area]');
+  const apiAreas = document.querySelector('.api-area-checkboxes');
+  const apiAreaCheckboxes = apiAreas.querySelectorAll('input[type="checkbox"]');
+  const signupSubmitBtn = document.getElementById('mc-embedded-subscribe');
+  let someSelected = false;
+
+  const validateCheckboxes = (e) => {
+    if(apiAreaRadios[1].checked) {
+      apiAreaCheckboxes.forEach((checkbox) => {
+        if(checkbox.checked) {
+          someSelected = true;
+        }
+      });
+      // If second radion selected, validate if some checkboxes are checked
+      if(someSelected === false) {
+        e.preventDefault();
+      }
+    }
+  }
+
+  apiAreaRadios.forEach((radio) => {
+    // Toggle visibility of checkboxes based on radio checked
+    radio.addEventListener('change', (e) => {
+      if(e.target.checked && e.target.id === "mce-APIAREA-1") {
+        // If second radio selected, show checkboxes and validate if any checkboxes are checked
+        apiAreas.classList.remove('hidden');
+        signupSubmitBtn.addEventListener('click', validateCheckboxes);
+      } else {
+        // If switching back to "All", uncheck all checkboxes
+        apiAreaCheckboxes.forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+        // If first radio selected, hide the checkboxes and remove validation from click event
+        apiAreas.classList.add('hidden');
+        signupSubmitBtn.removeEventListener('click', validateCheckboxes);
+      }
+    })
+  });
+
+  // Hide the checkboxes again when form is submitted
+  signupForm.addEventListener('submit', (e) => {
+    apiAreas.classList.add('hidden');
+  });
+</script>
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 <!--End mc_embed_signup-->
