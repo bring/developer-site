@@ -29,5 +29,5 @@ information:
 
       Returned format is controlled by the `Accept` header. Supported values are `application/json` and `application/xml`. Default returned format is JSON.
 
-oas: https://api.bring.com/address/api-docs/
+oas: https://api.bring.com/address/api-docs/address
 ---
