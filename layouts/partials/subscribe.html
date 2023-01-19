@@ -64,8 +64,8 @@
         </details>
       </div>
       <div id="mce-responses" class="clear foot">
-        <div class="mce-response" id="mce-error-response" style="display:none"></div>
-        <div class="mce-response" id="mce-success-response" style="display:none"></div>
+        <div class="mce-response error" id="mce-error-response" style="display:none"></div>
+        <div class="mce-response success" id="mce-success-response" style="display:none"></div>
       </div>
       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
       <div style="position: absolute; left: -5000px;" aria-hidden="true">
@@ -87,18 +87,24 @@
   const apiAreas = document.querySelector('.api-area-checkboxes');
   const apiAreaCheckboxes = apiAreas.querySelectorAll('input[type="checkbox"]');
   const signupSubmitBtn = document.getElementById('mc-embedded-subscribe');
-  let someSelected = false;
 
   const validateCheckboxes = (e) => {
-    // If second radio selected, validate if some checkboxes are checked
+    // If second radio selected, check if at least one of the checkboxes are checked
+    let someSelected = false;
     if(apiAreaRadios[1].checked) {
+      const errorMessage = document.getElementById('mce-error-response');
       apiAreaCheckboxes.forEach((checkbox) => {
         if(checkbox.checked) {
           someSelected = true;
         }
       });
-      if(someSelected === false) {
+      if(!someSelected) {
+        errorMessage.style.display = 'block';
+        errorMessage.innerHTML = 'You must select at least one of the API areas.';
         e.preventDefault();
+      } else {
+        errorMessage.style.display = 'none';
+        errorMessage.innerHTML = '';
       }
     }
   }
@@ -106,22 +112,25 @@
   // Toggle visibility of checkboxes based on radio checked
   apiAreaRadios.forEach((radio) => {
     radio.addEventListener('change', (e) => {
-      if(e.target.checked && e.target.id === "mce-APIAREA-1") {
-        apiAreas.classList.remove('hidden');
+        apiAreas.classList.toggle('hidden');
         signupSubmitBtn.addEventListener('click', validateCheckboxes);
-      } else {
-        apiAreaCheckboxes.forEach((checkbox) => {
-          checkbox.checked = false;
-        });
-        apiAreas.classList.add('hidden');
-        signupSubmitBtn.removeEventListener('click', validateCheckboxes);
-      }
+        if(e.target.checked && e.target.id === "mce-APIAREA-0") {
+          apiAreaCheckboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+          });
+          signupSubmitBtn.removeEventListener('click', validateCheckboxes);
+        }
     })
   });
 
-  // Hide the checkboxes again when form is submitted
+  // Hide the checkboxes again when the form is submitted
   signupForm.addEventListener('submit', (e) => {
-    apiAreas.classList.add('hidden');
+    setTimeout(() => {
+      const successMessage = document.getElementById('mce-success-response');
+      if(successMessage.innerText === 'Thank you for subscribing!') {
+        apiAreas.classList.add('hidden');
+      }
+    }, 1000);
   });
 </script>
 <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>

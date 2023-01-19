@@ -71,6 +71,16 @@
     border-color: var(--yellow-dark);
   }
 
+  & .mce-response {
+    background-color: var(--green-darkest);
+    &.error {
+      color: var(--red-light);
+    }
+    &.success {
+      color: var(--green);
+    }
+  }
+
   & input,
   & optgroup,
   & select,
