@@ -7,7 +7,7 @@ menu:
     identifier: bookingmakinglabels
     title: Making labels
     parent: bookingnew
-weight: 5
+weight: 6
 hidden: true
 ---
 

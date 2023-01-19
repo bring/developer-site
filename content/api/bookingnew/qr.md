@@ -7,7 +7,7 @@ menu:
     identifier: bookingqr
     title: Generating QR Codes
     parent: bookingnew
-weight: 7
+weight: 8
 hidden: true
 ---
 

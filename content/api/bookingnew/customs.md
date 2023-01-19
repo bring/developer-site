@@ -1,19 +1,17 @@
 ---
-title: Customs Export information
+title: Customs information
 layout: api
 notanapi: true
 menu:
   apidocs:
     identifier: bookingcustoms
-    title: Customs Export information
+    title: Customs information
     parent: bookingnew
-weight: 9
+weight: 10
 hidden: true
 ---
 
-## Customs Export information
-
-It is required to pass customs information when booking the following services from Norway -> abroad:
+It is required to pass customs information when booking the following services from Norway to abroad:
 
 - Business Parcel
 - PickUp Parcel

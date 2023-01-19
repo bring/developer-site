@@ -7,7 +7,7 @@ menu:
     identifier: bookingfreereturn
     title: Free return of parcels
     parent: bookingnew
-weight: 8
+weight: 9
 hidden: true
 ---
 
