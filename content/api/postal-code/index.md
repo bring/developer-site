@@ -16,7 +16,13 @@ important:
       Integration with shipping guide for postal code lookup is deprecated (Base url: https://api.bring.com/shippingguide/api). We recommend switching to pickup point if you have not already done so (Base url: https://api.bring.com/pickuppoint/api).
 
 introduction: |
-  The Postal Code API can be used to validate postal codes, and to look up the city of a given postal code for a number of countries. The API can also provide a list of all valid postal codes for Norway, Sweden, Denmark and Finland. For Norwegian postal codes, it’s also possible to retrieve the postal code type, e.g. normal or post box.
+  The Postal Code API can be used for:
+  * postal code validation
+  * getting postal code suggestions from prefix based searches
+  * fetching postal code details, including city, municipality and county details
+  * fetching a list of all valid postal codes for supported countries
+
+  For Norwegian, Danish and Finnish postal codes, it’s also possible to get the postal code type, e.g. normal or post office box.
 
 information:
   - title: Authentication
@@ -30,6 +36,8 @@ information:
   - title: Formats
     content: |
       REST XML/JSON over HTTP.
+
+      When response bodies exceed 4kb, response is gzip compressed.
 
 documentation:
   - title: Supported Countries
@@ -49,22 +57,7 @@ documentation:
 
       The service uses [GeoNames](http://www.geonames.org/) as source for most countries except Norway, Sweden, Finland.
 
-      For unsupported countries (countries not in the list above), all postal codes will be marked as valid with no city name returned. In these cases it is recommended to prompt the user to input the city name themselves.
+      For unsupported countries (countries not in the list above) the API will not provide any value. For such cases it is recommended to prompt the user to input the city name themselves.
 
-      For countries that have multiple results (cities) for a given postal code, a list of cities will be returned. See example below.
-
-      ### Postal Code type for Norway (including Svalbard and Jan Mayen)
-
-      For Norway, you also get information about the postal code type. This is set in the `postalCodeType` in the response:
-
-      | postalCodeType | Description |
-      |:-----------------|:------------|
-      | NORMAL | Normal postal code suitable for delivering packages. Contains street addresses or mix of street and other postal code types. |
-      | PO_BOX | Postal code contains only P.O. Box addresses. Only certain Bring services can be delivered to these addresses (see the [Shipping Guide](/api/shipping-guide_2/)). |
-      | SPECIAL_CUSTOMER | Special, e.g special return postal codes for selected customers. |
-      | UNKNOWN | Unknown postal code type. Used for e.g. international postal codes. |
-
-  - title: Support CORS
-    content: |
-      CORS headers will be added to response only for authenticated requests.
+oas: https://api.bring.com/address/api-docs/postalcode
 ---
