@@ -2,13 +2,26 @@
   <div class="gaxl flex flex-wrap flex-dir-row-rev justify-cfe">
     <div class="updates__sub bg-green1 pal align-sfs">
       <h2>Subscribe</h2>
-      <p class="mbl">Get updates via email or subscribe to our <a href='{{ "api/revision-history/index.xml" | relURL }}'>RSS feed</a>.</p>
+      <p class="mbm">Get updates via email or subscribe to our <a href='{{ "api/revision-history/index.xml" | relURL }}'>RSS feed</a>.</p>
       {{- partial "subscribe.html" -}}
     </div>
 
     <div class="updates__log">
       <h2 class="mbl">Important API changes</h2>
-      {{- range first 5 .Pages -}}
+      {{- $pctx := . -}}
+      {{- if (in .CurrentSection "revision-history/_") -}}
+        {{- $pctx = .Site -}}
+      {{- end -}}
+      {{- $pages := slice -}}
+      {{- $pages = $pctx.RegularPages -}}
+      {{- $mergedPages := slice -}}
+      {{- range $pages}}
+        {{- if (in .CurrentSection "revision-history") -}}
+          {{- $mergedPages = $mergedPages | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $pages = $mergedPages -}}
+      {{- range first 5 $pages -}}
         <article class="mbl">
           <header class="flex flex-dir-col-rev">
             <h2 class="text-heading fw600 mb0">{{ .Title }}</h2>
@@ -25,10 +38,11 @@
 
   </div>
 
+  {{- if (gt (len $pages) 5) -}}
   <details class="mb-disclosure">
     <summary class="pam maxw32r bg-gray1">Older updates</summary>
     <div class="flex flex-wrap">
-      {{- range after 5 .Pages -}}
+      {{- range after 5 $pages -}}
         <article class="changelog-small bg-gray1 pal mbxs">
           <header class="flex flex-dir-col-rev">
             <h2 class="text-basic fw600 mb0">{{ .Title }}</h2>
@@ -43,5 +57,5 @@
       {{- end -}}
     </div>
   </details>
-
+  {{- end -}}
 </section>
