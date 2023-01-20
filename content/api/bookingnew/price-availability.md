@@ -7,7 +7,7 @@ menu:
     identifier: bookingpriceavailability
     title: Checking prices and availability
     parent: bookingnew
-weight: 5
+weight: 6
 hidden: true
 ---
 
