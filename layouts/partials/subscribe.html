@@ -10,34 +10,34 @@
             All
           </label>
           <label class="form__radio">
-            <input type="radio" value="Select API area" name="APIAREA" id="mce-APIAREA-1" data-api-area>
+            <input type="radio" value="Select API area" name="APIAREA" id="mce-APIAREA-1" aria-expanded="false" aria-controls="api-areas" data-api-area>
             Select API area
           </label>
         </fieldset>
-        <fieldset class="flex flex-dir-col">
+        <fieldset>
           <legend class="screen-reader-text">Select one of the API areas</legend>
-          <div class="api-area-checkboxes hidden">
-            <label class="form_check">
+          <div class="flex flex-wrap plm gas mbm api-area-checkboxes hidden" id="api-areas">
+            <label class="form__check">
               <input type="checkbox" value="1" name="group[383557][1]" id="mce-group[383557]-383557-0">
               Checkout
             </label>
-            <label class="form_check">
+            <label class="form__check">
               <input type="checkbox" value="2" name="group[383557][2]" id="mce-group[383557]-383557-1">
               Booking
             </label>
-            <label class="form_check">
+            <label class="form__check">
               <input type="checkbox" value="4" name="group[383557][4]" id="mce-group[383557]-383557-2">
               Tracking
             </label>
-            <label class="form_check">
+            <label class="form__check">
               <input type="checkbox" value="8" name="group[383557][8]" id="mce-group[383557]-383557-3">
               Warehousing
             </label>
-            <label class="form_check">
+            <label class="form__check">
               <input type="checkbox" value="16" name="group[383557][16]" id="mce-group[383557]-383557-4">
               Reports and invoices
             </label>
-            <label class="form_check">
+            <label class="form__check">
               <input type="checkbox" value="32" name="group[383557][32]" id="mce-group[383557]-383557-5">
               Order management
             </label>
@@ -64,7 +64,7 @@
         </details>
       </div>
       <div id="mce-responses" class="clear foot">
-        <div class="mce-response error" id="mce-error-response" style="display:none"></div>
+        <div class="mce-response error" id="mce-error-response" style="display:none" role="alert"></div>
         <div class="mce-response success" id="mce-success-response" style="display:none"></div>
       </div>
       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
@@ -99,8 +99,9 @@
         }
       });
       if(!someSelected) {
-        errorMessage.style.display = 'block';
+        errorMessage.innerHTML = '';
         errorMessage.innerHTML = 'You must select at least one of the API areas.';
+        errorMessage.style.display = 'block';
         e.preventDefault();
       } else {
         errorMessage.style.display = 'none';
@@ -114,11 +115,18 @@
     radio.addEventListener('change', (e) => {
         apiAreas.classList.toggle('hidden');
         signupSubmitBtn.addEventListener('click', validateCheckboxes);
-        if(e.target.checked && e.target.id === "mce-APIAREA-0") {
+        if(e.target.checked && e.target.id === 'mce-APIAREA-0') {
           apiAreaCheckboxes.forEach((checkbox) => {
             checkbox.checked = false;
           });
           signupSubmitBtn.removeEventListener('click', validateCheckboxes);
+        }
+        // A11y purpose
+        const allApisRadio = document.getElementById('mce-APIAREA-1');
+        if (allApisRadio.checked) {
+          allApisRadio.setAttribute('aria-expanded', true);
+        } else {
+          allApisRadio.setAttribute('aria-expanded', false);
         }
     })
   });

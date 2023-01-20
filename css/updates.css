@@ -35,9 +35,9 @@ div.mce_inline_error {
   height: 0;
 }
 
-.api-area-checkboxes {
-  display: flex;
-  flex-direction: column;
+.api-area-checkboxes label {
+  flex: 1 1 11rem;
+  margin-bottom: 0;
 }
 
 .api-area-checkboxes.hidden {
