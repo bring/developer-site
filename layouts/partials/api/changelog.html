@@ -7,11 +7,15 @@
     </div>
 
     <div class="updates__log">
-      <h2 class="mbl">Important API changes</h2>
+      {{- $pageSubTitle := "Important API changes" -}}
+      {{- if .Params.apiArea -}}
+        {{- $pageSubTitle = (printf "%s %s" .Params.apiArea "APIs") -}}
+      {{- end -}}
       {{- $pctx := . -}}
       {{- if (in .CurrentSection "revision-history/_") -}}
         {{- $pctx = .Site -}}
       {{- end -}}
+      <h2 class="mbl">{{$pageSubTitle}}</h2>
       {{- $mergedPages := slice -}}
       {{/* Get entries from the main folder when in context of a sub-section */}}
       {{- if (eq $pctx .) -}}

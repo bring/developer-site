@@ -5,9 +5,9 @@
 {{- $mergedPages := slice -}}
 {{/* Get entries from the main folder when in context of a sub-section */}}
 {{- if (eq $pctx .) -}}
-{{- $commonPage := .Site.GetPage "revision-history" -}}
-{{- $commonPages := $commonPage.RegularPages -}}
-{{- range $commonPages -}}
+{{- $generalPage := .Site.GetPage "revision-history" -}}
+{{- $generalPages := $generalPage.RegularPages -}}
+{{- range $generalPages -}}
 {{- $mergedPages = $mergedPages | append (dict "path" . "pubDate" .Params.publishdate) -}}
 {{- end -}}
 {{- end -}}
