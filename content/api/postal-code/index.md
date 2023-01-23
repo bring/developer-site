@@ -10,11 +10,6 @@ menu:
     parent: checkout
 weight: 14
 
-important:
-  - type: warn
-    message: |
-      Integration with shipping guide for postal code lookup is deprecated (Base url: https://api.bring.com/shippingguide/api). We recommend switching to pickup point if you have not already done so (Base url: https://api.bring.com/pickuppoint/api).
-
 introduction: |
   The Postal Code API can be used for:
   * postal code validation
