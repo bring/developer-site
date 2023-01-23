@@ -12,15 +12,30 @@
       {{- if (in .CurrentSection "revision-history/_") -}}
         {{- $pctx = .Site -}}
       {{- end -}}
-      {{- $pages := slice -}}
-      {{- $pages = $pctx.RegularPages -}}
       {{- $mergedPages := slice -}}
-      {{- range $pages}}
-        {{- if (in .CurrentSection "revision-history") -}}
-          {{- $mergedPages = $mergedPages | append . -}}
+      {{/* Get entries from the main folder when in context of a sub-section */}}
+      {{- if (eq $pctx .) -}}
+        {{- $generalPage := .Site.GetPage "revision-history" -}}
+        {{- $generalPages := $generalPage.RegularPages -}}
+        {{- range $generalPages -}}
+          {{- $mergedPages = $mergedPages | append (dict "pagePath" . "pubDate" .Params.publishdate) -}}
         {{- end -}}
       {{- end -}}
-      {{- $pages = $mergedPages -}}
+      {{- $pages := slice -}}
+      {{- $pages = $pctx.RegularPages -}}
+      {{/* Get all sections from revision-history */}}
+      {{- range $pages -}}
+        {{- if (in .CurrentSection "revision-history") -}}
+          {{- $mergedPages = $mergedPages | append (dict "pagePath" . "pubDate" .Params.publishdate) -}}
+        {{- end -}}
+      {{- end -}}
+      {{/* Make a new array and rearrange the data based on publish date */}}
+      {{- $rearrangedPages := slice -}}
+      {{- range sort $mergedPages "pubDate" "desc" -}}
+        {{- $rearrangedPages = $rearrangedPages | append .pagePath -}}
+      {{- end -}}
+      {{/* Set $pages to the rearranged structure */}}
+      {{- $pages = $rearrangedPages -}}
       {{- range first 5 $pages -}}
         <article class="mbl">
           <header class="flex flex-dir-col-rev">
@@ -35,9 +50,7 @@
         </article>
       {{- end -}}
     </div>
-
   </div>
-
   {{- if (gt (len $pages) 5) -}}
   <details class="mb-disclosure">
     <summary class="pam maxw32r bg-gray1">Older updates</summary>
