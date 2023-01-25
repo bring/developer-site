@@ -34,8 +34,8 @@ documentation:
   - title: Shipment API Instructions
     content: |
       A submission to Shipment API must have a ShipmentType of one of the following
-      - [Instruction](/api/shipment/#create-shipment)
-      - [Booking](/api/shipment/#create-shipment-booking)
+      - [Instruction](/api/shipment/#create-shipment-post)
+      - [Booking](/api/shipment/#create-shipment-booking-post)
       - Healthcheck
 
   - title: HealthCheck
@@ -207,4 +207,7 @@ documentation:
       - Update
       - Replace
       - Delete
+
+oas: /data/api_shipment.json
+
 ---

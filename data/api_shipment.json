@@ -1,0 +1,2920 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Shipment API",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://bapi.bring.com/shipment"
+    }
+  ],
+  "paths": {
+    "/sendshipment?shipmentId={createShipmentId}&packageIds={createPackageId}": {
+      "post": {
+        "summary": "Create shipment",
+        "description": "<p>Sends a shipment consisting of one consignment, that must include at least one package, from one sender to one receiver.</p><p>The <code>ShipmentType</code> must be <code>Instruction</code> and must include a Shipment Header.</p><p>A Senders reference must be included and must have a value.</p><p>The LM Service Codes, in the Shipping Guide, must consist of valid <a href=\"/api/shipment/#unit-codes\">Unit Codes</a>.</p><p>A valid combination of an additional party, with party type <code>TransportCompany</code> and a valid Transport company code as the <code>partyId</code> value and an optional <code>subPartyId</code> and service, is required. In addition there might be several value added services that can be added. Please refer to <a href=\"https://bapiqa.bring.com/Shipment/Documentation/GetServiceAndVAS?responseType=XML\">valid product codes/services and VASes</a>.</p><p>If an included product requires an additional service, that additional service must be included.</p><p>Value Added Service Codes may only feature once in any Shipment.</p><p>The following Additional Services must be accompanied by the following additions</p><ul><li>1000 - must include a Cash on Delivery entry</li><li>1036 - must include a <code>SubClass</code> of <code>DeliveryParty</code> entry</li><li>1134 - <code>Receiver.ContactName</code> must have a value</li><li>1142 - <code>Receiver.ContactName</code> and <code>Receiver.MobilePhone</code> must both have a value</li><li>1150 - <code>Receiver.Email</code> must have a value</li><li>1245 - must include a <code>DangerousGoods</code> entry</li></ul><p>Conversely</p><ul><li>When Cash on Delivery is specified, it must be a valid <code>CashOnDelivery</code> and an <code>AdditionalService</code> with value 1000 must be included</li><li>When a Goods Item is specified, it must be valid <code>GoodsItem</code></li><li>When a <code>DangerousGoods</code> is specified, <code>AdditionalService</code> must be 1245</li><li>The <code>ProductAndService</code> specified must have a valid <code>TariffReference</code></li><li>The Sender specified must be a valid <code>GeneralParty</code></li><li>The Receiver specified, must be a valid <code>GeneralParty</code></li><li>When an <code>AdditionalParty</code> is specified, it must be a valid <code>AdditionalParty</code> and must include a <code>subClass</code> of <code>TransportCompany</code></li></ul><p>If requested through the query parameters, the service will create a shipment ID (for the whole shipment) in addition to package IDs for each package. The package IDs will be returned in the order of the packages (i.e. package 1 in the input will have package ID 1 in returned ar</p><p>The structure and most of the content will be validated.</p>",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "description": "Specify request format (application/json, application/xml)",
+            "schema": {
+              "enum": ["application/json", "application/xml"],
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "description": "Specify response format (application/json, application/xml)",
+            "schema": {
+              "enum": ["application/json", "application/xml"],
+              "type": "string"
+            }
+          },
+          {
+            "name": "createShipmentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "If \"true\" the API will assign a shipment ID for you and return it in the response."
+          },
+          {
+            "name": "createPackageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "If \"true\" the API will assign all package IDs for you and return them in the response."
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/xml": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateShipmentRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Shipment"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ShipmentHeaders"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DateAndTimes"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Sender"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Receiver"
+                  },
+                  {
+                    "$ref": "#/components/schemas/AdditionalParty"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ProductAndService"
+                  },
+                  {
+                    "$ref": "#/components/schemas/CustomsClearance"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DeliveryTerms"
+                  },
+                  {
+                    "$ref": "#/components/schemas/CashOnDelivery"
+                  },
+                  {
+                    "$ref": "#/components/schemas/GoodsItem"
+                  },
+                  {
+                    "$ref": "#/components/schemas/MonetaryAccount"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DangerousGoods"
+                  }
+                ],
+                "type": "object"
+              },
+              "examples": {
+                "validRequest": {
+                  "description": "Valid request",
+                  "$ref": "#/components/examples/validRequestXml"
+                },
+                "expressCourier": {
+                  "description": "Book a Bring Express Courier shipment",
+                  "$ref": "#/components/examples/validRequestXml"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateShipmentRequest"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Shipment"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ShipmentHeaders"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DateAndTimes"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Sender"
+                  },
+                  {
+                    "$ref": "#/components/schemas/Receiver"
+                  },
+                  {
+                    "$ref": "#/components/schemas/AdditionalParty"
+                  },
+                  {
+                    "$ref": "#/components/schemas/ProductAndService"
+                  },
+                  {
+                    "$ref": "#/components/schemas/CustomsClearance"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DeliveryTerms"
+                  },
+                  {
+                    "$ref": "#/components/schemas/CashOnDelivery"
+                  },
+                  {
+                    "$ref": "#/components/schemas/GoodsItem"
+                  },
+                  {
+                    "$ref": "#/components/schemas/MonetaryAccount"
+                  },
+                  {
+                    "$ref": "#/components/schemas/DangerousGoods"
+                  }
+                ],
+                "type": "object"
+              },
+              "examples": {
+                "validRequest": {
+                  "description": "Valid request",
+                  "$ref": "#/components/examples/validRequest"
+                },
+                "expressCourier": {
+                  "description": "Book a Bring Express Courier shipment",
+                  "$ref": "#/components/examples/validRequest"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful delivery and package/shipment IDs if requested",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Valid shipment": {
+                    "$ref": "#/components/examples/validShipment"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/CreateShipmentResponse"
+                }
+              },
+              "application/xml": {
+                "examples": {
+                  "Valid shipment": {
+                    "$ref": "#/components/examples/validShipmentXml"
+                  }
+                },
+                "schema": {
+                  "$ref": "#/components/schemas/CreateShipmentResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error in validation of request or error in data structure of request"
+          },
+          "417": {
+            "description": "Missing authentication headers"
+          },
+          "500": {
+            "description": "Unknown error. Error sending data to destination."
+          }
+        }
+      }
+    },
+    "/sendbooking?shipmentId={createShipmentId}&packageIds={createPackageId}": {
+      "post": {
+        "summary": "Create shipment booking",
+        "description": "<p>Sends a booking request consisting of a Shipment with a Goods Item attached. The Goods Item must contain a Package.</p><p>A consignment value must not be included as this would imply that the shipment itself, was to be created.</p>",
+        "operationId": "POST_sendbooking?shipmentId=createShipmentId&packageIds=createPackageId",
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "description": "Specify request format (application/json, application/xml)",
+            "schema": {
+              "enum": ["application/json", "application/xml"],
+              "type": "string"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "description": "Specify response format (application/json, application/xml)",
+            "schema": {
+              "enum": ["application/json", "application/xml"],
+              "type": "string"
+            }
+          },
+          {
+            "name": "createShipmentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "If \"true\" the API will assign a shipment ID for you and return it in the response."
+          },
+          {
+            "name": "createPackageId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "If \"true\" the API will assign all package IDs for you and return them in the response."
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/xml": {
+              "examples": {
+                "validRequest": {
+                  "description": "Valid request",
+                  "$ref": "#/components/examples/validRequestBookingXml"
+                }
+              }
+            },
+            "application/json": {
+              "examples": {
+                "validRequest": {
+                  "description": "Valid request",
+                  "$ref": "#/components/examples/validRequestBooking"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Confirmation of successful delivery and package/shipment IDs if requested"
+          },
+          "400": {
+            "description": "Error in validation of request or error in data structure of request"
+          },
+          "417": {
+            "description": "Missing authentication headers"
+          },
+          "500": {
+            "description": "Unknown error. Error sending data to destination."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Address": {
+        "description": "An address",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Senders address",
+            "type": "string"
+          },
+          "postalCode": {
+            "pattern": "[0-9]{4}",
+            "description": "Postal code. Must be a valid Norwegian postal code.",
+            "example": "0150",
+            "type": "string"
+          }
+        },
+        "required": ["name", "streetAddress", "postalCode"]
+      },
+      "AddressWithPostalName": {
+        "description": "An address",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Senders address",
+            "type": "string"
+          },
+          "postalCode": {
+            "pattern": "[0-9]{4}",
+            "description": "Senders postal code. Must be a valid Norwegian postal code.",
+            "example": "0150",
+            "type": "string"
+          },
+          "postalName": {
+            "description": "Name of the postalCode",
+            "type": "string"
+          }
+        },
+        "required": ["name", "streetAddress", "postalCode", "postalName"]
+      },
+      "Order": {
+        "description": "An order to place in Mybring.",
+        "type": "object",
+        "properties": {
+          "customerNumber": {
+            "description": "API customer number for which to place the order.",
+            "type": "string"
+          },
+          "senderName": {
+            "description": "Sender's name.",
+            "example": "Min Bedrift",
+            "type": "string"
+          },
+          "senderEmail": {
+            "description": "Sender's email address. Defaults to the user's email address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Sender's postal code. Must be a valid Norwegian postal code.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Sender's street address.",
+            "type": "string"
+          },
+          "reference": {
+            "description": "A reference for the shipment that will be shown on the invoice.",
+            "type": "string"
+          },
+          "testIndicator": {
+            "description": "Set to true when testing API implementation.",
+            "type": "boolean"
+          },
+          "returnAddress": {
+            "description": "An optional return address. If set will override the return address in generated label.",
+            "$ref": "#/components/schemas/Address"
+          },
+          "packages": {
+            "minItems": 1,
+            "maxItems": 500,
+            "description": "The packages to send in this shipment.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Package"
+            }
+          }
+        },
+        "required": [
+          "customerNumber",
+          "senderName",
+          "postalCode",
+          "streetAddress",
+          "packages"
+        ]
+      },
+      "Package": {
+        "description": "A single package in a shipment.",
+        "type": "object",
+        "properties": {
+          "GrossWeight": {
+            "description": "Gross weight of the package.",
+            "$ref": "#/components/schemas/ccWeight"
+          },
+          "GrossVolume": {
+            "description": "Gross volume of the package.",
+            "$ref": "#/components/schemas/ccVolume"
+          },
+          "Dimensions": {
+            "description": "Dimension of the package.",
+            "$ref": "#/components/schemas/DimensionsTYPE"
+          },
+          "Insurance": {
+            "description": "A valid Norwegian postal code.",
+            "$ref": "#/components/schemas/PackageInsurance"
+          },
+          "packageId": {
+            "description": "PackageId, can be inserted by the API.",
+            "example": "370438101412578910",
+            "type": "string"
+          }
+        },
+        "required": ["GrossWeight", "packageId"]
+      },
+      "SuccessfulOrder": {
+        "title": "Successful Order",
+        "description": "A successfully placed order that contains links to labels and waybill.",
+        "properties": {
+          "testIndicator": {
+            "description": "Whether the placed order had the testIndicator flag set or not.",
+            "type": "boolean"
+          },
+          "id": {
+            "description": "The ID of the order that was placed.",
+            "type": "number"
+          },
+          "customerNumber": {
+            "description": "The API customer number for which the order was placed.",
+            "type": "string"
+          },
+          "customerName": {
+            "description": "The name of the customer for which the order was placed.",
+            "type": "string"
+          },
+          "customerOrganizationNumber": {
+            "description": "The organization number of the customer for which the order was placed.",
+            "type": "string"
+          },
+          "senderName": {
+            "description": "Sender's name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Sender's street address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Sender's postal code.",
+            "type": "string"
+          },
+          "postalPlace": {
+            "description": "The city/place for the postal code.",
+            "type": "string"
+          },
+          "email": {
+            "description": "Sender's email address for the order that was placed.",
+            "type": "string"
+          },
+          "reference": {
+            "description": "A reference for the shipment that will be shown on the invoice.",
+            "type": "string"
+          },
+          "labelUri": {
+            "description": "URL to PDF label(s) for packages ordered without tracking.",
+            "type": "string"
+          },
+          "rfidLabelUri": {
+            "description": "URL to ZPL label(s) for packages ordered with tracking.",
+            "type": "string"
+          },
+          "waybillUri": {
+            "description": "URL to waybill PDF that has to be printed and sent with the shipment.",
+            "type": "string"
+          },
+          "orderNumberReference": {
+            "description": "The order number reference for the placed order. This is the number on the waybill.",
+            "type": "string"
+          },
+          "priceWithoutVat": {
+            "description": "Price of shipment without VAT (MVA).",
+            "type": "number"
+          },
+          "priceWithVat": {
+            "description": "Price of shipment with VAT (MVA).",
+            "type": "number"
+          },
+          "vat": {
+            "description": "How much of the price was VAT (MVA).",
+            "type": "number"
+          },
+          "currency": {
+            "default": "NOK",
+            "description": "The currency for the price.",
+            "type": "string"
+          },
+          "orderTime": {
+            "description": "Timestamp for when the order was placed.",
+            "example": "2017-09-01T14:00:00.000Z",
+            "type": "string",
+            "format": "date-time"
+          },
+          "returnAddress": {
+            "description": "Return address for the order if one is set",
+            "$ref": "#/components/schemas/AddressWithPostalName"
+          },
+          "packages": {
+            "minItems": 1,
+            "description": "Packages in this shipment.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrderedPackage"
+            }
+          }
+        },
+        "required": [
+          "testIndicator",
+          "id",
+          "customerNumber",
+          "customerName",
+          "customerOrganizationNumber",
+          "senderName",
+          "streetAddress",
+          "postalCode",
+          "postalPlace",
+          "email",
+          "reference",
+          "labelUri",
+          "rfidLabelUri",
+          "waybillUri",
+          "orderNumberReference",
+          "priceWithoutVat",
+          "priceWithVat",
+          "vat",
+          "currency",
+          "orderTime",
+          "packages"
+        ],
+        "x-annotation-hideRequired": true,
+        "type": "object"
+      },
+      "OrderedPackage": {
+        "title": "Ordered Package",
+        "description": "A single package in a successfully ordered shipment.",
+        "properties": {
+          "rfid": {
+            "description": "Whether to [tracking for the package](#tracking-with-rfid) was activated.",
+            "type": "boolean"
+          },
+          "recipientName": {
+            "description": "Recipient name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Recipient's street address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Recipient's postal code.",
+            "type": "string"
+          },
+          "postalPlace": {
+            "description": "The city/place for the postal code.",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "pattern": "\\+[0-9 ]+",
+            "description": "Recipient's phone number.",
+            "type": "string"
+          },
+          "email": {
+            "description": "Recipient's email address.",
+            "type": "string"
+          },
+          "weight": {
+            "maximum": 2000,
+            "description": "Package weight in grams.",
+            "type": "integer"
+          },
+          "shipmentNumber": {
+            "description": "The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.",
+            "type": "string"
+          },
+          "packageNumber": {
+            "description": "The package number for this package. This goes on the label.",
+            "type": "string"
+          },
+          "agreementNumber": {
+            "description": "Whether the customer has an agreement price for this package.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "rfid",
+          "recipientName",
+          "streetAddress",
+          "postalCode",
+          "postalPlace",
+          "phoneNumber",
+          "email",
+          "weight",
+          "shipmentNumber",
+          "packageNumber",
+          "agreementNumber"
+        ],
+        "x-annotation-hideRequired": true,
+        "type": "object"
+      },
+      "ValidatedOrder": {
+        "title": "Validated Order",
+        "description": "A valid order that can be placed.",
+        "properties": {
+          "testIndicator": {
+            "description": "Whether the validated order had the testIndicator flag set or not.",
+            "type": "boolean"
+          },
+          "customerNumber": {
+            "description": "The API customer number for the validated order.",
+            "type": "string"
+          },
+          "customerName": {
+            "description": "The name of the customer for the validated order.",
+            "type": "string"
+          },
+          "customerOrganizationNumber": {
+            "description": "The organization number of the customer for the validated order.",
+            "type": "string"
+          },
+          "senderName": {
+            "description": "The sender's name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "The sender's street address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "The sender's postal code.",
+            "type": "string"
+          },
+          "postalPlace": {
+            "description": "The city/place for the postal code.",
+            "type": "string"
+          },
+          "email": {
+            "description": "The sender's email address.",
+            "type": "string"
+          },
+          "reference": {
+            "description": "A reference for the shipment that will be shown on the invoice.",
+            "type": "string"
+          },
+          "priceWithoutVat": {
+            "description": "Calculated price without VAT (MVA).",
+            "type": "number"
+          },
+          "priceWithVat": {
+            "description": "Calulated price with VAT (MVA).",
+            "type": "number"
+          },
+          "vat": {
+            "description": "Calculated VAT (MVA).",
+            "type": "number"
+          },
+          "currency": {
+            "description": "The price's currency.",
+            "type": "string"
+          },
+          "orderTime": {
+            "description": "Timestamp for when the order was validated.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "returnAddress": {
+            "description": "Return address for the order if one is set",
+            "$ref": "#/components/schemas/AddressWithPostalName"
+          },
+          "packages": {
+            "minItems": 1,
+            "description": "Packages in this validated shipment. The packages in the response will correspond to same order as it was in the request to make it easier for clients to do any mapping if needed.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidatedPackage"
+            }
+          }
+        },
+        "required": [
+          "testIndicator",
+          "customerNumber",
+          "customerName",
+          "customerOrganizationNumber",
+          "senderName",
+          "streetAddress",
+          "postalCode",
+          "postalPlace",
+          "email",
+          "reference",
+          "priceWithoutVat",
+          "priceWithVat",
+          "vat",
+          "currency",
+          "orderTime",
+          "packages"
+        ],
+        "x-annotation-hideRequired": true,
+        "type": "object"
+      },
+      "ValidatedPackage": {
+        "title": "Validated Package",
+        "description": "A single, valid package in a valid shipment.",
+        "properties": {
+          "rfid": {
+            "description": "Whether to [tracking with RFID](#tracking-with-rfid) was activated for the package.",
+            "type": "boolean"
+          },
+          "recipientName": {
+            "description": "Recipient's name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Recipient's email address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Recipient's postal code.",
+            "type": "string"
+          },
+          "postalPlace": {
+            "description": "The city/place for the postal code.",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "description": "Recipient's phone number.",
+            "type": "string"
+          },
+          "email": {
+            "description": "Recipient's email address.",
+            "type": "string"
+          },
+          "weight": {
+            "description": "Package weight in grams.",
+            "type": "integer"
+          },
+          "agreementNumber": {
+            "description": "Whether the customer has an agreement price for this package.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "rfid",
+          "recipientName",
+          "streetAddress",
+          "postalCode",
+          "postalPlace",
+          "phoneNumber",
+          "email",
+          "weight",
+          "agreementNumber"
+        ],
+        "x-annotation-hideRequired": true,
+        "type": "object"
+      },
+      "OrderRequest": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "JSON-API type.",
+                "enum": ["orders"],
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Order properties.",
+                "$ref": "#/components/schemas/Order"
+              }
+            },
+            "required": ["type", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideInDocumentation": true
+      },
+      "SuccessfulOrderResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "JSON-API type.",
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Order properties.",
+                "$ref": "#/components/schemas/SuccessfulOrder"
+              }
+            },
+            "required": ["type", "id", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideRequired": true,
+        "x-annotation-hideInDocumentation": true
+      },
+      "ValidatedOrderResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "pattern": "order",
+                "description": "JSON-API type.",
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Order properties.",
+                "$ref": "#/components/schemas/ValidatedOrder"
+              }
+            },
+            "required": ["type", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideRequired": true,
+        "x-annotation-hideInDocumentation": true
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "description": "List of errors.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorObject"
+            }
+          }
+        },
+        "required": ["errors"],
+        "x-annotation-hideRequired": true,
+        "x-annotation-hideInDocumentation": true
+      },
+      "ErrorObject": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "Machine-readable description of error.",
+            "type": "string"
+          },
+          "title": {
+            "description": "Human-readable description of error.",
+            "type": "string"
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "pointer": {
+                "description": "A JSON pointer to the invalid field.",
+                "type": "string"
+              }
+            },
+            "required": ["pointer"]
+          }
+        },
+        "required": ["code", "title", "source"],
+        "x-annotation-hideRequired": true,
+        "x-annotation-hideInDocumentation": true
+      },
+      "PackageWithNumbers": {
+        "title": "Package Details",
+        "description": "Package Details with OrderID",
+        "properties": {
+          "rfid": {
+            "description": "Whether to activate [tracking with RFID](#tracking-with-rfid) for the package.",
+            "type": "boolean"
+          },
+          "recipientName": {
+            "description": "Recipient name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Recipient's Street address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "A valid Norwegian postal code.",
+            "type": "string"
+          },
+          "postalPlace": {
+            "description": "The city/place for the postal code.",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "pattern": "\\+[0-9 ]+",
+            "description": "Recipient's phone number, including country code.",
+            "example": "+4700000000",
+            "type": "string"
+          },
+          "email": {
+            "description": "Recipient's email address.",
+            "type": "string"
+          },
+          "weight": {
+            "maximum": 2000,
+            "description": "Package weight in grams.",
+            "type": "integer"
+          },
+          "shipmentNumber": {
+            "description": "The shipment number for this package. A package in a PIP shipment will have both a shipment number and a package number.",
+            "type": "string"
+          },
+          "packageNumber": {
+            "description": "The package number for this package. This goes on the label.",
+            "type": "string"
+          },
+          "priceType": {
+            "description": "Whether the Price is Agreement or List",
+            "enum": ["AGREEMENT_PRICE", "LIST_PRICE"],
+            "type": "string"
+          }
+        },
+        "required": [
+          "rfid",
+          "recipientName",
+          "streetAddress",
+          "postalCode",
+          "postalPlace",
+          "phoneNumber",
+          "email",
+          "weight",
+          "shipmentNumber",
+          "packageNumber",
+          "priceType"
+        ],
+        "type": "object"
+      },
+      "OrderWithLabelResponse": {
+        "title": "Successful Order",
+        "description": "A successfully label generation that contains links to labels.",
+        "properties": {
+          "reference": {
+            "description": "A reference for the shipment that will be shown on the invoice.",
+            "type": "string"
+          },
+          "senderName": {
+            "description": "Sender's name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Sender's street address.",
+            "type": "string"
+          },
+          "email": {
+            "description": "Sender's email address for the order that was placed.",
+            "type": "string"
+          },
+          "labelUri": {
+            "description": "URL to PDF label(s) for packages ordered without tracking.",
+            "type": "string"
+          },
+          "rfidLabelUri": {
+            "description": "URL to ZPL label(s) for packages ordered with tracking.",
+            "type": "string"
+          },
+          "orderTime": {
+            "description": "Timestamp for when the order was placed.",
+            "example": "2017-09-01T14:00:00.000Z",
+            "type": "string",
+            "format": "date-time"
+          },
+          "postalCode": {
+            "description": "Sender's postal code.",
+            "type": "string"
+          },
+          "postalPlace": {
+            "description": "The city/place for the postal code.",
+            "type": "string"
+          },
+          "customerNumber": {
+            "description": "The API customer number for the validated order.",
+            "type": "string"
+          },
+          "customerName": {
+            "description": "The API customer name for which the order was placed.",
+            "type": "string"
+          },
+          "customerOrganizationNumber": {
+            "description": "The organization number of the customer for which the order was placed.",
+            "type": "string"
+          },
+          "testIndicator": {
+            "description": "Whether the placed order had the testIndicator flag set or not.",
+            "type": "boolean"
+          },
+          "packages": {
+            "minItems": 1,
+            "description": "Packages Number for the shipment.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PackageWithNumbers"
+            }
+          }
+        },
+        "required": [
+          "reference",
+          "senderName",
+          "streetAddress",
+          "email",
+          "labelUri",
+          "rfidLabelUri",
+          "orderTime",
+          "postalCode",
+          "postalPlace",
+          "customerNumber",
+          "customerName",
+          "customerOrganizationNumber",
+          "testIndicator",
+          "packages"
+        ],
+        "x-annotation-hideRequired": true,
+        "type": "object"
+      },
+      "SuccessfulLabelGenerationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "JSON-API type.",
+                "enum": ["labels"],
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Order properties.",
+                "$ref": "#/components/schemas/OrderWithLabelResponse"
+              }
+            },
+            "required": ["type", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideRequired": true,
+        "x-annotation-hideInDocumentation": true
+      },
+      "LabelRequest": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "JSON-API type.",
+                "enum": ["labels"],
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Order properties.",
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              }
+            },
+            "required": ["type", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideInDocumentation": true
+      },
+      "CreateOrderRequest": {
+        "title": "Create Order Request",
+        "description": "It creates the Request for Label Generation.",
+        "properties": {
+          "customerNumber": {
+            "description": "The API customer number for the validated order.",
+            "type": "string"
+          },
+          "senderName": {
+            "description": "The sender's name.",
+            "type": "string"
+          },
+          "senderEmail": {
+            "description": "Sender's email address. Defaults to the user's email address.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Sender's postal code. Must be a valid Norwegian postal code.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Recipient's email address.",
+            "type": "string"
+          },
+          "reference": {
+            "description": "A reference for the shipment that will be shown on the invoice.",
+            "type": "string"
+          },
+          "testIndicator": {
+            "description": "Whether the validated order had the testIndicator flag set or not.",
+            "type": "boolean"
+          },
+          "packages": {
+            "minItems": 1,
+            "maxItems": 500,
+            "description": "The packages to send in this shipment. Response will have packages in same order as requested to make it easier for clients to do any mapping if needed.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Package"
+            }
+          }
+        },
+        "required": [
+          "customerNumber",
+          "senderName",
+          "postalCode",
+          "streetAddress",
+          "testIndicator",
+          "packages"
+        ],
+        "type": "object"
+      },
+      "LabelOrderRequest": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "JSON-API type.",
+                "enum": ["label_orders"],
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Create Order properties.",
+                "$ref": "#/components/schemas/CreateLabelOrderRequest"
+              }
+            },
+            "required": ["type", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideInDocumentation": true
+      },
+      "CreateLabelOrderRequest": {
+        "title": "Create Label Order Request",
+        "description": "Create Label Order Request",
+        "properties": {
+          "customerNumber": {
+            "description": "The API customer number.",
+            "type": "string"
+          },
+          "packageNumbers": {
+            "minItems": 1,
+            "maxItems": 500,
+            "description": "List of Package Numbers.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["customerNumber", "packageNumbers"],
+        "type": "object"
+      },
+      "OrderWithIdAndEdiMessage": {
+        "title": "Reponse of Create Order Request",
+        "description": "Reponse of Create Order Request",
+        "properties": {
+          "id": {
+            "description": "The ID of the order that was placed.",
+            "type": "number"
+          },
+          "customerNumber": {
+            "description": "The API customer number for the validated order.",
+            "type": "string"
+          },
+          "customerName": {
+            "description": "The API customer name for which the order was placed.",
+            "type": "string"
+          },
+          "customerOrganizationNumber": {
+            "description": "The organization number of the customer for which the order was placed.",
+            "type": "string"
+          },
+          "senderName": {
+            "description": "Sender's name.",
+            "type": "string"
+          },
+          "streetAddress": {
+            "description": "Sender's street address.",
+            "type": "string"
+          },
+          "email": {
+            "description": "Sender's email address for the order that was placed.",
+            "type": "string"
+          },
+          "postalCode": {
+            "description": "Sender's postal code.",
+            "type": "string"
+          },
+          "reference": {
+            "description": "A reference for the shipment that will be shown on the invoice.",
+            "type": "string"
+          },
+          "labelUri": {
+            "description": "URL to PDF label(s) for packages ordered without tracking.",
+            "type": "string"
+          },
+          "rfidLabelUri": {
+            "description": "URL to ZPL label(s) for packages ordered with tracking.",
+            "type": "string"
+          },
+          "waybillUri": {
+            "description": "URL to waybill PDF that has to be printed and sent with the shipment.",
+            "type": "string"
+          },
+          "orderNumberReference": {
+            "description": "The order number reference for the placed order. This is the number on the waybill.",
+            "type": "string"
+          },
+          "priceWithoutVat": {
+            "description": "Price of shipment without VAT (MVA).",
+            "type": "number"
+          },
+          "priceWithVat": {
+            "description": "Price of shipment with VAT (MVA).",
+            "type": "number"
+          },
+          "vat": {
+            "description": "How much of the price was VAT (MVA).",
+            "type": "number"
+          },
+          "currency": {
+            "default": "NOK",
+            "description": "The currency for the price.",
+            "type": "string"
+          },
+          "orderTime": {
+            "description": "Timestamp for when the order was placed.",
+            "example": "2017-09-01T14:00:00.000Z",
+            "type": "string",
+            "format": "date-time"
+          },
+          "returnAddress": {
+            "description": "Return address for the order if one is set",
+            "$ref": "#/components/schemas/AddressWithPostalName"
+          },
+          "packages": {
+            "minItems": 1,
+            "description": "Packages Number for the shipment.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PackageWithNumbers"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "customerNumber",
+          "customerName",
+          "customerOrganizationNumber",
+          "senderName",
+          "streetAddress",
+          "email",
+          "postalCode",
+          "reference",
+          "labelUri",
+          "rfidLabelUri",
+          "waybillUri",
+          "orderNumberReference",
+          "priceWithoutVat",
+          "priceWithVat",
+          "vat",
+          "currency",
+          "orderTime",
+          "packages"
+        ],
+        "type": "object"
+      },
+      "SuccessfulLabelOrderResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "description": "JSON-API data object.",
+            "type": "object",
+            "properties": {
+              "type": {
+                "description": "JSON-API type.",
+                "enum": ["order"],
+                "type": "string"
+              },
+              "id": {
+                "description": "Order Id",
+                "type": "string"
+              },
+              "attributes": {
+                "description": "Label Order properties.",
+                "$ref": "#/components/schemas/OrderWithIdAndEdiMessage"
+              }
+            },
+            "required": ["type", "id", "attributes"]
+          }
+        },
+        "required": ["data"],
+        "x-annotation-hideRequired": true,
+        "x-annotation-hideInDocumentation": true
+      },
+      "CreateShipmentRequest": {
+        "type": "object",
+        "properties": {
+          "RequestVersion": {
+            "description": "Request version to use",
+            "example": 1,
+            "type": "number"
+          },
+          "RequestDate": {
+            "description": "Date and time for when the request was created",
+            "example": "2018-11-22T08:58:52Z",
+            "type": "string",
+            "format": "date-time"
+          },
+          "Shipment": {
+            "$ref": "#/components/schemas/Shipment"
+          }
+        },
+        "required": ["RequestVersion", "RequestDate", "Shipment"]
+      },
+      "Shipment": {
+        "type": "object",
+        "description": "Structure for the shipment",
+        "properties": {
+          "updateIndicator": {
+            "description": "Is this request an original, update or a deletion",
+            "example": "Original",
+            "enum": ["Original", "Update", "Replace", "Delete"],
+            "type": "string"
+          },
+          "shipmentType": {
+            "description": "Type of shipment",
+            "example": "Instruction",
+            "enum": ["Instruction", "Booking", "Healthcheck"],
+            "type": "string"
+          },
+          "ShipmentHeaders": {
+            "$ref": "#/components/schemas/ShipmentHeaders"
+          },
+          "DateAndTimes": {
+            "description": "Date and times for the message, repeatable structure. Several dates are required",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "Sender": {
+            "description": "Structure to hold sender information",
+            "type": "object"
+          },
+          "Receiver": {
+            "$ref": "#/components/schemas/Receiver"
+          },
+          "AdditionalParty": {
+            "description": "Additionalparties for the shipment, repeatable. Refer to detailed instructions",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "ProductAndService": {
+            "$ref": "#/components/schemas/ProductAndService"
+          },
+          "CustomsClearance": {
+            "$ref": "#/components/schemas/CustomsClearance"
+          },
+          "DeliveryTerms": {
+            "description": "Terms of delivery",
+            "type": "object"
+          },
+          "CashOnDelivery": {
+            "description": "Cash on delivery for the shipment",
+            "type": "object"
+          },
+          "GoodsItem": {
+            "description": "Information about the goods being shipped",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "updateIndicator",
+          "shipmentType",
+          "ShipmentHeaders",
+          "DateAndTimes",
+          "Receiver",
+          "AdditionalParty",
+          "ProductAndService",
+          "CustomsClearance",
+          "GoodsItem"
+        ]
+      },
+      "ShipmentHeaders": {
+        "description": "Structure that handles information for the whole shipment",
+        "type": "object",
+        "properties": {
+          "SendersReference": {
+            "description": "Senders reference for the shipment",
+            "example": "SOA-123222",
+            "type": "string"
+          },
+          "ReceiversReference": {
+            "description": "Receivers reference for the shipment",
+            "example": "SOA-123222",
+            "type": "string"
+          },
+          "NumberOfPackages": {
+            "description": "Total number of packages for the whole shipment across all goodsitems. Must be equal to the number of GoodsItems in the message.",
+            "example": "3",
+            "type": "string"
+          },
+          "AdditionalReference": {
+            "description": "Additional references for the shipment as indicated by referenceType",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "FreeText": {
+            "description": "Freetext elements",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "GrossWeight": {
+            "description": "Gross weight for the whole shipment",
+            "type": "object"
+          },
+          "GrossVolume": {
+            "description": "Gross volume for the whole shipment",
+            "type": "object"
+          },
+          "Dimensions": {
+            "description": "Dimensions required for the whole shipment",
+            "type": "object"
+          },
+          "LoadingMetres": {
+            "description": "How many metres of loading space required of a truck's length",
+            "example": 12,
+            "type": "number"
+          },
+          "PalletFootPrints": {
+            "description": "How many pallet footprints are needed for the shipment",
+            "example": 3,
+            "type": "integer"
+          },
+          "HazardPoints": {
+            "description": "Sum of hazard points for the shipment",
+            "example": 22,
+            "type": "integer"
+          },
+          "ExchangableEquipment": {
+            "description": "Equipment that can be reused, ie. pallets",
+            "type": "object"
+          },
+          "shipmentId": {
+            "description": "Id for the whole shipment, can be retrieved by the API. ShipmentId must be of length 17 for GS1, 10 for SIS or 11 for UPS.",
+            "example": "70438101412575352",
+            "type": "string"
+          }
+        },
+        "required": ["SendersReference", "NumberOfPackages", "shipmentId"]
+      },
+      "DateAndTimes": {
+        "type": "object",
+        "properties": {
+          "subClass": {
+            "description": "Type of datetime",
+            "example": "DocumentDate",
+            "enum": [
+              "DocumentDate",
+              "PickupRequested",
+              "PickupEarliest",
+              "PickupLatest",
+              "DeliveryRequested",
+              "DeliveryEarliest",
+              "DeliveryLatest"
+            ],
+            "type": "string"
+          },
+          "DateTime": {
+            "description": "Date and Time (for non DocumentDate, date cannot be in the past)",
+            "example": "2018-11-22T08:58:52Z",
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": ["subClass", "DateTime"]
+      },
+      "Sender": {
+        "type": "object",
+        "properties": {
+          "partyId": {
+            "description": "Identifier for the party (compulsory if Receiver partyId and additionalParty of 'FreightPayer' not specified).",
+            "example": "BEX",
+            "type": "string"
+          },
+          "subPartyId": {
+            "description": "Further identification of the party",
+            "example": "GLW",
+            "type": "string"
+          },
+          "Name": {
+            "description": "Party name (compulsory if DangerousGoods are specified)",
+            "example": "Bring",
+            "type": "string"
+          },
+          "Address": {
+            "description": "Party address",
+            "$ref": "#/components/schemas/AddressTYPE"
+          },
+          "ContactName": {
+            "description": "Contact name for the party",
+            "example": "Atle Thorstensen",
+            "type": "string"
+          },
+          "Phone": {
+            "description": "Phone",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "MobilePhone": {
+            "description": "Mobile phone",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "Email": {
+            "description": "Email",
+            "example": "mail@mail.com",
+            "type": "string"
+          },
+          "Fax": {
+            "description": "Fax",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "Reference": {
+            "description": "Reference related to the party, can be used for account number of pallet system in Sweden for instance.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceTYPE"
+            }
+          }
+        },
+        "required": ["partyId"]
+      },
+      "Receiver": {
+        "description": "Structure to hold receiver information",
+        "type": "object",
+        "properties": {
+          "partyId": {
+            "description": "Identifier for the party (compulsory if Sender partyId and additionalParty of 'FreightPayer' not specified).",
+            "example": "BEX",
+            "type": "string"
+          },
+          "subPartyId": {
+            "description": "Further identification of the party",
+            "example": "GLW",
+            "type": "string"
+          },
+          "Name": {
+            "description": "Party name",
+            "example": "Bring",
+            "type": "string"
+          },
+          "Address": {
+            "description": "Party address",
+            "$ref": "#/components/schemas/AddressTYPE"
+          },
+          "ContactName": {
+            "description": "Contact name for the party",
+            "example": "Atle Thorstensen",
+            "type": "string"
+          },
+          "Phone": {
+            "description": "Phone",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "MobilePhone": {
+            "description": "Mobile phone",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "Email": {
+            "description": "Email",
+            "example": "mail@mail.com",
+            "type": "string"
+          },
+          "Fax": {
+            "description": "Fax",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "Reference": {
+            "description": "Reference related to the party, can be used for account number of pallet system in Sweden for instance.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceTYPE"
+            }
+          }
+        }
+      },
+      "AdditionalParty": {
+        "type": "object",
+        "properties": {
+          "subClass": {
+            "description": "Type of Party (at least one subClass must be 'TansportCompany')",
+            "example": "DeliveryParty",
+            "enum": [
+              "DespatchParty",
+              "DeliveryParty",
+              "OrderingParty",
+              "FreightPayer",
+              "CashOnDeliveryPayee",
+              "GoodsReturnParty",
+              "NotifyParty",
+              "TransportCompany"
+            ],
+            "type": "string"
+          },
+          "partyId": {
+            "description": "Identifier for the party",
+            "example": "BEX",
+            "type": "string"
+          },
+          "subPartyId": {
+            "description": "Further identification for the party",
+            "example": "GLW",
+            "type": "string"
+          },
+          "Name": {
+            "description": "Party name",
+            "example": "Rogers antistatiske overledninger",
+            "type": "string"
+          },
+          "Address": {
+            "description": "Party address",
+            "$ref": "#/components/schemas/AddressTYPE"
+          },
+          "ContactName": {
+            "description": "Party contact name",
+            "example": "Ola Nordmann",
+            "type": "string"
+          },
+          "Phone": {
+            "description": "Phone",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "MobilePhone": {
+            "description": "Mobile phone",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "Email": {
+            "description": "Email",
+            "example": "mail@mail.com",
+            "type": "string"
+          },
+          "Fax": {
+            "description": "Fax",
+            "example": "+4712345678",
+            "type": "string"
+          },
+          "Reference": {
+            "description": "Further references related to the party",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReferenceTYPE"
+            }
+          }
+        },
+        "required": ["subClass", "partyId"]
+      },
+      "ProductAndService": {
+        "description": "Product and service codes in addition to value added service structures",
+        "type": "object",
+        "properties": {
+          "ProductCode": {
+            "description": "Productcode for shipment, refer to documentation for valid productcodes for this service",
+            "example": "COURIER_1H",
+            "type": "string"
+          },
+          "AdditionalService": {
+            "description": "Additional service codes",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AdditionalService"
+            }
+          },
+          "TariffReference": {
+            "description": "Additional information about the price of the cargo in connection with the service",
+            "example": "GENERAL_CARGO",
+            "enum": [
+              "COOL_ABERRANT",
+              "GENERAL_CARGO",
+              "MINERAL_WATER",
+              "CHILLED_0_4",
+              "TIRES",
+              "COOL_5_8",
+              "FISH_0_4",
+              "FROZEN_CARGO",
+              "FROST_FREE_CARGO",
+              "EARLY_DELIVERY",
+              "LATE_DELIVERY",
+              "SPECIAL_CARGO",
+              "COOL_0_2"
+            ],
+            "type": "string"
+          },
+          "NatureOfCargo": {
+            "description": "Indicates if the cargo is out of bound of general expected parameters, dangerous goods or out of gauge",
+            "example": "11",
+            "type": "string"
+          }
+        },
+        "required": ["ProductCode"]
+      },
+      "CustomsClearance": {
+        "description": "Customs Clearance Information",
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "(attribute) status of customs clearance",
+            "example": "Import",
+            "type": "string"
+          },
+          "function": {
+            "description": "(attribute) Function descriptor",
+            "example": "Final",
+            "type": "string"
+          },
+          "lineMerge": {
+            "description": "(attribute) Line merge value",
+            "example": "Yes",
+            "type": "string"
+          },
+          "TransactionType": {
+            "description": "Type of transaction",
+            "type": "string"
+          },
+          "Location": {
+            "description": "Location definition",
+            "$ref": "#/components/schemas/Location"
+          },
+          "Utility": {
+            "description": "Utility Definition",
+            "$ref": "#/components/schemas/Utility"
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "subClass": {
+            "description": "(attribute) Location sub class",
+            "example": "BorderPAssing",
+            "type": "string"
+          },
+          "locationId": {
+            "description": "(attribute) Id of location",
+            "example": "NO123456",
+            "type": "string"
+          },
+          "idType": {
+            "description": "(attribute) Type of id",
+            "example": "157",
+            "type": "string"
+          },
+          "LocationName": {
+            "description": "Name of Location",
+            "example": "OSL Gardemoen",
+            "type": "string"
+          }
+        }
+      },
+      "Utility": {
+        "type": "object",
+        "properties": {
+          "usageCode": {
+            "description": "(attribute) Usage of Utility",
+            "example": "BorderPassing",
+            "type": "string"
+          },
+          "UtilityValue": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UtilityValue"
+            }
+          }
+        }
+      },
+      "UtilityValue": {
+        "type": "object",
+        "properties": {
+          "utilityValueType": {
+            "description": "(attribute)",
+            "type": "string"
+          },
+          "utilityValueCode": {
+            "description": "(attribute)",
+            "type": "string"
+          },
+          "UtilityText": {
+            "type": "string"
+          }
+        }
+      },
+      "DeliveryTerms": {
+        "type": "object",
+        "properties": {
+          "ConditionCode": {
+            "description": "The actual terms for the chosen deliverytermstype",
+            "example": "EXW",
+            "type": "string"
+          },
+          "Location": {
+            "description": "The location where the given deliveryterms (condition) applies (to or from given conditioncode.)",
+            "$ref": "#/components/schemas/DeliveryTermsLocation"
+          },
+          "termsType": {
+            "description": "Terms valid for this shipment",
+            "example": "Incoterms",
+            "enum": [
+              "Incoterms",
+              "Freightterms",
+              "Combiterms",
+              "PrePaid",
+              "ThirdParty"
+            ],
+            "type": "string"
+          }
+        },
+        "required": ["ConditionCode", "termsType"]
+      },
+      "CashOnDelivery": {
+        "type": "object",
+        "properties": {
+          "TransactionIdentifier": {
+            "description": "Senders identifier for the transaction",
+            "$ref": "#/components/schemas/CashOnDeliveryTransactionIdentifier"
+          },
+          "Amount": {
+            "description": "Amount expected on delivery",
+            "$ref": "#/components/schemas/ccAmount"
+          },
+          "ControlDigit": {
+            "description": "Control digit for incoming amount when there is specified a KID number (Norwegian only)",
+            "example": 8,
+            "type": "integer"
+          },
+          "DocumentId": {
+            "description": "DocumentIds for Cash on Delivery",
+            "example": ["SA-46789"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "MonetaryAccount": {
+            "description": "Description of where the money should be received",
+            "type": "object"
+          },
+          "codType": {
+            "description": "Type of cash on delivery",
+            "example": "CashOnDelivery",
+            "enum": ["CashOnDelivery", "PrePaid", "CreditCard"],
+            "type": "string"
+          }
+        },
+        "required": ["codType"]
+      },
+      "GoodsItem": {
+        "type": "object",
+        "properties": {
+          "PackageTypeCode": {
+            "description": "Types of cargo, packaging of cargo. Either use supported enumeration or UN/ECE Recommendation 21",
+            "type": "string"
+          },
+          "GoodsDescription": {
+            "description": "Description of goods being shipped",
+            "example": "Contains socks",
+            "type": "string"
+          },
+          "LoadCarrier": {
+            "description": "Transport equipment (pallet, container etc)",
+            "example": "EFP",
+            "type": "string"
+          },
+          "SealId": {
+            "description": "Item sealed for customs etc, number of the seal",
+            "example": "123456",
+            "type": "string"
+          },
+          "Temperature": {
+            "description": "Temperature requirements for goods being shipped",
+            "$ref": "#/components/schemas/GoodsItemTemperature"
+          },
+          "Package": {
+            "description": "List of packages being shipped",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Package"
+            }
+          },
+          "CustomsDetails": {
+            "description": "List of Customs Details for goods being shipped",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomsDetails"
+            }
+          },
+          "DangerousGoods": {
+            "description": "Information about dangerousgoods being shipped",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "PackingDetails": {
+            "description": "List of Package Details for goods being shipped",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PackingDetails"
+            }
+          }
+        },
+        "required": ["PackageTypeCode", "Package"]
+      },
+      "ReferenceTYPE": {
+        "type": "object",
+        "properties": {
+          "ReferenceValue": {
+            "description": "Extra Reference",
+            "example": "4440/0189981/WEJ",
+            "type": "string"
+          },
+          "referenceType": {
+            "description": "ReferenceType",
+            "example": "TRANSPORT_DOCUMENT_NUMBER",
+            "enum": [
+              "DESPATCH_ADVICE_NUMBER (AAK)",
+              "TRANSPORT_DOCUMENT_NUMBER",
+              "CUSTOMS_DECLARATION_NUMBER (ABT)",
+              "ACCOUNT_NUMBER (ADE)",
+              "PROJECT_NUMBER (AEP)",
+              "SECONDARY_CUSTOMS_REFERENCE (AFM)",
+              "TEMPORARY_IMPORTATION_DOCUMENT_NUMBER (AGM)",
+              "SENDERS_REFERENCE (AGO)",
+              "AIR_WAYBILL (AWB)",
+              "BILL_OF_LADING (BM)",
+              "BOOKING_REFERENCE (BN)",
+              "ROAD_CONSIGNMENT_NOTE (CMR)",
+              "SHIPMENT_REFERENCE (SRN)",
+              "TRANSPORT_INSTRUCTION (TIN)",
+              "GOODS_NUMBER (XC)",
+              "MESSAGE_SENDERS_IDENTITY (MS)"
+            ],
+            "type": "string"
+          }
+        },
+        "required": ["ReferenceValue", "referenceType"]
+      },
+      "FreeTextTYPE": {
+        "type": "object",
+        "properties": {
+          "Text": {
+            "description": "Sequence of freetext",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FreeTextTYPEText"
+            }
+          },
+          "usageCode": {
+            "description": "Typeof freetext",
+            "example": "PICKUP_INSTRUCTIONS",
+            "enum": [
+              "PICKUP_INSTRUCTIONS",
+              "DELIVERY_INSTRUCTIONS (DEL)",
+              "CARRIER_INSTRUCTIONS (SIC)"
+            ],
+            "type": "string"
+          }
+        },
+        "required": ["Text", "usageCode"]
+      },
+      "ccWeight": {
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "description": "Unitcode for weight",
+            "example": "KGM",
+            "enum": ["GRM", "KGM"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "Weight Value",
+            "example": 2.33,
+            "type": "number"
+          }
+        },
+        "required": ["unitCode", "Value"]
+      },
+      "ccVolume": {
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "description": "Unitcode for volume measurement",
+            "example": "DMQ",
+            "enum": ["DMQ", "MTQ"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "Value of the volume measurement",
+            "example": 18.22,
+            "type": "number"
+          }
+        },
+        "required": ["unitCode", "Value"]
+      },
+      "DimensionsTYPE": {
+        "type": "object",
+        "properties": {
+          "Height": {
+            "description": "Height of package",
+            "$ref": "#/components/schemas/ccLength"
+          },
+          "Length": {
+            "description": "Length of package",
+            "$ref": "#/components/schemas/ccLength"
+          },
+          "Width": {
+            "description": "Width of package",
+            "$ref": "#/components/schemas/ccLength"
+          }
+        },
+        "required": ["Height", "Length", "Width"]
+      },
+      "PackageInsurance": {
+        "type": "object",
+        "properties": {
+          "InsuranceValue": {
+            "description": "The Amount the package is insured for.",
+            "$ref": "#/components/schemas/PackageInsuranceInsuranceValue"
+          },
+          "GoodsDescription": {
+            "description": "Description of the insured package.",
+            "example": "Gold",
+            "type": "string"
+          },
+          "Email": {
+            "description": "Email related to the insurance information",
+            "type": "string"
+          }
+        },
+        "required": ["InsuranceValue", "GoodsDescription", "Email"]
+      },
+      "PackageInsuranceInsuranceValue": {
+        "type": "object",
+        "properties": {
+          "currencycode": {
+            "description": "Currencycode for the insured amount",
+            "example": "NOK",
+            "type": "string"
+          },
+          "Value": {
+            "description": "Amount the package is insureed for",
+            "example": "10000",
+            "type": "string"
+          }
+        },
+        "required": ["currencycode", "Value"]
+      },
+      "ExchangableEquipment": {
+        "type": "object",
+        "properties": {
+          "UnitType": {
+            "description": "Type of exchangable equipment",
+            "example": "EFP",
+            "enum": ["EFP"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "Quantity of exchangable equipments",
+            "example": 3,
+            "type": "number"
+          }
+        },
+        "required": ["UnitType", "Value"]
+      },
+      "AddressTYPE": {
+        "type": "object",
+        "properties": {
+          "AddressLine": {
+            "description": "Address lines. The first line will be mapped to primary address line",
+            "example": ["Kong Oscars gate 12"],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "PostalCode": {
+            "description": "Postal code for address",
+            "example": "5122",
+            "type": "string"
+          },
+          "City": {
+            "description": "City for the posatl code",
+            "example": "Morvik",
+            "type": "string"
+          },
+          "StateOrRegion": {
+            "description": "State or region, not in use in the nordic countries",
+            "example": "Washington DC",
+            "type": "string"
+          },
+          "CountryCode": {
+            "description": "Country code. Use valid country codes",
+            "example": "NO",
+            "type": "string"
+          }
+        },
+        "required": ["AddressLine", "PostalCode", "City", "CountryCode"]
+      },
+      "AdditionalService": {
+        "type": "object",
+        "properties": {
+          "AdditionalServiceCode": {
+            "description": "The additional service code for the product",
+            "example": "EVARSLING",
+            "type": "string"
+          },
+          "ServiceRequirements": {
+            "description": "Some AdditionalServiceCodes / valueadded service might require extra information.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["AdditionalServiceCode", "ServiceRequirements"]
+      },
+      "DeliveryTermsLocation": {
+        "type": "object",
+        "properties": {
+          "City": {
+            "description": "City where the deliveryterms are valid to or from",
+            "example": "Bergen",
+            "type": "string"
+          },
+          "CountryCode": {
+            "description": "Country where the deliveryterms ar valid to or from",
+            "example": "NO",
+            "type": "string"
+          }
+        },
+        "required": ["City", "CountryCode"]
+      },
+      "CashOnDeliveryTransactionIdentifier": {
+        "type": "object",
+        "properties": {
+          "identifierType": {
+            "description": "Type of cash on delivery",
+            "example": "PQ",
+            "enum": ["PQ", "SS"],
+            "type": "string"
+          },
+          "accountType": {
+            "description": "Typeof account to receive payment",
+            "example": "Bank",
+            "enum": ["Bank", "Bankgiro", "Plus", "Post", "Iban", "Other"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "The value to identify where the money should be sent",
+            "example": "1234.12.123456",
+            "type": "string"
+          }
+        },
+        "required": ["identifierType", "accountType", "Value"]
+      },
+      "ccAmount": {
+        "type": "object",
+        "properties": {
+          "currencyCode": {
+            "description": "Currencycode, valid currency codes allowed",
+            "example": "NOK",
+            "type": "string"
+          },
+          "Value": {
+            "description": "The Amount",
+            "example": "123.456",
+            "type": "string"
+          }
+        },
+        "required": ["currencyCode"]
+      },
+      "MonetaryAccount": {
+        "type": "object",
+        "properties": {
+          "AccountNumber": {
+            "description": "Account number to receive payment",
+            "$ref": "#/components/schemas/CashOnDeliveryMonetaryAccountNumber"
+          },
+          "SwiftCode": {
+            "description": "Swift code for international transfers",
+            "example": "DNBANOKK",
+            "type": "string"
+          },
+          "BankName": {
+            "description": "Bank where account is created",
+            "example": "DNB",
+            "type": "string"
+          },
+          "AccountHolderName": {
+            "description": "Name of the owner of the account",
+            "example": "Ola Nordmann",
+            "type": "string"
+          }
+        },
+        "required": [
+          "AccountNumber",
+          "SwiftCode",
+          "BankName",
+          "AccountHolderName"
+        ]
+      },
+      "GoodsItemTemperature": {
+        "type": "object",
+        "properties": {
+          "Transport": {
+            "description": "Temperature requirements during transport",
+            "$ref": "#/components/schemas/ccTempMeasure"
+          },
+          "Storage": {
+            "description": "Temperature requirements for storage of goods",
+            "$ref": "#/components/schemas/ccTempMeasure"
+          }
+        },
+        "required": ["Transport", "Storage"]
+      },
+      "CustomsDetails": {
+        "type": "object",
+        "properties": {
+          "QuantityOtherUnit": {
+            "description": "Quantity of packages",
+            "type": "string"
+          },
+          "CountryOfOrigin": {
+            "description": "Country of origin of the package",
+            "type": "string"
+          },
+          "TradePreference": {
+            "description": "Trade preference data for the package",
+            "$ref": "#/components/schemas/ccTradePreference"
+          },
+          "TariffLineAmount": {
+            "description": "Tariff Line Amount of the package",
+            "$ref": "#/components/schemas/TariffLineAmount"
+          },
+          "CustomsArticleNumber": {
+            "description": "Customs Article Number of the package",
+            "type": "string"
+          },
+          "GoodsDescription": {
+            "description": "Goods Description of the package",
+            "type": "string"
+          },
+          "NetWeight": {
+            "description": "Net weight of the package",
+            "$ref": "#/components/schemas/ccWeight"
+          },
+          "GrossWeight": {
+            "description": "Gross weight of the package",
+            "$ref": "#/components/schemas/ccWeight"
+          }
+        }
+      },
+      "ccTradePreference": {
+        "type": "object",
+        "properties": {
+          "tradeIndicator": {
+            "description": "(attribute) Trade indicator",
+            "example": "Preference",
+            "type": "string"
+          },
+          "Value": {
+            "description": "Trade Preference value",
+            "example": "3",
+            "type": "string"
+          }
+        },
+        "required": ["Value"]
+      },
+      "DangerousGoods": {
+        "type": "object",
+        "properties": {
+          "UNDGInformation": {
+            "description": "United nations dangerous goods information",
+            "$ref": "#/components/schemas/DangerousGoodsUNDGInformation"
+          },
+          "Flashpoint": {
+            "description": "Flashpointinformation for dangerousgoods (when will the item become volatile?)",
+            "$ref": "#/components/schemas/DangerousGoodsFlashpoint"
+          },
+          "HazardClass": {
+            "description": "Classification of hazard",
+            "example": "4.1",
+            "type": "string"
+          },
+          "AdditionalHazard": {
+            "description": "Additional codes for hazard",
+            "example": "2.3(8)",
+            "type": "string"
+          },
+          "PackingGroup": {
+            "description": "Packing danger level code, roman numeral between  1 and 3",
+            "example": "II",
+            "type": "string"
+          },
+          "Measures": {
+            "description": "Measures for Dangerous Goods",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MeasuresTYPE"
+            }
+          },
+          "TechnicalName": {
+            "description": "Technical name of hazard",
+            "example": "KALSIUMRESINAT, SINTRET",
+            "type": "string"
+          },
+          "Restrictions": {
+            "description": "Restrictions when carrying these hazardous goods",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DangerousGoodsRestrictions"
+            }
+          },
+          "HazardPoints": {
+            "description": "Points for this hazard. Calculated from factor for dangerousgoods multiplied by amount in kg / dm3 for each material in cargo",
+            "example": 10,
+            "type": "integer"
+          },
+          "regulatonCode": {
+            "description": "Regulation codes for the hazardous goods",
+            "example": "ADR",
+            "type": "string"
+          }
+        },
+        "required": ["Flashpoint"]
+      },
+      "PackingDetails": {
+        "type": "object",
+        "properties": {
+          "PositionNumber": {
+            "description": "Position number within Packing Details",
+            "type": "integer"
+          },
+          "ArticleNumber": {
+            "description": "Articla details of Packing Details",
+            "type": "string"
+          },
+          "ArticleDescription": {
+            "description": "Artical description of Packing Details",
+            "type": "string"
+          },
+          "ItemDelivered": {
+            "format": "float",
+            "description": "Item Delivered within Packing Details",
+            "type": "number"
+          },
+          "ArticlePrice": {
+            "description": "Artical Price of the Packing Details",
+            "$ref": "#/components/schemas/ArticlePrice"
+          },
+          "ItemOrdered": {
+            "format": "float",
+            "description": "Item Ordered within the Packing Details",
+            "type": "number"
+          },
+          "ItemBackOrder": {
+            "format": "float",
+            "description": "Item Back Order within Packing Details",
+            "type": "number"
+          },
+          "ItemUnity": {
+            "description": "Item Unity within Packing Details",
+            "type": "string"
+          }
+        }
+      },
+      "FreeTextTYPEText": {
+        "type": "object",
+        "properties": {
+          "sequence": {
+            "description": "Order of freetext elements",
+            "example": "0",
+            "type": "string"
+          },
+          "Value": {
+            "description": "Actual freetext",
+            "example": "Call the contact before delivering item",
+            "type": "string"
+          }
+        },
+        "required": ["Value"]
+      },
+      "ccLength": {
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "description": "Unit for the length",
+            "example": "CMT",
+            "enum": ["CMT", "DMT", "MTR"],
+            "type": "string"
+          },
+          "Value": {
+            "format": "float",
+            "description": "The length",
+            "example": 1.22,
+            "type": "number"
+          }
+        }
+      },
+      "CashOnDeliveryMonetaryAccountNumber": {
+        "type": "object",
+        "properties": {
+          "accountType": {
+            "description": "Type of account to receive payment on delivery",
+            "enum": ["Bank", "Bankgiro", "Plus", "Post", "Iban", "Other"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "Actual account number",
+            "example": "4567.45.12345",
+            "type": "string"
+          }
+        },
+        "required": ["accountType", "Value"]
+      },
+      "ccTempMeasure": {
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "description": "Unit code for temperature measure",
+            "example": "CEL",
+            "enum": ["CEL", "FAH"],
+            "type": "string"
+          },
+          "minimum": {
+            "description": "Minimum allowed temperature",
+            "example": "-8",
+            "type": "string"
+          },
+          "maximum": {
+            "description": "Maximum allowed temperature",
+            "example": "4",
+            "type": "string"
+          },
+          "Value": {
+            "description": "Specific temperature for transportation of the cargo",
+            "example": 3,
+            "type": "integer"
+          }
+        },
+        "required": ["unitCode", "Value"]
+      },
+      "TariffLineAmount": {
+        "type": "object",
+        "properties": {
+          "currencyCode": {
+            "description": "Currency code of the tariff line",
+            "type": "string"
+          },
+          "Value": {
+            "format": "float",
+            "description": "Value of the tariff line",
+            "type": "number"
+          }
+        }
+      },
+      "DangerousGoodsUNDGInformation": {
+        "type": "object",
+        "properties": {
+          "HazardIdentifier": {
+            "description": "United nations dangerous goods hazard identifier",
+            "example": "1.1D",
+            "type": "string"
+          },
+          "FlashpointDescription": {
+            "description": "Flashpoint for dangerous goods",
+            "example": "BLACK POWDER, granulated or in powderform",
+            "type": "string"
+          }
+        }
+      },
+      "DangerousGoodsFlashpoint": {
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "description": "Unit code for flashpoint",
+            "example": "CEL",
+            "enum": ["CEL", "FAH"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "Value when flashpoint occurs/ignites",
+            "example": 18,
+            "type": "integer"
+          }
+        },
+        "required": ["unitCode", "Value"]
+      },
+      "MeasuresTYPE": {
+        "type": "object",
+        "properties": {
+          "Measure": {
+            "description": "Measurements for goods",
+            "$ref": "#/components/schemas/ccMeasure"
+          },
+          "subClass": {
+            "example": "NetHazardWeight",
+            "type": "string"
+          }
+        }
+      },
+      "DangerousGoodsRestrictions": {
+        "type": "object",
+        "properties": {
+          "restrictionType": {
+            "description": "Type of restriction",
+            "example": "Tunnel",
+            "enum": ["Tunnel"],
+            "type": "string"
+          },
+          "Value": {
+            "description": "Freetext specification of restriction for given tunnel. One element for each UN number in the dangerousgoods sequence",
+            "example": "Ellingsøy- og Valderøytunnelen på riksveg 658 utenfor Ålesund. Her gjelder tunnelkategori C i tidsrommet kl. 0600–2400 hver dag",
+            "type": "string"
+          }
+        }
+      },
+      "ArticlePrice": {
+        "type": "object",
+        "properties": {
+          "currencyCode": {
+            "description": "Quantity of packages",
+            "type": "string"
+          },
+          "Value": {
+            "format": "float",
+            "description": "Value of packages",
+            "type": "number"
+          }
+        }
+      },
+      "ccMeasure": {
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "description": "Unit code for measure",
+            "example": "DMQ",
+            "type": "string"
+          },
+          "Value": {
+            "format": "float",
+            "description": "Measure value",
+            "example": 1.22,
+            "type": "number"
+          }
+        },
+        "required": ["unitCode", "Value"]
+      },
+      "CreateShipmentResponse": {
+        "type": "object",
+        "properties": {
+          "Status": {
+            "enum": [
+              "OK",
+              "OK_CONFIRMED",
+              "ERROR",
+              "VALIDATION_ERROR",
+              "FORBIDDEN"
+            ],
+            "type": "string"
+          },
+          "StatusText": {
+            "type": "string"
+          },
+          "Errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateShipmentResponseErrors"
+            }
+          },
+          "Identities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateShipmentResponseIdentities"
+            }
+          },
+          "ProcessingID": {
+            "type": "string"
+          },
+          "EndpointProcessingID": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateShipmentResponseErrors": {
+        "type": "object",
+        "properties": {
+          "Error": {
+            "description": "Error type",
+            "enum": ["VALIDATION", "SYSTEM", "BAD_REQUEST"],
+            "type": "string"
+          },
+          "ErrorText": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateShipmentResponseIdentities": {
+        "type": "object",
+        "properties": {
+          "PackageId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ShipmentId": {
+            "type": "string"
+          }
+        },
+        "required": ["PackageId", "ShipmentId"]
+      }
+    },
+    "examples": {
+      "validRequest": {
+        "value": {
+          "RequestVersion": "1",
+          "RequestDate": "2022-04-20T10:55:07",
+          "Shipment": {
+            "updateIndicator": "Original",
+            "shipmentType": "Instruction",
+            "ShipmentHeaders": {
+              "SendersReference": "1878959",
+              "shipmentId": "70722150702977990",
+              "NumberOfPackages": "1",
+              "HazardPoints": "0",
+              "GrossWeight": {
+                "unitCode": "KGM",
+                "Value": 1
+              },
+              "LoadingMetres": "0",
+              "PalletFootPrints": "0"
+            },
+            "DateAndTimes": [
+              {
+                "subClass": "DocumentDate",
+                "DateTime": "2022-04-20T10:55:07"
+              },
+              {
+                "subClass": "DeliveryEarliest",
+                "DateTime": "2022-04-20T16:00:00"
+              },
+              {
+                "subClass": "DeliveryLatest",
+                "DateTime": "2022-04-20T21:00:00"
+              },
+              {
+                "subClass": "PickupEarliest",
+                "DateTime": "2022-04-20T14:00:00"
+              },
+              {
+                "subClass": "PickupLatest",
+                "DateTime": "2022-04-20T18:00:00"
+              }
+            ],
+            "Sender": {
+              "partyId": "28371",
+              "Name": "Mester Grønn Oasen Senter Bergen",
+              "Address": {
+                "AddressLine": ["Folke Bernadottes vei 52"],
+                "PostalCode": "5147",
+                "City": "FYLLINGSDALEN",
+                "CountryCode": "NO"
+              },
+              "Phone": "+4732229724"
+            },
+            "Receiver": {
+              "Name": "Trine Elisabeth Rud Riera",
+              "Address": {
+                "AddressLine": ["Ture Nermans vei 107"],
+                "PostalCode": "5143",
+                "City": "FYLLINGSDALEN",
+                "CountryCode": "NO"
+              },
+              "MobilePhone": "98071041"
+            },
+            "AdditionalParty": [
+              {
+                "subClass": "GoodsReturnParty",
+                "Name": "Ola Nordmann",
+                "Address": {
+                  "PostalCode": "1065",
+                  "City": "OSLO",
+                  "CountryCode": "NO",
+                  "AddressLine": "Storgatan 1"
+                },
+                "MobilePhone": "4712345678",
+                "Email": "ola.nordmann@someemail.com",
+                "ContactName": "Ola Nordmann"
+              },
+              {
+                "subClass": "TransportCompany",
+                "partyId": "BEX",
+                "subPartyId": "GLW"
+              }
+            ],
+            "ProductAndService": {
+              "ProductCode": "3270"
+            },
+            "GoodsItem": [
+              {
+                "PackageTypeCode": "PK",
+                "GoodsDescription": "Kittens in a sack",
+                "Package": [
+                  {
+                    "GrossWeight": {
+                      "unitCode": "KGM",
+                      "Value": 1
+                    },
+                    "packageId": "370722150758796447"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "validRequestXml": {
+        "value": "<CreateShipmentRequest xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://api.bring.com/CreateShipment\">\n  <RequestVersion xmlns=\"\">1</RequestVersion>\n  <RequestDate xmlns=\"\">2021-04-20T10:55:07</RequestDate>\n  <Shipment updateIndicator=\"Original\" shipmentType=\"Instruction\" xmlns=\"\">\n    <ShipmentHeaders shipmentId=\"70722150702977990\">\n      <SendersReference>1878959</SendersReference>\n      <NumberOfPackages>1</NumberOfPackages>\n      <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      <LoadingMetres>0</LoadingMetres>\n      <PalletFootPrints>0</PalletFootPrints>\n      <HazardPoints>0</HazardPoints>\n    </ShipmentHeaders>\n    <DateAndTimes subClass=\"DocumentDate\">\n      <DateTime>2022-04-20T10:55:07</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryEarliest\">\n      <DateTime>2022-04-20T16:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryLatest\">\n      <DateTime>2022-04-20T21:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"PickupEarliest\">\n      <DateTime>2022-04-20T14:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"PickupLatest\">\n      <DateTime>2022-04-20T18:00:00</DateTime>\n    </DateAndTimes>\n    <Sender partyId=\"28371\">\n      <Name>Mester Grønn Oasen Senter Bergen</Name>\n      <Address>\n        <AddressLine>Folke Bernadottes vei 52</AddressLine>\n        <PostalCode>5147</PostalCode>\n        <City>FYLLINGSDALEN</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <Phone>+4732229724</Phone>\n    </Sender>\n    <Receiver>\n      <Name>Trine Elisabeth Rud Riera</Name>\n      <Address>\n        <AddressLine>Ture Nermans vei 107</AddressLine>\n        <PostalCode>5143</PostalCode>\n        <City>FYLLINGSDALEN</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <MobilePhone>98071041</MobilePhone>\n    </Receiver>\n    <AdditionalParty subClass=\"GoodsReturnParty\">\n      <Name>Ola Nordmann</Name>\n      <Address>\n        <PostalCode>1065</PostalCode>\n        <City>OSLO</City>\n        <CountryCode>NO</CountryCode>\n        <AddressLine>Storgatan 1</AddressLine>\n      </Address>\n      <MobilePhone>4712345678</MobilePhone>\n      <Email>ola.nordmann@someemail.com</Email>\n      <ContactName>Ola Nordmann</ContactName>\n    </AdditionalParty>\n    <AdditionalParty subClass=\"TransportCompany\" partyId=\"BEX\" subPartyId=\"GLW\" />\n    <ProductAndService>\n      <ProductCode>3270</ProductCode>\n    </ProductAndService>\n    <GoodsItem>\n      <PackageTypeCode>PK</PackageTypeCode>\n      <GoodsDescription>Kittens in a sack</GoodsDescription>\n      <Package packageId=\"370722150758796447\">\n        <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      </Package>\n    </GoodsItem>\n  </Shipment>\n</CreateShipmentRequest>\n"
+      },
+      "validRequestBooking": {
+        "value": {
+          "RequestVersion": "1",
+          "RequestDate": "2018-11-21T10:36:27.3139022+01:00",
+          "Shipment": {
+            "updateIndicator": "Original",
+            "shipmentType": "Booking",
+            "ShipmentHeaders": {
+              "SendersReference": "CUSTOMERS REFERENCE",
+              "NumberOfPackages": "2",
+              "AdditionalReference": [
+                {
+                  "ReferenceValue": "Dummy",
+                  "referenceType": "BOOKING_REFERENCE"
+                }
+              ],
+              "FreeText": [
+                {
+                  "Text": [
+                    {
+                      "Value": "My instructions for pickup"
+                    }
+                  ],
+                  "usageCode": "PICKUP_INSTRUCTIONS"
+                }
+              ],
+              "GrossWeight": {
+                "unitCode": 1,
+                "Value": 2.0
+              },
+              "LoadingMetres": 0.0,
+              "PalletFootPrints": 0.0,
+              "HazardPoints": 0.0,
+              "shipmentId": "73500012345678911"
+            },
+            "DateAndTimes": [
+              {
+                "subClass": "PickupEarliest",
+                "DateTime": "2018-11-21T14:36:27.3139022+01:00"
+              },
+              {
+                "subClass": "DeliveryEarliest",
+                "DateTime": "2018-11-21T18:36:27.3139022+01:00"
+              },
+              {
+                "subClass": "DeliveryLatest",
+                "DateTime": "2018-11-21T20:36:27.3139022+01:00"
+              },
+              {
+                "subClass": "DocumentDate",
+                "DateTime": "2018-11-21T10:36:27.3139022+01:00"
+              }
+            ],
+            "Sender": {
+              "partyId": "00096882527",
+              "Name": "Sender name",
+              "Address": {
+                "AddressLine": ["MyStreet 123"],
+                "PostalCode": "5122",
+                "City": "My City",
+                "CountryCode": "NO"
+              },
+              "MobilePhone": "12345678",
+              "Email": "Sender@Sender.com"
+            },
+            "Receiver": {
+              "Name": "Receiver name",
+              "Address": {
+                "AddressLine": ["MyStreet 123"],
+                "PostalCode": "5122",
+                "City": "Other City",
+                "CountryCode": "NO"
+              },
+              "MobilePhone": "87654321",
+              "Email": "Receiver@Receiver.com"
+            },
+            "AdditionalParty": [
+              {
+                "subClass": "TransportCompany",
+                "partyId": "BEX",
+                "subPartyId": "ALY"
+              }
+            ],
+            "ProductAndService": {
+              "ProductCode": "COURIER_1H",
+              "AdditionalService": [
+                {
+                  "AdditionalServiceCode": "EVARSLING"
+                }
+              ]
+            },
+            "GoodsItem": [
+              {
+                "GoodsDescription": "Socks",
+                "Package": [
+                  {
+                    "GrossWeight": {
+                      "unitCode": 1,
+                      "Value": 1.0
+                    },
+                    "packageId": "373500123456789012"
+                  },
+                  {
+                    "GrossWeight": {
+                      "unitCode": 1,
+                      "Value": 1.0
+                    },
+                    "packageId": "37350012345678929"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "validRequestBookingXml": {
+        "value": "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>\n<CreateBookingRequest xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://api.bring.com/CreateShipment\">\n  <RequestVersion xmlns=\"\">1</RequestVersion>\n  <RequestDate xmlns=\"\">2019-01-31T07:33:09.9666092+01:00</RequestDate>\n  <Shipment updateIndicator=\"Original\" shipmentType=\"Booking\" xmlns=\"\">\n    <ShipmentHeaders shipmentId=\"73500012345678911\">\n      <SendersReference>CUSTOMERS REFERENCE</SendersReference>\n      <NumberOfPackages>2</NumberOfPackages>\n      <AdditionalReference referenceType=\"BOOKING_REFERENCE\">\n        <ReferenceValue>Dummy</ReferenceValue>\n      </AdditionalReference>\n      <FreeText usageCode=\"PICKUP_INSTRUCTIONS\">\n        <Text>My instructions for pickup</Text>\n      </FreeText>\n      <GrossWeight unitCode=\"KGM\">2</GrossWeight>\n      <LoadingMetres>0</LoadingMetres>\n      <PalletFootPrints>0</PalletFootPrints>\n      <HazardPoints>0</HazardPoints>\n    </ShipmentHeaders>\n    <DateAndTimes subClass=\"PickupEarliest\">\n      <DateTime>2019-01-31T11:33:09.9666092+01:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryEarliest\">\n      <DateTime>2019-01-31T15:33:09.9666092+01:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryLatest\">\n      <DateTime>2019-01-31T17:33:09.9666092+01:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DocumentDate\">\n      <DateTime>2019-01-31T07:33:09.9666092+01:00</DateTime>\n    </DateAndTimes>\n    <Sender partyId=\"00096882527\">\n      <Name>Sender name</Name>\n      <Address>\n        <AddressLine>MyStreet 123</AddressLine>\n        <PostalCode>5122</PostalCode>\n        <City>My City</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <MobilePhone>12345678</MobilePhone>\n      <Email>Sender@Sender.com</Email>\n    </Sender>\n    <Receiver>\n      <Name>Receiver name</Name>\n      <Address>\n        <AddressLine>MyStreet 123</AddressLine>\n        <PostalCode>5122</PostalCode>\n        <City>Other City</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <MobilePhone>87654321</MobilePhone>\n      <Email>Receiver@Receiver.com</Email>\n    </Receiver>\n    <AdditionalParty subClass=\"TransportCompany\" partyId=\"BEX\" subPartyId=\"ALY\" />\n    <ProductAndService>\n      <ProductCode>COURIER_1H</ProductCode>\n      <AdditionalService>\n        <AdditionalServiceCode>EVARSLING</AdditionalServiceCode>\n      </AdditionalService>\n    </ProductAndService>\n    <GoodsItem>\n      <GoodsDescription>Socks</GoodsDescription>\n      <Package packageId=\"373500123456789012\">\n        <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      </Package>\n      <Package packageId=\"37350012345678929\">\n        <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      </Package>\n    </GoodsItem>\n  </Shipment>\n</CreateBookingRequest>\n"
+      },
+      "validShipment": {
+        "value": {
+          "CreateShipmentResponse": {
+            "Status": "OK_CONFIRMED",
+            "StatusText": "Order created",
+            "Identities": {
+              "ShipmentId": "70438103433199319",
+              "PackageId": "370438103696190758"
+            },
+            "ProcessingID": "fc3f2481-759e-43a3-a6ae-eb10a2fd183a",
+            "EndpointProcessingID": "c7167ab6-8e35-46c6-8aff-75087eed9e97"
+          }
+        }
+      },
+      "validShipmentXml": {
+        "value": "<CreateShipmentResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://api.bring.com/CreateShipment\">\n  <Status>OK_CONFIRMED</Status>\n  <StatusText>Order created</StatusText>\n  <Identities ShipmentId=\"70438103433199319\">\n    <PackageId>370438103696190758</PackageId>\n  </Identities>\n  <ProcessingID>fc3f2481-759e-43a3-a6ae-eb10a2fd183a</ProcessingID>\n  <EndpointProcessingID>c7167ab6-8e35-46c6-8aff-75087eed9e97</EndpointProcessingID>\n</CreateShipmentResponse>\n"
+      }
+    }
+  }
+}
