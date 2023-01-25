@@ -75,9 +75,13 @@ New messages are automatically emailed to users who subscribe.
 
 New messages are added with publish date as the file name `yyyy-mm-dd.md` in the
 different folders under `content/api/revision-history`, reflecting the different
-API areas. API area specific messages are added in the folder of each API area,
-and if there‘s a general message that should reach all subscribers, this is added
-in the main folder - `content/api/revision-history`.
+API areas.
+
+- If the message is intended to give an update about one or several APIs, the
+message is added in each folder (API area) of the affected API.
+
+- If the message is general and should reach all subscribers, this is added in
+the main folder - `content/api/revision-history`.
 
 The messages are added with the following frontmatter:
 
