@@ -238,12 +238,15 @@ if('clipboard' in navigator) {
 
 document.addEventListener("DOMContentLoaded", function () {
   showToggleAll()
-  // set oneOf selection if reload/backward/forward navigation
+  // set oneOf/allOf selections on reload/backward/forward navigation
   oneOfRadioArr.forEach((radio) => {
     if (radio.checked) {
       showSelectedSchema(radio)
     } else {
       radio.removeAttribute("checked")
     }
+  })
+  allOfSelectArr.forEach((select) => {
+    showSelectedSchema(select)
   })
 })
