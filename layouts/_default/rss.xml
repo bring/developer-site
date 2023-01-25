@@ -1,15 +1,31 @@
 {{- $pctx := . -}}
-{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- if (in .CurrentSection "revision-history/_") -}}
+{{- $pctx = .Site -}}
+{{- end -}}
+{{- $mergedPages := slice -}}
+{{/* Get entries from the main folder when in context of a sub-section */}}
+{{- if (eq $pctx .) -}}
+{{- $generalPage := .Site.GetPage "revision-history" -}}
+{{- $generalPages := $generalPage.RegularPages -}}
+{{- range $generalPages -}}
+{{- $mergedPages = $mergedPages | append (dict "path" . "pubDate" .Params.publishdate) -}}
+{{- end -}}
+{{- end -}}
 {{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
 {{- $pages = $pctx.RegularPages -}}
-{{- else -}}
-{{- $pages = $pctx.Pages -}}
+{{/* Get all sections from revision-history */}}
+{{- range $pages -}}
+{{- if (in .CurrentSection "revision-history") -}}
+{{- $mergedPages = $mergedPages | append (dict "path" . "pubDate" .Params.publishdate) -}}
 {{- end -}}
-{{- $limit := .Site.Config.Services.RSS.Limit -}}
-{{- if ge $limit 1 -}}
-{{- $pages = $pages | first $limit -}}
 {{- end -}}
+{{/* Make a new array and rearrange the data based on publish date */}}
+{{- $rearrangedPages := slice -}}
+{{- range sort $mergedPages "pubDate" "desc" -}}
+{{- $rearrangedPages = $rearrangedPages | append .path -}}
+{{- end -}}
+{{/* Set $pages to the rearranged structure */}}
+{{- $pages = $rearrangedPages -}}
 {{- $latestPage := $pages | first 1 -}}
 {{- range $latestPage -}}
 {{- $latestPage = . }}
