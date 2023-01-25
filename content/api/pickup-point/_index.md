@@ -67,7 +67,8 @@ documentation:
 
       #### Sweden
         - Type 34: Manned
-        - Type 38: Locker
+        - Type 38: Locker (iBoxen)
+        - Type 39: Locker (Bring)
 
       #### Denmark
         - Type 85: Manned
