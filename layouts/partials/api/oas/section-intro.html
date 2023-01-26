@@ -1,17 +1,23 @@
 <h1>{{ .Title }}</h1>
 <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
-  {{- with $.Params.important -}}
-    <div class="dev-docscontent__side">
-      {{- range . -}}
-        <div class="message--{{ .type }} pal mbs">
-          {{- with .title -}}
-            <strong class="db mbxs">{{ . }}</strong>
-          {{- end -}}
-          {{ .message | markdownify }}
-        </div>
-      {{- end -}}
+  <div class="dev-docscontent__side">
+    {{- with $.Params.important -}}
+      <div class="mbl">
+        {{- range . -}}
+          <div class="message--{{ .type }} updates__sub pal mbs">
+            {{- with .title -}}
+              <strong class="db mbxs">{{ . }}</strong>
+            {{- end -}}
+            {{ .message | markdownify }}
+          </div>
+        {{- end -}}
+      </div>
+    {{- end -}}
+    <div class="updates__sub bg-green1 pal align-sfs">
+      <h2>Subscribe to updates</h2>
+      {{- partial "subscribe.html" -}}
     </div>
-  {{- end -}}
+  </div>
   <div class="dev-docscontent__main maxw64r">
     {{- with $.Params.introduction -}}
       {{- if in (string .) "\n\n" -}}
