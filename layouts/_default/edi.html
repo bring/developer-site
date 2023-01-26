@@ -1,12 +1,10 @@
 {{- define "main" -}}
   <main id="main">
     <article class="dev-docscontent maxw64r">
-      {{ .Content }}
-      {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-        <section class="dev-docscontent__section">
-          {{ template "_internal/disqus.html" $ }}
-        </section>
-      {{- end -}}
+      <h1>{{ .Title }}</h1>
+      <section class="dev-docscontent__section">
+        {{ .Content }}
+      </section>
     </article>
   </main>
 {{- end -}}
