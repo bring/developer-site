@@ -6,7 +6,6 @@ menu:
     identifier: "index"
     title: "EDI"
 weight: 1
-disqus_identifier: https-developer-bring-com-edi
 ---
 
 EDI (Electronic Data Interchange) in Bring and Posten started in the 90s.

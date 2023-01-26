@@ -6,7 +6,6 @@ menu:
     identifier: "statusMessages"
     title: "Status Messages"
 weight: 5
-disqus_identifier: https-developer-bring-com-edi
 ---
 
 Status Messages are available for all our Transport Services, common examples

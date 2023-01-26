@@ -6,7 +6,6 @@ menu:
     identifier: "transportInstruction"
     title: "Transport Instruction for IFTMIN D04A"
 weight: 2
-disqus_identifier: https-developer-bring-com-edi
 ---
 
 This document is our guideline for freight-messages based on EDIFACT / IFTMIN D04A. The overview and detailed guideline include all Bring services, value added services and surcharges with codes for setting up correct EDI-messages.

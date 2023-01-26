@@ -6,7 +6,6 @@ menu:
     identifier: "otherImplementationGuides"
     title: "Other Implementation Guides"
 weight: 4
-disqus_identifier: https-developer-bring-com-edi
 ---
 
 ## Download Documentation

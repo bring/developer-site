@@ -6,7 +6,6 @@ menu:
     identifier: "warehouseManagement"
     title: "Warehouse Management"
 weight: 3
-disqus_identifier: https-developer-bring-com-edi
 ---
 
 Documents for an Warehousing customer to create an order in warehousing system that will go to the correct warehouse for picking, packing and sending. Customers can get several messages back for status on orders, inventory and warehousing receiving of goods. Inbound and outbound messages are based on GS1 xml Standard V3.1

@@ -6,7 +6,6 @@ menu:
     identifier: "transportLabelSpecifications"
     title: "Transport Label Specifications"
 weight: 6
-disqus_identifier: https-developer-bring-com-edi
 ---
 
 ## Download Documentation
