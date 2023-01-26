@@ -1,10 +1,10 @@
 <h1>{{ .Title }}</h1>
-<section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
-  <div class="dev-docscontent__side">
-    {{- with $.Params.important -}}
+<section id="api-documentation" class="dev-docscontent__grid">
+  {{- with $.Params.important -}}
+    <div class="grid__messages">
       <div class="mbl">
         {{- range . -}}
-          <div class="message--{{ .type }} updates__sub pal mbs">
+          <div class="message--{{ .type }} pal mbs">
             {{- with .title -}}
               <strong class="db mbxs">{{ . }}</strong>
             {{- end -}}
@@ -12,13 +12,9 @@
           </div>
         {{- end -}}
       </div>
-    {{- end -}}
-    <div class="updates__sub bg-green1 pal align-sfs">
-      <h2>Subscribe to updates</h2>
-      {{- partial "subscribe.html" -}}
     </div>
-  </div>
-  <div class="dev-docscontent__main maxw64r">
+  {{- end -}}
+  <div class="dev-docscontent__main maxw64r mbl grid__intro">
     {{- with $.Params.introduction -}}
       {{- if in (string .) "\n\n" -}}
       <div class="text-heading fw600">
@@ -82,5 +78,9 @@
     {{- with $.Params.guides -}}
       {{- partial "api/oas/tips-and-guides.html" . -}}
     {{- end -}}
+  </div>
+  <div class="updates__sub bg-green1 pal align-sfs grid__signup">
+    <h2>Subscribe to updates</h2>
+    {{- partial "subscribe.html" -}}
   </div>
 </section>
