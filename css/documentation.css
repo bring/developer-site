@@ -76,7 +76,6 @@
   "intro signup";
   grid-template-columns: minmax(20rem,60rem) minmax(20rem, 28rem);
   grid-template-rows: auto 1fr;
-  padding: 0 2rem;
 }
 
 .grid__intro {
@@ -150,7 +149,6 @@
   .dev-docscontent__grid {
     display: flex;
     flex-flow: column nowrap;
-    padding: 0 6vw;
   }
 }
 
