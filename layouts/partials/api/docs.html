@@ -4,24 +4,26 @@
     {{- $types := .types -}}
     <main 
       id="main"
-      class="dev-docscontent w100p maxw96r {{ replace .title "API" "" | anchorize }}"
+      class="dev-docscontent w100p {{ replace .title "API" "" | anchorize }}"
     >
       <article>
         <h1>{{ .title }}</h1>
-        <section id="api-documentation" class="dev-docscontent__section dev-docscontent__wrap">
+        <section id="api-documentation" class="dev-docscontent__section dev-docscontent__grid">
           {{- with $.Params.important -}}
-            <div class="dev-docscontent__side">
-              {{- range . -}}
-                <div class="message--{{ .type }} pal mbs">
-                  {{- with .title -}}
-                    <strong class="db mbxs">{{ . }}</strong>
-                  {{- end -}}
-                  {{ .message | markdownify }}
-                </div>
-              {{- end -}}
+            <div class="grid__messages">
+              <div class="mbl">
+                {{- range . -}}
+                  <div class="message--{{ .type }} pal mbs">
+                    {{- with .title -}}
+                      <strong class="db mbxs">{{ . }}</strong>
+                    {{- end -}}
+                    {{ .message | markdownify }}
+                  </div>
+                {{- end -}}
+              </div>
             </div>
           {{- end -}}
-          <div class="dev-docscontent__main maxw64r">
+          <div class="dev-docscontent__main maxw64r mbm grid__intro">
             {{- with $.Params.introduction -}}
               {{- if in (string .) "\n\n" -}}
               <div class="text-heading fw600">
@@ -69,10 +71,14 @@
               {{- end -}}
             {{- end -}}
           </div>
+          <div class="updates__sub bg-green1 pal align-sfs grid__signup">
+            <h2>Subscribe to updates</h2>
+            {{- partial "subscribe.html" -}}
+          </div>
         </section>
         {{- $baseUri := .baseUri -}}
         {{- with .resources -}}
-          <section class="dev-docscontent__section maxw64r">
+          <section class="dev-docscontent__section maxw96r">
             <h2 class="dev-anchored mbm" id="endpoints">
               Endpoints
             </h2>

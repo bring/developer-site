@@ -8,6 +8,11 @@
  max-width: 32rem;
 }
 
+@media screen and (max-width: 48em) {
+  .updates__sub {
+    margin-bottom: 2rem;
+  }
+}
 
 /* Overwrites */
 input.mce_inline_error  {

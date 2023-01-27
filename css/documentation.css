@@ -60,18 +60,34 @@
   row-gap: 2rem;
 }
 
-.dev-docscontent__side {
-  flex: 1 1 24rem;
-  max-width: 64rem;
-}
-
 .dev-docscontent__main {
   flex: 2 1 32rem;
-  overflow: auto;
 }
 
 .dev-docscontent__info {
   max-width: 68ch;
+}
+
+.dev-docscontent__grid {
+  display: grid;
+  gap: 0 2rem;
+  grid-template-areas:
+  "intro messages"
+  "intro signup";
+  grid-template-columns: minmax(20rem,60rem) minmax(20rem, 28rem);
+  grid-template-rows: auto 1fr;
+}
+
+.grid__intro {
+  grid-area: intro;
+}
+
+.grid__messages {
+  grid-area: messages;
+}
+
+.grid__signup {
+  grid-area: signup;
 }
 
 .dev-docs__menu {
@@ -126,6 +142,13 @@
 
   .dev-docscontent__section {
     padding: 0 2rem 3rem 2rem;
+  }
+}
+
+@media screen and (max-width: 48em) {
+  .dev-docscontent__grid {
+    display: flex;
+    flex-flow: column nowrap;
   }
 }
 
