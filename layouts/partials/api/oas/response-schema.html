@@ -247,10 +247,13 @@
         {{- with $schemaObj.description -}}
           {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
         {{- end -}}
-        <div class="gray text-note">
-          {{- $schemaObj.type -}}
+        <div class="gray text-note flex flex-wrap gcs">
+          <span>{{- $schemaObj.type -}}</span>
           {{- with $schemaObj.format -}}
-            {{- printf " <%s>" . -}}
+            <span>{{- printf " <%s>" . -}}</span>
+          {{- end -}}
+          {{- with $schemaObj.maxLength -}}
+            <span>Max length: {{ . }}</span>
           {{- end -}}
         </div>
         {{- with $schemaObj.enum -}}
