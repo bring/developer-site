@@ -1,19 +1,19 @@
 ---
-title: Measurements
+title: Measurements for Cargo and Home Delivery services
 layout: api
 notanapi: true
 menu:
   apidocs:
     identifier: bookingmeasurements
-    title: Measurements
+    title: Measurements for Cargo and Home Delivery services
     parent: bookingnew
 weight: 4
 hidden: true
 ---
 
-For cargo services (5100, 5300, CARGO, 9100), Weight is mandatory and one of the Volume / Load Meters / Dimensions / Number of Pallets is mandatory.
+For cargo services (5100, 5300, 9100), Weight is mandatory and one of the Volume / Load Meters / Dimensions / Number of Pallets is mandatory.
 
-For home delivery services (DOUBLE_INDOOR, CURBSIDE, DOUBLE_INDOOR_EVENING, CURBSIDE_EVENING), Weight is mandatory and one of Volume / Dimensions are mandatory.
+For home delivery services (e.g. DOUBLE_INDOOR, CURBSIDE), Weight is mandatory and one of Volume / Dimensions are mandatory.
 
 ## Request example
 

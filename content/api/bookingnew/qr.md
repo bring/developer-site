@@ -23,3 +23,5 @@ The following services support QR codes:
 - EKSPRESS09_RETURSERVICE
 - 9000
 - BPAKKE_DOR-DOR_RETURSERVICE
+- 0341
+- 0343
