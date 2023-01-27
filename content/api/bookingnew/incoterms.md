@@ -1,11 +1,11 @@
 ---
-title: Incoterms
+title: Incoterms for Cargo International
 layout: api
 notanapi: true
 menu:
   apidocs:
     identifier: bookingincoterms
-    title: Incoterms
+    title: Incoterms for Cargo International
     parent: bookingnew
 weight: 11
 hidden: true

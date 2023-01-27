@@ -1,13 +1,13 @@
 ---
-title: QuickPack Envelope
+title: QuickPack Envelope for Express International
 layout: api
 notanapi: true
 menu:
   apidocs:
     identifier: bookingquickpack
-    title: QuickPack Envelope
+    title: QuickPack Envelope for Express International
     parent: bookingnew
-weight: 7
+weight: 12
 hidden: true
 ---
 
