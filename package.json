@@ -39,7 +39,7 @@
     "hugo-bin": "^0.96.0",
     "postcss": "^8.4.20",
     "postcss-import": "^15.1.0",
-    "postcss-nesting": "^10.2.0",
+    "postcss-nesting": "^11.1.0",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "terser": "^5.16.1",
