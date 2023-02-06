@@ -67,13 +67,26 @@ Note that this can not be combined with a `reference` field on the `senders` par
 
 ```xml
 <parties>
+  <sender>
+    <name>Ola Nordmann</name>
+    <addressLine>Testsvingen 12</addressLine>
+    <postalCode>0150</postalCode>
+    <city>OSLO</city>
+    <countryCode>NO</countryCode>
+    <reference>1234</reference>
+    <contact>
+      <name>Trond Nordmann</name>
+      <email>trond@normanntest.no</email>
+      <phoneNumber>+4712345678</phoneNumber>
+    </contact>
+  </sender>
   <recipient>
     <name>Tore Mottaker</name>
     <addressLine>Mottakerveien 14</addressLine>
     <addressLine2>c/o Tina Mottaker</addressLine2>
     <postalCode>12000</postalCode>
-    <city>stockholm</city>
-    <countryCode>se</countryCode>
+    <city>STOCKHOLM</city>
+    <countryCode>SE</countryCode>
     <vatNumber>12345</vatNumber>
   </recipient>
 </parties>
@@ -116,14 +129,27 @@ Note that this can not be combined with a `reference` field on the `senders` par
 
 ```json
 "parties": {
+  "sender": {
+    "name": "Ola Nordmann",
+    "addressLine": "Testsvingen 12",
+    "postalCode": "0150",
+    "city": "OSLO",
+    "countryCode": "NO",
+    "reference": "1234",
+    "contact": {
+      "name": "Trond Nordmann",
+      "email": "trond@nordmanntest.no",
+      "phoneNumber": "+4712345678"
+    }
+  },
   "recipient": {
     "name": "Tore Mottaker",
     "addressLine": "Mottakerveien 14",
     "addressLine2": "c/o Tina Mottaker",
     "postalCode": "12000",
-    "city": "Stockholm",
+    "city": "STOCKHOLM",
     "countryCode": "SE",
-    "vatNumber": "12345",
+    "vatNumber": "12345"
   }
 }
 "product": {
@@ -169,13 +195,34 @@ Note that this can not be combined with a `reference` field on the `senders` par
 
 ```xml
 <parties>
+  <sender>
+    <name>Ola Nordmann</name>
+    <addressLine>Testsvingen 12</addressLine>
+    <postalCode>0150</postalCode>
+    <city>OSLO</city>
+    <countryCode>NO</countryCode>
+    <reference>1234</reference>
+    <contact>
+      <name>Trond Nordmann</name>
+      <email>trond@normanntest.no</email>
+      <phoneNumber>+4712345678</phoneNumber>
+    </contact>
+  </sender>
+  <recipient>
+    <name>Tore Mottaker</name>
+    <addressLine>Mottakerveien 14</addressLine>
+    <addressLine2>c/o Tina Mottaker</addressLine2>
+    <postalCode>12000</postalCode>
+    <city>STOCKHOLM</city>
+    <countryCode>SE</countryCode>
+  </recipient>
   <importer>
     <name>Tore Mottaker</name>
     <addressLine>Mottakerveien 14</addressLine>
     <addressLine2>c/o Tina Mottaker</addressLine2>
     <postalCode>12000</postalCode>
-    <city>stockholm</city>
-    <countryCode>se</countryCode>
+    <city>STOCKHOLM</city>
+    <countryCode>SE</countryCode>
     <vatNumber>12345</vatNumber>
   </importer>
 </parties>
@@ -218,12 +265,33 @@ Note that this can not be combined with a `reference` field on the `senders` par
 
 ```json
 "parties": {
+  "sender": {
+    "name": "Ola Nordmann",
+    "addressLine": "Testsvingen 12",
+    "postalCode": "0150",
+    "city": "OSLO",
+    "countryCode": "NO",
+    "reference": "1234",
+    "contact": {
+      "name": "Trond Nordmann",
+      "email": "trond@nordmanntest.no",
+      "phoneNumber": "+4712345678"
+    }
+  },
+  "recipient": {
+    "name": "Tore Mottaker",
+    "addressLine": "Mottakerveien 14",
+    "addressLine2": "c/o Tina Mottaker",
+    "postalCode": "12000",
+    "city": "STOCKHOLM",
+    "countryCode": "SE"
+  },
   "importer": {
     "name": "Tore Mottaker",
     "addressLine": "Mottakerveien 14",
     "addressLine2": "c/o Tina Mottaker",
     "postalCode": "12000",
-    "city": "Stockholm",
+    "city": "STOCKHOLM",
     "countryCode": "SE",
     "vatNumber": "12345"
   }
