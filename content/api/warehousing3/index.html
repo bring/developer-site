@@ -28,72 +28,68 @@ information:
 documentation:
   - title: Order Information
     content: |
+      <link rel="stylesheet" href="../warehousing/warehousing.css">
+      <script src="listcollapse.js" type="text/javascript" language="javascript1.2"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       In order to obtain information about an order/get the receipt for an order, you have two options:
-      <head>
-        <link rel="stylesheet" href="warehousing.css">
-        <script src="listcollapse.js" type="text/javascript" language="javascript1.2"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      </head>
-      <body>
+      <ul>
+        <li>You can <a href='{{< relref "warehousing4" >}}#endpoints'>obtain data from Mybring</a>.</li>
+        <li>We can push data to you if you set up a webservice on your side</li>
+      </ul>
+      <p>You should use a REST web service which needs to be secured through https.</p>
+      <p>After you have set up your web service, you must send the information about the URL and its authentication to us, so that we can set up a link from our side.</p>
+      <p>The data sent from Bring will be in GS1 3.3 format.
+        General information about GS1 3.3 can be found here:
+        <a href="https://www.gs1.org/standards/gs1-xml/3-3">https://www.gs1.org/standards/gs1-xml/3-3</a></p>
+      <h3>Authentication</h3>
+      <p>Bring supports https with basic username and password authentication.</p>
+      <p>Message header authorization options:
         <ul>
-          <li>You can <a href='{{< relref "warehousing4" >}}#endpoints'>obtain data from Mybring</a>.</li>
-          <li>We can push data to you if you set up a webservice on your side</li>
-        </ul>
-        <p>You should use a REST web service which needs to be secured through https.</p>
-        <p>After you have set up your web service, you must send the information about the URL and its authentication to us, so that we can set up a link from our side.</p>
-        <p>The data sent from Bring will be in GS1 3.3 format.
-          General information about GS1 3.3 can be found here:
-          <a href="https://www.gs1.org/standards/gs1-xml/3-3">https://www.gs1.org/standards/gs1-xml/3-3</a></p>
-        <h3>Authentication</h3>
-        <p>Bring supports https with basic username and password authentication.</p>
-        <p>Message header authorization options:
-          <ul>
-          <li>Authorization: <b>Basic bWFnZ2llOnN1bW1lcnM = ????</b></li>
-          or
-          <li>API key: <b>X-API-KEY: abcdef12345</b></li>
-        </ul>
-        <h3>Verification</h3>
-        <p>Your webservice must verify and return a response to us that the message was
-          received ok.</p>
-        <p>Your response will have to follow the format below.
-          It's important that the following is set in the response:
-          <ul>
-          <li>Message must be equal to <b>success</b></li>
-          <li>Request ID has to be a unique ID for each message.</li>
-        </ul>
-        <h3>Response Example</h3>
-        <table>
-          <tr><td class="flipClientResponseXml">XML Sample</td><td class="flipClientResponseJson">JSON Sample</td></tr>
-        </table>
-        <div class="clientResponseXml">
-          <iframe src="examples/response_xml.txt" height="800px" width="100%" frameborder="0"></iframe>
-        </div>
-        <div class="clientResponseJson">
-          <iframe src="examples/response.json" height="800px" width="100%" frameborder="0"></iframe>
-        </div>
-        <br>
-        <h3>Response Schema</h3>
-        <table>
-          <tr><td class="flipResponseSchemaXml">XML Schema</td></tr>
-        </table>
-        <div class="responseSchemaXml">
-          <iframe src="examples/response_schema_xml.txt" height="800px" width="100%" frameborder="0"></iframe>
-        </div>
-        <script type="text/javascript">
-          $(document).ready(function() {
-            $(".flipResponseSchemaXml").click(function() {
-              $(".responseSchemaXml").slideToggle("slow");
-            });
-            $(".flipClientResponseXml").click(function() {
-              $(".clientResponseXml").slideToggle("slow");
-              $(".clientResponseJson").hide();
-            });
-            $(".flipClientResponseJson").click(function() {
-              $(".clientResponseJson").slideToggle("slow");
-              $(".clientResponseXml").hide();
-            });
+        <li>Authorization: <b>Basic bWFnZ2llOnN1bW1lcnM = ????</b></li>
+        or
+        <li>API key: <b>X-API-KEY: abcdef12345</b></li>
+      </ul>
+      <h3>Verification</h3>
+      <p>Your webservice must verify and return a response to us that the message was
+        received ok.</p>
+      <p>Your response will have to follow the format below.
+        It's important that the following is set in the response:
+        <ul>
+        <li>Message must be equal to <b>success</b></li>
+        <li>Request ID has to be a unique ID for each message.</li>
+      </ul>
+      <h3>Response Example</h3>
+      <table>
+        <tr><td class="flipClientResponseXml">XML Sample</td><td class="flipClientResponseJson">JSON Sample</td></tr>
+      </table>
+      <div class="clientResponseXml">
+        <iframe src="examples/response_xml.txt" height="800px" width="100%" frameborder="0"></iframe>
+      </div>
+      <div class="clientResponseJson">
+        <iframe src="examples/response.json" height="800px" width="100%" frameborder="0"></iframe>
+      </div>
+      <br>
+      <h3>Response Schema</h3>
+      <table>
+        <tr><td class="flipResponseSchemaXml">XML Schema</td></tr>
+      </table>
+      <div class="responseSchemaXml">
+        <iframe src="examples/response_schema_xml.txt" height="800px" width="100%" frameborder="0"></iframe>
+      </div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $(".flipResponseSchemaXml").click(function() {
+            $(".responseSchemaXml").slideToggle("slow");
           });
-        </script>
+          $(".flipClientResponseXml").click(function() {
+            $(".clientResponseXml").slideToggle("slow");
+            $(".clientResponseJson").hide();
+          });
+          $(".flipClientResponseJson").click(function() {
+            $(".clientResponseJson").slideToggle("slow");
+            $(".clientResponseXml").hide();
+          });
+        });
+      </script>
 
-      </body>
 ---
