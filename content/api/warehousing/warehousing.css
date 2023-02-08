@@ -46,11 +46,13 @@ ul.maketree li.last {
     width: 80px;
 }
 .type {
-    color: blue;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-family: Consolas,SF Mono,Menlo,Andale Mono,Ubuntu Mono,Courier New,Courier,monospace;
+    font-size: 0.82rem;
+    padding-left: 1em;
+    padding-right: 1em;
     display: inline-block;
-    width: 150px;
+    width: 22ch;
+    white-space: normal;
 }
 .desc {
     padding-left: 10px;
