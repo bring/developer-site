@@ -141,6 +141,17 @@
         {{- end -}}
       {{- end -}}
 
+      {{/*  special solution for warehousing  */}}
+      {{- range $currentPage.Params.html -}}
+      {{- with .title -}}
+        <li>
+          <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
+            <span data-hover="{{ . }}">{{ . }}</span>
+          </a>
+        </li>
+      {{- end -}}
+    {{- end -}}
+
       {{- with $currentPage.Params.guides -}}
         <li>
           <a href="#tips-and-guides" data-list-item="tips-and-guides">
