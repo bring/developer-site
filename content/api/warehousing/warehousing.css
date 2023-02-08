@@ -243,3 +243,45 @@ div.errorCodesJson {
     display: none;
     background: lightgreen;
 }
+td.flipClientResponseXml {
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    background: lightblue;
+    border: solid 1px #fff;
+    cursor: pointer;
+}
+td.flipClientResponseJson {
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    background: lightgreen;
+    border: solid 1px #fff;
+    cursor: pointer;
+}
+div.clientResponseXml {
+    width: 100%;
+    height: 100px;
+    display: none;
+    background: lightblue;
+}
+div.clientResponseJson {
+    width: 100%;
+    height: 100px;
+    display: none;
+    background: lightgreen;
+}
+td.flipResponseSchemaXml {
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    background: lightblue;
+    border: solid 1px #fff;
+    cursor: pointer;
+}
+div.responseSchemaXml {
+    width: 100%;
+    height: 400px;
+    display: none;
+    background: lightblue;
+}
