@@ -76,6 +76,21 @@
             {{- partial "subscribe.html" -}}
           </div>
         </section>
+
+        {{/*  special solution for warehousing  */}}
+        {{- with $.Params.html -}}
+          <section class="dev-docscontent__section maxw96r">
+            {{- range . -}}
+              {{- with .title }}
+              <h2 class="dev-anchored" id="{{ . | anchorize }}">
+                {{- . -}}
+              </h2>
+              {{- end -}}
+              {{- .content | safeHTML -}}
+            {{- end -}}
+          </section>
+        {{- end -}}
+
         {{- $baseUri := .baseUri -}}
         {{- with .resources -}}
           <section class="dev-docscontent__section maxw96r">
