@@ -19,6 +19,7 @@
 
   <ul class="dev-codetabs" role="tablist">
     {{- $nameDash := replace .name "/" "-" -}}
+    {{- $tabGroup := (print $idType $nameDash) | anchorize -}}
     {{- $tabIDFormat := "" -}}
     {{- $tabIDExample := "" -}}
     {{- $showResponse := false -}}
@@ -32,15 +33,16 @@
         {{- range . -}}
           {{- if (eq .name $type) -}}
             {{- $showResponse = true -}}
-            {{- $tabIDFormat = (print $idType $nameDash "-format") | anchorize -}}
-            <li role="presentation" class="dev-codetabs__item active">
-              <a
-                href="#{{ $tabIDFormat }}"
+            {{- $tabIDFormat = print $tabGroup "-format" -}}
+            <li>
+              <button
+                type="button"
                 role="tab"
+                class="mb-card mb-card--active pas"
+                aria-expanded="true"
                 aria-controls="{{ $tabIDFormat }}"
-                class="dev-codetabs__link format"
-                data-toggle="tab"
-                >{{ $formatType }} format</a
+                data-toggle="{{ $tabGroup }}"
+                >{{ $formatType }} format</button
               >
             </li>
           {{- end -}}
@@ -50,18 +52,21 @@
 
     {{- range $index, $examples := .examples -}}
       {{- $firstActive := "" -}}
+      {{- $ariaEx := "false" -}}
       {{- if (and (eq $index 0) (not $showResponse)) -}}
-        {{- $firstActive = " active" -}}
+        {{- $firstActive = "mb-card--active" -}}
+        {{- $ariaEx = "true" -}}
       {{- end -}}
-      {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | anchorize -}}
-      <li role="presentation" class="dev-codetabs__item{{ $firstActive }}">
-        <a
-          href="#{{ $tabIDExample }}"
+      {{- $tabIDExample = print $tabGroup "-example-" (add 1 $index) -}}
+      <li>
+        <button
+          type="button"
           role="tab"
+          class="mb-card pas {{ $firstActive }}"
+          aria-expanded="{{ $ariaEx }}"
           aria-controls="{{ $tabIDExample }}"
-          class="dev-codetabs__link"
-          data-toggle="tab"
-          ><span class="dev-codetabs__textex">Example:</span> {{ .displayName }}</a
+          data-toggle="{{ $tabGroup }}"
+          >Example: {{ .displayName }}</button
         >
       </li>
     {{- end -}}
@@ -72,8 +77,9 @@
       {{- with .type -}}
         <div
           role="tabpanel"
-          class="dev-codetabs__panel active"
+          class="mts mbxl"
           id="{{ $tabIDFormat }}"
+          data-tab-group="{{ $tabGroup }}"
         >
           {{ partial "api/type.html" (dict "incDashType" . "incTypeDefs" $types "showHeader" false) }}
         </div>
@@ -81,15 +87,16 @@
     {{- end -}}
 
     {{- range $index, $examples := .examples -}}
-      {{- $firstActive := "" -}}
-      {{- if (and (eq $index 0) (not $showResponse)) -}}
-        {{- $firstActive = " active" -}}
+      {{- $notFirst := "" -}}
+      {{- if not (and (eq $index 0) (not $showResponse)) -}}
+        {{- $notFirst = "dn" -}}
       {{- end -}}
       {{- $tabIDExample = (print $idType $nameDash "-example-" (add 1 $index) ) | anchorize -}}
       <div
         role="tabpanel"
-        class="dev-codetabs__panel {{ $firstActive }}"
+        class="mts mbxl {{ $notFirst }}"
         id="{{ $tabIDExample }}"
+        data-tab-group="{{ $tabGroup }}"
       >
         <div class="relative">
           {{- with .description -}}

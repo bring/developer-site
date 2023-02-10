@@ -1,67 +1,23 @@
-(function() {
-  'use strict';
+const tabArray = document.querySelectorAll('button[data-toggle]')
 
-  var findClosestOfType = function(element, elementType) {
-    var parent = element.parentNode;
-    if (parent.nodeName.toLowerCase() == elementType.toLowerCase()) {
-      return parent;
-    } else {
-      return findClosestOfType(parent, elementType);
-    }
-  }
+for (let tab of tabArray) {
+  tab.addEventListener('click', () => {
+    const panelId = tab.getAttribute('aria-controls')
+    const panel = document.querySelector('#' + panelId)
 
-  var Tab = function(a) {
-    this.a = a;
-    this.li = findClosestOfType(a, 'li');
-    this.ul = findClosestOfType(this.li, 'ul');
-
-    var targetSelector = a.dataset.target;
-    if (!targetSelector) {
-      targetSelector = a.href.replace(/.*(?=#[^\s]*$)/, '');
+    const tabGroupArr = document.querySelectorAll('button[data-toggle=' + panel.dataset.tabGroup + ']')
+    for (let tab of tabGroupArr) {
+      tab.classList.remove('mb-card--active')
+      tab.setAttribute('aria-expanded', 'false')
     }
 
-    this.target = document.querySelector(targetSelector);
-  }
-
-  Tab.prototype.show = function() {
-    if (this.li.classList.contains('active')) {
-      return;
+    const tabPanelArr = document.querySelectorAll('div[data-tab-group=' + panel.dataset.tabGroup + ']')
+    for (let tabPanel of tabPanelArr) {
+      tabPanel.classList.add('dn')
     }
 
-    this.activate(this.li, this.ul);
-    this.activate(this.target, this.target.parentNode);
-  }
-
-  Tab.prototype.activate = function(element, container) {
-    var currentlyActive = container.querySelector('.active');
-    if (currentlyActive) {
-      currentlyActive.classList.remove('active');
-
-      var currentlyActiveTab = currentlyActive.querySelector('[data-toggle="tab"]');
-      if (currentlyActiveTab) {
-        currentlyActiveTab.setAttribute('aria-expanded', 'false');
-      }
-    }
-
-    element.classList.add('active')
-    var tabElement = element.querySelector('[data-toggle="tab"]');
-    if (tabElement) {
-      tabElement.setAttribute('aria-expanded', 'true');
-    }
-  }
-
-  var tabs = {
-    init: function() {
-      var tabElements = Array.prototype.slice.call(document.querySelectorAll('[data-toggle="tab"]'));
-      tabElements.forEach(function(tabElement) {
-        tabElement.addEventListener('click', function(e) {
-          e.preventDefault();
-          new Tab(this).show();
-        })
-      })
-    }
-
-  };
-
-  window.tabs = tabs;
-})();
+    panel.classList.remove('dn')
+    tab.classList.add('mb-card--active')
+    tab.setAttribute('aria-expanded', 'true')
+  })
+}

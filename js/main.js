@@ -13,7 +13,6 @@ import "./scrollmarker.js"
 import "./drawer.js"
 
 import "./tabs.js"
-window.tabs.init()
 
 import "./collapsible.js"
 window.collapsible.init()
