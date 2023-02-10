@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingauthorization
     title: Authorization
-    parent: bookingnew
+    parent: booking
 weight: 2
-hidden: true
 ---
 
 In addition to [authentication](/api/#authentication), you need to be authorized with the _booking_ right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):

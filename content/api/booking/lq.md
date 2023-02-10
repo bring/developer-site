@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookinglq
     title: LQ - Limited quantities (of dangerous goods)
-    parent: bookingnew
+    parent: booking
 weight: 10
-hidden: true
 ---
 
 When booking Nordic parcel services it is possible to specify that a shipment contains limited quantities of dangerous goods, by adding the `0003` additional service.

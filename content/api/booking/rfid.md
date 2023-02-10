@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingrfid
     title: RFID labels for Mailbox Parcel (3570)
-    parent: bookingnew
+    parent: booking
 weight: 6
-hidden: true
 ---
 
 Mailbox Parcel shipments can optionally be ordered with tracking using RFID.

@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingincoterms
     title: Incoterms for Cargo International
-    parent: bookingnew
+    parent: booking
 weight: 11
-hidden: true
 ---
 
 The `incotermRule` element/attribute can be set for Cargo International service. This is a mandatory element while creating an order for Cargo International. API request will return error code `BOOK-INPUT-065` in case no `incotermRule` is provided in the request. This element allows either of the following values: `DDP`, `DAP`, `FCA` and `EXW`.
