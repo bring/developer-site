@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingfreereturn
     title: Free return of parcels
-    parent: bookingnew
+    parent: booking
 weight: 9
-hidden: true
 ---
 
 For Parcel Norway domestic services, it is possible to book the return shipment at the same time as the outgoing

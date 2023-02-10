@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingcustoms
     title: Customs information
-    parent: bookingnew
+    parent: booking
 weight: 10
-hidden: true
 ---
 
 It is required to pass customs information when booking the following services from Norway to abroad:

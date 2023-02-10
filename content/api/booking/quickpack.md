@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingquickpack
     title: QuickPack Envelope for Express International
-    parent: bookingnew
+    parent: booking
 weight: 12
-hidden: true
 ---
 
 The `quickPackEnvelope` element/attribute is of type boolean, and can be set for services that allow quickpack envelope shipment. We recommend using the weight and measurements shown in the example, for correct mapping.

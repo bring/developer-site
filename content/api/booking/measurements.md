@@ -6,9 +6,8 @@ menu:
   apidocs:
     identifier: bookingmeasurements
     title: Measurements for Cargo and Home Delivery services
-    parent: bookingnew
+    parent: booking
 weight: 4
-hidden: true
 ---
 
 For cargo services (5100, 5300, 9100), Weight is mandatory and one of the Volume / Load Meters / Dimensions / Number of Pallets is mandatory.
