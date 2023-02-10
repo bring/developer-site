@@ -31,10 +31,14 @@
 {{- $latestPage = . }}
 {{- end -}}
 {{- $pLink := .Permalink -}}
+{{- $pageTitle := .Title -}}
+{{- if .Params.apiArea -}}
+{{- $pageTitle = (printf "%s %s %s %s" $pageTitle " - " .Params.apiArea "APIs") -}}
+{{- end -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bring {{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}}{{ end }}{{ end }}</title>
+    <title>Bring {{ $pageTitle }}</title>
     <link>{{ .Permalink }}</link>
     <description>{{ if ne .Title .Site.Title }}{{ with .Title }}{{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>
