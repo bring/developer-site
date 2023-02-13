@@ -37,12 +37,12 @@
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.14",
     "hugo-bin": "^0.96.0",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^10.2.0",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
-    "terser": "^5.16.1",
+    "terser": "^5.16.3",
     "vite": "^4.0.0"
   },
   "browserslist": [
@@ -50,11 +50,11 @@
     "not ie > 0"
   ],
   "dependencies": {
-    "algoliasearch": "^4.14.2",
+    "algoliasearch": "^4.14.3",
     "anchor-js": "^4.3.1",
     "react": "^18.2.0",
     "react-autosuggest": "^10.1.0",
     "react-dom": "^18.2.0",
-    "react-instantsearch-dom": "^6.38.1"
+    "react-instantsearch-dom": "^6.39.0"
   }
 }
