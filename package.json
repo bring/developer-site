@@ -30,20 +30,20 @@
   "homepage": "https://developer.bring.com",
   "devDependencies": {
     "@vitejs/plugin-legacy": "^3.0.1",
-    "@vitejs/plugin-react": "^3.0.0",
+    "@vitejs/plugin-react": "^3.1.0",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.13",
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "cssnano": "^5.1.14",
-    "hugo-bin": "^0.96.0",
+    "hugo-bin": "^0.98.0",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^10.2.0",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^3.0.2",
     "terser": "^5.16.3",
-    "vite": "^4.0.0"
+    "vite": "^4.1.1"
   },
   "browserslist": [
     "> .2%",
