@@ -10,7 +10,6 @@
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
-    a.dev-codetabs__link,
     .start__col,
     .ecom-entrance,
     .skip-to-content-link) {
@@ -23,7 +22,6 @@
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
-    a.dev-codetabs__link,
     .start__col,
     .ecom-entrance):hover {
       color: var(--blue-link);
@@ -337,17 +335,20 @@
   }
 
   /* Code tabs */
-  & .dev-codetabs__item {
+  & .mb-card {
     background-color: var(--green-26);
-    border-color: var(--green-60);
+    border-color: var(--green-26);
     color: var(--green-86);
-    &.active {
-      background-color: var(--green-18);
-      border-color: var(--green);
-    }
-  }
 
-  & .dev-codetabs__link {
-    color: var(--green-86);
+    &:hover {
+      background-color: var(--green-18);
+    }
+
+    &.mb-card--active,
+    &.mb-card--active:focus-visible,
+    &.mb-card--active:hover {
+      background-color: var(--green-18);
+      border-color: var(--green-light);
+    }
   }
 }
