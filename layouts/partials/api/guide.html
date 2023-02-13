@@ -6,7 +6,7 @@
   {{- if isset .Params "services" -}}
     {{- $usage := false -}}
     {{- range .Params.services -}}
-      {{- $service := index $serviceData . -}}
+      {{- $service := index $serviceData (string  .) -}}
       {{- with $service.usage -}}
         {{- $usage = true -}}
       {{- end -}}
@@ -32,7 +32,7 @@
       <tbody>
         {{- $rowSpan := 1 -}}
         {{- range .Params.services -}}
-          {{- $service := index $serviceData . -}}
+          {{- $service := index $serviceData (string .) -}}
           {{- $verifiedVas := slice -}}
           {{- range $service.vas -}}
             {{- if index $vasData . -}}
