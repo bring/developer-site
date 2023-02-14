@@ -45,25 +45,25 @@ documentation:
   - title: Unit Codes
     content: |
       A number of different unit codes are used throughout Shipment API. Many of which are listed in the layouts below but the definative list is displayed here for ease of reference.
-      #### Cash On Delivery Account Type
+      ### Cash On Delivery Account Type
       - Bank
       - Bankgiro
       - Plus
       - Post
       - Iban
       - Other
-      #### Cash On Delivery Transaction Identifier Type
+      ### Cash On Delivery Transaction Identifier Type
       - PQ
       - SS
-      #### Cash On Delivery Type
+      ### Cash On Delivery Type
       - CashOnDelivery
       - PrePaid
       - CreditCard
-      #### Length Unit Code
+      ### Length Unit Code
       - CMT
       - DMT
       - MTR
-      #### Party Role
+      ### Party Role
       - DespatchParty
       - DeliveryParty
       - OrderingParty
@@ -72,21 +72,21 @@ documentation:
       - GoodsReturnParty
       - NotifyParty
       - TransportCompany
-      #### Temperature Measure Unit Code
+      ### Temperature Measure Unit Code
       - CEL
       - FAH
-      #### Volume Unit Code
+      ### Volume Unit Code
       - DMQ
       - MTQ
-      #### Weight Unit Code
+      ### Weight Unit Code
       - GRM
       - KGM
-      #### Dangerous Goods Flashpoint Unit Code
+      ### Dangerous Goods Flashpoint Unit Code
       - CEL
       - FAH
-      #### Dangerous Goods Restriction Type
+      ### Dangerous Goods Restriction Type
       - Tunnel
-      #### Date And Times
+      ### Date And Times
       - DocumentDate
       - PickupRequested
       - PickupEarliest
@@ -94,19 +94,19 @@ documentation:
       - DeliveryRequested
       - DeliveryEarliest
       - DeliveryLatest
-      #### Delivery Terms Type
+      ### Delivery Terms Type
       - Incoterms
       - Freightterms
       - Combiterms
       - PrePaid
       - ThirdParty
-      #### Exchangeable Equipment Unit Type
+      ### Exchangeable Equipment Unit Type
       - EFP
-      #### Free Text Usage
+      ### Free Text Usage
       - PICKUP_INSTRUCTIONS
       - DELIVERY_INSTRUCTIONS
       - CARRIER_INSTRUCTIONS
-      #### Reference Type
+      ### Reference Type
       - DESPATCH_ADVICE_NUMBER
       - TRANSPORT_DOCUMENT_NUMBER
       - CUSTOMS_DECLARATION_NUMBER
@@ -140,11 +140,11 @@ documentation:
       - XC
       - MS
       - AFB
-      #### Shipment Type
+      ### Shipment Type
       - Instruction
       - Booking
       - Healthcheck
-      #### Tariff Reference
+      ### Tariff Reference
       - COOL_ABERRANT
       - GENERAL_CARGO
       - MINERAL_WATERCHILLED_0_4
@@ -157,7 +157,7 @@ documentation:
       - LATE_DELIVERY
       - SPECIAL_CARGO
       - COOL_0_2
-      #### Tariff Reference Values
+      ### Tariff Reference Values
       - CHLR
       - GNCG
       - BWRG
@@ -171,7 +171,7 @@ documentation:
       - GCLD
       - SPCL
       - CH02
-      #### Transport Company
+      ### Transport Company
       - BCI
       - BCIOXP
       - BCN
@@ -188,21 +188,21 @@ documentation:
       - BPN
       - TIE
       - NPB
-      #### Express Sub Transport Company
+      ### Express Sub Transport Company
       - ALY
       - QUI
       - GLW
-      #### Cargo Sub Transport Company
+      ### Cargo Sub Transport Company
       - OXP
-      #### Valid Transport Companies
+      ### Valid Transport Companies
       - BEX
       - BCI
       - BCN
-      #### Valid Sub Transport Companies
+      ### Valid Sub Transport Companies
       - ALY
       - GLW
       - OXP
-      #### Update Indicator
+      ### Update Indicator
       - Original
       - Update
       - Replace
