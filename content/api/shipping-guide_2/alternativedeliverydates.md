@@ -8,7 +8,6 @@ menu:
     title: Get alternative expected delivery dates
     parent: shippingguide_2
 weight: 8
-hidden: true
 ---
 Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**:
 * SOAP: 

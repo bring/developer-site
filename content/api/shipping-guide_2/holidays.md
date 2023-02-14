@@ -8,7 +8,6 @@ menu:
     title: Holidays and Home Delivery
     parent: shippingguide_2
 weight: 12
-hidden: true
 ---
 There is no home delivery on bank holidays. It can also happen that Bring
 will not do home delivery on certain days during Christmas or Easter. The

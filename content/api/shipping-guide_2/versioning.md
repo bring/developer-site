@@ -8,7 +8,6 @@ menu:
     title: Versioning
     parent: shippingguide_2
 weight: 2
-hidden: true
 ---
 The Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses. To achieve this, namespace schema versioning is used in the request for webservices, indicating which version the client is on and what data-format the client expects in the result. For REST, versioning is defined as part of endpoint itself.
 

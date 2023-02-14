@@ -8,7 +8,6 @@ menu:
     title: Volume, weight, dimensions and loading meter
     parent: shippingguide_2
 weight: 11
-hidden: true
 ---
 Shipping Guide use measurement of the package to calculate price of the
 Shipment. Shipping Guide accept measurements in ```Volume```,

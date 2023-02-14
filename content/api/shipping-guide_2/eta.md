@@ -8,7 +8,6 @@ menu:
     title: Estimated arrival time for domestic parcels and cargo
     parent: shippingguide_2
 weight: 7
-hidden: true
 ---
 For the following Norwegian domestic parcel and cargo services you can now get extended leadtime information - the estimated arrival time.
 * Bedriftspakke (BPAKKE_DOR-DOR)
