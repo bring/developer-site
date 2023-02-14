@@ -24,3 +24,5 @@ The following services support QR codes:
 - BPAKKE_DOR-DOR_RETURSERVICE
 - 0341
 - 0343
+
+If a confirmation email to sender is wanted (that includes the requested QR code), add sender's e-mail address in the booking request.
