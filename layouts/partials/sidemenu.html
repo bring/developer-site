@@ -16,7 +16,7 @@
           {{- $hidePage = .Params.hidden -}}
         {{- end -}}
 
-        {{ if (ne $hidePage true) }}
+        {{- if (ne $hidePage true) -}}
           <li
             class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
           >
@@ -45,17 +45,18 @@
                   {{- end -}}
                   <li>
                     <a href="{{ .URL }}" {{ $target | safeHTMLAttr }} class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">{{ .Title }} {{ safeHTML $iconEx }}</a>
-                      {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
-                        <ul class="dev-sidemenu__sublist text-note">
-                          {{- range .Children -}}
-                            <li>
-                              <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent .Menu . }}active {{ end }}">
-                                {{ .Title }}
-                              </a>
-                            </li>
-                          {{- end -}}
-                        </ul>
-                      {{- end -}}
+
+                    {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
+                      <ul class="dev-sidemenu__sublist text-note">
+                        {{- range .Children -}}
+                          <li>
+                            <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent .Menu . }}active {{ end }}">
+                              {{ .Title }}
+                            </a>
+                          </li>
+                        {{- end -}}
+                      </ul>
+                    {{- end -}}
                   </li>
                 {{- end -}}
               </ul>
@@ -63,7 +64,7 @@
               {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
             {{- end -}}
           </li>
-        {{ end }}
+        {{- end -}}
       {{- end -}}
     </ul>
     {{- $apiData := .Site.Data.api -}}
@@ -78,11 +79,11 @@
             {{- end -}}
             {{- if or (eq $currentPage.Params.hidden true) (ne $hidePage true) -}}
               {{- if in .Title "Order Management" -}}
-                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
+                {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
               {{- else if isset $.Params "oas" -}}
-                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+                {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
               {{- else -}}
-                {{- partial "sidemenuitem.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
+                {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
               {{- end -}}
             {{- end -}}
           {{- end -}}
