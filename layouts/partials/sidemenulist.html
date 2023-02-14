@@ -1,0 +1,79 @@
+{{- $currentPage := .currentPage -}}
+{{- $currentMenuItem := .ctx -}}
+{{- $currentMenu := .menu -}}
+{{- $oasData := "" -}}
+{{- with .oasData -}}
+  {{- $oasData = . -}}
+{{- end -}}
+{{- $prefix := "" -}}
+{{- with .prefix -}}
+  {{- $prefix = (print . "-") -}}
+{{- end -}}
+
+{{- $target := "" -}}
+{{- $iconEx := "" -}}
+{{- if $currentMenuItem.Params.blank -}}
+  {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
+  {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+{{- end -}}
+
+<li
+  class="dev-sidemenu__level1 {{ if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) }}active{{ end }}"
+>
+  <a
+    href="{{ .url }}"
+    class="dev-sidemenu__apititle"
+    {{ $target | safeHTMLAttr }}
+    >{{ .pageTitle }}{{ safeHTML $iconEx }}</a
+  >
+
+  {{- if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) -}}
+    <ul class="dev-sidemenu__sublist">
+
+      {{/*  Subpages navigation */}}
+      {{- with $currentPage.Params.subpages -}}
+        {{- with .title -}}
+          <li>
+            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
+              <span data-hover="{{ . }}">{{ . }}</span>
+            </a>
+          </li>
+        {{- end -}}
+      {{- end -}}
+
+      {{- $currentParent := .Parent -}}
+      {{- $currentId := "" -}}
+      {{- range $currentMenuItem.Children -}}
+        {{- $currentParent = .Parent -}}
+      {{- end -}}
+      {{- range $currentPage.Menus -}}
+        {{- $currentId = .Identifier -}}
+      {{- end -}}
+
+      {{- if ne $currentParent $currentId -}}
+        {{- with $currentPage.Parent.Params.subpages -}}
+          <li>
+            {{- with .title -}} 
+              <a
+                href="../#{{ . | anchorize }}"
+                data-list-item="{{ . | anchorize }}"
+              >
+                <span data-hover="{{ . }}">{{ . }}</span>
+              </a>
+            {{- end -}}
+            <ul class="dev-sidemenu__sublist text-note">
+              {{- range $currentMenuItem.Children -}}
+                <li><a href="{{ .URL }}" class="{{ if eq .Identifier $currentId }} active {{ end }}">{{ .Title }}</a></li>
+              {{- end -}}
+            </ul>
+          </li>
+          {{- partial "sidemenuitem.html" (dict "ctx" $currentPage.Parent "apiData" .apiData "identifier" .identifier "prefix" $prefix "isParent" true) -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{/*  Regular navigation */}}
+      {{- partial "sidemenuitem.html" (dict "ctx" $currentPage "apiData" .apiData "identifier" .identifier "prefix" $prefix) -}}
+
+    </ul>
+  {{- end -}}
+</li>

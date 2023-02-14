@@ -1,217 +1,97 @@
-{{- $currentPage := .currentPage -}}
-{{- $currentMenuItem := .ctx -}}
-{{- $currentMenu := .menu -}}
+{{ $ctx := .ctx }}
 {{- $oasData := "" -}}
-{{- with .oasData -}}
+{{- with $ctx.Params.oas -}}
   {{- $oasData = getJSON . -}}
 {{- end -}}
-{{- $prefix := "" -}}
-{{- with .prefix -}}
-  {{- $prefix = (print . "-") -}}
+{{- $apiData := "" -}}
+{{- with .apiData -}}
+  {{- $apiData = . -}}
+{{- end -}}
+{{- $anchor := "#" -}}
+{{- if .isParent -}}
+  {{- $anchor = "../#" -}}
+{{- end -}}
+{{- $identifier := .identifier -}}
+{{- $prefix := .prefix -}}
+
+{{- range $ctx.Params.documentation -}}
+  {{- with .title -}}
+    <li>
+      <a href="{{ $anchor }}{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
+        <span data-hover="{{ . }}">{{ . }}</span>
+      </a>
+    </li>
+  {{- end -}}
 {{- end -}}
 
-{{- $target := "" -}}
-{{- $iconEx := "" -}}
-{{- if $currentMenuItem.Params.blank -}}
-  {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
-  {{- $iconEx = "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+{{/*  special solution for warehousing  */}}
+{{- range $ctx.Params.html -}}
+  {{- with .title -}}
+    <li>
+      <a href="{{ $anchor }}{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
+        <span data-hover="{{ . }}">{{ . }}</span>
+      </a>
+    </li>
+  {{- end -}}
 {{- end -}}
 
-<li
-  class="dev-sidemenu__level1 {{ if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) }}active{{ end }}"
->
-  <a
-    href="{{ .url }}"
-    class="dev-sidemenu__apititle"
-    {{ $target | safeHTMLAttr }}
-    >{{ .pageTitle }}{{ safeHTML $iconEx }}</a
-  >
-  {{- if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) -}}
-    <ul class="dev-sidemenu__sublist">
+{{- with $ctx.Params.guides -}}
+  <li>
+    <a href="{{ $anchor }}tips-and-guides" data-list-item="tips-and-guides">
+      <span data-hover="Tips and guides">Tips and guides</span>
+    </a>
+  </li>
+{{- end -}}
 
-      {{/*  Generate submenu when on subpage TODO: reuse existing code  */}}
-      {{- with $currentPage.Params.subpages -}}
-        {{- with .title -}}
-          <li>
-            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
-              <span data-hover="{{ . }}">{{ . }}</span>
-            </a>
-          </li>
-        {{- end -}}
-      {{- end -}}
+{{- with or (and ($apiData) (index $apiData $identifier)) $oasData -}}
+  {{- with or .resources .paths -}}
+    <li>
+      <a href="{{ $anchor }}endpoints" data-list-item="endpoints">
+        <span data-hover="endpoints">Endpoints</span>
+      </a>
+    </li>
+  {{- end -}}
+{{- end -}}
 
-      {{- $currentParent := .Parent -}}
-      {{- $currentId := "" -}}
-      {{- range $currentMenuItem.Children -}}
-        {{- $currentParent = .Parent -}}
-      {{- end -}}
-      {{- range $currentPage.Menus -}}
-        {{- $currentId = .Identifier -}}
-      {{- end -}}
-
-      {{- if ne $currentParent $currentId -}}
-        {{- with $currentPage.Parent.Params.subpages -}}
-          {{- with .title -}} 
-            <li>
-              <a
-                href="../#{{ . | anchorize }}"
-                data-list-item="{{ . | anchorize }}"
-              >
-                <span data-hover="{{ . }}">{{ . }}</span>
-              </a>
-            </li>
-          {{- end -}}
-
-          <ul class="dev-sidemenu__sublist text-note">
-            {{- range $currentMenuItem.Children -}}
-              <li><a href="{{ .URL }}" class="{{ if eq .Identifier $currentId }} active {{ end }}">{{ .Title }}</a></li>
-            {{- end -}}
-          </ul>
-
-          {{- range $currentPage.Parent.Params.documentation -}}
-            {{- with .title -}}
-              <li>
-                <a
-                  href="../#{{ . | anchorize }}"
-                  data-list-item="{{ . | anchorize }}"
-                >
-                  <span data-hover="{{ . }}">{{ . }}</span>
-                </a>
-              </li>
-            {{- end -}}
-          {{- end -}}
-
-          {{- with $currentPage.Parent.Params.guides -}}
-            <li>
-              <a href="../#tips-and-guides" data-list-item="tips-and-guides">
-                <span data-hover="Tips and guides">Tips and guides</span>
-              </a>
-            </li>
-          {{- end -}}
-
-          {{ $oasData := "" }}
-          {{- with $currentPage.Parent.Params.oas -}}
-            {{- $oasData = getJSON . -}}
-          {{ end }}
-
-          {{ with $oasData }}
-            {{- with .paths -}}
-              <li>
-                <a href="../#endpoints" data-list-item="endpoints">
-                  <span data-hover="endpoints">Endpoints</span>
-                </a>
-              </li>
-
-              {{- range . -}}
-                {{- range $k, $v := . -}}
-                  {{- $method := $k -}}
-                  {{- with .summary -}}
-                    {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
-                    <li>
-                      <a
-                        href="../#{{ $endpointId }}"
-                        data-list-item="{{ $endpointId }}"
-                      >
-                        <span data-hover="{{ . }}">
-                          {{- . -}}
-                        </span>
-                      </a>
-                    </li>
-                  {{- end -}}
-                {{- end -}}
-              {{- end -}}
-            {{- end -}}
-          {{- end -}}
-
-          {{- if and (eq (getenv "HUGO_ENV") "production") (isset $currentPage.Params "disqus_identifier") -}}
-            <li>
-              <a href="../#api-support"> API support </a>
-            </li>
-          {{- end -}}
-        {{- end -}}
-      {{- end -}}
-
-      {{- range $currentPage.Params.documentation -}}
-        {{- with .title -}}
-          <li>
-            <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
-              <span data-hover="{{ . }}">{{ . }}</span>
-            </a>
-          </li>
-        {{- end -}}
-      {{- end -}}
-
-      {{/*  special solution for warehousing  */}}
-      {{- range $currentPage.Params.html -}}
-      {{- with .title -}}
+{{- with $oasData -}}
+  {{- range .paths -}}
+    {{- range $k, $v := . -}}
+      {{- $method := $k -}}
+      {{- with .summary -}}
+        {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
         <li>
-          <a href="#{{ . | anchorize }}" data-list-item="{{ . | anchorize }}">
-            <span data-hover="{{ . }}">{{ . }}</span>
+          <a href="{{ $anchor }}{{ $endpointId }}" data-list-item="{{ $endpointId }}">
+            <span data-hover="{{ . }}">
+              {{- . -}}
+            </span>
           </a>
         </li>
       {{- end -}}
     {{- end -}}
-
-      {{- with $currentPage.Params.guides -}}
-        <li>
-          <a href="#tips-and-guides" data-list-item="tips-and-guides">
-            <span data-hover="Tips and guides">Tips and guides</span>
-          </a>
-        </li>
-      {{- end -}}
-
-      {{- with or (and (.apiData) (index .apiData .identifier)) $oasData -}}
-        {{- with or .resources .paths -}}
-          <li>
-            <a href="#endpoints" data-list-item="endpoints">
-              <span data-hover="endpoints">Endpoints</span>
-            </a>
-          </li>
-        {{- end -}}
-      {{- end -}}
-
-      {{- with $oasData -}}
-        {{- range .paths -}}
-          {{- range $k, $v := . -}}
-            {{- $method := $k -}}
-            {{- with .summary -}}
-              {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
-              <li>
-                <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
-                  <span data-hover="{{ . }}">
-                    {{- . -}}
-                  </span>
-                </a>
-              </li>
-            {{- end -}}
-          {{- end -}}
-        {{- end -}}
-      {{- end -}}
-
-      {{- with (and (.apiData) (index .apiData .identifier)) -}}
-        {{- range .resources -}}
-          {{- $method := "" -}}
-          {{- range .methods -}}
-            {{- with .method -}}
-              {{- $method = . -}}
-            {{- end -}}
-          {{- end -}}
-          {{- $endpointId := (print $prefix .displayName "-" $method) | anchorize -}}
-          <li>
-            <a href="#{{ $endpointId }}" data-list-item="{{ $endpointId }}">
-              <span data-hover="{{ .displayName }}">
-                {{- .displayName -}}
-              </span>
-            </a>
-          </li>
-        {{- end -}}
-      {{- end -}}
-
-      {{- if and (eq (getenv "HUGO_ENV") "production") (isset $currentPage.Params "disqus_identifier") -}}
-        <li>
-          <a href="#api-support"> API support </a>
-        </li>
-      {{- end -}}
-    </ul>
   {{- end -}}
-</li>
+{{- end -}}
+
+{{- with (and ($apiData) (index $apiData $identifier)) -}}
+  {{- range .resources -}}
+    {{- $method := "" -}}
+    {{- range .methods -}}
+      {{- with .method -}}
+        {{- $method = . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $endpointId := (print $prefix .displayName "-" $method) | anchorize -}}
+    <li>
+      <a href="{{ $anchor }}{{ $endpointId }}" data-list-item="{{ $endpointId }}">
+        <span data-hover="{{ .displayName }}">
+          {{- .displayName -}}
+        </span>
+      </a>
+    </li>
+  {{- end -}}
+{{- end -}}
+
+{{- if and (eq (getenv "HUGO_ENV") "production") (isset $ctx.Params "disqus_identifier") -}}
+  <li>
+    <a href="{{ $anchor }}api-support">API support</a>
+  </li>
+{{- end -}}
