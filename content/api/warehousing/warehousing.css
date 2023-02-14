@@ -77,7 +77,7 @@ ul {
 .codeBox .dark {
     background-color: #dbdbdb;
 }
-a {
+.maketree a {
     /* I don't agree with !important but it would
        cause more issues changing dev-docscontent
        where it is set to underscore.*/
