@@ -1,3 +1,12 @@
+.dev-codetabs {
+  max-width: 100%;
+  list-style-type: none;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.25rem;
+}
+
 .chroma {
   max-width: 64rem;
   max-height: 36rem;

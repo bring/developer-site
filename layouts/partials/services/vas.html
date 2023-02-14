@@ -166,28 +166,50 @@
                       {{ . | safeHTML }}
                     </div>
                   {{- end -}}
-                  <nav aria-label="local">
-                    <ul class="dev-codetabs flex flex-dir-row" role="tablist">
-                      {{- with .json -}}
-                        <li role="presentation" class="dev-codetabs__item active">
-                          <a class="dev-codetabs__link" href="#" data-toggle="tab" data-target="#example_json_{{ $vas.bookingCode }}">application/json</a>
-                        </li>
-                      {{- end -}}
-                      {{- with .xml -}}
-                        <li role="presentation" class="dev-codetabs__item">
-                          <a class="dev-codetabs__link" href="#" data-toggle="tab" data-target="#example_xml_{{ $vas.bookingCode }}">application/xml</a>
-                        </li>
-                      {{- end -}}
-                    </ul>
-                  </nav>
+                  <ul class="dev-codetabs" role="tablist">
+                    {{- with .json -}}
+                      <li>
+                        <button
+                          type="button"
+                          role="tab"
+                          class="mb-card mb-card--active pas"
+                          aria-expanded="true"
+                          aria-controls="example_json_{{ $vas.bookingCode }}"
+                          data-toggle="{{ $vas.bookingCode }}"
+                        >application/json</button>
+                      </li>
+                    {{- end -}}
+                    {{- if .xml -}}
+                      <li>
+                        <button
+                          type="button"
+                          role="tab"
+                          class="mb-card pas"
+                          aria-expanded="{{ if .json }}false{{ else }}true{{ end }}"
+                          aria-controls="example_xml_{{ $vas.bookingCode }}"
+                          data-toggle="{{ $vas.bookingCode }}"
+                        >application/xml</button>
+                      </li>
+                    {{- end -}}
+                  </ul>
                   <div>
                     {{- with .json }}
-                      <div class="dev-codetabs__content dev-codetabs__panel active" id="example_json_{{ $vas.bookingCode }}">
+                      <div
+                        role="tabpanel"
+                        class="mts mbl"
+                        id="example_json_{{ $vas.bookingCode }}"
+                        data-tab-group="{{ $vas.bookingCode }}"
+                      >
                         {{ highlight . "json" "" }}
                       </div>
                     {{- end -}}
                     {{- if .xml -}}
-                      <div class="dev-codetabs__content dev-codetabs__panel {{ if not .json }}active{{ end }}" id="example_xml_{{ $vas.bookingCode }}">
+                      <div
+                        role="tabpanel"
+                        class="mts mbl {{ if .json }}dn{{ end }}"
+                        id="example_xml_{{ $vas.bookingCode }}"
+                        data-tab-group="{{ $vas.bookingCode }}"
+                      >
                         {{ highlight .xml "xml" "" }}
                       </div>
                     {{- end -}}
