@@ -166,32 +166,28 @@
                       {{ . | safeHTML }}
                     </div>
                   {{- end -}}
-                  <ul class="dev-codetabs" role="tablist">
+                  <div class="flex flex-wrap gaxs" role="tablist" aria-label="Code examples">
                     {{- with .json -}}
-                      <li>
-                        <button
-                          type="button"
-                          role="tab"
-                          class="mb-card mb-card--active pas"
-                          aria-expanded="true"
-                          aria-controls="example_json_{{ $vas.bookingCode }}"
-                          data-toggle="{{ $vas.bookingCode }}"
-                        >application/json</button>
-                      </li>
+                      <button
+                        type="button"
+                        role="tab"
+                        class="mb-card mb-card--active pas"
+                        aria-selected="true"
+                        aria-controls="example_json_{{ $vas.bookingCode }}"
+                        data-toggle="{{ $vas.bookingCode }}"
+                      >application/json</button>
                     {{- end -}}
                     {{- if .xml -}}
-                      <li>
-                        <button
-                          type="button"
-                          role="tab"
-                          class="mb-card pas"
-                          aria-expanded="{{ if .json }}false{{ else }}true{{ end }}"
-                          aria-controls="example_xml_{{ $vas.bookingCode }}"
-                          data-toggle="{{ $vas.bookingCode }}"
-                        >application/xml</button>
-                      </li>
+                      <button
+                        type="button"
+                        role="tab"
+                        class="mb-card pas"
+                        aria-selected="{{ if .json }}false{{ else }}true{{ end }}"
+                        aria-controls="example_xml_{{ $vas.bookingCode }}"
+                        data-toggle="{{ $vas.bookingCode }}"
+                      >application/xml</button>
                     {{- end -}}
-                  </ul>
+                  </div>
                   <div>
                     {{- with .json }}
                       <div

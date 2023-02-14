@@ -17,7 +17,7 @@
     <p>Media type: <code>{{ .name }}</code></p>
   {{- end -}}
 
-  <ul class="dev-codetabs" role="tablist">
+  <div class="flex flex-wrap gaxs" role="tablist" aria-label="Code examples">
     {{- $nameDash := replace .name "/" "-" -}}
     {{- $tabGroup := (print $idType $nameDash) | anchorize -}}
     {{- $tabIDFormat := "" -}}
@@ -34,17 +34,15 @@
           {{- if (eq .name $type) -}}
             {{- $showResponse = true -}}
             {{- $tabIDFormat = print $tabGroup "-format" -}}
-            <li>
-              <button
-                type="button"
-                role="tab"
-                class="mb-card mb-card--active pas"
-                aria-expanded="true"
-                aria-controls="{{ $tabIDFormat }}"
-                data-toggle="{{ $tabGroup }}"
-                >{{ $formatType }} format</button
-              >
-            </li>
+            <button
+              type="button"
+              role="tab"
+              class="mb-card mb-card--active pas"
+              aria-selected="true"
+              aria-controls="{{ $tabIDFormat }}"
+              data-toggle="{{ $tabGroup }}"
+              >{{ $formatType }} format</button
+            >
           {{- end -}}
         {{- end -}}
       {{- end -}}
@@ -58,21 +56,19 @@
         {{- $ariaEx = "true" -}}
       {{- end -}}
       {{- $tabIDExample = print $tabGroup "-example-" (add 1 $index) -}}
-      <li>
-        <button
-          type="button"
-          role="tab"
-          class="mb-card pas {{ $firstActive }}"
-          aria-expanded="{{ $ariaEx }}"
-          aria-controls="{{ $tabIDExample }}"
-          data-toggle="{{ $tabGroup }}"
-          >Example: {{ .displayName }}</button
-        >
-      </li>
+      <button
+        type="button"
+        role="tab"
+        class="mb-card pas {{ $firstActive }}"
+        aria-selected="{{ $ariaEx }}"
+        aria-controls="{{ $tabIDExample }}"
+        data-toggle="{{ $tabGroup }}"
+        >Example: {{ .displayName }}</button
+      >
     {{- end -}}
-  </ul>
+  </div>
 
-  <div class="dev-codetabs__content">
+  <div>
     {{- if $showResponse -}}
       {{- with .type -}}
         <div
