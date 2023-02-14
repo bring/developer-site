@@ -18,5 +18,5 @@ updated with changes. We strongly suggest all our clients to use IFTMIN D04A
 (or API).
 
 If you have questions about integration:
-- Norway: [integrasjon.norge@bring.com](integrasjon.norge@bring.com)
-- Other countries: [edi@bring.com](edi@bring.com)
+- Norway: [integrasjon.norge@bring.com](mailto:integrasjon.norge@bring.com)
+- Other countries: [edi@bring.com](mailto:edi@bring.com)
