@@ -3,6 +3,10 @@
   background-color: var(--green-darkest);
   color: var(--green-86);
 
+  & body {
+    background: var(--green-darkest);
+  }
+
   /*Brighter link color for better contrast*/
   & a:not(
     .btn,
