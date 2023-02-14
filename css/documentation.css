@@ -30,8 +30,8 @@
   margin-bottom: 0.6em;
 }
 
-.dev-docscontent p > a:not(.btn-link--dark),
-.dev-docscontent li > a:not(.dev-codetabs__link) {
+.dev-docscontent a:not(.btn-link--dark, .btn-link, .mb-card, .anchorjs-link),
+p a:not(.btn-link--dark, .btn-link) {
   text-decoration: underline;
 }
 

@@ -24,7 +24,7 @@
     .dev-sidemenu a,
     .start__col,
     .ecom-entrance):hover {
-      color: var(--blue-link);
+      color: var(--blue-lighter);
   }
 
   & .color-theme-icon {
