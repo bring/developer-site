@@ -14,7 +14,7 @@ The `incotermRule` element/attribute can be set for Cargo International service.
 
 ## Request example
 
-#### XML
+### XML
 ```xml
 <product>
   <id>CARGO_INTERNATIONAL</id>
@@ -22,7 +22,7 @@ The `incotermRule` element/attribute can be set for Cargo International service.
 </product>
 ```
 
-#### JSON
+### JSON
 ```json
 "product": {
   "id": "CARGO_INTERNATIONAL",

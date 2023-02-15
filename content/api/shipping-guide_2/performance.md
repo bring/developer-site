@@ -8,7 +8,6 @@ menu:
     title: Performance
     parent: shippingguide_2
 weight: 3
-hidden: true
 ---
 To have better performance of the api
 

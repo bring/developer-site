@@ -8,7 +8,6 @@ menu:
     title: Lead time
     parent: shippingguide_2
 weight: 6
-hidden: true
 ---
 Lead time does not only depend on the recipient’s postal code, but also the address itself.
 

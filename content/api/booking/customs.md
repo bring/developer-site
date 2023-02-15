@@ -32,7 +32,7 @@ If sending customs information, the following elements are to be used:
 
 Please refer to the _Request params_ section below for more details about the elements. [Customs tariff codes (tolltariffnummer)](http://tolltariffen.toll.no/).
 
-### Example {#customs-export-information-example}
+## Example {#customs-export-information-example}
 
 In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
 t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
@@ -54,13 +54,13 @@ There are two examples in the _Request examples_ section below that show request
 * In one of these examples, importer not sent in request, hence the recipient is the importing party with (optional) `vatNumber`.
 * In the other example, there is importer party set in the request with the (optional) `vatNumber`.
 
-### IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
+## IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
 
 By using the `iossNumber` element of `ediCustomsDeclarations`, one can specify an IOSS number for exports from Norway to EU countries. Only applicable when `natureOfTransaction` is of type `SALE_OF_GOODS`.
 Note that this can not be combined with a `reference` field on the `senders` party. More info on [IOSS](https://www.bring.no/tjenester/toll/ioss).
 
-### Request examples
-#### Customs declaration - with recipient as the importing party
+## Request examples
+### Customs declaration - with recipient as the importing party
 
 #### XML
 
@@ -188,7 +188,7 @@ Note that this can not be combined with a `reference` field on the `senders` par
 }
 ```
 
-#### Customs declaration - with importer
+### Customs declaration - with importer
 
 #### XML
 

@@ -8,7 +8,6 @@ menu:
     title: Shipping date and Same day delivery (2012)
     parent: shippingguide_2
 weight: 15
-hidden: true
 ---
 The provided shipping date does **not** affect the calculation of Same day delivery (2012) availability. In stead the 
 Same day delivery VAS is configured with the `leadTimeFromCustomerInMinutes` attribute containing the number of minutes 

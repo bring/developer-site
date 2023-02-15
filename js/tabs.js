@@ -8,7 +8,7 @@ for (let tab of tabArray) {
     const tabGroupArr = document.querySelectorAll('button[data-toggle="' + panel.dataset.tabGroup + '"]')
     for (let tab of tabGroupArr) {
       tab.classList.remove('mb-card--active')
-      tab.setAttribute('aria-expanded', 'false')
+      tab.setAttribute('aria-selected', 'false')
     }
 
     const tabPanelArr = document.querySelectorAll('div[data-tab-group="' + panel.dataset.tabGroup + '"]')
@@ -18,6 +18,6 @@ for (let tab of tabArray) {
 
     panel.classList.remove('dn')
     tab.classList.add('mb-card--active')
-    tab.setAttribute('aria-expanded', 'true')
+    tab.setAttribute('aria-selected', 'true')
   })
 }

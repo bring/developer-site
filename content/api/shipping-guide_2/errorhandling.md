@@ -8,7 +8,6 @@ menu:
     title: Error handling
     parent: shippingguide_2
 weight: 4
-hidden: true
 ---
 When using the Shipping Guide it is important to handle errors gracefully. Your users should still be able to order even if the Shipping Guide API returns an error or if there is an error establishing a connection to the API.
 

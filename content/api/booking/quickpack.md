@@ -14,7 +14,7 @@ The `quickPackEnvelope` element/attribute is of type boolean, and can be set for
 
 ## Request example
 
-#### XML
+### XML
 ```xml
 <product>
   <id>EXPRESS_INTERNATIONAL</id>
@@ -34,7 +34,7 @@ The `quickPackEnvelope` element/attribute is of type boolean, and can be set for
 </packages>
 ```
 
-#### JSON
+### JSON
 ```json
 "product": {
   "id": "EXPRESS_INTERNATIONAL",

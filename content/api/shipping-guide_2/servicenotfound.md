@@ -8,7 +8,6 @@ menu:
     title: Service not applicable
     parent: shippingguide_2
 weight: 13
-hidden: true
 ---
 
 ## No applicable services found

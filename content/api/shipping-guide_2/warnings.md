@@ -8,7 +8,6 @@ menu:
     title: Should I handle warnings?
     parent: shippingguide_2
 weight: 14
-hidden: true
 ---
 Ideally clients should not parse these warning codes for any logic as they
 are bound to change. These are supposed to be treated as informational data.

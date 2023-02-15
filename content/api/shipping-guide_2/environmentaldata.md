@@ -8,7 +8,6 @@ menu:
     title: Shipment environmental data
     parent: shippingguide_2
 weight: 5
-hidden: true
 ---
 For the following Norwegian domestic and Nordic parcel services it is now possible to get data on whether fossil free (electric and/or bio) transportation is used during last mile transport leg of shipment:
 

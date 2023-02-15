@@ -8,7 +8,6 @@ menu:
     title: Calling Shipping Guide API
     parent: shippingguide_2
 weight: 1
-hidden: true
 ---
 This guide will walk you through getting shipment alternatives for your first consignment. We will be calling the SOAP interface with a HTTP client and query for the service `SERVICEPAKKE` and `PA_DOREN` for two packages.
 

@@ -1,7 +1,7 @@
 {{- $endpointId := .endpointId -}}
 {{- $responses := .responses -}}
 
-<div class="pam flex flex-wrap" role="tablist">
+<div class="pam flex flex-wrap" role="tablist" aria-label="Code examples">
   {{- $ariaSelected := true -}}
   {{- range $response, $_ := $responses -}}
     {{- with .content -}}
