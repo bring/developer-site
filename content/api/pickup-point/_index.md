@@ -59,6 +59,7 @@ documentation:
       ### PickupPointType
 
       #### Norway
+        - Type 1: Bedriftssenter (manned) - not to be used for B2C shipments
         - Type 4: Post i Butikk (manned)
         - Type 19: Posten pakkeutlevering (manned)
         - Type 21: Postkontor (manned)
