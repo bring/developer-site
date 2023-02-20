@@ -1,8 +1,13 @@
 "additionalServices": [
   {
     "id": "DANGEROUS_GOODS",
+    "unNumber": "3295",
     "containerId": "1236",
     "weightInGrams": "500000",
-    "unNumber": "1560"
+    "commodity": "HYDROKARBONER, FLYTENDE, N.O.S.",
+    "packingGroup": "III",
+    "dangerClass": "",
+    "safetyMarkCode": "3",
+    "tunnelRestrictionCode": "(D/E)"
   }
 ]

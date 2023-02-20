@@ -1,10 +1,16 @@
 <div>
   <h3 class="text-heading">Dangerous goods details</h3>
-  <p>When ordering dangerous goods, some additional information describing the goods is required. The following elements/attributes are available:</p>
+  <p>When ordering dangerous goods, some additional information describing the goods is required. The following elements/attributes must be sent if they are defined for the specific UnNumber:</p>
   <ul>
+    <li><code>unNumber</code> (mandatory)</li>
     <li><code>containerId</code> (mandatory when ordered with <code>OIL_EXPRESS</code>)</li>
     <li><code>weightInGrams</code> (either this or)</li>
     <li><code>volumeInLitres</code></li>
-    <li><code>unNumber</code></li>
+    <li><code>commodity</code>  (mandatory if specified)</li>
+    <li><code>packingGroup</code> (mandatory if specified)</li>
+    <li><code>dangerClass</code> (mandatory if specified)</li>
+    <li><code>safetyMarkCode</code> (mandatory if specified)</li>
+    <li><code>tunnelRestrictionCode</code> (mandatory if specified)</li>
   </ul>
+  <p>An example where only unNumber and packingGroup is provided and is not enough to verify the correct dangerous good</p>
 </div>
