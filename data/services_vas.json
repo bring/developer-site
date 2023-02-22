@@ -2972,4 +2972,98 @@
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Installation details",
+  "vasNameNorwegian" : "Installasjonsdetaljer",
+  "description" : "Value added service for ordering multiple installation services on the same shipment.  ",
+  "shippingGuideCode" : "1380",
+  "shippingGuideNpbCode" : "1380",
+  "bookingCode" : "1380",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Home Delivery Indoor",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "DOUBLE_INDOOR",
+    "productionCode" : "2870",
+    "domesticAllowedIn" : "NO, SE, DK",
+    "senderCountries" : "NO, SE, DK",
+    "destinations" : "NO, SE, DK"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Reusable Packaging",
+  "vasNameNorwegian" : "Gjenbrukbar emballasje",
+  "description" : "Bring takes back the packaging and re-uses it. Reusable Packaging requires an agreement in Mybring to be available for booking.  ",
+  "shippingGuideCode" : "1385",
+  "shippingGuideNpbCode" : "1385",
+  "bookingCode" : "1385",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Urban Home Delivery",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "3332",
+    "productionCode" : "3332",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "SE",
+    "destinations" : "SE"
+  }, {
+    "serviceName" : "Home Delivery Curbside",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "CURBSIDE",
+    "productionCode" : "3123",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "SE",
+    "destinations" : "SE"
+  }, {
+    "serviceName" : "Home Delivery Indoor",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "DOUBLE_INDOOR",
+    "productionCode" : "2870",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "SE",
+    "destinations" : "SE"
+  }, {
+    "serviceName" : "Home Delivery Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "HOME_DELIVERY_RETURN",
+    "productionCode" : "2778",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "SE",
+    "destinations" : "SE"
+  }, {
+    "serviceName" : "Curbside Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_CURBSIDE",
+    "productionCode" : "3577",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "SE",
+    "destinations" : "SE"
+  }, {
+    "serviceName" : "Indoor Return",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "RETURN_INDOOR",
+    "productionCode" : "3578",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "SE",
+    "destinations" : "SE"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
 } ]
