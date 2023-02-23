@@ -1,7 +1,12 @@
 <additionalServices>
   <additionalService>
     <id>1380</id>
-    <numberOfItems>1</numberOfItems>
+    <numberOfItems>2</numberOfItems>
     <code>AABBCC</code>
+  </additionalService>
+  <additionalService>
+    <id>1380</id>
+    <numberOfItems>1</numberOfItems>
+    <code>CCBBAA</code>
   </additionalService>
 </additionalServices>
