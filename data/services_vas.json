@@ -1132,7 +1132,7 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring for certain services to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Evening delivery",
@@ -2148,7 +2148,7 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Social control",
@@ -2230,7 +2230,7 @@
     "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ "Social control requires an agreement in Mybring to be available for booking." ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Carry service oversize",
@@ -2482,7 +2482,7 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ "Same day delivery requires an agreement in Mybring to be available for booking." ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Limited quantities",
@@ -2884,7 +2884,7 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Remove pallets",
@@ -2906,7 +2906,7 @@
     "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Electronic notification to a third party",
@@ -2992,7 +2992,7 @@
     "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
   "vasName" : "Reusable Packaging",
@@ -3064,6 +3064,6 @@
     "destinations" : "SE"
   } ],
   "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
+  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 } ]
