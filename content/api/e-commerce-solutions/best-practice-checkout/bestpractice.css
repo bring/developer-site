@@ -1,10 +1,21 @@
+@media only screen and (max-width: 1550px) {
+    .best-practice-item {
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .best-practice-item--illustration {
+        margin-left: 1rem;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     .best-practice-item {
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .best-practice-item--illustration {
         margin-left: 0;
-        padding-top: 1.5rem;
+        padding-top: 2rem;
     }
 }
