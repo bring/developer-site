@@ -119,10 +119,6 @@
   z-index: 1;
 }
 
-.themes-btn {
-  text-transform: capitalize;
-}
-
 .themes-btn:hover {
   background-color: rgba(255, 255, 255, 0.08) !important;
   color: var(--green-86);
