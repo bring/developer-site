@@ -1,0 +1,10 @@
+@media only screen and (max-width: 1200px) {
+    .best-practice-item {
+        flex-direction: column;
+    }
+
+    .best-practice-item--illustration {
+        margin-left: 0;
+        padding-top: 1.5rem;
+    }
+}

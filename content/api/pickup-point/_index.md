@@ -10,7 +10,6 @@ menu:
     parent: checkout
 weight: 12
 aliases:
-  - checkout-guide-norway/api/pickup-point/
   - pickuppointapi.html
 
 introduction: |
