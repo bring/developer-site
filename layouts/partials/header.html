@@ -104,71 +104,66 @@
       const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
       const storedTheme = localStorage.getItem("theme");
 
+      // Open the theme switcher
       themesBtn.addEventListener("click", (e) => {
         let expandedState = e.target.getAttribute("aria-expanded");
-        expandedState = expandedState === "true" ? false : true;
+        expandedState = expandedState === "true" ? "false" : "true";
         e.target.setAttribute("aria-expanded", expandedState);
 
         themeSwitchContainer.classList.toggle("dn");
       });
 
+      // Close the container when clicking outside of it
       htmlContainer.addEventListener("click", (e) => {
         if(e.target !== themeSwitchContainer && e.target !== themesBtn) {
-          themesBtn.setAttribute("aria-expanded", false);
+          themesBtn.setAttribute("aria-expanded", "false");
           themeSwitchContainer.classList.add("dn");
         }
       });
 
-      const darkOption = "dark";
-      const lightOption = "light";
-      const autoOption = "auto";
+      // Set theme from local storage or if the user has enabled dark theme in the OS settings
+      if (storedTheme) {
+        setThemePreference(storedTheme);
+      } else {
+        prefersDarkScheme.matches ? htmlContainer.dataset.theme = 'dark' : null;
+      }
 
-      //Set data-theme to dark if user has dark mode enabled in the OS settings
-      if (prefersDarkScheme.matches) {
-        htmlContainer.dataset.theme = darkOption;
-      }
+      // Change theme if OS settings change, and if nothing in local storage
+      prefersDarkScheme.addEventListener('change', ({matches:isDark}) => {
+        const storedTheme = localStorage.getItem("theme");
+        if (!storedTheme) {
+          htmlContainer.dataset.theme = isDark ? 'dark' : 'light';
+        }
+      });
       
-      //Get theme from local storage, if stored
-      if (storedTheme === "dark") {
-        htmlContainer.dataset.theme = darkOption;
-        themesBtnText.innerText = "Dark";
-        themesBtn.setAttribute("aria-label","Dark color mode");
-      } else if (storedTheme === "light") {
-        htmlContainer.dataset.theme = lightOption;
-        themesBtnText.innerText = "Light";
-        themesBtn.setAttribute("aria-label","Light color mode");
-      }
-      
-      //Set the data-theme on click
+      // Set the theme on click
       themeSwitch.forEach(changeColorTheme);
 
       function changeColorTheme(btn) {
         btn.addEventListener("click", (e) => {
           let selectedTheme = e.target.dataset.colorTheme;
-          if (selectedTheme === "auto") {
-            themesBtnText.innerText = e.target.innerText;
+          setThemePreference(selectedTheme, e);
+        });
+      }
+
+      function setThemePreference(theme, btnClick) {
+        themesBtn.setAttribute('aria-label', `${theme} color mode`);
+        themesBtnText.innerText = btnClick ? btnClick.target.innerText : theme;
+        htmlContainer.dataset.theme = theme;
+        if(btnClick) {
+          if (theme === "auto") {
+            themesBtnText.innerText = btnClick.target.innerText;
             //Reset based on OS settings and remove stored theme
             if (prefersDarkScheme.matches) {
-              htmlContainer.dataset.theme = darkOption;
+              htmlContainer.dataset.theme = "dark";
             } else {
               htmlContainer.removeAttribute("data-theme");
             }
-            localStorage.removeItem("theme", selectedTheme);
-            themesBtn.setAttribute("aria-label","Auto color mode");
-          } else if (selectedTheme === darkOption) {
-            themesBtnText.innerText = e.target.innerText;
-            //Set data-theme and store the chosen theme in local storage
-            htmlContainer.dataset.theme = darkOption;
-            localStorage.setItem("theme", selectedTheme);
-            themesBtn.setAttribute("aria-label","Dark color mode");
-          } else if (selectedTheme === lightOption) {
-            themesBtnText.innerText = e.target.innerText;
-            //Set data-theme and store the chosen theme in local storage
-            htmlContainer.dataset.theme = lightOption;
-            localStorage.setItem("theme", selectedTheme);
-            themesBtn.setAttribute("aria-label","Light color mode");
+            localStorage.removeItem("theme");
+          } else {
+            localStorage.setItem("theme", theme);
           }
-        });
+        }
       }
     </script>
   </div>
