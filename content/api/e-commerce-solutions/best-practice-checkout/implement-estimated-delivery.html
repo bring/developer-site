@@ -6,13 +6,13 @@ widelayout: true
 notanapi: true
 menu:
   api:
-    parent: guide-checkout
+    parent: best-practice-checkout
     identifier: implement-estimated-delivery
     title: Implementing estimated delivery date
-weight: 4
+weight: 1
 aliases:
-  - ../checkout-guide/implement-estimated-delivery
-  - ../../checkout-guide-norway/implement-estimated-delivery/
+  - ../best-practice-checkout/implement-estimated-delivery
+  - ../../best-practice-checkout/implement-estimated-delivery/
 ---
 
 <section class="dev-docscontent__section">
@@ -184,122 +184,6 @@ aliases:
         For exact date, use the <code>expectedDeliveryDate</code> response from
         shipping guide, for a range, use <code>workingDays</code>.
       </p>
-    </div>
-  </div>
-  <div>
-    <h2 class="mbm">Examples of different ways to show ETA in checkout</h2>
-    <div class="flex flex-wrap flex-dir-row-rev">
-      <figure class="dev-guide-m">
-        <img
-          src="../assets/eta.png"
-          alt="Estimated time of arrival"
-          class="bshadow rad-a2px mbm pas maxw24r sticky-6r"
-        />
-      </figure>
-
-      <div class="dev-guide-m">
-        <div class="bg-green1 pal pbm mbxs">
-          <h3>1 Ask the user for their address and postal code</h3>
-          <p>
-            Some postal codes are split into several delivery zones, which
-            impacts lead time for parcel to mailbox and home delivery. The
-            general rule is that population hubs will have more frequent
-            delivery than the rest of the postal code.
-          </p>
-          <p>
-            Because of this, we recommend that you query our APIs with both
-            postal code and address.
-          </p>
-          <p>
-            There will still be instances where it is not possible to accurately
-            provide a lead time, for example if the address is misspelled. You
-            will then receive the following warning in the shipping guide
-            response.
-          </p>
-          <div class="maxw44r">
-            <!-- prettier-ignore -->
-            {{< highlight json >}}
-"warnings": [
-  { 
-    "code": "ADDRESS_NOT_MATCHED",
-    "description": "Recipient address can't be matched. Expected leadtime has been calculated based on postal code only, and might therefore be incorrect."
-  }
-{{< /highlight >}}
-          </div>
-          <p>
-            If this code is received, the estimate is the default for the postal
-            code, which can be used for showing an estimated delivery time, but
-            you should not allow the customer to select a specific date, as the
-            returned alternate delivery dates might be wrong for the actual
-            delivery address.
-          </p>
-        </div>
-
-        <div class="bg-green1 pal pbm mbxs">
-          <h3>2 Show estimated delivery time as a range</h3>
-          <p>
-            When you have uncertain lead times, it is recommended to show the
-            estimated delivery day as a range (see "Configure internal minimum
-            and maximum lead time" above).
-          </p>
-          <p>
-            In this example, the internal lead time might be 0–1 days. The min
-            and max values of internal lead time should be added to Bring’s
-            <code>workingDays</code> variable from Shipping Guide.
-          </p>
-        </div>
-        <div class="bg-green1 pal pbm mbxs">
-          <h3>3 Estimated time (hh:mm) package will be ready for pickup</h3>
-          <p>
-            For the Pickup Parcel service, in addition to showing estimated
-            <em>day of arrival</em>, you can show the estimated
-            <em>time</em> when the parcel will be ready for pickup at the pickup
-            point location. This service is based on machine learning and is
-            kept continually updated.
-          </p>
-          <p>
-            Use the <code>estimateddeliverytime</code> query parameter to get
-            the delivery time. You can send in a list of pickup locations with
-            the <code>pickuppoints</code> parameter to get estimated delivery
-            time for each individual pickup location.
-          </p>
-        </div>
-        <div class="bg-green1 pal pbm mbxs">
-          <h3>
-            4 Showing estimated delivery time for services, with selectable date
-          </h3>
-          <p>
-            Home delivery has the option to order
-            <em>a specific date of delivery</em>. For these kind of services,
-            you may show a <code>from</code> value for the estimated time in the
-            service description, to give users a hint that they may select other
-            options when exploring the shipping method.
-          </p>
-        </div>
-        <div class="bg-green1 pal pbm mbxs">
-          <h3>5 Displaying alternative delivery dates</h3>
-          <p>
-            A table or drop down are good ways to allow users to select the
-            delivery date that fits their needs the best. You should also show
-            the delivery time window to make the package journey transparent for
-            the customer.
-          </p>
-          <p>
-            We recommend presenting five possible delivery dates in the
-            checkout. Pricing the options differently may help offsetting any
-            extra costs for expedite handling in your warehouse.
-          </p>
-          <p>
-            Use the following parameters to retrieve the recommended delivery
-            dates for home delivery in Shipping Guide API:
-          </p>
-
-          <!-- prettier-ignore -->
-          {{< highlight json >}}
-"numberOfAlternativeDeliveryDates": 5 // recommended max value to display
-{{< /highlight >}}
-        </div>
-      </div>
     </div>
   </div>
 </section>
