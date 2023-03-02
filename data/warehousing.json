@@ -1,0 +1,2731 @@
+{
+  "info": {
+    "title": "Send order / Article update",
+    "description": "This endpoint is used to submit orders to Bring Warehousing.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://bapi.bring.com/wh/api/v1",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/order": {
+      "post": {
+        "summary": "Send an order",
+        "description": "This endpoint is used to submit orders to Bring Warehousing. There are two different types of order you can submit. <ul><li>Order / SalesOrder</li> <li>PurchaseOrder</li></ul>",
+        "operationId": "postOrder",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "description": "Specify response format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "application/json",
+                "application/xml"
+              ]
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "description": "Specify response format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "application/json",
+                "application/xml"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              },
+              "examples": {
+                "CreateOrderRequest": {
+                  "$ref": "#/components/examples/CreateOrderRequest"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderRequest"
+              },
+              "examples": {
+                "CreateOrderRequest": {
+                  "$ref": "#/components/examples/CreateOrderRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Complete Create Order",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "CreateOrderResponse": {
+                    "$ref": "#/components/examples/CreateOrderResponse"
+                  }
+                }
+              },
+              "application/xml": {
+                "examples": {
+                  "CreateOrderResponse": {
+                    "$ref": "#/components/examples/CreateOrderResponse"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error in validation of request or error in data structure of request."
+          },
+          "417": {
+            "description": "Missing Authentication Headers"
+          },
+          "500": {
+            "description": "Unknown error. Error sending data to destination."
+          }
+        }
+      }
+    },
+    "/itemdata": {
+      "post": {
+        "summary": "Post item data",
+        "description": "This endpoint is used to submit article information to Bring Warehousing.",
+        "operationId": "postItemData",
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "description": "Specify response format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "application/json",
+                "application/xml"
+              ]
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "description": "Specify response format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "application/json",
+                "application/xml"
+              ]
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateItemDataRequest"
+              },
+              "examples": {
+                "CreateItemDataRequest": {
+                  "$ref": "#/components/examples/CreateOrderRequest"
+                }
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateItemDataRequest"
+              },
+              "examples": {
+                "CreateItemDataRequest": {
+                  "$ref": "#/components/examples/CreateOrderRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Complete article information",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "PostBackResponse": {
+                    "$ref": "#/components/examples/CreateOrderResponse"
+                  }
+                }
+              },
+              "application/xml": {
+                "examples": {
+                  "PostBackResponse": {
+                    "$ref": "#/components/examples/CreateOrderResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/errorCodes": {
+      "get": {
+        "summary": "List all errorcodes",
+        "description": "This endpoint is used to list all errorcodes from Bring Warehousing.",
+        "operationId": "listErrorCodes",
+        "responses": {
+          "400": {
+            "description": "Error in validation of request or error in data structure of request.",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "ErrorCodes": {
+                    "$ref": "#/components/examples/errorCodes"
+                  }
+                }
+              },
+              "application/xml": {
+                "examples": {
+                  "ErrorCodes": {
+                    "$ref": "#/components/examples/errorCodes"
+                  }
+                }
+              }
+            }
+          },
+          "417": {
+            "description": "Missing Authentication Headers"
+          },
+          "500": {
+            "description": "Unknown error. Error sending data to destination."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateOrderRequest": {
+        "required": [
+          "CreateOrderRequest"
+        ],
+        "type": "object",
+        "properties": {
+          "CreateOrderRequest": {
+            "type": "array",
+            "description": "Create order request",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrder"
+            }
+          }
+        }
+      },
+      "CreateItemDataRequest": {
+        "required": [
+          "CreateItemDataRequest"
+        ],
+        "type": "object",
+        "properties": {
+          "CreateItemDataRequest": {
+            "type": "array",
+            "description": "Send Item Data Request",
+            "items": {
+              "$ref": "#/components/schemas/CreateItemData"
+            }
+          }
+        }
+      },
+      "CreateOrder": {
+        "required": [
+          "version",
+          "definedBy",
+          "domain",
+          "collaboration",
+          "collaboration",
+          "messageFunction",
+          "profile",
+          "messageId",
+          "updateIndicator",
+          "testIndicator",
+          "MessageDetails"
+        ],
+        "type": "array",
+        "properties": {
+          "version": {
+            "type": "string",
+            "description": "Version of Request.",
+            "default": "5.0"
+          },
+          "definedBy": {
+            "type": "string",
+            "description": "Defined By.",
+            "default": "BIG"
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain.",
+            "default": "SupplyChain"
+          },
+          "collaboration": {
+            "type": "string",
+            "description": "Collaboration.",
+            "default": "Order"
+          },
+          "messageFunction": {
+            "type": "string",
+            "description": "Type of order.",
+            "examples": [
+              "For salesorder/customer order = Order",
+              "For purchaseOrder = PurchaseOrder"
+            ]
+          },
+          "profile": {
+            "type": "string",
+            "description": "Profile.",
+            "default": "BringXML"
+          },
+          "messageId": {
+            "type": "string",
+            "description": "Unique id for this message.",
+            "examples": [
+              "3dcc8b71-2bf7-4574-813d-9295bd5db8c0"
+            ]
+          },
+          "updateIndicator": {
+            "type": "string",
+            "description": "Update Indicator",
+            "examples": [
+              "updateIndicator=Deletion"
+            ]
+          },
+          "testIndicator": {
+            "type": "string",
+            "description": "Whether this is a test message.",
+            "examples": [
+              "testIndicator=NO"
+            ]
+          },
+          "MessageDetails": {
+            "type": "array",
+            "description": "Message Details",
+            "items": {
+              "$ref": "#/components/schemas/MessageDetails"
+            }
+          },
+          "SupplyStructure": {
+            "type": "array",
+            "description": "Supply Structure",
+            "items": {
+              "$ref": "#/components/schemas/SupplyStructure"
+            }
+          }
+        },
+        "description": "List of consignments"
+      },
+      "CreateItemData": {
+        "required": [
+          "version",
+          "definedBy",
+          "domain",
+          "collaboration",
+          "collaboration",
+          "messageFunction",
+          "profile",
+          "messageId",
+          "updateIndicator",
+          "testIndicator",
+          "MessageDetails",
+          "SupplyStructure"
+        ],
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "description": "Version of Request.",
+            "default": "5.0"
+          },
+          "definedBy": {
+            "type": "string",
+            "description": "Defined By.",
+            "default": "BIG"
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain.",
+            "default": "SupplyChain"
+          },
+          "collaboration": {
+            "type": "string",
+            "description": "Collaboration.",
+            "default": "Order"
+          },
+          "messageFunction": {
+            "type": "string",
+            "description": "Type of order.",
+            "examples": [
+              "For salesorder/customer order = Order",
+              "For purchaseOrder = PurchaseOrder"
+            ]
+          },
+          "profile": {
+            "type": "string",
+            "description": "Profile.",
+            "default": "BringXML"
+          },
+          "messageId": {
+            "type": "string",
+            "description": "Unique id for this message.",
+            "examples": [
+              "3dcc8b71-2bf7-4574-813d-9295bd5db8c0"
+            ]
+          },
+          "updateIndicator": {
+            "type": "string",
+            "description": "Update Indicator",
+            "examples": [
+              "updateIndicator=Deletion"
+            ]
+          },
+          "testIndicator": {
+            "type": "string",
+            "description": "Whether this is a test message.",
+            "examples": [
+              "testIndicator=NO"
+            ]
+          },
+          "MessageDetails": {
+            "type": "array",
+            "description": "Message Details",
+            "items": {
+              "$ref": "#/components/schemas/MessageDetails"
+            }
+          },
+          "SupplyStructure": {
+            "type": "array",
+            "description": "Supply Structure",
+            "items": {
+              "$ref": "#/components/schemas/SupplyStructureItemData"
+            }
+          }
+        },
+        "description": "List of consignments"
+      },
+      "MessageDetails": {
+        "required": [
+          "MessageDate",
+          "MessageRecipient",
+          "MessageSender"
+        ],
+        "type": "array",
+        "properties": {
+          "MessageDate": {
+            "type": "datetime",
+            "description": "The date on which the message was sent.",
+            "examples": [
+              "<MessageDate>2021-02-12T13:38:08</MessageDate>"
+            ]
+          },
+          "MessageRecipient": {
+            "type": "array",
+            "description": "Message Recipient",
+            "items": {
+              "$ref": "#/components/schemas/MessageDetailsIds"
+            }
+          },
+          "MessageSender": {
+            "type": "array",
+            "description": "Message Recipient",
+            "items": {
+              "$ref": "#/components/schemas/MessageDetailsIds"
+            }
+          }
+        },
+        "description": "Message Details"
+      },
+      "MessageDetailsIds": {
+        "required": [
+          "partyId"
+        ],
+        "type": "string",
+        "properties": {
+          "partyId": {
+            "type": "string",
+            "description": "Customer number (6 or 11 digits) provided by Bring.",
+            "examples": [
+              "<MessageRecipient partyId=20001234567 idType=14 />"
+            ]
+          },
+          "idType": {
+            "type": "string",
+            "description": "partyId type.",
+            "enum": [
+              "14 - EAN International",
+              "30 - ISO 6523: Organization identification",
+              "ZZ - Mutually defined"
+            ]
+          }
+        }
+      },
+      "SupplyStructure": {
+        "required": [
+          "ORDERSET"
+        ],
+        "type": "object",
+        "properties": {
+          "ORDERSET": {
+            "type": "array",
+            "description": "Order set",
+            "items": {
+              "$ref": "#/components/schemas/Orderset"
+            }
+          }
+        },
+        "description": "Supply structure"
+      },
+      "SupplyStructureItemData": {
+        "required": [
+          "ArticleInformationSet"
+        ],
+        "type": "array",
+        "properties": {
+          "ArticleInformationSet": {
+            "type": "array",
+            "description": "Article Information Set",
+            "items": {
+              "$ref": "#/components/schemas/ArticleInformationSet"
+            }
+          }
+        },
+        "description": "Supply structure item data"
+      },
+      "ArticleInformationSet": {
+        "required": [
+          "ArticleInformation"
+        ],
+        "type": "array",
+        "description": "Article Information",
+        "properties": {
+          "ArticleInformation": {
+            "type": "array",
+            "description": "Article Information",
+            "items": {
+              "$ref": "#/components/schemas/ArticleInformation"
+            }
+          }
+        }
+      },
+      "ArticleInformation": {
+        "required": [
+          "articleLineId",
+          "ArticleNumber",
+          "ArticlePhysicalBalanceQuantity",
+          "ArticleAllocatedBalanceQuantity",
+          "ArticleInOrderBalanceQuantity",
+          "ArticleFreeBalanceQuantity",
+          "ArticleAdjustedQuantity",
+          "ArticleCountedQuantity",
+          "Description",
+          "DateAndTimes",
+          "Utility",
+          "ArticleQuantity",
+          "ArticleUnitCode",
+          "ArticleName",
+          "ArticleStatus",
+          "ArticleSerialNos",
+          "ArticleBatchNo",
+          "ArticleUNno",
+          "ArticleVariantIdentifier",
+          "ArticleCountryOfOrigin",
+          "ArticleWeightAndDimension",
+          "FreeText",
+          "Reference",
+          "ArticleTotals",
+          "ArticleBatches"
+        ],
+        "type": "array",
+        "properties": {
+          "articleLineId": {
+            "type": "string",
+            "description": "Article Line Id"
+          },
+          "ArticleNumber": {
+            "type": "array",
+            "description": "Article Number",
+            "items": {
+              "$ref": "#/components/schemas/ArticleNumber"
+            }
+          },
+          "ArticlePhysicalBalanceQuantity": {
+            "type": "array",
+            "description": "Physical Balance Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticlePhysicalBalanceQuantity"
+            }
+          },
+          "ArticleAllocatedBalanceQuantity": {
+            "type": "array",
+            "description": "Allocated Balance Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleAllocatedBalanceQuantity"
+            }
+          },
+          "ArticleInOrderBalanceQuantity": {
+            "type": "array",
+            "description": "In Order Balance Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleInOrderBalanceQuantity"
+            }
+          },
+          "ArticleFreeBalanceQuantity": {
+            "type": "array",
+            "description": "Free Balance Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleFreeBalanceQuantity"
+            }
+          },
+          "ArticleAdjustedQuantity": {
+            "type": "array",
+            "description": "Adjusted Balance Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleAdjustedQuantity"
+            }
+          },
+          "ArticleCountedQuantity": {
+            "type": "array",
+            "description": "Counted Balance Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleCountedQuantity"
+            }
+          },
+          "Description": {
+            "type": "array",
+            "description": "Description",
+            "items": {
+              "$ref": "#/components/schemas/DescriptionArticle"
+            }
+          },
+          "DateAndTimes": {
+            "type": "array",
+            "description": "Date and Times",
+            "items": {
+              "$ref": "#/components/schemas/DateAndTimesArticle"
+            }
+          },
+          "Utility": {
+            "type": "array",
+            "description": "Utility",
+            "items": {
+              "$ref": "#/components/schemas/UtilityArticle"
+            }
+          },
+          "ArticleQuantity": {
+            "type": "array",
+            "description": "Article Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleQuantity"
+            }
+          },
+          "ArticleUnitCode": {
+            "type": "array",
+            "description": "Article Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleUnitCode"
+            }
+          },
+          "ArticleName": {
+            "type": "string",
+            "description": "Article name"
+          },
+          "ArticleStatus": {
+            "type": "string",
+            "description": "Article status"
+          },
+          "ArticleSerialNos": {
+            "type": "array",
+            "description": "Article Serial Nos",
+            "items": {
+              "$ref": "#/components/schemas/ArticleSerialNos"
+            }
+          },
+          "ArticleBatchNo": {
+            "type": "string",
+            "description": "Article Batch No"
+          },
+          "ArticleUNno": {
+            "type": "string",
+            "description": "Article UN no"
+          },
+          "ArticleVariantIdentifier": {
+            "type": "string",
+            "description": "Article Variant Identifier"
+          },
+          "ArticleCountryOfOrigin": {
+            "type": "string",
+            "description": "Article Country Of Origin"
+          },
+          "ArticleWeightAndDimension": {
+            "type": "array",
+            "description": "Article Weight And Dimension",
+            "items": {
+              "$ref": "#/components/schemas/ArticleWeightAndDimension"
+            }
+          },
+          "FreeText": {
+            "type": "array",
+            "description": "Free Text",
+            "items": {
+              "$ref": "#/components/schemas/FreeTextArticle"
+            }
+          },
+          "Reference": {
+            "type": "array",
+            "description": "Reference",
+            "items": {
+              "$ref": "#/components/schemas/Reference"
+            }
+          },
+          "ArticleTotals": {
+            "type": "array",
+            "description": "Article Totals",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotals"
+            }
+          },
+          "ArticleBatches": {
+            "type": "array",
+            "description": "Article Batches",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatches"
+            }
+          },
+          "ArticleGroup": {
+            "type": "string",
+            "description": "Article Group"
+          }
+        }
+      },
+      "ArticleNumber": {
+        "required": [
+          "usageCode",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "Value"
+        ],
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage Code"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Usage Code Value"
+          }
+        }
+      },
+      "ArticlePhysicalBalanceQuantity": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Item Quantity Value"
+          }
+        }
+      },
+      "ArticleAllocatedBalanceQuantity": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Item Quantity Value"
+          }
+        }
+      },
+      "ArticleInOrderBalanceQuantity": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Item Quantity Value"
+          }
+        }
+      },
+      "ArticleFreeBalanceQuantity": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Item Quantity Value"
+          }
+        }
+      },
+      "ArticleAdjustedQuantity": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Item Quantity Value"
+          }
+        }
+      },
+      "ArticleCountedQuantity": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Item Quantity Value"
+          }
+        }
+      },
+      "DescriptionArticle": {
+        "required": [
+          "usageCode",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "LanguageCode",
+          "Text"
+        ],
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage Code"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "Code List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "LanguageCode": {
+            "type": "array",
+            "description": "Language Code",
+            "items": {
+              "$ref": "#/components/schemas/LanguageCode"
+            }
+          },
+          "Text": {
+            "type": "array",
+            "description": "Free Text Type Text",
+            "items": {
+              "$ref": "#/components/schemas/Text"
+            }
+          }
+        }
+      },
+      "DateAndTimesArticle": {
+        "required": [
+          "subClass",
+          "timeZone",
+          "dstIndicator",
+          "Date",
+          "Time"
+        ],
+        "type": "string",
+        "properties": {
+          "subClass": {
+            "type": "string",
+            "description": "Sub class",
+            "enum": [
+              "DocumentDate",
+              "MessageDate",
+              "TransportOrderDate",
+              "OrderDate",
+              "OrderDeliveryDate",
+              "OrderDeliveryDateRequested",
+              "OrderDeliveryDateActual",
+              "OrderDeliveryDateEstimated",
+              "DepartureDate",
+              "DepartureDateRequested",
+              "DepartureDateActual",
+              "DepartureDateEstimated",
+              "DeliveryDate",
+              "DeliveryDateRequested",
+              "DeliveryDateActual",
+              "DeliveryDateEstimated",
+              "ArrivalDate",
+              "ArrivalDateActual",
+              "ArrivalDateEstimated",
+              "LoadingDate",
+              "PickupDate",
+              "PickupDateActual",
+              "PickupDateEarliest",
+              "PickupDateLatest",
+              "DeliveryDateEarliest",
+              "DeliveryDateLatest",
+              "DeadLine",
+              "UpdatedDate",
+              "ExpirationDate",
+              "ReceivedDate",
+              "ReceivedDateRequested",
+              "ReceivedDateEstimated",
+              "FinishedDate",
+              "ProductionDate",
+              "FreezeDate",
+              "EffectiveDate"
+            ]
+          },
+          "timeZone": {
+            "type": "string",
+            "description": "Time zone"
+          },
+          "dstIndicator": {
+            "type": "string",
+            "description": "Destination Indicator"
+          },
+          "Date": {
+            "type": "string",
+            "description": "Date"
+          },
+          "Time": {
+            "type": "string",
+            "description": "Time"
+          }
+        }
+      },
+      "UtilityArticle": {
+        "required": [
+          "usageCode",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "LanguageCode",
+          "Text"
+        ],
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage Code"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "Code List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "LanguageCode": {
+            "type": "array",
+            "description": "Language Code",
+            "items": {
+              "$ref": "#/components/schemas/LanguageCode"
+            }
+          },
+          "Text": {
+            "type": "array",
+            "description": "Free Text Type Text",
+            "items": {
+              "$ref": "#/components/schemas/Text"
+            }
+          }
+        }
+      },
+      "ArticleQuantity": {
+        "required": [
+          "usageCode",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage Code"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "Code List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Usage Code Value"
+          }
+        }
+      },
+      "ArticleUnitCode": {
+        "required": [
+          "usageCode",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "Value"
+        ],
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage Code"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "Code List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Usage Code Value"
+          }
+        }
+      },
+      "ArticleWeightAndDimension": {
+        "required": [
+          "Depth",
+          "Height",
+          "NetWeight",
+          "Width",
+          "GrossWeight"
+        ],
+        "type": "string",
+        "properties": {
+          "Depth": {
+            "type": "array",
+            "description": "Depth",
+            "items": {
+              "$ref": "#/components/schemas/WeightAndDimensions"
+            }
+          },
+          "Height": {
+            "type": "array",
+            "description": "Height",
+            "items": {
+              "$ref": "#/components/schemas/WeightAndDimensions"
+            }
+          },
+          "NetWeight": {
+            "type": "array",
+            "description": "Net Weight",
+            "items": {
+              "$ref": "#/components/schemas/WeightAndDimensions"
+            }
+          },
+          "Width": {
+            "type": "array",
+            "description": "Width",
+            "items": {
+              "$ref": "#/components/schemas/WeightAndDimensions"
+            }
+          },
+          "GrossWeight": {
+            "type": "array",
+            "description": "Gross Weight",
+            "items": {
+              "$ref": "#/components/schemas/WeightAndDimensions"
+            }
+          }
+        }
+      },
+      "WeightAndDimensions": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit Code"
+          },
+          "Value": {
+            "type": "number",
+            "description": "Measure value"
+          }
+        }
+      },
+      "FreeTextArticle": {
+        "required": [
+          "usageCode",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "LanguageCode",
+          "Text"
+        ],
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage Code"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "Code List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "LanguageCode": {
+            "type": "array",
+            "description": "Language Code",
+            "items": {
+              "$ref": "#/components/schemas/LanguageCode"
+            }
+          },
+          "Text": {
+            "type": "array",
+            "description": "Language Code",
+            "items": {
+              "$ref": "#/components/schemas/Text"
+            }
+          }
+        }
+      },
+      "Reference": {
+        "required": [
+          "referenceType",
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "ReferenceNo",
+          "Text",
+          "ReferenceDate"
+        ],
+        "type": "string",
+        "properties": {
+          "referenceType": {
+            "type": "string",
+            "description": "Reference type"
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "ReferenceNo": {
+            "type": "string",
+            "description": "Reference number"
+          },
+          "Text": {
+            "type": "string",
+            "description": "Reference Text",
+            "items": {
+              "$ref": "#/components/schemas/Text"
+            }
+          },
+          "ReferenceDate": {
+            "type": "array",
+            "description": "Reference Date",
+            "items": {
+              "$ref": "#/components/schemas/DateAndTimesArticle"
+            }
+          }
+        }
+      },
+      "ArticleBatches": {
+        "required": [
+          "ArticleBatch"
+        ],
+        "type": "array",
+        "properties": {
+          "ArticleBatch": {
+            "type": "array",
+            "description": "Article Batch",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatch"
+            }
+          }
+        }
+      },
+      "ArticleTotals": {
+        "required": [
+          "NumberOfPackages",
+          "GrossWeight",
+          "GrossVolume",
+          "LoadingMetres",
+          "PalletFootPrints",
+          "Measures"
+        ],
+        "type": "array",
+        "properties": {
+          "NumberOfPackages": {
+            "type": "array",
+            "description": "Number of packages",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotalsDetails"
+            }
+          },
+          "GrossWeight": {
+            "type": "array",
+            "description": "Gross Weight",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotalsDetails"
+            }
+          },
+          "GrossVolume": {
+            "type": "array",
+            "description": "Gross Volume",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotalsDetails"
+            }
+          },
+          "LoadingMetres": {
+            "type": "array",
+            "description": "Loading Metres",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotalsDetails"
+            }
+          },
+          "PalletFootPrints": {
+            "type": "array",
+            "description": "Pallet Foot Prints",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotalsDetails"
+            }
+          },
+          "Measures": {
+            "type": "array",
+            "description": "Measures",
+            "items": {
+              "$ref": "#/components/schemas/Measures"
+            }
+          }
+        }
+      },
+      "ArticleBatch": {
+        "required": [
+          "BatchNo",
+          "WarehouseId",
+          "WarehouseArea",
+          "WarehouseLocation",
+          "ParcelNumber",
+          "DateAndTimes",
+          "DeliveredQuantity",
+          "ExpectedQuantity",
+          "ReceivedQuantity",
+          "PhysicalBalanceQuantity",
+          "AllocatedBalanceQuantity",
+          "NetWeight",
+          "Locked",
+          "ArticleSerialNos",
+          "SSCCNo",
+          "BatchStatus"
+        ],
+        "type": "array",
+        "properties": {
+          "BatchNo": {
+            "type": "string",
+            "description": "Batch No"
+          },
+          "WarehouseId": {
+            "type": "string",
+            "description": "Warehouse Id"
+          },
+          "WarehouseArea": {
+            "type": "string",
+            "description": "Warehouse Area"
+          },
+          "WarehouseLocation": {
+            "type": "string",
+            "description": "Warehouse Location"
+          },
+          "ParcelNumber": {
+            "type": "string",
+            "description": "Parcel Number"
+          },
+          "DateAndTimes": {
+            "type": "array",
+            "description": "Date and Times",
+            "items": {
+              "$ref": "#/components/schemas/DateAndTimesArticle"
+            }
+          },
+          "DeliveredQuantity": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatchDetails"
+            }
+          },
+          "ExpectedQuantity": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatchDetails"
+            }
+          },
+          "ReceivedQuantity": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatchDetails"
+            }
+          },
+          "PhysicalBalanceQuantity": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatchDetails"
+            }
+          },
+          "AllocatedBalanceQuantity": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatchDetails"
+            }
+          },
+          "NetWeight": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleBatchDetails"
+            }
+          },
+          "ArticleSerialNos": {
+            "type": "array",
+            "description": "Delivered Quantity",
+            "items": {
+              "$ref": "#/components/schemas/ArticleSerialNos"
+            }
+          },
+          "SSCCNo": {
+            "type": "string",
+            "description": "SSCC No"
+          },
+          "BatchStatus": {
+            "type": "string",
+            "description": "Batch Status"
+          }
+        }
+      },
+      "ArticleBatchDetails": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit code"
+          },
+          "Value": {
+            "type": "number",
+            "description": "Measure value"
+          }
+        }
+      },
+      "ArticleTotalsDetails": {
+        "required": [
+          "unitCode",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "unitCode": {
+            "type": "string",
+            "description": "Unit code"
+          },
+          "Value": {
+            "type": "number",
+            "description": "Quantity value"
+          }
+        }
+      },
+      "Measures": {
+        "required": [
+          "subClass",
+          "MeasureEntity",
+          "Measure"
+        ],
+        "type": "array",
+        "properties": {
+          "subClass": {
+            "type": "string",
+            "description": "Sub class"
+          },
+          "MeasureEntity": {
+            "type": "array",
+            "description": "Measure entity",
+            "items": {
+              "$ref": "#/components/schemas/attributeCode"
+            }
+          },
+          "Measure": {
+            "type": "array",
+            "description": "Measure",
+            "items": {
+              "$ref": "#/components/schemas/ArticleTotalsDetails"
+            }
+          }
+        }
+      },
+      "attributeCode": {
+        "required": [
+          "attributeCode"
+        ],
+        "type": "string",
+        "properties": {
+          "attributeCode": {
+            "type": "string",
+            "description": "Attribute code"
+          }
+        }
+      },
+      "Text": {
+        "required": [
+          "sequence",
+          "code",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "sequence": {
+            "type": "string",
+            "description": "Sequence"
+          },
+          "code": {
+            "type": "string",
+            "description": "Code"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Free Text Value"
+          }
+        }
+      },
+      "LanguageCode": {
+        "required": [
+          "codeListIdentifier",
+          "codeListAgencyIdentifier",
+          "name",
+          "Value"
+        ],
+        "type": "object",
+        "properties": {
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier"
+          },
+          "codeListAgencyIdentifier": {
+            "type": "string",
+            "description": "Code List Agency Identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name"
+          },
+          "Value": {
+            "type": "string",
+            "description": "Code Value"
+          }
+        }
+      },
+      "Orderset": {
+        "required": [
+          "ORDER",
+          "TransportService",
+          "Party",
+          "OrderLineSet"
+        ],
+        "type": "array",
+        "properties": {
+          "updateIndicator": {
+            "type": "string",
+            "description": "Customer number (6 or 11 digits) provided by Bring.",
+            "enum": [
+              "Original",
+              "Update",
+              "Delete"
+            ]
+          },
+          "ORDER": {
+            "type": "array",
+            "description": "Order",
+            "items": {
+              "$ref": "#/components/schemas/Order"
+            }
+          },
+          "TransportService": {
+            "type": "array",
+            "description": "Transport service for shipment to customer.",
+            "examples": [
+              "<TransportService>\n    <BasicServiceCode>Servicepakke</BasicServiceCode>\n    <AdditionalService>\n        <AdditionalServiceCode>EVARSLING</AdditionalServiceCode>\n    </AdditionalService>\n    <AdditionalService>\n        <AdditionalServiceCode>PickUpPoint</AdditionalServiceCode>\n    </AdditionalService>\n    <TariffReference>TariffReference_0</TariffReference>\n    <NatureOfCargo>NatureOfCargo_0</NatureOfCargo>\n    <Priority>Priority_0</Priority>\n    <Utility usageCode=\"\">\n        <Value sequence=\"\" valueType=\"\" valueCode=\"\">Value_0</Value>\n    </Utility>\n</TransportService>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TransportService"
+            }
+          },
+          "Party": {
+            "type": "array",
+            "description": "Party\n\nAn order consists of several Parties; a supplier, a sender, a receiver, etc.\nThe subClass code defines each type of party.\nMust have Name, Street, City, CountryCode",
+            "examples": [
+              "<Party subClass=\"OrderingParty\" partyId=\"11223\">\n    <Name>Testcompany</Name>\n    <Address subClass=\"PhysicalAddress\">\n        <PostalCode>0123</PostalCode>\n        <City>OSLO</City>\n        <CountryCode>NO</CountryCode>\n        <Street>Teststreet 2</Street>\n    </Address>\n    <Contact>\n        <CellPhoneNo>99010100</CellPhoneNo>\n        <EMailAddress>john.doe@posten.no</EMailAddress>\n        <ContactName>John Doe</ContactName>\n    </Contact>\n</Party>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Party"
+            }
+          },
+          "OrderLineSet": {
+            "type": "array",
+            "description": "Order Line Set",
+            "items": {
+              "$ref": "#/components/schemas/OrderLineSet"
+            }
+          },
+          "CustomsClearance": {
+            "type": "array",
+            "description": "Customs Clearance",
+            "items": {
+              "$ref": "#/components/schemas/CustomsClearance"
+            }
+          }
+        }
+      },
+      "Order": {
+        "required": [
+          "orderId",
+          "Reference",
+          "DateAndTimes"
+        ],
+        "type": "array",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "description": "Unique ID for this order.",
+            "examples": [
+              "<Order orderId=123456 />"
+            ]
+          },
+          "ExternalOrderType": {
+            "type": "string",
+            "description": "Type of Order.\n\nExample CustomerOrder(CO):\n<ul><li>220 - Standard Order</li><li>224 - Rush Order</li><li>237 - Special Order (used for crosslocking)</li></ul>Or other agreed by Warehousing\n\ne.g.\n<OrderSet updateIndicator=Original>\n&nbsp;<Order orderId=123456>\n<ExternalOrderType>220</ExternalOrderType>\n\nExample PurchaseOrder(PO):\nR - Return order\n\ne.g.\n<OrderSet updateIndicator=Original>\n&nbsp;<Order orderId=123456>\n<ExternalOrderType>R</ExternalOrderType>"
+          },
+          "Reference": {
+            "type": "array",
+            "description": "Order Reference.\n\nThe first 3 referenceTypes are required:\n•ACD - Additional reference number. Used for Bring WH clients order number\n•CU - Consignor's reference number. Reference number assigned by a consignor to a particular shipment for his own purposes or for those of the consignee.\n\nUsed for \"Vår.ref/our reference\".\nVaries on PO and CO.\nFor PO \"sellers ref\" = supplier to the WH\nFor CO \"sellers ref\" = Bring WH client selling items to their customer.\n\n•ON - Order number (purchase)/Buyer\"s reference.\nReference number assigned by the buyer to an order.\nUsed for \"Deres ref/your/their reference\"\n\nExample:\n<Reference referenceType=\"ACD\">\n    <ReferenceNo>1234</ReferenceNo>\n</Reference>\n\n<Reference referenceType=\"CU\">\n    <ReferenceNo>12345</ReferenceNo>\n</Reference>\n\n<Reference referenceType=\"ON\">\n    <ReferenceNo>123456</ReferenceNo>\n</Reference>\n\nThe following referenceTypes are optional:\n\n•SS - Sellers reference number.\nReference number assigned to a transaction by the seller.\n•COI - Your reference. Takes precedence over ON.\n\nYou can find more general information on referenceTypes here\n\nExample:\n<Reference referenceType=\"SS\">\n    <ReferenceNo>1234</ReferenceNo>\n</Reference>"
+          },
+          "DateAndTimes": {
+            "type": "array",
+            "description": "Date and time of the order.\n\nThere are many different options for date and time, but the most frequently used subClasses are:\n•DocumentDate The date on which the order is booked.\n•DeliveryDateRequested The date on which the order is requested to be delivered\n•ExpirationDate\n\nExample:\n<DateAndTimes subClass=\"DocumentDate\">\n    <Date>2021-02-12</Date>\n    <Time>13:29:45</Time>\n</DateAndTimes>\n\n<DateAndTimes subClass=\"DeliveryDateRequested\">\n    <Date>2021-02-15</Date>\n    <Time>00:00:00</Time>\n</DateAndTimes>",
+            "items": {
+              "$ref": "#/components/schemas/DateAndTimes"
+            }
+          },
+          "TermsOfDelivery": {
+            "type": "array",
+            "description": "Terms of Delivery.\n\nThe regulations are used to clarify the distribution of obligations between seller and buyer when shipping goods / Incoterms",
+            "examples": [
+              "<TermsOfDelivery>\n&nbsp;&nbsp;<TODConditionCode>DDP</TODConditionCode>\n</TermsOfDelivery>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TermsOfDelivery"
+            }
+          },
+          "FreeText": {
+            "type": "array",
+            "description": "Reference on an order.\n\nUsed for information to the WH or for the delivery of the order, separated by usagecode.\n\nPossible values:\n•DEL - Information to WH\n•DIN - Message to carrier\n•ZZZ - Message to recipient. Mutually defined reference number\n•ON - Notes in M4N\n\nExample:\n<FreeText usageCode=\"DEL\">\n    <Text>Send this order together with order XXX</Text>\n</FreeText>\n\n<FreeText usageCode=\"DIN\">\n    <Text>delivery instruction</Text>\n</FreeText>\n\n<FreeText usageCode=\"ZZZ\">\n    <Text>123456</Text>\n</FreeText>\n\n<FreeText usageCode=\"ON\">\n    <Text>ABCDEF</Text>\n</FreeText>",
+            "examples": [
+              "<COD>\n    <AccountNo idType=\"idType_0\">AccountNo_0</AccountNo>\n    <CodAmount>10</CodAmount>\n    <ControlDigit>10</ControlDigit>\n    <Kid>Kid_0</Kid>\n    <Message>Message_0</Message>\n</COD>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FreeText"
+            }
+          },
+          "COD": {
+            "type": "array",
+            "description": "If goods are to be paid on delivery.\n\nUsed for information to the WH or for the delivery of the order, separated by usagecode.\n\nPossible values:\n•DEL - Information to WH\n•DIN - Message to carrier\n•ZZZ - Message to recipient. Mutually defined reference number\n•ON - Notes in M4N\n\nExample:\n<FreeText usageCode=\"DEL\">\n    <Text>Send this order together with order XXX</Text>\n</FreeText>\n\n<FreeText usageCode=\"DIN\">\n    <Text>delivery instruction</Text>\n</FreeText>\n\n<FreeText usageCode=\"ZZZ\">\n    <Text>123456</Text>\n</FreeText>\n\n<FreeText usageCode=\"ON\">\n    <Text>ABCDEF</Text>\n</FreeText>",
+            "items": {
+              "$ref": "#/components/schemas/COD"
+            }
+          },
+          "TermsOfPayment": {
+            "type": "array",
+            "description": "Payment for the order.",
+            "examples": [
+              "<TermsOfPayment otherDesc=\"Vipps\">\n    <TOPConditionCode>Vipps</TOPConditionCode>\n< /TermsOfPayment>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/TermsOfPayment"
+            }
+          },
+          "PriorityCode": {
+            "type": "string",
+            "description": "Priority Code.\n\nIf the order should have a priority you can add value here.\nIf no value is added the default value is set to \"Normal\".\n\nM4N Values:\n•X - Express",
+            "examples": [
+              "<PriorityCode>X</PriorityCode>"
+            ]
+          }
+        }
+      },
+      "TermsOfDelivery": {
+        "type": "string",
+        "properties": {
+          "TODConditionCode": {
+            "type": "string",
+            "description": "Terms of Delivery Condition Code.\n\nThe most frequently used subclasses are:\n•ExpirationDate"
+          }
+        }
+      },
+      "DateAndTimes": {
+        "required": [
+          "subClass",
+          "date",
+          "time"
+        ],
+        "type": "string",
+        "properties": {
+          "subClass": {
+            "type": "string",
+            "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate"
+          },
+          "date": {
+            "type": "string",
+            "description": "Date."
+          },
+          "time": {
+            "type": "string",
+            "description": "Time."
+          }
+        }
+      },
+      "FreeText": {
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "usage Code."
+          },
+          "Text": {
+            "type": "string",
+            "description": "FreeText text."
+          }
+        }
+      },
+      "COD": {
+        "properties": {
+          "AccountNo": {
+            "type": "array",
+            "description": "Account No.",
+            "items": {
+              "$ref": "#/components/schemas/IdType"
+            }
+          },
+          "CODAmount": {
+            "type": "number",
+            "description": "COD Amount"
+          },
+          "ControlDigit": {
+            "type": "number",
+            "description": "Control Digit"
+          },
+          "Kid": {
+            "type": "number",
+            "description": "Kid"
+          },
+          "Message": {
+            "type": "number",
+            "description": "Message"
+          }
+        }
+      },
+      "IdType": {
+        "type": "string",
+        "properties": {
+          "idType": {
+            "type": "string",
+            "description": "ID Type"
+          }
+        }
+      },
+      "TermsOfPayment": {
+        "type": "string",
+        "properties": {
+          "otherDesc": {
+            "type": "string",
+            "description": "Other Description.",
+            "enum": [
+              "Vipps",
+              "Invoice"
+            ]
+          },
+          "TOPConditionCode": {
+            "type": "string",
+            "description": "Condition Code.",
+            "enum": [
+              "Cash",
+              "Visa",
+              "Mastercard",
+              "COD",
+              "Net30days",
+              "Net15days",
+              "Net14days",
+              "Net10days",
+              "Vipps",
+              "Other"
+            ]
+          }
+        }
+      },
+      "TransportService": {
+        "required": [
+          "BasicServiceCode",
+          "AdditionalService"
+        ],
+        "properties": {
+          "BasicServiceCode": {
+            "type": "string",
+            "description": "Basic Service Code.\n\nRequired for a Customer order.<br>Optional for PurchaseOrder.<br><br>You will find information on all outgoing Services<br>for Posten Norge and Bring <a href=\"../services/\">here</a>.",
+            "examples": [
+              "<BasicServiceCode>Servicepakke</BasicServiceCode>"
+            ]
+          },
+          "AdditionalService": {
+            "type": "array",
+            "description": "If Recipient notification is over SMS or E-Mail, a value must be added for either email and/or cellphone number within Contact in Party [subClass=\"Buyer\"]<br><br>You will find information on all outgoing Services for Posten Norge and Bring in <a href=\"../services/\">the service portfolio</a><br><br>And more information about Pickup Point (PuP) on the <a href=\"../pickup-point/\">Pickup Point API page</a>.",
+            "examples": [
+              "<AdditionalService>\n    <AdditionalServiceCode>EVARSLING</AdditionalServiceCode>\n</AdditionalService>\n<AdditionalService>\n    <AdditionalServiceCode>PickUpPoint</AdditionalServiceCode>\n</AdditionalService>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AdditionalService"
+            }
+          },
+          "TariffReference": {
+            "type": "string",
+            "description": "Tariff Reference."
+          },
+          "NatureOfCargo": {
+            "type": "string",
+            "description": "Nature of Cargo."
+          },
+          "Priority": {
+            "type": "string",
+            "description": "Priority"
+          },
+          "Utility": {
+            "type": "array",
+            "description": "Utility",
+            "items": {
+              "$ref": "#/components/schemas/Utility"
+            }
+          }
+        }
+      },
+      "AdditionalService": {
+        "required": [
+          "AdditionalServiceCode"
+        ],
+        "properties": {
+          "PriorityCode": {
+            "type": "string",
+            "description": "Priority Code.\n\nIf the order should have a priority you can add value here.\nIf no value is added the default value is set to \"Normal\".\n\nM4N Values:\n•X - Express",
+            "examples": [
+              "<PriorityCode>X</PriorityCode>"
+            ]
+          },
+          "AdditionalServiceCode": {
+            "type": "string",
+            "description": "Additional Service Code."
+          }
+        }
+      },
+      "Utility": {
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage code"
+          },
+          "value": {
+            "type": "array",
+            "description": "Utility Value.",
+            "items": {
+              "$ref": "#/components/schemas/Value"
+            }
+          }
+        }
+      },
+      "Value": {
+        "type": "string",
+        "properties": {
+          "sequence": {
+            "type": "string",
+            "description": "Priority Code."
+          },
+          "valueType": {
+            "type": "string",
+            "description": "Value type."
+          },
+          "Value": {
+            "type": "string",
+            "description": "Service utility value."
+          }
+        }
+      },
+      "Party": {
+        "required": [
+          "subClass",
+          "partyId",
+          "subPartyId",
+          "Name",
+          "Address",
+          "Contact"
+        ],
+        "type": "string",
+        "properties": {
+          "subClass": {
+            "type": "string",
+            "description": "Possible values:\n\nDetails on Supplier/Sender/Receiver (required)\n•OrderingParty - Details of Sender\n•DeliveryParty - Details of recipient\n•Supplier - Details of supplier\nFor a PO, the supplier is the one providing the goods to the WH.\nFor a SO, the supplier is you/Bring WH customer.\n(Optional for SO)\n•Buyer - Details of buyer\nOptional\n•Seller - Details of seller.\nOptional\n\nWareHouse ID/Location (required)\n•PerformingUnit\n\nInformation on Transport Company (optional)\n•TransportCompany"
+          },
+          "partyId": {
+            "type": "string",
+            "description": "Party id for the subClass.\n\n\n    Possible values:\n\n    Supplier/Sender/Receiver\n    •provided by user\n\n    Example:\n    <Party subClass=\"OrderingParty\" partyId=\"112233\" />\n\n    Warehouse ID/Location\n    •105075 - Bergen\n    •780132 - Berger/Skedsmokorset\n    •105091 - Drammen\n    •780448 - Fredrikstad\n    •780446 - Haugesund\n    •780429 - KongShavn\n    •105090 - Trollåsen\n    •780135 - Trondheim",
+            "examples": [
+              "<Party subClass=\"PerformingUnit\" partyId=\"780132\" />",
+              "<Party subClass=\"TransportCompany\" partyId=\"Bring\" />"
+            ]
+          },
+          "subPartyId": {
+            "type": "string",
+            "description": "The value of the actual Pick up point site.",
+            "examples": [
+              "<Party subClass=\"DeliveryParty\" partyId=\"123456\" subPartyId=\"109847\">"
+            ]
+          },
+          "Name": {
+            "type": "string",
+            "description": "Name of the Supplier/Sender/Receiver.",
+            "examples": [
+              "<Name>TestCompany</Name>"
+            ]
+          },
+          "Address": {
+            "type": "array",
+            "description": "Address of the Supplier/Sender/Receiver",
+            "examples": [
+              "<Address subClass=\"PhysicalAddress\">\n    <PostalCode>0123</PostalCode>\n    <City>OSLO</City>\n    <CountryCode>NO</CountryCode>\n    <Street>Teststreet 2</Street>\n</Address>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Address"
+            }
+          },
+          "Contact": {
+            "type": "array",
+            "description": "Contact. (subClass determines whether required)\n\nDetails of contact\n\nMust be provided if using \"EVARSLING\" within TransportService of AdditionalService [subClass=\"AdditionalServiceCode\"]\n\nMust have Name, Cellphone and emailAddress.",
+            "examples": [
+              "<Contact>\n    <CellPhoneNo>99010100</CellPhoneNo>\n    <EMailAddress>john.doe@posten.no</EMailAddress>\n    <ContactName>John Doe</ContactName>\n</Contact>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
+          }
+        }
+      },
+      "Address": {
+        "required": [
+          "subClass",
+          "PostalCode",
+          "City",
+          "CountryCode",
+          "Street"
+        ],
+        "type": "string",
+        "properties": {
+          "subClass": {
+            "type": "string",
+            "description": "Sub class"
+          },
+          "PostalCode": {
+            "type": "string",
+            "description": "Postal code"
+          },
+          "City": {
+            "type": "string",
+            "description": "City"
+          },
+          "CountryCode": {
+            "type": "string",
+            "description": "Country code"
+          },
+          "Street": {
+            "type": "string",
+            "description": "Street"
+          }
+        }
+      },
+      "Contact": {
+        "required": [
+          "CellPhoneNo",
+          "EMailAddress",
+          "ContactName"
+        ],
+        "type": "string",
+        "properties": {
+          "CellPhoneNo": {
+            "type": "string",
+            "description": "Cell Phone Number."
+          },
+          "EMailAddress": {
+            "type": "string",
+            "description": "Email address."
+          },
+          "ContactName": {
+            "type": "string",
+            "description": "Contact Name."
+          }
+        }
+      },
+      "OrderLineSet": {
+        "required": [
+          "OrderItem"
+        ],
+        "type": "array",
+        "properties": {
+          "OrderItem": {
+            "type": "array",
+            "description": "Details of the order lines.",
+            "items": {
+              "$ref": "#/components/schemas/OrderItem"
+            }
+          },
+          "PalletInfo": {
+            "type": "array",
+            "description": "Pallet info",
+            "items": {
+              "$ref": "#/components/schemas/PalletInfo"
+            }
+          }
+        }
+      },
+      "OrderItem": {
+        "required": [
+          "articleLineId",
+          "ArticleId",
+          "ArticleQuantity",
+          "Description",
+          "ArticleStatus"
+        ],
+        "description": "<OrderLineSet>\n    <OrderItem articleLineId=\"1\">\n        <ArticleId codeListIdentifier=\"EAN\">123456</ArticleId>\n        <ArticleId codeListIdentifier=\"CustomerItemNo\">7020-180</ArticleId>\n        <ArticleQuantity unitCode=\"\">1000</ArticleQuantity>\n        <Description usageCode=\"AAA\">\n            <Text>White, electric table fan</Text>\n        </Description>\n        <ArticleStatus/>\n        <ArticleBatchNo>123456</ArticleBatchNo>\n        <ArticleName>Electric Fan 18cm</ArticleName>\n    </OrderItem>\n</OrderLineSet>",
+        "properties": {
+          "articleLineId": {
+            "type": "string",
+            "description": "Article line ID"
+          },
+          "ArticleId": {
+            "type": "array",
+            "description": "Article Numbers",
+            "items": {
+              "$ref": "#/components/schemas/ArticleId"
+            }
+          },
+          "ArticleQuantity": {
+            "type": "array",
+            "description": "Quantity ordered.",
+            "items": {
+              "$ref": "#/components/schemas/ArticleQuantity"
+            }
+          },
+          "ArticleReference": {
+            "type": "array",
+            "description": "Article Reference.",
+            "items": {
+              "$ref": "#/components/schemas/ArticleReference"
+            }
+          },
+          "Description": {
+            "type": "array",
+            "description": "Article Description.",
+            "examples": [
+              "<Description usageCode=\"AAA\">\n    <Text>White, electric table fan</Text>\n</Description>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Description"
+            }
+          },
+          "DateAndTimes": {
+            "type": "array",
+            "description": "Date and Time at the Orderline level. There are many different options for date and time.",
+            "examples": [
+              "<DateAndTimes subClass=\"ExpirationDate\">\n    <Date>2028-02-07</Date>\n    <Time>00:00:00</Time>\n</DateAndTimes>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/DateAndTimes"
+            }
+          },
+          "ArticleMonetaryAmounts": {
+            "type": "array",
+            "description": "Article unit sales price and currency.",
+            "items": {
+              "$ref": "#/components/schemas/ArticleMonetaryAmounts"
+            }
+          },
+          "Utility": {
+            "type": "array",
+            "description": "Utility.",
+            "items": {
+              "$ref": "#/components/schemas/UtilityOrderItem"
+            }
+          },
+          "ArticleStatus": {
+            "type": "string",
+            "description": "Article Status."
+          },
+          "ArticleSerialNos": {
+            "type": "array",
+            "description": "Serial numbers for the article.",
+            "items": {
+              "$ref": "#/components/schemas/ArticleSerialNos"
+            }
+          },
+          "ArticleBatchNo": {
+            "type": "string",
+            "description": "Batch number connected to the article.",
+            "examples": [
+              "<ArticleBatchNo>123456</ArticleBatchNo>"
+            ]
+          },
+          "FreeText": {
+            "type": "array",
+            "description": "Used for additional information",
+            "examples": [
+              "<FreeText usageCode=\"LIN\">\n    <Text>0002292492</Text>\n</FreeText>"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/FreeTextOrderItem"
+            }
+          },
+          "ArticleName": {
+            "type": "string",
+            "description": "Article name.",
+            "examples": [
+              "<ArticleName>Electric Fan 18cm</ArticleName>"
+            ]
+          }
+        }
+      },
+      "PalletInfo": {
+        "properties": {
+          "EPDCode": {
+            "type": "string",
+            "description": "EPD Code.",
+            "examples": [
+              "<EPDCode>1234</EPDCode>"
+            ]
+          },
+          "PalletQuantity": {
+            "type": "number",
+            "description": "Pallet Quantity.",
+            "examples": [
+              "<PalletQuantity>10</PalletQuantity>"
+            ]
+          }
+        }
+      },
+      "ArticleId": {
+        "required": [
+          "codeListIdentifier",
+          "Value"
+        ],
+        "properties": {
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Sets type of Article number/id."
+          },
+          "Value": {
+            "type": "number",
+            "description": "Article Quantity."
+          }
+        }
+      },
+      "ArticleReference": {
+        "required": [
+          "referenceType",
+          "ReferenceNo"
+        ],
+        "properties": {
+          "referenceType": {
+            "type": "string",
+            "description": "Type of references used in orderline.",
+            "enum": [
+              "LI - LINEREFERENCE1",
+              "PE - PLANT",
+              "OP - RESERVEDORDERID",
+              "AEP - PROJECTNUMBER"
+            ],
+            "examples": [
+              "<ArticleReference referenceType=\"LI\">\n    <ReferenceNo>123456</ReferenceNo>\n</ArticleReference>"
+            ]
+          },
+          "ReferenceNo": {
+            "type": "number",
+            "description": "Article Quantity."
+          }
+        }
+      },
+      "Description": {
+        "required": [
+          "usageCode",
+          "Text"
+        ],
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Article Description Type.",
+            "enum": [
+              "AAA - if description is used"
+            ]
+          },
+          "Text": {
+            "type": "string",
+            "description": "Description."
+          }
+        }
+      },
+      "ArticleMonetaryAmounts": {
+        "type": "object",
+        "properties": {
+          "UnitPrice": {
+            "type": "array",
+            "description": "Unit Price.",
+            "items": {
+              "$ref": "#/components/schemas/UnitPrice"
+            }
+          }
+        }
+      },
+      "UnitPrice": {
+        "properties": {
+          "currencyIdentificationCode": {
+            "type": "string",
+            "description": "Currency Identification Code.",
+            "examples": [
+              "<UnitPrice currencyIdentificationCode=\"NOK\">\n    230.30\n</UnitPrice>"
+            ]
+          },
+          "Value": {
+            "type": "number",
+            "description": "Unit price value."
+          }
+        }
+      },
+      "UtilityOrderItem": {
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "Usage code."
+          },
+          "codeListIdentifier": {
+            "type": "string",
+            "description": "Code List Identifier.",
+            "enum": [
+              "DaysExpire - MINSHELFLIFE",
+              "CustomStorage - ERPCode",
+              "ClientStorage - ERPCode",
+              "AAQ - SHIPPINGCONTAINER"
+            ],
+            "examples": [
+              "<Utility usageCode=\"N\" codeListIdentifier=\"CustomStorage\" />"
+            ]
+          },
+          "Value": {
+            "type": "string",
+            "description": "Utility value."
+          }
+        },
+        "xml": "Utility"
+      },
+      "ArticleSerialNos": {
+        "required": [
+          "ArticleSerialNo"
+        ],
+        "type": "object",
+        "properties": {
+          "ArticleSerialNo": {
+            "type": "string",
+            "description": "Article Serial No.",
+            "examples": [
+              "<ArticleSerialNos>\n    <ArticleSerialNo>123</ArticleSerialNo>\n</ArticleSerialNos>"
+            ]
+          }
+        }
+      },
+      "FreeTextOrderItem": {
+        "type": "string",
+        "properties": {
+          "usageCode": {
+            "type": "string",
+            "description": "usage Code.",
+            "enum": [
+              "ACB - Notes",
+              "LIN - LINEREFERENCE"
+            ]
+          },
+          "Text": {
+            "type": "string",
+            "description": "FreeText text."
+          }
+        }
+      },
+      "CustomsClearance": {
+        "required": [
+          "OrderItem"
+        ],
+        "type": "object",
+        "properties": {
+          "FreightChargeAmount": {
+            "type": "array",
+            "description": "Freight Cost",
+            "items": {
+              "$ref": "#/components/schemas/FreightChargeAmount"
+            }
+          },
+          "FreightChargeCarrier": {
+            "type": "string",
+            "description": "Customs Carrier.",
+            "examples": [
+              "<FreightChargeCarrier></FreightChargeCarrier>"
+            ]
+          }
+        }
+      },
+      "FreightChargeAmount": {
+        "properties": {
+          "currencyIdentificationCode": {
+            "type": "string",
+            "description": "Currency Identification Code.",
+            "examples": [
+              "<FreightChargeAmount currencyIdentificationCode=\"NOK\">\n230.30\n</FreightChargeAmount>"
+            ]
+          },
+          "Value": {
+            "type": "number",
+            "description": "Value of the Freight Charge Amount."
+          }
+        }
+      }
+    },
+    "examples": {
+      "CreateOrderRequest": {
+        "value": {
+          "version": "5.0",
+          "definedBy": "BIG",
+          "domain": "SupplyChain",
+          "collaboration": "Order",
+          "messageFunction": "Order",
+          "profile": "bringXML",
+          "language": "",
+          "messageId": "String",
+          "updateIndicator": "",
+          "testIndicator": "",
+          "MessageDetails": {
+            "MessageSender": {
+              "partyId": "String",
+              "idType": "ZZ"
+            },
+            "MessageRecipient": {
+              "partyId": "7080003388100",
+              "idType": "14"
+            },
+            "MessageDate": {
+              "Value": "2022-08-14T09:20:47"
+            }
+          },
+          "SupplyStructure": {
+            "OrderSet": [
+              {
+                "updateIndicator": "String",
+                "Order": {
+                  "orderId": "String",
+                  "ExternalOrderType": "String",
+                  "Reference": [
+                    {
+                      "referenceType": "String",
+                      "ReferenceNo": "String"
+                    },
+                    {
+                      "referenceType": "String",
+                      "ReferenceNo": "String"
+                    }
+                  ],
+                  "DateAndTimes": [
+                    {
+                      "subClass": "String",
+                      "Date": "2022-08-14",
+                      "Time": "09:20:00"
+                    },
+                    {
+                      "subClass": "String",
+                      "Date": "2022-08-14",
+                      "Time": "09:20:00"
+                    }
+                  ],
+                  "TermsOfDelivery": [
+                    {
+                      "TODConditionCode": {
+                        "Value": "String"
+                      }
+                    }
+                  ],
+                  "FreeText": [
+                    {
+                      "UsageCode": "String",
+                      "Text": [
+                        {
+                          "Value": "String"
+                        }
+                      ]
+                    },
+                    {
+                      "UsageCode": "String",
+                      "Text": [
+                        {
+                          "Value": "String"
+                        }
+                      ]
+                    }
+                  ],
+                  "COD": {
+                    "CodAmount": "10"
+                  },
+                  "TermsOfPayment": {
+                    "otherDesc": "String",
+                    "TOPConditionCode":  "String"
+                  },
+                  "PriorityCode": "String"
+                },
+                "TransportService": {
+                  "BasicServiceCode": {
+                    "Value": "String"
+                  },
+                  "AdditionalService": [
+                    {
+                      "AdditionalServiceCode": {
+                        "Value": "String"
+                      }
+                    },
+                    {
+                      "AdditionalServiceCode": {
+                        "Value": "String"
+                      }
+                    }
+                  ]
+                },
+                "Party": [
+                  {
+                    "subClass": "String",
+                    "partyId": "String",
+                    "subPartyId": "String",
+                    "Name": "String",
+                    "Address": [
+                      {
+                        "subClass": "PhysicalAddress",
+                        "PostalCode": "String",
+                        "City": "String",
+                        "CountryCode": {
+                          "Value": "String"
+                        },
+                        "Street": "String",
+                        "AddressLine": [
+                          "String"
+                        ]
+                      }
+                    ],
+                    "Contact": [
+                      {
+                        "PhoneNo": "String",
+                        "CellPhoneNo": "String",
+                        "EMailAddress": "String",
+                        "ContactName": "String"
+                      }
+                    ]
+                  },
+                  {
+                    "subClass": "String",
+                    "partyId": "String",
+                    "subPartyId": "String",
+                    "Name": "String",
+                    "Address": [
+                      {
+                        "subClass": "PhysicalAddress",
+                        "PostalCode": "String",
+                        "City": "String",
+                        "CountryCode": {
+                          "Value": "String"
+                        },
+                        "Street": "String",
+                        "AddressLine": [
+                          "String"
+                        ]
+                      }
+                    ],
+                    "Contact": [
+                      {
+                        "PhoneNo": "String",
+                        "CellPhoneNo": "String",
+                        "EMailAddress": "String",
+                        "ContactName": "String"
+                      }
+                    ]
+                  },
+                  {
+                    "subClass": "PerformingUnit",
+                    "partyId": "String",
+                    "Name": "String"
+                  }
+                ],
+                "OrderLineSet": [
+                  {
+                    "OrderItem": [
+                      {
+                        "articleLineId": "String",
+                        "ArticleId": [
+                          {
+                            "codeListIdentifier": "String",
+                            "Value": "String"
+                          },
+                          {
+                            "codeListIdentifier": "String",
+                            "Value": "String"
+                          }
+                        ],
+                        "ArticleQuantity": {
+                          "unitCode": "String",
+                          "Value": "10"
+                        },
+                        "ArticleReference": [
+                          {
+                            "referenceType": "String",
+                            "ReferenceNo": "String"
+                          },
+                          {
+                            "referenceType": "String",
+                            "ReferenceNo": "String"
+                          }
+                        ],
+                        "Description": [
+                          {
+                            "usageCode": "String",
+                            "Text": [
+                              {
+                                "Value": "String"
+                              }
+                            ]
+                          },
+                          {
+                            "usageCode": "String",
+                            "Text": [
+                              {
+                                "Value": "String"
+                              }
+                            ]
+                          }
+                        ],
+                        "DateAndTimes": [
+                          {
+                            "subClass": "String",
+                            "Date": "2022-08-14",
+                            "Time": "09:20:00"
+                          },
+                          {
+                            "subClass": "String",
+                            "Date": "2022-08-14",
+                            "Time": "09:20:00"
+                          }
+                        ],
+                        "ArticleMonetaryAmounts": {
+                          "UnitPrice": {
+                            "currencyIdentificationCode": "String",
+                            "Value": "10"
+                          }
+                        },
+                        "Utility": [
+                          {
+                            "usageCode": "String",
+                            "codeListIdentifier": "String"
+                          },
+                          {
+                            "usageCode": "String",
+                            "codeListIdentifier": "String"
+                          }
+                        ],
+                        "ArticleStatus": "String",
+                        "ArticleSerialNos": {
+                          "ArticleSerialNo": "String"
+                        },
+                        "ArticleBatchNo": "String",
+                        "FreeText": [
+                          {
+                            "UsageCode": "String",
+                            "Text": [
+                              {
+                                "Value": "String"
+                              }
+                            ]
+                          },
+                          {
+                            "UsageCode": "String",
+                            "Text": [
+                              {
+                                "Value": "String"
+                              }
+                            ]
+                          }
+                        ],
+                        "ArticleName": "String"
+                      }
+                    ],
+                    "PalletInfo": [
+                      {
+                        "EPDCode": "String",
+                        "PalletQuantity": "10"
+                      }
+                    ]
+                  }
+                ],
+                "CustomsClearance": {
+                  "FreightChargeAmount": {
+                    "Value": "10"
+                  },
+                  "FreightChargeCarrier": "String"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "CreateOrderResponse": {
+        "value": {
+          "PostBackResponse": {
+            "Message": "success",
+            "RequestID": "SomeUniqueIdForReference"
+          }
+        }
+      },
+      "errorCodes": {
+        "value": {
+          "errorTypes": [
+            {
+                "Code": "PO_INPUT_001",
+                "Description": "Must provide valid customer ID"
+            },
+            {
+                "Code": "PO_INPUT_002",
+                "Description": "Must provide valid purchase order"
+            },
+            {
+                "Code": "PO_INPUT_003",
+                "Description": "Must provide valid schema version. See developer.bring.com for latest schema version"
+            },
+            {
+                "Code": "PO_INPUT_004",
+                "Description": "Request properties must contain valid datetime"
+            },
+            {
+                "Code": "PO_INPUT_005",
+                "Description": "Request properties must contain valid locale"
+            },
+            {
+                "Code": "PO_INPUT_006",
+                "Description": "Request properties must be present"
+            },
+            {
+                "Code": "PO_INPUT_007",
+                "Description": "Consignment ID is required"
+            },
+            {
+                "Code": "PO_INPUT_008",
+                "Description": "Must provide valid EventType. See xsd for list of valid types."
+            },
+            {
+                "Code": "PO_INPUT_009",
+                "Description": "Must provide valid ISO timestamp for event"
+            },
+            {
+                "Code": "PO_INPUT_010",
+                "Description": "Purchase order not found. You can not have orderlines to a non-existing purchase order."
+            },
+            {
+                "Code": "PO_INPUT_011",
+                "Description": "Negative quantity not allowed."
+            },
+            {
+                "Code": "PO_INPUT_012",
+                "Description": "Item on transport order does not exist on purchase order. OrderLineId and ArticleLineId must match purchase order."
+            },
+            {
+                "Code": "PO_INPUT_013",
+                "Description": "Shipping container ID is required"
+            },
+            {
+                "Code": "PO_INPUT_014",
+                "Description": "A valid container type required for the shipping container and the content"
+            },
+            {
+                "Code": "PO_INPUT_015",
+                "Description": "Content for shipping container is required"
+            },
+            {
+                "Code": "PO_INOUT_016",
+                "Description": "Content in shipping container requires either consignment ID or shipping container ID"
+            },
+            {
+                "Code": "PO_INPUT_017",
+                "Description": "The request contained invalid content."
+            },
+            {
+                "Code": "PO_INPUT_018",
+                "Description": "The request contains input that is not supported."
+            },
+            {
+                "Code": "PO_INPUT_019",
+                "Description": "Some required parameters are missing."
+            },
+            {
+                "Code": "PO_INPUT_020",
+                "Description": "Must provide valid transport order"
+            },
+            {
+                "Code": "PO_INPUT_021",
+                "Description": "Article number is required"
+            },
+            {
+                "Code": "PO_INPUT_022",
+                "Description": "Article number is required"
+            },
+            {
+                "Code": "PO_INPUT_023",
+                "Description": "Content for article balance is required"
+            },
+            {
+                "Code": "PO_INPUT_024",
+                "Description": "Attempted to create/insert a purchase order that already existed. Maybe wrong updateIndicator"
+            },
+            {
+                "Code": "PO_STATE_001",
+                "Description": "Purchase order not found"
+            },
+            {
+                "Code": "PO_STATE_002",
+                "Description": "You must log in to use this endpoint. See developer.bring.com for details about login with HTTP-headers."
+            },
+            {
+                "Code": "PO_STATE_003",
+                "Description": "Order items for requested purchase order not found"
+            },
+            {
+                "Code": "PO_STATE_004",
+                "Description": "Access is denied to read this purchaseorder"
+            },
+            {
+                "Code": "PO_STATE_005",
+                "Description": "Transport order not found"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

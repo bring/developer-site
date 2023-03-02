@@ -261,7 +261,7 @@
                 {{- $schema := index $components.schemas $schemaPath.File -}}
                 {{- $items := $schema.properties -}}
                 {{- range $key, $_ := $items -}}
-                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "components" $components "required" (in $schema.required $key) "endpointId" $endpointId "recLevel" $recLevel) -}}
                 {{- end -}}
               {{- end -}}
             {{- end -}}
@@ -280,7 +280,7 @@
     <div class="flex flex-wrap align-ifs">
       <dt>
         <code>{{ $name }}</code>
-        {{- if $required -}}
+        {{- if or $required $schemaObj.required -}}
           <div class="lh-tight param-required text-note">Required</div>
         {{- end -}}
       </dt>
@@ -300,6 +300,20 @@
         {{- with $schemaObj.enum -}}
           <dl>
             <dt><span class="text-note fw600">Enum</span></dt>
+            {{- range . -}}
+              <dd><code class="wrap-text">{{ . }}</code></dd>
+            {{- end -}}
+          </dl>
+        {{- end -}}
+        {{- with $schemaObj.default -}}
+          <dl>
+            <dt><span class="text-note fw600">Default</span></dt>
+            <dd><code>{{ . }}</code></dd>
+          </dl>
+        {{- end -}}
+        {{- with $schemaObj.examples -}}
+          <dl>
+            <dt><span class="text-note fw600">Example</span></dt>
             {{- range . -}}
               <dd><code class="wrap-text">{{ . }}</code></dd>
             {{- end -}}

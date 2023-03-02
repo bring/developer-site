@@ -188,6 +188,20 @@
             {{- end -}}
           </dl>
         {{- end -}}
+        {{- with $schemaObj.default -}}
+          <dl>
+            <dt><span class="text-note fw600">Default</span></dt>
+            <dd><code>{{ . }}</code></dd>
+          </dl>
+        {{- end -}}
+        {{- with $schemaObj.examples -}}
+          <dl>
+            <dt><span class="text-note fw600">Example</span></dt>
+            {{- range . -}}
+              <dd><code class="wrap-text">{{ . }}</code></dd>
+            {{- end -}}
+          </dl>
+        {{- end -}}
       </dd>
     </div>
   </div>
