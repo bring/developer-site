@@ -11,12 +11,6 @@ menu:
 weight: 51
 
 important:
-  - type: warn
-    title:
-      The Preliminary freight calculation report for Parcel Norway customer was
-      disabled from 21.06.2021
-    message: |
-      The Preliminary freight calculation report for Parcel Norway customers fetched using API id PARCELS-CURRENT_CALCULATED_SHIPPING today was disabled from 21.06.2021. Historical data will be available for one year. You will find the same information in Detailed freight calculation report using API id PARCELS-ECONOMY_AND_STATISTICS instead.
   - type: info
     title: API changes after your company is converted to use new services
     message: |
