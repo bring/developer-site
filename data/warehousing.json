@@ -182,8 +182,8 @@
     },
     "/errorCodes": {
       "get": {
-        "summary": "List all errorcodes",
-        "description": "This endpoint is used to list all errorcodes from Bring Warehousing.",
+        "summary": "List error codes",
+        "description": "This endpoint is used to list the errorcodes from Bring Warehousing.",
         "operationId": "listErrorCodes",
         "responses": {
           "400": {
