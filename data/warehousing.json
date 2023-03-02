@@ -192,14 +192,14 @@
               "application/json": {
                 "examples": {
                   "ErrorCodes": {
-                    "$ref": "#/components/examples/errorCodes"
+                    "$ref": "#/components/examples/ErrorList"
                   }
                 }
               },
               "application/xml": {
                 "examples": {
                   "ErrorCodes": {
-                    "$ref": "#/components/examples/errorCodes"
+                    "$ref": "#/components/examples/ErrorList"
                   }
                 }
               }
@@ -2604,7 +2604,7 @@
           }
         }
       },
-      "errorCodes": {
+      "ErrorList": {
         "value": {
           "errorTypes": [
             {
