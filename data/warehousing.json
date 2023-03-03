@@ -458,7 +458,7 @@
         "required": [
           "partyId"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "partyId": {
             "type": "string",
@@ -900,7 +900,7 @@
           "Date",
           "Time"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "subClass": {
             "type": "string",
@@ -971,7 +971,7 @@
           "LanguageCode",
           "Text"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -1013,7 +1013,7 @@
           "name",
           "Value"
         ],
-        "type": "object",
+        "type": "array",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -1045,7 +1045,7 @@
           "name",
           "Value"
         ],
-        "type": "string",
+        "type": "object",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -1077,7 +1077,7 @@
           "Width",
           "GrossWeight"
         ],
-        "type": "string",
+        "type": "object",
         "properties": {
           "Depth": {
             "type": "array",
@@ -1121,6 +1121,7 @@
           "unitCode",
           "Value"
         ],
+        "type": "object",
         "properties": {
           "unitCode": {
             "type": "string",
@@ -1141,7 +1142,7 @@
           "LanguageCode",
           "Text"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -1185,7 +1186,7 @@
           "Text",
           "ReferenceDate"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "referenceType": {
             "type": "string",
@@ -1731,7 +1732,7 @@
         "type": "array",
         "properties": {
           "AccountNo": {
-            "type": "array",
+            "type": "object",
             "description": "Account No.",
             "items": {
               "$ref": "#/components/schemas/IdType"
@@ -1839,6 +1840,7 @@
         "required": [
           "AdditionalServiceCode"
         ],
+        "type": "array",
         "properties": {
           "PriorityCode": {
             "type": "string",
@@ -1895,7 +1897,7 @@
           "Address",
           "Contact"
         ],
-        "type": "string",
+        "type": "object",
         "properties": {
           "subClass": {
             "type": "string",
@@ -1951,7 +1953,7 @@
           "CountryCode",
           "Street"
         ],
-        "type": "string",
+        "type": "object",
         "properties": {
           "subClass": {
             "type": "string",
@@ -1996,7 +1998,7 @@
           "EMailAddress",
           "ContactName"
         ],
-        "type": "string",
+        "type": "object",
         "properties": {
           "CellPhoneNo": {
             "type": "string",
@@ -2147,6 +2149,7 @@
         }
       },
       "PalletInfo": {
+        "type": "array",
         "properties": {
           "EPDCode": {
             "type": "string",
@@ -2169,6 +2172,7 @@
           "codeListIdentifier",
           "Value"
         ],
+        "type": "array",
         "properties": {
           "codeListIdentifier": {
             "type": "string",
@@ -2185,6 +2189,7 @@
           "referenceType",
           "ReferenceNo"
         ],
+        "type": "array",
         "properties": {
           "referenceType": {
             "type": "string",
@@ -2213,7 +2218,7 @@
           "usageCode",
           "Text"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -2241,6 +2246,7 @@
         }
       },
       "UnitPrice": {
+        "type": "object",
         "properties": {
           "currencyIdentificationCode": {
             "type": "string",
@@ -2259,7 +2265,7 @@
         }
       },
       "UtilityOrderItem": {
-        "type": "string",
+        "type": "object",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -2301,7 +2307,7 @@
         }
       },
       "FreeTextOrderItem": {
-        "type": "string",
+        "type": "object",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -2337,6 +2343,7 @@
         }
       },
       "FreightChargeAmount": {
+        "type": "object",
         "properties": {
           "currencyIdentificationCode": {
             "type": "string",
