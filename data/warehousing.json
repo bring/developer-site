@@ -434,7 +434,7 @@
             "type": "datetime",
             "description": "The date on which the message was sent.",
             "examples": [
-              "<MessageDate>2021-02-12T13:38:08</MessageDate>"
+              "2021-02-12T13:38:08"
             ]
           },
           "MessageRecipient": {
@@ -464,7 +464,7 @@
             "type": "string",
             "description": "Customer number (6 or 11 digits) provided by Bring.",
             "examples": [
-              "<MessageRecipient partyId=20001234567 idType=14 />"
+              "20001234567"
             ]
           },
           "idType": {
@@ -1551,9 +1551,6 @@
           "TransportService": {
             "type": "array",
             "description": "Transport service for shipment to customer.",
-            "examples": [
-              "<TransportService>\n    <BasicServiceCode>Servicepakke</BasicServiceCode>\n    <AdditionalService>\n        <AdditionalServiceCode>EVARSLING</AdditionalServiceCode>\n    </AdditionalService>\n    <AdditionalService>\n        <AdditionalServiceCode>PickUpPoint</AdditionalServiceCode>\n    </AdditionalService>\n    <TariffReference>TariffReference_0</TariffReference>\n    <NatureOfCargo>NatureOfCargo_0</NatureOfCargo>\n    <Priority>Priority_0</Priority>\n    <Utility usageCode=\"\">\n        <Value sequence=\"\" valueType=\"\" valueCode=\"\">Value_0</Value>\n    </Utility>\n</TransportService>"
-            ],
             "items": {
               "$ref": "#/components/schemas/TransportService"
             }
@@ -1561,9 +1558,6 @@
           "Party": {
             "type": "array",
             "description": "Party\n\nAn order consists of several Parties; a supplier, a sender, a receiver, etc.\nThe subClass code defines each type of party.\nMust have Name, Street, City, CountryCode",
-            "examples": [
-              "<Party subClass=\"OrderingParty\" partyId=\"11223\">\n    <Name>Testcompany</Name>\n    <Address subClass=\"PhysicalAddress\">\n        <PostalCode>0123</PostalCode>\n        <City>OSLO</City>\n        <CountryCode>NO</CountryCode>\n        <Street>Teststreet 2</Street>\n    </Address>\n    <Contact>\n        <CellPhoneNo>99010100</CellPhoneNo>\n        <EMailAddress>john.doe@posten.no</EMailAddress>\n        <ContactName>John Doe</ContactName>\n    </Contact>\n</Party>"
-            ],
             "items": {
               "$ref": "#/components/schemas/Party"
             }
@@ -1596,7 +1590,7 @@
             "type": "string",
             "description": "Unique ID for this order.",
             "examples": [
-              "<Order orderId=123456 />"
+              "123456"
             ]
           },
           "ExternalOrderType": {
@@ -1609,7 +1603,12 @@
           },
           "DateAndTimes": {
             "type": "array",
-            "description": "Date and time of the order.\n\nThere are many different options for date and time, but the most frequently used subClasses are:\n•DocumentDate The date on which the order is booked.\n•DeliveryDateRequested The date on which the order is requested to be delivered\n•ExpirationDate\n\nExample:\n<DateAndTimes subClass=\"DocumentDate\">\n    <Date>2021-02-12</Date>\n    <Time>13:29:45</Time>\n</DateAndTimes>\n\n<DateAndTimes subClass=\"DeliveryDateRequested\">\n    <Date>2021-02-15</Date>\n    <Time>00:00:00</Time>\n</DateAndTimes>",
+            "description": "Date and time of the order.\n\nThere are many different options for date and time, but the most frequently used subClasses are:\n•DocumentDate The date on which the order is booked.\n•DeliveryDateRequested The date on which the order is requested to be delivered\n•ExpirationDate",
+            "examples": [
+              "subClass=\"DocumentDate\"",
+              "subClass=\"DeliveryDateRequested\""
+
+            ],
             "items": {
               "$ref": "#/components/schemas/DateAndTimes"
             }
@@ -1618,7 +1617,7 @@
             "type": "array",
             "description": "Terms of Delivery.\n\nThe regulations are used to clarify the distribution of obligations between seller and buyer when shipping goods / Incoterms",
             "examples": [
-              "<TermsOfDelivery>\n&nbsp;&nbsp;<TODConditionCode>DDP</TODConditionCode>\n</TermsOfDelivery>"
+              "DDP"
             ],
             "items": {
               "$ref": "#/components/schemas/TermsOfDelivery"
@@ -1626,9 +1625,18 @@
           },
           "FreeText": {
             "type": "array",
-            "description": "Reference on an order.\n\nUsed for information to the WH or for the delivery of the order, separated by usagecode.\n\nPossible values:\n•DEL - Information to WH\n•DIN - Message to carrier\n•ZZZ - Message to recipient. Mutually defined reference number\n•ON - Notes in M4N\n\nExample:\n<FreeText usageCode=\"DEL\">\n    <Text>Send this order together with order XXX</Text>\n</FreeText>\n\n<FreeText usageCode=\"DIN\">\n    <Text>delivery instruction</Text>\n</FreeText>\n\n<FreeText usageCode=\"ZZZ\">\n    <Text>123456</Text>\n</FreeText>\n\n<FreeText usageCode=\"ON\">\n    <Text>ABCDEF</Text>\n</FreeText>",
+            "description": "Reference on an order.\n\nUsed for information to the WH or for the delivery of the order, separated by usagecode.",
+            "enum": [
+              "DEL - Information to WH",
+              "DIN - Message to carrier",
+              "ZZZ - Message to recipient. Mutually defined reference number",
+              "ON - Notes in M4N"
+            ],
             "examples": [
-              "<COD>\n    <AccountNo idType=\"idType_0\">AccountNo_0</AccountNo>\n    <CodAmount>10</CodAmount>\n    <ControlDigit>10</ControlDigit>\n    <Kid>Kid_0</Kid>\n    <Message>Message_0</Message>\n</COD>"
+              "usageCode=\"DEL\"",
+              "usageCode=\"DIN\"",
+              "usageCode=\"ZZZ\"",
+              "usageCode=\"ON\""
             ],
             "items": {
               "$ref": "#/components/schemas/FreeText"
@@ -1636,7 +1644,19 @@
           },
           "COD": {
             "type": "array",
-            "description": "If goods are to be paid on delivery.\n\nUsed for information to the WH or for the delivery of the order, separated by usagecode.\n\nPossible values:\n•DEL - Information to WH\n•DIN - Message to carrier\n•ZZZ - Message to recipient. Mutually defined reference number\n•ON - Notes in M4N\n\nExample:\n<FreeText usageCode=\"DEL\">\n    <Text>Send this order together with order XXX</Text>\n</FreeText>\n\n<FreeText usageCode=\"DIN\">\n    <Text>delivery instruction</Text>\n</FreeText>\n\n<FreeText usageCode=\"ZZZ\">\n    <Text>123456</Text>\n</FreeText>\n\n<FreeText usageCode=\"ON\">\n    <Text>ABCDEF</Text>\n</FreeText>",
+            "description": "If goods are to be paid on delivery.\n\nUsed for information to the WH or for the delivery of the order, separated by usagecode.",
+            "enum": [
+              "DEL - Information to WH",
+              "DIN - Message to carrier",
+              "ZZZ - Message to recipient. Mutually defined reference number",
+              "ON - Notes in M4N"
+            ],
+            "examples": [
+              "usageCode=\"DEL\"",
+              "usageCode=\"DIN\"",
+              "usageCode=\"ZZZ\"",
+              "usageCode=\"ON\""
+            ],
             "items": {
               "$ref": "#/components/schemas/COD"
             }
@@ -1644,9 +1664,6 @@
           "TermsOfPayment": {
             "type": "array",
             "description": "Payment for the order.",
-            "examples": [
-              "<TermsOfPayment otherDesc=\"Vipps\">\n    <TOPConditionCode>Vipps</TOPConditionCode>\n< /TermsOfPayment>"
-            ],
             "items": {
               "$ref": "#/components/schemas/TermsOfPayment"
             }
@@ -1655,13 +1672,13 @@
             "type": "string",
             "description": "Priority Code.\n\nIf the order should have a priority you can add value here.\nIf no value is added the default value is set to \"Normal\".\n\nM4N Values:\n•X - Express",
             "examples": [
-              "<PriorityCode>X</PriorityCode>"
+              "PriorityCode=X"
             ]
           }
         }
       },
       "TermsOfDelivery": {
-        "type": "string",
+        "type": "array",
         "properties": {
           "TODConditionCode": {
             "type": "string",
@@ -1675,7 +1692,7 @@
           "date",
           "time"
         ],
-        "type": "string",
+        "type": "array",
         "properties": {
           "subClass": {
             "type": "string",
@@ -1683,16 +1700,22 @@
           },
           "date": {
             "type": "string",
-            "description": "Date."
+            "description": "Date.",
+            "examples": [
+              "2021-02-12"
+            ]
           },
           "time": {
             "type": "string",
-            "description": "Time."
+            "description": "Time.",
+            "examples": [
+              "13:29:45"
+            ]
           }
         }
       },
       "FreeText": {
-        "type": "string",
+        "type": "array",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -1705,6 +1728,7 @@
         }
       },
       "COD": {
+        "type": "array",
         "properties": {
           "AccountNo": {
             "type": "array",
@@ -1741,7 +1765,7 @@
         }
       },
       "TermsOfPayment": {
-        "type": "string",
+        "type": "array",
         "properties": {
           "otherDesc": {
             "type": "string",
@@ -1774,20 +1798,18 @@
           "BasicServiceCode",
           "AdditionalService"
         ],
+        "type": "array",
         "properties": {
           "BasicServiceCode": {
             "type": "string",
             "description": "Basic Service Code.\n\nRequired for a Customer order.<br>Optional for PurchaseOrder.<br><br>You will find information on all outgoing Services<br>for Posten Norge and Bring <a href=\"../services/\">here</a>.",
             "examples": [
-              "<BasicServiceCode>Servicepakke</BasicServiceCode>"
+              "Servicepakke"
             ]
           },
           "AdditionalService": {
             "type": "array",
             "description": "If Recipient notification is over SMS or E-Mail, a value must be added for either email and/or cellphone number within Contact in Party [subClass=\"Buyer\"]<br><br>You will find information on all outgoing Services for Posten Norge and Bring in <a href=\"../services/\">the service portfolio</a><br><br>And more information about Pickup Point (PuP) on the <a href=\"../pickup-point/\">Pickup Point API page</a>.",
-            "examples": [
-              "<AdditionalService>\n    <AdditionalServiceCode>EVARSLING</AdditionalServiceCode>\n</AdditionalService>\n<AdditionalService>\n    <AdditionalServiceCode>PickUpPoint</AdditionalServiceCode>\n</AdditionalService>"
-            ],
             "items": {
               "$ref": "#/components/schemas/AdditionalService"
             }
@@ -1822,7 +1844,7 @@
             "type": "string",
             "description": "Priority Code.\n\nIf the order should have a priority you can add value here.\nIf no value is added the default value is set to \"Normal\".\n\nM4N Values:\n•X - Express",
             "examples": [
-              "<PriorityCode>X</PriorityCode>"
+              "X"
             ]
           },
           "AdditionalServiceCode": {
@@ -1832,6 +1854,7 @@
         }
       },
       "Utility": {
+        "type": "array",
         "properties": {
           "usageCode": {
             "type": "string",
@@ -1847,7 +1870,7 @@
         }
       },
       "Value": {
-        "type": "string",
+        "type": "array",
         "properties": {
           "sequence": {
             "type": "string",
@@ -1880,32 +1903,33 @@
           },
           "partyId": {
             "type": "string",
-            "description": "Party id for the subClass.\n\n\n    Possible values:\n\n    Supplier/Sender/Receiver\n    •provided by user\n\n    Example:\n    <Party subClass=\"OrderingParty\" partyId=\"112233\" />\n\n    Warehouse ID/Location\n    •105075 - Bergen\n    •780132 - Berger/Skedsmokorset\n    •105091 - Drammen\n    •780448 - Fredrikstad\n    •780446 - Haugesund\n    •780429 - KongShavn\n    •105090 - Trollåsen\n    •780135 - Trondheim",
+            "description": "Party id for the subClass.",
+            "enum": [
+              "Supplier",
+              "Sender",
+              "Receiver"
+            ],
             "examples": [
-              "<Party subClass=\"PerformingUnit\" partyId=\"780132\" />",
-              "<Party subClass=\"TransportCompany\" partyId=\"Bring\" />"
+              "subClass=\"OrderingParty\" partyId=\"112233\""
             ]
           },
           "subPartyId": {
             "type": "string",
             "description": "The value of the actual Pick up point site.",
             "examples": [
-              "<Party subClass=\"DeliveryParty\" partyId=\"123456\" subPartyId=\"109847\">"
+              "subPartyId=\"109847\""
             ]
           },
           "Name": {
             "type": "string",
             "description": "Name of the Supplier/Sender/Receiver.",
             "examples": [
-              "<Name>TestCompany</Name>"
+              "TestCompany"
             ]
           },
           "Address": {
             "type": "array",
             "description": "Address of the Supplier/Sender/Receiver",
-            "examples": [
-              "<Address subClass=\"PhysicalAddress\">\n    <PostalCode>0123</PostalCode>\n    <City>OSLO</City>\n    <CountryCode>NO</CountryCode>\n    <Street>Teststreet 2</Street>\n</Address>"
-            ],
             "items": {
               "$ref": "#/components/schemas/Address"
             }
@@ -1913,9 +1937,6 @@
           "Contact": {
             "type": "array",
             "description": "Contact. (subClass determines whether required)\n\nDetails of contact\n\nMust be provided if using \"EVARSLING\" within TransportService of AdditionalService [subClass=\"AdditionalServiceCode\"]\n\nMust have Name, Cellphone and emailAddress.",
-            "examples": [
-              "<Contact>\n    <CellPhoneNo>99010100</CellPhoneNo>\n    <EMailAddress>john.doe@posten.no</EMailAddress>\n    <ContactName>John Doe</ContactName>\n</Contact>"
-            ],
             "items": {
               "$ref": "#/components/schemas/Contact"
             }
@@ -1934,23 +1955,38 @@
         "properties": {
           "subClass": {
             "type": "string",
-            "description": "Sub class"
+            "description": "Sub class",
+            "examples": [
+              "subClass=\"PhysicalAddress\""
+            ]
           },
           "PostalCode": {
             "type": "string",
-            "description": "Postal code"
+            "description": "Postal code",
+            "examples": [
+              "0123"
+            ]
           },
           "City": {
             "type": "string",
-            "description": "City"
+            "description": "City",
+            "examples": [
+              "OSLO"
+            ]
           },
           "CountryCode": {
             "type": "string",
-            "description": "Country code"
+            "description": "Country code",
+            "examples": [
+              "NO"
+            ]
           },
           "Street": {
             "type": "string",
-            "description": "Street"
+            "description": "Street",
+            "examples": [
+              "Teststreet 2"
+            ]
           }
         }
       },
@@ -1964,15 +2000,24 @@
         "properties": {
           "CellPhoneNo": {
             "type": "string",
-            "description": "Cell Phone Number."
+            "description": "Cell Phone Number.",
+            "examples": [
+              "99010100"
+            ]
           },
           "EMailAddress": {
             "type": "string",
-            "description": "Email address."
+            "description": "Email address.",
+            "examples": [
+              "john.doe@posten.no"
+            ]
           },
           "ContactName": {
             "type": "string",
-            "description": "Contact Name."
+            "description": "Contact Name.",
+            "examples": [
+              "John Doe"
+            ]
           }
         }
       },
@@ -2037,7 +2082,7 @@
             "type": "array",
             "description": "Article Description.",
             "examples": [
-              "<Description usageCode=\"AAA\">\n    <Text>White, electric table fan</Text>\n</Description>"
+              "usageCode=\"AAA\""
             ],
             "items": {
               "$ref": "#/components/schemas/Description"
@@ -2047,7 +2092,7 @@
             "type": "array",
             "description": "Date and Time at the Orderline level. There are many different options for date and time.",
             "examples": [
-              "<DateAndTimes subClass=\"ExpirationDate\">\n    <Date>2028-02-07</Date>\n    <Time>00:00:00</Time>\n</DateAndTimes>"
+              "subClass=\"ExpirationDate\""
             ],
             "items": {
               "$ref": "#/components/schemas/DateAndTimes"
@@ -2082,15 +2127,12 @@
             "type": "string",
             "description": "Batch number connected to the article.",
             "examples": [
-              "<ArticleBatchNo>123456</ArticleBatchNo>"
+              "123456"
             ]
           },
           "FreeText": {
             "type": "array",
             "description": "Used for additional information",
-            "examples": [
-              "<FreeText usageCode=\"LIN\">\n    <Text>0002292492</Text>\n</FreeText>"
-            ],
             "items": {
               "$ref": "#/components/schemas/FreeTextOrderItem"
             }
@@ -2099,7 +2141,7 @@
             "type": "string",
             "description": "Article name.",
             "examples": [
-              "<ArticleName>Electric Fan 18cm</ArticleName>"
+              "Electric Fan 18cm"
             ]
           }
         }
@@ -2110,14 +2152,14 @@
             "type": "string",
             "description": "EPD Code.",
             "examples": [
-              "<EPDCode>1234</EPDCode>"
+              "EPDCode=1234"
             ]
           },
           "PalletQuantity": {
             "type": "number",
             "description": "Pallet Quantity.",
             "examples": [
-              "<PalletQuantity>10</PalletQuantity>"
+              10
             ]
           }
         }
@@ -2154,12 +2196,15 @@
               "AEP - PROJECTNUMBER"
             ],
             "examples": [
-              "<ArticleReference referenceType=\"LI\">\n    <ReferenceNo>123456</ReferenceNo>\n</ArticleReference>"
+              "referenceType=\"LI\""
             ]
           },
           "ReferenceNo": {
             "type": "number",
-            "description": "Article Quantity."
+            "description": "Article Quantity.",
+            "examples": [
+              123456
+            ]
           }
         }
       },
@@ -2201,12 +2246,15 @@
             "type": "string",
             "description": "Currency Identification Code.",
             "examples": [
-              "<UnitPrice currencyIdentificationCode=\"NOK\">\n    230.30\n</UnitPrice>"
+              "currencyIdentificationCode=\"NOK\""
             ]
           },
           "Value": {
             "type": "number",
-            "description": "Unit price value."
+            "description": "Unit price value.",
+            "examples": [
+              230.30
+            ]
           }
         }
       },
@@ -2227,7 +2275,7 @@
               "AAQ - SHIPPINGCONTAINER"
             ],
             "examples": [
-              "<Utility usageCode=\"N\" codeListIdentifier=\"CustomStorage\" />"
+              "usageCode=\"N\" codeListIdentifier=\"CustomStorage\""
             ]
           },
           "Value": {
@@ -2247,7 +2295,7 @@
             "type": "string",
             "description": "Article Serial No.",
             "examples": [
-              "<ArticleSerialNos>\n    <ArticleSerialNo>123</ArticleSerialNo>\n</ArticleSerialNos>"
+              "ArticleSerialNo=123"
             ]
           }
         }
@@ -2284,10 +2332,7 @@
           },
           "FreightChargeCarrier": {
             "type": "string",
-            "description": "Customs Carrier.",
-            "examples": [
-              "<FreightChargeCarrier></FreightChargeCarrier>"
-            ]
+            "description": "Customs Carrier."
           }
         }
       },
@@ -2297,12 +2342,15 @@
             "type": "string",
             "description": "Currency Identification Code.",
             "examples": [
-              "<FreightChargeAmount currencyIdentificationCode=\"NOK\">\n230.30\n</FreightChargeAmount>"
+              "currencyIdentificationCode=\"NOK\""
             ]
           },
           "Value": {
             "type": "number",
-            "description": "Value of the Freight Charge Amount."
+            "description": "Value of the Freight Charge Amount.",
+            "examples": [
+              230.30
+            ]
           }
         }
       }
