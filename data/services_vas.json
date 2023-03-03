@@ -229,7 +229,7 @@
   "shippingGuideCode" : "LETTER_NOTIFICATION",
   "shippingGuideNpbCode" : "2086",
   "bookingCode" : "2086",
-  "incompatibleVases" : [ "Fixed seven-day length of stay" ],
+  "incompatibleVases" : [ "Seven days pickup deadline" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke til hentested",
     "serviceType" : "B2C",
@@ -2433,7 +2433,7 @@
 }, {
   "vasName" : "Pickup",
   "vasNameNorwegian" : "Henting",
-  "description" : "null  ",
+  "description" : "When booking 5100 Stykkgods til bedrift, pickup is added automatically, hence it is not needed in the API request.  ",
   "shippingGuideCode" : "1073",
   "shippingGuideNpbCode" : "1073",
   "bookingCode" : "1073",
@@ -2931,8 +2931,8 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Fixed seven-day length of stay",
-  "vasNameNorwegian" : "Fast syv dager liggetid",
+  "vasName" : "Seven days pickup deadline",
+  "vasNameNorwegian" : "Sju dager hentefrist",
   "description" : "Blocks the possibility for the recipient to extend pickup deadline from 7 days to 14 days. Hides the delivery choice \"extend deadline\" in recipient interfaces.  ",
   "shippingGuideCode" : "1371",
   "shippingGuideNpbCode" : "1371",
