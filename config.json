@@ -100,7 +100,7 @@
   },
   "params": {
     "apis": [
-      "content/api/bookingold/api.raml",
+      "content/api/booking/api.raml",
       "content/api/shipping-guide_2/api.raml",
       "content/api/warehousing/api.raml",
       "content/api/warehousing3/api.raml",
