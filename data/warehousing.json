@@ -259,22 +259,34 @@
           "version": {
             "type": "string",
             "description": "Version of Request.",
-            "default": "5.0"
+            "default": "5.0",
+            "xml": {
+              "attribute": true
+            }
           },
           "definedBy": {
             "type": "string",
             "description": "Defined By.",
-            "default": "BIG"
+            "default": "BIG",
+            "xml": {
+              "attribute": true
+            }
           },
           "domain": {
             "type": "string",
             "description": "Domain.",
-            "default": "SupplyChain"
+            "default": "SupplyChain",
+            "xml": {
+              "attribute": true
+            }
           },
           "collaboration": {
             "type": "string",
             "description": "Collaboration.",
-            "default": "Order"
+            "default": "Order",
+            "xml": {
+              "attribute": true
+            }
           },
           "messageFunction": {
             "type": "string",
@@ -282,33 +294,48 @@
             "examples": [
               "For salesorder/customer order = Order",
               "For purchaseOrder = PurchaseOrder"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "profile": {
             "type": "string",
             "description": "Profile.",
-            "default": "BringXML"
+            "default": "BringXML",
+            "xml": {
+              "attribute": true
+            }
           },
           "messageId": {
             "type": "string",
             "description": "Unique id for this message.",
             "examples": [
               "3dcc8b71-2bf7-4574-813d-9295bd5db8c0"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "updateIndicator": {
             "type": "string",
             "description": "Update Indicator",
             "examples": [
               "updateIndicator=Deletion"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "testIndicator": {
             "type": "string",
             "description": "Whether this is a test message.",
             "examples": [
               "testIndicator=NO"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "MessageDetails": {
             "$ref": "#/components/schemas/MessageDetails"
@@ -335,6 +362,7 @@
           "updateIndicator",
           "testIndicator",
           "MessageDetails",
+          "PerformingUnit",
           "SupplyStructure"
         ],
         "type": "object",
@@ -342,22 +370,34 @@
           "version": {
             "type": "string",
             "description": "Version of Request.",
-            "default": "5.0"
+            "default": "5.0",
+            "xml": {
+              "attribute": true
+            }
           },
           "definedBy": {
             "type": "string",
             "description": "Defined By.",
-            "default": "BIG"
+            "default": "BIG",
+            "xml": {
+              "attribute": true
+            }
           },
           "domain": {
             "type": "string",
             "description": "Domain.",
-            "default": "SupplyChain"
+            "default": "SupplyChain",
+            "xml": {
+              "attribute": true
+            }
           },
           "collaboration": {
             "type": "string",
             "description": "Collaboration.",
-            "default": "Order"
+            "default": "Order",
+            "xml": {
+              "attribute": true
+            }
           },
           "messageFunction": {
             "type": "string",
@@ -365,36 +405,72 @@
             "examples": [
               "For salesorder/customer order = Order",
               "For purchaseOrder = PurchaseOrder"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "profile": {
             "type": "string",
             "description": "Profile.",
-            "default": "BringXML"
+            "default": "BringXML",
+            "xml": {
+              "attribute": true
+            }
           },
           "messageId": {
             "type": "string",
             "description": "Unique id for this message.",
             "examples": [
               "3dcc8b71-2bf7-4574-813d-9295bd5db8c0"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "updateIndicator": {
             "type": "string",
             "description": "Update Indicator",
             "examples": [
               "updateIndicator=Deletion"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "testIndicator": {
             "type": "string",
             "description": "Whether this is a test message.",
             "examples": [
               "testIndicator=NO"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "MessageDetails": {
             "$ref": "#/components/schemas/MessageDetails"
+          },
+          "PerformingUnit": {
+            "required": [
+              "Name",
+              "Value"
+            ],
+            "type": "object",
+            "description": "Performing unit",
+            "properties": {
+              "Name": {
+                "type": "string",
+                "description": "Performing unit name",
+                "xml": {
+                  "attribute": true
+                }
+              },
+              "Value": {
+                "type": "string",
+                "description": "Performing unit value"
+              }
+            }
           },
           "SupplyStructure": {
             "$ref": "#/components/schemas/SupplyStructureItemData"
@@ -424,7 +500,7 @@
             "required": [
               "partyId"
             ],
-            "type": "array",
+            "type": "object",
             "description": "Message Recipient",
             "properties": {
               "partyId": {
@@ -432,7 +508,10 @@
                 "description": "Customer number (6 or 11 digits) provided by Bring.",
                 "examples": [
                   "20001234567"
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               },
               "idType": {
                 "type": "string",
@@ -441,7 +520,10 @@
                   "14 - EAN International",
                   "30 - ISO 6523: Organization identification",
                   "ZZ - Mutually defined"
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               }
             }
           },
@@ -449,7 +531,7 @@
             "required": [
               "partyId"
             ],
-            "type": "array",
+            "type": "object",
             "description": "Message Sender",
             "properties": {
               "partyId": {
@@ -457,7 +539,10 @@
                 "description": "Customer number (6 or 11 digits) provided by Bring.",
                 "examples": [
                   "20001234567"
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               },
               "idType": {
                 "type": "string",
@@ -466,7 +551,10 @@
                   "14 - EAN International",
                   "30 - ISO 6523: Organization identification",
                   "ZZ - Mutually defined"
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               }
             }
           }
@@ -496,7 +584,10 @@
                   "Original",
                   "Update",
                   "Delete"
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               },
               "ORDER": {
                 "$ref": "#/components/schemas/Order"
@@ -577,7 +668,10 @@
         "properties": {
           "articleLineId": {
             "type": "string",
-            "description": "Article Line Id"
+            "description": "Article Line Id",
+            "xml": {
+              "attribute": true
+            }
           },
           "ArticleNumber": {
             "required": [
@@ -592,19 +686,31 @@
             "properties": {
               "usageCode": {
                 "type": "string",
-                "description": "Usage Code"
+                "description": "Usage Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "codeListIdentifier": {
                 "type": "string",
-                "description": "List Identifier"
+                "description": "List Identifier",
+                "xml": {
+                  "attribute": true
+                }
               },
               "codeListAgencyIdentifier": {
                 "type": "string",
-                "description": "List Agency Identifier"
+                "description": "List Agency Identifier",
+                "xml": {
+                  "attribute": true
+                }
               },
               "name": {
                 "type": "string",
-                "description": "Name"
+                "description": "Name",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -622,7 +728,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -640,7 +749,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -658,7 +770,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -676,7 +791,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -694,7 +812,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -712,7 +833,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "string",
@@ -734,19 +858,31 @@
             "properties": {
               "usageCode": {
                 "type": "string",
-                "description": "Usage Code"
+                "description": "Usage Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "codeListIdentifier": {
                 "type": "string",
-                "description": "Code List Identifier"
+                "description": "Code List Identifier",
+                "xml": {
+                  "attribute": true
+                }
               },
               "codeListAgencyIdentifier": {
                 "type": "string",
-                "description": "Code List Agency Identifier"
+                "description": "Code List Agency Identifier",
+                "xml": {
+                  "attribute": true
+                }
               },
               "name": {
                 "type": "string",
-                "description": "Name"
+                "description": "Name",
+                "xml": {
+                  "attribute": true
+                }
               },
               "LanguageCode": {
                 "$ref": "#/components/schemas/LanguageCode"
@@ -866,15 +1002,24 @@
               "ProductionDate",
               "FreezeDate",
               "EffectiveDate"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "timeZone": {
             "type": "string",
-            "description": "Time zone"
+            "description": "Time zone",
+            "xml": {
+              "attribute": true
+            }
           },
           "dstIndicator": {
             "type": "string",
-            "description": "Destination Indicator"
+            "description": "Destination Indicator",
+            "xml": {
+              "attribute": true
+            }
           },
           "Date": {
             "type": "string",
@@ -903,19 +1048,31 @@
         "properties": {
           "usageCode": {
             "type": "string",
-            "description": "Usage Code"
+            "description": "Usage Code",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListIdentifier": {
             "type": "string",
-            "description": "Code List Identifier"
+            "description": "Code List Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListAgencyIdentifier": {
             "type": "string",
-            "description": "Code List Agency Identifier"
+            "description": "Code List Agency Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "name": {
             "type": "string",
-            "description": "Name"
+            "description": "Name",
+            "xml": {
+              "attribute": true
+            }
           },
           "LanguageCode": {
             "$ref": "#/components/schemas/LanguageCode"
@@ -941,19 +1098,31 @@
         "properties": {
           "usageCode": {
             "type": "string",
-            "description": "Usage Code"
+            "description": "Usage Code",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListIdentifier": {
             "type": "string",
-            "description": "Code List Identifier"
+            "description": "Code List Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListAgencyIdentifier": {
             "type": "string",
-            "description": "Code List Agency Identifier"
+            "description": "Code List Agency Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "name": {
             "type": "string",
-            "description": "Name"
+            "description": "Name",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "string",
@@ -974,19 +1143,31 @@
         "properties": {
           "usageCode": {
             "type": "string",
-            "description": "Usage Code"
+            "description": "Usage Code",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListIdentifier": {
             "type": "string",
-            "description": "Code List Identifier"
+            "description": "Code List Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListAgencyIdentifier": {
             "type": "string",
-            "description": "Code List Agency Identifier"
+            "description": "Code List Agency Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "name": {
             "type": "string",
-            "description": "Name"
+            "description": "Name",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "string",
@@ -1015,7 +1196,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1033,7 +1217,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1051,7 +1238,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1069,7 +1259,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1087,7 +1280,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit Code"
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1111,19 +1307,31 @@
         "properties": {
           "usageCode": {
             "type": "string",
-            "description": "Usage Code"
+            "description": "Usage Code",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListIdentifier": {
             "type": "string",
-            "description": "Code List Identifier"
+            "description": "Code List Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListAgencyIdentifier": {
             "type": "string",
-            "description": "Code List Agency Identifier"
+            "description": "Code List Agency Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "name": {
             "type": "string",
-            "description": "Name"
+            "description": "Name",
+            "xml": {
+              "attribute": true
+            }
           },
           "LanguageCode": {
             "$ref": "#/components/schemas/LanguageCode"
@@ -1151,19 +1359,31 @@
         "properties": {
           "referenceType": {
             "type": "string",
-            "description": "Reference type"
+            "description": "Reference type",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListIdentifier": {
             "type": "string",
-            "description": "List Identifier"
+            "description": "List Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListAgencyIdentifier": {
             "type": "string",
-            "description": "List Agency Identifier"
+            "description": "List Agency Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "name": {
             "type": "string",
-            "description": "Name"
+            "description": "Name",
+            "xml": {
+              "attribute": true
+            }
           },
           "ReferenceNo": {
             "type": "string",
@@ -1211,7 +1431,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1229,7 +1452,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1247,7 +1473,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1265,7 +1494,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1283,7 +1515,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1302,7 +1537,10 @@
             "properties": {
               "subClass": {
                 "type": "string",
-                "description": "Sub class"
+                "description": "Sub class",
+                "xml": {
+                  "attribute": true
+                }
               },
               "MeasureEntity": {
                 "description": "Measure entity",
@@ -1313,7 +1551,10 @@
                 "properties": {
                   "attributeCode": {
                     "type": "string",
-                    "description": "Attribute code"
+                    "description": "Attribute code",
+                    "xml": {
+                      "attribute": true
+                    }
                   }
                 }
               },
@@ -1327,7 +1568,10 @@
                 "properties": {
                   "unitCode": {
                     "type": "string",
-                    "description": "Unit code"
+                    "description": "Unit code",
+                    "xml": {
+                      "attribute": true
+                    }
                   },
                   "Value": {
                     "type": "number",
@@ -1394,7 +1638,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1412,7 +1659,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1430,7 +1680,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1448,7 +1701,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1466,7 +1722,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1484,7 +1743,10 @@
             "properties": {
               "unitCode": {
                 "type": "string",
-                "description": "Unit code"
+                "description": "Unit code",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -1516,11 +1778,17 @@
         "properties": {
           "sequence": {
             "type": "string",
-            "description": "Sequence"
+            "description": "Sequence",
+            "xml": {
+              "attribute": true
+            }
           },
           "code": {
             "type": "string",
-            "description": "Code"
+            "description": "Code",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "string",
@@ -1540,15 +1808,24 @@
         "properties": {
           "codeListIdentifier": {
             "type": "string",
-            "description": "Code List Identifier"
+            "description": "Code List Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListAgencyIdentifier": {
             "type": "string",
-            "description": "Code List Agency Identifier"
+            "description": "Code List Agency Identifier",
+            "xml": {
+              "attribute": true
+            }
           },
           "name": {
             "type": "string",
-            "description": "Name"
+            "description": "Name",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "string",
@@ -1569,7 +1846,10 @@
             "description": "Unique ID for this order.",
             "examples": [
               "123456"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "ExternalOrderType": {
             "type": "string",
@@ -1595,7 +1875,10 @@
             "properties": {
               "subClass": {
                 "type": "string",
-                "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate"
+                "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate",
+                "xml": {
+                  "attribute": true
+                }
               },
               "date": {
                 "type": "string",
@@ -1641,7 +1924,10 @@
             "properties": {
               "usageCode": {
                 "type": "string",
-                "description": "usage Code."
+                "description": "usage Code.",
+                "xml": {
+                  "attribute": true
+                }
               },
               "Text": {
                 "type": "string",
@@ -1671,7 +1957,10 @@
                 "properties": {
                   "idType": {
                     "type": "string",
-                    "description": "ID Type"
+                    "description": "ID Type",
+                    "xml": {
+                      "attribute": true
+                    }
                   }
                 }
               },
@@ -1703,7 +1992,10 @@
                 "enum": [
                   "Vipps",
                   "Invoice"
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               },
               "TOPConditionCode": {
                 "type": "string",
@@ -1799,7 +2091,10 @@
         "properties": {
           "usageCode": {
             "type": "string",
-            "description": "Usage code"
+            "description": "Usage code",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "$ref": "#/components/schemas/Value"
@@ -1812,11 +2107,17 @@
         "properties": {
           "sequence": {
             "type": "string",
-            "description": "Priority Code."
+            "description": "Priority Code.",
+            "xml": {
+              "attribute": true
+            }
           },
           "valueType": {
             "type": "string",
-            "description": "Value type."
+            "description": "Value type.",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "string",
@@ -1837,7 +2138,10 @@
         "properties": {
           "subClass": {
             "type": "string",
-            "description": "Possible values:\n\nDetails on Supplier/Sender/Receiver (required)\n•OrderingParty - Details of Sender\n•DeliveryParty - Details of recipient\n•Supplier - Details of supplier\nFor a PO, the supplier is the one providing the goods to the WH.\nFor a SO, the supplier is you/Bring WH customer.\n(Optional for SO)\n•Buyer - Details of buyer\nOptional\n•Seller - Details of seller.\nOptional\n\nWareHouse ID/Location (required)\n•PerformingUnit\n\nInformation on Transport Company (optional)\n•TransportCompany"
+            "description": "Possible values:\n\nDetails on Supplier/Sender/Receiver (required)\n•OrderingParty - Details of Sender\n•DeliveryParty - Details of recipient\n•Supplier - Details of supplier\nFor a PO, the supplier is the one providing the goods to the WH.\nFor a SO, the supplier is you/Bring WH customer.\n(Optional for SO)\n•Buyer - Details of buyer\nOptional\n•Seller - Details of seller.\nOptional\n\nWareHouse ID/Location (required)\n•PerformingUnit\n\nInformation on Transport Company (optional)\n•TransportCompany",
+            "xml": {
+              "attribute": true
+            }
           },
           "partyId": {
             "type": "string",
@@ -1849,14 +2153,20 @@
             ],
             "examples": [
               "subClass=\"OrderingParty\" partyId=\"112233\""
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "subPartyId": {
             "type": "string",
             "description": "The value of the actual Pick up point site.",
             "examples": [
               "subPartyId=\"109847\""
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "Name": {
             "type": "string",
@@ -1918,7 +2228,10 @@
             "description": "Sub class",
             "examples": [
               "subClass=\"PhysicalAddress\""
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "PostalCode": {
             "type": "string",
@@ -1977,13 +2290,42 @@
         "properties": {
           "articleLineId": {
             "type": "string",
-            "description": "Article line ID"
+            "description": "Article line ID",
+            "xml": {
+              "attribute": true
+            }
           },
           "ArticleId": {
             "$ref": "#/components/schemas/ArticleId"
           },
           "ArticleQuantity": {
-            "$ref": "#/components/schemas/ArticleQuantity"
+            "required": [
+              "codeListIdentifier",
+              "unitCode",
+              "Value"
+            ],
+            "type": "array",
+            "description": "Article Quantity",
+            "properties": {
+              "codeListIdentifier": {
+                "type": "string",
+                "description": "Code List Identifier",
+                "xml": {
+                  "attribute": true
+                }
+              },
+              "unitCode": {
+                "type": "string",
+                "description": "Unit Code",
+                "xml": {
+                  "attribute": true
+                }
+              },
+              "Value": {
+                "type": "string",
+                "description": "Usage Code Value"
+              }
+            }
           },
           "ArticleReference": {
             "$ref": "#/components/schemas/ArticleReference"
@@ -2005,7 +2347,10 @@
             "properties": {
               "subClass": {
                 "type": "string",
-                "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate"
+                "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate",
+                "xml": {
+                  "attribute": true
+                }
               },
               "date": {
                 "type": "string",
@@ -2085,7 +2430,10 @@
         "properties": {
           "codeListIdentifier": {
             "type": "string",
-            "description": "Sets type of Article number/id."
+            "description": "Sets type of Article number/id.",
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "number",
@@ -2112,7 +2460,10 @@
             ],
             "examples": [
               "referenceType=\"LI\""
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "ReferenceNo": {
             "type": "number",
@@ -2136,7 +2487,10 @@
             "description": "Article Description Type.",
             "enum": [
               "AAA - if description is used"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "Text": {
             "type": "string",
@@ -2157,7 +2511,10 @@
                 "description": "Currency Identification Code.",
                 "examples": [
                   "currencyIdentificationCode=\"NOK\""
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -2176,7 +2533,10 @@
         "properties": {
           "usageCode": {
             "type": "string",
-            "description": "Usage code."
+            "description": "Usage code.",
+            "xml": {
+              "attribute": true
+            }
           },
           "codeListIdentifier": {
             "type": "string",
@@ -2189,7 +2549,10 @@
             ],
             "examples": [
               "usageCode=\"N\" codeListIdentifier=\"CustomStorage\""
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "Value": {
             "type": "string",
@@ -2224,7 +2587,10 @@
             "enum": [
               "ACB - Notes",
               "LIN - LINEREFERENCE"
-            ]
+            ],
+            "xml": {
+              "attribute": true
+            }
           },
           "Text": {
             "type": "string",
@@ -2251,7 +2617,10 @@
                 "description": "Currency Identification Code.",
                 "examples": [
                   "currencyIdentificationCode=\"NOK\""
-                ]
+                ],
+                "xml": {
+                  "attribute": true
+                }
               },
               "Value": {
                 "type": "number",
@@ -2283,6 +2652,7 @@
           "updateIndicator": "",
           "testIndicator": "",
           "MessageDetails": {
+            "MessageDate": "2021-02-12T13:38:08",
             "MessageSender": {
               "partyId": "String",
               "idType": "ZZ"
