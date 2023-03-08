@@ -163,15 +163,15 @@
             "content": {
               "application/json": {
                 "examples": {
-                  "PostBackResponse": {
-                    "$ref": "#/components/examples/CreateOrderResponse"
+                  "CreateItemDataResponse": {
+                    "$ref": "#/components/examples/CreateItemDataResponse"
                   }
                 }
               },
               "application/xml": {
                 "examples": {
-                  "PostBackResponse": {
-                    "$ref": "#/components/examples/CreateOrderResponse"
+                  "CreateItemDataResponse": {
+                    "$ref": "#/components/examples/CreateItemDataResponse"
                   }
                 }
               }
@@ -2928,6 +2928,14 @@
       "CreateOrderResponse": {
         "value": {
           "PostBackResponse": {
+            "Message": "success",
+            "RequestID": "SomeUniqueIdForReference"
+          }
+        }
+      },
+      "CreateItemDataResponse": {
+        "value": {
+          "ResponseProperties": {
             "Message": "success",
             "RequestID": "SomeUniqueIdForReference"
           }
