@@ -74,7 +74,7 @@
           {{- else -}}
             <code class="mls">{{ $name }}</code>
           {{- end -}}
-          {{- if $required -}}
+          {{- if (or $required (in $components.schemas.required $name)) -}}
             <div class="plm mls lh-solid param-required text-note">Required</div>
           {{- end -}}
         </dt>

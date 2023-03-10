@@ -217,29 +217,11 @@
   },
   "components": {
     "schemas": {
+      "required": [
+        "CreateOrderRequest",
+        "CreateItemDataRequest"
+      ],
       "CreateOrderRequest": {
-        "required": [
-          "CreateOrderRequest"
-        ],
-        "type": "object",
-        "properties": {
-          "CreateOrderRequest": {
-            "$ref": "#/components/schemas/CreateOrder"
-          }
-        }
-      },
-      "CreateItemDataRequest": {
-        "required": [
-          "CreateItemDataRequest"
-        ],
-        "type": "object",
-        "properties": {
-          "CreateItemDataRequest": {
-            "$ref": "#/components/schemas/CreateItemData"
-          }
-        }
-      },
-      "CreateOrder": {
         "required": [
           "version",
           "definedBy",
