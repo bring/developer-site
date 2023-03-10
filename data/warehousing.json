@@ -291,7 +291,7 @@
           "messageFunction": {
             "type": "string",
             "description": "Type of order.",
-            "examples": [
+            "enum": [
               "For salesorder/customer order = Order",
               "For purchaseOrder = PurchaseOrder"
             ],
@@ -321,7 +321,7 @@
             "type": "string",
             "description": "Update Indicator",
             "examples": [
-              "updateIndicator=Deletion"
+              "Deletion"
             ],
             "xml": {
               "attribute": true
@@ -331,7 +331,7 @@
             "type": "string",
             "description": "Whether this is a test message.",
             "examples": [
-              "testIndicator=NO"
+              "NO"
             ],
             "xml": {
               "attribute": true
@@ -344,12 +344,9 @@
             "$ref": "#/components/schemas/SupplyStructure"
           }
         },
-        "description": "Create Order Request",
-        "xml": {
-          "name": "CreateOrderRequest"
-        }
+        "description": "Create Order Request"
       },
-      "CreateItemData": {
+      "CreateItemDataRequest": {
         "required": [
           "version",
           "definedBy",
@@ -402,7 +399,7 @@
           "messageFunction": {
             "type": "string",
             "description": "Type of order.",
-            "examples": [
+            "enum": [
               "For salesorder/customer order = Order",
               "For purchaseOrder = PurchaseOrder"
             ],
@@ -432,7 +429,7 @@
             "type": "string",
             "description": "Update Indicator",
             "examples": [
-              "updateIndicator=Deletion"
+              "Deletion"
             ],
             "xml": {
               "attribute": true
@@ -442,7 +439,7 @@
             "type": "string",
             "description": "Whether this is a test message.",
             "examples": [
-              "testIndicator=NO"
+              "NO"
             ],
             "xml": {
               "attribute": true
@@ -476,10 +473,7 @@
             "$ref": "#/components/schemas/SupplyStructureItemData"
           }
         },
-        "description": "Send Item Data Request",
-        "xml": {
-          "name": "CreateItemDataRequest"
-        }
+        "description": "Send Item Data Request"
       },
       "MessageDetails": {
         "required": [
@@ -563,13 +557,13 @@
       },
       "SupplyStructure": {
         "required": [
-          "ORDERSET"
+          "OrderSet"
         ],
         "type": "object",
         "properties": {
-          "ORDERSET": {
+          "OrderSet": {
             "required": [
-              "ORDER",
+              "Order",
               "TransportService",
               "Party",
               "OrderLineSet"
@@ -589,7 +583,7 @@
                   "attribute": true
                 }
               },
-              "ORDER": {
+              "Order": {
                 "$ref": "#/components/schemas/Order"
               },
               "TransportService": {
@@ -1202,7 +1196,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1223,7 +1217,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1244,7 +1238,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1265,7 +1259,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1286,7 +1280,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1437,7 +1431,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "int",
                 "description": "Quantity value"
               }
             }
@@ -1458,7 +1452,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Quantity value"
               }
             }
@@ -1479,7 +1473,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Quantity value"
               }
             }
@@ -1500,7 +1494,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Quantity value"
               }
             }
@@ -1521,7 +1515,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Quantity value"
               }
             }
@@ -1574,7 +1568,7 @@
                     }
                   },
                   "Value": {
-                    "type": "number",
+                    "type": "float",
                     "description": "Quantity value"
                   }
                 }
@@ -1602,7 +1596,7 @@
           "SSCCNo",
           "BatchStatus"
         ],
-        "type": "array",
+        "type": "object",
         "description": "Article Batch",
         "properties": {
           "BatchNo": {
@@ -1644,7 +1638,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1665,7 +1659,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1686,7 +1680,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1707,7 +1701,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1728,7 +1722,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1749,7 +1743,7 @@
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Measure value"
               }
             }
@@ -1865,17 +1859,18 @@
               "date",
               "time"
             ],
-            "description": "Date and time of the order.\n\nThere are many different options for date and time, but the most frequently used subClasses are:\n•DocumentDate The date on which the order is booked.\n•DeliveryDateRequested The date on which the order is requested to be delivered\n•ExpirationDate",
-            "examples": [
-              "subClass=\"DocumentDate\"",
-              "subClass=\"DeliveryDateRequested\""
-
-            ],
+            "description": "Date and time of the order.\n\nThere are many different options for date and time, but the most frequently used subClasses are:\n•DocumentDate - The date on which the order is booked.\n•DeliveryDateRequested - The date on which the order is requested to be delivered\n•ExpirationDate",
             "type": "array",
             "properties": {
               "subClass": {
                 "type": "string",
-                "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate",
+                "description": "subClass.\nThe most frequently used subclasses are:\n•DocumentDate\n•DeliveryDateRequested\n•ExpirationDate\n•ProductionDate",
+                "examples": [
+                  "DocumentDate",
+                  "DeliveryDateRequested",
+                  "ExpirationDate",
+                  "ProductionDate"
+                ],
                 "xml": {
                   "attribute": true
                 }
@@ -1914,17 +1909,17 @@
               "ZZZ - Message to recipient. Mutually defined reference number",
               "ON - Notes in M4N"
             ],
-            "examples": [
-              "usageCode=\"DEL\"",
-              "usageCode=\"DIN\"",
-              "usageCode=\"ZZZ\"",
-              "usageCode=\"ON\""
-            ],
             "type": "array",
             "properties": {
               "usageCode": {
                 "type": "string",
                 "description": "usage Code.",
+                "examples": [
+                  "DEL",
+                  "DIN",
+                  "ZZZ",
+                  "ON"
+                ],
                 "xml": {
                   "attribute": true
                 }
@@ -1943,12 +1938,6 @@
               "ZZZ - Message to recipient. Mutually defined reference number",
               "ON - Notes in M4N"
             ],
-            "examples": [
-              "usageCode=\"DEL\"",
-              "usageCode=\"DIN\"",
-              "usageCode=\"ZZZ\"",
-              "usageCode=\"ON\""
-            ],
             "type": "array",
             "properties": {
               "AccountNo": {
@@ -1965,7 +1954,7 @@
                 }
               },
               "CODAmount": {
-                "type": "number",
+                "type": "float",
                 "description": "COD Amount"
               },
               "ControlDigit": {
@@ -2019,7 +2008,7 @@
             "type": "string",
             "description": "Priority Code.\n\nIf the order should have a priority you can add value here.\nIf no value is added the default value is set to \"Normal\".\n\nM4N Values:\n•X - Express",
             "examples": [
-              "PriorityCode=X"
+              "X"
             ]
           }
         }
@@ -2139,6 +2128,9 @@
           "subClass": {
             "type": "string",
             "description": "Possible values:\n\nDetails on Supplier/Sender/Receiver (required)\n•OrderingParty - Details of Sender\n•DeliveryParty - Details of recipient\n•Supplier - Details of supplier\nFor a PO, the supplier is the one providing the goods to the WH.\nFor a SO, the supplier is you/Bring WH customer.\n(Optional for SO)\n•Buyer - Details of buyer\nOptional\n•Seller - Details of seller.\nOptional\n\nWareHouse ID/Location (required)\n•PerformingUnit\n\nInformation on Transport Company (optional)\n•TransportCompany",
+            "examples": [
+              "OrderingParty"
+            ],
             "xml": {
               "attribute": true
             }
@@ -2152,7 +2144,7 @@
               "Receiver"
             ],
             "examples": [
-              "subClass=\"OrderingParty\" partyId=\"112233\""
+              "112233"
             ],
             "xml": {
               "attribute": true
@@ -2162,7 +2154,7 @@
             "type": "string",
             "description": "The value of the actual Pick up point site.",
             "examples": [
-              "subPartyId=\"109847\""
+              "109847"
             ],
             "xml": {
               "attribute": true
@@ -2227,7 +2219,7 @@
             "type": "string",
             "description": "Sub class",
             "examples": [
-              "subClass=\"PhysicalAddress\""
+              "PhysicalAddress"
             ],
             "xml": {
               "attribute": true
@@ -2322,7 +2314,7 @@
                 }
               },
               "Value": {
-                "type": "string",
+                "type": "float",
                 "description": "Usage Code Value"
               }
             }
@@ -2340,14 +2332,15 @@
               "time"
             ],
             "description": "Date and Time at the Orderline level. There are many different options for date and time.",
-            "examples": [
-              "subClass=\"ExpirationDate\""
-            ],
             "type": "array",
             "properties": {
               "subClass": {
                 "type": "string",
                 "description": "subClass.\nThe most frequently used subclasses are:\n•ExpirationDate\n•ProductionDate",
+                "examples": [
+                  "ExpirationDate",
+                  "ProductionDate"
+                ],
                 "xml": {
                   "attribute": true
                 }
@@ -2408,7 +2401,7 @@
             "type": "string",
             "description": "EPD Code.",
             "examples": [
-              "EPDCode=1234"
+              "1234"
             ]
           },
           "PalletQuantity": {
@@ -2458,15 +2451,12 @@
               "OP - RESERVEDORDERID",
               "AEP - PROJECTNUMBER"
             ],
-            "examples": [
-              "referenceType=\"LI\""
-            ],
             "xml": {
               "attribute": true
             }
           },
           "ReferenceNo": {
-            "type": "number",
+            "type": "float",
             "description": "Article Quantity.",
             "examples": [
               123456
@@ -2510,14 +2500,14 @@
                 "type": "string",
                 "description": "Currency Identification Code.",
                 "examples": [
-                  "currencyIdentificationCode=\"NOK\""
+                  "NOK"
                 ],
                 "xml": {
                   "attribute": true
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Unit price value.",
                 "examples": [
                   230.30
@@ -2547,9 +2537,6 @@
               "ClientStorage - ERPCode",
               "AAQ - SHIPPINGCONTAINER"
             ],
-            "examples": [
-              "usageCode=\"N\" codeListIdentifier=\"CustomStorage\""
-            ],
             "xml": {
               "attribute": true
             }
@@ -2572,7 +2559,7 @@
             "type": "string",
             "description": "Article Serial No.",
             "examples": [
-              "ArticleSerialNo=123"
+              "123"
             ]
           }
         }
@@ -2616,14 +2603,14 @@
                 "type": "string",
                 "description": "Currency Identification Code.",
                 "examples": [
-                  "currencyIdentificationCode=\"NOK\""
+                  "NOK"
                 ],
                 "xml": {
                   "attribute": true
                 }
               },
               "Value": {
-                "type": "number",
+                "type": "float",
                 "description": "Value of the Freight Charge Amount.",
                 "examples": [
                   230.30
