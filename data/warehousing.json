@@ -1178,7 +1178,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1199,7 +1200,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1220,7 +1222,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1241,7 +1244,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1262,7 +1266,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1413,7 +1418,8 @@
                 }
               },
               "Value": {
-                "type": "int",
+                "type": "number",
+                "format": "int",
                 "description": "Quantity value"
               }
             }
@@ -1434,7 +1440,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Quantity value"
               }
             }
@@ -1455,7 +1462,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Quantity value"
               }
             }
@@ -1476,7 +1484,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Quantity value"
               }
             }
@@ -1497,7 +1506,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Quantity value"
               }
             }
@@ -1550,7 +1560,8 @@
                     }
                   },
                   "Value": {
-                    "type": "float",
+                    "type": "number",
+                    "format": "float",
                     "description": "Quantity value"
                   }
                 }
@@ -1620,7 +1631,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1641,7 +1653,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1662,7 +1675,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1683,7 +1697,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1704,7 +1719,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1725,7 +1741,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Measure value"
               }
             }
@@ -1936,19 +1953,21 @@
                 }
               },
               "CODAmount": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "COD Amount"
               },
               "ControlDigit": {
                 "type": "number",
+                "format": "int",
                 "description": "Control Digit"
               },
               "Kid": {
-                "type": "number",
+                "type": "string",
                 "description": "Kid"
               },
               "Message": {
-                "type": "number",
+                "type": "string",
                 "description": "Message"
               }
             }
@@ -2296,7 +2315,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Usage Code Value"
               }
             }
@@ -2438,7 +2458,8 @@
             }
           },
           "ReferenceNo": {
-            "type": "float",
+            "type": "number",
+            "format": "float",
             "description": "Article Quantity.",
             "examples": [
               123456
@@ -2489,7 +2510,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Unit price value.",
                 "examples": [
                   230.30
@@ -2592,7 +2614,8 @@
                 }
               },
               "Value": {
-                "type": "float",
+                "type": "number",
+                "format": "float",
                 "description": "Value of the Freight Charge Amount.",
                 "examples": [
                   230.30
