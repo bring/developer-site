@@ -14,7 +14,7 @@ important:
   - type: warn
     title: Rate limiting our unauthenticated users - 20.03.2023
     message: |
-      Starting 20 March 2023, the Tracking API will start rate limiting our unauthenticated users. This will happen gradually for the next two months.
+      Starting 20th of March 2023, the Tracking API will start rate limiting unauthenticated users. This will happen gradually for the next two months.
       Ending with Tracking API only being available for authenticated users, to read more about this look at the authentication section
   - type: warn
     title: Deprecating v1 version of Tracking API - 01.08.2022
