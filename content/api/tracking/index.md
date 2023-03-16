@@ -12,6 +12,11 @@ weight: 31
  
 important:
   - type: warn
+    title: Rate limiting our unauthenticated users - 20.03.2023
+    message: |
+      Starting 20 March 2023, the Tracking API will start rate limiting our unauthenticated users. This will happen gradually for the next two months.
+      Ending with Tracking API only being available for authenticated users, to read more about this look at the authentication section
+  - type: warn
     title: Deprecating v1 version of Tracking API - 01.08.2022
     message: |
      Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2.
@@ -30,6 +35,9 @@ information:
       By using authenticated requests you can get more information such as price, name, address and signatures for proof of delivery. The rate limits are also less strict.
 
       To make authenticated Tracking API requests: You will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+
+      The Tracking API will stop being open to anyone and start recurring user to be authenticated. We have started rate limiting our unauthenticated, this will result in
+      unauthenticated users getting a lower limit on their request and in the end not being able to use our API. 
 
   - title: Formats
     content: |
