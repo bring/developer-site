@@ -16,7 +16,7 @@ important:
   message: |
      Our customers are increasingly demanding new functionality and solutions that are easy to use.
      To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
-     To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.05.2023.
+     To further develop the value proposition of our Tracking API, the solution becomes authenticated from 01.05.2023.
      Starting 20th of March 2023, the Tracking API will start rate limiting unauthenticated users.
 - type: warn
   title: Deprecating v1 version of Tracking API - 01.08.2022
