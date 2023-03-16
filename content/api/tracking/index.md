@@ -36,7 +36,7 @@ information:
 
       To make authenticated Tracking API requests: You will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
 
-      The Tracking API will stop being open to anyone and start recurring user to be authenticated. We have started rate limiting our unauthenticated, this will result in
+      The Tracking API will stop being open to anyone and start requiring user to be authenticated. We have started rate limiting our unauthenticated, this will result in
       unauthenticated users getting a lower limit on their request and in the end not being able to use our API. 
 
   - title: Formats
