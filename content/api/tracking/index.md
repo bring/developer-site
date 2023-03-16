@@ -11,20 +11,22 @@ menu:
 weight: 31
  
 important:
-  - type: warn
-    title: Rate limiting unauthenticated users - 20.03.2023
-    message: |
-      Starting 20th of March 2023, the Tracking API will start rate limiting unauthenticated users. This will happen gradually for the next two months.
-      After these two months have passed, the Tracking API will only be available for authenticated users. To read more about how to authenticate, see the authentication section
-  - type: warn
-    title: Deprecating v1 version of Tracking API - 01.08.2022
-    message: |
-     Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2.
-     It is not a breaking change. In the new version you will have access to many more fields.
-  - type: warn
-    title: Removed event statuses from open tracking - 22.06.2022
-    message: |
-     The event statuses ARRIVED_COLLECTION and ARRIVED_DELIVERY are not valid anymore, and therefore have been removed from the Tracking API.
+- type: warn
+  title: Rate limiting unauthenticated users - 20.03.2023
+  message: |
+     Our customers are increasingly demanding new functionality and solutions that are easy to use.
+     To meet these expectations, we must know which customers and partners are using our APIs and how they are using them.
+     To further develop the value proposition of our Pickup Point API, the solution becomes authenticated from 01.05.2023.
+     Starting 20th of March 2023, the Tracking API will start rate limiting unauthenticated users.
+- type: warn
+  title: Deprecating v1 version of Tracking API - 01.08.2022
+  message: |
+   Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2.
+   It is not a breaking change. In the new version you will have access to many more fields.
+- type: warn
+  title: Removed event statuses from open tracking - 22.06.2022
+  message: |
+   The event statuses ARRIVED_COLLECTION and ARRIVED_DELIVERY are not valid anymore, and therefore have been removed from the Tracking API.
   
 introduction: |
   The Tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to get shipment details and events and make them available for customers. The information available in this API is the same that is publicly available from the [Tracking website](http://tracking.bring.com/).
