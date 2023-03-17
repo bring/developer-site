@@ -2716,25 +2716,25 @@
               }
             ],
             "Sender": {
-              "partyId": "28371",
-              "Name": "Mester Grønn Oasen Senter Bergen",
+              "partyId": "12345",
+              "Name": "Sender Company",
               "Address": {
-                "AddressLine": ["Folke Bernadottes vei 52"],
+                "AddressLine": ["Street Name 52"],
                 "PostalCode": "5147",
                 "City": "FYLLINGSDALEN",
                 "CountryCode": "NO"
               },
-              "Phone": "+4732229724"
+              "Phone": "+4712345678"
             },
             "Receiver": {
-              "Name": "Trine Elisabeth Rud Riera",
+              "Name": "Firstname Lastname",
               "Address": {
-                "AddressLine": ["Ture Nermans vei 107"],
+                "AddressLine": ["Street Name 107"],
                 "PostalCode": "5143",
                 "City": "FYLLINGSDALEN",
                 "CountryCode": "NO"
               },
-              "MobilePhone": "98071041"
+              "MobilePhone": "91234567"
             },
             "AdditionalParty": [
               {
@@ -2762,7 +2762,7 @@
             "GoodsItem": [
               {
                 "PackageTypeCode": "PK",
-                "GoodsDescription": "Kittens in a sack",
+                "GoodsDescription": "Boxes of pepper mills",
                 "Package": [
                   {
                     "GrossWeight": {
@@ -2778,7 +2778,7 @@
         }
       },
       "validRequestXml": {
-        "value": "<CreateShipmentRequest xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://api.bring.com/CreateShipment\">\n  <RequestVersion xmlns=\"\">1</RequestVersion>\n  <RequestDate xmlns=\"\">2021-04-20T10:55:07</RequestDate>\n  <Shipment updateIndicator=\"Original\" shipmentType=\"Instruction\" xmlns=\"\">\n    <ShipmentHeaders shipmentId=\"70722150702977990\">\n      <SendersReference>1878959</SendersReference>\n      <NumberOfPackages>1</NumberOfPackages>\n      <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      <LoadingMetres>0</LoadingMetres>\n      <PalletFootPrints>0</PalletFootPrints>\n      <HazardPoints>0</HazardPoints>\n    </ShipmentHeaders>\n    <DateAndTimes subClass=\"DocumentDate\">\n      <DateTime>2022-04-20T10:55:07</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryEarliest\">\n      <DateTime>2022-04-20T16:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryLatest\">\n      <DateTime>2022-04-20T21:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"PickupEarliest\">\n      <DateTime>2022-04-20T14:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"PickupLatest\">\n      <DateTime>2022-04-20T18:00:00</DateTime>\n    </DateAndTimes>\n    <Sender partyId=\"28371\">\n      <Name>Mester Grønn Oasen Senter Bergen</Name>\n      <Address>\n        <AddressLine>Folke Bernadottes vei 52</AddressLine>\n        <PostalCode>5147</PostalCode>\n        <City>FYLLINGSDALEN</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <Phone>+4732229724</Phone>\n    </Sender>\n    <Receiver>\n      <Name>Trine Elisabeth Rud Riera</Name>\n      <Address>\n        <AddressLine>Ture Nermans vei 107</AddressLine>\n        <PostalCode>5143</PostalCode>\n        <City>FYLLINGSDALEN</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <MobilePhone>98071041</MobilePhone>\n    </Receiver>\n    <AdditionalParty subClass=\"GoodsReturnParty\">\n      <Name>Ola Nordmann</Name>\n      <Address>\n        <PostalCode>1065</PostalCode>\n        <City>OSLO</City>\n        <CountryCode>NO</CountryCode>\n        <AddressLine>Storgatan 1</AddressLine>\n      </Address>\n      <MobilePhone>4712345678</MobilePhone>\n      <Email>ola.nordmann@someemail.com</Email>\n      <ContactName>Ola Nordmann</ContactName>\n    </AdditionalParty>\n    <AdditionalParty subClass=\"TransportCompany\" partyId=\"BEX\" subPartyId=\"GLW\" />\n    <ProductAndService>\n      <ProductCode>3270</ProductCode>\n    </ProductAndService>\n    <GoodsItem>\n      <PackageTypeCode>PK</PackageTypeCode>\n      <GoodsDescription>Kittens in a sack</GoodsDescription>\n      <Package packageId=\"370722150758796447\">\n        <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      </Package>\n    </GoodsItem>\n  </Shipment>\n</CreateShipmentRequest>\n"
+        "value": "<CreateShipmentRequest xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://api.bring.com/CreateShipment\">\n  <RequestVersion xmlns=\"\">1</RequestVersion>\n  <RequestDate xmlns=\"\">2021-04-20T10:55:07</RequestDate>\n  <Shipment updateIndicator=\"Original\" shipmentType=\"Instruction\" xmlns=\"\">\n    <ShipmentHeaders shipmentId=\"70722150702977990\">\n      <SendersReference>1878959</SendersReference>\n      <NumberOfPackages>1</NumberOfPackages>\n      <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      <LoadingMetres>0</LoadingMetres>\n      <PalletFootPrints>0</PalletFootPrints>\n      <HazardPoints>0</HazardPoints>\n    </ShipmentHeaders>\n    <DateAndTimes subClass=\"DocumentDate\">\n      <DateTime>2022-04-20T10:55:07</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryEarliest\">\n      <DateTime>2022-04-20T16:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"DeliveryLatest\">\n      <DateTime>2022-04-20T21:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"PickupEarliest\">\n      <DateTime>2022-04-20T14:00:00</DateTime>\n    </DateAndTimes>\n    <DateAndTimes subClass=\"PickupLatest\">\n      <DateTime>2022-04-20T18:00:00</DateTime>\n    </DateAndTimes>\n    <Sender partyId=\"28371\">\n      <Name>Sender Company</Name>\n      <Address>\n        <AddressLine>Street Name 52</AddressLine>\n        <PostalCode>5147</PostalCode>\n        <City>FYLLINGSDALEN</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <Phone>+4712345678</Phone>\n    </Sender>\n    <Receiver>\n      <Name>Trine Firstname Lastname</Name>\n      <Address>\n        <AddressLine>Street Name 107</AddressLine>\n        <PostalCode>5143</PostalCode>\n        <City>FYLLINGSDALEN</City>\n        <CountryCode>NO</CountryCode>\n      </Address>\n      <MobilePhone>91234567</MobilePhone>\n    </Receiver>\n    <AdditionalParty subClass=\"GoodsReturnParty\">\n      <Name>Ola Nordmann</Name>\n      <Address>\n        <PostalCode>1065</PostalCode>\n        <City>OSLO</City>\n        <CountryCode>NO</CountryCode>\n        <AddressLine>Storgatan 1</AddressLine>\n      </Address>\n      <MobilePhone>4712345678</MobilePhone>\n      <Email>ola.nordmann@someemail.com</Email>\n      <ContactName>Ola Nordmann</ContactName>\n    </AdditionalParty>\n    <AdditionalParty subClass=\"TransportCompany\" partyId=\"BEX\" subPartyId=\"GLW\" />\n    <ProductAndService>\n      <ProductCode>3270</ProductCode>\n    </ProductAndService>\n    <GoodsItem>\n      <PackageTypeCode>PK</PackageTypeCode>\n      <GoodsDescription>Boxes of pepper mills</GoodsDescription>\n      <Package packageId=\"370722150758796447\">\n        <GrossWeight unitCode=\"KGM\">1</GrossWeight>\n      </Package>\n    </GoodsItem>\n  </Shipment>\n</CreateShipmentRequest>\n"
       },
       "validRequestBooking": {
         "value": {
