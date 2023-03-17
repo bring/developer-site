@@ -35,31 +35,31 @@
     }
     ],
     "Sender": {
-      "partyId": "28371",
-      "Name": "Mester Grønn Oasen Senter Bergen",
+      "partyId": "12345",
+      "Name": "Sender Company",
       "Address": {
         "AddressLine":
         [
-          "Folke Bernadottes vei 52"
+          "Street Name 52"
         ],
         "PostalCode": "5147",
         "City": "FYLLINGSDALEN",
         "CountryCode": "NO"
       },
-      "Phone": "+4732229724"
+      "Phone": "+4712345678"
     },
     "Receiver": {
-      "Name": "Trine Elisabeth Rud Riera",
+      "Name": "Firstname Lastname",
       "Address": {
         "AddressLine":
         [
-          "Ture Nermans vei 107"
+          "Street Name 107"
         ],
         "PostalCode": "5143",
         "City": "FYLLINGSDALEN",
         "CountryCode": "NO"
       },
-      "MobilePhone": "98071041"
+      "MobilePhone": "91234567"
     },
     "AdditionalParty":
     [{
@@ -70,17 +70,15 @@
         "City":"OSLO",
         "CountryCode":"NO",
         "AddressLine":
-        [{
+        [
           "Storgatan 1"
-        }]
+        ]
       },
       "MobilePhone":"4712345678",
       "Email":"ola.nordmann@someemail.com",
       "ContactName":"Ola Nordmann"
-    }
-    ],
-    "AdditionalParty":
-    [{
+    },
+    {
       "subClass": "TransportCompany",
       "partyId":"BEX",
       "subPartyId":"GLW"
@@ -92,7 +90,7 @@
     "GoodsItem":
     [{
       "PackageTypeCode":"PK",
-      "GoodsDescription":"Kittens in a sack",
+      "GoodsDescription":"Boxes of pepper mills",
       "Package":
       [{
         "GrossWeight": {

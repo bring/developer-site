@@ -25,25 +25,25 @@
     <DateAndTimes subClass="PickupLatest">
       <DateTime>2022-04-20T18:00:00</DateTime>
     </DateAndTimes>
-    <Sender partyId="28371">
-      <Name>Mester Grønn Oasen Senter Bergen</Name>
+    <Sender partyId="12345">
+      <Name>Sender Company</Name>
       <Address>
-        <AddressLine>Folke Bernadottes vei 52</AddressLine>
+        <AddressLine>Street Name 52</AddressLine>
         <PostalCode>5147</PostalCode>
         <City>FYLLINGSDALEN</City>
         <CountryCode>NO</CountryCode>
       </Address>
-      <Phone>+4732229724</Phone>
+      <Phone>+4712345678</Phone>
     </Sender>
     <Receiver>
-      <Name>Trine Elisabeth Rud Riera</Name>
+      <Name>Firstname Lastname</Name>
       <Address>
-        <AddressLine>Ture Nermans vei 107</AddressLine>
+        <AddressLine>Street Name 107</AddressLine>
         <PostalCode>5143</PostalCode>
         <City>FYLLINGSDALEN</City>
         <CountryCode>NO</CountryCode>
       </Address>
-      <MobilePhone>98071041</MobilePhone>
+      <MobilePhone>91234567</MobilePhone>
     </Receiver>
     <AdditionalParty subClass="GoodsReturnParty">
       <Name>Ola Nordmann</Name>
@@ -63,7 +63,7 @@
     </ProductAndService>
     <GoodsItem>
       <PackageTypeCode>PK</PackageTypeCode>
-      <GoodsDescription>Kittens in a sack</GoodsDescription>
+      <GoodsDescription>Boxes of pepper mills</GoodsDescription>
       <Package packageId="370722150758796447">
         <GrossWeight unitCode="KGM">1</GrossWeight>
       </Package>
