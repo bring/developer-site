@@ -63,11 +63,15 @@
 
       {{/*  object  */}}
       {{ with $schemaObj.properties }}
-
-        {{ range $key, $val := . }}
-          {{ $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "lev" $lev) }}
-          {{ with $xmlObjectPart }}
-            {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
+        {{ $properties := . }}
+        {{ range $exampleKey, $_ := $exampleObj }}
+          {{ range $key, $val := $properties }}
+            {{ if eq (lower $key) (lower $exampleKey) }}
+              {{ $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "lev" $lev) }}
+              {{ with $xmlObjectPart }}
+                {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
+              {{ end }}
+            {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}
