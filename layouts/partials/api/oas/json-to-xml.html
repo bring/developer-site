@@ -1,9 +1,10 @@
-{{/*  Works similar to the schema template but $exampleObj is added to the mix to get values and numbers  */}}
+{{/*  Works similar to the schema template but $exampleObj is added to the mix to check for existence of keys and get values and numbers  */}}
 {{ $schemaObj := .schemaObj }}
 {{ $exampleObj := .exampleObj }}
+{{/*  name can change if there is an xml name  */}}
 {{ $name := .name }}
+{{/*  objName doesn’t change  */}}
 {{ $objName := .name }}
-{{ $required := .required }}
 {{ $components := .components }}
 
 {{ $lev := add .lev 1 }}
@@ -17,7 +18,7 @@
   {{ $XML = $exampleObj }}
 {{ else }}
 
-  {{/*  If there’s a ref, pass the destination data again  */}}
+  {{/*  If there’s a ref, get the data from components and pass it again  */}}
   {{ $isRef := "false" }}
   {{ range $key, $_ := $schemaObj }}
     {{ if eq $key "$ref" }}
@@ -63,21 +64,25 @@
 
       {{/*  object  */}}
       {{ with $schemaObj.properties }}
-
-        {{ range $key, $val := . }}
-          {{ $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "lev" $lev) }}
-          {{ with $xmlObjectPart }}
-            {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
+        {{ $properties := . }}
+        {{ range $exampleKey, $_ := $exampleObj }}
+          {{ range $key, $val := $properties }}
+            {{ if eq (lower $key) (lower $exampleKey) }}
+              {{ $xmlObjectPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $val "name" $key "components" $components "exampleObj" $exampleObj "lev" $lev) }}
+              {{ with $xmlObjectPart }}
+                {{ $xmlObject = printf "%s%s" $xmlObject $xmlObjectPart }}
+              {{ end }}
+            {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}
 
       {{/*  array  */}}
-      {{/*  loop exampleobject and pass the it further in since arrays are wrapped  */}}
+      {{/*  loop exampleobject and pass it further in since arrays are wrapped  */}}
       {{ with $schemaObj.items }}
         {{ $xmlArray := "" }}
         {{ range $key, $_ := $exampleObj }}
-          {{ if eq $objName $key }}
+          {{ if eq (lower $objName) (lower $key) }}
             {{ range . }}
               {{ $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "lev" $lev) }}
               {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart }}
