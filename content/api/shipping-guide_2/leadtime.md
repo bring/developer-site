@@ -9,7 +9,8 @@ menu:
     parent: shippingguide_2
 weight: 6
 ---
-Lead time does not only depend on the recipient’s postal code, but also the address itself.
+
+## Lead time does not only depend on the recipient’s postal code, also the address itself.
 
 For example, two different addresses on the same postal code can have different lead time. 
 We have therefore added an addressLine field, which allows lead time to be calculated based on both postal code and street address. For this to work, it is important that recipients fill out a valid street address. 
@@ -24,3 +25,9 @@ There are several services that are affected by this new field: ```1000, 1988, 3
 ```json
 "addressLine":"Testsvingen 12"
  ```
+
+## Another important factor affecting leadtime is your pickup agreement with Bring. 
+
+In absence of a pickup agreement with Bring, you hand in the shipment yourself at one of our manned drop-off points. 
+
+Handing in at some places can give +1 day delivery time. Hence, to ensure more accurate lead times, we recommend relaying the aforementioned information to us via field "postingAtPostoffice" in your request.
