@@ -1,13 +1,13 @@
 <p class="mtm mbl">
   {{ $href := printf "/services/%s" .filename }}
-  <a href="{{ $href | relURL }}" class="btn-link--dark mrm di">
+  <a href="{{ $href | relURL }}" class="flex align-ic maxwmaxc">
     <span
       data-mybicon="mybicon-download_file"
       data-mybicon-class="icon-ui mrxs"
       data-mybicon-width="16"
       data-mybicon-height="16"
     ></span
-    >Download spreadsheet</a
+    >Download spreadsheet for {{ .name }} APIs</a
   >
   Information applies to revised services only.
 </p>
