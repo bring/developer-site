@@ -194,7 +194,9 @@ if (container) {
         scrollToTarget(cleanAnchorTag)
       }, 100)
     } else {
-      cutoffRows(items, 10)
+        // Temporarily disabling hiding, since it crashes the page in Chrome
+        // cutoffRows(items, 10)
+        hideCutoffs(cutoff)
     }
   
     const anchors = document.querySelectorAll(".anchorjs-link")
