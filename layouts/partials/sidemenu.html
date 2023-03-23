@@ -1,157 +1,174 @@
 {{- $currentPage := . -}}
 {{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
 
-<nav class="dev-sidemenu {{ if .IsHome }}dev-sidemenu--front{{ end }}" aria-label="Section">
+<div class="dev-sidemenu {{ if .IsHome }}dev-sidemenu--front{{ end }}">
   {{- if or (eq .Section "api") (.IsHome) -}}
-    <ul class="dev-sidemenu__list dev-sidemenu__separator">
-      {{- $len := (len .Site.Menus.api) -}}
-      {{- range $index, $element := .Site.Menus.api -}}
-        {{- $lastElement := "" -}}
-        {{- if eq (add $index 1) $len -}}
-          {{- $lastElement = "mbm" -}}
-        {{- end -}}
+    <nav aria-label="General API info">
+      <ul class="dev-sidemenu__list mb-border bb">
+        {{- $len := (len .Site.Menus.api) -}}
+        {{- range $index, $element := .Site.Menus.api -}}
+          {{- $lastElement := "" -}}
+          {{- if eq (add $index 1) $len -}}
+            {{- $lastElement = "mbm" -}}
+          {{- end -}}
 
-        {{- $hidePage := false -}}
-        {{- with .Page -}}
-          {{- $hidePage = .Params.hidden -}}
-        {{- end -}}
+          {{- $hidePage := false -}}
+          {{- with .Page -}}
+            {{- $hidePage = .Params.hidden -}}
+          {{- end -}}
 
-        {{- if (ne $hidePage true) -}}
-          <li
-            class="dev-sidemenu__level1 {{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
-          >
-            {{- $target := "" -}}
-            {{- $iconEx := "" -}}
-            {{- if .Params.blank -}}
-              {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
-              {{- $iconEx = $iconExHtml -}}
-            {{- end -}}
-            <a
-              href="{{ .URL | relURL }}"
-              {{ $target | safeHTMLAttr }}
-              class="dev-sidemenu__apititle"
+          {{- if (ne $hidePage true) -}}
+            <li
+              class="{{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
             >
-              {{ safeHTML .Title }}{{ safeHTML $iconEx }}
-            </a>
+              {{- $target := "" -}}
+              {{- $iconEx := "" -}}
+              {{- if .Params.blank -}}
+                {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
+                {{- $iconEx = $iconExHtml -}}
+              {{- end -}}
+              <a
+                href="{{ .URL | relURL }}"
+                {{ if $currentPage.IsMenuCurrent .Menu . }}aria-current="page"{{ end }}
+                {{ $target | safeHTMLAttr }}
+                class="dev-sidemenu__apititle"
+              >
+                {{ safeHTML .Title }}{{ safeHTML $iconEx }}
+              </a>
 
-            {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
-              <ul class="dev-sidemenu__sublist">
-                {{- range .Children -}}
-                  {{- $target := "" -}}
-                  {{- $iconEx := "" -}}
-                  {{- if .Params.blank -}}
-                    {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
-                    {{- $iconEx = $iconExHtml -}}
-                  {{- end -}}
-                  <li>
-                    <a href="{{ .URL }}" {{ $target | safeHTMLAttr }} class="{{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}">{{ .Title }} {{ safeHTML $iconEx }}</a>
-
-                    {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
-                      <ul class="dev-sidemenu__sublist text-note">
-                        {{- range .Children -}}
-                          <li>
-                            <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent .Menu . }}active {{ end }}">
-                              {{ .Title }}
-                            </a>
-                          </li>
-                        {{- end -}}
-                      </ul>
+              {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
+                <ul class="plxs">
+                  {{- range .Children -}}
+                    {{- $target := "" -}}
+                    {{- $iconEx := "" -}}
+                    {{- if .Params.blank -}}
+                      {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
+                      {{- $iconEx = $iconExHtml -}}
                     {{- end -}}
-                  </li>
+                    <li>
+                      <a
+                        href="{{ .URL }}"
+                        {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}
+                        {{ $target | safeHTMLAttr }}
+                      >
+                        {{ .Title }} {{ safeHTML $iconEx }}
+                      </a>
+
+                      {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
+                        <ul class="text-note">
+                          {{- range .Children -}}
+                            <li>
+                              <a href="{{ .URL }}" {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}>
+                                {{ .Title }}
+                              </a>
+                            </li>
+                          {{- end -}}
+                        </ul>
+                      {{- end -}}
+                    </li>
+                  {{- end -}}
+                </ul>
+              {{- else if $currentPage.IsMenuCurrent .Menu . -}}
+                {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
+              {{- end -}}
+            </li>
+          {{- end -}}
+        {{- end -}}
+      </ul>
+    </nav>
+    <nav aria-label="API sections">
+      <ul class="dev-sidemenu__list">
+        {{- $apiData := .Site.Data.api -}}
+        {{- range .Site.Menus.apidocs -}}
+          <li class="pbs">
+            {{- if .HasChildren -}}
+              <span class="dev-sidemenu__title">{{ .Title }}</span>
+              <ul>
+                {{ range .Children }}
+                  {{- $hidePage := false -}}
+                  {{- with .Page -}}
+                    {{- $hidePage = .Params.hidden -}}
+                  {{- end -}}
+                  {{- if or (eq $currentPage.Params.hidden true) (ne $hidePage true) -}}
+                    {{- if eq .Title "Order Management API" -}}
+                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
+                    {{- else if isset $.Params "oas" -}}
+                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+                    {{- else -}}
+                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
+                    {{- end -}}
+                  {{- end -}}
                 {{- end -}}
               </ul>
-            {{- else if $currentPage.IsMenuCurrent .Menu . -}}
+            {{- else -}}
+            <ul>
+              {{- $identifier := .Identifier -}}
+              <li
+                {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}
+              >
+                <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
+                {{- $currentMenu := .Menu -}}
+                {{- $currentMenuItem := . -}}
+                {{- with (index $apiData $identifier) -}}
+                  {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
+                    <ul>
+                      {{- range .documentation -}}
+                        <li>
+                          <a href="#{{ .title | anchorize }}">
+                            <span data-hover="{{ .title }}">{{ .title }}</span>
+                          </a>
+                        </li>
+                      {{- end -}}
+
+                      <li>
+                        <a href="#endpoints">
+                          <span data-hover="endpoints"
+                            >Endpoints</span
+                          >
+                        </a>
+                      </li>
+
+                      {{- range .resources -}}
+                        <li>
+                          <a href="#{{ .displayName | anchorize }}">
+                            <span data-hover="{{ .displayName }}"
+                              >{{ .displayName }}</span
+                            >
+                          </a>
+                        </li>
+                      {{- end -}}
+                    </ul>
+                  {{- end -}}
+                {{- end -}}
+              </li>
+            </ul>
+          </li>
+          {{- end -}}
+        {{- end -}}
+      </ul>
+    </nav>
+  {{- end -}}
+  {{- if eq .Section "edi" -}}
+    <nav aria-label="EDIFACT sections">
+      <ul class="dev-sidemenu__list">
+        {{- range .Site.Menus.edi -}}
+          <li
+            {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}
+          >
+            {{- $target := "" -}}
+            {{- if .Params.blank -}} {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}} {{- end -}}
+            <a
+              href="{{ .URL | relURL }}"
+              class="dev-sidemenu__apititle"
+              {{ $target | safeHTMLAttr }}
+              >{{ safeHTML .Title }}</a
+            >
+            {{- if $currentPage.IsMenuCurrent .Menu . -}}
               {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
             {{- end -}}
           </li>
         {{- end -}}
-      {{- end -}}
-    </ul>
-    {{- $apiData := .Site.Data.api -}}
-    {{- range .Site.Menus.apidocs -}}
-      {{- if .HasChildren -}}
-        <h2 class="dev-sidemenu__title ttu">{{ .Title }}</h2>
-        <ul class="dev-sidemenu__list">
-          {{ range .Children }}
-            {{- $hidePage := false -}}
-            {{- with .Page -}}
-              {{- $hidePage = .Params.hidden -}}
-            {{- end -}}
-            {{- if or (eq $currentPage.Params.hidden true) (ne $hidePage true) -}}
-              {{- if in .Title "Order Management" -}}
-                {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
-              {{- else if isset $.Params "oas" -}}
-                {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
-              {{- else -}}
-                {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
-              {{- end -}}
-            {{- end -}}
-          {{- end -}}
-        </ul>
-        {{- else -}}
-        <ul class="dev-sidemenu__list">
-          {{- $identifier := .Identifier -}}
-          <li
-            class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}"
-          >
-            <a href="{{ .URL }}" class="dev-sidemenu__apititle">{{ .Title }}</a>
-            {{- $currentMenu := .Menu -}}
-            {{- $currentMenuItem := . -}}
-            {{- with (index $apiData $identifier) -}}
-              {{- if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem -}}
-                <ul class="dev-sidemenu__sublist">
-                  {{- range .documentation -}}
-                    <li>
-                      <a href="#{{ .title | anchorize }}">
-                        <span data-hover="{{ .title }}">{{ .title }}</span>
-                      </a>
-                    </li>
-                  {{- end -}}
-
-                  <li>
-                    <a href="#endpoints">
-                      <span data-hover="endpoints"
-                        >Endpoints</span
-                      >
-                    </a>
-                  </li>
-
-                  {{- range .resources -}}
-                    <li>
-                      <a href="#{{ .displayName | anchorize }}">
-                        <span data-hover="{{ .displayName }}"
-                          >{{ .displayName }}</span
-                        >
-                      </a>
-                    </li>
-                  {{- end -}}
-                </ul>
-              {{- end -}}
-            {{- end -}}
-          </li>
-        </ul>
-      {{- end -}}
-    {{- end -}}
+      </ul>
+    </nav>
   {{- end -}}
-  {{- if eq .Section "edi" -}}
-    <ul class="dev-sidemenu__list">
-      {{- range .Site.Menus.edi -}}
-        <li
-          class="dev-sidemenu__level1 {{ if $currentPage.IsMenuCurrent .Menu . }}active{{ end }}"
-        >
-          {{- $target := "" -}}
-          {{- if .Params.blank -}} {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}} {{- end -}}
-          <a
-            href="{{ .URL | relURL }}"
-            class="dev-sidemenu__apititle"
-            {{ $target | safeHTMLAttr }}
-            >{{ safeHTML .Title }}</a
-          >
-          {{- if $currentPage.IsMenuCurrent .Menu . -}}
-            {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
-          {{- end -}}
-        </li>
-      {{- end -}}
-    </ul>
-  {{- end -}}
-</nav>
+  </div>
