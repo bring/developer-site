@@ -1,11 +1,15 @@
 {{- $currentPage := .currentPage -}}
 {{- $currentMenuItem := .ctx -}}
 {{- $currentMenu := .menu -}}
-{{- $oasData := "" -}}
-{{- with .oasData -}}
-  {{- $oasData = . -}}
-{{- end -}}
 {{- $prefix := "" -}}
+{{- $apiData := "" -}}
+{{- with .apiData -}}
+  {{- $apiData = . -}}
+{{- end -}}
+{{- $identifier := "" -}}
+{{- with .identifier -}}
+  {{- $identifier = . -}}
+{{- end -}}
 {{- with .prefix -}}
   {{- $prefix = (print . "-") -}}
 {{- end -}}
@@ -51,7 +55,8 @@
         {{- $currentId = .Identifier -}}
       {{- end -}}
 
-      {{- if ne $currentParent $currentId -}}
+      {{/*  Special topics navigation */}}
+      {{- if and (and $currentId $currentParent) (ne $currentParent $currentId) -}}
         {{- with $currentPage.Parent.Params.subpages -}}
           <li>
             {{- with .title -}} 
@@ -68,13 +73,12 @@
               {{- end -}}
             </ul>
           </li>
-          {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage.Parent "apiData" .apiData "identifier" .identifier "prefix" $prefix "isParent" true) -}}
+          {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage.Parent "apiData" $apiData "identifier" $identifier "prefix" $prefix "isParent" true) -}}
         {{- end -}}
+      {{- else -}}
+        {{/*  Regular navigation */}}
+        {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage "apiData" $apiData "identifier" $identifier "prefix" $prefix) -}}
       {{- end -}}
-
-      {{/*  Regular navigation */}}
-      {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage "apiData" .apiData "identifier" .identifier "prefix" $prefix) -}}
-
     </ul>
   {{- end -}}
 </li>
