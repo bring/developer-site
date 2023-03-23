@@ -68,12 +68,12 @@
               {{- end -}}
             </ul>
           </li>
-          {{- partial "sidemenuitem.html" (dict "ctx" $currentPage.Parent "apiData" .apiData "identifier" .identifier "prefix" $prefix "isParent" true) -}}
+          {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage.Parent "apiData" .apiData "identifier" .identifier "prefix" $prefix "isParent" true) -}}
         {{- end -}}
       {{- end -}}
 
       {{/*  Regular navigation */}}
-      {{- partial "sidemenuitem.html" (dict "ctx" $currentPage "apiData" .apiData "identifier" .identifier "prefix" $prefix) -}}
+      {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage "apiData" .apiData "identifier" .identifier "prefix" $prefix) -}}
 
     </ul>
   {{- end -}}
