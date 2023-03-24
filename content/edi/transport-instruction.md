@@ -14,9 +14,9 @@ This document is our guideline for freight-messages based on EDIFACT / IFTMIN D0
 
 * [Main Specification — IFTMIN D04A BIG14](/files/IG_BIG14_1_5_2017-08-09.pdf)
 * [Appendix 1 — Locations](/files/Appendix1_LocationsV1_2018.pdf)
-* [Appendix 2 — Available Services](/files/RevisedServices_Appendix2_Posten_Bring_V1.1.pdf)
-* [Appendix 2A - Instructions for Service Implementation (Norwegian)](/files/RevisedServices_Appendix2A_Posten_Bring_Specifications_V1.1.pdf)
-* [RevisedServices\_Change-log IFTMIN, Appendix and Label descriptions\_V1.1](/files/RevisedServices_Change-log%20IFTMIN,%20Appendix%20and%20Label%20descriptions_V1.1.pdf)
+* [Appendix 2 — Available Services](/files/RevisedServices_Appendix2_Posten_Bring_V1.2.pdf)
+* [Appendix 2A - Instructions for Service Implementation (Norwegian)](/files/RevisedServices_Appendix2A_Posten_Bring_Specifications_V1.2.pdf)
+* [RevisedServices\_Change-log IFTMIN, Appendix and Label descriptions\_V1.2](/files/RevisedServices_Change-log_IFTMIN,_Appendix_and_Label_descriptions_V1.2.pdf)
 * [Appendix 5 — Document type](/files/BIG14_Appendix_5.pdf)
 * [Appendix 6 — HUB-information](/files/BIG14_Appendix_6.pdf)
 * [Mailbox-Packet](/files/Appendix_G_20210302.pdf)
