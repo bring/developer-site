@@ -1,11 +1,15 @@
 {{- $currentPage := .currentPage -}}
 {{- $currentMenuItem := .ctx -}}
 {{- $currentMenu := .menu -}}
-{{- $oasData := "" -}}
-{{- with .oasData -}}
-  {{- $oasData = . -}}
-{{- end -}}
 {{- $prefix := "" -}}
+{{- $apiData := "" -}}
+{{- with .apiData -}}
+  {{- $apiData = . -}}
+{{- end -}}
+{{- $identifier := "" -}}
+{{- with .identifier -}}
+  {{- $identifier = . -}}
+{{- end -}}
 {{- with .prefix -}}
   {{- $prefix = (print . "-") -}}
 {{- end -}}
@@ -18,17 +22,18 @@
 {{- end -}}
 
 <li
-  class="dev-sidemenu__level1 {{ if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) }}active{{ end }}"
+  {{ if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) }}class="active"{{ end }}
 >
   <a
     href="{{ .url }}"
     class="dev-sidemenu__apititle"
+    {{ if $currentPage.IsMenuCurrent $currentMenu $currentMenuItem }}aria-current="page"{{ end }}
     {{ $target | safeHTMLAttr }}
     >{{ .pageTitle }}{{ safeHTML $iconEx }}</a
   >
 
   {{- if or ($currentPage.IsMenuCurrent $currentMenu $currentMenuItem) ($currentPage.HasMenuCurrent $currentMenu $currentMenuItem) -}}
-    <ul class="dev-sidemenu__sublist">
+    <ul>
 
       {{/*  Subpages navigation */}}
       {{- with $currentPage.Params.subpages -}}
@@ -50,7 +55,8 @@
         {{- $currentId = .Identifier -}}
       {{- end -}}
 
-      {{- if ne $currentParent $currentId -}}
+      {{/*  Special topics navigation */}}
+      {{- if and (and $currentId $currentParent) (ne $currentParent $currentId) -}}
         {{- with $currentPage.Parent.Params.subpages -}}
           <li>
             {{- with .title -}} 
@@ -61,19 +67,18 @@
                 <span data-hover="{{ . }}">{{ . }}</span>
               </a>
             {{- end -}}
-            <ul class="dev-sidemenu__sublist text-note">
+            <ul class="text-note">
               {{- range $currentMenuItem.Children -}}
-                <li><a href="{{ .URL }}" class="{{ if eq .Identifier $currentId }} active {{ end }}">{{ .Title }}</a></li>
+                <li><a href="{{ .URL }}" {{ if eq .Identifier $currentId }}class="active" aria-current="page"{{ end }}>{{ .Title }}</a></li>
               {{- end -}}
             </ul>
           </li>
-          {{- partial "sidemenuitem.html" (dict "ctx" $currentPage.Parent "apiData" .apiData "identifier" .identifier "prefix" $prefix "isParent" true) -}}
+          {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage.Parent "apiData" $apiData "identifier" $identifier "prefix" $prefix "isParent" true) -}}
         {{- end -}}
+      {{- else -}}
+        {{/*  Regular navigation */}}
+        {{- partial "sidemenuanchors.html" (dict "ctx" $currentPage "apiData" $apiData "identifier" $identifier "prefix" $prefix) -}}
       {{- end -}}
-
-      {{/*  Regular navigation */}}
-      {{- partial "sidemenuitem.html" (dict "ctx" $currentPage "apiData" .apiData "identifier" .identifier "prefix" $prefix) -}}
-
     </ul>
   {{- end -}}
 </li>

@@ -3,7 +3,7 @@
 
 {{/* must have table params or at least one header to link to */}}
 {{- if or $paramHeaders -}}
-  <ul class="dev-sidemenu__sublist">
+  <ul>
     {{- with $paramHeaders }}
       {{- range . -}}
         {{- $anchorId := .title|anchorize -}}

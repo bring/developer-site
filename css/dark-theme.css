@@ -95,7 +95,6 @@
   & .dev-docscontent__section,
   & tr,
   & .mb-border,
-  & .dev-sidemenu__separator,
   & .schema__sublist {
     border-color: var(--gray-40);
   }
@@ -277,12 +276,11 @@
     color: var(--green-light);
   }
 
-  & .dev-sidemenu__level1.active {
+  & .dev-sidemenu ul > li.active {
     border-color: var(--green-dark);
   }
 
-  & .dev-sidemenu__sublist a:hover,
-  & .dev-sidemenu__sublist a.active {
+  & .dev-sidemenu a.active {
     background-color: var(--green-22);
   }
 
