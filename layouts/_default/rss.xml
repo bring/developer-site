@@ -65,8 +65,10 @@
         <title>{{ .Title }}</title>
         <link>{{ $pLink }}</link>
         <pubDate>{{ .PublishDate.Format "Mon, 02 Jan 2006" | safeHTML }} 06:04:05 +0100</pubDate>
-        {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
-        <guid>{{ .PublishDate.Format "2006-01-02" | safeHTML }}{{ .Title }}</guid>
+        {{- with .Site.Author.email -}}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{- end -}}
+        {{- $dateTitle := print (.PublishDate.Format "2006-01-02" | safeHTML) "-" .Title -}}
+        {{- $guid := anchorize $dateTitle -}}
+        <guid isPermaLink="false">{{ $guid }}</guid>
         <description>{{ .Content | html }}</description>
       </item>
     {{- end -}}
