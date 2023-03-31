@@ -27,9 +27,9 @@ introduction: |
 information:
   - title: Authentication
     content: |
-      By using authenticated requests you can get more information such as price, name, address and signatures for proof of delivery. The rate limits are also less strict.
+      By using authenticated Tracking API requests, you can get more information such as price, name, address and signatures for proof of delivery. The rate limits are also less strict.
 
-      To make authenticated Tracking API requests: You will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+      To integrate with the Bring APIs, you will need a Mybring user account with an API key. Information about prerequisites and authentication headers can be found on the general API [Getting Started page](/api/).
 
   - title: Formats
     content: |
