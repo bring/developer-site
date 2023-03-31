@@ -12,175 +12,132 @@ aliases:
 ---
 
 <section class="dev-docscontent__section">
-  <h2 class="dev-anchored" id="authentication">Authentication</h2>
+  <img src="./api-model.png" class="maxw50r mbm" alt="" />
 
-  <h3>API key</h3>
-  <p>
-    You need a Mybring user with an API key to integrate with the Bring APIs.
-  </p>
-  <p>
-    The key is unique to your user and is used in the authentication headers to
-    verify that you are a Mybring user. All our APIs require authentication
-    except for some basic functionality in the
-    <a href="./tracking/#authentication">Tracking API</a>. This is so that we
-    can offer better support and notify our users about new features and
-    changes.
+  <p class="text-heading fw600 mbl">
+    Authentication is required by all APIs, that means having a Mybring user
+    account with an API key. Authorisation is required by some APIs, that means
+    having a customer number and certain rights connected to the user. The
+    following describes how the requirements work together and how to obtain
+    them.
   </p>
 
-  <h4>Get an API key</h4>
-  <div class="flex mbl">
-    <div class="w100p maxw16r mrl">
-      <h4 class="fwn mbxs">1. Sign up</h4>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill-rule="evenodd"
-        stroke-linejoin="round"
-        stroke-miterlimit="2"
-        class="rad-a2px mbs db"
-        clip-rule="evenodd"
-        viewBox="0 0 402 466"
-      >
-        <path fill="#eff5e5" d="M0 18.43h401.21v447H.01z" />
-        <path fill="#00643a" d="M0 0h401.21v36.87H.01z" />
-        <path
-          fill="#fff"
-          d="M323.58 271.63H77.64v33h245.94v-33zM193.51 195.8H77.64v33h115.87v-33zm130.07 0H207.71v33h115.87v-33zm0-71.64H77.64v33h245.94v-33z"
-        />
-        <path
-          fill="#c4dda2"
-          d="M81.68 262.13h71a5.5 5.5 0 000-11h-71a5.5 5.5 0 000 11zm130.07-75.82h53.9a5.5 5.5 0 100-11h-53.9a5.5 5.5 0 000 11zm-130.07 0h53.9a5.5 5.5 0 000-11h-53.9a5.5 5.5 0 000 11zm0-71.65h100.2a5.5 5.5 0 100-11H81.67a5.5 5.5 0 000 11z"
-        />
-        <path
-          fill="#7ac144"
-          d="M322.62 342.09a4.95 4.95 0 00-4.95-4.95h-96.94a4.95 4.95 0 00-4.95 4.95v23.1a4.95 4.95 0 004.95 4.95h96.94a4.95 4.95 0 004.95-4.95v-23.1z"
-        />
-      </svg>
-      <p>
-        If you don’t already have a user,
-        <a href="https://www.mybring.com/signup/register/user"
-          >register a new one in Mybring</a
-        >.
-      </p>
-    </div>
-    <div class="w100p maxw16r">
-      <h4 class="fwn mbxs">2. Generate key</h4>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill-rule="evenodd"
-        stroke-linejoin="round"
-        stroke-miterlimit="2"
-        class="rad-a2px mbs db"
-        clip-rule="evenodd"
-        viewBox="0 0 402 466"
-      >
-        <path fill="#f1f7e9" d="M0 18.43h401.21v447H.01z" />
-        <path fill="#00643a" d="M0 0h401.22v36.87H0z" />
-        <path fill="#d0e4b4" d="M307.35 36.87h81.8v57.14h-81.8z" />
-        <path fill="#fff" d="M77.64 188.34h245.94v55H77.64z" />
-        <path
-          fill="#c4dda2"
-          d="M225.63 223.45h26.18a7.5 7.5 0 000-15h-26.18a7.5 7.5 0 000 15zm-126.26 0h101.24a7.5 7.5 0 000-15H99.37a7.5 7.5 0 000 15zm175.55 0h28.3a7.5 7.5 0 000-15h-28.3a7.5 7.5 0 000 15z"
-        />
-        <path
-          fill="#7ac144"
-          d="M184.48 139.56a4.95 4.95 0 00-4.95-4.95H82.6a4.95 4.95 0 00-4.95 4.95v23.1a4.95 4.95 0 004.95 4.95h96.94a4.95 4.95 0 004.95-4.95v-23.1z"
-        />
-        <path
-          fill="#00643a"
-          fill-rule="nonzero"
-          d="M348.24 64.5a8.33 8.33 0 100-16.66 8.33 8.33 0 000 16.66zm5.71 2.38h-.61a11.72 11.72 0 01-5.1 1.2c-1.83 0-3.54-.45-5.1-1.2h-.61a8.57 8.57 0 00-8.58 8.57v2.15c0 1.97 1.6 3.57 3.58 3.57h21.42c1.98 0 3.58-1.6 3.58-3.57v-2.15a8.57 8.57 0 00-8.58-8.57z"
-        />
-        <path
-          fill="#fff"
-          fill-rule="nonzero"
-          d="M347.65 27.42l-6.76-6.77a.84.84 0 010-1.18l.79-.8a.84.84 0 011.18 0l5.38 5.37 5.4-5.36a.84.84 0 011.17 0l.8.79c.32.32.32.85 0 1.18l-6.77 6.77a.84.84 0 01-1.19 0z"
-        />
-      </svg>
-      <p>
-        Head to
-        <a href="https://www.mybring.com/useradmin/account/settings/api"
-          >the API page</a
-        >
-        in your user profile and generate the API key.
-      </p>
-    </div>
-  </div>
-
-  <h3>Authentication headers</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>HTTP header</th>
-        <th>Example</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>X-Mybring-API-Uid</code></td>
-        <td><code>john.doe@example.com</code></td>
-        <td>Mybring login ID</td>
-      </tr>
-      <tr>
-        <td><code>X-Mybring-API-Key</code></td>
-        <td><code>1234abc-abcd-1234-5678-abcd1234abcd</code></td>
-        <td>Your user’s API key</td>
-      </tr>
-      <tr>
-        <td><code>X-Bring-Client-URL</code></td>
-        <td><code>https://example.com/</code></td>
-        <td>A URL identifying where you’re using the APIs</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section class="dev-docscontent__section">
-  <h2 class="dev-anchored" id="api-customer-number">API customer number</h2>
+  <h2 class="dev-anchored" id="api-customer-number">Customer number</h2>
   <p>
-    Some APIs require a customer number because they handle or return customer
-    data. This form of <em>authorisation</em> is different from user
-    authentication; one user can have access to multiple customer numbers but
-    also have different rights or accesses from number to number.
+    In order to use the majority of our APIs, your company needs to be a Bring
+    customer and have a customer number. While most customers have only one
+    customer number, many also choose to have multiple when they need to separate
+    departments or subsidiaries.
   </p>
-  <h3>If your company has a customer number</h3>
-  <p class="mbxs">
-    You can see the numbers you have access to on the
+  <p>
+    If the API you want to use requires a customer number and you don’t have one
+    yet, contact customer support via your country’s Bring site.
+  </p>
+  <p>
+    If you need a customer number for testing purposes, it can be found in the
+    <a href='{{< relref "testing" >}}'>API testing documentation</a>.
+  </p>
+
+  <h2 class="dev-anchored" id="user">Mybring user account</h2>
+  <p>
+    You need a personal Mybring user account to work with the Bring API’s. If
+    you don’t have one already,
+    <a href="https://www.mybring.com/signup/register/user"
+      >register a new account</a
+    >.
+  </p>
+
+  <h3 class="dev-anchored" id="access">Customer number access</h3>
+  <p>
+    You can see the customer numbers your account has access to on the
     <a href="https://www.mybring.com/useradmin/account/settings/api"
       >Mybring API page</a
-    >. If the company customer number isn’t listed there, it means your user
-    needs to be connected to it. This can be done through either of the
-    following methods:
+    >. If the customer number you are looking for isn’t listed, you can get
+    access to it through one of the following methods:
   </p>
   <ul>
     <li>
       Go to the
-      <a
-        href="https://www.mybring.com/useradmin/account/profile/authorisation"
-        >Mybring authorisation pages</a
-      >, search for the customer and apply for access.
+      <a href="https://www.mybring.com/useradmin/account/profile/authorisation"
+        >Mybring authorisation page</a
+      >, search for the customer number and apply for access.
     </li>
-    <li>Contact your customer’s admin and get them to connect your user.</li>
+    <li>
+      Contact your customer’s administrator and get them to connect your user.
+    </li>
   </ul>
-
-  <h3>If your company doesn’t have a customer number</h3>
-  <p>Contact customer support via your country’s Bring site.</p>
   <p>
-    If you need a customer number for testing purposes, it can be found in the
-    <a href='{{< relref "testing" >}}'>API testing documentation</a>.
-    </p>
+    You might work with multiple companies and each of these companies might
+    have multiple customer numbers in Bring. You can use the same Mybring user
+    for different companies.
+  </p>
+
+  <h3 class="dev-anchored" id="rights">User rights</h3>
+  <p>
+    Rights control what the user can do, for instance order certain services on
+    behalf of the company or see certain information about it. While one user
+    can have access to many different customers, the rights are specific for
+    each customer number. The company administrator controls the accesses and
+    rights within a company and the user can apply for them in the
+    <a href="https://www.mybring.com/useradmin/account/profile/authorisation"
+      >Mybring authorisation page</a
+    >.
+  </p>
+
+  <h3 class="dev-anchored" id="api-key">API Key</h3>
+  <p>
+    When you have a Mybring user, you can create an API key. The key is
+    necessary for authentication and is unique to your user account. It’s used
+    together with the user account email address when connecting to the APIs.
+    The same key is used for all APIs and all Bring customer numbers the user
+    has access to.
+  </p>
+  <p>
+    Be aware that if you choose to change or delete the API key or delete the
+    entire user account, any integration using it will stop working and must be
+    updated with a new key.
+  </p>
+  <p>
+    The API key is created and managed in the
+    <a href="https://www.mybring.com/useradmin/account/settings/api"
+      >Mybring API page</a
+    >.
+  </p>
+
+  <h2 class="dev-anchored" id="authentication">Authentication headers</h2>
+  <p>
+    When you have the user account with the access, rights and API key, you are
+    ready to connect to the APIs in either your own system or an API client.
+    Each API has individual details, but the following three HTTP header
+    parameters are always required.
+  </p>
+  <dl class="bg-gray2 rad-a2px pal maxw50r">
+    <dt>X-Mybring-API-Uid</dt>
+    <dd>The email address of your Mybring user account.</dd>
+    <dd class="mbm">Example: <code>name@your-company-domain.com</code></dd>
+
+    <dt>X-Mybring-API-Key</dt>
+    <dd>The user account’s API key.</dd>
+    <dd class="mbm">
+      Example: <code>1234abc-abcd-1234-5678-abcd1234abcd</code>
+    </dd>
+
+    <dt>X-Bring-Client-URL</dt>
+    <dd>The URL for the service where you are using the API.</dd>
+    <dd>Example: <code>your-company-domain.com</code></dd>
+  </dl>
 </section>
 
 <section class="dev-docscontent__section">
   <h2 class="dev-anchored" id="status-and-support">Status and support</h2>
   <p>
     We continuously monitor our APIs with health checks to measure uptime.
-    Real-time and historical status can be found at
+    Real-time and historical status can be found on the
     <a
       href="https://status.bring.systems"
       target="_blank"
       rel="noopener noreferrer"
-      >our status page</a
+      >operational status page</a
     >.
   </p>
   <p>

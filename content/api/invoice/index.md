@@ -16,7 +16,7 @@ Introduction: |
 information:
   - title: Authentication
     content: |
-      To make API requests, you will need an API key from Mybring. Steps for getting a key and description of headers can be found on the general API [Getting Started / Authentication](/api/#authentication) page.
+      To integrate with the Bring APIs, you will need a Mybring user account with an API key. Information about prerequisites and authentication headers can be found on the general API [Getting Started page](/api/).
 
   - title: Formats
     content: |

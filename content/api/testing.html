@@ -1,5 +1,5 @@
 ---
-title: Testing Bring APIs
+title: Bring API testing resources
 layout: api
 notanapi: true
 menu:
@@ -10,31 +10,28 @@ disqus_identifier: https-developer-bring-com-api-testing
 ---
 
 <section class="dev-docscontent__section">
-  <h2>Resources</h2>
-
-  <h3>Test customer numbers</h3>
+  <h2>Test customer numbers</h2>
   <p>
-    While all our APIs require
-    <a href='{{< relref "api" >}}#authentication'>user authentication</a>, even
-    for testing, only some require a
-    <a href='{{< relref "api" >}}#api-customer-number'>customer number</a>. If
-    you’re currently not a Bring customer or your customer number doesn’t hold
-    data to give sufficient test responses, you can use test numbers. These will
-    only return dummy data and not create any actual bookings.
+    All our APIs require user authentication, even for testing, but only some
+    require a customer number. If you’re currently not a Bring customer or your
+    customer number doesn’t hold data to give sufficient test responses, you can
+    use test numbers. These will only return dummy data and not create any
+    actual bookings.
   </p>
 
-  <div class="bg-gray1 phl pvm mbm">
+  <p>
+    In order to get access to test customer numbers, users in Norway can contact
+    <a href="mailto:integrasjon.norge@bring.com">integrasjon.norge@bring.com</a
+    >. Users in Sweden, Denmark and Finland can contact
+    <a href="mailto:edi@bring.com">edi@bring.com</a>. State which test customer
+    number you want access to, and that you need financial rights as well.
+    Financial rights are required to get pricing information when using
+    <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API</a>.
+  </p>
+
+  <div class="bg-gray2 rad-a2px pal maxw50r mbm">
     <p>
-      In order to get access to test customer numbers, users in Norway can
-      contact
-      <a href="mailto:integrasjon.norge@bring.com"
-        >integrasjon.norge@bring.com</a
-      >. Users in Sweden, Denmark and Finland can contact
-      <a href="mailto:edi@bring.com">edi@bring.com</a>. State which test
-      customer number you want access to, and that you need financial rights as
-      well. Financial rights are required to get pricing information when using
-      <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API</a>. The
-      services covered by each test customer number can be found in the
+      The services covered by each test customer number can be found in the
       <a href='{{< relref "services" >}}'>Service portfolio</a>.
     </p>
 
@@ -63,28 +60,24 @@ disqus_identifier: https-developer-bring-com-api-testing
       </dd>
     </dl>
   </div>
-  <div class="mbl flex flex-wrap">
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "booking" >}}'
-      >Booking API</a
-    >
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "shipping-guide_2" >}}'
-      >Shipping Guide API</a
-    >
-  </div>
+  <p class="flex flex-wrap gcm">
+    Relevant for:
+    <a href='{{< relref "booking" >}}'>Booking API</a>
+    <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API</a>
+  </p>
 
-  <h3>Test indicator</h3>
+  <h2>Test indicator</h2>
   <p>
     To test transactional APIs using an actual customer number but without
     creating actual bookings or getting invoiced, you must set the
     <code>testIndicator</code> flag to <i>true</i>.
   </p>
-  <div class="mbl flexgrid">
-    <a class="flexgrid__item btn-link--dark" href='{{< relref "booking" >}}'
-      >Booking API</a
-    >
-  </div>
+  <p class="mbl flex flex-wrap gcm">
+    Relevant for:
+    <a href='{{< relref "booking" >}}'>Booking API</a>
+  </p>
 
-  <h3>Phone numbers and email addresses</h3>
+  <h2>Phone numbers and email addresses</h2>
   <p>
     Make sure the phone numbers and email addresses you use in your testing are
     dummies. Actual phone numbers and email addresses can still trigger alerts
@@ -92,7 +85,7 @@ disqus_identifier: https-developer-bring-com-api-testing
     <code>testIndicator</code>. For phone numbers, you can use the numbers below
     or find one of the many fake number sites online.
   </p>
-  <div class="bg-gray1 phl pvm mbm flex flex-wrap">
+  <div class="bg-gray2 rad-a2px pal maxw50r mbm flex flex-wrap">
     <dl class="mrl">
       <dt>Norway</dt>
       <dd>+4712345678</dd>
@@ -114,44 +107,39 @@ disqus_identifier: https-developer-bring-com-api-testing
       <dd>+358000000001</dd>
     </dl>
   </div>
-  <div class="mbl flex flex-wrap">
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "booking" >}}'
-      >Booking API</a
-    >
-  </div>
+  <p class="flex flex-wrap gcm">
+    Relevant for:
+    <a href='{{< relref "booking" >}}'>Booking API</a>
+  </p>
 
-  <h3>Tracking numbers</h3>
+  <h2>Tracking numbers</h2>
   <p>
     Use these as test tracking numbers to get different responses in the
     Tracking API or to make <code>WebhookId</code>s in Event Cast API. An
     authorised request with a tracking number belonging to an actual shipment
     will return more detailed results.
   </p>
-  <div class="bg-gray1 phl pvm mbm">
+  <div class="bg-gray2 rad-a2px pal maxw50r mbm">
     <ul>
       <li>TESTPACKAGEATPICKUPPOINT</li>
       <li>TESTPACKAGEEDI</li>
-      <li>TESTPACKAGELOADEDFORDELIVERY</li>
       <li>TESTPACKAGEDELIVERED</li>
     </ul>
   </div>
-  <div class="mbl flex flex-wrap">
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "event-cast" >}}'
-      >Event Cast API</a
-    >
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "tracking" >}}'
-      >Tracking API</a
-    >
-  </div>
+  <p class="mbl flex flex-wrap gcm">
+    Relevant for:
+    <a href='{{< relref "event-cast" >}}'>Event Cast API</a>
+    <a href='{{< relref "tracking" >}}'>Tracking API</a>
+  </p>
 
-  <h3>Postal codes</h3>
+  <h2>Postal codes</h2>
   <p>
     Whenever postal codes are required, use something valid and test more than
     the first that comes to mind. You can use the
     <a href='{{< relref "postal-code" >}}'>Postal Code API</a> to look up more
     codes and cities.
   </p>
-  <div class="bg-gray1 phl pvm mbm flex flex-wrap">
+  <div class="bg-gray2 rad-a2px pal maxw50r mbm flex flex-wrap">
     <dl class="mrl">
       <dt>Norway</dt>
       <dd>0951<span class="text-note mlxs"> Oslo</span></dd>
@@ -179,16 +167,13 @@ disqus_identifier: https-developer-bring-com-api-testing
       <dd>8799<span class="text-note mlxs"> Tunø</span></dd>
     </dl>
   </div>
-  <div class="mbl flex flex-wrap">
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "booking" >}}'
-      >Booking API</a
-    >
-    <a class="btn-link--dark mrxs mbxs" href='{{< relref "shipping-guide_2" >}}'
-      >Shipping Guide API</a
-    >
-  </div>
+  <p class="mbl flex flex-wrap gcm">
+    Relevant for:
+    <a href='{{< relref "booking" >}}'>Booking API</a>
+    <a href='{{< relref "shipping-guide_2" >}}'>Shipping Guide API</a>
+  </p>
 
-  <h3>Shipping Guide Demo</h3>
+  <h2>Shipping Guide Demo</h2>
   <p>
     It’s possible to test the Shipping Guide API using our
     <a href="https://www.mybring.com/shipping-guide/demo"
@@ -199,7 +184,7 @@ disqus_identifier: https-developer-bring-com-api-testing
     with a customer number, you can log in to get responses dependent on that.
   </p>
 
-  <h3>Checkout Request Builder</h3>
+  <h2>Checkout Request Builder</h2>
   <p>
     Our
     <a href="https://www.mybring.com/shipping-guide/integration/checkout"
