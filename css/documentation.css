@@ -287,3 +287,7 @@ div.response {
   button[data-toggle-all] {
   display: flex;
 }
+
+.maxw50r {
+  max-width: 50rem;
+}
