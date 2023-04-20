@@ -93,7 +93,7 @@
       if (filterInputVal.length >= 2 && filterInputVal !== '') {
         const changelogText = changelog.innerText;
         const changelogDataAttr = changelog.dataset.changelogParent;
-        let regEx = new RegExp(`${filterInputVal}`,'i');
+        let regEx = new RegExp(filterInputVal,'i');
 
         changelog.classList.add('dn');
 
