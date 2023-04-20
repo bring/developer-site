@@ -11,10 +11,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_and_deploy_job:
+  build-and-deploy:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    name: Build and Deploy
     env:
       ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
       ALGOLIA_INDEX: ${{ github.ref == 'refs/heads/master' && 'devsite_prod' || 'devsite_qa' }}
@@ -55,7 +55,7 @@ jobs:
         run: |
           curl -sX POST -H "Content-type: application/json" -d "$SLACK_MESSAGE" ${{ secrets.SLACK_WEBHOOK }}
 
-  close_pull_request_job:
+  close-pull-request:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     name: Close Pull Request Job
