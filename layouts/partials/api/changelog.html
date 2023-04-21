@@ -41,27 +41,29 @@
       <label class="form__label" for="filterChangelogInput">Filter API updates</label>
       <input type="text" class="form__control maxw16r" id="filterChangelogInput" />
       {{/* Set $pages to the rearranged structure */}}
-      {{- $pages = $rearrangedPages -}}
-      {{- range first 5 $pages -}}
-        {{- $parentFolder := path.Base (path.Dir .) -}}
-        <article class="mbl" data-changelog-parent="{{$parentFolder}}">
-          <header class="flex flex-dir-col-rev">
-            <h2 class="text-heading fw600 mb0">{{ .Title }}</h2>
-            <time
-              class="mrm text-note fw600"
-              datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-              >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
-            >
-          </header>
-          {{ .Content }}
-        </article>
-      {{- end -}}
+      <div aria-busy="false" aria-atomic="true" aria-live="polite" data-live-region>
+        {{- $pages = $rearrangedPages -}}
+        {{- range first 5 $pages -}}
+          {{- $parentFolder := path.Base (path.Dir .) -}}
+          <article class="mbl" data-changelog-parent="{{$parentFolder}}">
+            <header class="flex flex-dir-col-rev">
+              <h2 class="text-heading fw600 mb0">{{ .Title }}</h2>
+              <time
+                class="mrm text-note fw600"
+                datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                >{{ .PublishDate.Format "2. January 2006" | safeHTML }}</time
+              >
+            </header>
+            {{ .Content }}
+          </article>
+        {{- end -}}
+      </div>
     </div>
   </div>
   {{- if (gt (len $pages) 5) -}}
   <details class="mb-disclosure" id="olderApiUpdates">
     <summary class="pam maxw32r bg-gray1">Older updates</summary>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap" aria-busy="true" aria-atomic="true" aria-live="polite" data-live-region>
       {{- range after 5 $pages -}}
         {{- $parentFolder := path.Base (path.Dir .) -}}
         <article class="changelog-small bg-gray1 pal mbxs" data-changelog-parent="{{$parentFolder}}">
@@ -89,21 +91,46 @@
     const olderApiUpdates = document.getElementById('olderApiUpdates');
     let filterInputVal = e.target.value.trim();
 
+    const resetAriaBusy = (regions) => {
+      let articleVisible = false;
+      setTimeout(() => {
+        regions.forEach((el) => {
+          const articles = el.querySelectorAll('article');
+          for (let i = 0; i < articles.length; i++) {
+            if(!articles[i].classList.contains('dn') && regions[0] === el) {
+              articleVisible = true;
+            }
+          }
+          if(articleVisible && regions[0] === el) {
+            el.setAttribute('aria-busy', 'false');
+          } else if(!articleVisible && regions[1] === el) {
+            el.setAttribute('aria-busy', 'false');
+          }
+        });
+      }, 2000);
+    }
+
     const filterByInput = (changelog) => {
+      const ariaLiveRegions = document.querySelectorAll('[data-live-region]');
       if (filterInputVal.length >= 2 && filterInputVal !== '') {
         const changelogText = changelog.innerText;
         const changelogDataAttr = changelog.dataset.changelogParent;
         let regEx = new RegExp(filterInputVal,'i');
 
         changelog.classList.add('dn');
+        ariaLiveRegions.forEach((el) => {
+          el.setAttribute('aria-busy', 'true');
+        });
 
         if (regEx.test(changelogText) || regEx.test(changelogDataAttr)) {
           olderApiUpdates.setAttribute('open', true);
           changelog.classList.remove('dn');
         }
+        resetAriaBusy(ariaLiveRegions);
       } else {
         olderApiUpdates.removeAttribute('open');
         changelog.classList.remove('dn');
+        resetAriaBusy(ariaLiveRegions);
       }
     }
     if (changelogList && changelogList.length > 0) {
