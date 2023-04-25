@@ -1,5 +1,5 @@
 ---
-title: Best practice checkout
+title: Best practice checkout guide
 layout: api
 notanapi: true
 widelayout: true
@@ -7,7 +7,7 @@ menu:
   api:
     parent: e-commerce-solutions
     identifier: best-practice-checkout
-    title: Best practice checkout
+    title: Best practice checkout guide
 weight: 1
 aliases:
 - best-practice-checkout/
@@ -17,18 +17,26 @@ aliases:
 <section class="dev-docscontent__section flex flex-wrap align-ifs">
   <div class="dev-guide-l">
     <p class="text-heading">
-      You can create the best practice checkout with only seven components
+      Follow these seven easy steps to improve the presentation of our delivery options in your checkout.
+    </p>
+    <p class="text-heading">
+      If you need help implementing any of these steps, go visit our <a href="https://www.mybring.com/shipping-guide/integration/checkout" target="_blank">Checkout request builder</a>
+      or contact our <a href="mailto:checkout.implementering@posten.no">Checkout implementation team</a>.
     </p>
     <div class="bw2 ba flex best-practice-item align-ic mtxl b--gray2">
       <div class="flex-1">
         <figure class="flex flex-dir-row justify-cc mbm">
           <img src="assets/address.png" alt="Postal code and address" class="w6r"/>
         </figure>
-        <h3 class="fwn">1. Postal code and address</h3>
+        <h3 class="fwn">1. Postal code and street address</h3>
         <p>
-          By making your customers write both postal code and address, customers will get the relevant delivery options
-          and pickup points. They will also get the correct estimated time of arrival on some services.
+          By letting your customers fill in both postal code and street address, they will be presented with the relevant
+          delivery options and pickup points. When filling in the street address, your customers will also get the correct
+          estimated time of delivery.
         </p>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Address API</span>
+        </div>
       </div>
       <figure class="mlxl flex-1 best-practice-item--illustration">
         <img src="assets/delivery_address.png" alt="Delivery address input fields" class="maxw48r"/>
@@ -39,11 +47,14 @@ aliases:
         <figure class="flex flex-dir-row justify-cc">
           <img src="assets/title_and_description.png" alt="Service title and description" class="maxw10r"/>
         </figure>
-        <h3 class="fwn">2. Service title and description text</h3>
+        <h3 class="fwn">2. Service name and description text</h3>
         <p>
-          Use the correct service title and description text to make sure your customers know what the delivery options
-          implies.
+          Use the standard service name and description text to make sure your customers understand what the delivery options
+          imply.
         </p>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Shipping Guide API</span>
+        </div>
       </div>
       <figure class="mlxl flex-1 best-practice-item--illustration">
         <img src="assets/choose_service.png" alt="Choose service by service name" class="maxw48r"/>
@@ -56,10 +67,14 @@ aliases:
         </figure>
         <h3 class="fwn">3. Pickup points</h3>
         <p>
-          By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. Give
-          the option to choose lockers, as this might be their preferred pickup point. Add a map to make it easier to
-          find the pickup points.
+          By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According
+          to Bring Research, customers are more likely to complete the purchase if presented with pickup points located
+          nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point
+          type. We also recommend showing a map to make it easier for your customers to locate the pickup points.
         </p>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Pickup Point API</span>
+        </div>
       </div>
       <figure class="mlxl flex-1 best-practice-item--illustration">
         <img src="assets/choose_pickup_points.png" alt="Choose pickup points" class="maxw48r"/>
@@ -72,11 +87,15 @@ aliases:
         </figure>
         <h3 class="fwn">4. Estimated time of delivery</h3>
         <p>
-          Let your customers know the estimated time of delivery. The more precise, the better it is.
+          According to Bring Research, customers desire precise information about lead time related to different delivery
+          options. And the more precise, the better it is.
         </p>
         <p>
-          For a better understanding on how to get the most accurate delivery estimates, it's recommended to read <a href="/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/">this guide</a>.
+          For a better understanding on how to get the most accurate delivery estimates, we recommend reading <a href="/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/">this guide</a>.
         </p>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Shipping Guide API</span>
+        </div>
       </div>
       <figure class="mlxl flex-1 best-practice-item--illustration">
         <img src="assets/show_estimated_time_of_delivery.png" alt="Service with estimated time of delivery" class="maxw48r"/>
@@ -89,12 +108,15 @@ aliases:
         </figure>
         <h3 class="fwn">5. Flexible delivery</h3>
         <p>
-          Make the delivery more flexible by adding different value added services. For example:
+          Make the delivery more flexible for your customers by offering various value-added services. For example:
         </p>
         <ol>
-          <li>Leaving the parcel in a bag on the door in case the parcel is too large for the mail box</li>
+          <li>Leaving the parcel in a bag on the door in case the parcel is too large for the mailbox</li>
           <li>Alternative delivery dates for home delivery. Let the customer choose the preferred date</li>
         </ol>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Shipping Guide API</span>
+        </div>
       </div>
       <figure class="mlxl flex-1 best-practice-item--illustration">
         <img src="assets/choose_delivery_date.png" alt="Choose value added services" class="maxw48r"/>
@@ -112,8 +134,13 @@ aliases:
         </div>
         <h3 class="fwn">6. Logo</h3>
         <p>
-          Use the Posten logo for B2C services, and the Bring logo for B2B services.
+          According to Bring Research, customers prefer checkout showing carrier logos to enable them to easily recognize
+          their trusted carriers. For shipments going to consumers in Norway, use the Posten logo. For shipments going to
+          consumers in any other country, use the Bring logo.
         </p>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Shipping Guide API</span>
+        </div>
         <div class="flex flex-dir-row justify-cc mtl">
           <a href="assets/Bring_logo.svg" class="btn-link--dark" download="bring_logo">
             <span
@@ -139,9 +166,6 @@ aliases:
         <figure>
           <img src="assets/posten_service.png" alt="Service with Posten logo" class="maxw48r"/>
         </figure>
-        <figure class="mts">
-          <img src="assets/bring_service.png" alt="Service with Bring logo" class="maxw48r"/>
-        </figure>
       </div>
     </div>
     <div class="bw2 ba flex flex-dir-row best-practice-item align-ic mtm b--gray2">
@@ -151,35 +175,17 @@ aliases:
         </figure>
         <h3 class="fwn">7. Environmental data and icon</h3>
         <p>
-          Include environmental information in the delivery option to help your customers make environmentally friendly
-          choises.
+          Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your
+          customers make more sustainable choices.
         </p>
-        <p>
-          Add our environment information web component anywhere in the checkout to explain what environmental friendly
-          freight is.
-        </p>
-        <div class="flex flex-dir-row justify-cc mtl">
-          <a href="/api/e-commerce-solutions/environmental-info/" class="btn-link--dark" target="_blank">
-              <span
-                data-mybicon="mybicon-external-link"
-                data-mybicon-class="mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
-              ></span>
-            <span>Web component</span>
-          </a>
+        <div class="flex flex-wrap gas pll mlxs">
+          <span class="mb-badge">Shipping Guide API</span>
         </div>
       </div>
       <div class="mlxl flex-1 flex flex-dir-col best-practice-item--illustration align-ic">
         <figure>
           <img src="assets/show_environmental_info.png" alt="Service with environmental friendly logo" class="maxw48r"/>
         </figure>
-        <div class="flex flex-dir-row justify-cc mtl">
-          <button class="btn btn--green mb0" data-bring-env-open>Show environmental info</button>
-
-          <bring-environmental-info modal="true"></bring-environmental-info>
-          <script type="module" src="/assets/bring-env/main.js" defer></script>
-        </div>
       </div>
     </div>
   </div>
