@@ -33,7 +33,7 @@
       {
         "identifier": "checkout-request-builder",
         "parent": "e-commerce-solutions",
-        "title": "Checkout request builder",
+        "title": "Checkout tool",
         "url": "https://www.mybring.com/shipping-guide/integration/checkout",
         "weight": 2,
         "params": {
