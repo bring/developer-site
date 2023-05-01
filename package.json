@@ -29,7 +29,7 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^4.0.2",
+    "@vitejs/plugin-legacy": "^4.0.3",
     "@vitejs/plugin-react": "^3.1.0",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.14",
