@@ -41,7 +41,7 @@
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^11.2.2",
     "raml-1-parser": "^1.1.67",
-    "rimraf": "^4.4.1",
+    "rimraf": "^5.0.0",
     "terser": "^5.16.8",
     "vite": "^4.2.1"
   },
