@@ -134,4 +134,4 @@ class ApiSubscribe extends HTMLElement {
   }
 }
 
-customElements.define("ApiUpdatesSubscribe", ApiSubscribe);
+customElements.define("api-updates-subscribe", ApiSubscribe);
