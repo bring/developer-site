@@ -52,7 +52,7 @@ export default function apiUpdatesStyle(isModal) {
     .api-updates-content {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
       ${isModal ?
       `height: calc(100% - 3rem);
       overflow-y: auto;`

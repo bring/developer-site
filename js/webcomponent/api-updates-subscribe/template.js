@@ -91,7 +91,7 @@ export default function apiUpdatesTemplate(isModal) {
             <div class="optionalParent">
               <div class="clear foot">
                 <input type="submit" value="Subscribe to API updates" name="subscribe" id="mc-embedded-subscribe" class="button btn btn--green">
-                <p class="brandingLogo"><a href="http://eepurl.com/hOnEJv" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" width="0" height="0" alt="Hidden image"></a></p>
+                <p class="brandingLogo dn"><a href="http://eepurl.com/hOnEJv" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" width="0" height="0" alt="Hidden image"></a></p>
               </div>
             </div>
           </div>
