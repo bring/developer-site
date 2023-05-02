@@ -13,11 +13,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "./js/main.js",
-        "bring-env/main": "./js/webcomponent/bring-env/main.js"
+        "bring-env/main": "./js/webcomponent/bring-env/main.js",
+        "api-updates-subscribe/main": "./js/webcomponent/api-updates-subscribe/main.js"
       },
       output: {
         entryFileNames: asset => {
-          return asset.name.includes("bring-env") ? "[name].js" : "[name].[hash].js"
+          return asset.name.includes("bring-env") || asset.name.includes("api-updates-subscribe") ? "[name].js" : "[name].[hash].js"
         }
       }
     }

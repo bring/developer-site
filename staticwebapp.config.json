@@ -13,6 +13,12 @@
             "headers": {
               "Access-Control-Allow-Origin": "*"
             }
+        },
+        {
+            "route": "/assets/api-updates-subscribe/main.js",
+            "headers": {
+              "Access-Control-Allow-Origin": "*"
+            }
         }
     ],
 
