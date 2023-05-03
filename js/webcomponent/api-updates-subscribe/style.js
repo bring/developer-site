@@ -59,6 +59,10 @@ export default function apiUpdatesStyle(isModal) {
       : ''}
     }
 
+    .api-area-checkboxes.hidden {
+      display: none;
+    }
+
     .mce-response {
       background-color: unset;
       margin-bottom: 1rem;
