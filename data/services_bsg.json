@@ -540,7 +540,7 @@
   "DomesticAllowed" : "NO"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Single Indoor",
   "ServiceCode" : "3150",
   "RequestCode" : "SINGLE_INDOOR",
@@ -558,7 +558,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Indoor",
   "ServiceCode" : "2870",
   "RequestCode" : "DOUBLE_INDOOR",
@@ -576,7 +576,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Curbside",
   "ServiceCode" : "3123",
   "RequestCode" : "CURBSIDE",
@@ -594,7 +594,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Curbside Evening",
   "ServiceCode" : "3457",
   "RequestCode" : "CURBSIDE_EVENING",
@@ -612,7 +612,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Urban Home Delivery",
   "ServiceCode" : "3332",
   "RequestCode" : "3332",
@@ -630,7 +630,7 @@
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Return",
   "ServiceCode" : "2778",
   "RequestCode" : "HOME_DELIVERY_RETURN",
@@ -648,7 +648,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Indoor Return",
   "ServiceCode" : "3578",
   "RequestCode" : "RETURN_INDOOR",
@@ -666,7 +666,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Curbside Return",
   "ServiceCode" : "3577",
   "RequestCode" : "RETURN_CURBSIDE",
