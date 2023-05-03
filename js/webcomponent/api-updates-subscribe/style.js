@@ -74,6 +74,10 @@ export default function apiUpdatesStyle(isModal) {
       padding: 0 !important;
     }
 
+    input.mce_inline_error {
+      border-color: var(--red) !important;
+    }
+
     ${isModal ?
       `.api-updates-backdrop {
         position: fixed;
