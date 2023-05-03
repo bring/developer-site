@@ -65,6 +65,15 @@ export default function apiUpdatesStyle(isModal) {
       padding: 0;
     }
 
+    div.mce_inline_error {
+      background-color: transparent !important;
+      color: var(--red) !important;
+      font-size: .9rem;
+      font-weight: 400 !important;
+      margin: -.5rem 0 1rem !important;
+      padding: 0 !important;
+    }
+
     ${isModal ?
       `.api-updates-backdrop {
         position: fixed;
