@@ -26,7 +26,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP and SOAP over HTTP.
+      REST XML/JSON over HTTP.
       Booking endpoints will assume all requests are UTF-8 encoded.
 
 subpages:
