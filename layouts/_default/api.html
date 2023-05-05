@@ -60,7 +60,7 @@
     </main>
 
   {{- else if isset $.Params "oas" -}}
-    {{- if or (eq $identifier "ordermanagement") (eq $identifier "shippingguide_2") (eq $identifier "booking") -}}
+    {{- if or (eq $identifier "ordermanagement") (eq $identifier "shippingguide_2") -}}
       {{- partial "api/oas/restsoap.html" . -}}
     {{- else -}}
       <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | anchorize }}">

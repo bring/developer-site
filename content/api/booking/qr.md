@@ -16,12 +16,10 @@ To book, add the element `generateQrCodes` at the consignment level and set it t
 
 The following services support QR codes:
 
-- 9300
-- SERVICEPAKKE_RETURSERVICE
 - 9600
-- EKSPRESS09_RETURSERVICE
+- 9350
+- 9300
 - 9000
-- BPAKKE_DOR-DOR_RETURSERVICE
 - 0341
 - 0343
 
