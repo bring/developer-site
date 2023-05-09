@@ -35,7 +35,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP and SOAP over HTTP. The REST/GET interface only supports single consignments, while the SOAP and the REST/POST interfaces can be used for multiple consignments.
+      REST XML/JSON over HTTP. The REST/GET interface only supports single consignments, while the REST/POST interfaces can be used for multiple consignments.
 
 subpages:
   title: Special topics

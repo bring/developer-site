@@ -10,10 +10,7 @@ menu:
 weight: 8
 ---
 Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**:
-* SOAP: 
-```xml
- <NumberOfAlternativeDeliveryDates>2</NumberOfAlternativeDeliveryDates>
-```
+
 * REST POST: 
 ```json
  "numberOfAlternativeDeliveryDates": 2
