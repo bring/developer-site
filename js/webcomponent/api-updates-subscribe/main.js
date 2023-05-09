@@ -134,4 +134,6 @@ class ApiSubscribe extends HTMLElement {
   }
 }
 
-customElements.define("api-updates-subscribe", ApiSubscribe);
+window.addEventListener("DOMContentLoaded", () => {
+  customElements.define("api-updates-subscribe", ApiSubscribe);
+});
