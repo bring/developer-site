@@ -121,7 +121,7 @@ class ApiSubscribe extends HTMLElement {
 
     const open = () => {
       this.querySelector('.api-updates').classList.add('open');
-      const closeModalBtn = this.querySelector('.close-modal-btn');
+      const closeModalBtn = this.querySelector('[data-close-modal]');
       if(closeModalBtn) {
         closeModalBtn.focus();
       }
