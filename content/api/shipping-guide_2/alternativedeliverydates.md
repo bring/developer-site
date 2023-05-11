@@ -11,7 +11,6 @@ weight: 8
 ---
 Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**:
 
-* REST POST: 
 ```json
  "numberOfAlternativeDeliveryDates": 2
 ```

@@ -13,7 +13,7 @@ When using the Shipping Guide it is important to handle errors gracefully. Your 
 
 The Shipping Guide API return two levels of error information:
 
-* HTTP error codes(For REST we follow general convention of HTTP status codes.)
+* HTTP error codes(We follow general convention of HTTP status codes.)
 
 
 * An error object in the response that is on service level

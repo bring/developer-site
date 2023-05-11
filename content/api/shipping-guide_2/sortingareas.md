@@ -24,7 +24,7 @@ The Same day delivery VAS (2012) allows shipments to be delivered same- or next-
 | `Trondheim` | `700` |
 
 
-### REST POST:  VAS - 2012
+###  VAS - 2012
 ```json
  {
   "id": "2012",

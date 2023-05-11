@@ -27,7 +27,7 @@ For the following Norwegian domestic and Nordic parcel services it is now possib
 To get the environmental data, use the following new fields:
 EnvironmentalData>true</WithEnvironmentalData>
 
-* REST POST: withEnvironmentalData
+* POST Request: withEnvironmentalData
 ```json
  "withEnvironmentalData": true
 ```

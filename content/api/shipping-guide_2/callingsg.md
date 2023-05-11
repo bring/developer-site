@@ -11,15 +11,17 @@ weight: 1
 ---
 This guide will walk you through getting shipment alternatives for your first consignment. We will be calling the REST interface with a HTTP client and query for the service `SERVICEPAKKE` and `PA_DOREN` for two packages.
 
-### REST
-For the REST `POST` interfaces:
+## 1. Add additional headers
 
-  `Content-type: application/json`
+
+For the `POST` requests, Add the following header:
+
+- `Content-type: application/json`
 
 ## 2. Add the body to the request
 There are several ways you can control the output of your request. The following elements controls what the API will calculate.
 
-| REST (POST) name |  Description |
+| Element name |  Description |
 | -------------- | -------------- | -------------- | -------------- |
 | `withPrice` | Controls whether prices should be calculated. Default `true` |
 | `withExpectedDelivery` | Controls whether lead times should be calculated. Default `true` |
@@ -106,7 +108,6 @@ In this request we will query prices and expected delivery time for the service 
 ## 3. Submit the request
 
 
-### REST
 Post your request to 
 
 ```

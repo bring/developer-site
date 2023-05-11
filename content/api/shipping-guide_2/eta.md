@@ -83,7 +83,7 @@ For the services Servicepakke (SERVICEPAKKE) and Pakke til hentested (5800), you
 Earlier, we have just returned the expected delivery **date** when you request our Shipping Guide API to get leadtime for SERVICEPAKKE/5800. Now, based on a machine learning model gathering scanning data from all pickup points in Norway, we are also predicting the **arrival window** - i.e. when the parcel is expected to arrive at a specific pickup point on that specific date. If you are already showing expected delivery date in your checkout, we strongly recomment that you consider increasing the value by also including the predicted arrival window.
 
 To get the estimaterd arrival time for one or more pickup points, use the following new fields:
-* REST: estimateddeliverytime, pickuppoints
+*  estimateddeliverytime, pickuppoints
 
 Note: along with WithEstimatedDeliveryTime, make sure ensure the flag WithExpectedDelivery is also set to true.
 
