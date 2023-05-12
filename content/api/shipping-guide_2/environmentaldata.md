@@ -25,11 +25,9 @@ For the following Norwegian domestic and Nordic parcel services it is now possib
 
 
 To get the environmental data, use the following new fields:
-* SOAP: WithEnvironmentalData
-```xml
-<WithEnvironmentalData>true</WithEnvironmentalData>
-```
-* REST POST: withEnvironmentalData
+EnvironmentalData>true</WithEnvironmentalData>
+
+* POST Request: withEnvironmentalData
 ```json
  "withEnvironmentalData": true
 ```
