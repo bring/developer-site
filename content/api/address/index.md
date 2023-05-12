@@ -20,7 +20,7 @@ information:
 
   - title: Rate limiting
     content: |
-      Clients exceeding 40 requests per second will be throttled, and the response will contain http status code 429. If you have a use case requiring rates above the limit, please contact developer-booking@bring.com for assistance.
+      Clients exceeding 120 requests per second will be throttled, and the response will contain http status code 429. If you have a use case requiring rates above the limit, please contact developer-booking@bring.com for assistance.
 
   - title: Formats
     content: |
