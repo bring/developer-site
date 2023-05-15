@@ -4,7 +4,7 @@ layout: api
 notanapi: true
 menu:
   apidocs:
-    identifier: svalbard
+    identifier: sgsvalbard
     title: Svalbard
     parent: shippingguide_2
 weight: 17
@@ -17,5 +17,5 @@ For returns you still have to contact you forwarder for booking at tromso.suppor
 
 ## Surcharge Svalbard
 
-This surcharge applies to all parcel products sent from/to Svalbard. More details can be found [here](https://www.bring.no/tjenester/pakker-og-gods/pristillegg-til-svalbard)
+This surcharge applies to all parcel products sent from/to Svalbard. More details about [Svalbard surcharges](https://www.bring.no/tjenester/pakker-og-gods/pristillegg-til-svalbard)
 
