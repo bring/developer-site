@@ -4,7 +4,7 @@ layout: api
 notanapi: true
 menu:
   apidocs:
-    identifier: svalbard
+    identifier: pupsvalbard
     title: Svalbard
     parent: pickuppoint
 weight: 5
