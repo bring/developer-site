@@ -1,7 +1,6 @@
 export function cutoffRows(rows, size) {
   rows.forEach((row, i) => {
     if (i > size) {
-      console.log(row)
       row.hidden = true
     }
   })
