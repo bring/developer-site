@@ -8,7 +8,7 @@ export default function apiUpdatesTemplate(isModal) {
         </button>
       </div>` : ''}
       <div class="api-updates-content pal${isModal ? ` pt0` : ``}" id="mc_embed_signup">
-        <h1>Subscribe to API updates</h1>
+        <h1>Subscribe</h1>
         <form action="https://bring.us5.list-manage.com/subscribe/post?u=f6b9d5de1a234124c14558d51&amp;id=8b45ecec29" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
             <div class="mc-field-group flex flex-dir-col">
@@ -66,11 +66,11 @@ export default function apiUpdatesTemplate(isModal) {
               </div>
               <details class="mb-disclosure mb-disclosure--arrow bg-green1 mbm">
                 <summary>
-                  <span
-                    data-mybicon="mybicon-arrow-right"
-                    data-mybicon-width="16"
-                    data-mybicon-height="16"
-                  ></span>
+                  <span data-mybicon="mybicon-arrow-right">
+                    <svg class="" width="16" height="16" viewBox="0 0 320 512">
+                      <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path>
+                    </svg>
+                  </span>
                   Privacy policy
                 </summary>
                 <div class="text-note pas content__gdprLegal">
