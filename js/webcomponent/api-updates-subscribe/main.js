@@ -58,13 +58,13 @@ class ApiSubscribe extends HTMLElement {
           }
         });
         if(!someSelected) {
-          errorMessage.innerHTML = '';
-          errorMessage.innerHTML = 'You must select at least one of the API areas.';
+          errorMessage.innerText = '';
+          errorMessage.innerText = 'You must select at least one of the API areas.';
           errorMessage.style.display = 'block';
           e.preventDefault();
         } else {
           errorMessage.style.display = 'none';
-          errorMessage.innerHTML = '';
+          errorMessage.innerText = '';
         }
       }
     }
@@ -113,7 +113,7 @@ class ApiSubscribe extends HTMLElement {
       });
 
       this.addEventListener('keydown', (e) => {
-        if (e.keyCode == 27) {
+        if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
           close();
         }
       });
