@@ -8,7 +8,7 @@ export default function apiUpdatesTemplate(isModal) {
         </button>
       </div>` : ''}
       <div class="api-updates-content pal${isModal ? ` pt0` : ``}" id="mc_embed_signup">
-        <h1>Subscribe</h1>
+        <h2>Subscribe</h2>
         <form action="https://bring.us5.list-manage.com/subscribe/post?u=f6b9d5de1a234124c14558d51&amp;id=8b45ecec29" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
             <div class="mc-field-group flex flex-dir-col">
