@@ -2,45 +2,61 @@ import apiUpdatesStyle from "./style.js"
 import apiUpdatesTemplate from "./template.js"
 
 class ApiSubscribe extends HTMLElement {
+  isModal = this.attributes.modal && this.attributes.modal.value === "true"
+
   constructor() {
     super()
-    //this.attachShadow({mode: "open"})
 
-    let modalAttr = this.attributes.modal
-    let isModal = false
-
-    if (modalAttr) {
-      modalAttr = modalAttr.value
-      if (modalAttr && modalAttr !== "" && modalAttr === "true") {
-        isModal = true
+    this.render()
+    if (this.isModal) {
+      const openModalBtn = document.querySelector("[data-api-updates-open]")
+      if (openModalBtn) {
+        openModalBtn.addEventListener("click", () => this.open())
       }
+    } else {
+      this.loadExternalScripts()
     }
-
-    this.render(isModal)
-
-    const mcValidate = document.createElement("script")
-    mcValidate.type = "text/javascript"
-    mcValidate.async = true
-    mcValidate.src =
-      "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-    this.appendChild(mcValidate)
-
-    const mcValidateFn = document.createElement("script")
-    mcValidateFn.type = "text/javascript"
-    mcValidateFn.innerHTML =
-      "(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);"
-    setTimeout(() => {
-      this.appendChild(mcValidateFn)
-    }, 300)
   }
 
-  render(isModal) {
-    const style = apiUpdatesStyle(isModal)
-    const template = apiUpdatesTemplate(isModal)
+  externalScriptsLoaded = false
+  loadExternalScripts() {
+    if (!this.externalScriptsLoaded) {
+      this.externalScriptsLoaded = true
+      window.fnames = ["EMAIL"]
+      window.ftypes = ["email"]
+      const mcValidate = document.createElement("script")
+      mcValidate.type = "text/javascript"
+      mcValidate.async = true
+      mcValidate.src =
+        "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+      this.appendChild(mcValidate)
+      mcValidate.addEventListener("load", () => {
+        window.$mcj = window.jQuery.noConflict(true)
+      })
+    }
+  }
 
-    this.innerHTML = `${style} ${template}`
+  open() {
+    this.loadExternalScripts()
+    this.querySelector(".api-updates").classList.add("open")
+    const closeModalBtn = this.querySelector("[data-close-modal]")
+    if (closeModalBtn) {
+      closeModalBtn.focus()
+    }
+  }
 
+  close() {
     const openModalBtn = document.querySelector("[data-api-updates-open]")
+    this.querySelector(".api-updates").classList.remove("open")
+    if (openModalBtn) {
+      openModalBtn.focus()
+    }
+  }
+
+  render() {
+    const style = apiUpdatesStyle(this.isModal)
+    const template = apiUpdatesTemplate(this.isModal)
+    this.innerHTML = `${style} ${template}`
 
     const signupForm = document.getElementById("mc-embedded-subscribe-form")
     const apiAreaRadios = signupForm.querySelectorAll("[data-api-area]")
@@ -102,42 +118,21 @@ class ApiSubscribe extends HTMLElement {
       }, 1000)
     })
 
-    if (isModal) {
-      if (openModalBtn) {
-        openModalBtn.addEventListener("click", () => {
-          open()
-        })
-      }
-
+    if (this.isModal) {
       const closeModalAttr = document.querySelectorAll("[data-close-modal]")
       closeModalAttr.forEach((closeModal) => {
-        closeModal.addEventListener("click", () => {
-          close()
-        })
+        closeModal.addEventListener("click", () => this.close())
       })
 
       this.addEventListener("keydown", (e) => {
         if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
-          close()
+          this.close()
         }
       })
-    }
-
-    const open = () => {
-      this.querySelector(".api-updates").classList.add("open")
-      const closeModalBtn = this.querySelector("[data-close-modal]")
-      if (closeModalBtn) {
-        closeModalBtn.focus()
-      }
-    }
-
-    const close = () => {
-      this.querySelector(".api-updates").classList.remove("open")
-      openModalBtn.focus()
     }
   }
 }
 
-setTimeout(() => {
+window.addEventListener("DOMContentLoaded", () => {
   customElements.define("api-updates-subscribe", ApiSubscribe)
-}, 500)
+})
