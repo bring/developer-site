@@ -14,10 +14,9 @@ export default function apiUpdatesStyle(isModal) {
       align-items: center;
     }
 
-    .api-updates h1 {
+    .api-updates h2 {
       padding-left: 0;
       margin-bottom: 0;
-      font-size: 2rem;
     }
 
     .api-updates.open {

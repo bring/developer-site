@@ -4,7 +4,6 @@ import apiUpdatesTemplate from "./template.js";
 class ApiSubscribe extends HTMLElement {
   constructor() {
     super();
-    //this.attachShadow({mode: "open"})
 
     let modalAttr = this.attributes.modal;
     let isModal = false;
@@ -134,6 +133,6 @@ class ApiSubscribe extends HTMLElement {
   }
 }
 
-setTimeout(() => {
+window.addEventListener("DOMContentLoaded", (event) => {
   customElements.define("api-updates-subscribe", ApiSubscribe);
-}, 500);
+});
