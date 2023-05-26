@@ -9,13 +9,13 @@ class ApiSubscribe extends HTMLElement {
 
     this.render()
     if (this.isModal) {
-      const openModalBtn = document.querySelector("[data-api-updates-open]")
-      if (openModalBtn) {
-        openModalBtn.addEventListener("click", () => this.open())
-      }
+      this.bindOpenModalClickHandler()
     } else {
       this.loadExternalScripts()
     }
+
+    window.ApiUpdatesSubscribeRebindOpenHandler = () =>
+      this.bindOpenModalClickHandler()
   }
 
   externalScriptsLoaded = false
@@ -51,6 +51,20 @@ class ApiSubscribe extends HTMLElement {
     if (openModalBtn) {
       openModalBtn.focus()
     }
+  }
+
+  bindOpenModalClickHandler() {
+    const openModalBtns = document.querySelectorAll(
+      "[data-api-updates-open]:not([data-api-updates-open-bound])"
+    )
+
+    openModalBtns.forEach((btn) => {
+      btn.setAttribute("data-api-updates-open-bound", "")
+      btn.addEventListener("click", (event) => {
+        event.preventDefault()
+        this.open()
+      })
+    })
   }
 
   render() {
