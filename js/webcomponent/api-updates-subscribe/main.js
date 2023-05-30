@@ -2,7 +2,9 @@ import apiUpdatesStyle from "./style.js"
 import apiUpdatesTemplate from "./template.js"
 
 class ApiSubscribe extends HTMLElement {
-  _attr(attr, def) { return this.attributes[attr] && this.attributes[attr].value || def}
+  _attr(attr, def) {
+    return (this.attributes[attr] && this.attributes[attr].value) || def
+  }
 
   isModal = this._attr("modal") === "true"
   includeModalButton = this._attr("include-button") !== "false"
@@ -76,7 +78,12 @@ class ApiSubscribe extends HTMLElement {
 
   render() {
     const style = apiUpdatesStyle(this.isModal)
-    const template = apiUpdatesTemplate(this.isModal, this.includeModalButton, this.modalButtonText, this.modalButtonClass)
+    const template = apiUpdatesTemplate(
+      this.isModal,
+      this.includeModalButton,
+      this.modalButtonText,
+      this.modalButtonClass
+    )
     this.innerHTML = `${style} ${template}`
 
     const signupForm = document.getElementById("mc-embedded-subscribe-form")
@@ -154,6 +161,4 @@ class ApiSubscribe extends HTMLElement {
   }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  customElements.define("api-updates-subscribe", ApiSubscribe)
-})
+customElements.define("api-updates-subscribe", ApiSubscribe)
