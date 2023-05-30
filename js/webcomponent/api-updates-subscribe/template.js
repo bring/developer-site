@@ -1,5 +1,6 @@
-export default function apiUpdatesTemplate(isModal) {
-  return `<div class="api-updates" ${isModal ? 'role="dialog" aria-modal="true"' : ''}>
+export default function apiUpdatesTemplate(isModal, includeButton, buttonText, buttonClass) {
+  return `${isModal && includeButton ? `<button class="${buttonClass}" data-api-updates-open>${buttonText}</button>` : ''}
+  <div class="api-updates" ${isModal ? 'role="dialog" aria-modal="true"' : ''}>
     <div class="api-updates-wrapper">
       ${isModal ? `<div class="api-updates-header justify-cfe ptm prm">
         <button class="btn-link--dark" aria-label="Close modal" data-close-modal>

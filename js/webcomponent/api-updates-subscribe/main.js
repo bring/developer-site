@@ -2,7 +2,12 @@ import apiUpdatesStyle from "./style.js"
 import apiUpdatesTemplate from "./template.js"
 
 class ApiSubscribe extends HTMLElement {
-  isModal = this.attributes.modal && this.attributes.modal.value === "true"
+  _attr(attr, def) { return this.attributes[attr] && this.attributes[attr].value || def}
+
+  isModal = this._attr("modal") === "true"
+  includeModalButton = this._attr("include-button") !== "false"
+  modalButtonText = this._attr("button-text", "Register email")
+  modalButtonClass = this._attr("button-class", "btn")
 
   constructor() {
     super()
@@ -16,6 +21,8 @@ class ApiSubscribe extends HTMLElement {
 
     window.ApiUpdatesSubscribeRebindOpenHandler = () =>
       this.bindOpenModalClickHandler()
+    window.ApiUpdatesSubscribeOpenModal = () => this.open()
+    window.ApiUpdatesSubscribeCloseModal = () => this.close()
   }
 
   externalScriptsLoaded = false
@@ -69,7 +76,7 @@ class ApiSubscribe extends HTMLElement {
 
   render() {
     const style = apiUpdatesStyle(this.isModal)
-    const template = apiUpdatesTemplate(this.isModal)
+    const template = apiUpdatesTemplate(this.isModal, this.includeModalButton, this.modalButtonText, this.modalButtonClass)
     this.innerHTML = `${style} ${template}`
 
     const signupForm = document.getElementById("mc-embedded-subscribe-form")
