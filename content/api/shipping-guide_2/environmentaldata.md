@@ -9,7 +9,7 @@ menu:
     parent: shippingguide_2
 weight: 5
 ---
-For the following Norwegian domestic and Nordic parcel services it is now possible to get data on whether fossil free (electric and/or bio) transportation is used during last mile transport leg of shipment:
+For the following Nordic parcel services it is now possible to get data on whether fossil free (electric and/or bio) transportation is used during last mile transport leg of shipment:
 
 * Pakke i postkassen med RFID (3570)
 * Pakke i postkassen (3584)
