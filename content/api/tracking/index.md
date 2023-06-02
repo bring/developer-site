@@ -22,7 +22,7 @@ important:
 
     If you see following error message that means you are being rate limited, and you should start using authenticated requests.
 
-    ``Too many requests. We are now rate limiting our unauthenticated users, to prevent this make sure your requests are authenticated. Read more about this on our Bring developer site. https://developer.bring.com/api/tracking/``
+    ``429 - Too many requests. We are now rate limiting our unauthenticated users, to prevent this make sure your requests are authenticated. Read more about this on our Bring developer site. https://developer.bring.com/api/tracking/``
 - type: warn
   title: Deprecating v1 version of Tracking API - 01.08.2022
   message: |
