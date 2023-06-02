@@ -11,10 +11,7 @@ weight: 5
 ---
 For the following Norwegian domestic and Nordic parcel services it is now possible to get data on whether fossil free (electric and/or bio) transportation is used during last mile transport leg of shipment:
 
-* Pakke i postkassen med RFID (3570)
-* Pakke i postkassen (3584)
-* Pakke levert hjem (5600)
-* På døren (PA_DOREN)
+
 * Pakke til bedrift (5000)
 * Bedriftspakke (BPAKKE_DOR-DOR)
 * Business Parcel (0330)
