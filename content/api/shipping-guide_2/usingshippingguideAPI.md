@@ -1,11 +1,12 @@
 ---
-title: Versioning
+title: Using Shipping Guide API
 layout: api
 notanapi: true
 menu:
   apidocs:
-    identifier: sgversioning
+    identifier: UsingShippingGuideAPI
     title: Versioning
     parent: shippingguide_2
 subpages:
-title: Using Shipping Guide API 
+title: Using Shipping Guide API
+---
