@@ -30,7 +30,13 @@ information:
       Both XML and JSON over HTTP. The GET request only supports single consignments, while the POST requests can be used for multiple consignments.
 
 subpages:
-  title: Special topics
+  title: Using Shipping Guide API
+  title: Volume, weight, dimensions and loading meter
+  title: Error & warning handling
+  title: Delivery & lead time
+  title: Environmental data
+  title: Svalbard
+
 
 guides:
 - title: The importance of provided shipping date

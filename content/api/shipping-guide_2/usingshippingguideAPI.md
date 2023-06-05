@@ -5,7 +5,7 @@ notanapi: true
 menu:
   apidocs:
     identifier: UsingShippingGuideAPI
-    title: Versioning
+    title: usingshippingguideAPI
     parent: shippingguide_2
 subpages:
 title: Using Shipping Guide API

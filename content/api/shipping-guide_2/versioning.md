@@ -6,7 +6,7 @@ menu:
   apidocs:
     identifier: sgversioning
     title: Versioning
-    parent: usingshippingguideAPI
+    parent: shippingguide_2
 weight: 2
 ---
 The Shipping Guide makes an effort to always be backwards compatible regarding data format for requests and responses. To achieve this, Versioning is defined as part of endpoint itself.
