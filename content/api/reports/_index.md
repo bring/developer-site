@@ -25,7 +25,9 @@ information:
   - title: Authentication
     content: |
       To integrate with the Bring APIs, you will need a Mybring user account with an API key. Information about prerequisites and authentication headers can be found on the general API [Getting Started page](/api/).
-
+  - title: Rate limiting
+    content: |
+      Clients exceeding multiple identical requests in a short time period will be throttled, and the response will contain HTTP status code 429.
   - title: Formats
     content: |
       REST XML/JSON over HTTP.
