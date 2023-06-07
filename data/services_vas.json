@@ -251,7 +251,7 @@
   "shippingGuideCode" : "FLEXDELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "FLEX_DELIVERY",
-  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Limited quantities" ],
+  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Limited quantities", "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -1163,7 +1163,7 @@
   "shippingGuideCode" : "SWAP",
   "shippingGuideNpbCode" : "SWAP",
   "bookingCode" : "1122",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1235,7 +1235,7 @@
   "shippingGuideCode" : "RECYCLE",
   "shippingGuideNpbCode" : "RECYCLE",
   "bookingCode" : "1123",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1317,7 +1317,7 @@
   "shippingGuideCode" : "UNWRAP",
   "shippingGuideNpbCode" : "UNWRAP",
   "bookingCode" : "1139",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1751,7 +1751,7 @@
   "shippingGuideCode" : "1134",
   "shippingGuideNpbCode" : "1134",
   "bookingCode" : "1134",
-  "incompatibleVases" : [ "Flex delivery", "ID verification", "Simplified delivery" ],
+  "incompatibleVases" : [ "Flex delivery", "ID verification", "Simplified delivery", "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -2167,7 +2167,7 @@
   "shippingGuideCode" : "SOSIAL_KONTROLL",
   "shippingGuideNpbCode" : "1082",
   "bookingCode" : "SOSIAL_KONTROLL",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Pakke levert hjem",
     "serviceType" : "B2C",
@@ -2249,7 +2249,7 @@
   "shippingGuideCode" : "1140",
   "shippingGuideNpbCode" : "1140",
   "bookingCode" : "1140",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -3075,5 +3075,27 @@
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Boat Delivery",
+  "vasNameNorwegian" : "Båtlevering",
+  "description" : "Boat delivery in Stockholm's archipelago. This VAS requires an agreement in Mybring to be available for booking.\"  ",
+  "shippingGuideCode" : "1362",
+  "shippingGuideNpbCode" : "1362",
+  "bookingCode" : "1362",
+  "incompatibleVases" : [ "Swap", "Recycle white goods", "Unwrapping", "Carry service oversize", "Individual verification", "Flex delivery", "Social control" ],
+  "supportedServices" : [ {
+    "serviceName" : "Home Delivery Curbside",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Home Delivery",
+    "serviceFamilySortOrder" : 4,
+    "serviceCode" : "CURBSIDE",
+    "productionCode" : "3123",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 } ]
