@@ -17,4 +17,4 @@ The label free code, as well as the recipient's name and address, is written on 
 
 The API response will contain one label free code per package. Order of packages and the corresponding label free codes in the booking response will resemble order of packages in the API request.
 
-See https://developer.bring.com/api/services/#label-free for how to request this Value Added Service.
+See [service portfolio](https://developer.bring.com/api/services/#label-free) for how to request this Value Added Service.
