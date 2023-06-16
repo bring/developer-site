@@ -1,0 +1,401 @@
+{
+  "norway": {
+    "bestPractices": [
+      {
+        "h3": "1. Postal code and street address",
+        "figures": [
+          {
+            "imageUrl": "assets/address.png",
+            "imageAlt": "Postal code and address",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "assets/delivery_address.png",
+        "illustrationImageAlt": "Delivery address input fields",
+        "tags": ["Address API"],
+        "paragraphs": [
+          "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points. When filling in the street address, your customers will also get the correct estimated time of delivery.</p>"
+        ]
+      },
+      {
+        "h3": "2. Service name and description text",
+        "figures": [
+          {
+            "imageUrl": "assets/title_and_description.png",
+            "imageAlt": "Service title and description",
+            "imageClass": "maxw10r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_service.png",
+        "illustrationImageAlt": "Choose service by service name",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Use the standard service name and description text to make sure your customers understand what the delivery options imply.</p>"
+        ]
+      },
+      {
+        "h3": "3. Pickup points",
+        "figures": [
+          {
+            "imageUrl": "assets/pickup_points.png",
+            "imageAlt": "Pickup point",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_pickup_points.png",
+        "illustrationImageAlt": "Choose pickup points",
+        "tags": ["Pickup Point API"],
+        "paragraphs": [
+          "<p>By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According  to Bring Research, customers are more likely to complete the purchase if presented with pickup points located  nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point type. We also recommend showing a map to make it easier for your customers to locate the pickup points.</p>"
+        ]
+      },
+      {
+        "h3": "4. Estimated time of delivery",
+        "figures": [
+          {
+            "imageUrl": "assets/estimated_time_of_delivery.svg",
+            "imageAlt": "Estimated time of delivery",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/show_estimated_time_of_delivery.png",
+        "illustrationImageAlt": "Service with estimated time of delivery",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
+          "<p>For a better understanding on how to get the most accurate delivery estimates, we recommend reading <a href=\"/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/\">this guide</a>.</p>"
+        ]
+      },
+      {
+        "h3": "5. Flexible delivery",
+        "figures": [
+          {
+            "imageUrl": "assets/flexible_delivery.svg",
+            "imageAlt": "Flexible delivery",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_delivery_date.png",
+        "illustrationImageAlt": "Choose value added services",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Leaving the parcel in a bag on the door in case the parcel is too large for the mailbox</li><li>Alternative delivery dates for home delivery. Let the customer choose the preferred date</li></ol>"]
+      },
+      {
+        "h3": "6. Logo",
+        "figures": [
+          {
+            "imageUrl": "assets/bring_logo_car.png",
+            "imageAlt": "Car with Bring logo",
+            "imageClass": "maxw8r"
+          },
+          {
+            "imageUrl": "assets/posten_logo_car.png",
+            "imageAlt": "Car with Posten logo",
+            "imageClass": "maxw8r"
+          }          
+        ],
+        "illustrationImageUrl": "assets/posten_service.png",
+        "illustrationImageAlt": "Service with posten logo",
+        "tags": ["Shipping Guide API"],
+        "downloadLinks": [
+          {
+            "href": "assets/Bring_logo.svg",
+            "linkText": "Bring logo",
+            "name": "bring_logo"
+          },
+          {
+            "href": "assets/Posten_logo.svg",
+            "linkText": "Posten logo",
+            "name": "posten_logo"
+          }
+        ],
+        "paragraphs": [
+          "<p>According to Bring Research, customers prefer checkout showing carrier logos to enable them to easily recognize  their trusted carriers. For shipments going to consumers in Norway, use the Posten logo. For shipments going to  consumers in any other country, use the Bring logo.</p>"
+        ]
+      },
+      {
+        "h3": "7. Environmental data and icon",
+        "figures": [
+          {
+            "imageUrl": "assets/environmental_logo.png",
+            "imageAlt": "Environmental friendly logo",
+            "imageClass": "maxw16r"
+          }
+        ],
+        "illustrationImageUrl": "assets/show_environmental_info.png",
+        "illustrationImageAlt": "Service with environmental friendly logo",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your customers make more sustainable choices.</p>"
+        ]
+      }
+    ]
+  },
+  "sweden": {
+    "bestPractices": [
+      {
+        "h3": "1. Postal code and street address",
+        "figures": [
+          {
+            "imageUrl": "assets/address.png",
+            "imageAlt": "Postal code and address",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "assets/delivery_address.png",
+        "illustrationImageAlt": "Delivery address input fields",
+        "tags": ["Address API"],
+        "paragraphs": [
+          "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points.</p>"
+        ]
+      },
+      {
+        "h3": "2. Service name and description text",
+        "figures": [
+          {
+            "imageUrl": "assets/title_and_description.png",
+            "imageAlt": "Service title and description",
+            "imageClass": "maxw10r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_service.png",
+        "illustrationImageAlt": "Choose service by service name",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Use the standard service name and description text to make sure your customers understand what the delivery options imply.</p>"
+        ]
+      },
+      {
+        "h3": "3. Pickup points",
+        "figures": [
+          {
+            "imageUrl": "assets/pickup_points.png",
+            "imageAlt": "Pickup point",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_pickup_points.png",
+        "illustrationImageAlt": "Choose pickup points",
+        "tags": ["Pickup Point API"],
+        "paragraphs": [
+          "<p>By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point type. We also recommend showing a map to make it easier for your customers to locate the pickup points.</p>"
+        ]
+      },
+      {
+        "h3": "4. Estimated time of delivery",
+        "figures": [
+          {
+            "imageUrl": "assets/estimated_time_of_delivery.svg",
+            "imageAlt": "Estimated time of delivery",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/show_estimated_time_of_delivery.png",
+        "illustrationImageAlt": "Service with estimated time of delivery",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
+          "<p>For a better understanding on how to get the most accurate delivery estimates, we recommend reading <a href=\"/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/\">this guide</a>.</p>"
+        ]
+      },
+      {
+        "h3": "5. Flexible delivery",
+        "figures": [
+          {
+            "imageUrl": "assets/flexible_delivery.svg",
+            "imageAlt": "Flexible delivery",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_delivery_date.png",
+        "illustrationImageAlt": "Choose value added services",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Alternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</li></ol>"]
+      },
+      {
+        "h3": "6. Logo",
+        "figures": [
+          {
+            "imageUrl": "assets/bring_logo_car.png",
+            "imageAlt": "Car with Bring logo",
+            "imageClass": "maxw8r"
+          },
+          {
+            "imageUrl": "assets/posten_logo_car.png",
+            "imageAlt": "Car with Posten logo",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/posten_service.png",
+        "illustrationImageAlt": "Service with posten logo",
+        "tags": ["Shipping Guide API"],
+        "downloadLinks": [
+          {
+            "href": "assets/Bring_logo.svg",
+            "linkText": "Bring logo",
+            "name": "bring_logo"
+          },
+          {
+            "href": "assets/Posten_logo.svg",
+            "linkText": "Posten logo",
+            "name": "posten_logo"
+          }
+        ],
+        "paragraphs": [
+          "<p>According to Bring Research, customers prefer checkout showing carrier logos to enable them to easily recognize their trusted carriers. For shipments going to consumers in Sweden, Denmark, or another country apart from Norway, use the Bring logo. For shipments going to consumers in Norway, use the Posten logo.</p>"
+        ]
+      },
+      {
+        "h3": "7. Environmental data and icon",
+        "figures": [
+          {
+            "imageUrl": "assets/environmental_logo_simple.svg",
+            "imageAlt": "Environmental friendly logo",
+            "imageClass": "maxw16r"
+          }
+        ],
+        "illustrationImageUrl": "assets/show_environmental_info.png",
+        "illustrationImageAlt": "Service with environmental friendly logo",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Show whether the parcel will be delivered with fossil-free fuel or not in the checkout. This may help your customers make more sustainable choices.</p>"
+        ]
+      }
+    ]
+  },
+  "denmark": {
+    "bestPractices": [
+      {
+        "h3": "1. Postal code and street address",
+        "figures": [
+          {
+            "imageUrl": "assets/address.png",
+            "imageAlt": "Postal code and address",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "assets/delivery_address.png",
+        "illustrationImageAlt": "Delivery address input fields",
+        "tags": ["Address API"],
+        "paragraphs": [
+          "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points.</p>"
+        ]
+      },
+      {
+        "h3": "2. Service name and description text",
+        "figures": [
+          {
+            "imageUrl": "assets/title_and_description.png",
+            "imageAlt": "Service title and description",
+            "imageClass": "maxw10r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_service.png",
+        "illustrationImageAlt": "Choose service by service name",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Use the standard service name and description text to make sure your customers understand what the delivery options imply.</p>"
+        ]
+      },
+      {
+        "h3": "3. Pickup points",
+        "figures": [
+          {
+            "imageUrl": "assets/pickup_points.png",
+            "imageAlt": "Pickup point",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_pickup_points.png",
+        "illustrationImageAlt": "Choose pickup points",
+        "tags": ["Pickup Point API"],
+        "paragraphs": [
+          "<p>By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point type. We also recommend showing a map to make it easier for your customers to locate the pickup points.</p>"
+        ]
+      },
+      {
+        "h3": "4. Estimated time of delivery",
+        "figures": [
+          {
+            "imageUrl": "assets/estimated_time_of_delivery.svg",
+            "imageAlt": "Estimated time of delivery",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/show_estimated_time_of_delivery.png",
+        "illustrationImageAlt": "Service with estimated time of delivery",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
+          "<p>For a better understanding on how to get the most accurate delivery estimates, we recommend reading <a href=\"/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/\">this guide</a>.</p>"
+        ]
+      },
+      {
+        "h3": "5. Flexible delivery",
+        "figures": [
+          {
+            "imageUrl": "assets/flexible_delivery.svg",
+            "imageAlt": "Flexible delivery",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/choose_delivery_date.png",
+        "illustrationImageAlt": "Choose value added services",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Give the recipient the option of having the parcel left by the door in case the recipient is not at home at the delivery time</li><li>Give the recipient the option of having an evening home delivery</li></ol>"]
+      },
+      {
+        "h3": "6. Logo",
+        "figures": [
+          {
+            "imageUrl": "assets/bring_logo_car.png",
+            "imageAlt": "Car with Bring logo",
+            "imageClass": "maxw8r"
+          },
+          {
+            "imageUrl": "assets/posten_logo_car.png",
+            "imageAlt": "Car with Posten logo",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "assets/posten_service.png",
+        "illustrationImageAlt": "Service with posten logo",
+        "tags": ["Shipping Guide API"],
+        "downloadLinks": [
+          {
+            "href": "assets/Bring_logo.svg",
+            "linkText": "Bring logo",
+            "name": "bring_logo"
+          },
+          {
+            "href": "assets/Posten_logo.svg",
+            "linkText": "Posten logo",
+            "name": "posten_logo"
+          }
+        ],
+        "paragraphs": [
+          "<p>According to Bring Research, customers prefer checkout showing carrier logos to enable them to easily recognize their trusted carriers. For shipments going to consumers in Sweden, Denmark, or another country apart from Norway, use the Bring logo. For shipments going to consumers in Norway, use the Posten logo.</p>"
+        ]
+      },
+      {
+        "h3": "7. Environmental data and icon",
+        "figures": [
+          {
+            "imageUrl": "assets/environmental_logo_simple.svg",
+            "imageAlt": "Environmental friendly logo",
+            "imageClass": "maxw16r"
+          }
+        ],
+        "illustrationImageUrl": "assets/show_environmental_info.png",
+        "illustrationImageAlt": "Service with environmental friendly logo",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your customers make more sustainable choices.</p>"
+        ]
+      }
+    ]
+  }
+}
