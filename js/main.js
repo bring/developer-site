@@ -9,7 +9,6 @@ import "./servicefiltering.js"
 import "./api.js"
 import "./search/algolia.jsx"
 import "./scrollmarker.js"
-import "./checkout/checkoutBestPractice.jsx"
 
 import "./drawer.js"
 
