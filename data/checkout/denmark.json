@@ -84,12 +84,12 @@
       "h3": "6. Logo",
       "figures": [
         {
-          "imageUrl": "../assets/bring_logo_car.png",
+          "imageUrl": "../assets/bring/logo_car.png",
           "imageAlt": "Car with Bring logo",
           "imageClass": "maxw8r"
         },
         {
-          "imageUrl": "../assets/posten_logo_car.png",
+          "imageUrl": "../assets/posten/logo_car.png",
           "imageAlt": "Car with Posten logo",
           "imageClass": "maxw8r"
         }
