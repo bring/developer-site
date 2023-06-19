@@ -21,7 +21,7 @@ information:
   - title: Formats
     content: |
       REST XML/JSON over HTTP.
-oas: https://www.qa.mybring.com/invoicearchive/v3/api-docs
+oas: https://www.mybring.com/invoicearchive/v3/api-docs
 
 documentation:
 ---
