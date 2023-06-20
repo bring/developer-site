@@ -20,15 +20,15 @@
               <p class="text-heading">You may also be looking for best practice guides for:</p>
               <ul class="mbxl">
                 {{ if eq "norway" $country }}
-                <li><a href="sweden" class="btn-link">🇸🇪 Sweden</a></li>
-                <li><a href="denmark" class="btn-link">🇩🇰 Denmark</a></li>
+                <li><a href="../sweden" class="btn-link">🇸🇪 Sweden</a></li>
+                <li><a href="../denmark" class="btn-link">🇩🇰 Denmark</a></li>
                 {{ end }}
                 {{ if eq "sweden" $country }}
-                <li><a href="../" class="btn-link">🇳🇴 Norway</a></li>
+                <li><a href="../norway" class="btn-link">🇳🇴 Norway</a></li>
                 <li><a href="../denmark" class="btn-link">🇩🇰 Denmark</a></li>
                 {{ end }}
                 {{ if eq "denmark" $country }}
-                <li><a href="../" class="btn-link">🇳🇴 Norway</a></li>
+                <li><a href="../norway" class="btn-link">🇳🇴 Norway</a></li>
                 <li><a href="../sweden" class="btn-link">🇸🇪 Sweden</a></li>
                 {{ end }}
               </ul>
@@ -38,6 +38,20 @@
             </div>
           </section>
         {{ end }}
+      {{ end }}
+      {{ if (not (isset .Params "country")) }}
+        <section class="dev-docscontent__section flex flex-wrap align-ifs">
+          <div class="dev-guide-l">
+            <p class="text-heading">
+              Choose your country and follow seven easy steps to improve the presentation of our delivery options in your checkout.
+            </p>
+            <div>
+              <a href="norway" class="btn-link--dark mbm">🇳🇴 Norway</a>
+              <a href="sweden" class="btn-link--dark mbm">🇸🇪 Sweden</a>
+              <a href="denmark" class="btn-link--dark mbl">🇩🇰 Denmark</a>
+            </div>
+          </div>
+        </section>
       {{ end }}
     </article>
   </main>
