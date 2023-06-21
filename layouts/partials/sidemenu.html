@@ -59,7 +59,7 @@
                           {{- range .Children -}}
                             <li>
                               <a href="{{ .URL }}" {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}>
-                                {{ .Title }}
+                                {{ .Title | safeHTML }}
                               </a>
                             </li>
                           {{- end -}}

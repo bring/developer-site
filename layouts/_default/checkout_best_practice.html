@@ -1,0 +1,88 @@
+{{- define "main" -}}
+  <main id="main" class="dev-docscontent w100p">
+    <link rel="stylesheet" href="/api/e-commerce-solutions/best-practice-checkout/bestpractice.css">
+    <article>
+      <h1>
+        {{- .Title -}}
+      </h1>
+      {{ $requestedCountry := .Params.country }}
+      {{ range $country, $data := .Site.Data.checkout }}
+        {{ if eq $country $requestedCountry }}
+          <section class="dev-docscontent__section flex flex-wrap align-ifs">
+            <div class="dev-guide-l">
+              <p class="text-heading">
+                Follow these easy steps to improve the presentation of our delivery options in your checkout.
+              </p>
+              <p class="text-heading">
+                If you need help implementing any of these steps, go visit our <a href="https://www.mybring.com/shipping-guide/integration/checkout" target="_blank">Checkout tool</a>
+                or contact our <a href="mailto:checkout.implementering@posten.no">Checkout implementation team</a>.
+              </p>
+              <p class="text-heading">You may also be looking for best practice guides for:</p>
+              <ul class="mbxl">
+                {{ if eq "norway" $country }}
+                <li>
+                  <a href="../sweden/" class="btn-link">
+                    <span class="flex justify-cc mrxs"><img src="../assets/se.svg" class="flag" role="presentation"/></span> Sweden
+                  </a>
+                </li>
+                <li>
+                  <a href="../denmark/" class="btn-link">
+                    <span class="flex justify-cc mrxs"><img src="../assets/dk.svg" class="flag" role="presentation"/></span> Denmark
+                  </a>
+                </li>
+                {{ end }}
+                {{ if eq "sweden" $country }}
+                <li>
+                  <a href="../norway/" class="btn-link">
+                    <span class="flex justify-cc mrxs"><img src="../assets/no.svg" class="flag" role="presentation"/></span> Norway
+                  </a>
+                </li>
+                <li>
+                  <a href="../denmark/" class="btn-link">
+                    <span class="flex justify-cc mrxs"><img src="../assets/dk.svg" class="flag" role="presentation"/></span> Denmark
+                  </a>
+                </li>
+                {{ end }}
+                {{ if eq "denmark" $country }}
+                <li>
+                  <a href="../norway/" class="btn-link">
+                    <span class="flex justify-cc mrxs"><img src="../assets/no.svg" class="flag" role="presentation"/></span> Norway
+                  </a>
+                </li>
+                <li>
+                  <a href="../sweden/" class="btn-link">
+                    <span class="flex justify-cc mrxs"><img src="../assets/se.svg" class="flag" role="presentation"/></span> Sweden
+                  </a>
+                </li>
+                {{ end }}
+              </ul>
+              {{ range $data.bestPractices }}
+              {{ partial "checkout/best-practice-item" (dict "data" .) }}
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
+      {{ end }}
+      {{ if (not (isset .Params "country")) }}
+        <section class="dev-docscontent__section flex flex-wrap align-ifs">
+          <div class="dev-guide-l">
+            <p class="text-heading">
+              Choose your country and follow some easy steps to improve the presentation of our delivery options in your checkout.
+            </p>
+            <div>
+              <a href="norway/" class="btn-link--dark mbm">
+                <span class="flex justify-cc mrxs"><img src="assets/no.svg" class="flag" role="presentation"/></span> Norway
+              </a>
+              <a href="sweden/" class="btn-link--dark mbm">
+                <span class="flex justify-cc mrxs"><img src="assets/se.svg" class="flag" role="presentation"/></span> Sweden
+              </a>
+              <a href="denmark/" class="btn-link--dark mbl">
+                <span class="flex justify-cc mrxs"><img src="assets/dk.svg" class="flag" role="presentation"/></span> Denmark
+              </a>
+            </div>
+          </div>
+        </section>
+      {{ end }}
+    </article>
+  </main>
+{{- end -}}

@@ -1,0 +1,37 @@
+{{ with .data }}
+<div class="bw2 ba flex best-practice-item align-ic mtm b--gray2">
+  <div class="flex-1">
+    <div class="flex flex-dir-row justify-cc mbm">
+      {{ range .figures }}
+      <figure>
+        <img src="{{ .imageUrl }}" alt="{{ .imageAlt }}" class="{{ .imageClass }}"/>
+      </figure>
+      {{ end }}
+    </div>
+    <h3 class="fwn">{{ .h3 }}</h3>
+    {{ range .paragraphs }}
+    {{ . | safeHTML }}
+    {{ end }}
+    <div class="flex flex-dir-row justify-cc mtl mbm">
+    {{ range .downloadLinks }}
+      <a href="{{ .href }}" class="btn-link--dark mrm" download="{{ .name }}">
+        <span data-mybicon="mybicon-download_file"
+              data-mybicon-class="mrs"
+              data-mybicon-width="16"
+              data-mybicon-height="16">
+        </span>
+        <span>{{ .linkText }}</span>
+      </a>
+    {{ end }}
+    </div>
+    <div class="flex flex-wrap gas">
+      {{ range $tag := .tags }}
+      <span class="mb-badge">{{ $tag }}</span>
+      {{ end }}
+    </div>
+  </div>
+  <figure class="mlxl flex-1 best-practice-item--illustration">
+    <img src="{{ .illustrationImageUrl }}" alt="{{ .illustrationImageAlt }}" class="maxw48r"/>
+  </figure>
+</div>
+{{ end }}

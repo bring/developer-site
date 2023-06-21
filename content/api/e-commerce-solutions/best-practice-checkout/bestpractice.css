@@ -2,6 +2,14 @@
     padding: 3em;
 }
 
+.flag {
+    width: 17px;
+}
+
+.flag--small {
+    width: 15px;
+}
+
 @media only screen and (max-width: 1550px) {
     .best-practice-item {
         padding: 2rem;
