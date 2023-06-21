@@ -12,13 +12,13 @@ weight: 31
  
 important:
 - type: warn
-  title: The Tracking API becomes authenticated from 01.08.2023
+  title: The Tracking API becomes authenticated from 15.08.2023
   message: |
     Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations,
     we must know which customers and partners are using our APIs and how they are using them. To further develop the value proposition of our Tracking API,
-    the solution will require authentication. Read [here](https://developer.bring.com/api/tracking/) on how to make authenticated requests.
+    the solution will require authentication. Read [here](https://developer.bring.com/api) on how to make authenticated requests.
 
-    From 1 August 2023 , we will start rate liming the requests.
+    From 15 August 2023, we will start rate liming the requests.
 
     If you see following error message that means you are being rate limited, and you should start using authenticated requests.
 
