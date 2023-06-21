@@ -18,7 +18,7 @@ important:
     we must know which customers and partners are using our APIs and how they are using them. To further develop the value proposition of our Tracking API,
     the solution will require authentication. Read [here](https://developer.bring.com/api) on how to make authenticated requests.
 
-    From 15 August 2023 , we will start rate liming the requests.
+    From 15 August 2023, we will start rate liming the requests.
 
     If you see following error message that means you are being rate limited, and you should start using authenticated requests.
 
