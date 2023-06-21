@@ -49,39 +49,7 @@
       ]
     },
     {
-      "h3": "4. Estimated time of delivery",
-      "figures": [
-        {
-          "imageUrl": "../assets/bring/estimated_time_of_delivery.svg",
-          "imageAlt": "Estimated time of delivery",
-          "imageClass": "maxw8r"
-        }
-      ],
-      "illustrationImageUrl": "../assets/bring/da/show_estimated_time_of_delivery.png",
-      "illustrationImageAlt": "Service with estimated time of delivery",
-      "tags": ["Shipping Guide API"],
-      "paragraphs": [
-        "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
-        "<p>For a better understanding on how to get the most accurate delivery estimates, we recommend reading <a href=\"/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/\">this guide</a>.</p>"
-      ]
-    },
-    {
-      "h3": "5. Flexible delivery",
-      "figures": [
-        {
-          "imageUrl": "../assets/bring/flexible_delivery.svg",
-          "imageAlt": "Flexible delivery",
-          "imageClass": "maxw8r"
-        }
-      ],
-      "illustrationImageUrl": "../assets/bring/da/choose_delivery_date.png",
-      "illustrationImageAlt": "Choose value added services",
-      "tags": ["Shipping Guide API"],
-      "paragraphs": [
-        "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Give the recipient the option of having the parcel left by the door in case the recipient is not at home at the delivery time</li><li>Give the recipient the option of having an evening home delivery</li></ol>"]
-    },
-    {
-      "h3": "6. Logo",
+      "h3": "4. Logo",
       "figures": [
         {
           "imageUrl": "../assets/bring/logo_car.png",
@@ -114,7 +82,7 @@
       ]
     },
     {
-      "h3": "7. Environmental data and icon",
+      "h3": "5. Environmental data and icon",
       "figures": [
         {
           "imageUrl": "../assets/environmental_logo_simple.svg",
