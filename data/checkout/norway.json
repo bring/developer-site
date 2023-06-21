@@ -11,7 +11,7 @@
       ],
       "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/delivery_address.png",
       "illustrationImageAlt": "Delivery address input fields",
-      "tags": ["Address API"],
+      "tags": ["Address API", "Pickup Point API", "Shipping Guide API"],
       "paragraphs": [
         "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points. When filling in the street address, your customers will also get the correct estimated time of delivery.</p>"
       ]
