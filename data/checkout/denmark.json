@@ -5,12 +5,12 @@
       "h3": "1. Postal code and street address",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/address.svg",
+          "imageUrl": "/images/checkout/bring/address.svg",
           "imageAlt": "Postal code and address",
           "imageClass": "w6r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/da/delivery_address.png",
+      "illustrationImageUrl": "/images/checkout/bring/da/delivery_address.png",
       "illustrationImageAlt": "Delivery address input fields",
       "tags": ["Address API", "Pickup Point API"],
       "paragraphs": [
@@ -21,12 +21,12 @@
       "h3": "2. Service name and description text",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/title_and_description.png",
+          "imageUrl": "/images/checkout/bring/title_and_description.png",
           "imageAlt": "Service title and description",
           "imageClass": "maxw10r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/da/choose_service.png",
+      "illustrationImageUrl": "/images/checkout/bring/da/choose_service.png",
       "illustrationImageAlt": "Choose service by service name",
       "tags": ["Shipping Guide API"],
       "paragraphs": [
@@ -37,12 +37,12 @@
       "h3": "3. Pickup points",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/pickup_points.svg",
+          "imageUrl": "/images/checkout/bring/pickup_points.svg",
           "imageAlt": "Pickup point",
           "imageClass": "w6r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/da/choose_pickup_points.png",
+      "illustrationImageUrl": "/images/checkout/bring/da/choose_pickup_points.png",
       "illustrationImageAlt": "Choose pickup points",
       "tags": ["Pickup Point API"],
       "paragraphs": [
@@ -53,27 +53,27 @@
       "h3": "4. Logo",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/logo_car.png",
+          "imageUrl": "/images/checkout/bring/logo_car.png",
           "imageAlt": "Car with Bring logo",
           "imageClass": "maxw8r"
         },
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/logo_car.png",
+          "imageUrl": "/images/checkout/posten/logo_car.png",
           "imageAlt": "Car with Posten logo",
           "imageClass": "maxw8r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/da/bring_service.png",
+      "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
       "illustrationImageAlt": "Service with posten logo",
       "tags": ["Shipping Guide API"],
       "downloadLinks": [
         {
-          "href": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/Bring_logo.svg",
+          "href": "/images/checkout/bring/Bring_logo.svg",
           "linkText": "Bring logo",
           "name": "bring_logo"
         },
         {
-          "href": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/Posten_logo.svg",
+          "href": "/images/checkout/posten/Posten_logo.svg",
           "linkText": "Posten logo",
           "name": "posten_logo"
         }
@@ -86,12 +86,12 @@
       "h3": "5. Environmental data and icon",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/environmental_logo_simple.svg",
+          "imageUrl": "/images/checkout/environmental_logo_simple.svg",
           "imageAlt": "Environmental friendly logo",
           "imageClass": "maxw16r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/da/show_environmental_info.png",
+      "illustrationImageUrl": "/images/checkout/bring/da/show_environmental_info.png",
       "illustrationImageAlt": "Service with environmental friendly logo",
       "tags": ["Shipping Guide API"],
       "paragraphs": [

@@ -5,12 +5,12 @@
       "h3": "1. Postal code and street address",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/address.png",
+          "imageUrl": "/images/checkout/posten/address.png",
           "imageAlt": "Postal code and address",
           "imageClass": "w6r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/delivery_address.png",
+      "illustrationImageUrl": "/images/checkout/posten/delivery_address.png",
       "illustrationImageAlt": "Delivery address input fields",
       "tags": ["Address API", "Pickup Point API", "Shipping Guide API"],
       "paragraphs": [
@@ -21,12 +21,12 @@
       "h3": "2. Service name and description text",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/title_and_description.svg",
+          "imageUrl": "/images/checkout/posten/title_and_description.svg",
           "imageAlt": "Service title and description",
           "imageClass": "maxw10r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/choose_service.png",
+      "illustrationImageUrl": "/images/checkout/posten/choose_service.png",
       "illustrationImageAlt": "Choose service by service name",
       "tags": ["Shipping Guide API"],
       "paragraphs": [
@@ -37,12 +37,12 @@
       "h3": "3. Pickup points",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/pickup_points.png",
+          "imageUrl": "/images/checkout/posten/pickup_points.png",
           "imageAlt": "Pickup point",
           "imageClass": "w6r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/choose_pickup_points.png",
+      "illustrationImageUrl": "/images/checkout/posten/choose_pickup_points.png",
       "illustrationImageAlt": "Choose pickup points",
       "tags": ["Pickup Point API"],
       "paragraphs": [
@@ -53,12 +53,12 @@
       "h3": "4. Estimated time of delivery",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/estimated_time_of_delivery.svg",
+          "imageUrl": "/images/checkout/posten/estimated_time_of_delivery.svg",
           "imageAlt": "Estimated time of delivery",
           "imageClass": "maxw8r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/show_estimated_time_of_delivery.png",
+      "illustrationImageUrl": "/images/checkout/posten/show_estimated_time_of_delivery.png",
       "illustrationImageAlt": "Service with estimated time of delivery",
       "tags": ["Shipping Guide API"],
       "paragraphs": [
@@ -70,12 +70,12 @@
       "h3": "5. Flexible delivery",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/flexible_delivery.svg",
+          "imageUrl": "/images/checkout/posten/flexible_delivery.svg",
           "imageAlt": "Flexible delivery",
           "imageClass": "maxw8r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/choose_delivery_date.png",
+      "illustrationImageUrl": "/images/checkout/posten/choose_delivery_date.png",
       "illustrationImageAlt": "Choose value added services",
       "tags": ["Shipping Guide API"],
       "paragraphs": [
@@ -85,27 +85,27 @@
       "h3": "6. Logo",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/logo_car.png",
+          "imageUrl": "/images/checkout/bring/logo_car.png",
           "imageAlt": "Car with Bring logo",
           "imageClass": "maxw8r"
         },
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/logo_car.png",
+          "imageUrl": "/images/checkout/posten/logo_car.png",
           "imageAlt": "Car with Posten logo",
           "imageClass": "maxw8r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/posten_service.png",
+      "illustrationImageUrl": "/images/checkout/posten/posten_service.png",
       "illustrationImageAlt": "Service with posten logo",
       "tags": ["Shipping Guide API"],
       "downloadLinks": [
         {
-          "href": "/api/e-commerce-solutions/best-practice-checkout/assets/bring/Bring_logo.svg",
+          "href": "/images/checkout/bring/Bring_logo.svg",
           "linkText": "Bring logo",
           "name": "bring_logo"
         },
         {
-          "href": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/Posten_logo.svg",
+          "href": "/images/checkout/posten/Posten_logo.svg",
           "linkText": "Posten logo",
           "name": "posten_logo"
         }
@@ -118,12 +118,12 @@
       "h3": "7. Environmental data and icon",
       "figures": [
         {
-          "imageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/environmental_logo.png",
+          "imageUrl": "/images/checkout/environmental_logo.png",
           "imageAlt": "Environmental friendly logo",
           "imageClass": "maxw16r"
         }
       ],
-      "illustrationImageUrl": "/api/e-commerce-solutions/best-practice-checkout/assets/posten/show_environmental_info.png",
+      "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
       "illustrationImageAlt": "Service with environmental friendly logo",
       "tags": ["Shipping Guide API"],
       "paragraphs": [

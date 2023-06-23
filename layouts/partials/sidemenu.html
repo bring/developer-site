@@ -33,7 +33,7 @@
                 {{ $target | safeHTMLAttr }}
                 class="dev-sidemenu__apititle"
               >
-                {{ safeHTML .Title }}{{ safeHTML $iconEx }}
+                {{ .Title | safeHTML }}{{ safeHTML $iconEx }}
               </a>
 
               {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
@@ -51,7 +51,7 @@
                         {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}
                         {{ $target | safeHTMLAttr }}
                       >
-                        {{ .Title }} {{ safeHTML $iconEx }}
+                        {{ .Title | safeHTML }} {{ safeHTML $iconEx }}
                       </a>
 
                       {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
@@ -59,7 +59,7 @@
                           {{- range .Children -}}
                             <li>
                               <a href="{{ .URL }}" {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}>
-                                {{ .Title | safeHTML }}
+                                {{ or (T .Identifier) .Title | safeHTML }}
                               </a>
                             </li>
                           {{- end -}}
