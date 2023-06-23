@@ -108,6 +108,22 @@
   box-shadow: 0 0 0 4px #c8dc8c;
 }
 
+.language-container {
+    margin-left: 1rem;
+}
+
+.language-switch-container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1;
+}
+
+.language-btn:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: var(--green-86);
+}
+
 .color-theme-container {
   margin: 0 1rem 0 auto;
 }
