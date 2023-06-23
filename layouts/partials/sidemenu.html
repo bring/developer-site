@@ -1,6 +1,13 @@
 {{- $currentPage := . -}}
 {{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
-
+{{ if gt ($currentPage.Translations | len) 0 }}
+  {{ range $currentPage.Translations }}
+    {{ if eq (string .Language) "en" }}
+      {{ $currentPage = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ with $currentPage }}
 <div class="dev-sidemenu {{ if .IsHome }}dev-sidemenu--front{{ end }}">
   {{- if or (eq .Section "api") (.IsHome) -}}
     <nav aria-label="General API info">
@@ -172,3 +179,4 @@
     </nav>
   {{- end -}}
   </div>
+{{ end }}

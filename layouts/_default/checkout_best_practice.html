@@ -6,10 +6,20 @@
         {{- .Title -}}
       </h1>
       {{ $requestedCountry := .Params.country }}
+      {{ $languages := .Page.AllTranslations}}
       {{ range $country, $data := .Site.Data.checkout }}
         {{ if eq $country $requestedCountry }}
           <section class="dev-docscontent__section flex flex-wrap align-ifs">
             <div class="dev-guide-l">
+              {{ if gt ($languages | len) 1}}
+              <div>
+                <ul class="language-list">
+                  {{ range $languages }}
+                  <li><a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                  {{ end }}
+                </ul>
+              </div>
+              {{ end }}
               <p class="text-heading">
                 Follow these easy steps to improve the presentation of our delivery options in your checkout.
               </p>
