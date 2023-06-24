@@ -75,7 +75,7 @@
     </div>
     {{ $languages := .Page.AllTranslations}}
     {{ $currentLanguage := .Site.LanguageCode }}
-    {{ if gt ($languages | len) 1}}
+    {{ if and (gt ($languages | len) 1) (not .IsHome) }}
     <div class="flex align-ic language-container">
       <div class="relative">
         <button
