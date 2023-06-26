@@ -1,0 +1,21 @@
+name: API updates check
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+    paths:
+      - 'content/api/revision-history/**'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'It looks like you have committed an API update message. It will be emailed to hundreds of people, so a certain quality level is important. There’s a <a href="https://www.mybring.com/design-system/guidelines/writing-information/">formula and checklist</a> that streamlines the writing, and you can ask <a href="https://posten.slack.com/archives/C77MHF7K9">Mybring Experience on Slack</a> for a text review.'
+            })

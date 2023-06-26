@@ -97,7 +97,7 @@ In most cases, publish date is the same as the date of the change, but if the
 message is about an upcoming change, the change date should be mentioned in the
 body text.
 
-Consult the [formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/) to writing these messages.
+Consult the [formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/) to writing these messages. You will also get a comment on your PR with the same link when there are additions in the revision-history folder.
 
 ## Adding an important message to the frontpage
 
