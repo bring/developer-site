@@ -97,20 +97,7 @@ In most cases, publish date is the same as the date of the change, but if the
 message is about an upcoming change, the change date should be mentioned in the
 body text.
 
-### Tips for writing an API update message
-
-- Get the names right. ("Pickup Point API", not "PickuppointAPI". "Mybring" not
-  "MyBring".)
-- Use complete service names ("Pakke i Postkassen" instead of "PiP").
-- Avoid using internal names, too technical jargon and uncommon abbreviations
-  ("XML" is ok, "PuP" is not).
-- Domain specific content like service code lists and code examples are fine.
-- Be clear about which users/customers are affected.
-- Describe what action users must take (if any).
-- Put yourself in the shoes of the user; is there anything that they might
-  misunderstand, have questions about or otherwise start worrying about?
-- Check typos and facts.
-- Try keeping it short.
+Consult the [formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/) to writing these messages.
 
 ## Adding an important message to the frontpage
 
