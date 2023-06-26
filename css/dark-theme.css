@@ -12,6 +12,7 @@
     .btn,
     .btn-link--dark,
     .sitefooter a,
+    .language-switch,
     .dev-siteheader__nav a,
     .dev-sidemenu a,
     .start__col,
@@ -23,6 +24,7 @@
   & a:not(
     .btn,
     .btn-link--dark,
+    .language-switch,
     .sitefooter a,
     .dev-siteheader__nav a,
     .dev-sidemenu a,

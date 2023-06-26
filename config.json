@@ -5,6 +5,17 @@
     "css/main.js"
   ],
   "languageCode": "en-us",
+  "defaultContentLanguage": "en",
+  "languages": {
+    "en":{
+      "staticDir": ["static"],
+      "languageName": "English"
+    },
+    "no": {
+      "staticDir": ["static"],
+      "languageName": "Norsk"
+    }
+  },
   "paginate": 12,
   "pluralizelisttitles": false,
   "publishDir": "_site",

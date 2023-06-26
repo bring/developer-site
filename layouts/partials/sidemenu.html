@@ -1,6 +1,14 @@
 {{- $currentPage := . -}}
+{{ $currentLanguage := .Site.Language }}
 {{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
-
+{{ if gt ($currentPage.Translations | len) 0 }}
+  {{ range $currentPage.Translations }}
+    {{ if eq (string .Language) "en" }}
+      {{ $currentPage = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ with $currentPage }}
 <div class="dev-sidemenu {{ if .IsHome }}dev-sidemenu--front{{ end }}">
   {{- if or (eq .Section "api") (.IsHome) -}}
     <nav aria-label="General API info">
@@ -13,10 +21,17 @@
           {{- end -}}
 
           {{- $hidePage := false -}}
+          {{ $url := .URL }}
           {{- with .Page -}}
             {{- $hidePage = .Params.hidden -}}
+            {{ if gt (.Translations | len) 0 }}
+              {{ range .Translations }}
+                {{ if eq (string .Language) (string $currentLanguage) }}
+                  {{ $url = .RelPermalink }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
           {{- end -}}
-
           {{- if (ne $hidePage true) -}}
             <li
               class="{{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
@@ -28,12 +43,12 @@
                 {{- $iconEx = $iconExHtml -}}
               {{- end -}}
               <a
-                href="{{ .URL | relURL }}"
+                href="{{ $url | relURL }}"
                 {{ if $currentPage.IsMenuCurrent .Menu . }}aria-current="page"{{ end }}
                 {{ $target | safeHTMLAttr }}
                 class="dev-sidemenu__apititle"
               >
-                {{ safeHTML .Title }}{{ safeHTML $iconEx }}
+                {{ .Title | safeHTML }}{{ safeHTML $iconEx }}
               </a>
 
               {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
@@ -41,24 +56,44 @@
                   {{- range .Children -}}
                     {{- $target := "" -}}
                     {{- $iconEx := "" -}}
+                    {{ $url := .URL }}
+                    {{- with .Page -}}
+                      {{ if gt (.Translations | len) 0 }}
+                        {{ range .Translations }}
+                          {{ if eq (string .Language) (string $currentLanguage) }}
+                            {{ $url = .RelPermalink }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    {{- end -}}
                     {{- if .Params.blank -}}
                       {{- $target = "target=\"_blank\" rel=\"noopener noreferrer\"" -}}
                       {{- $iconEx = $iconExHtml -}}
                     {{- end -}}
                     <li>
                       <a
-                        href="{{ .URL }}"
+                        href="{{ $url }}"
                         {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}
                         {{ $target | safeHTMLAttr }}
                       >
-                        {{ .Title }} {{ safeHTML $iconEx }}
+                        {{ .Title | safeHTML }} {{ safeHTML $iconEx }}
                       </a>
 
                       {{- if (and (.HasChildren) (or ($currentPage.HasMenuCurrent .Menu .) ($currentPage.IsMenuCurrent .Menu .) ) ) -}}
                         <ul class="text-note">
                           {{- range .Children -}}
+                            {{ $url := .URL }}
+                            {{- with .Page -}}
+                              {{ if gt (.Translations | len) 0 }}
+                                {{ range .Translations }}
+                                  {{ if eq (string .Language) (string $currentLanguage) }}
+                                    {{ $url = .RelPermalink }}
+                                  {{ end }}
+                                {{ end }}
+                              {{ end }}
+                            {{- end -}}
                             <li>
-                              <a href="{{ .URL }}" {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}>
+                              <a href="{{ $url }}" {{ if $currentPage.IsMenuCurrent .Menu . }}class="active" aria-current="page"{{ end }}>
                                 {{ .Title | safeHTML }}
                               </a>
                             </li>
@@ -172,3 +207,4 @@
     </nav>
   {{- end -}}
   </div>
+{{ end }}
