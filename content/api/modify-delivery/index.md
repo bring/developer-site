@@ -81,13 +81,6 @@ documentation:
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Konv Bedriftspakke Flerkolli</td>
-             <td>1988</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-          </tr>
-          <tr>
              <td>Bedriftspakke Standard</td>
              <td>3500</td>
              <td>Yes</td>
