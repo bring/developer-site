@@ -20,8 +20,8 @@ important:
   - type: warn
     title: API endpoints removed
     message: |
-      The /reports/api/invoices endpoints have been removed from the MyBring Reports application.
-      New endpoint can be found in InvoiceArchive with API endpoints /invoicearchive/api/invoices
+      The /reports/api/invoices endpoints have been removed from the Mybring Reports application.
+      New endpoint can be found in Invoice Archive with API endpoints /invoicearchive/api/invoices
       The replacement API is [documented here](/api/invoice/#list-of-all-invoices-get)
 
 introduction: |
