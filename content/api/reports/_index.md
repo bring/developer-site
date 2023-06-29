@@ -42,20 +42,23 @@ documentation:
       3. Initiate report creation and get the report ID. The Report ID is initially used to monitor reports creation progress, later to get the actual report (XML or Excel file).
       4. After initiating report creation, you can check the status, if it’s in-progress, completed or failed. When completed, a URL to the actual report is returned.
       5. Download report
-      6. Get list of invoice numbers for given customer or group
 
   - title: Invoice sources
     content: |
-      For specified invoice reports, four different report types can be returned depending on the invoice source:
-
-      ### Cargo Domestic and Sea
-        - AMPHORA_DOMESTIC
-        - AMPHORA_SEA
-
-      ### Cargo International and Sysped
-        - AMPHORA_BCI
-        - SYSPED
+      For specified invoice reports, three different report types can be returned depending on the invoice source:
 
       ### Parcels
         - PARCEL_DOMESTIC
+        - PARCEL_INTERNATIONAL
+
+      ### Cargo International or Oil Express
+        - AMPHORA_BCI
+        - SYSPED
+        - WINSPED_BCI
+
+      ### Cargo Domestic, Sea or eCom HD
+        - AMPHORA_DOMESTIC
+        - AMPHORA_SEA
+        - ALYSTRA
+
 ---
