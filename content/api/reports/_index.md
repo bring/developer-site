@@ -51,12 +51,12 @@ documentation:
         - PARCEL_DOMESTIC
         - PARCEL_INTERNATIONAL
 
-      ### Cargo International or Oil Express
+      ### Cargo international or Oil express
         - AMPHORA_BCI
         - SYSPED
         - WINSPED_BCI
 
-      ### Cargo Domestic, Sea or eCom HD
+      ### Cargo domestic, Sea or Home delivery
         - AMPHORA_DOMESTIC
         - AMPHORA_SEA
         - ALYSTRA
