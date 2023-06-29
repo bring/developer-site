@@ -18,9 +18,9 @@ important:
 
       If you are an existing user of Reports API, you will need to make some <a href="/api/reports/agreement_conversion">changes after your company is converted</a> to use new services.
   - type: warn
-    title: API endpoints removed
+    title: API endpoints being removed
     message: |
-      The /reports/api/invoices endpoints have been removed from the Mybring Reports application.
+      The /reports/api/invoices endpoints will be removed from the Mybring Reports application after June 2023.
       New endpoint can be found in Invoice Archive with API endpoints /invoicearchive/api/invoices
       The replacement API is [documented here](/api/invoice/#list-of-all-invoices-get)
 
