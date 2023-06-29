@@ -20,7 +20,7 @@ important:
   - type: warn
     title: API endpoints being removed
     message: |
-      The /reports/api/invoices endpoints will be removed from the Mybring Reports application after June 2023.
+      The /reports/api/invoices endpoints will be removed from the Mybring Reports application after ___June 2023___.
       New endpoint can be found in Invoice Archive with API endpoints /invoicearchive/api/invoices
       The replacement API is [documented here](/api/invoice/#list-of-all-invoices-get)
 
