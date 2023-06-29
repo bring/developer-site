@@ -17,6 +17,12 @@ important:
       Bring is revising the service portfolio. Some of our services have been given new service names, service codes and pricing models.
 
       If you are an existing user of Reports API, you will need to make some <a href="/api/reports/agreement_conversion">changes after your company is converted</a> to use new services.
+  - type: warn
+    title: API endpoints removed
+    message: |
+      The /reports/api/invoices endpoints have been removed from the MyBring Reports application.
+      New endpoint can be found in InvoiceArchive with API endpoints /invoicearchive/api/invoices
+      The replacement API is [documented here](/api/invoice/#list-of-all-invoices-get)
 
 introduction: |
   The Reports API can be used as a tool for analyzing your logistics with Bring. The API lets you generate reports within the categories _status_, _quality and deviation_, _economy_ and _environment_. Supported report formats are XML and Excel.
