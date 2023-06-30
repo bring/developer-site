@@ -272,6 +272,58 @@ types:
                 description: The example below shows empty report without invoice details
                 value: !include examples/empty_report.xml
 
+/invoices/{customerOrGroupId}{mediaTypeExtension}:
+  displayName: List invoice numbers
+  description: |
+    ** DEPRECATED FOR REMOVAL 1. SEPTEMBER 2023 **
+    This endpoint will be removed in a future version of the API.
+    Use the Invoice API instead:
+    [Invoice API / List of all Invoices](/api/invoice/#list-of-all-invoices)
+    Gets the list of invoice numbers for a customer id or a customer group. By default it shows last 65 days of invoices, with the possibility to access 365 days data by providing from date and to date.
+    This endpoint support Main Customer Number only.
+  uriParameters:
+    customerOrGroupId:
+      description: Id for customer or customer group. Customer group id should have the prefix `GROUP_`.
+      type: string
+      required: true
+    mediaTypeExtension:
+      enum: [ .json, .xml ]
+      description: Use .json to specify application/json or .xml to specify application/xml
+  get:
+    description: List invoice numbers
+    headers:
+      Accept-Language:
+        description: A comma-separated list of language codes, `no` for Norwegian, `en` for English, etc.
+        type: string
+        required: false
+    queryParameters:
+            fromDate:
+              description: Start date for fetching invoices in format dd.mm.yyyy.
+              required: false
+              example: 01.01.2019
+            toDate:
+              description: End date for fetching invoices in format dd.mm.yyyy.
+              type: string
+              required: false
+              example: 30.06.2019
+    responses:
+      200:
+        displayName: Successful response
+        description:
+        body:
+          application/json:
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows an list of invoices
+                value: !include examples/list_invoices.json
+          application/xml:
+            examples:
+              successful:
+                displayName: Successful
+                description: The example below shows an list of invoices
+                value: !include examples/list_invoices.xml
+
 /overview/{apiCustomerNumber}/summary{mediaTypeExtension}:
   displayName: Reports overview statistics summary
   description: |
