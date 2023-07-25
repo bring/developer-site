@@ -20,7 +20,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP.
+      REST XML/JSON over HTTPzzzz.
 oas: https://www.mybring.com/invoicearchive/v3/api-docs
 
 documentation:
