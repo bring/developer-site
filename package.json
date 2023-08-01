@@ -37,7 +37,7 @@
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.1",
     "hugo-bin": "^0.108.0",
-    "postcss": "^8.4.24",
+    "postcss": "^8.4.27",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^11.2.2",
     "raml-1-parser": "^1.1.67",
