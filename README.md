@@ -198,6 +198,12 @@ weight: {menu position within the subpage structure}
 ---
 ```
 
+There is support for two levels. If you have many subpages, try grouping them.
+This is done by adding a folder for a group, adding a `_index` file with the
+frontmatter as described above and putting all the related files into that folder.
+In the frontmatter, the parent of the second level should be set to the the id of the
+`_index` file.
+
 ## Updating Booking & SG and VAS tables
 
 1. Clone and make changes in
