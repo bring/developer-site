@@ -28,7 +28,7 @@
       <div class="dev-docscontent__info mvl owlxs">
         {{- range . -}}
           <details class="mb-disclosure mb-disclosure--arrow bg-green1">
-            {{- with .title }}
+            {{- with .title -}}
               <summary class="text-heading">
                 <span
                   data-mybicon="mybicon-arrow-right"
@@ -50,7 +50,7 @@
       </div>
     {{- end -}}
     {{- with $.Params.subpages -}}
-      {{- with .title }}
+      {{- with .title -}}
         <h2 class="dev-anchored" id="{{ . | anchorize }}">
           {{- . -}}
         </h2>
@@ -58,13 +58,21 @@
       {{- range $.Menus -}}
         <ul>
           {{- range .Children -}}
-            <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+            {{- $url := .URL -}}
+            <li><a href="{{ $url }}">{{ .Title }}</a></li>
+            {{- with .Children -}}
+            <ul>
+              {{- range . -}}
+              <li><a href="{{ $url }}#{{ .Title | anchorize }}">{{ .Title }}</a></li>
+              {{- end -}}
+            </ul>
+            {{- end -}}
           {{- end -}}
         </ul>
       {{- end -}}
     {{- end -}}
     {{- range $.Params.documentation -}}
-      {{- with .title }}
+      {{- with .title -}}
         <h2 class="dev-anchored" id="{{ . | anchorize }}">
           {{- . -}}
         </h2>
