@@ -52,6 +52,14 @@
           </section>
         {{- end -}}
       </article>
+
+      {{- range $.Pages -}}
+        <section class="dev-docscontent__section">
+          <h2 id="{{ .Title | anchorize }}" class="dev-anchored">{{ .Title }}</h2>
+          {{ .Content }}
+        </section>
+      {{- end -}}
+
       {{- with $.Parent.Params.subpages -}}
         <div class="dev-docscontent__backnav">
           <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
