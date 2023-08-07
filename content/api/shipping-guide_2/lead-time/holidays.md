@@ -6,8 +6,8 @@ menu:
   apidocs:
     identifier: sgholidays
     title: Holidays and Home Delivery
-    parent: shippingguide_2
-weight: 12
+    parent: sgleadtime
+weight: 6
 ---
 There is no home delivery on bank holidays. It can also happen that Bring
 will not do home delivery on certain days during Christmas or Easter. The

@@ -6,8 +6,8 @@ menu:
   apidocs:
     identifier: sgalternativedeliverydates
     title: Get alternative expected delivery dates
-    parent: shippingguide_2
-weight: 8
+    parent: sgleadtime
+weight: 3
 ---
 Customers who want the x next possible delivery dates in the response, can use the **numberOfAlternativeDeliveryDates**:
 

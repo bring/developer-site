@@ -1,14 +1,16 @@
 ---
-title: Volume, weight, dimensions and loading meter
+title: Price
 layout: api
 notanapi: true
 menu:
   apidocs:
-    identifier: sgdimensions
-    title: Volume, weight, dimensions and loading meter
+    identifier: sgprice
+    title: Price
     parent: shippingguide_2
-weight: 11
+weight: 2
 ---
+
+## Volume, weight, dimensions and loading meter
 Shipping Guide use measurement of the package to calculate price of the
 Shipment. Shipping Guide accept measurements in ```Volume```,
 ```Weight``` and ```Dimensions(Length, Width and Height)```.

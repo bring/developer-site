@@ -7,7 +7,7 @@ menu:
     identifier: sgsvalbard
     title: Svalbard
     parent: shippingguide_2
-weight: 17
+weight: 4
 ---
 
 ## Shipments To & From Svalbard

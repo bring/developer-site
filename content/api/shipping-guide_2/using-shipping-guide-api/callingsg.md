@@ -6,19 +6,18 @@ menu:
   apidocs:
     identifier: sgcalling
     title: Calling Shipping Guide API
-    parent: shippingguide_2
-weight: 1
+    parent: sgusing
+weight: 3
 ---
 This guide will walk you through getting shipment alternatives for your first consignment. We will be calling the REST interface with a HTTP client and query for the service `SERVICEPAKKE` and `PA_DOREN` for two packages.
 
-## 1. Add additional headers
-
+### 1. Add additional headers
 
 For the `POST` requests, Add the following header:
 
 - `Content-type: application/json`
 
-## 2. Add the body to the request
+### 2. Add the body to the request
 There are several ways you can control the output of your request. The following elements controls what the API will calculate.
 
 | Element name |  Description |
@@ -37,7 +36,7 @@ There are several ways you can control the output of your request. The following
 In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
 
-### REST (POST)
+#### REST (POST)
 
 ```json
 {  
@@ -105,7 +104,7 @@ In this request we will query prices and expected delivery time for the service 
 }
 ```
 
-## 3. Submit the request
+### 3. Submit the request
 
 
 Post your request to 
