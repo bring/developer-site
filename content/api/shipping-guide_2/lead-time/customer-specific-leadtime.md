@@ -1,7 +1,5 @@
 ---
 title: Get customer specific leadtimes for Mailbox Parcel (Pakke i postkassen)
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgcustomerspecificleadtime

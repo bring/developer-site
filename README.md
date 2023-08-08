@@ -187,8 +187,7 @@ And to the subpages’ frontmatter:
 ```
 ---
 title: {title that appears at the top of the page}
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: {unique id, for instance apifolder+pagename}

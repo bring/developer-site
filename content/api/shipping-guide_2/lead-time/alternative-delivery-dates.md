@@ -1,7 +1,5 @@
 ---
 title: Get alternative expected delivery dates
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgalternativedeliverydates

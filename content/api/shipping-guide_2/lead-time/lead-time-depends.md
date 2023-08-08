@@ -1,7 +1,5 @@
 ---
 title: Lead time depends on the recipient’s postal code and address
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgleadtimedepends

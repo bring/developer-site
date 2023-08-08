@@ -1,7 +1,6 @@
 ---
 title: Svalbard
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: pupsvalbard

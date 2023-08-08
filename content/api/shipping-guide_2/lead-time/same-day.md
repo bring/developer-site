@@ -1,7 +1,5 @@
 ---
 title: Same day delivery
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgsortingareas

@@ -1,7 +1,6 @@
 ---
 title: LQ - Limited quantities (of dangerous goods)
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookinglq

@@ -1,7 +1,5 @@
 ---
 title: Versioning
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgversioning

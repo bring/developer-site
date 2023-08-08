@@ -1,7 +1,6 @@
 ---
 title: Generating QR Codes
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingqr

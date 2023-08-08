@@ -1,7 +1,5 @@
 ---
 title: Calling Shipping Guide API
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgcalling

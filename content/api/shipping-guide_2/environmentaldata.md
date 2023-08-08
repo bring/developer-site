@@ -1,7 +1,6 @@
 ---
 title: Environmental data
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: sgvenvironmentaldata

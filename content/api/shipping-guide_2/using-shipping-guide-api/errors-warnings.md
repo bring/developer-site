@@ -1,7 +1,5 @@
 ---
 title: Error and warning handling
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgwarnings

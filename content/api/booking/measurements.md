@@ -1,7 +1,6 @@
 ---
 title: Measurements for Cargo and Home Delivery services
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingmeasurements

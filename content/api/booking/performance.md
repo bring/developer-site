@@ -1,7 +1,6 @@
 ---
 title: Performance
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingperformance

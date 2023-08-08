@@ -1,7 +1,5 @@
 ---
 title: Estimated arrival time for domestic parcels and cargo
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgeta

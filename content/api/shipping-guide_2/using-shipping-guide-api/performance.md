@@ -1,7 +1,5 @@
 ---
 title: Performance
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgperformance

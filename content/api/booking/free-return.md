@@ -1,7 +1,6 @@
 ---
 title: Free return of parcels
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingfreereturn

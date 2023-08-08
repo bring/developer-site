@@ -1,7 +1,5 @@
 ---
 title: Holidays and Home Delivery
-layout: api
-notanapi: true
 menu:
   apidocs:
     identifier: sgholidays
