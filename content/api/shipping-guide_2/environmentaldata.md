@@ -1,11 +1,11 @@
 ---
-title: Shipment environmental data
+title: Environmental data
 layout: api
 notanapi: true
 menu:
   apidocs:
     identifier: sgvenvironmentaldata
-    title: Shipment environmental data
+    title: Environmental data
     parent: shippingguide_2
 weight: 4
 ---
