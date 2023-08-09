@@ -23,9 +23,9 @@ There are several ways you can control the output of your request. The following
 | `withPrice` | Controls whether prices should be calculated. Default `true` |
 | `withExpectedDelivery` | Controls whether lead times should be calculated. Default `true` |
 | `withGuiInformation` | Return detailed information about requested service. Default `true` |
-| `withEstimatedDeliveryTime` | Extended lead time information, including predicted arrival time at pickup point. Only supported for a limited set of [services](https://developer.bring.com/api/shipping-guide_2/lead-time/#estimated-arrival-time-for-domestic-parcels-and-cargo). Default `false` |
+| `withEstimatedDeliveryTime` | Extended lead time information, including predicted arrival time at pickup point. Only supported for a limited set of [services](/api/shipping-guide_2/lead-time/#estimated-arrival-time-for-domestic-parcels-and-cargo). Default `false` |
 | `numberOfAlternativeDeliveryDates` | Number of alternative delivery dates to be suggested. Default `0`, maximum `9` |
-| `withEnvironmentalData`| Return [environmental data](https://developer.bring.com/api/shipping-guide_2/environmentaldata/) about fossil free and electric transportation used on different transport legs |
+| `withEnvironmentalData`| Return [environmental data](/api/shipping-guide_2/environmentaldata/) about fossil free and electric transportation used on different transport legs |
 | `language` | Language in which human readable message should be returned. Supported languages are `NO`, `DK`, `SE` and `EN` |
 | `edi` | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
 | `postingAtPostoffice` | Will the parcel be delivered at a post office when shipped. Default `false` |
