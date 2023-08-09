@@ -1,8 +1,8 @@
 .dev-drawmenu {
   display: none;
   flex: 0 0 auto;
-  padding-left: 6vw;
-  padding-right: 6vw;
+  padding-left: min(2rem, 6vw);
+  padding-right: min(2rem, 6vw);
   position: sticky;
   top: 0;
   background-color: hsla(0, 0%, 100%, 0.9);

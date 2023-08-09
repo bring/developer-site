@@ -20,13 +20,42 @@
   flex: 1 0 auto;
 }
 
+.dev-docsapisub {
+  display: flex;
+  flex-flow: row-reverse wrap;
+  row-gap: min(2rem, 6vw);
+  justify-content: flex-end;
+
+  & > nav {
+    flex: 1 1 16rem;
+
+    & ul {
+      top: 6rem;
+      position: sticky;
+      list-style: none;
+      margin: 0;
+      padding: 0 min(2rem,6vw);
+    }
+
+    & li {
+      margin-bottom: min(0.75em,1vh);
+    }
+  }
+
+  .dev-docsapisub__content {
+    flex: 2 1 32rem;
+    max-width: 54rem;
+    min-width: 0;
+  }
+}
+
 .dev-docscontent {
   padding-top: 3rem;
   padding-bottom: 1rem;
 }
 
 .dev-docscontent h1 {
-  padding-left: 6vw;
+  padding-left: min(2rem, 6vw);
   margin-bottom: 0.6em;
 }
 
@@ -36,12 +65,12 @@ p a:not(.btn-link--dark, .btn-link) {
 }
 
 .dev-docscontent__backnav {
-  padding: 0 6vw 2rem;
+  padding: 0 min(2rem, 6vw) min(2rem,4vh);
 }
 
 .dev-docscontent__section {
   margin-bottom: 3rem;
-  padding: 0 6vw 1rem;
+  padding: 0 min(2rem, 6vw) min(2rem,4vh);
   border-width: 2px;
   border-color: var(--gray-86);
   border-bottom-style: solid;
@@ -130,18 +159,6 @@ p a:not(.btn-link--dark, .btn-link) {
 
   .dev-docscontent {
     padding-left: 2rem;
-  }
-
-  .dev-docscontent h1 {
-    padding-left: 2rem;
-  }
-
-  .dev-docscontent__backnav {
-    padding: 0 2rem 2rem 2rem;
-  }
-
-  .dev-docscontent__section {
-    padding: 0 2rem 3rem 2rem;
   }
 }
 

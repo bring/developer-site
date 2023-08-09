@@ -1,37 +1,48 @@
 {{- define "main" -}}
-  <main id="main" class="dev-docscontent w100p maxw80r">
-    <div class="dev-docscontent__backnav">
+  <div class="dev-docscontent">
+    <nav aria-label="back" class="dev-docscontent__backnav">
       <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
-    </div>
+    </nav>
 
-    <article>
-      <h1>
-        {{- .Title -}}
-        {{- with .Params.titlesub -}}
-          <span class="db text-title mts">{{ . }}</span>
-        {{- end -}}
-      </h1>
+    <main id="main" class="">
+      <article>
+        <h1>
+          {{- .Title -}}
+          {{- with .Params.titlesub -}}
+            <span class="db text-title mts">{{ . }}</span>
+          {{- end -}}
+        </h1>
 
-      {{ with .Content }}
-        {{- if in (string .) "dev-docscontent__section" -}}
-          {{- . -}}
-        {{- else -}}
-          <section class="dev-docscontent__section">
-            {{- . -}}
-          </section>
-        {{- end -}}
-      {{ end }}
+        <div class="dev-docsapisub">
+          {{- with $.Pages -}}
+            <nav aria-label="On this page" class="subpagenav">
+              <ul>
+                {{ range . }}
+                  <li><a href="#{{ .Title|anchorize }}">{{ .Title }}</a></li>
+                {{ end }}
+              </ul>
+            </nav>
+          {{- end -}}
+          <div class="dev-docsapisub__content">
+            {{- with .Content -}}
+              {{- if in (string .) "dev-docscontent__section" -}}
+                {{- . -}}
+              {{- else -}}
+                <section class="dev-docscontent__section">
+                  {{- . -}}
+                </section>
+              {{- end -}}
+            {{- end -}}
+            {{- range $.Pages -}}
+              <section class="dev-docscontent__section">
+                <h2 id="{{ .Title | anchorize }}" class="dev-anchored">{{ .Title }}</h2>
+                {{ .Content }}
+              </section>
+            {{- end -}}
+          </div>
+        </div>
 
-      {{- range $.Pages -}}
-        <section class="dev-docscontent__section">
-          <h2 id="{{ .Title | anchorize }}" class="dev-anchored">{{ .Title }}</h2>
-          {{ .Content }}
-        </section>
-      {{- end -}}
-    </article>
-
-    <div class="dev-docscontent__backnav">
-      <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
-    </div>
-  </main>
+      </article>
+    </main>
+  </div>
 {{- end -}}
