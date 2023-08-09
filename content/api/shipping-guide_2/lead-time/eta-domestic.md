@@ -61,15 +61,10 @@ The arrival window is returned as time slots in the API response:
  ```
 
 #### How to present the time window data in your checkout
-We recommend to insert the start (X) and end (Y) time values into the following sentence:
+We recommend to insert the start (X) and end (Y) time values together with the expected delivery date, we recommend the following implementation:
 
-* **NO:** Pakken ankommer vanligvis mellom kl. X og Y
-* **EN:** The parcel usually arrives between X and Y
-
-Together with the expected delivery date, we recommend the following implementation:
-
-* **NO:** Forventet levert XX.XX.20XX. Pakken ankommer vanligvis mellom kl. X og Y
-* **EN:** Expected delivered XX.XX.20XX. The parcel usually arrives between X and Y
+* **NO:** Forventet levert **(dato)** mellom X og Y
+* **EN:** Expected delivered **(date)** between X and Y
 
 Even though the API response schema supports minute granularity for start and end time, the minute value will always be set to 0. It is therefore sufficient to parse hours only.
 
