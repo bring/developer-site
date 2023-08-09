@@ -1,7 +1,6 @@
 ---
 title: Checking prices and availability
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingpriceavailability

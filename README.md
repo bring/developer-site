@@ -187,8 +187,7 @@ And to the subpages’ frontmatter:
 ```
 ---
 title: {title that appears at the top of the page}
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: {unique id, for instance apifolder+pagename}
@@ -197,6 +196,12 @@ menu:
 weight: {menu position within the subpage structure}
 ---
 ```
+
+There is support for two levels. If you have many subpages, try grouping them.
+This is done by adding a folder for a group, adding a `_index` file with the
+frontmatter as described above and putting all the related files into that folder.
+In the frontmatter, the parent of the second level should be set to the the id of the
+`_index` file.
 
 ## Updating Booking & SG and VAS tables
 

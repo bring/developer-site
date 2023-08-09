@@ -1,7 +1,6 @@
 ---
 title: Versioning
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingversioning

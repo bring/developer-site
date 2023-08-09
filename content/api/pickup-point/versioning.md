@@ -1,14 +1,12 @@
 ---
 title: Versioning
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: pupversioning
     title: Versioning
     parent: pickuppoint
 weight: 2
-hidden: true
 ---
 The Pickup Point API makes an effort to always be backwards compatible regarding data format for requests and responses.
 

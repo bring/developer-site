@@ -1,7 +1,6 @@
 ---
 title: QuickPack Envelope for Express International
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingquickpack

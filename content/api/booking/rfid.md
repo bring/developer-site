@@ -1,7 +1,6 @@
 ---
 title: RFID labels for Mailbox Parcel (3570)
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingrfid

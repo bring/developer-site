@@ -1,7 +1,6 @@
 ---
 title: Making labels
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: bookingmakinglabels

@@ -1,13 +1,12 @@
 ---
 title: Svalbard
-layout: api
-notanapi: true
+layout: api-sub
 menu:
   apidocs:
     identifier: sgsvalbard
     title: Svalbard
     parent: shippingguide_2
-weight: 17
+weight: 4
 ---
 
 ## Shipments To & From Svalbard

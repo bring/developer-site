@@ -11,11 +11,6 @@
 
   {{- if (eq $notAnApi true) -}}
     <main id="main" class="dev-docscontent w100p {{ $maxwidth }}">
-      {{- with $.Parent.Params.subpages -}}
-        <div class="dev-docscontent__backnav">
-          <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
-        </div>
-      {{- end -}}
       <article>
         <h1>
           {{- .Title -}}
@@ -52,11 +47,6 @@
           </section>
         {{- end -}}
       </article>
-      {{- with $.Parent.Params.subpages -}}
-        <div class="dev-docscontent__backnav">
-          <a href="{{ $.Parent.RelPermalink }}">&larr; Back to {{ $.Parent.Title }}</a>
-        </div>
-      {{- end -}}
     </main>
 
   {{- else if isset $.Params "oas" -}}
