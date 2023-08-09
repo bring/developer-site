@@ -29,7 +29,6 @@ There are several ways you can control the output of your request. The following
 | `language` | Language in which human readable message should be returned. Supported languages are `NO`, `DK`, `SE` and `EN` |
 | `edi` | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
 | `postingAtPostoffice` | Will the parcel be delivered at a post office when shipped. Default `false` |
-| `trace` | Trace messages should be returned or not. Refer TraceType description in response. Default `false` |
 
 In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
