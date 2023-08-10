@@ -2,7 +2,7 @@
   "en": {
     "ingress": {
       "paragraphs": [
-        "Follow these easy steps to improve the presentation of our delivery options in your checkout.",
+        "Follow these steps to improve the presentation of our delivery options in your checkout.",
         "If you need help implementing any of these steps, go visit our <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> or contact our <a href=\"mailto:checkoutSE@bring.com\">Checkout implementation team</a>.",
         "You may also be looking for best practice guides for:"
       ]
@@ -119,7 +119,7 @@
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
-            "imageClass": "maxw16r"
+            "imageClass": "maxw8r"
           }
         ],
         "illustrationImageUrl": "/images/checkout/bring/se/show_environmental_info.png",

@@ -21,16 +21,19 @@
           {{- end -}}
 
           {{- $hidePage := false -}}
-          {{ $url := .URL }}
+          {{- $url := .URL -}}
           {{- with .Page -}}
+            {{/*  Semi-hacky way to prevent category from linking to untranslated category page  */}}
+            {{- $categoryCheckUrl := strings.TrimLeft "/no" .RelPermalink -}}
+            {{- $categoryCheckUrl = strings.TrimRight "/" $categoryCheckUrl -}}
             {{- $hidePage = .Params.hidden -}}
-            {{ if gt (.Translations | len) 0 }}
-              {{ range .Translations }}
-                {{ if eq (string .Language) (string $currentLanguage) }}
-                  {{ $url = .RelPermalink }}
-                {{ end }}
-              {{ end }}
-            {{ end }}
+            {{- if and (gt (len .Translations) 0) (ne $categoryCheckUrl $.Section) -}}
+              {{- range .Translations -}}
+                {{- if eq (string .Language) (string $currentLanguage) -}}
+                  {{- $url = .RelPermalink -}}
+                {{- end -}}
+              {{- end -}}
+            {{- end -}}
           {{- end -}}
           {{- if (ne $hidePage true) -}}
             <li
