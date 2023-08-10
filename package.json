@@ -29,21 +29,21 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^4.0.4",
-    "@vitejs/plugin-react": "^4.0.0",
+    "@vitejs/plugin-legacy": "^4.1.1",
+    "@vitejs/plugin-react": "^4.0.4",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.2.0",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.1",
-    "hugo-bin": "^0.108.0",
-    "postcss": "^8.4.24",
+    "hugo-bin": "^0.113.0",
+    "postcss": "^8.4.27",
     "postcss-import": "^15.1.0",
-    "postcss-nesting": "^11.2.2",
+    "postcss-nesting": "^12.0.1",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^5.0.1",
-    "terser": "^5.17.7",
-    "vite": "^4.3.9"
+    "terser": "^5.19.2",
+    "vite": "^4.4.9"
   },
   "browserslist": [
     "> .2%",
