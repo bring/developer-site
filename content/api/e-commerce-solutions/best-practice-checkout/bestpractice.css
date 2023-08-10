@@ -1,33 +1,21 @@
 .best-practice-item {
-    padding: 3em;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 2rem;
+    max-width: max-content;
+
+    & > div {
+        flex: 1 2 24rem;
+        max-width: max-content;
+    }
+
+    & > figure {
+        flex: 1 1 24rem;
+        max-width: 40rem;
+    }
 }
 
 .flag {
-    width: 17px;
-}
-
-.flag--small {
-    width: 15px;
-}
-
-@media only screen and (max-width: 1550px) {
-    .best-practice-item {
-        padding: 2rem;
-    }
-
-    .best-practice-item--illustration {
-        margin-left: 1rem;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    .best-practice-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .best-practice-item--illustration {
-        margin-left: 0;
-        padding-top: 2rem;
-    }
+    width: 1.1em;
 }
