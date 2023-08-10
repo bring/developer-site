@@ -73,9 +73,11 @@
         </div>
       </div>
     </div>
-    {{ $languages := .Page.AllTranslations}}
-    {{ $currentLanguage := .Site.LanguageCode }}
-    {{ if and (gt ($languages | len) 1) (not .IsHome) }}
+    {{- $languages := .Page.AllTranslations -}}
+    {{- $currentLanguage := .Site.LanguageCode -}}
+    {{- $categoryCheckUrl := strings.TrimLeft "/no" .RelPermalink -}}
+    {{- $categoryCheckUrl = strings.TrimRight "/" $categoryCheckUrl -}}
+    {{- if and (gt ($languages | len) 1) (not .IsHome) (ne $categoryCheckUrl $.Section) -}}
     <div class="flex align-ic language-container">
       <div class="relative">
         <button
@@ -89,22 +91,22 @@
           {{- range $languages -}}
             {{- if eq (string .Language) (string $currentLanguage) -}}
               <span class="pointev-none">{{ .Language.LanguageName }}</span>
-          {{ end }}
-          {{ end }}
+            {{- end -}}
+          {{- end -}}
         </button>
         <div class="paxs rad-a2px bg-gray1 bshadow--dark language-switch-container w100p dn" id="languageSwitchContainer">
-          {{ range $languages }}
-          <a href="{{ .Permalink | relURL }}"
-             class="btn-link btn--transparent phs language-switch w100p"
-             data-language="{{ .Language.LanguageName }}"
-          >
-            {{ .Language.LanguageName }}
-          </a>
-          {{ end }}
+          {{- range $languages -}}
+            <a href="{{ .Permalink | relURL }}"
+              class="btn-link btn--transparent phs language-switch w100p"
+              data-language="{{ .Language.LanguageName }}"
+            >
+              {{ .Language.LanguageName }}
+            </a>
+          {{- end -}}
         </div>
       </div>
     </div>
-    {{ end }}
+    {{- end -}}
     <div class="dev-siteheader__search">
       <span
         data-mybicon="mybicon-search"
