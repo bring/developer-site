@@ -1,6 +1,6 @@
 import { defineConfig } from "vite"
 import legacy from "@vitejs/plugin-legacy"
-import react from "@vitejs/plugin-react"
+import preact from "@preact/preset-vite"
 
 export default defineConfig({
   define: {
@@ -23,5 +23,5 @@ export default defineConfig({
       }
     }
   },
-  plugins: [legacy(), react()],
+  plugins: [legacy(), preact()],
 })
