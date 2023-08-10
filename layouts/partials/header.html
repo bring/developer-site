@@ -165,7 +165,7 @@
           themeSwitchContainer.classList.add("dn");
         }
 
-        if (e.target !== languageSwitchContainer && e.target !== languageBtn) {
+        if (languageBtn && e.target !== languageSwitchContainer && e.target !== languageBtn) {
           languageBtn.setAttribute("aria-expanded", "false");
           languageSwitchContainer.classList.add("dn");
         }
