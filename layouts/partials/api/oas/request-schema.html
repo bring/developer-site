@@ -1,5 +1,7 @@
 {{- $schemaObj := .schemaObj -}}
 {{- $name := .name -}}
+{{- $objName := .objName -}}
+{{- $contactParent := .contactParent -}}
 {{- $components := .components -}}
 {{- $required := .required -}}
 {{- $endpointId := .endpointId -}}
@@ -27,9 +29,10 @@
 {{- range $key, $_ := $schemaObj -}}
   {{- if eq $key "$ref" -}}
     {{- $isRef = true -}}
+    {{- $contactParent = $objName -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd) -}}
+    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
   {{- end -}}
 {{- end -}}
 
@@ -47,6 +50,7 @@
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
   {{- $uniqueId = slicestr $generateId 0 15 -}}
   {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
+  {{- $objName = $name -}}
 
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $isOf "radio" -}}
@@ -69,6 +73,14 @@
     {{- end -}}
   {{- else -}}
     {{/*  Render first level isOf without visible dt  */}}
+    {{/*  Only show contact details element for sender party (booking API docs)  */}}
+    {{- if and
+      (or (ne $name "contact") (ne $contactParent "consignee"))
+      (or (ne $name "contact") (ne $contactParent "consignor"))
+      (or (ne $name "contact") (ne $contactParent "importer"))
+      (or (ne $name "contact") (ne $contactParent "returnTo"))
+      (or (ne $name "contact") (ne $contactParent "recipient"))
+    -}}
     <div class="{{ if not $isFirstLevelOf }}mb-border bb bw1{{ end }} mbs">
       <div class="flex flex-wrap align-ifs pbs {{ if $isFirstLevelOf }}screen-reader-text{{ end }}">
         <dt>
@@ -97,7 +109,7 @@
         <dd class="schema__sublist {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+              {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "objName" $objName) -}}
             {{- end -}}
           </dl>
         </dd>
@@ -160,6 +172,7 @@
         </dd>
       {{- end -}}
     </div>
+    {{- end -}}
   {{- end -}}
 
 {{/*  If array, render and pass items  */}}
@@ -276,6 +289,18 @@
 
 {{/*  If neither obj, arr or ref, render the item */}}
 {{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) -}}
+  {{/*  Hide irrelevant params for specific parties (booking API docs)  */}}
+  {{- if and
+    (or (ne $name "additionalAddressInfo") (ne $objName "consignee"))
+    (or (ne $name "additionalAddressInfo") (ne $objName "consignor"))
+    (or (ne $name "additionalAddressInfo") (ne $objName "importer"))
+    (or (ne $name "additionalAddressInfo") (ne $objName "returnTo"))
+    (or (ne $name "reference") (ne $objName "consignee"))
+    (or (ne $name "reference") (ne $objName "consignor"))
+    (or (ne $name "reference") (ne $objName "importer"))
+    (or (ne $name "reference") (ne $objName "returnTo"))
+    (or (ne $name "vatNumber") (ne $objName "returnTo"))
+  -}}
   <div class="mb-border bb bw1 mbs pbs pls">
     <div class="flex flex-wrap align-ifs">
       <dt>
@@ -308,4 +333,5 @@
       </dd>
     </div>
   </div>
+  {{- end -}}
 {{- end -}}
