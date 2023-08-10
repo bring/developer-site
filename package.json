@@ -29,8 +29,8 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^4.1.1",
-    "@vitejs/plugin-react": "^4.0.4",
+    "@preact/preset-vite": "^2.5.0",
+    "@vitejs/plugin-legacy": "^4.0.4",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.14",
     "concurrently": "^8.2.0",
@@ -52,9 +52,7 @@
   "dependencies": {
     "algoliasearch": "^4.17.2",
     "anchor-js": "^5.0.0",
-    "react": "^18.2.0",
     "react-autosuggest": "^10.1.0",
-    "react-dom": "^18.2.0",
     "react-instantsearch-dom": "^6.40.0"
   }
 }

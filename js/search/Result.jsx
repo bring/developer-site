@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from 'preact/hooks'
 import { Highlight, connectAutoComplete } from "react-instantsearch-dom"
 import AutoSuggest from "react-autosuggest"
 import AlgoLogo from "./AlgoLogo.jsx"
