@@ -45,8 +45,9 @@
     {{ if lt (len $objName) 1 }}
       {{ $xmlObject = "<!-- Example cannot be generated; root element name is undefined -->" }}
     {{ else }}
+      {{/*  Obj/arr start tag  */}}
       {{ $xmlObject = printf "%s<%s" $xmlObject $name }}
-      {{/*  in case it’s an object with children as attributes  */}}
+      {{/*  In case of children as attributes  */}}
       {{ range $schemaKey, $schemaVal := $schemaObj.properties }}
         {{ range $exampleKey, $exampleVal := $exampleObj }}
           {{ if eq (lower $schemaKey) (lower $exampleKey) }}
@@ -84,14 +85,21 @@
         {{ range $key, $_ := $exampleObj }}
           {{ if eq (lower $objName) (lower $key) }}
             {{ range . }}
-              {{ $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "lev" $lev) }}
-              {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart }}
+              {{ $xmlArrayEl := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "lev" $lev) }}
+              {{/*  If items type is string (and not object) wrap each array element on a new line  */}}
+              {{ if eq $schemaObj.items.type "string" }}
+                {{ with $schemaObj.items.xml.name }}
+                  {{ $key = . }}
+                {{ end }}
+                {{ $xmlArrayEl = printf "%s  <%s>%s</%s>\n" $indent $key $xmlArrayEl $key }}
+              {{ end }}
+              {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayEl }}
             {{ end }}
           {{ end }}
         {{ end }}
         {{ $xmlObject = printf "%s%s" $xmlObject $xmlArray }}
       {{ end }}
-
+      {{/*  Obj/arr end tag  */}}
       {{ $xmlObject = println (printf "%s%s</%s>" $xmlObject $indent $name) }}
     {{ end }}
     {{ $XML = printf "%s%s" $XML $xmlObject }}
@@ -107,7 +115,7 @@
       {{ if reflect.IsSlice $value }}
         {{ range $value }}
           {{ $value = . }}
-          {{ $xmlLine = printf "%s<%s>%s</%s>" $indent $name (string $value) $name  }}
+          {{ $xmlLine = printf "%s<%s>%s</%s>" $indent $name (string $value) $name }}
           {{ $XML = println (printf "%s%s" $XML $xmlLine) }}
         {{ end }}
       {{ else }}
