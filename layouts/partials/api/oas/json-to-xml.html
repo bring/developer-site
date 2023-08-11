@@ -45,8 +45,9 @@
     {{ if lt (len $objName) 1 }}
       {{ $xmlObject = "<!-- Example cannot be generated; root element name is undefined -->" }}
     {{ else }}
+      {{/*  Obj/arr start tag  */}}
       {{ $xmlObject = printf "%s<%s" $xmlObject $name }}
-      {{/*  in case it’s an object with children as attributes  */}}
+      {{/*  In case of children as attributes  */}}
       {{ range $schemaKey, $schemaVal := $schemaObj.properties }}
         {{ range $exampleKey, $exampleVal := $exampleObj }}
           {{ if eq (lower $schemaKey) (lower $exampleKey) }}
@@ -98,7 +99,7 @@
         {{ end }}
         {{ $xmlObject = printf "%s%s" $xmlObject $xmlArray }}
       {{ end }}
-
+      {{/*  Obj/arr end tag  */}}
       {{ $xmlObject = println (printf "%s%s</%s>" $xmlObject $indent $name) }}
     {{ end }}
     {{ $XML = printf "%s%s" $XML $xmlObject }}
@@ -114,7 +115,7 @@
       {{ if reflect.IsSlice $value }}
         {{ range $value }}
           {{ $value = . }}
-          {{ $xmlLine = printf "%s<%s>%s</%s>" $indent $name (string $value) $name  }}
+          {{ $xmlLine = printf "%s<%s>%s</%s>" $indent $name (string $value) $name }}
           {{ $XML = println (printf "%s%s" $XML $xmlLine) }}
         {{ end }}
       {{ else }}
