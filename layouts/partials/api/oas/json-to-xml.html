@@ -84,8 +84,15 @@
         {{ range $key, $_ := $exampleObj }}
           {{ if eq (lower $objName) (lower $key) }}
             {{ range . }}
-              {{ $xmlArrayPart := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "lev" $lev) }}
-              {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayPart }}
+              {{ $xmlArrayEl := partial "api/oas/json-to-xml.html" (dict "schemaObj" $schemaObj.items "name" $key "components" $components "exampleObj" . "lev" $lev) }}
+              {{/*  If items type is string (and not object) wrap each array element on a new line  */}}
+              {{ if eq $schemaObj.items.type "string" }}
+                {{ with $schemaObj.items.xml.name }}
+                  {{ $key = . }}
+                {{ end }}
+                {{ $xmlArrayEl = printf "%s  <%s>%s</%s>\n" $indent $key $xmlArrayEl $key }}
+              {{ end }}
+              {{ $xmlArray = printf "%s%s" $xmlArray $xmlArrayEl }}
             {{ end }}
           {{ end }}
         {{ end }}
