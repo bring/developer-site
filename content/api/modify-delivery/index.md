@@ -131,13 +131,14 @@ documentation:
 
   - title: Supported services outside Norway
     content: |
-      There are limitations on shipments that are either sent domestically
-      in Sweden and Denmark, or cross border between Norway, Sweden and Denmark.
-      Please see the detailed overview of the allowed service and to - from address
-      combinations below for stop shipment and change address. Currently, Modify COD is not supported on shipments outside of Norway.
+      Outside Norway we support stop shipment and change address, but with limitations.
+      Please see the detailed overview below for each of the Modify Delivery
+      services and when they are available.g
 
+  - title: Stop shipment outside Norway
+    content: |
       These services are available on domestic shipments in Sweden and Denmark, and cross border shipments for Norway, Sweden and Denmark.
-      Please verify in the table below if your to - from country is valid for the service on your shipments.
+      Please verify in the table below the service and to - from country is valid for your shipments.
       <table>
         <thead>
          <tr>
@@ -236,6 +237,8 @@ documentation:
         </tbody>
       </table>
 
+  - title: Change address outside Norway
+    content: |
       These services are available **only** on shipments being sent to Norway from Sweden or Denmark.
       <table>
         <thead>
