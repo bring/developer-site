@@ -44,7 +44,7 @@ documentation:
         - In transit (to final destination)
         - Home Delivery ordered
 
-      Any of the following value added services shout not already be present on the shipment:
+      Any of the following value added services should not already be present on the shipment:
         - Optional pickup point (0010)
         - Parcel locker (0011)
         - Home delivery from pickup point (1158)
@@ -53,7 +53,7 @@ documentation:
         - Ibox Sweden (1337)
         - Parcel locker same day (1373)
 
-  - title: Supported services in Norway
+  - title: Supported services
     content: |
       These services are available only for domestic Norway shipments, meaning shipments that are going from and to an address in Norway.
       <table>
@@ -137,19 +137,63 @@ documentation:
              <td>Yes</td>
              <td>Yes</td>
           </tr>
+          <tr>
+             <td>Business parcel</td>
+             <td>0330</td>
+             <td>Yes</td>
+             <td>Yes</td>
+             <td>No</td>
+          </tr>
+          <tr>
+             <td>Business parcel bulk</td>
+             <td>0332</td>
+             <td>Yes</td>
+             <td>Yes</td>
+             <td>No</td>
+          </tr>
+          <tr>
+             <td>Business pallet</td>
+             <td>0336</td>
+             <td>Yes</td>
+             <td>No</td>
+             <td>No</td>
+          </tr>
+          <tr>
+             <td>Pickup parcel</td>
+             <td>0340</td>
+             <td>Yes</td>
+             <td>No</td>
+             <td>No</td>
+          </tr>
+          <tr>
+             <td>Pickup parcel bulk</td>
+             <td>0342</td>
+             <td>Yes</td>
+             <td>No</td>
+             <td>No</td>
+          </tr>
+          <tr>
+             <td>Home delivery parcel</td>
+             <td>0349</td>
+             <td>Yes</td>
+             <td>No</td>
+             <td>No</td>
+          </tr>
         </tbody>
       </table>
 
-  - title: Supported services outside Norway
+  - title: Limitations
     content: |
-      Outside Norway we support stop shipment and change address, but with limitations.
-      Please see the detailed overview below for each of the Modify Delivery
-      services and when they are available.
+      When ordering stop shipment there may be some scenarios we do not
+      support given the _from_ and _to_ country of the shipment. These scenarios are
+      listed below. Likewise, there are some limitations on change
+      address too - this is only available when the recipient country is Norway.
+      We do not allow changing the delivery address for shipments going to Sweden or Denmark.
+      Please note that all service codes not starting with **03XX**
+      are **only** available in Norway and the supported services can be seen in the table above.
 
-  - title: Stop shipment outside Norway
+  - title: Valid stop shipment scenarios
     content: |
-      These services are available on domestic shipments in Sweden and Denmark, and cross border shipments for Norway, Sweden and Denmark.
-      Please verify in the table below the service and from - to country is valid for your shipments.
       <table>
         <thead>
          <tr>
@@ -248,26 +292,5 @@ documentation:
         </tbody>
       </table>
 
-  - title: Change address outside Norway
-    content: |
-      These services are available **only** on shipments being sent to Norway from Sweden or Denmark.
-      <table>
-        <thead>
-         <tr>
-           <th>Service</th>
-           <th>Service Code</th>
-         </tr>
-        </thead>
-        <tbody>
-          <tr>
-             <td>Business parcel</td>
-             <td>0330</td>
-          </tr>
-          <tr>
-             <td>Business parcel bulk</td>
-             <td>0332</td>
-          </tr>
-        </tbody>
-      </table>
 oas: https://www.qa.mybring.com/modify-delivery/api-docs
 ---
