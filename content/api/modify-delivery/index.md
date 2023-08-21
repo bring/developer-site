@@ -11,14 +11,14 @@ menu:
 weight: 23
 
 introduction:
-  The Modify Delivery API can be used to modify shipments that currently are on
+  The Modify Delivery API can be used to modify shipments that are on
   their way to the recipient. Shipments can be stopped and returned to
-  the sender, they can be rerouted to a new delivery address or it
+  the sender, they can be rerouted to a new delivery address or it is
   possible to change the cash on delivery amount. We support
   domestic and cross border services in Norway, Sweden and Denmark, but
-  please note that there are limitations to our services in Sweden and Denmark.
-  Modify COD currently is not supported outside Norway at all.
-  For full overview of valid service and route combinations, see below.
+  please note that there are limitations to our services in Sweden and Denmark and that
+  Modify COD currently is not supported outside Norway. For full overview of valid service
+  and route combinations, see below.
 
 information:
   - title: Authentication
@@ -40,8 +40,9 @@ documentation:
         - Lost
         - Partly delivered
         - Stop shipment
+        - In transit (to final destination)
 
-  - title: Supported domestic services
+  - title: Supported services in Norway
     content: |
       These services are available only for domestic Norway shipments, meaning shipments that are going from and to an address in Norway.
       <table>
@@ -132,11 +133,10 @@ documentation:
     content: |
       There are limitations on shipments that are either sent domestically
       in Sweden and Denmark, or cross border between Norway, Sweden and Denmark.
-      Please see the detailed overview of the allowed service and to/from address
-      combinations below for Stop Shipment and Change Address. Currently, Modify COD is not supported.
+      Please see the detailed overview of the allowed service and to - from address
+      combinations below for stop shipment and change address. Currently, Modify COD is not supported on shipments outside of Norway.
 
-  - title: Valid services and combinations for Stop shipment
-    content: |
+      |
       These services are available on domestic shipments in Sweden and Denmark, and cross border shipments for Norway, Sweden and Denmark.
       Please verify in the table below if your to - from country is valid for the service on your shipments.
       <table>
@@ -237,9 +237,8 @@ documentation:
         </tbody>
       </table>
 
-  - title: Valid services and combinations for Change Address
-    content: |
-      These services are available **only** on parcels being sent to Norway from Sweden or Denmark.
+     |
+      These services are available **only** on shipments being sent to Norway from Sweden or Denmark.
       <table>
         <thead>
          <tr>
