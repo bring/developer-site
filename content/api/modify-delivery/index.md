@@ -15,10 +15,9 @@ introduction:
   their way to the recipient. Shipments can be stopped and returned to
   the sender, they can be rerouted to a new delivery address or it is
   possible to change the cash on delivery amount. We support
-  domestic and cross border services in Norway, Sweden and Denmark, but
+  domestic and cross border shipments in Norway, Sweden and Denmark, but
   please note that there are limitations to our services in Sweden and Denmark and that
-  Modify COD currently is not supported outside Norway. For full overview of valid service
-  and route combinations, see below.
+  Modify COD is not supported outside Norway. Detailed overview for our services can be found below.
 
 information:
   - title: Authentication
