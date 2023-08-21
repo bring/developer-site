@@ -136,7 +136,6 @@ documentation:
       Please see the detailed overview of the allowed service and to - from address
       combinations below for stop shipment and change address. Currently, Modify COD is not supported on shipments outside of Norway.
 
-      |
       These services are available on domestic shipments in Sweden and Denmark, and cross border shipments for Norway, Sweden and Denmark.
       Please verify in the table below if your to - from country is valid for the service on your shipments.
       <table>
@@ -237,7 +236,6 @@ documentation:
         </tbody>
       </table>
 
-     |
       These services are available **only** on shipments being sent to Norway from Sweden or Denmark.
       <table>
         <thead>
