@@ -145,12 +145,12 @@ documentation:
     content: |
       Outside Norway we support stop shipment and change address, but with limitations.
       Please see the detailed overview below for each of the Modify Delivery
-      services and when they are available.g
+      services and when they are available.
 
   - title: Stop shipment outside Norway
     content: |
       These services are available on domestic shipments in Sweden and Denmark, and cross border shipments for Norway, Sweden and Denmark.
-      Please verify in the table below the service and to - from country is valid for your shipments.
+      Please verify in the table below the service and from - to country is valid for your shipments.
       <table>
         <thead>
          <tr>
