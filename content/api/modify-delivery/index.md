@@ -30,8 +30,10 @@ information:
       REST XML/JSON over HTTP.
 
 documentation:
-  - title: Invalid events
+  - title: Common criteria
     content: |
+      There are some events or value added services that will make Modify Delivery services unavailable.
+
       Any of the following events should not already be present on the shipment:
         - Damaged
         - Deviation
@@ -41,6 +43,16 @@ documentation:
         - Partly delivered
         - Stop shipment
         - In transit (to final destination)
+        - Home Delivery ordered
+
+      Any of the following value added services shout not already be present on the shipment:
+        - Optional pickup point (0010)
+        - Parcel locker (0011)
+        - Home delivery from pickup point (1158)
+        - Home delivery redirect (1159)
+        - Parcel locker Norway (1298)
+        - Ibox Sweden (1337)
+        - Parcel locker same day (1373)
 
   - title: Supported services in Norway
     content: |
