@@ -16,8 +16,8 @@ introduction:
   the sender, they can be rerouted to a new delivery address or it is
   possible to change the cash on delivery amount. We support
   domestic and cross border shipments in Norway, Sweden and Denmark, but
-  please note that there are limitations to our services in Sweden and Denmark and that
-  Modify COD is not supported outside Norway. Detailed overview for our services can be found below.
+  please note that there are limitations to our services in Sweden and Denmark.
+  Detailed overview for our services can be found below.
 
 information:
   - title: Authentication
@@ -184,13 +184,13 @@ documentation:
 
   - title: Limitations
     content: |
-      When ordering stop shipment there may be some scenarios we do not
+      - All service codes not starting with **03XX** are **only** available in Norway, and the supported services can be seen in the table above.
+      - When ordering stop shipment there may be some scenarios we do not
       support given the _from_ and _to_ country of the shipment. These scenarios are
-      listed below. Likewise, there are some limitations on change
-      address too - this is only available when the recipient country is Norway.
-      We do not allow changing the delivery address for shipments going to Sweden or Denmark.
-      Please note that all service codes not starting with **03XX**
-      are **only** available in Norway and the supported services can be seen in the table above.
+      shown in the table _Valid stop shipment scenarios_ below.
+      - Change address is available only when the recipient country is Norway.
+      - We do not allow changing the delivery address for shipments going to Sweden or Denmark.
+      - Modify cash on delivery is only available in Norway.
 
   - title: Valid stop shipment scenarios
     content: |
