@@ -55,7 +55,6 @@ documentation:
 
   - title: Supported services
     content: |
-      These services are available only for domestic Norway shipments, meaning shipments that are going from and to an address in Norway.
       <table>
         <thead>
          <tr>
