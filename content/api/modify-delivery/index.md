@@ -7,8 +7,8 @@ menu:
     identifier: modifydelivery
     title: Modify Delivery API
     url: /api/modify-delivery
-    parent: track
-weight: 33
+    parent: book
+weight: 23
 
 introduction:
   The Modify Delivery API can be used to modify shipments that are on
