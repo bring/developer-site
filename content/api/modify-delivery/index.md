@@ -7,7 +7,7 @@ menu:
     identifier: modifydelivery
     title: Modify Delivery API
     url: /api/modify-delivery
-    parent: book
+    parent: track
 weight: 23
 
 introduction:
@@ -183,7 +183,7 @@ documentation:
 
   - title: Limitations
     content: |
-      - All service codes not starting with **03XX** are **only** available in Norway, and the supported services can be seen in the table above.
+      - Service codes 03XX is **not** supported for shipments addressed within Norway (domestic Norway shipments).
       - When ordering stop shipment there may be some scenarios we do not
       support given the _from_ and _to_ country of the shipment. These scenarios are
       shown in the table _Valid stop shipment scenarios_ below.
