@@ -15,9 +15,9 @@ introduction:
   their way to the recipient. Shipments can be stopped and returned to
   the sender, they can be rerouted to a new delivery address or it is
   possible to change the cash on delivery amount. We support
-  domestic and cross border shipments in Norway, Sweden and Denmark, but
-  please note that there are limitations to our services in Sweden and Denmark.
-  Detailed overview for our services can be found below.
+  domestic and cross border shipments in Norway, Sweden and Denmark. Do note however,
+  that there are limitations to our services in Sweden and Denmark.
+  Detailed overview of our services can be found below.
 
 information:
   - title: Authentication
@@ -33,7 +33,7 @@ documentation:
     content: |
       There are some events or value added services that will make Modify Delivery services unavailable.
 
-      Any of the following events should not already be present on the shipment:
+      Any of the following events should **not** already be present on the shipment:
         - Damaged
         - Deviation
         - Returned
@@ -44,7 +44,7 @@ documentation:
         - In transit (to final destination)
         - Home Delivery ordered
 
-      Any of the following value added services should not already be present on the shipment:
+      Any of the following value added services (VAS) should **not** already be present on the shipment:
         - Optional pickup point (0010)
         - Parcel locker (0011)
         - Home delivery from pickup point (1158)
