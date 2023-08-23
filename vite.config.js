@@ -14,7 +14,8 @@ export default defineConfig({
       input: {
         main: "./js/main.js",
         "bring-env/main": "./js/webcomponent/bring-env/main.js",
-        "api-updates-subscribe/main": "./js/webcomponent/api-updates-subscribe/main.js"
+        "api-updates-subscribe/main": "./js/webcomponent/api-updates-subscribe/main.js",
+        "api-updates-subscribe/cr-script": "./js/webcomponent/api-updates-subscribe/cr-script.js"
       },
       output: {
         entryFileNames: asset => {
