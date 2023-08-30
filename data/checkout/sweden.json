@@ -100,7 +100,7 @@
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
-            "href": "assets/bring/Bring_logo.svg",
+            "href": "/images/checkout/bring/Bring_logo.svg",
             "linkText": "Bring logo",
             "name": "bring_logo"
           },
