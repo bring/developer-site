@@ -3,9 +3,9 @@
     "ingress": {
       "paragraphs": [
         "Follow these steps to improve the presentation of our delivery options in your checkout.",
-        "If you need help implementing any of these steps, go visit our <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> or contact our <a href=\"mailto:checkoutSE@bring.com\">Checkout implementation team</a>.",
-        "You may also be looking for best practice guides for:"
-      ]
+        "If you need help implementing any of these steps, go visit our <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> or contact our <a href=\"mailto:checkoutSE@bring.com\">Checkout implementation team</a>."
+      ],
+      "countries": "Other countries"
     },
     "bestPractices": [
       {

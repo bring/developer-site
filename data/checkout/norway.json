@@ -3,9 +3,9 @@
     "ingress": {
       "paragraphs": [
         "Follow these steps to improve the presentation of our delivery options in your checkout.",
-        "If you need help implementing any of these steps, go visit our <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> or contact our <a href=\"mailto:checkout.implementering@posten.no\">Checkout implementation team</a>.",
-        "You may also be looking for best practice guides for:"
-      ]
+        "If you need help implementing any of these steps, go visit our <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> or contact our <a href=\"mailto:checkout.implementering@posten.no\">Checkout implementation team</a>."
+      ],
+      "countries": "Other countries"
     },
     "bestPractices": [
       {
@@ -135,9 +135,9 @@
     "ingress": {
       "paragraphs": [
         "For å legge til rette for økt konvertering, følg disse syv enkle stegene for å forbedre fremstillingen av våre leveringsalternativer i din checkout.",
-        "Hvis du trenger hjelp med å implementere en eller flere av disse stegene, prøv ut vårt <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> eller ta kontakt med vårt <a href=\"mailto:checkout.implementering@posten.no\">Checkout Implementeringsteam</a>.",
-        "Se også våre beste praksis checkout guider for:"
-      ]
+        "Hvis du trenger hjelp med å implementere en eller flere av disse stegene, prøv ut vårt <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> eller ta kontakt med vårt <a href=\"mailto:checkout.implementering@posten.no\">Checkout Implementeringsteam</a>."
+      ],
+      "countries": "Øvrige land"
     },
     "bestPractices": [
       {
