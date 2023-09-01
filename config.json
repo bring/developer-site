@@ -42,6 +42,13 @@
   "menu": {
     "api": [
       {
+        "identifier": "best-practice-checkout",
+        "parent": "e-commerce-solutions",
+        "title": "Best practice checkout guide",
+        "url": "/api/e-commerce-solutions/best-practice-checkout",
+        "weight": 1
+      },
+      {
         "identifier": "checkout-request-builder",
         "parent": "e-commerce-solutions",
         "title": "Checkout tool",
