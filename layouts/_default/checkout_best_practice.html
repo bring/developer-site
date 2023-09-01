@@ -15,42 +15,27 @@
                 <p class="text-heading">{{ . | safeHTML }}</p>
               {{ end }}
               <ul>
-                {{ if eq "norway" $country }}
-                <li>
-                  <a href="/api/e-commerce-solutions/best-practice-checkout/sweden/" class="btn-link gcxs">
-                    <img src="/images/checkout/se.svg" class="flag" alt=""/>{{ i18n "sweden" }}
-                  </a>
-                </li>
-                <li>
-                  <a href="/api/e-commerce-solutions/best-practice-checkout/denmark/" class="btn-link gcxs">
-                    <img src="/images/checkout/dk.svg" class="flag" alt=""/>{{ i18n "denmark"}}
-                  </a>
-                </li>
-                {{ end }}
-                {{ if eq "sweden" $country }}
-                <li>
-                  <a href="/api/e-commerce-solutions/best-practice-checkout/norway/" class="btn-link gcxs">
-                    <img src="/images/checkout/no.svg" class="flag" alt=""/>{{ i18n "norway" }}
-                  </a>
-                </li>
-                <li>
-                  <a href="/api/e-commerce-solutions/best-practice-checkout/denmark/" class="btn-link gcxs">
-                    <img src="/images/checkout/dk.svg" class="flag" alt=""/>{{ i18n "denmark"}}
-                  </a>
-                </li>
-                {{ end }}
-                {{ if eq "denmark" $country }}
-                <li>
-                  <a href="/api/e-commerce-solutions/best-practice-checkout/norway/" class="btn-link gcxs">
-                    <img src="/images/checkout/no.svg" class="flag" alt=""/>{{ i18n "norway" }}
-                  </a>
-                </li>
-                <li>
-                  <a href="/api/e-commerce-solutions/best-practice-checkout/sweden/" class="btn-link gcxs">
-                    <img src="/images/checkout/se.svg" class="flag" alt=""/>{{ i18n "sweden" }}
-                  </a>
-                </li>
-                {{ end }}
+                {{- if ne "norway" $country -}}
+                  <li>
+                    <a href="/api/e-commerce-solutions/best-practice-checkout/norway/" class="btn-link gcxs">
+                      <img src="/images/checkout/no.svg" class="flag" alt=""/>{{ i18n "norway" }}
+                    </a>
+                  </li>
+                {{- end -}}
+                {{- if ne "sweden" $country -}}
+                  <li>
+                    <a href="/api/e-commerce-solutions/best-practice-checkout/sweden/" class="btn-link gcxs">
+                      <img src="/images/checkout/se.svg" class="flag" alt=""/>{{ i18n "sweden" }}
+                    </a>
+                  </li>
+                {{- end -}}
+                {{- if ne "denmark" $country -}}
+                  <li>
+                    <a href="/api/e-commerce-solutions/best-practice-checkout/denmark/" class="btn-link gcxs">
+                      <img src="/images/checkout/dk.svg" class="flag" alt=""/>{{ i18n "denmark"}}
+                    </a>
+                  </li>
+                {{- end -}}
               </ul>
           </section>
           {{ range $translatedData.bestPractices }}
