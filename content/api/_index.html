@@ -11,45 +11,58 @@ aliases:
   - api/api.html
 ---
 
-<section class="dev-docscontent__section">
-  <img src="./api-model.png" class="maxw50r mbm" alt="" />
-
+<section class="dev-docscontent__section" aria-label="Connecting to the APIs">
   <p class="text-heading fw600 mbl">
-    Authentication is required by all APIs, that means having a Mybring user
-    account with an API key. Authorisation is required by some APIs, that means
-    having a customer number and certain rights connected to the user. The
-    following describes how the requirements work together and how to obtain
-    them.
+    All API connections require <em>authentication</em> via a Mybring user
+    account with an API key. Some APIs also require <em>authorisation</em> to
+    identify the Bring customer. The following describes how the requirements
+    work together and how to fill them before connecting.
   </p>
 
-  <h2 class="dev-anchored" id="api-customer-number">Customer number</h2>
+  <h2 class="dev-anchored" id="user">User account and API key</h2>
   <p>
-    In order to use the majority of our APIs, your company needs to be a Bring
-    customer and have a customer number. While most customers have only one
-    customer number, many also choose to have multiple when they need to separate
-    departments or subsidiaries.
-  </p>
-  <p>
-    If the API you want to use requires a customer number and you don’t have one
-    yet, contact customer support via your country’s Bring site.
-  </p>
-  <p>
-    If you need a customer number for testing purposes, it can be found in the
-    <a href='{{< relref "testing" >}}'>API testing documentation</a>.
-  </p>
-
-  <h2 class="dev-anchored" id="user">Mybring user account</h2>
-  <p>
-    You need a personal Mybring user account to work with the Bring API’s. If
-    you don’t have one already,
+    You need a personal Mybring user account and an API key to connect to the
+    Bring APIs. If you don’t have a user already,
     <a href="https://www.mybring.com/signup/register/user"
       >register a new account</a
     >.
   </p>
-
-  <h3 class="dev-anchored" id="access">Customer number access</h3>
   <p>
-    You can see the customer numbers your account has access to on the
+    When you have a Mybring user, you must create an API key. The key is, like a
+    password, unique to your user account. It’s used with the user account email
+    address when connecting to the APIs.
+  </p>
+  <p>
+    The API key is created and managed on the
+    <a href="https://www.mybring.com/useradmin/account/settings/api"
+      >Mybring API page</a
+    >.
+  </p>
+  <p class="message--warn pam">
+    If you change or delete the API key or delete the entire user account, any
+    integration using it will stop working and must be updated with a new key.
+  </p>
+
+  <h2 class="dev-anchored" id="api-customer-number">Customer number</h2>
+  <p>
+    Your company or organisation needs to be a Bring customer and have a
+    customer number to use the majority of our APIs. Requests use the number to
+    identify, for instance, who to invoice or provide information about.
+  </p>
+  <p>
+    If the API you want to use requires a customer number and the company or
+    organisation doesn’t have one yet, contact customer support via your
+    country’s Bring site.
+  </p>
+  <p>
+    A customer number for testing purposes can be found in the
+    <a href='{{< relref "testing" >}}'>API testing documentation</a>.
+  </p>
+
+  <h3 class="dev-anchored" id="access">User and number</h3>
+  <p>
+    The user account makes API requests for customer numbers it has access to.
+    You can see your accesses on the
     <a href="https://www.mybring.com/useradmin/account/settings/api"
       >Mybring API page</a
     >. If the customer number you are looking for isn’t listed, you can get
@@ -62,55 +75,33 @@ aliases:
         >Customer numbers and rights in Mybring</a
       >, search for the customer number and apply for access.
     </li>
-    <li>
-      Contact your customer’s administrator and get them to connect your user.
-    </li>
+    <li>Contact your administrator and get them to connect your user.</li>
   </ul>
   <p>
-    You might work with multiple companies and each of these companies might
-    have multiple customer numbers in Bring. You can use the same Mybring user
-    for different companies.
+    Most customers have only one customer number, and most users have access to
+    only one customer number. Still, having multiple numbers and accesses is
+    possible. The user account uses the same key for all customer numbers it has
+    access to.
   </p>
 
-  <h3 class="dev-anchored" id="rights">User rights</h3>
+  <h3 class="dev-anchored" id="rights">Rights and number</h3>
   <p>
-    Rights control what the user can do, for instance order certain services on
-    behalf of the company or see certain information about it. While one user
-    can have access to many different customers, the rights are specific for
-    each customer number. The company administrator manages these within the
-    company and the user can apply for
+    Rights control what the user can do within a customer number, for instance,
+    placing orders or accessing financial information. The rights are specific
+    to each customer number. The user can apply for
     <a href="https://www.mybring.com/useradmin/account/settings"
-      >customer numbers and rights in Mybring</a
-    >.
+      >customer numbers access and rights in Mybring</a
+    >, and the company administrator manages the requests.
   </p>
 
-  <h3 class="dev-anchored" id="api-key">API Key</h3>
+  <h2 class="dev-anchored" id="connecting">Connect to the APIs</h2>
   <p>
-    When you have a Mybring user, you can create an API key. The key is
-    necessary for authentication and is unique to your user account. It’s used
-    together with the user account email address when connecting to the APIs.
-    The same key is used for all APIs and all Bring customer numbers the user
-    has access to.
-  </p>
-  <p>
-    Be aware that if you choose to change or delete the API key or delete the
-    entire user account, any integration using it will stop working and must be
-    updated with a new key.
-  </p>
-  <p>
-    The API key is created and managed in the
-    <a href="https://www.mybring.com/useradmin/account/settings/api"
-      >Mybring API page</a
-    >.
-  </p>
-
-  <h2 class="dev-anchored" id="authentication">Authentication headers</h2>
-  <p>
-    When you have the user account with the access, rights and API key, you are
-    ready to connect to the APIs in either your own system or an API client.
-    Each API has individual details, but the following three HTTP header
+    When you have the user account and the API key, you can connect to the APIs
+    through your system or an API client. Each API has additional details about
+    individual requirements and procedures, but the following three HTTP header
     parameters are always required.
   </p>
+  <h3 class="dev-anchored" id="authentication">Authentication headers</h3>
   <dl class="bg-gray2 rad-a2px pal maxw50r">
     <dt>X-Mybring-API-Uid</dt>
     <dd>The email address of your Mybring user account.</dd>
@@ -128,16 +119,14 @@ aliases:
   </dl>
 </section>
 
-<section class="dev-docscontent__section">
+<section class="dev-docscontent__section" aria-label="Keeping up to date">
   <h2 class="dev-anchored" id="status-and-support">
     Updates, status and support
   </h2>
   <p>
     Stay up to date on changes and new features by subscribing to
-    <a
-      href='{{< relref "revision-history">}}'
-      >API updates</a
-    >. You can subscribe to all or pick the areas relevant to you.
+    <a href='{{< relref "revision-history">}}'>API updates</a>. You can
+    subscribe to all or pick the areas relevant to you.
   </p>
   <p>
     We continuously monitor our APIs with health checks to measure uptime.
@@ -155,7 +144,7 @@ aliases:
   </p>
 </section>
 
-<section class="dev-docscontent__section">
+<section class="dev-docscontent__section" aria-label="API formats">
   <h2 class="dev-anchored" id="formats">Formats</h2>
   <p>
     All our APIs are REST APIs supporting JSON and XML.
