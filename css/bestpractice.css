@@ -20,20 +20,6 @@
     width: 1.1em;
 }
 
-.feedbackbutton {
-  display: none;
-  position: fixed;
-  right: -1px;
-  box-shadow: var(--shadow-dark);
-  top: 75%;
-  transform: rotate(0.75turn);
-  transform-origin: right bottom;
-
-  @media screen and (max-width: 64em) {
-    display: flex;
-  }
-}
-
 .feedbackform {
   position: fixed;
   bottom: 4.5rem;
