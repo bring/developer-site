@@ -41,7 +41,7 @@
         {{- if (in .CurrentSection "revision-history") -}}
           {{- partial "api/changelog.html" . -}}
         {{- end -}}
-        {{- if (in .CurrentSection "e-commerce-solutions") -}}
+        {{- if and (in .CurrentSection "e-commerce-solutions") (ne .RelPermalink "/api/e-commerce-solutions/" ) -}}
           {{- partial "checkout/feedback-form.html" . -}}
         {{- end -}}
         {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
