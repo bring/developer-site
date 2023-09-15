@@ -35,12 +35,11 @@
 }
 
 .feedbackform {
-  display: none;
   position: fixed;
-  bottom: 3rem;
-  right: 0.5rem;
-  padding: 0.5rem 0.25rem;
-  background: white;
+  bottom: 4.5rem;
+  right: 1rem;
+  padding: 0.25rem 0.25rem;
+  background: var(--gray-95);
   border-radius: 2px;
   box-shadow: var(--shadow-dark);
   max-width: 24rem;
@@ -49,6 +48,13 @@
   display: flex;
   display: auto;
   min-height: 24rem;
+  transform: translateX(200%);
+
+  &.visible {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.1, 0.7);
+  }
 
   @media screen and (max-width: 64em) {
     display: none;
@@ -56,7 +62,7 @@
 
   button {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.25rem;
+    right: 0.25rem;
   }
 }

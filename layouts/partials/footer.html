@@ -18,3 +18,29 @@
     </div>
 </footer>
 <script defer src="https://www.mybring.com/design-system/js/iconsystem-vanilla.js?ts={{ now.Unix }}"></script>
+<script>(function(){var r,d=document,gt=d.getElementById,cr=d.createElement,tg=d.getElementsByTagName,id="aidaform-embed";if(!gt.call(d,id)){r=cr.call(d,"script");r.id=id;r.src="https://embed.aidaform.com/embed.js";(d.head || tg.call(d,"head")[0]).appendChild(r);}})()</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const footerTrigger = document.querySelector('footer')
+    const ecomObserverOptions = {
+      root: null,
+      rootMargin: '200px',
+      threshold: 1.0
+    }
+
+    function observeHeading(footerTrigger) {
+      for (const footerEl of footerTrigger) {
+      if(footerEl.isIntersecting) {
+          const form = document.querySelector('#aidaform');
+          form.classList.add('visible');
+        }
+      }
+    }
+
+    const ecomObserver = new IntersectionObserver(observeHeading,ecomObserverOptions);
+    setTimeout(() => {
+      ecomObserver.observe(footerTrigger);
+    }, 7000);
+
+  })
+</script>
