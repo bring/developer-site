@@ -1,6 +1,5 @@
 {{- define "main" -}}
   <main id="main" class="dev-docscontent w100p">
-    <link rel="stylesheet" href="/api/e-commerce-solutions/best-practice-checkout/bestpractice.css">
     <article>
       <h1>
         {{- .Title -}}
@@ -69,5 +68,6 @@
         </section>
       {{- end -}}
     </article>
+    {{- partial "checkout/feedback-form" -}}
   </main>
 {{- end -}}

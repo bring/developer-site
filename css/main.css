@@ -5,9 +5,15 @@
 @import "./siteheader.css";
 @import "./footer.css";
 
-/* Components */
+/* Pages */
 @import "./frontpage.css";
 @import "./updates.css";
+@import "./services.css";
+@import "./bestpractice.css";
+@import "./guide.css";
+@import "./blog.css";
+
+/* Components */
 @import "./code.css";
 @import "./table.css";
 @import "./syntax.css";
@@ -15,8 +21,6 @@
 @import "./documentation.css";
 @import "./drawmenu.css";
 @import "./collapsible.css";
-@import "./blog.css";
-@import "./guide.css";
-@import "./services.css";
-@import "./dark-theme.css";
 @import "./algolia.css";
+
+@import "./dark-theme.css";

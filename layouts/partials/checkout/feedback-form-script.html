@@ -1,0 +1,43 @@
+<script>(function(){var r,d=document,gt=d.getElementById,cr=d.createElement,tg=d.getElementsByTagName,id="aidaform-embed";if(!gt.call(d,id)){r=cr.call(d,"script");r.id=id;r.src="https://embed.aidaform.com/embed.js";(d.head || tg.call(d,"head")[0]).appendChild(r);}})()</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const footerEl = document.querySelector('footer')
+    const feedbackForm = document.querySelector('#aidaform')
+    const closeBtn = feedbackForm.querySelector('button')
+    const storedFormDate = localStorage.getItem('feedback')
+    const now = Date.now()
+    const delayMs = 1000 * 60 * 60 * 24 * 60 // ms, s, min, h, d
+
+    if (!storedFormDate || storedFormDate < now - delayMs) {
+      const ecomObserverOptions = {
+        root: null,
+        rootMargin: '200px',
+        threshold: 1.0,
+      }
+
+      function ecomObserverCallback(footerEntryList) {
+        for (const entry of footerEntryList) {
+          if (entry.isIntersecting) {
+            feedbackForm.hidden = false
+            feedbackForm.classList.add('visible')
+          }
+        }
+      }
+
+      const ecomObserver = new IntersectionObserver(
+        ecomObserverCallback,
+        ecomObserverOptions
+      )
+
+      setTimeout(() => {
+        ecomObserver.observe(footerEl)
+      }, 7000)
+    }
+
+    closeBtn.addEventListener('click', function () {
+      feedbackForm.classList.remove('visible')
+      feedbackForm.hidden = true
+      localStorage.setItem('feedback', now)
+    })
+  })
+</script>

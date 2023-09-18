@@ -1,0 +1,54 @@
+.best-practice-item {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 2rem;
+    max-width: max-content;
+
+    & > div {
+        flex: 1 2 24rem;
+        max-width: max-content;
+    }
+
+    & > figure {
+        flex: 1 1 24rem;
+        max-width: 40rem;
+    }
+}
+
+.flag {
+    width: 1.1em;
+}
+
+.feedbackform {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1rem;
+  padding: 0.25rem 0.25rem;
+  background: var(--gray-95);
+  border-radius: 2px;
+  box-shadow: var(--shadow-dark);
+  max-width: 24rem;
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  display: auto;
+  min-height: 24rem;
+  transform: translateX(200%);
+
+  &.visible {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.1, 0.7);
+  }
+
+  @media screen and (max-width: 64em) {
+    display: none;
+  }
+
+  button {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+  }
+}
