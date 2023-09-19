@@ -73,13 +73,12 @@
     {{- end -}}
   {{- else -}}
     {{/*  Render first level isOf without visible dt  */}}
-    {{/*  Only show contact details element for sender party (booking API docs)  */}}
+    {{/*  Only show contact details element for sender and recipient parties (booking API docs)  */}}
     {{- if and
       (or (ne $name "contact") (ne $contactParent "consignee"))
       (or (ne $name "contact") (ne $contactParent "consignor"))
       (or (ne $name "contact") (ne $contactParent "importer"))
       (or (ne $name "contact") (ne $contactParent "returnTo"))
-      (or (ne $name "contact") (ne $contactParent "recipient"))
     -}}
     <div class="{{ if not $isFirstLevelOf }}mb-border bb bw1{{ end }} mbs">
       <div class="flex flex-wrap align-ifs pbs {{ if $isFirstLevelOf }}screen-reader-text{{ end }}">
@@ -109,7 +108,7 @@
         <dd class="schema__sublist {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "objName" $objName) -}}
+              {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "objName" $objName "contactParent" $contactParent) -}}
             {{- end -}}
           </dl>
         </dd>
@@ -310,8 +309,13 @@
         {{- end -}}
       </dt>
       <dd class="pls">
-        {{- with $schemaObj.description -}}
-          {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
+        {{- if and
+          (or (ne $name "email") (ne $objName "contact") (ne $contactParent "recipient") )
+          (or (ne $name "phoneNumber") (ne $objName "contact") (ne $contactParent "recipient"))
+        -}}
+          {{- with $schemaObj.description -}}
+            {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
+          {{- end -}}
         {{- end -}}
         <div class="gray text-note flex flex-wrap gcs">
           <span>{{- $schemaObj.type -}}</span>
