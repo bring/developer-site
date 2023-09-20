@@ -6,6 +6,7 @@
 {{/*  objName doesn’t change  */}}
 {{ $objName := .name }}
 {{ $components := .components }}
+{{ $bookingXmlNamespace := "xmlns=\"http://www.bring.no/booking/\"" }}
 
 {{ $lev := add .lev 1 }}
 {{ $indentChar := "  " }}
@@ -55,8 +56,13 @@
               {{ with $schemaVal.xml.name }}
                 {{ $exampleKey = . }}
               {{ end }}
-              {{ $attribute := printf " %s=\"%s\"" $exampleKey (string $exampleVal) }}
-              {{ $xmlObject = printf "%s%s" $xmlObject $attribute }}
+                {{ if eq $name "bookingRequest" }}
+                  {{ $attribute := printf " %s %s=\"%s\"" $bookingXmlNamespace $exampleKey (string $exampleVal) }}
+                  {{ $xmlObject = printf "%s%s" $xmlObject $attribute }}
+                {{ else }}
+                  {{ $attribute := printf " %s=\"%s\"" $exampleKey (string $exampleVal) }}
+                  {{ $xmlObject = printf "%s%s" $xmlObject $attribute }}
+                {{ end }}
             {{ end }}
           {{ end }}
         {{ end }}
