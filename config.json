@@ -17,11 +17,11 @@
     },
     "se": {
       "staticDir": ["static"],
-      "languageName": "Swedish"
+      "languageName": "Svensk"
     },
     "da": {
       "staticDir": ["static"],
-      "languageName": "Danish"
+      "languageName": "Dansk"
     }
   },
   "paginate": 12,
