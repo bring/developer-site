@@ -1658,6 +1658,16 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Pakke til bedrift",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "5000",
+    "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
