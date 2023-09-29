@@ -34,7 +34,7 @@ class ApiSubscribe extends HTMLElement {
       this.externalScriptsLoaded = true
       const crValidate = document.createElement("script")
       crValidate.type = "module"
-      crValidate.src = "https://developer.bring.com/assets/api-updates-subscribe/cr-script.js"
+      crValidate.src = "https://mango-cliff-0e97d9203-1589.westeurope.azurestaticapps.net/assets/api-updates-subscribe/cr-script.js"
       this.appendChild(crValidate)
       crValidate.addEventListener("load", () => {
         if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",mainCr)}else{mainCr()}
