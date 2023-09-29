@@ -26,12 +26,12 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
               <div id="8265204" rel="radio" class="cr_ipe_item musthave flex gam" >
           
                 <label class="form__radio">
-                    <input id="All8265204" name="1137225" type="radio" value="All" selected checked data-api-area>
+                    <input id="All8265204" name="1153579" type="radio" value="All" selected checked data-api-area>
                     All
                 </label>
             
                 <label class="form__radio">
-                    <input id="Select API area8265204" name="1137225" type="radio" value="Select API area" data-api-area>
+                    <input id="Select API area8265204" name="1153579" type="radio" value="Select API area" data-api-area>
                     Select API area
                 </label>
 
@@ -44,41 +44,36 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
                   <div class="flex flex-wrap plm gas mbm api-area-checkboxes hidden" id="apiAreas">
 
                   <label class="form__check">
-                      <input id="Checkout8265206" type="checkbox" name="1137221[]" value="Checkout" >
+                      <input id="Checkout8265206" type="checkbox" name="1153580[]" value="Checkout" >
                       Checkout
                   </label>
 
                   <label class="form__check">
-                      <input id="Booking8265206" type="checkbox" name="1137221[]" value="Booking" >
+                      <input id="Booking8265206" type="checkbox" name="1153580[]" value="Booking" >
                       Booking
                   </label>
               
                   <label class="form__check">
-                      <input id="Tracking8265206" type="checkbox" name="1137221[]" value="Tracking" >
+                      <input id="Tracking8265206" type="checkbox" name="1153580[]" value="Tracking" >
                       Tracking
                   </label>
               
                   <label class="form__check">
-                      <input id="Reports8265206" type="checkbox" name="1137221[]" value="Reports" >
+                      <input id="Reports8265206" type="checkbox" name="1153580[]" value="Reports" >
                       Reports
                   </label>
               
                   <label class="form__check">
-                      <input id="Warehousing8265206" type="checkbox" name="1137221[]" value="Warehousing" >
+                      <input id="Warehousing8265206" type="checkbox" name="1153580[]" value="Warehousing" >
                       Warehousing
                   </label>
               
                   <label class="form__check">
-                      <input id="Order Management8265206" type="checkbox" name="1137221[]" value="Order Management" >
+                      <input id="Order Management8265206" type="checkbox" name="1153580[]" value="Order Management" >
                       Order Management
                   </label>
               </div>
             </fieldset>
-          </div>
-
-          <div id="8265181" rel="recaptcha" class="cr_ipe_item musthave mbs">
-            <div id="recaptcha_v2_widget" class="g-recaptcha" data-theme="light" data-size="normal" data-sitekey="6Lfhcd0SAAAAAOBEHmAVEHJeRnrH8T7wPvvNzEPD">
-            </div>
           </div>
 
           <details class="mb-disclosure mb-disclosure--arrow bg-green1 mbm">
