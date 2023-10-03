@@ -100,5 +100,107 @@
         ]
       }
     ]
+  },
+  "da": {
+    "ingress": {
+      "paragraphs": [
+        "Følg disse nemme trin for at forbedre præsentationen af vores leveringsmuligheder i din checkout.",
+        "Hvis du har brug for hjælp til at implementere nogen af disse trin, kan du besøge vores <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> eller kontakte vores <a href=\"mailto:checkout.implementering@posten.no\">Checkout-implementeringsteam</a>."
+      ],
+      "countries": "Other countries"
+    },
+    "bestPractices": [
+      {
+        "h3": "1. Postnummer og vejnavn",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/address.svg",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/delivery_address.png",
+        "illustrationImageAlt": "Delivery address input fields",
+        "tags": ["Address API", "Pickup Point API"],
+        "paragraphs": [
+          "<p>Ved at lade dine kunder udfylde både postnummer og adresse, vil de blive præsenteret for de relevante leveringsmuligheder og udleveringssteder.</p>"
+        ]
+      },
+      {
+        "h3": "2. Tjenestenavn og beskrivelsestekst",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/title_and_description.png",
+            "imageClass": "maxw10r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/choose_service.png",
+        "illustrationImageAlt": "Choose service by service name",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Brug standard tjenestensnavn og beskrivelsestekst for at sikre, at dine kunder forstår, hvad leveringsmulighederne indebærer.</p>"
+        ]
+      },
+      {
+        "h3": "3. Udleveringssteder",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/pickup_points.svg",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/choose_pickup_points.png",
+        "illustrationImageAlt": "Choose pickup points",
+        "tags": ["Pickup Point API"],
+        "paragraphs": [
+          "<p>Ved at tilbyde 7-10 alternativer, vil dine kunder være i stand til at vælge det mest bekvemme udleveringssteder. Ifølge Bring Research er kunderne mere tilbøjelige til at gennemføre købet, hvis de præsenteres for udleveringssteder i nærheden. Derfor anbefaler vi, at du tilbyder pakkeshops og nærboks. Vi anbefaler også at vise et kort for at gøre det nemmere for dine kunder at finde udleveringsstedene.</p>"
+        ]
+      },
+      {
+        "h3": "4. Logo",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/logo_car.png",
+            "imageClass": "maxw8r"
+          },
+          {
+            "imageUrl": "/images/checkout/posten/logo_car.png",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
+        "illustrationImageAlt": "Service with posten logo",
+        "tags": ["Shipping Guide API"],
+        "downloadLinks": [
+          {
+            "href": "/images/checkout/bring/Bring_logo.svg",
+            "linkText": "Bring logo",
+            "name": "bring_logo"
+          },
+          {
+            "href": "/images/checkout/posten/Posten_logo.svg",
+            "linkText": "Posten logo",
+            "name": "posten_logo"
+          }
+        ],
+        "paragraphs": [
+          "<p>følge Bring Research foretrækker kunderne, at kassen viser logoer, så de nemt kan genkende deres foretrukne forsendelsesleverandør. For pakker, der skal til slutkunder i Norge, skal du bruge Postens logo. For pakker, der går til slutkunder i andre lande, skal du bruge Bring-logoet.</p>"
+        ]
+      },
+      {
+        "h3": "5. Miljøtekst og miljøikon",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/environmental_logo_simple.svg",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/show_environmental_info.png",
+        "illustrationImageAlt": "Service with environmental friendly logo",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Ved at bruge vores miljøtekst og vores miljøikon kan du allerede ved checkouten vise kunderne, om deres pakke bliver leveret med elbil. Dette giver dine kunder mulighed for at træffe mere bæredygtige valg.</p>"
+        ]
+      }
+    ]
   }
 }
