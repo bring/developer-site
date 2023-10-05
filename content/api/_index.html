@@ -19,104 +19,170 @@ aliases:
     work together and how to fill them before connecting.
   </p>
 
-  <h2 class="dev-anchored" id="user">User account and API key</h2>
-  <p>
-    You need a personal Mybring user account and an API key to connect to the
-    Bring APIs. If you don’t have a user already,
-    <a href="https://www.mybring.com/signup/register/user"
-      >register a new account</a
-    >.
-  </p>
-  <p>
-    When you have a Mybring user, you must create an API key. The key is, like a
-    password, unique to your user account. It’s used with the user account email
-    address when connecting to the APIs.
-  </p>
-  <p>
-    The API key is created and managed on the
-    <a href="https://www.mybring.com/useradmin/account/settings/api"
-      >Mybring API page</a
-    >.
-  </p>
-  <p class="message--warn pam">
-    If you change or delete the API key or delete the entire user account, any
-    integration using it will stop working and must be updated with a new key.
-  </p>
+  <h2 class="dev-anchored" id="user">1. User account</h2>
+  <div class="startguide-item">
+    <div>
+      <p>
+        If you don’t have a user already,
+        <a href="https://www.mybring.com/signup/register/user"
+          >register a new account</a
+        >.
+      </p>
+      <p>
+        Some like to have an account dedicated to API use, but it depends on you
+        or your company’s needs. The account type is no different either way.
+      </p>
+      <p>
+        When you have a Mybring user account, you must create an API key and
+        give the user access to the customer number you want to make action on
+        behalf of.
+      </p>
+    </div>
+    <figure>
+      <img
+        src="/images/getting-started/user.png"
+        alt="Two inputs, a button and a user icon to signigy user account."
+      />
+      <figcaption>Register a user account in Mybring.</figcaption>
+    </figure>
+  </div>
+  <h2 class="dev-anchored" id="api-key">2. API key</h2>
+  <div class="startguide-item">
+    <div>
+      <p>
+        The API key is created and managed on the
+        <a href="https://www.mybring.com/useradmin/account/settings/api"
+          >Mybring API page</a
+        >.
+      </p>
+      <p>
+        The key is, like a password, unique to your user account. It’s used with
+        the user account email address when connecting to the APIs.
+      </p>
+      <p class="message--warn pam">
+        If you change or delete the API key or delete the entire user account,
+        any integration using it will stop working and must be updated with a
+        new key.
+      </p>
+    </div>
+    <figure>
+      <img
+        src="/images/getting-started/key.png"
+        alt="A masked string and characters, a button and a key icon."
+      />
+      <figcaption>
+        Create and manage an API key for the user account.
+      </figcaption>
+    </figure>
+  </div>
 
-  <h2 class="dev-anchored" id="api-customer-number">Customer number</h2>
-  <p>
-    Your company or organisation needs to be a Bring customer and have a
-    customer number to use the majority of our APIs. Requests use the number to
-    identify, for instance, who to invoice or provide information about.
-  </p>
-  <p>
-    If the API you want to use requires a customer number and the company or
-    organisation doesn’t have one yet, contact customer support via your
-    country’s Bring site.
-  </p>
-  <p>
-    A customer number for testing purposes can be found in the
-    <a href='{{< relref "testing" >}}'>API testing documentation</a>.
-  </p>
+  <h2 class="dev-anchored" id="api-customer-number">3. Customer number</h2>
+  <div class="startguide-item">
+    <div>
+      <p>
+        Your company or organisation needs to be a Bring customer and have a
+        customer number to use the majority of our APIs. Requests use the number
+        to identify, for instance, who to invoice or provide information about.
+      </p>
+      <p>
+        If the API you want to use requires a customer number and the company or
+        organisation doesn’t have one yet, contact customer support via your
+        country’s Bring site.
+      </p>
+      <p>
+        A customer number for testing purposes can be found in the
+        <a href='{{< relref "testing" >}}'>API testing documentation</a>.
+      </p>
 
-  <h3 class="dev-anchored" id="access">User and number</h3>
-  <p>
-    The user account makes API requests for customer numbers it has access to.
-    You can see your accesses on the
-    <a href="https://www.mybring.com/useradmin/account/settings/api"
-      >Mybring API page</a
-    >. If the customer number you are looking for isn’t listed, you can get
-    access to it through one of the following methods:
-  </p>
-  <ul>
-    <li>
-      Go to
-      <a href="https://www.mybring.com/useradmin/account/settings"
-        >Customer numbers and rights in Mybring</a
-      >, search for the customer number and apply for access.
-    </li>
-    <li>Contact your administrator and get them to connect your user.</li>
-  </ul>
-  <p>
-    Most customers have only one customer number, and most users have access to
-    only one customer number. Still, having multiple numbers and accesses is
-    possible. The user account uses the same key for all customer numbers it has
-    access to.
-  </p>
+      <h3 class="dev-anchored" id="access">User, number and rights</h3>
+      <p>
+        The user account makes API requests for customer numbers it has access
+        to. Rights control what the user can do within a customer number, for
+        instance, placing orders or accessing financial information.
+      </p>
+      <p>
+        You can see the accesses on the
+        <a href="https://www.mybring.com/useradmin/account/settings/api"
+          >Mybring API page</a
+        >. If the customer number you are looking for isn’t listed, you can get
+        access to it and acquire the necessary rights through one of the
+        following methods:
+      </p>
+      <ul>
+        <li>
+          Go to
+          <a href="https://www.mybring.com/useradmin/account/settings"
+            >Customer numbers and rights in Mybring</a
+          >, search for the customer number and apply for access and rights.
+        </li>
+        <li>
+          Contact your administrator and get them to connect your user to the
+          customer number and set the rights.
+        </li>
+        <li>
+          If you are an administrator, users access and rights to customer
+          numbers can be managed in
+          <a href="https://www.mybring.com/useradmin-external/users"
+            >Mybring’s user administration</a
+          >.
+        </li>
+      </ul>
+      <p class="message--info pam">
+        Most companies have only one customer number, and most users have access
+        to only one customer number. Still, having multiple numbers and accesses
+        is possible. Rights are specific to each customer number.
+      </p>
+    </div>
+    <figure>
+      <img
+        src="/images/getting-started/customer.png"
+        alt="Office building with number, underneath is a user with icons representing rights to ordering, financial data, reports and price calculation."
+      />
+      <figcaption>
+        Companies have customer numbers. The user account is given certain
+        rights within a customer number to make corresponding requests.
+      </figcaption>
+    </figure>
+  </div>
 
-  <h3 class="dev-anchored" id="rights">Rights and number</h3>
-  <p>
-    Rights control what the user can do within a customer number, for instance,
-    placing orders or accessing financial information. The rights are specific
-    to each customer number. The user can apply for
-    <a href="https://www.mybring.com/useradmin/account/settings"
-      >customer numbers access and rights in Mybring</a
-    >, and the company administrator manages the requests.
-  </p>
+  <h2 class="dev-anchored" id="connecting">4. Connect to the APIs</h2>
+  <div class="startguide-item">
+    <div>
+      <p>
+        When you have the user account and the API key, you can connect to the
+        APIs through your system or an API client. Each API has additional
+        details about individual requirements and procedures, but the following
+        three HTTP header parameters are always required.
+      </p>
+      <h3 class="dev-anchored" id="authentication">Authentication headers</h3>
+      <dl class="bg-gray2 rad-a2px pal maxw50r">
+        <dt>X-Mybring-API-Uid</dt>
+        <dd>The email address of your Mybring user account.</dd>
+        <dd class="mbm">Example: <code>name@your-company-domain.com</code></dd>
 
-  <h2 class="dev-anchored" id="connecting">Connect to the APIs</h2>
-  <p>
-    When you have the user account and the API key, you can connect to the APIs
-    through your system or an API client. Each API has additional details about
-    individual requirements and procedures, but the following three HTTP header
-    parameters are always required.
-  </p>
-  <h3 class="dev-anchored" id="authentication">Authentication headers</h3>
-  <dl class="bg-gray2 rad-a2px pal maxw50r">
-    <dt>X-Mybring-API-Uid</dt>
-    <dd>The email address of your Mybring user account.</dd>
-    <dd class="mbm">Example: <code>name@your-company-domain.com</code></dd>
+        <dt>X-Mybring-API-Key</dt>
+        <dd>The user account’s API key.</dd>
+        <dd class="mbm">
+          Example: <code>1234abc-abcd-1234-5678-abcd1234abcd</code>
+        </dd>
 
-    <dt>X-Mybring-API-Key</dt>
-    <dd>The user account’s API key.</dd>
-    <dd class="mbm">
-      Example: <code>1234abc-abcd-1234-5678-abcd1234abcd</code>
-    </dd>
-
-    <dt>X-Bring-Client-URL</dt>
-    <dd>The URL for the service where you are using the API.</dd>
-    <dd>Example: <code>your-company-domain.com</code></dd>
-  </dl>
+        <dt>X-Bring-Client-URL</dt>
+        <dd>The URL for the service where you are using the API.</dd>
+        <dd>Example: <code>your-company-domain.com</code></dd>
+      </dl>
+    </div>
+    <figure>
+      <img
+        src="/images/getting-started/integration.png"
+        alt="A group of credential icons with an arrow pointing to a terminal, annother arrow is pointing out from the terminal to a group of icons representing the different data types."
+      />
+      <figcaption>
+        All the prerequisites are used to make a request. The requests evaluate
+        if the user account has the correct rights within the customer number
+        before returning a response.
+      </figcaption>
+    </figure>
+  </div>
 </section>
 
 <section class="dev-docscontent__section" aria-label="Keeping up to date">

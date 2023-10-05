@@ -120,3 +120,8 @@ ol {
   list-style-type: decimal;
   margin-left: 1.6em;
 }
+
+figcaption {
+  font-size: 0.83rem;
+  margin-top: 0.5rem;
+}

@@ -119,6 +119,28 @@ p a:not(.btn-link--dark, .btn-link) {
   grid-area: signup;
 }
 
+.startguide-item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: max-content;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+
+  & > div {
+    flex: 1 2 24rem;
+    max-width: 34rem;
+  }
+
+  & > figure {
+    flex: 1 1 12rem;
+    max-width: 16rem;
+    position: sticky;
+    top: 6rem;
+  }
+}
+
 .dev-docs__menu {
   background-color: var(--gray-93);
   display: flex;
