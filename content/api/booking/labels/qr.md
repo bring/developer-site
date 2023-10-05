@@ -5,8 +5,8 @@ menu:
   apidocs:
     identifier: bookingqr
     title: Generating QR Codes
-    parent: booking
-weight: 8
+    parent: booking_labels
+weight: 3
 ---
 
 For Parcel Norway domestic return services, it is possible to request QR codes. An end user can bring the QR code to any PiB or a Post Office in Norway, scan the QR code, and have a label printed there.
