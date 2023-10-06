@@ -117,6 +117,6 @@ documentation:
       | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
 
 
-oas: https://api.bring.com/tracking/api-docs/
+oas: https://api.bring.com/tracking/api-docs
 
 ---
