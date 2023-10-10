@@ -5,8 +5,8 @@ menu:
   apidocs:
     identifier: bookingmakinglabels
     title: Making labels
-    parent: booking
-weight: 6
+    parent: booking_labels
+weight: 1
 ---
 
 The Booking API generates and sends all necessary EDI messages to carry out the shipment. A URL to a PDF label is returned in responses. This label must be printed and be attached to the shipment. A URL that points to tracking information is also returned.

@@ -44,5 +44,5 @@ information:
 subpages:
   title: Special topics
 
-oas: https://www.qa.mybring.com/booking-api/v3/api-docs
+oas: https://www.mybring.com/booking-api/v3/api-docs
 ---

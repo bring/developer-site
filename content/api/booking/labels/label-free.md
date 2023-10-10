@@ -5,8 +5,8 @@ menu:
   apidocs:
     identifier: bookinglabelfree
     title: Label free codes
-    parent: booking
-weight: 6
+    parent: booking_labels
+weight: 2
 ---
 
 Label free provides the ability to send parcels without a label, and is useful for senders who do not have access to a printer. The label free code, as well as the recipient’s name and address, is written on the parcel before it is handed in.
