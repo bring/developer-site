@@ -59,8 +59,8 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
                   </label>
               
                   <label class="form__check">
-                      <input id="Reports8265206" type="checkbox" name="1153580[]" value="Reports" >
-                      Reports
+                      <input id="Reports8265206" type="checkbox" name="1153580[]" value="Reports and invoices" >
+                      Reports and invoices
                   </label>
               
                   <label class="form__check">
@@ -69,7 +69,7 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
                   </label>
               
                   <label class="form__check">
-                      <input id="Order Management8265206" type="checkbox" name="1153580[]" value="Order Management" >
+                      <input id="Order Management8265206" type="checkbox" name="1153580[]" value="Order management" >
                       Order Management
                   </label>
               </div>
