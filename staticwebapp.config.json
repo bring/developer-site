@@ -19,6 +19,12 @@
             "headers": {
               "Access-Control-Allow-Origin": "*"
             }
+        },
+        {
+            "route": "/assets/api-updates-subscribe/cr-script.js",
+            "headers": {
+              "Access-Control-Allow-Origin": "*"
+            }
         }
     ],
 

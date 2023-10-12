@@ -1,6 +1,5 @@
 import apiUpdatesStyle from "./style.js"
 import apiUpdatesTemplate from "./template.js"
-import {loadjQuery, mainCr } from "./cr-script.js"
 
 class ApiSubscribe extends HTMLElement {
   _attr(attr, def) {
@@ -32,12 +31,16 @@ class ApiSubscribe extends HTMLElement {
   loadExternalScripts() {
     if (!this.externalScriptsLoaded) {
       this.externalScriptsLoaded = true
-      const crValidate = document.createElement("script")
-      crValidate.type = "module"
-      crValidate.src = "https://developer.bring.com/assets/api-updates-subscribe/cr-script.js"
-      this.appendChild(crValidate)
-      crValidate.addEventListener("load", () => {
-        if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",mainCr)}else{mainCr()}
+      window.fnames = ["EMAIL"]
+      window.ftypes = ["email"]
+      const mcValidate = document.createElement("script")
+      mcValidate.type = "text/javascript"
+      mcValidate.async = true
+      mcValidate.src =
+        "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+      this.appendChild(mcValidate)
+      mcValidate.addEventListener("load", () => {
+        window.$mcj = window.jQuery.noConflict(true)
       })
     }
   }
@@ -83,63 +86,34 @@ class ApiSubscribe extends HTMLElement {
     )
     this.innerHTML = `${style} ${template}`
 
-    const signupForm = document.getElementById("cr-subscribe-form")
+    const signupForm = document.getElementById("mc-embedded-subscribe-form")
     const apiAreaRadios = signupForm.querySelectorAll("[data-api-area]")
     const apiAreas = signupForm.querySelector(".api-area-checkboxes")
-    const apiAreaCheckboxes = apiAreas.querySelectorAll('input[type="checkbox"]')
-    const errorMessage = document.getElementById("cr-error-response")
+    const apiAreaCheckboxes = apiAreas.querySelectorAll(
+      'input[type="checkbox"]'
+    )
+    const signupSubmitBtn = document.getElementById("mc-embedded-subscribe")
 
-    const validateEmail = (email) => {
-      if(typeof email === 'string') {
-        const Regex = new RegExp(/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/)
-        if(Regex.test(email) && email.length > 3){
-          return true
-        }
-      }
-      return false
-    }
-
-    const validateInputs = (e) => {
-      errorMessage.innerHTML = ''
-      errorMessage.classList.add("dn")
-      let someSelected = false
-
-      // Render the error and return boolean
-      const showError = (errorStatus, message) => {
-        if(!errorStatus) {
-          const error = document.createElement("div")
-          error.innerText = message
-          errorMessage.appendChild(error)
-          errorMessage.classList.remove("dn")
-          e.preventDefault()
-        }
-        return errorStatus
-      }
-
+    const validateCheckboxes = (e) => {
       // If second radio selected, check if at least one of the checkboxes are checked
+      let someSelected = false
       if (apiAreaRadios[1].checked) {
+        const errorMessage = document.getElementById("mce-error-response")
         apiAreaCheckboxes.forEach((checkbox) => {
           if (checkbox.checked) {
             someSelected = true
           }
         })
-        showError(
-          someSelected,
-          "You must select at least one of the API areas."
-        )
-      }
-      
-      // Check if email format is valid
-      const emailInput = signupForm.querySelector('[name="email"]')
-      const validEmail = validateEmail(emailInput.value)
-      if(!validEmail) {
-        setTimeout(() => {
-          emailInput.classList.add('clever_form_error')
-        },300)
-        showError(
-          validEmail,
-          "Invalid email format!"
-        )
+        if (!someSelected) {
+          errorMessage.innerText = ""
+          errorMessage.innerText =
+            "You must select at least one of the API areas."
+          errorMessage.style.display = "block"
+          e.preventDefault()
+        } else {
+          errorMessage.style.display = "none"
+          errorMessage.innerText = ""
+        }
       }
     }
 
@@ -147,13 +121,30 @@ class ApiSubscribe extends HTMLElement {
     apiAreaRadios.forEach((radio) => {
       radio.addEventListener("change", (e) => {
         apiAreas.classList.toggle("hidden")
-        apiAreaCheckboxes.forEach((checkbox) => {
-          checkbox.checked = false
-        })
+        signupSubmitBtn.addEventListener("click", validateCheckboxes)
+        if (e.target.checked && e.target.id === "mce-APIAREA-0") {
+          apiAreaCheckboxes.forEach((checkbox) => {
+            checkbox.checked = false
+          })
+          signupSubmitBtn.removeEventListener("click", validateCheckboxes)
+        }
       })
     })
 
-    signupForm.addEventListener("submit", (e) => validateInputs(e))
+    // Hide the checkboxes again when the form is submitted
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault()
+      setTimeout(() => {
+        const successMessage = document.getElementById("mce-success-response")
+        if (successMessage && successMessage.innerText.length > 0) {
+          apiAreas.classList.add("hidden")
+          setTimeout(() => {
+            successMessage.innerText = ""
+            successMessage.style.display = "none"
+          }, 3000)
+        }
+      }, 1000)
+    })
 
     if (this.isModal) {
       const closeModalAttr = document.querySelectorAll("[data-close-modal]")

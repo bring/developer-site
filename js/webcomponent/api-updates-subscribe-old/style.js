@@ -9,7 +9,7 @@ export default function apiUpdatesStyle(isModal) {
       top: 0;
       left: 0;
       z-index: 5000;`
-      : 'display:flex;'}
+      : 'display:flex; max-width: max-content;'}
       justify-content: center;
       align-items: center;
     }
@@ -24,6 +24,7 @@ export default function apiUpdatesStyle(isModal) {
     }
 
     .api-updates-wrapper {
+      background: var(--green-lighter);
       padding: 0;
       position: relative;
       max-width: 28rem;
@@ -61,26 +62,22 @@ export default function apiUpdatesStyle(isModal) {
       display: none;
     }
 
-    .api-area-checkboxes label {
-      flex: 1 1 10rem;
-      margin-bottom: 0;
-    }
-
-    .cr-response {
+    .mce-response {
       background-color: unset;
       margin-bottom: 1rem;
       padding: 0;
     }
 
-    .cr-response.error {
-      color: var(--red);
+    div.mce_inline_error {
+      background-color: transparent !important;
+      color: var(--red) !important;
+      font-size: .9rem;
+      font-weight: 400 !important;
+      margin: -.5rem 0 1rem !important;
+      padding: 0 !important;
     }
 
-    .cr-response.success {
-      color: var(--green-dark);
-    }
-
-    .clever_form_error {
+    input.mce_inline_error {
       border-color: var(--red) !important;
     }
 
