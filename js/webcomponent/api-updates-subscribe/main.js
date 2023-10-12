@@ -39,13 +39,6 @@ class ApiSubscribe extends HTMLElement {
       crValidate.addEventListener("load", () => {
         if(typeof jQuery==="undefined"){loadjQuery("//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js",mainCr)}else{mainCr()}
       })
-
-      const reCaptchaScript = document.createElement("script")
-      reCaptchaScript.type = "text/javascript"
-      reCaptchaScript.async = true
-      reCaptchaScript.defer = true
-      reCaptchaScript.src = "https://www.google.com/recaptcha/api.js"
-      this.appendChild(reCaptchaScript)
     }
   }
 

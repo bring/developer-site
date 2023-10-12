@@ -1,7 +1,7 @@
 # API updates subscription
 
 A web component made for subscribing to API updates on the developer-site. This
-can be reused whereever it's needed by adding the custom element
+can be reused wherever it's needed by adding the custom element
 `api-updates-subscribe` and the script reference. Additionally it can be treated
 as a modal by passing an optional attribute `modal="true"` on the custom element.
 

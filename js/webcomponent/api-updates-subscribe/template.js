@@ -26,7 +26,7 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
               <div id="8265204" rel="radio" class="cr_ipe_item musthave flex gam" >
           
                 <label class="form__radio">
-                    <input id="All8265204" name="1153579" type="radio" value="All" selected checked data-api-area>
+                    <input id="All8265204" name="1153579" type="radio" value="All" checked data-api-area>
                     All
                 </label>
             
@@ -87,7 +87,7 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
             </summary>
             <div class="text-note pas content__gdprLegal">
               <p>You can unsubscribe at any time by clicking the link in the footer of our emails. Read more about <a href="https://www.bring.com/privacy-policy" target="_blank" rel="noopener noreferrer">our privacy policy</a>.</p>
-              <p>We use CleverReach. By clicking below to subscribe, you acknowledge that your information will be transferred to CleverReach for processing. <a href="https://www.cleverreach.com/en-de/terms-of-service/" target="_blank">Learn more about CleverReach's privacy practices here.</a></p>
+              <p>We use CleverReach. By clicking below to subscribe, you acknowledge that your information will be transferred to CleverReach for processing. <a href="https://www.cleverreach.com/en-de/terms-of-service/" target="_blank" rel="noopener noreferrer">Learn more about CleverReach's privacy practices here.</a></p>
             </div>
           </details>
 
@@ -99,7 +99,7 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
             <button type="submit" class="button btn btn--green" name="subscribe" id="cr-subscribe">Subscribe</button>
           </div>
         </div>
-        <noscript><a href="http://www.cleverreach.com">www.CleverReach.com</a></noscript>
+        <noscript><a href="http://www.cleverreach.com" target="_blank" rel="noopener noreferrer">www.CleverReach.com</a></noscript>
       </form>
     </div>
   </div>
