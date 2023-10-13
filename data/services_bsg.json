@@ -133,7 +133,7 @@
   "Type" : "C2B return",
   "Return" : "Yes",
   "Booking" : "Yes",
-  "RequiredSetup" : "Customer setup",
+  "RequiredSetup" : "-",
   "ShippingGuide" : "Yes",
   "ListPrice" : "Yes",
   "AgreementPrice" : "Yes",
