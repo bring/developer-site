@@ -18,7 +18,7 @@
         ],
         "illustrationImageUrl": "/images/checkout/bring/da/delivery_address.png",
         "illustrationImageAlt": "Delivery address input fields",
-        "tags": ["Address API", "Pickup Point API"],
+        "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points.</p>"
         ]
@@ -105,7 +105,7 @@
     "ingress": {
       "paragraphs": [
         "Følg disse nemme trin for at forbedre præsentationen af vores leveringsmuligheder i din checkout.",
-        "Hvis du har brug for hjælp til at implementere nogen af disse trin, kan du besøge vores <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> eller kontakte vores <a href=\"mailto:checkout.implementering@posten.no\">Checkout-implementeringsteam</a>."
+        "Hvis du har brug for hjælp til at implementere nogen af disse trin, kan du besøge vores <a href=\"https://www.mybring.com/shipping-guide/integration/checkout\" target=\"_blank\">Checkout tool</a> eller kontakte vores <a href=\"mailto:checkoutdk@bring.com\">Checkout-implementeringsteam</a>."
       ],
       "countries": "Other countries"
     },
