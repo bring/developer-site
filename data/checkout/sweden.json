@@ -18,7 +18,7 @@
         ],
         "illustrationImageUrl": "/images/checkout/bring/se/delivery_address.png",
         "illustrationImageAlt": "Delivery address input fields",
-        "tags": ["Address API", "Pickup Point API"],
+        "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points.</p>"
         ]

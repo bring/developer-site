@@ -7,7 +7,7 @@ menu:
     parent: sgusing
 weight: 3
 ---
-This guide will walk you through getting shipment alternatives for your first consignment. We will be calling the REST interface with a HTTP client and query for the service `SERVICEPAKKE` and `PA_DOREN` for two packages.
+This guide will walk you through getting shipment alternatives for your first consignment. We will be calling the REST interface with a HTTP client and query for the service `5800` and `PA_DOREN` for two packages.
 
 ### 1. Add additional headers
 
@@ -30,7 +30,7 @@ There are several ways you can control the output of your request. The following
 | `edi` | Should the parcel be registered using EDI when shipped. Note that this flag may affect price and which services are available. Default `true` |
 | `postingAtPostoffice` | Will the parcel be delivered at a post office when shipped. Default `false` |
 
-In this request we will query prices and expected delivery time for the service `SERVICEPAKKE` for a single package being sent from the postal code 0015 to 5518 in Norway.
+In this request we will query prices and expected delivery time for the service `5800` for a single package being sent from the postal code 0015 to 5518 in Norway.
 
 
 #### REST (POST)
@@ -50,7 +50,7 @@ In this request we will query prices and expected delivery time for the service 
       "id": 101,
       "products": [
         {
-          "id": "SERVICEPAKKE"
+          "id": "5800"
         }
       ],
       "fromCountryCode": "NO",
@@ -119,21 +119,20 @@ The response may have changed since it was documented but you will get a respons
     {
       "products": [
           {
-              "id": "SERVICEPAKKE",
+              "id": "5800",
               "productionCode": "1202",
               "guiInformation": {
                   "sortOrder": "0",
                   "mainDisplayCategory": "Pakke",
                   "subDisplayCategory": "Til privatpersoner",
                   "trackable": false,
-                  "logo": "BRING",
-                  "logoUrl": "https://www.qa.mybring.com/shipping-guide/assets/img/Bring_logo.svg",
+                  "logo": "POSTEN",
+                  "logoUrl": "https://www.qa.mybring.com/shipping-guide/assets/img/Posten_logo.svg",
                   "displayName": "Til hentested",
-                  "productName": "Servicepakke",
+                  "productName": "Pakke til hentested",
                   "descriptionText": "Pakken kan spores og utleveres på ditt lokale hentested.",
-                  "helpText": "Servicepakke leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.",
-                  "shortName": "Servicepakke",
-                  "productURL": "http://www.bring.no/sende/pakker/private-i-norge/hentes-pa-posten",
+                  "helpText": "Pakke til hentested leveres til mottakers lokale hentested (postkontor eller Post i Butikk). Mottaker kan velge å hente sendingen på et annet hentested enn sitt lokale. Mottaker varsles om at sendingen er ankommet via SMS, e-post eller hentemelding i postkassen. Sendingen kan spores ved hjelp av sporingsnummeret.",
+                  "shortName": "Pakke til hentested",
                   "deliveryType": "Hentested",
                   "maxWeightInKgs": "35"
               },
