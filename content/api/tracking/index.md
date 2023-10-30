@@ -103,7 +103,7 @@ documentation:
        | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
        | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
        | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
-       | `RETURN` | The package has been returned to sender. |
+       | `RETURN` | The package is on its way back to the sender. |
        | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
        | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
        | `UNKNOWN` | Represents unknown / undefined events |
