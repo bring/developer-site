@@ -27,7 +27,7 @@
     "senderCountries" : "ALL",
     "destinations" : "FI, FO, IS"
   }, {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -231,7 +231,7 @@
   "bookingCode" : "2086",
   "incompatibleVases" : [ "Seven days pickup deadline" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -497,7 +497,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE"
   }, {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -507,7 +507,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pall til bedrift",
+    "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -559,7 +559,7 @@
   "bookingCode" : "1062",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Ekspress neste dag",
+    "serviceName" : "Express next day",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -569,7 +569,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Returekspress",
+    "serviceName" : "Return express",
     "serviceType" : "B2B return",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -591,7 +591,7 @@
   "bookingCode" : "0041",
   "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee", "Signature required" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -601,7 +601,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -611,7 +611,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Partigods til bedrift",
+    "serviceName" : "Business partload",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -621,7 +621,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -631,7 +631,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pall til bedrift",
+    "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -641,7 +641,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Før 07:00 til bedrift",
+    "serviceName" : "Business before 07:00",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -663,7 +663,7 @@
   "bookingCode" : "NON_FREEZE",
   "incompatibleVases" : [ "Simplified delivery", "Special goods" ],
   "supportedServices" : [ {
-    "serviceName" : "Partigods til bedrift",
+    "serviceName" : "Business partload",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -673,7 +673,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -683,7 +683,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pall til bedrift",
+    "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -705,7 +705,7 @@
   "bookingCode" : "DANGEROUS_GOODS",
   "incompatibleVases" : [ "Simplified delivery", "Desktop delivery", "Remove pallets" ],
   "supportedServices" : [ {
-    "serviceName" : "Oljeekspressen",
+    "serviceName" : "Oil Express",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
@@ -715,7 +715,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Partigods til bedrift",
+    "serviceName" : "Business partload",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -725,7 +725,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -735,7 +735,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pall til bedrift",
+    "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -1091,7 +1091,7 @@
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK"
   }, {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1101,7 +1101,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1121,7 +1121,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE, DK"
   }, {
-    "serviceName" : "Ekspress neste dag",
+    "serviceName" : "Express next day",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1455,7 +1455,7 @@
   "bookingCode" : "SELECT_PICKUP_POINT",
   "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts then return" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1475,7 +1475,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1649,7 +1649,7 @@
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
   }, {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1659,7 +1659,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1863,7 +1863,7 @@
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI"
   }, {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1873,7 +1873,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1945,7 +1945,7 @@
     "senderCountries" : "ALL",
     "destinations" : "NO"
   }, {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1955,7 +1955,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1977,7 +1977,7 @@
   "bookingCode" : "1178",
   "incompatibleVases" : [ "Two delivery attempts", "Two delivery attempts then return", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1987,7 +1987,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2009,7 +2009,7 @@
   "bookingCode" : "1283",
   "incompatibleVases" : [ "Two delivery attempts", "One delivery attempt, then pickup point", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2019,7 +2019,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2041,7 +2041,7 @@
   "bookingCode" : "2142",
   "incompatibleVases" : [ "Frost free", "Desktop delivery", "Remove pallets" ],
   "supportedServices" : [ {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2051,7 +2051,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Partigods til bedrift",
+    "serviceName" : "Business partload",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2073,7 +2073,7 @@
   "bookingCode" : "OX_EXPRESS",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Oljeekspressen",
+    "serviceName" : "Oil Express",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
@@ -2095,7 +2095,7 @@
   "bookingCode" : "1081",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke i postkassen med RFID",
+    "serviceName" : "Mailbox parcel with RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2105,7 +2105,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke i postkassen",
+    "serviceName" : "Mailbox parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2127,7 +2127,7 @@
   "bookingCode" : "1083",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Ekspress neste dag",
+    "serviceName" : "Express next day",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2137,7 +2137,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2147,7 +2147,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Returekspress",
+    "serviceName" : "Return express",
     "serviceType" : "B2B return",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2157,7 +2157,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Retur pakke fra bedrift",
+    "serviceName" : "Return business parcel",
     "serviceType" : "B2B return",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2179,7 +2179,7 @@
   "bookingCode" : "SOSIAL_KONTROLL",
   "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2189,7 +2189,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2459,7 +2459,7 @@
   "bookingCode" : "1073",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Retur pakke i postkassen",
+    "serviceName" : "Return mailbox parcel",
     "serviceType" : "B2C return",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2469,7 +2469,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pall til bedrift",
+    "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2491,7 +2491,7 @@
   "bookingCode" : "2012",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2777,7 +2777,7 @@
   "bookingCode" : "DELIVERY_DATE",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Oljeekspressen",
+    "serviceName" : "Oil Express",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
@@ -2799,7 +2799,7 @@
   "bookingCode" : "PREFERRED_DELIVERY_DAY",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke levert hjem",
+    "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2831,7 +2831,7 @@
   "bookingCode" : "1149",
   "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2841,7 +2841,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2851,7 +2851,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Partigods til bedrift",
+    "serviceName" : "Business partload",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2861,7 +2861,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pall til bedrift",
+    "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2883,7 +2883,7 @@
   "bookingCode" : "1163",
   "incompatibleVases" : [ "Dangerous goods", "Special goods" ],
   "supportedServices" : [ {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2893,7 +2893,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Partigods til bedrift",
+    "serviceName" : "Business partload",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2915,7 +2915,7 @@
   "bookingCode" : "2221",
   "incompatibleVases" : [ "Dangerous goods", "Special goods" ],
   "supportedServices" : [ {
-    "serviceName" : "Stykkgods til bedrift",
+    "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
     "serviceFamilySortOrder" : 3,
@@ -2937,7 +2937,7 @@
   "bookingCode" : "1095",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til bedrift",
+    "serviceName" : "Business parcel",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2959,7 +2959,7 @@
   "bookingCode" : "1371",
   "incompatibleVases" : [ "Notification by letter" ],
   "supportedServices" : [ {
-    "serviceName" : "Pakke til hentested",
+    "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
