@@ -1,7 +1,7 @@
 [ {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Pakke til hentested",
+  "ServiceName" : "Pickup parcel",
   "ServiceCode" : "5800",
   "RequestCode" : "5800",
   "Type" : "B2C",
@@ -19,7 +19,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Pakke levert hjem",
+  "ServiceName" : "Home delivery parcel",
   "ServiceCode" : "5600",
   "RequestCode" : "5600",
   "Type" : "B2C",
@@ -37,7 +37,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Pakke i postkassen",
+  "ServiceName" : "Mailbox parcel",
   "ServiceCode" : "3584",
   "RequestCode" : "3584",
   "Type" : "B2C",
@@ -55,7 +55,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Pakke i postkassen med RFID",
+  "ServiceName" : "Mailbox parcel with RFID",
   "ServiceCode" : "3570",
   "RequestCode" : "3570",
   "Type" : "B2C",
@@ -73,7 +73,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Pakke til bedrift",
+  "ServiceName" : "Business parcel",
   "ServiceCode" : "5000",
   "RequestCode" : "5000",
   "Type" : "B2B",
@@ -91,7 +91,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Ekspress neste dag",
+  "ServiceName" : "Express next day",
   "ServiceCode" : "4850",
   "RequestCode" : "4850",
   "Type" : "B2B",
@@ -109,7 +109,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Retur fra hentested",
+  "ServiceName" : "Return from pick-up point",
   "ServiceCode" : "9300",
   "RequestCode" : "9300",
   "Type" : "B2C return",
@@ -127,10 +127,10 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Retur til bedrift",
+  "ServiceName" : "Return parcel to business",
   "ServiceCode" : "9350",
   "RequestCode" : "9350",
-  "Type" : "C2B return",
+  "Type" : "B2C return",
   "Return" : "Yes",
   "Booking" : "Yes",
   "RequiredSetup" : "-",
@@ -145,7 +145,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Retur pakke i postkassen",
+  "ServiceName" : "Return mailbox parcel",
   "ServiceCode" : "9650",
   "RequestCode" : "9650",
   "Type" : "B2C return",
@@ -163,7 +163,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Retur pakke fra bedrift",
+  "ServiceName" : "Return business parcel",
   "ServiceCode" : "9000",
   "RequestCode" : "9000",
   "Type" : "B2B return",
@@ -181,7 +181,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Returekspress",
+  "ServiceName" : "Return express",
   "ServiceCode" : "9600",
   "RequestCode" : "9600",
   "Type" : "B2B return",
@@ -451,7 +451,7 @@
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Stykkgods til bedrift",
+  "ServiceName" : "Business groupage",
   "ServiceCode" : "5100",
   "RequestCode" : "5100",
   "Type" : "B2B",
@@ -469,7 +469,7 @@
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Pall til bedrift",
+  "ServiceName" : "Business pallet",
   "ServiceCode" : "5400",
   "RequestCode" : "5400",
   "Type" : "B2B",
@@ -487,12 +487,12 @@
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Før 07:00 til bedrift",
+  "ServiceName" : "Business before 07:00",
   "ServiceCode" : "5200",
   "RequestCode" : "5200",
   "Type" : "B2B",
   "Return" : "-",
-  "Booking" : "-",
+  "Booking" : "Yes",
   "RequiredSetup" : "-",
   "ShippingGuide" : "Yes",
   "ListPrice" : "Yes",
@@ -505,7 +505,7 @@
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Partigods til bedrift",
+  "ServiceName" : "Business partload",
   "ServiceCode" : "5300",
   "RequestCode" : "5300",
   "Type" : "B2B",
@@ -523,7 +523,7 @@
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Retur stykkgods fra bedrift",
+  "ServiceName" : "Return business groupage",
   "ServiceCode" : "9100",
   "RequestCode" : "9100",
   "Type" : "B2B return",
@@ -991,7 +991,7 @@
 }, {
   "ServiceFamily" : "Supply base logistics",
   "CustomerNumberType" : "Supply Base Logistics",
-  "ServiceName" : "Oljeekspressen",
+  "ServiceName" : "Oil Express",
   "ServiceCode" : "3050",
   "RequestCode" : "OIL_EXPRESS",
   "Type" : "B2B",
@@ -1063,7 +1063,7 @@
 }, {
   "ServiceFamily" : "Mail",
   "CustomerNumberType" : "",
-  "ServiceName" : "Sporbar brevpakke bedrift",
+  "ServiceName" : "International Tracked Packet",
   "ServiceCode" : "3630",
   "RequestCode" : "3630",
   "Type" : "B2X",
