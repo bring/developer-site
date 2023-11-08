@@ -7,4 +7,8 @@ updates:
     open-pull-requests-limit: 12
     groups:
       npm-dependencies:
-        patterns: "*"
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
