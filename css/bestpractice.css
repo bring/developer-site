@@ -6,11 +6,16 @@
     max-width: max-content;
 
     & > div {
-        max-width: 40rem;
+        flex: 1 2 24rem;
+        max-width: 625px;
     }
 
     & > figure {
-        max-width: 40rem;
+        flex: 1 2 24rem;
+
+        & > img {
+            max-width: 625px;
+        }
     }
 }
 
