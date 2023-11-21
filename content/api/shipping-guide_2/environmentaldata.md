@@ -24,7 +24,7 @@ For the following Norwegian domestic and Nordic parcel services it is now possib
 
 
 To get the environmental data, use the following new fields:
-EnvironmentalData>true</WithEnvironmentalData>
+`<EnvironmentalData>true</WithEnvironmentalData>`
 
 * POST Request: withEnvironmentalData
 ```json
@@ -37,7 +37,7 @@ The data returned contains a list of transport legs (FIRST_MILE, LINE_HAUL and L
       <ns2:TransportLeg>
           <ns2:TransportLegType>LAST_MILE</ns2:TransportLegType>               
           <ns2:FossilFree>true</ns2:FossilFree>
-          <ns2:Description>Pakken leveres fossilfritt til din adresse</ns2:Description>
+          <ns2:Description>The parcel is delivered with fossil-free fuel from the local terminal to the chosen delivery address</ns2:Description>
           <ns2:Details>
               <ns2:Electric>0.6</ns2:Electric>
               <ns2:Bio>0.4</ns2:Bio>
@@ -45,15 +45,39 @@ The data returned contains a list of transport legs (FIRST_MILE, LINE_HAUL and L
       </ns2:TransportLeg>
 </ns2:EnvironmentalData>
 ```  
+
+```json
+{
+  "environmentalData": [
+    {
+      "transportLeg": "LAST_MILE",
+      "fossilFree": true,
+      "description": "The parcel is delivered with fossil-free fuel from the local terminal to the chosen delivery address",
+      "details": {
+        "electric": 0.6,
+        "bio": 0.4
+      }
+    }
+  ]
+}
+```
 If the transport leg is carried out by electric vehicle, `electric` will contain the percentage share of electric vehicle usage where `1.0 == 100%`. If transport leg is carried out with a mix of bio-diesel and electric vehicles, `fossilFree` will still be `true` if percentages sums up to `1.0`. `electric` and `bio` will contain the usage percentage share of corresponding vehicles.
 
 The API currently only supports environmental data for the `LAST_MILE` leg.
 
 **NOTE**: the API returns values based on what is, in a normal situation, expected for the postal code in question. In case of car maintenance or other extraordinaty situations, we can not guarantee a fossil free delivery.
 
-Environmental logo is also returned in the GuiInformation  for mentioned services when also including ```<WithGuiInformation>true</WithGuiInformation>``` in the request
+Environmental logo and tag is also included in the GuiInformation for mentioned services when also setting `<WithGuiInformation>true</WithGuiInformation>` or `withGuiInformation: true` in the request
 ```xml
 <ns2:GuiInformation>
      <ns2:EnvironmentalLogoUrl>https://www.mybring.com/shipping-guide/assets/img/Environment_logo.svg</ns2:EnvironmentalLogoUrl>
+     <ns2:EnvironmentalTagUrl>https://www.mybring.com/shipping-guide/assets/img/Environment_tag_fossilFree_en.png</ns2:EnvironmentalTagUrl>
 </ns2:GuiInformation>
+```
+
+```json
+{
+  "environmentalLogoUrl": "https://www.mybring.com/shipping-guide/assets/img/Environment_logo.svg",
+  "environmentalTagUrl": "https://www.mybring.com/shipping-guide/assets/img/Environment_tag_electric_en.png"
+}
 ```
