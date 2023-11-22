@@ -11,11 +11,8 @@
     }
 
     & > figure {
-        flex: 1 2 24rem;
-
-        & > img {
-            max-width: 625px;
-        }
+        flex: 1 1 24rem;
+        max-width: 40rem;
     }
 }
 
