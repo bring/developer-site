@@ -7,7 +7,7 @@
 
     & > div {
         flex: 1 2 24rem;
-        max-width: max-content;
+        max-width: 625px;
     }
 
     & > figure {
