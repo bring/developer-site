@@ -1505,7 +1505,7 @@
     "productionCode" : "0342",
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "SE, DK, FI"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "PickUp Parcel",
     "serviceType" : "B2C",
