@@ -22,7 +22,7 @@
 {{- end -}}
 
 {{- if eq $isImportant true -}}
-  <div class="grid__sticky-updates owls mbl">
+  <div class="owls mbl">
     {{- range where $pages ".Params.isImportant" true -}}
       {{- if or (strings.Contains (lower (replace .Title " " "")) (lower (replace $pageTitle " " ""))) (eq .Parent.Params.apiArea $apiArea) (eq .Parent.Params.apiArea "Common") -}}
       {{- $isImportant = true -}}
