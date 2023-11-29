@@ -1,11 +1,9 @@
 .updates__sub {
- flex: 1 1 18rem;
- max-width: 28rem;
+  flex: 0 1 28rem;
 }
 
 .updates__log {
- flex: 1 1 18rem;
- max-width: 32rem;
+ flex: 1 1 24rem;
 }
 
 @media screen and (max-width: 48em) {

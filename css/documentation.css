@@ -192,7 +192,7 @@ p a:not(.btn-link--dark, .btn-link) {
 }
 
 .changelog-small {
-  flex: 1 1 24rem;
+  flex: 1 1 20rem;
 }
 
 .btn-link--copy {

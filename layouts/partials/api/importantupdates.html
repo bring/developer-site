@@ -1,0 +1,41 @@
+{{- $apiArea := .apiArea -}}
+{{- $pageTitle := "" -}}
+{{- if .title -}}
+  {{- $pageTitle = .title -}}
+{{- end -}}
+{{- $pctx := .pctx -}}
+{{- $pages := slice -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- $mergedPages := slice -}}
+{{/* Get all sections from revision-history */}}
+{{- range $pages -}}
+  {{- if (in .CurrentSection "revision-history") -}}
+    {{- $mergedPages = $mergedPages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages = $mergedPages -}}
+{{- $isImportant := false -}}
+{{- range where $pages ".Params.isImportant" true -}}
+  {{- if or (strings.Contains (lower (replace .Title " " "")) (lower (replace $pageTitle " " ""))) (eq .Parent.Params.apiArea $apiArea) (eq .Parent.Params.apiArea "Common") -}}
+    {{- $isImportant = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $isImportant true -}}
+  <div class="grid__sticky-updates owls mbl">
+    {{- range where $pages ".Params.isImportant" true -}}
+      {{- if or (strings.Contains (lower (replace .Title " " "")) (lower (replace $pageTitle " " ""))) (eq .Parent.Params.apiArea $apiArea) (eq .Parent.Params.apiArea "Common") -}}
+      {{- $isImportant = true -}}
+      <div class="message--warn pal">
+        <h3 class="text-basic">
+          <time
+            datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+            >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
+          >: {{ .Title }}
+        </h3>
+        {{ .Content }}
+      </div>
+      {{- end -}}
+    {{- end -}}
+  </div>
+{{- end -}}

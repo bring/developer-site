@@ -9,6 +9,7 @@ menu:
     url: /api/warehousing
     parent: warehouse
 weight: 3
+apiArea: Warehousing
 
 introduction:
       You are able to extract detailed order information from our warehouse while the orders are being processed. Further, the API provides information about articles in stock, with methods for retrieving information about single items or configurable list of items.
