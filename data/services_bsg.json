@@ -1129,7 +1129,7 @@
   "Type" : "B2X",
   "Return" : "-",
   "Booking" : "Yes",
-  "RequiredSetup" : "Customer setup",
+  "RequiredSetup" : "-",
   "ShippingGuide" : "Yes",
   "ListPrice" : "Yes",
   "AgreementPrice" : "-",
