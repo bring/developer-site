@@ -218,6 +218,16 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -229,7 +239,7 @@
   "shippingGuideCode" : "LETTER_NOTIFICATION",
   "shippingGuideNpbCode" : "2086",
   "bookingCode" : "2086",
-  "incompatibleVases" : [ "Seven days pickup deadline" ],
+  "incompatibleVases" : [ "Seven days pickup deadline", "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
@@ -958,6 +968,16 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
     "destinations" : "ALL"
+  }, {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1349,7 +1369,7 @@
   "shippingGuideCode" : "STANDARD_INSTALLATION",
   "shippingGuideNpbCode" : "STANDARD_INSTALLATION",
   "bookingCode" : "1124",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1401,7 +1421,7 @@
   "shippingGuideCode" : "CUSTOM_INSTALLATION",
   "shippingGuideNpbCode" : "CUSTOM_INSTALLATION",
   "bookingCode" : "1125",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1465,7 +1485,17 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Ekspress neste dag",
+    "serviceName" : "Pakke til Pakkeboks",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "5801",
+    "productionCode" : "5801",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Express next day",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1481,6 +1511,16 @@
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Norgespakke",
+    "serviceType" : "C2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3067",
+    "productionCode" : "3067",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2114,6 +2154,16 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Norgespakke liten",
+    "serviceType" : "C2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3622",
+    "productionCode" : "3622",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2311,7 +2361,7 @@
   "shippingGuideCode" : "1127",
   "shippingGuideNpbCode" : "1127",
   "bookingCode" : "1127",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2363,7 +2413,7 @@
   "shippingGuideCode" : "1128",
   "shippingGuideNpbCode" : "1128",
   "bookingCode" : "1128",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2405,7 +2455,7 @@
   "shippingGuideCode" : "1141",
   "shippingGuideNpbCode" : "1141",
   "bookingCode" : "1141",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2999,7 +3049,7 @@
   "shippingGuideCode" : "1380",
   "shippingGuideNpbCode" : "1380",
   "bookingCode" : "1380",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -3021,7 +3071,7 @@
   "shippingGuideCode" : "1385",
   "shippingGuideNpbCode" : "1385",
   "bookingCode" : "1385",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Urban Home Delivery",
     "serviceType" : "B2C",
@@ -3093,7 +3143,7 @@
   "shippingGuideCode" : "1362",
   "shippingGuideNpbCode" : "1362",
   "bookingCode" : "1362",
-  "incompatibleVases" : [ "Swap", "Recycle white goods", "Unwrapping", "Carry service oversize", "Individual verification", "Flex delivery", "Social control" ],
+  "incompatibleVases" : [ "Carry service oversize", "Customized installation", "Electronic installation", "Flex delivery", "Individual verification", "Installation details", "Notification by letter", "Mechanical installation", "Recycle white goods", "Reusable Packaging", "Social control", "Standard installation", "Swap", "TV installation", "Unwrapping" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
@@ -3104,6 +3154,28 @@
     "domesticAllowedIn" : "SE",
     "senderCountries" : "-",
     "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Bring Pack Large",
+  "vasNameNorwegian" : "Bring Pakke Stor",
+  "description" : "Used for Bring pack shipments above 59 x 44 x 21 cm / 5kg  ",
+  "shippingGuideCode" : "1377",
+  "shippingGuideNpbCode" : "1377",
+  "bookingCode" : "1377",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
