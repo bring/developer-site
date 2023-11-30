@@ -86,12 +86,9 @@ the main folder - `content/api/revision-history`.
 - Messages that are important can appear on the API page by setting the parameter
 `isImportant: true` and including the full API name in the message title.
 This can be useful when a message should stay visible for an upcoming or breaking
-API change for instance. By changing the publish date and rewriting the message,
-or adding another update message when the API change occurs, a new email will be
-sent to the subscribers.
-Even though the important messages are separated out and presented on their own,
-they are still part of the normal RSS feed, that is used for distributing API
-updates to subscribers.
+API change. If you want to send a new email to subscribers when the API change occurs, update the publish date and rewrite the message to match the grammatical tense.
+Even though the important messages are separated and presented on their own,
+all update messages are part of the same RSS feed and email solution.
 
 The messages are added with the following frontmatter:
 
