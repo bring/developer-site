@@ -9,8 +9,8 @@
       <article>
         <h1>{{ .title }}</h1>
         <section id="api-documentation" class="dev-docscontent__section dev-docscontent__grid">
-          {{- with $.Params.important -}}
-            <div class="grid__messages">
+          <div class="grid__messages">
+            {{- with $.Params.important -}}
               <div class="mbl">
                 {{- range . -}}
                   <div class="message--{{ .type }} pal mbs">
@@ -21,8 +21,12 @@
                   </div>
                 {{- end -}}
               </div>
-            </div>
-          {{- end -}}
+            {{- end -}}
+
+            {{- partial "api/importantupdates.html" (dict "apiArea" $.Params.apiArea "pctx" $.Site "title" .title) -}}
+          </div>
+
+
           <div class="dev-docscontent__main maxw64r mbm grid__intro">
             {{- with $.Params.introduction -}}
               {{- if in (string .) "\n\n" -}}

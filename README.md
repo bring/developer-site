@@ -83,6 +83,13 @@ message is added in each folder (API area) of the affected API.
 - If the message is general and should reach all subscribers, this is added in
 the main folder - `content/api/revision-history`.
 
+- Messages that are important can appear on the API page by setting the parameter
+`isImportant: true` and including the full API name in the message title.
+This can be useful when a message should stay visible for an upcoming or breaking
+API change. If you want to send a new email to subscribers when the API change occurs, update the publish date and rewrite the message to match the grammatical tense.
+Even though the important messages are separated and presented on their own,
+all update messages are part of the same RSS feed and email solution.
+
 The messages are added with the following frontmatter:
 
 ```
@@ -90,6 +97,7 @@ The messages are added with the following frontmatter:
 title: {API name}
 publishDate: yyyy-mm-dd
 layout: api
+isImportant: true (boolean) - optional
 ---
 ```
 
