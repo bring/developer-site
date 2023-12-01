@@ -3,6 +3,7 @@
 {{- if .title -}}
   {{- $pageTitle = .title -}}
 {{- end -}}
+{{- $showHeading := false -}}
 {{- $pctx := .pctx -}}
 {{- $pages := slice -}}
 {{- $pages = $pctx.RegularPages -}}
@@ -18,10 +19,14 @@
 {{- range where $pages ".Params.isImportant" true -}}
   {{- if or (strings.Contains (lower (replace .Title " " "")) (lower (replace $pageTitle " " ""))) (eq .Parent.Params.apiArea $apiArea) (eq .Parent.Params.apiArea "Common") -}}
     {{- $isImportant = true -}}
+    {{- $showHeading = true -}}
   {{- end -}}
 {{- end -}}
 
 {{- if eq $isImportant true -}}
+  {{- if and .heading $showHeading -}}
+    <h2>{{.heading}}</h2>
+  {{- end -}}
   <div class="owls mbl">
     {{- range where $pages ".Params.isImportant" true -}}
       {{- if or (strings.Contains (lower (replace .Title " " "")) (lower (replace $pageTitle " " ""))) (eq .Parent.Params.apiArea $apiArea) (eq .Parent.Params.apiArea "Common") -}}
