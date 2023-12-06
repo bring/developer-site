@@ -33,7 +33,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{{- print "/assets/" (index $jsManifest "js/main.css" "file") | relURL -}}"
+      href="{{- print "/assets/" (index $jsManifest "js/main.js" "css" 0) | relURL -}}"
     />
   {{ end }}
   <link
