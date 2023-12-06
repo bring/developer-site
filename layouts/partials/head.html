@@ -29,12 +29,16 @@
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
   />
   {{ if not $.Site.IsServer }}
-    {{- $jsManifest := getJSON "static/assets/manifest.json" -}}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{- print "/assets/" (index $jsManifest "js/main.css" "file") | relURL -}}"
-    />
+    {{- $jsManifest := getJSON "static/assets/.vite/manifest.json" -}}
+    {{- with index $jsManifest "js/main.js" -}}
+      {{- range .css -}}
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="{{- print "/assets/" . | relURL -}}"
+        />
+      {{- end -}}
+    {{- end -}}
   {{ end }}
   <link
     rel="shortcut icon"
