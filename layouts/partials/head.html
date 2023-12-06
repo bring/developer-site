@@ -29,7 +29,7 @@
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
   />
   {{ if not $.Site.IsServer }}
-    {{- $jsManifest := getJSON "static/assets/.vite/manifest.json" -}}
+    {{- $jsManifest := getJSON "static/assets/manifest.json" -}}
     <link
       rel="stylesheet"
       type="text/css"
