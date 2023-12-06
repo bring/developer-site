@@ -30,11 +30,15 @@
   />
   {{ if not $.Site.IsServer }}
     {{- $jsManifest := getJSON "static/assets/.vite/manifest.json" -}}
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{- print "/assets/" (index $jsManifest "js/main.js" "css" 0) | relURL -}}"
-    />
+    {{- with index $jsManifest "js/main.js" -}}
+      {{- range .css -}}
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="{{- print "/assets/" . | relURL -}}"
+        />
+      {{- end -}}
+    {{- end -}}
   {{ end }}
   <link
     rel="shortcut icon"
