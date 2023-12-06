@@ -35,5 +35,8 @@
         "404": {
             "rewrite": "/404.html"
         }
+    },
+    "platform": {
+      "apiRuntime": "node:20"
     }
 }
