@@ -40,13 +40,13 @@
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.1",
-    "hugo-bin": "^0.116.4",
+    "hugo-bin": "^0.117.0",
     "postcss": "^8.4.32",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.1",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^5.0.5",
-    "terser": "^5.25.0",
+    "terser": "^5.26.0",
     "vite": "^5.0.6"
   },
   "browserslist": [
