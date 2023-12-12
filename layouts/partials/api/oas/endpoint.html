@@ -41,21 +41,21 @@
                 {{- if gt (len .) 1 -}}
                   {{- $multiSchema = true -}}
                 {{- end -}}
-                <div class="mb-border bb flex align-ib gas mbm pbxs schema__header">
-                  <div class="flex flex-wrap align-ib gcm grs mr-auto">
+                <div class="schema__header">
+                  <div>
                     <h4 class="fw600 mb0">Body schema</h4>
                     {{- if $multiSchema -}}
-                    <div class="flex flex-wrap align-ib gcxs">
-                      <label class="form__label text-basic" for="{{ $endpointId }}-reqschema">Media type:</label>
-                      <select id="{{ $endpointId }}-reqschema" data-sub-of="{{ $endpointId }}-reqschema" class="form__control schematype__select" name="formats">
-                        {{- range $applicationType, $_ := . -}}
-                          {{- $typeClean := lower (anchorize $applicationType) -}}
-                          <option value="{{ $typeClean }}">
-                            {{ $applicationType }}
-                          </option>
-                        {{- end -}}
-                      </select>
-                    </div>
+                      <div class="flex flex-wrap align-ib gcxs">
+                        <label class="form__label text-basic" for="{{ $endpointId }}-reqschema">Media type:</label>
+                        <select id="{{ $endpointId }}-reqschema" data-sub-of="{{ $endpointId }}-reqschema" class="form__control schematype__select" name="formats">
+                          {{- range $applicationType, $_ := . -}}
+                            {{- $typeClean := lower (anchorize $applicationType) -}}
+                            <option value="{{ $typeClean }}">
+                              {{ $applicationType }}
+                            </option>
+                          {{- end -}}
+                        </select>
+                      </div>
                     {{- else -}}
                       {{- range $applicationType, $_ := . -}}
                         <p class="mb0">Media type: {{ $applicationType }}</p>
