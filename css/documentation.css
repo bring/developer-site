@@ -34,11 +34,11 @@
       position: sticky;
       list-style: none;
       margin: 0;
-      padding: 0 min(2rem,6vw);
+      padding: 0 min(2rem, 6vw);
     }
 
     & li {
-      margin-bottom: min(0.75em,1vh);
+      margin-bottom: min(0.75em, 1vh);
     }
   }
 
@@ -65,12 +65,12 @@ p a:not(.btn-link--dark, .btn-link) {
 }
 
 .dev-docscontent__backnav {
-  padding: 0 min(2rem, 6vw) min(2rem,4vh);
+  padding: 0 min(2rem, 6vw) min(2rem, 4vh);
 }
 
 .dev-docscontent__section {
   margin-bottom: 3rem;
-  padding: 0 min(2rem, 6vw) min(2rem,4vh);
+  padding: 0 min(2rem, 6vw) min(2rem, 4vh);
   border-width: 2px;
   border-color: var(--gray-86);
   border-bottom-style: solid;
@@ -101,9 +101,9 @@ p a:not(.btn-link--dark, .btn-link) {
   display: grid;
   gap: 0 2rem;
   grid-template-areas:
-  "intro messages"
-  "intro signup";
-  grid-template-columns: minmax(20rem,60rem) minmax(20rem, 28rem);
+    "intro messages"
+    "intro signup";
+  grid-template-columns: minmax(20rem, 60rem) minmax(20rem, 28rem);
   grid-template-rows: auto 1fr;
 }
 
@@ -250,7 +250,7 @@ div.response {
   border-left-style: dashed;
   border-width: 1px;
   margin: 0 0.25rem 0 0.75rem;
-  border-color: var(--gray-66)
+  border-color: var(--gray-66);
 }
 
 .desc-list > div {
