@@ -5,7 +5,6 @@
            (not .IsHome)
            (not .Params.hidden)
            (not .Params.private)
-           (not (in .RelPermalink "/jobs/"))
            (not (in .RelPermalink "/revision-history/"))
            (not (in .RelPermalink "/blog/"))) -}}
 

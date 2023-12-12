@@ -11,7 +11,7 @@ authors:
 
 Do you ever find yourself having to build user interfaces for web applications without an interaction designer or UI developer in sight? **What on earth is a fullstack-ish backender supposed to do?!** The UXers are off gathering insights, graphic designers are in a different corporate silo all together, the nearest frontender is busy.
 
-Fear not! While design work sounds like a scary slippery slope away from coding, there is great pleasure in actually coding the right stuff. There are things you can do to figure out what that is, and DIY till your department hires more frontenders. &#1645;[cough](/jobs/)&#1645;
+Fear not! While design work sounds like a scary slippery slope away from coding, there is great pleasure in actually coding the right stuff. There are things you can do to figure out what that is, and DIY till your department hires more frontenders.
 
 ## The first milestone
 
