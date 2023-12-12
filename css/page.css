@@ -16,10 +16,6 @@
   max-width: 108rem;
 }
 
-.jobs a {
-  text-decoration: underline;
-}
-
 .ecom-entrance {
   flex: 1 1 16rem;
   border:none;
