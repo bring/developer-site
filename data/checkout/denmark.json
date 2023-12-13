@@ -85,22 +85,7 @@
         ]
       },
       {
-        "h3": "5. Flexible delivery",
-        "figures": [
-          {
-            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
-            "imageClass": "maxw8r"
-          }
-        ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose delivery date",
-        "paragraphs": [
-          "<p>Make the delivery more flexible by adding different value added services. For example:</p>",
-          "<p>Alternative delivery time for home delivery parcel. Let the customer choose whether they want the parcel delivered during the day or in the evening.</p>"
-        ]
-      },
-      {
-        "h3": "6. Environmental data and icon",
+        "h3": "5. Environmental data and icon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
@@ -202,22 +187,7 @@
         ]
       },
       {
-        "h3": "5. Fleksibel levering",
-        "figures": [
-          {
-            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
-            "imageClass": "maxw8r"
-          }
-        ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose delivery date",
-        "paragraphs": [
-          "<p>Gør leveringen mere fleksibel for dine kunder, ved at tilbyde forskellige værdiskabende tjenester, f.eks:</p>",
-          "<p>Alternativ leveringstid for Home delivery parcel. Lad kunden vælge, om de vil have pakken leveret i løbet af dagen eller om aftenen.</p>"
-        ]
-      },
-      {
-        "h3": "6. Miljøtekst og miljøikon",
+        "h3": "5. Miljøtekst og miljøikon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
