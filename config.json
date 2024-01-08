@@ -13,15 +13,36 @@
     },
     "no": {
       "staticDir": ["static"],
-      "languageName": "Norsk"
+      "languageName": "Norsk",
+      "menus": {
+        "main": [
+          {
+            "pageRef": "/api/e-commerce-solutions/best-practice-checkout/norway"
+          }
+        ]
+      }
     },
     "se": {
       "staticDir": ["static"],
-      "languageName": "Svensk"
+      "languageName": "Svensk",
+      "menus": {
+        "main": [
+          {
+            "pageRef": "/api/e-commerce-solutions/best-practice-checkout/sweden"
+          }
+        ]
+      }
     },
     "da": {
       "staticDir": ["static"],
-      "languageName": "Dansk"
+      "languageName": "Dansk",
+      "menus": {
+        "main": [
+          {
+            "pageRef": "/api/e-commerce-solutions/best-practice-checkout/denmark"
+          }
+        ]
+      }
     }
   },
   "paginate": 12,
