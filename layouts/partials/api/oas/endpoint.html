@@ -116,12 +116,12 @@
                   {{- if gt (len .) 1 -}}
                     {{- $multiSchema = true -}}
                   {{- end -}}
-                  <details class="mb-disclosure mb-disclosure--arrow {{ $responseColorBg }} mbxs">
+                  <details class="mb-disclosure {{ $responseColorBg }} mbxs">
                     <summary class="{{ $responseColorTxt }}">
                       <span
-                      data-mybicon="mybicon-arrow-right"
-                      data-mybicon-width="16"
-                      data-mybicon-height="16"
+                        data-mybicon="mybicon-arrow-right"
+                        data-mybicon-width="16"
+                        data-mybicon-height="16"
                       ></span>
                       <span class="fw600">{{ $response }}</span> {{ $description }}
                     </summary>
