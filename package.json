@@ -33,30 +33,30 @@
   },
   "homepage": "https://developer.bring.com",
   "devDependencies": {
-    "@preact/preset-vite": "^2.7.0",
+    "@preact/preset-vite": "^2.8.1",
     "@vitejs/plugin-legacy": "^5.2.0",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.16",
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
-    "cssnano": "^6.0.1",
-    "hugo-bin": "^0.117.0",
-    "postcss": "^8.4.32",
+    "cssnano": "^6.0.3",
+    "hugo-bin": "^0.118.1",
+    "postcss": "^8.4.33",
     "postcss-import": "^15.1.0",
-    "postcss-nesting": "^12.0.1",
+    "postcss-nesting": "^12.0.2",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^5.0.5",
     "terser": "^5.26.0",
-    "vite": "^5.0.6"
+    "vite": "^5.0.11"
   },
   "browserslist": [
     "> .2%",
     "not ie > 0"
   ],
   "dependencies": {
-    "algoliasearch": "^4.20.0",
+    "algoliasearch": "^4.22.1",
     "anchor-js": "^5.0.0",
-    "preact": "^10.19.2",
+    "preact": "^10.19.3",
     "react-autosuggest": "^10.1.0",
     "react-instantsearch-dom": "^6.40.0"
   }
