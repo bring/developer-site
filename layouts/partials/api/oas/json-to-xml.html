@@ -56,7 +56,7 @@
               {{ with $schemaVal.xml.name }}
                 {{ $exampleKey = . }}
               {{ end }}
-                {{ if eq $name "bookingRequest" }}
+                {{ if or (eq $name "bookingRequest") (eq $name "pickupOrderRequest") }}
                   {{ $attribute := printf " %s %s=\"%s\"" $bookingXmlNamespace $exampleKey (string $exampleVal) }}
                   {{ $xmlObject = printf "%s%s" $xmlObject $attribute }}
                 {{ else }}
