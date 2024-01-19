@@ -1026,7 +1026,7 @@
   "DomesticAllowed" : "-"
 }, {
   "ServiceFamily" : "Cargo Norway international",
-  "CustomerNumberType" : "Cargo Norway international",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Cargo International",
   "ServiceIcon" : "serviceicon-globe",
   "ServiceCode" : "3050",
@@ -1081,44 +1081,6 @@
   "SenderCountries" : "-",
   "Destination" : "-",
   "DomesticAllowed" : "NO"
-}, {
-  "ServiceFamily" : "Mail",
-  "CustomerNumberType" : "",
-  "ServiceName" : "Priority",
-  "ServiceIcon" : "serviceicon-crate",
-  "ServiceCode" : "3609",
-  "RequestCode" : "3609",
-  "Type" : "B2X",
-  "Return" : "-",
-  "Booking" : "-",
-  "RequiredSetup" : "-",
-  "ShippingGuide" : "Yes",
-  "ListPrice" : "Yes",
-  "AgreementPrice" : "-",
-  "LeadTime" : "-",
-  "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
-  "DomesticAllowed" : "-"
-}, {
-  "ServiceFamily" : "Mail",
-  "CustomerNumberType" : "",
-  "ServiceName" : "Registered",
-  "ServiceIcon" : "serviceicon-crate",
-  "ServiceCode" : "3610",
-  "RequestCode" : "3610",
-  "Type" : "B2X",
-  "Return" : "-",
-  "Booking" : "-",
-  "RequiredSetup" : "-",
-  "ShippingGuide" : "Yes",
-  "ListPrice" : "Yes",
-  "AgreementPrice" : "-",
-  "LeadTime" : "-",
-  "EnvironmentalData" : "-",
-  "SenderCountries" : "-",
-  "Destination" : "-",
-  "DomesticAllowed" : "-"
 }, {
   "ServiceFamily" : "Mail",
   "CustomerNumberType" : "",
