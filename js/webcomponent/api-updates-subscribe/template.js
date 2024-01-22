@@ -76,7 +76,7 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
             </fieldset>
           </div>
 
-          <details class="mb-disclosure mb-disclosure--arrow bg-green1 mbm">
+          <details class="mb-disclosure bg-green1 mbm">
             <summary>
               <span
                 data-mybicon="mybicon-arrow-right"

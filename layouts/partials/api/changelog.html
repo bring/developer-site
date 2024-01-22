@@ -67,7 +67,14 @@
 
       {{- if (gt (len $pages) 5) -}}
       <details class="mb-disclosure" id="olderApiUpdates">
-        <summary class="pam bg-gray1">Older updates</summary>
+        <summary class="pam bg-gray1">
+          <span
+            data-mybicon="mybicon-arrow-right"
+            data-mybicon-width="16"
+            data-mybicon-height="16"
+          ></span>
+          Older updates
+        </summary>
         <div class="flex flex-wrap" aria-busy="true" aria-atomic="true" aria-live="polite" data-live-region>
           {{- range where (after 5 $pages) ".Params.isImportant" "ne" true -}}
             {{- $parentFolder := path.Base (path.Dir .) -}}

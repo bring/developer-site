@@ -45,7 +45,7 @@
 
 <div class="flex flex-dir-col gas" id="all-vas">
   {{- range $index, $vas := (sort .data "vasName") -}}
-    <details class="mb-disclosure mb-disclosure--arrow bg-gray1 vas-item">
+    <details class="mb-disclosure bg-gray1 vas-item">
       <summary class="dev-anchored" id="{{ .vasName|anchorize }}">
         <span
           data-mybicon="mybicon-arrow-right"
