@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState, Fragment } from "react";
-import { render } from "react-dom";
+import React, { useEffect, useRef, useState, Fragment, render } from "react";
 import { useSearchBox } from "react-instantsearch";
 import { autocomplete } from "@algolia/autocomplete-js";
 
