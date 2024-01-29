@@ -19,11 +19,9 @@ important:
     message: |
       The SOAP endpoint is now deprecated. Going forward the API will only support `application/json` and `application/xml` as Content-Type. 
       
-      If you are currently relying on the SOAP endpoint of Shipping Guide API, you have until ___1 March 2024___ to 
-      migrate to the [JSON/XML over HTTP based endpoints](/api/shipping-guide_2/#fetch-shipping-details-post). 
-  
-      We will start rate limiting requests to the SOAP endpoint from ___1 February 2024___, with gradually reduced request rate until __1 March__. 
-      This means that you will risk rejected requests because of rate limiting after __1 February__.
+      If you are currently relying on the SOAP endpoint of Shipping Guide API, please migrate to the [JSON/XML over HTTP based endpoints](/api/shipping-guide_2/#fetch-shipping-details-post). 
+
+      Date for decommission will be announced shortly.
 
 introduction: |
   The Shipping Guide API provides available services for a given combination of sender and recipient locations, including estimated delivery times, prices and environmental data. It also returns logo and human readable service descriptions that can be shown in your checkout. Available services are based on your agreement with Bring (i.e. the customer numbers attached to your user).
