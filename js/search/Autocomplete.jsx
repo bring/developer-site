@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, Fragment } from "react";
 import { render } from "react-dom";
-
 import { useSearchBox } from "react-instantsearch";
 import { autocomplete } from "@algolia/autocomplete-js";
-import { Fragment } from "react";
 
 export function Autocomplete({ className, ...autocompleteProps }) {
   const autocompleteContainer = useRef(null);

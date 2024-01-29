@@ -1,30 +1,4 @@
-/* Results panel */
-.aa-Panel{
-  width: 100%;
-  color: #222;
-  position: fixed;
-  display: block;
-  box-sizing: border-box;
-  top: 43px;
-  z-index: 10;
-  font-weight: 400;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-  background-color: #fff;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
 
-html[data-theme=dark] .aa-Panel {
-  background-color: var(--green-15);
-  color: var(--green-86);
-}
-
-/* Make results scrollable when smaller screen */
-@media (max-width: 1000px) {
-  .aa-Panel{
-    position: absolute;
-  }
-}
 
 /* Input search icon */
 .algolia-icon {
@@ -65,6 +39,28 @@ html[data-theme=dark] .aa-Panel {
   box-shadow: 0 0 0 0.15em rgba(0, 100, 58, 0.5);
 }
 
+/* Results panel */
+.aa-Panel{
+  width: 100%;
+  color: #222;
+  position: fixed;
+  display: block;
+  box-sizing: border-box;
+  z-index: 10;
+  font-weight: 400;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Make results scrollable when smaller screen */
+@media (max-width: 1000px) {
+  .aa-Panel{
+    position: absolute;
+  }
+}
+
 /* Result item list */
 .aa-List{
   margin: 0;
@@ -89,10 +85,6 @@ html[data-theme=dark] .aa-Panel {
   border-bottom: 1px solid hsl(0, 0%, 90%);
 }
 
-html[data-theme=dark] .hitlink {
-  border-bottom-color: var(--green-darkest);
-}
-
 .hitlink__extra {
   color: #757575;
   width: 100%;
@@ -107,6 +99,7 @@ html[data-theme=dark] .hitlink {
   }
 }
 
+/* Search by Algolia logo */
 .algo-logo {
   margin-right: 0.5rem;
   margin-top: 0.5rem;

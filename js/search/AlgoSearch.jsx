@@ -2,7 +2,6 @@ import algoliasearch from "algoliasearch/lite"
 import AlgoLogo from "./AlgoLogo.jsx"
 import { InstantSearch } from "react-instantsearch";
 import { Autocomplete } from "./Autocomplete.jsx";
-import React from 'react';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { ResultItem } from "./ResultItem.jsx";
 
@@ -33,7 +32,7 @@ const AlgoSearch = () => (
                   indexName: __ALGOLIA_INDEX__,
                   query,
                   params: {
-                    hitsPerPage: 15,
+                    hitsPerPage: 10,
                   },
                 },
               ],

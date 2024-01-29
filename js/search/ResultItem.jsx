@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function ResultItem({ hit, components }) {
   return (
     <a href={hit.relpermalink} className="hitlink lh-tight">
