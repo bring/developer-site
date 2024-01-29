@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { render } from "react-dom";
 
-import { usePagination, useSearchBox } from "react-instantsearch";
+import { useSearchBox } from "react-instantsearch";
 import { autocomplete } from "@algolia/autocomplete-js";
 import { Fragment } from "react";
 
@@ -9,7 +9,6 @@ export function Autocomplete({ className, ...autocompleteProps }) {
   const autocompleteContainer = useRef(null);
 
   const { query, refine: setQuery } = useSearchBox();
-  const { refine: setPage } = usePagination();
 
   const [instantSearchUiState, setInstantSearchUiState] = useState({
     query,
@@ -17,7 +16,6 @@ export function Autocomplete({ className, ...autocompleteProps }) {
 
   useEffect(() => {
     setQuery(instantSearchUiState.query);
-    setPage(0);
   }, [instantSearchUiState]);
 
   useEffect(() => {
