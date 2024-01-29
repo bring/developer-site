@@ -58,7 +58,6 @@
     "algoliasearch": "^4.22.1",
     "anchor-js": "^5.0.0",
     "preact": "^10.19.3",
-    "react-autosuggest": "^10.1.0",
     "react-instantsearch": "^7.5.2"
   }
 }
