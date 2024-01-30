@@ -26,9 +26,12 @@ const AlgoSearch = () => (
       detachedMediaQuery='none'
       getSources={({ query }) => [
         {
-          sourceId: 'products',
+          sourceId: 'docs',
           getItemInputValue({ item }) {
             return item.name;
+          },
+          getItemUrl({ item }) {
+            return item.relpermalink;
           },
           getItems() {
             return getAlgoliaResults({
@@ -55,7 +58,23 @@ const AlgoSearch = () => (
             }
           },
         },
+        
       ]}
+      /* for navigating search bar with keyboard */
+      navigator={{
+        navigate({ itemUrl }) {
+          window.location.assign(itemUrl);
+        },
+        navigateNewTab({ itemUrl }) {
+          const windowReference = window.open(itemUrl, '_blank', 'noopener');
+          if (windowReference) {
+            windowReference.focus();
+          }
+        },
+        navigateNewWindow({ itemUrl }) {
+          window.open(itemUrl, '_blank', 'noopener');
+        },
+      }}
     />
   </InstantSearch>
 )
