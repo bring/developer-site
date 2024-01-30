@@ -73,8 +73,10 @@
   padding: 0;
 }
 
-.aa-Item:hover{
-  background-color: rgba(0, 0, 0, 0.08);
+.aa-Item {
+  &[aria-selected="true"]{
+    background-color: rgba(0, 0, 0, 0.08);
+  }
 }
 
 .hitlink {

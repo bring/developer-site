@@ -16,6 +16,12 @@ const future = {
 
 const AlgoSearch = () => (
   <InstantSearch searchClient={searchClient} indexName={__ALGOLIA_INDEX__} future={future}>
+    <label
+      htmlFor="autocomplete-0-label"
+      className="form__label white screen-reader-text"
+      >
+      Search the documentation
+    </label>
     <Autocomplete
       detachedMediaQuery='none'
       getSources={({ query }) => [
