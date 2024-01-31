@@ -1,3 +1,6 @@
+
+
+/* Input search icon */
 .algolia-icon {
   fill: hsla(0, 0%, 100%, 0.3);
   flex: 0 0 1.5rem;
@@ -12,11 +15,12 @@
   flex: 1;
 }
 
-.react-autosuggest__container {
-  position: relative;
+.aa-InputWrapperPrefix{
+  display: none;
 }
 
-.react-autosuggest__input {
+/* Input */
+.aa-Input {
   display: block;
   width: 100%;
   padding: 0.5rem 0.5rem 0.5rem 2.5rem;
@@ -29,29 +33,20 @@
   color: #fff;
 }
 
-.react-autosuggest__input:focus {
+.aa-Input:focus{
   outline: 0;
   border: 1px solid hsl(155, 100%, 19.6%);
   box-shadow: 0 0 0 0.15em rgba(0, 100, 58, 0.5);
 }
 
-.react-autosuggest__input--open {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.react-autosuggest__suggestions-container {
-  display: none;
-}
-
-.react-autosuggest__suggestions-container--open {
+/* Results panel */
+.aa-Panel{
   width: 100%;
   color: #222;
-  position: absolute;
+  position: fixed;
   display: block;
   box-sizing: border-box;
-  top: 43px;
-  z-index: 2;
+  z-index: 10;
   font-weight: 400;
   border-bottom-right-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -59,26 +54,29 @@
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-html[data-theme=dark] .react-autosuggest__suggestions-container--open {
-  background-color: var(--green-15);
-  color: var(--green-86);
+/* Make results scrollable when smaller screen */
+@media (max-width: 1000px) {
+  .aa-Panel{
+    position: absolute;
+  }
 }
 
-.react-autosuggest__suggestions-list {
+/* Result item list */
+.aa-List{
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.react-autosuggest__suggestion {
+/* Result item */
+.aa-Item {
   padding: 0;
 }
 
-.react-autosuggest__suggestion--highlighted {
-  background-color: rgba(0, 0, 0, 0.08);
-}
-html[data-theme=dark] .react-autosuggest__suggestion--highlighted {
-  background-color: var(--green-18);
+.aa-Item {
+  &[aria-selected="true"]{
+    background-color: rgba(0, 0, 0, 0.08);
+  }
 }
 
 .hitlink {
@@ -88,9 +86,6 @@ html[data-theme=dark] .react-autosuggest__suggestion--highlighted {
   padding: 0.5rem 0.5rem 0.6rem 1rem;
   border-bottom: 1px solid hsl(0, 0%, 90%);
 }
-html[data-theme=dark] .hitlink {
-  border-bottom-color: var(--green-darkest);
-}
 
 .hitlink__extra {
   color: #757575;
@@ -98,13 +93,15 @@ html[data-theme=dark] .hitlink {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-
 }
 
-.ais-Highlight-highlighted {
-  background-color: hsl(41, 98%, 65%);
+.hitlink__title{
+  mark {
+    background-color: hsl(41, 98%, 65%);
+  }
 }
 
+/* Search by Algolia logo */
 .algo-logo {
   margin-right: 0.5rem;
   margin-top: 0.5rem;
@@ -113,4 +110,17 @@ html[data-theme=dark] .hitlink {
 
 .algo-logo svg {
   height: 1.1rem;
+}
+
+/* Hides autocomplete submit and clear buttons */
+.aa-SubmitButton, .aa-ClearButton {
+  display: none;
+}
+
+/* Hides reset-icon from searchbar */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
 }

@@ -355,4 +355,15 @@
       border-color: var(--green-light);
     }
   }
+
+  /* Algolia search result panel */
+  & .aa-Panel {
+    background-color: var(--green-15);
+    color: var(--green-86);
+  } 
+
+  /* Algolia search hitlink */
+  & .hitlink {
+    border-bottom-color: var(--green-darkest);
+  }
 }
