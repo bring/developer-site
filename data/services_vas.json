@@ -218,16 +218,6 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
-  }, {
-    "serviceName" : "Bring Pack",
-    "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "0360",
-    "productionCode" : "0360",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -968,16 +958,6 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
     "destinations" : "ALL"
-  }, {
-    "serviceName" : "Bring Pack",
-    "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "0360",
-    "productionCode" : "0360",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1485,7 +1465,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Pakke til Pakkeboks",
+    "serviceName" : "Pakkeboks",
     "serviceType" : "B2C",
     "serviceFamily" : "",
     "serviceFamilySortOrder" : 99,
@@ -3154,28 +3134,6 @@
     "domesticAllowedIn" : "SE",
     "senderCountries" : "-",
     "destinations" : "-"
-  } ],
-  "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
-  "orderedViaVasCodes" : true
-}, {
-  "vasName" : "Bring Pack Large",
-  "vasNameNorwegian" : "Bring Pakke Stor",
-  "description" : "Used for Bring pack shipments above 59 x 44 x 21 cm / 5kg  ",
-  "shippingGuideCode" : "1377",
-  "shippingGuideNpbCode" : "1377",
-  "bookingCode" : "1377",
-  "incompatibleVases" : [ ],
-  "supportedServices" : [ {
-    "serviceName" : "Bring Pack",
-    "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "0360",
-    "productionCode" : "0360",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
