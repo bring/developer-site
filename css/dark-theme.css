@@ -45,7 +45,7 @@
     color: var(--green-86);
     & .dev-eta1__bring,
     & .dev-eta2__bring {
-      color: var(--gray-13);
+      color: var(--gray-20);
     }
   }
 
@@ -199,7 +199,7 @@
   & input[type="submit"] {
     background-color: var(--green);
     border-color: var(--green-15);
-    color: var(--gray-13);
+    color: var(--gray-20);
     &:hover {
       background-color: var(--green-hover);
     }
