@@ -215,7 +215,6 @@ if('clipboard' in navigator) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  showToggleAll()
   // set oneOf/allOf selections on reload/backward/forward navigation
   oneOfRadioArr.forEach((radio) => {
     if (radio.checked) {

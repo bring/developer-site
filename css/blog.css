@@ -31,7 +31,7 @@
 }
 
 .dev-blog__meta-item a:hover {
-  color: var(--gray-13);
+  color: var(--gray-20);
 }
 
 .dev-blog__meta-item a:not(:last-child) {

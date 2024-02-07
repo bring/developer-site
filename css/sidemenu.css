@@ -50,7 +50,7 @@
 }
 
 .dev-sidemenu a {
-  color: var(--gray-26);
+  color: var(--gray-20);
   display: block;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
@@ -62,7 +62,7 @@
 .dev-sidemenu a:focus-visible,
 .dev-sidemenu a.active {
   background-color: rgba(0, 0, 0, 0.08);
-  color: var(--gray-13);
+  color: var(--gray-20);
 }
 
 .dev-sidemenu__list li.active ul a {
