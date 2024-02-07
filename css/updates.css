@@ -11,38 +11,3 @@
     margin-bottom: 2rem;
   }
 }
-
-/* Overwrites */
-input.mce_inline_error  {
-  border-color: var(--red) !important;
-}
-
-div.mce_inline_error {
-  color: var(--red) !important;
-  background-color: transparent !important;
-  margin: -0.5rem 0 1rem !important;
-  padding: 0 !important;
-  font-weight: 400 !important;
-  font-size: 0.9rem;
-}
-
-.mce-response {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--green-lighter);
-}
-
-.brandingLogo {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-.api-area-checkboxes label {
-  flex: 1 1 11rem;
-  margin-bottom: 0;
-}
-
-.api-area-checkboxes.hidden {
-  display: none;
-}

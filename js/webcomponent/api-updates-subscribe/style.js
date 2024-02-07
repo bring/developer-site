@@ -62,7 +62,7 @@ export default function apiUpdatesStyle(isModal) {
     }
 
     .api-area-checkboxes label {
-      flex: 1 1 10rem;
+      flex: 1 1 11rem;
       margin-bottom: 0;
     }
 
