@@ -179,7 +179,7 @@
                   {{- partial "api/oas/endpoint-type" (dict "type" .method) -}}
                   <span class="flex-auto">
                     <pre class="flex align-ic pas mb0 wrap-text">
-                      <span>{{ delimit $urlOutput "<br>" }}</span>
+                      <span>{{ delimit $urlOutput "<br>" | safeHTML }}</span>
                     </pre>
                   </span>
                 </div>
