@@ -5,10 +5,28 @@ import { Autocomplete } from "./Autocomplete.jsx";
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { ResultItem } from "./ResultItem.jsx";
 
-const searchClient = algoliasearch(
+const algoliaClient = algoliasearch(
   "PWK5X2R2GD",
   "75cb7755dd0c05b3f3629e7a6793a2a3"
 )
+
+const searchClient = {
+  ...algoliaClient,
+  search(requests) {
+    if (requests.every(({ params }) => params.query === "")) {    
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          nbHits: 0,
+          nbPages: 0,
+          page: 0,
+          processingTimeMS: 0,
+        })),
+      });
+    }
+    return algoliaClient.search(requests);
+  },
+};
 
 const future = {
   preserveSharedStateOnUnmount: false
