@@ -1,47 +1,37 @@
-import React, { useEffect, useRef, useState, Fragment, render } from "react";
-import { useSearchBox } from "react-instantsearch";
-import { autocomplete } from "@algolia/autocomplete-js";
+import { autocomplete } from '@algolia/autocomplete-js';
+import React, { createElement, Fragment, useEffect, useRef } from 'react';
+import { createRoot } from 'react-dom/client';
 
-export function Autocomplete({ className, ...autocompleteProps }) {
-  const autocompleteContainer = useRef(null);
-
-  const { query, refine: setQuery } = useSearchBox();
-
-  const [instantSearchUiState, setInstantSearchUiState] = useState({
-    query,
-  });
+export function Autocomplete(props) {
+  const containerRef = useRef(null);
+  const panelRootRef = useRef(null);
+  const rootRef = useRef(null);
 
   useEffect(() => {
-    setQuery(instantSearchUiState.query);
-  }, [instantSearchUiState]);
-
-  useEffect(() => {
-    if (!autocompleteContainer.current) {
-      return;
+    if (!containerRef.current) {
+      return undefined;
     }
 
-    const autocompleteInstance = autocomplete({
-      ...autocompleteProps,
-      container: autocompleteContainer.current,
-      initialState: { query },
-      onReset() {
-        setInstantSearchUiState({ query: "" });
-      },
-      onSubmit({ state }) {
-        setInstantSearchUiState({ query: state.query });
-      },
-      onStateChange({ prevState, state }) {
-        if (prevState.query !== state.query) {
-          setInstantSearchUiState({
-            query: state.query,
-          });
+    const search = autocomplete({
+      container: containerRef.current,
+      renderer: { createElement, Fragment, render: () => {} },
+      render({ children }, root) {
+        if (!panelRootRef.current || rootRef.current !== root) {
+          rootRef.current = root;
+
+          panelRootRef.current?.unmount();
+          panelRootRef.current = createRoot(root);
         }
+
+        panelRootRef.current.render(children);
       },
-      renderer: { createElement: React.createElement, Fragment, render },
+      ...props,
     });
 
-    return () => autocompleteInstance.destroy();
-  }, []);
+    return () => {
+      search.destroy();
+    };
+  }, [props]);
 
-  return <div className={className} ref={autocompleteContainer} />;
+  return <div ref={containerRef} />;
 }
