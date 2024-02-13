@@ -28,6 +28,13 @@ const searchClient = {
 };
 
 const AlgoSearch = () => (
+  <>
+    <label
+      htmlFor="autocomplete-0-label"
+      className="form__label white screen-reader-text"
+    >
+    Search the documentation
+    </label>
     <Autocomplete
       detachedMediaQuery='none'
       getSources={({ query }) => [
@@ -57,14 +64,13 @@ const AlgoSearch = () => (
             item({ item, components }) {
               return <ResultItem hit={item} components={components} />;
             },
-            footer(){
+            footer() {
               return <div class="logo">
-              <AlgoLogo />
-            </div>
+                <AlgoLogo />
+              </div>;
             }
           },
         },
-        
       ]}
       /* for navigating search bar with keyboard */
       navigator={{
@@ -80,8 +86,9 @@ const AlgoSearch = () => (
         navigateNewWindow({ itemUrl }) {
           window.open(itemUrl, '_blank', 'noopener');
         },
-      }}
+      }} 
     />
+  </>
 )
 
 export default AlgoSearch
