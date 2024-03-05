@@ -86,16 +86,6 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
-  }, {
-    "serviceName" : "Norgespakke",
-    "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3067",
-    "productionCode" : "3067",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -206,16 +196,6 @@
     "serviceCode" : "EXPRESS_NORDIC_0900",
     "productionCode" : "0335",
     "domesticAllowedIn" : "SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Norgespakke",
-    "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3067",
-    "productionCode" : "3067",
-    "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1494,16 +1474,6 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
-  }, {
-    "serviceName" : "Norgespakke",
-    "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3067",
-    "productionCode" : "3067",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1685,6 +1655,26 @@
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Mailbox parcel with RFID",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "3570",
+    "productionCode" : "3570",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Mailbox parcel",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "3584",
+    "productionCode" : "3584",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
