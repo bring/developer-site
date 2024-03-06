@@ -1,7 +1,5 @@
 <additionalServices>
   <additionalService>
     <id>EVARSLING</id>
-    <email>sender@sender.com</email>
-    <mobile>777777</mobile>
   </additionalService>
 </additionalServices>
