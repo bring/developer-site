@@ -1,5 +1,5 @@
 {{- $pctx := . -}}
-{{- if (in .CurrentSection "revision-history/_") -}}
+{{- if (and (in .CurrentSection "revision-history") (in .File.Path "revision-history/_")) -}}
 {{- $pctx = .Site -}}
 {{- end -}}
 {{- $mergedPages := slice -}}
