@@ -3,7 +3,7 @@
   {{- $pageSubTitle = (printf "%s %s" .Params.apiArea "APIs") -}}
 {{- end -}}
 {{- $pctx := . -}}
-{{- if (in .CurrentSection "revision-history/_") -}}
+{{- if (in .File.Path "revision-history/_") -}}
   {{- $pctx = .Site -}}
 {{- end -}}
 {{- $mergedPages := slice -}}
