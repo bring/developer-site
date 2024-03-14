@@ -38,6 +38,8 @@ information:
     content: |
       REST XML/JSON over HTTP.
 
+oas: http://local.mybring.com:7550/reports/v3/api-docs
+
 documentation:
   - title: Fetching reports
     content: |
