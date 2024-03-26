@@ -10,8 +10,8 @@
   {{- end -}}
   {{- $components := .components -}}
   {{- range $sortedPaths -}}
-    {{- range $path, $a := . -}}
-      {{- range $type, $b := . -}}
+    {{- range $path, $_ := . -}}
+      {{- range $type, $_ := . -}}
         {{- $endpointId := (print .summary "-" $type | anchorize ) -}}
         <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
         <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
