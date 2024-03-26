@@ -12,7 +12,8 @@
         {{- $soapUri = .baseUri -}}
       {{- end -}}
     {{- end -}}
-    {{- partial "api/oas/endpoints-table.html" (dict "oas" $oasData "soapArr" $soapEndpoints) -}}
+    {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" $oasData.paths) -}}
+    {{- partial "api/oas/endpoints-table.html" (dict "oas" $oasData "soapArr" $soapEndpoints "sortedPaths" $sortedPaths) -}}
 
     {{- with $oasData -}}
       {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths) -}}

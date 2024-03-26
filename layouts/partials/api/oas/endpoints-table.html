@@ -2,6 +2,7 @@
 {{- with .soapArr -}}
   {{- $soapArr = . -}}
 {{- end -}}
+{{- $sortedPaths := .sortedPaths -}}
 
 {{- with .oas -}}
   <section class="dev-docscontent__section maxw96r">
@@ -30,28 +31,30 @@
       </thead>
       {{- $restInd := 0 -}}
       {{- $pathsLen := len .paths -}}
-      {{- range $path, $_ := .paths -}}
-        {{- range $method, $_ := . -}}
-          {{- $endpointAnchor := (printf "%s-%s" .summary $method) | anchorize -}}
-          <tr>
-            {{- with $soapArr -}}
-              {{- if eq $restInd 0 -}}
-                <th scope="row" rowspan="{{ $pathsLen }}">REST</th>
+      {{- range $sortedPaths -}}
+        {{- range $path, $_ := . -}}
+          {{- range $method, $_ := . -}}
+            {{- $endpointAnchor := (printf "%s-%s" .summary $method) | anchorize -}}
+            <tr>
+              {{- with $soapArr -}}
+                {{- if eq $restInd 0 -}}
+                  <th scope="row" rowspan="{{ $pathsLen }}">REST</th>
+                {{- end -}}
+                {{- $restInd = add $restInd 1 -}}
               {{- end -}}
-              {{- $restInd = add $restInd 1 -}}
-            {{- end -}}
-            <td>
-              <a href="#{{ $endpointAnchor }}">
-                  {{- .summary -}}
-              </a>
-            </td>
-            <td>
-              {{- $method | upper -}}
-            </td>
-            <td>
-              <code>{{ $path }}</code>
-            </td>
-          </tr>
+              <td>
+                <a href="#{{ $endpointAnchor }}">
+                    {{- .summary -}}
+                </a>
+              </td>
+              <td>
+                {{- $method | upper -}}
+              </td>
+              <td>
+                <code>{{ $path }}</code>
+              </td>
+            </tr>
+          {{- end -}}
         {{- end -}}
       {{- end -}}
 

@@ -61,8 +61,9 @@
           {{- partial "api/oas/section-intro.html" . -}}
           {{- $oasData := getJSON $.Params.oas -}}
           {{- with $oasData -}}
-            {{- partial "api/oas/endpoints-table.html" (dict "oas" .) -}}
-            {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths) -}}
+            {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" .paths) -}}
+            {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths) -}}
+            {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "sortedPaths" $sortedPaths) -}}
           {{- end -}}
           {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
             <section id="api-support" class="dev-docscontent__section maxw64r">
