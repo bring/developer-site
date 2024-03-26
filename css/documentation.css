@@ -99,7 +99,7 @@ p a:not(.btn-link--dark, .btn-link) {
 
 .dev-docscontent__grid {
   display: grid;
-  gap: 0 2rem;
+  gap: 1rem 2rem;
   grid-template-areas:
     "intro messages"
     "intro signup";
