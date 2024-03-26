@@ -22,8 +22,10 @@
   {{- $pathSliceWithOrder = append $pathSliceWithOrder (slice $orderedPaths) -}}
 {{- end -}}
 {{- range sort $pathSliceWithOrder ".order" -}}
+    {{- $paths_with_same_order := dict -}}
     {{- range $path, $pathData := .paths -}}
-      {{- $sortedPaths = append (slice (dict $path $pathData )) $sortedPaths -}}
+      {{- $paths_with_same_order = merge $paths_with_same_order (dict $path $pathData) -}}
     {{- end -}}
+    {{- $sortedPaths = append (slice $paths_with_same_order) $sortedPaths -}}
 {{- end -}}
 {{- return $sortedPaths -}}
