@@ -1,0 +1,29 @@
+{{- $sortedPaths := slice -}}
+{{- $pathSliceWithOrder := slice -}}
+{{- range $path, $pathdata := .paths -}}
+  {{- $order := 0 -}}
+  {{- range $type, $_ := . -}}
+    {{- with index . "x-developer-site-metadata" -}}
+      {{- if gt .order $order -}}
+        {{- $order = .order -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $paths := dict -}}
+  {{- $tmp := where $pathSliceWithOrder "order" "eq" $order -}}
+  {{- with $tmp -}}
+    {{- $pathSliceWithOrder = where $pathSliceWithOrder "order" "ne" $order -}}
+    {{ range first 1 . }}
+      {{- $paths = .paths -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $paths = merge $paths (dict $path $pathdata) -}}
+  {{- $orderedPaths := dict "order" $order "paths" $paths -}}
+  {{- $pathSliceWithOrder = append $pathSliceWithOrder (slice $orderedPaths) -}}
+{{- end -}}
+{{- range sort $pathSliceWithOrder ".order" -}}
+    {{- range $path, $pathData := .paths -}}
+      {{- $sortedPaths = append (slice (dict $path $pathData )) $sortedPaths -}}
+    {{- end -}}
+{{- end -}}
+{{- return $sortedPaths -}}
