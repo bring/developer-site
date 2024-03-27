@@ -1513,7 +1513,7 @@
 }, {
   "vasName" : "Signature required",
   "vasNameNorwegian" : "Påkrevd signatur",
-  "description" : "The recipient must sign to receive the shipment.  ",
+  "description" : "Stops recipients from making changes to the delivery type, such as adding or removing simplified delivery/bag on door.  ",
   "shippingGuideCode" : "1280",
   "shippingGuideNpbCode" : "1280",
   "bookingCode" : "1280",
@@ -2099,7 +2099,7 @@
 }, {
   "vasName" : "Bag on door",
   "vasNameNorwegian" : "Pose på døren",
-  "description" : "Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may, against a surcharge, choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point.  It’s recommended that this delivery option is actively confirmed by the receiver upon booking in the sender’s webshop. When the parcel is delivered as a bag on the door, the bar code is scanned and the recipient will receive an SMS/email. Note that if the parcel is delivered in the mailbox the additional fee will not occur.",
+  "description" : "Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point.  This service can be ordered either by the sender at time of booking, or selected by the recipient before receiving the parcel. Sender is able to use VAS 1280 to reserve against the recipient either adding or removing this additional service. When the parcel is delivered the bar code is scanned and the recipient will receive a notification. Note that if the parcel is delivered in the mailbox the additional fee will not occur.",
   "shippingGuideCode" : "1081",
   "shippingGuideNpbCode" : "1081",
   "bookingCode" : "1081",
