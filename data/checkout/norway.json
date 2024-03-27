@@ -122,7 +122,7 @@
             "imageClass": "maxw16r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
+        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.jpg",
         "illustrationImageAlt": "Service with environmental friendly logo",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
@@ -254,7 +254,7 @@
             "imageClass": "maxw16r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
+        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.jpg",
         "illustrationImageAlt": "Leveringsalternativ med miljøikon",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
