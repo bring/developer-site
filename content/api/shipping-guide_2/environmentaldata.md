@@ -21,6 +21,13 @@ For the following Norwegian domestic and Nordic parcel services it is now possib
 * Pickup Parcel (0340)
 * Pickup Parcel Bulk (0342)
 * Home Delivery Parcel (0349)
+* Business groupage (5100)
+* Business pallet (5400)
+* Home delivery parcel (5600)
+* Home Delivery Indoor (2870)
+* Home Delivery Curbside (3123)
+* Home Delivery Single Indoor (3150)
+* Express Nordic 09:00 Bulk (0334)
 
 
 To get the environmental data, use the following new fields:
