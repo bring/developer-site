@@ -16,7 +16,7 @@
     {{- partial "api/oas/endpoints-table.html" (dict "oas" $oasData "soapArr" $soapEndpoints "sortedPaths" $sortedPaths) -}}
 
     {{- with $oasData -}}
-      {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths) -}}
+      {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths "sortedPaths" $sortedPaths) -}}
     {{- end -}}
 
     <section class="dev-docscontent__section maxw96r">
