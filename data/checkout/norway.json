@@ -31,7 +31,7 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_service.png",
+        "illustrationImageUrl": "/images/checkout/posten/choose_service.jpg",
         "illustrationImageAlt": "Choose service by service name",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
@@ -122,7 +122,7 @@
             "imageClass": "maxw16r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.jpg",
+        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
         "illustrationImageAlt": "Service with environmental friendly logo",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
@@ -163,7 +163,7 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_service.png",
+        "illustrationImageUrl": "/images/checkout/posten/choose_service.jpg",
         "illustrationImageAlt": "Skjema for valg av leveringsalternativ via tjenestenavn",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
@@ -254,7 +254,7 @@
             "imageClass": "maxw16r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.jpg",
+        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
         "illustrationImageAlt": "Leveringsalternativ med miljøikon",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
