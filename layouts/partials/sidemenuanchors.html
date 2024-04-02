@@ -54,18 +54,21 @@
 {{- end -}}
 
 {{- with $oasData -}}
-  {{- range .paths -}}
-    {{- range $k, $v := . -}}
-      {{- $method := $k -}}
-      {{- with .summary -}}
-        {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
-        <li>
-          <a href="{{ $anchor }}{{ $endpointId }}" data-list-item="{{ $endpointId }}">
-            <span data-hover="{{ . }}">
-              {{- . -}}
-            </span>
-          </a>
-        </li>
+  {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" .paths) -}}
+  {{- range $sortedPaths -}}
+    {{- range . -}}
+      {{- range $k, $v := . -}}
+        {{- $method := $k -}}
+        {{- with .summary -}}
+          {{- $endpointId := (printf "%s-%s" . $method) | anchorize -}}
+          <li>
+            <a href="{{ $anchor }}{{ $endpointId }}" data-list-item="{{ $endpointId }}">
+              <span data-hover="{{ . }}">
+                {{- . -}}
+              </span>
+            </a>
+          </li>
+        {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
