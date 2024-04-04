@@ -27,11 +27,11 @@
           <div class="dev-docscontent__main maxw64r mbm grid__intro">
             {{- with $.Params.introduction -}}
               {{- if in (string .) "\n\n" -}}
-              <div class="text-heading fw600">
+              <div class="text-1.25r fw600">
                 {{- . | markdownify -}}
               </div>
               {{- else -}}
-                <p class="text-heading fw600 mbl">{{ . | markdownify }}</p>
+                <p class="text-1.25r fw600 mbl">{{ . | markdownify }}</p>
               {{- end -}}
             {{- end -}}
             {{- with $.Params.information -}}
@@ -39,7 +39,7 @@
                 {{- range . -}}
                   <details class="mb-disclosure bg-green1">
                     {{- with .title }}
-                      <summary class="text-heading">
+                      <summary class="text-1.25r">
                         <span
                           data-mybicon="mybicon-arrow-right"
                           data-mybicon-width="16"

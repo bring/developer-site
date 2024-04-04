@@ -12,11 +12,11 @@
             {{- $translatedData := index $data (string $currentLanguage) -}}
             <div>
               {{- range $translatedData.ingress.paragraphs -}}
-                <p class="text-heading">{{ . | safeHTML }}</p>
+                <p class="text-1.25r">{{ . | safeHTML }}</p>
               {{- end -}}
             </div>
             <div>
-              <h2 class="text-heading">{{ $translatedData.ingress.countries }}</h2>
+              <h2 class="text-1.25r">{{ $translatedData.ingress.countries }}</h2>
               <ul>
                 {{- if ne "norway" $country -}}
                   <li>
@@ -50,7 +50,7 @@
       {{- if (not (isset .Params "country")) -}}
         <section class="dev-docscontent__section flex flex-wrap align-ifs">
           <div class="dev-guide-l">
-            <p class="text-heading">
+            <p class="text-1.25r">
               Choose your recipient country and follow the steps to improve the presentation of our delivery options in your checkout.
             </p>
             <div>
