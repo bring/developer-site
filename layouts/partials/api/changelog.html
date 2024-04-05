@@ -53,7 +53,7 @@
           {{- $parentFolder := path.Base (path.Dir .) -}}
           <article class="mbl" data-changelog-parent="{{$parentFolder}}">
             <header class="flex flex-dir-col-rev">
-              <h2 class="text-heading fw600 mb0">{{ .Title }}</h2>
+              <h3 class="fw600 mb0">{{ .Title }}</h2>
               <time
                 class="mrm text-note fw600"
                 datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
