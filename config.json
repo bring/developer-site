@@ -152,7 +152,6 @@
       "content/api/warehousing4/api.raml",
       "content/api/order-management/api.raml",
       "content/api/invoice/api.raml",
-      "content/api/reports/api.raml",
       "content/api/shipment/api.raml"
     ],
     "description": "Documentation for developers.",

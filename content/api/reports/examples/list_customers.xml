@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<CustomerList>
-    <customers>
-        <id>PARCELS_NORWAY-00012341234</id>
-        <name>TEST CUSTOMER</name>
-        <reports>https://www.mybring.com/reports/api/generate/PARCELS_NORWAY-00012341234/</reports>
-    </customers>
-</CustomerList>
