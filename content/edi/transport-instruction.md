@@ -19,7 +19,7 @@ This document is our guideline for freight-messages based on EDIFACT / IFTMIN D0
 * [RevisedServices\_Change-log IFTMIN, Appendix and Label descriptions\_V1.2](/files/RevisedServices_Change-log_IFTMIN,_Appendix_and_Label_descriptions_V1.2.pdf)
 * [Appendix 5 — Document type](/files/BIG14_Appendix_5.pdf)
 * [Appendix 6 — HUB-information](/files/BIG14_Appendix_6.pdf)
-* [Mailbox-Packet](/files/Appendix_G_20210302.pdf)
+* [Mailbox-Packet](/files/Appendix_G_20240104_Nextversion.pdf)
 * [Package Type Codes and Descriptions – BIG 23](</files/BIG23 Package Types_ver 1.0.xls>)
 
 ## Bring Parcel AB Specific Documentation
