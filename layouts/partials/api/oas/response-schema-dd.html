@@ -8,7 +8,7 @@
   {{- with .format -}}
     {{- $typeFormat = print " <" . ">" -}}
   {{- end -}}
-  <div class="gray text-note">
+  <div class="text-note">
     {{- with .type -}}
       {{ . }}{{ $typeFormat }}
     {{- else -}}
