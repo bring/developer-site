@@ -11,7 +11,7 @@ menu:
 weight: 32
 
 introduction: |
-  The Event Cast API can be used to subscribe to tracking events for a given shipment using webhooks. Event notifications are automatically pushed to the subscriber as they happen, which makes it unnecessary to repeatedly poll statuses calling the Tracking API. You define an endpoint that accepts HTTP POST, and whenever an event is registered for a subscribed shipment, we send it to the URL.
+  The Event Cast API can be used to subscribe to tracking events for a given shipment by registering webhooks. Event notifications are automatically pushed to the subscriber as they happen, avoiding repeatedly poll statuses calling the Tracking API. You define an endpoint that accepts HTTP POST, and whenever an event is registered for a subscribed shipment, we send it to the URL.
 
 information:
   - title: Authentication
@@ -20,7 +20,19 @@ information:
 
   - title: Limitations
     content: |
-      The API allows a maximum of _50 concurrent requests_ per user. The maximum amount of shipments that can be batch created is limited to _100 per request_. The test endpoint allows a maximum of _10 concurrent requests_ per user.
+      Maximum _50 concurrent requests_ per user is allowed. Maximum _10 concurrent requests_ per user is allowed on the test endpoint. Maximum 100 shipments can be batch created per request. But there is no limitation on how many webhooks you can have in total.
+
+      Wildcard events and event groups like `*` and `ALL` are not supported.
+
+      The current version doesn’t support event history, you can use the [Tracking API](/api/tracking) to get a shipment’s full history.
+
+      Webhooks cannot be edited after they have been created.
+
+      Expiration duration and retry timing are fixed and cannot be configured.
+
+      Expired webhooks are not available.
+
+      Multiple webhooks for one shipment can only be registered as long as they subscribe to different events.
 
   - title: Formats
     content: |
@@ -132,41 +144,12 @@ documentation:
         "pushed": "2019-03-16T14:58:49+0000"
       }
       ```
-  - title: Q & A
+
+  - title: Retries and shipments not yet registered
     content: |
+      If your endpoint is down and a callback is sent, the API will try to send a request two times with 30 minutes between and a third and final time after another hour.
 
-      **Can I have multiple Webhooks for the same parcel?**<br>
-      You can register for multiple Webhooks on the same parcel/shipment, as long as the event groups are different for each registration.
-
-      **How many active Webhooks can I have simultaneously?**<br>
-      Currently there is no limitation.
-
-      **Is the expiration duration configurable?**<br>
-      No.
-
-      **Can I get a history of events that were sent for a subscription?**<br>
-      Not in this version. It may be available in the future. Please note that you may use the [Tracking API](/api/tracking) if you'd like the entire list of events that has happened for a lifecycle related to a shipment.
-
-      **Will I be able to see my previous/expired Webhooks (active and inactive)?**<br>
-      No.
-
-      **What happens if our endpoint is down and a callback is being sent?**<br>
-      We'll try issuing a request to your defined endpoint up to three - 3 - times with a delay on 30 minutes for the two first, then wait an hour for the last retry.
-      After this, callbacks will not be retried.
-
-      **Do you support wildcard events/event groups (e.g `*` or `ALL`)?**<br>
-      No.
-
-      **Do you support modifying existing active webhooks?**<br>
-      No.
-
-      **My shipment is not yet registered with Bring, will registering for Webhook work related to that tracking number?**<br>
-      Yes.
-
-      When you subscribe for a parcel that does not yet exist in Bring' systems, a retry mechanism will try for up to two - 2 - days to ensure that the Webhook will be registered when the parcel is found internally.
-      Eventually, if the package was not found with Bring within this timeframe - a notification will be sent on the callback URL configured for that Webhook which notifies this.
-
-      **Note**: Retry-timing is non-configurable.
+      If you subscribe to a shipment that hasn’t been registered with Bring, we will retry for up to two days. A notification will be sent on the webhook’s callback URL if the shipment isn’t registered in this timeframe.
 
 oas: https://api.qa.bring.com/event-cast/api-docs
 ---
