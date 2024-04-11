@@ -99,20 +99,18 @@ documentation:
   - title: Payload
     content: |
 
-      ### Payload delivery headers
+      ### Delivery headers
 
-      `HTTP POST` payloads that are delivered to your Webhook's configured URL endpoint contains several Bring specific headers:
+      `HTTP POST` payloads that are delivered to your webhook's configured URL endpoint contains several Bring specific headers:
 
       | Header | Description |
       |:-------|:--------|
       | `X-Bring-Application` | Identifies the application that sent the request to your endpoint |
-      | `X-bring-Correlation` | Correlation Id can be used whilst contacting Bring on error cases |
-      | `X-bring-Version` | Indicates the version of application |
-      | `<your headers>` | Any headers that were specified in the Webhook configuration will also be appended |
+      | `X-bring-Correlation` | Correlation ID can be used when contacting Bring on error cases |
+      | `X-bring-Version` | Indicates the application version |
+      | `<your headers>` | Any headers you specified in the webhook configuration |
 
       ### Example
-
-      Requests issued from Bring to your endpoint will look similar to this:
 
       ```json
       POST /callback/Webhook HTTP/1.1
