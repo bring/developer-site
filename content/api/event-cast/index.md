@@ -22,8 +22,6 @@ information:
     content: |
       Maximum _50 concurrent requests_ per user is allowed. Maximum _10 concurrent requests_ per user is allowed on the test endpoint. Maximum 100 shipments can be batch created per request. But there is no limitation on how many webhooks you can have in total.
 
-      Wildcard events and event groups like `*` and `ALL` are not supported.
-
       The current version doesn’t support event history, you can use the [Tracking API](/api/tracking) to get a shipment’s full history.
 
       Webhooks cannot be edited after they have been created.
@@ -43,7 +41,7 @@ documentation:
     content: |
       We recommend subscribing only to events relevant to you. By keeping the list of events (`event_groups`) as small as possible, you will not get more updates than you need and your server will not get unnecessary HTTP requests from Bring.
 
-      Events are defined as an array with comma separated strings.
+      Events are defined as an array with comma separated strings. Wildcards like `*` and `ALL` are not supported.
 
       ### Example
 
