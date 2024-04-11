@@ -41,64 +41,54 @@ information:
 documentation:
   - title: Events
     content: |
-      When registering for a Webhook you can choose between a range of different event groups that you can subscribe for.
-      It is recommended to limit the amount of events to subscribe for. Bring will send an event on each of the events occurred which in result may send quite a few HTTP-requests to your server.
-      So, as a good practise, keep the list of event groups as small as possible.
+      We recommend subscribing only to events relevant to you. By keeping the list of events (`event_groups`) as small as possible, you will not get more updates than you need and your server will not get unnecessary HTTP requests from Bring.
 
-      Each of the event groups corresponds to a certain set of actions that can happen to the package/shipment you subscribe for. For instance, if you subscribe to `DELIVERED`, all internal Bring-events
-      will trigger a request to your defined callback URL.
+      Events are defined as an array with comma separated strings.
 
-      ### Event groups
+      ### Example
 
-      Default set of subscribable event groups. Notice that this list is subject for change.
+      ```
+      "event_groups": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
+      ```
+
+      ### Default events
+      The list is subject to change.
 
       | Event | Description |
       |:-------|:--------|
-      | `ATTEMPTED_DELIVERY` | The package has been attempted delivered at the door. Depending on the service it will be tried again or sent to closest pickup point. |
+      | `ATTEMPTED_DELIVERY` | Package has been attempted delivered at the door. Depending on the service it will be tried again or sent to closest pickup point. |
       | `CUSTOMS` | Package is in customs clearance. |
-      | `COLLECTED` | The parcel has been collected at pickup address. |
+      | `COLLECTED` | Package has been collected at pickup address. |
       | `DELIVERED` | Package has been delivered. |
-      | `DELIVERED_SENDER` | Package has been returned to the sender |
+      | `DELIVERED_SENDER` | Package has been returned to the sender. |
       | `DELIVERY_CANCELLED` | Home delivery has been cancelled by the customer. |
       | `DELIVERY_CHANGED` | Date for Home delivery has been changed by customer. |
-      | `DELIVERY_ORDERED` | Home delivery has been ordered |
+      | `DELIVERY_ORDERED` | Home delivery has been ordered. |
       | `DEVIATION` | Deviation in production. Something wrong has happened and there is a probability for delay. |
       | `HANDED_IN` | Package has been handed in to Bring. |
       | `INTERNATIONAL` | Package has been sent from origin country or arrived at destination country. |
       | `IN_TRANSIT` | Package is in transit. |
-      | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational notifications and action notification like pickup notice. |
+      | `NOTIFICATION_SENT` | Notification for this package has been sent by sms, push and/or mail. This can be informational and action notifications like pickup notice. |
       | `PRE_NOTIFIED` | EDI message for the package has been received by Bring. |
       | `READY_FOR_PICKUP` | Package has arrived at pickup point. |
-      | `RETURN` | The package is on its way back to the sender. |
+      | `RETURN` | Package is on its way back to the sender. |
       | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
-      | `TERMINAL` | The package is now registered/arrived at inbound/outbound storage terminal |
+      | `TERMINAL` | Package is now registered/arrived at inbound/outbound storage terminal. |
 
-      There is also a specific set of events that will be sent if something deviates from the normal event flow:
+      ### Deviation events
 
       | Event | Description |
       |:-------|:--------|
-      | `NOT_REGISTERED` | Webhook not registered. This might be due to the parcel-/shipment-number not being found with Bring' systems and can trigger after up to two - 2 - days |
-      | `EXPIRED` | Webhook expired |
+      | `NOT_REGISTERED` | Webhook not registered. This is typically triggered if the package hasn’t been handed in to Bring within two days. |
+      | `EXPIRED` | Webhook expired. |
 
-      #### Subscribing to multiple event groups
-
-      The Webhook API supports the possibility to subscribe to multiple event groups at the same time.
-      Doing so requires that groups are separated with comma and is defined as an array.
-      Example:
-
-      ```
-      ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL', .., ..]
-      ```
-
-      Need more examples? See the "Create Webhook" section below.
-
-  - title: Receiving Callbacks
+  - title: Callbacks
     content: |
       In order to receive requests from Bring, your callback URL must be accessible on the internet and able to receive requests from Bring IPs.
-      Additionally, to minimize risk, you should also provide HTTPS-enabled endpoints and use some kind of authentication mechanism.
-      For HTTPS, please do not use self-signed certificates, as requests may fail from Bring' side and you'll receive no requests.
+      You should also provide HTTPS-enabled endpoints and use some kind of authentication mechanism to minimize risk.
+      Do not use self-signed certificates for HTTPS, such requests may fail.
 
-      If you need a simple authentication whilst receiving requests from Bring, we recommend utilizing the header functionality provided by the Webhook configuration.
+      If you need simple authentication while receiving requests from Bring, we recommend using the header functionality provided by the webhook configuration.
 
       All received callbacks from Bring will be using UTC as its current timezone and is based on the following format (Java):
 
