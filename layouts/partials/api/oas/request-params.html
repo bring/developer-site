@@ -75,7 +75,7 @@
               <dd>{{- . -}}</dd>
             {{- end -}}
             <dt class="screen-reader-text">Type</dt>
-            <dd class="gray text-note">{{ $type }}</dd>
+            <dd class="text-note">{{ $type }}</dd>
 
             {{- if and (reflect.IsSlice $enum) ( gt (len $enum) 0 ) -}}
               <div class="mbxs">

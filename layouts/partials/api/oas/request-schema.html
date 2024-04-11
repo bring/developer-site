@@ -98,7 +98,7 @@
           {{- with $schemaObj.description -}}
             {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
           {{- end -}}
-          <div class="gray text-note">
+          <div class="text-note">
             {{- $schemaObj.type -}}
           </div>
         </dd>
@@ -243,7 +243,7 @@
             {{- end -}}
           {{- end -}}
         {{- end -}}
-        <div class="gray text-note">
+        <div class="text-note">
           {{- $schemaType -}}
         </div>
       </dd>
@@ -317,7 +317,7 @@
             {{ safeHTML (replace . "<p>" "<p class='mb0'>") }}
           {{- end -}}
         {{- end -}}
-        <div class="gray text-note flex flex-wrap gcs">
+        <div class="text-note flex flex-wrap gcs">
           <span>{{- $schemaObj.type -}}</span>
           {{- with $schemaObj.format -}}
             <span>{{- printf " <%s>" . -}}</span>
