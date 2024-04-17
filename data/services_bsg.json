@@ -336,7 +336,7 @@
   "ListPrice" : "-",
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
+  "EnvironmentalData" : "NO",
   "SenderCountries" : "ALL",
   "Destination" : "NO, SE",
   "DomesticAllowed" : "-"
@@ -488,7 +488,7 @@
   "ListPrice" : "Yes",
   "AgreementPrice" : "Yes",
   "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
+  "EnvironmentalData" : "NO",
   "SenderCountries" : "-",
   "Destination" : "-",
   "DomesticAllowed" : "NO"
@@ -507,7 +507,7 @@
   "ListPrice" : "Yes",
   "AgreementPrice" : "Yes",
   "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
+  "EnvironmentalData" : "NO",
   "SenderCountries" : "-",
   "Destination" : "-",
   "DomesticAllowed" : "NO"
@@ -583,7 +583,7 @@
   "ListPrice" : "-",
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
+  "EnvironmentalData" : "NO",
   "SenderCountries" : "NO, SE, DK",
   "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
@@ -602,7 +602,7 @@
   "ListPrice" : "-",
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
+  "EnvironmentalData" : "NO",
   "SenderCountries" : "NO, SE, DK",
   "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
@@ -621,7 +621,7 @@
   "ListPrice" : "-",
   "AgreementPrice" : "-",
   "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
+  "EnvironmentalData" : "NO",
   "SenderCountries" : "NO, SE, DK",
   "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "NO, SE, DK"
