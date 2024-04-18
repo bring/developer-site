@@ -231,7 +231,7 @@
   "shippingGuideCode" : "FLEXDELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "FLEX_DELIVERY",
-  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Limited quantities", "Boat Delivery" ],
+  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -342,6 +342,36 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2197,7 +2227,7 @@
   "shippingGuideCode" : "SOSIAL_KONTROLL",
   "shippingGuideNpbCode" : "1082",
   "bookingCode" : "SOSIAL_KONTROLL",
-  "incompatibleVases" : [ "Boat Delivery" ],
+  "incompatibleVases" : [ "Boat Delivery", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
@@ -2268,6 +2298,36 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
@@ -2479,16 +2539,6 @@
   "bookingCode" : "1073",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Return mailbox parcel",
-    "serviceType" : "B2C return",
-    "serviceFamily" : "Parcel Norway domestic",
-    "serviceFamilySortOrder" : 1,
-    "serviceCode" : "9650",
-    "productionCode" : "9650",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
     "serviceName" : "Business pallet",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
@@ -3122,6 +3172,48 @@
     "serviceCode" : "CURBSIDE",
     "productionCode" : "3123",
     "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Inside door Delivery",
+  "vasNameNorwegian" : "Levering inn døra",
+  "description" : "Delivered to the recipient's address. Delivery takes place to the designated place in the home. Maximum weight 35 kg. Requirements for lifts over 3 floors.  ",
+  "shippingGuideCode" : "1334",
+  "shippingGuideNpbCode" : "1334",
+  "bookingCode" : "1334",
+  "incompatibleVases" : [ "Flex delivery" ],
+  "supportedServices" : [ {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
