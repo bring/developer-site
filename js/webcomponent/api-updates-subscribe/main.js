@@ -156,7 +156,7 @@ class ApiSubscribe extends HTMLElement {
         SiteImprove.registerEvent({
           category: 'Task',
           action: 'Subscribe to API updates',
-          label: 'Subscribe to API updates'
+          label: 'Confirm subscription'
         })
       }
     }
