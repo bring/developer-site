@@ -53,7 +53,7 @@ class ApiSubscribe extends HTMLElement {
     // Log to SiteImprove when opening the modal
     if(typeof SiteImprove !== 'undefined'){
       SiteImprove.registerEvent({
-        category: 'Flow steps',
+        category: 'Flow step',
         action: 'Subscribe to API updates',
         label: 'Open subscribe modal'
       })
