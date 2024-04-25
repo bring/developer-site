@@ -49,6 +49,15 @@ class ApiSubscribe extends HTMLElement {
     if (closeModalBtn) {
       closeModalBtn.focus()
     }
+
+    // Log to SiteImprove when opening the modal
+    if(typeof SiteImprove !== 'undefined'){
+      SiteImprove.registerEvent({
+        category: 'Flow step',
+        action: 'Subscribe to API updates',
+        label: 'Open subscribe modal'
+      })
+    }
   }
 
   close() {
@@ -140,6 +149,15 @@ class ApiSubscribe extends HTMLElement {
           validEmail,
           "Invalid email format!"
         )
+      }
+
+      // Log to SiteImprove when clicking Subscribe
+      if(typeof SiteImprove !== 'undefined' && (apiAreaRadios[0].checked || someSelected)){
+        SiteImprove.registerEvent({
+          category: 'Task',
+          action: 'Subscribe to API updates',
+          label: 'Confirm subscription'
+        })
       }
     }
 
