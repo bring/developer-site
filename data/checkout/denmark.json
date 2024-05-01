@@ -54,7 +54,23 @@
         ]
       },
       {
-        "h3": "4. Logo",
+        "h3": "4. Estimated time of delivery",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/estimated_time_of_delivery.svg",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.jpg",
+        "illustrationImageAlt": "Display estimated time of delivery",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
+          "<p>For a better understanding on how to get the most accurate delivery estimates, we recommend reading <a href=\"/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/\">this guide</a>.</p>"
+        ]
+      },
+      {
+        "h3": "5. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -85,7 +101,7 @@
         ]
       },
       {
-        "h3": "5. Environmental data and icon",
+        "h3": "6. Environmental data and icon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
@@ -156,7 +172,23 @@
         ]
       },
       {
-        "h3": "4. Logo",
+        "h3": "4. Forventet levering/ETA",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/estimated_time_of_delivery.svg",
+            "imageClass": "w6r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.jpg",
+        "illustrationImageAlt": "Display estimated time of delivery",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>I følge Brings undersøgelser, ønsker kunder præcis information omkring den forventet leveringstid, i forhold til forskellige leveringsmuligheder. Jo mere præcist, desto bedre.</p>",
+          "<p>For at få en klar forståelse for hvordan du får de mest nøjagtigte leveringsestimater, anbefaler vi at du læser denne guide.</p>"
+        ]
+      },
+      {
+        "h3": "5. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -183,11 +215,11 @@
           }
         ],
         "paragraphs": [
-          "<p>følge Bring Research foretrækker kunderne, at kassen viser logoer, så de nemt kan genkende deres foretrukne forsendelsesleverandør. For pakker, der skal til slutkunder i Norge, skal du bruge Postens logo. For pakker, der går til slutkunder i andre lande, skal du bruge Bring-logoet.</p>"
+          "<p>I følge Bring Research foretrækker kunderne, at kassen viser logoer, så de nemt kan genkende deres foretrukne forsendelsesleverandør. For pakker, der skal til slutkunder i Norge, skal du bruge Postens logo. For pakker, der går til slutkunder i andre lande, skal du bruge Bring-logoet.</p>"
         ]
       },
       {
-        "h3": "5. Miljøtekst og miljøikon",
+        "h3": "6. Miljøtekst og miljøikon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
