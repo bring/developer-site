@@ -2,7 +2,5 @@
   <additionalService>
     <id>DELIVERY_INDOOR</id>
     <message>Legg pakken i garasjen.</message>
-    <email>sender@sender.com</email>
-    <mobile>777777</mobile>
   </additionalService>
 </additionalServices>
