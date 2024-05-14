@@ -12,6 +12,15 @@ weight: 31
  
 important:
 - type: warn
+  title: The Tracking API will no longer support unauthenticated requests from 13.05.2024
+  message: |
+    Starting from May 13th, unauthenticated requests will no longer have access to the Tracking API. Previously, we implemented rate limiting measures.
+    Read [here](https://developer.bring.com/api) on how to make authenticated requests.
+
+    If you see following error message that means you are not sending authenticated requests.
+
+    ``401 - Unathorized. The Tracking API no longer supports unauthenticated requests. Make sure your requests are authenticated. Read more about this on our Bring developer site. https://developer.bring.com/api/tracking/``
+- type: warn
   title: The Tracking API will start rate limiting unauthenticated requests from 15.08.2023
   message: |
     Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations,
