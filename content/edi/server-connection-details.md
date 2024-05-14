@@ -1,10 +1,10 @@
 ---
-title: Server Connection Details
+title: SSH Thumbprint
 layout: edi
 menu:
   edi:
-    identifier: "sshThumbprint"
-    title: "SSH Thumbprint"
+    identifier: "server-connection-details"
+    title: "Server Connection Details"
 weight: 7
 ---
 
