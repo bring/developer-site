@@ -28,7 +28,7 @@
     type="text/css"
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
   />
-  {{ if not $.Site.IsServer }}
+  {{ if not hugo.IsServer }}
     {{- $jsManifest := getJSON "static/assets/.vite/manifest.json" -}}
     {{- with index $jsManifest "js/main.js" -}}
       {{- range .css -}}
