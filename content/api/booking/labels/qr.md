@@ -15,10 +15,11 @@ To book, add the element `generateQrCodes` at the consignment level and set it t
 
 The following services support QR codes:
 
-- 9600
-- 9350
-- 9300
 - 9000
+- 9300
+- 9350
+- 9600
+- 9650
 - 0341
 - 0343
 
