@@ -73,12 +73,6 @@ documentation:
       | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
       | `TERMINAL` | Package is now registered/arrived at inbound/outbound storage terminal. |
 
-      ### Deviation events
-
-      | Event | Description |
-      |:-------|:--------|
-      | `NOT_REGISTERED` | Webhook not registered. This is typically triggered if the package hasn’t been handed in to Bring within two days. |
-      | `EXPIRED` | Webhook expired. |
 
   - title: Callbacks
     content: |
