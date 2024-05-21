@@ -39,18 +39,15 @@ information:
 documentation:
   - title: Events
     content: |
-      We recommend subscribing only to events relevant to you. By keeping the list of events (`event_groups`) as small as possible, you will not get more updates than you need and your server will not get unnecessary HTTP requests from Bring.
-
-      Events are defined as an array with comma separated strings. Wildcards like `*` and `ALL` are not supported.
-
-      ### Example
+      Specify the events (`event_groups`) you want to subscribe to as an array with comma separated strings.
 
       ```
       "event_groups": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
       ```
 
-      ### Default events
-      The list is subject to change.
+      We recommend keeping your list as short as possible. By subscribing only to events relevant to you, your server will not get unnecessary HTTP requests from Bring. Wildcards like `*` and `ALL` are not supported.
+
+      The list of events is subject to change.
 
       | Event | Description |
       |:-------|:--------|
@@ -72,7 +69,6 @@ documentation:
       | `RETURN` | Package is on its way back to the sender. |
       | `TRANSPORT_TO_RECIPIENT` | Package has been loaded for delivery to the recipient. |
       | `TERMINAL` | Package is now registered/arrived at inbound/outbound storage terminal. |
-
 
   - title: Callbacks
     content: |
