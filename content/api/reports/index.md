@@ -32,7 +32,7 @@ information:
     content: |
       REST XML/JSON over HTTP.
 
-oas: https://qa.mybring.com/reports/v3/api-docs
+oas: https://www.mybring.com/reports/v3/api-docs
 
 documentation:
   - title: Fetching reports
