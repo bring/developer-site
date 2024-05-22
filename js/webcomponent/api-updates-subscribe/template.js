@@ -1,17 +1,16 @@
 export default function apiUpdatesTemplate(isModal, includeButton, buttonText, buttonClass) {
   return `${isModal && includeButton ? `<button class="${buttonClass}" data-api-updates-open>${buttonText}</button>` : ''}
 
-<div class="api-updates" ${isModal ? 'role="dialog" aria-modal="true"' : ''}>
-  <div class="api-updates-wrapper bg-green1">
-    ${isModal ? `<div class="api-updates-header justify-cfe ptm prm">
-      <button class="btn-link--dark" aria-label="Close modal" data-close-modal>
-        <svg class="icon-ui" viewBox="0 0 352 512">
-        <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
-      </button>
-    </div>` : ''}
-
-    <div class="api-updates-content pal${isModal ? ` pt0` : ``}">
-      <h2>Subscribe</h2>
+${isModal ? '<dialog class="mb-modal api-updates bg-green1">' : '<div class="api-updates bg-green1">'}
+  <div class="api-updates-wrapper">
+    <div class="flex flex-dir-col gam${isModal ? '': ' pal'}">
+      <div class="flex gal justify-csb align-ic">
+        <h2>Subscribe</h2>
+        ${isModal ? `<button class="btn-link--dark" aria-label="Close modal" data-close-modal>
+            <svg class="icon-ui" viewBox="0 0 352 512">
+            <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+          </button>` : ''}
+      </div>
       <p class="mb0">Get API updates via email.</p>
       <form class="cr_form cr_font" action="https://seu2.cleverreach.com/f/362555-365663/wcs/" method="post" id="cr-subscribe-form" target="_blank">
         <div class="cr_font">
@@ -22,7 +21,7 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
 
           <div class="flex flex-dir-col mbs">
             <fieldset class="flex flex-dir-col">
-              <legend className="mbs">API areas</legend>
+              <legend class="mbs">API areas</legend>
               <div id="8265204" rel="radio" class="cr_ipe_item musthave flex gam" >
           
                 <label class="form__radio">
@@ -103,6 +102,5 @@ export default function apiUpdatesTemplate(isModal, includeButton, buttonText, b
       </form>
     </div>
   </div>
-  ${isModal ? '<div class="api-updates-backdrop" data-close-modal></div>' : ''}
-</div>`;
+  ${isModal ? '</dialog>' : '</div>'}`;
 }
