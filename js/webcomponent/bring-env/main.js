@@ -4,8 +4,8 @@ import bringEnvTemplate from "./template.js";
 
 class BringEnv extends HTMLElement {
   constructor() {
-    super()
-    this.attachShadow({mode: "open"})
+    super();
+    this.attachShadow({mode: "open"});
 
     let modalAttr = this.attributes.modal;
     let isModal = false;
@@ -17,7 +17,7 @@ class BringEnv extends HTMLElement {
       }
     }
 
-    this.render(isModal)
+    this.render(isModal);
   }
 
   render(isModal) {
