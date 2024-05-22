@@ -8,15 +8,14 @@ import {train} from "./svgs/train.js";
 import {uploadingTruck} from "./svgs/uploading-truck.js";
 
 export default function bringEnvTemplate(isModal) {
-  return `<div class="bring-env" ${isModal ? 'role="dialog" aria-modal="true" aria-labelledby="modalTitle"' : ''}>
+  return `${isModal ? '<dialog class="mb-modal bring-env">' : '<div class="bring-env">'}
     <div class="bring-env-wrapper">
       <div class="bring-env-header">
         ${postenLogo}
-        ${isModal ? `<div class="close-modal"><button class="close-modal-btn" aria-label="Close modal" data-close-modal>
+        ${isModal ? `<button class="close-modal-btn" aria-label="Close modal" data-close-modal>
             <svg width="16" height="16" viewBox="0 0 352 512">
             <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
-          </button>
-        </div>` : ''}
+          </button>` : ''}
       </div>
       <div class="bring-env-content">
         <section>
@@ -85,7 +84,6 @@ export default function bringEnvTemplate(isModal) {
           </div>
         </section>
       </div>
-    </div>
-    ${isModal ? '<div class="bring-env-backdrop" data-close-modal></div>' : ''}
+    ${isModal ? '</dialog>' : '</div>'}
   </div>`;
 }
