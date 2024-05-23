@@ -44,11 +44,7 @@ class ApiSubscribe extends HTMLElement {
 
   open() {
     this.loadExternalScripts()
-    this.querySelector(".api-updates").classList.add("open")
-    const closeModalBtn = this.querySelector("[data-close-modal]")
-    if (closeModalBtn) {
-      closeModalBtn.focus()
-    }
+    this.querySelector(".api-updates").showModal()
 
     // Log to SiteImprove when opening the modal
     if(typeof SiteImprove !== 'undefined'){
@@ -61,11 +57,7 @@ class ApiSubscribe extends HTMLElement {
   }
 
   close() {
-    const openModalBtn = document.querySelector("[data-api-updates-open]")
-    this.querySelector(".api-updates").classList.remove("open")
-    if (openModalBtn) {
-      openModalBtn.focus()
-    }
+    this.querySelector(".api-updates").close()
   }
 
   bindOpenModalClickHandler() {
@@ -174,13 +166,15 @@ class ApiSubscribe extends HTMLElement {
     signupForm.addEventListener("submit", (e) => validateInputs(e))
 
     if (this.isModal) {
-      const closeModalAttr = document.querySelectorAll("[data-close-modal]")
+      const modal = this.querySelector(".api-updates")
+      const closeModalAttr = modal.querySelectorAll("[data-close-modal]")
+      
       closeModalAttr.forEach((closeModal) => {
         closeModal.addEventListener("click", () => this.close())
       })
 
-      this.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
           this.close()
         }
       })

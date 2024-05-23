@@ -4,8 +4,8 @@ import bringEnvTemplate from "./template.js";
 
 class BringEnv extends HTMLElement {
   constructor() {
-    super()
-    this.attachShadow({mode: "open"})
+    super();
+    this.attachShadow({mode: "open"});
 
     let modalAttr = this.attributes.modal;
     let isModal = false;
@@ -17,7 +17,7 @@ class BringEnv extends HTMLElement {
       }
     }
 
-    this.render(isModal)
+    this.render(isModal);
   }
 
   render(isModal) {
@@ -31,27 +31,26 @@ class BringEnv extends HTMLElement {
 
     this.shadowRoot.innerHTML = `${style} ${template}`;
     
-    const openModalBtn = document.querySelector('[data-bring-env-open]');
-
     if(isModal) {
+      const modal = this.shadowRoot.querySelector(".bring-env");
+      const openModalBtn = document.querySelector('[data-bring-env-open]');
+
       if(openModalBtn) {
         openModalBtn.addEventListener('click', () => {
           open();
         });
       }
 
-      const closeModalAttr = this.shadowRoot.querySelectorAll('[data-close-modal]');
-      closeModalAttr.forEach((closeModal) => {
-        closeModal.addEventListener('click', () => {
-          close();
-        });
+      const closeModalBtn = modal.querySelector('[data-close-modal]');
+      closeModalBtn.addEventListener('click', () => {
+        close();
       });
 
-      this.shadowRoot.addEventListener('keydown', (e) => {
-        if (e.keyCode == 27) {
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
           close();
         }
-      });
+      })
     }
 
     //Make some animation
@@ -77,16 +76,11 @@ class BringEnv extends HTMLElement {
     }
 
     const open = () => {
-      this.shadowRoot.querySelector('.bring-env').classList.add('open');
-      const closeModalBtn = this.shadowRoot.querySelector('.close-modal-btn');
-      if(closeModalBtn) {
-        closeModalBtn.focus();
-      }
+      this.shadowRoot.querySelector('.bring-env').showModal();
     }
 
     const close = () => {
-      this.shadowRoot.querySelector('.bring-env').classList.remove('open');
-      openModalBtn.focus();
+      this.shadowRoot.querySelector('.bring-env').close();
     }
   }
 }

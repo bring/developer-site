@@ -32,50 +32,45 @@ export default function bringEnvStyle(isModal) {
     }
 
     .bring-env {
+      background: #ffffff;
       ${isModal ?
-      `display: none;
-      height: 100vh;
-      width: 100vw;
+      `height: 100vh;
+      width: 46rem;
+      max-width: 94vw;
+      max-height: 80vh;
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 5000;`
+      z-index: 5000;
+      border: none;
+      border-radius: 3px;
+      margin: auto;
+      box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 12%);`
       : 'display:flex;'}
       justify-content: center;
       align-items: center;
-    }
 
-    .bring-env.open {
-      display: flex;
-    }
-
-    .bring-env-wrapper {
-      padding: 0;
-      position: relative;
-      ${isModal ?
-      `background: #ffffff;
-      border-radius: 3px;
-      width: 46rem;
-      max-width: 94vw;
-      height: 100%;
-      max-height: 80vh;
-      overflow: hidden;
-      box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 12%);
-      z-index: 5002;`
-      : 'width: 100%;'}
+      &::backdrop {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
     }
 
     .bring-env-header {
-      height: 5rem;
-      display: flex;
-      align-items: center;
       ${isModal ?
-        `padding: 0 2rem;`
+        `height: 5rem;
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        padding: 0 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        justify-content: space-between;`
       : 'padding: 0;'}
     }
 
     .bring-env-header-logo {
-      width: 125px;
+      width: 120px;
     }
     
     .close-modal {
@@ -109,10 +104,6 @@ export default function bringEnvStyle(isModal) {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      ${isModal ?
-      `height: calc(100% - 5rem);
-      overflow-y: auto;`
-      : ''}
     }
 
     .bring-env section {
@@ -124,17 +115,7 @@ export default function bringEnvStyle(isModal) {
     }
 
     ${isModal ?
-      `.bring-env-backdrop {
-        position: fixed;
-        height: 100vh;
-        width: 100vw;
-        background: hsla(0,0%,10%,0.5);
-        top: 0;
-        left: 0;
-        z-index:5001;
-      }
-
-      @media only screen and (max-width: 38em) {
+      `@media only screen and (max-width: 38em) {
         .bring-env section {
           padding: 0 2rem;
         }
@@ -143,7 +124,10 @@ export default function bringEnvStyle(isModal) {
       .bring-env section:last-child {
         margin-bottom: 4rem;
       }`
-    : ''}
+    : `.bring-env-wrapper {
+        padding: 2rem;
+      }
+    `}
 
     .bring-env-text ul {
       padding: 0;
