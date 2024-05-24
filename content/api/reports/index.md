@@ -27,7 +27,9 @@ information:
       To integrate with the Bring APIs, you will need a Mybring user account with an API key. Information about prerequisites and authentication headers can be found on the general API [Getting Started page](/api/).
   - title: Rate limiting
     content: |
-      Clients exceeding multiple identical requests in a short time period will be throttled, and the response will contain HTTP status code 429.
+      The Reports application has a rate limiting functionality. When triggered, a response with HTTP status code 429 will immediately be returned for the user if they attempt to create a report.
+      Users can be throttled for creating multiple identical requests in a short amount of time.
+      Additionally, users are also limited to 20 concurrent report requests that can be created at once. After 20 report requests has been created, the user will need to wait for one of them to finish before a new one can be made.
   - title: Formats
     content: |
       REST XML/JSON over HTTP.
