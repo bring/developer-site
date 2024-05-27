@@ -34,7 +34,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP.
+      REST JSON over HTTP.
 
 documentation:
   - title: Events
