@@ -34,7 +34,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP.
+      REST JSON over HTTP.
 
 documentation:
   - title: Events
@@ -83,13 +83,10 @@ documentation:
       ```
       "yyyy-MM-dd'T'HH:mm:ssZ"
       ```
-
-  - title: Payload
-    content: |
-
-      ### Delivery headers
-
-      `HTTP POST` payloads that are delivered to your webhook's configured URL endpoint contains several Bring specific headers:
+      
+      ### Information Bring will provide in the request
+      
+      `HTTP POST` payloads that are delivered to your webhook's configured URL endpoint contains both a JSON with event information and several Bring specific headers:
 
       | Header | Description |
       |:-------|:--------|
@@ -98,8 +95,8 @@ documentation:
       | `X-bring-Version` | Indicates the application version |
       | `<your headers>` | Any headers you specified in the webhook configuration |
 
-      ### Example
-
+      ### Example callback from Bring to your endpoint
+      
       ```json
       POST /callback/Webhook HTTP/1.1
       host: localhost:80
@@ -121,11 +118,10 @@ documentation:
       }
       ```
 
-  - title: Retries and shipments not yet registered
-    content: |
+      ### Retries
       If your endpoint is down and a callback is sent, the API will try to send a request two times with 30 minutes between and a third and final time after another hour.
 
-      If you subscribe to a shipment that hasn’t been registered with Bring, we will retry for up to two days. A notification will be sent on the webhook’s callback URL if the shipment isn’t registered in this timeframe.
+
 
 oas: https://api.qa.bring.com/event-cast/api-docs
 ---
