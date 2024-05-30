@@ -11,7 +11,13 @@ menu:
 weight: 32
 
 introduction: |
-  The Event Cast API can be used to subscribe to tracking events for a given shipment by registering webhooks. Event notifications are automatically pushed to the subscriber as they happen, avoiding repeatedly poll statuses calling the Tracking API. You define an endpoint that accepts HTTP POST, and whenever an event is registered for a subscribed shipment, we send it to the URL.
+  The Event Cast API allows you to subscribe to tracking events for shipments by registering webhooks. There are two types of subscriptions available:
+
+  1. **Customer Number Subscription**: Event notifications will be sent for all shipments belonging to the subscribed customer number.
+  2. **Tracking Number Subscription**: Event notifications will be sent for the subscribed shipment or parcel number.
+
+  Event notifications are automatically pushed to the subscriber as they happen, avoiding the need to repeatedly poll statuses by calling the Tracking API. You define an endpoint that accepts HTTP POST requests, and whenever an event is registered for a subscribed shipment, we send it to the specified URL.
+
 
 information:
   - title: Authentication
@@ -20,7 +26,7 @@ information:
 
   - title: Limitations
     content: |
-      Maximum _50 concurrent requests_ per user is allowed. Maximum _10 concurrent requests_ per user is allowed on the test endpoint. Maximum 100 shipments can be batch created per request. But there is no limitation on how many webhooks you can have in total.
+      Maximum 50 _concurrent requests_ per user is allowed. Maximum 10 _concurrent requests_ per user is allowed on the test endpoint. Maximum 100 shipments can be batch created per request. But there is no limitation on how many webhooks you can have in total.
 
       The current version doesn’t support event history, you can use the [Tracking API](/api/tracking) to get a shipment’s full history.
 
@@ -30,7 +36,7 @@ information:
 
       Expired webhooks are not available.
 
-      Multiple webhooks for one shipment can only be registered as long as they subscribe to different events.
+      Multiple webhooks for one shipment can only be registered as long as they subscribe to different events. 
 
   - title: Formats
     content: |
@@ -39,11 +45,25 @@ information:
 documentation:
   - title: Events
     content: |
-      Specify the events (`event_groups`) you want to subscribe to as an array with comma separated strings.
-
-      ```
+      Specify the events (`event_groups` / `eventSet`) you want to subscribe to as an array with comma separated strings.
+      
+      <details>
+      <summary style="cursor: pointer; font-weight: bold;">Tracking number subscription example</summary>
+      
+      ``` 
       "event_groups": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
       ```
+      
+      </details>
+      <details open="true">
+      <summary style="cursor: pointer; font-weight: bold;">Customer number subscription example</summary>
+
+      ``` 
+      "eventSet": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
+      ```
+
+      </details>
+      <br/>
 
       We recommend keeping your list as short as possible. By subscribing only to events relevant to you, your server will not get unnecessary HTTP requests from Bring. Wildcards like `*` and `ALL` are not supported.
 
