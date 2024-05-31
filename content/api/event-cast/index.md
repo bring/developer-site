@@ -48,19 +48,19 @@ documentation:
       Specify the events (`event_groups` / `eventSet`) you want to subscribe to as an array with comma separated strings.
       
       <details>
-      <summary style="cursor: pointer; font-weight: bold;">Tracking number subscription example</summary>
-      
-      ``` 
-      "event_groups": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
-      ```
+        <summary style="cursor: pointer; font-weight: bold;">Tracking number subscription example</summary>
+        
+        ``` 
+        "event_groups": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
+        ```
       
       </details>
       <details open="true">
-      <summary style="cursor: pointer; font-weight: bold;">Customer number subscription example</summary>
-
-      ``` 
-      "eventSet": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
-      ```
+        <summary style="cursor: pointer; font-weight: bold;">Customer number subscription example</summary>
+  
+        ``` 
+        "eventSet": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
+        ```
 
       </details>
       <br/>
