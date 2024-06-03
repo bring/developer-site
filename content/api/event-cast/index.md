@@ -143,5 +143,5 @@ documentation:
 
 
 
-oas: https://api.qa.bring.com/event-cast/api-docs
+oas: https://api.bring.com/event-cast/api-docs
 ---
