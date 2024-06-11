@@ -19,7 +19,7 @@ jobs:
       ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
       ALGOLIA_INDEX: ${{ github.ref == 'refs/heads/master' && 'devsite_prod' || 'devsite_qa' }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - name: Build and Deploy
