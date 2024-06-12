@@ -1022,6 +1022,6 @@
   "LeadTime" : "-",
   "EnvironmentalData" : "-",
   "SenderCountries" : "NO",
-  "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, LT, LU, LV, NL, PL, SI, SK",
+  "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, IT, LT, LU, LV, NL, PL, SI, SK",
   "DomesticAllowed" : "-"
 } ]
