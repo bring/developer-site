@@ -919,6 +919,26 @@
     "senderCountries" : "DK",
     "destinations" : "ALL"
   }, {
+    "serviceName" : "Business Parcel Return",
+    "serviceType" : "B2B return",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PARCEL_RETURN",
+    "productionCode" : "0331",
+    "domesticAllowedIn" : "DK",
+    "senderCountries" : "DK",
+    "destinations" : "ALL"
+  }, {
+    "serviceName" : "Business Parcel Return Bulk",
+    "serviceType" : "B2B return",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
+    "productionCode" : "0333",
+    "domesticAllowedIn" : "DK",
+    "senderCountries" : "DK",
+    "destinations" : "ALL"
+  }, {
     "serviceName" : "PickUp Parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -945,26 +965,6 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_RETURN_BULK",
     "productionCode" : "0343",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "SE, DK",
-    "destinations" : "ALL"
-  }, {
-    "serviceName" : "Business Parcel Return",
-    "serviceType" : "B2B return",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_PARCEL_RETURN",
-    "productionCode" : "0331",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "SE, DK",
-    "destinations" : "ALL"
-  }, {
-    "serviceName" : "Business Parcel Return Bulk",
-    "serviceType" : "B2B return",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_PARCEL_RETURN_BULK",
-    "productionCode" : "0333",
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
     "destinations" : "ALL"
