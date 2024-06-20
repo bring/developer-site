@@ -13,7 +13,7 @@
       {{- end -}}
     {{- end -}}
     {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" $oasData.paths) -}}
-    {{- partial "api/oas/endpoints-table.html" (dict "oas" $oasData "soapArr" $soapEndpoints "sortedPaths" $sortedPaths) -}}
+    {{- partial "api/oas/endpoints-table.html" (dict "oas" $oasData "soapArr" $soapEndpoints "sortedPaths" $sortedPaths "oasUrl" $.Params.oas) -}}
 
     {{- with $oasData -}}
       {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "paths" .paths "sortedPaths" $sortedPaths) -}}
