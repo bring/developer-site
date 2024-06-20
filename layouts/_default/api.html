@@ -62,7 +62,7 @@
           {{- $oasData := getJSON $.Params.oas -}}
           {{- with $oasData -}}
             {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" .paths) -}}
-            {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths) -}}
+            {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths "oasUrl" $.Params.oas ) -}}
             {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "sortedPaths" $sortedPaths) -}}
           {{- end -}}
           {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}

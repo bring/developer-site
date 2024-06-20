@@ -3,6 +3,7 @@
   {{- $soapArr = . -}}
 {{- end -}}
 {{- $sortedPaths := .sortedPaths -}}
+{{- $oasUrl := .oasUrl -}}
 
 {{- with .oas -}}
   <section class="dev-docscontent__section maxw96r">
@@ -93,5 +94,6 @@
         {{- end -}}
       {{- end -}}
     </table>
+    {{- partial "api/oas/openapi-source.html" (dict "oasUrl" $oasUrl) -}}
   </section>
 {{- end -}}
