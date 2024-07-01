@@ -32,8 +32,6 @@
 <section class="dev-docscontent__section">
   <div class="gaxl flex flex-wrap flex-dir-row-rev justify-cfe maxw80r">
     <div class="updates__sub owls">
-      
-      {{- partial "api/importantupdates.html" (dict "apiArea" $.Params.apiArea "pctx" $pctx "heading" "Important updates") -}}
 
       <div class="mbm">
         {{- partial "subscribe.html" -}}
@@ -46,19 +44,31 @@
       <h2 class="mbm">{{$pageSubTitle}}</h2>
       <label class="form__label" for="filterChangelogInput">Filter API updates</label>
       <input type="text" class="form__control maxw16r" id="filterChangelogInput" />
+      <label for="checkbox" class="mbm">
+        <input type="checkbox" id="checkbox" /> Filter by important updates
+      </label>
       {{/* Set $pages to the rearranged structure */}}
       <div aria-busy="false" aria-atomic="true" aria-live="polite" data-live-region>
         {{- $pages = $rearrangedPages -}}
-        {{- range where (first 5 $pages) ".Params.isImportant" "ne" true -}}
+        {{- range first 5 $pages -}}
           {{- $parentFolder := path.Base (path.Dir .) -}}
-          <article class="mbl" data-changelog-parent="{{$parentFolder}}">
+          {{- $isImportant := .Params.isImportant -}}
+          <article class="mbl" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
             <header class="flex flex-dir-col-rev">
-              <h3 class="fw600 mb0">{{ .Title }}</h2>
-              <time
-                class="mrm text-note fw600"
-                datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-                >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
-              >
+              <div class="flex">
+                <h3 class="fw600 mb0">{{ .Title }} </h3>
+              </div>
+            <div> 
+            <time
+              class="mrm text-note fw600"
+              datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+              >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
+            >
+
+            {{- if (.Params.isImportant) -}}
+                <span class="mb-badge mb-badge--yellow">Important</span>
+            {{- end -}}
+              </div>
             </header>
             {{ .Content }}
           </article>
@@ -76,16 +86,24 @@
           Older updates
         </summary>
         <div class="flex flex-wrap" aria-busy="true" aria-atomic="true" aria-live="polite" data-live-region>
-          {{- range where (after 5 $pages) ".Params.isImportant" "ne" true -}}
+          {{- range after 5 $pages -}}       
             {{- $parentFolder := path.Base (path.Dir .) -}}
-            <article class="changelog-small bg-gray1 pal mbxs" data-changelog-parent="{{$parentFolder}}">
+            {{- $isImportant := .Params.isImportant -}}
+            <article class="changelog-small bg-gray1 pal mbxs" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
               <header class="flex flex-dir-col-rev">
-                <h2 class="text-basic fw600 mb0">{{ .Title }}</h2>
-                <time
+                <div class="flex">
+                  <h2 class="text-basic fw600 mb0">{{ .Title }}</h2>
+                </div>
+                <div class="flex">
+                  <time
                   class="mrm text-note fw600"
                   datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
                   >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
                 >
+                  {{- if (.Params.isImportant) -}}
+                  <span class="mb-badge mb-badge--yellow">Important</span>
+              {{- end -}}
+                </div>
               </header>
               {{ .Content }}
             </article>
@@ -98,11 +116,25 @@
 </section>
 
 <script type="text/javascript">
+  const checkbox = document.getElementById('checkbox');
+  let changelogList = document.querySelectorAll('[data-changelog-parent]');
+  const olderApiUpdates = document.getElementById('olderApiUpdates');
+  
+  checkbox.addEventListener('change', function() {
+    const importantChangesList = document.querySelectorAll('[data-is-important]');
+
+    changelogList.forEach(changelog => {
+      if(checkbox.checked && !changelog.dataset.isImportant){
+        changelog.style.display = "none";
+      }else if(!checkbox.checked){
+        changelog.style.display = "block";
+      }
+    })
+  });
+
   const filterInput = document.getElementById('filterChangelogInput');
 
   filterInput.addEventListener('keyup', (e) => {
-    const changelogList = document.querySelectorAll('[data-changelog-parent]');
-    const olderApiUpdates = document.getElementById('olderApiUpdates');
     let filterInputVal = e.target.value.trim();
 
     const resetAriaBusy = (regions) => {
@@ -112,6 +144,7 @@
           const articles = el.querySelectorAll('article');
           for (let i = 0; i < articles.length; i++) {
             if(!articles[i].classList.contains('dn') && regions[0] === el) {
+              console.log(regions[0])
               articleVisible = true;
             }
           }
@@ -147,6 +180,7 @@
         resetAriaBusy(ariaLiveRegions);
       }
     }
+
     if (changelogList && changelogList.length > 0) {
       changelogList.forEach(filterByInput);
     }
