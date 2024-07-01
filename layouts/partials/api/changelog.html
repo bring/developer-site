@@ -32,7 +32,6 @@
 <section class="dev-docscontent__section">
   <div class="gaxl flex flex-wrap flex-dir-row-rev justify-cfe maxw80r">
     <div class="updates__sub owls">
-
       <div class="mbm">
         {{- partial "subscribe.html" -}}
       </div>
@@ -122,11 +121,10 @@
   
   checkbox.addEventListener('change', function() {
     const importantChangesList = document.querySelectorAll('[data-is-important]');
-
     changelogList.forEach(changelog => {
       if(checkbox.checked && !changelog.dataset.isImportant){
         changelog.style.display = "none";
-      }else if(!checkbox.checked){
+      } else if(!checkbox.checked){
         changelog.style.display = "block";
       }
     })
@@ -144,7 +142,6 @@
           const articles = el.querySelectorAll('article');
           for (let i = 0; i < articles.length; i++) {
             if(!articles[i].classList.contains('dn') && regions[0] === el) {
-              console.log(regions[0])
               articleVisible = true;
             }
           }
@@ -180,7 +177,6 @@
         resetAriaBusy(ariaLiveRegions);
       }
     }
-
     if (changelogList && changelogList.length > 0) {
       changelogList.forEach(filterByInput);
     }
