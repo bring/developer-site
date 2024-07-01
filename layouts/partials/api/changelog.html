@@ -54,20 +54,16 @@
           {{- $isImportant := .Params.isImportant -}}
           <article class="mbl" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
             <header class="flex flex-dir-col-rev">
-              <div class="flex">
-                <h3 class="fw600 mb0">{{ .Title }} </h3>
-              </div>
+            <h3 class="fw600 mb0">{{ .Title }} </h3>
             <div> 
-            <time
-              class="mrm text-note fw600"
-              datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-              >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
-            >
-
-            {{- if (.Params.isImportant) -}}
-                <span class="mb-badge mb-badge--yellow">Important</span>
-            {{- end -}}
-              </div>
+              <time
+                class="mrm text-note fw600"
+                datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time>
+              {{- if (.Params.isImportant) -}}
+                  <span class="mb-badge mb-badge--yellow">Important</span>
+              {{- end -}}
+            </div>
             </header>
             {{ .Content }}
           </article>
@@ -90,18 +86,15 @@
             {{- $isImportant := .Params.isImportant -}}
             <article class="changelog-small bg-gray1 pal mbxs" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
               <header class="flex flex-dir-col-rev">
-                <div class="flex">
-                  <h2 class="text-basic fw600 mb0">{{ .Title }}</h2>
-                </div>
+                <h2 class="text-basic fw600 mb0">{{ .Title }}</h2>
                 <div class="flex">
                   <time
                   class="mrm text-note fw600"
                   datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-                  >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
-                >
+                  >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time>
                   {{- if (.Params.isImportant) -}}
                   <span class="mb-badge mb-badge--yellow">Important</span>
-              {{- end -}}
+                  {{- end -}}
                 </div>
               </header>
               {{ .Content }}
