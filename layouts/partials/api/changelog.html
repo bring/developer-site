@@ -113,12 +113,11 @@
   const olderApiUpdates = document.getElementById('olderApiUpdates');
   
   checkbox.addEventListener('change', function() {
-    const importantChangesList = document.querySelectorAll('[data-is-important]');
     changelogList.forEach(changelog => {
       if(checkbox.checked && !changelog.dataset.isImportant){
-        changelog.style.display = "none";
+        changelog.classList.add('dn');
       } else if(!checkbox.checked){
-        changelog.style.display = "block";
+        changelog.classList.remove('dn');
       }
     })
   });
