@@ -35,7 +35,7 @@
         "illustrationImageAlt": "Choose service by service name",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Use the standard service name and description text to make sure your customers understand what the delivery options imply.</p>"
+          "<p>Present the delivery options so that your customers understand what they entail. Therefore, use Posten's standard service name and service description, which are updated.</p><p>The shipping guide API always has updated names and descriptions in Norwegian, Swedish, Danish and English.</p><li>displayName = The name of the delivery option to be displayed in the checkout.</li><li>shortName = Short version of the name of the delivery option. Used if there is little space.</li><li>descriptionText = Description of the delivery option in checkout.</li></p>"
         ]
       },
       {
