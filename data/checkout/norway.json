@@ -167,7 +167,7 @@
         "illustrationImageAlt": "Skjema for valg av leveringsalternativ via tjenestenavn",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Bruk standard tjenestenavn og tjenestebeskrivelse for å sikre at kundene dine forstår hva leveringsalternativene innebærer.</p>"
+          "<p>Presenter leveringsalternativene slik at dine kunder forstår hva de innebærer. Bruk derfor Postens standard tjenestenavn og tjenestebeskrivelse, som er oppdaterte.</p><p>Shipping guide API'et har alltid oppdaterte navn og beskrivelser på norsk, svensk, dansk og engelsk.</p><li>displayName = Navnet på leveringsalternativet som skal vises i checkout.</li><li>shortName = Kortversjon av navnet på leveringsalternativet. Brukes dersom det er lite plass.</li><li>descriptionText = Beskrivelse av leveringsalternativet i checkout.</li></p>"
         ]
       },
       {
