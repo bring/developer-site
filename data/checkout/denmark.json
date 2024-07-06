@@ -35,7 +35,7 @@
         "illustrationImageAlt": "Choose service by service name",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Use the standard service name and description text to make sure your customers understand what the delivery options imply.</p>"
+          "<p>Present the delivery options so that your customers understand what they entail. Therefore, use Posten's standard service name and service description, which are updated.</p><p>The shipping guide API always has updated names and descriptions in Norwegian, Swedish, Danish and English.</p><p><li>displayName = The name of the delivery option to be displayed in the checkout.</li><li>shortName = Short version of the name of the delivery option. Used if there is little space.</li><li>descriptionText = Description of the delivery option in checkout.</li></p>"
         ]
       },
       {
@@ -50,7 +50,7 @@
         "illustrationImageAlt": "Choose pickup points",
         "tags": ["Pickup Point API"],
         "paragraphs": [
-          "<p>By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point type. We also recommend showing a map to make it easier for your customers to locate the pickup points.</p>"
+          "<p>By offering 7-10 alternatives, your customers are able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby. </p><p>We therefore recommend displaying the pickup point’s address and distance from the customer’s address to each pickup location in meters/kilometers to make it easy for the customer to assess which pickup point is closest to them.</p><p>Flexibility is important, and we therefore recommend that you display opening hours and include parcel lockers among your pickup points.</p>"
         ]
       },
       {
@@ -61,7 +61,7 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.jpg",
+        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.png",
         "illustrationImageAlt": "Display estimated time of delivery",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
@@ -70,7 +70,21 @@
         ]
       },
       {
-        "h3": "5. Logo",
+        "h3": "5. Flexible delivery",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/se/choose_delivery_date.png",
+        "illustrationImageAlt": "Choose value added services",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Make the delivery more flexible for your customers by offering various value-added services.</p><p>For example:</p><p>Alternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</p>"]
+      },
+      {
+        "h3": "6. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -101,7 +115,7 @@
         ]
       },
       {
-        "h3": "6. Environmental data and icon",
+        "h3": "7. Environmental data and icon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
@@ -153,7 +167,7 @@
         "illustrationImageAlt": "Choose service by service name",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Brug standard tjenestensnavn og beskrivelsestekst for at sikre, at dine kunder forstår, hvad leveringsmulighederne indebærer.</p>"
+          "<p>Præsenter leveringsmuligheder på en måde så dine kunder altid ved hvad de kan forvente. Brug derfor Posten Brings opdateret tjenestenavne og -beskrivelser.</p><p>Shipping guide API'et retuner altid opdateret navne og beskrivelser på norsk, svensk, dansk og engelsk.nText = Beskrivelse af leveringsmuligheden i checkouten.</p><p><li>displayName = Navnet på leveringsmuligheden som skal vises i checkouten</li><li>shortName = en forkortet version af displayName. Bør bruges hvis der er lidt plads at vise navne på.</li><li>descriptionText = Beskrivelse af leveringsmuligheden i checkouten.</li></p>"
         ]
       },
       {
@@ -168,7 +182,7 @@
         "illustrationImageAlt": "Choose pickup points",
         "tags": ["Pickup Point API"],
         "paragraphs": [
-          "<p>Ved at tilbyde 7-10 alternativer, vil dine kunder være i stand til at vælge det mest bekvemme udleveringssteder. Ifølge Bring Research er kunderne mere tilbøjelige til at gennemføre købet, hvis de præsenteres for udleveringssteder i nærheden. Derfor anbefaler vi, at du tilbyder pakkeshops og nærboks. Vi anbefaler også at vise et kort for at gøre det nemmere for dine kunder at finde udleveringsstedene.</p>"
+          "<p>Ved at tilbyde 7-10 muligheder kan dine kunder vælge det udleveringssted de ønsker.</p><p>Ifølge Bring Research er kunder mere tilbøjelige til at foretage et køb hvis der er et udleveringssted tæt på.</p><p>Derfor anbefaler vi at man viser udleveringsstedets adresse og afstand fra kundens adresse til udleveringsstedet i meter/kilometer, for at gøre det nemt for dem at vurdere hvilket pickup der nærmest dem.</p><p>Fleksibilitet er vigtigt for modtageren og derfor anbefaler vi at du viser åbningstider og inkluderer pakkebokse når du viser udleveringssteder i din checkout.</p>"
         ]
       },
       {
@@ -179,7 +193,7 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.jpg",
+        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.png",
         "illustrationImageAlt": "Display estimated time of delivery",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
@@ -188,7 +202,21 @@
         ]
       },
       {
-        "h3": "5. Logo",
+        "h3": "5. Fleksible levering",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/choose_delivery_date.png",
+        "illustrationImageAlt": "Choose value added services",
+        "tags": ["Shipping Guide API"],
+        "paragraphs": [
+          "<p>Giv dine kunder mulighed for en mere fleksible levering ved at tilbyde forskellige services,</p><p>f.eks.:</p><p>Alternative leveringsdage for Urban Home Delivery. Lad kunden vælge deres foretrukne dato.</p>"]
+      },
+      {
+        "h3": "6. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -219,7 +247,7 @@
         ]
       },
       {
-        "h3": "6. Miljøtekst og miljøikon",
+        "h3": "7. Miljøtekst og miljøikon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
