@@ -35,7 +35,7 @@
         "illustrationImageAlt": "Choose service by service name",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Use the standard service name and description text to make sure your customers understand what the delivery options imply.</p>"
+          "<p>Present the delivery options so that your customers understand what they entail. Therefore, use Posten's standard service name and service description, which are updated.</p><p>The shipping guide API always has updated names and descriptions in Norwegian, Swedish, Danish and English.</p><p><li>displayName = The name of the delivery option to be displayed in the checkout.</li><li>shortName = Short version of the name of the delivery option. Used if there is little space.</li><li>descriptionText = Description of the delivery option in checkout.</li></p>"
         ]
       },
       {
@@ -50,7 +50,7 @@
         "illustrationImageAlt": "Choose pickup points",
         "tags": ["Pickup Point API"],
         "paragraphs": [
-          "<p>By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point type. We also recommend showing a map to make it easier for your customers to locate the pickup points.</p>"
+          "<p>By offering 7-10 alternatives, your customers are able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby.</p><p> We therefore recommend displaying the pickup point’s address and distance from the customer’s address to each pickup location in meters/kilometers to make it easy for the customer to assess which pickup point is closest to them.</p><p>Flexibility is important, and we therefore recommend that you display opening hours and include parcel lockers among your pickup points.</p>"
         ]
       },
       {
@@ -167,7 +167,7 @@
         "illustrationImageAlt": "Choose service by service name",
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Använd standardtjänstens namn och tjänstebeskrivning för att se till att dina kunder förstår vad leveransalternativen innebär.</p>"
+          "<p>Presentera leveransalternativen så att dina kunder förstår vad de innebär. Använd därför Postens standardtjänstenamn och tjänstebeskrivning som har uppdaterats.</p><p>Shipping guide API:et har alltid uppdaterade namn och beskrivningar på norska, svenska, danska och engelska.</p><p><li>displayName = Namnet på leveransalternativet som ska visas i kassan.</li><li>shortName = Kort version av namnet på leveransalternativet. Används om det finns lite plats.</li><li>descriptionText = Beskrivning av leveransalternativet i kassan.</li></p>"
         ]
       },
       {
@@ -182,7 +182,7 @@
         "illustrationImageAlt": "Choose pickup points",
         "tags": ["Pickup Point API"],
         "paragraphs": [
-          "<p>Genom att erbjuda 7-10 olika alternativ kommer dina kunder att kunna välja det mest bekväma utlämningsstället. Enligt Bring Research är det mer sannolikt att kunderna slutför köpet om de får upp utlämningsställen i närheten. Därför rekommenderar vi att du erbjuder våra ombud och paketboxar. Vi rekommenderar också att du visar en karta för att göra det enklare för dina kunder att hitta utlämningsställen.</p>"
+          "<p>Genom att erbjuda 7-10 alternativ kan dina kunder välja den mest bekväma upphämtningsplatsen. Enligt Bring Research är det mer sannolikt att kunderna slutför köpet om de får upphämtningsställen i närheten. Vi rekommenderar därför att visa upphämtningsställets adress och avstånd från kundens adress till varje utlämningsställe i meter/kilometer för att göra det enkelt för kunden att bedöma vilket utlämningsställe som ligger närmast dem.</p><p>Flexibilitet är viktigt och vi rekommenderar därför att du visar öppettider och inkluderar paketskåp bland dina utlämningsställen.</p>"
         ]
       },
       {
