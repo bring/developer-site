@@ -70,21 +70,7 @@
         ]
       },
       {
-        "h3": "5. Flexible delivery",
-        "figures": [
-          {
-            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
-            "imageClass": "maxw8r"
-          }
-        ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose value added services",
-        "tags": ["Shipping Guide API"],
-        "paragraphs": [
-          "<p>Make the delivery more flexible for your customers by offering various value-added services.</p><p>For example:</p><p>Alternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</p>"]
-      },
-      {
-        "h3": "6. Logo",
+        "h3": "5. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -115,7 +101,7 @@
         ]
       },
       {
-        "h3": "7. Environmental data and icon",
+        "h3": "6. Environmental data and icon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
@@ -202,21 +188,7 @@
         ]
       },
       {
-        "h3": "5. Fleksible levering",
-        "figures": [
-          {
-            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
-            "imageClass": "maxw8r"
-          }
-        ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose value added services",
-        "tags": ["Shipping Guide API"],
-        "paragraphs": [
-          "<p>Giv dine kunder mulighed for en mere fleksible levering ved at tilbyde forskellige services,</p><p>f.eks.:</p><p>Alternative leveringsdage for Urban Home Delivery. Lad kunden vælge deres foretrukne dato.</p>"]
-      },
-      {
-        "h3": "6. Logo",
+        "h3": "5. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -247,7 +219,7 @@
         ]
       },
       {
-        "h3": "7. Miljøtekst og miljøikon",
+        "h3": "6. Miljøtekst og miljøikon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
