@@ -17,7 +17,8 @@
     .dev-sidemenu a,
     .start__col,
     .ecom-entrance,
-    .skip-to-content-link) {
+    .skip-to-content-link,
+    .message--warn a) {
       color: var(--blue-light);
   }
 
@@ -29,9 +30,21 @@
     .dev-siteheader__nav a,
     .dev-sidemenu a,
     .start__col,
-    .ecom-entrance):hover {
+    .ecom-entrance,
+    .message--warn a):hover {
       color: var(--blue-lighter);
   }
+
+
+  /* lighter link if on message warn background */
+  & .message--warn a {
+    color: var(--blue-lighter);
+  }
+
+  & .message--warn a:hover {
+    color: white;
+  }
+
 
   & .color-theme-icon {
     color: var(--green-26);
@@ -269,7 +282,7 @@
 
   & .mb-badge--blue {
     background-color: var(--blue-lighter);
-    color: var(--blue-link);
+    color: var(--blue);
   }
 
   & .mb-badge--red {
