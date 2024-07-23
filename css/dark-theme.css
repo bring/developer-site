@@ -49,6 +49,10 @@
     }
   }
 
+  & .dev-eta1__number, .dev-eta2__number {
+    color: var(--green-light)
+  }
+
   & .dev-docs__menu,
   & .bg-gray1,
   & .bg-gray2,
