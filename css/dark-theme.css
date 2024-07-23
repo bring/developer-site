@@ -273,6 +273,12 @@
     color: var(--red-light);
   }
 
+  & .mb-badge--yellow {
+    background-color: var(--yellow-darker);
+    color: var(--yellow-light);
+  }
+  
+
   /* Side menu */
   & .dev-sidemenu__title {
     color: var(--green-light);
