@@ -195,9 +195,9 @@
     }
 
     &.txt-error {
-      color: var(--red-light);
+      color: hsl(from var(--red-light) h s calc(l + 8));
       &:hover {
-        color: var(--red);
+        color: var(--red-light);
       }
     }
 
