@@ -8,46 +8,29 @@
   }
 
   /*Brighter link color for better contrast*/
-  &
-    a:not(
-      .btn,
-      .btn-link--dark,
-      .sitefooter a,
-      .language-switch,
-      .dev-siteheader__nav a,
-      .dev-sidemenu a,
-      .start__col,
-      .ecom-entrance,
-      .skip-to-content-link,
-      .message--warn a,
-      .message--info a
-    ) {
-    color: var(--blue-light);
+  & a:not(
+    .btn,
+    .btn-link--dark,
+    .sitefooter a,
+    .language-switch,
+    .dev-siteheader__nav a,
+    .dev-sidemenu a,
+    .start__col,
+    .ecom-entrance,
+    .skip-to-content-link) {
+      color: var(--blue-light);
   }
 
-  &
-    a:not(
-      .btn,
-      .btn-link--dark,
-      .language-switch,
-      .sitefooter a,
-      .dev-siteheader__nav a,
-      .dev-sidemenu a,
-      .start__col,
-      .ecom-entrance,
-      .message--warn a,
-      .message--info a
-    ):hover {
-    color: var(--blue-lighter);
-  }
-
-  /* lighter link if on message warn background */
-  & .message--warn a, .message--info a {
-    color: var(--blue-lighter);
-  }
-
-  & .message--warn a:hover, .message--info a {
-    color: white;
+  & a:not(
+    .btn,
+    .btn-link--dark,
+    .language-switch,
+    .sitefooter a,
+    .dev-siteheader__nav a,
+    .dev-sidemenu a,
+    .start__col,
+    .ecom-entrance):hover {
+      color: var(--gray-86);
   }
 
   & .color-theme-icon {
