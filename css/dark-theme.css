@@ -195,7 +195,7 @@
     }
 
     &.txt-error {
-      color: hsl(from var(--red-light) h s calc(l + 8));
+      color: var(--red-light-lighter);
       &:hover {
         color: var(--red-light);
       }
@@ -245,7 +245,7 @@
   }
 
   & .param-required {
-    color: var(--red-light);
+    color: var(--red-light-lighter);
   }
 
   & .dev-collapsible__toggler {
@@ -357,7 +357,7 @@
     }
 
     & .red-dark {
-      color: var(--red-light);
+      color: var(--red-light-lighter);
     }
   }
 
