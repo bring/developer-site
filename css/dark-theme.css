@@ -1,5 +1,5 @@
 /* Base */
-:root[data-theme='dark'] {
+:root[data-theme="dark"] {
   background-color: var(--green-darkest);
   color: var(--green-86);
 
@@ -8,33 +8,36 @@
   }
 
   /*Brighter link color for better contrast*/
-  & a:not(
-    .btn,
-    .btn-link--dark,
-    .sitefooter a,
-    .language-switch,
-    .dev-siteheader__nav a,
-    .dev-sidemenu a,
-    .start__col,
-    .ecom-entrance,
-    .skip-to-content-link,
-    .message--warn a) {
-      color: var(--blue-light);
+  &
+    a:not(
+      .btn,
+      .btn-link--dark,
+      .sitefooter a,
+      .language-switch,
+      .dev-siteheader__nav a,
+      .dev-sidemenu a,
+      .start__col,
+      .ecom-entrance,
+      .skip-to-content-link,
+      .message--warn a
+    ) {
+    color: var(--blue-light);
   }
 
-  & a:not(
-    .btn,
-    .btn-link--dark,
-    .language-switch,
-    .sitefooter a,
-    .dev-siteheader__nav a,
-    .dev-sidemenu a,
-    .start__col,
-    .ecom-entrance,
-    .message--warn a):hover {
-      color: var(--blue-lighter);
+  &
+    a:not(
+      .btn,
+      .btn-link--dark,
+      .language-switch,
+      .sitefooter a,
+      .dev-siteheader__nav a,
+      .dev-sidemenu a,
+      .start__col,
+      .ecom-entrance,
+      .message--warn a
+    ):hover {
+    color: var(--blue-lighter);
   }
-
 
   /* lighter link if on message warn background */
   & .message--warn a {
@@ -44,7 +47,6 @@
   & .message--warn a:hover {
     color: white;
   }
-
 
   & .color-theme-icon {
     color: var(--green-26);
@@ -62,8 +64,9 @@
     }
   }
 
-  & .dev-eta1__number, .dev-eta2__number {
-    color: var(--green-light)
+  & .dev-eta1__number,
+  .dev-eta2__number {
+    color: var(--green-light);
   }
 
   & .dev-docs__menu,
@@ -146,7 +149,7 @@
   }
 
   & .ecom-entrance {
-    color:inherit;
+    color: inherit;
     & svg {
       fill: var(--green);
     }
@@ -294,7 +297,6 @@
     background-color: var(--yellow-darker);
     color: var(--yellow-light);
   }
-  
 
   /* Side menu */
   & .dev-sidemenu__title {
@@ -383,10 +385,25 @@
   & .aa-Panel {
     background-color: var(--green-15);
     color: var(--green-86);
-  } 
+  }
 
   /* Algolia search hitlink */
   & .hitlink {
     border-bottom-color: var(--green-darkest);
+  }
+
+  & td.flipCreateOrderXml,
+  td.flipItemDataXml,
+  td.flipCreateOrderResponseXml,
+  td.flipItemDataResponseXml,
+  td.flipErrorCodesXml {
+    background: var(--blue);
+  }
+  & td.flipCreateOrderJson,
+  td.flipCreateOrderResponseJson,
+  td.flipItemDataResponseJson,
+  td.flipErrorCodesJson,
+  td.flipItemDataJson {
+    background: var(--green-dark);
   }
 }
