@@ -19,7 +19,8 @@
       .start__col,
       .ecom-entrance,
       .skip-to-content-link,
-      .message--warn a
+      .message--warn a,
+      .message--info a
     ) {
     color: var(--blue-light);
   }
@@ -34,13 +35,14 @@
       .dev-sidemenu a,
       .start__col,
       .ecom-entrance,
-      .message--warn a
+      .message--warn a,
+      .message--info a
     ):hover {
     color: var(--blue-lighter);
   }
 
   /* lighter link if on message warn background */
-  & .message--warn a {
+  & .message--warn a, .message--info a {
     color: var(--blue-lighter);
   }
 
