@@ -326,6 +326,10 @@
     }
   }
 
+  & .cr-response.error{
+    color: var(--red-light-lighter);
+  }
+
   & .mb-disclosure {
     & > summary {
       &:hover,
