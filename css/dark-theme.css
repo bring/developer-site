@@ -46,7 +46,7 @@
     color: var(--blue-lighter);
   }
 
-  & .message--warn a:hover {
+  & .message--warn a:hover, .message--info a {
     color: white;
   }
 
