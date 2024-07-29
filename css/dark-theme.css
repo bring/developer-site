@@ -1,10 +1,10 @@
 /* Base */
 :root[data-theme="dark"] {
-  background-color: var(--green-darkest);
+  background-color: var(--green-10);
   color: var(--green-86);
 
   & body {
-    background: var(--green-darkest);
+    background: var(--green-10);
   }
 
   /*Brighter link color for better contrast*/
@@ -18,7 +18,7 @@
     .start__col,
     .ecom-entrance,
     .skip-to-content-link) {
-      color: var(--blue-light);
+      color: var(--blue-80);
   }
 
   & a:not(
@@ -68,7 +68,7 @@
   }
 
   & .dev-drawmenu {
-    background-color: var(--green-darkest);
+    background-color: var(--green-10);
   }
 
   & .message--info {
@@ -76,12 +76,12 @@
   }
 
   & .message--warn {
-    background-color: var(--yellow-darker);
+    background-color: var(--yellow-20);
     border-color: var(--yellow-dark);
   }
 
   & .mce-response {
-    background-color: var(--green-darkest);
+    background-color: var(--green-10);
     &.error {
       color: var(--red-light);
     }
@@ -116,7 +116,7 @@
   & .cutoff-overlay {
     background: linear-gradient(
       0deg,
-      var(--green-darkest) 50%,
+      var(--green-10) 50%,
       hsla(0, 0%, 100%, 0)
     );
   }
@@ -183,7 +183,7 @@
     }
 
     &.txt-error {
-      color: var(--red-light-lighter);
+      color: var(--red-72);
       &:hover {
         color: var(--red-light);
       }
@@ -233,7 +233,7 @@
   }
 
   & .param-required {
-    color: var(--red-light-lighter);
+    color: var(--red-72);
   }
 
   & .dev-collapsible__toggler {
@@ -269,8 +269,8 @@
   }
 
   & .mb-badge--blue {
-    background-color: var(--blue-lighter);
-    color: var(--blue);
+    background-color: var(--blue-80);
+    color: var(--blue-26);
   }
 
   & .mb-badge--red {
@@ -279,7 +279,7 @@
   }
 
   & .mb-badge--yellow {
-    background-color: var(--yellow-darker);
+    background-color: var(--yellow-20);
     color: var(--yellow-light);
   }
 
@@ -305,12 +305,12 @@
     }
 
     &.red-dark {
-      color: var(--red-light-lighter);
+      color: var(--red-72);
     }
   }
 
   & .cr-response.error{
-    color: var(--red-light-lighter);
+    color: var(--red-72);
   }
 
   & .mb-disclosure {
@@ -348,7 +348,7 @@
     }
 
     & .red-dark {
-      color: var(--red-light-lighter);
+      color: var(--red-72);
     }
   }
 
@@ -378,7 +378,7 @@
 
   /* Algolia search hitlink */
   & .hitlink {
-    border-bottom-color: var(--green-darkest);
+    border-bottom-color: var(--green-10);
   }
 
   & td.flipCreateOrderXml,
@@ -388,7 +388,7 @@
   td.flipErrorCodesXml,
   td.flipClientResponseXml,
   td.flipResponseSchemaXml {
-    background: var(--blue);
+    background: var(--blue-26);
   }
   & td.flipCreateOrderJson,
   td.flipCreateOrderResponseJson,

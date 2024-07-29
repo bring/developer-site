@@ -8,16 +8,15 @@
 --green-22: hsl(152, 7%, 22%);
 --green-18: hsl(152, 8%, 18%);
 --green-15: hsl(152, 8%, 15%);
+--green-10: hsl(152, 15%, 10%);
 
---green-darkest: hsl(152, 15%, 10%);
+--yellow-20: hsl(48, 40%, 20%);
 
---yellow-darker: hsl(48, 40%, 20%);
+--red-93: hsl(3, 77.5%, 93%);
+--red-91: hsl(3, 77.5%, 91%);
+--red-72: hsl(3, 77.5%, 72%);
 
---red-lighter-hover: hsl(3, 77.5%, 93%);
---red-lighter-active: hsl(3, 77.5%, 91%);
---red-light-lighter: hsl(2, 78%, 73%);
-
---blue: hsl(212, 78%, 27%);
---blue-light: hsl(211, 100%, 80%);
---blue-lighter: hsl(211, 83%, 84%);
+--blue-84: hsl(211, 83%, 84%);
+--blue-80: hsl(211, 90%, 80%);
+--blue-26: hsl(211, 78%, 26%);
 }
