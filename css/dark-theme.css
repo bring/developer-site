@@ -1,5 +1,5 @@
 /* Base */
-:root[data-theme='dark'] {
+:root[data-theme="dark"] {
   background-color: var(--green-darkest);
   color: var(--green-86);
 
@@ -30,7 +30,7 @@
     .dev-sidemenu a,
     .start__col,
     .ecom-entrance):hover {
-      color: var(--blue-lighter);
+      color: var(--gray-86);
   }
 
   & .color-theme-icon {
@@ -47,6 +47,11 @@
     & .dev-eta2__bring {
       color: var(--gray-20);
     }
+  }
+
+  & .dev-eta1__number,
+  .dev-eta2__number {
+    color: var(--green-light);
   }
 
   & .dev-docs__menu,
@@ -129,7 +134,7 @@
   }
 
   & .ecom-entrance {
-    color:inherit;
+    color: inherit;
     & svg {
       fill: var(--green);
     }
@@ -178,9 +183,9 @@
     }
 
     &.txt-error {
-      color: var(--red-light);
+      color: var(--red-light-lighter);
       &:hover {
-        color: var(--red);
+        color: var(--red-light);
       }
     }
 
@@ -228,7 +233,7 @@
   }
 
   & .param-required {
-    color: var(--red-light);
+    color: var(--red-light-lighter);
   }
 
   & .dev-collapsible__toggler {
@@ -265,12 +270,17 @@
 
   & .mb-badge--blue {
     background-color: var(--blue-lighter);
-    color: var(--blue-link);
+    color: var(--blue);
   }
 
   & .mb-badge--red {
-    background-color: var(--green-18);
+    background-color: var(--green-15);
     color: var(--red-light);
+  }
+
+  & .mb-badge--yellow {
+    background-color: var(--yellow-darker);
+    color: var(--yellow-light);
   }
 
   /* Side menu */
@@ -295,8 +305,12 @@
     }
 
     &.red-dark {
-      color: var(--red-light);
+      color: var(--red-light-lighter);
     }
+  }
+
+  & .cr-response.error{
+    color: var(--red-light-lighter);
   }
 
   & .mb-disclosure {
@@ -334,7 +348,7 @@
     }
 
     & .red-dark {
-      color: var(--red-light);
+      color: var(--red-light-lighter);
     }
   }
 
@@ -360,10 +374,28 @@
   & .aa-Panel {
     background-color: var(--green-15);
     color: var(--green-86);
-  } 
+  }
 
   /* Algolia search hitlink */
   & .hitlink {
     border-bottom-color: var(--green-darkest);
+  }
+
+  & td.flipCreateOrderXml,
+  td.flipItemDataXml,
+  td.flipCreateOrderResponseXml,
+  td.flipItemDataResponseXml,
+  td.flipErrorCodesXml,
+  td.flipClientResponseXml,
+  td.flipResponseSchemaXml {
+    background: var(--blue);
+  }
+  & td.flipCreateOrderJson,
+  td.flipCreateOrderResponseJson,
+  td.flipItemDataResponseJson,
+  td.flipErrorCodesJson,
+  td.flipItemDataJson,
+  td.flipClientResponseJson {
+    background: var(--green-dark);
   }
 }

@@ -15,7 +15,9 @@
 
 --red-lighter-hover: hsl(3, 77.5%, 93%);
 --red-lighter-active: hsl(3, 77.5%, 91%);
+--red-light-lighter: hsl(2, 78%, 73%);
 
---blue-light: hsl(211, 100%, 64%);
+--blue: hsl(212, 78%, 27%);
+--blue-light: hsl(211, 100%, 80%);
 --blue-lighter: hsl(211, 83%, 84%);
 }

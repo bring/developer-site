@@ -106,7 +106,7 @@
 /* NameClass */ & .chroma .nc { color: hsl(41, 98%, 65%); }
 /* NameConstant */ & .chroma .no { color: hsl(3, 77.5%, 69%); }
 /* NameDecorator */ & .chroma .nd { color: hsl(194, 100%, 65%); }
-/* NameEntity */ & .chroma .ni {  }
+/* NameEntity */ & .chroma .ni { color: hsl(263, 44%, 69%); }
 /* NameException */ & .chroma .ne { color: hsl(3, 77.5%, 69%); }
 /* NameFunction */ & .chroma .nf { color: hsl(93.5, 75%, 65%); }
 /* NameFunctionMagic */ & .chroma .fm {  }
