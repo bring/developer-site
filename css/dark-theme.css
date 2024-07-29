@@ -305,7 +305,7 @@
     }
 
     &.red-dark {
-      color: var(--red-light);
+      color: var(--red-light-lighter);
     }
   }
 
