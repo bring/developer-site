@@ -385,14 +385,17 @@
   td.flipItemDataXml,
   td.flipCreateOrderResponseXml,
   td.flipItemDataResponseXml,
-  td.flipErrorCodesXml {
+  td.flipErrorCodesXml,
+  td.flipClientResponseXml,
+  td.flipResponseSchemaXml {
     background: var(--blue);
   }
   & td.flipCreateOrderJson,
   td.flipCreateOrderResponseJson,
   td.flipItemDataResponseJson,
   td.flipErrorCodesJson,
-  td.flipItemDataJson {
+  td.flipItemDataJson,
+  td.flipClientResponseJson {
     background: var(--green-dark);
   }
 }
