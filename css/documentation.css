@@ -234,12 +234,12 @@ div.response {
 .mb-disclosure.bg-red1 > summary:hover,
 .mb-disclosure.bg-red1 > summary:focus-visible,
 .mb-disclosure.bg-red1[open] > summary {
-  background-color: var(--red-lighter-hover);
+  background-color: hsl(3, 77.5%, 93%);
 }
 
 .mb-disclosure.bg-red1[open] > summary:hover,
 .mb-disclosure.bg-red1[open] > summary:focus-visible {
-  background-color: var(--red-lighter-active);
+  background-color: hsl(3, 77.5%, 91%);
 }
 
 .hauto {
