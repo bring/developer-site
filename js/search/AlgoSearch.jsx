@@ -29,12 +29,6 @@ const searchClient = {
 
 const AlgoSearch = () => (
   <>
-    <label
-      htmlFor="autocomplete-0-label"
-      className="form__label white screen-reader-text"
-    >
-    Search the documentation
-    </label>
     <Autocomplete
       detachedMediaQuery='none'
       getSources={({ query }) => [
