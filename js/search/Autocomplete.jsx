@@ -11,6 +11,7 @@ export function Autocomplete(props) {
     if (!containerRef.current) {
       return undefined;
     }
+
     const search = autocomplete({
       container: containerRef.current,
       renderer: { createElement, Fragment, render: () => {} },
@@ -27,14 +28,14 @@ export function Autocomplete(props) {
       ...props,
     });
 
-    const labelValue = "Search documentation";
-    // change value of aria-label provided by algolia
-    containerRef.current.querySelector(".aa-Label").setAttribute('aria-label', labelValue);
-
-    // removed aria-labelledby provided by algolia which doesn't work
-    containerRef.current.querySelector(".aa-Autocomplete").removeAttribute("aria-labelledby");
+    const labelValue = "Search documentation"
+   
     // add aria-label to the combo-box in order to get info about the search before entering it as well
-    containerRef.current.querySelector(".aa-Autocomplete").setAttribute("aria-label", labelValue);
+    containerRef.current.querySelector(".aa-Autocomplete").setAttribute("aria-label", labelValue)
+    
+    // change value of aria-label provided by algolia
+    containerRef.current.querySelector(".aa-Label").setAttribute('aria-label', labelValue)
+
 
     return () => {
       search.destroy();
