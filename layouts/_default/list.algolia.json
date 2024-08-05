@@ -41,19 +41,35 @@
         {{- end -}}
       {{- end -}}
     {{- end -}}
-    
-    {{- $.Scratch.Add "index" 
-      (dict
-        "objectID" .File.UniqueID
-        "permalink" .Permalink
-        "relpermalink" .RelPermalink
-        "title" .Title
-        "section" (.Section | upper)
-        "parent" $parent
-        "introduction" $introduction
-        "api" $api
-        "documentation" ($.Scratch.Get "documentation")
-        "content" .Plain) -}}
+
+    {{- $parent := .Parent -}}
+    {{- if and $parent (eq $parent.Title "sgleadtime") -}}
+      {{- $.Scratch.Add "index"
+        (dict
+          "objectID" .File.UniqueID
+          "permalink" .Parent.Permalink
+          "relpermalink" .Parent.RelPermalink
+          "title" .Title
+          "section" (.Section | upper)
+          "parent" $parent.Title
+          "introduction" $introduction
+          "api" $api
+          "documentation" ($.Scratch.Get "documentation")
+          "content" .Plain) -}}
+    {{- else -}}
+      {{- $.Scratch.Add "index" 
+        (dict
+          "objectID" .File.UniqueID
+          "permalink" .Permalink
+          "relpermalink" .RelPermalink
+          "title" .Title
+          "section" (.Section | upper)
+          "parent" $parent.Title
+          "introduction" $introduction
+          "api" $api
+          "documentation" ($.Scratch.Get "documentation")
+          "content" .Plain) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
