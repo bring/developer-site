@@ -20,7 +20,7 @@ pre {
 }
 
 blockquote {
-  border-left: 2px solid var(--gray-86);
+  border-left: 2px solid var(--gray-80);
   color: var(--gray-40);
   padding: 0 1ch;
   margin: 0.5em 0 1em;
