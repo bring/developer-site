@@ -323,7 +323,7 @@ div.response {
 }
 
 .schema__header {
-  border-bottom: 2px solid var(--gray-86);
+  border-bottom: 2px solid var(--gray-80);
   display: flex;
   align-items: first baseline;
   gap: 0.5rem;
