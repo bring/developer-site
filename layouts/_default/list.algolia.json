@@ -32,18 +32,17 @@
       {{- $api = $oasdata.components -}}
     {{- end -}}
 
-    {{- $parent := "" -}}
+    {{- $parentTitle := "" -}}
     {{- with .Params.menu -}}
       {{- $parentName := .apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
         {{- if (eq $parentName .Identifier) -}}
-          {{- $parent = .Title -}}
+          {{- $parentTitle = .Title -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
 
-    {{- $parent := .Parent -}}
-    {{- if and $parent (eq $parent.Title "sgleadtime") -}}
+    {{- if and .Parent (eq .Parent.Title "Lead time") -}}
       {{- $.Scratch.Add "index"
         (dict
           "objectID" .File.UniqueID
@@ -51,7 +50,7 @@
           "relpermalink" .Parent.RelPermalink
           "title" .Title
           "section" (.Section | upper)
-          "parent" $parent.Title
+          "parent" $parentTitle
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
@@ -64,7 +63,7 @@
           "relpermalink" .RelPermalink
           "title" .Title
           "section" (.Section | upper)
-          "parent" $parent.Title
+          "parent" $parentTitle
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
