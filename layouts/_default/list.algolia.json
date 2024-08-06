@@ -44,21 +44,14 @@
 
     {{- $anchorUrlText := .Title -}}
     {{- $anchorUrlText | urlize -}}
-    {{- $anchorUrl := (printf "#%s" $anchorUrlText) -}}
-    {{- $permalink := .Permalink }}
-    {{- $relpermalink := .RelPermalink }}
-    {{- if .Parent -}}
-      {{- $permalink = (printf .Parent.Permalink $anchorUrl) -}}
-      {{- $relpermalink = (printf .Parent.RelPermalink $anchorUrl) -}}
-    {{- end -}}
 
     {{- if and .Parent (eq .Parent.Title "Lead time") -}}
       {{- $.Scratch.Add "index"
         (dict
           "objectID" .File.UniqueID
-          "permalink" $permalink
-          "relpermalink" $relpermalink
-          "title" .Title
+          "permalink" .Parent.Permalink
+          "relpermalink" .Parent.RelPermalink
+          "title" $anchorUrlText
           "section" (.Section | upper)
           "parent" $parentTitle
           "introduction" $introduction
