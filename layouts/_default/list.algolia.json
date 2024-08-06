@@ -44,7 +44,13 @@
 
     {{- $anchorUrlText := .Title -}}
     {{- $anchorUrlText = $anchorUrlText | urlize -}}
-
+    {{- $anchorUrl := (printf "#%s" $anchorUrlText) -}}
+    {{- $permalink := .Permalink }}
+    {{- $relpermalink := .RelPermalink }}
+    {{- if .Parent -}}
+      {{- $permalink = (printf .Parent.Permalink $anchorUrl) -}}
+      {{- $relpermalink = (printf .Parent.RelPermalink $anchorUrl) -}}
+    {{- end -}}
 
     {{- if and .Parent (eq .Parent.Title "Lead time") -}}
       {{- $.Scratch.Add "index"
