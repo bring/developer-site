@@ -45,9 +45,13 @@
     {{- $anchorUrlText := .Title -}}
     {{- $anchorUrlText | urlize -}}
     {{- $anchorUrl := (printf "#%s" $anchorUrl) -}}
-    {{- $permalink := (printf .Parent.Permalink $anchorUrl) -}}
-    {{- $relpermalink := (printf .Parent.RelPermalink $anchorUrl) -}}
-
+    {{- $permalink := .Permalink }}
+    {{- $relpermalink := .RelPermalink }}
+    {{- if .Parent -}}
+      {{- $permalink = (printf .Parent.Permalink $anchorUrl) -}}
+      {{- $relpermalink = (printf .Parent.RelPermalink $anchorUrl) -}}
+    {{- end -}}
+    
     {{- if and .Parent (eq .Parent.Title "Lead time") -}}
       {{- $.Scratch.Add "index"
         (dict
