@@ -56,9 +56,9 @@
       {{- $.Scratch.Add "index"
         (dict
           "objectID" .File.UniqueID
-          "permalink" .Parent.Permalink
-          "relpermalink" .Parent.RelPermalink
-          "title" $anchorUrlText
+          "permalink" $permalink
+          "relpermalink" $relpermalink
+          "title" .Title
           "section" (.Section | upper)
           "parent" $parentTitle
           "introduction" $introduction
