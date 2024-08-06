@@ -42,16 +42,13 @@
       {{- end -}}
     {{- end -}}
 
-    {{- $anchorUrlText := .Title -}}
-    {{- $anchorUrlText | urlize -}}
-
     {{- if and .Parent (eq .Parent.Title "Lead time") -}}
       {{- $.Scratch.Add "index"
         (dict
           "objectID" .File.UniqueID
           "permalink" .Parent.Permalink
           "relpermalink" .Parent.RelPermalink
-          "title" $anchorUrlText
+          "title" .Title
           "section" (.Section | upper)
           "parent" $parentTitle
           "introduction" $introduction
