@@ -44,7 +44,7 @@
 
     {{- $anchorUrlText := .Title -}}
     {{- $anchorUrlText = $anchorUrlText | urlize -}}
-    {{- $anchorUrl := (printf "#%s" $anchorUrlText) -}}
+    {{- $anchorUrl := printf "#%s" (string $anchorUrlText) -}}
     {{- $permalink := .Permalink }}
     {{- $relpermalink := .RelPermalink }}
     {{- if .Parent -}}
