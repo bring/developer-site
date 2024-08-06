@@ -42,7 +42,7 @@
       {{- end -}}
     {{- end -}}
 
-    {{- if and .Parent (or(eq .Parent.Title "Lead time")(eq .Parent.Title "Using Shipping Guide API")) -}}
+    {{- if and .Parent (eq .Parent.Title "Lead time") -}}
       {{- $anchorUrlText := .Title | urlize -}}
       {{- $anchorUrl := printf "#%s" $anchorUrlText -}}
       {{- $permalink := (printf "%s%s" .Parent.Permalink $anchorUrl) -}}
