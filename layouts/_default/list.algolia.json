@@ -48,8 +48,8 @@
     {{- $permalink := .Permalink }}
     {{- $relpermalink := .RelPermalink }}
     {{- if .Parent -}}
-      {{- $permalink = (printf (string .Parent.Permalink) $anchorUrl) -}}
-      {{- $relpermalink = (printf (string .Parent.RelPermalink) $anchorUrl) -}}
+      {{- $permalink = (printf "%s%s" .Parent.Permalink $anchorUrl) -}}
+      {{- $relpermalink = (printf "%s%s" .Parent.RelPermalink $anchorUrl) -}}
     {{- end -}}
 
     {{- if and .Parent (eq .Parent.Title "Lead time") -}}
