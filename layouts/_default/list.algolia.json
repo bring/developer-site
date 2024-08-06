@@ -42,7 +42,7 @@
       {{- end -}}
     {{- end -}}
 
-    {{- if and .Parent (eq .Parent.Title "Lead time") -}}
+    {{- if and .Parent or(eq .Parent.Title "Lead time")(eq .Parent.Title "Using Shipping Guide API")) -}}
       {{- $anchorUrlText := .Title | urlize -}}
       {{- $anchorUrl := printf "#%s" $anchorUrlText -}}
       {{- $permalink := (printf "%s%s" .Parent.Permalink $anchorUrl) -}}
@@ -54,7 +54,7 @@
           "relpermalink" $relpermalink
           "title" .Title
           "section" (.Section | upper)
-          "parent" $parentTitle
+          "parent" .Parent.Params.menu.apidocs.identifier
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
