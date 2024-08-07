@@ -32,28 +32,47 @@
       {{- $api = $oasdata.components -}}
     {{- end -}}
 
-    {{- $parent := "" -}}
+    {{- $parentTitle := "" -}}
     {{- with .Params.menu -}}
       {{- $parentName := .apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
         {{- if (eq $parentName .Identifier) -}}
-          {{- $parent = .Title -}}
+          {{- $parentTitle = .Title -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
-    
-    {{- $.Scratch.Add "index" 
-      (dict
-        "objectID" .File.UniqueID
-        "permalink" .Permalink
-        "relpermalink" .RelPermalink
-        "title" .Title
-        "section" (.Section | upper)
-        "parent" $parent
-        "introduction" $introduction
-        "api" $api
-        "documentation" ($.Scratch.Get "documentation")
-        "content" .Plain) -}}
+
+    {{- if and .Parent (or (eq .Parent.Params.menu.apidocs.identifier "sgleadtime") (eq .Parent.Params.menu.apidocs.identifier "sgusing")) -}}
+      {{- $anchorUrlText := .Title | urlize -}}
+      {{- $anchorUrl := printf "#%s" $anchorUrlText -}}
+      {{- $permalink := (printf "%s%s" .Parent.Permalink $anchorUrl) -}}
+      {{- $relpermalink := (printf "%s%s" .Parent.RelPermalink $anchorUrl) -}}
+      {{- $.Scratch.Add "index"
+        (dict
+          "objectID" .File.UniqueID
+          "permalink" $permalink
+          "relpermalink" $relpermalink
+          "title" .Title
+          "section" (.Section | upper)
+          "parent" $parentTitle
+          "introduction" $introduction
+          "api" $api
+          "documentation" ($.Scratch.Get "documentation")
+          "content" .Plain) -}}
+    {{- else -}}
+      {{- $.Scratch.Add "index" 
+        (dict
+          "objectID" .File.UniqueID
+          "permalink" .Permalink
+          "relpermalink" .RelPermalink
+          "title" .Title
+          "section" (.Section | upper)
+          "parent" $parentTitle
+          "introduction" $introduction
+          "api" $api
+          "documentation" ($.Scratch.Get "documentation")
+          "content" .Plain) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
