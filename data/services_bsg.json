@@ -970,7 +970,7 @@
 }, {
   "ServiceFamily" : "Supply base logistics",
   "CustomerNumberType" : "Supply Base Logistics",
-  "ServiceName" : "Oil Express",
+  "ServiceName" : "Supply Base Logistics",
   "ServiceIcon" : "serviceicon-oil",
   "ServiceCode" : "3050",
   "RequestCode" : "OIL_EXPRESS",

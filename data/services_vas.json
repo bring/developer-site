@@ -715,7 +715,7 @@
   "bookingCode" : "DANGEROUS_GOODS",
   "incompatibleVases" : [ "Simplified delivery", "Desktop delivery", "Remove pallets" ],
   "supportedServices" : [ {
-    "serviceName" : "Oil Express",
+    "serviceName" : "Supply Base Logistics",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
@@ -2113,7 +2113,7 @@
   "bookingCode" : "OX_EXPRESS",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Oil Express",
+    "serviceName" : "Supply Base Logistics",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
@@ -2847,7 +2847,7 @@
   "bookingCode" : "DELIVERY_DATE",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Oil Express",
+    "serviceName" : "Supply Base Logistics",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
     "serviceFamilySortOrder" : 7,
