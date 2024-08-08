@@ -59,7 +59,7 @@
                     <div class="truncated-content">
                       {{ .Content | truncate 300 }}
                     </div>
-                    <div class="full-content">
+                    <div class="dn full-content">
                       {{ .Content }}
                     </div>
                     {{- if gt (len .Content) 300 -}}
@@ -86,7 +86,6 @@
         var postContent = link.closest(".update-content");
         if (postContent) {
           postContent.classList.toggle("expanded");
-          console.log(postContent)
           link.textContent = postContent.classList.contains("expanded") ? "Show less" : "Show more";
         }
       })

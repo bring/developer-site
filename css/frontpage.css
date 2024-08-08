@@ -31,14 +31,6 @@
 }
 
 /* Truncate API updates text content on frontpage */
-.full-content {
-  display: none;
-}
-
-.full-content {
-  display: none;
-}
-
 .update-content.expanded .full-content {
   display: block;
 }
