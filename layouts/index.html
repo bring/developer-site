@@ -80,12 +80,13 @@
   </main>
 
   <script type="text/javascript">
-    var readMoreLinks = document.querySelectorAll(".read-more");
-    readMoreLinks.forEach(function(link) {
-      link.addEventListener("click", function() {
-        var postContent = link.closest(".update-content");
+    document.querySelectorAll(".read-more").forEach(link => {
+      link.addEventListener("click", () => {
+        const postContent = link.closest(".update-content");
         if (postContent) {
           postContent.classList.toggle("expanded");
+          postContent.querySelector(".truncated-content").classList.toggle('dn');
+          postContent.querySelector(".full-content").classList.toggle('db');
           link.textContent = postContent.classList.contains("expanded") ? "Show less" : "Show more";
         }
       })

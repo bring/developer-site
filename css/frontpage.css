@@ -29,12 +29,3 @@
 .start__col {
   flex: 1 1 20rem;
 }
-
-/* Truncate API updates text content on frontpage */
-.update-content.expanded .full-content {
-  display: block;
-}
-
-.update-content.expanded .truncated-content {
-  display: none;
-}
