@@ -47,13 +47,25 @@
               {{- $pages = $mergedPages -}}
               {{- range first 3 $pages -}}
                 <div class="bg-gray1 bshadow pal rad-a2px">
-                  <h3 class="text-basic">
-                    <time
-                      datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
-                      >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
-                    >: {{ .Title }}
-                  </h3>
-                  {{ .Content }}
+                  <time class="mrs text-note"
+                    datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                    >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
+                  >
+                  {{- if (.Params.isImportant) -}}
+                    <span class="mb-badge mb-badge--yellow">Important</span>
+                  {{- end -}}
+                  <h3 class="text-basic">{{ .Title }}</h3>
+                  <div class="update-content">
+                    <div class="truncated-content" aria-hidden="true">
+                      {{ .Content | truncate 300 }}
+                    </div>
+                    <div class="screen-reader-text full-content" >
+                      {{ .Content }}
+                    </div>
+                    {{- if gt (len .Content) 300 -}}
+                      <button class="read-more btn-link--dark" aria-hidden="true">Show more</button>
+                    {{- end -}}
+                  </div>
                 </div>
               {{- end -}}
               <div class="w100p">
@@ -66,4 +78,18 @@
       </div>
     </div>
   </main>
+
+  <script type="text/javascript">
+    document.querySelectorAll(".read-more").forEach(link => {
+      link.addEventListener("click", () => {
+        const postContent = link.closest(".update-content");
+        if (postContent) {
+          postContent.classList.toggle("expanded");
+          postContent.querySelector(".truncated-content").classList.toggle('dn');
+          postContent.querySelector(".full-content").classList.toggle('screen-reader-text');
+          link.textContent = postContent.classList.contains("expanded") ? "Show less" : "Show more";
+        }
+      })
+    })
+  </script>
 {{ end }}
