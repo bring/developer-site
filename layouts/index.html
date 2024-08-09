@@ -56,14 +56,14 @@
                   {{- end -}}
                   <h3 class="text-basic">{{ .Title }}</h3>
                   <div class="update-content">
-                    <div class="truncated-content">
+                    <div class="truncated-content" aria-hidden="true">
                       {{ .Content | truncate 300 }}
                     </div>
-                    <div class="dn full-content">
+                    <div class="screen-reader-text full-content" >
                       {{ .Content }}
                     </div>
                     {{- if gt (len .Content) 300 -}}
-                      <button class="read-more btn-link--dark">Show more</button>
+                      <button class="read-more btn-link--dark" aria-hidden="true">Show more</button>
                     {{- end -}}
                   </div>
                 </div>
@@ -86,7 +86,7 @@
         if (postContent) {
           postContent.classList.toggle("expanded");
           postContent.querySelector(".truncated-content").classList.toggle('dn');
-          postContent.querySelector(".full-content").classList.toggle('db');
+          postContent.querySelector(".full-content").classList.toggle('screen-reader-text');
           link.textContent = postContent.classList.contains("expanded") ? "Show less" : "Show more";
         }
       })
