@@ -55,7 +55,7 @@ documentation:
         - PARCEL_DOMESTIC
         - PARCEL_INTERNATIONAL
 
-      ### Cargo international or Oil express
+      ### Cargo international or Supply Base Logistics
         - AMPHORA_BCI
         - SYSPED
         - WINSPED_BCI
