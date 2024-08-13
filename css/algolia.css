@@ -61,6 +61,12 @@
   }
 }
 
+@media(min-width: 1025px){
+  .aa-Panel{
+    top: 56.6875px !important;
+  }
+}
+
 /* Result item list */
 .aa-List{
   margin: 0;
