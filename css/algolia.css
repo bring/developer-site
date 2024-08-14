@@ -50,18 +50,13 @@
   border-bottom-left-radius: 2px;
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  top: auto !important;
 }
 
 /* Make results scrollable when smaller screen */
-@media (max-width: 1000px) {
+@media (max-width: 64em) {
   .aa-Panel {
     position: absolute;
-  }
-}
-
-@media (min-width: 1025px) {
-  .aa-Panel {
-    top: 56.6875px !important;
   }
 }
 

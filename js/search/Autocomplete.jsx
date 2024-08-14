@@ -14,6 +14,7 @@ export function Autocomplete(props) {
 
     const search = autocomplete({
       container: containerRef.current,
+      panelContainer: containerRef.current,
       renderer: { createElement, Fragment, render: () => {} },
       render({ children }, root) {
         if (!panelRootRef.current || rootRef.current !== root) {
@@ -35,7 +36,6 @@ export function Autocomplete(props) {
     
     // change value of aria-label provided by algolia
     containerRef.current.querySelector(".aa-Label").setAttribute('aria-label', labelValue)
-
 
     return () => {
       search.destroy();
