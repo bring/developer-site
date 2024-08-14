@@ -1,7 +1,7 @@
 {{ $ctx := .ctx }}
 {{- $oasData := "" -}}
 {{- with $ctx.Params.oas -}}
-  {{- $oasData = getJSON . -}}
+  {{- $oasData = resources.GetRemote . | transform.Unmarshal -}}
 {{- end -}}
 {{- $apiData := "" -}}
 {{- with .apiData -}}

@@ -28,7 +28,7 @@
 
     {{- $api := dict -}}
     {{- with .Params.oas -}}
-      {{- $oasdata := getJSON . -}}
+      {{- $oasdata := resources.GetRemote . | transform.Unmarshal -}}
       {{- $api = $oasdata.components -}}
     {{- end -}}
 

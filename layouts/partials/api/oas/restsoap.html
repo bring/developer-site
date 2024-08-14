@@ -2,7 +2,7 @@
   <article>
     {{- partial "api/oas/section-intro.html" . -}}
 
-    {{- $oasData := getJSON $.Params.oas -}}
+    {{- $oasData := resources.GetRemote $.Params.oas | transform.Unmarshal -}}
     {{- $ramlData := .Site.Data.api -}}
     {{- $soapEndpoints := slice -}}
     {{- $soapUri := "" -}}

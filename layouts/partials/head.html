@@ -29,7 +29,7 @@
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
   />
   {{ if not hugo.IsServer }}
-    {{- $jsManifest := getJSON "static/assets/.vite/manifest.json" -}}
+    {{- $jsManifest := resources.Get "static/assets/.vite/manifest.json" | transform.Unmarshal -}}
     {{- with index $jsManifest "js/main.js" -}}
       {{- range .css -}}
         <link
