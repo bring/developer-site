@@ -109,13 +109,14 @@
     {{- end -}}
     <div class="dev-siteheader__search">
       <span
-        data-mybicon="mybicon-search"
-        data-mybicon-class="algolia-icon"
+        class="algo-search-icon" 
+        data-mybicon="mybicon-search" 
+        data-mybicon-class="algolia-icon" 
         data-mybicon-width="24"
         data-mybicon-height="24"
       ></span>
       <div id="algoliasearch" class="algolia-input"></div>
-    </div>
+    </div>  
     <nav class="dev-siteheader__nav" aria-label="Main">
       <ul>
         <li><a href="{{ "/api/" | relURL }}">API docs</a></li>

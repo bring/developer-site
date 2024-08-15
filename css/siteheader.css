@@ -137,16 +137,18 @@
 }
 
 .dev-siteheader__search {
-  flex: 1;
-  padding: 0.5rem 1.5rem;
-  align-self: center;
   display: flex;
-  flex-flow: row nowrap;
+  flex: 1;
   align-items: center;
   min-width: 14rem;
   max-width: 28rem;
-  position:relative;
 }
+
+.algo-search-icon{
+  display: flex;
+  position: absolute;
+}
+
 
 @media only screen and (max-width: 76em) {
   .dev-siteheader__nav li {
@@ -163,7 +165,6 @@
 
 @media only screen and (max-width: 44em) {
   .dev-siteheader__search {
-    flex: 1;
     max-width: 100%;
   }
 }
