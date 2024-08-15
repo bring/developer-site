@@ -59,7 +59,7 @@
       <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | anchorize }}">
         <article>
           {{- partial "api/oas/section-intro.html" . -}}
-          {{- $oasData := getJSON $.Params.oas -}}
+          {{- $oasData := resources.GetRemote $.Params.oas | transform.Unmarshal -}}
           {{- with $oasData -}}
             {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" .paths) -}}
             {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths "oasUrl" $.Params.oas ) -}}

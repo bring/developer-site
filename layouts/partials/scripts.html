@@ -1,7 +1,7 @@
 {{ if hugo.IsServer }}
   <script type="module" src="http://localhost:5173/js/main.js"></script>
 {{ else }}
-  {{- $jsManifest := getJSON "static/assets/.vite/manifest.json" -}}
+  {{- $jsManifest := readFile "static/assets/.vite/manifest.json" | transform.Unmarshal -}}
   <script nomodule src="{{ print "/assets/" (index $jsManifest "vite/legacy-polyfills-legacy" "file") | relURL }}"></script>
   <script nomodule src="{{ print "/assets/" (index $jsManifest "js/main-legacy.js" "file") | relURL }}"></script>
   <script type="module" src="{{ print "/assets/" (index $jsManifest "js/main.js" "file") | relURL }}"></script>
