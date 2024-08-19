@@ -14,6 +14,7 @@ export function Autocomplete(props) {
 
     const search = autocomplete({
       container: containerRef.current,
+      placeholder: 'Search documentation',
       panelContainer: containerRef.current,
       renderer: { createElement, Fragment, render: () => {} },
       render({ children }, root) {
