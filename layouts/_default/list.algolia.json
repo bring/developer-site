@@ -42,6 +42,13 @@
       {{- end -}}
     {{- end -}}
 
+    {{- $parent := "" -}}
+    {{- if .Parent.Parent }}
+      {{- $parent = .Parent.Parent.Title -}}
+    {{- else -}}
+      {{- $parent = .Parent.Title -}}
+    {{- end -}}
+
     {{- if and .Parent (or (eq .Parent.Params.menu.apidocs.identifier "sgleadtime") (eq .Parent.Params.menu.apidocs.identifier "sgusing")) -}}
       {{- $anchorUrlText := .Title | urlize -}}
       {{- $anchorUrl := printf "#%s" $anchorUrlText -}}
@@ -54,9 +61,7 @@
           "relpermalink" $relpermalink
           "title" .Title
           "section" (.Section | upper)
-          "parent" $parentTitle
-          "parentV2" .Parent.Title 
-          "gp" .Parent.Parent.Title
+          "parent" $parent
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
@@ -69,9 +74,7 @@
           "relpermalink" .RelPermalink
           "title" .Title
           "section" (.Section | upper)
-          "parent" $parentTitle
-          "parentV2" .Parent.Title 
-          "gp" .Parent.Parent.Title
+          "parent" $parent
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
