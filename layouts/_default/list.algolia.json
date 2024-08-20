@@ -55,8 +55,7 @@
           "title" .Title
           "section" (.Section | upper)
           "parent" $parentTitle
-          "parentV2" .apidocs.parent
-          "parentV3" .Parent.Title 
+          "parentV2" .Parent.Title 
           "gp" .Parent.Params.menu.apidocs.identifier 
           "introduction" $introduction
           "api" $api
@@ -71,8 +70,7 @@
           "title" .Title
           "section" (.Section | upper)
           "parent" $parentTitle
-          "parentV2" .apidocs.parent
-          "parentV3" .Parent.Title 
+          "parentV2" .Parent.Title 
           "gp" .Parent.Params.menu.apidocs.identifier 
           "introduction" $introduction
           "api" $api
