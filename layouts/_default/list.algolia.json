@@ -56,7 +56,7 @@
           "section" (.Section | upper)
           "parent" $parentTitle
           "parentV2" .Parent.Title 
-          "gp" .Parent.Params.menu.apidocs.identifier 
+          "gp" .Parent.Parent.Title
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
@@ -71,7 +71,7 @@
           "section" (.Section | upper)
           "parent" $parentTitle
           "parentV2" .Parent.Title 
-          "gp" .Parent.Params.menu.apidocs.identifier 
+          "gp" .Parent.Parent.Title
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
