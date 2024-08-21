@@ -43,9 +43,9 @@
     {{- end -}}
 
     {{- $parent := "" -}}
-    {{- if .Parent.Parent }}
+    {{- if and .Parent.Parent .Parent.Params.menu.apidocs.parent }}
       {{- $parent = .Parent.Parent.Title -}}
-    {{- else -}}
+    {{- else if and .Parent .Params.menu.apidocs.parent  -}}
       {{- $parent = .Parent.Title -}}
     {{- end -}}
 
