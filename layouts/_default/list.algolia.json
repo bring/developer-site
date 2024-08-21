@@ -43,13 +43,11 @@
     {{- end -}}
 
     {{- $parent := "" -}}
-    {{- with .Params.menu -}}
-      {{- if and .Parent.Parent (ne (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent) "") }}
+      {{- if and .Parent.Parent (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent (isset .Params.menu.parent)) }}
         {{- $parent = .Parent.Parent.Title -}}
-      {{- else if and .Parent (ne (eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent) "")  -}}
+      {{- else if and .Parent (eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent) (isset .Params.menu.parent)  -}}
         {{- $parent = .Parent.Title -}}
       {{- end -}}
-    {{- end -}}
 
     {{- if and .Parent (or (eq .Parent.Params.menu.apidocs.identifier "sgleadtime") (eq .Parent.Params.menu.apidocs.identifier "sgusing")) -}}
       {{- $anchorUrlText := .Title | urlize -}}
