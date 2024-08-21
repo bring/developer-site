@@ -43,9 +43,9 @@
     {{- end -}}
 
     {{- $parent := "" -}}
-      {{- if and .Parent.Parent (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent (isset .Params.menu.apidocs "parent")) }}
+      {{- if and .Params.menu.apidocs.parent (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent) }}
         {{- $parent = .Parent.Parent.Title -}}
-      {{- else if and .Parent (eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent) (isset .Params.menu.apidocs "parent")  -}}
+      {{- else if and .Params.menu.apidocs.parent (eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent)  -}}
         {{- $parent = .Parent.Title -}}
       {{- end -}}
 
