@@ -43,11 +43,10 @@
     {{- end -}}
 
     {{- $parent := "" -}}
-    {{- $parent2 := "" -}}
       {{- if and .Params.menu.apidocs.parent (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent) }}
         {{- $parent = .Parent.Parent.Title -}}
       {{- else if and .Params.menu.apidocs.parent (eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent)  -}}
-        {{- $parent2 = .Parent.Title -}}
+        {{- $parent = .Parent.Title -}}
       {{- end -}}
 
     {{- if and .Parent (or (eq .Parent.Params.menu.apidocs.identifier "sgleadtime") (eq .Parent.Params.menu.apidocs.identifier "sgusing")) -}}
@@ -63,7 +62,8 @@
           "title" .Title
           "section" (.Section | upper)
           "parent" $parent
-          "parent2" $parent2
+          "parent2" .Parent.Title
+          "parent3" .Parent.Parent.Title
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
