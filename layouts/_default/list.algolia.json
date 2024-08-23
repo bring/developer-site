@@ -41,9 +41,8 @@
       {{- end -}}
       {{- $parentName := .Params.menu.apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
-        {{- if (eq $parentName .Identifier) -}}
-          {{- $parent = .Title -}}
-        {{- end -}}
+      {{- if (eq $parentName .Identifier) -}}
+        {{- $parent = .Title -}}
       {{- end -}}
     {{- end -}}
 
