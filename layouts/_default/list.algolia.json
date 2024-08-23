@@ -34,17 +34,8 @@
 
     {{- $parent := "" -}}
     {{- if .Params.menu.apidocs.parent -}}
-      {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent -}}
-        {{- $parent = .Parent.Parent.Title -}}
-      {{- else if eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent -}}
-        {{- $parent = .Parent.Title -}}
-      {{- end -}}
-      {{- $parentName := .Params.menu.apidocs.parent -}}
-      {{- range $.Site.Menus.apidocs -}}
-        {{- if (eq $parentName .Identifier) -}}
-          {{- $parent = .Title -}}
-        {{- end -}}
-      {{- end -}}
+      {{- $parent = (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent) | if .Parent.Parent.Title (.Parent.Title) -}}
+      {{- $parent = (eq .Params.menu.apidocs.parent $.Site.Menus.apidocs.Identifier) | first .Title | default $parent -}}
     {{- end -}}
 
     {{- if and .Parent (or (eq .Parent.Params.menu.apidocs.identifier "sgleadtime") (eq .Parent.Params.menu.apidocs.identifier "sgusing")) -}}
