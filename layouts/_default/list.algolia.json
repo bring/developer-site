@@ -33,6 +33,8 @@
     {{- end -}}
 
     {{- $parent := "" -}}
+    {{- $t1 := "" -}}
+    {{- $t2 := "" -}}
     {{- $parentName := .Params.menu.apidocs.parent -}}
     {{- if .Params.menu.apidocs.parent -}}
       {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent -}}
@@ -41,6 +43,9 @@
         {{- $parent = .Parent.Title -}}
       {{- end -}}
       {{- range $.Site.Menus.apidocs -}}
+      {{- $t1 = .Identifier -}}
+      {{- $t1 = .Title -}}
+
         {{- if and (eq $parentName .Identifier) (eq .Title "Warehousing" ) -}}
           {{- $parent = .Title -}}
         {{- else -}}
@@ -64,8 +69,8 @@
           "parent" $parent
           "parent2" .Parent.Title
           "parent3" .Parent.Parent.Title
-          "p4" .Site.Menus.apidocs.Title
-          "p5" .Site.Menus.apidocs.Identifier
+          "p4" $t1
+          "p5" $t2
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
@@ -81,8 +86,8 @@
           "parent" $parent
           "parent2" .Parent.Title
           "parent3" .Parent.Parent.Title
-          "p4" .Site.Menus.apidocs.Title
-          "p5" .Site.Menus.apidocs.Identifier
+          "p4" $t1
+          "p5" $t2
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
