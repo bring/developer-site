@@ -32,17 +32,14 @@
       {{- $api = $oasdata.components -}}
     {{- end -}}
 
-    {{- $parentTitle := "" -}}
-  
     {{- $parent := "" -}}
-    {{- if and .Params.menu.apidocs.parent (eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent) }}
-      {{- $parent = .Parent.Parent.Title -}}
-    {{- else if and .Params.menu.apidocs.parent (eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent)  -}}
-      {{- $parent = .Parent.Title -}}
-    {{- end -}}
-
-    {{- with .Params.menu -}}
-      {{- $parentName := .apidocs.parent -}}
+    {{- if .Params.menu.apidocs.parent -}}
+      {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent }}
+        {{- $parent = .Parent.Parent.Title -}}
+      {{- else if and eq .Parent.Params.menu.apidocs.identifier)  -}}
+        {{- $parent = .Parent.Title -}}
+      {{- end -}}
+      {{- $parentName := .Params.menu.apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
         {{- if (eq $parentName .Identifier) -}}
           {{- $parent = .Title -}}
@@ -78,7 +75,8 @@
           "title" .Title
           "section" (.Section | upper)
           "parent" $parent
-          "parentTitle" $parentTitle
+          "parent2" .Parent.Title
+          "parent3" .Parent.Parent.Title
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
