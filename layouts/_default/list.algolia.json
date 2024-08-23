@@ -36,7 +36,7 @@
     {{- if .Params.menu.apidocs.parent -}}
       {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent }}
         {{- $parent = .Parent.Parent.Title -}}
-      {{- else if and eq .Parent.Params.menu.apidocs.identifier)  -}}
+      {{- else if eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent  -}}
         {{- $parent = .Parent.Title -}}
       {{- end -}}
       {{- $parentName := .Params.menu.apidocs.parent -}}
