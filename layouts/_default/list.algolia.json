@@ -45,9 +45,12 @@
       {{- range $.Site.Menus.apidocs -}}
       {{- $t1 = .Identifier -}}
       {{- $t2 = .Title -}}
-
-        {{- if and (eq $parentName .Identifier) (eq .Title "Warehousing" ) -}}
-          {{- $parent = .Title -}}
+        {{- if eq $parentName .Identifier -}}
+          {{- if (eq .Title "Warehousing" ) -}}
+            {{- $parent = .Title -}}
+          {- else -}
+            {- $parent = "" -}
+          {- end -}
         {{- end -}}
       {{- end -}}
     {{- end -}}
@@ -69,6 +72,7 @@
           "parent3" .Parent.Parent.Title
           "p4" $t1
           "p5" $t2
+          "p6" .Params.menu.apidocs.parent
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
@@ -86,6 +90,7 @@
           "parent3" .Parent.Parent.Title
           "p4" $t1
           "p5" $t2
+          "p6" .Params.menu.apidocs.parent
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
