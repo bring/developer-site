@@ -44,12 +44,10 @@
       {{- end -}}
       {{- range $.Site.Menus.apidocs -}}
       {{- $t1 = .Identifier -}}
-      {{- $t1 = .Title -}}
+      {{- $t2 = .Title -}}
 
         {{- if and (eq $parentName .Identifier) (eq .Title "Warehousing" ) -}}
           {{- $parent = .Title -}}
-        {{- else -}}
-          {{- $parent = "" -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
