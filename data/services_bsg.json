@@ -244,7 +244,7 @@
   "EnvironmentalData" : "SE, DK",
   "SenderCountries" : "ALL",
   "Destination" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL",
-  "DomesticAllowed" : "SE, DK"
+  "DomesticAllowed" : "SE"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
   "CustomerNumberType" : "Main customer number",
