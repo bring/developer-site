@@ -33,23 +33,14 @@
     {{- end -}}
 
     {{- $parent := "" -}}
-    {{- $t1 := "" -}}
-    {{- $t2 := "" -}}
-    {{- $t3 := "" -}}
-    {{- $t4 := "" -}}
     {{- if .Params.menu.apidocs.parent -}}
-      {{- $t3 = .Params.menu.apidocs.title -}}
-      {{- $t4 = .Params.menu.apidocs.identifier -}}
+      {{- $parentName := .Params.menu.apidocs.parent -}}
       {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent -}}
         {{- $parent = .Parent.Parent.Title -}}
-      {{- else if eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent -}}
+      {{- else if eq .Parent.Params.menu.apidocs.identifier $parentName -}}
         {{- $parent = .Parent.Title -}}
       {{- end -}}
-
-      {{- $parentName := .Params.menu.apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
-      {{- $t1 = .Title -}}
-      {{- $t2 = .Identifier -}}
         {{- if eq $parentName .Identifier -}}
           {{- $parent = cond (eq .Title "Warehousing") .Title "" -}}
         {{- end -}}
@@ -69,13 +60,6 @@
           "title" .Title
           "section" (.Section | upper)
           "parent" $parent
-          "parent2" .Parent.Title
-          "parent3" .Parent.Parent.Title
-          "t1" $t1
-          "t2" $t2
-          "t3" $t3
-          "t4" $t4
-          "t5" .Params.menu.apidocs.parent
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
@@ -89,13 +73,6 @@
           "title" .Title
           "section" (.Section | upper)
           "parent" $parent
-          "parent2" .Parent.Title
-          "parent3" .Parent.Parent.Title
-          "t1" $t1
-          "t2" $t2
-          "t3" $t3
-          "t4" $t4
-          "t5" .Params.menu.apidocs.parent
           "introduction" $introduction
           "api" $api
           "documentation" ($.Scratch.Get "documentation")
