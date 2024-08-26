@@ -42,7 +42,7 @@
       {{- end -}}
       {{- range $.Site.Menus.apidocs -}}
         {{- if eq $parent .Identifier -}}
-          {{- $parentTitle = cond (eq .Title "Warehousing") "Warehousing API" "" -}}
+          {{- $parentTitle = .Title -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
