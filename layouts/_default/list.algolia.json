@@ -33,11 +33,16 @@
     {{- end -}}
 
     {{- $parentTitle := "" -}}
-    {{- with .Params.menu -}}
-      {{- $parentName := .apidocs.parent -}}
+    {{- if .Params.menu.apidocs.parent -}}
+      {{- $parent := .Params.menu.apidocs.parent -}}
+      {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent -}}
+        {{- $parentTitle = .Parent.Parent.Title -}}
+      {{- else if eq .Parent.Params.menu.apidocs.identifier $parent -}}
+        {{- $parentTitle = .Parent.Title -}}
+      {{- end -}}
       {{- range $.Site.Menus.apidocs -}}
-        {{- if (eq $parentName .Identifier) -}}
-          {{- $parentTitle = .Title -}}
+        {{- if eq $parent .Identifier -}}
+          {{- $parentTitle = cond (eq .Title "Warehousing") "Warehousing API" "" -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
