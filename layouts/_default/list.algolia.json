@@ -35,20 +35,22 @@
     {{- $parent := "" -}}
     {{- $t1 := "" -}}
     {{- $t2 := "" -}}
-    {{- $parentName := .Params.menu.apidocs.parent -}}
     {{- if .Params.menu.apidocs.parent -}}
       {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent -}}
         {{- $parent = .Parent.Parent.Title -}}
       {{- else if eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent -}}
         {{- $parent = .Parent.Title -}}
       {{- end -}}
+      {{- $parentName := .Params.menu.apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
-      {{- $t1 = .Identifier -}}
-      {{- $t2 = .Title -}}
-      {{- if and (eq $parentName .Identifier) (eq .Title "Warehousing") -}}
-        {{- $parent = .Title -}}
-      {- end -}
+      {{- $t1 = .Title -}}
+      {{- $t2 = .Identifier -}}
+        {{- if (eq $parentName .Identifier) -}}
+          {{- $parent = .Title -}}
+        {{- end -}}
+      {{- end -}}
     {{- end -}}
+
 
     {{- if and .Parent (or (eq .Parent.Params.menu.apidocs.identifier "sgleadtime") (eq .Parent.Params.menu.apidocs.identifier "sgusing")) -}}
       {{- $anchorUrlText := .Title | urlize -}}
