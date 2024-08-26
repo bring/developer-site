@@ -52,7 +52,7 @@
       {{- $t2 = .Identifier -}}
       {{- $parent = cond  -}}
         {{- if eq $parentName .Identifier -}}
-          {{- cond (eq .Title "Warehousing") .Title "" -}}
+          {{- if eq .Title "Warehousing" }}{{ .Title }}{{ else }}{{ "" }}{{ end }}
         {{- end -}}
       {{- end -}}
     {{- end -}}
