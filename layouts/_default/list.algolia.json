@@ -38,13 +38,14 @@
     {{- $t3 := "" -}}
     {{- $t4 := "" -}}
     {{- if .Params.menu.apidocs.parent -}}
-      {{- $t3 = .Title -}}
-      {{- $t4 = .Identifier -}}
+      {{- $t3 = .Params.menu.apidocs.title -}}
+      {{- $t4 = .Params.menu.apidocs.identifier -}}
       {{- if eq .Parent.Parent.Params.menu.apidocs.identifier .Parent.Params.menu.apidocs.parent -}}
         {{- $parent = .Parent.Parent.Title -}}
       {{- else if eq .Parent.Params.menu.apidocs.identifier .Params.menu.apidocs.parent -}}
         {{- $parent = .Parent.Title -}}
       {{- end -}}
+
       {{- $parentName := .Params.menu.apidocs.parent -}}
       {{- range $.Site.Menus.apidocs -}}
       {{- $t1 = .Title -}}
