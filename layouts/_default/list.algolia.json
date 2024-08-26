@@ -50,9 +50,8 @@
       {{- range $.Site.Menus.apidocs -}}
       {{- $t1 = .Title -}}
       {{- $t2 = .Identifier -}}
-      {{- $parent = cond  -}}
         {{- if eq $parentName .Identifier -}}
-          {{- if eq .Title "Warehousing" }}{{ .Title }}{{ else }}{{ "" }}{{ end }}
+          {{- $parent = cond (eq .Title "Warehousing") .Title "" -}}
         {{- end -}}
       {{- end -}}
     {{- end -}}
