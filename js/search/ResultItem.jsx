@@ -1,7 +1,7 @@
 export function ResultItem({ hit, components }) {
   return (
     <a href={hit.relpermalink} className="hitlink lh-tight">
-        {hit.section && (
+        {hit.section && (hit.section !== "API" || hit.parent) && (
         <span className="mb-badge">
           {hit.section !== "API" && hit.section}
           {hit.parent && `${hit.parent}`}
