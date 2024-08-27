@@ -3,8 +3,8 @@ export function ResultItem({ hit, components }) {
     <a href={hit.relpermalink} className="hitlink lh-tight">
         {hit.section && (
         <span className="mb-badge">
-          {hit.section}
-          {hit.parent && ` – ${hit.parent}`}
+          {!hit.parent && hit.section}
+          {hit.parent && `${hit.parent}`}
         </span>
         )}
         <span className="hitlink__title">
