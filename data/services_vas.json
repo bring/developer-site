@@ -948,7 +948,7 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
     "destinations" : "ALL"
-  },  {
+  }, {
     "serviceName" : "PickUp Parcel Return",
     "serviceType" : "B2C return",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
