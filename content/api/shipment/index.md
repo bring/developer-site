@@ -1,7 +1,6 @@
 ---
 title: Shipment API
 layout: api
-disqus_identifier: https-developer-bring-com-api-shipment
 menu:
   apidocs:
     identifier: shipment
@@ -9,6 +8,7 @@ menu:
     url: /api/shipment
     parent: book
 weight: 22
+disqus_identifier: https-developer-bring-com-api-shipment
 
 introduction: |
   The Shipment API is used to book shipments and send transport instructions to Bring. For customers using EDIFACT today, switching to the Shipment API is a good alternative when implementing new automated order solutions. The API supports the majority of services in Bring's service portfolio and offers options to both create, update and delete bookings and instructions. You may use your own SSCC-compliant labels and your own shipment number series. Using the API requires a good knowledge of Bring's service portfolio and logistics value chain as the level of content validation is low [compared to the Booking API](/api/booking-shipment/).
@@ -208,6 +208,6 @@ documentation:
       - Replace
       - Delete
 
-oas: /data/api_shipment.json
+oaslocal: /data/api_shipment.json
 
 ---

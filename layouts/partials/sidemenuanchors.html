@@ -3,6 +3,9 @@
 {{- with $ctx.Params.oas -}}
   {{- $oasData = resources.GetRemote . | transform.Unmarshal -}}
 {{- end -}}
+{{- with $ctx.Params.oaslocal -}}
+  {{- $oasData = readFile . | transform.Unmarshal -}}
+{{- end -}}
 {{- $apiData := "" -}}
 {{- with .apiData -}}
   {{- $apiData = . -}}

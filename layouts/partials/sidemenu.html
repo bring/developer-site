@@ -132,6 +132,8 @@
                       {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
                     {{- else if isset $.Params "oas" -}}
                       {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+                    {{- else if isset $.Params "oaslocal" -}}
+                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oaslocal) -}}
                     {{- else -}}
                       {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
                     {{- end -}}

@@ -1,8 +1,8 @@
-{{- if .oasUrl -}}
+{{- with .oasUrl -}}
   <h2 class="dev-anchored mbm" id="openapispec">
     OpenAPI document
   </h2>
-  <a href="{{.oasUrl}}" target="_blank" rel="noopener noreferrer">
-    {{.oasUrl}}
+  <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+    {{ . }}
   </a>
 {{- end -}}
