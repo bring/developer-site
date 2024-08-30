@@ -52,17 +52,25 @@
       </article>
     </main>
 
-  {{- else if isset $.Params "oas" -}}
+  {{- else if or (isset $.Params "oas") (isset $.Params "oaslocal") -}}
     {{- if or (eq $identifier "ordermanagement") (eq $identifier "shippingguide_2") -}}
       {{- partial "api/oas/restsoap.html" . -}}
     {{- else -}}
       <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | anchorize }}">
         <article>
           {{- partial "api/oas/section-intro.html" . -}}
-          {{- $oasData := resources.GetRemote $.Params.oas | transform.Unmarshal -}}
+          {{- $oasData := "" -}}
+          {{- $oasUrl := "" -}}
+          {{- with $.Params.oas -}}
+            {{- $oasData = resources.GetRemote . | transform.Unmarshal -}}
+            {{- $oasUrl = . -}}
+          {{- end -}}
+          {{- with $.Params.oaslocal -}}
+            {{- $oasData = readFile . | transform.Unmarshal -}}
+          {{- end -}}
           {{- with $oasData -}}
             {{- $sortedPaths := partial "api/oas/sort-paths.html" (dict "paths" .paths) -}}
-            {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths "oasUrl" $.Params.oas ) -}}
+            {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths "oasUrl" $oasUrl ) -}}
             {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "sortedPaths" $sortedPaths) -}}
           {{- end -}}
           {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
