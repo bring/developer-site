@@ -83,7 +83,7 @@
         <td data-filter="cntype">{{ .CustomerNumberType }}</td>
         <td data-filter="servcode">{{ .ServiceCode }}</td>
         <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
-        <td class="mb-table__cell--icon tc">
+        <td class="tc">
           {{- if eq .Return "Yes" -}}
             <span
               data-mybicon="mybicon-check"
@@ -111,7 +111,7 @@
           {{- if eq .ListPrice "Yes" -}}<span class="mb-badge mrs">List</span><br>{{- end -}}
           {{- if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{- end -}}
         </td>
-        <td class="mb-table__cell--icon tc">
+        <td class="tc">
           {{- if eq .LeadTime "Yes" -}}
             <span
               data-mybicon="mybicon-check"
@@ -130,7 +130,7 @@
             ></span>
           {{- end -}}
         </td>
-        <td class="mb-table__cell--icon tc">
+        <td class="tc">
           {{- if ne .EnvironmentalData "-" -}}
             <span
               data-mybicon="mybicon-check"
