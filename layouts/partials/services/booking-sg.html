@@ -37,125 +37,127 @@
     <button type="button" id="bsg-clearfilters" class="btn-link--dark mtl mrl dn">Clear all filters</button>
   </div>
 </div>
-<table id="services-bsg">
-  <thead>
-    <tr>
-      <th rowspan="2">Service</th>
-      <th rowspan="2">Customer number type</th>
-      <th colspan="2">Codes</th>
-      <th rowspan="2">Return</th>
-      <th rowspan="2">APIs</th>
-      <th rowspan="2">Required setup</th>
-      <th rowspan="2">Prices</th>
-      <th rowspan="2">Lead time</th>
-      <th rowspan="2">Environmental data</th>
-      <th colspan="3">Countries
-        <button type="button" class="dib btn-link btn-link--help v-txt-btm" id="help-country" title="Show info">
-          <span data-mybicon="mybicon-help" data-mybicon-width="16" data-mybicon-height="16"></span>
-        </button>
-        <div id="info-country" class="message--info pvxs phs lh-tight text-note fwn maxw24r" hidden>
-          The same country in sender and destination columns does not equal domestic, only cross-border.
-        </div>
-      </th>
-    </tr>
-    <tr>
-      <th>Service</th>
-      <th>API Request</th>
-      <th>Sender</th>
-      <th>Destination</th>
-      <th>Domestic</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{- range .data -}}
+<div class="scrollshade-h ofx-auto">
+  <table id="services-bsg">
+    <thead>
       <tr>
-        <th scope="row" class="lh-tight">
-          <span data-filter="name">{{ .ServiceName }}</span><br>
-          <span class="text-note">
-            {{- if ne .Type "-" -}}
-              Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>
-            {{- end -}}
-            {{- if ne .serviceFamily "-" -}}
-              Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>
-            {{- end -}}
-          </span>
+        <th rowspan="2">Service</th>
+        <th rowspan="2">Customer number type</th>
+        <th colspan="2">Codes</th>
+        <th rowspan="2">Return</th>
+        <th rowspan="2">APIs</th>
+        <th rowspan="2">Required setup</th>
+        <th rowspan="2">Prices</th>
+        <th rowspan="2">Lead time</th>
+        <th rowspan="2">Environmental data</th>
+        <th colspan="3">Countries
+          <button type="button" class="dib btn-link btn-link--help v-txt-btm" id="help-country" title="Show info">
+            <span data-mybicon="mybicon-help" data-mybicon-width="16" data-mybicon-height="16"></span>
+          </button>
+          <div id="info-country" class="message--info pvxs phs lh-tight text-note fwn maxw24r" hidden>
+            The same country in sender and destination columns does not equal domestic, only cross-border.
+          </div>
         </th>
-        <td data-filter="cntype">{{ .CustomerNumberType }}</td>
-        <td data-filter="servcode">{{ .ServiceCode }}</td>
-        <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
-        <td class="tc">
-          {{- if eq .Return "Yes" -}}
-            <span
-              data-mybicon="mybicon-check"
-              data-mybicon-class="icon-ui--green-dark mrs"
-              data-mybicon-width="16"
-              data-mybicon-height="16"
-              data-mybicon-title="Yes"
-            ></span>
-          {{- else -}}
-            <span
-              data-mybicon="mybicon-cross"
-              data-mybicon-class="icon-ui--lightgray mrs"
-              data-mybicon-width="16"
-              data-mybicon-height="16"
-              data-mybicon-title="No"
-            ></span>
-        {{- end -}}
-        </td>
-        <td>
-          {{- if eq .Booking "Yes" -}}<span class="mb-badge">Booking</span><br>{{- end -}}
-          {{- if eq .ShippingGuide "Yes" -}}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{- end -}}
-        </td>
-        <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
-        <td>
-          {{- if eq .ListPrice "Yes" -}}<span class="mb-badge mrs">List</span><br>{{- end -}}
-          {{- if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{- end -}}
-        </td>
-        <td class="tc">
-          {{- if eq .LeadTime "Yes" -}}
-            <span
-              data-mybicon="mybicon-check"
-              data-mybicon-class="icon-ui--green-dark mrs"
-              data-mybicon-width="16"
-              data-mybicon-height="16"
-              data-mybicon-title="Yes"
-            ></span>
-          {{- else -}}
-            <span
-              data-mybicon="mybicon-cross"
-              data-mybicon-class="icon-ui--lightgray mrs"
-              data-mybicon-width="16"
-              data-mybicon-height="16"
-              data-mybicon-title="No"
-            ></span>
-          {{- end -}}
-        </td>
-        <td class="tc">
-          {{- if ne .EnvironmentalData "-" -}}
-            <span
-              data-mybicon="mybicon-check"
-              data-mybicon-class="icon-ui--green-dark mrs"
-              data-mybicon-width="16"
-              data-mybicon-height="16"
-              data-mybicon-title="Yes: {{.EnvironmentalData}}"
-            ></span>
-          {{- else -}}
-            <span
-              data-mybicon="mybicon-cross"
-              data-mybicon-class="icon-ui--lightgray mrs"
-              data-mybicon-width="16"
-              data-mybicon-height="16"
-              data-mybicon-title="No"
-            ></span>
-          {{- end -}}
-        </td>
-        <td class="maxw16r">{{ if ne .SenderCountries "-" }}{{ .SenderCountries }}{{ end }}</td>
-        <td class="maxw16r">{{ if ne .Destination "-" }}{{ .Destination }}{{ end }}</td>
-        <td class="maxw16r">{{ if ne .DomesticAllowed "-" }}{{ .DomesticAllowed }}{{ end }}</td>
       </tr>
-    {{- end -}}
-  </tbody>
-</table>
+      <tr>
+        <th>Service</th>
+        <th>API Request</th>
+        <th>Sender</th>
+        <th>Destination</th>
+        <th>Domestic</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{- range .data -}}
+        <tr>
+          <th scope="row" class="lh-tight">
+            <span data-filter="name">{{ .ServiceName }}</span><br>
+            <span class="text-note">
+              {{- if ne .Type "-" -}}
+                Type: <span class="fwn" data-filter="type">{{ .Type }}</span><br>
+              {{- end -}}
+              {{- if ne .serviceFamily "-" -}}
+                Family: <span class="fwn" data-filter="family">{{ .ServiceFamily }}</span>
+              {{- end -}}
+            </span>
+          </th>
+          <td data-filter="cntype">{{ .CustomerNumberType }}</td>
+          <td data-filter="servcode">{{ .ServiceCode }}</td>
+          <td class="ofw-anywhere"><code data-filter="reqcode">{{ .RequestCode }}</code></td>
+          <td class="tc">
+            {{- if eq .Return "Yes" -}}
+              <span
+                data-mybicon="mybicon-check"
+                data-mybicon-class="icon-ui--green-dark mrs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+                data-mybicon-title="Yes"
+              ></span>
+            {{- else -}}
+              <span
+                data-mybicon="mybicon-cross"
+                data-mybicon-class="icon-ui--lightgray mrs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+                data-mybicon-title="No"
+              ></span>
+          {{- end -}}
+          </td>
+          <td>
+            {{- if eq .Booking "Yes" -}}<span class="mb-badge">Booking</span><br>{{- end -}}
+            {{- if eq .ShippingGuide "Yes" -}}<span class="mb-badge ws-nowrap">Shipping Guide</span>{{- end -}}
+          </td>
+          <td>{{ if and (ne .RequiredSetup "-") (ne .RequiredSetup "") }}{{ .RequiredSetup }}{{ end }}</td>
+          <td>
+            {{- if eq .ListPrice "Yes" -}}<span class="mb-badge mrs">List</span><br>{{- end -}}
+            {{- if eq .AgreementPrice "Yes" }}<span class="mb-badge">Agreement</span>{{- end -}}
+          </td>
+          <td class="tc">
+            {{- if eq .LeadTime "Yes" -}}
+              <span
+                data-mybicon="mybicon-check"
+                data-mybicon-class="icon-ui--green-dark mrs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+                data-mybicon-title="Yes"
+              ></span>
+            {{- else -}}
+              <span
+                data-mybicon="mybicon-cross"
+                data-mybicon-class="icon-ui--lightgray mrs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+                data-mybicon-title="No"
+              ></span>
+            {{- end -}}
+          </td>
+          <td class="tc">
+            {{- if ne .EnvironmentalData "-" -}}
+              <span
+                data-mybicon="mybicon-check"
+                data-mybicon-class="icon-ui--green-dark mrs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+                data-mybicon-title="Yes: {{.EnvironmentalData}}"
+              ></span>
+            {{- else -}}
+              <span
+                data-mybicon="mybicon-cross"
+                data-mybicon-class="icon-ui--lightgray mrs"
+                data-mybicon-width="16"
+                data-mybicon-height="16"
+                data-mybicon-title="No"
+              ></span>
+            {{- end -}}
+          </td>
+          <td class="maxw16r">{{ if ne .SenderCountries "-" }}{{ .SenderCountries }}{{ end }}</td>
+          <td class="maxw16r">{{ if ne .Destination "-" }}{{ .Destination }}{{ end }}</td>
+          <td class="maxw16r">{{ if ne .DomesticAllowed "-" }}{{ .DomesticAllowed }}{{ end }}</td>
+        </tr>
+      {{- end -}}
+    </tbody>
+  </table>
+</div>
 <div class="cutoff-overlay" id="bsg-cutoff">
   <button type="button" class="btn btn--white w100p maxw32r">Show all services</button>
 </div>
