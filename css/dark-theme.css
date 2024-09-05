@@ -269,6 +269,10 @@
     color: var(--green-86);
   }
 
+  tbody code {
+    color: var(--green-light);
+  }
+
   & pre,
   & .bg-white {
     background-color: var(--green-18);
