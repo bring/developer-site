@@ -244,6 +244,22 @@
     }
   }
 
+  .scrollshade-h {
+    background-image: linear-gradient(
+        to right,
+        var(--green-10) 0.25rem,
+        hsla(152, 15%, 10%, 0)
+      ),
+      linear-gradient(to right, hsla(152, 15%, 10%, 0), var(--green-10)),
+      linear-gradient(to right, hsla(152, 6%, 40%, 0.5), hsla(152, 15%, 10%, 0)),
+      linear-gradient(to left, hsla(152, 6%, 40%, 0.5), hsla(152, 15%, 10%, 0));
+    background-position: 0 center, 100.1% center, 0 center, 100% center;
+    background-repeat: no-repeat;
+    background-color: var(--green-10);
+    background-size: 20% 100%, 20% 100%, 0.25rem 100%, 0.25rem 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
   /* Code and badges */
   & dl code,
   & li code:not(table code),
