@@ -8,29 +8,33 @@
   }
 
   /*Brighter link color for better contrast*/
-  & a:not(
-    .btn,
-    .btn-link--dark,
-    .sitefooter a,
-    .language-switch,
-    .dev-siteheader__nav a,
-    .dev-sidemenu a,
-    .start__col,
-    .ecom-entrance,
-    .skip-to-content-link) {
-      color: var(--blue-80);
+  &
+    a:not(
+      .btn,
+      .btn-link--dark,
+      .sitefooter a,
+      .language-switch,
+      .dev-siteheader__nav a,
+      .dev-sidemenu a,
+      .start__col,
+      .ecom-entrance,
+      .skip-to-content-link
+    ) {
+    color: var(--blue-80);
   }
 
-  & a:not(
-    .btn,
-    .btn-link--dark,
-    .language-switch,
-    .sitefooter a,
-    .dev-siteheader__nav a,
-    .dev-sidemenu a,
-    .start__col,
-    .ecom-entrance):hover {
-      color: var(--gray-86);
+  &
+    a:not(
+      .btn,
+      .btn-link--dark,
+      .language-switch,
+      .sitefooter a,
+      .dev-siteheader__nav a,
+      .dev-sidemenu a,
+      .start__col,
+      .ecom-entrance
+    ):hover {
+    color: var(--gray-86);
   }
 
   & .color-theme-icon {
@@ -329,7 +333,7 @@
     }
   }
 
-  & .cr-response.error{
+  & .cr-response.error {
     color: var(--red-72);
   }
 
