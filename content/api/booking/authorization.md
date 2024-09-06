@@ -9,7 +9,7 @@ menu:
 weight: 2
 ---
 
-In addition to [authentication](/api/#authentication), you need to be authorized with the _booking_ right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin/external/administration):
+In addition to [authentication](/api/#authentication), you need to be authorized with the _booking_ right in order to perform bookings. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin-external/users):
 
 ![Authorized for booking](./../booking_authorization.png)
 
