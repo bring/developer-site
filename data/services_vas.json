@@ -667,7 +667,7 @@
 }, {
   "vasName" : "Frost free",
   "vasNameNorwegian" : "Frostfritt",
-  "description" : "If the shipment cannot handle frost, you can book the additional service Frost free. You are guaranteed that the load carrier will maintain a temperature above 0 degrees Celsius during the winter (from October to March).  ",
+  "description" : "We also offer a frost-free service for an additional fee. The service does not come with a temperature guarantee. Yet, we strive to ensure that the carrier keeps the shipment frost-free at a temperature above 0 degrees Celsius.",
   "shippingGuideCode" : "NON_FREEZE",
   "shippingGuideNpbCode" : "2141",
   "bookingCode" : "NON_FREEZE",
