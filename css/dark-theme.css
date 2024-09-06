@@ -8,29 +8,33 @@
   }
 
   /*Brighter link color for better contrast*/
-  & a:not(
-    .btn,
-    .btn-link--dark,
-    .sitefooter a,
-    .language-switch,
-    .dev-siteheader__nav a,
-    .dev-sidemenu a,
-    .start__col,
-    .ecom-entrance,
-    .skip-to-content-link) {
-      color: var(--blue-80);
+  &
+    a:not(
+      .btn,
+      .btn-link--dark,
+      .sitefooter a,
+      .language-switch,
+      .dev-siteheader__nav a,
+      .dev-sidemenu a,
+      .start__col,
+      .ecom-entrance,
+      .skip-to-content-link
+    ) {
+    color: var(--blue-80);
   }
 
-  & a:not(
-    .btn,
-    .btn-link--dark,
-    .language-switch,
-    .sitefooter a,
-    .dev-siteheader__nav a,
-    .dev-sidemenu a,
-    .start__col,
-    .ecom-entrance):hover {
-      color: var(--gray-86);
+  &
+    a:not(
+      .btn,
+      .btn-link--dark,
+      .language-switch,
+      .sitefooter a,
+      .dev-siteheader__nav a,
+      .dev-sidemenu a,
+      .start__col,
+      .ecom-entrance
+    ):hover {
+    color: var(--gray-86);
   }
 
   & .color-theme-icon {
@@ -244,6 +248,22 @@
     }
   }
 
+  .scrollshade-h {
+    background-image: linear-gradient(
+        to right,
+        var(--green-10) 0.25rem,
+        hsla(152, 15%, 10%, 0)
+      ),
+      linear-gradient(to right, hsla(152, 15%, 10%, 0), var(--green-10)),
+      linear-gradient(to right, hsla(152, 6%, 40%, 0.5), hsla(152, 15%, 10%, 0)),
+      linear-gradient(to left, hsla(152, 6%, 40%, 0.5), hsla(152, 15%, 10%, 0));
+    background-position: 0 center, 100.1% center, 0 center, 100% center;
+    background-repeat: no-repeat;
+    background-color: var(--green-10);
+    background-size: 20% 100%, 20% 100%, 0.25rem 100%, 0.25rem 100%;
+    background-attachment: local, local, scroll, scroll;
+  }
+
   /* Code and badges */
   & dl code,
   & li code:not(table code),
@@ -251,6 +271,10 @@
   & .mb-badge {
     background-color: var(--green-22);
     color: var(--green-86);
+  }
+
+  tbody code {
+    color: var(--green-light);
   }
 
   & pre,
@@ -309,7 +333,7 @@
     }
   }
 
-  & .cr-response.error{
+  & .cr-response.error {
     color: var(--red-72);
   }
 

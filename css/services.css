@@ -15,11 +15,6 @@
   flex: 15 1 30rem;
 }
 
-#vas-cutoff.cutoff-overlay {
-  height: 14rem;
-  padding-top: 6rem;
-}
-
 .btn-link--filter {
   text-align: left;
   white-space: normal;
