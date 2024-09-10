@@ -1,4 +1,4 @@
-import algoliasearch from "algoliasearch/lite"
+import { liteClient as algoliasearch } from "algoliasearch/lite";
 import AlgoLogo from "./AlgoLogo.jsx"
 import { Autocomplete } from "./Autocomplete.jsx";
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
