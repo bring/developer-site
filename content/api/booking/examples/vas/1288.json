@@ -1,5 +1,14 @@
-"additionalServices": [
-  {
-    "id": "1288"
-  }
-]
+{
+  "consignments": [
+    {
+      "generateQrCodes": true,
+      "product": {
+        "additionalServices": [
+          {
+            "id": "1288"
+          }
+        ]
+      }
+    }
+  ]
+}
