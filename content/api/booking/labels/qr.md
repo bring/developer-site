@@ -1,5 +1,5 @@
 ---
-title: Generating QR Codes
+title: Generating QR Codes (Norway)
 layout: api-sub
 menu:
   apidocs:
@@ -23,4 +23,4 @@ The following services support QR codes:
 - 0341
 - 0343
 
-If a confirmation email to sender is wanted (that includes the requested QR code), add sender's e-mail address in the booking request.
+Sender's email address in the booking request is required to receive the requested QR code.

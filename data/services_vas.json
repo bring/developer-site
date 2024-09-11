@@ -893,7 +893,7 @@
 }, {
   "vasName" : "Label free",
   "vasNameNorwegian" : "Label Free",
-  "description" : "Label free makes provides the ability to send parcels without a label, and is useful for senders who do not have access to a printer.  A unique code in the format BRING-1234-5678 is sent to the sender by e-mail after the booking is completed. This code, as well as the recipient`s name and address, is written on the parcel before it is handed in.",
+  "description" : "Label free provides the ability to send parcels without a label, and is useful for senders who do not have access to a printer. A unique code in the format BRING-1234-5678 is sent to the sender by e-mail after the booking is completed. This code, as well as the recipient's name and address, is written on the parcel before it is handed in. A supplement QR-code is also requested along with the label free code. This QR-code can be scanned by the staff to print a label which is attached to the parcel.",
   "shippingGuideCode" : "1288",
   "shippingGuideNpbCode" : "1288",
   "bookingCode" : "1288",
