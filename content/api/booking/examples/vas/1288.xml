@@ -1,5 +1,12 @@
-<additionalServices>
-  <additionalService>
-    <id>1288</id>
-  </additionalService>
-</additionalServices>
+<consignments>
+  <consignment>
+    <generateQrCodes>true</generateQrCodes>
+    <product>
+      <additionalServices>
+        <additionalService>
+          <id>1288</id>
+        </additionalService>
+      </additionalServices>
+    </product>
+  </consignment>
+</consignments>
