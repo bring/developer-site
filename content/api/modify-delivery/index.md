@@ -183,7 +183,7 @@ documentation:
   - title: Limitations
     content: |
       - Service codes 03XX is **not** supported for shipments addressed within Norway (domestic Norway shipments).
-      - Bulk services 0332 and 0342 are **not** valid for domestically in Denmark.
+      - Bulk services 0332 and 0342 are **not** valid domestically in Denmark.
       - Modify cash on delivery is only available for recipients in Norway.
       
 oas: https://www.qa.mybring.com/modify-delivery/api-docs
