@@ -7,17 +7,16 @@ menu:
     identifier: modifydelivery
     title: Modify Delivery API
     url: /api/modify-delivery
-    parent: book
+    parent: track
 weight: 23
 
 introduction:
   The Modify Delivery API can be used to modify shipments that are on
   their way to the recipient. Shipments can be stopped and returned to
-  the sender, they can be rerouted to a new delivery address or it is
-  possible to change the cash on delivery amount. We support
-  domestic and cross border shipments in Norway, Sweden and Denmark. Do note however,
-  that there are limitations to our services in Sweden and Denmark.
-  Detailed overview of our services can be found below.
+  the sender, they can be rerouted to a new delivery address and it is
+  possible to change the cash on delivery amount. We support all sender 
+  countries with recipients in Norway, Sweden and Denmark for Stop Delivery 
+  and Change Address. Detailed overview of our services can be found below.
 
 information:
   - title: Authentication
@@ -141,42 +140,42 @@ documentation:
              <td>0330</td>
              <td>Yes</td>
              <td>Yes</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Business parcel bulk</td>
              <td>0332</td>
              <td>Yes</td>
              <td>Yes</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Business pallet</td>
              <td>0336</td>
              <td>Yes</td>
              <td>No</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Pickup parcel</td>
              <td>0340</td>
              <td>Yes</td>
              <td>No</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Pickup parcel bulk</td>
              <td>0342</td>
              <td>Yes</td>
              <td>No</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Home delivery parcel</td>
              <td>0349</td>
              <td>Yes</td>
              <td>No</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
         </tbody>
       </table>
@@ -184,112 +183,8 @@ documentation:
   - title: Limitations
     content: |
       - Service codes 03XX is **not** supported for shipments addressed within Norway (domestic Norway shipments).
-      - When ordering stop shipment there may be some scenarios we do not
-      support given the _from_ and _to_ country of the shipment. These scenarios are
-      shown in the table _Valid stop shipment scenarios_ below.
-      - Change address is available only when the recipient country is Norway.
-      - We do not allow changing the delivery address for shipments going to Sweden or Denmark.
-      - Modify cash on delivery is only available in Norway.
-
-  - title: Valid stop shipment scenarios
-    content: |
-      <table>
-        <thead>
-         <tr>
-           <th>Service</th>
-           <th>Service Code</th>
-           <th>NO - NO</th>
-           <th>NO - SE</th>
-           <th>NO - DK</th>
-           <th>SE - NO</th>
-           <th>SE - SE</th>
-           <th>SE - DK</th>
-           <th>DK - NO</th>
-           <th>DK - SE</th>
-           <th>DK - DK</th>
-         </tr>
-        </thead>
-        <tbody>
-          <tr>
-             <td>Business parcel</td>
-             <td>0330</td>
-             <td>No</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-          </tr>
-          <tr>
-             <td>Business parcel bulk</td>
-             <td>0332</td>
-             <td>No</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>No</td>
-          </tr>
-          <tr>
-             <td>Business pallet</td>
-             <td>0336</td>
-             <td>No</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-          </tr>
-          <tr>
-             <td>Pickup parcel</td>
-             <td>0340</td>
-             <td>No</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-          </tr>
-          <tr>
-             <td>Pickup parcel bulk</td>
-             <td>0342</td>
-             <td>No</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>No</td>
-          </tr>
-          <tr>
-             <td>Home delivery parcel</td>
-             <td>0349</td>
-             <td>No</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-             <td>Yes</td>
-          </tr>
-        </tbody>
-      </table>
-
+      - Bulk services 0332 and 0342 are **not** valid for domestically in Denmark.
+      - Modify cash on delivery is only available for recipients in Norway.
+      
 oas: https://www.qa.mybring.com/modify-delivery/api-docs
 ---
