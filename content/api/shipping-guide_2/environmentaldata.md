@@ -18,8 +18,8 @@ For the following Norwegian domestic and Nordic parcel services it is now possib
 * Bedriftspakke (BPAKKE_DOR-DOR)
 * Business Parcel (0330)
 * Business Parcel Bulk (0332)
-* Pickup Parcel (0340)
-* Pickup Parcel Bulk (0342)
+* Pickup Parcel (0340) - Nordic Swan Ecolabel delivery in Sweden
+* Pickup Parcel Bulk (0342) - Nordic Swan Ecolabel delivery in Sweden
 * Home Delivery Parcel (0349)
 * Business groupage (5100)
 * Business pallet (5400)
