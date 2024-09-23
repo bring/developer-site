@@ -70,7 +70,38 @@
         ]
       },
       {
-        "h3": "5. Logo",
+        "h3": "5. Flexible delivery",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/flexible_delivery.png",
+            "imageClass": "maxw8r"
+          },
+          {
+            "imageUrl": "/images/checkout/posten/logo_car.png",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
+        "illustrationImageAlt": "Service with posten logo",
+        "tags": ["Shipping Guide API"],
+        "downloadLinks": [
+          {
+            "href": "/images/checkout/bring/Bring_logo.svg",
+            "linkText": "Bring logo",
+            "name": "bring_logo"
+          },
+          {
+            "href": "/images/checkout/posten/Posten_logo.svg",
+            "linkText": "Posten logo",
+            "name": "posten_logo"
+          }
+        ],
+        "paragraphs": [
+          "<p>Make the delivery more flexible for your customers by offering various value-added services.</p><p>For example:\nAlternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</p>"
+        ]
+      },
+      {
+        "h3": "6. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -101,7 +132,7 @@
         ]
       },
       {
-        "h3": "6. Environmental data and icon",
+        "h3": "7. Environmental data and icon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
@@ -188,7 +219,34 @@
         ]
       },
       {
-        "h3": "5. Logo",
+        "h3": "5. Fleksible levering",
+        "figures": [
+          {
+            "imageUrl": "/images/checkout/bring/flexible_delivery.png",
+            "imageClass": "maxw8r"
+          }
+        ],
+        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
+        "illustrationImageAlt": "Service with posten logo",
+        "tags": ["Shipping Guide API"],
+        "downloadLinks": [
+          {
+            "href": "/images/checkout/bring/Bring_logo.svg",
+            "linkText": "Bring logo",
+            "name": "bring_logo"
+          },
+          {
+            "href": "/images/checkout/posten/Posten_logo.svg",
+            "linkText": "Posten logo",
+            "name": "posten_logo"
+          }
+        ],
+        "paragraphs": [
+          "<p>Giv dine kunder mulighed for en mere fleksible levering ved at tilbyde forskellige services, </p><p>For eksempel:\nAlternative leveringsdage for Urban Home Delivery/Hjemmelevering til døren. Lad kunden vælge deres foretrukne dato.</p>"
+        ]
+      },
+      {
+        "h3": "6. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -219,7 +277,7 @@
         ]
       },
       {
-        "h3": "6. Miljøtekst og miljøikon",
+        "h3": "7. Miljøtekst og miljøikon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
