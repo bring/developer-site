@@ -73,7 +73,7 @@
         "h3": "5. Flexible delivery",
         "figures": [
           {
-            "imageUrl": "/images/checkout/bring/da/flexible_delivery.png",
+            "imageUrl": "/images/checkout/bring/logo_car.png",
             "imageClass": "maxw8r"
           },
           {
@@ -81,7 +81,7 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
+        "illustrationImageUrl": "/images/checkout/bring/da/flexible_delivery.png",
         "illustrationImageAlt": "Service with posten logo",
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
@@ -222,11 +222,11 @@
         "h3": "5. Fleksible levering",
         "figures": [
           {
-            "imageUrl": "/images/checkout/bring/da/flexible_delivery.png",
+            "imageUrl": "/images/checkout/bring/logo_car.png",
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
+        "illustrationImageUrl": "/images/checkout/bring/da/flexible_delivery.png",
         "illustrationImageAlt": "Service with posten logo",
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
