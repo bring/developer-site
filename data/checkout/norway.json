@@ -16,8 +16,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/delivery_address.png",
-        "illustrationImageAlt": "Delivery address input fields",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/delivery_address.png",
+            "alt": "Delivery address input fields"
+          }
+        ],
         "tags": ["Address API", "Pickup Point API", "Shipping Guide API"],
         "paragraphs": [
           "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points. When filling in the street address, your customers will also get the correct estimated time of delivery.</p>"
@@ -31,8 +35,12 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_service.jpg",
-        "illustrationImageAlt": "Choose service by service name",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/choose_service.jpg",
+            "alt": "Choose service by service name"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Present the delivery options so that your customers understand what they entail. Therefore, use Posten's standard service name and service description, which are updated.</p><p>The shipping guide API always has updated names and descriptions in Norwegian, Swedish, Danish and English.</p><li>displayName = The name of the delivery option to be displayed in the checkout.</li><li>shortName = Short version of the name of the delivery option. Used if there is little space.</li><li>descriptionText = Description of the delivery option in checkout.</li></p>"
@@ -46,8 +54,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_pickup_points.png",
-        "illustrationImageAlt": "Choose pickup points",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/choose_pickup_points.png",
+            "alt": "Choose pickup points"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By offering 7-10 alternatives, your customers will be able to choose the most convenient pickup point. According  to Bring Research, customers are more likely to complete the purchase if presented with pickup points located  nearby. Therefore, we recommend that you offer parcel lockers. Lockers might also be the preferred pickup point type. We also recommend showing a map to make it easier for your customers to locate the pickup points.</p>"
@@ -61,8 +73,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_estimated_time_of_delivery.png",
-        "illustrationImageAlt": "Service with estimated time of delivery",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/show_estimated_time_of_delivery.png",
+            "alt": "Service with estimated time of delivery"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
@@ -77,8 +93,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose value added services",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/choose_delivery_date.png",
+            "alt": "Choose value added services"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Leaving the parcel in a bag on the door in case the parcel is too large for the mailbox</li><li>Alternative delivery dates for home delivery. Let the customer choose the preferred date</li></ol>"]
@@ -95,8 +115,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/posten_service.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/posten_service.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
@@ -122,8 +146,12 @@
             "imageClass": "maxw16r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
-        "illustrationImageAlt": "Service with environmental friendly logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/show_environmental_info.png",
+            "alt": "Service with environmental friendly logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your customers make more sustainable choices.</p>"
@@ -148,8 +176,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/delivery_address.png",
-        "illustrationImageAlt": "Skjema for innfylling av leveringsadresse",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/delivery_address.png",
+            "alt": "Skjema for innfylling av leveringsadresse"
+          }
+        ],
         "tags": ["Address API", "Pickup Point API", "Shipping Guide API"],
         "paragraphs": [
           "<p>Ved å la kundene dine fylle inn både postnummer og gateadresse, vil de presenteres med relevante leveringsalternativer og hentesteder. Når gateadressen fylles ut, vil dine kunder også se korrekt estimerte leveringstider.</p>"
@@ -163,8 +195,12 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_service.jpg",
-        "illustrationImageAlt": "Skjema for valg av leveringsalternativ via tjenestenavn",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/choose_service.jpg",
+            "alt": "Skjema for valg av leveringsalternativ via tjenestenavn"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Presenter leveringsalternativene slik at dine kunder forstår hva de innebærer. Bruk derfor Postens standard tjenestenavn og tjenestebeskrivelse, som er oppdaterte.</p><p>Shipping guide API'et har alltid oppdaterte navn og beskrivelser på norsk, svensk, dansk og engelsk.</p><li>displayName = Navnet på leveringsalternativet som skal vises i checkout.</li><li>shortName = Kortversjon av navnet på leveringsalternativet. Brukes dersom det er lite plass.</li><li>descriptionText = Beskrivelse av leveringsalternativet i checkout.</li></p>"
@@ -178,8 +214,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_pickup_points.png",
-        "illustrationImageAlt": "Skjema for valg av hentesteder",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/choose_pickup_points.png",
+            "alt": "Skjema for valg av hentesteder"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>Ved å tilby 7-10 alternativer vil kundene dine kunne velge sitt foretrukne hentested. I følge Bring Research er det mer sannsynlig at kunder fullfører kjøpet hvis de presenteres med hentesteder i nærheten, og vi anbefaler derfor at du inkluderer pakkebokser i din checkout. Vi anbefaler også å vise et kart for å gjøre det enklere for kundene dine å finne de ulike hentestedene.</p>"
@@ -193,8 +233,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_estimated_time_of_delivery.png",
-        "illustrationImageAlt": "Leveringsalternativ presentert med estimert leveringstid",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/show_estimated_time_of_delivery.png",
+            "alt": "Leveringsalternativ presentert med estimert leveringstid"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Ifølge Bring Research ønsker kundene presis informasjon om leveringstid knyttet til ulike leveringsalternativer. Og jo mer presist, jo bedre.</p>",
@@ -209,8 +253,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/choose_delivery_date.png",
-        "illustrationImageAlt": "Skjema for valg av hjemleveringstidspunkt",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/choose_delivery_date.png",
+            "alt": "Skjema for valg av hjemleveringstidspunkt"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Gjør leveransen mer fleksibel for kundene dine ved å tilby ulike verdiøkende tjenester. For eksempel:</p><ol><li>Heng igjen pakken i en pose på døren dersom pakken er for stor for postkassen</li><li>La kunden velge ønsket dato ved å tilby alternative leveringsdatoer for hjemlevering</li></ol>"]
@@ -227,8 +275,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/posten_service.png",
-        "illustrationImageAlt": "Leveringsalternativ med Posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/posten_service.png",
+            "alt": "Leveringsalternativ med Posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
@@ -254,8 +306,12 @@
             "imageClass": "maxw16r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/posten/show_environmental_info.png",
-        "illustrationImageAlt": "Leveringsalternativ med miljøikon",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/posten/show_environmental_info.png",
+            "alt": "Leveringsalternativ med miljøikon"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Ved å ta i bruk vår miljøtekst og vårt miljøikon kan du allerede i checkouten vise kunder om pakken deres blir levert med elbil. Dette gir kundene dine mulighet til å ta mer bærekraftige valg.</p>"

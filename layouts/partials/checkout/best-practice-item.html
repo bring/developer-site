@@ -31,7 +31,9 @@
     </div>
   </div>
   <figure>
-    <img src="{{ .illustrationImageUrl }}" alt="{{ .illustrationImageAlt }}" />
+    {{ range .illustrationImages }}
+        <img src="{{ .url }}" alt="{{ .alt }}" style="margin-right: 20px; margin-bottom: 20px;"  />
+    {{ end }}
   </figure>
 </div>
 {{- end -}}
