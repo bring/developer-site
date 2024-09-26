@@ -1,12 +1,12 @@
 ---
-title: VOEC - Customs declaration for import shipments to Norway
+title: VOEC Customs declaration for import shipments to Norway
 layout: api-sub
 menu:
   apidocs:
-    identifier: bookingcustoms
-    title: VOEC - Customs declaration for import shipments to Norway
-    parent: booking
-weight: 10
+    identifier: bookingcustomsimport
+    title: VOEC Customs declaration for import shipments to Norway
+    parent: booking_customs
+weight: 2
 ---
 
 With this concept the recipient can skip paying VAT when picking up the parcel on a pickup point in Norway. Instead, the web shop collects the VAT directly when the recipient is paying in the checkout.

@@ -1,12 +1,12 @@
 ---
-title: Customs information
+title: Export from Norway
 layout: api-sub
 menu:
   apidocs:
-    identifier: bookingcustoms
-    title: Customs information
-    parent: booking
-weight: 10
+    identifier: bookingcustomsexport
+    title: Export from Norway
+    parent: booking_customs
+weight: 1
 ---
 
 It is required to pass customs information when booking the following services from Norway to abroad:
