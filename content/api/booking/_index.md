@@ -42,5 +42,5 @@ information:
 subpages:
   title: Special topics
 
-oas: https://api.bring.com/booking-api/api-docs
+oas: https://api.bring.com/booking/api-docs
 ---
