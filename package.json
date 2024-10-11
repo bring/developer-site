@@ -37,7 +37,7 @@
     "@vitejs/plugin-legacy": "^5.4.2",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.20",
-    "concurrently": "^8.2.2",
+    "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
     "hugo-bin": "^0.132.0",
