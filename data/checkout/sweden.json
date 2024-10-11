@@ -16,8 +16,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/delivery_address.png",
-        "illustrationImageAlt": "Delivery address input fields",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/delivery_address.png",
+            "alt": "Delivery address input fields"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points.</p>"
@@ -31,8 +35,12 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/choose_service.png",
-        "illustrationImageAlt": "Choose service by service name",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/choose_service.png",
+            "alt": "Choose service by service name"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Present the delivery options so that your customers understand what they entail. Therefore, use Posten's standard service name and service description, which are updated.</p><p>The shipping guide API always has updated names and descriptions in Norwegian, Swedish, Danish and English.</p><p><li>displayName = The name of the delivery option to be displayed in the checkout.</li><li>shortName = Short version of the name of the delivery option. Used if there is little space.</li><li>descriptionText = Description of the delivery option in checkout.</li></p>"
@@ -46,8 +54,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/choose_pickup_points.png",
-        "illustrationImageAlt": "Choose pickup points",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/choose_pickup_points.png",
+            "alt": "Choose pickup points"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By offering 7-10 alternatives, your customers are able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby.</p><p> We therefore recommend displaying the pickup point’s address and distance from the customer’s address to each pickup location in meters/kilometers to make it easy for the customer to assess which pickup point is closest to them.</p><p>Flexibility is important, and we therefore recommend that you display opening hours and include parcel lockers among your pickup points.</p>"
@@ -61,8 +73,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/show_estimated_time_of_delivery.png",
-        "illustrationImageAlt": "Service with estimated time of delivery",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/show_estimated_time_of_delivery.png",
+            "alt": "Service with estimated time of delivery"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
@@ -77,8 +93,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose value added services",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/choose_delivery_date.png",
+            "alt": "Choose value added services"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Alternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</li></ol>"]
@@ -95,8 +115,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/bring_service.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/bring_service.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
@@ -122,11 +146,19 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/show_environmental_info.png",
-        "illustrationImageAlt": "Service with environmental friendly logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/show_environmental_info.png",
+            "alt": "Service with environmental friendly logo"
+          },
+          {
+            "url": "/images/checkout/bring/se/svan_show_environmental_info.png",
+            "alt": "Service with environmental friendly logo - svan"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Show whether the parcel will be delivered with fossil-free fuel or not in the checkout. This may help your customers make more sustainable choices.</p>"
+          "<p>The services PickUp Parcel and PickUp Parcel Bulk are Nordic Swan Ecolabelled in Sweden. Nordic Swan Ecolabel delivery in Sweden is a delivery choice that meets strict requirements for climate performance and high energy efficiency. Read more here: <a href=\"https://www.svanen.se/vad-ar-svanen/\">https://www.svanen.se/vad-ar-svanen/</a>. </p><p>For other services we recommend to show whether the parcel will be delivered with fossil-free fuel or not in the checkout. This may help your customers make more sustainable choices.</p>"
         ]
       }
     ]
@@ -148,8 +180,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/delivery_address.png",
-        "illustrationImageAlt": "Delivery address input fields",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/delivery_address.png",
+            "alt": "Delivery address input fields"
+          }
+        ],
         "tags": ["Address API", "Pickup Point API"],
         "paragraphs": [
           "<p>Genom att låta dina kunder fylla i både postnummer och gatuadress kommer de att presenteras med relevanta leveransalternativ och utlämningsställen.</p>"
@@ -163,8 +199,12 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/choose_service.png",
-        "illustrationImageAlt": "Choose service by service name",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/choose_service.png",
+            "alt": "Choose service by service name"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Presentera leveransalternativen så att dina kunder förstår vad de innebär. Använd därför Postens standardtjänstenamn och tjänstebeskrivning som har uppdaterats.</p><p>Shipping guide API:et har alltid uppdaterade namn och beskrivningar på norska, svenska, danska och engelska.</p><p><li>displayName = Namnet på leveransalternativet som ska visas i kassan.</li><li>shortName = Kort version av namnet på leveransalternativet. Används om det finns lite plats.</li><li>descriptionText = Beskrivning av leveransalternativet i kassan.</li></p>"
@@ -178,8 +218,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/choose_pickup_points.png",
-        "illustrationImageAlt": "Choose pickup points",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/choose_pickup_points.png",
+            "alt": "Choose pickup points"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>Genom att erbjuda 7-10 alternativ kan dina kunder välja den mest bekväma upphämtningsplatsen. Enligt Bring Research är det mer sannolikt att kunderna slutför köpet om de får upphämtningsställen i närheten. Vi rekommenderar därför att visa upphämtningsställets adress och avstånd från kundens adress till varje utlämningsställe i meter/kilometer för att göra det enkelt för kunden att bedöma vilket utlämningsställe som ligger närmast dem.</p><p>Flexibilitet är viktigt och vi rekommenderar därför att du visar öppettider och inkluderar paketskåp bland dina utlämningsställen.</p>"
@@ -193,8 +237,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/show_estimated_time_of_delivery.png",
-        "illustrationImageAlt": "Service with estimated time of delivery",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/show_estimated_time_of_delivery.png",
+            "alt": "Service with estimated time of delivery"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Enligt Bring Research vill kunderna ha exakt information om leveranstid relaterad till olika leveransalternativ. Och ju mer exakt, desto bättre.</p>",
@@ -209,8 +257,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/choose_delivery_date.png",
-        "illustrationImageAlt": "Choose value added services",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/choose_delivery_date.png",
+            "alt": "Choose value added services"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Gör leveransen mer flexibel för dina kunder genom att erbjuda olika värdeadderande tjänster. Till exempel:</p><ol><li>Låt kunden välja önskat datum genom att erbjuda alternativa leveransdatum för hemleverans</li></ol>"]
@@ -227,8 +279,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/bring_service.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/bring_service.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
@@ -254,11 +310,19 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/se/show_environmental_info.png",
-        "illustrationImageAlt": "Service with environmental friendly logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/se/show_environmental_info.png",
+            "alt": "Service with environmental friendly logo"
+          },
+          {
+            "url": "/images/checkout/bring/se/svan_show_environmental_info.png",
+            "alt": "Service with environmental friendly logo - svan"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Genom att använda vår miljötext och vår miljöikon kan du redan i checkouten visa kunderna om deras paket levereras med fossilfritt drivmedel. Detta ger dina kunder möjlighet att göra mer hållbara val.</p>"
+          "<p>Tjänsten PickUp Parcel och PickUp Parcel Bulk (Paket till utlämningsställe) är Svanenmärkt i Sverige. Svanenmärkt leverans i Sverige är ett leveransval som uppfyller stränga krav på klimatprestanda och hög energieffektivitet. Läs mer här: <a href=\"https://www.svanen.se/vad-ar-svanen/\">https://www.svanen.se/vad-ar-svanen/</a>.</p><p>För andra tjänster rekommenderar vi att du redan i checkouten visar kunderna om deras paket levereras med fossilfritt drivmedel/elbil.</p>"
         ]
       }
     ]

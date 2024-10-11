@@ -16,8 +16,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/delivery_address.png",
-        "illustrationImageAlt": "Delivery address input fields",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/delivery_address.png",
+            "alt": "Delivery address input fields"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By letting your customers fill in both postal code and street address, they will be presented with the relevant delivery options and pickup points.</p>"
@@ -31,8 +35,12 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_service.png",
-        "illustrationImageAlt": "Choose service by service name",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/choose_service.png",
+            "alt": "Choose service by service name"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Present the delivery options so that your customers understand what they entail. Therefore, use Posten's standard service name and service description, which are updated.</p><p>The shipping guide API always has updated names and descriptions in Norwegian, Swedish, Danish and English.</p><p><li>displayName = The name of the delivery option to be displayed in the checkout.</li><li>shortName = Short version of the name of the delivery option. Used if there is little space.</li><li>descriptionText = Description of the delivery option in checkout.</li></p>"
@@ -46,8 +54,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_pickup_points.png",
-        "illustrationImageAlt": "Choose pickup points",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/choose_pickup_points.png",
+            "alt": "Choose pickup points"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>By offering 7-10 alternatives, your customers are able to choose the most convenient pickup point. According to Bring Research, customers are more likely to complete the purchase if presented with pickup points located nearby. </p><p>We therefore recommend displaying the pickup point’s address and distance from the customer’s address to each pickup location in meters/kilometers to make it easy for the customer to assess which pickup point is closest to them.</p><p>Flexibility is important, and we therefore recommend that you display opening hours and include parcel lockers among your pickup points.</p>"
@@ -61,8 +73,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.png",
-        "illustrationImageAlt": "Display estimated time of delivery",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/show_estimated_time_of_delivery.png",
+            "alt": "Display estimated time of delivery"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>According to Bring Research, customers desire precise information about lead time related to different delivery options. And the more precise, the better it is.</p>",
@@ -73,29 +89,17 @@
         "h3": "5. Flexible delivery",
         "figures": [
           {
-            "imageUrl": "/images/checkout/bring/logo_car.png",
-            "imageClass": "maxw8r"
-          },
-          {
-            "imageUrl": "/images/checkout/posten/logo_car.png",
+            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/flexible_delivery.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/flexible_delivery.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
-        "downloadLinks": [
-          {
-            "href": "/images/checkout/bring/Bring_logo.svg",
-            "linkText": "Bring logo",
-            "name": "bring_logo"
-          },
-          {
-            "href": "/images/checkout/posten/Posten_logo.svg",
-            "linkText": "Posten logo",
-            "name": "posten_logo"
-          }
-        ],
         "paragraphs": [
           "<p>Make the delivery more flexible for your customers by offering various value-added services.</p><p>For example:\nAlternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</p>"
         ]
@@ -112,8 +116,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/bring_service.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
@@ -139,8 +147,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/show_environmental_info.png",
-        "illustrationImageAlt": "Service with environmental friendly logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/show_environmental_info.png",
+            "alt": "Service with environmental friendly logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your customers make more sustainable choices.</p>"
@@ -165,8 +177,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/delivery_address.png",
-        "illustrationImageAlt": "Delivery address input fields",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/delivery_address.png",
+            "alt": "Delivery address input fields"
+          }
+        ],
         "tags": ["Address API", "Pickup Point API"],
         "paragraphs": [
           "<p>Ved at lade dine kunder udfylde både postnummer og adresse, vil de blive præsenteret for de relevante leveringsmuligheder og udleveringssteder.</p>"
@@ -180,8 +196,12 @@
             "imageClass": "maxw10r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_service.png",
-        "illustrationImageAlt": "Choose service by service name",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/choose_service.png",
+            "alt": "Choose service by service name"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Præsenter leveringsmuligheder på en måde så dine kunder altid ved hvad de kan forvente. Brug derfor Posten Brings opdateret tjenestenavne og -beskrivelser.</p><p>Shipping guide API'et retuner altid opdateret navne og beskrivelser på norsk, svensk, dansk og engelsk.nText = Beskrivelse af leveringsmuligheden i checkouten.</p><p><li>displayName = Navnet på leveringsmuligheden som skal vises i checkouten</li><li>shortName = en forkortet version af displayName. Bør bruges hvis der er lidt plads at vise navne på.</li><li>descriptionText = Beskrivelse af leveringsmuligheden i checkouten.</li></p>"
@@ -195,8 +215,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/choose_pickup_points.png",
-        "illustrationImageAlt": "Choose pickup points",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/choose_pickup_points.png",
+            "alt": "Choose pickup points"
+          }
+        ],
         "tags": ["Pickup Point API"],
         "paragraphs": [
           "<p>Ved at tilbyde 7-10 muligheder kan dine kunder vælge det udleveringssted de ønsker.</p><p>Ifølge Bring Research er kunder mere tilbøjelige til at foretage et køb hvis der er et udleveringssted tæt på.</p><p>Derfor anbefaler vi at man viser udleveringsstedets adresse og afstand fra kundens adresse til udleveringsstedet i meter/kilometer, for at gøre det nemt for dem at vurdere hvilket pickup der nærmest dem.</p><p>Fleksibilitet er vigtigt for modtageren og derfor anbefaler vi at du viser åbningstider og inkluderer pakkebokse når du viser udleveringssteder i din checkout.</p>"
@@ -210,8 +234,12 @@
             "imageClass": "w6r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/show_estimated_time_of_delivery.png",
-        "illustrationImageAlt": "Display estimated time of delivery",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/show_estimated_time_of_delivery.png",
+            "alt": "Display estimated time of delivery"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>I følge Brings undersøgelser, ønsker kunder præcis information omkring den forventet leveringstid, i forhold til forskellige leveringsmuligheder. Jo mere præcist, desto bedre.</p>",
@@ -222,29 +250,17 @@
         "h3": "5. Fleksible levering",
         "figures": [
           {
-            "imageUrl": "/images/checkout/bring/logo_car.png",
-            "imageClass": "maxw8r"
-          },
-          {
-            "imageUrl": "/images/checkout/posten/logo_car.png",
+            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/flexible_delivery.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/flexible_delivery.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
-        "downloadLinks": [
-          {
-            "href": "/images/checkout/bring/Bring_logo.svg",
-            "linkText": "Bring logo",
-            "name": "bring_logo"
-          },
-          {
-            "href": "/images/checkout/posten/Posten_logo.svg",
-            "linkText": "Posten logo",
-            "name": "posten_logo"
-          }
-        ],
         "paragraphs": [
           "<p>Giv dine kunder mulighed for en mere fleksible levering ved at tilbyde forskellige services, </p><p>For eksempel:\nAlternative leveringsdage for Urban Home Delivery/Hjemmelevering til døren. Lad kunden vælge deres foretrukne dato.</p>"
         ]
@@ -261,8 +277,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/bring_service.png",
-        "illustrationImageAlt": "Service with posten logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/bring_service.png",
+            "alt": "Service with posten logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "downloadLinks": [
           {
@@ -288,8 +308,12 @@
             "imageClass": "maxw8r"
           }
         ],
-        "illustrationImageUrl": "/images/checkout/bring/da/show_environmental_info.png",
-        "illustrationImageAlt": "Service with environmental friendly logo",
+        "illustrationImages": [
+          {
+            "url": "/images/checkout/bring/da/show_environmental_info.png",
+            "alt": "Service with environmental friendly logo"
+          }
+        ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
           "<p>Ved at bruge vores miljøtekst og vores miljøikon kan du allerede ved checkouten vise kunderne, om deres pakke bliver leveret med elbil. Dette giver dine kunder mulighed for at træffe mere bæredygtige valg.</p>"

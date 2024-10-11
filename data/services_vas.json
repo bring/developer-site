@@ -1459,7 +1459,7 @@
 }, {
   "vasName" : "Optional pickup point (domestic Norway)",
   "vasNameNorwegian" : "Valgfritt hentested (Norge)",
-  "description" : "Select the pickup point chosen by the recipient in the webshop.  When you want to offer the recipient to choose in which post office, Post in Shop or other type of pickup point to pick up the parcel. The pickup point is chosen by the recipient when ordering in the webshop. This additional service is free of charge. For services 4850 and 5000, pickup point type 37 (locker/pakkeboks) cannot be requested.",
+  "description" : "Select the pickup point chosen by the recipient in the webshop.  When you want to offer the recipient to choose in which post office, Post in Shop or other type of pickup point to pick up the parcel. The pickup point is chosen by the recipient when ordering in the webshop. This additional service is free of charge. For service 4850, pickup point type 37 (locker/pakkeboks) cannot be requested.",
   "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
   "shippingGuideNpbCode" : "1036",
   "bookingCode" : "SELECT_PICKUP_POINT",
