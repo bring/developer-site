@@ -486,36 +486,6 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
-  }, {
-    "serviceName" : "Business Pallet",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_PALLET",
-    "productionCode" : "0336",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
-  }, {
-    "serviceName" : "Business Pallet (1/2 pallet)",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_HALFPALLET",
-    "productionCode" : "0336",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
-  }, {
-    "serviceName" : "Business Pallet (1/4 pallet)",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_QUARTERPALLET",
-    "productionCode" : "0336",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2900,6 +2870,76 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Business Parcel",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PARCEL",
+    "productionCode" : "0330",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Business Pallet",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PALLET",
+    "productionCode" : "0336",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Business Pallet (1/2 pallet)",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_HALFPALLET",
+    "productionCode" : "0336",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Business Pallet (1/4 pallet)",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_QUARTERPALLET",
+    "productionCode" : "0336",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "SE, DK, FI"
+  }, {
+    "serviceName" : "Business Parcel Bulk",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PARCEL_BULK",
+    "productionCode" : "0332",
+    "domesticAllowedIn" : "SE, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Express Nordic 09:00",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "EXPRESS_NORDIC_0900",
+    "productionCode" : "0335",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Express Nordic 09:00 Bulk",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
+    "productionCode" : "0334",
+    "domesticAllowedIn" : "-",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
