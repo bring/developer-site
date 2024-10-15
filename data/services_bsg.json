@@ -987,6 +987,25 @@
   "Destination" : "-",
   "DomesticAllowed" : "NO"
 }, {
+  "ServiceFamily" : "Supply base logistics",
+  "CustomerNumberType" : "Supply Base Logistics",
+  "ServiceName" : "Project Logistics",
+  "ServiceIcon" : "serviceicon-oil",
+  "ServiceCode" : "3050",
+  "RequestCode" : "PROJECT_LOGISTICS",
+  "Type" : "B2B",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "-",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "-",
+  "AgreementPrice" : "-",
+  "LeadTime" : "Yes",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "ALL",
+  "Destination" : "ALL",
+  "DomesticAllowed" : "NO, SE, DK, FI"
+}, {
   "ServiceFamily" : "Mail",
   "CustomerNumberType" : "",
   "ServiceName" : "Mail",
@@ -1022,6 +1041,25 @@
   "LeadTime" : "-",
   "EnvironmentalData" : "-",
   "SenderCountries" : "NO",
-  "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, LT, LU, LV, NL, PL, SI, SK",
+  "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, IT, LT, LU, LV, NL, PL, SI, SK",
+  "DomesticAllowed" : "-"
+}, {
+  "ServiceFamily" : "Mail",
+  "CustomerNumberType" : "",
+  "ServiceName" : "Letter Packet",
+  "ServiceIcon" : "serviceicon-mail-tracking",
+  "ServiceCode" : "3639",
+  "RequestCode" : "3639",
+  "Type" : "B2X",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "-",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "Yes",
+  "AgreementPrice" : "-",
+  "LeadTime" : "-",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "NO",
+  "Destination" : "NO, SE, DK, FI, AD, AE, AG, AI, AL, AM, AN, AO, AQ, AR, AS, AT, AU, AW, AX, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BQ, BR, BS, BV, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CU, CV, CW, CX, CY, CZ, DE, DJ, DM, DO, DZ, EC, EE, EG, EH, ER, ES, ET, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GF, GG, GH, GI, GL, GM, GN, GP, GQ, GR, GS, GT, GU, GW, GY, HK, HM, HN, HR, HT, HU, ID, IE, IM, IN, IO, IQ, IR, IS, IT, JE, JM, JO, JP, KE, KG, KH, KI, KM, KN, KP, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, MA, MC, MD, ME, MF, MG, MH, MK, ML, MM, MN, MO, MP, MQ, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NF, NG, NI, NL, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PN, PR, PS, PT, PW, PY, QA, RE, RO, RS, RU, RW, SA, SB, SC, SG, SH, SI, SJ, SK, SL, SM, SN, SO, SR, ST, SV, SX, SZ, TC, TD, TF, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, TW, TZ, UA, UG, UM, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, XK, YT, ZA, ZM, ZW",
   "DomesticAllowed" : "-"
 } ]
