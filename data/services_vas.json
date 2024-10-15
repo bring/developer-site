@@ -231,7 +231,7 @@
   "shippingGuideCode" : "FLEXDELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "FLEX_DELIVERY",
-  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery" ],
+  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Agreed delivery", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Telephone notification" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -459,54 +459,14 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Telephone notification",
+  "vasName" : "Agreed delivery",
   "vasNameNorwegian" : "Advisering",
-  "description" : "Telephone notification entails that we against a surcharge agree on time of delivery with the recipient in advance. This additional service must always be booked if the recipient stays at a private or unattended address. Otherwise optionally available.  We contact the recipient the day before delivery to agree on the delivery time, and the driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.",
+  "description" : "Agreed delivery entails that we against a surcharge agree on time of delivery with the recipient in advance. This additional service must always be booked if the recipient stays at a private or unattended address. Otherwise optionally available.  We contact the recipient the day before delivery to agree on the delivery time, and the driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.",
   "shippingGuideCode" : "PHONENOTIFICATION",
   "shippingGuideNpbCode" : "1142",
   "bookingCode" : "PHONENOTIFICATION",
   "incompatibleVases" : [ "Flex delivery", "Simplified delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Business Parcel",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_PARCEL",
-    "productionCode" : "0330",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "NO, SE, DK, FI",
-    "destinations" : "SE"
-  }, {
-    "serviceName" : "Business Parcel Bulk",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_PARCEL_BULK",
-    "productionCode" : "0332",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
-  }, {
-    "serviceName" : "Express Nordic 09:00",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "EXPRESS_NORDIC_0900",
-    "productionCode" : "0335",
-    "domesticAllowedIn" : "SE",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Express Nordic 09:00 Bulk",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
-    "productionCode" : "0334",
-    "domesticAllowedIn" : "-",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
-  }, {
     "serviceName" : "Business groupage",
     "serviceType" : "B2B",
     "serviceFamily" : "Cargo Norway domestic",
@@ -526,36 +486,6 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
-  }, {
-    "serviceName" : "Business Pallet",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_PALLET",
-    "productionCode" : "0336",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
-  }, {
-    "serviceName" : "Business Pallet (1/2 pallet)",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_HALFPALLET",
-    "productionCode" : "0336",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
-  }, {
-    "serviceName" : "Business Pallet (1/4 pallet)",
-    "serviceType" : "B2B",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "BUSINESS_QUARTERPALLET",
-    "productionCode" : "0336",
-    "domesticAllowedIn" : "SE, FI",
-    "senderCountries" : "ALL",
-    "destinations" : "SE"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -599,7 +529,7 @@
   "shippingGuideCode" : "SIMPLIFIED_DELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Telephone notification", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Driver notifies consignee", "Signature required" ],
+  "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required" ],
   "supportedServices" : [ {
     "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
@@ -2893,13 +2823,13 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : false
 }, {
-  "vasName" : "Driver notifies consignee",
+  "vasName" : "Telephone notification",
   "vasNameNorwegian" : "Sjåfør ringer",
   "description" : "The driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.  ",
   "shippingGuideCode" : "1149",
   "shippingGuideNpbCode" : "1149",
   "bookingCode" : "1149",
-  "incompatibleVases" : [ "Simplified delivery" ],
+  "incompatibleVases" : [ "Simplified delivery", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business parcel",
     "serviceType" : "B2B",
@@ -2940,6 +2870,76 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Business Parcel",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PARCEL",
+    "productionCode" : "0330",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "NO, SE, DK, FI",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Business Pallet",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PALLET",
+    "productionCode" : "0336",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Business Pallet (1/2 pallet)",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_HALFPALLET",
+    "productionCode" : "0336",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Business Pallet (1/4 pallet)",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_QUARTERPALLET",
+    "productionCode" : "0336",
+    "domesticAllowedIn" : "SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "SE, DK, FI"
+  }, {
+    "serviceName" : "Business Parcel Bulk",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "BUSINESS_PARCEL_BULK",
+    "productionCode" : "0332",
+    "domesticAllowedIn" : "SE, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Express Nordic 09:00",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "EXPRESS_NORDIC_0900",
+    "productionCode" : "0335",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Express Nordic 09:00 Bulk",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "EXPRESS_NORDIC_0900_BULK",
+    "productionCode" : "0334",
+    "domesticAllowedIn" : "-",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
