@@ -3,9 +3,9 @@ title: Versioning
 layout: api-sub
 menu:
   apidocs:
-    identifier: bookingversioning
+    identifier: pickupversioning
     title: Versioning
-    parent: booking
+    parent: pickup
 weight: 1
 ---
 

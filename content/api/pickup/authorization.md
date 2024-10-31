@@ -3,9 +3,9 @@ title: Authorization
 layout: api-sub
 menu:
   apidocs:
-    identifier: bookingauthorization
+    identifier: pickupauthorization
     title: Authorization
-    parent: booking
+    parent: pickup
 weight: 2
 ---
 

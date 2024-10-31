@@ -29,5 +29,8 @@ information:
       REST XML/JSON over HTTP.
       Pickup endpoints will assume all requests are UTF-8 encoded.
 
+subpages:
+  title: Special topics
+
 oas: https://api.bring.com/pickup/api-docs
 ---
