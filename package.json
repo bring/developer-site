@@ -34,28 +34,28 @@
   "homepage": "https://developer.bring.com",
   "devDependencies": {
     "@preact/preset-vite": "^2.9.1",
-    "@vitejs/plugin-legacy": "^5.4.2",
+    "@vitejs/plugin-legacy": "^5.4.3",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.0.1",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
-    "hugo-bin": "^0.132.0",
+    "hugo-bin": "^0.133.5",
     "postcss": "^8.4.47",
     "postcss-import": "^16.1.0",
-    "postcss-nesting": "^13.0.0",
+    "postcss-nesting": "^13.0.1",
     "raml-1-parser": "^1.1.67",
     "rimraf": "^6.0.1",
-    "terser": "^5.34.1",
-    "vite": "^5.4.8"
+    "terser": "^5.36.0",
+    "vite": "^5.4.10"
   },
   "browserslist": [
     "> .2%",
     "not ie > 0"
   ],
   "dependencies": {
-    "@algolia/autocomplete-js": "^1.17.4",
-    "algoliasearch": "^5.8.1",
+    "@algolia/autocomplete-js": "^1.17.6",
+    "algoliasearch": "^5.12.0",
     "anchor-js": "^5.0.0",
     "preact": "^10.24.3"
   }
