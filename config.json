@@ -1,13 +1,11 @@
 {
   "baseURL": "https://developer.bring.com",
   "disqusShortname": "bringdev",
-  "ignorefiles": [
-    "css/main.js"
-  ],
+  "ignorefiles": ["css/main.js"],
   "languageCode": "en-us",
   "defaultContentLanguage": "en",
   "languages": {
-    "en":{
+    "en": {
       "staticDir": ["static"],
       "languageName": "English"
     },
@@ -45,7 +43,9 @@
       }
     }
   },
-  "paginate": 12,
+  "pagination": {
+    "pagerSize": 12
+  },
   "pluralizelisttitles": false,
   "publishDir": "_site",
   "pygmentsUseClasses": true,
@@ -139,11 +139,7 @@
     }
   },
   "outputs": {
-    "home": [
-      "HTML",
-      "RSS",
-      "Algolia"
-    ]
+    "home": ["HTML", "RSS", "Algolia"]
   },
   "params": {
     "apis": [
@@ -174,13 +170,8 @@
       "nil"
     ],
     "Algolia": {
-      "params": [
-        "excerpt"
-      ],
-      "vars": [
-        "title",
-        "menu"
-      ]
+      "params": ["excerpt"],
+      "vars": ["title", "menu"]
     }
   },
   "taxonomies": {
