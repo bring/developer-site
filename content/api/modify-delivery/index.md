@@ -139,14 +139,14 @@ documentation:
              <td>Business parcel</td>
              <td>0330</td>
              <td>Yes</td>
-             <td>Yes</td>
+             <td>No</td>
              <td>Yes</td>
           </tr>
           <tr>
              <td>Business parcel bulk</td>
              <td>0332</td>
              <td>Yes</td>
-             <td>Yes</td>
+             <td>No</td>
              <td>Yes</td>
           </tr>
           <tr>
