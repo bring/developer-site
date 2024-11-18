@@ -27,7 +27,7 @@ toggleAllArr.forEach((toggleAllBtn) => {
       expand = toggleType === 'collapse' ? 'true' : 'false'
 
     toggleBtnArr.forEach((toggleBtn) => {
-    toggleBtn.getAttribute('aria-expanded') === expand && toggleBtn.click()
+      toggleBtn.getAttribute('aria-expanded') === expand && toggleBtn.click()
     })
   })
 })
