@@ -3,9 +3,9 @@ const paramToggleBtn = document.querySelectorAll(".param-toggle-btn")
 
 paramToggleBtn.forEach((btn) => {
   btn.addEventListener("click", function () {
-    const paramToggleBtnId = this.getAttribute('aria-controls')
-    const paramSubLevel = document.getElementById(paramToggleBtnId)
-    const paramToggleIcon = this.querySelector(".param-toggle-icon")
+    const paramToggleBtnId = this.getAttribute('aria-controls'),
+      paramSubLevel = document.getElementById(paramToggleBtnId),
+      paramToggleIcon = this.querySelector(".param-toggle-icon")
     let paramToggleBtnState = this.getAttribute('aria-expanded')
     paramToggleBtnState = paramToggleBtnState === 'true' ? false : true
 
@@ -23,17 +23,11 @@ toggleAllArr.forEach((toggleAllBtn) => {
     const toggleType = toggleAllBtn.dataset.toggleAll,
       closestDiv = toggleAllBtn.closest('div'),
       closestSchema = closestDiv.nextElementSibling,
-      toggleBtnArr = closestSchema.querySelectorAll('.param-toggle-btn')
-
-    let expand = 'false'
-    if (toggleType === 'collapse') {
-      expand = 'true'
-    }
+      toggleBtnArr = closestSchema.querySelectorAll('.param-toggle-btn'),
+      expand = toggleType === 'collapse' ? 'true' : 'false'
 
     toggleBtnArr.forEach((toggleBtn) => {
-      if (toggleBtn.getAttribute('aria-expanded') === expand) {
-        toggleBtn.click()
-      }
+    toggleBtn.getAttribute('aria-expanded') === expand && toggleBtn.click()
     })
   })
 })
@@ -44,39 +38,31 @@ function showSelectedSchema(ofElement) {
     closest = ofElement.closest("dd"),
     ofArr = Array.from(closest.children)
 
-  ofElement.setAttribute("checked", "")
   ofArr.forEach((ofChild) => {
     if (ofChild.tagName === "DL") {
-      ofChild.classList.add("dn")
-      if (ofChild.dataset.ofOne === elementVal) {
-        ofChild.classList.remove("dn")
-      }
+      ofChild.dataset.ofOne !== elementVal
+        ? ofChild.classList.add("dn")
+        : ofChild.classList.remove("dn")
     }
   })
 }
 
-const oneOfRadioArr = document.querySelectorAll("input[data-one-of]")
-oneOfRadioArr.forEach((radio) => {
-  radio.addEventListener("change", function () {
-    showSelectedSchema(radio)
+const oneOfElements = document.querySelectorAll("[data-one-of]")
+oneOfElements.forEach((ofElement) => {
+  ofElement.addEventListener("change", function () {
+    showSelectedSchema(ofElement)
   })
-})
-
-const allOfSelectArr = document.querySelectorAll("select[data-one-of]")
-allOfSelectArr.forEach((select) => {
-  select.addEventListener("change", function () {
-    showSelectedSchema(select)
-  })
+  // set oneOf/allOf selections on reload/backward/forward navigation
+  ofElement.type === 'radio' && ofElement.checked && showSelectedSchema(ofElement)
+  ofElement.type === 'select-one' && showSelectedSchema(select)
 })
 
 // Examples
 function switchExample(containerArr, dataAtt, id) {
   containerArr.forEach((container) => {
-    if (container.dataset[dataAtt] === id) {
-      container.hidden = false
-    } else {
-      container.hidden = true
-    }
+    container.dataset[dataAtt] === id
+      ? container.hidden = false
+      : container.hidden = true
   })
 }
 
@@ -90,12 +76,15 @@ responseExBtns.forEach((btn) => {
       return
     }
 
-    const resIdBtn = element.dataset.example
-    const endpointId = element.name
-    const responseSection = document.getElementById(endpointId)
-    const exampleContainers = responseSection.querySelectorAll("div[data-example]")
-    const activeBtn = document.querySelector('button[name="' + endpointId + '"][aria-selected="true"]')
-    activeBtn.setAttribute("aria-selected", false)
+    for (let i = 0; i < responseExBtns.length; i++) {
+      responseExBtns[i].setAttribute("aria-selected", false)
+    }
+
+    const resIdBtn = element.dataset.example,
+      endpointId = element.name,
+      responseSection = document.getElementById(endpointId),
+      exampleContainers = responseSection.querySelectorAll("div[data-example]")
+
     element.setAttribute("aria-selected", true)
 
     switchExample(exampleContainers, "example", resIdBtn)
@@ -108,7 +97,7 @@ const dataTypes = document.querySelectorAll('[data-type]')
 
 const setSelectFormat = (e) => {
   const storedFormat = localStorage.getItem("dataFormat")
-  let format = e.value;
+  let format = e.value
 
   formatSelects.forEach((f) => {
     for(let i = 0; i < f.options.length; i++) {
@@ -176,10 +165,10 @@ const exampleSelects = document.querySelectorAll(
 )
 exampleSelects.forEach((select) => {
   select.addEventListener("change", function (e) {
-    const element = e.target
-    const exId = element.value
-    const responseSection = element.closest("div[data-example]")
-    const exampleSubContainers = responseSection.querySelectorAll("div[data-example-sub]")
+    const element = e.target,
+      exId = element.value,
+      responseSection = element.closest("div[data-example]"),
+      exampleSubContainers = responseSection.querySelectorAll("div[data-example-sub]")
 
     switchExample(exampleSubContainers, "exampleSub", exId)
   })
@@ -195,35 +184,18 @@ if('clipboard' in navigator) {
     })
 
     function copyCode() {
-      const copyBtn = this
-      const exampleParent = copyBtn.parentNode
-      const example = exampleParent.querySelector('code').innerText
+      const copyBtn = this,
+        exampleParent = copyBtn.parentNode,
+        example = exampleParent.querySelector('code').innerText
 
       navigator.clipboard.writeText(example)
       .then(setCopiedBtnText)
 
       function setCopiedBtnText() {
-        copyBtn.querySelector('.copy-btn-label').innerText = "Copied"
-        setTimeout(resetCopyBtnText,3000)
-      }
-
-      function resetCopyBtnText() {
-        copyBtn.querySelector('.copy-btn-label').innerText = "Copy"
+        const copyBtnLabel = copyBtn.querySelector('.copy-btn-label')
+        copyBtnLabel.innerText = "Copied"
+        setTimeout(() => copyBtnLabel.innerText = "Copy",3000)
       }
     }
   }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  // set oneOf/allOf selections on reload/backward/forward navigation
-  oneOfRadioArr.forEach((radio) => {
-    if (radio.checked) {
-      showSelectedSchema(radio)
-    } else {
-      radio.removeAttribute("checked")
-    }
-  })
-  allOfSelectArr.forEach((select) => {
-    showSelectedSchema(select)
-  })
-})
