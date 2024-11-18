@@ -54,7 +54,7 @@ oneOfElements.forEach((ofElement) => {
   })
   // set oneOf/allOf selections on reload/backward/forward navigation
   ofElement.type === 'radio' && ofElement.checked && showSelectedSchema(ofElement)
-  ofElement.type === 'select-one' && showSelectedSchema(select)
+  ofElement.type === 'select-one' && showSelectedSchema(ofElement)
 })
 
 // Examples
