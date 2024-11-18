@@ -76,15 +76,13 @@ responseExBtns.forEach((btn) => {
       return
     }
 
-    for (let i = 0; i < responseExBtns.length; i++) {
-      responseExBtns[i].setAttribute("aria-selected", false)
-    }
-
     const resIdBtn = element.dataset.example,
       endpointId = element.name,
       responseSection = document.getElementById(endpointId),
-      exampleContainers = responseSection.querySelectorAll("div[data-example]")
+      exampleContainers = responseSection.querySelectorAll("div[data-example]"),
+      activeBtn = document.querySelector('button[name="' + endpointId + '"][aria-selected="true"]')
 
+    activeBtn.setAttribute("aria-selected", false)
     element.setAttribute("aria-selected", true)
 
     switchExample(exampleContainers, "example", resIdBtn)
