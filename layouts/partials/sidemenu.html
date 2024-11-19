@@ -20,13 +20,11 @@
             {{- $lastElement = "mbm" -}}
           {{- end -}}
 
-          {{- $hidePage := false -}}
           {{- $url := .URL -}}
           {{- with .Page -}}
             {{/*  Semi-hacky way to prevent category from linking to untranslated category page  */}}
             {{- $categoryCheckUrl := strings.TrimLeft "/no" .RelPermalink -}}
             {{- $categoryCheckUrl = strings.TrimRight "/" $categoryCheckUrl -}}
-            {{- $hidePage = .Params.hidden -}}
             {{- if and (gt (len .Translations) 0) (ne $categoryCheckUrl $.Section) -}}
               {{- range .Translations -}}
                 {{- if eq (string .Language) (string $currentLanguage) -}}
@@ -35,7 +33,6 @@
               {{- end -}}
             {{- end -}}
           {{- end -}}
-          {{- if (ne $hidePage true) -}}
             <li
               class="{{ if (or ($currentPage.IsMenuCurrent .Menu .) ( and ($currentPage.HasMenuCurrent .Menu .) ( .HasChildren ))) }}active{{ end }} {{ $lastElement }}"
             >
@@ -110,7 +107,6 @@
                 {{- partial "toc.html" (dict "context" $currentPage "numberOfHeadings" "3" ) -}}
               {{- end -}}
             </li>
-          {{- end -}}
         {{- end -}}
       </ul>
     </nav>
@@ -123,18 +119,12 @@
               <span class="dev-sidemenu__title">{{ .Title }}</span>
               <ul>
                 {{ range .Children }}
-                  {{- $hidePage := false -}}
-                  {{- with .Page -}}
-                    {{- $hidePage = .Params.hidden -}}
-                  {{- end -}}
-                  {{- if or (eq $currentPage.Params.hidden true) (ne $hidePage true) -}}
-                    {{- if or (eq .Title "Order Management API") (eq .Title "Booking API") (eq .Title "Shipping Guide API") -}}
-                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
-                    {{- else if isset $.Params "oas" -}}
-                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
-                    {{- else -}}
-                      {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
-                    {{- end -}}
+                  {{- if or (eq .Title "Order Management API") (eq .Title "Booking API") (eq .Title "Shipping Guide API") -}}
+                    {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
+                  {{- else if isset $.Params "oas" -}}
+                    {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}
+                  {{- else -}}
+                    {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "apiData" $apiData) -}}
                   {{- end -}}
                 {{- end -}}
               </ul>

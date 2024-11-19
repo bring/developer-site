@@ -8,8 +8,6 @@ running, do the following:
 - Duplicate the file and name it `new.md`
 - Remove `disqus`, `menu` and `weight` objects. This will prevent conflicts with
   the currently published page.
-- Add `hidden: true` instead. This will hide the new page in the menu and from
-  search engines.
 - Commit and make PR – the new page will be available at `{current-url}/new`
 
 If you don’t need duplication, just add `oas: {url to json}` to the current
