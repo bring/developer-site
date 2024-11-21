@@ -379,7 +379,7 @@
 }, {
   "vasName" : "Delivery indoors",
   "vasNameNorwegian" : "Delivery indoors",
-  "description" : "The shipment is carried to a designated place behind the recipient´s door.  ",
+  "description" : "The shipment is delivered to a designated location inside the recipient's door. The maximum weight per package carried in (package or pallet that is split up) is 35kg.  In order for the delivery to be carried out, free and unobstructed access to the specified location is required, and for deliveries more than four (4) floors up, an elevator must be available. The customer is responsible for protecting delicate flooring prior to delivery. If the conditions are not met, delivery will be performed without carrying indoors. Any further delivery attempts (in case of unsuccessful delivery on the first attempt) will be carried out without carrying indoors.",
   "shippingGuideCode" : "DELIVERYINDOOR",
   "shippingGuideNpbCode" : "0039",
   "bookingCode" : "DELIVERY_INDOOR",
