@@ -58,8 +58,8 @@ ${isModal ? '<dialog class="mb-modal api-updates bg-green1">' : '<div class="api
                   </label>
               
                   <label class="form__check">
-                      <input id="Reports8265206" type="checkbox" name="1153580[]" value="Reports and invoices" >
-                      Reports and invoices
+                      <input id="Reports8265206" type="checkbox" name="1153580[]" value="Analytics" >
+                      Analytics
                   </label>
               
                   <label class="form__check">
