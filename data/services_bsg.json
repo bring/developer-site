@@ -1024,4 +1024,23 @@
   "SenderCountries" : "NO",
   "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, IT, LT, LU, LV, NL, PL, SI, SK",
   "DomesticAllowed" : "-"
+}, {
+  "ServiceFamily" : "Mail",
+  "CustomerNumberType" : "",
+  "ServiceName" : "Letter Packet",
+  "ServiceIcon" : "serviceicon-mail-tracking",
+  "ServiceCode" : "3639",
+  "RequestCode" : "3639",
+  "Type" : "B2X",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "-",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "Yes",
+  "AgreementPrice" : "-",
+  "LeadTime" : "-",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "NO",
+  "Destination" : "ALL COUNTRIES EXCEPT(NO, AF, BT, IL, LY, SS, SD, SY, YE)",
+  "DomesticAllowed" : "-"
 } ]
