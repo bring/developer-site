@@ -70,7 +70,7 @@ documentation:
              <td>1000</td>
              <td>Yes</td>
              <td>Yes</td>
-             <td>Yes</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>Bedriftspakke Ekspress over natten</td>
@@ -84,21 +84,21 @@ documentation:
              <td>1202</td>
              <td>Yes</td>
              <td>Yes</td>
-             <td>Yes</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>På døren</td>
              <td>1736</td>
              <td>Yes</td>
              <td>Yes</td>
-             <td>Yes</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>Bedriftspakke flerkolli</td>
              <td>1988</td>
              <td>Yes</td>
              <td>Yes</td>
-             <td>Yes</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>Bedriftspakke standard</td>
