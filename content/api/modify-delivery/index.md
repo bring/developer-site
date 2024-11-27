@@ -133,7 +133,14 @@ documentation:
              <td>5800</td>
              <td>Yes</td>
              <td>Yes</td>
+             <td>Yes</td>
+          </tr>
+          <tr>
+             <td>Parcel Locker</td>
+             <td>5801</td>
+             <td>Yes</td>
              <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Business parcel</td>
@@ -161,14 +168,14 @@ documentation:
              <td>0340</td>
              <td>Yes</td>
              <td>No</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Pickup parcel bulk</td>
              <td>0342</td>
              <td>Yes</td>
              <td>No</td>
-             <td>No</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Home delivery parcel</td>
