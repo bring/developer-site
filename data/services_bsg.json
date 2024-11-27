@@ -1041,6 +1041,6 @@
   "LeadTime" : "-",
   "EnvironmentalData" : "-",
   "SenderCountries" : "NO",
-  "Destination" : "ALL_COUNTRIES EXCEPT(NO, AF, BT, IL, LY, SS, SD, SY, YE)",
+  "Destination" : "ALL COUNTRIES EXCEPT(NO, AF, BT, IL, LY, SS, SD, SY, YE)",
   "DomesticAllowed" : "-"
 } ]
