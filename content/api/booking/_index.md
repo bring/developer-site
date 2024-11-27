@@ -26,7 +26,7 @@ information:
 
   - title: Formats
     content: |
-      REST XML/JSON over HTTP.
+      REST JSON over HTTP is recommended for all new integrations. While we currently also support XML, this is very likely to be phased out in the future.
       Booking endpoints will assume all requests are UTF-8 encoded.
 
 subpages:
