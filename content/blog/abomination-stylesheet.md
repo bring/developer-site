@@ -9,18 +9,26 @@ authors:
     - Igor-J86
 ---
 
-## What is "abomination"?
-Once in a while you come across some words or phrases that you haven‘t heard before. The term "abomination" was totally strange to me, and after looking it up, it was surprising that the meaning of it is:
+The different browsers today are pretty forgiving when it comes to HTML markup and CSS. They have become good at rendering the markup, even if it‘s invalid HTML markup, causing the HTML validity to fail. While we should always strive to write valid HTML markup, mistakes do happen, and luckily the browsers do a pretty good job at rendering the code without breaking the layout completely. But, we still have invalid HTML markup, and our goal was to address these issues by making a low-level HTML markup quality assurance tool.
+
+The intention of such a tool is that we suddenly have continuous live testing tool for markup code across different teams / applications, with no need of additional dependencies. It can be included in the `<head>` of the project as a standalone stylesheet, based on the environment we want it to appear in, or import it into an existing CSS.
+
+## Abomination
+The term *abomination* was totally strange to me, and after looking it up, it was surprising that the meaning of it is:
 
 ***Something that you dislike, disapprove, or something that is regarded with disgust.***
 
-Huh... Should the thing we create show something that is disliked, disapproved or disgusting? Why?
-The people we work with are good and smart developers, so why should we create something that can be destructive to other developer‘s UI implementations?
+Huh... Should the thing we create show something that is disliked, disapproved or disgusting?
+Why should we create something that can be destructive to the UI implementations we have?
 
-It all became clear when I realised that the intention of such a thing is not to destroy or make things uglier, but rather making certain elements in the UI "stand out" in some way, signaling that there‘s an issue there.
+It all became clear when I realised that the intention of such a thing is not to destroy or make things uglier, but rather making certain elements in the UI *stand out* in some way, signaling that there‘s an issue there.
 
-### What is it?
-It is just vanilla CSS, where we utilise the power of CSS wildcards, pseudo-class functions and nesting. Using these techniques we can make certain CSS definitions based on semantic HTML markup, and address the issues that arise with invalid HTML markup by making those elements "stand out" and become eye catching.
+## The power of CSS
+Over the last decade CSS has gotten pretty versatile, and the browser support for features that have been added some years ago is now great.
+We can now make use of all the nice features CSS offers, and utilise the power of CSS wildcards, pseudo-class functions and nesting. Using these techniques we can make very specific CSS selectors targeting the invalid HTML markup, and showing the issue by making those elements eye catching.
+
+## Invalid markup
+Some of the common mistakes we do are placing `<div>` element inside `<p>` elements, an `<a>` element inside a `<button>` element (or the other way around), and the one and only; making a `<label>` without the `for` attribute or not wrapping the `<input>` element.
 
 ```html
 <!-- ❌ DON‘T -->
@@ -52,10 +60,10 @@ It is just vanilla CSS, where we utilise the power of CSS wildcards, pseudo-clas
 <input type="text" placeholder="user@example.com">
 ```
 
-### How does it work?
-We can start by selecting the elements we want to target, where we have seen developers some times tend to write invalid HTML markup, either by mistake or trying to make something really clever. Some of the common mistakes that can be found around are `<div>` element inside `<p>`  elements, a `<button>` element containing an `<a>` element (or the other way around), and the one and only; `<label>` missing the `for` attribute or not wrapping the `<input>` element.
+## Making specific selectors
+We can start by selecting the elements we want to target, where we sometimes write invalid HTML markup, either by mistake or trying to make something really clever. By utilising the CSS functionalities and techniques we can mark those elements with an ugly, red outline.
 
-Here are just some examples of our approach targeting some of these issues, and marking them with an ugly, red outline:
+Here are just some examples of our approach targeting some of these issues:
 
 ```css
 p:has(div) div {
@@ -91,9 +99,10 @@ label:not([for],:has(input),:has(textarea),:has(select)) {
 }
 ```
 
-*We use `outline` instead of `border` since some elements already have borders applied, and we don‘t want to mess around with those.*
+*We use `outline` instead of `border` since some elements already have borders applied, and we don‘t want to mess around with those. The size of the element will also not be affected by using the `outline` like it is by using `border`.*
 
-Another nice thing that comes in handy then is a custom property we can set: `--note`
+## Inform
+It is maybe not enough to just make an element stand out, but we should also inform about what the issue is in some way. A nice thing that comes in handy then is a custom property we can set: `--note`
 
 This will show up in the developer tools (console) when you inspect the element that is suddenly surrounded by an ugly red outline, and can quickly identify what the fuzz is all about.
 
@@ -126,9 +135,7 @@ The whole CSS can be nested inside a wildcard selector. This will target all the
 */
 ```
 
-### How to use it?
-The intention of such a low-level HTML markup quality assurance tool is that we suddenly have continuous live testing tool for markup code across different teams / applications, with no need of additional dependencies. It can be included in the `<head>` of the project as a standalone stylesheet, based on the environment we want it to appear in, or import it into an existing CSS.
-
+## How we use it
 In Mybring, we are currently linking to the abomination stylesheet directly within the `<head>` tag, but based on the testing environments we have. We don‘t want this to be available in the production environment. 😅
 
 With such a tool, our main goal is that we can produce correct and valid HTML markup, that also results in writing less code, and where CSS and JS can be more direct and logically structured.
