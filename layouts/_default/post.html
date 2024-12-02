@@ -7,8 +7,11 @@
       <article>
         <header class="mbl">
           <h1 class="dev-blog__heading">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ .Title }}
           </h1>
+          {{ with .Params.excerpt }}
+            <p class="text-1.5r">{{ . }}</p>
+          {{ end }}
           {{ partial "blog-meta.html" . }}
         </header>
         <div class="dev-blog__content mbxl mb-docs">
