@@ -136,7 +136,7 @@ The whole CSS can be nested inside a wildcard selector. This will target all the
 ```
 
 ## How we use it
-In Mybring, we are currently linking to the abomination stylesheet directly within the `<head>` tag, but based on the testing environments we have. We don‘t want this to be available in the production environment. 😅
+In Mybring, we are currently linking to the abomination stylesheet within the `<head>` tag in our testing environments. We don‘t want this to be available in the production environment. 😅
 
 With such a tool, our main goal is that we can produce correct and valid HTML markup, that also results in writing less code, and where CSS and JS can be more direct and logically structured.
 
