@@ -11,7 +11,7 @@ authors:
 
 The different browsers today are pretty forgiving when it comes to HTML markup and CSS. They have become good at rendering the markup, even if it‘s invalid HTML markup and will cause HTML validation to fail. While we should always strive to write valid HTML markup, mistakes do happen, and luckily the browsers do a pretty good job at rendering the code without breaking the layout completely. But, we still have invalid HTML markup, and our goal was to address these issues by making a low-level HTML markup quality assurance tool with CSS.
 
-The intention of such a tool is that we suddenly have continuous live testing tool for markup code across different teams / applications, with no need of additional dependencies. It can be included in the `<head>` of the project as a standalone stylesheet, based on the environment we want it to appear in, or import it into an existing CSS.
+The intention of such a tool is to continuously live test markup code across different teams/applications, with no need of additional dependencies. It can be included in the `<head>` of the project as a standalone stylesheet, based on the environment we want it to appear in, or import it into an existing CSS.
 
 ## Abomination
 The term *abomination* was totally strange to me, and after looking it up, it was surprising that the meaning of it is:
