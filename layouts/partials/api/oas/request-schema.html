@@ -4,6 +4,7 @@
 {{- $contactParent := .contactParent -}}
 {{- $components := .components -}}
 {{- $required := .required -}}
+{{- $deprecated := .deprecated -}}
 {{- $endpointId := .endpointId -}}
 {{- $uniqueId := "" -}}
 {{- $recLevel := add .recLevel 1 -}}
@@ -32,7 +33,7 @@
     {{- $contactParent = $objName -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
+    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "deprecated" $deprecated "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
   {{- end -}}
 {{- end -}}
 
@@ -40,7 +41,7 @@
 {{- if and (eq $schemaObj.type "object") (lt $recLevel 3) (not (or $schemaObj.allOf $schemaObj.oneOf)) (not $isOf) -}}
   {{- with $schemaObj.properties -}}
     {{- range $key, $_ := . -}}
-      {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd) -}}
+      {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd) -}}
     {{- end -}}
   {{- end -}}
 
@@ -67,7 +68,7 @@
     {{- with $schemaObj.properties -}}
       <dl id="json-{{ $name | anchorize }}" class="pls {{ if ne $ofInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" {{ if in $isOf "one" }}aria-label="{{ $name }}"{{ end }}>
         {{- range $key, $_ := . -}}
-          {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+          {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
       </dl>
     {{- end -}}
@@ -91,7 +92,10 @@
             <code class="mls">{{ $name }}</code>
           {{- end -}}
           {{- if $required -}}
-            <div class="plm mls lh-solid param-required text-note">Required</div>
+            <div class="plm mls lh-solid param-state text-note">Required</div>
+          {{- end -}}
+          {{- if $deprecated -}}
+            <div class="plm mls lh-solid param-state text-note">Deprecated</div>
           {{- end -}}
         </dt>
         <dd class="ptxs pls">
@@ -108,7 +112,7 @@
         <dd class="schema__sublist {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel "objName" $objName "contactParent" $contactParent) -}}
+              {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "objName" $objName "contactParent" $contactParent) -}}
             {{- end -}}
           </dl>
         </dd>
@@ -124,7 +128,7 @@
                   {{- range . -}}
                     {{- $schemaPath := path.Split . -}}
                     {{- $schema := index $components.schemas $schemaPath.File -}}
-                    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "radio" "parent" $name "ofInd" $ofInd) -}}
+                    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "radio" "parent" $name "ofInd" $ofInd) -}}
                   {{- end -}}
                   {{- $ofInd = add $ofInd 1 -}}
                 {{- end -}}
@@ -136,7 +140,7 @@
             {{- range . -}}
               {{- $schemaPath := path.Split . -}}
               {{- $schema := index $components.schemas $schemaPath.File -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
+              {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
               {{- $ofInd = add $ofInd 1 -}}
             {{- end -}}
           {{- end -}}
@@ -153,7 +157,7 @@
                 {{- range . -}}
                   {{- $schemaPath := path.Split . -}}
                   {{- $schema := index $components.schemas $schemaPath.File -}}
-                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "select" "parent" $name "ofInd" $ofInd) -}}
+                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "select" "parent" $name "ofInd" $ofInd) -}}
                 {{- end -}}
                 {{- $ofInd = add $ofInd 1 -}}
               {{- end -}}
@@ -164,7 +168,7 @@
             {{- range . -}}
               {{- $schemaPath := path.Split . -}}
               {{- $schema := index $components.schemas $schemaPath.File -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
+              {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
               {{- $ofInd = add $ofInd 1 -}}
             {{- end -}}
           {{- end -}}
@@ -214,7 +218,10 @@
           <code class="mls">{{ $name }}</code>
         {{- end -}}
         {{- if $required -}}
-          <div class="mls lh-solid param-required text-note">Required</div>
+          <div class="mls lh-solid param-state text-note">Required</div>
+        {{- end -}}
+        {{- if $deprecated -}}
+          <div class="mls lh-solid param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="ptxs pls">
@@ -305,7 +312,10 @@
       <dt>
         <code>{{ $name }}</code>
         {{- if $required -}}
-          <div class="lh-tight param-required text-note">Required</div>
+          <div class="lh-tight param-state text-note">Required</div>
+        {{- end -}}
+        {{- if $deprecated -}}
+          <div class="lh-tight param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="pls">

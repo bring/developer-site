@@ -3,6 +3,7 @@
 {{- $components := .components -}}
 {{- $responseCode := .responseCode -}}
 {{- $required := .required -}}
+{{- $deprecated := .deprecated -}}
 {{- $endpointId := .endpointId -}}
 {{- $uniqueId := "" -}}
 {{- $recLevel := add .recLevel 1 -}}
@@ -26,7 +27,7 @@
     {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" $oneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "deprecated" $deprecated "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" $oneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
   {{- end -}}
 {{- end -}}
 
@@ -34,7 +35,7 @@
 {{- if and (eq $schemaObj.type "object") (lt $recLevel 3) -}}
   {{- with $schemaObj.properties -}}
     {{- range $key, $_ := . -}}
-      {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" $oneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+      {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" $oneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
     {{- end -}}
   {{- end -}}
 
@@ -48,7 +49,7 @@
               {{- range . -}}
                 {{- $schemaPath := path.Split . -}}
                 {{- $schema := index $components.schemas $schemaPath.File -}}
-                {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
+                {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
               {{ end }}
               {{- $oneOfInd = add $oneOfInd 1 -}}
             {{- end -}}
@@ -60,7 +61,7 @@
         {{- range . -}}
           {{- $schemaPath := path.Split . -}}
           {{- $schema := index $components.schemas $schemaPath.File -}}
-          {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
+          {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
           {{- $oneOfInd = add $oneOfInd 1 -}}
         {{- end -}}
       {{- end -}}
@@ -85,7 +86,7 @@
     {{- with $schemaObj.properties -}}
       <dl id="{{ $responseCode }}-json-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" aria-label="{{ $name }}">
         {{- range $key, $_ := . -}}
-          {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+          {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
       </dl>
     {{- end -}}
@@ -99,7 +100,10 @@
             <code class="mls">{{ $name }}</code>
           {{- end -}}
           {{- if $required -}}
-            <div class="plm mls lh-solid param-required text-note">Required</div>
+            <div class="plm mls lh-solid param-state text-note">Required</div>
+          {{- end -}}
+          {{- if $deprecated -}}
+            <div class="plm mls lh-solid param-state text-note">Deprecated</div>
           {{- end -}}
         </dt>
         <dd class="ptxs pls">
@@ -116,7 +120,7 @@
         <dd class="schema__sublist {{ if gt $recLevel 1 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
-              {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+              {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
             {{- end -}}
           </dl>
         </dd>
@@ -161,7 +165,10 @@
           <code class="mls">{{ $name }}</code>
         {{- end -}}
         {{- if $required -}}
-          <div class="plm mls lh-solid param-required text-note">Required</div>
+          <div class="plm mls lh-solid param-state text-note">Required</div>
+        {{- end -}}
+        {{- if $deprecated -}}
+          <div class="plm mls lh-solid param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="ptxs pls">
@@ -240,7 +247,10 @@
       <dt>
         <code>{{ $name }}</code>
         {{- if $required -}}
-          <div class="lh-tight param-required text-note">Required</div>
+          <div class="lh-tight param-state text-note">Required</div>
+        {{- end -}}
+        {{- if $deprecated -}}
+          <div class="lh-tight param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="pls">

@@ -236,7 +236,7 @@
     }
   }
 
-  & .param-required {
+  & .param-state {
     color: var(--red-72);
   }
 
