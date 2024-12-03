@@ -1,6 +1,7 @@
 {{- $schemaObj := .schemaObj -}}
 {{- $name := .name -}}
 {{- $required := .required -}}
+{{- $deprecated := .deprecated -}}
 {{- $components := .components -}}
 {{- $responseCode := .responseCode -}}
 {{- $endpointId := .endpointId -}}
@@ -26,7 +27,7 @@
   {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "deprecated" $deprecated "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
   {{- end -}}
 {{- end -}}
 
@@ -52,7 +53,7 @@
     {{- with $schemaObj.properties -}}
       <dl id="{{ $responseCode }}-xml-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" aria-label="{{ $name }}">
         {{- range $key, $_ := . -}}
-          {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+          {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
       </dl>
     {{- end -}}
@@ -66,7 +67,10 @@
             <code class="mls">{{ $name }}</code>
           {{- end -}}
           {{- if $required -}}
-            <div class="plm mls lh-solid param-required text-note">Required</div>
+            <div class="plm mls lh-solid param-state text-note">Required</div>
+          {{- end -}}
+          {{- if $deprecated -}}
+            <div class="plm mls lh-solid param-state text-note">Deprecated</div>
           {{- end -}}
         </dt>
         <dd class="ptxs pls">
@@ -86,7 +90,7 @@
         <dd class="schema__sublist {{ if gt $recLevel 2 }}dn{{ end }}" id="{{ $levelId }}">
           <dl class="pls">
             {{- range $key, $_ := . -}}
-              {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
+              {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
             {{- end -}}
           </dl>
         </dd>
@@ -99,7 +103,7 @@
               <legend class="fw600 pts mbxs">Schema (oneOf)</legend>
               <div class="flex flex-wrap gcm">
                 {{- range $key, $_ := . -}}
-                  {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
+                  {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
                   {{- $oneOfInd = add $oneOfInd 1 -}}
                 {{- end -}}
               </div>
@@ -107,7 +111,7 @@
           </form>
           {{- $oneOfInd = 0 -}}
           {{- range $key, $_ := . -}}
-            {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "data" "oneOfInd" $oneOfInd) -}}
+            {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" "data" "oneOfInd" $oneOfInd) -}}
             {{- $oneOfInd = add $oneOfInd 1 -}}
           {{- end -}}
         </dd>
@@ -133,7 +137,10 @@
       <dt>
         <code>{{ $name }}</code>
         {{- if $required -}}
-          <div class="lh-tight param-required text-note">Required</div>
+          <div class="lh-tight param-state text-note">Required</div>
+        {{- end -}}
+        {{- if $deprecated -}}
+          <div class="lh-tight param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="pls">
