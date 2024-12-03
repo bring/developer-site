@@ -597,7 +597,7 @@
 }, {
   "vasName" : "Frost free",
   "vasNameNorwegian" : "Frostfritt",
-  "description" : "We also offer a frost-free service for an additional fee. The service does not come with a temperature guarantee. Yet, we strive to ensure that the carrier keeps the shipment frost-free at a temperature above 0 degrees Celsius.",
+  "description" : "We also offer a frost-free service for an additional fee. The service does not come with a temperature guarantee. Yet, we strive to ensure that the carrier keeps the shipment frost-free at a temperature above 0 degrees Celsius.  ",
   "shippingGuideCode" : "NON_FREEZE",
   "shippingGuideNpbCode" : "2141",
   "bookingCode" : "NON_FREEZE",
@@ -694,6 +694,16 @@
     "domesticAllowedIn" : "-",
     "senderCountries" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK",
     "destinations" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK"
+  }, {
+    "serviceName" : "Project Logistics",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Supply base logistics",
+    "serviceFamilySortOrder" : 7,
+    "serviceCode" : "PROJECT_LOGISTICS",
+    "productionCode" : "3050",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "ALL"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -823,7 +833,7 @@
 }, {
   "vasName" : "Label free",
   "vasNameNorwegian" : "Label Free",
-  "description" : "Label free provides the ability to send parcels without a label, and is useful for senders who do not have access to a printer. A unique code in the format BRING-1234-5678 is sent to the sender by e-mail after the booking is completed. This code, as well as the recipient's name and address, is written on the parcel before it is handed in. A supplement QR-code is also requested along with the label free code. This QR-code can be scanned by the staff to print a label which is attached to the parcel.",
+  "description" : "Label free provides the ability to send parcels without a label, and is useful for senders who do not have access to a printer.   A unique code in the format BRING-1234-5678 is sent to the sender by e-mail after the booking is completed. This code, as well as the recipient's name and address, is written on the parcel before it is handed in. A supplement QR-code is also requested along with the label free code. This QR-code can be scanned by the staff to print a label which is attached to the parcel.",
   "shippingGuideCode" : "1288",
   "shippingGuideNpbCode" : "1288",
   "bookingCode" : "1288",
@@ -2052,6 +2062,16 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Project Logistics",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Supply base logistics",
+    "serviceFamilySortOrder" : 7,
+    "serviceCode" : "PROJECT_LOGISTICS",
+    "productionCode" : "3050",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "ALL"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2786,6 +2806,16 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Project Logistics",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Supply base logistics",
+    "serviceFamilySortOrder" : 7,
+    "serviceCode" : "PROJECT_LOGISTICS",
+    "productionCode" : "3050",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "ALL",
+    "destinations" : "ALL"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -3216,6 +3246,28 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Tracking",
+  "vasNameNorwegian" : "Tracking",
+  "description" : "No description available",
+  "shippingGuideCode" : "2082",
+  "shippingGuideNpbCode" : "2082",
+  "bookingCode" : "2082",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Letter Packet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Mail",
+    "serviceFamilySortOrder" : 8,
+    "serviceCode" : "3639",
+    "productionCode" : "3639",
+    "domesticAllowedIn" : "-",
+    "senderCountries" : "NO",
+    "destinations" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, IT, LT, LU, LV, NL, PL, SI, SK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
