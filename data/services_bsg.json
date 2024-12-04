@@ -987,6 +987,25 @@
   "Destination" : "-",
   "DomesticAllowed" : "NO"
 }, {
+  "ServiceFamily" : "Supply base logistics",
+  "CustomerNumberType" : "Supply Base Logistics",
+  "ServiceName" : "Project Logistics",
+  "ServiceIcon" : "serviceicon-oil",
+  "ServiceCode" : "3050",
+  "RequestCode" : "PROJECT_LOGISTICS",
+  "Type" : "B2B",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "Customer setup",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "-",
+  "AgreementPrice" : "-",
+  "LeadTime" : "Yes",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "ALL",
+  "Destination" : "ALL",
+  "DomesticAllowed" : "NO, SE, DK, FI"
+}, {
   "ServiceFamily" : "Mail",
   "CustomerNumberType" : "",
   "ServiceName" : "Mail",
