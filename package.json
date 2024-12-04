@@ -34,7 +34,7 @@
   "homepage": "https://developer.bring.com",
   "devDependencies": {
     "@preact/preset-vite": "^2.9.2",
-    "@vitejs/plugin-legacy": "^5.4.3",
+    "@vitejs/plugin-legacy": "^6.0.0",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.20",
     "concurrently": "^9.1.0",
