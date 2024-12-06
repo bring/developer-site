@@ -73,6 +73,7 @@ documentation:
       #### Denmark
         - Type 85: Manned
         - Type 86: Locker
+        - Type 43: Locker
 
       #### Finland
         - Type SmartPOST: Finland Smart Post Pickup
