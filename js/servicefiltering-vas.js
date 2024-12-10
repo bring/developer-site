@@ -15,7 +15,8 @@ if (container) {
     filterChecks = document.querySelectorAll("[data-check]"),
     clearBtn = document.querySelector("#clearfilters"),
     cutoff = document.querySelector("#vas-cutoff"),
-    showAll = document.querySelector("#showAll")
+    showAll = document.querySelector("#showAll"),
+    incompatibles = document.querySelectorAll(".incompatible")
   
   function clearAllFilters() {
     hideCutoffs(cutoff)
@@ -49,6 +50,14 @@ if (container) {
   
   showAll.addEventListener("click", () => {
     clearAllFilters()
+  })
+
+  incompatibles.forEach((incompatible) => {
+    incompatible.addEventListener("click", () => {
+      if (!cutoff.hidden) {
+        clearAllFilters()
+      }
+    })
   })
   
   // Input filter
