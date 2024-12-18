@@ -2966,6 +2966,16 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -3082,6 +3092,50 @@
     "domesticAllowedIn" : "SE",
     "senderCountries" : "-",
     "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Bring Pack Large",
+  "vasNameNorwegian" : "Bring Pakke Stor",
+  "description" : "Used for Bring pack shipments exceeding 3kg / 45x30x13cm. Max size 10kg / 58x43x23cm  ",
+  "shippingGuideCode" : "1377",
+  "shippingGuideNpbCode" : "1377",
+  "bookingCode" : "1377",
+  "incompatibleVases" : [ "Bring Pack XL" ],
+  "supportedServices" : [ {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Bring Pack XL",
+  "vasNameNorwegian" : "Bring Pakke XL",
+  "description" : "Used for Bring pack shipments above 58x43x23cm / 10kg  ",
+  "shippingGuideCode" : "1378",
+  "shippingGuideNpbCode" : "1378",
+  "bookingCode" : "1378",
+  "incompatibleVases" : [ "Bring Pack Large" ],
+  "supportedServices" : [ {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
