@@ -301,7 +301,7 @@
   "EnvironmentalData" : "SE, DK",
   "SenderCountries" : "ALL",
   "Destination" : "NO, SE, DK, FI, DE, EE, FO, GB, IS, NL",
-  "DomesticAllowed" : "SE, FI, DK"
+  "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
   "CustomerNumberType" : "Main customer number",
@@ -473,6 +473,25 @@
   "SenderCountries" : "NO, SE, DK, FI",
   "Destination" : "NO, SE, DK, FI",
   "DomesticAllowed" : "NO, SE, DK, FI"
+}, {
+  "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+  "CustomerNumberType" : "Main customer number",
+  "ServiceName" : "Bring Pack",
+  "ServiceIcon" : "serviceicon-pointer",
+  "ServiceCode" : "0360",
+  "RequestCode" : "0360",
+  "Type" : "C2C",
+  "Return" : "-",
+  "Booking" : "Yes",
+  "RequiredSetup" : "Customer setup",
+  "ShippingGuide" : "Yes",
+  "ListPrice" : "Yes",
+  "AgreementPrice" : "Yes",
+  "LeadTime" : "Yes",
+  "EnvironmentalData" : "-",
+  "SenderCountries" : "SE, DK",
+  "Destination" : "SE, DK",
+  "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
   "CustomerNumberType" : "Main customer number",
