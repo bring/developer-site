@@ -499,7 +499,7 @@
   "bookingCode" : "1062",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Express next day",
+    "serviceName" : "Business parcel express",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1071,7 +1071,7 @@
     "senderCountries" : "ALL",
     "destinations" : "SE, DK"
   }, {
-    "serviceName" : "Express next day",
+    "serviceName" : "Business parcel express",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1425,7 +1425,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Express next day",
+    "serviceName" : "Business parcel express",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2127,7 +2127,7 @@
   "bookingCode" : "1083",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Express next day",
+    "serviceName" : "Business parcel express",
     "serviceType" : "B2B",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,

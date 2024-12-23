@@ -96,7 +96,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Express next day",
+  "ServiceName" : "Business parcel express",
   "ServiceIcon" : "serviceicon-clock-striped",
   "ServiceCode" : "4850",
   "RequestCode" : "4850",
