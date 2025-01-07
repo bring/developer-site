@@ -589,7 +589,7 @@
   "DomesticAllowed" : "NO"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Single Indoor",
   "ServiceIcon" : "serviceicon-house",
   "ServiceCode" : "3150",
@@ -608,7 +608,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Indoor",
   "ServiceIcon" : "serviceicon-house",
   "ServiceCode" : "2870",
@@ -627,7 +627,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Curbside",
   "ServiceIcon" : "serviceicon-house",
   "ServiceCode" : "3123",
@@ -646,7 +646,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Curbside Evening",
   "ServiceIcon" : "serviceicon-house",
   "ServiceCode" : "3457",
@@ -665,7 +665,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Urban Home Delivery",
   "ServiceIcon" : "serviceicon-house-open",
   "ServiceCode" : "3332",
@@ -684,7 +684,7 @@
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Home Delivery Return",
   "ServiceIcon" : "serviceicon-house-return",
   "ServiceCode" : "2778",
@@ -703,7 +703,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Indoor Return",
   "ServiceIcon" : "serviceicon-house-return",
   "ServiceCode" : "3578",
@@ -722,7 +722,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Home Delivery",
-  "CustomerNumberType" : "Parcel Norway domestic",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Curbside Return",
   "ServiceIcon" : "serviceicon-house-return",
   "ServiceCode" : "3577",
@@ -741,7 +741,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier 1 hour",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "1H25",
@@ -760,7 +760,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier 2 hours",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "2H25",
@@ -779,7 +779,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier 4 hours",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "4H25",
@@ -798,7 +798,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier 6 hours",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "6H25",
@@ -817,7 +817,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier VIP",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "VIP25",
@@ -836,7 +836,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier Long Distance",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "LD25",
@@ -855,7 +855,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Bicycle 1 hour",
   "ServiceIcon" : "serviceicon-bicycle",
   "ServiceCode" : "B1H5",
@@ -874,7 +874,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Bicycle 2 hours",
   "ServiceIcon" : "serviceicon-bicycle",
   "ServiceCode" : "B2H5",
@@ -893,7 +893,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Bicycle 4 hours",
   "ServiceIcon" : "serviceicon-bicycle",
   "ServiceCode" : "B4H5",
@@ -912,7 +912,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Bicycle VIP",
   "ServiceIcon" : "serviceicon-bicycle",
   "ServiceCode" : "BVIP5",
@@ -931,7 +931,7 @@
   "DomesticAllowed" : "NO, SE, DK"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Courier Non Standard",
   "ServiceIcon" : "serviceicon-delivery-person",
   "ServiceCode" : "",
@@ -950,7 +950,7 @@
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
   "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Courier and Express",
+  "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Express Same Day",
   "ServiceIcon" : "serviceicon-airplane",
   "ServiceCode" : "3336",

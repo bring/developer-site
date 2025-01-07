@@ -115,7 +115,7 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL_BULK",
     "productionCode" : "0332",
-    "domesticAllowedIn" : "SE, FI",
+    "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI"
   }, {
