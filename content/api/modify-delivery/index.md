@@ -30,14 +30,14 @@ information:
 documentation:
   - title: Update Contact Details
     content: |
-      In January 2025, we launched a new service for updating the recipient's phone number and email. This service is free to use and can be used more than once per shipment. 
-      Key notes about Update Contact Details: 
+      In January 2025, we launched a new service for updating the recipient's phone number and email. This service is free to use and can be used more than once per shipment.
+      Key notes about Update Contact Details:
         - You can only update contact details on shipments belonging to your customer number.
         - If there are no contact details for the recipient, this service can be used to add them.
         - You must provide either phone number or an email, the request cannot be empty.
         - Existing contact details will not be changed if the request is empty for that field. For example, when sending a query for updating the email, only the email field will be updated, and the existing phone number will remain unchanged.
         - Phone numbers must be prefixed with the area code, and must match the recipient's country. For example, a shipment going to Norway can only be updated with +47 phone numbers.
-      
+
   - title: Common criteria
     content: |
       There are some events or value added services that will make Modify Delivery services unavailable.
