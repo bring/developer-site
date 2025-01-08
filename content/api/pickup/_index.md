@@ -29,8 +29,6 @@ information:
       REST JSON over HTTP is recommended for all new integrations. While we currently also support XML, this is very likely to be phased out in the future.
       Pickup endpoints will assume all requests are UTF-8 encoded.
 
-subpages:
-  title: Special topics
 
-oas: https://api.bring.com/pickup/api-docs
+oas: https://api.qa.bring.com/pickup/api-docs
 ---
