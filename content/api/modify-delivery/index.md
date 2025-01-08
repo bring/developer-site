@@ -28,6 +28,16 @@ information:
       REST XML/JSON over HTTP.
 
 documentation:
+  - title: Update Contact Details
+    content: |
+      In January 2025, we launched a new service for updating the recipient's phone number and email. This service is free to use and can be used more than once per shipment.
+      Key notes about Update Contact Details:
+        - You can only update contact details on shipments belonging to your customer number.
+        - If there are no contact details for the recipient, this service can be used to add them.
+        - You must provide either phone number or an email, the request cannot be empty.
+        - Existing contact details will not be changed if the request is empty for that field. For example, when sending a query for updating the email, only the email field will be updated, and the existing phone number will remain unchanged.
+        - Phone numbers must be prefixed with the area code, and must match the recipient's country. For example, a shipment going to Norway can only be updated with +47 phone numbers.
+
   - title: Common criteria
     content: |
       There are some events or value added services that will make Modify Delivery services unavailable.
@@ -62,6 +72,7 @@ documentation:
            <th>Stop shipment</th>
            <th>Change COD</th>
            <th>Change Address</th>
+           <th>Update Contact Details</th>
          </tr>
         </thead>
         <tbody>
@@ -71,12 +82,14 @@ documentation:
              <td>Yes</td>
              <td>Yes</td>
              <td>No</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>Bedriftspakke Ekspress over natten</td>
              <td>1002</td>
              <td>Yes</td>
              <td>Yes</td>
+             <td>No</td>
              <td>No</td>
           </tr>
           <tr>
@@ -85,12 +98,14 @@ documentation:
              <td>Yes</td>
              <td>Yes</td>
              <td>No</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>På døren</td>
              <td>1736</td>
              <td>Yes</td>
              <td>Yes</td>
+             <td>No</td>
              <td>No</td>
           </tr>
           <tr>
@@ -99,6 +114,7 @@ documentation:
              <td>Yes</td>
              <td>Yes</td>
              <td>No</td>
+             <td>No</td>
           </tr>
           <tr>
              <td>Bedriftspakke standard</td>
@@ -106,11 +122,13 @@ documentation:
              <td>Yes</td>
              <td>Yes</td>
              <td>No</td>
+             <td>No</td>
           </tr>
           <tr>
-             <td>Ekspress neste dag</td>
+             <td>Pakke til bedrift ekspress</td>
              <td>4850</td>
              <td>Yes</td>
+             <td>No</td>
              <td>No</td>
              <td>No</td>
           </tr>
@@ -120,17 +138,20 @@ documentation:
              <td>Yes</td>
              <td>No</td>
              <td>Yes</td>
+             <td>Yes</td>
           </tr>
           <tr>
-             <td>Pakke levert hjem</td>
+             <td>Pakke hjem pluss</td>
              <td>5600</td>
              <td>Yes</td>
              <td>No</td>
+             <td>Yes</td>
              <td>Yes</td>
           </tr>
           <tr>
              <td>Pakke til hentested</td>
              <td>5800</td>
+             <td>Yes</td>
              <td>Yes</td>
              <td>Yes</td>
              <td>Yes</td>
@@ -141,12 +162,14 @@ documentation:
              <td>Yes</td>
              <td>No</td>
              <td>Yes</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Business parcel</td>
              <td>0330</td>
              <td>Yes</td>
              <td>No</td>
+             <td>Yes</td>
              <td>Yes</td>
           </tr>
           <tr>
@@ -155,12 +178,14 @@ documentation:
              <td>Yes</td>
              <td>No</td>
              <td>Yes</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Business pallet</td>
              <td>0336</td>
              <td>Yes</td>
              <td>No</td>
+             <td>Yes</td>
              <td>Yes</td>
           </tr>
           <tr>
@@ -169,6 +194,7 @@ documentation:
              <td>Yes</td>
              <td>No</td>
              <td>Yes</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Pickup parcel bulk</td>
@@ -176,12 +202,14 @@ documentation:
              <td>Yes</td>
              <td>No</td>
              <td>Yes</td>
+             <td>Yes</td>
           </tr>
           <tr>
              <td>Home delivery parcel</td>
              <td>0349</td>
              <td>Yes</td>
              <td>No</td>
+             <td>Yes</td>
              <td>Yes</td>
           </tr>
         </tbody>
