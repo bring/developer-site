@@ -28,7 +28,7 @@ information:
 
   - title: Formats
     content: |
-      Both XML and JSON over HTTP. The GET request only supports single consignments, while the POST requests can be used for multiple consignments.
+      Both XML and JSON over HTTP. The POST requests can be used for multiple consignments.
 
 subpages:
   title: Special topics
