@@ -13,7 +13,7 @@ aliases:
   - pickupapi.html
 
 introduction: |
-  The Pickup API is used to book ad hoc pickups.
+  <p>The Pickup API is used to book ad hoc pickup (to the terminal) that customers may need/want e.g. if they don't have a fixed pickup agreement with Bring for the relevant shipments. Two types of pickup are supported - cargo shipments in Norway and for parcels and business pallet in NO/SE/DK.</p>
 
 information:
   - title: Authentication
@@ -31,6 +31,19 @@ information:
 
 subpages:
   title: Special topics
+
+documentation:
+  - title: Where is ad hoc pickup applicable?
+    content: |
+      For cargo services in Norway, ad hoc pickup orders are only applicable in the below scenarios.
+
+      ### Applicable:
+      - 5400 if shipment not booked with pickup</li>
+      - 5100 if shipment not booked via Booking API (where pickup is always included)</li>
+  
+      ### Not applicable:
+      - 5300
+      - 5200
 
 oas: https://api.bring.com/pickup/api-docs
 ---
