@@ -28,7 +28,7 @@ information:
       REST XML/JSON over HTTP.
 
 documentation:
-  - title: Update Contact Details
+  - title: New Service Update Contact Details
     content: |
       In January 2025, we launched a new service for updating the recipient's phone number and email. This service is free to use and can be used more than once per shipment.
       Key notes about Update Contact Details:
@@ -38,22 +38,24 @@ documentation:
         - Existing contact details will not be changed if the request is empty for that field. For example, when sending a query for updating the email, only the email field will be updated, and the existing phone number will remain unchanged.
         - Phone numbers must be prefixed with the area code, and must match the recipient's country. For example, a shipment going to Norway can only be updated with +47 phone numbers.
 
-  - title: Common criteria
+  - title: Common Invalidating Scenarios
     content: |
-      There are some events or value added services that will make Modify Delivery services unavailable.
+      There are scenarios that invalidates the services in Modify Delivery. While we cannot list every specific scenario,
+      we will give you insight into some common events and value added services that cause one or more of our services to be unavailable.
+      Our API will provide the reason for a service being unavailable if you call our Allowed Modifications endpoint.
 
-      Any of the following events should **not** already be present on the shipment:
+      Events that may invalidate our services:
         - Damaged
+        - Delivered
         - Deviation
         - Returned
-        - Delivered
+        - Home Delivery ordered
+        - In transit (for delivery)
         - Lost
         - Partly delivered
         - Stop shipment
-        - In transit (to final destination)
-        - Home Delivery ordered
 
-      Any of the following value added services (VAS) should **not** already be present on the shipment:
+      Value Added Services that may invalidate our services:
         - Optional pickup point (0010)
         - Parcel locker (0011)
         - Home delivery from pickup point (1158)
@@ -61,8 +63,9 @@ documentation:
         - Parcel locker Norway (1298)
         - Ibox Sweden (1337)
         - Parcel locker same day (1373)
+        - Stop Delivery ordered (1220)
 
-  - title: Supported services
+  - title: List of Supported Service Codes
     content: |
       <table>
         <thead>
@@ -219,7 +222,7 @@ documentation:
     content: |
       - Service codes 03XX is **not** supported for shipments addressed within Norway (domestic Norway shipments).
       - Bulk services 0332 and 0342 are **not** valid domestically in Denmark.
-      - Modify cash on delivery is only available for recipients in Norway.
+      - Change Cash on Delivery is only available for recipients in Norway.
       
 oas: https://www.qa.mybring.com/modify-delivery/api-docs
 ---
