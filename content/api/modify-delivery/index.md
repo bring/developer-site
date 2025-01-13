@@ -42,7 +42,7 @@ documentation:
     content: |
       There are scenarios that invalidates the services in Modify Delivery. While we cannot list every specific scenario,
       we will give you insight into some common events and value added services that cause one or more of our services to be unavailable.
-      Our API will provide the reason for a service being unavailable if you call our Allowed Modifications endpoint.
+      If you are unsure about why your shipment is not qualified for a service, we have an Available Modification endpoint that provides the failure reasons for your shipment.
 
       Events that may invalidate our services:
         - Damaged
