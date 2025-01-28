@@ -231,7 +231,7 @@
   "shippingGuideCode" : "FLEXDELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "FLEX_DELIVERY",
-  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Agreed delivery", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Telephone notification" ],
+  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Agreed delivery", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Telephone notification", "Dangerous goods", "Frost free" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -529,7 +529,7 @@
   "shippingGuideCode" : "SIMPLIFIED_DELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required" ],
+  "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required", "Temperature controlled transport" ],
   "supportedServices" : [ {
     "serviceName" : "Home delivery parcel",
     "serviceType" : "B2C",
@@ -601,7 +601,7 @@
   "shippingGuideCode" : "NON_FREEZE",
   "shippingGuideNpbCode" : "2141",
   "bookingCode" : "NON_FREEZE",
-  "incompatibleVases" : [ "Simplified delivery", "Special goods" ],
+  "incompatibleVases" : [ "Simplified delivery", "Special goods", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business partload",
     "serviceType" : "B2B",
@@ -643,7 +643,7 @@
   "shippingGuideCode" : "DANGEROUS_GOODS",
   "shippingGuideNpbCode" : "1245",
   "bookingCode" : "DANGEROUS_GOODS",
-  "incompatibleVases" : [ "Simplified delivery", "Desktop delivery", "Remove pallets" ],
+  "incompatibleVases" : [ "Simplified delivery", "Desktop delivery", "Remove pallets", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Supply Base Logistics",
     "serviceType" : "B2B",
@@ -826,6 +826,16 @@
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI"
+  }, {
+    "serviceName" : "Pickup parcel box",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "0344",
+    "productionCode" : "0344",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ "Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe." ],
   "vasFootNotes" : [ ],
@@ -845,8 +855,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "BUSINESS_PARCEL",
     "productionCode" : "0330",
-    "domesticAllowedIn" : "DK",
-    "senderCountries" : "DK",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
     "destinations" : "ALL"
   }, {
     "serviceName" : "Home Delivery Parcel",
@@ -855,8 +865,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "HOME_DELIVERY_PARCEL",
     "productionCode" : "0349",
-    "domesticAllowedIn" : "DK",
-    "senderCountries" : "DK",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
     "destinations" : "ALL"
   }, {
     "serviceName" : "PickUp Parcel",
@@ -865,8 +875,8 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
-    "domesticAllowedIn" : "DK",
-    "senderCountries" : "DK",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK",
     "destinations" : "ALL"
   }, {
     "serviceName" : "Business Parcel Return",
@@ -1483,7 +1493,7 @@
 }, {
   "vasName" : "Signature required",
   "vasNameNorwegian" : "Påkrevd signatur",
-  "description" : "Stops recipients from making changes to the delivery type, such as adding or removing simplified delivery/bag on door.  ",
+  "description" : "Stops recipients from making changes to the delivery type, such as adding or removing simplified delivery/delivery outside the door.  ",
   "shippingGuideCode" : "1280",
   "shippingGuideNpbCode" : "1280",
   "bookingCode" : "1280",
@@ -2077,9 +2087,9 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Bag on door",
-  "vasNameNorwegian" : "Pose på døren",
-  "description" : "Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point.  This service can be ordered either by the sender at time of booking, or selected by the recipient before receiving the parcel. Sender is able to use VAS 1280 to reserve against the recipient either adding or removing this additional service. When the parcel is delivered the bar code is scanned and the recipient will receive a notification. Note that if the parcel is delivered in the mailbox the additional fee will not occur.",
+  "vasName" : "Delivery outside the door",
+  "vasNameNorwegian" : "Levering utenfor døren",
+  "description" : "Home Mailbox Parcel (Pakke hjem i postkassen) is delivered directly to the recipient’s mailbox. If the parcel does not fit in the mailbox, the sender can choose to have it left outside the door to prevent it from being redirected to a pickup point.   This service can be ordered by the sender during booking or selected by the recipient prior to delivery. The sender can use VAS 1280 to prevent the recipient from adding or removing this additional service. Upon delivery, the parcel’s barcode is scanned, and the recipient receives a notification.  Note that if the parcel is successfully delivered to the mailbox, no additional fee will be charged.",
   "shippingGuideCode" : "1081",
   "shippingGuideNpbCode" : "1081",
   "bookingCode" : "1081",
@@ -2125,7 +2135,7 @@
   "shippingGuideCode" : "1083",
   "shippingGuideNpbCode" : "1083",
   "bookingCode" : "1083",
-  "incompatibleVases" : [ ],
+  "incompatibleVases" : [ "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business parcel express",
     "serviceType" : "B2B",
@@ -2662,6 +2672,16 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Pickup parcel box",
+    "serviceType" : "B2C",
+    "serviceFamily" : "",
+    "serviceFamilySortOrder" : 99,
+    "serviceCode" : "0344",
+    "productionCode" : "0344",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "ALL",
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "When shipping from Finland to Sweden, Denmark, Norway, Faroe Islands, Greenland, Iceland or Åland, or from any country to Finland, Faroe Islands, Greenland, Iceland or Åland, the shipment will be transported by boat. In such cases the gross weight of Limited quantities must be provided. The document Multimodal Dangerous Goods Form must also be completed correctly and sent to Bring’s booking department before transportation begins" ],
