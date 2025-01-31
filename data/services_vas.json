@@ -531,7 +531,7 @@
   "bookingCode" : "0041",
   "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required" ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1051,7 +1051,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1483,7 +1483,7 @@
 }, {
   "vasName" : "Signature required",
   "vasNameNorwegian" : "Påkrevd signatur",
-  "description" : "Stops recipients from making changes to the delivery type, such as adding or removing simplified delivery/bag on door.  ",
+  "description" : "Stops recipients from making changes to the delivery type, such as adding or removing simplified delivery/delivery outside the door.  ",
   "shippingGuideCode" : "1280",
   "shippingGuideNpbCode" : "1280",
   "bookingCode" : "1280",
@@ -1609,7 +1609,7 @@
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1629,7 +1629,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel with RFID",
+    "serviceName" : "Home mailbox parcel RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1639,7 +1639,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel",
+    "serviceName" : "Home mailbox parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1853,7 +1853,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1935,7 +1935,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1967,7 +1967,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1999,7 +1999,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2077,15 +2077,15 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Bag on door",
-  "vasNameNorwegian" : "Pose på døren",
-  "description" : "Mailbox Parcel (Pakke i postkassen) is a parcel that will be delivered in the recipient’s mailbox. If the parcel for various reasons does not fit in the mailbox, the sender may choose to leave the parcel on the door handle (in a special bag) to avoid it being sent to the pickup point.  This service can be ordered either by the sender at time of booking, or selected by the recipient before receiving the parcel. Sender is able to use VAS 1280 to reserve against the recipient either adding or removing this additional service. When the parcel is delivered the bar code is scanned and the recipient will receive a notification. Note that if the parcel is delivered in the mailbox the additional fee will not occur.",
+  "vasName" : "Delivery outside the door",
+  "vasNameNorwegian" : "Levering utenfor døren",
+  "description" : "Home Mailbox Parcel (Pakke hjem i postkassen) is delivered directly to the recipient’s mailbox. If the parcel does not fit in the mailbox, the sender can choose to have it left outside the door to prevent it from being redirected to a pickup point.   This service can be ordered by the sender during booking or selected by the recipient prior to delivery. The sender can use VAS 1280 to prevent the recipient from adding or removing this additional service. Upon delivery, the parcel’s barcode is scanned, and the recipient receives a notification.  Note that if the parcel is successfully delivered to the mailbox, no additional fee will be charged.",
   "shippingGuideCode" : "1081",
   "shippingGuideNpbCode" : "1081",
   "bookingCode" : "1081",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Mailbox parcel with RFID",
+    "serviceName" : "Home mailbox parcel RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2095,7 +2095,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel",
+    "serviceName" : "Home mailbox parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2179,7 +2179,7 @@
   "bookingCode" : "SOSIAL_KONTROLL",
   "incompatibleVases" : [ "Boat Delivery", "Flex delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2511,7 +2511,7 @@
   "bookingCode" : "2012",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2707,7 +2707,7 @@
   "bookingCode" : "PREFERRED_DELIVERY_DAY",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,

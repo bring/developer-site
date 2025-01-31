@@ -20,7 +20,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Home delivery parcel",
+  "ServiceName" : "Parcel home plus",
   "ServiceIcon" : "serviceicon-door",
   "ServiceCode" : "5600",
   "RequestCode" : "5600",
@@ -39,7 +39,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Mailbox parcel",
+  "ServiceName" : "Home mailbox parcel",
   "ServiceIcon" : "serviceicon-mailbox",
   "ServiceCode" : "3584",
   "RequestCode" : "3584",
@@ -58,7 +58,7 @@
 }, {
   "ServiceFamily" : "Parcel Norway domestic",
   "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Mailbox parcel with RFID",
+  "ServiceName" : "Home mailbox parcel RFID",
   "ServiceIcon" : "serviceicon-mailbox",
   "ServiceCode" : "3570",
   "RequestCode" : "3570",
