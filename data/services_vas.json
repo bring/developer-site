@@ -531,7 +531,7 @@
   "bookingCode" : "0041",
   "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required", "Temperature controlled transport" ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1061,7 +1061,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1619,7 +1619,7 @@
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1639,7 +1639,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel with RFID",
+    "serviceName" : "Home mailbox parcel RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1649,7 +1649,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel",
+    "serviceName" : "Home mailbox parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1863,7 +1863,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1945,7 +1945,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -1977,7 +1977,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2009,7 +2009,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2095,7 +2095,7 @@
   "bookingCode" : "1081",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Mailbox parcel with RFID",
+    "serviceName" : "Home mailbox parcel RFID",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2105,7 +2105,7 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
-    "serviceName" : "Mailbox parcel",
+    "serviceName" : "Home mailbox parcel",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2189,7 +2189,7 @@
   "bookingCode" : "SOSIAL_KONTROLL",
   "incompatibleVases" : [ "Boat Delivery", "Flex delivery" ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2521,7 +2521,7 @@
   "bookingCode" : "2012",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
@@ -2727,7 +2727,7 @@
   "bookingCode" : "PREFERRED_DELIVERY_DAY",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
-    "serviceName" : "Home delivery parcel",
+    "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Norway domestic",
     "serviceFamilySortOrder" : 1,
