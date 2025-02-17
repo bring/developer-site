@@ -1,0 +1,115 @@
+{{/* make schema and path scratches from all apis */}}
+{{- $schemaMaster := dict -}}
+{{- $pathMaster := dict -}}
+{{- range .Site.Pages -}}
+  {{- if (and
+          (.Params.oas)
+          (not .Draft)
+          (not .IsHome)
+          (not .Params.private)
+          (not (in .RelPermalink "/revision-history/"))
+          (not (in .RelPermalink "/blog/"))
+          (not (in .RelPermalink "/booking/examples/vas"))) -}}
+
+          {{ $apiTitle := .Title }}
+
+    {{- with .Params.oas -}}
+      {{- $oasdata := resources.GetRemote . | transform.Unmarshal -}}
+      {{- $schemaMaster = merge $schemaMaster (dict $apiTitle $oasdata.components.schemas) -}}
+      {{- $pathMaster = merge $pathMaster (dict $apiTitle $oasdata.paths) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{/*- $schemaMaster | jsonify -*/}}
+{{/*- $pathMaster | jsonify -*/}}
+
+{{- $.Store.Add "allTheParams" slice -}}
+
+{{/* fill scratch with all schema props */}}
+{{- range $apiName, $_ := $schemaMaster -}}
+  {{- range $schemaName, $_ := . -}}
+    {{- range $propName, $propVal := .properties -}}
+
+      {{ $isRef := false }}
+      {{- $schemaPath := "" -}}
+      {{- $typeOrRef := $propVal.type -}}
+      {{- range $propKey, $_ := $propVal }}
+        {{- if eq $propKey "$ref" -}}
+          {{ $isRef = true }}
+          {{- $schemaPath = path.Split . -}}
+          {{- $typeOrRef = printf "ref-%s" $schemaPath.File -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $.Store.Add "allTheParams" 
+      (dict 
+        "name" $propName
+        "type" $typeOrRef
+        "schema" $schemaName
+        "api" $apiName) -}}
+
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* fill scratch with all path props */}}
+{{- range $apiName, $_ := $pathMaster -}}
+  {{- range . -}}
+    {{- range . -}}
+
+      {{- $opId := .operationId -}}
+
+      {{- range .parameters -}}
+        {{ $isRef := false }}
+        {{- $schemaPath := "" -}}
+        {{- $typeOrRef := .schema.type -}}
+        {{- range $schemaKey, $_ := .schema }}
+          {{- if eq $schemaKey "$ref" -}}
+            {{ $isRef = true }}
+            {{- $schemaPath = path.Split . -}}
+            {{- $typeOrRef = printf "ref-%s" $schemaPath.File -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $.Store.Add "allTheParams" 
+        (dict 
+          "name" .name
+          "type" $typeOrRef
+          "schema" $opId
+          "api" $apiName) -}}
+      {{- end -}}
+
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*- $.Store.Get "allTheParams" | jsonify -*/}}
+
+{{/* make object of unique names with appearances inside */}}
+{{- $.Store.Add "propCol" slice -}}
+{{- $.Store.Add "uniqProps" slice -}}
+
+{{- range ($.Store.Get "allTheParams") -}}
+    {{- $.Store.Add "uniqProps" .name -}}
+{{- end -}}
+
+{{- range $_, $propName := ($.Store.Get "uniqProps" | uniq) -}}
+  {{- $scratchName := printf "scratch-%s" $propName -}}
+  {{- $.Store.Add $scratchName slice -}}
+
+  {{- range ($.Store.Get "allTheParams") -}}
+    {{- if eq $propName .name -}}
+      {{- $.Store.Add $scratchName 
+      (dict 
+        "api" .api
+        "schema" .schema
+        "type" .type) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $.Store.Add "propCol" 
+  (dict
+    $propName ($.Store.Get $scratchName)) -}}
+{{- end -}}
+
+{{- $.Store.Get "propCol" | jsonify -}}
