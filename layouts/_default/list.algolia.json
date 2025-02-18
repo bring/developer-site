@@ -1,4 +1,4 @@
-{{- $.Scratch.Add "index" slice -}}
+{{- $.Store.Add "index" slice -}}
 {{- range .Site.Pages -}}
   {{- $isFile := false -}}
   {{- with .File -}}
@@ -13,15 +13,15 @@
           (not (in .RelPermalink "/blog/"))
           (not (in .RelPermalink "/booking/examples/vas"))) -}}
 
-    {{- $.Scratch.Set "documentation" "" -}}
+    {{- $.Store.Set "documentation" "" -}}
     {{- range .Params.documentation -}}
-      {{- $.Scratch.Add "documentation" " " -}}
+      {{- $.Store.Add "documentation" " " -}}
       {{- with .title -}}
-        {{- $.Scratch.Add "documentation" . -}}
+        {{- $.Store.Add "documentation" . -}}
       {{- end -}}
-      {{- $.Scratch.Add "documentation" " " -}}
+      {{- $.Store.Add "documentation" " " -}}
       {{- with .content -}}
-        {{- $.Scratch.Add "documentation" (. | markdownify | plainify) -}}
+        {{- $.Store.Add "documentation" (. | markdownify | plainify) -}}
       {{- end -}}
     {{- end -}}
 
@@ -105,7 +105,7 @@
       {{- $anchorUrl := printf "#%s" $anchorUrlText -}}
       {{- $permalink := (printf "%s%s" .Parent.Permalink $anchorUrl) -}}
       {{- $relpermalink := (printf "%s%s" .Parent.RelPermalink $anchorUrl) -}}
-      {{- $.Scratch.Add "index"
+      {{- $.Store.Add "index"
         (dict
           "objectID" .File.UniqueID
           "permalink" $permalink
@@ -115,10 +115,10 @@
           "parent" $parentTitle
           "introduction" $introduction
           "apischemas" ($.Store.Get "apiSchemas")
-          "documentation" ($.Scratch.Get "documentation")
+          "documentation" ($.Store.Get "documentation")
           "content" .Plain) -}}
     {{- else -}}
-      {{- $.Scratch.Add "index" 
+      {{- $.Store.Add "index"
         (dict
           "objectID" .File.UniqueID
           "permalink" .Permalink
@@ -128,15 +128,15 @@
           "parent" $parentTitle
           "introduction" $introduction
           "apischemas" ($.Store.Get "apiSchemas")
-          "documentation" ($.Scratch.Get "documentation")
+          "documentation" ($.Store.Get "documentation")
           "content" .Plain) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
 
-{{- $.Scratch.Add "servicesPortfolio" slice -}}
+{{- $.Store.Add "servicesPortfolio" slice -}}
 {{- range $.Site.Data.service -}}
-  {{- $.Scratch.Add "servicesPortfolio" 
+  {{- $.Store.Add "servicesPortfolio"
     (dict
       "code" .code
       "apiId" .apiId
@@ -145,7 +145,7 @@
       "serviceGroup" .serviceGroup) -}}
 {{- end -}}
 {{- range $.Site.Data.services_bsg -}}
-  {{- $.Scratch.Add "servicesPortfolio" 
+  {{- $.Store.Add "servicesPortfolio"
     (dict
       "ServiceFamily" .ServiceFamily
       "ServiceName" .ServiceName
@@ -153,13 +153,13 @@
       "RequestCode" .RequestCode) -}}
 {{- end -}}
 {{- range $.Site.Data.services_ri -}}
-  {{- $.Scratch.Add "servicesPortfolio" 
+  {{- $.Store.Add "servicesPortfolio"
     (dict
       "ServiceFamily" .ServiceFamily
       "ReportsName" .ReportsName) -}}
 {{- end -}}
 {{- range $.Site.Data.services_vas -}}
-  {{- $.Scratch.Add "servicesPortfolio" 
+  {{- $.Store.Add "servicesPortfolio"
     (dict
       "vasName" .vasName
       "description" .description
@@ -168,14 +168,14 @@
       "bookingCode" .bookingCode) -}}
 {{- end -}}
 {{- with .Site.GetPage "/api/services" -}}
-  {{- $.Scratch.Add "index"
+  {{- $.Store.Add "index"
     (dict
       "objectID" .File.UniqueID
       "permalink" .Permalink
       "relpermalink" .RelPermalink
       "title" .Title
       "section" (.Section | upper)
-      "services" ($.Scratch.Get "servicesPortfolio")) -}}
+      "services" ($.Store.Get "servicesPortfolio")) -}}
 {{- end -}}
 
-{{- $.Scratch.Get "index" | jsonify -}}
+{{- $.Store.Get "index" | jsonify -}}
