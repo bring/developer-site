@@ -13,21 +13,11 @@ It is required to pass customs information when booking the following services f
 
 - Business Parcel
 - PickUp Parcel
+- Letter Packet (3639)
 
 Sending customs information as part of a booking request only applies to the aforementioned products.
 
-When included during booking, the customs information will be sent electronically from Bring to the destination country. 
-
-If sending customs information, the following elements are to be used:
-
-- quantity (required)
-- goodsDescription (required)
-- customsArticleNumber (optional)
-- itemNetWeightInKg (required)
-- tarriffLineAmount (required)
-- currency (required)
-- countryOfOrigin (required)
-- natureOfTransaction (required)
+When included during booking, the customs information will be sent electronically from Bring to the destination country.
 
 Please refer to the _Request params_ section below for more details about the elements. [Customs tariff codes (tolltariffnummer)](http://tolltariffen.toll.no/).
 
@@ -44,289 +34,126 @@ t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-sh
 
 <strong>Nature of Transaction</strong>: Gift or Sale of Goods or Returned Goods or Commercial Sample or Documents or Other
 
-Sending `Importer` party in the request is not mandatory. But if there is no importer sent then system will consider recipient as importer.
+Sending `Importer` and `Exporter` parties in the request is mandatory.
 
-Another additional field captured for customs is `vatNumber` for the parties. This is an optional field. If you are setting importer party then you can add `vatNumber` in it,
-else you can set `vatNumber` in the existing recipient party.
-
-There are two examples in the _Request examples_ section below that show requests containing customs information.
-* In one of these examples, importer not sent in request, hence the recipient is the importing party with (optional) `vatNumber`.
-* In the other example, there is importer party set in the request with the (optional) `vatNumber`.
+Another additional field captured for customs is `vatNumber` for the importer/exporter parties. This is an optional field.
 
 ## IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
 
-By using the `iossNumber` element of `ediCustomsDeclarations`, one can specify an IOSS number for exports from Norway to EU countries. Only applicable when `natureOfTransaction` is of type `SALE_OF_GOODS`.
+By using the `ioss` element of `customsInformation`, one can specify an IOSS number for exports from Norway to EU countries. Only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`.
 Note that this can not be combined with a `reference` field on the `senders` party. More info on [IOSS](https://www.bring.no/tjenester/toll/ioss).
 
 ## Request examples
-### Customs declaration - with recipient as the importing party
-
-#### XML
-
-```xml
-<parties>
-  <sender>
-    <name>Ola Nordmann</name>
-    <addressLine>Testsvingen 12</addressLine>
-    <postalCode>0150</postalCode>
-    <city>OSLO</city>
-    <countryCode>NO</countryCode>
-    <reference>1234</reference>
-    <contact>
-      <name>Trond Nordmann</name>
-      <email>trond@normanntest.no</email>
-      <phoneNumber>+4712345678</phoneNumber>
-    </contact>
-  </sender>
-  <recipient>
-    <name>Tore Mottaker</name>
-    <addressLine>Mottakerveien 14</addressLine>
-    <addressLine2>c/o Tina Mottaker</addressLine2>
-    <postalCode>12000</postalCode>
-    <city>STOCKHOLM</city>
-    <countryCode>SE</countryCode>
-    <vatNumber>12345</vatNumber>
-  </recipient>
-</parties>
-<product>
-  <id>BUSINESS_PARCEL</id>
-  <ediCustomsDeclarations>
-    <natureOfTransaction>GIFT</natureOfTransaction>
-    <ediCustomsDeclaration>
-      <quantity>2</quantity>
-      <goodsDescription>shampoo</goodsDescription>
-      <customsArticleNumber>33.05.1000</customsArticleNumber>
-      <itemNetWeightInKg>3.0</itemNetWeightInKg>
-      <tarriffLineAmount>200</tarriffLineAmount>
-      <currency>NOK</currency>
-      <countryOfOrigin>CH</countryOfOrigin>
-    </ediCustomsDeclaration>
-    <ediCustomsDeclaration>
-      <quantity>5</quantity>
-      <goodsDescription>cotton t-shirts</goodsDescription>
-      <customsArticleNumber>61.09.1000</customsArticleNumber>
-      <itemNetWeightInKg>2.5</itemNetWeightInKg>
-      <tarriffLineAmount>1000</tarriffLineAmount>
-      <currency>NOK</currency>
-      <countryOfOrigin>PL</countryOfOrigin>
-    </ediCustomsDeclaration>
-    <ediCustomsDeclaration>
-      <quantity>1</quantity>
-      <goodsDescription>wool jacket</goodsDescription>
-      <customsArticleNumber>61.04.3100</customsArticleNumber>
-      <itemNetWeightInKg>2.0</itemNetWeightInKg>
-      <tarriffLineAmount>750</tarriffLineAmount>
-      <currency>NOK</currency>
-      <countryOfOrigin>DE</countryOfOrigin>
-    </ediCustomsDeclaration>
-  </ediCustomsDeclarations>
-</product>
-```
-
-#### JSON
+### Customs declaration
 
 ```json
-"parties": {
-  "sender": {
-    "name": "Ola Nordmann",
-    "addressLine": "Testsvingen 12",
-    "postalCode": "0150",
-    "city": "OSLO",
-    "countryCode": "NO",
-    "reference": "1234",
-    "contact": {
-      "name": "Trond Nordmann",
-      "email": "trond@nordmanntest.no",
-      "phoneNumber": "+4712345678"
+  "consignments": [
+    {
+      "shippingDateTime": "2025-02-01T12:31:33.007+00:00",
+      "parties": {
+        "sender": {
+          "name": "Ola Nordmann",
+          "addressLine": "Testsvingen 12",
+          "postalCode": "0150",
+          "city": "OSLO",
+          "countryCode": "NO",
+          "reference": "11522",
+          "additionalAddressInfo": "Hentes på baksiden etter klokken to",
+          "contact": {
+            "name": "Trond Nordmann",
+            "phoneNumber": "+45700000000",
+            "email": "trond@normanntest.no"
+          }
+        },
+        "recipient": {
+          "name": "Tore Mottaker",
+          "addressLine": "Mottakerveien 14",
+          "addressLine2": "c/o Tina Mottaker",
+          "postalCode": "1200",
+          "city": "COPENHAGEN",
+          "countryCode": "DK",
+          "reference": "43242",
+          "additionalAddressInfo": "Bruk ringeklokken",
+          "contact": {
+            "name": "Tore Mottaker",
+            "email": "tore@mottakertest.no",
+            "phoneNumber": "+4740000000"
+          }
+        },
+        "importer": {
+          "name": "Im Porter",
+          "addressLine": "Mottakerveien 15",
+          "addressLine2": "c/o Tina Mottaker",
+          "postalCode": "1200",
+          "city": "COPENHAGEN",
+          "countryCode": "DK",
+          "vatNumber": "12345567"
+        },
+        "exporter": {
+          "name": "Ex Porter",
+          "addressLine": "Mottakerveien 16",
+          "addressLine2": "c/o Tina Mottaker",
+          "postalCode": "0150",
+          "city": "OSLO",
+          "countryCode": "NO"
+        }
+      },
+      "product": {
+        "id": "PICKUP_PARCEL",
+        "customerNumber": "nnn",
+        "additionalServices": []
+      },
+      "customsInformation": {
+        "ioss": "IM01234567889",
+        "natureOfCargo": {
+          "type": "SALE_OF_GOODS",
+        },
+        "customsDeclarations": [
+          {
+            "goodsDescription": "shampoo",
+            "customsArticleNumber": "33051000",
+            "grossWeight": 3.0,
+            "netWeight": 3.0,
+            "amount": 200.0,
+            "currency": "NOK",
+            "countryCodeOrigin": "CH",
+            "quantity": 2
+          },
+          {
+            "goodsDescription": "cotton t-shirts",
+            "customsArticleNumber": "61091000",
+            "grossWeight": 2.5,
+            "netWeight": 2.5,
+            "amount": 1000.0,
+            "currency": "NOK",
+            "countryCodeOrigin": "PL",
+            "quantity": 5
+          },
+          {
+            "goodsDescription": "wool jacket",
+            "customsArticleNumber": "61043100",
+            "grossWeight": 2.0,
+            "netWeight": 2.0,
+            "amount": 750.0,
+            "currency": "NOK",
+            "countryCodeOrigin": "DE",
+            "quantity": 1
+          }
+        ]
+      },
+      "packages": [
+        {
+          "goodsDescription": "description",
+          "weightInKg": 10,
+          "packageType": "pallet",
+          "dimensions": {
+            "heightInCm": 23,
+            "widthInCm": 13,
+            "lengthInCm": 11
+          }
+        }
+      ]
     }
-  },
-  "recipient": {
-    "name": "Tore Mottaker",
-    "addressLine": "Mottakerveien 14",
-    "addressLine2": "c/o Tina Mottaker",
-    "postalCode": "12000",
-    "city": "STOCKHOLM",
-    "countryCode": "SE",
-    "vatNumber": "12345"
-  }
-}
-"product": {
-  "id": "BUSINESS_PARCEL",
-  "ediCustomsDeclarations": {
-    "ediCustomsDeclaration": [
-      {
-        "quantity": 2,
-        "goodsDescription": "shampoo",
-        "customsArticleNumber": "33.05.1000",
-        "itemNetWeightInKg": 3.0,
-        "tarriffLineAmount": 200,
-        "currency": "NOK",
-        "countryOfOrigin": "CH"
-      },
-      {
-        "quantity": 5,
-        "goodsDescription": "cotton t-shirts",
-        "customsArticleNumber": "61.09.1000",
-        "itemNetWeightInKg": 2.5,
-        "tarriffLineAmount": 1000,
-        "currency": "NOK",
-        "countryOfOrigin": "PL"
-      },
-      {
-        "quantity": 1,
-        "goodsDescription": "wool jacket",
-        "customsArticleNumber": "61.04.3100",
-        "itemNetWeightInKg": 2.0,
-        "tarriffLineAmount": 750,
-        "currency": "NOK",
-        "countryOfOrigin": "DE"
-      }
-    ],
-    "natureOfTransaction": "GIFT"
-  }
-}
-```
+  ]
 
-### Customs declaration - with importer
-
-#### XML
-
-```xml
-<parties>
-  <sender>
-    <name>Ola Nordmann</name>
-    <addressLine>Testsvingen 12</addressLine>
-    <postalCode>0150</postalCode>
-    <city>OSLO</city>
-    <countryCode>NO</countryCode>
-    <reference>1234</reference>
-    <contact>
-      <name>Trond Nordmann</name>
-      <email>trond@normanntest.no</email>
-      <phoneNumber>+4712345678</phoneNumber>
-    </contact>
-  </sender>
-  <recipient>
-    <name>Tore Mottaker</name>
-    <addressLine>Mottakerveien 14</addressLine>
-    <addressLine2>c/o Tina Mottaker</addressLine2>
-    <postalCode>12000</postalCode>
-    <city>STOCKHOLM</city>
-    <countryCode>SE</countryCode>
-  </recipient>
-  <importer>
-    <name>Tore Mottaker</name>
-    <addressLine>Mottakerveien 14</addressLine>
-    <addressLine2>c/o Tina Mottaker</addressLine2>
-    <postalCode>12000</postalCode>
-    <city>STOCKHOLM</city>
-    <countryCode>SE</countryCode>
-    <vatNumber>12345</vatNumber>
-  </importer>
-</parties>
-<product>
-  <id>BUSINESS_PARCEL</id>
-  <ediCustomsDeclarations>
-    <natureOfTransaction>GIFT</natureOfTransaction>
-    <ediCustomsDeclaration>
-      <quantity>2</quantity>
-      <goodsDescription>shampoo</goodsDescription>
-      <customsArticleNumber>33.05.1000</customsArticleNumber>
-      <itemNetWeightInKg>3.0</itemNetWeightInKg>
-      <tarriffLineAmount>200</tarriffLineAmount>
-      <currency>NOK</currency>
-      <countryOfOrigin>CH</countryOfOrigin>
-    </ediCustomsDeclaration>
-    <ediCustomsDeclaration>
-      <quantity>5</quantity>
-      <goodsDescription>cotton t-shirts</goodsDescription>
-      <customsArticleNumber>61.09.1000</customsArticleNumber>
-      <itemNetWeightInKg>2.5</itemNetWeightInKg>
-      <tarriffLineAmount>1000</tarriffLineAmount>
-      <currency>NOK</currency>
-      <countryOfOrigin>PL</countryOfOrigin>
-    </ediCustomsDeclaration>
-    <ediCustomsDeclaration>
-      <quantity>1</quantity>
-      <goodsDescription>wool jacket</goodsDescription>
-      <customsArticleNumber>61.04.3100</customsArticleNumber>
-      <itemNetWeightInKg>2.0</itemNetWeightInKg>
-      <tarriffLineAmount>750</tarriffLineAmount>
-      <currency>NOK</currency>
-      <countryOfOrigin>DE</countryOfOrigin>
-    </ediCustomsDeclaration>
-  </ediCustomsDeclarations>
-</product>
-```
-
-#### JSON
-
-```json
-"parties": {
-  "sender": {
-    "name": "Ola Nordmann",
-    "addressLine": "Testsvingen 12",
-    "postalCode": "0150",
-    "city": "OSLO",
-    "countryCode": "NO",
-    "reference": "1234",
-    "contact": {
-      "name": "Trond Nordmann",
-      "email": "trond@nordmanntest.no",
-      "phoneNumber": "+4712345678"
-    }
-  },
-  "recipient": {
-    "name": "Tore Mottaker",
-    "addressLine": "Mottakerveien 14",
-    "addressLine2": "c/o Tina Mottaker",
-    "postalCode": "12000",
-    "city": "STOCKHOLM",
-    "countryCode": "SE"
-  },
-  "importer": {
-    "name": "Tore Mottaker",
-    "addressLine": "Mottakerveien 14",
-    "addressLine2": "c/o Tina Mottaker",
-    "postalCode": "12000",
-    "city": "STOCKHOLM",
-    "countryCode": "SE",
-    "vatNumber": "12345"
-  }
-}
-"product": {
-  "id": "BUSINESS_PARCEL",
-  "ediCustomsDeclarations": {
-    "ediCustomsDeclaration": [
-      {
-        "quantity": 2,
-        "goodsDescription": "shampoo",
-        "customsArticleNumber": "33.05.1000",
-        "itemNetWeightInKg": 3.0,
-        "tarriffLineAmount": 200,
-        "currency": "NOK",
-        "countryOfOrigin": "CH"
-      },
-      {
-        "quantity": 5,
-        "goodsDescription": "cotton t-shirts",
-        "customsArticleNumber": "61.09.1000",
-        "itemNetWeightInKg": 2.5,
-        "tarriffLineAmount": 1000,
-        "currency": "NOK",
-        "countryOfOrigin": "PL"
-      },
-      {
-        "quantity": 1,
-        "goodsDescription": "wool jacket",
-        "customsArticleNumber": "61.04.3100",
-        "itemNetWeightInKg": 2.0,
-        "tarriffLineAmount": 750,
-        "currency": "NOK",
-        "countryOfOrigin": "DE"
-      }
-    ],
-    "natureOfTransaction": "GIFT"
-  }
-}
 ```
