@@ -24,17 +24,6 @@ The following outgoing and return service combinations are supported:
 | `3570, 3584`             | `9650`                   |
 | `4850, 5000, 5600, 5800` | `9000, 9300, 9600, 9350` |
 
-## Formats
-### XML
-
- ```xml
- <returnProduct>
-   <id>9650</id>
- </returnProduct>
-```
-
- ### JSON
-
  ```json
  "returnProduct": {
      "id": "9650",
@@ -44,22 +33,6 @@ The following outgoing and return service combinations are supported:
 ## Request examples
 ### Mailbox Parcel with Free return of parcel and Pickup from mailbox VAS
 
-#### XML
-```xml
-<product>
-  <id>3584</id>
-</product>
-<returnProduct>
-  <id>9650</id>
-  <additionalServices>
-    <additionalService>
-      <id>1073</id>
-    </additionalService>
-  </additionalServices>
-</returnProduct>
-```
-
-#### JSON
 ```json
 "product": {
   "id": "3584"

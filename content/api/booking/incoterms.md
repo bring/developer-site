@@ -13,15 +13,6 @@ The `incotermRule` element/attribute can be set for Cargo International service.
 
 ## Request example
 
-### XML
-```xml
-<product>
-  <id>CARGO_INTERNATIONAL</id>
-  <incotermRule>DDP</incotermRule>
-</product>
-```
-
-### JSON
 ```json
 "product": {
   "id": "CARGO_INTERNATIONAL",

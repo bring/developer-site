@@ -15,21 +15,6 @@ We advise clients of the Booking API to use Shipping Guide API for getting the a
 
 ## Request example
 
-### XML
-```xml
-<product>
-  <customerNumber>"**********"</customerNumber>
-  <explicitAdditionalServices>false</explicitAdditionalServices>
-  <id>DOUBLE_INDOOR</id>
-</product>
-<shippingDateTime>2024-01-23T12:30:00</shippingDateTime>
-<customerSpecifiedDelivery>
- <startDateTime>2024-01-25T08:00:00</startDateTime>
-  <endDateTime>2024-01-25T13:00:00</endDateTime>
-</customerSpecifiedDelivery>
-```
-
-### JSON
 ```json
 "product": {
   "customerNumber": "**********",
