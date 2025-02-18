@@ -1,7 +1,7 @@
 <h4 class="mb-border bb pbxs fw600"><span class="ttc">{{ .title }}</span> parameters</h4>
 <dl class="desc-list mbl">
   {{- range where .includeParams ".name" "ne" "mediaTypeExtension" -}}
-    <div class="flex flex-wrap mb-border bb bw1 pvs">
+    <div class="flex flex-wrap mb-border bb pvs">
       <dt class="pls">
         <code>{{- replace .name "MyBring" "Mybring" -}}</code>
         {{- if eq .required true -}}
