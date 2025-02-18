@@ -17,22 +17,6 @@ For home delivery services (e.g. DOUBLE_INDOOR, CURBSIDE), Weight is mandatory a
 
 ### Cargo Norway - Number of Pallets & Load Meters
 
-#### XML
-```xml
-<product>
-  <id>5100</id>
-</product>
-<packages>
-  <package>
-    <weightInKg>50</weightInKg>
-    <volumeInDm3>20</volumeInDm3>
-    <numberOfPallets>2</numberOfPallets>
-    <loadMeters>1</loadMeters>
-  </package>
-</packages>
-```
-
-#### JSON
 ```json
 "product": {
   "id": "5100"

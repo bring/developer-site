@@ -11,6 +11,13 @@ menu:
 weight: 21
 aliases:
   - pickupapi.html
+  
+important:
+  - type: warn
+    title: Support for XML in the Pickup API is deprecated
+    message: |
+      Starting from March 1st, the XML request/response format will move into maintenance mode. This means that new features will only be accessible via the JSON format after this time. 
+      We recommend all client to use JSON moving forward.
 
 introduction: |
   <p>The Pickup API is used to book ad hoc pickup (to the terminal) that customers may need/want e.g. if they don't have a fixed pickup agreement with Bring for the relevant shipments. Two types of pickup are supported - cargo shipments in Norway and for parcels and business pallet in NO/SE/DK.</p>
@@ -26,8 +33,7 @@ information:
 
   - title: Formats
     content: |
-      REST JSON over HTTP is recommended for all new integrations. While we currently also support XML, this is very likely to be phased out in the future.
-      Pickup endpoints will assume all requests are UTF-8 encoded.
+      REST JSON over HTTP. Pickup endpoints will assume all requests are UTF-8 encoded.
 
 subpages:
   title: Special topics

@@ -11,6 +11,13 @@ menu:
 weight: 21
 aliases:
   - bookingapi.html
+  
+important:
+  - type: warn
+    title: Support for XML in the Booking API is deprecated
+    message: |
+      Starting from March 1st, the XML request/response format will move into maintenance mode. This means that new features will only be accessible via the JSON format after this time. 
+      We recommend all client to use JSON moving forward.
 
 introduction: |
   The Booking API is used to book shipments and supports more than 60 different services as well as a variety of additional services. Each shipment is booked individually, and shipment number, tracking link, EDI-prenotification, label and other transport documents are created as part of the transaction. The API can also provide a list of supported services and countries based on your agreement with Bring (i.e. the customer numbers attached to your user). The Booking API has similarities with the Shipment API, but there are [differences](/api/booking-shipment/).
@@ -26,8 +33,7 @@ information:
 
   - title: Formats
     content: |
-      REST JSON over HTTP is recommended for all new integrations. While we currently also support XML, this is very likely to be phased out in the future.
-      Booking endpoints will assume all requests are UTF-8 encoded.
+      REST JSON over HTTP.  Booking endpoints will assume all requests are UTF-8 encoded.
 
 subpages:
   title: Special topics
