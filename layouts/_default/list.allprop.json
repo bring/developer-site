@@ -92,7 +92,9 @@
   {{- $.Store.Add "uniqProps" .name -}}
 {{- end -}}
 
+{{- $.Store.Set "count" 0 -}}
 {{- range $_, $propName := ($.Store.Get "uniqProps" | uniq) -}}
+  {{- $.Store.Add "count" 1 -}}
   {{- $propArray := printf "%sArr" $propName -}}
   {{- $.Store.Set $propArray slice -}}
 
@@ -119,5 +121,6 @@
 
   {{- $.Store.SetInMap "entirePropCollection" $propName ($.Store.Get $propArray) -}}
 {{- end -}}
+{{- $.Store.SetInMap "entirePropCollection" "0" ($.Store.Get "count") -}}
 
 {{- $.Store.Get "entirePropCollection" | jsonify -}}
