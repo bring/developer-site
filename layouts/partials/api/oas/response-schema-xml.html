@@ -58,7 +58,7 @@
       </dl>
     {{- end -}}
   {{ else }}
-    <div class="mb-border bb bw1 mbs">
+    <div class="mb-border bb mbs">
       <div class="flex flex-wrap align-ifs pbs">
         <dt>
           {{- if or ($schemaObj.properties) ($schemaObj.oneOf) ($schemaObj.items) -}}
@@ -132,7 +132,7 @@
   {{- with $schemaObj.xml.name -}}
     {{- $name = . -}}
   {{- end -}}
-  <div class="mb-border bb bw1 mbs pbs pls">
+  <div class="mb-border bb mbs pbs pls">
     <div class="flex flex-wrap align-ifs">
       <dt>
         <code>{{ $name }}</code>

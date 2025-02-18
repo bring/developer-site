@@ -81,7 +81,7 @@
       (or (ne $name "contact") (ne $contactParent "importer"))
       (or (ne $name "contact") (ne $contactParent "returnTo"))
     -}}
-    <div class="{{ if not $isFirstLevelOf }}mb-border bb bw1{{ end }} mbs">
+    <div class="{{ if not $isFirstLevelOf }}mb-border bb{{ end }} mbs">
       <div class="flex flex-wrap align-ifs pbs {{ if $isFirstLevelOf }}screen-reader-text{{ end }}">
         <dt>
           {{- if $isFirstLevelOf -}}
@@ -209,7 +209,7 @@
     {{- end -}}
   {{- end -}}
 
-  <div class="mb-border bb bw1 mbs">
+  <div class="mb-border bb mbs">
     <div class="flex flex-wrap align-ifs pbs">
       <dt>
         {{- if $hasChildren -}}
@@ -307,7 +307,7 @@
     (or (ne $name "reference") (ne $objName "returnTo"))
     (or (ne $name "vatNumber") (ne $objName "returnTo"))
   -}}
-  <div class="mb-border bb bw1 mbs pbs pls">
+  <div class="mb-border bb mbs pbs pls">
     <div class="flex flex-wrap align-ifs">
       <dt>
         <code>{{ $name }}</code>

@@ -91,7 +91,7 @@
       </dl>
     {{- end -}}
   {{- else -}}
-    <div class="mb-border bb bw1 mbs">
+    <div class="mb-border bb mbs">
       <div class="flex flex-wrap align-ifs pbs">
         <dt>
           {{- with $schemaObj.properties -}}
@@ -156,7 +156,7 @@
     {{- end -}}
   {{- end -}}
 
-  <div class="mb-border bb bw1 mbs">
+  <div class="mb-border bb mbs">
     <div class="flex flex-wrap align-ifs pbs">
       <dt>
         {{- if $hasChildren -}}
@@ -242,7 +242,7 @@
 
 {{/*  If neither obj, arr or ref, render the item */}}
 {{- else if and (ne $schemaObj.type "object") (ne $schemaObj.type "array") (ne $isRef true) -}}
-  <div class="mb-border bb bw1 mbs pbs pls">
+  <div class="mb-border bb mbs pbs pls">
     <div class="flex flex-wrap align-ifs">
       <dt>
         <code>{{ $name }}</code>
