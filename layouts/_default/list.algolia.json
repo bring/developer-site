@@ -1,12 +1,17 @@
 {{- $.Scratch.Add "index" slice -}}
-{{- range .Site.RegularPages -}}
+{{- range .Site.Pages -}}
+  {{- $isFile := false -}}
+  {{- with .File -}}
+    {{- $isFile = true -}}
+  {{- end -}}
   {{- if (and
-           (not .Draft)
-           (not .IsHome)
-           (not .Params.private)
-           (not (in .RelPermalink "/revision-history/"))
-           (not (in .RelPermalink "/blog/"))
-           (not (in .RelPermalink "/booking/examples/vas"))) -}}
+          ($isFile)
+          (not .Draft)
+          (not .IsHome)
+          (not .Params.private)
+          (not (in .RelPermalink "/revision-history/"))
+          (not (in .RelPermalink "/blog/"))
+          (not (in .RelPermalink "/booking/examples/vas"))) -}}
 
     {{- $.Scratch.Set "documentation" "" -}}
     {{- range .Params.documentation -}}
