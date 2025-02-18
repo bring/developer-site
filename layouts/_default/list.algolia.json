@@ -30,10 +30,59 @@
       {{- $introduction = . -}}
     {{- end -}}
 
-    {{- $api := dict -}}
+    {{- $.Store.Set "apiSchemas" dict -}}
     {{- with .Params.oas -}}
       {{- $oasdata := resources.GetRemote . | transform.Unmarshal -}}
-      {{- $api = $oasdata.components -}}
+
+      {{/* schema props */}}
+      {{- range $schemaName, $_ := $oasdata.components.schemas -}}
+        {{- $.Store.Set "props" dict -}}
+        {{- range $propName, $_ := .properties -}}
+          {{- $.Store.Set $propName dict -}}
+            {{- $.Store.SetInMap $propName "name" $propName -}}
+            {{- with .description -}}
+              {{- $.Store.SetInMap $propName "description" . -}}
+            {{- end -}}
+          {{- $.Store.SetInMap "props" $propName ($.Store.Get $propName) -}}
+        {{- end -}}
+
+        {{- $.Store.SetInMap $schemaName "name" $schemaName -}}
+        {{- $.Store.SetInMap $schemaName "properties" ($.Store.Get "props") -}}
+        {{- with .description -}}
+          {{- $.Store.SetInMap $schemaName "description" . -}}
+        {{- end -}}
+
+        {{- $.Store.SetInMap "apiSchemas" $schemaName ($.Store.Get $schemaName) -}}
+      {{- end -}}
+
+      {{/* path params */}}
+      {{- range $pathName, $_ := $oasdata.paths -}}
+        {{- range . -}}
+          {{- $.Store.Set "params" dict -}}
+          {{ $isRef := false }}
+          {{- range .parameters -}}
+            {{ $paramName := .name }}
+            {{- $.Store.Set $paramName dict -}}
+            {{- $.Store.SetInMap $paramName "name" $paramName -}}
+            {{- with .description -}}
+              {{- $.Store.SetInMap $paramName "description" . -}}
+            {{- end -}}
+            {{- $.Store.SetInMap "params" $paramName ($.Store.Get $paramName) -}}
+          {{- end -}}
+
+          {{- $.Store.SetInMap $pathName "name" $pathName -}}
+          {{- $.Store.SetInMap $pathName "parameters" ($.Store.Get "params") -}}
+          {{- with .description -}}
+            {{- $.Store.SetInMap $pathName "description" . -}}
+          {{- end -}}
+          {{- with .summary -}}
+            {{- $.Store.SetInMap $pathName "summary" . -}}
+          {{- end -}}
+
+          {{- $.Store.SetInMap "apiSchemas" $pathName ($.Store.Get $pathName) -}}
+        {{- end -}}
+      {{- end -}}
+
     {{- end -}}
 
     {{- $parentTitle := "" -}}
@@ -65,7 +114,7 @@
           "section" (.Section | upper)
           "parent" $parentTitle
           "introduction" $introduction
-          "api" $api
+          "apischemas" ($.Store.Get "apiSchemas")
           "documentation" ($.Scratch.Get "documentation")
           "content" .Plain) -}}
     {{- else -}}
@@ -78,7 +127,7 @@
           "section" (.Section | upper)
           "parent" $parentTitle
           "introduction" $introduction
-          "api" $api
+          "apischemas" ($.Store.Get "apiSchemas")
           "documentation" ($.Scratch.Get "documentation")
           "content" .Plain) -}}
     {{- end -}}
