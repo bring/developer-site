@@ -11,7 +11,7 @@
           (not (in .RelPermalink "/blog/"))
           (not (in .RelPermalink "/booking/examples/vas"))) -}}
 
-          {{ $apiTitle := .Title }}
+          {{- $apiTitle := .Title -}}
 
     {{- with .Params.oas -}}
       {{- $oasdata := resources.GetRemote . | transform.Unmarshal -}}
@@ -23,30 +23,30 @@
 {{/*- $schemaMaster | jsonify -*/}}
 {{/*- $pathMaster | jsonify -*/}}
 
-{{- $.Store.Add "allTheParams" slice -}}
+{{- $.Store.Set "schemasAndPaths" slice -}}
 
 {{/* fill scratch with all schema props */}}
 {{- range $apiName, $_ := $schemaMaster -}}
   {{- range $schemaName, $_ := . -}}
     {{- range $propName, $propVal := .properties -}}
 
-      {{ $isRef := false }}
-      {{- $schemaPath := "" -}}
-      {{- $typeOrRef := $propVal.type -}}
+      {{- $scratchId := print "%s%s" $schemaName $propName -}}
+      {{- $.Store.Set $scratchId dict -}}
+      {{- $.Store.SetInMap $scratchId "name" $propName -}}
+      {{- $.Store.SetInMap $scratchId "schema" $schemaName -}}
+      {{- $.Store.SetInMap $scratchId "api" $apiName -}}
+
+      {{- $type := $propVal.type -}}
       {{- range $propKey, $_ := $propVal }}
         {{- if eq $propKey "$ref" -}}
-          {{ $isRef = true }}
-          {{- $schemaPath = path.Split . -}}
-          {{- $typeOrRef = printf "ref-%s" $schemaPath.File -}}
+          {{- $schemaPath := path.Split . -}}
+          {{- $.Store.SetInMap $scratchId "ref" $schemaPath.File -}}
+        {{- else -}}
+          {{- $.Store.SetInMap $scratchId "type" $type -}}
         {{- end -}}
       {{- end -}}
 
-      {{- $.Store.Add "allTheParams" 
-      (dict 
-        "name" $propName
-        "type" $typeOrRef
-        "schema" $schemaName
-        "api" $apiName) -}}
+      {{- $.Store.Add "schemasAndPaths" ($.Store.Get $scratchId) -}}
 
     {{- end -}}
   {{- end -}}
@@ -58,58 +58,66 @@
     {{- range . -}}
 
       {{- $opId := .operationId -}}
-
       {{- range .parameters -}}
-        {{ $isRef := false }}
-        {{- $schemaPath := "" -}}
-        {{- $typeOrRef := .schema.type -}}
+
+        {{- $.Store.Set $opId dict -}}
+        {{- $.Store.SetInMap $opId "name" .name -}}
+        {{- $.Store.SetInMap $opId "schema" $opId -}}
+        {{- $.Store.SetInMap $opId "api" $apiName -}}
+
+        {{- $type := .schema.type -}}
         {{- range $schemaKey, $_ := .schema }}
           {{- if eq $schemaKey "$ref" -}}
-            {{ $isRef = true }}
-            {{- $schemaPath = path.Split . -}}
-            {{- $typeOrRef = printf "ref-%s" $schemaPath.File -}}
+            {{- $schemaPath := path.Split . -}}
+            {{- $.Store.SetInMap $opId "ref" $schemaPath.File -}}
+          {{- else -}}
+            {{- $.Store.SetInMap $opId "type" $type -}}
           {{- end -}}
         {{- end -}}
 
-        {{- $.Store.Add "allTheParams" 
-        (dict 
-          "name" .name
-          "type" $typeOrRef
-          "schema" $opId
-          "api" $apiName) -}}
-      {{- end -}}
+        {{- $.Store.Add "schemasAndPaths" ($.Store.Get $opId) -}}
 
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
 
-{{/*- $.Store.Get "allTheParams" | jsonify -*/}}
+{{/*- $.Store.Get "schemasAndPaths" | jsonify -*/}}
 
 {{/* make object of unique names with appearances inside */}}
-{{- $.Store.Add "propCol" slice -}}
-{{- $.Store.Add "uniqProps" slice -}}
+{{- $.Store.Set "entirePropCollection" dict -}}
+{{- $.Store.Set "uniqProps" slice -}}
 
-{{- range ($.Store.Get "allTheParams") -}}
-    {{- $.Store.Add "uniqProps" .name -}}
+{{- range ($.Store.Get "schemasAndPaths") -}}
+  {{- $.Store.Add "uniqProps" .name -}}
 {{- end -}}
 
 {{- range $_, $propName := ($.Store.Get "uniqProps" | uniq) -}}
-  {{- $scratchName := printf "scratch-%s" $propName -}}
-  {{- $.Store.Add $scratchName slice -}}
+  {{- $propArray := printf "%sArr" $propName -}}
+  {{- $.Store.Set $propArray slice -}}
 
-  {{- range ($.Store.Get "allTheParams") -}}
+  {{- range $key, $_ := ($.Store.Get "schemasAndPaths") -}}
     {{- if eq $propName .name -}}
-      {{- $.Store.Add $scratchName 
-      (dict 
-        "api" .api
-        "schema" .schema
-        "type" .type) -}}
+
+      {{- $propObj := printf "%sObj" $propName -}}
+      {{- $.Store.Set $propObj dict -}}
+
+      {{- $.Store.SetInMap $propObj "api" .api -}}
+      {{- with .schema -}}
+        {{- $.Store.SetInMap $propObj "schema" . -}}
+      {{- end -}}
+      {{- with .ref -}}
+        {{- $.Store.SetInMap $propObj "ref" . -}}
+      {{- end -}}
+      {{- with .type -}}
+        {{- $.Store.SetInMap $propObj "type" . -}}
+      {{- end -}}
+
+      {{- $.Store.Add $propArray ($.Store.Get $propObj) -}}
     {{- end -}}
   {{- end -}}
 
-  {{- $.Store.Add "propCol" 
-  (dict
-    $propName ($.Store.Get $scratchName)) -}}
+  {{- $.Store.SetInMap "entirePropCollection" $propName ($.Store.Get $propArray) -}}
 {{- end -}}
 
-{{- $.Store.Get "propCol" | jsonify -}}
+{{- $.Store.Get "entirePropCollection" | jsonify -}}
