@@ -53,7 +53,8 @@ documentation:
         - In transit (for delivery)
         - Lost
         - Partly delivered
-        - Stop shipment
+        - Stopped shipment
+        - Ready for pickup
 
       Value Added Services that may invalidate our services:
         - Optional pickup point (0010)
@@ -164,11 +165,11 @@ documentation:
              <td>5801</td>
              <td>Yes</td>
              <td>No</td>
-             <td>Yes</td>
+             <td>No</td>
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Business parcel</td>
+             <td>Business Parcel</td>
              <td>0330</td>
              <td>Yes</td>
              <td>No</td>
@@ -176,7 +177,7 @@ documentation:
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Business parcel bulk</td>
+             <td>Business Parcel Bulk</td>
              <td>0332</td>
              <td>Yes</td>
              <td>No</td>
@@ -184,7 +185,7 @@ documentation:
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Business pallet</td>
+             <td>Business Pallet</td>
              <td>0336</td>
              <td>Yes</td>
              <td>No</td>
@@ -192,7 +193,7 @@ documentation:
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Pickup parcel</td>
+             <td>Pickup Parcel</td>
              <td>0340</td>
              <td>Yes</td>
              <td>No</td>
@@ -200,7 +201,7 @@ documentation:
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Pickup parcel bulk</td>
+             <td>Pickup Parcel Bulk</td>
              <td>0342</td>
              <td>Yes</td>
              <td>No</td>
@@ -208,7 +209,15 @@ documentation:
              <td>Yes</td>
           </tr>
           <tr>
-             <td>Home delivery parcel</td>
+             <td>Pickup Parcel Box</td>
+             <td>0344</td>
+             <td>Yes</td>
+             <td>No</td>
+             <td>Yes</td>
+             <td>Yes</td>
+          </tr>
+          <tr>
+             <td>Home Delivery Parcel</td>
              <td>0349</td>
              <td>Yes</td>
              <td>No</td>
