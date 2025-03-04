@@ -41,7 +41,7 @@ It is required to pass customs information when booking the following services f
 
 Sending customs export information as part of a booking request only applies to the aforementioned products.
 
-### Consent Requirement for Customs Declaration
+### Consent requirement for Customs declaration
 
 For exports from Norway, the sender is required to provide explicit consent confirming that:
 
