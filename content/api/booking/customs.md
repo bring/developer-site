@@ -41,6 +41,18 @@ It is required to pass customs information when booking the following services f
 
 Sending customs export information as part of a booking request only applies to the aforementioned products.
 
+### Consent Requirement for Customs Declaration
+
+For exports from Norway, the sender is required to provide explicit consent confirming that:
+
+- The customs information provided is accurate and complete.
+- The consignment does not contain any dangerous or prohibited goods.
+- This ensures compliance with customs regulations and the secure processing of international shipments.
+
+**Note**:
+- Providing consent is mandatory for booking.
+- Bookings will not be allowed unless consent is provided.
+
 ### IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
 
 By using the `ioss` element of `customsInformation`, one can specify an IOSS number for exports from Norway to EU countries. Only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`.
