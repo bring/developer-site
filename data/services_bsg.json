@@ -357,7 +357,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
   "SenderCountries" : "ALL",
-  "Destination" : "NO, SE, DK, FI, AT, AX, BE, CH, CZ, DE, EE, ES, FO, FR, GL, GR, HU, IE, IS, IT, LT, LU, LV, NL, PL, PT, SI",
+  "Destination" : "NO, SE, DK, FI, AT, AX, BE, CZ, DE, EE, ES, FO, FR, GL, GR, HU, IE, IS, IT, LT, LU, LV, NL, PL, PT",
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
