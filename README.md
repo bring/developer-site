@@ -1,23 +1,5 @@
 # developer.bring.com
 
-If you want to work on your new OAS documentation while keeping the current one
-running, do the following:
-
-- Rename and commit the API’s `index.md` file to `_index.md`, this allows for
-  subpages and it keeps the file history intact.
-- Duplicate the file and name it `new.md`
-- Remove `disqus`, `menu` and `weight` objects. This will prevent conflicts with
-  the currently published page.
-- Commit and make PR – the new page will be available at `{current-url}/new`
-
-If you don’t need duplication, just add `oas: {url to json}` to the current
-`index.md` file
-
-Remember to clean up your old docs, the
-[PR for Modify Delivery API](https://github.com/bring/developer-site/pull/1184/files)
-is a good example. We have since changed the config to JSON, but the process is
-the same.
-
 ## Tech
 
 The Bring Developer site uses [Hugo](https://gohugo.io/),
@@ -282,3 +264,6 @@ of the code example after the opening fence.
 If you have issues or questions regarding the API, please post in the respective
 API’s comments and support section. The issue tracker is for the site itself, as
 reflected in the template.
+
+If you are a Bring developer and need help, we have a dedicated
+<a href="https://posten.slack.com/archives/C6ST0MNQ7">Slack channel</a>
