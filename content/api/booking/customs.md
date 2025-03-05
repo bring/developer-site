@@ -10,7 +10,7 @@ weight: 10
 ---
 
 ## Customs data
-Depending on the service ordered and the country combination, one can pass customs data with the booing. The customs information will be sent electronically from Bring to the destination country.
+Depending on the service ordered and the country combination, one can pass customs data with the booking. The customs information will be sent electronically from Bring to the destination country.
 
 ### Customs data example {#customs-export-information-example}
 
