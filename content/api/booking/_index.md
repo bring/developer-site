@@ -12,6 +12,14 @@ weight: 21
 aliases:
   - bookingapi.html
 
+important:
+  - type: warn
+    title: New customs information structure, with support for VOEC on imports to Norway
+    message: |
+      The Booking API has gotten a new structure for sending customs information. Along with this comes support for sending VOEC (VAT on E-commerce) on imports to Norway on some services.
+      The existing/old format is now deprecated, and will be phased out. See [this page](/api/booking/customs/) for more information on how to send such information when ordering a shipment.
+
+
 introduction: |
   The Booking API is used to book shipments and supports more than 60 different services as well as a variety of additional services. Each shipment is booked individually, and shipment number, tracking link, EDI-prenotification, label and other transport documents are created as part of the transaction. The API can also provide a list of supported services and countries based on your agreement with Bring (i.e. the customer numbers attached to your user). The Booking API has similarities with the Shipment API, but there are [differences](/api/booking-shipment/).
 
