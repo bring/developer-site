@@ -159,16 +159,18 @@
   <div class="mb-border bb mbs">
     <div class="flex flex-wrap align-ifs pbs">
       <dt>
+        {{- $padding := "" -}}
         {{- if $hasChildren -}}
+          {{- $padding = "plm" -}}
           {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel "threshold" 2) -}}
         {{- else -}}
           <code class="mls">{{ $name }}</code>
         {{- end -}}
         {{- if $required -}}
-          <div class="plm mls lh-solid param-state text-note">Required</div>
+          <div class="{{ $padding }} mls lh-solid param-state text-note">Required</div>
         {{- end -}}
         {{- if $deprecated -}}
-          <div class="plm mls lh-solid param-state text-note">Deprecated</div>
+          <div class="{{ $padding }} mls lh-solid param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="ptxs pls">
