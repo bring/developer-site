@@ -280,7 +280,7 @@
                 {{- $schema := index $components.schemas $schemaPath.File -}}
                 {{- $items := $schema.properties -}}
                 {{- range $key, $_ := $items -}}
-                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schema.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
                 {{- end -}}
               {{- end -}}
             {{- end -}}
@@ -331,6 +331,9 @@
           <span>{{- $schemaObj.type -}}</span>
           {{- with $schemaObj.format -}}
             <span>{{- printf " <%s>" . -}}</span>
+          {{- end -}}
+          {{- with $schemaObj.minLength -}}
+            <span>Min length: {{ . }}</span>
           {{- end -}}
           {{- with $schemaObj.maxLength -}}
             <span>Max length: {{ . }}</span>

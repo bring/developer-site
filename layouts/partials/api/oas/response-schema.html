@@ -159,16 +159,18 @@
   <div class="mb-border bb mbs">
     <div class="flex flex-wrap align-ifs pbs">
       <dt>
+        {{- $padding := "" -}}
         {{- if $hasChildren -}}
+          {{- $padding = "plm" -}}
           {{- partial "api/oas/param-toggle-btn.html" (dict "levelId" $levelId "name" $name "recLevel" $recLevel "threshold" 2) -}}
         {{- else -}}
           <code class="mls">{{ $name }}</code>
         {{- end -}}
         {{- if $required -}}
-          <div class="plm mls lh-solid param-state text-note">Required</div>
+          <div class="{{ $padding }} mls lh-solid param-state text-note">Required</div>
         {{- end -}}
         {{- if $deprecated -}}
-          <div class="plm mls lh-solid param-state text-note">Deprecated</div>
+          <div class="{{ $padding }} mls lh-solid param-state text-note">Deprecated</div>
         {{- end -}}
       </dt>
       <dd class="ptxs pls">
@@ -227,7 +229,7 @@
                 {{- $schema := index $components.schemas $schemaPath.File -}}
                 {{- $items := $schema.properties -}}
                 {{- range $key, $_ := $items -}}
-                  {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+                  {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schema.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
                 {{- end -}}
               {{- end -}}
             {{- end -}}
@@ -261,6 +263,9 @@
           <span>{{- $schemaObj.type -}}</span>
           {{- with $schemaObj.format -}}
             <span>{{- printf " <%s>" . -}}</span>
+          {{- end -}}
+          {{- with $schemaObj.minLength -}}
+            <span>Min length: {{ . }}</span>
           {{- end -}}
           {{- with $schemaObj.maxLength -}}
             <span>Max length: {{ . }}</span>
