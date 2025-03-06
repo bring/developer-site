@@ -9,6 +9,22 @@ menu:
 weight: 10
 ---
 
+## New customs structure from march 2025
+There's been a change in the way customs information must be reported. This format will be applicable for all customs declarations.
+Impacted services will be
+
+- Business Parcel (0330)
+- PickUp Parcel (0340)
+- Letter Packet (3639)
+
+For 3639, this applies immediately, whereas there will be a grace period for the remaining ones. We'll notify about this, but advice scheduling the change.
+
+The new element to be used is called `customsInformation`, which replaces the element `ediCustomsInformation` on the `product` element.
+
+The main differences are:
+- a consent field is added, this needs to be true 
+- importer and exporter parties are required
+
 ## Customs data
 Depending on the service ordered and the country combination, one can pass customs data with the booking. The customs information will be sent electronically from Bring to the destination country.
 
