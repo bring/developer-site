@@ -227,7 +227,7 @@
                 {{- $schema := index $components.schemas $schemaPath.File -}}
                 {{- $items := $schema.properties -}}
                 {{- range $key, $_ := $items -}}
-                  {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
+                  {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schema.required $key) "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
                 {{- end -}}
               {{- end -}}
             {{- end -}}
