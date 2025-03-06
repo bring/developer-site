@@ -332,6 +332,9 @@
           {{- with $schemaObj.format -}}
             <span>{{- printf " <%s>" . -}}</span>
           {{- end -}}
+          {{- with $schemaObj.minLength -}}
+            <span>Min length: {{ . }}</span>
+          {{- end -}}
           {{- with $schemaObj.maxLength -}}
             <span>Max length: {{ . }}</span>
           {{- end -}}
