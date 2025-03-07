@@ -7,9 +7,14 @@
     background: var(--green-10);
   }
 
+  .coi-banner__wrapper {
+    color: var(--gray-20);
+  }
+
   /*Brighter link color for better contrast*/
   &
     a:not(
+      .coi-banner__wrapper a,
       .btn,
       .btn-link--dark,
       .sitefooter a,
@@ -25,6 +30,7 @@
 
   &
     a:not(
+      .coi-banner__wrapper a,
       .btn,
       .btn-link--dark,
       .language-switch,
