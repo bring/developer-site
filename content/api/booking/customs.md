@@ -9,7 +9,7 @@ menu:
 weight: 10
 ---
 
-## New customs structure from march 2025
+## New customs structure from March 2025
 There's been a change in the way customs information must be reported. This format will be applicable for all customs declarations.
 Impacted services will be
 
@@ -33,13 +33,13 @@ Depending on the service ordered and the country combination, one can pass custo
 In this example, you are sending a parcel/shipment with 2 shampoos, 5 cotton t-shirts and 1 wool jacket. The number of pieces is 8 (2 shampoos + 5 cotton
 t-shirts + 1 wool jacket), and the number of articles is 3 (shampoo, cotton t-shirt, wool jacket). The whole shipment is referred to as an item.
 
-| Quantity | Description of contents | Customs tariff code | Total content net weight (kg) | Total content value | Currency | Country of origin |
-| -------: | ----------------------- | ------------- | ----------------------------: | ------------------: | -------- | ----------------- |
-| `2` | `shampoo` | `33051000` | `3.0` | `200` | `NOK` | `CH`|
-| `5` | `cotton t-shirts` | `61091000` | `2.5` | `1000`| `NOK`| `PL` |
-| `1` | `wool jacket` | `61043100` | `2.0` | `750` | `NOK`| `DE` |
+| Quantity | Description of goods | Customs tariff code | Total content gross weight (kg) | Total content value | Currency | Country of origin |
+| -------: |----------------------| -------- |--------------------------------:| ------------------: | -------- | ----------------- |
+| `2` | `shampoo`            | `330510` |                           `3.0` | `200` | `NOK` | `CH`|
+| `5` | `cotton t-shirts`    | `610910` |                           `2.5` | `1000`| `NOK`| `PL` |
+| `1` | `wool jacket`        | `610431` |                           `2.0` | `750` | `NOK`| `DE` |
 
-**Nature of Transaction**: Gift or Sale of Goods or Returned Goods or Commercial Sample or Documents or Other
+**Nature of Cargo**: Gift or Sale of Goods or Returned Goods or Commercial Sample or Documents or Other
 
 Sending `Importer` and `Exporter` parties in the request is mandatory.
 
@@ -71,8 +71,8 @@ For exports from Norway, the sender is required to provide explicit consent conf
 
 ### IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
 
-By using the `ioss` element of `customsInformation`, one can specify an IOSS number for exports from Norway to EU countries. Only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`.
-Note that this can not be combined with a `reference` field on the `senders` party. See example [here](https://developer.bring.com/api/booking#make-a-booking-post) More info about IOSS [here](https://www.bring.no/tjenester/toll/ioss).
+By using the `ioss` element of `customsInformation`, one can specify an IOSS number for exports from Norway to EU countries. This is only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`.
+Note that this can not be combined with a `reference` field on the `senders` party. See example [here](https://developer.bring.com/api/booking#make-a-booking-post) and more info about IOSS [here](https://www.bring.no/tjenester/toll/ioss).
 
 ## Import to Norway
 
@@ -88,5 +88,5 @@ VOEC can be declared on the following services when sent to Norway from abroad
 
 A setup with Bring is required for this.
 
-By using the `voec` element of `customsInformation`, one can specify a VOEC number for imports to Norway. Only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`. Note that a `consolidatedShipmentId` will have to be specified for grouping shipments.
-See example [here](https://developer.bring.com/api/booking#make-a-booking-post) More info about VOEC [here](https://www.bring.no/en/services/customs/voec-vat-on-e-commerce).
+By using the `voec` element of `customsInformation`, one can specify a VOEC number for imports to Norway. This is only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`. Note that a `consolidatedShipmentId` will have to be specified for grouping shipments.
+See example [here](https://developer.bring.com/api/booking#make-a-booking-post) and more info about VOEC [here](https://www.bring.no/en/services/customs/voec-vat-on-e-commerce).
