@@ -86,7 +86,7 @@ VOEC can be declared on the following services when sent to Norway from abroad
 - Pickup Parcel Bulk (0342)
 - Home Delivery Parcel (0349)
 
-A setup with Bring is required for this. Note that VOEC on is supported only when Bring is transporting cross border to Norway.
+A setup with Bring is required for this. Note that VOEC is supported only when Bring is transporting cross border to Norway.
 
 By using the `voec` element of `customsInformation`, one can specify a VOEC number for imports to Norway. This is only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`. Note that a `consolidatedShipmentId` will have to be specified for grouping shipments.
 See example [here](https://developer.bring.com/api/booking#make-a-booking-post) and more info about VOEC [here](https://www.bring.no/en/services/customs/voec-vat-on-e-commerce).
