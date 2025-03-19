@@ -69,6 +69,10 @@ For exports from Norway, the sender is required to provide explicit consent conf
 - Providing consent is mandatory for booking.
 - Bookings will not be allowed unless consent is provided.
 
+Consent is signalled with the `consent` property on `customsInformation`. The value will lead to digital signature on CN23 label / customs declaration when this document is applicable. This can be seen in the image of a CN23 label below.
+
+![](/images/booking/cn23_consent.png)
+
 ### IOSS (Import One-Stop Shop) - Adding an IOSS number for exports from Norway to EU
 
 By using the `ioss` element of `customsInformation`, one can specify an IOSS number for exports from Norway to EU countries. This is only allowed when `natureOfCargo` is of type `SALE_OF_GOODS`.
