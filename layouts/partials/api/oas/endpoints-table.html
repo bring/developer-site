@@ -23,12 +23,14 @@
 
     <table class="maxw96r">
       <thead>
-        {{- with $soapArr -}}
-          <th>Type</th>
-        {{- end -}}
-        <th>Usage</th>
-        <th>Method</th>
-        <th>Endpoint</th>
+        <tr>
+          {{- with $soapArr -}}
+            <th>Type</th>
+          {{- end -}}
+          <th>Usage</th>
+          <th>Method</th>
+          <th>Endpoint</th>
+        </tr>
       </thead>
       {{- $restInd := 0 -}}
       {{- $pathsLen := len .paths -}}

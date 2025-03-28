@@ -27,7 +27,11 @@
   {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "deprecated" $deprecated "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- with $schema -}}
+      {{- partial "api/oas/response-schema-xml.html" (dict "schemaObj" . "name" $schemaPath.File "components" $components "required" $required "deprecated" $deprecated "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "isOneOf" $isOneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- else -}}
+      <script>console.error("{{$schemaPath.File}} object missing from schema. XML response template render exited.")</script>
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 

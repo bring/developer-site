@@ -48,7 +48,7 @@
               {{- range first 3 $pages -}}
                 <div class="bg-gray1 bshadow pal rad-a2px">
                   <time class="mrs text-note"
-                    datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+                    datetime="{{ .PublishDate.Format "2006-01-02" | safeHTML }}"
                     >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
                   >
                   {{- if (.Params.isImportant) -}}

@@ -33,7 +33,7 @@
       <div class="message--warn pal">
         <h3 class="text-basic">
           <time
-            datetime="{{ .PublishDate.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}"
+            datetime="{{ .PublishDate.Format "2006-01-02" | safeHTML }}"
             >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time
           >: {{ .Title }}
         </h3>
