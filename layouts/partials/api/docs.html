@@ -108,9 +108,11 @@
             </div>
             <table>
               <thead>
-                <th>Usage</th>
-                <th>Method</th>
-                <th>Endpoint</th>
+                <tr>
+                  <th>Usage</th>
+                  <th>Method</th>
+                  <th>Endpoint</th>
+                </tr>
               </thead>
               {{- range . -}}
                 {{ $displayName := .displayName }}
