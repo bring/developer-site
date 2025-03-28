@@ -4,7 +4,7 @@ layout: api-sub
 menu:
   apidocs:
     identifier: bookingqr
-    title: Generating QR codes
+    title: Generating QR codes (Norway)
     parent: booking_labels
 weight: 3
 ---
