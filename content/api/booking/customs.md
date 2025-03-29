@@ -23,7 +23,9 @@ The new element to be used is called `customsInformation`, which replaces the el
 
 The main differences are:
 - a consent field is added, this needs to be true 
-- importer and exporter parties are required
+- importer and exporter parties are required 
+
+If there's no difference between the importer/recipient and exporter/sender pairs, it's ok to send the same information. 
 
 ## Customs data
 Depending on the service ordered and the country combination, one can pass customs data with the booking. The customs information will be sent electronically from Bring to the destination country.
