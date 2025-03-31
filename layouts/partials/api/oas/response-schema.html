@@ -27,7 +27,11 @@
     {{- $isRef = true -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "deprecated" $deprecated "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" $oneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- with $schema -}}
+      {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $name "components" $components "required" $required "deprecated" $deprecated "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" $oneOf "parent" $parent "oneOfInd" $oneOfInd) -}}
+    {{- else -}}
+      {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON response") -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
@@ -49,8 +53,12 @@
               {{- range . -}}
                 {{- $schemaPath := path.Split . -}}
                 {{- $schema := index $components.schemas $schemaPath.File -}}
-                {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
-              {{ end }}
+                {{- with $schema -}}
+                  {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "radio" "parent" $name "oneOfInd" $oneOfInd) -}}
+                {{- else -}}
+                  {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON response") -}}
+                {{- end -}}
+              {{- end -}}
               {{- $oneOfInd = add $oneOfInd 1 -}}
             {{- end -}}
           </div>
@@ -61,7 +69,11 @@
         {{- range . -}}
           {{- $schemaPath := path.Split . -}}
           {{- $schema := index $components.schemas $schemaPath.File -}}
-          {{- partial "api/oas/response-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
+          {{- with $schema -}}
+            {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
+          {{- else -}}
+            {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON response") -}}
+          {{- end -}}
           {{- $oneOfInd = add $oneOfInd 1 -}}
         {{- end -}}
       {{- end -}}

@@ -33,7 +33,11 @@
     {{- $contactParent = $objName -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "deprecated" $deprecated "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
+    {{- with $schema -}}
+      {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $name "components" $components "required" $required "deprecated" $deprecated "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
+    {{- else -}}
+      {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
@@ -128,7 +132,11 @@
                   {{- range . -}}
                     {{- $schemaPath := path.Split . -}}
                     {{- $schema := index $components.schemas $schemaPath.File -}}
-                    {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "radio" "parent" $name "ofInd" $ofInd) -}}
+                    {{- with $schema -}}
+                      {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "radio" "parent" $name "ofInd" $ofInd) -}}
+                    {{- else -}}
+                      {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
+                    {{- end -}}
                   {{- end -}}
                   {{- $ofInd = add $ofInd 1 -}}
                 {{- end -}}
@@ -140,7 +148,11 @@
             {{- range . -}}
               {{- $schemaPath := path.Split . -}}
               {{- $schema := index $components.schemas $schemaPath.File -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
+              {{- with $schema -}}
+                {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
+              {{- else -}}
+                {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
+              {{- end -}}
               {{- $ofInd = add $ofInd 1 -}}
             {{- end -}}
           {{- end -}}
@@ -157,7 +169,11 @@
                 {{- range . -}}
                   {{- $schemaPath := path.Split . -}}
                   {{- $schema := index $components.schemas $schemaPath.File -}}
-                  {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "select" "parent" $name "ofInd" $ofInd) -}}
+                  {{- with $schema -}}
+                    {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "select" "parent" $name "ofInd" $ofInd) -}}
+                  {{- else -}}
+                    {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
+                  {{- end -}}
                 {{- end -}}
                 {{- $ofInd = add $ofInd 1 -}}
               {{- end -}}
@@ -168,7 +184,11 @@
             {{- range . -}}
               {{- $schemaPath := path.Split . -}}
               {{- $schema := index $components.schemas $schemaPath.File -}}
-              {{- partial "api/oas/request-schema.html" (dict "schemaObj" $schema "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
+              {{- with $schema -}}
+                {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
+              {{- else -}}
+                {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
+              {{- end -}}
               {{- $ofInd = add $ofInd 1 -}}
             {{- end -}}
           {{- end -}}
