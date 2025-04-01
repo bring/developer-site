@@ -12,6 +12,10 @@ weight: 31
  
 important:
 - type: warn
+  title: Hiding Pickup Code in the Tracking API
+  message: |
+    Starting April 24th, the pickup code will be hidden in the Tracking API for senders. As the pickup code is considered personal information for the receiver, we are making this change to comply with GDPR regulations. However, if the pickup code is needed, it can be requested through tracking the shipment in the Mybring portal. Please note that we will maintain an audit log of all requests to view the pickup code.
+- type: warn
   title: The Tracking API will no longer support unauthenticated requests from 13.05.2024
   message: |
     Starting from May 13th, unauthenticated requests will no longer have access to the Tracking API. Previously, we implemented rate limiting measures.
@@ -20,28 +24,6 @@ important:
     If you see following error message that means you are not sending authenticated requests.
 
     ``401 - Unathorized. The Tracking API no longer supports unauthenticated requests. Make sure your requests are authenticated. Read more about this on our Bring developer site. https://developer.bring.com/api/tracking/``
-- type: warn
-  title: The Tracking API will start rate limiting unauthenticated requests from 15.08.2023
-  message: |
-    Our customers are increasingly demanding new functionality and solutions that are easy to use. To meet these expectations,
-    we must know which customers and partners are using our APIs and how they are using them. To further develop the value proposition of our Tracking API,
-    the solution will require authentication. Read [here](https://developer.bring.com/api) on how to make authenticated requests.
-
-    From 15 August 2023, we will start rate limiting the requests.
-
-    If you see following error message that means you are being rate limited, and you should start using authenticated requests.
-
-    ``429 - Too many requests. We are now rate limiting our unauthenticated users, to prevent this make sure your requests are authenticated. Read more about this on our Bring developer site. https://developer.bring.com/api/tracking/``
-- type: warn
-  title: Deprecating v1 version of Tracking API - 01.08.2022
-  message: |
-   Starting 1 August 2022, Tracking API version v1 will be deprecated and the requests will be automatically forwarded to the latest version, v2.
-   It is not a breaking change. In the new version you will have access to many more fields.
-- type: warn
-  title: Removed event statuses from open tracking - 22.06.2022
-  message: |
-   The event statuses ARRIVED_COLLECTION and ARRIVED_DELIVERY are not valid anymore, and therefore have been removed from the Tracking API.
-  
 introduction: |
   The Tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to get shipment details and events and make them available for customers. The information available in this API is the same that is publicly available from the [Tracking website](http://tracking.bring.com/).
 
