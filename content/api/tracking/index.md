@@ -10,20 +10,6 @@ menu:
     url: /api/tracking
 weight: 31
  
-important:
-- type: warn
-  title: Hiding Pickup Code in the Tracking API
-  message: |
-    Starting April 24th, the pickup code will be hidden in the Tracking API for senders. As the pickup code is considered personal information for the receiver, we are making this change to comply with GDPR regulations.
-- type: warn
-  title: The Tracking API will no longer support unauthenticated requests from 13.05.2024
-  message: |
-    Starting from May 13th, unauthenticated requests will no longer have access to the Tracking API. Previously, we implemented rate limiting measures.
-    Read [here](https://developer.bring.com/api) on how to make authenticated requests.
-
-    If you see following error message that means you are not sending authenticated requests.
-
-    ``401 - Unathorized. The Tracking API no longer supports unauthenticated requests. Make sure your requests are authenticated. Read more about this on our Bring developer site. https://developer.bring.com/api/tracking/``
 introduction: |
   The Tracking API provides the opportunity to track shipments by reference, package or shipment number. It is an easy way to get shipment details and events and make them available for customers. The information available in this API is the same that is publicly available from the [Tracking website](http://tracking.bring.com/).
 
