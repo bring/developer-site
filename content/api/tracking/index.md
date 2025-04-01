@@ -14,7 +14,7 @@ important:
 - type: warn
   title: Hiding Pickup Code in the Tracking API
   message: |
-    Starting April 24th, the pickup code will be hidden in the Tracking API for senders. As the pickup code is considered personal information for the receiver, we are making this change to comply with GDPR regulations. However, if the pickup code is needed, it can be requested through tracking the shipment in the Mybring portal. Please note that we will maintain an audit log of all requests to view the pickup code.
+    Starting April 24th, the pickup code will be hidden in the Tracking API for senders. As the pickup code is considered personal information for the receiver, we are making this change to comply with GDPR regulations.
 - type: warn
   title: The Tracking API will no longer support unauthenticated requests from 13.05.2024
   message: |
