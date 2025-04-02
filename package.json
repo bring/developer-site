@@ -36,7 +36,7 @@
     "@preact/preset-vite": "^2.10.1",
     "@vitejs/plugin-legacy": "^6.0.2",
     "atomic-algolia": "^0.3.19",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "cross-env": "^7.0.3",
     "cssnano": "^7.0.6",
@@ -55,7 +55,7 @@
   ],
   "dependencies": {
     "@algolia/autocomplete-js": "^1.18.1",
-    "algoliasearch": "^5.20.3",
+    "algoliasearch": "^5.23.1",
     "anchor-js": "^5.0.0",
     "preact": "^10.26.4"
   }
