@@ -33,7 +33,11 @@
     {{- $contactParent = $objName -}}
     {{- $schemaPath := path.Split . -}}
     {{- $schema := index $components.schemas $schemaPath.File -}}
-    {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" $schema "name" $schemaPath.File "components" $components "required" $required "deprecated" $deprecated "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
+    {{- with $schema -}}
+      {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $schemaPath.File "components" $components "required" $required "deprecated" $deprecated "endpointId" $endpointId "recLevel" $recLevel "isOf" $isOf "parent" $parent "ofInd" $ofInd "contactParent" $contactParent) -}}
+    {{- else -}}
+      {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "XML request") -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
