@@ -171,7 +171,7 @@
   "shippingGuideCode" : "FLEXDELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "FLEX_DELIVERY",
-  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Agreed delivery", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Telephone notification", "Dangerous goods", "Frost free" ],
+  "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Agreed delivery", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Telephone notification", "Dangerous goods", "Frost free", "Standard installation", "Customized installation" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -181,7 +181,7 @@
     "productionCode" : "0330",
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "NO, SE, DK, FI",
-    "destinations" : "SE, DK, FI"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Parcel Bulk",
     "serviceType" : "B2B",
@@ -221,7 +221,7 @@
     "productionCode" : "0336",
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "SE, DK, FI"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/2 pallet)",
     "serviceType" : "B2B",
@@ -231,7 +231,7 @@
     "productionCode" : "0336",
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "SE, DK, FI"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Business Pallet (1/4 pallet)",
     "serviceType" : "B2B",
@@ -241,7 +241,7 @@
     "productionCode" : "0336",
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
-    "destinations" : "SE, DK, FI"
+    "destinations" : "NO, SE, DK, FI"
   }, {
     "serviceName" : "Express Nordic 09:00",
     "serviceType" : "B2B",
@@ -766,16 +766,6 @@
     "domesticAllowedIn" : "SE, DK, FI",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK, FI"
-  }, {
-    "serviceName" : "Pickup parcel box",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "0344",
-    "productionCode" : "0344",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "ALL",
-    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ "Following Countries are not allowed Afghanistan, Algerie, Angola, Bolivia, Burkina Faso, Burundi, Central African Republic, Cameroon, Chad, Colombia, Congo, Cuba, Eritrea, Etiopia, Georgia, Guinea, Iran, Iraq, Ivory Coast, Libanon, Mauritania, Myanmar, Niger, Nigeria, North Korea, Somalia, Syria, Sudan, Yemen, Zimbabwe." ],
   "vasFootNotes" : [ ],
@@ -1249,7 +1239,7 @@
   "shippingGuideCode" : "STANDARD_INSTALLATION",
   "shippingGuideNpbCode" : "STANDARD_INSTALLATION",
   "bookingCode" : "1124",
-  "incompatibleVases" : [ "Boat Delivery" ],
+  "incompatibleVases" : [ "Boat Delivery", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -1301,7 +1291,7 @@
   "shippingGuideCode" : "CUSTOM_INSTALLATION",
   "shippingGuideNpbCode" : "CUSTOM_INSTALLATION",
   "bookingCode" : "1125",
-  "incompatibleVases" : [ "Boat Delivery" ],
+  "incompatibleVases" : [ "Boat Delivery", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2071,7 +2061,7 @@
 }, {
   "vasName" : "Temperature controlled transport",
   "vasNameNorwegian" : "Temperaturregulert",
-  "description" : "For those who need to send goods between 08-25 degrees. The shipment must be packed in such a way that it can withstand exposure to cold for up to 2 hours.  ",
+  "description" : "For those who need to send goods between 08-25 degrees.  ",
   "shippingGuideCode" : "1083",
   "shippingGuideNpbCode" : "1083",
   "bookingCode" : "1083",
@@ -2612,16 +2602,6 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
-  }, {
-    "serviceName" : "Pickup parcel box",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "0344",
-    "productionCode" : "0344",
-    "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "ALL",
-    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "When shipping from Finland to Sweden, Denmark, Norway, Faroe Islands, Greenland, Iceland or Åland, or from any country to Finland, Faroe Islands, Greenland, Iceland or Åland, the shipment will be transported by boat. In such cases the gross weight of Limited quantities must be provided. The document Multimodal Dangerous Goods Form must also be completed correctly and sent to Bring’s booking department before transportation begins" ],
