@@ -1,9 +1,9 @@
 <head>
   <script id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture="EN"
     data-gcm-version="2.0" type="text/javascript"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="expires" content="{{ now.Unix }}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="expires" content="{{ now.Unix }}">
   {{- $description := "" -}}
   {{- with .Summary -}}
     {{- $description = . -}}
@@ -16,7 +16,7 @@
     {{- if gt (len $description) 155 -}}
       {{- $description = printf "%s…" (slicestr $description 0 155) -}}
     {{- end -}}
-    <meta name="description" content="{{ $description }}" />
+    <meta name="description" content="{{ $description }}">
   {{- end -}}
   <title>
     {{- with .Title -}}{{ if not ( eq . $.Site.Title) }}{{ . }} –
@@ -26,7 +26,7 @@
     rel="stylesheet"
     type="text/css"
     href="https://www.mybring.com/design-system/css/main.min.css?ts={{ now.Unix }}"
-  />
+  >
   {{ if not hugo.IsServer }}
     {{- $jsManifest := readFile "static/assets/.vite/manifest.json" | transform.Unmarshal -}}
     {{- with index $jsManifest "js/main.js" -}}
@@ -35,14 +35,12 @@
           rel="stylesheet"
           type="text/css"
           href="{{- print "/assets/" . | relURL -}}"
-        />
+        >
       {{- end -}}
     {{- end -}}
   {{ end }}
-  <link
-    rel="shortcut icon"
-    type="image/x-icon"
-    href="{{ "favicon.ico" | relURL }}"
-  />
-  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="icon" href='{{ "favicon.ico" | relURL }}' sizes="32x32">
+  <link rel="icon" href='{{ "favicon.svg" | relURL }}' type="image/svg+xml">
+  <link rel="apple-touch-icon" href='{{ "favicon.png" | relURL }}'>
+  <link rel="canonical" href="{{ .Permalink }}">
 </head>
