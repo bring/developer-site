@@ -41,7 +41,9 @@ guides:
     **NOTE**: In absence of a shipping date set by the user, the Shipping Guide API will default to `now`. If shipping date is set to `now`, lead times will be calculated on the assumption that the packages has just arrived at a terminal.
 - title: Holidays, weekends and lead time
   content: |
-    When lead times are calculated, the returned estimates are always adjusted for weekends and official holidays. You can therefore trust that the returned estimates are as accurate as possible.
+    When lead times are calculated, the returned estimates are always adjusted for weekends and official holidays. You will therefore never receive an estimate on a date we do not deliver. You can trust that the returned estimates are as accurate as possible.
+    
+    **NOTE**: The provided **shipping date** is never adjusted for weekends and holidays. If you provide a shipping date that happens to be a sunday, the returned lead time would still be calculated with this date as the time the parcel has arrived at a terminal. 
 
 oas: https://api.bring.com/shippingguide/api-docs
 ---
