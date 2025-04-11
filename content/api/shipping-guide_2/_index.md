@@ -39,6 +39,9 @@ guides:
     Providing the **actual shipping date** in the request is a prerequisite for getting the correct lead times, as the lead time is always calculated from the day and time when the parcel **arrives** at a Bring terminal. It is recommended to read [this guide](/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/) for a better understanding of how the provided shipping date affects the returned lead time. 
     
     **NOTE**: In absence of a shipping date set by the user, the Shipping Guide API will default to `now`. If shipping date is set to `now`, lead times will be calculated on the assumption that the packages has just arrived at a terminal.
+- title: Holidays, weekends and lead time
+  content: |
+    When lead times are calculated, the returned estimates are always adjusted for weekends and official holidays. You can therefore trust that the returned estimates are as accurate as possible.
 
 oas: https://api.bring.com/shippingguide/api-docs
 ---
