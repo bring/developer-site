@@ -84,7 +84,7 @@
 /* TextWhitespace */ .chroma .w { color: hsl(0, 0%, 80%) }
 
 :root[data-theme='dark'] {
-/* Background */ & .chroma { color: hsl(0, 0%, 93%); background-color: var(--green-18); border-radius: 2px; }
+/* Background */ & .chroma { color: hsl(0, 0%, 93%); background-color: var(--green-18); border-radius: var(--radius); }
 /* Other */ & .chroma .x {  }
 /* Error */ & .chroma .err { color: hsl(3, 77.5%, 69%); }
 /* LineTableTD */ & .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }

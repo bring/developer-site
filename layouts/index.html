@@ -33,7 +33,7 @@
           {{- end -}}
           <div class="mbxl">
             <h2 class="mbs">API updates</h2>
-            <div class="owls mbl rad-a2px">
+            <div class="owls mbl radius-a">
               {{- $pctx := .Site -}}
               {{- $pages := slice -}}
               {{- $pages = $pctx.RegularPages -}}
@@ -46,7 +46,7 @@
               {{- end -}}
               {{- $pages = $mergedPages -}}
               {{- range first 3 $pages -}}
-                <div class="bg-gray1 bshadow pal rad-a2px">
+                <div class="bg-gray1 bshadow pal radius-a">
                   <time class="mrs text-note"
                     datetime="{{ .PublishDate.Format "2006-01-02" | safeHTML }}"
                     >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time

@@ -43,7 +43,7 @@ export default function bringEnvStyle(isModal) {
       left: 0;
       z-index: 5000;
       border: none;
-      border-radius: 3px;
+      border-radius: 4px;
       margin: auto;
       box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 12%);`
       : 'display:flex;'}
@@ -85,7 +85,7 @@ export default function bringEnvStyle(isModal) {
       -webkit-appearance: none;
       appearance: none;
       border: none;
-      border-radius: 2px;
+      border-radius: 4px;
       padding: 0.3rem;
       transition: 0.15s ease-out;
       margin: 0;
@@ -143,7 +143,7 @@ export default function bringEnvStyle(isModal) {
 
     .bring-env-cards .bring-env-card {
       background: #fff5f0;
-      border-radius: 3px;
+      border-radius: 4px;
       padding: 2rem;
       flex: 1 1 15rem;
       text-align: center;

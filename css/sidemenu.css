@@ -55,7 +55,7 @@
   padding-left: 0.6rem;
   padding-right: 0.6rem;
   transition: background-color var(--easeout-15);
-  border-radius: 2px;
+  border-radius: var(--radius);
 }
 
 .dev-sidemenu a:hover,

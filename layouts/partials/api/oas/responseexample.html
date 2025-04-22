@@ -22,7 +22,7 @@
 
 {{- if $resExamples -}}
   <h3>Response examples</h3>
-  <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
+  <div class="bg-gray3 radius-t mts sticky-6r" id="{{$endpointId}}-response">
     {{/*  Generate responsetype menu  */}}
     {{- if $resCodes -}}
       {{- partial "api/oas/responsecode-btns.html" (dict "responses" $responseCodes "endpointId" $endpointId) -}}

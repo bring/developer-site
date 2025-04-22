@@ -6,7 +6,7 @@
     <h1 class="w100p mbm">{{ . }}</h1>
   {{- end -}}
   {{- range where .Paginator.Pages "Section" "blog" -}}
-    <article class="dev-blog__post bg-gray2 rad-a2px mrxs mbxs">
+    <article class="dev-blog__post bg-gray2 radius-a mrxs mbxs">
       <header>
         <h2 class="dev-blog__heading mbm">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
