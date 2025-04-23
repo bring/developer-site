@@ -171,7 +171,7 @@
                   {{/* For each endpoint: Response */}}
                   {{- with .responses -}}
                     <h3>Response examples</h3>
-                    <div class="bg-gray3 rad-t2px mts sticky-6r" id="{{$endpointId}}-response">
+                    <div class="bg-gray3 radius-t mts sticky-6r" id="{{$endpointId}}-response">
                       <div class="pam flex flex-wrap" role="tablist" aria-label="Code examples">
                         {{- $ariaSelected := true -}}
                         {{- range $response, $_ := . -}}

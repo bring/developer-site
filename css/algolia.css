@@ -31,7 +31,7 @@
   background: none;
   background-color: hsla(0, 0%, 100%, 0.1) !important;
   border: 1px solid hsla(0, 0%, 100%, 0.25);
-  border-radius: 2px;
+  border-radius: var(--radius);
   margin-right: 0.25rem;
   color: #fff;
 }
@@ -51,8 +51,8 @@
   box-sizing: border-box;
   z-index: 10;
   font-weight: 400;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
   background-color: #fff;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   top: 100% !important; 
