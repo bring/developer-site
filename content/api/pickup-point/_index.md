@@ -13,7 +13,7 @@ aliases:
   - pickuppointapi.html
 
 introduction: |
-  The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: Google). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance.
+  The Pickup Point API provides a list of pickup points that are nearest to a given location, in order for end customers to choose their preferred pickup point in your checkout. The API supports both manned pickup points and parcel lockers in Norway, Sweden, Denmark and Finland. Pickup points are sorted by driving time by car (source: ESRI). When driving times are unavailable (e.g. due to separation by sea), they are sorted by aerial distance.
 
 guides:
 - title: Always provide an address
@@ -71,7 +71,6 @@ documentation:
 
       #### Denmark
         - Type 85: Manned
-        - Type 86: Locker
         - Type 43: Locker
 
       #### Finland
