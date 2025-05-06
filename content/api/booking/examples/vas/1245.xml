@@ -1,6 +1,6 @@
 <additionalServices>
   <additionalService>
-    <id>DANGEROUS_GOODS</id>
+    <id>1245</id>
     <unNumber>3295</unNumber>
     <weightInGrams>500000</weightInGrams>
     <containerId>1236</containerId>
