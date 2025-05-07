@@ -489,8 +489,8 @@
   "AgreementPrice" : "Yes",
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
-  "SenderCountries" : "SE, DK, FI",
-  "Destination" : "SE, DK, FI",
+  "SenderCountries" : "SE, DK",
+  "Destination" : "SE, DK",
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Cargo Norway domestic",
@@ -1043,25 +1043,6 @@
   "SenderCountries" : "-",
   "Destination" : "-",
   "DomesticAllowed" : "NO"
-}, {
-  "ServiceFamily" : "Mail",
-  "CustomerNumberType" : "",
-  "ServiceName" : "International Tracked Packet",
-  "ServiceIcon" : "serviceicon-mail-tracking",
-  "ServiceCode" : "3630",
-  "RequestCode" : "3630",
-  "Type" : "B2X_L",
-  "Return" : "-",
-  "Booking" : "Yes",
-  "RequiredSetup" : "-",
-  "ShippingGuide" : "Yes",
-  "ListPrice" : "Yes",
-  "AgreementPrice" : "-",
-  "LeadTime" : "-",
-  "EnvironmentalData" : "-",
-  "SenderCountries" : "NO",
-  "Destination" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, IT, LT, LU, LV, NL, PL, SI, SK",
-  "DomesticAllowed" : "-"
 }, {
   "ServiceFamily" : "Mail",
   "CustomerNumberType" : "",
