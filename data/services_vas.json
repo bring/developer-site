@@ -3164,46 +3164,4 @@
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
-}, {
-  "vasName" : "Registered",
-  "vasNameNorwegian" : "Registered",
-  "description" : "No description available",
-  "shippingGuideCode" : "2000",
-  "shippingGuideNpbCode" : "2000",
-  "bookingCode" : "2000",
-  "incompatibleVases" : [ ],
-  "supportedServices" : [ {
-    "serviceName" : "Letter Norway Small",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Mail",
-    "serviceFamilySortOrder" : 8,
-    "serviceCode" : "3634",
-    "productionCode" : "3634",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Letter Norway Large",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Mail",
-    "serviceFamilySortOrder" : 8,
-    "serviceCode" : "3635",
-    "productionCode" : "3635",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Letter parcel Norway",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Mail",
-    "serviceFamilySortOrder" : 8,
-    "serviceCode" : "3638",
-    "productionCode" : "3638",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  } ],
-  "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
-  "orderedViaVasCodes" : true
 } ]
