@@ -302,46 +302,6 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3627",
-    "productionCode" : "3627",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3625",
-    "productionCode" : "3625",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Long Distance Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3624",
-    "productionCode" : "3624",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1090,46 +1050,6 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "NO, SE, DK"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3625",
-    "productionCode" : "3625",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3627",
-    "productionCode" : "3627",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Long Distance Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3624",
-    "productionCode" : "3624",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring for certain services to be available for booking." ],
@@ -1222,46 +1142,6 @@
     "serviceCode" : "3332",
     "productionCode" : "3332",
     "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3625",
-    "productionCode" : "3625",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3627",
-    "productionCode" : "3627",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Long Distance Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3624",
-    "productionCode" : "3624",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -1756,46 +1636,6 @@
     "serviceCode" : "3584",
     "productionCode" : "3584",
     "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3625",
-    "productionCode" : "3625",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3627",
-    "productionCode" : "3627",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Long Distance Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3624",
-    "productionCode" : "3624",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
     "senderCountries" : "-",
     "destinations" : "-"
   } ],
@@ -2408,46 +2248,6 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "SE, DK"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3627",
-    "productionCode" : "3627",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3625",
-    "productionCode" : "3625",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Long Distance Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3624",
-    "productionCode" : "3624",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
@@ -3338,47 +3138,7 @@
   "shippingGuideNpbCode" : "1334",
   "bookingCode" : "1334",
   "incompatibleVases" : [ "Flex delivery" ],
-  "supportedServices" : [ {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3625",
-    "productionCode" : "3625",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3627",
-    "productionCode" : "3627",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Long Distance Courier",
-    "serviceType" : "B2X",
-    "serviceFamily" : "Courier and Express",
-    "serviceFamilySortOrder" : 5,
-    "serviceCode" : "3624",
-    "productionCode" : "3624",
-    "domesticAllowedIn" : "NO, SE, DK, FI",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  } ],
+  "supportedServices" : [ ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
