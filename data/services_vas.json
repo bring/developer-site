@@ -3139,7 +3139,7 @@
     "productionCode" : "3639",
     "domesticAllowedIn" : "-",
     "senderCountries" : "NO",
-    "destinations" : "SE, DK, FI, AT, BE, CH, CZ, DE, EE, FR, GB, HR, HU, IE, IS, IT, LT, LU, LV, NL, PL, SI, SK"
+    "destinations" : "SE, DK, FI, AT, AU, BE, CA, CH, CN, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, JP, LT, LU, LV, NL, NZ, PL, PT, SI, SK, US"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
