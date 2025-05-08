@@ -1,5 +1,6 @@
 <additionalServices>
   <additionalService>
-    <id>EVE_DELIVERY</id>
+    <id>0039</id>
+    <message>Legg pakken i garasjen.</message>
   </additionalService>
 </additionalServices>

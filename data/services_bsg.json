@@ -1050,7 +1050,7 @@
   "ServiceIcon" : "serviceicon-mail-tracking",
   "ServiceCode" : "3639",
   "RequestCode" : "3639",
-  "Type" : "B2X",
+  "Type" : "B2X_L",
   "Return" : "-",
   "Booking" : "Yes",
   "RequiredSetup" : "-",

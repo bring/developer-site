@@ -17,6 +17,16 @@
     "senderCountries" : "-",
     "destinations" : "-"
   }, {
+    "serviceName" : "Mail",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Mail",
+    "serviceFamilySortOrder" : 8,
+    "serviceCode" : "MAIL",
+    "productionCode" : "3266",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
     "serviceName" : "PickUp Parcel Bulk",
     "serviceType" : "B2C",
     "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -170,7 +180,7 @@
   "description" : "Bring leaves the shipment at the recipient`s address without the recipient being there to accept it.  This service entails that the sender accepts the associated risk with regard to liability and surrenders the right to compensation from Bring in the event of damage and loss.",
   "shippingGuideCode" : "FLEXDELIVERY",
   "shippingGuideNpbCode" : "0041",
-  "bookingCode" : "FLEX_DELIVERY",
+  "bookingCode" : "0041",
   "incompatibleVases" : [ "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Agreed delivery", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Telephone notification", "Dangerous goods", "Frost free", "Standard installation", "Customized installation" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
@@ -282,36 +292,6 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -322,7 +302,7 @@
   "description" : "The shipment is delivered to a designated location inside the recipient's door. The maximum weight per package carried in (package or pallet that is split up) is 35kg.  In order for the delivery to be carried out, free and unobstructed access to the specified location is required, and for deliveries more than four (4) floors up, an elevator must be available. The customer is responsible for protecting delicate flooring prior to delivery. If the conditions are not met, delivery will be performed without carrying indoors. Any further delivery attempts (in case of unsuccessful delivery on the first attempt) will be carried out without carrying indoors.",
   "shippingGuideCode" : "DELIVERYINDOOR",
   "shippingGuideNpbCode" : "0039",
-  "bookingCode" : "DELIVERY_INDOOR",
+  "bookingCode" : "0039",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
@@ -404,7 +384,7 @@
   "description" : "Agreed delivery entails that we against a surcharge agree on time of delivery with the recipient in advance. This additional service must always be booked if the recipient stays at a private or unattended address. Otherwise optionally available.  We contact the recipient the day before delivery to agree on the delivery time, and the driver calls the recipient 30-60 minutes upon delivery to ensure that someone is present.",
   "shippingGuideCode" : "PHONENOTIFICATION",
   "shippingGuideNpbCode" : "1142",
-  "bookingCode" : "PHONENOTIFICATION",
+  "bookingCode" : "1142",
   "incompatibleVases" : [ "Flex delivery", "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business groupage",
@@ -469,7 +449,7 @@
   "shippingGuideCode" : "SIMPLIFIED_DELIVERY",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required", "Temperature controlled transport" ],
+  "incompatibleVases" : [ "Agreed delivery", "Dangerous goods", "Frost free", "ID verification", "Individual verification", "Telephone notification", "Signature required", "Temperature controlled transport", "Optional pickup point (domestic Norway)" ],
   "supportedServices" : [ {
     "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
@@ -530,6 +510,26 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Return business parcel",
+    "serviceType" : "B2B return",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "9000",
+    "productionCode" : "9000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Return parcel to business",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "9350",
+    "productionCode" : "9350",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -540,7 +540,7 @@
   "description" : "We also offer a frost-free service for an additional fee. The service does not come with a temperature guarantee. Yet, we strive to ensure that the carrier keeps the shipment frost-free at a temperature above 0 degrees Celsius.  ",
   "shippingGuideCode" : "NON_FREEZE",
   "shippingGuideNpbCode" : "2141",
-  "bookingCode" : "NON_FREEZE",
+  "bookingCode" : "2141",
   "incompatibleVases" : [ "Simplified delivery", "Special goods", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Business partload",
@@ -582,7 +582,7 @@
   "description" : "To send dangerous goods we need to know what type of goods you are sending. You can search for either ADR number or type of goods for example \"nitro\".  After finishing the order, print one label and waybill in four copies. Pin together the waybills and attach them and the label on the goods. If you wish to send goods in categories that you cannot find on our pages, such as explosives or radioactive substances, call Customer Service (Bookings) on 04045 for assistance.",
   "shippingGuideCode" : "DANGEROUS_GOODS",
   "shippingGuideNpbCode" : "1245",
-  "bookingCode" : "DANGEROUS_GOODS",
+  "bookingCode" : "1245",
   "incompatibleVases" : [ "Simplified delivery", "Desktop delivery", "Remove pallets", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Supply Base Logistics",
@@ -654,7 +654,7 @@
   "description" : "Cargo insurance is an insurance for parcel services that covers the value of goods up to 100,000 DKK / SEK / NOK or 10,000 EUR if the shipment is damaged or lost. The compensation is based on the shipment`s real value, and there is no deductible.  ",
   "shippingGuideCode" : "INSURANCE",
   "shippingGuideNpbCode" : "0068",
-  "bookingCode" : "INSURANCE",
+  "bookingCode" : "0068",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
@@ -1030,7 +1030,7 @@
   "description" : "No description available",
   "shippingGuideCode" : "EVE_DELIVERY",
   "shippingGuideNpbCode" : "0015",
-  "bookingCode" : "EVE_DELIVERY",
+  "bookingCode" : "0015",
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Parcel",
@@ -1343,7 +1343,7 @@
   "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
   "shippingGuideNpbCode" : "1036",
   "bookingCode" : "SELECT_PICKUP_POINT",
-  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts then return" ],
+  "incompatibleVases" : [ "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts then return", "Simplified delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
@@ -1357,8 +1357,8 @@
   }, {
     "serviceName" : "Pakkeboks",
     "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "5801",
     "productionCode" : "5801",
     "domesticAllowedIn" : "NO",
@@ -1381,6 +1381,26 @@
     "serviceFamilySortOrder" : 1,
     "serviceCode" : "5000",
     "productionCode" : "5000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Return business parcel",
+    "serviceType" : "B2B return",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "9000",
+    "productionCode" : "9000",
+    "domesticAllowedIn" : "NO",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Return parcel to business",
+    "serviceType" : "B2C return",
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
+    "serviceCode" : "9350",
+    "productionCode" : "9350",
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
@@ -2047,8 +2067,8 @@
   }, {
     "serviceName" : "Norgespakke liten",
     "serviceType" : "C2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
+    "serviceFamily" : "Parcel Norway domestic",
+    "serviceFamilySortOrder" : 1,
     "serviceCode" : "3622",
     "productionCode" : "3622",
     "domesticAllowedIn" : "NO",
@@ -2116,7 +2136,7 @@
   "description" : "Verification of ID (age) and the recipient´s condition on delivery of products requiring this, such as alcohol.  ",
   "shippingGuideCode" : "SOSIAL_KONTROLL",
   "shippingGuideNpbCode" : "1082",
-  "bookingCode" : "SOSIAL_KONTROLL",
+  "bookingCode" : "1082",
   "incompatibleVases" : [ "Boat Delivery", "Flex delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Parcel home plus",
@@ -2188,36 +2208,6 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "SE, DK"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
@@ -3088,37 +3078,7 @@
   "shippingGuideNpbCode" : "1334",
   "bookingCode" : "1334",
   "incompatibleVases" : [ "Flex delivery" ],
-  "supportedServices" : [ {
-    "serviceName" : "Premium Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Standard Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  }, {
-    "serviceName" : "Economy Courier",
-    "serviceType" : "B2C",
-    "serviceFamily" : "",
-    "serviceFamilySortOrder" : 99,
-    "serviceCode" : "3629",
-    "productionCode" : "3629",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  } ],
+  "supportedServices" : [ ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
@@ -3132,7 +3092,7 @@
   "incompatibleVases" : [ ],
   "supportedServices" : [ {
     "serviceName" : "Letter Packet",
-    "serviceType" : "B2X",
+    "serviceType" : "B2X_L",
     "serviceFamily" : "Mail",
     "serviceFamilySortOrder" : 8,
     "serviceCode" : "3639",
