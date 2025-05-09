@@ -19,7 +19,6 @@ The following services support QR codes:
 - 9300
 - 9350
 - 9600
-- 9650
 - 0331
 - 0333
 - 0341
