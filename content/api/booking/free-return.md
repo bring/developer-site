@@ -23,48 +23,29 @@ The following outgoing and return service combinations are supported:
 |--------------------------|--------------------------|
 | `4850, 5000, 5600, 5800` | `9000, 9300, 9600, 9350` |
 
-## Formats
-### XML
+## Request examples
 
- ```xml
- <returnProduct>
-   <id>9300</id>
- </returnProduct>
-```
 
- ### JSON
+### Return parcel to business with free return of parcel
 
  ```json
- "returnProduct": {
-     "id": "9300"
- }
+"product": {
+  "id": "5800"
+},
+"returnProduct": {
+  "id": "9350"
+}
  ```
 
-## Request examples
-### Parcel to pickup point with Free return of parcel and flex delivery VAS
 
-#### XML
-```xml
-<product>
-  <id>5800</id>
-</product>
-<returnProduct>
-  <id>9300</id>
-  <additionalServices>
-    <additionalService>
-      <id>0041</id>
-    </additionalService>
-  </additionalServices>
-</returnProduct>
-```
+### Return parcel to business with free return of parcel and flex delivery addditional service
 
-#### JSON
 ```json
 "product": {
   "id": "5800"
 },
 "returnProduct": {
-  "id": "9300",
+  "id": "9350",
   "additionalServices": [
     {
       "id": "0041"
