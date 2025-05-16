@@ -949,25 +949,6 @@
   "Destination" : "-",
   "DomesticAllowed" : "NO, SE, DK, FI"
 }, {
-  "ServiceFamily" : "Courier and Express",
-  "CustomerNumberType" : "Main customer number",
-  "ServiceName" : "Express Same Day",
-  "ServiceIcon" : "serviceicon-airplane",
-  "ServiceCode" : "3336",
-  "RequestCode" : "EXPRESS_NORDIC_SAME_DAY",
-  "Type" : "B2X",
-  "Return" : "-",
-  "Booking" : "Yes",
-  "RequiredSetup" : "-",
-  "ShippingGuide" : "Yes",
-  "ListPrice" : "Yes",
-  "AgreementPrice" : "-",
-  "LeadTime" : "Yes",
-  "EnvironmentalData" : "-",
-  "SenderCountries" : "NO, SE, DK",
-  "Destination" : "NO, SE, DK, FI",
-  "DomesticAllowed" : "NO, SE, DK"
-}, {
   "ServiceFamily" : "Cargo Norway international",
   "CustomerNumberType" : "Main customer number",
   "ServiceName" : "Cargo International",
