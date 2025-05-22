@@ -37,6 +37,10 @@ guides:
         "height": 60.0
       }
     ```
+- title: Ensure daily update of offline pickup point data
+  content: |
+    If you use the Pickup Point API to store pickup locations locally (offline), we recommend updating your data at least once every 24 hours. Pickup points may be added, moved, or removed regularly, and keeping your data updated ensures accurate information for your customers.
+    
 information:
   - title: Authentication
     content: |
