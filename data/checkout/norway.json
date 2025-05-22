@@ -154,7 +154,8 @@
         ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your customers make more sustainable choices.</p>"
+          "<p>Show whether the parcel will be delivered by an electric vehicle or not in the checkout. This may help your customers make more sustainable choices.</p>",
+          "<p>We recommend showing both the icon with text (\"Delivered with electric vehicle\") and the text (\"The parcel will be delivered by electric vehicle from the local terminal to the selected delivery address\") in checkout.\nThe icon ensures quick visibility, while the longer text provides clarity and context for customers.</p>"
         ]
       }
     ]
@@ -314,7 +315,8 @@
         ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Ved å ta i bruk vår miljøtekst og vårt miljøikon kan du allerede i checkouten vise kunder om pakken deres blir levert med elbil. Dette gir kundene dine mulighet til å ta mer bærekraftige valg.</p>"
+          "<p>Ved å ta i bruk vår miljøtekst og vårt miljøikon kan du allerede i checkouten vise kunder om pakken deres blir levert med elbil. Dette gir kundene dine mulighet til å ta mer bærekraftige valg.</p>",
+          "<p>Vi anbefaler å vise både miljøikonet med tekst (\"Leveres med elbil\") og den miljøteksten (\"Pakken leveres med elbil fra lokal terminal til valgt leveringsadresse\") i checkout.\nMiljøikonet gir rask synlighet, mens miljøteksten gir kundene tydelig informasjon og kontekst.</p>"
         ]
       }
     ]

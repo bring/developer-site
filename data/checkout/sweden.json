@@ -158,7 +158,8 @@
         ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>The services PickUp Parcel and PickUp Parcel Bulk are Nordic Swan Ecolabelled in Sweden. Nordic Swan Ecolabel delivery in Sweden is a delivery choice that meets strict requirements for climate performance and high energy efficiency. Read more here: <a href=\"https://www.svanen.se/vad-ar-svanen/\">https://www.svanen.se/vad-ar-svanen/</a>. </p><p>For other services we recommend to show whether the parcel will be delivered with fossil-free fuel or not in the checkout. This may help your customers make more sustainable choices.</p>"
+          "<p>The services PickUp Parcel and PickUp Parcel Bulk are Nordic Swan Ecolabelled in Sweden. Nordic Swan Ecolabel delivery in Sweden is a delivery choice that meets strict requirements for climate performance and high energy efficiency. Read more here: <a href=\"https://www.svanen.se/vad-ar-svanen/\">https://www.svanen.se/vad-ar-svanen/</a>. </p>",
+          "<p>For other services we recommend to show whether the parcel will be delivered with fossil-free fuel or not in the checkout. This may help your customers make more sustainable choices. We recommend showing both the icon with text (\"Delivered with electric vehicle\") and the text (\"The parcel will be delivered by electric vehicle from the local terminal to the selected delivery address\") in checkout.\nThe icon ensures quick visibility, while the longer text provides clarity and context for customers.</p>"
         ]
       }
     ]
@@ -322,7 +323,8 @@
         ],
         "tags": ["Shipping Guide API"],
         "paragraphs": [
-          "<p>Tjänsten PickUp Parcel och PickUp Parcel Bulk (Paket till utlämningsställe) är Svanenmärkt i Sverige. Svanenmärkt leverans i Sverige är ett leveransval som uppfyller stränga krav på klimatprestanda och hög energieffektivitet. Läs mer här: <a href=\"https://www.svanen.se/vad-ar-svanen/\">https://www.svanen.se/vad-ar-svanen/</a>.</p><p>För andra tjänster rekommenderar vi att du redan i checkouten visar kunderna om deras paket levereras med fossilfritt drivmedel/elbil.</p>"
+          "<p>Tjänsten PickUp Parcel och PickUp Parcel Bulk (Paket till utlämningsställe) är Svanenmärkt i Sverige. Svanenmärkt leverans i Sverige är ett leveransval som uppfyller stränga krav på klimatprestanda och hög energieffektivitet. Läs mer här: <a href=\"https://www.svanen.se/vad-ar-svanen/\">https://www.svanen.se/vad-ar-svanen/</a>.</p>",
+          "<p>För andra tjänster rekommenderar vi att du redan i checkouten visar kunderna om deras paket levereras med fossilfritt drivmedel/elbil. Vi rekommenderar att visa både miljöikonet med text (\"Levereras med elbil\") och miljötexten (\"Paketet levereras med elbil från den lokala terminalen till vald leveransadress\") i kassan.\nMiljöikonet ger snabb synlighet, medan den längre texten förklarar tydligare för kunden.</p>"
         ]
       }
     ]
