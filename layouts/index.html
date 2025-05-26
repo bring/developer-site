@@ -62,7 +62,7 @@
                     <div class="screen-reader-text full-content" >
                       {{ .Content }}
                     </div>
-                    {{- if gt (len .Content) 300 -}}
+                    {{- if gt (len .RawContent) 300 -}}
                       <button class="read-more btn-link--dark" aria-hidden="true">Show more</button>
                     {{- end -}}
                   </div>
