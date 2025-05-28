@@ -2433,28 +2433,6 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Same day delivery",
-  "vasNameNorwegian" : "Same day delivery",
-  "description" : "The shipment will be delivered same day as long as the selected postal codes are within coverage for this additional service, and booking is made within today`s cutoff time.  ",
-  "shippingGuideCode" : "2012",
-  "shippingGuideNpbCode" : "2012",
-  "bookingCode" : "2012",
-  "incompatibleVases" : [ ],
-  "supportedServices" : [ {
-    "serviceName" : "Parcel home plus",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Norway domestic",
-    "serviceFamilySortOrder" : 1,
-    "serviceCode" : "5600",
-    "productionCode" : "5600",
-    "domesticAllowedIn" : "NO",
-    "senderCountries" : "-",
-    "destinations" : "-"
-  } ],
-  "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
-  "orderedViaVasCodes" : true
-}, {
   "vasName" : "Limited quantities",
   "vasNameNorwegian" : "Limited quantities",
   "description" : "Limited quantities enables transportation of parcels containing dangerous goods in limited quantities (LQ). It is the sender`s responsibility to follow current regulations at all times.  ",
@@ -3101,6 +3079,18 @@
     "senderCountries" : "NO",
     "destinations" : "SE, DK, FI, AT, AU, BE, CA, CH, CN, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, JP, LT, LU, LV, NL, NZ, PL, PT, SI, SK, US"
   } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "Express",
+  "vasNameNorwegian" : "Express",
+  "description" : "No description available",
+  "shippingGuideCode" : "1171",
+  "shippingGuideNpbCode" : "1171",
+  "bookingCode" : "1171",
+  "incompatibleVases" : [ ],
+  "supportedServices" : [ ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
