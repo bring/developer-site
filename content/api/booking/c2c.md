@@ -12,37 +12,47 @@ weight: 9
 ## Bring Pack (0360) returns
 
 ### Bring Pack passive returns
-A passive return happens either when the parcel is not picked up by the recipient or is stopped and the sender requests it to be returned.
-The address used for passive returns can be specified by the `returnTo` party element of the request.
 
-For Bring Pack, if nothing is specified, the return address is set to the default pickup point for the original sender by default.
+A passive return happens when:
 
-### Bring pack passive return addresses for active returns
-An active return means that the original parcel is picked up, but the recipient wants to return it.
-In this case, a new outbound request is required, and the passive return should be set to a Bring address in the respective country, again using the `returnTo` party element.
+* The parcel is not picked up by the recipient.
+* The sender stops the shipment before the recipient has received it.
 
-The Bring addresses to be used for this are listed below.
+The address for passive returns can be specified by the `returnTo` party element of the request.
 
-**Sweden and Finland**
-```
-Bring Special Handling
-Södra Stigamovägen 9A
+If no `returnTo` party is provided, the default pickup point for the `sender` party will be used.
+
+### Bring Pack passive return addresses for active returns
+
+An active return happens when the original parcel is picked up, but the recipient wants to return it and a new shipment should be ordered for the return.
+
+When ordering an active return shipment, the `returnTo` party should be set to a Bring address. This is necessary to ensure that if the return is not collected, triggering a passive return of the active return, it is not sent a second time to the original recipient.
+
+The Bring addresses to set as the `returnTo` must be set based on country as described below.
+
+#### Sweden and Finland 
+
+<p lang="se" translate="no">
+Bring Special Handling<br>
+Södra Stigamovägen 9A<br>
 556 50 Jönköping
-```
+</p>
 
-**Denmark**
-```
-Bring
-Ventrupparken 4
-2670 Greve
-```
+#### Denmark
 
-**Norway**
-```
-LSO ubesørgelige pakker ROAØ
-Alfasetvn. 24
+<p lang="dk" translate="no">
+Bring<br>
+Ventrupparken 4<br>
+2670 Greve<br>
+</p>
+
+#### Norway
+
+<p lang="no" translate="no">
+LSO ubesørgelige pakker ROAØ<br>
+Alfasetvn. 24<br>
 0024 Oslo
-```
+</p>
 
 
 
