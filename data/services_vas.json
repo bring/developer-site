@@ -19,7 +19,7 @@
   }, {
     "serviceName" : "Mail",
     "serviceType" : "B2X",
-    "serviceFamily" : "Mail",
+    "serviceFamily" : "Letter",
     "serviceFamilySortOrder" : 8,
     "serviceCode" : "MAIL",
     "productionCode" : "3266",
@@ -292,6 +292,166 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1020,6 +1180,166 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring for certain services to be available for booking." ],
@@ -1114,6 +1434,166 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1196,6 +1676,166 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1228,6 +1868,166 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1280,6 +2080,166 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1332,6 +2292,166 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1608,6 +2728,166 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -1852,6 +3132,166 @@
     "domesticAllowedIn" : "NO, SE, DK",
     "senderCountries" : "NO, SE, DK",
     "destinations" : "NO, SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2126,6 +3566,166 @@
     "domesticAllowedIn" : "NO",
     "senderCountries" : "-",
     "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
@@ -2208,6 +3808,166 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL",
     "destinations" : "SE, DK"
+  }, {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
@@ -3056,7 +4816,167 @@
   "shippingGuideNpbCode" : "1334",
   "bookingCode" : "1334",
   "incompatibleVases" : [ "Flex delivery" ],
-  "supportedServices" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Economy Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3629",
+    "productionCode" : "3629",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3627",
+    "productionCode" : "3627",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3625",
+    "productionCode" : "3625",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3624",
+    "productionCode" : "3624",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Long Distance Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3654",
+    "productionCode" : "3654",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3655",
+    "productionCode" : "3655",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3657",
+    "productionCode" : "3657",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Truck",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3659",
+    "productionCode" : "3659",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Premium Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3665",
+    "productionCode" : "3665",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Standard Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3667",
+    "productionCode" : "3667",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Economy Courier Bicycle",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3669",
+    "productionCode" : "3669",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
@@ -3071,7 +4991,7 @@
   "supportedServices" : [ {
     "serviceName" : "Letter Packet",
     "serviceType" : "B2X_L",
-    "serviceFamily" : "Mail",
+    "serviceFamily" : "Letter",
     "serviceFamilySortOrder" : 8,
     "serviceCode" : "3639",
     "productionCode" : "3639",
@@ -3090,7 +5010,57 @@
   "shippingGuideNpbCode" : "1171",
   "bookingCode" : "1171",
   "incompatibleVases" : [ ],
-  "supportedServices" : [ ],
+  "supportedServices" : [ {
+    "serviceName" : "Courier Distribution",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3270",
+    "productionCode" : "3270",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Courier Distribution Pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3271",
+    "productionCode" : "3271",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution temp",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3619",
+    "productionCode" : "3619",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution parcel",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3620",
+    "productionCode" : "3620",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Same day distribution pallet",
+    "serviceType" : "B2X",
+    "serviceFamily" : "Courier and Express",
+    "serviceFamilySortOrder" : 5,
+    "serviceCode" : "3621",
+    "productionCode" : "3621",
+    "domesticAllowedIn" : "NO, SE, DK, FI",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
