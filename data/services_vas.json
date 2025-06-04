@@ -2554,7 +2554,7 @@
     "serviceCode" : "PICKUP_PARCEL",
     "productionCode" : "0340",
     "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "ALL",
+    "senderCountries" : "ALL COUNTRIES EXCEPT NORWAY",
     "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
