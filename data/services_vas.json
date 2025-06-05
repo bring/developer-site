@@ -5005,7 +5005,7 @@
 }, {
   "vasName" : "Express",
   "vasNameNorwegian" : "Express",
-  "description" : "No description available",
+  "description" : "Express is used to give a shipment higher priority in Bring’s internal handling and planning process.  ",
   "shippingGuideCode" : "1171",
   "shippingGuideNpbCode" : "1171",
   "bookingCode" : "1171",
