@@ -1,5 +1,5 @@
 ---
-title: elivery to parcel locker
+title: Delivery to parcel locker
 layout: api-sub
 menu:
   apidocs:
