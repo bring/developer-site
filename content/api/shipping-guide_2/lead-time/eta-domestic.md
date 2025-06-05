@@ -1,29 +1,32 @@
 ---
-title: Estimated arrival time for domestic parcels and cargo
+title: Estimated arrival time for domestic and cross-border parcel and cargo services
 menu:
   apidocs:
     identifier: sgeta
-    title: Estimated arrival time for domestic parcels and cargo
+    title: Estimated arrival time for domestic and cross-border parcel and cargo services
     parent: sgleadtime
 weight: 2
 ---
-For the following Norwegian domestic parcel and cargo services you can now get extended leadtime information - the estimated arrival time.
-* Bedriftspakke (BPAKKE_DOR-DOR)
-* Pakke til bedrift (5000)
-* Servicepakke (SERVICEPAKKE)
-* Pakke til hentested (5800)
-* Stykkgods til bedrift (5100)
-* Stykkgods (CARGO)
-* Pall til bedrift (5400)
-* På Døren (1736) (currently only for pilot customers)
-* Pakke levert hjem (5600) (currently only for pilot customers)
-* Business Parcel (0330) (only for domestic Sweden)
-* Business Parcel Bulk (0332) (only for domestic Sweden)
-* Pickup Parcel (0340) (only for domestic Sweden)
-* Pickup Parcel Bulk (0342) (only for domestic Sweden)
+You can now access extended lead time (ETA) information for a range of Norwegian and cross-border parcel and cargo services. This gives your customers a better understanding of when to expect their deliveries.
 
+#### Norwegian domestic services (ETA available within Norway):
+* Business parcel (5000)
+* Business groupage (5100)
+* Business pallet (5400)
+* Parcel Home plus (5600)
+* Pickup Parcel (5800)
 
-Note: setting the **actual shipping date** in the Shipping Guide request is a prerequisite for getting the correct estimate back from the machine learning model, as the leadtime is always calculated from the day the parcel is handed in to Bring. In absence for a shipping date set by the user, the Shipping Guide API will default to "now".    
+#### Cross-border services (ETA within and across Scandinavian countries):
+* Business Parcel (0330)
+* Business Parcel Bulk (0332)
+* Business Pallet (0336)
+* Pickup Parcel (0340)
+* Pickup Parcel Bulk (0342)
+* Home Delivery Parcel (0349)
+* Home Delivery Indoor (2870)
+* Home Delivery Curbside (3123)
+
+**Note**: setting the **actual shipping date** in the Shipping Guide request is a prerequisite for getting the correct estimate back from the machine learning model, as the leadtime is always calculated from the day and time the parcel **arrives** at a Bring terminal. It is recommended to read [this guide](/api/e-commerce-solutions/best-practice-checkout/implement-estimated-delivery/) for a better understanding of how the provided shipping date affects the returned lead time. In absence for a shipping date set by the user, the Shipping Guide API will default to "now".    
 
 ### Parcels and cargo delivered to companies
 For the above mentioned services, you can now get extended leadtime information - the estimated arrival time.
