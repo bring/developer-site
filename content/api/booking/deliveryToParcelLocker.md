@@ -9,8 +9,8 @@ menu:
 weight: 10
 ---
 
-## 0344 and 5801
+## Parcel Locker(0344) and Pakkeboks(5801)
 
-Parcels that are sent to locker but are too big for it (over 60 * 50 * 44 cm), will be rerouted to the manned pickup point, with the notification to the recipient.
+Parcels that are sent to locker but are too big for it (over 60 * 50 * 44 cm), will be rerouted to a manned pickup point, with a notification to the recipient.
 
-When this happens for services 5801 and 0344, customer will be charged an additional fee.
+When this happens for services Parcel Locker(0344) and Pakkeboks(5801), customer will be charged an additional fee.
