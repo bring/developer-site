@@ -1,7 +1,7 @@
 ---
 title: Postal Code API
 layout: api
-disqus_identifier: https-developer-bring-com-api-postal-code
+support: true
 menu:
   apidocs:
     identifier: postalcode

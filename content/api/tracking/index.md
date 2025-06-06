@@ -1,7 +1,7 @@
 ---
 title: Tracking API
 layout: api
-disqus_identifier: https-developer-bring-com-api-tracking
+support: true
 menu:
   apidocs:
     parent: track

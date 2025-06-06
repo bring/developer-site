@@ -1,7 +1,7 @@
 ---
 title: Booking API
 layout: api
-disqus_identifier: https-developer-bring-com-api-booking
+support: true
 menu:
   apidocs:
     identifier: booking

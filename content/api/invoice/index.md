@@ -1,7 +1,7 @@
 ---
 title: Invoice API
 layout: api
-disqus_identifier: https-developer-bring-com-api-invoice
+support: true
 menu:
   apidocs:
     identifier: invoice

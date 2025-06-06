@@ -1,7 +1,7 @@
 ---
 title: Event Cast API
 layout: api
-disqus_identifier: https-developer-bring-com-api-event-cast
+support: true
 menu:
   apidocs:
     identifier: eventcast
