@@ -4,25 +4,23 @@
   Information applies to revised services only. Services without any supported value added services are not part of the table.
 </p>
 <div class="mbs">
-  <div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 radius-a">
-    <div class="mrl">
-      <div class="flex flex-wrap-reverse align-ifs justify-csb">
-        <div class="mrl">
-          <p class="form__label">Filter by</p>
-          <div class="btngroup">
+  <div class="flex flex-wrap align-ifs mbm mb-form gcl">
+    <div>
+      <div class="flex flex-wrap-reverse align-ifs justify-csb gcl grm">
+        <div>
+          <p class="mbxs fwb text-0.875r">Filter by</p>
+          <div class="flex flex-wrap gaxs">
             {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-service'" "btnText" "Service") -}}
             {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-type'" "btnText" "Service type") -}}
             {{- partial "services/filterbtn" (dict "dataAtt" "data-vas-filterset='vas-family'" "btnText" "Service family") -}}
           </div>
         </div>
-        <div>
-          <label class="form__label mrxl" for="vasfilter">
-            VAS name, booking or shipping guide API request code
-          </label>
-          <input id="vasfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-        </div>
+        <label for="vasfilter">
+          VAS name, booking or shipping guide API request code
+          <input id="vasfilter" type="text"/>
+        </label>
       </div>
-      <div id="filtersets">
+      <div id="filtersets" class="mtxs">
         {{- $filterScratch := newScratch -}}
         {{- $filterScratch.Add "servicetype" slice -}}
         {{- $filterScratch.Add "servicefamily" slice -}}

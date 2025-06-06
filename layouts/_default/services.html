@@ -20,8 +20,8 @@
           {{- if in .title "Value" -}}
             {{- partial "services/vas" (dict "data" (index $.Site.Data .data) "examples" $.Site.Data.examples) -}}
           {{- end -}}
-          {{- if in .title "Reports" -}}
-            {{- partial "services/reports-invoice" (dict "data" (index $.Site.Data .data)) -}}
+          {{- if in .title "Analytics" -}}
+            {{- partial "services/analytics" (dict "data" (index $.Site.Data .data)) -}}
           {{- end -}}
         </section>
       {{- end -}}

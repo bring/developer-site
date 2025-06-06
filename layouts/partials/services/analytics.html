@@ -1,23 +1,21 @@
 {{- partial "services/spreadsheetinfo" (dict "filename" "services_reports_invoice.xlsx" "name" "Analytics") -}}
-<div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 radius-a">
-  <div class="mrl">
-    <div class="flex flex-wrap-reverse align-ifs">
-      <div class="mrl">
-        <p class="form__label">Filter by</p>
-        <div class="btngroup">
+<div class="flex flex-wrap align-ifs mbm mb-form gcl">
+  <div>
+    <div class="flex flex-wrap-reverse align-ifs gcl grm">
+      <div>
+        <p class="mbxs fwb text-0.875r">Filter by</p>
+        <div class="flex flex-wrap gaxs">
           {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rifamily'" "btnText" "Service family") -}}
           {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='riapi'" "btnText" "API") -}}
           {{- partial "services/filterbtn" (dict "dataAtt" "data-ri-filterset='rireptype'" "btnText" "Report type") -}}
         </div>
       </div>
-      <div>
-        <label class="form__label" for="ri-textfilter">
-          Reports name
-        </label>
-        <input id="ri-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-      </div>
+      <label for="ri-textfilter">
+        Reports name
+        <input id="ri-textfilter" type="text"/>
+      </label>
     </div>
-    <div id="ri-filtersets">
+    <div id="ri-filtersets" class="mtxs">
       {{- $filterScratch := newScratch -}}
       {{- $filterScratch.Add "rifamily" slice -}}
       {{- $filterScratch.Add "riapi" slice -}}
