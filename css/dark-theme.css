@@ -104,9 +104,24 @@
   & optgroup,
   & select,
   & textarea {
-    background-color: var(--green-26);
+    background-color: var(--green-22);
     color: var(--green-86);
     border-color: var(--green-40);
+
+    &:hover {
+      border-color: var(--green-60);
+    }
+
+    &:disabled {
+      background-color: var(--green-10);
+      border-color: var(--green-22);
+    }
+  }
+
+  & .mb-form input:hover,
+  select:hover,
+  text-area:hover {
+    border-color: var(--green-60);
   }
 
   & .dev-docscontent__section,
@@ -222,10 +237,18 @@
 
   & .dev-sidemenu a,
   & .param-toggle-icon,
-  & .form__label,
+  & label,
   & .dev-docscontent__info summary,
   & .dev-docscontent__info details p {
     color: var(--green-86);
+  }
+
+  .mb-form {
+    label:has([type="radio"], [type="checkbox"]) {
+      &:has(input):hover {
+        color: white;
+      }
+    }
   }
 
   & .dev-sidemenu a,
