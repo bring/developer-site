@@ -1,6 +1,5 @@
 {
   "baseURL": "https://developer.bring.com",
-  "disqusShortname": "bringdev",
   "ignorefiles": ["css/main.js"],
   "languageCode": "en-us",
   "defaultContentLanguage": "en",
