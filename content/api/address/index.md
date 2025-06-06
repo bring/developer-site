@@ -1,7 +1,7 @@
 ---
 title: Address API
 layout: api
-disqus_identifier: https-developer-bring-com-api-address
+support: true
 menu:
   apidocs:
     identifier: address

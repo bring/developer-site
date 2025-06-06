@@ -1,7 +1,7 @@
 ---
 title: Pickup Point API
 layout: api
-disqus_identifier: https-developer-bring-com-api-pickup-point
+support: true
 menu:
   apidocs:
     identifier: pickuppoint

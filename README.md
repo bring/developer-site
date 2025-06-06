@@ -128,7 +128,7 @@ menu:
     url: /api/{foldername}
     parent: {parent, see config.json}
 weight: {menu position prefixed by parent value}
-disqus_identifier: api-{foldername} (optional, if you want comments)
+support: true (if the support email should display at the bottom)
 
 # Add alerts or important messages and they appear to the side or above of the main content
 important:

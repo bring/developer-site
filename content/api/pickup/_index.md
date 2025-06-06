@@ -1,7 +1,7 @@
 ---
 title: Pickup API
 layout: api
-disqus_identifier: https-developer-bring-com-api-pickup
+support: true
 menu:
   apidocs:
     identifier: pickup

@@ -92,9 +92,3 @@
     </li>
   {{- end -}}
 {{- end -}}
-
-{{- if and (eq (getenv "HUGO_ENV") "production") (isset $ctx.Params "disqus_identifier") -}}
-  <li>
-    <a href="{{ $anchor }}api-support">API support</a>
-  </li>
-{{- end -}}

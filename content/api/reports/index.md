@@ -1,7 +1,7 @@
 ---
 title: Reports API
 layout: api
-disqus_identifier: https-developer-bring-com-api-reports
+support: true
 menu:
   apidocs:
     identifier: reports

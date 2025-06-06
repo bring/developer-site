@@ -1,7 +1,7 @@
 ---
 title: Pull order/article
 layout: api
-disqus_identifier: https-developer-bring-com-api-warehousing
+support: true
 menu:
   apidocs:
     identifier: warehousing4
