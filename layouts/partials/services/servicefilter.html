@@ -1,9 +1,9 @@
 {{- $filter := .filter -}}
-<fieldset class="flex-dir-col align-ifs bg-white bshadow mbm pam" id="{{ $filter }}" hidden>
+<fieldset class="flex-dir-col align-ifs bg-gray2 radius-a mbm pam" id="{{ $filter }}" hidden>
   <legend class="screen-reader-text">{{- .legendText -}}</legend>
   {{- range uniq .filterScratch -}}
     {{- if and (ne . "-") (ne . "") -}}
-      <label class="mrm">
+      <label>
       <input type="checkbox" value="{{ . }}" class="checkitem" data-filter="{{ $filter }}"/> {{ . }}</label>
     {{- end -}}
   {{- end -}}

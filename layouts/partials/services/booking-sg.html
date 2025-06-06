@@ -1,23 +1,21 @@
 {{- partial "services/spreadsheetinfo" (dict "filename" "services_booking_shippingguide.xlsx" "name" "Booking and Shipping Guide") -}}
-<div class="flex flex-wrap align-ifs mbs bg-gray1 pal pr0 radius-a">
-  <div class="mrl">
-    <div class="flex flex-wrap-reverse align-ifs">
-      <div class="mrl">
-        <p class="form__label">Filter by</p>
-        <div class="btngroup">
+<div class="flex flex-wrap align-ifs mbm mb-form gcl">
+  <div>
+    <div class="flex flex-wrap-reverse align-ifs gcl grm">
+      <div>
+        <p class="mbxs fwb text-0.875r">Filter by</p>
+        <div class="flex flex-wrap gaxs">
           {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='type'" "btnText" "Service type") -}}
           {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='family'" "btnText" "Service family") -}}
           {{- partial "services/filterbtn" (dict "dataAtt" "data-bsg-filterset='cntype'" "btnText" "Customer number type") -}}
         </div>
       </div>
-      <div>
-        <label class="form__label" for="bsg-textfilter">
-          Service name, service code or API request code
-        </label>
-        <input id="bsg-textfilter" type="text" class="form__control mrxs w100p maxw32r"/>
-      </div>
+      <label for="bsg-textfilter">
+        Service name, service code or API request code
+        <input id="bsg-textfilter" type="text"/>
+      </label>
     </div>
-    <div id="bsg-filtersets">
+    <div id="bsg-filtersets" class="mtxs">
       {{- $filterScratch := newScratch -}}
       {{- $filterScratch.Add "type" slice -}}
       {{- $filterScratch.Add "family" slice -}}
