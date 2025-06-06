@@ -36,7 +36,7 @@
             <h2 class="dev-anchored mb0" id="{{ $endpointId }}">
               {{- $displayName -}}
             </h2>
-            <p class="fw600">SOAP</p>
+            <h3>SOAP</h3>
             <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
               {{- range .methods -}}
                 <div class="param-response-area">
@@ -55,14 +55,15 @@
                   {{- else -}}
                     {{- $urlOutput = $urlOutput | append $absUri -}}
                   {{- end -}}
-                  <div class="flex align-ifs mbl mts">
-                    {{- partial "api/oas/endpoint-type" (dict "type" .method) -}}
-                    <span class="flex-auto">
-                      <pre class="flex align-ic pas mb0 wrap-text">
-                        <span>{{ delimit $urlOutput "<br>" }}</span>
-                      </pre>
-                    </span>
-                  </div>
+                  <dl class="flex align-ib gaxs">
+                    <dt class="fwn">{{- partial "api/oas/endpoint-type" (dict "type" .method) -}}</dt>
+                    {{- range $urlOutput -}}
+                      <dd>
+                        <code class="paxs wrap-text">{{ . }}</code>
+                      </dd>
+                    {{- end -}}
+                  </dl>
+
                 {{- end -}}
 
                 {{- with .description -}}
