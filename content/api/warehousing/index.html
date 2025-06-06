@@ -31,18 +31,16 @@ html:
       <link rel="stylesheet" href="warehousing.css">
       <script src="listcollapse.js" type="text/javascript" language="javascript1.2"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <div class="flex align-ifs mbl mts">
-        <span class="mb-badge text-note mrxs pas">Base URL</span>
-        <span class="flex-auto maxw40r">
-          <pre class="flex align-ic pas mb0 wrap-text"><span>https://bapi.bring.com/wh/api/v1</span></pre>
-        </span>
-      </div>
+      <dl>
+          <dt>Base URL</dt>
+          <dd><code>https://bapi.bring.com/wh/api/v1</code></dd>
+      </dl>
       <table>
         <thead><tr><th>Usage</th><th>Method</th><th>Endpoint</th></tr></thead>
         <tbody>
-          <tr><td><a href="#send-an-order">Send an Order</a></td><td>POST</td><td>/order</td></tr>
-          <tr><td><a href="#post-item-data">Post item data</a></td><td>POST</td><td>/itemdata</td></tr>
-          <tr><td><a href="#list-error-codes-get">List error codes</a></td><td>GET</td><td>/errorCodes</td></tr>
+          <tr><td><a href="#send-an-order">Send an Order</a></td><td><span class="mb-badge mb-badge--blue">POST</span></td><td>/order</td></tr>
+          <tr><td><a href="#post-item-data">Post item data</a></td><td><span class="mb-badge mb-badge--blue">POST</span></td><td>/itemdata</td></tr>
+          <tr><td><a href="#list-error-codes-get">List error codes</a></td><td><span class="mb-badge mb-badge--green">GET</span></td><td>/errorCodes</td></tr>
         </tbody>
       </table>
 
@@ -51,13 +49,12 @@ html:
       <p>This endpoint is used to submit orders to Bring Warehousing. There are two different types of order you can submit.</p>
       <p>&bull; Order / SalesOrder<br>&bull; PurchaseOrder<br></p>
       <p>To send information to Bring, the following base endpoint URL must be used:</p>
-      <div class="flex align-ifs mbl mts"><span class="mb-badge mb-badge--blue text-note ttu mrxs pas">post</span>
-        <span class="flex-auto">
-          <pre class="flex align-ic pas mb0 wrap-text">
-            <span>https://bapi.bring.com/wh/api/v1/order</span>
-          </pre>
-        </span>
-      </div>
+      <dl class="flex align-ib gaxs">
+        <dt class="fwn"><span class="mb-badge mb-badge--blue">POST</span></dt>
+        <dd>
+          <code class="paxs wrap-text">https://bapi.bring.com/wh/api/v1/order</code>
+        </dd>
+      </dl>
       <h3>Request parameters</h3>
       <table>
         <thead><tr><th>HTTP header</th><th>Type</th><th>Description</th></tr></thead>
@@ -998,13 +995,12 @@ html:
   - title: Post Item Data
     content: |
       <p>This endpoint is used to submit article information to Bring Warehousing.</p>
-      <div class="flex align-ifs mbl mts"><span class="mb-badge mb-badge--blue text-note ttu mrxs pas">post</span>
-        <span class="flex-auto">
-          <pre class="flex align-ic pas mb0 wrap-text">
-            <span>https://bapi.bring.com/wh/api/v1/itemdata</span>
-          </pre>
-        </span>
-      </div>
+      <dl class="flex align-ib gaxs">
+        <dt class="fwn"><span class="mb-badge mb-badge--blue">POST</span></dt>
+        <dd>
+          <code class="paxs wrap-text">https://bapi.bring.com/wh/api/v1/itemdata</code>
+        </dd>
+      </dl>
       <table>
         <thead><tr><th>HTTP header</th><th>Type</th><th>Description</th></tr></thead>
         <tbody>

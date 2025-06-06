@@ -65,14 +65,14 @@ p a:not(.btn-link--dark, .btn-link) {
 }
 
 .dev-docscontent__backnav {
-  padding: 0 min(2rem, 6vw) min(2rem, 4vh);
+  padding: 0 min(32px, 6vw) min(2rem, 4vh);
 }
 
 .dev-docscontent__section {
   margin-bottom: 3rem;
-  padding: 0 min(2rem, 6vw) min(2rem, 4vh);
+  padding: 0 min(32px, 6vw) min(2rem, 4vh);
   border-width: 2px;
-  border-color: var(--gray-86);
+  border-color: var(--gray-80);
   border-bottom-style: solid;
 }
 
