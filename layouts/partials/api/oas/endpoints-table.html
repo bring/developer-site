@@ -7,19 +7,16 @@
 
 {{- with .oas -}}
   <section class="dev-docscontent__section maxw96r">
-    <h2 class="dev-anchored mbm" id="endpoints">
-    Endpoints
-    </h2>
-    <div class="flex align-ifs mbl mts">
-      <span class="mb-badge text-note mrxs pas">Base URL</span>
-      <span class="flex-auto maxw40r">
-        <pre class="flex align-ic pas mb0 wrap-text">
-          {{- range .servers -}}
-            <span>{{ replace .url "qa." "" }}</span>
-          {{- end -}}
-        </pre>
-      </span>
-    </div>
+    <h2 class="dev-anchored mbm" id="endpoints">Endpoints</h2>
+    <dl class="flex flex-wrap gcxl grm">
+      <div>
+        <dt>Base URL</dt>
+        {{- range .servers -}}
+          <dd><code>{{ replace .url "qa." "" }}</code></dd>
+        {{- end -}}
+      </div>
+      {{- partial "api/oas/openapi-source.html" (dict "oasUrl" $oasUrl) -}}
+    </dl>
 
     <table class="maxw96r">
       <thead>
@@ -51,7 +48,7 @@
                 </a>
               </td>
               <td>
-                {{- $method | upper -}}
+                {{- partial "api/oas/endpoint-type" (dict "type" $method) -}}
               </td>
               <td>
                 <code>{{ $path }}</code>
@@ -96,6 +93,6 @@
         {{- end -}}
       {{- end -}}
     </table>
-    {{- partial "api/oas/openapi-source.html" (dict "oasUrl" $oasUrl) -}}
+
   </section>
 {{- end -}}

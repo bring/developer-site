@@ -97,15 +97,10 @@
             <h2 class="dev-anchored mbm" id="endpoints">
               Endpoints
             </h2>
-
-            <div class="flex align-ifs mbl mts">
-              <span class="mb-badge text-note mrxs pas">Base URL</span>
-              <span class="flex-auto maxw40r">
-                <pre class="flex align-ifs pas mb0 wrap-text">
-                    <span>{{ $baseUri }}</span>
-                </pre>
-              </span>
-            </div>
+            <dl>
+              <dt>Base URL</dt>
+              <dd><code>{{ $baseUri }}</code></dd>
+            </dl>
             <table>
               <thead>
                 <tr>
@@ -126,7 +121,7 @@
                       </a>
                     </td>
                     <td>
-                      {{- .method | upper -}}
+                      {{- partial "api/oas/endpoint-type" (dict "type" .method) -}}
                     </td>
                     <td>
                       <code>{{- $resRelUri -}}</code>
@@ -174,19 +169,19 @@
                   {{- $urlOutput = $urlOutput | append $absUri -}}
                 {{- end -}}
 
-                <div class="flex align-ifs mbl mts">
-                  {{- partial "api/oas/endpoint-type" (dict "type" .method) -}}
-                  <span class="flex-auto">
-                    <pre class="flex align-ic pas mb0 wrap-text">
-                      <span>{{ delimit $urlOutput "<br>" | safeHTML }}</span>
-                    </pre>
-                  </span>
-                </div>
+                <dl class="flex align-ib gaxs">
+                  <dt class="fwn">{{- partial "api/oas/endpoint-type" (dict "type" .method) -}}</dt>
+                  {{- range $urlOutput -}}
+                    <dd>
+                      <code class="paxs wrap-text">{{ . }}</code>
+                    </dd>
+                  {{- end -}}
+                </dl>
 
                 {{- with $description -}}
                   {{- if in (string .) "\n\n" -}}
                     {{ . | markdownify }}
-                    {{- else -}}
+                  {{- else -}}
                     <p>{{ . | markdownify }}</p>
                   {{- end -}}
                 {{- end -}}

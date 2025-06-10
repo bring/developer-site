@@ -16,14 +16,12 @@
         <h2 class="dev-anchored" id="{{ $endpointId }}">{{ .summary }}</h2>
         <div class="flex flex-wrap mbxl pbxl mb-border bb gal">
           <div class="param-response-area">
-            <div class="flex align-ifs mbl mts">
-              {{- partial "api/oas/endpoint-type" (dict "type" $type) -}}
-              <span class="flex-auto">
-                <pre class="flex align-ic pas mb0 wrap-text">
-                  <span>{{ $baseUrl }}{{ $path }}</span>
-                </pre>
-              </span>
-            </div>
+            <dl class="flex align-ib gaxs">
+              <dt class="fwn">{{- partial "api/oas/endpoint-type" (dict "type" $type) -}}</dt>
+                <dd>
+                  <code class="paxs wrap-text">{{ $baseUrl }}{{ $path }}</code>
+                </dd>
+            </dl>
             <p class="mbl">{{ .description | safeHTML }}</p>
 
             {{- with or .parameters .requestBody -}}
