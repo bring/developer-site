@@ -1,9 +1,4 @@
-import {
-  cutoffRows,
-  hideCutoffs,
-  checkNoMatches,
-  toggleSets,
-} from "./servicefiltering-common"
+import { checkNoMatches, toggleSets } from "./servicefiltering-common"
 
 const table = document.querySelector("#services-bsg")
 
@@ -14,11 +9,9 @@ if (table) {
     filterSets = document.querySelectorAll("#bsg-filtersets fieldset"),
     filterChecks = document.querySelectorAll(".checkitem"),
     clearBtn = document.querySelector("#bsg-clearfilters"),
-    filterCombo = document.querySelector("#bsg-filtercombo"),
-    cutoff = document.querySelector("#bsg-cutoff"),
-    cutoffBtn = cutoff.querySelector("button")
+    filterCombo = document.querySelector("#bsg-filtercombo")
   let allFilters
-  
+
   function closeFilterSet() {
     const activeSet = document.querySelector("[data-bsg-filterset].active")
     if (activeSet) {
@@ -28,13 +21,11 @@ if (table) {
       set.hidden = true
       set.classList.remove("flex")
     })
-  
+
     toggleRows()
   }
-  
+
   function clearAllFilters() {
-    hideCutoffs(cutoff)
-  
     filterChecks.forEach((filterCheck) => {
       filterCheck.checked = false
     })
@@ -43,25 +34,20 @@ if (table) {
     })
     filterInput.disabled = false
     filterInput.value = ""
-  
+
     checkNoMatches("bsg", table, rows)
     allFilters = {}
     filterCombo.innerHTML = ""
     clearBtn.classList.add("dn")
   }
-  
+
   clearBtn.addEventListener("click", function () {
     closeFilterSet()
     clearAllFilters()
   })
-  
-  cutoffBtn.addEventListener("click", function () {
-    clearAllFilters()
-  })
-  
+
   // Input filter
   filterInput.addEventListener("keyup", function () {
-    hideCutoffs(cutoff)
     const query = this.value.toLowerCase()
     const notEmpty = query.length >= 1
     if (notEmpty) {
@@ -69,7 +55,7 @@ if (table) {
     } else {
       clearBtn.classList.add("dn")
     }
-  
+
     rows.forEach((row) => {
       if (
         row
@@ -90,13 +76,13 @@ if (table) {
         row.hidden = true
       }
     })
-  
+
     checkNoMatches("bsg", table, rows)
   })
-  
+
   function makeComboOverview(allFilters) {
     filterCombo.innerHTML = ""
-  
+
     function appliedBtn(active, title) {
       return (
         '<button type="button" data-bsg-title="' +
@@ -106,7 +92,7 @@ if (table) {
         "</button>"
       )
     }
-  
+
     for (let activeFilter in allFilters) {
       if (allFilters[activeFilter].length > 0) {
         const filterTitle = document.querySelector(
@@ -133,7 +119,7 @@ if (table) {
       window.loadMybringIcons()
     }
   }
-  
+
   function toggleCheckbox(box) {
     const checkEl = document.querySelector(
       'input[data-filter="' +
@@ -144,7 +130,7 @@ if (table) {
     )
     checkEl.click()
   }
-  
+
   // Remove filters via combo overview
   filterCombo.addEventListener("click", function (e) {
     const clicked = e.target
@@ -157,19 +143,19 @@ if (table) {
         toggleCheckbox(subButton)
       })
     }
-  
+
     // Single subfilters
     if (clicked.dataset.bsgType && clicked.dataset.bsgTitle) {
       toggleCheckbox(clicked)
     }
   })
-  
+
   // Create object for storing active filters
   allFilters = {}
   filterSets.forEach((set) => {
     allFilters[set.id] = []
   })
-  
+
   function toggleRows() {
     let activeFilterSets = 0
     for (let activeFilter in allFilters) {
@@ -179,7 +165,7 @@ if (table) {
         filterInput.value = ""
       }
     }
-  
+
     // Clear all filtering if sets are closed and none are active
     let fsActive = false
     filterSetBtns.forEach((btn) => {
@@ -192,7 +178,7 @@ if (table) {
       clearAllFilters()
       return
     }
-  
+
     // Toggle table rows
     if (activeFilterSets <= 0) {
       rows.forEach((row) => {
@@ -201,7 +187,7 @@ if (table) {
     } else {
       rows.forEach((row) => {
         row.hidden = true
-  
+
         // Check if row data matches at least one active filter in each active set
         let matches = 0
         for (const activeFilter in allFilters) {
@@ -226,7 +212,7 @@ if (table) {
       })
     }
   }
-  
+
   // Set filters
   filterSetBtns.forEach((filterBtn) => {
     filterBtn.addEventListener("click", function () {
@@ -237,19 +223,19 @@ if (table) {
       }
       closeFilterSet()
       clearBtn.classList.remove("dn")
-  
+
       this.classList.add("active")
       filterInput.disabled = true
-  
+
       toggleSets(filterSets, currentFilterSet)
-  
+
       const setChecks = document.querySelectorAll(
         'input[data-filter="' + currentFilterSet + '"]'
       )
       setChecks.forEach((setCheck) => {
         setCheck.addEventListener("click", function () {
           const filterKey = this.dataset.filter
-  
+
           // Store active filters
           allFilters[filterKey] = []
           setChecks.forEach((setCheck) => {
@@ -257,7 +243,7 @@ if (table) {
               allFilters[filterKey].push(setCheck.value)
             }
           })
-  
+
           makeComboOverview(allFilters)
           toggleRows()
           checkNoMatches("bsg", table, rows)
@@ -265,7 +251,7 @@ if (table) {
       })
     })
   })
-  
+
   // Toggle help
   const helpBtn = document.querySelector("#help-country")
   const helpTxt = document.querySelector("#info-country")
@@ -276,10 +262,6 @@ if (table) {
       helpTxt.hidden = true
     }
   }
-  
+
   helpBtn.addEventListener("click", toggleHelp)
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    cutoffRows(rows, 5)
-  })
 }
