@@ -2,6 +2,10 @@
   columns: auto 13em;
 }
 
+.maxh70dvh {
+  max-height: 70dvh;
+}
+
 .pv\.75r {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;

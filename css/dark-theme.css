@@ -11,6 +11,11 @@
     color: var(--gray-20);
   }
 
+  .mb-table__sticky-top thead,
+  .mb-table__sticky-left th {
+    background-color: var(--green-10);
+  }
+
   /*Brighter link color for better contrast*/
   &
     a:not(
