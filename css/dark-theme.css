@@ -155,6 +155,10 @@
     color: var(--green-80);
   }
 
+  .mb-notice {
+    background-color: var(--green-15);
+  }
+
   /* Buttons */
   & .btn--white,
   & .btn--white:link,
