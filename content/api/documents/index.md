@@ -1,7 +1,7 @@
 ---
 title: Documents API
 layout: api
-disqus_identifier: https-developer-bring-com-api-documents
+support: true
 menu:
   apidocs:
     identifier: documents

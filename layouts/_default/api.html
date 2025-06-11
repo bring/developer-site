@@ -44,16 +44,14 @@
         {{- if and (in .CurrentSection "e-commerce-solutions") (ne .RelPermalink "/api/e-commerce-solutions/" ) -}}
           {{- partial "checkout/feedback-form.html" . -}}
         {{- end -}}
-        {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-          <section class="dev-docscontent__section">
-            {{ template "_internal/disqus.html" $ }}
-          </section>
+        {{- if $.Params.support -}}
+          {{- partial "api-support.html" . -}}
         {{- end -}}
       </article>
     </main>
 
   {{- else if isset $.Params "oas" -}}
-    {{- if or (eq $identifier "ordermanagement") (eq $identifier "shippingguide_2") -}}
+    {{- if (eq $identifier "ordermanagement") -}}
       {{- partial "api/oas/restsoap.html" . -}}
     {{- else -}}
       <main id="main" class="dev-docscontent w100p {{ replace .Title "API" "" | anchorize }}">
@@ -65,10 +63,8 @@
             {{- partial "api/oas/endpoints-table.html" (dict "oas" . "sortedPaths" $sortedPaths "oasUrl" $.Params.oas ) -}}
             {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "sortedPaths" $sortedPaths) -}}
           {{- end -}}
-          {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-            <section id="api-support" class="dev-docscontent__section maxw64r">
-              {{- template "_internal/disqus.html" $ -}}
-            </section>
+          {{- if $.Params.support -}}
+            {{- partial "api-support.html" . -}}
           {{- end -}}
         </article>
       </main>

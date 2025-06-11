@@ -1,7 +1,7 @@
 ---
 title: Shipping Guide API
 layout: api
-disqus_identifier: https-developer-bring-com-api-shipping-guide-2
+support: true
 menu:
   apidocs:
     identifier: shippingguide_2

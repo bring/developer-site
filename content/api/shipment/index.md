@@ -1,7 +1,7 @@
 ---
 title: Shipment API
 layout: api
-disqus_identifier: https-developer-bring-com-api-shipment
+support: true
 menu:
   apidocs:
     identifier: shipment

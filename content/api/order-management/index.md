@@ -1,7 +1,7 @@
 ---
 title: Order Management API
 layout: api
-disqus_identifier: https-developer-bring-com-api-order-management
+support: true
 menu:
   apidocs:
     identifier: ordermanagement
