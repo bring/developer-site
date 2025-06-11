@@ -1,6 +1,4 @@
 import {
-  cutoffRows,
-  hideCutoffs,
   checkNoMatches,
   toggleSets,
 } from "./servicefiltering-common"
@@ -14,9 +12,7 @@ if (table) {
     filterChecks = document.querySelectorAll(".checkitem"),
     clearBtn = document.querySelector("#ri-clearfilters"),
     filterCombo = document.querySelector("#ri-filtercombo"),
-    originalEls = document.querySelectorAll(".originalel"),
-    cutoff = document.querySelector("#ri-cutoff"),
-    cutoffBtn = cutoff.querySelector("button")
+    originalEls = document.querySelectorAll(".originalel")
   let allFilters
   
   function removeInsCells() {
@@ -55,7 +51,6 @@ if (table) {
   }
   
   function clearAllFilters() {
-    hideCutoffs(cutoff)
     removeInsCells()
     hideOriginals(false)
   
@@ -73,11 +68,6 @@ if (table) {
     filterCombo.innerHTML = ""
     clearBtn.classList.add("dn")
   }
-  
-  cutoffBtn.addEventListener("click", function () {
-    closeFilterSet()
-    clearAllFilters()
-  })
   
   clearBtn.addEventListener("click", function () {
     closeFilterSet()
@@ -274,7 +264,6 @@ if (table) {
   
   // Input filter
   filterInput.addEventListener("keyup", function () {
-    hideCutoffs(cutoff)
     const query = this.value.toLowerCase()
     const notEmpty = query.length >= 1 && query !== "-"
     const filterKey = "riRepname"
@@ -334,9 +323,5 @@ if (table) {
         })
       })
     })
-  })
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    cutoffRows(rows, 12)
   })
 }

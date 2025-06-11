@@ -36,15 +36,15 @@
     <button type="button" id="ri-clearfilters" class="btn-link--dark mtl mrl dn">Clear all filters</button>
   </div>
 </div>
-<div class="scrollshade-h ofx-auto">
-  <table id="services-ri">
+<div class="scrollshade-h of-auto maxh70dvh maxwmaxc">
+  <table id="services-ri" class="mb-table__sticky-top mb-table__sticky-left">
     <thead>
       <tr>
-        <th>Service family</th>
-        <th>Customer number type</th>
-        <th>API</th>
-        <th>Report type</th>
-        <th>Reports name</th>
+        <th scope="col">Service family</th>
+        <th scope="col">Customer number type</th>
+        <th scope="col">API</th>
+        <th scope="col">Report type</th>
+        <th scope="col">Reports name</th>
       </tr>
     </thead>
     <tbody>
@@ -115,7 +115,4 @@
       {{- end -}}
     </tbody>
   </table>
-</div>
-<div class="cutoff-overlay" id="ri-cutoff">
-  <button type="button" class="btn btn--white w100p maxw32r">Show all service families</button>
 </div>
