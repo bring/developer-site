@@ -1,13 +1,15 @@
 ---
-title: Generating QR and Label-Free Codes for Parcel Returns (Norway)
+title: Generating QR and Label Free Codes for Parcel Returns (Norway)
 layout: api-sub
 menu:
   apidocs:
     identifier: bookingqr
-    title: Generating QR codes (Norway)
+    title: Generating QR and Label Free Codes for Parcel Returns (Norway)
     parent: booking_labels
 weight: 3
 ---
+
+Our label free solutions in Norway allow senders to return parcels at a pickup point or a parcel locker without needing a printed label.
 
 ## QR Code Generation
 
@@ -29,7 +31,7 @@ The API response will include one `qrCodeLink` per package—a URL to a PNG imag
 
 ## Label-Free Codes
 
-Label-Free codes are gradually being rolled out for select parcel return services. When you request QR codes for the following services, you will also receive a Label-Free code:
+Label free codes are gradually being rolled out for select parcel return services. When you request QR codes for the following services, you will also receive a label free code.
 
 - **Supported Services:**
   - 9300
@@ -39,7 +41,7 @@ Label-Free codes are gradually being rolled out for select parcel return service
 
 A unique code in the format `BRING-1234-5678` will be generated and returned as part of the API response.
 After the booking is completed, the code is sent by email to both the sender and recipient (provided that both email addresses are included in the request).
-The Label-Free code should be clearly written on the parcel before it is handed in. The parcel can then be returned via a parcel locker.
+The label free code should be clearly written on the parcel before it is handed in. The parcel can then be returned via a parcel locker.
 
 <details>
 <summary>Rollout Steps</summary>
