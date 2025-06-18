@@ -1,80 +1,69 @@
 ---
-title: Generating QR and Label Free Codes for Parcel Returns (Norway)
+title: Generating QR and Label Free Codes for Sweden/Denmark and Norway
 layout: api-sub
 menu:
   apidocs:
     identifier: bookingqr
-    title: Generating QR and Label Free Codes for Parcel Returns (Norway)
+    title: Generating QR and Label Free Codes for Sweden/Denmark and Norway
     parent: booking_labels
 weight: 3
 ---
 
-Our label free solutions in Norway allow senders to return parcels at a pickup point or a parcel locker without needing a printed label.
+## General Overview
 
-## QR Code Generation
+Both QR codes and label‑free codes are used to simplify parcel returns by eliminating the need for printed shipping labels. When you enable QR code generation (by adding the element `generateQrCodes` at the consignment level), the API returns a URL to a PNG image of the QR code. When label free codes are requested, a unique label‑free code (format: `BRING-1234-5678`) is generated which, if used, must be clearly written on the parcel.
 
-For parcels returns in/from Norway, you can request QR codes. An end user simply presents the QR code at any PiB or Post Office in Norway where the code is scanned to print a shipping label.
+The API response always contains one QR code/label‑free code per package and the order matches that of the API request.
 
-To enable QR code generation, add the element `generateQrCodes` at the consignment level and set it to `true`.
-The API response will include one `qrCodeLink` per package—a URL to a PNG image of the QR code.
-- **Supported Services:**
-  - 9000 (Return business parcel)
-  - 9300 (Return from pick-up point)
-  - 9350 (Return parcel to business)
-  - 9600 (Return express)
-  - 0331 (Business Parcel Return)
-  - 0333 (Business Parcel Return Bulk)
-  - 0341 (PickUp Parcel Return)
-  - 0343 (PickUp Parcel Return Bulk)
+---
 
-**Note:** The sender’s email address is required in the booking request to receive the QR code.
+## Sweden & Denmark
 
-## Label-Free Codes
+Label‑free codes for Sweden/Denmark work as follows:
 
-Label free codes are gradually being rolled out for select parcel return services (see dropdown below for detailed description of the rollout stages). No additional action is needed for requesting label free codes in Norway if you are already requesting QR codes. When you request QR codes for the following services, you will also receive a label free code.
+- To request a label‑free code, include [VAS 1288](https://developer.bring.com/api/services/#label-free) in the booking request.
+- The returned label‑free code and the recipient’s name and address are to be written clearly on the parcel.  After the booking is completed, the code is sent to the sender and recipient by e-mail (assuming their respective e-mail addresses are included in the request).
+- A QR code can also be requested (by setting `generateQrCodes` to `true`) so that pickup point staff can scan the code to print a label.
+- This solution is applicable only when parcels are handed in at a pickup point (if Bring picks up your parcels, a regular label must be used).
 
-- **Supported Services:**
-  - 9300 (Return from pick-up point)
-  - 9350 (Return parcel to business)
-  - 0341 (PickUp Parcel Return)
-  - 0343 (PickUp Parcel Return Bulk)
+---
 
-A unique code in the format `BRING-1234-5678` will be generated and returned as part of the API response.
-After the booking is completed, the code is also sent by email to both the sender and recipient (provided that both email addresses are included in the request).
+## Norway
 
-**When using label free code** 
-<br>
-The label free code should be clearly written on the parcel before it is handed in. The parcel can then be returned via a parcel locker (for unmanned pickup points) or a PiB (manned pickup points). 
+In Norway the process includes additional details, and the label‑free code solution is currently being rolled out.
 
-You can specify the pickup point in the booking request using the `pickupPoint` element at the parties level in the request. Pickup points ids can be found through the [Pickup Point API](https://developer.bring.com/api/pickup-point/). You can filter on [pickup point types](https://developer.bring.com/api/pickup-point/#pickup-point-types) to ensure end customers can return parcels at nearest parcel locker. Use [max parcel dimension](https://developer.bring.com/api/pickup-point/#tips-and-guides) to filter out pickup points based on parcel size on the client side, and thus preventing failed bookings during checkout. 
+### QR Code Generation
 
-For information on the rollout of label free codes, see the details in the dropdown below. 
-<br>
-We are currently on **Step One: April-May (Region Øst)** in the rollout. 
-<details>
-<summary>Rollout Steps</summary>
+Enable QR codes by adding the element \`generateQrCodes\` at the consignment level. The API response returns one \`qrCodeLink\` per package.
 
-**Step One: April-May (Region Øst)**
-- Stokke
-- Drammen
-- Kristiansand
+**Supported Services:**
+- 9000 \- Return business parcel
+- 9300 \- Return from pick\-up point
+- 9350 \- Return parcel to business
+- 9600 \- Return express
+- 0331 \- Business Parcel Return
+- 0333 \- Business Parcel Return Bulk
+- 0341 \- PickUp Parcel Return
+- 0343 \- PickUp Parcel Return Bulk
 
-**Step Two: May-Jun (Region Vest)**
-- Stavanger
-- Haugesund
-- Bergen
-- Førde
+*Note:* The sender’s email address is required in the booking request.
 
-**Step Three: Aug-Sep (Region Midt+Nord)**
-- Trondheim / Bodø
-- Ålesund / Tromsø
-- Molde / Harstad
-- Mo I Rana / Alta
+### Label‑Free Codes
 
-**Step Four: Sep-Oct (Region OAØ)**
-- LSO
-- ØT
-- Fredrikstad
-- Hamar
+Label‑free codes in Norway are automatically generated when requesting QR codes for the following services:
 
-</details>
+**Supported Services:**
+- 9300 \- Return from pick\-up point
+- 9350 \- Return parcel to business
+- 0341 \- PickUp Parcel Return
+- 0343 \- PickUp Parcel Return Bulk
+
+The generated code is returned in the API response and sent by email to both sender and recipient. The code and the the recipient’s name and address are to be clearly written on the parcel before it is handed over. Parcels may then be returned via a parcel locker.
+
+*Rollout Notice:* The label‑free codes solution in Norway is in the process of being rolled out and is currently in **Step One: Region Øst**.
+### Rollout Steps
+- Step One: Region Øst
+- Step Two: Region Vest
+- Step Three: Region Midt+Nord
+- Step Four: Region OAØ
+
