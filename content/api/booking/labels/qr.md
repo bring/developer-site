@@ -34,7 +34,7 @@ In Norway the process includes additional details, and the label‑free code sol
 
 ### QR Code Generation
 
-Enable QR codes by adding the element \`generateQrCodes\` at the consignment level. The API response returns one \`qrCodeLink\` per package.
+Enable QR codes by adding the element \`generateQrCodes\` at the consignment level. The API response returns one \`qrCodeLink\` per package. After the booking is completed, the QR code is sent to the sender and recipient by e-mail (assuming their respective e-mail addresses are included in the request).
 
 **Supported Services:**
 - 9000 \- Return business parcel
