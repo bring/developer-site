@@ -50,25 +50,27 @@ or via your terminal
 
 Revision history and Changelog is called _API updates_ to reflect that it covers
 past, current and upcoming changes. Users can subscribe to either all updates,
-or do a selection based on the different API areas.
-New messages are automatically emailed to users who subscribe.
+or do a selection based on the different API areas. New messages are
+automatically emailed to users who subscribe.
 
 New messages are added with publish date as the file name `yyyy-mm-dd.md` in the
 different folders under `content/api/revision-history`, reflecting the different
 API areas.
 
 - If the message is intended to give an update about one or several APIs, the
-message is added in each folder (API area) of the affected API.
+  message is added in each folder (API area) of the affected API.
 
 - If the message is general and should reach all subscribers, this is added in
-the main folder - `content/api/revision-history`.
+  the main folder - `content/api/revision-history`.
 
-- Messages that are important can appear on the API page by setting the parameter
-`isImportant: true` and including the full API name in the message title.
-This can be useful when a message should stay visible for an upcoming or breaking
-API change. If you want to send a new email to subscribers when the API change occurs, update the publish date and rewrite the message to match the grammatical tense.
-Even though the important messages are separated and presented on their own,
-all update messages are part of the same RSS feed and email solution.
+- Messages that are important can appear on the API page by setting the
+  parameter `isImportant: true` and including the full API name in the message
+  title. This can be useful when a message should stay visible for an upcoming
+  or breaking API change. If you want to send a new email to subscribers when
+  the API change occurs, update the publish date and rewrite the message to
+  match the grammatical tense. Even though the important messages are separated
+  and presented on their own, all update messages are part of the same RSS feed
+  and email solution.
 
 The messages are added with the following frontmatter:
 
@@ -85,7 +87,10 @@ In most cases, publish date is the same as the date of the change, but if the
 message is about an upcoming change, the change date should be mentioned in the
 body text.
 
-Consult the [formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/) to writing these messages. You will also get a comment on your PR with the same link when there are additions in the revision-history folder.
+Consult the
+[formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/)
+to writing these messages. You will also get a comment on your PR with the same
+link when there are additions in the revision-history folder.
 
 ## Adding an important message to the frontpage
 
@@ -182,9 +187,9 @@ weight: {menu position within the subpage structure}
 
 There is support for two levels. If you have many subpages, try grouping them.
 This is done by adding a folder for a group, adding a `_index` file with the
-frontmatter as described above and putting all the related files into that folder.
-In the frontmatter, the parent of the second level should be set to the the id of the
-`_index` file.
+frontmatter as described above and putting all the related files into that
+folder. In the frontmatter, the parent of the second level should be set to the
+the id of the `_index` file.
 
 ## Updating Booking & SG and VAS tables
 
