@@ -2,11 +2,10 @@
 
 ## Tech
 
-The Bring Developer site uses [Hugo](https://gohugo.io/),
-[OAS](https://www.openapis.org/) and [RAML 1.0](https://raml.org/). Hugo is the
-world’s fastest static site generator. For the API endpoint documentation,
-generated OAS JSON is replacing manually written RAML. We use CSS with some
-light post processing and JS that is bundled with Vite.
+The Bring Developer site uses [Hugo](https://gohugo.io/ as a static site
+generator, [OAS](https://www.openapis.org/) JSON for the API endpoint
+documentation, CSS with some light post processing and JS that is bundled with
+Vite.
 
 ## Writing documentation for people
 
@@ -14,7 +13,8 @@ Keep in mind that users are more likely to be looking for use cases than
 parameters and values. In a parameter-heavy table, it might make sense to list
 the values and explain them like a dictionary. But on higher levels, such as in
 endpoint lists and how-to guides, it’s often better to lead with the use case
-and then provide the parameter.
+and then provide the parameter. The design system has a couple of
+[resouces on how to write for users](https://www.mybring.com/design-system/guidelines/writing/).
 
 ## Build, run and deploy
 
@@ -103,17 +103,12 @@ important:
     for unauthenticated requests
 ```
 
-Also keep in mind that the four latest items in the API updates are featured on
-the frontpage.
-
 ## Adding a new API
-
-New APIs should use the Open API Specification (OAS 3).
 
 Make a new folder in `content/api`, the folder name will be the url slug. Make
 an index.md file with YAML frontmatter at the top (see example). Place the api
 introduction and other text documentation you might have in the frontmatter
-along with the link to the OAS JSON in an `oas` key.
+along with the link to the Open API SPecification (OAS 3) JSON in an `oas` key.
 
 ### YAML frontmatter example
 
