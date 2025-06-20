@@ -83,7 +83,7 @@
                 </a>
               </td>
               <td>
-                {{- .method | upper -}}
+                {{- partial "api/oas/endpoint-type" (dict "type" $method) -}}
               </td>
               <td>
                 <code>{{ $path }}</code>
