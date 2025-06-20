@@ -13,11 +13,10 @@ weight: 32
 introduction: |
   The Event Cast API allows you to subscribe to tracking events for shipments by registering webhooks. There are two types of subscriptions available:
 
-  1. **Customer Number Subscription**: Event notifications will be sent for all shipments belonging to the subscribed customer number.
-  2. **Tracking Number Subscription**: Event notifications will be sent for the subscribed shipment or parcel number.
+  1. Customer Number Subscription: Event notifications will be sent for all shipments belonging to the subscribed customer number.
+  2. Tracking Number Subscription: Event notifications will be sent for the subscribed shipment or parcel number.
 
   Event notifications are automatically pushed to the subscriber as they happen, avoiding the need to repeatedly poll statuses by calling the Tracking API. You define an endpoint that accepts HTTP POST requests, and whenever an event is registered for a subscribed shipment, we send it to the specified URL.
-
 
 information:
   - title: Authentication
@@ -36,7 +35,7 @@ information:
 
       Expired webhooks are not available.
 
-      Multiple webhooks for one shipment can only be registered as long as they subscribe to different events. 
+      Multiple webhooks for one shipment can only be registered as long as they subscribe to different events.
 
   - title: Formats
     content: |
@@ -46,24 +45,22 @@ documentation:
   - title: Events
     content: |
       Specify the events (`event_groups` / `eventSet`) you want to subscribe to as an array with comma separated strings.
-      
       <details>
-        <summary style="cursor: pointer; font-weight: bold;">Tracking number subscription example</summary>
-        
+        <summary class="fwb">Tracking number subscription example</summary>
+
         ``` 
         "event_groups": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
         ```
-      
+
       </details>
-      <details open="true">
-        <summary style="cursor: pointer; font-weight: bold;">Customer number subscription example</summary>
-  
+      <details open class="mbm">
+        <summary class="fwb">Customer number subscription example</summary>
+
         ``` 
         "eventSet": ['IN_TRANSIT', 'NOTIFICATION_SENT', 'TERMINAL']
         ```
 
       </details>
-      <br/>
 
       We recommend keeping your list as short as possible. By subscribing only to events relevant to you, your server will not get unnecessary HTTP requests from Bring. Wildcards like `*` and `ALL` are not supported.
 
@@ -103,9 +100,9 @@ documentation:
       ```
       "yyyy-MM-dd'T'HH:mm:ssZ"
       ```
-      
+
       ### Information Bring will provide in the request
-      
+
       `HTTP POST` payloads that are delivered to your webhook's configured URL endpoint contains both a JSON with event information and several Bring specific headers:
 
       | Header | Description |
@@ -116,7 +113,7 @@ documentation:
       | `<your headers>` | Any headers you specified in the webhook configuration |
 
       ### Example callback from Bring to your endpoint
-      
+
       ```json
       POST /callback/Webhook HTTP/1.1
       host: localhost:80
@@ -140,8 +137,6 @@ documentation:
 
       ### Retries
       If your endpoint is down and a callback is sent, the API will try to send a request two times with 30 minutes between and a third and final time after another hour.
-
-
 
 oas: https://api.bring.com/event-cast/api-docs
 ---
