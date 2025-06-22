@@ -1,7 +1,7 @@
 ---
 title: Modify Delivery API
 layout: api
-disqus_identifier: https-developer-bring-com-api-modify-delivery
+support: true
 menu:
   apidocs:
     identifier: modifydelivery
