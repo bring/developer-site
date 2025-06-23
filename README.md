@@ -2,11 +2,10 @@
 
 ## Tech
 
-The Bring Developer site uses [Hugo](https://gohugo.io/),
-[OAS](https://www.openapis.org/) and [RAML 1.0](https://raml.org/). Hugo is the
-world’s fastest static site generator. For the API endpoint documentation,
-generated OAS JSON is replacing manually written RAML. We use CSS with some
-light post processing and JS that is bundled with Vite.
+The Bring Developer site uses [Hugo](https://gohugo.io/ as a static site
+generator, [OAS](https://www.openapis.org/) JSON for the API endpoint
+documentation, CSS with some light post processing and JS that is bundled with
+Vite.
 
 ## Writing documentation for people
 
@@ -14,7 +13,8 @@ Keep in mind that users are more likely to be looking for use cases than
 parameters and values. In a parameter-heavy table, it might make sense to list
 the values and explain them like a dictionary. But on higher levels, such as in
 endpoint lists and how-to guides, it’s often better to lead with the use case
-and then provide the parameter.
+and then provide the parameter. The design system has a couple of
+[resouces on how to write for users](https://www.mybring.com/design-system/guidelines/writing/).
 
 ## Build, run and deploy
 
@@ -50,25 +50,27 @@ or via your terminal
 
 Revision history and Changelog is called _API updates_ to reflect that it covers
 past, current and upcoming changes. Users can subscribe to either all updates,
-or do a selection based on the different API areas.
-New messages are automatically emailed to users who subscribe.
+or do a selection based on the different API areas. New messages are
+automatically emailed to users who subscribe.
 
 New messages are added with publish date as the file name `yyyy-mm-dd.md` in the
 different folders under `content/api/revision-history`, reflecting the different
 API areas.
 
 - If the message is intended to give an update about one or several APIs, the
-message is added in each folder (API area) of the affected API.
+  message is added in each folder (API area) of the affected API.
 
 - If the message is general and should reach all subscribers, this is added in
-the main folder - `content/api/revision-history`.
+  the main folder - `content/api/revision-history`.
 
-- Messages that are important can appear on the API page by setting the parameter
-`isImportant: true` and including the full API name in the message title.
-This can be useful when a message should stay visible for an upcoming or breaking
-API change. If you want to send a new email to subscribers when the API change occurs, update the publish date and rewrite the message to match the grammatical tense.
-Even though the important messages are separated and presented on their own,
-all update messages are part of the same RSS feed and email solution.
+- Messages that are important can appear on the API page by setting the
+  parameter `isImportant: true` and including the full API name in the message
+  title. This can be useful when a message should stay visible for an upcoming
+  or breaking API change. If you want to send a new email to subscribers when
+  the API change occurs, update the publish date and rewrite the message to
+  match the grammatical tense. Even though the important messages are separated
+  and presented on their own, all update messages are part of the same RSS feed
+  and email solution.
 
 The messages are added with the following frontmatter:
 
@@ -85,7 +87,10 @@ In most cases, publish date is the same as the date of the change, but if the
 message is about an upcoming change, the change date should be mentioned in the
 body text.
 
-Consult the [formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/) to writing these messages. You will also get a comment on your PR with the same link when there are additions in the revision-history folder.
+Consult the
+[formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/)
+to writing these messages. You will also get a comment on your PR with the same
+link when there are additions in the revision-history folder.
 
 ## Adding an important message to the frontpage
 
@@ -103,17 +108,12 @@ important:
     for unauthenticated requests
 ```
 
-Also keep in mind that the four latest items in the API updates are featured on
-the frontpage.
-
 ## Adding a new API
-
-New APIs should use the Open API Specification (OAS 3).
 
 Make a new folder in `content/api`, the folder name will be the url slug. Make
 an index.md file with YAML frontmatter at the top (see example). Place the api
 introduction and other text documentation you might have in the frontmatter
-along with the link to the OAS JSON in an `oas` key.
+along with the link to the Open API SPecification (OAS 3) JSON in an `oas` key.
 
 ### YAML frontmatter example
 
@@ -187,9 +187,9 @@ weight: {menu position within the subpage structure}
 
 There is support for two levels. If you have many subpages, try grouping them.
 This is done by adding a folder for a group, adding a `_index` file with the
-frontmatter as described above and putting all the related files into that folder.
-In the frontmatter, the parent of the second level should be set to the the id of the
-`_index` file.
+frontmatter as described above and putting all the related files into that
+folder. In the frontmatter, the parent of the second level should be set to the
+the id of the `_index` file.
 
 ## Updating Booking & SG and VAS tables
 
