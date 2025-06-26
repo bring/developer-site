@@ -16,5 +16,5 @@ weight: 6
 * [Bring Mail (Posten) – Label Specification for REK](/files/Etikettspesifikasjon_REK_v2_0.pdf)
 * [Logo for Labels](/files/Logo_Bring_etikett.zip)
 * [Transport label specification for Temperature Regulated Goods](/files/Label_specification_Bring_Frigo_Norge_v3_0.pdf)
-* [Label specification for Mailbox-Packet](/files/Label_specification_for_mailbox_package_2_7.pdf)
+* [Label specification for Mailbox-Packet](/files/Label_specification_for_mailbox_package_2_8_ny.pdf)
 * [Label specification - Bring Cargo abroad, Cargo SE/DK, Offshore and Energy, Air and Sea](/files/Labelspecifications_for_Bring_v_4_991.pdf)
