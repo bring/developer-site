@@ -142,7 +142,7 @@
     "home": ["HTML", "RSS", "Algolia"]
   },
   "params": {
-    "apis": [
+    "ramlSrc": [
       "content/api/warehousing/api.raml",
       "content/api/warehousing3/api.raml",
       "content/api/warehousing4/api.raml",

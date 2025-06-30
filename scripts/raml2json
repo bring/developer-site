@@ -8,12 +8,12 @@ const hrend = process.hrtime(hrstart);
 
 const outdir = join(__dirname, "../data");
 const config = require(join(__dirname, "../config.json"));
-const filePaths = config.params.apis;
+const filePaths = config.params.ramlSrc;
 
 if (!fs.existsSync(outdir)) {
   fs.mkdirSync(outdir);
 }
-const fileOut = join(outdir, "/api.json");
+const fileOut = join(outdir, "/ramlsrc.json");
 
 let apiArray = [];
 
