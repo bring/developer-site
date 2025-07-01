@@ -1,7 +1,7 @@
 .DS*
 node_modules/
 _site
-api.json
+ramlsrc.json
 examples.json
 .hugo_build.lock
 .idea

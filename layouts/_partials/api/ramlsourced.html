@@ -1,4 +1,4 @@
-{{- range .Site.Data.api -}}
+{{- range .Site.Data.ramlsrc -}}
   {{/* ensure that only the right api doc shows up, conditional can probably be improved */}}
   {{- if (eq .title $.Title) -}}
     {{- $types := .types -}}
