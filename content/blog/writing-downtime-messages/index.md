@@ -2,11 +2,12 @@
 layout: post
 title: Writing messages for unexpected downtime
 publishDate: 2019-04-29 10:36:00 +01:00
-tags: 
-    - UX
-authors:
+tags:
+  - UX
+params:
+  authors:
     - HalvorSanden
-heroImage: writing-downtime-messages.jpg
+  heroImage: writing-downtime-messages.jpg
 
 ---
 ![Roadie in the Rain](writing-downtime-messages.jpg "Roadie in the Rain")

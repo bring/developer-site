@@ -2,11 +2,12 @@
 layout: post
 title: Team building - Hiking to Veslesmeden
 publishDate: 2019-09-18 09:30:00
-tags: 
-    - webteam
-authors:
+tags:
+  - webteam
+params:
+  authors:
     - endremm
-heroImage: images/veslesmeden-01.jpg
+  heroImage: images/veslesmeden-01.jpg
 
 ---
 ![](images/veslesmeden-01.jpg)

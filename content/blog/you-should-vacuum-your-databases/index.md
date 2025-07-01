@@ -2,12 +2,13 @@
 layout: post
 title: You should vacuum your databases
 publishDate: 2017-02-17 13:51:43 +01:00
-tags: 
-    - postgres
-authors:
+tags:
+  - postgres
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: robot_vacuum.png
+  heroImage: robot_vacuum.png
 ---
 
 ![](robot_vacuum.png)

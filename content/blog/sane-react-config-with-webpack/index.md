@@ -4,7 +4,8 @@ title: Sane React config with Webpack
 publishDate: 2020-12-23 08:55:00
 tags:
   - react
-authors:
+params:
+  authors:
   - HalvorSanden
   - ChrisBoe
 ---

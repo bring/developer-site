@@ -2,12 +2,13 @@
 layout: post
 title: b-scripts
 publishDate: 2017-05-12 09:00:00 +00:00
-tags: 
-    - monitoring scripts
-authors:
+tags:
+  - monitoring scripts
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: b-script-usage.png
+  heroImage: b-script-usage.png
 ---
 
 ![](b-script-usage.png)

@@ -2,9 +2,10 @@
 layout: post
 title: Horizontal Teams To Strengthen Vertical Structures
 publishDate: 2019-08-28 11:00:00
-tags: 
-    - code-and-design
-authors:
+tags:
+  - code-and-design
+params:
+  authors:
     - ElisabethIrgens
 
 ---

@@ -2,9 +2,10 @@
 layout: post
 title: The Websocket Bug Hunt
 publishDate: 2018-02-09 09:09:43 +01:00
-tags: 
-    - websockets
-authors:
+tags:
+  - websockets
+params:
+  authors:
     - kaaveland
 ---
 

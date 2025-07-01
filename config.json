@@ -88,13 +88,6 @@
         }
       },
       {
-        "identifier": "platform-plugins",
-        "parent": "e-commerce-solutions",
-        "title": "Platform plugins",
-        "url": "/api/e-commerce-solutions/plugins",
-        "weight": 1
-      },
-      {
         "identifier": "api-operational-status",
         "title": "API operational status",
         "url": "https://status.bring.systems",

@@ -2,12 +2,13 @@
 layout: post
 title: Postgres auto_explain thresholds
 publishDate: 2017-02-24 13:51:43 +01:00
-tags: 
-    - postgres
-authors:
+tags:
+  - postgres
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: explain_analyze.jpg
+  heroImage: explain_analyze.jpg
 ---
 
 ![](explain_analyze.jpg)

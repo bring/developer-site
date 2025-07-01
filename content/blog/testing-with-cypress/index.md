@@ -2,9 +2,10 @@
 layout: post
 title: Testing with Cypress
 publishDate: 2020-04-27 06:35:00
-tags: 
-    - code-and-design
-authors:
+tags:
+  - code-and-design
+params:
+  authors:
     - HeleneKassandra
 
 ---

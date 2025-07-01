@@ -2,9 +2,10 @@
 layout: post
 title: Forecasted alerts with Grafana and InfluxDB
 publishDate: 2017-10-17 11:51:43 +01:00
-tags: 
-    - monitoring
-authors:
+tags:
+  - monitoring
+params:
+  authors:
     - kaaveland
 ---
 

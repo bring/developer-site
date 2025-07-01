@@ -2,13 +2,14 @@
 layout: post
 title: Shipshape Shipping Guide
 publishDate: 2018-09-05 16:00:00 +01:00
-tags: 
-    - refactoring
-authors:
+tags:
+  - refactoring
+params:
+  authors:
     - jonasac
     - anirbansingharoy
     - pankajagrawal16
-heroImage: images/shipping-guide.png
+  heroImage: images/shipping-guide.png
 
 ---
 ![Shipping Guide 2.0](images/shipping-guide.png)
