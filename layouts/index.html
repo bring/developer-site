@@ -20,17 +20,6 @@
         </div>
 
         <div class="dev-intro-m">
-          {{- with .Params.important -}}
-            <div class="mbxl">
-              {{- range . -}}
-                <div class="mbxs">
-                  <div class="message--warn pam">
-                    {{ . | markdownify }}
-                  </div>
-                </div>
-              {{- end -}}
-            </div>
-          {{- end -}}
           <div class="mbxl">
             <h2 class="mbs">API updates</h2>
             <div class="owls mbl radius-a">
