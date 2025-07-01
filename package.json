@@ -34,7 +34,7 @@
   "homepage": "https://developer.bring.com",
   "devDependencies": {
     "@preact/preset-vite": "^2.10.2",
-    "@vitejs/plugin-legacy": "^6.1.1",
+    "@vitejs/plugin-legacy": "^7.0.0",
     "atomic-algolia": "^0.3.19",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.2.0",
@@ -47,7 +47,7 @@
     "raml-1-parser": "^1.1.67",
     "rimraf": "^6.0.1",
     "terser": "^5.43.1",
-    "vite": "^6.3.5"
+    "vite": "^7.0.0"
   },
   "browserslist": [
     "> .2%",
