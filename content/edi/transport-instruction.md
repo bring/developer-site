@@ -32,7 +32,7 @@ This document is our guideline for freight-messages based on EDIFACT / IFTMIN D0
 
 ## Home Delivery (furniture and larger goods) Courier, Cargo Sweden and Denmark, Offshore and Energy, Air and Sea and Cargo Norway to abroad
 
-* [Appendix 2: All bring Courier Homedelivery and Cargo (SE-DK,NO-ROW)](/files/APPENDIX_080525_Final.pdf)
+* [Appendix 2: All bring Courier Homedelivery and Cargo (SE-DK,NO-ROW)](/files/APPENDIX_080525%20Final.pdf)
 * [Instructions V1 Service Implementation (Norwegian)](/files/Revisjon_Appendix2A_1-11-24_V1.pdf)
 
 Please download our EDIFACT-messages for use in supporting a more efficient information flow for your company. Messages is typically delivered to an SFTP- or FTP-account and may also be sent using SMTP.
