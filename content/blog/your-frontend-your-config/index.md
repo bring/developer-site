@@ -4,7 +4,8 @@ title: Your frontend, your config
 publishDate: 2020-12-23 08:54:59
 tags:
   - react
-authors:
+params:
+  authors:
   - HalvorSanden
   - ChrisBoe
 ---

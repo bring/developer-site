@@ -2,9 +2,10 @@
 layout: post
 title: Connection Pooling with c3p0
 publishDate: 2017-05-12 15:00:00 +00:00
-tags: 
-    - database
-authors:
+tags:
+  - database
+params:
+  authors:
     - imprashast
 ---
 

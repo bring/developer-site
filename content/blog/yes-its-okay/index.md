@@ -2,9 +2,10 @@
 layout: post
 title: Is it okay to…? Yes! It’s okay to…
 publishDate: 2017-08-16 16:00:00 +00:00
-tags: 
-    - culture
-authors:
+tags:
+  - culture
+params:
+  authors:
     - andreaja
     - ElisabethIrgens
 

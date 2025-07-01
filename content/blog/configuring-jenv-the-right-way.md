@@ -2,9 +2,10 @@
 layout: post
 title: Configuring jenv the right way
 publishDate: 2018-07-27 11:13:43 +01:00
-tags: 
-    - command line tool
-authors:
+tags:
+  - command line tool
+params:
+  authors:
     - sujithsreekumar
 ---
 

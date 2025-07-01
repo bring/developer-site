@@ -2,11 +2,12 @@
 layout: post
 title: Zombie CSS, dependency cravings
 publishDate: 2019-08-19 06:56:00
-tags: 
-    - code-and-design
-authors:
+tags:
+  - code-and-design
+params:
+  authors:
     - HalvorSanden
-heroImage: zombie-css.jpg
+  heroImage: zombie-css.jpg
 
 ---
 ![Cascading zombie](zombie-css.jpg "Cascading zombie")

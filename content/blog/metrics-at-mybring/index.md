@@ -2,12 +2,13 @@
 layout: post
 title: Metrics at Mybring
 publishDate: 2017-03-03 13:51:43 +01:00
-tags: 
-    - metrics
-authors:
+tags:
+  - metrics
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: images/many_graphs.png
+  heroImage: images/many_graphs.png
 ---
 
 ![](images/many_graphs.png)

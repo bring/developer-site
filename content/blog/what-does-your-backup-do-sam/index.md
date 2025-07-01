@@ -2,12 +2,13 @@
 layout: post
 title: What does your backup do, Sam?
 publishDate: 2017-02-03 11:51:43 +01:00
-tags: 
-    - postgres
-authors:
+tags:
+  - postgres
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: images/18mpenleoksq8jpg.jpg
+  heroImage: images/18mpenleoksq8jpg.jpg
 ---
 
 ![](images/18mpenleoksq8jpg.jpg)

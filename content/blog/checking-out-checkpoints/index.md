@@ -2,12 +2,13 @@
 layout: post
 title: Checking out checkpoints
 publishDate: 2017-03-17 13:51:43 +01:00
-tags: 
-    - postgres
-authors:
+tags:
+  - postgres
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: images/bgwriter-stats.png
+  heroImage: images/bgwriter-stats.png
 ---
 
 ![](images/bgwriter-stats.png)

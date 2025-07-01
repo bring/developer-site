@@ -2,9 +2,10 @@
 layout: post
 title: The Web Team in Numbers
 publishDate: 2017-11-09 16:08:43 +01:00
-tags: 
-    - webteam
-authors:
+tags:
+  - webteam
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
     - ElisabethIrgens

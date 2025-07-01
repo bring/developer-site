@@ -2,9 +2,10 @@
 layout: post
 title: How to avoid the wall of frustation
 publishDate: 2019-10-07 10:55:00
-tags: 
-    - code-and-design
-authors:
+tags:
+  - code-and-design
+params:
+  authors:
     - HeleneKassandra
 
 ---

@@ -2,9 +2,10 @@
 layout: post
 title: Making helpful user interfaces for scripts
 publishDate: 2017-06-23 09:00:00 +00:00
-tags: 
-    - monitoring scripts
-authors:
+tags:
+  - monitoring scripts
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
 ---

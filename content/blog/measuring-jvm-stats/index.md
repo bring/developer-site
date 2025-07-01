@@ -2,12 +2,13 @@
 layout: post
 title: Measuring jvm stats
 publishDate: 2017-04-28 13:51:43 +01:00
-tags: 
-    - monitoring
-authors:
+tags:
+  - monitoring
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: jvm_memory_usage.png
+  heroImage: jvm_memory_usage.png
 ---
 
 ![](jvm_memory_usage.png)

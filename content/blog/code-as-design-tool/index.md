@@ -2,11 +2,12 @@
 layout: post
 title: Code – the superior design tool
 publishDate: 2019-10-02 04:55:00
-tags: 
-    - code-and-design
-authors:
+tags:
+  - code-and-design
+params:
+  authors:
     - HalvorSanden
-heroImage: code-as-tool-cropbw.jpg
+  heroImage: code-as-tool-cropbw.jpg
 
 ---
 ![Hybriding interfaces](code-as-tool-cropbw.jpg "Hybriding interfaces")

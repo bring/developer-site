@@ -2,12 +2,13 @@
 layout: post
 title: Tuning postgres connection pools
 publishDate: 2017-02-10 13:51:43 +01:00
-tags: 
-    - postgres
-authors:
+tags:
+  - postgres
+params:
+  authors:
     - AnshikaKoul
     - kaaveland
-heroImage: data-pools-efficiency-accuracy-exchanges.jpg
+  heroImage: data-pools-efficiency-accuracy-exchanges.jpg
 ---
 
 ![](data-pools-efficiency-accuracy-exchanges.jpg)

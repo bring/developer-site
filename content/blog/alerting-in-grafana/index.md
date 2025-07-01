@@ -2,9 +2,10 @@
 layout: post
 title: Alerting in grafana
 publishDate: 2017-05-09 09:00:00 +00:00
-tags: 
-    - monitoring
-authors:
+tags:
+  - monitoring
+params:
+  authors:
     - pankajagrawal16
 ---
 

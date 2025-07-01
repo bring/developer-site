@@ -3,9 +3,10 @@ layout: post
 title: Abomination stylesheet
 excerpt: A low-level HTML markup quality assurance tool
 publishDate: 2024-11-27 06:35:00
-tags: 
-    - CSS
-authors:
+tags:
+  - CSS
+params:
+  authors:
     - Igor-J86
 ---
 

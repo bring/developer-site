@@ -2,9 +2,10 @@
 layout: post
 title: Can we open source this?
 publishDate: 2017-05-23 12:00:00 +01:00
-tags: 
-    - open-source
-authors:
+tags:
+  - open-source
+params:
+  authors:
     - ElisabethIrgens
 ---
 

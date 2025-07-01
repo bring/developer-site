@@ -2,11 +2,11 @@
 layout: post
 title: Principle for responsive tables
 publishDate: 2020-02-27 06:35:00
-tags: 
-    - code-and-design
-authors:
+tags:
+  - code-and-design
+params:
+  authors:
     - HalvorSanden
-
 ---
 
 When I set out to _solve_ responsive tables, I figured it would take a whole team a couple of weeks and we would build a microscopic component to provide clever shuffling of `<div>` elements. Instead, my conclusion led me to the opposite. Responsive tables are less about making them responsive and more about presenting them in responsive environments.

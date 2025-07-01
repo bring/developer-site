@@ -2,9 +2,10 @@
 layout: post
 title: Our journey through java9 module hell… and then to java10
 publishDate: 2018-04-24 09:09:43 +01:00
-tags: 
-    - migration
-authors:
+tags:
+  - migration
+params:
+  authors:
     - achintsatsangi
 ---
 
