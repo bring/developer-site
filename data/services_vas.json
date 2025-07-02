@@ -2556,6 +2556,16 @@
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "ALL COUNTRIES EXCEPT NORWAY",
     "destinations" : "SE, DK"
+  }, {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
+    "domesticAllowedIn" : "SE, DK",
+    "senderCountries" : "SE, DK, FI",
+    "destinations" : "SE, DK, FI"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
