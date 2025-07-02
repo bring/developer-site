@@ -2,23 +2,23 @@
 
 ## Tech
 
-The Bring Developer site uses [Hugo](https://gohugo.io/ as a static site
+The Bring Developer site uses [Hugo](https://gohugo.io/) as a static site
 generator, [OAS](https://www.openapis.org/) JSON for the API endpoint
 documentation, CSS with some light post processing and JS that is bundled with
 Vite.
 
 ## Writing documentation for people
 
-Keep in mind that users are more likely to be looking for use cases than
-parameters and values. In a parameter-heavy table, it might make sense to list
-the values and explain them like a dictionary. But on higher levels, such as in
-endpoint lists and how-to guides, it’s often better to lead with the use case
-and then provide the parameter. The design system has a couple of
+Users can be looking for guides, use cases and specific parameters. In a
+parameter-heavy table, it might make sense to list the values and explain them
+like a dictionary. But on higher levels, such as in endpoint lists and how-to
+guides, it’s often better to lead with the use case and then provide the
+parameter. The design system has a couple of
 [resouces on how to write for users](https://www.mybring.com/design-system/guidelines/writing/).
 
 ## Build, run and deploy
 
-`npm install` installs the dependencies.
+`npm i` installs the dependencies.
 
 `npm run build` builds CSS, JS and JSON. Hugo needs this in order to run.
 
@@ -79,7 +79,8 @@ The messages are added with the following frontmatter:
 title: {API name}
 publishDate: yyyy-mm-dd
 layout: api
-isImportant: true (boolean) - optional
+params:
+  isImportant: true (boolean) - optional
 ---
 ```
 
@@ -92,28 +93,13 @@ Consult the
 to writing these messages. You will also get a comment on your PR with the same
 link when there are additions in the revision-history folder.
 
-## Adding an important message to the frontpage
-
-Important messages are added as list items in the frontmatter of the frontpage
-\_index.html file. It supports HTML tags. You are encouraged to link to the
-relevant API where more information can be found and not put the entire message
-on the frontpage. There is support for multiple messages:
-
-```
-important:
-  - Important changes to <a href="api/tracking">Tracking API</a> from 01.01.2021
-    and 01.03.2021 regarding specified delivery date.
-  - <strong class="mrs">Final deadline for authenticating Pickup Point API requests - February 15.
-    2021<strong> We have now started to <a href="api/pickup-point">limit the data</a> in the responses
-    for unauthenticated requests
-```
-
 ## Adding a new API
 
 Make a new folder in `content/api`, the folder name will be the url slug. Make
 an index.md file with YAML frontmatter at the top (see example). Place the api
 introduction and other text documentation you might have in the frontmatter
-along with the link to the Open API SPecification (OAS 3) JSON in an `oas` key.
+under the `params` key along with the link to the Open API SPecification (OAS 3)
+JSON in an `oas` key.
 
 ### YAML frontmatter example
 
@@ -128,32 +114,31 @@ menu:
     url: /api/{foldername}
     parent: {parent, see config.json}
 weight: {menu position prefixed by parent value}
-disqus_identifier: api-{foldername} (optional, if you want comments)
+params:
+  disqus_identifier: api-{foldername} (optional, if you want comments)
+  oas: {Link to OAS JSON, typically outputted by Swagger}
 
-# Add alerts or important messages and they appear to the side or above of the main content
-important:
-  - type: {info, warn or error}
-    title: {Title of message, optional}
-    message: |
-      {Content as markdown}
+  # Add alerts or important messages and they appear to the side or above of the main content
+  important:
+    - type: {info, warn or error}
+      title: {Title of message, optional}
+      message: |
+        {Content as markdown}
 
-# Add intro, information and documentation to appear before the endpoint listing
-introduction: |
-  {Optimally one paragraph about the API and what it does, so the user can figure out if it’s the right one to cover their needs}
+  # Add intro, information and documentation to appear before the endpoint listing
+  introduction: |
+    {Optimally one paragraph about the API and what it does, so the user can figure out if it’s the right one to cover their needs}
 
-information:
-  - title: {Authentication, formats, rate limiting and other information that is somewhat similar across the various APIs}
-    content |
-      {Content as markdown}
+  information:
+    - title: {Authentication, formats, rate limiting and other information that is somewhat similar across the various APIs}
+      content |
+        {Content as markdown}
 
-# Additional documentation. Organise it into technical info and how-to info. The former works as a continuation of the previous section. The latter as guides for the user leading into the endpoint section.
-documentation:
-  - title: {Title of section}
-    content: |
-      {Content as markdown}
-
-# OAS file link with endpoints, examples etc.
-oas: {Link to OAS JSON, typically outputted by Swagger}
+  # Additional documentation. Organise it into technical info and how-to info. The former works as a continuation of the previous section. The latter as guides for the user leading into the endpoint section.
+  documentation:
+    - title: {Title of section}
+      content: |
+        {Content as markdown}
 ---
 ```
 
@@ -166,8 +151,9 @@ main page and navigation is solved automatially by adding the following to the
 frontmatter of the index page:
 
 ```
-subpages:
-  title: Special topics {this will be the title in the main api page and in the sidemenu}
+params:
+  subpages:
+    title: Special topics {this will be the title in the main api page and in the sidemenu}
 ```
 
 And to the subpages’ frontmatter:
@@ -212,22 +198,23 @@ example:
 ```
 ---
 title: Pakke i postkassen
-titlesub: Mailbox parcel
 layout: api
-widelayout: true
-notanapi: true
 menu:
   api:
     parent: guide-checkout
     identifier: guide-mailbox
     title: Pakke i postkassen
 weight: 1
-services:
-  - 3584
-  - 3570
-examples:
-  - <a href="#">Get delivery options with prices and lead time)</a>
-  - <a href="#">Book Pakke i postkassen</a>
+params:
+  titlesub: Mailbox parcel
+  widelayout: true
+  notanapi: true
+  services:
+    - 3584
+    - 3570
+  examples:
+    - <a href="#">Get delivery options with prices and lead time)</a>
+    - <a href="#">Book Pakke i postkassen</a>
 ---
 ```
 
