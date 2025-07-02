@@ -55,7 +55,7 @@
   ],
   "dependencies": {
     "@algolia/autocomplete-js": "^1.19.2",
-    "algoliasearch": "^5.29.0",
+    "algoliasearch": "^5.30.0",
     "anchor-js": "^5.0.0",
     "preact": "^10.26.9"
   }
