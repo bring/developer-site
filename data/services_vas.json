@@ -2564,8 +2564,8 @@
     "serviceCode" : "0360",
     "productionCode" : "0360",
     "domesticAllowedIn" : "SE, DK",
-    "senderCountries" : "SE, DK, FI",
-    "destinations" : "SE, DK, FI"
+    "senderCountries" : "SE, DK",
+    "destinations" : "SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
