@@ -1,9 +1,9 @@
 /* Input search icon */
 .algolia-icon {
-  fill: hsla(0, 0%, 100%, 0.3);
+  fill: hsla(0, 0%, 100%, 0.6);
   flex: 0 0 1.5rem;
-  position: absolute;
   left: 2rem;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
@@ -26,7 +26,6 @@
 .aa-Input {
   display: block;
   width: 100%;
-  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
   line-height: 1.5;
   background: none;
   background-color: hsla(0, 0%, 100%, 0.1) !important;
@@ -34,12 +33,26 @@
   border-radius: var(--radius);
   margin-right: 0.25rem;
   color: #fff;
+  transition: border var(--easeout-15);
+  padding: 0.5rem 0.5rem 0.5rem 2.5rem;
 }
 
 .aa-Input:focus {
   outline: 0;
-  border: 1px solid hsl(155, 100%, 19.6%);
-  box-shadow: 0 0 0 0.15em rgba(0, 100, 58, 0.5);
+  border: 1px solid hsl(0, 0%, 100%);
+}
+
+.aa-Input::placeholder {
+  opacity: 0.6;
+  color: white;
+}
+
+/* Hides reset-icon from searchbar */
+.aa-Input::-webkit-search-decoration,
+.aa-Input::-webkit-search-cancel-button,
+.aa-Input::-webkit-search-results-button,
+.aa-Input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
 }
 
 /* Results panel */
@@ -74,7 +87,7 @@
 
 .aa-Item {
   &[aria-selected="true"] {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: hsla(0, 0%, 0%, 0.1);
   }
 }
 
@@ -115,12 +128,4 @@
 .aa-SubmitButton,
 .aa-ClearButton {
   display: none;
-}
-
-/* Hides reset-icon from searchbar */
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
 }
