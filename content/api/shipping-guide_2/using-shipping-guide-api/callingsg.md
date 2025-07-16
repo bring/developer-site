@@ -107,7 +107,7 @@ In this request we will query prices and expected delivery time for the service 
 Post your request to 
 
 ```
-https://api.bring.com/shippingguide/v2/products
+https://api.bring.com/shippingguide/api/v2/products
 ```                     
 
 The response may have changed since it was documented but you will get a response that looks something like this:
