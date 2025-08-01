@@ -25,10 +25,11 @@ This document is our guideline for freight-messages based on EDIFACT / IFTMIN D0
 ## Bring Parcel AB Specific Documentation
 
 * [Subset for Bring Parcel AB (International Packages) IFTMIN BIG14](</files/BPI_Bring_Parcels_AB_subset BIG14_1_6.pdf>)
-* [Appendix A — Bring Parcels services from DK, FI, NO, SE and Europe](/files/Appendix%20A%20release%20by%202024-06-10.pdf)
+* [Appendix A — Bring Parcels services from DK, FI, NO, SE and Europe](/files/Appendix%20A%20release%20by%202025-06-01.pdf)
 * [Additional Information — Service Code 0010 and 0011 (BIG14) 1.7](/files/Service%20Code%200010%20and%200011%20(BIG14)%201.7.pdf)
 * [Service Code 1095 (Collect at store) for Bring Parcel AB](/files/Service_Code_1095_(BIG14)_1.0.pdf)
 * [Appendix F (Special information to Finland)](/files/20200501%20Appendix%20F.pdf)
+* [BIG14- Customs Information- VOEC details 1.73](/files/BIG14%20-%20Customs%20information-VOEC%20details%20v.1.73.pdf)
 
 ## Home Delivery (furniture and larger goods) Courier, Cargo Sweden and Denmark, Offshore and Energy, Air and Sea and Cargo Norway to abroad
 
