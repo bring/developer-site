@@ -39,7 +39,7 @@ jobs:
         run: npm run algolia
 
       - name: update algolia search index for qa
-        if: github.ref != 'refs/heads/master' || github.event.pull_request.user.login != 'dependabot[bot]'
+        if: github.ref != 'refs/heads/master' && github.actor != 'dependabot[bot]'
         run: npm run qalgolia
 
       - name: notify slack failure
