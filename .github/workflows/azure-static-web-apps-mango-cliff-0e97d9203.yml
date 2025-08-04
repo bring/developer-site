@@ -18,6 +18,7 @@ jobs:
     env:
       ALGOLIA_ADMIN_KEY: ${{ secrets.ALGOLIA_ADMIN_KEY }}
       ALGOLIA_INDEX: ${{ github.ref == 'refs/heads/master' && 'devsite_prod' || 'devsite_qa' }}
+      SKIP_DEPLOY_ON_MISSING_SECRETS: true
     steps:
       - uses: actions/checkout@v4
         with:
