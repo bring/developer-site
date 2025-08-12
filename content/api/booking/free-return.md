@@ -19,9 +19,11 @@ You will be invoiced for the return only if your customer uses it.
 
 The following outgoing and return service combinations are supported:
 
-| Outgoing services        | Return services          |
-|--------------------------|--------------------------|
-| `4850, 5000, 5600, 5800` | `9000, 9300, 9600, 9350` |
+| Outgoing services        | Return services                 |
+|--------------------------|---------------------------------|
+| `3570`                   | `9650`                          |
+| `3584`                   | `9000, 9300,  9350, 9600, 9650` |
+| `4850, 5000, 5600, 5800` | `9000, 9300, 9600, 9350`        |
 
 ## Request examples
 
