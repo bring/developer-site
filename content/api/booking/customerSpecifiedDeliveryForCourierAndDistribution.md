@@ -22,10 +22,10 @@ We advise clients of the Booking API to use Shipping Guide API for getting the a
   <explicitAdditionalServices>false</explicitAdditionalServices>
   <id>3625</id>
 </product>
-<shippingDateTime>2025-07-07T18:30:00</shippingDateTime>
+<shippingDateTime>2025-08-27T07:00:00+02:00</shippingDateTime>
 <customerSpecifiedDelivery>
- <startDateTime>2025-07-08T08:00:00</startDateTime>
-  <endDateTime>2025-07-08T09:00:00</endDateTime>
+ <startDateTime>2025-08-27T08:00:00</startDateTime>
+  <endDateTime>2025-08-27T09:00:00</endDateTime>
 </customerSpecifiedDelivery>
 ```
 
@@ -36,9 +36,21 @@ We advise clients of the Booking API to use Shipping Guide API for getting the a
   "explicitAdditionalServices": false,
   "id": "3625"
 },
-"shippingDateTime": "2025-07-07T18:30:00",
+"shippingDateTime": "2025-08-27T07:00:00+02:00",
 "customerSpecifiedDelivery": {
-  "startDateTime": "2025-07-08T08:00:00",
-  "endDateTime": "2025-07-08T09:00:00"
+  "startDateTime": "2025-08-27T08:00:00",
+  "endDateTime": "2025-08-27T09:00:00"
 }
+```
+
+Please send timezone in shippingDateTime
+
+#### For Norway/Denmark/Sweden
+```json
+"shippingDateTime": "2025-08-27T07:00:00+02:00"
+```
+
+#### For Finland
+```json
+"shippingDateTime": "2025-08-27T07:00:00+03:00"
 ```
