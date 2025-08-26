@@ -60,11 +60,11 @@ The generated code is returned in the API response and sent by email to both sen
 - 0343 - PickUp Parcel Return Bulk
 
 
-*Rollout Notice:* The label‑free codes solution in Norway is in the process of being rolled out and is currently in **Step Two: West Region**.
+*Rollout Notice:* The label‑free codes solution in Norway is in the process of being rolled out and is currently in **Step Two: South-West Region**.
 
 #### Rollout Steps
 - Step One: East Region
-- Step Two: West Region
+- Step Two: South-West Region
 - Step Three: Central and North Region
 - Step Four: Oslo, Akershus, and Østfold
 
