@@ -224,10 +224,18 @@
           {{- end -}}
         </div>
         {{- with $schemaObj.enum -}}
+          {{ $descriptions := index $schemaObj "x-enum-descriptions" -}}
           <dl>
             <dt><span class="text-note fw600">Enum</span></dt>
-            {{- range . -}}
-              <dd><code class="wrap-text">{{ . }}</code></dd>
+            {{- range $i, $enum := . -}}
+              <dd>
+                <code class="wrap-text">{{ $enum }}</code>
+                {{ if ne $descriptions nil }}
+                  {{ if lt $i (len $descriptions) }}
+                    <span class="text-0.875r plm db">{{ index $descriptions $i }}</span>
+                  {{ end }}
+                {{ end}}
+              </dd>
             {{- end -}}
           </dl>
         {{- end -}}
