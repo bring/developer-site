@@ -1,0 +1,126 @@
+{{/* make schema and path scratches from all apis */}}
+{{- $schemaMaster := dict -}}
+{{- $pathMaster := dict -}}
+{{- range .Site.Pages -}}
+  {{- if (and
+          (.Params.oas)
+          (not .Draft)
+          (not .IsHome)
+          (not .Params.private)
+          (not (in .RelPermalink "/revision-history/"))
+          (not (in .RelPermalink "/blog/"))
+          (not (in .RelPermalink "/booking/examples/vas"))) -}}
+
+          {{- $apiTitle := .Title -}}
+
+    {{- with .Params.oas -}}
+      {{- $oasdata := resources.GetRemote . | transform.Unmarshal -}}
+      {{- $schemaMaster = merge $schemaMaster (dict $apiTitle $oasdata.components.schemas) -}}
+      {{- $pathMaster = merge $pathMaster (dict $apiTitle $oasdata.paths) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{/*- $schemaMaster | jsonify -*/}}
+{{/*- $pathMaster | jsonify -*/}}
+
+{{- $.Store.Set "schemasAndPaths" slice -}}
+
+{{/* fill scratch with all schema props */}}
+{{- range $apiName, $_ := $schemaMaster -}}
+  {{- range $schemaName, $_ := . -}}
+    {{- range $propName, $propVal := .properties -}}
+
+      {{- $scratchId := print "%s%s" $schemaName $propName -}}
+      {{- $.Store.Set $scratchId dict -}}
+      {{- $.Store.SetInMap $scratchId "name" $propName -}}
+      {{- $.Store.SetInMap $scratchId "schema" $schemaName -}}
+      {{- $.Store.SetInMap $scratchId "api" $apiName -}}
+
+      {{- $type := $propVal.type -}}
+      {{- range $propKey, $_ := $propVal }}
+        {{- if eq $propKey "$ref" -}}
+          {{- $schemaPath := path.Split . -}}
+          {{- $.Store.SetInMap $scratchId "ref" $schemaPath.File -}}
+        {{- else -}}
+          {{- $.Store.SetInMap $scratchId "type" $type -}}
+        {{- end -}}
+      {{- end -}}
+
+      {{- $.Store.Add "schemasAndPaths" ($.Store.Get $scratchId) -}}
+
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* fill scratch with all path props */}}
+{{- range $apiName, $_ := $pathMaster -}}
+  {{- range . -}}
+    {{- range . -}}
+
+      {{- $opId := .operationId -}}
+      {{- range .parameters -}}
+
+        {{- $.Store.Set $opId dict -}}
+        {{- $.Store.SetInMap $opId "name" .name -}}
+        {{- $.Store.SetInMap $opId "schema" $opId -}}
+        {{- $.Store.SetInMap $opId "api" $apiName -}}
+
+        {{- $type := .schema.type -}}
+        {{- range $schemaKey, $_ := .schema }}
+          {{- if eq $schemaKey "$ref" -}}
+            {{- $schemaPath := path.Split . -}}
+            {{- $.Store.SetInMap $opId "ref" $schemaPath.File -}}
+          {{- else -}}
+            {{- $.Store.SetInMap $opId "type" $type -}}
+          {{- end -}}
+        {{- end -}}
+
+        {{- $.Store.Add "schemasAndPaths" ($.Store.Get $opId) -}}
+
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{/*- $.Store.Get "schemasAndPaths" | jsonify -*/}}
+
+{{/* make object of unique names with appearances inside */}}
+{{- $.Store.Set "entirePropCollection" dict -}}
+{{- $.Store.Set "uniqProps" slice -}}
+
+{{- range ($.Store.Get "schemasAndPaths") -}}
+  {{- $.Store.Add "uniqProps" .name -}}
+{{- end -}}
+
+{{- $.Store.Set "count" 0 -}}
+{{- range $_, $propName := ($.Store.Get "uniqProps" | uniq) -}}
+  {{- $.Store.Add "count" 1 -}}
+  {{- $propArray := printf "%sArr" $propName -}}
+  {{- $.Store.Set $propArray slice -}}
+
+  {{- range $key, $_ := ($.Store.Get "schemasAndPaths") -}}
+    {{- if eq $propName .name -}}
+
+      {{- $propObj := printf "%sObj" $propName -}}
+      {{- $.Store.Set $propObj dict -}}
+
+      {{- $.Store.SetInMap $propObj "api" .api -}}
+      {{- with .schema -}}
+        {{- $.Store.SetInMap $propObj "schema" . -}}
+      {{- end -}}
+      {{- with .ref -}}
+        {{- $.Store.SetInMap $propObj "ref" . -}}
+      {{- end -}}
+      {{- with .type -}}
+        {{- $.Store.SetInMap $propObj "type" . -}}
+      {{- end -}}
+
+      {{- $.Store.Add $propArray ($.Store.Get $propObj) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $.Store.SetInMap "entirePropCollection" $propName ($.Store.Get $propArray) -}}
+{{- end -}}
+{{- $.Store.SetInMap "entirePropCollection" "0" ($.Store.Get "count") -}}
+
+{{- $.Store.Get "entirePropCollection" | jsonify -}}
