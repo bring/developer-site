@@ -80,10 +80,9 @@ params:
           - Type 43: Locker
 
         #### Finland
-          - Type SmartPOST: Finland Smart Post Pickup
-          - Type Posti: Finland Posti Pickup Point
-          - Type Noutopiste: Finland Pickup Point
-          - Type LOCKER: Finland Locker Pickup Point **_(These lockers are placed inside buildings only accessible to the residents and workers in the building)_**
+          - Type Posti: Posti pickup point
+          - Type Noutopiste: pickup point
+          - Type LOCKER: Posti parcel locker
 
   subpages:
     title: Special topics
