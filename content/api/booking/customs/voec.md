@@ -1,10 +1,10 @@
 ---
-title: VOEC (VAT on E-commerce) - Adding a VOEC number for imports to Norway
+title: VOEC (VAT on E-commerce)
 layout: api-sub
 menu:
   apidocs:
     identifier: voec
-    title: VOEC (VAT on E-commerce) - Adding a VOEC number for imports to Norway
+    title: VOEC (VAT on E-commerce)
     parent: booking_customs
 weight: 1
 ---
