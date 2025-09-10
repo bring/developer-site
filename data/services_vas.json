@@ -181,7 +181,7 @@
   "shippingGuideCode" : "0041",
   "shippingGuideNpbCode" : "0041",
   "bookingCode" : "0041",
-  "incompatibleVases" : [ "Agreed delivery", "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Dangerous goods", "Frost free", "Temperature controlled transport", "Optional pickup point (domestic Norway)", "Limited quantities", "Boat Delivery", "Social control", "Inside door Delivery", "Standard installation", "Customized installation" ],
+  "incompatibleVases" : [ "Agreed delivery", "Cash on delivery", "Signature required", "ID verification", "Individual verification", "Telephone notification", "Dangerous goods", "Frost free", "Temperature controlled transport", "Optional pickup point (domestic Norway)", "Limited quantities", "Boat Delivery", "Social check", "Inside door Delivery", "Standard installation", "Customized installation" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -3739,7 +3739,7 @@
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Social control",
+  "vasName" : "Social check",
   "vasNameNorwegian" : "Sosial kontroll",
   "description" : "Verification of ID (age) and the recipient´s condition on delivery of products requiring this, such as alcohol.  ",
   "shippingGuideCode" : "SOSIAL_KONTROLL",
@@ -4767,7 +4767,7 @@
   "shippingGuideCode" : "1362",
   "shippingGuideNpbCode" : "1362",
   "bookingCode" : "1362",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Carry service oversize", "Customized installation", "Electronic installation", "Individual verification", "Installation details", "Notification by letter", "Mechanical installation", "Recycle white goods", "Reusable Packaging", "Social control", "Standard installation", "Swap", "TV installation", "Unwrapping" ],
+  "incompatibleVases" : [ "Unattended delivery with photo", "Carry service oversize", "Customized installation", "Electronic installation", "Individual verification", "Installation details", "Notification by letter", "Mechanical installation", "Recycle white goods", "Reusable Packaging", "Social check", "Standard installation", "Swap", "TV installation", "Unwrapping" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
