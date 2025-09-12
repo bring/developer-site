@@ -143,7 +143,7 @@
 {{/*  If array, render and pass items  */}}
 {{- else if eq $schemaObj.type "array" -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
 
   {{/*  If items have children, ref has properties or oneOf  */}}

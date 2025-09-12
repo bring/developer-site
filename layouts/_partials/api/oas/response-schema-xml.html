@@ -42,7 +42,7 @@
   {{- end -}}
   {{- $levelName := printf "%s-%s-%s" $endpointId (anchorize $name) $responseCode -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
   {{- $inputGroup := printf "%s%s" (anchorize $parent) $responseCode -}}
   
