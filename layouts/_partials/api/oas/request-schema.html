@@ -53,14 +53,15 @@
 {{- else if eq $schemaObj.type "object" -}}
   {{- $levelName := printf "%s-%s-%s" $endpointId (anchorize $name) "requestjson" -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
+  {{- $inputGroup := printf "%s%s" (anchorize $parent) "requestjson" -}}
   {{- $objName = $name -}}
 
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $isOf "radio" -}}
     <div>
-      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of aria-controls="json-{{ $name | anchorize }}" {{ if eq $ofInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ $inputGroup }}" class="mrxs" data-one-of aria-controls="{{ $levelName }}" {{ if eq $ofInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
 
   {{/*  Render allOf select options  */}}
@@ -70,7 +71,7 @@
   {{/*  Loop oneOf data  */}}
   {{- else if in $isOf "Data" -}}
     {{- with $schemaObj.properties -}}
-      <dl id="json-{{ $name | anchorize }}" class="pls {{ if ne $ofInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" {{ if in $isOf "one" }}aria-label="{{ $name }}"{{ end }}>
+      <dl id="j{{ $levelName }}" data-{{ $inputGroup }} class="pls {{ if ne $ofInd 0 }}dn{{ end }}" {{ if in $isOf "one" }}aria-label="{{ $name }}"{{ end }}>
         {{- range $key, $_ := . -}}
           {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
@@ -149,7 +150,7 @@
               {{- $schemaPath := path.Split . -}}
               {{- $schema := index $components.schemas $schemaPath.File -}}
               {{- with $schema -}}
-                {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
+                {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "parent" $name "ofInd" $ofInd) -}}
               {{- else -}}
                 {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
               {{- end -}}
@@ -164,7 +165,7 @@
         <dd class="{{ if gt $recLevel 2 }}schema__sublist dn{{ end }}" id="{{ $levelId }}">
           <div class="mlxs mbs pls pbs">
             <label class="form__label" for="{{ $levelName }}">Schema (allOf)</label>
-            <select class="form__control wauto maxw100p" id="{{ $levelName }}" data-one-of>
+            <select class="form__control wauto maxw100p" id="{{ $levelName }}" data-one-of="{{ $inputGroup }}">
               {{- range . -}}
                 {{- range . -}}
                   {{- $schemaPath := path.Split . -}}
@@ -185,7 +186,7 @@
               {{- $schemaPath := path.Split . -}}
               {{- $schema := index $components.schemas $schemaPath.File -}}
               {{- with $schema -}}
-                {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
+                {{- partial "api/oas/request-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "parent" $name "ofInd" $ofInd) -}}
               {{- else -}}
                 {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON request") -}}
               {{- end -}}
@@ -201,7 +202,7 @@
 {{/*  If array, render and pass items  */}}
 {{- else if eq $schemaObj.type "array" -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
 
   {{/*  If items have children, ref has properties or oneOf  */}}

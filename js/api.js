@@ -35,26 +35,26 @@ toggleAllArr.forEach((toggleAllBtn) => {
 // oneOf and allOf
 function showSelectedSchema(ofElement) {
   const elementVal = ofElement.value,
-    closest = ofElement.closest("dd"),
-    ofArr = Array.from(closest.children)
+    groupName = ofElement.name,
+    oneOfDlArr = document.querySelectorAll(`dl[data-${groupName}]`)
 
-  ofArr.forEach((ofChild) => {
-    if (ofChild.tagName === "DL") {
-      ofChild.dataset.ofOne !== elementVal
-        ? ofChild.classList.add("dn")
-        : ofChild.classList.remove("dn")
-    }
+  oneOfDlArr?.forEach((dl) => {
+    dl.id === elementVal ? dl.classList.remove("dn") : dl.classList.add("dn")
   })
 }
 
-const oneOfElements = document.querySelectorAll("[data-one-of]")
-oneOfElements.forEach((ofElement) => {
+const oneOfControlArr = document.querySelectorAll(
+  "input[data-one-of], select[data-one-of]"
+)
+oneOfControlArr?.forEach((ofElement) => {
   ofElement.addEventListener("change", function () {
     showSelectedSchema(ofElement)
   })
   // set oneOf/allOf selections on reload/backward/forward navigation
-  ofElement.type === 'radio' && ofElement.checked && showSelectedSchema(ofElement)
-  ofElement.type === 'select-one' && showSelectedSchema(ofElement)
+  ofElement.type === "radio" &&
+    ofElement.checked &&
+    showSelectedSchema(ofElement)
+  ofElement.type === "select-one" && showSelectedSchema(ofElement)
 })
 
 // Examples

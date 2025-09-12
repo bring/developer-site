@@ -70,7 +70,7 @@
           {{- $schemaPath := path.Split . -}}
           {{- $schema := index $components.schemas $schemaPath.File -}}
           {{- with $schema -}}
-            {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd) -}}
+            {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $schemaPath.File "required" $required "deprecated" $deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel "oneOf" "data" "oneOfInd" $oneOfInd "parent" $name) -}}
           {{- else -}}
             {{- partial "api/oas/schema-ref-error.html" (dict "objectName" $schemaPath.File "type" "JSON response") -}}
           {{- end -}}
@@ -83,20 +83,20 @@
 {{- else if eq $schemaObj.type "object" -}}
   {{- $levelName := printf "%s-%s-%s" $endpointId (anchorize $name) $responseCode -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
+  {{- $inputGroup := printf "%s%s" (anchorize $parent) $responseCode -}}
 
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $oneOf "radio" -}}
     {{- $levelId = printf "%s-%s" $levelName "oneof" -}}
     <div>
-      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of aria-controls="{{ $responseCode }}-json-{{ $name | anchorize }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ $inputGroup }}" class="mrxs" data-one-of aria-controls="{{ $levelName }}" {{ if eq $oneOfInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
-    {{/*  Loop oneOf data  */}}
+  {{/*  Loop oneOf data  */}}
   {{- else if eq $oneOf "data" -}}
-    {{- $levelId = printf "%s-%s" $levelName "oneof" -}}
     {{- with $schemaObj.properties -}}
-      <dl id="{{ $responseCode }}-json-{{ $name | anchorize }}" class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" aria-label="{{ $name }}">
+      <dl id="{{ $levelName }}" data-{{ $inputGroup }} class="pls {{ if ne $oneOfInd 0 }}dn{{ end }}" aria-label="{{ $name }}">
         {{- range $key, $_ := . -}}
           {{- partial "api/oas/response-schema.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "responseCode" $responseCode "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
@@ -143,7 +143,7 @@
 {{/*  If array, render and pass items  */}}
 {{- else if eq $schemaObj.type "array" -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s-%s" $endpointId (anchorize $name) $uniqueId -}}
 
   {{/*  If items have children, ref has properties or oneOf  */}}

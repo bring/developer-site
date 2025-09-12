@@ -48,24 +48,25 @@
   {{- end -}}
   {{- $levelName := printf "%s-%s-%s" $endpointId (anchorize $name) "requestxml" -}}
   {{- $generateId := delimit (shuffle (split (md5 $name) "" )) "" -}}
-  {{- $uniqueId = slicestr $generateId 0 15 -}}
+  {{- $uniqueId = slicestr $generateId 0 8 -}}
   {{- $levelId := printf "%s-%s" $levelName $uniqueId -}}
+  {{- $inputGroup := printf "%s%s" (anchorize $parent) "requestjson" -}}
   {{- $objName = $name -}}
 
   {{/*  Render oneOf radio inputs  */}}
   {{- if eq $isOf "radio" -}}
     <div>
-      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}" name="{{ anchorize $parent }}" class="mrxs" data-one-of aria-controls="xml-{{ $name | anchorize }}" {{ if eq $ofInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
+      <input id="{{ $levelId }}" type="radio" value="{{ $levelName }}-xml" name="{{ $inputGroup }}" class="mrxs" data-one-of aria-controls="{{ $levelName }}-xml" {{ if eq $ofInd 0 }}checked{{ end }}/><label for="{{ $levelId }}"><code>{{ $name }}</code></label>
     </div>
 
   {{/*  Render allOf select options  */}}
   {{- else if eq $isOf "select" -}}
-    <option value="{{ $levelName }}" {{ if eq $ofInd 0 }}selected{{ end }}>{{ $name }}</option>
+    <option value="{{ $levelName }}-xml" {{ if eq $ofInd 0 }}selected{{ end }}>{{ $name }}</option>
 
-    {{/*  Loop oneOf data  */}}
+  {{/*  Loop oneOf data  */}}
   {{- else if in $isOf "Data" -}}
     {{- with $schemaObj.properties -}}
-      <dl id="xml-{{ $name | anchorize }}" class="pls {{ if ne $ofInd 0 }}dn{{ end }}" data-of-one="{{ $levelName }}" {{ if in $isOf "one" }}aria-label="{{ $name }}"{{ end }}>
+      <dl id="{{ $levelName }}-xml" data-{{ $inputGroup }} class="pls {{ if ne $ofInd 0 }}dn{{ end }}" {{ if in $isOf "one" }}aria-label="{{ $name }}"{{ end }}>
         {{- range $key, $_ := . -}}
           {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel) -}}
         {{- end -}}
@@ -135,7 +136,7 @@
           </form>
           {{- $ofInd = 0 -}}
           {{- range $key, $_ := . -}}
-            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "ofInd" $ofInd) -}}
+            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "oneData" "parent" $name "ofInd" $ofInd) -}}
             {{- $ofInd = add $ofInd 1 -}}
           {{- end -}}
         </dd>
@@ -144,8 +145,8 @@
       {{- with $schemaObj.allOf -}}
         <dd class="{{ if gt $recLevel 2 }}schema__sublist dn{{ end }}" id="{{ $levelId }}">
           <div class="mlxs mbs pls pbs">
-              <label class="form__label" for="{{ $levelName }}">Schema (allOf)</label>
-              <select class="form__control wauto maxw100p" id="{{ $levelName }}" data-one-of>
+              <label class="form__label" for="{{ $levelName }}-xml">Schema (allOf)</label>
+              <select class="form__control wauto maxw100p" id="{{ $levelName }}-xml" data-one-of>
                 {{- range $key, $_ := . -}}
                   {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "select" "parent" $name "ofInd" $ofInd) -}}
                   {{- $ofInd = add $ofInd 1 -}}
@@ -154,7 +155,7 @@
             </div>
           {{- $ofInd = 0 -}}
           {{- range $key, $_ := . -}}
-            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "ofInd" $ofInd) -}}
+            {{- partial "api/oas/request-schema-xml.html" (dict "schemaObj" . "name" $key "required" (in $schemaObj.required $key) "deprecated" .deprecated "components" $components "endpointId" $endpointId "recLevel" $recLevel "isOf" "allData" "parent" $name "ofInd" $ofInd) -}}
             {{- $ofInd = add $ofInd 1 -}}
           {{- end -}}
         </dd>
