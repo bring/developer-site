@@ -224,7 +224,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "SE, DK",
   "SenderCountries" : "NO, SE, DK, FI",
-  "Destination" : "ALL COUNTRIES EXCEPT RUSSIA, BELARUS, IRAN and ISRAEL",
+  "Destination" : "ALL COUNTRIES EXCEPT RUSSIA and BELARUS",
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
@@ -281,7 +281,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "NO, SE, DK",
   "SenderCountries" : "NO, SE, DK, FI",
-  "Destination" : "ALL COUNTRIES EXCEPT RUSSIA, BELARUS, IRAN and ISRAEL",
+  "Destination" : "ALL COUNTRIES EXCEPT RUSSIA and BELARUS",
   "DomesticAllowed" : "SE, DK, FI"
 }, {
   "ServiceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
