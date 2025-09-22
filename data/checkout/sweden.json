@@ -86,25 +86,7 @@
         ]
       },
       {
-        "h3": "5. Flexible delivery",
-        "figures": [
-          {
-            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
-            "imageClass": "maxw8r"
-          }
-        ],
-        "illustrationImages": [
-          {
-            "url": "/images/checkout/bring/se/choose_delivery_date.png",
-            "alt": "Choose value added services"
-          }
-        ],
-        "tags": ["Shipping Guide API"],
-        "paragraphs": [
-          "<p>Make the delivery more flexible for your customers by offering various value-added services. For example:</p><ol><li>Alternative delivery dates for Urban Home Delivery. Let the customer choose the preferred date</li></ol>"]
-      },
-      {
-        "h3": "6. Logo",
+        "h3": "5. Logo",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -139,7 +121,7 @@
         ]
       },
       {
-        "h3": "7. Environmental data and icon",
+        "h3": "6. Environmental data and icon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
@@ -251,25 +233,7 @@
         ]
       },
       {
-        "h3": "5. Flexibel leverans",
-        "figures": [
-          {
-            "imageUrl": "/images/checkout/bring/flexible_delivery.svg",
-            "imageClass": "maxw8r"
-          }
-        ],
-        "illustrationImages": [
-          {
-            "url": "/images/checkout/bring/se/choose_delivery_date.png",
-            "alt": "Choose value added services"
-          }
-        ],
-        "tags": ["Shipping Guide API"],
-        "paragraphs": [
-          "<p>Gör leveransen mer flexibel för dina kunder genom att erbjuda olika värdeadderande tjänster. Till exempel:</p><ol><li>Låt kunden välja önskat datum genom att erbjuda alternativa leveransdatum för hemleverans</li></ol>"]
-      },
-      {
-        "h3": "6. Logotyp",
+        "h3": "5. Logotyp",
         "figures": [
           {
             "imageUrl": "/images/checkout/bring/logo_car.png",
@@ -304,7 +268,7 @@
         ]
       },
       {
-        "h3": "7. Miljötext och miljöikon",
+        "h3": "6. Miljötext och miljöikon",
         "figures": [
           {
             "imageUrl": "/images/checkout/environmental_logo_simple.svg",
