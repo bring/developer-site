@@ -806,7 +806,7 @@
   "Type" : "B2X",
   "Return" : "-",
   "Booking" : "Yes",
-  "RequiredSetup" : "Customer setup (in FINLAND)",
+  "RequiredSetup" : "Customer setup",
   "ShippingGuide" : "Yes",
   "ListPrice" : "Yes",
   "AgreementPrice" : "Yes",
