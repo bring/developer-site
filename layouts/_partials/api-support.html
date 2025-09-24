@@ -1,0 +1,22 @@
+<section id="api-support" class="dev-docscontent__section">
+  <div class="mb-notice maxwmaxc">
+    <h2 class="text-1.25r">Need help?</h2>
+    <p>Contact us at
+      <a href="mailto:api-support@bring.com?subject={{ .Title }}">api-support@bring.com</a>
+    </p>
+  </div>
+
+  <p class="measure mtl">We are replacing the Disqus commenting system with an email address. Any new cases should be sent to <a href="mailto:api-support@bring.com?subject={{ .Title }}">api-support@bring.com</a>. If you have a currently active case with us in Disqus, continue using that.</p>
+  <details class="mb-disclosure bg-gray1 maxw64r">
+    <summary>
+      <span
+      data-mybicon="mybicon-arrow-right"
+      data-mybicon-width="16"
+      data-mybicon-height="16"
+    ></span>
+    Disqus API support</summary>
+    <div class="pam">
+      {{- partial "disqus.html" $ -}}
+    </div>
+  </details>
+</section>

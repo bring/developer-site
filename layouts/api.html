@@ -45,9 +45,7 @@
           {{- partial "checkout/feedback-form.html" . -}}
         {{- end -}}
         {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-          <section class="dev-docscontent__section">
-            {{ partial "disqus.html" $ }}
-          </section>
+          {{- partial "api-support.html" . -}}
         {{- end -}}
       </article>
     </main>
@@ -66,9 +64,7 @@
             {{- partial "api/oas/endpoint.html" (dict "servers" .servers "components" .components "sortedPaths" $sortedPaths) -}}
           {{- end -}}
           {{- if and (eq (getenv "HUGO_ENV") "production") (isset $.Params "disqus_identifier") -}}
-            <section id="api-support" class="dev-docscontent__section maxw64r">
-              {{ partial "disqus.html" $ }}
-            </section>
+            {{- partial "api-support.html" . -}}
           {{- end -}}
         </article>
       </main>
