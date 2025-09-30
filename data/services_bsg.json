@@ -490,7 +490,7 @@
   "LeadTime" : "Yes",
   "EnvironmentalData" : "-",
   "SenderCountries" : "SE, DK",
-  "Destination" : "SE, DK",
+  "Destination" : "NO, SE, DK",
   "DomesticAllowed" : "SE, DK"
 }, {
   "ServiceFamily" : "Cargo Norway domestic",

@@ -5,7 +5,7 @@
   "shippingGuideCode" : "POSTOPPKRAV",
   "shippingGuideNpbCode" : "1000",
   "bookingCode" : "1000",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
@@ -175,7 +175,7 @@
   "vasFootNotes" : [ ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Unattended delivery with photo",
+  "vasName" : "Unattended delivery w/photo",
   "vasNameNorwegian" : "Gjensetting med foto",
   "description" : "Bring leaves the shipment at the recipient's address without the recipient being there to accept it.  This additional service entails that the sender accepts the associated risk with regard to liability and surrenders the right to compensation from Bring in the event of damage and loss. The shipment is registered as delivered so that it can be tracked. The GPS coordinates are registered as the delivery address.",
   "shippingGuideCode" : "0041",
@@ -635,7 +635,7 @@
   "shippingGuideCode" : "PHONENOTIFICATION",
   "shippingGuideNpbCode" : "1142",
   "bookingCode" : "1142",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Business groupage",
     "serviceType" : "B2B",
@@ -699,7 +699,7 @@
   "shippingGuideCode" : "NON_FREEZE",
   "shippingGuideNpbCode" : "2141",
   "bookingCode" : "2141",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Special goods" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Special goods" ],
   "supportedServices" : [ {
     "serviceName" : "Business partload",
     "serviceType" : "B2B",
@@ -741,7 +741,7 @@
   "shippingGuideCode" : "DANGEROUS_GOODS",
   "shippingGuideNpbCode" : "1245",
   "bookingCode" : "1245",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Desktop delivery", "Remove pallets" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Desktop delivery", "Remove pallets" ],
   "supportedServices" : [ {
     "serviceName" : "Supply Base Logistics",
     "serviceType" : "B2B",
@@ -1017,7 +1017,7 @@
   "shippingGuideCode" : "1133",
   "shippingGuideNpbCode" : "1133",
   "bookingCode" : "1133",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Individual verification" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Individual verification", "ID verification parcel locker" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2037,7 +2037,7 @@
   "shippingGuideCode" : "STANDARD_INSTALLATION",
   "shippingGuideNpbCode" : "STANDARD_INSTALLATION",
   "bookingCode" : "1124",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Boat Delivery" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2249,7 +2249,7 @@
   "shippingGuideCode" : "CUSTOM_INSTALLATION",
   "shippingGuideNpbCode" : "CUSTOM_INSTALLATION",
   "bookingCode" : "1125",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Boat Delivery" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Boat Delivery" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Indoor",
     "serviceType" : "B2C",
@@ -2461,7 +2461,7 @@
   "shippingGuideCode" : "VALGFRITT_POSTKONTOR",
   "shippingGuideNpbCode" : "1036",
   "bookingCode" : "SELECT_PICKUP_POINT",
-  "incompatibleVases" : [ "Unattended delivery with photo", "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts then return" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "One delivery attempt, then pickup point", "Two delivery attempts", "Two delivery attempts then return" ],
   "supportedServices" : [ {
     "serviceName" : "Pickup parcel",
     "serviceType" : "B2C",
@@ -2563,7 +2563,7 @@
     "productionCode" : "0360",
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -2575,7 +2575,7 @@
   "shippingGuideCode" : "1280",
   "shippingGuideNpbCode" : "1280",
   "bookingCode" : "1280",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -2989,7 +2989,7 @@
   "shippingGuideCode" : "1134",
   "shippingGuideNpbCode" : "1134",
   "bookingCode" : "1134",
-  "incompatibleVases" : [ "Unattended delivery with photo", "ID verification", "Boat Delivery" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "ID verification", "Boat Delivery", "ID verification parcel locker" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -3533,7 +3533,7 @@
   "shippingGuideCode" : "1083",
   "shippingGuideNpbCode" : "1083",
   "bookingCode" : "1083",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Business parcel express",
     "serviceType" : "B2B",
@@ -3745,7 +3745,7 @@
   "shippingGuideCode" : "SOSIAL_KONTROLL",
   "shippingGuideNpbCode" : "1082",
   "bookingCode" : "1082",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Boat Delivery" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Boat Delivery", "ID verification parcel locker" ],
   "supportedServices" : [ {
     "serviceName" : "Parcel home plus",
     "serviceType" : "B2C",
@@ -4217,7 +4217,7 @@
   "shippingGuideCode" : "0003",
   "shippingGuideNpbCode" : "0003",
   "bookingCode" : "0003",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Business Parcel",
     "serviceType" : "B2B",
@@ -4423,7 +4423,7 @@
   "shippingGuideCode" : "1149",
   "shippingGuideNpbCode" : "1149",
   "bookingCode" : "1149",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Business parcel",
     "serviceType" : "B2B",
@@ -4661,7 +4661,7 @@
     "productionCode" : "0360",
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -4767,7 +4767,7 @@
   "shippingGuideCode" : "1362",
   "shippingGuideNpbCode" : "1362",
   "bookingCode" : "1362",
-  "incompatibleVases" : [ "Unattended delivery with photo", "Carry service oversize", "Customized installation", "Electronic installation", "Individual verification", "Installation details", "Notification by letter", "Mechanical installation", "Recycle white goods", "Reusable Packaging", "Social check", "Standard installation", "Swap", "TV installation", "Unwrapping" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo", "Carry service oversize", "Customized installation", "Electronic installation", "Individual verification", "Installation details", "Notification by letter", "Mechanical installation", "Recycle white goods", "Reusable Packaging", "Social check", "Standard installation", "Swap", "TV installation", "Unwrapping" ],
   "supportedServices" : [ {
     "serviceName" : "Home Delivery Curbside",
     "serviceType" : "B2C",
@@ -4799,7 +4799,7 @@
     "productionCode" : "0360",
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -4821,7 +4821,7 @@
     "productionCode" : "0360",
     "domesticAllowedIn" : "SE, DK",
     "senderCountries" : "SE, DK",
-    "destinations" : "SE, DK"
+    "destinations" : "NO, SE, DK"
   } ],
   "serviceAndCountryFootNotes" : [ ],
   "vasFootNotes" : [ ],
@@ -4833,7 +4833,7 @@
   "shippingGuideCode" : "1334",
   "shippingGuideNpbCode" : "1334",
   "bookingCode" : "1334",
-  "incompatibleVases" : [ "Unattended delivery with photo" ],
+  "incompatibleVases" : [ "Unattended delivery w/photo" ],
   "supportedServices" : [ {
     "serviceName" : "Economy Courier",
     "serviceType" : "B2X",
@@ -5107,6 +5107,48 @@
     "serviceFamilySortOrder" : 2,
     "serviceCode" : "PICKUP_PARCEL_BULK",
     "productionCode" : "0342",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  } ],
+  "serviceAndCountryFootNotes" : [ ],
+  "vasFootNotes" : [ ],
+  "orderedViaVasCodes" : true
+}, {
+  "vasName" : "ID verification parcel locker",
+  "vasNameNorwegian" : "ID-krav pakkeboks",
+  "description" : "ID verification via Bring app is required for collection of the parcel in the parcel locker  ",
+  "shippingGuideCode" : "1395",
+  "shippingGuideNpbCode" : "1395",
+  "bookingCode" : "1395",
+  "incompatibleVases" : [ "ID verification", "Individual verification", "Social check" ],
+  "supportedServices" : [ {
+    "serviceName" : "PickUp Parcel",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "PICKUP_PARCEL",
+    "productionCode" : "0340",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "PickUp Parcel Bulk",
+    "serviceType" : "B2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "PICKUP_PARCEL_BULK",
+    "productionCode" : "0342",
+    "domesticAllowedIn" : "SE",
+    "senderCountries" : "-",
+    "destinations" : "-"
+  }, {
+    "serviceName" : "Bring Pack",
+    "serviceType" : "C2C",
+    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
+    "serviceFamilySortOrder" : 2,
+    "serviceCode" : "0360",
+    "productionCode" : "0360",
     "domesticAllowedIn" : "SE",
     "senderCountries" : "-",
     "destinations" : "-"
