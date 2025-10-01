@@ -1343,28 +1343,6 @@
   "vasFootNotes" : [ "This VAS requires an agreement in Mybring for certain services to be available for booking." ],
   "orderedViaVasCodes" : true
 }, {
-  "vasName" : "Evening delivery",
-  "vasNameNorwegian" : "Evening Delivery",
-  "description" : "No description available",
-  "shippingGuideCode" : "EVE_DELIVERY",
-  "shippingGuideNpbCode" : "0015",
-  "bookingCode" : "0015",
-  "incompatibleVases" : [ ],
-  "supportedServices" : [ {
-    "serviceName" : "Home Delivery Parcel",
-    "serviceType" : "B2C",
-    "serviceFamily" : "Parcel Sweden, Denmark, Finland & Parcel Norway cross-border",
-    "serviceFamilySortOrder" : 2,
-    "serviceCode" : "HOME_DELIVERY_PARCEL",
-    "productionCode" : "0349",
-    "domesticAllowedIn" : "DK",
-    "senderCountries" : "ALL",
-    "destinations" : "DK"
-  } ],
-  "serviceAndCountryFootNotes" : [ ],
-  "vasFootNotes" : [ ],
-  "orderedViaVasCodes" : true
-}, {
   "vasName" : "Swap",
   "vasNameNorwegian" : "Swap",
   "description" : "Delivery of a new product and return of existing product take place at the same time.  Example: the delivery of a new dishwasher occurs at the same time as Bring takes the existing dishwasher in return.",
