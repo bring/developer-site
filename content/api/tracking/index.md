@@ -47,7 +47,7 @@ params:
 
         #### Example request
         ```
-        curl -H "api-version: 2" https://api.bring.com/tracking/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+        curl -H "api-version: 2" https://api.bring.com/tracking/api/tracking.json?q=TRACKINGNUMBER
         ```
 
         ### Select version by URL
@@ -55,11 +55,11 @@ params:
 
         | Application | URL example |
         |:-------|:--------|
-        | Tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
+        | Tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TRACKINGNUMBER |
 
         #### Example request
         ```
-        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TRACKINGNUMBER
         ```
 
         ###  Events Description
@@ -112,6 +112,6 @@ params:
         To receive the response in Norwegian, use the following format:
 
         ```
-        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT&lang=no
+        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TRACKINGNUMBER&lang=no
         ```
 ---
