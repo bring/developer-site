@@ -114,7 +114,4 @@ params:
         ```
         curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT&lang=no
         ```
-
-        This allows you to tailor the response language to better suit your application's audience.
-
 ---
