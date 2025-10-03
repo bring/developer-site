@@ -94,4 +94,27 @@ params:
         |:-------|:--------|:--------|
         | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
         | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
+
+    - title: Language Support
+      content: |
+        The Tracking API supports responses in multiple languages. You can specify the desired language using the `lang` query parameter in your request.
+
+        #### Supported Languages and Codes
+
+        | Language | Code |
+        |:---------|:----|
+        | English    | `en` |
+        | Norwegian  | `no` |
+        | Swedish    | `sv` |
+        | Danish     | `da` |
+
+        #### Example Request
+        To receive the response in Norwegian, use the following format:
+
+        ```
+        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT&lang=no
+        ```
+
+        This allows you to tailor the response language to better suit your application's audience.
+
 ---
