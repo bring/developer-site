@@ -47,7 +47,7 @@ params:
 
         #### Example request
         ```
-        curl -H "api-version: 2" https://api.bring.com/tracking/api/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+        curl -H "api-version: 2" https://api.bring.com/tracking/api/tracking.json?q=TRACKINGNUMBER
         ```
 
         ### Select version by URL
@@ -55,11 +55,11 @@ params:
 
         | Application | URL example |
         |:-------|:--------|
-        | Tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TESTPACKAGEATPICKUPPOINT |
+        | Tracking | https://api.bring.com/tracking/api/**v2**/tracking.json?q=TRACKINGNUMBER |
 
         #### Example request
         ```
-        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TESTPACKAGEATPICKUPPOINT
+        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TRACKINGNUMBER
         ```
 
         ###  Events Description
@@ -94,4 +94,24 @@ params:
         |:-------|:--------|:--------|
         | tracking.json | `application/json; charset=utf-8` | `{"apiVersion": "2"}` |
         | tracking.xml | `application/xml;charset=utf-8` | `<ApiVersion>2</ApiVersion>` |
+
+    - title: Language Support
+      content: |
+        The Tracking API supports responses in multiple languages. You can specify the desired language using the `lang` query parameter in your request.
+
+        #### Supported Languages and Codes
+
+        | Language | Code |
+        |:---------|:----|
+        | English    | `en` |
+        | Norwegian  | `no` |
+        | Swedish    | `sv` |
+        | Danish     | `da` |
+
+        #### Example Request
+        To receive the response in Norwegian, use the following format:
+
+        ```
+        curl -v https://api.bring.com/tracking/api/v2/tracking.json?q=TRACKINGNUMBER&lang=no
+        ```
 ---
