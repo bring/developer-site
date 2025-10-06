@@ -1,0 +1,14 @@
+---
+title: Authorization
+layout: api-sub
+menu:
+  apidocs:
+    identifier: bulkshipmentupauthorization
+    title: Authorization
+    parent: bulkshipment
+weight: 2
+---
+
+In addition to [authentication](/api/#authentication), you need to be authorized with the _booking_ right in order to order pickups. This is done in [customer administration in Mybring](https://www.mybring.com/useradmin-external/users):
+
+![](/images/authorization.png)
