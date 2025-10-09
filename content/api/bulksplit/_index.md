@@ -9,8 +9,7 @@ menu:
     parent: book
 weight: 21
 params:
-  ## FIXME: Need to update after haproxy tests are runnable
-  oas: https://api.bring.com/bulk-shipment/openapi
+  oas: https://api.bring.com/bulksplit/openapi
 
   introduction: |
     The Bulksplit API provides an API for reserving CMR IDs. These CMR IDs
