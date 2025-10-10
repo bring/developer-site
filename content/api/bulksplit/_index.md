@@ -38,6 +38,18 @@ params:
         ### 2. Book the shipping for the individual parcels/letters contained in the bulk shipment
 
         Using the [booking-api](../booking) book shipping for the individual parcels or letters contained in this bulk shipment placing the reserved CMR ID into the `consignments[0].references.consolidatedShipmentId` field.
+
+        ```json
+        {
+          "consignments": [
+            {
+              "references": {
+                "consolidatedShipmentId": "your reserved bulk-shipment-id"
+              }
+            }
+          ]
+        }
+        ```
         
         ### 3. Register the bulk-shipment and produce labels
 
