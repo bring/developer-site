@@ -12,11 +12,11 @@ params:
   oas: https://api.bring.com/bulksplit/openapi
 
   introduction: |
-    The Bulksplit API provides an API for reserving CMR IDs. These CMR IDs
-    can then be provided when booking individual shipments in order to connect
-    them to the bulk shipment. When a bulk shipment is ready this API can then
-    be used to order collection which will produce a waybill and routing
-    labels for each of the registered pallets (or other load carriers).
+    The Bulksplit API provides an API for:
+    1. reserving an id for use on the Waybill of a bulk-shipment and
+    2. registering details of the pallets/load carriers that are involved in the bulk-shipment.
+    
+    The bulk-shipment-id can be provided when booking the individual shipments in order to support a better tracking experience for the recipient.
 
   information:
     - title: Authentication
