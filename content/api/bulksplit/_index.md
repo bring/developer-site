@@ -31,9 +31,9 @@ params:
       content: |
         When working with the Bulksplit API the process is as follows:
 
-        ### 1. Reserve a CMR ID
+        ### 1. Reserve an id for the bulk-shipment
 
-        Use the `/bulk-shipment-ids` endpoint to reserve an identifier for use on the CMR documentation and identifies the bulk shipment.
+        Use the `/bulk-shipment-ids` endpoint to reserve an identifier, for use on the CMR waybill documentation and identifies the bulk shipment.
 
         ### 2. Book the shipping for the individual parcels/letters contained in the bulk shipment
 
@@ -53,7 +53,7 @@ params:
         
         ### 3. Register the bulk-shipment and produce labels
 
-        Use the `/bulk-shipments/{bulk-shipment-id}` endpoint to register the bulk-shipment providing all the necessary metadata to fill out the Waybill and Routing labels for each of the pallets, the API response contains links to the PDF
+        Use the `/bulk-shipments/{bulk-shipment-id}` endpoint to register the bulk-shipment providing all the necessary metadata to fill out the CMR waybill and routing labels for each of the pallets, the API response contains links to the PDF
         representation of these labels.
     
     - title: Lifetime of reserved id
