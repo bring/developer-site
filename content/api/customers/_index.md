@@ -31,7 +31,7 @@ params:
         REST JSON over HTTP is recommended for all new integrations. While we currently also support XML, this is very likely to be phased out in the future.
 
   documentation:
-    - title: What can the Customers API do for me?
+    - title: What can the Customers API help me with?
       content: |
         The Customers API can help users bootstrap their checkout and booking process by providing a list of customers, countries, and services available to the user. 
 
