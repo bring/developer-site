@@ -28,7 +28,7 @@ params:
 
     - title: Formats
       content: |
-        REST JSON over HTTP is recommended for all new integrations. While we currently also support XML, this is very likely to be phased out in the future.
+        REST JSON over HTTP is the way for all new integrations. While we currently also support XML for legacy reasons, this will be phased out in the future.
 
   documentation:
     - title: What can the Service API help me with?
