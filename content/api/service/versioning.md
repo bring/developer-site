@@ -3,9 +3,9 @@ title: Versioning
 layout: api-sub
 menu:
   apidocs:
-    identifier: customersversioning
+    identifier: serviceversioning
     title: Versioning
-    parent: customers
+    parent: service
 weight: 1
 ---
 
