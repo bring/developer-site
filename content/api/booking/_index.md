@@ -12,7 +12,7 @@ aliases:
   - bookingapi.html
 params:
   disqus_identifier: https-developer-bring-com-api-booking
-  oas: https://api.qa.bring.com/booking/api-docs
+  oas: https://api.bring.com/booking/api-docs
 
   important:
     - type: warn
