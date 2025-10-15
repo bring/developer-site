@@ -1,21 +1,21 @@
 ---
-title: Services API
+title: Customer Info API
 layout: api
 menu:
   apidocs:
-    identifier: service
-    title: Service API
+    identifier: customerinfo
+    title: Customer Info API
     url: /api/customers
     parent: book
 weight: 21
 aliases:
-  - serviceapi.html
+  - customerinfoapi.html
 params:
-  disqus_identifier: https-developer-bring-com-api-service
+  disqus_identifier: https-developer-bring-com-api-customer-info
   oas: https://api.bring.com/booking-customer-info-api/api-docs
 
   introduction: |
-    <p>The Service API is used to list available services for one or more customers</p>
+    <p>The Customer Info API is used to list available services for one or more customers</p>
 
   information:
     - title: Authentication
@@ -31,8 +31,8 @@ params:
         REST JSON over HTTP is the way for all new integrations. While we currently also support XML for legacy reasons, this will be phased out in the future.
 
   documentation:
-    - title: What can the Service API help me with?
+    - title: What can the Customer Info API help me with?
       content: |
-        The Service API can help users bootstrap their checkout and booking process by providing a list of customers, countries, and services available to the user. 
+        The Customer Info API can help users bootstrap their checkout and booking process by providing a list of customers, countries, and services available to the user. 
 
 ---

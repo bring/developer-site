@@ -3,9 +3,9 @@ title: Authorization
 layout: api-sub
 menu:
   apidocs:
-    identifier: serviceauthorization
+    identifier: customerinfoauthorization
     title: Authorization
-    parent: service
+    parent: customerinfo
 weight: 2
 ---
 
