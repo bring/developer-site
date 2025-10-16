@@ -5,14 +5,14 @@ menu:
   apidocs:
     identifier: customerinfo
     title: Customer Info API
-    url: /api/customers
+    url: /customers
     parent: book
 weight: 21
 aliases:
   - customerinfoapi.html
 params:
   disqus_identifier: https-developer-bring-com-api-customer-info
-  oas: https://api.bring.com/booking-customer-info-api/api-docs
+  oas: https://api.bring.com/customer-info/api-docs
 
   introduction: |
     <p>The Customer Info API is used to list available services for one or more customers</p>
@@ -33,6 +33,6 @@ params:
   documentation:
     - title: What can the Customer Info API help me with?
       content: |
-        The Customer Info API can help users bootstrap their checkout and booking process by providing a list of customers, countries, and services available to the user. 
+        The Customer Info API can help users bootstrap their checkout and booking process by providing a list of customers, countries, and services available to them.
 
 ---
