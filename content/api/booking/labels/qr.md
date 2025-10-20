@@ -30,7 +30,7 @@ See [Service portfolio](https://developer.bring.com/api/services/#label-free) fo
 
 ## Norway
 
-In Norway historically we have been supporting only QR codes for label-free dispatch of a shipment. Now Bring is in the process of rolling out label-free code as a complementary label-free solution for dispatch via parcel lockers.
+In Norway historically we have been supporting only QR codes for label-free dispatch of a shipment. Now Bring supports label-free code as a complementary label-free solution for dispatch via parcel lockers.
 
 ### QR Code Generation
 
@@ -50,7 +50,7 @@ Enable QR codes by adding the element `generateQrCodes` at the consignment level
 
 ### Label‑Free Codes
 
-Label‑free codes in Norway are automatically generated when requesting QR codes for the following services.
+Label‑free codes in Norway (minus Svalbard) are automatically generated when requesting QR codes for the following services.
 The generated code is returned in the API response and sent by email to both sender and recipient. The code and the recipient’s name and address are to be clearly written on the parcel before it is handed over. Parcels may then be returned via a parcel locker.
 
 **Supported Services:**
@@ -58,13 +58,4 @@ The generated code is returned in the API response and sent by email to both sen
 - 9350 - Return parcel to business
 - 0341 - PickUp Parcel Return
 - 0343 - PickUp Parcel Return Bulk
-
-
-*Rollout Notice:* The label‑free codes solution in Norway is in the process of being rolled out and is currently in **Step Two: South-West Region**.
-
-#### Rollout Steps
-- Step One: East Region
-- Step Two: South-West Region
-- Step Three: Central and North Region
-- Step Four: Oslo, Akershus, and Østfold
 
