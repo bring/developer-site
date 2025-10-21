@@ -9,9 +9,7 @@ menu:
 weight: 1
 ---
 
-VOEC can be declared on the following services 
-
-When sent to Norway from abroad
+VOEC can be declared on the following services when sent to Norway from abroad
 
 - Pickup Parcel (0340)
 - Pickup Parcel Bulk (0342)
