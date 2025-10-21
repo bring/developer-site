@@ -17,7 +17,7 @@ When sent to Norway from abroad
 - Pickup Parcel Bulk (0342)
 - Home Delivery Parcel (0349)
 
-when sent to Norway from Norway
+When sent to Norway from Norway
 
 - Home mailbox parcel (3584)
 
