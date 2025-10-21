@@ -13,11 +13,18 @@ params:
   oas: https://api.bring.com/bulksplit/openapi
 
   introduction: |
-    The Bulksplit API provides an API for reserving CMR IDs. These CMR IDs
-    can then be provided when booking individual shipments in order to connect
-    them to the bulk shipment. When a bulk shipment is ready this API can then
-    be used to order collection which will produce a waybill and routing
-    labels for each of the registered pallets (or other load carriers).
+    The Bulksplit API provides three functions:
+    
+    1. Reserving bulk shipment IDs. These IDs can optionally be provided at
+       time of booking the individual shipments to enable a better tracking
+       experience.
+    2. Producing routing labels for a shipment. This is an optional step if you
+       want to create a routing label when you start work on loading a pallet.
+    3. Registering the complete shipment. When a pallet or group of pallets is
+       ready for shipping the details about final weight and, if necessary,
+       customs documentation should now be provided. At this point we can
+       produce a CMR waybill for the shipment and routing labels if your
+       workflow involves labelling at the end.
 
   information:
     - title: Authentication
@@ -29,15 +36,21 @@ params:
       content: |
         When working with the Bulksplit API the process is as follows:
 
-        ### 1. Reserve a CMR ID
+        ### 1. Reserve a bulk shipment ID
 
         Use the `/bulk-shipment-ids` endpoint to reserve an identifier for use on the CMR documentation and identifies the bulk shipment.
 
-        ### 2. Book the shipping for the individual parcels/letters contained in the bulk shipment
+        ### 2. (Optional) Produce routing labels
+
+        Use the `/bulk-shipments/{bulk-shipment-id}/routing-labels` endpoint to reserve an identifier for use on the routing label and produce a printable PDF.
+
+        If you do not need to print routing labels until the whole shipment is registered this is not necessary.
+
+        ### 3. (Optional) Book the shipping for the individual parcels/letters contained in the bulk shipment
 
         Using the [booking-api](../booking) book shipping for the individual parcels or letters contained in this bulk shipment placing the reserved CMR ID into the `consignments[0].references.consolidatedShipmentId` field.
         
-        ### 3. Register the bulk-shipment and produce labels
+        ### 4. Register the bulk-shipment and produce labels
 
         Use the `/bulk-shipments/{bulk-shipment-id}` endpoint to register the bulk-shipment providing all the necessary metadata to fill out the Waybill and Routing labels for each of the pallets, the API response contains links to the PDF
         representation of these labels.
