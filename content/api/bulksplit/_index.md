@@ -9,8 +9,7 @@ menu:
     parent: book
 weight: 21
 params:
-  ## FIXME: Need to update after haproxy tests are runnable
-  oas: https://api.bring.com/bulksplit/openapi
+  oas: https://api.bring.com/bulksplit/v1/openapi
 
   introduction: |
     The Bulksplit API provides three functions:
