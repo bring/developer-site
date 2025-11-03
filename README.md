@@ -112,7 +112,7 @@ menu:
     identifier: {foldername}
     title: {Name of API}
     url: /api/{foldername}
-    parent: {parent, see config.json}
+    parent: {parent, see hugo.json}
 weight: {menu position prefixed by parent value}
 params:
   disqus_identifier: api-{foldername} (optional, if you want comments)
