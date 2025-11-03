@@ -49,9 +49,10 @@ or via your terminal
 ## Publish an API update message
 
 Revision history and Changelog is called _API updates_ to reflect that it covers
-past, current and upcoming changes. Users can subscribe to either all updates,
-or do a selection based on the different API areas. New messages are
-automatically emailed to users who subscribe.
+past, current and upcoming changes. Users can subscribe to emails with either
+all updates, or do a selection based on the different API areas. New messages
+are automatically emailed to users who subscribe. This is done every Monday
+morning, if there has been no update since last time, no emails will be sent.
 
 New messages are added with publish date as the file name `yyyy-mm-dd.md` in the
 different folders under `content/api/revision-history`, reflecting the different
