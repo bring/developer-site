@@ -10,7 +10,7 @@ menu:
 weight: 52
 params:
   disqus_identifier: https-developer-bring-com-api-documents
-  oas: https://www.mybring.com/document-search/v3/api-docs
+  oas: https://www.mybring.com/document-search/api-docs
 
   Introduction: |
     The Documents API can be used to fetch documents related to your shipments.
