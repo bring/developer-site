@@ -75,6 +75,6 @@ params:
         * `0336` : Business Pallet
         * `0370` : Bring Parcel Connect
         * `0345` : Home Delivery Mailbox
+        * `3584` : Letter pallet
 
-        In addition Letter pallet can be registered with the value `LETTER_PALLET`.
 ---
