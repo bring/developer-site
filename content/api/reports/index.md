@@ -10,7 +10,7 @@ menu:
 weight: 51
 params:
   disqus_identifier: https-developer-bring-com-api-reports
-  oas: https://www.mybring.com/reports/v3/api-docs
+  oas: https://www.mybring.com/reports/api-docs
 
   introduction: |
     The Reports API can be used as a tool for analyzing your logistics with Bring. The API lets you generate reports within the categories _status_, _quality and deviation_, _economy_ and _environment_. Supported report formats are XML and Excel.

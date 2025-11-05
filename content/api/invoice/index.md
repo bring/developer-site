@@ -10,7 +10,7 @@ menu:
 weight: 52
 params:
   disqus_identifier: https-developer-bring-com-api-invoice
-  oas: https://www.mybring.com/invoicearchive/v3/api-docs
+  oas: https://www.mybring.com/invoicearchive/api-docs
 
   introduction: |
     The Invoice API can be used to list your invoices and to download the invoices in PDF format.
