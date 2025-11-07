@@ -793,6 +793,16 @@
     "senderCountries" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK",
     "destinations" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK"
   }, {
+    "serviceName" : "Cargo International",
+    "serviceType" : "B2B",
+    "serviceFamily" : "Cargo Norway international",
+    "serviceFamilySortOrder" : 6,
+    "serviceCode" : "4000",
+    "productionCode" : "4000",
+    "domesticAllowedIn" : "-",
+    "senderCountries" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK",
+    "destinations" : "NO, SE, DK, FI, AT, BE, BG, CH, CY, CZ, DE, EE, ES, FR, GB, GR, HR, HU, IE, IS, IT, LI, LT, LU, LV, MT, NL, PL, PT, RO, SI, SK"
+  }, {
     "serviceName" : "Project Logistics",
     "serviceType" : "B2B",
     "serviceFamily" : "Supply base logistics",
