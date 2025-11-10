@@ -5,7 +5,7 @@ menu:
   apidocs:
     identifier: customerinfo
     title: Customer Info API
-    url: /customers
+    url: /api/customerinfo
     parent: book
 weight: 21
 aliases:
