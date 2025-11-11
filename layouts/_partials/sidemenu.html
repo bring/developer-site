@@ -119,7 +119,7 @@
               <span class="dev-sidemenu__title">{{ .Title }}</span>
               <ul>
                 {{ range .Children }}
-                  {{- if or (eq .Title "Order Management API") (eq .Title "Booking API") (eq .Title "Shipping Guide API") -}}
+                  {{- if or (eq .Title "Order Management API") (eq .Title "Shipping Guide API") -}}
                     {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas "apiData" $apiData "prefix" "soap") -}}
                   {{- else if isset $.Params "oas" -}}
                     {{- partial "sidemenulist.html" (dict "ctx" . "currentPage" $currentPage "menu" .Menu "identifier" .Identifier "pageTitle" .Title "url" .URL "oasData" $.Params.oas) -}}

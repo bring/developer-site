@@ -176,5 +176,12 @@
   },
   "taxonomies": {
     "tag": "tags"
+  },
+  "security": {
+    "http": {
+      "mediaTypes": [
+        "^application/yaml$"
+      ]
+    }
   }
 }

@@ -3,7 +3,7 @@ title: General
 layout: api-sub
 menu:
   apidocs:
-    identifier: customs
+    identifier: booking_customs_general
     title: General
     parent: booking_customs
 weight: 1

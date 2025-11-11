@@ -3,7 +3,7 @@ title: VOEC (VAT on E-commerce)
 layout: api-sub
 menu:
   apidocs:
-    identifier: voec
+    identifier: booking_customs_voec
     title: VOEC (VAT on E-commerce)
     parent: booking_customs
 weight: 1
