@@ -40,31 +40,28 @@
       </p>
     </div>
     <div class="updates__log maxw60r w100p">
-      <h2 class="mbm">{{$pageSubTitle}}</h2>
       <label class="form__label" for="filterChangelogInput">Filter API updates</label>
       <input type="search" class="form__control maxw16r" id="filterChangelogInput" />
       <label for="checkbox" class="mbm">
         <input type="checkbox" id="checkbox" /> Filter by important updates
       </label>
       {{/* Set $pages to the rearranged structure */}}
-      <div aria-busy="false" aria-atomic="true" aria-live="polite" data-live-region>
+      <div class="mtm" aria-busy="false" aria-atomic="true" aria-live="polite" data-live-region>
         {{- $pages = $rearrangedPages -}}
         {{- range first 5 $pages -}}
           {{- $parentFolder := path.Base (path.Dir .) -}}
           {{- $isImportant := .Params.isImportant -}}
-          <article class="mbl" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
-            <header class="flex flex-dir-col-rev">
-            <h3 class="fw600 mb0">{{ .Title }} </h3>
-            <div> 
-              <time
-                class="mrm text-note fw600"
-                datetime="{{ .PublishDate.Format "2006-01-02" | safeHTML }}"
-                >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time>
-              {{- if (.Params.isImportant) -}}
-                  <span class="mb-badge mb-badge--yellow">Important</span>
+          <article class="pbl" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
+            <h3 class="mb0">{{ .Title }}</h3>
+            <p>
+              <span class="text-0.875r fwb mrs">{{- .PublishDate.Format "2 January 2006" | safeHTML -}}</span>
+              {{- if (eq .Parent.Params.apiArea "Common") -}}
+                <span class="mb-badge mb-badge--blue mrs">General</span>
               {{- end -}}
-            </div>
-            </header>
+              {{ if .Params.isImportant }}
+                <span class="mb-badge mb-badge--yellow">Important</span>
+              {{ end }}
+            </p>
             {{ .Content }}
           </article>
         {{- end -}}
@@ -73,11 +70,7 @@
       {{- if (gt (len $pages) 5) -}}
       <details class="mb-disclosure" id="olderApiUpdates">
         <summary class="pam bg-gray1">
-          <span
-            data-mybicon="mybicon-arrow-right"
-            data-mybicon-width="16"
-            data-mybicon-height="16"
-          ></span>
+          <span data-mybicon="mybicon-arrow-right"></span>
           Older updates
         </summary>
         <div class="flex flex-wrap" aria-busy="true" aria-atomic="true" aria-live="polite" data-live-region>
@@ -85,17 +78,16 @@
             {{- $parentFolder := path.Base (path.Dir .) -}}
             {{- $isImportant := .Params.isImportant -}}
             <article class="changelog-small bg-gray1 pal mbxs" data-changelog-parent="{{$parentFolder}}" data-is-important="{{$isImportant}}" >
-              <header class="flex flex-dir-col-rev">
-                <h2 class="text-basic fw600 mb0">{{ .Title }}</h2>
-                <div class="flex">
-                  <time
-                  class="mrm text-note fw600"
-                  datetime="{{ .PublishDate.Format "2006-01-02" | safeHTML }}"
-                  >{{ .PublishDate.Format "2 January 2006" | safeHTML }}</time>
-                  {{- if (.Params.isImportant) -}}
-                  <span class="mb-badge mb-badge--yellow">Important</span>
-                  {{- end -}}
-                </div>
+                <h3 class="text-basic">{{ .Title }}</h3>
+                  <p>
+                    <span class="text-0.875r fwb mrs">{{- .PublishDate.Format "2 January 2006" | safeHTML -}}</span>
+                    {{- if (eq .Parent.Params.apiArea "Common") -}}
+                      <span class="mb-badge mb-badge--blue mrs">General</span>
+                    {{- end -}}
+                    {{ if .Params.isImportant }}
+                      <span class="mb-badge mb-badge--yellow">Important</span>
+                    {{ end }}
+                  </p>
               </header>
               {{ .Content }}
             </article>

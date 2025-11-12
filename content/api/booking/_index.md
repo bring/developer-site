@@ -14,10 +14,9 @@ params:
   disqus_identifier: https-developer-bring-com-api-booking
   oas: https://api.bring.com/booking/api-docs
 
-###  important:
-###    - type: warn
-###      title: New customs information structure, with support for VOEC on imports to Norway
-###      message: |
+###  alerts:
+###    - title: New customs information structure, with support for VOEC on imports to Norway
+###      content: |
 ###        The Booking API has gotten a new structure for sending customs information. Along with this comes support for sending VOEC (VAT on E-commerce) on imports to Norway on some services.
 ###        The existing/old format is now deprecated, and will be phased out. See [this page](/api/booking/customs/) for more information on how to send such information when ordering a shipment.
 
