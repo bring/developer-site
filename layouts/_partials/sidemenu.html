@@ -1,6 +1,6 @@
 {{- $currentPage := . -}}
 {{ $currentLanguage := .Site.Language }}
-{{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon' data-mybicon-width='14' data-mybicon-height='14'></span>" -}}
+{{- $iconExHtml := "<span data-mybicon='mybicon-external-link' data-mybicon-class='mls dev-sidemenu__icon'></span>" -}}
 {{ if gt ($currentPage.Translations | len) 0 }}
   {{ range $currentPage.Translations }}
     {{ if eq (string .Language) "en" }}
