@@ -298,6 +298,11 @@
     background-attachment: local, local, scroll, scroll;
   }
 
+  /* Update messages with shadow */
+    .bshadow--dark:has(.update-content) {
+      background-color: var(--green-15);
+  }
+
   /* Code and badges */
   & dl code,
   & li code:not(table code),

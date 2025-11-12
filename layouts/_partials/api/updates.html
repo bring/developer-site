@@ -1,0 +1,55 @@
+{{- $apiArea := .apiArea -}}
+{{- $pageTitle := "" -}}
+{{- if .title -}}
+  {{- $pageTitle = .title -}}
+{{- end -}}
+
+{{- $pctx := .pctx -}}
+{{- $pages := slice -}}
+{{- $pages = $pctx.RegularPages -}}
+{{- $mergedPages := slice -}}
+{{- range $pages -}}
+  {{- if (in .CurrentSection "revision-history") -}}
+    {{- $mergedPages = $mergedPages | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages = $mergedPages -}}
+
+{{- $yearAgo := sub now.Unix 31556926 -}}
+{{- $twoMonthsAgo := sub now.Unix 5259486 -}}
+{{- $relevantUpdates := slice -}}
+{{- $visibleUpdates := slice -}}
+
+{{- range $pages -}}
+  {{- if or (strings.Contains (lower (replace .Title " " "")) (lower (replace $pageTitle " " ""))) (eq .Parent.Params.apiArea $apiArea) (eq .Parent.Params.apiArea "Common") -}}
+    {{- $relevantUpdates = $relevantUpdates | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- range $relevantUpdates -}}
+  {{- if gt .PublishDate.Unix $yearAgo -}}
+    {{- if .Params.isImportant -}}
+      {{- $visibleUpdates = $visibleUpdates | append . -}}
+    {{- else if gt .PublishDate.Unix $twoMonthsAgo -}}
+      {{- $visibleUpdates = $visibleUpdates | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $visibleUpdates = $visibleUpdates | first 3 -}}
+{{- $collapsedUpdates := $relevantUpdates | symdiff $visibleUpdates -}}
+
+<h2>Updates</h2>
+{{- range $visibleUpdates -}}
+  {{- partial "api/updatemessage.html" . -}}
+{{- end -}}
+
+<details class="mb-disclosure owls">
+  <summary>
+    <span data-mybicon="mybicon-arrow-right"></span>
+    Older updates
+  </summary>
+  {{- range $collapsedUpdates -}}
+    {{- partial "api/updatemessage.html" . -}}
+  {{- end -}}
+</details>

@@ -50,30 +50,38 @@ or via your terminal
 
 Revision history and Changelog is called _API updates_ to reflect that it covers
 past, current and upcoming changes. Users can subscribe to emails with either
-all updates, or do a selection based on the different API areas. New messages
-are automatically emailed to users who subscribe. This is done every Monday
-morning, if there has been no update since last time, no emails will be sent.
+all updates or a selection based on the different API areas. New messages are
+automatically emailed to subscribers on Monday mornings, if there has been no
+update since last time, no emails will be sent.
 
-New messages are added with publish date as the file name `yyyy-mm-dd.md` in the
-different folders under `content/api/revision-history`, reflecting the different
-API areas.
+- Add new messages with publish date as file name `yyyy-mm-dd.md` in the
+  respective existing API area folders under `content/api/revision-history`.
+  Don’t make folders for individual APIs, but use the specific API name in the
+  title.
 
-- If the message is intended to give an update about one or several APIs, the
-  message is added in each folder (API area) of the affected API.
+- If the message is general and should reach all subscribers and be published on
+  all API pages, put it in the main folder - `content/api/revision-history`.
 
-- If the message is general and should reach all subscribers, this is added in
-  the main folder - `content/api/revision-history`.
+- If you want to send a message more than once, for instance repeating a
+  previously announced change closer to the actual date, update the publish date
+  and rewrite the message to match the grammatical tense.
 
-- Messages that are important can appear on the API page by setting the
-  parameter `isImportant: true` and including the full API name in the message
-  title. This can be useful when a message should stay visible for an upcoming
-  or breaking API change. If you want to send a new email to subscribers when
-  the API change occurs, update the publish date and rewrite the message to
-  match the grammatical tense. Even though the important messages are separated
-  and presented on their own, all update messages are part of the same RSS feed
-  and email solution.
+- Consult the
+  [formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/)
+  to writing these messages. You will also get a comment on your PR with the
+  same link when there are additions in the revision-history folder.
 
-The messages are added with the following frontmatter:
+### Visibility logic
+
+Max 3 messages will be shown on the various API pages, the rest will be put in a
+disclosure. There is also a time limit:
+
+- Regular messages older than 2 months will be put in the disclosure.
+- Messages with the `isImportant: true` parameter will be put in the disclosure
+  after a year. This means they can be shown again when a newer regular message
+  has been put in the disclosure.
+
+### Frontmatter
 
 ```
 ---
@@ -88,11 +96,6 @@ params:
 In most cases, publish date is the same as the date of the change, but if the
 message is about an upcoming change, the change date should be mentioned in the
 body text.
-
-Consult the
-[formula and guide](https://www.mybring.com/design-system/guidelines/writing-information/)
-to writing these messages. You will also get a comment on your PR with the same
-link when there are additions in the revision-history folder.
 
 ## Adding a new API
 
@@ -119,11 +122,10 @@ params:
   disqus_identifier: api-{foldername} (optional, if you want comments)
   oas: {Link to OAS JSON, typically outputted by Swagger}
 
-  # Add alerts or important messages and they appear to the side or above of the main content
-  important:
-    - type: {info, warn or error}
-      title: {Title of message, optional}
-      message: |
+  # Add alerts above the updates content
+  alerts:
+    - title: {Title of message, optional}
+      content: |
         {Content as markdown}
 
   # Add intro, information and documentation to appear before the endpoint listing
@@ -214,7 +216,7 @@ params:
     - 3584
     - 3570
   examples:
-    - <a href="#">Get delivery options with prices and lead time)</a>
+    - <a href="#">Get delivery options with prices and lead time</a>
     - <a href="#">Book Pakke i postkassen</a>
 ---
 ```

@@ -10,7 +10,7 @@
         <h1>{{ .title }}</h1>
         <section id="api-documentation" class="dev-docscontent__section dev-docscontent__grid">
           <div class="grid__messages owls">
-            {{- partial "api/importantupdates.html" (dict "apiArea" $.Params.apiArea "pctx" $.Site "title" .title) -}}
+            {{- partial "api/updates.html" (dict "apiArea" $.Params.apiArea "pctx" $.Site "title" .title) -}}
             {{- with $.Params.important -}}
               {{- range . -}}
                 <div class="message--{{ .type }} pal mbs">
