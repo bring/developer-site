@@ -3,7 +3,7 @@
 ## Tech
 
 The Bring Developer site uses [Hugo](https://gohugo.io/) as a static site
-generator, [OAS](https://www.openapis.org/) JSON for the API endpoint
+generator, [OAS](https://www.openapis.org/) JSON or YAML for the API endpoint
 documentation, CSS with some light post processing and JS that is bundled with
 Vite.
 
@@ -34,8 +34,10 @@ under normal circumstances.
 This application is deployed as an Azure static web app.
 
 When you create a PR, a comment is made with a URL to a custom staging site
-where you can test what the final deployed site will be like. When you merge the
-PR to master, it will also be deployed to production.
+where you can test what the final deployed site will be like. We have a limit of
+10 staging areas, so if your build fails, it might because there are lots of PRs
+already – which is rarely the case. When you merge the PR to master, it will
+also be deployed to production.
 
 ### Without commit or PR
 

@@ -45,11 +45,7 @@
   {{- range $index, $vas := (sort .data "vasName") -}}
     <details class="mb-disclosure bg-gray1 vas-item">
       <summary class="dev-anchored" id="{{ .vasName|anchorize }}">
-        <span
-          data-mybicon="mybicon-arrow-right"
-          data-mybicon-width="16"
-          data-mybicon-height="16"
-        ></span>
+        <span data-mybicon="mybicon-arrow-right"></span>
         <span data-filter="name">{{ .vasName }}{{ if .vasNameNorwegian }} - ({{ .vasNameNorwegian }}){{ end }}</span>
       </summary>
       <div class="pam flex flex-wrap" id="vas-item{{ $index }}" data-vas-element>
@@ -104,8 +100,6 @@
               <span
                 data-mybicon="mybicon-arrow-right"
                 data-mybicon-class="dev-collapsible__toggler__icon"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
               ></span>
               <span>Supported services & countries</span>
             </button>
@@ -153,8 +147,6 @@
                   <span
                     data-mybicon="mybicon-arrow-right"
                     data-mybicon-class="dev-collapsible__toggler__icon"
-                    data-mybicon-width="16"
-                    data-mybicon-height="16"
                   ></span>
                   <span>Booking API request examples</span>
                 </button>

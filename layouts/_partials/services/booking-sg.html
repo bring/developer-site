@@ -50,7 +50,7 @@
         <th rowspan="2" scope="col">Environmental data</th>
         <th colspan="3" scope="col">Countries
           <button type="button" class="dib btn-link btn-link--help v-txt-btm" id="help-country" title="Show info">
-            <span data-mybicon="mybicon-help" data-mybicon-width="16" data-mybicon-height="16"></span>
+            <span data-mybicon="mybicon-help"></span>
           </button>
           <div id="info-country" class="message--info pvxs phs lh-tight text-note fwn maxw24r" hidden>
             The same country in sender and destination columns does not equal domestic, only cross-border.
@@ -86,17 +86,13 @@
             {{- if eq .Return "Yes" -}}
               <span
                 data-mybicon="mybicon-check"
-                data-mybicon-class="icon-ui--green-dark mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
+                data-mybicon-class="icon--green-dark mrs"
                 data-mybicon-title="Yes"
               ></span>
             {{- else -}}
               <span
                 data-mybicon="mybicon-cross"
-                data-mybicon-class="icon-ui--lightgray mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
+                data-mybicon-class="icon--lightgray mrs"
                 data-mybicon-title="No"
               ></span>
           {{- end -}}
@@ -114,17 +110,13 @@
             {{- if eq .LeadTime "Yes" -}}
               <span
                 data-mybicon="mybicon-check"
-                data-mybicon-class="icon-ui--green-dark mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
+                data-mybicon-class="icon--green-dark mrs"
                 data-mybicon-title="Yes"
               ></span>
             {{- else -}}
               <span
                 data-mybicon="mybicon-cross"
-                data-mybicon-class="icon-ui--lightgray mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
+                data-mybicon-class="icon--lightgray mrs"
                 data-mybicon-title="No"
               ></span>
             {{- end -}}
@@ -133,17 +125,13 @@
             {{- if ne .EnvironmentalData "-" -}}
               <span
                 data-mybicon="mybicon-check"
-                data-mybicon-class="icon-ui--green-dark mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
+                data-mybicon-class="icon--green-dark mrs"
                 data-mybicon-title="Yes: {{.EnvironmentalData}}"
               ></span>
             {{- else -}}
               <span
                 data-mybicon="mybicon-cross"
-                data-mybicon-class="icon-ui--lightgray mrs"
-                data-mybicon-width="16"
-                data-mybicon-height="16"
+                data-mybicon-class="icon--lightgray mrs"
                 data-mybicon-title="No"
               ></span>
             {{- end -}}
