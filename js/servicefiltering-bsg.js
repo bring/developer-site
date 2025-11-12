@@ -87,7 +87,7 @@ if (table) {
       return (
         '<button type="button" data-bsg-title="' +
         active +
-        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+        '" class="btn-link btn-link--filter"><span data-mybicon="mybicon-cross" data-mybicon-class="mrxs pointev-none"></span>' +
         title +
         "</button>"
       )
@@ -109,7 +109,7 @@ if (table) {
             activeFilter +
             '" data-bsg-title="' +
             filter +
-            '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="icon-ui mrxs pointev-none" data-mybicon-width="16" data-mybicon-height="16"></span>' +
+            '" class="btn-link btn-link--filter mrxs"><span data-mybicon="mybicon-cross" data-mybicon-class="mrxs pointev-none"></span>' +
             filter +
             "</button>"
         })

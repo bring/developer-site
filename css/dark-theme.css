@@ -155,11 +155,11 @@
     color: var(--gray-60);
   }
 
-  & #services-bsg .icon-ui--green-dark {
+  & #services-bsg .icon--green-dark {
     fill: var(--green);
   }
 
-  & #services-bsg .icon-ui--lightgray {
+  & #services-bsg .icon--lightgray {
     fill: var(--gray-40);
   }
 
