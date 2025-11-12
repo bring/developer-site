@@ -9,11 +9,9 @@ import "./servicefiltering.js"
 import "./api.js"
 import "./search/algolia.jsx"
 import "./scrollmarker.js"
-
 import "./drawer.js"
-
+import "./showmore.js"
 import "./tabs.js"
-
 import "./collapsible.js"
 window.collapsible.init()
 

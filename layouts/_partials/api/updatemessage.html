@@ -1,0 +1,23 @@
+<div class="bshadow--dark pal pbm">
+  <h3 class="text-basic">{{ .Title }}</h3>
+  <p>
+    <span class="text-0.875r fwb mrs">{{- .PublishDate.Format "2 January 2006" | safeHTML -}}</span>
+    {{- if (eq .Parent.Params.apiArea "Common") -}}
+      <span class="mb-badge mb-badge--blue mrs">General</span>
+    {{- end -}}
+    {{ if .Params.isImportant }}
+      <span class="mb-badge mb-badge--yellow">Important</span>
+    {{ end }}
+  </p>
+  <div class="update-content">
+    <div class="truncated-content" aria-hidden="true">
+      {{ .Content | truncate 300 }}
+    </div>
+    <div class="screen-reader-text full-content" >
+      {{ .Content }}
+    </div>
+    {{- if gt (len .RawContent) 300 -}}
+      <button class="read-more btn-link--dark mbm" aria-hidden="true">Show more</button>
+    {{- end -}}
+  </div>
+</div>
