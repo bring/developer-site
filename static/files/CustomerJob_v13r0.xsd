@@ -1,0 +1,1574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--CustomerJob - Versjon 1.3 Revision 0
+*********************
+14.09.2016	Changed version to 1.3 revision .
+
+10.12.2013	Changed version to 1.2 revision 1.
+					
+19.11.2012	Version 1.0 Revision 0........................................................................
+					Added namespace
+
+PS!				. (dot) should be used as decimal point.
+					Use charachter set encoding="ISO-8859-1" in xml data file.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://interchange.bring.com/CustomerJob_v13r0" xmlns:sql="urn:schemas-microsoft-com:mapping-schema" targetNamespace="http://interchange.bring.com/CustomerJob_v13r0" elementFormDefault="unqualified">
+	<xsd:element name="CustomerJob">
+		<xsd:annotation>
+			<xsd:documentation>Declare and use character set encoding="ISO-8859-1" in xml data file.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="MessageDetails" type="MessageDetailsTYPE"/>
+				<xsd:element name="ConsignmentStructure">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ConsignmentSet" type="ConsignmentSetTYPE" minOccurs="0" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="structureType">
+							<xsd:simpleType>
+								<xsd:restriction base="ccText">
+									<xsd:enumeration value="Single"/>
+									<xsd:enumeration value="Split"/>
+									<xsd:enumeration value="Summary"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:attribute>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="collaboration" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Booking"/>
+						<xsd:enumeration value="Instruction"/>
+						<xsd:enumeration value="JobOrder"/>
+						<xsd:enumeration value="Advice"/>
+						<xsd:enumeration value="Manifest"/>
+						<xsd:enumeration value="Information"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="messageFunction" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Booking"/>
+						<xsd:enumeration value="PickUp"/>
+						<xsd:enumeration value="BookingConfirmation"/>
+						<xsd:enumeration value="BookingDecline"/>
+						<xsd:enumeration value="Instruction"/>
+						<xsd:enumeration value="InstructionConfirmation"/>
+						<xsd:enumeration value="InstructionDecline"/>
+						<xsd:enumeration value="TrackingUpdate"/>
+						<xsd:enumeration value="TrackAggregate"/>
+						<xsd:enumeration value="JobOrder"/>
+						<xsd:enumeration value="CustomsClearance"/>
+						<xsd:enumeration value="CustomsResponse"/>
+						<xsd:enumeration value="BondedCargo"/>
+						<xsd:enumeration value="TransportAdvice"/>
+						<xsd:enumeration value="DespatchNotice"/>
+						<xsd:enumeration value="ArrivalNotice"/>
+						<xsd:enumeration value="Manifest"/>
+						<xsd:enumeration value="LoadingList"/>
+						<xsd:enumeration value="UnLoadingList"/>
+						<xsd:enumeration value="MasterBillOfLading"/>
+						<xsd:enumeration value="MasterAirWaybill"/>
+						<xsd:enumeration value="Transit"/>
+						<xsd:enumeration value="TransitResponse"/>
+						<xsd:enumeration value="InstructionConditionalConfirmation"/>
+						<xsd:enumeration value="MessageReceived"/>
+						<xsd:enumeration value="TransportDetailsRequest"/>
+						<xsd:enumeration value="TransportDetails"/>
+						<xsd:enumeration value="Request"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="messageId" type="xsd:string" use="required"/>
+			<xsd:attribute name="testIndicator" use="optional">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="YES"/>
+						<xsd:enumeration value="NO"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="MessageDetailsTYPE">
+		<xsd:sequence>
+			<xsd:element name="MessageSender" type="MessagePartyTYPE"/>
+			<xsd:element name="MessageRecipient" type="MessagePartyTYPE"/>
+			<xsd:element name="MessageDate" type="IsoDateTimesTYPE"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MessagePartyTYPE">
+		<xsd:sequence>
+			<xsd:element name="Name" type="ccText" minOccurs="0"/>
+			<xsd:element name="Contact" type="ContactTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="OriginatingSystem" type="SystemDetailsTYPE" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Not in use for recipient</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="partyId" type="xsd:string" use="required"/>
+		<xsd:attribute name="idCodeList" type="ccIdCodeList" use="optional"/>
+		<xsd:attribute name="idType" type="xsd:string" use="optional"/>
+		<xsd:attribute name="subPartyId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="subPartyIdType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="SystemDetailsTYPE">
+		<xsd:sequence>
+			<xsd:element name="SystemId" type="xsd:string"/>
+			<xsd:element name="SubSystemId" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ConsignmentSetTYPE">
+		<xsd:sequence>
+			<xsd:element name="Consignment" type="ConsignmentTYPE"/>
+			<xsd:element name="DateAndTimes" type="IsoDateAndTimesTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Party" type="PartyTYPE" minOccurs="2" maxOccurs="unbounded"/>
+			<xsd:element name="TransportLeg" type="TransportLegTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Invoice" type="InvoiceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DangerousGoods" type="HazardousGoodsTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Service" type="ServiceTYPE" minOccurs="0"/>
+			<xsd:element name="TermsOfDelivery" type="TermsOfDeliveryTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Insurance" type="InsuranceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Temperature" type="TemperatureTYPE" minOccurs="0"/>
+			<xsd:element name="Cod" type="CodTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="CustomsClearance" type="CustomsHeaderTYPE" minOccurs="0"/>
+			<xsd:element name="Charges" type="ChargesTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>State charges and monetary amounts.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GoodsItemSet" type="GoodsItemSetTYPE" maxOccurs="unbounded"/>
+			<xsd:element name="Equipment" type="EquipmentTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="updateIndicator" type="ccUpdateIndicator" use="optional"/>
+		<xsd:attribute name="productionCode" type="ccText" use="optional"/>
+		<xsd:attribute name="productionStage" type="ccText"/>
+	</xsd:complexType>
+	<xsd:complexType name="ConsignmentTYPE">
+		<xsd:sequence>
+			<xsd:element name="ControlTotals" type="ControlTotalsTYPE" minOccurs="0"/>
+			<xsd:element name="GoodsDescription" type="ccText" minOccurs="0"/>
+			<xsd:element name="GoodsValue" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="Marking" type="ccText" minOccurs="0"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="FreeText" type="FreeTextTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="consignmentId" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Document id</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="idType" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Document type</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="identifier" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>Codelist/Application identifier</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="issuer">
+			<xsd:annotation>
+				<xsd:documentation>Codelist responsible agency</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="GoodsItemSetTYPE">
+		<xsd:sequence>
+			<xsd:element name="GoodsItem" type="GoodsItemTYPE"/>
+			<xsd:element name="Package" type="PackageTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>There should be one iteration for each package/transport unit.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CustomsDetails" type="CustomsDetailsTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="DangerousGoods" type="HazardousGoodsTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PackingDetails" type="PackingDetailsTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Attachment" type="AttachmentTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="sequence"/>
+	</xsd:complexType>
+	<xsd:complexType name="GoodsItemTYPE">
+		<xsd:sequence>
+			<xsd:element name="GoodsItemTotals" type="ControlTotalsTYPE" minOccurs="0"/>
+			<xsd:element name="PackageTypeCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="GoodsDescription" type="ccText" minOccurs="0"/>
+			<xsd:element name="PricingUnits" type="ccMeasure" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Should not be used more than once for each GoodsItem!</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Temperature" type="TemperatureTYPE" minOccurs="0"/>
+			<xsd:element name="Marking" type="ccText" minOccurs="0"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="FreeText" type="FreeTextTYPE" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Added 23/8-2012.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="goodsItemId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="AddressTYPE">
+		<xsd:sequence>
+			<xsd:element name="Street" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Street name</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AddressLine" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Used to state extra address lines if Street is not sufficient.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="sequence" type="xsd:integer"/>
+							<xsd:attribute name="addressCode">
+								<xsd:annotation>
+									<xsd:documentation>21/7-2015 Added for later use to state address components.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PostalCode" type="ccText" minOccurs="0"/>
+			<xsd:element name="City" type="ccText" minOccurs="0"/>
+			<xsd:element name="StateOrRegion" type="ccText" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="POBox" type="ccText" minOccurs="0"/>
+			<xsd:element name="PostOffice" type="ccText" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="subClass" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="PhysicalAddress"/>
+					<xsd:enumeration value="PostalAddress"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="PackageTYPE">
+		<xsd:sequence>
+			<xsd:element name="Measures" type="MeasuresTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Dimensions" type="DimensionsTYPE" minOccurs="0"/>
+			<xsd:element name="PackageTypeCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="PackageTypeText" type="ccText" minOccurs="0"/>
+			<xsd:element name="Marking" type="ccText" minOccurs="0"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="FreeText" type="FreeTextTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Charges" type="ChargesTYPE" minOccurs="0"/>
+			<xsd:element name="Insurance" type="InsuranceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="packageId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idType" type="xsd:string" use="optional"/>
+		<xsd:attribute name="identifier" type="ccText">
+			<xsd:annotation>
+				<xsd:documentation>Codelist/Application identifier</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="issuer">
+			<xsd:annotation>
+				<xsd:documentation>Codlist responsible agency</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="PackingDetailsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>27/8-2012 Added to provide packinglist details for a DespatchAdvice.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PositionNumber" type="xsd:int" minOccurs="0"/>
+			<xsd:element name="ItemNumber" type="ccUsageCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Article number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalItemNumber" type="ccUsageCode" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ItemName" type="ccText" minOccurs="0"/>
+			<xsd:element name="ItemDelivered" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="ItemPrice" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="ItemOrdered" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="ItemBackOrder" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="ItemUnity" type="ccText" minOccurs="0"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>usageCode:
+ON = Buyers order number.
+VN = Order number (Vendor).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FreeText" type="FreeTextTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="adviceSequence" type="xsd:int">
+			<xsd:annotation>
+				<xsd:documentation>Sequence number</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="packageId" type="ccText">
+			<xsd:annotation>
+				<xsd:documentation>Package containing line item.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="TransportLegTYPE">
+		<xsd:sequence>
+			<xsd:element name="TransportLegType" type="ccCode" minOccurs="0"/>
+			<xsd:element name="TransportLegId" type="ccText" minOccurs="0"/>
+			<xsd:element name="ModeOfTransport" type="ccCode" minOccurs="0"/>
+			<xsd:element name="MeansOfTransport" type="MeansOfTransportTYPE" minOccurs="0"/>
+			<xsd:element name="Location" type="LocationTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MeansOfTransportTYPE">
+		<xsd:sequence>
+			<xsd:element name="MeansOfTransportId" type="ccText" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="Name" type="ccText" minOccurs="0"/>
+			<xsd:element name="MeansOfTransportType" type="ccCode" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LocationTYPE">
+		<xsd:sequence>
+			<xsd:element name="LocationType" type="ccCode" minOccurs="0"/>
+			<xsd:element name="LocationName" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name or code of location.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CountryCode" type="ccCode" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="subClass" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="StartLocation"/>
+					<xsd:enumeration value="BorderPassing"/>
+					<xsd:enumeration value="CustomsDepartment"/>
+					<xsd:enumeration value="StorageLocation"/>
+					<xsd:enumeration value="EndLocation"/>
+					<xsd:enumeration value="UltimateEndLocation"/>
+					<xsd:enumeration value="CustomsDeparture"/>
+					<xsd:enumeration value="CustomsDestination"/>
+					<xsd:enumeration value="CustomsTransit"/>
+					<xsd:enumeration value="DocumentIssue"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="locationId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="IsoDateTimesTYPE">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:dateTime">
+				<xsd:attribute name="dstIndicator" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Daylight saving time indicator). YES=Summer time or NO=Winter time?</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="ccText">
+							<xsd:enumeration value="YES"/>
+							<xsd:enumeration value="NO"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="timeZone" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>+-HH:MM (13h)</xsd:documentation>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="ccText">
+							<xsd:pattern value="((\+|-)(([0][0-9])|(1[0-3])):([0-5][0-9]))"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="IsoDateAndTimesTYPE">
+		<xsd:sequence>
+			<xsd:element name="Date" type="xsd:date" minOccurs="0"/>
+			<xsd:element name="Time" type="xsd:time" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="subClass" type="ccDateAndTimesRole" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="TermsOfDeliveryTYPE">
+		<xsd:annotation>
+			<xsd:documentation>22/7-2015 Changed.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TODConditionCode" type="ccText"/>
+			<xsd:element name="TODLocation" type="ccCode" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="termsType" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="ccText">
+					<xsd:enumeration value="Incoterms"/>
+					<xsd:enumeration value="Freightterms"/>
+					<xsd:enumeration value="Combiterms"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ReferenceTYPE">
+		<xsd:sequence>
+			<xsd:element name="ReferenceNo" type="ccText"/>
+			<xsd:element name="Text" type="ccText" minOccurs="0"/>
+			<xsd:element name="ReferenceDate" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Date" type="xsd:date" minOccurs="0"/>
+						<xsd:element name="Time" type="xsd:time" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="referenceType" type="ccText" use="required"/>
+		<xsd:attribute name="codeListIdentifier" type="xsd:string"/>
+		<xsd:attribute name="codeListAgencyIdentifier" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="FreeTextTYPE">
+		<xsd:sequence>
+			<xsd:element name="Text" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="sequence" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>Text sequence (1/2/3...)</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="code" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>Qualifier for coded text.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LanguageCode" type="ccCode" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="usageCode" type="ccText" use="required"/>
+		<xsd:attribute name="codeListIdentifier" type="xsd:string"/>
+		<xsd:attribute name="codeListAgencyIdentifier" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="CodTYPE">
+		<xsd:sequence>
+			<xsd:element name="TransactionIdentifier" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="identifierType">
+								<xsd:simpleType>
+									<xsd:restriction base="ccText">
+										<xsd:enumeration value="PQ"/>
+										<xsd:enumeration value="SS"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="accountType" type="ccText" use="optional"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CodAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="ControlDigit" type="ccNumeric" minOccurs="0"/>
+			<xsd:element name="DocumentId" type="ccText" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="codType"/>
+		<xsd:attribute name="codeListIdentifier" type="xsd:string"/>
+		<xsd:attribute name="codeListAgencyIdentifier" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="EquipmentTYPE">
+		<xsd:sequence>
+			<xsd:element name="EquipmentType" type="ccCode" minOccurs="0"/>
+			<xsd:element name="EquipmentId" type="ccText" minOccurs="0"/>
+			<xsd:element name="ReadingMethode" type="ccText" minOccurs="0"/>
+			<xsd:element name="EquipmentQuantity" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="EquipmentCode" type="ccCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Used to state equipment size and type code.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Size" type="ccText" minOccurs="0"/>
+			<xsd:element name="Measures" type="MeasuresTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Dimensions" type="DimensionsTYPE" minOccurs="0"/>
+			<xsd:element name="EquipmentSeal" type="SealingTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ChargesTYPE">
+		<xsd:sequence>
+			<xsd:element name="ChargeItem" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:complexContent>
+						<xsd:extension base="ChargeItemTYPE"/>
+					</xsd:complexContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="chargeGroup" type="xsd:string" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>Used to group charge items.
+Valid enumeration:
+- FreightCharges (default)
+- PackingList</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ChargeItemTYPE">
+		<xsd:sequence>
+			<xsd:element name="ChargeCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="ChargeText" type="ccText" minOccurs="0"/>
+			<xsd:element name="VATCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="GrossAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="NetAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="TariffAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="Discount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="Comment" type="ccText" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="invoiceNumber" type="ccText"/>
+	</xsd:complexType>
+	<xsd:complexType name="TemperatureTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Used to state temperature.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Conveyance" type="ccTempMeasure" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Storage" type="ccTempMeasure" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CustomsHeaderTYPE">
+		<xsd:sequence>
+			<xsd:element name="Declaration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>9/10-2009 Defines customs area.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DeclarationType" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="ccText">
+									<xsd:enumeration value="EU"/>
+									<xsd:enumeration value="IM"/>
+									<xsd:enumeration value="EX"/>
+									<xsd:enumeration value="FO"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="Procedure" type="ccNumeric" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TransactionType" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Define type of transaction:
+Export 0/5
+Import 1/2/3/9</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Location" type="LocationTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Consignor/consignee country code. Must be present twice for NO import/export.
+9/10-2009 Storage permnission code, ex. A/A8/D......</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DutyCreditAccount" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>VAT registration number. Name changed 9/10-2009.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DutyPaymentIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>9/10-2009.  Account/Credit/Cash</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="dutyPayer">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Buyer"/>
+										<xsd:enumeration value="Seller"/>
+										<xsd:enumeration value="None"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="FreightChargeAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="OtherChargesAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="OtherChargesStatus" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Other charges +/-/M/P</xsd:documentation>
+				</xsd:annotation>
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="+"/>
+						<xsd:enumeration value="-"/>
+						<xsd:enumeration value="P"/>
+						<xsd:enumeration value="M"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="ProcessingCostAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="InsuranceCostAmount" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="EntryNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Customs entry number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="EntryPositionNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Position to Customs entry number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="CustomsResponse" type="CustomsResponseTYPE" minOccurs="0"/>
+			<xsd:element name="InvoiceDiscount" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="InvoiceNumber" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>Invoice number/reference</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="Discount" type="ccMeasure">
+							<xsd:annotation>
+								<xsd:documentation>Invoice discount.
+Use unitCode = P1</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="status" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Defines import or export.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Import"/>
+					<xsd:enumeration value="Export"/>
+					<xsd:enumeration value="ExpImp"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="function">
+			<xsd:annotation>
+				<xsd:documentation>Temporary, final, (innstikk)</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="ccText"/>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="lineMerge">
+			<xsd:annotation>
+				<xsd:documentation>Indicating whether the detail lines to be merged. Yes(default)/no</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Yes"/>
+					<xsd:enumeration value="No"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="CustomsDetailsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>11/5-2009</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="PlaceOfOrigin" type="LocationCodeType" minOccurs="0"/>
+			<xsd:element name="CustomsArticleNumber" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Changed to tekst.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="countryCode" type="ccCountryCode">
+								<xsd:annotation>
+									<xsd:documentation>Added to stat country for a CustomsArticeNumber.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="OtherArticleNumber" type="ccCode" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>15/10-2009 Client or third party article numbering.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="TradePreference" minOccurs="0" maxOccurs="2">
+				<xsd:annotation>
+					<xsd:documentation>Preference N/J/A/B/G/P/C or Reduction E/F/H/S/R</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="tradeIndicator" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Trade Preference or tariff Reduction</xsd:documentation>
+								</xsd:annotation>
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Preference"/>
+										<xsd:enumeration value="Reduction"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TarriffLineAmount" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:decimal">
+							<xsd:attribute name="currencyCode" type="xsd:string"/>
+							<xsd:attribute name="amountIndicator" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CustomsDuty" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Stated VAT and/or VAT code</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:float">
+							<xsd:attribute name="currencyIdentificationCode" type="xsd:string"/>
+							<xsd:attribute name="amountIndicator" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>Indicates VAT code, F/1/2</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CustomsTax" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TaxCode" type="xsd:string" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>21/12-2010
+Skal denne være med å angi avgiftskode</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="TaxRate" type="xsd:decimal" minOccurs="0"/>
+						<xsd:element name="TaxRateSequence" type="xsd:integer" minOccurs="0"/>
+						<xsd:element name="TaxBasis" type="ccNumeric" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>14.04.2011
+Basis for calculating tax.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="TaxAmount" type="ccAmount" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>14.04.2011
+Calculated tax.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="NetWeight" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="GrossWeight" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="QuantityOtherUnit" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="NumberOfPieces" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="Unit" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>???? Hvilken Unit snakker vi om her?</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="GoodsDescription" type="ccText" minOccurs="0"/>
+			<xsd:element name="DocumentReference" type="DocumentReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ValuationCode" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Heading 43 (NO)
+Valuation 1/2/3/4/5/6
+(paid in accordance with or related to)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="lineId" type="xsd:integer"/>
+	</xsd:complexType>
+	<xsd:complexType name="CustomsResponseTYPE">
+		<xsd:sequence>
+			<xsd:element name="ResponseDates" type="IsoDateAndTimesTYPE" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Message response date.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="DocumentCode" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Use customs document codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Category" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Use customs category codes</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="ApplicationError" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Error indications.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ErrorPointDetails">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="PointCode" type="ccText"/>
+									<xsd:element name="ItemNumber" type="ccText" minOccurs="0"/>
+									<xsd:element name="SubItemNumber" type="ccText" minOccurs="0"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="ErrorInformation" type="ccCode" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Taxes" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="FunctionCode" type="ccText"/>
+						<xsd:element name="AmountQualifier" type="ccText"/>
+						<xsd:element name="Amount" type="ccAmount"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ResponseReference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ResponseDescription" type="FreeTextTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Free text response descrition.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="responseType" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Error response or release</xsd:documentation>
+			</xsd:annotation>
+			<xsd:simpleType>
+				<xsd:restriction base="ccText">
+					<xsd:enumeration value="Error"/>
+					<xsd:enumeration value="Release"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="responseId" type="ccText"/>
+	</xsd:complexType>
+	<xsd:complexType name="SealingTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Added 28/7-2010 to state information about sealing.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="SealCount" type="xsd:integer">
+				<xsd:annotation>
+					<xsd:documentation>Number of affixed seals.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SealIdentity" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Seal identity/content.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="language" type="xsd:string"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="sealType" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Customs"/>
+					<xsd:enumeration value="Public"/>
+					<xsd:enumeration value="Private"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentTYPE">
+		<xsd:sequence>
+			<xsd:element name="Language" type="ccCode" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="documentCode" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentReferenceTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Changed 25/11-2009</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="certificateCode" type="ccText">
+					<xsd:annotation>
+						<xsd:documentation>Certificate/free text,
+SER=Sertificate
+TXT=Free text</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="documentCode" type="ccText">
+					<xsd:annotation>
+						<xsd:documentation>Added to state code for a document produced.
+DCT=Document certificate code</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocationCodeType">
+		<xsd:annotation>
+			<xsd:documentation>11/12-2009</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="locationClass" type="ccLocationClass" use="required"/>
+				<xsd:attribute name="parentLocation"/>
+				<xsd:attribute name="parentLocationClass" type="ccLocationClass"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="InsuranceTYPE">
+		<xsd:sequence>
+			<xsd:element name="TypeOfInsurance" type="ccCode" minOccurs="0"/>
+			<xsd:element name="Insured" type="ccIndicator" minOccurs="0"/>
+			<xsd:element name="InsuranceOrder" type="ccIndicator" minOccurs="0"/>
+			<xsd:element name="InsuranceValue" type="ccAmount" minOccurs="0"/>
+			<xsd:element name="GoodsDescription" type="ccText" minOccurs="0"/>
+			<xsd:element name="CommodityGroup" type="ccText" minOccurs="0"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="SummaryTotalsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Trip/manifest aggregations...</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="TotalNoOfConsignments" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="TotalNoOfPackages" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="TotalGrossWeight" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="TotalGrossVolume" type="ccMeasure" minOccurs="0"/>
+			<!--
+			<xsd:element name="LoadingMetres" type="ccMeasure" minOccurs="0"/>
+			-->
+			<xsd:element name="TotalCharges" type="ChargesTYPE" minOccurs="0"/>
+			<xsd:element name="TotalMeasures" type="MeasuresTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ControlTotalsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>9/12-2012 Added to state gross totals.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="NumberOfPackages" type="ccQuantity" minOccurs="0"/>
+			<xsd:element name="GrossWeight" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="GrossVolume" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="LoadingMetres" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="PalletFootPrints" type="ccMeasure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Total number of pallet footprints and type of pallet.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Measures" type="MeasuresTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>State additional weights and measures.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Dimensions" type="DimensionsTYPE" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MeasuresTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Used to state measures not spesifiedin own nodes.
+
+Only used as instructed by Bring!</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Measure" type="ccMeasure"/>
+		</xsd:sequence>
+		<xsd:attribute name="subClass" type="ccText" use="required">
+			<xsd:annotation>
+				<xsd:documentation>Valid codes:
+1. Transport-, Storage-, Customs-, Hazard-
+2. Gross, Net, Tare, Chargeble, Shipped.
+3. Weight, Volume, Counts.
+Example: TransportChargebleWeight
+HazardNetWeight</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="ComDetailsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>9/12-2012 Communication details.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="ccText">
+				<xsd:attribute name="comType">
+					<xsd:simpleType>
+						<xsd:restriction base="ccText">
+							<xsd:enumeration value="Phone"/>
+							<xsd:enumeration value="CellPhone"/>
+							<xsd:enumeration value="Fax"/>
+							<xsd:enumeration value="Email"/>
+							<xsd:enumeration value="Mail"/>
+							<xsd:enumeration value="Other"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="channel" type="ccText">
+					<xsd:annotation>
+						<xsd:documentation>Adden attribute to state additional comTypes.
+Used in connection with comType enum Other.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DimensionsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>9/12-2012 State dimensions.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Height" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="Length" type="ccMeasure" minOccurs="0"/>
+			<xsd:element name="Width" type="ccMeasure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:annotation>
+		<xsd:documentation>Core components</xsd:documentation>
+	</xsd:annotation>
+	<xsd:simpleType name="ccLocationClass">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Country"/>
+			<xsd:enumeration value="County"/>
+			<xsd:enumeration value="State"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ccPartyRole">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Consignor"/>
+			<xsd:enumeration value="Consignee"/>
+			<xsd:enumeration value="DespatchParty"/>
+			<xsd:enumeration value="DeliveryParty"/>
+			<xsd:enumeration value="OrderingParty"/>
+			<xsd:enumeration value="FreightPayer"/>
+			<xsd:enumeration value="CashOnDeliveryPayee"/>
+			<xsd:enumeration value="BondedWarehouseParty"/>
+			<xsd:enumeration value="Forwarder"/>
+			<xsd:enumeration value="TransportCompany"/>
+			<xsd:enumeration value="Exporter"/>
+			<xsd:enumeration value="Importer"/>
+			<xsd:enumeration value="MessageRecipient"/>
+			<xsd:enumeration value="MessageCopyRecipient"/>
+			<xsd:enumeration value="MessageSender"/>
+			<xsd:enumeration value="DespatchingAgent"/>
+			<xsd:enumeration value="ReceivingAgent"/>
+			<xsd:enumeration value="InvitedTransportCompany"/>
+			<xsd:enumeration value="Supplier"/>
+			<xsd:enumeration value="Vendor"/>
+			<xsd:enumeration value="Buyer"/>
+			<xsd:enumeration value="GoodsReturnParty"/>
+			<xsd:enumeration value="NotifyParty"/>
+			<xsd:enumeration value="CustomsDeclarant"/>
+			<xsd:enumeration value="CustomsBroker"/>
+			<!-- System ordering a customs clearance from another cc system -->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ccDateAndTimesRole">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="DocumentDate"/>
+			<xsd:enumeration value="TransportOrderDate"/>
+			<xsd:enumeration value="DepartureDateRequested"/>
+			<xsd:enumeration value="DepartureDateActual"/>
+			<xsd:enumeration value="DepartureDateEstimated"/>
+			<xsd:enumeration value="DeliveryDateRequested"/>
+			<xsd:enumeration value="DeliveryDateActual"/>
+			<xsd:enumeration value="DeliveryDateEstimated"/>
+			<xsd:enumeration value="DeliveryDateEarliest"/>
+			<xsd:enumeration value="DeliveryDateLatest"/>
+			<xsd:enumeration value="ArrivalDateActual"/>
+			<xsd:enumeration value="ArrivalDateEstimated"/>
+			<xsd:enumeration value="ArrivalDateRequested"/>
+			<xsd:enumeration value="LoadingDate"/>
+			<xsd:enumeration value="UnLoadingDate"/>
+			<xsd:enumeration value="PickupDateActual"/>
+			<xsd:enumeration value="PickupDateEarliest"/>
+			<xsd:enumeration value="PickupDateLatest"/>
+			<xsd:enumeration value="PickupDateAvailable"/>
+			<xsd:enumeration value="PickupDateEstimated"/>
+			<xsd:enumeration value="DeadLine"/>
+			<xsd:enumeration value="ClearanceDate"/>
+			<xsd:enumeration value="ReleaseDate"/>
+			<xsd:enumeration value="TransitAcceptance"/>
+			<xsd:enumeration value="TransitLimits"/>
+			<xsd:enumeration value="NotificationDate"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ccIdCodeList">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="CID"/>
+			<xsd:enumeration value="CCP"/>
+			<xsd:enumeration value="CNO"/>
+			<xsd:enumeration value="ENH"/>
+			<xsd:enumeration value="FMI"/>
+			<xsd:enumeration value="FNR"/>
+			<xsd:enumeration value="XDC"/>
+			<xsd:enumeration value="AMP"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ccCountryCode">
+		<xsd:annotation>
+			<xsd:documentation>ISO 3166-1 alpha 2 letter country code.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+			<xsd:pattern value="\p{Lu}[A-Z]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ccNumeric">
+		<xsd:restriction base="xsd:float"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ccText">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:complexType name="ccQuantity">
+		<xsd:annotation>
+			<xsd:documentation>4/2-2011 changed to xsd:int</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:int">
+				<xsd:attribute name="unitCode" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ccMeasure">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:float">
+				<xsd:attribute name="unitCode" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ccTempMeasure">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:float">
+				<xsd:attribute name="subClass" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Stated"/>
+							<xsd:enumeration value="Minimum"/>
+							<xsd:enumeration value="Maximum"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+				<xsd:attribute name="unitCode" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ccAmount">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="currencyCode" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="ccIndicator">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="YES"/>
+			<xsd:enumeration value="NO"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ccCode">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="codeListIdentifier" type="xsd:string"/>
+				<xsd:attribute name="codeListAgencyIdentifier" type="xsd:string"/>
+				<xsd:attribute name="name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ccUsageCode">
+		<xsd:annotation>
+			<xsd:documentation>8/12-2012 Added attribute usageCode to state code qualifier.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="usageCode" type="ccText" use="required"/>
+				<xsd:attribute name="codeListIdentifier" type="xsd:string"/>
+				<xsd:attribute name="codeListAgencyIdentifier" type="xsd:string"/>
+				<xsd:attribute name="name" type="xsd:string"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DefineTYPE">
+		<xsd:annotation>
+			<xsd:documentation>06/02-2014 Added for extended use</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Value" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="sequence" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>Text sequence (1/2/3...)</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="valueType" type="xsd:string">
+								<xsd:annotation>
+									<xsd:documentation>Code specifying the use.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+							<xsd:attribute name="valueCode">
+								<xsd:annotation>
+									<xsd:documentation>Qualifier for coded value.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="usageCode" type="ccText" use="required"/>
+		<xsd:attribute name="codeListIdentifier" type="xsd:string"/>
+		<xsd:attribute name="codeListAgencyIdentifier" type="xsd:string"/>
+		<xsd:attribute name="name" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:complexType name="PartyTYPE">
+		<xsd:sequence>
+			<xsd:element name="Name" type="ccText" minOccurs="0"/>
+			<xsd:element name="Address" type="AddressTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Contact" type="ContactTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="VATNo" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="countryCode" type="ccCountryCode">
+								<xsd:annotation>
+									<xsd:documentation>ISO 3166-2 alpha</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CustomsCreditNo" type="ccText" minOccurs="0"/>
+			<xsd:element name="MonetaryAccount" type="MonetaryAccountTYPE" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Bank account</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="FreeText" type="FreeTextTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>20/7-2015 Added.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="subClass" type="ccPartyRole" use="required"/>
+		<xsd:attribute name="partyId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idCodeList" type="ccIdCodeList" use="optional"/>
+		<xsd:attribute name="idType" type="xsd:string" use="optional"/>
+		<xsd:attribute name="subPartyId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="subPartyIdType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ContactTYPE">
+		<xsd:annotation>
+			<xsd:documentation>16/7-2015 Changed.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="ContactName" type="ccText" minOccurs="0"/>
+			<xsd:element name="Department" type="ccCode" minOccurs="0"/>
+			<xsd:element name="ComDetails" type="ComDetailsTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="contactFunction"/>
+	</xsd:complexType>
+	<xsd:complexType name="ServiceTYPE">
+		<xsd:sequence>
+			<xsd:element name="BasicServiceCode" type="ccCode" minOccurs="0"/>
+			<xsd:element name="AdditionalService" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AdditionalServiceCode" type="ccCode"/>
+						<xsd:element name="ServiceRequirements" type="ccUsageCode" minOccurs="0" maxOccurs="unbounded"/>
+						<xsd:element name="ServiceContact" type="ComDetailsTYPE" minOccurs="0" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>16/7-2015 Added to state com details to report advice etc.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="TariffReference" type="ccCode" minOccurs="0"/>
+			<xsd:element name="NatureOfCargo" type="ccCode" minOccurs="0"/>
+			<xsd:element name="Priority" type="ccCode" minOccurs="0"/>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="InvoiceTYPE">
+		<xsd:sequence>
+			<xsd:element name="InvoiceNo" type="ccText" minOccurs="0"/>
+			<xsd:element name="InvoiceDate" type="xsd:date" minOccurs="0"/>
+			<xsd:element name="InvoiceAmount" minOccurs="0" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Net" type="ccAmount" minOccurs="0"/>
+						<xsd:element name="VAT" type="ccAmount" minOccurs="0"/>
+						<xsd:element name="Gross" type="ccAmount" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="subClass">
+						<xsd:simpleType>
+							<xsd:restriction base="ccText">
+								<xsd:enumeration value="InvoiceAmount"/>
+								<xsd:enumeration value="InsuranceAmount"/>
+								<xsd:enumeration value="FreightAmount"/>
+								<xsd:enumeration value="OtherCostAmount"/>
+								<xsd:enumeration value="CommissionAmount"/>
+								<xsd:enumeration value="DiscountAmount"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:attribute>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="invoiceType">
+			<xsd:simpleType>
+				<xsd:restriction base="ccText">
+					<xsd:enumeration value="Commercial"/>
+					<xsd:enumeration value="Proforma"/>
+					<xsd:enumeration value="Service"/>
+					<xsd:enumeration value="Other"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="HazardousGoodsTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Added to replace DangerousGoodsTYPE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="UNDGInformation">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="HazardIdentifier" type="xsd:integer">
+							<xsd:annotation>
+								<xsd:documentation>7124 UN Dangerous Goods Regluation code.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="FlaspointDescription" type="ccText" minOccurs="0">
+							<xsd:annotation>
+								<xsd:documentation>7088 Dangerous goods flashpoint description.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Flashpoint" type="ccQuantity" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>7106 Shipment flashpoint degree.
+Valid unitCode: CEL, (FAH)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HazardClass" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>8351 Hazard identification code</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="AdditionalHazard" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>8078</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PackingGroup" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>8339</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Measure" type="MeasuresTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="TechnicalName" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Dangerous Goods, technical name/NOS.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Restrictions" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>8461/(8364)</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="restrictionType" type="ccText" use="required">
+								<xsd:annotation>
+									<xsd:documentation>Valid codes:
+Tunnel, (Ferry)</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="HazardPoints" type="ccNumeric" minOccurs="0"/>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="regulationCode" type="ccText" use="required">
+			<xsd:annotation>
+				<xsd:documentation>8273 Valid codes:
+ADR, IMD, ICA, RID</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="regulationVersion"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ccUpdateIndicator">
+		<xsd:annotation>
+			<xsd:documentation>17/7-2015 Added as a core component to @updateIndicator</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Original"/>
+			<xsd:enumeration value="Update"/>
+			<xsd:enumeration value="Replace"/>
+			<xsd:enumeration value="Final"/>
+			<xsd:enumeration value="Delete"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AttachmentTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Added to handle attachments.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Payload">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="File" type="ccText">
+							<xsd:annotation>
+								<xsd:documentation>Full filename including extension.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="BinaryLoad">
+							<xsd:annotation>
+								<xsd:documentation>Element used for inline base64 attachments</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="Payload" type="xsd:base64Binary">
+										<xsd:annotation>
+											<xsd:documentation>Base64 encoded payload.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="PayloadName" type="ccText" minOccurs="0">
+										<xsd:annotation>
+											<xsd:documentation>Guid or filename etc.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="ContentType" type="ccText">
+										<xsd:annotation>
+											<xsd:documentation>Use mime types.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="URL" type="ccText">
+							<xsd:annotation>
+								<xsd:documentation>Fully qualified url of a http/https location.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="Reference" type="ReferenceTYPE" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Utility" type="DefineTYPE" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="attachementType" type="ccText"/>
+	</xsd:complexType>
+	<xsd:complexType name="DraftLocationTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Added to replace LocationTYPE.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="LocationType" type="ccCode" minOccurs="0"/>
+			<xsd:element name="LocationName" type="ccText" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Name or code of location.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LocationAddress" type="AddressTYPE" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="ccCode" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="subClass" type="ccLocation" use="required"/>
+		<xsd:attribute name="locationId" type="xsd:string" use="optional"/>
+		<xsd:attribute name="idType" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="ccLocation">
+		<xsd:annotation>
+			<xsd:documentation>20/7-2015 Location subClass enumeration</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="StartLocation"/>
+			<xsd:enumeration value="BorderPassing"/>
+			<xsd:enumeration value="CustomsDepartment"/>
+			<xsd:enumeration value="StorageLocation"/>
+			<xsd:enumeration value="EndLocation"/>
+			<xsd:enumeration value="UltimateEndLocation"/>
+			<xsd:enumeration value="CustomsDeparture"/>
+			<xsd:enumeration value="CustomsDestination"/>
+			<xsd:enumeration value="CustomsTransit"/>
+			<xsd:enumeration value="DocumentIssue"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MonetaryAccountTYPE">
+		<xsd:annotation>
+			<xsd:documentation>Added for bank account details.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AccountNumber">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="ccText">
+							<xsd:attribute name="accountType">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="Bank"/>
+										<xsd:enumeration value="Bankgiro"/>
+										<xsd:enumeration value="Plus"/>
+										<xsd:enumeration value="Post"/>
+										<xsd:enumeration value="Iban"/>
+										<xsd:enumeration value="Other"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:attribute>
+							<xsd:attribute name="channel" type="ccText">
+								<xsd:annotation>
+									<xsd:documentation>Used in connection with @accountType=Other to state type of account.</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="SwiftCode" type="ccText" minOccurs="0"/>
+			<xsd:element name="BankName" type="ccText" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
